@@ -1,0 +1,136 @@
+# home page
+[main_partner_title]
+other = "Members"
+
+[main_partner_subtitle]
+other = "Being constructed"
+
+[main_email_subscribe_title]
+other = "Subscription"
+
+[main_email_subscribe_buttontext]
+other = "Subscribe"
+
+[main_cards_title]
+other = "Welcome to openGauss Community"
+
+[main_cards_description]
+other = "openGauss builds an innovative platform and a unified and open OS that supports the multi-processor architecture."
+
+[main_cards_title_second]
+other = "iSula"
+
+[main_cards_title_enter_repository]
+other = ">>More"
+
+[main_nav_repository]
+other = "Code Sources"
+
+[main_nav_packageSources]
+other = "Package Sources"
+
+[main_cards_description_second]
+other = "A cloud-native lightweight container solution that can meet the needs of device, edge, and cloud scenarios in ICT domain with a unified and flexible architecture."
+
+[main_cards_title_third]
+other = "A-Tune"
+
+[main_cards_description_third]
+other = "A system software to auto-optimize the system adaptively to multiple scenarios with embedded AI-engine."
+
+[main_events_title]
+other = "Events"
+
+[main_news_title]
+other = "News"
+
+[main_list_more]
+other = "More"
+
+[main_events_subtitle]
+other = "Event"
+
+[main_news_subtitle]
+other = "News"
+
+[main_nav_news_name]
+other = "News"
+
+[sig_mail_list]
+other = "Mailing list: "
+
+[sig_IRC_channel]
+other = "IRC Channel: "
+
+[sig_maintainers]
+other = "Maintainers: "
+
+[sig_homepage]
+other = "Homepage: "
+
+[main_mail_more]
+other = "Get more in "
+
+[main_mail_more_link]
+other = "/en/community/mails.html"
+
+[main_mail_more_list]
+other = "Mail List"
+
+# DOC page
+[doc_git_footer]
+other = "Edit this page"
+
+# 404 page
+[404_title]
+other = "The page is not found."
+[404_homepage]
+other = "Back to Home"
+
+[docs_nav_menu_name]
+other = "MENU"
+
+[download_title]
+other = "Download ISO"
+
+[download_issues]
+other = "Submit issues:"
+
+[download_releaseNote]
+other = "Release Note:"
+
+[download_getiso]
+other = "Download ISO:"
+
+[download_installationGuide]
+other = "Installation Guide:"
+
+[download_versionsUrl]
+other = "/en/releases.html"
+
+[download_allRelease]
+other = "All Releases>>"
+
+[versions_versionPlan]
+other = "Version Plan"
+
+[versions_versionName]
+other = "Versions"
+
+[versions_status]
+other = "Status"
+
+[versions_releaseTime]
+other = "Release Date"
+
+[versions_EOLTime]
+other = "EOL Date"
+
+[versions_releaseNote]
+other = "Release Note"
+
+[versions_getiso]
+other = "ISO"
+
+[versions_installationGuide]
+other = "Installation Guide"
