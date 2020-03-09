@@ -17,7 +17,7 @@ Vue.prototype.$http = axios;
 Vue.prototype.$utils = Utils;
 
 Vue.use(VueI18n);
-Vue.use(Mixins);
+Vue.mixin(Mixins);
 
 Vue.config.productionTip = false;
 const i18n = new VueI18n({
