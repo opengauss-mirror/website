@@ -42,7 +42,7 @@
     {{ end  }}
     {{ end  }}
     <a class="list" href="https://gitee.com/opengauss" target="_blank">
-        <img style="width:18px;"src="{{ .Site.BaseURL }}img/gitee-logo.ico">
+      <img style="width:18px;" src="{{ .Site.BaseURL }}img/gitee-logo.ico">
     </a>
   </div>
 </div>
@@ -50,7 +50,6 @@
 <div class="isPc navbar-affixed-top" data-spy="affix" data-offset-top="67">
 
   <div class="navbar navbar-default yamm" role="navigation" id="navbar">
-
     <div class="container">
       <div class="navbar-header">
         <a class="navbar-brand home" href="{{ .Site.BaseURL }}">
@@ -69,7 +68,7 @@
       </div>
       <!--/.navbar-header -->
       <div class="navbar-collapse collapse" id="navigation">
-        <ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-left">
           {{ $current := . }}
           {{ range .Site.Menus.main }}
           {{ $topLevel := replace .URL "/" "" }}
@@ -100,20 +99,32 @@
           </li>
           {{ end }}
           {{ if eq .Identifier "lang" }}
-          <li style="width:67px;text-align: center;"
-          class=" dropdown{{ if eq $current.RelPermalink .URL | or $isChildren | or (eq (trim $current.RelPermalink "/") $topLevel) | or (eq $current.Type .Identifier) | or (eq $current.Type $topLevel) | or (and (eq (default (trim .URL "/") .Identifier) "blog") (in (slice "taxonomy" "taxonomyTerm") $current.Kind)) }} active{{ end }}">
-          <a href="{{ .URL }}">{{ .Name }}</a>  
+          <!-- <li style="width:67px;text-align: center;"
+            class=" dropdown{{ if eq $current.RelPermalink .URL | or $isChildren | or (eq (trim $current.RelPermalink "/") $topLevel) | or (eq $current.Type .Identifier) | or (eq $current.Type $topLevel) | or (and (eq (default (trim .URL "/") .Identifier) "blog") (in (slice "taxonomy" "taxonomyTerm") $current.Kind)) }} active{{ end }}">
+            <a href="{{ .URL }}">{{ .Name }}</a>
+          </li> -->
+          {{ end }}
+          {{ end }}
+
+
           </li>
-          {{ end }}
-          {{ end }}
-          <li style="width:67px;text-align: center;"> 
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li style="width:67px;text-align: center;">
             <a class="list" href="https://gitee.com/opengauss" target="_blank">
-                <img style="width:18px;"src="{{ .Site.BaseURL }}img/gitee-logo.ico">
+              <img style="width:18px;" src="{{ .Site.BaseURL }}img/gitee-logo.ico">
             </a>
-        </li>
-            
           </li>
-          
+          <li style="width:67px;text-align: center;">
+            <a class="list" href="https://gitee.com/opengauss" target="_blank">
+              <img style="width:18px;" src="{{ .Site.BaseURL }}img/gitee-logo.ico">
+            </a>
+          </li>
+          <li style="width:67px;text-align: center;"
+            class=" dropdown">
+            <a href="">EN</a>
+          </li>
         </ul>
       </div>
       <!--/.nav-collapse -->

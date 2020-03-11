@@ -33,48 +33,46 @@ paginate = 10
 [[menu.main]]
     identifier = "community"
     name = "Community"
+    url  = "/en/community.html"
+    weight = 2
+
+[[menu.main]]
+    identifier = "client"
+    name = "Client"
+    url  = "/en/client.html"
     weight = 3
-    hasChilren = true
 
 [[menu.main]]
-    identifier = "mails"
-    name = "Mail Lists"
-    url = "/en/community/mails.html"
-    parent = "community"
-    weight = 11
-
-[[menu.main]]
-    identifier = "irc"
-    name = "IRC"
-    url = "/en/community/irc.html"
-    parent = "community"
-    weight = 9
-
-[[menu.main]]
-    identifier = "meetings"
-    name = "Meetings"
-    url = "/en/meetings.html"
-    parent = "community"
-    weight = 10
+    identifier = "efficient"
+    name = "Efficient"
+    url  = "/en/efficient.html"
+    weight = 4
 
 [[menu.main]]
     identifier = "docs"
     name = "Docs"
     url  = "/en/docs.html"
     weight = 5
-    hasChildren = true
+    hasChidren = true
 
 [[menu.main]]
     identifier = "download"
     name = "Download"
     url  = "/en/download.html"
-    weight = 7
+    weight = 6
 
 [[menu.main]]
     identifier = "security"
     name = "Security"
     url  = "/en/security.html"
+    weight = 7
+
+[[menu.main]]
+    identifier = "contact"
+    name = "Contact Us"
+    url = "/en/contact.html"
     weight = 8
+
 [[menu.main]]
     identifier = "lang"
     name = "中文"
@@ -91,29 +89,20 @@ paginate = 10
 [[languages.zh.menu.main]]
     identifier = "community"
     name = "社区"
+    url  = "/zh/docs/community.html"
+    weight = 2
+
+[[languages.zh.menu.main]]
+    identifier = "client"
+    name = "用户"
+    url  = "/en/client.html"
     weight = 3
-    hasChilren = true
 
 [[languages.zh.menu.main]]
-    identifier = "mails"
-    name = "邮件列表"
-    url = "/zh/community/mails.html"
-    parent = "community"
-    weight = 11
-
-[[languages.zh.menu.main]]
-    identifier = "irc"
-    name = "IRC"
-    url = "/zh/community/irc.html"
-    parent = "community"
-    weight = 9
-
-[[languages.zh.menu.main]]    
-    identifier = "meetings"
-    name = "会议"
-    url = "/zh/meetings.html"
-    parent = "community"
-    weight = 10
+    identifier = "efficient"
+    name = "高效"
+    url  = "/en/efficient.html"
+    weight = 4
 
 [[languages.zh.menu.main]]
     identifier = "docs"
@@ -126,19 +115,25 @@ paginate = 10
     identifier = "download"
     name = "下载"
     url  = "/zh/download.html"
-    weight = 8
+    weight = 6
 
 [[languages.zh.menu.main]]
     identifier = "security"
     name = "安全"
     url  = "/zh/security.html"
-    weight = 9
+    weight = 7
+
+[[languages.zh.menu.main]]
+    identifier = "contact"
+    name = "联系我们"
+    url = "/zh/contact.html"
+    weight = 8
 
 [[languages.zh.menu.main]]
     identifier = "lang"
     name = "EN"
     url = "/en"
-    weight = 10
+    weight = 9
 
 # Top bar social links menu
 
