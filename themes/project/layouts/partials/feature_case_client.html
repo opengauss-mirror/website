@@ -1,0 +1,88 @@
+<div class="content">
+    <!-- 特性 -->
+    <div class="content_character">
+        <div class="content_character_title">
+            <h3>特性</h3>
+            <p>关于openGauss独特功能介绍</p>
+        </div>
+        <div class="content_character_lists">
+            <ul class="content_character_lists_far">
+                {{ range .Site.Data.features }}
+                <li>
+                    <div>
+                        <div>
+                            <img src="{{ .image }}" alt="">
+                            <h4>{{ .title }}</h4>
+                        </div>
+                        <p>{{ .description }}</p>
+                    </div>
+                </li>
+                {{ end  }}
+            </ul>
+        </div>
+    </div>
+
+     <!-- 成功案例 -->
+    <div class="content_success">
+        <div class="content_success_title">
+            <h3>成功案例</h3>
+            <p><a href="#">更多 ></a></p>
+        </div>
+
+        <!-- swiper -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="swiper_slide_warp">
+                        <div class="swiper_slide_content">
+                            <div>
+                                <h4>AI大数据</h4>
+                                <p>2019.09.01</p>
+                                <p>献度的统计数据包括代码提交、创建任务 / Pull Request、合并 Pull Request，其中代码提交的次数需本地配置的 git 邮箱是码云帐号已确认绑定的才会被统计</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper_slide_warp">
+                        <div class="swiper_slide_content">
+                            <div>
+                                <h4>CDN内容加速</h4>
+                                <p>2019.09.01</p>
+                                <p>献度的统计数据包括代码提交、创建任务 / Pull Request、合并 Pull Request，其中代码提交的次数需本地配置的 git 邮箱是码云帐号已确认绑定的才会被统计</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper_slide_warp">
+                        <div class="swiper_slide_content">
+                            <div>
+                                <h4>兼容Oracle的开源企业级数据库</h4>
+                                <p>2019.09.01</p>
+                                <p>献度的统计数据包括代码提交、创建任务 / Pull Request、合并 Pull Request，其中代码提交的次数需本地配置的 git 邮箱是码云帐号已确认绑定的才会被统计</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide">Slide 3</div>
+                <div class="swiper-slide">Slide 4</div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+            
+        </div>
+    </div>
+
+    <!-- 用户 -->
+    <div class="content_user">
+        <div class="content_user_title">
+            <h3>用户</h3>
+        </div>
+        <div>
+            <ul class="content_user_icon">
+                {{ range .Site.Data.clients }}
+                <li><img src="{{ .url }}" alt=""></li>
+                {{ end }}
+            </ul>
+        </div>
+    </div>
+
+</div>

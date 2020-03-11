@@ -1,0 +1,5 @@
+weight: 3
+title: "极致性能"
+description: >
+  "单机百万tpmc，典型配置下sysbench性能数据高出开源数据库30%到50%"
+image: "/img/features/anquan.png"
