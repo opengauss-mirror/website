@@ -32,38 +32,21 @@
         <!-- swiper -->
         <div class="swiper-container">
             <div class="swiper-wrapper">
+                {{ range .Site.Data.swipers }}
                 <div class="swiper-slide">
+                    {{ range $elm := .slide }}
                     <div class="swiper_slide_warp">
                         <div class="swiper_slide_content">
                             <div>
-                                <h4>AI大数据</h4>
-                                <p>2019.09.01</p>
-                                <p>献度的统计数据包括代码提交、创建任务 / Pull Request、合并 Pull Request，其中代码提交的次数需本地配置的 git 邮箱是码云帐号已确认绑定的才会被统计</p>
+                                <h4>{{ $elm.name }}</h4>
+                                <p>{{ $elm.time }}</p>
+                                <p>{{ $elm.content }}</p>
                             </div>
                         </div>
                     </div>
-                    <div class="swiper_slide_warp">
-                        <div class="swiper_slide_content">
-                            <div>
-                                <h4>CDN内容加速</h4>
-                                <p>2019.09.01</p>
-                                <p>献度的统计数据包括代码提交、创建任务 / Pull Request、合并 Pull Request，其中代码提交的次数需本地配置的 git 邮箱是码云帐号已确认绑定的才会被统计</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper_slide_warp">
-                        <div class="swiper_slide_content">
-                            <div>
-                                <h4>兼容Oracle的开源企业级数据库</h4>
-                                <p>2019.09.01</p>
-                                <p>献度的统计数据包括代码提交、创建任务 / Pull Request、合并 Pull Request，其中代码提交的次数需本地配置的 git 邮箱是码云帐号已确认绑定的才会被统计</p>
-                            </div>
-                        </div>
-                    </div>
+                    {{ end }}
                 </div>
-                <div class="swiper-slide">Slide 2</div>
-                <div class="swiper-slide">Slide 3</div>
-                <div class="swiper-slide">Slide 4</div>
+                {{ end }}
             </div>
             <!-- 如果需要分页器 -->
             <div class="swiper-pagination"></div>
