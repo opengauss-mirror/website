@@ -43,12 +43,6 @@ paginate = 10
     weight = 3
 
 [[menu.main]]
-    identifier = "efficient"
-    name = "Efficient"
-    url  = "/en/efficient.html"
-    weight = 4
-
-[[menu.main]]
     identifier = "docs"
     name = "Docs"
     url  = "/en/docs.html"
@@ -68,9 +62,9 @@ paginate = 10
     weight = 7
 
 [[menu.main]]
-    identifier = "contact"
-    name = "Contact Us"
-    url = "/en/contact.html"
+    identifier = "join"
+    name = "Join Us"
+    url = "/en/join.html"
     weight = 8
 
 [[menu.main]]
@@ -99,12 +93,6 @@ paginate = 10
     weight = 3
 
 [[languages.zh.menu.main]]
-    identifier = "efficient"
-    name = "高效"
-    url  = "/en/efficient.html"
-    weight = 4
-
-[[languages.zh.menu.main]]
     identifier = "docs"
     name = "文档"
     url  = "/zh/docs/home.html"
@@ -124,9 +112,9 @@ paginate = 10
     weight = 7
 
 [[languages.zh.menu.main]]
-    identifier = "contact"
-    name = "联系我们"
-    url = "/zh/contact.html"
+    identifier = "join"
+    name = "加入我们"
+    url = "/zh/join.html"
     weight = 8
 
 [[languages.zh.menu.main]]
