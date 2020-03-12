@@ -337,3 +337,57 @@
     height: 50%;
   }
   
+  .navbar {
+    min-height: 58px;
+  }
+  
+  .navbar-brand {
+    padding: 0;
+    padding-top: 5px;
+    height: 58px;
+  }
+  .navbar-nav > li > a {
+    font-family: 'PingFangSC-Regular';
+  }
+  .navbar ul.nav > li > a {
+    border-top: solid 4px transparent;
+  }
+  .navbar ul.nav > li > a:hover {
+    border-top: solid 4px #467fbf;
+  }
+  .navbar ul.nav > li.active > a,
+  .navbar ul.nav > li.open > a {
+    border-top: solid 4px #294d76;
+  }
+  @media (min-width: 768px) {
+    .navbar-nav {
+      margin-left: 30px;
+    }
+    .navbar-nav > li > a {
+      padding: 17px 17px;
+    }
+  }
+  .yamm .container {
+  }
+  .navbar-right > li {
+    padding: 0 12px;
+    width: auto !important;
+    height: 58px;
+  }
+  .navbar-right > li > a {
+    padding: 0 !important;
+    border: 0 !important;
+    letter-spacing: 0 !important;
+    line-height: 58px;
+  }
+  .navbar-right > li:active,.navbar-right > li:hover{
+    background-color: transparent !important;
+  }
+  .navbar-right > li > a:active,.navbar-right > li > a:hover{
+    cursor: pointer;
+    padding: 0;
+    border: 0;
+    background-color: transparent!important;
+    border: none;
+  }
+  
