@@ -10,8 +10,9 @@
                 {{ range .Site.Data.features }}
                 <li>
                     <div>
-                        <div>
-                            <img src="{{ .image }}" alt="">
+                        <div class="header">
+                            <!-- <img src="{{ .image }}" alt=""> -->
+                            {{ partial .image }}
                             <h4>{{ .title }}</h4>
                         </div>
                         <p>{{ .description }}</p>
@@ -57,7 +58,7 @@
     <!-- 用户 -->
     <div class="content_user">
         <div class="content_user_title">
-            <h3>用户</h3>
+            <h3>合作伙伴</h3>
         </div>
         <div>
             <ul class="content_user_icon">

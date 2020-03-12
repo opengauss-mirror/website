@@ -69,9 +69,24 @@ paginate = 10
 
 [[menu.main]]
     identifier = "lang"
-    name = "中文"
-    url = "/zh"
+    name = "English"
     weight = 9
+    hasChidren = true
+
+[[menu.main]]
+    identifier = "zh"
+    name = "简体中文"
+    url  = "/zh"
+    weight = 11
+    parent = "lang"
+
+[[menu.main]]
+    identifier = "en"
+    name = "English"
+    url  = "/en"
+    weight = 12
+    parent = "lang"
+
 
 # Menu chinese
 [[languages.zh.menu.main]]
@@ -119,9 +134,25 @@ paginate = 10
 
 [[languages.zh.menu.main]]
     identifier = "lang"
-    name = "EN"
-    url = "/en"
+    name = "简体中文"
     weight = 9
+    hasChidren = true
+
+[[languages.zh.menu.main]]
+    identifier = "en"
+    name = "English"
+    url  = "/en"
+    weight = 11
+    parent = "lang"
+
+[[languages.zh.menu.main]]
+    identifier = "zh"
+    name = "简体中文"
+    url  = "/zh"
+    weight = 12
+    parent = "lang"
+
+
 
 # Top bar social links menu
 

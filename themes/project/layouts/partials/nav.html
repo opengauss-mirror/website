@@ -98,12 +98,12 @@
             {{ end  }}
           </li>
           {{ end }}
-          {{ if eq .Identifier "lang" }}
-          <!-- <li style="width:67px;text-align: center;"
+          <!-- {{ if eq .Identifier "lang" }}
+          <li style="text-align: center;"
             class=" dropdown{{ if eq $current.RelPermalink .URL | or $isChildren | or (eq (trim $current.RelPermalink "/") $topLevel) | or (eq $current.Type .Identifier) | or (eq $current.Type $topLevel) | or (and (eq (default (trim .URL "/") .Identifier) "blog") (in (slice "taxonomy" "taxonomyTerm") $current.Kind)) }} active{{ end }}">
             <a href="{{ .URL }}">{{ .Name }}</a>
-          </li> -->
-          {{ end }}
+          </li>
+          {{ end }} -->
           {{ end }}
 
 
@@ -121,9 +121,33 @@
               <img style="width:18px;" src="{{ .Site.BaseURL }}img/gitee-logo.ico">
             </a>
           </li>
-          <li style="width:67px;text-align: center;"
-            class=" dropdown">
-            <a href="">EN</a>
+          {{ $current := . }}
+          {{ range .Site.Menus.main }}
+          {{ $topLevel := replace .URL "/" "" }}
+          {{ $isChildren := false }}
+          {{ range .Children }}
+          {{ if eq .Identifier $current.Type }}
+          {{ $isChildren = true }}
+          {{ end }}
+          {{ end }}
+          {{ if eq .Identifier "lang" }}
+          <li
+            class="language-li dropdown{{ if eq $current.RelPermalink .URL | or $isChildren | or (eq (trim $current.RelPermalink "/") $topLevel) | or (eq $current.Type .Identifier) | or (eq $current.Type $topLevel) | or (and (eq (default (trim .URL "/") .Identifier) "blog") (in (slice "taxonomy" "taxonomyTerm") $current.Kind)) }} active{{ end }}">
+            {{ if .HasChildren }}
+            <img class="language-icon" src="{{ $.Site.BaseURL }}img/language.png">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">{{ .Name }} <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              {{ range .Children }}
+              <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+              {{ end }}
+            </ul>
+            {{ end  }}
+          </li>
+          {{ end }}
+          {{ end }}
+
+
           </li>
         </ul>
       </div>
