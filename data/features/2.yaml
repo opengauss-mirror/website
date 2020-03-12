@@ -1,0 +1,5 @@
+weight: 2
+title: "高度兼容"
+description: >
+  "兼容SQL2003标准，高度兼容业界主流商业数据库生态"
+image: "svgs/model.svg"

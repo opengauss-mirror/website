@@ -1,0 +1,72 @@
+<div class="content">
+    <!-- 特性 -->
+    <div class="content_character">
+        <div class="content_character_title">
+            <h3>特性</h3>
+            <p>关于openGauss独特功能介绍</p>
+        </div>
+        <div class="content_character_lists">
+            <ul class="content_character_lists_far">
+                {{ range .Site.Data.features }}
+                <li>
+                    <div>
+                        <div class="header">
+                            <!-- <img src="{{ .image }}" alt=""> -->
+                            {{ partial .image }}
+                            <h4>{{ .title }}</h4>
+                        </div>
+                        <p>{{ .description }}</p>
+                    </div>
+                </li>
+                {{ end  }}
+            </ul>
+        </div>
+    </div>
+
+     <!-- 成功案例 -->
+    <div class="content_success">
+        <div class="content_success_title">
+            <h3>成功案例</h3>
+            <p><a href="#">更多 ></a></p>
+        </div>
+
+        <!-- swiper -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                {{ range .Site.Data.swipers }}
+                <div class="swiper-slide">
+                    {{ range $elm := .slide }}
+                    <div class="swiper_slide_warp">
+                        <div class="swiper_slide_content">
+                            <div>
+                                <h4>{{ $elm.name }}</h4>
+                                <p>{{ $elm.time }}</p>
+                                <p>{{ $elm.content }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {{ end }}
+                </div>
+                {{ end }}
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+            
+        </div>
+    </div>
+
+    <!-- 用户 -->
+    <div class="content_user">
+        <div class="content_user_title">
+            <h3>合作伙伴</h3>
+        </div>
+        <div>
+            <ul class="content_user_icon">
+                {{ range .Site.Data.clients }}
+                <li><img src="{{ .url }}" alt=""></li>
+                {{ end }}
+            </ul>
+        </div>
+    </div>
+
+</div>
