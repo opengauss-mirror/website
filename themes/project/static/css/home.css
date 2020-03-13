@@ -118,6 +118,7 @@
   font-weight: 400;
   color: #333333;
   line-height: 36px;
+  text-align: center;
 }
 
 .content .content_character .content_character_title h3::after {
