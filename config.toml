@@ -59,7 +59,7 @@ paginate = 10
 [[menu.main]]
     identifier = "join"
     name = "Join Us"
-    url = "/en/join.html"
+    url = "mailto:contact@opengauss.org"
     weight = 8
 
 [[menu.main]]

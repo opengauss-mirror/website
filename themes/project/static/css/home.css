@@ -250,7 +250,7 @@
 
 .content .content_success .swiper-container {
   width: 100%;
-  height: 430px;
+  height: 460px;
   margin-top: 13px;
 }
 
@@ -328,7 +328,7 @@
 }
 
 .content .content_success .swiper-container .swiper-slide .swiper_slide_warp:hover .swiper_slide_content div h4 {
-  padding-top: 107px;
+  padding-top: 70px;
   font-family: PingFangSC-Medium;
   font-size: 28px;
   color: #467FBF;
@@ -520,6 +520,7 @@
   background: #467fbf;
   color: #ffffff;
 }
+
 .navbar-left>li:last-child>a>.contact {
   width: auto;
   height: 12px;
@@ -540,6 +541,21 @@
   }
   .navbar-left>li:last-child>a {
     padding: 7px 17px;
+    background: #467fbf;
+    color: #ffffff;
+    border-radius: 2px;
+  }
+  .navbar-left>li:last-child>a:visited {
+    background: #467fbf;
+    color: #ffffff;
+    border-radius: 2px;
+  }
+  .navbar-left>li:last-child>a:active {
+    background: #467fbf;
+    color: #ffffff;
+    border-radius: 2px;
+  }
+  .navbar-left>li:last-child>a:focus {
     background: #467fbf;
     color: #ffffff;
     border-radius: 2px;
