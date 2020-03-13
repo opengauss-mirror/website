@@ -117,8 +117,8 @@ paginate = 10
 
 [[languages.zh.menu.main]]
     identifier = "join"
-    name = "联系我们"
-    url = "/zh/join.html"
+    name = "加入我们"
+    url = "mailto:contact@opengauss.org"
     weight = 8
 
 [[languages.zh.menu.main]]

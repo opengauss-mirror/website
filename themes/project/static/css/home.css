@@ -263,6 +263,15 @@
   height: 405px;
   background: #828183;
 }
+.content .content_success .swiper-container .swiper-slide>div:nth-child(1) {
+  background: url(../img/kubecon-eu-1.png);
+}
+.content .content_success .swiper-container .swiper-slide>div:nth-child(2) {
+  background: url(../img/kubecon-eu-2.png);
+}
+.content .content_success .swiper-container .swiper-slide>div:nth-child(3) {
+  background: url(../img/kubecon-eu-3.png);
+}
 
 .content .content_success .swiper-container .swiper-slide .swiper_slide_warp .swiper_slide_content {
   width: 310px;
