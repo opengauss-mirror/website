@@ -36,11 +36,6 @@ paginate = 10
     url  = "/en/community.html"
     weight = 2
 
-[[menu.main]]
-    identifier = "client"
-    name = "Client"
-    url  = "/en/client.html"
-    weight = 3
 
 [[menu.main]]
     identifier = "docs"
@@ -100,12 +95,6 @@ paginate = 10
     name = "社区"
     url  = "/zh/docs/community.html"
     weight = 2
-
-[[languages.zh.menu.main]]
-    identifier = "client"
-    name = "用户"
-    url  = "/en/client.html"
-    weight = 3
 
 [[languages.zh.menu.main]]
     identifier = "docs"
