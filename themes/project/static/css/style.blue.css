@@ -305,13 +305,13 @@ ul.list-style-none {
   border: none;
 }
 .navbar ul.nav > li > a {
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   text-decoration: underline;
   font-weight: bold;
   letter-spacing: 0.08em;
   border-top: solid 5px transparent;
 }
-.navbar ul.nav > li > a:hover {
+.navbar ul.nav > li:not(:last-child) > a:hover {
   border-top: solid 5px #467fbf;
 }
 .navbar ul.nav > li.active > a,
@@ -3076,8 +3076,8 @@ fieldset[disabled] .btn-template-primary.active {
 .navbar-default .navbar-nav > li > a {
   color: #555555;
 }
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
+.navbar-default .navbar-nav > li:not(:last-child) > a:hover,
+.navbar-default .navbar-nav > li:not(:last-child) > a:focus {
   color: #555555;
   background-color: #92b3d9;
 }
