@@ -154,6 +154,7 @@
   justify-content: flex-start;
   /* align-items: center; */
   width: 50%;
+  height: 170px;
   padding: 0 -32px;
 }
 
@@ -497,13 +498,22 @@
   border-top: solid 4px transparent;
 }
 
-.navbar ul.nav>li>a:hover {
+.navbar ul.nav>li:not(:last-child)>a:hover {
   border-top: solid 4px #467fbf;
 }
 
 .navbar ul.nav>li.active>a,
 .navbar ul.nav>li.open>a {
   border-top: solid 4px #294d76;
+}
+.navbar-left>li:last-child>a:hover {
+  background: #467fbf;
+  color: #ffffff;
+}
+.navbar-left>li:last-child>a>.contact {
+  width: auto;
+  height: 12px;
+  vertical-align: baseline;
 }
 
 @media (min-width: 768px) {
@@ -514,6 +524,16 @@
   .navbar-nav>li>a {
     padding: 17px 17px;
   }
+
+  .navbar-nav>li:last-child {
+    padding: 10px 0;
+  }
+  .navbar-left>li:last-child>a {
+    padding: 7px 17px;
+    background: #467fbf;
+    color: #ffffff;
+    border-radius: 2px;
+  }
 }
 
 .yamm .container {}
@@ -522,6 +542,7 @@
   padding: 0 12px;
   width: auto !important;
   height: 58px;
+  position: relative;
 }
 
 .navbar-right>li>a {
@@ -546,6 +567,25 @@
   background-color: transparent !important;
   border: none;
   outline: none;
+}
+
+.navbar-right>li>.wechat {
+  height: 0;
+  width: auto;
+  background: #ffffff;
+  position: absolute;
+  left: 50%;
+  transition: all .5s;
+  overflow: hidden;
+  transform: translateX(-50%);
+}
+.navbar-right>li>.wechat>p {
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  color: #555555;
+}
+.navbar-right>.weixin:hover .wechat{
+  height: 288px;
 }
 
 .navbar-right>.language-li {

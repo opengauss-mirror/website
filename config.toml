@@ -117,7 +117,7 @@ paginate = 10
 
 [[languages.zh.menu.main]]
     identifier = "join"
-    name = "加入我们"
+    name = "联系我们"
     url = "/zh/join.html"
     weight = 8
 
