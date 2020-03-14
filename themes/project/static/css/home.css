@@ -58,10 +58,10 @@
 
 .content {
   margin: auto;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
 }
 @media (min-width: 1280px){
   .content{
@@ -73,31 +73,145 @@
   .content{
     width: 90%;
   }
+  /* swiper */
+  .content .content_success .swiper-container .swiper-slide {
+    justify-content: center !important;
+  }
+  
 }
 @media (max-width: 768px) {
   .content{
     width: 90%;
     height: auto;
   }
-  .content_character_lists_far{
-    display: none !important;
+  .content_character_lists {
+    width: 100% !important;
   }
+ 
+  .content_character_lists_far{
+    /* display: none !important; */
+    padding: 0;
+  }
+  .content_character_lists ul li {
+    width: 45%;
+    padding: 0 .2rem;
+  }
+  .content_character_lists ul li div div {
+    margin: 0 !important;
+  }
+  .content_character_lists_far div svg {
+    width: .3rem !important;
+    height: .3rem !important;
+  }
+  .content_character_lists ul li div div h4 {
+    font-size: .3rem !important;
+    line-height: 20px !important;
+    margin-left: 8px !important;
+  }
+  .content_character_lists ul li p {
+    font-size: .12rem !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  body .content .content_success {
+    margin-top: .6rem;
+  }
+
   .banner_title{
-    font-size: 20px !important;
+    font-size: .4rem !important;
     line-height: 1.5 !important;
     margin: 0 !important;
   }
   .banner_intro{
-    font-size: 16px !important;
+    width: 80%;
+    font-size: .1rem !important;
     line-height: 1.5 !important;
     height: auto !important;
     margin-bottom: 19px;
+    margin-top: 0 !important;
+  }
+  .banner_btn {
+    margin-bottom: .2rem
+  }
+  .banner .banner_btn button {
+    width: 80px;
+    height: auto;
   }
   .banner{
-    height: auto;
-    padding: 20px 0;
+    height: 3.5rem;
     justify-content: flex-start;
+    background-size: 100% 100%;
+    margin-bottom: 0;
   }
+
+  .content .content_character {
+    margin-top: 0 !important;
+    flex-direction: column;
+  }
+  .content .content_character {
+    width: 100% !important;
+  }
+
+  .content .content_character .content_character_title {
+    width: auto !important;
+  }
+  .content .content_character .content_character_title h3,.content .content_success .content_success_title h3,
+  .content .content_user .content_user_title h3 {
+    font-size: 0.4rem !important;
+    line-height: .4rem !important;
+  }
+
+  body .content .content_success .swiper-container .swiper-slide .swiper_slide_warp .swiper_slide_content div h4 {
+    font-size: 0.4rem !important;
+  }
+
+  .content .content_success .swiper-container .swiper-slide .swiper_slide_warp {
+    width: 7rem !important;
+  }
+
+  /* body .content .content_success .swiper-container div:nth-child(2) .swiper_slide_warp {
+    background: url(../img/kubecon-eu-1.png) no-repeat;
+  }
+  body .content .content_success .swiper-container div:nth-child(3) .swiper_slide_warp {
+    background: url(../img/kubecon-eu-2.png) no-repeat;
+  }
+  body .content .content_success .swiper-container div:nth-child(4) .swiper_slide_warp {
+    background: url(../img/kubecon-eu-3.png) no-repeat;
+  } */
+
+  /* swiper */
+  .swiper_slide_content {
+    margin: .24rem !important;
+  }
+  .content .content_success .swiper-container .swiper-slide {
+    justify-content: center !important;
+  }
+  .content .content_success .content_success_title p {
+    display: none;
+  }
+}
+
+/* h5二维码 */
+.qrCode {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 40%;
+  height: auto;
+}
+.qrCode img {
+  width: 100%;
+  height: auto;
+}
+.qrCode p {
+  text-align: center;
+  background: #ffffff;
+}
+.qrCode_show {
+  display: block;
+}
+.qrCode_hide {
+  display: none;
 }
 
 .content .content_character {
@@ -193,8 +307,8 @@
 }
 
 .content_character_lists_far .header svg {
-  width: 32px !important;
-  height: 32px !important;
+  width: 32px /* !important */;
+  height: 32px /* !important */;
 }
 
 .content .content_character .content_character_lists ul li path {
@@ -265,13 +379,13 @@
   background: #828183;
 }
 .content .content_success .swiper-container .swiper-slide>div:nth-child(1) {
-  background: url(../img/kubecon-eu-1.png);
+  background: url(../img/kubecon-eu-1.png) no-repeat;
 }
 .content .content_success .swiper-container .swiper-slide>div:nth-child(2) {
-  background: url(../img/kubecon-eu-2.png);
+  background: url(../img/kubecon-eu-2.png) no-repeat;
 }
 .content .content_success .swiper-container .swiper-slide>div:nth-child(3) {
-  background: url(../img/kubecon-eu-3.png);
+  background: url(../img/kubecon-eu-3.png) no-repeat;
 }
 
 .content .content_success .swiper-container .swiper-slide .swiper_slide_warp .swiper_slide_content {
@@ -403,7 +517,7 @@
     margin-top: 0.5rem;
   }
   .content .content_user .content_user_icon li {
-    width: 25%;
+    width: 33%;
   }
 }
 

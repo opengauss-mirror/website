@@ -20,3 +20,25 @@ var mySwiper = new Swiper ('.swiper-container', {
       this.click();
     };
   } */
+
+
+  //h5 点击微信图片显示二维码
+  $('.list_wechat').on('click',function() {
+    $('.qrCode').removeClass("qrCode_hide");
+    $('.qrCode').addClass("qrCode_show");
+  })
+
+  //触屏隐藏二维码
+  $('body').on('touchend',function() {
+    $('.qrCode').removeClass("qrCode_show");
+    $('.qrCode').addClass("qrCode_hide");
+  })
+
+  //滚动隐藏二维码
+  $(window).on('scroll',function() {
+    if($('.qrCode').hasClass('qrCode_show')) {
+      $('.qrCode').removeClass("qrCode_show");
+      $('.qrCode').addClass("qrCode_hide");
+    }
+  })
+  
