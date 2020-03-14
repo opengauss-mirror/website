@@ -31,7 +31,7 @@
         </div>
 
         <!-- swiper -->
-        <div class="swiper-container">
+        <div class="swiper-container isPc">
             <div class="swiper-wrapper">
                 {{ range .Site.Data.swipers }}
                 <div class="swiper-slide">
@@ -47,6 +47,29 @@
                     </div>
                     {{ end }}
                 </div>
+                {{ end }}
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+            
+        </div>
+
+        <div class="swiper-container isH5">
+            <div class="swiper-wrapper">
+                {{ range .Site.Data.swipersH5 }}
+                {{ range $elm := .slide }}
+                <div class="swiper-slide">
+                    <div class="swiper_slide_warp" style="background: url({{$elm.url}}) no-repeat;">
+                        <div class="swiper_slide_content">
+                            <div>
+                                <h4>{{ $elm.name }}</h4>
+                                <p>{{ $elm.time }}</p>
+                                <p>{{ $elm.content }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{ end }}
                 {{ end }}
             </div>
             <!-- 如果需要分页器 -->
