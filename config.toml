@@ -93,7 +93,7 @@ paginate = 10
 [[languages.zh.menu.main]]
     identifier = "community"
     name = "社区"
-    url  = "/zh/docs/community.html"
+    url  = "/zh/community.html"
     weight = 2
 
 [[languages.zh.menu.main]]
