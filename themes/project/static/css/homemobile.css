@@ -1,0 +1,200 @@
+@media (min-width: 1280px) {
+  .content {
+    width: 80%;
+    max-width: 1140px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .content {
+    width: 90%;
+  }
+  /* swiper */
+  .content .content_success .swiper-container .swiper-slide {
+    justify-content: center !important;
+  }
+}
+@media (max-width: 768px) {
+  .content {
+    width: 90%;
+    height: auto;
+  }
+  .content_character_lists {
+    width: 100% !important;
+  }
+  .content_user {
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  .content .content_user .content_user_icon {
+    margin-top: 0.5rem;
+  }
+  .content .content_user .content_user_icon li {
+    width: 33%;
+  }
+
+  .content_character_lists_far {
+    /* display: none !important; */
+    padding: 0;
+  }
+  .content_character_lists ul li {
+    width: 45%;
+    padding: 0 0.2rem;
+  }
+  .content_character_lists ul li div div {
+    margin: 0 !important;
+  }
+  .content_character_lists_far div svg {
+    width: 0.3rem !important;
+    height: 0.3rem !important;
+  }
+  .content_character_lists ul li div div h4 {
+    font-size: 0.3rem !important;
+    line-height: 20px !important;
+    margin-left: 8px !important;
+  }
+  .content_character_lists ul li p {
+    font-size: 0.12rem !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  body .content .content_success {
+    margin-top: 0.6rem;
+  }
+
+  .banner_title {
+    font-size: 0.4rem !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
+  }
+  .banner_intro {
+    width: 80%;
+    font-size: 0.1rem !important;
+    line-height: 1.5 !important;
+    height: auto !important;
+    margin-bottom: 19px;
+    margin-top: 0 !important;
+  }
+  .banner_btn {
+    margin-bottom: 0.2rem;
+  }
+  .banner .banner_btn button {
+    width: 80px;
+    height: auto;
+  }
+  .banner {
+    height: 3.5rem;
+    justify-content: flex-start;
+    background-size: 100% 100%;
+    margin-bottom: 0;
+  }
+
+  .content .content_character {
+    margin-top: 0 !important;
+    flex-direction: column;
+  }
+  .content .content_character {
+    width: 100% !important;
+  }
+
+  .content .content_character .content_character_title {
+    width: auto !important;
+  }
+  .content .content_character .content_character_title h3,
+  .content .content_success .content_success_title h3,
+  .content .content_user .content_user_title h3 {
+    font-size: 0.4rem !important;
+    line-height: 0.4rem !important;
+  }
+
+  body
+    .content
+    .content_success
+    .swiper-container
+    .swiper-slide
+    .swiper_slide_warp
+    .swiper_slide_content
+    div
+    h4 {
+    font-size: 0.4rem !important;
+  }
+
+  .content .content_success .swiper-container .swiper-slide .swiper_slide_warp {
+    width: 7rem !important;
+  }
+
+  /* body .content .content_success .swiper-container div:nth-child(2) .swiper_slide_warp {
+      background: url(../img/kubecon-eu-1.png) no-repeat;
+    }
+    body .content .content_success .swiper-container div:nth-child(3) .swiper_slide_warp {
+      background: url(../img/kubecon-eu-2.png) no-repeat;
+    }
+    body .content .content_success .swiper-container div:nth-child(4) .swiper_slide_warp {
+      background: url(../img/kubecon-eu-3.png) no-repeat;
+    } */
+
+  /* swiper */
+  .swiper_slide_content {
+    margin: 0.24rem !important;
+  }
+  .content .content_success .swiper-container .swiper-slide {
+    justify-content: center !important;
+  }
+  .content .content_success .content_success_title p {
+    display: none;
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 1366px) {
+  .content .content_user .content_user_icon li {
+    width: 25%;
+  }
+}
+
+@media (min-width: 1366px) {
+  .content .content_user .content_user_icon li {
+    width: 20%;
+  }
+}
+@media (min-width: 768px) {
+  .navbar-nav {
+    margin-left: 30px;
+  }
+
+  .navbar-nav > li > a {
+    padding: 17px 17px;
+  }
+
+  .navbar-nav > li:last-child:not(.language-li) {
+    padding: 10px 0;
+  }
+  .navbar-left > li:last-child > a {
+    padding: 7px 17px;
+    background: #467fbf;
+    color: #ffffff;
+    border-radius: 2px;
+  }
+  .navbar-left > li:last-child > a:visited {
+    background: #467fbf;
+    color: #ffffff;
+    border-radius: 2px;
+  }
+  .navbar-left > li:last-child > a:active {
+    background: #467fbf;
+    color: #ffffff;
+    border-radius: 2px;
+  }
+  .navbar-left > li:last-child > a:focus {
+    background: #467fbf;
+    color: #ffffff;
+    border-radius: 2px;
+  }
+}
+@media screen and (max-width: 1280px) and (min-width: 768px) {
+  .isPad {
+    width: 100%;
+  }
+  header .topbar {
+    margin: 0 0 0 80%;
+  }
+}

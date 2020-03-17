@@ -31,114 +31,207 @@ paginate = 10
     weight = 1
 
 [[menu.main]]
-    identifier = "community"
-    name = "Community"
-    url  = "/en/community.html"
-    weight = 2
-
-
-[[menu.main]]
-    identifier = "docs"
-    name = "Docs"
-    url  = "/en/docs.html"
-    weight = 5
-    hasChidren = true
-
-[[menu.main]]
     identifier = "download"
     name = "Download"
     url  = "/en/download.html"
+    weight = 2
+
+[[menu.main]]
+    identifier = "docs"
+    name = "Document"
+    url  = "/en/docs.html"
+    weight = 3
+
+[[menu.main]]
+    identifier = "community"
+    name = "Community"
+    weight = 4
+    hasChidren = true
+
+[[menu.main]]
+    identifier = "news"
+    name = "News"
+    url  = "/zh/docs/community.html"
+    weight = 5
+    parent = "community"
+
+[[menu.main]]
+    identifier = "events"
+    name = "Events"
+    url  = "/zh/docs/community.html"
     weight = 6
+    parent = "community"
+
+[[menu.main]]
+    identifier = "contributions"
+    name = "Contributions"
+    url  = "/zh/docs/community.html"
+    weight = 7
+    parent = "community"
+
+[[menu.main]]
+    identifier = "mailLists"
+    name = "MailLists"
+    url  = "/zh/docs/community.html"
+    weight = 8
+    parent = "community"
+
+[[menu.main]]
+    identifier = "communications"
+    name = "Communications"
+    url  = "/zh/docs/community.html"
+    weight = 9
+    parent = "community"
+
+[[menu.main]]
+    identifier = "meetings"
+    name = "Meetings"
+    url  = "/zh/docs/community.html"
+    weight = 10
+    parent = "community"
 
 [[menu.main]]
     identifier = "security"
     name = "Security"
     url  = "/en/security.html"
-    weight = 7
+    weight = 11
+
+[[menu.main]]
+    identifier = "blog"
+    name = "Blog"
+    url  = "/en/security.html"
+    weight = 12
 
 [[menu.main]]
     identifier = "join"
     name = "Join Us"
     url = "mailto:contact@opengauss.org"
-    weight = 8
+    weight = 13
 
 [[menu.main]]
     identifier = "lang"
     name = "English"
-    weight = 9
+    weight = 14
     hasChidren = true
 
 [[menu.main]]
     identifier = "zh"
     name = "简体中文"
     url  = "/zh"
-    weight = 11
+    weight = 15
     parent = "lang"
 
 [[menu.main]]
     identifier = "en"
     name = "English"
     url  = "/en"
-    weight = 12
+    weight = 16
     parent = "lang"
 
 
 # Menu chinese
 [[languages.zh.menu.main]]
     dentifier="home"
-    name = "首页"
+    name = "主页"
     url  = "/zh"
     weight = 1
 
 [[languages.zh.menu.main]]
-    identifier = "community"
-    name = "社区"
-    url  = "/zh/docs/community.html"
+    dentifier="download"
+    name = "下载"
+    url  = "/zh/docs/home.html"
     weight = 2
 
 [[languages.zh.menu.main]]
     identifier = "docs"
     name = "文档"
     url  = "/zh/docs/home.html"
-    weight = 5
+    weight = 3
+
+[[languages.zh.menu.main]]
+    identifier = "community"
+    name = "社区"
+    weight = 4
     hasChidren = true
 
 [[languages.zh.menu.main]]
-    identifier = "download"
-    name = "下载"
-    url  = "/zh/download.html"
+    identifier = "news"
+    name = "新闻"
+    url  = "/zh/docs/community.html"
+    weight = 5
+    parent = "community"
+
+[[languages.zh.menu.main]]
+    identifier = "events"
+    name = "活动"
+    url  = "/zh/docs/community.html"
     weight = 6
+    parent = "community"
+
+[[languages.zh.menu.main]]
+    identifier = "contributions"
+    name = "社区贡献"
+    url  = "/zh/docs/community.html"
+    weight = 7
+    parent = "community"
+
+[[languages.zh.menu.main]]
+    identifier = "mailLists"
+    name = "邮件列表"
+    url  = "/zh/docs/community.html"
+    weight = 8
+    parent = "community"
+
+[[languages.zh.menu.main]]
+    identifier = "communications"
+    name = "线上交流"
+    url  = "/zh/docs/community.html"
+    weight = 9
+    parent = "community"
+
+[[languages.zh.menu.main]]
+    identifier = "meetings"
+    name = "线上会议"
+    url  = "/zh/docs/community.html"
+    weight = 10
+    parent = "community"
 
 [[languages.zh.menu.main]]
     identifier = "security"
     name = "安全"
     url  = "/zh/security.html"
-    weight = 7
+    weight = 11
+
+[[languages.zh.menu.main]]
+    identifier = "blog"
+    name = "博客"
+    url  = "/zh/security.html"
+    weight = 12
 
 [[languages.zh.menu.main]]
     identifier = "join"
     name = "加入我们"
     url = "mailto:contact@opengauss.org"
-    weight = 8
+    weight = 13
 
 [[languages.zh.menu.main]]
     identifier = "lang"
     name = "简体中文"
-    weight = 9
+    weight = 14
     hasChidren = true
 
 [[languages.zh.menu.main]]
     identifier = "en"
     name = "English"
     url  = "/en"
-    weight = 11
+    weight = 15
     parent = "lang"
 
 [[languages.zh.menu.main]]
     identifier = "zh"
     name = "简体中文"
     url  = "/zh"
-    weight = 12
+    weight = 16
     parent = "lang"
 
 

@@ -63,133 +63,7 @@
   align-items: center;
   justify-content: center; */
 }
-@media (min-width: 1280px){
-  .content{
-    width: 80%;
-    max-width: 1140px;
-  }
-}
-@media (min-width: 768px) and (max-width: 1280px) {
-  .content{
-    width: 90%;
-  }
-  /* swiper */
-  .content .content_success .swiper-container .swiper-slide {
-    justify-content: center !important;
-  }
-  
-}
-@media (max-width: 768px) {
-  .content{
-    width: 90%;
-    height: auto;
-  }
-  .content_character_lists {
-    width: 100% !important;
-  }
- 
-  .content_character_lists_far{
-    /* display: none !important; */
-    padding: 0;
-  }
-  .content_character_lists ul li {
-    width: 45%;
-    padding: 0 .2rem;
-  }
-  .content_character_lists ul li div div {
-    margin: 0 !important;
-  }
-  .content_character_lists_far div svg {
-    width: .3rem !important;
-    height: .3rem !important;
-  }
-  .content_character_lists ul li div div h4 {
-    font-size: .3rem !important;
-    line-height: 20px !important;
-    margin-left: 8px !important;
-  }
-  .content_character_lists ul li p {
-    font-size: .12rem !important;
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-  body .content .content_success {
-    margin-top: .6rem;
-  }
 
-  .banner_title{
-    font-size: .4rem !important;
-    line-height: 1.5 !important;
-    margin: 0 !important;
-  }
-  .banner_intro{
-    width: 80%;
-    font-size: .1rem !important;
-    line-height: 1.5 !important;
-    height: auto !important;
-    margin-bottom: 19px;
-    margin-top: 0 !important;
-  }
-  .banner_btn {
-    margin-bottom: .2rem
-  }
-  .banner .banner_btn button {
-    width: 80px;
-    height: auto;
-  }
-  .banner{
-    height: 3.5rem;
-    justify-content: flex-start;
-    background-size: 100% 100%;
-    margin-bottom: 0;
-  }
-
-  .content .content_character {
-    margin-top: 0 !important;
-    flex-direction: column;
-  }
-  .content .content_character {
-    width: 100% !important;
-  }
-
-  .content .content_character .content_character_title {
-    width: auto !important;
-  }
-  .content .content_character .content_character_title h3,.content .content_success .content_success_title h3,
-  .content .content_user .content_user_title h3 {
-    font-size: 0.4rem !important;
-    line-height: .4rem !important;
-  }
-
-  body .content .content_success .swiper-container .swiper-slide .swiper_slide_warp .swiper_slide_content div h4 {
-    font-size: 0.4rem !important;
-  }
-
-  .content .content_success .swiper-container .swiper-slide .swiper_slide_warp {
-    width: 7rem !important;
-  }
-
-  /* body .content .content_success .swiper-container div:nth-child(2) .swiper_slide_warp {
-    background: url(../img/kubecon-eu-1.png) no-repeat;
-  }
-  body .content .content_success .swiper-container div:nth-child(3) .swiper_slide_warp {
-    background: url(../img/kubecon-eu-2.png) no-repeat;
-  }
-  body .content .content_success .swiper-container div:nth-child(4) .swiper_slide_warp {
-    background: url(../img/kubecon-eu-3.png) no-repeat;
-  } */
-
-  /* swiper */
-  .swiper_slide_content {
-    margin: .24rem !important;
-  }
-  .content .content_success .swiper-container .swiper-slide {
-    justify-content: center !important;
-  }
-  .content .content_success .content_success_title p {
-    display: none;
-  }
-}
 
 /* h5二维码 */
 .qrCode {
@@ -307,8 +181,8 @@
 }
 
 .content_character_lists_far .header svg {
-  width: 32px /* !important */;
-  height: 32px /* !important */;
+  width: 32px;
+  height: 32px;
 }
 
 .content .content_character .content_character_lists ul li path {
@@ -508,30 +382,7 @@
   padding: 1.5% 3%;
 }
 
-@media (max-width: 768px) {
-  .content_user{
-    margin-top: 0.5rem !important;
-    margin-bottom: 0.5rem !important;
-  }
-  .content .content_user .content_user_icon{
-    margin-top: 0.5rem;
-  }
-  .content .content_user .content_user_icon li {
-    width: 33%;
-  }
-}
 
-@media (min-width: 768px) and (max-width: 1366px) {
-  .content .content_user .content_user_icon li {
-    width: 25%;
-  }
-}
-
-@media (min-width: 1366px) {
-  .content .content_user .content_user_icon li {
-    width: 20%;
-  }
-}
 
 .content .content_user .content_user_icon li img {
   max-width: 100%;
@@ -618,16 +469,16 @@
   font-family: 'PingFangSC-Regular';
 }
 
-.navbar ul.nav>li>a {
+.navbar ul.navbar-left>li>a {
   border-top: solid 4px transparent;
 }
 
-.navbar ul.nav>li:not(:last-child)>a:hover {
+.navbar ul.navbar-left>li:not(:last-child)>a:hover {
   border-top: solid 4px #467fbf;
 }
 
-.navbar ul.nav>li.active>a,
-.navbar ul.nav>li.open>a {
+.navbar ul.navbar-left>li.active>a,
+.navbar ul.navbar-left>li.open>a {
   border-top: solid 4px #294d76;
 }
 .navbar-left>li:last-child>a:hover {
@@ -641,61 +492,24 @@
   vertical-align: baseline;
 }
 
-@media (min-width: 768px) {
-  .navbar-nav {
-    margin-left: 30px;
-  }
-
-  .navbar-nav>li>a {
-    padding: 17px 17px;
-  }
-
-  .navbar-nav>li:last-child {
-    padding: 10px 0;
-  }
-  .navbar-left>li:last-child>a {
-    padding: 7px 17px;
-    background: #467fbf;
-    color: #ffffff;
-    border-radius: 2px;
-  }
-  .navbar-left>li:last-child>a:visited {
-    background: #467fbf;
-    color: #ffffff;
-    border-radius: 2px;
-  }
-  .navbar-left>li:last-child>a:active {
-    background: #467fbf;
-    color: #ffffff;
-    border-radius: 2px;
-  }
-  .navbar-left>li:last-child>a:focus {
-    background: #467fbf;
-    color: #ffffff;
-    border-radius: 2px;
-  }
-}
-
-.yamm .container {}
-
 .navbar-right>li {
   padding: 0 12px;
-  width: auto !important;
+  width: auto /* !important */;
   height: 58px;
   position: relative;
 }
 
-.navbar-right>li>a {
-  padding: 0 !important;
-  border: 0 !important;
-  letter-spacing: 0 !important;
+.navbar-collapse>.navbar-right>li>a {
+  padding: 0 /* !important */;
+  border: 0 /* !important */;
+  letter-spacing: 0 /* !important */;
   line-height: 58px;
 }
 
 .navbar-right>li:active,
 .navbar-right>li:hover,
 .navbar-right>li:focus {
-  background-color: transparent !important;
+  background-color: transparent /* !important */;
 }
 
 .navbar-right>li>a:active,
@@ -704,7 +518,7 @@
   cursor: pointer;
   padding: 0;
   border: 0;
-  background-color: transparent !important;
+  background-color: transparent /* !important */;
   border: none;
   outline: none;
 }
@@ -744,11 +558,3 @@
   height: 18px;
 }
 
-@media screen and (max-width: 1280px) and (min-width: 768px) {
-  .isPad {
-    width: 100%;
-  }
-  header .topbar {
-    margin: 0 0 0 80%;
-  }
-}
