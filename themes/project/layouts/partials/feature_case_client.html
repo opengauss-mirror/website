@@ -59,7 +59,7 @@
                 {{ range .Site.Data.swipersH5 }}
                 {{ range $elm := .slide }}
                 <div class="swiper-slide">
-                    <div class="swiper_slide_warp" style="background: url({{$elm.url}}) no-repeat;">
+                    <div class="swiper_slide_warp" style="background: url({{$elm.url}}) no-repeat;background-size: 100% 100%;">
                         <div class="swiper_slide_content">
                             <div>
                                 <h4>{{ $elm.name }}</h4>
