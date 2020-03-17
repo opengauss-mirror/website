@@ -139,7 +139,7 @@ paginate = 10
 [[languages.zh.menu.main]]
     dentifier="download"
     name = "下载"
-    url  = "/zh/docs/home.html"
+    url  = "/zh/docs/hg.html"
     weight = 2
 
 [[languages.zh.menu.main]]
