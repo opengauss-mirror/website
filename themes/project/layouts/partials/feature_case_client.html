@@ -78,6 +78,42 @@
         </div>
     </div>
 
+    <!-- 新闻 -->
+    <div class="news">
+        {{ range .Site.Data.news }}
+        <div class="new_content">
+            <div class="new_title">
+                <span>{{ .title }}</span>
+                <a href="#">More &gt;</a>
+            </div>
+            <ul>
+            {{ range $elm := .content }}
+            {{ if $elm.url }}
+            <li class="news_bg">
+                <div>
+                    NEWS
+                    <span>|</span>
+                    {{ $elm.time }}
+                </div>
+                <p>{{ $elm.name }}</p>
+            </li>
+            {{ else }}
+            <li>
+                <div>
+                    NEWS
+                    <span>|</span>
+                    {{ $elm.time }}
+                </div>
+                <p>{{ $elm.name }}</p>
+            </li>
+            {{ end }}
+            {{ end }}
+            </ul>
+            
+        </div>
+        {{  end }}
+    </div>
+
     <!-- 用户 -->
     <div class="content_user">
         <div class="content_user_title">
