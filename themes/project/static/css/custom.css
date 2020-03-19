@@ -12,7 +12,8 @@ footer .foot {
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
+  flex-direction: column;
 }
 footer .contact svg {
   width: 14px;
@@ -34,7 +35,7 @@ footer .contact h2 {
   color: #fff;
 }
 footer .notice {
-  width: 670px;
+  width: 100%;
   font-size: 13px;
   color: #909090;
   line-height: 28px;

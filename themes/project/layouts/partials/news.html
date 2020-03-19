@@ -1,0 +1,38 @@
+<div class="warp">
+    <div class="news">
+        {{ range .Site.Data.news }}
+        <div class="new_content">
+            <ul>
+                <li class="new_title">
+                    <div>
+                        <span>{{ .title }}</span>
+                        <a href="#">{{ .more }} &gt;</a>
+                    </div>
+                </li>
+                {{ range $elm := .content }}
+                {{ if $elm.url }}
+                <li class="news_bg">
+                    <div>
+                        {{ $elm.plate }}
+                        <span>|</span>
+                        {{ $elm.time }}
+                    </div>
+                    <a href="#"><p>{{ $elm.name }}</p></a>
+                </li>
+                {{ else }}
+                <li>
+                    <div>
+                        {{ $elm.plate }}
+                        <span>|</span>
+                        {{ $elm.time }}
+                    </div>
+                    <a href="#"><p>{{ $elm.name }}</p></a>
+                </li>
+                {{ end }}
+                {{ end }}
+            </ul>
+            
+        </div>
+        {{  end }}
+    </div>
+</div>
