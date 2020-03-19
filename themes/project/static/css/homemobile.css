@@ -172,6 +172,10 @@
   .content .content_success .content_success_title p {
     display: none;
   }
+
+  .news {
+    display: none;
+  }
 }
 
 
