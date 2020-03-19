@@ -240,9 +240,86 @@ paginate = 10
 
 [[menu.topbar]]
     weight = 1
-    name = "GitHub"
-    url = "https://gitee.com/opengauss"
-    pre = "<i class='fa fa-2x fa-github'></i>"
+    name = "wechat"
+    url = "/zh/docs/community.html"
+
+[[languages.zh.menu.topbar]]
+    weight = 1
+    name = "微信"
+    url = "/zh/docs/community.html"
+
+
+# features
+[[menu.features]]
+    weight= 1
+    title= "Kunpeng ecological"
+    description= "The world's first database supporting kunpeng and x86 hardware architecture"
+    image= "svgs/store.svg"
+
+[[menu.features]]
+    weight= 2
+    title= "Highly compatible"
+    description= "兼容SQL2003标准，高度兼容业界主流商业数据库生态"
+    image= "svgs/model.svg"
+[[menu.features]]
+    weight= 3
+    title= "极致性能"
+    description= "单机百万tpmc，典型配置下sysbench性能数据高出开源数据库30%到50%"
+    image= "svgs/fun_define.svg"
+
+[[menu.features]]
+    weight= 4
+    title= "简单易用"
+    description= "支持丰富的SQL、存储过程、自定义函数，提供丰富的API接口"
+    image= "svgs/nerve.svg"
+
+[[menu.features]]
+    weight= 5
+    title= "安全可靠"
+    description= "系统稳定可靠提供单机主备版本。数据误操作秒级闪回恢复，用户权限管理，多维度审计，数据无忧"
+    image= "svgs/sec.svg"
+
+[[menu.features]]
+    weight= 6
+    title= "MulanPSL"
+    description= "采用木兰宽松许可证协议（MulanPSL V2）"
+    image= "svgs/shape.svg"
+
+[[languages.zh.menu.features]]
+    weight= 1
+    title= "鲲鹏生态"
+    description= "全球首款支持鲲鹏和x86硬件架构的数据库"
+    image= "svgs/store.svg"
+
+[[languages.zh.menu.features]]
+    weight= 2
+    title= "高度兼容"
+    description= "兼容SQL2003标准，高度兼容业界主流商业数据库生态"
+    image= "svgs/model.svg"
+[[languages.zh.menu.features]]
+    weight= 3
+    title= "极致性能"
+    description= "单机百万tpmc，典型配置下sysbench性能数据高出开源数据库30%到50%"
+    image= "svgs/fun_define.svg"
+
+[[languages.zh.menu.features]]
+    weight= 4
+    title= "简单易用"
+    description= "支持丰富的SQL、存储过程、自定义函数，提供丰富的API接口"
+    image= "svgs/nerve.svg"
+
+[[languages.zh.menu.features]]
+    weight= 5
+    title= "安全可靠"
+    description= "系统稳定可靠提供单机主备版本。数据误操作秒级闪回恢复，用户权限管理，多维度审计，数据无忧"
+    image= "svgs/sec.svg"
+
+[[languages.zh.menu.features]]
+    weight= 6
+    title= "MulanPSL"
+    description= "采用木兰宽松许可证协议（MulanPSL V2）"
+    image= "svgs/shape.svg"
+   
 
 [params]
     viewMorePostLink = "/news/"
@@ -359,3 +436,4 @@ paginate = 10
 [languages.zh]
     languageCode = "zh-cn"
     contentDir = "content/zh"
+

@@ -121,15 +121,14 @@
   footer {
     padding: .4rem .6rem;
   }
-  footer .foot {
+  /* footer .foot {
     display: block;
-  }
+  } */
   footer .foot .contact {
     display: flex;
-    display: -webkit-flex;
     justify-content: space-between;
     align-items: flex-end;
-    -webkit-box-align: flex-end;
+    /* height: .44rem; */
   }
   footer .foot .contact h2 {
     font-size: 0.4rem;
@@ -140,6 +139,7 @@
   }
   footer .foot .contact svg {
     width: 12px;
+    height: 17px;
   }
   footer .foot .notice {
     margin-top: .4rem;
@@ -240,9 +240,6 @@
   
   footer {
     padding: 20px 30px 20px;
-  }
-  footer .notice {
-    width: 360px;
   }
   .isPad {
     display: block !important;

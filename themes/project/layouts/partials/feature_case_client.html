@@ -2,7 +2,7 @@
     <!-- 特性 -->
     <div class="content_character">
         <div class="content_character_title">
-            <h3>关键特性</h3>
+            <h3>{{ i18n "main_characterr_title" }}</h3>
             <!-- <p>关于openGauss独特功能介绍</p> -->
         </div>
         <div class="content_character_lists">
@@ -24,13 +24,13 @@
     </div>
 
      <!-- 成功案例 -->
-    <div class="content_success">
+    <!-- <div class="content_success">
         <div class="content_success_title">
             <h3>成功案例</h3>
             <p><a href="#">更多 ></a></p>
         </div>
 
-        <!-- swiper -->
+        
         <div class="swiper-container isPc">
             <div class="swiper-wrapper">
                 {{ range .Site.Data.swipers }}
@@ -48,9 +48,9 @@
                     {{ end }}
                 </div>
                 {{ end }}
-            </div>
+            </div> -->
             <!-- 如果需要分页器 -->
-            <div class="swiper-pagination"></div>
+            <!-- <div class="swiper-pagination"></div>
             
         </div>
 
@@ -71,61 +71,10 @@
                 </div>
                 {{ end }}
                 {{ end }}
-            </div>
+            </div> -->
             <!-- 如果需要分页器 -->
-            <div class="swiper-pagination"></div>
+            <!-- <div class="swiper-pagination"></div>
             
         </div>
-    </div>
-
-    <!-- 新闻 -->
-    <div class="news">
-        {{ range .Site.Data.news }}
-        <div class="new_content">
-            <div class="new_title">
-                <span>{{ .title }}</span>
-                <a href="#">More &gt;</a>
-            </div>
-            <ul>
-            {{ range $elm := .content }}
-            {{ if $elm.url }}
-            <li class="news_bg">
-                <div>
-                    NEWS
-                    <span>|</span>
-                    {{ $elm.time }}
-                </div>
-                <p>{{ $elm.name }}</p>
-            </li>
-            {{ else }}
-            <li>
-                <div>
-                    NEWS
-                    <span>|</span>
-                    {{ $elm.time }}
-                </div>
-                <p>{{ $elm.name }}</p>
-            </li>
-            {{ end }}
-            {{ end }}
-            </ul>
-            
-        </div>
-        {{  end }}
-    </div>
-
-    <!-- 用户 -->
-    <div class="content_user">
-        <div class="content_user_title">
-            <h3>合作伙伴</h3>
-        </div>
-        <div>
-            <ul class="content_user_icon">
-                {{ range .Site.Data.clients }}
-                <li><img src="{{ .url }}" alt=""></li>
-                {{ end }}
-            </ul>
-        </div>
-    </div>
-
+    </div> -->
 </div>

@@ -22,7 +22,7 @@ var mySwiper = new Swiper ('.swiper-container', {
   } */
 
 
-  //h5 点击微信图片显示二维码
+  /* //h5 点击微信图片显示二维码
   $('.list_wechat').on('click',function() {
     $('.qrCode').removeClass("qrCode_hide");
     $('.qrCode').addClass("qrCode_show");
@@ -40,5 +40,5 @@ var mySwiper = new Swiper ('.swiper-container', {
       $('.qrCode').removeClass("qrCode_show");
       $('.qrCode').addClass("qrCode_hide");
     }
-  })
+  }) */
   

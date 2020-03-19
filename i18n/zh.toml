@@ -1,9 +1,32 @@
 # home page
-[main_partner_title]
-other = "社区会员"
+[main_characterr_title]
+other = "关键特性"
 
-[main_partner_subtitle]
-other = "会员中心正在构建中，敬请期待"
+[main_partner_title]
+other = "合作伙伴"
+
+[download_title]
+other = "下载"
+
+[main_quickStart_title]
+other = "快速入门"
+
+[banner_title_one]
+other = "欢迎加入"
+
+[banner_title_two]
+other = "openGauss"
+
+[banner_title_three]
+other = "社区"
+
+[banner_intro]
+other = "是一款极致性能、安全、可靠的开源关系型（OLTP）数据库"
+
+
+
+
+
 
 [main_email_subscribe_title]
 other = "邮件订阅"
@@ -89,8 +112,7 @@ other = "返回首页"
 [docs_nav_menu_name]
 other = "目录"
 
-[download_title]
-other = "下载ISO"
+
 
 [download_issues]
 other = "如果您遇到问题，请在此提交问题:"

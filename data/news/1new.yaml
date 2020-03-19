@@ -1,6 +1,7 @@
-title: News
+title: 新闻
+more: 更多
 content:
-  - {name: Announcement for 'openEulerOS Contribution Competition' Winner,time: 2019.09.01,url: news/banner.png}
-  - {name: Announcement for 'openEulerOS Contribution Competition' Winner,time: 2019.09.01}
-  - {name: Announcement for 'openEulerOS Contribution Competition' Winner,time: 2019.09.01}
-  - {name: Announcement for 'openEulerOS Contribution Competition' Winner,time: 2019.09.01}
+  - {plate: 新闻,name: openGauss开源社区基础设施上线,time: 2019.09.01}
+  - {plate: 新闻,name: openGauss 2019年,time: 2019.09.01}
+  - {plate: 新闻,name: openGauss开源社区基础设施上线,time: 2019.09.01}
+  - {plate: 新闻,name: openGauss开源社区基础设施上线,time: 2019.09.01}

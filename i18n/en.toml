@@ -1,9 +1,36 @@
 # home page
+
+[main_characterr_title]
+other = "Features"
+
 [main_partner_title]
 other = "Members"
 
-[main_partner_subtitle]
-other = "Being constructed"
+[download_title]
+other = "Download"
+
+[main_quickStart_title]
+other = "QuickStart"
+
+[banner_title_one]
+other = "Welcome to"
+
+[banner_title_two]
+other = "openGauss"
+
+[banner_title_three]
+other = "Community"
+
+[banner_intro]
+other = "is an extremely safe and reliable open source relational (OLTP) database"
+
+
+
+
+
+
+
+
 
 [main_email_subscribe_title]
 other = "Subscription"
@@ -90,8 +117,7 @@ other = "Back to Home"
 [docs_nav_menu_name]
 other = "MENU"
 
-[download_title]
-other = "Download ISO"
+
 
 [download_issues]
 other = "Submit issues:"
