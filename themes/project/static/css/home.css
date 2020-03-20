@@ -75,7 +75,7 @@
 }
 .qrCode {
   position: absolute;
-  top: 50px;
+  top: 100px;
   left: 50%;
   width: 80%;
   height: auto;
@@ -88,6 +88,7 @@
 .qrCode p {
   text-align: center;
   background: #ffffff;
+  font-size: .28rem;
 }
 
 .content .content_character {
@@ -316,9 +317,9 @@
   margin-top: 24px;
 }
 
-.content .content_user {
+/* .content .content_user {
   margin-bottom: 85px;
-}
+} */
 
 .content_user_title,
 .content_success_title {
@@ -534,9 +535,9 @@
   /* align-items: flex-end; */
   padding-bottom: 60px;
 }
-.new_title>div {
+/* .new_title>div {
   display: inline-block;
-}
+} */
 
 .new_title span {
   font-family: HuaweiSans;
@@ -562,7 +563,7 @@
   width: 47%;
 }
 
-.new_content li {
+.new_content li:not(.new_title) {
   width: 100%;
   padding: 18px 5px 20px;
 }
@@ -581,7 +582,7 @@
   font-weight: 900;
   margin-bottom: 6px;
 }
-.new_content li:not(.news_bg) {
+.new_content li:not(.new_title) {
   border-bottom: 1px solid #b5b5b5;
 }
 .news_bg {
@@ -610,15 +611,20 @@
   height: 7px;
   display: block;
   margin-top: 16px;
-  margin-bottom: 40px;
   background: #467FBF;
+}
+.content .content_character .content_character_title h3::after,
+.content .content_success .content_success_title h3::after,
+.content .content_user .content_user_title h3::after,
+.content_college .content_college_content .content_college_title h3::after {
+  margin-bottom: 40px;
 }
 
 /* ---       home 页面板块统一 margin-top       --- */
 .content .content_character,
 .news,
 .content .content_user {
-  padding-top: 60px;
+  padding: 30px 0;
 }
 
 

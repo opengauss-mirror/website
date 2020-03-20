@@ -44,6 +44,10 @@ button {
   border: none;
 }
 
+.navbar li a {
+  font-size: 14px;
+}
+
 .navbar ul.navbar-left > li > a {
   /* text-transform: uppercase; */
   text-decoration: underline;

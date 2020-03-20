@@ -177,16 +177,20 @@
 /* ---------------------------        新闻            -------------------------------------- */
   .news {
     flex-direction: column;
+    padding-top: 0;
   }
   .new_content {
     width: 100%;
+    padding-top: .8rem;
   }
   .new_title span {
     font-size: .46rem;
     font-weight: 600;
+    line-height: .4rem;
   }
   .new_content li div {
     font-size: .28rem;
+    display: inline-block;
   }
   .new_content li p {
     font-size: .24rem;
@@ -201,6 +205,11 @@
     font-weight: 100;
     position: absolute;
     right: 0;
+    line-height: .48rem;
+  }
+
+  .new_content ul {
+    padding: 0 0.4rem;
   }
 /* ---------------------------        新闻            -------------------------------------- */
 
@@ -218,10 +227,10 @@
   
   /* ---       home 页面板块统一 margin-top       --- */
   .content .content_character,
-  .news,
   .content .content_user {
     padding-top: .8rem;
   }
+   
 }
 
 
