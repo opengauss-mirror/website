@@ -1,5 +1,5 @@
-title: 活动
-more: 更多
+title: "main_events_title"
+more: "main_cards_title_enter_repository"
 content:
-  - {plate: 活动,name: openGauss全国Meetup成都站,time: 2020.06.30}
-  - {plate: 活动,name: HDC.Cloud 2020线上直播活动,time: 2020.03.25}
+  - {plate: "main_events_title",name: "main_events_intro_one",time: 2020.06.30}
+  - {plate: "main_events_title",name: "main_events_intro_two",time: 2020.03.25}

@@ -1,7 +1,5 @@
 <div class="test">
-    <ul>
-        {{ range .Site.Menus.featurestitle }}
-        <li>{{ .Name }}</li>
-        {{ end }}
-    </ul>
+    {{ range .Site.Data.text }}
+        <p>{{ i18n .title }}</p>
+    {{ end }}
 </div>

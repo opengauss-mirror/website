@@ -24,6 +24,73 @@ other = "Community"
 [banner_intro]
 other = "is an extremely safe and reliable open source relational (OLTP) database"
 
+[feature_title_one]
+other = "Kunpeng ecological"
+
+[feature_title_two]
+other = "Highly compatible"
+
+[feature_title_three]
+other = "Extreme Performance"
+
+[feature_title_four]
+other = "Easy to use"
+
+[feature_title_five]
+other = "Reliable"
+
+[feature_title_six]
+other = "MulanPSL"
+
+[feature_intro_one]
+other = "The world's first database supporting kunpeng and x86 hardware architecture"
+
+[feature_intro_two]
+other = "Compatible with SQL2003 standard, highly compatible with the industry"
+
+[feature_intro_three]
+other = "With a single TPMC, the performance data for sysbench in a typical configuration"
+
+[feature_intro_four]
+other = "Support rich SQL stored procedure custom function, provide rich API interface"
+
+[feature_intro_five]
+other = "The system is stable and reliable to provide single machine master and backup"
+
+[feature_intro_six]
+other = "MulanPSL license agreement (MulanPSL V2)"
+
+[main_news_title]
+other = "News"
+
+[main_events_title]
+other = "Events"
+
+[main_cards_title_enter_repository]
+other = "More"
+
+[main_news_intro_one]
+other = "openGauss official website of the community is online"
+
+[main_news_intro_two]
+other = "openGauss open source community infrastructure goes live"
+
+[main_news_intro_three]
+other = "openGauss community dynamics for February 2020"
+
+[main_events_intro_one]
+other = "openGauss national chengdu Meetup station"
+
+[main_events_intro_two]
+other = "HDC.Cloud 2020 Online live event"
+
+[main_gitee]
+other = "gitee"
+
+[main_wechat]
+other = "wechat"
+
+
 
 
 
@@ -47,8 +114,7 @@ other = "openGauss builds an innovative platform and a unified and open OS that 
 [main_cards_title_second]
 other = "iSula"
 
-[main_cards_title_enter_repository]
-other = ">>More"
+
 
 [main_nav_repository]
 other = "Code Sources"
@@ -65,11 +131,9 @@ other = "A-Tune"
 [main_cards_description_third]
 other = "A system software to auto-optimize the system adaptively to multiple scenarios with embedded AI-engine."
 
-[main_events_title]
-other = "Events"
 
-[main_news_title]
-other = "News"
+
+
 
 [main_list_more]
 other = "More"

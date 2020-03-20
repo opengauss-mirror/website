@@ -23,6 +23,74 @@ other = "社区"
 [banner_intro]
 other = "是一款极致性能、安全、可靠的开源关系型（OLTP）数据库"
 
+[feature_title_one]
+other = "鲲鹏生态"
+
+[feature_title_two]
+other = "高度兼容"
+
+[feature_title_three]
+other = "极致性能"
+
+[feature_title_four]
+other = "简单易用"
+
+[feature_title_five]
+other = "安全可靠"
+
+[feature_title_six]
+other = "MulanPSL"
+
+[feature_intro_one]
+other = "全球首款支持鲲鹏和x86硬件架构的数据库"
+
+[feature_intro_two]
+other = "兼容SQL2003标准，高度兼容业界主流商业数据库生态"
+
+[feature_intro_three]
+other = "单机百万tpmc，典型配置下sysbench性能数据高出开源数据库30%到50%"
+
+[feature_intro_four]
+other = "支持丰富的SQL、存储过程、自定义函数，提供丰富的API接口"
+
+[feature_intro_five]
+other = "系统稳定可靠提供单机主备版本。数据误操作秒级闪回恢复，用户权限管理，多维度审计，数据无忧"
+
+[feature_intro_six]
+other = "采用木兰宽松许可证协议（MulanPSL V2）"
+
+[main_news_title]
+other = "新闻"
+
+[main_events_title]
+other = "活动"
+
+[main_cards_title_enter_repository]
+other = "更多"
+
+[main_news_intro_one]
+other = "openGauss社区官方网站上线"
+
+[main_news_intro_two]
+other = "openGauss开源社区基础设施上线"
+
+[main_news_intro_three]
+other = "openGauss社区2020年2月动态"
+
+[main_events_intro_one]
+other = "openGauss全国Meetup成都站"
+
+[main_events_intro_two]
+other = "HDC.Cloud 2020线上直播活动"
+
+[main_gitee]
+other = "码云"
+
+[main_wechat]
+other = "微信"
+
+
+
 
 
 
@@ -43,8 +111,7 @@ other = "openGauss通过社区合作，打造创新平台，构建支持多处�
 [main_cards_title_second]
 other = "iSula"
 
-[main_cards_title_enter_repository]
-other = ">>更多"
+
 
 [main_nav_repository]
 other = "代码仓"
@@ -61,11 +128,9 @@ other = "A-Tune"
 [main_cards_description_third]
 other = "A-Tune是智能性能优化系统软件，即通过机器学习引擎对业务应用建立精准模型, 再根据业务负载智能匹配最佳操作系统配置参数组合，实现系统整体运行效率提升。"
 
-[main_events_title]
-other = "活动"
 
-[main_news_title]
-other = "新闻"
+
+
 
 [main_list_more]
 other = "更多"

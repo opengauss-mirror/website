@@ -1,5 +1,4 @@
 weight: 3
-title: "极致性能"
-description: >
-  单机百万tpmc，典型配置下sysbench性能数据高出开源数据库30%到50%
+title: "feature_title_three"
+description: "feature_intro_three"
 image: "svgs/fun_define.svg"

@@ -13,9 +13,9 @@
                         <div class="header">
                             <!-- <img src="{{ .image }}" alt=""> -->
                             {{ partial .image }}
-                            <h4>{{ .title }}</h4>
+                            <h4>{{ i18n .title }}</h4>
                         </div>
-                        <p>{{ .description }}</p>
+                        <p>{{ i18n .description }}</p>
                     </div>
                 </li>
                 {{ end  }}
