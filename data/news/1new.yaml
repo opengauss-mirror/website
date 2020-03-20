@@ -1,6 +1,6 @@
-title: 新闻
-more: 更多
+title: "main_news_title"
+more: "main_cards_title_enter_repository"
 content:
-  - {plate: 新闻,name: openGauss社区官方网站上线,time: 2020.03.20}
-  - {plate: 新闻,name: openGauss开源社区基础设施上线,time: 2020.03.15}
-  - {plate: 新闻,name: openGauss社区2020年2月动态,time: 2020.03.01}
+  - {plate: "main_news_title",name: "main_news_intro_one",time: 2020.03.20}
+  - {plate: "main_news_title",name: "main_news_intro_two",time: 2020.03.15}
+  - {plate: "main_news_title",name: "main_news_intro_three",time: 2020.03.01}

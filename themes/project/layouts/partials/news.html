@@ -5,15 +5,15 @@
             <ul>
                 <li class="new_title">
                     <div>
-                        <span>{{ .title }}</span>
-                        <a href="#">{{ .more }} &gt;</a>
+                        <span>{{ i18n .title }}</span>
+                        <a href="#">{{ i18n .more }} &gt;</a>
                     </div>
                 </li>
                 {{ range $elm := .content }}
                 {{ if $elm.url }}
                 <li class="news_bg">
                     <div>
-                        {{ $elm.plate }}
+                        {{ i18n $elm.plate }}
                         <span>|</span>
                         {{ $elm.time }}
                     </div>
@@ -22,11 +22,11 @@
                 {{ else }}
                 <li>
                     <div>
-                        {{ $elm.plate }}
+                        {{ i18n $elm.plate }}
                         <span>|</span>
                         {{ $elm.time }}
                     </div>
-                    <a href="#"><p>{{ $elm.name }}</p></a>
+                    <a href="#"><p>{{ i18n $elm.name }}</p></a>
                 </li>
                 {{ end }}
                 {{ end }}
