@@ -1,6 +1,11 @@
 {{ $tocLevels := default (default 6 .Site.Params.BookToC) .Params.BookToC }}
 {{ if and $tocLevels .Page.TableOfContents }}
   <aside class="book-toc level-{{$tocLevels}} fixed">
-    {{ .Page.TableOfContents }}
+    <div class="qrCode">
+      <div>
+        <img src="/img/wechat.jpg">
+        <p> {{ .Page.TableOfContents }}</p>
+      </div>
+    </div>
   </aside>
 {{ end }}

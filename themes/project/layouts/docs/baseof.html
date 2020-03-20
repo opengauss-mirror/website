@@ -14,32 +14,19 @@
 
     </header>
 
-    {{ partial "breadcrumbs.html" . }}
-
     <div id="content">
       <div class="container docscontainer">
-        <input type="checkbox" style="display: none" id="menu-control" />
-        <div class="slide_nav" id="slideNav">
-          <img src="/svg/menu.svg" alt="Menu"><p>{{ i18n "docs_nav_menu_name" }}</p>
-        </div>
         <main class="flex container docscontainer">
-
-          <aside class="book-menu fixed" id="menu">
-            {{ partial "docs/menu" . }}
-          </aside>
-
-          <div class="book-page" id="page">
-            <!-- {{ partial "docs/mobile-header" . }} -->
-            {{ template "main" . }}
-            {{ partial "docs/git-footer" . }}
-            {{ partial "docs/inject/footer" . }}
+          <div class="qrCode">
+            <div>
+              <img src="/img/wechat.jpg">
+              <p>openGauss 微信公众号</p>
+            </div>
           </div>
 
-          {{ template "toc" . }}
-        </main>
+          
 
-        {{ partial "docs/inject/body" . }}
-        {{ template "_internal/google_analytics_async.html" . }}
+        </main>
       </div>
     </div>
   </div>

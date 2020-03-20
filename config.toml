@@ -241,84 +241,130 @@ paginate = 10
 [[menu.topbar]]
     weight = 1
     name = "wechat"
-    url = "/zh/docs/community.html"
+    url = "/zh/docs/qrCode.html"
 
 [[languages.zh.menu.topbar]]
     weight = 1
     name = "微信"
-    url = "/zh/docs/community.html"
+    url = "/zh/docs/qrCode.html"
 
 
 # features
+[[menu.featurestitle]]
+    weight= 1
+    name= "Kunpeng ecological"
+
+[[menu.featurestitle]]
+    weight= 2
+    name= "Highly compatible"
+[[menu.featurestitle]]
+    weight= 3
+    name= "极致性能"
+
+[[menu.featurestitle]]
+    weight= 4
+    name= "简单易用"
+
+[[menu.featurestitle]]
+    weight= 5
+    name= "安全可靠"
+
+[[menu.featurestitle]]
+    weight= 6
+    name= "MulanPSL"
+
+[[languages.zh.menu.featurestitle]]
+    weight= 1
+    name= "鲲鹏生态"
+
+[[languages.zh.menu.featurestitle]]
+    weight= 2
+    name= "高度兼容"
+[[languages.zh.menu.featurestitle]]
+    weight= 3
+    name= "极致性能"
+
+[[languages.zh.menu.featurestitle]]
+    weight= 4
+    name= "简单易用"
+
+[[languages.zh.menu.featurestitle]]
+    weight= 5
+    name= "安全可靠"
+
+[[languages.zh.menu.featurestitle]]
+    weight= 6
+    name= "MulanPSL"
+
 [[menu.features]]
     weight= 1
-    title= "Kunpeng ecological"
-    description= "The world's first database supporting kunpeng and x86 hardware architecture"
-    image= "svgs/store.svg"
+    names= "Kunpeng ecological"
+    name= "The world's first database supporting kunpeng and x86 hardware architecture"
+    image= "store"
 
 [[menu.features]]
     weight= 2
-    title= "Highly compatible"
-    description= "兼容SQL2003标准，高度兼容业界主流商业数据库生态"
-    image= "svgs/model.svg"
+    names= "Highly compatible"
+    name= "兼容SQL2003标准，高度兼容业界主流商业数据库生态"
+    image= "model"
 [[menu.features]]
     weight= 3
-    title= "极致性能"
-    description= "单机百万tpmc，典型配置下sysbench性能数据高出开源数据库30%到50%"
-    image= "svgs/fun_define.svg"
+    names= "极致性能"
+    name= "单机百万tpmc，典型配置下sysbench性能数据高出开源数据库30%到50%"
+    image= "fun_define"
 
 [[menu.features]]
     weight= 4
-    title= "简单易用"
-    description= "支持丰富的SQL、存储过程、自定义函数，提供丰富的API接口"
-    image= "svgs/nerve.svg"
+    names= "简单易用"
+    name= "支持丰富的SQL、存储过程、自定义函数，提供丰富的API接口"
+    image= "nerve"
 
 [[menu.features]]
     weight= 5
-    title= "安全可靠"
-    description= "系统稳定可靠提供单机主备版本。数据误操作秒级闪回恢复，用户权限管理，多维度审计，数据无忧"
-    image= "svgs/sec.svg"
+    names= "安全可靠"
+    name= "系统稳定可靠提供单机主备版本。数据误操作秒级闪回恢复，用户权限管理，多维度审计，数据无忧"
+    image= "sec"
 
 [[menu.features]]
     weight= 6
-    title= "MulanPSL"
-    description= "采用木兰宽松许可证协议（MulanPSL V2）"
-    image= "svgs/shape.svg"
+    names= "MulanPSL"
+    name= "采用木兰宽松许可证协议（MulanPSL V2）"
+    image= "shape"
 
 [[languages.zh.menu.features]]
     weight= 1
-    title= "鲲鹏生态"
-    description= "全球首款支持鲲鹏和x86硬件架构的数据库"
-    image= "svgs/store.svg"
+    names= "鲲鹏生态"
+    name= "全球首款支持鲲鹏和x86硬件架构的数据库"
+    image= "store"
 
 [[languages.zh.menu.features]]
     weight= 2
-    title= "高度兼容"
-    description= "兼容SQL2003标准，高度兼容业界主流商业数据库生态"
-    image= "svgs/model.svg"
+    names= "高度兼容"
+    name= "兼容SQL2003标准，高度兼容业界主流商业数据库生态"
+    image= "model"
 [[languages.zh.menu.features]]
     weight= 3
-    title= "极致性能"
-    description= "单机百万tpmc，典型配置下sysbench性能数据高出开源数据库30%到50%"
-    image= "svgs/fun_define.svg"
+    names= "极致性能"
+    name= "单机百万tpmc，典型配置下sysbench性能数据高出开源数据库30%到50%"
+    image= "fun_define"
 
 [[languages.zh.menu.features]]
     weight= 4
-    title= "简单易用"
-    description= "支持丰富的SQL、存储过程、自定义函数，提供丰富的API接口"
-    image= "svgs/nerve.svg"
+    names= "简单易用"
+    name= "支持丰富的SQL、存储过程、自定义函数，提供丰富的API接口"
+    image= "nerve"
 
 [[languages.zh.menu.features]]
     weight= 5
-    title= "安全可靠"
-    description= "系统稳定可靠提供单机主备版本。数据误操作秒级闪回恢复，用户权限管理，多维度审计，数据无忧"
-    image= "svgs/sec.svg"
+    names= "安全可靠"
+    name= "系统稳定可靠提供单机主备版本。数据误操作秒级闪回恢复，用户权限管理，多维度审计，数据无忧"
+    image= "sec"
 
 [[languages.zh.menu.features]]
     weight= 6
-    title= "MulanPSL"
-    description= "采用木兰宽松许可证协议（MulanPSL V2）"
-    image= "svgs/shape.svg"
+    names= "MulanPSL"
+    name= "采用木兰宽松许可证协议（MulanPSL V2）"
+    image= "shape"
    
 
 [params]
