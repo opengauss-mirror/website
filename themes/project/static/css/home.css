@@ -622,11 +622,12 @@
 
 /* ---       home 页面板块统一 margin-top       --- */
 .content .content_character,
-.news,
-.content .content_user {
+.news {
   padding: 30px 0;
 }
-
+.content .content_user {
+  padding: 60px 0 30px;
+}
 
 
 .content .content_user .content_user_title h3,
