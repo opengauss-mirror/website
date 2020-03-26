@@ -89,6 +89,74 @@ other = "码云"
 [main_wechat]
 other = "微信"
 
+[cla_sel]
+other = "请选择一个可适用的陈述并填空。"
+
+[cla_type_one]
+other = "个人独立贡献者"
+
+[cla_type_two]
+other = "法律实体贡献者"
+
+[cla_explain_one]
+other = "“我”是一个个人，没有其他人或实体，包括“我的”雇主有或者将有对“我”的“贡献”的权利。"
+
+[cla_explain_two]
+other = "“我”是一个法律实体，如下签字的个人是“我”授权并代表“我”。"
+
+[cla_type_one_name]
+other = "姓名"
+
+[cla_type_one_email]
+other = "邮箱"
+
+[cla_type_one_phone]
+other = "电话"
+
+[cla_type_one_fax]
+other = "传真"
+
+[cla_type_one_address]
+other = "地址"
+
+[cla_type_one_date]
+other = "日期"
+
+[cla_type_two_ambassadorn]
+other = "授权代表"
+
+[cla_type_two_licensor]
+other = "授权贡献者"
+
+[cla_type_two_post]
+other = "职位"
+
+[cla_type_two_company]
+other = "公司名"
+
+[cla_type_two_address]
+other = "地址"
+
+[cla_type_two_email]
+other = "邮箱"
+
+[cla_type_two_phone]
+other = "电话"
+
+[cla_type_two_fax]
+other = "传真"
+
+[cla_type_two_date]
+other = "日期"
+
+[cla_explain]
+other = "请确保邮箱与你的gitee账号绑定"
+
+[cla_btn_submit]
+other = "签署"
+
+[cla_btn_reset]
+other = "重置"
 
 
 

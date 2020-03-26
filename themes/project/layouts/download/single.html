@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+
+{{ partial "head.html" . }}
+{{ partial "docs/html-head" . }}
+{{ partial "docs/inject/head" . }}
+
+<body>
+  <div id="all">
+
+    <header>
+
+      {{ partial "nav.html" . }}
+
+    </header>
+
+    <div id="content">
+      <div class="container docscontainer">
+        <main class="flex container docscontainer">
+            {{ .Content }}
+            <p>it's download</p>
+        </main>
+      </div>
+    </div>
+  </div>
+  {{ partial "footer.html" . }}
+  {{ partial "scripts.html" . }}
+</body>
+
+</html>

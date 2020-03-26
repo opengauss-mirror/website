@@ -90,6 +90,74 @@ other = "gitee"
 [main_wechat]
 other = "wechat"
 
+[cla_sel]
+other = "Please select one applicable statement from the following and fill in the blanks."
+
+[cla_type_one]
+other = "Individual Contributor"
+
+[cla_type_two]
+other = "Legal Entity Contributor"
+
+[cla_explain_one]
+other = "I am an individual, and no other individual or legal entity, including my employer, has or will have rights with respect to My Contribution."
+
+[cla_explain_two]
+other = "I am a legal entity, the individual below signing this Agreement is authorized by and on behalf of me."
+
+[cla_type_one_name]
+other = "Name"
+
+[cla_type_one_email]
+other = "E-Mail"
+
+[cla_type_one_phone]
+other = "Telephone"
+
+[cla_type_one_fax]
+other = "Fax"
+
+[cla_type_one_address]
+other = "Address"
+
+[cla_type_one_date]
+other = "Date"
+
+[cla_type_two_ambassadorn]
+other = "Authorized Representative"
+
+[cla_type_two_licensor]
+other = "Authorized Contributor"
+
+[cla_type_two_post]
+other = "Title"
+
+[cla_type_two_company]
+other = "Corporation Name"
+
+[cla_type_two_address]
+other = "Mailing Address"
+
+[cla_type_two_email]
+other = "E-Mail"
+
+[cla_type_two_phone]
+other = "Telephone"
+
+[cla_type_two_fax]
+other = "Fax"
+
+[cla_type_two_date]
+other = "Date"
+
+[cla_explain]
+other = "Please make sure the E-Mail is related with your gitee account"
+
+[cla_btn_submit]
+other = "Sign"
+
+[cla_btn_reset]
+other = "Reset"
 
 
 
@@ -148,16 +216,16 @@ other = "News"
 other = "News"
 
 [sig_mail_list]
-other = "Mailing list: "
+other = "Mailing list "
 
 [sig_IRC_channel]
-other = "IRC Channel: "
+other = "IRC Channel "
 
 [sig_maintainers]
-other = "Maintainers: "
+other = "Maintainers "
 
 [sig_homepage]
-other = "Homepage: "
+other = "Homepage "
 
 [main_mail_more]
 other = "Get more in "
@@ -184,16 +252,16 @@ other = "MENU"
 
 
 [download_issues]
-other = "Submit issues:"
+other = "Submit issues"
 
 [download_releaseNote]
-other = "Release Note:"
+other = "Release Note"
 
 [download_getiso]
-other = "Download ISO:"
+other = "Download ISO"
 
 [download_installationGuide]
-other = "Installation Guide:"
+other = "Installation Guide"
 
 [download_versionsUrl]
 other = "/en/releases.html"
