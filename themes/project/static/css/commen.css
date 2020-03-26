@@ -66,3 +66,6 @@ html {
     q:before, q:after, blockquote:before, blockquote:after {
     content:””;
     }
+    li {
+        list-style: none;
+    }

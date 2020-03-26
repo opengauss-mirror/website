@@ -18,7 +18,7 @@ uglyURLs = true
 buildFuture = true
 
 # Define the number of posts per page
-paginate = 10
+paginate = 20
 
 [menu]
 
@@ -33,7 +33,7 @@ paginate = 10
 [[menu.main]]
     identifier = "download"
     name = "Download"
-    url  = "/en/download.html"
+    url  = "/en/download/download.html"
     weight = 2
 
 [[menu.main]]
@@ -99,7 +99,7 @@ paginate = 10
 [[menu.main]]
     identifier = "blog"
     name = "Blog"
-    url  = "/en/security.html"
+    url  = "/en/blog/blog.html"
     weight = 12
 
 [[menu.main]]
@@ -140,7 +140,7 @@ paginate = 10
 [[languages.zh.menu.main]]
     dentifier="download"
     name = "下载"
-    url  = "/zh/docs/hg.html"
+    url  = "/zh/download/download.html"
     weight = 2
 
 [[languages.zh.menu.main]]
@@ -206,7 +206,7 @@ paginate = 10
 [[languages.zh.menu.main]]
     identifier = "blog"
     name = "博客"
-    url  = "/zh/security.html"
+    url  = "/zh/blogs/blogs.html"
     weight = 12
 
 [[languages.zh.menu.main]]

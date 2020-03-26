@@ -1,0 +1,155 @@
+.col-md-12 .table #sel {
+    display: flex;
+    padding: 0;
+}
+.col-md-12 .table #sel input[type="radio"]+label::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 0.28rem;
+    width: 1em;
+    height: 1em;
+    margin-right: 0.1rem;
+    border-radius: 50%;
+    border: 1px solid #999999;
+}
+.col-md-12 .table #sel input[type="radio"]:checked+label::before {
+    border: 5px solid #467FBF;
+}
+.col-md-12 .table #sel input[type="radio"] {
+    position: absolute;
+    clip: rect(0,0,0,0);
+}
+.table #sel li label,
+.form_one>div span,
+.form_two>div span {
+    color: #333333;
+    line-height: 0.16rem;
+}
+.table #sel li:first-child {
+    margin-right: 0.5rem;
+}
+.formHide {
+    display: none;
+}
+.formShow {
+    display: block;
+}
+#form {
+    width: 70%;
+}
+.form_one>div,
+.form_two>div {
+    padding: 0.2rem 0;
+}
+.form_one>div span,
+.form_two>div span,
+.col-md-12 .table #sel li label,
+.form_one>p,
+.form_two>p {
+    font-family: FZLTHJW-GB1-0;
+    letter-spacing: 0.05px;
+}
+.form_one>p,
+.form_two>p {
+    padding: 10px 0;
+}
+.form_one .asterisk,
+.form_two .asterisk {
+    font-size: 20px;
+    color: #D70000;
+    font-weight: 600;
+    display: inline-block;
+    transform: translateY(0.1rem) translateX(-0.2rem);
+}
+.form_one>div>span,
+.form_two>div>span {
+    display: inline-block;
+    width: 24%;
+    text-align: right;
+}
+.form_one>div input,
+.form_two>div input {
+    display: inline-block;
+    width: 50%;
+    height: 36px;
+    margin-left: 0.8rem;
+    font-size: 0.28rem;
+    border: 1px solid #CACACA;
+    text-indent: 2em;
+}
+#form input:-moz-placeholder,
+#form input:-ms-input-placeholder,
+#form input::-moz-placeholder,
+#form input::-webkit-input-placeholder {
+    color: #cccccc;
+}
+.submit {
+    padding: 0.4rem 0;
+    width: 70%;
+    text-align: center;
+}
+.submit button {
+    width: 100px;
+    height: 38px;
+    border-radius: 2px;
+    font-size: 16px;
+    font-family: FZLTHJW-GB1-0;
+}
+.submit button:first-child {
+    margin-right: 0.8rem;
+}
+#tip-cla-label {
+    width: 70%;
+    text-align: center;
+    color: #467FBF;
+    height: 20px;
+}
+
+@media (max-width: 991px) {
+    .row {
+        margin: 0;
+    }
+    .cla {
+        height: 300px;
+        overflow: scroll;
+        padding: 0 15px;
+        margin-bottom: 0.4rem;
+    }
+    .col-md-12 {
+        padding: 0;
+    }
+    .table {
+        border-top: 1px solid #CACACA;
+    }
+    .table p,.col-md-12 .table #sel,.form_one>p,.form_two>p {
+        padding: 0 15px;
+    }
+    #form {
+        width: 100%;
+    }
+    .form_one>p,
+    .form_two>p {
+        font-size: 0.2rem;
+        letter-spacing: 0.07px;
+    }
+    .form_one>div input, .form_two>div input {
+        margin-left: 0;
+        width: 60%;
+        border: none;
+        outline: none;
+    }
+    .form_one>div, .form_two>div {
+        box-shadow: inset 0 -1px 0 0 #CACACA;
+    }
+    .div_one{
+        border-top: 1px solid #CACACA;
+        margin-top: 0.48rem;
+    }
+    .submit {
+        width: 100%;
+    }
+    #tip-cla-label {
+        width: 100%;
+    }
+}

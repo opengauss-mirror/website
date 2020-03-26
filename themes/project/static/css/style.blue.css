@@ -775,7 +775,7 @@ fieldset[disabled] .btn-template-primary.active {
 
 /* -----------------------        法律声明         ---------------------------- */
 #heading-breadcrumbs {
-  background: url('../img/texture-bw.png') center center repeat;
+  background: url('../img/banner.png') center center repeat;
   padding: 20px 0;
   margin-bottom: 40px;
 }
@@ -783,7 +783,7 @@ fieldset[disabled] .btn-template-primary.active {
   margin-bottom: 0;
 }
 #heading-breadcrumbs h1 {
-  color: #333333;
+  color: #ffffff;
   text-transform: uppercase;
   font-size: 30px;
   font-weight: 700;
@@ -793,7 +793,11 @@ fieldset[disabled] .btn-template-primary.active {
   margin: 20px 0;
 }
 .container .col-md-12>div>p {
+  font-family: FZLTHJW-GB1-0;
+  color: #333333;
   margin: 0 0 10px;
+  line-height: 0.5rem;
+  letter-spacing: 0.05px;
 }
 .container .col-md-12>div>h3 {
   margin: 20px 0;
@@ -817,6 +821,9 @@ fieldset[disabled] .btn-template-primary.active {
 }
 @media (max-width: 991px) {
   #heading-breadcrumbs h1 {
-    text-align: center;
+    text-align: left;
+  }
+  #heading-breadcrumbs {
+    margin-bottom: 0.6rem;
   }
 }
