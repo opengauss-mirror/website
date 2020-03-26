@@ -62,8 +62,14 @@ other = "采用木兰宽松许可证协议（MulanPSL V2）"
 [main_news_title]
 other = "新闻"
 
+[main_news_herf]
+other = "/zh/news.html"
+
 [main_events_title]
 other = "活动"
+
+[main_events_herf]
+other = "/zh/events.html"
 
 [main_cards_title_enter_repository]
 other = "更多"
