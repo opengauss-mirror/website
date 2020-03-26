@@ -827,3 +827,54 @@ fieldset[disabled] .btn-template-primary.active {
     margin-bottom: 0.6rem;
   }
 }
+/* ------------------------------------------------------------------- */
+
+/* --------------------       新闻、活动详情       --------------------- */
+.newsDetail_content {
+  display: flex;
+  padding: 0.4rem;
+}
+.newsDetail_content:hover {
+  box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.1);
+}
+.newsDetail_content_left img {
+  width: 360px;
+  height: 240px;
+}
+.newsDetail_content_right {
+  margin-left: 0.6rem;
+  position: relative;
+}
+.newsDetail_content_right h3 {
+  font-family: FZLTZHJW-GB1-0;
+  font-size: 0.48rem;
+  color: #666666;
+  letter-spacing: 0;
+  text-align: justify;
+}
+.newsDetail_content_right p,
+.newsDetail_content_right p span,
+.newsDetail_content_right div button {
+  font-family: FZLTHJW-GB1-0;
+}
+.newsDetail_content_right p span {
+  font-size: 0.24rem;
+  color: #999999;
+}
+.newsDetail_right_tips {
+  margin: 0.32rem 0 0.5rem 0;
+  text-align: justify;
+}
+.newsDetail_right_content {
+  line-height: 0.4rem;
+}
+.newsDetail_right_btn {
+  position: absolute;
+  bottom: 0.4rem;
+}
+.newsDetail_right_btn button {
+  color: #467fbf;
+  padding: 0.1rem 0.2rem;
+  background: #ffffff;
+  border: 1px solid #467fbf;
+}

@@ -248,7 +248,7 @@ function initClaPage() {
             }
 
             // build json
-            var posturl = $(this).attr("posturl");
+            var posturl = "/cla/";
             var jsonData = {};
             const language = (lang == "zh-cn") ? "zh" : "en";
             

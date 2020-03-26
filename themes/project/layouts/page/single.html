@@ -35,7 +35,7 @@
                         {{ partial "formData.html" . }}
                         {{ else }}
                         {{ if eq .Title "新闻" | or (eq .Title "News") | or (eq .Title "活动") | or (eq .Title "Events") }}
-                        {{ partial "newsDetail.html" }}
+                        {{ partial "newsDetail.html" . }}
                         {{ else }}
                         <div>
                           {{ .Content }}
