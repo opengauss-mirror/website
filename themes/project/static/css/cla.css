@@ -78,11 +78,10 @@
     border: 1px solid #CACACA;
     text-indent: 2em;
 }
-#form input:-moz-placeholder,
-#form input:-ms-input-placeholder,
-#form input::-moz-placeholder,
-#form input::-webkit-input-placeholder {
+.form_one input::-webkit-input-placeholder,
+.form_two input::-webkit-input-placeholder {
     color: #cccccc;
+    font-size: 0.2rem;
 }
 .submit {
     padding: 0.4rem 0;
@@ -151,5 +150,8 @@
     }
     #tip-cla-label {
         width: 100%;
+    }
+    .table #sel li label, .form_one>div span, .form_two>div span {
+        line-height: 0.32rem;
     }
 }
