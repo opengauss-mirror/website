@@ -1,7 +1,12 @@
-$(function () {
-    initClaPage();
-    initCurrentDate();
-})
+if(window.location.pathname == "/zh/cla.html" || window.location.pathname == "/en/cla.html") {
+    $(function () {
+        initClaPage();
+        initCurrentDate();
+    })
+}
+    
+
+
 
 //获取时间
 function initCurrentDate() {
