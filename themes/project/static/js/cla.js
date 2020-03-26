@@ -1,8 +1,7 @@
-if(window.location.href == "http://119.8.33.182/zh/cla.html" || window.location.href == "http://119.8.33.182/en/cla.html") {
+if(window.location.pathname == "/zh/cla.html" || window.location.pathname == "/en/cla.html") {
     $(function () {
         initClaPage();
         initCurrentDate();
-        console.log(window.location.href)
     })
 }
     
