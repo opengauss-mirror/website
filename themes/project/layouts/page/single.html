@@ -27,21 +27,9 @@
                 <div class="row">
 
                     <div class="col-md-12">
-                        
-                        {{ if eq .Title "签署CLA" | or (eq .Title "Signing CLA") }}
-                        <div class="cla">
-                          {{ .Content }}
-                        </div>
-                        {{ partial "formData.html" . }}
-                        {{ else }}
-                        {{ if eq .Title "新闻" | or (eq .Title "News") | or (eq .Title "活动") | or (eq .Title "Events") }}
-                        {{ partial "newsDetail.html" . }}
-                        {{ else }}
                         <div>
                           {{ .Content }}
                         </div>
-                        {{ end }}
-                        {{ end }}
                     </div>
 
                 </div>

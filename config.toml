@@ -53,14 +53,14 @@ paginate = 10
 [[menu.main]]
     identifier = "news"
     name = "News"
-    url  = "/zh/docs/community.html"
+    url  = "/en/news.html"
     weight = 5
     parent = "community"
 
 [[menu.main]]
     identifier = "events"
     name = "Events"
-    url  = "/zh/docs/community.html"
+    url  = "/en/events.html"
     weight = 6
     parent = "community"
 
@@ -160,14 +160,14 @@ paginate = 10
 [[languages.zh.menu.main]]
     identifier = "news"
     name = "新闻"
-    url  = "/zh/docs/community.html"
+    url  = "/zh/news.html"
     weight = 5
     parent = "community"
 
 [[languages.zh.menu.main]]
     identifier = "events"
     name = "活动"
-    url  = "/zh/docs/community.html"
+    url  = "/zh/events.html"
     weight = 6
     parent = "community"
 
