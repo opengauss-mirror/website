@@ -89,6 +89,12 @@ other = "openGauss全国Meetup成都站"
 [main_events_intro_two]
 other = "HDC.Cloud 2020线上直播活动"
 
+[main_newts_previous]
+other = "上一页"
+
+[main_newts_next]
+other = "下一页"
+
 [main_gitee]
 other = "码云"
 

@@ -121,9 +121,9 @@
   footer {
     padding: .4rem .6rem;
   }
-  /* footer .foot {
-    display: block;
-  } */
+  footer .foot {
+    flex-direction: column;
+  }
   footer .foot .contact {
     display: flex;
     justify-content: space-between;

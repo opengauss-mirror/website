@@ -90,6 +90,12 @@ other = "openGauss national chengdu Meetup station"
 [main_events_intro_two]
 other = "HDC.Cloud 2020 Online live event"
 
+[main_newts_previous]
+other = "Last Page"
+
+[main_newts_next]
+other = "Next Page"
+
 [main_gitee]
 other = "gitee"
 
