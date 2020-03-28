@@ -176,6 +176,10 @@
   .newsDetail_right_btn {
     bottom: 0.1rem;
   }
+  #heading-breadcrumbs .detailTitle {
+    font-size: 0.28rem;
+    text-transform: none;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 1280px) {
   .isPc {
