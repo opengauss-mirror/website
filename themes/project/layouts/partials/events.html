@@ -2,11 +2,11 @@
     <ul>
         <li class="new_title">
             <div>
-                <span>{{ i18n "main_news_title" }}</span>
+                <span>{{ i18n "main_events_title" }}</span>
                 <a href="{{ i18n "main_news_herf" }}">{{ i18n "main_cards_title_enter_repository" }} &gt;</a>
             </div>
         </li>
-        {{ $posts := where .Data.Pages "Type" "news" }}
+        {{ $posts := where .Data.Pages "Type" "events" }}
         {{ range first 4 $posts }}
         <li>
             <div>
