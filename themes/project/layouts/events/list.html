@@ -28,11 +28,13 @@
                             <div class="newsDetail_content">
                                 <div class="newsDetail_content_warp">
                                     <div class="newsDetail_content_left">
-                                        {{ if .Params.banner }}
-                                          <img src="{{ .Site.BaseURL}}{{ .Params.banner }}">
-                                          {{ else }}
-                                          <img src="{{ .Site.BaseURL}}img/banners/placeholder.png">
-                                          {{ end }}
+                                        <a href="{{ .Permalink }}">
+                                            {{ if .Params.banner }}
+                                            <img src="{{ .Site.BaseURL}}{{ .Params.banner }}">
+                                            {{ else }}
+                                            <img src="{{ .Site.BaseURL}}img/banners/placeholder.png">
+                                            {{ end }}
+                                        </a>
                                     </div>
                                     <div class="newsDetail_content_right">
                                         <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
