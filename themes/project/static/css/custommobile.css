@@ -146,6 +146,36 @@
     width: auto;
     text-align: center;
   }
+   /* ----------新闻、活动---------- */
+  .newsDetail_content_left img {
+    width: 2.6rem;
+    height: 2rem;
+  }
+  .newsDetail_content {
+    padding: 0;
+  }
+  .newsDetail_content_right h3 {
+    line-height: 0.24rem;
+  }
+  .newsDetail_content_right h3 a {
+    font-size: 0.28rem;
+  }
+  .newsDetail_content_right {
+    margin-left: 0.3rem;
+  }
+  .newsDetail_right_tips {
+    margin: 0.16rem 0 0.2rem 0;
+  }
+  .newsDetail_right_content a {
+    font-size: 0.2rem;
+    line-height: 0;
+  }
+  .newsDetail_right_content {
+    display: none;
+  }
+  .newsDetail_right_btn {
+    bottom: 0.1rem;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 1280px) {
   .isPc {

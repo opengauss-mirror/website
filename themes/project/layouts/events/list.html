@@ -35,7 +35,7 @@
                                           {{ end }}
                                     </div>
                                     <div class="newsDetail_content_right">
-                                        <h3>{{ .Title }}</h3>
+                                        <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
                                         <p class="newsDetail_right_tips">
                                             <span>
                                                 {{ if isset .Params "author" }}
@@ -49,7 +49,7 @@
                                             </span>
                                             <span>{{ .Date.Format .Site.Params.date_format }}</span>
                                         </p>
-                                        <p class="newsDetail_right_content">{{ .Params.Summary }}</p>
+                                        <p class="newsDetail_right_content"><a href="{{ .Permalink }}">{{ .Params.Summary }}</a></p>
                                         <div class="newsDetail_right_btn">
                                             <a  href="{{ .Permalink }}" class="btn btn-template-main">查看全文</a>
                                         </div>
