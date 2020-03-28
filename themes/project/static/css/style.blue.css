@@ -833,6 +833,9 @@ fieldset[disabled] .btn-template-primary.active {
 .newsDetail_content {
   padding: 0 0.4rem;
 }
+#heading-breadcrumbs .detailTitle {
+  text-transform: none;
+}
 .newsDetail_content:hover {
   box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.1);
 }
