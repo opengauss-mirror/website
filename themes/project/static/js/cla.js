@@ -97,30 +97,10 @@ function initClaPage() {
     const clientId = "4a111022f19a62016233a36586b1882b81fa385e57b2a7ea16b7829770f42c4b";
 
     cla = readCookie("cla-info")
-    if (!cla || cla == "") {
+    /* if (!cla || cla == "") {
         oauthLogin();
-    }
-  
-    /* if ($('#cla-type-table').length) {
-        // default show individual
-        $('#individual-table').show();
-        $('#legalentity-table').hide();
-        $('td', '#cla-type-table').click(function () {
-            // select checked
-            $('input[name="track"]').removeAttr('checked');
-            $(this).find('input[name="cla-type-radio"]').prop('checked', true);
-
-            // show or hide
-            v = $('input[name="cla-type-radio"]:checked').val();
-            if (v == 0) {
-                $('#individual-table').show();
-                $('#legalentity-table').hide();
-            } else {
-                $('#individual-table').hide();
-                $('#legalentity-table').show();
-            }
-        });
     } */
+    
 
     type = readCookie("type")
     if (type && type == "0") {
@@ -132,8 +112,10 @@ function initClaPage() {
         $('#individual-fax').val(readCookie("fax"));
         $('#individual-date').val(readCookie("date"));
 
-        $('#individual-table').show();
-        $('#legalentity-table').hide();
+        $('.form_one').addClass('formShow');
+        $('.form_one').removeClass('formHide');
+        $('.form_two').addClass('formHide');
+        $('.form_two').removeClass('formShow');
         
         $("#sign-cla-button").attr('disabled',true)
         $("#reset-cla-button").attr('disabled',true) 
@@ -148,8 +130,10 @@ function initClaPage() {
         $('#legalentity-telephone').val(readCookie("telephone"));
         $('#legalentity-fax').val(readCookie("fax"));
 
-        $('#individual-table').hide();
-        $('#legalentity-table').show();
+        $('.form_two').addClass('formShow');
+        $('.form_two').removeClass('formHide');
+        $('.form_one').addClass('formHide');
+        $('.form_one').removeClass('formShow');
         $("#sign-cla-button").attr('disabled',true)
         $("#reset-cla-button").attr('disabled',true)
 
