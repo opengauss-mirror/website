@@ -100,27 +100,7 @@ function initClaPage() {
     if (!cla || cla == "") {
         oauthLogin();
     }
-  
-    /* if ($('#cla-type-table').length) {
-        // default show individual
-        $('#individual-table').show();
-        $('#legalentity-table').hide();
-        $('td', '#cla-type-table').click(function () {
-            // select checked
-            $('input[name="track"]').removeAttr('checked');
-            $(this).find('input[name="cla-type-radio"]').prop('checked', true);
-
-            // show or hide
-            v = $('input[name="cla-type-radio"]:checked').val();
-            if (v == 0) {
-                $('#individual-table').show();
-                $('#legalentity-table').hide();
-            } else {
-                $('#individual-table').hide();
-                $('#legalentity-table').show();
-            }
-        });
-    } */
+    
 
     type = readCookie("type")
     if (type && type == "0") {
