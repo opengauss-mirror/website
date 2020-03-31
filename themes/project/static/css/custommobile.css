@@ -125,6 +125,7 @@
     flex-direction: column;
   }
   footer .foot .contact {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
