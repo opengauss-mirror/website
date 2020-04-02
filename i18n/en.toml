@@ -172,7 +172,7 @@ other = "Sign"
 other = "Reset"
 
 [blogs_iframe]
-other = "/page/public/en/index.html"
+other = "/page/en/index.html"
 
 
 
