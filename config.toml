@@ -101,7 +101,7 @@ paginate = 10
 [[menu.main]]
     identifier = "blog"
     name = "Blog"
-    url  = "/en/blog/blog.html"
+    url  = "/en/blogs/blogs.html"
     weight = 12
 
 [[menu.main]]
