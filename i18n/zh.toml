@@ -171,7 +171,7 @@ other = "签署"
 other = "重置"
 
 [blogs_iframe]
-other = "/page/zh/index.html"
+other = "https://blog.opengauss.org/zh/"
 
 
 

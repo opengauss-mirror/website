@@ -64,6 +64,10 @@ button {
   border-top: solid 5px #294d76;
 }
 
+.navbar-left>li:last-child {
+  margin-left: 10px;
+}
+
 
 .navbar ul.dropdown-menu {
   margin: 0;
@@ -792,6 +796,9 @@ fieldset[disabled] .btn-template-primary.active {
 .col-md-12 h1 {
   margin: 20px 0;
 }
+.col-md-12 h2 {
+  margin: 20px 0;
+}
 .container .col-md-12>div>p {
   font-family: FZLTHJW-GB1-0;
   color: #333333;
@@ -803,11 +810,8 @@ fieldset[disabled] .btn-template-primary.active {
   margin: 20px 0;
 }
 .col-md-12 ul {
-  margin-bottom: 10px;
   display: block;
   list-style-type: disc;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   padding-inline-start: 40px;
@@ -815,6 +819,13 @@ fieldset[disabled] .btn-template-primary.active {
 .col-md-12>div>ul>li {
   display: list-item;
   text-align: -webkit-match-parent;
+  list-style-type: disc;
+}
+.col-md-12>div>ul>li>ul>li {
+  list-style-type: circle;
+}
+.col-md-12>div>ul>li>ul>li>ul>li {
+  list-style-type: square;
 }
 .col-md-12 li p {
   margin: 0 0 10px;
@@ -909,3 +920,26 @@ fieldset[disabled] .btn-template-primary.active {
 #post-content ul li {
   list-style: disc;
 }
+
+/* -----------------------mail lists------------------------ */
+.divmail h3 {
+  margin: 0.4rem 0;
+}
+.divmail p {
+  margin-bottom: 0.2rem;
+}
+.divmail ol {
+  margin-bottom: 0.2rem;
+  padding-left: 15px;
+}
+.divmail ol li {
+  line-height: 30px;
+  list-style-type: decimal;
+}
+.div-archives ul {
+  margin-bottom: 10px;
+}
+.table-responsive {
+  position: relative;
+}
+/* --------------------------------------------------------- */

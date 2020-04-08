@@ -17,13 +17,22 @@
     <div id="content">
       <div class="container docscontainer">
         <main class="flex container docscontainer">
-            <iframe src="" id="blogIframe" width="100%" scrolling="no" frameborder="0"></iframe>
+            <iframe src={{ i18n "blogs_iframe" }} id="blogIframe" width="100%" scrolling="no" frameborder="0"></iframe>
         </main>
       </div>
     </div>
   </div>
   {{ partial "footer.html" . }}
   {{ partial "scripts.html" . }}
+
+  <script>
+    var blogIframe = document.getElementById('blogIframe');
+    window.addEventListener('message', function(messageEvent) {
+      var data = messageEvent.data;
+      console.log("我是父页面收到了：", data);
+      blogIframe.height = data;
+    }, false);
+  </script>
   
 </body>
 

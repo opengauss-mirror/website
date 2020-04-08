@@ -172,7 +172,7 @@ other = "Sign"
 other = "Reset"
 
 [blogs_iframe]
-other = "/page/en/index.html"
+other = "https://blog.opengauss.org/en/"
 
 
 
