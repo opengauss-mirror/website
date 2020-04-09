@@ -814,7 +814,7 @@ fieldset[disabled] .btn-template-primary.active {
   list-style-type: disc;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
-  padding-inline-start: 40px;
+  padding-left: 40px;
 }
 .col-md-12>div>ul>li {
   display: list-item;
@@ -941,5 +941,23 @@ fieldset[disabled] .btn-template-primary.active {
 }
 .table-responsive {
   position: relative;
+}
+.div-archives>div>ul {
+  position: relative;
+  padding-left: 15px;
+}
+.div-archives>div>ul li {
+  line-height: 25px;
+}
+.div-archives>div>ul li::before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  border-radius: 50%;
+  background: #000;
+  width: 5px;
+  height: 5px;
 }
 /* --------------------------------------------------------- */
