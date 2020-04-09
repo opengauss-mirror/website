@@ -97,9 +97,9 @@ function initClaPage() {
     const clientId = "4a111022f19a62016233a36586b1882b81fa385e57b2a7ea16b7829770f42c4b";
 
     cla = readCookie("cla-info")
-    /* if (!cla || cla == "") {
+    if (!cla || cla == "") {
         oauthLogin();
-    } */
+    }
     
 
     type = readCookie("type")

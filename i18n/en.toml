@@ -171,6 +171,16 @@ other = "Sign"
 [cla_btn_reset]
 other = "Reset"
 
+[blogs_iframe]
+other = "https://blog.opengauss.org/en/"
+
+
+
+
+
+
+
+
 
 
 

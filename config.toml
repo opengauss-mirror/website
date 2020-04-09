@@ -67,14 +67,14 @@ paginate = 10
 [[menu.main]]
     identifier = "contributions"
     name = "Contributions"
-    url  = "/zh/docs/community.html"
+    url  = "/en/contribution.html"
     weight = 7
     parent = "community"
 
 [[menu.main]]
     identifier = "mailLists"
     name = "MailLists"
-    url  = "/zh/docs/community.html"
+    url  = "/en/community/mails.html"
     weight = 8
     parent = "community"
 
@@ -101,7 +101,7 @@ paginate = 10
 [[menu.main]]
     identifier = "blog"
     name = "Blog"
-    url  = "/en/blog/blog.html"
+    url  = "/en/blogs/blogs.html"
     weight = 12
 
 [[menu.main]]
@@ -174,14 +174,14 @@ paginate = 10
 [[languages.zh.menu.main]]
     identifier = "contributions"
     name = "社区贡献"
-    url  = "/zh/docs/community.html"
+    url  = "/zh/contribution.html"
     weight = 7
     parent = "community"
 
 [[languages.zh.menu.main]]
     identifier = "mailLists"
     name = "邮件列表"
-    url  = "/zh/docs/community.html"
+    url  = "/zh/community/mails.html"
     weight = 8
     parent = "community"
 

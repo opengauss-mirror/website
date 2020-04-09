@@ -170,6 +170,13 @@ other = "签署"
 [cla_btn_reset]
 other = "重置"
 
+[blogs_iframe]
+other = "https://blog.opengauss.org/zh/"
+
+
+
+
+
 
 
 
