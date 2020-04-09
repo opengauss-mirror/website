@@ -814,7 +814,7 @@ fieldset[disabled] .btn-template-primary.active {
   list-style-type: disc;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
-  padding-inline-start: 40px;
+  padding-left: 40px;
 }
 .col-md-12>div>ul>li {
   display: list-item;
