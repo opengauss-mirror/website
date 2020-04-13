@@ -41,7 +41,7 @@ paginate = 10
 [[menu.main]]
     identifier = "docs"
     name = "Document"
-    url  = "/en/docs.html"
+    url  = "/en/docs/document.html"
     weight = 3
 
 [[menu.main]]
@@ -81,14 +81,14 @@ paginate = 10
 [[menu.main]]
     identifier = "communications"
     name = "Communications"
-    url  = "/zh/docs/community.html"
+    url  = "/en/community/onlineCommunication.html"
     weight = 9
     parent = "community"
 
 [[menu.main]]
     identifier = "meetings"
     name = "Meetings"
-    url  = "/zh/docs/community.html"
+    url  = "/en/community/onlineMeeting.html"
     weight = 10
     parent = "community"
 
@@ -148,7 +148,7 @@ paginate = 10
 [[languages.zh.menu.main]]
     identifier = "docs"
     name = "文档"
-    url  = "/zh/docs/home.html"
+    url  = "/zh/docs/document.html"
     weight = 3
 
 [[languages.zh.menu.main]]
@@ -188,14 +188,14 @@ paginate = 10
 [[languages.zh.menu.main]]
     identifier = "communications"
     name = "线上交流"
-    url  = "/zh/docs/community.html"
+    url  = "/zh/community/onlineCommunication.html"
     weight = 9
     parent = "community"
 
 [[languages.zh.menu.main]]
     identifier = "meetings"
     name = "线上会议"
-    url  = "/zh/docs/community.html"
+    url  = "/zh/community/onlineMeeting.html"
     weight = 10
     parent = "community"
 

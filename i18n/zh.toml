@@ -173,6 +173,9 @@ other = "重置"
 [blogs_iframe]
 other = "https://blog.opengauss.org/zh/"
 
+[main_wechat_url]
+other = "/zh/wechat/code.html"
+
 
 
 

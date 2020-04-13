@@ -3,6 +3,9 @@
 }
 
 footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
   padding: 44px 30px 50px;
   background: #111;
   color: #fff;
