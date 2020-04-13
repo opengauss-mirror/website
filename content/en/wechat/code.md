@@ -1,0 +1,1 @@
+openGauss WeChat Official Account

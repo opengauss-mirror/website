@@ -2,8 +2,6 @@
 <html lang="{{ .Site.Language.Lang }}">
 
 {{ partial "head.html" . }}
-{{ partial "docs/html-head" . }}
-{{ partial "docs/inject/head" . }}
 
 <body>
   <div id="all">
@@ -15,11 +13,7 @@
     </header>
 
     <div id="content">
-      <div class="container docscontainer">
-        <main class="flex container docscontainer">
-            <iframe src={{ i18n "blogs_iframe" }} id="blogIframe" width="100%" scrolling="no" frameborder="0"></iframe>
-        </main>
-      </div>
+      <iframe src={{ i18n "blogs_iframe" }} id="blogIframe" width="100%" scrolling="no" frameborder="0"></iframe>
     </div>
   </div>
   {{ partial "footer.html" . }}
