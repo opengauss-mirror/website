@@ -15,8 +15,10 @@
     <div id="content">
       <iframe src={{ i18n "blogs_iframe" }} id="blogIframe" width="100%" scrolling="no" frameborder="0"></iframe>
     </div>
+
+    {{ partial "footer.html" . }}
   </div>
-  {{ partial "footer.html" . }}
+  
   {{ partial "scripts.html" . }}
 
   <script>
