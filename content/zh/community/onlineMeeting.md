@@ -7,9 +7,8 @@ title = "线上会议"
 openGauss社区在**[IRC](https://zh.wikipedia.org/wiki/IRC)**举行相关的会议，频道有：
 
   - `#opengauss-meeting`
-  - `#opengauss-meeting-1`
 
-在Freenode上，每个人都鼓励去参与，[连接到webclient](https://webchat.freenode.net/?randomnick=1&channels=%23opengauss-meeting%2C%23opengauss-meeting-1&prompt=1&uio=d4)
+在Freenode上，每个人都鼓励去参与，[连接到webclient](https://webchat.freenode.net/?randomnick=1&channels=%23opengauss-meeting&prompt=1&uio=d4)
 
 IRC频道与日志，您可以在这里找到所有的频道和记录[IRC Channel Logs](http://meetings.opengauss.org/)
 
@@ -46,15 +45,15 @@ IRC频道与日志，您可以在这里找到所有的频道和记录[IRC Channe
 用于增加或者移除会议主持人，命令后跟IRC的昵称，开始会议的人将是会议的所有者，在会议过程中是不能被移除，命令将对执行结果给出回应信息，例如：
 
 ```
-<freesky-edward>  #chair  MrGreen  MsAlizarin
-<opengauss-ci-bot> Current  chairs  are: freesky-edward MsAlizarin MrGreen
+<opengauss>  #chair  MrGreen  MsAlizarin
+<opengauss-bot> Current  chairs  are: opengauss MsAlizarin MrGreen
 ```
 #action
 
 用于记录会议讨论后下一步需要某人采取的动作，命令后面的第一串字符表示动作的执行人，后续文字将是对动作的描述，待会议结束后，会议纪要将把该后续动作记录下来。命令样例：
 
 ```
-<freesky-edward>  #action MrGreen 查找整个网络了解为啥集群受到攻击.
+<opengauss>  #action MrGreen 查找整个网络了解为啥集群受到攻击.
 ```
 
 #info
@@ -62,7 +61,7 @@ IRC频道与日志，您可以在这里找到所有的频道和记录[IRC Channe
 用于在会议记录中高亮显示一个记录，例如：
 
 ```
-<freesky-edward>  #info 在下一个版本发布前，我们还有很多工作需要做.
+<opengauss>  #info 在下一个版本发布前，我们还有很多工作需要做.
 ```
 
 #link
@@ -70,8 +69,7 @@ IRC频道与日志，您可以在这里找到所有的频道和记录[IRC Channe
 用于添加一个网络连接，命令后即是该连接的地址，连接不能有空格，如果敲入的文字以http或者https开头，系统会默认执行该命令，例如：
 
 ```
-<freesky-edward> #link [http://wiki.debian.org/MeetBot/](http://wiki.debian.org/MeetBot/) 是主页
-<freesky-edward> [http://wiki.debian.org/MeetBot/](http://wiki.debian.org/MeetBot/) 是主页
-<freesky-edward> #link the main page is [http://wiki.debian.org/MeetBot/](http://wiki.debian.org/MeetBot/) 
-浏览这里
+<opengauss> #link [http://wiki.debian.org/MeetBot/](http://wiki.debian.org/MeetBot/) 是主页
+<opengauss> [http://wiki.debian.org/MeetBot/](http://wiki.debian.org/MeetBot/) 是主页
+<opengauss> #link the main page is [http://wiki.debian.org/MeetBot/](http://wiki.debian.org/MeetBot/)
 ```
