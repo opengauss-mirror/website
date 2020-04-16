@@ -7,9 +7,8 @@ title = "Online Meeting"
 openGauss community holds its various public meetings on **[IRC](https://en.wikipedia.org/wiki/Internet_Relay_Chat)**, in the following channels
 
   - `#opengauss-meeting`
-  - `#opengauss-meeting-1`
   
-on Freenode. Everyone is encouraged to attend, [Connect to IRC via webclient](https://webchat.freenode.net/?randomnick=1&channels=%23opengauss-meeting%2C%23opengauss-meeting-1&prompt=1&uio=d4)
+on Freenode. Everyone is encouraged to attend, [Connect to IRC via webclient](https://webchat.freenode.net/?randomnick=1&channels=%23opengauss-meeting&prompt=1&uio=d4)
 
 IRC channels and logged. You can find all channels and all logs here:
 [IRC Channel Logs](http://meetings.opengauss.org/)
@@ -48,15 +47,15 @@ Mark something as agreed on. The rest of the line is the details. (Chairs  only.
 
 Add new chairs to the meeting. The rest of the line is a list of nicks, separated by commas and/or spaces. The nick which started the meeting is the  ``owner`` and can't be de-chaired. The command replies with a list of the current chairs, for verification (Chairs only.)  Example::
 ```
-<freesky-edward>  #chair MrGreen MsAlizarin
-<opengauss-ci-bot>  Current chairs are: freesky-edward MsAlizarin MrGreen
+<opengauss>  #chair MrGreen MsAlizarin
+<opengauss-bot>  Current chairs are: opengauss MsAlizarin MrGreen
 ```
 #action
 
 Add an ``ACTION`` item to the minutes. Provide irc nicks of people involved, and will be both a complete listing of action items, and a listing of action items sorted by nick at the end of the meeting. This is very useful for making sure this gets done.  Example::
 
 ```
-<freesky-edward>  #action MrGreen will read the entire Internet to determine why the hive cluster is under attack.
+<opengauss>  #action MrGreen will read the entire Internet to determine why the hive cluster is under attack.
 ```
 
 #info
@@ -64,7 +63,7 @@ Add an ``ACTION`` item to the minutes. Provide irc nicks of people involved, and
 Add an ``INFO`` item to the minutes. Example::
 
 ```
-<freesky-edward>  #info We need much effort before the next release.
+<opengauss>  #info We need much effort before the next release.
 ```
 
 #link
@@ -72,8 +71,7 @@ Add an ``INFO`` item to the minutes. Example::
 Add a link to the minutes. The URL will be properly detected within the line in most cases - the URL can't contain spaces. This command is automatically detected if the line starts with http:, https:. Examples::
 
 ```
-<freesky-edward>  #link  [http://wiki.debian.org/MeetBot/](http://wiki.debian.org/MeetBot/)  is  the  main  page
-<freesky-edward>  [http://wiki.debian.org/MeetBot/](http://wiki.debian.org/MeetBot/)  is  the  main  page
-<freesky-edward>  #link  the  main  page  is  [http://wiki.debian.org/MeetBot/](http://wiki.debian.org/MeetBot/)
-so go there
+<opengauss>  #link  [http://wiki.debian.org/MeetBot/](http://wiki.debian.org/MeetBot/)  is  the  main  page
+<opengauss>  [http://wiki.debian.org/MeetBot/](http://wiki.debian.org/MeetBot/)  is  the  main  page
+<opengauss>  #link  the  main  page  is  [http://wiki.debian.org/MeetBot/](http://wiki.debian.org/MeetBot/)
 ```
