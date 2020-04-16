@@ -36,7 +36,8 @@
   font-family: PingFangSC-Regular;
 }
 
-.banner .banner_btn button {
+.banner .banner_btn a {
+  display: inline-block;
   width: 113px;
   height: 37px;
   background-color: #ffffff;
@@ -45,17 +46,19 @@
   font-family: PingFangSC-Medium;
   font-size: 14px;
   color: #333333;
+  text-align: center;
+  line-height: 37px;
+  text-decoration: none;
 }
 
-.banner .banner_btn button:hover {
-  cursor: pointer;
+.banner .banner_btn a:hover {
   background-color: #467FBF;
   box-shadow: 0 5px 20px 0 rgba(51, 93, 140, 0.41);
   border: 1px solid #467FBF;
   color: #ffffff;
 }
 
-.banner .banner_btn button:last-child {
+.banner .banner_btn a:last-child {
   margin-left: 30px;
 }
 

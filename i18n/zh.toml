@@ -176,6 +176,21 @@ other = "https://blog.opengauss.org/zh/"
 [main_wechat_url]
 other = "/zh/wechat/code.html"
 
+[main_download_url]
+other = "/zh/download/download.html"
+
+[main_docs_url]
+other = "/zh/docs/document.html"
+
+
+
+
+
+
+
+
+
+
 
 
 
