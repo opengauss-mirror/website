@@ -11,7 +11,7 @@ openGauss community holds its various public meetings on **[IRC](https://en.wiki
 on Freenode. Everyone is encouraged to attend, [Connect to IRC via webclient](https://webchat.freenode.net/?randomnick=1&channels=%23opengauss-meeting&prompt=1&uio=d4)
 
 IRC channels and logged. You can find all channels and all logs here:
-[IRC Channel Logs](http://meetings.opengauss.org/)
+[IRC Channel Logs](https://meetings.opengauss.org/)
 
 ### Use Case
 
