@@ -205,22 +205,22 @@
     margin: 0.3rem 0;
   }
   h1 {
-    font-size: 0.5rem;
+    font-size: 0.68rem;
   }
   h2 {
-    font-size: 0.46rem;
+    font-size: 0.48rem;
   }
   h3 {
     font-size: 0.4rem;
   }
   h4 {
-    font-size: 0.36rem;
-  }
-  h5 {
     font-size: 0.32rem;
   }
+  h5 {
+    font-size: 0.28rem;
+  }
   h6 {
-    font-size: 0.3rem;
+    font-size: 0.24rem;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1280px) {

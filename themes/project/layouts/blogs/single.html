@@ -25,8 +25,10 @@
     var blogIframe = document.getElementById('blogIframe');
     window.addEventListener('message', function(messageEvent) {
       var data = messageEvent.data;
-      console.log("我是父页面收到了：", data);
-      blogIframe.height = data;
+      console.log("我是父页面收到了：",typeof data, data);
+      if(!isNaN(data)) {
+        blogIframe.height = data;
+      }
     }, false);
   </script>
   
