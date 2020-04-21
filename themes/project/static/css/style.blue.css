@@ -880,6 +880,15 @@ fieldset[disabled] .btn-template-primary.active {
   text-align: justify;
   text-decoration: none;
 }
+.newsDetail_content_right h3 a,
+.newsDetail_right_content a {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+}
 .newsDetail_content_right p,
 .newsDetail_content_right p span,
 .newsDetail_content_right div button {

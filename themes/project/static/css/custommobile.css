@@ -158,8 +158,9 @@
   .newsDetail_content {
     padding: 0;
   }
-  .newsDetail_content_right h3 {
+  .newsDetail_content .newsDetail_content_warp .newsDetail_content_right h3 {
     line-height: 0.24rem;
+    margin: 0;
   }
   .newsDetail_content_right h3 a {
     font-size: 0.28rem;
