@@ -182,6 +182,9 @@ other = "/zh/download/download.html"
 [main_docs_url]
 other = "/zh/docs/document.html"
 
+[main_docs]
+other = "文档"
+
 
 
 
@@ -213,8 +216,7 @@ other = "欢迎加入openGauss社区"
 [main_cards_description]
 other = "openGauss通过社区合作，打造创新平台，构建支持多处理器架构、统一和开放的操作系统，推动软硬件应用生态繁荣发展。"
 
-[main_cards_title_second]
-other = "iSula"
+
 
 
 
@@ -271,7 +273,7 @@ other = "/zh/community/mails.html"
 other = "邮件列表"
 # DOC page
 [doc_git_footer]
-other = "编辑此页"
+other = "意见反馈"
 
 # 404 page
 [404_title]

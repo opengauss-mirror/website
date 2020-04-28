@@ -223,6 +223,7 @@
   h6 {
     font-size: 0.24rem;
   }
+  /* ----------------文档-------------- */
 }
 @media screen and (min-width: 768px) and (max-width: 1280px) {
   .isPc {
@@ -326,6 +327,94 @@
     display: none !important;
   }
 }
+@media screen and (max-width: 1280px) {
+  /* ----------------文档-------------- */
+  .container {
+    position: relative;
+  }
+  .book-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #ffffff;
+  }
+  .docscontainer {
+    display: block;
+    position: relative;
+  }
+  .book-menu,.book-page {
+    width: 100%;
+  }
+  .book-menu {
+    position: relative;
+    z-index: 100;
+    padding: 0 0.24rem;
+    min-height: 400px;
+    background: #F3F9FF;
+  }
+  .book-menu nav {
+    box-shadow: none;
+  }
+  .book-menu .jstree-default .jstree-clicked {
+    background-color: #F3F9FF;
+  }
+  .book-menu {
+    transform: translateX(-100%);
+  }
+  .breadcrumbs {
+    height: 30px;
+    line-height: 30px;
+    padding: 0 0.24rem;
+    background: #467FBF;
+    margin-bottom: 0.2rem;
+  }
+  .breadcrumbs a,
+  .breadcrumbs span {
+    color: #cccccc;
+    font-size: 0.24rem;
+  }
+  .breadcrumbs a:last-child {
+    color: #ffffff;
+  }
+  body .slide_nav {
+    display: flex;
+    align-items: center;
+  }
+  .slide_nav>div {
+    width: 0.82rem;
+    text-align: center;
+    height: 100%;
+    line-height: 0.64rem;
+  }
+  .slide_nav .select {
+    flex-grow: 1;
+    border-left: 1px solid #D6D6D6;
+  }
+  .select select {
+    height: 100%;
+    border: none;
+    outline: none;
+    padding-right: 0.4rem;
+    font-size: 0.28rem;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: url(/img/docs/xiala.png) no-repeat right;
+  }
+  .markdown,.book-footer {
+    padding: 0 0.24rem;
+  }
+  .markdown img {
+    max-width: 100%;
+  }
+  .markdown h1 {
+    font-size: 0.32rem;
+  }
+  .book-page .pager {
+    padding: 0 0.24rem;
+  }
+}
+
 @media screen and (min-width: 1280px) {
   .isPc {
     display: block;

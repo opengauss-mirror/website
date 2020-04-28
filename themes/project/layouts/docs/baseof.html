@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  {{ partial "head.html" . }}
+
+  <body>
+    <div id="all">
+      <header>
+        {{ partial "nav.html" . }}
+      </header>
+      
+      <div class="slide_nav isH5">
+        <div class="docsMenu" id="slideNav">
+          <img src="/img/docs/caidan-close.png" alt="Menu" />
+        </div>
+        
+        <div class="select">
+          <select>
+            <option>1.0</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="heading-breadcrumbs" class="isPc">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                  <h1 class="text-uppercase">{{ i18n "main_docs" }}</h1>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <div id="content">
+          <input type="checkbox" style="display: none;" id="menu-control" />
+          <main class="docscontainer">
+            <aside class="book-menu fixed" id="menu">
+              {{ partial "docs/docsVersion" . }}
+              {{ partial "docs/menu" . }}
+            </aside>
+
+            <div class="book-page" id="page">
+              <div class="isH5 breadcrumbs">
+        
+              </div>
+
+              {{ template "main" . }} 
+              {{ partial "docs/git-footer" . }} 
+              {{ partial "docs/inject/footer" . }}
+              <ul class="pager">
+                <li class="previous"><a href="javaScript:;">&larr; {{ i18n "newer" }}</a></li>
+                <li class="next"><a href="javaScript:;">{{ i18n "older" }} &rarr;</a></li>
+              </ul>
+            </div>
+
+          </main>
+      </div>
+      <!-- /#content -->
+
+      {{ partial "footer.html" . }}
+    </div>
+    <!-- /#all -->
+
+    {{ partial "scripts.html" . }}
+
+    <script>
+      $(document).ready(() => {
+        if((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+          console.log($('.book-page').height())
+          const h = $('.book-page').height();
+          $('.docscontainer').height(h);
+			  }
+      })
+    </script>
+  </body>
+</html>

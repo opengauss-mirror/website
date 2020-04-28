@@ -41,7 +41,7 @@ paginate = 10
 [[menu.main]]
     identifier = "docs"
     name = "Document"
-    url  = "/en/docs/document.html"
+    url  = "/en/1.0/docs/installation/installation.html"
     weight = 3
 
 [[menu.main]]
@@ -148,7 +148,7 @@ paginate = 10
 [[languages.zh.menu.main]]
     identifier = "docs"
     name = "文档"
-    url  = "/zh/docs/document.html"
+    url  = "/zh/1.0/docs/installation/installation.html"
     weight = 3
 
 [[languages.zh.menu.main]]
@@ -300,6 +300,7 @@ paginate = 10
     BookMenuBundle = '/menu'
     bookHidden = true
     bookFlatSection = true
+    BookMenuBundleActiveLinkColor = '\#004ed0'
 
 [Permalinks]
     blog = "/blog/:year/:month/:day/:filename/"
