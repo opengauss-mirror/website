@@ -41,7 +41,7 @@ paginate = 10
 [[menu.main]]
     identifier = "docs"
     name = "Document"
-    url  = "/en/1.0/docs/installation/installation.html"
+    url  = "/en/docs/1.0/installation/installation.html"
     weight = 3
 
 [[menu.main]]
@@ -148,7 +148,7 @@ paginate = 10
 [[languages.zh.menu.main]]
     identifier = "docs"
     name = "文档"
-    url  = "/zh/1.0/docs/installation/installation.html"
+    url  = "/zh/docs/1.0/installation/installation.html"
     weight = 3
 
 [[languages.zh.menu.main]]
