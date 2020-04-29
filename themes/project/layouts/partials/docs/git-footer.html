@@ -10,7 +10,11 @@
   {{ end }}
   {{ with .Site.Params.BookEditPath }}
   <div>
-    {{ if $.File }}<a href="{{ $.Site.Params.BookRepo }}/{{ . }}/{{ $.Site.Language }}/{{ $.File.Path }}" target="_blank" rel="noopener">
+    {{ if $.File }}
+    {{ $versionArr := split $.File.Path "docs" }}
+    {{ $version := index $versionArr 1}}
+    {{ $path := index $versionArr 2}}
+    <a href="{{ $.Site.Params.BookRepo }}{{ $version }}content/{{ $.Site.Language }}/docs{{ $path }}" target="_blank" rel="noopener">
       <img src="{{ "svg/edit.svg" | relURL }}" alt="Edit" />{{ i18n "doc_git_footer"}}
     </a>{{ end }}
   </div>

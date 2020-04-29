@@ -180,7 +180,7 @@ other = "/zh/wechat/code.html"
 other = "/zh/download/download.html"
 
 [main_docs_url]
-other = "/zh/docs/document.html"
+other = "/zh/docs/1.0/docs/installation/installation.html"
 
 [main_docs]
 other = "文档"
