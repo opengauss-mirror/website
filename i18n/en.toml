@@ -183,6 +183,9 @@ other = "/en/download/download.html"
 [main_docs_url]
 other = "/en/docs/document.html"
 
+[main_docs]
+other = "document"
+
 
 
 
@@ -210,8 +213,7 @@ other = "Welcome to openGauss Community"
 [main_cards_description]
 other = "openGauss builds an innovative platform and a unified and open OS that supports the multi-processor architecture."
 
-[main_cards_title_second]
-other = "iSula"
+
 
 
 
@@ -269,7 +271,7 @@ other = "Mail List"
 
 # DOC page
 [doc_git_footer]
-other = "Edit this page"
+other = "Feedback"
 
 # 404 page
 [404_title]

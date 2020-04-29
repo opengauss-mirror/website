@@ -10,10 +10,4 @@
     {{ $attrEq = "=" }}
     {{ $attrVal = .Permalink }}
   {{ end }}
-
-  <style>
-  nav ul a[href{{ $attrEq }}"{{ $attrVal }}"] {
-      color: {{ default "#004ed0" .Site.Params.BookMenuBundleActiveLinkColor }};
-  }
-  </style>
 {{ end }}
