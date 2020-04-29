@@ -10,7 +10,7 @@ openGauss社区在**[IRC](https://zh.wikipedia.org/wiki/IRC)**举行相关的会
 
 在Freenode上，每个人都鼓励去参与，[连接到webclient](https://webchat.freenode.net/?randomnick=1&channels=%23opengauss-meeting&prompt=1&uio=d4)
 
-IRC频道与日志，您可以在这里找到所有的频道和记录[IRC Channel Logs](http://meetings.opengauss.org/)
+IRC频道与日志，您可以在这里找到所有的频道和记录[IRC Channel Logs](https://meetings.opengauss.org/)
 
 ### 用户场景
 
