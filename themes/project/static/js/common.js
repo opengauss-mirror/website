@@ -9,18 +9,14 @@ function getList(val) {
             $(val).slideToggle("slow");
             break;
     }
-    $('#mask').css({
-        "display": "block"
-    });
+    $('#mask').addClass('maskLayer');
 }
 
 // 关闭二级菜单
 function hideNav() {
     $("#nav").slideUp("slow");
     $(".menu_list").slideUp("slow");
-    $('#mask').css({
-        "display": "none"
-    });
+    $('#mask').removeClass('maskLayer');
 }
 
 // 二级菜单每项点击后并将其隐藏

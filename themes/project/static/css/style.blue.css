@@ -1002,6 +1002,21 @@ fieldset[disabled] .btn-template-primary.active {
   max-width: 1140px;
   margin: 0 auto;
 }
+#docsMenu {
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-duration: 3s;
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .jstree-open .jstree-ocl,
 .jstree-closed .jstree-ocl {
   display: inline-block;
@@ -1086,4 +1101,13 @@ fieldset[disabled] .btn-template-primary.active {
   width: 100%;
   outline: none;
   height: 32px;
+}
+/* ------------------mask-------------------- */
+.maskLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
 }
