@@ -386,6 +386,9 @@
     height: 100%;
     line-height: 0.64rem;
   }
+  .docsMenu {
+    z-index: 100;
+  }
   .slide_nav .select {
     flex-grow: 1;
     border-left: 1px solid #D6D6D6;
