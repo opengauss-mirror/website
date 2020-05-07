@@ -21,7 +21,7 @@ other = "openGauss"
 other = "社区"
 
 [banner_intro]
-other = "是一款极致性能、安全、可靠的开源关系型（OLTP）数据库"
+other = "是一款极致性能、安全、可靠的开源关系型数据库"
 
 [feature_title_one]
 other = "鲲鹏生态"

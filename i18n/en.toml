@@ -22,7 +22,7 @@ other = "openGauss"
 other = "Community"
 
 [banner_intro]
-other = "is an extremely safe and reliable open source relational (OLTP) database"
+other = "is an extremely safe and reliable open source relational database"
 
 [feature_title_one]
 other = "Kunpeng ecological"
