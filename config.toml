@@ -104,11 +104,11 @@ paginate = 10
     url  = "/en/blogs/blogs.html"
     weight = 12
 
-[[menu.main]]
-    identifier = "join"
-    name = "Join Us"
-    url = "mailto:contact@opengauss.org"
-    weight = 13
+#[[menu.main]]
+#    identifier = "join"
+#    name = "Join Us"
+#    url = "mailto:contact@opengauss.org"
+#    weight = 13
 
 [[menu.main]]
     identifier = "lang"
@@ -211,11 +211,11 @@ paginate = 10
     url  = "/zh/blogs/blogs.html"
     weight = 12
 
-[[languages.zh.menu.main]]
-    identifier = "join"
-    name = "加入我们"
-    url = "mailto:contact@opengauss.org"
-    weight = 13
+# [[languages.zh.menu.main]]
+#    identifier = "join"
+#   name = "加入我们"
+#    url = "mailto:contact@opengauss.org"
+#    weight = 13
 
 [[languages.zh.menu.main]]
     identifier = "lang"
