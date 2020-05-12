@@ -59,17 +59,11 @@ button {
   letter-spacing: 0.08em;
   border-top: solid 5px transparent;
 }
-.navbar ul.navbar-left > li:not(:last-child) > a:hover {
-  border-top: solid 5px #467fbf;
-}
+
 .navbar ul.navbar-left > li.active > a,
 .navbar ul.navbar-left > li.open > a {
   text-decoration: none !important;
   border-top: solid 5px #294d76;
-}
-
-.navbar-left > li:last-child {
-  margin-left: 10px;
 }
 
 .navbar ul.dropdown-menu {
@@ -317,8 +311,8 @@ button {
 .navbar-default .navbar-nav > li > a {
   color: #555555;
 }
-.navbar-default .navbar-left > li:not(:last-child) > a:hover,
-.navbar-default .navbar-left > li:not(:last-child) > a:focus {
+.navbar-default .navbar-left > li/* :not(:last-child) */ > a:hover,
+.navbar-default .navbar-left > li/* :not(:last-child) */ > a:focus {
   color: #555555;
   background-color: #92b3d9;
 }
