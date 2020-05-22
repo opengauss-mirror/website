@@ -1,7 +1,7 @@
 +++
 mergeName = true
 mergeVersion = true
-nameTotle = 6
+nameTotle = 2
 versionTotle = 2
 name = "ODBC"
 version = "1.0.0"

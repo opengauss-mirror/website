@@ -1,7 +1,7 @@
 +++
 mergeName = true
 mergeVersion = true
-nameTotle = 3
+nameTotle = 1
 versionTotle = 1
 name = "SDR"
 version = "1.0.0"
