@@ -6,7 +6,7 @@ versionTotle = 2
 name = "JDBC"
 version = "1.0.0"
 operatingSystem = "openeuler_aarch64"
-sha = "http://127.0.0.1:32768/start.html#p=%E9%A1%B9%AE&g=1&c=1"
+sha = "a76df4e96c4cb69b10580fcde2d4ef46b5d426be6d47a3d8fd379c97c3e66639"
 downloadlink = "https://mailweb.opengauss.org/hyperkitty/list/community@opengauss.org"
 weight =  2
 +++

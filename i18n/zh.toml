@@ -177,7 +177,7 @@ other = "https://blog.opengauss.org/zh/"
 other = "/zh/wechat/code.html"
 
 [main_download_url]
-other = "/zh/download/download.html"
+other = "/zh/download.html"
 
 [main_docs_url]
 other = "/zh/docs/1.0/docs/installation/installation.html"
