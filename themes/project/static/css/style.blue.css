@@ -1105,3 +1105,54 @@ fieldset[disabled] .btn-template-primary.active {
   height: 100%;
   background: rgba(0, 0, 0, 0.3);
 }
+/* ------------------download-------------------- */
+.table-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+.table-option {
+  width: 358px;
+  height: 114px;
+  border: 1px solid #D4D4D4;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+.table-option .icon {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 8px;
+}
+.table-option .icon1 {
+  background: url(../img/openGaussServer.svg) no-repeat center;
+}
+.table-option .icon2 {
+  background: url(../img/openGaussConnectors.svg) no-repeat center;
+}
+.table-option .icon3 {
+  background: url(../img/openGaussTools.svg) no-repeat center;
+}
+.table-nav>.active {
+  background: #467fbf;
+  color: #ffffff;
+}
+.table-hide {
+  display: none;
+}
+.table>tbody>tr>td[rowspan] {
+  background: #ffffff;
+  vertical-align: middle;
+}
+.table-nav>.table-option.active>.icon1 {
+  background: url(../img/openGaussServerWhilte.svg) no-repeat center;
+}
+.table-nav>.table-option.active>.icon2 {
+  background: url(../img/openGaussConnectorsWhilte.svg) no-repeat center;
+}
+.table-nav>.table-option.active>.icon3 {
+  background: url(../img/openGaussToolsWhilte.svg) no-repeat center;
+}
