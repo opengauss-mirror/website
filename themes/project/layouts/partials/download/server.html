@@ -1,0 +1,34 @@
+<div>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th><span>{{ i18n "download_version" }}</span></th>
+                <th><span>{{ i18n "download_system" }}</span></th>
+                <th><span>{{ i18n "download_sha" }}</span></th>
+                <th><span>{{ i18n "download_operating" }}</span></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{ range where $.Page.Site.Pages "Type" "server" }}
+            {{ if .Params }}
+            <tr>
+                {{ if .Params.merge }}
+                <td rowspan="{{ .Params.totle }}">
+                    <span>{{ .Params.version }}</span>
+                </td>
+                {{ end }}
+                <td>
+                    {{ .Params.operatingSystem }}
+                </td>
+                <td>
+                    {{ .Params.sha }}
+                </td>
+                <td>
+                    <a href="{{ .Params.downloadlink }}">{{ i18n "download_download" }}</a>
+                </td>
+            </tr>
+            {{ end }}
+            {{ end }}
+        </tbody>
+    </table>
+</div>

@@ -186,6 +186,24 @@ other = "/en/docs/1.0/docs/installation/installation.html"
 [main_docs]
 other = "document"
 
+[download_version]
+other = "version"
+
+[download_system]
+other = "operating system"
+
+[download_sha]
+other = "SHA"
+
+[download_operating]
+other = "operating"
+
+[download_name]
+other = "name"
+
+[download_download]
+other = "downlaod"
+
 
 
 
@@ -283,45 +301,3 @@ other = "Back to Home"
 other = "MENU"
 
 
-
-[download_issues]
-other = "Submit issues"
-
-[download_releaseNote]
-other = "Release Note"
-
-[download_getiso]
-other = "Download ISO"
-
-[download_installationGuide]
-other = "Installation Guide"
-
-[download_versionsUrl]
-other = "/en/releases.html"
-
-[download_allRelease]
-other = "All Releases>>"
-
-[versions_versionPlan]
-other = "Version Plan"
-
-[versions_versionName]
-other = "Versions"
-
-[versions_status]
-other = "Status"
-
-[versions_releaseTime]
-other = "Release Date"
-
-[versions_EOLTime]
-other = "EOL Date"
-
-[versions_releaseNote]
-other = "Release Note"
-
-[versions_getiso]
-other = "ISO"
-
-[versions_installationGuide]
-other = "Installation Guide"

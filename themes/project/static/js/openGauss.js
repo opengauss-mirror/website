@@ -42,3 +42,14 @@ var mySwiper = new Swiper ('.swiper-container', {
     }
   }) */
   
+  // 下载table切换
+  $('.table-nav').children('.table-option').each(function(index){
+    $(this).click(() => {
+      // 改变自身以及兄弟元素的样式
+      $(this).addClass('active');
+      $(this).siblings().removeClass('active');
+      // 切换显示内容
+      $($('.table-content').children()[index]).removeClass('table-hide');
+      $($('.table-content').children()[index]).siblings().addClass('table-hide');
+    })
+  })

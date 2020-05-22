@@ -30,7 +30,7 @@
 
   <!-- Theme stylesheet, if possible do not edit this stylesheet -->
   {{ if and (isset .Site.Params "style") .Site.Params.style }}
-    <link href="{{ "css/style" | relURL}}.{{ .Site.Params.style }}.css" rel="stylesheet" id="theme-stylesheet">
+    <link href="{{ "css/style" | relURL}}.{{ .Site.Params.style }}.css?t=202000417" rel="stylesheet" id="theme-stylesheet">
   {{ else }}
     <link href="{{ "css/style.default.css" | relURL}}" rel="stylesheet" id="theme-stylesheet">
   {{ end }}
@@ -38,12 +38,12 @@
 
   <!-- Custom stylesheet - for your changes -->
   <link href="{{ "css/commen.css" | relURL}}" rel="stylesheet">
-  <link href="{{ "css/custom.css?t=20200211" | relURL}}" rel="stylesheet">
-  <link href="{{ "css/custommobile.css?t=20200211" | relURL}}" rel="stylesheet">
+  <link href="{{ "css/custom.css?t=202000417" | relURL}}" rel="stylesheet">
+  <link href="{{ "css/custommobile.css?t=202000417" | relURL}}" rel="stylesheet">
   <link href="{{ "css/home.css" | relURL}}" rel="stylesheet">
-  <link href="{{ "css/swiper.min.css?t=20200310" | relURL}}" rel="stylesheet">
-  <link href="{{ "css/homemobile.css" | relURL}}" rel="stylesheet">
-  <link href="{{ "css/cla.css" | relURL}}" rel="stylesheet">
+  <link href="{{ "css/swiper.min.css?t=202000417" | relURL}}" rel="stylesheet">
+  <link href="{{ "css/homemobile.css?t=202000417" | relURL}}" rel="stylesheet">
+  <link href="{{ "css/cla.css?t=202000417" | relURL}}" rel="stylesheet">
 
   <!-- Responsivity for older IE -->
   {{ `
