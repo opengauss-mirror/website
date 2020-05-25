@@ -42,7 +42,7 @@ var mySwiper = new Swiper ('.swiper-container', {
     }
   }) */
   
-  // 下载table切换
+  // 下载页面table切换
   $('.table-nav').children('.table-option').each(function(index){
     $(this).click(() => {
       // 改变自身以及兄弟元素的样式
@@ -51,5 +51,39 @@ var mySwiper = new Swiper ('.swiper-container', {
       // 切换显示内容
       $($('.table-content').children()[index]).removeClass('table-hide');
       $($('.table-content').children()[index]).siblings().addClass('table-hide');
+    })
+  })
+
+  // 下载页面移动端  SHA 展开/收回
+  $('.download_more').click(function() {
+    $(this).addClass('hide');
+    $(this).prev().addClass('download_sha_unfold');
+  })
+  $('.download_close').click(function() {
+    $(this).parent().next().removeClass('hide');
+    $(this).parent().removeClass('download_sha_unfold');
+  })
+
+  // 下载页面移动端 connectors 切换
+  $('.connectors_table').children('div').each(function(index){
+    $(this).click(() => {
+      // 改变自身以及兄弟元素的样式
+      $(this).addClass('active');
+      $(this).siblings().removeClass('active');
+      // 切换显示内容
+      $($('.connectors_content').children()[index]).removeClass('table-hide');
+      $($('.connectors_content').children()[index]).siblings().addClass('table-hide');
+    })
+  })
+
+  // 下载页面移动端 tools 切换
+  $('.tools_table').children('div').each(function(index){
+    $(this).click(() => {
+      // 改变自身以及兄弟元素的样式
+      $(this).addClass('active');
+      $(this).siblings().removeClass('active');
+      // 切换显示内容
+      $($('.tools_content').children()[index]).removeClass('table-hide');
+      $($('.tools_content').children()[index]).siblings().addClass('table-hide');
     })
   })

@@ -1,4 +1,4 @@
-<div>
+<div class="isPc">
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
@@ -31,4 +31,23 @@
             {{ end }}
         </tbody>
     </table>
+</div>
+
+<div class="isH5">
+    <ul>
+        {{ range where $.Page.Site.Pages "Type" "server" }}
+        {{ if .Params }}
+        <li class="download_list">
+            <p><a href="{{ .Params.downloadlink }}">{{ i18n "download_download" }}{{ .Params.version }}{{ i18n "download_version" }} - {{ .Params.operatingSystem }}</a></p>
+            <div class="download_content">
+                <span>sha</span>
+                <div>
+                    <p class="download_sha">{{ .Params.sha }}&nbsp;&nbsp;<span class="download_close">{{ i18n "download_close" }}</span></p>
+                    <span class="download_more">{{ i18n "download_more" }}</span>
+                </div>
+            </div>
+        </li>
+        {{ end }}
+        {{ end }}
+    </ul>
 </div>

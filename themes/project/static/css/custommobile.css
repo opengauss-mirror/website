@@ -416,6 +416,83 @@
   .book-page .pager {
     padding: 0 0.24rem;
   }
+  /* 下载 */
+  .table-nav {
+    margin-bottom: 0;
+  }
+  .table-content {
+    margin-bottom: 70px;
+  }
+  .table-option {
+    width: 2.1rem;
+  }
+  .table-option p {
+    text-align: center;
+  }
+  .container .table-nav .table-option .icon {
+    width: 0.4rem;
+    height: 0.4rem;
+    background-size: 90%;
+  }
+  .download_list {
+    padding: 30px 0;
+    border-bottom: 1px solid #d4d4d4;
+  }
+  .download_list>p {
+    color: #467FBF;
+    margin-bottom: 0.18rem;
+  }
+  .download_content {
+    display: flex;
+  }
+  .download_content>span {
+    display: block;
+    margin-right: 0.2rem;
+    color: #666666;
+  }
+  .download_content>div {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .download_list .download_sha {
+    width: 90%;
+    color: #000000;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    word-wrap: break-word;
+  }
+  .download_more,.download_close {
+    color: #467FBF;
+  }
+  .download_list .download_sha_unfold {
+    width: 100%;
+    display: block;
+  }
+  .connectors_table,
+  .tools_table {
+    display: flex;
+    margin: 0.2rem 0;
+  }
+  .connectors_table>div,
+  .tools_table>div {
+    padding: 0.1rem 0.4rem;
+    background: #eeeeee;
+    margin-left: 0.2rem;
+    border-radius: 0.5rem;
+  }
+  .connectors_table>div:first-child,
+  .tools_table>div:first-child {
+    margin-left: 0;
+  }
+  .connectors_table>.active,
+  .tools_table>.active {
+    background: #467FBF;
+    color: #ffffff;
+  }
 }
 
 @media screen and (min-width: 1280px) {
