@@ -203,6 +203,12 @@ other = "名称"
 [download_download]
 other = "下载"
 
+[download_more]
+other = "更多"
+
+[download_close]
+other = "收起"
+
 
 
 

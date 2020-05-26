@@ -204,6 +204,12 @@ other = "name"
 [download_download]
 other = "downlaod"
 
+[download_more]
+other = "more"
+
+[download_close]
+other = "close"
+
 
 
 
