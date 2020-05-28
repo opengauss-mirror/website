@@ -611,6 +611,7 @@ fieldset[disabled] .btn-template-main:active,
 .btn-template-main[disabled].active,
 fieldset[disabled] .btn-template-main.active {
   background-color: #ffffff;
+  color: #467fbf;
   border-color: #467fbf;
 }
 .btn-template-main .badge {
@@ -1122,10 +1123,11 @@ fieldset[disabled] .btn-template-primary.active {
   flex-direction: column;
   cursor: pointer;
 }
-.table-option .icon {
+.table-nav .table-option .icon {
   width: 36px;
   height: 36px;
   margin-bottom: 8px;
+  background-size: 90%;
 }
 .table-option .icon1 {
   background: url(../img/openGaussServer.svg) no-repeat center;
@@ -1149,10 +1151,13 @@ fieldset[disabled] .btn-template-primary.active {
 }
 .table-nav>.table-option.active>.icon1 {
   background: url(../img/openGaussServerWhilte.svg) no-repeat center;
+  background-size: 90%;
 }
 .table-nav>.table-option.active>.icon2 {
   background: url(../img/openGaussConnectorsWhilte.svg) no-repeat center;
+  background-size: 90%;
 }
 .table-nav>.table-option.active>.icon3 {
   background: url(../img/openGaussToolsWhilte.svg) no-repeat center;
+  background-size: 90%;
 }
