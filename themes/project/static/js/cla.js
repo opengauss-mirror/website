@@ -288,47 +288,34 @@ function initClaPage() {
                             } else {
                                 alert("Sign succeed!");
                             }
-                        } else {
-                            if (data.errorCode == 1) {
-                                if (lang == "zh-cn") {
-                                    alert("服务器处理错误!");
-                                } else {
-                                    alert("Server handle error!");
-                                }
-                            } else if (data.errorCode == 2) {
-                                if (lang == "zh-cn") {
-                                    alert("邮箱已经被注册!");
-                                } else {
-                                    alert("E-Mail is already registered!");
-                                }
-                            } else if (data.errorCode == 3) {
-                                if (lang == "zh-cn") {
-                                    alert("电话已经被注册!");
-                                } else {
-                                    alert("Telephone is already registered!");
-                                }
-                            } else if (data.errorCode == 4) {
-                                if (lang == "zh-cn") {
-                                    alert("注册邮箱与gitee账号邮箱不一致，请在这里检查：https://gitee.com/profile/emails")
-                                } else {
-                                    alert("The submit email is not the gitee account email. Please checck in https://gitee.com/profile/emails.");
-                                } 
-                            }
-                        }
-                    }
-                    else {
-                        if (lang == "zh-cn") {
-                            alert("签署失败!");
-                        } else {
-                            alert("Sign failed!");
                         }
                     }
                 },
-                error: function () {
-                    if (lang == "zh-cn") {
-                        alert("签署失败!");
-                    } else {
-                        alert("Sign failed!");
+                error: function (data) {
+                    if (data.responseJSON.errorCode == 1) {
+                        if (lang == "zh-cn") {
+                            alert("服务器处理错误!");
+                        } else {
+                            alert("Server handle error!");
+                        }
+                    } else if (data.responseJSON.errorCode == 2) {
+                        if (lang == "zh-cn") {
+                            alert("邮箱已经被注册!");
+                        } else {
+                            alert("E-Mail is already registered!");
+                        }
+                    } else if (data.responseJSON.errorCode == 3) {
+                        if (lang == "zh-cn") {
+                            alert("电话已经被注册!");
+                        } else {
+                            alert("Telephone is already registered!");
+                        }
+                    } else if (data.responseJSON.errorCode == 4) {
+                        if (lang == "zh-cn") {
+                            alert("注册邮箱与gitee账号邮箱不一致，请在这里检查：https://gitee.com/profile/emails")
+                        } else {
+                            alert("The submit email is not the gitee account email. Please checck in https://gitee.com/profile/emails.");
+                        }
                     }
                 }
             });

@@ -8,9 +8,13 @@
   <ul class="topbar">
     <li class="search">
       <img src="/img/earth.svg">
+      {{$curURL:= .RelPermalink}}
+      {{$curDir:= substr $curURL 4}}
       {{ range .Site.Menus.main }}
       {{ if eq .Identifier "lang" }}
-      <a class="list" href="{{ .URL }}">{{ .Name }}</a>
+      {{$newLan := .URL}}
+      {{$newPath := (print $newLan "/" $curDir)}}
+      <a class="list" href="{{ $newPath }}">{{ .Name }}</a>
       {{ end  }}
       {{ end  }}
       <i></i>
@@ -149,6 +153,8 @@ l-9.2,5C11.2,10.4,10.8,10.5,10.5,10.5z M19.7,0H1.3C0.6,0,0,0.6,0,1.3v1L10.5,8L21
             </a>
           </li>
           {{ $current := . }}
+          {{$curURL:= .RelPermalink}}
+          {{$curDir:= substr $curURL 4}}
           {{ range .Site.Menus.main }}
           {{ $topLevel := replace .URL "/" "" }}
           {{ $isChildren := false }}
@@ -166,7 +172,9 @@ l-9.2,5C11.2,10.4,10.8,10.5,10.5,10.5z M19.7,0H1.3C0.6,0,0,0.6,0,1.3v1L10.5,8L21
               aria-expanded="false">{{ .Name }} <span class="caret"></span></a>
             <ul class="dropdown-menu">
               {{ range .Children }}
-              <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+              {{$newLan := .URL}}
+              {{$newPath := (print $newLan "/" $curDir)}}
+              <li><a href="{{ $newPath }}">{{ .Name }}</a></li>
               {{ end }}
             </ul>
             {{ end  }}
