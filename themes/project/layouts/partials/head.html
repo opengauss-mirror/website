@@ -30,7 +30,7 @@
 
   <!-- Theme stylesheet, if possible do not edit this stylesheet -->
   {{ if and (isset .Site.Params "style") .Site.Params.style }}
-    <link href="{{ "css/style" | relURL}}.{{ .Site.Params.style }}.css?t=" rel="stylesheet" id="theme-stylesheet">
+    <link href="{{ "css/style" | relURL}}.{{ .Site.Params.style }}.css?t={{ .Site.Params.timestamp }}" rel="stylesheet" id="theme-stylesheet">
   {{ else }}
     <link href="{{ "css/style.default.css" | relURL}}" rel="stylesheet" id="theme-stylesheet">
   {{ end }}
@@ -38,12 +38,12 @@
 
   <!-- Custom stylesheet - for your changes -->
   <link href="{{ "css/commen.css" | relURL}}" rel="stylesheet">
-  <link href="{{ "css/custom.css?t=" | relURL}}" rel="stylesheet">
-  <link href="{{ "css/custommobile.css?t=" | relURL}}" rel="stylesheet">
+  <link href="{{ "css/custom.css" | relURL}}?t={{ .Site.Params.timestamp }}" rel="stylesheet">
+  <link href="{{ "css/custommobile.css?" | relURL}}t={{ .Site.Params.timestamp }}" rel="stylesheet">
   <link href="{{ "css/home.css" | relURL}}" rel="stylesheet">
-  <link href="{{ "css/swiper.min.css?t=" | relURL}}" rel="stylesheet">
-  <link href="{{ "css/homemobile.css?t=" | relURL}}" rel="stylesheet">
-  <link href="{{ "css/cla.css?t=" | relURL}}" rel="stylesheet">
+  <link href="{{ "css/swiper.min.css?" | relURL}}t={{ .Site.Params.timestamp }}" rel="stylesheet">
+  <link href="{{ "css/homemobile.css?" | relURL}}t={{ .Site.Params.timestamp }}" rel="stylesheet">
+  <link href="{{ "css/cla.css?" | relURL}}t={{ .Site.Params.timestamp }}" rel="stylesheet">
 
   <!-- Responsivity for older IE -->
   {{ `

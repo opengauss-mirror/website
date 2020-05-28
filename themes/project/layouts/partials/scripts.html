@@ -15,27 +15,17 @@
 
 <!-- used to for mobile -->
 <script src="{{ .Site.BaseURL }}js/flexible.js"></script>
-<script src="{{ .Site.BaseURL }}js/common.js?t="></script>
+<script src="{{ .Site.BaseURL }}js/common.js?t={{ .Site.Params.timestamp }}"></script>
 <script src="{{ .Site.BaseURL }}js/dist/jso.js"></script>
 
 <!-- custom -->
 <script src="{{ .Site.BaseURL }}js/swiper.min.js"></script>
-<script src="{{ .Site.BaseURL }}js/openGauss.js?t="></script>
-<script src="{{ .Site.BaseURL }}js/cla.js?t="></script>
+<script src="{{ .Site.BaseURL }}js/openGauss.js?t={{ .Site.Params.timestamp }}"></script>
+<script src="{{ .Site.BaseURL }}js/cla.js?t={{ .Site.Params.timestamp }}"></script>
 <div id="mask" onclick="hideNav()"></div>
 
 <script type="text/javascript">
     $(document).ready(function () {
-        const time = new Date().getTime();
-        
-        $('link').map((index,item) => {
-            item.href= (item.href.indexOf('?t=') === -1) ? item.href : item.href + time;
-        })
-
-        $('script').map((index,item) => {
-            item.src= (item.src.indexOf('?t=') === -1) ? item.src : item.src + time;
-        })
-        
         function getRelativePath() {
             var url = location.href;
             var arrURL = url.split("//");
