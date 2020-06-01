@@ -998,10 +998,10 @@ fieldset[disabled] .btn-template-primary.active {
   margin: 0 auto;
 }
 #docsMenu {
-  -webkit-animation-name: fadeIn;
-  -webkit-animation-duration: 3s;
+  animation: fadeIn .8s linear;
+  -webkit-animation: fadeIn .8s linear;
 }
-@-webkit-keyframes fadeIn {
+@keyframes fadeIn {
   0% {
     opacity: 0;
   }
@@ -1033,9 +1033,13 @@ fieldset[disabled] .btn-template-primary.active {
   display: inline-block;
   padding: 6px 0;
   margin-right: 32px;
+  word-break: break-word;
 }
 .book-menu a {
   color: #000;
+}
+.book-menu a:focus {
+  outline: none;
 }
 .book-menu .jstree-anchor:hover,
 .book-menu .jstree-clicked {
@@ -1066,10 +1070,14 @@ fieldset[disabled] .btn-template-primary.active {
   margin-right: 20px;
   transition: .5s;
   background: #ffffff;
+  flex-shrink: 0;
 }
 .book-menu nav {
   box-shadow: 0 1px 3px 0;
   padding: 0.24rem;
+}
+.jstree {
+  width: 100%;
 }
 .jstree-node {
   position: relative;
@@ -1084,10 +1092,45 @@ fieldset[disabled] .btn-template-primary.active {
 .slide_nav {
   height: 32px;  
 }
+.book-page table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.book-page tbody tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+.book-page table td,
+.book-page table th {
+  border: 1px solid #dddddd;
+  padding: 8px 12px;
+  white-space: normal;
+  word-break: break-all;
+}
 .markdown p,
 .markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown ul,
+.markdown pre,
+.markdown blockquote,
 .markdown img {
   margin-bottom: 0.2rem;
+}
+.markdown blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 14px;
+  border-left: 5px solid #467fbf;
+}
+.markdown pre {
+  padding: 8px 12px;
+}
+.markdown ul>li {
+  list-style: disc;
+  margin-left: 0.48rem;
 }
 .docsVersion {
   margin-bottom: 0.4rem;
