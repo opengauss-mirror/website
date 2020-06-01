@@ -1,5 +1,6 @@
 {{ define "main" }}
 <article class="markdown">
-  {{- .Content -}}
+  {{ $pt := (replace .Content ".md" ".html") }}
+  {{- $pt | safeHTML -}}
 </article>
 {{ end }}
