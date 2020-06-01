@@ -410,9 +410,9 @@
   .markdown img {
     max-width: 100%;
   }
-  .markdown h1 {
+  /* .markdown h1 {
     font-size: 0.32rem;
-  }
+  } */
   .book-page .pager {
     padding: 0 0.24rem;
   }

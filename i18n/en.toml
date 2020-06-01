@@ -181,7 +181,7 @@ other = "/en/wechat/code.html"
 other = "/en/download.html"
 
 [main_docs_url]
-other = "/en/docs/1.0/docs/installation/installation.html"
+other = "/en/docs/1.0/docs/Quickstart/Quickstart.html"
 
 [main_docs]
 other = "document"

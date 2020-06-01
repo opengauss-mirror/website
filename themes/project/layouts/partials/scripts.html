@@ -97,6 +97,7 @@
                 console.log('我是id', wholeData);
                 $("#docstreeview").jstree()._open_to(currentID);
                 $('#docstreeview').jstree().select_node(currentID);
+                $('#docstreeview').jstree().open_node(currentID);
 
                 // 获取上/下一页 URL                 
                 let result = [];
