@@ -22,10 +22,12 @@
   {{ partial "scripts.html" . }}
 
   <script>
+    var hash = window.location.search;
     var blogIframe = document.getElementById('blogIframe');
+    blogIframe.src += hash;
     window.addEventListener('message', function(messageEvent) {
       var data = messageEvent.data;
-      console.log("我是父页面收到了：",typeof data, data);
+      console.log("我是父页面", data)
       if(!isNaN(data)) {
         blogIframe.height = data;
       }
