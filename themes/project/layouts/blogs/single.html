@@ -22,12 +22,17 @@
   {{ partial "scripts.html" . }}
 
   <script>
+    var hash = window.location.search.substr(1);
     var blogIframe = document.getElementById('blogIframe');
+    blogIframe.src += hash;
     window.addEventListener('message', function(messageEvent) {
       var data = messageEvent.data;
-      console.log("我是父页面收到了：",typeof data, data);
+      
       if(!isNaN(data)) {
         blogIframe.height = data;
+      }else if(typeof data === "string") {
+        console.log("我是父页面", data)
+        window.history.replaceState(null,null,"?"+ data)
       }
     }, false);
   </script>
