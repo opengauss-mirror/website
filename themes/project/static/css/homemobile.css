@@ -104,7 +104,8 @@
   }
   .content .content_character .content_character_title h3,
   .content .content_success .content_success_title h3,
-  .content .content_user .content_user_title h3 {
+  .content .content_user .content_user_title h3,
+  .content .content_video .content_video_title h3 {
     font-size: 0.4rem;
     line-height: 0.4rem;
   }
@@ -230,7 +231,11 @@
   .content .content_user {
     padding-top: .8rem;
   }
-   
+
+/* -------------------------------            视频            ------------------------------- */
+  .content .content_user, .content .content_video {
+    padding: 0.6rem 0 0.6rem;
+  }
 }
 
 

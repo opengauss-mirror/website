@@ -209,6 +209,24 @@ other = "更多"
 [download_close]
 other = "收起"
 
+[main_video_title]
+other = "视频展示"
+
+[video_styles_url]
+other = "/zh/styles/"
+
+[video_all_url]
+other = "/zh/video.html"
+
+[video_all]
+other = "全部"
+
+[video_all_video]
+other = "全部视频"
+
+[video_more]
+other = "查看更多"
+
 
 
 

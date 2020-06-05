@@ -1,7 +1,7 @@
 
 
 //swiper
-var mySwiper = new Swiper ('.swiper-container', {
+/* var mySwiper = new Swiper ('.swiper-container', {
     direction: 'horizontal', // 垂直切换选项
     loop: true, // 循环模式选项
     
@@ -12,7 +12,19 @@ var mySwiper = new Swiper ('.swiper-container', {
     },
     
     
-  })   
+  }) */  
+  
+  var mySwiper = new Swiper ('.swiper-container', {
+    direction: 'horizontal', // 垂直切换选项
+    slidesPerView: 3,
+    loop: true, // 循环模式选项
+    
+    // 如果需要前进后退按钮
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  }) 
 
   //鼠标滑过pagination控制swiper切换
 /* for(i=0;i<mySwiper.pagination.bullets.length;i++){

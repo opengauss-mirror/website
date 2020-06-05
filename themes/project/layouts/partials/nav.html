@@ -96,7 +96,7 @@
           {{ end }}
           {{ if ne .Identifier "lang" }}
           <li
-            class="dropdown{{ if eq $current.RelPermalink .URL | or $isChildren | or (eq (trim $current.RelPermalink "/") $topLevel) | or (eq $current.Type .Identifier) | or (eq $current.Type $topLevel) | or (and (eq (default (trim .URL "/") .Identifier) "blog") (in (slice "taxonomy" "taxonomyTerm") $current.Kind)) }} active{{ end }}">
+            class="dropdown{{ if eq $current.RelPermalink .URL | or $isChildren | or (eq (trim $current.RelPermalink "/") $topLevel) | or (eq $current.Type .Identifier) | or (eq $current.Type $topLevel) | or (and (eq (default (trim .URL "/") .Identifier) "video") (in (slice "taxonomy" "taxonomyTerm") $current.Kind)) }} active{{ end }}">
             {{ if .HasChildren }}
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
               aria-expanded="false">{{ .Name }} <span class="caret"></span></a>

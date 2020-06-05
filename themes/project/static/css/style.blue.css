@@ -1204,3 +1204,194 @@ fieldset[disabled] .btn-template-primary.active {
   background: url(../img/openGaussToolsWhilte.svg) no-repeat center;
   background-size: 90%;
 }
+
+/* ----------------------------------video--------------------------------- */
+.video_title {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.video_more {
+  text-align: right;
+}
+.video_more a {
+  font-family: HuaweiSans;
+  font-weight: 900;
+  color: #3399FF;
+  line-height: 36px;
+}
+.video_more a:hover {
+  text-decoration: none;
+}
+.video_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+}
+.video_title {
+  margin-bottom: 20px;
+  position: relative;
+}
+.video_list::after,
+.video_title::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  display: block;
+  background: #e8ebef;
+}
+.video_title::after {
+  margin-top: 16px;
+}
+.video_list::after {
+  margin-top: 150px;
+}
+.video_infro {
+  margin: 0.2rem;
+  width: 260px;
+}
+.video_infro a {
+  display: block;
+}
+.video_infro a:hover,
+.video_infro a:focus {
+  text-decoration: none;
+}
+.video_infro .video_infro_bg{
+  width: 260px;
+  height: 150px;
+}
+.video_infro .video_infro_bg img {
+  width: 100%;
+  height: 100%;
+}
+.video_infro h4 {
+  font-size: 0.32rem;
+  margin: 0.2rem 0;
+}
+.video_infro p {
+  color: #999999;  
+}
+.video_infro p,
+.video_infro h4,
+.home_video_infro h4,
+.home_video_infro p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.video_infro:hover p,
+.video_infro:hover h4 {
+  color: #467fbf;
+}
+.video_detail video {
+  width: 100%;
+  height: 650px;
+}
+.video_content_top {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.4rem 0;
+}
+.video_content_top h3 {
+  font-size: 0.48rem;
+}
+.video_content_top ul,
+.video_tags .tags-list {
+  display: flex;
+}
+.video_content_top ul li,
+.video_tags .tags-list li {
+  margin-right: 0.2rem;
+}
+.video_tags .tags-list li:last-child {
+  margin-right: 0;
+}
+.video_content_top ul li:last-child {
+  margin-right: 0;
+  font-size: 14px;
+  color: #9c9fae;
+  line-height: 24px;
+}
+.video_content_top ul li a,
+.video_tags .tags-list li a {
+  min-width: 70px;
+  text-align: center;
+  display: inline-block;
+  padding: 2px 8px;
+  border: 1px solid #467fbf;
+  border-radius: 0.28rem;
+  color: #467fbf;
+  font-size: 12px;
+  font-weight: 600;
+}
+.video_tags .tags-list li.active a {
+  color: #ffffff;
+  background-color: #467fbf;
+}
+.video_content_top a:hover,
+.video_tags .tags-list li a:hover,
+.video_content_top a:focus,
+.video_tags .tags-list li a:focus {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #467fbf;
+}
+.video_content_bottom {
+  margin-bottom: 250px;
+}
+.video_content_bottom p {
+  font-size: 18px;
+  color: #9c9fae;
+}
+.home_video_infro {
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+.home_video_infro_bg {
+  width: 360px;
+  height: 240px;
+}
+.home_video_infro_bg img {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+}
+.home_video_infro a {
+  text-decoration: none;
+}
+.home_video_infro h4 {
+  margin: 10px 0 5px 0;
+}
+.home_video_infro p {
+  color: #999999;
+}
+.swiper_video .swiper-button-next, 
+.swiper_video .swiper-button-prev {
+  width: 50px;
+  height: 50px;
+  background: rgba(36,35,35,0.4);
+  border-radius: 50%;
+}
+.swiper_video .swiper-button-next {
+  right: 20px;
+}
+.swiper_video .swiper-button-prev {
+  left: 20px;
+}
+.swiper_video .swiper-button-next:after, 
+.swiper_video .swiper-button-prev:after {
+  content: "";
+  width: 16px;
+  height: 16px;
+}
+.swiper_video .swiper-button-next:after {
+  background: url(/img/video/xiangyou2.png) no-repeat center;
+}
+.swiper_video .swiper-button-prev:after {
+  background: url(/img/video/xiangzuo2.png) no-repeat center;
+}
