@@ -210,6 +210,24 @@ other = "more"
 [download_close]
 other = "close"
 
+[main_video_title]
+other = "Video Display"
+
+[video_styles_url]
+other = "/en/styles/"
+
+[video_all_url]
+other = "/en/video.html"
+
+[video_all]
+other = "all"
+
+[video_all_video]
+other = "All Videos"
+
+[video_more]
+other = "see more"
+
 
 
 

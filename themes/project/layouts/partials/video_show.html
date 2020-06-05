@@ -1,0 +1,37 @@
+<div class="content">
+    <div class="content_video">
+        <div class="content_video_title">
+            <h3>{{ i18n "main_video_title" }}</h3>
+        </div>
+
+        <div class="video_more">
+            <a href="{{ i18n "video_all_url" }}">{{ i18n "video_more" }} ></a>
+        </div>
+        <div class="swiper_video swiper-container">
+            <!-- {{ $posts := where .Data.Pages "Type" "video" }}
+            {{ range first 9 $posts }}
+            <div>
+
+            </div>
+            {{ end }} -->
+            <div class="swiper-wrapper">
+                {{ $posts := where .Data.Pages "Type" "video" }}
+                {{ range first 9 $posts }}
+                <div class="swiper-slide">
+                    <div class="home_video_infro">
+                        <a href="{{ .Permalink }}">
+                            <div class="home_video_infro_bg"><img src="{{ .Site.BaseURL}}{{ .Params.banner }}"></div>
+                            <h4>{{ .Title }}</h4>
+                            <p>{{ .Params.Summary }}</p>
+                        </a>
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+
+            <!-- 如果需要导航按钮 -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+</div>
