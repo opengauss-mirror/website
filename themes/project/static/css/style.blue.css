@@ -1205,6 +1205,18 @@ fieldset[disabled] .btn-template-primary.active {
   background: url(../img/openGaussToolsWhilte.svg) no-repeat center;
   background-size: 90%;
 }
+.building {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.building img {
+  max-width: 400px;
+}
+.building h4 {
+  margin: 20px 0;
+}
 
 /* ----------------------------------video--------------------------------- */
 .video_title {
