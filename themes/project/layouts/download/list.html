@@ -16,7 +16,7 @@
         {{ partial "breadcrumbs.html" . }}
 
         <div id="content">
-            {{ if isset .Params "id" }}
+            <!-- {{ if isset .Params "id" }}
 
               {{ partial .Params.id . }}
 
@@ -46,9 +46,18 @@
                 </div>
 
             </div>
-            <!-- /.container -->
 
-            {{ end }}
+            {{ end }} -->
+
+            <div class="building">
+              <img src="/img/download/building.svg">
+              <h4>{{ i18n "download_build" }}</h4>
+              <p class="buttons">
+                <a href="{{ .Site.BaseURL | relLangURL }}" class="btn btn-template-main">
+                    <i class="fa fa-home"></i>{{ i18n "404_homepage" }}
+                </a>
+              </p>
+            </div>
         </div>
         <!-- /#content -->
 

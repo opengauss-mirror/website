@@ -227,6 +227,9 @@ other = "全部视频"
 [video_more]
 other = "查看更多"
 
+[download_build]
+other = "下载功能正在构建中"
+
 
 
 
