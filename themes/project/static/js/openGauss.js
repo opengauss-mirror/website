@@ -18,11 +18,23 @@
     direction: 'horizontal', // 垂直切换选项
     slidesPerView: 3,
     loop: true, // 循环模式选项
+    observer:true,
+    observeParents:true,
+    observeSlideChildren:true,
+
+    multipleActiveThumbs: true,
     
     // 如果需要前进后退按钮
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
+    },
+    on: {
+      resize: function(){
+        let deviceWidth = document.body.clientWidth;
+        let sliderCount = deviceWidth < 760 ? 2 : 3;
+        if(mySwiper.params.slidesPerView != sliderCount) mySwiper.params.slidesPerView = sliderCount
+      }, 
     },
   }) 
 

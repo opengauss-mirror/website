@@ -26,7 +26,7 @@
                                 <h3>{{ i18n "video_all_video" }}</h3>
                             </div>
 
-                            <div class="video_tags">
+                            <div class="video_tags isPc">
                                 <ul class="tags-list">
                                     <li class="active"><a href="{{ i18n "video_all_url" }}">{{ i18n "video_all" }}</a></li>
                                     {{ range $name, $items := .Site.Taxonomies.styles }}
@@ -34,6 +34,14 @@
                                     {{ end }}
                                 </ul>
                             </div>
+                        </div>
+                        <div class="video_tags isH5">
+                            <ul class="tags-list">
+                                <li class="active"><a href="{{ i18n "video_all_url" }}">{{ i18n "video_all" }}</a></li>
+                                {{ range $name, $items := .Site.Taxonomies.styles }}
+                                <li><a href="{{ $.Site.BaseURL }}{{ i18n "video_styles_url" }}{{ $name | urlize | lower }}.html">{{ $name }}</a></li>
+                                {{ end }}
+                            </ul>
                         </div>
                         <div class="video_list">
                             {{ $paginator := .Paginate (where .Data.Pages "Type" "video") 12 }}
