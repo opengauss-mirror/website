@@ -14,6 +14,13 @@
   .content .content_success .swiper-container .swiper-slide {
     justify-content: center ;
   }
+  .home_video_infro_bg {
+    width: 100%;
+    height: 2.8rem;
+  }
+  .swiper_video {
+    height: 300px;
+  }
 }
 @media (max-width: 768px) {
   .content {
@@ -234,7 +241,29 @@
 
 /* -------------------------------            视频            ------------------------------- */
   .content .content_user, .content .content_video {
-    padding: 0.6rem 0 0.6rem;
+    padding: 0.6rem 0 0;
+  }
+  .content .content_video .content_video_title h3::after {
+    margin-bottom: 0;
+  }
+  .content_video_title a {
+    font-size: .24rem;
+    font-weight: 100;
+    position: absolute;
+    right: 0;
+    line-height: .48rem;
+    color: #3399FF;
+  }
+  .home_video_infro_bg {
+    width: 100%;
+    height: 2rem;
+  }
+  .swiper_video {
+    height: 4.8rem;
+  }
+  .swiper_video .swiper-button-next, .swiper_video .swiper-button-prev {
+    width: 26px;
+    height: 26px;
   }
 }
 
@@ -245,6 +274,36 @@
   }
   .content .content_character .content_character_lists ul li {
     height: 3.4rem;
+  }
+  .content .content_character {
+    flex-direction: column;
+    width: 100%;
+  }
+  .news {
+    flex-direction: column;
+    padding-top: 0;
+  }
+  .new_content {
+    width: 100%;
+    padding-top: .8rem;
+  }
+  .new_content ul {
+    padding: 0 0.4rem;
+  }
+  .new_title {
+    position: relative;
+    text-align: center;
+  }
+  .new_title a {
+    font-size: .24rem;
+    font-weight: 100;
+    position: absolute;
+    right: 0;
+    line-height: .48rem;
+  }
+  .new_content li div {
+    font-size: .28rem;
+    display: inline-block;
   }
 }
 

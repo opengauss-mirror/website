@@ -332,6 +332,9 @@
   justify-content: space-around;
   align-items: center;
 }
+.content_video_title {
+  position: relative;
+}
 
 .content .content_user .content_user_title h3,
 .content .content_video .content_video_title h3 {
