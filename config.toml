@@ -51,29 +51,29 @@ paginate = 10
     hasChidren = true
 
 [[menu.main]]
-    identifier = "contributions"
-    name = "Contributions"
+    identifier = "contribution"
+    name = "Contribution
     url  = "/en/contribution.html"
     weight = 5
     parent = "community"
 
 [[menu.main]]
-    identifier = "mailLists"
-    name = "MailLists"
+    identifier = "mailingList"
+    name = "Mailing List"
     url  = "/en/community/mails.html"
     weight = 6
     parent = "community"
 
 [[menu.main]]
-    identifier = "communications"
-    name = "Communications"
+    identifier = "communication"
+    name = "Online Communication"
     url  = "/en/community/onlineCommunication.html"
     weight = 7
     parent = "community"
 
 [[menu.main]]
-    identifier = "meetings"
-    name = "Meetings"
+    identifier = "meeting"
+    name = "Online Meeting"
     url  = "/en/community/onlineMeeting.html"
     weight = 8
     parent = "community"
@@ -168,14 +168,14 @@ paginate = 10
     hasChidren = true
 
 [[languages.zh.menu.main]]
-    identifier = "contributions"
+    identifier = "contribution"
     name = "社区贡献"
     url  = "/zh/contribution.html"
     weight = 5
     parent = "community"
 
 [[languages.zh.menu.main]]
-    identifier = "mailLists"
+    identifier = "mailinglist"
     name = "邮件列表"
     url  = "/zh/community/mails.html"
     weight = 6
@@ -189,7 +189,7 @@ paginate = 10
     parent = "community"
 
 [[languages.zh.menu.main]]
-    identifier = "meetings"
+    identifier = "meeting"
     name = "线上会议"
     url  = "/zh/community/onlineMeeting.html"
     weight = 8
