@@ -2,76 +2,72 @@
 title = "Online Meeting"
 +++
 
-### Brief
+openGauss community uses WeLink, IRC and other channels to conduct online meeting.
 
-openGauss community holds its various public meetings on **[IRC](https://en.wikipedia.org/wiki/Internet_Relay_Chat)**, in the following channels
+openGauss community organizations can choose different channels to carry out online meeting. For details, please see the introduction of each community organization meeting.
 
-  - `#opengauss-meeting`
-  
-on Freenode. Everyone is encouraged to attend, [Connect to IRC via webclient](https://webchat.freenode.net/?randomnick=1&channels=%23opengauss-meeting&prompt=1&uio=d4)
+| Organization Meeting | Scope of Organization Responsibility |
+| :------- | :--------------- |
+| [TC](https://gitee.com/opengauss/tc) | TC is in charge of technical guidance, decision-making, and supervision. |
+| [SIG SQLEngine](https://gitee.com/opengauss/tc/tree/master/sigs/SQLEngine) | Develop and maintain the SQL engines of the openGauss community. |
+| [SIG StorageEngine](https://gitee.com/opengauss/tc/tree/master/sigs/StorageEngine) | Develop and maintain the storage engine of the openGauss community. |
+| [SIG Connectors](https://gitee.com/opengauss/tc/tree/master/sigs/Connectors) | Develop and maintain the connectors of the openGauss community. |
+| [SIG Tools](https://gitee.com/opengauss/tc/tree/master/sigs/Tools) | Develop and maintain the tools of the openGauss community. |
+| [SIG Docs](https://gitee.com/opengauss/tc/tree/master/sigs/Docs) | Develop and maintain the documents of the openGauss community. |
+| [SIG Infra](https://gitee.com/opengauss/tc/tree/master/sigs/Infra) | Develop and maintain the infrastructure of the openGauss community. |
 
-IRC channels and logged. You can find all channels and all logs here:
-[IRC Channel Logs](https://meetings.opengauss.org/)
+### 1. WeLink Meeting
 
-### Use Case
+The WeLink meeting is held by audio and video, and the meeting records can be saved by recording.
 
-The meeting channel can be managed by meeting chair with bot command, which is used by # prefix character. The basic commands are shown below:
+### 2. IRC Meeting
 
-#startmeeting - (chair) Start the meeting on channel. the meeting topic should be given on the rest. e.g. ``#startmeeting infra``  
-#topic - (chair) - (chair) Start a topic on channel to make sure all partners focus on a special topic.
-#endmeeting - (chair) End the whole meeting.
+[IRC]((https://zh.wikipedia.org/wiki/IRC)) meeting is held in plain text.
+The IRC meeting channel of openGauss community is (https://webchat.freenode.net/?randomnick=1&channels=%23opengauss-meeting&prompt=1&uio=d4)。
+You can find all of channels and meeting records from [IRC Channel Logs](https://meetings.opengauss.org/).
 
-For more other commands, please step into next section.
+#### 2.1 Useful Commands of IRC Meeting
 
-### Commands
+All IRC meeting commands use the `#` character as the prefix.  The useful commands include:
 
-All commands are case-insensitive, and use the ``#`` prefix character. Not all commands have output. The commands are.
+`#startmeeting`
 
-#startmeeting
+Start a meeting. The calling IRC nick becomes the chair.
 
-Start a meeting. The calling nick becomes the chair. If any text is given on the rest of the line, this becomes the meeting topic.
+Example: `#startmeeting infra`
 
-#endmeeting
+`#topic`
 
-End a meeting, save logs, restore previous topic, give links to logs. You know the drill.  (Chairs  only.)
+Set the current topic of discussion, and all of the topics will be highlighted at the end of the meeting.
 
-#topic
+Example: `#topic next release time`
 
-Set  the  current  topic  of  discussion, the rest of the line will become the topic, change the topic in the channel (saving  the  original  topic  to  be  restored  at  the  end  of the  meeting).  (Chairs  only.)
+`#endmeeting`
 
-#agreed  (alias  #agree)
+End current meeting, the meeting bot will save records and give links of the meeting records.
 
-Mark something as agreed on. The rest of the line is the details. (Chairs  only.) All the rest text will be recorded by system after the meeting end.
+Example: `#endmeeting`
 
-#chair  and  #unchair
+`#action`
 
-Add new chairs to the meeting. The rest of the line is a list of nicks, separated by commas and/or spaces. The nick which started the meeting is the  ``owner`` and can't be de-chaired. The command replies with a list of the current chairs, for verification (Chairs only.)  Example::
-```
-<opengauss>  #chair MrGreen MsAlizarin
-<opengauss-bot>  Current chairs are: opengauss MsAlizarin MrGreen
-```
-#action
+Provide IRC nicks of people involved and the action items. The action items will be sorted by IRC nick at the end of the meeting.
 
-Add an ``ACTION`` item to the minutes. Provide irc nicks of people involved, and will be both a complete listing of action items, and a listing of action items sorted by nick at the end of the meeting. This is very useful for making sure this gets done.  Example::
+Example: `#action MrGreen organize release plan`
 
-```
-<opengauss>  #action MrGreen will read the entire Internet to determine why the hive cluster is under attack.
-```
+`#info`
 
-#info
+Highlight a record in a meeting.
 
-Add an ``INFO`` item to the minutes. Example::
+Example: `#info We need much effort before the next release`
 
-```
-<opengauss>  #info We need much effort before the next release.
-```
+`#link`
 
-#link
+Add a link record. The URL will be properly detected within the line in most cases, and the URL can't contain spaces.
 
-Add a link to the minutes. The URL will be properly detected within the line in most cases - the URL can't contain spaces. This command is automatically detected if the line starts with http:, https:. Examples::
+Example: `#link [MeetBot](http://wiki.debian.org/MeetBot/)`
 
-```
-<opengauss>  #link  [http://wiki.debian.org/MeetBot/](http://wiki.debian.org/MeetBot/)  is  the  main  page
-<opengauss>  [http://wiki.debian.org/MeetBot/](http://wiki.debian.org/MeetBot/)  is  the  main  page
-<opengauss>  #link  the  main  page  is  [http://wiki.debian.org/MeetBot/](http://wiki.debian.org/MeetBot/)
-```
+`#agreed`
+
+It means that the participants reached a certain conclusion, and the command is followed by the conclusion. The meeting bot will record the conclusion in the meeting minutes.
+
+Example: `#agreed next release time is sunday`
