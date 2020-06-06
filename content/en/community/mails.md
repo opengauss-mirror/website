@@ -1,5 +1,5 @@
 +++
-title = "Mail List"
+title = "Mailing List"
 id = "mails"
 +++
 

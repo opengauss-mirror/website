@@ -1,5 +1,5 @@
 +++
-title = "Contributions to the Community"
+title = "Contribution"
 +++
 
 This document provides guidance for you to contribute to the openGauss community.
