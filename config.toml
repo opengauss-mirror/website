@@ -108,10 +108,10 @@ paginate = 10
     url = "https://bbs.huaweicloud.com/forum/forum-923-1.html"
     weight = 13
 
-[[languages.zh.menu.main]]
+[[menu.main]]
     identifier = "video"
     name = "Video"
-    url = "/zh/video.html"
+    url = "/en/video.html"
     weight = 14
 
 #[[menu.main]]
