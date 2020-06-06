@@ -21,7 +21,7 @@ openGauss使用[freenode.net](https://freenode.net/)提供免费和开放的沟�
 ### 其他您可能想知道的
 
 如果您要创建一个新的IRC频道，
-请通过IRC频道[#opengauss-infra](https://webchat.freenode.net/#opengauss)
+请通过IRC频道[#opengauss-infra](https://webchat.freenode.net/#opengauss-infra)
 或者发送邮件到<infra@opengauss.org>联系基础设施团队寻求帮助。
 
 ***注意：*** 许多IRC频道都记录日志，并且日志记录可以公开访问。

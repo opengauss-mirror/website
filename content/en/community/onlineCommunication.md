@@ -21,7 +21,7 @@ Select a nickname to join the openGauss IRC channel.
 ### Other Things You Might Want to Know
 
 If you want to create a new IRC channel,
-visit the IRC channel [#opengauss-infra](https://webchat.freenode.net/#opengauss)
+visit the IRC channel [#opengauss-infra](https://webchat.freenode.net/#opengauss-infra)
 or send an email to <infra@opengauss.org> for help.
 
 ***Note:*** Many IRC channels have logs, and the logs are publicly accessible.
