@@ -51,51 +51,49 @@ paginate = 10
     hasChidren = true
 
 [[menu.main]]
-    identifier = "news"
-    name = "News"
-    url  = "/en/news.html"
-    weight = 5
-    parent = "community"
-
-[[menu.main]]
-    identifier = "events"
-    name = "Events"
-    url  = "/en/events.html"
-    weight = 6
-    parent = "community"
-
-[[menu.main]]
     identifier = "contributions"
     name = "Contributions"
     url  = "/en/contribution.html"
-    weight = 7
+    weight = 5
     parent = "community"
 
 [[menu.main]]
     identifier = "mailLists"
     name = "MailLists"
     url  = "/en/community/mails.html"
-    weight = 8
+    weight = 6
     parent = "community"
 
 [[menu.main]]
     identifier = "communications"
     name = "Communications"
     url  = "/en/community/onlineCommunication.html"
-    weight = 9
+    weight = 7
     parent = "community"
 
 [[menu.main]]
     identifier = "meetings"
     name = "Meetings"
     url  = "/en/community/onlineMeeting.html"
-    weight = 10
+    weight = 8
     parent = "community"
 
 [[menu.main]]
     identifier = "security"
     name = "Security"
     url  = "/en/security.html"
+    weight = 9
+
+[[menu.main]]
+    identifier = "news"
+    name = "News"
+    url  = "/en/news.html"
+    weight = 10
+
+[[menu.main]]
+    identifier = "events"
+    name = "Events"
+    url  = "/en/events.html"
     weight = 11
 
 [[menu.main]]
@@ -170,51 +168,49 @@ paginate = 10
     hasChidren = true
 
 [[languages.zh.menu.main]]
-    identifier = "news"
-    name = "新闻"
-    url  = "/zh/news.html"
-    weight = 5
-    parent = "community"
-
-[[languages.zh.menu.main]]
-    identifier = "events"
-    name = "活动"
-    url  = "/zh/events.html"
-    weight = 6
-    parent = "community"
-
-[[languages.zh.menu.main]]
     identifier = "contributions"
     name = "社区贡献"
     url  = "/zh/contribution.html"
-    weight = 7
+    weight = 5
     parent = "community"
 
 [[languages.zh.menu.main]]
     identifier = "mailLists"
     name = "邮件列表"
     url  = "/zh/community/mails.html"
-    weight = 8
+    weight = 6
     parent = "community"
 
 [[languages.zh.menu.main]]
     identifier = "communications"
     name = "线上交流"
     url  = "/zh/community/onlineCommunication.html"
-    weight = 9
+    weight = 7
     parent = "community"
 
 [[languages.zh.menu.main]]
     identifier = "meetings"
     name = "线上会议"
     url  = "/zh/community/onlineMeeting.html"
-    weight = 10
+    weight = 8
     parent = "community"
 
 [[languages.zh.menu.main]]
     identifier = "security"
     name = "安全"
     url  = "/zh/security.html"
+    weight = 9
+
+[[languages.zh.menu.main]]
+    identifier = "news"
+    name = "新闻"
+    url  = "/zh/news.html"
+    weight = 10
+
+[[languages.zh.menu.main]]
+    identifier = "events"
+    name = "活动"
+    url  = "/zh/events.html"
     weight = 11
 
 [[languages.zh.menu.main]]
