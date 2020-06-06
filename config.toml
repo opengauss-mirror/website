@@ -57,12 +57,12 @@ paginate = 10
     weight = 5
     parent = "community"
 
-[[menu.main]]
-    identifier = "mailingList"
-    name = "Mailing List"
-    url  = "/en/community/mails.html"
-    weight = 6
-    parent = "community"
+#[[menu.main]]
+#    identifier = "mailingList"
+#    name = "Mailing List"
+#    url  = "/en/community/mails.html"
+#    weight = 6
+#    parent = "community"
 
 [[menu.main]]
     identifier = "communication"
@@ -174,12 +174,12 @@ paginate = 10
     weight = 5
     parent = "community"
 
-[[languages.zh.menu.main]]
-    identifier = "mailinglist"
-    name = "邮件列表"
-    url  = "/zh/community/mails.html"
-    weight = 6
-    parent = "community"
+#[[languages.zh.menu.main]]
+#    identifier = "mailinglist"
+#    name = "邮件列表"
+#    url  = "/zh/community/mails.html"
+#    weight = 6
+#    parent = "community"
 
 [[languages.zh.menu.main]]
     identifier = "communications"
