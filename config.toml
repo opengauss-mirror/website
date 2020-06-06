@@ -52,7 +52,7 @@ paginate = 10
 
 [[menu.main]]
     identifier = "contribution"
-    name = "Contribution
+    name = "Contribution"
     url  = "/en/contribution.html"
     weight = 5
     parent = "community"
