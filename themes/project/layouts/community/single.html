@@ -24,7 +24,7 @@
 
             <div class="container">
 
-                <div class="meeting content_text">
+                <div class="meeting content_text {{ if eq .Title "线上会议" }}table_auto{{ end }}">
                     {{ .Content }}
                 </div>
 
