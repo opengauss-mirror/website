@@ -516,6 +516,7 @@
   transition: all .5s;
   overflow: hidden;
   transform: translateX(-50%);
+  z-index: 100;
 }
 .navbar-right>li>.wechat>p {
   font-weight: bold;

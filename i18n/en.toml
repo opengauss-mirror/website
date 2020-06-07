@@ -231,6 +231,9 @@ other = "see more"
 [download_build]
 other = "Download is under construction"
 
+[full_text]
+other = "Full Text"
+
 
 
 

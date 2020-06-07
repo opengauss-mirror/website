@@ -493,6 +493,7 @@ p {
 }
 .yamm .container {
   position: relative;
+  width: 1400px;
 }
 .yamm .dropdown-menu {
   left: auto;
@@ -906,7 +907,17 @@ fieldset[disabled] .btn-template-primary.active {
 .pager li > a,
 .pager li > span {
   border-radius: 0;
-  color: #666666;
+  color: #467fbf;
+  border-color: #467fbf;
+  font-weight: 700;
+}
+.pager li>a:focus, .pager li>a:hover {
+  color: #ffffff;
+  background-color: #467fbf;
+}
+.pager .disabled>a, .pager .disabled>a:focus, .pager .disabled>a:hover, .pager .disabled>span {
+  color: #467fbf;
+  border-color: #467fbf;
 }
 #post-content p {
   font-family: FZLTHJW-GB1-0;
@@ -1407,4 +1418,22 @@ fieldset[disabled] .btn-template-primary.active {
 }
 .swiper_video .swiper-button-prev:after {
   background: url(/img/video/xiangzuo2.png) no-repeat center;
+}
+.content_text table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+}
+.content_text table th,
+.content_text table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  line-height: 1.42857143;
+  /* white-space: normal;
+  word-break: break-all; */
+}
+.content_text table>tbody>tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
 }
