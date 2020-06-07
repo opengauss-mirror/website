@@ -3,14 +3,14 @@
         <li class="new_title">
             <div>
                 <span>{{ i18n "main_events_title" }}</span>
-                <a href="{{ i18n "main_news_herf" }}">{{ i18n "main_cards_title_enter_repository" }} &gt;</a>
+                <a href="{{ i18n "main_events_herf" }}">{{ i18n "main_cards_title_enter_repository" }} &gt;</a>
             </div>
         </li>
         {{ $posts := where .Data.Pages "Type" "events" }}
         {{ range first 4 $posts }}
         <li>
             <div>
-                {{ i18n "main_news_title" }}
+                {{ i18n "main_events_title" }}
                 <span>|</span>
                 {{ .Date.Format .Site.Params.date_format }}
             </div>

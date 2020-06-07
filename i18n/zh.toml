@@ -230,6 +230,9 @@ other = "查看更多"
 [download_build]
 other = "下载功能正在构建中"
 
+[full_text]
+other = "查看全文"
+
 
 
 
