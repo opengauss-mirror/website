@@ -80,8 +80,12 @@
             </div>
         </div>
     </div>
+    <div class="disclaimer">
+        <input type="checkbox" id="disclaimer">
+        <label for="disclaimer">{{ i18n "cla_disclaimer" }}<a href="{{ i18n "cla_disclaimer_url" }}">{{ i18n "cla_disclaimer_name" }}</a></label>
+    </div>
     <div class="submit">
-        <button class="btn btn btn-template-main" id="sign-cla-button" type="button">{{ i18n "cla_btn_submit" }}</button>
+        <button class="btn btn btn-template-main" disabled id="sign-cla-button" type="button">{{ i18n "cla_btn_submit" }}</button>
         <button class="btn btn btn-template-main" id="reset-cla-button" type="button">{{ i18n "cla_btn_reset" }}</button>
     </div>
     <div>

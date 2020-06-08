@@ -1,8 +1,8 @@
 if(window.location.pathname == "/zh/cla.html" || window.location.pathname == "/en/cla.html") {
-    $(function () {
+    /* $(function () {
         initClaPage();
         initCurrentDate();
-    })
+    }) */
 }
     
 
@@ -140,6 +140,7 @@ function initClaPage() {
     }
 
     $('#individual-email').val(readCookie("email"));
+    
 
     if ($('#sign-cla-button').length) {
         $("#sign-cla-button").bind('click', function () {
@@ -334,3 +335,12 @@ function initClaPage() {
         });
     }
 }
+
+$(".disclaimer label").click(function() {
+    console.log(!$("#disclaimer").is(":checked"))
+    if(!$("#disclaimer").is(":checked")) {
+        $('#sign-cla-button').attr("disabled",false);
+    } else {
+        $('#sign-cla-button').attr("disabled",true);
+    }
+})

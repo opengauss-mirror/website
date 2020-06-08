@@ -13,10 +13,11 @@
     
     
   }) */  
-  
+  var sliderCount = document.body.clientWidth < 760 ? 2 : 3;
+
   var mySwiper = new Swiper ('.swiper-container', {
     direction: 'horizontal', // 垂直切换选项
-    slidesPerView: 3,
+    slidesPerView: sliderCount || 3,
     loop: true, // 循环模式选项
     observer:true,
     observeParents:true,
@@ -32,7 +33,7 @@
     on: {
       resize: function(){
         let deviceWidth = document.body.clientWidth;
-        let sliderCount = deviceWidth < 760 ? 2 : 3;
+        sliderCount = deviceWidth < 760 ? 2 : 3;
         if(mySwiper.params.slidesPerView != sliderCount) mySwiper.params.slidesPerView = sliderCount
       }, 
     },
