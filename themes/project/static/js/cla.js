@@ -1,8 +1,8 @@
 if(window.location.pathname == "/zh/cla.html" || window.location.pathname == "/en/cla.html") {
-    /* $(function () {
+    $(function () {
         initClaPage();
         initCurrentDate();
-    }) */
+    })
 }
     
 
