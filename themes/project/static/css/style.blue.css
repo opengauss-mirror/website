@@ -983,6 +983,10 @@ fieldset[disabled] .btn-template-primary.active {
 .meeting h3 {
   margin: 20px 0;
 }
+.meeting h4,
+.meeting h5 {
+  margin-bottom: 10px;
+}
 .meeting pre {
   display: block;
   padding: 9.5px;
@@ -998,6 +1002,7 @@ fieldset[disabled] .btn-template-primary.active {
 }
 .meeting ul {
   padding-left: 40px;
+  margin-bottom: 10px;
 }
 .meeting ul li {
   list-style-type: disc;
@@ -1431,9 +1436,12 @@ fieldset[disabled] .btn-template-primary.active {
   border: 1px solid #ddd;
   padding: 8px;
   line-height: 1.42857143;
-  /* white-space: normal;
-  word-break: break-all; */
 }
 .content_text table>tbody>tr:nth-of-type(odd) {
   background-color: #f9f9f9;
+}
+.table_auto table th,
+.table_auto table td {
+  white-space: normal;
+  word-break: break-all;
 }

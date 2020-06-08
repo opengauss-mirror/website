@@ -102,11 +102,11 @@ paginate = 10
     url  = "/en/blogs/blogs.html"
     weight = 12
 
-[[menu.main]]
-    identifier = "forum"
-    name = "Forum"
-    url = "https://bbs.huaweicloud.com/forum/forum-923-1.html"
-    weight = 13
+#[[menu.main]]
+#    identifier = "forum"
+#   name = "Forum"
+#   url = "https://bbs.huaweicloud.com/forum/forum-923-1.html"
+#    weight = 13
 
 [[menu.main]]
     identifier = "video"
@@ -219,11 +219,11 @@ paginate = 10
     url  = "/zh/blogs/blogs.html"
     weight = 12
 
-[[languages.zh.menu.main]]
-    identifier = "forum"
-    name = "论坛"
-    url = "https://bbs.huaweicloud.com/forum/forum-923-1.html"
-    weight = 13
+#[[languages.zh.menu.main]]
+#    identifier = "forum"
+#    name = "论坛"
+#   url = "https://bbs.huaweicloud.com/forum/forum-923-1.html"
+#    weight = 13
 
 [[languages.zh.menu.main]]
     identifier = "video"
