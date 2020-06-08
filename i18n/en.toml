@@ -22,7 +22,7 @@ other = "openGauss"
 other = "Community"
 
 [banner_intro]
-other = "is an extremely safe and reliable open source relational database"
+other = "is an enterprise-level open source relational database with extreme performance, safety and reliability"
 
 [feature_title_one]
 other = "Kunpeng ecological"
@@ -214,7 +214,7 @@ other = "close"
 other = "Video Display"
 
 [video_styles_url]
-other = "/en/styles/"
+other = "en/styles/"
 
 [video_all_url]
 other = "/en/video.html"
@@ -233,6 +233,15 @@ other = "Download is under construction"
 
 [full_text]
 other = "Full Text"
+
+[cla_disclaimer]
+other = "I have read and agree to the"
+
+[cla_disclaimer_url]
+other = "/zh/privacyPolicy.html"
+
+[cla_disclaimer_name]
+other = "《openGauss Privacy Policy》"
 
 
 

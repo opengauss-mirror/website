@@ -21,7 +21,7 @@ other = "openGauss"
 other = "社区"
 
 [banner_intro]
-other = "是一款极致性能、安全、可靠的开源关系型数据库"
+other = "是一款极致性能、安全、可靠的企业级开源关系型数据库"
 
 [feature_title_one]
 other = "鲲鹏生态"
@@ -213,7 +213,7 @@ other = "收起"
 other = "视频展示"
 
 [video_styles_url]
-other = "/zh/styles/"
+other = "zh/styles/"
 
 [video_all_url]
 other = "/zh/video.html"
@@ -232,6 +232,15 @@ other = "下载功能正在构建中"
 
 [full_text]
 other = "查看全文"
+
+[cla_disclaimer]
+other = "我已经阅读并同意"
+
+[cla_disclaimer_url]
+other = "/zh/privacyPolicy.html"
+
+[cla_disclaimer_name]
+other = "《openGauss隐私政策》"
 
 
 

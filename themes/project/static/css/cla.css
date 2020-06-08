@@ -13,12 +13,32 @@
     border-radius: 50%;
     border: 1px solid #999999;
 }
+.disclaimer input[type="checkbox"]+label::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 0.28rem;
+    width: 1em;
+    height: 1em;
+    margin-right: 0.1rem;
+    margin-bottom: 0.06rem;
+    border: 1px solid #999999;
+}
 .col-md-12 .table #sel input[type="radio"]:checked+label::before {
     border: 5px solid #467FBF;
 }
-.col-md-12 .table #sel input[type="radio"] {
+.disclaimer input[type="checkbox"]:checked+label::before {
+    background: url(../img/xuanzhong.png);
+    background-size: cover;
+    border: none;
+}
+.col-md-12 .table #sel input[type="radio"],
+.disclaimer input[type="checkbox"] {
     position: absolute;
     clip: rect(0,0,0,0);
+}
+.table #sel li {
+    list-style: none;
 }
 .table #sel li label,
 .form_one>div span,
@@ -104,6 +124,11 @@
     color: #467FBF;
     height: 20px;
 }
+.disclaimer {
+    width: 70%;
+    padding: 0.2rem 0;
+    margin-left: 24%;
+}
 
 @media (max-width: 991px) {
     .row {
@@ -153,5 +178,9 @@
     }
     .table #sel li label, .form_one>div span, .form_two>div span {
         line-height: 0.32rem;
+    }
+    .disclaimer {
+        width: 100%;
+        margin-left: 10%;
     }
 }
