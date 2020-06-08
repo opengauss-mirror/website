@@ -214,7 +214,7 @@ other = "close"
 other = "Video Display"
 
 [video_styles_url]
-other = "/en/styles/"
+other = "en/styles/"
 
 [video_all_url]
 other = "/en/video.html"

@@ -213,7 +213,7 @@ other = "收起"
 other = "视频展示"
 
 [video_styles_url]
-other = "/zh/styles/"
+other = "zh/styles/"
 
 [video_all_url]
 other = "/zh/video.html"
