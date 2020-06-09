@@ -1,13 +1,21 @@
 <div class="banner">
-    <h2 class="banner_title">
-        {{ i18n "banner_title_one" }}
-        <span>{{ i18n "banner_title_two" }}</span>
-        {{ i18n "banner_title_three" }}
-    </h2>
-    <div class="banner_intro">
-        <span>openGauss</span>
-        {{ i18n "banner_intro" }}
+    <div class="swiper-container banner_swiper">
+        <div class="swiper-wrapper banner_swiper_wrapper">
+            {{ range (where .Data.Pages "Type" "banner") }}
+            <div class="swiper-slide banner_swiper_slide">
+                <img src="{{ .Site.BaseURL}}{{ .Params.bgUrl }}">  
+
+                <div class="banner_content">
+                    <h1>{{ .Title }}</h1>
+                    <h4>{{ .Params.info }}</h4>
+                </div>              
+            </div>
+            {{ end }}
+        </div>
+        
+        <!-- <div class="swiper-pagination banner_swiper_pagination"></div> -->        
     </div>
+
     <div class="banner_btn">
         <a href="{{ i18n "main_download_url" }}">{{ i18n "download_title" }}</a>
         <a href="{{ i18n "main_docs_url" }}">{{ i18n "main_quickStart_title" }}</a>

@@ -40,8 +40,15 @@ button {
 
 #all {
   min-height: 100vh;
-  position: relative;
-  padding-bottom: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#content {
+  flex-grow: 1;
+}
+.body_content {
+  flex-grow: 1;
 }
 
 .navbar {
@@ -461,7 +468,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-family: PingFangSC-Medium, sans-serif;
   font-weight: 900;
   line-height: 1.1;
   color: #333333;
@@ -493,7 +500,7 @@ p {
 }
 .yamm .container {
   position: relative;
-  width: 1400px;
+  width: 1275px;
 }
 .yamm .dropdown-menu {
   left: auto;
@@ -1371,9 +1378,13 @@ fieldset[disabled] .btn-template-primary.active {
 .video_content_bottom {
   margin-bottom: 250px;
 }
+.video_content_bottom h4 {
+  margin-bottom: 0.2rem;
+}
 .video_content_bottom p {
   font-size: 18px;
   color: #9c9fae;
+  margin-bottom: 0.2rem;
 }
 .home_video_infro {
   height: 100%;
@@ -1384,6 +1395,7 @@ fieldset[disabled] .btn-template-primary.active {
 .home_video_infro_bg {
   width: 360px;
   height: 240px;
+  overflow: hidden;
 }
 .home_video_infro_bg img {
   width: 100%;
@@ -1403,8 +1415,13 @@ fieldset[disabled] .btn-template-primary.active {
 .swiper_video .swiper-button-prev {
   width: 50px;
   height: 50px;
-  background: rgba(36,35,35,0.4);
+  background: rgba(246,242,242,0.57);
   border-radius: 50%;
+  transition: all .3s;
+}
+.swiper_video .swiper-button-next:hover, 
+.swiper_video .swiper-button-prev:hover {
+  background: rgba(36,35,35,0.4);
 }
 .swiper_video .swiper-button-next {
   right: 20px;

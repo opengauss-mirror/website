@@ -1,13 +1,9 @@
 <div class="content">
     <div class="content_video">
         <div class="content_video_title">
-            <h3>{{ i18n "main_video_title" }}</h3>
-            <a class="isH5" href="{{ i18n "video_all_url" }}">{{ i18n "main_cards_title_enter_repository" }} &gt;</a>
+            <h3>{{ i18n "main_video_title" }}</h3>            
         </div>
 
-        <div class="video_more isPc">
-            <a href="{{ i18n "video_all_url" }}">{{ i18n "video_more" }} ></a>
-        </div>
         <div class="swiper_video swiper-container">
             <!-- {{ $posts := where .Data.Pages "Type" "video" }}
             {{ range first 9 $posts }}
@@ -21,7 +17,7 @@
                 <div class="swiper-slide">
                     <div class="home_video_infro">
                         <a href="{{ .Permalink }}">
-                            <div class="home_video_infro_bg"><img src="{{ .Site.BaseURL}}{{ .Params.banner }}"></div>
+                            <div class="home_video_infro_bg scale_102"><img class="transition_3" src="{{ .Site.BaseURL}}{{ .Params.banner }}"></div>
                             <h4>{{ .Title }}</h4>
                             <p>{{ .Params.Summary }}</p>
                         </a>
@@ -33,6 +29,10 @@
             <!-- 如果需要导航按钮 -->
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
+        </div>
+
+        <div class="see_more">
+            <a class="see_more_btn" href="{{ i18n "video_all_url" }}">{{ i18n "video_more" }}</a>
         </div>
     </div>
 </div>
