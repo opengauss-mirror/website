@@ -1378,9 +1378,13 @@ fieldset[disabled] .btn-template-primary.active {
 .video_content_bottom {
   margin-bottom: 250px;
 }
+.video_content_bottom h4 {
+  margin-bottom: 0.2rem;
+}
 .video_content_bottom p {
   font-size: 18px;
   color: #9c9fae;
+  margin-bottom: 0.2rem;
 }
 .home_video_infro {
   height: 100%;

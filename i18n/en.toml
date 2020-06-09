@@ -43,10 +43,10 @@ other = "Friendly and open"
 other = "AI-based intelligent parameter tuning; online self-learning slow SQL prediction."
 
 [feature_intro_two]
-other = "Concurrency control technology for Kunpeng architecture; NUMA-aware storage engine; SQL-bypass intelligent routing execution technology; memory engine for real-time high-performance scenarios; performance of two-way Kunpeng up to 1.5 million tpmC."
+other = "Concurrent control technology for Kunpeng architecture; the performance of two-way Kunpeng reaches 1.5 million tpmC."
 
 [feature_intro_three]
-other = "Refined security management, all-round data protection, worry-free business, stand-alone master-slave failover time RTO<10s. Data worry-free, data operation user rights management, multi-dimensional audit."
+other = "Refined safety management, single-machine master-slave failover time RTO<10s. Data operation user authority management, multi-dimensional audit."
 
 [feature_intro_four]
 other = "Adopt the Mulan Easy License Agreement (MulanPSL V2), which allows free modification, use and reference of the code; open operation and maintenance monitoring, development and migration tools."

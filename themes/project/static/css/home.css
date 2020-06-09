@@ -21,7 +21,7 @@
 }
 .banner_btn {
   position: absolute;
-  top: 66%;
+  top: 70%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 100;
@@ -30,21 +30,21 @@
   display: inline-block;
   width: 113px;
   height: 37px;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255,1);
   border: 1px solid #ffffff;
   border-radius: 2px;
   font-family: PingFangSC-Medium;
   font-size: 14px;
-  color: #147AC0;
+  color: rgb(65, 66, 66);
   text-align: center;
   line-height: 37px;
   text-decoration: none;
 }
 
 .banner .banner_btn a:hover {
-  background-color: #333333;
+  background-color: #467fbf;
   box-shadow: 0 5px 20px 0 rgba(51, 93, 140, 0.41);
-  border: 1px solid #333333;
+  border: 1px solid #467fbf;
   color: #ffffff;
 }
 
@@ -151,11 +151,11 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  width: 50%;
+  width: 33%;
   height: 330px;
   box-sizing: border-box;
 }
-.content_character_lists ul li:nth-child(1) {
+/* .content_character_lists ul li:nth-child(1) {
   border-bottom: 1px solid #DCDCDC;
   border-right: 1px solid #DCDCDC;
 }
@@ -164,7 +164,7 @@
 }
 .content_character_lists ul li:nth-child(3) {
   border-right: 1px solid #DCDCDC;
-}
+} */
 .content_character_lists_far li>div {
   padding-top: 44px;
   text-align: center;
@@ -734,7 +734,7 @@
   width: 60px;
   height: 3px;
   display: block;
-  margin-top: 16px;
+  margin-top: 20px;
   background: #467FBF;
   position: absolute;
   left: 50%;
