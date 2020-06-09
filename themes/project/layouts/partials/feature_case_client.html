@@ -3,78 +3,21 @@
     <div class="content_character">
         <div class="content_character_title">
             <h3>{{ i18n "main_characterr_title" }}</h3>
-            <!-- <p>关于openGauss独特功能介绍</p> -->
+            <p>{{ i18n "main_characterr_info" }}</p>
         </div>
         <div class="content_character_lists">
             <ul class="content_character_lists_far">
                 {{ range .Site.Data.features }}
                 <li>
                     <div>
-                        <div class="header">
-                            <!-- <img src="{{ .image }}" alt=""> -->
-                            {{ partial .image }}
-                            <h4>{{ i18n .title }}</h4>
-                        </div>
-                        <p>{{ i18n .description }}</p>
+                        <img src="{{ .image }}">
                     </div>
+                        
+                    <h4>{{ i18n .title }}</h4>
+                    <p>{{ i18n .description }}</p>                    
                 </li>
                 {{ end  }}
             </ul>
         </div>
     </div>
-
-     <!-- 成功案例 -->
-    <!-- <div class="content_success">
-        <div class="content_success_title">
-            <h3>成功案例</h3>
-            <p><a href="#">更多 ></a></p>
-        </div>
-
-        
-        <div class="swiper-container isPc">
-            <div class="swiper-wrapper">
-                {{ range .Site.Data.swipers }}
-                <div class="swiper-slide">
-                    {{ range $elm := .slide }}
-                    <div class="swiper_slide_warp">
-                        <div class="swiper_slide_content">
-                            <div>
-                                <h4>{{ $elm.name }}</h4>
-                                <p>{{ $elm.time }}</p>
-                                <p>{{ $elm.content }}</p>
-                            </div>
-                        </div>
-                    </div>
-                    {{ end }}
-                </div>
-                {{ end }}
-            </div> -->
-            <!-- 如果需要分页器 -->
-            <!-- <div class="swiper-pagination"></div>
-            
-        </div>
-
-        <div class="swiper-container isH5">
-            <div class="swiper-wrapper">
-                {{ range .Site.Data.swipersH5 }}
-                {{ range $elm := .slide }}
-                <div class="swiper-slide">
-                    <div class="swiper_slide_warp" style="background: url({{$elm.url}}) no-repeat;background-size: 100% 100%;">
-                        <div class="swiper_slide_content">
-                            <div>
-                                <h4>{{ $elm.name }}</h4>
-                                <p>{{ $elm.time }}</p>
-                                <p>{{ $elm.content }}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {{ end }}
-                {{ end }}
-            </div> -->
-            <!-- 如果需要分页器 -->
-            <!-- <div class="swiper-pagination"></div>
-            
-        </div>
-    </div> -->
 </div>

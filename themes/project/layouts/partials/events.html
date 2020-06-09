@@ -1,21 +1,77 @@
-<div class="new_content">
-    <ul>
-        <li class="new_title">
-            <div>
-                <span>{{ i18n "main_events_title" }}</span>
-                <a href="{{ i18n "main_events_herf" }}">{{ i18n "main_cards_title_enter_repository" }} &gt;</a>
-            </div>
-        </li>
-        {{ $posts := where .Data.Pages "Type" "events" }}
-        {{ range first 4 $posts }}
-        <li>
-            <div>
-                {{ i18n "main_events_title" }}
-                <span>|</span>
-                {{ .Date.Format .Site.Params.date_format }}
-            </div>
-            <a href="{{ .URL }}"><p>{{ .Title }}</p></a>
-        </li>
-        {{ end }}
-    </ul>
+<div class="events_content action_content">
+    <div class="content">
+        <div class="events_title">
+            <h3>{{ i18n "main_events_title" }}</h3>
+        </div>
+
+        <div class="isPc">
+            <ul>
+                {{ $posts := where .Data.Pages "Type" "events" }}
+                {{ range first 2 $posts }}
+                <li class="events_items">
+                    <div class="events_items_left scale_102">
+                        <a href="{{ .URL }}">
+                            <img class="transition_3" src="{{ .Site.BaseURL}}{{ .Params.banner }}">
+                        </a>                    
+                    </div>
+                    <div class="events_items_right">
+                        <a href="{{ .URL }}">
+                            <h4>{{ .Title }}</h4>
+                            <div>
+                                <div>
+                                    <div class="events_items_date">
+                                        <span></span>
+                                        {{ .Date.Format .Site.Params.date_format }} 
+                                    </div>
+                                    <div class="events_items_label">
+                                        <span></span>
+                                        {{ .Params.label }}
+                                    </div>
+                                </div>                            
+                            </div>
+                            <p>{{ .Params.summary }}</p>
+                        </a>
+                    </div>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+
+        <div class="isH5">
+            <ul>
+                {{ $posts := where .Data.Pages "Type" "events" }}
+                {{ range first 1 $posts }}
+                <li class="events_items">
+                    <div class="events_items_left scale_102">
+                        <a href="{{ .URL }}">
+                            <img class="transition_3" src="{{ .Site.BaseURL}}{{ .Params.banner }}">
+                        </a>                    
+                    </div>
+                    <div class="events_items_right">
+                        <a href="{{ .URL }}">
+                            <h4>{{ .Title }}</h4>
+                            <div>
+                                <div>
+                                    <div class="events_items_date">
+                                        <span></span>
+                                        {{ .Date.Format .Site.Params.date_format }} 
+                                    </div>
+                                    <div class="events_items_label">
+                                        <span></span>
+                                        {{ .Params.label }}
+                                    </div>
+                                </div>                            
+                            </div>
+                            <p>{{ .Params.summary }}</p>
+                        </a>
+                    </div>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+
+        <div class="see_more">
+            <a class="see_more_btn" href="{{ i18n "main_events_herf" }}">{{ i18n "video_more" }}</a>
+        </div>
+    </div>
 </div>

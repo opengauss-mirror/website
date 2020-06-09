@@ -1,21 +1,48 @@
-<div class="new_content">
-    <ul>
-        <li class="new_title">
-            <div>
-                <span>{{ i18n "main_news_title" }}</span>
-                <a href="{{ i18n "main_news_herf" }}">{{ i18n "main_cards_title_enter_repository" }} &gt;</a>
-            </div>
-        </li>
-        {{ $posts := where .Data.Pages "Type" "news" }}
-        {{ range first 4 $posts }}
-        <li>
-            <div>
-                {{ i18n "main_news_title" }}
-                <span>|</span>
-                {{ .Date.Format .Site.Params.date_format }}
-            </div>
-            <a href="{{ .URL }}"><p>{{ .Title }}</p></a>
-        </li>
-        {{ end }}
-    </ul>
+<div class="new_content action_content">
+    <div class="content">
+        <div class="new_title">
+            <h3>{{ i18n "main_news_title" }}</h3>
+        </div>
+        <div class="isPc">
+            <ul>
+                {{ $posts := where .Data.Pages "Type" "news" }}
+                {{ range first 3 $posts }}
+                <li class="news_items scale_102">                
+                    <div>
+                        <a href="{{ .URL }}">
+                            <img class="transition_3" src="{{ .Site.BaseURL}}{{ .Params.banner }}">
+    
+                            <div class="news_items_Plate">
+                                <h4>{{ .Title }}</h4>
+                                <p>{{ .Params.summary }}</p>
+                            </div>
+                        </a>                    
+                    </div>                
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+        <div class="isH5">
+            <ul>
+                {{ $posts := where .Data.Pages "Type" "news" }}
+                {{ range first 2 $posts }}
+                <li class="news_items scale_102">                
+                    <div>
+                        <a href="{{ .URL }}">
+                            <img class="transition_3" src="{{ .Site.BaseURL}}{{ .Params.banner }}">
+    
+                            <div class="news_items_Plate">
+                                <h4>{{ .Title }}</h4>
+                                <p>{{ .Params.summary }}</p>
+                            </div>
+                        </a>                    
+                    </div>                
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+        <div class="see_more">
+            <a class="see_more_btn" href="{{ i18n "main_news_herf" }}">{{ i18n "video_more" }}</a>
+        </div>
+    </div>
 </div>

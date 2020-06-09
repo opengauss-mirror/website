@@ -1,7 +1,10 @@
 # home page
 
 [main_characterr_title]
-other = "Features"
+other = "About openGauss"
+
+[main_characterr_info]
+other = "openGauss is an open source relational database management system, issued under the Mulan loose license v2. The openGauss kernel is derived from PostgreSQL. It deeply integrates Huawei's many years of experience in the database field, combined with the needs of enterprise-level scenarios, and continues to build competitive characteristics. At the same time, openGauss is also an open source, free database platform, encouraging community contributions and cooperation."
 
 [main_partner_title]
 other = "Members"
@@ -25,40 +28,28 @@ other = "Community"
 other = "is an enterprise-level open source relational database with extreme performance, safety and reliability"
 
 [feature_title_one]
-other = "Kunpeng ecological"
+other = "Quick tuning"
 
 [feature_title_two]
-other = "Highly compatible"
+other = "Extreme performance"
 
 [feature_title_three]
-other = "Extreme Performance"
+other = "Safe and reliable"
 
 [feature_title_four]
-other = "Easy to use"
-
-[feature_title_five]
-other = "Reliable"
-
-[feature_title_six]
-other = "MulanPSL"
+other = "Friendly and open"
 
 [feature_intro_one]
-other = "The world's first database supporting kunpeng and x86 hardware architecture"
+other = "AI-based intelligent parameter tuning; online self-learning slow SQL prediction."
 
 [feature_intro_two]
-other = "Compatible with SQL2003 standard, highly compatible with the industry"
+other = "Concurrency control technology for Kunpeng architecture; NUMA-aware storage engine; SQL-bypass intelligent routing execution technology; memory engine for real-time high-performance scenarios; performance of two-way Kunpeng up to 1.5 million tpmC."
 
 [feature_intro_three]
-other = "With a single TPMC, the performance data for sysbench in a typical configuration"
+other = "Refined security management, all-round data protection, worry-free business, stand-alone master-slave failover time RTO<10s. Data worry-free, data operation user rights management, multi-dimensional audit."
 
 [feature_intro_four]
-other = "Support rich SQL stored procedure custom function, provide rich API interface"
-
-[feature_intro_five]
-other = "The system is stable and reliable to provide single machine master and backup"
-
-[feature_intro_six]
-other = "MulanPSL license agreement (MulanPSL V2)"
+other = "Adopt the Mulan Easy License Agreement (MulanPSL V2), which allows free modification, use and reference of the code; open operation and maintenance monitoring, development and migration tools."
 
 [main_news_title]
 other = "News"
