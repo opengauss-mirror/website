@@ -232,6 +232,10 @@
   .video_detail video {
     height: 4rem;
   }
+  .video_infro {
+    margin: 1%;
+    width: 48%;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 1280px) {
   .isPc {
@@ -508,12 +512,6 @@
   /* ---------------------视频-------------------- */
   .container .col-md-12 .video_title h3 {
     margin: 0 0 0.3rem 0;
-  }
-  .video_infro {
-    width: 3rem;
-  }
-  .video_infro .video_infro_bg {
-    height: 1.8rem;
   }
   .video_tags .tags-list {
     padding-left: 0;

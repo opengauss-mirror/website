@@ -40,7 +40,7 @@ other = "Reliable, self-diagnosis, self-tuning"
 other = "Friendly and open"
 
 [feature_intro_one]
-other = "Two-way Kunpeng can reach 150W tpmC; provide portable development tool DS and database management tool DM; provide data migration tool SDR provide ODBC, JSBC and libpq interface."
+other = "Two-way Kunpeng can reach 150W tpmC; provide portable development tool DS and database management tool DM; provide data migration tool SDR provide ODBC, JDBC and libpq interface."
 
 [feature_intro_two]
 other = "Adopt Mulan's loose license agreement (MulanPSL V2) to provide enterprise-level features; at the same time support the company's internal and external customers, continue to provide comprehensive technical support."
