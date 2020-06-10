@@ -30,7 +30,7 @@
                                 <ul class="tags-list">
                                     <li class="active"><a href="{{ i18n "video_all_url" }}">{{ i18n "video_all" }}</a></li>
                                     {{ range $name, $items := .Site.Taxonomies.styles }}
-                                    <li><a href="{{ $.Site.BaseURL }}{{ i18n "video_styles_url" }}{{ $name | urlize | lower }}.html">{{ $name }}</a></li>
+                                    <li><a href="{{ $.Site.BaseURL }}{{ i18n "video_styles_url" }}{{ $name | urlize }}.html">{{ $name }}</a></li>
                                     {{ end }}
                                 </ul>
                             </div>
@@ -39,7 +39,7 @@
                             <ul class="tags-list">
                                 <li class="active"><a href="{{ i18n "video_all_url" }}">{{ i18n "video_all" }}</a></li>
                                 {{ range $name, $items := .Site.Taxonomies.styles }}
-                                <li><a href="{{ $.Site.BaseURL }}{{ i18n "video_styles_url" }}{{ $name | urlize | lower }}.html">{{ $name }}</a></li>
+                                <li><a href="{{ $.Site.BaseURL }}{{ i18n "video_styles_url" }}{{ $name | urlize }}.html">{{ $name }}</a></li>
                                 {{ end }}
                             </ul>
                         </div>
