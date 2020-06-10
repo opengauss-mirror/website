@@ -29,7 +29,6 @@
                             <div class="video_tags">
                                 {{ $current := . }}
                                 {{ $currentURL := replace (path.Base $current.RelPermalink) ".html" "" }}
-                                <p>/{{ $currentURL }}</p>
                                 <ul class="tags-list">
                                     <li><a href="{{ i18n "video_all_url" }}">{{ i18n "video_all" }}</a></li>
                                     {{ range $name, $items := .Site.Taxonomies.styles }}
@@ -43,9 +42,9 @@
                             {{ range $paginator.Pages }}
                             <div class="video_infro">
                                 <a href="{{ .Permalink }}">
-                                    <div class="video_infro_bg"><img src="{{ .Site.BaseURL}}{{ .Params.banner }}"></div>
-                                    <h4>{{ .Title }}</h4>
-                                    <p>{{ .Params.Summary }}</p>
+                                    <div class="video_infro_bg scale_102"><img class="transition_3" src="{{ .Site.BaseURL}}{{ .Params.banner }}"></div>
+                                    <!-- <h4>{{ .Title }}</h4>
+                                    <p>{{ .Params.Summary }}</p> -->
                                 </a>
                             </div>
                             {{ end }}
