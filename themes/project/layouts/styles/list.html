@@ -29,6 +29,7 @@
                             <div class="video_tags">
                                 {{ $current := . }}
                                 {{ $currentURL := replace (path.Base $current.RelPermalink) ".html" "" }}
+                                <p>/{{ $currentURL }}</p>
                                 <ul class="tags-list">
                                     <li><a href="{{ i18n "video_all_url" }}">{{ i18n "video_all" }}</a></li>
                                     {{ range $name, $items := .Site.Taxonomies.styles }}
