@@ -28,25 +28,25 @@ other = "Community"
 other = "is an enterprise-level open source relational database with extreme performance, safety and reliability"
 
 [feature_title_one]
-other = "Quick tuning"
+other = "Performance, Tools, Interface"
 
 [feature_title_two]
-other = "Extreme performance"
+other = "Open, Stable, Integration"
 
 [feature_title_three]
-other = "Safe and reliable"
+other = "Reliable, self-diagnosis, self-tuning"
 
 [feature_title_four]
 other = "Friendly and open"
 
 [feature_intro_one]
-other = "AI-based intelligent parameter tuning; online self-learning slow SQL prediction."
+other = "Two-way Kunpeng can reach 150W tpmC; provide portable development tool DS and database management tool DM; provide data migration tool SDR provide ODBC, JSBC and libpq interface."
 
 [feature_intro_two]
-other = "Concurrent control technology for Kunpeng architecture; the performance of two-way Kunpeng reaches 1.5 million tpmC."
+other = "Adopt Mulan's loose license agreement (MulanPSL V2) to provide enterprise-level features; at the same time support the company's internal and external customers, continue to provide comprehensive technical support."
 
 [feature_intro_three]
-other = "Refined safety management, single-machine master-slave failover time RTO<10s. Data operation user authority management, multi-dimensional audit."
+other = "Provide stand-alone active/standby version; stand-alone active/standby failover time RTO<10s; support AI parameter automatic recommendation and slow SQL diagnosis."
 
 [feature_intro_four]
 other = "Adopt the Mulan Easy License Agreement (MulanPSL V2), which allows free modification, use and reference of the code; open operation and maintenance monitoring, development and migration tools."

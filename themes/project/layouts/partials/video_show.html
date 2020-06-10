@@ -1,9 +1,16 @@
+{{ $postss := (where .Site.RegularPages "Section" "==" "video") }}
+{{ $postCount := len $postss }}
+{{ if eq $postCount 0 }}
+{{ else }}
 <div class="content">
     <div class="content_video">
         <div class="content_video_title">
             <h3>{{ i18n "main_video_title" }}</h3>            
         </div>
-
+        
+        
+        
+        
         <div class="swiper_video swiper-container">
             <!-- {{ $posts := where .Data.Pages "Type" "video" }}
             {{ range first 9 $posts }}
@@ -14,6 +21,7 @@
             <div class="swiper-wrapper">
                 {{ $posts := where .Data.Pages "Type" "video" }}
                 {{ range first 9 $posts }}
+                
                 <div class="swiper-slide">
                     <div class="home_video_infro">
                         <a href="{{ .Permalink }}">
@@ -33,6 +41,7 @@
 
         <div class="see_more">
             <a class="see_more_btn" href="{{ i18n "video_all_url" }}">{{ i18n "video_more" }}</a>
-        </div>
+        </div>        
     </div>
 </div>
+{{ end }}
