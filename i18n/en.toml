@@ -4,7 +4,7 @@
 other = "About openGauss"
 
 [main_characterr_info]
-other = "openGauss is an open source relational database management system, issued under the Mulan loose license v2. The openGauss kernel is derived from PostgreSQL. It deeply integrates Huawei's many years of experience in the database field, combined with the needs of enterprise-level scenarios, and continues to build competitive characteristics. At the same time, openGauss is also an open source, free database platform, encouraging community contributions and cooperation."
+other = "openGauss is an open source relational database management system, issued under the Mulan loose license v2. The openGauss kernel was originally derived from PostgreSQL. It deeply integrates Huawei's many years of experience in the database field, combined with the needs of enterprise-level scenarios, and continues to build competitive characteristics. At the same time, openGauss is also an open source, free database platform, encouraging community contributions and cooperation."
 
 [main_partner_title]
 other = "Members"
