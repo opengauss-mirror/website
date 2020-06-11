@@ -46,6 +46,7 @@ button {
 }
 #content {
   flex-grow: 1;
+  padding-bottom: 40px;
 }
 .body_content {
   flex-grow: 1;
@@ -776,7 +777,7 @@ fieldset[disabled] .btn-template-primary.active {
 
 /* -----------------------        法律声明         ---------------------------- */
 #heading-breadcrumbs {
-  background: url("../img/banner.png") center center repeat;
+  background: url("../img/banner_new.png") center center repeat;
   padding: 20px 0;
   margin-bottom: 40px;
 }
