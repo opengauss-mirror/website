@@ -14,7 +14,7 @@ openGauss社区非常重视社区版本的安全性，openGauss社区安全小�
 
 每一个安全漏洞都会有一个指定的人员进行跟踪和处理，协调员是openGauss安全小组的成员，他将负责跟踪和推动漏洞的修复和披露。漏洞端到端的处理流程如下图。
 
-<img src="./security/procedure.png" width="100%" style="max-width:1079px" />
+<img src="./security/procedure.png" width="100%" style="max-width:1040px" />
 
 在这里我们主要介绍流程中漏洞上报、漏洞评估和漏洞披露这三部分内容。
 
@@ -26,7 +26,7 @@ openGauss社区非常重视社区版本的安全性，openGauss社区安全小�
 
 您可以通过email将openGauss产品的潜在安全漏洞发送到openGauss安全小组邮箱（<security@opengauss.org>）。因为漏洞信息比较敏感，为确保机密性，我们建议您对通过电子邮件给我们的任何敏感信息进行加密。我们能够收到使用OpenPGP加密的电子邮件。安全小组成员信息和密钥信息如下：
 
-+ 朱金伟[@zhujinwei]，<zhujinwei@huawei.com>, <a href="security/public_key_zhujinwei.asc" download>GPG公钥</a>
++ 朱金伟[@zhujinwei]，<zhujinwei@huawei.com>
 
 ##### 3.1.2 漏洞上报内容
 

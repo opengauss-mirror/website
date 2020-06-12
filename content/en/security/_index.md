@@ -5,19 +5,19 @@ id = "security"
 
 ### 1. Vulnerability Response
 
-The openGauss community attaches great importance to the community version security. The SIG Security of openGauss community is responsible for receiving, investigating, and disclosing security vulnerabilities related to the community. Researchers and industry organizations working on vulnerability prevention are encouraged to report the potential security vulnerabilities in the openGauss community to the SIG Security. The reported security issues or vulnerabilities will be quickly analyzed and resolved by the committee.
+The openGauss community attaches great importance to the community version security. The SIG Security of openGauss community is responsible for receiving, investigating, and disclosing security vulnerabilities related to the community. Researchers and industry organizations working on vulnerability prevention are encouraged to report the potential security vulnerabilities in the openGauss community to the SIG Security. The reported security issues or vulnerabilities will be quickly analyzed and resolved by the SIG Security.
 
-### 2. Versions Supported
+### 2. Supported Version
 
 The vulnerability response process supports the LTS distribution of the openGauss community and its branch versions.
 
 ### 3. Vulnerability Handling Process
 
-Each security vulnerability is tracked and handled by a designated person. This person is a member of the SIG Security of openGauss community, who is responsible for tracking, resolving, and disclosing the vulnerability. The following flowchart shows the E2E vulnerability handling process.
+Each security vulnerability is tracked and handled by a designated coordinator. This coordinator is a member of the SIG Security of openGauss community, who is responsible for tracking, resolving, and disclosing the vulnerability. The following figure shows the end-to-end vulnerability handling process.
 
-<img src="./security/procedure.png" width="100%" style="max-width:1079px" />
+<img src="./security/procedure.png" width="100%" style="max-width:1044px" />
 
-Here we mainly introduce three parts of the process: vulnerability reporting, vulnerability severity Assessment and vulnerability disclosure.
+The details of vulnerability reporting, vulnerability assessment, and vulnerability disclosure are described as follows.
 
 #### 3.1 Vulnerability Reporting
 
@@ -27,9 +27,9 @@ We hope that you can report the potential vulnerability of an openGauss product 
 ##### 3.1.1 Reporting Channel
 
 You can send the potential security vulnerabilities of an openGauss product to the e-mail of the openGauss security team (<security@openGauss.org>). Given that the vulnerability information is sensitive, you are advised to use the public OpenGPG key of the security team to encrypt the e-mail. 
-The information of the SIG Security members is described as follows:
+The information of the SIG Security members is as follows:
 
-+ Zhu Jinwei[@zhujinwei], <zhujinwei@huawei.com>, <a href="security/public_key_zhujinwei.asc" download>public GPG key</a>
++ Zhu Jinwei[@zhujinwei], <zhujinwei@huawei.com>
 
 ##### 3.1.2 Reporting Content
 
@@ -128,4 +128,4 @@ Perform this procedure to assess a vulnerability:
 
 #### 3.3 Vulnerability Disclosure
 
-For the security of openGauss users, the openGauss community will not discuss, confirm, or disclose the security issues of an openGauss product until the vulnerability is investigated and resolved and the security announcement is issued. After a security vulnerability is resolved, the openGauss community will release a security announcement, with information including the technical details, CVE identifier, CVSS security score, and severity level of the vulnerability, as well as the affected and fixed versions. You can subscribe to security announcements of the openGauss community on the [securityannounce](https://mailweb.opengauss.org/postorius/lists/securityannounce.opengauss.org/).
+For the security of openGauss users, the openGauss community will not discuss, confirm, or disclose the security issues of an openGauss product, and will strictly restrict the transmission of vulnerability information within vulnerability handling personnel, until the vulnerability is investigated and resolved and the security announcement is issued. In this process, the vulnerability reporter is also required to keep the vulnerability confidential. After the security vulnerability is resolved, the openGauss community will release a security announcement, with information including the technical details, CVE identifier, CVSS security score, and severity level of the vulnerability, as well as the affected and fixed versions. You can subscribe to security announcements of the openGauss community on the [securityannounce](https://mailweb.opengauss.org/postorius/lists/securityannounce.opengauss.org/).
