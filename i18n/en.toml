@@ -4,16 +4,16 @@
 other = "About openGauss"
 
 [main_characterr_info]
-other = "openGauss is an open source relational database management system, issued under the Mulan loose license v2. The openGauss kernel was originally derived from PostgreSQL. It deeply integrates Huawei's many years of experience in the database field, combined with the needs of enterprise-level scenarios, and continues to build competitive characteristics. At the same time, openGauss is also an open source, free database platform, encouraging community contributions and cooperation."
+other = "openGauss is an open source relational database management system that is released with the Mulan PSL v2. Previously with the kernel derived from PostgreSQL, openGauss is built on Huawei's years of experience in the database field and continuously provides competitive features tailored to enterprise-class scenarios. In addition, openGauss is a free database platform that encourages community contribution and collaboration."
 
 [main_partner_title]
-other = "Members"
+other = "Partners"
 
 [download_title]
 other = "Download"
 
 [main_quickStart_title]
-other = "QuickStart"
+other = "Quick Start"
 
 [banner_title_one]
 other = "Welcome to"
@@ -202,7 +202,7 @@ other = "more"
 other = "close"
 
 [main_video_title]
-other = "Video Display"
+other = "Lastest Videos"
 
 [video_styles_url]
 other = "en/styles/"
@@ -211,19 +211,22 @@ other = "en/styles/"
 other = "/en/video.html"
 
 [video_all]
-other = "all"
+other = "All"
 
 [video_all_video]
 other = "All Videos"
 
 [video_more]
-other = "see more"
+other = "View More"
+
+[news_more]
+other = "View More"
 
 [download_build]
 other = "Download is under construction"
 
 [full_text]
-other = "Full Text"
+other = "See Details"
 
 [cla_disclaimer]
 other = "I have read and agree to the"
