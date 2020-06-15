@@ -28,28 +28,28 @@ other = "Community"
 other = "is an enterprise-level open source relational database with extreme performance, safety and reliability"
 
 [feature_title_one]
-other = "Performance, Tools, Interface"
+other = "High Performance"
 
 [feature_title_two]
-other = "Open, Stable, Integration"
+other = "High Security"
 
 [feature_title_three]
-other = "Reliable, self-diagnosis, self-tuning"
+other = "Easy O&M"
 
 [feature_title_four]
-other = "Friendly and open"
+other = "Full Openness"
 
 [feature_intro_one]
-other = "Two-way Kunpeng can reach 150W tpmC; provide portable development tool DS and database management tool DM; provide data migration tool SDR provide ODBC, JDBC and libpq interface."
+other = "Prformance up to 1.5 million tpmC on the Kunpeng architecture; Concurrency control technology oriented to the multicore architecture; NUMA-Aware storage engine; SQL-Bypass intelligent routing execution technology; Memory engine for real-time high-performance scenarios."
 
 [feature_intro_two]
-other = "Adopt Mulan's loose license agreement (MulanPSL V2) to provide enterprise-level features; at the same time support the company's internal and external customers, continue to provide comprehensive technical support."
+other = "RTO less than 10s, ensuring service continuity; Refined security management: fine-grained access control and multi-dimensional audit; All-round data protection: encrypted data storage, transmission, and export, dynamic anonymization, and fully encrypted computing."
 
 [feature_intro_three]
-other = "Provide stand-alone active/standby version; stand-alone active/standby failover time RTO<10s; support AI parameter automatic recommendation and slow SQL diagnosis."
+other = "AI-based parameter tuning for automatic recommendation of AI parameters; Slow SQL diagnosis and multi-dimensional performance self-monitoring view, allowing users to learn about system performance in real time; Online self-learning SQL time prediction for quick locating and tuning."
 
 [feature_intro_four]
-other = "Adopt the Mulan Easy License Agreement (MulanPSL V2), which allows free modification, use and reference of the code; open operation and maintenance monitoring, development and migration tools."
+other = "Mulan PSL v2, allowing for free code modification, use, and reference; Fully open database kernel capabilities; Open monitoring, development, and transferring tools; Open partner certification, training system, and university courses."
 
 [main_news_title]
 other = "News"
