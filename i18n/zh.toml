@@ -92,6 +92,9 @@ other = "码云"
 [main_wechat]
 other = "微信"
 
+[main_wechat_account]
+other = "openGauss微信公众号"
+
 [cla_sel]
 other = "请选择一个可适用的陈述并填空。"
 

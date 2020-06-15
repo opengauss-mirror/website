@@ -93,6 +93,9 @@ other = "gitee"
 [main_wechat]
 other = "wechat"
 
+[main_wechat_account]
+other = "openGauss WeChat"
+
 [cla_sel]
 other = "Please select one applicable statement from the following and fill in the blanks."
 
