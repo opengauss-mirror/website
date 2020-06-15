@@ -315,7 +315,7 @@
     margin-bottom: 20px;
   }
   .events_items_right a h4 {
-    font-size: 13px;
+    font-size: 0.28rem;
   }
   .events_items_date, .events_items_label {
     padding: 5px 5px;
@@ -324,7 +324,7 @@
     margin: 10px 0;
   }
   .events_items_right p {
-    font-size: 10px;
+    font-size: 0.24rem;
     line-height: 22px;
   }
 
