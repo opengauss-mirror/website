@@ -1,5 +1,6 @@
+$(document).ready(function() {
   var myBannerSwiper = new Swiper ('.banner_swiper', {
-    direction: 'horizontal', // 垂直切换选项
+    direction: 'horizontal', // 切换选项
     /* loop: true, */ // 循环模式选项
     autoplay:true,
     
@@ -13,12 +14,9 @@
   var sliderCount = document.body.clientWidth < 760 ? 2 : 3;
 
   var mySwiper = new Swiper ('.swiper_video', {
-    direction: 'horizontal', // 垂直切换选项
+    direction: 'horizontal', // 切换选项
     slidesPerView: sliderCount || 3,
     loop: true, // 循环模式选项
-    observer:true,
-    observeParents:true,
-    observeSlideChildren:true,
 
     multipleActiveThumbs: true,
     
@@ -26,13 +24,6 @@
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
-    },
-    on: {
-      resize: function(){
-        let deviceWidth = document.body.clientWidth;
-        sliderCount = deviceWidth < 760 ? 2 : 3;
-        if(mySwiper.params.slidesPerView != sliderCount) mySwiper.params.slidesPerView = sliderCount
-      }, 
     },
   }) 
   
@@ -81,3 +72,4 @@
       $($('.tools_content').children()[index]).siblings().addClass('table-hide');
     })
   })
+})   
