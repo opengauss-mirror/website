@@ -120,7 +120,8 @@
 
 .content_character_title h3,
 .new_title h3,
-.events_title h3 {
+.events_title h3,
+.content .content_video .content_video_title h3 {
   font-size: 34px;
   color: #1A1C33;
   line-height: 36px;
@@ -326,17 +327,6 @@
 }
 .content_video_title {
   position: relative;
-}
-
-.content .content_user .content_user_title h3,
-.content .content_video .content_video_title h3 {
-  display: inline-block;
-  margin: 0 auto;
-  font-family: PingFangSC-Regular;
-  font-size: 40px;
-  color: #333333;
-  line-height: 36px;
-  text-align: center;
 }
 
 .client {
@@ -763,7 +753,8 @@
 .content .content_user .content_user_title h3,
 .content .content_character .content_character_title h3,
 .content .content_video .content_video_title h3,
-.new_title span {
+.new_title h3,
+.events_title h3 {
   font-weight: 600;
 }
 

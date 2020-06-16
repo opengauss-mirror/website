@@ -163,7 +163,9 @@
   .content .content_character .content_character_title h3,
   .content .content_success .content_success_title h3,
   .content .content_user .content_user_title h3,
-  .content .content_video .content_video_title h3 {
+  .content .content_video .content_video_title h3,
+  .new_title h3,
+  .events_title h3 {
     font-size: 0.4rem;
     line-height: 0.4rem;
   }
@@ -293,7 +295,11 @@
   .events_content {
     margin: 34px 0 20px 0;
   }
-  .events_content ul {
+  .new_content .isH5 ul {
+    margin: 44px 0 30px 0;
+  }
+  .events_content .isH5 ul
+  {
     margin: 44px 0 10px 0;
   }
   .events_content>.content {
@@ -306,16 +312,6 @@
   .events_items_left, .events_items_right {
     width: 100%;
     height: auto;
-  }
-  .content_character_title h3, .new_title h3, .events_title h3 {
-    font-size: 20px;
-    line-height: 26px;
-  }
-  .content .content_character .content_character_title h3::after, .content .content_success .content_success_title h3::after, .content .content_user .content_user_title h3::after, .content .content_video .content_video_title h3::after, .content_college .content_college_content .content_college_title h3::after, .new_title h3::after, .events_title h3::after {
-    width: 45px;
-  }
-  .content .content_character .content_character_title h3::after, .content .content_success .content_success_title h3::after, .content .content_user .content_user_title h3::after, .content .content_video .content_video_title h3::after, .content_college .content_college_content .content_college_title h3::after, .new_title h3::after, .events_title h3::after {
-    margin-bottom: 20px;
   }
   .events_items_right a h4 {
     font-size: 0.28rem;
@@ -336,7 +332,9 @@
   .content .content_success .content_success_title h3::after,
   .content .content_user .content_user_title h3::after,
   .content_college .content_college_content .content_college_title h3::after,
-  .new_title>div::after {
+  .new_title h3::after, 
+  .events_title h3::after {
+    width: 45px;
     margin-top: .2rem;
     margin-bottom: .4rem;
   }
