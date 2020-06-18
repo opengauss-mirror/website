@@ -22,7 +22,7 @@ If you have never subscribed to the mailing list, do as follows:
 
 * Reply the email to confirm your subscription.
 
-* At last, you will receive a welcome email from the email list.
+* At last, you will receive a welcome email from the mailing list.
 
 {{< mails "List Name" " Email Address " "Description" >}}
 

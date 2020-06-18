@@ -1,8 +1,8 @@
 +++
 listname = "Docs"
 emailaddress = "docs@opengauss.org"
-description = "openGauss community SIG Docs discussion group."
+description = "Mail list for SIG Docs discussion group in openGauss community."
 websitelink = "https://mailweb.opengauss.org/postorius/lists/docs.opengauss.org"
 archivelink = "https://mailweb.opengauss.org/hyperkitty/list/docs@opengauss.org"
-weight =  6
+weight =  3
 +++
