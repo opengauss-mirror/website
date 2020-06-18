@@ -1,1 +1,1 @@
-openGauss 微信公众号
+openGauss微信公众号

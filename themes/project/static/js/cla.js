@@ -146,7 +146,7 @@ function initClaPage() {
         $("#sign-cla-button").bind('click', function () {
             v = parseInt($('input[name="cla-type-radio"]:checked').val());
             var regphone = /^((0\d{2,3})-)(\d{7,8})(-(\d{3,}))?$/;
-            var regmobile = /^1\d{10}$/;
+            var regmobile = /^([0-9+])\d+$/;
             var regemail = /^[-_A-Za-z0-9.]+@([_A-Za-z0-9]+\.)+[A-Za-z0-9]{2,3}$/;
             $('#tip-cla-label').html('');
             lang = $('html').attr('lang');
