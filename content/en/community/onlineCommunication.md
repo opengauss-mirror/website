@@ -28,9 +28,9 @@ If you have never subscribed to the mailing list, do as follows:
 
 #### 1.2 How Do I Send an Email to the Mailing List?
 
-To send an email to a specified mail list, send your email to the address listed after the mail list.
+To send an email to a specified mailing list, send your email to the address listed after the mailing list.
 
-All community memberships in this mail list will receive your email.
+All community memberships in this mailing list will receive your email.
 
 #### 1.3 How Can I View the Previous Mailing List?
 
