@@ -145,9 +145,10 @@
     }
     .table {
         border-top: 1px solid #CACACA;
+        padding-top: 20px;
     }
     .table p,.col-md-12 .table #sel,.form_one>p,.form_two>p {
-        padding: 0 15px;
+        padding: 10px 15px;
     }
     #form {
         width: 100%;
