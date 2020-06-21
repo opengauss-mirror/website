@@ -28,9 +28,9 @@ If you have never subscribed to the mailing list, do as follows:
 
 #### 1.2 How Do I Send an Email to the Mailing List?
 
-To send an email to a specified mailing list, send your email to the address listed after the mailing list.
+To send an email to a specified mailing list, send your email to the address listed on the mailing list.
 
-All community memberships in this mailing list will receive your email.
+Subscribers in this mailing list will receive your email.
 
 #### 1.3 How Can I View the Previous Mailing List?
 
@@ -45,9 +45,9 @@ Internet Relay Chat (IRC) is widely used in open source projects because of its 
 
 We sincerely invite you to join the openGauss IRC channel for discussion.
 
-openGauss provide free and open communication through [freenode.net](https://freenode.net/).
+openGauss provides free and open communication through [freenode.net](https://freenode.net/).
 
-The IRC software can be used in all operating systems. The [Wikipedia] (https://zh.wikipedia.org/wiki/IRC) provides a comparison of diverse IRC clients. You may select one suitable client for your operating system.
+The IRC software can be used in all operating systems. [Wikipedia] (https://zh.wikipedia.org/wiki/IRC) provides a comparison of diverse IRC clients. You may select one suitable client for your operating system.
 
 IRC does not require complex configurations. If you do not want to download or install the software, you can use its web client (see at [freenode.net](https://freenode.net/)).
 
