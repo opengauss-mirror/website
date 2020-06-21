@@ -239,6 +239,9 @@ other = "/zh/privacyPolicy.html"
 [cla_disclaimer_name]
 other = "《openGauss隐私政策》"
 
+[home_link]
+other = "/zh"
+
 
 
 

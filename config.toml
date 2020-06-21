@@ -381,11 +381,11 @@ paginate = 10
 
 [params.copyright]
     enable = true
-    text = "Copyright © openGauss 2020. All rights reserved.<br><a href=\"/en/legal.html\">Legal Notice</a>&nbsp;&nbsp;<a href=\"/en/privacyPolicy.html\">Privacy Policy</a>"
+    text = "Copyright © openGauss 2020. All rights reserved.<br><a href=\"/en/aboutUs.html\">About Us</a>&nbsp;&nbsp;<a href=\"/en/legal.html\">Legal Notice</a>&nbsp;&nbsp;<a href=\"/en/privacyPolicy.html\">Privacy Policy</a>"
 
 [languages.zh.params.copyright]
     enable = true
-    text = "版权所有 © openGauss 2020 保留一切权利 <br><a href=\"/zh/legal.html\">法律声明</a>&nbsp;&nbsp;<a href=\"/zh/privacyPolicy.html\">隐私政策</a>"
+    text = "版权所有 © openGauss 2020 保留一切权利 <br><a href=\"/zh/aboutUs.html\">关于我们</a>&nbsp;&nbsp;<a href=\"/zh/legal.html\">法律声明</a>&nbsp;&nbsp;<a href=\"/zh/privacyPolicy.html\">隐私政策</a>"
 
 [languages]
 
