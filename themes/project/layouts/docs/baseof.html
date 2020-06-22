@@ -38,19 +38,22 @@
               {{ partial "docs/menu" . }}
             </aside>
 
-            <div class="book-page" id="page">
-              <div class="isH5 breadcrumbs">
-        
+            <div class="book-warp">
+              <div class="book-page" id="page">
+                <div class="isH5 breadcrumbs">
+          
+                </div>
+  
+                {{ template "main" . }} 
+                {{ partial "docs/git-footer" . }} 
+                {{ partial "docs/inject/footer" . }}
+                <ul class="pager">
+                  <li class="previous"><a href="javaScript:;">&larr; {{ i18n "newer" }}</a></li>
+                  <li class="next"><a href="javaScript:;">{{ i18n "older" }} &rarr;</a></li>
+                </ul>
               </div>
 
-              {{ template "main" . }} 
-              {{ partial "docs/git-footer" . }} 
-              {{ partial "docs/inject/footer" . }}
-              <ul class="pager">
-                <li class="previous"><a href="javaScript:;">&larr; {{ i18n "newer" }}</a></li>
-                <li class="next"><a href="javaScript:;">{{ i18n "older" }} &rarr;</a></li>
-              </ul>
-              <!-- <p>This document is licensed under the Creative Commons Attribution 4.0 International License (available at http://creativecommons.org/Licenses/by/4.0/).</p> -->
+              <p class="affirm">{{ i18n "main_agreement" | safeHTML }}</p>
             </div>
             
           </main>

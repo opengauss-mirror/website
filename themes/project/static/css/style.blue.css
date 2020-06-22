@@ -1017,7 +1017,7 @@ fieldset[disabled] .btn-template-primary.active {
 /* --------------------------文档--------------------------- */
 .docscontainer {
   display: flex;
-  max-width: 1140px;
+  max-width: 1160px;
   margin: 0 auto;
 }
 #docsMenu {
@@ -1109,8 +1109,17 @@ fieldset[disabled] .btn-template-primary.active {
   position: absolute;
   right: 0;
 }
+.book-warp {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .book-page {
   width: 100%;
+}
+.affirm {
+  word-break: break-all;
+  font-size: 12px;
 }
 .slide_nav {
   height: 32px;  
