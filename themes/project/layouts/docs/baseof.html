@@ -38,23 +38,24 @@
               {{ partial "docs/menu" . }}
             </aside>
 
-            <div class="book-warp">
-              <div class="book-page" id="page">
-                <div class="isH5 breadcrumbs">
-          
-                </div>
-  
-                {{ template "main" . }} 
-                {{ partial "docs/git-footer" . }} 
-                {{ partial "docs/inject/footer" . }}
-                <ul class="pager">
-                  <li class="previous"><a href="javaScript:;">&larr; {{ i18n "newer" }}</a></li>
-                  <li class="next"><a href="javaScript:;">{{ i18n "older" }} &rarr;</a></li>
-                </ul>
+            
+            <div class="book-page" id="page">
+              <div class="isH5 breadcrumbs">
+        
               </div>
 
+              {{ template "main" . }} 
+              {{ partial "docs/git-footer" . }} 
+              {{ partial "docs/inject/footer" . }}
               <p class="affirm">{{ i18n "main_agreement" | safeHTML }}</p>
+              <ul class="pager">
+                <li class="previous"><a href="javaScript:;">&larr; {{ i18n "newer" }}</a></li>
+                <li class="next"><a href="javaScript:;">{{ i18n "older" }} &rarr;</a></li>
+              </ul>
             </div>
+
+            
+           
             
           </main>
       </div>

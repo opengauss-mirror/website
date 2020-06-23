@@ -192,5 +192,20 @@
             $('.breadcrumbs').append(aNode.toString())
             console.log("动态标签", aNode.toString())
         }
+
+        /* 解决滚动后导航栏fixed脱离文档流导致滚动条不能到底 */
+        if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
+            console.log("这是手机")
+        }else {
+            $(window).scroll(function(){
+                if($(document).scrollTop()>=$('.navbar-affixed-top').height()) {
+                    $('#heading-breadcrumbs').addClass('breadcrumbs_top')
+                }else {
+                    $('#heading-breadcrumbs').removeClass('breadcrumbs_top')
+                }
+            });
+        }
+        
+        
     });
 </script>

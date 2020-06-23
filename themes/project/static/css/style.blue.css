@@ -30,6 +30,9 @@
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
+.breadcrumbs_top {
+  margin-top: 58px;
+}
 /* general styles */
 a,
 button {
@@ -1109,15 +1112,11 @@ fieldset[disabled] .btn-template-primary.active {
   position: absolute;
   right: 0;
 }
-.book-warp {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
 .book-page {
   width: 100%;
 }
 .affirm {
+  margin-top: 20px;
   word-break: break-all;
   font-size: 12px;
 }

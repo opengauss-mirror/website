@@ -243,7 +243,7 @@ other = "《openGauss隐私政策》"
 other = "/zh"
 
 [main_agreement]
-other = "本文档遵循<a href='https://creativecommons.org/licenses/by/4.0/'>知识共享许可协议CC 4.0</a> (http://creativecommons.org/Licenses/by/4.0/)。"
+other = "本文档遵循<a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>知识共享许可协议CC 4.0</a> (http://creativecommons.org/Licenses/by/4.0/)。"
 
 
 
