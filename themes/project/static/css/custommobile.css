@@ -443,7 +443,8 @@
   /* .markdown h1 {
     font-size: 0.32rem;
   } */
-  .book-page .pager {
+  .book-page .pager,
+  .affirm {
     padding: 0 0.24rem;
   }
   /* 下载 */
