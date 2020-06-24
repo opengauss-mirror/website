@@ -46,10 +46,10 @@ other = "Performance up to 1.5 million tpmC on the Kunpeng architecture; Concurr
 other = "RTO less than 10s, ensuring service continuity; Refined security management: fine-grained access control and multi-dimensional audit; All-round data protection: encrypted data storage, transmission, and export, dynamic anonymization, and fully encrypted computing."
 
 [feature_intro_three]
-other = "Intelligent parameter tuning to realize automatic parameter recommendation based on business model; Slow SQL diagnosis and multi-dimensional performance self-monitoring view, allowing users to learn about system performance in real time; Online self-learning SQL time prediction for quick locating and tuning."
+other = "Intelligent parameter optimization: combined with deep reinforcement learning and heuristic algorithm to realize automatic parameter recommendation; Slow SQL diagnosis and multi-dimensional performance self-monitoring view, allowing users to learn about system performance in real time; Online self-learning SQL time prediction for quick locating and tuning."
 
 [feature_intro_four]
-other = "Mulan PSL v2, allowing for free code modification, use, and reference; Fully open database kernel capabilities; Open partner certification, training system, and university courses."
+other = "Mulan PSL v2, allowing for free code modification, use, and reference; Fully open database kernel capabilities, joint developers and partners to build tools and other database peripheral capabilities; Open partner certification, training system, and university courses."
 
 [main_news_title]
 other = "News"
