@@ -246,6 +246,13 @@ other = "/en"
 [main_agreement]
 other = "This document is licensed under the <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>Creative Commons Attribution 4.0</a> International License (available at http://creativecommons.org/Licenses/by/4.0/)."
 
+[copy_code]
+other = "Copy Code"
+
+[copy_code_success]
+other = "Copy Successful"
+
+
 
 
 

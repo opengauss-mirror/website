@@ -1157,7 +1157,15 @@ fieldset[disabled] .btn-template-primary.active {
   border-left: 5px solid #467fbf;
 }
 .markdown pre {
-  padding: 8px 12px;
+  position: relative;
+  padding: 30px 12px;
+}
+.btn_pre_copy {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  cursor: pointer;
+  color: hsla(0, 0%, 55%, 0.8);
 }
 .markdown ul>li {
   list-style: disc;
@@ -1183,7 +1191,7 @@ fieldset[disabled] .btn-template-primary.active {
 /* ------------------download-------------------- */
 .table-nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: 32px;
 }
 .table-option {
@@ -1196,6 +1204,9 @@ fieldset[disabled] .btn-template-primary.active {
   align-items: center;
   flex-direction: column;
   cursor: pointer;
+}
+.table-option:first-child {
+  margin-right: 20px;
 }
 .table-nav .table-option .icon {
   width: 36px;

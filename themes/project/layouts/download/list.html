@@ -16,7 +16,7 @@
         {{ partial "breadcrumbs.html" . }}
 
         <div id="content">
-            <!-- {{ if isset .Params "id" }}
+            {{ if isset .Params "id" }}
 
               {{ partial .Params.id . }}
 
@@ -33,23 +33,23 @@
                         <i class="icon icon2"></i>
                         <p>{{ .Params.optionTwo }}</p>
                     </div>
-                    <div class="table-option">
+                    <!-- <div class="table-option">
                         <i class="icon icon3"></i>
                         <p>{{ .Params.optionThere }}</p>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="table-content">
                     <div class="content-one">{{ partial "download/server" . }}</div>
                     <div class="table-hide">{{ partial "download/connectors" . }}</div>
-                    <div class="table-hide">{{ partial "download/tools" . }}</div>
+                    <!-- <div class="table-hide">{{ partial "download/tools" . }}</div> -->
                 </div>
 
             </div>
 
-            {{ end }} -->
+            {{ end }}
 
-            <div class="building">
+            <!-- <div class="building">
               <img src="/img/download/building.png">
               <h4>{{ i18n "download_build" }}</h4>
               <p class="buttons">
@@ -57,7 +57,7 @@
                     <i class="fa fa-home"></i>{{ i18n "404_homepage" }}
                 </a>
               </p>
-            </div>
+            </div> -->
         </div>
         <!-- /#content -->
 
