@@ -88,10 +88,10 @@ other = "Last Page"
 other = "Next Page"
 
 [main_gitee]
-other = "gitee"
+other = "Gitee"
 
 [main_wechat]
-other = "wechat"
+other = "WeChat"
 
 [main_wechat_account]
 other = "openGauss WeChat"
@@ -181,22 +181,22 @@ other = "/en/docs/1.0.0/docs/Quickstart/Quickstart.html"
 other = "document"
 
 [download_version]
-other = "version"
+other = "Version"
 
 [download_system]
-other = "operating system"
+other = "Operating System"
 
 [download_sha]
 other = "SHA256"
 
 [download_operating]
-other = "operating"
+other = "Operating"
 
 [download_name]
 other = "name"
 
 [download_download]
-other = "downlaod"
+other = "Download"
 
 [download_more]
 other = "more"
@@ -253,13 +253,13 @@ other = "Copy Code"
 other = "Copy Successful"
 
 [download_release_notes]
-other = "Release Notes ："
+other = "Release Notes: "
 
 [download_installation_guide]
-other = "Installation Guide ："
+other = "Installation Guide: "
 
 [download_feedback_question]
-other = "Feedback Question ："
+other = "Feedback Question: "
 
 [download_release_notes_link]
 other = "https://opengauss.org/en/docs/1.0.0/docs/Releasenotes/Releasenotes.html"

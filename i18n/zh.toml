@@ -87,10 +87,10 @@ other = "上一页"
 other = "下一页"
 
 [main_gitee]
-other = "码云"
+other = "Gitee"
 
 [main_wechat]
-other = "微信"
+other = "WeChat"
 
 [main_wechat_account]
 other = "openGauss微信公众号"
@@ -252,13 +252,13 @@ other = "复制代码"
 other = "复制成功"
 
 [download_release_notes]
-other = "发行说明 ："
+other = "发行说明: "
 
 [download_installation_guide]
-other = "安装指南 ："
+other = "安装指南: "
 
 [download_feedback_question]
-other = "反馈问题 ："
+other = "反馈问题: "
 
 [download_release_notes_link]
 other = "https://opengauss.org/zh/docs/1.0.0/docs/Releasenotes/Releasenotes.html"

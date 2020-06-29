@@ -302,7 +302,7 @@
     padding: .14rem 0;
     font-size: .28rem;
     border-bottom: 1px solid #ECECEC;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
   }
   header #nav p:not(:last-child) {
     border-bottom: 1px solid #ECECEC;
@@ -455,7 +455,7 @@
     margin-bottom: 70px;
   }
   .table-option {
-    width: 2.1rem;
+    width: 48%;
   }
   .table-option p {
     text-align: center;

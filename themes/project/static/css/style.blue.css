@@ -359,6 +359,12 @@ button {
   background-color: #467fbf;
   color: #ffffff;
 }
+.navbar .navbar-right .open>a,
+.navbar .navbar-right .open>a:hover,
+.navbar .navbar-right .open>a:focus {
+  background-color: #ffffff;
+  color: #555555;
+}
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
     color: #555555;

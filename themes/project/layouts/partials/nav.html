@@ -45,17 +45,24 @@
     {{ end  }}
     {{ end  }}
     {{ end  }}
+    <a href={{ i18n "main_wechat_url" }} class="list list_wechat">
+      <p>
+        <img style="width:18px;" src="{{ .Site.BaseURL }}img/weixin.png">
+        {{ i18n "main_wechat" }}
+      </p>
+    </a>
+
     <a class="list" href="https://gitee.com/opengauss" target="_blank">
       <p>
         <img style="width:18px;" src="{{ .Site.BaseURL }}img/gitee-logo.ico">
         {{ i18n "main_gitee" }}
       </p>
     </a>
-    
-    <a href={{ i18n "main_wechat_url" }} class="list list_wechat">
+
+    <a class="list" href="https://github.com/opengauss-mirror" target="_blank">
       <p>
-        <img style="width:18px;" src="{{ .Site.BaseURL }}img/weixin.png">
-        {{ i18n "main_wechat" }}
+        <img style="width:18px;" src="{{ .Site.BaseURL }}img/github.png">
+        GitHub
       </p>
     </a>
     
@@ -147,9 +154,14 @@ l-9.2,5C11.2,10.4,10.8,10.5,10.5,10.5z M19.7,0H1.3C0.6,0,0,0.6,0,1.3v1L10.5,8L21
               <p>{{ i18n "main_wechat_account" }}</p>
             </div>
           </li>
-          <li style="text-align: center;">
+          <li style="text-align: center;" title="{{ i18n "main_gitee" }}">
             <a class="list" href="https://gitee.com/opengauss" target="_blank">
               <img style="width:18px;" src="{{ .Site.BaseURL }}img/gitee-logo.ico">
+            </a>
+          </li>
+          <li style="text-align: center;" title="GitHub">
+            <a class="list" href="https://github.com/opengauss-mirror" target="_blank">
+              <img style="width:18px;" src="{{ .Site.BaseURL }}img/github.png">
             </a>
           </li>
           {{ $current := . }}
@@ -167,9 +179,9 @@ l-9.2,5C11.2,10.4,10.8,10.5,10.5,10.5z M19.7,0H1.3C0.6,0,0,0.6,0,1.3v1L10.5,8L21
           <li
             class="language-li dropdown{{ if eq $current.RelPermalink .URL | or $isChildren | or (eq (trim $current.RelPermalink "/") $topLevel) | or (eq $current.Type .Identifier) | or (eq $current.Type $topLevel) | or (and (eq (default (trim .URL "/") .Identifier) "blog") (in (slice "taxonomy" "taxonomyTerm") $current.Kind)) }} active{{ end }}">
             {{ if .HasChildren }}
-            <img class="language-icon" src="{{ $.Site.BaseURL }}img/language.png">
+            
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-              aria-expanded="false">{{ .Name }} <span class="caret"></span></a>
+              aria-expanded="false"><img class="language-icon" style="width: 18px;" src="{{ $.Site.BaseURL }}img/language.png"><span>{{ .Name }}</span> <span class="caret"></span></a>
             <ul class="dropdown-menu">
               {{ range .Children }}
               {{$newLan := .URL}}
