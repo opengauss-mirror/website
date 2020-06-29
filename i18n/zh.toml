@@ -186,7 +186,7 @@ other = "版本"
 other = "操作系统"
 
 [download_sha]
-other = "SHA"
+other = "SHA256"
 
 [download_operating]
 other = "操作"
@@ -250,6 +250,24 @@ other = "复制代码"
 
 [copy_code_success]
 other = "复制成功"
+
+[download_release_notes]
+other = "发行说明 ："
+
+[download_installation_guide]
+other = "安装指南 ："
+
+[download_feedback_question]
+other = "反馈问题 ："
+
+[download_release_notes_link]
+other = "https://opengauss.org/zh/docs/1.0.0/docs/Releasenotes/Releasenotes.html"
+
+[download_installation_guide_link]
+other = "https://opengauss.org/zh/docs/1.0.0/docs/installation/installation.html"
+
+[download_feedback_question_link]
+other = "https://gitee.com/opengauss/community/issues"
 
 
 

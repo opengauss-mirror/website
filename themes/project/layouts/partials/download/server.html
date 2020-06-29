@@ -23,8 +23,8 @@
                 <td>
                     {{ .Params.sha }}
                 </td>
-                <td>
-                    <a href="{{ .Params.downloadlink }}">{{ i18n "download_download" }}</a>
+                <td width="20%" class="download_btn">
+                    <a href="{{ .Params.downloadlink }}"><i class="download_icon"></i>{{ i18n "download_download" }}</a>
                 </td>
             </tr>
             {{ end }}

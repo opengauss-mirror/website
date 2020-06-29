@@ -187,7 +187,7 @@ other = "version"
 other = "operating system"
 
 [download_sha]
-other = "SHA"
+other = "SHA256"
 
 [download_operating]
 other = "operating"
@@ -251,6 +251,24 @@ other = "Copy Code"
 
 [copy_code_success]
 other = "Copy Successful"
+
+[download_release_notes]
+other = "Release Notes ："
+
+[download_installation_guide]
+other = "Installation Guide ："
+
+[download_feedback_question]
+other = "Feedback Question ："
+
+[download_release_notes_link]
+other = "https://opengauss.org/en/docs/1.0.0/docs/Releasenotes/Releasenotes.html"
+
+[download_installation_guide_link]
+other = "https://opengauss.org/en/docs/1.0.0/docs/installation/installation.html"
+
+[download_feedback_question_link]
+other = "https://gitee.com/opengauss/community/issues"
 
 
 

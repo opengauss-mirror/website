@@ -524,6 +524,12 @@
     background: #467FBF;
     color: #ffffff;
   }
+  .download_link {
+    margin-left: 0;
+}
+  .download_link p {
+    word-break: break-all;
+  }
   /* ---------------------视频-------------------- */
   .container .col-md-12 .video_title h3 {
     margin: 0 0 0.3rem 0;
