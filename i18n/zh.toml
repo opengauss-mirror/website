@@ -87,10 +87,10 @@ other = "上一页"
 other = "下一页"
 
 [main_gitee]
-other = "码云"
+other = "Gitee"
 
 [main_wechat]
-other = "微信"
+other = "WeChat"
 
 [main_wechat_account]
 other = "openGauss微信公众号"
@@ -186,7 +186,7 @@ other = "版本"
 other = "操作系统"
 
 [download_sha]
-other = "SHA"
+other = "SHA256"
 
 [download_operating]
 other = "操作"
@@ -244,6 +244,30 @@ other = "/zh"
 
 [main_agreement]
 other = "本文档遵循<a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>知识共享许可协议CC 4.0</a> (http://creativecommons.org/Licenses/by/4.0/)。"
+
+[copy_code]
+other = "复制代码"
+
+[copy_code_success]
+other = "复制成功"
+
+[download_release_notes]
+other = "发行说明: "
+
+[download_installation_guide]
+other = "安装指南: "
+
+[download_feedback_question]
+other = "反馈问题: "
+
+[download_release_notes_link]
+other = "https://opengauss.org/zh/docs/1.0.0/docs/Releasenotes/Releasenotes.html"
+
+[download_installation_guide_link]
+other = "https://opengauss.org/zh/docs/1.0.0/docs/installation/installation.html"
+
+[download_feedback_question_link]
+other = "https://gitee.com/opengauss/community/issues"
 
 
 

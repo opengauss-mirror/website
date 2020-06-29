@@ -29,8 +29,8 @@
                 <td>
                     {{ .Params.sha }}
                 </td>
-                <td>
-                    <a href="{{ .Params.downloadlink }}">{{ i18n "download_download" }}</a>
+                <td width="20%" class="download_btn">
+                    <a href="{{ .Params.downloadlink }}"><i class="download_icon"></i>{{ i18n "download_download" }}</a>
                 </td>
             </tr>
             {{ end }}
@@ -43,6 +43,7 @@
     <div class="connectors_table">
         <div class="active">JDBC</div>
         <div>ODBC</div>
+        <div>libpq</div>
     </div>
 
     <div class="connectors_content">
@@ -68,6 +69,24 @@
             <ul>
                 {{ range where $.Page.Site.Pages "Type" "connectors" }}
                 {{ if eq .Params.name "ODBC" }}
+                <li class="download_list">
+                    <p><a href="{{ .Params.downloadlink }}">{{ i18n "download_download" }}{{ .Params.version }}{{ i18n "download_version" }} - {{ .Params.operatingSystem }}</a></p>
+                    <div class="download_content">
+                        <span>sha</span>
+                        <div>
+                            <p class="download_sha">{{ .Params.sha }}&nbsp;&nbsp;<span class="download_close">{{ i18n "download_close" }}</span></p>
+                            <span class="download_more">{{ i18n "download_more" }}</span>
+                        </div>
+                    </div>
+                </li>
+                {{ end }}
+                {{ end }}
+            </ul>
+        </div>
+        <div class="table-hide">
+            <ul>
+                {{ range where $.Page.Site.Pages "Type" "connectors" }}
+                {{ if eq .Params.name "libpq" }}
                 <li class="download_list">
                     <p><a href="{{ .Params.downloadlink }}">{{ i18n "download_download" }}{{ .Params.version }}{{ i18n "download_version" }} - {{ .Params.operatingSystem }}</a></p>
                     <div class="download_content">

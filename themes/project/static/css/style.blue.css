@@ -359,6 +359,12 @@ button {
   background-color: #467fbf;
   color: #ffffff;
 }
+.navbar .navbar-right .open>a,
+.navbar .navbar-right .open>a:hover,
+.navbar .navbar-right .open>a:focus {
+  background-color: #ffffff;
+  color: #555555;
+}
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
     color: #555555;
@@ -1157,7 +1163,15 @@ fieldset[disabled] .btn-template-primary.active {
   border-left: 5px solid #467fbf;
 }
 .markdown pre {
-  padding: 8px 12px;
+  position: relative;
+  padding: 30px 12px;
+}
+.btn_pre_copy {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  cursor: pointer;
+  color: hsla(0, 0%, 55%, 0.8);
 }
 .markdown ul>li {
   list-style: disc;
@@ -1183,11 +1197,11 @@ fieldset[disabled] .btn-template-primary.active {
 /* ------------------download-------------------- */
 .table-nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: 32px;
 }
 .table-option {
-  width: 358px;
+  width: 48%;
   height: 114px;
   border: 1px solid #D4D4D4;
   border-radius: 2px;
@@ -1196,6 +1210,9 @@ fieldset[disabled] .btn-template-primary.active {
   align-items: center;
   flex-direction: column;
   cursor: pointer;
+}
+.table-option:first-child {
+  margin-right: 4%;
 }
 .table-nav .table-option .icon {
   width: 36px;
@@ -1235,6 +1252,35 @@ fieldset[disabled] .btn-template-primary.active {
   background: url(../img/openGaussToolsWhilte.svg) no-repeat center;
   background-size: 90%;
 }
+.table-content .isPc table td,
+.table-content .isPc table th {
+  padding: 14px;
+}
+.download_btn a {
+  display: block;
+  width: 100%;
+  padding: 5px 0;
+  border: 1px solid #467fbf;
+  border-radius: 4px;
+  background: #fff;
+  color: #467fbf;
+  text-align: center;
+}
+.download_btn .download_icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url(/img/download/Group.png) no-repeat center;
+  vertical-align: text-bottom;
+}
+.download_btn a:hover {
+  text-decoration: none;
+  background: #467fbf;
+  color: #fff;
+}
+.download_btn a:hover .download_icon {
+  background: url(/img/download/Group_hover.png) no-repeat center;
+}
 .building {
   display: flex;
   justify-content: center;
@@ -1246,6 +1292,15 @@ fieldset[disabled] .btn-template-primary.active {
 }
 .building h4 {
   margin: 20px 0;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+  vertical-align: middle;
+}
+.download_link {
+  margin-left: 14px;
+}
+.download_link p {
+  margin-bottom: 10px;
 }
 
 /* ----------------------------------video--------------------------------- */

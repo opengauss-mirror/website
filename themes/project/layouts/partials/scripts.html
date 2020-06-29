@@ -55,11 +55,11 @@
             $('#docstreeview').jstree().hide_dots();
             $('#docstreeview').jstree().hide_icons();
             $('#docstreeview').on("changed.jstree", function (e, data) {
-                console.log('eee', data)
+               
                 const tierData = data.node.parents
                 tierData.unshift(data.node.id)
                 tierData.pop()
-                console.log('fff', tierData,'type', Array.isArray(tierData))
+               
                 getTiername(tierData)
 
                 if (data.node) {
@@ -71,9 +71,9 @@
                             link = aElement.attr("href");
                         }
                     }
-                    console.log('我是link', link);
+                   
                     var relativeURL = getRelativePath();
-                    console.log('我是rela', relativeURL);
+                    
                     if (link != relativeURL) {
                         location.href = link;
                     }
@@ -92,7 +92,7 @@
                 var relativeURL = getRelativePath();
                 var wholeData = $("#docstreeview").jstree().get_json();
                 var currentID = getCurrentID(wholeData, relativeURL);
-                console.log('我是id', wholeData);
+                
                 $("#docstreeview").jstree()._open_to(currentID);
                 $('#docstreeview').jstree().select_node(currentID);
                 $('#docstreeview').jstree().open_node(currentID);
@@ -139,7 +139,7 @@
                 };
                 getAllData(wholeData);
                 nextAndPevious(nodeList, currentID, result);
-                console.log('我是上下页', result);
+               
                 // 将 url 赋给按钮
                 result[0] == null ? $('.pager .previous').addClass('disabled') : $('.pager .previous a').attr('href', result[0]);
                 result[1] == null ? $('.pager .next').addClass('disabled') : $('.pager .next a').attr('href', result[1]);
@@ -184,13 +184,12 @@
                     iterUrl.push($('#'+item+'_anchor').attr('href'))
                 })
             }
-            console.log(iterName.reverse(),iterUrl.reverse())
+            
             let aNode = [];
             for(let i=0;i<iterName.length;i++) {
                 aNode.push(i == (iterName.length - 1) ? `<a href="${iterUrl[i]}">${iterName[i]}</a>` : `<a href="${iterUrl[i]}">${iterName[i]}</a><span>&gt</span>`)
             }
             $('.breadcrumbs').append(aNode.toString())
-            console.log("动态标签", aNode.toString())
         }
 
         /* 解决滚动后导航栏fixed脱离文档流导致滚动条不能到底 */
@@ -206,6 +205,26 @@
             });
         }
         
+        /* 给每个pre添加复制代码功能 */
+        let preList = $(".markdown pre");
+        for(let pre of preList) {
+            let btn = $("<span class='btn_pre_copy'>{{ i18n "copy_code" }}</span>");
+            btn.prependTo(pre);
+        }
+
+        $('.btn_pre_copy').click(function() {
+            let copyNode = $("<textarea></textarea>");
+            copyNode.text($(this).next()[0].innerText);
+            $('body').append(copyNode);
+            copyNode.select();
+            document.execCommand("Copy");
+            copyNode.remove();
+            $(this)[0].innerHTML = "{{ i18n "copy_code_success" }}"
+            setTimeout(()=>{
+                $(this)[0].innerHTML = "{{ i18n "copy_code" }}"
+            },1500)
+        })
+
         
     });
 </script>
