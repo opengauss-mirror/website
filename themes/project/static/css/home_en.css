@@ -1,3 +1,16 @@
 .content_character_lists ul li {
     height: 410px;
 }
+
+
+@media (max-width: 768px) {
+    .content_character_lists ul li {
+        height: auto;
+      }
+}
+
+@media (max-width: 1366px) and (min-width: 768px) {
+    .content .content_character .content_character_lists ul li {
+        height: 5.8rem;
+    }
+}
