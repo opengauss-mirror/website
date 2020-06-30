@@ -2,7 +2,7 @@
 title = "About Us"
 +++
 
-openGauss is an open source relational database management system that is released with the Mulan PSL v2. with the kernel derived from PostgreSQL, openGauss is built on Huawei's years of experience in the database field and continuously provides competitive features tailored to enterprise-class scenarios. In addition, openGauss is a open source database platform that encourages community contribution and collaboration.
+openGauss is an open source relational database management system that is released with the Mulan PSL v2. with the kernel derived from PostgreSQL, openGauss is built on Huawei's years of experience in the database field and continuously provides competitive features tailored to enterprise-class scenarios. In addition, openGauss is an open source database platform that encourages community contribution and collaboration.
 
 ### History
 
@@ -14,7 +14,7 @@ On June 30, 2020, the source code of the openGauss database went open source off
 
 openGauss repository: https://gitee.com/opengauss
 
-openGauss mirror repository：https://github.com/opengauss-mirror
+openGauss mirror repository: https://github.com/opengauss-mirror
 
 ### Version Release
 

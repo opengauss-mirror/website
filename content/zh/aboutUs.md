@@ -12,9 +12,9 @@ openGauss是一款开源关系型数据库管理系统，采用木兰宽松许�
 
 ### 组织仓库
 
-openGauss组织仓库：https://gitee.com/opengauss
+openGauss组织仓库: https://gitee.com/opengauss
 
-openGauss镜像仓库：https://github.com/opengauss-mirror
+openGauss镜像仓库: https://github.com/opengauss-mirror
 
 ### 版本发布
 
