@@ -4,7 +4,7 @@
 other = "About openGauss"
 
 [main_characterr_info]
-other = "openGauss is an open source relational database management system that is released with the Mulan PSL v2. Previously with the kernel derived from PostgreSQL, openGauss is built on Huawei's years of experience in the database field and continuously provides competitive features tailored to enterprise-class scenarios. In addition, openGauss is a free database platform that encourages community contribution and collaboration."
+other = "openGauss is an open source relational database management system that is released with the Mulan PSL v2. with the kernel derived from PostgreSQL, openGauss is built on Huawei's years of experience in the database field and continuously provides competitive features tailored to enterprise-class scenarios. In addition, openGauss is a open source database platform that encourages community contribution and collaboration."
 
 [main_partner_title]
 other = "Partners"
@@ -43,7 +43,7 @@ other = "Full Openness"
 other = "Performance up to 1.5 million tpmC on the Kunpeng architecture; Concurrency control technology oriented to the multicore architecture; NUMA-Aware storage engine; SQL-Bypass intelligent routing execution technology; Memory engine for real-time high-performance scenarios."
 
 [feature_intro_two]
-other = "RTO less than 10s, ensuring service continuity; Refined security management: fine-grained access control and multi-dimensional audit; All-round data protection: encrypted data storage, transmission, and export, dynamic anonymization, and fully encrypted computing."
+other = "RTO less than 10s, ensuring service continuity; Refined security management: fine-grained access control and multi-dimensional audit; All-round data protection: encrypted data storage, transmission, and export, dynamic anonymization."
 
 [feature_intro_three]
 other = "Intelligent parameter optimization: combined with deep reinforcement learning and heuristic algorithm to realize automatic parameter recommendation; Slow SQL diagnosis and multi-dimensional performance self-monitoring view, allowing users to learn about system performance in real time; Online self-learning SQL time prediction for quick locating and tuning."

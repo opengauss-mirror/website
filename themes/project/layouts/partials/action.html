@@ -1,4 +1,9 @@
 <div class="warp">
     {{ partial "news.html" . }}
+    
+    {{ $postss := (where .Site.RegularPages "Section" "==" "events") }}
+    {{ $postCount := len $postss }}
+    {{ if gt $postCount 0 }}
     {{ partial "events.html" . }}
+    {{ end }}
 </div>
