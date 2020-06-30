@@ -193,7 +193,7 @@ other = "SHA256"
 other = "Operating"
 
 [download_name]
-other = "name"
+other = "Name"
 
 [download_download]
 other = "Download"
