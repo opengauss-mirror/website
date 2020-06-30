@@ -1255,6 +1255,7 @@ fieldset[disabled] .btn-template-primary.active {
 .table-content .isPc table td,
 .table-content .isPc table th {
   padding: 14px;
+  text-align: center;
 }
 .download_btn a {
   display: block;

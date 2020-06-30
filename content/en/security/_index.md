@@ -30,8 +30,11 @@ You can send the potential security vulnerabilities of an openGauss product to t
 The information of the SIG Security members is as follows:
 
 + Jinwei Zhu[@zhujinwei], <zhujinwei@huawei.com>
+
 + Liang Guo[@blueloveki], <liang4358@163.com>
+
 + Jianfeng Li[@bufee], <bigtimer@qq.com>
+
 + Yaozhong Zhang[@buter], <zhangyaozhong1@huawei.com>
 
 ##### 3.1.2 Reporting Content

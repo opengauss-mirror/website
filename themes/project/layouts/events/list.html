@@ -62,6 +62,7 @@
                         </div>
                         {{ end }}
 
+                        {{ if gt .Paginator.TotalPages 0 }}
                         <ul class="pager">
                             {{ if .Paginator.HasPrev }}
                             <li class="previous"><a href="{{ .Site.BaseURL }}{{ .Paginator.Prev.URL }}">&larr; {{ i18n "newer" }}</a></li>
@@ -75,6 +76,7 @@
                             <li class="next disabled"><a href="javaScript:;">{{ i18n "older" }} &rarr;</a></li>
                             {{ end }}
                         </ul>
+                        {{ end }}
                     </div>
                     <!-- /.col-md-9 -->
                 </div>

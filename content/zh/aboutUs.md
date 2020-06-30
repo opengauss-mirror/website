@@ -2,7 +2,7 @@
 title = "关于我们"
 +++
 
-openGauss是一款开源关系型数据库管理系统，采用木兰宽松许可证v2发行。openGauss内核早期源自PostgreSQL，深度融合华为在数据库领域多年的经验，结合企业级场景需求，持续构建竞争力特性。同时openGauss也是一个开源、免费的数据库平台，鼓励社区贡献、合作。
+openGauss是一款开源关系型数据库管理系统，采用木兰宽松许可证v2发行。openGauss内核源自PostgreSQL，深度融合华为在数据库领域多年的经验，结合企业级场景需求，持续构建竞争力特性。同时openGauss也是一个开源的数据库平台，鼓励社区贡献、合作。
 
 ### 历史发展
 
@@ -13,6 +13,8 @@ openGauss是一款开源关系型数据库管理系统，采用木兰宽松许�
 ### 组织仓库
 
 openGauss组织仓库：https://gitee.com/opengauss
+
+openGauss镜像仓库：https://github.com/opengauss-mirror
 
 ### 版本发布
 

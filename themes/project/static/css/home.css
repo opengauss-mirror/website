@@ -174,7 +174,7 @@
   justify-content: flex-start;
   align-items: center;
   width: 50%;
-  height: 380px;
+  height: 350px;
   box-sizing: border-box;
 }
 .content_character_lists ul li:nth-child(1) {
@@ -247,7 +247,7 @@
 }
 .news_items>div>a {
   display: block;
-  height: 100%;
+  width: 100%;
 }
 .news_items>div img {
   height: 100%; 

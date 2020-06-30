@@ -1,7 +1,6 @@
 {{ $postss := (where .Site.RegularPages "Section" "==" "video") }}
 {{ $postCount := len $postss }}
-{{ if eq $postCount 0 }}
-{{ else }}
+{{ if gt $postCount 0 }}
 <div class="content">
     <div class="content_video">
         <div class="content_video_title">

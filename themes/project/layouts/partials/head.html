@@ -48,6 +48,10 @@
   <link href="{{ "css/homemobile.css?" | relURL}}t={{ .Site.Params.timestamp }}" rel="stylesheet">
   <link href="{{ "css/cla.css?" | relURL}}t={{ .Site.Params.timestamp }}" rel="stylesheet">
 
+  <!-- English version style -->
+  {{ if eq .Site.LanguageCode "en-us" }}
+  <link href="{{ "css/home_en.css?" | relURL}}t={{ .Site.Params.timestamp }}" rel="stylesheet">
+  {{ end }}
   <!-- Responsivity for older IE -->
   {{ `
     <!--[if lt IE 9]>
