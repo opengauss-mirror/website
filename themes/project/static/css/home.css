@@ -247,7 +247,7 @@
 }
 .news_items>div>a {
   display: block;
-  height: 100%;
+  width: 100%;
 }
 .news_items>div img {
   height: 100%; 
