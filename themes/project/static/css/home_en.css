@@ -1,7 +1,9 @@
 .content_character_lists ul li {
     height: 410px;
 }
-
+.yamm .container {
+    width: 1350px;
+  }
 
 @media (max-width: 768px) {
     .content_character_lists ul li {
