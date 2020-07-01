@@ -510,7 +510,7 @@ p {
 }
 .yamm .container {
   position: relative;
-  width: 1350px;
+  width: 1170px;
 }
 .yamm .dropdown-menu {
   left: auto;
@@ -883,7 +883,7 @@ fieldset[disabled] .btn-template-primary.active {
   text-align: justify;
   text-decoration: none;
 }
-.newsDetail_content_right h3 a,
+/* .newsDetail_content_right h3 a, */
 .newsDetail_right_content a {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -944,7 +944,6 @@ fieldset[disabled] .btn-template-primary.active {
 }
 #post-content ul {
   margin-left: 2em;
-  margin-bottom: 1rem;
 }
 #post-content ul li {
   list-style: disc;

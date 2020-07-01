@@ -243,120 +243,7 @@
     width: 4.8rem;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1280px) {
-  .isPc {
-    display: none;
-  }
-  header {
-    padding: 0 .6rem;
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-  }
-  header .topbar {
-    display: flex;
-    align-items: center;
-    margin: 0 595px;
-    list-style-type: none;
-    padding: 20px 0;
-  }
-  header .topbar .search {
-    white-space: nowrap;
-  }
-  header .topbar .search a.list,
-  header .topbar .search a.list:hover,
-  header .topbar .search a.list:active {
-    color:inherit;
-    text-decoration: none;
-    padding: 0 10px;
-  }
-  header .navbar-brand {
-    padding: 5px 15px;
-  }
-  header h2 {
-    font-size: 0.38rem;
-    margin: 0px;
-  }
-  header ul li {
-    padding: 0 0.1rem;
-    font-size: 0.28rem;
-    display: flex;
-  }
-  header ul li img {
-    width: 18px;
-  }
-  header #nav {
-    position: absolute;
-    top: 62px;
-    left: 0;
-    width: 100%;
-    display: none;
-    background: #fff;
-    color: #333;
-    z-index: 1000;
-    padding: 0 .6rem;
-    box-shadow: 0 5px 10px 0 #D3D3D3;
-  }
-  header #nav p {
-    line-height: .52rem;
-    padding: .14rem 0;
-    font-size: .28rem;
-    border-bottom: 1px solid #ECECEC;
-    /* text-transform: uppercase; */
-  }
-  header #nav p:not(:last-child) {
-    border-bottom: 1px solid #ECECEC;
-  }
-  header #nav .second_menu {
-    position: relative;
-  }
-  header #nav .second_menu i {
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-top: 5px solid #000;
-    border-right: 5px solid transparent;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translate(-50%, 0px);
-  }
-  header #nav .menu_list {
-    display: none;
-  }
-  header #nav .menu_list p {
-    padding: 0.14rem .3rem;
-  }
-  header #nav a.list,
-  header #nav a.list:hover,
-  header #nav a.list:active 
-  {
-    color:inherit;
-    text-decoration: none;
-  }
 
-  .table-respon {
-    overflow-x: auto;
-  }
-  .table-left {
-    flex: 0 0 3rem;
-    width: auto;
-  }
-  
-  footer {
-    padding: 20px 30px 20px;
-  }
-  .isPad {
-    display: block !important;
-  }
-  .pc_box {
-    display: none !important;
-  }
-  /* -------------------视频------------------- */
-  .video_detail video {
-    height: 8rem;
-  }
-}
 @media screen and (max-width: 1280px) {
   /* ----------------文档-------------- */
   .container {
@@ -371,6 +258,7 @@
   .docscontainer {
     display: block;
     position: relative;
+    max-width: 1280px;
   }
   .book-menu,.book-page {
     width: 100%;
@@ -592,5 +480,119 @@
   }
   .isH5 {
     display: none;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1280px) {
+  .isPc {
+    display: none;
+  }
+  header {
+    padding: 0 .6rem;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+  }
+  header .topbar {
+    display: flex;
+    align-items: center;
+    margin: 0 595px;
+    list-style-type: none;
+    padding: 20px 0;
+  }
+  header .topbar .search {
+    white-space: nowrap;
+  }
+  header .topbar .search a.list,
+  header .topbar .search a.list:hover,
+  header .topbar .search a.list:active {
+    color:inherit;
+    text-decoration: none;
+    padding: 0 10px;
+  }
+  header .navbar-brand {
+    padding: 5px 15px;
+  }
+  header h2 {
+    font-size: 0.38rem;
+    margin: 0px;
+  }
+  header ul li {
+    padding: 0 0.1rem;
+    font-size: 0.28rem;
+    display: flex;
+  }
+  header ul li img {
+    width: 18px;
+  }
+  header #nav {
+    position: absolute;
+    top: 62px;
+    left: 0;
+    width: 100%;
+    display: none;
+    background: #fff;
+    color: #333;
+    z-index: 1000;
+    padding: 0 .6rem;
+    box-shadow: 0 5px 10px 0 #D3D3D3;
+  }
+  header #nav p {
+    line-height: .52rem;
+    padding: .14rem 0;
+    font-size: .28rem;
+    border-bottom: 1px solid #ECECEC;
+    /* text-transform: uppercase; */
+  }
+  header #nav p:not(:last-child) {
+    border-bottom: 1px solid #ECECEC;
+  }
+  header #nav .second_menu {
+    position: relative;
+  }
+  header #nav .second_menu i {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-top: 5px solid #000;
+    border-right: 5px solid transparent;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(-50%, 0px);
+  }
+  header #nav .menu_list {
+    display: none;
+  }
+  header #nav .menu_list p {
+    padding: 0.14rem .3rem;
+  }
+  header #nav a.list,
+  header #nav a.list:hover,
+  header #nav a.list:active 
+  {
+    color:inherit;
+    text-decoration: none;
+  }
+
+  .table-respon {
+    overflow-x: auto;
+  }
+  .table-left {
+    flex: 0 0 3rem;
+    width: auto;
+  }
+  
+  footer {
+    padding: 20px 30px 20px;
+  }
+  .isPad {
+    display: block !important;
+  }
+  .pc_box {
+    display: none !important;
+  }
+  /* -------------------视频------------------- */
+  .video_detail video {
+    height: 8rem;
   }
 }
