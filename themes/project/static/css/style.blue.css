@@ -1175,6 +1175,7 @@ fieldset[disabled] .btn-template-primary.active {
 .markdown ul>li {
   list-style: disc;
   margin-left: 0.48rem;
+  margin-bottom: 0.24rem;
 }
 .docsVersion {
   margin-bottom: 0.4rem;
