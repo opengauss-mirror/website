@@ -165,7 +165,8 @@
   .content .content_user .content_user_title h3,
   .content .content_video .content_video_title h3,
   .new_title h3,
-  .events_title h3 {
+  .events_title h3,
+  .community_parters_title h3 {
     font-size: 0.4rem;
     line-height: 0.4rem;
   }
@@ -371,6 +372,11 @@
     width: 18px;
     height: 40px;
     border-radius: 0;
+  }
+
+  /* --------------------------------------  友情链接  -------------------------------------- */
+  .community-parters-item img {
+    width: 100%;
   }
 }
 

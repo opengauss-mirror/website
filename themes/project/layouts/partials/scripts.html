@@ -55,12 +55,14 @@
             $('#docstreeview').jstree().hide_dots();
             $('#docstreeview').jstree().hide_icons();
             $('#docstreeview').on("changed.jstree", function (e, data) {
-               
-                const tierData = data.node.parents
-                tierData.unshift(data.node.id)
-                tierData.pop()
-               
-                getTiername(tierData)
+                if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
+                    const tierData = data.node.parents
+                    tierData.unshift(data.node.id)
+                    tierData.pop()
+                
+                    getTiername(tierData)
+                }
+                
 
                 if (data.node) {
                     var link = data.node.a_attr.href;
@@ -88,7 +90,9 @@
             }*/
 
             $("#docstreeview").on("ready.jstree", function (e, data) {
-                $("#docstreeview").fadeIn("slow")
+                $("#docstreeview").show();
+
+                
                 var relativeURL = getRelativePath();
                 var wholeData = $("#docstreeview").jstree().get_json();
                 var currentID = getCurrentID(wholeData, relativeURL);
@@ -138,7 +142,7 @@
                     return result;
                 };
                 getAllData(wholeData);
-                nextAndPevious(nodeList, currentID, result);
+                nextAndPevious(nodeList, currentID);
                
                 // 将 url 赋给按钮
                 result[0] == null ? $('.pager .previous').addClass('disabled') : $('.pager .previous a').attr('href', result[0]);
@@ -180,8 +184,8 @@
             const iterName = [],iterUrl = []
             if(Array.isArray(data)) {
                 data.map((item) => {
-                    iterName.push($('#'+item+'_anchor').text()) 
-                    iterUrl.push($('#'+item+'_anchor').attr('href'))
+                    iterName.unshift($('#'+item+'_anchor').text()) 
+                    iterUrl.unshift($('#'+item+'_anchor').attr('href'))
                 })
             }
             
