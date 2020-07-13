@@ -49,3 +49,6 @@ footer .notice span {
   text-decoration: none !important;
 }
 
+#docsMenu {
+  display: none;
+}
