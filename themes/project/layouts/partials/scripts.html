@@ -75,19 +75,12 @@
                     }
                    
                     var relativeURL = getRelativePath();
-                    
+                    console.log("height",$("#menu").height())
                     if (link != relativeURL) {
                         location.href = link;
                     }
                 }
             });
-
-            /* select the node by the relative url
-            var currentAElement = $('#docstreeview').find("a[href='" + getRelativePath() + "']");
-            if (currentAElement.length) {
-                console.log("click");
-                currentAElement.trigger("click");
-            }*/
 
             $("#docstreeview").on("ready.jstree", function (e, data) {
                 $("#docstreeview").show();
