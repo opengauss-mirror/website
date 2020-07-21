@@ -1177,6 +1177,10 @@ fieldset[disabled] .btn-template-primary.active {
   margin-left: 0.48rem;
   margin-bottom: 0.24rem;
 }
+.markdown ol>li {
+  list-style: decimal inside;
+  margin-bottom: 0.24rem;
+}
 .docsVersion {
   margin-bottom: 0.4rem;
 }
