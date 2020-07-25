@@ -948,6 +948,9 @@ fieldset[disabled] .btn-template-primary.active {
 #post-content ul li {
   list-style: disc;
 }
+#post-content h3 {
+  margin-bottom: 20px;
+}
 
 /* -----------------------mail lists------------------------ */
 .divmail h3 {

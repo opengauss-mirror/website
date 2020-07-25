@@ -281,6 +281,9 @@ other = "https://openlookeng.io/zh-cn/"
 [kunpeng_link]
 other = "https://www.huaweicloud.com/kunpeng/"
 
+[events_detail_url]
+other = "/zh/events/meetup.html"
+
 
 
 

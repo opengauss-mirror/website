@@ -8,16 +8,22 @@
                 <div class="banner_content">
                     <h1>{{ .Title }}</h1>
                     <h4>{{ .Params.info }}</h4>
-                </div>              
+                    {{ if eq .Params.number "1" }}
+                        <div class="banner_btn">
+                            <a href="{{ i18n "main_download_url" }}">{{ i18n "download_title" }}</a>
+                            <a href="{{ i18n "main_docs_url" }}">{{ i18n "main_quickStart_title" }}</a>
+                        </div>
+                    {{ else if eq .Params.number "2" }}
+                        <div class="banner_btn banner_btn_two">
+                            <a href="{{ i18n "events_detail_url" }}">{{ i18n "news_more" }}</a>
+                        </div>
+                    {{ end }}
+                </div>  
             </div>
             {{ end }}
         </div>
         
-        <!-- <div class="swiper-pagination banner_swiper_pagination"></div> -->        
+        <div class="swiper-pagination banner_swiper_pagination"></div>        
     </div>
 
-    <div class="banner_btn">
-        <a href="{{ i18n "main_download_url" }}">{{ i18n "download_title" }}</a>
-        <a href="{{ i18n "main_docs_url" }}">{{ i18n "main_quickStart_title" }}</a>
-    </div>
 </div>
