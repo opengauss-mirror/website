@@ -36,11 +36,10 @@
   text-align: center;
 }
 .banner_btn {
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translateX(-50%);
   z-index: 100;
+}
+.banner_btn_two {
+  margin-top: 240px;
 }
 .banner .banner_btn a {
   display: inline-block;
@@ -64,7 +63,7 @@
   color: #ffffff;
 }
 
-.banner .banner_btn a:last-child {
+.banner .banner_btn a:nth-child(2) {
   margin-left: 30px;
 }
 .banner_content h1,
@@ -77,7 +76,7 @@
 }
 .banner_content h4 {
   font-size: 26px;
-  margin: 20px;
+  margin: 20px 0 120px;
 }
 .banner_swiper_pagination .swiper-pagination-bullet {
   background: #ffffff;

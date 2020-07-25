@@ -19,7 +19,10 @@
   }
   .banner_content h4 {
     font-size: 0.4rem;
-    margin: 0.3rem 0;
+    margin: 0.3rem 0 2rem;
+  }
+  .banner_btn_two {
+    margin-top: 200px;
   }
   .home_video_infro_bg {
     width: 100%;
@@ -48,7 +51,10 @@
   }
   .banner_content h4 {
     font-size: 0.28rem;
-    margin: 0.2rem 0;
+    margin: 0.2rem 0 0.6rem;
+  }
+  .banner_btn_two {
+    margin-top: 110px;
   }
   .banner .banner_btn a:last-child {
     margin-left: 0.2rem;

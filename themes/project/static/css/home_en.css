@@ -5,10 +5,18 @@
     width: 1350px;
   }
 
+.banner_content h4 {
+margin: 20px 0 50px;
+}
+
 @media (max-width: 768px) {
     .content_character_lists ul li {
         height: auto;
       }
+
+    .banner_content h4 {
+        margin: 10px 0 20px;
+    }
 }
 
 @media (max-width: 1366px) and (min-width: 768px) {

@@ -27,6 +27,12 @@
                                         <span></span>
                                         {{ .Params.label }}
                                     </div>
+                                    {{ if eq .Params.label "Meetup" }}
+                                    <div class="events_items_label" style="margin-left: 10px;">
+                                        <span></span>
+                                        {{ .Params.label2 }}
+                                    </div>
+                                    {{ end }}
                                 </div>                            
                             </div>
                             <p>{{ .Params.summary }}</p>
@@ -60,6 +66,12 @@
                                         <span></span>
                                         {{ .Params.label }}
                                     </div>
+                                    {{ if eq .Params.label "Meetup" }}
+                                    <div class="events_items_label" style="margin-left: 10px;">
+                                        <span></span>
+                                        {{ .Params.label2 }}
+                                    </div>
+                                    {{ end }}
                                 </div>                            
                             </div>
                             <p>{{ .Params.summary }}</p>
