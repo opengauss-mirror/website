@@ -40,7 +40,7 @@ http://www.itdks.com/Home/Act/apply?id=5233
 
 <img src="/img/banners/meetup/meetup_2.jpeg" width="100%" style="max-width:1079px;margin-bottom: 0.2rem;" />
 
-### 嘉宾简介及照片
+### 活动嘉宾
 
 <ul class="row" style="margin-left: 0;text-align: center;">
     <li class="col-md-4 col-xs-6" style="list-style: none;margin-bottom: 10px;">
