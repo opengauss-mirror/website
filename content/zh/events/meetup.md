@@ -29,11 +29,12 @@ openGauss社区用开源的魅力吸引真正热爱技术并持续探索的用�
 
 https://etherpad.opengauss.org/p/openGaussMeetup-20200806
 
+
 ### 网络直播地址
 
 <img src="/img/banners/meetup/meetup_1.png" width="30%" style="margin-bottom: 0.2rem;" />
 
-网络直播地址：http://www.itdks.com/Home/Act/apply?id=5233
+http://www.itdks.com/Home/Act/apply?id=5233
 
 ### 活动议程
 
