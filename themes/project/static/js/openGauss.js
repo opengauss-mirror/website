@@ -77,4 +77,29 @@ $(document).ready(function() {
       $($('.tools_content').children()[index]).siblings().addClass('table-hide');
     })
   })
-})   
+
+  // 文档页面语言切换
+  var currentUrl = window.location.href;
+
+  const switchLanguage = function () {
+    var urls = currentUrl.split('/docs/');
+    urls = urls.slice(0, urls.length - 1);
+    urls.push('Quickstart/Quickstart.html');
+    urls = urls.join('/docs/');
+
+    if (urls.includes('/zh/')) {
+      urls = urls.replace('/zh/', '/en/');
+    } else {
+      urls = urls.replace('/en/', '/zh/');
+    }
+
+    $(".language-li ul").children(":first").click(function (e) {
+      e.preventDefault();
+      window.location.href = urls;
+    });
+  }
+
+  if (currentUrl.includes('/docs/')) {
+    switchLanguage();
+  }
+})
