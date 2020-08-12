@@ -7,7 +7,7 @@
         <div class="isPc">
             <ul>
                 {{ $posts := where .Data.Pages "Type" "events" }}
-                {{ range first 2 $posts }}
+                {{ range first 1 $posts }}
                 <li class="events_items">
                     <div class="events_items_left scale_102">
                         <a href="{{ .URL }}">
