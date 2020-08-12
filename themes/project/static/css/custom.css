@@ -52,3 +52,7 @@ footer .notice span {
 #docsMenu {
   display: none;
 }
+
+#blog-post video {
+  margin-bottom: 20px;
+}

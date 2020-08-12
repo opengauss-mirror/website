@@ -225,6 +225,9 @@ other = "View More"
 [news_more]
 other = "View More"
 
+[look_back]
+other = "View More"
+
 [download_build]
 other = "Download is under construction"
 
@@ -283,7 +286,7 @@ other = "https://openlookeng.io/"
 other = "https://www.huaweicloud.com/kunpeng/"
 
 [events_detail_url]
-other = "/zh/events/meetup.html"
+other = "/zh/events/meetLookBack.html"
 
 
 
