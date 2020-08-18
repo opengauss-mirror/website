@@ -1187,8 +1187,10 @@ fieldset[disabled] .btn-template-primary.active {
 .docsVersion {
   margin-bottom: 0.4rem;
 }
+.docsVersion .row{
+  margin:0;
+}
 .selectVersion {
-  width: 100%;
   outline: none;
   height: 32px;
 }
