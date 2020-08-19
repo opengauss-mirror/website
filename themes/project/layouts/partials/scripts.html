@@ -211,7 +211,9 @@
 
         $('.btn_pre_copy').click(function() {
             let copyNode = $("<textarea></textarea>");
-            copyNode.text($(this).next()[0].innerText);
+            let parentNode = $(this).parent().clone();//克隆当前点击复制按钮的父节点
+            parentNode.find(".btn_pre_copy").remove();//移除所有class为btn_pre_copy的元素（即复制按钮）
+            copyNode.text(parentNode.text());//转换为文本
             $('body').append(copyNode);
             copyNode.select();
             document.execCommand("Copy");
@@ -220,8 +222,6 @@
             setTimeout(()=>{
                 $(this)[0].innerHTML = "{{ i18n "copy_code" }}"
             },1500)
-        })
-
-        
+        })  
     });
 </script>
