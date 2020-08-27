@@ -327,6 +327,7 @@
   }
   .markdown img {
     max-width: 100%;
+    text-align:center;
   }
   /* .markdown h1 {
     font-size: 0.32rem;

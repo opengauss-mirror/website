@@ -1158,6 +1158,10 @@ fieldset[disabled] .btn-template-primary.active {
 .markdown img {
   margin-bottom: 0.2rem;
 }
+.markdown img {
+  max-width: 100%;
+  text-align:center;
+}
 .markdown blockquote {
   padding: 10px 20px;
   margin: 0 0 20px;
