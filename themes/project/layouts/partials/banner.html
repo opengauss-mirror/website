@@ -3,7 +3,13 @@
         <div class="swiper-wrapper banner_swiper_wrapper">
             {{ range (where .Data.Pages "Type" "banner") }}
             <div class="swiper-slide banner_swiper_slide">
-                <img src="{{ .Site.BaseURL}}{{ .Params.bgUrl }}">  
+                {{ if eq .Params.number "3" }}
+                    <a href="{{ i18n "connect_url" }}" target="_blank">
+                        <img src="{{ .Site.BaseURL}}{{ .Params.bgUrl }}">
+                    </a>
+                {{ else }}
+                <img src="{{ .Site.BaseURL}}{{ .Params.bgUrl }}">
+                {{ end }}
 
                 <div class="banner_content">
                     <h1>{{ .Title }}</h1>
