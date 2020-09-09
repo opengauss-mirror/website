@@ -79,7 +79,7 @@
   margin: 20px 0 120px;
 }
 .banner_swiper_pagination .swiper-pagination-bullet {
-  background: #ffffff;
+  background: #666;
   opacity: 1;
 }
 .banner_swiper_pagination .swiper-pagination-bullet-active {
