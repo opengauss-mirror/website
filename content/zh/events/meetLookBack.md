@@ -7,7 +7,6 @@ label2 = "线上线下"
 banner = "img/banners/meetup/meetLookBack.jpg"
 author = "openGauss"
 summary = "回顾openGauss第一次Meetup的所有精彩内容"
-weight = 1
 +++
 
 <img src="/img/banners/meetup/meetLookBack.jpg" width="100%" style="margin-bottom: 0.2rem;" />
