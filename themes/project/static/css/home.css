@@ -17,6 +17,12 @@
 .banner {
   position: relative;
 }
+.banner-pc {
+  display: block;
+}
+.banner-mobile {
+  display: none;
+}
 .banner_swiper {
   height: 465px;
 }
@@ -90,6 +96,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media screen and (max-width: 1000px){
+  .banner-pc {
+    display: none;
+  }
+  .banner-mobile {
+    display: block;
+  }
 }
 
 .content {
