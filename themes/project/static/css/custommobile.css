@@ -5,6 +5,9 @@
   .isH5 {
     display: block;
   }
+  body {
+    padding-top: 50px;
+  }
   header {
     padding: 0 0.4rem;
     position: relative;
@@ -14,12 +17,25 @@
     justify-content: space-between;
     /* height: 0.8rem; */
   }
+  header {
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+    background: #fff;
+  }
   .nav_table{
     display: flex;
     width: 100%;
     justify-content: space-between;
   }
-
+  .nav_table {
+    display: block;
+  }
+  header .topbar {
+    margin: 0!important;
+    float: right;
+  }
   header .topbar {
     display: flex;
     align-items: center;
@@ -30,6 +46,10 @@
 
   header .topbar li {
     height: 50px;
+  }
+
+  header .topbar li {
+    height: unset;
   }
 
   header .topbar .search {
@@ -110,6 +130,9 @@
   }
   header #nav .menu_list p {
     padding: 0.14rem .3rem;
+  }
+  header #nav a.list.active {
+    color: #467FBF!important;
   }
   header #nav a.list,
   header #nav a.list:hover,
@@ -487,11 +510,20 @@
   .isPc {
     display: none;
   }
+  body {
+    padding-top: 62px;
+  }
   header {
     padding: 0 .6rem;
-    position: relative;
     display: flex;
     justify-content: space-between;
+  }
+  header {
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    top: 0;
+    background: #fff;
   }
   header .topbar {
     display: flex;
@@ -499,6 +531,10 @@
     margin: 0 595px;
     list-style-type: none;
     padding: 20px 0;
+  }
+  header .topbar {
+    margin: 0!important;
+    float: right;
   }
   header .topbar .search {
     white-space: nowrap;
@@ -511,7 +547,7 @@
     padding: 0 10px;
   }
   header .navbar-brand {
-    padding: 5px 15px;
+    padding: 5px;
   }
   header h2 {
     font-size: 0.38rem;
@@ -550,6 +586,9 @@
   header #nav .second_menu {
     position: relative;
   }
+  header #nav .second_menu.active {
+    color: #467FBF;
+  }
   header #nav .second_menu i {
     width: 0;
     height: 0;
@@ -566,6 +605,9 @@
   }
   header #nav .menu_list p {
     padding: 0.14rem .3rem;
+  }
+  header #nav a.list.active {
+    color: #467FBF!important;
   }
   header #nav a.list,
   header #nav a.list:hover,

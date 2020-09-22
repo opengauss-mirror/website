@@ -1,10 +1,5 @@
 <!--h5 -->
 <div class="isH5 isPad nav_table">
-  <a class="navbar-brand home" href="{{ i18n "home_link" }}">
-    <img src="{{ .Site.BaseURL }}{{ .Site.Params.logo }}" alt="{{ .Title }} logo" class="hidden-xs hidden-sm">
-    <img src="{{ .Site.BaseURL }}{{ .Site.Params.logo_small }}" alt="{{ .Title }} logo" class="visible-xs visible-sm">
-    <span class="sr-only">{{ .Title }} - {{ i18n "navHome" }}</span>
-  </a>
   <ul class="topbar">
     <li class="search">
       <img src="/img/earth.svg">
@@ -23,6 +18,11 @@
       <img src="/img/nav.svg" alt="Navigation">
     </li>
   </ul>
+  <a class="navbar-brand home" href="{{ i18n "home_link" }}">
+  <img src="{{ .Site.BaseURL }}{{ .Site.Params.logo }}" alt="{{ .Title }} logo" class="hidden-xs hidden-sm">
+  <img src="{{ .Site.BaseURL }}{{ .Site.Params.logo_small }}" alt="{{ .Title }} logo" class="visible-xs visible-sm">
+  <span class="sr-only">{{ .Title }} - {{ i18n "navHome" }}</span>
+  </a>
   <div id="nav">
     {{ range .Site.Menus.main }}
     {{ $currentId:= .Identifier }}
