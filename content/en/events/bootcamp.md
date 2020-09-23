@@ -28,18 +28,22 @@ http://live.huawei.com/huaweiconnect/meeting/cn/5869.html
 
 ### Boopcamp agenda
 
-<img src="/img/events/bootcamp/live_event.png" width="30%" style="margin-bottom: 0.2rem;" />
+<img src="/img/events/bootcamp/live_event.png" width="100%" style="margin-bottom: 0.2rem; max-width: 1024px" />
 
 
-Session 1: How did the evolution of hardware impact on the development of opensource database?
-Intro: Since the birth of database, the development of hardware has been driving the evolution of database technology. Current hardware technic such as heterogeneous computing, non-volatile memory and RDMA high-speed networks will be readily accessible. This topic will decipher the major impact of new hardware technologies on open source databases from architecture to key technologies.
-Guest: Li Sihao  the founder of openGauss community、member of the Data Committee of the China National Computing Association、expert of Gauss Dep, 2012 Lab, Huawei.
+<em>Session 1:</em> How did the evolution of hardware impact on the development of opensource database?
 
-Session 2: History of the implementation of openGauss in practice
-Intro: The evolution of the technic in openGauss will be introduced through the implementation in practice.
-Guest: Tian Wengang    the chief  expert of openGauss community、director of C-TMG in Huawei DB、with 16-year experience in database development.
+<em>Intro:</em> Since the birth of database, the development of hardware has been driving the evolution of database technology. Current hardware technic such as heterogeneous computing, non-volatile memory and RDMA high-speed networks will be readily accessible. This topic will decipher the major impact of new hardware technologies on open source databases from architecture to key technologies.
 
-Please scan the QR code to follow our official account on WeChat for more information.
+<em>Guest:</em> Li Sihao  the founder of openGauss community、member of the Data Committee of the China National Computing Association、expert of Gauss Dep, 2012 Lab, Huawei.
+
+<em>Session 2:</em> History of the implementation of openGauss in practice
+
+<em>Intro:</em> The evolution of the technic in openGauss will be introduced through the implementation in practice.
+
+<em>Guest:</em> Tian Wengang    the chief  expert of openGauss community、director of C-TMG in Huawei DB、with 16-year experience in database development.
+
+<em>Please scan the QR code to follow our official account on WeChat for more information.</em>
 
 <img src="/img/events/bootcamp/live_weChat_code.jpg" width="30%" style="margin-bottom: 0.2rem;" />
 
