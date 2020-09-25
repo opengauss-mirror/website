@@ -61,8 +61,10 @@ $(document).ready(function() {
       $(this).addClass('active');
       $(this).siblings().removeClass('active');
       // 切换显示内容
-      $($('.connectors_content').children()[index]).removeClass('table-hide');
-      $($('.connectors_content').children()[index]).siblings().addClass('table-hide');
+      $('.connectors_content').each(function (index1, item) {
+        $(item).children().eq(index).removeClass('table-hide').siblings().addClass('table-hide');
+      })
+      
     })
   })
 
@@ -73,8 +75,9 @@ $(document).ready(function() {
       $(this).addClass('active');
       $(this).siblings().removeClass('active');
       // 切换显示内容
-      $($('.tools_content').children()[index]).removeClass('table-hide');
-      $($('.tools_content').children()[index]).siblings().addClass('table-hide');
+      $('.tools_content').each(function (index1, item) {
+        $(item).children().eq(index).removeClass('table-hide').siblings().addClass('table-hide');
+      })
     })
   })
 

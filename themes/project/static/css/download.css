@@ -1,0 +1,20 @@
+.version {
+    margin-right: 10px;
+    vertical-align: middle;
+    display: inline-block;
+    height: 38px;
+    font-weight: 700;
+}
+.table-option:first-child {
+    margin-right: 0;
+}
+.container .download-sel {
+    margin-bottom: 20px;
+    font-size: 16px;
+    width: 100px;
+    vertical-align: middle;
+    height: 25px;
+}
+.container .hide {
+    display: none;
+}

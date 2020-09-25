@@ -14,6 +14,9 @@
       {{ end  }}
       <i></i>
     </li>
+    <li class="h5-nav-search">
+      <i class="fa fa-search" id="h5-search-icon"></i>
+    </li>
     <li class="flex" onclick="getList('menu')" style="position:relative">
       <img src="/img/nav.svg" alt="Navigation">
     </li>
@@ -23,6 +26,10 @@
   <img src="{{ .Site.BaseURL }}{{ .Site.Params.logo_small }}" alt="{{ .Title }} logo" class="visible-xs visible-sm">
   <span class="sr-only">{{ .Title }} - {{ i18n "navHome" }}</span>
   </a>
+  <div class="h5-input" id="h5-input">
+    <input type="text" class="input-content home-search" placeholder="Search">
+    <i class="fa fa-search" id="h5-icon-input"></i>
+  </div>
   <div id="nav">
     {{ range .Site.Menus.main }}
     {{ $currentId:= .Identifier }}
@@ -194,26 +201,20 @@ l-9.2,5C11.2,10.4,10.8,10.5,10.5,10.5z M19.7,0H1.3C0.6,0,0,0.6,0,1.3v1L10.5,8L21
           {{ end }}
           {{ end }}
 
-
+          </li>
+          <li class="nav-search">
+            <span class="input-group-btn search-icon">
+              <i class="fa fa-search"></i>
+            </span>
           </li>
         </ul>
+        <div class="search" id="search-box">
+          <input type="text" class="input-content home-search-pc" placeholder="Search">
+          <i class="fa fa-search" id="search-icon"></i>
+        </div>
       </div>
       <!--/.nav-collapse -->
 
-      <div class="collapse clearfix" id="search">
-
-        <form class="navbar-form" role="search">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search">
-            <span class="input-group-btn">
-
-              <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button>
-
-            </span>
-          </div>
-        </form>
-
-      </div>
       <!--/.nav-collapse -->
 
     </div>

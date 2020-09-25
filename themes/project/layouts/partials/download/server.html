@@ -1,5 +1,5 @@
 <div class="isPc">
-    <table class="table table-bordered table-striped">
+    <table class="version1 table table-bordered table-striped hide">
         <thead>
             <tr>
                 <th><span>{{ i18n "download_version" }}</span></th>
@@ -31,11 +31,59 @@
             {{ end }}
         </tbody>
     </table>
+    <table class="version2 table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th><span>{{ i18n "download_version" }}</span></th>
+                <th><span>{{ i18n "download_system" }}</span></th>
+                <th><span>{{ i18n "download_sha" }}</span></th>
+                <th><span>{{ i18n "download_operating" }}</span></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{ range where $.Page.Site.Pages "Type" "server1.0.1" }}
+            {{ if .Params }}
+            <tr>
+                {{ if .Params.merge }}
+                <td rowspan="{{ .Params.totle }}">
+                    <span>{{ .Params.version }}</span>
+                </td>
+                {{ end }}
+                <td>
+                    {{ .Params.operatingSystem }}
+                </td>
+                <td>
+                    {{ .Params.sha }}
+                </td>
+                <td width="20%" class="download_btn">
+                    <a href="{{ .Params.downloadlink }}"><i class="download_icon"></i>{{ i18n "download_download" }}</a>
+                </td>
+            </tr>
+            {{ end }}
+            {{ end }}
+        </tbody>
+    </table>
 </div>
 
 <div class="isH5">
-    <ul>
+    <ul class="version1 hide">
         {{ range where $.Page.Site.Pages "Type" "server" }}
+        {{ if .Params }}
+        <li class="download_list">
+            <p><a href="{{ .Params.downloadlink }}">{{ i18n "download_download" }} {{ i18n "download_version" }} {{ .Params.version }} - {{ .Params.operatingSystem }}</a></p>
+            <!-- <div class="download_content">
+                <span>sha</span>
+                <div>
+                    <p class="download_sha">{{ .Params.sha }}&nbsp;&nbsp;<span class="download_close">{{ i18n "download_close" }}</span></p>
+                    <span class="download_more">{{ i18n "download_more" }}</span>
+                </div>
+            </div> -->
+        </li>
+        {{ end }}
+        {{ end }}
+    </ul>
+    <ul class="version2">
+        {{ range where $.Page.Site.Pages "Type" "server1.0.1" }}
         {{ if .Params }}
         <li class="download_list">
             <p><a href="{{ .Params.downloadlink }}">{{ i18n "download_download" }} {{ i18n "download_version" }} {{ .Params.version }} - {{ .Params.operatingSystem }}</a></p>
