@@ -1,8 +1,5 @@
 <script src="{{ .Site.BaseURL }}js/jquery.min.js"></script>
-{{ $versionArr := split $.File.Path "docs/" }}
-{{ $version := index $versionArr 1}}
-{{ $version := split $version "/" }}
-{{ $version := index $version 0}}
+{{ $version := "1.0.0"}}
 {{ $lang := .Site.LanguageCode}}
 <div class="docsVersion isPc">
     <div class="row" >
@@ -29,6 +26,10 @@
     </div>
 </div>
 <script>
+//下拉框选中到当前版本
+var url=window.location.href;
+var version = url.split('docs')[1].split('/')[1].split('/')[0];//通过url获取版本号
+$('#version').val(version);
 //版本下拉框切换事件
 $('#version').change(function(){
   var optionCheck = $('#version').find("option:checked");
