@@ -6,7 +6,7 @@
         <div class="isPc">
             <ul>
                 {{ $posts := where .Data.Pages "Type" "news" }}
-                {{ range first 3 $posts }}
+                {{ range first 2 $posts }}
                 <li class="news_items scale_102">                
                     <div>
                         <a href="{{ .URL }}">
