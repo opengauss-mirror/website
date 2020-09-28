@@ -266,8 +266,14 @@ other = "反馈问题: "
 [download_release_notes_link]
 other = "https://opengauss.org/zh/docs/1.0.0/docs/Releasenotes/Releasenotes.html"
 
+[download_release_notes_link_1_0_1]
+other = "https://opengauss.org/zh/docs/1.0.1/docs/Releasenotes/Releasenotes.html"
+
 [download_installation_guide_link]
 other = "https://opengauss.org/zh/docs/1.0.0/docs/installation/installation.html"
+
+[download_installation_guide_link_1_0_1]
+other = "https://opengauss.org/zh/docs/1.0.1/docs/installation/installation.html"
 
 [download_feedback_question_link]
 other = "https://gitee.com/opengauss/community/issues"
