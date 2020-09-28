@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+  {{ partial "head.html" . }}
+  <link rel="stylesheet" href="{{ "css/search.css" | relURL}}">
+  <link rel="stylesheet" href="{{ "css/pagination.css" | relURL}}">
+  <body>
+
+    <div id="all">
+
+        <header>
+
+          {{ partial "nav.html" . }}
+
+        </header>
+        <div id="content">
+            <div class="container">
+                <div class="search-area">
+                    <input type="text" class="area-input search-input" placeholder="Search">
+                    <i class="fa fa-search" id="area-icon"></i>
+                </div>
+                <div class="search-detail">
+                    <div class="detail-title">
+                        
+                    </div>
+                    <div class="detail-content">
+                        
+
+                    </div>
+                </div>
+                <div id="pagination"></div>
+            </div>
+        </div>
+        <!-- /#content -->
+        
+
+        {{ partial "footer.html" . }}
+
+    </div>
+    <!-- /#all -->
+
+    {{ partial "scripts.html" . }}
+    <script src="{{ "js/pagination.js" | relURL }}"></script>
+    <script src="{{ "js/search.js" | relURL }}"></script>
+  </body>
+</html>
