@@ -7,5 +7,7 @@ $(document).ready(function () {
             $('.version2').removeClass('hide');
             $('.version1').addClass('hide');
         }
-    })
+    });
+    $('.version1').removeClass('hide');
+    $('.version2').addClass('hide');
 })

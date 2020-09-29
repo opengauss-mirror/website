@@ -24,9 +24,9 @@
 
             <div class="container">
                 <p class="version">{{ i18n "download_version" }}</p>
-                <select class="download-sel">
-                    <option selected value ="2">1.0.1</option>
-                    <option value ="1">1.0.0</option>
+                <select class="download-sel" disabled="disabled">
+                    <option value ="2">1.0.1</option>
+                    <option selected value ="1">1.0.0</option>
                 </select>
                 <div class="table-nav">
                     <div class="table-option active">
@@ -37,16 +37,16 @@
                         <i class="icon icon2"></i>
                         <p>{{ .Params.optionTwo }}</p>
                     </div>
-                    <div class="table-option">
+                    <!--<div class="table-option">
                         <i class="icon icon3"></i>
                         <p>{{ .Params.optionThere }}</p>
-                    </div>
+                    </div>-->
                 </div>
 
                 <div class="table-content">
                     <div class="content-one">{{ partial "download/server" . }}</div>
                     <div class="table-hide">{{ partial "download/connectors" . }}</div>
-                    <div class="table-hide">{{ partial "download/tools" . }}</div>
+                    <!--<div class="table-hide">{{ partial "download/tools" . }}</div>-->
                 </div>
 
                 <div class="download_link hide version1">
