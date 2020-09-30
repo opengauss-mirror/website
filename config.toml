@@ -41,7 +41,7 @@ paginate = 10
 [[menu.main]]
     identifier = "docs"
     name = "Document"
-    url  = "/en/docs/1.0.1/docs/Quickstart/Quickstart.html"
+    url  = "/en/docs/1.0.0/docs/Quickstart/Quickstart.html"
     weight = 3
 
 [[menu.main]]
@@ -158,7 +158,7 @@ paginate = 10
 [[languages.zh.menu.main]]
     identifier = "docs"
     name = "文档"
-    url  = "/zh/docs/1.0.1/docs/Quickstart/Quickstart.html"
+    url  = "/zh/docs/1.0.0/docs/Quickstart/Quickstart.html"
     weight = 3
 
 [[languages.zh.menu.main]]
