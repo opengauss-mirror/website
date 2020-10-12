@@ -2,7 +2,7 @@
 <html lang="{{ .Site.LanguageCode }}">
 
   {{ partial "head.html" . }}
-  <link rel="stylesheet" href="{{ "css/download.css" | relURL}}">    
+  <link rel="stylesheet" href="{{ "css/download.css" | relURL}}?t={{ .Site.Params.timestamp }}">    
   <body>
 
     <div id="all">
@@ -82,7 +82,7 @@
     <!-- /#all -->
 
     {{ partial "scripts.html" . }}
-    <script src="{{ "js/download.js" | relURL }}"></script>
+    <script src="{{ "js/download.js" | relURL }}?t={{ .Site.Params.timestamp }}"></script>
   </body>
 </html>
 
