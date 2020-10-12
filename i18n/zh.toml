@@ -174,7 +174,7 @@ other = "/zh/wechat/code.html"
 other = "/zh/download.html"
 
 [main_docs_url]
-other = "/zh/docs/1.0.0/docs/Quickstart/Quickstart.html"
+other = "/zh/docs/1.0.1/docs/Quickstart/Quickstart.html"
 
 [main_docs]
 other = "文档"
