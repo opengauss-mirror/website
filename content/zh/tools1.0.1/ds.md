@@ -3,10 +3,10 @@ mergeName = true
 mergeVersion = true
 nameTotle = 1
 versionTotle = 1
-name = "DS"
+name = "Data Studio"
 version = "1.0.1"
-operatingSystem = "window_x86_64.tar.gz"
-sha = "a76df4e96c4cb69b10580fcde2d4ef46b5d426be6d47a3d8fd379c97c3e66638"
-downloadlink = "https://mailweb.opengauss.org/hyperkitty/list/community@opengauss.org"
+operatingSystem = "window_x86_64"
+sha = "822dfed0b0b70555f778bb7af9c465a511a69701af7146769a1a82e31fc5a25c"
+downloadlink = "https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.0.1/DataStudio_win_64.zip"
 weight =  4
 +++
