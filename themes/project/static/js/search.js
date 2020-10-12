@@ -138,7 +138,7 @@ remoteMethods = {
                         `<div class="content-box">
                         <p class="content-title" path="${item.articleName}" type="${item.type}">${item.title}</p>
                         <p class="content-desc" path="${item.articleName}" type="${item.type}">${item.textContent}</p>
-                        <p>${lang === 'zh' ? '来自' : 'From'}：<span class="tag">${privateMethods.transformLang(item.type)}</span></p>
+                        <p>${lang === 'zh' ? '来自' : 'From'}：<span class="tag">${privateMethods.transformLang(item.type)}${item.type === 'docs' ? item.version : ''}</span></p>
                     </div>`
                     )
                 })
