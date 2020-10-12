@@ -280,7 +280,7 @@ paginate = 10
     defaultKeywords = ["devows", "hugo", "go", "openGauss"]
     defaultDescription = "Site template made by devcows Modified by openGauss team"
 
-    timestamp = "20200928"
+    timestamp = "20201012"
 
     # Twitter
     # twitter = "GoHugoIO"
