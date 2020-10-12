@@ -1,12 +1,12 @@
 +++
 mergeName = true
 mergeVersion = true
-nameTotle = 2
-versionTotle = 2
+nameTotle = 3
+versionTotle = 3
 name = "JDBC"
 version = "1.0.1"
 operatingSystem = "centos_x86_64"
-sha = "e69e311ef46ca6efe4fbae5787efeb481f2a28e941e5ee412277c69dd5157591"
-downloadlink = "https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.0.0/x86/openGauss-1.0.0-JDBC.tar.gz"
+sha = "472ae40a56adee0134468c9f11796cab4412e5fb65812ae5a49179504977d4b1"
+downloadlink = "https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.0.1/x86/openGauss-1.0.1-JDBC.tar.gz"
 weight =  1
 +++

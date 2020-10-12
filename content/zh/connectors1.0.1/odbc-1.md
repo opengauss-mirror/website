@@ -1,12 +1,12 @@
 +++
 mergeName = true
 mergeVersion = true
-nameTotle = 2
-versionTotle = 2
+nameTotle = 3
+versionTotle = 3
 name = "ODBC"
-version = "1.0.1"
+version = "1.0.0"
 operatingSystem = "centos_x86_64"
-sha = "a0baae33724c4eb2be0fa225d7a51f451e60163cd15e3e948a2b3e0197616376"
-downloadlink = "https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.0.0/x86/openGauss-1.0.0-ODBC.tar.gz"
+sha = "66d06cb883a20dc4c9fbed86c2ca7ec70da00cbd96372aae3f6443ed1bf50540"
+downloadlink = "https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.0.1/x86/openGauss-1.0.0-ODBC.tar.gz"
 weight =  3
 +++
