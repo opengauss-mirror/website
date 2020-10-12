@@ -10,7 +10,7 @@
         </thead>
         <tbody>
             {{ range where $.Page.Site.Pages "Type" "server" }}
-            {{ if .Params }}
+            {{ if .Params.operatingSystem }}
             <tr>
                 {{ if .Params.merge }}
                 <td rowspan="{{ .Params.totle }}">
@@ -42,7 +42,7 @@
         </thead>
         <tbody>
             {{ range where $.Page.Site.Pages "Type" "server1.0.1" }}
-            {{ if .Params }}
+            {{ if .Params.operatingSystem }}
             <tr>
                 {{ if .Params.merge }}
                 <td rowspan="{{ .Params.totle }}">

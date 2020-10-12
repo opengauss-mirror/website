@@ -11,7 +11,7 @@
         </thead>
         <tbody>
             {{ range where $.Page.Site.Pages "Type" "connectors" }}
-            {{ if .Params }}
+            {{ if .Params.name }}
             <tr>
                 {{ if .Params.mergeName }}
                 <td rowspan="{{ .Params.nameTotle }}">
@@ -49,7 +49,7 @@
         </thead>
         <tbody>
             {{ range where $.Page.Site.Pages "Type" "connectors1.0.1" }}
-            {{ if .Params }}
+            {{ if .Params.name }}
             <tr>
                 {{ if .Params.mergeName }}
                 <td rowspan="{{ .Params.nameTotle }}">

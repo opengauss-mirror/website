@@ -1,7 +1,7 @@
 version = "1.0.1"
 ##如下是文档下载链接
-downloadUrlZh = "https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.0.1/openGauss-document-zh-1.0.1-2020-09-30.zip"
-downloadUrlEn = "https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.0.1/openGauss-document-en-1.0.1-2020-09-30.zip"
+downloadUrlZh = "https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.0.1/openGauss-document-zh-1.0.1-2020-10-12.zip"
+downloadUrlEn = "https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.0.1/openGauss-document-en-1.0.1-2020-10-12.zip"
 ##如下是文档默认访问页面，用于版本切换后，跳转到对应版本的首页。因为不能做成章节一一对应，只能切换版本的时候跳转到文档默认首页。
 defaultUrlZh = "/zh/docs/1.0.1/docs/Quickstart/Quickstart.html"
 defaultUrlEn = "/en/docs/1.0.1/docs/Quickstart/Quickstart.html"

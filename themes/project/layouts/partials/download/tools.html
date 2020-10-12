@@ -11,7 +11,7 @@
         </thead>
         <tbody>
             {{ range where $.Page.Site.Pages "Type" "tools" }}
-            {{ if .Params }}
+            {{ if .Params.name }}
             <tr>
                 {{ if .Params.mergeName }}
                 <td rowspan="{{ .Params.nameTotle }}">
@@ -49,7 +49,7 @@
         </thead>
         <tbody>
             {{ range where $.Page.Site.Pages "Type" "tools1.0.1" }}
-            {{ if .Params }}
+            {{ if .Params.name }}
             <tr>
                 {{ if .Params.mergeName }}
                 <td rowspan="{{ .Params.nameTotle }}">
@@ -79,72 +79,18 @@
 
 <div class="isH5">
     <div class="tools_table">
-        <div class="active">DS</div>
+        <div class="active">Data Studio</div>
     </div>
 
-    <div class="version1 hide tools_content">
-        <div>
-            <ul>
-                {{ range where $.Page.Site.Pages "Type" "tools" }}
-                {{ if eq .Params.name "SDR" }}
-                <li class="download_list">
-                    <p><a href="{{ .Params.downloadlink }}">{{ i18n "download_download" }}{{ .Params.version }}{{ i18n "download_version" }} - {{ .Params.operatingSystem }}</a></p>
-                    <div class="download_content">
-                        <span>sha</span>
-                        <div>
-                            <p class="download_sha">{{ .Params.sha }}&nbsp;&nbsp;<span class="download_close">{{ i18n "download_close" }}</span></p>
-                            <span class="download_more">{{ i18n "download_more" }}</span>
-                        </div>
-                    </div>
-                </li>
-                {{ end }}
-                {{ end }}
-            </ul>
-        </div>
-        <div class="table-hide">
-            <ul>
-                {{ range where $.Page.Site.Pages "Type" "tools" }}
-                {{ if eq .Params.name "DS" }}
-                <li class="download_list">
-                    <p><a href="{{ .Params.downloadlink }}">{{ i18n "download_download" }}{{ .Params.version }}{{ i18n "download_version" }} - {{ .Params.operatingSystem }}</a></p>
-                    <div class="download_content">
-                        <span>sha</span>
-                        <div>
-                            <p class="download_sha">{{ .Params.sha }}&nbsp;&nbsp;<span class="download_close">{{ i18n "download_close" }}</span></p>
-                            <span class="download_more">{{ i18n "download_more" }}</span>
-                        </div>
-                    </div>
-                </li>
-                {{ end }}
-                {{ end }}
-            </ul>
-        </div>
-        <div class="table-hide">
-            <ul>
-                {{ range where $.Page.Site.Pages "Type" "tools" }}
-                {{ if eq .Params.name "DM" }}
-                <li class="download_list">
-                    <p><a href="{{ .Params.downloadlink }}">{{ i18n "download_download" }}{{ .Params.version }}{{ i18n "download_version" }} - {{ .Params.operatingSystem }}</a></p>
-                    <div class="download_content">
-                        <span>sha</span>
-                        <div>
-                            <p class="download_sha">{{ .Params.sha }}&nbsp;&nbsp;<span class="download_close">{{ i18n "download_close" }}</span></p>
-                            <span class="download_more">{{ i18n "download_more" }}</span>
-                        </div>
-                    </div>
-                </li>
-                {{ end }}
-                {{ end }}
-            </ul>
-        </div>        
+    <div class="version1 hide tools_content">      
     </div>
     <div class="version2 tools_content">
         <div>
             <ul>
                 {{ range where $.Page.Site.Pages "Type" "tools1.0.1" }}
-                {{ if eq .Params.name "SDR" }}
+                {{ if eq .Params.name "Data Studio" }}
                 <li class="download_list">
-                    <p><a href="{{ .Params.downloadlink }}">{{ i18n "download_download" }}{{ .Params.version }}{{ i18n "download_version" }} - {{ .Params.operatingSystem }}</a></p>
+                    <p><a href="{{ .Params.downloadlink }}">{{ i18n "download_download" }} {{ i18n "download_version" }} {{ .Params.version }} - {{ .Params.operatingSystem }}</a></p>
                     <div class="download_content">
                         <span>sha</span>
                         <div>
@@ -156,42 +102,6 @@
                 {{ end }}
                 {{ end }}
             </ul>
-        </div>
-        <div class="table-hide">
-            <ul>
-                {{ range where $.Page.Site.Pages "Type" "tools1.0.1" }}
-                {{ if eq .Params.name "DS" }}
-                <li class="download_list">
-                    <p><a href="{{ .Params.downloadlink }}">{{ i18n "download_download" }}{{ .Params.version }}{{ i18n "download_version" }} - {{ .Params.operatingSystem }}</a></p>
-                    <div class="download_content">
-                        <span>sha</span>
-                        <div>
-                            <p class="download_sha">{{ .Params.sha }}&nbsp;&nbsp;<span class="download_close">{{ i18n "download_close" }}</span></p>
-                            <span class="download_more">{{ i18n "download_more" }}</span>
-                        </div>
-                    </div>
-                </li>
-                {{ end }}
-                {{ end }}
-            </ul>
-        </div>
-        <div class="table-hide">
-            <ul>
-                {{ range where $.Page.Site.Pages "Type" "tools1.0.1" }}
-                {{ if eq .Params.name "DM" }}
-                <li class="download_list">
-                    <p><a href="{{ .Params.downloadlink }}">{{ i18n "download_download" }}{{ .Params.version }}{{ i18n "download_version" }} - {{ .Params.operatingSystem }}</a></p>
-                    <div class="download_content">
-                        <span>sha</span>
-                        <div>
-                            <p class="download_sha">{{ .Params.sha }}&nbsp;&nbsp;<span class="download_close">{{ i18n "download_close" }}</span></p>
-                            <span class="download_more">{{ i18n "download_more" }}</span>
-                        </div>
-                    </div>
-                </li>
-                {{ end }}
-                {{ end }}
-            </ul>
-        </div>        
+        </div>      
     </div>
 </div>
