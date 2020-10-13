@@ -12,11 +12,23 @@
         <div class="docsMenu" id="slideNav">
           <img src="/img/docs/caidan-close.png" alt="Menu" />
         </div>
-        
+        {{ $version := "1.0.0"}}
+        {{ $versionArr := split $.File.Path "docs/" }}
+        {{ $version := index $versionArr 1}}
+        {{ $version := split $version "/" }}
+        {{ $version := index $version 0}}
+        {{ $lang := .Site.LanguageCode}}
         <div class="select">
-          <select>
-            <option>1.0.0</option>
+          <select id="docVersion">
+            {{ range .Site.Data.docsVersion }}
+            {{ if eq $lang "zh-cn" }}
+            <option link="{{.defaultUrlZh}}">{{.version}}</option>
+            {{ else }}
+            <option link="{{.defaultUrlEn}}">{{.version}}</option>
+            {{ end }}
+            {{ end }}
           </select>
+          
         </div>
       </div>
 
@@ -73,7 +85,16 @@
           const h = $('.book-page').height();
           $('.docscontainer').height(h);
 			  }
-      })
+      });
+      //下拉框选中到当前版本
+      var url = window.location.href;
+      var version = url.split('docs')[1].split('/')[1].split('/')[0];//通过url获取版本号
+      $('#docVersion').val(version);
+      //版本下拉框切换事件
+      $('#docVersion').change(function(){
+        var optionCheck = $('#docVersion').find("option:checked");
+        window.location.href = optionCheck.attr('link');
+      });
     </script>
   </body>
 </html>
