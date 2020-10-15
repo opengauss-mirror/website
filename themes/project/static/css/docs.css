@@ -1,0 +1,8 @@
+
+ol {
+    list-style-type: decimal;
+}
+#content li {
+    display: list-item;
+    margin-left:20px;
+}
