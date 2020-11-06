@@ -1417,6 +1417,10 @@ fieldset[disabled] .btn-template-primary.active {
 .video_content_top ul li,
 .video_tags .tags-list li {
   margin-right: 0.2rem;
+  list-style: none;
+}
+.video_tags.isPc{
+  display: none;
 }
 .video_tags .tags-list li:last-child {
   margin-right: 0;
