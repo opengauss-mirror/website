@@ -383,6 +383,16 @@ other = "/zh/community/mails.html"
 
 [main_mail_more_list]
 other = "邮件列表"
+
+[statistics_contributors]
+other = "贡献者"
+
+[statistics_users]
+other = "用户"
+
+[statistics_platforms]
+other = "商用版本"
+
 # DOC page
 [doc_git_footer]
 other = "意见反馈"

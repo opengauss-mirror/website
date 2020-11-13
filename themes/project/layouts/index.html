@@ -15,6 +15,7 @@
 
     <div class="body_content">
       {{ partial "banner.html" . }}
+      {{ partial "statistics.html" . }}
       {{ partial "feature_case_client.html" . }}
       {{ partial "action.html" . }}
       {{ partial "video_show.html" . }}
@@ -28,7 +29,7 @@
   
 
   {{ partial "scripts.html" . }}
-
+  <script src="{{ "js/home.js" | relURL }}?t={{ .Site.Params.timestamp }}"></script>
 </body>
 
 </html>

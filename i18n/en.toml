@@ -381,6 +381,15 @@ other = "/en/community/mails.html"
 [main_mail_more_list]
 other = "Mail List"
 
+[statistics_contributors]
+other = "# of contributors to openGauss"
+
+[statistics_users]
+other = "# of users of openGauss"
+
+[statistics_platforms]
+other = "openGauss Distibutions & Platforms"
+
 # DOC page
 [doc_git_footer]
 other = "Feedback"
