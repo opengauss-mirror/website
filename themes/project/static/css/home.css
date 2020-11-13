@@ -226,6 +226,49 @@
 }
 
 
+/* ----------------------------------------  statistics opengauss  ----------------------------------------- */
+
+.content .content_statistics {
+    margin-top: 34px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+@media screen and (max-width: 1000px){
+    .content .content_statistics {
+        flex-direction: column;
+    }
+    .content .content_statistics .statistics_item img {
+        margin-top: 40px;
+    }
+    .content .content_statistics .statistics_item:first-child img {
+        margin: 0;
+    }
+}
+
+.content .content_statistics .statistics_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.content .content_statistics .statistics_item .count {
+    margin: 10px 0 0 0;
+    font-size: 50px;
+    color: #467FBF;
+    line-height: 100%;
+}
+.content .content_statistics .statistics_item .desc {
+    max-width: 150px;
+    font-size: 14px;
+    color: 000;
+    line-height: 26px;
+    word-wrap:break-word;
+    word-break:normal; 
+    text-align: center;
+}
+.content .content_statistics .statistics_item img {
+    width: 80px;
+}
 
 /* ------------------------------------------  news  ------------------------------------------ */
 /* -------------------    news     -------------------- */
