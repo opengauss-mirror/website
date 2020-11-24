@@ -1,4 +1,4 @@
-+++
+﻿+++
 title = "【成都】openGauss Meetup | 精彩回顾"
 date = "2020-11-19"
 tags = ["Meetup"]
@@ -6,7 +6,7 @@ label = "Meetup"
 label2 = "线上线下"
 banner = "img/events/chengduMeetup/banner2.png"
 author = "openGauss"
-summary = "回顾openGauss第一次Meetup的所有精彩内容"
+summary = "回顾openGauss成都Meetup的所有精彩内容"
 +++
 
 
