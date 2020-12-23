@@ -7,7 +7,7 @@ other = "About openGauss"
 other = "require field"
 
 [main_characterr_info]
-other = "openGauss is an open source relational database management system that is released with the Mulan PSL v2. with the kernel derived from PostgreSQL, openGauss is built on Huawei's years of experience in the database field and continuously provides competitive features tailored to enterprise-class scenarios."
+other = "openGauss is an open source relational database management system that is released with the Mulan PSL v2. with the kernel derived from PostgreSQL, openGauss is built on Huawei's years of experience in the database field and continuously provides competitive features tailored to enterprise-grade scenarios."
 
 [main_partner_title]
 other = "Partners"
@@ -28,31 +28,31 @@ other = "openGauss"
 other = "Community"
 
 [banner_intro]
-other = "is an enterprise-level open source relational database with extreme performance, safety and reliability"
+other = "is an enterprise-grade open source relational database with extreme performance, security and reliability"
 
 [feature_title_one]
-other = "High Reliability"
+other = "High Performance"
 
 [feature_title_two]
-other = "Easy O&M"
+other = "High Reliability"
 
 [feature_title_three]
-other = "High Performance"
+other = "High Security"
 
 [feature_title_four]
-other = "High Performance"
+other = "Easy O&M"
 
 [feature_intro_one]
-other = "RTO < 10s"
-
-[feature_intro_two]
-other = "AI-based parameter tuning"
-
-[feature_intro_three]
 other = "2-socket Kunpeng for 1.5 million tpmC"
 
-[feature_intro_four]
+[feature_intro_two]
+other = "RTO < 10s"
+
+[feature_intro_three]
 other = "Comprehensive end-to-end security protection"
+
+[feature_intro_four]
+other = "AI-based parameter tuning"
 
 [main_news_title]
 other = "Latest Info"
