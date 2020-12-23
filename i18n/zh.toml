@@ -45,10 +45,10 @@ other = "易运维"
 other = "两路鲲鹏性能150万tpmC"
 
 [feature_intro_two]
-other = "端到端全方位安全防护"
+other = "故障切换时间RTO<10s"
 
 [feature_intro_three]
-other = "故障切换时间RTO<10s"
+other = "端到端全方位安全防护"
 
 [feature_intro_four]
 other = "基于AI的智能参数调优"
