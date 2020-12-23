@@ -1,14 +1,16 @@
 +++
 title = "线上交流"
+bgImg = "/img/breadcrumbs/communication_bg.png"
+moImg = "/img/breadcrumbs/communication_mo.png"
 +++
 
-openGauss社区使用邮件列表、IRC等多种渠道进行线上沟通交流。
+openGauss社区使用邮件列表、IRC等多种渠道进行线上沟通交流。我们真诚地邀请您通过邮件列表与openGauss IRC频道参与讨论。
 
 ### 1. 邮件列表
+{{< mails "列表名称" "邮件地址" "描述" "归档路径">}}
+
 
 #### 1.1 如何订阅邮件列表？
-
-欢迎参与邮件列表讨论！
 
 如果您以前从未订阅过邮件列表，请参照下面的操作步骤。
 
@@ -28,40 +30,62 @@ openGauss社区使用邮件列表、IRC等多种渠道进行线上沟通交流�
 
 <img src="/img/community/mailimg.png" style="width:65%" >
 
-{{< mails "列表名称" "邮件地址" "描述" >}}
 
 #### 1.2 如何发送邮件到邮件列表？
 
-要将邮件发送到指定的邮件列表，请向上表中列出的邮件地址发送您的电子邮件。
-
-这样所有在这个邮件列表中的社区成员都能收到您的电子邮件。
+要将邮件发送到指定的邮件列表，请向上表中列出的邮件地址发送您的电子邮件。这样所有在这个邮件列表中的社区成员都能收到您的电子邮件。
 
 #### 1.3 如何查看以前的邮件列表？
 
-要查看邮件列表中以前发布的电子邮件，请访问以下存档地址：
+要查看邮件列表中以前发布的电子邮件，请点击上表中邮件列表的Archive链接访问存档地址。
 
-{{< archives >}}
 
 ### 2. IRC
 
 
 IRC全称为Internet Relay Chat，凭借强大的实时通信能力，在开源项目中被大量使用。
 
-我们真诚地邀请您加入openGauss IRC频道参与讨论。
+使用IRC不需要复杂的配置。所有操作系统都可以使用IRC软件，[维基百科](https://zh.wikipedia.org/wiki/IRC)有IRC客户端的对比，您可以根据您的操作系统选择一个。如果您不想下载和安装软件，您可以使用Web客户端[freenode.net](https://freenode.net/)。您只需选择一个昵称就可以加入openGauss IRC频道。
 
-openGauss使用[freenode.net](https://freenode.net/)提供免费和开放的沟通和交流。
 
-所有操作系统都可以使用IRC软件，[维基百科](https://zh.wikipedia.org/wiki/IRC)有IRC客户端的对比，您可以根据您的操作系统选择一个。
-
-使用IRC不需要复杂的配置。如果您不想下载和安装软件，您可以使用Web客户端[freenode.net](https://freenode.net/)。
-
-您只需选择一个昵称就可以加入openGauss IRC频道。
-
-#### 2.1 openGauss IRC频道
+#### 2.1 IRC频道
 
 {{< ircs "IRC频道" "描述" >}}
 
-#### 2.2 其他您可能想知道的
+#### 2.2 IRC会议
+
+[IRC]((https://zh.wikipedia.org/wiki/IRC))会议以纯文字方式开展，
+openGauss社区IRC会议频道为[#opengauss-meeting](https://webchat.freenode.net/?randomnick=1&channels=%23opengauss-meeting&prompt=1&uio=d4)。
+您可以在[IRC Channel Logs](https://meetings.opengauss.org/)找到所有的频道和会议记录。
+
+openGauss社区组织可以选择不同的渠道与时间开展线上会议，具体请查看社区各个组织会议介绍。
+
+{{< meeting "组织会议" "组织职责范围" >}}
+
+
+所有IRC会议命令使用#字符前缀，常用命令包括：
+
+| IRC命令 | 命令作用 | 使用样例 |
+| :------- | :--------------- | :------- |
+| #startmeeting | 开始一个会议，键入这个命令的人将成为该会议的主持人。 | #startmeeting infra |
+| #topic | 设置当前会议的讨论主题，命令后面的文字将成为议题主题，当前会议结束后，系统将在会议记录中高亮会议主题以方便查看。 | #topic next release time |
+| #endmeeting | 结束当前的会议，系统会记录会议日志，并给出相应的会议纪要地址。 | #endmeeting |
+| #action | 用于记录会议讨论后下一步需要某人采取的动作，命令后面的第一串字符表示动作的执行人，后续文字将是对动作的描述，待会议结束后，会议纪要将把该后续动作记录下来。 | #action MrGreen 整理发布计划 |
+| #info | 用于在会议中高亮显示一个记录。 | #info 在下一个版本发布前，我们还有很多工作需要做 |
+| #link | 用于添加一个网络连接，命令后即是该连接的地址，连接不能有空格。 | `#link [MeetBot](http://wiki.debian.org/MeetBot/)` |
+| #agreed | 表示与会人达成一定的结论，命令后面即是结论内容。会议结束后，系统将在会议纪要中记录该结论。 | #agreed next release time is sunday |
+
+| IRC命令 | 命令作用 | 
+| :------- | :--------------- | :------- |
+| #startmeeting | 开始一个会议，键入这个命令的人将成为该会议的主持人。 
+| #topic | 设置当前会议的讨论主题，命令后面的文字将成为议题主题，当前会议结束后，系统将在会议记录中高亮会议主题以方便查看。 
+| #endmeeting | 结束当前的会议，系统会记录会议日志，并给出相应的会议纪要地址。 
+| #action | 用于记录会议讨论后下一步需要某人采取的动作，命令后面的第一串字符表示动作的执行人，后续文字将是对动作的描述，待会议结束后，会议纪要将把该后续动作记录下来。 
+| #info | 用于在会议中高亮显示一个记录。 
+| #link | 用于添加一个网络连接，命令后即是该连接的地址，连接不能有空格。 
+| #agreed | 表示与会人达成一定的结论，命令后面即是结论内容。会议结束后，系统将在会议纪要中记录该结论。  
+
+#### 2.3 其他您可能想知道的
 
 如果您要创建一个新的IRC频道，
 请通过IRC频道[#opengauss-infra](https://webchat.freenode.net/#opengauss-infra)

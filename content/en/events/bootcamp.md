@@ -1,9 +1,12 @@
 +++
 title = "【Shanghai】openGauss Developer Bootcamp"
-date = "2020-09-25"
-tags = ["event"]
+time = "2020/09/25"
+tags = "event"
 label = "online and offline"
-banner = "img/home_banner/bootcamp_mobile_en.png"
+location = "Shanghai"
+img = "/img/home_banner/bootcamp_mobile_en.png"
+img_mobile = '/img/home_banner/bootcamp_mobile_en.png'
+link = "./events/bootcamp.html"
 author = "openGauss"
 summary = "It’s a great event for developers. Welcome to it."
 +++

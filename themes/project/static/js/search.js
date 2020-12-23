@@ -113,7 +113,7 @@ remoteMethods = {
                     curTab = 'all';
                     $('.detail-title').empty();
                     $('.detail-title').append(
-                        `<p class="active" key="">${privateMethods.transformLang('all')}<span>（0）</span></p>`
+                        `<p class="active" key="">${privateMethods.transformLang('all')}<span> (0) </span></p>`
                     )
                     $('.detail-content').empty();
                     $('.detail-content').append(
@@ -126,7 +126,7 @@ remoteMethods = {
                     $('.detail-title').empty();
                     data.obj.totalNum.forEach(function (item) {
                         $('.detail-title').append(
-                            `<p class="${item.key===curTab?'active':''}" key="${item.key==='all' ? '' : item.key}">${privateMethods.transformLang(item.key)}<span>（${item.count}）</span></p>`
+                            `<p class="${item.key===curTab?'active':''}" key="${item.key==='all' ? '' : item.key}">${privateMethods.transformLang(item.key)}<span> (${item.count}) </span></p>`
                         )
                     })
                     privateMethods.toggleTab();    

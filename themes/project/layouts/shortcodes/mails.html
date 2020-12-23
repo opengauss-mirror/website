@@ -1,13 +1,12 @@
 <div class="table-responsive isPc">
     <table class="table table-bordered table-striped">
-        <thead>
-            <tr>
-                <th><span>{{ default "List Name" (.Get 0) }}</span></th>
-                <th><span>{{ default "Post Address" (.Get 1) }}</span></th>
-                <th><span>{{ default "Description" (.Get 2) }}</span></th>
-            </tr>
-        </thead>
         <tbody>
+            <tr>
+                <td><span>{{ default "List Name" (.Get 0) }}</span></td>
+                <td><span>{{ default "Post Address" (.Get 1) }}</span></td>
+                <td><span>{{ default "Description" (.Get 2) }}</span></td>
+                <td><span>{{ default "Archive" (.Get 3) }}</span></td>
+            </tr>
             {{ range where $.Page.Site.Pages "Type" "maillist" }}
             {{ if .Params }}
             <tr>
@@ -20,6 +19,9 @@
                 <td>
                     {{ .Params.description }}
                 </td>
+                <td>
+                    <a href="{{ .Params.archivelink}}" target="_blank">{{ .Params.archive }}</a>
+                </td>
             </tr>
             {{ end }}
             {{ end }}
@@ -28,50 +30,28 @@
 </div>
 
 <div class="isH5">
-    <div class="flex">
-        <table class="table table-bordered table-striped table-left">
-            <thead>
-                <tr>
-                    <th><span>{{ default "List Name" (.Get 0) }}</span></th>
-                </tr>
-            </thead>
-            <tbody>
-                {{ range where $.Page.Site.Pages "Type" "maillist" }}
-                {{ if .Params }}
-                <tr>
-                    <td>
-                        <a href="{{ .Params.websitelink}}" target="_blank">{{ .Params.listname }}</a>
-                    </td>
-                </tr>
-                {{ end }}
-                {{ end }}
-            </tbody>
-        </table>
-    
-        <div class="table-respon">
-            <table class="table table-bordered table-striped">
-                <thead>
-                    <tr>
-                        <th><span>{{ default "Post Address" (.Get 1) }}</span></th>
-                        <th><span>{{ default "Description" (.Get 2) }}</span></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {{ range where $.Page.Site.Pages "Type" "maillist" }}
-                    {{ if .Params }}
-                    <tr>
-                        <td>
-                            {{ .Params.emailaddress }}
-                        </td>
-                        <td>
-                            {{ .Params.description }}
-                        </td>
-                    </tr>
-                    {{ end }}
-                    {{ end }}
-                </tbody>
-            </table>
-        </div>
-        
-    </div>
+    <table class="table">
+        <tbody>
+            <tr>
+                <td><span>{{ default "List Name" (.Get 0) }}</span></td>
+                <td><span>{{ default "Description" (.Get 2) }}</span></td>
+                <td><span>{{ default "Archive" (.Get 3) }}</span></td>
+            </tr>
+            {{ range where $.Page.Site.Pages "Type" "maillist" }}
+            {{ if .Params }}
+            <tr>
+                <td>
+                    <a href="{{ .Params.websitelink}}" target="_blank">{{ .Params.listname }}</a>
+                </td>
+                <td>
+                    {{ .Params.mobiledesc }}
+                </td>
+                <td>
+                    <a href="{{ .Params.archivelink}}" target="_blank">{{ .Params.archive }}</a>
+                </td>
+            </tr>
+            {{ end }}
+            {{ end }}
+        </tbody>
+    </table>  
 </div>

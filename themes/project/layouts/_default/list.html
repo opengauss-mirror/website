@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
+<link rel="stylesheet" href="{{ "css/pagination.css" | relURL}}">
 
   {{ partial "head.html" . }}
+<link href="{{ "css/news.css" | relURL}}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet">
 
   <body>
 
@@ -21,25 +23,30 @@
                     <!-- *** LEFT COLUMN *** -->
 
                     <div class="col-md-12" id="blog-listing-medium">
-
-                        {{ $paginator := .Paginate (where .Data.Pages "Type" "news") 5 }}
-                        {{ range $paginator.Pages }}
-                        <div class="newsDetail">
-                            <div class="newsDetail_content">
-                                <div class="newsDetail_content_warp">
-                                    <div class="newsDetail_content_left">
-                                        <a href="{{ .Permalink }}">
-                                            {{ if .Params.banner }}
-                                            <img src="{{ .Site.BaseURL}}{{ .Params.banner }}">
-                                            {{ else }}
-                                            <img src="{{ .Site.BaseURL}}img/banners/placeholder.png">
-                                            {{ end }}
-                                        </a>
-                                    </div>
-                                    <div class="newsDetail_content_right">
-                                        <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-                                        <p class="newsDetail_right_tips">
-                                            <span>
+                        <div class="news-list-box">
+                            {{ $paginator := .Paginate (where .Data.Pages "Type" "news") 5 }}
+                            {{ range $paginator.Pages }}
+                            <div class="newsDetail">
+                                <div class="newsDetail_content">
+                                    <div class="newsDetail_content_warp">
+                                        <div class="newsDetail_content_left">
+                                            <a href="{{ .Permalink }}">
+                                                {{ if .Params.banner }}
+                                                <img src="{{ .Params.banner }}">
+                                                {{ else }}
+                                                <img src="/img/banners/placeholder.png">
+                                                {{ end }}
+                                            </a>
+                                        </div>
+                                        <div class="newsDetail_content_right">
+                                            <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                                            <p class="newsDetail_right_tips">
+                                                <img src="/img/icon_date.svg" alt="">
+                                                <span>
+                                                {{ .Date.Format .Site.Params.date_format }}
+                                            </span>
+                                                <img src="/img/icon_author.svg" alt="">
+                                                <span>
                                                 {{ if isset .Params "author" }}
                                                 {{ .Params.author }}
                                                 {{ end }}
@@ -49,32 +56,19 @@
                                                 {{ end }}
                                                 {{ end }}
                                             </span>
-                                            <span>{{ .Date.Format .Site.Params.date_format }}</span>
-                                        </p>
-                                        <p class="newsDetail_right_content"><a href="{{ .Permalink }}">{{ .Params.Summary }}</a></p>
-                                        <div class="newsDetail_right_btn">
-                                            <a  href="{{ .Permalink }}" class="btn btn-template-main">{{ i18n "full_text" }}</a>
+                                            </p>
+                                            <p class="newsDetail_right_content"><a href="{{ .Permalink }}">{{ .Params.Summary }}</a></p>
+                                            <div class="newsDetail_right_btn">
+                                                <a  href="{{ .Permalink }}" class="btn-template-main">{{ i18n "full_text" }}</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
-                            
+                            {{ end }}
                         </div>
-                        {{ end }}
-
-                        <ul class="pager">
-                            {{ if .Paginator.HasPrev }}
-                            <li class="previous"><a href="{{ .Site.BaseURL }}{{ .Paginator.Prev.URL }}">&larr; {{ i18n "newer" }}</a></li>
-                            {{ else }}
-                            <li class="previous disabled"><a href="javaScript:;">&larr; {{ i18n "newer" }}</a></li>
-                            {{ end }}
-
-                            {{ if .Paginator.HasNext }}
-                            <li class="next"><a href="{{ .Site.BaseURL }}{{ .Paginator.Next.URL }}">{{ i18n "older" }} &rarr;</a></li>
-                            {{ else }}
-                            <li class="next disabled"><a href="javaScript:;">{{ i18n "older" }} &rarr;</a></li>
-                            {{ end }}
-                        </ul>
+                        <div id="pagination" class="hide"></div>
                     </div>
                     <!-- /.col-md-9 -->
                 </div>
@@ -90,6 +84,12 @@
     <!-- /#all -->
 
     {{ partial "scripts.html" . }}
-
+    <script>
+        var curPage = {{ $paginator.PageNumber}}
+        var total = {{ len (where .Data.Pages "Type" "news") }};
+        var lang = window.location.href.includes('/zh/') ? 'zh' : 'en';
+    </script>
+    <script src="{{ "js/pagination.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>
+    <script src="{{ "js/news-pagination.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>
   </body>
 </html>

@@ -1,5 +1,7 @@
 +++
 title = "法律声明"
+bgImg = "../img/breadcrumbs/privacy_bg.png"
+moImg = "../img/breadcrumbs/privacy_mo.png"
 +++
 本法律声明包含openGauss社区的若干法律政策。这些政策适用于本网站以及openGauss社区项目发布。
 ### 规则及openGauss网站访问条件

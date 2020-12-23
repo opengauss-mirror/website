@@ -21,9 +21,11 @@
 
   {{ .Hugo.Generator }}
 
-  <!-- Bootstrap and Font Awesome css -->
+  <!-- Bootstrap and Font Awesome css and Swiper css-->
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/font-awesome.min.css">
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ "css/swiper.min.css" | relURL}}">
+
 
   <!-- video css -->
   <!-- <link href="https://vjs.zencdn.net/7.8.2/video-js.css" rel="stylesheet" /> -->
@@ -33,24 +35,24 @@
 
   <!-- Theme stylesheet, if possible do not edit this stylesheet -->
   {{ if and (isset .Site.Params "style") .Site.Params.style }}
-    <link href="{{ "css/style" | relURL}}.{{ .Site.Params.style }}.css?t={{ .Site.Params.timestamp }}" rel="stylesheet" id="theme-stylesheet">
+    <link href="{{ "css/style" | relURL}}.{{ .Site.Params.style }}.css?t={{ mul 1000 (time now).Unix }}" rel="stylesheet" id="theme-stylesheet">
   {{ else }}
-    <link href="{{ "css/style.default.css" | relURL}}" rel="stylesheet" id="theme-stylesheet">
+    <link href="{{ "css/style.default.css" | relURL}}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet" id="theme-stylesheet">
   {{ end }}
 
 
   <!-- Custom stylesheet - for your changes -->
-  <link href="{{ "css/commen.css" | relURL}}" rel="stylesheet">
-  <link href="{{ "css/custom.css" | relURL}}?t={{ .Site.Params.timestamp }}" rel="stylesheet">
-  <link href="{{ "css/custommobile.css?" | relURL}}t={{ .Site.Params.timestamp }}" rel="stylesheet">
-  <link href="{{ "css/home.css" | relURL}}?t={{ .Site.Params.timestamp }}" rel="stylesheet">
-  <link href="{{ "css/swiper.min.css?" | relURL}}t={{ .Site.Params.timestamp }}" rel="stylesheet">
-  <link href="{{ "css/homemobile.css?" | relURL}}t={{ .Site.Params.timestamp }}" rel="stylesheet">
-  <link href="{{ "css/cla.css?" | relURL}}t={{ .Site.Params.timestamp }}" rel="stylesheet">
+  <link href="{{ "css/commen.css" | relURL}}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet">
+  <link href="{{ "css/custom.css" | relURL}}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet">
+  <link href="{{ "css/custommobile.css" | relURL}}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet">
+  <link href="{{ "css/home.css" | relURL}}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet">
+  <link href="{{ "css/homemobile.css" | relURL}}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet">
+  <link href="{{ "css/cla.css" | relURL}}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet">
+  <link href="{{ "css/banner.css" | relURL}}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet">
 
   <!-- English version style -->
   {{ if eq .Site.LanguageCode "en-us" }}
-  <link href="{{ "css/home_en.css?" | relURL}}t={{ .Site.Params.timestamp }}" rel="stylesheet">
+  <link href="{{ "css/home_en.css" | relURL}}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet">
   {{ end }}
   <!-- Responsivity for older IE -->
   {{ `

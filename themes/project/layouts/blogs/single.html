@@ -2,7 +2,7 @@
 <html lang="{{ .Site.Language.Lang }}">
 
 {{ partial "head.html" . }}
-
+<link rel="stylesheet" href="{{ "css/blog.css" | relURL}}?t={{ mul 1000 (time now).Unix }}">
 <body>
   <div id="all">
 
@@ -12,7 +12,7 @@
 
     </header>
 
-    <div id="content">
+    <div id="content" style="padding-bottom: 0;">
       <iframe src={{ i18n "blogs_iframe" }} id="blogIframe" width="100%" scrolling="no" frameborder="0"></iframe>
     </div>
 
@@ -27,13 +27,12 @@
     blogIframe.src += hash;
     window.addEventListener('message', function(messageEvent) {
       var data = messageEvent.data;
-      
       if(!isNaN(data)) {
         blogIframe.height = data;
       }else if(typeof data === "string") {
-        console.log("我是父页面", data)
         window.history.replaceState(null,null,"?"+ data)
       }
+      scrollTo(0, 0);
     }, false);
   </script>
   

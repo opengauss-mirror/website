@@ -1,10 +1,13 @@
 +++
 title = "【北京】openGauss Meetup"
-date = "2020-08-06"
-tags = ["Meetup"]
+time = "2020/08/06"
+tags = "Meetup"
 label = "Meetup"
 label2 = "线上线下"
-banner = "img/banners/meetup/meetup.png"
+location = "北京"
+img = "/img/banners/meetup/meetup.png"
+img_mobile = '/img/banners/meetup/meetup.png'
+link = './events/meetup.html'
 author = "openGauss"
 summary = "openGauss开源社区第一次Meetup，欢迎大家参加。"
 +++

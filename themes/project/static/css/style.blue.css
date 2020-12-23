@@ -322,17 +322,18 @@ button {
 .navbar-default .navbar-nav > li > a {
   color: #555555;
 }
-.navbar-default .navbar-left > li/* :not(:last-child) */ > a:hover,
-.navbar-default .navbar-left > li/* :not(:last-child) */ > a:focus {
+/*.navbar-default .navbar-left > li!* :not(:last-child) *! > a:hover,
+.navbar-default .navbar-left > li!* :not(:last-child) *! > a:focus {
   color: #555555;
   background-color: #92b3d9;
-}
+}*/
+
 .navbar-default .navbar-left > .active > a,
 .navbar-default .navbar-left > .active > a:hover,
 .navbar-default .navbar-left > .active > a:focus {
-  color: #ffffff;
-  background-color: #467fbf;
+  color: #000;
 }
+
 .navbar-default .navbar-nav > .disabled > a,
 .navbar-default .navbar-nav > .disabled > a:hover,
 .navbar-default .navbar-nav > .disabled > a:focus {
@@ -784,19 +785,31 @@ fieldset[disabled] .btn-template-primary.active {
 
 /* -----------------------        法律声明         ---------------------------- */
 #heading-breadcrumbs {
-  background: url("../img/banner_new.png") center center repeat;
+  /*background: url("../img/banner_new.png") center center repeat;*/
   padding: 20px 0;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 #heading-breadcrumbs.no-mb {
   margin-bottom: 0;
 }
 #heading-breadcrumbs h1 {
-  color: #ffffff;
   text-transform: none;
   font-size: 30px;
   font-weight: 700;
   letter-spacing: 0.08em;
+  margin: 80px auto;
+}
+#heading-breadcrumbs .container {
+  height: 200px;
+}
+#privacy .container h2 {
+  font-size: 24px;
+}
+#privacy .container ul {
+  list-style: none;
+}
+.preface-md {
+  margin-bottom: 40px;
 }
 .col-md-12 h1 {
   margin: 20px 0;
@@ -919,6 +932,9 @@ fieldset[disabled] .btn-template-primary.active {
   margin: 60px 0;
   padding-left: 0;
 }
+.pager {
+  text-align: left;
+}
 .pager li > a,
 .pager li > span {
   border-radius: 0;
@@ -937,7 +953,7 @@ fieldset[disabled] .btn-template-primary.active {
 #post-content p {
   font-family: FZLTHJW-GB1-0;
   margin-bottom: 10px;
-  line-height: 0.4rem;
+  line-height: 32px;
 }
 .text-right {
   margin-bottom: 20px;
@@ -1023,6 +1039,46 @@ fieldset[disabled] .btn-template-primary.active {
 }
 .meeting ul li {
   list-style-type: disc;
+}
+
+/* --------------------------security-------------------------- */
+.security p {
+  line-height: 32px;
+}
+.security h3 {
+  margin-top: 40px;
+  font-weight: normal;
+}
+.security h4 {
+  margin: 30px 0 20px;
+}
+
+.security h5 {
+  margin: 20px 0 20px;
+  font-size: 16px;
+}
+.security ul {
+  padding-left: 20px;
+}
+.security table {
+  border: none;
+}
+.security thead tr td,
+.security thead tr th {
+  border: none;
+  height: 56px;
+}
+.security thead tr:nth-child(odd) {
+  background: rgba(0, 0, 0, 0.05);
+}
+.security thead tr th:first-child,
+.security thead tr td:first-child {
+  padding-left: 150px;
+}
+
+.security thead tr th {
+  color: #000;
+  font-size: 16px;
 }
 
 /* --------------------------文档--------------------------- */
@@ -1199,11 +1255,11 @@ fieldset[disabled] .btn-template-primary.active {
 }
 /* ------------------mask-------------------- */
 .maskLayer {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   z-index: 1;
   background: rgba(0, 0, 0, 0.3);
 }
@@ -1523,15 +1579,12 @@ fieldset[disabled] .btn-template-primary.active {
 }
 .content_text table {
   width: 100%;
-  max-width: 100%;
   margin-bottom: 20px;
-  border: 1px solid #ddd;
+  border: 1px solid white;
   border-collapse: collapse;
 }
 .content_text table th,
 .content_text table td {
-  border: 1px solid #ddd;
-  padding: 8px;
   line-height: 1.42857143;
 }
 .content_text table>tbody>tr:nth-of-type(odd) {
@@ -1541,4 +1594,56 @@ fieldset[disabled] .btn-template-primary.active {
 .table_auto table td {
   white-space: normal;
   word-break: break-all;
+}
+
+/* --------------        blog-post      --------------*/
+#blog-post {
+  margin-top: 40px;
+}
+#blog-post h1 {
+  font-size: 32px;
+  font-weight: normal;
+  margin: 20px 0;
+}
+#blog-post .blog-menu {
+  font-size: 24px;
+  color: var(--theme);
+}
+#blog-post .blog-menu:hover {
+  text-decoration: none;
+}
+#blog-post .article-date {
+  margin-right: 10px;
+}
+#blog-post .article-author {
+  margin: 0 10px 0 60px;
+}
+#blog-post .text-muted {
+  margin-bottom: 40px;
+}
+#post-content h4 {
+  font-size: 24px;
+  font-weight: normal;
+}
+#post-content a:hover {
+  text-decoration: none;
+}
+.table_auto {
+  margin-bottom: 100px;
+}
+.table_auto h2 {
+  font-size: 24px;
+  font-weight: normal;
+  margin-top: 40px;
+}
+.table_auto ul {
+  padding: 0;
+}
+.container .table_auto ul li {
+  list-style: none;
+  margin: 10px 0;
+}
+.container .table_auto li > ul > li {
+  list-style: disc;
+  margin-left: 20px;
 }

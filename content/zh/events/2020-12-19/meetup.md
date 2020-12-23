@@ -1,11 +1,11 @@
 +++
 title = "【广州】openGauss Meetup"
-date = "2020-12-19"
+time = "2020/12/19"
 tags = "event"
 label = "线下"
 location = "广州"
-banner = "zh/events/2020-12-19/banner.jpg"
-img_mobile = "/zh/events/2020-12-19/banner.jpg"
+img = "/zh/events/2020-12-19/banner.png"
+img_mobile = "/zh/events/2020-12-19/banner.png"
 link = './events/2020-12-19/meetup.html'
 author = "openGauss"
 summary = "openGauss携手合作伙伴海量数据，约你广州见"

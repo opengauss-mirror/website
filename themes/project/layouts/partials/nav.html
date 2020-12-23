@@ -1,21 +1,17 @@
 <!--h5 -->
 <div class="isH5 isPad nav_table">
   <ul class="topbar">
-    <li class="search">
-      <img src="/img/earth.svg">
+    <li class="search nav-lang-H5">
       {{$curURL:= .RelPermalink}}
       {{$curDir:= substr $curURL 4}}
       {{ range .Site.Menus.main }}
       {{ if eq .Identifier "lang" }}
       {{$newLan := .URL}}
       {{$newPath := (print $newLan "/" $curDir)}}
-      <a class="list" href="{{ $newPath }}">{{ .Name }}</a>
+      <a class="list">{{ .Name }}</a>
       {{ end  }}
       {{ end  }}
       <i></i>
-    </li>
-    <li class="h5-nav-search">
-      <i class="fa fa-search" id="h5-search-icon"></i>
     </li>
     <li class="flex" onclick="getList('menu')" style="position:relative">
       <img src="/img/nav.svg" alt="Navigation">
@@ -26,33 +22,46 @@
   <img src="{{ .Site.BaseURL }}{{ .Site.Params.logo_small }}" alt="{{ .Title }} logo" class="visible-xs visible-sm">
   <span class="sr-only">{{ .Title }} - {{ i18n "navHome" }}</span>
   </a>
-  <div class="h5-input" id="h5-input">
-    <input type="text" class="input-content home-search" placeholder="Search">
-    <i class="fa fa-search" id="h5-icon-input"></i>
-  </div>
   <div id="nav">
+    <div class="h5-input" id="h5-input">
+      <input type="text" class="input-content home-search" placeholder="Search">
+      <img  class="fa fa-search"  id="h5-icon-input" src="/img/search-icon.svg" alt="">
+    </div>
     {{ range .Site.Menus.main }}
     {{ $currentId:= .Identifier }}
     {{ if ne $currentId "lang" }}
     {{ if .HasChildren }}
-    <p class="second_menu" onclick="getList('#second_menu_{{ $currentId }}')">{{ .Name }}
-      <i></i>
-    </p>
+    <!--<p class="second_menu" onclick="getList('#second_menu_{{ $currentId }}')">{{ .Name }}</p>
     <div class="menu_list" id="second_menu_{{ $currentId }}">
       {{ range .Children }}
-      <a class="list" href="{{ .URL }}">
+      <a class="list second-nav" href="{{ .URL }}">
         <p>{{ .Name }}</p>
       </a>
       {{ end }}
+    </div>-->
+
+    <div class="has-child-box">
+      <p class="second_menu" onclick="getList('#second_menu_{{ $currentId }}')">{{ .Name }}</p>
+      <div class="menu_list" id="second_menu_{{ $currentId }}">
+        {{ range .Children }}
+        <a class="list second-nav" href="{{ .URL }}">
+          <p>{{ .Name }}</p>
+        </a>
+        {{ end }}
+      </div>
     </div>
+
+
+    {{ else if or (eq .URL "/zh") (eq .URL "/en")}}
+<!--    without home page-->
     {{ else }}
-    <a class="list" href="{{ .URL }}">
+    <a class="list first-nav" href="{{ .URL }}">
       <p>{{ .Name }}</p>
     </a>
     {{ end  }}
     {{ end  }}
     {{ end  }}
-    <a href={{ i18n "main_wechat_url" }} class="list list_wechat">
+<!--    <a href={{ i18n "main_wechat_url" }} class="list list_wechat">
       <p>
         <img style="width:18px;" src="{{ .Site.BaseURL }}img/weixin.png">
         {{ i18n "main_wechat" }}
@@ -71,7 +80,7 @@
         <img style="width:18px;" src="{{ .Site.BaseURL }}img/github.png">
         GitHub
       </p>
-    </a>
+    </a>-->
     
   </div>
 </div>
@@ -106,6 +115,7 @@
           {{ range .Children }}
           {{ if eq .Identifier $current.Type }}
           {{ $isChildren = true }}
+          {{ print }}
           {{ end }}
           {{ end }}
           {{ if ne .Identifier "lang" }}
@@ -113,10 +123,11 @@
             class="dropdown{{ if eq $current.RelPermalink .URL | or $isChildren | or (eq (trim $current.RelPermalink "/") $topLevel) | or (eq $current.Type .Identifier) | or (eq $current.Type $topLevel) | or (and (eq (default (trim .URL "/") .Identifier) "video") (in (slice "taxonomy" "taxonomyTerm") $current.Kind)) }} active{{ end }}">
             {{ if .HasChildren }}
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-              aria-expanded="false">{{ .Name }} <span class="caret"></span></a>
+              aria-expanded="false">{{ .Name }}</a>
             <ul class="dropdown-menu">
+                {{ $item := .Identifier }}
               {{ range .Children }}
-              <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+              <li><a {{ if eq .Identifier "blog"}}class="nav-blog-link"{{ end }} href="{{ .URL }}" {{ if eq $item "code"}}target="_blank"{{ end }}>{{ .Name }}</a></li>
               {{ end }}
             </ul>
             {{ else }}
@@ -152,65 +163,23 @@ l-9.2,5C11.2,10.4,10.8,10.5,10.5,10.5z M19.7,0H1.3C0.6,0,0,0.6,0,1.3v1L10.5,8L21
 
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li class="weixin" style="text-align: center;">
-            <a class="list" href="https://gitee.com/opengauss" target="_blank">
-              <img style="width:18px;" src="{{ .Site.BaseURL }}img/weixin.png">
-            </a>
-            <div class="wechat">
-              <img src="{{ .Site.BaseURL }}img/wechat.jpg">
-              <p>{{ i18n "main_wechat_account" }}</p>
-            </div>
-          </li>
-          <li style="text-align: center;" title="{{ i18n "main_gitee" }}">
-            <a class="list" href="https://gitee.com/opengauss" target="_blank">
-              <img style="width:18px;" src="{{ .Site.BaseURL }}img/gitee-logo.ico">
-            </a>
-          </li>
-          <li style="text-align: center;" title="GitHub">
-            <a class="list" href="https://github.com/opengauss-mirror" target="_blank">
-              <img style="width:18px;" src="{{ .Site.BaseURL }}img/github.png">
-            </a>
-          </li>
-          {{ $current := . }}
-          {{$curURL:= .RelPermalink}}
-          {{$curDir:= substr $curURL 4}}
           {{ range .Site.Menus.main }}
-          {{ $topLevel := replace .URL "/" "" }}
-          {{ $isChildren := false }}
-          {{ range .Children }}
-          {{ if eq .Identifier $current.Type }}
-          {{ $isChildren = true }}
-          {{ end }}
-          {{ end }}
-          {{ if eq .Identifier "lang" }}
-          <li
-            class="language-li dropdown{{ if eq $current.RelPermalink .URL | or $isChildren | or (eq (trim $current.RelPermalink "/") $topLevel) | or (eq $current.Type .Identifier) | or (eq $current.Type $topLevel) | or (and (eq (default (trim .URL "/") .Identifier) "blog") (in (slice "taxonomy" "taxonomyTerm") $current.Kind)) }} active{{ end }}">
-            {{ if .HasChildren }}
-            
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-              aria-expanded="false"><img class="language-icon" style="width: 18px;margin-right: 5px;" src="{{ $.Site.BaseURL }}img/language.png"><span>{{ .Name }}</span> <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              {{ range .Children }}
-              {{$newLan := .URL}}
-              {{$newPath := (print $newLan "/" $curDir)}}
-              <li><a href="{{ $newPath }}">{{ .Name }}</a></li>
-              {{ end }}
-            </ul>
-            {{ end  }}
-          </li>
-          {{ end }}
+            {{ if eq .Identifier "lang"}}
+            <li class="dropdown nav-lang">
+              <a href="{{ .URL }}" class="nav-lang-btn">{{ .Name }}</a>
+            </li>
+            {{end}}
           {{ end }}
 
-          </li>
           <li class="nav-search">
             <span class="input-group-btn search-icon">
-              <i class="fa fa-search"></i>
+              <img  class="fa fa-search" src="/img/search-icon.svg" alt="">
             </span>
           </li>
         </ul>
         <div class="search" id="search-box">
           <input type="text" class="input-content home-search-pc" placeholder="Search">
-          <i class="fa fa-search" id="search-icon"></i>
+          <img  class="fa fa-search" id="search-icon" src="/img/search-icon.svg" alt="">
         </div>
       </div>
       <!--/.nav-collapse -->

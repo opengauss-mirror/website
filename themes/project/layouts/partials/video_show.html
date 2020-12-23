@@ -2,42 +2,27 @@
 {{ $postCount := len $postss }}
 {{ if gt $postCount 0 }}
 <div class="content">
-    <div class="content_video">
+    <div class="content_video content-video-home">
         <div class="content_video_title">
             <h3>{{ i18n "main_video_title" }}</h3>            
         </div>
         
-        
-        
-        
-        <div class="swiper_video swiper-container">
-            <!-- {{ $posts := where .Data.Pages "Type" "video" }}
-            {{ range first 9 $posts }}
-            <div>
 
-            </div>
-            {{ end }} -->
-            <div class="swiper-wrapper">
+        <div class="home_video">
+            <div class="video_total video-total-home">
                 {{ $posts := where .Data.Pages "Type" "video" }}
-                {{ range first 9 $posts }}
-                
-                <div class="swiper-slide">
-                    <div class="home_video_infro">
+                {{ range first 4 $posts }}
+                <div class="video_item video-in-home">
                         <a href="{{ .Permalink }}">
-                            <div class="home_video_infro_bg scale_102"><img class="transition_3" src="{{ .Site.BaseURL}}{{ .Params.banner }}"></div>
-                            <!-- <h4>{{ .Title }}</h4>
-                            <p>{{ .Params.Summary }}</p> -->
+                            <div class="home_video_infro_bg video-img-home"><img class="" src="{{ .Site.BaseURL}}{{ .Params.banner }}"></div>
+                            <div class="home_video_title">
+                                <p>{{ .Title }}</p>
+                            </div>
                         </a>
                     </div>
-                </div>
                 {{ end }}
             </div>
-
-            <!-- 如果需要导航按钮 -->
-            <div class="swiper-button-prev mobile_hide"></div>
-            <div class="swiper-button-next mobile_hide"></div>
         </div>
-
         <div class="see_more">
             <a class="see_more_btn" href="{{ i18n "video_all_url" }}">{{ i18n "video_more" }}</a>
         </div>        

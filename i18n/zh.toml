@@ -1,9 +1,12 @@
 # home page
 [main_characterr_title]
-other = "关于openGauss"
+other = "openGauss特性"
+
+[require_field]
+other = "必填"
 
 [main_characterr_info]
-other = "openGauss是一款开源关系型数据库管理系统，采用木兰宽松许可证v2发行。openGauss内核源自PostgreSQL，深度融合华为在数据库领域多年的经验，结合企业级场景需求，持续构建竞争力特性。同时openGauss也是一个开源的数据库平台，鼓励社区贡献、合作。"
+other = "openGauss是一款开源关系型数据库管理系统，采用木兰宽松许可证v2发行。openGauss内核源自PostgreSQL，深度融合华为在数据库领域多年的经验，结合企业级场景需求，持续构建竞争力特性。"
 
 [main_partner_title]
 other = "合作伙伴"
@@ -30,34 +33,63 @@ other = "是一款极致性能、安全、可靠的企业级开源关系型数�
 other = "高性能"
 
 [feature_title_two]
-other = "高安全"
+other = "高可靠"
 
 [feature_title_three]
-other = "易运维"
+other = "高安全"
 
 [feature_title_four]
-other = "全开放"
+other = "易运维"
 
 [feature_intro_one]
-other = "两路鲲鹏性能150万tpmC；面向多核架构的并发控制技术；NUMA-Aware存储引擎；SQL-Bypass智能选路执行技术；面向实时高性能场景的内存引擎。"
+other = "两路鲲鹏性能150万tpmC"
 
 [feature_intro_two]
-other = "业务无忧，故障切换时间RTO<10s；精细安全管理: 细粒度访问控制、多维度审计；全方位数据保护: 存储&传输&导出加密。"
+other = "端到端全方位安全防护"
 
 [feature_intro_three]
-other = "智能参数调优: 结合深度强化学习和启发式算法, 实现参数自动推荐; 慢SQL诊断，多维性能自监控视图，实时掌控系统性能表现; 提供在线自学习的SQL时间预测、快速定位、急速调优。"
+other = "故障切换时间RTO<10s"
 
 [feature_intro_four]
-other = "采用木兰宽松许可证协议，允许对代码自由修改、使用、引用; 完全开放数据库内核能力, 联合开发者和伙伴共同打造工具等数据库周边能力; 开放伙伴认证、培训体系及高校课程。"
+other = "基于AI的智能参数调优"
+
+
+
+# [feature_title_one]
+# other = "高可靠"
+#
+# [feature_title_two]
+# other = "易运维"
+#
+# [feature_title_three]
+# other = "高性能"
+#
+# [feature_title_four]
+# other = "高安全"
+#
+# [feature_intro_one]
+# other = "故障切换时间RTO<10s"
+#
+# [feature_intro_two]
+# other = "基于AI的智能参数调优"
+#
+# [feature_intro_three]
+# other = "两路鲲鹏性能150万tpmC"
+#
+# [feature_intro_four]
+# other = "端到端全方位安全防护"
+#
+# [main_news_title]
+# other = "最新社区资讯"
 
 [main_news_title]
-other = "新闻"
+other = "最新社区资讯"
 
 [main_news_herf]
 other = "/zh/news.html"
 
 [main_events_title]
-other = "活动"
+other = "最新社区活动"
 
 [main_events_herf]
 other = "/zh/events.html"
@@ -204,7 +236,7 @@ other = "更多"
 other = "收起"
 
 [main_video_title]
-other = "最新视频"
+other = "视频"
 
 [video_styles_url]
 other = "zh/styles/"
@@ -215,11 +247,29 @@ other = "/zh/video.html"
 [video_all]
 other = "全部"
 
-[video_all_video]
-other = "全部视频"
+[video_live]
+other = "专题直播系列"
+
+[video_publicity]
+other = "联合宣传系列"
+
+[video_activity]
+other = "线下活动系列"
+
+[video_race]
+other = "开发者大赛系列"
+
+[video_database]
+other = "数据库基础系列"
+
+[video_default]
+other = "向上收起"
 
 [video_more]
 other = "查看更多"
+
+[video_detail_text]
+other = "视频/"
 
 [news_more]
 other = "查看更多"
@@ -243,7 +293,7 @@ other = "/zh/privacyPolicy.html"
 other = "《openGauss隐私政策》"
 
 [home_link]
-other = "/zh"
+other = "/zh/"
 
 [main_agreement]
 other = "本文档遵循<a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>知识共享许可协议CC 4.0</a> (http://creativecommons.org/Licenses/by/4.0/)。"
@@ -254,14 +304,17 @@ other = "复制代码"
 [copy_code_success]
 other = "复制成功"
 
+[copy__success_discri]
+other = "成功复制SHA256码到粘贴板"
+
 [download_release_notes]
-other = "发行说明: "
+other = "发行说明"
 
 [download_installation_guide]
-other = "安装指南: "
+other = "安装指南"
 
 [download_feedback_question]
-other = "反馈问题: "
+other = "反馈问题"
 
 [download_release_notes_link]
 other = "https://opengauss.org/zh/docs/1.0.0/docs/Releasenotes/Releasenotes.html"
@@ -278,7 +331,7 @@ other = "https://opengauss.org/zh/docs/1.0.1/docs/installation/installation.html
 [download_feedback_question_link]
 other = "https://gitee.com/opengauss/community/issues"
 
-[main_community_parters_title]
+[main_community-partners-item]
 other = "友情链接"
 
 [openeuler_link]
@@ -296,7 +349,8 @@ other = "/zh/events/meetLookBack.html"
 [connect_url]
 other = "https://e.huawei.com/cn/solutions/hic?utm_campaign=04MHQHQ20W6R9P&utm_medium=pm-display&utm_source=opengauss&source=opengauss&utm_content=hic_hc_2020"
 
-
+[footer_wechat]
+other = "扫码关注公众号"
 
 
 
@@ -393,6 +447,18 @@ other = "用户"
 [statistics_platforms]
 other = "商用版本"
 
+[statistics_title]
+other = "openGauss社区活力"
+
+[statistics_desc]
+other = "openGauss也是一个开源的数据库平台，鼓励社区贡献、合作。"
+
+[statistics_btn]
+other = "参与社区贡献 >"
+
+[statistics_link]
+other = "/zh/contribution.html"
+
 # DOC page
 [doc_git_footer]
 other = "意见反馈"
@@ -406,8 +472,24 @@ other = "返回首页"
 [docs_nav_menu_name]
 other = "目录"
 
+[news_menu_title]
+other = "新闻/"
 
+[home_blog_title]
+other = "博客"
 
+[main_blog_href]
+other = '/zh/blogs/blogs.html'
 
+[doc_version]
+other = "版本"
 
+[event_coming]
+other = "最新活动"
+
+[event_lookback]
+other = "精彩回顾"
+
+[events_menu_title]
+other = "活动/"
 

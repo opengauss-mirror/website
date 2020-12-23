@@ -2,7 +2,7 @@
 <html lang="{{ .Site.LanguageCode }}">
 
   {{ partial "head.html" . }}
-
+  <link rel="stylesheet" href="{{ "css/video.css" | relURL}}?t={{ mul 1000 (time now).Unix }}">
   <body>
 
     <div id="all">
@@ -13,7 +13,7 @@
 
         </header>
 
-        {{ partial "breadcrumbs.html" . }}
+        {{ partial "video_detail.html" . }}
 
         <div id="content">
             <div class="container">
@@ -28,44 +28,6 @@
                         <source src="{{ .Params.videourl }}">
                     </video>
                 </div>
-
-                <div class="video_content">
-                    <div class="video_content_top">                        
-                        <h3>{{ .Title }}</h3>
-
-                        <div class="isPc">
-                            {{ $taxo := "styles" }} <!-- Use the plural form here -->
-                            <ul id="{{ $taxo }}">
-                                {{ range .Param $taxo }}
-                                    {{ $name := . }}
-                                    {{ with $.Site.GetPage (printf "/%s/%s" $taxo $name) }}
-                                        <li><a href="{{ .Permalink }}">{{ $name }}</a></li>
-                                    {{ end }}
-                                {{ end }}
-                                <li>{{ .Date.Format .Site.Params.date_format }}</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="isH5">
-                        <div class="video_content_top">
-                            {{ $taxo := "styles" }} <!-- Use the plural form here -->
-                            <ul id="{{ $taxo }}">
-                                {{ range .Param $taxo }}
-                                    {{ $name := . }}
-                                    {{ with $.Site.GetPage (printf "/%s/%s" $taxo $name) }}
-                                        <li><a href="{{ .Permalink }}">{{ $name }}</a></li>
-                                    {{ end }}
-                                {{ end }}
-                            </ul>
-                            
-                            <div>{{ .Date.Format .Site.Params.date_format }}</div>
-                        </div>                        
-                    </div>
-
-                    <div class="video_content_bottom">
-                        {{ .Content }}
-                    </div>
 
                 </div>
                 <!-- /.row -->

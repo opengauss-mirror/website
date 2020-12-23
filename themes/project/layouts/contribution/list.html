@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+  {{ partial "head.html" . }}
+  <link href="{{ "css/contribution.css" | relURL}}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet">
+  <body>
+
+    <div id="all">
+
+        <header>
+
+          {{ partial "nav.html" . }}
+
+        </header>
+
+        {{ partial "breadcrumbs.html" . }}
+
+        <div id="content">
+            <div class="contribution" id="contribution">
+              {{ .Content }}
+            </div>
+        </div>
+        
+
+        {{ partial "footer.html" . }}
+
+    </div>
+    {{ partial "scripts.html" . }}
+    <script src="{{ "js/contribution.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>
+  </body>
+</html>

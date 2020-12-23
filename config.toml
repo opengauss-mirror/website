@@ -26,11 +26,11 @@ paginate = 10
 
 # Main menu
 
-[[menu.main]]
-    identifier="home"
-    name = "Home"
-    url  = "/en"
-    weight = 1
+#[[menu.main]]
+#    identifier="home"
+#    name = "Home"
+#    url  = "/en/"
+#    weight = 1
 
 [[menu.main]]
     identifier = "download"
@@ -40,7 +40,7 @@ paginate = 10
 
 [[menu.main]]
     identifier = "docs"
-    name = "Document"
+    name = "Docs"
     url  = "/en/docs/1.0.1/docs/Quickstart/Quickstart.html"
     weight = 3
 
@@ -54,8 +54,16 @@ paginate = 10
     identifier = "contribution"
     name = "Contribution"
     url  = "/en/contribution.html"
-    weight = 5
+    weight = 1
     parent = "community"
+
+[[menu.main]]
+    identifier = "communication"
+    name = "Communication"
+    url  = "/en/community/onlineCommunication.html"
+    weight = 2
+    parent = "community"
+
 
 #[[menu.main]]
 #    identifier = "mailingList"
@@ -64,43 +72,67 @@ paginate = 10
 #    weight = 6
 #    parent = "community"
 
-[[menu.main]]
-    identifier = "communication"
-    name = "Online Communication"
-    url  = "/en/community/onlineCommunication.html"
-    weight = 7
-    parent = "community"
 
 [[menu.main]]
-    identifier = "meeting"
-    name = "Online Meeting"
-    url  = "/en/community/onlineMeeting.html"
-    weight = 8
-    parent = "community"
-
-[[menu.main]]
-    identifier = "security"
-    name = "Security"
-    url  = "/en/security.html"
-    weight = 9
+    identifier = "connect"
+    name = "Connect"
+    weight = 5
+    hasChidren = true
 
 [[menu.main]]
     identifier = "news"
     name = "News"
     url  = "/en/news.html"
-    weight = 10
-
-[[menu.main]]
-    identifier = "events"
-    name = "Events"
-    url  = "/en/events.html"
-    weight = 11
+    weight = 1
+    parent = "connect"
 
 [[menu.main]]
     identifier = "blog"
     name = "Blog"
     url  = "/en/blogs/blogs.html"
-    weight = 12
+    weight = 2
+    parent = "connect"
+
+[[menu.main]]
+    identifier = "events"
+    name = "Events"
+    url  = "/en/events.html"
+    weight = 3
+    parent = "connect"
+
+[[menu.main]]
+    identifier = "video"
+    name = "Videos"
+    url = "/en/video.html"
+    weight = 4
+    parent = "connect"
+
+
+[[menu.main]]
+    identifier = "security"
+    name = "Security"
+    url  = "/en/security.html"
+    weight = 6
+
+[[menu.main]]
+    identifier = "code"
+    name = "Code"
+    weight = 7
+    hasChidren = true
+
+[[menu.main]]
+    identifier = "gitee"
+    name = "Gitee"
+    url = "https://gitee.com/opengauss"
+    weight = 1
+    parent = "code"
+
+[[menu.main]]
+    identifier = "github"
+    name = "Github"
+    url = "https://github.com/opengauss-mirror"
+    weight = 2
+    parent = "code"
 
 #[[menu.main]]
 #    identifier = "forum"
@@ -108,11 +140,7 @@ paginate = 10
 #   url = "https://bbs.huaweicloud.com/forum/forum-923-1.html"
 #    weight = 13
 
-[[menu.main]]
-    identifier = "video"
-    name = "Video"
-    url = "/en/video.html"
-    weight = 14
+
 
 #[[menu.main]]
 #    identifier = "join"
@@ -122,32 +150,17 @@ paginate = 10
 
 [[menu.main]]
     identifier = "lang"
-    name = "English"
-    url  = "/zh"
-    weight = 15
-    hasChidren = true
-
-[[menu.main]]
-    identifier = "zh"
-    name = "简体中文"
-    url  = "/zh"
-    weight = 16
-    parent = "lang"
-
-[[menu.main]]
-    identifier = "en"
-    name = "English"
-    url  = "/en"
-    weight = 17
-    parent = "lang"
+    name = "中"
+    url  = "/zh/"
+    weight = 8
 
 
 # Menu chinese
-[[languages.zh.menu.main]]
-    dentifier="home"
-    name = "主页"
-    url  = "/zh"
-    weight = 1
+#[[languages.zh.menu.main]]
+#    dentifier="home"
+#    name = "主页"
+#    url  = "/zh/"
+#    weight = 1
 
 [[languages.zh.menu.main]]
     dentifier="download"
@@ -171,53 +184,76 @@ paginate = 10
     identifier = "contribution"
     name = "社区贡献"
     url  = "/zh/contribution.html"
-    weight = 5
+    weight = 1
     parent = "community"
-
-#[[languages.zh.menu.main]]
-#    identifier = "mailinglist"
-#    name = "邮件列表"
-#    url  = "/zh/community/mails.html"
-#    weight = 6
-#    parent = "community"
 
 [[languages.zh.menu.main]]
     identifier = "communications"
     name = "线上交流"
     url  = "/zh/community/onlineCommunication.html"
-    weight = 7
+    weight = 2
     parent = "community"
 
 [[languages.zh.menu.main]]
-    identifier = "meeting"
-    name = "线上会议"
-    url  = "/zh/community/onlineMeeting.html"
-    weight = 8
-    parent = "community"
-
-[[languages.zh.menu.main]]
-    identifier = "security"
-    name = "安全"
-    url  = "/zh/security.html"
-    weight = 9
+    identifier = "connect"
+    name = "互动"
+    weight = 5
+    hasChidren = true
 
 [[languages.zh.menu.main]]
     identifier = "news"
     name = "新闻"
     url  = "/zh/news.html"
-    weight = 10
-
-[[languages.zh.menu.main]]
-    identifier = "events"
-    name = "活动"
-    url  = "/zh/events.html"
-    weight = 11
+    weight = 1
+    parent = "connect"
 
 [[languages.zh.menu.main]]
     identifier = "blog"
     name = "博客"
     url  = "/zh/blogs/blogs.html"
-    weight = 12
+    weight = 2
+    parent = "connect"
+
+
+[[languages.zh.menu.main]]
+    identifier = "events"
+    name = "活动"
+    url  = "/zh/events.html"
+    weight = 3
+    parent = "connect"
+
+[[languages.zh.menu.main]]
+    identifier = "video"
+    name = "视频"
+    url = "/zh/video.html"
+    weight = 4
+    parent = "connect"
+
+[[languages.zh.menu.main]]
+    identifier = "security"
+    name = "安全"
+    url  = "/zh/security.html"
+    weight = 6
+
+[[languages.zh.menu.main]]
+    identifier = "code"
+    name = "代码"
+    weight = 7
+    hasChidren = true
+
+[[languages.zh.menu.main]]
+    identifier = "gitee"
+    name = "Gitee"
+    url = "https://gitee.com/opengauss"
+    weight = 1
+    parent = "code"
+
+[[languages.zh.menu.main]]
+    identifier = "github"
+    name = "Github"
+    url = "https://github.com/opengauss-mirror"
+    weight = 2
+    parent = "code"
 
 #[[languages.zh.menu.main]]
 #    identifier = "forum"
@@ -225,11 +261,6 @@ paginate = 10
 #   url = "https://bbs.huaweicloud.com/forum/forum-923-1.html"
 #    weight = 13
 
-[[languages.zh.menu.main]]
-    identifier = "video"
-    name = "视频"
-    url = "/zh/video.html"
-    weight = 14
 
 # [[languages.zh.menu.main]]
 #    identifier = "join"
@@ -239,22 +270,22 @@ paginate = 10
 
 [[languages.zh.menu.main]]
     identifier = "lang"
-    name = "简体中文"
-    url  = "/en"
-    weight = 15
+    name = "EN"
+    url  = "/en/"
+    weight = 8
     hasChidren = true
 
 [[languages.zh.menu.main]]
     identifier = "en"
     name = "English"
-    url  = "/en"
+    url  = "/en/"
     weight = 16
     parent = "lang"
 
 [[languages.zh.menu.main]]
     identifier = "zh"
     name = "简体中文"
-    url  = "/zh"
+    url  = "/zh/"
     weight = 17
     parent = "lang"
 
@@ -301,8 +332,8 @@ paginate = 10
     # Format dates with Go's time formatting
     date_format = "2006-01-02"
 
-    logo = "img/opengauss.png"
-    logo_small = "img/opengauss.png"
+    logo = "img/opengauss.svg"
+    logo_small = "img/opengauss.svg"
     address = """<p><strong>opengauss.org</strong>
         <br>
         <br>Newtown upon River
@@ -381,11 +412,19 @@ paginate = 10
 
 [params.copyright]
     enable = true
-    text = "Copyright © openGauss 2020. All rights reserved.<br><a href=\"/en/aboutUs.html\">About Us</a>&nbsp;&nbsp;<a href=\"/en/legal.html\">Legal Notice</a>&nbsp;&nbsp;<a href=\"/en/privacyPolicy.html\">Privacy Policy</a>"
+    text = "<a href=\"/en/aboutUs.html\">About Us</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"/en/legal.html\">Legal Notice</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"/en/privacyPolicy.html\">Privacy Policy</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"/en/trademark.html\">Trademark</a>"
+
+[params.rightText]
+    enable = true
+    text = "Copyright © openGauss 2020. All rights reserved."
 
 [languages.zh.params.copyright]
     enable = true
-    text = "版权所有 © openGauss 2020 保留一切权利 <br><a href=\"/zh/aboutUs.html\">关于我们</a>&nbsp;&nbsp;<a href=\"/zh/legal.html\">法律声明</a>&nbsp;&nbsp;<a href=\"/zh/privacyPolicy.html\">隐私政策</a>"
+    text = "<a href=\"/zh/aboutUs.html\">关于我们</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"/zh/legal.html\">法律声明</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"/zh/privacyPolicy.html\">隐私政策</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"/zh/trademark.html\">品牌</a>"
+
+[languages.zh.params.rightText]
+    enable = true
+    text = "版权所有 © openGauss 2020 保留一切权利"
 
 [languages]
 

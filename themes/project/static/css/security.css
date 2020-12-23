@@ -1,0 +1,35 @@
+.security h4,
+.security h5 {
+    font-weight: normal;
+}
+.security a {
+    color: var(--theme);
+}
+.security a:hover {
+    text-decoration: none;
+}
+.security tr th {
+    font-weight: normal;
+}
+.security.meeting {
+    margin-bottom: 60px;
+}
+.security p {
+    color: #4d4d4d;
+}
+@media screen and (max-width: 768px) {
+    .security thead tr th:first-child,
+    .security thead tr td:first-child {
+        padding-left: 52px;
+    }
+    .table > thead:first-child > tr:first-child > th {
+        padding-right: 20px;
+    }
+    .security thead tr th {
+        font-size: 14px;
+    }
+    .security.meeting {
+        margin-bottom: 20px;
+        margin-top: -40px;
+    }
+}

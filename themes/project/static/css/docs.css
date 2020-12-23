@@ -1,8 +1,324 @@
-
+.sel-wrapper {
+    width: 90px;
+    display: inline-block;
+    vertical-align: bottom;
+    margin-left: 16px;
+}
+.sel-float-div {
+    text-align: left;
+}
 ol {
     list-style-type: decimal;
+}
+.markdown blockquote {
+    border-left: 5px solid #7d32ea;
 }
 #content li {
     display: list-item;
     margin-left:20px;
 }
+.doc-version-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.doc-version-wrapper .doc-version span {
+    font-size: 16px;
+    color: #000000;
+    line-height: 30px;
+    font-family: FZLTHJW;
+}
+.doc-version-wrapper .doc-version .selectVersion {
+    width: 90px;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #000000;
+    line-height: 24px;
+    background-color: #fff;
+}
+.doc-version-wrapper .download_btn {
+    width: 100px;
+}
+.jstree-container-ul > li > a {
+    font-size: 16px;
+    color: #000000;
+    font-family: FZLTHJW;
+    line-height: 16px;
+}
+.book-menu a {
+    font-size: 14px;
+    color: #4d4d4d;
+    line-height: 32px;
+}
+.jstree-container-ul > li[aria-level="1"] {
+    margin-bottom: 30px;
+}
+.book-menu .jstree-default .jstree-anchor {
+    padding: 0;
+}
+.jstree-container-ul > .jstree-open[aria-level="1"] {
+    margin-bottom: 0 ;
+}
+.jstree-open[aria-level="1"] > ul {
+    margin: 20px 0 20px;
+}
+.jstree-children {
+    border: none;
+}
+.jstree-clicked::before {
+    width: 0;
+}
+#docsMenu {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.jstree-container-ul > li[aria-level="1"]:last-child {
+    margin-bottom: 0;
+}
+.download_btn a:hover {
+    background-color: #7d32ea;
+}
+.download_btn a {
+    border: 1px solid #7d32ea;
+    color: #7d32ea;
+    line-height: unset;
+    font-size: 12px;
+}
+
+.pager li > a, .pager li > span {
+    border: none;
+    color: #7d32ea;
+}
+.pager li>a:focus, .pager li>a:hover {
+    background-color: unset;
+    color: #7d32ea;
+}
+.pager img, .pager span {
+    vertical-align: middle;
+}
+.book-menu {
+    margin-right: 40px;
+}
+.pager li {
+    margin: 0 !important;
+}
+.pager li>a, .pager li>span {
+    padding-left: 0;
+    padding-right: 0;
+}
+.docscontainer {
+    max-width: 1140px;
+}
+.markdown h1 {
+    font-size: 32px;
+    color: #000000;
+    line-height: 32px;
+    font-family: FZLTHJW;
+    margin-bottom: 40px;
+    font-weight: normal;
+}
+
+.markdown h2 {
+    font-size: 24px;
+    color: #000000;
+    line-height: 32px;
+    font-family: FZLTHJW;
+    margin: 40px 0 20px;
+    font-weight: normal;
+}
+
+.markdown h3 {
+    font-size: 18px;
+    color: #000000;
+    line-height: 24px;
+    font-family: FZLTHJW;
+    margin: 30px 0 20px;
+    font-weight: normal;
+}
+
+.markdown h4 {
+    font-size: 16px;
+    color: #000000;
+    line-height: 24px;
+    font-family: FZLTHJW;
+    margin: 20px 0 10px;
+    font-weight: normal;
+}
+
+.markdown p {
+    color: #4d4d4d;
+    font-size: 14px;
+    line-height: 32px;
+    margin-bottom: 10px;
+}
+.markdown caption {
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: #4d4d4d;
+}
+.markdown table {
+    margin: 20px 0;
+}
+.markdown a {
+    color: #7d32ea;
+}
+.book-footer {
+    margin: 40px 0 20px;
+}
+.book-footer a {
+    color: #7d32ea;
+}
+.book-footer a img {
+    margin-right: 10px;
+}
+.affirm {
+    color: #4d4d4d;
+}
+.affirm a {
+    color: #7d32ea;
+}
+.pager {
+    margin-bottom: 0;
+}
+.docsVersion {
+    margin-bottom: 40px;
+}
+.slide_nav {
+    height: 45px;
+    box-shadow: 0px 1px 3px 0px rgba(178, 178, 178, 0.5);
+}
+.book-menu nav {
+    box-shadow: 0px 0px 40px 0px #f4f4f4;
+}
+.book-menu .jstree-anchor:hover, .book-menu .jstree-clicked {
+    color: #7d32ea;
+}
+.book-menu .jstree-anchor a:hover, .book-menu .jstree-clicked a {
+    color: #7d32ea;
+}
+.download_btn .download_icon {
+    margin-right: 10px;
+    background: url(/img/download/download-icon.svg) no-repeat center;
+}
+.download_btn a:hover .download_icon {
+    background: url(/img/download/down-down.png) no-repeat center;
+    background-size: 16px;
+}
+#docstreeview > ul > li > ul .jstree-icon{
+    transform-origin: center;
+    transform: scale(0.9, 0.9);
+} 
+#content {
+    padding-bottom: 0;
+    margin-bottom: 100px;
+}
+html[lang="zh-cn"] .jstree-open[aria-level="1"] > .jstree-ocl, html[lang="zh-cn"] .jstree-closed[aria-level="1"] > .jstree-ocl {
+    height: 20px;
+}
+@media screen and (min-width: 1280px){
+    html[lang="en-us"] .jstree-open[aria-level="1"] > .jstree-ocl, html[lang="en-us"] .jstree-closed[aria-level="1"] > .jstree-ocl {
+        height: 32px;
+    }
+    html[lang="en-us"] .jstree-open > .jstree-icon {
+        height: 23px !important;
+    }
+}
+@media screen and (max-width: 1280px){
+    #content {
+        margin-bottom: 60px;
+    }
+    .book-menu {
+        width: 85%;
+        max-height: calc(100vh - 51px - 45px);
+        overflow-y: scroll;
+    }
+    #heading-breadcrumbs {
+        display: none;
+    }
+    .markdown h1 {
+        margin-top: 40px;
+        font-size: 24px;
+        color: #000000;
+        line-height: 32px;
+        font-family: FZLTHJW;
+    }
+    
+    .markdown h2 {
+        font-size: 18px;
+        color: #000000;
+        line-height: 24px;
+        font-family: FZLTHJW;
+    }
+    
+    .markdown h3 {
+        font-size: 16px;
+        color: #000000;
+        line-height: 24px;
+        font-family: FZLTHJW;
+    }
+    
+    .markdown h4 {
+        font-size: 16px;
+        color: #000000;
+        line-height: 24px;
+        font-family: FZLTHJW;
+    }
+    
+    .markdown p {
+        color: #4d4d4d;
+        font-size: 14px;
+        line-height: 32px;
+    }
+
+    .book-menu .jstree-default .jstree-clicked {
+        background-color: #fff;
+    }
+    .book-menu {
+        z-index: 2;
+        background: #fff;
+        padding: unset;
+    }
+    .slide_nav>div {
+        height: unset;
+        border: none;
+        width: unset;
+    }
+    .slide_nav .select {
+        border: none;
+        flex-grow: unset;
+        width: 90px;
+    }
+    .slide_nav .select select {
+        border: 1px solid;
+        width: 90px;
+        height: 32px;
+        line-height: 32px;
+        text-align: center;
+        padding-left: 18px;
+        border-radius: 4px;
+        background: url(/img/docs/xiala.png) no-repeat 65px;
+    }
+    body .slide_nav {
+        justify-content: space-between;
+        background-color: #fff;
+        z-index: 2;
+    }
+    .docsMenu {
+        margin: 0 30px;
+    }
+    .docsMenu img {
+        width: 20px;
+        height: 16px;
+    }
+    .docsMenu a img {
+        height: 22px;
+    }
+    .maskLayer {
+        position: fixed;
+        z-index: 1;
+    }
+    #all > header {
+        z-index: 3;
+    }
+}
+

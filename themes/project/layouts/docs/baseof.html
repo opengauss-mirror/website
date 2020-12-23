@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
   {{ partial "head.html" . }}
-  <link href="{{ "css/docs.css?" | relURL}}t={{ .Site.Params.timestamp }}" rel="stylesheet">
-
+  <link href="{{ "css/docs.css?" | relURL}}t={{ mul 1000 (time now).Unix }}" rel="stylesheet">
+  <link href="{{ "js/combobox/select.css" | relURL}}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet">  
   <body>
     <div id="all">
       <header>
@@ -11,7 +11,7 @@
       
       <div class="slide_nav isH5">
         <div class="docsMenu" id="slideNav">
-          <img src="/img/docs/caidan-close.png" alt="Menu" />
+          <img src="/img/docs/caidan-close.svg" alt="Menu" />
         </div>
         {{ $version := "1.0.0"}}
         {{ $versionArr := split $.File.Path "docs/" }}
@@ -20,28 +20,38 @@
         {{ $version := index $version 0}}
         {{ $lang := .Site.LanguageCode}}
         <div class="select">
-          <select id="docVersion">
+          <select id="docVersion" class="js-sel-dom">
             {{ range .Site.Data.docsVersion }}
             {{ if eq $lang "zh-cn" }}
-            <option link="{{.defaultUrlZh}}">{{.version}}</option>
+            <option value="{{.defaultUrlZh}}">{{.version}}</option>
             {{ else }}
-            <option link="{{.defaultUrlEn}}">{{.version}}</option>
+            <option value="{{.defaultUrlEn}}">{{.version}}</option>
             {{ end }}
             {{ end }}
           </select>
           
         </div>
+        <div class="docsMenu">
+            {{ range .Site.Data.docsVersion }}
+            {{ if eq $version .version}}
+            {{ if eq $lang "zh-cn" }}
+            <a href="{{ .downloadUrlZh }}"><img src="/img/docs/doc-download-btn.svg" /></a>
+            {{ else }}
+            <a href="{{ .downloadUrlEn }}"><img src="/img/docs/doc-download-btn.svg" /></a>
+            {{ end }}
+            {{ end }}
+            {{ end }}
+          </div>
       </div>
-
-      <div id="heading-breadcrumbs" class="isPc">
-        <div class="container">
+    <div id="heading-breadcrumbs">
+        <div class="container isPc" style="background: url({{ "img/docs/docs-banner.png" | relURL }}); background-size: 1140px auto">
             <div class="row">
                 <div class="col-md-12">
-                  <h1 class="text-uppercase">{{ i18n "main_docs" }}</h1>
+                    <h1>{{ i18n "main_docs" }}</h1>
                 </div>
             </div>
         </div>
-      </div>
+    </div>
 
       <div id="content">
           <input type="checkbox" style="display: none;" id="menu-control" />
@@ -53,7 +63,7 @@
 
             
             <div class="book-page" id="page">
-              <div class="isH5 isPad breadcrumbs">
+              <div class="isH5 isPad breadcrumbs hide">
         
               </div>
 
@@ -62,8 +72,8 @@
               {{ partial "docs/inject/footer" . }}
               <p class="affirm">{{ i18n "main_agreement" | safeHTML }}</p>
               <ul class="pager">
-                <li class="previous"><a href="javaScript:;">&larr; {{ i18n "newer" }}</a></li>
-                <li class="next"><a href="javaScript:;">{{ i18n "older" }} &rarr;</a></li>
+                <li class="previous"><a href="javaScript:;"><img src="{{ "/img/docs/arrow-left.png" | relURL}}" alt=""> <span>{{ i18n "newer" }}</span></a></li>
+                <li class="next"><a href="javaScript:;"><span>{{ i18n "older" }}</span> <img src="{{ "/img/docs/arrow-right.png" | relURL}}" alt=""></a></li>
               </ul>
             </div>
 
@@ -74,7 +84,7 @@
       </div>
       <!-- /#content -->
 
-      <!-- {{ partial "footer.html" . }} -->
+      {{ partial "footer.html" . }}
     </div>
     <!-- /#all -->
 
@@ -82,19 +92,9 @@
     <script>
       $(document).ready(() => {
         if((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
-          console.log($('.book-page').height())
           const h = $('.book-page').height();
           $('.docscontainer').height(h);
 			  }
-      });
-      //下拉框选中到当前版本
-      var url = window.location.href;
-      var version = url.split('docs')[1].split('/')[1].split('/')[0];//通过url获取版本号
-      $('#docVersion').val(version);
-      //版本下拉框切换事件
-      $('#docVersion').change(function(){
-        var optionCheck = $('#docVersion').find("option:checked");
-        window.location.href = optionCheck.attr('link');
       });
     </script>
   </body>

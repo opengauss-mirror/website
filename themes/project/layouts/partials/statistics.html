@@ -1,20 +1,28 @@
-<div class="content">
+<div class="content statistics">
     <!-- 统计 -->
-    <ul class="content_statistics">
-        <li class="statistics_item">
-            <img src="/img/statistics/statistics_icon1.svg" alt="">
-            <span class="count contributors">-</span>
-            <p class="desc">{{ i18n "statistics_contributors" }}</p>
-        </li>
-        <li class="statistics_item">
-            <img src="/img/statistics/statistics_icon2.svg" alt="">
-            <span class="count users">-</span>
-            <p class="desc">{{ i18n "statistics_users" }}</p>
-        </li>
-        <li class="statistics_item">
-            <img src="/img/statistics/statistics_icon4.png" alt="">
-            <span class="count business-osv">-</span>
-            <p class="desc">{{ i18n "statistics_platforms" }}</p>
-        </li>
-    </ul>
+    <div class="isPc">
+        <ul class="content_statistics">
+            <li class="statistics_item">
+                <img src="/img/statistics/statistics_icon1.svg" alt="">
+                <span class="count contributors">-</span>
+                <p class="desc">{{ i18n "statistics_contributors" }}</p>
+            </li>
+            <li class="statistics_item">
+                <img src="/img/statistics/statistics_icon2.svg" alt="">
+                <span class="count users">-</span>
+                <p class="desc">{{ i18n "statistics_users" }}</p>
+            </li>
+            <li class="statistics_item">
+                <img src="/img/statistics/statistics_icon4.png" alt="">
+                <span class="count business-osv">-</span>
+                <p class="desc">{{ i18n "statistics_platforms" }}</p>
+            </li>
+        </ul>
+        <div class="desc_statistics">
+            <h3>{{ i18n "statistics_title"}}</h3>
+            <p>{{ i18n "statistics_desc"}}</p>
+            <a href="{{ i18n "statistics_link"}}">{{ i18n "statistics_btn"}}</a>
+        </div>
+    </div>
+
 </div>

@@ -3,8 +3,11 @@
 [main_characterr_title]
 other = "About openGauss"
 
+[require_field]
+other = "require field"
+
 [main_characterr_info]
-other = "openGauss is an open source relational database management system that is released with the Mulan PSL v2. with the kernel derived from PostgreSQL, openGauss is built on Huawei's years of experience in the database field and continuously provides competitive features tailored to enterprise-class scenarios. In addition, openGauss is an open source database platform that encourages community contribution and collaboration."
+other = "openGauss is an open source relational database management system that is released with the Mulan PSL v2. with the kernel derived from PostgreSQL, openGauss is built on Huawei's years of experience in the database field and continuously provides competitive features tailored to enterprise-class scenarios."
 
 [main_partner_title]
 other = "Partners"
@@ -28,37 +31,37 @@ other = "Community"
 other = "is an enterprise-level open source relational database with extreme performance, safety and reliability"
 
 [feature_title_one]
-other = "High Performance"
+other = "High Reliability"
 
 [feature_title_two]
-other = "High Security"
-
-[feature_title_three]
 other = "Easy O&M"
 
+[feature_title_three]
+other = "High Performance"
+
 [feature_title_four]
-other = "Full Openness"
+other = "High Performance"
 
 [feature_intro_one]
-other = "Performance up to 1.5 million tpmC on the Kunpeng architecture; Concurrency control technology oriented to the multicore architecture; NUMA-Aware storage engine; SQL-Bypass intelligent routing execution technology; Memory engine for real-time high-performance scenarios."
+other = "RTO < 10s"
 
 [feature_intro_two]
-other = "RTO less than 10s, ensuring service continuity; Refined security management: fine-grained access control and multi-dimensional audit; All-round data protection: encrypted data storage, transmission, and export."
+other = "AI-based parameter tuning"
 
 [feature_intro_three]
-other = "Intelligent parameter optimization: combined with deep reinforcement learning and heuristic algorithm to realize automatic parameter recommendation; Slow SQL diagnosis and multi-dimensional performance self-monitoring view, allowing users to learn about system performance in real time; Online self-learning SQL time prediction for quick locating and tuning."
+other = "2-socket Kunpeng for 1.5 million tpmC"
 
 [feature_intro_four]
-other = "Mulan PSL v2, allowing for free code modification, use, and reference; Fully open database kernel capabilities, joint developers and partners to build tools and other database peripheral capabilities; Open partner certification, training system, and university courses."
+other = "Comprehensive end-to-end security protection"
 
 [main_news_title]
-other = "News"
+other = "Latest Info"
 
 [main_news_herf]
 other = "/en/news.html"
 
 [main_events_title]
-other = "Events"
+other = "Upcoming Events"
 
 [main_events_herf]
 other = "/en/events.html"
@@ -178,7 +181,7 @@ other = "/en/download.html"
 other = "/en/docs/1.0.1/docs/Quickstart/Quickstart.html"
 
 [main_docs]
-other = "document"
+other = "Document"
 
 [download_version]
 other = "Version"
@@ -216,11 +219,29 @@ other = "/en/video.html"
 [video_all]
 other = "All"
 
-[video_all_video]
-other = "All Videos"
+[video_live]
+other = "Themed livestreaming series"
+
+[video_publicity]
+other = "Joint publicity series"
+
+[video_activity]
+other = "Offline activity series"
+
+[video_race]
+other = "Developer contest series"
+
+[video_database]
+other = "Database basics"
+
+[video_default]
+other = "Collapse"
 
 [video_more]
 other = "View More"
+
+[video_detail_text]
+other = "Videos/"
 
 [news_more]
 other = "View More"
@@ -244,7 +265,7 @@ other = "/zh/privacyPolicy.html"
 other = "《openGauss Privacy Policy》"
 
 [home_link]
-other = "/en"
+other = "/en/"
 
 [main_agreement]
 other = "This document is licensed under the <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>Creative Commons Attribution 4.0</a> International License (available at http://creativecommons.org/Licenses/by/4.0/)."
@@ -255,14 +276,17 @@ other = "Copy Code"
 [copy_code_success]
 other = "Copy Successful"
 
+[copy__success_discri]
+other = "SHA256 copied to clipboard"
+
 [download_release_notes]
-other = "Release Notes: "
+other = "Release Notes"
 
 [download_installation_guide]
-other = "Installation Guide: "
+other = "Installation Guide"
 
 [download_feedback_question]
-other = "Feedback Question: "
+other = "Feedback Question"
 
 [download_release_notes_link]
 other = "https://opengauss.org/en/docs/1.0.0/docs/Releasenotes/Releasenotes.html"
@@ -279,7 +303,7 @@ other = "https://opengauss.org/en/docs/1.0.1/docs/installation/installation.html
 [download_feedback_question_link]
 other = "https://gitee.com/opengauss/community/issues"
 
-[main_community_parters_title]
+[main_community-partners-item]
 other = "Friendly Communities"
 
 [openeuler_link]
@@ -297,7 +321,8 @@ other = "/zh/events/meetLookBack.html"
 [connect_url]
 other = "https://e.huawei.com/en/solutions/hic?utm_campaign=04MHQHQ20W6R9P&utm_medium=pm-display&utm_source=opengauss&source=opengauss&utm_content=hic_hc_2020"
 
-
+[footer_wechat]
+other = "Wechat Subscription"
 
 
 
@@ -382,13 +407,22 @@ other = "/en/community/mails.html"
 other = "Mail List"
 
 [statistics_contributors]
-other = "# of contributors to openGauss"
+other = "Contributors"
 
 [statistics_users]
-other = "# of users of openGauss"
+other = "Users"
 
 [statistics_platforms]
-other = "openGauss Distibutions & Platforms"
+other = "Distibutions & Platforms"
+
+[statistics_title]
+other = "Thriving openGauss Community"
+
+[statistics_desc]
+other = "openGauss is an open source database platform that encourages community contribution and collaboration."
+
+[statistics_btn]
+other = "Start Your Contribution >"
 
 # DOC page
 [doc_git_footer]
@@ -404,3 +438,23 @@ other = "Back to Home"
 other = "MENU"
 
 
+[news_menu_title]
+other = "News/"
+
+[home_blog_title]
+other = "Blog"
+
+[main_blog_href]
+other = '/en/blogs/blogs.html'
+
+[doc_version]
+other = "Version"
+
+[event_coming]
+other = "Upcoming"
+
+[event_lookback]
+other = "Highlights"
+
+[events_menu_title]
+other = "Events/"

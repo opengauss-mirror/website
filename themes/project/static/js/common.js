@@ -3,13 +3,23 @@ function getList(val) {
     switch (val) {
         case "menu":
             $("#nav").slideToggle("slow");
+            $('#mask').toggleClass('maskLayer');
             break;
         default:
-            //$(".menu_list").slideUp("slow");
             $(val).slideToggle("slow");
             break;
     }
-    $('#mask').addClass('maskLayer');
+}
+function getBlogLink(url) {
+    var blogBaseUrl = '/blogs/blogs.html?';
+
+    url = url.split('/blogs/');
+    url.splice(1, 0, blogBaseUrl);
+    url = url.join('');
+    url = url.slice(0, -5);
+    url += '/';
+    url = url.toLowerCase();
+    window.location.href = url;
 }
 
 // 关闭二级菜单
@@ -17,7 +27,7 @@ function hideNav() {
     $("#nav").slideUp("slow");
     $(".menu_list").slideUp("slow");
     $('#mask').removeClass('maskLayer');
-    $('#h5-input').hide();
+    // $('#h5-input').hide();
 }
 
 // 二级菜单每项点击后并将其隐藏
@@ -52,21 +62,30 @@ var judgeNavs = function (str, navs) {
 
 var mobileNavEvent = function () {
     var href = location.href;
-    var navs = ['lang', 'home', 'download', 'docs', 'contribution', 'onlineCommunication', 'onlineMeeting', 'security', 'news', 'events', 'blog', 'video', 'wechat'];
+    var navs = ['lang', 'download', 'docs', 'contribution', 'onlineCommunication', 'security', 'news', 'events', 'blog', 'video'];
     var current = judgeNavs(href, navs);
-    if (current) {
-        for (let i = 0; i < navs.length; i++) {
-            var nav = navs[i];
+    var firstNavs = ['download', 'docs','security']
+    var secondNavs = ['contribution', 'onlineCommunication', 'news', 'blog', 'events', 'video']
+
+    if (firstNavs.includes(current)) {
+        for (let i = 0; i < firstNavs.length; i++) {
+            var nav = firstNavs[i];
             if (nav === current) {
-                $("a.list").eq(i).addClass('active');
+                $(".first-nav").eq(i).addClass('active');
                 break;
             }
         }
     }
-    if (href.includes('community') || href.includes('contribution')) {
-        $('p.second_menu').addClass('active');
-    } else {
-        $('p.second_menu').removeClass('active');
+
+    if (secondNavs.includes(current)) {
+        for (let i = 0; i < secondNavs.length; i++) {
+            var nav = secondNavs[i];
+            if (nav === current) {
+                $(".second-nav").eq(i).addClass('active');
+                $(".second-nav").eq(i).parent('.menu_list').prev().addClass('active');
+                break;
+            }
+        }
     }
 }
 
@@ -74,7 +93,6 @@ var mobileNavEvent = function () {
 var clickSearchMoblie = function () {
     $('.h5-nav-search').on('click', function (event) {
         event.stopPropagation();
-        $('#h5-input').toggle();
         $('#mask').toggleClass('maskLayer');
     })
 }
@@ -83,7 +101,6 @@ var clickSearch = function () {
     $('.nav-search').on('click', function (event) {
         event.stopPropagation();
         $('#search-box').addClass('show');
-        $('.navbar-left').hide();
         $('.navbar-right').hide();
     });
     $('#search-box').on('click', function (event) {

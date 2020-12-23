@@ -1,84 +1,22 @@
 $(document).ready(function() {
   var myBannerSwiper = new Swiper ('.banner_swiper', {
     direction: 'horizontal', // 切换选项
-    /* loop: true, */ // 循环模式选项
+     loop: true,  // 循环模式选项
     autoplay: {
       delay: 5000,
       stopOnLastSlide: false,
       disableOnInteraction: true,
     },
-    
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
     // 如果需要分页器
     pagination: {
       el: '.banner_swiper_pagination',
       type: 'bullets',
       clickable :true,
     },
-  }) 
-
-  var sliderCount = document.body.clientWidth < 760 ? 2 : 3;
-
-  var mySwiper = new Swiper ('.swiper_video', {
-    direction: 'horizontal', // 切换选项
-    slidesPerView: sliderCount || 3,
-    loop: true, // 循环模式选项
-
-    multipleActiveThumbs: true,
-    
-    // 如果需要前进后退按钮
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  }) 
-  
-  // 下载页面table切换
-  $('.table-nav').children('.table-option').each(function(index){
-    $(this).click(() => {
-      // 改变自身以及兄弟元素的样式
-      $(this).addClass('active');
-      $(this).siblings().removeClass('active');
-      // 切换显示内容
-      $($('.table-content').children()[index]).removeClass('table-hide');
-      $($('.table-content').children()[index]).siblings().addClass('table-hide');
-    })
-  })
-
-  // 下载页面移动端  SHA 展开/收回
-  $('.download_more').click(function() {
-    $(this).addClass('hide');
-    $(this).prev().addClass('download_sha_unfold');
-  })
-  $('.download_close').click(function() {
-    $(this).parent().next().removeClass('hide');
-    $(this).parent().removeClass('download_sha_unfold');
-  })
-
-  // 下载页面移动端 connectors 切换
-  $('.connectors_table').children('div').each(function(index){
-    $(this).click(() => {
-      // 改变自身以及兄弟元素的样式
-      $(this).addClass('active');
-      $(this).siblings().removeClass('active');
-      // 切换显示内容
-      $('.connectors_content').each(function (index1, item) {
-        $(item).children().eq(index).removeClass('table-hide').siblings().addClass('table-hide');
-      })
-      
-    })
-  })
-
-  // 下载页面移动端 tools 切换
-  $('.tools_table').children('div').each(function(index){
-    $(this).click(() => {
-      // 改变自身以及兄弟元素的样式
-      $(this).addClass('active');
-      $(this).siblings().removeClass('active');
-      // 切换显示内容
-      $('.tools_content').each(function (index1, item) {
-        $(item).children().eq(index).removeClass('table-hide').siblings().addClass('table-hide');
-      })
-    })
   })
 
   // 文档页面语言切换
@@ -96,13 +34,87 @@ $(document).ready(function() {
       urls = urls.replace('/en/', '/zh/');
     }
 
-    $(".language-li ul").children(":first").click(function (e) {
-      e.preventDefault();
       window.location.href = urls;
-    });
   }
 
-  if (currentUrl.includes('/docs/')) {
-    switchLanguage();
+
+  //首页切换 gif 图
+  const toggleGifImg = function () {
+      $('.content_character_lists_far li').hover(function () {
+          $(this).find('.img-static').addClass('hidding');
+          $(this).find('.img-gif').removeClass('hidding');
+
+      }, function () {
+          $(this).find('.img-static').removeClass('hidding');
+          $(this).find('.img-gif').addClass('hidding');
+      })
+  }
+  toggleGifImg();
+
+  // 中英文切换
+  const enTozh = function (url) {
+    if (url.includes('/en')) {
+      url = url.replace('/en', '/zh');
+    } else {
+      url = url.replace('/zh', '/en');
+    }
+    return url
+  }
+
+  const getMenuUrl = function () {
+    currentUrl = enTozh(currentUrl)
+    return currentUrl
+  }
+
+  const backToList = function (innerUrl, listUrl) {
+    if (currentUrl.includes(innerUrl)) {
+      var current = currentUrl.split(innerUrl)[0];
+      current = enTozh(current);
+      current += listUrl;
+      return current
+    }
+    return null
+  }
+
+  const switchAllLanguage = function () {
+    var blogUrl = backToList('/blogs.html?', '/blogs.html');
+    var newsUrl = backToList('/news/', '/news.html');
+    var targetUrl = '';
+
+    if (blogUrl) {
+      targetUrl = blogUrl;
+    } else if (newsUrl) {
+      targetUrl = newsUrl;
+    } else {
+      targetUrl = getMenuUrl();
+    }
+    window.location.href = targetUrl;
+  }
+
+  $(".nav-lang-btn, .nav-lang-H5").click(function (e) {
+    e.preventDefault();
+    if (currentUrl.includes('/docs/')) {
+      switchLanguage();
+      return;
+    }
+    switchAllLanguage();
+  });
+
+  $('#navigation').find('.dropdown').each(function () {
+    $(this).hover(function (e) {
+      var hoverTarget = e.target;
+      if ($(hoverTarget).parent().is('.dropdown')) {
+        $(hoverTarget).parent().toggleClass('hovered').toggleClass('open');
+      }
+    }, function (e) {
+      var hoverTarget = e.target;
+      if ($(hoverTarget).parent().is('.dropdown')) {
+        $(hoverTarget).parent().toggleClass('hovered').toggleClass('open');
+      }
+      })
+  })
+
+  if (currentUrl.includes('/blogs/')) {
+    $('.nav-blog-link').closest('.dropdown').addClass('active');
   }
 })

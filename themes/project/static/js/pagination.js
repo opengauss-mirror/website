@@ -87,7 +87,7 @@ var Pagination = /** @class */ (function () {
         // 首页
         if (this.options.type <= 1) {
             this.home = this.createElement('li', __spreadArrays(['_home'], prev_disabled));
-            this.home.innerText = '首页';
+            this.home.innerText = isZh ? '首页' : 'First';
             this.home.addEventListener('click', function () {
                 if (_this_1.options.pageIndex > 1) {
                     _this_1.handleChangePage(1);
@@ -146,7 +146,7 @@ var Pagination = /** @class */ (function () {
         // 尾页
         if (this.options.type <= 1) {
             this.last = this.createElement('li', __spreadArrays(['_last'], next_disabled));
-            this.last.innerText = '尾页';
+            this.last.innerText = isZh? '尾页' : 'Last';
             this.last.addEventListener('click', function () {
                 if (_this_1.options.pageIndex < _this_1.pageNum) {
                     _this_1.handleChangePage(_this_1.pageNum);

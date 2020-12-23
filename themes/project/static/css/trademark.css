@@ -1,0 +1,119 @@
+#trademark h1 {
+    margin-bottom: 20px;
+    font-size: 32px;
+    font-weight: normal;
+    color: #000000;
+    line-height: 40px;
+}
+#heading-breadcrumbs .col-md-12 h1 {
+    color: #000000;
+}
+#trademark p {
+    font-size: 14px;
+    color: #4D4D4D;
+    line-height: 32px;
+    font-weight: normal;
+}
+#trademark .ppt-logo p {
+    line-height: 52px;
+    font-size: 18px;
+    color: #000000;
+}
+.trademark-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.trademark-box>div:nth-of-type(5),
+.trademark-box>div:nth-of-type(6),
+.trademark-box>div:nth-of-type(7),
+.trademark-box>div:last-of-type {
+    margin-top: 40px;
+}
+.trademark-item {
+    width: 260px;
+    height: 252px;
+    background: #FFFFFF;
+    box-shadow: 0px 6px 30px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+}
+.trademark-logo img {
+    width: 180px;
+    height: 120px;
+    margin-bottom: 20px;
+}
+.trademark-logo a {
+    display: inline-block;
+    width: 50px;
+    height: 32px;
+    line-height: 30px;
+    border: 2px solid var(--theme);
+    border-radius: 4px;
+    font-weight: 400;
+    color: var(--theme);
+}
+
+.trademark-logo a:hover {
+    text-decoration: none;
+}
+
+.trademark-logo a:nth-child(3) {
+    margin: 0 10px;
+}
+.ppt-item {
+    width: 260px;
+    display: inline-block;
+    margin-right: 25px;
+}
+.ppt-logo img {
+    width: 260px;
+    height: 146px;
+}
+.ppt-logo a {
+    color: #000;
+    text-decoration: none;
+}
+.ppt-logo p {
+    font-size: 18px;
+    text-align: center;
+    height: 52px;
+    width: 260px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 40px 0px #F4F4F4;
+}
+#trademark {
+    margin-bottom: 60px;
+}
+@media screen and (max-width: 768px){
+    #trademark h1 {
+        text-align: center;
+        font-size: 24px;
+        line-height: 32px;
+    }
+    .trademark-box {
+        margin-top: 30px;
+    }
+    .trademark-box>div:first-of-type {
+        margin-top: 0;
+    }
+    .trademark-box>div:nth-of-type(5),
+    .trademark-box>div:nth-of-type(6),
+    .trademark-box>div:nth-of-type(7),
+    .trademark-box>div:last-of-type,
+    .trademark-item{
+        margin: 30px auto 0;
+    }
+    .ppt-item {
+        display: block;
+        margin: 30px auto 0;
+    }
+    .trademark-ppt {
+        margin-bottom: 20px;
+    }
+    #trademark {
+        margin-bottom: 20px;
+    }
+}

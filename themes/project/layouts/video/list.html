@@ -2,7 +2,7 @@
 <html lang="{{ .Site.LanguageCode }}">
 
   {{ partial "head.html" . }}
-
+  <link rel="stylesheet" href="{{ "css/video.css" | relURL}}?t={{ mul 1000 (time now).Unix }}">
   <body>
 
     <div id="all">
@@ -14,64 +14,195 @@
         </header>
 
         {{ partial "breadcrumbs.html" . }}
-
         <div id="content">
             <div class="container">
                 <div class="row">
                     <!-- *** LEFT COLUMN *** -->
 
-                    <div class="col-md-12" id="blog-listing-medium">
-                        <div class="video_title">
-                            <div>
-                                <h3>{{ i18n "video_all_video" }}</h3>
-                            </div>
-
-                            <div class="video_tags isPc">
-                                <ul class="tags-list">
-                                    <li class="active"><a href="{{ i18n "video_all_url" }}">{{ i18n "video_all" }}</a></li>
-                                    {{ range $name, $items := .Site.Taxonomies.styles }}
-                                    <li><a href="{{ $.Site.BaseURL }}{{ i18n "video_styles_url" }}{{ $name | urlize }}.html">{{ $name }}</a></li>
-                                    {{ end }}
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="video_tags isH5">
-                            <ul class="tags-list">
-                                <li class="active"><a href="{{ i18n "video_all_url" }}">{{ i18n "video_all" }}</a></li>
-                                {{ range $name, $items := .Site.Taxonomies.styles }}
-                                <li><a href="{{ $.Site.BaseURL }}{{ i18n "video_styles_url" }}{{ $name | urlize }}.html">{{ $name }}</a></li>
-                                {{ end }}
-                            </ul>
-                        </div>
-                        <div class="video_list">
-                            {{ $paginator := .Paginate (where .Data.Pages "Type" "video") 12 }}
-                            {{ range $paginator.Pages }}
-                            <div class="video_infro">
-                                <a href="{{ .Permalink }}">
-                                    <div class="video_infro_bg scale_102"><img class="transition_3" src="{{ .Site.BaseURL}}{{ .Params.banner }}"></div>
-                                    <!-- <h4>{{ .Title }}</h4>
-                                    <p>{{ .Params.Summary }}</p> -->
-                                </a>
-                            </div>
-                            {{ end }}
-                        </div>
+                    <div class="col-md-12" id="video-box">
                         
+                        <div class="video-content" index="live">
+                            <div class="video-title">
+                                <h3>{{ i18n "video_live" }}</h3>
+                            </div>
+                            {{ $videoData := (where .Data.Pages "Type" "video") }}
+                            <div class="video-list">
+                                <div class="list-box">
+                                    {{ range $videoData }}
+                                    {{ if eq .Params.tag "live" }}
+                                    <div class="video-msg" href="{{ .Permalink }}">
+                                        <img class="transition_3" src="{{ .Params.banner | relURL }}">
+                                        <div class="title-box">
+                                            {{ if .Params.mobtitle}}
+                                            <p class="mobile-title">{{ .Params.mobtitle }}</p>
+                                            <p class="web-title" title="{{ .Params.title }}">{{ .Params.hometitle }}</p>
+                                            {{ else }}
+                                            <p title="{{ .Params.title }}">{{ .Params.hometitle }}</p>
+                                            {{ end }}
+                                        </div>
+                                    </div>
+                                    {{ end }} 
+                                    {{ end }} 
+                                </div>
+                                <div class="more-btn" index="live">
+                                    <p>
+                                        <span>{{ i18n "video_more" }}</span>
+                                        <i class="icon-down"></i>
+                                    </p>
+                                </div>
+                                <div class="hide-btn hide" index="live">
+                                    <p>
+                                        <span>{{ i18n "video_default" }}</span>
+                                        <i class="icon-up"></i>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
-                        {{ if gt .Paginator.TotalPages 0 }}
-                        <ul class="pager">
-                            {{ if .Paginator.HasPrev }}
-                            <li class="previous"><a href="{{ .Site.BaseURL }}{{ .Paginator.Prev.URL }}">&larr; {{ i18n "newer" }}</a></li>
-                            {{ else }}
-                            <li class="previous disabled"><a href="javaScript:;">&larr; {{ i18n "newer" }}</a></li>
-                            {{ end }}
+                        <div class="video-content" index="publicity">
+                            <div class="video-title">
+                                <h3>{{ i18n "video_publicity" }}</h3>
+                            </div>
+                            {{ $videoData := (where .Data.Pages "Type" "video") }}
+                            <div class="video-list">
+                                <div class="list-box">
+                                    {{ range $videoData }}
+                                    {{ if eq .Params.tag "publicity" }}
+                                    <div class="video-msg" href="{{ .Permalink }}">
+                                        <img class="transition_3" src="{{ .Params.banner | relURL }}">
+                                        <div class="title-box">
+                                            {{ if .Params.mobtitle}}
+                                            <p class="mobile-title">{{ .Params.mobtitle }}</p>
+                                            <p class="web-title" title="{{ .Params.title }}">{{ .Params.hometitle }}</p>
+                                            {{ else }}
+                                            <p title="{{ .Params.title }}">{{ .Params.hometitle }}</p>
+                                            {{ end }}
+                                        </div>
+                                    </div>
+                                    {{ end }} 
+                                    {{ end }} 
+                                </div>
+                                <div class="more-btn" index="publicity">
+                                    <p>
+                                        <span>{{ i18n "video_more" }}</span>
+                                        <i class="icon-down"></i>
+                                    </p>
+                                </div>
+                                <div class="hide-btn hide" index="publicity">
+                                    <p>
+                                        <span>{{ i18n "video_default" }}</span>
+                                        <i class="icon-up"></i>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
-                            {{ if .Paginator.HasNext }}
-                            <li class="next"><a href="{{ .Site.BaseURL }}{{ .Paginator.Next.URL }}">{{ i18n "older" }} &rarr;</a></li>
-                            {{ else }}
-                            <li class="next disabled"><a href="javaScript:;">{{ i18n "older" }} &rarr;</a></li>
-                            {{ end }}
-                        </ul>
-                        {{ end }}
+                        <div class="video-content" index="activity">
+                            <div class="video-title">
+                                <h3>{{ i18n "video_activity" }}</h3>
+                            </div>
+                            {{ $videoData := (where .Data.Pages "Type" "video") }}
+                            <div class="video-list">
+                                <div class="list-box">
+                                    {{ range $videoData }}
+                                    {{ if eq .Params.tag "activity" }}
+                                    <div class="video-msg" href="{{ .Permalink }}">
+                                        <img class="transition_3" src="{{ .Params.banner | relURL }}">
+                                        <div class="title-box">
+                                            {{ if .Params.mobtitle}}
+                                            <p class="mobile-title">{{ .Params.mobtitle }}</p>
+                                            <p class="web-title" title="{{ .Params.title }}">{{ .Params.hometitle }}</p>
+                                            {{ else }}
+                                            <p title="{{ .Params.title }}">{{ .Params.hometitle }}</p>
+                                            {{ end }}
+                                        </div>
+                                    </div>
+                                    {{ end }} 
+                                    {{ end }} 
+                                </div>
+                                <div class="more-btn" index="activity">
+                                    <p>
+                                        <span>{{ i18n "video_more" }}</span>
+                                        <i class="icon-down"></i>
+                                    </p>
+                                </div>
+                                <div class="hide-btn hide" index="activity">
+                                    <p>
+                                        <span>{{ i18n "video_default" }}</span>
+                                        <i class="icon-up"></i>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="video-content" index="race">
+                            <div class="video-title">
+                                <h3>{{ i18n "video_race" }}</h3>
+                            </div>
+                            {{ $videoData := (where .Data.Pages "Type" "video") }}
+                            <div class="video-list">
+                                <div class="list-box">
+                                    {{ range $videoData }}
+                                    {{ if eq .Params.tag "race" }}
+                                    <div class="video-msg" href="{{ .Permalink }}">
+                                        <img class="transition_3" src="{{ .Params.banner | relURL }}">
+                                        <div class="title-box">
+                                            {{ if .Params.mobtitle}}
+                                            <p class="mobile-title">{{ .Params.mobtitle }}</p>
+                                            <p class="web-title" title="{{ .Params.title }}">{{ .Params.hometitle }}</p>
+                                            {{ else }}
+                                            <p title="{{ .Params.title }}">{{ .Params.hometitle }}</p>
+                                            {{ end }}
+                                        </div>
+                                    </div>
+                                    {{ end }} 
+                                    {{ end }} 
+                                </div>
+                                <div class="more-btn" index="race">
+                                    <p>
+                                        <span>{{ i18n "video_more" }}</span>
+                                        <i class="icon-down"></i>
+                                    </p>
+                                </div>
+                                <div class="hide-btn hide" index="race">
+                                    <p>
+                                        <span>{{ i18n "video_default" }}</span>
+                                        <i class="icon-up"></i>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="video-content" index="database">
+                            <div class="video-title">
+                                <h3>{{ i18n "video_database" }}</h3>
+                            </div>
+                            {{ $videoData := (where .Data.Pages "Type" "video") }}
+                            <div class="video-list">
+                                <div class="list-box">
+                                    {{ range $videoData }}
+                                    {{ if eq .Params.tag "database" }}
+                                    <div class="video-msg" href="{{ .Permalink }}">
+                                        <img class="transition_3" src="{{ .Params.banner | relURL }}">
+                                        <div class="title-box"><p title="{{ .Params.title }}">{{ .Params.hometitle }}</p></div>
+                                    </div>
+                                    {{ end }} 
+                                    {{ end }} 
+                                </div>
+                                <div class="more-btn" index="database">
+                                    <p>
+                                        <span>{{ i18n "video_more" }}</span>
+                                        <i class="icon-down"></i>
+                                    </p>
+                                </div>
+                                <div class="hide-btn hide" index="database">
+                                    <p>
+                                        <span>{{ i18n "video_default" }}</span>
+                                        <i class="icon-up"></i>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!-- /.col-md-9 -->
                 </div>
@@ -87,6 +218,6 @@
     <!-- /#all -->
 
     {{ partial "scripts.html" . }}
-
+    <script src="{{ "js/video.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>
   </body>
 </html>

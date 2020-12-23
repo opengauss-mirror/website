@@ -24,4 +24,23 @@ $(document).ready(function () {
             }
         }
     });
+
+    let url = 'https://learningvideo.obs.ap-southeast-1.myhuaweicloud.com/openGauss%E5%AE%A3%E4%BC%A0%E6%B4%BB%E5%8A%A8/openGauss%2BHC%E5%AE%A3%E4%BC%A0%E8%A7%86%E9%A2%91.mp4';
+
+    var videoPlay = function (videoUrl) {
+        let html = `
+        <source src=${url}>`;
+        let video = document.querySelector(".home-banner-video");
+        video.insertAdjacentHTML('beforeend', html);
+        video.load();
+    };
+
+    $('#video-player').click(function () {
+        videoPlay(url);
+        $('.video-remove').show();
+    });
+    $('.video-mask').click(function () {
+        $('.home-banner-video').trigger('pause');
+        $('.video-remove').hide();
+    });
 })

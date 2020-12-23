@@ -1,15 +1,27 @@
 $(document).ready(function () {
-    $('.container .download-sel').on('change', function () {
-        if($(this).val() === '1'){
-            $('.version1').removeClass('hide');
-            $('.version2').addClass('hide');
-            $('.option-v2').addClass('hide');
-            $('.table-option').eq(0).trigger('click');
-        } else {
-            $('.version2').removeClass('hide');
-            $('.version1').addClass('hide');
-            $('.option-v2').removeClass('hide');
-            $('.table-option').eq(0).trigger('click');
+    $(".download-sel-version").M_select({
+        'radius': '4px',
+        'selected': '2',
+        Succee:function(){
+            $('.download-discri.version-one').toggleClass('hide');
+            $('.download-discri.version-two').toggleClass('hide');
+            $('.download-content.version-one').toggleClass('hide');
+            $('.download-content.version-two').toggleClass('hide');
         }
-    })
+    });
+    $('.down-teble-copy').each(function(){
+        $(this).click(() => {
+            let val = $(this).attr('name')
+            var input = document.getElementById("copy-input-hide");
+            input.value = val; // 修改文本框的内容
+            input.select(); // 选中文本
+            if(document.execCommand){
+                document.execCommand("copy")
+                $("#download-content .copy-success").show()
+                setTimeout(()=>{
+                    $("#download-content .copy-success").hide()
+                },1500)
+            }
+        })
+      })
 })

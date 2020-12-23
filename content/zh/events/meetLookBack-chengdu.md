@@ -1,10 +1,13 @@
 ﻿+++
 title = "【成都】openGauss Meetup | 精彩回顾"
-date = "2020-11-19"
-tags = ["Meetup"]
+time = "2020/11/19"
+tags = "Meetup"
 label = "Meetup"
 label2 = "线上线下"
-banner = "img/events/chengduMeetup/banner2.png"
+location = "成都"
+img = "/img/events/chengduMeetup/banner2.png"
+img_mobile = '/img/events/chengduMeetup/banner2.png'
+link = './events/meetLookBack-chengdu.html'
 author = "openGauss"
 summary = "回顾openGauss成都Meetup的所有精彩内容"
 +++

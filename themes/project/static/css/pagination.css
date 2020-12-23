@@ -63,7 +63,7 @@
 }
 
 ._page_container ._pages li:hover {
-    color: #409eff;
+    color: #7d32ea;
 }
 
 ._page_container ._pages li:first-child,
@@ -107,20 +107,20 @@
 }
 
 ._page_container ._jumper ._jumper_input:focus {
-    border-color: #409eff;
+    border-color: #7d32ea;
 }
 
-._pages_1 li {
+/*._pages_1 li {
     background-color: #f4f4f5;
-}
+}*/
 
 ._active_1 {
     color: #fff !important;
-    background-color: #409eff !important;
+    background-color: #7d32ea !important;
 }
 
 ._active_2 {
-    color: #409eff !important;
+    color: #7d32ea !important;
 }
 
 ._disabled {

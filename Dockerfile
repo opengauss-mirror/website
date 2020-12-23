@@ -16,6 +16,9 @@ RUN mkdir -p /src/
 COPY . /src/website
 
 RUN cd /src/ && \
+    git clone https://gitee.com/opengauss/blog blogs && \
+    mkdir -p /src/website/content/zh/blogs/post && \
+    cp -rf /src/blogs/content/zh/post/* /src/website/content/zh/blogs/post && \
     git clone https://gitee.com/opengauss/docs latest/docs && \
     mkdir -p /src/website/content/zh/docs/latest && \
     cp -rf /src/latest/docs/content/zh/* /src/website/content/zh/docs/latest && \

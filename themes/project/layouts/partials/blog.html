@@ -1,0 +1,29 @@
+
+<div class="blog">
+    <h2>{{ i18n "home_blog_title"}}</h2>
+    <ul class="news-list">
+        {{ $posts := where .Data.Pages "Type" "blogs" }}
+
+        {{ range first 3 $posts }}
+        {{ if isSet .Params "title"}}
+        <li>
+            <a onclick="getBlogLink({{ .URL }})"><h4>{{ .Title }}</h4></a>
+            <p class="news-detail">
+                <span>{{ .Date.Format .Site.Params.date_format }}</span>
+                <span class="news-line"></span>
+                <span>{{ .Params.author }}</span>
+            </p>
+        </li>
+        {{ else}}
+        <li>
+            <h4 class="blog-empty">Call for contributions …</h4>
+        </li>
+        {{ end }}
+        {{ end }}
+
+        <div class="see_more">
+            <a class="see_more_btn" href="{{ i18n "main_blog_href" }}">{{ i18n "news_more" }}</a>
+        </div>
+    </ul>
+</div>
+

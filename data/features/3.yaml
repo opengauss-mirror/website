@@ -1,4 +1,5 @@
 weight: 3
 title: "feature_title_three"
 description: "feature_intro_three"
-image: "/img/features/extreme.png"
+image: "/img/features/feature_static4.png"
+image_gif: "/img/features/features_gif4.gif"

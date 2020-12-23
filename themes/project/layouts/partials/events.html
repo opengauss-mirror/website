@@ -1,7 +1,9 @@
 <div class="events_content action_content">
     <div class="content">
         <div class="events_title">
-            <h3>{{ i18n "main_events_title" }}</h3>
+            <div class="title-box">
+                <h3>{{ i18n "main_events_title" }}</h3>
+            </div>
         </div>
 
         <div class="isPc">
@@ -10,33 +12,33 @@
                 {{ range first 1 $posts }}
                 <li class="events_items">
                     <div class="events_items_left scale_102">
-                        <a href="{{ .URL }}">
-                            <img class="transition_3" src="{{ .Site.BaseURL}}{{ .Params.banner }}">
-                        </a>                    
+                        <a href="{{ .Params.link }}" target="_blank">
+                            <img class="transition_3" src="{{ .Params.img }}">
+                        </a>
                     </div>
                     <div class="events_items_right">
-                        <a href="{{ .URL }}">
+                        <a href="{{ .Params.link }}" target="_blank">
                             <h4>{{ .Title }}</h4>
+                        </a>
                             <div>
                                 <div>
                                     <div class="events_items_date">
                                         <span></span>
-                                        {{ .Date.Format .Site.Params.date_format }} 
+                                        {{ .Params.time }}
+                                    </div>
+                                    <div class="events_items_label location">
+                                        <span></span>
+                                        {{ .Params.location }}
                                     </div>
                                     <div class="events_items_label">
                                         <span></span>
-                                        {{ .Params.label }}
+                                        {{ .Params.tags }}
                                     </div>
-                                    {{ if eq .Params.label "Meetup" }}
-                                    <div class="events_items_label" style="margin-left: 10px;">
-                                        <span></span>
-                                        {{ .Params.label2 }}
-                                    </div>
-                                    {{ end }}
-                                </div>                            
+                                </div>
                             </div>
-                            <p>{{ .Params.summary }}</p>
-                        </a>
+                        <div class="see_more">
+                            <a class="see_more_btn" href="{{ i18n "main_events_herf" }}">{{ i18n "news_more" }}</a>
+                        </div>
                     </div>
                 </li>
                 {{ end }}
@@ -49,41 +51,38 @@
                 {{ range first 1 $posts }}
                 <li class="events_items">
                     <div class="events_items_left scale_102">
-                        <a href="{{ .URL }}">
-                            <img class="transition_3" src="{{ .Site.BaseURL}}{{ .Params.banner }}">
+                        <a href="{{ .Params.link }}" target="_blank">
+                            <img class="transition_3" src="{{ .Params.img }}">
                         </a>                    
                     </div>
                     <div class="events_items_right">
-                        <a href="{{ .URL }}">
+                        <a href="{{ .Params.link }}" target="_blank">
                             <h4>{{ .Title }}</h4>
                             <div>
                                 <div>
                                     <div class="events_items_date">
                                         <span></span>
-                                        {{ .Date.Format .Site.Params.date_format }} 
+                                        {{ .Params.time }}
+                                    </div>
+                                    <div class="events_items_label location">
+                                        <span></span>
+                                        {{ .Params.location }}
                                     </div>
                                     <div class="events_items_label">
                                         <span></span>
-                                        {{ .Params.label }}
+                                        {{ .Params.tags }}
                                     </div>
-                                    {{ if eq .Params.label "Meetup" }}
-                                    <div class="events_items_label" style="margin-left: 10px;">
-                                        <span></span>
-                                        {{ .Params.label2 }}
-                                    </div>
-                                    {{ end }}
-                                </div>                            
+                                </div>
                             </div>
-                            <p>{{ .Params.summary }}</p>
                         </a>
+                        <div class="see_more">
+                            <a class="see_more_btn" href="{{ i18n "main_events_herf" }}">{{ i18n "news_more" }}</a>
+                        </div>
                     </div>
                 </li>
                 {{ end }}
             </ul>
         </div>
 
-        <div class="see_more">
-            <a class="see_more_btn" href="{{ i18n "main_events_herf" }}">{{ i18n "news_more" }}</a>
-        </div>
     </div>
 </div>

@@ -1,11 +1,11 @@
 <div class="table">
     <p>{{ i18n "cla_sel" }}</p>
     <ul id="sel">
-        <li>
+        <li class="sel-li-zeo is-active">
             <input type="radio" name="cla-type-radio" id="independ" value="0" checked>
             <label for="independ">{{ i18n "cla_type_one" }}</label>
         </li>
-        <li>
+        <li class="sel-li-sen">
             <input type="radio" name="cla-type-radio" id="entity" value="1">
             <label for="entity">{{ i18n "cla_type_two" }}</label>
         </li>
@@ -15,68 +15,74 @@
         <div class="form_one" id="individual-table">
             <p>{{ i18n "cla_explain_one" }}</p>
             <div class="div_one">
-                <span><span class="asterisk">*</span>{{ i18n "cla_type_one_name" }}</span>
+                <span>{{ i18n "cla_type_one_name" }}<span class="asterisk">*:</span></span>
                 <input class="require" type="text" id="individual-name">
             </div>
             <div>
-                <span><span class="asterisk">*</span>{{ i18n "cla_type_one_email" }}</span>
+                <span>{{ i18n "cla_type_one_email" }}<span class="asterisk">*:</span></span>
                 <input class="require" type="text" id="individual-email" placeholder={{ i18n "cla_explain" }}>
             </div>
             <div>
-                <span>{{ i18n "cla_type_one_phone" }}</span>
+                <span>{{ i18n "cla_type_one_phone" }}:</span>
                 <input type="text" id="individual-telephone">
             </div>
             <div>
-                <span>{{ i18n "cla_type_one_fax" }}</span>
+                <span>{{ i18n "cla_type_one_fax" }}:</span>
                 <input type="text" id="individual-fax">
             </div>
             <div>
-                <span><span class="asterisk">*</span>{{ i18n "cla_type_one_address" }}</span>
+                <span>{{ i18n "cla_type_one_address" }}<span class="asterisk">*:</span></span>
                 <input class="require" type="text" id="individual-address">
             </div>
             <div>
-                <span><span class="asterisk">*</span>{{ i18n "cla_type_one_date" }}</span>
+                <span>{{ i18n "cla_type_one_date" }}<span class="asterisk">*:</span></span>
                 <input class="require" type="text" id="individual-date">
+            </div>
+            <div class="mast-add">
+                <span><span class="asterisk">*</span>{{ i18n "require_field" }}</span>
             </div>
         </div>
 
         <div class="form_two formHide" id="legalentity-table">
             <p>{{ i18n "cla_explain_two" }}</p>
             <div class="div_one">
-                <span><span class="asterisk">*</span>{{ i18n "cla_type_two_ambassadorn" }}</span>
+                <span>{{ i18n "cla_type_two_ambassadorn" }}<span class="asterisk">*:</span></span>
                 <input class="require" type="text" id="legalentity-name">
             </div>
             <div>
-                <span><span class="asterisk">*</span>{{ i18n "cla_type_two_licensor" }}</span>
+                <span>{{ i18n "cla_type_two_licensor" }}<span class="asterisk">*:</span></span>
                 <input class="require" type="text">
             </div>
             <div>
-                <span><span class="asterisk">*</span>{{ i18n "cla_type_two_post" }}</span>
+                <span>{{ i18n "cla_type_two_post" }}<span class="asterisk">*:</span></span>
                 <input class="require" type="text" id="legalentity-title">
             </div>
             <div>
-                <span><span class="asterisk">*</span>{{ i18n "cla_type_two_company" }}</span>
+                <span>{{ i18n "cla_type_two_company" }}<span class="asterisk">*:</span></span>
                 <input class="require" type="text" id="legalentity-corporation">
             </div>
             <div>
-                <span><span class="asterisk">*</span>{{ i18n "cla_type_two_address" }}</span>
+                <span>{{ i18n "cla_type_two_address" }}<span class="asterisk">*:</span></span>
                 <input class="require" type="text" id="legalentity-address">
             </div>
             <div>
-                <span><span class="asterisk">*</span>{{ i18n "cla_type_two_email" }}</span>
+                <span>{{ i18n "cla_type_two_email" }}<span class="asterisk">*:</span></span>
                 <input class="require" type="text" id="legalentity-email" placeholder={{ i18n "cla_explain" }}>
             </div>
             <div>
-                <span>{{ i18n "cla_type_two_phone" }}</span>
+                <span>{{ i18n "cla_type_two_phone" }}:</span>
                 <input type="text" id="legalentity-telephone">
             </div>
             <div>
-                <span>{{ i18n "cla_type_two_fax" }}</span>
+                <span>{{ i18n "cla_type_two_fax" }}:</span>
                 <input type="text" id="legalentity-fax">
             </div>
             <div>
-                <span><span class="asterisk">*</span>{{ i18n "cla_type_two_date" }}</span>
+                <span>{{ i18n "cla_type_two_date" }}<span class="asterisk">*:</span></span>
                 <input class="require" type="text" id="legalentity-date">
+            </div>
+            <div class="mast-add">
+                <span><span class="asterisk">*</span>{{ i18n "require_field" }}</span>
             </div>
         </div>
     </div>

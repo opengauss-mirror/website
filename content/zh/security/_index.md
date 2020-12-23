@@ -1,5 +1,7 @@
 +++
 title = "安全"
+bgImg = "../img/breadcrumbs/security_bg.png"
+moImg = "../img/breadcrumbs/security_mo.png"
 +++
 
 ### 1. 漏洞响应
@@ -14,7 +16,8 @@ openGauss社区非常重视社区版本的安全性，openGauss社区安全小�
 
 每一个安全漏洞都会有一个指定的人员进行跟踪和处理，协调员是openGauss安全小组的成员，他将负责跟踪和推动漏洞的修复和披露。漏洞端到端的处理流程如下图。
 
-<img src="./security/procedure.png" width="100%" style="max-width:1040px" />
+<img class="isPc" src="./security/procedure_zh.png" width="100%" style="max-width:1040px" />
+<img class="isH5" src="./security/procedure_zh_mo.png" width="100%" style="max-width:1040px" />
 
 在这里我们主要介绍流程中漏洞上报、漏洞评估和漏洞披露这三部分内容。
 

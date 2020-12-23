@@ -1,6 +1,9 @@
 +++
 title = "Security"
 id = "security"
+bgImg = "../img/breadcrumbs/security_bg.png"
+moImg = "../img/breadcrumbs/security_mo.png"
+
 +++
 
 ### 1. Vulnerability Response
@@ -15,7 +18,8 @@ The vulnerability response process supports the LTS distribution of the openGaus
 
 Each security vulnerability is tracked and handled by a designated coordinator. This coordinator is a member of the SIG Security of openGauss community, who is responsible for tracking, resolving, and disclosing the vulnerability. The following figure shows the end-to-end vulnerability handling process.
 
-<img src="./security/procedure.png" width="100%" style="max-width:1044px" />
+<img class="isPc" src="./security/procedure.png" width="100%" style="max-width:1044px" />
+<img class="isH5" src="./security/procedure_mo.png" width="100%" style="max-width:1044px" />
 
 The details of vulnerability reporting, vulnerability assessment, and vulnerability disclosure are described as follows.
 

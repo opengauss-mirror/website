@@ -13,13 +13,13 @@
 
 <!-- used to for mobile -->
 <script src="{{ .Site.BaseURL }}js/flexible.js"></script>
-<script src="{{ .Site.BaseURL }}js/common.js?t={{ .Site.Params.timestamp }}"></script>
+<script src="{{ .Site.BaseURL }}js/common.js?t={{ mul 1000 (time now).Unix }}"></script>
 <script src="{{ .Site.BaseURL }}js/dist/jso.js"></script>
 
 <!-- custom -->
 <script src="{{ .Site.BaseURL }}js/swiper.min.js"></script>
-<script src="{{ .Site.BaseURL }}js/openGauss.js?t={{ .Site.Params.timestamp }}"></script>
-<script src="{{ .Site.BaseURL }}js/cla.js?t={{ .Site.Params.timestamp }}"></script>
+<script src="{{ .Site.BaseURL }}js/openGauss.js?t={{ mul 1000 (time now).Unix }}"></script>
+<script src="{{ .Site.BaseURL }}js/cla.js?t={{ mul 1000 (time now).Unix }}"></script>
 <div id="mask" onclick="hideNav()"></div>
 
 <script type="text/javascript">
@@ -36,7 +36,6 @@
                 var text = wholeData[j].text;
                 //debugger;
                 if ((href == relativeURL) || (text.indexOf(relativeURL) >= 0)) {
-                    console.log(wholeData[j].id);
                     return wholeData[j].id;
                 } else {
                     if (wholeData[j].children.length > 0) {
@@ -75,7 +74,6 @@
                     }
                    
                     var relativeURL = getRelativePath();
-                    console.log("height",$("#menu").height())
                     if (link != relativeURL) {
                         location.href = link;
                     }
@@ -223,5 +221,21 @@
                 $(this)[0].innerHTML = "{{ i18n "copy_code" }}"
             },1500)
         })  
+
+        if ({{ .Site.LanguageCode }} === "zh-cn") {
+            $('h1,h2,h3,h4,h5,div,p,a,li,span').each(function () {
+                if(!$(this).attr('style')){
+                    $(this).attr("style", "font-family:FZLTHJW !important");
+                }
+            });
+            $('.zh-roboto').attr('style', "font-family:Roboto-Regular !important")
+        } else {
+            $('h1,h2,h3,h4,h5,div,p,a,li,span').each(function () {
+                if(!$(this).attr('style')){
+                    $(this).attr("style", "font-family:Roboto-Regular !important");
+                }
+            })
+        }
+
     });
 </script>

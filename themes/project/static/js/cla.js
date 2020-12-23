@@ -38,13 +38,18 @@ $('#sel input').click(function() {
 
 function changeTable() {
     const val = $('input[name="cla-type-radio"]:checked').val();
-    
     if(val == 0) {
+        $('.sel-li-zeo').addClass('is-active');
+        $('.sel-li-sen').removeClass('is-active');
+        
         $('.form_one').addClass('formShow');
         $('.form_one').removeClass('formHide');
         $('.form_two').addClass('formHide');
         $('.form_two').removeClass('formShow');
     }else {
+        $('.sel-li-sen').addClass('is-active');
+        $('.sel-li-zeo').removeClass('is-active');
+
         $('.form_two').addClass('formShow');
         $('.form_two').removeClass('formHide');
         $('.form_one').addClass('formHide');
@@ -100,7 +105,6 @@ function initClaPage() {
     if (!cla || cla == "") {
         oauthLogin();
     }
-    
 
     type = readCookie("type")
     if (type && type == "0") {
@@ -336,11 +340,10 @@ function initClaPage() {
     }
 }
 
-$(".disclaimer label").click(function() {
-    console.log(!$("#disclaimer").is(":checked"))
+$(".disclaimer").click(function() {
     if(!$("#disclaimer").is(":checked")) {
-        $('#sign-cla-button').attr("disabled",false);
-    } else {
         $('#sign-cla-button').attr("disabled",true);
+    } else {
+        $('#sign-cla-button').attr("disabled",false);
     }
 })

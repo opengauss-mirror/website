@@ -6,17 +6,23 @@
 {{ $version := index $version 0}}
 {{ $lang := .Site.LanguageCode}}
 <div class="docsVersion isPc">
-    <div class="row" >
-        <select id="version" class="selectVersion col-xs-7 ">
-            {{ range .Site.Data.docsVersion }}
-            {{ if eq $lang "zh-cn" }}
-            <option link="{{.defaultUrlZh}}">{{.version}}</option>
-            {{ else }}
-            <option link="{{.defaultUrlEn}}">{{.version}}</option>
-            {{ end }}
-            {{ end }}
-        </select>
-        <div class="download_btn col-xs-5 " style="padding-right:0;">
+    <div class="doc-version-wrapper" >
+        <div class="doc-version">
+            <span>{{ i18n "doc_version"}}</span>
+            <div class="sel-wrapper">
+                <select id="version" class="selectVersion">
+                    {{ range .Site.Data.docsVersion }}
+                    {{ if eq $lang "zh-cn" }}
+                    <option value="{{.defaultUrlZh}}">{{.version}}</option>
+                    {{ else }}
+                    <option value="{{.defaultUrlEn}}">{{.version}}</option>
+                    {{ end }}
+                    {{ end }}
+                </select>   
+            </div>
+            
+        </div>
+        <div class="download_btn" style="padding-right:0;">
             {{ range .Site.Data.docsVersion }}
             {{ if eq $version .version}}
             {{ if eq $lang "zh-cn" }}
@@ -29,14 +35,26 @@
         </div>
     </div>
 </div>
+<script src="{{ "js/combobox/select.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>
 <script>
 //下拉框选中到当前版本
 var url=window.location.href;
 var version = url.split('docs')[1].split('/')[1].split('/')[0];//通过url获取版本号
-$('#version').val(version);
 //版本下拉框切换事件
-$('#version').change(function(){
-  var optionCheck = $('#version').find("option:checked");
-  window.location.href=optionCheck.attr('link');
-})
+$(".selectVersion").M_select({
+    'radius': '4px',
+    'selected': '2',
+    'Title': version,
+    Succee:function(val){
+        window.location.href = val;
+    }
+});
+$(".js-sel-dom").M_select({
+    'radius': '4px',
+    'selected': '2',
+    'Title': version,
+    Succee:function(val){
+        window.location.href = val;
+    }
+});
 </script>

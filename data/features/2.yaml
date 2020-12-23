@@ -1,4 +1,5 @@
 weight: 2
 title: "feature_title_two"
 description: "feature_intro_two"
-image: "/img/features/safe.png"
+image: "/img/features/feature_static1.png"
+image_gif: "/img/features/features_gif1.gif"

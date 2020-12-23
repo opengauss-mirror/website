@@ -4,17 +4,20 @@
             {{ range (where .Data.Pages "Type" "banner") }}
             <div class="swiper-slide banner_swiper_slide">
                 {{ if eq .Params.number "1" }}
-                <img src="{{ .Site.BaseURL}}{{ .Params.bgUrl }}">
-                <div class="banner_content">
+                <img class="banner-pc" src="{{ .Site.BaseURL}}{{ .Params.bgUrl }}">
+                <div id="video-player" >
+                    <img class="video-player-btn" src="../img/breadcrumbs/video-player.gif" alt="">
+                </div>
+                <img class="banner-mobile" src="{{ .Site.BaseURL}}{{ .Params.mobileUrl }}" alt="">
+                <div class="banner_content isPc">
                     <h1>{{ .Title }}</h1>
                     <h4>{{ .Params.info }}</h4>
                         <div class="banner_btn">
-                            <a href="{{ i18n "main_download_url" }}">{{ i18n "download_title" }}</a>
                             <a href="{{ i18n "main_docs_url" }}">{{ i18n "main_quickStart_title" }}</a>
                         </div>
                 </div>
                 {{ else }}
-                <a href="{{ .Params.link }}" target="_blank">
+                <a class="banner-img" href="{{ .Params.link }}" target="_blank">
                     <img class="banner-pc" src="{{ .Site.BaseURL}}{{ .Params.bgUrl }}">
                     <img class="banner-mobile" src="{{ .Site.BaseURL}}{{ .Params.mobileUrl }}" alt="">
                 </a>
@@ -23,8 +26,26 @@
             </div>
             {{ end }}
         </div>
-
-        <div class="swiper-pagination banner_swiper_pagination"></div>        
+        <div class="swiper-button-prev mobile_hide"></div>
+        <div class="swiper-button-next mobile_hide"></div>
+        <div class="swiper-pagination banner_swiper_pagination"></div>
     </div>
-
+</div>
+<div class='video-container video-remove hidding'>
+    <div class='video-mask'></div>
+    <div class="video-alert video-center">
+        <video class="home-banner-video" width="100%" controls autoplay>
+        </video>
+    </div>
+</div>
+<div class="banner_intro isH5">
+    {{ range (where .Data.Pages "Type" "banner") }}
+    {{ if eq .Params.number "1" }}
+    <h1>{{ .Params.title_1 }}<span>{{ .Params.title_2 }}</span>{{ .Params.title_3 }}</h1>
+    <h4>{{ .Params.info }}</h4>
+    <div class="banner_btn">
+        <a href="{{ i18n "main_docs_url" }}">{{ i18n "main_quickStart_title" }}</a>
+    </div>
+    {{ end }}
+    {{ end }}
 </div>
