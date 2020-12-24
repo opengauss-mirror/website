@@ -697,6 +697,7 @@ header #nav .menu_list p {
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
+    cursor: pointer;
 }
 .news-list a:hover {
     text-decoration: none;
