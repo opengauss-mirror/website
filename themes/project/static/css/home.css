@@ -98,14 +98,13 @@ body {
     position:absolute;
     left:calc(50% - 50px);
     bottom:20px;
+    background-color:#42D0EA;
+    border-color: #42D0EA;
 }
-
-/*.banner .banner_btn a:hover {
-  background-color: #467fbf;
-  box-shadow: 0 5px 20px 0 rgba(51, 93, 140, 0.41);
-  border: 1px solid #467fbf;
-  color: #ffffff;
-}*/
+.review:hover{
+    background-color:#42D0EA;
+    border-color: #42D0EA;
+}
 
 .banner .banner-img {
     max-width: 100%;
