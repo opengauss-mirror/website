@@ -91,6 +91,14 @@ body {
     line-height: 32px;
     text-decoration: none;
 }
+.review{
+    border-radius: 5px;
+    width:100px;
+    height:35px;
+    position:absolute;
+    left:calc(50% - 50px);
+    bottom:20px;
+}
 
 /*.banner .banner_btn a:hover {
   background-color: #467fbf;

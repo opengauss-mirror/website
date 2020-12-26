@@ -29,6 +29,9 @@ other = "社区"
 [banner_intro]
 other = "是一款极致性能、安全、可靠的企业级开源关系型数据库"
 
+[banner_review]
+other = "精彩回顾"
+
 [feature_title_one]
 other = "高性能"
 
