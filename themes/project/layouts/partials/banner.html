@@ -17,9 +17,12 @@
                         </div>
                 </div>
                 {{ else }}
-                <a class="banner-img" href="{{ .Params.link }}" target="_blank">
+                <a class="banner-img" href="{{ .Params.link }}" >
                     <img class="banner-pc" src="{{ .Site.BaseURL}}{{ .Params.bgUrl }}">
                     <img class="banner-mobile" src="{{ .Site.BaseURL}}{{ .Params.mobileUrl }}" alt="">
+                    {{ if .Params.reviewBtn}}
+                    <button type="button" class="btn btn-primary review" >{{ i18n "banner_review" }}</button>
+                    {{ end }}
                 </a>
                 {{ end }}
 
