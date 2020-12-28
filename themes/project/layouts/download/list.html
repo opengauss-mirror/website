@@ -22,19 +22,27 @@
                 <span class="download-version">{{ i18n "download_version" }}</span>
                 <div class="select-option">
                   <select class="download-sel-version">
+                    <option value="3">1.1.0</option>
                     <option value="2">1.0.1</option>
                     <option value="1">1.0.0</option>
                   </select>
                 </div>
               </div>
-              <div class="download-discri version-one">
+              <div class="download-discri download-version-3">
+                <a href="{{ i18n "download_release_notes_link_1_1_0" }}" target="_blank">{{ i18n "download_release_notes" }}</a>
+                <span></span>
+                <a href="{{ i18n "download_installation_guide_link_1_1_0" }}" target="_blank">{{ i18n "download_installation_guide" }}</a>
+                <span></span>
+                <a href="{{ i18n "download_feedback_question_link" }}" target="_blank">{{ i18n "download_feedback_question" }}</a>
+              </div>
+              <div class="download-discri download-version-2 hide">
                 <a href="{{ i18n "download_release_notes_link_1_0_1" }}" target="_blank">{{ i18n "download_release_notes" }}</a>
                 <span></span>
                 <a href="{{ i18n "download_installation_guide_link_1_0_1" }}" target="_blank">{{ i18n "download_installation_guide" }}</a>
                 <span></span>
                 <a href="{{ i18n "download_feedback_question_link" }}" target="_blank">{{ i18n "download_feedback_question" }}</a>
               </div>
-              <div class="download-discri version-two hide">
+              <div class="download-discri download-version-1 hide">
                 <a href="{{ i18n "download_release_notes_link" }}" target="_blank">{{ i18n "download_release_notes" }}</a>
                 <span></span>
                 <a href="{{ i18n "download_installation_guide_link" }}" target="_blank">{{ i18n "download_installation_guide" }}</a>
@@ -43,9 +51,9 @@
               </div>
             </div>
 
-
-            <div class="download-content version-one">{{ partial "download/version1" . }}</div>
-            <div class="download-content version-two hide">{{ partial "download/version2" . }}</div>
+            <div class="download-content download-version-3">{{ partial "download/version3" . }}</div>
+            <div class="download-content download-version-2 hide">{{ partial "download/version1" . }}</div>
+            <div class="download-content download-version-1 hide">{{ partial "download/version2" . }}</div>
 
 
             <input id="copy-input-hide" type="text" style='opacity: 0;height: 0;border: none;'>

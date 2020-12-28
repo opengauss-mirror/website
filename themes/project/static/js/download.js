@@ -1,12 +1,11 @@
 $(document).ready(function () {
     $(".download-sel-version").M_select({
         'radius': '4px',
-        'selected': '2',
-        Succee:function(){
-            $('.download-discri.version-one').toggleClass('hide');
-            $('.download-discri.version-two').toggleClass('hide');
-            $('.download-content.version-one').toggleClass('hide');
-            $('.download-content.version-two').toggleClass('hide');
+        'selected': '3',
+        Succee:function(option){
+            console.log(option)
+            $("div[class*=download-version-]").addClass("hide");
+            $(".download-version-" + option).removeClass("hide");
         }
     });
     $('.down-teble-copy').each(function(){
