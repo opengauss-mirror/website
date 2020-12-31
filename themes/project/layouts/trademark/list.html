@@ -37,7 +37,7 @@
                         {{ end }}
                         {{ end }}
                     </div>
-                    <h1>{{ .Params.pptTitle}}</h1>
+                    <h1 class="ppt-title">{{ .Params.pptTitle}}</h1>
                     <div class="trademark-ppt">
                         {{ range where $.Page.Site.Pages "Type" "trademark" }}
                         {{ if .Params.lighturl}}
