@@ -173,6 +173,44 @@
                             </div>
                         </div>
 
+                        <div class="video-content hide" index="crash">
+                            <div class="video-title">
+                                <h3>{{ i18n "video_crash" }}</h3>
+                            </div>
+                            {{ $videoData := (where .Data.Pages "Type" "video") }}
+                            <div class="video-list">
+                                <div class="list-box">
+                                    {{ range $videoData }}
+                                    {{ if eq .Params.tag "crash" }}
+                                    <div class="video-msg" href="{{ .Permalink }}">
+                                        <img class="transition_3" src="{{ .Params.banner | relURL }}">
+                                        <div class="title-box">
+                                            {{ if .Params.mobtitle}}
+                                            <p class="mobile-title">{{ .Params.mobtitle }}</p>
+                                            <p class="web-title" title="{{ .Params.title }}">{{ .Params.hometitle }}</p>
+                                            {{ else }}
+                                            <p title="{{ .Params.title }}">{{ .Params.hometitle }}</p>
+                                            {{ end }}
+                                        </div>
+                                    </div>
+                                    {{ end }}
+                                    {{ end }}
+                                </div>
+                                <div class="more-btn" index="crash">
+                                    <p>
+                                        <span>{{ i18n "video_more" }}</span>
+                                        <i class="icon-down"></i>
+                                    </p>
+                                </div>
+                                <div class="hide-btn hide" index="crash">
+                                    <p>
+                                        <span>{{ i18n "video_default" }}</span>
+                                        <i class="icon-up"></i>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="video-content" index="database">
                             <div class="video-title">
                                 <h3>{{ i18n "video_database" }}</h3>

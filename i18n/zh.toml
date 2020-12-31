@@ -262,6 +262,9 @@ other = "线下活动系列"
 [video_race]
 other = "开发者大赛系列"
 
+[video_crash]
+other = "轻松上手openGauss系列"
+
 [video_database]
 other = "数据库基础系列"
 

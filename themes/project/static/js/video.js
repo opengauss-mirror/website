@@ -25,6 +25,10 @@ $(function($) {
                 $(".video-content[index='database']").find(".video-msg:gt(3)").removeClass('hide');
                 $(".video-content[index='database']").find(".hide-btn").removeClass('hide');
                 break;
+            case 'crash':
+                $(".video-content[index='crash']").find(".video-msg:gt(3)").removeClass('hide');
+                $(".video-content[index='crash']").find(".hide-btn").removeClass('hide');
+                break;
             default:
                 return false;
         }
@@ -52,6 +56,10 @@ $(function($) {
             case 'database':
                 $(".video-content[index='database']").find(".video-msg:gt(3)").addClass('hide');
                 $(".video-content[index='database']").find(".more-btn").removeClass('hide');
+                break;
+            case 'crash':
+                $(".video-content[index='crash']").find(".video-msg:gt(3)").addClass('hide');
+                $(".video-content[index='crash']").find(".more-btn").removeClass('hide');
                 break;
             default:
                 return false;

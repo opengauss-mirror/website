@@ -231,6 +231,10 @@ other = "Offline activity series"
 [video_race]
 other = "Developer contest series"
 
+[video_crash]
+other = "openGauss Crash Course"
+
+
 [video_database]
 other = "Database basics"
 
