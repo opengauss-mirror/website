@@ -1,0 +1,10 @@
+.annual-report {
+    position: fixed;
+    bottom: 60px;
+    left: 60px;
+    z-index: 200;
+}
+.report-cancel-btn {
+    position: absolute;
+    top: -23px;
+}

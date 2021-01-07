@@ -117,4 +117,9 @@ $(document).ready(function() {
   if (currentUrl.includes('/blogs/')) {
     $('.nav-blog-link').closest('.dropdown').addClass('active');
   }
+
+  // 点击关闭年度报告
+  $('.report-cancel-btn').click(function () {
+    $('.annual-report').hide();
+  })
 })
