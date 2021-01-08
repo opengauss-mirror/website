@@ -29,6 +29,13 @@
     width: 478px;
     height: 200px;
 }
+.newsDetail_content .newsDetail_content_warp .newsDetail_content_right h3 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
 .newsDetail_content_right h3 a {
     font-size: 24px;
     color: #000;
