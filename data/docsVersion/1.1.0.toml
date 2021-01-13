@@ -1,7 +1,7 @@
 version = "1.1.0"
 ##如下是文档下载链接
-downloadUrlZh = "https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.1.0/openGauss-document-zh-1.1.0-2020-12-31.zip"
-downloadUrlEn = "https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.1.0/openGauss-document-zh-1.1.0-2020-12-31.zip"
+downloadUrlZh = "https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.1.0/openGauss-document-zh-1.1.0-2021-01-12.zip"
+downloadUrlEn = "https://opengauss.obs.cn-south-1.myhuaweicloud.com/1.1.0/openGauss-document-en-1.1.0-2021-01-12.zip"
 ##如下是文档默认访问页面，用于版本切换后，跳转到对应版本的首页。因为不能做成章节一一对应，只能切换版本的时候跳转到文档默认首页。
 defaultUrlZh = "/zh/docs/1.1.0/docs/Quickstart/%E4%BA%86%E8%A7%A3%E4%BA%A7%E5%93%81.html"
 defaultUrlEn = "/en/docs/1.1.0/docs/Quickstart/learning-product-knowledge.html"
