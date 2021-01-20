@@ -99,21 +99,28 @@ var privateMethods = {
     },
     getBlogUrl: function (data, type) {
         if (type === 'blogs') {
-            var finalUrl = ''
-            var brackets = '()'
-            for (var dataItem of data) {
-                if (dataItem === ' ') {
-                    dataItem = '-'
+            var finalUrl = '';
+            var brackets = '()&!$*（）——';
+            var linker = ' ';
+            for (var i = 0; i < data.length; i++) {
+                var dataItem = data[i];
+                var doubleItem = dataItem + data[i + 1]
+                if (linker.includes(dataItem)) {
+                    dataItem = '-';
+                }
+                if (doubleItem == '--') {
+                    dataItem = '-';
+                    i += 1;
                 }
                 if (brackets.includes(dataItem)) {
-                    dataItem = ''
+                    dataItem = '';
                 }
-                finalUrl += dataItem
+                finalUrl += dataItem;
             }
-            finalUrl = finalUrl.toLowerCase()
-            return finalUrl
+            finalUrl = finalUrl.toLowerCase();
+            return finalUrl;
         } else {
-            return data
+            return data;
         }
     },
 }
@@ -153,11 +160,11 @@ remoteMethods = {
                 
                 $('.detail-content').empty();
                 data.obj.records.forEach(function (item) {
-                    var contentPath = privateMethods.getBlogUrl(item.articleName, item.type)
+                    var contentPath = privateMethods.getBlogUrl(item.articleName, item.type);
                     $('.detail-content').append(
                         `<div class="content-box">
-                        <p class="content-title" path="${item.articleName}" type="${item.type}">${item.title}</p>
-                        <p class="content-desc" path="${item.articleName}" type="${item.type}">${item.textContent}</p>
+                        <p class="content-title" path="${contentPath}" type="${item.type}">${item.title}</p>
+                        <p class="content-desc" path="${contentPath}" type="${item.type}">${item.textContent}</p>
                         <p>${lang === 'zh' ? '来自' : 'From'}：<span class="tag">${privateMethods.transformLang(item.type)} ${item.type === 'docs' ? item.version : ''}</span></p>                    </div>`
                     )
                 })
