@@ -96,7 +96,26 @@ var privateMethods = {
                 })
             }
         });
-    }
+    },
+    getBlogUrl: function (data, type) {
+        if (type === 'blogs') {
+            var finalUrl = ''
+            var brackets = '()'
+            for (var dataItem of data) {
+                if (dataItem === ' ') {
+                    dataItem = '-'
+                }
+                if (brackets.includes(dataItem)) {
+                    dataItem = ''
+                }
+                finalUrl += dataItem
+            }
+            finalUrl = finalUrl.toLowerCase()
+            return finalUrl
+        } else {
+            return data
+        }
+    },
 }
 
 remoteMethods = {
@@ -134,6 +153,7 @@ remoteMethods = {
                 
                 $('.detail-content').empty();
                 data.obj.records.forEach(function (item) {
+                    var contentPath = privateMethods.getBlogUrl(item.articleName, item.type)
                     $('.detail-content').append(
                         `<div class="content-box">
                         <p class="content-title" path="${item.articleName}" type="${item.type}">${item.title}</p>
