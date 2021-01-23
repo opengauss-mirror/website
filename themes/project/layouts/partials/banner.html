@@ -4,11 +4,11 @@
             {{ range (where .Data.Pages "Type" "banner") }}
             <div class="swiper-slide banner_swiper_slide">
                 {{ if eq .Params.number "1" }}
-                <img class="banner-pc" src="{{ .Site.BaseURL}}{{ .Params.bgUrl }}">
+                <img loading="lazy" class="banner-pc" src="{{ .Site.BaseURL}}{{ .Params.bgUrl }}">
                 <div id="video-player" >
-                    <img class="video-player-btn" src="../img/breadcrumbs/video-player.gif" alt="">
+                    <img loading="lazy" class="video-player-btn" src="../img/breadcrumbs/video-player.gif" alt="">
                 </div>
-                <img class="banner-mobile" src="{{ .Site.BaseURL}}{{ .Params.mobileUrl }}" alt="">
+                <img loading="lazy" class="banner-mobile" src="{{ .Site.BaseURL}}{{ .Params.mobileUrl }}" alt="">
                 <div class="banner_content isPc">
                     <h1>{{ .Title }}</h1>
                     <h4>{{ .Params.info }}</h4>
@@ -18,8 +18,8 @@
                 </div>
                 {{ else }}
                 <a class="banner-img" href="{{ .Params.link }}" >
-                    <img class="banner-pc" src="{{ .Site.BaseURL}}{{ .Params.bgUrl }}">
-                    <img class="banner-mobile" src="{{ .Site.BaseURL}}{{ .Params.mobileUrl }}" alt="">
+                    <img loading="lazy" class="banner-pc" src="{{ .Site.BaseURL}}{{ .Params.bgUrl }}">
+                    <img loading="lazy" class="banner-mobile" src="{{ .Site.BaseURL}}{{ .Params.mobileUrl }}" alt="">
                     {{ if .Params.reviewBtn}}
                     <button type="button" class="btn btn-primary review" >{{ i18n "banner_review" }}</button>
                     {{ end }}
