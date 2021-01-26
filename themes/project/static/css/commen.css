@@ -116,10 +116,12 @@ table td {
     white-space: nowrap;
 }
 @font-face {
+    font-display: swap;
     font-family: "FZLTHJW";
     src: url(../fonts/FZLTHJW.ttf);
 }
 @font-face {
+    font-display: swap;
     font-family: "Roboto-Regular";
     src: url(../fonts/Roboto-Regular.ttf);
 }
