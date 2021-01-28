@@ -34,6 +34,8 @@ You can find the SIGs you are interested in from the SIG list below.
 | Docs | Develop and maintain the documents of the openGauss community. |
 | Infra | Develop and maintain the infrastructure of the openGauss community. |
 | Security | Develop and maintain the security of the openGauss community. |
+| OM | Develop and maintain the operation and deployment of openGauss |
+
 
 ### 4. Starting Your Contribution
 

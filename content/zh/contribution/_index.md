@@ -35,6 +35,7 @@ SIG是开放的，欢迎任何人加入并参与贡献。每一个SIG在码云�
 | [Docs](https://gitee.com/opengauss/tc/tree/master/sigs/Docs) | 负责openGauss社区文档的开发和维护。 |
 | [Infra](https://gitee.com/opengauss/tc/tree/master/sigs/Infra) | 负责openGauss社区基础设施的开发和维护。 |
 | [Security](https://gitee.com/opengauss/tc/tree/master/sigs/Security) | 负责openGauss社区安全的开发和维护。 |
+| [OM](https://gitee.com/opengauss/tc/tree/master/sigs/OM) | 负责openGauss安装部署的开发和维护。 |
 
 
 ### 4. 开始您的贡献
