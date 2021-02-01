@@ -980,7 +980,26 @@ header {
 }
 
 
-
+/*  ------------  partner ship -------------- */
+.partner-ship_title h3 {
+    font-size: 32px!important;
+    font-weight: normal;
+}
+.partner-ship-content {
+    margin-top: 45px;
+    margin-bottom: 60px;
+}
+.ship-item {
+    text-align: center;
+}
+.ship-item img {
+    width: 240px;
+    height: 80px;
+}
+.three-a-line {
+    max-width: 80%;
+    margin: 0 auto 20px;
+}
 
 
 /* ---------------------------------------------------  same style  ------------------------------------------------------- */
@@ -1020,7 +1039,8 @@ header {
 .events_title h3,
 .content .content_video .content_video_title h3,
 .content .content_user .content_user_title h3,
-.community_partners_title h3 {
+.community_partners_title h3,
+.partner-ship_title h3 {
     font-size: 32px;
     color: #000;
     line-height: 36px;
