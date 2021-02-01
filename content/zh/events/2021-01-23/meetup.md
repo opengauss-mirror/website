@@ -9,7 +9,6 @@ img_mobile = '/zh/events/2021-01-23/poster.png'
 link = "/zh/events/2021-01-23/meetup.html"
 author = "openGauss"
 summary = "openGauss携手合作伙伴云和恩墨，相约上海滩"
-weight = 1
 
 +++
 

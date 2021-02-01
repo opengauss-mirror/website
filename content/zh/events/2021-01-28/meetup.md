@@ -9,7 +9,6 @@ img_mobile = "/zh/events/2021-01-28/banner.png"
 link = './events/2021-01-28/meetup.html'
 author = "openGauss"
 summary = ""
-weight = 1
 +++
 
 因为疫情原因，原定于上海举行的openGauss线下Meetup活动改为线上进行。相信之前报名的朋友都有接到openGauss Meetup筹备组的电话、短信或者邮件提醒，我们也得到了大家的支持和理解，在这里再次对大家表示感谢，同时，让我们约定，待到春暖花开时，我们再见面可好？
