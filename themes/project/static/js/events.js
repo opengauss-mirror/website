@@ -46,7 +46,13 @@ $(function () {
     var newEventList = [];
     var checkFlag = false;
     eventList = eventList.sort(function (a, b){
-        return Number(b.date.substring(0, 4) + b.date.substring(5, 7)) - Number(a.date.substring(0, 4) + a.date.substring(5, 7));
+        var sortResult = Number(b.date.substring(0, 4) + b.date.substring(5, 7)+ a.date.substring(8, 10)) - Number(a.date.substring(0, 4) + a.date.substring(5, 7) + b.date.substring(8, 10));
+        if (sortResult > 0) {
+            sortResult = -1;
+        } else if (sortResult < 0) {
+            sortResult = 1;
+        }
+        return sortResult;
     })
     eventList.forEach(function (item, index) {
         if(index){
@@ -70,6 +76,7 @@ $(function () {
             })
         }
     })
+
     newEventList = newEventList.sort(function (a, b){
         return Number(b.month.substring(0, 4) + b.month.substring(5, 7)) - Number(a.month.substring(0, 4) + a.month.substring(5, 7));
     })
@@ -89,7 +96,6 @@ $(function () {
             if(secondItem.date.split('-')[1] && (secondItem.date.split('-')[1].length !== 7)){
 
                 if(Number(secondItem.date.split('-')[1].substring(0, 10).replace(/\//g, '')) >= curDate){
-
                     filterFlag = true;
                     secondItem.isLatest = true;
                 }
