@@ -64,6 +64,13 @@ paginate = 10
     weight = 2
     parent = "community"
 
+[[menu.main]]
+    identifier = "member"
+    name = "Organization"
+    url  = "/en/member.html"
+    weight = 3
+    parent = "community"
+
 
 #[[menu.main]]
 #    identifier = "mailingList"
@@ -192,6 +199,13 @@ paginate = 10
     name = "线上交流"
     url  = "/zh/community/onlineCommunication.html"
     weight = 2
+    parent = "community"
+
+[[languages.zh.menu.main]]
+    identifier = "member"
+    name = "社区组织"
+    url  = "/zh/member.html"
+    weight = 3
     parent = "community"
 
 [[languages.zh.menu.main]]
