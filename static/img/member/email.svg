@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="18px" viewBox="0 0 22 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Outlined/UI/email</title>
+    <g id="PC" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Member_zh" transform="translate(-471.000000, -461.000000)" fill="#252C32">
+            <g id="TC" transform="translate(410.000000, 320.000000)">
+                <g id="Content" transform="translate(60.000000, 40.000000)">
+                    <g id="MailLink" transform="translate(0.000000, 94.000000)">
+                        <g id="Outlined/UI/email" transform="translate(0.000000, 4.000000)">
+                            <path d="M1.49999997,2.99999997 L1.49999997,18.75 C1.49999997,19.9926407 2.50735928,21 3.74999997,21 L20.25,21 C21.4926407,21 22.5,19.9926407 22.5,18.75 L22.5,2.99999997 L1.49999997,2.99999997 Z M19.7025,4.49999998 L12.4875,10.605 C12.206832,10.8450658 11.793168,10.8450658 11.5125,10.605 L4.29749998,4.49999998 L19.7025,4.49999998 Z M20.25,19.5 L3.74999997,19.5 C3.33578641,19.5 2.99999997,19.1642136 2.99999997,18.75 L2.99999997,5.36999998 L10.545,11.7525 C11.3844611,12.4641818 12.6155389,12.4641818 13.455,11.7525 L21,5.36999998 L21,18.75 C21,19.1642136 20.6642136,19.5 20.25,19.5 Z" id="Style"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

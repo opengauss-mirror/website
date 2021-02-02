@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+{{ partial "head.html" . }}
+<link href="{{ "css/member.css" | relURL}}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet">
+<body>
+
+<div id="all">
+
+    <header>
+
+        {{ partial "nav.html" . }}
+
+    </header>
+
+    {{ partial "breadcrumbs.html" . }}
+
+    <div class="container">
+        <div class="row">
+            <!-- *** LEFT COLUMN *** -->
+            {{ $paginator := .Paginate (where .Data.Pages "Type" "member") }}
+            <div class="member col-md-12">
+                <div class="member-tech">
+                    <h2>{{ .Params.tctitle}}</h2>
+                    <div class="card tc">
+                        {{ range $paginator.Pages }}
+                        {{ if eq .Params.member "tc-card"}}
+                        <p class="detail">
+                            <img src="/img/member/home.svg" alt="">
+                            <a href={{ .Params.gitlink}} target="_blank">{{ .Params.goto }}</a>
+                        </p>
+                        <p class="detail">
+                            <img src="/img/member/email.svg" alt="">
+                            <span>{{ .Params.list }}<a href={{ .Params.maillink }} target="_blank"> {{ .Params.email }}</a></span>
+                        </p>
+                        <p class="detail">
+                            <img src="/img/member/tc.svg" alt="">
+                            <span>{{ .Params.tc }}</span>
+                        </p>
+                        <div class="item-det">
+
+                            {{ range .Params.card }}
+                            <div class="card-item">
+                                <img src={{ .img }} alt="">
+                                <p class="m-name">{{ .name }}</p>
+                                <p class="m-title">{{ .title }}</p>
+                                <p class="m-img">
+                                    <a href="{{ .email }}" target="_blank"><img src="/img/member/toemail.svg" alt=""></a>
+                                    <a href="{{ .gitee }}" target="_blank"><img src="/img/member/git.svg" alt=""></a>
+                                </p>
+                            </div>
+                            {{ end }}
+                            {{ end }}
+                            {{ end }}
+                        </div>
+                    </div>
+                </div>
+                <div class="member-sigs">
+                    <h2>{{ .Params.sigtitle}}</h2>
+
+                    <div class="left-box">
+                        <div class="card boxs flow-left">
+                            {{ range $paginator.Pages }}
+                            {{ if eq .Params.member "sql"}}
+                            <h4>{{ .Params.title }}</h4>
+                            <p class="detail">
+                                <img src="/img/member/home.svg" alt="">
+                                <a href={{ .Params.gitlink}} target="_blank">{{ .Params.goto }}</a>
+                            </p>
+                            <p class="detail">
+                                <img src="/img/member/email.svg" alt="">
+                                <span>{{ .Params.list }}<a href={{ .Params.maillink }} target="_blank"> {{ .Params.email }}</a></span>
+                            </p>
+                            <p class="detail">
+                                <img src="/img/member/tc.svg" alt="">
+                                <span>{{ .Params.core }}</span>
+                            </p>
+                            <div class="item-det">
+                                {{ range .Params.card }}
+                                <div class="card-item">
+                                    <img src={{ .img }} alt="">
+                                    <p class="m-name">{{ .name }}</p>
+                                    <p class="m-title">{{ .title }}</p>
+                                    <p class="m-img">
+                                        <a href="{{ .email }}" target="_blank"><img src="/img/member/toemail.svg" alt=""></a>
+                                        <a href="{{ .gitee }}" target="_blank"><img src="/img/member/git.svg" alt=""></a>
+                                    </p>
+                                </div>
+                                {{ end }}
+                            </div>
+                            {{ end }}
+                            {{ end}}
+                        </div>
+                        <div class="card boxs flow-left">
+                            {{ range $paginator.Pages }}
+                            {{ if eq .Params.member "connect"}}
+                            <h4>{{ .Params.title }}</h4>
+                            <p class="detail">
+                                <img src="/img/member/home.svg" alt="">
+                                <a href={{ .Params.gitlink }} target="_blank">{{ .Params.goto }}</a>
+                            </p>
+                            <p class="detail">
+                                <img src="/img/member/email.svg" alt="">
+                                <span>{{ .Params.list }}<a href={{ .Params.maillink }} target="_blank"> {{ .Params.email }}</a></span>
+                            </p>
+                            <p class="detail">
+                                <img src="/img/member/tc.svg" alt="">
+                                <span>{{ .Params.core }}</span>
+                            </p>
+                            <div class="item-det">
+                                {{ range .Params.card }}
+                                <div class="card-item">
+                                    <img src={{ .img }} alt="">
+                                    <p class="m-name">{{ .name }}</p>
+                                    <p class="m-title">{{ .title }}</p>
+                                    <p class="m-img">
+                                        <a href="{{ .email }}" target="_blank"><img src="/img/member/toemail.svg" alt=""></a>
+                                        <a href="{{ .gitee }}" target="_blank"><img src="/img/member/git.svg" alt=""></a>
+                                    </p>
+                                </div>
+                                {{ end }}
+                            </div>
+                            {{ end }}
+                            {{ end }}
+                        </div>
+                        <div class="card boxs flow-left">
+                            {{ range $paginator.Pages }}
+                            {{ if eq .Params.member "docs"}}
+                            <h4>{{ .Params.title }}</h4>
+                            <p class="detail">
+                                <img src="/img/member/home.svg" alt="">
+                                <a href={{ .Params.gitlink }} target="_blank">{{ .Params.goto }}</a>
+                            </p>
+                            <p class="detail">
+                                <img src="/img/member/email.svg" alt="">
+                                <span>{{ .Params.list }}<a href={{ .Params.maillink }} target="_blank"> {{ .Params.email }}</a></span>
+                            </p>
+                            <p class="detail">
+                                <img src="/img/member/tc.svg" alt="">
+                                <span>{{ .Params.core }}</span>
+                            </p>
+                            <div class="item-det">
+                                {{ range .Params.card }}
+                                <div class="card-item">
+                                    <img src={{ .img }} alt="">
+                                    <p class="m-name">{{ .name }}</p>
+                                    <p class="m-title">{{ .title }}</p>
+                                    <p class="m-img">
+                                        <a href="{{ .email }}" target="_blank"><img src="/img/member/toemail.svg" alt=""></a>
+                                        <a href="{{ .gitee }}" target="_blank"><img src="/img/member/git.svg" alt=""></a>
+                                    </p>
+                                </div>
+                                {{ end }}
+                            </div>
+                            {{ end }}
+                            {{ end }}
+                        </div>
+                        <div class="card boxs flow-left">
+                            {{ range $paginator.Pages }}
+                            {{ if eq .Params.member "security"}}
+                            <h4>{{ .Params.title }}</h4>
+                            <p class="detail">
+                                <img src="/img/member/home.svg" alt="">
+                                <a href={{ .Params.gitlink }} target="_blank">{{ .Params.goto }}</a>
+                            </p>
+                            <p class="detail">
+                                <img src="/img/member/email.svg" alt="">
+                                <span>{{ .Params.list }}<a href={{ .Params.maillink }} target="_blank"> {{ .Params.email }}</a></span>
+                            </p>
+                            <p class="detail">
+                                <img src="/img/member/tc.svg" alt="">
+                                <span>{{ .Params.core }}</span>
+                            </p>
+                            <div class="item-det">
+                                {{ range .Params.card }}
+                                <div class="card-item">
+                                    <img src={{ .img }} alt="">
+                                    <p class="m-name">{{ .name }}</p>
+                                    <p class="m-title">{{ .title }}</p>
+                                    <p class="m-img">
+                                        <a href="{{ .email }}" target="_blank"><img src="/img/member/toemail.svg" alt=""></a>
+                                        <a href="{{ .gitee }}" target="_blank"><img src="/img/member/git.svg" alt=""></a>
+                                    </p>
+                                </div>
+                                {{ end }}
+                            </div>
+                            {{ end }}
+                            {{ end }}
+                        </div>
+
+                    </div>
+
+                    <div class="right-box">
+                        <div class="card boxs flow-right">
+                            {{ range $paginator.Pages }}
+                            {{ if eq .Params.member "storage"}}
+                            <h4>{{ .Params.title }}</h4>
+                            <p class="detail">
+                                <img src="/img/member/home.svg" alt="">
+                                <a href={{ .Params.gitlink }} target="_blank">{{ .Params.goto }}</a>
+                            </p>
+                            <p class="detail">
+                                <img src="/img/member/email.svg" alt="">
+                                <span>{{ .Params.list }}<a class="too-long" href={{ .Params.maillink }} target="_blank"> {{ .Params.email }}</a></span>
+                            </p>
+                            <p class="detail">
+                                <img src="/img/member/tc.svg" alt="">
+                                <span>{{ .Params.core }}</span>
+                            </p>
+                            <div class="item-det">
+                                {{ range .Params.card }}
+                                <div class="card-item">
+                                    <img src={{ .img }} alt="">
+                                    <p class="m-name">{{ .name }}</p>
+                                    <p class="m-title">{{ .title }}</p>
+                                    <p class="m-img">
+                                        <a href="{{ .email }}" target="_blank"><img src="/img/member/toemail.svg" alt=""></a>
+                                        <a href="{{ .gitee }}" target="_blank"><img src="/img/member/git.svg" alt=""></a>
+                                    </p>
+                                </div>
+                                {{ end }}
+                            </div>
+                            {{ end }}
+                            {{ end }}
+                        </div>
+                        <div class="card boxs flow-right">
+                            {{ range $paginator.Pages }}
+                            {{ if eq .Params.member "tools"}}
+                            <h4>{{ .Params.title }}</h4>
+                            <p class="detail">
+                                <img src="/img/member/home.svg" alt="">
+                                <a href={{ .Params.gitlink }} target="_blank">{{ .Params.goto }}</a>
+                            </p>
+                            <p class="detail">
+                                <img src="/img/member/email.svg" alt="">
+                                <span>{{ .Params.list }}<a href={{ .Params.maillink }} target="_blank"> {{ .Params.email }}</a></span>
+                            </p>
+                            <p class="detail">
+                                <img src="/img/member/tc.svg" alt="">
+                                <span>{{ .Params.core }}</span>
+                            </p>
+                            <div class="item-det">
+                                {{ range .Params.card }}
+                                <div class="card-item">
+                                    <img src={{ .img }} alt="">
+                                    <p class="m-name">{{ .name }}</p>
+                                    <p class="m-title">{{ .title }}</p>
+                                    <p class="m-img">
+                                        <a href="{{ .email }}" target="_blank"><img src="/img/member/toemail.svg" alt=""></a>
+                                        <a href="{{ .gitee }}" target="_blank"><img src="/img/member/git.svg" alt=""></a>
+                                    </p>
+                                </div>
+                                {{ end }}
+                            </div>
+                            {{ end }}
+                            {{ end }}
+                        </div>
+                        <div class="card boxs flow-right">
+                            {{ range $paginator.Pages }}
+                            {{ if eq .Params.member "infra"}}
+                            <h4>{{ .Params.title }}</h4>
+                            <p class="detail">
+                                <img src="/img/member/home.svg" alt="">
+                                <a href={{ .Params.gitlink }} target="_blank">{{ .Params.goto }}</a>
+                            </p>
+                            <p class="detail">
+                                <img src="/img/member/email.svg" alt="">
+                                <span>{{ .Params.list }}<a href={{ .Params.maillink }} target="_blank"> {{ .Params.email }}</a></span>
+                            </p>
+                            <p class="detail">
+                                <img src="/img/member/tc.svg" alt="">
+                                <span>{{ .Params.core }}</span>
+                            </p>
+                            <div class="item-det">
+                                {{ range .Params.card }}
+                                <div class="card-item">
+                                    <img src={{ .img }} alt="">
+                                    <p class="m-name">{{ .name }}</p>
+                                    <p class="m-title">{{ .title }}</p>
+                                    <p class="m-img">
+                                        <a href="{{ .email }}" target="_blank"><img src="/img/member/toemail.svg" alt=""></a>
+                                        <a href="{{ .gitee }}" target="_blank"><img src="/img/member/git.svg" alt=""></a>
+                                    </p>
+                                </div>
+                                {{ end }}
+                            </div>
+                            {{ end }}
+                            {{ end }}
+                        </div>
+                        <div class="card boxs flow-right">
+                            {{ range $paginator.Pages }}
+                            {{ if eq .Params.member "om"}}
+                            <h4>{{ .Params.title }}</h4>
+                            <p class="detail">
+                                <img src="/img/member/home.svg" alt="">
+                                <a href={{ .Params.gitlink }} target="_blank">{{ .Params.goto }}</a>
+                            </p>
+                            <p class="detail">
+                                <img src="/img/member/email.svg" alt="">
+                                <span>{{ .Params.list }}<a href={{ .Params.maillink }} target="_blank"> {{ .Params.email }}</a></span>
+                            </p>
+                            <p class="detail">
+                                <img src="/img/member/tc.svg" alt="">
+                                <span>{{ .Params.core }}</span>
+                            </p>
+                            <div class="item-det">
+                                {{ range .Params.card }}
+                                <div class="card-item">
+                                    <img src={{ .img }} alt="">
+                                    <p class="m-name">{{ .name }}</p>
+                                    <p class="m-title">{{ .title }}</p>
+                                    <p class="m-img">
+                                        <a href="{{ .email }}" target="_blank"><img src="/img/member/toemail.svg" alt=""></a>
+                                        <a href="{{ .gitee }}" target="_blank"><img src="/img/member/git.svg" alt=""></a>
+                                    </p>
+                                </div>
+                                {{ end }}
+                            </div>
+                            {{ end }}
+                            {{ end }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {{ partial "footer.html" . }}
+
+</div>
+{{ partial "scripts.html" . }}
+<script src="{{ "js/member.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+a {
+    color: var(--theme);
+}
+a:hover {
+    text-decoration: none;
+    color: var(--theme);
+}
+.member {
+    margin-bottom: 100px;
+}
+.member-sigs h2,
+.member-tech h2 {
+    font-size: 24px;
+    line-height: 32px;
+    text-align: center;
+    font-weight: normal;
+}
+.detail {
+    margin: 10px 0;
+}
+.detail img {
+    height: 24px;
+    width: 24px;
+    margin-right: 12px;
+}
+.card h4 {
+    font-size: 24px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+.card-item {
+    display: inline-block;
+    width: 100px;
+    margin-right: 46px;
+}
+.card-item p {
+    text-align: center;
+}
+.m-name {
+    margin-top: 10px;
+    font-size: 16px;
+}
+.m-title {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #4d4d4d;
+}
+.m-img {
+    margin-top: 13px;
+}
+.m-img a:last-child img {
+    margin-left: 16px;
+}
+.member-sigs {
+    margin-top: 100px;
+    min-height: 100vh;
+}
+.boxs {
+    display: inline-block;
+    width: 545px;
+    margin: 20px 0;
+    padding: 40px 55px;
+    box-shadow: 0px 6px 30px 0px rgba(0, 0, 0, 0.1);
+}
+.left-box {
+    display: inline-block;
+    width: 530px;
+}
+.right-box {
+    display: inline-block;
+    width: 530px;
+    margin-left: 50px;
+    vertical-align: top;
+
+}
+.boxs .card-item {
+    margin-bottom: 20px;
+    margin-right: 55px;
+}
+.boxs .card-item:nth-child(3n) {
+    margin-right: 0;
+}
+html[lang=en-us] .card-item {
+    margin-right: 15px;
+    text-align: center;
+    width: 140px;
+}
+html[lang=en-us] .boxs .card-item {
+    margin-right: 2px;
+}
+@media (max-width: 768px) {
+    .member-sigs h2, .member-tech h2 {
+        font-size: 18px;
+        margin: 0 0 10px 0!important;
+    }
+    .item-det {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 80%;
+        margin: 0 auto;
+    }
+    .card-item {
+        margin-right: 0;
+        margin-top: 20px;
+    }
+    .card.tc {
+        padding-left: 15px;
+    }
+    .card h4 {
+        font-size: 18px;
+    }
+    .boxs {
+        width: 345px;
+        padding: 40px 15px;
+    }
+    .boxs .card-item {
+        margin-right: 0;
+    }
+    .right-box {
+        margin-left: 0;
+        width: 100%;
+    }
+    .left-box {
+        width: 100%;
+    }
+    .member {
+        margin-bottom: 60px;
+    }
+    html[lang=en-us] .card-item {
+        width: unset;
+    }
+    html[lang=en-us] .too-long {
+        line-height: 32px;
+        margin-left: 40px;
+    }
+}
