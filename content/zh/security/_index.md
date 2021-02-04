@@ -33,7 +33,7 @@ openGauss社区非常重视社区版本的安全性，openGauss社区安全小�
 
 + 郭亮[@blueloveki], <liang4358@163.com>
 
-+ 李建峰[@bufee], <bigtimer@qq.com>
++ 李建峰[@jianfenglee], <bigtimer@qq.com>
 
 + 张耀中[@buter], <zhangyaozhong1@huawei.com>
 

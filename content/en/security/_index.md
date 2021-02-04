@@ -37,7 +37,7 @@ The information of the SIG Security members is as follows:
 
 + Liang Guo[@blueloveki], <liang4358@163.com>
 
-+ Jianfeng Li[@bufee], <bigtimer@qq.com>
++ Jianfeng Li[@jianfenglee], <bigtimer@qq.com>
 
 + Yaozhong Zhang[@buter], <zhangyaozhong1@huawei.com>
 
