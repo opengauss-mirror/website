@@ -28,7 +28,7 @@ img = "/zh/member/img/lijianfeng.png"
 name = "Jianfeng Li"
 title = "Committer"
 email = "mailto:bigtimer@qq.com"
-gitee = "https://gitee.com/bufee"
+gitee = "https://gitee.com/jianfenglee"
 
 [[card]]
 img = "/zh/member/img/guoliang.png"
