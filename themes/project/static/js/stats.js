@@ -20,6 +20,8 @@ var privateMethods = {
         sortKey: 'pr',
         sortValue: 'descending',
         currentPage: 1,
+        community: 'opengauss',
+        type: 'organization'
         // organizeSearchKey: '',        // 组织 组织
     },
     organizationQuota: 'PR',
@@ -29,6 +31,10 @@ var privateMethods = {
         sortValue: 'descending',
         // personalSearchKey: '',          // 个人 gitee ID
         // organizeSearchKey: '',          // 个人组织
+    },
+    pieData: {
+        community: 'opengauss',
+        type: 'pr'
     },
     pagenationFn: function (data) {
         new Pagination({
@@ -51,18 +57,24 @@ var privateMethods = {
     },
     getOrganizationData: function () {
         var organData = {}
-        this.organizationSortKey = $('#id-organization-quota').find('option:selected').text()
-        this.organizationPageSize = $('#id-organization-pages').find('option:selected').text()
-        this.organizationOrganize = $('.organization-organize-input').val()
+        // this.organizationSortKey = $('#id-organization-quota').find('option:selected').text()
+        // this.organizationPageSize = $('#id-organization-pages').find('option:selected').text()
+        // this.organizationOrganize = $('.organization-organize-input').val()
+        //
+        // // organData.quota = this.organizationQuota
+        // organData.pageSize = this.organizationPageSize
+        // console.log('this. sort key', this.organizationSortKey)
+        // organData.sortKey = this.organizationSortKey.toLowerCase()
+        // organData.soreValue = this.organizationSortValue
+        // organData.currentPage = this.organizationCurrentPage
+        // organData.type = 'organization'
+        // organData.community = 'opengauss'
 
-        // organData.quota = this.organizationQuota
-        organData.pageSize = this.organizationPageSize
-        console.log('this. sort key', this.organizationSortKey)
-        organData.sortKey = this.organizationSortKey.toLowerCase()
-        organData.soreValue = this.organizationSortValue
-        organData.currentPage = this.organizationCurrentPage
-        organData.type = 'organization'
-        organData.community = 'opengauss'
+        this.organizationData.pageSize = Number($('#id-organization-pages').find('option:selected').text());
+        this.organizationData.sortKey = privateMethods.organizationQuota.toLowerCase()
+
+        organData.pageSize = this.organizationData.pageSize
+        organData.sortKey = this.organizationData.sortKey
 
         return organData
     },
@@ -103,7 +115,7 @@ var privateMethods = {
     },
     drawPie: function (data) {
         let pieData = []
-        pieData = data.map(item => {
+        pieData = data.data.map(item => {
             let o = {}
             o.value = item.number
             o.name = item.name
@@ -127,7 +139,7 @@ var privateMethods = {
             ],
             // backgroundColor: '#fff',
             title: {
-                text: '组织PR贡献占比',
+                text: `组织${data.name}贡献占比`,
                 left: 'center',
                 top: '0%',
                 textStyle: {
@@ -222,7 +234,7 @@ statsMethods = {
     getPieData: function (postData){
         $.ajax({
             type: "POST",
-            url: '/ContributionDataPie',
+            url: '/contribution/ContributionDataPie',
             data: JSON.stringify(postData),
             contentType: "application/json; charset=utf-8",
             crossDomain: true,
@@ -230,12 +242,16 @@ statsMethods = {
             success: function (res) {
                 if(res.code === 200){
                     console.log('data', res)
-                    statsPieData = privateMethods.getMaxTop(res.data, 5)
+                    let statsPieData = privateMethods.getMaxTop(res.data, 5)
                     let topFive = 0
                     statsPieData.forEach((item) => topFive += item.number)
                     topFive = res.total - topFive
                     statsPieData.push({number: topFive, name: 'Others'})
-                    privateMethods.drawPie(statsPieData)
+                    let drawPieData = {
+                        data: statsPieData,
+                        name: postData.type.toUpperCase()
+                    }
+                    privateMethods.drawPie(drawPieData)
                 }
             }
         });
@@ -243,7 +259,7 @@ statsMethods = {
     getData: function (postData, callback){
         $.ajax({
             type: "POST",
-            url: '/ContributionData',
+            url: '/contribution/ContributionData',
             data: JSON.stringify(postData),
             contentType: "application/json; charset=utf-8",
             crossDomain: true,
@@ -254,7 +270,7 @@ statsMethods = {
                     postData.total = res.total
 
                     $('.js-organ-quota').empty()
-                    $('.js-organ-quota').append(`${privateMethods.organizationQuota} <img src="/img/defaultDown.svg" alt=""><img src="/img/defaultUp.svg" alt="">`)
+                    $('.js-organ-quota').append(`${privateMethods.organizationQuota} <img class="down" src="/img/sortDown.svg" alt=""><img class="up" src="/img/defaultUp.svg" alt="">`)
 
                     if (postData.type === 'organization') {
                         // console.log('update date again')
@@ -299,29 +315,46 @@ var init =  function (){
     var postOrganData = privateMethods.getOrganizationData()
     var postIndiviData = privateMethods.getIndividualData()
 
-    statsMethods.getPieData({
-        community: 'opengauss',
-        type: 'pr'
-    });
-    statsMethods.getData(postOrganData,privateMethods.pagenationFn);
+    statsMethods.getPieData(privateMethods.pieData);
+    statsMethods.getData(privateMethods.organizationData, privateMethods.pagenationFn)
+    // statsMethods.getData(postOrganData,privateMethods.pagenationFn);
     // statsMethods.getData(postIndiviData,privateMethods.pagenationFn);
 
     $('#id-organization-quota').change(function () {
+        // 统计指标 select 切换事件
         privateMethods.organizationQuota = $('#id-organization-quota').find('option:selected').text()
+        privateMethods.organizationData.pageSize = Number($('#id-organization-pages').find('option:selected').text());
+        privateMethods.organizationData.sortKey = privateMethods.organizationQuota.toLowerCase()
+        privateMethods.pieData.type = privateMethods.organizationQuota.toLowerCase()
 
-        postOrganData = privateMethods.getOrganizationData()
-        statsMethods.getData(postOrganData)
-        statsMethods.getPieData(postOrganData)
+        delete privateMethods.organizationData.organizition
+
+        statsMethods.getData(privateMethods.organizationData)
+        statsMethods.getPieData(privateMethods.pieData)
     })
     $('#id-organization-pages').change(function () {
-        postOrganData = privateMethods.getOrganizationData()
-        statsMethods.getData(postOrganData)
+        privateMethods.organizationQuota = $('#id-organization-quota').find('option:selected').text()
+        privateMethods.organizationData.pageSize = Number($('#id-organization-pages').find('option:selected').text());
+        privateMethods.organizationData.sortKey = privateMethods.organizationQuota.toLowerCase()
+        privateMethods.pieData.type = privateMethods.organizationQuota.toLowerCase()
 
+        delete privateMethods.organizationData.organizition
+
+        statsMethods.getData(privateMethods.organizationData)
     })
     $('.organization-organize-input').on('keypress', function (e) {
         if(e.keyCode === 13){
-            postOrganData = privateMethods.getOrganizationData()
-            statsMethods.getData(postOrganData)
+            // postOrganData = privateMethods.getOrganizationData()
+            privateMethods.organizationQuota = $('#id-organization-quota').find('option:selected').text()
+            privateMethods.organizationData.pageSize = Number($('#id-organization-pages').find('option:selected').text());
+            privateMethods.organizationData.sortKey = privateMethods.organizationQuota.toLowerCase()
+            privateMethods.pieData.type = privateMethods.organizationQuota.toLowerCase()
+
+            delete privateMethods.organizationData.organizition
+
+            // statsMethods.getData(privateMethods.organizationData)
+            privateMethods.organizationData.organizationSearchKey = $('.organization-organize-input').val()
+            statsMethods.getData(privateMethods.organizationData)
         }
     })
 
