@@ -44,16 +44,32 @@ $(window).scroll(function () {
         hideNav();
     }
 });
-
+var includesStr = function (shortStr, longStr) {
+    var startWith = shortStr[0];
+    var strLen = shortStr.length;
+    for (let i = 0; i < longStr.length; i++) {
+        var longStrElement = longStr[i];
+        if (longStrElement === startWith) {
+            var current =  longStr.slice(i, i + strLen + 1);
+            if (current === shortStr) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
 var judgeNavs = function (str, navs) {
     var home = ['https://opengauss.org/zh/', 'https://opengauss.org/en/', 'http://localhost:1313/en/', 'http://localhost:1313/zh/'];
-    for (let h of home) {
+    for (let i = 0; i < home.length; i++) {
+        let h = home[i];
         if (str === h) {
             return 'home';
         }
     }
-    for (let nav of navs) {
-        if (str.includes(nav)) {
+    for (let i = 0; i < navs; i++) {
+        let nav = navs[i];
+
+        if (includesStr(nav, str)) {
             return nav;
         }
     }
@@ -64,10 +80,10 @@ var mobileNavEvent = function () {
     var href = location.href;
     var navs = ['lang', 'download', 'docs', 'contribution', 'onlineCommunication', 'security', 'news', 'events', 'blog', 'video'];
     var current = judgeNavs(href, navs);
-    var firstNavs = ['download', 'docs','security']
-    var secondNavs = ['contribution', 'onlineCommunication', 'news', 'blog', 'events', 'video']
+    var firstNavs = ['download', 'docs','security'];
+    var secondNavs = ['contribution', 'onlineCommunication', 'news', 'blog', 'events', 'video'];
 
-    if (firstNavs.includes(current)) {
+    if (includesStr(current, firstNavs)) {
         for (let i = 0; i < firstNavs.length; i++) {
             var nav = firstNavs[i];
             if (nav === current) {
@@ -77,7 +93,7 @@ var mobileNavEvent = function () {
         }
     }
 
-    if (secondNavs.includes(current)) {
+    if (includesStr(current, secondNavs)) {
         for (let i = 0; i < secondNavs.length; i++) {
             var nav = secondNavs[i];
             if (nav === current) {
@@ -88,7 +104,6 @@ var mobileNavEvent = function () {
         }
     }
 }
-
 
 var clickSearchMoblie = function () {
     $('.h5-nav-search').on('click', function (event) {
@@ -110,23 +125,30 @@ var clickSearch = function () {
             $('#search-box').removeClass('show');
             $('.navbar-left').show();
             $('.navbar-right').show();
+        } else if (target.id === 'search-icon') {
+            var lang = includesStr('/zh/', window.location.href) ? '/zh/': '/en/';
+            var content = $('.home-search-pc').val();
+            window.location.href = lang + 'search.html?keyword=' + encodeURI(content);
         }
     });
 }
 
 var searchInputEvent = function () {
-    var lang = window.location.href.includes('/zh/') ? '/zh/' : '/en/';
+    var lang = includesStr('/zh/', window.location.href) ? '/zh/': '/en/';
     $('.home-search-pc').bind('keypress', function (event) {
         if (event.keyCode === 13) {
             var content = $('.home-search-pc').val();
             window.location.href = lang + 'search.html?keyword=' + encodeURI(content);
         }
     })
+
     $('#search-icon').bind('click', function (event) {
         var content = $('.home-search-pc').val();
         window.location.href = lang + 'search.html?keyword=' + encodeURI(content);
     })
 }
+
+
 
 // 点击搜索按钮事件
 $(document).ready(function () {
