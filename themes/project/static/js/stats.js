@@ -3,17 +3,33 @@ var lang = window.location.href.includes('/zh/') ? 'zh' : 'en';
 var curTab = 'all';
 var statsMethods = null;
 var privateMethods = {
-    organizationQuota: 'PR',           // 统计指标
-    organizationPageSize: 10,         // 组织 page size
-    organizationOrganize: '',        // 组织 组织
-    organizationSortKey: 'pr',       // 组织 按PR排列
-    organizationSortValue: 'descending', // 默认降序
-    organizationCurrentPage: 1,      // 当前页
-    individualPageSize: 10,          //  个人 page size
-    individualPersonal: '',          // 个人 gitee ID
-    individualOrganize: '',          // 个人组织
-    individualSortKey: 'pr',         // 个人 按PR排列
-    individualSortValue: 'descending',       // 个人 按PR排列
+//     organizationQuota: 'PR',           // 统计指标
+//     organizationPageSize: 10,         // 组织 page size
+//     organizationOrganize: '',        // 组织 组织
+//     organizationSortKey: 'pr',       // 组织 按PR排列
+//     organizationSortValue: 'descending', // 默认降序
+//     organizationCurrentPage: 1,      // 当前页
+//     individualPageSize: 10,          //  个人 page size
+//     individualPersonal: '',          // 个人 gitee ID
+//     individualOrganize: '',          // 个人组织
+//     individualSortKey: 'pr',         // 个人 按PR排列
+//     individualSortValue: 'descending',       // 个人 按PR排列
+
+    organizationData:{
+        pageSize: 10,
+        sortKey: 'pr',
+        sortValue: 'descending',
+        currentPage: 1,
+        // organizeSearchKey: '',        // 组织 组织
+    },
+    organizationQuota: 'PR',
+    individualData: {
+        pageSize: 10,
+        sortKey: 'pr',
+        sortValue: 'descending',
+        // personalSearchKey: '',          // 个人 gitee ID
+        // organizeSearchKey: '',          // 个人组织
+    },
     pagenationFn: function (data) {
         new Pagination({
             element: '#id-pagination-individual',
@@ -39,9 +55,9 @@ var privateMethods = {
         this.organizationPageSize = $('#id-organization-pages').find('option:selected').text()
         this.organizationOrganize = $('.organization-organize-input').val()
 
-        organData.quota = this.organizationQuota
+        // organData.quota = this.organizationQuota
         organData.pageSize = this.organizationPageSize
-        // organData.organizationSearchKey = this.organizationOrganize || 'all'
+        console.log('this. sort key', this.organizationSortKey)
         organData.sortKey = this.organizationSortKey.toLowerCase()
         organData.soreValue = this.organizationSortValue
         organData.currentPage = this.organizationCurrentPage
@@ -238,7 +254,7 @@ statsMethods = {
                     postData.total = res.total
 
                     $('.js-organ-quota').empty()
-                    $('.js-organ-quota').append(`${postData.quota} <img src="/img/defaultDown.svg" alt=""><img src="/img/defaultUp.svg" alt="">`)
+                    $('.js-organ-quota').append(`${privateMethods.organizationQuota} <img src="/img/defaultDown.svg" alt=""><img src="/img/defaultUp.svg" alt="">`)
 
                     if (postData.type === 'organization') {
                         // console.log('update date again')
@@ -249,7 +265,7 @@ statsMethods = {
                                 `<ul>
                                     <li>${item.ranking}</li>
                                     <li>${item.origanization}</li>
-                                    <li>${item[postData.quota.toLowerCase()]}</li>
+                                    <li>${item[privateMethods.organizationQuota.toLowerCase()]}</li>
                                 </ul>`)
                         })
 
@@ -291,6 +307,8 @@ var init =  function (){
     // statsMethods.getData(postIndiviData,privateMethods.pagenationFn);
 
     $('#id-organization-quota').change(function () {
+        privateMethods.organizationQuota = $('#id-organization-quota').find('option:selected').text()
+
         postOrganData = privateMethods.getOrganizationData()
         statsMethods.getData(postOrganData)
         statsMethods.getPieData(postOrganData)
