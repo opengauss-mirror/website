@@ -72,12 +72,26 @@ paginate = 10
     parent = "community"
 
 
+
+
+
+
+
+
+
 #[[menu.main]]
 #    identifier = "mailingList"
 #    name = "Mailing List"
 #    url  = "/en/community/mails.html"
 #    weight = 6
 #    parent = "community"
+
+[[menu.main]]
+    identifier = "statistics"
+    name = "Statistics"
+    url  = "/en/statistics.html"
+    weight = 4
+    parent = "community"
 
 
 [[menu.main]]
@@ -192,6 +206,19 @@ paginate = 10
     name = "社区贡献"
     url  = "/zh/contribution.html"
     weight = 1
+    parent = "community"
+
+
+
+
+
+
+
+[[languages.zh.menu.main]]
+    identifier = "statistics"
+    name = "贡献统计"
+    url  = "/zh/statistics.html"
+    weight = 4
     parent = "community"
 
 [[languages.zh.menu.main]]

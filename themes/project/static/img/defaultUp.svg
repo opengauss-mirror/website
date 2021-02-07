@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="8px" height="4px" viewBox="0 0 8 4" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Shape</title>
+    <g id="PC" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.400437128">
+        <g id="Stat_zh_UI" transform="translate(-1007.000000, -1207.000000)" fill="#000000">
+            <g id="Individual" transform="translate(400.000000, 1068.000000)">
+                <g id="Table2" transform="translate(0.000000, 120.000000)">
+                    <g id="matric" transform="translate(550.000000, 12.000000)">
+                        <g id="sort" transform="translate(57.000000, 7.000000)">
+                            <polygon id="Shape" transform="translate(4.000000, 2.000000) scale(1, -1) translate(-4.000000, -2.000000) " points="0 0 8 0 4 4"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
