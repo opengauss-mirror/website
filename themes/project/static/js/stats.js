@@ -3,32 +3,22 @@ var lang = window.location.href.includes('/zh/') ? 'zh' : 'en';
 var curTab = 'all';
 var statsMethods = null;
 var privateMethods = {
-//     organizationQuota: 'PR',           // 统计指标
-//     organizationPageSize: 10,         // 组织 page size
-//     organizationOrganize: '',        // 组织 组织
-//     organizationSortKey: 'pr',       // 组织 按PR排列
-//     organizationSortValue: 'descending', // 默认降序
-//     organizationCurrentPage: 1,      // 当前页
-//     individualPageSize: 10,          //  个人 page size
-//     individualPersonal: '',          // 个人 gitee ID
-//     individualOrganize: '',          // 个人组织
-//     individualSortKey: 'pr',         // 个人 按PR排列
-//     individualSortValue: 'descending',       // 个人 按PR排列
-
     organizationData:{
         pageSize: 10,
         sortKey: 'pr',
         sortValue: 'descending',
         currentPage: 1,
         community: 'opengauss',
-        type: 'organization'
-        // organizeSearchKey: '',        // 组织 组织
+        type: 'organization',
     },
     organizationQuota: 'PR',
     individualData: {
         pageSize: 10,
         sortKey: 'pr',
+        currentPage: 1,
         sortValue: 'descending',
+        community: 'opengauss',
+        type: 'individual',
         // personalSearchKey: '',          // 个人 gitee ID
         // organizeSearchKey: '',          // 个人组织
     },
@@ -37,13 +27,14 @@ var privateMethods = {
         type: 'pr'
     },
     pagenationFn: function (data) {
+        console.log('page params', data)
         new Pagination({
-            element: '#id-pagination-individual',
+            element: '#id-pagination-organization',
             type: 2,
             pageIndex: 1,
             pageSize: data.pageSize,
             pageCount: 1,
-            total: data.total, // 从接口传过来的 data 里拿
+            total: data.total,
             jumper: true,
             singlePageHide: false,
             prevText: '<',
@@ -51,57 +42,33 @@ var privateMethods = {
             disabled: true,
             currentChange: function(index) {
                 scrollTo(0, 0);
+                data.pageSize = index
+                console.log('----', data)
                 statsMethods.getData(data)
             }
         });
     },
-    getOrganizationData: function () {
-        var organData = {}
-        // this.organizationSortKey = $('#id-organization-quota').find('option:selected').text()
-        // this.organizationPageSize = $('#id-organization-pages').find('option:selected').text()
-        // this.organizationOrganize = $('.organization-organize-input').val()
-        //
-        // // organData.quota = this.organizationQuota
-        // organData.pageSize = this.organizationPageSize
-        // console.log('this. sort key', this.organizationSortKey)
-        // organData.sortKey = this.organizationSortKey.toLowerCase()
-        // organData.soreValue = this.organizationSortValue
-        // organData.currentPage = this.organizationCurrentPage
-        // organData.type = 'organization'
-        // organData.community = 'opengauss'
-
-        this.organizationData.pageSize = Number($('#id-organization-pages').find('option:selected').text());
-        this.organizationData.sortKey = privateMethods.organizationQuota.toLowerCase()
-
-        organData.pageSize = this.organizationData.pageSize
-        organData.sortKey = this.organizationData.sortKey
-
-        return organData
-    },
-    getIndividualData: function () {
-        var indiviData = {}
-        this.individualPageSize = $('#id-individual-pages').find('option:selected').text()
-        this.individualPersonal = $('.individual-indivi-input').val()
-        this.individualOrganize = $('.individual-organ-input').val()
-
-        // indiviData.pageSize = this.individualPageSize
-        // indiviData.individualSearchKey = this.individualPersonal || ''
-        // indiviData.organizationSearchKey = this.individualOrganize || ''
-        // indiviData.sortKey = this.individualSortKey
-        // indiviData.sortValue = this.individualSortValue
-        // indiviData.type = 'individual'
-        // indiviData.community = 'opengauss'
-
-        indiviData.pageSize = 10
-        // indiviData.individualSearchKey = 'all'
-        // indiviData.organizationSearchKey = 'all'
-        indiviData.sortKey = 'pr'
-        indiviData.sortValue = 'descending'
-        indiviData.type = 'individual'
-        indiviData.community = 'opengauss'
-        indiviData.currentPage = 1
-
-        return indiviData
+    pagenationIndiviFn: function (data) {
+        console.log('indivi pages', data)
+        new Pagination({
+            element: '#id-pagination-individual',
+            type: 2,
+            pageIndex: 1,
+            pageSize: data.pageSize,
+            pageCount: 1,
+            total: data.total,
+            jumper: true,
+            singlePageHide: false,
+            prevText: '<',
+            nextText: '>',
+            disabled: true,
+            currentChange: function(index) {
+                scrollTo(0, 0);
+                data.pageSize = index
+                console.log('----', data)
+                statsMethods.getData(data)
+            }
+        });
     },
     getMaxTop: function (arr, len) {
         var max = [];
@@ -139,7 +106,8 @@ var privateMethods = {
             ],
             // backgroundColor: '#fff',
             title: {
-                text: `组织${data.name}贡献占比`,
+                // text: `${lang = 'zh'? '组织'+${data.name}+'贡献占比' : data.name }`,
+                text: `组织 ${data.name} 贡献占比`,
                 left: 'center',
                 top: '0%',
                 textStyle: {
@@ -210,22 +178,12 @@ var privateMethods = {
 
         myChart.setOption(statsPieOption);
     },
-    organSort: function (element, className, direction) {
-        var that = this
-        element.find(direction).on('click', function () {
-
-            that.organizationSortKey = className.split('-')[2]
-            that.organizationSortValue = className.split('-')[3]
-
-            if (that.organizationSortValue === 'descending') {
-                $(this).attr('src', '/img/sortDown.svg').siblings('.up').attr('src', '/img/defaultUp.svg')
-            } else {
-                $(this).attr('src', '/img/sortUp.svg').siblings('.down').attr('src', '/img/defaultDown.svg')
-            }
-
-            // postOrganData = that.getOrganizationData()
-            // console.log('post data', postOrganData)
-            // statsMethods.getData(postOrganData)
+    defaultSort: function () {
+        $('.js-indivi-pr-descending').attr('src', '/img/sortDown.svg')
+        $('.js-indivi-pr-descending').siblings('.up').attr('src', '/img/defaultUp.svg')
+            .parent().siblings().each(function () {
+            $(this).find('.down').attr('src', '/img/defaultDown.svg')
+            $(this).find('.up').attr('src', '/img/defaultUp.svg')
         })
     }
 }
@@ -266,17 +224,13 @@ statsMethods = {
             datatype: "json",
             success: function (res) {
                 if(res.code === 200){
-                    console.log('data', res.data)
-                    postData.total = res.total
+                    console.log('res', res)
+                    // console.log('data', res.data)
 
-                    $('.js-organ-quota').empty()
-                    $('.js-organ-quota').append(`${privateMethods.organizationQuota} <img class="down" src="/img/sortDown.svg" alt=""><img class="up" src="/img/defaultUp.svg" alt="">`)
-
+                    $('.organ-quota-content').empty().text(`${privateMethods.organizationQuota}`)
                     if (postData.type === 'organization') {
-                        // console.log('update date again')
                         $('.js-organ-table').empty()
                         res.data.forEach(item => {
-                            // console.log('item', item, item.rank, postData.type)
                             $('.js-organ-table').append(
                                 `<ul>
                                     <li>${item.ranking}</li>
@@ -284,13 +238,14 @@ statsMethods = {
                                     <li>${item[privateMethods.organizationQuota.toLowerCase()]}</li>
                                 </ul>`)
                         })
-
+                        postData.total = res.total
+                        // postData.total = 100
                     }
 
                     if (postData.type === 'individual') {
-                        $('.js-indivi-table').empty()
+
+                        $('.js-indivi-table').empty();
                         res.data.forEach(item => {
-                            // console.log('item', item, item.rank, postData.type)
                             $('.js-indivi-table').append(
                                 `<ul>
                                     <li>${item.ranking}</li>
@@ -301,6 +256,8 @@ statsMethods = {
                                     <li>${item.comments}</li>
                                 </ul>`)
                         })
+                        // postData.total = res.total
+                        postData.total = 100
                     }
                     callback && callback(postData);
 
@@ -312,13 +269,9 @@ statsMethods = {
 
 var init =  function (){
 
-    var postOrganData = privateMethods.getOrganizationData()
-    var postIndiviData = privateMethods.getIndividualData()
-
     statsMethods.getPieData(privateMethods.pieData);
     statsMethods.getData(privateMethods.organizationData, privateMethods.pagenationFn)
-    // statsMethods.getData(postOrganData,privateMethods.pagenationFn);
-    // statsMethods.getData(postIndiviData,privateMethods.pagenationFn);
+    statsMethods.getData(privateMethods.individualData, privateMethods.pagenationIndiviFn)
 
     $('#id-organization-quota').change(function () {
         // 统计指标 select 切换事件
@@ -352,36 +305,105 @@ var init =  function (){
 
             delete privateMethods.organizationData.organizition
 
-            // statsMethods.getData(privateMethods.organizationData)
             privateMethods.organizationData.organizationSearchKey = $('.organization-organize-input').val()
             statsMethods.getData(privateMethods.organizationData)
         }
     })
+    $('.js-organ-quota').on('click', function (e) {
+        let target = e.target
+        if (target.className.includes('up')) {
+            privateMethods.organizationData.sortValue = 'ascending'
+            statsMethods.getData(privateMethods.organizationData)
+            $(e.target).attr('src', '/img/sortUp.svg').siblings('.down').attr('src', '/img/defaultDown.svg')
+        } else if (target.className.includes('down')) {
+            privateMethods.organizationData.sortValue = 'descending'
+            statsMethods.getData(privateMethods.organizationData)
+            $(e.target).attr('src', '/img/sortDown.svg').siblings('.up').attr('src', '/img/defaultUp.svg')
+
+        }
+    })
+
 
     $('#id-individual-pages').change(function () {
-        postIndiviData = privateMethods.getIndividualData()
-        statsMethods.getData(postIndiviData)
+        privateMethods.individualData.pageSize = $('#id-individual-pages').find('option:selected').text()
+        privateMethods.individualData.sortKey = 'pr'
+        privateMethods.individualData.sortValue = 'descending'
+
+        if (!(privateMethods.individualData.individualSearchKey === undefined)) {
+            privateMethods.individualData.individualSearchKey = $('.individual-indivi-input').val()
+        }
+        if (!(privateMethods.individualData.organizationSearchKey === undefined)) {
+            privateMethods.individualData.organizationSearchKey = $('.individual-organ-input').val()
+        }
+
+        statsMethods.getData(privateMethods.individualData)
+        privateMethods.defaultSort()
+
     })
     $('.individual-indivi-input').on('keypress', function (e) {
         if(e.keyCode === 13){
-            postIndiviData = privateMethods.getIndividualData()
-            statsMethods.getData(postIndiviData)
+            privateMethods.individualData.pageSize = $('#id-individual-pages').find('option:selected').text()
+            privateMethods.individualData.individualSearchKey = $('.individual-indivi-input').val()
+            privateMethods.individualData.sortKey = 'pr'
+            privateMethods.individualData.sortValue = 'descending'
+
+            if (!(privateMethods.individualData.organizationSearchKey === undefined)) {
+                privateMethods.individualData.organizationSearchKey = $('.individual-organ-input').val()
+            }
+            statsMethods.getData(privateMethods.individualData)
+            privateMethods.defaultSort()
+
         }
     })
     $('.individual-organ-input').on('keypress', function (e) {
         if(e.keyCode === 13){
-            postIndiviData = privateMethods.getIndividualData()
-            statsMethods.getData(postIndiviData)
+            privateMethods.individualData.pageSize = $('#id-individual-pages').find('option:selected').text()
+            privateMethods.individualData.sortKey = 'pr'
+            privateMethods.individualData.sortValue = 'descending'
+            privateMethods.individualData.organizationSearchKey = $('.individual-organ-input').val()
+
+
+            if (!(privateMethods.individualData.individualSearchKey === undefined)) {
+                privateMethods.individualData.individualSearchKey = $('.individual-indivi-input').val()
+            }
+            statsMethods.getData(privateMethods.individualData)
+            // $('.js-indivi-pr-descending').attr('src', '/img/sortDown.svg')
+            // $('.js-indivi-pr-descending').siblings('.up').attr('src', '/img/defaultUp.svg')
+            //     .parent().siblings().each(function () {
+            //     $(this).find('.down').attr('src', '/img/defaultDown.svg')
+            //     $(this).find('.up').attr('src', '/img/defaultUp.svg')
+            // })
+            privateMethods.defaultSort()
         }
     })
+    $('.individual-info .table-title').on('click', function (e) {
+        let target = e.target
+        if (target.className.includes('down')) {
+            $(e.target).attr('src', '/img/sortDown.svg')
+            $(e.target).siblings('.up').attr('src', '/img/defaultUp.svg')
+                .parent().siblings().each(function () {
+                $(this).find('.down').attr('src', '/img/defaultDown.svg')
+                $(this).find('.up').attr('src', '/img/defaultUp.svg')
+            })
+            let name = target.className.split('-')[2]
+            privateMethods.individualData.sortValue = 'descending'
+            privateMethods.individualData.sortKey = name.toLowerCase()
+            statsMethods.getData(privateMethods.individualData)
+        }
+        if (target.className.includes('up')) {
+            $(e.target).attr('src', '/img/sortUp.svg')
+            $(e.target).siblings('.down').attr('src', '/img/defaultDown.svg')
+                .parent().siblings().each(function () {
+                $(this).find('.down').attr('src', '/img/defaultDown.svg')
+                $(this).find('.up').attr('src', '/img/defaultUp.svg')
+            })
 
-
-    privateMethods.organSort($('.indivi-pr-sort'), 'js-indivi-pr-descending', '.down')
-    privateMethods.organSort($('.indivi-pr-sort'), 'js-indivi-pr-ascending', '.up')
-    privateMethods.organSort($('.indivi-issue-sort'), 'js-indivi-issue-descending', '.down')
-    privateMethods.organSort($('.indivi-issue-sort'), 'js-indivi-issue-ascending', '.up')
-    privateMethods.organSort($('.indivi-comments-sort'), 'js-indivi-comments-descending', '.down')
-    privateMethods.organSort($('.indivi-comments-sort'), 'js-indivi-comments-ascending', '.up')
+            let name = target.className.split('-')[2]
+            privateMethods.individualData.sortValue = 'ascending'
+            privateMethods.individualData.sortKey = name.toLowerCase()
+            statsMethods.getData(privateMethods.individualData)
+        }
+    })
 
 }
 
