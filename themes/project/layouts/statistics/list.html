@@ -4,6 +4,8 @@
 {{ partial "head.html" . }}
 <script src="https://cdn.jsdelivr.net/npm/echarts@5.0.1/dist/echarts.min.js"></script>
 <link href="{{ "css/stats.css" | relURL}}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet">
+<link rel="stylesheet" href="{{ "css/pagination.css" | relURL}}?t={{ mul 1000 (time now).Unix }}">
+
 <body>
 
 <div id="all">
@@ -29,7 +31,7 @@
                             <option value="Comment">Comments</option>
                         </select>
                     </p>
-                    <p>
+                    <p style="display: none">
                         显示
                         <select name="pages" id="id-organization-pages">
                             <option value="10">10</option>
@@ -67,7 +69,7 @@
                 </div>
                 <div class="con-individual">
                     <h4>个人贡献统计</h4>
-                    <p>
+                    <p style="display: none">
                         显示
                         <select name="pages" id="id-individual-pages">
 
