@@ -38,7 +38,7 @@ var privateMethods = {
             nextText: '>',
             disabled: true,
             currentChange: function(index) {
-                scrollTo(0, 0);
+                // scrollTo(0, 0);
                 data.currentPage = index;
                 statsMethods.getData(data);
             }
@@ -58,7 +58,7 @@ var privateMethods = {
             nextText: '>',
             disabled: true,
             currentChange: function(index) {
-                scrollTo(0, 0);
+                // scrollTo(0, 0);
                 data.currentPage = index;
                 statsMethods.getData(data);
             }
@@ -183,14 +183,16 @@ var privateMethods = {
         $(element).on('click', function (e) {
             let target = e.target;
             if (target.className.includes('search-cancel')) {
+                // $('.js-indivi-pr-descending.down').attr('src', '/img/sortDown.svg');
+
                 if (element.includes('organ')) {
                     delete privateMethods.individualData.organizationSearchKey;
                     $('.individual-organ-input').val('');
-                    statsMethods.getData(privateMethods.individualData);
+                    statsMethods.getData(privateMethods.individualData, privateMethods.pagenationIndiviFn);
                 } else {
                     delete privateMethods.individualData.individualSearchKey;
                     $('.individual-indivi-input').val('');
-                    statsMethods.getData(privateMethods.individualData);
+                    statsMethods.getData(privateMethods.individualData, privateMethods.pagenationIndiviFn);
                 }
             }
         })
@@ -253,6 +255,7 @@ statsMethods = {
                         $('.js-indivi-table').empty();
                         if (privateMethods.individualData.individualSearchKey === undefined) {
                             $('.js-indivi-indivi .search-cancel').remove();
+
                         }
                         if (privateMethods.individualData.organizationSearchKey === undefined) {
                             $('.js-indivi-organ .search-cancel').remove();
@@ -311,26 +314,29 @@ var init =  function (){
             privateMethods.organizationData.pageSize = Number($('#id-organization-pages').find('option:selected').text());
             privateMethods.organizationData.sortKey = privateMethods.organizationQuota.toLowerCase();
             privateMethods.pieData.type = privateMethods.organizationQuota.toLowerCase();
+            privateMethods.organizationData.currentPage = 1;
 
             delete privateMethods.organizationData.organizition;
 
             privateMethods.organizationData.organizationSearchKey = $('.organization-organize-input').val();
-            statsMethods.getData(privateMethods.organizationData);
+            statsMethods.getData(privateMethods.organizationData, privateMethods.pagenationFn);
         }
         $(this).siblings('.search-cancel').remove();
         $(this).parent().append('<img class="search-cancel" src="/img/searchCancel.svg" alt="">');
 
     });
     $('.js-organ-quota').on('click', function (e) {
+        e.preventDefault();
         let target = e.target;
-        if (target.className.includes('up')) {
-            privateMethods.organizationData.sortValue = 'ascending';
-            statsMethods.getData(privateMethods.organizationData);
-            $(e.target).attr('src', '/img/sortUp.svg').siblings('.down').attr('src', '/img/defaultDown.svg');
-        } else if (target.className.includes('down')) {
+
+        if (privateMethods.organizationData.sortValue === 'ascending') {
             privateMethods.organizationData.sortValue = 'descending';
             statsMethods.getData(privateMethods.organizationData);
-            $(e.target).attr('src', '/img/sortDown.svg').siblings('.up').attr('src', '/img/defaultUp.svg');
+            $(this).find('.down').attr('src', '/img/sortDown.svg').siblings('.up').attr('src', '/img/defaultUp.svg');
+        } else if ( privateMethods.organizationData.sortValue === 'descending') {
+            privateMethods.organizationData.sortValue = 'ascending';
+            statsMethods.getData(privateMethods.organizationData);
+            $(this).find('.up').attr('src', '/img/sortUp.svg').siblings('.down').attr('src', '/img/defaultDown.svg');
         }
     });
     $('.organization-info').find('.table-title').on('click', function (e) {
@@ -339,7 +345,7 @@ var init =  function (){
         if (target.className.includes('search-cancel')) {
             delete privateMethods.organizationData.organizationSearchKey;
             $('.organization-organize-input').val('');
-            statsMethods.getData(privateMethods.organizationData);
+            statsMethods.getData(privateMethods.organizationData, privateMethods.pagenationFn);
         }
     });
 
@@ -366,11 +372,12 @@ var init =  function (){
             privateMethods.individualData.individualSearchKey = $('.individual-indivi-input').val();
             privateMethods.individualData.sortKey = 'pr';
             privateMethods.individualData.sortValue = 'descending';
+            privateMethods.individualData.currentPage = 1;
 
             if (!(privateMethods.individualData.organizationSearchKey === undefined)) {
                 privateMethods.individualData.organizationSearchKey = $('.individual-organ-input').val();
             }
-            statsMethods.getData(privateMethods.individualData);
+            statsMethods.getData(privateMethods.individualData, privateMethods.pagenationIndiviFn);
             privateMethods.defaultSort();
         }
         $(this).siblings('.search-cancel').remove();
@@ -381,64 +388,64 @@ var init =  function (){
             privateMethods.individualData.pageSize = $('#id-individual-pages').find('option:selected').text();
             privateMethods.individualData.sortKey = 'pr';
             privateMethods.individualData.sortValue = 'descending';
+            privateMethods.individualData.currentPage = 1
             privateMethods.individualData.organizationSearchKey = $('.individual-organ-input').val();
 
 
             if (!(privateMethods.individualData.individualSearchKey === undefined)) {
                 privateMethods.individualData.individualSearchKey = $('.individual-indivi-input').val();
             }
-            statsMethods.getData(privateMethods.individualData);
+            statsMethods.getData(privateMethods.individualData, privateMethods.pagenationIndiviFn);
             privateMethods.defaultSort();
         }
         $(this).siblings('.search-cancel').remove();
         $(this).parent().append('<img class="search-cancel" src="/img/searchCancel.svg" alt="">');
-    })
-    $('.individual-info .table-title').on('click', function (e) {
+    });
+    // $('.individual-info .table-title').on('click', function (e) {
+    $('.indivi-sort-click').on('click', function (e) {
         let target = e.target;
-        if (target.className.includes('down')) {
-            $(e.target).attr('src', '/img/sortDown.svg');
-            $(e.target).siblings('.up').attr('src', '/img/defaultUp.svg')
-                .parent().siblings().each(function () {
-                $(this).find('.down').attr('src', '/img/defaultDown.svg');
-                $(this).find('.up').attr('src', '/img/defaultUp.svg');
-            });
-            let name = target.className.split('-')[2];
-            privateMethods.individualData.sortValue = 'descending';
-            privateMethods.individualData.sortKey = name.toLowerCase();
+
+        if (target.className.includes(''))
+
+        privateMethods.individualData.sortKey = '';
+        $('.individual-info .table-title').find('.down').attr('src', '/img/defaultDown.svg');
+        $('.individual-info .table-title').find('.up').attr('src', '/img/defaultUp.svg');
+        if (target.className.includes('pr')) {
+            if (privateMethods.individualData.sortValue === 'descending') {
+                $('.js-indivi-pr.up').attr('src', '/img/sortUp.svg');
+                privateMethods.individualData.sortValue = 'ascending';
+            } else if (privateMethods.individualData.sortValue === 'ascending') {
+                $('.js-indivi-pr-descending.down').attr('src', '/img/sortDown.svg');
+                privateMethods.individualData.sortValue = 'descending';
+            }
+            privateMethods.individualData.sortKey = 'pr';
             statsMethods.getData(privateMethods.individualData);
         }
-        if (target.className.includes('up')) {
-            $(e.target).attr('src', '/img/sortUp.svg');
-            $(e.target).siblings('.down').attr('src', '/img/defaultDown.svg')
-                .parent().siblings().each(function () {
-                $(this).find('.down').attr('src', '/img/defaultDown.svg');
-                $(this).find('.up').attr('src', '/img/defaultUp.svg');
-            });
 
-            let name = target.className.split('-')[2];
-            privateMethods.individualData.sortValue = 'ascending';
-            privateMethods.individualData.sortKey = name.toLowerCase();
+        if (target.className.includes('issue')) {
+            if (privateMethods.individualData.sortValue === 'descending') {
+                $('.js-indivi-issue.up').attr('src', '/img/sortUp.svg');
+                privateMethods.individualData.sortValue = 'ascending';
+            } else if (privateMethods.individualData.sortValue === 'ascending') {
+                $('.js-indivi-issue-descending.down').attr('src', '/img/sortDown.svg');
+                privateMethods.individualData.sortValue = 'descending';
+            }
+            privateMethods.individualData.sortKey = 'issue';
+            statsMethods.getData(privateMethods.individualData);
+        }
+
+        if (target.className.includes('comments')) {
+            if (privateMethods.individualData.sortValue === 'descending') {
+                $('.js-indivi-comments.up').attr('src', '/img/sortUp.svg');
+                privateMethods.individualData.sortValue = 'ascending';
+            } else if (privateMethods.individualData.sortValue === 'ascending') {
+                $('.js-indivi-comments-descending.down').attr('src', '/img/sortDown.svg');
+                privateMethods.individualData.sortValue = 'descending';
+            }
+            privateMethods.individualData.sortKey = 'comments';
             statsMethods.getData(privateMethods.individualData);
         }
     })
-    // $('.js-indivi-indivi').on('click', function (e) {
-    //     let target = e.target;
-    //
-    //     if (target.className.includes('search-cancel')) {
-    //         delete privateMethods.individualData.individualSearchKey;
-    //         $('.individual-indivi-input').val('');
-    //         statsMethods.getData(privateMethods.individualData);
-    //     }
-    // })
-    // $('.js-indivi-organ').on('click', function (e) {
-    //     let target = e.target;
-    //
-    //     if (target.className.includes('search-cancel')) {
-    //         delete privateMethods.individualData.organizationSearchKey;
-    //         $('.individual-organ-input').val('');
-    //         statsMethods.getData(privateMethods.individualData);
-    //     }
-    // })
     privateMethods.bindCancelEvent('.js-indivi-indivi');
     privateMethods.bindCancelEvent('.js-indivi-organ')
 };
