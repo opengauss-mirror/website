@@ -85,13 +85,13 @@ function oauthLogin() {
    let f = new jso.Fetcher(client)
    let url = 'https://gitee.com/v5/user'
    f.fetch(url, {})
-    .then((data) => {
+       .then(function (data) {
         return data.json()
     })
-    .then((data) => {
+       .then(function (data) {
             console.log("I got protected json data from the API", data)
         })
-    .catch((err) => {
+       .catch(function (err) {
         console.error("Error from fetcher", err)
     })
 }

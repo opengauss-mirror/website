@@ -1,5 +1,6 @@
 $(document).ready(function () {
-var lang = window.location.href.includes('/zh/') ? 'zh' : 'en';
+var lang = includesStr('/zh/', window.location.href) ? 'zh' : 'en';
+
 var curTab = 'all';
 var remoteMethods = null;
 var privateMethods = {
@@ -71,6 +72,11 @@ var privateMethods = {
         }
     },
     pagenationFn: function (data) {
+        if(!Array.prototype.find){
+            Array.prototype.find = function(callback) {
+                return callback && (this.filter(callback) || [])[0];
+            };
+        }
         new Pagination({
             element: '#pagination',
             type: 2,
@@ -105,14 +111,15 @@ var privateMethods = {
             for (var i = 0; i < data.length; i++) {
                 var dataItem = data[i];
                 var doubleItem = dataItem + data[i + 1]
-                if (linker.includes(dataItem)) {
+                if (includesStr(dataItem, linker)) {
                     dataItem = '-';
                 }
                 if (doubleItem == '--') {
                     dataItem = '-';
                     i += 1;
                 }
-                if (brackets.includes(dataItem)) {
+                if (includesStr(dataItem, brackets)) {
+
                     dataItem = '';
                 }
                 finalUrl += dataItem;
@@ -139,21 +146,45 @@ remoteMethods = {
                     curTab = 'all';
                     $('.detail-title').empty();
                     $('.detail-title').append(
-                        `<p class="active" key="">${privateMethods.transformLang('all')}<span> (0) </span></p>`
-                    )
+                        '<p class="active" key="">'+privateMethods.transformLang('all')+'<span> (0) </span></p>'
+                    );
                     $('.detail-content').empty();
-                    $('.detail-content').append(
-                        `<p class="empty-box">${lang === 'zh' ? '找到0个结果' : '0 results found'}</p>`
-                    )
+                    if (lang === 'zh') {
+                        $('.detail-content').append(
+                           '<p class="empty-box">找到0个结果</p>'
+                        );
+                    } else {
+                        $('.detail-content').append(
+                            '<p class="empty-box">0 results found</p>'
+                        );
+                    }
                     $('#pagination').empty();
                     return;
                 }
                 if(curTab === 'all'){
                     $('.detail-title').empty();
                     data.obj.totalNum.forEach(function (item) {
-                        $('.detail-title').append(
-                            `<p class="${item.key===curTab?'active':''}" key="${item.key==='all' ? '' : item.key}">${privateMethods.transformLang(item.key)}<span> (${item.count}) </span></p>`
-                        )
+                        if (item.key === curTab) {
+                            if (item.key === 'all') {
+                                $('.detail-title').append(
+                                    '<p class="active" key="">'+ privateMethods.transformLang(item.key)+'<span> ('+ item.count+ ') </span>'+ '</p>'
+                                );
+                            } else {
+                                $('.detail-title').append(
+                                    '<p class="active" key="'+item.key+'">'+ privateMethods.transformLang(item.key)+'<span> ('+ item.count+ ') </span>'+ '</p>'
+                                );
+                            }
+                        } else {
+                            if (item.key === 'all') {
+                                $('.detail-title').append(
+                                    '<p class="" key="">'+ privateMethods.transformLang(item.key)+'<span> ('+ item.count+ ') </span>'+ '</p>'
+                                );
+                            } else {
+                                $('.detail-title').append(
+                                    '<p class="" key="'+item.key+'">'+ privateMethods.transformLang(item.key)+'<span> ('+ item.count+ ') </span>'+ '</p>'
+                                );
+                            }
+                        }
                     })
                     privateMethods.toggleTab();    
                 }
@@ -161,12 +192,29 @@ remoteMethods = {
                 $('.detail-content').empty();
                 data.obj.records.forEach(function (item) {
                     var contentPath = privateMethods.getBlogUrl(item.articleName, item.type);
-                    $('.detail-content').append(
-                        `<div class="content-box">
-                        <p class="content-title" path="${contentPath}" type="${item.type}">${item.title}</p>
-                        <p class="content-desc" path="${contentPath}" type="${item.type}">${item.textContent}</p>
-                        <p>${lang === 'zh' ? '来自' : 'From'}：<span class="tag">${privateMethods.transformLang(item.type)} ${item.type === 'docs' ? item.version : ''}</span></p>                    </div>`
-                    )
+                    let a = '<div class="content-box">'+ '<p class="content-title" path="'+ contentPath+ '" type="'+ item.type+ '">'+ item.title+ '</p><p class="content-desc" path="'+ contentPath+ '" type="'+ item.type+ '">'+ item.textContent+ '</p><p>'+'来自'+'：<span class="tag">'+ privateMethods.transformLang(item.type)+' '+ ''+ '</span></p></div>'
+
+                    if (lang === 'zh') {
+                        if (item.type === 'docs') {
+                            $('.detail-content').append(
+                                '<div class="content-box">'+ '<p class="content-title" path="'+ contentPath+ '" type="'+ item.type+ '">'+ item.title+ '</p><p class="content-desc" path="'+ contentPath+ '" type="'+ item.type+ '">'+ item.textContent+ '</p><p>'+'来自'+'：<span class="tag">'+ privateMethods.transformLang(item.type)+' '+ item.version+ '</span></p></div>'
+                            )
+                        } else {
+                            $('.detail-content').append(
+                                '<div class="content-box">'+ '<p class="content-title" path="'+ contentPath+ '" type="'+ item.type+ '">'+ item.title+ '</p><p class="content-desc" path="'+ contentPath+ '" type="'+ item.type+ '">'+ item.textContent+ '</p><p>'+'来自'+'：<span class="tag">'+ privateMethods.transformLang(item.type)+' '+ '' + '</span></p></div>'
+                            )
+                        }
+                    } else {
+                        if (item.type === 'docs') {
+                            $('.detail-content').append(
+                                '<div class="content-box">'+ '<p class="content-title" path="'+ contentPath+ '" type="'+ item.type+ '">'+ item.title+ '</p><p class="content-desc" path="'+ contentPath+ '" type="'+ item.type+ '">'+ item.textContent+ '</p><p>'+'From'+'：<span class="tag">'+ privateMethods.transformLang(item.type)+' '+ item.version+ '</span></p></div>'
+                            )
+                        } else {
+                            $('.detail-content').append(
+                                '<div class="content-box">'+ '<p class="content-title" path="'+ contentPath+ '" type="'+ item.type+ '">'+ item.title+ '</p><p className="content-desc" path="'+ contentPath+ '" type="'+ item.type+ '">'+ item.textContent+ '</p><p>'+'From'+'：<span class="tag">'+ privateMethods.transformLang(item.type)+' '+ '' + '</span></p></div>'
+                            )
+                        }
+                    }
                 })
                 privateMethods.jumpTpDetail(); 
                 callback && callback(data.obj);
