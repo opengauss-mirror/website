@@ -174,15 +174,15 @@
         function getTiername(data) {
             const iterName = [],iterUrl = []
             if(Array.isArray(data)) {
-                data.map((item) => {
+                data.map(function (item) {
                     iterName.unshift($('#'+item+'_anchor').text()) 
                     iterUrl.unshift($('#'+item+'_anchor').attr('href'))
                 })
             }
-            
+
             let aNode = [];
             for(let i=0;i<iterName.length;i++) {
-                aNode.push(i == (iterName.length - 1) ? `<a href="${iterUrl[i]}">${iterName[i]}</a>` : `<a href="${iterUrl[i]}">${iterName[i]}</a><span>&gt</span>`)
+                aNode.push(i == (iterName.length - 1) ?  '<a href="'+iterUrl[i]+'">'+iterName[i]+'</a>' : '<a href="'+ iterUrl[i]+ '">'+ iterName[i]+ '</a><span>&gt</span>');
             }
             $('.breadcrumbs').append(aNode.toString())
         }
@@ -202,7 +202,8 @@
         
         /* 给每个pre添加复制代码功能 */
         let preList = $(".markdown pre");
-        for(let pre of preList) {
+        for (let i = 0; i < preList.length; i++) {
+            let pre = preList[i];
             let btn = $("<span class='btn_pre_copy'>{{ i18n "copy_code" }}</span>");
             btn.prependTo(pre);
         }
@@ -217,7 +218,7 @@
             document.execCommand("Copy");
             copyNode.remove();
             $(this)[0].innerHTML = "{{ i18n "copy_code_success" }}"
-            setTimeout(()=>{
+            setTimeout(function () {
                 $(this)[0].innerHTML = "{{ i18n "copy_code" }}"
             },1500)
         })  

@@ -1,7 +1,7 @@
 $(document).ready(function() {
   var myBannerSwiper = new Swiper ('.banner_swiper', {
     direction: 'horizontal', // 切换选项
-     loop: true,  // 循环模式选项
+    loop: true,  // 循环模式选项
     autoplay: {
       delay: 5000,
       stopOnLastSlide: false,
@@ -28,32 +28,32 @@ $(document).ready(function() {
     urls.push('Quickstart/Quickstart.html');
     urls = urls.join('/docs/');
 
-    if (urls.includes('/zh/')) {
+    if (includesStr('/zh/', urls)) {
       urls = urls.replace('/zh/', '/en/');
     } else {
       urls = urls.replace('/en/', '/zh/');
     }
 
-      window.location.href = urls;
+    window.location.href = urls;
   }
 
 
   //首页切换 gif 图
   const toggleGifImg = function () {
-      $('.content_character_lists_far li').hover(function () {
-          $(this).find('.img-static').addClass('hidding');
-          $(this).find('.img-gif').removeClass('hidding');
+    $('.content_character_lists_far li').hover(function () {
+      $(this).find('.img-static').addClass('hidding');
+      $(this).find('.img-gif').removeClass('hidding');
 
-      }, function () {
-          $(this).find('.img-static').removeClass('hidding');
-          $(this).find('.img-gif').addClass('hidding');
-      })
+    }, function () {
+      $(this).find('.img-static').removeClass('hidding');
+      $(this).find('.img-gif').addClass('hidding');
+    })
   }
   toggleGifImg();
 
   // 中英文切换
   const enTozh = function (url) {
-    if (url.includes('/en')) {
+    if (includesStr('/en', url)) {
       url = url.replace('/en', '/zh');
     } else {
       url = url.replace('/zh', '/en');
@@ -67,7 +67,7 @@ $(document).ready(function() {
   }
 
   const backToList = function (innerUrl, listUrl) {
-    if (currentUrl.includes(innerUrl)) {
+    if (includesStr(innerUrl, currentUrl)) {
       var current = currentUrl.split(innerUrl)[0];
       current = enTozh(current);
       current += listUrl;
@@ -93,7 +93,7 @@ $(document).ready(function() {
 
   $(".nav-lang-btn, .nav-lang-H5").click(function (e) {
     e.preventDefault();
-    if (currentUrl.includes('/docs/')) {
+    if (includesStr('/docs/', currentUrl)) {
       switchLanguage();
       return;
     }
@@ -111,10 +111,10 @@ $(document).ready(function() {
       if ($(hoverTarget).parent().is('.dropdown')) {
         $(hoverTarget).parent().toggleClass('hovered').toggleClass('open');
       }
-      })
+    })
   })
 
-  if (currentUrl.includes('/blogs/')) {
+  if (includesStr('/blogs', currentUrl)) {
     $('.nav-blog-link').closest('.dropdown').addClass('active');
   }
 })

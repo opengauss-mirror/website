@@ -50,7 +50,7 @@ var includesStr = function (shortStr, longStr) {
     for (let i = 0; i < longStr.length; i++) {
         var longStrElement = longStr[i];
         if (longStrElement === startWith) {
-            var current =  longStr.slice(i, i + strLen + 1);
+            var current =  longStr.slice(i, i + strLen);
             if (current === shortStr) {
                 return true;
             }
