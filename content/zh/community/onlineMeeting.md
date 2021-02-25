@@ -15,6 +15,8 @@ openGauss社区组织可以选择不同的渠道开展线上会议，具体请�
 | [SIG Tools](https://gitee.com/opengauss/tc/tree/master/sigs/Tools) | 负责openGauss社区工具的开发和维护。 |
 | [SIG Docs](https://gitee.com/opengauss/tc/tree/master/sigs/Docs) | 负责openGauss社区文档的开发和维护。 |
 | [SIG Infra](https://gitee.com/opengauss/tc/tree/master/sigs/Infra) | 负责openGauss社区基础设施的开发和维护。 |
+| [IoT](https://gitee.com/opengauss/tc/tree/master/sigs/IoT) | 负责openGauss IoT 的开发和维护。 |
+| [In-place Update](https://gitee.com/opengauss/tc/tree/master/sigs/In-place-Update) | 负责openGauss社区in-place update引擎的开发和维护。|
 
 ### 1. WeLink会议
 

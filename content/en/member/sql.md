@@ -18,7 +18,7 @@ core = "Core Members"
 
 [[card]]
     img = "/zh/member/img/zhoupinggao.png"
-    name = "Pinggao Li"
+    name = "Pinggao Zhou"
     title = "Maintainer"
     email = "mailto:zhoupinggao@huawei.com"
     gitee = "https://gitee.com/zankyfun4"
