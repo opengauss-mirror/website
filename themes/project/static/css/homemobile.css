@@ -172,6 +172,9 @@
     margin: 0 0 30px 0;
     line-height: .4rem;
   }
+  .content_character_lists ul .download-overview span {
+    text-align: center;
+  }
   .content_character_lists ul li:nth-child(1) {
     margin-bottom: 30px;
   }
