@@ -54,6 +54,12 @@ other = "Comprehensive end-to-end security protection"
 [feature_intro_four]
 other = "AI-based parameter tuning"
 
+[feature_intro_More]
+other = "Want to know more about openGauss?"
+
+[feature_intro_Overview]
+other = "Click here to download openGauss Overview Slides."
+
 [main_news_title]
 other = "Latest Info"
 
