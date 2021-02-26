@@ -16,7 +16,7 @@ openGauss源代码托管在码云（Gitee）：https://gitee.com/opengauss
 
 ### 2. 签署CLA
 
-在参与社区贡献前，您还需要签署[openGauss社区贡献者许可协议（CLA）](https://opengauss.org/zh/cla.html)。
+在参与社区贡献前，您还需要签署[openGauss社区贡献者许可协议（CLA）](https://clasign.osinfra.cn/sign/Z2l0ZWUlMkZvcGVuZ2F1c3M=)。
 
 
 ### 3. 找到您感兴趣的SIG

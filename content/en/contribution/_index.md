@@ -16,7 +16,7 @@ Please refer to <http://git.mydoc.io/?t=179267> to register your Gitee account a
 
 ### 2. Signing the Contributor License Agreement (CLA)
 
-Please sign the [Contributor License Agreement (CLA)](https://opengauss.org/en/cla.html) before participating in the community contribution.
+Please sign the [Contributor License Agreement (CLA)](https://clasign.osinfra.cn/sign/Z2l0ZWUlMkZvcGVuZ2F1c3M=) before participating in the community contribution.
 
 ### 3. Finding Your Interests
 
