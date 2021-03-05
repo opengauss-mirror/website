@@ -1,12 +1,12 @@
 +++
 member = "iot"
 title ="IoT"
-goto = "前往Gitee仓库"
+goto = "Go to Gitee home page"
 gitlink = "https://gitee.com/opengauss/tc/tree/master/sigs/IoT"
-list = "邮件列表："
+list = "Mailing List: "
 email = "iot@opengauss.org"
 maillink = "mailto:iot@opengauss.org"
-core = "核心成员："
+core = "Core Members"
 
 
 [[card]]

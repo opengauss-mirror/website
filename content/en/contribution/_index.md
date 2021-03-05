@@ -36,7 +36,8 @@ You can find the SIGs you are interested in from the SIG list below.
 | [Security](https://gitee.com/opengauss/tc/tree/master/sigs/Security) | Develop and maintain the security of the openGauss community. |
 | [OM](https://gitee.com/opengauss/tc/tree/master/sigs/OM) | Develop and maintain the operation and deployment of openGauss. |
 | [IoT](https://gitee.com/opengauss/tc/tree/master/sigs/IoT) | Develop and maintain the IoT of the openGauss community. |
-| [In-place Update](https://gitee.com/opengauss/tc/tree/master/sigs/In-place-Update) | Develop and maintain the in-place update of the openGauss community.|
+| [In-place Update](https://gitee.com/opengauss/tc/tree/master/sigs/In-place-Update) | Develop and maintain the in-place update of the openGauss community. |
+| [AI](https://gitee.com/opengauss/tc/tree/master/sigs/AI) | Develop and maintain the AI of the openGauss community. |
 
 
 ### 4. Starting Your Contribution
