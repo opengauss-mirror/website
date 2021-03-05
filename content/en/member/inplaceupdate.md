@@ -1,12 +1,12 @@
 +++
 member = "inplaceupdate"
 title ="In-place Update"
-goto = "前往Gitee仓库"
+goto = "Go to Gitee home page"
 gitlink = "https://gitee.com/opengauss/tc/tree/master/sigs/In-place-Update"
-list = "邮件列表："
+list = "Mailing List: "
 email = "inplaceupdate@opengauss.org"
 maillink = "mailto:inplaceupdate@opengauss.org"
-core = "核心成员："
+core = "Core Members"
 
 
 [[card]]
