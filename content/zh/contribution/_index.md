@@ -38,6 +38,7 @@ SIG是开放的，欢迎任何人加入并参与贡献。每一个SIG在码云�
 | [OM](https://gitee.com/opengauss/tc/tree/master/sigs/OM) | 负责openGauss安装部署的开发和维护。 |
 | [IoT](https://gitee.com/opengauss/tc/tree/master/sigs/IoT) | 负责openGauss IoT 开发和维护。 |
 | [In-place Update](https://gitee.com/opengauss/tc/tree/master/sigs/In-place-Update) | 负责openGauss社区in-place update引擎的开发和维护。|
+| [AI](https://gitee.com/opengauss/tc/tree/master/sigs/AI) | 负责openGauss社区AI的开发和维护。|
 
 
 ### 4. 开始您的贡献
