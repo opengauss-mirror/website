@@ -8,9 +8,15 @@ $(function () {
             $(target).addClass('active').siblings().removeClass('active');
         });
     }
+
+    var sortDate = function (date) {
+        let a = date;
+        return a.date.substring(8, 10) === '' ? Number(a.date.substring(0, 4) + a.date.substring(5, 7) + '00') : Number(a.date.substring(0, 4) + a.date.substring(5, 7) + a.date.substring(8, 10));
+    };
+
     var dateFormat = function (date, element) {
         if (lang === 'zh') {
-            let dateTile = date.replace('\/', '年') + '月'
+            let dateTile = date.includes('\/') ? date.replace('\/', '年') + '月' :  date.replace('.', '年') + '月';
             element.find('.event-item-time').text(dateTile);
         }
         if (lang === 'en') {
@@ -28,22 +34,29 @@ $(function () {
                 November: '11',
                 December: '12'
             }
-            let currentDate = date.split('/')
-            let currentMonth = currentDate[1]
-            let currentYear = currentDate[0]
-            let keys = Object.keys(dataMonth)
+            let currentDate = date.includes('/') ? date.split('/') : date.split('.');
+            let currentMonth = currentDate[1];
+            let currentYear = currentDate[0];
+            let keys = Object.keys(dataMonth);
             for (let key of keys) {
-                let value = dataMonth[key]
+                let value = dataMonth[key];
                 if (value === currentMonth) {
-                    let dataTile = key + ' ' + currentYear
+                    let dataTile = key + ' ' + currentYear;
                     element.find('.event-item-time').text(dataTile);
-
                 }
             }
         }
     }
 
     var newEventList = [];
+    var timesList = [];
+
+    var date = new Date();
+    var curMonth = (date.getMonth() < 9) ? ('0' + (date.getMonth() + 1)) : date.getMonth() + 1;
+    var monthDate = (date.getDate().toString().length === 1) ? ('0' + date.getDate()) : date.getDate();
+    var curYearMonth = Number('' + date.getFullYear() + curMonth);
+    var curDate = Number('' + date.getFullYear() + curMonth + monthDate);
+
     var checkFlag = false;
     eventList = eventList.sort(function (a, b){
         var sortResult = Number(b.date.substring(0, 4) + b.date.substring(5, 7)+ a.date.substring(8, 10)) - Number(a.date.substring(0, 4) + a.date.substring(5, 7) + b.date.substring(8, 10));
@@ -54,6 +67,23 @@ $(function () {
         }
         return sortResult;
     })
+
+    eventList = eventList.filter(function (item) {
+        var dateTemp = item.date.split('-');
+        if(!item.date.includes('-')){
+            return true;
+        }
+        if(item.date.includes('-')){
+            if((Number(dateTemp[0].substring(0, 4) + dateTemp[0].substring(5, 7)) < curYearMonth) && (curYearMonth < Number(dateTemp[1].substring(0, 4) + dateTemp[1].substring(5, 7)))){
+                item.realMonth = date.getFullYear() + '/' + curMonth;
+                timesList.push(item);
+                return false;
+            }else{
+                return true;
+            }
+        }
+    })
+
     eventList.forEach(function (item, index) {
         if(index){
             checkFlag = false;
@@ -70,8 +100,25 @@ $(function () {
                 })
             }
         }else{
+
             newEventList.push({
                 month: item.date.split('-')[0].substring(0, 7),
+                eventList: [item]
+            })
+        }
+    })
+
+    timesList.forEach(function(item) {
+        checkFlag = false;
+        newEventList.forEach(function (newItem) {
+            if(item.realMonth.includes(newItem.month)){
+                checkFlag = true;
+                newItem.eventList.push(item);
+            }
+        })
+        if(!checkFlag){
+            newEventList.push({
+                month: item.realMonth,
                 eventList: [item]
             })
         }
@@ -81,10 +128,6 @@ $(function () {
         return Number(b.month.substring(0, 4) + b.month.substring(5, 7)) - Number(a.month.substring(0, 4) + a.month.substring(5, 7));
     })
 
-    var date = new Date();
-    var curMonth = (date.getMonth() < 9) ? ('0' + (date.getMonth() + 1)) : date.getMonth() + 1;
-    var curDate = (date.getDate().toString().length === 1) ? ('0' + date.getDate()) : date.getDate();
-    var curDate = Number('' + date.getFullYear() + curMonth + curDate);
     var filterFlag = false;
     newEventList.forEach(function (item) {
         filterFlag = false;
@@ -116,7 +159,7 @@ $(function () {
         }
     })
 
-    var checkAllFlag = 0;;
+    var checkAllFlag = 0;
     newEventList.forEach(function (item) {
         checkAllFlag = false;
         item.eventList.forEach(function (secondItem) {
@@ -134,10 +177,15 @@ $(function () {
     var olderOutsideDom = null;
     var olderInsideDom = null;
     newEventList.reverse().forEach(function (item){
-
+        item.eventList.sort((a, b) => {
+            a = sortDate(a);
+            b = sortDate(b);
+            return a - b;
+        })
         if(item.isLatest){
             if($(window).innerWidth() > 992){
                 outsideDom = $('.js-clone-out').clone().removeClass('hide').removeClass('js-clone-out');
+                dateFormat(item.month, $(outsideDom));
                 item.eventList.forEach(function (itemEvent){
                     if(itemEvent.isLatest){
                         insideDom = $('.js-clone-inside').clone().removeClass('hide').removeClass('js-clone-inside');
@@ -160,7 +208,6 @@ $(function () {
 
                 })
                 $('.js-latest-event').append($(outsideDom));
-                dateFormat(item.month, $(outsideDom))
             }else{
                 outsideDom = $('.js-latest-h5-outside').clone().removeClass('hide').removeClass('js-latest-h5-outside');
                 item.eventList.forEach(function (itemEvent){
