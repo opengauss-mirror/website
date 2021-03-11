@@ -107,3 +107,86 @@ p {
 .organ-quota-content {
     margin-right: 7px;
 }
+._page_container ul li:nth-child(1) {
+    width: unset;
+    margin-left: unset;
+}
+._page_container ul li:nth-child(2) {
+    width: unset;
+}
+._page_container ul li:nth-child(3) {
+    width: unset;
+}
+._page_container li {
+    height: unset;
+    line-height: unset;
+}
+.con-statistics {
+    margin-bottom: 100px;
+}
+@media screen and (max-width: 1000px) {
+    .organization-info {
+        display: block;
+    }
+    .info-table ul li:nth-child(1) {
+        width: 50px;
+        margin-left: 15px;
+    }
+    .info-table ul li:nth-child(2) {
+        width: 183px;
+    }
+    ._page_container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px !important;
+    }
+    ._page_container ul li:nth-child(1) {
+        width: unset;
+        margin-left: unset;
+    }
+    ._page_container ul li:nth-child(2) {
+        width: unset;
+    }
+    ._page_container li {
+        height: unset;
+        line-height: unset;
+    }
+    #id-stats-pie {
+        margin-top: 30px;
+    }
+    .individual-info {
+        overflow: hidden;
+        overflow-x: auto;
+    }
+    .individual-info .info-table {
+        width: 760px;
+        overflow: hidden;
+    }
+    .info-table ul li:nth-child(4) {
+        width: 75px;
+    }
+    .info-table ul li:nth-child(3) {
+        width: 200px;
+    }
+    .info-table ul li:nth-child(5) {
+        width: 85px;
+    }
+    .info-table ul li:nth-child(6) {
+        width: 115px;
+    }
+    .organization-info ul li:nth-child(3) {
+        width: 87px;
+    }
+    ._page_container ul li:nth-child(3) {
+        width: unset;
+    }
+    .con-statistics {
+        margin-bottom: 60px;
+    }
+    .con-statistics h4 {
+        text-align: center;
+    }
+    .quota-title {
+        text-align: center;
+    }
+}

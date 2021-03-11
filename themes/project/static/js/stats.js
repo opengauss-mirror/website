@@ -183,7 +183,6 @@ var privateMethods = {
         $(element).on('click', function (e) {
             let target = e.target;
             if (target.className.includes('search-cancel')) {
-                // $('.js-indivi-pr-descending.down').attr('src', '/img/sortDown.svg');
 
                 if (element.includes('organ')) {
                     delete privateMethods.individualData.organizationSearchKey;
@@ -401,7 +400,6 @@ var init =  function (){
         $(this).siblings('.search-cancel').remove();
         $(this).parent().append('<img class="search-cancel" src="/img/searchCancel.svg" alt="">');
     });
-    // $('.individual-info .table-title').on('click', function (e) {
     $('.indivi-sort-click').on('click', function (e) {
         let target = e.target;
 
@@ -448,7 +446,13 @@ var init =  function (){
     })
     privateMethods.bindCancelEvent('.js-indivi-indivi');
     privateMethods.bindCancelEvent('.js-indivi-organ')
-};
+
+    if(document.body.clientWidth < 1000) {
+        $('#id-stats-pie').width(345)
+        $('#id-stats-pie').height(257)
+    }
+
+    };
 
     init();
 })
