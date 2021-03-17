@@ -30,4 +30,10 @@ title = "Committer"
 email = "mailto:zhangxubo1@huawei.com"
 gitee = "https://gitee.com/zhang_xubo"
 
+[[card]]
+img = "/zh/member/img/zhengyuhang.png"
+name = "郑宇航"
+title = "Committer"
+email = "mailto:zhengyuhang@huawei.com"
+gitee = "https://gitee.com/zhengyuhanghans"
 +++
