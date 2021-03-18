@@ -37,4 +37,10 @@ title = "Committer"
 email = "mailto:545612025@qq.com"
 gitee = "https://gitee.com/yang558"
 
+[[card]]
+img = "/zh/member/img/pengjiong.png"
+name = "彭炯"
+title = "Committer"
+email = "mailto:pengjiong1@huawei.com"
+gitee = "https://gitee.com/totaj"
 +++
