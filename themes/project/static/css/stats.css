@@ -124,6 +124,9 @@ p {
 .con-statistics {
     margin-bottom: 100px;
 }
+.wraper {
+    display: none;
+}
 @media screen and (max-width: 1000px) {
     .organization-info {
         display: block;
@@ -188,5 +191,12 @@ p {
     }
     .quota-title {
         text-align: center;
+    }
+    .wraper {
+        display: block;
+        color: rgba(0, 0, 0, 0.4);
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 12px;
     }
 }

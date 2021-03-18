@@ -118,8 +118,10 @@ var privateMethods = {
             },
             legend: {
                 show: true,
-                orient: 'vertical',
-                top: '40%',
+                // orient: 'vertical',
+                orient: 'horizontal',
+                // top: '40%',
+                top: '14%',
                 right: '0%',
                 textStyle: {
                     color: '#000',
@@ -134,11 +136,11 @@ var privateMethods = {
             series: [
                 {
                     type: 'pie',
-                    radius: ['40%', '60%'], //调整环图内圈&外圈大小
-                    center: ['45%', '54%'], //调整饼图左右&上下位置
+                    radius: ['60%', '80%'], //调整环图内圈&外圈大小
+                    center: ['50%', '64%'], //调整饼图左右&上下位置
                     avoidLabelOverlap: false,
                     itemStyle: {
-                        borderRadius: 10,
+                        borderRadius: 4,
                         borderWidth: 2,
                         borderColor: '#fff'
                     },
@@ -449,7 +451,7 @@ var init =  function (){
 
     if(document.body.clientWidth < 1000) {
         $('#id-stats-pie').width(345)
-        $('#id-stats-pie').height(257)
+        $('#id-stats-pie').height(400)
     }
 
     };
