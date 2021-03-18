@@ -457,7 +457,7 @@ paginate = 10
 
 [params.rightText]
     enable = true
-    text = "Copyright © openGauss 2020. All rights reserved."
+    text = "Copyright © openGauss 2021. All rights reserved."
 
 [languages.zh.params.copyright]
     enable = true
@@ -465,7 +465,7 @@ paginate = 10
 
 [languages.zh.params.rightText]
     enable = true
-    text = "版权所有 © openGauss 2020 保留一切权利"
+    text = "版权所有 © openGauss 2021 保留一切权利"
 
 [languages]
 

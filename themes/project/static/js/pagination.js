@@ -141,7 +141,10 @@ var Pagination = /** @class */ (function () {
                 _this_1.handleChangePage(_this_1.options.pageIndex + 1);
             }
         });
-        container.append(`${(isZh ? '共 ' : 'Total ') + this.options.total + (isZh ? ' 条' : '')}`);
+        let totalStr = isZh ? '共 ' : 'Total '
+        let tiaoStr = isZh ? ' 条' : ''
+        let t = document.createTextNode(totalStr + this.options.total + tiaoStr)
+        container.appendChild(t)
         ul.appendChild(this.next);
         // 尾页
         if (this.options.type <= 1) {

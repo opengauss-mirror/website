@@ -16,7 +16,7 @@ Please refer to <http://git.mydoc.io/?t=179267> to register your Gitee account a
 
 ### 2. Signing the Contributor License Agreement (CLA)
 
-Please sign the [Contributor License Agreement (CLA)](https://opengauss.org/en/cla.html) before participating in the community contribution.
+Please sign the [Contributor License Agreement (CLA)](https://clasign.osinfra.cn/sign/Z2l0ZWUlMkZvcGVuZ2F1c3M=) before participating in the community contribution.
 
 ### 3. Finding Your Interests
 
@@ -27,14 +27,17 @@ You can find the SIGs you are interested in from the SIG list below.
 
 | SIG Name | Scope of Responsibility |
 | :------- | :--------------- |
-| SQLEngine | Develop and maintain the SQL engines of the openGauss community. |
-| StorageEngine | Develop and maintain the storage engine of the openGauss community. |
-| Connectors | Develop and maintain the connectors of the openGauss community. |
-| Tools | Develop and maintain the tools of the openGauss community. |
-| Docs | Develop and maintain the documents of the openGauss community. |
-| Infra | Develop and maintain the infrastructure of the openGauss community. |
-| Security | Develop and maintain the security of the openGauss community. |
-| OM | Develop and maintain the operation and deployment of openGauss |
+| [SQLEngine](https://gitee.com/opengauss/tc/tree/master/sigs/SQLEngine) | Develop and maintain the SQL engines of the openGauss community. |
+| [StorageEngine](https://gitee.com/opengauss/tc/tree/master/sigs/StorageEngine) | Develop and maintain the storage engine of the openGauss community. |
+| [Connectors](https://gitee.com/opengauss/tc/tree/master/sigs/Connectors) | Develop and maintain the connectors of the openGauss community. |
+| [Tools](https://gitee.com/opengauss/tc/tree/master/sigs/Tools) | Develop and maintain the tools of the openGauss community. |
+| [Docs](https://gitee.com/opengauss/tc/tree/master/sigs/Docs) | Develop and maintain the documents of the openGauss community. |
+| [Infra](https://gitee.com/opengauss/tc/tree/master/sigs/Infra) | Develop and maintain the infrastructure of the openGauss community. |
+| [Security](https://gitee.com/opengauss/tc/tree/master/sigs/Security) | Develop and maintain the security of the openGauss community. |
+| [OM](https://gitee.com/opengauss/tc/tree/master/sigs/OM) | Develop and maintain the operation and deployment of openGauss. |
+| [IoT](https://gitee.com/opengauss/tc/tree/master/sigs/IoT) | Develop and maintain the IoT of the openGauss community. |
+| [In-place Update](https://gitee.com/opengauss/tc/tree/master/sigs/In-place-Update) | Develop and maintain the in-place update of the openGauss community. |
+| [AI](https://gitee.com/opengauss/tc/tree/master/sigs/AI) | Develop and maintain the AI of the openGauss community. |
 
 
 ### 4. Starting Your Contribution

@@ -39,7 +39,7 @@ gitee = "https://gitee.com/li-jun056"
 
 [[card]]
 img = "/zh/member/img/jiangnan.png"
-name = "Jiang Nan"
+name = "Nan Jiang"
 title = "Committer"
 email = "mailto:docs66@outlook.com"
 gitee = "https://gitee.com/infomation1"

@@ -16,7 +16,7 @@ openGauss源代码托管在码云（Gitee）：https://gitee.com/opengauss
 
 ### 2. 签署CLA
 
-在参与社区贡献前，您还需要签署[openGauss社区贡献者许可协议（CLA）](https://opengauss.org/zh/cla.html)。
+在参与社区贡献前，您还需要签署[openGauss社区贡献者许可协议（CLA）](https://clasign.osinfra.cn/sign/Z2l0ZWUlMkZvcGVuZ2F1c3M=)。
 
 
 ### 3. 找到您感兴趣的SIG
@@ -36,6 +36,9 @@ SIG是开放的，欢迎任何人加入并参与贡献。每一个SIG在码云�
 | [Infra](https://gitee.com/opengauss/tc/tree/master/sigs/Infra) | 负责openGauss社区基础设施的开发和维护。 |
 | [Security](https://gitee.com/opengauss/tc/tree/master/sigs/Security) | 负责openGauss社区安全的开发和维护。 |
 | [OM](https://gitee.com/opengauss/tc/tree/master/sigs/OM) | 负责openGauss安装部署的开发和维护。 |
+| [IoT](https://gitee.com/opengauss/tc/tree/master/sigs/IoT) | 负责openGauss IoT 开发和维护。 |
+| [In-place Update](https://gitee.com/opengauss/tc/tree/master/sigs/In-place-Update) | 负责openGauss社区in-place update引擎的开发和维护。|
+| [AI](https://gitee.com/opengauss/tc/tree/master/sigs/AI) | 负责openGauss社区AI的开发和维护。|
 
 
 ### 4. 开始您的贡献

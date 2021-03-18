@@ -13,13 +13,19 @@
                         <img loading="lazy" class="img-static isPc" src="{{ .image }}">
                         <img class="img-gif hidding" src="{{ .image_gif }}">
                         <img class="img-gif isH5" src="{{ .image_gif }}">
-
                     </div>
                         
                     <h4>{{ i18n .title }}</h4>
                     <p>{{ i18n .description }}</p>                    
                 </li>
                 {{ end  }}
+
+                <li class="download-overview">
+                    <a href="https://learningvideo.obs.ap-southeast-1.myhuaweicloud.com/openGauss%20%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84.pptx" download>
+                        <span>{{ i18n "feature_intro_More"}}</span>
+                        <span>{{ i18n "feature_intro_Overview"}}</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

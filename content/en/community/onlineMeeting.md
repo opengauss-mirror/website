@@ -15,6 +15,9 @@ openGauss community organizations can choose different channels to carry out onl
 | [SIG Tools](https://gitee.com/opengauss/tc/tree/master/sigs/Tools) | Develop and maintain the tools of the openGauss community. |
 | [SIG Docs](https://gitee.com/opengauss/tc/tree/master/sigs/Docs) | Develop and maintain the documents of the openGauss community. |
 | [SIG Infra](https://gitee.com/opengauss/tc/tree/master/sigs/Infra) | Develop and maintain the infrastructure of the openGauss community. |
+| [SIG IoT](https://gitee.com/opengauss/tc/tree/master/sigs/IoT) | Develop and maintain the IoT of the openGauss community. |
+| [SIG In-place Update](https://gitee.com/opengauss/tc/tree/master/sigs/In-place-Update) | Develop and maintain the in-place update of the openGauss community.|
+| [SIG AI](https://gitee.com/opengauss/tc/tree/master/sigs/AI) | Develop and maintain the AI of the openGauss community.|
 
 ### 1. WeLink Meeting
 

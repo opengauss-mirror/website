@@ -56,34 +56,11 @@ other = "端到端全方位安全防护"
 [feature_intro_four]
 other = "基于AI的智能参数调优"
 
+[feature_intro_More]
+other = "想了解更多？"
 
-
-# [feature_title_one]
-# other = "高可靠"
-#
-# [feature_title_two]
-# other = "易运维"
-#
-# [feature_title_three]
-# other = "高性能"
-#
-# [feature_title_four]
-# other = "高安全"
-#
-# [feature_intro_one]
-# other = "故障切换时间RTO<10s"
-#
-# [feature_intro_two]
-# other = "基于AI的智能参数调优"
-#
-# [feature_intro_three]
-# other = "两路鲲鹏性能150万tpmC"
-#
-# [feature_intro_four]
-# other = "端到端全方位安全防护"
-#
-# [main_news_title]
-# other = "最新社区资讯"
+[feature_intro_Overview]
+other = "点击此处下载openGauss整体概述PPT"
 
 [main_news_title]
 other = "最新社区资讯"
