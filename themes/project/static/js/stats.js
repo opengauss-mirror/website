@@ -179,7 +179,7 @@ var privateMethods = {
             .parent().siblings().each(function () {
             $(this).find('.down').attr('src', '/img/defaultDown.svg');
             $(this).find('.up').attr('src', '/img/defaultUp.svg');
-        })
+        });
     },
     bindCancelEvent: function (element) {
         $(element).on('click', function (e) {
@@ -389,7 +389,7 @@ var init =  function (){
             privateMethods.individualData.pageSize = $('#id-individual-pages').find('option:selected').text();
             privateMethods.individualData.sortKey = 'pr';
             privateMethods.individualData.sortValue = 'descending';
-            privateMethods.individualData.currentPage = 1
+            privateMethods.individualData.currentPage = 1;
             privateMethods.individualData.organizationSearchKey = $('.individual-organ-input').val();
 
 
@@ -404,8 +404,6 @@ var init =  function (){
     });
     $('.indivi-sort-click').on('click', function (e) {
         let target = e.target;
-
-        if (target.className.includes(''))
 
         privateMethods.individualData.sortKey = '';
         $('.individual-info .table-title').find('.down').attr('src', '/img/defaultDown.svg');
@@ -447,11 +445,11 @@ var init =  function (){
         }
     })
     privateMethods.bindCancelEvent('.js-indivi-indivi');
-    privateMethods.bindCancelEvent('.js-indivi-organ')
+    privateMethods.bindCancelEvent('.js-indivi-organ');
 
     if(document.body.clientWidth < 1000) {
-        $('#id-stats-pie').width(345)
-        $('#id-stats-pie').height(400)
+        $('#id-stats-pie').width(345);
+        $('#id-stats-pie').height(400);
     }
 
     };

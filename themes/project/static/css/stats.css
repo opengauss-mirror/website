@@ -4,8 +4,7 @@ p {
 }
 .info-table li {
     display: inline-block;
-    height: 48px;
-    line-height: 48px;
+    padding: 15px 0;
     color: #4D4D4D;
 }
 .info-table ul li:nth-child(1) {
@@ -113,6 +112,7 @@ p {
 }
 ._page_container ul li:nth-child(2) {
     width: unset;
+    padding: unset;
 }
 ._page_container ul li:nth-child(3) {
     width: unset;
