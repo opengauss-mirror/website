@@ -1,6 +1,7 @@
 +++
 title = "啥？openGauss Meetup将在深圳举行？"
 time = "2021/03/26"
+date = "2021-03-26"
 tags = "会议"
 label = "线下"
 location = "深圳"
