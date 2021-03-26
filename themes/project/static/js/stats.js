@@ -37,8 +37,7 @@ var privateMethods = {
             prevText: '<',
             nextText: '>',
             disabled: true,
-            currentChange: function(index) {
-                // scrollTo(0, 0);
+            currentChange: function (index) {
                 data.currentPage = index;
                 statsMethods.getData(data);
             }
@@ -58,7 +57,6 @@ var privateMethods = {
             nextText: '>',
             disabled: true,
             currentChange: function(index) {
-                // scrollTo(0, 0);
                 data.currentPage = index;
                 statsMethods.getData(data);
             }
@@ -66,10 +64,10 @@ var privateMethods = {
     },
     getMaxTop: function (arr, len) {
         var max = [];
-        arr.sort(function(a,b){
-            return a-b;
+        arr.sort(function (a,b) {
+            return a - b;
         });
-        for(var i=0;i<len;i++){
+        for(var i = 0; i < len; i++) {
             max.push(arr.pop());
         }
         return max;
@@ -85,8 +83,6 @@ var privateMethods = {
         var myChart = echarts.init(document.getElementById('id-stats-pie'));
         var statsPieOption = {
             color: [
-                // '#42105F',
-                // '#56167D',
                 '#6A1B9A',
                 '#942D93',
                 '#BE408C',
@@ -98,9 +94,7 @@ var privateMethods = {
                 '#eaf3db',
                 '#75C6D1'
             ],
-            // backgroundColor: '#fff',
             title: {
-                // text: `${lang = 'zh'? '组织'+${data.name}+'贡献占比' : data.name }`,
                 text: `组织 ${data.name} 贡献占比`,
                 left: 'center',
                 top: '0%',
@@ -118,9 +112,7 @@ var privateMethods = {
             },
             legend: {
                 show: true,
-                // orient: 'vertical',
                 orient: 'horizontal',
-                // top: '40%',
                 top: '14%',
                 right: '0%',
                 textStyle: {
@@ -136,8 +128,8 @@ var privateMethods = {
             series: [
                 {
                     type: 'pie',
-                    radius: ['60%', '80%'], //调整环图内圈&外圈大小
-                    center: ['50%', '64%'], //调整饼图左右&上下位置
+                    radius: ['60%', '80%'],
+                    center: ['50%', '64%'],
                     avoidLabelOverlap: false,
                     itemStyle: {
                         borderRadius: 4,
@@ -146,7 +138,6 @@ var privateMethods = {
                     },
                     label: {
                         show: false,
-                        // show:true,
                         formatter: '{d}%',
                         textStyle: {
                             color: '#000',
