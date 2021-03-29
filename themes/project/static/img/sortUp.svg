@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="8px" height="4px" viewBox="0 0 8 4" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Shape</title>
+    <g id="PC" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Stat_zh_UI" transform="translate(-1166.000000, -1207.000000)" fill="#7D32EA">
+            <g id="Individual" transform="translate(400.000000, 1068.000000)">
+                <g id="Table2" transform="translate(0.000000, 120.000000)">
+                    <g id="matric" transform="translate(690.000000, 12.000000)">
+                        <polygon id="Shape" transform="translate(80.000000, 9.000000) scale(1, -1) translate(-80.000000, -9.000000) " points="76 7 84 7 80 11"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

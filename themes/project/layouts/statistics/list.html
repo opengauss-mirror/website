@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+{{ partial "head.html" . }}
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.0.1/dist/echarts.min.js"></script>
+<link href="{{ "css/stats.css" | relURL}}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet">
+<link rel="stylesheet" href="{{ "css/pagination.css" | relURL}}?t={{ mul 1000 (time now).Unix }}">
+
+<body>
+
+<div id="all">
+
+    <header>
+
+        {{ partial "nav.html" . }}
+
+    </header>
+
+    {{ partial "breadcrumbs.html" . }}
+
+    <div id="content">
+        <div class="container">
+            <div class="con-statistics">
+                <div class="con-organization">
+                    <h4>组织贡献统计</h4>
+                    <p class="quota-title">
+                        统计指标
+                        <select name="quota" id="id-organization-quota">
+                            <option value="PR">PR</option>
+                            <option value="Issue">Issue</option>
+                            <option value="Comment">Comments</option>
+                        </select>
+                    </p>
+                    <p style="display: none">
+                        显示
+                        <select name="pages" id="id-organization-pages">
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="30">30</option>
+                        </select>
+                        条结果
+                    </p>
+                    <div class="organization-info">
+                        <div class="info-table">
+                            <ul class="table-title">
+                                <li>排名</li>
+                                <li>组织 <input class="organization-organize-input" type="text" placeholder="输入组织名称搜索"></li>
+                                <li class="js-organ-quota" onselectstart="return false"><span class="organ-quota-content">PR </span><img class="down" src="/img/sortDown.svg" alt=""><img class="up" src="/img/defaultUp.svg" alt=""></li>
+                            </ul>
+                            <div class="js-organ-table"></div>
+                            <div id="id-pagination-organization"></div>
+
+                        </div>
+                        <div class="info-chart">
+                            <div id="id-stats-pie" style="width: 380px;height:530px;"></div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="con-individual">
+                    <h4>个人贡献统计</h4>
+                    <p class="wraper">左右滑动以显示更多内容</p>
+                    <p style="display: none">
+                        显示
+                        <select name="pages" id="id-individual-pages">
+
+                            <option value="PR">10</option>
+                            <option value="PR">25</option>
+                            <option value="PR">30</option>
+                        </select>
+                        条结果
+                    </p>
+                    <div class="individual-info">
+                        <div class="info-table">
+                            <ul class="table-title">
+                                <li>排名</li>
+                                <li class="js-indivi-indivi">个人 <input class="individual-indivi-input" type="text" placeholder="输入Gitee ID搜索"></li>
+                                <li class="js-indivi-organ">组织 <input class="individual-organ-input" type="text" placeholder="输入组织名称搜索"></li>
+                                <li class="indivi-pr indivi-sort-click"  onselectstart="return false">PR <img class="down js-indivi-pr-descending" src="/img/sortDown.svg" alt=""><img class="up js-indivi-pr" src="/img/defaultUp.svg" alt=""></li>
+                                <li class="indivi-issue indivi-sort-click" onselectstart="return false">Issue <img class="down js-indivi-issue-descending" src="/img/defaultDown.svg" alt=""><img class="up js-indivi-issue" src="/img/defaultUp.svg" alt=""></li>
+                                <li class="indivi-comments indivi-sort-click" onselectstart="return false">Comments <img class="down js-indivi-comments-descending" src="/img/defaultDown.svg" alt=""><img class="up js-indivi-comments" src="/img/defaultUp.svg" alt=""></li>
+                            </ul>
+                            <div class="js-indivi-table"></div>
+                        </div>
+                    </div>
+                    <div id="id-pagination-individual"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {{ partial "footer.html" . }}
+
+</div>
+{{ partial "scripts.html" . }}
+<script src="{{ "js/pagination.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>
+<script src="{{ "js/stats.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>
+<script>
+
+</script>
+</body>
+</html>
