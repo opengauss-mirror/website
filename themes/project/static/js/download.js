@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $(".download-sel-version").M_select({
         'radius': '4px',
-        'selected': '3',
+        'selected': '4',
         Succee:function(option){
             console.log(option)
             $("div[class*=download-version-]").addClass("hide");
@@ -22,5 +22,5 @@ $(document).ready(function () {
                 },1500)
             }
         })
-      })
+    });
 })
