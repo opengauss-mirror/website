@@ -41,7 +41,7 @@ paginate = 10
 [[menu.main]]
     identifier = "docs"
     name = "Docs"
-    url  = "/en/docs/1.0.1/docs/Quickstart/Quickstart.html"
+    url  = "/en/docs/2.0.0/docs/Quickstart/Quickstart.html"
     weight = 3
 
 [[menu.main]]
