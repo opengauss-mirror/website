@@ -239,6 +239,13 @@
 #post-content h3 {
     color: #000;
 }
+.meetup20210326 th,
+.meetup20210326 td {
+    padding: 0 20px;
+    line-height: 32px;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.07);
+}
 @media screen and (min-width: 995px){
     .isPC.event-title {
         display: block;

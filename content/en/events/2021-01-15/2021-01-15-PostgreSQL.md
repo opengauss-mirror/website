@@ -9,7 +9,6 @@ img_mobile = '/zh/events/2021-01-15/banner.png'
 link = "http://pgconf2020.postgres.cn/schedule.html"
 author = "openGauss"
 summary = "openGauss将参加第十届PostgreSQL中国技术大会，分享Keynote、Session。"
-weight = 1
 
 +++
 
