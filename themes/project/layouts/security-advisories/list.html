@@ -2,7 +2,8 @@
 <html lang="{{ .Site.LanguageCode }}">
 
   {{ partial "head.html" . }}
-  <link href="{{ "css/security.css" | relURL}}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet">
+  <link rel="stylesheet" href="{{ "css/pagination.css" | relURL}}?t={{ mul 1000 (time now).Unix }}">
+  <link href="{{ "css/cve.css" | relURL}}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet">
 
   <body>
 
@@ -26,7 +27,42 @@
             <div class="container">
 
                 <div class="security-advisories">
-                    {{ .Content }}
+                    <div class="ad-form">
+                        <span>{{ .Params.search }}<input class="search-input js-search-event" type="text" placeholder={{ .Params.search_placeholder }}><img class="js-search-icon search-click" src="/img/gray-search.svg"></span>
+                        <ul class="radio-group">
+                            <li class="js-ALL active">ALL</li>
+                            <li class="js-Low">Low</li>
+                            <li class="js-Medium">Medium</li>
+                            <li class="js-High">High</li>
+                            <li class="js-Critical">Critical</li>
+                        </ul>
+                        <lable>
+                            {{ .Params.year }}
+                            <select name="" id="id-select-year">
+                                <option value="All">All</option>
+                                <option value="2021">2021</option>
+                            </select>
+                        </lable>
+                    </div>
+
+                    <div class="ad-table">
+                        <div class="pc-table">
+                            <ul class="tables table-title">
+                                <li><span>{{ .Params.advisory }}</span></li>
+                                <li><span>{{ .Params.synopsis }}</span></li>
+                                <li><span>{{ .Params.severity }}</span></li>
+                                <li><span>{{ .Params.affected_product }}</span></li>
+                                <li><span>{{ .Params.affected_component }}</span></li>
+                                <li><span>{{ .Params.release_time }}</span></li>
+                            </ul>
+                            <div class="table-detail"></div>
+                        </div>
+                        <div class="h5-ad-table">
+
+                        </div>
+
+                        <div id="ad-pagination"></div>
+                    </div>
                 </div>
 
             </div>
@@ -42,6 +78,8 @@
     <!-- /#all -->
 
     {{ partial "scripts.html" . }}
+    <script src="{{ "js/pagination.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>
+    <script src="{{ "js/advisory.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>
 
   </body>
 </html>

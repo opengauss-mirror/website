@@ -2,7 +2,8 @@
 <html lang="{{ .Site.LanguageCode }}">
 
   {{ partial "head.html" . }}
-  <link href="{{ "css/security.css" | relURL}}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet">
+  <link rel="stylesheet" href="{{ "css/pagination.css" | relURL}}?t={{ mul 1000 (time now).Unix }}">
+  <link href="{{ "css/cve.css" | relURL}}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet">
 
   <body>
 
@@ -26,9 +27,24 @@
             <div class="container">
 
                 <div class="cve">
-                    {{ .Content }}
-                </div>
+                    <div class="ad-form">
+                        <span>{{ .Params.search }}<input class="search-input js-cve-input" type="text" placeholder={{ .Params.search_placeholder }}><img class="js-search-icon search-click" src="/img/gray-search.svg"></span>
+                    </div>
 
+                    <div class="cve-table">
+                        <ul class="tables table-title pc-table">
+                            <li><span>CVE</span></li>
+                            <li><span>{{ .Params.synopsis }}</span></li>
+                            <li><span>{{ .Params.score }}</span></li>
+                            <li><span>{{ .Params.release_time }}</span></li>
+                            <li><span>{{ .Params.modify_time }}</span></li>
+                        </ul>
+                        <div class="table-detail pc-table"></div>
+
+                        <div class="h5-cve-pack"></div>
+                        <div id="cve-pagination"></div>
+                    </div>
+                </div>
             </div>
             <!-- /.container -->
 
@@ -42,6 +58,8 @@
     <!-- /#all -->
 
     {{ partial "scripts.html" . }}
+        <script src="{{ "js/pagination.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>
+        <script src="{{ "js/cve.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>
 
   </body>
 </html>
