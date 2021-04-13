@@ -327,7 +327,9 @@ html[lang=en-us] .tables li:nth-child(5) {
 .cve-ad a:hover {
     text-decoration: none;
 }
-
+.js-cve-summary {
+    line-height: 32px;
+}
 @media screen and (max-width: 1000px){
     .pc-table,
     .pc-pack {
