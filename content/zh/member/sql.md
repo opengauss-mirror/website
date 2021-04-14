@@ -9,11 +9,11 @@ maillink = "mailto:sqlengine@opengauss.org"
 core = "核心成员："
 
 [[card]]
-    img = "/zh/member/img/lishifu.png"
-    name = "李士福"
+    img = "/zh/member/img/yangdi.png"
+    name = "杨迪"
     title = "Maintainer"
-    email = "mailto:lishifu@huawei.com"
-    gitee = "https://gitee.com/lishifu_db"
+    email = "mailto:yangdi14@huawei.com"
+    gitee = "https://gitee.com/yangdi07"
 
 
 [[card]]
@@ -23,6 +23,19 @@ core = "核心成员："
     email = "mailto:zhoupinggao@huawei.com"
     gitee = "https://gitee.com/zankyfun4"
 
+[[card]]
+    img = "/zh/member/img/zhouzhaoqi.png"
+    name = "周兆琦"
+    title = "Committer"
+    email = "mailto:zhouzhaoqi1@huawei.com"
+    gitee = "https://gitee.com/ziki77"
+
+[[card]]
+    img = "/zh/member/img/yanghao.png"
+    name = "杨皓"
+    title = "Committer"
+    email = "mailto:yanghao37@huawei.com"
+    gitee = "https://gitee.com/yanghaos"
 
 [[card]]
     img = "/zh/member/img/liuwei.png"

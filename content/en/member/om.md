@@ -9,12 +9,27 @@ maillink = "mailto:om@opengauss.org"
 core = "Core Members"
 
 
+
 [[card]]
-img = "/zh/member/img/lishifu.png"
-name = "Shifu Li"
+img = "/zh/member/img/caodongsheng.png"
+name = "Dongsheng Cao"
 title = "Maintainer"
-email = "mailto:lishifu@huawei.com"
-gitee = "https://gitee.com/lishifu_db"
+email = "mailto:caodongsheng2@huawei.com"
+gitee = "https://gitee.com/dscao"
+
+[[card]]
+img = "/zh/member/img/qiumingcheng.png"
+name = "Mingcheng Qiu"
+title = "Maintainer"
+email = "mailto:qiumingcheng@huawei.com"
+gitee = "https://gitee.com/qiumingcheng_412"
+
+[[card]]
+img = "/zh/member/img/wangzili.png"
+name = "Zili Wang"
+title = "Committer"
+email = "mailto:446406177@qq.com"
+gitee = "https://gitee.com/wang-zili"
 
 [[card]]
 img = "/zh/member/img/hangjin.png"

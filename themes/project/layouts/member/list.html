@@ -20,7 +20,7 @@
             <!-- *** LEFT COLUMN *** -->
             {{ $paginator := .Paginate (where .Data.Pages "Type" "member") 15 }}
             <div class="member col-md-12">
-                <div class="member-tech">
+                <div class="member-tech" id="tc">
                     <h2>{{ .Params.tctitle}}</h2>
                     <div class="card tc">
                         {{ range $paginator.Pages }}
@@ -55,7 +55,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="member-sigs">
+                <div class="member-sigs" id="sig">
                     <h2>{{ .Params.sigtitle}}</h2>
 
                     <div class="left-box">
@@ -219,14 +219,16 @@
                             {{ end }}
                             {{ end }}
                         </div>
-                        <div class="card boxs flow-left" style="height:442px;padding-top:155px">
-                            {{ range $paginator.Pages }}
-                            {{ if eq .Params.member "newone"}}
-                            <h4>{{ .Params.para1 }}</h4>
-                            <h4>{{ .Params.para2 }}</h4>
-                            <div>{{ .Params.para3 }} <a href="mailto:{{ .Params.link }}">{{ .Params.link}}</a></div>
-                            {{ end }}
-                            {{ end }}
+                        <div class="card boxs flow-left new-box">
+                            <div class="box-contain">
+                                {{ range $paginator.Pages }}
+                                {{ if eq .Params.member "newone"}}
+                                <h4>{{ .Params.para1 }}</h4>
+                                <h4>{{ .Params.para2 }}</h4>
+                                <div>{{ .Params.para3 }} <a href="mailto:{{ .Params.link }}">{{ .Params.link}}</a></div>
+                                {{ end }}
+                                {{ end }}
+                            </div>
                         </div>
                     </div>
                     <div class="right-box">
@@ -425,6 +427,77 @@
                         
                     </div>
                 </div>
+                <div class="member-sigs part" id="usergroup">
+                    <h2>{{ .Params.usergroup}}</h2>
+                    <div class="left-box">
+                        <div class="card boxs flow-left">
+                            {{ range $paginator.Pages }}
+                            {{ if eq .Params.member "SZusergroup"}}
+                            <h4>{{ .Params.title }}</h4>
+                            <p class="detail">
+                                <img src="/img/member/home.svg" alt="">
+                                <a href={{ .Params.gitlink}} target="_blank">{{ .Params.goto }}</a>
+                            </p>
+                            <p class="detail">
+                                <img src="/img/member/email.svg" alt="">
+                                <span>{{ .Params.list }}<a href={{ .Params.maillink }} target="_blank"> {{ .Params.email }}</a></span>
+                            </p>
+                            <p class="detail">
+                                <img src="/img/member/tc.svg" alt="">
+                                <span>{{ .Params.core }}</span>
+                            </p>
+                            <div class="item-det">
+                                {{ range .Params.card }}
+                                <div class="card-item">
+                                    <img src={{ .img }} alt="">
+                                    <p class="m-name">{{ .name }}</p>
+                                    <p class="m-title">{{ .title }}</p>
+                                    <p class="m-title">{{ .company }}</p>
+                                    <p class="m-img">
+                                        <a href="{{ .email }}" target="_blank"><img src="/img/member/toemail.svg" alt=""></a>
+                                    </p>
+                                </div>
+                                {{ end }}
+                            </div>
+                            {{ end }}
+                            {{ end}}
+                        </div>
+                    </div>
+                    <div class="right-box">
+                        <div class="card boxs flow-right new-box">
+                            <div class="box-contain">
+                                {{ range $paginator.Pages }}
+                                {{ if eq .Params.member "newusergroup"}}
+                                <h4>{{ .Params.para1 }}</h4>
+                                <h4>{{ .Params.para2 }}</h4>
+                                <div>{{ .Params.para3 }} <a href="mailto:{{ .Params.link }}">{{ .Params.link}}</a></div>
+                                {{ end }}
+                                {{ end }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="fixed-nav">
+                <div class="js-to-top to-top">
+                    <img src="/img/icon_top.svg" alt="">
+                </div>
+                <ul>
+                    <li class="active">
+                        <a href="#tc">{{ .Params.tctag}}</a>
+                        <div class="icon-circle"></div>
+                    </li>
+                    <li class="">
+                        <a href="#sig">{{ .Params.sigtag}}</a>
+                        <div class="icon-circle"></div>
+                    </li>
+                    <li class="">
+                        <a href="#usergroup">{{ .Params.usergrouptag}}</a>
+                        <div class="icon-circle"></div>
+                    </li>
+                </ul>
+                <div class="icon-line"></div>
             </div>
         </div>
     </div>

@@ -30,11 +30,11 @@ email = "mailto:lishifu@huawei.com"
 gitee = "https://gitee.com/lishifu_db"
 
 [[card]]
-img = "/zh/member/img/miuyan.png"
-name = "穆廷"
+img = "/zh/member/img/huzhengce.png"
+name = "胡正策"
 title = "Member"
-email = "mailto:muting@huawei.com"
-gitee = "https://gitee.com/jeffee"
+email = "mailto:huzhengce@huawei.com"
+gitee = "https://gitee.com/huzhengce"
 
 [[card]]
 img = "/zh/member/img/renyan.png"
