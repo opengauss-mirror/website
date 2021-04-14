@@ -16,10 +16,17 @@ email = "mailto:tianwengang@huawei.com"
 gitee = "https://gitee.com/pikeTWG"
 
 [[card]]
-img = "/zh/member/img/yanghao.png"
-name = "杨皓"
+img = "/zh/member/img/liubin.png"
+name = "刘斌"
 title = "Committer"
-email = "mailto:yanghao37@huawei.com"
-gitee = "https://gitee.com/yanghaos"
+email = "mailto:travel.liu@outlook.com"
+gitee = "https://gitee.com/travelliu"
+
+[[card]]
+img = "/zh/member/img/weixiaoyue.png"
+name = "韦晓月"
+title = "Committer"
+email = "mailto:aaronwell@qq.com"
+gitee = "https://gitee.com/aaronwell"
 
 +++

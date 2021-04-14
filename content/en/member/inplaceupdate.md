@@ -57,4 +57,25 @@ name = "Siliang Wu"
 title = "Committer"
 email = "mailto:wusiliang@cmbchina.com"
 gitee = "https://gitee.com/wu-siliang"
+
+[[card]]
+img = "/zh/member/img/linkexu.png"
+name = "Kexu Lin"
+title = "Committer"
+email = "mailto:linkexu66@outlook.com"
+gitee = "https://gitee.com/kexulin"
+
+[[card]]
+img = "/zh/member/img/ShermanLau.png"
+name = "Sherman Lau"
+title = "Committer"
+email = "mailto:sherman.lau@huawei.com"
+gitee = "https://gitee.com/ming_opengauss"
+
+[[card]]
+img = "/zh/member/img/RonenGrosman.png"
+name = "Ronen Grosman"
+title = "Committer"
+email = "mailto:ronen.grosman@huawei.com"
+gitee = "https://gitee.com/roneng"
 +++

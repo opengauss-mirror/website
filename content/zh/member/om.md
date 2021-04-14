@@ -10,11 +10,25 @@ core = "核心成员："
 
 
 [[card]]
-img = "/zh/member/img/lishifu.png"
-name = "李士福"
+img = "/zh/member/img/caodongsheng.png"
+name = "曹东升"
 title = "Maintainer"
-email = "mailto:lishifu@huawei.com"
-gitee = "https://gitee.com/lishifu_db"
+email = "mailto:caodongsheng2@huawei.com"
+gitee = "https://gitee.com/dscao"
+
+[[card]]
+img = "/zh/member/img/qiumingcheng.png"
+name = "邱明成"
+title = "Maintainer"
+email = "mailto:qiumingcheng@huawei.com"
+gitee = "https://gitee.com/qiumingcheng_412"
+
+[[card]]
+img = "/zh/member/img/wangzili.png"
+name = "王自力"
+title = "Committer"
+email = "mailto:446406177@qq.com"
+gitee = "https://gitee.com/wang-zili"
 
 [[card]]
 img = "/zh/member/img/hangjin.png"

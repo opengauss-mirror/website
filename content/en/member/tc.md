@@ -14,7 +14,6 @@ tc = "TC Members"
     email = "mailto:tianwengang@huawei.com"
     gitee = "https://gitee.com/pikeTWG"
 
-
 [[card]]
 img = "/zh/member/img/liguoliang.png"
 name = "Guoliang Li"
@@ -30,11 +29,11 @@ email = "mailto:lishifu@huawei.com"
 gitee = "https://gitee.com/lishifu_db"
 
 [[card]]
-img = "/zh/member/img/miuyan.png"
-name = "Ting Mu"
+img = "/zh/member/img/huzhengce.png"
+name = "Zhengce Hu"
 title = "Member"
-email = "mailto:muting@huawei.com"
-gitee = "https://gitee.com/jeffee"
+email = "mailto:huzhengce@huawei.com"
+gitee = "https://gitee.com/huzhengce"
 
 [[card]]
 img = "/zh/member/img/renyan.png"

@@ -9,12 +9,13 @@ maillink = "mailto:tools@opengauss.org"
 core = "核心成员："
 
 
+
 [[card]]
-img = "/zh/member/img/miuyan.png"
-name = "穆廷"
+img = "/zh/member/img/xiongxiaojun.png"
+name = "熊小军"
 title = "Maintainer"
-email = "mailto:muting@huawei.com"
-gitee = "https://gitee.com/jeffee"
+email = "mailto:xiong_xiaojun@yeah.net"
+gitee = "https://gitee.com/xiong_xjun"
 
 [[card]]
 img = "/zh/member/img/zhoubin.png"
@@ -23,12 +24,6 @@ title = "Committer"
 email = "mailto:249396768@qq.com"
 gitee = "https://gitee.com/justbk"
 
-[[card]]
-img = "/zh/member/img/xiongxiaojun.png"
-name = "熊小军"
-title = "Committer"
-email = "mailto:xiong_xiaojun@yeah.net"
-gitee = "https://gitee.com/xiong_xjun"
 
 [[card]]
 img = "/zh/member/img/zhaowenhao.png"

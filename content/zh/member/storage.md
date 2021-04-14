@@ -10,11 +10,18 @@ core = "核心成员："
 
 
 [[card]]
-img = "/zh/member/img/renyan.png"
-name = "任阳"
+img = "/zh/member/img/wanglei.png"
+name = "王磊"
 title = "Maintainer"
-email = "mailto:stanleyren_china@outlook.com"
-gitee = "https://gitee.com/stanleyren"
+email = "mailto:wanglei110@huawei.com"
+gitee = "https://gitee.com/nonolili527"
+
+[[card]]
+img = "/zh/member/img/liheng.png"
+name = "李恒"
+title = "Maintainer"
+email = "mailto:liheng37@huawei.com"
+gitee = "https://gitee.com/liheng188"
 
 [[card]]
 img = "/zh/member/img/zhangjinyu.png"
@@ -36,5 +43,19 @@ name = "李帅团"
 title = "Committer"
 email = "mailto:hw.lishuaituan@huawei.com"
 gitee = "https://gitee.com/lishuaituan"
+
+[[card]]
+img = "/zh/member/img/xiongxiaojun.png"
+name = "熊小军"
+title = "Committer"
+email = "mailto:xiong_xiaojun@yeah.net"
+gitee = "https://gitee.com/xiong_xjun"
+
+[[card]]
+img = "/zh/member/img/xuchunyang.png"
+name = "徐春阳"
+title = "Committer"
+email = "mailto:springsun.xu@126.com"
+gitee = "https://gitee.com/garyxu2014"
 
 +++
