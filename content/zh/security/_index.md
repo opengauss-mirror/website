@@ -1,5 +1,5 @@
 +++
-title = "安全"
+title = "漏洞管理"
 bgImg = "../img/breadcrumbs/security_bg.png"
 moImg = "../img/breadcrumbs/security_mo.png"
 +++

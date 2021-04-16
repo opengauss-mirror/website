@@ -284,6 +284,15 @@ other = "/zh/privacyPolicy.html"
 [cla_disclaimer_name]
 other = "《openGauss隐私政策》"
 
+[security_advisories_detail_text]
+other = "安全公告/"
+
+[security_advisories_all_url]
+other = '/zh/security-advisories.html'
+
+[cve_all_url]
+other = '/zh/cve.html'
+
 [home_link]
 other = "/zh/"
 

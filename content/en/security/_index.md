@@ -1,5 +1,5 @@
 +++
-title = "Security"
+title = "Vulnerability Report"
 id = "security"
 bgImg = "../img/breadcrumbs/security_bg.png"
 moImg = "../img/breadcrumbs/security_mo.png"

@@ -124,8 +124,29 @@ paginate = 10
 [[menu.main]]
     identifier = "security"
     name = "Security"
-    url  = "/en/security.html"
     weight = 6
+    hasChidren = true
+
+[[menu.main]]
+    identifier = "vulnerability-report"
+    name = "Vulnerability Report"
+    url  = "/en/security.html"
+    weight = 1
+    parent = "security"
+
+[[menu.main]]
+    identifier = "security-advisories"
+    name = "Security Advisories"
+    url  = "/en/security-advisories.html"
+    weight = 2
+    parent = "security"
+
+[[menu.main]]
+    identifier = "cve"
+    name = "CVE"
+    url  = "/en/cve.html"
+    weight = 3
+    parent = "security"
 
 [[menu.main]]
     identifier = "code"
@@ -252,8 +273,29 @@ paginate = 10
 [[languages.zh.menu.main]]
     identifier = "security"
     name = "安全"
-    url  = "/zh/security.html"
     weight = 6
+    hasChidren = true
+
+[[languages.zh.menu.main]]
+    identifier = "vulnerability-report"
+    name = "漏洞管理"
+    url  = "/zh/security.html"
+    weight = 1
+    parent = "security"
+
+[[languages.zh.menu.main]]
+    identifier = "security-advisories"
+    name = "安全公告"
+    url  = "/zh/security-advisories.html"
+    weight = 2
+    parent = "security"
+
+[[languages.zh.menu.main]]
+    identifier = "cve"
+    name = "CVE"
+    url  = "/zh/cve.html"
+    weight = 3
+    parent = "security"
 
 [[languages.zh.menu.main]]
     identifier = "code"

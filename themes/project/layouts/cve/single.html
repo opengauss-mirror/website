@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+  {{ partial "head.html" . }}
+  <link rel="stylesheet" href="{{ "css/cve.css" | relURL}}?t={{ mul 1000 (time now).Unix }}">
+  <body>
+
+    <div id="all">
+
+        <header>
+
+          {{ partial "nav.html" . }}
+        </header>
+
+        <div id="content">
+            <div class="container cve-detail">
+                <div class="ad-detail-head">
+                    <a href="{{ i18n "cve_all_url" }}">CVE/</a>
+                    <h2 class="js-h2"></h2>
+                    <p><span>{{ .Params.release_time }}：</span><span class="js-release-date"></span></p>
+                    <p><span>{{ .Params.modify_time }}：</span><span class="js-update-date"></span></p>
+                </div>
+
+                <div class="cve-detail-content">
+                    <div>
+                        <h2>{{ .Params.synopsis }}</h2>
+                        <p class="js-cve-summary"></p>
+                    </div>
+                    <div class="cvss-v3">
+                        <h2>{{ .Params.metrics }}</h2>
+                        <ul class="table-title">
+                            <li></li>
+                            <li>NVD</li>
+                            <li>openGauss</li>
+                        </ul>
+                        <ul class="js-cvss-v3">
+                            <li>{{ .Params.score }}</li>
+                        </ul>
+                        <ul class="js-AttackVector">
+                            <li>Attack Vector</li>
+                        </ul>
+                        <ul class="js-AttackComplexity">
+                            <li>Attack Complexity</li>
+                        </ul>
+                        <ul class="js-PrivilegeRequired">
+                            <li>Privileges Required</li>
+                        </ul>
+                        <ul class="js-UserInteraction">
+                            <li>User Interaction</li>
+                        </ul>
+                        <ul class="js-Scope">
+                            <li>Scope</li>
+                        </ul>
+                        <ul class="js-Confidentiality">
+                            <li>Confidentiality</li>
+                        </ul>
+                        <ul class="js-Integrity">
+                            <li>Integrity</li>
+                        </ul>
+                        <ul class="js-Availability">
+                            <li>Availability</li>
+                        </ul>
+                    </div>
+
+                    <div class="cve-ad">
+                        <h2>{{ .Params.security }}</h2>
+                        <ul class="table-title pc-table">
+                            <li>{{ .Params.title }}</li>
+                            <li>{{ .Params.synopsis }}</li>
+                            <li>{{ .Params.release_time }}</li>
+                        </ul>
+                        <ul class="js-ad pc-table"></ul>
+                        <ul class="h5-cve-ad"></ul>
+                    </div>
+
+                    <div class="cve-affect js-affect">
+                        <h2>{{ .Params.affected_product }}</h2>
+                        <ul class="table-title">
+                            <li>{{ .Params.product }}</li>
+                            <li>{{ .Params.packages }}</li>
+                            <li>{{ .Params.status }}</li>
+                        </ul>
+
+                    </div>
+                </div>
+
+                <!-- /.row -->
+
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /#content -->
+
+        {{ partial "footer.html" . }}
+
+    </div>
+    <!-- /#all -->
+
+    {{ partial "scripts.html" . }}
+    <script src="{{ "js/cve.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>
+
+  </body>
+</html>
