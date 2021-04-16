@@ -7,7 +7,7 @@ $(document).ready(function () {
             pageNum: 1,
             pageSize: 10,
             searchName: '',
-            releaseFlag: 1
+            releaseFlag: 2
         },
         listResponse: {},
         detailRequire: {

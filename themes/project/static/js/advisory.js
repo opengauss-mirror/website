@@ -8,7 +8,7 @@ $(document).ready(function () {
             searchName: '',
             years: 2021,
             cveLevel: 0,
-            releaseFlag: 1
+            releaseFlag: 2
         },
         listResponse: {},
         detailRequire: {
