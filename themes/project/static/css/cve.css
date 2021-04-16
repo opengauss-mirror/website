@@ -57,7 +57,6 @@
     color: #BFBFBF;
     border: 1px solid #BFBFBF;
     border-right: none;
-    margin-left: -4px;
     text-align: center;
     padding: 0 15px;
     cursor: pointer;
@@ -137,6 +136,26 @@ html[lang=en-us] .tables li:nth-child(5) {
 .tables li:nth-child(6) {
     width: 110px;
 }
+
+
+.table-title li:nth-child(1) {
+    width: 223px;
+}
+.table-title li:nth-child(2) {
+    width: 220px;
+}
+.table-title li:nth-child(3) {
+    width: 90px;
+}
+.table-title li:nth-child(4) {
+    width: 150px;
+}
+.table-title li:nth-child(5) {
+    width: 153px;
+}
+
+
+
 .table-content:nth-child(even) {
     background: rgba(0, 0, 0, 0.03);
 }
@@ -294,6 +313,25 @@ html[lang=en-us] .tables li:nth-child(5) {
     width: 176px;
     margin-right: 0;
 }
+
+
+.cve .table-title li:nth-child(1) {
+    width: 185px;
+}
+.cve .table-title li:nth-child(2) {
+    width: 526px;
+}
+.cve .table-title li:nth-child(3) {
+    width: 108px;
+}
+.cve .table-title li:nth-child(4) {
+    width: 118px;
+}
+.cve .table-title li:nth-child(5) {
+    width: 176px;
+}
+
+
 /*        cve detail page         */
 .cve-detail-content h2 {
     margin: 40px 0 20px;
@@ -303,7 +341,7 @@ html[lang=en-us] .tables li:nth-child(5) {
 }
 .cve-detail-content ul li {
     display: inline-block;
-    width: 330px;
+    width: 330px!important;
     line-height: 56px;
     margin-left: 40px;
 }
@@ -330,6 +368,7 @@ html[lang=en-us] .tables li:nth-child(5) {
 .js-cve-summary {
     line-height: 32px;
 }
+
 @media screen and (max-width: 1000px){
     .pc-table,
     .pc-pack {
@@ -365,7 +404,7 @@ html[lang=en-us] .tables li:nth-child(5) {
         background: rgba(0, 0, 0, 0.03);
     }
 
-/*            ad list page         */
+    /*            ad list page         */
     .ad-form {
         display: block;
         text-align: left;
