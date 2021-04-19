@@ -2,9 +2,9 @@ $(function () {
     new Pagination({
         element: '#pagination',
         type: 1,
-        pageIndex: 1,
+        pageIndex: curPage,
         pageSize: 5,
-        pageCount: curPage,
+        pageCount: 9,
         total:total,
         jumper: true,
         singlePageHide: false,
