@@ -20,6 +20,8 @@
 
                     <!-- *** LEFT COLUMN *** -->
 
+                    {{ if ne .Params.tag "minisite"}}
+
                     <div class="col-md-10" id="blog-post">
                         <a class="blog-menu" href="{{ i18n "main_events_herf"}}">{{ i18n "events_menu_title"}}</a>
                         <h1>{{ .Title }}</h1>
@@ -40,6 +42,12 @@
                         {{ end }}
 
                     </div>
+
+                    {{ else}}
+
+                    {{ partial "minisite_2021.html" . }}
+
+                    {{ end}}
 
                 </div>
                 <!-- /.row -->

@@ -91,6 +91,15 @@ body {
     line-height: 32px;
     text-decoration: none;
 }
+.hdc-2021-banner {
+    position: absolute;
+    left: 28%;
+    transform: translateX(-50%);
+    top: 172px;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 64px;
+}
 .review{
     border-radius: 5px;
     width:100px;
@@ -149,6 +158,9 @@ body {
     }
     .banner-mobile {
         display: block;
+    }
+    .hdc-2021-banner {
+        display: none;
     }
 }
 
