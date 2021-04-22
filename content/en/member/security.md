@@ -37,4 +37,11 @@ title = "Committer"
 email = "mailto:liang4358@163.com"
 gitee = "https://gitee.com/blueloveki"
 
+[[card]]
+img = "/zh/member/img/liuzheli.png"
+name = "Zheli Liu"
+title = "Committer"
+email = "mailto:liuzheli@nankai.edu.cn"
+gitee = "https://gitee.com/liuzheli"
+
 +++
