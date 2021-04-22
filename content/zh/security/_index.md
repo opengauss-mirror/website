@@ -37,6 +37,8 @@ openGauss社区非常重视社区版本的安全性，openGauss社区安全小�
 
 + 张耀中[@buter], <zhangyaozhong1@huawei.com>
 
++ 刘哲理 [@liuzheli], <liuzheli@nankai.edu.cn>
+
 ##### 3.1.2 漏洞上报内容
 
 为了便于快速的确认和验证疑似漏洞，请在漏洞上报邮件中包含但不限于以下内容：

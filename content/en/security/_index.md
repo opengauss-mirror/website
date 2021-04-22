@@ -41,6 +41,8 @@ The information of the SIG Security members is as follows:
 
 + Yaozhong Zhang[@buter], <zhangyaozhong1@huawei.com>
 
++ Zheli Liu[@liuzheli], <liuzheli@nankai.edu.cn>
+
 ##### 3.1.2 Reporting Content
 
 To quickly identify and verify suspected vulnerabilities, the reporting e-mail should include but is not limited to the following content:
