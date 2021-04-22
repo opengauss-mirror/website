@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+  <link href="{{ "css/minisite.css" | relURL}}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet">
+
+  <body>
+
+  <div class="hdc-banner">
+      <h2>{{ .Params.title1}} <br> {{ .Params.title2 }}</h2>
+  </div>
+
+  <div id="hdc-2021">
+      <h1>{{ .Params.h1 }}</h1>
+      <p>{{ .Params.p1 }}<br>{{ .Params.p2 }}</p>
+      <h1>{{ .Params.h2 }}</h1>
+      <div class="channel">
+          <div class="channel-left">
+              <div class="channel-info">
+                  <a target="_blank">
+                      <img class="isPc" src="/img/hdc2021/mission.png" alt="">
+                      <img class="isH5" src="/img/hdc2021/mission_mo.png" alt="">
+                  </a>
+              </div>
+          </div>
+          <div class="channel-right">
+              <div class="channel-info">
+                  <a target="_blank">
+                      <img class="isPc" src="/img/hdc2021/feature.png" alt="">
+                      <img class="isH5" src="/img/hdc2021/feature_mo.png" alt="">
+                  </a>
+              </div>
+          </div>
+      </div>
+      <h1>{{ .Params.h3 }}</h1>
+      <p>{{ .Params.p3 }}</p>
+      <div class="hdc-code">
+          <img src="/img/hdc2021/code.png" alt="">
+      </div>
+
+  </div>
+
+  </body>
+</html>
+

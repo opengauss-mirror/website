@@ -17,6 +17,9 @@
                         </div>
                 </div>
                 {{ else }}
+                {{ if .Params.title1 }}
+                <h2 class="hdc-2021-banner">{{ .Params.title1}} <br> {{ .Params.title2 }}</h2>
+                {{ end }}
                 <a class="banner-img" href="{{ .Params.link }}" >
                     <img loading="lazy" class="banner-pc" src="{{ .Site.BaseURL}}{{ .Params.bgUrl }}">
                     <img loading="lazy" class="banner-mobile" src="{{ .Site.BaseURL}}{{ .Params.mobileUrl }}" alt="">
