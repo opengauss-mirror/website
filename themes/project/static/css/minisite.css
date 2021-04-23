@@ -1,12 +1,8 @@
 .hdc-banner {
-    position: absolute;
-    left: 0;
     width: 100%;
     height: 465px;
-    overflow: hidden;
     background: url("/img/breadcrumbs/minisite_bg.png");
     background-size: 100% 100%;
-    z-index: -1;
 }
 .hdc-banner h2 {
     font-size: 40px;
@@ -14,9 +10,6 @@
     width: 1170px;
     margin: 172px auto 0;
     line-height: 64px;
-}
-#hdc-2021 {
-    margin-top: 469px;
 }
 #hdc-2021 h1 {
     text-align: center;
@@ -61,7 +54,6 @@
         display: none;
     }
     #hdc-2021 {
-        margin-top: 340px;
         padding: 0 15px;
     }
     .channel {

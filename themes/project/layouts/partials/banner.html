@@ -17,18 +17,21 @@
                         </div>
                 </div>
                 {{ else }}
-                {{ if .Params.title1 }}
-                <h2 class="hdc-2021-banner">{{ .Params.title1}} <br> {{ .Params.title2 }}</h2>
-                {{ end }}
-                <a class="banner-img" href="{{ .Params.link }}" >
-                    <img loading="lazy" class="banner-pc" src="{{ .Site.BaseURL}}{{ .Params.bgUrl }}">
-                    <img loading="lazy" class="banner-mobile" src="{{ .Site.BaseURL}}{{ .Params.mobileUrl }}" alt="">
-                    {{ if .Params.reviewBtn}}
-                    <button type="button" class="btn btn-primary review" >{{ i18n "banner_review" }}</button>
+                {{ if .Params.tag }}
+                    <a class="banner-img img-center" href="{{ .Params.link }}" >
+                        <img loading="lazy" class="banner-pc" src="{{ .Site.BaseURL}}{{ .Params.bgUrl }}">
+                        <img loading="lazy" class="banner-mobile" src="{{ .Site.BaseURL}}{{ .Params.mobileUrl }}" alt="">
+                    </a>
+                    {{ else }}
+                    <a class="banner-img" href="{{ .Params.link }}" >
+                        <img loading="lazy" class="banner-pc" src="{{ .Site.BaseURL}}{{ .Params.bgUrl }}">
+                        <img loading="lazy" class="banner-mobile" src="{{ .Site.BaseURL}}{{ .Params.mobileUrl }}" alt="">
+                        {{ if .Params.reviewBtn}}
+                        <button type="button" class="btn btn-primary review" >{{ i18n "banner_review" }}</button>
+                        {{ end }}
+                    </a>
                     {{ end }}
-                </a>
                 {{ end }}
-
             </div>
             {{ end }}
         </div>
