@@ -45,11 +45,26 @@ Different countries may have different data protection laws. In such cases, we w
 
 In accordance with applicable laws and regulations, you may have the right to: (1) access any personal data we hold about you; (2) request us to update or correct your personal data; (3) request us to delete your personal data; (4) refuse or restrict our use of your personal data; and (5) obtain a copy of your personal data. If you need our assistance in exercising these rights, please contact us via the contact details at the end.
 
-## 6. How to update this Privacy Policy
+## 6. How we uses cookies
+
+To ensure our Website works correctly, we may at times place a small piece of data known as a cookie on your computer or mobile device. A cookie is a text file stored by a web server on a computer or mobile device. The content of a cookie can be retrieved or read only by the server that creates the cookie. The text in a cookie often consists of identifiers, site names, and some numbers and characters. Cookies are unique to the browsers or mobile applications you use, and enable websites to store data such as your preferences.
+
+Like many other websites or Internet service providers, we use cookies to improve user experience. To be specific, the purposes are as follows:
+
+*  Cookies allow websites to remember your settings such as language, font size on your computer or mobile device, or other browser preferences. This means that a user does not need to reset preferences for every visit.
+*  Authentication. When you visit the Website, we may create a unique ID to identify you. If cookies with this function are not used, the Website will treat you as a new visitor every time you load a web page. For example, if you are redirected to another web page from the Website you are already logged in to and then return to the Website, it will not recognize you and you must log in again.
+*  Statistics and analysis. For instance, we use cookie to count the number of visitors of the Website and to learn about sources of your visiting.
+*  Security. We use cookie to secure the operation of the Website.
+
+Other third parties, such as Google and Baidu, will set cookies on our websites. They use these cookies to receive IP addresses, information about your browser configurations, and access information, but do not collect your personal identity information. In this way, they can learn how you interact with the website. You can visit the websites of the third parties to learn how they use cookies.
+
+You can manage or delete cookies based on your own preferences. For details, visit AboutCookies.org (https://www.aboutcookies.org/). You can clear all the cookies stored on your computer, and most web browsers provide the option of blocking cookies. However, by doing so, you have to change the user settings every time you visit our Website.
+
+## 7. How to update this statement
 
 We may update or modify this privacy policy from time to time as our services or data processing changes. If we update this privacy policy, we will publish the latest version of the privacy policy on this website, which will come into effect immediately after being published. We recommend you to check this privacy policy regularly for any changes being made. If we make any material changes to this privacy policy (changes in the scope of personal data collected and the purpose of use), we will notify you through appropriate channels and obtain your consent.
 
-## 7. How to contact us
+## 8. How to contact us 
 
 If you want to contact us, please contact us by:
 
