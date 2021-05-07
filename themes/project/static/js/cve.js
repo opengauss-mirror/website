@@ -174,8 +174,8 @@ $(document).ready(function () {
                     if (res.code === '200') {
                         privateData.insertList(res.body);
                         eventWithListItem()
-                        callback && callback(res.totalCount);
                     }
+                    callback && callback(res.totalCount);
                 }
             });
         },
