@@ -369,10 +369,9 @@ paginate = 10
 
 [params]
     viewMorePostLink = "/news/"
-    author = "openGauss"
-    defaultKeywords = ["devows", "hugo", "go", "openGauss"]
-    defaultDescription = "Site template made by devcows Modified by openGauss team"
-
+    author = "Site template made by devcows Modified by openGauss team"
+    defaultKeywords = ["openGauss","open source", "enterprise-grade", "relational database","community"]
+    defaultDescription = "openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability. openGauss is also an open source database platform that encourages community contribution and collaboration."
     timestamp = "20201228"
 
     # Twitter

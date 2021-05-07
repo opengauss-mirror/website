@@ -2,6 +2,7 @@
 title = "线上交流"
 bgImg = "/img/breadcrumbs/communication_bg.png"
 moImg = "/img/breadcrumbs/communication_mo.png"
+keywords = ["线上交流","邮件列表","IRC频道"]
 +++
 
 openGauss社区使用邮件列表、IRC等多种渠道进行线上沟通交流。我们真诚地邀请您通过邮件列表与openGauss IRC频道参与讨论。

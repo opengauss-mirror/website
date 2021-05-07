@@ -8,4 +8,6 @@ synopsis = "概要"
 score = "CVSS评分"
 release_time = "发布日期"
 modify_time = "修改时间"
+description = "您可以在此处查询CVE的相关信息。"
+keywords = ["CVSS评分","CVE"]
 +++

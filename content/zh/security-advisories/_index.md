@@ -11,4 +11,6 @@ severity = "严重级别"
 affected_product = "影响产品"
 affected_component = "影响组件"
 release_time = "发布日期"
+description = "您可以在此处查询安全公告的相关信息。"
+keywords = ["安全","公告"]
 +++

@@ -8,4 +8,6 @@ synopsis = "Synopsis"
 score = "CVSS Score"
 release_time = "Release Date"
 modify_time = "Time of Modification"
+description = "You can search information about CVE here."
+keywords = ["CVSS Score","CVE"]
 +++

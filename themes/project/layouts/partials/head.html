@@ -4,8 +4,17 @@
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>{{ .Title }}</title>
-  <meta name="author" content="{{ .Site.Author.name }}" />
+  {{ $title := "" }}
+  {{ if .Title }}
+    {{ $title = .Title }}
+  {{ else if and .IsSection .File }}
+    {{ $sections := split (trim .File.Dir "/") "/" }}
+    {{ $title = index ($sections | last 1) 0 | humanize | title }}
+  {{ else if and .IsPage .File }}
+    {{ $title = .File.BaseFileName | humanize | title }}
+  {{ end }}
+  <title>{{  $title }} | {{ .Site.Title -}}</title>
+  <meta name="author" content="{{ .Site.Params.author }}" />
 
   {{ if .Keywords }}
   <meta name="keywords" content="{{ delimit .Keywords ", " }}">
@@ -13,8 +22,8 @@
   <meta name="keywords" content="{{ delimit .Site.Params.DefaultKeywords ", " }}">	
   {{ end }}
 
-  {{ if .Description }}
-  <meta name="description" content="{{ .Description }}">
+  {{ if default .Summary .Description }}
+  <meta name="description" content="{{ default .Summary .Description }}">
   {{ else if .Site.Params.DefaultDescription }}
   <meta name="description" content="{{ .Site.Params.DefaultDescription }}">	
   {{ end }}
