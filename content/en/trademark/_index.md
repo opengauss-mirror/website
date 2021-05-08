@@ -5,5 +5,6 @@ content = "Notice: All logos and trademarks used on this website are the propert
 bgImg = "../img/breadcrumbs/privacy_bg.png"
 moImg = "../img/breadcrumbs/privacy_mo.png"
 pptTitle = "PPT Templates"
-
+description = "You can download the logos and PPT templates about openGauss here. All logos and trademarks used on this website are the properties of openGauss community or other third parties as stated if applicable."
+keywords = ["logos","trademarks","PPT templates","brand"]
 +++

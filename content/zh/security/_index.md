@@ -2,6 +2,7 @@
 title = "漏洞管理"
 bgImg = "../img/breadcrumbs/security_bg.png"
 moImg = "../img/breadcrumbs/security_mo.png"
+keywords = ["漏洞响应","漏洞处理","漏洞上报","严重性评估","漏洞披露"]
 +++
 
 ### 1. 漏洞响应

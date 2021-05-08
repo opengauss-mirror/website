@@ -5,4 +5,6 @@ content = "注意：openGauss网站上使用和显示的所有商标、标志皆
 bgImg = "../img/breadcrumbs/privacy_bg.png"
 moImg = "../img/breadcrumbs/privacy_mo.png"
 pptTitle = "PPT模板"
+description = "您可以在此处下载openGauss的商标、标志、PPT模板。网站上使用和显示的所有商标、标志皆属openGauss社区所有，但注明属于其他方拥有的商标、标志除外。"
+keywords = ["商标","标记","PPT模板","品牌"]
 +++

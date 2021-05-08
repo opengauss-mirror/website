@@ -11,4 +11,6 @@ severity = "Severity"
 affected_product = "Affected Product"
 affected_component = "Affected Component"
 release_time = "Release Date"
+description = "You can search information about security advisories here."
+keywords = ["security","advisories"]
 +++

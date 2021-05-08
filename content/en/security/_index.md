@@ -3,6 +3,7 @@ title = "Vulnerability Report"
 id = "security"
 bgImg = "../img/breadcrumbs/security_bg.png"
 moImg = "../img/breadcrumbs/security_mo.png"
+keywords = ["Vulnerability Response","Vulnerability Handling","Vulnerability Reporting","Vulnerability Severity Assessment","Vulnerability Disclosure"]
 
 +++
 

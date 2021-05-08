@@ -474,6 +474,9 @@ other = "openGauss is an open source database platform that encourages community
 [statistics_btn]
 other = "Start Your Contribution >"
 
+[statistics_link]
+other = "/en/contribution.html"
+
 # DOC page
 [doc_git_footer]
 other = "Feedback"

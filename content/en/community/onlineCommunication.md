@@ -2,6 +2,7 @@
 title = "Communication"
 bgImg = "/img/breadcrumbs/communication_bg.png"
 moImg = "/img/breadcrumbs/communication_mo.png"
+keywords = ["Communication","Mailing List","IRC channel"]
 +++
 
 openGauss community uses Mailing List, IRC and other channels for communication. We sincerely invite you to join the openGauss Mailing List and IRC channel for discussion.
