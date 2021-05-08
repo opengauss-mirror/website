@@ -5,9 +5,7 @@
 
   <body>
 
-  <div class="hdc-banner">
-<!--      <h2>{{ .Params.title1}} <br> {{ .Params.title2 }}</h2>-->
-  </div>
+  <div class="hdc-banner"></div>
 
   <div id="hdc-2021">
       <h1>{{ .Params.h1 }}</h1>
@@ -16,7 +14,7 @@
       <div class="channel">
           <div class="channel-left">
               <div class="channel-info">
-                  <a target="_blank">
+                  <a href={{.Params.link1}} target="_blank">
                       <img class="isPc" src="/img/hdc2021/mission.png" alt="">
                       <img class="isH5" src="/img/hdc2021/mission_mo.png" alt="">
                   </a>
