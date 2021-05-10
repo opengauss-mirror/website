@@ -13,10 +13,6 @@
       <h1>{{ .Params.h2 }}</h1>
       <div class="channel">
           <div class="channel-left">
-<!--                  <a href={{.Params.link1}} target="_blank">-->
-<!--                      <img class="isPc" src="/img/hdc2021/mission.png" alt="">-->
-<!--                      <img class="isH5" src="/img/hdc2021/mission_mo.png" alt="">-->
-<!--                  </a>-->
                   <div class="info-box">
                       <h4>{{.Params.channel1}}</h4>
                       <p>{{.Params.info1}}</p>
@@ -27,10 +23,6 @@
           </div>
           <div class="channel-right">
               <div class="channel-info">
-<!--                  <a target="_blank">-->
-<!--                      <img class="isPc" src="/img/hdc2021/feature.png" alt="">-->
-<!--                      <img class="isH5" src="/img/hdc2021/feature_mo.png" alt="">-->
-<!--                  </a>-->
                   <div class="r-top">
                       <div class="info-box">
                           <h4>{{.Params.channel2}}</h4>
@@ -42,7 +34,7 @@
                       </div>
                       <img class="isPc" src="/img/hdc2021/feature.svg" alt="">
                   </div>
-                  <p>{{.Params.ps}}</p>
+                  <p class="r-ps">{{.Params.ps}}</p>
                   <div class="join-city">
                       {{ range .Params.city}}
                       <a class="city-item" target="_blank" style="background: url({{ .img }});">
@@ -50,7 +42,6 @@
                           <p>{{ .open }}</p>
                       </a>
                       {{ end }}
-
                   </div>
               </div>
           </div>

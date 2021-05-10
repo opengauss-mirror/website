@@ -90,6 +90,9 @@
 .r-top h4 {
     color: #42D0EA;
 }
+.r-ps {
+    font-size: 12px!important;
+}
 .join-city {
     display: flex;
     justify-content: left;
@@ -137,10 +140,40 @@
         margin-bottom: 30px;
     }
     .channel a{
-        margin: 30px auto 0;
+        margin: 0 12px 12px 0;
     }
     .hdc-code img {
         margin-top: 30px;
         width: 200px;
+    }
+    .channel-right,
+    .channel-left {
+        width: 100%;
+    }
+    .channel-right .btn2 {
+        margin: 0 auto 16px;
+    }
+    .channel-right, .channel-left {
+        padding: 0;
+    }
+    .info-box {
+        margin: 0 auto;
+    }
+    .join-city {
+        text-align: left;
+        display: block;
+        padding: 0 10px;
+        font-size: 0;
+        -webkit-text-size-adjust:none;
+        padding-bottom: 12px;
+    }
+    .channel a {
+        display: inline-block;
+    }
+    .city-item:nth-child(5n) {
+        margin: 0 12px 12px 0;
+    }
+    .city-item:nth-child(3n) {
+        margin-right: 0;
     }
 }
