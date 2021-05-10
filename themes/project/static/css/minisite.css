@@ -22,15 +22,22 @@
     line-height: 32px;
     color: #4d4d4d;
 }
-.channel {
-    display: flex;
-    justify-content: space-between;
-}
+/*.channel {*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*}*/
 .channel h4 {
     font-weight: normal;
     font-size: 32px;
-    color: #42D0EA;
-    margin-top: 14px;
+    color: #FFC14B;
+    margin-top: 24px;
+}
+.channel-left {
+    display: flex;
+    justify-content: space-between;
+    width: 660px;
+    background: #7D32EA;
+    border-radius: 8px;
 }
 .channel a {
     display: block;
@@ -39,11 +46,77 @@
 .channel a:hover {
     text-decoration: none;
 }
+.channel-right,
+.channel-left {
+    padding: 0 40px;
+    margin: 0 auto 40px;
+}
+
+.channel-left p,
+.channel-right p {
+    color: #fff!important;
+    margin: 8px 0;
+}
+
+.channel-left a {
+    width: 160px;
+    height: 40px;
+    color: #7D32EA;
+    line-height: 40px;
+    text-align: center;
+    background: #FFC14B;
+    border-radius: 4px;
+    margin-bottom: 16px;
+}
+.channel-right {
+    background: #5519DF;
+    width: 660px;
+    border-radius: 8px;
+}
+.channel-right .btn2 {
+    width: 160px;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid #42D0EA;
+    margin-bottom: 16px;
+    color: #fff;
+    text-align: center;
+    line-height: 40px!important;
+}
+.r-top {
+    display: flex;
+    justify-content: space-between;
+}
+.r-top h4 {
+    color: #42D0EA;
+}
+.join-city {
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+}
 .hdc-code {
     width: 100%;
     text-align: center;
 }
-
+.city-item {
+    width: 100px;
+    height: 80px;
+    padding: 16px 0;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+.city-item:nth-child(5n) {
+    margin-right: 0;
+}
+.btn2 img {
+    margin-left: 18px;
+}
+#hdc-2021 .city-item p {
+    line-height: 24px;
+    margin: 0 auto 8px;
+    text-align: center;
+}
 @media screen and (max-width: 1000px) {
     .hdc-banner {
         background: url("/img/breadcrumbs/minisite_mo.png");
