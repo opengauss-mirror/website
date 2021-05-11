@@ -10,11 +10,119 @@ p2 = "openGauss是一款开源关系型数据库管理系统，采用木兰宽�
 h2 = "赛道选择"
 channel1 = "任务打榜赛"
 info1 = "参赛对象：个人开发者"
+btn1 = "全国统一报名入口"
 link1 = "https://competition.huaweicloud.com/information/1000041396/introduction"
 channel2 = "特性命题赛"
 info2 = "参赛对象：开发者团队"
-link2 = ""
-join = "立即参与"
+btn2 = "区域报名入口"
+ps = "注：请按所属地区点击以下入口报名参赛（按首字母顺序排列）"
 h3 = "大赛交流"
 p3 = "openGauss社区提供一个赛事交流的微信群小助手二维码，供参赛者交流。微信号“openGauss社群小助手”：openGauss-bot，小助手会为参赛者实时进行答疑解惑的贴心服务，及时为参赛者解决问题。"
+
+[[city]]
+name = "北京"
+open = "即将开放"
+img = '/img/hdc2021/img_beijing.png'
+url = ""
+
+[[city]]
+name = "重庆"
+open = "即将开放"
+img = '/img/hdc2021/img_chongqing.png'
+
+[[city]]
+name = "福建"
+open = "即将开放"
+img = '/img/hdc2021/img_fujian.png'
+
+[[city]]
+name = "广西"
+open = "即将开放"
+img = '/img/hdc2021/img_guangxi.png'
+url = "https://competition.huaweicloud.com/information/1000041438/introduction"
+
+[[city]]
+name = "广州"
+open = "即将开放"
+img = '/img/hdc2021/img_guangzhou.png'
+url = "https://competition.huaweicloud.com/information/1000041453/introduction"
+
+[[city]]
+name = "河北"
+open = "即将开放"
+img = '/img/hdc2021/img_hebei.png'
+
+[[city]]
+name = "河南"
+open = "即将开放"
+img = '/img/hdc2021/img_henan.png'
+url = "https://competition.huaweicloud.com/information/1000041440/introduction"
+
+[[city]]
+name = "湖北"
+open = "即将开放"
+img = '/img/hdc2021/img_hubei.png'
+url = "https://competition.huaweicloud.com/information/1000041414/introduction"
+
+[[city]]
+name = "湖南"
+open = "即将开放"
+img = '/img/hdc2021/img_hunan.png'
+
+[[city]]
+name = "吉林"
+open = "即将开放"
+img = '/img/hdc2021/img_jilin.png'
+
+[[city]]
+name = "江苏"
+open = "即将开放"
+img = '/img/hdc2021/img_jiangsu.png'
+url = "https://competition.huaweicloud.com/information/1000041445/introduction"
+
+[[city]]
+name = "辽宁"
+open = "即将开放"
+img = '/img/hdc2021/img_liaoning.png'
+url = "https://competition.huaweicloud.com/information/1000041444/introduction"
+
+[[city]]
+name = "山东"
+open = "即将开放"
+img = '/img/hdc2021/img_shandong.png'
+
+[[city]]
+name = "山西"
+open = "即将开放"
+img = '/img/hdc2021/img_shanxi.png'
+
+[[city]]
+name = "陕西"
+open = "即将开放"
+img = '/img/hdc2021/img_shanxi3.png'
+
+[[city]]
+name = "上海"
+open = "即将开放"
+img = '/img/hdc2021/img_shanghai.png'
+url = "https://competition.huaweicloud.com/information/1000041434/introduction"
+
+[[city]]
+name = "深圳"
+open = "即将开放"
+img = '/img/hdc2021/img_shenzhen.png'
+url = "https://competition.huaweicloud.com/information/1000041449/introduction"
+
+[[city]]
+name = "四川"
+open = "即将开放"
+img = '/img/hdc2021/img_sichuan.png'
+
+[[city]]
+name = "浙江"
+open = "即将开放"
+img = '/img/hdc2021/img_hangzhou.png'
+url = "https://competition.huaweicloud.com/information/1000041427/introduction"
+
+
 +++
