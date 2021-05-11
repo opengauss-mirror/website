@@ -23,6 +23,7 @@ p3 = "openGauss社区提供一个赛事交流的微信群小助手二维码，�
 name = "北京"
 open = "即将开放"
 img = '/img/hdc2021/img_beijing.png'
+url = ""
 
 [[city]]
 name = "重庆"
@@ -38,11 +39,13 @@ img = '/img/hdc2021/img_fujian.png'
 name = "广西"
 open = "即将开放"
 img = '/img/hdc2021/img_guangxi.png'
+url = "https://competition.huaweicloud.com/information/1000041438/introduction"
 
 [[city]]
 name = "广州"
 open = "即将开放"
 img = '/img/hdc2021/img_guangzhou.png'
+url = "https://competition.huaweicloud.com/information/1000041453/introduction"
 
 [[city]]
 name = "河北"
@@ -53,11 +56,13 @@ img = '/img/hdc2021/img_hebei.png'
 name = "河南"
 open = "即将开放"
 img = '/img/hdc2021/img_henan.png'
+url = "https://competition.huaweicloud.com/information/1000041440/introduction"
 
 [[city]]
 name = "湖北"
 open = "即将开放"
 img = '/img/hdc2021/img_hubei.png'
+url = "https://competition.huaweicloud.com/information/1000041414/introduction"
 
 [[city]]
 name = "湖南"
@@ -73,11 +78,13 @@ img = '/img/hdc2021/img_jilin.png'
 name = "江苏"
 open = "即将开放"
 img = '/img/hdc2021/img_jiangsu.png'
+url = "https://competition.huaweicloud.com/information/1000041445/introduction"
 
 [[city]]
 name = "辽宁"
 open = "即将开放"
 img = '/img/hdc2021/img_liaoning.png'
+url = "https://competition.huaweicloud.com/information/1000041444/introduction"
 
 [[city]]
 name = "山东"
@@ -98,11 +105,13 @@ img = '/img/hdc2021/img_shanxi3.png'
 name = "上海"
 open = "即将开放"
 img = '/img/hdc2021/img_shanghai.png'
+url = "https://competition.huaweicloud.com/information/1000041434/introduction"
 
 [[city]]
 name = "深圳"
 open = "即将开放"
 img = '/img/hdc2021/img_shenzhen.png'
+url = "https://competition.huaweicloud.com/information/1000041449/introduction"
 
 [[city]]
 name = "四川"
@@ -113,6 +122,7 @@ img = '/img/hdc2021/img_sichuan.png'
 name = "浙江"
 open = "即将开放"
 img = '/img/hdc2021/img_hangzhou.png'
+url = "https://competition.huaweicloud.com/information/1000041427/introduction"
 
 
 +++

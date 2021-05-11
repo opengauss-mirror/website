@@ -37,7 +37,7 @@
                   <p class="r-ps">{{.Params.ps}}</p>
                   <div class="join-city">
                       {{ range .Params.city}}
-                      <a class="city-item" target="_blank" style="background: url({{ .img }});">
+                      <a class="city-item" {{if .url}} href={{ .url }} {{end}} target="_blank" style="background: url({{ .img }});">
                           <p>{{ .name }}</p>
                           <p>{{ .open }}</p>
                       </a>
