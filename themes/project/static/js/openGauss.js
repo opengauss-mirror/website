@@ -117,4 +117,27 @@ $(document).ready(function() {
   if (includesStr('/blogs', currentUrl)) {
     $('.nav-blog-link').closest('.dropdown').addClass('active');
   }
+
+  const closeCookie = function () {
+    $('.js-cookie-close').on('click', function (event) {
+      event.preventDefault()
+      $('.read-cookie').addClass('visited');
+    })
+  }
+  const readCookie = function () {
+    let cookies = document.cookie
+    let index = cookies.indexOf('isRead=')
+    let currentTime = new Date();
+    // currentTime.setTime(currentTime.getTime() + 30 * 24 * 60 * 1000);
+    currentTime.setTime(currentTime.getTime() + 1000)
+    if (index === -1) {
+      $('.read-cookie').removeClass('visited');
+      closeCookie()
+    } else {
+      $('.read-cookie').addClass('visited');
+    }
+    let newCookie = 'isRead=read;expires=' + currentTime.toGMTString()
+    document.cookie = newCookie
+  }
+  readCookie()
 })
