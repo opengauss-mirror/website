@@ -128,8 +128,7 @@ $(document).ready(function() {
     let cookies = document.cookie
     let index = cookies.indexOf('isRead=')
     let currentTime = new Date();
-    // currentTime.setTime(currentTime.getTime() + 30 * 24 * 60 * 1000);
-    currentTime.setTime(currentTime.getTime() + 1000)
+    currentTime.setTime(currentTime.getTime() + 30 * 24 * 60 * 1000);
     if (index === -1) {
       $('.read-cookie').removeClass('visited');
       closeCookie()
