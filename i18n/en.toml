@@ -457,7 +457,7 @@ other = "/en/community/mails.html"
 other = "Mail List"
 
 [statistics_contributors]
-other = "Contributors"
+other = "Developer"
 
 [statistics_users]
 other = "Users"
@@ -511,3 +511,12 @@ other = "Highlights"
 
 [events_menu_title]
 other = "Events/"
+
+[cookie_description_read]
+other = "This site uses cookies. By continuing to browse the site you are agreeing to our use of cookies."
+
+[cookie_description_link]
+other = "/en/privacyPolicy.html"
+
+[cookie_description_privacy]
+other = "Read our privacy policy>"

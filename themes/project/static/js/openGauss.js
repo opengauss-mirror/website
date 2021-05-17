@@ -117,4 +117,34 @@ $(document).ready(function() {
   if (includesStr('/blogs', currentUrl)) {
     $('.nav-blog-link').closest('.dropdown').addClass('active');
   }
+
+  const getCookie = function (name) {
+    var cookies = document.cookie;
+    var index = cookies.indexOf(name);
+    return index === -1 ? false : true;
+  };
+
+  const setCookie = function (name, value) {
+    var currentTime = new Date();
+    currentTime.setTime(currentTime.getTime() + 30 * 24 * 60 * 60 * 1000);
+    var newCookie = name + '=' + value + ';expires=' + currentTime.toGMTString() + ';path=/';
+    document.cookie = newCookie;
+  };
+
+  const closeCookie = function () {
+    var hasCookie = getCookie('isRead=');
+    if (hasCookie) {
+      $('.read-cookie').addClass('visited');
+    } else {
+      $('.read-cookie').removeClass('visited');
+    }
+
+    $('.js-cookie-close').on('click', function (event) {
+      event.preventDefault();
+      setCookie('isRead', 'read');
+      $('.read-cookie').addClass('visited');
+    });
+  };
+
+  closeCookie();
 })

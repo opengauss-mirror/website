@@ -462,7 +462,7 @@ other = "/zh/community/mails.html"
 other = "邮件列表"
 
 [statistics_contributors]
-other = "贡献者"
+other = "开发者"
 
 [statistics_users]
 other = "用户"
@@ -516,3 +516,11 @@ other = "精彩回顾"
 [events_menu_title]
 other = "活动/"
 
+[cookie_description_read]
+other = "本站点使用Cookies，继续浏览表示您同意我们使用Cookies。"
+
+[cookie_description_link]
+other = "/zh/privacyPolicy.html"
+
+[cookie_description_privacy]
+other = "Cookies和隐私政策>"
