@@ -102,5 +102,4 @@ name = "贵州"
 open = "即将开放"
 img = '/img/hdc2021/img_guizhou.png'
 url = ""
-
 +++
