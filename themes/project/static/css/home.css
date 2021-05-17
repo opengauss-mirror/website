@@ -1233,10 +1233,11 @@ footer .foot {
     height: 43px;
     text-align: center;
     padding: 10px 0;
-    background: #fff;
+    background: #ccc;
 }
 .read-cookie a {
     text-decoration: underline;
+    color: var(--theme);
 }
 .read-cookie img {
     width: 24px;
@@ -1245,4 +1246,10 @@ footer .foot {
 }
 .read-cookie.visited {
     display: none;
+}
+@media screen and (max-width: 1000px){
+    .read-cookie {
+        margin: 0 -15px;
+        height: unset;
+    }
 }

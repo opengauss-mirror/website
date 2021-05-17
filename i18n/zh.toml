@@ -462,7 +462,7 @@ other = "/zh/community/mails.html"
 other = "邮件列表"
 
 [statistics_contributors]
-other = "贡献者"
+other = "开发者"
 
 [statistics_users]
 other = "用户"

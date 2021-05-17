@@ -118,25 +118,33 @@ $(document).ready(function() {
     $('.nav-blog-link').closest('.dropdown').addClass('active');
   }
 
+  const getCookie = function (name) {
+    var cookies = document.cookie;
+    var index = cookies.indexOf(name);
+    return index === -1 ? false : true;
+  };
+
+  const setCookie = function (name, value) {
+    var currentTime = new Date();
+    currentTime.setTime(currentTime.getTime() + 30 * 24 * 60 * 60 * 1000);
+    var newCookie = name + '=' + value + ';expires=' + currentTime.toGMTString() + ';path=/';
+    document.cookie = newCookie;
+  };
+
   const closeCookie = function () {
-    $('.js-cookie-close').on('click', function (event) {
-      event.preventDefault()
+    var hasCookie = getCookie('isRead=');
+    if (hasCookie) {
       $('.read-cookie').addClass('visited');
-    })
-  }
-  const readCookie = function () {
-    let cookies = document.cookie
-    let index = cookies.indexOf('isRead=')
-    let currentTime = new Date();
-    currentTime.setTime(currentTime.getTime() + 30 * 24 * 60 * 1000);
-    if (index === -1) {
-      $('.read-cookie').removeClass('visited');
-      closeCookie()
     } else {
-      $('.read-cookie').addClass('visited');
+      $('.read-cookie').removeClass('visited');
     }
-    let newCookie = 'isRead=read;expires=' + currentTime.toGMTString()
-    document.cookie = newCookie
-  }
-  readCookie()
+
+    $('.js-cookie-close').on('click', function (event) {
+      event.preventDefault();
+      setCookie('isRead', 'read');
+      $('.read-cookie').addClass('visited');
+    });
+  };
+
+  closeCookie();
 })
