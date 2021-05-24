@@ -99,7 +99,7 @@ url = "https://competition.huaweicloud.com/information/1000041427/introduction"
 
 [[city]]
 name = "贵州"
-open = "即将开放"
+open = "立即报名"
 img = '/img/hdc2021/img_guizhou.png'
-url = ""
+url = "https://competition.huaweicloud.com/information/1000041495/circumstance"
 +++
