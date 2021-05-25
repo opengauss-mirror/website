@@ -22,32 +22,40 @@
 
                     {{ if ne .Params.tag "minisite"}}
 
-                    <div class="col-md-10" id="blog-post">
-                        <a class="blog-menu" href="{{ i18n "main_events_herf"}}">{{ i18n "events_menu_title"}}</a>
-                        <h1>{{ .Title }}</h1>
-                        <p class="text-muted  mb-small">
-                            <img class="article-date" src="/img/icon_date.svg">
-                            {{ .Params.time}}
-                            <img class="article-author"  src="/img/icon_author.svg">
-                            {{ .Params.author }}
-                        </p>
-                        <div id="post-content" class="events-contents">
-                          {{ .Content }}
-                        </div>
-                        <!-- /#post-content -->
-                        {{ if .Site.DisqusShortname }}
-                        <div id="comments">
-                            {{ template "_internal/disqus.html" . }}
-                        </div>
-                        {{ end }}
+                      {{ if ne .Params.tag "summer"}}
 
-                    </div>
+                        <div class="col-md-10" id="blog-post">
+                            <a class="blog-menu" href="{{ i18n "main_events_herf"}}">{{ i18n "events_menu_title"}}</a>
+                            <h1>{{ .Title }}</h1>
+                            <p class="text-muted  mb-small">
+                                <img class="article-date" src="/img/icon_date.svg">
+                                {{ .Params.time}}
+                                <img class="article-author"  src="/img/icon_author.svg">
+                                {{ .Params.author }}
+                            </p>
+                            <div id="post-content" class="events-contents">
+                              {{ .Content }}
+                            </div>
+                            <!-- /#post-content -->
+                            {{ if .Site.DisqusShortname }}
+                            <div id="comments">
+                                {{ template "_internal/disqus.html" . }}
+                            </div>
+                            {{ end }}
+
+                        </div>
+
+                      {{ else}}
+
+                      {{ partial "summer2021.html" . }}
+
+                      {{ end }}
 
                     {{ else}}
 
                     {{ partial "minisite_2021.html" . }}
 
-                    {{ end}}
+                    {{ end }}
 
                 </div>
                 <!-- /.row -->

@@ -1,0 +1,33 @@
+.summer-banner {
+    width: 100%;
+    height: 465px;
+    background: url("/img/breadcrumbs/summer2021_bg.png");
+    background-size: 100% 100%;
+}
+
+#summer-2021 {
+    line-height: 35px;
+}
+
+#summer-2021 h4 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#summer-2021 .wechat {
+    width: 220px;
+    height: 220px;
+    background: url("/img/breadcrumbs/wechat.jpg");
+    background-size: 100% 100%;
+}
+
+@media screen and (max-width: 1000px) {
+    .summer-banner {
+        background: url("/img/breadcrumbs/summer2021_mo.png");
+        height: 280px;
+        background-size: 100% 100%;
+    }
+    #summer-2021 {
+        padding: 0 15px;
+    }
+}
