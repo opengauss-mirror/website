@@ -1,13 +1,13 @@
 ﻿+++
 title = "学知识，赢奖品！第二届openGauss知识问答活动，等你来挑战~"
-time = "2021/06/01"
-date = "2021-06-01"
+time = "2021/05/28"
+date = "2021-05-28"
 tags = "活动"
 label = "线上线下"
 location = "线上"
-img = "/zh/events/2021-06-01/banner.png"
-img_mobile = "/zh/events/2021-06-01/banner.png"
-link = './events/2021-06-01/meetup.html'
+img = "/zh/events/2021-05-28/banner.png"
+img_mobile = "/zh/events/2021-05-28/banner.png"
+link = './events/2021-05-28/meetup.html'
 author = "openGauss"
 summary = ""
 +++

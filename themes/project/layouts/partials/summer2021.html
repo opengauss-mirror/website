@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+  <link href="{{ "css/summer.css" | relURL}}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet">
+
+  <body>
+
+  <div class="summer-banner"></div>
+
+  <div id="summer-2021">
+
+  {{ .Content }}
+
+  <div class="wechat"></div>
+
+  </div>
+
+  </body>
+</html>
