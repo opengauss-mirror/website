@@ -334,6 +334,9 @@ other = "https://opengauss.org/en/docs/1.1.0/docs/Releasenotes/Releasenotes.html
 [download_release_notes_link_2_0_0]
 other = "https://opengauss.org/en/docs/2.0.0/docs/Releasenotes/Releasenotes.html"
 
+[download_release_notes_link_2_0_1]
+other = "https://opengauss.org/en/docs/2.0.1/docs/Releasenotes/Releasenotes.html"
+
 [download_installation_guide_link]
 other = "https://opengauss.org/en/docs/1.0.0/docs/installation/installation.html"
 
@@ -348,6 +351,12 @@ other = "https://opengauss.org/en/docs/2.0.0/docs/installation/enterprise-editio
 
 [download_simple_installation_guide_link_2_0_0]
 other = "https://opengauss.org/en/docs/2.0.0/docs/installation/simplified-installation-process.html"
+
+[download_installation_guide_link_2_0_1]
+other = "https://opengauss.org/en/docs/2.0.1/docs/installation/enterprise-edition-installation-process.html"
+
+[download_simple_installation_guide_link_2_0_1]
+other = "https://opengauss.org/en/docs/2.0.1/docs/installation/simplified-installation-process.html"
 
 [download_feedback_question_link]
 other = "https://gitee.com/opengauss/community/issues"
