@@ -18,6 +18,9 @@ openGauss community organizations can choose different channels to carry out onl
 | [SIG IoT](https://gitee.com/opengauss/tc/tree/master/sigs/IoT) | Develop and maintain the IoT of the openGauss community. |
 | [SIG In-place Update](https://gitee.com/opengauss/tc/tree/master/sigs/In-place-Update) | Develop and maintain the in-place update of the openGauss community.|
 | [SIG AI](https://gitee.com/opengauss/tc/tree/master/sigs/AI) | Develop and maintain the AI of the openGauss community.|
+| [GIS](https://gitee.com/opengauss/tc/tree/master/sigs/GIS) | Develop and maintain the Geographic Information System of the openGauss community. |
+| [CloudNative](https://gitee.com/opengauss/tc/tree/master/sigs/CloudNative) | Develop and maintain the Cloud Native of the openGauss community. |
+| [SecurityTechnology](https://gitee.com/opengauss/tc/tree/master/sigs/SecurityTechnology) | Develop and maintain the database security technology of the openGauss community. |
 
 ### 1. WeLink Meeting
 
