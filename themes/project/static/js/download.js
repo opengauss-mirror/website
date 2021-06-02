@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $(".download-sel-version").M_select({
         'radius': '4px',
-        'selected': '4',
+        'selected': '5',
         Succee:function(option){
             console.log(option)
             $("div[class*=download-version-]").addClass("hide");
