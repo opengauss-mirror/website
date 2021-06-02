@@ -1015,14 +1015,56 @@ header {
 }
 .ship-item {
     text-align: center;
+    padding: 0;
 }
 .ship-item img {
     width: 240px;
     height: 80px;
 }
+.to-flex .ship-item img {
+    width: unset;
+}
+.three-a-line.to-flex,
+.four-a-line.to-flex {
+    display: flex;
+    justify-content: space-around;
+}
+.four-a-line {
+    margin-top: 20px;
+}
+.three-a-line.to-left {
+    max-width: unset;
+    justify-content: unset;
+    margin-top: 20px;
+}
+
 .three-a-line {
     max-width: 80%;
     margin: 0 auto 20px;
+}
+.partner-ship-content p {
+    text-align: center;
+    color: var(--theme);
+    margin-top: 20px;
+}
+@media screen and (max-width: 1000px){
+    .three-a-line.to-flex,
+    .four-a-line.to-flex {
+        display: block;
+    }
+    .ship-item img {
+        height: 64px;
+        width: unset;
+    }
+    .three-a-line {
+        max-width: 100%;
+    }
+    .ship-item.isPc {
+        display: none;
+    }
+    .partner-ship-content .h5-hide {
+        display: none;
+    }
 }
 
 
