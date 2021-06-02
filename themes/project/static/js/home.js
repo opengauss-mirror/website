@@ -43,4 +43,16 @@ $(document).ready(function () {
         $('.home-banner-video').trigger('pause');
         $('.video-remove').hide();
     });
+
+    $('.js-view-more').on('click', function() {
+        $('.js-organ-loadup').removeClass('h5-hide');
+        $('.js-fold-up').removeClass('hide');
+        $('.js-view-more').addClass('hide');
+    });
+    $('.js-fold-up').on('click', function() {
+        $('.js-organ-loadup').addClass('h5-hide');
+        $('.js-view-more').removeClass('hide');
+        $('.js-fold-up').addClass('hide');
+
+    });
 })
