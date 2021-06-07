@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Style</title>
+    <g id="PC" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="会议Detail" transform="translate(-807.000000, -96.000000)" fill="#C7CAD0" fill-rule="nonzero" stroke="#C7CAD0">
+            <g id="Booking" transform="translate(285.000000, 80.000000)">
+                <path d="M532.290909,16.7071068 L533.292893,17.7090909 L529.001984,22 L533.292893,26.2909091 L532.290909,27.2928932 L528,23.0019841 L523.709091,27.2928932 L522.707107,26.2909091 L526.998016,22 L522.707107,17.7090909 L523.709091,16.7071068 L528,20.9980159 L532.290909,16.7071068 Z" id="Style"></path>
+            </g>
+        </g>
+    </g>
+</svg>

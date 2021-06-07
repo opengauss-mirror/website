@@ -12,7 +12,8 @@ $(document).ready(function () {
         headers: {
             'Authorization': 'Basic b3BlbmV1bGVyc2VydmVyOm9wZW5ldWxlcnNlcnZlckAxMjM0'
         },
-        url: '/statistics/search/statistics?type=openGauss',
+        // url: '/statistics/search/statistics?type=openGauss',
+        url: 'https://omapi.osinfra.cn/query/all?community=openGauss',
         contentType: 'application/json; charset=utf-8',
         crossDomain: true,
         datatype: 'json',

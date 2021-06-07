@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="87px" height="84px" viewBox="0 0 87 84" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>video_icon</title>
+    <defs>
+        <path d="M23.9516172,0.000242459958 C25.0561867,0.000242459958 25.9516172,0.89567296 25.9516172,2.00024246 L25.9511284,23.1080658 C13.8566411,20.3635028 4.07502714,11.5295764 -1.05093712e-12,-1.14130927e-13 L23.9516172,0.000242459958 Z" id="path-1"></path>
+        <filter x="-185.0%" y="-181.8%" width="469.9%" height="515.4%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="6" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="15" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="PC" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="会议Default" transform="translate(-320.000000, -240.000000)">
+            <g id="Group-C" transform="translate(156.000000, 264.000000)">
+                <g id="video_icon" transform="translate(194.048383, -0.000242)">
+                    <g id="Combined-Shape">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <use fill="#7D32EA" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    </g>
+                    <g id="视频" transform="translate(11.951617, 4.000242)" fill="#FFFFFF" fill-rule="nonzero">
+                        <path d="M6.83781009,3.76073183 L3.45988025,2.03866652 C3.24636442,1.92905841 3,2.06545962 3,2.28467585 L3,5.72637073 C3,5.94558697 3.24636442,6.05519508 3.45988025,5.97238006 L6.83781009,4.25031476 C7.0540633,4.14314238 7.0540633,3.87033995 6.83781009,3.76073183 L6.83781009,3.76073183 Z" id="Path"></path>
+                        <path d="M9.30068165,8 L0.69679374,8 C0.313052259,8 0,7.72134832 0,7.37977528 L0,0.620224719 C0,0.278651684 0.313052259,0 0.69679374,0 L9.30320626,0 C9.68694774,0 10,0.278651684 10,0.620224719 L10,7.37977528 C9.99747539,7.72134832 9.68694774,8 9.30068165,8 Z M1.02246907,0.615730339 C0.860893711,0.615730339 0.729613732,0.732584271 0.729613732,0.876404493 L0.729613732,7.12359551 C0.729613732,7.26741573 0.860893711,7.38426966 1.02246907,7.38426966 L8.97753093,7.38426966 C9.13910629,7.38426966 9.27038627,7.26741573 9.27038627,7.12359551 L9.27038627,0.876404493 C9.27038627,0.732584271 9.13910629,0.615730339 8.97753093,0.615730339 L1.02246907,0.615730339 Z" id="Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
