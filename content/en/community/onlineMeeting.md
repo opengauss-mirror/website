@@ -28,7 +28,7 @@ The WeLink meeting is held by audio and video, and the meeting records can be sa
 
 ### 2. IRC Meeting
 
-[IRC]((https://zh.wikipedia.org/wiki/IRC)) meeting is held in plain text.
+[IRC](https://zh.wikipedia.org/wiki/IRC) meeting is held in plain text.
 The IRC meeting channel of openGauss community is (https://webchat.freenode.net/?randomnick=1&channels=%23opengauss-meeting&prompt=1&uio=d4)。
 You can find all of channels and meeting records from [IRC Channel Logs](https://meetings.opengauss.org/).
 

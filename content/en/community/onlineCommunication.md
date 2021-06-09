@@ -59,7 +59,7 @@ Select a nickname to join the openGauss IRC channel.
 
 #### 2.2 IRC Meeting
 
-[IRC]((https://zh.wikipedia.org/wiki/IRC)) meeting is held in plain text. The IRC meeting channel of openGauss community is [#opengauss-meeting](https://webchat.freenode.net/?randomnick=1&channels=%23opengauss-meeting&prompt=1&uio=d4). You can find all of channels and meeting records from [IRC Channel Logs](https://meetings.opengauss.org/).
+[IRC](https://zh.wikipedia.org/wiki/IRC) meeting is held in plain text. The IRC meeting channel of openGauss community is [#opengauss-meeting](https://webchat.freenode.net/?randomnick=1&channels=%23opengauss-meeting&prompt=1&uio=d4). You can find all of channels and meeting records from [IRC Channel Logs](https://meetings.opengauss.org/).
 
 openGauss community organizations can choose different channels to carry out online meeting. For details, please see the introduction of each community organization meeting.
 

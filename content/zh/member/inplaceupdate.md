@@ -42,7 +42,7 @@ img = "/zh/member/img/suntengteng.png"
 name = "孙腾腾"
 title = "Committer"
 email = "mailto:suntengteng@cmbchina.com"
-gitee = "https://gitee.com/tengtengsun "
+gitee = "https://gitee.com/tengtengsun"
 
 [[card]]
 img = "/zh/member/img/zhouwei.png"

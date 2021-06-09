@@ -55,7 +55,7 @@ IRC全称为Internet Relay Chat，凭借强大的实时通信能力，在开源�
 
 #### 2.2 IRC会议
 
-[IRC]((https://zh.wikipedia.org/wiki/IRC))会议以纯文字方式开展，
+[IRC](https://zh.wikipedia.org/wiki/IRC)会议以纯文字方式开展，
 openGauss社区IRC会议频道为[#opengauss-meeting](https://webchat.freenode.net/?randomnick=1&channels=%23opengauss-meeting&prompt=1&uio=d4)。
 您可以在[IRC Channel Logs](https://meetings.opengauss.org/)找到所有的频道和会议记录。
 
