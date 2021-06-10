@@ -3,19 +3,19 @@
 {{ range $paginator.Pages }}
 {{ if .Params.calzoomId}}
 
-<div class="calender-meeting">
+<div class="calendar-meeting">
     <div class="content sig-select">
         <select name="" id="id-select-sigs" class="form-control">
             <option value="All">{{ .Params.allsigs }}</option>
         </select>
     </div>
-    <div class="calender">
+    <div class="calendar">
         <div class="content">
             <div class="cal-time cal-detail">
-                <p class="js-up-btn up-btn cursor"><img src="/img/calender/btn.svg" alt=""></p>
-                <p class="js-down-btn down-btn"><img src="/img/calender/btn.svg" alt=""></p>
+                <p class="js-up-btn up-btn cursor"><img src="/img/calendar/btn.svg" alt=""></p>
+                <p class="js-down-btn down-btn"><img src="/img/calendar/btn.svg" alt=""></p>
                 <p class="det-title js-reserve-meeting cursor">
-                    <img src="/img/calender/date.png" alt="">
+                    <img src="/img/calendar/date.png" alt="">
                     {{ .Params.booktitle }}
                 </p>
                 <div class="time-box">
@@ -23,8 +23,8 @@
                 </div>
             </div>
             <div class="cal-meeting js-meeting-data">
-                <p class="js-left-btn left-btn cursor"><img src="/img/calender/btn.svg" alt=""></p>
-                <p class="js-right-btn right-btn cursor"><img src="/img/calender/btn.svg" alt=""></p>
+                <p class="js-left-btn left-btn cursor"><img src="/img/calendar/btn.svg" alt=""></p>
+                <p class="js-right-btn right-btn cursor"><img src="/img/calendar/btn.svg" alt=""></p>
                 <div class="visible-box">
                     <div class="cal-day js-meet-day"></div>
                     <div class="cal-content">
@@ -39,7 +39,7 @@
         <div class="content">
             <div class="cal-content-detail hide">
             <div class="detail-item">
-                    <img class="js-close-detail cursor" src="/img/calender/close.svg" alt="">
+                    <img class="js-close-detail cursor" src="/img/calendar/close.svg" alt="">
                     <div class="js-check-meeting">
                         <div class="js-meeting-content hide"></div>
                         <div class="js-reverse-content hide">
@@ -91,10 +91,10 @@
                             </ul>
                             <ul>
                                 <li>{{ .Params.record }}</li>
-                                <li><img class="js-meeting-record" src="/img/calender/record-off.png"></li>
+                                <li><img class="js-meeting-record" src="/img/calendar/record-off.png"></li>
                             </ul>
                             <p class="notice-content">
-                                <img src="/img/calender/notice.png" alt="">
+                                <img src="/img/calendar/notice.png" alt="">
                                 {{ .Params.recordtip }}
                             </p>
                             <p class="notice-req"><span class="red"> * </span>  {{.Params.requiretip}}</p>
@@ -106,28 +106,28 @@
                         <div class="js-no-login notice-card hide">
                             <h4>{{ .Params.logintip }}</h4>
                             <p>{{ .Params.logininfo }}</p>
-                            <p class="meeting-login"><img src="/img/calender/gitee.png" alt="">{{ .Params.logingitee }}</p>
+                            <p class="meeting-login"><img src="/img/calendar/gitee.png" alt="">{{ .Params.logingitee }}</p>
                             <p class="login-privacy">{{ .Params.loginagree }} <a href="{{ i18n "cookie_description_link"}}" target="_blank">{{ .Params.loginprivacy }}</a></p>
                         </div>
                         <div class="js-no-authority notice-card hide">
                             <h4>{{ .Params.permission }}</h4>
-                            <img src="/img/calender/no-authority.png" alt="">
+                            <img src="/img/calendar/no-authority.png" alt="">
                             <p>{{ .Params.permissiontip }}</p>
                         </div>
                         <div class="js-no-edit notice-card hide">
                             <h4>{{ .Params.permission }}</h4>
-                            <img src="/img/calender/no-authority.png" alt="">
+                            <img src="/img/calendar/no-authority.png" alt="">
                             <p>{{ .Params.edittip }}</p>
                         </div>
                         <div class="js-fail-reverse notice-card hide">
                             <h4>{{ .Params.booktitle }}</h4>
-                            <img src="/img/calender/no-authority.png" alt="">
+                            <img src="/img/calendar/no-authority.png" alt="">
                             <p class="fail-info">{{ .Params.booktimefail }}</p>
                             <p class="js-back-reverse cursor">{{ .Params.bookback }}</p>
                         </div>
                         <div class="js-success-reverse notice-card hide">
                             <h4>{{ .Params.booktitle }}</h4>
-                            <img src="/img/calender/success.png" alt="">
+                            <img src="/img/calendar/success.png" alt="">
                             <p>{{ .Params.booksuccess }}</p>
                         </div>
                         <div class="js-delete-check notice-card hide">
@@ -140,18 +140,18 @@
                         </div>
                         <div class="js-delete-success notice-card hide">
                             <h4>{{ .Params.deletetitle }}</h4>
-                            <img src="/img/calender/success.png" alt="">
+                            <img src="/img/calendar/success.png" alt="">
                             <p>{{ .Params.deleteok }}</p>
                         </div>
                         <div class="js-modify-success notice-card hide">
                             <h4>{{ .Params.booktitle }}</h4>
-                            <img src="/img/calender/success.png" alt="">
+                            <img src="/img/calendar/success.png" alt="">
                             <p>{{ .Params.booksuccess }}</p>
                             <p class="js-data-check cursor">{{ .Params.seemeeting }}</p>
                         </div>
                         <div class="js-fail-modify notice-card hide">
                             <h4>{{ .Params.booktitle }}</h4>
-                            <img src="/img/calender/no-authority.png" alt="">
+                            <img src="/img/calendar/no-authority.png" alt="">
                             <p class="fail-info"></p>
                             <p class="js-back-reverse cursor">{{ .Params.bookback }}</p>
                         </div>

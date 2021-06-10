@@ -1,17 +1,17 @@
 .red {
     color: #F76260;
 }
-.calender-meeting{
+.calendar-meeting{
     margin-top: 60px;
 }
-.calender {
+.calendar {
     display: flex;
     margin-top: 16px;
     margin-bottom: 60px;
     height: 780px;
     overflow: hidden;
 }
-.calender .content {
+.calendar .content {
     position: relative;
     display: flex;
 }
@@ -478,7 +478,7 @@ a:hover {
     height: 32px;
     border-radius: 4px;
 }
-.calender-meeting {
+.calendar-meeting {
     position: relative;
 }
 .meeting-detail {

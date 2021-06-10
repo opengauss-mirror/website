@@ -2,7 +2,7 @@ $(document).ready(function () {
     const log = console.log.bind(console)
     var lang = window.location.href.includes('/zh/') ? 'zh' : 'en';
 
-    var calenderMethods = {
+    var calendarMethods = {
         fontmatter: {
             reverseTitle: lang === 'zh' ? '预定会议' : 'Schedule a meeting:',
             reverse: lang === 'zh' ? '会议名称:' : 'Name:',
@@ -44,9 +44,9 @@ $(document).ready(function () {
             t += '<p class="hovered" data-id="' + item.id + '">' + this.fontmatter.time + item.startTime +'-' + item.endTime + '</p>'
 
             if (item.video_url !== '') {
-                t += `<img src="/img/calender/video_icon.svg" alt="">`
+                t += `<img src="/img/calendar/video_icon.svg" alt="">`
             } else if (item.record) {
-                t += `<img src="/img/calender/video_gray.svg" alt="">`
+                t += `<img src="/img/calendar/video_gray.svg" alt="">`
             }
             t += '</div>'
             return t
@@ -76,7 +76,7 @@ $(document).ready(function () {
 
                     for (let i = 0; i < value.data.length; i++) {
                         let item = value.data[i]
-                        t += calenderMethods.insertContentHTML(item)
+                        t += calendarMethods.insertContentHTML(item)
                     }
                     t += '</div>'
                     t += '</div>'
@@ -89,7 +89,7 @@ $(document).ready(function () {
             for (let i = 0; i < data.length; i++) {
                 let e = data[i]
                 let key = Number(e.startTime.split(':')[1]) > 0 ? e.startTime.split(':')[0] + ':00' : e.startTime
-                t += calenderMethods.insertListHTML(e, key)
+                t += calendarMethods.insertListHTML(e, key)
             }
             t += '</div>'
             return t
@@ -104,7 +104,7 @@ $(document).ready(function () {
                 let list = data[i].timeDate
                 t = `<div class="row-list" data-day="${day}">`
 
-                let l = calenderMethods.insertDealHTML(list)
+                let l = calendarMethods.insertDealHTML(list)
                 t += l
                 t += '</div>'
 
@@ -114,7 +114,7 @@ $(document).ready(function () {
         insertDetailListHTML: function (name, value, className, img) {
             let t = ""
             if (value !== undefined) {
-                if (value.includes('http')) {
+                if ( value !== null && value.includes('http')) {
                     t = '<ul>' +
                         '<li>' + name + '</li>' +
                         '<li><a class="detail-' + className +'" href="' + value + '" target="_blank">' + value + '</a></li>' +
@@ -153,13 +153,13 @@ $(document).ready(function () {
                 '</div>'
 
             t += '<p class="notice-content">' +
-                '<img src="/img/calender/notice.png" alt="">' +
+                '<img src="/img/calendar/notice.png" alt="">' +
                 this.fontmatter.detailTip +
                 '</p>'
             return t
         },
         insertTimeList: function() {
-            let currentTime = calenderClickEvent.getNowTime().hour
+            let currentTime = calendarClickEvent.getNowTime().hour
             let t = ''
             for (let i = 0; i < 25; i++) {
                 currentTime = parseInt(currentTime)
@@ -189,9 +189,11 @@ $(document).ready(function () {
             $('#js-meeting-etherpad').val('')
         },
         isLogin: function(id) {
-            let userSigs = getCookie('userSigs')
+            // let userSigs = getCookie('userSigs')
+            let userSigs = window.sessionStorage.userSigs
+            log('usersig', userSigs)
             // 判断缓存里是否有用户信息
-            if (userSigs !== null) {
+            if (userSigs !== undefined) {
                 // 有用户信息 已登录
                 return true
             } else {
@@ -200,7 +202,7 @@ $(document).ready(function () {
 
                 $('.js-no-login').removeClass('hide').siblings().addClass('hide')
 
-                calenderClickEvent.handleLogin(id)
+                calendarClickEvent.handleLogin(id)
 
                 return false
             }
@@ -223,7 +225,8 @@ $(document).ready(function () {
             }
         },
         isSelfLogin: function (name, id) {
-            let giteeid = getCookie('giteeId')
+            // let giteeid = getCookie('giteeId')
+            let giteeid = window.sessionStorage.giteeId
             log('gitee name', giteeid, name)
             if (giteeid === name) {
                 // 有权限
@@ -250,11 +253,12 @@ $(document).ready(function () {
 
             $('.js-fail-reverse').removeClass('hide').siblings().addClass('hide')
 
-            calenderMethods.backToReverse()
+            calendarMethods.backToReverse()
         },
         initFormData: function(data) {
+            log('data', data)
             let userSigs = data.userSigs.split(',')
-            let currentTime = calenderClickEvent.getNowTime()
+            let currentTime = calendarClickEvent.getNowTime()
             $('#id-meeting-creator').val(data.giteeId)
             $("#time-start").val(currentTime.hour + ':' + currentTime.minute)
             $("#time-end").val(currentTime.hour + ':' + currentTime.minute)
@@ -280,9 +284,9 @@ $(document).ready(function () {
         },
         getStorage: function() {
             let storage = {
-                userSigs: getCookie('userSigs'),
-                giteeId: getCookie('giteeId'),
-                userId: getCookie('userId')
+                userSigs: window.sessionStorage.userSigs,
+                giteeId: window.sessionStorage.giteeId,
+                userId: window.sessionStorage.userId
             }
             return storage
         }
@@ -292,12 +296,12 @@ $(document).ready(function () {
         unique: function(arr) {
             return Array.from(new Set(arr));
         },
-        calenderSortData: function (data) {
+        calendarSortData: function (data) {
             data.forEach(dateItem => {
                 let arr = [];
                 dateItem.timeData.forEach(timeItem => {
-                    let timeStart = calenderMethods.formatTime(timeItem.duration_time)[0];
-                    let timeEnd = calenderMethods.formatTime(timeItem.duration_time)[1];
+                    let timeStart = calendarMethods.formatTime(timeItem.duration_time)[0];
+                    let timeEnd = calendarMethods.formatTime(timeItem.duration_time)[1];
                     let indexTemp = null;
                     if (!arr.length) {
                         arr.push({
@@ -312,8 +316,8 @@ $(document).ready(function () {
                     } else {
 
                         let findItem = arr.every(meetingItem => {
-                            let meetingStart = calenderMethods.formatTime(meetingItem.duration_time)[0];
-                            let meetingEnd = calenderMethods.formatTime(meetingItem.duration_time)[1];
+                            let meetingStart = calendarMethods.formatTime(meetingItem.duration_time)[0];
+                            let meetingEnd = calendarMethods.formatTime(meetingItem.duration_time)[1];
                             return (
                                 (timeEnd <= meetingStart) ||
                                 (timeStart >= meetingEnd)
@@ -337,8 +341,8 @@ $(document).ready(function () {
                                 return;
                             }
                             indexTemp = index;
-                            let meetingStart = calenderMethods.formatTime(meetingItem.duration_time)[0];
-                            let meetingEnd = calenderMethods.formatTime(meetingItem.duration_time)[1];
+                            let meetingStart = calendarMethods.formatTime(meetingItem.duration_time)[0];
+                            let meetingEnd = calendarMethods.formatTime(meetingItem.duration_time)[1];
                             if (
                                 (meetingStart
                                     <= timeStart) &&
@@ -397,11 +401,11 @@ $(document).ready(function () {
                     if (indexTemp !== null) {
                         let curItemStartTime = arr[indexTemp].startTime;
                         let curItemEndTime = arr[indexTemp].endTime;
-                        let curItemStart = calenderMethods.formatTime(arr[indexTemp].duration_time)[0];
-                        let curItemEnd = calenderMethods.formatTime(arr[indexTemp].duration_time)[1];
+                        let curItemStart = calendarMethods.formatTime(arr[indexTemp].duration_time)[0];
+                        let curItemEnd = calendarMethods.formatTime(arr[indexTemp].duration_time)[1];
                         arr.forEach((item, index) => {
-                            let itemStart = calenderMethods.formatTime(item.duration_time)[0];
-                            let itemEnd = calenderMethods.formatTime(item.duration_time)[1];
+                            let itemStart = calendarMethods.formatTime(item.duration_time)[0];
+                            let itemEnd = calendarMethods.formatTime(item.duration_time)[1];
                             if (index != indexTemp) {
                                 if (
                                     (itemStart < curItemStart) &&
@@ -557,7 +561,7 @@ $(document).ready(function () {
         },
     }
 
-    var calenderClickEvent = {
+    var calendarClickEvent = {
         timeSwiper: function () {
             var timer1 = null
             var timer2 = null
@@ -566,14 +570,14 @@ $(document).ready(function () {
             $('.js-up-btn').on('click', function (event) {
                 clearTimeout(timer1);
                 timer1 = setTimeout(function () {
-                    calenderClickEvent.handleRowBtn('up')
+                    calendarClickEvent.handleRowBtn('up')
                 }, 500)
             });
             // down btn
             $('.js-down-btn').on('click', function (event) {
                 clearTimeout(timer2);
                 timer2 = setTimeout(function () {
-                    calenderClickEvent.handleRowBtn('down')
+                    calendarClickEvent.handleRowBtn('down')
                 }, 500)
             })
         },
@@ -585,14 +589,14 @@ $(document).ready(function () {
             $('.js-left-btn').on('click', function (event) {
                 clearTimeout(timer1);
                 timer1 = setTimeout(function () {
-                    calenderClickEvent.handleLineBtn('left')
+                    calendarClickEvent.handleLineBtn('left')
                 }, 500)
             });
             // right btn
             $('.js-right-btn').on('click', function (event) {
                 clearTimeout(timer2);
                 timer2 = setTimeout(function () {
-                    calenderClickEvent.handleLineBtn('right', size)
+                    calendarClickEvent.handleLineBtn('right', size)
                 }, 500)
             })
         },
@@ -618,7 +622,7 @@ $(document).ready(function () {
                     }
                 } else {
                     let id = target.dataset.id
-                    calenderClickEvent.handleDetail(id)
+                    calendarClickEvent.handleDetail(id)
                 }
                 $(this).find('.inner-list').css('transform', `matrix(1, 0, 0, 1, ${left}, 0)`)
                 $(this).find('.index').text(`${current} / ${total}`)
@@ -668,22 +672,22 @@ $(document).ready(function () {
             $('.js-schedule-content').css('transform', `matrix(1, 0, 0, 1, ${contentTrans}, ${origin})`)
         },
         handleDetail: function (id) {
-            let detail = calenderMethods.filterWithId(id)
+            let detail = calendarMethods.filterWithId(id)
             let date = detail.date
             let info = detail.timeData.filter(function (item) {
                 return item.id === parseInt(id)
             })
-            let html = calenderMethods.insertDetailHTML(info, date)
+            let html = calendarMethods.insertDetailHTML(info, date)
             $('.js-meeting-content').empty()
             $('.js-meeting-content').append(html)
             $('.js-meeting-content').attr('data-detail', id)
             $('.js-meeting-content').removeClass('hide').siblings().addClass('hide')
 
             $('.cal-content-detail').removeClass('hide')
-            calenderClickEvent.handleCloseDetail()
-            calenderClickEvent.handleDateDelete()
+            calendarClickEvent.handleCloseDetail()
+            calendarClickEvent.handleDateDelete()
             // 修改会议
-            calenderClickEvent.handleDateUpdate()
+            calendarClickEvent.handleDateUpdate()
         },
         // 关闭提示卡片
         handleCloseDetail: function () {
@@ -698,10 +702,12 @@ $(document).ready(function () {
         },
         // 登录授权
         handleAuthority: function (id) {
-            let sigs = getCookie('userSigs')
+            // let sigs = getCookie('userSigs')
+            let sigs = window.sessionStorage.userSigs
+            console.log(window.sessionStorage);
             // 判断是否 有权限
             // sig 是数组，数组不为空，即有数据
-            if ((sigs === null)) {
+            if ((sigs === undefined)) {
                 // 未登录，直接登录
                 // 说明页面无状态
                 // requestMethods.meetingLogin()
@@ -712,11 +718,11 @@ $(document).ready(function () {
 
             } else if (sigs.length <= 0 ) {
                 // 已登录，无权限
-                //登录之后，调用 user 接口，获取用户信息
-                requestMethods.meetingLogin()
+                // //登录之后，调用 user 接口，获取用户信息
+                // requestMethods.meetingLogin()
                 $('.js-no-authority').removeClass('hide').siblings().addClass('hide')
             } else {
-                // 有权限
+                // 有权FIFO限
                 $('.cal-content-detail').removeClass('hide')
                 $('.js-reverse-content').removeClass('hide').siblings().addClass('hide')
             }
@@ -727,29 +733,31 @@ $(document).ready(function () {
             $('.meeting-login').click(function (event) {
                 // window.location.href = 'https://gitee.com/oauth/authorize?client_id=c5b7a0d3b370e7ec56e0343a777e6dd91059929e7b7379b8c7691feca159fcd1&redirect_uri=http://119.8.32.82/opengauss/gitee_back/&response_type=code'
                 requestMethods.giteeLogin()
-                calenderClickEvent.handleAuthority(id)
-                calenderClickEvent.handleCloseDetail()
+                calendarClickEvent.handleAuthority(id)
+                calendarClickEvent.handleCloseDetail()
             })
         },
         // 点击预定按钮，提示用户登录
         handleReserve: function () {
             $('.js-reserve-meeting').on('click', function (event) {
                 //清空表单
-                calenderMethods.emptyFormDate()
-                calenderClickEvent.handleCloseDetail()
+                calendarMethods.emptyFormDate()
+                calendarClickEvent.handleCloseDetail()
                 $('.dateTimeWrap').removeClass('hide')
-                let isLogined = calenderMethods.isLogin()
+                let isLogined = calendarMethods.isLogin()
+                log('isLogined?', isLogined)
                 if (isLogined) {
                     // 已登录
-                    let storage = calenderMethods.getStorage()
-                    let isAuthoritied = calenderMethods.isAuthority(storage.userSigs)
+                    let storage = calendarMethods.getStorage()
+                    let isAuthoritied = calendarMethods.isAuthority(storage.userSigs)
+
                     if (isAuthoritied) {
                         // 有权限
-                        calenderMethods.initFormData(storage)
+                        calendarMethods.initFormData(storage)
                         $('.cal-content-detail').removeClass('hide')
-                        calenderClickEvent.handleCloseDetail()
+                        calendarClickEvent.handleCloseDetail()
                         // 绑定会议信息提交事件
-                        calenderClickEvent.handleDateSubmit('submit')
+                        calendarClickEvent.handleDateSubmit('submit')
                     } else {
                         // 无权限
                         $('.cal-content-detail').removeClass('hide')
@@ -763,9 +771,9 @@ $(document).ready(function () {
             $('.js-meeting-record').on('click', function(event) {
                 let src = $('.js-meeting-record').attr('src')
                 if (src.includes('off')) {
-                    $('.js-meeting-record').attr('src', "/img/calender/record-on.png")
+                    $('.js-meeting-record').attr('src', "/img/calendar/record-on.png")
                 } else {
-                    $('.js-meeting-record').attr('src', "/img/calender/record-off.png")
+                    $('.js-meeting-record').attr('src', "/img/calendar/record-off.png")
                 }
             })
         },
@@ -856,11 +864,11 @@ $(document).ready(function () {
             require.formdata.record = src.includes('off') ? '' : 'cloud'
 
             if (require.errorTime()) {
-                calenderMethods.remindError('请输入正确的时间')
+                calendarMethods.remindError('请输入正确的时间')
 
                 return false
             } else if (require.errorInfo()) {
-                calenderMethods.remindError('请输入必填项')
+                calendarMethods.remindError('请输入必填项')
                 return false
             }
 
@@ -870,7 +878,7 @@ $(document).ready(function () {
         handleDateSubmit: function (eventName) {
             $(".date-submit").unbind("click");
             $('.date-submit').click(function () {
-                let require = calenderClickEvent.getFormData().formdata
+                let require = calendarClickEvent.getFormData().formdata
                 if (require !== undefined) {
                     if (eventName === 'modify') {
                         // 执行会议预定
@@ -903,13 +911,13 @@ $(document).ready(function () {
         // 删除会议
         handleDateDelete: function () {
             $('.date-delete').on('click', function () {
-                let isLogined = calenderMethods.isLogin()
+                let isLogined = calendarMethods.isLogin()
                 // 判断权限
                 if (isLogined) {
                     // 已登录
-                    let storage = calenderMethods.getStorage()
+                    let storage = calendarMethods.getStorage()
                     let giteeID = $('.creator-name').text()
-                    let isAuthoritied = calenderMethods.isSelfLogin(giteeID)
+                    let isAuthoritied = calendarMethods.isSelfLogin(giteeID)
                     if (isAuthoritied) {
                         // 有权限
                         $('.js-delete-check').removeClass('hide').siblings().addClass('hide')
@@ -938,21 +946,21 @@ $(document).ready(function () {
             $('.date-modify').click(function() {
                 let id = $('.js-meeting-content').attr('data-detail')
                 //清空表单
-                calenderMethods.emptyFormDate()
+                calendarMethods.emptyFormDate()
                 $('.dateTimeWrap').removeClass('hide')
-                let isLogined = calenderMethods.isLogin(id)
+                let isLogined = calendarMethods.isLogin(id)
                 // 判断权限
                 if (isLogined) {
                     // 已登录
-                    let storage = calenderMethods.getStorage()
+                    let storage = calendarMethods.getStorage()
                     let giteeID = $('.creator-name').text()
-                    let isAuthoritied = calenderMethods.isSelfLogin(giteeID, id)
+                    let isAuthoritied = calendarMethods.isSelfLogin(giteeID, id)
                     if (isAuthoritied) {
                         // 有权限
-                        calenderMethods.initFormData(storage)
-                        calenderClickEvent.handleCloseDetail()
+                        calendarMethods.initFormData(storage)
+                        calendarClickEvent.handleCloseDetail()
                         // 绑定会议信息提交事件
-                        calenderClickEvent.handleDateSubmit('modify')
+                        calendarClickEvent.handleDateSubmit('modify')
                         $('.cal-content-detail').removeClass('hide')
                     } else {
                         // 无权限
@@ -982,7 +990,7 @@ $(document).ready(function () {
         meetingData: function (data){
             $.ajax({
                 type: "GET",
-                url: '/calender/opengauss/meetingsdata/',
+                url: '/calendar/opengauss/meetingsdata/',
                 data: data,
                 contentType: "application/json; charset=utf-8",
                 crossDomain: true,
@@ -996,19 +1004,23 @@ $(document).ready(function () {
         giteeLogin: function () {
             $.ajax({
                 type: "GET",
-                url: '/calender/opengauss/gitee_login/',
+                url: '/calendar/opengauss/gitee_login/',
                 contentType: "application/json; charset=utf-8",
                 crossDomain: true,
                 datatype: "json",
                 success: function (res) {
-                    log('登录成功')
+                    log('res in login', res)
+
+                    let url = 'https://gitee.com/oauth/authorize?client_id='+ res.client_id +'&redirect_uri=' + res.redirect_url + '&response_type=code'
+                    log('url', url)
+                    window.location.href = url
                 }
             });
         },
         meetingLogin: function (data){
             $.ajax({
                 type: "GET",
-                url: '/calender/opengauss/user/',
+                url: '/calendar/opengauss/user/',
                 headers: {
                     withCredentials: true,
                 },
@@ -1017,36 +1029,43 @@ $(document).ready(function () {
                 crossDomain: true,
                 datatype: "json",
                 success: function (res) {
-                    $('.cal-content-detail').removeClass('hide')
                     // 判断是否登录
                     if (res.code === 200) {
                         // 判断是否有权限
+                        console.log('res', res);
                         let sigs = res.data.sigs.join(',')
+                        log('sigs', sigs)
+                        log('')
+                        // let info = {
+                        //     userSigs: sigs,
+                        //     giteeId: res.data.user.gitee_id,
+                        //     userId: res.data.user.id
+                        // }
+                        // setCookie('userSigs', info.userSigs)
+                        // setCookie('giteeId', info.giteeId)
+                        // setCookie('userId', info.userId)
 
-                        let info = {
-                            userSigs: sigs,
-                            giteeId: res.data.user.gitee_id,
-                            userId: res.data.user.id
-                        }
-                        setCookie('userSigs', info.userSigs)
-                        setCookie('giteeId', info.giteeId)
-                        setCookie('userId', info.userId)
+                        window.sessionStorage.userSigs = sigs
+                        window.sessionStorage.giteeId = res.data.user.gitee_id
+                        window.sessionStorage.userId = res.data.user.id
+                        console.log('session', window.sessionStorage);
 
-
-                        calenderMethods.initFormData(info)
+                        // calendarMethods.initFormData(info)
+                        calendarMethods.initFormData(window.sessionStorage)
                         if (res.data.sigs.length > 0) {
-                            // 有权限
-                            $('.js-reverse-content').removeClass('hide').siblings().addClass('hide')
+                            // 有权限, 不操作
+                            // $('.js-reverse-content').removeClass('hide').siblings().addClass('hide')
                         } else {
                             // 无权限
+                            $('.cal-content-detail').removeClass('hide')
                             $('.js-no-authority').removeClass('hide').siblings().addClass('hide')
                         }
-                        calenderClickEvent.handleCloseDetail()
+                        calendarClickEvent.handleCloseDetail()
                     } else  {
                         // 登录
                         $('.js-no-login').removeClass('hide').siblings().addClass('hide')
                         $('.js-no-authority').removeClass('hide').siblings().addClass('hide')
-                        calenderClickEvent.handleCloseDetail()
+                        calendarClickEvent.handleCloseDetail()
                     }
                 }
             });
@@ -1054,7 +1073,7 @@ $(document).ready(function () {
         meetingReserve: function (data){
             $.ajax({
                 type: "POST",
-                url: '/calender/opengauss/meetings/',
+                url: '/calendar/opengauss/meetings/',
                 data: JSON.stringify(data),
                 contentType: "application/json; charset=utf-8",
                 crossDomain: true,
@@ -1063,12 +1082,13 @@ $(document).ready(function () {
                     if (res.code === 201) {
                         // 预定成功！
                         $('.js-success-reverse').removeClass('hide').siblings().addClass('hide')
-                        calenderMethods.mid = res.mid
+                        calendarMethods.mid = res.mid
                         requestMethods.meetingData()
                     } else {
                         // 预定失败
+                        $('.js-fail-reverse').find('.fail-info').text(res.msg)
                         $('.js-fail-reverse').removeClass('hide').siblings().addClass('hide')
-                        calenderMethods.remindError(res.message)
+                        calendarMethods.remindError(res.message)
                     }
                 }
             });
@@ -1076,7 +1096,7 @@ $(document).ready(function () {
         meetingDelete: function(mid) {
             $.ajax({
                 type: "DELETE",
-                url: `/calender/opengauss/meeting/action/delete/${mid}/`,
+                url: `/calendar/opengauss/meeting/action/delete/${mid}/`,
                 contentType: "application/json; charset=utf-8",
                 crossDomain: true,
                 datatype: "json",
@@ -1094,7 +1114,7 @@ $(document).ready(function () {
             $.ajax({
                 type: "PUT",
                 data: JSON.stringify(data),
-                url: `/calender/opengauss/meeting/action/update/${mid}/`,
+                url: `/calendar/opengauss/meeting/action/update/${mid}/`,
                 contentType: "application/json; charset=utf-8",
                 crossDomain: true,
                 datatype: "json",
@@ -1104,7 +1124,7 @@ $(document).ready(function () {
                     } else {
                         $('.js-fail-modify').find('.fail-info').text(res.msg)
                         $('.js-fail-modify').removeClass('hide').siblings().addClass('hide')
-                        calenderMethods.backToReverse()
+                        calendarMethods.backToReverse()
                     }
 
                 }
@@ -1114,16 +1134,16 @@ $(document).ready(function () {
         meetingCheck: function(id, isModified) {
             $.ajax({
                 type: "GET",
-                url: `/calender/opengauss/meeting/${id}/`,
+                url: `/calendar/opengauss/meeting/${id}/`,
                 contentType: "application/json; charset=utf-8",
                 crossDomain: true,
                 datatype: "json",
                 success: function (res) {
                     if (isModified) {
                         let d = []
-                        d.push(calenderMethods.cleanResponse(res))
+                        d.push(calendarMethods.cleanResponse(res))
                         let e = res.date
-                        let html = calenderMethods.insertDetailHTML(d, e)
+                        let html = calendarMethods.insertDetailHTML(d, e)
                         $('.js-meeting-content').empty()
                         $('.js-meeting-content').append(html)
                         $('.js-meeting-content').removeClass('hide').siblings().addClass('hide')
@@ -1151,7 +1171,7 @@ $(document).ready(function () {
         meetingSig: function(data) {
             $.ajax({
                 type: "GET",
-                url: '/calender/opengauss/groups/',
+                url: '/calendar/opengauss/groups/',
                 data: data,
                 contentType: "application/json; charset=utf-8",
                 crossDomain: true,
@@ -1168,7 +1188,7 @@ $(document).ready(function () {
         let dataJSON = cleanData.dataJSON
         let data = dataJSON.tableData
 
-        data = cleanData.calenderSortData(data)
+        data = cleanData.calendarSortData(data)
         data = cleanData.getOriginData(data)
 
         // 时间初始化 上移 576px  transform: translateY(-576px);
@@ -1189,7 +1209,7 @@ $(document).ready(function () {
 
         $('.js-meet-day').empty()
         let isMobile = document.body.clientWidth < 1000
-        let currentTime = calenderClickEvent.getNowTime().day
+        let currentTime = calendarClickEvent.getNowTime().day
         let currentIndex = 0
         let prevIndex = 0
         let lastIndex = 0
@@ -1225,26 +1245,26 @@ $(document).ready(function () {
             len -= 1
             // 左移距离，跟当前日期有关，
             trans = -len * (w + 24) + 12
-            $('.calender').show()
+            $('.calendar').show()
         } else if (data.length > 4) {
             // 左移距离，跟当前日期有关，
             trans = -(len - 4) * (w + 24) + 12
 
-            $('.calender').show()
+            $('.calendar').show()
         } else if (data.length === 0) {
-            // 隐藏日历
-            $('.calender').hide()
+            // 暂无数据
         } else {
-            $('.calender').show()
+            $('.calendar').show()
+            $('.cal-content-detail').show()
         }
         $('.js-meet-day').css('transform', `matrix(1, 0, 0, 1, ${trans}, 0)`)
         $('.js-schedule-content').css('transform', `matrix(1, 0, 0, 1, ${trans}, ${origin})`)
         let pcSize = -(data.length - 4) * (w + 24) + 12
         let mobileSize = -(data.length - 1) * (w + 24) + 12
         let size = isMobile ? mobileSize : pcSize
-        calenderClickEvent.daySwiper(size)
+        calendarClickEvent.daySwiper(size)
 
-        calenderMethods.insertRowHTML(data)
+        calendarMethods.insertRowHTML(data)
 
         $('.js-data-check').on('click', function () {
             let id = $('.js-meeting-content').attr('data-detail')
@@ -1269,48 +1289,31 @@ $(document).ready(function () {
         var newCookie = name + '=' + value + ';expires=Thu, 01 Jan 1970 00:00:00 UTC' + ';path=/';
         document.cookie = newCookie;
     }
-    // 切换 cookie 的添加删除
-    const toggleCookie = (flag) => {
-        if (flag) {
-            // setCookie('name', 'TGVzbGllLUw=')
-            // setCookie('gitee_id', 'bGVzbGlleHg=')
-            // setCookie('sigs', 'SQLEngine')
-
-            setCookie('access_token', 'd21b9553f8b518d678698b6b03c88d45;path=/;')
-
-            window.localStorage.userSigs = []
-        } else {
-            // deleteCookie('name', "");
-            // deleteCookie('gitee_id', '')
-            // deleteCookie('sigs', '')
-            window.localStorage.clear()
-        }
-    }
     const initMeeting = function () {
         // 日期初始化，并渲染日历数据
         meetingDate()
         // 日历详情事件
-        calenderClickEvent.detailSwiper()
+        calendarClickEvent.detailSwiper()
     }
     // 页面初始化
     const initPage = function () {
         // 渲染时间
-        calenderMethods.insertTimeList()
+        calendarMethods.insertTimeList()
         // 绑定议程切换事件
-        calenderClickEvent.timeSwiper()
+        calendarClickEvent.timeSwiper()
         // 绑定日期时间选择器
-        calenderClickEvent.bindTimePicker()
+        calendarClickEvent.bindTimePicker()
         // 绑定会议预定表单事件
-        calenderClickEvent.handleReserve()
+        calendarClickEvent.handleReserve()
         // 绑定是否录制
-        calenderClickEvent.handleRecodeBtn()
+        calendarClickEvent.handleRecodeBtn()
         // 删除检测事件（确认删除、取消删除）
-        calenderClickEvent.handleDeleteCheck()
+        calendarClickEvent.handleDeleteCheck()
         // 绑定 sig 组切换
-        calenderClickEvent.handleSigs()
+        calendarClickEvent.handleSigs()
     }
 
-    var __calenderMain = function () {
+    var __calendarMain = function () {
         // 请求日历数据
         requestMethods.meetingData()
         // 请求sig组数据
@@ -1323,6 +1326,7 @@ $(document).ready(function () {
             deleteCookie('userSigs', "");
             deleteCookie('giteeId', "");
             deleteCookie('userId', "");
+            deleteCookie('access_token', '')
         })
         $('#setCookie').on('click', function () {
             setCookie('userSigs', '')
@@ -1334,7 +1338,13 @@ $(document).ready(function () {
             setCookie('giteeId', 'lesliexx')
             setCookie('userId', 'Leslie-L')
         })
-        setCookie('access_token', '0cc4c7e241dc95dba38cdf5894b00885;path=/;')
+
+        let access = getCookie('access_token')
+        if (access !== null) {
+            requestMethods.meetingLogin()
+        }
+        // setCookie('access_token', 'b6051205eb841b9968f1491f2e71175e')
+        // requestMethods.meetingLogin()
     }
-    __calenderMain()
+    __calendarMain()
 })
