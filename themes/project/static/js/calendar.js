@@ -181,12 +181,9 @@ $(document).ready(function () {
         },
         isLogin: function(id) {
             let userSigs = window.sessionStorage.userSigs;
-            // 判断缓存里是否有用户信息
             if (userSigs !== undefined) {
-                // 有用户信息 已登录
                 return true;
             } else {
-                // 无用户信息 未登录
                 $('.cal-content-detail').removeClass('hide');
                 $('.js-no-login').removeClass('hide').siblings().addClass('hide');
                 calendarClickEvent.handleLogin(id);
@@ -194,9 +191,7 @@ $(document).ready(function () {
             }
         },
         isAuthority: function (userSigs, id) {
-            // 判断有没有权限
             if (userSigs !== '') {
-                // 有权限
                 if (id !== undefined) {
                     requestMethods.meetingCheck(id);
                 } else {
@@ -204,7 +199,6 @@ $(document).ready(function () {
                 }
                 return true;
             } else  {
-                // 无权限
                 $('.cal-content-detail').removeClass('hide');
                 $('.js-no-authority').removeClass('hide').siblings().addClass('hide');
                 return false;
@@ -213,7 +207,6 @@ $(document).ready(function () {
         isSelfLogin: function (name, id) {
             let giteeid = window.sessionStorage.giteeId;
             if (giteeid === name) {
-                // 有权限
                 if (id !== undefined) {
                     requestMethods.meetingCheck(id);
                 } else {
@@ -221,7 +214,6 @@ $(document).ready(function () {
                 }
                 return true;
             } else  {
-                // 无权限
                 $('.cal-content-detail').removeClass('hide');
                 $('.js-no-edit').removeClass('hide').siblings().addClass('hide');
                 return false;
@@ -271,7 +263,7 @@ $(document).ready(function () {
             }
             return storage;
         }
-    }
+    };
     var cleanData = {
         dataJSON: {},
         unique: function(arr) {
@@ -581,7 +573,6 @@ $(document).ready(function () {
                 clearTimeout(timer);
                 timer = setTimeout(function () {
                     let target = event.target;
-                    // 点击右键
                     let text = _self.find('.index').text().split('/');
                     let current = parseInt(text[0]);
                     let total = parseInt(text[1]);
@@ -675,10 +666,8 @@ $(document).ready(function () {
             $('.cal-content-detail').removeClass('hide');
             calendarClickEvent.handleCloseDetail();
             calendarClickEvent.handleDateDelete();
-            // 修改会议
             calendarClickEvent.handleDateUpdate();
         },
-        // 关闭提示卡片
         handleCloseDetail: function () {
             $('.cal-content-detail').on('click', function (event) {
                 let target = event.target;
@@ -689,25 +678,19 @@ $(document).ready(function () {
                 }
             });
         },
-        // 登录授权
         handleAuthority: function (id) {
             let sigs = window.sessionStorage.userSigs;
-            // 判断是否 有权限
-            // sig 是数组，数组不为空，即有数据
             if ((sigs === undefined)) {
                 if (id !== undefined) {
                     requestMethods.meetingCheck(id);
                 }
             } else if (sigs.length <= 0 ) {
-                // 已登录，无权限
                 $('.js-no-authority').removeClass('hide').siblings().addClass('hide');
             } else {
-                // 有权限
                 $('.cal-content-detail').removeClass('hide');
                 $('.js-reverse-content').removeClass('hide').siblings().addClass('hide');
             }
         },
-        // 点击登录按钮，跳转 gitee 登录
         handleLogin: function (id) {
             $('.meeting-login').unbind('click');
             $('.meeting-login').click(function (event) {
@@ -716,34 +699,27 @@ $(document).ready(function () {
                 calendarClickEvent.handleCloseDetail();
             })
         },
-        // 点击预定按钮，提示用户登录
         handleReserve: function () {
             $('.js-reserve-meeting').on('click', function (event) {
-                //清空表单
                 calendarMethods.emptyFormDate();
                 calendarClickEvent.handleCloseDetail();
                 $('.dateTimeWrap').removeClass('hide');
                 let isLogined = calendarMethods.isLogin();
                 if (isLogined) {
-                    // 已登录
                     let storage = calendarMethods.getStorage();
                     let isAuthoritied = calendarMethods.isAuthority(storage.userSigs);
                     if (isAuthoritied) {
-                        // 有权限
                         calendarMethods.initFormData(storage);
                         $('.cal-content-detail').removeClass('hide');
                         calendarClickEvent.handleCloseDetail();
-                        // 绑定会议信息提交事件
                         calendarClickEvent.handleDateSubmit('submit');
                     } else {
-                        // 无权限
                         $('.cal-content-detail').removeClass('hide');
                         $('.js-no-authority').removeClass('hide').siblings().addClass('hide');
                     }
                 }
             });
         },
-        // 点击会议录制按钮
         handleRecodeBtn: function() {
             $('.js-meeting-record').on('click', function(event) {
                 let src = $('.js-meeting-record').attr('src');
@@ -754,7 +730,6 @@ $(document).ready(function () {
                 }
             });
         },
-        // 点击时间上下切换
         bindTimePicker: function () {
             let currentTime = this.getNowTime();
             $('#J-demo-01').dateTimePicker({
@@ -832,23 +807,19 @@ $(document).ready(function () {
             }
             return require;
         },
-        // 预定会议
         handleDateSubmit: function (eventName) {
             $(".date-submit").unbind("click");
             $('.date-submit').click(function () {
                 let require = calendarClickEvent.getFormData().formdata;
                 if (require !== undefined) {
                     if (eventName === 'modify') {
-                        // 执行会议预定
                         let mid = $('.js-meeting-content').find('.mid').text();
                         requestMethods.meetingUpdate(mid, require);
                     } else if (eventName === 'submit') {
-                        // 执行会议预定
                         requestMethods.meetingReserve(require);
                     }
                 }
             });
-            // 重置表单信息
             $('.date-reset').on('click', function () {
                 $('#id-meeting-name').val('');
                 $('#J-demo-01').val('');
@@ -857,13 +828,10 @@ $(document).ready(function () {
                 $('#js-meeting-etherpad').val('');
             });
         },
-        // 删除会议
         handleDateDelete: function () {
             $('.date-delete').on('click', function () {
                 let isLogined = calendarMethods.isLogin();
-                // 判断权限
                 if (isLogined) {
-                    // 已登录
                     let storage = calendarMethods.getStorage();
                     let giteeID = $('.creator-name').text();
                     let isAuthoritied = calendarMethods.isSelfLogin(giteeID);
@@ -871,7 +839,6 @@ $(document).ready(function () {
                         // 有权限
                         $('.js-delete-check').removeClass('hide').siblings().addClass('hide');
                     } else {
-                        // 无权限
                         $('.cal-content-detail').removeClass('hide');
                         $('.js-no-edit').removeClass('hide').siblings().addClass('hide');
                     }
@@ -880,27 +847,21 @@ $(document).ready(function () {
         },
         handleDeleteCheck: function () {
             $('.delete-cancel').on('click', function () {
-                // 取消删除
                 $('.cal-content-detail').addClass('hide');
             });
             $('.delete-confirm').on('click', function () {
-                // 确认删除
                 let mid = $('.js-meeting-content').find('.mid').text();
                 requestMethods.meetingDelete(mid);
             });
         },
-        // 修改会议
         handleDateUpdate: function () {
             $('.date-modify').unbind("click");
             $('.date-modify').click(function() {
                 let id = $('.js-meeting-content').attr('data-detail');
-                //清空表单
                 calendarMethods.emptyFormDate();
                 $('.dateTimeWrap').removeClass('hide');
                 let isLogined = calendarMethods.isLogin(id);
-                // 判断权限
                 if (isLogined) {
-                    // 已登录
                     let storage = calendarMethods.getStorage();
                     let giteeID = $('.creator-name').text();
                     let isAuthoritied = calendarMethods.isSelfLogin(giteeID, id);
@@ -912,7 +873,6 @@ $(document).ready(function () {
                         calendarClickEvent.handleDateSubmit('modify');
                         $('.cal-content-detail').removeClass('hide');
                     } else {
-                        // 无权限
                         $('.js-no-edit').removeClass('hide').siblings().addClass('hide');
                     }
                 }
@@ -931,7 +891,7 @@ $(document).ready(function () {
                 }
             });
         }
-    }
+    };
     var requestMethods = {
         meetingData: function (data){
             $.ajax({
@@ -976,31 +936,11 @@ $(document).ready(function () {
                 crossDomain: true,
                 datatype: "json",
                 success: function (res) {
-                    // 判断是否登录
                     if (res.code === 200) {
-                        // 判断是否有权限
                         let sigs = res.data.sigs.join(',')
-
                         window.sessionStorage.userSigs = sigs
                         window.sessionStorage.giteeId = res.data.user.gitee_id
                         window.sessionStorage.userId = res.data.user.id
-
-                        // calendarMethods.initFormData(info)
-                        calendarMethods.initFormData(window.sessionStorage)
-                        if (res.data.sigs.length > 0) {
-                            // 有权限, 不操作
-                            // $('.js-reverse-content').removeClass('hide').siblings().addClass('hide')
-                        } else {
-                            // 无权限 也不操作
-                            // $('.cal-content-detail').removeClass('hide')
-                            // $('.js-no-authority').removeClass('hide').siblings().addClass('hide')
-                        }
-                        calendarClickEvent.handleCloseDetail()
-                    } else  {
-                        // 登录
-                        $('.js-no-login').removeClass('hide').siblings().addClass('hide');
-                        $('.js-no-authority').removeClass('hide').siblings().addClass('hide');
-                        calendarClickEvent.handleCloseDetail();
                     }
                 }
             });
@@ -1015,12 +955,10 @@ $(document).ready(function () {
                 datatype: "json",
                 success: function (res) {
                     if (res.code === 201) {
-                        // 预定成功！
                         $('.js-success-reverse').removeClass('hide').siblings().addClass('hide');
                         calendarMethods.mid = res.mid;
                         requestMethods.meetingData();
                     } else {
-                        // 预定失败
                         let msg = lang === 'zh' ? res.msg : res.en_msg;
                         $('.js-fail-reverse').find('.fail-info').text(msg);
                         $('.js-fail-reverse').removeClass('hide').siblings().addClass('hide');
@@ -1115,7 +1053,7 @@ $(document).ready(function () {
             });
         }
     };
-    const meetingDate = function () {
+    var meetingDate = function () {
         let dataJSON = cleanData.dataJSON;
         let data = dataJSON.tableData;
         data = cleanData.calendarSortData(data);
@@ -1167,7 +1105,6 @@ $(document).ready(function () {
             trans = -len * (w + 24) + 12;
             $('.calendar').show();
             if (data.length === 0) {
-                // 暂无数据
                 $('.cal-content-empty').removeClass('hide');
             } else {
                 $('.cal-content-empty').addClass('hide');
@@ -1178,7 +1115,6 @@ $(document).ready(function () {
             $('.calendar').show();
             $('.cal-content-empty').addClass('hide');
         } else if (data.length === 0) {
-            // 暂无数据
             $('.cal-content-empty').removeClass('hide');
         } else {
             $('.calendar').show();
@@ -1196,28 +1132,16 @@ $(document).ready(function () {
             let id = $('.js-meeting-content').attr('data-detail');
             requestMethods.meetingCheck(id, true);
         });
-    }
-    const getCookie = function (name) {
+    };
+    var getCookie = function (name) {
         var v = window.document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
         return v ? v[2] : null;
     };
-    const setCookie = function (name, value) {
-        var currentTime = new Date();
-        currentTime.setTime(currentTime.getTime() + 24 * 60 * 60 * 1000);
-        var newCookie = name + '=' + value + ';expires=' + currentTime.toGMTString() + ';path=/';
-        document.cookie = newCookie;
-    }
-    const deleteCookie = function (name, value) {
-        var currentTime = new Date();
-        currentTime.setTime(currentTime.getTime() + 30 * 24 * 60 * 60 * 1000);
-        var newCookie = name + '=' + value + ';expires=Thu, 01 Jan 1970 00:00:00 UTC' + ';path=/';
-        document.cookie = newCookie;
-    }
-    const initMeeting = function () {
+    var initMeeting = function () {
         meetingDate();
         calendarClickEvent.detailSwiper();
-    }
-    const initPage = function () {
+    };
+    var initPage = function () {
         calendarMethods.insertTimeList();
         calendarClickEvent.timeSwiper();
         calendarClickEvent.bindTimePicker();
@@ -1234,6 +1158,6 @@ $(document).ready(function () {
         if (access !== null) {
             requestMethods.meetingLogin();
         }
-    }
+    };
     __calendarMain();
 });
