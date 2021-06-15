@@ -1,4 +1,4 @@
-<div>
+<div id="meetings">
 {{ $paginator := .Paginate (where .Data.Pages "Type" "page")}}
 {{ range $paginator.Pages }}
 {{ if .Params.calzoomId}}
@@ -13,7 +13,7 @@
         <div class="content">
             <div class="cal-time cal-detail">
                 <p class="js-up-btn up-btn cursor"><img src="/img/calendar/btn.svg" alt=""></p>
-                <p class="js-down-btn down-btn"><img src="/img/calendar/btn.svg" alt=""></p>
+                <p class="js-down-btn down-btn cursor"><img src="/img/calendar/btn.svg" alt=""></p>
                 <p class="det-title js-reserve-meeting cursor">
                     <img src="/img/calendar/date.png" alt="">
                     {{ .Params.booktitle }}
@@ -46,11 +46,11 @@
                             <h4>{{ .Params.booktitle }}</h4>
                             <ul>
                                 <li>{{ .Params.reverse }}<span class="red"> * </span></li>
-                                <li><input type="text" value="" id="id-meeting-name"></li>
+                                <li><input type="text" value="" id="id-meeting-name" placeholder="{{ .Params.hoderName }}"></li>
                             </ul>
                             <ul>
                                 <li>{{ .Params.creator }}<span class="red"> * </span></li>
-                                <li><input type="text" value="les" disabled id="id-meeting-creator"></li>
+                                <li><input type="text" value="" disabled id="id-meeting-creator"></li>
                             </ul>
                             <ul>
                                 <li>{{ .Params.sig }}<span class="red"> * </span></li>
@@ -60,7 +60,7 @@
                             </ul>
                             <ul>
                                 <li>{{ .Params.day }}<span class="red"> * </span></li>
-                                <li><input type="text" class="mt10px input" id="J-demo-01"></li>
+                                <li><input type="text" class="mt10px input" id="J-demo-01" placeholder="{{ .Params.hoderday }}"></li>
                             </ul>
                             <ul>
                                 <li>{{ .Params.time }}<span class="red"> * </span></li>
@@ -79,15 +79,15 @@
                             </ul>
                             <ul>
                                 <li>{{ .Params.content }}</li>
-                                <li><textarea type="text" id="id-meeting-content"></textarea></li>
+                                <li><textarea type="text" id="id-meeting-content" placeholder="{{ .Params.hoderagenda }}"></textarea></li>
                             </ul>
                             <ul>
                                 <li>{{ .Params.emailadd }}</li>
-                                <li><textarea type="text" id="id-meeting-email"></textarea></li>
+                                <li><textarea type="text" id="id-meeting-email" placeholder="{{ .Params.hoderemail }}"></textarea></li>
                             </ul>
                             <ul>
                                 <li>Etherpad</li>
-                                <li><input type="text" value="" id="js-meeting-etherpad"></li>
+                                <li><input type="text" value="" id="js-meeting-etherpad" placeholder="{{ .Params.hoderetherpad }}"></li>
                             </ul>
                             <ul>
                                 <li>{{ .Params.record }}</li>
@@ -106,7 +106,7 @@
                         <div class="js-no-login notice-card hide">
                             <h4>{{ .Params.logintip }}</h4>
                             <p>{{ .Params.logininfo }}</p>
-                            <p class="meeting-login"><img src="/img/calendar/gitee.png" alt="">{{ .Params.logingitee }}</p>
+                            <p class="meeting-login cursor"><img src="/img/calendar/gitee.png" alt="">{{ .Params.logingitee }}</p>
                             <p class="login-privacy">{{ .Params.loginagree }} <a href="{{ i18n "cookie_description_link"}}" target="_blank">{{ .Params.loginprivacy }}</a></p>
                         </div>
                         <div class="js-no-authority notice-card hide">
@@ -158,35 +158,12 @@
                     </div>
                 </div>
             </div>
+            <div class="cal-content-empty hide">
+                <img src="/img/calendar/no-data.png" alt="">
+            </div>
         </div>
     </div>
 </div>
 {{ end }}
 {{ end }}
-</div>
-
-<div class="content">
-    <a href="https://gitee.com/oauth/authorize?client_id=c5b7a0d3b370e7ec56e0343a777e6dd91059929e7b7379b8c7691feca159fcd1&redirect_uri=http://119.8.32.82/opengauss/gitee_back/&response_type=code">login</a>
-
-    <br><br>
-    <div id="clean" class="cursor">
-        清理 localStorage
-    </div>
-    <br>
-    <div id="setCookie" class="cursor">
-        设置无权限 cookie
-    </div>
-    <br>
-    <div id="setYCookie" class="cursor">
-        设置权限 cookie
-    </div>
-    <br>
-    <div id="cleancookie" class="cursor">
-        清理cookie
-    </div>
-
-    <br>
-    <div id="data-update" class="cursor">
-        修改会议
-    </div>
 </div>

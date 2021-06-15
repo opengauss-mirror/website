@@ -36,5 +36,11 @@ cancel = "Cancel"
 deletesure = "Delete"
 deleteok = "You have successfully deleted this meeting."
 seemeeting = "View this meeting"
-
+hoderName = "Please input topic"
+hoderday = "Choose a date"
+hoderagenda = "Please input agenda"
+hoderemail = "Separate email addresses of attendees with a semicolon"
+hoderetherpad = "Etherpad link will be generated automatically when there is no specified link"
+hoderstart = "Start"
+hoderend = "End"
 +++

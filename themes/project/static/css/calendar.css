@@ -4,6 +4,10 @@
 .calendar-meeting{
     margin-top: 60px;
 }
+.sig-select {
+    display: flex;
+    justify-content: flex-end;
+}
 .calendar {
     display: flex;
     margin-top: 16px;
@@ -215,6 +219,16 @@ html[lang=en-us] .cal-time .det-title {
     z-index: 111;
     position: relative;
 }
+.cal-content-empty {
+    height: 700px;
+    position: relative;
+}
+.cal-content-empty img {
+    position: absolute;
+    left: 54%;
+    top: 33%;
+    transform: translate(-50%);
+}
 .content-meeting:hover {
     background: var(--theme);
     color: #fff;
@@ -362,6 +376,7 @@ html[lang=en-us] .cal-time .det-title {
     font-size: 12px;
     margin-top: 16px;
     text-align: justify;
+    justify-content: center;
 }
 .notice-req {
     color: #C7CAD0;
@@ -488,6 +503,9 @@ a:hover {
     left: 50%;
     transform: translateX(-50%);
 }
+.js-check-meeting #id-meeting-email {
+    height: 32px;
+}
 @media screen and (max-width: 1000px){
     .detail-item {
         width: 325px;
@@ -502,12 +520,12 @@ a:hover {
     .cal-day {
         transform: translateX(24px);
     }
-    /*.up-btn,*/
-    /*.down-btn,*/
-    /*.left-btn,*/
-    /*.right-btn {*/
-    /*    z-index: 0;*/
-    /*}*/
+    .right-btn {
+        right: 8px;
+    }
+    .left-btn {
+        left: 120px;
+    }
     .cal-meeting {
         margin-left: 0;
         padding: 0;
@@ -548,18 +566,21 @@ a:hover {
         justify-content: flex-start;
     }
     .detail-item {
-        padding: 32px 16px 24px;
+        padding: 25px 16px 20px;
     }
     .time-selector {
         width: 213px;
     }
     .meeting-detail {
-        z-index: 2;
+        z-index: 1;
     }
     .dateTimeWrap .timePart>ul>li {
         width: 62px!important;
     }
     .dateTimeWrap {
         width: 145px!important;
+    }
+    .cal-content-empty img {
+        left: 68%;
     }
 }
