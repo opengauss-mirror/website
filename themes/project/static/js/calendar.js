@@ -573,30 +573,35 @@ $(document).ready(function () {
             });
         },
         detailSwiper: function () {
+            let timer = null
             $('.list-inner-box').on('click', function (event) {
-                let target = event.target;
-                // 点击右键
-                let text = $(this).find('.index').text().split('/');
-                let current = parseInt(text[0]);
-                let total = parseInt(text[1]);
-                let currentLeft = parseInt($(this).find('.inner-list').css('transform').split(',')[4]);
-                let left = null;
-                if (target.className.includes('right')) {
-                    if (current < total) {
-                        left = currentLeft - 220;
-                        current += 1;
+                let _self = $(this);
+                clearTimeout(timer);
+                timer = setTimeout(function () {
+                    let target = event.target;
+                    // 点击右键
+                    let text = _self.find('.index').text().split('/');
+                    let current = parseInt(text[0]);
+                    let total = parseInt(text[1]);
+                    let currentLeft = parseInt(_self.find('.inner-list').css('transform').split(',')[4]);
+                    let left = null;
+                    if (target.className.includes('right')) {
+                        if (current < total) {
+                            left = currentLeft - 220;
+                            current += 1;
+                        }
+                    } else if (target.className.includes('left')) {
+                        if (current > 1) {
+                            left = currentLeft + 220;
+                            current -= 1;
+                        }
+                    } else {
+                        let id = target.dataset.id;
+                        calendarClickEvent.handleDetail(id);
                     }
-                } else if (target.className.includes('left')) {
-                    if (current > 1) {
-                        left = currentLeft + 220;
-                        current -= 1;
-                    }
-                } else {
-                    let id = target.dataset.id;
-                    calendarClickEvent.handleDetail(id);
-                }
-                $(this).find('.inner-list').css('transform', `matrix(1, 0, 0, 1, ${left}, 0)`);
-                $(this).find('.index').text(`${current} / ${total}`);
+                    _self.find('.inner-list').css('transform', `matrix(1, 0, 0, 1, ${left}, 0)`);
+                    _self.find('.index').text(`${current} / ${total}`);
+                }, 500);
             });
         },
         handleRowBtn: function (direction) {
