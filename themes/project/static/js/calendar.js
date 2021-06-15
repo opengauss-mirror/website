@@ -19,6 +19,8 @@ $(document).ready(function () {
             delete: lang === 'zh' ? '删除会议' : 'Delete Meeting',
             modify: lang === 'zh' ? '修改会议' : 'Modify Meeting',
             detailTip: lang === 'zh' ? '编辑已预定会议需要验证用户Gitee身份权限' : 'Editing a scheduled meeting requires verifying the user\'s Gitee identity and permissions.',
+            validTime: lang === 'zh' ? '请输入正确的时间' : 'Please enter a valid time',
+            require: lang === 'zh' ? '请完成所有必填项' : 'Please enter all required fields'
         },
         formatTime: function (time) {
             let arr = time.split('-');
@@ -822,10 +824,10 @@ $(document).ready(function () {
             let src = $('.js-meeting-record').attr('src');
             require.formdata.record = src.includes('off') ? '' : 'cloud';
             if (require.errorTime()) {
-                calendarMethods.remindError('请输入正确的时间');
+                calendarMethods.remindError(calendarMethods.fontmatter.validTime);
                 return false;
             } else if (require.errorInfo()) {
-                calendarMethods.remindError('请输入必填项');
+                calendarMethods.remindError(calendarMethods.fontmatter.require);
                 return false;
             }
             return require;
