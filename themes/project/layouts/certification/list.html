@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+  {{ partial "head.html" . }}
+  <link rel="stylesheet" href="{{ "css/pagination.css" | relURL}}?t={{ mul 1000 (time now).Unix }}">
+  <link href="{{ "css/cve.css" | relURL}}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet">
+
+  <body>
+
+    <div id="all">
+
+        <header>
+
+          {{ partial "nav.html" . }}
+
+        </header>
+
+        {{ partial "breadcrumbs.html" . }}
+
+        <div id="content">
+            {{ if isset .Params "id" }}
+
+              {{ partial .Params.id . }}
+
+            {{ else }}
+
+            <div class="container">
+
+                <div class="certificate">
+                    <div class="ad-form">
+                        <span>{{ .Params.search }}<input class="search-input js-certification-input" type="text" placeholder={{ .Params.search_placeholder }}><img class="js-search-certification search-click" src="/img/gray-search.svg"></span>
+                    </div>
+
+                    <div class="certificate">
+                        <ul class="tables table-title pc-table">
+                            <li><span>{{ .Params.pro}}</span></li>
+                            <li><span>{{ .Params.name}}</span></li>
+                            <li><span>{{ .Params.version}}</span></li>
+                            <li><span>{{ .Params.award}}</span></li>
+                            <li><span>{{ .Params.expiration}}</span></li>
+                            <li class="hide"><span>{{ .Params.certify}}</span></li>
+                            <li><span>{{ .Params.reported}}</span></li>
+                        </ul>
+                        <div class="table-detail pc-table js-list-content">
+                            {{ $certificate := .Params.certificate}}
+                            {{ $report := .Params.report}}
+                            {{ range .Params.product }}
+                            <ul class="tables table-content">
+                                <li title="{{ .pro }}"><span>{{ .pro }}</span></li>
+                                <li title="{{ .name }}"><span>{{ .name }}</span></li>
+                                <li><span>{{ .version }}</span></li>
+                                <li><span>{{ .award }}</span></li>
+                                <li><span>{{ .expiration }}</span></li>
+                                <li class="hide"><a href="{{ .certificate }}" download>{{ $certificate }}</a></li>
+                                <li><a href="{{ .report }}" download>{{ $report }}</a></li>
+                            </ul>
+                            {{ end }}
+                        </div>
+
+                        <div class="h5-cve-pack">
+                            {{ $certificate := .Params.certificate}}
+                            {{ $report := .Params.report}}
+                            {{ $pro := .Params.pro}}
+                            {{ $name := .Params.name}}
+                            {{ $version := .Params.version}}
+                            {{ $award := .Params.award}}
+                            {{ $expiration := .Params.expiration}}
+                            {{ $certificate := .Params.certificate}}
+                            {{ $report := .Params.report}}
+                            {{ range .Params.product }}
+                            <ul class="tables table-content">
+                                <li><span class="pack-name">{{ $pro }}：</span><span>{{ .pro }}</span></li>
+                                <li><span class="pack-name">{{ $name }}：</span><span>{{ .name }}</span></li>
+                                <li><span class="pack-name">{{ $version }}：</span><span>{{ .version }}</span></li>
+                                <li><span class="pack-name">{{ $award }}：</span><span>{{ .award }}</span></li>
+                                <li><span class="pack-name">{{ $expiration }}：</span><span>{{ .expiration }}</span></li>
+                                <li class="hide"><span class="pack-name">{{ $certificate }}：</span><a href="{{ .certificate }}" download>{{ $certificate }}</a></li>
+                                <li><span class="pack-name">{{ $report }}：</span><a href="{{ .certificate }}" download>{{ $report }}</a></li>
+                            </ul>
+                            {{ end }}
+                        </div>
+                        <div id="cve-pagination"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.container -->
+
+            {{ end }}
+        </div>
+        <!-- /#content -->
+
+        {{ partial "footer.html" . }}
+
+    </div>
+    <!-- /#all -->
+
+    {{ partial "scripts.html" . }}
+    <script>
+        var versionList = [];
+        {{ range .Params.product }}
+        versionList.push({
+            pro: '{{ .pro }}',
+            name: '{{ .name }}',
+            version: '{{ .version }}',
+            award: '{{ .award }}',
+            expiration: '{{ .expiration }}',
+            certificate: '{{ .certificate }}',
+            report: '{{ .report }}'
+        })
+        {{ end }}
+    </script>
+        <script src="{{ "js/pagination.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>
+        <script src="{{ "js/certification.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>
+
+  </body>
+</html>
+

@@ -368,7 +368,38 @@ html[lang=en-us] .tables li:nth-child(5) {
 .js-cve-summary {
     line-height: 32px;
 }
-
+.certificate .tables li {
+    width: 200px;
+    margin-right: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+.certificate .table-title li {
+    overflow: unset;
+}
+.certificate .tables li:nth-child(4) {
+    width: 136px;
+}
+.certificate .tables li:nth-child(5) {
+    width: 168px;
+}
+.certificate .tables li:nth-child(6) {
+    width: 104px;
+}
+.certificate .tables li:nth-child(7) {
+    width: 104px;
+}
+.certificate li a {
+    color: var(--theme);
+}
+.certificate li a:hover {
+    text-decoration: none;
+}
+.certificate {
+    margin-top: 16px;
+}
 @media screen and (max-width: 1000px){
     .pc-table,
     .pc-pack {
