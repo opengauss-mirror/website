@@ -33,26 +33,26 @@
 
                     <div class="certificate">
                         <ul class="tables table-title pc-table">
-                            <li><span>{{ .Params.pro}}</span></li>
-                            <li><span>{{ .Params.name}}</span></li>
-                            <li><span>{{ .Params.version}}</span></li>
-                            <li><span>{{ .Params.award}}</span></li>
-                            <li><span>{{ .Params.expiration}}</span></li>
-                            <li class="hide"><span>{{ .Params.certify}}</span></li>
-                            <li><span>{{ .Params.reported}}</span></li>
+                            <li>{{ .Params.pro}}</li>
+                            <li>{{ .Params.name}}</li>
+                            <li>{{ .Params.version}}</li>
+                            <li>{{ .Params.award}}</li>
+                            <li>{{ .Params.expiration}}</li>
+                            <li class="hide">{{ .Params.certify}}</li>
+                            <li>{{ .Params.reported}}</li>
                         </ul>
                         <div class="table-detail pc-table js-list-content">
                             {{ $certificate := .Params.certificate}}
                             {{ $report := .Params.report}}
                             {{ range .Params.product }}
                             <ul class="tables table-content">
-                                <li title="{{ .pro }}"><span>{{ .pro }}</span></li>
-                                <li title="{{ .name }}"><span>{{ .name }}</span></li>
-                                <li><span>{{ .version }}</span></li>
-                                <li><span>{{ .award }}</span></li>
-                                <li><span>{{ .expiration }}</span></li>
-                                <li class="hide"><a href="{{ .certificate }}" download>{{ $certificate }}</a></li>
-                                <li><a href="{{ .report }}" download>{{ $report }}</a></li>
+                                <li title="{{ .pro }}">{{ .pro }}</li>
+                                <li title="{{ .name }}">{{ .name }}</li>
+                                <li>{{ .version }}</li>
+                                <li>{{ .award }}</li>
+                                <li>{{ .expiration }}</li>
+                                <li class="hide"><a href="{{ .certificate }}" download target="_blank">{{ $certificate }}</a></li>
+                                <li><a href="{{ .report }}" download target="_blank">{{ $report }}</a></li>
                             </ul>
                             {{ end }}
                         </div>
@@ -74,8 +74,8 @@
                                 <li><span class="pack-name">{{ $version }}：</span><span>{{ .version }}</span></li>
                                 <li><span class="pack-name">{{ $award }}：</span><span>{{ .award }}</span></li>
                                 <li><span class="pack-name">{{ $expiration }}：</span><span>{{ .expiration }}</span></li>
-                                <li class="hide"><span class="pack-name">{{ $certificate }}：</span><a href="{{ .certificate }}" download>{{ $certificate }}</a></li>
-                                <li><span class="pack-name">{{ $report }}：</span><a href="{{ .certificate }}" download>{{ $report }}</a></li>
+                                <li class="hide"><span class="pack-name">{{ $certificate }}：</span><a href="{{ .certificate }}" download target="_blank">{{ $certificate }}</a></li>
+                                <li><span class="pack-name">{{ $report }}：</span><a href="{{ .report }}" download target="_blank">{{ $report }}</a></li>
                             </ul>
                             {{ end }}
                         </div>

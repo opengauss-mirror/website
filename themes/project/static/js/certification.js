@@ -1,4 +1,3 @@
-console.log('product', versionList);
 $(function () {
     var lang = window.location.href.includes('/zh/') ? 'zh' : 'en';
     var escapeHTML = function (str) {
@@ -32,8 +31,8 @@ $(function () {
             insertHtml += '<li><span>' + escapeHTML(item.version) + '</span></li>'
             insertHtml += '<li><span>' + escapeHTML(item.award) + '</span></li>'
             insertHtml += '<li><span>' + escapeHTML(item.expiration) + '</span></li>'
-            insertHtml += '<li className="hide"><a href="' + escapeHTML(item.certificate)+ '" download>'+ field.certificate +'</a></li>'
-            insertHtml += '<li><a href="' + escapeHTML(item.report)+ '" download>'+ field.report +'</a></li>'
+            insertHtml += '<li class="hide"><a href="' + escapeHTML(item.certificate)+ '" download target="_blank">'+ field.certificate +'</a></li>'
+            insertHtml += '<li><a href="' + escapeHTML(item.report)+ '" download target="_blank">'+ field.report +'</a></li>'
             insertHtml += '</ul>'
         })
         return insertHtml
@@ -47,8 +46,8 @@ $(function () {
             insertHtml += '<li><span class="pack-name">'+ field.version +'：</span><span>' + escapeHTML(item.version) + '</span></li>'
             insertHtml += '<li><span class="pack-name">'+ field.award +'：</span><span>' + escapeHTML(item.award) + '</span></li>'
             insertHtml += '<li><span class="pack-name">'+ field.expiration +'：</span><span>' + escapeHTML(item.expiration) + '</span></li>'
-            insertHtml += '<li class="hide"><span class="pack-name">'+ field.certify +'：</span><a href="' + escapeHTML(item.certificate) + '" download>'+ field.certificate +'</a></li>'
-            insertHtml += '<li><span class="pack-name">'+ field.reported +'：</span><a href="' + escapeHTML(item.report) + '" download>'+ field.report +'</a></li>'
+            insertHtml += '<li class="hide"><span class="pack-name">'+ field.certify +'：</span><a href="' + escapeHTML(item.certificate) + '" download target="_blank">'+ field.certificate +'</a></li>'
+            insertHtml += '<li><span class="pack-name">'+ field.reported +'：</span><a href="' + escapeHTML(item.report) + '" download target="_blank">'+ field.report +'</a></li>'
             insertHtml += '</ul>'
         })
         return insertHtml
@@ -61,8 +60,7 @@ $(function () {
             str = str.toLowerCase()
             if (pro.includes(str)) {
                 filterList.push(item)
-            }
-            if (name.includes(str)) {
+            } else if (name.includes(str)) {
                 filterList.push(item)
             }
         })
@@ -72,12 +70,9 @@ $(function () {
         var certify = escapeHTML($('.js-certification-input').val())
         var filter = sortKeywords(certify)
         var isMobile = document.body.clientWidth < 1000;
-        console.log('filter', filter);
         var html = isMobile ? inserH5HTML(filter) : insertFilterList(filter)
-        console.log('html', html);
         if (isMobile) {
             $('.h5-cve-pack').empty().append(html)
-
         } else {
             $('.js-list-content').empty()
             $('.js-list-content').append(html)

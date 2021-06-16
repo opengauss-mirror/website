@@ -1,7 +1,7 @@
 +++
 title = "发行版认证"
-bgImg = "../img/breadcrumbs/security_bg.png"
-moImg = "../img/breadcrumbs/security_mo.png"
+bgImg = "../img/breadcrumbs/certificate_bg.png"
+moImg = "../img/breadcrumbs/certificate_mo.png"
 search = "搜索"
 search_placeholder = "请输入关键词"
 certificate = "下载证书"
@@ -16,93 +16,13 @@ reported = "认证报告"
 
 
 [[product]]
-pro = "Vastbasse 1.0"
-name = "Vastdata"
-version = "openGauss 2.0"
+pro = "MuDB 1.0.0"
+name = "北京沐融信息科技股份有限公司"
+version = "openGauss 2.0.0"
 award = "2021-06-15"
 expiration = "2024-03-31"
 certificate = ""
-report = ""
-
-[[product]]
-pro = "Vastbasse 2.0"
-name = "bba"
-version = "openGauss 2.0"
-award = "2021-06-15"
-expiration = "2024-03-31"
-certificate = ""
-report = ""
-
-[[product]]
-pro = "bba 1.0"
-name = "Vastdata"
-version = "openGauss 2.0"
-award = "2021-06-15"
-expiration = "2024-03-31"
-certificate = ""
-report = ""
-
-[[product]]
-pro = "Vastbbbbasse 3.0"
-name = "Vastdata"
-version = "openGauss 2.0"
-award = "2021-06-15"
-expiration = "2024-03-31"
-certificate = ""
-report = ""
+report = "https://distributioncertification.obs.myhuaweicloud.com/MuDB%201.0.0/Report.pdf"
 
 
-[[product]]
-pro = "Vastbasse 1.0"
-name = "cccd"
-version = "openGauss 2.0"
-award = "2021-06-15"
-expiration = "2024-03-31"
-certificate = ""
-report = ""
-
-[[product]]
-pro = "aaaab 1.0"
-name = "Vastdddata"
-version = "openGauss 2.0"
-award = "2021-06-15"
-expiration = "2024-03-31"
-certificate = ""
-report = ""
-
-[[product]]
-pro = "nonononon"
-name = "cccccc"
-version = "openGauss 2.0"
-award = "2021-06-15"
-expiration = "2024-03-31"
-certificate = ""
-report = ""
-
-[[product]]
-pro = "yeyeyeye"
-name = "bbbbbbb"
-version = "openGauss 2.0"
-award = "2021-06-15"
-expiration = "2024-03-31"
-certificate = ""
-report = ""
-
-[[product]]
-pro = "yeyeyeye"
-name = "ddddd"
-version = "openGauss 2.0"
-award = "2021-06-15"
-expiration = "2024-03-31"
-certificate = ""
-report = ""
-
-[[product]]
-pro = "ttttttttttttttttttttttttttttmmmmmmmmmmmmmmmmmmmmmm"
-name = "aaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbb"
-version = "openGauss 2.0"
-award = "2021-06-15"
-expiration = "2024-03-31"
-certificate = ""
-report = ""
 +++
