@@ -368,7 +368,51 @@ html[lang=en-us] .tables li:nth-child(5) {
 .js-cve-summary {
     line-height: 32px;
 }
-
+.certificate .tables li {
+    width: 200px;
+    margin-right: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.certificate .table-title li {
+    overflow: unset;
+    vertical-align: middle;
+    white-space: unset;
+}
+.certificate .table-title {
+    line-height: unset;
+    padding: 25px 0;
+}
+.certificate .tables li:nth-child(1) {
+    margin-left: 20px;
+    width: 170px;
+    white-space:nowrap;
+}
+.certificate .tables li:nth-child(2) {
+    white-space:nowrap;
+    width: 230px;
+}
+.certificate .tables li:nth-child(4) {
+    width: 136px;
+}
+.certificate .tables li:nth-child(5) {
+    width: 168px;
+}
+.certificate .tables li:nth-child(6) {
+    width: 104px;
+}
+.certificate .tables li:nth-child(7) {
+    width: 104px;
+}
+.certificate li a {
+    color: var(--theme);
+}
+.certificate li a:hover {
+    text-decoration: none;
+}
+.certificate {
+    margin-top: 16px;
+}
 @media screen and (max-width: 1000px){
     .pc-table,
     .pc-pack {
@@ -470,7 +514,7 @@ html[lang=en-us] .tables li:nth-child(5) {
         width: 90px;
     }
     .ad-form .search-input {
-        width: 303px;
+        width: 278px;
     }
     #id-select-year {
         width: 303px;
@@ -491,5 +535,8 @@ html[lang=en-us] .tables li:nth-child(5) {
         display: block;
         width: unset!important;
         margin: 0;
+    }
+    .certificate .tables li:nth-child(1) {
+        margin-left: unset;
     }
 }

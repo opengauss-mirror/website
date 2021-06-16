@@ -120,11 +120,23 @@ paginate = 10
     weight = 4
     parent = "connect"
 
+[[menu.main]]
+    identifier = "certification"
+    name = "Certification"
+    weight = 6
+    hasChidren = true
+
+[[menu.main]]
+    identifier = "distribution"
+    name = "Distribution Certification"
+    url = "/en/certification.html"
+    weight = 1
+    parent = "certification"
 
 [[menu.main]]
     identifier = "security"
     name = "Security"
-    weight = 6
+    weight = 7
     hasChidren = true
 
 [[menu.main]]
@@ -151,7 +163,7 @@ paginate = 10
 [[menu.main]]
     identifier = "code"
     name = "Code"
-    weight = 7
+    weight = 8
     hasChidren = true
 
 [[menu.main]]
@@ -271,9 +283,22 @@ paginate = 10
     parent = "connect"
 
 [[languages.zh.menu.main]]
+    identifier = "certification"
+    name = "认证"
+    weight = 6
+    hasChidren = true
+
+[[languages.zh.menu.main]]
+    identifier = "distribution"
+    name = "发行版认证"
+    url = "/zh/certification.html"
+    weight = 1
+    parent = "certification"
+
+[[languages.zh.menu.main]]
     identifier = "security"
     name = "安全"
-    weight = 6
+    weight = 7
     hasChidren = true
 
 [[languages.zh.menu.main]]
@@ -300,7 +325,7 @@ paginate = 10
 [[languages.zh.menu.main]]
     identifier = "code"
     name = "代码"
-    weight = 7
+    weight = 8
     hasChidren = true
 
 [[languages.zh.menu.main]]
