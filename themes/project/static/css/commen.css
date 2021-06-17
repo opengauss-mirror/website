@@ -115,7 +115,7 @@ table td {
     word-break: keep-all;
     white-space: nowrap;
 }
-h1,h2,h3,h4,h5,div,p,a,li,span {
+body {
     font-family: Helvetica Neue,Helvetica,Arial,PingFang SC,Hiragino Sans GB,STHeiti,Microsoft YaHei,Microsoft JhengHei,SimSun,sans-serif!important;
 }
 h5 {
