@@ -28,6 +28,7 @@ $(document).ready(function () {
             arr[1] = parseInt(arr[1].split(':')[0]);
             return arr;
         },
+        // 筛选出指定 id 的数据
         filterWithId: function (id) {
             let data = cleanData.dataJSON.tableData;
             let current = data.filter(function (day) {
@@ -45,10 +46,10 @@ $(document).ready(function () {
             t += '<p data-id="' + item.id + '">' + item.name + '</p>';
             t += '<p class="hovered" data-id="' + item.id + '">' + this.fontmatter.time + item.startTime +'-' + item.endTime + '</p>';
 
-            if (item.video_url !== '') {
-                t += `<img src="/img/calendar/video_icon.svg" alt="">`;
-            } else if (item.record) {
-                t += `<img src="/img/calendar/video_gray.svg" alt="">`;
+            if (item.video_url === null) {
+                t += `<img src="/img/calendar/video_gray.svg" alt="video-gray">`;
+            } else if (item.video_url !== '' ) {
+                t += `<img src="/img/calendar/video_icon.svg" alt="video">`;
             }
             t += '</div>';
             return t;
@@ -136,15 +137,15 @@ $(document).ready(function () {
             let duration = info.startTime + '-' + info.endTime;
 
             let t = '<h5 class="meeting-name">' + info.name + '</h5>';
-            t += this.insertDetailListHTML(this.fontmatter.creator, info.creator, 'creator', info.url);
-            t += this.insertDetailListHTML(this.fontmatter.sig, info.group_name, 'sig');
+            t += this.insertDetailListHTML(this.fontmatter.creator, escapeHTML(info.creator), 'creator', info.url);
+            t += this.insertDetailListHTML(this.fontmatter.sig, escapeHTML(info.group_name), 'sig');
             t += this.insertDetailListHTML(this.fontmatter.day, date, 'day');
             t += this.insertDetailListHTML(this.fontmatter.time, duration, 'time');
-            t += this.insertDetailListHTML(this.fontmatter.content, info.detail, 'content');
-            t += this.insertDetailListHTML(this.fontmatter.zoomId, info.meeting_id, 'zoomId');
-            t += this.insertDetailListHTML(this.fontmatter.zoomLink, info.join_url, 'zoomLink');
-            t += this.insertDetailListHTML(this.fontmatter.etherpad, info.etherpad, 'etherpad');
-            t += this.insertDetailListHTML(this.fontmatter.video, info.video_url, 'video');
+            t += this.insertDetailListHTML(this.fontmatter.content, escapeHTML(info.detail), 'content');
+            t += this.insertDetailListHTML(this.fontmatter.zoomId, escapeHTML(info.meeting_id), 'zoomId');
+            t += this.insertDetailListHTML(this.fontmatter.zoomLink, escapeHTML(info.join_url), 'zoomLink');
+            t += this.insertDetailListHTML(this.fontmatter.etherpad, escapeHTML(info.etherpad), 'etherpad');
+            t += this.insertDetailListHTML(this.fontmatter.video, escapeHTML(info.video_url), 'video');
 
             t += '<div class="reverse-submit">' +
                 '<p class="date-delete cursor">' + this.fontmatter.delete + '</p>' +
@@ -152,7 +153,7 @@ $(document).ready(function () {
                 '</div>'
 
             t += '<p class="notice-content">' +
-                '<img src="/img/calendar/notice.png" alt="">' +
+                '<img src="/img/calendar/notice.png" alt="notice">' +
                 this.fontmatter.detailTip +
                 '</p>'
             return t;
@@ -179,6 +180,7 @@ $(document).ready(function () {
             $('#id-meeting-email').val('');
             $('#js-meeting-etherpad').val('');
         },
+        // 判断是否登录
         isLogin: function(id) {
             let userSigs = window.sessionStorage.userSigs;
             if (userSigs !== undefined) {
@@ -190,6 +192,7 @@ $(document).ready(function () {
                 return false;
             }
         },
+        // 判断是否有权限
         isAuthority: function (userSigs, id) {
             if (userSigs !== '') {
                 if (id !== undefined) {
@@ -204,6 +207,7 @@ $(document).ready(function () {
                 return false;
             }
         },
+        // 删除修改会议是，判断是否是本人的权限
         isSelfLogin: function (name, id) {
             let giteeid = window.sessionStorage.giteeId;
             if (giteeid === name) {
@@ -224,6 +228,7 @@ $(document).ready(function () {
                 $('.js-reverse-content').removeClass('hide').siblings().addClass('hide');
             })
         },
+        // 提示语
         remindError: function (info) {
             $('.js-fail-reverse').find('.fail-info').text(info);
             $('.js-fail-reverse').removeClass('hide').siblings().addClass('hide');
@@ -269,6 +274,81 @@ $(document).ready(function () {
         unique: function(arr) {
             return Array.from(new Set(arr));
         },
+        sliceTime: function (arr, timeStart, timeEnd) {
+            return arr.every(meetingItem => {
+                let meetingStart = calendarMethods.formatTime(meetingItem.duration_time)[0];
+                let meetingEnd = calendarMethods.formatTime(meetingItem.duration_time)[1];
+                return (
+                    (timeEnd <= meetingStart) ||
+                    (timeStart >= meetingEnd)
+                );
+            })
+        },
+        sortTime: function (arr, indexTemp) {
+            let arrTemp = [];
+            let notCheckArr = [];
+            if (indexTemp !== null) {
+                let curItemStartTime = arr[indexTemp].startTime;
+                let curItemEndTime = arr[indexTemp].endTime;
+                let curItemStart = calendarMethods.formatTime(arr[indexTemp].duration_time)[0];
+                let curItemEnd = calendarMethods.formatTime(arr[indexTemp].duration_time)[1];
+                arr.forEach((item, index) => {
+                    let itemStart = calendarMethods.formatTime(item.duration_time)[0];
+                    let itemEnd = calendarMethods.formatTime(item.duration_time)[1];
+                    if (index != indexTemp) {
+                        if (
+                            (itemStart < curItemStart) &&
+                            ((curItemStart < itemEnd) &&
+                                (itemEnd <= curItemEnd))
+                        ) {
+                            curItemStart = itemStart;
+                            curItemStartTime = item.startTime;
+                            arrTemp.push(item);
+                            return;
+                        }
+
+                        if (
+                            (itemEnd > curItemEnd) &&
+                            ((curItemStart <= itemStart) &&
+                                (itemStart < curItemEnd))
+                        ) {
+                            curItemEnd = itemEnd;
+                            curItemEndTime = item.endTime;
+                            arrTemp.push(item);
+                            return;
+                        }
+
+                        if (
+                            (itemStart < curItemStart) &&
+                            (itemEnd > curItemEnd)
+                        ) {
+                            curItemStart = itemStart;
+                            curItemEnd = itemEnd;
+                            curItemStartTime = item.startTime;
+                            curItemEndTime = item.endTime;
+                            arrTemp.push(item);
+                            return;
+                        }
+                        notCheckArr.push(item);
+                    }
+                })
+                let selItem = [];
+                if (arrTemp.length) {
+                    arr[indexTemp].startTime = curItemStartTime;
+                    arr[indexTemp].duration = curItemEnd - curItemStart;
+                    arr[indexTemp].endTime = curItemEndTime;
+                    arr[indexTemp].duration_time = curItemStart + ':00-' + curItemEnd + ':00';
+                    selItem.push(arr[indexTemp]);
+
+                    arrTemp.forEach((item, index) => {
+                        selItem[0].meetingData = selItem[0].meetingData.concat(item.meetingData);
+                    })
+                    selItem = selItem.concat(notCheckArr);
+                    arr = selItem;
+                }
+            }
+            return arr
+        },
         calendarSortData: function (data) {
             data.forEach(dateItem => {
                 let arr = [];
@@ -287,14 +367,7 @@ $(document).ready(function () {
                             ]
                         })
                     } else {
-                        let findItem = arr.every(meetingItem => {
-                            let meetingStart = calendarMethods.formatTime(meetingItem.duration_time)[0];
-                            let meetingEnd = calendarMethods.formatTime(meetingItem.duration_time)[1];
-                            return (
-                                (timeEnd <= meetingStart) ||
-                                (timeStart >= meetingEnd)
-                            );
-                        })
+                        let findItem = cleanData.sliceTime(arr, timeStart, timeEnd)
                         if (findItem) {
                             arr.push({
                                 startTime: timeItem.startTime,
@@ -328,8 +401,6 @@ $(document).ready(function () {
                                 eachFlag = true;
                                 meetingItem.meetingData.push(timeItem);
                             }
-
-
                             if (
                                 (timeStart < meetingStart) &&
                                 ((meetingStart < timeEnd) &&
@@ -368,72 +439,86 @@ $(document).ready(function () {
 
                         })
                     }
-                    let arrTemp = [];
-                    let notCheckArr = [];
-                    if (indexTemp !== null) {
-                        let curItemStartTime = arr[indexTemp].startTime;
-                        let curItemEndTime = arr[indexTemp].endTime;
-                        let curItemStart = calendarMethods.formatTime(arr[indexTemp].duration_time)[0];
-                        let curItemEnd = calendarMethods.formatTime(arr[indexTemp].duration_time)[1];
-                        arr.forEach((item, index) => {
-                            let itemStart = calendarMethods.formatTime(item.duration_time)[0];
-                            let itemEnd = calendarMethods.formatTime(item.duration_time)[1];
-                            if (index != indexTemp) {
-                                if (
-                                    (itemStart < curItemStart) &&
-                                    ((curItemStart < itemEnd) &&
-                                        (itemEnd <= curItemEnd))
-                                ) {
-                                    curItemStart = itemStart;
-                                    curItemStartTime = item.startTime;
-                                    arrTemp.push(item);
-                                    return;
-                                }
-
-                                if (
-                                    (itemEnd > curItemEnd) &&
-                                    ((curItemStart <= itemStart) &&
-                                        (itemStart < curItemEnd))
-                                ) {
-                                    curItemEnd = itemEnd;
-                                    curItemEndTime = item.endTime;
-                                    arrTemp.push(item);
-                                    return;
-                                }
-
-                                if (
-                                    (itemStart < curItemStart) &&
-                                    (itemEnd > curItemEnd)
-                                ) {
-                                    curItemStart = itemStart;
-                                    curItemEnd = itemEnd;
-                                    curItemStartTime = item.startTime;
-                                    curItemEndTime = item.endTime;
-                                    arrTemp.push(item);
-                                    return;
-                                }
-                                notCheckArr.push(item);
-                            }
-                        })
-                        let selItem = [];
-                        if (arrTemp.length) {
-                            arr[indexTemp].startTime = curItemStartTime;
-                            arr[indexTemp].duration = curItemEnd - curItemStart;
-                            arr[indexTemp].endTime = curItemEndTime;
-                            arr[indexTemp].duration_time = curItemStart + ':00-' + curItemEnd + ':00';
-                            selItem.push(arr[indexTemp]);
-
-                            arrTemp.forEach((item, index) => {
-                                selItem[0].meetingData = selItem[0].meetingData.concat(item.meetingData);
-                            })
-                            selItem = selItem.concat(notCheckArr);
-                            arr = selItem;
-                        }
-                    }
+                    arr = cleanData.sortTime(arr, indexTemp)
                 })
                 dateItem.timeDate = arr;
             })
             return data;
+        },
+        dealOriginData: function (item) {
+            item.timeDate.forEach(item1 => {
+                item1.dealDate = {};
+                let flags = true;
+                item1.meetingData.forEach(meetItem => {
+                    if (
+                        meetItem.duration !== item1.duration &&
+                        meetItem.startTime !== item1.startTime
+                    ) {
+                        flags = false;
+                    }
+                });
+
+                if (!flags) {
+                    for (let i = 0; i < item1.duration; i++) {
+                        let times = parseInt(item1.startTime) + i + ":00";
+                        item1.dealDate[times] = [];
+                    }
+                    item1.meetingData.forEach(item2 => {
+                        if (item2.startTime === item1.startTime) {
+                            for (const key in item1.dealDate) {
+                                if (key === item2.startTime) {
+                                    item1.dealDate[key].push(item2);
+                                }
+                            }
+                        }
+                        for (
+                            let i = parseInt(item2.startTime);
+                            i < parseInt(item2.endTime);
+                            i++
+                        ) {
+                            let times = i + ":00";
+                            for (const key in item1.dealDate) {
+                                if (key === times) {
+                                    item1.dealDate[key].push(item2);
+                                }
+                            }
+                        }
+                    });
+                    for (const key in item1.dealDate) {
+                        let datas = cleanData.unique(item1.dealDate[key]);
+                        item1.dealDate[key] = datas;
+                    }
+                } else {
+                    let times = parseInt(item1.startTime) + ":00";
+
+                    item1.dealDate[times] = item1.meetingData;
+                }
+                let flag = true;
+                item1.meetingData.forEach(items => {
+                    if (items.duration !== item1.duration) {
+                        flag = false;
+                    }
+                });
+                if (flag) {
+                    for (const key in item1.dealDate) {
+                        if (key !== item1.startTime && !flags) {
+                            delete item1.dealDate[key];
+                        }
+                    }
+                } else {
+                    for (const key in item1.dealDate) {
+                        item1.dealDate[key].forEach(items => {
+                            items.duration = 1;
+                        });
+                    }
+                }
+                for (const key in item1.dealDate) {
+                    let datas = item1.dealDate[key];
+                    item1.dealDate[key] = {};
+                    item1.dealDate[key].index = 1;
+                    item1.dealDate[key].data = datas;
+                }
+            });
         },
         getOriginData: function (data) {
             let timestamp = Date.now();
@@ -450,80 +535,7 @@ $(document).ready(function () {
                         index = dateIndex;
                     }
                 }
-                item.timeDate.forEach(item1 => {
-                    item1.dealDate = {};
-                    let flags = true;
-                    item1.meetingData.forEach(meetItem => {
-                        if (
-                            meetItem.duration !== item1.duration &&
-                            meetItem.startTime !== item1.startTime
-                        ) {
-                            flags = false;
-                        }
-                    });
-
-                    if (!flags) {
-                        for (let i = 0; i < item1.duration; i++) {
-                            let times = parseInt(item1.startTime) + i + ":00";
-                            item1.dealDate[times] = [];
-                        }
-                        item1.meetingData.forEach(item2 => {
-                            if (item2.startTime === item1.startTime) {
-                                for (const key in item1.dealDate) {
-                                    if (key === item2.startTime) {
-                                        item1.dealDate[key].push(item2);
-                                    }
-                                }
-                            }
-                            for (
-                                let i = parseInt(item2.startTime);
-                                i < parseInt(item2.endTime);
-                                i++
-                            ) {
-                                let times = i + ":00";
-                                for (const key in item1.dealDate) {
-                                    if (key === times) {
-                                        item1.dealDate[key].push(item2);
-                                    }
-                                }
-                            }
-                        });
-                        //去重
-                        for (const key in item1.dealDate) {
-                            let datas = cleanData.unique(item1.dealDate[key]);
-                            item1.dealDate[key] = datas;
-                        }
-                    } else {
-                        let times = parseInt(item1.startTime) + ":00";
-
-                        item1.dealDate[times] = item1.meetingData;
-                    }
-                    let flag = true;
-                    item1.meetingData.forEach(items => {
-                        if (items.duration !== item1.duration) {
-                            flag = false;
-                        }
-                    });
-                    if (flag) {
-                        for (const key in item1.dealDate) {
-                            if (key !== item1.startTime && !flags) {
-                                delete item1.dealDate[key];
-                            }
-                        }
-                    } else {
-                        for (const key in item1.dealDate) {
-                            item1.dealDate[key].forEach(items => {
-                                items.duration = 1;
-                            });
-                        }
-                    }
-                    for (const key in item1.dealDate) {
-                        let datas = item1.dealDate[key];
-                        item1.dealDate[key] = {};
-                        item1.dealDate[key].index = 1;
-                        item1.dealDate[key].data = datas;
-                    }
-                });
+                cleanData.dealOriginData(item)
             });
             return data;
 
@@ -534,6 +546,7 @@ $(document).ready(function () {
             up: -9,
             left: 0,
         },
+        // 时间上下切换
         timeSwiper: function () {
             var timer1 = null;
             var timer2 = null;
@@ -550,6 +563,7 @@ $(document).ready(function () {
                 }, 100);
             });
         },
+        // 日期左右切换
         daySwiper: function (size) {
             var timer1 = null;
             var timer2 = null;
@@ -566,6 +580,7 @@ $(document).ready(function () {
                 }, 500);
             });
         },
+        // 详情页左右切换
         detailSwiper: function () {
             let timer = null
             $('.list-inner-box').on('click', function (event) {
@@ -601,7 +616,6 @@ $(document).ready(function () {
             let trans;
             let contentTrans = $('.js-schedule-content').css('transform');
             let origin = parseInt(contentTrans.split(',')[4]);
-
             if (direction === 'up') {
                 if (this.swiper.up < 0) {
                     this.swiper.up += 1;
@@ -617,11 +631,10 @@ $(document).ready(function () {
                     $('.js-up-btn').find('img').attr('src', '/img/calendar/btn.svg');
                 } else {
                     $('.js-down-btn').find('img').attr('src', '/img/calendar/graybtn.svg');
-
                 }
             }
             $('.time-swiper').css('transform', `matrix(1, 0, 0, 1, 0, ${trans})`);
-            $('.js-schedule-content').css('transform', `matrix(1, 0, 0, 1, ${origin}, ${trans})`);
+            $('.js-schedule-content').css('transform', `matrix(1, 0, 0, 1, ${origin}, ${trans - 72})`);
         },
         handleLineBtn: function (direction, size) {
             let trans = $('.js-meet-day').css('transform',);
@@ -772,12 +785,10 @@ $(document).ready(function () {
                     let e = this.formdata.end;
                     s = parseInt(s) + parseInt(s.split(':')[1]) / 100;
                     e = parseInt(e) + parseInt(e.split(':')[1]) / 100;
-                    // 开始时间 大于 结束时间返回 true, 同时两者均不为 NaN
                     let r = (s >= e) && (s !== NaN) && (e !== NaN);
                     return r;
                 },
                 errorInfo: function () {
-                    // 必填项 未填写完整 返回 true
                     let _self = this.formdata;
                     return (
                         _self.topic === undefined ||
@@ -787,15 +798,15 @@ $(document).ready(function () {
                     )
                 }
             };
-            require.formdata.topic = $('#id-meeting-name').val();
-            require.formdata.sponsor = $('#id-meeting-creator').val();
-            require.formdata.group_name = $('#id-meeting-sig').find('option:selected').text();
-            require.formdata.date = $('#J-demo-01').val();
-            require.formdata.start = $('#time-start').val();
-            require.formdata.end = $('#time-end').val();
-            require.formdata.agenda = $('#id-meeting-content').val() === null ? '' : $('#id-meeting-content').val();
-            require.formdata.emaillist = $('#id-meeting-email').val() === null ? '' : $('#id-meeting-email').val();
-            require.formdata.etherpad = $('#js-meeting-etherpad').val() === null ? '' : $('#js-meeting-etherpad').val();
+            require.formdata.topic = escapeHTML($('#id-meeting-name').val());
+            require.formdata.sponsor = escapeHTML($('#id-meeting-creator').val());
+            require.formdata.group_name = escapeHTML($('#id-meeting-sig').find('option:selected').text());
+            require.formdata.date = escapeHTML($('#J-demo-01').val());
+            require.formdata.start = escapeHTML($('#time-start').val());
+            require.formdata.end = escapeHTML($('#time-end').val());
+            require.formdata.agenda = $('#id-meeting-content').val() === null ? '' : escapeHTML($('#id-meeting-content').val());
+            require.formdata.emaillist = $('#id-meeting-email').val() === null ? '' : escapeHTML($('#id-meeting-email').val());
+            require.formdata.etherpad = $('#js-meeting-etherpad').val() === null ? '' : escapeHTML($('#js-meeting-etherpad').val());
             let src = $('.js-meeting-record').attr('src');
             require.formdata.record = src.includes('off') ? '' : 'cloud';
             if (require.errorTime()) {
@@ -836,7 +847,6 @@ $(document).ready(function () {
                     let giteeID = $('.creator-name').text();
                     let isAuthoritied = calendarMethods.isSelfLogin(giteeID);
                     if (isAuthoritied) {
-                        // 有权限
                         $('.js-delete-check').removeClass('hide').siblings().addClass('hide');
                     } else {
                         $('.cal-content-detail').removeClass('hide');
@@ -866,10 +876,8 @@ $(document).ready(function () {
                     let giteeID = $('.creator-name').text();
                     let isAuthoritied = calendarMethods.isSelfLogin(giteeID, id);
                     if (isAuthoritied) {
-                        // 有权限
                         calendarMethods.initFormData(storage);
                         calendarClickEvent.handleCloseDetail();
-                        // 绑定会议信息提交事件
                         calendarClickEvent.handleDateSubmit('modify');
                         $('.cal-content-detail').removeClass('hide');
                     } else {
@@ -896,7 +904,7 @@ $(document).ready(function () {
         meetingData: function (data){
             $.ajax({
                 type: "GET",
-                url: '/calendar/opengauss/meetingsdata/',
+                url: '/calendar/meetingsdata/',
                 data: data,
                 contentType: "application/json; charset=utf-8",
                 crossDomain: true,
@@ -914,7 +922,7 @@ $(document).ready(function () {
         giteeLogin: function () {
             $.ajax({
                 type: "GET",
-                url: '/calendar/opengauss/gitee_login/',
+                url: '/calendar/gitee_login/',
                 contentType: "application/json; charset=utf-8",
                 crossDomain: true,
                 datatype: "json",
@@ -927,7 +935,7 @@ $(document).ready(function () {
         meetingLogin: function (data){
             $.ajax({
                 type: "GET",
-                url: '/calendar/opengauss/user/',
+                url: '/calendar/user/',
                 headers: {
                     withCredentials: true,
                 },
@@ -948,7 +956,7 @@ $(document).ready(function () {
         meetingReserve: function (data){
             $.ajax({
                 type: "POST",
-                url: '/calendar/opengauss/meetings/',
+                url: '/calendar/meetings/',
                 data: JSON.stringify(data),
                 contentType: "application/json; charset=utf-8",
                 crossDomain: true,
@@ -970,7 +978,7 @@ $(document).ready(function () {
         meetingDelete: function(mid) {
             $.ajax({
                 type: "DELETE",
-                url: `/calendar/opengauss/meeting/action/delete/${mid}/`,
+                url: `/calendar/meeting/action/delete/${mid}/`,
                 contentType: "application/json; charset=utf-8",
                 crossDomain: true,
                 datatype: "json",
@@ -989,7 +997,7 @@ $(document).ready(function () {
             $.ajax({
                 type: "PUT",
                 data: JSON.stringify(data),
-                url: `/calendar/opengauss/meeting/action/update/${mid}/`,
+                url: `/calendar/meeting/action/update/${mid}/`,
                 contentType: "application/json; charset=utf-8",
                 crossDomain: true,
                 datatype: "json",
@@ -1008,7 +1016,7 @@ $(document).ready(function () {
         meetingCheck: function(id, isModified) {
             $.ajax({
                 type: "GET",
-                url: `/calendar/opengauss/meeting/${id}/`,
+                url: `/calendar/meeting/${id}/`,
                 contentType: "application/json; charset=utf-8",
                 crossDomain: true,
                 datatype: "json",
@@ -1023,15 +1031,15 @@ $(document).ready(function () {
                         $('.js-meeting-content').removeClass('hide').siblings().addClass('hide');
                         requestMethods.meetingData();
                     } else {
-                        $('#id-meeting-name').val(res.topic);
-                        $('#id-meeting-creator').val(res.sponsor);
+                        $('#id-meeting-name').val(escapeHTML(res.topic));
+                        $('#id-meeting-creator').val(escapeHTML(res.sponsor));
                         $("#id-meeting-sig").get(0).selectedIndex=0;
-                        $('#J-demo-01').val(res.date);
-                        $('#id-meeting-content').val(res.agenda);
-                        $('#id-meeting-email').val(res.emaillist);
-                        $('#js-meeting-etherpad').val(res.etherpad);
-                        $('#time-start').val(res.start);
-                        $('#time-end').val(res.end);
+                        $('#J-demo-01').val(escapeHTML(res.date));
+                        $('#id-meeting-content').val(escapeHTML(res.agenda));
+                        $('#id-meeting-email').val(escapeHTML(res.emaillist));
+                        $('#js-meeting-etherpad').val(escapeHTML(res.etherpad));
+                        $('#time-start').val(escapeHTML(res.start));
+                        $('#time-end').val(escapeHTML(res.end));
                         $('.js-reverse-content').removeClass('hide').siblings().addClass('hide');
                     }
                 }
@@ -1040,14 +1048,14 @@ $(document).ready(function () {
         meetingSig: function(data) {
             $.ajax({
                 type: "GET",
-                url: '/calendar/opengauss/groups/',
+                url: '/calendar/groups/',
                 data: data,
                 contentType: "application/json; charset=utf-8",
                 crossDomain: true,
                 datatype: "json",
                 success: function (res) {
                     res.forEach(item => {
-                        $('#id-select-sigs').append('<option value="' + item.name  + '">' + item.name + '</option>');
+                        $('#id-select-sigs').append('<option value="' + escapeHTML(item.name)  + '">' + escapeHTML(item.name) + '</option>');
                     })
                 }
             });
@@ -1058,50 +1066,41 @@ $(document).ready(function () {
         let data = dataJSON.tableData;
         data = cleanData.calendarSortData(data);
         data = cleanData.getOriginData(data);
-        // 其中 56 是高度， 16 是边距, 220 是宽度,24 是边距, 12 是距离可视范围 12 的边距
-        // 左移 -(len - 4) * (220 + 24) + 12px
-        // len 是日期列表长度
-        // 4 是保留 4 个可视日期
-        // 220 是日期宽度
-        // 24 是日期右边距
-        // 12 是留出 12px 内边距
-        // 需要移到当前日期 + 1 个位置
-        // 渲染日期数据
         let top = '';
         $('.js-meet-day').empty();
         let isMobile = document.body.clientWidth < 1000;
-        let currentTime = calendarClickEvent.getNowTime().day;
         let currentIndex = 0;
         let prevIndex = 0;
         let lastIndex = 0;
+        let year = calendarClickEvent.getNowTime().year;
+        let month = calendarClickEvent.getNowTime().month < 10 ? '0' +  calendarClickEvent.getNowTime().month :  calendarClickEvent.getNowTime().month;
+        let d = calendarClickEvent.getNowTime().day < 10 ?  '0' + calendarClickEvent.getNowTime().day :  calendarClickEvent.getNowTime().day;
+        let currentTime = year + '-' + month + '-' + d
         data.forEach((item, index) => {
-            let day = item.date.split('-')[2];
-            let active = currentTime === parseInt(day) ? 'active' : '';
+            let day = item.date;
+            let active = currentTime === day ? 'active' : '';
             top += `<p class="day-item ${active}">${item.date}</p>`;
-            if (currentTime === parseInt(day)) {
+            if (currentTime === day) {
                 currentIndex = index;
             }
-            if ((currentIndex === 0) && (currentTime < parseInt(day))) {
+            if ((currentIndex === 0) && (currentTime < day)) {
                 prevIndex = prevIndex ? prevIndex : index - 1;
             }
             if (currentIndex === 0) {
                 lastIndex = index;
             }
         });
+
         $('.js-meet-day').append(top);
-        // 左移议程
         let len = (currentIndex ? currentIndex : prevIndex ? prevIndex : lastIndex) + 1;
         let w = isMobile ? 185 : 220;
-        // 议程长度，跟数据长度有关
         let width = data.length * (w + 24);
-        // 设置 打横日期长度
         $('.js-meet-day').css('width', width);
         $('.js-schedule-content').css('width', width);
         let trans = 0;
         let origin = parseInt($('.js-schedule-content').css('transform').split(',')[5]);
         if (isMobile) {
             len -= 1;
-            // 左移距离，跟当前日期有关，
             trans = -len * (w + 24) + 12;
             $('.calendar').show();
             if (data.length === 0) {
@@ -1110,7 +1109,6 @@ $(document).ready(function () {
                 $('.cal-content-empty').addClass('hide');
             }
         } else if (data.length > 4) {
-            // 左移距离，跟当前日期有关，
             trans = -(len - 4) * (w + 24) + 12;
             $('.calendar').show();
             $('.cal-content-empty').addClass('hide');
@@ -1137,6 +1135,21 @@ $(document).ready(function () {
         var v = window.document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
         return v ? v[2] : null;
     };
+    const setCookie = function (name, value) {
+        var newCookie = name + '=' + value + ';path=/';
+        document.cookie = newCookie;
+    }
+    var escapeHTML = function (str) {
+        return  str.replace(/[&<>'"]/g, function (tag) {
+            return ({
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                "'": '&#39;',
+                '"': '&quot;'
+            }[tag] || tag)}
+        );
+    };
     var initMeeting = function () {
         meetingDate();
         calendarClickEvent.detailSwiper();
@@ -1150,6 +1163,23 @@ $(document).ready(function () {
         calendarClickEvent.handleDeleteCheck();
         calendarClickEvent.handleSigs();
     };
+    var currentLanguage = function () {
+        let cookie = getCookie('lang');
+        let url = window.location.href
+        if (cookie === 'zh') {
+            if (url.includes('/en/')) {
+                url = url.replace('/en/', '/zh/')
+                window.location.href = url
+            }
+        } else if (cookie === 'en') {
+            if (url.includes('/zh/')) {
+                url = url.replace('/zh/', '/en/')
+                window.location.href = url
+            }
+        } else if (cookie === null) {
+            setCookie('lang', lang)
+        }
+    };
     var __calendarMain = function () {
         requestMethods.meetingData();
         requestMethods.meetingSig();
@@ -1159,5 +1189,6 @@ $(document).ready(function () {
             requestMethods.meetingLogin();
         }
     };
+    currentLanguage();
     __calendarMain();
 });

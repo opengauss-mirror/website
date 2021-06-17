@@ -1,30 +1,27 @@
 <div id="meetings">
-{{ $paginator := .Paginate (where .Data.Pages "Type" "page")}}
-{{ range $paginator.Pages }}
-{{ if .Params.calzoomId}}
 
 <div class="calendar-meeting">
     <div class="content sig-select">
         <select name="" id="id-select-sigs" class="form-control">
-            <option value="All">{{ .Params.allsigs }}</option>
+            <option value="All">{{ i18n "meeting_all_sigs"}}</option>
         </select>
     </div>
     <div class="calendar">
         <div class="content">
             <div class="cal-time cal-detail">
-                <p class="js-up-btn up-btn cursor"><img src="/img/calendar/btn.svg" alt=""></p>
-                <p class="js-down-btn down-btn cursor"><img src="/img/calendar/btn.svg" alt=""></p>
+                <p class="js-up-btn up-btn cursor"><img src="/img/calendar/btn.svg" alt="up-btn"></p>
+                <p class="js-down-btn down-btn cursor"><img src="/img/calendar/btn.svg" alt="down-btn"></p>
                 <p class="det-title js-reserve-meeting cursor">
-                    <img src="/img/calendar/date.png" alt="">
-                    {{ .Params.booktitle }}
+                    <img src="/img/calendar/date.png" alt="date">
+                    {{ i18n "meeting_book_title"}}
                 </p>
                 <div class="time-box">
                     <div class="time-swiper"></div>
                 </div>
             </div>
             <div class="cal-meeting js-meeting-data">
-                <p class="js-left-btn left-btn cursor"><img src="/img/calendar/btn.svg" alt=""></p>
-                <p class="js-right-btn right-btn cursor"><img src="/img/calendar/btn.svg" alt=""></p>
+                <p class="js-left-btn left-btn cursor"><img src="/img/calendar/btn.svg" alt="left-btn"></p>
+                <p class="js-right-btn right-btn cursor"><img src="/img/calendar/btn.svg" alt="right-btn"></p>
                 <div class="visible-box">
                     <div class="cal-day js-meet-day"></div>
                     <div class="cal-content">
@@ -39,131 +36,130 @@
         <div class="content">
             <div class="cal-content-detail hide">
             <div class="detail-item">
-                    <img class="js-close-detail cursor" src="/img/calendar/close.svg" alt="">
+                    <img class="js-close-detail cursor" src="/img/calendar/close.svg" alt="close">
                     <div class="js-check-meeting">
                         <div class="js-meeting-content hide"></div>
                         <div class="js-reverse-content hide">
-                            <h4>{{ .Params.booktitle }}</h4>
+                            <h4>{{ i18n "meeting_book_title"}}</h4>
                             <ul>
-                                <li>{{ .Params.reverse }}<span class="red"> * </span></li>
-                                <li><input type="text" value="" id="id-meeting-name" placeholder="{{ .Params.hoderName }}"></li>
+                                <li>{{ i18n "meeting_reverse"}}<span class="red"> * </span></li>
+                                <li><input type="text" value="" id="id-meeting-name" placeholder=" {{ i18n "meeting_hoder_name"}}"></li>
                             </ul>
                             <ul>
-                                <li>{{ .Params.creator }}<span class="red"> * </span></li>
+                                <li>{{ i18n "meeting_creator"}}<span class="red"> * </span></li>
                                 <li><input type="text" value="" disabled id="id-meeting-creator"></li>
                             </ul>
                             <ul>
-                                <li>{{ .Params.sig }}<span class="red"> * </span></li>
+                                <li>{{ i18n "meeting_sig"}}<span class="red"> * </span></li>
                                 <li>
                                     <select name="" id="id-meeting-sig"  class="form-control"></select>
                                 </li>
                             </ul>
                             <ul>
-                                <li>{{ .Params.day }}<span class="red"> * </span></li>
-                                <li><input type="text" class="mt10px input" id="J-demo-01" placeholder="{{ .Params.hoderday }}"></li>
+                                <li>{{ i18n "meeting_day"}}<span class="red"> * </span></li>
+                                <li><input type="text" class="mt10px input" id="J-demo-01" placeholder="{{ i18n "meeting_hoder_day"}}"></li>
                             </ul>
                             <ul>
-                                <li>{{ .Params.time }}<span class="red"> * </span></li>
+                                <li>{{ i18n "meeting_time"}}<span class="red"> * </span></li>
                                 <li>
                                     <div class="js-time-picker time-picker">
                                         <div class="time-selector">
                                             <div class="mycontainer">
-                                                <input type="text" placeholder="请选择时间" id="time-start">
+                                                <input type="text" placeholder="{{ i18n "meeting_hoder_start"}}" id="time-start">
                                             </div> -
                                             <div class="mycontainer">
-                                                <input type="text" placeholder="请选择时间" id="time-end">
+                                                <input type="text" placeholder="{{ i18n "meeting_hoder_end"}}" id="time-end">
                                             </div>
                                         </div>
                                     </div>
                                 </li>
                             </ul>
                             <ul>
-                                <li>{{ .Params.content }}</li>
-                                <li><textarea type="text" id="id-meeting-content" placeholder="{{ .Params.hoderagenda }}"></textarea></li>
+                                <li>{{ i18n "meeting_content"}}</li>
+                                <li><textarea type="text" id="id-meeting-content" maxlength="50" placeholder="{{ i18n "meeting_hoder_agenda"}}"></textarea></li>
                             </ul>
                             <ul>
-                                <li>{{ .Params.emailadd }}</li>
-                                <li><textarea type="text" id="id-meeting-email" placeholder="{{ .Params.hoderemail }}"></textarea></li>
+                                <li>{{ i18n "meeting_emailadd"}}</li>
+                                <li><textarea type="text" id="id-meeting-email" placeholder="{{ i18n "meeting_hoder_email"}}"></textarea></li>
                             </ul>
                             <ul>
                                 <li>Etherpad</li>
-                                <li><input type="text" value="" id="js-meeting-etherpad" placeholder="{{ .Params.hoderetherpad }}"></li>
+                                <li><input type="text" value="" id="js-meeting-etherpad" placeholder="{{ i18n "meeting_hoder_etherpad"}}"></li>
                             </ul>
                             <ul>
-                                <li>{{ .Params.record }}</li>
+                                <li>{{ i18n "meeting_record"}}</li>
                                 <li><img class="js-meeting-record" src="/img/calendar/record-off.png"></li>
                             </ul>
                             <p class="notice-content">
-                                <img src="/img/calendar/notice.png" alt="">
-                                {{ .Params.recordtip }}
+                                <img src="/img/calendar/notice.png" alt="notice">
+                                {{ i18n "meeting_record_tip"}}
                             </p>
-                            <p class="notice-req"><span class="red"> * </span>  {{.Params.requiretip}}</p>
+                            <p class="notice-req"><span class="red"> * </span>  {{ i18n "meeting_require_tip"}}</p>
                             <div class="reverse-submit">
-                                <p class="date-reset cursor">{{ .Params.reset }}</p>
-                                <p class="date-submit cursor">{{ .Params.book }}</p>
+                                <p class="date-reset cursor">{{ i18n "meeting_reset"}}</p>
+                                <p class="date-submit cursor">{{ i18n "meeting_book"}}</p>
                             </div>
                         </div>
                         <div class="js-no-login notice-card hide">
-                            <h4>{{ .Params.logintip }}</h4>
-                            <p>{{ .Params.logininfo }}</p>
-                            <p class="meeting-login cursor"><img src="/img/calendar/gitee.png" alt="">{{ .Params.logingitee }}</p>
-                            <p class="login-privacy">{{ .Params.loginagree }} <a href="{{ i18n "cookie_description_link"}}" target="_blank">{{ .Params.loginprivacy }}</a></p>
+                            <h4>{{ i18n "meeting_login_tip"}}</h4>
+                            <p>{{ i18n "meeting_login_info"}}</p>
+                            <p class="meeting-login cursor"><img src="/img/calendar/gitee.png" alt="gitee">{{ i18n "meeting_login_gitee"}}</p>
+                            <p class="login-privacy">{{ i18n "meeting_login_agree"}}<a href="{{ i18n "cookie_description_link"}}" target="_blank">{{ i18n "meeting_login_privacy"}}</a></p>
                         </div>
                         <div class="js-no-authority notice-card hide">
-                            <h4>{{ .Params.permission }}</h4>
-                            <img src="/img/calendar/no-authority.png" alt="">
-                            <p>{{ .Params.permissiontip }}</p>
+                            <h4>{{ i18n "meeting_permission"}}</h4>
+                            <img src="/img/calendar/no-authority.png" alt="no-authority">
+                            <p>{{ i18n "meeting_permission_tip"}}</p>
                         </div>
                         <div class="js-no-edit notice-card hide">
-                            <h4>{{ .Params.permission }}</h4>
-                            <img src="/img/calendar/no-authority.png" alt="">
-                            <p>{{ .Params.edittip }}</p>
+                            <h4>{{ i18n "meeting_permission"}}</h4>
+                            <img src="/img/calendar/no-authority.png" alt="no-authority">
+                            <p>{{ i18n "meeting_edit_tip"}}</p>
                         </div>
                         <div class="js-fail-reverse notice-card hide">
-                            <h4>{{ .Params.booktitle }}</h4>
-                            <img src="/img/calendar/no-authority.png" alt="">
-                            <p class="fail-info">{{ .Params.booktimefail }}</p>
-                            <p class="js-back-reverse cursor">{{ .Params.bookback }}</p>
+                            <h4>{{ i18n "meeting_book_title"}}</h4>
+                            <img src="/img/calendar/no-authority.png" alt="no-authority">
+                            <p class="fail-info">{{ i18n "meeting_book_time_fail"}}</p>
+                            <p class="js-back-reverse cursor">{{ i18n "meeting_book_back"}}</p>
                         </div>
                         <div class="js-success-reverse notice-card hide">
-                            <h4>{{ .Params.booktitle }}</h4>
-                            <img src="/img/calendar/success.png" alt="">
-                            <p>{{ .Params.booksuccess }}</p>
+                            <h4>{{ i18n "meeting_book_title"}}</h4>
+                            <img src="/img/calendar/success.png" alt="success">
+                            <p>{{ i18n "meeting_book_success"}}</p>
                         </div>
                         <div class="js-delete-check notice-card hide">
-                            <h4>{{ .Params.deletetitle }}</h4>
-                            <p>{{ .Params.deletetip }}</p>
+                            <h4>{{ i18n "meeting_delete_title"}}</h4>
+                            <p>{{ i18n "meeting_delete_tip"}}</p>
                             <div class="reverse-submit">
-                                <p class="delete-cancel cursor">{{ .Params.cancel }}</p>
-                                <p class="delete-confirm cursor">{{ .Params.deletesure }}</p>
+                                <p class="delete-cancel cursor">{{ i18n "meeting_cancel"}}</p>
+                                <p class="delete-confirm cursor">{{ i18n "meeting_delete_sure"}}</p>
                             </div>
                         </div>
                         <div class="js-delete-success notice-card hide">
-                            <h4>{{ .Params.deletetitle }}</h4>
-                            <img src="/img/calendar/success.png" alt="">
-                            <p>{{ .Params.deleteok }}</p>
+                            <h4>{{ i18n "meeting_delete_title"}}</h4>
+                            <img src="/img/calendar/success.png" alt="success">
+                            <p>{{ i18n "meeting_delete_ok"}}</p>
                         </div>
                         <div class="js-modify-success notice-card hide">
-                            <h4>{{ .Params.booktitle }}</h4>
-                            <img src="/img/calendar/success.png" alt="">
-                            <p>{{ .Params.booksuccess }}</p>
-                            <p class="js-data-check cursor">{{ .Params.seemeeting }}</p>
+                            <h4>{{ i18n "meeting_book_title"}}</h4>
+                            <img src="/img/calendar/success.png" alt="success">
+                            <p>{{ i18n "meeting_book_success"}}</p>
+                            <p class="js-data-check cursor">{{ i18n "meeting_see_meeting"}}</p>
                         </div>
                         <div class="js-fail-modify notice-card hide">
-                            <h4>{{ .Params.booktitle }}</h4>
-                            <img src="/img/calendar/no-authority.png" alt="">
+                            <h4>{{ i18n "meeting_book_title"}}</h4>
+                            <img src="/img/calendar/no-authority.png" alt="no-authority">
                             <p class="fail-info"></p>
-                            <p class="js-back-reverse cursor">{{ .Params.bookback }}</p>
+                            <p class="js-back-reverse cursor">{{ i18n "meeting_book_back"}}</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="cal-content-empty hide">
-                <img src="/img/calendar/no-data.png" alt="">
+                <img src="/img/calendar/no-data.png" alt="no-data">
             </div>
         </div>
     </div>
 </div>
-{{ end }}
-{{ end }}
+
 </div>

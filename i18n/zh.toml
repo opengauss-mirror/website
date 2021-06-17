@@ -536,3 +536,138 @@ other = "/zh/privacyPolicy.html"
 
 [cookie_description_privacy]
 other = "Cookies和隐私政策>"
+
+
+
+[meeting_book_title]
+other = "预定会议"
+
+[meeting_reverse]
+other = "会议名称"
+
+[meeting_creator]
+other = "发起人"
+
+[meeting_sig]
+other = "所属SIG组"
+
+[meeting_day]
+other = "会议日期"
+
+[meeting_time]
+other = "会议时间"
+
+[meeting_content]
+other = "会议内容"
+
+[meeting_emailadd]
+other = "邮件地址"
+
+[meeting_calzoomId]
+other = "Zoom会议ID:"
+
+[meeting_zoomLink]
+other = "Zoom链接:"
+
+[meeting_etherpad]
+other = "Etherpad链接:"
+
+[meeting_video]
+other = "回放链接:"
+
+[meeting_record]
+other = "是否录制此会议"
+
+[meeting_record_tip]
+other = "若开启会议录制功能，会议开始后会自动开始录屏，并在会议结束后自动将录屏上传至B站openGauss账号下。录制服务由Zoom提供。"
+
+[meeting_require_tip]
+other = "为必填项"
+
+[meeting_delete]
+other = "删除会议:"
+
+[meeting_modify]
+other = "修改会议:"
+
+[meeting_all_sigs]
+other = "全部sig组"
+
+[meeting_reset]
+other = "重置"
+
+[meeting_book]
+other = "立即预定"
+
+[meeting_login_tip]
+other = "登录提示"
+
+[meeting_login_info]
+other = "使用openGauss会议预定功能需要SIG组Maintainer或Committer身份权限，请您允许授权登录Gitee验证用户信息"
+
+[meeting_login_gitee]
+other = "Gitee授权登录"
+
+[meeting_login_agree]
+other = "登录即表示同意"
+
+[meeting_login_privacy]
+other = "隐私条款"
+
+[meeting_permission]
+other = "权限提示"
+
+[meeting_permission_tip]
+other = "很抱歉！您暂时没有预定会议的权限"
+
+[meeting_edit_tip]
+other = "很抱歉！您暂时没有编辑会议的权限"
+
+[meeting_book_time_fail]
+other = "很抱歉！因时间冲突会议预定失败"
+
+[meeting_book_back]
+other = "返回重新预定会议"
+
+[meeting_book_success]
+other = "您已成功预定会议"
+
+[meeting_delete_title]
+other = "删除提示"
+
+[meeting_delete_tip]
+other = "是否确定要删除当前会议？"
+
+[meeting_cancel]
+other = "取消"
+
+[meeting_delete_sure]
+other = "确定删除"
+
+[meeting_delete_ok]
+other = "您已成功删除此会议"
+
+[meeting_see_meeting]
+other = "查看此会议"
+
+[meeting_hoder_name]
+other = "请输入会议名称"
+
+[meeting_hoder_day]
+other = "选择会议日期"
+
+[meeting_hoder_agenda]
+other = "请输入会议内容"
+
+[meeting_hoder_email]
+other = "多个邮件地址之间用逗号,隔开"
+
+[meeting_hoder_etherpad]
+other = "无指定链接时将自动生成Etherpad链接"
+
+[meeting_hoder_start]
+other = "选择起始时间"
+
+[meeting_hoder_end]
+other = "选择结束时间"
+
