@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    const log = console.log.bind(console);
     var lang = window.location.href.includes('/zh/') ? 'zh' : 'en';
 
     var calendarMethods = {
@@ -43,8 +42,8 @@ $(document).ready(function () {
             let item = data;
             let t = "";
             t += '<div class="content-meeting" data-id="' + item.id + '">';
-            t += '<p data-id="' + item.id + '">' + item.name + '</p>';
-            t += '<p class="hovered" data-id="' + item.id + '">' + this.fontmatter.time + item.startTime +'-' + item.endTime + '</p>';
+            t += '<p data-id="' + item.id + '">' + escapeHTML(item.name) + '</p>';
+            t += '<p class="hovered" data-id="' + item.id + '">' + escapeHTML(this.fontmatter.time + item.startTime +'-' + item.endTime) + '</p>';
 
             if (item.video_url === null) {
                 t += `<img src="/img/calendar/video_gray.svg" alt="video-gray">`;
@@ -59,31 +58,26 @@ $(document).ready(function () {
             Object.entries(data.dealDate).forEach(function (item) {
                 let key = item[0];
                 let value = item[1];
-
                 if (value.data.length > 0) {
                     let d = value.data[0];
-
                     let start = key;
                     start = Number(start.split(':')[0]);
                     let top = (start + 1) * (16 + 56);
                     let height = (56) * d.duration + 16 * (d.duration - 1);
                     let width = value.data.length * 220;
-
                     let isShow = value.data.length > 1 ? 'show' : '';
-
                     t += `<div class="list-inner-box"  style="height: ${height}px; top: ${top}px;">`;
                     t += `<span class="left btnMy ${isShow}" style="height: ${height}px;line-height: ${height}px;"> < </span>`;
                     t += `<span class="right btnMy ${isShow}" style="height: ${height}px;line-height: ${height}px;"> > </span>`;
                     t += `<span class="index btnMy ${isShow}"> 1 / ${value.data.length}</span>`;
                     t += `<div class="inner-list" style="width: ${width}px; height: ${height}px;">`;
-
                     for (let i = 0; i < value.data.length; i++) {
                         let item = value.data[i];
                         t += calendarMethods.insertContentHTML(item);
                     }
                     t += '</div></div>';
                 }
-            })
+            });
             return t;
         },
         insertDealHTML: function (data) {
@@ -103,11 +97,9 @@ $(document).ready(function () {
                 let day = data[i].date;
                 let list = data[i].timeDate;
                 t = `<div class="row-list" data-day="${day}">`;
-
                 let l = calendarMethods.insertDealHTML(list);
                 t += l;
                 t += '</div>';
-
                 $('.js-schedule-content').append(t);
             }
         },
@@ -122,8 +114,7 @@ $(document).ready(function () {
                 } else if (value !== '') {
                     let c = name.toLowerCase().includes('id') ? 'mid' : 'detail-' + className;
                     t = '<ul>' +
-                        '<li>' + name + '</li>'
-
+                        '<li>' + name + '</li>';
                     t += img !== undefined
                         ? '<img class="creator-icon" src="' + img + '">' + '<li class="creator-name">' + value + '</li>' + '</ul>'
                         : '<li class="'+ c + '">' + value + '</li>' + '</ul>';
@@ -139,8 +130,8 @@ $(document).ready(function () {
             let t = '<h5 class="meeting-name">' + info.name + '</h5>';
             t += this.insertDetailListHTML(this.fontmatter.creator, escapeHTML(info.creator), 'creator', info.url);
             t += this.insertDetailListHTML(this.fontmatter.sig, escapeHTML(info.group_name), 'sig');
-            t += this.insertDetailListHTML(this.fontmatter.day, date, 'day');
-            t += this.insertDetailListHTML(this.fontmatter.time, duration, 'time');
+            t += this.insertDetailListHTML(this.fontmatter.day, escapeHTML(date), 'day');
+            t += this.insertDetailListHTML(this.fontmatter.time, escapeHTML(duration), 'time');
             t += this.insertDetailListHTML(this.fontmatter.content, escapeHTML(info.detail), 'content');
             t += this.insertDetailListHTML(this.fontmatter.zoomId, escapeHTML(info.meeting_id), 'zoomId');
             t += this.insertDetailListHTML(this.fontmatter.zoomLink, escapeHTML(info.join_url), 'zoomLink');
@@ -150,12 +141,12 @@ $(document).ready(function () {
             t += '<div class="reverse-submit">' +
                 '<p class="date-delete cursor">' + this.fontmatter.delete + '</p>' +
                 '<p class="date-modify cursor">' + this.fontmatter.modify + '</p>' +
-                '</div>'
+                '</div>';
 
             t += '<p class="notice-content">' +
                 '<img src="/img/calendar/notice.png" alt="notice">' +
                 this.fontmatter.detailTip +
-                '</p>'
+                '</p>';
             return t;
         },
         insertTimeList: function() {
@@ -166,7 +157,6 @@ $(document).ready(function () {
                 let active = currentTime === i ? 'active' : '';
                 t += '<p class="det-item ' + active +'">' + i + ':00-' + (i + 1) + ':00 </p>';
             }
-
             $('.time-swiper').append(t);
         },
         emptyFormDate: function() {
@@ -582,7 +572,7 @@ $(document).ready(function () {
         },
         // 详情页左右切换
         detailSwiper: function () {
-            let timer = null
+            let timer = null;
             $('.list-inner-box').on('click', function (event) {
                 let _self = $(this);
                 clearTimeout(timer);
@@ -1079,7 +1069,7 @@ $(document).ready(function () {
         data.forEach((item, index) => {
             let day = item.date;
             let active = currentTime === day ? 'active' : '';
-            top += `<p class="day-item ${active}">${item.date}</p>`;
+            top += `<p class="day-item ${active}">${escapeHTML(item.date)}</p>`;
             if (currentTime === day) {
                 currentIndex = index;
             }
@@ -1165,19 +1155,19 @@ $(document).ready(function () {
     };
     var currentLanguage = function () {
         let cookie = getCookie('lang');
-        let url = window.location.href
+        let url = window.location.href;
         if (cookie === 'zh') {
             if (url.includes('/en/')) {
-                url = url.replace('/en/', '/zh/')
-                window.location.href = url
+                url = url.replace('/en/', '/zh/');
+                window.location.href = url;
             }
         } else if (cookie === 'en') {
             if (url.includes('/zh/')) {
-                url = url.replace('/zh/', '/en/')
-                window.location.href = url
+                url = url.replace('/zh/', '/en/');
+                window.location.href = url;
             }
         } else if (cookie === null) {
-            setCookie('lang', lang)
+            setCookie('lang', lang);
         }
     };
     var __calendarMain = function () {

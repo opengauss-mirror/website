@@ -1,3 +1,18 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td{font-family: Helvetica Neue,Helvetica,Arial,PingFang SC,Hiragino Sans GB,STHeiti,Microsoft YaHei,Microsoft JhengHei,SimSun,sans-serif!important;}
+body, html body {
+    color: unset!important;
+    font-size: 14px!important;
+}
+.dateTimeWrap {
+    background: #eee!important;
+}
+.dateTimeWrap .timePart>ul>li{
+    width:110px;
+}
+.mycontainer {
+    margin: 0;
+    width: unset;
+}
 .red {
     color: #F76260;
 }
@@ -32,6 +47,8 @@
     margin-bottom: 16px;
     text-align: center;
     line-height: 56px;
+    color: #4D4D4D;
+    font-size: 14px;
 }
 .det-item.active {
     color: var(--theme);
@@ -109,6 +126,8 @@ html[lang=en-us] .cal-time .det-title {
     width: 220px;
     text-align: center;
     margin-right: 24px;
+    color: #4D4D4D;
+    font-size: 14px;
 }
 .day-item.active {
     color: var(--theme);
@@ -157,6 +176,8 @@ html[lang=en-us] .cal-time .det-title {
     padding: 0 24px;
     text-align: center;
     cursor: default;
+    font-size: 16px;
+    color: #000;
 }
 .content-meeting img {
     position: relative;
@@ -227,6 +248,7 @@ html[lang=en-us] .cal-time .det-title {
 }
 .content-meeting:hover .hovered {
     display: block;
+    color: #fff;
 }
 .detail-item {
     position: absolute;
@@ -234,7 +256,7 @@ html[lang=en-us] .cal-time .det-title {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 550px;
-    padding: 32px 40px;
+    padding: 22px 40px;
     background: #FFFFFF;
     border-radius: 8px;
 }
@@ -320,6 +342,11 @@ html[lang=en-us] .cal-time .det-title {
 }
 .mycontainer input{
     padding: 0 12px!important;
+    width: 100px;
+    text-align: center;
+}
+.mycontainer {
+    display: inline-block;
 }
 .js-check-meeting input[disabled] {
     background: #F0F3F7;
