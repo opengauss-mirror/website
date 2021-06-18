@@ -115,13 +115,10 @@ table td {
     word-break: keep-all;
     white-space: nowrap;
 }
-@font-face {
-    font-display: swap;
-    font-family: "FZLTHJW";
-    src: url(../fonts/FZLTHJW.ttf);
+body {
+    font-family: Helvetica Neue,Helvetica,Arial,PingFang SC,Hiragino Sans GB,STHeiti,Microsoft YaHei,Microsoft JhengHei,SimSun,sans-serif!important;
 }
-@font-face {
-    font-display: swap;
-    font-family: "Roboto-Regular";
-    src: url(../fonts/Roboto-Regular.ttf);
+h5 {
+    font-weight: normal;
+    line-height: unset;
 }

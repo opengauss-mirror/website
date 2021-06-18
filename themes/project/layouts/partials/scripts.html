@@ -220,22 +220,7 @@
             setTimeout(function () {
                 $(this)[0].innerHTML = "{{ i18n "copy_code" }}"
             },1500)
-        })  
-
-        if ({{ .Site.LanguageCode }} === "zh-cn") {
-            $('h1,h2,h3,h4,h5,div,p,a,li,span').each(function () {
-                if(!$(this).attr('style')){
-                    $(this).attr("style", "font-family:FZLTHJW !important");
-                }
-            });
-            $('.zh-roboto').attr('style', "font-family:Roboto-Regular !important")
-        } else {
-            $('h1,h2,h3,h4,h5,div,p,a,li,span').each(function () {
-                if(!$(this).attr('style')){
-                    $(this).attr("style", "font-family:Roboto-Regular !important");
-                }
-            })
-        }
+        })
 
     });
 </script>
