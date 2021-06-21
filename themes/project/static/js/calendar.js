@@ -125,9 +125,8 @@ $(document).ready(function () {
         },
         insertDetailHTML: function (data, date) {
             let info = data[0];
-            let duration = info.startTime + '-' + info.endTime;
-
-            let t = '<h5 class="meeting-name">' + info.name + '</h5>';
+            let duration = escapeHTML(info.startTime) + '-' + escapeHTML(info.endTime);
+            let t = '<h5 class="meeting-name">' + escapeHTML(info.name) +'</h5>';
             t += this.insertDetailListHTML(this.fontmatter.creator, escapeHTML(info.creator), 'creator', info.url);
             t += this.insertDetailListHTML(this.fontmatter.sig, escapeHTML(info.group_name), 'sig');
             t += this.insertDetailListHTML(this.fontmatter.day, escapeHTML(date), 'day');
