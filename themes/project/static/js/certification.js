@@ -31,8 +31,8 @@ $(function () {
             insertHtml += '<li><span>' + escapeHTML(item.version) + '</span></li>'
             insertHtml += '<li><span>' + escapeHTML(item.award) + '</span></li>'
             insertHtml += '<li><span>' + escapeHTML(item.expiration) + '</span></li>'
-            insertHtml += '<li class="hide"><a href="' + escapeHTML(item.certificate)+ '" download target="_blank">'+ field.certificate +'</a></li>'
-            insertHtml += '<li><a href="' + escapeHTML(item.report)+ '" download target="_blank">'+ field.report +'</a></li>'
+            insertHtml += '<li><a href="' + escapeHTML(item.certificate)+ '" download target="_blank">'+ field.certificate +'</a></li>'
+            insertHtml += '<li class="hide"><a href="' + escapeHTML(item.report)+ '" download target="_blank">'+ field.report +'</a></li>'
             insertHtml += '</ul>'
         })
         return insertHtml
@@ -46,8 +46,8 @@ $(function () {
             insertHtml += '<li><span class="pack-name">'+ field.version +'：</span><span>' + escapeHTML(item.version) + '</span></li>'
             insertHtml += '<li><span class="pack-name">'+ field.award +'：</span><span>' + escapeHTML(item.award) + '</span></li>'
             insertHtml += '<li><span class="pack-name">'+ field.expiration +'：</span><span>' + escapeHTML(item.expiration) + '</span></li>'
-            insertHtml += '<li class="hide"><span class="pack-name">'+ field.certify +'：</span><a href="' + escapeHTML(item.certificate) + '" download target="_blank">'+ field.certificate +'</a></li>'
-            insertHtml += '<li><span class="pack-name">'+ field.reported +'：</span><a href="' + escapeHTML(item.report) + '" download target="_blank">'+ field.report +'</a></li>'
+            insertHtml += '<li><span class="pack-name">'+ field.certify +'：</span><a href="' + escapeHTML(item.certificate) + '" download target="_blank">'+ field.certificate +'</a></li>'
+            insertHtml += '<li class="hide"><span class="pack-name">'+ field.reported +'：</span><a href="' + escapeHTML(item.report) + '" download target="_blank">'+ field.report +'</a></li>'
             insertHtml += '</ul>'
         })
         return insertHtml

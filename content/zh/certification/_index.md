@@ -21,7 +21,7 @@ name = "北京沐融信息科技股份有限公司"
 version = "openGauss 2.0.0"
 award = "2021-06-15"
 expiration = "2024-03-31"
-certificate = ""
+certificate = "https://distributioncertification.obs.myhuaweicloud.com/MuDB%201.0.0/Certificate.pdf"
 report = "https://distributioncertification.obs.myhuaweicloud.com/MuDB%201.0.0/Report.pdf"
 
 
