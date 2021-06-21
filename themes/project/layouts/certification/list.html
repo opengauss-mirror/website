@@ -38,8 +38,8 @@
                             <li>{{ .Params.version}}</li>
                             <li>{{ .Params.award}}</li>
                             <li>{{ .Params.expiration}}</li>
-                            <li class="hide">{{ .Params.certify}}</li>
-                            <li>{{ .Params.reported}}</li>
+                            <li>{{ .Params.certify}}</li>
+                            <li class="hide">{{ .Params.reported}}</li>
                         </ul>
                         <div class="table-detail pc-table js-list-content">
                             {{ $certificate := .Params.certificate}}
@@ -51,8 +51,8 @@
                                 <li>{{ .version }}</li>
                                 <li>{{ .award }}</li>
                                 <li>{{ .expiration }}</li>
-                                <li class="hide"><a href="{{ .certificate }}" download target="_blank">{{ $certificate }}</a></li>
-                                <li><a href="{{ .report }}" download target="_blank">{{ $report }}</a></li>
+                                <li><a href="{{ .certificate }}" download target="_blank">{{ $certificate }}</a></li>
+                                <li class="hide"><a href="{{ .report }}" download target="_blank">{{ $report }}</a></li>
                             </ul>
                             {{ end }}
                         </div>
@@ -74,8 +74,8 @@
                                 <li><span class="pack-name">{{ $version }}：</span><span>{{ .version }}</span></li>
                                 <li><span class="pack-name">{{ $award }}：</span><span>{{ .award }}</span></li>
                                 <li><span class="pack-name">{{ $expiration }}：</span><span>{{ .expiration }}</span></li>
-                                <li class="hide"><span class="pack-name">{{ $certificate }}：</span><a href="{{ .certificate }}" download target="_blank">{{ $certificate }}</a></li>
-                                <li><span class="pack-name">{{ $report }}：</span><a href="{{ .report }}" download target="_blank">{{ $report }}</a></li>
+                                <li><span class="pack-name">{{ $certificate }}：</span><a href="{{ .certificate }}" download target="_blank">{{ $certificate }}</a></li>
+                                <li class="hide"><span class="pack-name">{{ $report }}：</span><a href="{{ .report }}" download target="_blank">{{ $report }}</a></li>
                             </ul>
                             {{ end }}
                         </div>
