@@ -41,64 +41,71 @@
                         <div class="js-meeting-content hide"></div>
                         <div class="js-reverse-content hide">
                             <h4>{{ i18n "meeting_book_title"}}</h4>
-                            <ul>
-                                <li>{{ i18n "meeting_reverse"}}<span class="red"> * </span></li>
-                                <li><input type="text" value="" id="id-meeting-name" placeholder=" {{ i18n "meeting_hoder_name"}}"></li>
-                            </ul>
-                            <ul>
-                                <li>{{ i18n "meeting_creator"}}<span class="red"> * </span></li>
-                                <li><input type="text" value="" disabled id="id-meeting-creator"></li>
-                            </ul>
-                            <ul>
-                                <li>{{ i18n "meeting_sig"}}<span class="red"> * </span></li>
-                                <li>
-                                    <select name="" id="id-meeting-sig"  class="form-control"></select>
-                                </li>
-                            </ul>
-                            <ul>
-                                <li>{{ i18n "meeting_day"}}<span class="red"> * </span></li>
-                                <li><input type="text" class="mt10px input" id="J-demo-01" placeholder="{{ i18n "meeting_hoder_day"}}"></li>
-                            </ul>
-                            <ul>
-                                <li>{{ i18n "meeting_time"}}<span class="red"> * </span></li>
-                                <li>
-                                    <div class="js-time-picker time-picker">
-                                        <div class="time-selector">
-                                            <div class="mycontainer">
-                                                <input type="text" placeholder="{{ i18n "meeting_hoder_start"}}" id="time-start">
-                                            </div> -
-                                            <div class="mycontainer">
-                                                <input type="text" placeholder="{{ i18n "meeting_hoder_end"}}" id="time-end">
+                            <form>
+                                <ul>
+                                    <li>{{ i18n "meeting_reverse"}}<span class="red"> * </span></li>
+                                    <li><input type="text" value="" id="id-meeting-name" maxlength="50" required placeholder=" {{ i18n "meeting_hoder_name"}}"></li>
+                                </ul>
+                                <ul>
+                                    <li>{{ i18n "meeting_creator"}}<span class="red"> * </span></li>
+                                    <li><input type="text" value="" required disabled id="id-meeting-creator"></li>
+                                </ul>
+                                <ul>
+                                    <li>{{ i18n "meeting_sig"}}<span class="red"> * </span></li>
+                                    <li>
+                                        <select name="" id="id-meeting-sig" required class="form-control"></select>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>{{ i18n "meeting_day"}}<span class="red"> * </span></li>
+                                    <li><input type="text" class="mt10px input" required id="J-demo-01" placeholder="{{ i18n "meeting_hoder_day"}}"></li>
+                                </ul>
+                                <ul>
+                                    <li>{{ i18n "meeting_time"}}<span class="red"> * </span></li>
+                                    <li>
+                                        <div class="js-time-picker time-picker">
+                                            <div class="time-selector">
+                                                <div class="mycontainer">
+                                                    <input type="text" placeholder="{{ i18n "meeting_hoder_start"}}" id="time-start" required>
+                                                </div> -
+                                                <div class="mycontainer">
+                                                    <input type="text" placeholder="{{ i18n "meeting_hoder_end"}}" id="time-end" required>
+                                                </div>
+                                                <span class="js-time-error hide">{{ i18n "meeting_time_error"}}</span>
                                             </div>
                                         </div>
-                                    </div>
-                                </li>
-                            </ul>
-                            <ul>
-                                <li>{{ i18n "meeting_content"}}</li>
-                                <li><textarea type="text" id="id-meeting-content" maxlength="50" placeholder="{{ i18n "meeting_hoder_agenda"}}"></textarea></li>
-                            </ul>
-                            <ul>
-                                <li>{{ i18n "meeting_emailadd"}}</li>
-                                <li><textarea type="text" id="id-meeting-email" placeholder="{{ i18n "meeting_hoder_email"}}"></textarea></li>
-                            </ul>
-                            <ul>
-                                <li>Etherpad</li>
-                                <li><input type="text" value="" id="js-meeting-etherpad" placeholder="{{ i18n "meeting_hoder_etherpad"}}"></li>
-                            </ul>
-                            <ul>
-                                <li>{{ i18n "meeting_record"}}</li>
-                                <li><img class="js-meeting-record" src="/img/calendar/record-off.png"></li>
-                            </ul>
-                            <p class="notice-content">
-                                <img src="/img/calendar/notice.png" alt="notice">
-                                {{ i18n "meeting_record_tip"}}
-                            </p>
-                            <p class="notice-req"><span class="red"> * </span>  {{ i18n "meeting_require_tip"}}</p>
-                            <div class="reverse-submit">
-                                <p class="date-reset cursor">{{ i18n "meeting_reset"}}</p>
-                                <p class="date-submit cursor">{{ i18n "meeting_book"}}</p>
-                            </div>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>{{ i18n "meeting_content"}}</li>
+                                    <li><textarea type="text" id="id-meeting-content" maxlength="50" placeholder="{{ i18n "meeting_hoder_agenda"}}"></textarea></li>
+                                </ul>
+                                <ul>
+                                    <li>{{ i18n "meeting_emailadd"}}</li>
+                                    <li>
+                                        <textarea type="email" id="id-meeting-email" multiple placeholder="{{ i18n "meeting_hoder_email"}}"></textarea>
+                                        <span class="js-email-checked hide">{{ i18n "meeting_error_email"}}</span>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>Etherpad</li>
+                                    <li><input type="text" value="" id="js-meeting-etherpad" placeholder="{{ i18n "meeting_hoder_etherpad"}}"></li>
+                                </ul>
+                                <ul>
+                                    <li>{{ i18n "meeting_record"}}</li>
+                                    <li><img class="js-meeting-record" src="/img/calendar/record-off.png"></li>
+                                </ul>
+                                <p class="notice-content">
+                                    <img src="/img/calendar/notice.png" alt="notice">
+                                    {{ i18n "meeting_record_tip"}}
+                                </p>
+                                <p class="notice-req"><span class="red"> * </span>  {{ i18n "meeting_require_tip"}}</p>
+                                <div class="reverse-submit">
+                                    <p class="date-reset cursor">{{ i18n "meeting_reset"}}</p>
+                                    <p class="date-submit">{{ i18n "meeting_book"}}</p>
+                                </div>
+                            </form>
+
                         </div>
                         <div class="js-no-login notice-card hide">
                             <h4>{{ i18n "meeting_login_tip"}}</h4>
@@ -109,7 +116,7 @@
                         <div class="js-no-authority notice-card hide">
                             <h4>{{ i18n "meeting_permission"}}</h4>
                             <img src="/img/calendar/no-authority.png" alt="no-authority">
-                            <p>{{ i18n "meeting_permission_tip"}}</p>
+                            <p class="fail-info">{{ i18n "meeting_permission_tip"}}</p>
                         </div>
                         <div class="js-no-edit notice-card hide">
                             <h4>{{ i18n "meeting_permission"}}</h4>
@@ -151,6 +158,16 @@
                             <img src="/img/calendar/no-authority.png" alt="no-authority">
                             <p class="fail-info"></p>
                             <p class="js-back-reverse cursor">{{ i18n "meeting_book_back"}}</p>
+                        </div>
+                        <div class="js-fail-delete notice-card hide">
+                            <h4>{{ i18n "meeting_delete_title"}}</h4>
+                            <img src="/img/calendar/no-authority.png" alt="no-authority">
+                            <p class="fail-info"></p>
+                        </div>
+                        <div class="js-error-info notice-card hide">
+                            <h4>{{ i18n "meeting_error_info"}}</h4>
+                            <img src="/img/calendar/no-authority.png" alt="no-authority">
+                            <p class="fail-info"></p>
                         </div>
                     </div>
                 </div>

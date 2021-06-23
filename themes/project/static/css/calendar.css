@@ -268,6 +268,7 @@ html[lang=en-us] .cal-time .det-title {
 .cal-content-detail h5 {
     font-size: 18px;
     margin-bottom: 16px;
+    word-break: break-word;
 }
 .cal-content-detail ul {
     margin-bottom: 13px;
@@ -342,7 +343,7 @@ html[lang=en-us] .cal-time .det-title {
 }
 .mycontainer input{
     padding: 0 12px!important;
-    width: 100px;
+    width: 75px;
     text-align: center;
 }
 .mycontainer {
@@ -365,6 +366,8 @@ html[lang=en-us] .cal-time .det-title {
 .js-check-meeting textarea {
     width: 340px;
     height: 50px;
+    max-height: 50px;
+    max-width: 370px;
     padding: 5px 12px;
     background: #FFFFFF;
     border-radius: 4px;
@@ -390,19 +393,19 @@ html[lang=en-us] .cal-time .det-title {
     display: flex;
     color: #C7CAD0;
     font-size: 12px;
-    margin-top: 16px;
+    margin-top: 13px;
     text-align: justify;
     justify-content: center;
 }
 .notice-req {
     color: #C7CAD0;
     font-size: 12px;
-    margin-top: 16px;
+    margin-top: 13px;
 }
 .reverse-submit {
     display: flex;
     justify-content: center;
-    margin-top: 13px;
+    margin-top: 10px;
 }
 .reverse-submit p {
     width: 115px;
@@ -414,10 +417,12 @@ html[lang=en-us] .cal-time .det-title {
     text-align: center;
 }
 .reverse-submit .date-submit {
-    background: #7D32EA;
+    background: #C7CAD0;
     border-radius: 4px;
     color: #fff;
     margin-left: 16px;
+    border: 1px solid #C7CAD0;
+    cursor: pointer;
 }
 .js-check-meeting .date-modify {
     background: #7D32EA;
@@ -521,11 +526,15 @@ a:hover {
 }
 .js-check-meeting #id-meeting-email {
     height: 32px;
+    max-height: 32px;
+    max-width: 370px;
 }
 @media screen and (max-width: 1000px){
     .detail-item {
         width: 325px;
         z-index: 2;
+        height: 680px;
+        overflow-y: scroll;
     }
     .cal-content-detail li:last-child {
         width: unset;
@@ -598,5 +607,10 @@ a:hover {
     }
     .cal-content-empty img {
         left: 68%;
+    }
+    .js-email-checked,
+    .js-time-error {
+        display: block;
+        word-break: break-word;
     }
 }

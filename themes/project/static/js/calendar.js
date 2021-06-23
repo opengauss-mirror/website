@@ -18,8 +18,8 @@ $(document).ready(function () {
             delete: lang === 'zh' ? '删除会议' : 'Delete Meeting',
             modify: lang === 'zh' ? '修改会议' : 'Modify Meeting',
             detailTip: lang === 'zh' ? '编辑已预定会议需要验证用户Gitee身份权限' : 'Editing a scheduled meeting requires verifying the user\'s Gitee identity and permissions.',
-            validTime: lang === 'zh' ? '请输入正确的时间' : 'Please enter a valid time',
-            require: lang === 'zh' ? '请完成所有必填项' : 'Please enter all required fields'
+            require: lang === 'zh' ? '请完成所有必填项' : 'Please enter all required fields',
+            netError: lang === 'zh' ? '服务开小差' : 'Network Error, please try again later.'
         },
         formatTime: function (time) {
             let arr = time.split('-');
@@ -136,7 +136,6 @@ $(document).ready(function () {
             t += this.insertDetailListHTML(this.fontmatter.zoomLink, escapeHTML(info.join_url), 'zoomLink');
             t += this.insertDetailListHTML(this.fontmatter.etherpad, escapeHTML(info.etherpad), 'etherpad');
             t += this.insertDetailListHTML(this.fontmatter.video, escapeHTML(info.video_url), 'video');
-
             t += '<div class="reverse-submit">' +
                 '<p class="date-delete cursor">' + this.fontmatter.delete + '</p>' +
                 '<p class="date-modify cursor">' + this.fontmatter.modify + '</p>' +
@@ -214,13 +213,15 @@ $(document).ready(function () {
         },
         backToReverse: function () {
             $('.js-back-reverse').on('click', function () {
+                $('.dateTimeWrap').removeClass('hide');
                 $('.js-reverse-content').removeClass('hide').siblings().addClass('hide');
             })
         },
         // 提示语
-        remindError: function (info) {
-            $('.js-fail-reverse').find('.fail-info').text(info);
-            $('.js-fail-reverse').removeClass('hide').siblings().addClass('hide');
+        remindError: function (element, info) {
+            $('.cal-content-detail').removeClass('hide');
+            $(element).find('.fail-info').text(info);
+            $(element).removeClass('hide').siblings().addClass('hide');
             calendarMethods.backToReverse();
         },
         initFormData: function(data) {
@@ -245,7 +246,9 @@ $(document).ready(function () {
                 name: data.topic,
                 etherpad: data.etherpad,
                 join_url: data.join_url,
-                date: data.date
+                date: data.date,
+                meeting_id: data.mid,
+                video_url: data.video_url ? data.video_url : ''
             }
             return o;
         },
@@ -534,6 +537,7 @@ $(document).ready(function () {
         swiper: {
             up: -9,
             left: 0,
+            checked: true,
         },
         // 时间上下切换
         timeSwiper: function () {
@@ -637,17 +641,22 @@ $(document).ready(function () {
                 if (trans < 0) {
                     trans += (width + 24);
                     contentTrans += (width + 24);
-                    $('.js-right-btn').find('img').attr('src', '/img/calendar/btn.svg');
-                }else {
-                    $('.js-left-btn').find('img').attr('src', '/img/calendar/graybtn.svg');
+                    if (trans <= -232) {
+                        $('.js-right-btn').find('img').attr('src', '/img/calendar/btn.svg');
+                    }
+                    else {
+                        $('.js-left-btn').find('img').attr('src', '/img/calendar/graybtn.svg');
+                    }
                 }
             } else {
                 if (trans > size) {
                     trans -= (width + 24);
                     contentTrans -= (width + 24);
-                    $('.js-left-btn').find('img').attr('src', '/img/calendar/btn.svg');
-                } else {
-                    $('.js-right-btn').find('img').attr('src', '/img/calendar/graybtn.svg');
+                    if (trans >= size + 244) {
+                        $('.js-left-btn').find('img').attr('src', '/img/calendar/btn.svg');
+                    }else {
+                        $('.js-right-btn').find('img').attr('src', '/img/calendar/graybtn.svg');
+                    }
                 }
             }
             $('.js-meet-day').css('transform', `matrix(1, 0, 0, 1, ${trans}, 0)`);
@@ -666,7 +675,6 @@ $(document).ready(function () {
             $('.js-meeting-content').removeClass('hide').siblings().addClass('hide');
 
             $('.cal-content-detail').removeClass('hide');
-            calendarClickEvent.handleCloseDetail();
             calendarClickEvent.handleDateDelete();
             calendarClickEvent.handleDateUpdate();
         },
@@ -679,6 +687,12 @@ $(document).ready(function () {
                     $('.dateTimeWrap').addClass('hide');
                 }
             });
+        },
+        handleClose: function () {
+            $('.js-close-detail').on('click', function (event) {
+                $('.cal-content-detail').addClass('hide');
+                $('.dateTimeWrap').addClass('hide');
+            })
         },
         handleAuthority: function (id) {
             let sigs = window.sessionStorage.userSigs;
@@ -698,14 +712,13 @@ $(document).ready(function () {
             $('.meeting-login').click(function (event) {
                 requestMethods.giteeLogin();
                 calendarClickEvent.handleAuthority(id);
-                calendarClickEvent.handleCloseDetail();
             })
         },
         handleReserve: function () {
             $('.js-reserve-meeting').on('click', function (event) {
                 calendarMethods.emptyFormDate();
-                calendarClickEvent.handleCloseDetail();
-                $('.dateTimeWrap').removeClass('hide');
+                $('.date-submit').css('background', '#C7CAD0');
+                $('.js-email-checked').addClass('hide');
                 let isLogined = calendarMethods.isLogin();
                 if (isLogined) {
                     let storage = calendarMethods.getStorage();
@@ -713,8 +726,7 @@ $(document).ready(function () {
                     if (isAuthoritied) {
                         calendarMethods.initFormData(storage);
                         $('.cal-content-detail').removeClass('hide');
-                        calendarClickEvent.handleCloseDetail();
-                        calendarClickEvent.handleDateSubmit('submit');
+                        calendarClickEvent.handleCheckForm('submit');
                     } else {
                         $('.cal-content-detail').removeClass('hide');
                         $('.js-no-authority').removeClass('hide').siblings().addClass('hide');
@@ -780,10 +792,8 @@ $(document).ready(function () {
                 errorInfo: function () {
                     let _self = this.formdata;
                     return (
-                        _self.topic === undefined ||
-                        _self.sponsor === undefined ||
-                        _self.group_name === undefined ||
-                        _self.date === undefined
+                        _self.topic === '' ||
+                        _self.date === ''
                     )
                 }
             };
@@ -796,20 +806,27 @@ $(document).ready(function () {
             require.formdata.agenda = $('#id-meeting-content').val() === null ? '' : escapeHTML($('#id-meeting-content').val());
             require.formdata.emaillist = $('#id-meeting-email').val() === null ? '' : escapeHTML($('#id-meeting-email').val());
             require.formdata.etherpad = $('#js-meeting-etherpad').val() === null ? '' : escapeHTML($('#js-meeting-etherpad').val());
+
             let src = $('.js-meeting-record').attr('src');
             require.formdata.record = src.includes('off') ? '' : 'cloud';
-            if (require.errorTime()) {
-                calendarMethods.remindError(calendarMethods.fontmatter.validTime);
+            if (require.errorInfo()) {
+                $('.dateTimeWrap').removeClass('hide');
+                return 'empty';
+            } else if (require.errorTime()) {
+                $('.dateTimeWrap').removeClass('hide');
+                $('.mycontainer input').css('borderColor', 'red');
+                $('.js-time-error').removeClass('hide');
                 return false;
-            } else if (require.errorInfo()) {
-                calendarMethods.remindError(calendarMethods.fontmatter.require);
-                return false;
+            } else if (require.errorTime() === false) {
+                $('.mycontainer input').css('borderColor', 'rgba(0, 0, 0, 0.5)');
             }
+            $('.js-time-error').addClass('hide');
             return require;
         },
         handleDateSubmit: function (eventName) {
             $(".date-submit").unbind("click");
             $('.date-submit').click(function () {
+                $('.dateTimeWrap').addClass('hide');
                 let require = calendarClickEvent.getFormData().formdata;
                 if (require !== undefined) {
                     if (eventName === 'modify') {
@@ -866,8 +883,7 @@ $(document).ready(function () {
                     let isAuthoritied = calendarMethods.isSelfLogin(giteeID, id);
                     if (isAuthoritied) {
                         calendarMethods.initFormData(storage);
-                        calendarClickEvent.handleCloseDetail();
-                        calendarClickEvent.handleDateSubmit('modify');
+                        calendarClickEvent.handleCheckForm('modify');
                         $('.cal-content-detail').removeClass('hide');
                     } else {
                         $('.js-no-edit').removeClass('hide').siblings().addClass('hide');
@@ -885,6 +901,61 @@ $(document).ready(function () {
                     requestMethods.meetingData();
                 } else {
                     requestMethods.meetingData(request);
+                }
+            });
+        },
+        handleCheckForm: function (status) {
+            $('.js-reverse-content form').on('click', function () {
+                let require = calendarClickEvent.getFormData();
+                if (require !== 'empty' && (require !== false)) {
+                    $('.date-submit').css('background', '#7D32EA');
+                    calendarClickEvent.handleDateSubmit(status);
+                } else {
+                    $('.date-submit').css('background', '#C7CAD0');
+                }
+            });
+            $('.dateTimeWrap').on('click', function (event) {
+                let require = calendarClickEvent.getFormData();
+                if (require !== 'empty' && (require !== false)) {
+                    calendarClickEvent.handleDateSubmit(status);
+                    $('.date-submit').css('background', '#7D32EA');
+                } else {
+                    $('.date-submit').css('background', '#C7CAD0');
+                }
+            });
+        },
+        handleCheckEmail: function () {
+            $('#id-meeting-email').blur(function () {
+                let val = $('#id-meeting-email').val();
+                calendarClickEvent.swiper.checked = true;
+                // email 为空返回true
+                if (val === '') {
+                    $('.js-email-checked').addClass('hide');
+                    $('#id-meeting-email').css('borderColor', 'rgba(0, 0, 0, 0.5)');
+                    return
+                } else {
+                    if (!val.includes(',') && !val.includes(';')) {
+                        val += ',';
+                    }
+                    if (val.includes(',')) {
+                        val = val.split(',');
+                    } else if (val.includes(';')) {
+                        val = val.split(';');
+                    }
+                    let reg = /^[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]*)*@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+                    val.forEach(item => {
+                        if (item !== '') {
+                            if ( reg.test(item) === false) {
+                                $('.js-email-checked').removeClass('hide');
+                                $('#id-meeting-email').css('borderColor', 'red');
+                                calendarClickEvent.swiper.checked = false;
+                            }
+                        }
+                    });
+                }
+                if (calendarClickEvent.swiper.checked) {
+                    $('.js-email-checked').addClass('hide');
+                    $('#id-meeting-email').css('borderColor', 'rgba(0, 0, 0, 0.5)');
                 }
             });
         }
@@ -905,6 +976,8 @@ $(document).ready(function () {
                 error: function () {
                     cleanData.dataJSON.tableData = [];
                     initMeeting();
+                    let msg = calendarMethods.fontmatter.netError;
+                    calendarMethods.remindError('.js-error-info', msg);
                 }
             });
         },
@@ -939,6 +1012,10 @@ $(document).ready(function () {
                         window.sessionStorage.giteeId = res.data.user.gitee_id
                         window.sessionStorage.userId = res.data.user.id
                     }
+                },
+                error: function () {
+                    let msg = calendarMethods.fontmatter.netError;
+                    calendarMethods.remindError('.js-no-authority', msg);
                 }
             });
         },
@@ -957,10 +1034,12 @@ $(document).ready(function () {
                         requestMethods.meetingData();
                     } else {
                         let msg = lang === 'zh' ? res.msg : res.en_msg;
-                        $('.js-fail-reverse').find('.fail-info').text(msg);
-                        $('.js-fail-reverse').removeClass('hide').siblings().addClass('hide');
-                        calendarMethods.remindError(res.message);
+                        calendarMethods.remindError('.js-fail-reverse', msg);
                     }
+                },
+                error: function () {
+                    let msg = calendarMethods.fontmatter.netError;
+                    calendarMethods.remindError('.js-fail-reverse', msg);
                 }
             });
         },
@@ -974,11 +1053,16 @@ $(document).ready(function () {
                 success: function (res) {
                     if (res.code === 204) {
                         $('.js-delete-success').removeClass('hide').siblings().addClass('hide');
+                        requestMethods.meetingData();
                     } else {
                         let msg = lang === 'zh' ? res.msg : res.en_msg;
-                        $('.js-fail-modify').find('.fail-info').text(msg);
+                        $('.js-fail-delete').find('.fail-info').text(msg);
                         $('.cal-content-detail').addClass('hide');
                     }
+                },
+                error: function () {
+                    let msg = calendarMethods.fontmatter.netError;
+                    calendarMethods.remindError('.js-fail-delete', msg);
                 }
             });
         },
@@ -999,6 +1083,10 @@ $(document).ready(function () {
                         $('.js-fail-modify').removeClass('hide').siblings().addClass('hide');
                         calendarMethods.backToReverse();
                     }
+                },
+                error: function () {
+                    let msg = calendarMethods.fontmatter.netError;
+                    calendarMethods.remindError('.js-fail-modify', msg);
                 }
             });
         },
@@ -1031,6 +1119,10 @@ $(document).ready(function () {
                         $('#time-end').val(escapeHTML(res.end));
                         $('.js-reverse-content').removeClass('hide').siblings().addClass('hide');
                     }
+                },
+                error: function () {
+                    let msg = calendarMethods.fontmatter.netError;
+                    calendarMethods.remindError('.js-error-info', msg);
                 }
             });
         },
@@ -1043,7 +1135,8 @@ $(document).ready(function () {
                 crossDomain: true,
                 datatype: "json",
                 success: function (res) {
-                    res.forEach(item => {
+                    let r = res.sort(function (a, b) {return a.name.localeCompare(b.name);});
+                    r.forEach(item => {
                         $('#id-select-sigs').append('<option value="' + escapeHTML(item.name)  + '">' + escapeHTML(item.name) + '</option>');
                     })
                 }
@@ -1070,22 +1163,23 @@ $(document).ready(function () {
             let active = currentTime === day ? 'active' : '';
             top += `<p class="day-item ${active}">${escapeHTML(item.date)}</p>`;
             if (currentTime === day) {
-                currentIndex = index;
+                currentIndex = index + 1;
             }
             if ((currentIndex === 0) && (currentTime < day)) {
-                prevIndex = prevIndex ? prevIndex : index - 1;
+                prevIndex = prevIndex ? prevIndex : index;
             }
             if (currentIndex === 0) {
-                lastIndex = index;
+                lastIndex = index + 1;
             }
         });
-
         $('.js-meet-day').append(top);
-        let len = (currentIndex ? currentIndex : prevIndex ? prevIndex : lastIndex) + 1;
+        let len = (currentIndex ? currentIndex : prevIndex ? prevIndex : lastIndex);
         let w = isMobile ? 185 : 220;
         let width = data.length * (w + 24);
         $('.js-meet-day').css('width', width);
         $('.js-schedule-content').css('width', width);
+        calendarClickEvent.swiper.left = len;
+        calendarClickEvent.swiper.total = data.length;
         let trans = 0;
         let origin = parseInt($('.js-schedule-content').css('transform').split(',')[5]);
         if (isMobile) {
@@ -1101,12 +1195,22 @@ $(document).ready(function () {
             trans = -(len - 4) * (w + 24) + 12;
             $('.calendar').show();
             $('.cal-content-empty').addClass('hide');
+            $('.js-left-btn').find('img').attr('src', '/img/calendar/btn.svg');
+            $('.js-right-btn').find('img').attr('src', '/img/calendar/btn.svg');
         } else if (data.length === 0) {
             $('.cal-content-empty').removeClass('hide');
         } else {
             $('.calendar').show();
             $('.cal-content-detail').show();
             $('.cal-content-empty').addClass('hide');
+            $('.js-left-btn').find('img').attr('src', '/img/calendar/graybtn.svg');
+            $('.js-right-btn').find('img').attr('src', '/img/calendar/graybtn.svg');
+        }
+        if (len <= 4 && !isMobile) {
+            $('.js-left-btn').find('img').attr('src', '/img/calendar/graybtn.svg');
+        }
+        if (len >= data.length && !isMobile) {
+            $('.js-right-btn').find('img').attr('src', '/img/calendar/graybtn.svg');
         }
         $('.js-meet-day').css('transform', `matrix(1, 0, 0, 1, ${trans}, 0)`);
         $('.js-schedule-content').css('transform', `matrix(1, 0, 0, 1, ${trans}, ${origin})`);
@@ -1151,11 +1255,13 @@ $(document).ready(function () {
         calendarClickEvent.handleRecodeBtn();
         calendarClickEvent.handleDeleteCheck();
         calendarClickEvent.handleSigs();
+        calendarClickEvent.handleClose();
+        calendarClickEvent.handleCheckEmail();
     };
     var currentLanguage = function () {
         let cookie = getCookie('lang');
         let url = window.location.href;
-        if (cookie === 'zh') {
+         if (cookie === 'zh') {
             if (url.includes('/en/')) {
                 url = url.replace('/en/', '/zh/');
                 window.location.href = url;

@@ -666,3 +666,12 @@ other = "Start"
 
 [meeting_hoder_end]
 other = "End"
+
+[meeting_time_error]
+other = "Please enter a valid time"
+
+[meeting_error_info]
+other = 'Error'
+
+[meeting_error_email]
+other = "Invalid format / separator (only , is acceptable)"
