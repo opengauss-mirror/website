@@ -98,6 +98,8 @@ $(document).ready(function() {
       return;
     }
     switchAllLanguage();
+    var lang = window.location.href.includes('/zh/') ? 'en' : 'zh';
+    setCookie('lang', lang)
   });
 
   $('#navigation').find('.dropdown').each(function () {

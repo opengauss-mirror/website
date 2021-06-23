@@ -2,6 +2,9 @@
 <html lang="{{ .Site.LanguageCode }}">
 
 {{ partial "head.html" . }}
+<link rel="stylesheet" href="{{ "css/dateTime.css" | relURL}}">
+<link rel="stylesheet" href="{{ "css/calendar.css" | relURL}}?t={{ mul 1000 (time now).Unix }}">
+
 
 <body>
 
@@ -17,6 +20,7 @@
       {{ partial "banner.html" . }}
       {{ partial "feature_case_client.html" . }}
       {{ partial "statistics.html" . }}
+      {{ partial "calendar.html" . }}
       {{ partial "action.html" . }}
       {{ partial "video_show.html" . }}
       {{ partial "partnerShip.html" . }}
@@ -32,6 +36,8 @@
 
   {{ partial "scripts.html" . }}
   <script src="{{ "js/home.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>
+  <script src="{{ "js/calendar.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>
+  <script src="{{ "js/dateTime.min.js" | relURL }}"></script>
 </body>
 
 </html>

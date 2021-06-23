@@ -532,3 +532,146 @@ other = "/en/privacyPolicy.html"
 
 [cookie_description_privacy]
 other = "Read our privacy policy>"
+
+
+
+[meeting_book_title]
+other = "Schedule a meeting"
+
+[meeting_reverse]
+other = "Topic"
+
+[meeting_creator]
+other = "Organizer"
+
+[meeting_sig]
+other = "SIG name"
+
+[meeting_day]
+other = "Date"
+
+[meeting_time]
+other = "Time"
+
+[meeting_content]
+other = "Agenda"
+
+[meeting_emailadd]
+other = "Email address"
+
+[meeting_calzoomId]
+other = "Zoom Meeting ID:"
+
+[meeting_zoomLink]
+other = "Zoom link:"
+
+[meeting_etherpad]
+other = "Etherpad link:"
+
+[meeting_video]
+other = "Playback link:"
+
+[meeting_record]
+other = "Video Recording"
+
+[meeting_record_tip]
+other = "If the video recording feature is enabled, the screen recording will start automatically after the meeting starts, and the screen recording will be uploaded to the openGauss account of Bilibili automatically after the meeting ends. The recording service is provided by Zoom."
+
+[meeting_require_tip]
+other = "Required"
+
+[meeting_delete]
+other = "Delete Meeting"
+
+[meeting_modify]
+other = "Modify Meeting"
+
+[meeting_all_sigs]
+other = "All SIGs"
+
+[meeting_reset]
+other = "Reset"
+
+[meeting_book]
+other = "Schedule"
+
+[meeting_login_tip]
+other = "Login prompt"
+
+[meeting_login_info]
+other = "Using openGauss meeting reservation feature requires the identity permission of SIG group Maintainer or Committer. Please allow you to login Gitee to verify user information."
+
+[meeting_login_gitee]
+other = "Gitee authorized login"
+
+[meeting_login_agree]
+other = "Signing in means you agree to"
+
+[meeting_login_privacy]
+other = " the privacy terms"
+
+[meeting_permission]
+other = "Permission prompt"
+
+[meeting_permission_tip]
+other = "Very sorry! You don't have permission to schedule a meeting at the moment."
+
+[meeting_edit_tip]
+other = "Very sorry! You don't have permission to edit a meeting at the moment."
+
+[meeting_book_time_fail]
+other = "Very sorry! Meeting reservation failed due to time conflict."
+
+[meeting_book_back]
+other = "Back"
+
+[meeting_book_success]
+other = "You have successfully scheduled the meeting."
+
+[meeting_delete_title]
+other = "Delete prompt"
+
+[meeting_delete_tip]
+other = "Are you sure to delete the current meeting?"
+
+[meeting_cancel]
+other = "Cancel"
+
+[meeting_delete_sure]
+other = "Delete"
+
+[meeting_delete_ok]
+other = "You have successfully deleted this meeting."
+
+[meeting_see_meeting]
+other = "View this meeting"
+
+[meeting_hoder_name]
+other = "Please input topic"
+
+[meeting_hoder_day]
+other = "Choose a date"
+
+[meeting_hoder_agenda]
+other = "Please input agenda"
+
+[meeting_hoder_email]
+other = "Separate email addresses with a comma"
+
+[meeting_hoder_etherpad]
+other = "Link will be generated automatically if left blank"
+
+[meeting_hoder_start]
+other = "Start"
+
+[meeting_hoder_end]
+other = "End"
+
+[meeting_time_error]
+other = "Please enter a valid time"
+
+[meeting_error_info]
+other = 'Error'
+
+[meeting_error_email]
+other = "Invalid format / separator (only , is acceptable)"
