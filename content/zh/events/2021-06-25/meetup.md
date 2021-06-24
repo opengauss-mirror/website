@@ -71,7 +71,7 @@ summary = ""
 
 议题简介：作为社区的首批核心成员，云和恩墨积极投入社区贡献，依托openGauss内核发布了企业级数据库MogDB，并已成功落地国有大型银行的核心交易系统，解决了金融核心系统面临的高并发条件下性能、稳定性、高可用保障及扩展能力的挑战。本次演讲将着重介绍刚刚发布的MogDB 2.0的特色功能，并分享成功案例的实践经验。
 
-<img src="张皖川圆图.jpg" style="width: 250px; margin-bottom: 0.2rem;" />
+<img src="张皖川.png" style="width: 250px; margin-bottom: 0.2rem;" />
 
 
 <strong>数据库中间件的基础技术  | 北京宝兰德软件股份有限公司售前总监 詹年科</strong>
@@ -100,7 +100,7 @@ summary = ""
 
 互动有礼：与讲师积极互动均还可获得《openGauss数据库核心技术》书籍一本。
 
-<img src="present2.jpg" style="width: 250px; margin-bottom: 0.2rem;" />
+<img src="openGauss 书籍.jpg" style="width: 250px; margin-bottom: 0.2rem;" />
 
 抽奖有礼：本次活动设有现场抽奖环节，一等奖华为运动手表*1，二等奖华为无线耳机*2位，三等奖荣耀运动手环*3位。
 
