@@ -6,7 +6,7 @@ other = "openGauss特性"
 other = "必填"
 
 [main_characterr_info]
-other = "openGauss是一款开源关系型数据库管理系统，采用木兰宽松许可证v2发行。openGauss内核源自PostgreSQL，深度融合华为在数据库领域多年的经验，结合企业级场景需求，持续构建竞争力特性。"
+other = "openGauss是一款开源关系型数据库管理系统，采用木兰宽松许可证v2发行。openGauss内核深度融合华为在数据库领域多年的经验，结合企业级场景需求，持续构建竞争力特性。"
 
 [main_partner_title]
 other = "合作伙伴"

@@ -4,7 +4,7 @@ bgImg = "../img/breadcrumbs/privacy_bg.png"
 moImg = "../img/breadcrumbs/privacy_mo.png"
 +++
 
-openGauss是一款开源关系型数据库管理系统，采用木兰宽松许可证v2发行。openGauss内核源自PostgreSQL，深度融合华为在数据库领域多年的经验，结合企业级场景需求，持续构建竞争力特性。同时openGauss也是一个开源的数据库平台，鼓励社区贡献、合作。
+openGauss是一款开源关系型数据库管理系统，采用木兰宽松许可证v2发行。openGauss内核深度融合华为在数据库领域多年的经验，结合企业级场景需求，持续构建竞争力特性。同时openGauss也是一个开源的数据库平台，鼓励社区贡献、合作。
 
 ### 历史发展
 
