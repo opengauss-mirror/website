@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="116px" height="144px" viewBox="0 0 116 144" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>03</title>
+    <g id="PC" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Certification_zh1" transform="translate(-745.000000, -1788.000000)">
+            <g id="认证流程" transform="translate(432.000000, 1724.000000)">
+                <g id="03" transform="translate(313.000000, 64.000000)">
+                    <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="116" height="144" rx="4"></rect>
+                    <g id="编组" transform="translate(15.000000, 10.000000)">
+                        <rect id="矩形备份" stroke="#575D6C" stroke-width="2" fill="#FFFFFF" stroke-linejoin="round" x="0" y="1" width="71.9029365" height="82"></rect>
+                        <rect id="矩形备份-2" stroke="#575D6C" stroke-width="2" stroke-linejoin="round" x="11.0121615" y="24.1659023" width="51.174162" height="7.77329044"></rect>
+                        <line x1="11.0121615" y1="59.5196263" x2="62.5102106" y2="59.5196263" id="路径备份-6" stroke="#575D6C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></line>
+                        <line x1="11.0121615" y1="50.5196263" x2="62.5102106" y2="50.5196263" id="路径备份-7" stroke="#575D6C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></line>
+                        <line x1="11.0121615" y1="40.5196263" x2="62.1863235" y2="40.5196263" id="路径备份-8" stroke="#575D6C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></line>
+                        <path d="M70.4395514,21.1409446 L87.721203,37.8296416 L83.6319957,42.0641398 L66.350344,25.3754428 L70.4395514,21.1409446 Z M68.5412585,3.09856638 C71.4420526,5.89983073 72.9327921,9.61167877 72.998017,13.3484093 C73.0632419,17.0851398 71.7029521,20.8467527 68.9016878,23.7475469 C66.1004234,26.648341 62.3885754,28.1390805 58.6518449,28.2043054 C54.9151144,28.2695303 51.1535015,26.9092405 48.2527073,24.1079761 C45.3519131,21.3067118 43.8611736,17.5948638 43.7959488,13.8581333 C43.7307239,10.1214028 45.0910137,6.35978983 47.892278,3.45899568 C50.6935424,0.558201521 54.4053904,-0.932537979 58.1421209,-0.997762852 C61.8788514,-1.06298773 65.6404643,0.297302028 68.5412585,3.09856638 Z M58.5425347,3.59213598 L58.2222466,3.59263471 C55.6603013,3.63735364 53.1154157,4.65942174 51.1948367,6.64823951 C49.2742577,8.63705727 48.3416274,11.2160623 48.3863463,13.7780076 C48.4310653,16.3399529 49.4531334,18.8848385 51.4419511,20.8054175 C53.4307689,22.7259965 56.0097739,23.6586267 58.5717192,23.6139078 C61.1336645,23.5691889 63.6785501,22.5471208 65.5991291,20.558303 C67.5197081,18.5694853 68.4523384,15.9904803 68.4076194,13.428535 C68.3629005,10.8665896 67.3408324,8.32170403 65.3520147,6.40112504 C63.3631969,4.48054606 60.7841919,3.54791579 58.2222466,3.59263471 Z" id="形状结合备份" stroke="#575D6C" stroke-width="2" fill="#FFFFFF" stroke-linejoin="round"></path>
+                        <line x1="11.0121615" y1="14.1675518" x2="36.5992425" y2="14.1675518" id="路径备份-9" stroke="#575D6C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></line>
+                        <line x1="11.0121615" y1="68.5196263" x2="62.1863235" y2="68.5196263" id="路径备份-5" stroke="#575D6C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></line>
+                        <rect id="矩形备份-2" fill="#FFFFFF" x="51.4424242" y="61.1535895" width="42" height="42"></rect>
+                        <text id="03" font-family="Helvetica" font-size="24" font-weight="normal" fill="#B541FF">
+                            <tspan x="55.4424242" y="91">03</tspan>
+                        </text>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

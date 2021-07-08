@@ -296,6 +296,13 @@ paginate = 10
     parent = "certification"
 
 [[languages.zh.menu.main]]
+    identifier = "training"
+    name = "培训认证"
+    url = "/zh/training.html"
+    weight = 1
+    parent = "certification"
+
+[[languages.zh.menu.main]]
     identifier = "security"
     name = "安全"
     weight = 7

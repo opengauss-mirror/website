@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="38px" height="9px" viewBox="0 0 38 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Line</title>
+    <g id="PC" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.2">
+        <g id="Certification_zh1" transform="translate(-547.000000, -1856.000000)" fill="#000000" fill-rule="nonzero">
+            <g id="认证流程" transform="translate(432.000000, 1724.000000)">
+                <path id="Line" d="M148,132 C150.485281,132 152.5,134.014719 152.5,136.5 C152.5,138.985281 150.485281,141 148,141 C145.514719,141 143.5,138.985281 143.5,136.5 C143.5,134.014719 145.514719,132 148,132 Z M117.5,136 L117.5,137 L115.5,137 L115.5,136 L117.5,136 Z M123.5,136 L123.5,137 L121.5,137 L121.5,136 L123.5,136 Z M129.5,136 L129.5,137 L127.5,137 L127.5,136 L129.5,136 Z M135.5,136 L135.5,137 L133.5,137 L133.5,136 L135.5,136 Z M141.5,136 L141.5,137 L139.5,137 L139.5,136 L141.5,136 Z"></path>
+            </g>
+        </g>
+    </g>
+</svg>
