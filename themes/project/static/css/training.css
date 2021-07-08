@@ -13,7 +13,7 @@ a:hover {
     font-size: 24px;
     font-weight: normal;
     text-align: center;
-    margin: -60px 0 40px;
+    margin: -40px 0 70px;
     padding-top: 120px;
 }
 .train-introduction h2 {
@@ -261,9 +261,6 @@ a:hover {
 .outline-head:nth-child(3n) {
     margin-right: 0;
 }
-/*.train-system {*/
-/*    width: 1100px;*/
-/*}*/
 .outline-num {
     font-size: 36px;
     color: #7D32EA;
@@ -507,6 +504,13 @@ a:hover {
     .training {
         margin-bottom: 20px;
     }
+    .training h2 {
+        margin: 60px 0 20px;
+        padding: 0;
+    }
+    .train-introduction h2 {
+        margin: 0 0 20px;
+    }
     .intro-info {
         max-width: 1000px;
         min-width: unset;
@@ -521,6 +525,9 @@ a:hover {
     .adv-box {
         min-width: unset;
 
+    }
+    .mini-head {
+        padding: 20px 22px;
     }
     .train-system {
         width: 100%;
