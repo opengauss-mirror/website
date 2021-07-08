@@ -5,15 +5,20 @@ a:hover {
     text-decoration: none;
     color: #7D32EA;
 }
+.training {
+    margin-bottom: 60px;
+}
 .training h2 {
     height: 32px;
     font-size: 24px;
     font-weight: normal;
     text-align: center;
-    margin: 60px 0 40px
+    margin: -60px 0 40px;
+    padding-top: 120px;
 }
 .train-introduction h2 {
     margin-top: 0;
+    padding: 0;
 }
 .intro-info {
     display: flex;
@@ -75,7 +80,7 @@ a:hover {
     height: 12px;
     background: url("/img/training/icon-close.svg");
     position: absolute;
-    top: 20px;
+    top: 30px;
     right: 24px;
 }
 .icon-close {
@@ -84,7 +89,7 @@ a:hover {
     height: 12px;
     background: url("/img/training/icon-open.svg");
     position: absolute;
-    top: 20px;
+    top: 30px;
     right: 24px;
 }
 .qa-answer {
@@ -107,11 +112,11 @@ a:hover {
     position: relative;
 }
 .step-box img {
-    margin-right: 10px;
+    margin: 0 8px;
     display: inline;
 }
 .step-1 {
-    background: url("/img/training/01.svg");
+    background: url("/img/training/01.png");
 }
 .step-2 {
     background: url("/img/training/02.svg");
@@ -132,7 +137,7 @@ a:hover {
     background: url("/img/training/07.svg");
 }
 .step-1:hover {
-    background: url("/img/training/hover1.svg");
+    background: url("/img/training/hover1.png");
     cursor: pointer;
 }
 .step-item p {
@@ -167,10 +172,13 @@ a:hover {
 }
 .head-box {
     padding: 20px 40px;
-    height: 112px;
+    height: 123px;
     display: flex;
     position: relative;
     cursor: pointer;
+}
+.sys-header {
+    width: 1130px;
 }
 .sys-ogca,
 .sys-ogcp,
@@ -218,6 +226,12 @@ a:hover {
 .sys-ogca .head-left span {
     color: #E1BAFF;
 }
+.sys-ogcp .head-left span {
+    color: #A183EB;
+}
+.sys-ogce .head-left span {
+    color: #7D32EA;
+}
 .sys-footer p {
     margin: 0 0 5px 40px;
 }
@@ -247,9 +261,9 @@ a:hover {
 .outline-head:nth-child(3n) {
     margin-right: 0;
 }
-.train-system {
-    width: 1100px;
-}
+/*.train-system {*/
+/*    width: 1100px;*/
+/*}*/
 .outline-num {
     font-size: 36px;
     color: #7D32EA;
@@ -359,12 +373,12 @@ a:hover {
     display: flex;
 }
 .sys-mini-box {
-    width: 370px;
+    width: 360px;
     margin-right: 25px;
 }
 .mini-head {
-    width: 370px;
-    height: 112px;
+    width: 360px;
+    height: 123px;
     padding: 20px 40px;
     color: #fff;
     cursor: pointer;
@@ -422,10 +436,10 @@ a:hover {
 }
 .icon-line {
     width: 2px;
-    height: 154px;
+    height: 149px;
     display: inline-block;
     position: relative;
-    top: -172px;
+    top: -166px;
     background: #bfbfbf;
 }
 .icon-circle {
@@ -481,9 +495,17 @@ a:hover {
 .more-btn {
     display: none;
 }
+.train-contact {
+    margin-top: 16px;
+    color: #4d4d4d;
+    line-height: 24px;
+}
 @media screen and (max-width: 1000px) {
     .more-btn {
         display: block;
+    }
+    .training {
+        margin-bottom: 20px;
     }
     .intro-info {
         max-width: 1000px;

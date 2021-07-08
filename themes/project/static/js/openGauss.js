@@ -53,6 +53,11 @@ $(document).ready(function() {
 
   // 中英文切换
   const enTozh = function (url) {
+    if (includesStr('/training.html', url)) {
+      var local = window.location.href.includes('localhost');
+      url = local ? 'http://localhost:1313/en/' : 'https://opengauss.org/en/';
+      return url
+    }
     if (includesStr('/en', url)) {
       url = url.replace('/en', '/zh');
     } else {

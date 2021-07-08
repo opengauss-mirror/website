@@ -27,7 +27,7 @@
             <div class="container">
 
                 <div class="training">
-                    <div class="train-introduction" id="advantage">
+                    <div class="train-introduction">
                         <h2>{{ .Params.introtitle }}</h2>
                         <div class="intro-info">
                             <div>
@@ -37,7 +37,7 @@
                             <img src="/img/training/partner.png" alt="partner of openGauss training">
                         </div>
                     </div>
-                    <div class="train-advantage" id="system">
+                    <div class="train-advantage" id="advantage">
                         <h2>{{ .Params.advantage }}</h2>
                         <div class="adv-box">
                             {{ $post := .Params}}
@@ -50,7 +50,7 @@
                             {{ end }}
                         </div>
                     </div>
-                    <div class="train-system" id="step">
+                    <div class="train-system" id="system">
                         <h2>{{ .Params.systemtitle }}</h2>
                         <div class="sys-content">
                             <div class="sys-short js-toggle-level">
@@ -230,7 +230,7 @@
                         </div>
 
                     </div>
-                    <div class="train-step" id="qa">
+                    <div class="train-step" id="step">
                         <h2>{{ .Params.steptitle }}</h2>
                         <div class="step-box">
                             <a class="step-1 step-item" href="https://enmoedu.com/" target="_blank">
@@ -262,7 +262,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="train-qa">
+                    <div class="train-qa" id="qa">
                         <h2>{{ .Params.qatitle }}</h2>
                         <div class="qa-box">
                             {{ range .Params.qa}}
@@ -274,6 +274,10 @@
                             {{ end }}
                         </div>
                     </div>
+
+                <div class="train-contact">
+                    <p>{{ .Params.contact }}<a href="mailto:{{ .Params.contactemail }}">{{ .Params.contactemail }}</a>{{ .Params.contactend }}</p>
+                </div>
 
                 <div class="fixed-nav">
                     <div class="js-to-top to-top">

@@ -53,15 +53,15 @@ var tagScroll = function () {
     });
     $(window).scroll(function () {
         let top = $(window).scrollTop();
-        if (top < 400) {
+        if (top < 300) {
             $('.fixed-nav ul li:nth-child(1)').addClass('active').siblings().removeClass('active');
-        } else if ((top > 400) && (top < 800)) {
+        } else if ((top > 300) && (top < 700)) {
             $('.fixed-nav ul li:nth-child(2)').addClass('active').siblings().removeClass('active');
-        } else if ((top > 800) && (top < 1100)) {
+        } else if ((top > 700) && (top < 1300)) {
             $('.fixed-nav ul li:nth-child(3)').addClass('active').siblings().removeClass('active');
-        } else if ((top > 1100) && (top < 1400)) {
+        } else if ((top > 1300) && (top < 1600)) {
             $('.fixed-nav ul li:nth-child(4)').addClass('active').siblings().removeClass('active');
-        } else if (top > 1400) {
+        } else if (top > 1600) {
             $('.fixed-nav ul li:nth-child(5)').addClass('active').siblings().removeClass('active');
         }
     });
@@ -73,15 +73,7 @@ var changeStyleMobile = function () {
         });
     }
 };
-var jumpToHome = function () {
-    var lang = window.location.href.includes('/zh/') ? 'zh' : 'en';
-    var local = window.location.href.includes('localhost');
-    if (lang === 'en') {
-        window.location.href = local ? 'http://localhost:1313/en/' : 'https://opengauss.org/en/';
-    }
-};
 var __main = function () {
-    jumpToHome();
     handleSystemClick();
     tagScroll();
     mobileSytleClick('.more-btn', '.hide-btn');

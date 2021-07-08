@@ -6,7 +6,7 @@ introtitle = "认证体系简介"
 intro1 = "基于openGauss在中国良好的发展态势，由openGauss社区联合云和恩墨公司、中国软件行业协会培训中心共同打造openGauss培训认证体系。"
 intro2 = 'openGauss培训认证体系旨在帮助企业快速培养专业DBA人才；推动相关从业人员高效获得权威资质认证；促使技术爱好者踊跃融入社区技术生态。该体系填补了openGuass系数据库培训认证领域的空白，对openGauss的技术推广和生态发展起到积极的推动和促进作用。'
 advantage = "认证体系优势"
-steptitle = "认证流程"
+steptitle = "认证流程介绍"
 step1 = "培训报名"
 step2 = "参加培训"
 step3 = "考场查询"
@@ -20,6 +20,9 @@ downpdf1 = "点击此处下载OGCA课程介绍.pdf"
 downurl1 = "https://dbacertification.obs.myhuaweicloud.com:443/OGCA%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.pdf"
 downpdf2 = "点击此处下载OGCA考试说明.pdf"
 downurl2 = "https://dbacertification.obs.myhuaweicloud.com:443/OGCA%E8%80%83%E8%AF%95%E8%AF%B4%E6%98%8E.pdf"
+contact = "若以上仍不能解决您的问题，可发邮件至 "
+contactemail = "common@certificate.opengauss.org"
+cantactend = " 咨询"
 
 [[adv]]
 advTitle = "权威的认证"
