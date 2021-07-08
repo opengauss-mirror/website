@@ -1,6 +1,6 @@
 +++
 member = "BJusergroup"
-title ="BeiJing User Group"
+title ="Beijing User Group"
 goto = "Go to Gitee home page"
 gitlink = "https://gitee.com/opengauss/openGauss-User-Group/tree/master/BeiJing"
 list = "Mailing List: "
