@@ -28,7 +28,7 @@ email = "mailto:yafeishiorcl@gmail.com"
 img = "/zh/member/img/lizhenfeng.png"
 name = "李臻峰"
 title = "Ambassador"
-company = "中软"
+company = "中软国际"
 email = "mailto:lzfeng2008@aliyun.com"
 
 

@@ -1,6 +1,6 @@
 +++
 member = "NJusergroup"
-title ="NanJing User Group"
+title ="Nanjing User Group"
 goto = "Go to Gitee home page"
 gitlink = "https://gitee.com/opengauss/openGauss-User-Group/tree/master/NanJing"
 list = "Mailing List: "

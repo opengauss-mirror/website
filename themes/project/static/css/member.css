@@ -220,4 +220,10 @@ html[lang=en-us] .boxs .card-item {
         line-height: 32px;
         margin-left: 40px;
     }
+    .flow-right.new-box {
+        display: inline-block!important;
+    }
+    .flow-left.new-box {
+        display: none!important;
+    }
 }
