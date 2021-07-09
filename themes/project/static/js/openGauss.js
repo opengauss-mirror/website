@@ -53,6 +53,10 @@ $(document).ready(function() {
 
   // 中英文切换
   const enTozh = function (url) {
+    if (includesStr('/training.html', url)) {
+      url = 'https://opengauss.org/en/';
+      return url
+    }
     if (includesStr('/en', url)) {
       url = url.replace('/en', '/zh');
     } else {
