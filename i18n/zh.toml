@@ -374,6 +374,9 @@ other = "https://openlookeng.io/zh-cn/"
 [kunpeng_link]
 other = "https://kunpeng.huawei.com/"
 
+[songshuhui_link]
+other = "https://bbs.csdn.net/forums/gaussdb"
+
 [events_detail_url]
 other = "/zh/events/meetLookBack.html"
 
