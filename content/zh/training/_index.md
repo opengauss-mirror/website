@@ -4,7 +4,7 @@ bgImg = "../img/breadcrumbs/training_bg.png"
 moImg = "../img/breadcrumbs/certificate_mo.png"
 introtitle = "认证体系简介"
 intro1 = "基于openGauss在中国良好的发展态势，由openGauss社区联合云和恩墨公司、中国软件行业协会培训中心共同打造openGauss培训认证体系。"
-intro2 = 'openGauss培训认证体系旨在帮助企业快速培养专业DBA人才；推动相关从业人员高效获得权威资质认证；促使技术爱好者踊跃融入社区技术生态。该体系填补了openGuass系数据库培训认证领域的空白，对openGauss的技术推广和生态发展起到积极的推动和促进作用。'
+intro2 = 'openGauss培训认证体系旨在帮助企业快速培养专业DBA人才；推动相关从业人员高效获得权威资质认证；促使技术爱好者踊跃融入社区技术生态。该体系填补了openGauss系数据库培训认证领域的空白，对openGauss的技术推广和生态发展起到积极的推动和促进作用。'
 advantage = "认证体系优势"
 steptitle = "认证流程介绍"
 step1 = "培训报名"
@@ -80,7 +80,7 @@ answer = "openGauss数据库有大量的技术创新，且数据库将会是企�
 
 [[qa]]
 question = "6、认证证书有有效期么？"
-answer = "认证证书终身有效。但openGauss认证是跟随 openGauss 软件版本发布的，随着openGauss不断更新发布新的软件版本，社区也将每个一段时期，同步发布新的openGauss版本的认证，已通过认证的学员可以选择重认证模式快速获取新版本的认证，新版本证书获取可基于旧版本的基础证书，即如果已获得旧版OGCA，可直接参加新版OGCP培训/考试。"
+answer = "认证证书终身有效。但openGauss认证是跟随 openGauss 软件版本发布的，随着openGauss不断更新发布新的软件版本，社区也将每隔一段时期，同步发布新的openGauss版本的认证，已通过认证的学员可以选择重认证模式快速获取新版本的认证，新版本证书获取可基于旧版本的基础证书，即如果已获得旧版OGCA，可直接参加新版OGCP培训/考试。"
 
 [[qa]]
 question = "7、如何参加培训？"
