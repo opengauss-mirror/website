@@ -37,23 +37,13 @@ open = "立即报名"
 img = '/img/hdc2021/img_guangzhou.png'
 url = "https://competition.huaweicloud.com/information/1000041453/introduction"
 
-[[city]]
-name = "河北"
-open = "立即报名"
-img = '/img/hdc2021/img_hebei.png'
-url = "https://competition.huaweicloud.com/information/1000041429/introduction"
+
 
 [[city]]
 name = "河南"
 open = "立即报名"
 img = '/img/hdc2021/img_henan.png'
 url = "https://competition.huaweicloud.com/information/1000041440/introduction"
-
-[[city]]
-name = "湖北"
-open = "立即报名"
-img = '/img/hdc2021/img_hubei.png'
-url = "https://competition.huaweicloud.com/information/1000041414/introduction"
 
 [[city]]
 name = "江苏"
@@ -80,12 +70,6 @@ img = '/img/hdc2021/img_shanxi3.png'
 url = "https://competition.huaweicloud.com/information/1000041472/introduction"
 
 [[city]]
-name = "上海"
-open = "立即报名"
-img = '/img/hdc2021/img_shanghai.png'
-url = "https://competition.huaweicloud.com/information/1000041434/introduction"
-
-[[city]]
 name = "深圳"
 open = "立即报名"
 img = '/img/hdc2021/img_shenzhen.png'
@@ -97,9 +81,5 @@ open = "立即报名"
 img = '/img/hdc2021/img_hangzhou.png'
 url = "https://competition.huaweicloud.com/information/1000041427/introduction"
 
-[[city]]
-name = "贵州"
-open = "立即报名"
-img = '/img/hdc2021/img_guizhou.png'
-url = "https://competition.huaweicloud.com/information/1000041495/circumstance"
+
 +++
