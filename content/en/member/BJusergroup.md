@@ -68,4 +68,10 @@ title = "Ambassador"
 company = "BESSYSTEM"
 email = "mailto:nianke.zhan@bessystem.com"
 
+[[card]]
+img = "/zh/member/img/yaobin.png"
+name = "Yao Bin"
+title = "Ambassador"
+company = "Primeton"
+email = "mailto:yaobin@primeton.com"
 +++

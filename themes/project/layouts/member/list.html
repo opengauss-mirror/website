@@ -593,7 +593,41 @@
                             {{ end }}
                             {{ end}}
                         </div>
-                        <div class="card boxs flow-left new-box">
+                        <div class="card boxs flow-left">
+                            {{ range $paginator.Pages }}
+                            {{ if eq .Params.member "CSusergroup"}}
+
+                            <h4>{{ .Params.title }}</h4>
+                            <p class="detail">
+                                <img src="/img/member/home.svg" alt="">
+                                <a href={{ .Params.gitlink}} target="_blank">{{ .Params.goto }}</a>
+                            </p>
+                            <p class="detail">
+                                <img src="/img/member/email.svg" alt="">
+                                <span>{{ .Params.list }}<a href={{ .Params.maillink }} target="_blank"> {{ .Params.email }}</a></span>
+                            </p>
+                            <p class="detail">
+                                <img src="/img/member/tc.svg" alt="">
+                                <span>{{ .Params.core }}</span>
+                            </p>
+                            <div class="item-det">
+                                {{ range .Params.card }}
+                                <div class="card-item">
+                                    <img src={{ .img }} alt="">
+                                    <p class="m-name">{{ .name }}</p>
+                                    <p class="m-title">{{ .title }}</p>
+
+                                    <p title="{{ .company }}" class="m-title {{.wider}}">{{ .company }}</p>
+                                    <p class="m-img">
+                                        <a href="{{ .email }}" target="_blank"><img src="/img/member/toemail.svg" alt=""></a>
+                                    </p>
+                                </div>
+                                {{ end }}
+                            </div>
+                            {{ end }}
+                            {{ end}}
+                        </div>
+                        <div class="card boxs flow-left new-box hide">
                             <div class="box-contain">
                                 {{ range $paginator.Pages }}
                                 {{ if eq .Params.member "newusergroup"}}
@@ -672,7 +706,7 @@
                             {{ end }}
                             {{ end}}
                         </div>
-                        <div class="card boxs flow-right new-box hide">
+                        <div class="card boxs flow-right new-box ">
                             <div class="box-contain">
                                 {{ range $paginator.Pages }}
                                 {{ if eq .Params.member "newusergroup"}}
