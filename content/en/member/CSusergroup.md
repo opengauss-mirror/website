@@ -33,7 +33,7 @@ email = "mailto:guanghuatan@hnu.edu.cn"
 
 [[card]]
 img = "/zh/member/img/jiangjiujiu.png"
-name = "JiuJiu Jiang"
+name = "Jiujiu Jiang"
 title = "Member"
 company = "Trasen"
 email = "mailto:77604885@qq.com"
