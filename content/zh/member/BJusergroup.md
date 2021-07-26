@@ -67,4 +67,10 @@ title = "Ambassador"
 company = "宝兰德"
 email = "mailto:nianke.zhan@bessystem.com"
 
+[[card]]
+img = "/zh/member/img/yaobin.png"
+name = "姚斌"
+title = "Ambassador"
+company = "普元信息"
+email = "mailto:yaobin@primeton.com"
 +++
