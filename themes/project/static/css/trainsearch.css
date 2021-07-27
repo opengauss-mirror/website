@@ -165,9 +165,6 @@
 }
 .community-search .searching .get-cred {
     margin-top: 20px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
 }
 @media screen and (max-width: 768px) {
     .community-search .searching .get-cred {
@@ -281,4 +278,9 @@
     border: none;
     border-radius: 4px;
     color: #fff;
+}
+#test {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }

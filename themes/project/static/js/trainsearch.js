@@ -6,29 +6,19 @@ $(document).ready(function () {
         identification:"",
         messageTip:{
             success:true,
-            text:"请验证"
+            text:""
         },
         usePC:false,
         emailAddress:"",
         VerificationCode:"",
         buttonText:'发送验证码',
-        searching:true,
+        searching:false,
         invalidUrl:false,
         isOutline:false,
         paParams:"",
-        credent:[{
-            iconUrl: '/',
-            title: [
-                'aaaa',
-                'bbbb',
-                'cccc'
-            ],
-            check: true,
-            certificationId: 'string',
-            id: 'string'
-        }],
+        credent:['aaa', 'bbb', 'ccc'],
         isSend:false,
-        showTemplate:true,
+        showTemplate:false,
         showCheck:false,
         waitSendtimer:null,
         changeTipMessage: function (res) {
@@ -91,7 +81,8 @@ $(document).ready(function () {
 
         let getCard = '<% for(var i in credent){ %>' +
             '<% item=credent[i] %>' +
-            '<div data-item="<%= item.id %>" class="get-cred-item">' +
+            // '<div data-item="<%= item.id %>" class="get-cred-item">' +
+            '<div data-item="<%= item %>" class="get-cred-item">' +
                 ' <img src="<%= item.iconUrl %>">' +
 
                 '<div class="get-cred-item-disc">' +
@@ -111,6 +102,7 @@ $(document).ready(function () {
                 showCheck: model.showCheck
         })
         $('#test').append(rend);
+        bandShowInfo()
     }
 
     var changeSearching = function () {
@@ -126,11 +118,12 @@ $(document).ready(function () {
     }
 
     var changeCredent = function () {
+        console.log(model.credent.length);
         if (model.credent.length) {
             $('.get-cred').removeClass('hide')
-            $('.no-cred').addClass('hide')
+            $('.not-cred').addClass('hide')
         } else {
-            $('.no-cred').removeClass('hide')
+            $('.not-cred').removeClass('hide')
             $('.get-cred').addClass('hide')
         }
 
@@ -189,6 +182,7 @@ $(document).ready(function () {
 
         }
     }
+
     var IsPC = function () {
         var userAgentInfo = navigator.userAgent;
         var Agents = ["Android", "iPhone",
@@ -203,6 +197,7 @@ $(document).ready(function () {
         }
         model.usePC = flag;
     }
+
     var inputModule = function () {
         model.emailAddress = $('.email-address').val()
         model.VerificationCode = $('.num-vertivation').val()
@@ -240,7 +235,7 @@ $(document).ready(function () {
             $.ajax({
                 type: "GET",
                 url: '/api-certification/certification/list',
-                params,
+                data: params,
                 contentType: "application/json; charset=utf-8",
                 notAuthorization: true,
                 datatype: "json",
@@ -254,6 +249,8 @@ $(document).ready(function () {
                         })
                         model.credent = res.data || []
                         insertGetCard()
+                        changeCredent()
+
                         model.searching = false
                         changeSearching()
                         model.messageTip.text = ""
@@ -271,7 +268,7 @@ $(document).ready(function () {
             $.ajax({
                 type: "GET",
                 url: '/api-certification/certification',
-                params,
+                data: params,
                 contentType: "application/json; charset=utf-8",
                 notAuthorization: true,
                 datatype: "json",
@@ -330,6 +327,7 @@ $(document).ready(function () {
     })
 
     $('.submit-button').on('click', function () {
+        inputModule()
         if(!model.VerificationCode || !model.emailAddress){
             return
         }
@@ -359,11 +357,21 @@ $(document).ready(function () {
         changeTemlate()
     })
 
+    var bandShowInfo = function () {
+        $('#test').find('.get-cred-item').on('click', function (event) {
+            let target = event.target.dataset.item
+            console.log('target', target);
+
+            model.credent.filter(item => item.id === target)
+        })
+    }
+
+
     var __main = function (){
         IsPC()
-        // changeSendClass()
+        changeSendClass()
         changeSendTip()
-        // changeSearching()
+        changeSearching()
         changeCredent()
         changeTemlate()
         insertGetCard()

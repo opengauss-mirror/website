@@ -38,16 +38,27 @@
                 <div class="searching no-searching">
                     <div>您的证书信息如下：</div>
                     <div class="get-cred">
-                        <div id="test"></div>
+                        <div id="test">
+                            <div data-item="vvv" class="get-cred-item">
+                                <img  alt="">
+                                <div  class="get-cred-item-disc">
+                                    <div>title1</div>
+                                    <div>title2</div>
+                                </div>
+                                <div class="check" :class="item.check?'blue-border':''" v-if="showCheck">
+                                    <span class="is-check" v-if="item.check"></span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="not-cred">当前无可下载证书！</div>
 
                     <div class="down-cred">
-                        <button class="button" @click="hanndelcheck" type="primary" size="medium">证书下载</button>
+                        <button class="button" type="primary" size="medium">证书下载</button>
                     </div>
                 </div>
-                <div class="show-template" @click="showTemplate=false">
+                <div class="show-template">
                     <img class="preview-image" src="previewImage" alt="">
                 </div>
             </div>
@@ -88,9 +99,9 @@
 
     </div>
     <!-- /#all -->
+    {{ partial "scripts.html" . }}
 
     {{ if eq .Params.pageId "search"}}
-    {{ partial "scripts.html" . }}
     <script src="{{ "js/trainsearch.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>
     {{ end }}
 

@@ -8,7 +8,7 @@ $(document).ready(function () {
             text:""
         },
         VerificationCode:"",
-        buttonText:this.i18n.community.SERVICE.SEARCH.SEND_CODE,
+        buttonText:'发送验证码',
         searching:true,
         invalidUrl:false,
         paParams:"",
@@ -95,7 +95,7 @@ $(document).ready(function () {
             $.ajax({
                 type: "GET",
                 url: '/api-certification/refreshDonwnurl',
-                params,
+                data: params,
                 contentType: "application/json; charset=utf-8",
                 notAuthorization: true,
                 datatype: "json",
@@ -124,9 +124,9 @@ $(document).ready(function () {
         },
         refleshDownCard: function (params, lang) {
             $.ajax({
-                type: "GET",
+                type: "PATCH",
                 url: '/api-certification/refreshDonwnurl',
-                params,
+                data: params,
                 contentType: "application/json; charset=utf-8",
                 notAuthorization: true,
                 datatype: "json",
@@ -149,7 +149,7 @@ $(document).ready(function () {
             $.ajax({
                 type: "GET",
                 url: '/api-certification/certification',
-                params,
+                data: params,
                 contentType: "application/json; charset=utf-8",
                 notAuthorization: true,
                 datatype: "json",
