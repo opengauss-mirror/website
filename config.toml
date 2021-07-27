@@ -134,6 +134,13 @@ paginate = 10
     parent = "certification"
 
 [[menu.main]]
+    identifier = "searching"
+    name = "Query Certificates"
+    url = "/en/training/search.html"
+    weight = 2
+    parent = "certification"
+
+[[menu.main]]
     identifier = "security"
     name = "Security"
     weight = 7
@@ -299,7 +306,14 @@ paginate = 10
     identifier = "training"
     name = "培训认证"
     url = "/zh/training.html"
-    weight = 1
+    weight = 2
+    parent = "certification"
+
+[[languages.zh.menu.main]]
+    identifier = "searching"
+    name = "证书查询"
+    url = "/zh/training/search.html"
+    weight = 3
     parent = "certification"
 
 [[languages.zh.menu.main]]

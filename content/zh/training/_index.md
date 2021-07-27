@@ -23,6 +23,7 @@ downurl2 = "https://dbacertification.obs.myhuaweicloud.com:443/OGCA%E8%80%83%E8%
 contact = "若以上仍不能解决您的问题，可发邮件至 "
 contactemail = "common@certificate.opengauss.org"
 cantactend = " 咨询"
+searchingUrl = "/zh/training/search.html"
 
 [[adv]]
 advTitle = "权威的认证"

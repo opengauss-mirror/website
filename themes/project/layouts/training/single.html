@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+  {{ partial "head.html" . }}
+  <link rel="stylesheet" href="{{ "css/trainsearch.css" | relURL}}?t={{ mul 1000 (time now).Unix }}">
+  <body>
+
+    <div id="all">
+
+        <header>
+
+          {{ partial "nav.html" . }}
+        </header>
+
+        <div id="content">
+            {{ if eq .Params.pageId "search"}}
+            <div class="container train-search community-search">
+                <h3>证书查询</h3>
+
+                <div class="searching is-searching">
+                    <div>请输入认证考试所用的邮箱以获取验证码，查询您的证书。</div>
+
+                    <div class="searching-content">
+                        <div class="email">
+                            <input placeholder="您绑定的邮箱" class="email-address">
+                        </div>
+
+                        <div class="number">
+                            <input class="num-vertivation" placeholder="输入您获取的验证码">
+                            <button class="send-button button" type="primary" size="medium" plain>发送验证码</button>
+                            <div class="send-tip"></div>
+                        </div>
+
+                        <button class="submit-button button" type="primary" size="medium">确定</button>
+                    </div>
+                </div>
+
+                <div class="searching no-searching">
+                    <div>您的证书信息如下：</div>
+                    <div class="get-cred">
+                        <div id="test"></div>
+                    </div>
+
+                    <div class="not-cred">当前无可下载证书！</div>
+
+                    <div class="down-cred">
+                        <button class="button" @click="hanndelcheck" type="primary" size="medium">证书下载</button>
+                    </div>
+                </div>
+                <div class="show-template" @click="showTemplate=false">
+                    <img class="preview-image" src="previewImage" alt="">
+                </div>
+            </div>
+            {{ end }}
+
+            {{ if eq .Params.pageId "down"}}
+            <div class="container community-search">
+                <div class="community-search">
+                    <h3>证书下载</h3>
+                    <div class="searching" v-if="invalidUrl && downFail">
+                        <div>验证码已发送至您的邮箱，请输入验证码以获取证书</div>
+                        <div class="searching-content">
+                            <div class="number">
+                                <input
+                                        class="num-vertivation"
+                                        placeholder="输入您获取的验证码"
+                                        clearable
+                                >
+                                <button class="send-button button" type="primary" size="medium" plain>发送验证码</button>
+                                <div class="send-tip"></div>
+                            </div>
+                            <button class="submit-button button" type="primary" size="medium">确定</button>
+                        </div>
+                    </div>
+                    <div v-if="!invalidUrl && downFail" class="invalid-url">
+                        <span>您的下载链接已过期，请点击</span>
+                        <span @click="jumpSendCode" class="down">证书下载</span>
+                        <span>重新获取下载链接。</span>
+                    </div>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+
+        <!-- /#content -->
+
+        {{ partial "footer.html" . }}
+
+    </div>
+    <!-- /#all -->
+
+    {{ if eq .Params.pageId "search"}}
+    {{ partial "scripts.html" . }}
+    <script src="{{ "js/trainsearch.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>
+    {{ end }}
+
+    {{ if eq .Params.pageId "down"}}
+    <script src="{{ "js/traindown.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>
+    {{ end }}
+  </body>
+</html>

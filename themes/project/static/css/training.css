@@ -140,6 +140,10 @@ a:hover {
     background: url("/img/training/hover1.png");
     cursor: pointer;
 }
+.step-7:hover {
+    background: url("/img/training/hover7.png");
+    cursor: pointer;
+}
 .step-item p {
     display: block;
     position: absolute;
