@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var lang = includesStr('/zh/', window.location.href) ? 'zh' : 'en';
+    var lang = includesStr('/zh/', window.location.href) ? 'zh_CN' : 'en_US';
 
     var model = {
         previewImage:"",
@@ -11,7 +11,7 @@ $(document).ready(function () {
         usePC:false,
         emailAddress:"",
         VerificationCode:"",
-        buttonText:'发送验证码',
+        buttonText: lang === 'zh_CN'? '发送验证码': 'Send a verification code',
         searching:true,
         invalidUrl:false,
         isOutline:false,
@@ -36,7 +36,8 @@ $(document).ready(function () {
             let num = 60
             model.waitSendtimer = setInterval(()=>{
                 num--
-                model.buttonText = '重新发送' + '（' + num + '）'
+                let send = lang === 'zh_CN' ? '重新发送' : 'Resend'
+                model.buttonText = send + '（' + num + '）'
                 changeSendBtnText()
                 if(num==0){
                     clearInterval(model.waitSendtimer)
@@ -47,7 +48,7 @@ $(document).ready(function () {
                     model.isSend = false
                     changeSendClass()
 
-                    model.buttonText = '发送验证码'
+                    model.buttonText = lang === 'zh_CN'? '发送验证码': 'Send a verification code'
                     changeSendBtnText()
                 }
             },1000)
@@ -74,11 +75,9 @@ $(document).ready(function () {
             '<% }%>'
 
         let checkBox = '<% checked=item.check? "blue-border" : "" %>' +
-            '<% if(showCheck){ %>' +
+            '<% if(showSelector){ %>' +
             '<div class="check <%= checked %>">' +
-            // '<% if(item.check){ %>' +
             ' <span class="is-check hide"></span>' +
-            // '<% } %>' +
             '</div>' +
             '<% } %>'
 
@@ -104,7 +103,7 @@ $(document).ready(function () {
                 showCheck: model.showCheck,
                 showSelector: model.showSelector
         })
-        $('#test').append(rend);
+        $('#test').empty().append(rend);
         bandShowInfo()
     }
 
@@ -120,11 +119,13 @@ $(document).ready(function () {
 
     var changeSearching = function () {
         if (model.searching) {
-            $('.community-search').find('h3').text('证书查询')
+            let s = lang === 'zh_CN'? '证书查询': 'Query Certificates'
+            $('.community-search').find('h3').text(s)
             $('.is-searching').removeClass('hide')
             $('.no-searching').addClass('hide')
         } else {
-            $('.community-search').find('h3').text('证书下载')
+            let down = lang === 'zh_CN'? '证书下载': 'Download Certificates'
+            $('.community-search').find('h3').text(down)
             $('.no-searching').removeClass('hide')
             $('.is-searching').addClass('hide')
         }
@@ -187,11 +188,13 @@ $(document).ready(function () {
 
     var changeShowCheck = function () {
         if (model.showCheck) {
+            let c = lang === 'zh_CN'? '下载选中证书': 'Download Selected Certificates'
             $('.check').removeClass('hide')
-            $('.down-cred').find('.button').text('下载选中证书');
+            $('.down-cred').find('.button').text(c);
         } else {
+            let down = lang === 'zh_CN'? '证书下载': 'Download Certificates'
             $('.check').addClass('hide')
-            $('.down-cred').find('.button').text('证书下载');
+            $('.down-cred').find('.button').text(down);
 
         }
     }
@@ -227,7 +230,9 @@ $(document).ready(function () {
                 contentType: "application/json; charset=utf-8",
                 notAuthorization: true,
                 datatype: "json",
-                headLanguage: lang == "zh" ? false : lang,
+                headers: {
+                    'Accept-Language': lang,
+                },
                 success: function (res) {
                     model.changeTipMessage(res)
                     if(res.success){
@@ -257,7 +262,9 @@ $(document).ready(function () {
                 contentType: "application/json; charset=utf-8",
                 notAuthorization: true,
                 datatype: "json",
-                headLanguage: lang == "zh" ? false : lang,
+                headers: {
+                    'Accept-Language': lang,
+                },
                 success: function (res) {
                     if(res.success){
                         res.data.forEach(item=>{
@@ -274,13 +281,13 @@ $(document).ready(function () {
                         model.messageTip.text = ""
                         changeSendTip()
                     }else{
-                        // this.$message.error(res.message)
                         alert(res.message)
                     }
                 },
                 error: function (){
+                    let e = lang === 'zh_CN'? '您输入的验证码有误！': 'The verification code is incorrect.'
                     let res = {
-                        message: "您输入的验证码有误！",
+                        message: e,
                         success: false
                     }
                     model.changeTipMessage(res)
@@ -295,7 +302,9 @@ $(document).ready(function () {
                 contentType: "application/json; charset=utf-8",
                 notAuthorization: true,
                 datatype: "json",
-                headLanguage: lang == "zh" ? false : lang,
+                headers: {
+                    'Accept-Language': lang,
+                },
                 success: function (res) {
                     if(res.success){
                         //将base64转换为blob
@@ -328,13 +337,13 @@ $(document).ready(function () {
                         downloadElement.click()
                         document.body.removeChild(downloadElement)
                     }else{
-                        // this.$message.error(res.message)
                         alert(res.message)
                     }
                 },
                 error: function (){
+                    let n = lang === 'zh_CN'? '网络错误，请稍后再试！': 'Network error.Please try again later.'
                     let res = {
-                        message: "网络错误，请稍后再试！",
+                        message: n,
                         success: false
                     }
                     model.changeTipMessage(res)
@@ -349,7 +358,9 @@ $(document).ready(function () {
                 contentType: "application/json; charset=utf-8",
                 notAuthorization: true,
                 datatype: "json",
-                headLanguage: lang == "zh" ? false : lang,
+                headers: {
+                    'Accept-Language': lang,
+                },
                 success: function (res) {
                     model.changeTipMessage(res)
                     if(res.success){
@@ -357,8 +368,6 @@ $(document).ready(function () {
                         let rend = ejs.render(res.data[0].content,
                             {})
                         $('#code').append(rend);
-                    }else{
-
                     }
                 }
             });
@@ -366,7 +375,6 @@ $(document).ready(function () {
     }
 
     $('.send-button').on('click', function () {
-        console.log('点击发送验证码');
         inputModule()
         if(model.isSend || !model.emailAddress){
             return
@@ -389,6 +397,7 @@ $(document).ready(function () {
     })
 
     $('.down-cred').find('.button').on('click', function () {
+        model.showSelector = true
         insertGetCard()
         if(model.showCheck){
             model.credent.forEach(item=>{

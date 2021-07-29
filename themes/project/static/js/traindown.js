@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var lang = includesStr('/zh/', window.location.href) ? 'zh' : 'en';
+    var lang = includesStr('/zh/', window.location.href) ? 'zh_CN' : 'en_US';
 
     var model = {
         downFail:false,
@@ -8,7 +8,7 @@ $(document).ready(function () {
             text:""
         },
         VerificationCode:"",
-        buttonText:'发送验证码',
+        buttonText: lang === 'zh_CN'? '发送验证码': 'Send a verification code',
         searching:true,
         invalidUrl:false,
         paParams:"",
@@ -36,7 +36,8 @@ $(document).ready(function () {
             let num = 60
             model.waitSendtimer = setInterval(()=>{
                 num--
-                model.buttonText = '重新发送' + '（' + num + '）'
+                let send = lang === 'zh_CN' ? '重新发送' : 'Resend'
+                model.buttonText = send + '（' + num + '）'
                 if(num==0){
                     clearInterval(model.waitSendtimer)
                     model.messageTip.text = ""
@@ -45,7 +46,7 @@ $(document).ready(function () {
                     model.isSend = false
                     changeSendClass()
 
-                    model.buttonText = '发送验证码'
+                    model.buttonText = lang === 'zh_CN'? '发送验证码': 'Send a verification code'
                     changeSendBtnText()
                 }
             },1000)
@@ -56,6 +57,10 @@ $(document).ready(function () {
                 trainingMethods.downCard({PA:pa}, lang)
             }
         }
+    }
+    var changeSendBtnText = function () {
+        let btnText = model.buttonText
+        $('.send-button').empty().text(btnText)
     }
 
     var changeSendTip = function () {
@@ -101,7 +106,9 @@ $(document).ready(function () {
                 contentType: "application/json; charset=utf-8",
                 notAuthorization: true,
                 datatype: "json",
-                headLanguage: lang == "zh" ? false : lang,
+                headers: {
+                    'Accept-Language': lang,
+                },
                 success: function (res) {
                     model.changeTipMessage(res)
                     if(res.success){
@@ -133,7 +140,9 @@ $(document).ready(function () {
                 contentType: "application/json; charset=utf-8",
                 notAuthorization: true,
                 datatype: "json",
-                headLanguage: lang == "zh" ? false : lang,
+                headers: {
+                    'Accept-Language': lang,
+                },
                 success: function (res) {
                     if(res.success){
                         model.getPA(res.data.signInfo)
@@ -156,7 +165,9 @@ $(document).ready(function () {
                 contentType: "application/json; charset=utf-8",
                 notAuthorization: true,
                 datatype: "json",
-                headLanguage: lang == "zh" ? false : lang,
+                headers: {
+                    'Accept-Language': lang,
+                },
                 success: function (res) {
                     if(res.success){
                         function dataURLtoBlob (dataurl) {

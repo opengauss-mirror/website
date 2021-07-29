@@ -15,47 +15,36 @@
         <div id="content">
             {{ if eq .Params.pageId "search"}}
             <div class="container train-search community-search">
-                <h3>证书查询</h3>
+                <h3>{{ .Params.downcard }}</h3>
 
                 <div class="searching is-searching">
-                    <div>请输入认证考试所用的邮箱以获取验证码，查询您的证书。</div>
+                    <div>{{ .Params.searchdisc }}</div>
 
                     <div class="searching-content">
                         <div class="email">
-                            <input placeholder="您绑定的邮箱" class="email-address">
+                            <input placeholder={{ .Params.emailhoder }} class="email-address">
                         </div>
 
                         <div class="number">
-                            <input class="num-vertivation" placeholder="输入您获取的验证码">
-                            <button class="send-button button" type="primary" size="medium" plain>发送验证码</button>
+                            <input class="num-vertivation" placeholder={{ .Params.codehoder }}>
+                            <button class="send-button button" type="primary" size="medium" plain>{{.Params.sendcode}}</button>
                             <div class="send-tip"></div>
                         </div>
 
-                        <button class="submit-button button" type="primary" size="medium">确定</button>
+                        <button class="submit-button button" type="primary" size="medium">{{ .Params.btnsure}}</button>
                     </div>
                 </div>
 
                 <div class="searching no-searching">
-                    <div>您的证书信息如下：</div>
+                    <div>{{ .Params.searchinfo }}</div>
                     <div class="get-cred">
-                        <div id="test">
-                            <div data-item="vvv" class="get-cred-item">
-                                <img  alt="">
-                                <div  class="get-cred-item-disc">
-                                    <div>title1</div>
-                                    <div>title2</div>
-                                </div>
-                                <div class="check" :class="item.check?'blue-border':''" v-if="showCheck">
-                                    <span class="is-check" v-if="item.check"></span>
-                                </div>
-                            </div>
-                        </div>
+                        <div id="test"></div>
                     </div>
 
-                    <div class="not-cred">当前无可下载证书！</div>
+                    <div class="not-cred">{{.Params.nocard}}</div>
 
                     <div class="down-cred">
-                        <button class="button" type="primary" size="medium">证书下载</button>
+                        <button class="button" type="primary" size="medium">{{ .Params.downcard}}</button>
                     </div>
                 </div>
                 <div class="show-template">
@@ -67,22 +56,22 @@
             {{ if eq .Params.pageId "down"}}
             <div class="container community-search train-down">
                 <div class="community-search">
-                    <h3>证书下载</h3>
+                    <h3>{{.Params.downcard}}</h3>
                     <div class="searching is-searching hide">
-                        <div>验证码已发送至您的邮箱，请输入验证码以获取证书</div>
+                        <div>{{ .Params.downtip}}</div>
                         <div class="searching-content">
                             <div class="number">
-                                <input class="num-vertivation" placeholder="输入您获取的验证码" clearable>
-                                <button class="send-button button" type="primary" size="medium" plain>发送验证码</button>
+                                <input class="num-vertivation" placeholder={{.Params.codehoder}} clearable>
+                                <button class="send-button button" type="primary" size="medium" plain>{{.Params.sendcode }}</button>
                                 <div class="send-tip"></div>
                             </div>
-                            <button class="submit-button button" type="primary" size="medium">确定</button>
+                            <button class="submit-button button" type="primary" size="medium">{{.Params.btnsure}}</button>
                         </div>
                     </div>
                     <div class="invalid-url">
-                        <span>您的下载链接已过期，请点击</span>
-                        <span class="down">证书下载</span>
-                        <span>重新获取下载链接。</span>
+                        <span>{{.Params.failleft}}</span>
+                        <span class="down">{{.Params.downcard}}</span>
+                        <span>{{.Params.failright}}</span>
                     </div>
                 </div>
             </div>

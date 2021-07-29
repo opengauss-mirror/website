@@ -286,3 +286,10 @@
     justify-content: space-around;
     align-items: center;
 }
+html[lang=en-us] .send-button {
+    width: 210px;
+    margin-left: 10px;
+}
+html[lang=en-us] .num-vertivation {
+    width: 205px;
+}
