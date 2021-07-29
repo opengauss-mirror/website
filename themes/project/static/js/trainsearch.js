@@ -12,15 +12,16 @@ $(document).ready(function () {
         emailAddress:"",
         VerificationCode:"",
         buttonText:'发送验证码',
-        searching:false,
+        searching:true,
         invalidUrl:false,
         isOutline:false,
         paParams:"",
-        credent:['aaa', 'bbb', 'ccc'],
+        credent:[],
         isSend:false,
         showTemplate:false,
         showCheck:false,
         waitSendtimer:null,
+        showSelector: false,
         changeTipMessage: function (res) {
             model.messageTip.text = res.message
             model.messageTip.success = res.success
@@ -36,6 +37,7 @@ $(document).ready(function () {
             model.waitSendtimer = setInterval(()=>{
                 num--
                 model.buttonText = '重新发送' + '（' + num + '）'
+                changeSendBtnText()
                 if(num==0){
                     clearInterval(model.waitSendtimer)
                     model.waitSendtimer = null
@@ -50,9 +52,10 @@ $(document).ready(function () {
                 }
             },1000)
         },
-        showInfo: function (item){
+        showInfo: function (item, box){
             if(model.showCheck){
                 item.check = !item.check
+                changeCheckClass(item.check, box)
             }else{
                 model.previewImage = item.imageUrl
                 changeImgSrc()
@@ -73,16 +76,15 @@ $(document).ready(function () {
         let checkBox = '<% checked=item.check? "blue-border" : "" %>' +
             '<% if(showCheck){ %>' +
             '<div class="check <%= checked %>">' +
-            '<% if(item.check){ %>' +
-            ' <span class="is-check"></span>' +
-            '<% } %>' +
+            // '<% if(item.check){ %>' +
+            ' <span class="is-check hide"></span>' +
+            // '<% } %>' +
             '</div>' +
             '<% } %>'
 
         let getCard = '<% for(var i in credent){ %>' +
             '<% item=credent[i] %>' +
-            // '<div data-item="<%= item.id %>" class="get-cred-item">' +
-            '<div data-item="<%= item %>" class="get-cred-item">' +
+            '<div data-item="<%= item.id %>" class="get-cred-item">' +
                 ' <img src="<%= item.iconUrl %>">' +
 
                 '<div class="get-cred-item-disc">' +
@@ -99,10 +101,21 @@ $(document).ready(function () {
         let rend = ejs.render(getCard,
             {
                 credent: model.credent,
-                showCheck: model.showCheck
+                showCheck: model.showCheck,
+                showSelector: model.showSelector
         })
         $('#test').append(rend);
         bandShowInfo()
+    }
+
+    var changeCheckClass = function (isCheck, box) {
+        if (isCheck) {
+            box.find('.check').addClass('blue-border')
+            box.find('.is-check').removeClass('hide')
+        } else {
+            box.find('.check').removeClass('blue-border')
+            box.find('.is-check').addClass('hide')
+        }
     }
 
     var changeSearching = function () {
@@ -144,7 +157,7 @@ $(document).ready(function () {
 
     var changeSendBtnText = function () {
         let btnText = model.buttonText
-        $('.send-buttom').empty().text(btnText)
+        $('.send-button').empty().text(btnText)
     }
 
     var changeSendTip = function () {
@@ -220,6 +233,11 @@ $(document).ready(function () {
                     if(res.success){
                         model.identification = res.data.identification
                         model.waitSend()
+
+                        let id = {
+                            content: model.identification
+                        }
+                        trainingMethods.getId(id, lang)
                     }else{
                         model.isSend = false
                         changeSendClass()
@@ -257,10 +275,15 @@ $(document).ready(function () {
                         changeSendTip()
                     }else{
                         // this.$message.error(res.message)
+                        alert(res.message)
                     }
                 },
                 error: function (){
-
+                    let res = {
+                        message: "您输入的验证码有误！",
+                        success: false
+                    }
+                    model.changeTipMessage(res)
                 }
             });
         },
@@ -306,10 +329,37 @@ $(document).ready(function () {
                         document.body.removeChild(downloadElement)
                     }else{
                         // this.$message.error(res.message)
+                        alert(res.message)
                     }
                 },
                 error: function (){
+                    let res = {
+                        message: "网络错误，请稍后再试！",
+                        success: false
+                    }
+                    model.changeTipMessage(res)
+                }
+            });
+        },
+        getId: function (params, lang) {
+            $.ajax({
+                type: "POST",
+                url: '/api-certification/sentMail',
+                data: JSON.stringify(params),
+                contentType: "application/json; charset=utf-8",
+                notAuthorization: true,
+                datatype: "json",
+                headLanguage: lang == "zh" ? false : lang,
+                success: function (res) {
+                    model.changeTipMessage(res)
+                    if(res.success){
+                        console.log('res in post', res.data[0].content);
+                        let rend = ejs.render(res.data[0].content,
+                            {})
+                        $('#code').append(rend);
+                    }else{
 
+                    }
                 }
             });
         }
@@ -339,6 +389,7 @@ $(document).ready(function () {
     })
 
     $('.down-cred').find('.button').on('click', function () {
+        insertGetCard()
         if(model.showCheck){
             model.credent.forEach(item=>{
                 if(item.check){
@@ -359,13 +410,21 @@ $(document).ready(function () {
 
     var bandShowInfo = function () {
         $('#test').find('.get-cred-item').on('click', function (event) {
-            let target = event.target.dataset.item
-            console.log('target', target);
+            let target = $(this)
+            let targetID = target.data('item')
+            let currentCheck = null
 
-            model.credent.filter(item => item.id === target)
+            model.credent.forEach(function (item) {
+                if (item.id === targetID) {
+                    currentCheck = item
+                }
+            })
+
+            if (currentCheck) {
+                model.showInfo(currentCheck, $(this))
+            }
         })
     }
-
 
     var __main = function (){
         IsPC()

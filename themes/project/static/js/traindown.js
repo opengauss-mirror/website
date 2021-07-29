@@ -72,21 +72,23 @@ $(document).ready(function () {
 
     var changeSendClass= function () {
         if (model.isSend) {
-            $('.send-buttom').addClass('is-send')
+            $('.send-button').addClass('is-send')
         } else {
-            $('.send-buttom').removeClass('is-send')
+            $('.send-button').removeClass('is-send')
         }
     }
 
     var changeSearching = function () {
-        if (model.searching) {
-            $('.community-search').find('h3').text('证书查询')
+        if (model.invalidUrl && model.downFail) {
             $('.is-searching').removeClass('hide')
-            $('.no-searching').addClass('hide')
         } else {
-            $('.community-search').find('h3').text('证书下载')
-            $('.no-searching').removeClass('hide')
-            $('.is-searching').addClass('hide')
+            $('.no-searching').addClass('hide')
+        }
+
+        if (!model.invalidUrl && model.downFail) {
+            $('.invalid-url').removeClass('hide')
+        } else {
+            $('.invalid-url').addClass('hide')
         }
     }
 
@@ -104,6 +106,7 @@ $(document).ready(function () {
                     model.changeTipMessage(res)
                     if(res.success){
                         model.invalidUrl = true
+                        changeSearching()
 
                         model.searching = true
                         changeSearching()
@@ -113,7 +116,7 @@ $(document).ready(function () {
 
                         model.waitSend()
                     } else {
-                        // this.$message.error(res.message)
+                        alert(res.message)
                     }
                 },
                 error: function (){
@@ -185,6 +188,7 @@ $(document).ready(function () {
                     }else{
                         model.invalidUrl = false
                         model.downFail = true
+                        changeSearching()
                         model.paParams = params.PA
                     }
                 },
@@ -210,6 +214,7 @@ $(document).ready(function () {
 
     var __main = function (){
         model.getPA()
+        changeSearching()
     }
     __main()
 })
