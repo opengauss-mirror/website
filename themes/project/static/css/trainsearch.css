@@ -7,7 +7,7 @@
     color: rgba(0, 0, 0, 0.5);
 }
 .community-search .invalid-url .down {
-    color: #002FA7;
+    color: var(--theme);
     cursor: pointer;
 }
 @media screen and (max-width: 768px) {
@@ -39,8 +39,8 @@
     height: 40px;
     padding: 11px 30px;
     color: #FFF;
-    background-color: #002FA7;
-    border-color: #002FA7;
+    background-color: var(--theme);
+    border-color: var(--theme);
     line-height: 1;
 }
 .community-search .show-template img {
@@ -53,7 +53,7 @@
     transform: translate(-50%, -50%);
 }
 .community-search .button {
-    height: 40px;
+    /*height: 40px;*/
     width: 130px;
     padding: 11px 0;
     text-align: center;
@@ -62,11 +62,13 @@
 .community-search h3 {
     padding: 60px 0;
     font-size: 36px;
+    font-weight: normal;
     color: #000000;
 }
 @media screen and (max-width: 768px) {
     .community-search h3 {
         padding: 40px 0;
+        font-weight: normal;
         font-size: 18px;
     }
 }
@@ -117,7 +119,10 @@
     position: absolute;
     bottom: -25px;
     font-size: 14px;
-    color: #002FA7;
+    color: var(--theme);
+}
+html[lang=en-us] .community-search .searching .searching-content .number .send-tip {
+    bottom: -45px;
 }
 @media screen and (max-width: 768px) {
     .community-search .searching .searching-content .number .send-tip {
@@ -130,7 +135,7 @@
 .community-search .searching .searching-content .number .send-buttom {
     margin-left: 10px;
     background-color: #FFF;
-    color: #002FA7;
+    color: var(--theme);
 }
 @media screen and (max-width: 768px) {
     .community-search .searching .searching-content .number .send-buttom {
@@ -140,7 +145,7 @@
         border: 1px solid #99acdc;
         margin-left: 10px;
         background-color: #FFF;
-        color: #002FA7;
+        color: var(--theme);
     }
 }
 .community-search .searching .searching-content .number .send-buttom:hover {
@@ -205,7 +210,7 @@
     }
 }
 .community-search .searching .get-cred .get-cred-item .blue-border.check {
-    border: 1px solid #002FA7;
+    border: 1px solid var(--theme);
 }
 .community-search .searching .get-cred .get-cred-item .check {
     position: absolute;
@@ -224,7 +229,7 @@
     border-radius: 50%;
     width: 12px;
     height: 12px;
-    background: #002FA7;
+    background: var(--theme);
 }
 .community-search .searching .get-cred .get-cred-item img {
     width: auto;
@@ -250,23 +255,24 @@
 .send-button {
     line-height: 1;
     cursor: pointer;
-    border: 1px solid #99acdc!important;
+    border: 1px solid #7D32EA !important;
     font-size: 14px;
     border-radius: 4px;
     background: #fff;
-    color: #002FA7;
+    color: var(--theme);
 }
 .send-button:hover {
-    border-color: #002FA7;
+    border-color: var(--theme);
 }
 .submit-button:focus, .submit-button:hover {
-    background: #3359b9;
-    border-color: #3359b9;
+    background: var(--theme);
+    border-color: var(--theme);
     color: #FFF;
 }
 .num-vertivation {
     height: 40px;
     width: 258px;
+    /*width: 120px;*/
     border: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 4px;
     padding: 0 30px 0 15px;
@@ -275,7 +281,7 @@
     outline: 0;
 }
 .down-cred .button {
-    background: #002FA7;
+    background: var(--theme);
     line-height: 1;
     border: none;
     border-radius: 4px;
@@ -292,4 +298,12 @@ html[lang=en-us] .send-button {
 }
 html[lang=en-us] .num-vertivation {
     width: 205px;
+}
+@media screen and (max-width: 768px) {
+    .num-vertivation {
+        width: 175px;
+    }
+    html[lang=en-us] .num-vertivation {
+        width: 120px;
+    }
 }
