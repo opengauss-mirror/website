@@ -105,9 +105,9 @@ $(document).ready(function () {
                 data: params,
                 contentType: "application/json; charset=utf-8",
                 notAuthorization: true,
-                datatype: "json",
                 headers: {
                     'Accept-Language': lang,
+                    'Content-type': 'application/x-www-form-urlencoded'
                 },
                 success: function (res) {
                     model.changeTipMessage(res)
