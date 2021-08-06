@@ -50,7 +50,7 @@ weight = 1
 iden = "connectors"
 name = "py-og"
 desc = "openGauss python驱动（纯python，可跨平台）"
-address = "https://gitee.com/opengaussorg/dashboard/projects/opengauss/openGauss-connector-python-psycopg3/"
+address = "https://gitee.com/opengauss/openGauss-connector-python-pyog"
 guide = "https://magicstack.github.io/asyncpg/current/"
 weight = 2
 
@@ -58,7 +58,7 @@ weight = 2
 iden = "connectors"
 name = "go-pq"
 desc = "openGauss go语言驱动"
-address = "https://gitee.com/opengaussorg/dashboard/projects/opengauss/openGauss-connector-python-psycopg4/"
+address = "https://github.com/lib/pq"
 guide = "https://pkg.go.dev/github.com/lib/pq"
 weight = 3
 

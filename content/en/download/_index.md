@@ -1,5 +1,5 @@
 +++
-title = "Download"
+title = "Software Packages"
 bgImg = "../img/breadcrumbs/download_bg.png"
 moImg = "../img/breadcrumbs/download_mo.png"
 optionOne = "openGauss Server"

@@ -80,18 +80,18 @@
 
                             <div class="tool-item" id={{ .identification }}>
                                 <div class="item-title">{{ $boxName }}  <img src="/img/swiper/right.svg" alt="title icon"></div>
-                                <div class="item-detail hide">
-
+                                <div class={{ if eq .identification "connectors"}} {{ "item-detail" }} {{ else }} {{ "item-detail hide" }} {{ end }}>
                                     {{ range $root.cards }}
                                     {{ if eq .iden $id}}
                                     <div class="item-box">
                                         <p class="item-name">{{.name}}</p>
                                         <p class="item-desc">{{.desc}}</p>
-                                        <p class="item-link"><a href={{.address}} target="_blank">{{ if .website }}{{ $root.weblink}} {{ else }}{{$root.code}} {{ end }}</a><a href={{.guide}} target="_blank">{{$root.guidance}}</a></p>
+                                        <p class="item-link"><a href={{.address}}>{{ if .website }}{{ $root.weblink}} {{ else }}{{$root.code}} {{ end }}</a><a href={{.guide}}>{{$root.guidance}}</a></p>
                                     </div>
                                     {{ end }}
                                     {{ end }}
                                 </div>
+
                             </div>
                             {{ end }}
                         </div>
