@@ -35,8 +35,23 @@ paginate = 10
 [[menu.main]]
     identifier = "download"
     name = "Download"
-    url  = "/en/download.html"
     weight = 2
+    hasChidren = true
+
+
+[[menu.main]]
+    identifier = "software"
+    name = "Software Package"
+    url  = "/en/download.html"
+    weight = 1
+    parent = "download"
+
+[[menu.main]]
+    identifier = "supportTool"
+    name = "Support Tools"
+    url  = "/en/supportTools.html"
+    weight = 2
+    parent = "download"
 
 [[menu.main]]
     identifier = "docs"
@@ -216,10 +231,24 @@ paginate = 10
 #    weight = 1
 
 [[languages.zh.menu.main]]
-    dentifier="download"
+    identifier="download"
     name = "下载"
-    url  = "/zh/download.html"
     weight = 2
+    hasChidren = true
+
+[[languages.zh.menu.main]]
+    identifier="software"
+    name = "软件包"
+    url  = "/zh/download.html"
+    weight = 1
+    parent = "download"
+
+[[languages.zh.menu.main]]
+    identifier="supportTool"
+    name = "支持工具"
+    url  = "/zh/supportTools.html"
+    weight = 2
+    parent = "download"
 
 [[languages.zh.menu.main]]
     identifier = "docs"

@@ -21,7 +21,9 @@
         function getRelativePath() {
             var url = location.href;
             var arrURL = url.split("//");
-            return arrURL[1].substring(arrURL[1].indexOf("/"));
+            var relativePath = arrURL[1].substring(arrURL[1].indexOf("/"));
+            relativePath = relativePath.split('#')[0];
+            return relativePath;
         }
 
         function getCurrentID(wholeData, relativeURL) {
