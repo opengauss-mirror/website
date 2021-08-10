@@ -81,7 +81,7 @@ weight = 2
 
 [[cards]]
 iden = "management"
-name = "Kubernates"
+name = "Kubernetes"
 desc = "一个开源的容器集群管理平台"
 address = "https://github.com/kubernetes/kubernetes"
 guide = "https://kubernetes.io/docs/home/"
