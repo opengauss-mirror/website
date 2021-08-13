@@ -534,7 +534,7 @@ paginate = 10
 
 [params.copyright]
     enable = true
-    text = "<a href=\"/en/aboutUs.html\">About Us</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"/en/legal.html\">Legal Notice</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"/en/privacyPolicy.html\">Privacy Policy</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"/en/trademark.html\">Trademark</a>"
+    text = "<a href=\"/en/trademark.html\">Trademark</a><span class='line-footer'>|</span><a href=\"/en/privacyPolicy.html\">Privacy Policy</a><span class='line-footer'>|</span><a href=\"/en/legal.html\">Legal Notice</a><span class='line-footer'>|</span><a href=\"/en/aboutUs.html\">About Us</a><span class='line-footer'>|</span><a href=\"https://status.opengauss.org\" target='_blank'>Service Status</a>"
 
 [params.rightText]
     enable = true
@@ -542,7 +542,7 @@ paginate = 10
 
 [languages.zh.params.copyright]
     enable = true
-    text = "<a href=\"/zh/aboutUs.html\">关于我们</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"/zh/legal.html\">法律声明</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"/zh/privacyPolicy.html\">隐私政策</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"/zh/trademark.html\">品牌</a>"
+    text = "<a href=\"/zh/trademark.html\">品牌</a><span class='line-footer'>|</span><a href=\"/zh/privacyPolicy.html\">隐私政策</a><span class='line-footer'>|</span><a href=\"/zh/legal.html\">法律声明</a><span class='line-footer'>|</span><a href=\"/zh/aboutUs.html\">关于我们</a><span class='line-footer'>|</span><a href=\"https://status.opengauss.org\" target='_blank'>服务状态</a>"
 
 [languages.zh.params.rightText]
     enable = true
