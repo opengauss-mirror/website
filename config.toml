@@ -531,23 +531,14 @@ paginate = 10
     enable = true
     title = "From our news"
     subtitle = "There are many events ocur since we announce open source, Please keep an your eye on us."
-#
+
 [params.copyright]
     enable = true
     text = "<a href=\"/en/trademark.html\">Trademark</a><span class='line-footer'>|</span><a href=\"/en/privacyPolicy.html\">Privacy Policy</a><span class='line-footer'>|</span><a href=\"/en/legal.html\">Legal Notice</a><span class='line-footer'>|</span><a href=\"/en/aboutUs.html\">About Us</a><span class='line-footer'>|</span><a href=\"https://status.opengauss.org\" target='_blank'>Service Status</a>"
 
-
-# [params.copyright]
-#     enable = true
-#     text = "<a href=\"/en/aboutUs.html\">About Us</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"/en/legal.html\">Legal Notice</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"/en/privacyPolicy.html\">Privacy Policy</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"/en/trademark.html\">Trademark</a>"
-
 [params.rightText]
     enable = true
     text = "Copyright © openGauss 2021. All rights reserved."
-
-# [languages.zh.params.copyright]
-#     enable = true
-#     text = "<a href=\"/zh/aboutUs.html\">关于我们</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"/zh/legal.html\">法律声明</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"/zh/privacyPolicy.html\">隐私政策</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"/zh/trademark.html\">品牌</a>"
 
 [languages.zh.params.copyright]
     enable = true
