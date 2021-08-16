@@ -1017,10 +1017,6 @@ header {
     text-align: center;
     padding: 0;
 }
-.ship-item img {
-    width: 240px;
-    height: 80px;
-}
 .to-flex .ship-item img {
     width: unset;
 }
@@ -1031,6 +1027,7 @@ header {
 }
 .four-a-line {
     margin-top: 20px;
+    height: 80px;
 }
 .three-a-line.to-left {
     max-width: unset;
