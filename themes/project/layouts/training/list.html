@@ -66,6 +66,9 @@
                                         <p class="foot-content">
                                         <p>{{ .contenttitle }}</p>
                                         <p>{{ .content }}</p></p>
+                                        <p>{{ .trainDay }}</p>
+                                        <p>{{ .trainCosts }} {{ if .origintrain }} <span class="line-through">{{ .origintrain }}</span> {{ $post.costeach }} {{ end }}</p>
+                                        <p>{{ .examCoste }} {{ if .originexam }} <span class="line-through">{{ .originexam }}</span> {{ $post.costeach }} {{ end }}</p>
                                         <div class="foot-{{.name}} isH5 hide">
                                             <div class="sys-footer">
                                                 <p>{{ .outline }}</p>
@@ -93,6 +96,9 @@
                                         <p class="foot-content">
                                         <p>{{ .contenttitle }}</p>
                                         <p>{{ .content }}</p>
+                                        <p>{{ .trainDay }}</p>
+                                        <p>{{ .trainCosts }} {{ if .origintrain }} <span class="line-through">{{ .origintrain }}</span> {{ $post.costeach }} {{ end }}</p>
+                                        <p>{{ .examCoste }} {{ if .originexam }} <span class="line-through">{{ .originexam }}</span> {{ $post.costeach }} {{ end }}</p>
                                         </p>
                                         <div class="foot-ogca isH5 hide">
                                             <div class="sys-footer">
@@ -312,26 +318,26 @@
                     <div class="dis-box">
                         <img src="/img/training/discount.png" alt="limited-time discount">
                         <div class="discount-info">
-                            <h5>OGCA培训认证限时优惠活动</h5>
+                            <h5>{{.Params.discounttitle}}</h5>
                             <div class="train-price price">
-                                <p><span class="title">培训费原价：</span><span class="line-through">2000元/人</span></p>
-                                <p class="discount">限时<span class="big-font">8</span>折：<span class="big-font">1600</span>元/人</p>
+                                <p><span class="title">{{.Params.traintitle}}</span><span class="line-through">{{.Params.traincos}}</span></p>
+                                <p class="discount">{{.Params.limited}}<span class="big-font">{{.Params.trainoffset}}</span>{{.Params.disunit}}<span class="big-font">{{.Params.trainprice}}</span>{{.Params.yuan}}</p>
                             </div>
                             <div class="exam-price price">
-                                <p><span class="title">考试费原价：</span><span class="line-through">1000元/人</span></p>
-                                <p class="discount">限时<span class="big-font">5</span>折：<span class="big-font">500</span>元/人</p>
+                                <p><span class="title">{{.Params.examtitle}}</span><span class="line-through">{{.Params.examcos}}</span></p>
+                                <p class="discount">{{.Params.limited}}<span class="big-font">{{.Params.examoffset}}</span>{{.Params.disunit}}<span class="big-font">{{.Params.examprice}}</span>{{.Params.yuan}}</p>
                             </div>
                             <div class="sign-up">
-                                <p><span class="des-title">活动截止时间：</span>2021年12月31日</p>
-                                <p><span class="des-title">咨询报名方式：</span>欢迎添加老师微信进行咨询报名</p>
+                                <p><span class="des-title">{{.Params.eventdl}}</span>{{.Params.dlday}}</p>
+                                <p><span class="des-title">{{.Params.signup}}</span>{{.Params.signwechat}}</p>
                             </div>
                             <div class="teacher">
-                                <p>姜老师</p>
-                                <p>18010136961</p>
+                                <p>{{.Params.teacher1}}</p>
+                                <p>{{.Params.phone1}}</p>
                             </div>
                             <div class="teacher">
-                                <p>田老师</p>
-                                <p>18311372955</p>
+                                <p>{{.Params.teacher2}}</p>
+                                <p>{{.Params.phone2}}</p>
                             </div>
                         </div>
                     </div>
