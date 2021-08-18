@@ -58,8 +58,8 @@ weight = 2
 iden = "connectors"
 name = "go-pq"
 desc = "openGauss go语言驱动"
-address = "https://github.com/lib/pq"
-guide = "https://pkg.go.dev/github.com/lib/pq"
+address = "https://gitee.com/opengauss/openGauss-connector-go-pq"
+guide = "https://gitee.com/opengauss/openGauss-connector-go-pq/blob/master/README.cn.MD"
 weight = 3
 
 [[cards]]
