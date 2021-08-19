@@ -1028,6 +1028,7 @@ header {
 }
 .four-a-line {
     margin-top: 20px;
+    height: 80px;
 }
 .three-a-line.to-left {
     max-width: unset;
@@ -1061,6 +1062,9 @@ header {
     }
     .partner-ship-content .h5-hide {
         display: none;
+    }
+    .four-a-line {
+        height: unset;
     }
 }
 
