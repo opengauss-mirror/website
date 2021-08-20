@@ -58,8 +58,8 @@ weight = 2
 iden = "connectors"
 name = "go-pq"
 desc = "the openGauss go driver"
-address = "https://github.com/lib/pq"
-guide = "https://pkg.go.dev/github.com/lib/pq"
+address = "https://gitee.com/opengauss/openGauss-connector-go-pq"
+guide = "https://gitee.com/opengauss/openGauss-connector-go-pq/blob/master/README.en.md"
 weight = 3
 
 [[cards]]
@@ -81,7 +81,7 @@ weight = 2
 
 [[cards]]
 iden = "management"
-name = "Kubernates"
+name = "Kubernetes"
 desc = "open source container management platform"
 address = "https://github.com/kubernetes/kubernetes"
 guide = "https://kubernetes.io/docs/home/"

@@ -73,12 +73,25 @@ var changeStyleMobile = function () {
         });
     }
 };
+
+var discountEvent = function () {
+    if ($(window).width() < 1000) {
+        $('.discount-limited').find('img').on('click', function (event) {
+            $('.discount-limited').addClass('active')
+        })
+        $('.discount-limited').find('.masker').on('click', function () {
+            $('.discount-limited').removeClass('active')
+        })
+    }
+}
+
 var __main = function () {
     handleSystemClick();
     tagScroll();
     mobileSytleClick('.more-btn', '.hide-btn');
     mobileSytleClick('.hide-btn', '.more-btn');
     changeStyleMobile();
+    discountEvent()
 };
 __main();
 });
