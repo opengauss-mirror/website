@@ -28,7 +28,7 @@ openGauss社区非常重视社区版本的安全性，openGauss社区安全小�
 
 ##### 3.1.1 漏洞上报方式
 
-您可以通过email将openGauss产品的潜在安全漏洞发送到openGauss安全小组邮箱（<securities@opengauss.org>）。因为漏洞信息比较敏感，为确保机密性，我们建议您对通过电子邮件给我们的任何敏感信息进行加密。我们能够收到使用OpenPGP加密的电子邮件。安全小组成员信息和密钥信息如下：
+您可以通过email将openGauss产品的潜在安全漏洞发送到openGauss安全小组邮箱（<securities@opengauss.org>）。因为漏洞信息比较敏感，为确保机密性，建议您使用安全团队邮箱<a Download href="/public-key/openGauss_0x912AD1B8_public.asc">PGP公钥</a>对邮件信息进行加密。我们能够收到使用OpenPGP加密的电子邮件。安全小组成员信息和密钥信息如下：
 
 + 朱金伟[@zhujinwei]，<zhujinwei@huawei.com>
 

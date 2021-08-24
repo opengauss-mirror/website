@@ -31,7 +31,7 @@ We hope that you can report the potential vulnerability of an openGauss product 
 
 ##### 3.1.1 Reporting Channel
 
-You can send the potential security vulnerabilities of an openGauss product to the e-mail of the openGauss security team (<securities@openGauss.org>). Given that the vulnerability information is sensitive, you are advised to use the public OpenGPG key of the security team to encrypt the e-mail. 
+You can send the potential security vulnerabilities of an openGauss product to the e-mail of the openGauss security team (<securities@openGauss.org>). Given that the vulnerability information is sensitive, you are advised to use the <a Download href="/public-key/openGauss_0x912AD1B8_public.asc">public PGP key</a> of the security team to encrypt the e-mail. 
 The information of the SIG Security members is as follows:
 
 + Jinwei Zhu[@zhujinwei], <zhujinwei@huawei.com>
