@@ -238,11 +238,6 @@ $(document).ready(function () {
                     if(res.success){
                         model.identification = res.data.identification
                         model.waitSend()
-
-                        let id = {
-                            content: model.identification
-                        }
-                        trainingMethods.getId(id, lang)
                     }else{
                         model.isSend = false
                         changeSendClass()
@@ -350,28 +345,6 @@ $(document).ready(function () {
                 }
             });
         },
-        getId: function (params, lang) {
-            $.ajax({
-                type: "POST",
-                url: '/api-certification/sentMail',
-                data: JSON.stringify(params),
-                contentType: "application/json; charset=utf-8",
-                notAuthorization: true,
-                datatype: "json",
-                headers: {
-                    'Accept-Language': lang,
-                },
-                success: function (res) {
-                    model.changeTipMessage(res)
-                    if(res.success){
-                        console.log('res in post', res.data[0].content);
-                        let rend = ejs.render(res.data[0].content,
-                            {})
-                        $('#code').append(rend);
-                    }
-                }
-            });
-        }
     }
 
     $('.send-button').on('click', function () {
