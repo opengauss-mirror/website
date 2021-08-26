@@ -378,6 +378,13 @@ paginate = 10
     weight = 2
     parent = "code"
 
+[[languages.zh.menu.main]]
+    identifier = "knowledge"
+    name = "知识"
+    weight = 18
+    url  = "/zh/knowledge.html"
+    hasChidren = false
+
 #[[languages.zh.menu.main]]
 #    identifier = "forum"
 #    name = "论坛"
