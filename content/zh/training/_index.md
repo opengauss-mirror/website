@@ -23,6 +23,7 @@ downurl2 = "https://dbacertification-beijing4.obs.cn-north-4.myhuaweicloud.com/O
 contact = "若以上仍不能解决您的问题，可发邮件至 "
 contactemail = "common@certificate.opengauss.org"
 cantactend = " 咨询"
+searchingUrl = "/zh/training/search.html"
 costeach = "）元/人"
 
 discounttitle = "OGCA培训认证限时优惠活动"
