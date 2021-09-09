@@ -90,11 +90,14 @@
             {{ if .Params.userQuestionnaire }}
             <div class="ques-icon">
               <img src="/img/download/fax-icon.png" alt="">
-              <div class="ques-info">
-                <p>{{ .Params.letter }}</p>
-                <p class="letter-2">{{ .Params.quesInfo }}</p>
-                <p class="btn-jump"><a href={{ .Params.feedbackLink}} target="_blank">{{ .Params.feedback}}</a></p>
-              </div>
+              <a class="ques-card" href={{ .Params.feedbackLink}} target="_blank">
+                <div class="ques-info">
+                  <p>{{ .Params.letter }}</p>
+                  <p class="letter-2">{{ .Params.quesInfo }}</p>
+                  <p class="btn-jump">{{ .Params.feedback}}</p>
+                </div>
+              </a>
+
             </div>
             {{end}}
           </div>
