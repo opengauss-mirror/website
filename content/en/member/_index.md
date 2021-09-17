@@ -1,4 +1,4 @@
-+++
+﻿+++
 title = "Organization"
 bgImg = "../img/breadcrumbs/member_bg.png"
 moImg = "../img/breadcrumbs/member_mo.png"
@@ -72,6 +72,15 @@ side = "right"
 [[sig]]
 id = "graph"
 side = "right"
+
+[[sig]]
+id = "Blockchain"
+side = "left"
+
+[[sig]]
+id = "QA"
+side = "right"
+
 
 
 [[usergroups]]
