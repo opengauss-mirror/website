@@ -40,10 +40,26 @@ name = "监控运维工具"
 
 [[cards]]
 iden = "connectors"
+name = "jdbc"
+desc = "openGauss java语言驱动"
+address = "https://gitee.com/opengauss/openGauss-connector-jdbc"
+guide = "https://opengauss.org/zh/docs/latest/docs/Developerguide/%E5%9F%BA%E4%BA%8EJDBC%E5%BC%80%E5%8F%91.html"
+weight = 1
+
+[[cards]]
+iden = "connectors"
+name = "odbc"
+desc = "openGauss odbc驱动"
+address = "https://gitee.com/opengauss/openGauss-connector-odbc"
+guide = "https://opengauss.org/zh/docs/latest/docs/Developerguide/%E5%9F%BA%E4%BA%8EODBC%E5%BC%80%E5%8F%91.html"
+weight = 1
+
+[[cards]]
+iden = "connectors"
 name = "psycopg2"
 desc = "openGauss python驱动（仅限Linux）"
-address = "https://gitee.com/opengaussorg/dashboard/projects/opengauss/openGauss-connector-python-psycopg2/"
-guide = "https://www.psycopg.org/docs/"
+address = "https://gitee.com/opengauss/openGauss-connector-python-psycopg2"
+guide = "https://opengauss.org/zh/docs/latest/docs/Developerguide/%E5%9F%BA%E4%BA%8EPsycopg%E5%BC%80%E5%8F%91.html"
 weight = 1
 
 [[cards]]
@@ -63,11 +79,19 @@ guide = "https://gitee.com/opengauss/openGauss-connector-go-pq/blob/master/READM
 weight = 3
 
 [[cards]]
+iden = "connectors"
+name = "nodejs驱动"
+desc = "openGauss nodejs语言驱动"
+address = "https://gitee.com/opengauss/openGauss-connector-nodejs"
+guide = "https://gitee.com/opengauss/openGauss-connector-nodejs#opengauss-connector-nodejs"
+weight = 3
+
+[[cards]]
 iden = "middleware"
 name = "shardingSphere"
 desc = "分布式数据库中间件"
-address = "https://github.com/apache/shardingsphere"
-guide = "https://shardingsphere.apache.org/document/current/en/overview/"
+address = "https://gitee.com/opengauss/openGauss-distributed-solutions"
+guide = "https://opengauss.org/zh/blogs/blogs.html?post/justbk/2021-08-31_shardingsphere_for_opengauss/"
 weight = 1
 
 [[cards]]
@@ -91,40 +115,40 @@ weight = 1
 iden = "management"
 name = "Patroni"
 desc = "自动主备切换，提升数据库可用性"
-address = "https://github.com/zalando/patroni"
-guide = "https://patroni.readthedocs.io/en/latest/"
+address = "https://gitee.com/opengauss/openGauss-distributed-solutions/tree/master/patroni-for-openGauss"
+guide = "https://opengauss.org/zh/blogs/blogs.html?post/xuemengen/patroniforopengauss/"
 weight = 2
 
 
 [[cards]]
 iden = "migrationTools"
-name = "Ora2pg"
-desc = "Oracle到pg数据迁移工具"
-address = "https://github.com/darold/ora2pg"
-guide = "https://ora2pg.darold.net/documentation.html"
+name = "Ora2og"
+desc = "Oracle到openGauss数据迁移工具"
+address = "https://gitee.com/opengauss/openGauss-tools-ora2og"
+guide = "https://mp.weixin.qq.com/s/hMqaSes0hQvzmJw0kmXDtg"
 weight = 1
 
 [[cards]]
 iden = "migrationTools"
-name = "Pg_chameleon"
-desc = "MySQL到pg数据迁移工具"
-address = "https://github.com/the4thdoctor/pg_chameleon"
-guide = "https://pgchameleon.org/documents/"
+name = "opengauss-tools-chameleon"
+desc = "MySQL到openGauss数据迁移工具"
+address = "https://gitee.com/opengauss/openGauss-tools-chameleon"
+guide = "https://gitee.com/opengauss/openGauss-tools-chameleon#opengauss-tools-chameleon"
 weight = 2
 
 [[cards]]
 iden = "migrationTools"
-name = "pgloader"
-desc = "一个数据导入工具，使用COPY命令将数据导入到PostgreSQL"
-address = "https://github.com/dimitri/pgloader"
-guide = "https://opengauss.org/zh/blogs/blogs.html?post/totaj/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8pgloader%E8%BF%81%E7%A7%BBmysql%E6%95%B0%E6%8D%AE%E5%BA%93%E8%87%B3opengauss/"
+name = "openGauss-tools-loader"
+desc = "一个数据导入工具，使用COPY命令将数据导入到openGauss"
+address = "https://gitee.com/opengauss/openGauss-tools-loader"
+guide = "https://gitee.com/opengauss/openGauss-tools-loader#opengauss-tools-loader"
 weight = 3
 
 [[cards]]
 iden = "dataTools"
-name = "JdbcPgBackup"
+name = "openGauss-tools-backup"
 desc = "基于Java的跨平台数据导入导出工具，类似于pg_dump/pg_restore"
-address = "https://github.com/tig100/JdbcPgBackup"
+address = "https://gitee.com/opengauss/openGauss-tools-backup"
 weight = 1
 
 [[cards]]
@@ -145,7 +169,7 @@ weight = 3
 [[cards]]
 iden = "dataTools"
 name = "yugong"
-desc = "阿里巴巴去Oracle数据迁移同步工具（全量+增量,目标支持MySQL/DRDS）"
+desc = "去Oracle数据迁移同步工具（全量+增量,目标支持MySQL/DRDS）"
 address = "https://github.com/alibaba/yugong"
 guide = "https://github.com/alibaba/yugong/wiki/QuickStart"
 weight = 4
