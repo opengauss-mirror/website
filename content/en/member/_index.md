@@ -81,6 +81,10 @@ side = "left"
 id = "QA"
 side = "right"
 
+[[sig]]
+id = "DCF"
+side = "right"
+
 
 
 [[usergroups]]
@@ -101,6 +105,10 @@ side = "right"
 
 [[usergroups]]
 id = "XAusergroup"
+side = "right"
+
+[[usergroups]]
+id = "HZusergroup"
 side = "right"
 
 +++
