@@ -5,6 +5,9 @@ moImg = "../img/breadcrumbs/support_tools_mo.png"
 code = "Source Code"
 weblink = "Official Website"
 guidance = "Operation Guide"
+headtitle = "openGauss Support Tools Panorama"
+headdesc = "Mainly for developers and ISVs, it provides six categories of development tools: DataBase Client Tools, Data Import & Export Tool, Data Replication & Synchronization Tool, Monitoring Operation & Maintenance Interface and Tools, Backup & Recovery Interface and Tools, and Common Data Processing Framework."
+panorama = "/img/supportTools/support-panorama-en.png"
 
 [[list]]
 identification = "connectors"

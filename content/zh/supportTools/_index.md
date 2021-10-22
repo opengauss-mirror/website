@@ -5,6 +5,9 @@ moImg = "../img/breadcrumbs/support_tools_mo.png"
 code = "源码地址"
 weblink = "官网地址"
 guidance = "操作指导"
+headtitle = "openGauss支持工具全景图"
+headdesc = "主要面向开发者和ISV，提供六大类开发工具客户端工具、数据导入导出工具、数据复制/同步工具、监控运维接口及工具集、备份恢复接口及工具集、通用数据框架。"
+panorama = "/img/supportTools/support-panorama-zh.png"
 
 [[list]]
 identification = "connectors"
