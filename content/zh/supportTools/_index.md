@@ -11,27 +11,27 @@ panorama = "/img/supportTools/support-panorama-zh.png"
 
 [[list]]
 identification = "connectors"
-name = "链接类"
+name = "标准SQL及驱动"
 
 [[list]]
 identification = "middleware"
-name = "中间件"
+name = "数据访问中间件"
 
 [[list]]
 identification = "management"
-name = "集群管理"
+name = "集群管理软件"
 
 [[list]]
 identification = "migrationTools"
-name = "迁移工具"
+name = "数据导入导出工具"
 
 [[list]]
 identification = "dataTools"
-name = "数据同步工具"
+name = "数据复制/同步工具"
 
 [[list]]
 identification = "dataModel"
-name = "数据模型"
+name = "运行视图"
 
 [[list]]
 identification = "clientTools"
@@ -39,36 +39,20 @@ name = "客户端工具"
 
 [[list]]
 identification = "devOpsTools"
-name = "监控运维工具"
-
-[[cards]]
-iden = "connectors"
-name = "jdbc"
-desc = "openGauss java语言驱动"
-address = "https://gitee.com/opengauss/openGauss-connector-jdbc"
-guide = "https://opengauss.org/zh/docs/latest/docs/Developerguide/%E5%9F%BA%E4%BA%8EJDBC%E5%BC%80%E5%8F%91.html"
-weight = 1
-
-[[cards]]
-iden = "connectors"
-name = "odbc"
-desc = "openGauss odbc驱动"
-address = "https://gitee.com/opengauss/openGauss-connector-odbc"
-guide = "https://opengauss.org/zh/docs/latest/docs/Developerguide/%E5%9F%BA%E4%BA%8EODBC%E5%BC%80%E5%8F%91.html"
-weight = 1
+name = "监控运维系统"
 
 [[cards]]
 iden = "connectors"
 name = "psycopg2"
-desc = "openGauss python驱动（仅限Linux）"
-address = "https://gitee.com/opengauss/openGauss-connector-python-psycopg2"
-guide = "https://opengauss.org/zh/docs/latest/docs/Developerguide/%E5%9F%BA%E4%BA%8EPsycopg%E5%BC%80%E5%8F%91.html"
+desc = "openGauss Python驱动（仅限Linux）"
+address = "https://gitee.com/opengaussorg/dashboard/projects/opengauss/openGauss-connector-python-psycopg2/"
+guide = "https://www.psycopg.org/docs/"
 weight = 1
 
 [[cards]]
 iden = "connectors"
 name = "py-og"
-desc = "openGauss python驱动（纯python，可跨平台）"
+desc = "openGauss Python驱动（纯Python，可跨平台）"
 address = "https://gitee.com/opengauss/openGauss-connector-python-pyog"
 guide = "https://magicstack.github.io/asyncpg/current/"
 weight = 2
@@ -76,25 +60,17 @@ weight = 2
 [[cards]]
 iden = "connectors"
 name = "go-pq"
-desc = "openGauss go语言驱动"
-address = "https://gitee.com/opengauss/openGauss-connector-go-pq"
-guide = "https://gitee.com/opengauss/openGauss-connector-go-pq/blob/master/README.cn.MD"
-weight = 3
-
-[[cards]]
-iden = "connectors"
-name = "nodejs驱动"
-desc = "openGauss nodejs语言驱动"
-address = "https://gitee.com/opengauss/openGauss-connector-nodejs"
-guide = "https://gitee.com/opengauss/openGauss-connector-nodejs#opengauss-connector-nodejs"
+desc = "openGauss Go语言驱动"
+address = "https://e.gitee.com/opengaussorg/repos/opengauss/openGauss-connector-go-pq"
+guide = "https://gitee.com/opengauss/openGauss-connector-go-pq/blob/master/README.cn.md"
 weight = 3
 
 [[cards]]
 iden = "middleware"
-name = "shardingSphere"
+name = "ShardingSphere"
 desc = "分布式数据库中间件"
-address = "https://gitee.com/opengauss/openGauss-distributed-solutions"
-guide = "https://opengauss.org/zh/blogs/blogs.html?post/justbk/2021-08-31_shardingsphere_for_opengauss/"
+address = "https://github.com/apache/shardingsphere"
+guide = "https://shardingsphere.apache.org/document/current/en/overview/"
 weight = 1
 
 [[cards]]
@@ -104,6 +80,14 @@ desc = "数据库读写负载均衡"
 address = "https://github.com/haproxy/haproxy"
 guide = "https://www.haproxy.com/blog/webinar-introduction-to-haproxy/"
 weight = 2
+
+[[cards]]
+iden = "middleware"
+name = "vip-manager"
+desc = "自动IP故障转移"
+address = "https://github.com/cybertec-postgresql/vip-manager"
+guide = "https://github.com/cybertec-postgresql/vip-manager#Configuration"
+weight = 3
 
 
 [[cards]]
@@ -118,45 +102,45 @@ weight = 1
 iden = "management"
 name = "Patroni"
 desc = "自动主备切换，提升数据库可用性"
-address = "https://gitee.com/opengauss/openGauss-distributed-solutions/tree/master/patroni-for-openGauss"
-guide = "https://opengauss.org/zh/blogs/blogs.html?post/xuemengen/patroniforopengauss/"
+address = "https://github.com/zalando/patroni"
+guide = "https://patroni.readthedocs.io/en/latest/"
 weight = 2
 
 
 [[cards]]
 iden = "migrationTools"
-name = "Ora2og"
-desc = "Oracle到openGauss数据迁移工具"
-address = "https://gitee.com/opengauss/openGauss-tools-ora2og"
-guide = "https://mp.weixin.qq.com/s/hMqaSes0hQvzmJw0kmXDtg"
+name = "Ora2Pg"
+desc = "Oracle到PostgreSQL数据迁移工具"
+address = "https://github.com/darold/ora2pg"
+guide = "https://ora2pg.darold.net/documentation.html"
 weight = 1
 
 [[cards]]
 iden = "migrationTools"
-name = "opengauss-tools-chameleon"
-desc = "MySQL到openGauss数据迁移工具"
-address = "https://gitee.com/opengauss/openGauss-tools-chameleon"
-guide = "https://gitee.com/opengauss/openGauss-tools-chameleon#opengauss-tools-chameleon"
+name = "pg_chameleon"
+desc = "MySQL到PostgreSQL数据迁移工具"
+address = "https://github.com/the4thdoctor/pg_chameleon"
+guide = "https://pgchameleon.org/documents/"
 weight = 2
 
 [[cards]]
 iden = "migrationTools"
-name = "openGauss-tools-loader"
-desc = "一个数据导入工具，使用COPY命令将数据导入到openGauss"
-address = "https://gitee.com/opengauss/openGauss-tools-loader"
-guide = "https://gitee.com/opengauss/openGauss-tools-loader#opengauss-tools-loader"
+name = "pgloader"
+desc = "一个数据导入工具，使用COPY命令将数据导入到PostgreSQL"
+address = "https://github.com/dimitri/pgloader"
+guide = "https://opengauss.org/zh/blogs/blogs.html?post/totaj/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8pgloader%E8%BF%81%E7%A7%BBmysql%E6%95%B0%E6%8D%AE%E5%BA%93%E8%87%B3opengauss/"
 weight = 3
 
 [[cards]]
 iden = "dataTools"
-name = "openGauss-tools-backup"
+name = "JdbcPgBackup"
 desc = "基于Java的跨平台数据导入导出工具，类似于pg_dump/pg_restore"
-address = "https://gitee.com/opengauss/openGauss-tools-backup"
+address = "https://github.com/tig100/JdbcPgBackup"
 weight = 1
 
 [[cards]]
 iden = "dataTools"
-name = "Database-sync"
+name = "Database-Sync"
 desc = "基于Java开发，功能强大、配置灵活的数据库之间同步工具"
 address = "https://github.com/GongDexing/database-sync"
 weight = 2
@@ -170,16 +154,8 @@ guide = "https://opengauss.org/zh/blogs/blogs.html?post/lihongda/debezium-adapt-
 weight = 3
 
 [[cards]]
-iden = "dataTools"
-name = "yugong"
-desc = "去Oracle数据迁移同步工具（全量+增量,目标支持MySQL/DRDS）"
-address = "https://github.com/alibaba/yugong"
-guide = "https://github.com/alibaba/yugong/wiki/QuickStart"
-weight = 4
-
-[[cards]]
 iden = "dataModel"
-name = "powerDesigner"
+name = "PowerDesigner"
 desc = "灵活的分析和设计特性允许使用一种结构化的方法有效地创建数据库或数据仓库"
 address = "https://www.sap.com/products/database-data-management.html"
 guide = "https://opengauss.org/zh/blogs/blogs.html?post/wangrui/powerdesigner_for_opengauss/"
@@ -188,7 +164,7 @@ weight = 1
 
 [[cards]]
 iden = "clientTools"
-name = "Dbeaver"
+name = "DBeaver"
 desc = "开源多数据库客户端工具"
 address = "https://github.com/dbeaver/dbeaver"
 guide = "https://opengauss.org/zh/blogs/blogs.html?post/justbk/2020-10-30_dbeaver_for_opengauss/"
