@@ -29,11 +29,11 @@ email = "mailto:lishifu@huawei.com"
 gitee = "https://gitee.com/lishifu_db"
 
 [[card]]
-img = "/zh/member/img/huzhengce.png"
-name = "Zhengce Hu"
+img = "/zh/member/img/caiyajie.png"
+name = "Yajie Cai"
 title = "Member"
-email = "mailto:huzhengce@huawei.com"
-gitee = "https://gitee.com/huzhengce"
+email = "mailto:jikey.cai@huawei.com"
+gitee = "https://gitee.com/cyj10727"
 
 [[card]]
 img = "/zh/member/img/renyan.png"
@@ -43,11 +43,11 @@ email = "mailto:stanleyren_china@outlook.com"
 gitee = "https://gitee.com/stanleyren"
 
 [[card]]
-img = "/zh/member/img/luoqi.png"
-name = "Qi Luo"
+img = "/zh/member/img/huangkaiyao.png"
+name = "Kaiyao Huang"
 title = "Member"
-email = "mailto:luoqi9@huawei.com"
-gitee = "https://gitee.com/eric-hw-luo"
+email = "mailto:huangkaiyao@huawei.com"
+gitee = "https://gitee.com/huangkaiyao"
 
 [[card]]
 img = "/zh/member/img/zhoupinggao.png"

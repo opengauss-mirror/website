@@ -1,4 +1,4 @@
-+++
+﻿+++
 member = "tc-card"
 goto = "前往Gitee仓库"
 gitlink = "https://gitee.com/opengauss/tc"
@@ -30,11 +30,11 @@ email = "mailto:lishifu@huawei.com"
 gitee = "https://gitee.com/lishifu_db"
 
 [[card]]
-img = "/zh/member/img/huzhengce.png"
-name = "胡正策"
+img = "/zh/member/img/caiyajie.png"
+name = "蔡亚杰"
 title = "Member"
-email = "mailto:huzhengce@huawei.com"
-gitee = "https://gitee.com/huzhengce"
+email = "mailto:jikey.cai@huawei.com"
+gitee = "https://gitee.com/cyj10727"
 
 [[card]]
 img = "/zh/member/img/renyan.png"
@@ -44,11 +44,11 @@ email = "mailto:stanleyren_china@outlook.com"
 gitee = "https://gitee.com/stanleyren"
 
 [[card]]
-img = "/zh/member/img/luoqi.png"
-name = "罗琪"
+img = "/zh/member/img/huangkaiyao.png"
+name = "黄凯耀"
 title = "Member"
-email = "mailto:luoqi9@huawei.com"
-gitee = "https://gitee.com/eric-hw-luo"
+email = "mailto:huangkaiyao@huawei.com"
+gitee = "https://gitee.com/huangkaiyao"
 
 [[card]]
 img = "/zh/member/img/zhoupinggao.png"
