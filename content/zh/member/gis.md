@@ -4,8 +4,8 @@ title ="GIS"
 goto = "前往Gitee仓库"
 gitlink = "https://gitee.com/opengauss/tc/tree/master/sigs/GIS"
 list = "邮件列表："
-email = "gis-owner@opengauss.org"
-maillink = "mailto:gis-owner@opengauss.org"
+email = "gis@opengauss.org"
+maillink = "mailto:gis@opengauss.org"
 core = "核心成员："
 
 

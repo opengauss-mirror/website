@@ -29,4 +29,11 @@ title = "Committer"
 email = "mailto:aaronwell@qq.com"
 gitee = "https://gitee.com/aaronwell"
 
+[[card]]
+img = "/zh/member/img/zhangwenlong.png"
+name = "张文龙"
+title = "Committer"
+email = "mailto:zhangwl@vastdata.com.cn"
+gitee = "https://gitee.com/willloong"
+
 +++

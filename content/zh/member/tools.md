@@ -38,4 +38,13 @@ name = "彭炯"
 title = "Committer"
 email = "mailto:pengjiong1@huawei.com"
 gitee = "https://gitee.com/totaj"
+
+[[card]]
+img = "/zh/member/img/lizhenfeng.png"
+name = "李臻峰"
+title = "Committer"
+email = "mailto:lizhenfeng001@chinasofti.com"
+gitee = "https://gitee.com/lizhenfeng123"
+
+
 +++
