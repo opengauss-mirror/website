@@ -2,7 +2,7 @@
 member = "Blockchain"
 title ="Blockchain"
 goto = "Go to Gitee home page"
-gitlink = "https://gitee.com/opengauss/Blockchain"
+gitlink = "https://gitee.com/opengauss/tc/tree/master/sigs/Blockchain"
 list = "Mailing List: "
 email = "blockchain@opengauss.org"
 maillink = "mailto:blockchain@opengauss.org"

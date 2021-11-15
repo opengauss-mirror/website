@@ -12,21 +12,21 @@ core = "核心成员："
     img = "/zh/member/img/wangxin.png"
     name = "王鑫"
     title = "Maintainer"
-    email = "wangx@tju.edu.cn"
+    email = "mailto:wangx@tju.edu.cn"
     gitee = "https://gitee.com/xinwang-tju"
 
 [[card]]
 img = "/zh/member/img/songzihui.png"
 name = "宋子辉"
 title = "Maintainer"
-email = "szhmvp@163.com"
+email = "mailto:szhmvp@163.com"
 gitee = "https://gitee.com/szhmvp"
 
 [[card]]
 img = "/zh/member/img/wanglin.png"
 name = "王林"
 title = "Maintainer"
-email = "linwang@techfantasy.com.cn"
+email = "mailto:linwang@techfantasy.com.cn"
 gitee = "https://gitee.com/linwang-tf"
 
 
@@ -34,77 +34,77 @@ gitee = "https://gitee.com/linwang-tf"
 img = "/zh/member/img/zhangchen.png"
 name = "张晨"
 title = "Committer"
-email = "zhangchen@chuanglintech.com"
+email = "mailto:zhangchen@chuanglintech.com"
 gitee = "https://gitee.com/chenzhang_cl"
 
 [[card]]
 img = "/zh/member/img/libohan.png"
 name = "李博涵"
 title = "Committer"
-email = "bhli@nuaa.edu.cn"
+email = "mailto:bhli@nuaa.edu.cn"
 gitee = "https://gitee.com/bohanlinuaa"
 
 [[card]]
-img = "/zh/member/img/nietiecheng.png"
+img = "/zh/member/img/nietiezheng.png"
 name = "聂铁铮"
 title = "Committer"
-email = "nietiezheng@mail.neu.edu.cn"
+email = "mailto:nietiezheng@mail.neu.edu.cn"
 gitee = "https://gitee.com/nietiezheng"
 
 [[card]]
 img = "/zh/member/img/wumin.png"
 name = "吴敏"
 title = "Committer"
-email = "min.wu@vesoft.com"
+email = "mailto:min.wu@vesoft.com"
 gitee = "https://gitee.com/whitewum"
 
 [[card]]
 img = "/zh/member/img/herui2.png"
 name = "何睿"
 title = "Committer"
-email = "he.rui@139.com"
+email = "mailto:he.rui@139.com"
 gitee = "https://gitee.com/he_ray"
 
 [[card]]
 img = "/zh/member/img/wangmen.png"
 name = "王萌"
 title = "Committer"
-email = "meng.wang@seu.edu.cn"
+email = "mailto:meng.wang@seu.edu.cn"
 gitee = "https://gitee.com/mengwangseu"
 
 [[card]]
 img = "/zh/member/img/chaiyanfeng.png"
 name = "柴艳峰"
 title = "Committer"
-email = "chai-leon@qq.com"
+email = "mailto:chai-leon@qq.com"
 gitee = "https://gitee.com/chaileon"
 
 [[card]]
 img = "/zh/member/img/xukunpeng.png"
 name = "徐鲲鹏"
 title = "Committer"
-email = "xukunpeng2@huawei.com"
+email = "mailto:xukunpeng2@huawei.com"
 gitee = "https://gitee.com/xukunpeng"
 
 [[card]]
 img = "/zh/member/img/liubaozhu.png"
 name = "刘宝珠"
 title = "Committer"
-email = "liubaozhu@tju.edu.cn"
+email = "mailto:liubaozhu@tju.edu.cn"
 gitee = "https://gitee.com/tjuliubaozhu"
 
 [[card]]
 img = "/zh/member/img/lisizhuo.png"
 name = "李思卓"
 title = "Committer"
-email = "lszskye@126.com"
+email = "mailto:lszskye@126.com"
 gitee = "https://gitee.com/lszskye"
 
 [[card]]
 img = "/zh/member/img/liupengkai.png"
 name = "柳鹏凯"
 title = "Committer"
-email = "1114906894@qq.com"
+email = "mailto:1114906894@qq.com"
 gitee = "https://gitee.com/AugustLpk"
 
 

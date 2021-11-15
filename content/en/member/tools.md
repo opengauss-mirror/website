@@ -43,4 +43,12 @@ name = "Jiong Peng"
 title = "Committer"
 email = "mailto:pengjiong1@huawei.com"
 gitee = "https://gitee.com/totaj"
+
+[[card]]
+img = "/zh/member/img/lizhenfeng.png"
+name = "Zhenfeng Li"
+title = "Committer"
+email = "mailto:lizhenfeng001@chinasofti.com"
+gitee = "https://gitee.com/lizhenfeng123"
+
 +++

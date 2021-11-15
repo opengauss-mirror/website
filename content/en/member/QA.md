@@ -2,7 +2,7 @@
 member = "QA"
 title ="QA"
 goto = "Go to Gitee home page"
-gitlink = "https://gitee.com/opengauss/QA"
+gitlink = "https://gitee.com/opengauss/tc/tree/master/sigs/QA"
 list = "Mailing List:"
 email = "QA@opengauss.org"
 maillink = "mailto:QA@opengauss.org"
@@ -19,7 +19,7 @@ gitee = "https://gitee.com/dbowner_zhang"
 [[card]]
 img = "/zh/member/img/liyansong.png"
 name = "Yansong Li"
-title = "Committer"
+title = "Maintainer"
 email = "mailto:yansong_lee@163.com"
 gitee = "https://gitee.com/yansong_lee"
 

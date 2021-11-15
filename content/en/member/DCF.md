@@ -2,7 +2,7 @@
 member = "DCF"
 title ="DCF"
 goto = "Go to Gitee home page"
-gitlink = "https://gitee.com/opengauss/dcf"
+gitlink = "https://gitee.com/opengauss/tc/tree/master/sigs/DCF"
 list = "Mailing List:"
 email = "dcf@opengauss.org"
 maillink = "mailto:dcf@opengauss.org"
