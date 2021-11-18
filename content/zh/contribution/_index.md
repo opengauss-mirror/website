@@ -42,6 +42,12 @@ SIG是开放的，欢迎任何人加入并参与贡献。每一个SIG在码云�
 | [GIS](https://gitee.com/opengauss/tc/tree/master/sigs/GIS) | 负责openGauss社区地理信息系统的开发和维护。|
 | [CloudNative](https://gitee.com/opengauss/tc/tree/master/sigs/CloudNative) | 负责openGauss社区云原生方向的开发和维护。|
 | [SecurityTechnology](https://gitee.com/opengauss/tc/tree/master/sigs/SecurityTechnology) | 负责openGauss社区数据库安全技术的开发和维护。|
+| [DistributionCertification](https://gitee.com/opengauss/tc/tree/master/sigs/DistributionCertification) | 负责openGauss发行版认证流程、测试套件的定义和开发。|
+| [Plugin](https://gitee.com/opengauss/tc/tree/master/sigs/Plugin) | 负责openGauss插件机制的规划、管理、开发等。|
+| [Blockchain](https://gitee.com/opengauss/tc/tree/master/sigs/Blockchain) | 探讨区块链的业务场景，研究区块链的核心技术问题。|
+| [DCF](https://gitee.com/opengauss/tc/tree/master/sigs/DCF) | 负责openGauss社区分布式一致性框架DCF的开发和维护。|
+| [QA](https://gitee.com/opengauss/tc/tree/master/sigs/QA) | 负责openGauss社区版本质量相关的开发和维护。|
+| [Graph](https://gitee.com/opengauss/tc/tree/master/sigs/SecurityTechnology) | 负责openGauss社区统一存储和查询的知识图谱数据管理功能。|
 
 
 ### 4. 开始您的贡献
