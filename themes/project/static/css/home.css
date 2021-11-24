@@ -27,7 +27,7 @@ body {
     display: none;
 }
 .banner_swiper {
-    height: 465px;
+    height: 480px;
 }
 .banner_swiper .swiper-button-next {
     background: url("/img/home_banner/arrow-right.svg");
@@ -47,11 +47,13 @@ body {
 }
 .banner_swiper .swiper-pagination-clickable .swiper-pagination-bullet {
     width: 20px;
-    height: 3px;
-    border-radius: 3px;
+    height: 3px; 
+	border-radius: 1.5px;
+	background:rgba(207, 211, 215, 0.6);
+	opacity: 1;
 }
 .banner_swiper .swiper-pagination-bullet-active {
-    background: #42D0EA !important;
+    background: #42D0EA !important;   
 }
 .banner_swiper_slide {
     position: relative;
@@ -152,8 +154,95 @@ body {
     }
     .banner-mobile {
         display: block;
+    } 
+}
+/*  banner 自适应修改  2021-11-24 */ 
+.banner-body-bg {
+    position: absolute;
+    background-color: #fff;
+    display: flex;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition: all .33s;
+}
+.center-img{
+   max-width:1920px;
+   background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+} 
+.swiper-container-horizontal>.swiper-pagination-bullets{
+    bottom: 15px;
+} 
+.isH5show{
+    display: none;
+}
+.isPCshow{
+    display: block;
+}
+@media screen and (min-width: 1921px) {
+   .banner-body-bg .block{
+        display:-webkit-inline-box!important;
+        display: -ms-inline-flexbox!important;
+        display: inline-flex!important;
+        background-size: contain;
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1
+   }
+   .center-img{
+        -webkit-box-flex: 222;
+        -ms-flex: 222;
+        flex: 222
+   }
+   .banner-body-bg {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+   }
+}  
+@media screen and (max-width:1050px) {   
+    .banner_swiper { 
+        height: 400px;
+    }
+    .bar.background-white .col-md-6.mt62{
+        max-width: 100%;
+    }  
+} 
+@media screen and (min-width:640px) and (max-width:824px) {    
+    .banner_swiper { 
+        height: 320px;
+    }
+} 
+@media screen and (max-width:639px) {
+    .swiper-button-next, .swiper-button-prev{
+        display: none;
+    } 
+    .swiper-pagination-clickable .swiper-pagination-bullet{
+        width: 4px;
+    }
+    .isPCshow,.banner-body-bg .block{
+        display: none;
+    }
+    .banner-body-bg{
+        position: static;
+    }
+    .banner_swiper { 
+        height: auto !important;
+    }
+    .isH5show{
+        display: block;
+        width: 100%;
     }
 }
+/* end */
+
 
 .content {
     margin: auto;
@@ -1046,6 +1135,8 @@ header {
 .four-a-line {
     /* margin-top: 20px;*/
     height: 100px; 
+	margin: 0;
+	border-top: 1px solid #dfe1e8;
 }
 .ship-item:last-child{
     border-right: 1px solid #dfe1e8;
