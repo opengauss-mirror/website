@@ -4,7 +4,7 @@
             {{ range (where .Data.Pages "Type" "banner") }}
             <div class="swiper-slide banner_swiper_slide">
                 {{ if eq .Params.number "1" }} 
-				<a class="banner-body-bg" href={{ i18n "main_docs_url" }}>
+				<a class="banner-body-bg" target="_blank" href={{ i18n "main_docs_url" }}>
 					<div class="left-img block" style="background-image: url({{ .Site.BaseURL}}{{ .Params.bgLeft }})"></div> 
 					<div class="center-img isPCshow" style="background-image: url({{ .Site.BaseURL}}{{ .Params.bgUrl }})"></div> 
 					<img loading="lazy" class="isH5show" src="{{ .Site.BaseURL}}{{ .Params.mobileUrl }}" alt=""> 
@@ -15,7 +15,7 @@
 				</div> 
                 {{ else }}
                
-					<a class="banner-body-bg" href={{.Params.link }}>
+					<a class="banner-body-bg"  target="_blank" href={{.Params.link }}>
 						<div class="left-img block" style="background-image: url({{ .Site.BaseURL}}{{ .Params.bgLeft }})"></div>                        
 						<div class="center-img isPCshow" style="background-image: url({{ .Site.BaseURL}}{{ .Params.bgUrl }})"></div> 
 						<img class="isH5show" src="{{ .Site.BaseURL}}{{ .Params.mobileUrl }}" alt="">                        
