@@ -41,6 +41,11 @@ name = "客户端工具"
 identification = "devOpsTools"
 name = "监控运维系统"
 
+[[list]]
+identification = "kernelExtensions"
+name = "内核扩展"
+
+
 [[cards]]
 iden = "connectors"
 name = "psycopg2"
@@ -111,24 +116,24 @@ weight = 2
 iden = "migrationTools"
 name = "Ora2Pg"
 desc = "Oracle到PostgreSQL数据迁移工具"
-address = "https://github.com/darold/ora2pg"
-guide = "https://ora2pg.darold.net/documentation.html"
+address = "https://gitee.com/opengauss/openGauss-tools-ora2og"
+guide = "https://gitee.com/opengauss/openGauss-tools-ora2og/blob/master/README.md"
 weight = 1
 
 [[cards]]
 iden = "migrationTools"
 name = "pg_chameleon"
 desc = "MySQL到PostgreSQL数据迁移工具"
-address = "https://github.com/the4thdoctor/pg_chameleon"
-guide = "https://pgchameleon.org/documents/"
+address = "https://gitee.com/opengauss/openGauss-tools-chameleon"
+guide = "https://gitee.com/opengauss/openGauss-tools-chameleon/blob/master/chameleon%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.pdf"
 weight = 2
 
 [[cards]]
 iden = "migrationTools"
 name = "pgloader"
 desc = "一个数据导入工具，使用COPY命令将数据导入到PostgreSQL"
-address = "https://github.com/dimitri/pgloader"
-guide = "https://opengauss.org/zh/blogs/blogs.html?post/totaj/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8pgloader%E8%BF%81%E7%A7%BBmysql%E6%95%B0%E6%8D%AE%E5%BA%93%E8%87%B3opengauss/"
+address = "https://gitee.com/opengauss/openGauss-tools-loader"
+guide = "https://gitee.com/opengauss/openGauss-tools-loader/blob/master/pgloader%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.pdf"
 weight = 3
 
 [[cards]]
@@ -194,4 +199,14 @@ desc = "开源监控系统，在记录纯数字时间序列方面表现非常好
 address = "https://github.com/prometheus/prometheus"
 guide = "https://prometheus.io/docs/introduction/overview/"
 weight = 2
+
+
+[[cards]] 
+iden = "kernelExtensions"
+name = "禹贡"
+desc = "提供专业的GIS（Geographic Information System）能力"
+address = "https://gitee.com/opengauss/Yukon"
+guide = "https://yukon.supermap.io/" 
+weight = 1   
+
 +++

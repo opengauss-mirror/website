@@ -41,6 +41,10 @@ name = "Client Tools"
 identification = "devOpsTools"
 name = "Monitor & DevOps System"
 
+[[list]]
+identification = "kernelExtensions"
+name = "Kernel Extension"
+
 [[cards]]
 iden = "connectors"
 name = "psycopg2"
@@ -111,24 +115,24 @@ weight = 2
 iden = "migrationTools"
 name = "Ora2Pg"
 desc = "Database migration tool from Oracle to PostgreSQL"
-address = "https://github.com/darold/ora2pg"
-guide = "https://ora2pg.darold.net/documentation.html"
+address = "https://gitee.com/opengauss/openGauss-tools-ora2og"
+guide = "https://gitee.com/opengauss/openGauss-tools-ora2og/blob/master/README.md"
 weight = 1
 
 [[cards]]
 iden = "migrationTools"
 name = "pg_chameleon"
 desc = "Database migration tool from MySQL to PostgreSQL"
-address = "https://github.com/the4thdoctor/pg_chameleon"
-guide = "https://pgchameleon.org/documents/"
+address = "https://gitee.com/opengauss/openGauss-tools-chameleon"
+guide = "https://gitee.com/opengauss/openGauss-tools-chameleon/blob/master/chameleon%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.pdf"
 weight = 2
 
 [[cards]]
 iden = "migrationTools"
 name = "pgloader"
 desc = "A data import tool that uses the COPY command to import data into PostgreSQL"
-address = "https://github.com/dimitri/pgloader"
-guide = "https://opengauss.org/zh/blogs/blogs.html?post/totaj/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8pgloader%E8%BF%81%E7%A7%BBmysql%E6%95%B0%E6%8D%AE%E5%BA%93%E8%87%B3opengauss/"
+address = "https://gitee.com/opengauss/openGauss-tools-loader"
+guide = "https://gitee.com/opengauss/openGauss-tools-loader/blob/master/pgloader%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.pdf"
 weight = 3
 
 [[cards]]
@@ -194,4 +198,14 @@ desc = "The open source monitoring system performs very well in recording pure d
 address = "https://github.com/prometheus/prometheus"
 guide = "https://prometheus.io/docs/introduction/overview/"
 weight = 2
+
+[[cards]] 
+iden = "kernelExtensions"
+name = "Yukon"
+desc = "Provide professional GIS (Geographic Information System) ability"
+address = "https://gitee.com/opengauss/Yukon"
+guide = "https://yukon.supermap.io/" 
+weight = 1   
+
+
 +++

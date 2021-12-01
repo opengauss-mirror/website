@@ -17,17 +17,20 @@ $(document).ready(function() {
       type: 'bullets',
       clickable :true,
     },
-  })
-  //鼠标覆盖停止自动切换与隐藏前进后退按钮
-  myBannerSwiper.el.onmouseover = function(){ 
-	  myBannerSwiper.navigation.$nextEl.removeClass('hide');
-	  myBannerSwiper.navigation.$prevEl.removeClass('hide');
+  }) 
+  if(myBannerSwiper.el){
+    //鼠标覆盖停止自动切换与隐藏前进后退按钮
+    myBannerSwiper.el.onmouseover = function(){ 
+      myBannerSwiper.navigation.$nextEl.removeClass('hide');
+      myBannerSwiper.navigation.$prevEl.removeClass('hide');
+    }
+    //鼠标覆盖停止自动切换与隐藏前进后退按钮
+    myBannerSwiper.el.onmouseout = function(){
+      myBannerSwiper.navigation.$nextEl.addClass('hide');
+      myBannerSwiper.navigation.$prevEl.addClass('hide');
+    }
   }
-  //鼠标覆盖停止自动切换与隐藏前进后退按钮
-  myBannerSwiper.el.onmouseout = function(){
-	  myBannerSwiper.navigation.$nextEl.addClass('hide');
-	  myBannerSwiper.navigation.$prevEl.addClass('hide');
-  }
+  
 
   // 文档页面语言切换
   var currentUrl = window.location.href;

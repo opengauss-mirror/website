@@ -3,7 +3,7 @@ $('.left-tools').find('div').on('click', function (event) {
     event.preventDefault();
     $(this).addClass('active').siblings().removeClass('active');
     let id = $(this).find('a').attr('href');
-    let toTop = ['#connectors', '#middleware', '#management', '#migrationTools', '#dataTools', '#dataModel', '#clientTools', '#devOpsTools'];
+    let toTop = ['#connectors', '#middleware', '#management', '#migrationTools', '#dataTools', '#dataModel', '#clientTools', '#devOpsTools', '#kernelExtensions'];
     toTop.forEach((item, index) => {
      if (item === id){
          // 100 是距离顶端的基础值， 260 是 tool-item 的高度及下边距
@@ -30,7 +30,7 @@ if ($(window).width() < 1000) {
 } else {
     $(window).scroll(function () {
         let top = $(window).scrollTop();
-        // console.log('top', top)
+        //console.log('top', top)
         if (top <= 880) {
             $('.left-tools div:nth-child(1)').addClass('active').siblings().removeClass('active');
         } else if ((top >= 1080) && (top < 1280)) {
@@ -45,8 +45,10 @@ if ($(window).width() < 1000) {
             $('.left-tools div:nth-child(6)').addClass('active').siblings().removeClass('active');
         } else if ((top >= 2380) && (top < 2680)) {
             $('.left-tools div:nth-child(7)').addClass('active').siblings().removeClass('active');
-        } else if (top >= 2680) {
+        } else if ((top >= 2680) && (top < 2880)) {
             $('.left-tools div:nth-child(8)').addClass('active').siblings().removeClass('active');
+        }else if (top >= 2880) {
+            $('.left-tools div:nth-child(9)').addClass('active').siblings().removeClass('active');
         }
         if (top >= 880) {
             $('.left-tools').removeClass('hide')
