@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+  {{ partial "head.html" . }}
+  <link rel="stylesheet" href="{{ "css/pagination.css" | relURL}}?t={{ mul 1000 (time now).Unix }}">
+  <link href="{{ "css/summit.css" | relURL}}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet"> 
+  <body>
+
+    <div id="all">
+
+        <header>
+
+          {{ partial "nav.html" . }}
+
+        </header>
+
+       
+
+        <div id="content">
+            {{ if isset .Params "id" }}
+
+              {{ partial .Params.id . }}
+
+            {{ else }}
+            <div class="summitPoster" style="background-image: url({{ .Site.BaseURL}}{{ .Params.poster }}) ">
+                <div class="poster">
+                    <a target="_blank"  class="btns" href='{{ .Params.link }}'>{{ .Params.btn }}</a>
+                </div>
+            </div>
+            <div class="container summitMain">  
+                <p class="text">{{ .Params.infotext }} </p>
+                <p class="text">{{ .Params.infotext1 }} </p>
+                <h2 class="tit1">{{ .Params.tit1 }} </h2>
+
+                {{ range .Params.module }}
+                <div class="summit-container"> 
+                    <h3>{{ .daytime }}</h3> 
+                    <ul class='dateList'> 
+                        {{ range $index, $item := .item}}
+                            <li>
+                                <span class="time">{{ $item.time }}</span>
+                                <span class="info">{{ $item.desc }}</span>
+                            </li>  
+                        {{ end }}
+                    </ul>  
+                </div>
+                {{ end }}
+
+                <h2 class="tit2">{{ .Params.tit2 }} </h2>
+                <div class="partnersInfo"> 
+                    <div class="titleBar">
+                        <p class="caption">指导单位</p>
+                    </div>
+                    <div class="links-imgs one">
+                        <div class="line"><img src="/img/summit/csia.png" alt="中国软件行业协会"></div>
+                    </div> 
+                    <div class="titleBar">
+                        <p class="caption">主办单位</p>
+                    </div>
+                    <div class="links-imgs one">
+                        <div class="line"><img src="/img/summit/opengauss.png" alt="opengauss"></div>
+                    </div>
+                    <div class="titleBar">
+                        <p class="caption">联办单位</p>
+                        <p class="txt">（持续增加中）</p>
+                    </div>
+                    
+                    <div class="links-imgs ">
+                        <div class="line"><img src="/img/summit/vastdata.png" alt="海量数据"></div>
+                        <div class="line"><img src="/img/summit/enmotech.png" alt="云和恩墨"></div>
+                        <div class="line"><img src="/img/summit/shenzhou.png" alt="神州通用"></div>
+                        <div class="line"><img src="/img/summit/huawei.png" alt="华为公司"></div>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <!-- /.container -->
+
+            {{ end }}
+        </div>
+        <!-- /#content -->
+
+        {{ partial "footer.html" . }}
+
+    </div>
+    <!-- /#all -->
+
+    {{ partial "scripts.html" . }}
+    
+  </body>
+</html>
+

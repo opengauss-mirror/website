@@ -71,6 +71,15 @@ other = "/zh/news.html"
 [main_events_title]
 other = "最新社区活动"
 
+[main_summit_subtitle]
+other = "峰会"
+
+[main_summit_title]
+other = "最新峰会"
+
+[main_summit_herf]
+other = "/zh/summit.html"
+
 [main_events_herf]
 other = "/zh/events.html"
 
@@ -264,6 +273,9 @@ other = "查看更多"
 other = "视频/"
 
 [news_more]
+other = "查看更多"
+
+[summit_more]
 other = "查看更多"
 
 [look_back]

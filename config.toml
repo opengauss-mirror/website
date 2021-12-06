@@ -134,7 +134,7 @@ paginate = 10
     url = "/en/video.html"
     weight = 4
     parent = "connect"
-
+ 
 [[menu.main]]
     identifier = "certification"
     name = "Certification"
@@ -316,6 +316,13 @@ paginate = 10
     name = "视频"
     url = "/zh/video.html"
     weight = 4
+    parent = "connect"
+
+[[languages.zh.menu.main]]
+    identifier = "summit"
+    name = "峰会"
+    url = "/zh/summit.html"
+    weight = 5
     parent = "connect"
 
 [[languages.zh.menu.main]]
