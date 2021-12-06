@@ -1,0 +1,217 @@
+.summitPoster{
+    height: 480px;
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-position: 50%;
+    margin-bottom: 60px; 
+} 
+.summitPoster .poster {
+    position: relative;
+    width: 1120px;
+    margin: 0 auto;
+    height: 100%; 
+}
+.summitPoster .btns{
+    width: 120px;
+    line-height: 32px;
+    background: #FFFFFF;
+    border-radius: 4px;
+    border: 2px solid #594599;
+    position: absolute;
+    bottom: 120px;
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    color: #594599;
+}
+.summitPoster .btns:hover{ 
+    background: #594599; 
+    border: 2px solid #594599; 
+    color: #fff;
+    text-decoration: none;
+}
+.summitMain .text{
+    font-size: 18px;  
+    color: #000000;
+    line-height: 40px;
+    text-indent: 2em;
+    margin-bottom: 16px;
+}
+.summitMain h2{
+    text-align: center;
+    font-size: 36px; 
+    font-weight: normal;
+    color: #000000;
+    line-height: 84px;
+    background-repeat: no-repeat;
+    margin: 60px 0 30px;
+
+} 
+.summitMain .tit1{
+    background: url("/img/summit/tit1.png") no-repeat  center;
+}
+.summitMain .tit2{
+    background: url("/img/summit/tit2.png") no-repeat  center;
+}
+.summit-container h3{
+    font-size: 24px; 
+    font-weight: normal;
+    color: rgba(0, 0, 0, 0.85);
+    line-height: 24px;
+    margin-bottom: 16px;
+}
+
+.dateList{
+    margin-bottom: 40px;
+}
+.dateList li{
+    display: flex;
+    border-bottom:1px solid rgba(0, 0, 0, 0.15);
+    padding: 15px 0;
+    line-height:32px ;
+    transition: background-color .25s ease;
+}
+.dateList li:hover{
+    background-color: #f5f7fa;
+}
+.dateList .time{
+    width: 240px;
+    background: url("/img/summit/time.png") no-repeat left center;
+    padding-left: 30px;
+    font-size: 18px; 
+    color: rgba(0, 0, 0, 0.5);
+}
+.dateList .info{ 
+    font-size: 18px; 
+    color: #000;
+}
+
+.partnersInfo .titleBar{
+    margin: 32px 0 24px;
+    text-align: center;
+}
+.partnersInfo .caption{ 
+    font-size: 24px;
+    color: #000;
+    line-height: 24px; 
+}
+.partnersInfo .txt{ 
+    font-size:16px;  
+}
+.partnersInfo .links-imgs{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.partnersInfo .links-imgs.one{
+    width: 570px;
+    margin: 0 auto;
+}
+.partnersInfo .links-imgs .line {
+    display: block;
+    flex: 1;
+    border: 1px solid #DFE1E8;
+    border-right: 0;
+    text-align: center;
+    padding: 10px;
+    height: 100px;
+    box-sizing: border-box;
+    width: 285px;
+}
+.partnersInfo .links-imgs .line:last-child {
+    border-right: 1px solid #DFE1E8;
+}
+.partnersInfo img {
+    vertical-align: top;
+    max-width: 100%;
+}
+@media screen and (max-width: 1050px){
+    .summitPoster{
+        height: 400px;
+        overflow: hidden;
+    }
+    .summitPoster .poster{
+        width: 100%;
+    }
+    .summitPoster .btns{ 
+        bottom: 100px;
+    }
+    .partnersInfo .links-imgs{
+        width: 100% !important;
+    }
+    .partnersInfo .links-imgs{
+        display: block;
+    }
+    .partnersInfo .links-imgs .line{
+        width: 100%;
+        border: 1px solid #DFE1E8;
+        border-bottom: 0 none;
+    }
+    .partnersInfo .links-imgs .line:last-child{
+        border: 1px solid #DFE1E8;
+    }
+    .summitPoster .btns{
+        left: 4%;
+    }
+} 
+@media screen and (max-width: 768px){ 
+    .summitMain{
+        width: 90% !important;
+        padding: 0;
+    }
+    .summitPoster{
+        background-image: url("/img/summit/banner_mo.png") !important;
+        height: 320px;
+        background-size: contain; 
+        margin-bottom: 40px;
+    }
+    .summitPoster .btns{ 
+        position: static;
+        margin: 125px auto 0;
+        line-height: 24px; 
+        width: 100px;
+        font-size: 12px;
+    }
+    .summitMain .text {
+        font-size: 12px; 
+        line-height: 26px; 
+    }
+    .dateList .time{
+        width: 110px;
+        font-size: 12px;
+        background: none;
+        padding-left: 0;
+    }
+    .dateList .info{
+        font-size: 12px;
+        flex: 1;
+    }
+    .summitMain h2{
+        font-size: 18px;
+        margin: 40px 0 24px;
+        line-height: 36px;
+        background-size: cover !important;
+        font-weight: bold;
+        padding-left: 6px;
+    }
+    .summit-container h3{
+        font-size: 14px;
+        line-height: 20px;
+        text-align: center;
+        font-weight: bold;
+    }
+    .dateList li{
+        line-height: 20px;
+    }
+    .partnersInfo .titleBar{margin: 24px 0 16px;}
+    .partnersInfo .caption{
+        font-weight: bold;
+        font-size: 14px;
+        
+    }
+
+}
+
+
+
+
