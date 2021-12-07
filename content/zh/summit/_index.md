@@ -1,7 +1,7 @@
 +++
 title = "峰会"
-poster = "/img/summit/banner.png"
-moImg = "/img/summit/banner_mo.png"
+poster = "img/summit/banner.png"
+moImg = "img/summit/banner_mo.png"
 description = "您可以在此处找到openGauss相关峰会。"
 keywords = ["openGauss","summit"]
 
