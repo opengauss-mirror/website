@@ -1,8 +1,7 @@
+ 
 .summitPoster{
     height: 480px;
-    background-size: cover;
-    background-repeat: no-repeat; 
-    background-position: 50%;
+    background: no-repeat 50%/cover; 
     margin-bottom: 60px; 
 } 
 .summitPoster .poster {
@@ -10,6 +9,45 @@
     width: 1120px;
     margin: 0 auto;
     height: 100%; 
+}
+.summitPoster .info{
+    padding-top: 140px; 
+}
+.summitPoster h2{
+    font-size: 38px; 
+    font-weight: bold;
+    color: #594599;
+    line-height: 48px;
+    font-family: Helvetica Neue,Helvetica,Arial,PingFang SC,Hiragino Sans GB,STHeiti,Microsoft YaHei,Microsoft JhengHei,SimSun,sans-serif;
+}
+.summitPoster h3{
+    font-size: 20px; 
+    font-weight: normal;
+    color: #594599;
+    line-height: 24px;
+    margin: 16px 0 24px;
+    font-family: Helvetica Neue,Helvetica,Arial,PingFang SC,Hiragino Sans GB,STHeiti,Microsoft YaHei,Microsoft JhengHei,SimSun,sans-serif;
+}
+.summitPoster .txt{
+    font-size: 15px;  
+    color: #000000;
+    line-height: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+.summitPoster .txt::before{
+    width:20px ;
+    height: 20px;
+    display: inline-block;
+    content: '';
+    vertical-align: middle;
+    margin-right: 8px;
+}
+.summitPoster .time::before{
+    background: url("/img/summit/time1.png") no-repeat center/cover;
+}
+.summitPoster .address::before{
+    background: url("/img/summit/address.png") no-repeat center/cover;
 }
 .summitPoster .btns{
     width: 120px;
@@ -36,6 +74,7 @@
     line-height: 40px;
     text-indent: 2em;
     margin-bottom: 16px;
+    text-align: justify;
 }
 .summitMain h2{
     text-align: center;
@@ -151,13 +190,20 @@
         border: 1px solid #DFE1E8;
     }
     .summitPoster .btns{
-        left: 4%;
+        left: 20px;
+    }
+    .summitPoster .info{
+        padding-top: 80px;
+        padding-left: 20px;
     }
 } 
 @media screen and (max-width: 768px){ 
     .summitMain{
         width: 90% !important;
         padding: 0;
+    }
+    .summitPoster .info{
+        display: none;
     }
     .summitPoster{
         background-image: url("/img/summit/banner_mo.png") !important;

@@ -4,6 +4,10 @@ poster = "img/summit/banner.png"
 moImg = "img/summit/banner_mo.png"
 description = "您可以在此处找到openGauss相关峰会。"
 keywords = ["openGauss","summit"]
+summittitle = "openGauss Summit 2021"
+slogan = "汇聚数据库创新力量 共创行业新价值"
+time = "2021年12月28日"
+address = "北京·望京凯悦酒店"
 
 link ="https://e-campaign.huawei.com/m/IBJFRb"
 btn ="立即报名"
