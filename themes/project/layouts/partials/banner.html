@@ -3,16 +3,21 @@
         <div class="swiper-wrapper banner_swiper_wrapper">
             {{ range (where .Data.Pages "Type" "banner") }}
             <div class="swiper-slide banner_swiper_slide">
-                {{ if eq .Params.number "1" }} 
-				<a class="banner-body-bg" target="_blank" href={{ i18n "main_docs_url" }}>
+                {{ if eq .Params.number "2" }} 
+				<a class="banner-body-bg" target="_blank" href={{.Params.link }}>
 					<div class="left-img block" style="background-image: url({{ .Site.BaseURL}}{{ .Params.bgLeft }})"></div> 
-					<div class="center-img isPCshow" style="background-image: url({{ .Site.BaseURL}}{{ .Params.bgUrl }})"></div> 
+					<div class="center-img isPCshow" style="background-image: url({{ .Site.BaseURL}}{{ .Params.bgUrl }})">
+                        <div class="summitInfo">
+                            <h2>{{ .Params.title }} </h2>
+                            <h3>{{ .Params.info }} </h3>
+                            <p class='txt time'>{{ .Params.time }} </p>
+                            <p class='txt address'>{{ .Params.address }} </p> 
+                        </div>
+                    </div> 
 					<img loading="lazy" class="isH5show" src="{{ .Site.BaseURL}}{{ .Params.mobileUrl }}" alt=""> 
 					<div class="right-img block" style="background-image: url({{ .Site.BaseURL}}{{ .Params.bgRight }})"></div>
 				</a>
-				<div id="video-player" >
-				    <img loading="lazy" class="video-player-btn" src="../img/breadcrumbs/video-player.gif" alt="">
-				</div> 
+				
                 {{ else }}
                
 					<a class="banner-body-bg"  target="_blank" href={{.Params.link }}>
@@ -21,6 +26,9 @@
 						<img class="isH5show" src="{{ .Site.BaseURL}}{{ .Params.mobileUrl }}" alt="">                        
 						<div class="right-img block" style="background-image: url({{ .Site.BaseURL}}{{ .Params.bgRight }})"></div>
 					</a>
+                    <div id="video-player" >
+                        <img loading="lazy" class="video-player-btn" src="../img/breadcrumbs/video-player.gif" alt="">
+                    </div> 
                     
                 {{ end }}
             </div>

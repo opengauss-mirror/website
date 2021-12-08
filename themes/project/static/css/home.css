@@ -186,6 +186,51 @@ body {
 .isPCshow{
     display: block;
 }
+
+
+.summitInfo{
+    padding-top: 140px; 
+    width: 1140px;
+    margin:0 auto;
+}
+.summitInfo h2{
+    font-size: 38px; 
+    font-weight: bold;
+    color: #594599;
+    line-height: 48px;
+    font-family: Helvetica Neue,Helvetica,Arial,PingFang SC,Hiragino Sans GB,STHeiti,Microsoft YaHei,Microsoft JhengHei,SimSun,sans-serif;
+}
+.summitInfo h3{
+    font-size: 20px; 
+    font-weight: normal;
+    color: #594599;
+    line-height: 24px;
+    margin: 16px 0 24px;
+    font-family: Helvetica Neue,Helvetica,Arial,PingFang SC,Hiragino Sans GB,STHeiti,Microsoft YaHei,Microsoft JhengHei,SimSun,sans-serif;
+}
+.summitInfo .txt{
+    font-size: 15px;  
+    color: #000000;
+    line-height: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+.summitInfo .txt::before{
+    width:20px ;
+    height: 20px;
+    display: inline-block;
+    content: '';
+    vertical-align: middle;
+    margin-right: 8px;
+}
+.summitInfo .time::before{
+    background: url("/img/summit/time1.png") no-repeat center/cover;
+}
+.summitInfo .address::before{
+    background: url("/img/summit/address.png") no-repeat center/cover;
+}
+
+
 @media screen and (min-width: 1921px) {
    .banner-body-bg .block{
         display:-webkit-inline-box!important;
@@ -210,6 +255,10 @@ body {
 @media screen and (max-width:1050px) {   
     .banner_swiper { 
         height: 400px;
+    }
+    .summitInfo{
+        padding-top: 80px;
+        padding-left: 20px;
     }
     .bar.background-white .col-md-6.mt62{
         max-width: 100%;
@@ -241,6 +290,9 @@ body {
         width: 100%;
     }
 }
+
+
+
 /* end */
 
 

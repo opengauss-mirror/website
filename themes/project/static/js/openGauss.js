@@ -1,12 +1,12 @@
 $(document).ready(function() {
   var myBannerSwiper = new Swiper ('.banner_swiper', {
     direction: 'horizontal', // 切换选项
-    loop: true,  // 循环模式选项
-    autoplay: {
-      delay: 5000,
-      stopOnLastSlide: false,
-      disableOnInteraction: true,
-    },
+    // loop: true,  // 循环模式选项
+    // autoplay: {
+    //   delay: 5000,
+    //   stopOnLastSlide: false,
+    //   disableOnInteraction: true,
+    // },
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
