@@ -306,6 +306,8 @@
   /* ----------------文档-------------- */
   .container {
     position: relative;
+    height: auto !important;
+    width: auto !important;
   }
   .book-page {
     position: absolute;

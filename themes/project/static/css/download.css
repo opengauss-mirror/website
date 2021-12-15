@@ -242,7 +242,46 @@
 .ques-card:hover {
     color: #fff;
 }
-@media screen and (max-width: 768px){
+
+.downcontent{
+    margin:0 auto;
+    width: 1140px;
+}
+.downtips{
+    line-height: 20px;
+    background: #fdf6ec;
+    padding: 8px 15px;  
+}
+.downtips.visited {
+    display: none;
+}
+.downtips .tile{
+    position: relative; 
+}
+.downtips p{
+    color:#e6a23c; 
+}
+.downtips .closed{
+    position: absolute;
+    top:0;
+    right: 0;
+    cursor: pointer;
+    color: #aaa;
+}
+.downtips .closed svg {
+    height: 16px;
+    width: 16px;
+}
+@media screen and (max-width: 1280px){
+    .downcontent{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 768px){ 
+    .downtips p{
+        margin-right: 24px;
+        font-size: 12px;
+    }
     .show-for-mo{
         display: block;
     }

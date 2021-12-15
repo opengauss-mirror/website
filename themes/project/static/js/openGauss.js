@@ -166,4 +166,26 @@ $(document).ready(function() {
   };
 
   closeCookie();
+
+  /*
+    下载软件包》页面提示 
+    by:awx1109887   2021/12/15
+  */
+  const closeDownCookie = function () {
+    var hasCookie = getCookie('isDownTips=');
+    if (hasCookie) {
+      $('.downtips').addClass('visited');
+    } else {
+      $('.downtips').removeClass('visited');
+    }
+
+    $('.downtips .closed').on('click', function (event) {
+      event.preventDefault();
+      setCookie('isDownTips', 'read');
+      $('.downtips').addClass('visited');
+    });
+  };
+
+  closeDownCookie();
+
 })

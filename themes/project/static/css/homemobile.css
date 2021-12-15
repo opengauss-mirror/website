@@ -637,6 +637,9 @@
   .partners-item:last-child {
     margin-bottom: 0;
   }
+  .footer-copyright a{
+    font-size: 12px !important;
+  }
   .footer-wechat.isH5 {
     display: block;
   }
