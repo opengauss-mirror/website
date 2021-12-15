@@ -1165,7 +1165,7 @@ header {
     margin-bottom: 60px; 
 }
 .organization .partner-ship-content{
-    border-top: 1px solid #dfe1e8;
+    /* border-top: 1px solid #dfe1e8; */
 }
 .ship-item {
     text-align: center; 
@@ -1222,6 +1222,7 @@ header {
     .ship-item img {
         height: 64px;
         width: unset;
+        max-width: 100%;
     }
     .three-a-line {
         max-width: 100%;
@@ -1235,8 +1236,8 @@ header {
     .four-a-line {
         border-top: 1px solid #dfe1e8;
         height: unset;
-        margin: 0 auto;
-    }
+        margin: 0 auto; 
+    } 
     .partner-ship-content{ 
         border:0 none !important
     }
@@ -1456,6 +1457,12 @@ footer .foot {
     text-align: center;
     padding: 10px 0;
     background: #ccc;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    color:#000;
+    z-index: 99;
 }
 .read-cookie a {
     text-decoration: underline;
@@ -1470,8 +1477,7 @@ footer .foot {
     display: none;
 }
 @media screen and (max-width: 1000px){
-    .read-cookie {
-        margin: 0 -15px;
+    .read-cookie { 
         height: unset;
     }
 }
