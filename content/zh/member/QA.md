@@ -56,7 +56,7 @@ img = "/zh/member/img/zhangzhijing.png"
 name = "张志靖"
 title = "Committer"
 email = "mailto:2235036288@qq.com"
-gitee = "https://gitee.com/zhangzhijing"
+gitee = "https://gitee.com/zhangzhijingMY"
 
 
 +++
