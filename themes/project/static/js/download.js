@@ -23,4 +23,39 @@ $(document).ready(function () {
             }
         })
     });
+
+    /*
+        下载软件包》页面提示 
+        中文显示下载提示
+        by:awx1109887   2021/12/15
+    */ 
+    const getCookie = function (name) {
+        var cookies = document.cookie;
+        var index = cookies.indexOf(name);
+        return index === -1 ? false : true;
+    }; 
+ 
+    const closeDownCookie = function () {
+        var hasCookie = getCookie('isDownTips=');
+        var hasCookieLang = getCookie('lang=zh'); 
+        if(hasCookieLang){
+            if (hasCookie) {
+                $('.downtips').addClass('visited');
+            } else {
+                $('.downtips').removeClass('visited');
+            }
+    
+            $('.downtips .closed').on('click', function (event) {
+                event.preventDefault();
+                setCookie('isDownTips', 'read');
+                $('.downtips').addClass('visited');
+            });
+        }else{
+            $('.downtips').addClass('visited');
+        }
+        
+    };
+
+    closeDownCookie();
+
 })
