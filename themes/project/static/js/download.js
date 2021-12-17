@@ -52,7 +52,7 @@ $(document).ready(function () {
             });
         }else{
             $('.downtips').addClass('visited');
-        }
+        } 
         
     };
 
