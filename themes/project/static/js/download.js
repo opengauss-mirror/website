@@ -26,8 +26,7 @@ $(document).ready(function () {
 
     /*
         下载软件包》页面提示 
-        中文显示下载提示
-        by:awx1109887   2021/12/15
+        中文显示下载提示 
     */ 
     const getCookie = function (name) {
         var cookies = document.cookie;

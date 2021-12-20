@@ -118,20 +118,7 @@ $(document).ready(function() {
     var lang = window.location.href.includes('/zh/') ? 'en' : 'zh';
     setCookie('lang', lang)
   });
-  //改用:hover样式控制菜单显示 by:awx1109887 2021/12/17
-  // $('#navigation').find('.dropdown').each(function () {
-  //   $(this).hover(function (e) {
-  //     var hoverTarget = e.target;
-  //     if ($(hoverTarget).parent().is('.dropdown')) {
-  //       $(hoverTarget).parent().toggleClass('hovered').toggleClass('open');
-  //     }
-  //   }, function (e) {
-  //     var hoverTarget = e.target;
-  //     if ($(hoverTarget).parent().is('.dropdown')) {
-  //       $(hoverTarget).parent().toggleClass('hovered').toggleClass('open');
-  //     }
-  //   })
-  // })
+ 
 
   if (includesStr('/blogs', currentUrl)) {
     $('.nav-blog-link').closest('.dropdown').addClass('active');
