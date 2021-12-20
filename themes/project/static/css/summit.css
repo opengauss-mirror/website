@@ -100,8 +100,8 @@
     margin-bottom: 16px;
 }
 
-.dateList{
-    margin-bottom: 40px;
+.summit-container{
+    margin-top: 40px;
 }
 .dateList li{
     display: flex;
@@ -136,26 +136,37 @@
 }
 .partnersInfo .txt{ 
     font-size:16px;  
+    margin-top: 8px;
 }
 .partnersInfo .links-imgs{
-    display: flex;
-    justify-content: space-between;
+    display: flex; 
     width: 100%;
+    flex-wrap: wrap;
 }
 .partnersInfo .links-imgs.one{
     width: 570px;
     margin: 0 auto;
 }
+.partnersInfo .links-imgs.one .line{
+    width: 570px;
+}
 .partnersInfo .links-imgs .line {
-    display: block;
-    flex: 1;
+    display: block; 
     border: 1px solid #DFE1E8;
     border-right: 0;
     text-align: center;
     padding: 10px;
     height: 100px;
     box-sizing: border-box;
-    width: 285px;
+    width: 285px; 
+}
+.partnersInfo .links-imgs .line.long{
+    width: 570px;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    display: flex;
+    flex-direction: column;
 }
 .partnersInfo .links-imgs .line:last-child {
     border-right: 1px solid #DFE1E8;
@@ -163,6 +174,13 @@
 .partnersInfo img {
     vertical-align: top;
     max-width: 100%;
+}
+.links-box{
+    border-top: 1px solid #DFE1E8;
+    width: 1140px;
+}
+.links-box  .links-imgs .line{
+    border-top:0 none;
 }
 @media screen and (max-width: 1050px){
     .summitPoster{
@@ -175,6 +193,10 @@
     .summitPoster .btns{ 
         bottom: 100px;
     }
+    .links-box{
+        border-top:0 none;
+        width: 100%;
+    }
     .partnersInfo .links-imgs{
         width: 100% !important;
     }
@@ -182,12 +204,15 @@
         display: block;
     }
     .partnersInfo .links-imgs .line{
-        width: 100%;
+        width: 100% !important;
         border: 1px solid #DFE1E8;
         border-bottom: 0 none;
     }
-    .partnersInfo .links-imgs .line:last-child{
+    .partnersInfo> .links-imgs .line:last-child{
         border: 1px solid #DFE1E8;
+    }
+    .partnersInfo .links-box{
+        border-bottom: 1px solid #DFE1E8;
     }
     .summitPoster .btns{
         left: 20px;
@@ -258,6 +283,10 @@
         
     }
 
+}
+#livePage{
+    border:0 none;
+    width: 100%; 
 }
 
 
