@@ -1336,7 +1336,7 @@ header {
     left: 50%;
     transform: translateX(-50%);
 }
-.navbar ul.navbar-left > li.hovered::after {
+.navbar ul.navbar-left > li:hover:after {
     content: "";
     width: 20px;
     height: 3px;
@@ -1402,6 +1402,11 @@ header {
 .dropdown-menu > li > a:hover {
     background: none;
     color: #4d4d4d;
+}
+
+
+.navbar ul.navbar-left > li:hover .dropdown-menu{
+    display: block;
 }
 
 html[lang=zh-cn] .dropdown:nth-child(4) .dropdown-menu {

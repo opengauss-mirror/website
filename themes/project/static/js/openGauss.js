@@ -118,20 +118,7 @@ $(document).ready(function() {
     var lang = window.location.href.includes('/zh/') ? 'en' : 'zh';
     setCookie('lang', lang)
   });
-
-  $('#navigation').find('.dropdown').each(function () {
-    $(this).hover(function (e) {
-      var hoverTarget = e.target;
-      if ($(hoverTarget).parent().is('.dropdown')) {
-        $(hoverTarget).parent().toggleClass('hovered').toggleClass('open');
-      }
-    }, function (e) {
-      var hoverTarget = e.target;
-      if ($(hoverTarget).parent().is('.dropdown')) {
-        $(hoverTarget).parent().toggleClass('hovered').toggleClass('open');
-      }
-    })
-  })
+ 
 
   if (includesStr('/blogs', currentUrl)) {
     $('.nav-blog-link').closest('.dropdown').addClass('active');
@@ -167,25 +154,6 @@ $(document).ready(function() {
 
   closeCookie();
 
-  /*
-    下载软件包》页面提示 
-    by:awx1109887   2021/12/15
-  */
-  const closeDownCookie = function () {
-    var hasCookie = getCookie('isDownTips=');
-    if (hasCookie) {
-      $('.downtips').addClass('visited');
-    } else {
-      $('.downtips').removeClass('visited');
-    }
-
-    $('.downtips .closed').on('click', function (event) {
-      event.preventDefault();
-      setCookie('isDownTips', 'read');
-      $('.downtips').addClass('visited');
-    });
-  };
-
-  closeDownCookie();
+  
 
 })

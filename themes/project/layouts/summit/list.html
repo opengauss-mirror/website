@@ -36,7 +36,20 @@
             <div class="container summitMain">  
                 <p class="text">{{ .Params.infotext }} </p>
                 <p class="text">{{ .Params.infotext1 }} </p>
-                <h2 class="tit1">{{ .Params.tit1 }} </h2> 
+                <h2 class="tit1">{{ .Params.tit1 }} </h2>  
+                 
+                <!-- <iframe
+                    id="livePage"
+                    style="height:640px;"
+                    allow="camera *;microphone *;"
+                    border="0"
+                    scrolling="no"
+                    src=""
+                    allowfullscreen="true"
+                    webkitallowfullscreen="true"
+                    mozallowfullscreen="true"
+                ></iframe> -->
+
                 {{ range .Params.module }}
                 <div class="summit-container"> 
                     <h3>{{ .daytime }}</h3> 
@@ -70,11 +83,22 @@
                         <p class="txt">（持续增加中）</p>
                     </div>
                     
-                    <div class="links-imgs ">
-                        <div class="line"><img src="/img/summit/vastdata.png" alt="海量数据"></div>
-                        <div class="line"><img src="/img/summit/enmotech.png" alt="云和恩墨"></div>
-                        <div class="line"><img src="/img/summit/shenzhou.png" alt="神州通用"></div>
-                        <div class="line"><img src="/img/summit/huawei.png" alt="华为公司"></div>
+                    <div class="links-box">
+                        <div class="links-imgs ">
+                            <div class="line"><img src="/img/summit/huawei.png" alt="华为公司"></div>
+                            <div class="line"><img src="/img/summit/vastdata.png" alt="海量数据"></div>
+                            <div class="line"><img src="/img/summit/enmotech.png" alt="云和恩墨"></div>
+                            <div class="line"><img src="/img/summit/shenzhou.png" alt="神州通用"></div> 
+                        </div>
+                        <div class="links-imgs "> 
+                            <div class="line"><img src="/img/summit/xugu.png" alt="虚谷伟业"></div>
+                            <div class="line"><img src="/img/summit/sangfor.png" alt="深信服科技"></div>
+                            <div class="line long"><img src="/img/summit/dx.png" alt="中国电信天翼云"></div> 
+                        </div>
+                        <div class="links-imgs "> 
+                            <div class="line"><img src="/img/summit/SuperMap.png" alt="SuperMap"></div>
+                            <div class="line"><img src="/img/summit/zhaoshangyinhang.png" alt="招商银行"></div>
+                        </div>
                     </div>
                 </div>
 
@@ -93,7 +117,7 @@
     <!-- /#all -->
 
     {{ partial "scripts.html" . }}
-    
+    <!-- <script src="{{ "js/summit.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script> -->
   </body>
 </html>
 
