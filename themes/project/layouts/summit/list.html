@@ -38,9 +38,9 @@
                 <p class="text">{{ .Params.infotext1 }} </p>
                 <h2 class="tit1">{{ .Params.tit1 }} </h2>  
                  
-                <!-- <iframe
+                <iframe
                     id="livePage"
-                    style="height:640px;"
+                    style="height:630px;"
                     allow="camera *;microphone *;"
                     border="0"
                     scrolling="no"
@@ -48,7 +48,13 @@
                     allowfullscreen="true"
                     webkitallowfullscreen="true"
                     mozallowfullscreen="true"
-                ></iframe> -->
+                ></iframe>
+                 <div class="liveBox"> 
+                    <a href="javascript:;" class="active" data-id="10059">主会场</a>
+                    <a href="javascript:;" data-id="10060">海量数据</a>
+                    <a href="javascript:;" data-id="10062">云和恩墨</a>
+                    <a href="javascript:;" data-id="10061">神舟通用</a>  
+                 </div>   
 
                 {{ range .Params.module }}
                 <div class="summit-container"> 
@@ -117,7 +123,7 @@
     <!-- /#all -->
 
     {{ partial "scripts.html" . }}
-    <!-- <script src="{{ "js/summit.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script> -->
+    <script src="{{ "js/summit.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>
   </body>
 </html>
 
