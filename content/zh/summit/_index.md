@@ -5,7 +5,7 @@ moImg = "img/summit/banner_mo.png"
 description = "您可以在此处找到openGauss相关峰会。"
 keywords = ["openGauss","summit"]
 summittitle = "openGauss Summit 2021"
-slogan = "汇聚数据库创新力量 共创行业新价值"
+slogan = "汇聚数据库创新力量 逐梦数字时代星辰大海"
 time = "2021年12月28日"
 address = "北京·望京凯悦酒店"
 
@@ -16,6 +16,7 @@ infotext = "openGauss Summit 2021 是由openGauss开源社区发起并举办的�
 
 infotext1 = "学术专家、行业用户、合作伙伴和社区贡献者齐聚openGauss峰会，共同探讨数据库技术与行业数字化转型过程的融合创新，展现开源数据库最新的创新技术和多元化开放生态。"
 
+tit0 = "现场直播"  
 tit1 = "峰会日程"  
 tit2 = "共建单位"   
 
@@ -49,6 +50,6 @@ tit2 = "共建单位"
     daytime = "12月28日 下午"
     [[ module.item ]]
         time= "13:30 - 17:00"
-        desc = "分论坛（海量数据、云和恩墨、神舟通用）、社区会议"
+        desc = "分论坛（海量数据、云和恩墨）、社区会议"
   
 +++

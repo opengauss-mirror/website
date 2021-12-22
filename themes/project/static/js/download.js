@@ -33,6 +33,12 @@ $(document).ready(function () {
         var index = cookies.indexOf(name);
         return index === -1 ? false : true;
     }; 
+    const setCookie = function (name, value) {
+        var currentTime = new Date();
+        currentTime.setTime(currentTime.getTime() + 30 * 24 * 60 * 60 * 1000);
+        var newCookie = name + '=' + value + ';expires=' + currentTime.toGMTString() + ';path=/';
+        document.cookie = newCookie;
+    };
  
     const closeDownCookie = function () {
         var hasCookie = getCookie('isDownTips=');
