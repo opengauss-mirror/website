@@ -39,25 +39,25 @@ $(document).ready(function () {
         var newCookie = name + '=' + value + ';expires=' + currentTime.toGMTString() + ';path=/';
         document.cookie = newCookie;
     };
+    
+    $('.downtips .closed').on('click', function (event) {
+        event.preventDefault();
+        setCookie('isDownTips', 'read');
+        $('.downtips').addClass('visited');
+    });
  
     const closeDownCookie = function () {
         var hasCookie = getCookie('isDownTips=');
-        var hasCookieLang = getCookie('lang=zh'); 
-        if(hasCookieLang){
-            if (hasCookie) {
-                $('.downtips').addClass('visited');
-            } else {
-                $('.downtips').removeClass('visited');
-            }
-    
-            $('.downtips .closed').on('click', function (event) {
-                event.preventDefault();
-                setCookie('isDownTips', 'read');
-                $('.downtips').addClass('visited');
-            });
-        }else{
+        var hasCookieLang = getCookie('lang=en');  
+        if (hasCookie) {
             $('.downtips').addClass('visited');
+        } else {
+            $('.downtips').removeClass('visited');
         } 
+
+        if(hasCookieLang){
+            $('.downtips').addClass('visited');
+        }
         
     };
 

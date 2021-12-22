@@ -39,9 +39,9 @@
                   
                 <h2 class="tit0">{{ .Params.tit0 }} </h2> 
                 <div class="liveBox mo">  
-                    <a href="javascript:;" data-id="10060">海量数据</a>
-                    <a href="javascript:;" class="center active" data-id="10059">openGauss Summit 2021 主会场</a>
-                    <a href="javascript:;" data-id="10062">云和恩墨</a> 
+                    <a href="javascript:;" data-id="10056">{{ .Params.vastdata }}</a>
+                    <a href="javascript:;" class="center active" data-id="10055">{{ .Params.summittitle }}{{ .Params.fourm1 }}</a>
+                    <a href="javascript:;" data-id="10058">{{ .Params.enmotech }}</a> 
                 </div> 
                 <iframe
                     id="livePage"
@@ -55,24 +55,82 @@
                     mozallowfullscreen="true"
                 ></iframe>
                 <div class="liveBox pc">  
-                    <a href="javascript:;" data-id="10060">海量数据</a>
-                    <a href="javascript:;" class="center active" data-id="10059">openGauss Summit 2021 主会场</a>
-                    <a href="javascript:;" data-id="10062">云和恩墨</a> 
+                    <a href="javascript:;" data-id="10056">{{ .Params.vastdata }}</a>
+                    <a href="javascript:;" class="center active" data-id="10055">{{ .Params.summittitle }}{{ .Params.fourm1 }}</a>
+                    <a href="javascript:;" data-id="10058">{{ .Params.enmotech }}</a> 
                 </div> 
                 <h2 class="tit1">{{ .Params.tit1 }} </h2> 
-                {{ range .Params.module }}
-                <div class="summit-container"> 
-                    <h3>{{ .daytime }}</h3> 
-                    <ul class='dateList'> 
-                        {{ range $index, $item := .item}}
-                            <li>
-                                <span class="time">{{ $item.time }}</span>
-                                <span class="info">{{ $item.desc }}</span>
-                            </li>  
-                        {{ end }}
-                    </ul>  
-                </div>
+                <!-- <ul class="timeTabs">
+                    <li class="active">{{ .Params.forenoon }}</li>
+                    <li>{{ .Params.afternoon }}</li>
+                </ul> -->
+                {{ range .Params.module }} 
+                    <div class="summit-container show"> 
+                        <h3>{{ .daytime }}</h3> 
+                        <div class='dateList'>  
+                            {{ range $index, $item := .item}}
+                                <div class="dataItem">
+                                    <span class="time">{{ $item.time }}</span>
+                                    <span class="info">{{ $item.desc }}</span>
+                                    <div class="box1">
+                                        <span class="speaker">{{ $item.speaker }}</span>
+                                        <span class="position">{{ $item.postion }} <br/>{{ $item.postion1 }}</span>
+                                    </div>
+                                </div>  
+                            {{ end }}
+                        </div>  
+                    </div>
                 {{ end }}
+
+                <!-- <div class="summit-container">
+                    <h3>{{ .Params.summittitle }}{{ .Params.fourm1 }}</h3>
+                    <ul class="sub-tab">
+                        {{ range .Params.list }}
+                            {{ if eq .identification "hlsj"}}
+                            <li class="active">
+                                {{ .name }}
+                            </li>
+                            {{ else}}
+                            <li class="">
+                                {{ .name }}
+                            </li>
+                            {{ end }} 
+                        {{ end }}
+                    </ul>
+                    {{ range .Params.submodule }}
+                        {{ if eq .ide "hlsj"}}
+                            <div class="sub-container show">   
+                                <div class='dateList'>  
+                                    {{ range $index, $item := .list}}
+                                        <div class="dataItem">
+                                            <span class="time">{{ $item.time }}</span>
+                                            <span class="info">{{ $item.desc }}</span>
+                                            <div class="box1">
+                                                <span class="speaker">{{ $item.speaker }}</span>
+                                                <span class="position">{{ $item.position }} </span>
+                                            </div>
+                                        </div>  
+                                    {{ end }}
+                                </div>  
+                            </div>
+                            {{ else}}
+                                <div class="sub-container"> 
+                                    <div class='dateList'>  
+                                        {{ range $index, $item := .list}}
+                                            <div class="dataItem">
+                                                <span class="time">{{ $item.time }}</span>
+                                                <span class="info">{{ $item.desc }}</span>
+                                                <div class="box1">
+                                                    <span class="speaker">{{ $item.speaker }}</span> 
+                                                    <span class="position">{{ $item.position }} </span>
+                                                </div>
+                                            </div>  
+                                        {{ end }}
+                                    </div>  
+                                </div> 
+                        {{ end }}
+                    {{ end }} 
+                </div> -->
 
                 <h2 class="tit2">{{ .Params.tit2 }} </h2>
                 <div class="partnersInfo"> 
