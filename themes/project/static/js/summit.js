@@ -56,6 +56,19 @@ $(function () {
             `https://vhall.huawei.com/v2/watch/${liveId}?lang=zh&thirdId=${userName}`
         );
     }
-    creatUserId('10059');
+    creatUserId('10055');
+
+    // 日程切换 
+    $('.timeTabs li').click(function(){
+        let index = $(this).index(); 
+        $(this).addClass('active').siblings('li').removeClass('active'); 
+        $('.summit-container').removeClass('show').eq(index).addClass('show'); 
+    })
+    $('.sub-tab li').click(function(){
+        let index = $(this).index(); 
+        $(this).addClass('active').siblings('li').removeClass('active'); 
+        $('.sub-container').removeClass('show').eq(index).addClass('show'); 
+    })
+
 
 });
