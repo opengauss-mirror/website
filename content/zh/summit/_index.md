@@ -51,7 +51,7 @@ enmotech = "云和恩墨"
         postion="华为ICT战略与业务发展部总裁" 
     [[module.item]]
         time= "09:45 - 09:55"
-        desc = "凝心聚力 共创行业数据新价值"
+        desc = "汇聚数据库创新力量  逐梦数字时代星辰大海"
         speaker="江大勇"
         postion="openGauss社区理事长" 
     [[module.item]]
@@ -64,7 +64,7 @@ enmotech = "云和恩墨"
         speaker="openGauss社区技术委员会全体成员" 
     [[module.item]]
         time= "10:05 - 10:15"
-        desc = "开放无边界，创新无止境"    
+        desc = "技术领导力-开放无边界，创新无止境"    
         speaker="李国良"
         postion="openGauss社区技术委员会主 " 
         postion1="清华大学计算机学院副主任 " 
@@ -94,11 +94,11 @@ enmotech = "云和恩墨"
         postion="北京大学计算机学院教授" 
     [[module.item]]
         time= "11:05 - 11:10"
-        desc = "openGauss生态俱乐部启动仪式"
+        desc = "openGauss人才俱乐部启动仪式"
         speaker="高校、第三方代表、创新中心、社区代表等" 
     [[module.item]]
         time= "11:10 - 11:30"
-        desc = "openGauss联和创新圆桌论坛"
+        desc = "openGauss联合创新圆桌论坛"
         speaker="云和恩墨、神舟、海量、北大、清华、招行、华为" 
 
 [[module]] 
