@@ -165,8 +165,12 @@
     width: 570px;
     margin: 0 auto;
 }
+.partnersInfo .links-imgs.one .line + .line{
+    border-top:0 none;
+}
 .partnersInfo .links-imgs.one .line{
     width: 570px;
+    border-right: 1px solid #DFE1E8;
 }
 .partnersInfo .links-imgs .line {
     display: block; 
@@ -286,6 +290,9 @@
         width: 100% !important;
         border: 1px solid #DFE1E8;
         border-bottom: 0 none;
+    }
+    .partnersInfo .links-imgs.one .line + .line {
+        border-top: 1px solid #DFE1E8;
     }
     .partnersInfo> .links-imgs .line:last-child{
         border: 1px solid #DFE1E8;
