@@ -42,13 +42,13 @@ enmotech = "云和恩墨"
     [[module.item]]
         time= "09:35 - 09:40"
         desc = "CCF中国计算机学会领导致辞"
-        speaker="李战怀"
-        postion="CCF数据库专委会主任"
+        speaker="高宏"
+        postion="哈尔滨工业大学教授"
+        postion1= '数据库专业委员会 副主任'
     [[module.item]]
         time= "09:40 - 09:45"
         desc = "华为领导致辞"   
-        speaker="盖刚"
-        postion="华为ICT战略与业务发展部总裁" 
+        speaker="TBD" 
     [[module.item]]
         time= "09:45 - 09:55"
         desc = "汇聚数据库创新力量  逐梦数字时代星辰大海"
@@ -75,31 +75,37 @@ enmotech = "云和恩墨"
         postion="中国移动信息技术中心副总经理" 
     [[module.item]]
         time= "10:25 - 10:35"
+        desc = "运营商行业用户创新实践分享-电信"
+        speaker="侯圣文"
+        postion="中国电信天翼云首席研发专家" 
+    [[module.item]]
+        time= "10:35 - 10:45"
         desc = "运营商行业用户创新实践分享-联通"
         speaker="王志军"
         postion="中国联通公司信息化部副总经理" 
     [[module.item]]
-        time= "10:35 - 10:45"
-        desc = "金融行业用户创新实践分享"
-        speaker="TBD" 
-    [[module.item]]
         time= "10:45 - 10:55"
-        desc = "云厂商创新实践分享"
-        speaker="张中靖"
-        postion="华为消费者云数据库CTO" 
+        desc = "金融行业用户创新实践分享"
+        speaker="何佳佳" 
+        postion="中国邮政储蓄银行金融科技创新部主任工程师" 
     [[module.item]]
         time= "10:55 - 11:05"
+        desc = "云厂商创新实践分享"
+        speaker="冯柯"
+        postion="华为云数据库首席架构师" 
+    [[module.item]]
+        time= "11:05 - 11:15"
         desc = "数据库前沿发展思考"
-        speaker="崔斌"
-        postion="北京大学计算机学院教授" 
+        speaker="童咏昕"
+        postion="北航计算机学院教授" 
     [[module.item]]
-        time= "11:05 - 11:10"
+        time= "11:15 - 11:23"
         desc = "openGauss人才俱乐部启动仪式"
-        speaker="高校、第三方代表、创新中心、社区代表等" 
+        speaker="高校、创新中心、共建单位代表等" 
     [[module.item]]
-        time= "11:10 - 11:30"
+        time= "11:23 - 11:50"
         desc = "openGauss联合创新圆桌论坛"
-        speaker="云和恩墨、神舟、海量、北大、清华、招行、华为" 
+        speaker="DBV伙伴、用户、高校嘉宾" 
 
 [[module]] 
     daytime = "12月28日 下午"

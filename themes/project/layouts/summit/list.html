@@ -37,11 +37,11 @@
                 <p class="text">{{ .Params.infotext }} </p>
                 <p class="text">{{ .Params.infotext1 }} </p>
                   
-                <h2 class="tit0">{{ .Params.tit0 }} </h2> 
+                <h2 class="tit0" id="liveNav">{{ .Params.tit0 }} </h2> 
                 <div class="liveBox mo">  
-                    <a href="javascript:;" data-id="10060">{{ .Params.vastdata }}</a>
-                    <a href="javascript:;" class="center active" data-id="10059">{{ .Params.summittitle }}{{ .Params.fourm0 }}</a>
-                    <a href="javascript:;" data-id="10062">{{ .Params.enmotech }}</a> 
+                    <a href="javascript:;" data-id="10056">{{ .Params.vastdata }}</a>
+                    <a href="javascript:;" class="center active" data-id="10055">{{ .Params.summittitle }}{{ .Params.fourm0 }}</a>
+                    <a href="javascript:;" data-id="10058">{{ .Params.enmotech }}</a> 
                 </div> 
                 <iframe
                     id="livePage"
@@ -55,11 +55,11 @@
                     mozallowfullscreen="true"
                 ></iframe>
                 <div class="liveBox pc">  
-                    <a href="javascript:;" data-id="10060">{{ .Params.vastdata }}</a>
-                    <a href="javascript:;" class="center active" data-id="10059">{{ .Params.summittitle }}{{ .Params.fourm0 }}</a>
-                    <a href="javascript:;" data-id="10062">{{ .Params.enmotech }}</a> 
+                    <a href="javascript:;" data-id="10056">{{ .Params.vastdata }}</a>
+                    <a href="javascript:;" class="center active" data-id="10055">{{ .Params.summittitle }}{{ .Params.fourm0 }}</a>
+                    <a href="javascript:;" data-id="10058">{{ .Params.enmotech }}</a> 
                 </div> 
-                <h2 class="tit1">{{ .Params.tit1 }} </h2> 
+                <h2 class="tit1" id="dayNav">{{ .Params.tit1 }} </h2> 
                 <!-- <ul class="timeTabs">
                     <li class="active">{{ .Params.forenoon }}</li>
                     <li>{{ .Params.afternoon }}</li>
@@ -132,7 +132,7 @@
                     {{ end }} 
                 </div>  -->
 
-                <h2 class="tit2">{{ .Params.tit2 }} </h2>
+                <h2 class="tit2" id="partnerNav">{{ .Params.tit2 }} </h2>
                 <div class="partnersInfo"> 
                     <div class="titleBar">
                         <p class="caption">指导单位</p>
@@ -171,6 +171,38 @@
                     </div>
                 </div>
 
+
+                <!-- 视频 -->
+                <div class='video-container video-remove hidding'>
+                    <div class='video-mask'></div>
+                    <div class="video-alert video-center">
+                        <video class="home-banner-video" width="100%" controls autoplay>
+                        </video>
+                    </div>
+                </div>    
+
+
+
+                <div class="fixed-nav">
+                    <div class="js-to-top to-top">
+                        <img src="/img/icon_top.svg" alt="">
+                    </div>
+                    <ul>
+                        <li class="active">
+                            <a href="#liveNav">{{ .Params.tit0}}</a>
+                            <div class="icon-circle"></div>
+                        </li>
+                        <li class="">
+                            <a href="#dayNav">{{ .Params.tit1}}</a>
+                            <div class="icon-circle"></div>
+                        </li>
+                        <li class="">
+                            <a href="#partnerNav">{{ .Params.tit2}}</a>
+                            <div class="icon-circle"></div>
+                        </li>
+                    </ul>
+                    <div class="icon-line"></div>
+                </div>
 
 
             </div>
