@@ -279,20 +279,18 @@
     width: 32px;
 }
 .fixed-nav ul {
-    padding-right: 9px;
-    margin-top: -12px;
-    padding-top: 12px;
+    padding-right: 9px; 
     border-right: 2px solid #fff;
 }
 .fixed-nav ul li {
-    margin: 12px 0;
+    padding-top: 24px;
 }
 .icon-line {
     width: 2px;
-    height: 90px;
+    height:125px;
     display: inline-block;
     position: relative;
-    top: -108px;
+    top: -141px;
     background: #bfbfbf;
 }
 .icon-circle {
@@ -309,10 +307,20 @@
 }
 .fixed-nav a {
     color: #000;
+    font-size: 16px;
 }
 .fixed-nav .active a {
     color: var(--theme);
 }
+.js-to-top{
+    cursor: pointer;
+    height: 32px;
+}
+
+.summit-container + .summit-container .dataItem .info{
+    width: auto;
+}
+
 @media screen and (max-width: 1550px){ 
     .fixed-nav {
         display: none;

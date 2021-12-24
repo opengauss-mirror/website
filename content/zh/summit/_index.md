@@ -41,14 +41,14 @@ enmotech = "云和恩墨"
         postion="中国工程院院士"
     [[module.item]]
         time= "09:35 - 09:40"
-        desc = "CCF中国计算机学会领导致辞"
+        desc = "华为领导致辞"   
+        speaker="TBD"   
+    [[module.item]]
+        time= "09:40 - 09:45"
+        desc = "中国计算机学会数据库专业委会领导致辞"
         speaker="高宏"
         postion="哈尔滨工业大学教授"
         postion1= '数据库专业委员会 副主任'
-    [[module.item]]
-        time= "09:40 - 09:45"
-        desc = "华为领导致辞"   
-        speaker="TBD" 
     [[module.item]]
         time= "09:45 - 09:55"
         desc = "汇聚数据库创新力量  逐梦数字时代星辰大海"
@@ -57,7 +57,7 @@ enmotech = "云和恩墨"
     [[module.item]]
         time= "09:55 - 10:00"
         desc = "openGauss社区理事会升级仪式" 
-        speaker="openGauss社区理事长" 
+        speaker="openGauss社区理事会全体成员" 
     [[module.item]]
         time= "10:00 - 10:05"
         desc = "openGauss社区技术委员会升级仪式"     
@@ -66,23 +66,23 @@ enmotech = "云和恩墨"
         time= "10:05 - 10:15"
         desc = "技术领导力-开放无边界，创新无止境"    
         speaker="李国良"
-        postion="openGauss社区技术委员会主 " 
+        postion="openGauss社区技术委员会主席 " 
         postion1="清华大学计算机学院副主任 " 
     [[module.item]]
         time= "10:15 - 10:25"
-        desc = "运营商行业用户创新实践分享-移动"
+        desc = "运营商行业用户创新实践分享-中国移动"
         speaker="陈国"
         postion="中国移动信息技术中心副总经理" 
     [[module.item]]
         time= "10:25 - 10:35"
-        desc = "运营商行业用户创新实践分享-电信"
+        desc = "运营商行业用户创新实践分享-中国电信"
         speaker="侯圣文"
         postion="中国电信天翼云首席研发专家" 
     [[module.item]]
         time= "10:35 - 10:45"
-        desc = "运营商行业用户创新实践分享-联通"
+        desc = "运营商行业用户创新实践分享-中国联通"
         speaker="王志军"
-        postion="中国联通公司信息化部副总经理" 
+        postion="中国联通科技创新部副总经理" 
     [[module.item]]
         time= "10:45 - 10:55"
         desc = "金融行业用户创新实践分享"
@@ -105,10 +105,11 @@ enmotech = "云和恩墨"
     [[module.item]]
         time= "11:23 - 11:50"
         desc = "openGauss联合创新圆桌论坛"
-        speaker="DBV伙伴、用户、高校嘉宾" 
+        speaker="用户、DBV伙伴、高校嘉宾" 
 
 [[module]] 
     daytime = "12月28日 下午"
+    
     [[ module.item ]]
         time= "13:30 - 17:00"
         desc = "分论坛（海量数据、云和恩墨、神舟通用）、技术委员会开放工作会议、理事会闭门会议"

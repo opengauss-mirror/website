@@ -91,6 +91,11 @@ $(function () {
 
 
     // 右侧导航
+    $('.js-to-top').on('click', function (e) {
+        scroll(0, 0);
+         $('.fixed-nav ul').find('li').removeClass('active');
+         $('.fixed-nav ul li:first').addClass('active');
+     });
     $('.fixed-nav ul').find('li').on('click', function (e) {
         let target = e.target
         if (target.tagName === 'A') {
