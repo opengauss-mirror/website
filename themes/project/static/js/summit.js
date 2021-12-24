@@ -56,7 +56,7 @@ $(function () {
             `https://vhall.huawei.com/v2/watch/${liveId}?lang=zh&thirdId=${userName}`
         );
     }
-    creatUserId('10055');
+    creatUserId('10059');
 
     // 日程切换 
     $('.timeTabs li').click(function(){
