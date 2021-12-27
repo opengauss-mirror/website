@@ -99,6 +99,9 @@
 .summitMain .tit2{
     background: url("/img/summit/tit2.png") no-repeat  center;
 }
+.summitMain .tit3{
+    background: url("/img/summit/tit3.png") no-repeat  center;
+}
 .summit-container h3{
     font-size: 24px; 
     font-weight: normal;
@@ -326,6 +329,9 @@
     width: auto;
 }
 
+
+ 
+
 @media screen and (max-width: 1550px){ 
     .fixed-nav {
         display: none;
@@ -333,7 +339,9 @@
 }
 
 @media screen and (max-width: 1050px){ 
-    
+    .exhibitionContent  {
+        overflow-x: scroll;
+    }
     .summitPoster{
         height: 400px;
         overflow: hidden;
@@ -441,6 +449,7 @@
     .summitMain{
         width: 90% !important;
         padding: 0;
+        overflow: hidden;
     }
     .summitPoster .info{
         display: none;
@@ -562,3 +571,123 @@
     
 }
 
+
+/* 线上展厅 */
+
+.exhibitionContent{ 
+     
+}
+.exhibitionContent .mapPanel{
+    width: 1140px;
+    position: relative;
+}
+.exhibitionContent a{
+    position: absolute;
+    cursor: pointer;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    width: 150px;
+    height: 40px; 
+    border-radius: 40px;
+} 
+.exhibitionContent img{
+    width: 100%;
+}
+.exhibitionContent a:first-of-type {
+    width: 131px;
+    height: 77px;
+    top: 6px;
+    left: 178px;
+    border-radius: 0px;
+}
+.exhibitionContent a:nth-of-type(2) { 
+    top: 20px;
+    left: 323px; 
+}
+.exhibitionContent a:nth-of-type(3) { 
+    top: 20px;
+    left:489px; 
+}
+.exhibitionContent a:nth-of-type(4) { 
+    top: 20px;
+    left: 654px; 
+}
+.exhibitionContent a:nth-of-type(5) { 
+    top: 20px;
+    left:820px; 
+}
+.exhibitionContent a:nth-of-type(6) { 
+    top: 184px;
+    left:155px; 
+}
+.exhibitionContent a:nth-of-type(7) { 
+    top: 184px;
+    left:462px; 
+}
+.exhibitionContent a:nth-of-type(8) { 
+    top: 237px;
+    left:305px; 
+}
+.exhibitionContent a:nth-of-type(9) { 
+    top: 297px;
+    left:135px; 
+}
+.exhibitionContent a:nth-of-type(10) { 
+    top: 297px;
+    left:462px; 
+}
+.exhibitionContent a:nth-of-type(11) { 
+    top: 184px;
+    left:670px; 
+}
+.exhibitionContent a:nth-of-type(12) { 
+    top: 277px;
+    left:681px; 
+}
+.exhibitionContent a:nth-of-type(13) { 
+    top: 190px;
+    left: 888px;
+    border-radius: 0;
+    height: 48px;
+    width: 130px; 
+}
+.exhibitionContent a:nth-of-type(14) { 
+    top: 425px;
+    left:234px;  
+}
+.exhibitionContent a:nth-of-type(15) { 
+    top: 425px;
+    left:406px;  
+}
+.exhibitionContent a:nth-of-type(16) { 
+    top: 425px;
+    left:576px;  
+}
+.exhibitionContent a:nth-of-type(17) { 
+    top: 425px;
+    left:748px;  
+}
+.exhibitionContent a:nth-of-type(18) { 
+    top: 425px;
+    left:918px;  
+}
+.exhibitionContent a:nth-of-type(19) { 
+    top: 513px;
+    left:226px;  
+}
+.exhibitionContent a:nth-of-type(20) { 
+    top: 513px;
+    left:404px;  
+}
+.exhibitionContent a:nth-of-type(21) { 
+    top: 513px;
+    left:580px;  
+}
+.exhibitionContent a:nth-of-type(22) { 
+    top: 513px;
+    left:757px;  
+}
+.exhibitionContent a:nth-of-type(23) { 
+    top: 513px;
+    left:935px;  
+}

@@ -132,6 +132,27 @@
                     {{ end }} 
                 </div>  
 
+                <h2 class="tit3" id="exhibition">{{ .Params.tit3 }} </h2>
+                <div class="exhibitionContent"> 
+                    <div class="mapPanel">
+                        {{ range .Params.videolist }} 
+                            {{ range $index, $item := .item}}
+                                <a href="javascript:;" class='link' data-url='{{ .link }}'></a>
+                            {{ end }}
+                        {{ end }}
+                        <img src="/img/summit/exhibition.png" alt="">
+                    </div>
+                </div>
+                <!-- 线上展厅视频 -->
+                <div class='video-container video-remove hidding'>
+                    <div class='video-mask'></div>
+                    <div class="video-alert video-center">
+                        <video class="home-banner-video" width="100%" controls autoplay>
+                        </video>
+                    </div>
+                </div>   
+
+
                 <h2 class="tit2" id="partnerNav">{{ .Params.tit2 }} </h2>
                 <div class="partnersInfo"> 
                     <div class="titleBar">
@@ -187,19 +208,7 @@
                         </div>
                     </div>
                 </div>
-
-
-                <!-- 视频 -->
-                <div class='video-container video-remove hidding'>
-                    <div class='video-mask'></div>
-                    <div class="video-alert video-center">
-                        <video class="home-banner-video" width="100%" controls autoplay>
-                        </video>
-                    </div>
-                </div>    
-
-
-
+ 
                 <div class="fixed-nav">
                     <div class="js-to-top to-top">
                         <img src="/img/icon_top.svg" alt="">
@@ -211,6 +220,10 @@
                         </li>
                         <li class="">
                             <a href="#dayNav">{{ .Params.tit1}}</a>
+                            <div class="icon-circle"></div>
+                        </li>
+                        <li class="">
+                            <a href="#exhibition">{{ .Params.tit3}}</a>
                             <div class="icon-circle"></div>
                         </li>
                         <li class="">

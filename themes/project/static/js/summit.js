@@ -73,19 +73,18 @@ $(function () {
     // 视频事件 
     var videoPlay = function (videoUrl) {
         let html = `
-        <source src=${url}>`;
+        <source src=${videoUrl}>`;
         let video = document.querySelector(".home-banner-video");
         video.insertAdjacentHTML('beforeend', html);
         video.load();
-    };
-
-    $('#exhibition .link').click(function () {
-        let url = $(this).data('url')
+    }; 
+    $('.exhibitionContent .link').click(function () {
+        let url = $(this).data('url'); 
         videoPlay(url);
         $('.video-remove').show();
     });
     $('.video-mask').click(function () {
-        $('.home-banner-video').trigger('pause');
+        $('.home-banner-video').trigger('pause').empty();
         $('.video-remove').hide();
     });
 
@@ -106,12 +105,17 @@ $(function () {
         let top = $(window).scrollTop(); 
         if (top < 800) { 
             $('.fixed-nav ul li:nth-child(1)').addClass('active').siblings().removeClass('active')
-        } else if ((top > 1500) && (top < 2500)) {
+        } else if ((top > 1500) && (top < 2650)) {
             $('.fixed-nav ul li:nth-child(2)').addClass('active').siblings().removeClass('active')
-        } else if (top > 2500) {
+        }else if ((top > 2650) && (top < 3500)) {
             $('.fixed-nav ul li:nth-child(3)').addClass('active').siblings().removeClass('active')
+        } else if (top > 3500) {
+            $('.fixed-nav ul li:nth-child(4)').addClass('active').siblings().removeClass('active')
         }
 
     })
+
+
+     
 
 });
