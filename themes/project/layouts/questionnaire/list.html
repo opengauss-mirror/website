@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+{{ partial "head.html" . }}
+<link href="{{ "css/questionnaire.css" | relURL}}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet">
+
+<body>
+
+  <div id="all">
+
+    <header>
+
+      {{ partial "nav.html" . }}
+
+    </header> 
+
+    <div id="content">
+      <div class="container questionnaire" id="questionnaire">
+        <div  class="banner"> 
+          <span class="inside">QUEATIONNAIRE</span> 
+          <span  class="outside font-xihjw">openGauss社区满意度调研</span>
+          <img src="/img/questionnaire/banner.png" class="common-img">
+        </div>
+
+        <div class="panel1 ">
+            <div class="tile">
+              <p>亲爱的用户，为了给您提供更好的社区体验，现诚邀您参与openGauss社区满意度问卷调研。您的每一个宝贵建议都是我们进步的方向。</p>
+              <p>点击右侧“立即参与”按钮或手机扫描二维码即可填写问卷，完成后可随机抽取精美礼品。
+                请根据您真实的体验情况填写问卷，问卷反馈越真实有效越有机会抽取大奖哦！</p>
+              <p>我们将于活动结束后的5天内在社区中公布本期活动的所有获奖情况，敬请关注。</p>
+            </div>
+            <div class="codebox">
+              <img src="/img/questionnaire/code.png">
+              <a href="" class="btns" target="_blank">立即参与</a></a>
+            </div>
+        </div>
+
+        <div class="panel2 bg1 shadow">
+            
+          <div class="cover"> <img src="/img/questionnaire/img1.png">   </div>
+           <div class="info"> <h3>特等奖1名</h3>
+            <p>大疆 DJI Mini SE 无人机</p></div>
+        </div>
+
+        <div class="panel2 bg2 shadow">
+            
+          <div class="cover"> <img src="/img/questionnaire/img2.png">   </div>
+          <div class="info"> <h3>一等奖2名</h3>
+            <p>华为平板畅享2</p></div>
+        </div>
+
+        <div class="panel3 ">
+            <div class="tile shadow">
+              <div class="cover"> <img  src="/img/questionnaire/img3.png">  </div>
+              <div class="info"> <h3>二等奖6名</h3>
+              <p>华为手环6 NFC版</p></div>
+            </div>
+            <div class="tile shadow">
+              <div class="cover"> <img  src="/img/questionnaire/img4.png"><img  src="/img/questionnaire/img5.png">  </div>
+              <div class="info"> <h3>三等奖50名</h3>
+              <p>《openGauss数据库核心技术》或 openGauss长袖卫衣</p></div>
+            </div>
+        </div> 
+        <div class="mdContent">
+          {{ .Content }}
+        </div>
+      </div>
+    </div>
+
+    <div class="home-questionnaire">
+      <i class="closed"></i>
+      <a href="questionnaire.html"><img src="/img/questionnaire/floating.png"></a>
+    </div>
+
+    {{ partial "footer.html" . }}
+
+  </div>
+  {{ partial "scripts.html" . }}
+  
+</body>
+
+</html>

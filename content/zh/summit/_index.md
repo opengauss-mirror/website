@@ -2,7 +2,7 @@
 title = "峰会"
 poster = "img/summit/banner.png"
 moImg = "img/summit/banner_mo.png"
-description = "您可以在此处找到openGauss相关峰会。"
+description = "您可以在此处找到openGauss相关峰会。" 
 keywords = ["openGauss","summit"]
 summittitle = "openGauss Summit 2021"
 slogan = "汇聚数据库创新力量 逐梦数字时代星辰大海"
@@ -45,7 +45,7 @@ enmotech = "云和恩墨"
         speaker="TBD"   
     [[module.item]]
         time= "09:40 - 09:45"
-        desc = "中国计算机学会数据库专业委会领导致辞"
+        desc = "中国计算机学会数据库专业委员会领导致辞"
         speaker="高宏"
         postion="哈尔滨工业大学教授"
         postion1= '数据库专业委员会 副主任'
@@ -64,35 +64,35 @@ enmotech = "云和恩墨"
         speaker="openGauss社区技术委员会全体成员" 
     [[module.item]]
         time= "10:05 - 10:15"
-        desc = "技术领导力-开放无边界，创新无止境"    
+        desc = "开放无边界，创新无止境"    
         speaker="李国良"
         postion="openGauss社区技术委员会主席 " 
         postion1="清华大学计算机学院副主任 " 
     [[module.item]]
         time= "10:15 - 10:25"
-        desc = "运营商行业用户创新实践分享-中国移动"
-        speaker="陈国"
-        postion="中国移动信息技术中心副总经理" 
+        desc = "打造智慧中台 共筑数智未来"
+        speaker=" "
+        postion=" " 
     [[module.item]]
         time= "10:25 - 10:35"
-        desc = "运营商行业用户创新实践分享-中国电信"
-        speaker="侯圣文"
-        postion="中国电信天翼云首席研发专家" 
+        desc = "云网融合-中国电信云原生数据库实践分享"
+        speaker=" "
+        postion=" " 
     [[module.item]]
         time= "10:35 - 10:45"
-        desc = "运营商行业用户创新实践分享-中国联通"
-        speaker="王志军"
-        postion="中国联通科技创新部副总经理" 
+        desc = "基础软件创新 打造联通云算力新引擎"
+        speaker=" "
+        postion=" " 
     [[module.item]]
         time= "10:45 - 10:55"
-        desc = "金融行业用户创新实践分享"
+        desc = "中国邮政储蓄银行新一代分布式核心系统建设分享"
         speaker="何佳佳" 
         postion="中国邮政储蓄银行金融科技创新部主任工程师" 
     [[module.item]]
         time= "10:55 - 11:05"
-        desc = "云厂商创新实践分享"
-        speaker="冯柯"
-        postion="华为云数据库首席架构师" 
+        desc = "华为云GaussDB(for openGauss)助力华为消费者云数据库分布式改造"
+        speaker=" "
+        postion=" " 
     [[module.item]]
         time= "11:05 - 11:15"
         desc = "数据库前沿发展思考"
@@ -100,77 +100,63 @@ enmotech = "云和恩墨"
         postion="北航计算机学院教授" 
     [[module.item]]
         time= "11:15 - 11:23"
-        desc = "openGauss人才俱乐部启动仪式"
+        desc = "openGauss社区分委会启动仪式"
         speaker="高校、创新中心、共建单位代表等" 
     [[module.item]]
         time= "11:23 - 11:50"
         desc = "openGauss联合创新圆桌论坛"
         speaker="用户、DBV伙伴、高校嘉宾" 
 
-[[module]] 
-    daytime = "12月28日 下午"
-    
-    [[ module.item ]]
-        time= "13:30 - 17:00"
-        desc = "分论坛（海量数据、云和恩墨、神舟通用）、技术委员会开放工作会议、理事会闭门会议"
-  
- 
 
 [[list]]
 identification = "hlsj"
-name = "海量数据"
-
-[[list]]
-identification = "szty"
-name = "神舟通用"
+name = "海量数据" 
 
 [[list]]
 identification = "yhme"
 name = "云和恩墨"
+
+[[list]]
+identification = "szty"
+name = "神舟通用"
  
 
 [[submodule]]
     ide ="hlsj"
-    name = "海量数据"
-    [[submodule.list]]
-        time= "13:30 - 14:00"
-        desc = "签到" 
+    name = "海量数据" 
     [[submodule.list]]
         time= "14:00-14:05"
         desc = "主持人开场" 
     [[submodule.list]]
         time= "14:05-14:15"
-        desc = "华为领导致辞" 
+        desc = "领导致辞" 
     [[submodule.list]]
         time= "14:15-14:30"
-        desc = "海量数据主题演讲" 
+        desc = "海量数据拥抱openGauss，植根生态提供更好的数据库选择" 
     [[submodule.list]]
         time= "14:30-14:50"
-        desc = "中华联合人寿主题演讲" 
+        desc = "中华联合人寿依托Vastbase实现保险核心系统持续演进" 
     [[submodule.list]]
         time= "14:50-15:10"
-        desc = "赛迪主题演讲" 
+        desc = "数据库技术与产业发展趋势分析——质量测试见证数据库发展" 
     [[submodule.list]]
         time= "15:10-15:25"
-        desc = "太极华青主题演讲" 
+        desc = "太极华青助力政府数字化升级" 
     [[submodule.list]]
-        time= "15:25-15:30 "
-        desc = "第一轮抽奖" 
-    [[submodule.list]]
-        time= "15:30-15:40"
-        desc = "茶歇" 
+        time= "15:25-15:40 "
+        desc = "抽奖+茶歇"  
     [[submodule.list]]
         time= "15:40-15:55 "
-        desc = "思迪主题演讲" 
+        desc = "思迪信息基于海量底座，打造金融数智中台" 
     [[submodule.list]]
         time= "15:55-16:10"
-        desc = "普元主题演讲" 
+        desc = "普元信息数据交换平台最佳实践" 
     [[submodule.list]]
         time= "16:10-16:25"
-        desc = "麒麟软件主题演讲" 
+        desc = "面向用户场景，麒麟软件与海量数据共建基础软件全栈优化解决方案" 
     [[submodule.list]]
         time= "16:25-16:40 "
-        desc = "宝兰德主题演讲" 
+        desc = "宝兰德&海量珠联璧合，共助数字化业务转型" 
     [[submodule.list]]
         time= "16:40-17:10"
         desc = "圆桌讨论：如何打造更好的数据库生态" 
@@ -180,92 +166,68 @@ name = "云和恩墨"
 
 
 [[submodule]]
-    ide ="szty"
-    name = "神舟通用"
+    ide ="yhme"
+    name = "云和恩墨" 
     [[submodule.list]]
-        time= "13:00-14:00"
-        desc = "嘉宾入场签到" 
+        time= "14:00 - 14:20"
+        desc = "领导致辞"  
     [[submodule.list]]
-        time= "14:00-14:40"
-        desc = "神通数据openGauss7.0.21版技术特性交流" 
+        time= "14:20 - 14:45"
+        desc = "MogDB-依托开源社区的技术创新"  
     [[submodule.list]]
-        time= "14:40-15:30"
-        desc = "神通openGauss版市场推广策略与分析" 
+        time= "14:45 - 15:10"
+        desc = "openGauss在中国民生银行的实践分享"  
     [[submodule.list]]
-        time= "15:30-15:50"
-        desc = "茶歇" 
+        time= "15:10 - 15:35"
+        desc = "国产中间件与数据管理"  
     [[submodule.list]]
-        time= "15:50-16:30"
-        desc = "客户代表发言" 
+        time= "15:35 - 15:55"
+        desc = "茶歇"  
     [[submodule.list]]
-        time= "16:30-16:50"
-        desc = "领导讲话" 
+        time= "15:55 - 16:20"
+        desc = "MogDB/openGauss 监控实现体系分享"  
     [[submodule.list]]
-        time= "16:50-17:00"
-        desc = "互动抽奖" 
+        time= "16:20 - 16:45"
+        desc = "使用ShardingSphere打造 openGauss高性能生态"  
     [[submodule.list]]
-        time= "17:00-19:00"
-        desc = "答谢晚宴" 
+        time= "16:45 - 16:50"
+        desc = "云和恩墨与SphereEX战略签约仪式"
+    [[submodule.list]]
+        time= "16:50 - 17:30"
+        desc = "圆桌论坛：以MogDB为引擎，全栈国产的数字化建设机遇、挑战与趋势"
 
 
 [[submodule]]
-    ide ="yhme"
-    name = "云和恩墨"
+    ide ="szty"
+    name = "神舟通用"
     [[submodule.list]]
-        time= "13:00-14:00"
-        desc = "嘉宾签到" 
+        time= "14:00 - 14:05"
+        desc = "主持人开场" 
     [[submodule.list]]
-        time= "14:00-14:05"
-        desc = "分论坛开场" 
-        speaker="主持人"
-    [[submodule.list]]
-        time= "14:05-14:15"
+        time= "14:05 - 14:15"
         desc = "领导致辞" 
-        speaker="openGauss领导"
     [[submodule.list]]
-        time= "14:15-14:25"
-        desc = "领导致辞" 
-        speaker="云和恩墨领导（暂定盖总）"
+        time= "14:15 - 14:45"
+        desc = "神通数据库openGauss版产品技术分享" 
     [[submodule.list]]
-        time= "14:25-14:50"
-        desc = "1.MogDB主题演讲" 
-        speaker="张皖川"
-        position="云和恩墨数据库产品事业部总经理"
+        time= "14:45 - 15:15"
+        desc = "神通数据库openGauss版营销策略分享" 
     [[submodule.list]]
-        time= "14:50-15:15"
-        desc = "2.用户实践主题演讲" 
-        speaker="朱彬"
-        position="民生银行数据库运维团队负责人"
+        time= "15:15 - 15:40"
+        desc = "生态伙伴发言" 
     [[submodule.list]]
-        time= "15:15-15:40"
-        desc = "3.东方通伙伴主题演讲" 
-        speaker="谢耘"
-        position="东方通首席科学家"
+        time= "15:40 - 15:55"
+        desc = "茶歇" 
     [[submodule.list]]
-        time= "15:40-15:55"
-        desc = "茶歇（自由交流、展台参观）"  
+        time= "15:55 - 16:40"
+        desc = "客户代表发言" 
     [[submodule.list]]
-        time= "15:55-16:20"
-        desc = "4.MogDB主题演讲" 
-        speaker="张程伟"
-        position="云和恩墨MogDB CTO"
+        time= "16:40 - 17:00"
+        desc = "领导发言" 
     [[submodule.list]]
-        time= "16:20-16:45"
-        desc = "5.SphereEX伙伴主题演讲" 
-        speaker="张亮"
-        position="SphereEX创始人兼CEO"
-    [[submodule.list]]
-        time= "16:45-16:50"
-        desc = "云和恩墨与SphereEX战略签约仪式" 
-        speaker="云和恩墨&SphereEX"
-    [[submodule.list]]
-        time= "16:50-17:30	"
-        desc = "以MogDB为引擎，全栈国产的数字化建设机遇、挑战与趋势" 
-        speaker="拟定盖总主持，民生银行朱彬、东方通谢耘、SphereEX张亮、ISV伙伴代表参与讨论（共5人）"
+        time= "17:00 - 17:10"
+        desc = "互动抽奖" 
 
 
 
-
-+++
-
- 
++++ 
