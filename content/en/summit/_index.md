@@ -19,6 +19,7 @@ infotext1 = "学术专家、行业用户、合作伙伴和社区贡献者齐聚o
 tit0 = "现场直播"  
 tit1 = "峰会日程"  
 tit2 = "共建单位"   
+tit3 = "线上展厅"   
 
 forenoon = '12月28日 上午'
 afternoon = '12月28日 下午'
@@ -228,6 +229,80 @@ name = "神舟通用"
         time= "17:00 - 17:10"
         desc = "互动抽奖" 
 
+[[videolist]]
+    [[videolist.item]]
+        name = "openGauss 生态繁荣发展"
+        link = "https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/openGaussEcologyProsperityDevelopment/openGaussEcologyProsperityDevelopment/openGaussEcologyProsperityDevelopment.mp4"
+    [[videolist.item]]
+        name = "openGauss 开源社区"
+        link = "https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/CooperationCommunity/openGauss/openGauss.mp4"
+    [[videolist.item]]
+        name = "ShardingSphere 开源社区"
+        link = "https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/CooperationCommunity/ShardingSphere/shardingSphere.mp4"
+    [[videolist.item]]
+        name = "openEuler 开源社区"
+        link = "https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/CooperationCommunity/openEuler/openEuler.mp4"
+    [[videolist.item]]
+        name = "openLookeng 开源社区"
+        link = "https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/CooperationCommunity/openLooKeng/openLooKeng.mp4"
+    [[videolist.item]]
+        name = "海量数据"
+        link = "https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/DBV/vastdata/vastdata.mp4"
+    [[videolist.item]]
+        name = "神州通用"
+        link = "https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/DBV/shentongdata/shentongdata.mp4"
+    [[videolist.item]]
+        name = "华为云"
+        link = "https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/DBV/huaweicloud/huaweicloud.mp4"
+    [[videolist.item]]
+        name = "云和恩墨"
+        link = "https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/DBV/enmotech/enmotech.mp4"
+    [[videolist.item]]
+        name = "虚谷伟业"
+        link = "https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/DBV/xugucn/xugucn.mp4"
+    [[videolist.item]]
+        name = "深信服"
+        link = "https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/ISV/sangfor/sangfor.mp4"
+    [[videolist.item]]
+        name = "超图"
+        link = "https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/ISV/supermap/supermap.mp4"
+    [[videolist.item]]
+        name = "用户证言"
+        link = "https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/CustomerTestimony/CustomerTestimony/CustomerTestimony.mp4"
+    [[videolist.item]]
+        name = "In-place Update 存储引擎"
+        link = "https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/InnovationTechnology/In-place-Update-StorageEngine/In-place-Update-StorageEngine.mp4"
+    [[videolist.item]]
+        name = "DCF 分布式共识框架"
+        link = "https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/InnovationTechnology/DCF-distributed-consistency-architecture/DCF-distributed-consistency-architecture.mp4"
+    [[videolist.item]]
+        name = "NUMA-aware"
+        link = "https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/InnovationTechnology/fourEntrances-kunpeng-230m-tpmC/fourEntrances-kunpeng-230m-tpmC.mp4"
+    [[videolist.item]]
+        name = "AI4DB - DBMind自治"
+        link = "https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/InnovationTechnology/AI4DB-DBMind-AutomonomyPlatform/AI4D-DBMind-AutomonomyPlatform.mp4"
+    [[videolist.item]]
+        name = "DB4AI - 库内AI引擎"
+        link = "https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/InnovationTechnology/DB4AI-InnerAIEngine/DB4AI-InnerAIEngine.mp4"
+    [[videolist.item]]
+        name = "openLooKeng 跨源联合查询"
+        link = "https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/InnovationTechnology/openLooKengUnitedSearch/openLooKengUnitedSearch.mp4"
+    [[videolist.item]]
+        name = "业务平滑迁移"
+        link = "https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/InnovationTechnology/DatabaseSmoothessImmigration/DatabaseSmoothessImmigration.mp4" 
+    [[videolist.item]]
+        name = "统一部署管理"
+        link = "https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/InnovationTechnology/openGaussUnifiedAdministrationPlatform/openGaussUnifiedAdministrationPlatform.mp4"
+    [[videolist.item]]
+        name = "全密态数据库"
+        link = "https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/InnovationTechnology/wholeEncryptedDatabase/wholeEncryptedDatabase.mp4"
+    [[videolist.item]]
+        name = "动态脱敏"
+        link = "https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/InnovationTechnology/dynamicDesensitization/dynamicDesensitization.mp4"
+
++++  
 
 
-+++ 
+
+
+
