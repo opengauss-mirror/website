@@ -1483,33 +1483,54 @@ footer .foot {
 .read-cookie.visited {
     display: none;
 }
-@media screen and (max-width: 1000px){
-    .read-cookie { 
-        height: unset;
-    }
-    .home-questionnaire{
-        display: none;
-    }
-}
-
-
-
 
 
 .home-questionnaire{
     position: fixed;
     left:2%;
     bottom: 8% ;
+    z-index: 99;
 }
 .home-questionnaire .closed{
     position: absolute;
-    top:0;
-    right: 0;
-    width:30px;
+    top:-5px;
+    right: -5px;
+    width:28px;
     display: block;
-    height:30px; 
+    height:28px; 
     cursor: pointer;
+    background: url(../img/questionnaire/close.png) no-repeat center/cover;
 }
 .home-questionnaire.visited{
     display: none;
 }
+
+
+
+
+@media screen and (max-width: 1400px){
+    .home-questionnaire img{
+        width: 160px;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .read-cookie { 
+        height: unset;
+    }
+    .home-questionnaire img{
+        width: 120px;
+    }
+     
+}
+@media screen and (max-width: 700px){ 
+    .home-questionnaire .closed{
+        top: -10px;
+        right: -10px;
+        width:24px; 
+        height:24px; 
+    }
+}
+
+ 
+
