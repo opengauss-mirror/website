@@ -1,0 +1,304 @@
+.questionnaire{
+
+}
+.banner { 
+    margin: 100px auto;
+    height: 264px;
+    width: 100%;
+    position: relative
+}
+.banner .common-img {
+    height: 264px;
+    width: 475px;
+    position: absolute;
+    right: 0;
+    top: 0px
+}
+
+.banner .inside {
+    position: absolute;
+    left: 0;
+    top: 81px;
+    font-size: 54px;
+    line-height: 60px;
+    text-transform: uppercase;
+    color: rgba(0,0,0,.05)
+}
+
+.banner .outside {
+    position: absolute;
+    left: 0;
+    top: 111px;
+    font-size: 40px;
+    line-height: 48px;
+    color: #000;
+    font-weight: 400
+} 
+
+.shadow{
+    box-shadow: 0px 6px 20px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+.panel1{
+    padding: 48px;
+    background: url(../img/questionnaire/bg.png) no-repeat right bottom/cover;
+    height: 300px;
+    justify-content: space-between;
+    margin: 0 10px 60px; 
+    display: flex;
+    box-shadow: 0px 6px 20px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+.panel1 .tile{
+    max-width: 760px;
+}
+.panel1 p{
+    font-size: 18px;  
+    color: #555555;
+    line-height: 32px;
+    margin-bottom: 26px;
+} 
+.panel1 p:last-child{
+    margin: 0;
+}
+.panel1 .codebox{
+    margin: 0 48px;
+    width: 160px; 
+}
+.panel1 .codebox img{
+    width: 160px;
+    height: 160px;
+    display: block;
+    margin-bottom: 12px;
+}
+.panel1 .codebox .btns{
+    width: 160px;
+    line-height: 40px;
+    background: #7D32EA;
+    box-shadow: 0px 6px 20px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+}
+
+.panel2{
+    padding: 48px;
+    background: url(../img/questionnaire/bg1.png) no-repeat;
+    height: 200px;
+    position: relative;
+    margin: 0 10px 40px;  
+}
+.panel2.bg2{
+    background-image: url(../img/questionnaire/bg2.png)
+}
+.panel2 h3{ 
+    font-size: 32px;  
+    color: #7D32EA;
+    line-height: 40px;
+    margin-bottom: 32px;
+}
+.panel2 p{ 
+    font-size: 24px; 
+    color: #555555;
+    line-height: 32px;
+}
+.panel2 .cover img{
+    position: absolute;
+    right: 30px;
+    top:0px;
+    width: 364px;
+    height: 200px;
+}
+.panel2.bg2 .cover img{
+    position: absolute;
+    right: 113px;
+    top:17px;
+    width: 210px;
+    height: 166px;
+}
+
+.panel3{
+    justify-content: space-between;
+    margin: 0 10px 60px; 
+    display: flex;
+}
+.panel3 .tile{
+    flex: 1;
+    height: 336px;
+    background: #FFFFFF; 
+    text-align: center;
+}
+.panel3 .tile:first-child{
+    margin-right: 40px;
+}
+.panel3 .tile .cover{
+    height: 200px;
+    background: url(../img/questionnaire/bg3.png) no-repeat;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 28px 0; 
+}
+.panel3 .tile .cover img{ 
+    height: 144px;
+}
+.panel3 .tile .cover img:nth-child(2){
+    margin-left: 40px;
+}
+.panel3 .tile h3{
+    font-size: 28px; 
+    color: #7D32EA;
+    line-height: 40px;
+    margin:24px 0 16px;
+}
+.panel3 p{ 
+    font-size: 18px; 
+    color: #555555;
+    line-height: 32px;
+}
+
+.mdContent{
+    padding: 0 20px;
+}
+.mdContent h2{
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 32px;
+    font-weight: normal;
+}
+.mdContent ol{
+    list-style-type:decimal
+}
+.mdContent li{
+    margin-bottom: 32px;
+    font-size: 14px;
+    line-height: 32px;
+    color:#555;
+}
+.mdContent li blockquote { 
+    border:0 none; 
+} 
+.mdContent li blockquote p{
+    font-size: 14px;
+    line-height: 24px;
+    margin: 12px 0;
+} 
+.mdContent li strong{color:#A70000 ;}
+
+
+
+@media (max-width: 1050px) {
+    .banner{
+        margin: 20px 0 40px;
+    }
+    .panel1 {
+        padding: 24px;
+    }
+
+}
+@media (max-width: 768px) {
+    .banner{
+        text-align: center;
+        margin-top: 0;
+        padding:20px;
+        height: auto;
+    }
+    .banner .common-img{
+        position: static;    
+        max-width: 100%;
+        height: auto;
+    }
+    .banner .outside{
+        position: static;
+        margin:0 0  24px;
+        font-size: 24px;
+        display: block;
+    }
+    .banner .inside{
+        display: none;
+    }
+    .panel1 .codebox{
+        margin: 20px auto 0;
+    } 
+    .panel2 .cover,.panel3 .tile .cover{
+        height: 200px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: url('../img/questionnaire/bg3.png');
+        background-size: cover;
+    }
+    .panel3 .tile .cover{
+        padding: 0;
+    }
+    .panel2{
+        height: auto;
+        padding: 0px; 
+        background: none !important;
+    }
+    .questionnaire .panel2 .cover img{
+        height: 128px;
+        width: auto;
+        position: static !important;
+    }
+    .panel3 .tile .cover img{
+        height: 128px;
+    }
+    .panel2.bg1 .cover img{
+        height: 160px;
+    }
+
+    .panel1{
+        display: block;
+        height: auto;
+        margin-bottom: 40px;
+    }
+    .panel1 p {
+        font-size: 14px;
+        color: #555555;
+        line-height: 24px;
+        margin-bottom:10px;
+    } 
+    .panel3 {
+        display: block;
+    }
+    .panel3 .tile{
+        width: 100%;
+        margin: 0 0 40px !important;
+    }
+    .questionnaire .shadow{
+        height: auto;
+    }
+    .questionnaire .shadow .info{
+        padding: 16px 0;
+        text-align: center;
+    }
+    .questionnaire .shadow .info h3{
+        font-size: 20px; 
+        margin: 0 0 8px;
+        line-height: 30px;
+    }
+    .questionnaire .shadow .info p{
+        font-size: 14px; 
+        line-height: 30px;
+        padding: 0 34px;
+    }
+    .mdContent li{
+        line-height: 30px;
+        margin-bottom: 16px;
+        text-align: justify;
+    }
+    .mdContent{
+        padding: 30px;
+    }
+    .mdContent h2 { 
+        font-size: 24px; 
+    }
+
+}
+
+

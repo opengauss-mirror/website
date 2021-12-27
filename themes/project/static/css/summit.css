@@ -9,9 +9,12 @@
     width: 1120px;
     margin: 0 auto;
     height: 100%; 
+    overflow: hidden;
 }
-.summitPoster .info{
-    padding-top: 140px; 
+.summitPoster .info{ 
+    height: 0;
+    overflow: hidden;
+    padding-top:371px;
 }
 .summitPoster h2{
     font-size: 38px; 
@@ -52,20 +55,21 @@
 .summitPoster .btns{
     padding: 0 32px;
     line-height: 32px;
-    background: #FFFFFF;
+    background: none;
     border-radius: 4px;
-    border: 2px solid #594599;
+    border: 2px solid #fff;
     position: absolute;
-    bottom: 120px;
+    bottom:80px;
     display: block;
     text-align: center;
     font-size: 16px;
-    color: #594599;
+    color: #fff;
+    transition: all .3s ease-in-out;
 }
 .summitPoster .btns:hover{ 
-    background: #594599; 
-    border: 2px solid #594599; 
-    color: #fff;
+    background: #fff; 
+    border: 2px solid #fff; 
+    color: #594599;
     text-decoration: none;
 }
 .summitMain .text{
@@ -101,7 +105,7 @@
     color: rgba(0, 0, 0, 0.85);
     line-height: 24px;
     margin-bottom: 16px;
-    /* text-align: center */
+    text-align: center
 }
 
 .summit-container{
@@ -132,9 +136,9 @@
     color: rgba(0, 0, 0, 0.5);
 }
 .dateList .info{   
-    width: 460px;
+    /* width: 460px; 
     margin-right:40px;
-    /* display: flex; */
+     display: flex; */
 }
 .dateList .speaker{  
     min-width: 90px;
@@ -263,13 +267,14 @@
     flex: 1;
     display: flex; 
     align-items: center;
+    display: none; 
 }
 
 
 
 .fixed-nav {
     position: fixed;
-    top: 480px;
+    top: 520px;
     right: 85px;
     text-align: right;
 }
@@ -337,7 +342,7 @@
         width: 100%;
     }
     .summitPoster .btns{ 
-        bottom: 100px;
+         padding:0 12px;
     }
     .links-box{
         border-top:0 none;
@@ -420,6 +425,18 @@
     
    
 } 
+
+@media screen and (min-width:768px) and (max-width:960px) {    
+    .summitPoster { 
+        height: 320px;
+    }
+    .summitPoster .btns {
+        bottom: 50px;
+        font-size: 12px;
+        line-height: 24px;
+    }
+} 
+
 @media screen and (max-width: 768px){ 
     .summitMain{
         width: 90% !important;
@@ -429,7 +446,7 @@
         display: none;
     }
     .summitPoster{
-        background-image: url("/img/summit/homeBanner_mo.png") !important;
+        background-image: url("/img/summit/banner_mo.png") !important;
         height: 320px;
         background-size: contain; 
         margin-bottom: 40px;
@@ -437,11 +454,12 @@
     }
     .summitPoster .btns{ 
         position: static;
-        margin: 125px auto 0;
-        line-height: 24px;  
+        margin: 121px auto 0; 
         font-size: 12px;
-        padding: 0 24px;
+        line-height: 24px;
+        padding: 0 12px;
         display: inline-block;
+        border-width: 1px;
     }
     .summitMain .text {
         font-size: 12px; 

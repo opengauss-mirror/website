@@ -60,13 +60,13 @@
                     <a href="javascript:;" data-id="10058">{{ .Params.enmotech }}</a> 
                 </div> 
                 <h2 class="tit1" id="dayNav">{{ .Params.tit1 }} </h2> 
-                <!-- <ul class="timeTabs">
+                <ul class="timeTabs">
                     <li class="active">{{ .Params.forenoon }}</li>
                     <li>{{ .Params.afternoon }}</li>
-                </ul> -->
+                </ul>
                 {{ range .Params.module }} 
                     <div class="summit-container show"> 
-                        <h3>{{ .daytime }}</h3> 
+                        <h3>{{ .name }}</h3> 
                         <div class='dateList'>  
                             {{ range $index, $item := .item}}
                                 <div class="dataItem">
@@ -82,7 +82,7 @@
                     </div>
                 {{ end }}
 
-               <!-- <div class="summit-container">
+                <div class="summit-container">
                     <h3>{{ .Params.summittitle }}{{ .Params.fourm1 }}</h3>
                     <ul class="sub-tab">
                         {{ range .Params.list }}
@@ -130,7 +130,7 @@
                                 </div> 
                         {{ end }}
                     {{ end }} 
-                </div>  -->
+                </div>  
 
                 <h2 class="tit2" id="partnerNav">{{ .Params.tit2 }} </h2>
                 <div class="partnersInfo"> 
@@ -155,18 +155,35 @@
                     <div class="links-box">
                         <div class="links-imgs ">
                             <div class="line"><img src="/img/summit/huawei.png" alt="华为公司"></div>
-                            <div class="line"><img src="/img/summit/vastdata.png" alt="海量数据"></div> 
-                            <div class="line"><img src="/img/summit/shenzhou.png" alt="神州通用"></div> 
-                            <div class="line"><img src="/img/summit/enmotech.png" alt="云和恩墨"></div>
-                        </div>
-                        <div class="links-imgs "> 
-                            <div class="line"><img src="/img/summit/xugu.png" alt="虚谷伟业"></div>
-                            <div class="line"><img src="/img/summit/sangfor.png" alt="深信服科技"></div> 
-                            <div class="line"><img src="/img/summit/SuperMap.png" alt="SuperMap"></div>
-                            <div class="line"><img src="/img/summit/zhaoshangyinhang.png" alt="招商银行"></div>
-                        </div>
-                        <div class="links-imgs "> 
+                            <div class="line"><img src="/img/summit/mobile.png" alt="中国移动"></div>  
                             <div class="line long"><img src="/img/summit/dx.png" alt="中国电信天翼云"></div> 
+                        </div>
+                        <div class="links-imgs ">
+                            <div class="line"><img src="/img/summit/unicom.png" alt="中国联通"></div>
+                            <div class="line"><img src="/img/summit/zhaoshangyinhang.png" alt="招商银行"></div>
+                            <div class="line"><img src="/img/summit/huaxia.png" alt="华夏银行"></div>
+                            <div class="line"><img src="/img/summit/ccb.png" alt="建设金融科技"></div> 
+                        </div>
+                        <div class="links-imgs "> 
+                            <div class="line"><img src="/img/summit/vastdata.png" alt="海量数据"></div>  
+                            <div class="line"><img src="/img/summit/enmotech.png" alt="云和恩墨"></div>
+                            <div class="line"><img src="/img/summit/shenzhou.png" alt="神州通用"></div> 
+                            <div class="line"><img src="/img/summit/sangfor.png" alt="深信服科技"></div> 
+                        </div>
+                        <div class="links-imgs "> 
+                            <div class="line"><img src="/img/summit/SuperMap.png" alt="SuperMap"></div>
+                            <div class="line"><img src="/img/summit/xugu.png" alt="虚谷伟业"></div>
+                            <div class="line"><img src="/img/summit/gbase.png" alt="南大通用"></div> 
+                            <div class="line"><img src="/img/summit/borrui.png" alt="柏睿数据"></div>
+                        </div>
+                        <div class="links-imgs "> 
+                            <div class="line"><img src="/img/summit/uxsino.png" alt="优炫软件"></div> 
+                            <div class="line"><img src="/img/summit/asiainfo.png" alt="亚信科技"></div> 
+                            <div class="line"><img src="/img/summit/xrg.png" alt="星瑞格软件"></div> 
+                            <div class="line"><img src="/img/summit/qcubic.png" alt="快立方"></div> 
+                        </div>
+                        <div class="links-imgs "> 
+                            <div class="line"><img src="/img/summit/taiyangta.png" alt="太阳塔科技"></div> 
                         </div>
                     </div>
                 </div>

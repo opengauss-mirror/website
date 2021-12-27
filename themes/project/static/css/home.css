@@ -189,9 +189,11 @@ body {
 
 
 .summitInfo{
-    padding-top: 140px; 
+    /* padding-top: 140px;  */
     width: 1140px;
     margin:0 auto;
+    height: 0;
+    overflow: hidden;
 }
 .summitInfo h2{
     font-size: 38px; 
@@ -1485,4 +1487,29 @@ footer .foot {
     .read-cookie { 
         height: unset;
     }
+    .home-questionnaire{
+        display: none;
+    }
+}
+
+
+
+
+
+.home-questionnaire{
+    position: fixed;
+    left:2%;
+    bottom: 8% ;
+}
+.home-questionnaire .closed{
+    position: absolute;
+    top:0;
+    right: 0;
+    width:30px;
+    display: block;
+    height:30px; 
+    cursor: pointer;
+}
+.home-questionnaire.visited{
+    display: none;
 }

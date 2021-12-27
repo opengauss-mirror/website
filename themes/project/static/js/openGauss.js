@@ -154,6 +154,24 @@ $(document).ready(function() {
 
   closeCookie();
 
+  const questionnaireCloseCookie = function () {
+    var hasCookie = getCookie('isRuestionnaire=');
+    if (hasCookie) {
+      $('.home-questionnaire').addClass('visited');
+    } else {
+      $('.home-questionnaire').removeClass('visited');
+    }
+
+    $('.home-questionnaire .closed').on('click', function (event) {
+      event.preventDefault(); 
+      setCookie('isRuestionnaire', 'read');
+      $('.home-questionnaire').addClass('visited');
+    });
+
+  };
+
+  questionnaireCloseCookie();
+
   
 
 })
