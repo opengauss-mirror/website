@@ -24,7 +24,7 @@ typeModules = "知识分类"
 [[ basics ]]
     name = "部署安装"
     [[ basics.item ]]
-        name = 极简安装数据库"
+        name = "极简安装数据库"
         link = "https://opengauss.org/zh/blogs/blogs.html?post/jiajunfeng/opengauss2-0-0%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85/"
     [[ basics.item ]] 
         name = "安装单机版openGauss数据库"
