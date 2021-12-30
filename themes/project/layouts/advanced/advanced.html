@@ -51,7 +51,7 @@
 
                                             {{ range .docs }}
 
-                                            <span class="item-link" style="color:#4D7DFF;"><li>{{ .name }}</li></span>
+                                            <a href="{{ .link }}" target="_blank" class="item-link" style="color:#4D7DFF;"><li>{{ .name }}</li></a>
 
                                             {{ end }}
                                             
@@ -65,7 +65,7 @@
                                         <ul>
                                             {{ range .videos }}
 
-                                            <span class="item-link" style="color:#DB7C61;"><li>{{ .name }}</li></span>
+                                            <a href="{{ .link }}" target="_blank" class="item-link" style="color:#DB7C61;"><li>{{ .name }}</li></a>
 
                                             {{ end }}
                                         </ul>
@@ -78,7 +78,7 @@
                                         <ul>
                                             {{ range .practices }}
 
-                                            <span class="item-link" style="color:#2A9D8F;"><li>{{ .name }}</li></span>
+                                            <a href="{{ .link }}" target="_blank" class="item-link" style="color:#2A9D8F;"><li>{{ .name }}</li></a>
 
                                             {{ end }}
                                             
