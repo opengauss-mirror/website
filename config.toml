@@ -415,7 +415,7 @@ paginate = 10
 
 [[languages.zh.menu.main]]
     identifier = "advanced"
-    name = "知识进阶"
+    name = "学习进阶"
     weight = 20
     url  = "/zh/advanced.html"
     hasChidren = false

@@ -27,7 +27,6 @@
             <div class="container">
                 
 
-                
                 {{ range .Params.modules }}
 
                 <div class="item-frame">
@@ -44,18 +43,21 @@
                                 </div>
                                 <div class="item-desc">{{ .desc }}</div>
                                 <div class="item-detail-frame">
+
+                                    {{ if .docs }}
                                     <div class="item-detail">
                                         <span class="detail-type-title docs-lable"></span>
                                         <ul>
 
                                             {{ range .docs }}
 
-                                            <span><li>{{ .name }}</li></span>
+                                            <span class="item-link" style="color:#4D7DFF;"><li>{{ .name }}</li></span>
 
                                             {{ end }}
                                             
                                         </ul>
                                     </div>
+                                    {{ end }}
 
                                     {{ if .videos }}
                                     <div class="item-detail">
@@ -63,7 +65,7 @@
                                         <ul>
                                             {{ range .videos }}
 
-                                            <span><li>{{ .name }}</li></span>
+                                            <span class="item-link" style="color:#DB7C61;"><li>{{ .name }}</li></span>
 
                                             {{ end }}
                                         </ul>
@@ -76,7 +78,7 @@
                                         <ul>
                                             {{ range .practices }}
 
-                                            <span><li>{{ .name }}</li></span>
+                                            <span class="item-link" style="color:#2A9D8F;"><li>{{ .name }}</li></span>
 
                                             {{ end }}
                                             
@@ -122,12 +124,13 @@
             } else {
                 $itemframe.slideToggle(200);
             }
+
+            var imagedom = $(this).children("img")
+            imagedom.toggleClass("expand-item");
             
             $(".docs-lable").text(docs_label);
             $(".videos-lable").text(video_label);
             $(".practices-lable").text(practice_label);
-            
-            
 
         })
 
