@@ -44,16 +44,16 @@
 
 .panel2-box{
     text-align: center;
-    background: url(../images/图2/浏览器.png) no-repeat top center/cover;
+    
     width: 280px;
     height: 328px;
     padding: 48px 0;
-    margin-bottom:30px;
+    margin-bottom:30px; 
 }
 .panel2-box p{
     font-size: 14px;
     color: #fff;
-    line-height: 26px; 
+    line-height: 30px; 
 }
 .panel2-box p span{
     font-weight: bold;
@@ -116,6 +116,7 @@
 }
 .panel3-box p{
     line-height: 24px;
+    font-size: 14px;
 }
 .panel3-box p span{
     margin: 0 3px;
@@ -450,6 +451,7 @@ img.codeImg{
     z-index: 2;
     bottom: 0;
     display: none;
+    background: url(../images/bg1.png) no-repeat left bottom/cover;
 }
 .videoBg video{
     width: 100%; 
