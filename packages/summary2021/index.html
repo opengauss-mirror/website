@@ -18,7 +18,14 @@
 
 <body> 
     <div class="pc-box" id="pcBox"> </div>
-    <div class="mob-box swiper" id="outer-container"> </div>  
+    <div class="mob-box swiper" id="outer-container"></div>  
+    <div class="videoBg"> 
+        <video class="video" muted="" autoplay="" loop="" playsinline=""><source crossorigin="anonymous" src="./images/bg.mp4" type="video/mp4"></video>
+    </div>
+    <div class="bgmMusic">
+        <img src="./images/bg-music.svg">
+    </div>
+    <audio id="bgm" src="./images/bgm.mp3" autoplay="autoplay" preload loop></audio>
     <script>
         // 适配safair
         function safariHacks() {
@@ -34,14 +41,42 @@
         let container = document.querySelector('#outer-container');
         let pcBox = $('#pcBox'); 
 
+        $(function(){
+            // 播放音乐 
+            var audio = document.getElementById('bgm');
+            
+            // audio.oncanplay=function(){
+                document.addEventListener('pointerup',function(){  
+                    $(".bgmMusic").addClass("active")
+                    audio.play();
+                },true) 
+                $(".bgmMusic").bind("click", function() {
+                    if(audio !== null) {   
+                        if(audio.paused) {
+                            audio.play(); 
+                            $(".bgmMusic").addClass("active")
+                        } else {
+                        
+                            audio.pause();  
+                            $(".bgmMusic").removeClass("active")
+                        }
+                    }
+                })     
+            // }
+            
+
+        })
+
         // 获取数据
-        // axios.get('/oauth2/userinfo').then(res => {
-        //     return getData(res.data.user)
-        // })
+        axios.get('/oauth2/userinfo').then(res => {
+            return getData(res.data.user)
+        }).catch(err => { 
+            console.log(err);
+        })
 
         function getData() {
             let data = []
-            axios.get('https://omapi.osinfra.cn/query/newYear/2022?community=openeuler&user=georgecao').then(res => {
+            axios.get(`https://omapi.osinfra.cn/query/newYear/2022?community=opengauss&user=${user}`).then(res => { 
                 data = res.data.data[0]; 
                 let percentage = parseFloat(data.beat_percentage) * 100;
 
@@ -79,10 +114,12 @@
                     swiper.swipeNext()
                 })
 
+                
+
 
             })
         }
-        getData()
+        // getData()
 
         function timeChange(time) {
             if (time) {

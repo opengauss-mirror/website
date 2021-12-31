@@ -439,3 +439,61 @@ img.codeImg{
     margin-top: 10px;
 }
 
+
+
+
+.videoBg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    bottom: 0;
+    display: none;
+}
+.videoBg video{
+    width: 100%; 
+}
+.bgmMusic{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    display: none;
+    z-index: 9999;
+    transition: all .3s;
+}
+.bgmMusic img{
+    width: 100%;
+}
+.bgmMusic.active{
+    animation: rotate360 3s infinite linear;
+}
+@keyframes rotate360 {
+    0% {
+        transform: rotate(0) ;
+    } 
+    100% { 
+        transform: rotate(360deg);
+    }
+}
+
+
+@media (max-width:768px){
+    body{
+        background: var(--ui-color);
+    }
+    .mob-box,.page{
+        background: none !important;
+    }
+    .mob-box .page-one .text-box{
+        padding-top: 120px;
+    }
+    .videoBg{
+        display: block;
+    }  
+    .bgmMusic{
+        display: block;
+    }
+} 
