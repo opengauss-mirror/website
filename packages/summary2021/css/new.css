@@ -486,9 +486,13 @@ img.codeImg{
     }
     .mob-box,.page{
         background: none !important;
+        font-size: 14px;
     }
     .mob-box .page-one .text-box{
         padding-top: 120px;
+    }
+    .mob-box .page-five{
+        padding-bottom: 175px;
     }
     .videoBg{
         display: block;
