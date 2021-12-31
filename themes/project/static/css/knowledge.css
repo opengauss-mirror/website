@@ -101,3 +101,75 @@
 .bg-color3 {
     background: #d7c0f9;
 }
+
+.type-title {
+    font-size: 30px;
+    font-family: FZLTHJW--GB1-0, FZLTHJW--GB1;
+    font-weight: normal;
+    color: #000000;
+    padding: 20px 0 20px 0;
+}
+
+.step-item {
+    margin-right: 2%;
+    position: absolute;
+    width: 18%;
+    bottom: 0;
+}
+.step-container {
+    box-shadow: 0px 6px 30px 0px #ccc;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.step-title {
+    position: absolute;
+    bottom: -40px;
+    text-align: center;
+    margin: 0;
+    font-size: 20px;
+    font-family: FZLTHJW--GB1-0, FZLTHJW--GB1;
+    font-weight: normal;
+    color: #000000;
+    width: 100%;
+}
+
+.step-container li {
+    list-style-type: disc;
+    margin: 10px 20px;
+}
+.step-container li:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.step-h-con0 {
+    min-height: 100px;
+}
+.step-h-con1 {
+    min-height: 120px;
+}
+.step-h-con2 {
+    min-height: 140px;
+}
+.step-h-con3 {
+    min-height: 160px;
+}
+.step-h-con4 {
+    min-height: 180px;
+}
+
+.step-l-con1 {
+    margin-left: 20%;
+}
+.step-l-con2 {
+    margin-left: 40%;
+}
+.step-l-con3 {
+    margin-left: 60%;
+}
+.step-l-con4 {
+    margin-left: 80%;
+}
