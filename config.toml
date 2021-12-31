@@ -400,11 +400,26 @@ paginate = 10
     parent = "code"
 
 [[languages.zh.menu.main]]
-    identifier = "knowledge"
+    identifier = "knowledgemain"
     name = "知识"
     weight = 18
+    hasChidren = true
+
+[[languages.zh.menu.main]]
+    identifier = "knowledge"
+    name = "知识图谱"
+    weight = 19
     url  = "/zh/knowledge.html"
     hasChidren = false
+    parent = "knowledgemain"
+
+[[languages.zh.menu.main]]
+    identifier = "advanced"
+    name = "学习进阶"
+    weight = 20
+    url  = "/zh/advanced.html"
+    hasChidren = false
+    parent = "knowledgemain"
 
 #[[languages.zh.menu.main]]
 #    identifier = "forum"
