@@ -44,16 +44,15 @@
         $(function(){
             // 播放音乐 
             var audio = document.getElementById('bgm');
-            var video = document.getElementById('video');
+            var video = document.getElementById('video'); 
             let isVideo = true 
-            document.addEventListener('pointerup',function(){  
+            container.addEventListener('pointerup',function(){  
                 if(isVideo){
                     $(".bgmMusic").addClass("active")
                     audio.play();
                     video.play();
                     isVideo = false
-                }
-                
+                } 
             },true) 
             $(".bgmMusic").bind("click", function() {
                 if(audio !== null) {   
