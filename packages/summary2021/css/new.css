@@ -492,6 +492,12 @@ img.codeImg{
     .mob-box .page-one .text-box{
         padding-top: 120px;
     }
+    .no-contribution .mob-box .page-one{
+        justify-content: center;
+    }
+    .no-contribution .mob-box .page-one .text-box{
+        padding-top: 20px;
+    }
     .mob-box .page-five{
         padding-bottom: 175px;
     }

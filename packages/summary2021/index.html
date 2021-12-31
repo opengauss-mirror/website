@@ -82,13 +82,13 @@
 
         // 获取数据
         var isDataContribution = false
-        axios.get('/2021summary/oauth2/userinfo').then(res => {
-            return getData(res.data.user)
-        }).catch(err => { 
-            console.log(err);
-            isDataContribution = true 
-        })
-        // getData('georgecao')
+        // axios.get('/2021summary/oauth2/userinfo').then(res => {
+        //     return getData(res.data.user)
+        // }).catch(err => { 
+        //     console.log(err);
+        //     isDataContribution = true 
+        // })
+         getData('xx')
         function getData(user) {
             let data = []
             axios.get(`https://omapi.osinfra.cn/query/newYear/2022?community=opengauss&user=${user}`).then(res => { 
