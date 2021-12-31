@@ -238,7 +238,7 @@ body {
         display:-webkit-inline-box!important;
         display: -ms-inline-flexbox!important;
         display: inline-flex!important;
-        background-size: contain;
+        background-size: cover; 
         -webkit-box-flex: 1;
         -ms-flex: 1;
         flex: 1
@@ -1490,6 +1490,7 @@ footer .foot {
     left:2%;
     bottom: 8% ;
     z-index: 99;
+    width: 150px;
 }
 .home-questionnaire .closed{
     position: absolute;
@@ -1504,9 +1505,7 @@ footer .foot {
 .home-questionnaire.visited{
     display: none;
 }
-
-
-
+.home-questionnaire img{width: 100%;}
 
 @media screen and (max-width: 1400px){
     .home-questionnaire img{
@@ -1518,18 +1517,13 @@ footer .foot {
     .read-cookie { 
         height: unset;
     }
-    .home-questionnaire img{
-        width: 120px;
+    .home-questionnaire{
+        display: none;
     }
      
 }
 @media screen and (max-width: 700px){ 
-    .home-questionnaire .closed{
-        top: -10px;
-        right: -10px;
-        width:24px; 
-        height:24px; 
-    }
+     
 }
 
  

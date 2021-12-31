@@ -35,7 +35,7 @@ $(document).ready(function () {
         video.load();
     };
 
-    $('#video-player').click(function () {
+    $('#video-player').click(function () { 
         videoPlay(url);
         $('.video-remove').show();
     });

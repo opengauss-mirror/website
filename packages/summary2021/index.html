@@ -20,7 +20,7 @@
     <div class="pc-box" id="pcBox"> </div>
     <div class="mob-box swiper" id="outer-container"></div>  
     <div class="videoBg"> 
-        <video class="video" muted="" autoplay="" loop="" playsinline=""><source crossorigin="anonymous" src="./images/bg.mp4" type="video/mp4"></video>
+        <video id="video" muted="" autoplay="" loop="" playsinline=""><source crossorigin="anonymous" src="./images/bg.mp4" type="video/mp4"></video>
     </div>
     <div class="bgmMusic">
         <img src="./images/bg-music.svg">
@@ -44,34 +44,40 @@
         $(function(){
             // 播放音乐 
             var audio = document.getElementById('bgm');
-            
-            // audio.oncanplay=function(){
-                document.addEventListener('pointerup',function(){  
+            var video = document.getElementById('video');
+            let isVideo = true 
+            document.addEventListener('pointerup',function(){  
+                if(isVideo){
                     $(".bgmMusic").addClass("active")
                     audio.play();
-                },true) 
-                $(".bgmMusic").bind("click", function() {
-                    if(audio !== null) {   
-                        if(audio.paused) {
-                            audio.play(); 
-                            $(".bgmMusic").addClass("active")
-                        } else {
-                        
-                            audio.pause();  
-                            $(".bgmMusic").removeClass("active")
-                        }
+                    video.play();
+                    isVideo = false
+                }
+                
+            },true) 
+            $(".bgmMusic").bind("click", function() {
+                if(audio !== null) {   
+                    if(audio.paused) {
+                        audio.play(); 
+                        $(".bgmMusic").addClass("active")
+                    } else { 
+                        audio.pause();  
+                        $(".bgmMusic").removeClass("active")
                     }
-                })     
-            // }
+                }
+            })     
+            
             
 
         })
 
         // 获取数据
+        var isDataContribution = false
         axios.get('/2021summary/oauth2/userinfo').then(res => {
             return getData(res.data.user)
         }).catch(err => { 
             console.log(err);
+            isDataContribution = true 
         })
 
         function getData(user) {
@@ -96,7 +102,7 @@
                 let isPcContribution = false,
                     isH5Contribution = false;
                     //first_time_of_be_comment
-                if(data.first_time_of_enter == '' || data.user_login == ''){
+                if(isDataContribution){
                     pcBox.addClass('no-contribution').empty().html(pcDomNoData) ;
                     isPcContribution = true;
                     isH5Contribution = true;
@@ -111,7 +117,8 @@
 
                 let buttonNext = document.querySelector('.buttonNext');
                 buttonNext.addEventListener("touchend", function () {  
-                    swiper.swipeNext()
+                    swiper.swipeNext();
+                    video.play();
                 })
  
             })
@@ -227,10 +234,8 @@
                                                     let dom =''
                                                     if(data.first_time_of_submit_issue != ''){
                                                         dom = dom+ `<p class='fade fade-time-1'>${timeChange(data.first_time_of_submit_issue)}，你提出了第一个Issue</p>`
-                                                    } else{
-                                                        dom = dom +`<p class='fade fade-time-1'>躲起来的星星也在努力发光，在openGauss星球已经很久不见你</p> `
-                                                    }
-                                                    
+                                                    }  
+
                                                     if(data.first_time_of_submit_pr != ''){
                                                         dom = dom+ `<p class='fade fade-time-2'>${timeChange(data.first_time_of_submit_pr)}，你提交了第一个PR</p>`
                                                     } else{ 
