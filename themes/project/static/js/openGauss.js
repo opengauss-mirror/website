@@ -172,6 +172,20 @@ $(document).ready(function() {
 
   questionnaireCloseCookie();
 
-  
+  const summaryTipsCloseCookie = function () {
+    var hasCookie = getCookie('isSummary=');
+    if (hasCookie) {
+      $('.summaryTips').addClass('visited');
+    } else {
+      $('.summaryTips').removeClass('visited');
+    }
+
+    $('.summaryTips .closed').on('click', function (event) {
+      event.preventDefault(); 
+      setCookie('isSummary', 'read');
+      $('.summaryTips').addClass('visited');
+    }); 
+  }; 
+  summaryTipsCloseCookie();  
 
 })
