@@ -74,7 +74,7 @@
             console.log(err);
         })
 
-        function getData() {
+        function getData(user) {
             let data = []
             axios.get(`https://omapi.osinfra.cn/query/newYear/2022?community=opengauss&user=${user}`).then(res => { 
                 data = res.data.data[0]; 
@@ -113,10 +113,7 @@
                 buttonNext.addEventListener("touchend", function () {  
                     swiper.swipeNext()
                 })
-
-                
-
-
+ 
             })
         }
         // getData()
