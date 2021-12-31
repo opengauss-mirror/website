@@ -88,14 +88,15 @@
             console.log(err);
             isDataContribution = true 
         })
-
+        // getData('georgecao')
         function getData(user) {
             let data = []
             axios.get(`https://omapi.osinfra.cn/query/newYear/2022?community=opengauss&user=${user}`).then(res => { 
+                let percentage = 0;
                 if(res.data.data[0]){
                     isDataContribution = false
                     data = res.data.data[0];   
-                    let percentage = parseFloat(data.beat_percentage) * 100;
+                    percentage = parseFloat(data.beat_percentage) * 100;
                 }else{
                     isDataContribution = true
                 } 
@@ -125,7 +126,7 @@
                     isPcContribution = false;
                     isH5Contribution = false; 
                 }
-
+                console.log(percentage)
                 intaPc(data, percentage,isPcContribution);
                 intaSwiper(data, percentage, isH5Contribution); 
 
@@ -136,8 +137,7 @@
                 })
  
             })
-        }
-        // getData()
+        } 
 
         function timeChange(time) {
             if (time) {
@@ -324,7 +324,7 @@
                                         <p class="mb12"> 在这一年里，<br> 
                                             你的贡献度在openGauss星球排名超过<span class="fb cOrange">${percentage} %</span>的人，<br>恭喜解锁你在openGauss星球新身份 </p> 
                                         ${(function(){
-                                            let dom ='' 
+                                            let dom ='' ;
                                                 if(percentage<25 ){
                                                     dom = dom+  ` 
                                                         <div class="code-box"> 
@@ -341,14 +341,14 @@
                                                         </div> 
                                                     `    
                                                 }
-                                                if(percentage>50 && percentage<75 ){
+                                                if(percentage >50 && percentage<75 ){
                                                     dom = dom+  ` 
                                                         <div class="code-box"> 
                                                             <p class="fb fz14">Level 3<br> 次25%- 初露锋芒，你的闪亮照亮了openGauss。</p>
                                                             <img src="./images/Level3@2x.png" alt="">
                                                         </div>  `    
                                                 }
-                                                if(percentage>75){
+                                                if(percentage =>75){
                                                     dom = dom+  ` 
                                                         <div class="code-box"> 
                                                             <p class="fb fz14">Level 4 <br>前25%- 达人现身，你的身份藏不住了。</p>
@@ -580,7 +580,7 @@
                                                 <img src="./images/Level3@2x.png" alt="">
                                             </div>  `    
                                     }
-                                    if(percentage>75){
+                                    if(percentage =>75){
                                         dom = dom+ ` 
                                             <div class="code-box"> 
                                                 <p class="fb fz14">Level 4 <br>前25%- 达人现身，你的身份藏不住了。</p>

@@ -55,8 +55,7 @@
     color: #fff;
     line-height: 30px; 
 }
-.panel2-box p span{
-    font-weight: bold;
+.panel2-box p span{ 
     margin: 0 3px;
 }
 .cGreen{color: var(--ui-green);}
