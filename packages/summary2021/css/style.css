@@ -8,7 +8,7 @@ body,
     /*給 Safari 以外的瀏覽器讀取*/
     height: calc(var(--vh, 1vh) * 100);
     text-align: center;
-    font-size: 12px; 
+    font-size: 14px; 
     color: white;
     position: relative;
     line-height: 21px;
@@ -183,6 +183,7 @@ section .person {
 .page-tow .text-box {
     position: relative;
     padding: 40px 10px 0; 
+    font-size: 14px;
     
 }
 .ani1{
@@ -737,7 +738,7 @@ section .person {
     padding-top: 45px;
     height: 100%;
     color: black;
-    font-size: 12px;
+    font-size: 14px;
     z-index: 99;
 }
 

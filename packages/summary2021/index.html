@@ -27,6 +27,16 @@
     </div>
     <audio id="bgm" src="./images/bgm.mp3" autoplay="autoplay" preload loop></audio>
     <script>
+
+    var _hmt = _hmt || [];
+        (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?ace49cc6c2f3d0542e97ce86732094dc";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+
+
         // 适配safair
         function safariHacks() {
             let windowsVH = window.innerHeight / 100;
@@ -46,7 +56,7 @@
             var audio = document.getElementById('bgm');
             var video = document.getElementById('video'); 
             let isVideo = true 
-            container.addEventListener('pointerup',function(){  
+            container.addEventListener('pointerup',function(){   
                 if(isVideo){
                     $(".bgmMusic").addClass("active")
                     audio.play();
@@ -82,9 +92,14 @@
         function getData(user) {
             let data = []
             axios.get(`https://omapi.osinfra.cn/query/newYear/2022?community=opengauss&user=${user}`).then(res => { 
-                data = res.data.data[0]; 
-                let percentage = parseFloat(data.beat_percentage) * 100;
-
+                if(res.data.data[0]){
+                    isDataContribution = false
+                    data = res.data.data[0];   
+                    let percentage = parseFloat(data.beat_percentage) * 100;
+                }else{
+                    isDataContribution = true
+                } 
+                
                 let pcDom = `
                     <div class="container box-one"><div class="front"></div><div class="back"></div></div>
                     <div class="container box-tow"><div class="front"></div><div class="back"></div></div>
@@ -96,7 +111,7 @@
                     <div class="container box-1"><div class="front"></div><div class="back"></div></div> 
                     <div class="container box-2"><div class="front"></div><div class="back"></div></div>
                 `; 
-
+  
                 //isPcContribution \ isH5Contribution 判断有无贡献 
                 let isPcContribution = false,
                     isH5Contribution = false;
@@ -232,30 +247,30 @@
                                                 ${(function(){
                                                     let dom =''
                                                     if(data.first_time_of_submit_issue != ''){
-                                                        dom = dom+ `<p class='fade fade-time-1'>${timeChange(data.first_time_of_submit_issue)}，你提出了第一个Issue</p>`
+                                                        dom = dom+ `<p class='fade fade-time-1'><span class='cOrange'>${timeChange(data.first_time_of_submit_issue)}</span>，你提出了第一个Issue</p>`
                                                     }  
 
                                                     if(data.first_time_of_submit_pr != ''){
-                                                        dom = dom+ `<p class='fade fade-time-2'>${timeChange(data.first_time_of_submit_pr)}，你提交了第一个PR</p>`
+                                                        dom = dom+ `<p class='fade fade-time-2'><span class='cOrange'>${timeChange(data.first_time_of_submit_pr)}</span>，你提交了第一个PR</p>`
                                                     } else{ 
                                                         dom = dom+ `<p class='fade fade-time-2'>期待在2022年，也能收到你的第一个PR</p> `
                                                     }
                                                      if(data.first_time_of_star != ''){
-                                                        dom = dom+ `<p class='fade fade-time-3'>${data.first_time_of_star}，你第一次点亮了我的仓库，那时你应该对我是心动了吧.</p> `
+                                                        dom = dom+ `<p class='fade fade-time-3'><span class='cOrange'>${data.first_time_of_star}</span>，你第一次点亮了我的仓库，那时你应该对我是心动了吧.</p> `
                                                     }else{
                                                         dom = dom+ `<p class='fade fade-time-3'>或许某天，你也会来点亮我的仓库 </p>`
                                                     }
                                                     
                                                     if(data.first_user_login_of_be_comment != ''){
-                                                        dom = dom+ ` <p class='fade fade-time-4'>还记得${data.first_user_login_of_be_comment}吗？那是第一个给你评论的朋友，让你倍感激励</p>  `
+                                                        dom = dom+ ` <p class='fade fade-time-4'>还记得<span class='cOrange'>${data.first_user_login_of_be_comment}</span>吗？那是第一个给你评论的朋友，让你倍感激励</p>  `
                                                     } 
 
                                                     if(data.first_user_login_of_comment != ''){
-                                                        dom = dom+ ` <p class='fade fade-time-5'>于是，你传递了这份温暖在${data.first_user_login_of_comment}发表了第一次留言</p>  `
+                                                        dom = dom+ ` <p class='fade fade-time-5'>于是，你传递了这份温暖在<span class='cOrange'>${data.first_user_login_of_comment}</span>发表了第一次留言</p>  `
                                                     } 
 
                                                     if(data.user_login_with_most_contact != ''){
-                                                        dom = dom+ ` <p class='fade fade-time-6'>相信你一定也从${data.user_login_with_most_contact}学到很多吧 这是与你联系最多的朋友</p>`
+                                                        dom = dom+ ` <p class='fade fade-time-6'>相信你一定也从<span class='cOrange'>${data.user_login_with_most_contact}</span>学到很多吧 这是与你联系最多的朋友</p>`
                                                     } 
                                                     return dom; 
                                                 })()}  
@@ -271,26 +286,26 @@
                                                 <p class="fade fade-time-1">我会一直期待并且收集那些在openGauss星球</p>
                                                 <p class="fade fade-time-2">关于你的光亮</p>
                                                 <p class="fade fade-time-3">2022年， 你在这期间</p>
-                                                <p class="mb20 cOrange fz14 fade fade-time-4">
+                                                <p class="mb20  fz14 fade fade-time-4">
                                                     ${(function(){
                                                         let dom =''
-                                                        if(data.code_lines != '' || data.code_lines != '0'){
-                                                            dom = dom+ `贡献了${data.code_lines}行代码<br>`
+                                                        if(data.code_lines != '0'){
+                                                            dom = dom+ `贡献了<span class='cOrange'>${data.code_lines}</span>行代码<br>`
                                                         }
-                                                         if(data.pr_num != '' || data.pr_num != '0'){
-                                                            dom = dom+ `提交了${data.pr_num }个PR<br>`
+                                                         if(data.pr_num != '0'){
+                                                            dom = dom+ `提交了<span class='cOrange'>${data.pr_num }</span>个PR<br>`
                                                         }
-                                                         if(data.issue_num != '' || data.issue_num != '0'){
-                                                            dom = dom+ `提出了${data.issue_num }个issue<br>`
+                                                        if(data.issue_num != '0'){
+                                                            dom = dom+ `提出了<span class='cOrange'>${data.issue_num }</span>个issue<br>`
                                                         } 
-                                                         if (data.star_num != '' || data.star_num != '0'){
-                                                            dom = dom+ `Star了${data.star_num}个代码仓库<br>`
+                                                        if ( data.star_num != '0'){
+                                                            dom = dom+ `Star了<span class='cOrange'>${data.star_num}</span>个代码仓库<br>`
                                                         }
-                                                        if(data.fork_num != '' || data.fork_num != '0'){
-                                                            dom = dom+ `Fork了${data.fork_num}个代码仓库<br>`
+                                                        if( data.fork_num != '0'){
+                                                            dom = dom+ `Fork了<span class='cOrange'>${data.fork_num}</span>个代码仓库<br>`
                                                         }
-                                                        if(data.watch_num != '' || data.watch_num != '0'){
-                                                            dom = dom+ `Watch了${data.watch_num}个代码仓库`
+                                                        if(data.watch_num != '0'){
+                                                            dom = dom+ `Watch了<span class='cOrange'>${data.watch_num}</span>个代码仓库`
                                                         }
                                                         return dom ;
                                                     })()} 
@@ -307,7 +322,7 @@
                                         <div class="panel3-box">  
                                             <p class="cOrange fz16 mb10 ">Dear ${data.user_login}</p>
                                         <p class="mb12"> 在这一年里，<br> 
-                                            你的贡献度在openGauss星球排名超过<span class="fb fz14 cOrange">${percentage} %</span>的人，<br>恭喜解锁你在openGauss星球新身份 </p> 
+                                            你的贡献度在openGauss星球排名超过<span class="fb cOrange">${percentage} %</span>的人，<br>恭喜解锁你在openGauss星球新身份 </p> 
                                         ${(function(){
                                             let dom ='' 
                                                 if(percentage<25 ){
@@ -468,36 +483,32 @@
                                     let dom= ''; 
                                     if(data.first_time_of_submit_issue != ''){
                                         dom = dom+  `
-                                        <p class='fade fade-time-1'>${timeChange(data.first_time_of_submit_issue)}，你提出了第一个Issue</p>  `
-                                    } else{
-                                        dom = dom+  `
-                                        <p class='fade fade-time-1'>躲起来的星星也在努力发光，在openGauss星球已经很久不见你</p> `
-                                    }
-                                    
+                                        <p class='fade fade-time-1'><span class='cOrange'>${timeChange(data.first_time_of_submit_issue)}</span>，你提出了第一个Issue</p>  `
+                                    }  
                                     if(data.first_time_of_submit_pr != ''){
-                                        dom = dom+ `<p class='fade fade-time-2'>${timeChange(data.first_time_of_submit_pr)}，你提交了第一个PR</p>`
+                                        dom = dom+ `<p class='fade fade-time-2'><span class='cOrange'>${timeChange(data.first_time_of_submit_pr)}</span>，你提交了第一个PR</p>`
                                     } else{ 
                                         dom = dom+ `<p class='fade fade-time-2'>期待在2022年，也能收到你的第一个PR</p> `
                                     }
-                                        if(data.first_time_of_star != ''){
-                                        dom = dom+ `<p class='fade fade-time-3'>${timeChange(data.first_time_of_star)}，你第一次点亮了我的仓库，那时你应该对我是心动了吧.</p> `
+                                    if(data.first_time_of_star != ''){
+                                        dom = dom+ `<p class='fade fade-time-3'><span class='cOrange'>${timeChange(data.first_time_of_star)}</span>，你第一次点亮了我的仓库，那时你应该对我是心动了吧.</p> `
                                     }else{
                                         dom = dom+ `<p class='fade fade-time-3'>或许某天，你也会来点亮我的仓库 </p>`
                                     }
                                     
                                     if(data.first_user_login_of_be_comment != ''){
-                                        dom = dom+ ` <p class='fade fade-time-4'>还记得${data.first_user_login_of_be_comment}吗？那是第一个给你评论的朋友，让你倍感激励</p>  `
+                                        dom = dom+ ` <p class='fade fade-time-4'>还记得<span class='cOrange'>${data.first_user_login_of_be_comment}</span>吗？那是第一个给你评论的朋友，让你倍感激励</p>  `
                                     } 
 
                                     if(data.first_user_login_of_comment != ''){
-                                        dom = dom+ ` <p class='fade fade-time-5'>于是，你传递了这份温暖在${data.first_user_login_of_comment}发表了第一次留言</p>  `
+                                        dom = dom+ ` <p class='fade fade-time-5'>于是，你传递了这份温暖在<span class='cOrange'>${data.first_user_login_of_comment}</span>发表了第一次留言</p>  `
                                     } 
 
                                     if(data.user_login_with_most_contact != ''){
-                                        dom = dom+ ` <p class='fade fade-time-6'>相信你一定也从${data.user_login_with_most_contact}学到很多吧 这是与你联系最多的朋友</p>`
+                                        dom = dom+ ` <p class='fade fade-time-6'>相信你一定也从<span class='cOrange'>${data.user_login_with_most_contact}</span>学到很多吧 这是与你联系最多的朋友</p>`
                                     }  
                                     return dom;
-                                })()}  
+                                })()}
                                 
                                 <p class='fade fade-time-7'>希望2022年的你，能够在这里收获更多</p>
                         </div>
@@ -509,26 +520,26 @@
                                 <p class="fade fade-time-1">我会一直期待并且收集那些在openGauss星球</p>
                                 <p class="fade fade-time-2">关于你的光亮</p>
                                 <p class="fade fade-time-3">2022年， 你在这期间</p>
-                                <p class="mb20 cOrange fz14 fade fade-time-4"> 
+                                <p class="mb20 fade fade-time-4"> 
                                     ${(function(){
                                         let dom =''
-                                        if(data.code_lines != '' || data.code_lines != '0'){
-                                            dom = dom+ `贡献了${data.code_lines}行代码<br>`
+                                        if(data.code_lines != '0'){
+                                            dom = dom+ `贡献了<span class='cOrange'>${data.code_lines}</span>行代码<br>`
                                         }
-                                            if(data.pr_num != '' || data.pr_num != '0'){
-                                            dom = dom+ `提交了${data.pr_num }个PR<br>`
+                                            if(data.pr_num != '0'){
+                                            dom = dom+ `提交了<span class='cOrange'>${data.pr_num }</span>个PR<br>`
                                         }
-                                            if(data.issue_num != '' || data.issue_num != '0'){
-                                            dom = dom+ `提出了${data.issue_num }个issue<br>`
+                                        if(data.issue_num != '0'){
+                                            dom = dom+ `提出了<span class='cOrange'>${data.issue_num }</span>个issue<br>`
                                         } 
-                                            if (data.star_num != '' || data.star_num != '0'){
-                                            dom = dom+ `Star了${data.star_num}个代码仓库<br>`
+                                        if ( data.star_num != '0'){
+                                            dom = dom+ `Star了<span class='cOrange'>${data.star_num}</span>个代码仓库<br>`
                                         }
-                                        if(data.fork_num != '' || data.fork_num != '0'){
-                                            dom = dom+ `Fork了${data.fork_num}个代码仓库<br>`
+                                        if( data.fork_num != '0'){
+                                            dom = dom+ `Fork了<span class='cOrange'>${data.fork_num}</span>个代码仓库<br>`
                                         }
-                                        if(data.watch_num != '' || data.watch_num != '0'){
-                                            dom = dom+ `Watch了${data.watch_num}个代码仓库`
+                                        if(data.watch_num != '0'){
+                                            dom = dom+ `Watch了<span class='cOrange'>${data.watch_num}</span>个代码仓库`
                                         }
                                         return dom ;
                                     })()}
