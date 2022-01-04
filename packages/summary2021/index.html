@@ -88,7 +88,7 @@
             console.log(err);
             isDataContribution = true 
         })
-        // getData('georgecao')
+        //  getData('georgecao')
         function getData(user) {
             let data = []
             axios.get(`https://omapi.osinfra.cn/query/newYear/2022?community=opengauss&user=${user}`).then(res => { 
@@ -117,6 +117,7 @@
                 let isPcContribution = false,
                     isH5Contribution = false;
                     //first_time_of_be_comment
+                 
                 if(isDataContribution){
                     pcBox.addClass('no-contribution').empty().html(pcDomNoData) ;
                     isPcContribution = true;
@@ -126,7 +127,7 @@
                     isPcContribution = false;
                     isH5Contribution = false; 
                 }
-                console.log(percentage)
+                // console.log(percentage)
                 intaPc(data, percentage,isPcContribution);
                 intaSwiper(data, percentage, isH5Contribution); 
 
@@ -175,8 +176,8 @@
                                                     <p class="one-text">并成功发行<span class='fz14 cOrange'>12</span>个商业发行版</p>
                                                     <p class="one-text ">吸引了超过<span class='fz14 cOrange'>100</span>家企业加入社区</p>
                                                     <p class="one-text">走进<span class='fz14 cOrange'>72</span>所高校</p>
-                                                    <p class="one-text ">与志同道合的“他”建立了<span class='fz14 cOrange'>20个</span>SIG</p>
-                                                    <p class="one-text">成立了社区理事会、举办了openGauss <span class='fz14 cOrange'>第1次</span>Summit</p> 
+                                                    <p class="one-text ">与志同道合的“他”建立了<span class='fz14 cOrange'>20</span>个SIG</p>
+                                                    <p class="one-text">成立了社区理事会、举办了openGauss<span class='fz14 cOrange'>第1次</span>Summit</p> 
                                                     <p>......</p>
                                                 </div>
                                             </div>
@@ -230,8 +231,8 @@
                                                     <p class="one-text">并成功发行<span class='fz14 cOrange'>12</span>个商业发行版</p>
                                                     <p class="one-text ">吸引了超过<span class='fz14 cOrange'>100</span>家企业加入社区</p>
                                                     <p class="one-text">走进<span class='fz14 cOrange'>72</span>所高校</p>
-                                                    <p class="one-text ">与志同道合的“他”建立了<span class='fz14 cOrange'>20个</span>SIG</p>
-                                                    <p class="one-text">成立了社区理事会、举办了openGauss <span class='fz14 cOrange'>第1次</span>Summit</p> 
+                                                    <p class="one-text ">与志同道合的“他”建立了<span class='fz14 cOrange'>20</span>SIG个</p>
+                                                    <p class="one-text">成立了社区理事会、举办了openGauss<span class='fz14 cOrange'>第1次</span>Summit</p> 
                                                     <p>......</p>
                                                 </div>
                                             </div>
@@ -243,7 +244,7 @@
                         list[1] = `<div class="contents">
                                         <div class="page page-three">  
                                             <div class="panel2-box">  
-                                                <p class="fz14" style="opacity:.5">我更记得那些关于你的故事</p>
+                                                <p class="fz14">我更记得那些关于你的故事</p>
                                                 ${(function(){
                                                     let dom =''
                                                     if(data.first_time_of_submit_issue != ''){
@@ -322,7 +323,7 @@
                                         <div class="panel3-box">  
                                             <p class="cOrange fz16 mb10 ">Dear ${data.user_login}</p>
                                         <p class="mb12"> 在这一年里，<br> 
-                                            你的贡献度在openGauss星球排名超过<span class="fb cOrange">${percentage} %</span>的人，<br>恭喜解锁你在openGauss星球新身份 </p> 
+                                            你的贡献度在openGauss星球排名超过<span class="fb cOrange">${percentage}%</span>的人，<br>恭喜解锁你在openGauss星球新身份 </p> 
                                         ${(function(){
                                             let dom ='' ;
                                                 if(percentage<25 ){
@@ -336,7 +337,7 @@
                                                  if(percentage>25 && percentage<50 ){
                                                     dom = ` 
                                                         <div class="code-box"> 
-                                                            <p class="fz14">Level 2<br> 再次25%-牛刀小试，你的贡献不可或缺。</p>
+                                                            <p class="fz14">Level 2<br> 再次25% - 牛刀小试，你的贡献不可或缺。</p>
                                                             <img src="./images/Level2@2x.png" alt="">
                                                         </div> 
                                                     `    
@@ -344,14 +345,14 @@
                                                 if(percentage >50 && percentage<75 ){
                                                     dom = ` 
                                                         <div class="code-box"> 
-                                                            <p class="fb fz14">Level 3<br> 次25%- 初露锋芒，你的闪亮照亮了openGauss。</p>
+                                                            <p class="fb fz14">Level 3<br> 次25% - 初露锋芒，你的闪亮照亮了openGauss。</p>
                                                             <img src="./images/Level3@2x.png" alt="">
                                                         </div>  `    
                                                 }
                                                 if(percentage =>75){
                                                     dom = ` 
                                                         <div class="code-box"> 
-                                                            <p class="fb fz14">Level 4 <br>前25%- 达人现身，你的身份藏不住了。</p>
+                                                            <p class="fb fz14">Level 4 <br>前25% - 达人现身，你的身份藏不住了。</p>
                                                             <img src="./images/Level4@2x.png" alt="">
                                                         </div> 
                                                     `   
@@ -405,7 +406,7 @@
                     `
                 }, {
                     content: ` 
-                    <div class="page page-one"> 
+                    <div class="page page-two"> 
                         <div class="text-box"> 
                             <div class="ani1">
                                 <img src="./images/logo.png" class='logo' alt="">
@@ -422,7 +423,7 @@
                                 <p class="one-text ">并成功发行<span class='fz14 cOrange'>12</span>个商业发行版</p>
                                 <p class="one-text ">吸引了超过<span class='fz14 cOrange'>100</span>家企业加入社区</p>
                                 <p class="one-text">走进<span class='fz14 cOrange'>72</span>所高校</p>
-                                <p class="one-text mb12">建立了<span class='fz14 cOrange'>20个</span>SIG</p>  
+                                <p class="one-text mb12">建立了<span class='fz14 cOrange'>20</span>个SIG</p>  
                                 <p class="one-text">我们坚信我们走在璀璨的星河里</p> 
                                 <p class="one-text">希望未来能够有你一起同行</p> 
                                 <p>元旦快乐。</p>
@@ -462,8 +463,8 @@
                             <p class="one-text">并成功发行<span class='fz14 cOrange'>12</span>个商业发行版</p>
                             <p class="one-text ">吸引了超过<span class='fz14 cOrange'>100</span>家企业加入社区</p>
                             <p class="one-text">走进<span class='fz14 cOrange'>72</span>所高校</p>
-                            <p class="one-text ">与志同道合的“他”建立了<span class='fz14 cOrange'>20个</span>SIG</p>
-                            <p class="one-text">成立了社区理事会、举办了openGauss <span class='fz14 cOrange'>第1次</span>Summit</p> 
+                            <p class="one-text ">与志同道合的“他”建立了<span class='fz14 cOrange'>20</span>个SIG</p>
+                            <p class="one-text">成立了社区理事会、举办了openGauss<span class='fz14 cOrange'>第1次</span>Summit</p> 
                             <p>......</p>
                         </div> 
                         <div class="ani2">
@@ -474,7 +475,7 @@
                 }, {
                     content: `
                     <div class="page page-three">
-                            <p class="fz14 mb12" style="opacity:.7">我更记得那些关于你的故事</p>
+                            <p class="fz14 mb12">我更记得那些关于你的故事</p>
                                 ${(function(){ 
                                     let dom= ''; 
                                     if(data.first_time_of_submit_issue != ''){
@@ -550,7 +551,7 @@
                             <div class="panel3-box">   
                             <p class="cOrange fz16 mb10 ">Dear ${data.user_login}</p>
                             <p class="mb12"> 在这一年里，<br> 
-                                你的贡献度在openGauss星球排名超过<span class="fb fz14 cOrange">${percentage} %</span>的人，<br>恭喜解锁你在openGauss星球新身份 </p> 
+                                你的贡献度在openGauss星球排名超过<span class="fb fz14 cOrange">${percentage}%</span>的人，<br>恭喜解锁你在openGauss星球新身份 </p> 
                             ${(function(){
                                 let dom=''; 
                                     if(percentage<25 ){
@@ -564,7 +565,7 @@
                                      if(percentage>25 && percentage<50 ){
                                         dom = dom+ ` 
                                             <div class="code-box"> 
-                                                <p class="fz14">Level 2<br> 再次25%-牛刀小试，你的贡献不可或缺。</p>
+                                                <p class="fz14">Level 2<br> 再次25% - 牛刀小试，你的贡献不可或缺。</p>
                                                 <img src="./images/Level2@2x.png" alt="">
                                             </div> 
                                         `    
@@ -572,14 +573,14 @@
                                      if(percentage>50 && percentage<75 ){
                                         dom = dom+ ` 
                                             <div class="code-box"> 
-                                                <p class="fb fz14">Level 3<br> 次25%- 初露锋芒，你的闪亮照亮了openGauss。</p>
+                                                <p class="fb fz14">Level 3<br> 次25% - 初露锋芒，你的闪亮照亮了openGauss。</p>
                                                 <img src="./images/Level3@2x.png" alt="">
                                             </div>  `    
                                     }
                                     if(percentage =>75){
                                         dom = dom+ ` 
                                             <div class="code-box"> 
-                                                <p class="fb fz14">Level 4 <br>前25%- 达人现身，你的身份藏不住了。</p>
+                                                <p class="fb fz14">Level 4 <br>前25% - 达人现身，你的身份藏不住了。</p>
                                                 <img src="./images/Level4@2x.png" alt="">
                                             </div> 
                                         `   

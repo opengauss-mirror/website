@@ -498,6 +498,9 @@ img.codeImg{
     .no-contribution .mob-box .page-one .text-box{
         padding-top: 20px;
     }
+    .no-h5-contribution .page-two{
+        justify-content: center;
+    }
     .mob-box .page-five{
         padding-bottom: 175px;
     }
