@@ -45,6 +45,7 @@ a:hover {
 .m-name {
     margin-top: 10px;
     font-size: 16px;
+    color: #000;
 }
 .m-title {
     margin-top: 5px;
@@ -59,7 +60,7 @@ a:hover {
     -webkit-box-orient: vertical;
 }
 .m-img {
-    margin-top: 13px;
+    margin-top: 10px;
 }
 .m-img a:last-child img {
     margin-left: 16px;
@@ -169,6 +170,22 @@ html[lang=en-us] .card-item {
 html[lang=en-us] .boxs .card-item {
     margin-right: 2px;
 }
+
+.card.tc {
+    padding: 0 70px;
+}
+.card.tc .card-item{
+    margin-right: 76px;
+    margin-bottom: 20px;
+}
+.card.tc .card-item:nth-child(6n){
+    margin-right: 0 !important;
+}
+html[lang=en-us] .card.tc .card-item {
+    margin-right: 28px; 
+}
+
+
 @media (max-width: 768px) {
     .fixed-nav {
         display: none;
@@ -177,6 +194,9 @@ html[lang=en-us] .boxs .card-item {
         font-size: 18px;
         padding: 0;
         margin: 0 0 10px 0!important;
+    }
+    .card.tc{
+        padding: 0;
     }
     .item-det {
         display: flex;
@@ -225,5 +245,15 @@ html[lang=en-us] .boxs .card-item {
     }
     .flow-left.new-box {
         display: none!important;
+    }
+    html[lang=en-us] .card.tc .card-item {
+        margin-right: 28px !important; 
+    }
+    
+}
+
+@media (max-width: 760px) {
+    html[lang=en-us] .card.tc .card-item ,.card-item {
+        margin-right: 0px !important; 
     }
 }
