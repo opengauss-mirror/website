@@ -10,15 +10,15 @@ $(function($) {
             $(this).addClass('active').siblings().removeClass('active')
         }
 
-    })
+    }) 
 
     $(window).scroll(function () {
         let top = $(window).scrollTop()
-        if (top < 400) {
+        if (top < 800) {
             $('.fixed-nav ul li:nth-child(1)').addClass('active').siblings().removeClass('active')
-        } else if ((top > 400) && (top < 4800)) {
+        } else if ((top > 800) && (top < 9500)) {
             $('.fixed-nav ul li:nth-child(2)').addClass('active').siblings().removeClass('active')
-        } else if (top > 4800) {
+        } else if (top > 9500) {
             $('.fixed-nav ul li:nth-child(3)').addClass('active').siblings().removeClass('active')
         }
 
