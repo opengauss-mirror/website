@@ -10,7 +10,7 @@ tc = "TC成员："
 [[card]]
 img = "/zh/member/img/liguoliang.png"
 name = "李国良"
-title = "Member"
+title = "Chair"
 email = "mailto:andyli1@huawei.com"
 gitee = "https://gitee.com/guoliang_li"
 
@@ -66,7 +66,7 @@ gitee = "https://gitee.com/stanleyren"
 [[card]]
 img = "/zh/member/img/tianwengang.png"
 name = "田文罡"
-title = "Chair"
+title = "Member"
 email = "mailto:tianwengang@huawei.com"
 gitee = "https://gitee.com/pikeTWG"
 
