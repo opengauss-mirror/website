@@ -25,7 +25,7 @@
     <div class="bgmMusic">
         <img src="./images/bg-music.svg">
     </div>
-    <audio id="bgm" src="./images/bgm.mp3" autoplay="autoplay" preload loop></audio>
+    <audio id="bgm" src="./images/bgm.mp3" preload loop></audio>
     <script>
 
     var _hmt = _hmt || [];
@@ -81,14 +81,15 @@
         })
 
         // 获取数据
-        var isDataContribution = false
+        // isDataContribution 判断是否有共享
+        var isDataContribution = false   
         axios.get('/2021summary/oauth2/userinfo').then(res => {
             return getData(res.data.user)
         }).catch(err => { 
             console.log(err);
             isDataContribution = true 
         })
-        //  getData('georgecao')
+        //   getData('ailoooong')
         function getData(user) {
             let data = []
             axios.get(`https://omapi.osinfra.cn/query/newYear/2022?community=opengauss&user=${user}`).then(res => { 
@@ -115,9 +116,8 @@
   
                 //isPcContribution \ isH5Contribution 判断有无贡献 
                 let isPcContribution = false,
-                    isH5Contribution = false;
-                    //first_time_of_be_comment
-                 
+                    isH5Contribution = false; 
+                  
                 if(isDataContribution){
                     pcBox.addClass('no-contribution').empty().html(pcDomNoData) ;
                     isPcContribution = true;
@@ -127,7 +127,7 @@
                     isPcContribution = false;
                     isH5Contribution = false; 
                 }
-                // console.log(percentage)
+                
                 intaPc(data, percentage,isPcContribution);
                 intaSwiper(data, percentage, isH5Contribution); 
 
@@ -192,14 +192,14 @@
                                             <div class="ani1">
                                                 <img src="./images/logo.png" class='logo' alt="">
                                                 <p>Hi，很高兴认识你</p>
-                                                <p>欢迎来到openGauss 星球</p>
-                                                <p>有些遗憾，在这之前我们错过了彼此，</p>
+                                                <p>欢迎来到openGauss星球</p>
+                                                <p>有些遗憾，在这之前我们错过了彼此</p>
                                                 <p>希望我们的故事可以从此刻开始……</p>
                                                 <p class='mb12'>首先请让我为你介绍一下我自己</p>
 
                                                 <p>自2020年6月30日开源以来</p> 
                                                 <p class="one-text ">这里已经有超过<span class='fz14 cOrange'>2589</span>用户并肩同行</p> 
-                                                <p class="one-text">下载量遍及全球<span class='fz14 cOrange'>81</span>个国家、<span class='fz14 cOrange'>562</span>个城市，</p>
+                                                <p class="one-text">下载量遍及全球<span class='fz14 cOrange'>81</span>个国家、<span class='fz14 cOrange'>562</span>个城市</p>
                                                 
                                                 <p class="one-text ">openGauss如期发布<span class='fz14 cOrange'>3</span>个版本</p>
                                                 <p class="one-text ">并成功发行<span class='fz14 cOrange'>12</span>个商业发行版</p>
@@ -211,7 +211,7 @@
                                                 <p class="one-text">我们坚信我们走在璀璨的星河里</p> 
                                                 <p class="one-text">希望未来能够有你一起同行</p> 
                                                 <p>元旦快乐</p>
-                                                <p>openGauss 星球</p>
+                                                <p>openGauss星球</p>
                                                 <img src="./images/code.png" class='codeImg' alt="">  
                                             </div>
                                         </div> 
@@ -231,7 +231,7 @@
                                                     <p class="one-text">并成功发行<span class='fz14 cOrange'>12</span>个商业发行版</p>
                                                     <p class="one-text ">吸引了超过<span class='fz14 cOrange'>100</span>家企业加入社区</p>
                                                     <p class="one-text">走进<span class='fz14 cOrange'>72</span>所高校</p>
-                                                    <p class="one-text ">与志同道合的“他”建立了<span class='fz14 cOrange'>20</span>SIG个</p>
+                                                    <p class="one-text ">与志同道合的“他”建立了<span class='fz14 cOrange'>20</span>个SIG</p>
                                                     <p class="one-text">成立了社区理事会、举办了openGauss<span class='fz14 cOrange'>第1次</span>Summit</p> 
                                                     <p>......</p>
                                                 </div>
@@ -256,8 +256,8 @@
                                                     } else{ 
                                                         dom = dom+ `<p class='fade fade-time-2'>期待在2022年，也能收到你的第一个PR</p> `
                                                     }
-                                                     if(data.first_time_of_star != ''){
-                                                        dom = dom+ `<p class='fade fade-time-3'><span class='cOrange'>${data.first_time_of_star}</span>，你第一次点亮了我的仓库，那时你应该对我是心动了吧.</p> `
+                                                    if(data.first_time_of_star != ''){
+                                                        dom = dom+ `<p class='fade fade-time-3'><span class='cOrange'>${timeChange(data.first_time_of_star)}</span>，你第一次点亮了我的仓库，那时你应该对我是心动了吧</p> `
                                                     }else{
                                                         dom = dom+ `<p class='fade fade-time-3'>或许某天，你也会来点亮我的仓库 </p>`
                                                     }
@@ -311,7 +311,7 @@
                                                         return dom ;
                                                     })()} 
                                                 </p>
-                                                <p class="fade fade-time-5"> 闪亮的日子一直都在<br> 因为有你<br> openGauss星球更加璀璨了 </p> 
+                                                <p class="fade fade-time-5">闪亮的日子一直都在<br> 因为有你<br> openGauss星球更加璀璨了 </p> 
                                             </div> 
 
                                         </div>
@@ -411,15 +411,15 @@
                             <div class="ani1">
                                 <img src="./images/logo.png" class='logo' alt="">
                                 <p>Hi，很高兴认识你</p>
-                                <p>欢迎来到openGauss 星球</p>
-                                <p>有些遗憾，在这之前我们错过了彼此，</p>
+                                <p>欢迎来到openGauss星球</p>
+                                <p>有些遗憾，在这之前我们错过了彼此</p>
                                 <p>希望我们的故事可以从此刻开始……</p>
                                 <p class='mb12'>首先请让我为你介绍一下我自己</p>
 
                                 <p>自2020年6月30日开源以来</p> 
-                                <p class="one-text ">这里已经有超过<span class='fz14 cOrange'>2589</span>用户并肩同行，</p> 
+                                <p class="one-text ">这里已经有超过<span class='fz14 cOrange'>2589</span>用户并肩同行</p> 
                                 <p class="one-text ">openGauss如期在2021年发布<span class='fz14 cOrange'>2</span>个版本</p>
-                                <p class="one-text">下载量遍及全球<span class='fz14 cOrange'>81</span>个国家、<span class='fz14 cOrange'>562</span>个城市，</p>  
+                                <p class="one-text">下载量遍及全球<span class='fz14 cOrange'>81</span>个国家、<span class='fz14 cOrange'>562</span>个城市</p>  
                                 <p class="one-text ">并成功发行<span class='fz14 cOrange'>12</span>个商业发行版</p>
                                 <p class="one-text ">吸引了超过<span class='fz14 cOrange'>100</span>家企业加入社区</p>
                                 <p class="one-text">走进<span class='fz14 cOrange'>72</span>所高校</p>
@@ -427,7 +427,7 @@
                                 <p class="one-text">我们坚信我们走在璀璨的星河里</p> 
                                 <p class="one-text">希望未来能够有你一起同行</p> 
                                 <p>元旦快乐。</p>
-                                <p class='mb12'>openGauss 星球</p>
+                                <p class='mb12'>openGauss星球</p>
                                 <img src="./images/code.png" class='codeImg' alt="">  
                             </div>
                         </div> 
@@ -488,7 +488,7 @@
                                         dom = dom+ `<p class='fade fade-time-2'>期待在2022年，也能收到你的第一个PR</p> `
                                     }
                                     if(data.first_time_of_star != ''){
-                                        dom = dom+ `<p class='fade fade-time-3'><span class='cOrange'>${timeChange(data.first_time_of_star)}</span>，你第一次点亮了我的仓库，那时你应该对我是心动了吧.</p> `
+                                        dom = dom+ `<p class='fade fade-time-3'><span class='cOrange'>${timeChange(data.first_time_of_star)}</span>，你第一次点亮了我的仓库，那时你应该对我是心动了吧</p> `
                                     }else{
                                         dom = dom+ `<p class='fade fade-time-3'>或许某天，你也会来点亮我的仓库 </p>`
                                     }
@@ -605,7 +605,7 @@
                             <div class="text-box ">
                                 <p class="typing">朝暮与年岁共往，与你同行至天光。</p>
                                 <p class="typing delay-time1">愿你元旦快乐。</p> 
-                                <p class="typing delay-time2 ">openGauss 星球</p>
+                                <p class="typing delay-time2 ">openGauss星球</p>
                                 <img src="./images/code.png" class='codeImg' alt="">  
                             </div>
                         </div> 
