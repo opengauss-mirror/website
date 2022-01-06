@@ -35,7 +35,7 @@ gitee = "https://gitee.com/huangkaiyao"
 img = "/zh/member/img/huangxiaotao.png"
 name = "Xiaotao Huang"
 title = "Member"
-email = "vinson.huang@126.com"
+email = "mailto:vinson.huang@126.com"
 gitee = "https://gitee.com/xiaotao-huang"
 
 
@@ -51,7 +51,7 @@ gitee = "https://gitee.com/lishifu_db"
 img = "/zh/member/img/liuyongsheng.png"
 name = "Yongsheng Liu"
 title = "Member"
-email = "Liuyongsheng@shentongdata.com"
+email = "mailto:Liuyongsheng@shentongdata.com"
 gitee = "https://gitee.com/lys6676	"
  
 
@@ -75,7 +75,7 @@ gitee = "https://gitee.com/pikeTWG"
 img = "/zh/member/img/wangjiang.png"
 name = "Jiang Wang"
 title = "Member"
-email = "wangjiang16@huawei.com"
+email = "mailto:wangjiang16@huawei.com"
 gitee = "https://gitee.com/wang-jingle"
 
 
@@ -83,7 +83,7 @@ gitee = "https://gitee.com/wang-jingle"
 img = "/zh/member/img/wangwei.png"
 name = "Wei Wang"
 title = "Member"
-email = "wangwei5@huawei.com"
+email = "mailto:wangwei5@huawei.com"
 gitee = "https://gitee.com/wangwei5"
 
 
@@ -91,7 +91,7 @@ gitee = "https://gitee.com/wangwei5"
 img = "/zh/member/img/yangweiqiang.png"
 name = "Weiqiang Yang"
 title = "Member"
-email = "wqyang@cmbchina.com"
+email = "mailto:wqyang@cmbchina.com"
 gitee = "https://gitee.com/yangweiqiang	" 
 
 
@@ -99,14 +99,14 @@ gitee = "https://gitee.com/yangweiqiang	"
 img = "/zh/member/img/zhangchengwei.png"
 name = "Chengwei Zhang"
 title = "Member"
-email = "flashspy@hotmail.com"
+email = "mailto:flashspy@hotmail.com"
 gitee = "https://gitee.com/jarekzhang"
 
 [[card]]
 img = "/zh/member/img/zhangshujie.png"
 name = "Shujie Zhang"
 title = "Member"
-email = "zhangshujie1@huawei.com"
+email = "mailto:zhangshujie1@huawei.com"
 gitee = "https://gitee.com/zhangshujie82"
 
 
@@ -122,7 +122,7 @@ gitee = "https://gitee.com/zankyfun4"
 img = "/zh/member/img/zhouqin.png"
 name = "Qin Zhou"
 title = "Member"
-email = "zhouqin@supermap.com"
+email = "mailto:zhouqin@supermap.com"
 gitee = "https://gitee.com/zhouqinsm"
 
 
@@ -130,7 +130,7 @@ gitee = "https://gitee.com/zhouqinsm"
 img = "/zh/member/img/zhubin3.png"
 name = "Bin Zhu"
 title = "Member"
-email = "zzzzzdb_zb@163.com"
+email = "mailto:zzzzzdb_zb@163.com"
 gitee = "https://gitee.com/zzzzzdb" 
 
 +++
