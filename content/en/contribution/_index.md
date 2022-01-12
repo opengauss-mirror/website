@@ -49,6 +49,8 @@ You can find the SIGs you are interested in from the SIG list below.
 | [Graph](https://gitee.com/opengauss/tc/tree/master/sigs/SecurityTechnology) | Responsible for the knowledge map data management function of unified storage and query of the openGauss community. |
 
 
+Want to start a new SIG? Please send your application to: <tc@opengauss.org> , the email template is referred to: <https://gitee.com/opengauss/tc/blob/master/sigs/Template/README.md> .
+
 ### 4. Starting Your Contribution
 
 #### 4.1 Assigning an Issue to Yourself
