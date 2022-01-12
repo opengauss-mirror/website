@@ -50,6 +50,8 @@ SIG是开放的，欢迎任何人加入并参与贡献。每一个SIG在码云�
 | [Graph](https://gitee.com/opengauss/tc/tree/master/sigs/SecurityTechnology) | 负责openGauss社区统一存储和查询的知识图谱数据管理功能。|
 
 
+感兴趣的SIG组还未出现？新的SIG组等你来发起！欢迎发送申请邮件至：<tc@opengauss.org> ，邮件申请模板请参考<https://gitee.com/opengauss/tc/blob/master/sigs/Template/README.md> 。
+
 ### 4. 开始您的贡献
 
 #### 4.1 给自己分配Issue
