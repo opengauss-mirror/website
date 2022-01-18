@@ -2,7 +2,8 @@ version = "latest"
 ##如下是文档下载链接
 downloadUrlZh = "https://opengauss.obs.cn-south-1.myhuaweicloud.com/2.1.0/openGauss-document-zh-2.1.0.zip"
 downloadUrlEn = "https://opengauss.obs.cn-south-1.myhuaweicloud.com/2.1.0/openGauss-document-en-2.1.0.zip"
-##如下是文档默认访问页面，用于版本切换后，跳转到对应版本的首页。因为不能做成章节一一对应，只能切换版本的时候跳转到文档默认首页。
-defaultUrlZh = "/zh/docs/latest/docs/Quickstart/%E4%BA%86%E8%A7%A3%E4%BA%A7%E5%93%81.html"
-defaultUrlEn = "/en/docs/latest/docs/Quickstart/learning-product-knowledge.html"
-
+##如下是文档默认访问页面，用于版本切换后，跳转到对应版本的首页。因为不能做成章节一一对应，只能切换版本的时候跳转到文档默认首页。 
+##defaultUrlZh = "/zh/docs/latest/docs/Quickstart/%E4%BA%86%E8%A7%A3%E4%BA%A7%E5%93%81.html"
+##defaultUrlEn = "/en/docs/latest/docs/Quickstart/learning-product-knowledge.html"
+defaultUrlZh = "/zh/docs/2.1.0/docs/Quickstart/%E4%BA%86%E8%A7%A3%E4%BA%A7%E5%93%81.html"
+defaultUrlEn = "/en/docs/2.1.0/docs/Quickstart/learning-product-knowledge.html"
