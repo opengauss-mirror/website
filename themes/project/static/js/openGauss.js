@@ -60,9 +60,12 @@ $(document).ready(function() {
     }, function () {
       $(this).find('.img-static').removeClass('hidding');
       $(this).find('.img-gif').addClass('hidding');
-    })
+    }) 
   }
-  toggleGifImg();
+   
+  if($(window).innerWidth() > 1280){
+        toggleGifImg();
+  }
 
   // 中英文切换
   const enTozh = function (url) {

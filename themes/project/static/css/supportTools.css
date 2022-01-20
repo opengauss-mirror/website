@@ -21,8 +21,9 @@
     box-shadow: 0px 12px 32px 0px rgba(190, 196, 204, 0.2);
     padding: 20px 20px;
     margin-right: 25px;
-    position: fixed;
-    top: 200px;
+    position: sticky;
+    top: 60px;
+    height: fit-content;
 }
 .left-tools div {
     width: 145px;
@@ -68,7 +69,7 @@ a:link {
     box-shadow: 0px 12px 32px 0px rgba(190, 196, 204, 0.2);
     margin-bottom: 32px;
     width: 920px;
-    margin-left: 200px;
+     
 }
 .item-title {
     font-size: 24px;
