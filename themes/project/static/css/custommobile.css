@@ -318,7 +318,7 @@
   .docscontainer {
     display: block;
     position: relative;
-    max-width: 1280px;
+    max-width: 1280px !important;
   }
   .book-menu,.book-page {
     width: 100%;
