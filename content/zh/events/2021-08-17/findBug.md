@@ -35,7 +35,7 @@ summary = "参与openGauss资料捉虫活动，发现或解决资料中的待改
 
 在openGauss社区资料中寻找待改进的点，在docs仓库提交Issue反馈资料改进意见并在标题前加上【**openGauss资料捉虫活动**】标签。提交Issue的操作请参见FAQ。
 
-- openGauss社区资料：https://opengauss.org/zh/docs/latest/docs/Quickstart/Quickstart.html
+- openGauss社区资料：https://opengauss.org/zh/docs/latest/docs/Brief-Tutorial/Brief-Tutorial.html
 
 - openGauss docs仓库：https://gitee.com/opengauss/docs
 

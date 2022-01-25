@@ -38,7 +38,7 @@ $(document).ready(function() {
   const switchLanguage = function () {
     var urls = currentUrl.split('/docs/');
     urls = urls.slice(0, urls.length - 1);
-    urls.push('Quickstart/Quickstart.html');
+    urls.push('Brief-Tutorial/Brief-Tutorial.html');
     urls = urls.join('/docs/');
 
     if (includesStr('/zh/', urls)) {
