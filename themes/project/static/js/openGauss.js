@@ -33,20 +33,23 @@ $(document).ready(function() {
   
 
   // 文档页面语言切换
-  var currentUrl = window.location.href;
-
+  var currentUrl = window.location.href; 
   const switchLanguage = function () {
     var urls = currentUrl.split('/docs/');
     urls = urls.slice(0, urls.length - 1);
-    urls.push('BriefTutorial/BriefTutorial.html');
+    
+    if(currentUrl.includes('latest') || urls[1] == 'latest'){
+        urls.push('BriefTutorial/BriefTutorial.html');
+    }else{
+        urls.push('Quickstart/Quickstart.html');
+    } 
     urls = urls.join('/docs/');
 
     if (includesStr('/zh/', urls)) {
       urls = urls.replace('/zh/', '/en/');
     } else {
       urls = urls.replace('/en/', '/zh/');
-    }
-
+    } 
     window.location.href = urls;
   }
 
