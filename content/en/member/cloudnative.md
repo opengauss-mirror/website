@@ -92,4 +92,17 @@ title = "Committer"
 email = "mailto:1851619113@qq.com"
 gitee = "https://gitee.com/yundag"
 
+[[card]]
+img = "/zh/member/img/lihongda.png"
+name = "Hongda Li"
+title = "Committer"
+email = "mailto:worklee1002@163.com"
+gitee = "https://gitee.com/lee1002"
+
+[[card]]
+img = "/zh/member/img/gaoyunlong.png"
+name = "Yunlong Gao"
+title = "Committer"
+email = "mailto:504072751@qq.com"
+gitee = "https://gitee.com/yunlong_G"
 +++

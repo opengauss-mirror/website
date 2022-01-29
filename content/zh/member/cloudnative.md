@@ -1,4 +1,4 @@
-+++
+﻿+++
 member = "cloudnative"
 title ="CloudNative"
 goto = "前往Gitee仓库"
@@ -91,5 +91,19 @@ name = "郭云达"
 title = "Committer"
 email = "mailto:1851619113@qq.com"
 gitee = "https://gitee.com/yundag"
+
+[[card]]
+img = "/zh/member/img/lihongda.png"
+name = "李宏达"
+title = "Committer"
+email = "mailto:worklee1002@163.com"
+gitee = "https://gitee.com/lee1002"
+
+[[card]]
+img = "/zh/member/img/gaoyunlong.png"
+name = "高云龙"
+title = "Committer"
+email = "mailto:504072751@qq.com"
+gitee = "https://gitee.com/yunlong_G"
 
 +++

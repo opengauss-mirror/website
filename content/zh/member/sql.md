@@ -1,4 +1,4 @@
-+++
+﻿+++
 member = "sql"
 title = "SQLEngine"
 goto = "前往Gitee仓库"
@@ -64,5 +64,19 @@ core = "核心成员："
     title = "Committer"
     email = "mailto:liaomd@vastdata.com.cn"
     gitee = "https://gitee.com/hemny"
+
+[[card]]
+    img = "/zh/member/img/wangzhenglv.png"
+    name = "王正侣"
+    title = "Committer"
+    email = "mailto:lancer_cool@163.com"
+    gitee = "https://gitee.com/April01xxx"
+
+[[card]]
+    img = "/zh/member/img/pengjiong.png"
+    name = "彭炯"
+    title = "Committer"
+    email = "mailto:pengjiong1@huawei.com"
+    gitee = "https://gitee.com/totaj"
 
 +++

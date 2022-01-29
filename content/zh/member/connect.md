@@ -36,4 +36,12 @@ title = "Committer"
 email = "mailto:zhangwl@vastdata.com.cn"
 gitee = "https://gitee.com/willloong"
 
+
+[[card]]
+img = "/zh/member/img/yaoqian1.png"
+name = "姚前"
+title = "Committer"
+email = "mailto:i@vimiix.com"
+gitee = "https://gitee.com/vimiix"
+
 +++
