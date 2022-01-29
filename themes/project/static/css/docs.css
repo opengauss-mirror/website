@@ -16,6 +16,8 @@ ol {
 #content li {
     display: list-item;
     margin-left:20px;
+    line-height: 1.6;
+    font-size: 16px;
 }
 .doc-version-wrapper {
     display: flex;
@@ -147,9 +149,10 @@ ol {
 
 .markdown p {
     color: #4d4d4d;
-    font-size: 14px;
-    line-height: 32px;
-    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    word-break: break-word;
 }
 .markdown caption {
     margin-bottom: 10px;

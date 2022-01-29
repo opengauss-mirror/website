@@ -5,6 +5,9 @@ moImg = "../img/breadcrumbs/support_tools_mo.png"
 code = "Source Code"
 weblink = "Official Website"
 guidance = "Operation Guide"
+headtitle = "openGauss Support Tools Panorama"
+headdesc = "Mainly for developers and ISVs, it provides six categories of development tools: DataBase Client Tools, Data Import & Export Tool, Data Replication & Synchronization Tool, Monitoring Operation & Maintenance Interface and Tools, Backup & Recovery Interface and Tools, and Common Data Processing Framework."
+panorama = "/img/supportTools/support-panorama-en.png"
 
 [[list]]
 identification = "connectors"
@@ -16,7 +19,7 @@ name = "Middleware"
 
 [[list]]
 identification = "management"
-name = "Cluster management"
+name = "Cluster Management"
 
 [[list]]
 identification = "migrationTools"
@@ -24,7 +27,7 @@ name = "Migration Tools"
 
 [[list]]
 identification = "dataTools"
-name = "Data Synchronization tools"
+name = "Data Synchronization Tools"
 
 [[list]]
 identification = "dataModel"
@@ -36,12 +39,16 @@ name = "Client Tools"
 
 [[list]]
 identification = "devOpsTools"
-name = "Monitor&DevOps Tools"
+name = "Monitor & DevOps System"
+
+[[list]]
+identification = "kernelExtensions"
+name = "Kernel Extension"
 
 [[cards]]
 iden = "connectors"
 name = "psycopg2"
-desc = "the openGauss python Driver(linux only)"
+desc = "The openGauss Python Driver (Linux only)"
 address = "https://gitee.com/opengaussorg/dashboard/projects/opengauss/openGauss-connector-python-psycopg2/"
 guide = "https://www.psycopg.org/docs/"
 weight = 1
@@ -49,7 +56,7 @@ weight = 1
 [[cards]]
 iden = "connectors"
 name = "py-og"
-desc = "the openGauss pure python Driver(multi os support)"
+desc = "The openGauss pure Python Driver (Multi-OS Support)"
 address = "https://gitee.com/opengauss/openGauss-connector-python-pyog"
 guide = "https://magicstack.github.io/asyncpg/current/"
 weight = 2
@@ -57,15 +64,15 @@ weight = 2
 [[cards]]
 iden = "connectors"
 name = "go-pq"
-desc = "the openGauss go driver"
-address = "https://gitee.com/opengauss/openGauss-connector-go-pq"
-guide = "https://gitee.com/opengauss/openGauss-connector-go-pq/blob/master/README.en.md"
+desc = "The openGauss Go Driver"
+address = "https://e.gitee.com/opengaussorg/repos/opengauss/openGauss-connector-go-pq"
+guide = "https://gitee.com/opengauss/openGauss-connector-go-pq/blob/master/README.cn.md"
 weight = 3
 
 [[cards]]
 iden = "middleware"
-name = "shardingSphere"
-desc = "distributed database middleware"
+name = "ShardingSphere"
+desc = "Distributed database middleware"
 address = "https://github.com/apache/shardingsphere"
 guide = "https://shardingsphere.apache.org/document/current/en/overview/"
 weight = 1
@@ -73,16 +80,24 @@ weight = 1
 [[cards]]
 iden = "middleware"
 name = "HAProxy"
-desc = "database read / write load balancing"
+desc = "Database read/write load balancing"
 address = "https://github.com/haproxy/haproxy"
 guide = "https://www.haproxy.com/blog/webinar-introduction-to-haproxy/"
 weight = 2
+
+[[cards]]
+iden = "middleware"
+name = "vip-manager"
+desc = "Automatic IP failover"
+address = "https://github.com/cybertec-postgresql/vip-manager"
+guide = "https://github.com/cybertec-postgresql/vip-manager#Configuration"
+weight = 3
 
 
 [[cards]]
 iden = "management"
 name = "Kubernetes"
-desc = "open source container management platform"
+desc = "An open source container management platform"
 address = "https://github.com/kubernetes/kubernetes"
 guide = "https://kubernetes.io/docs/home/"
 weight = 1
@@ -90,7 +105,7 @@ weight = 1
 [[cards]]
 iden = "management"
 name = "Patroni"
-desc = "Automatic primary / standby switching to improve database availability"
+desc = "Automatic primary/standby switching to improve database availability"
 address = "https://github.com/zalando/patroni"
 guide = "https://patroni.readthedocs.io/en/latest/"
 weight = 2
@@ -98,39 +113,39 @@ weight = 2
 
 [[cards]]
 iden = "migrationTools"
-name = "Ora2pg"
-desc = "database migration tools from oracle to pg"
-address = "https://github.com/darold/ora2pg"
-guide = "https://ora2pg.darold.net/documentation.html"
+name = "Ora2Pg"
+desc = "Database migration tool from Oracle to PostgreSQL"
+address = "https://gitee.com/opengauss/openGauss-tools-ora2og"
+guide = "https://gitee.com/opengauss/openGauss-tools-ora2og/blob/master/README.md"
 weight = 1
 
 [[cards]]
 iden = "migrationTools"
-name = "Pg_chameleon"
-desc = "database migration tools from mysql to pg"
-address = "https://github.com/the4thdoctor/pg_chameleon"
-guide = "https://pgchameleon.org/documents/"
+name = "pg_chameleon"
+desc = "Database migration tool from MySQL to PostgreSQL"
+address = "https://gitee.com/opengauss/openGauss-tools-chameleon"
+guide = "https://gitee.com/opengauss/openGauss-tools-chameleon/blob/master/chameleon%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.pdf"
 weight = 2
 
 [[cards]]
 iden = "migrationTools"
 name = "pgloader"
-desc = "A data import tool that uses the copy command to import data into PostgreSQL"
-address = "https://github.com/dimitri/pgloader"
-guide = "https://opengauss.org/zh/blogs/blogs.html?post/totaj/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8pgloader%E8%BF%81%E7%A7%BBmysql%E6%95%B0%E6%8D%AE%E5%BA%93%E8%87%B3opengauss/"
+desc = "A data import tool that uses the COPY command to import data into PostgreSQL"
+address = "https://gitee.com/opengauss/openGauss-tools-loader"
+guide = "https://gitee.com/opengauss/openGauss-tools-loader/blob/master/pgloader%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.pdf"
 weight = 3
 
 [[cards]]
 iden = "dataTools"
 name = "JdbcPgBackup"
-desc = "Java based multi-platform data import and export tool, similar to pg_ dump/pg_ restore"
+desc = "Java based multi-platform data import and export tool, similar to pg_dump/pg_restore"
 address = "https://github.com/tig100/JdbcPgBackup"
 weight = 1
 
 [[cards]]
 iden = "dataTools"
-name = "Database-sync"
-desc = "a powerful and flexible database synchronization tool developed based on Java"
+name = "Database-Sync"
+desc = "A powerful and flexible database synchronization tool developed based on Java"
 address = "https://github.com/GongDexing/database-sync"
 weight = 2
 
@@ -143,16 +158,8 @@ guide = "https://opengauss.org/zh/blogs/blogs.html?post/lihongda/debezium-adapt-
 weight = 3
 
 [[cards]]
-iden = "dataTools"
-name = "yugong"
-desc = "Alibaba to Oracle data migration synchronization tool (full + incremental, target support MySQL / DRDS)"
-address = "https://github.com/alibaba/yugong"
-guide = "https://github.com/alibaba/yugong/wiki/QuickStart"
-weight = 4
-
-[[cards]]
 iden = "dataModel"
-name = "powerDesigner"
+name = "PowerDesigner"
 desc = "Flexible analysis and design features allow you to effectively create a database or data warehouse using a structured approach"
 address = "https://www.sap.com/products/database-data-management.html"
 guide = "https://opengauss.org/zh/blogs/blogs.html?post/wangrui/powerdesigner_for_opengauss/"
@@ -161,7 +168,7 @@ weight = 1
 
 [[cards]]
 iden = "clientTools"
-name = "Dbeaver"
+name = "DBeaver"
 desc = "Open source multi database client tool"
 address = "https://github.com/dbeaver/dbeaver"
 guide = "https://opengauss.org/zh/blogs/blogs.html?post/justbk/2020-10-30_dbeaver_for_opengauss/"
@@ -170,7 +177,7 @@ weight = 1
 [[cards]]
 iden = "clientTools"
 name = "Data Studio"
-desc = "Opengauss official client tool"
+desc = "openGauss official client tool"
 address = "https://opengauss.org/zh/"
 guide = "https://opengauss.org/zh/download.html"
 website = true
@@ -191,4 +198,14 @@ desc = "The open source monitoring system performs very well in recording pure d
 address = "https://github.com/prometheus/prometheus"
 guide = "https://prometheus.io/docs/introduction/overview/"
 weight = 2
+
+[[cards]] 
+iden = "kernelExtensions"
+name = "Yukon"
+desc = "Provide professional GIS (Geographic Information System) ability"
+address = "https://gitee.com/opengauss/Yukon"
+guide = "https://yukon.supermap.io/" 
+weight = 1   
+
+
 +++

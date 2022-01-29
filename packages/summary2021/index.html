@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>openGauss2021年度报告</title>
+</head>
+<link rel="stylesheet" href="./css/common.css">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<script src="./js/swiper.js"></script>
+<script src="./js/axios.js"></script>   
+<script src="https://openlookeng.io/common/jquery-3.1.1.min.js"></script> 
+<link rel="stylesheet" href="./css/pc.css">
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/new.css">
+
+<body> 
+    <div class="pc-box" id="pcBox"> </div>
+    <div class="mob-box swiper" id="outer-container"></div>  
+    <div class="videoBg"> 
+        <video id="video" muted="" autoplay="" loop="" playsinline=""><source crossorigin="anonymous" src="./images/bg.mp4" type="video/mp4"></video>
+    </div>
+    <div class="bgmMusic">
+        <img src="./images/bg-music.svg">
+    </div>
+    <audio id="bgm" src="./images/bgm.mp3" preload loop></audio>
+    <script>
+
+    var _hmt = _hmt || [];
+        (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?ace49cc6c2f3d0542e97ce86732094dc";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+
+
+        // 适配safair
+        function safariHacks() {
+            let windowsVH = window.innerHeight / 100;
+            console.log(windowsVH);
+            document.querySelector('#outer-container').style.setProperty('--vh', windowsVH + 'px');
+            window.addEventListener('resize', function () {
+                document.querySelector('#outer-container').style.setProperty('--vh', windowsVH + 'px');
+            });
+        }
+
+        safariHacks(); 
+        let container = document.querySelector('#outer-container');
+        let pcBox = $('#pcBox'); 
+
+        $(function(){
+            // 播放音乐 
+            var audio = document.getElementById('bgm');
+            var video = document.getElementById('video'); 
+            let isVideo = true 
+            container.addEventListener('pointerup',function(){   
+                if(isVideo){
+                    $(".bgmMusic").addClass("active")
+                    audio.play();
+                    video.play();
+                    isVideo = false
+                } 
+            },true) 
+            $(".bgmMusic").bind("click", function() {
+                if(audio !== null) {   
+                    if(audio.paused) {
+                        audio.play(); 
+                        $(".bgmMusic").addClass("active")
+                    } else { 
+                        audio.pause();  
+                        $(".bgmMusic").removeClass("active")
+                    }
+                }
+            })     
+            
+            
+
+        })
+
+        // 获取数据
+        // isDataContribution 判断是否有共享
+        var isDataContribution = false   
+        axios.get('/2021summary/oauth2/userinfo').then(res => {
+            return getData(res.data.user)
+        }).catch(err => { 
+            console.log(err);
+            isDataContribution = true 
+        })
+        //   getData('ailoooong')
+        function getData(user) {
+            let data = []
+            axios.get(`https://omapi.osinfra.cn/query/newYear/2022?community=opengauss&user=${user}`).then(res => { 
+                let percentage = 0;
+                if(res.data.data[0]){
+                    isDataContribution = false
+                    data = res.data.data[0];   
+                    percentage = parseFloat(data.beat_percentage) * 100;
+                }else{
+                    isDataContribution = true
+                } 
+                
+                let pcDom = `
+                    <div class="container box-one"><div class="front"></div><div class="back"></div></div>
+                    <div class="container box-tow"><div class="front"></div><div class="back"></div></div>
+                    <div class="container box-three"><div class="front"></div><div class="back"></div></div>
+                    <div class="container box-four"><div class="front"></div><div class="back"></div></div>
+                `;
+
+                let pcDomNoData = `
+                    <div class="container box-1"><div class="front"></div><div class="back"></div></div> 
+                    <div class="container box-2"><div class="front"></div><div class="back"></div></div>
+                `; 
+  
+                //isPcContribution \ isH5Contribution 判断有无贡献 
+                let isPcContribution = false,
+                    isH5Contribution = false; 
+                  
+                if(isDataContribution){
+                    pcBox.addClass('no-contribution').empty().html(pcDomNoData) ;
+                    isPcContribution = true;
+                    isH5Contribution = true;
+                }else{
+                    pcBox.removeClass('no-contribution').empty().html(pcDom);
+                    isPcContribution = false;
+                    isH5Contribution = false; 
+                }
+                
+                intaPc(data, percentage,isPcContribution);
+                intaSwiper(data, percentage, isH5Contribution); 
+
+                let buttonNext = document.querySelector('.buttonNext');
+                buttonNext.addEventListener("touchend", function () {  
+                    swiper.swipeNext();
+                    video.play();
+                })
+ 
+            })
+        } 
+
+        function timeChange(time) {
+            if (time) {
+                let EndTime = new Date(time);
+                let y = EndTime.getFullYear();
+                let m = EndTime.getMonth() + 1;
+                let d = EndTime.getDate();
+                let h = EndTime.getSeconds()
+                let all = `${y}年${m}月${d}日`
+                return all
+            } else {
+                return 'none'
+            } 
+        }
+
+        // pc端事件
+        function intaPc(data, percentage,isPcContribution) {
+            let front = document.querySelectorAll(".front");
+            let back = document.querySelectorAll(".back"); 
+            pcBox.find('.front').click(function(){ 
+                for (let i = 0; i < front.length; i++) {
+                    let list = [] 
+                    
+                    if(isPcContribution){
+                        list[0] =`<div class="contents">
+                                        <div class="page page-one"> 
+                                            <div class="text-box"> 
+                                                <div class="ani1">
+                                                    <img src="./images/logo.png" class='logo' alt="">
+                                                    <p class="tit1">2021时光机</p>
+                                                    <p class="tit1 mb20">你的openGauss星球之旅</p></p>  
+                                                    <p class="one-text ">因为有<span class='fz14 cOrange'>2589</span>个并肩同行的小伙伴一起战斗</p>
+                                                    <p class="one-text">openGauss如期在2021年发布<span class='fz14 cOrange'>2</span>个版本</p>
+                                                    <p class="one-text">你们的成果被<span class='fz14 cOrange'>81</span>个国家、<span class='fz14 cOrange'>562</span>个城市下载应用</p>
+                                                    <p class="one-text">并成功发行<span class='fz14 cOrange'>12</span>个商业发行版</p>
+                                                    <p class="one-text ">吸引了超过<span class='fz14 cOrange'>100</span>家企业加入社区</p>
+                                                    <p class="one-text">走进<span class='fz14 cOrange'>72</span>所高校</p>
+                                                    <p class="one-text ">与志同道合的“他”建立了<span class='fz14 cOrange'>20</span>个SIG</p>
+                                                    <p class="one-text">成立了社区理事会、举办了openGauss<span class='fz14 cOrange'>第1次</span>Summit</p> 
+                                                    <p>......</p>
+                                                </div>
+                                            </div>
+                                            <div class="people"> 
+                                                <img src="./images/图1//飞船.png" alt="">
+                                            </div> 
+                                        </div> 
+                                    </div>`
+                        list[1] =`<div class="contents">
+                                    <div class="page page-one"> 
+                                        <div class="text-box"> 
+                                            <div class="ani1">
+                                                <img src="./images/logo.png" class='logo' alt="">
+                                                <p>Hi，很高兴认识你</p>
+                                                <p>欢迎来到openGauss星球</p>
+                                                <p>有些遗憾，在这之前我们错过了彼此</p>
+                                                <p>希望我们的故事可以从此刻开始……</p>
+                                                <p class='mb12'>首先请让我为你介绍一下我自己</p>
+
+                                                <p>自2020年6月30日开源以来</p> 
+                                                <p class="one-text ">这里已经有超过<span class='fz14 cOrange'>2589</span>用户并肩同行</p> 
+                                                <p class="one-text">下载量遍及全球<span class='fz14 cOrange'>81</span>个国家、<span class='fz14 cOrange'>562</span>个城市</p>
+                                                
+                                                <p class="one-text ">openGauss如期发布<span class='fz14 cOrange'>3</span>个版本</p>
+                                                <p class="one-text ">并成功发行<span class='fz14 cOrange'>12</span>个商业发行版</p>
+                                                <p class="one-text ">吸引了超过<span class='fz14 cOrange'>100</span>家企业加入社区</p>
+                                                <p class="one-text">走进<span class='fz14 cOrange'>72</span>所高校</p>
+                                                <p class="one-text mb12">建立了<span class='fz14 cOrange'>20</span>个SIG</p>
+
+
+                                                <p class="one-text">我们坚信我们走在璀璨的星河里</p> 
+                                                <p class="one-text">希望未来能够有你一起同行</p> 
+                                                <p>元旦快乐</p>
+                                                <p>openGauss星球</p>
+                                                <img src="./images/code.png" class='codeImg' alt="">  
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div>`
+                    }else{
+                        list[0] = `<div class="contents">
+                                        <div class="page page-one"> 
+                                            <div class="text-box"> 
+                                                <div class="ani1">
+                                                    <img src="./images/logo.png" class='logo' alt="">
+                                                    <p class="tit1">2021时光机</p>
+                                                    <p class="tit1 mb20">你的openGauss星球之旅</p></p>  
+                                                    <p class="one-text ">因为有<span class='fz14 cOrange'>2589</span>个并肩同行的小伙伴一起战斗</p>
+                                                    <p class="one-text">openGauss如期在2021年发布<span class='fz14 cOrange'>2</span>个版本</p>
+                                                    <p class="one-text">你们的成果被<span class='fz14 cOrange'>81</span>个国家、<span class='fz14 cOrange'>562</span>个城市下载应用</p>
+                                                    <p class="one-text">并成功发行<span class='fz14 cOrange'>12</span>个商业发行版</p>
+                                                    <p class="one-text ">吸引了超过<span class='fz14 cOrange'>100</span>家企业加入社区</p>
+                                                    <p class="one-text">走进<span class='fz14 cOrange'>72</span>所高校</p>
+                                                    <p class="one-text ">与志同道合的“他”建立了<span class='fz14 cOrange'>20</span>个SIG</p>
+                                                    <p class="one-text">成立了社区理事会、举办了openGauss<span class='fz14 cOrange'>第1次</span>Summit</p> 
+                                                    <p>......</p>
+                                                </div>
+                                            </div>
+                                            <div class="people"> 
+                                                <img src="./images/图1//飞船.png" alt="">
+                                            </div> 
+                                        </div>
+                                    </div> `
+                        list[1] = `<div class="contents">
+                                        <div class="page page-three">  
+                                            <div class="panel2-box">  
+                                                <p class="fz14">我更记得那些关于你的故事</p>
+                                                ${(function(){
+                                                    let dom =''
+                                                    if(data.first_time_of_submit_issue != ''){
+                                                        dom = dom+ `<p class='fade fade-time-1'><span class='cOrange'>${timeChange(data.first_time_of_submit_issue)}</span>，你提出了第一个Issue</p>`
+                                                    }  
+
+                                                    if(data.first_time_of_submit_pr != ''){
+                                                        dom = dom+ `<p class='fade fade-time-2'><span class='cOrange'>${timeChange(data.first_time_of_submit_pr)}</span>，你提交了第一个PR</p>`
+                                                    } else{ 
+                                                        dom = dom+ `<p class='fade fade-time-2'>期待在2022年，也能收到你的第一个PR</p> `
+                                                    }
+                                                    if(data.first_time_of_star != ''){
+                                                        dom = dom+ `<p class='fade fade-time-3'><span class='cOrange'>${timeChange(data.first_time_of_star)}</span>，你第一次点亮了我的仓库，那时你应该对我是心动了吧</p> `
+                                                    }else{
+                                                        dom = dom+ `<p class='fade fade-time-3'>或许某天，你也会来点亮我的仓库 </p>`
+                                                    }
+                                                    
+                                                    if(data.first_user_login_of_be_comment != ''){
+                                                        dom = dom+ ` <p class='fade fade-time-4'>还记得<span class='cOrange'>${data.first_user_login_of_be_comment}</span>吗？那是第一个给你评论的朋友，让你倍感激励</p>  `
+                                                    } 
+
+                                                    if(data.first_user_login_of_comment != ''){
+                                                        dom = dom+ ` <p class='fade fade-time-5'>于是，你传递了这份温暖在<span class='cOrange'>${data.first_user_login_of_comment}</span>发表了第一次留言</p>  `
+                                                    } 
+
+                                                    if(data.user_login_with_most_contact != ''){
+                                                        dom = dom+ ` <p class='fade fade-time-6'>相信你一定也从<span class='cOrange'>${data.user_login_with_most_contact}</span>学到很多吧 这是与你联系最多的朋友</p>`
+                                                    } 
+                                                    return dom; 
+                                                })()}  
+                                                
+                                                <p class='fade fade-time-7'>希望2022年的你，能够在这里收获更多</p>
+                                            </div>
+                                             
+                                        </div>
+                                    </div>`
+                        list[2] = `<div class="contents">
+                                        <div class="page pc-page1">
+                                            <div class="panel3-box"> 
+                                                <p class="fade fade-time-1">我会一直期待并且收集那些在openGauss星球</p>
+                                                <p class="fade fade-time-2">关于你的光亮</p>
+                                                <p class="fade fade-time-3">2022年， 你在这期间</p>
+                                                <p class="mb20  fz14 fade fade-time-4">
+                                                    ${(function(){
+                                                        let dom =''
+                                                        if(data.code_lines != '0'){
+                                                            dom = dom+ `贡献了<span class='cOrange'>${data.code_lines}</span>行代码<br>`
+                                                        }
+                                                         if(data.pr_num != '0'){
+                                                            dom = dom+ `提交了<span class='cOrange'>${data.pr_num }</span>个PR<br>`
+                                                        }
+                                                        if(data.issue_num != '0'){
+                                                            dom = dom+ `提出了<span class='cOrange'>${data.issue_num }</span>个issue<br>`
+                                                        } 
+                                                        if ( data.star_num != '0'){
+                                                            dom = dom+ `Star了<span class='cOrange'>${data.star_num}</span>个代码仓库<br>`
+                                                        }
+                                                        if( data.fork_num != '0'){
+                                                            dom = dom+ `Fork了<span class='cOrange'>${data.fork_num}</span>个代码仓库<br>`
+                                                        }
+                                                        if(data.watch_num != '0'){
+                                                            dom = dom+ `Watch了<span class='cOrange'>${data.watch_num}</span>个代码仓库`
+                                                        }
+                                                        return dom ;
+                                                    })()} 
+                                                </p>
+                                                <p class="fade fade-time-5">闪亮的日子一直都在<br> 因为有你<br> openGauss星球更加璀璨了 </p> 
+                                            </div> 
+
+                                        </div>
+                                    </div>
+                                    
+                                    `
+                        list[3] = `<div class="contents">
+                                        <div class="page page-five"> 
+                                        <div class="panel3-box">  
+                                            <p class="cOrange fz16 mb10 ">Dear ${data.user_login}</p>
+                                        <p class="mb12"> 在这一年里，<br> 
+                                            你的贡献度在openGauss星球排名超过<span class="fb cOrange">${percentage}%</span>的人，<br>恭喜解锁你在openGauss星球新身份 </p> 
+                                        ${(function(){
+                                            let dom ='' ;
+                                                if(percentage<25 ){
+                                                    dom = ` 
+                                                        <div class="code-box"> 
+                                                            <p class="fz14">Level 1 <br>最后25% - 沉默王者，期待你也来放飞智慧。</p>
+                                                            <img src="./images/Level1@2x.png" alt="">
+                                                        </div> 
+                                                    `    
+                                                }
+                                                 if(percentage>25 && percentage<50 ){
+                                                    dom = ` 
+                                                        <div class="code-box"> 
+                                                            <p class="fz14">Level 2<br> 再次25% - 牛刀小试，你的贡献不可或缺。</p>
+                                                            <img src="./images/Level2@2x.png" alt="">
+                                                        </div> 
+                                                    `    
+                                                }
+                                                if(percentage >50 && percentage<75 ){
+                                                    dom = ` 
+                                                        <div class="code-box"> 
+                                                            <p class="fb fz14">Level 3<br> 次25% - 初露锋芒，你的闪亮照亮了openGauss。</p>
+                                                            <img src="./images/Level3@2x.png" alt="">
+                                                        </div>  `    
+                                                }
+                                                if(percentage =>75){
+                                                    dom = ` 
+                                                        <div class="code-box"> 
+                                                            <p class="fb fz14">Level 4 <br>前25% - 达人现身，你的身份藏不住了。</p>
+                                                            <img src="./images/Level4@2x.png" alt="">
+                                                        </div> 
+                                                    `   
+                                                }
+                                                return dom
+                                            })()}
+
+                                        </div> 
+                                        <div class="panel-mo5">
+                                            <img src="./images/图4/飞船5.png" alt="">  
+                                            <img src="./images/logo.png" alt="">
+                                            <img src="./images/图4/share.png" class='share' alt="">  
+                                            <div class="code-tile"> 
+                                                <img src="./images/code.png" class='codeImg' alt="">  
+                                            </div>
+                                            
+                                        </div> 
+                                </div>
+                                </div> 
+                                
+                                `
+                    }
+                    back[i].innerHTML = list[i]  
+                }
+                pcBox.find('.front').css({transform:'rotateY(-180deg)'}) 
+                pcBox.find('.back').css({transform:'rotateY(0deg)'})
+            }) 
+        }
+        
+        // 移动端事件
+        let swper = null;
+        function intaSwiper(data, percentage,isH5Contribution) {
+            let list = [] 
+
+            if(isH5Contribution){
+                $('#outer-container').addClass('no-h5-contribution')
+                list = [{
+                    content: `
+                    <div class="page page-one"> 
+                            <div class="text-box"> 
+                                <div class="ani1"> 
+                                    <p class="tit1">2021时光机</p>
+                                    <p class="tit1 mb20">你的openGauss星球之旅</p>  
+                                    <img class="buttonNext" src="./images/图1/按钮.png" alt="">
+                                </div>
+                            </div>
+                            <div class="people"> 
+                                <img src="./images/图1/飞船.png" alt="">
+                            </div>  
+                    </div>
+                    `
+                }, {
+                    content: ` 
+                    <div class="page page-two"> 
+                        <div class="text-box"> 
+                            <div class="ani1">
+                                <img src="./images/logo.png" class='logo' alt="">
+                                <p>Hi，很高兴认识你</p>
+                                <p>欢迎来到openGauss星球</p>
+                                <p>有些遗憾，在这之前我们错过了彼此</p>
+                                <p>希望我们的故事可以从此刻开始……</p>
+                                <p class='mb12'>首先请让我为你介绍一下我自己</p>
+
+                                <p>自2020年6月30日开源以来</p> 
+                                <p class="one-text ">这里已经有超过<span class='fz14 cOrange'>2589</span>用户并肩同行</p> 
+                                <p class="one-text ">openGauss如期在2021年发布<span class='fz14 cOrange'>2</span>个版本</p>
+                                <p class="one-text">下载量遍及全球<span class='fz14 cOrange'>81</span>个国家、<span class='fz14 cOrange'>562</span>个城市</p>  
+                                <p class="one-text ">并成功发行<span class='fz14 cOrange'>12</span>个商业发行版</p>
+                                <p class="one-text ">吸引了超过<span class='fz14 cOrange'>100</span>家企业加入社区</p>
+                                <p class="one-text">走进<span class='fz14 cOrange'>72</span>所高校</p>
+                                <p class="one-text mb12">建立了<span class='fz14 cOrange'>20</span>个SIG</p>  
+                                <p class="one-text">我们坚信我们走在璀璨的星河里</p> 
+                                <p class="one-text">希望未来能够有你一起同行</p> 
+                                <p>元旦快乐。</p>
+                                <p class='mb12'>openGauss星球</p>
+                                <img src="./images/code.png" class='codeImg' alt="">  
+                            </div>
+                        </div> 
+                    </div>
+                    `
+                }]
+            }else{
+                $('#outer-container').removeClass('no-h5-contribution');
+                list = [{
+                    content: `
+                    <div class="contents">
+                        <div class="page page-one"> 
+                            <div class="text-box"> 
+                                <div class="ani1"> 
+                                    <p class="tit1">2021时光机</p>
+                                    <p class="tit1 mb20">你的openGauss星球之旅</p>  
+                                    <img class="buttonNext" src="./images/图1/按钮.png" alt="">
+                                </div>
+                            </div>
+                            <div class="people"> 
+                                <img src="./images/图1/飞船.png" alt="">
+                            </div> 
+                        </div>
+                    </div>
+                    `
+                }, {
+                    content: `
+                    <div class="page page-tow">
+                        <div class="text-box ani1">
+                            <p class="one-text ">因为有<span class='fz14 cOrange'>2589</span>个并肩同行的小伙伴一起战斗</p>
+                            <p class="one-text">openGauss如期在2021年发布<span class='fz14 cOrange'>2</span>个版本</p>
+                            <p class="one-text">你们的成果被<span class='fz14 cOrange'>81</span>个国家、<span class='fz14 cOrange'>562</span>个城市下载应用</p>
+                            <p class="one-text">并成功发行<span class='fz14 cOrange'>12</span>个商业发行版</p>
+                            <p class="one-text ">吸引了超过<span class='fz14 cOrange'>100</span>家企业加入社区</p>
+                            <p class="one-text">走进<span class='fz14 cOrange'>72</span>所高校</p>
+                            <p class="one-text ">与志同道合的“他”建立了<span class='fz14 cOrange'>20</span>个SIG</p>
+                            <p class="one-text">成立了社区理事会、举办了openGauss<span class='fz14 cOrange'>第1次</span>Summit</p> 
+                            <p>......</p>
+                        </div> 
+                        <div class="ani2">
+                            <img src="./images/图2/飞船2.png" alt="">
+                        </div>
+                    </div>
+                    `
+                }, {
+                    content: `
+                    <div class="page page-three">
+                            <p class="fz14 mb12">我更记得那些关于你的故事</p>
+                                ${(function(){ 
+                                    let dom= ''; 
+                                    if(data.first_time_of_submit_issue != ''){
+                                        dom = dom+  `
+                                        <p class='fade fade-time-1'><span class='cOrange'>${timeChange(data.first_time_of_submit_issue)}</span>，你提出了第一个Issue</p>  `
+                                    }  
+                                    if(data.first_time_of_submit_pr != ''){
+                                        dom = dom+ `<p class='fade fade-time-2'><span class='cOrange'>${timeChange(data.first_time_of_submit_pr)}</span>，你提交了第一个PR</p>`
+                                    } else{ 
+                                        dom = dom+ `<p class='fade fade-time-2'>期待在2022年，也能收到你的第一个PR</p> `
+                                    }
+                                    if(data.first_time_of_star != ''){
+                                        dom = dom+ `<p class='fade fade-time-3'><span class='cOrange'>${timeChange(data.first_time_of_star)}</span>，你第一次点亮了我的仓库，那时你应该对我是心动了吧</p> `
+                                    }else{
+                                        dom = dom+ `<p class='fade fade-time-3'>或许某天，你也会来点亮我的仓库 </p>`
+                                    }
+                                    
+                                    if(data.first_user_login_of_be_comment != ''){
+                                        dom = dom+ ` <p class='fade fade-time-4'>还记得<span class='cOrange'>${data.first_user_login_of_be_comment}</span>吗？那是第一个给你评论的朋友，让你倍感激励</p>  `
+                                    } 
+
+                                    if(data.first_user_login_of_comment != ''){
+                                        dom = dom+ ` <p class='fade fade-time-5'>于是，你传递了这份温暖在<span class='cOrange'>${data.first_user_login_of_comment}</span>发表了第一次留言</p>  `
+                                    } 
+
+                                    if(data.user_login_with_most_contact != ''){
+                                        dom = dom+ ` <p class='fade fade-time-6'>相信你一定也从<span class='cOrange'>${data.user_login_with_most_contact}</span>学到很多吧 这是与你联系最多的朋友</p>`
+                                    }  
+                                    return dom;
+                                })()}
+                                
+                                <p class='fade fade-time-7'>希望2022年的你，能够在这里收获更多</p>
+                        </div>
+                    `
+                }, {
+                    content: `
+                        <div class="page page-four">
+                            <div class="panel3-box"> 
+                                <p class="fade fade-time-1">我会一直期待并且收集那些在openGauss星球</p>
+                                <p class="fade fade-time-2">关于你的光亮</p>
+                                <p class="fade fade-time-3">2022年， 你在这期间</p>
+                                <p class="mb20 fade fade-time-4"> 
+                                    ${(function(){
+                                        let dom =''
+                                        if(data.code_lines != '0'){
+                                            dom = dom+ `贡献了<span class='cOrange'>${data.code_lines}</span>行代码<br>`
+                                        }
+                                            if(data.pr_num != '0'){
+                                            dom = dom+ `提交了<span class='cOrange'>${data.pr_num }</span>个PR<br>`
+                                        }
+                                        if(data.issue_num != '0'){
+                                            dom = dom+ `提出了<span class='cOrange'>${data.issue_num }</span>个issue<br>`
+                                        } 
+                                        if ( data.star_num != '0'){
+                                            dom = dom+ `Star了<span class='cOrange'>${data.star_num}</span>个代码仓库<br>`
+                                        }
+                                        if( data.fork_num != '0'){
+                                            dom = dom+ `Fork了<span class='cOrange'>${data.fork_num}</span>个代码仓库<br>`
+                                        }
+                                        if(data.watch_num != '0'){
+                                            dom = dom+ `Watch了<span class='cOrange'>${data.watch_num}</span>个代码仓库`
+                                        }
+                                        return dom ;
+                                    })()}
+                                </p>
+                                <p class="fade fade-time-5"> 闪亮的日子一直都在<br> 因为有你<br> openGauss星球更加璀璨了 </p> 
+                            </div> 
+                        </div>   
+                    `
+                }, {
+                    content: `
+                        <div class="page page-five"> 
+                            <div class="panel3-box">   
+                            <p class="cOrange fz16 mb10 ">Dear ${data.user_login}</p>
+                            <p class="mb12"> 在这一年里，<br> 
+                                你的贡献度在openGauss星球排名超过<span class="fb fz14 cOrange">${percentage}%</span>的人，<br>恭喜解锁你在openGauss星球新身份 </p> 
+                            ${(function(){
+                                let dom=''; 
+                                    if(percentage<25 ){
+                                        dom = dom+ ` 
+                                            <div class="code-box"> 
+                                                <p class="fz14">Level 1 <br>最后25% - 沉默王者，期待你也来放飞智慧。</p>
+                                                <img src="./images/Level1@2x.png" alt="">
+                                            </div> 
+                                        `    
+                                    }
+                                     if(percentage>25 && percentage<50 ){
+                                        dom = dom+ ` 
+                                            <div class="code-box"> 
+                                                <p class="fz14">Level 2<br> 再次25% - 牛刀小试，你的贡献不可或缺。</p>
+                                                <img src="./images/Level2@2x.png" alt="">
+                                            </div> 
+                                        `    
+                                    }
+                                     if(percentage>50 && percentage<75 ){
+                                        dom = dom+ ` 
+                                            <div class="code-box"> 
+                                                <p class="fb fz14">Level 3<br> 次25% - 初露锋芒，你的闪亮照亮了openGauss。</p>
+                                                <img src="./images/Level3@2x.png" alt="">
+                                            </div>  `    
+                                    }
+                                    if(percentage =>75){
+                                        dom = dom+ ` 
+                                            <div class="code-box"> 
+                                                <p class="fb fz14">Level 4 <br>前25% - 达人现身，你的身份藏不住了。</p>
+                                                <img src="./images/Level4@2x.png" alt="">
+                                            </div> 
+                                        `   
+                                    }
+                                    return dom;
+                                })()}
+                            </div> 
+                            <div class="panel-mo5">
+                                <img src="./images/图4/飞船5.png" alt="">  
+                                <img src="./images/logo.png" alt="">
+                                <img src="./images/图4/share.png" class='share' alt="">  
+                                <div class="code-tile">  
+                                    <img src="./images/code.png" class='codeImg' alt="">  
+                                </div> 
+                            </div> 
+                    </div> `
+                }, {
+                    content: `
+                    <div class="page page-six">
+                        <div class="main">
+                            <div class="six-logo"><img src="./images/logo.png" alt=""></div>
+                            <div class="text-box ">
+                                <p class="typing">朝暮与年岁共往，与你同行至天光。</p>
+                                <p class="typing delay-time1">愿你元旦快乐。</p> 
+                                <p class="typing delay-time2 ">openGauss星球</p>
+                                <img src="./images/code.png" class='codeImg' alt="">  
+                            </div>
+                        </div> 
+                    </div>  `
+                }]
+
+            }
+            swiper = new Swiper({
+                container: container,
+                data: list,
+            });
+        }
+    </script>
+</body>
+
+</html>

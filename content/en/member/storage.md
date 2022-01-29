@@ -59,4 +59,32 @@ title = "Committer"
 email = "mailto:springsun.xu@126.com"
 gitee = "https://gitee.com/garyxu2014"
 
+[[card]]
+img = "/zh/member/img/zhangleyi.png"
+name = "Leyi Zhang"
+title = "Committer"
+email = "mailto:kamusis@gmail.com"
+gitee = "https://gitee.com/kamusis"
+
+[[card]]
+img = "/zh/member/img/zhangchengwei.png"
+name = "Chengwei Zhang"
+title = "Committer"
+email = "mailto:flashspy@hotmail.com"
+gitee = "https://gitee.com/jarekzhang"
+
+[[card]]
+img = "/zh/member/img/linkexu.png"
+name = "Kexu Lin"
+title = "Committer"
+email = "mailto:linkexu66@outlook.com"
+gitee = "https://gitee.com/kexulin"
+
+[[card]]
+img = "/zh/member/img/zhangwanchuan.png"
+name = "Wanchuan Zhang"
+title = "Committer"
+email = "mailto:wanchuan_zhang@163.com"
+gitee = "https://gitee.com/dbcrafter"
+
 +++

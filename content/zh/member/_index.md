@@ -84,7 +84,15 @@ side = "right"
 
 [[sig]]
 id = "DCF"
+side = "left"
+
+[[sig]]
+id = "Plugin"
 side = "right"
+
+[[sig]]
+id = "DistributionCertification"
+side = "left"
 
 
 

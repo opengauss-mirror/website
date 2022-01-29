@@ -628,12 +628,17 @@
   }
   .community-partners-item {
     margin-bottom: 30px;
+    border-top: 1px solid #dfe1e8 ;
   }
   .partners-item {
-    margin-bottom: 20px;
+    border-right: 1px solid #dfe1e8 !important;
+    border-top: 0 none !important;
   }
   .partners-item:last-child {
     margin-bottom: 0;
+  }
+  .footer-copyright a{
+    font-size: 12px !important;
   }
   .footer-wechat.isH5 {
     display: block;

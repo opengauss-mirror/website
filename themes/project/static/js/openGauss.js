@@ -17,23 +17,39 @@ $(document).ready(function() {
       type: 'bullets',
       clickable :true,
     },
-  })
+  }) 
+  if(myBannerSwiper.el){
+    //鼠标覆盖停止自动切换与隐藏前进后退按钮
+    myBannerSwiper.el.onmouseover = function(){ 
+      myBannerSwiper.navigation.$nextEl.removeClass('hide');
+      myBannerSwiper.navigation.$prevEl.removeClass('hide');
+    }
+    //鼠标覆盖停止自动切换与隐藏前进后退按钮
+    myBannerSwiper.el.onmouseout = function(){
+      myBannerSwiper.navigation.$nextEl.addClass('hide');
+      myBannerSwiper.navigation.$prevEl.addClass('hide');
+    }
+  }
+  
 
   // 文档页面语言切换
-  var currentUrl = window.location.href;
-
+  var currentUrl = window.location.href; 
   const switchLanguage = function () {
     var urls = currentUrl.split('/docs/');
     urls = urls.slice(0, urls.length - 1);
-    urls.push('Quickstart/Quickstart.html');
+    
+    if(currentUrl.includes('latest') || urls[1] == 'latest'){
+        urls.push('BriefTutorial/BriefTutorial.html');
+    }else{
+        urls.push('Quickstart/Quickstart.html');
+    } 
     urls = urls.join('/docs/');
 
     if (includesStr('/zh/', urls)) {
       urls = urls.replace('/zh/', '/en/');
     } else {
       urls = urls.replace('/en/', '/zh/');
-    }
-
+    } 
     window.location.href = urls;
   }
 
@@ -47,9 +63,12 @@ $(document).ready(function() {
     }, function () {
       $(this).find('.img-static').removeClass('hidding');
       $(this).find('.img-gif').addClass('hidding');
-    })
+    }) 
   }
-  toggleGifImg();
+   
+  if($(window).innerWidth() > 1280){
+        toggleGifImg();
+  }
 
   // 中英文切换
   const enTozh = function (url) {
@@ -105,20 +124,7 @@ $(document).ready(function() {
     var lang = window.location.href.includes('/zh/') ? 'en' : 'zh';
     setCookie('lang', lang)
   });
-
-  $('#navigation').find('.dropdown').each(function () {
-    $(this).hover(function (e) {
-      var hoverTarget = e.target;
-      if ($(hoverTarget).parent().is('.dropdown')) {
-        $(hoverTarget).parent().toggleClass('hovered').toggleClass('open');
-      }
-    }, function (e) {
-      var hoverTarget = e.target;
-      if ($(hoverTarget).parent().is('.dropdown')) {
-        $(hoverTarget).parent().toggleClass('hovered').toggleClass('open');
-      }
-    })
-  })
+ 
 
   if (includesStr('/blogs', currentUrl)) {
     $('.nav-blog-link').closest('.dropdown').addClass('active');
@@ -153,4 +159,39 @@ $(document).ready(function() {
   };
 
   closeCookie();
+
+  const questionnaireCloseCookie = function () {
+    var hasCookie = getCookie('isRuestionnaire=');
+    if (hasCookie) {
+      $('.home-questionnaire').addClass('visited');
+    } else {
+      $('.home-questionnaire').removeClass('visited');
+    }
+
+    $('.home-questionnaire .closed').on('click', function (event) {
+      event.preventDefault(); 
+      setCookie('isRuestionnaire', 'read');
+      $('.home-questionnaire').addClass('visited');
+    });
+
+  };
+
+  questionnaireCloseCookie();
+
+  const summaryTipsCloseCookie = function () {
+    var hasCookie = getCookie('isSummary=');
+    if (hasCookie) {
+      $('.summaryTips').addClass('visited');
+    } else {
+      $('.summaryTips').removeClass('visited');
+    }
+
+    $('.summaryTips .closed').on('click', function (event) {
+      event.preventDefault(); 
+      setCookie('isSummary', 'read');
+      $('.summaryTips').addClass('visited');
+    }); 
+  }; 
+  summaryTipsCloseCookie();  
+
 })

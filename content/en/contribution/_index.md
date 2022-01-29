@@ -41,7 +41,15 @@ You can find the SIGs you are interested in from the SIG list below.
 | [GIS](https://gitee.com/opengauss/tc/tree/master/sigs/GIS) | Develop and maintain the Geographic Information System of the openGauss community. |
 | [CloudNative](https://gitee.com/opengauss/tc/tree/master/sigs/CloudNative) | Develop and maintain the Cloud Native of the openGauss community. |
 | [SecurityTechnology](https://gitee.com/opengauss/tc/tree/master/sigs/SecurityTechnology) | Develop and maintain the database security technology of the openGauss community. |
+| [DistributionCertification](https://gitee.com/opengauss/tc/tree/master/sigs/DistributionCertification) | Define and develop openGuass distribution certification specification, test suite and process. |
+| [Plugin](https://gitee.com/opengauss/tc/tree/master/sigs/Plugin) | Build, manage and develop the plugin framework. |
+| [Blockchain](https://gitee.com/opengauss/tc/tree/master/sigs/Blockchain) | Explore the blockchain use case, Study the core technical issues of blockchain. |
+| [DCF](https://gitee.com/opengauss/tc/tree/master/sigs/DCF) | Develop and maintain Distributed Consensus Framework of the openGauss community. |
+| [QA](https://gitee.com/opengauss/tc/tree/master/sigs/QA) | Develop and maintain released version quality of the openGauss community. |
+| [Graph](https://gitee.com/opengauss/tc/tree/master/sigs/SecurityTechnology) | Responsible for the knowledge map data management function of unified storage and query of the openGauss community. |
 
+
+Want to start a new SIG? Please send your application to: <tc@opengauss.org> , the email template is referred to: <https://gitee.com/opengauss/tc/blob/master/sigs/Template/README.md> .
 
 ### 4. Starting Your Contribution
 

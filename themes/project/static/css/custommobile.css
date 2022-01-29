@@ -16,13 +16,16 @@
     align-items: center;
     justify-content: space-between;
     /* height: 0.8rem; */
-  }
+  } 
   header {
     position: fixed;
     top: 0;
     z-index: 2;
     width: 100%;
     background: #fff;
+  }
+  .body_content{
+  	  margin:55px 0 0 ;
   }
   .nav_table{
     display: flex;
@@ -303,6 +306,8 @@
   /* ----------------文档-------------- */
   .container {
     position: relative;
+    height: auto !important;
+    width: auto !important;
   }
   .book-page {
     position: absolute;
@@ -313,7 +318,7 @@
   .docscontainer {
     display: block;
     position: relative;
-    max-width: 1280px;
+    max-width: 1280px !important;
   }
   .book-menu,.book-page {
     width: 100%;
@@ -684,7 +689,10 @@
   header.addHeight {
     height: 102px;
   }
-
+	
+   .body_content{
+	  margin:64px 0 0 ;
+  } 
   footer {
     padding: 20px 30px 20px;
   }

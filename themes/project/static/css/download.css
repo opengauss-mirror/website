@@ -187,8 +187,8 @@
 }
 .questionnaire {
     position: fixed;
-    left: 200px;
-    bottom: 300px;
+    left: 5%;
+    bottom: 350px;
 }
 .ques-icon {
     position: relative;
@@ -242,7 +242,62 @@
 .ques-card:hover {
     color: #fff;
 }
-@media screen and (max-width: 768px){
+
+.downcontent{
+    margin:0 auto;
+    width: 1140px;
+}
+.downtips{
+    line-height: 20px;
+    background: #fdf6ec;
+    padding: 8px 15px;  
+}
+.downtips.visited {
+    display: none;
+}
+.downtips .tile{
+    position: relative; 
+}
+.downtips p{
+    color:var(--orange-color); 
+}
+.downtips .closed{
+    position: absolute;
+    top:0;
+    right: 0;
+    cursor: pointer;
+    color: #aaa;
+    width: 20px;
+    height: 20px;
+}
+:root {
+    --ui-url-close: url("data:image/svg+xml,%3Csvg viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cpath d='M764.288 214.592L512 466.88 259.712 214.592a31.936 31.936 0 00-45.12 45.12L466.752 512 214.528 764.224a31.936 31.936 0 1045.12 45.184L512 557.184l252.288 252.288a31.936 31.936 0 0045.12-45.12L557.12 512.064l252.288-252.352a31.936 31.936 0 10-45.12-45.184z' fill='%23bbb'/%3E%3C/svg%3E"); 
+    --orange-color:#e6a23c;
+}
+.downtips .closed::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: inherit;
+    height: inherit;
+    background-color: #a2a9b6; 
+    -webkit-mask: var(--ui-url-close) no-repeat center / 16px;
+    mask: var(--ui-url-close) no-repeat center / 16px;
+}
+.downtips .closed:hover::before {
+    background-color: var(--orange-color); 
+}
+@media screen and (max-width: 1280px){
+    .downcontent{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 768px){ 
+    .downtips p{
+        margin-right: 24px;
+        font-size: 12px;
+    }
     .show-for-mo{
         display: block;
     }
@@ -290,6 +345,6 @@
     }
     .questionnaire {
         left: 15px;
-        bottom: 150px;
+        bottom: 200px;
     }
 }

@@ -56,7 +56,7 @@ paginate = 10
 [[menu.main]]
     identifier = "docs"
     name = "Docs"
-    url  = "/en/docs/2.0.1/docs/Quickstart/Quickstart.html"
+    url  = "/en/docs/2.1.0/docs/Quickstart/Quickstart.html"
     weight = 3
 
 [[menu.main]]
@@ -134,7 +134,7 @@ paginate = 10
     url = "/en/video.html"
     weight = 4
     parent = "connect"
-
+ 
 [[menu.main]]
     identifier = "certification"
     name = "Certification"
@@ -253,7 +253,7 @@ paginate = 10
 [[languages.zh.menu.main]]
     identifier = "docs"
     name = "文档"
-    url  = "/zh/docs/2.0.1/docs/Quickstart/Quickstart.html"
+    url  = "/zh/docs/2.1.0/docs/Quickstart/Quickstart.html"
     weight = 3
 
 [[languages.zh.menu.main]]
@@ -316,6 +316,13 @@ paginate = 10
     name = "视频"
     url = "/zh/video.html"
     weight = 4
+    parent = "connect"
+
+[[languages.zh.menu.main]]
+    identifier = "summit"
+    name = "峰会"
+    url = "/zh/summit.html"
+    weight = 5
     parent = "connect"
 
 [[languages.zh.menu.main]]
@@ -393,11 +400,26 @@ paginate = 10
     parent = "code"
 
 [[languages.zh.menu.main]]
-    identifier = "knowledge"
+    identifier = "knowledgemain"
     name = "知识"
     weight = 18
+    hasChidren = true
+
+[[languages.zh.menu.main]]
+    identifier = "knowledge"
+    name = "知识图谱"
+    weight = 19
     url  = "/zh/knowledge.html"
     hasChidren = false
+    parent = "knowledgemain"
+
+[[languages.zh.menu.main]]
+    identifier = "advanced"
+    name = "学习进阶"
+    weight = 20
+    url  = "/zh/advanced.html"
+    hasChidren = false
+    parent = "knowledgemain"
 
 #[[languages.zh.menu.main]]
 #    identifier = "forum"
@@ -559,7 +581,7 @@ paginate = 10
 
 [params.rightText]
     enable = true
-    text = "Copyright © openGauss 2021. All rights reserved."
+    text = "Copyright © openGauss 2022. All rights reserved."
 
 [languages.zh.params.copyright]
     enable = true
@@ -567,7 +589,7 @@ paginate = 10
 
 [languages.zh.params.rightText]
     enable = true
-    text = "版权所有 © openGauss 2021 保留一切权利"
+    text = "版权所有 © openGauss 2022 保留一切权利"
 
 [languages]
 
