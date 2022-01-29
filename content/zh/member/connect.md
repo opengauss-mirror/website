@@ -1,4 +1,4 @@
-+++
+﻿+++
 member = "connect"
 title ="Connectors"
 goto = "前往Gitee仓库"
@@ -28,5 +28,20 @@ name = "韦晓月"
 title = "Committer"
 email = "mailto:aaronwell@qq.com"
 gitee = "https://gitee.com/aaronwell"
+
+[[card]]
+img = "/zh/member/img/zhangwenlong.png"
+name = "张文龙"
+title = "Committer"
+email = "mailto:zhangwl@vastdata.com.cn"
+gitee = "https://gitee.com/willloong"
+
+
+[[card]]
+img = "/zh/member/img/yaoqian1.png"
+name = "姚前"
+title = "Committer"
+email = "mailto:i@vimiix.com"
+gitee = "https://gitee.com/vimiix"
 
 +++

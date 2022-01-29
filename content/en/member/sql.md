@@ -66,4 +66,18 @@ core = "Core Members"
     email = "mailto:liaomd@vastdata.com.cn"
     gitee = "https://gitee.com/hemny"
 
+
+[[card]]
+    img = "/zh/member/img/wangzhenglv.png"
+    name = "Zhenglv Wang"
+    title = "Committer"
+    email = "mailto:lancer_cool@163.com"
+    gitee = "https://gitee.com/April01xxx"
+
+[[card]]
+    img = "/zh/member/img/pengjiong.png"
+    name = "Jiong Peng"
+    title = "Committer"
+    email = "mailto:pengjiong1@huawei.com"
+    gitee = "https://gitee.com/totaj"
 +++

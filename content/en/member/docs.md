@@ -44,4 +44,18 @@ title = "Committer"
 email = "mailto:docs66@outlook.com"
 gitee = "https://gitee.com/infomation1"
 
+[[card]]
+img = "/zh/member/img/guohuan.png"
+name = "Huan Guo"
+title = "Committer"
+email = "mailto:huan.guo@enmotech.com"
+gitee = "https://gitee.com/spaceoddity91719"
+
+[[card]]
+img = "/zh/member/img/zhangcuiping.png"
+name = "Cuiping Zhang"
+title = "Committer"
+email = "mailto:cuiping.zhang@enmotech.com"
+gitee = "https://gitee.com/zcp100_zcp100"
+
 +++

@@ -1,4 +1,4 @@
-+++
+﻿+++
 member = "docs"
 title ="Docs"
 goto = "前往Gitee仓库"
@@ -43,5 +43,19 @@ name = "姜楠"
 title = "Committer"
 email = "mailto:docs66@outlook.com"
 gitee = "https://gitee.com/infomation1"
+
+[[card]]
+img = "/zh/member/img/guohuan.png"
+name = "郭欢"
+title = "Committer"
+email = "mailto:huan.guo@enmotech.com"
+gitee = "https://gitee.com/spaceoddity91719"
+
+[[card]]
+img = "/zh/member/img/zhangcuiping.png"
+name = "张翠娉"
+title = "Committer"
+email = "mailto:cuiping.zhang@enmotech.com"
+gitee = "https://gitee.com/zcp100_zcp100"
 
 +++
