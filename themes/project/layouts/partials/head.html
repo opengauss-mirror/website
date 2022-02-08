@@ -11,7 +11,9 @@
     {{ $sections := split (trim .File.Dir "/") "/" }}
     {{ $title = index ($sections | last 1) 0 | humanize | title }}
   {{ else if and .IsPage .File }}
-    {{ $title = .File.BaseFileName | humanize | title }}
+    <!-- {{ $title = .File.BaseFileName | humanize | title }} -->
+    {{ $tit := replace .File.BaseFileName "_" " " }}
+    {{ $title = replace $tit "-" " " }}
   {{ end }}
   <title>{{  $title }} | {{ .Site.Title -}}</title>
   <meta name="author" content="{{ .Site.Params.author }}" />
