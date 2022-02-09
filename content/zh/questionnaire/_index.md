@@ -2,6 +2,208 @@
 title = "openGauss社区满意度调研"
 bgImg = "../img/breadcrumbs/contribution_bg.png"
 moImg = "../img/breadcrumbs/contribution_mo.png"
+
+
+[[ module ]] 
+    [[ module.types ]]
+        name = "特等奖1名"
+        type = "bg1" 
+        cover ="/img/questionnaire/img1.png" 
+        [[ module.types.item ]]
+            name = "大疆 DJI Mini SE 无人机"
+            phone = "187****6465"
+    [[ module.types ]]
+        name = "一等奖2名"
+        type = "bg2" 
+        cover ="/img/questionnaire/img2.png" 
+        [[ module.types.item ]]
+            name = "华为平板畅享2"
+            phone = "132****9753"
+        [[ module.types.item ]]
+            name = "华为平板畅享2"
+            phone = "199****5490"
+    [[ module.types ]]
+        name = "二等奖6名"
+        type = "bg3" 
+        cover ="/img/questionnaire/img3.png" 
+        [[ module.types.item ]]
+            name = "华为手环6 NFC版"
+            phone = "151****8396"
+        [[ module.types.item ]]
+            name = "华为手环6 NFC版"
+            phone = "159****5750"
+        [[ module.types.item ]]
+            name = "华为手环6 NFC版"
+            phone = "137****2339"
+        [[ module.types.item ]]
+            name = "华为手环6 NFC版"
+            phone = "155****6463"
+        [[ module.types.item ]]
+            name = "华为手环6 NFC版"
+            phone = "188****9657"
+        [[ module.types.item ]]
+            name = "华为手环6 NFC版"
+            phone = "189****0783"    
+    [[ module.types ]]
+        name = "三等奖50名"
+        type = "bg4" 
+        cover ="/img/questionnaire/img4.png" 
+        cover1 ="/img/questionnaire/img5.png" 
+        [[ module.types.item ]]
+            name = "openGauss长袖卫衣"
+            phone = "137****1432"
+        [[ module.types.item ]]
+            name = "openGauss长袖卫衣"
+            phone = "159****2730"
+        [[ module.types.item ]]
+            name = "openGauss长袖卫衣"
+            phone = "185****1996"
+        [[ module.types.item ]]
+            name = "openGauss长袖卫衣"
+            phone = "199****2447"
+        [[ module.types.item ]]
+            name = "openGauss长袖卫衣"
+            phone = "176****3213"
+        [[ module.types.item ]]
+            name = "openGauss长袖卫衣"
+            phone = "135****6819"  
+        [[ module.types.item ]]
+            name = "openGauss长袖卫衣"
+            phone = "156****8076"
+        [[ module.types.item ]]
+            name = "openGauss长袖卫衣"
+            phone = "139****8041"
+        [[ module.types.item ]]
+            name = "openGauss长袖卫衣"
+            phone = "131****5231"
+        [[ module.types.item ]]
+            name = "openGauss长袖卫衣"
+            phone = "184****0467"
+        [[ module.types.item ]]
+            name = "openGauss长袖卫衣"
+            phone = "186****7192"
+        [[ module.types.item ]]
+            name = "openGauss长袖卫衣"
+            phone = "178****7904"   
+        [[ module.types.item ]]
+            name = "openGauss长袖卫衣"
+            phone = "137****9402"
+        [[ module.types.item ]]
+            name = "openGauss长袖卫衣"
+            phone = "137****0258"
+        [[ module.types.item ]]
+            name = "openGauss长袖卫衣"
+            phone = "184****4667"
+        [[ module.types.item ]]
+            name = "openGauss长袖卫衣"
+            phone = "183****0914"
+        [[ module.types.item ]]
+            name = "openGauss长袖卫衣"
+            phone = "186****5775"
+        [[ module.types.item ]]
+            name = "openGauss长袖卫衣"
+            phone = "158****5618"    
+        [[ module.types.item ]]
+            name = "openGauss长袖卫衣"
+            phone = "130****9609"
+        [[ module.types.item ]]
+            name = "openGauss长袖卫衣"
+            phone = "138****2512"
+        [[ module.types.item ]]
+            name = "《openGauss数据库核心技术》"
+            phone = "139****6396"
+        [[ module.types.item ]]
+            name = "《openGauss数据库核心技术》"
+            phone = "187****6936"
+        [[ module.types.item ]]
+            name = "《openGauss数据库核心技术》"
+            phone = "158****7078"
+        [[ module.types.item ]]
+            name = "《openGauss数据库核心技术》"
+            phone = "181****3313" 
+        [[ module.types.item ]]
+            name = "《openGauss数据库核心技术》"
+            phone = "132****5923"
+        [[ module.types.item ]]
+            name = "《openGauss数据库核心技术》"
+            phone = "182****9537"
+        [[ module.types.item ]]
+            name = "《openGauss数据库核心技术》"
+            phone = "180****6031"
+        [[ module.types.item ]]
+            name = "《openGauss数据库核心技术》"
+            phone = "173****3944"
+        [[ module.types.item ]]
+            name = "《openGauss数据库核心技术》"
+            phone = "189****4980"
+        [[ module.types.item ]]
+            name = "《openGauss数据库核心技术》"
+            phone = "139****2656"  
+        [[ module.types.item ]]
+            name = "《openGauss数据库核心技术》"
+            phone = "138****4076"
+        [[ module.types.item ]]
+            name = "《openGauss数据库核心技术》"
+            phone = "173****1079"
+        [[ module.types.item ]]
+            name = "《openGauss数据库核心技术》"
+            phone = "176****4307"
+        [[ module.types.item ]]
+            name = "《openGauss数据库核心技术》"
+            phone = "185****0027"
+        [[ module.types.item ]]
+            name = "《openGauss数据库核心技术》"
+            phone = "133****6136"
+        [[ module.types.item ]]
+            name = "《openGauss数据库核心技术》"
+            phone = "185****2548"  
+        [[ module.types.item ]]
+            name = "《openGauss数据库核心技术》"
+            phone = "158****7709"
+        [[ module.types.item ]]
+            name = "《openGauss数据库核心技术》"
+            phone = "133****6886"
+        [[ module.types.item ]]
+            name = "《openGauss数据库核心技术》"
+            phone = "173****2585"
+        [[ module.types.item ]]
+            name = "《openGauss数据库核心技术》"
+            phone = "187****6465"
+        [[ module.types.item ]]
+            name = "《openGauss数据库核心技术》"
+            phone = "156****4705"
+        [[ module.types.item ]]
+            name = "《openGauss数据库核心技术》"
+            phone = "185****1708"  
+        [[ module.types.item ]]
+            name = "《openGauss数据库核心技术》"
+            phone = "188****8300"
+        [[ module.types.item ]]
+            name = "《openGauss数据库核心技术》"
+            phone = "183****1871"
+        [[ module.types.item ]]
+            name = "《openGauss数据库核心技术》"
+            phone = "159****3655"
+        [[ module.types.item ]]
+            name = "《openGauss数据库核心技术》"
+            phone = "189****2045"
+        [[ module.types.item ]]
+            name = "《openGauss数据库核心技术》"
+            phone = "188****6878"
+        [[ module.types.item ]]
+            name = "《openGauss数据库核心技术》"
+            phone = "132****1500"  
+        [[ module.types.item ]]
+            name = "《openGauss数据库核心技术》"
+            phone = "188****6662"
+        [[ module.types.item ]]
+            name = "《openGauss数据库核心技术》"
+            phone = "133****6418"
+        [[ module.types.item ]]
+            name = "《openGauss数据库核心技术》"
+            phone = "153****4521"  
+
+
 +++
 
 ## 活动规则

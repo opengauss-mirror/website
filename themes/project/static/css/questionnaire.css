@@ -44,19 +44,15 @@
     background: url(../img/questionnaire/bg.png) no-repeat right bottom/cover;
     height: 300px;
     justify-content: space-between;
-    margin: 0 10px 60px; 
-    display: flex;
+    margin: 0 10px 60px;  
     box-shadow: 0px 6px 20px 0px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-}
-.panel1 .tile{
-    max-width: 760px;
-}
+    padding-left: 180px;
+} 
 .panel1 p{
-    font-size: 18px;  
-    color: #555555;
-    line-height: 32px;
-    margin-bottom: 26px;
+    font-size: 32px;  
+    color: #000;
+    line-height: 64px; 
 } 
 .panel1 p:last-child{
     margin: 0;
@@ -85,38 +81,94 @@
 
 .panel2{
     padding: 48px;
-    background: url(../img/questionnaire/bg1.png) no-repeat;
-    height: 200px;
+    background: url(../img/questionnaire/bg1.png) no-repeat; 
     position: relative;
     margin: 0 10px 40px;  
 }
 .panel2.bg2{
     background-image: url(../img/questionnaire/bg2.png)
 }
+.panel2.bg3{
+    background-image: url(../img/questionnaire/bg3.png)
+}
 .panel2 h3{ 
     font-size: 32px;  
     color: #7D32EA;
     line-height: 40px;
     margin-bottom: 32px;
+    text-align: center;
 }
 .panel2 p{ 
     font-size: 24px; 
     color: #555555;
     line-height: 32px;
 }
-.panel2 .cover img{
+.panel2 .cover{
     position: absolute;
-    right: 30px;
+    left: 0px;
     top:0px;
+}
+.panel2 .cover img{ 
     width: 364px;
     height: 200px;
 }
-.panel2.bg2 .cover img{
-    position: absolute;
-    right: 113px;
-    top:17px;
-    width: 210px;
-    height: 166px;
+.panel2.bg2 .cover {
+    left: auto;
+    right: 85px;
+    top:20px;
+}
+.panel2.bg2 .cover img{   
+    width: 153px;
+    height: 120px;
+}
+.panel2.bg3 .cover{
+    left: 64px; 
+    top:250px;
+}
+.panel2.bg3 .cover img{   
+    width: 121px;
+    height: 144px;
+}
+.panel2.bg4 .cover{
+    left: auto;
+    right: 68px; 
+    top:22px;
+}
+.panel2.bg4 .cover img{  
+    width: 85px;
+    height: 112px;
+}
+.panel2.bg4 {
+    background-image: url(../img/questionnaire/bg4.png)
+}
+
+.winnersTit{
+    font-size: 32px;
+    line-height: 32px;
+    margin-bottom: 40px;
+    color: #000;
+    text-align: center;
+}
+
+.questionnaireTable{
+    width: 800px;
+    margin: 0 auto;
+}
+
+.questionnaireTable td,.questionnaireTable th{
+    line-height: 64px;
+    font-size: 18px;
+    color: #555;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+.questionnaireTable th{
+    color: #000;
+    font-weight: bold;
+}
+.questionnaireTable td:first-child,
+.questionnaireTable th:first-child{
+    padding-left: 140px;
 }
 
 .panel3{
@@ -196,10 +248,17 @@
     }
     .panel1 {
         padding: 24px;
+        height: auto; 
     }
-
-}
-@media (max-width: 768px) {
+    .panel1 p{
+        font-size: 24px;
+        line-height: 32px;  
+        margin-bottom:24px;
+        text-align: left;
+    }
+    .winnersTit{
+        font-size: 24px;
+    }
     .banner{
         text-align: center;
         margin-top: 0;
@@ -220,6 +279,17 @@
     .banner .inside{
         display: none;
     }
+    .questionnaireTable{
+        width: 96%;
+    }
+    .questionnaireTable td,
+    .questionnaireTable th{
+        font-size: 14px;
+        line-height: 48px;
+    }
+    .questionnaireTable td:first-child, .questionnaireTable th:first-child {
+        padding-left: 12px; 
+    }
     .panel1 .codebox{
         margin: 20px auto 0;
     } 
@@ -229,11 +299,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background: url('../img/questionnaire/bg3.png');
+        background: url('../img/questionnaire/bg5.png');
         background-size: cover;
-    }
-    .panel3 .tile .cover{
-        padding: 0;
+        position: static;
     }
     .panel2{
         height: auto;
@@ -244,39 +312,18 @@
         height: 128px;
         width: auto;
         position: static !important;
-    }
-    .panel3 .tile .cover img{
-        height: 128px;
-    }
+    } 
     .panel2.bg1 .cover img{
         height: 160px;
-    }
-
-    .panel1{
-        display: block;
-        height: auto;
-        margin-bottom: 40px;
-    }
-    .panel1 p {
-        font-size: 14px;
-        color: #555555;
-        line-height: 24px;
-        margin-bottom:10px;
-    } 
-    .panel3 {
-        display: block;
-    }
-    .panel3 .tile{
-        width: 100%;
-        margin: 0 0 40px !important;
-    }
-    .questionnaire .shadow{
-        height: auto;
     }
     .questionnaire .shadow .info{
         padding: 16px 0;
         text-align: center;
+    } 
+    .questionnaire .shadow{
+        height: auto;
     }
+    
     .questionnaire .shadow .info h3{
         font-size: 20px; 
         margin: 0 0 8px;
