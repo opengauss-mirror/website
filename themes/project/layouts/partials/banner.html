@@ -3,28 +3,12 @@
         <div class="swiper-wrapper banner_swiper_wrapper">
             {{ range (where .Data.Pages "Type" "banner") }}
             <div class="swiper-slide banner_swiper_slide">
-                {{ if eq .Params.number "2" }} 
-                    <a class="banner-body-bg" href={{.Params.link }}>
-                        <div class="left-img block" style="background-image: url({{ .Site.BaseURL}}{{ .Params.bgLeft }})"></div> 
-                        <div class="center-img isPCshow" style="background-image: url({{ .Site.BaseURL}}{{ .Params.bgUrl }})">
-                            <div class="summitInfo">
-                                <h2>{{ .Params.title }} </h2>
-                                <h3>{{ .Params.info }} </h3>
-                                <p class='txt time'>{{ .Params.time }} </p>
-                                <p class='txt address'>{{ .Params.address }} </p> 
-                            </div>
-                        </div> 
-                        <img loading="lazy" class="isH5show" src="{{ .Site.BaseURL}}{{ .Params.mobileUrl }}" alt=""> 
-                        <div class="right-img block" style="background-image: url({{ .Site.BaseURL}}{{ .Params.bgRight }})"></div>
-                    </a> 
-                {{ else }} 
-					<a class="banner-body-bg"  href={{.Params.link }}>
-						<div class="left-img block" style="background-image: url({{ .Site.BaseURL}}{{ .Params.bgLeft }})"></div>                        
-						<div class="center-img isPCshow" style="background-image: url({{ .Site.BaseURL}}{{ .Params.bgUrl }})"></div> 
-						<img class="isH5show" src="{{ .Site.BaseURL}}{{ .Params.mobileUrl }}" alt="">                        
-						<div class="right-img block" style="background-image: url({{ .Site.BaseURL}}{{ .Params.bgRight }})"></div>
-					</a>  
-                {{ end }}
+                <a class="banner-body-bg"  href={{.Params.link }}>
+                    <div class="left-img block" style="background-image: url({{ .Site.BaseURL}}{{ .Params.bgLeft }})"></div>                        
+                    <div class="center-img isPCshow" style="background-image: url({{ .Site.BaseURL}}{{ .Params.bgUrl }})"></div> 
+                    <img class="isH5show" src="{{ .Site.BaseURL}}{{ .Params.mobileUrl }}" alt="">                        
+                    <div class="right-img block" style="background-image: url({{ .Site.BaseURL}}{{ .Params.bgRight }})"></div>
+                </a>
                 {{ if eq .Params.title_2 "openGauss" }}  
                     <div id="video-player" >
                         <img loading="lazy" class="video-player-btn" src="../img/breadcrumbs/video-player.gif" alt="">
