@@ -133,4 +133,11 @@ title = "Member"
 email = "mailto:zzzzzdb_zb@163.com"
 gitee = "https://gitee.com/zzzzzdb" 
 
+[[card]]
+img = "/zh/member/img/zhujinwei.png"
+name = "Jinwei Zhu"
+title = "Member"
+email = "mailto:zhujinwei@huawei.com"
+gitee = "https://gitee.com/zhu_jinwei" 
+
 +++
