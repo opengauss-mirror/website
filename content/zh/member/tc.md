@@ -52,7 +52,7 @@ img = "/zh/member/img/liuyongsheng.png"
 name = "刘勇生"
 title = "Member"
 email = "mailto:Liuyongsheng@shentongdata.com"
-gitee = "https://gitee.com/lys6676	"
+gitee = "https://gitee.com/lys6676"
  
 
 [[card]]
