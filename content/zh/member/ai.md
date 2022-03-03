@@ -1,4 +1,4 @@
-+++
+﻿+++
 member = "ai"
 title ="AI"
 goto = "前往Gitee仓库"
@@ -15,6 +15,13 @@ name = "李士福"
 title = "Maintainer"
 email = "mailto:lishifu@huawei.com"
 gitee = "https://gitee.com/lishifu_db"
+
+[[card]]
+img = "/zh/member/img/zhangce.png"
+name = "Zhang Ce"
+title = "Maintainer"
+email = "mailto: ce.zhang@inf.ethz.ch"
+gitee = "https://gitee.com/zhangce_6184"
 
 [[card]]
 img = "/zh/member/img/wangtianqing.png"
@@ -50,4 +57,11 @@ name = "夏康"
 title = "Committer"
 email = "mailto:excaliburxk@qq.com"
 gitee = "https://gitee.com/excaliburxk"
+
+[[card]]
+img = "/zh/member/img/xulijie.png"
+name = "许利杰"
+title = "Committer"
+email = "mailto:lijie.xu@inf.ethz.ch"
+gitee = "https://gitee.com/xulijie09"
 +++

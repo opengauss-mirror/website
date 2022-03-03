@@ -17,6 +17,13 @@ email = "mailto:lishifu@huawei.com"
 gitee = "https://gitee.com/lishifu_db"
 
 [[card]]
+img = "/zh/member/img/zhangce.png"
+name = "Ce Zhang"
+title = "Maintainer"
+email = "mailto: ce.zhang@inf.ethz.ch"
+gitee = "https://gitee.com/zhangce_6184"
+
+[[card]]
 img = "/zh/member/img/wangtianqing.png"
 name = "Tianqing Wang"
 title = "Committer"
@@ -50,4 +57,11 @@ name = "Kang Xia"
 title = "Committer"
 email = "mailto:excaliburxk@qq.com"
 gitee = "https://gitee.com/excaliburxk"
+
+[[card]]
+img = "/zh/member/img/xulijie.png"
+name = "Lijie Xu"
+title = "Committer"
+email = "mailto:lijie.xu@inf.ethz.ch"
+gitee = "https://gitee.com/xulijie09"
 +++
