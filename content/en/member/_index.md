@@ -93,7 +93,9 @@ side = "right"
 id = "DistributionCertification"
 side = "left"
 
-
+[[sig]]
+id = "ReleaseManagement"
+side = "right"
 
 [[usergroups]]
 id = "SZusergroup"
