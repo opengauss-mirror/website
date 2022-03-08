@@ -127,6 +127,7 @@ $(document).ready(function () {
             let info = data[0];
             let duration = escapeHTML(info.startTime) + '-' + escapeHTML(info.endTime);
             let t = '<h5 class="meeting-name">' + escapeHTML(info.name) +'</h5>';
+            let video_url = info.video_url === null? '': info.video_url;
             t += this.insertDetailListHTML(this.fontmatter.creator, escapeHTML(info.creator), 'creator', info.url);
             t += this.insertDetailListHTML(this.fontmatter.sig, escapeHTML(info.group_name), 'sig');
             t += this.insertDetailListHTML(this.fontmatter.day, escapeHTML(date), 'day');
@@ -135,7 +136,7 @@ $(document).ready(function () {
             t += this.insertDetailListHTML(this.fontmatter.zoomId, escapeHTML(info.meeting_id), 'zoomId');
             t += this.insertDetailListHTML(this.fontmatter.zoomLink, escapeHTML(info.join_url), 'zoomLink');
             t += this.insertDetailListHTML(this.fontmatter.etherpad, escapeHTML(info.etherpad), 'etherpad');
-            t += this.insertDetailListHTML(this.fontmatter.video, escapeHTML(info.video_url), 'video');
+            t += this.insertDetailListHTML(this.fontmatter.video, escapeHTML(video_url), 'video');
             t += '<div class="reverse-submit">' +
                 '<p class="date-delete cursor">' + this.fontmatter.delete + '</p>' +
                 '<p class="date-modify cursor">' + this.fontmatter.modify + '</p>' +
