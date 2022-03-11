@@ -2,7 +2,7 @@
 member = "ReleaseManagement"
 title = "ReleaseManagement"
 goto = "Go to Gitee home page"
-gitlink = "https://gitee.com/opengauss/release-management"
+gitlink = "https://gitee.com/opengauss/tc/tree/master/sigs/ReleaseManagement"
 list = "Mailing List: "
 email = "releasemanagement@opengauss.org"
 maillink = "mailto:releasemanagement@opengauss.org"

@@ -1,4 +1,4 @@
-+++
+﻿+++
 title = "社区贡献"
 bgImg = "../img/breadcrumbs/contribution_bg.png"
 moImg = "../img/breadcrumbs/contribution_mo.png"
@@ -48,6 +48,7 @@ SIG是开放的，欢迎任何人加入并参与贡献。每一个SIG在码云�
 | [DCF](https://gitee.com/opengauss/tc/tree/master/sigs/DCF) | 负责openGauss社区分布式一致性框架DCF的开发和维护。|
 | [QA](https://gitee.com/opengauss/tc/tree/master/sigs/QA) | 负责openGauss社区版本质量相关的开发和维护。|
 | [Graph](https://gitee.com/opengauss/tc/tree/master/sigs/SecurityTechnology) | 负责openGauss社区统一存储和查询的知识图谱数据管理功能。|
+| [ReleaseManagement](https://gitee.com/opengauss/tc/tree/master/sigs/ReleaseManagement) | 社区协同各SIG maintainer,规划openGauss社区版本的发布工作，为最终的竞争力目标达成负责。|
 
 
 感兴趣的SIG组还未出现？新的SIG组等你来发起！欢迎发送申请邮件至：<tc@opengauss.org> ，邮件申请模板请参考<https://gitee.com/opengauss/tc/blob/master/sigs/Template/README.md> 。

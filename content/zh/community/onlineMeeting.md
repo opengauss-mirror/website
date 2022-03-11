@@ -1,4 +1,4 @@
-+++
+﻿+++
 title = "线上会议"
 +++
 
@@ -21,6 +21,7 @@ openGauss社区组织可以选择不同的渠道开展线上会议，具体请�
 | [GIS](https://gitee.com/opengauss/tc/tree/master/sigs/GIS) | 负责openGauss社区地理信息系统的开发和维护。|
 | [CloudNative](https://gitee.com/opengauss/tc/tree/master/sigs/CloudNative) | 负责openGauss社区云原生方向的开发和维护。|
 | [SecurityTechnology](https://gitee.com/opengauss/tc/tree/master/sigs/SecurityTechnology) | 负责openGauss社区数据库安全技术的开发和维护。|
+| [ReleaseManagement](https://gitee.com/opengauss/tc/tree/master/sigs/ReleaseManagement) | 社区协同各SIG maintainer,规划openGauss社区版本的发布工作，为最终的竞争力目标达成负责。|
 
 ### 1. WeLink会议
 
