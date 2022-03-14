@@ -47,7 +47,7 @@ You can find the SIGs you are interested in from the SIG list below.
 | [DCF](https://gitee.com/opengauss/tc/tree/master/sigs/DCF) | Develop and maintain Distributed Consensus Framework of the openGauss community. |
 | [QA](https://gitee.com/opengauss/tc/tree/master/sigs/QA) | Develop and maintain released version quality of the openGauss community. |
 | [Graph](https://gitee.com/opengauss/tc/tree/master/sigs/SecurityTechnology) | Responsible for the knowledge map data management function of unified storage and query of the openGauss community. |
-
+| [ReleaseManagement](https://gitee.com/opengauss/tc/tree/master/sigs/ReleaseManagement) | The community collaborates with SIG Maintainers to plan openGauss community release and is responsible for the final competitiveness goal. |
 
 Want to start a new SIG? Please send your application to: <tc@opengauss.org> , the email template is referred to: <https://gitee.com/opengauss/tc/blob/master/sigs/Template/README.md> .
 
