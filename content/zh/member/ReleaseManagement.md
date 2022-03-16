@@ -107,5 +107,12 @@ title = "Committer"
 email = "mailto:bing.tian@enmotech.com"
 gitee = "https://gitee.com/tbing8803"
 
+[[card]]
+img = "/zh/member/img/liuchun.png"
+name = "刘春"
+title = "Committer"
+email = "mailto:liuchun3@huawei.com"
+gitee = "https://gitee.com/nifinity"
+
 
 +++
