@@ -19,7 +19,7 @@ $(document).ready(function () {
         success: function (res) {
             if(res.msg === 'OK'){
                 $('.statistics_item .contributors').text(format(res.data.contributors));
-                $('.statistics_item .users').text(format(res.data.users));
+                $('.statistics_item .users').text(format(res.data.downloaduser));
                 $('.statistics_item .business-osv').text(format(res.data.businessosv));
             }
         }
