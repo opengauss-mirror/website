@@ -10,7 +10,7 @@ Before contributing to the community, read and comply with the [openGauss Commun
 
 The source code of openGauss source code is hosted on Gitee: https://gitee.com/opengauss
 
-Please refer to <http://git.mydoc.io/?t=179267> to register your Gitee account and Set up your primary E-mail at <http://gitee.com/profile/emails>.
+Please refer to <https://gitee.com/help/articles/4113> to register your Gitee account and Set up your primary E-mail at <http://gitee.com/profile/emails>.
 
 ### 2. Signing the Contributor License Agreement (CLA)
 
