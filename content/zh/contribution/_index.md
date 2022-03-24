@@ -12,7 +12,7 @@ openGauss是一个开源社区，完全依赖于社区提供友好的开发和�
 
 openGauss源代码托管在码云（Gitee）：https://gitee.com/opengauss
 
-请参考<http://git.mydoc.io/?t=179267>注册您的码云（Gitee）账户，并在<http://gitee.com/profile/emails>设置您的主邮箱。
+请参考<https://gitee.com/help/articles/4113>注册您的码云（Gitee）账户，并在<http://gitee.com/profile/emails>设置您的主邮箱。
 
 ### 2. 签署CLA
 
