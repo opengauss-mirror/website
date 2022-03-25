@@ -42,7 +42,7 @@ img = "/zh/member/img/huxilin.png"
 name = "Xilin Hu"
 title = "Committer"
 email = "mailto:huxilin@huawei.com"
-gitee = "https://gitee.com/huxilin"
+gitee = "https://gitee.com/hu-xilin"
 
 [[card]]
 img = "/zh/member/img/yuanyilun.png"

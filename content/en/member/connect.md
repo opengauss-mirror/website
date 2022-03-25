@@ -39,6 +39,14 @@ gitee = "https://gitee.com/willloong"
 
 
 [[card]]
+img = "/zh/member/img/zhangleyi.png"
+name = "Leyi Zhang"
+title = "Committer"
+email = "mailto:kamusis@gmail.com"
+gitee = "https://gitee.com/kamusis"
+
+
+[[card]]
 img = "/zh/member/img/yaoqian1.png"
 name = "Qian Yao"
 title = "Committer"
