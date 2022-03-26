@@ -38,4 +38,25 @@ title = "Committer"
 email = "mailto:850894759@qq.com"
 gitee = "https://gitee.com/hangjin2020"
 
+[[card]]
+img = "/zh/member/img/liubin.png"
+name = "Bin Liu"
+title = "Committer"
+email = "mailto:travel.liu@outlook.com"
+gitee = "https://gitee.com/travelliu"
+
+[[card]]
+img = "/zh/member/img/yaoqian1.png"
+name = "Qian Yao"
+title = "Committer"
+email = "mailto:i@vimiix.com"
+gitee = "https://gitee.com/vimiix"
+
+[[card]]
+img = "/zh/member/img/liuhui.png"
+name = "Hui Liu"
+title = "Committer"
+email = "mailto:liu_hui0228@163.com"
+gitee = "https://gitee.com/liu_hui0228"
+
 +++

@@ -87,4 +87,18 @@ title = "Committer"
 email = "mailto:wanchuan_zhang@163.com"
 gitee = "https://gitee.com/dbcrafter"
 
+[[card]]
+img = "/zh/member/img/wuyuechuan.png"
+name = "Yuechuan Wu"
+title = "Committer"
+email = "mailto:wuych9@mail2.sysu.edu.cn"
+gitee = "https://gitee.com/wuyuechuan"
+
+[[card]]
+img = "/zh/member/img/chenchen.png"
+name = "Chen Chen"
+title = "Committer"
+email = "mailto:arcoalien@qq.com"
+gitee = "https://gitee.com/struggle_hw"
+
 +++

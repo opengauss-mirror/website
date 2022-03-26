@@ -36,6 +36,12 @@ title = "Committer"
 email = "mailto:zhangwl@vastdata.com.cn"
 gitee = "https://gitee.com/willloong"
 
+[[card]]
+img = "/zh/member/img/zhangleyi.png"
+name = "张乐奕"
+title = "Committer"
+email = "mailto:kamusis@gmail.com"
+gitee = "https://gitee.com/kamusis"
 
 [[card]]
 img = "/zh/member/img/yaoqian1.png"
