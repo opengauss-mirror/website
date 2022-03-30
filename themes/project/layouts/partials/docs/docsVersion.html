@@ -22,7 +22,12 @@
             </div>
             
         </div>
-        <div class="download_btn" style="padding-right:0;">
+        <div class="switchVersion">
+          <span class="text enterprise checked" data-uri="/zh/docs/2.1.0/docs/Quickstart/Quickstart.html">企业版</span>
+          <input type="checkbox" class="switch" id="switchInput">
+          <span class="text lite" data-uri="/zh/docs/lite-zh/docs/Description/Description.html">小型版</span>
+        </div>
+        <!-- <div class="download_btn" style="padding-right:0;">
             {{ range .Site.Data.docsVersion }}
             {{ if eq $version .version}}
             {{ if eq $lang "zh-cn" }}
@@ -32,7 +37,7 @@
             {{ end }}
             {{ end }}
             {{ end }}
-        </div>
+        </div> -->
     </div>
 </div>
 <script src="{{ "js/combobox/select.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>
@@ -40,6 +45,10 @@
 //下拉框选中到当前版本
 var url=window.location.href;
 var version = url.split('docs')[1].split('/')[1].split('/')[0];//通过url获取版本号
+if(version ==='lite-zh'){
+  version = 'latest'
+}
+
 //版本下拉框切换事件
 $(".selectVersion").M_select({
     'radius': '4px',
@@ -57,4 +66,81 @@ $(".js-sel-dom").M_select({
         window.location.href = val;
     }
 });
+var switchVersion = $('.switchVersion');
+var lang = window.location.href.includes('/zh/') ? 'zh' : 'en';
+switchVersion.hide()
+  
+  const getCookie = function (name) {
+    var cookies = document.cookie;
+    var index = cookies.indexOf(name);
+    return index === -1 ? false : true;
+  };
+
+  const setCookie = function (name, value) {
+    var currentTime = new Date();
+    currentTime.setTime(currentTime.getTime() + 30 * 24 * 60 * 60 * 1000);
+    var newCookie = name + '=' + value + ';expires=' + currentTime.toGMTString() + ';path=/';
+    document.cookie = newCookie;
+  };
+
+  if(version === '2.1.0' || version === 'lite-zh' || version === 'latest'){
+    switchVersion.show()
+    var hasCookie = getCookie('docVersion=true');
+    var switchEnterprise = switchVersion.find('.enterprise'),
+          switchLite = switchVersion.find('.lite'),
+          switchInput = $('#switchInput');
+          switchVersion.find('.text').removeClass('checked'); 
+      
+      if(hasCookie){
+          switchInput.attr('checked',true)
+          switchLite.addClass('checked') 
+      }else{
+          switchInput.attr('checked',false) 
+          switchEnterprise.addClass('checked')
+      }
+
+      switchInput.click(function(){
+          let check = $(this).is(':checked'); 
+          let uri = '';
+          switchVersion.find('.text').removeClass('checked');
+          if(check){
+            switchLite.addClass('checked') 
+            uri = switchLite.data('uri');
+          }else{
+            switchEnterprise.addClass('checked')
+            uri = switchEnterprise.data('uri');
+          }
+          
+          setCookie('docVersion', check);
+         
+          if(lang ==='zh'){
+            uri = uri.replace('/en/', '/zh/');
+          }else{ 
+            uri = uri.replace('/zh/', '/en/');
+          }
+
+          console.log(check,uri,lang)
+          window.location.href = uri;
+      })
+  }
+
+
+// const closeCookie = function () {
+//     var hasCookie = getCookie('docVersion=');
+//     if (hasCookie) {
+//       $('.read-cookie').addClass('visited');
+//     } else {
+//       $('.read-cookie').removeClass('visited');
+//     }
+
+//     $('.js-cookie-close').on('click', function (event) {
+//       event.preventDefault();
+//       setCookie('isRead', 'read');
+//       $('.read-cookie').addClass('visited');
+//     });
+//   };
+
+//   closeCookie();
+
+
 </script>
