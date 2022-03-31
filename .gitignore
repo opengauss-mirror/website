@@ -3,3 +3,5 @@ resources
 resources/_gen
 .idea
 
+/content/zh/docs
+/content/en/docs
