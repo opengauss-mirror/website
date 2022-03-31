@@ -481,7 +481,7 @@ other = "/en/community/mails.html"
 other = "Mail List"
 
 [statistics_contributors]
-other = "Developer"
+other = "Contributors"
 
 [statistics_users]
 other = "Users"
@@ -496,10 +496,10 @@ other = "Thriving openGauss Community"
 other = "openGauss is an open source database platform that encourages community contribution and collaboration."
 
 [statistics_btn]
-other = "Start Your Contribution >"
+other = "View details >"
 
 [statistics_link]
-other = "/en/contribution.html"
+other = "https://datastat.opengauss.org/en/overview"
 
 # DOC page
 [doc_git_footer]

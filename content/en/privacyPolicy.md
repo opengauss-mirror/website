@@ -16,6 +16,8 @@ The openGauss Community understands the importance of your privacy and fully res
 (d) **Meeting Service**. When you use our meeting service, we will collect your Gitee ID, SIG group name, and (optional) email address for configuring related permissions. You can choose whether to record the meeting. If you agree to record the meeting, we will upload the meeting video to the third-party platform Bilibili (https://www.bilibili.com/) so that more interested individuals or organizations can participate in your meeting.<br>
 (e) **Certificate Service**. When using our certificate query service, you need to enter your email address to query your OGCA certificate in the openGauss community. We will collect your personal information from our partner to generate an OGCA certificate.
 
+We may also collect your personal information from third parties, including other platforms or communities, within the scope of your authorization and consent, or obtain your personal information from other legal and public channels. We promise to process your personal information in strict accordance with applicable laws and regulations. Please read the privacy policies and user agreements of the third parties carefully. If your personal information provided by a third party is required when you use the openGauss community, but you refuse to allow the third party to collect, use, transfer, or share your personal information when the third party provides services, you may not be able to use related services of the openGauss community. For example, when you use an authorized third-party account to log in to the openGauss community, we will obtain your personal information from the third party with your consent.
+
 ## 2.How We Use Cookies and Similar Technologies
 
 (a) To ensure our website works properly, we may at times place cookies on your computer or mobile device. A cookie is a small data file placed on your computer or mobile device when you access a website. The content of a cookie can be retrieved or read only by the server that creates the cookie. Cookies serve different purposes. For example, they help us understand how the website is used, help you efficiently browse pages, remember your preferences, and improve your browsing experience.<br>
@@ -68,4 +70,4 @@ We may update or modify this Statement from time to time according to changes of
 If you want to contact us or exercise your rights, please contact us at <contact@opengauss.org>.
 
 
-Last updated: June, 2021
+Last updated: March, 2022

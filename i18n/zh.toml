@@ -500,10 +500,10 @@ other = "/zh/community/mails.html"
 other = "邮件列表"
 
 [statistics_contributors]
-other = "开发者"
+other = "贡献者"
 
 [statistics_users]
-other = "用户"
+other = "社区用户"
 
 [statistics_platforms]
 other = "商用版本"
@@ -515,10 +515,10 @@ other = "openGauss社区活力"
 other = "openGauss也是一个开源的数据库平台，鼓励社区贡献、合作。"
 
 [statistics_btn]
-other = "参与社区贡献 >"
+other = "查看详情 >"
 
 [statistics_link]
-other = "/zh/contribution.html"
+other = "https://datastat.opengauss.org/zh/overview"
 
 # DOC page
 [doc_git_footer]

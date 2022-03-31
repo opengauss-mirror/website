@@ -85,8 +85,7 @@ paginate = 10
     url  = "/en/member.html"
     weight = 3
     parent = "community"
-
-
+ 
 
 
 
@@ -280,8 +279,10 @@ paginate = 10
     identifier = "member"
     name = "社区组织"
     url  = "/zh/member.html"
-    weight = 3
+    weight = 4
     parent = "community"
+
+
 
 [[languages.zh.menu.main]]
     identifier = "connect"
