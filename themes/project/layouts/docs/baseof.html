@@ -31,7 +31,8 @@
           </select>
           
         </div>
-        <div class="docsMenu">
+        {{ partial "docs/lite" . }}
+        <!-- <div class="docsMenu">
             {{ range .Site.Data.docsVersion }}
             {{ if eq $version .version}}
             {{ if eq $lang "zh-cn" }}
@@ -41,7 +42,7 @@
             {{ end }}
             {{ end }}
             {{ end }}
-          </div>
+          </div> -->
       </div>
     <div id="heading-breadcrumbs">
         <div class="container isPc" style="background: url({{ "img/docs/docs-banner.png" | relURL }}); background-size: 1140px auto">
