@@ -40,7 +40,9 @@
 //下拉框选中到当前版本
 var url=window.location.href;
 var version = url.split('docs')[1].split('/')[1].split('/')[0];//通过url获取版本号 
- 
+if(version.includes('-lite')){
+  version = version.split('-')[0]
+}
 
 //版本下拉框切换事件
 $(".selectVersion").M_select({
