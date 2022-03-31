@@ -27,7 +27,7 @@ RUN cd /src/ && \
     mkdir -p /src/website/content/zh/docs/latest-lite/ && \
     cp -rf /src/latest/docs/content/docs-lite/zh/* /src/website/content/zh/docs/latest-lite/ && \
     mkdir -p /src/website/content/en/docs/latest-lite/ && \
-    cp -rf /src/latest/docs/content/docs-lite/zh/* /src/website/content/en/docs/latest-lite/ && \
+    cp -rf /src/latest/docs/content/docs-lite/en/* /src/website/content/en/docs/latest-lite/ && \
 
     git clone -b 1.0.0 https://gitee.com/opengauss/docs 1.0.0/docs && \
     mkdir -p /src/website/content/zh/docs/1.0.0 && \
