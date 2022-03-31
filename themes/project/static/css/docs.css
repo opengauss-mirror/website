@@ -2,7 +2,7 @@
     width: 90px;
     display: inline-block;
     vertical-align: bottom;
-    margin-left: 16px;
+    margin-left: 2px;
 }
 .sel-float-div {
     text-align: left;
@@ -331,10 +331,10 @@ html[lang="zh-cn"] .jstree-open[aria-level="1"] > .jstree-ocl, html[lang="zh-cn"
   align-items: center;
 }
 .switchVersion .text{
-  color:#999
+  color:#ccc
 }
 .switchVersion .checked{
-  color:#7d32ea
+  color:#000
 }
  /* Switch开关样式 */
  /* 必须是input为 checkbox class 添加 switch 才能实现以下效果 */
@@ -347,7 +347,7 @@ html[lang="zh-cn"] .jstree-open[aria-level="1"] > .jstree-ocl, html[lang="zh-cn"
   position: relative;
   width: 40px;
   height: 20px;
-  background: #ccc;
+  background: #363C43;
   border-radius: 10px;
   transition: border-color .3s, background-color .3s;
 }
@@ -374,4 +374,22 @@ input[type='checkbox'].switch:checked::after {
   position: absolute;
   left: 55%;
   top: 2px;
+}
+
+.download_link{
+  margin-top: 30px;
+}
+.download_link a{
+  font-size: 16px;
+  color: #7d32ea;
+  display: block;
+  cursor: pointer;
+}
+.download_icon_link{
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  margin-right: 8px;
+  vertical-align: middle;
+  background: url(/img/download/download-icon-link.png) no-repeat center;
 }

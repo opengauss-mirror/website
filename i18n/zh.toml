@@ -545,6 +545,12 @@ other = '/zh/blogs/blogs.html'
 [doc_version]
 other = "版本"
 
+[doc_version_enterprise]
+other = "企业版"
+
+[doc_version_lite]
+other = "轻量版"
+
 [event_coming]
 other = "最新活动"
 

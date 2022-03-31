@@ -527,6 +527,12 @@ other = '/en/blogs/blogs.html'
 [doc_version]
 other = "Version"
 
+[doc_version_enterprise]
+other = "Enterprise"
+
+[doc_version_lite]
+other = "Lite"
+
 [event_coming]
 other = "Upcoming"
 

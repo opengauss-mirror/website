@@ -23,9 +23,9 @@
             
         </div>
         <div class="switchVersion">
-          <span class="text enterprise checked" data-uri="/zh/docs/2.1.0/docs/Quickstart/Quickstart.html">企业版</span>
+          <span class="text enterprise checked">{{ i18n "doc_version_enterprise"}}</span>
           <input type="checkbox" class="switch" id="switchInput">
-          <span class="text lite" data-uri="/zh/docs/latest-lite/docs/BriefTutorial/BriefTutorial.html">小型版</span>
+          <span class="text lite">{{ i18n "doc_version_lite"}}</span>
         </div>
         <!-- <div class="download_btn" style="padding-right:0;">
             {{ range .Site.Data.docsVersion }}
@@ -45,8 +45,8 @@
 //下拉框选中到当前版本
 var url=window.location.href;
 var version = url.split('docs')[1].split('/')[1].split('/')[0];//通过url获取版本号 
-if(version ==='latest-lite'){
-  version = 'latest'
+if(version.includes('-lite')){
+  version = version.split('-')[0]
 }
 
 //版本下拉框切换事件
@@ -84,7 +84,7 @@ const setCookie = function (name, value) {
 };
 
   
-  if(version === '2.1.0' || version === 'latest-lite' || version === 'latest'){
+  if(version === '3.0.0' || version === 'latest-lite' || version === 'latest'){
     switchVersion.show()
     var hasCookie = getCookie('docVersion=true');
     var switchEnterprise = switchVersion.find('.enterprise'),
@@ -103,24 +103,25 @@ const setCookie = function (name, value) {
       // 点击切换版本
       switchInput.click(function(){
           let check = $(this).is(':checked'); 
-          let uri = '';
+          let uri = url;
           switchVersion.find('.text').removeClass('checked');
           if(check){
-            switchLite.addClass('checked') 
-            uri = switchLite.data('uri');
+            switchLite.addClass('checked')  
+            url = url.replace(version, version+'-lite');
           }else{
             switchEnterprise.addClass('checked')
-            uri = switchEnterprise.data('uri');
+            url = url.replace(version+'-lite', version); 
           }
           
           setCookie('docVersion', check);
          
           if(lang ==='zh'){
-            uri = uri.replace('/en/', '/zh/');
+            url = url.replace('/en/', '/zh/');
           }else{ 
-            uri = uri.replace('/zh/', '/en/');
+            url = url.replace('/zh/', '/en/');
           } 
-          window.location.href = uri;
+        
+          window.location.href = url;
       })
   }else{
     setCookie('docVersion', false);
