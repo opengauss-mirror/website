@@ -184,7 +184,7 @@ other = "/en/wechat/code.html"
 other = "/en/download.html"
 
 [main_docs_url]
-other = "/en/docs/2.1.0/docs/Quickstart/Quickstart.html"
+other = "/en/docs/3.0.0/docs/Quickstart/Quickstart.html"
 
 [main_docs]
 other = "Document"
@@ -212,6 +212,9 @@ other = "With more complete cluster management functions, suitable for enterpris
 
 [opengauss_edition_simple]
 other = "Simple installation configuration, decompression available, suitable for individual developers."
+
+[opengauss_edition_lite]
+other = "Thin provisioning reduces the installation package size and occupies less memory."
 
 [download_documents]
 other = "Documentation"
@@ -319,6 +322,9 @@ other = "Enterprise-Edition Installation Guide"
 [download_simple_installation_guide]
 other = "Simplified Installation Guide"
 
+[download_lite_installation_guide]
+other = "Lite Installation Guide"
+
 [download_feedback_question]
 other = "Feedback Question"
 
@@ -339,6 +345,9 @@ other = "https://opengauss.org/en/docs/2.0.1/docs/Releasenotes/Releasenotes.html
 
 [download_release_notes_link_2_1_0]
 other = "https://opengauss.org/en/docs/2.1.0/docs/Releasenotes/Releasenotes.html"
+
+[download_release_notes_link_3_0_0]
+other = "https://opengauss.org/en/docs/3.0.0/docs/Releasenotes/Releasenotes.html"
 
 [download_installation_guide_link]
 other = "https://opengauss.org/en/docs/1.0.0/docs/installation/installation.html"
@@ -366,6 +375,15 @@ other = "https://opengauss.org/en/docs/2.1.0/docs/installation/enterprise-editio
 
 [download_simple_installation_guide_link_2_1_0]
 other = "https://opengauss.org/en/docs/2.1.0/docs/installation/simplified-installation-process.html"
+
+[download_installation_guide_link_3_0_0]
+other = "https://opengauss.org/en/docs/3.0.0/docs/installation/enterprise-edition-installation-process.html"
+
+[download_simple_installation_guide_link_3_0_0]
+other = "https://opengauss.org/en/docs/3.0.0/docs/installation/simplified-installation-process.html"
+
+[download_lite_installation_guide_link_3_0_0]
+other = "https://opengauss.org/en/docs/3.0.0-lite/docs/installation/installation-overview.html"
 
 [download_feedback_question_link]
 other = "https://gitee.com/opengauss/community/issues"

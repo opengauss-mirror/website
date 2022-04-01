@@ -195,7 +195,7 @@ other = "/zh/wechat/code.html"
 other = "/zh/download.html"
 
 [main_docs_url]
-other = "/zh/docs/2.1.0/docs/Quickstart/Quickstart.html"
+other = "/zh/docs/3.0.0/docs/Quickstart/Quickstart.html"
 
 [main_docs]
 other = "文档"
@@ -223,6 +223,9 @@ other = "具备更齐全的集群管理功能，适合企业用户"
 
 [opengauss_edition_simple]
 other = "安装配置简单，解压可用，适合个人开发者"
+
+[opengauss_edition_lite]
+other = "精简功能，缩减安装包大小，内存占用更少"
 
 [download_documents]
 other = "使用文档"
@@ -332,6 +335,9 @@ other = "企业版安装指南"
 [download_simple_installation_guide]
 other = "极简版安装指南"
 
+[download_lite_installation_guide]
+other = "轻量版安装指南"
+
 [download_feedback_question]
 other = "反馈问题"
 
@@ -352,6 +358,9 @@ other = "https://opengauss.org/zh/docs/2.0.1/docs/Releasenotes/Releasenotes.html
 
 [download_release_notes_link_2_1_0]
 other = "https://opengauss.org/zh/docs/2.1.0/docs/Releasenotes/Releasenotes.html"
+
+[download_release_notes_link_3_0_0]
+other = "https://opengauss.org/zh/docs/3.0.0/docs/Releasenotes/Releasenotes.html"
 
 [download_installation_guide_link]
 other = "https://opengauss.org/zh/docs/1.0.0/docs/installation/installation.html"
@@ -380,6 +389,14 @@ other = "https://opengauss.org/zh/docs/2.0.1/docs/installation/%E6%9E%81%E7%AE%8
 [download_simple_installation_guide_link_2_1_0]
 other = "https://opengauss.org/zh/docs/2.1.0/docs/installation/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html"
 
+[download_installation_guide_link_3_0_0]
+other = "https://opengauss.org/zh/docs/3.0.0/docs/installation/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html"
+
+[download_simple_installation_guide_link_3_0_0]
+other = "https://opengauss.org/zh/docs/3.0.0/docs/installation/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html"
+
+[download_lite_installation_guide_link_3_0_0]
+other = "https://opengauss.org/zh/docs/3.0.0-lite/docs/installation/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html"
 
 
 [download_feedback_question_link]
