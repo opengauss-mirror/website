@@ -380,7 +380,7 @@ other = "https://opengauss.org/en/docs/2.1.0/docs/installation/simplified-instal
 other = "https://opengauss.org/en/docs/3.0.0/docs/installation/enterprise-edition-installation-process.html"
 
 [download_simple_installation_guide_link_3_0_0]
-other = "https://opengauss.org/en/docs/3.0.0/docs/installation/simplified-installation-process.html"
+other = "https://opengauss.org/en/docs/2.1.0/docs/installation/simplified-installation-process.html"
 
 [download_lite_installation_guide_link_3_0_0]
 other = "https://opengauss.org/en/docs/3.0.0-lite/docs/installation/installation-overview.html"
