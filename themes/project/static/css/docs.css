@@ -330,8 +330,12 @@ html[lang="zh-cn"] .jstree-open[aria-level="1"] > .jstree-ocl, html[lang="zh-cn"
   display: flex;
   align-items: center;
 }
+.slide_nav .switchVersion {
+  margin-right: 5px;
+}
 .switchVersion .text{
-  color:#ccc
+  color:#ccc;
+  font-size: 12px;
 }
 .switchVersion .checked{
   color:#000

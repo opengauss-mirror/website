@@ -19,14 +19,9 @@
                     {{ end }}
                     {{ end }}
                 </select>   
-            </div>
-            
+            </div> 
         </div>
-        <div class="switchVersion">
-          <span class="text enterprise checked">{{ i18n "doc_version_enterprise"}}</span>
-          <input type="checkbox" class="switch" id="switchInput">
-          <span class="text lite">{{ i18n "doc_version_lite"}}</span>
-        </div>
+        {{ partial "docs/lite" . }}
         <!-- <div class="download_btn" style="padding-right:0;">
             {{ range .Site.Data.docsVersion }}
             {{ if eq $version .version}}
@@ -66,66 +61,9 @@ $(".js-sel-dom").M_select({
         window.location.href = val;
     }
 });
-var switchVersion = $('.switchVersion');
-var lang = window.location.href.includes('/zh/') ? 'zh' : 'en';
-switchVersion.hide()
-  
-const getCookie = function (name) {
-  var cookies = document.cookie;
-  var index = cookies.indexOf(name);
-  return index === -1 ? false : true;
-};
  
-const setCookie = function (name, value) {
-  var currentTime = new Date();
-  currentTime.setTime(currentTime.getTime() + 30 * 24 * 60 * 60 * 1000);
-  var newCookie = name + '=' + value + ';expires=' + currentTime.toGMTString() + ';path=/';
-  document.cookie = newCookie;
-};
-
   
-  if(version === '3.0.0' || version === 'latest-lite' || version === 'latest'){
-    switchVersion.show()
-    var hasCookie = getCookie('docVersion=true');
-    var switchEnterprise = switchVersion.find('.enterprise'),
-          switchLite = switchVersion.find('.lite'),
-          switchInput = $('#switchInput');
-          switchVersion.find('.text').removeClass('checked'); 
-      
-      if(hasCookie){
-          switchInput.attr('checked',true)
-          switchLite.addClass('checked') 
-      }else{
-          switchInput.attr('checked',false) 
-          switchEnterprise.addClass('checked')
-      }
-      
-      // 点击切换版本
-      switchInput.click(function(){
-          let check = $(this).is(':checked'); 
-          let uri = url;
-          switchVersion.find('.text').removeClass('checked');
-          if(check){
-            switchLite.addClass('checked')  
-            url = url.replace(version, version+'-lite');
-          }else{
-            switchEnterprise.addClass('checked')
-            url = url.replace(version+'-lite', version); 
-          }
-          
-          setCookie('docVersion', check);
-         
-          if(lang ==='zh'){
-            url = url.replace('/en/', '/zh/');
-          }else{ 
-            url = url.replace('/zh/', '/en/');
-          } 
-        
-          window.location.href = url;
-      })
-  }else{
-    setCookie('docVersion', false);
-  }
+   
 
 
  
