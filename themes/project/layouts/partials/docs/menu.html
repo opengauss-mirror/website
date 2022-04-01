@@ -48,9 +48,9 @@
   var lang = window.location.href.includes('/zh/') ? 'zh' : 'en'; 
   if(version.includes('-lite')){
       let lite= version.split('-')[0];
-      let downloadUrl = `'https://opengauss.obs.cn-south-1.myhuaweicloud.com/${version}/openGauss-document-${lang}-${version}.zip'`;
+      let downloadUrl = 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/'+version+'/openGauss-document-'+lang+'-'+version+'.zip';
       let downloadLink = `<a id="downloadLink" href="${downloadUrl}"><i class="download_icon_link"></i>${lang === 'zh'?'下载':'Download'}</a>`;
-      console.log('version :>> ', downloadUrl);
+      // console.log('version :>> ', downloadUrl);
       $('.download_link').append(downloadLink) 
   }
 
