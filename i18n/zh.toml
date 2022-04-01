@@ -395,6 +395,9 @@ other = "https://opengauss.org/zh/docs/3.0.0/docs/installation/%E4%BC%81%E4%B8%9
 [download_simple_installation_guide_link_3_0_0]
 other = "https://opengauss.org/zh/docs/3.0.0/docs/installation/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html"
 
+[download_lite_installation_guide_link_3_0_0]
+other = "https://opengauss.org/zh/docs/3.0.0-lite/docs/installation/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html"
+
 
 [download_feedback_question_link]
 other = "https://gitee.com/opengauss/community/issues"
