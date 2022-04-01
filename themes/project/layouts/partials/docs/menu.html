@@ -33,6 +33,7 @@
 </nav>
 
 <!-- Restore menu position as soon as possible to avoid flickering -->
+<script src="{{ .Site.BaseURL }}js/jquery.min.js"></script>
 <script>
 (function() {
   var menu = document.querySelector("#docsMenu");
@@ -40,5 +41,20 @@
     localStorage.setItem("menu.scrollTop", menu.scrollTop);
   });
   menu.scrollTop = localStorage.getItem("menu.scrollTop");
+
+  // lite下载判断
+  var url=window.location.href;
+  var version = url.split('docs')[1].split('/')[1].split('/')[0];//通过url获取版本号 
+  var lang = window.location.href.includes('/zh/') ? 'zh' : 'en'; 
+  if(version.includes('-lite')){
+      let lite= version.split('-')[0];
+      let downloadUrl = `'https://opengauss.obs.cn-south-1.myhuaweicloud.com/${version}/openGauss-document-${lang}-${version}.zip'`;
+      let downloadLink = `<a id="downloadLink" href="${downloadUrl}"><i class="download_icon_link"></i>${lang === 'zh'?'下载':'Download'}</a>`;
+      console.log('version :>> ', downloadUrl);
+      $('.download_link').append(downloadLink) 
+  }
+
+
+
 })();
 </script>
