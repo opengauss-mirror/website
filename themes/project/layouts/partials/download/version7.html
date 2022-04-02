@@ -23,8 +23,10 @@
                             {{ i18n "opengauss_edition_enterprise" }}
                         {{ else if eq .edition "simple" }}
                             {{ i18n "opengauss_edition_simple" }}
+                        {{ else if eq .edition "lite" }}
+                            {{ i18n "opengauss_edition_lite" }}
                         {{ else }}
-                        {{ i18n "opengauss_edition_lite" }}
+                            {{ i18n "opengauss_edition_distributed" }}
                         {{ end }}
                     </div>
                 </span>

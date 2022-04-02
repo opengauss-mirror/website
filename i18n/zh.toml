@@ -227,6 +227,9 @@ other = "安装配置简单，解压可用，适合个人开发者"
 [opengauss_edition_lite]
 other = "精简功能，缩减安装包大小，内存占用更少"
 
+[opengauss_edition_distributed]
+other = "基于ShardingSphere和k8s的分布式容器化镜像"
+
 [download_documents]
 other = "使用文档"
 

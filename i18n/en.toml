@@ -216,6 +216,9 @@ other = "Simple installation configuration, decompression available, suitable fo
 [opengauss_edition_lite]
 other = "Thin provisioning reduces the installation package size and occupies less memory."
 
+[opengauss_edition_distributed]
+other = "Distributed containerized image based on ShardingSphere and k8s."
+
 [download_documents]
 other = "Documentation"
 
