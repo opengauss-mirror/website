@@ -86,7 +86,12 @@ paginate = 10
     weight = 3
     parent = "community"
  
-
+[[menu.main]]
+    identifier = "datastat"
+    name = "Statistics"
+    url  = "https://datastat.opengauss.org/en/overview"
+    weight = 4
+    parent = "community"
 
 
 
@@ -282,6 +287,12 @@ paginate = 10
     weight = 4
     parent = "community"
 
+[[languages.zh.menu.main]]
+    identifier = "datastat"
+    name = "贡献看板"
+    url  = "https://datastat.opengauss.org/zh/overview"
+    weight = 5
+    parent = "community"
 
 
 [[languages.zh.menu.main]]
