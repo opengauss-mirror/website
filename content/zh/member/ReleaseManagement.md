@@ -114,5 +114,12 @@ title = "Committer"
 email = "mailto:liuchun3@huawei.com"
 gitee = "https://gitee.com/nifinity"
 
+[[card]]
+img = "/zh/member/img/wumingyuan.png"
+name = "吴明远"
+title = "Committer"
+email = "mailto:wumingyuan@gbase.cn"
+gitee = "https://gitee.com/wumingyuan"
+
 
 +++

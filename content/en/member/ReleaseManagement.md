@@ -113,4 +113,11 @@ name = "Chun Liu"
 title = "Committer"
 email = "mailto:liuchun3@huawe.com"
 gitee = "https://gitee.com/nifinity"
+
+[[card]]
+img = "/zh/member/img/wumingyuan.png"
+name = "Mingyuan Wu"
+title = "Committer"
+email = "mailto:wumingyuan@gbase.cn"
+gitee = "https://gitee.com/wumingyuan"
 +++
