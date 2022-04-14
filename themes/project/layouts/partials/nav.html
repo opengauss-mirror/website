@@ -128,7 +128,7 @@
             <ul class="dropdown-menu">
                 {{ $item := .Identifier }}
               {{ range .Children }}
-              <li><a {{ if eq .Identifier "blog"}}class="nav-blog-link"{{ end }} href="{{ .URL }}" {{ if eq $item "code"}}target="_blank"{{ end }}>{{ .Name }}</a></li>
+              <li><a {{ if eq .Identifier "blog"}}class="nav-blog-link"{{ end }} href="{{ .URL }}" {{ if eq $item "code" | or $item "datastat" }}target="_blank"{{ end }}>{{ .Name }}</a></li>
               {{ end }}
             </ul>
             {{ else }}
