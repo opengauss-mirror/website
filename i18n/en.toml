@@ -502,13 +502,13 @@ other = "/en/community/mails.html"
 other = "Mail List"
 
 [statistics_contributors]
-other = "Contributors"
+other = "Contributor"
 
 [statistics_users]
-other = "Users"
+other = "User"
 
 [statistics_platforms]
-other = "Distibutions & Platforms"
+other = "Distribution & Platform"
 
 [statistics_title]
 other = "Thriving openGauss Community"
@@ -517,7 +517,7 @@ other = "Thriving openGauss Community"
 other = "openGauss is an open source database platform that encourages community contribution and collaboration."
 
 [statistics_btn]
-other = "View details >"
+other = "View detail >"
 
 [statistics_link]
 other = "https://datastat.opengauss.org/en/overview"
