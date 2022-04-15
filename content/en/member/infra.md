@@ -36,5 +36,12 @@ name = "Yuhang Zheng"
 title = "Committer"
 email = "mailto:zhengyuhang@huawei.com"
 gitee = "https://gitee.com/zhengyuhanghans"
+
+[[card]]
+img = "/zh/member/img/ailong.png"
+name = "Long Ai"
+title = "Committer"
+email = "mailto:ailong@outlook.com"
+gitee = "https://gitee.com/ailoooong"
 +++
 +++
