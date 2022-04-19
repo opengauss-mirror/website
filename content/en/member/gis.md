@@ -30,12 +30,6 @@ title = "Committer"
 email = "mailto:liwenlong@supermap.com"
 gitee = "https://gitee.com/liwenlong2021"
 
-[[card]]
-img = "/zh/member/img/yangjingqiao.png"
-name = "Jingqiao Yang"
-title = "Committer"
-email = "mailto:yangjq@vastdata.com.cn"
-gitee = "https://gitee.com/yang_jingqiao"
 
 [[card]]
 img = "/zh/member/img/huzhengchao.png"
@@ -50,4 +44,18 @@ name = "Qingyi Song"
 title = "Committer"
 email = "mailto:Qingyi.song@outlook.com"
 gitee = "https://gitee.com/sqyyeah"
+
+[[card]]
+img = "/zh/member/img/yangrao.png"
+name = "Rao Yang"
+title = "Committer"
+email = "mailto:yangrao@vastdata.com.cn"
+gitee = "https://gitee.com/destiny_volatiile"
+
+[[card]]
+img = "/zh/member/img/wusong.png"
+name = "Song Wu"
+title = "Committer"
+email = "sung.wu@qq.com"
+gitee = "https://gitee.com/sungwu_admin"
 +++

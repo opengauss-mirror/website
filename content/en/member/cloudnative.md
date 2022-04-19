@@ -1,4 +1,4 @@
-+++
+﻿+++
 member = "cloudnative"
 title ="CloudNative"
 goto = "Go to Gitee home page"
@@ -93,13 +93,6 @@ email = "mailto:1851619113@qq.com"
 gitee = "https://gitee.com/yundag"
 
 [[card]]
-img = "/zh/member/img/zhangleyi.png"
-name = "张乐奕"
-title = "Committer"
-email = "mailto:kamusis@gmail.com"
-gitee = "https://gitee.com/kamusis"
-
-[[card]]
 img = "/zh/member/img/lihongda.png"
 name = "Hongda Li"
 title = "Committer"
@@ -112,4 +105,11 @@ name = "Yunlong Gao"
 title = "Committer"
 email = "mailto:504072751@qq.com"
 gitee = "https://gitee.com/yunlongg"
+
+[[card]]
+img = "/zh/member/img/zhangleyi.png"
+name = "Leyi Zhang"
+title = "Committer"
+email = "mailto:kamusis@gmail.com"
+gitee = "https://gitee.com/kamusis"
 +++

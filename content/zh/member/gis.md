@@ -1,4 +1,4 @@
-+++
+﻿+++
 member = "gis"
 title ="GIS"
 goto = "前往Gitee仓库"
@@ -30,12 +30,6 @@ title = "Committer"
 email = "mailto:liwenlong@supermap.com"
 gitee = "https://gitee.com/liwenlong2021"
 
-[[card]]
-img = "/zh/member/img/yangjingqiao.png"
-name = "杨竞乔"
-title = "Committer"
-email = "mailto:yangjq@vastdata.com.cn"
-gitee = "https://gitee.com/yang_jingqiao"
 
 [[card]]
 img = "/zh/member/img/huzhengchao.png"
@@ -50,4 +44,18 @@ name = "宋清怡"
 title = "Committer"
 email = "mailto:Qingyi.song@outlook.com"
 gitee = "https://gitee.com/sqyyeah"
+
+[[card]]
+img = "/zh/member/img/yangrao.png"
+name = "杨绕"
+title = "Committer"
+email = "mailto:yangrao@vastdata.com.cn"
+gitee = "https://gitee.com/destiny_volatile"
+
+[[card]]
+img = "/zh/member/img/wusong.png"
+name = "吴松"
+title = "Committer"
+email = "mailto:sung.wu@qq.com"
+gitee = "https://gitee.com/sungwu_admin"
 +++

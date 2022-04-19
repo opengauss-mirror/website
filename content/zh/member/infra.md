@@ -1,4 +1,4 @@
-+++
+﻿+++
 member = "infra"
 title ="Infra"
 goto = "前往Gitee仓库"
@@ -36,4 +36,11 @@ name = "郑宇航"
 title = "Committer"
 email = "mailto:zhengyuhang@huawei.com"
 gitee = "https://gitee.com/zhengyuhanghans"
+
+[[card]]
+img = "/zh/member/img/ailong.png"
+name = "艾龙"
+title = "Committer"
+email = "mailto:ailong@outlook.com"
+gitee = "https://gitee.com/ailoooong"
 +++
