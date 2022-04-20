@@ -9,7 +9,7 @@ img = "/zh/events/2022-04-23/banner1.jpg"
 img_mobile = '/zh/events/2022-04-23/banner1.jpg'
 link = "./events/2022-04-23/meetup.html"
 author = "openGauss"
-summary = "【重庆】openGauss Meetup（4月23日）| 活动预告"
+summary = ""
 
 +++
 
@@ -52,7 +52,9 @@ openGauss社区用开源的魅力吸引真正热爱技术并持续探索的用�
 <img src="./qrcode.jpg" style="width: 50%">
 
 
-####openGauss用户组（openGauss User Group，简称oGUG）是一个让openGauss用户就技术特性、最佳实践、运营进展等方向交流的开放性本地社区。oGUG致力于构建一个开放、多元、包容的openGauss城市用户交流社区，鼓励当地任何企事业单位、社会组织、个人开发者在该社区内开展技术讨论、开拓新思路和实践新方案。
+### openGauss用户组
+
+openGauss User Group，简称oGUG，是一个让openGauss用户就技术特性、最佳实践、运营进展等方向交流的开放性本地社区。oGUG致力于构建一个开放、多元、包容的openGauss城市用户交流社区，鼓励当地任何企事业单位、社会组织、个人开发者在该社区内开展技术讨论、开拓新思路和实践新方案。
 
 oGUG由Organizer、Ambassador、Member三种角色构成 :
 
@@ -61,7 +63,3 @@ oGUG由Organizer、Ambassador、Member三种角色构成 :
 「Ambassador」专注于帮助他人了解或使用openGauss，并代表用户优化产品体验，增进其他用户对openGauss的了解。
 
 「Member」根据运营计划，配合oGUG的日常运营，以用户身份积极参加活动，产出技术内容，积极推广openGauss。
-
-
-
-
