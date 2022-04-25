@@ -433,6 +433,14 @@ paginate = 10
     hasChidren = false
     parent = "knowledgemain"
 
+[[languages.zh.menu.main]]
+    identifier = "mooc"
+    name = "慕课平台"
+    weight = 21
+    url  = "https://moocstudio.opengauss.org"
+    hasChidren = false
+    parent = "knowledgemain"    
+
 #[[languages.zh.menu.main]]
 #    identifier = "forum"
 #    name = "论坛"
