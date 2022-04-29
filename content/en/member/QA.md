@@ -58,5 +58,54 @@ title = "Committer"
 email = "mailto:2235036288@qq.com"
 gitee = "https://gitee.com/zhangzhijingMY"
 
+[[card]]
+img = "/zh/member/img/songfei.png"
+name = "Fei Song"
+title = "Committer"
+email = "mailto:songfei@shentongdata.com"
+gitee = "https://gitee.com/szoscar55"
+
+[[card]]
+img = "/zh/member/img/sunjingyuan.png"
+name = "Jingyuan Sun"
+title = "Committer"
+email = "mailto:sunjingyuan@shentongdata.com"
+gitee = "https://gitee.com/sun-jingyuan"
+
+[[card]]
+img = "/zh/member/img/liangyan.png"
+name = "Yan Liang"
+title = "Committer"
+email = "mailto:liangyan@vastdata.com.cn"
+gitee = "https://gitee.com/roxanne315"
+
+[[card]]
+img = "/zh/member/img/liaoshitin.png"
+name = "Shitin Liao"
+title = "Committer"
+email = "mailto:liaost@vastdata.com.cn"
+gitee = "https://gitee.com/liao-shiting"
+
+[[card]]
+img = "/zh/member/img/sunmin.png"
+name = "Min Sun"
+title = "Committer"
+email = "mailto:2235036288@qq.com"
+gitee = "https://gitee.com/min-sun"
+
+[[card]]
+img = "/zh/member/img/zhangao.png"
+name = " Ao Zhang"
+title = "Committer"
+email = "mailto:zhangao23@huawei.com"
+gitee = "https://gitee.com/zhang_za"
+
+[[card]]
+img = "/zh/member/img/mingpei.png"
+name = " Pei Ming"
+title = "Committer"
+email = "mailto:mingpei@huawei.com.com"
+gitee = "https://gitee.com/dolphin-m"
+
 
 +++

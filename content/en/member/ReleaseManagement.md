@@ -120,4 +120,11 @@ name = "Mingyuan Wu"
 title = "Committer"
 email = "mailto:wumingyuan@gbase.cn"
 gitee = "https://gitee.com/wumingyuan"
+
+[[card]]
+img = "/zh/member/img/zhangwenlong.png"
+name = "Wenlong Zhang"
+title = "Committer"
+email = "mailto:vastdata.com.cn"
+gitee = "https://gitee.com/willloong"
 +++
