@@ -53,7 +53,7 @@ company = "海量数据"
 email = "mailto:chen31577@126.com"
 
 [[card]]
-img = "/zh/member/img/liuhui.png"
+img = "/zh/member/img/liuhui2.png"
 name = "刘辉"
 title = "Ambassador"
 company = "重庆石油天然气交易中心"

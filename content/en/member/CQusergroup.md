@@ -53,7 +53,7 @@ company = "VASTDATA"
 email = "mailto:chen31577@126.com"
 
 [[card]]
-img = "/zh/member/img/liuhui.png"
+img = "/zh/member/img/liuhui2.png"
 name = "Hui Liu"
 title = "Ambassador"
 company = "CQ PETROLEUM AND GAS EXCHANGE"
