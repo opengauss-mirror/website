@@ -127,4 +127,8 @@ side = "right"
 id = "LZusergroup"
 side = "left"
 
+[[usergroups]]
+id = "CQusergroup"
+side = "right"
+
 +++
