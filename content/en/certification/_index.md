@@ -31,4 +31,21 @@ award = "2021-08-20"
 expiration = "2024-03-31"
 certificate = "https://distributioncertification-beijing4.obs.myhuaweicloud.com/Vastbase%20V2.2/Certificate.pdf"
 
+[[product]]
+pro = "MogDB 2.0.1"
+name = "云和恩墨（北京）信息技术有限公司"
+version = "openGauss 2.0.0"
+award = "2021-08-25"
+expiration = "2024-03-31"
+certificate = "https://distributioncertification-beijing4.obs.myhuaweicloud.com/MogDB%202.0.1/Certificate.pdf"
+
+[[product]]
+pro = "LNXDB-RDSV3.4"
+name = "北京太阳塔信息科技有限责任公司"
+version = "openGauss 2.0.0"
+award = "2022-05-07"
+expiration = "2024-03-31"
+certificate = "https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/LNX-RDS%20V3.4/Certificate.pdf"
+
+
 +++
