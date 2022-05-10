@@ -127,4 +127,12 @@ name = "张文龙"
 title = "Committer"
 email = "mailto:vastdata.com.cn"
 gitee = "https://gitee.com/willloong"
+
+[[card]]
+img = "/zh/member/img/fengwei.png"
+name = "冯伟"
+title = "Committer"
+email = "mailto:f.fengwei@huawei.com"
+gitee = "https://gitee.com/flowill"
+
 +++
