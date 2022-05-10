@@ -127,4 +127,11 @@ name = "Wenlong Zhang"
 title = "Committer"
 email = "mailto:vastdata.com.cn"
 gitee = "https://gitee.com/willloong"
+
+[[card]]
+img = "/zh/member/img/fengwei.png"
+name = "Wei Feng"
+title = "Committer"
+email = "mailto:f.fengwei@huawei.com"
+gitee = "https://gitee.com/flowill"
 +++
