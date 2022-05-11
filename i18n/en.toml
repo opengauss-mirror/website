@@ -586,6 +586,9 @@ other = "Organizer"
 [meeting_sig]
 other = "SIG name"
 
+[meeting_platform]
+other = "Platform"
+
 [meeting_day]
 other = "Date"
 
