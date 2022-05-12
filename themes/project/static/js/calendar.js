@@ -1,17 +1,20 @@
 $(document).ready(function () {
     var lang = window.location.href.includes('/zh/') ? 'zh' : 'en';
-
+    
     var calendarMethods = {
         fontmatter: {
             reverseTitle: lang === 'zh' ? '预定会议' : 'Schedule a meeting:',
             reverse: lang === 'zh' ? '会议名称:' : 'Name:',
             creator: lang === 'zh' ? '发起人:' : 'Organizer:',
             sig: lang === 'zh' ? '所属SIG组:' : 'SIG name:',
+            platform: lang === 'zh' ? '平台:' : 'Platform:',
             day: lang === 'zh' ? '会议日期:' : 'Date:',
             time: lang === 'zh' ? '会议时间:' : 'Time:',
             content: lang === 'zh' ? '会议内容:' : 'Agenda:',
             zoomId: lang === 'zh' ? 'Zoom会议ID:' : 'Zoom Meeting ID:',
             zoomLink: lang === 'zh' ? 'Zoom链接:' : 'Zoom link:',
+            welinkId: lang === 'zh' ? 'Welink会议ID:' : 'Welink Meeting ID:',
+            welinkLink: lang === 'zh' ? 'Welink链接:' : 'Welink link:',
             etherpad: lang === 'zh' ? 'Etherpad链接:' : 'Etherpad link:',
             video: lang === 'zh' ? '回放链接:' : 'Playback link:',
             record: lang === 'zh' ? '是否录制此会议' : 'Record Meeting',
@@ -128,13 +131,15 @@ $(document).ready(function () {
             let duration = escapeHTML(info.startTime) + '-' + escapeHTML(info.endTime);
             let t = '<h5 class="meeting-name">' + escapeHTML(info.name) +'</h5>';
             let video_url = info.video_url === null? '': info.video_url;
+            // 判断会议平台
+            let isPlatform = info.platform.includes('zoom')? true:false;
             t += this.insertDetailListHTML(this.fontmatter.creator, escapeHTML(info.creator), 'creator', info.url);
             t += this.insertDetailListHTML(this.fontmatter.sig, escapeHTML(info.group_name), 'sig');
             t += this.insertDetailListHTML(this.fontmatter.day, escapeHTML(date), 'day');
             t += this.insertDetailListHTML(this.fontmatter.time, escapeHTML(duration), 'time');
-            t += this.insertDetailListHTML(this.fontmatter.content, escapeHTML(info.detail), 'content');
-            t += this.insertDetailListHTML(this.fontmatter.zoomId, escapeHTML(info.meeting_id), 'zoomId');
-            t += this.insertDetailListHTML(this.fontmatter.zoomLink, escapeHTML(info.join_url), 'zoomLink');
+            t += this.insertDetailListHTML(this.fontmatter.content, escapeHTML(info.detail || ''), 'content');
+            t += this.insertDetailListHTML(isPlatform?this.fontmatter.zoomId:this.fontmatter.welinkId, escapeHTML(info.meeting_id), 'zoomId');
+            t += this.insertDetailListHTML(isPlatform?this.fontmatter.zoomLink:this.fontmatter.welinkLink, escapeHTML(info.join_url), 'zoomLink');
             t += this.insertDetailListHTML(this.fontmatter.etherpad, escapeHTML(info.etherpad), 'etherpad');
             t += this.insertDetailListHTML(this.fontmatter.video, escapeHTML(video_url), 'video');
             t += '<div class="reverse-submit">' +
@@ -246,6 +251,7 @@ $(document).ready(function () {
                 endTime: data.end,
                 name: data.topic,
                 etherpad: data.etherpad,
+                platform: data.mplatform,
                 join_url: data.join_url,
                 date: data.date,
                 meeting_id: data.mid,
@@ -726,6 +732,7 @@ $(document).ready(function () {
                     let isAuthoritied = calendarMethods.isAuthority(storage.userSigs);
                     if (isAuthoritied) {
                         calendarMethods.initFormData(storage);
+                        $('#id-meeting-platform').removeAttr("disabled");
                         $('.cal-content-detail').removeClass('hide');
                         calendarClickEvent.handleCheckForm('submit');
                     } else {
@@ -801,6 +808,7 @@ $(document).ready(function () {
             require.formdata.topic = escapeHTML($('#id-meeting-name').val());
             require.formdata.sponsor = escapeHTML($('#id-meeting-creator').val());
             require.formdata.group_name = escapeHTML($('#id-meeting-sig').find('option:selected').text());
+            require.formdata.platform = escapeHTML($('#id-meeting-platform').find('option:selected').text());
             require.formdata.date = escapeHTML($('#J-demo-01').val());
             require.formdata.start = escapeHTML($('#time-start').val());
             require.formdata.end = escapeHTML($('#time-end').val());
@@ -881,9 +889,10 @@ $(document).ready(function () {
                 if (isLogined) {
                     let storage = calendarMethods.getStorage();
                     let giteeID = $('.creator-name').text();
-                    let isAuthoritied = calendarMethods.isSelfLogin(giteeID, id);
+                     let isAuthoritied = calendarMethods.isSelfLogin(giteeID, id);
                     if (isAuthoritied) {
                         calendarMethods.initFormData(storage);
+                        $('#id-meeting-platform').attr("disabled","disabled");
                         calendarClickEvent.handleCheckForm('modify');
                         $('.cal-content-detail').removeClass('hide');
                     } else {
@@ -965,7 +974,7 @@ $(document).ready(function () {
         meetingData: function (data){
             $.ajax({
                 type: "GET",
-                url: '/calendar/meetingsdata/',
+                url: '/calendar/meetingsdata/', 
                 data: data,
                 contentType: "application/json; charset=utf-8",
                 crossDomain: true,
@@ -1047,7 +1056,7 @@ $(document).ready(function () {
         meetingDelete: function(mid) {
             $.ajax({
                 type: "DELETE",
-                url: `/calendar/meeting/action/delete/${mid}/`,
+                url: `/calendar/meeting/action/delete/${mid}/`, 
                 contentType: "application/json; charset=utf-8",
                 crossDomain: true,
                 datatype: "json",
@@ -1071,7 +1080,7 @@ $(document).ready(function () {
             $.ajax({
                 type: "PUT",
                 data: JSON.stringify(data),
-                url: `/calendar/meeting/action/update/${mid}/`,
+                url: `/calendar/meeting/action/update/${mid}/`, 
                 contentType: "application/json; charset=utf-8",
                 crossDomain: true,
                 datatype: "json",
@@ -1099,6 +1108,7 @@ $(document).ready(function () {
                 crossDomain: true,
                 datatype: "json",
                 success: function (res) {
+                  const _platform = res.mplatform.includes('zoom') ? 0:1;
                     if (isModified) {
                         let d = [];
                         d.push(calendarMethods.cleanResponse(res));
@@ -1111,7 +1121,8 @@ $(document).ready(function () {
                     } else {
                         $('#id-meeting-name').val(escapeHTML(res.topic));
                         $('#id-meeting-creator').val(escapeHTML(res.sponsor));
-                        $("#id-meeting-sig").get(0).selectedIndex=0;
+                        $("#id-meeting-sig").get(0).selectedIndex = 0 ;
+                        $("#id-meeting-platform").get(0).selectedIndex= _platform;
                         $('#J-demo-01').val(escapeHTML(res.date));
                         $('#id-meeting-content').val(escapeHTML(res.agenda));
                         $('#id-meeting-email').val(escapeHTML(res.emaillist));

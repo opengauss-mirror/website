@@ -603,6 +603,9 @@ other = "发起人"
 [meeting_sig]
 other = "所属SIG组"
 
+[meeting_platform]
+other = "平台"
+
 [meeting_day]
 other = "会议日期"
 
