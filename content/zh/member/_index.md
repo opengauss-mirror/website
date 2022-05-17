@@ -98,6 +98,9 @@ side = "left"
 id = "ReleaseManagement"
 side = "right"
 
+[[sig]]
+id = "CM"
+side = "left"
 
 [[usergroups]]
 id = "SZusergroup"

@@ -1,12 +1,12 @@
 ﻿+++
 member = "DCF"
 title ="DCF"
-goto = "Go to Gitee home page"
+goto = "前往Gitee仓库"
 gitlink = "https://gitee.com/opengauss/tc/tree/master/sigs/DCF"
-list = "Mailing List:"
+list = "邮件列表:"
 email = "dcf@opengauss.org"
 maillink = "mailto:dcf@opengauss.org"
-core = "Core Members"
+core = "核心成员"
 
 [[card]]
 img = "/zh/member/img/wanghuanzhuo.png"
