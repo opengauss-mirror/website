@@ -28,6 +28,7 @@
 .newsDetail_content_left img {
     width: 478px;
     height: 200px;
+    object-fit: cover;
 }
 .newsDetail_content .newsDetail_content_warp .newsDetail_content_right h3 {
     overflow: hidden;

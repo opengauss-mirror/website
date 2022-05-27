@@ -685,11 +685,10 @@ a:hover {
 }
 .price {
     background: #fff;
-    margin-top: 14px;
+    margin-top: 20px;
 }
-.exam-price {
-
-    margin: 8px 0px 13px 50px;
+.exam-price { 
+    margin: 20px 0px 20px 50px;
 }
 .price p {
     font-size: 14px;
@@ -717,7 +716,7 @@ a:hover {
     margin-bottom: 8px;
 }
 .sign-up {
-    margin-bottom: 16px;
+    margin-bottom: 32px;
 }
 .des-title {
     color: #000;
