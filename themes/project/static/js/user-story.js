@@ -3,7 +3,7 @@ $('.left-tools').find('div').on('click', function (e) {
     e.preventDefault();
     $(this).addClass('active').siblings().removeClass('active');
     let id = $(this).find('a').attr('href');
-    let toTop = ['#dbv', '#isv', '#developer', '#finance', '#other', '#dataModel', '#clientTools', '#devOpsTools', '#kernelExtensions'];
+    let toTop = ['#dbv', '#isv', '#developer', '#finance', '#other', '#government', '#education', '#science', '#energy','#industrial','#carriers','#oilGas'];
     toTop.forEach((item, index) => {
      if (item === id){
          let h = $(id).offset().top - 60;
@@ -29,16 +29,16 @@ if ($(window).width() < 1000) {
 } else {
     $(window).scroll(function () {
         let top = $(window).scrollTop();
-        // console.log('top', top)
+        console.log('top', top)
         if (top <= 530) {
             $('.left-tools div:nth-child(1)').addClass('active').siblings().removeClass('active');
         } else if ((top >= 530) && (top < 777)) {
             $('.left-tools div:nth-child(2)').addClass('active').siblings().removeClass('active');
-        } else if ((top > 777) && (top <= 1370)) {
+        } else if ((top > 777) && (top <= 1050)) {
             $('.left-tools div:nth-child(3)').addClass('active').siblings().removeClass('active');
-        } else if ((top >= 1400) && (top < 1660)) {
+        } else if ((top >= 1050) && (top < 1650)) {
             $('.left-tools div:nth-child(4)').addClass('active').siblings().removeClass('active');
-        } else if ((top >= 1670) && (top < 1980)) {
+        } else if ((top >= 1650) && (top < 2100)) {
             $('.left-tools div:nth-child(5)').addClass('active').siblings().removeClass('active');
         } else if ((top >= 200) && (top < 2380)) {
             $('.left-tools div:nth-child(6)').addClass('active').siblings().removeClass('active');
