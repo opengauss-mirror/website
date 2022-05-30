@@ -34,13 +34,13 @@ if ($(window).width() < 1000) {
             $('.left-tools div:nth-child(1)').addClass('active').siblings().removeClass('active');
         } else if ((top >= 755) && (top < 955)) {
             $('.left-tools div:nth-child(2)').addClass('active').siblings().removeClass('active');
-        } else if ((top > 955) && (top <= 1253)) {
+        } else if ((top > 955) && (top <= 1330)) {
             $('.left-tools div:nth-child(3)').addClass('active').siblings().removeClass('active');
-        } else if ((top >= 1253) && (top < 1806)) {
+        } else if ((top >= 1330) && (top < 1885)) {
             $('.left-tools div:nth-child(4)').addClass('active').siblings().removeClass('active');
-        } else if ((top >= 1806) && (top < 2101)) {
+        } else if ((top >= 1806) && (top < 2188)) {
             $('.left-tools div:nth-child(5)').addClass('active').siblings().removeClass('active');
-        } else if ((top >= 2101) && (top < 2380)) {
+        } else if ((top >= 2188) && (top < 2380)) {
             $('.left-tools div:nth-child(6)').addClass('active').siblings().removeClass('active');
         } else if ((top >= 2380) && (top < 2680)) {
             $('.left-tools div:nth-child(7)').addClass('active').siblings().removeClass('active');

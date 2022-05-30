@@ -48,12 +48,10 @@ desc = "应用在部分电力行业的系统开发中，为高并发的数据访
 address = "http://www.hoperun.com/"
 weight = 2
 
-
-
 [[cards]]
 iden = "developer"
 name = "SphereEx"
-desc = "Apache ShardingSphere + openGauss 的分布式解决方案，突破了单机性能瓶颈，使用 16 台服务器在超过 1 小时的测试中，得到了平均超过 1000 万 tpmC 的结果。部署openGauss服务器节点数为11~20个。"
+desc = "构建了Apache ShardingSphere + openGauss 的分布式解决方案，突破了单机性能瓶颈，使用 16 台服务器在超过 1 小时的测试中，得到了平均超过 1000 万 tpmC 的结果。部署openGauss服务器节点数为11~20个。"
 address = "https://www.sphere-ex.com/zh/"
 weight = 4
 
@@ -100,10 +98,11 @@ name = "北京太阳塔信息科技有限责任公司"
 desc = "使用openGauss做了LNXDB数据库的商业发行版，推给新客户使用，同时正在将推出的LNXDB-RDS for  openGauss 版本的数据库一体机，推向政府类客户。部署openGauss服务器节点数为1~10个。"
 address = "http://www.taryartar.com/"
 weight = 3
+
 [[cards]]
 iden = "dbv"
 name = "成都虚谷伟业科技有限公司"
-desc = "利用openGauss多线程绑核技术进行数据库开发，部署openGauss服务器节点数为1~10个。"
+desc = "在openGuass 多线程绑核技术基础上进行数据库开发，部署openGauss服务器节点数为1~10个。"
 address = "http://www.xugucn.com/"
 weight = 4
 
@@ -122,7 +121,12 @@ desc = "银行核心系统支付系统收单系统，部署openGauss服务器节
 address = "http://www.murongtech.com/"
 weight = 2 
 
-
+[[cards]]
+iden = "finance"
+name = "普元信息技术股份有限公司"
+desc = "使用openGauss共建科技普惠生态，部署openGauss服务器节点数为50个以上。"
+address = "http://www.primeton.com/"
+weight = 3
 
 [[cards]]
 iden = "other"
@@ -145,7 +149,6 @@ name = "锐掣（杭州）科技有限公司"
 desc = "做为一家提供可计算性存储的公司，跟openGauss结合使用可以进一步降低存储成本和提升数据库性能。目前基于openGauss上的产品正在准备中，部署openGauss服务器节点数为1~10个。"
 address = "http://www.scaleflux.cn/"
 weight = 2
- 
 
 
 
