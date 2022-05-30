@@ -294,6 +294,13 @@ paginate = 10
     weight = 5
     parent = "community"
 
+[[languages.zh.menu.main]]
+    identifier = "userStory"
+    name = "用户故事"
+    url  = "/zh/userStory.html"
+    weight = 6
+    parent = "community"
+
 
 [[languages.zh.menu.main]]
     identifier = "connect"

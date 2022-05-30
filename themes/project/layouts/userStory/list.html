@@ -3,7 +3,7 @@
 
   {{ partial "head.html" . }}
   <link rel="stylesheet" href="{{ "css/pagination.css" | relURL}}?t={{ mul 1000 (time now).Unix }}">
-  <link href="{{ "css/supportTools.css" | relURL}}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet">
+  <link href="{{ "css/user-story.css" | relURL}}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet">
 
   <body>
 
@@ -24,17 +24,10 @@
             {{ else }}
 
             <div class="container">
-                <div class="support-head">
-                    <h2>{{ .Params.headtitle }} </h2>
-                    <p>{{ .Params.headdesc }} </p>
-                    <div class="stretch-img">
-                        <img src={{ .Params.panorama }} alt="">
-                    </div>
-                </div>
                 <div class="support-tools isPc">
-                    <div class="left-tools hide">
+                    <div class="left-tools">
                         {{ range .Params.list }}
-                        {{ if eq .identification "connectors"}}
+                        {{ if eq .identification "dbv"}}
                         <div class="active">
                             <a href={{ "#" }}{{ .identification }}>{{ .name }}</a>
                         </div>
@@ -61,12 +54,15 @@
                                         {{ range $root.cards }}
                                         {{ if eq .iden $id}}
                                         <div class="item-box">
-                                            <p class="item-name">{{.name}}</p>
-                                            <p class="item-desc">{{.desc}}</p>
-                                            <p class="item-link">
+                                            <p class="item-name"><a href={{.address}}>{{.name}}</a></p>
+                                            <p class="item-desc">
+                                              {{.desc}}
+                                              <!-- <a href={{.address}}>{{ $root.weblink}} </a> -->
+                                            </p>
+                                            <!-- <p class="item-link">
                                                 <a href={{.address}} target="_blank">{{ if .website }}{{ $root.weblink}} {{ else }}{{$root.code}} {{ end }}</a>
                                                 {{ if .guide }}<a href={{.guide}} target="_blank">{{$root.guidance}}</a> {{ end }}
-                                            </p>
+                                            </p> -->
                                         </div>
                                         {{ end }}
                                         {{ end }}
@@ -75,6 +71,17 @@
                                 {{ end }}
                             </div>
                         </div>
+                    </div>
+                    <div class="questionnaire">
+                      {{ if .Params.userQuestionnaire }}
+                      <div class="ques-icon">
+                        <img src="../img/userStory/tipsa.png" alt="新增故事">
+                          <div class="ques-info">
+                            <p>提示：<br>页面即将跳转到“问卷星”页面。为了更好地提供问卷服务，我们委托问卷星提供问卷调查服务，在您同意的情况下，问卷星将严格根据<a href="https://www.wjx.cn/wjx/license.aspx?type=1" target="_blank">《问卷星个人信息保护政策》</a>收集您的个人信息，我们也会严格遵从<a href="/zh/privacyPolicy.html" target="_blank">openGauss社区隐私政策</a>使用您提供的信息</p>
+                            <a href="https://www.wjx.cn/vj/Q2oF2sb.aspx" target="_blank" class="btn-jump">{{ .Params.feedback}}</a>
+                          </div>
+                      </div>
+                      {{end}}
                     </div>
                 </div>
 
@@ -86,16 +93,19 @@
                             {{ $boxName := .name }}
 
                             <div class="tool-item" id={{ .identification }}>
-                                <div class="item-title">{{ $boxName }} {{ if eq .identification "connectors"}} <img src="/img/swiper/down.svg" alt="title icon"> {{ else }} <img src="/img/swiper/right.svg" alt="title icon">  {{ end}}</div>
-                                <div class={{ if eq .identification "connectors"}} {{ "item-detail" }} {{ else }} {{ "item-detail hide" }} {{ end }}>
+                                <div class="item-title">{{ $boxName }} {{ if eq .identification "dbv"}} <img src="/img/swiper/down.svg" alt="title icon"> {{ else }} <img src="/img/swiper/right.svg" alt="title icon">  {{ end}}</div>
+                                <div class={{ if eq .identification "dbv"}} {{ "item-detail" }} {{ else }} {{ "item-detail hide" }} {{ end }}>
                                     {{ range $root.cards }}
-                                    {{ if eq .iden $id}}
-                                    <div class="item-box">
-                                        <p class="item-name">{{.name}}</p>
-                                        <p class="item-desc">{{.desc}}</p>
-                                        <p class="item-link"><a href={{.address}}>{{ if .website }}{{ $root.weblink}} {{ else }}{{$root.code}} {{ end }}</a><a href={{.guide}}>{{$root.guidance}}</a></p>
-                                    </div>
-                                    {{ end }}
+                                      {{ if eq .iden $id}}
+                                      <div class="item-box">
+                                          <p class="item-name">{{.name}}</p>
+                                          <p class="item-desc">
+                                            {{.desc}}
+                                            <!-- <a href={{.address}}>{{ $root.weblink}} </a> -->
+                                          </p>
+                                          <!-- <p class="item-link"><a href={{.address}}>{{ if .website }}{{ $root.weblink}} {{ else }}{{$root.code}} {{ end }}</a><a href={{.guide}}>{{$root.guidance}}</a></p> -->
+                                      </div>
+                                      {{ end }}
                                     {{ end }}
                                 </div>
 
@@ -117,7 +127,7 @@
     <!-- /#all -->
     {{ partial "scripts.html" . }}
     <script src="{{ "js/pinchzoom.min.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>
-    <script src="{{ "js/support-tools.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>
+    <script src="{{ "js/user-story.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>
 
   </body>
 </html>
