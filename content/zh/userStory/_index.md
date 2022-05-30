@@ -37,7 +37,7 @@ name = "其他"
 [[cards]]
 iden = "developer"
 name = "中软国际科技与服务有限公司"
-desc = "opengauss生态合作伙伴，提供配套开发与管理、运维工具。"
+desc = "openGauss生态合作伙伴，提供配套开发与管理、运维工具。"
 address = "https://www.chinasofti.com/"
 weight = 1
 
@@ -48,12 +48,7 @@ desc = "应用在部分电力行业的系统开发中，为高并发的数据访
 address = "http://www.hoperun.com/"
 weight = 2
 
-[[cards]]
-iden = "developer"
-name = "成都虚谷伟业科技有限公司"
-desc = "利用openguass 多线程绑核技术进行数据库开发，部署openGauss服务器节点数为1~10个。"
-address = "http://www.xugucn.com/"
-weight = 3
+
 
 [[cards]]
 iden = "developer"
@@ -80,7 +75,7 @@ weight = 6
 [[cards]]
 iden = "isv"
 name = "北京宝兰德软件股份有限公司"
-desc = "将opengauss集成在产品方案中，部署openGauss服务器节点数为50个以上。"
+desc = "将openGauss集成在产品方案中，部署openGauss服务器节点数为50个以上。"
 address = "https://www.bessystem.com/"
 weight = 1
 
@@ -99,6 +94,19 @@ desc = "使用openGauss做海量数据库Vastbase商业发行版，部署openGau
 address = "http://www.vastdata.com.cn/"
 weight = 2
 
+[[cards]]
+iden = "dbv"
+name = "北京太阳塔信息科技有限责任公司"
+desc = "使用openGauss做了LNXDB数据库的商业发行版，推给新客户使用，同时正在将推出的LNXDB-RDS for  openGauss 版本的数据库一体机，推向政府类客户。部署openGauss服务器节点数为1~10个。"
+address = "http://www.taryartar.com/"
+weight = 3
+[[cards]]
+iden = "dbv"
+name = "成都虚谷伟业科技有限公司"
+desc = "利用openGauss多线程绑核技术进行数据库开发，部署openGauss服务器节点数为1~10个。"
+address = "http://www.xugucn.com/"
+weight = 4
+
 
 [[cards]]
 iden = "finance"
@@ -110,16 +118,11 @@ weight = 1
 [[cards]]
 iden = "finance"
 name = "北京沐融信息科技股份有限公司"
-desc = "银行核心系统  支付系统 收单系统，部署openGauss服务器节点数为11~20个。"
+desc = "银行核心系统支付系统收单系统，部署openGauss服务器节点数为11~20个。"
 address = "http://www.murongtech.com/"
 weight = 2 
 
-[[cards]]
-iden = "other"
-name = "北京太阳塔信息科技有限责任公司"
-desc = "使用opengauss做了LNXDB数据库的商业发行版，推给新客户使用，同时正在将推出的LNXDB-RDS for  opengauss 版本的数据库一体机，推向政府类客户。部署openGauss服务器节点数为1~10个。"
-address = "http://www.taryartar.com/"
-weight = 1
+
 
 [[cards]]
 iden = "other"
