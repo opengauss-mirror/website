@@ -29,18 +29,18 @@ if ($(window).width() < 1000) {
 } else {
     $(window).scroll(function () {
         let top = $(window).scrollTop();
-        console.log('top', top)
-        if (top <= 530) {
+        // console.log('top', top)
+        if (top <= 755) {
             $('.left-tools div:nth-child(1)').addClass('active').siblings().removeClass('active');
-        } else if ((top >= 530) && (top < 777)) {
+        } else if ((top >= 755) && (top < 955)) {
             $('.left-tools div:nth-child(2)').addClass('active').siblings().removeClass('active');
-        } else if ((top > 777) && (top <= 1050)) {
+        } else if ((top > 955) && (top <= 1330)) {
             $('.left-tools div:nth-child(3)').addClass('active').siblings().removeClass('active');
-        } else if ((top >= 1050) && (top < 1650)) {
+        } else if ((top >= 1330) && (top < 1885)) {
             $('.left-tools div:nth-child(4)').addClass('active').siblings().removeClass('active');
-        } else if ((top >= 1650) && (top < 2100)) {
+        } else if ((top >= 1806) && (top < 2188)) {
             $('.left-tools div:nth-child(5)').addClass('active').siblings().removeClass('active');
-        } else if ((top >= 200) && (top < 2380)) {
+        } else if ((top >= 2188) && (top < 2380)) {
             $('.left-tools div:nth-child(6)').addClass('active').siblings().removeClass('active');
         } else if ((top >= 2380) && (top < 2680)) {
             $('.left-tools div:nth-child(7)').addClass('active').siblings().removeClass('active');
