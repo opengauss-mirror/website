@@ -132,7 +132,7 @@ weight = 3
 iden = "other"
 name = "东方云微科技有限公司"
 desc = "使用openGauss承载自己的业务。"
-address = "www.dongfangyunwei.com.cn"
+address = "http://www.dongfangyunwei.com.cn"
 weight = 2
 
 
