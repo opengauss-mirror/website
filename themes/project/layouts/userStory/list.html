@@ -52,19 +52,14 @@
                                     <div class="item-detail">
 
                                         {{ range $root.cards }}
-                                        {{ if eq .iden $id}}
-                                        <div class="item-box">
-                                            <p class="item-name"><a href={{.address}} target="_blank">{{.name}}</a></p>
-                                            <p class="item-desc">
-                                              {{.desc}}
-                                              <!-- <a href={{.address}}>{{ $root.weblink}} </a> -->
-                                            </p>
-                                            <!-- <p class="item-link">
-                                                <a href={{.address}} target="_blank">{{ if .website }}{{ $root.weblink}} {{ else }}{{$root.code}} {{ end }}</a>
-                                                {{ if .guide }}<a href={{.guide}} target="_blank">{{$root.guidance}}</a> {{ end }}
-                                            </p> -->
-                                        </div>
-                                        {{ end }}
+                                          {{ if eq .iden $id}}
+                                          <div class="item-box">
+                                              <p class="item-name"><a href={{.address}} target="_blank">{{.name}}</a></p>
+                                              <p class="item-desc">
+                                                {{.desc}}
+                                              </p>
+                                          </div>
+                                          {{ end }}
                                         {{ end }}
                                     </div>
                                 </div>
