@@ -25,29 +25,29 @@ SIGs are open to everyone to make contributions.Each SIG has one or more project
 Issues can be submitted in the repository corresponding to the SIG where specific issues can be discussed, submitted, resolved, and reviewed.
 You can find the SIGs you are interested in from the SIG list below.
 
-| SIG Name | Scope of Responsibility |
-| :------- | :--------------- |
-| [SQLEngine](https://gitee.com/opengauss/tc/tree/master/sigs/SQLEngine) | Develop and maintain the SQL engines of the openGauss community. |
-| [StorageEngine](https://gitee.com/opengauss/tc/tree/master/sigs/StorageEngine) | Develop and maintain the storage engine of the openGauss community. |
-| [Connectors](https://gitee.com/opengauss/tc/tree/master/sigs/Connectors) | Develop and maintain the connectors of the openGauss community. |
-| [Tools](https://gitee.com/opengauss/tc/tree/master/sigs/Tools) | Develop and maintain the tools of the openGauss community. |
-| [Docs](https://gitee.com/opengauss/tc/tree/master/sigs/Docs) | Develop and maintain the documents of the openGauss community. |
-| [Infra](https://gitee.com/opengauss/tc/tree/master/sigs/Infra) | Develop and maintain the infrastructure of the openGauss community. |
-| [Security](https://gitee.com/opengauss/tc/tree/master/sigs/Security) | Develop and maintain the security of the openGauss community. |
-| [OM](https://gitee.com/opengauss/tc/tree/master/sigs/OM) | Develop and maintain the operation and deployment of openGauss. |
-| [IoT](https://gitee.com/opengauss/tc/tree/master/sigs/IoT) | Develop and maintain the IoT of the openGauss community. |
-| [In-place Update](https://gitee.com/opengauss/tc/tree/master/sigs/In-place-Update) | Develop and maintain the in-place update of the openGauss community. |
-| [AI](https://gitee.com/opengauss/tc/tree/master/sigs/AI) | Develop and maintain the AI of the openGauss community. |
-| [GIS](https://gitee.com/opengauss/tc/tree/master/sigs/GIS) | Develop and maintain the Geographic Information System of the openGauss community. |
-| [CloudNative](https://gitee.com/opengauss/tc/tree/master/sigs/CloudNative) | Develop and maintain the Cloud Native of the openGauss community. |
-| [SecurityTechnology](https://gitee.com/opengauss/tc/tree/master/sigs/SecurityTechnology) | Develop and maintain the database security technology of the openGauss community. |
-| [DistributionCertification](https://gitee.com/opengauss/tc/tree/master/sigs/DistributionCertification) | Define and develop openGuass distribution certification specification, test suite and process. |
-| [Plugin](https://gitee.com/opengauss/tc/tree/master/sigs/Plugin) | Build, manage and develop the plugin framework. |
-| [Blockchain](https://gitee.com/opengauss/tc/tree/master/sigs/Blockchain) | Explore the blockchain use case, Study the core technical issues of blockchain. |
-| [DCF](https://gitee.com/opengauss/tc/tree/master/sigs/DCF) | Develop and maintain Distributed Consensus Framework of the openGauss community. |
-| [QA](https://gitee.com/opengauss/tc/tree/master/sigs/QA) | Develop and maintain released version quality of the openGauss community. |
-| [Graph](https://gitee.com/opengauss/tc/tree/master/sigs/SecurityTechnology) | Responsible for the knowledge map data management function of unified storage and query of the openGauss community. |
-| [ReleaseManagement](https://gitee.com/opengauss/tc/tree/master/sigs/ReleaseManagement) | The community collaborates with SIG Maintainers to plan openGauss community release and is responsible for the final competitiveness goal. |
+| SIG Name | Scope of Responsibility |  Maillist |
+| :------- | :--------------- | :--------------- |
+| [SQLEngine](https://gitee.com/opengauss/tc/tree/master/sigs/SQLEngine) | Develop and maintain the SQL engines of the openGauss community. | sqlengine@opengauss.org |
+| [StorageEngine](https://gitee.com/opengauss/tc/tree/master/sigs/StorageEngine) | Develop and maintain the storage engine of the openGauss community. |  storageengine@opengauss.org |
+| [Connectors](https://gitee.com/opengauss/tc/tree/master/sigs/Connectors) | Develop and maintain the connectors of the openGauss community. | connectors@opengauss.org |
+| [Tools](https://gitee.com/opengauss/tc/tree/master/sigs/Tools) | Develop and maintain the tools of the openGauss community. | tools@opengauss.org |
+| [Docs](https://gitee.com/opengauss/tc/tree/master/sigs/Docs) | Develop and maintain the documents of the openGauss community. | docs@opengauss.org |
+| [Infra](https://gitee.com/opengauss/tc/tree/master/sigs/Infra) | Develop and maintain the infrastructure of the openGauss community. | infra@opengauss.org |
+| [Security](https://gitee.com/opengauss/tc/tree/master/sigs/Security) | Develop and maintain the security of the openGauss community. | security@opengauss.org |
+| [OM](https://gitee.com/opengauss/tc/tree/master/sigs/OM) | Develop and maintain the operation and deployment of openGauss. | om@opengauss.org |
+| [IoT](https://gitee.com/opengauss/tc/tree/master/sigs/IoT) | Develop and maintain the IoT of the openGauss community. | iot@opengauss.org |
+| [In-place Update](https://gitee.com/opengauss/tc/tree/master/sigs/In-place-Update) | Develop and maintain the in-place update of the openGauss community. | inplaceupdate@opengauss.org |
+| [AI](https://gitee.com/opengauss/tc/tree/master/sigs/AI) | Develop and maintain the AI of the openGauss community. | ai@opengauss.org |
+| [GIS](https://gitee.com/opengauss/tc/tree/master/sigs/GIS) | Develop and maintain the Geographic Information System of the openGauss community. | gis@opengauss.org |
+| [CloudNative](https://gitee.com/opengauss/tc/tree/master/sigs/CloudNative) | Develop and maintain the Cloud Native of the openGauss community. | cloudnative@opengauss.org |
+| [SecurityTechnology](https://gitee.com/opengauss/tc/tree/master/sigs/SecurityTechnology) | Develop and maintain the database security technology of the openGauss community. | securitytechnology@opengauss.org |
+| [DistributionCertification](https://gitee.com/opengauss/tc/tree/master/sigs/DistributionCertification) | Define and develop openGuass distribution certification specification, test suite and process. | distributioncertification@opengauss.org |
+| [Plugin](https://gitee.com/opengauss/tc/tree/master/sigs/Plugin) | Build, manage and develop the plugin framework. | plugin@opengauss.org |
+| [Blockchain](https://gitee.com/opengauss/tc/tree/master/sigs/Blockchain) | Explore the blockchain use case, Study the core technical issues of blockchain. | blockchain@opengauss.org |
+| [DCF](https://gitee.com/opengauss/tc/tree/master/sigs/DCF) | Develop and maintain Distributed Consensus Framework of the openGauss community. | dcf@opengauss.org |
+| [QA](https://gitee.com/opengauss/tc/tree/master/sigs/QA) | Develop and maintain released version quality of the openGauss community. | QA@opengauss.org |
+| [Graph](https://gitee.com/opengauss/tc/tree/master/sigs/SecurityTechnology) | Responsible for the knowledge map data management function of unified storage and query of the openGauss community. | graph@opengauss.org |
+| [ReleaseManagement](https://gitee.com/opengauss/tc/tree/master/sigs/ReleaseManagement) | The community collaborates with SIG Maintainers to plan openGauss community release and is responsible for the final competitiveness goal. | releasemanagement@opengauss.org |
 
 Want to start a new SIG? Please send your application to: <tc@opengauss.org> , the email template is referred to: <https://gitee.com/opengauss/tc/blob/master/sigs/Template/README.md> .
 
