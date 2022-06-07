@@ -79,4 +79,11 @@ core = "核心成员："
     email = "mailto:pengjiong1@huawei.com"
     gitee = "https://gitee.com/totaj"
 
+[[card]]
+    img = "/zh/member/img/haoqingyun.png"
+    name = "郝庆运"
+    title = "Committer"
+    email = "mailto:haoqingyun54@126.com"
+    gitee = "https://gitee.com/haoqingyun"
+
 +++

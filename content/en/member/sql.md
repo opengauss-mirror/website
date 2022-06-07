@@ -80,4 +80,11 @@ core = "Core Members"
     title = "Committer"
     email = "mailto:pengjiong1@huawei.com"
     gitee = "https://gitee.com/totaj"
+
+[[card]]
+    img = "/zh/member/img/haoqingyun.png"
+    name = "Qingyun Hao"
+    title = "Committer"
+    email = "mailto:haoqingyun54@126.com"
+    gitee = "https://gitee.com/haoqingyun"
 +++
