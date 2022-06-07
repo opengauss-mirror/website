@@ -102,6 +102,10 @@ side = "right"
 id = "CM"
 side = "left"
 
+[[sig]]
+id = "OPS"
+side = "left"
+
 [[usergroups]]
 id = "SZusergroup"
 side = "left"
