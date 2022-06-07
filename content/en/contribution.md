@@ -23,15 +23,15 @@ SIGs are open to everyone to make contributions.Each SIG has one or more project
 Issues can be submitted in the repository corresponding to the SIG where specific issues can be discussed, submitted, resolved, and reviewed.
 You can find the SIGs you are interested in from the SIG list below.
 
-| SIG Name | Scope of Responsibility |
-| :------- | :--------------- |
-| SQLEngine | Develop and maintain the SQL engines of the openGauss community. |
-| StorageEngine | Develop and maintain the storage engine of the openGauss community. |
-| Connectors | Develop and maintain the connectors of the openGauss community. |
-| Tools | Develop and maintain the tools of the openGauss community. |
-| Docs | Develop and maintain the documents of the openGauss community. |
-| Infra | Develop and maintain the infrastructure of the openGauss community. |
-| Security | Develop and maintain the security of the openGauss community. |
+| SIG Name | Scope of Responsibility | Maillist |
+| :------- | :--------------- | :------- |
+| SQLEngine | Develop and maintain the SQL engines of the openGauss community. | sqlengine@opengauss.org |
+| StorageEngine | Develop and maintain the storage engine of the openGauss community. | storageengine@opengauss.org |
+| Connectors | Develop and maintain the connectors of the openGauss community. | connectors@opengauss.org |
+| Tools | Develop and maintain the tools of the openGauss community. | tools@opengauss.org |
+| Docs | Develop and maintain the documents of the openGauss community. | docs@opengauss.org |
+| Infra | Develop and maintain the infrastructure of the openGauss community. | infra@opengauss.org |
+| Security | Develop and maintain the security of the openGauss community. | security@opengauss.org |
 
 ### 4. Starting Your Contribution
 

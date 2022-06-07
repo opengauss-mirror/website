@@ -38,13 +38,18 @@
     line-height: 24px;
 }
 .contribution table{
-    margin-top: 20px;
+    margin: 20px 0;
     width: 100%;
 }
 .contribution table th,.contribution table td{
     height: 56px;
-    width: 50%;
-    padding: 0 80px;
+    width: 30%;
+    padding: 0 3%;
+    white-space: inherit;
+}
+.contribution table th,.contribution table td:first-child,
+.contribution table th,.contribution table td:last-child{
+  width: 16%;
 }
 .contribution table th{
     font-size: 18px;
@@ -88,13 +93,9 @@
         height: 56px;
         word-wrap: break-word;
         word-break: break-all;
-        width: 35%;
-        padding: 0;
         white-space:pre-wrap;
     }
-    .contribution table th+th,.contribution table td+td{
-        width: 65%;
-    }
+    
     .contribution p {
         font-size: 14px;
         color: #4D4D4D;
@@ -130,18 +131,18 @@
         background: rgba(0, 0, 0, 0.05);
     }
     .contribution table tbody td a{
-        font-size: 14px;
+        font-size: 13px;
         font-family: FZLTHJW--GB1-0, FZLTHJW--GB1;
         font-weight: normal;
         color: #7D32EA;
-        line-height: 32px;
+        line-height: 20px;
     }
     .contribution table tbody tr td+td{
-        font-size: 14px;
+        font-size: 12px;
         font-family: FZLTHJW--GB1-0, FZLTHJW--GB1;
         font-weight: normal;
         color: #4D4D4D;
-        line-height: 24px;
+        line-height: 21px;
     }
     .contribution table tbody tr:nth-child(even){
         background: rgba(0, 0, 0, 0.05);

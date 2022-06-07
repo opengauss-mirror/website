@@ -26,29 +26,29 @@ SIG是开放的，欢迎任何人加入并参与贡献。每一个SIG在码云�
 您可以在SIG对应的代码仓库上提交Issue，参与Issue讨论，提交Pull Request，参与代码检视等。
 您可以从如下的SIG列表中找到您感兴趣的SIG。
 
-| SIG名称 | 职责范围 |
-| :------- | :--------------- |
-| [SQLEngine](https://gitee.com/opengauss/tc/tree/master/sigs/SQLEngine) | 负责openGauss社区SQL引擎的开发和维护。 |
-| [StorageEngine](https://gitee.com/opengauss/tc/tree/master/sigs/StorageEngine) | 负责openGauss社区存储引擎的开发和维护。 |
-| [Connectors](https://gitee.com/opengauss/tc/tree/master/sigs/Connectors) | 负责openGauss社区Connectors的开发和维护。 |
-| [Tools](https://gitee.com/opengauss/tc/tree/master/sigs/Tools) | 负责openGauss社区工具的开发和维护。 |
-| [Docs](https://gitee.com/opengauss/tc/tree/master/sigs/Docs) | 负责openGauss社区文档的开发和维护。 |
-| [Infra](https://gitee.com/opengauss/tc/tree/master/sigs/Infra) | 负责openGauss社区基础设施的开发和维护。 |
-| [Security](https://gitee.com/opengauss/tc/tree/master/sigs/Security) | 负责openGauss社区安全的开发和维护。 |
-| [OM](https://gitee.com/opengauss/tc/tree/master/sigs/OM) | 负责openGauss安装部署的开发和维护。 |
-| [IoT](https://gitee.com/opengauss/tc/tree/master/sigs/IoT) | 负责openGauss IoT 开发和维护。 |
-| [In-place Update](https://gitee.com/opengauss/tc/tree/master/sigs/In-place-Update) | 负责openGauss社区in-place update引擎的开发和维护。|
-| [AI](https://gitee.com/opengauss/tc/tree/master/sigs/AI) | 负责openGauss社区AI的开发和维护。|
-| [GIS](https://gitee.com/opengauss/tc/tree/master/sigs/GIS) | 负责openGauss社区地理信息系统的开发和维护。|
-| [CloudNative](https://gitee.com/opengauss/tc/tree/master/sigs/CloudNative) | 负责openGauss社区云原生方向的开发和维护。|
-| [SecurityTechnology](https://gitee.com/opengauss/tc/tree/master/sigs/SecurityTechnology) | 负责openGauss社区数据库安全技术的开发和维护。|
-| [DistributionCertification](https://gitee.com/opengauss/tc/tree/master/sigs/DistributionCertification) | 负责openGauss发行版认证流程、测试套件的定义和开发。|
-| [Plugin](https://gitee.com/opengauss/tc/tree/master/sigs/Plugin) | 负责openGauss插件机制的规划、管理、开发等。|
-| [Blockchain](https://gitee.com/opengauss/tc/tree/master/sigs/Blockchain) | 探讨区块链的业务场景，研究区块链的核心技术问题。|
-| [DCF](https://gitee.com/opengauss/tc/tree/master/sigs/DCF) | 负责openGauss社区分布式一致性框架DCF的开发和维护。|
-| [QA](https://gitee.com/opengauss/tc/tree/master/sigs/QA) | 负责openGauss社区版本质量相关的开发和维护。|
-| [Graph](https://gitee.com/opengauss/tc/tree/master/sigs/SecurityTechnology) | 负责openGauss社区统一存储和查询的知识图谱数据管理功能。|
-| [ReleaseManagement](https://gitee.com/opengauss/tc/tree/master/sigs/ReleaseManagement) | 社区协同各SIG maintainer,规划openGauss社区版本的发布工作，为最终的竞争力目标达成负责。|
+| SIG名称 | 职责范围 | 订阅邮件列表 |
+| :------- | :------- | :------- |
+| [SQLEngine](https://gitee.com/opengauss/tc/tree/master/sigs/SQLEngine) | 负责openGauss社区SQL引擎的开发和维护。 | [sqlengine@opengauss.org](https://mailweb.opengauss.org/postorius/lists/sqlengine@opengauss.org/) |
+| [StorageEngine](https://gitee.com/opengauss/tc/tree/master/sigs/StorageEngine) | 负责openGauss社区存储引擎的开发和维护。 |  [storageengine@opengauss.org](https://mailweb.opengauss.org/postorius/lists/storageengine@opengauss.org/) |
+| [Connectors](https://gitee.com/opengauss/tc/tree/master/sigs/Connectors) | 负责openGauss社区Connectors的开发和维护。 | [connectors@opengauss.org](https://mailweb.opengauss.org/postorius/lists/connectors@opengauss.org/) |
+| [Tools](https://gitee.com/opengauss/tc/tree/master/sigs/Tools) | 负责openGauss社区工具的开发和维护。 | [tools@opengauss.org](https://mailweb.opengauss.org/postorius/lists/tools@opengauss.org/) |
+| [Docs](https://gitee.com/opengauss/tc/tree/master/sigs/Docs) | 负责openGauss社区文档的开发和维护。 | [docs@opengauss.org](https://mailweb.opengauss.org/postorius/lists/docs@opengauss.org/) |
+| [Infra](https://gitee.com/opengauss/tc/tree/master/sigs/Infra) | 负责openGauss社区基础设施的开发和维护。 | [infra@opengauss.org](https://mailweb.opengauss.org/postorius/lists/infra@opengauss.org/) |
+| [Security](https://gitee.com/opengauss/tc/tree/master/sigs/Security) | 负责openGauss社区安全的开发和维护。 | [securities@opengauss.org](https://mailweb.opengauss.org/postorius/lists/securities@opengauss.org/) |
+| [OM](https://gitee.com/opengauss/tc/tree/master/sigs/OM) | 负责openGauss安装部署的开发和维护。 | [om@opengauss.org](https://mailweb.opengauss.org/postorius/lists/om@opengauss.org/) |
+| [IoT](https://gitee.com/opengauss/tc/tree/master/sigs/IoT) | 负责openGauss IoT 开发和维护。 | [iot@opengauss.org](https://mailweb.opengauss.org/postorius/lists/iot@opengauss.org/) |
+| [In-place Update](https://gitee.com/opengauss/tc/tree/master/sigs/In-place-Update) | 负责openGauss社区in-place update引擎的开发和维护。| [inplaceupdate@opengauss.org](https://mailweb.opengauss.org/postorius/lists/inplaceupdate@opengauss.org/) |
+| [AI](https://gitee.com/opengauss/tc/tree/master/sigs/AI) | 负责openGauss社区AI的开发和维护。| [ai@opengauss.org](https://mailweb.opengauss.org/postorius/lists/ai@opengauss.org/) |
+| [GIS](https://gitee.com/opengauss/tc/tree/master/sigs/GIS) | 负责openGauss社区地理信息系统的开发和维护。| [gis@opengauss.org](https://mailweb.opengauss.org/postorius/lists/gis@opengauss.org/) |
+| [CloudNative](https://gitee.com/opengauss/tc/tree/master/sigs/CloudNative) | 负责openGauss社区云原生方向的开发和维护。| [cloudnative@opengauss.org](https://mailweb.opengauss.org/postorius/lists/cloudnative@opengauss.org/) |
+| [SecurityTechnology](https://gitee.com/opengauss/tc/tree/master/sigs/SecurityTechnology) | 负责openGauss社区数据库安全技术的开发和维护。| [securitytechnology@opengauss.org](https://mailweb.opengauss.org/postorius/lists/securitytechnology@opengauss.org/) |
+| [DistributionCertification](https://gitee.com/opengauss/tc/tree/master/sigs/DistributionCertification) | 负责openGauss发行版认证流程、测试套件的定义和开发。| [distributioncertification@opengauss.org](https://mailweb.opengauss.org/postorius/lists/distributioncertification@opengauss.org/) |
+| [Plugin](https://gitee.com/opengauss/tc/tree/master/sigs/Plugin) | 负责openGauss插件机制的规划、管理、开发等。| [plugin@opengauss.org](https://mailweb.opengauss.org/postorius/lists/plugin@opengauss.org/) |
+| [Blockchain](https://gitee.com/opengauss/tc/tree/master/sigs/Blockchain) | 探讨区块链的业务场景，研究区块链的核心技术问题。| [blockchain@opengauss.org](https://mailweb.opengauss.org/postorius/lists/blockchain@opengauss.org/) |
+| [DCF](https://gitee.com/opengauss/tc/tree/master/sigs/DCF) | 负责openGauss社区分布式一致性框架DCF的开发和维护。| [dcf@opengauss.org](https://mailweb.opengauss.org/postorius/lists/dcf@opengauss.org/) |
+| [QA](https://gitee.com/opengauss/tc/tree/master/sigs/QA) | 负责openGauss社区版本质量相关的开发和维护。| [QA@opengauss.org](https://mailweb.opengauss.org/postorius/lists/qa@opengauss.org/) |
+| [Graph](https://gitee.com/opengauss/tc/tree/master/sigs/SecurityTechnology) | 负责openGauss社区统一存储和查询的知识图谱数据管理功能。| [graph@opengauss.org](https://mailweb.opengauss.org/postorius/lists/graph@opengauss.org/) |
+| [ReleaseManagement](https://gitee.com/opengauss/tc/tree/master/sigs/ReleaseManagement) | 社区协同各SIG maintainer,规划openGauss社区版本的发布工作，为最终的竞争力目标达成负责。| [releasemanagement@opengauss.org](https://mailweb.opengauss.org/postorius/lists/releasemanagement@opengauss.org/) |
 
 
 感兴趣的SIG组还未出现？新的SIG组等你来发起！欢迎发送申请邮件至：<tc@opengauss.org> ，邮件申请模板请参考<https://gitee.com/opengauss/tc/blob/master/sigs/Template/README.md> 。
