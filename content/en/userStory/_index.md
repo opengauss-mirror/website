@@ -33,11 +33,26 @@ name = "Internet Development/Software Development"
 [[list]]
 identification = "industrial"
 name = "Industrial/Manufacturing"
- 
+
+
+[[list]]
+identification = "energy"
+name = "Energy/Electricity"
+
+
 [[list]]
 identification = "other"
 name = "Other"
 
+
+
+
+[[cards]]
+iden = "energy"
+name = "广西电网有限责任公司"
+desc = "使用openGauss替换部分老旧数据库，部署openGauss服务器节点数为50个以上。"
+address = "https://www.gx.csg.cn/"
+weight = 1
 
 
 [[cards]]
@@ -50,7 +65,7 @@ weight = 1
 [[cards]]
 iden = "developer"
 name = "DataPipeline"
-desc = "与openGauss形成联合解决方案，服务金融 电信 能源等行业客户。"
+desc = "与openGauss形成联合解决方案，服务金融、电信、能源等行业客户。"
 address = "https://www.datapipeline.com/"
 weight = 2
 
@@ -89,14 +104,14 @@ weight = 1
 [[cards]]
 iden = "dbv"
 name = "北京海量数据股份有限公司"
-desc = "使用openGauss做海量数据库Vastbase商业发行版，部署openGauss服务器节点数为1~10个。"
+desc = "使用openGauss做海量数据库Vastbase商业发行版，部署openGauss服务器节点数为50个以上。"
 address = "http://www.vastdata.com.cn/"
 weight = 1
 
 [[cards]]
 iden = "dbv"
 name = "北京太阳塔信息科技有限责任公司"
-desc = "使用openGauss做了LNXDB数据库的商业发行版，推给新客户使用，同时正在将推出的LNXDB-RDS for  openGauss 版本的数据库一体机，推向政府类客户。部署openGauss服务器节点数为1~10个。"
+desc = "使用openGauss做了LNXDB数据库的商业发行版，推给新客户使用，同时正在将推出的LNXDB-RDS for openGauss 版本的数据库一体机，推向政府类客户。部署openGauss服务器节点数为1~10个。"
 address = "http://www.taryartar.com/"
 weight = 2
 
@@ -169,7 +184,7 @@ weight = 2
 iden = "industrial"
 name = "沈阳航兴科技有限公司"
 desc = "全新部署在x86服务器上，部署openGauss服务器节点数为1~10个。"
-address = "www.syhangxing.com"
+address = "http://83958517.zhaozhaoqu.com/about.html"
 weight = 3
 
 
