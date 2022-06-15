@@ -29,11 +29,11 @@
                         {{ range .Params.list }}
                         {{ if eq .identification "dbv"}}
                         <div class="active">
-                            <a href={{ "#" }}{{ .identification }}>{{ .name }}</a>
+                          <i class={{ .identification }}></i><a href={{ "#" }}{{ .identification }}>{{ .name }}</a>
                         </div>
                         {{ else}}
                         <div>
-                            <a href={{ "#" }}{{ .identification }}>{{ .name }}</a>
+                          <i class={{ .identification }}></i><a href={{ "#" }}{{ .identification }}>{{ .name }}</a>
                         </div>
                         {{ end }}
 
@@ -48,7 +48,7 @@
                                 {{ $boxName := .name }}
 
                                 <div class="tool-item" id={{ .identification }}>
-                                    <div class="item-title">{{ $boxName }}</div>
+                                    <div class="item-title"><i class={{ .identification }}></i>{{ $boxName }}</div>
                                     <div class="item-detail">
 
                                         {{ range $root.cards }}
@@ -88,7 +88,7 @@
                             {{ $boxName := .name }}
 
                             <div class="tool-item" id={{ .identification }}>
-                                <div class="item-title">{{ $boxName }} {{ if eq .identification "dbv"}} <img src="/img/swiper/down.svg" alt="title icon"> {{ else }} <img src="/img/swiper/right.svg" alt="title icon">  {{ end}}</div>
+                                <div class="item-title"><p><i class={{ .identification }}></i>{{ $boxName }} </p>{{ if eq .identification "dbv"}} <img src="/img/swiper/down.svg" alt="title icon"> {{ else }} <img src="/img/swiper/right.svg" alt="title icon">  {{ end}}</div>
                                 <div class={{ if eq .identification "dbv"}} {{ "item-detail" }} {{ else }} {{ "item-detail hide" }} {{ end }}>
                                     {{ range $root.cards }}
                                       {{ if eq .iden $id}}
