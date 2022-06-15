@@ -46,7 +46,7 @@ email = "mailto:Qingyi.song@outlook.com"
 gitee = "https://gitee.com/windxd"
 
 [[card]]
-img = "/zh/member/img/zhubin.png"
+img = "/zh/member/img/zhubin2.png"
 name = "Bin Zhu"
 title = "Committer"
 email = "mailto:zzzzzdb_zb@163.com"
