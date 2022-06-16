@@ -12,6 +12,7 @@ RUN cd /usr/local/src && \
 
 RUN mkdir -p /src/
 COPY . /src/website
+COPY ./deploy/nginx.conf /etc/nginx/nginx.conf
 
 RUN cd /src/ && \
     git clone -b stable https://gitee.com/opengauss/blog blogs && \
