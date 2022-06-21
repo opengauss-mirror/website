@@ -662,11 +662,12 @@
     margin-bottom: 20px;
   }
   .footer-copyright {
-    height: 50px;
+    height: auto;
   }
   .footer-copyright p:last-child {
     color: #B0B0B0;
     font-size: 12px;
+    margin-top: 8px;
   }
 }
 

@@ -6,7 +6,7 @@
 } 
 .summitPoster .poster {
     position: relative;
-    width: 1120px;
+    width: 1140px;
     margin: 0 auto;
     height: 100%; 
     overflow: hidden;
@@ -313,6 +313,7 @@ font-size: 18px;
   font-size: 36px;
   color: #FFFFFF;
 line-height: 48px;
+margin-bottom: 24px;
 }
 .meeting-item .en{
   font-size: 28px;
@@ -324,6 +325,20 @@ line-height: 48px;
   text-decoration: none;
 }
  
+.review-wrapper{
+  margin-top: 64px;
+}
+.review-wrapper .tile{
+text-align: center;
+}
+.review-wrapper .link{
+color: #7D32EA;
+font-size: 20px;
+line-height: 24px;
+margin-bottom: 24px;
+cursor: pointer;
+}
+
 
 @media screen and (max-width: 1550px){ 
     .fixed-nav {
@@ -378,9 +393,6 @@ line-height: 48px;
         font-size: 12px;
     }
     .dataItem{
-        display: block;
-        height: auto; 
-        padding-left: 76px;
         position: relative;
         min-height:42px;
         margin-bottom: 8px;
@@ -410,12 +422,9 @@ line-height: 48px;
     }
     .dateList .time{ 
         font-size: 12px;
-        background: none;
-        padding-left: 0;
-        width: auto;
-        position: absolute;
-        left:0 ;
-        top:0;
+        background: none; 
+        width: 80px;
+        padding: 0;
     }
     .meeting-content{
       display: block;
@@ -499,20 +508,10 @@ line-height: 48px;
         font-size: 14px;
         
     }
-
+    .review-wrapper .link{
+      font-size: 12px;
+      line-height:18px;
+    }
 } 
 
 
-.review-wrapper{
-    margin-top: 64px;
-}
-.review-wrapper .tile{
-  text-align: center;
- }
-.review-wrapper .link{
-  color: #7D32EA;
-  font-size: 20px;
-  line-height: 24px;
-  margin-bottom: 24px;
-  cursor: pointer;
-}

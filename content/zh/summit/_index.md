@@ -30,7 +30,7 @@ fourm1 = "分论坛"
 [[module]] 
     daytime = "7月14日（线下）" 
     [[module.item]]
-        time= "14:00 - 15:00"
+        time= "14:00 - 15:30"
         [[module.item.option]]
         desc = "技术委员会工作会议"
         [[module.item.option]]
@@ -38,7 +38,7 @@ fourm1 = "分论坛"
         [[module.item.option]]
         desc = "品牌宣传委员会工作会议" 
     [[module.item]]
-        time= "15:00 - 17:30"
+        time= "15:30 - 17:30"
         desc = "理事会闭门会议"
 [[module]] 
     daytime = "7月15日 （线下 + 直播）" 
@@ -50,9 +50,9 @@ fourm1 = "分论坛"
         [[module.item.option]]
         desc = "数据库内核分论坛"
         [[module.item.option]]
-        desc = "分论坛"
+        desc = "生态工具分论坛"
         [[module.item.option]]
-        desc = "AI分论坛"
+        desc = "多模态分论坛"
     [[module.item]]
         time= "16:00 - 18:00"
         desc = "SIG组版本规划工作会议"
@@ -64,7 +64,7 @@ fourm1 = "分论坛"
   link='https://shimo.im/forms/loqeWr2z40Fw4NAn/fill'
 [[meetinglist]] 
   name='赞助征集'
-  en='CALL FOR SPEAKER'
+  en='CALL FOR SPONSOR'
   link='https://shimo.im/forms/RKAWVlw7YYu5YGk8/fill'
 [[meetinglist]] 
   name='SIG 征集'
