@@ -1,8 +1,8 @@
  
 .summitPoster{
-    height: 380px;
+    height: 480px;
     background: no-repeat 50%/cover; 
-    margin-bottom: 64px; 
+    margin-bottom: 60px; 
 } 
 .summitPoster .poster {
     position: relative;
@@ -10,13 +10,6 @@
     margin: 0 auto;
     height: 100%; 
     overflow: hidden;
-    display: flex;
-    align-items: center;
-}
-.postertext{ 
-  width: 411px;
-  height: 120px;
-  background: no-repeat center/cover;
 }
 .summitPoster .info{ 
     height: 0;
@@ -54,10 +47,10 @@
     margin-right: 8px;
 }
 .summitPoster .time::before{
-    background: url("/img/summit2021/time1.png") no-repeat center/cover;
+    background: url("/img/summit/time1.png") no-repeat center/cover;
 }
 .summitPoster .address::before{
-    background: url("/img/summit2021/address.png") no-repeat center/cover;
+    background: url("/img/summit/address.png") no-repeat center/cover;
 }
 .summitPoster .btns{
     padding: 0 32px;
@@ -83,6 +76,8 @@
     font-size: 18px;  
     color: #000000;
     line-height: 40px;
+    text-indent: 2em;
+    margin-bottom: 16px;
     text-align: justify;
 }
 .summitMain h2{
@@ -92,40 +87,46 @@
     color: #000000;
     line-height: 84px;
     background-repeat: no-repeat;
-    margin: 64px 0 40px;
+    margin: 60px 0 30px;
 
 } 
 .summitMain .tit0{
-    background: url("/img/summit2021/tit0.png") no-repeat  center;
+    background: url("/img/summit/tit0.png") no-repeat  center;
 }
 .summitMain .tit1{
     background: url("/img/summit/tit1.png") no-repeat  center;
 }
 .summitMain .tit2{
-    background: url("/img/summit2021/tit2.png") no-repeat  center;
+    background: url("/img/summit/tit2.png") no-repeat  center;
 }
 .summitMain .tit3{
-    background: url("/img/summit2021/tit3.png") no-repeat  center;
+    background: url("/img/summit/tit3.png") no-repeat  center;
 }
 .summit-container h3{
     font-size: 24px; 
     font-weight: normal;
     color: rgba(0, 0, 0, 0.85);
-    line-height: 32px;
-    margin-bottom: 24px; 
+    line-height: 24px;
+    margin-bottom: 16px;
+    text-align: center
 }
 
 .summit-container{
-    margin-top: 40px;
+    margin-top: 32px;
 }
 .dataItem{
-    display: flex;  
-    
+    display: flex;
+    border-bottom:1px solid rgba(0, 0, 0, 0.15);
+    padding: 8px 0;
+    height: 64px;
     line-height:32px ;
-    margin-bottom: 16px;
+    transition: background-color .25s ease;
+    
     align-items: center;
 }
-
+.dataItem:hover{
+    background-color: #f5f7fa;
+}
 .dateList span{
     font-size: 18px; 
     color: #000;
@@ -133,7 +134,7 @@
 }
 .dateList .time{
     width: 240px;
-    background: url("/img/summit2021/time.png") no-repeat left center;
+    background: url("/img/summit/time.png") no-repeat left center;
     padding-left: 30px; 
     color: rgba(0, 0, 0, 0.5);
 }
@@ -141,22 +142,6 @@
     /* width: 460px; 
     margin-right:40px;
      display: flex; */
-     flex: 1;
-     display: flex;
-     align-items: center;
-     height: 64px;
-     justify-content: center;
-     gap: 24px;
-}
-.dateList .info span{
-  line-height: 64px;
-  background: #FFFFFF;
-  box-shadow: 0px 12px 32px 0px rgba(190, 196, 204, 0.2);
-  border-radius: 2px;
-  border: 1px solid #7D32EA;
-  flex: 1; 
-font-size: 18px;
-  text-align: center;
 }
 .dateList .speaker{  
     min-width: 90px;
@@ -164,7 +149,61 @@ font-size: 18px;
 .dateList .position{ 
     font-size: 16px;  
     line-height: 24px;
-} 
+}
+.partnersInfo .titleBar{
+    margin: 32px 0 24px;
+    text-align: center;
+}
+.partnersInfo .caption{ 
+    font-size: 24px;
+    color: #000;
+    line-height: 24px; 
+}
+.partnersInfo .txt{ 
+    font-size:16px;  
+    margin-top: 8px;
+}
+.partnersInfo .links-imgs{
+    display: flex; 
+    width: 100%;
+    flex-wrap: wrap;
+}
+.partnersInfo .links-imgs.one{
+    width: 570px;
+    margin: 0 auto;
+}
+.partnersInfo .links-imgs.one .line + .line{
+    border-top:0 none;
+}
+.partnersInfo .links-imgs.one .line{
+    width: 570px;
+    border-right: 1px solid #DFE1E8;
+}
+.partnersInfo .links-imgs .line {
+    display: block; 
+    border: 1px solid #DFE1E8;
+    border-right: 0;
+    text-align: center;
+    padding: 10px;
+    height: 100px;
+    box-sizing: border-box;
+    width: 285px; 
+}
+.partnersInfo .links-imgs .line.long{
+    width: 570px;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    display: flex;
+    flex-direction: column;
+}
+.partnersInfo .links-imgs .line:last-child {
+    border-right: 1px solid #DFE1E8;
+}
+.partnersInfo img {
+    vertical-align: top;
+    max-width: 100%;
+}
 .links-box{
     border-top: 1px solid #DFE1E8;
     width: 1140px;
@@ -218,6 +257,7 @@ font-size: 18px;
 }
 .sub-container,.summit-container{
     display: none; 
+    overflow: hidden;
 }
 .sub-container.show,.summit-container.show{
     display: block;
@@ -290,39 +330,6 @@ font-size: 18px;
 }
 
 
-.meeting-content{
-  display: flex;
-  justify-content: space-between;
-  margin-top: 64px;
-}
-.meeting-item{
-  width: 296px;
-  height: 240px;
-  text-align: center;
-  background: url(../img/summit/img1.png) no-repeat center/cover;
-}
-.meeting-item a{
-  display: flex;
-  height: 100%;
-  width: 100%;;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-}
-.meeting-item .title{
-  font-size: 36px;
-  color: #FFFFFF;
-line-height: 48px;
-}
-.meeting-item .en{
-  font-size: 28px;
-  color: #FFFFFF;
-  line-height: 36px;
-  padding: 0 55px;
-}
-.meeting-item a:hover{
-  text-decoration: none;
-}
  
 
 @media screen and (max-width: 1550px){ 
@@ -341,7 +348,6 @@ line-height: 48px;
     }
     .summitPoster .poster{
         width: 100%;
-        justify-content: center;
     }
     .summitPoster .btns{ 
          padding:0 12px;
@@ -350,7 +356,26 @@ line-height: 48px;
         border-top:0 none;
         width: 100%;
     }
-     
+    .partnersInfo .links-imgs{
+        width: 100% !important;
+    }
+    .partnersInfo .links-imgs{
+        display: block;
+    }
+    .partnersInfo .links-imgs .line{
+        width: 100% !important;
+        border: 1px solid #DFE1E8;
+        border-bottom: 0 none;
+    }
+    .partnersInfo .links-imgs.one .line + .line {
+        border-top: 1px solid #DFE1E8;
+    }
+    .partnersInfo> .links-imgs .line:last-child{
+        border: 1px solid #DFE1E8;
+    }
+    .partnersInfo .links-box{
+        border-bottom: 1px solid #DFE1E8;
+    }
     .summitPoster .btns{
         left: 20px;
     }
@@ -379,34 +404,22 @@ line-height: 48px;
     }
     .dataItem{
         display: block;
-        height: auto; 
-        padding-left: 76px;
+        height: auto;
+        padding: 12px 0;
+        padding-left: 90px;
         position: relative;
         min-height:42px;
-        margin-bottom: 8px;
     }
     .dateList span{
         display: block;
         color: #333;
-        font-size: 12px;
-        line-height: 40px
+        font-size: 12px; 
+        line-height: 21px !important; 
     }
-    .dateList .info span{
-      min-height: 40px;
-      line-height: 1.25;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
-    }
-    .dateList .info span.inline{
-      height: 48px;
-    }
+     
     .dateList .info{
         width: auto;
         margin-right: 0;
-        height: auto;
-        gap: 8px;
     }
     .dateList .time{ 
         font-size: 12px;
@@ -415,15 +428,9 @@ line-height: 48px;
         width: auto;
         position: absolute;
         left:0 ;
-        top:0;
+        top:12px;
     }
-    .meeting-content{
-      display: block;
-      margin-top: 40px;
-    }
-    .meeting-item{
-      margin: 16px auto 0;
-    }
+    
    
 } 
 
@@ -440,8 +447,8 @@ line-height: 48px;
 
 @media screen and (max-width: 768px){ 
     .summitMain{
-        width: 100% !important;
-        padding: 0 16px;
+        width: 90% !important;
+        padding: 0;
         overflow: hidden;
     }
     .summitPoster .info{
@@ -453,14 +460,6 @@ line-height: 48px;
         background-size: contain; 
         margin-bottom: 40px;
         text-align: center;
-    }
-    .summitPoster .poster { 
-      padding-bottom: 40px;
-    }
-    .postertext{
-      background-image: url("/img/summit/text_mo.png") !important;
-      width: 246px ;
-      height: 72px;
     }
     .summitPoster .btns{ 
         position: static;
@@ -500,15 +499,208 @@ line-height: 48px;
         
     }
 
+}
+#livePage{
+    border:0 none;
+    width: 1140px;
+    display: block;
+}
+.liveBox{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 24px;
+}
+.liveBox a{
+    line-height: 96px;
+    font-size: 20px;
+    text-align: center;
+    width: 300px;
+    color: #000;
+    box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1);
+    transition: all .3s cubic-bezier(.645,.045,.355,1);
+    border-radius: 8px;
+    text-decoration: none !important; 
+    margin-left: 10px;
+}
+.liveBox a:first-of-type{    
+    margin-left: 0;
 } 
+.liveBox a.center{
+    flex: 1;
+}
+.liveBox a.active{
+    background: #755BC7;
+    color: #fff;
+} 
+.liveBox.mo{
+    display: none;
+    margin: 0 0 20px;
+}
+@media screen and (max-width: 1000px) {
+    #livePage {
+        width:100%; 
+    } 
+    .liveBox.mo{
+        display:flex
+    }
+    .liveBox.pc{
+        display:none
+    } 
+    .liveBox a.center{
+        flex:inherit;
+        width: 100%;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0;
+    }
+    .liveBox{
+        position: relative;
+        padding-top: 58px;
+    }
+    .liveBox a { 
+        flex:1; 
+        margin: 0 5px;
+        font-size: 14px;
+        line-height: 48px; 
+    } 
+    
+}
+
+
+/* 线上展厅 */
+
+.exhibitionContent{ 
+     
+}
+.exhibitionContent .mapPanel{
+    width: 1140px;
+    position: relative;
+}
+.exhibitionContent a{
+    position: absolute;
+    cursor: pointer;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    width: 150px;
+    height: 40px; 
+    border-radius: 40px;
+} 
+.exhibitionContent img{
+    width: 100%;
+}
+.exhibitionContent a:first-of-type {
+    width: 131px;
+    height: 77px;
+    top: 6px;
+    left: 178px;
+    border-radius: 0px;
+}
+.exhibitionContent a:nth-of-type(2) { 
+    top: 20px;
+    left: 323px; 
+}
+.exhibitionContent a:nth-of-type(3) { 
+    top: 20px;
+    left:489px; 
+}
+.exhibitionContent a:nth-of-type(4) { 
+    top: 20px;
+    left: 654px; 
+}
+.exhibitionContent a:nth-of-type(5) { 
+    top: 20px;
+    left:820px; 
+}
+.exhibitionContent a:nth-of-type(6) { 
+    top: 184px;
+    left:155px; 
+}
+.exhibitionContent a:nth-of-type(7) { 
+    top: 184px;
+    left:462px; 
+}
+.exhibitionContent a:nth-of-type(8) { 
+    top: 237px;
+    left:305px; 
+}
+.exhibitionContent a:nth-of-type(9) { 
+    top: 297px;
+    left:135px; 
+}
+.exhibitionContent a:nth-of-type(10) { 
+    top: 297px;
+    left:462px; 
+}
+.exhibitionContent a:nth-of-type(11) { 
+    top: 184px;
+    left:670px; 
+}
+.exhibitionContent a:nth-of-type(12) { 
+    top: 277px;
+    left:681px; 
+}
+.exhibitionContent a:nth-of-type(13) { 
+    top: 190px;
+    left: 888px;
+    border-radius: 0;
+    height: 48px;
+    width: 130px; 
+}
+.exhibitionContent a:nth-of-type(14) { 
+    top: 425px;
+    left:234px;  
+}
+.exhibitionContent a:nth-of-type(15) { 
+    top: 425px;
+    left:406px;  
+}
+.exhibitionContent a:nth-of-type(16) { 
+    top: 425px;
+    left:576px;  
+}
+.exhibitionContent a:nth-of-type(17) { 
+    top: 425px;
+    left:748px;  
+}
+.exhibitionContent a:nth-of-type(18) { 
+    top: 425px;
+    left:918px;  
+}
+.exhibitionContent a:nth-of-type(19) { 
+    top: 513px;
+    left:226px;  
+}
+.exhibitionContent a:nth-of-type(20) { 
+    top: 513px;
+    left:404px;  
+}
+.exhibitionContent a:nth-of-type(21) { 
+    top: 513px;
+    left:580px;  
+}
+.exhibitionContent a:nth-of-type(22) { 
+    top: 513px;
+    left:757px;  
+}
+.exhibitionContent a:nth-of-type(23) { 
+    top: 513px;
+    left:935px;  
+}
 
 
 .review-wrapper{
     margin-top: 64px;
 }
-.review-wrapper .tile{
-  text-align: center;
- }
+.review-wrapper .title{
+  text-align: left;
+  font-size: 26px;
+  margin-bottom: 32px;
+}
 .review-wrapper .link{
   color: #7D32EA;
   font-size: 20px;
@@ -516,3 +708,4 @@ line-height: 48px;
   margin-bottom: 24px;
   cursor: pointer;
 }
+
