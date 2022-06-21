@@ -50,9 +50,9 @@ fourm1 = "分论坛"
         [[module.item.option]]
         desc = "数据库内核分论坛"
         [[module.item.option]]
-        desc = "分论坛"
+        desc = "生态工具分论坛"
         [[module.item.option]]
-        desc = "AI分论坛"
+        desc = "多模态分论坛"
     [[module.item]]
         time= "16:00 - 18:00"
         desc = "SIG组版本规划工作会议"
