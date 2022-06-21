@@ -14,8 +14,8 @@
     align-items: center;
 }
 .postertext{ 
-  width: 411px;
-  height: 120px;
+    width: 424px;
+    height: 160px;
   background: no-repeat center/cover;
 }
 .summitPoster .info{ 
@@ -457,7 +457,7 @@ cursor: pointer;
         display: none;
     }
     .summitPoster{
-        background-image: url("/img/summit/banner_mo.png") !important;
+        background-image: url("/img/summit2021/Base@2x.png") !important;
         height: 320px;
         background-size: contain; 
         margin-bottom: 40px;
@@ -467,9 +467,9 @@ cursor: pointer;
       padding-bottom: 40px;
     }
     .postertext{
-      background-image: url("/img/summit/text_mo.png") !important;
+      background-image: url("/img/summit2021/text-h5@2x.png") !important;
       width: 246px ;
-      height: 72px;
+      height: 94px;
     }
     .summitPoster .btns{ 
         position: static;

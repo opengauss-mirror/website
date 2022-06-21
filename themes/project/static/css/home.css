@@ -93,6 +93,30 @@ body {
     line-height: 32px;
     text-decoration: none;
 }
+.banner a{
+    width: 100%;
+}
+.pc-banner{
+    width: 100%;
+    height: 480px;
+    background-size: cover;
+    background-position: center;
+}
+.h5-banner{
+    width: 100%;
+    height: 320px;
+    background-size: cover;
+    background-position: center;
+    display: none;
+}
+@media screen and (max-width: 1000px){
+    .pc-banner {
+        display: none;
+    }
+    .h5-banner {
+        display: block;
+    } 
+}
 .review{
     border-radius: 5px;
     width:100px;
