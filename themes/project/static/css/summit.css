@@ -423,8 +423,9 @@ cursor: pointer;
     .dateList .time{ 
         font-size: 12px;
         background: none; 
-        width: 80px;
+        width: 78px;
         padding: 0;
+        white-space: nowrap;
     }
     .meeting-content{
       display: block;
