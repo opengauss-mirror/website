@@ -9,9 +9,9 @@
             <div class="swiper-slide banner_swiper_slide">
               {{ if eq .Params.targetTab "1" }}
                   <a class="banner-body-bg" target="_blank"  href={{.Params.link }}>
-                {{ else }}    
+                {{ else }}
                   <a class="banner-body-bg" href={{.Params.link }}>
-                {{ end }}  
+                {{ end }}
                     <div class="left-img block" style="background-image: url({{ .Site.BaseURL}}{{ .Params.bgLeft }})"></div>                        
                     <div class="center-img isPCshow" style="background-image: url({{ .Site.BaseURL}}{{ .Params.bgUrl }})"></div> 
                     <img class="isH5show" src="{{ .Site.BaseURL}}{{ .Params.mobileUrl }}" alt="">                        
