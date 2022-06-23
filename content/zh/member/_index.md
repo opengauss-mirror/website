@@ -91,7 +91,7 @@ id = "Plugin"
 side = "right"
 
 [[sig]]
-id = "DistributionCertification"
+id = "Certification"
 side = "left"
 
 [[sig]]
@@ -105,6 +105,10 @@ side = "left"
 [[sig]]
 id = "OPS"
 side = "left"
+
+[[sig]]
+id = "KnowledgeGraph"
+side = "right"
 
 [[usergroups]]
 id = "SZusergroup"
