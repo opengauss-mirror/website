@@ -1718,12 +1718,18 @@ footer .foot {
       background-repeat: no-repeat;
      }
      .tryme .left-code{
-      padding: 18px 10px 15px;
+      padding: 15px 5px  ;
       width: 100%;
-      height: 200px;
-      font-size: 14px;
-      line-height: 22px;
+      height: 195px;
+      font-size: 13px;
+      line-height: 24px;
      }
+     .min-l-w{
+      min-width: 186px; 
+    }
+    .min-r-w{
+      min-width: 70px; 
+    }
      .tryme .left-code pre{
       font-size: 14px;
       line-height: 22px;
