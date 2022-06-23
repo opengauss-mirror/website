@@ -14,6 +14,10 @@
 <!-- custom -->
 <script src="{{ .Site.BaseURL }}js/swiper.min.js"></script>
 <script src="{{ .Site.BaseURL }}js/openGauss.js?t={{ mul 1000 (time now).Unix }}"></script>
+<!-- 埋点 -->
+<script src="{{ "js/getip.js" | relURL }}"></script>
+<script src="{{ "js/sensordata.min.js" | relURL }}"></script>
+<script src="{{ "js/sensors.js" | relURL }}"></script>
 <div id="mask" onclick="hideNav()"></div>
 
 <script type="text/javascript">
