@@ -48,7 +48,9 @@ You can find the SIGs you are interested in from the SIG list below.
 | [QA](https://gitee.com/opengauss/tc/tree/master/sigs/QA) | Develop and maintain released version quality of the openGauss community. | [QA@opengauss.org](https://mailweb.opengauss.org/postorius/lists/qa@opengauss.org/) |
 | [Graph](https://gitee.com/opengauss/tc/tree/master/sigs/SecurityTechnology) | Responsible for the knowledge map data management function of unified storage and query of the openGauss community. | [graph@opengauss.org](https://mailweb.opengauss.org/postorius/lists/graph@opengauss.org/) |
 | [ReleaseManagement](https://gitee.com/opengauss/tc/tree/master/sigs/ReleaseManagement) | The community collaborates with SIG Maintainers to plan openGauss community release and is responsible for the final competitiveness goal. | [releasemanagement@opengauss.org](https://mailweb.opengauss.org/postorius/lists/releasemanagement@opengauss.org/) |
-
+| [CM](https://gitee.com/opengauss/tc/tree/master/sigs/CM) | Provides the opengauss database with the capabilities of active/standby status monitoring, network communication fault monitoring, file system fault monitoring, and automatic active/standby switchover.| [cm@opengauss.org](https://mailweb.opengauss.org/postorius/lists/cm@opengauss.org/) |
+| [OPS](https://gitee.com/opengauss/tc/tree/master/sigs/OPS) | Focus on building openGauss maintenance capabilities, improve product operation and maintenance capabilities, and summarize and transfer operation and maintenance experience.| [ops@opengauss.org](https://mailweb.opengauss.org/postorius/lists/ops@opengauss.org/) |
+| [KnowledgeGraph](https://gitee.com/opengauss/tc/tree/master/sigs/KnowledgeGraph) | Carry out research on the whole life cycle of knowledge graph, construction, storage management and application| [knowledgegraph@opengauss.org](https://mailweb.opengauss.org/postorius/lists/knowledgegraph@opengauss.org/) |
 Want to start a new SIG? Please send your application to: <tc@opengauss.org> , the email template is referred to: <https://gitee.com/opengauss/tc/blob/master/sigs/Template/README.md> .
 
 ### 4. Starting Your Contribution
