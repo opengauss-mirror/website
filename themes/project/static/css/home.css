@@ -1616,8 +1616,15 @@ footer .foot {
     -webkit-animation: block .3s forwards;
     animation: block 0.3s forwards;
 }
-
-
+.min-l-w{
+  min-width: 257px;
+  display: inline-block; 
+}
+.min-r-w{
+  min-width: 95px;
+  text-align: right;
+  display: inline-block; 
+}
 .tryme .left-code .block5 {
   -webkit-animation-delay: 4.5s;
   animation-delay: 4.5s
