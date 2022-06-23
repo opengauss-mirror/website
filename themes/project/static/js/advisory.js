@@ -6,7 +6,7 @@ $(document).ready(function () {
             pageNum: 1,
             pageSize: 10,
             searchName: '',
-            years: 2021,
+            years: 0,
             cveLevel: 0,
             releaseFlag: 2
         },
@@ -308,6 +308,7 @@ $(document).ready(function () {
             let years = $('#id-select-year').find('option:selected').text();
             years = years === 'All' ? 0 : Number(years)
             privateData.listRequire.years = years
+            adMethods.getListData(privateData.listRequire, privateData.pagenationFn)
         })
     }
 
