@@ -1612,18 +1612,23 @@ footer .foot {
     animation: blink 0.5s 6  steps(1);
 } 
 .tryme .fast-hide {
+   
     visibility: hidden;
     -webkit-animation: block .3s forwards;
     animation: block 0.3s forwards;
 }
 .min-l-w{
-  min-width: 257px;
+  width: 257px;
   display: inline-block; 
 }
 .min-r-w{
-  min-width: 95px;
-  text-align: right;
+  width: 95px; 
   display: inline-block; 
+}
+.min-line{
+  width: 20px;
+  display: inline-block; 
+  text-align: center; 
 }
 .tryme .left-code .block5 {
   -webkit-animation-delay: 4.5s;
@@ -1725,10 +1730,10 @@ footer .foot {
       line-height: 24px;
      }
      .min-l-w{
-      min-width: 186px; 
+      width: 186px; 
     }
     .min-r-w{
-      min-width: 70px; 
+      width: 70px; 
     }
      .tryme .left-code pre{
       font-size: 14px;
