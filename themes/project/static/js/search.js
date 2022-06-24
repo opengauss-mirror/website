@@ -226,21 +226,21 @@ remoteMethods = {
                     if (lang === 'zh') {
                         if (item.type === 'docs') {
                             $('.detail-content').append(
-                                `<div class="content-box" data-index="${index}">`+ '<p class="content-title" path="'+ contentPath+ '" type="'+ item.type+ '">'+ item.title+ '</p><p class="content-desc" path="'+ contentPath+ '" type="'+ item.type+ '">'+ item.textContent+ '</p><p>'+'来自'+'：<span class="tag">'+ privateMethods.transformLang(item.type)+' '+ item.version+ '</span></p></div>'
+                                `<div class="content-box" data-index="${index+1}">`+ '<p class="content-title" path="'+ contentPath+ '" type="'+ item.type+ '">'+ item.title+ '</p><p class="content-desc" path="'+ contentPath+ '" type="'+ item.type+ '">'+ item.textContent+ '</p><p>'+'来自'+'：<span class="tag">'+ privateMethods.transformLang(item.type)+' '+ item.version+ '</span></p></div>'
                             )
                         } else {
                             $('.detail-content').append(
-                                `<div class="content-box" data-index="${index}">`+ '<p class="content-title" path="'+ contentPath+ '" type="'+ item.type+ '">'+ item.title+ '</p><p class="content-desc" path="'+ contentPath+ '" type="'+ item.type+ '">'+ item.textContent+ '</p><p>'+'来自'+'：<span class="tag">'+ privateMethods.transformLang(item.type)+' '+ '' + '</span></p></div>'
+                                `<div class="content-box" data-index="${index+1}">`+ '<p class="content-title" path="'+ contentPath+ '" type="'+ item.type+ '">'+ item.title+ '</p><p class="content-desc" path="'+ contentPath+ '" type="'+ item.type+ '">'+ item.textContent+ '</p><p>'+'来自'+'：<span class="tag">'+ privateMethods.transformLang(item.type)+' '+ '' + '</span></p></div>'
                             )
                         }
                     } else {
                         if (item.type === 'docs') {
                             $('.detail-content').append(
-                                `<div class="content-box" data-weather="${index}">`+ '<p class="content-title" path="'+ contentPath+ '" type="'+ item.type+ '">'+ item.title+ '</p><p class="content-desc" path="'+ contentPath+ '" type="'+ item.type+ '">'+ item.textContent+ '</p><p>'+'From'+'：<span class="tag">'+ privateMethods.transformLang(item.type)+' '+ item.version+ '</span></p></div>'
+                                `<div class="content-box" data-weather="${index+1}">`+ '<p class="content-title" path="'+ contentPath+ '" type="'+ item.type+ '">'+ item.title+ '</p><p class="content-desc" path="'+ contentPath+ '" type="'+ item.type+ '">'+ item.textContent+ '</p><p>'+'From'+'：<span class="tag">'+ privateMethods.transformLang(item.type)+' '+ item.version+ '</span></p></div>'
                             )
                         } else {
                             $('.detail-content').append(
-                                `<div class="content-box" data-weather="${index}">`+ '<p class="content-title" path="'+ contentPath+ '" type="'+ item.type+ '">'+ item.title+ '</p><p className="content-desc" path="'+ contentPath+ '" type="'+ item.type+ '">'+ item.textContent+ '</p><p>'+'From'+'：<span class="tag">'+ privateMethods.transformLang(item.type)+' '+ '' + '</span></p></div>'
+                                `<div class="content-box" data-weather="${index+1}">`+ '<p class="content-title" path="'+ contentPath+ '" type="'+ item.type+ '">'+ item.title+ '</p><p className="content-desc" path="'+ contentPath+ '" type="'+ item.type+ '">'+ item.textContent+ '</p><p>'+'From'+'：<span class="tag">'+ privateMethods.transformLang(item.type)+' '+ '' + '</span></p></div>'
                             )
                         }
                     }
