@@ -1612,18 +1612,21 @@ footer .foot {
     animation: blink 0.5s 6  steps(1);
 } 
 .tryme .fast-hide {
-   
+   display: flex;
     visibility: hidden;
     -webkit-animation: block .3s forwards;
     animation: block 0.3s forwards;
 }
+.min-l-w,
+.min-r-w{
+  overflow: hidden;
+  height: 36px;
+}
 .min-l-w{
-  width: 257px;
-  display: inline-block; 
+  width: 257px; 
 }
 .min-r-w{
-  width: 95px; 
-  display: inline-block; 
+  width: 95px;
 }
 .min-line{
   width: 20px;
@@ -1729,6 +1732,10 @@ footer .foot {
       font-size: 13px;
       line-height: 24px;
      }
+     .min-l-w,
+    .min-r-w{ 
+      height: 24px;
+    }
      .min-l-w{
       width: 186px; 
     }
