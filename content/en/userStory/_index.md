@@ -167,6 +167,13 @@ weight = 2
 
 [[cards]]
 iden = "finance"
+name = "哈尔滨银行"
+desc = "使用openGauss商业发行版MogDB，全新部署在ARM架构上，A、B、C类业务系统都有承载，部署openGauss服务器节点数为11~20个。"
+address = "https://www.hrbb.com.cn/"
+weight = 2
+
+[[cards]]
+iden = "finance"
 name = "合众人寿保险股份有限公司"
 desc = "使用openGauss商业发行版MogDB，大部分是全新部署，ARM与x86环境都有，部署openGauss服务器节点数为11~20个。"
 address = "https://www.unionlife.com.cn/"
