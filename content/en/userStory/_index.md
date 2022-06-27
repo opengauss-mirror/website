@@ -27,7 +27,7 @@ name = "Finance/Banking"
 
 [[list]]
 identification = "developer"
-name = "Internet Development/Software Development"
+name = "Internet/Software Development"
  
 
 [[list]]
@@ -64,6 +64,13 @@ weight = 1
 
 [[cards]]
 iden = "developer"
+name = "百信信息技术有限公司"
+desc = "将openGauss部署在arm上，做云平台适配业务，部署openGauss服务器节点数为20~50个。"
+address = "https://www.100trust.cn/"
+weight = 6
+
+[[cards]]
+iden = "developer"
 name = "DataPipeline"
 desc = "与openGauss形成联合解决方案，服务金融、电信、能源等行业客户。"
 address = "https://www.datapipeline.com/"
@@ -74,6 +81,13 @@ iden = "developer"
 name = "江苏润和软件股份有限公司"
 desc = "应用在部分电力行业的系统开发中，为高并发的数据访问提供支撑。部署openGauss服务器节点数为11~20个。"
 address = "http://www.hoperun.com/"
+weight = 3
+
+[[cards]]
+iden = "developer"
+name = "兰州西云图信息技术有限公司"
+desc = "使用openGauss使能工业互联网平台业务，部署openGauss服务器节点数为1~10个。"
+address = "https://www.xiyuntu.com/"
 weight = 3
 
 [[cards]]
@@ -153,6 +167,20 @@ weight = 2
 
 [[cards]]
 iden = "finance"
+name = "哈尔滨银行"
+desc = "使用openGauss商业发行版MogDB，全新部署在ARM架构上，A、B、C类业务系统都有承载，部署openGauss服务器节点数为11~20个。"
+address = "https://www.hrbb.com.cn/"
+weight = 2
+
+[[cards]]
+iden = "finance"
+name = "合众人寿保险股份有限公司"
+desc = "使用openGauss商业发行版MogDB，大部分是全新部署，ARM与x86环境都有，部署openGauss服务器节点数为11~20个。"
+address = "https://www.unionlife.com.cn/"
+weight = 2
+
+[[cards]]
+iden = "finance"
 name = "普元信息技术股份有限公司"
 desc = "使用openGauss共建科技普惠生态，部署openGauss服务器节点数为50个以上。"
 address = "http://www.primeton.com/"
@@ -165,6 +193,12 @@ desc = "使用openGauss承载自己的业务。"
 address = "http://www.dongfangyunwei.com.cn"
 weight = 2
 
+[[cards]]
+iden = "other"
+name = "亚太飞鸿科技集团有限公司"
+desc = "使用openGauss承载公司的边缘业务。"
+address = "http://ds.ytebuy.cn/"
+weight = 3
 
 [[cards]]
 iden = "industrial"
