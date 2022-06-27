@@ -150,7 +150,6 @@ $(document).ready(function () {
     };
     window["addSearchBuriedData"] = obj;
   }
-  let typeList = [];
   remoteMethods = {
     getSearchData: function (postData, callback) {
       localStorage.setItem("search_key", postData.keyword);
@@ -163,6 +162,7 @@ $(document).ready(function () {
         crossDomain: true,
         datatype: "json",
         success: function (data) {
+          let typeList = [];
           if (data.status === 201) {
             localStorage.setItem("searchToal", 0);
             localStorage.setItem("searchType", []);
