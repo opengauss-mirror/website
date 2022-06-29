@@ -382,6 +382,7 @@ $(document).ready(function () {
           $(".detail-content>.content-box").click(function (e) {
             localStorage.setItem("search_rank_num", $(this).attr("class"));
             const tag = document.getElementsByClassName("active")[0].key;
+            const tempPath = $(this).find("p").attr("path");
             if (tag === "") {
               tag = "all";
             }
@@ -390,6 +391,7 @@ $(document).ready(function () {
               search_tag: tag,
               search_rank_num: $(this).attr("data-index"),
               search_result_total_num: localStorage.getItem("searchToal"),
+              search_result_url: tempPath,
             };
             sensors.setProfile({
               profileType: "selectSearchResult",
