@@ -67,17 +67,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="questionnaire">
-                      {{ if .Params.userQuestionnaire }}
-                      <div class="ques-icon">
-                        <img src="../img/userStory/tipsa.png" alt="新增故事">
-                          <div class="ques-info">
-                            <p>提示：<br>页面即将跳转到“问卷星”页面。为了更好地提供问卷服务，我们委托问卷星提供问卷调查服务，在您同意的情况下，问卷星将严格根据<a href="https://www.wjx.cn/wjx/license.aspx?type=1" target="_blank">《问卷星个人信息保护政策》</a>收集您的个人信息，我们也会严格遵从<a href="/zh/privacyPolicy.html" target="_blank">openGauss社区隐私政策</a>使用您提供的信息</p>
-                            <a href="https://www.wjx.cn/vj/Q2oF2sb.aspx" target="_blank" class="btn-jump">{{ .Params.feedback}}</a>
-                          </div>
-                      </div>
-                      {{end}}
-                    </div>
+                    
                 </div>
 
                 <div class="h5-support isH5">
@@ -106,6 +96,17 @@
                             {{ end }}
                         </div>
                     </div>
+                </div>
+                <div class="questionnaire">
+                  {{ if .Params.userQuestionnaire }}
+                  <div class="ques-icon">
+                    <img src="../img/userStory/tipsa.png" alt="新增故事">
+                      <div class="ques-info">
+                        <p>提示：<br>页面即将跳转到“问卷星”页面。为了更好地提供问卷服务，我们委托问卷星提供问卷调查服务，在您同意的情况下，问卷星将严格根据<a href="https://www.wjx.cn/wjx/license.aspx?type=1" target="_blank">《问卷星个人信息保护政策》</a>收集您的个人信息，我们也会严格遵从<a href="/zh/privacyPolicy.html" target="_blank">openGauss社区隐私政策</a>使用您提供的信息</p>
+                        <a href="https://www.wjx.cn/vj/Q2oF2sb.aspx" target="_blank" class="btn-jump">{{ .Params.feedback}}</a>
+                      </div>
+                  </div>
+                  {{end}}
                 </div>
             </div>
             <!-- /.container -->
