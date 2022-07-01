@@ -9,14 +9,14 @@
     width: 1140px;
     margin: 0 auto;
     height: 100%; 
-    overflow: hidden;
-    display: flex;
-    align-items: center;
+    overflow: hidden;  
+    padding: 72px 0;
 }
 .postertext{ 
     width: 424px;
     height: 160px;
-  background: no-repeat center/cover;
+    background: no-repeat center/cover;
+    margin-bottom: 24px;
 }
 .summitPoster .info{ 
     height: 0;
@@ -60,29 +60,35 @@
     background: url("/img/summit2021/address.png") no-repeat center/cover;
 }
 .summitPoster .btns{
-    padding: 0 32px;
-    line-height: 32px;
-    background: none;
-    border-radius: 4px;
-    border: 2px solid #fff;
-    position: absolute;
-    bottom:80px;
-    display: block;
-    text-align: center;
+    padding: 0 20px 0 28px;
+    line-height: 48px;
+    background: #7D32EA;
+    border: 0 none;
+    display: inline-flex; 
     font-size: 16px;
     color: #fff;
     transition: all .3s ease-in-out;
+    align-items: center;
 }
-.summitPoster .btns:hover{ 
-    background: #fff; 
-    border: 2px solid #fff; 
-    color: #594599;
+.summitPoster .btns .arrow{
+  width:24px ;
+  height: 24px;
+  display: inline-block;
+  background: url("/img/summit/arrow.png") no-repeat center/cover;
+  margin-left: 8px;
+  transition: all .2s linear;
+}
+.summitPoster .btns:hover{  
     text-decoration: none;
+}
+.summitPoster .btns:hover .arrow{  
+  transform: translate(4px);
 }
 .summitMain .text{
     font-size: 18px;  
     color: #000000;
     line-height: 40px;
+    text-indent: 2em;
     text-align: justify;
 }
 .summitMain h2{
@@ -423,8 +429,9 @@ cursor: pointer;
     .dateList .time{ 
         font-size: 12px;
         background: none; 
-        width: 80px;
+        width: 78px;
         padding: 0;
+        white-space: nowrap;
     }
     .meeting-content{
       display: block;
@@ -457,9 +464,9 @@ cursor: pointer;
         display: none;
     }
     .summitPoster{
-        background-image: url("/img/summit2021/Base@2x.png") !important;
+        background-image: url("/img/summit/banner_mo.png") !important;
         height: 320px;
-        background-size: contain; 
+        background-size: cover; 
         margin-bottom: 40px;
         text-align: center;
     }
@@ -467,18 +474,19 @@ cursor: pointer;
       padding-bottom: 40px;
     }
     .postertext{
-      background-image: url("/img/summit2021/text-h5@2x.png") !important;
-      width: 246px ;
+      background-image: url("/img/summit/text_mo.png") !important;
+      width: 248px ;
       height: 94px;
+      margin: 0 auto 16px;
     }
     .summitPoster .btns{ 
-        position: static;
-        margin: 121px auto 0; 
-        font-size: 12px;
-        line-height: 24px;
-        padding: 0 12px;
-        display: inline-block;
-        border-width: 1px;
+        padding: 0 14px 0 18px;
+        font-size: 14px;
+        line-height:40px;
+    }
+    .summitPoster .btns .arrow{
+      width: 16px;
+      height: 16px;
     }
     .summitMain .text {
         font-size: 12px; 

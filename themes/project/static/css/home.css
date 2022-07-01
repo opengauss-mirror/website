@@ -1550,7 +1550,160 @@ footer .foot {
     display: none;
 }
 .summaryTips img{width: 100%;}
- 
+
+
+.tryme{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:60px 210px;
+  width: 100%;
+  height: 429px;
+  background-image: url(/img/tryme/bg.png);
+  background-size: 100%;
+  margin-top: 64px;
+}
+.tryme .left-code {
+  padding: 0 0 31px 30px;
+  width: 524px;
+  height: 227px;
+  text-align: left;
+  font-size: 18px; 
+  color: #D0F2FF;
+  line-height: 36px; 
+}
+.tryme .left-code .first{
+  display: flex;
+  align-items: center;
+}
+.tryme .left-code .first-span {
+    position: relative;
+    margin-left: 4px;
+}
+.tryme .left-code pre{
+  border:0 none;
+  background: none;
+  font-size: 18px; 
+  color: #D0F2FF;
+  text-align: left;
+  line-height: 36px;
+}
+.tryme .typing{
+  position: relative;
+  display: inline-block;
+  visibility: hidden;
+  width: 20ch;
+  animation: typing 3s forwards steps(20);
+  white-space: nowrap;
+  overflow: hidden;
+}
+.tryme .typing::before,
+.tryme .first-span::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 16px;
+    animation: blink 1s infinite steps(1);
+}
+.tryme .first-span::before {
+    animation: blink 0.5s 6  steps(1);
+} 
+.tryme .fast-hide {
+   display: flex;
+    visibility: hidden;
+    -webkit-animation: block .3s forwards;
+    animation: block 0.3s forwards;
+}
+.min-l-w,
+.min-r-w{
+  overflow: hidden;
+  height: 36px;
+}
+.min-l-w{
+  width: 257px; 
+}
+.min-r-w{
+  width: 95px;
+}
+.min-line{
+  width: 20px;
+  display: inline-block; 
+  text-align: center; 
+}
+.tryme .left-code .block5 {
+  -webkit-animation-delay: 4.5s;
+  animation-delay: 4.5s
+}
+
+.tryme .left-code .block4 {
+  -webkit-animation-delay: 4.2s;
+  animation-delay: 4.2s
+}
+
+.tryme .left-code .block3 {
+  -webkit-animation-delay: 3.9s;
+  animation-delay: 3.9s
+}
+
+.tryme .left-code .block2 {
+  -webkit-animation-delay: 3.6s;
+  animation-delay: 3.6s
+}
+
+.tryme .left-code .block1 {
+  -webkit-animation-delay: 3.3s;
+  animation-delay: 3.3s
+}
+
+.tryme .left-code .block0 {
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s
+}
+
+.tryme .left-code .block5 {
+  width: 5ch
+}
+.right-text{
+
+}
+.right-text .title{
+  width: 266px;
+}
+.right-text .btn{
+  width: 210px;
+  line-height: 60px;
+  background: #7D32EA;
+  box-shadow: 0px 8px 35px 0px rgba(65, 21, 121, 0.5);
+  display: block;
+  font-size: 24px;
+  color:#fff;
+  margin-top: 40px;
+  padding: 0;
+}
+.tryme-title{
+  display: none;
+}
+@keyframes typing {
+  from {
+      width: 0
+  }
+  to {
+      visibility: visible;
+  }
+}
+@keyframes blink {
+  50% {
+  background: #FF9933;
+  }
+}
+@keyframes block {
+  to {
+      visibility:visible;
+  }
+}
 @media screen and (max-width: 1000px){
     .read-cookie { 
         height: unset;
@@ -1560,8 +1713,63 @@ footer .foot {
     }
      
 }
-@media screen and (max-width: 700px){ 
-     
+@media screen and (max-width: 768px){ 
+     .tryme{
+      flex-direction: column;
+      justify-content: start;
+      margin:0px auto;
+      padding: 42px 20px 0;
+      width: 328px;
+      height: 294px;
+      background-image: url(/img/tryme/bg_mo.png);
+      background-size: 100%,100%; 
+      background-repeat: no-repeat;
+     }
+     .tryme .left-code{
+      padding: 15px 5px  ;
+      width: 100%;
+      height: 195px;
+      font-size: 13px;
+      line-height: 24px;
+     }
+     .min-l-w,
+    .min-r-w{ 
+      height: 24px;
+    }
+     .min-l-w{
+      width: 186px; 
+    }
+    .min-r-w{
+      width: 70px; 
+    }
+     .tryme .left-code pre{
+      font-size: 14px;
+      line-height: 22px;
+     }
+     .tryme .right-text .title{
+        display: none;
+     }  
+     .right-text .btn{
+      margin-top:0px;
+      width: 142px;
+      line-height: 40px;
+      background: #7D32EA;  
+      font-size: 16px;
+      box-shadow: 0px 4px 23px 0px rgba(65, 21, 121, 0.5);
+     }
+     .right-text .title {
+        width: 200px;
+      }
+      .tryme-title{
+        display: block;
+        font-size: 32px; 
+        font-weight: normal;
+        color: #7D32EA;
+        text-align: center;
+        line-height: 40px;
+        margin:40px 0 16px;
+      }
+      .tryme-title span{ display: block;}
 }
 
  
