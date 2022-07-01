@@ -1,4 +1,5 @@
 function getIp() {
+  console.log(window.location.href);
   const url = `/ip-api/`;
   $.ajax({
     type: "get",
