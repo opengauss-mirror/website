@@ -3,7 +3,7 @@ $(function () {
     // 分论坛切换
     var subIndex = 0;
     var subLen = 4;
-    var subW = $('.sub-area').width();
+    
     var transformBox  = $('.transform-box');
     $('.sub-tab-mo .btn').click(function(){
         if($(this).hasClass('prev')){
@@ -19,11 +19,12 @@ $(function () {
         }
         
         var title = transformBox.find('.sub-container').eq(subIndex).find('.meetingtitle').text();
-        console.log(subIndex,title)
+         
         $(this).siblings('.title').text(title)
         subTransform(subIndex)   
     }) 
     function subTransform(index){
+      var subW = $('.sub-area').width();
       var left = -index * subW;
       transformBox.stop(true,false).animate({'left':left},300);
       transformBox.find('.sub-container').removeClass('active').eq(index).addClass('active');
