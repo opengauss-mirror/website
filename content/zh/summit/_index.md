@@ -144,7 +144,7 @@ time = "下午"
 
 [[list]]
 identification = "list1"
-name = "数据库内核Storage Engine" 
+name = "数据库内核优化探秘" 
 
 [[list]]
 identification = "list2"
@@ -161,11 +161,11 @@ name = "多模态 "
 
 [[submodule]]
     ide ="list1"
-    name = "数据库内核Storage Engine分论坛"
+    name = "数据库内核优化探秘分论坛"
     cohost ="联合主办：北京海量数据技术股份有限公司"
     [[submodule.list]]
         time= "13:30 - 15:30"
-        desc = "数据库内核Storage Engine分论坛 "
+        desc = "数据库内核优化探秘分论坛 "
     
 
 [[submodule]]
