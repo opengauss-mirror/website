@@ -382,7 +382,12 @@ $(document).ready(function () {
           $(".detail-content>.content-box").click(function (e) {
             localStorage.setItem("search_rank_num", $(this).attr("class"));
             const tag = document.getElementsByClassName("active")[0].key;
-            const tempPath = $(this).find("p").attr("path");
+            let tempPath = $(this).find("p").attr("path");
+            if(window.location.href.includes("/zh/")){
+              tempPath=window.location.href.split("/zh/")[0]+"/zh/"+$(this).find("p").attr("type")+tempPath
+            }else{
+              tempPath=window.location.href.split("/en/")[0]+"/en/"+$(this).find("p").attr("type")+tempPath
+            }
             if (tag === "") {
               tag = "all";
             }
