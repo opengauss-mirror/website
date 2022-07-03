@@ -610,12 +610,12 @@ margin: 16px 0 8px;
     }
     .timeTabs li{
         font-size: 16px;
-        margin-right: 20px;
-        width: 100px;
+        margin-right: 16px;
+        width: 88px;
     }
     .timeTabs li .taber-top {
       line-height: 48px;
-      font-size: 18px;
+      font-size: 16px;
     }
     .timeTabs li .taber-bottom { 
       font-size: 14px;
@@ -642,7 +642,7 @@ margin: 16px 0 8px;
         display: block;
         height: auto;
         padding: 12px 0;
-        padding-left: 90px;
+        padding-left: 80px;
         position: relative;
         min-height:42px;
     }
@@ -701,7 +701,7 @@ margin: 16px 0 8px;
     .agendaList .time{ 
         font-size: 12px;
         background: none; 
-        width: 78px;
+        width: 80px;
         padding: 0;
         white-space: nowrap;
     }
