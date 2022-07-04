@@ -67,8 +67,8 @@ time = "下午"
         time= "09:35 - 09:45"
         desc = "创未来 享非凡，共建开源数据库根社区"
         name = "江大勇"
-        post  = "华为技术有限公司 鲲鹏计算领域副总裁"
-       
+        post  = "openGauss社区理事会理事长" 
+        
     [[mainmodule.item]]
         time= "09:45 - 09:50"
         desc = "openGauss商业发行版发布仪式" 
@@ -202,9 +202,8 @@ name = "多模态 "
     post = "数据库专委会 主任"
 [[lecturerItem]]
     img ="/img/summit/t2.png"
-    name = "江大勇"
-    company = "华为技术有限公司"
-    post = "鲲鹏计算领域副总裁"
+    name = "江大勇" 
+    post = "openGauss社区理事会理事长"
   [[lecturerItem]]
     img ="/img/summit/t3.png"
     name = "李国良"
