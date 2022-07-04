@@ -66,10 +66,8 @@ time = "下午"
     [[mainmodule.item]]
         time= "09:35 - 09:45"
         desc = "创未来 享非凡，共建开源数据库根社区"
-        [[mainmodule.item.option]]
-          post = "华为技术有限公司 鲲鹏计算领域副总裁 " 
-          post1 = "openGauss社区理事会理事长" 
-          name = "江大勇"   
+        name = "江大勇"
+        post  = "openGauss社区理事会理事长" 
         
     [[mainmodule.item]]
         time= "09:45 - 09:50"
@@ -79,12 +77,12 @@ time = "下午"
         desc= "联合演讲：聚焦内核创新，持续架构优化，共建开放生态"
         db='true'
         [[mainmodule.item.option]]
-          post = "清华大学教授 " 
-          post1 = "openGauss社区技术委员会主席" 
+          post = "openGauss社区技术委员会主席 " 
+          post1 = "清华大学教授" 
           name = "李国良"
         [[mainmodule.item.option]]
-          post = "openGauss开源数据库首席架构师 " 
-          post1 = " openGauss社区技术委员会委员" 
+          post = "openGauss社区技术委员会委员 " 
+          post1 = "openGauss开源数据库首席架构师 " 
           name = "黄凯耀"  
     [[mainmodule.item]]
         time= "10:20 - 10:35"
@@ -204,24 +202,28 @@ name = "多模态 "
     post = "数据库专委会 主任"
 [[lecturerItem]]
     img ="/img/summit/t2.png"
-    name = "江大勇"
-    company = "华为技术有限公司"
-    post = "鲲鹏计算领域副总裁"
+    name = "江大勇" 
+    post = "openGauss社区理事会理事长"
   [[lecturerItem]]
     img ="/img/summit/t3.png"
     name = "李国良"
-    company = "清华大学教授"
-    post = "openGauss社区技术委员会主席"
+    company = "openGauss社区技术委员会主席"
+    post = "清华大学教授"
 [[lecturerItem]]
     img ="/img/summit/t4.png"
     name = "黄凯耀"
-    company = "openGauss开源数据库首席架构师"
-    post = "openGauss社区技术委员会委员"
+    company = "openGauss社区技术委员会委员"
+    post = "openGauss开源数据库首席架构师"
   [[lecturerItem]]
     img ="/img/summit/t5.png"
     name = "何佳佳"
     company = "中国邮政储蓄银行"
     post = "金融科技创新部主任工程师"
+  [[lecturerItem]]
+    img ="/img/summit/t9.png"
+    name = "谢继刚"
+    company = "中国联通"
+    post = "联通数科集团中间件产品技术部门总监"
 [[lecturerItem]]
     img ="/img/summit/t6.png"
     name = "袁春光"
