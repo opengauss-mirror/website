@@ -380,13 +380,21 @@ $(document).ready(function () {
           });
           // 用户点击搜索结果的埋点
           $(".detail-content>.content-box").click(function (e) {
-            localStorage.setItem("search_rank_num", $(this).attr("class"));
             const tag = document.getElementsByClassName("active")[0].key;
-            let tempPath = $(this).find("p").attr("path");
-            if(window.location.href.includes("/zh/")){
-              tempPath=window.location.href.split("/zh/")[0]+"/zh/"+$(this).find("p").attr("type")+tempPath
-            }else{
-              tempPath=window.location.href.split("/en/")[0]+"/en/"+$(this).find("p").attr("type")+tempPath
+            let tempPath = window.location.origin;
+            const path = $(this).find("p").attr("path");
+            const type = $(this).find("p").attr("type");
+            if (type === "docs") {
+              tempPath = tempPath + "/" + lang + "/docs/" + path + ".html";
+            }
+            if (type === "news") {
+              tempPath = tempPath + "/" + lang + "/" + path + ".html";
+            }
+            if (type === "events") {
+              tempPath = tempPath + "/" + lang + "/" + path + ".html";
+            }
+            if (type === "blogs") {
+              tempPath = tempPath + "/" + lang + "/blogs/blogs.html?" + path;
             }
             if (tag === "") {
               tag = "all";
