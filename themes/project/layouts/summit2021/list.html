@@ -22,7 +22,7 @@
               {{ partial .Params.id . }}
 
             {{ else }}
-            <div class="summitPoster" style="background-image: url(/img/summit2021/bg@2x.png) ">
+            <div class="summitPoster" style="background-image: url({{ .Site.BaseURL}}{{ .Params.poster }}) ">
                 <div class="poster">
                     <div class="info">
                         <h2>{{ .Params.summittitle }} </h2>
@@ -248,7 +248,7 @@
     <!-- /#all -->
 
     {{ partial "scripts.html" . }}
-    <script src="{{ "js/summit.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>
+    <script src="{{ "js/summit2021.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>
   </body>
 </html>
 
