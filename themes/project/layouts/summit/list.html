@@ -152,8 +152,7 @@
                                         {{ range $index, $item := .list}}
                                             <div class="dataItem">
                                                 <span class="time">{{ $item.time }}</span>
-                                                <span class="desc">{{ $item.desc }}</span>
-                                                 
+                                                <span class="desc">{{ $item.desc }}</span> 
                                             </div>  
                                         {{ end }}
                                     </div>  
@@ -167,13 +166,17 @@
                 {{ range .Params.sigmodule }} 
                     <div class=""> 
                         <h3>{{ .daytime }}</h3> 
-                        <div class='dateList'>  
+                        <div class='sig-list'>
+                          <span class="time">{{ .time }}</span>
+                          <div class="sig-content">
                             {{ range $index, $item := .item}}
-                                <div class="dataItem">
-                                    <span class="time">{{ $item.time }}</span>
+                                <div class="sig-item"> 
+                                    <span class="name">{{ $item.name }}</span>
                                     <span class="desc">{{ $item.desc }} </span>
+                                    <a href="{{ $item.link }}" target="_blank" class="link">报名</a>
                                 </div>  
                             {{ end }}
+                          </div>
                         </div>  
                     </div>
                 {{ end }}

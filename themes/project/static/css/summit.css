@@ -253,6 +253,58 @@
 }
 
 
+.sig-list{
+  display: flex;
+  justify-content: space-between;
+}
+.sig-list .time{
+  width: 192px;
+  background: url(/img/summit/time.png) no-repeat left center;
+  padding-left: 30px;
+  color: rgba(0, 0, 0, 0.5);
+  height: 20px;
+  font-size: 18px;
+}
+.sig-content{
+  flex: 1;
+}
+.sig-item{ 
+    background: #FFFFFF;
+    box-shadow: 0px 12px 32px 0px rgb(190 196 204 / 20%);
+    border-radius: 2px;
+    border: 1px solid #7D32EA; 
+    font-size: 18px; 
+    padding: 16px 24px ;
+    position: relative;margin-bottom: 16px; 
+} 
+.sig-item .name{
+  font-size: 18px; 
+  color: #000000;
+  line-height: 24px;
+  display: block;
+  font-weight: 500;
+}
+.sig-item .desc{
+  font-size: 14px; 
+  color: #555;
+  line-height: 22px;
+  margin-top: 10px;
+  display: block;
+}
+.sig-item .link{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  line-height: 40px;
+  background: rgba(125, 50, 234, .1);
+  border-radius: 0px 2px 0px 0px;
+  font-size: 14px; 
+  color: #7D32EA;
+  display: block;
+  text-align: center;
+}
+
 .timeTabs{
     margin: 24px 0 40px;
     text-align: center;
@@ -698,12 +750,33 @@ margin: 16px 0 8px;
         height: auto;
         gap: 8px;
     }
-    .agendaList .time{ 
+    .agendaList .time,.sig-list .time{ 
         font-size: 12px;
         background: none; 
         width: 80px;
         padding: 0;
         white-space: nowrap;
+    }
+    .sig-item{
+      padding: 8px 36px 8px 16px;
+      margin-bottom: 8px;
+    }
+    .sig-item .name{
+      font-size: 14px;
+      line-height: 24px; 
+    }
+    .sig-item .desc{
+      font-size: 12px;
+      line-height: 16px;
+      margin-top: 4px;
+    }
+    .sig-item .link{
+      width: 32px;
+      bottom: 0;
+      padding: 0 5px;
+      line-height: 24px;
+      display: flex;
+      align-items: center;
     }
     .meeting-content{
       display: block;
