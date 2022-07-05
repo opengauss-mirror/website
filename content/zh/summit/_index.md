@@ -275,7 +275,7 @@ name = "多模态 "
     img ="/img/summit/t7.png"
     name = "张亮"
     company = "ShardingSphere"
-    post = "sphereEx CEO & Apache ShardingSphere VP"
+    post = "SphereEx CEO & Apache ShardingSphere PMC Chair"
 [[lecturerItem]]
     img ="/img/summit/t8.png"
     name = "周芹"
