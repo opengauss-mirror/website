@@ -1,13 +1,11 @@
 +++
-title = "User Story"
+title = "用户实践"
 bgImg = "../img/breadcrumbs/userStory.png"
 moImg = "../img/breadcrumbs/userStory_mo.png"
 weblink = "点此查看详细案例"
 userQuestionnaire = 'true'
-feedback = "新增故事"
+feedback = "新增实践"
 feedbackLink = "https://www.wjx.cn/vj/OmBWuRQ.aspx"
-
-
 
 
 
@@ -19,32 +17,29 @@ name = "DBV"
 identification = "isv"
 name = "ISV"
 
- 
 
 [[list]]
 identification = "finance"
-name = "Finance/Banking"
+name = "金融/银行"
 
 [[list]]
 identification = "developer"
-name = "Internet/Software Development"
- 
+name = "互联网/软件开发"
+
 
 [[list]]
 identification = "industrial"
-name = "Industrial/Manufacturing"
+name = "工业/制造"
 
 
 [[list]]
 identification = "energy"
-name = "Energy/Electricity"
+name = "能源/电力"
 
 
 [[list]]
 identification = "other"
-name = "Other"
-
-
+name = "其他"
 
 
 [[cards]]
@@ -111,8 +106,6 @@ name = "北京宝兰德软件股份有限公司"
 desc = "将openGauss集成在产品方案中，部署openGauss服务器节点数为50个以上。"
 address = "https://www.bessystem.com/"
 weight = 1
-
-
 
 
 [[cards]]
@@ -221,41 +214,40 @@ desc = "全新部署在x86服务器上，部署openGauss服务器节点数为1~1
 address = "http://83958517.zhaozhaoqu.com/about.html"
 weight = 3
 
-
 +++
 
 <!--
 
 [[list]]
 identification = "government"
-name = "Education/Academic/Research"
+name = "教育/学术/科研"
 
 [[list]]
 identification = "education"
-name = "Government/Institution"
-
+name = "政府/事业单位"
 
 [[list]]
 identification = "science"
-name = "Medical/Biotech/Other Science"
+name = "医疗/生物技术/其他科学"
 
 [[list]]
 identification = "energy"
-name = "Energy/Electricity"
+name = "能源/电力"
 
 [[list]]
 identification = "carriers"
-name = "Carriers"
+name = "运营商"
 
 [[list]]
-identification = "oilGas"
-name = "Oil and Gas"
+identification = "oilgas"
+name = "油气"
 
 [[list]]
 identification = "transportation"
-name = "Transportation"
+name = "交通"
 
 [[list]]
-identification = "safeCity"
-name = "Safe City"
--->
+identification = "safecity"
+name = "安平"
+
+ -->

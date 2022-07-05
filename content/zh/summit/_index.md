@@ -91,7 +91,7 @@ time = "下午"
         post  = "中国邮政储蓄银行 金融科技创新部主任工程师"
     [[mainmodule.item]]
         time= "10:35 - 10:50"
-        desc = "构建领先数据基础设施，助力联通打造先进通信服务"
+        desc = "携手openGauss，共筑联通领先数据基础设施"
         name = "谢继刚"
         post  = "中国联通 联通数科集团中间件产品技术部门总监"
     [[mainmodule.item]]
