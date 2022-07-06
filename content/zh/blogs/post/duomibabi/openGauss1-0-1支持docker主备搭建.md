@@ -22,7 +22,7 @@ times = "17:30"
 
 目前已经支持x86-64和ARM64两种架构。
 
-x86-64架构的openGuass运行在CentOS 7.6操作系统中。
+x86-64架构的openGauss运行在CentOS 7.6操作系统中。
 
 ARM64架构的openGauss运行在openEuler 20.03 LTS操作系统中。
 
