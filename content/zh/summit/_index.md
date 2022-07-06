@@ -96,7 +96,7 @@ time = "下午"
         post  = "中国联通 联通数科集团中间件产品技术部门总监"
     [[mainmodule.item]]
         time= "10:55 - 11:10"
-        desc = "数据安全可信，隐私坚若磐石"
+        desc = "民生银行基于openGauss的云原生应用创新与实践"
         name = "袁春光"
         post  = "民生银行 信息科技部系统管理中心处长"
     [[mainmodule.item]]
