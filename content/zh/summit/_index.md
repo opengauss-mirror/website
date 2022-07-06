@@ -64,16 +64,16 @@ time = "下午"
         name = "李战怀"
         post  = "中国计算机学会 数据库专委会 主任"
     [[mainmodule.item]]
-        time= "09:35 - 09:45"
+        time= "09:35 - 09:50"
         desc = "创未来 享非凡，共建开源数据库根社区"
         name = "江大勇"
         post  = "openGauss社区理事会理事长" 
         
     [[mainmodule.item]]
-        time= "09:45 - 09:50"
+        time= "09:50 - 09:55"
         desc = "openGauss商业发行版发布仪式" 
     [[mainmodule.item]]
-        time= "09:50 - 10:20"
+        time= "09:55 - 10:25"
         desc= "联合演讲：聚焦内核创新，持续架构优化，共建开放生态"
         db='true'
         [[mainmodule.item.option]]
@@ -85,34 +85,34 @@ time = "下午"
           post1 = "openGauss开源数据库首席架构师 " 
           name = "黄凯耀"  
     [[mainmodule.item]]
-        time= "10:20 - 10:35"
+        time= "10:25 - 10:40"
         desc = "邮储银行个人新核心云原生创新实践分享"
         name = "何佳佳"
         post  = "中国邮政储蓄银行 金融科技创新部主任工程师"
     [[mainmodule.item]]
-        time= "10:35 - 10:50"
+        time= "10:40 - 10:55"
         desc = "携手openGauss，共筑联通领先数据基础设施"
         name = "谢继刚"
         post  = "中国联通 联通数科集团中间件产品技术部门总监"
     [[mainmodule.item]]
-        time= "10:50 - 11:05"
+        time= "10:55 - 11:10"
         desc = "数据安全可信，隐私坚若磐石"
         name = "袁春光"
         post  = "民生银行 信息科技部系统管理中心处长"
     [[mainmodule.item]]
-        time= "11:05 - 11:20"
+        time= "11:10 - 11:25"
         desc = "openGauss x ShardingShpere 分布式解决方案"
          [[mainmodule.item.option]]
           post = "ShardingSphere sphereEx CEO & " 
           post1 = " Apache ShardingSphere VP" 
           name = "张亮"   
     [[mainmodule.item]]
-        time= "11:20 - 11:35"
+        time= "11:25 - 11:40"
         desc = "Yukon（禹贡）：基于openGauss的二三维一体化空间数据库"
         name = "周芹"
         post  = "超图研究院内核研发中心 产品总监"
   [[mainmodule.item]]
-        time= "11:35 - 11:40"
+        time= "11:40 - 11:45"
         desc = "openGauss开源2周年：见证开发者荣耀时刻"
         name = ""
         post  = ""
