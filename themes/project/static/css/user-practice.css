@@ -69,7 +69,7 @@ a:link {
     box-shadow: 0px 12px 32px 0px rgba(190, 196, 204, 0.2);
     margin-bottom: 24px;
     width: 920px;
-    background: url(../img/userStory/item-bg.png) no-repeat top right;
+    background: url(../img/userPractice/item-bg.png) no-repeat top right;
 }
 .item-title {
     font-size: 24px;
@@ -94,29 +94,48 @@ a:link {
   margin-right: 8px;
 }
 .item-title i.isv,.left-tools .isv{
-  background-image: url(../img/userStory/isv.png)
+  background-image: url(../img/userPractice/isv.png)
 }
 .item-title i.dbv,.left-tools .dbv{
-  background-image: url(../img/userStory/dbv.png)
+  background-image: url(../img/userPractice/dbv.png)
 }
 .item-title i.industrial,.left-tools .industrial{
-  background-image: url(../img/userStory/industrial.png)
+  background-image: url(../img/userPractice/industrial.png)
 }
 .item-title i.finance,.left-tools .finance{
-  background-image: url(../img/userStory/finance.png)
+  background-image: url(../img/userPractice/finance.png)
 }
 .item-title i.developer,.left-tools .developer{
-  background-image: url(../img/userStory/developer.png)
+  background-image: url(../img/userPractice/developer.png)
 }
 .item-title i.other,.left-tools .other{
-  background-image: url(../img/userStory/other.png)
+  background-image: url(../img/userPractice/other.png)
 }
 .item-title i.carriers,.left-tools .carriers{
-  background-image: url(../img/userStory/carriers.png)
+  background-image: url(../img/userPractice/carriers.png)
 }
 .item-title i.energy,.left-tools .energy{
-  background-image: url(../img/userStory/energy.png)
+  background-image: url(../img/userPractice/energy.png)
 }
+.item-title i.safecity,.left-tools .safecity{
+  background-image: url(../img/userPractice/safecity.png)
+}
+.item-title i.transportation,.left-tools .transportation{
+  background-image: url(../img/userPractice/transportation.png)
+}
+.item-title i.oilgas,.left-tools .oilgas{
+  background-image: url(../img/userPractice/oilgas.png)
+}
+.item-title i.science,.left-tools .science{
+  background-image: url(../img/userPractice/science.png)
+}
+.item-title i.government,.left-tools .government{
+  background-image: url(../img/userPractice/government.png)
+}
+.item-title i.education,.left-tools .education{
+  background-image: url(../img/userPractice/education.png)
+}
+
 .isH5 .item-title i{
   width: 24px;
   height: 24px;
@@ -173,7 +192,7 @@ a:link {
   width: 232px;
   height: 290px;
   color: #fff;
-  background: url("/img/userStory/tipsa-bg.png") no-repeat;
+  background: url("/img/userPractice/tipsa-bg.png") no-repeat;
   background-size: cover;
   padding: 40px 24px;
   position: absolute;

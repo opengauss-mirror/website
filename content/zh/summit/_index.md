@@ -91,7 +91,7 @@ time = "下午"
         post  = "中国邮政储蓄银行 金融科技创新部主任工程师"
     [[mainmodule.item]]
         time= "10:35 - 10:50"
-        desc = "构建领先数据基础设施，助力联通打造先进通信服务"
+        desc = "携手openGauss，共筑联通领先数据基础设施"
         name = "谢继刚"
         post  = "中国联通 联通数科集团中间件产品技术部门总监"
     [[mainmodule.item]]
@@ -121,11 +121,53 @@ time = "下午"
 
 
 
-[[sigmodule]] 
-    daytime = "SIG组版本规划工作会议" 
+[[sigmodule]]
+    daytime = "SIG组版本规划工作会议"
+    time = "16:00 - 18:00"
     [[sigmodule.item]]
-        time= "16:00 - 18:00"
-        desc = "SIG组版本规划工作会议" 
+        name= "AI"
+        desc = "负责openGauss社区AI的开发和维护。"
+        link="https://etherpad.opengauss.org/p/2022ODD-sig-planning-AI"
+    [[sigmodule.item]]
+      name= "Certification"
+      desc = "负责openGauss认证流程、测试套件的定义和开发。" 
+      link="https://etherpad.opengauss.org/p/2022ODD-sig-planning-Certification"
+    [[sigmodule.item]]
+      name= "CloudNative"
+      desc = "负责openGauss社区云原生方向的开发和维护。" 
+      link="https://etherpad.opengauss.org/p/2022ODD-sig-planning-CloudNative"
+    [[sigmodule.item]]
+      name= "Docs"
+      desc = "负责openGauss社区文档的开发和维护。" 
+      link="https://etherpad.opengauss.org/p/2022ODD-sig-planning-StorageEDocsngine"
+    [[sigmodule.item]]
+    name= "Infra"
+    desc = "负责openGauss社区基础设施的开发和维护。" 
+    link="https://etherpad.opengauss.org/p/2022ODD-sig-planning-Infra"
+    [[sigmodule.item]]
+    name= "OPS"
+    desc = "聚焦openGauss维护能力建设，提升产品运维能力，总结和传递运维经验。" 
+    link="https://etherpad.opengauss.org/p/2022ODD-sig-planning-OPS"
+    [[sigmodule.item]]
+    name= "Plugin"
+    desc = "负责openGauss插件机制的规划、管理、开发等。" 
+    link="https://etherpad.opengauss.org/p/2022ODD-sig-planning-Plugin"
+    [[sigmodule.item]]
+    name= "ReleaseManagement"
+    desc = "社区协同各SIG maintainer,规划openGauss社区版本的发布工作，为最终的竞争力目标达成负责。" 
+    link="https://etherpad.opengauss.org/p/2022ODD-sig-planning-ReleaseManagement"
+    [[sigmodule.item]]
+    name= "SecurityTechnology"
+    desc = "负责openGauss社区数据库安全技术的开发和维护。" 
+    link="https://etherpad.opengauss.org/p/2022ODD-sig-planning-SecurityTechnology"
+    [[sigmodule.item]]
+    name= "SQLEngine"
+    desc = "负责openGauss社区SQL引擎的开发和维护。" 
+    link="https://etherpad.opengauss.org/p/2022ODD-sig-planning-SQLEngine"
+     [[sigmodule.item]]
+    name= "StorageEngine"
+    desc = "负责openGauss社区存储引擎的开发和维护。" 
+    link="https://etherpad.opengauss.org/p/2022ODD-sig-planning-StorageEngine"
     
 
 
@@ -233,7 +275,7 @@ name = "多模态 "
     img ="/img/summit/t7.png"
     name = "张亮"
     company = "ShardingSphere"
-    post = "sphereEx CEO & Apache ShardingSphere VP"
+    post = "SphereEx CEO & Apache ShardingSphere PMC Chair"
 [[lecturerItem]]
     img ="/img/summit/t8.png"
     name = "周芹"
