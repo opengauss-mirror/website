@@ -104,7 +104,7 @@ time = "下午"
         desc = "openGauss x ShardingShpere 分布式解决方案"
          [[mainmodule.item.option]]
           post = "ShardingSphere sphereEx CEO & " 
-          post1 = " Apache ShardingSphere VP" 
+          post1 = " Apache ShardingSphere PMC Chair" 
           name = "张亮"   
     [[mainmodule.item]]
         time= "11:25 - 11:40"
@@ -263,9 +263,9 @@ name = "多模态 "
     post = "金融科技创新部主任工程师"
   [[lecturerItem]]
     img ="/img/summit/t9.png"
-    name = "谢继刚"
-    company = "中国联通"
-    post = "联通数科集团中间件产品技术部门总监"
+    name = "张建荣"
+    company = "联通数字科技有限公司"
+    post = "高级副总裁"
 [[lecturerItem]]
     img ="/img/summit/t6.png"
     name = "袁春光"
