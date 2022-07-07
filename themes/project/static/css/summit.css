@@ -122,7 +122,9 @@
   display: block;
 }
 .liveBox{
-  display: flex;
+  display: grid;
+  grid-template-columns:repeat(4,1fr) ;
+  gap: 16px;
   flex-direction: row;
   width: 100%;
   flex-wrap: wrap;
@@ -130,30 +132,41 @@
   margin-top: 24px;
 }
 .liveBox a{
-  line-height: 96px;
-  font-size: 20px;
-  text-align: center;
-  width: 300px;
-  color: #000;
-  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1);
-  transition: all .3s cubic-bezier(.645,.045,.355,1);
-  border-radius: 8px;
-  text-decoration: none !important; 
-  margin-left: 10px;
+  height: 88px;
+  font-size: 18px;
+  text-align: center; 
+  color: #000; 
+  box-shadow: 0px 12px 32px 0px rgba(190,196,204,0.2000);
+  transition: none;
+  border-radius: 2px;
+  text-decoration: none !important;
+  border: 1px solid #7D32EA;
+  display: grid;
+    align-items: center;
+    line-height: 24px;
 }
-.liveBox a:first-of-type{    
-  margin-left: 0;
+.liveBox a span{display: block;}
+.liveBox a:first-of-type{
+  grid-column: 1/5;
 } 
 .liveBox a.center{
   flex: 1;
 }
 .liveBox a.active{
-  background: #755BC7;
+  background:  url('../img/summit/live-active-bg.png') no-repeat center;
   color: #fff;
+  border-color: transparent;
 } 
 .liveBox.mo{
   display: none;
   margin: 0 0 20px;
+}
+.live-select{
+  width: 100%;
+  height: 48px;
+  line-height: 48px;
+  padding: 0 12px;
+  font-size: 16px;
 }
 @media screen and (max-width: 1000px) {
   #livePage {
