@@ -5,7 +5,7 @@ postertext = "img/summit/text.png"
 moImg = "img/summit/banner_mo.png"
 description = "您可以在此处找到openGauss相关峰会。" 
 keywords = ["openGauss","summit"]
-summittitle = "openGauss Summit 2022"
+summittitle = "openGauss开发者大会主论坛"
 slogan = "汇聚数据库创新力量 逐梦数字时代星辰大海"
 time = "2021年12月28日"
 address = "北京·望京凯悦酒店"
@@ -92,8 +92,8 @@ time = "下午"
     [[mainmodule.item]]
         time= "10:40 - 10:55"
         desc = "携手openGauss，共筑联通领先数据基础设施"
-        name = "谢继刚"
-        post  = "中国联通 联通数科集团中间件产品技术部门总监"
+        name = "张建荣"
+        post  = "联通数字科技有限公司高级副总裁"
     [[mainmodule.item]]
         time= "10:55 - 11:10"
         desc = "民生银行基于openGauss的云原生应用创新与实践"
@@ -103,8 +103,8 @@ time = "下午"
         time= "11:10 - 11:25"
         desc = "openGauss x ShardingShpere 分布式解决方案"
          [[mainmodule.item.option]]
-          post = "ShardingSphere sphereEx CEO & " 
-          post1 = " Apache ShardingSphere PMC Chair" 
+          post = "SphereEx CEO & " 
+          post1 = "Apache ShardingSphere PMC Chair" 
           name = "张亮"   
     [[mainmodule.item]]
         time= "11:25 - 11:40"
@@ -187,19 +187,23 @@ time = "下午"
 
 [[list]]
 identification = "list1"
-name = "数据库内核优化探秘" 
+name = "数据库内核优化探秘"
+liveid='11158'
 
 [[list]]
 identification = "list2"
-name = "数据库内核SQL Engine" 
+name = "数据库内核SQL Engine"
+liveid='11157'
 
 [[list]]
 identification = "list3"
-name = "生态工具 " 
+name = "生态工具"
+liveid='11137'
 
 [[list]]
 identification = "list4"
-name = "多模态 "  
+name = "多模态"
+liveid='10055'
 
 
 [[submodule]]
@@ -274,8 +278,8 @@ name = "多模态 "
      [[lecturerItem]]
     img ="/img/summit/t7.png"
     name = "张亮"
-    company = "ShardingSphere"
-    post = "SphereEx CEO & Apache ShardingSphere PMC Chair"
+    company = "SphereEx CEO &"
+    post = "Apache ShardingSphere PMC Chair"
 [[lecturerItem]]
     img ="/img/summit/t8.png"
     name = "周芹"
