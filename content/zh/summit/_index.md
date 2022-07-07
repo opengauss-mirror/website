@@ -5,7 +5,7 @@ postertext = "img/summit/text.png"
 moImg = "img/summit/banner_mo.png"
 description = "您可以在此处找到openGauss相关峰会。" 
 keywords = ["openGauss","summit"]
-summittitle = "openGauss Summit 2021"
+summittitle = "openGauss Summit 2022"
 slogan = "汇聚数据库创新力量 逐梦数字时代星辰大海"
 time = "2021年12月28日"
 address = "北京·望京凯悦酒店"
@@ -15,7 +15,7 @@ infotext = "	  openGauss Developer Day 2022是openGauss社区发起并举办的�
 
 infotext1 = 'openGauss诚邀开发者齐参与，同贡献，释放开源数据库创新力量。'
 
-tit0 = "精彩回顾"  
+tit0 = "正在直播"  
 tit1 = "会议日程"  
 tit2 = "共建单位"   
 tit3 = "线上展厅"   
