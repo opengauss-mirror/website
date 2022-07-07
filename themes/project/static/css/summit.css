@@ -640,6 +640,7 @@ cursor: pointer;
 .partnersInfo img {
   vertical-align: top;
   max-width: 100%;
+  transform: scale(.9);
 }
 .links-box{
   border-top: 1px solid #DFE1E8;

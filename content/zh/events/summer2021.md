@@ -147,7 +147,7 @@ openGauss社区深度参与暑期2021活动，当前已有**16**个openGauss相�
 
 **项目标题：** **openGauss支持Learned Index**
 
-**项目描述：** 使用Learned Index最新学术成果，替换openGuass的B+Tree索引，达成大幅降低索引内存空间占用的目的。
+**项目描述：** 使用Learned Index最新学术成果，替换openGauss的B+Tree索引，达成大幅降低索引内存空间占用的目的。
 
 **项目导师：** 张程伟
 

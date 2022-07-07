@@ -125,7 +125,7 @@ weight = 2
 [[cards]]
 iden = "dbv"
 name = "成都虚谷伟业科技有限公司"
-desc = "在openGuass 多线程绑核技术基础上进行数据库开发，部署openGauss服务器节点数为1~10个。"
+desc = "在openGauss 多线程绑核技术基础上进行数据库开发，部署openGauss服务器节点数为1~10个。"
 address = "http://www.xugucn.com/"
 weight = 3
 
