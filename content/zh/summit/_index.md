@@ -98,12 +98,12 @@ time = "下午"
         time= "10:55 - 11:10"
         desc = "民生银行基于openGauss的云原生应用创新与实践"
         name = "袁春光"
-        post  = "民生银行 信息科技部系统管理中心处长"
+        post  = "民生银行信息科技部系统管理中心处长"
     [[mainmodule.item]]
         time= "11:10 - 11:25"
-        desc = "openGauss x ShardingShpere 分布式解决方案"
+        desc = "openGauss x ShardingSphere 分布式解决方案"
          [[mainmodule.item.option]]
-          post = "SphereEx CEO & " 
+          post = "SphereEx CEO &" 
           post1 = "Apache ShardingSphere PMC Chair" 
           name = "张亮"   
     [[mainmodule.item]]
@@ -124,6 +124,8 @@ time = "下午"
 [[sigmodule]]
     daytime = "SIG组版本规划工作会议"
     time = "16:00 - 18:00"
+    guide='SIG组工作会议参会指南'
+    guidepath='https://gitee.com/opengauss/community/blob/master/contributors/sig-planning-meeting-guide.md'
     [[sigmodule.item]]
         name= "AI"
         desc = "负责openGauss社区AI的开发和维护。"
@@ -168,7 +170,7 @@ time = "下午"
     name= "StorageEngine"
     desc = "负责openGauss社区存储引擎的开发和维护。" 
     link="https://etherpad.opengauss.org/p/2022ODD-sig-planning-StorageEngine"
-    
+
 
 
 [[meetinglist]] 
@@ -211,34 +213,107 @@ liveid='10055'
     name = "数据库内核优化探秘分论坛"
     cohost ="联合主办：北京海量数据技术股份有限公司"
     [[submodule.list]]
-        time= "13:30 - 15:30"
+        time= "敬请期待"
         desc = "数据库内核优化探秘分论坛 "
-    
+        name = "窦志彤"
+        company = "北京海量数据技术股份有限公司 北京研发负责人"
+    [[submodule.list]]
+        time= "敬请期待"
+        desc = "PL/PG SQL引擎的性能提升 "
+        name = "黄晓涛"
+        company = "北京海量数据技术股份有限公司 海量数据研究院副院长"
+    [[submodule.list]]
+        time= "敬请期待"
+        desc = "Vastbase数据库stride威胁建模应用探讨 "
+        name = "石青"
+        company = "北京海量数据技术股份有限公司 高级软件研发工程师"
 
 [[submodule]]
     ide ="list2"
     name = "数据库内核SQL Engine分论坛"
     cohost ="联合主办：云和恩墨（北京）信息技术有限公司"
     [[submodule.list]]
-        time= "13:30 - 15:30"
-        desc = "数据库内核SQL Engine分论坛"
-     
+        time= "敬请期待"
+        desc = "分而治之，MogDB分区优化之动态分区裁剪 "
+        name = "罗拉全"
+        company = "云和恩墨（北京）信息技术有限公司 数据库内核研发工程师"
+    [[submodule.list]]
+        time= "敬请期待"
+        desc = "见微知著，MogDB SQL运行观测之算子采样 "
+        name = "杨浩"
+        company = "云和恩墨（北京）信息技术有限公司 数据库内核研发工程师"
+    [[submodule.list]]
+        time= "敬请期待"
+        desc = "MogDB中自治异步事务提交的设计与实现 "
+        name = "王春玲"
+        company = "云和恩墨（北京）信息技术有限公司 数据库内核研发工程师"
+    [[submodule.list]]
+        time= "敬请期待"
+        desc = "实用型保留顺序加密研究进展 "
+        name = "刘哲理"
+        [[submodule.list.option]] 
+          company = "南开大学计算机学院副院长、网络空间安全学院副院长"
+        [[submodule.list.option]]
+          company = "中国中文信息学会大数据安全与隐私计算专委会秘书长 "
+    [[submodule.list]]
+        time= "敬请期待"
+        desc = "openGauss SQL Engine的演进方向 "
+        name = "陈浩"
+        [[submodule.list.option]] 
+          company = "华为技术有限公司"
+        [[submodule.list.option]]
+          company = "openGauss Maintainer、Apache Doris PMC "
 
 [[submodule]]
     ide ="list3"
     name = "生态工具 分论坛"
     cohost = "联合主办：北京东方通科技股份有限公司"
     [[submodule.list]]
-        time= "13:30 - 15:30"
-        desc = "生态工具分论坛" 
+        time= "敬请期待"
+        desc = "中间件丰富openGauss生态 "
+        name = "曾鹏冰"
+        company = "北京东方通软件有限公司 东方通技术咨询部副总"
+    [[submodule.list]]
+        time= "敬请期待"
+        desc = "全生命周期的异构数据迁移管理 "
+        name = "李聪"
+        company = "云和恩墨（北京）信息技术有限公司 战略客户架构部总经理"
+    [[submodule.list]]
+        time= "敬请期待"
+        desc = "Apache ShardingSphere 与 openGauss 联合打造国产高性能分布式数据库方案 "
+        name = "吴伟杰"
+        [[submodule.list.option]] 
+          company = "Apache ShardingSphere PMC"
+        [[submodule.list.option]]
+          company = "SphereEx 基础设施研发工程师 "
+    [[submodule.list]]
+        time= "敬请期待"
+        desc = "openGauss数据库的可观测性 "
+        name = "徐戟（白鳝）"
+        company = "南京基石数据技术有限责任公司 深圳鲲鹏产业联盟高级顾问"
 
 [[submodule]]
     ide ="list4"
     name = "多模态 分论坛"
     cohost = "联合主办：清华大学"
     [[submodule.list]]
-        time= "13:30 - 15:30"
-        desc = "多模态分论坛" 
+        time= "敬请期待"
+        desc = "面向海量知识图谱的高性能图数据库系统gStore "
+        name = "邹磊磊"
+        [[submodule.list.option]] 
+          company = "北京大学教授、北京大学王选计算机研究所数据管理研究室主任"
+        [[submodule.list.option]]
+          company = "大数据分析与应用技术国家工程实验室（北京大学）知识集成与智能决策中心主任 "
+    [[submodule.list]]
+        time= "敬请期待"
+        desc = "时序数据生成与时序数据库测试 "
+        name = "李超"
+        company = "清华大学信息国家研究中心副研究员"
+    [[submodule.list]]
+        time= "敬请期待"
+        desc = "MogDB列存案例分享 "
+        name = "罗海雄" 
+        company = "云和恩墨（北京）信息技术有限公司 数据库资深技术专家"
 
 
 [[lecturerItem]]
@@ -286,6 +361,156 @@ liveid='10055'
     company = "超图研究院内核研发中心"
     post = "产品总监"
     
+
+[[card]]
+img = "/img/summit/speakers/lihuaizhan.png"
+name = "李战怀"
+title = "中国计算机学会"
+company = "数据库专委会主任"
+
+[[card]]
+img = "/img/summit/speakers/jiangdayong.png"
+name = "江大勇"
+title = "openGauss社区理事会理事长" 
+
+[[card]]
+img = "/img/summit/speakers/huzhengce.png"
+name = "胡正策"
+title = "openGauss社区秘书长" 
+
+[[card]]
+img = "/img/summit/speakers/liguoliang.png"
+name = "李国良"
+title = "openGauss社区技术委员会主席"
+company = "清华大学教授"
+
+[[card]]
+img = "/img/summit/speakers/huangkaiyao.png"
+name = "黄凯耀"
+title = "openGauss社区技术委员会委员"
+company = "openGauss开源数据库首席架构师"
+
+[[card]]
+img = "/img/summit/speakers/hejiajia.png"
+name = "何佳佳"
+title = "中国邮政储蓄银行"
+company = "金融科技创新部主任工程师"
+
+[[card]]
+img = "/img/summit/speakers/zhangjianrong.png"
+name = "张建荣"
+title = "联通数字科技有限公司"
+company = "高级副总裁"
+
+[[card]]
+img = "/img/summit/speakers/yuanchunguang.png"
+name = "袁春光"
+title = "民生银行"
+company = "信息科技部系统管理中心处长"
+
+[[card]]
+img = "/img/summit/speakers/zhangliang.png"
+name = "张亮"
+title = "SphereEx CEO &"
+company = "Apache ShardingSphere PMC Chair"
+ 
+
+[[card]]
+img = "/img/summit/speakers/zhouqin.png"
+name = "周芹"
+title = "超图研究院内核研发中心"
+company = "产品总监"
+
+[[card]]
+img = "/img/summit/speakers/douzhitong.png"
+name = "窦志彤"
+title = "北京海量数据技术股份有限公司"
+company = "北京研发负责人"
+
+[[card]]
+img = "/img/summit/speakers/huangxiaotao.png"
+name = "黄晓涛"
+title = "北京海量数据技术股份有限公司"
+company = "海量数据研究院副院长"
+
+[[card]]
+img = "/img/summit/speakers/shiqing.png"
+name = "石青"
+title = "北京海量数据技术股份有限公司"
+company = "高级软件研发工程师"
+
+[[card]]
+img = "/img/summit/speakers/luolaquan.png"
+name = "罗拉全"
+title = "云和恩墨（北京）信息技术有限公司"
+company = "数据库内核研发工程师"
+
+
+[[card]]
+img = "/img/summit/speakers/yanghao.png"
+name = "杨浩"
+title = "云和恩墨（北京）信息技术有限公司"
+company = "数据库内核研发工程师"
+
+[[card]]
+img = "/img/summit/speakers/wangchunlin.png"
+name = "王春玲"
+title = "云和恩墨（北京）信息技术有限公司"
+company = "数据库内核研发工程师"
+
+[[card]]
+img = "/img/summit/speakers/liuzheli.png"
+name = "刘哲理"
+title = "南开大学计算机学院副院长 网络空间安全学院副院长" 
+company = "中国中文信息学会大数据安全与隐私计算专委会秘书长" 
+
+ [[card]]
+img = "/img/summit/speakers/chenhao.png"
+name = "陈浩"
+title = "华为技术有限公司"
+company = "openGauss Maintainer Apache Doris PMC"
+
+[[card]]
+img = "/img/summit/speakers/zengpengbing.png"
+name = "曾鹏冰"
+title = "北京东方通软件有限公司"
+company = "东方通技术咨询部副总"
+
+[[card]]
+img = "/img/summit/speakers/licong.png"
+name = "李聪"
+title = "云和恩墨（北京）信息技术有限公司"
+company = "战略客户架构部总经理"
+
+[[card]]
+img = "/img/summit/speakers/wuweijie.png"
+name = "吴伟杰"
+title = "Apache ShardingSphere PMC"
+company = "SphereEx 基础设施研发工程师"
+
+[[card]]
+img = "/img/summit/speakers/xuzhan.png"
+name = "徐戟（白鳝）"
+title = "南京基石数据技术有限责任公司"
+company = "深圳鲲鹏产业联盟高级顾问"
+
+[[card]]
+img = "/img/summit/speakers/zhoulei.png"
+name = "邹磊"
+title = "北京大学教授 北京大学王选计算机研究所数据管理研究室主任" 
+company = "大数据分析与应用技术国家工程实验室（北京大学）知识集成与智能决策中心主任" 
+
+[[card]]
+img = "/img/summit/speakers/lichao.png"
+name = "李超"
+title = "清华大学"
+company = "信息国家研究中心副研究员"
+
+[[card]]
+img = "/img/summit/speakers/luohaixiong.png"
+name = "罗海雄"
+title = "云和恩墨（北京）信息技术有限公司"
+company = "数据库资深技术专家"
 
 +++  
 

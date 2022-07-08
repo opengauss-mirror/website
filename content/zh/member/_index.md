@@ -2,9 +2,13 @@
 title = "社区组织"
 bgImg = "../img/breadcrumbs/member_bg.png"
 moImg = "../img/breadcrumbs/member_mo.png"
+boardtitle = "理事会"
+uctitle = "用户委员会"
+bctitle = "品牌宣传委员会"
 tctitle = "技术委员会（TC）"
 sigtitle = "专项兴趣小组（SIG）"
 usergroup = 'openGauss用户组（oGUG）'
+ 
 tctag = "技术委员会"
 sigtag = "专项兴趣小组"
 usergrouptag = "openGauss用户组"

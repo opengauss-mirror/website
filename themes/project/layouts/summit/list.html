@@ -158,17 +158,26 @@
                 </div>
                 <div class="sub-area">
                   <div class="transform-box">
-                {{ range .Params.submodule }} 
+                  {{ range .Params.submodule }} 
                         {{ if eq .ide "list1"}}
                             <div class="sub-container show">
                               <h3 class="meetingtitle">{{ .name }}</h3> 
                               <p class="co-host">{{ .cohost }}</p>
-                                <div class='dateList'>  
+                                <div class='dateList'>
                                     {{ range $index, $item := .list}}
                                         <div class="dataItem">
                                             <span class="time">{{ $item.time }}</span>
                                             <span class="desc">{{ $item.desc }}</span>
-                                             
+                                            <span class="name">{{ $item.name }} </span>
+                                            {{ if $item.company  }}
+                                                <span class="company">{{ $item.company }} </span>
+                                            {{ else }}
+                                              <div class="flex">
+                                                  {{ range $index, $option := .option}}
+                                                    <span class="company">{{ $option.company }} </span>
+                                                  {{ end }}
+                                                </div>
+                                            {{ end }}
                                         </div>  
                                     {{ end }}
                                 </div>  
@@ -176,12 +185,22 @@
                             {{ else}}
                                 <div class="sub-container"> 
                                   <h3 class="meetingtitle">{{ .name }}</h3> 
-                              <p class="co-host">{{ .cohost }}</p>
-                                    <div class='dateList'>  
+                                  <p class="co-host">{{ .cohost }}</p>
+                                    <div class='dateList'>   
                                         {{ range $index, $item := .list}}
                                             <div class="dataItem">
                                                 <span class="time">{{ $item.time }}</span>
                                                 <span class="desc">{{ $item.desc }}</span> 
+                                                <span class="name">{{ $item.name }} </span>
+                                                {{ if $item.company  }}
+                                                    <span class="company">{{ $item.company }} </span>
+                                                {{ else }}
+                                                  <div class="option">
+                                                      {{ range $index, $option := .option}}
+                                                        <p class="company">{{ $option.company }} </p>
+                                                      {{ end }}
+                                                    </div>
+                                                {{ end }}
                                             </div>  
                                         {{ end }}
                                     </div>  
@@ -192,22 +211,21 @@
               </div>
             </div>
               <div class="summit-container ">
-                {{ range .Params.sigmodule }} 
-                    <div class=""> 
-                        <h3>{{ .daytime }}</h3> 
-                        <div class='sig-list'>
-                          <span class="time">{{ .time }}</span>
-                          <div class="sig-content">
-                            {{ range $index, $item := .item}}
-                                <div class="sig-item"> 
-                                    <span class="name">{{ $item.name }}</span>
-                                    <span class="desc">{{ $item.desc }} </span>
-                                    <a href="{{ $item.link }}" target="_blank" class="link">报名</a>
-                                </div>  
-                            {{ end }}
-                          </div>
-                        </div>  
-                    </div>
+                {{ range .Params.sigmodule }}  
+                      <h3>{{ .daytime }}</h3>
+                      <div class="guidepath"><a  href="{{ .guidepath }}" target="_blank" >{{ .guide }}<i class="arrow"></i></a></div>
+                      <div class='sig-list'>
+                        <span class="time">{{ .time }}</span>
+                        <div class="sig-content">
+                          {{ range $index, $item := .item}}
+                              <div class="sig-item"> 
+                                  <span class="name">{{ $item.name }}</span>
+                                  <span class="desc">{{ $item.desc }} </span>
+                                  <a href="{{ $item.link }}" target="_blank" class="link">报名</a>
+                              </div>  
+                          {{ end }}
+                        </div>
+                      </div>   
                 {{ end }}
               </div>
 
@@ -225,12 +243,12 @@
               <!-- 演讲嘉宾 -->
               <h2 class="tit2" id="lecturerNav">{{ .Params.tit4 }} </h2>
               <div class="lecturer-content">
-                {{ range .Params.lecturerItem }} 
+                {{ range .Params.card }} 
                   <div class="lecturer-item">
                     <img src="{{ .img }}" alt="中国软件行业协会">
                     <p class="title">{{ .name }}</p>
+                    <p class="txt">{{ .title }}</p>
                     <p class="txt">{{ .company }}</p>
-                    <p class="txt">{{ .post }}</p>
                   </div>
                   {{ end }}
               </div>
