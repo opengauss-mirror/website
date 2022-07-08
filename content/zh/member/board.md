@@ -12,7 +12,7 @@ img = "/zh/member/img/jiangdayong.png"
 name = "江大勇"
 title = "理事长"
 company = "华为技术有限公司"
-email = "jiangdayong@huawei.com" 
+email = "mailto:jiangdayong@huawei.com" 
 
 
 [[card]]
