@@ -1,4 +1,7 @@
 $(document).ready(function () {
+    if(window.location.href.includes("?")){
+        sessionStorage.setItem('fromAdvertised',window.location.href);
+    }
     function format(num){
         num = Number(num);
         if(num > 999){
