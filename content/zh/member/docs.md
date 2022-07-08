@@ -45,8 +45,7 @@ email = "mailto:cuiping.zhang@enmotech.com"
 gitee = "https://gitee.com/zcp100_zcp100"
 
 
-
-
+ 
 
 [[card]]
 img = "/zh/member/img/fanyaqing.png"
@@ -67,7 +66,7 @@ img = "/zh/member/img/liuxu.png"
 name = "刘旭"
 title = "Committer"
 email = "mailto:xu.liu@enmotech.com"
-gitee = "https://gitee.com/liuxu-enmo"
+gitee = "https://gitee.com/mogliu"
 
 [[card]]
 img = "/zh/member/img/zhangleyi.png"
