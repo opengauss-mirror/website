@@ -213,20 +213,30 @@ liveid='10055'
     name = "数据库内核优化探秘分论坛"
     cohost ="联合主办：北京海量数据技术股份有限公司"
     [[submodule.list]]
-        time= "敬请期待"
-        desc = "数据库内核优化探秘分论坛 "
-        name = "窦志彤"
-        company = "北京海量数据技术股份有限公司 北京研发负责人"
+        time= "13:30 - 13:40"
+        desc = "开场致辞 "
+        name = "肖枫"
+        company = "海量数据总裁 "
     [[submodule.list]]
-        time= "敬请期待"
-        desc = "PL/PG SQL引擎的性能提升 "
+        time= "13:40 - 14:05"
+        desc = "批量性能突破 - PL/pgSQL引擎优化 "
         name = "黄晓涛"
-        company = "北京海量数据技术股份有限公司 海量数据研究院副院长"
+        company = "海量数据研究院副院长"
     [[submodule.list]]
-        time= "敬请期待"
-        desc = "Vastbase数据库stride威胁建模应用探讨 "
-        name = "石青"
-        company = "北京海量数据技术股份有限公司 高级软件研发工程师"
+        time= "14:05 - 14:30"
+        desc = "运行体验优化 - 分区索引联机重建 "
+        name = "窦志彤"
+        company = "海量数据北京研究所所长"
+    [[submodule.list]]
+        time= "14:30 - 14:50"
+        desc = "科学计算·决策赋能——新一代智慧城市探索 "
+        name = "万丹"
+        company = "北京大学城市规划与设计学院博士"
+    [[submodule.list]]
+        time= "14:50 - 15:10"
+        desc = "安全防护加固 - Stride威胁建模应用探索 "
+        name = "吴兴雄"
+        company = "海量数据高级工程师"
 
 [[submodule]]
     ide ="list2"
@@ -422,22 +432,30 @@ title = "超图研究院内核研发中心"
 company = "产品总监"
 
 [[card]]
-img = "/img/summit/speakers/douzhitong.png"
-name = "窦志彤"
-title = "北京海量数据技术股份有限公司"
-company = "北京研发负责人"
+img = "/img/summit/speakers/xiaofeng.png"
+name = "肖枫"
+title = "海量数据"
+company = "总裁"
 
 [[card]]
 img = "/img/summit/speakers/huangxiaotao.png"
 name = "黄晓涛"
-title = "北京海量数据技术股份有限公司"
-company = "海量数据研究院副院长"
+title = "海量数据"
+company = "研究院副院长"
+
 
 [[card]]
-img = "/img/summit/speakers/shiqing.png"
-name = "石青"
-title = "北京海量数据技术股份有限公司"
-company = "高级软件研发工程师"
+img = "/img/summit/speakers/douzhitong.png"
+name = "窦志彤"
+title = "海量数据"
+company = "北京研究所所长"
+
+[[card]]
+img = "/img/summit/speakers/wuxingxiong.png"
+name = "吴兴雄"
+title = "海量数据"
+company = "高级工程师"
+
 
 [[card]]
 img = "/img/summit/speakers/luolaquan.png"
