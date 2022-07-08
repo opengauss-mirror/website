@@ -168,6 +168,30 @@
   padding: 0 12px;
   font-size: 16px;
 }
+.guidepath{
+  margin: 16px 0 40px;
+  text-align: center;
+}
+.guidepath a{
+  font-size: 14px; 
+  color: #7D32EA;
+  line-height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.guidepath .arrow{
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background: url(../img/summit/arrow1.png) no-repeat center/cover;
+  transition: all .2s linear;
+}
+.guidepath a:hover .arrow{
+  transform: translate(4px);
+}
+
 @media screen and (max-width: 1000px) {
   #livePage {
       width:100%; 
@@ -285,10 +309,13 @@
   color: #000;
   line-height: 24px;
   display: inline-block;
-  margin-right: 40px;
-}
+  margin-right: 36px;
+} 
+.sub-container .dataItem{
+  grid-template-columns: 192px auto 90px 410px;
+} 
 .dateList .name{
-  width:90px;
+  width:100px;
   display: inline-block; 
   color: #555555;
   font-size: 16px;
@@ -781,8 +808,10 @@ margin: 16px 0 8px;
         padding-left: 80px;
         position: relative;
         min-height:42px;
+        white-space: normal;
     }
-    .dateList span{
+    
+    .dateList span,.dataItem .company{
         display: block !important;
         color: #555;
         font-size: 12px !important; 
@@ -974,6 +1003,7 @@ margin: 16px 0 8px;
       width: 100%; 
       position: relative;
       font-size: 0;
+      vertical-align: top;
     }
     .sub-tab{
       display: none;
@@ -981,9 +1011,11 @@ margin: 16px 0 8px;
     .sub-container{
       display: inline-block !important;
       width: 100%;
-       
+      vertical-align: top;
     }
-   
+    .guidepath {
+      margin: 12px 0 24px 
+  }
 } 
 
 
