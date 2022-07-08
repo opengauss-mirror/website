@@ -2,6 +2,9 @@
 title = "Organization"
 bgImg = "../img/breadcrumbs/member_bg.png"
 moImg = "../img/breadcrumbs/member_mo.png"
+boardtitle = "Board"
+uctitle = "User Committee"
+bctitle = "Board Committee"
 tctitle = "Technical Committee (TC)"
 sigtitle = "Special Interest Groups (SIGs)"
 usergroup = 'openGauss User Group (oGUG)'
