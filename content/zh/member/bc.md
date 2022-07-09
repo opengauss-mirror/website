@@ -2,10 +2,10 @@
 member = "bc-card"
 goto = "前往Gitee仓库" 
 list = "邮件列表："
-gitlink = "https://gitee.com/opengauss/uc"
-email = "uc@opengauss.org"
+gitlink = "https://gitee.com/opengauss/bc"
+email = "bc@opengauss.org"
 maillink = "mailto:uc@opengauss.org"
-bc = "用户委员会成员："
+bc = "品牌宣传委员会："
 
 [[card]]
 img = "/zh/member/img/liangbing11.png"
