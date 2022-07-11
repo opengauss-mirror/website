@@ -62,7 +62,7 @@ time = "下午"
         time= "09:30 - 09:35"
         desc = "中国计算机学会数据库专家致辞"
         name = "李战怀"
-        post  = "中国计算机学会 数据库专委会 主任"
+        post  = "中国计算机学会数据库专委会主任 "
     [[mainmodule.item]]
         time= "09:35 - 09:50"
         desc = "创未来 享非凡，共建开源数据库根社区"
@@ -309,11 +309,8 @@ liveid='10055'
     [[submodule.list]]
         time= "敬请期待"
         desc = "面向海量知识图谱的高性能图数据库系统gStore "
-        name = "邹磊磊"
-        [[submodule.list.option]] 
-          company = "北京大学教授、北京大学王选计算机研究所数据管理研究室主任"
-        [[submodule.list.option]]
-          company = "大数据分析与应用技术国家工程实验室（北京大学）知识集成与智能决策中心主任 "
+        name = "李文杰"  
+        company = "北京大学博士后 "
     [[submodule.list]]
         time= "敬请期待"
         desc = "时序数据生成与时序数据库测试 "
@@ -513,10 +510,9 @@ title = "南京基石数据技术有限责任公司"
 company = "深圳鲲鹏产业联盟高级顾问"
 
 [[card]]
-img = "/img/summit/speakers/zhoulei.png"
-name = "邹磊"
-title = "北京大学教授 北京大学王选计算机研究所数据管理研究室主任" 
-company = "大数据分析与应用技术国家工程实验室（北京大学）知识集成与智能决策中心主任" 
+img = "/img/summit/speakers/liwenjie.png"
+name = "李文杰"
+title = "北京大学博士后" 
 
 [[card]]
 img = "/img/summit/speakers/lichao.png"
