@@ -46,6 +46,12 @@ title = "Director"
 company='shentongdata'
 email = "mailto:guyunsu@shentongdata.com" 
 
+[[card]]
+img = "/zh/member/img/guozhijun.png"
+name = "Zhijun Guo"
+title = "Director"
+company='Bank of Communications Co., Ltd.'
+email = "mailto:guo.zj@bankcomm.com" 
 
 [[card]]
 img = "/zh/member/img/hanfeng.png"
