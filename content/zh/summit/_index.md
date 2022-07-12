@@ -15,7 +15,7 @@ infotext = "	  openGauss Developer Day 2022是openGauss社区发起并举办的�
 
 infotext1 = 'openGauss诚邀开发者齐参与，同贡献，释放开源数据库创新力量。'
 
-tit0 = "正在直播"  
+tit0 = "现场直播"  
 tit1 = "会议日程"  
 tit2 = "共建单位"   
 tit3 = "线上展厅"   
@@ -190,22 +190,22 @@ time = "下午"
 [[list]]
 identification = "list1"
 name = "数据库内核优化探秘"
-liveid='11158'
+liveid='11187'
 
 [[list]]
 identification = "list2"
 name = "数据库内核SQL Engine"
-liveid='11157'
+liveid='11189'
 
 [[list]]
 identification = "list3"
 name = "生态工具"
-liveid='11137'
+liveid='11186'
 
 [[list]]
 identification = "list4"
 name = "多模态"
-liveid='10055'
+liveid='11188'
 
 
 [[submodule]]

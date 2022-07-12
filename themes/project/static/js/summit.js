@@ -52,7 +52,8 @@ $(function () {
             `https://vhall.huawei.com/v2/watch/${liveId}?lang=zh&thirdId=${userName}`
         )
     }
-    creatUserId('11159')
+    creatUserId('11185')
+ 
 
     // 分论坛切换
     var subIndex = 0
@@ -86,7 +87,7 @@ $(function () {
         transformBox.stop(true, false).animate({ left: left }, 300)
         transformBox
             .find('.sub-container')
-            .removeClass('active')
+            .removeClass('active') 
             .eq(index)
             .addClass('active')
     }
@@ -102,4 +103,5 @@ $(function () {
         $(this).addClass('active').siblings('li').removeClass('active')
         $('.sub-container').removeClass('show').eq(index).addClass('show')
     })
+
 })

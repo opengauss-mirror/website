@@ -46,6 +46,14 @@ title = "理事"
 company='天津神舟通用数据技术有限公司'
 email = "mailto:guyunsu@shentongdata.com" 
 
+[[card]]
+img = "/zh/member/img/guozhijun.png"
+name = "郭志军"
+title = "理事"
+company='交通银行股份有限公司'
+email = "mailto:guo.zj@bankcomm.com" 
+
+
 
 [[card]]
 img = "/zh/member/img/hanfeng.png"
