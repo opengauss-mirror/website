@@ -190,22 +190,22 @@ time = "下午"
 [[list]]
 identification = "list1"
 name = "数据库内核优化探秘"
-liveid='11158'
+liveid='11187'
 
 [[list]]
 identification = "list2"
 name = "数据库内核SQL Engine"
-liveid='11157'
+liveid='11189'
 
 [[list]]
 identification = "list3"
 name = "生态工具"
-liveid='11137'
+liveid='11186'
 
 [[list]]
 identification = "list4"
 name = "多模态"
-liveid='10055'
+liveid='11188'
 
 
 [[submodule]]
