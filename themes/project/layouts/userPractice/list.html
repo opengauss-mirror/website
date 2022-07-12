@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+  {{ partial "head.html" . }}
+  <link rel="stylesheet" href="{{ "css/pagination.css" | relURL}}?t={{ mul 1000 (time now).Unix }}">
+  <link href="{{ "css/user-practice.css" | relURL}}?t={{ mul 1000 (time now).Unix }}" rel="stylesheet">
+
+  <body>
+
+    <div id="all">
+
+        <header>
+
+          {{ partial "nav.html" . }}
+
+        </header>
+        {{ partial "breadcrumbs.html" . }}
+
+        <div id="content">
+            {{ if isset .Params "id" }}
+
+              {{ partial .Params.id . }}
+
+            {{ else }}
+
+            <div class="container">
+                <div class="support-tools isPc">
+                    <div class="left-tools">
+                        {{ range .Params.list }}
+                        {{ if eq .identification "dbv"}}
+                        <div class="active">
+                          <i class={{ .identification }}></i><a href={{ "#" }}{{ .identification }}>{{ .name }}</a>
+                        </div>
+                        {{ else}}
+                        <div>
+                          <i class={{ .identification }}></i><a href={{ "#" }}{{ .identification }}>{{ .name }}</a>
+                        </div>
+                        {{ end }}
+
+                        {{ end }}
+                    </div>
+                    <div class="right-tools">
+                    {{ $root := .Params}}
+                        <div class="right-box">
+                            <div class="tool-detail">
+                                {{ range .Params.list }}
+                                {{ $id := .identification}}
+                                {{ $boxName := .name }}
+
+                                <div class="tool-item" id={{ .identification }}>
+                                    <div class="item-title"><i class={{ .identification }}></i>{{ $boxName }}</div>
+                                    <div class="item-detail">
+
+                                        {{ range $root.cards }}
+                                          {{ if eq .iden $id}}
+                                          <div class="item-box">
+                                              <p class="item-name"><a href={{.address}} target="_blank">{{.name}}</a></p>
+                                              <p class="item-desc">
+                                                {{.desc}}
+                                              </p>
+                                          </div>
+                                          {{ end }}
+                                        {{ end }}
+                                    </div>
+                                </div>
+                                {{ end }}
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="h5-support isH5">
+                    <div class="right-box">
+                        <div class="tool-detail">
+                            {{ range .Params.list }}
+                            {{ $id := .identification}}
+                            {{ $boxName := .name }}
+
+                            <div class="tool-item" id={{ .identification }}>
+                                <div class="item-title"><p><i class={{ .identification }}></i>{{ $boxName }} </p>{{ if eq .identification "dbv"}} <img src="/img/swiper/down.svg" alt="title icon"> {{ else }} <img src="/img/swiper/right.svg" alt="title icon">  {{ end}}</div>
+                                <div class={{ if eq .identification "dbv"}} {{ "item-detail" }} {{ else }} {{ "item-detail hide" }} {{ end }}>
+                                    {{ range $root.cards }}
+                                      {{ if eq .iden $id}}
+                                      <div class="item-box">
+                                          <p class="item-name"><a href={{.address}} target="_blank">{{.name}}</a></p>
+                                          <p class="item-desc">
+                                            {{.desc}} 
+                                          </p> 
+                                      </div>
+                                      {{ end }}
+                                    {{ end }}
+                                </div>
+
+                            </div>
+                            {{ end }}
+                        </div>
+                    </div>
+                </div>
+                <div class="questionnaire">
+                  {{ if .Params.userQuestionnaire }}
+                  <div class="ques-icon">
+                    <img src="../img/userPractice/tipsa.png" alt="新增故事">
+                      <div class="ques-info">
+                        <p>提示：<br>页面即将跳转到“问卷星”页面。为了更好地提供问卷服务，我们委托问卷星提供问卷调查服务，在您同意的情况下，问卷星将严格根据<a href="https://www.wjx.cn/wjx/license.aspx?type=1" target="_blank">《问卷星个人信息保护政策》</a>收集您的个人信息，我们也会严格遵从<a href="/zh/privacyPolicy.html" target="_blank">openGauss社区隐私政策</a>使用您提供的信息</p>
+                        <a href="https://www.wjx.cn/vj/Q2oF2sb.aspx" target="_blank" class="btn-jump">{{ .Params.feedback}}</a>
+                      </div>
+                  </div>
+                  {{end}}
+                </div>
+            </div>
+            <!-- /.container -->
+
+            {{ end }}
+        </div>
+        <!-- /#content -->
+
+        {{ partial "footer.html" . }}
+
+    </div>
+    <!-- /#all -->
+    {{ partial "scripts.html" . }}
+    <script src="{{ "js/pinchzoom.min.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>
+    <script src="{{ "js/user-practice.js" | relURL }}?t={{ mul 1000 (time now).Unix }}"></script>
+
+  </body>
+</html>
+

@@ -22,12 +22,13 @@ title = "Maintainer"
 email = "mailto:wangjiang16@huawei.com"
 gitee = "https://gitee.com/wang-jingle"
 
+
 [[card]]
-img = "/zh/member/img/zhaowenhao.png"
-name = "赵文浩"
+img = "/zh/member/img/fengwei.png"
+name = "冯伟"
 title = "Maintainer"
-email = "mailto:545612025@qq.com"
-gitee = "https://gitee.com/yang558"
+email = "mailto:f.fengwei@huawei.com"
+gitee = "https://gitee.com/flowill"
 
 
 [[card]]
@@ -128,11 +129,5 @@ title = "Committer"
 email = "mailto:vastdata.com.cn"
 gitee = "https://gitee.com/willloong"
 
-[[card]]
-img = "/zh/member/img/fengwei.png"
-name = "冯伟"
-title = "Committer"
-email = "mailto:f.fengwei@huawei.com"
-gitee = "https://gitee.com/flowill"
 
 +++

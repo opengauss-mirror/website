@@ -28,22 +28,8 @@ img = "/zh/member/img/liyang.png"
 name = "李杨"
 title = "Committer"
 email = "mailto:554903772@qq.com"
-gitee = "https://gitee.com/liyang0608"
-
-[[card]]
-img = "/zh/member/img/lijun.png"
-name = "李君"
-title = "Committer"
-email = "mailto:1255728208@qq.com"
-gitee = "https://gitee.com/li-jun056"
-
-[[card]]
-img = "/zh/member/img/jiangnan.png"
-name = "姜楠"
-title = "Committer"
-email = "mailto:docs66@outlook.com"
-gitee = "https://gitee.com/infomation1"
-
+gitee = "https://gitee.com/liyang0608" 
+ 
 [[card]]
 img = "/zh/member/img/guohuan.png"
 name = "郭欢"
@@ -57,5 +43,36 @@ name = "张翠娉"
 title = "Committer"
 email = "mailto:cuiping.zhang@enmotech.com"
 gitee = "https://gitee.com/zcp100_zcp100"
+
+
+ 
+
+[[card]]
+img = "/zh/member/img/fanyaqing.png"
+name = "樊雅清"
+title = "Committer"
+email = "mailto:fanyaqing@huawei.com"
+gitee = "https://gitee.com/fyqlpl"
+
+[[card]]
+img = "/zh/member/img/tongmeixia.png"
+name = "童美霞"
+title = "Committer"
+email = "mailto:870020620@qq.com"
+gitee = "https://gitee.com/tongdabao" 
+ 
+[[card]]
+img = "/zh/member/img/liuxu.png"
+name = "刘旭"
+title = "Committer"
+email = "mailto:xu.liu@enmotech.com"
+gitee = "https://gitee.com/mogliu"
+
+[[card]]
+img = "/zh/member/img/zhangleyi.png"
+name = "张乐奕"
+title = "Committer"
+email = "mailto:kamusis@gmail.com"
+gitee = "https://gitee.com/kamusis"
 
 +++

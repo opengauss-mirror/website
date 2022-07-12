@@ -54,10 +54,10 @@
     margin-right: 8px;
 }
 .summitPoster .time::before{
-    background: url("/img/summit2021/time1.png") no-repeat center/cover;
+    background: url("/img/summit/time1.png") no-repeat center/cover;
 }
 .summitPoster .address::before{
-    background: url("/img/summit2021/address.png") no-repeat center/cover;
+    background: url("/img/summit/address.png") no-repeat center/cover;
 }
 .summitPoster .btns{
     padding: 0 20px 0 28px;
@@ -102,68 +102,251 @@
 
 } 
 .summitMain .tit0{
-    background: url("/img/summit2021/tit0.png") no-repeat  center;
+    background: url("/img/summit/tit0.png") no-repeat  center;
 }
 .summitMain .tit1{
     background: url("/img/summit/tit1.png") no-repeat  center;
 }
 .summitMain .tit2{
-    background: url("/img/summit2021/tit2.png") no-repeat  center;
+    background: url("/img/summit/tit2.png") no-repeat  center;
 }
 .summitMain .tit3{
-    background: url("/img/summit2021/tit3.png") no-repeat  center;
+    background: url("/img/summit/tit3.png") no-repeat  center;
 }
-.summit-container h3{
+.summitMain .tit4{
+    background: url("/img/summit/tit4.png") no-repeat  center;
+}
+#livePage{
+  border:0 none;
+  width: 1140px;
+  display: block;
+}
+.liveBox{
+  display: grid;
+  grid-template-columns:repeat(4,1fr) ;
+  gap: 16px;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+.liveBox a{
+  height: 88px;
+  font-size: 18px;
+  text-align: center; 
+  color: #000; 
+  box-shadow: 0px 12px 32px 0px rgba(190,196,204,0.2000);
+  transition: none;
+  border-radius: 2px;
+  text-decoration: none !important;
+  border: 1px solid #7D32EA;
+  display: grid;
+    align-items: center;
+    line-height: 24px;
+}
+.liveBox a span{display: block;}
+.liveBox a:first-of-type{
+  grid-column: 1/5;
+} 
+.liveBox a.center{
+  flex: 1;
+}
+.liveBox a.active{
+  background:  url('../img/summit/live-active-bg.png') no-repeat center;
+  color: #fff;
+  border-color: transparent;
+} 
+.liveBox.mo{
+  display: none;
+  margin: 0 0 20px;
+}
+.live-select{
+  width: 100%;
+  height: 48px;
+  line-height: 48px;
+  padding: 0 12px;
+  font-size: 16px;
+}
+.guidepath{
+  margin: 16px 0 40px;
+  text-align: center;
+}
+.guidepath a{
+  font-size: 14px; 
+  color: #7D32EA;
+  line-height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.guidepath .arrow{
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background: url(../img/summit/arrow1.png) no-repeat center/cover;
+  transition: all .2s linear;
+}
+.guidepath a:hover .arrow{
+  transform: translate(4px);
+}
+
+@media screen and (max-width: 1000px) {
+  #livePage {
+      width:100%; 
+  } 
+  .liveBox.mo{
+      display:flex
+  }
+  .liveBox.pc{
+      display:none
+  } 
+  .liveBox a.center{
+      flex:inherit;
+      width: 100%;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 0;
+  }
+  .liveBox{
+      position: relative;
+      padding-top: 58px;
+  }
+  .liveBox a { 
+      flex:1; 
+      margin: 0 5px;
+      font-size: 14px;
+      line-height: 48px; 
+  } 
+  
+}
+.summit-container h3,.meetingtitle{
     font-size: 24px; 
     font-weight: normal;
     color: rgba(0, 0, 0, 0.85);
     line-height: 32px;
-    margin-bottom: 24px; 
+    margin-bottom: 24px;
+    text-align: center;
 }
 
 .summit-container{
     margin-top: 40px;
 }
-.dataItem{
-    display: flex;  
-    
+.dateList{
+  margin-bottom: 40px;
+}
+.agendaList{
+  margin-bottom: 40px;
+}
+.agendaItem{
+    display: flex;
     line-height:32px ;
     margin-bottom: 16px;
     align-items: center;
 }
 
-.dateList span{
+.agendaItem span{
     font-size: 18px; 
     color: #000;
     line-height: 24px;
 }
-.dateList .time{
-    width: 240px;
-    background: url("/img/summit2021/time.png") no-repeat left center;
+.agendaItem .time{
+    width: 192px;
+    background: url("/img/summit/time.png") no-repeat left center;
     padding-left: 30px; 
     color: rgba(0, 0, 0, 0.5);
 }
-.dateList .info{   
+.agendaItem .info{   
     /* width: 460px; 
     margin-right:40px;
      display: flex; */
      flex: 1;
-     display: flex;
+     display: flex; 
      align-items: center;
      height: 64px;
      justify-content: center;
      gap: 24px;
 }
-.dateList .info span{
+.dataItem .info {
+  display: flex;
+  align-items: center;
+}
+.agendaItem .info span{
   line-height: 64px;
   background: #FFFFFF;
   box-shadow: 0px 12px 32px 0px rgba(190, 196, 204, 0.2);
   border-radius: 2px;
   border: 1px solid #7D32EA;
   flex: 1; 
-font-size: 18px;
+  font-size: 18px;
   text-align: center;
 }
+.dataItem{
+  display: grid;
+  grid-template-columns: 192px 500px 90px 345px;
+  border-bottom:1px solid rgba(0, 0, 0, 0.15);
+  padding: 20px 0; 
+  line-height:24px ;
+  transition: background-color .25s ease; 
+  align-items: center;
+  min-height: 64px;
+}
+.dataItem:hover{
+  background-color: #f5f7fa;
+}
+.dataItem .db{
+  grid-column-start: 3;
+  grid-column-end: 5; 
+}
+.dataItem .db .inline:nth-child(2){
+  margin-top: 16px;
+}
+.dateList .desc{
+  font-size: 18px; 
+  color: #000;
+  line-height: 24px;
+  display: inline-block;
+  margin-right: 36px;
+} 
+.sub-container .dataItem{
+  grid-template-columns: 192px auto 96px 410px;
+} 
+.dateList .name{
+  width:100px;
+  display: inline-block; 
+  color: #555555;
+  font-size: 16px;
+}
+.dateList .post{
+  width:345px;
+  display: inline-block;
+  color: #555555;
+  font-size: 16px;
+  word-break: keep-all;
+}
+.post-more{
+  width:345px;
+}
+.dateList .inline{
+  display: flex;
+  align-items: center;
+}
+.dateList .time{
+  width: 192px;
+  font-size: 18px;
+  background: url("/img/summit/time.png") no-repeat left center;
+  padding-left: 30px; 
+  color: rgba(0, 0, 0, 0.5);
+}
+.dateList .info .desc{   
+  width: 460px; 
+  margin-right:40px;
+  display: inline-block;
+}
+
 .dateList .speaker{  
     min-width: 90px;
 }
@@ -180,43 +363,115 @@ font-size: 18px;
 }
 
 
+.sig-list{
+  display: flex;
+  justify-content: space-between;
+}
+.sig-list .time{
+  width: 192px;
+  background: url(/img/summit/time.png) no-repeat left center;
+  padding-left: 30px;
+  color: rgba(0, 0, 0, 0.5);
+  height: 20px;
+  font-size: 18px;
+}
+.sig-content{
+  flex: 1;
+}
+.sig-item{ 
+    background: #FFFFFF;
+    box-shadow: 0px 12px 32px 0px rgb(190 196 204 / 20%);
+    border-radius: 2px;
+    border: 1px solid #7D32EA; 
+    font-size: 18px; 
+    padding: 16px 24px ;
+    position: relative;margin-bottom: 16px; 
+} 
+.sig-item .name{
+  font-size: 18px; 
+  color: #000000;
+  line-height: 24px;
+  display: block;
+  font-weight: 500;
+}
+.sig-item .desc{
+  font-size: 14px; 
+  color: #555;
+  line-height: 22px;
+  margin-top: 10px;
+  display: block;
+}
+.sig-item .link{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  line-height: 40px;
+  background: rgba(125, 50, 234, .1);
+  border-radius: 0px 2px 0px 0px;
+  font-size: 14px; 
+  color: #7D32EA;
+  display: block;
+  text-align: center;
+}
+
 .timeTabs{
-    margin-top: 40px;
+    margin: 24px 0 40px;
+    text-align: center;
 }
 .timeTabs li{
-    display: inline-block;
-    font-size: 24px;
-    color: #000;
-    padding-bottom: 8px;
-    border-bottom:2px solid transparent;
-    margin-right: 64px;
-    cursor: pointer;
-    line-height: 24px;
+    display: inline-block; 
+    margin-right: 40px;
+    cursor: pointer; 
+    border-radius: 8px ;
+    border: 1px solid #CBCBCB; 
+    color: #CBCBCB;
+    width: 120px;
+    text-align: center;
+}
+.timeTabs li .taber-top{
+  line-height: 64px; 
+  font-size: 24px; 
+  
+}
+.timeTabs li .taber-bottom{
+  border-top: 1px solid #CBCBCB;
+  font-size: 20px; 
+  line-height: 36px;
 }
 .timeTabs li.active{
-    color: #755BC7;
-    border-color:#755BC7 ;
+    color: #fff;
+    background: #7D32EA;
+    border-color:#7D32EA ;
+}
+.timeTabs li:last-child{
+  margin-right: 0;
 }
 
 .sub-tab{
-    display: flex;
+    display: grid;
+    gap:16px;
+    grid-template-columns: repeat(4,266px);
     width: 100%;
-    margin-bottom:16px;
+    margin-bottom:40px;
 }
-.sub-tab li{
-    margin-right: 20px;
-    line-height: 64px;
+.sub-tab li{ 
+    height: 88px;  
     background: #FFFFFF;
-    box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    font-size: 20px;
-    color: #000;
-    flex: 1;
+    box-shadow: 0px 12px 32px 0px rgba(190, 196, 204, 0.2);
+    border-radius: 2px;
+    border: 1px solid #7D32EA;
+    font-size: 18px;
+    color: #000; 
     text-align: center;
     cursor: pointer;
+    padding:  0 16px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
-.sub-tab li:last-child{
-    margin-right: 0;
+.sub-tab li span{
+    display: block;
 }
 .sub-tab li.active{ 
     background: #755BC7; 
@@ -229,6 +484,22 @@ font-size: 18px;
     display: block;
 }
 
+.sub-tab-mo{
+  display: none;
+}
+.sub-tab-mo .btn{
+  cursor: pointer;
+  padding: 5px;
+  width: 8px;
+  height: 16px;
+  box-sizing: content-box;
+  background: url(../img/summit/prev.svg) center center no-repeat;
+}
+.sub-tab-mo .next{
+  transform: rotate(-180deg);
+}
+
+
 .sub-container .speaker{
     max-width: 400px;
 } 
@@ -237,6 +508,16 @@ font-size: 18px;
     display: flex; 
     align-items: center;
     display: none; 
+}
+.sub-container .meetingtitle{
+  margin-bottom: 16px;
+}
+.co-host{
+  font-size: 18px; 
+  color: #000000;
+  line-height: 24px;
+  text-align: center;
+  margin-bottom: 24px;
 }
 
 
@@ -346,6 +627,97 @@ cursor: pointer;
 }
 
 
+.partnersInfo .titleBar{
+  margin: 32px 0 24px;
+  text-align: center;
+}
+.partnersInfo .caption{ 
+  font-size: 24px;
+  color: #000;
+  line-height: 24px; 
+}
+.partnersInfo .txt{ 
+  font-size:16px;  
+  margin-top: 8px;
+}
+.partnersInfo .links-imgs{
+  display: flex; 
+  width: 100%;
+  flex-wrap: wrap;
+}
+.partnersInfo .links-imgs.one{
+  width: 570px;
+  margin: 0 auto;
+}
+.partnersInfo .links-imgs.one .line + .line{
+  border-top:0 none;
+}
+.partnersInfo .links-imgs.one .line{
+  width: 570px;
+  border-right: 1px solid #DFE1E8;
+}
+.partnersInfo .links-imgs .line {
+  display: block; 
+  border: 1px solid #DFE1E8;
+  border-right: 0;
+  text-align: center;
+  padding: 10px;
+  height: 100px;
+  box-sizing: border-box;
+  width: 285px; 
+}
+.partnersInfo .links-imgs .line.long{
+  width: 570px;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  display: flex;
+  flex-direction: column;
+}
+.partnersInfo .links-imgs .line:last-child {
+  border-right: 1px solid #DFE1E8;
+}
+.partnersInfo img {
+  vertical-align: top;
+  max-width: 100%;
+  transform: scale(.9);
+}
+.links-box{
+  border-top: 1px solid #DFE1E8;
+  width: 1140px;
+}
+.links-box  .links-imgs .line{
+  border-top:0 none;
+}
+
+
+.lecturer-content{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap:40px ;
+}
+.lecturer-item {
+  text-align: center;
+}
+.lecturer-item p{
+  font-size: 14px; 
+  color: #000000;
+  line-height: 22px;
+  margin-top: 4px;
+}
+.lecturer-item img{
+  width: 120px;
+  height: 120px;
+}
+.lecturer-item .title{ 
+color: #7D32EA;
+margin: 16px 0 8px;
+}
+
+
+
+
+
 @media screen and (max-width: 1550px){ 
     .fixed-nav {
         display: none;
@@ -371,6 +743,26 @@ cursor: pointer;
         border-top:0 none;
         width: 100%;
     }
+    .partnersInfo .links-imgs{
+      width: 100% !important;
+    }
+    .partnersInfo .links-imgs{
+        display: block;
+    }
+    .partnersInfo .links-imgs .line{
+        width: 100% !important;
+        border: 1px solid #DFE1E8;
+        border-bottom: 0 none;
+    }
+    .partnersInfo .links-imgs.one .line + .line {
+        border-top: 1px solid #DFE1E8;
+    }
+    .partnersInfo> .links-imgs .line:last-child{
+        border: 1px solid #DFE1E8;
+    }
+    .partnersInfo .links-box{
+        border-bottom: 1px solid #DFE1E8;
+    }
      
     .summitPoster .btns{
         left: 20px;
@@ -381,13 +773,24 @@ cursor: pointer;
     }
     .timeTabs li{
         font-size: 16px;
-        margin-right: 20px;
+        margin-right: 16px;
+        width: 88px;
     }
+    .timeTabs li .taber-top {
+      line-height: 48px;
+      font-size: 16px;
+    }
+    .timeTabs li .taber-bottom { 
+      font-size: 14px;
+      line-height: 32px;
+    }
+
     .sub-tab li{
         margin-right: 10px;
         line-height: 48px;
         font-size: 14px;
     }
+    
     .dataItem .box1 {
         margin-top: 6px;
     }
@@ -399,17 +802,51 @@ cursor: pointer;
         font-size: 12px;
     }
     .dataItem{
+        display: block;
+        height: auto;
+        padding: 12px 0;
+        padding-left: 80px;
         position: relative;
         min-height:42px;
-        margin-bottom: 8px;
+        white-space: normal;
     }
-    .dateList span{
+    
+    .dateList span,.dataItem .company{
+        display: block !important;
+        color: #555;
+        font-size: 12px !important; 
+        line-height: 21px !important; 
+    }
+    .dateList .inline{
+      display: block
+    }
+    .dateList .desc{
+      margin: 0;
+      color: #000;
+      
+      font-weight: 600;
+    }
+    
+    .dateList .info{
+        width: auto;
+        margin-right: 0;
+    }
+    .dateList .time{ 
+        font-size: 12px;
+        background: none;
+        padding-left: 0;
+        width: auto;
+        position: absolute;
+        left:0 ;
+        top:12px;
+    }
+    .agendaList span{
         display: block;
         color: #333;
         font-size: 12px;
         line-height: 40px
     }
-    .dateList .info span{
+    .agendaList .info span{
       min-height: 40px;
       line-height: 1.25;
       display: flex;
@@ -417,21 +854,42 @@ cursor: pointer;
       justify-content: center;
       font-size: 12px;
     }
-    .dateList .info span.inline{
+    .agendaList .info span.inline{
       height: 48px;
     }
-    .dateList .info{
+    .agendaList .info{
         width: auto;
         margin-right: 0;
         height: auto;
         gap: 8px;
     }
-    .dateList .time{ 
+    .agendaList .time,.sig-list .time{ 
         font-size: 12px;
         background: none; 
-        width: 78px;
+        width: 80px;
         padding: 0;
         white-space: nowrap;
+    }
+    .sig-item{
+      padding: 8px 36px 8px 16px;
+      margin-bottom: 8px;
+    }
+    .sig-item .name{
+      font-size: 14px;
+      line-height: 24px; 
+    }
+    .sig-item .desc{
+      font-size: 12px;
+      line-height: 16px;
+      margin-top: 4px;
+    }
+    .sig-item .link{
+      width: 32px;
+      bottom: 0;
+      padding: 0 5px;
+      line-height: 24px;
+      display: flex;
+      align-items: center;
     }
     .meeting-content{
       display: block;
@@ -440,10 +898,14 @@ cursor: pointer;
     .meeting-item{
       margin: 16px auto 0;
     }
-   
+    .lecturer-content { 
+      grid-template-columns: repeat(2,1fr); 
+    }
+    .lecturer-content .txt{font-size: 12px;
+      line-height: 18px;}
 } 
 
-@media screen and (min-width:768px) and (max-width:960px) {    
+@media screen and (min-width:768px) and (max-width:960px) {
     .summitPoster { 
         height: 320px;
     }
@@ -454,7 +916,7 @@ cursor: pointer;
     }
 } 
 
-@media screen and (max-width: 768px){ 
+@media screen and (max-width: 768px){
     .summitMain{
         width: 100% !important;
         padding: 0 16px;
@@ -501,12 +963,17 @@ cursor: pointer;
         font-weight: bold;
         padding-left: 6px;
     }
-    .summit-container h3{
-        font-size: 14px;
-        line-height: 20px;
+    .summit-container h3,.meetingtitle{
+        font-size: 16px;
+        line-height: 24px;
         text-align: center;
         font-weight: bold;
     }
+    .co-host {
+      font-size: 14px; 
+      line-height: 21px; 
+      margin-bottom: 24px;text-align: center;
+  }
     .dateList li{
         line-height: 20px;
     }
@@ -516,10 +983,39 @@ cursor: pointer;
         font-size: 14px;
         
     }
-    .review-wrapper .link{
-      font-size: 12px;
-      line-height:18px;
+    .sub-tab-mo{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-bottom: 10px;
     }
+    .sub-tab-mo .title{
+      flex: 1;
+      text-align: center;
+    }
+    .sub-area{
+      overflow: hidden;
+      width: 335px;
+      margin: 0 auto;
+    }
+    .transform-box{
+      white-space: nowrap;
+      width: 100%; 
+      position: relative;
+      font-size: 0;
+      vertical-align: top;
+    }
+    .sub-tab{
+      display: none;
+    }
+    .sub-container{
+      display: inline-block !important;
+      width: 100%;
+      vertical-align: top;
+    }
+    .guidepath {
+      margin: 12px 0 24px 
+  }
 } 
 
 

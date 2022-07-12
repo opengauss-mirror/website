@@ -150,7 +150,6 @@ $(document).ready(function () {
     };
     window["addSearchBuriedData"] = obj;
   }
-  let typeList = [];
   remoteMethods = {
     getSearchData: function (postData, callback) {
       localStorage.setItem("search_key", postData.keyword);
@@ -163,6 +162,7 @@ $(document).ready(function () {
         crossDomain: true,
         datatype: "json",
         success: function (data) {
+          let typeList = [];
           if (data.status === 201) {
             localStorage.setItem("searchToal", 0);
             localStorage.setItem("searchType", []);
@@ -380,8 +380,22 @@ $(document).ready(function () {
           });
           // 用户点击搜索结果的埋点
           $(".detail-content>.content-box").click(function (e) {
-            localStorage.setItem("search_rank_num", $(this).attr("class"));
             const tag = document.getElementsByClassName("active")[0].key;
+            let tempPath = window.location.origin;
+            const path = $(this).find("p").attr("path");
+            const type = $(this).find("p").attr("type");
+            if (type === "docs") {
+              tempPath = tempPath + "/" + lang + "/docs/" + path + ".html";
+            }
+            if (type === "news") {
+              tempPath = tempPath + "/" + lang + "/" + path + ".html";
+            }
+            if (type === "events") {
+              tempPath = tempPath + "/" + lang + "/" + path + ".html";
+            }
+            if (type === "blogs") {
+              tempPath = tempPath + "/" + lang + "/blogs/blogs.html?" + path;
+            }
             if (tag === "") {
               tag = "all";
             }
@@ -390,6 +404,7 @@ $(document).ready(function () {
               search_tag: tag,
               search_rank_num: $(this).attr("data-index"),
               search_result_total_num: localStorage.getItem("searchToal"),
+              search_result_url: tempPath,
             };
             sensors.setProfile({
               profileType: "selectSearchResult",

@@ -16,10 +16,10 @@ infotext = "openGauss Summit 2021 是由openGauss开源社区发起并举办的�
 
 infotext1 = "学术专家、行业用户、合作伙伴和社区贡献者齐聚openGauss峰会，共同探讨数据库技术与行业数字化转型过程的融合创新，展现开源数据库最新的创新技术和多元化开放生态。"
 
-tit0 = "精彩回顾"  
-tit1 = "峰会日程"  
-tit2 = "共建单位"   
-tit3 = "线上展厅"   
+tit0 = "精彩回顾"
+tit1 = "峰会日程"
+tit2 = "共建单位"
+tit3 = "线上展厅"
 
 forenoon = '12月28日 上午'
 afternoon = '12月28日 下午'

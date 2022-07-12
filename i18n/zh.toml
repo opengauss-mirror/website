@@ -62,6 +62,10 @@ other = "想了解更多？"
 [feature_intro_Overview]
 other = "点击此处下载openGauss整体概述PPT"
 
+[feature_intro_Link]
+other = "https://learningvideo.obs.ap-southeast-1.myhuaweicloud.com/openGauss%20%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84.pptx"
+ 
+
 [main_news_title]
 other = "最新社区资讯"
 

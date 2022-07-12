@@ -504,8 +504,24 @@ function initSensor() {
     heatmap: {
       //是否开启点击图，default 表示开启，自动采集 $WebClick 事件，可以设置 'not_collect' 表示关闭。
       clickmap: "default",
-      custom_property: function () {
-        return window["sensorsCustomBuriedData"];
+      // custom_property: function () {
+      //   return window["sensorsCustomBuriedData"];
+      // },
+      custom_property:function(element_target){
+        //比如您需要给有 data=test 属性的标签的点击事件增加自定义属性 name:'aa' ，则代码如下：
+        let fromAdvertised=""
+        if(sessionStorage.getItem('fromAdvertised')){
+          fromAdvertised=sessionStorage.getItem('fromAdvertised')
+        }
+        if(element_target.getAttribute('class') === 'down-teble-down'){
+          return {
+            ...window["sensorsCustomBuriedData"],
+            fromAdvertised:fromAdvertised,
+            downloadUrl:element_target.getAttribute('href')
+          }
+        }else{
+          return window["sensorsCustomBuriedData"]
+        }
       },
       //是否开启触达图，not_collect 表示关闭，不会自动采集 $WebStay 事件，可以设置 'default' 表示开启。
       scroll_notice_map: "not_collect",

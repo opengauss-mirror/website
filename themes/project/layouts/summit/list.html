@@ -39,14 +39,42 @@
             <div class="container summitMain">  
                 <p class="text">{{ .Params.infotext }} </p>
                 <p class="text">{{ .Params.infotext1 }} </p>
+                <div class="live">
+                  <h2 class="tit0" id="liveNav">{{ .Params.tit0 }} </h2> 
+                  <div class="liveBox mo">
+                    <select class="live-select">
+                      <option value="11158">{{ .Params.summittitle }}</option>
+                      {{ range .Params.list }}
+                        <a href="javascript:;" data-id="{{ .liveid }}"><p>{{ .name }}<span>分论坛</span></p></a>
+                        <option value="{{ .liveid }}">{{ .name }}分论坛</option>
+                      {{ end }} 
+                    </select>
+                  </div> 
+                  <iframe
+                  id="livePage"
+                  style="height:550px;"
+                  allow="camera *;microphone *;"
+                  border="0"
+                  scrolling="no"
+                  src=""
+                  allowfullscreen="true"
+                  webkitallowfullscreen="true"
+                  mozallowfullscreen="true"
+                  ></iframe>
+                  <div class="liveBox pc">  
+                    <a href="javascript:;" class="center active" data-id="11185">{{ .Params.summittitle }}</a>
+                    {{ range .Params.list }}
+                      <a href="javascript:;" data-id="{{ .liveid }}"><p>{{ .name }}<span>分论坛</span></p></a>
+                    {{ end }} 
+                </div> 
+                </div>
                 <h2 class="tit1" id="dayNav">{{ .Params.tit1 }} </h2> 
-               
                 {{ range .Params.module }} 
-                    <div class="summit-container show"> 
-                        <h3>{{ .daytime }}</h3> 
-                        <div class='dateList'>  
+                    <div class=""> 
+                        <h3 class="meetingtitle">{{ .daytime }}</h3> 
+                        <div class='agendaList'>  
                             {{ range $index, $item := .item}}
-                                <div class="dataItem">
+                                <div class="agendaItem">
                                     <span class="time">{{ $item.time }}</span>
                                     <div class="info">
                                       {{ if $item.desc  }}
@@ -62,8 +90,146 @@
                         </div>  
                     </div>
                 {{ end }}
+                <h3 class="meetingtitle">{{ .Params.meetingtitle }}</h3>
+                <ul class="timeTabs"> 
+                  {{ range .Params.timetab }}
+                        {{ if eq .identification "mainforum"}}
+                        <li class="active">
+                            <div class="taber-top">{{ .name }}</div>
+                            <div class="taber-bottom">{{ .time }}</div>
+                        </li>
+                        {{ else}}
+                        <li class="">
+                          <div class="taber-top">{{ .name }}</div>
+                            <div class="taber-bottom">{{ .time }}</div>
+                        </li>
+                        {{ end }} 
+                    {{ end }}
+              </ul>
+                {{ range .Params.mainmodule }} 
+                    <div class="summit-container show"> 
+                        <h3 class="meetingtitle">{{ .daytime }}</h3> 
+                        <div class='dateList'>  
+                            {{ range $index, $item := .item}}
+                                <div class="dataItem">
+                                    <span class="time">{{ $item.time }}</span>
+                                     
+                                      <span class="desc">{{ $item.desc }} </span>
+                                      {{ if $item.post  }}
+                                        <span class="name">{{ $item.name }} </span>
+                                        <span class="post">{{ $item.post }} </span>
+                                      {{ else }}
+                                      <div class="db">
+                                          {{ range $index, $option := .option}}
+                                          <div class="inline">
+                                            <span class="name">{{ $option.name }} </span>
+                                            <div class="post-more">
+                                              <span class="post">{{ $option.post }} </span>
+                                              <span class="post">{{ $option.post1 }} </span>
+                                            </div>
+                                          </div>
+                                          {{ end }}
+                                        </div>
+                                      {{ end }}
+                                     
+                                </div>  
+                            {{ end }}
+                        </div>  
+                    </div>
+                {{ end }}
+                <div class="summit-container "> 
+                  <ul class="sub-tab">
+                    {{ range .Params.list }}
+                        {{ if eq .identification "list1"}}
+                        <li class="active">
+                            {{ .name }} <span>分论坛</span>
+                        </li>
+                        {{ else}}
+                        <li class="">
+                            {{ .name }}<span>分论坛</span>
+                        </li>
+                        {{ end }} 
+                    {{ end }}
+                </ul>
+                <div class="sub-tab-mo">
+                  <div class="prev btn"></div>
+                  <div class="title">数据库内核Storage Engine</div>
+                  <div class="next btn"></div>
+                </div>
+                <div class="sub-area">
+                  <div class="transform-box">
+                  {{ range .Params.submodule }} 
+                        {{ if eq .ide "list1"}}
+                            <div class="sub-container show">
+                              <h3 class="meetingtitle">{{ .name }}</h3> 
+                              <p class="co-host">{{ .cohost }}</p>
+                                <div class='dateList'>
+                                    {{ range $index, $item := .list}}
+                                        <div class="dataItem">
+                                            <span class="time">{{ $item.time }}</span>
+                                            <span class="desc">{{ $item.desc }}</span>
+                                            <span class="name">{{ $item.name }} </span>
+                                            {{ if $item.company  }}
+                                                <span class="company">{{ $item.company }} </span>
+                                            {{ else }}
+                                              <div class="flex">
+                                                  {{ range $index, $option := .option}}
+                                                    <span class="company">{{ $option.company }} </span>
+                                                  {{ end }}
+                                                </div>
+                                            {{ end }}
+                                        </div>  
+                                    {{ end }}
+                                </div>  
+                            </div>
+                            {{ else}}
+                                <div class="sub-container"> 
+                                  <h3 class="meetingtitle">{{ .name }}</h3> 
+                                  <p class="co-host">{{ .cohost }}</p>
+                                    <div class='dateList'>   
+                                        {{ range $index, $item := .list}}
+                                            <div class="dataItem">
+                                                <span class="time">{{ $item.time }}</span>
+                                                <span class="desc">{{ $item.desc }}</span> 
+                                                <span class="name">{{ $item.name }} </span>
+                                                {{ if $item.company  }}
+                                                    <span class="company">{{ $item.company }} </span>
+                                                {{ else }}
+                                                  <div class="option">
+                                                      {{ range $index, $option := .option}}
+                                                        <p class="company">{{ $option.company }} </p>
+                                                      {{ end }}
+                                                    </div>
+                                                {{ end }}
+                                            </div>  
+                                        {{ end }}
+                                    </div>  
+                                </div> 
+                        {{ end }}
+                    {{ end }} 
+                  </div>
+              </div>
+            </div>
+              <div class="summit-container ">
+                {{ range .Params.sigmodule }}  
+                      <h3>{{ .daytime }}</h3>
+                      <div class="guidepath"><a  href="{{ .guidepath }}" target="_blank" >{{ .guide }}<i class="arrow"></i></a></div>
+                      <div class='sig-list'>
+                        <span class="time">{{ .time }}</span>
+                        <div class="sig-content">
+                          {{ range $index, $item := .item}}
+                              <div class="sig-item"> 
+                                  <span class="name">{{ $item.name }}</span>
+                                  <span class="desc">{{ $item.desc }} </span>
+                                  <a href="{{ $item.link }}" target="_blank" class="link">报名</a>
+                              </div>  
+                          {{ end }}
+                        </div>
+                      </div>   
+                {{ end }}
+              </div>
 
-                <div class="meeting-content "> 
+                <!-- <div class="meeting-content "> 
                 {{ range .Params.meetinglist }} 
                     <div class="meeting-item "> 
                       <a href="{{ .link }}" target="_blank">
@@ -72,6 +238,79 @@
                       </a>
                     </div>
                 {{ end }}
+              </div> -->
+
+              <!-- 演讲嘉宾 -->
+              <h2 class="tit2" id="lecturerNav">{{ .Params.tit4 }} </h2>
+              <div class="lecturer-content">
+                {{ range .Params.card }} 
+                  <div class="lecturer-item">
+                    <img src="{{ .img }}" alt="中国软件行业协会">
+                    <p class="title">{{ .name }}</p>
+                    <p class="txt">{{ .title }}</p>
+                    <p class="txt">{{ .company }}</p>
+                  </div>
+                  {{ end }}
+              </div>
+
+              <!-- 指导单位 -->
+              <h2 class="tit2" id="partnerNav">{{ .Params.tit2 }} </h2>
+              <div class="partnersInfo"> 
+                  <div class="titleBar">
+                      <p class="caption">指导单位</p>
+                  </div>
+                  <div class="links-imgs one">
+                      <div class="line"><img src="/img/summit/ccf.png" alt="数据库专业委员会"></div> 
+                  </div> 
+                  <div class="titleBar">
+                      <p class="caption">主办单位</p>
+                  </div>
+                  <div class="links-imgs one">
+                      <div class="line"><img src="/img/summit/opengauss.png" alt="opengauss"></div>
+                  </div>
+                  <div class="titleBar">
+                      <p class="caption">联合主办</p> 
+                  </div>
+                  
+                  <div class="links-box">
+                      <div class="links-imgs ">
+                        <div class="line"><img src="/img/summit/vastdata.png" alt="海量数据"></div>  
+                        <div class="line"><img src="/img/summit/enmotech.png" alt="云和恩墨"></div>
+                        <div class="line"><img src="/img/summit/dft.png" alt="东方通"></div>  
+                          <div class="line"><img src="/img/summit/qhdx.png" alt="清华大学"></div>
+                      </div> 
+                  </div>
+
+                  <div class="titleBar">
+                    <p class="caption">协办单位</p> 
+                </div>
+                
+                <div class="links-box">
+                    <div class="links-imgs ">
+                      <div class="line"><img src="/img/summit/mobile.png" alt="中国移动"></div>
+                      <div class="line"><img src="/img/summit/unicom.png" alt="中国联通"></div>
+                      <div class="line"><img src="/img/summit/SuperMap.png" alt="SuperMap"></div>
+                      <div class="line"><img src="/img/summit/shenzhou.png" alt="神州通用"></div>
+                    </div>
+                    <div class="links-imgs ">
+                      <div class="line"><img src="/img/summit/gbase.png" alt="天津南大通用数据技术股份有限公司"></div>
+                      <div class="line"><img src="/img/summit/cjb.png" alt="超聚变"></div> 
+                      <div class="line"><img src="/img/summit/xugu.png" alt="虚谷伟业"></div>
+                      <div class="line"><img src="/img/summit/tyt.png" alt="北京太阳塔信息科技有限责任公司"></div> 
+                    </div> 
+                    <div class="links-imgs ">
+                      <div class="line"><img src="/img/summit/SphereEx.png" alt="SphereEx"></div>
+                      <div class="line"><img src="/img/summit/bld.png" alt="宝兰德"></div> 
+                      <div class="line"><img src="/img/summit/puyuan.png" alt="普元信息技术股份有限公司"></div>  
+                      <div class="line"><img src="/img/summit/jindie.png" alt="深圳市金蝶天燕云计算股份有限公司"></div>  
+                      
+                    </div>
+                    <div class="links-imgs ">
+                      <div class="line"><img src="/img/summit/beijingkunpeng.png" alt="北京鲲鹏"></div> 
+                      <div class="line"><img src="/img/summit/gansukunpeng.png" alt="甘肃鲲鹏"></div>  
+                      <div class="line"><img src="/img/summit/henankunpeng.png" alt="河南鲲鹏"></div> 
+                    </div>  
+                </div>
               </div>
                 
 

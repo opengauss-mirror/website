@@ -295,9 +295,9 @@ paginate = 10
     parent = "community"
 
 [[languages.zh.menu.main]]
-    identifier = "userStory"
-    name = "用户故事"
-    url  = "/zh/userStory.html"
+    identifier = "userPractice"
+    name = "用户实践"
+    url  = "/zh/userPractice.html"
     weight = 6
     parent = "community"
 
