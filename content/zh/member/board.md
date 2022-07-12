@@ -44,7 +44,7 @@ img = "/zh/member/img/guyunsu.png"
 name = "顾云苏"
 title = "理事"
 company='天津神舟通用数据技术有限公司'
-email = "mailto:guo.zj@bankcomm.com" 
+email = "mailto:guyunsu@shentongdata.com" 
 
 [[card]]
 img = "/zh/member/img/guozhijun.png"
