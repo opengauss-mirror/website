@@ -312,7 +312,7 @@
   margin-right: 36px;
 } 
 .sub-container .dataItem{
-  grid-template-columns: 192px auto 90px 410px;
+  grid-template-columns: 192px auto 96px 410px;
 } 
 .dateList .name{
   width:100px;
