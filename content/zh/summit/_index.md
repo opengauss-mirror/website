@@ -23,6 +23,9 @@ tit4 = "演讲嘉宾"
 
 meetingtitle ='7月15日 （线下 + 直播）'
 
+livemainid = '11185'
+livemaintestid = '11190'
+
 
 [[timetab]]
 identification = "mainforum"
@@ -187,8 +190,7 @@ time = "下午"
   link='https://shimo.im/forms/vVqRV1woxPheEBqy/fill'
 
 
-livemainid = '11185'
-livemaintestid = '11190'
+
 
 [[list]]
 identification = "list1"
