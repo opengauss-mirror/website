@@ -249,7 +249,7 @@ name = "神舟通用"
         name = "海量数据"
         link = "https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/DBV/vastdata/vastdata.mp4"
     [[videolist.item]]
-        name = "神州通用"
+        name = "神舟通用"
         link = "https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/DBV/shentongdata/shentongdata.mp4"
     [[videolist.item]]
         name = "华为云"

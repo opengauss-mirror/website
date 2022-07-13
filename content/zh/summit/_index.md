@@ -187,25 +187,32 @@ time = "下午"
   link='https://shimo.im/forms/vVqRV1woxPheEBqy/fill'
 
 
+livemainid = '11185'
+livemaintestid = '11190'
+
 [[list]]
 identification = "list1"
 name = "数据库内核优化探秘"
 liveid='11187'
+liveTestid='11192'
 
 [[list]]
 identification = "list2"
 name = "数据库内核SQL Engine"
 liveid='11189'
+liveTestid='11194'
 
 [[list]]
 identification = "list3"
 name = "生态工具"
 liveid='11186'
+liveTestid='11191'
 
 [[list]]
 identification = "list4"
 name = "多模态"
 liveid='11188'
+liveTestid='11193'
 
 
 [[submodule]]
@@ -215,8 +222,8 @@ liveid='11188'
     [[submodule.list]]
         time= "13:30 - 13:40"
         desc = "开场致辞 "
-        name = "肖枫"
-        company = "海量数据总裁 "
+        name = "王振伟"
+        company = "海量数据联席总裁 "
     [[submodule.list]]
         time= "13:40 - 14:05"
         desc = "批量性能突破 - PL/pgSQL引擎优化 "
@@ -308,7 +315,7 @@ liveid='11188'
         time= "14:00 - 14:20"
         desc = "神通高斯数据库生态实践 "
         name = "顾云苏"
-        company = "神州通用总裁" 
+        company = "神舟通用总裁" 
     [[submodule.list]]
         time= "14:20 - 14:40"
         desc = "openGauss数据库的可观测性 "
@@ -466,10 +473,9 @@ title = "超图研究院内核研发中心"
 company = "产品总监"
 
 [[card]]
-img = "/img/summit/speakers/xiaofeng.png"
-name = "肖枫"
-title = "海量数据"
-company = "总裁"
+img = "/img/summit/speakers/wangzhengwei.png"
+name = "王振伟"
+title = "海量数据联席总裁" 
 
 [[card]]
 img = "/img/summit/speakers/huangxiaotao.png"
@@ -556,7 +562,7 @@ company = "资深技术咨询总监"
 [[card]]
 img = "/img/summit/speakers/guyunshu.png"
 name = "顾云苏"
-title = "神州通用"
+title = "神舟通用"
 company = "总裁"
 
 [[card]]
