@@ -8,19 +8,6 @@ feedback = "新增故事"
 feedbackLink = "https://www.wjx.cn/vj/OmBWuRQ.aspx"
 
 
-
-
-
-[[list]]
-identification = "dbv"
-name = "DBV"
-
-[[list]]
-identification = "isv"
-name = "ISV"
-
- 
-
 [[list]]
 identification = "finance"
 name = "Finance/Banking"
@@ -41,9 +28,17 @@ name = "Energy/Electricity"
 
 
 [[list]]
+identification = "dbv"
+name = "DBV"
+
+[[list]]
+identification = "isv"
+name = "ISV"
+
+
+[[list]]
 identification = "other"
 name = "Other"
-
 
 
 
@@ -54,6 +49,12 @@ desc = "使用openGauss替换部分老旧数据库，部署openGauss服务器节
 address = "https://www.gx.csg.cn/"
 weight = 1
 
+[[cards]]
+iden = "developer"
+name = "北京超图软件股份有限公司"
+desc = "Yukon（禹贡）空间数据库，基于openGauss扩展空间数据的存储、计算和管理能力，提供专业的GIS（Geographic Information System）功能，赋能传统关系型数据库。"
+address = "http://cn.supermap.com/"
+weight = 1
 
 [[cards]]
 iden = "developer"
@@ -88,6 +89,13 @@ iden = "developer"
 name = "兰州西云图信息技术有限公司"
 desc = "使用openGauss使能工业互联网平台业务，部署openGauss服务器节点数为1~10个。"
 address = "https://www.xiyuntu.com/"
+weight = 3
+
+[[cards]]
+iden = "developer"
+name = "苏州公共信用信息中心"
+desc = "非核心业务使用 MogDB 数据库并部署在x86环境下，部署openGauss服务器节点数为1~10个。"
+address = "https://credit.suzhou.gov.cn/"
 weight = 3
 
 [[cards]]
