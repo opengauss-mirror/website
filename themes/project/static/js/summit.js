@@ -10,7 +10,7 @@ $(function () {
             } catch (e) {
                 data = event.data
             }
-            console.log('data', data)
+            // console.log('data', data)
             if (data.height == 'auto') {
                 livePage.css('height', 550)
             } else if (data.height) {
@@ -22,17 +22,24 @@ $(function () {
         },
         false
     )
-
+    
+    // 判断是否是测试站
+     var isTest = window.location.host.includes('test.osinfra'); 
     $('.liveBox a').click(function () {
-        let liveId = $(this).data('id')
-        $(this).addClass('active').siblings('a').removeClass('active')
-        creatUserId(liveId)
+        let liveId = $(this).data('id');
+        let liveTestId = $(this).data('testid');
+        $(this).addClass('active').siblings('a').removeClass('active');
+
+        creatUserId(isTest?liveTestId:liveId)
     })
-    // 移动端直播选择
+    // 移动端直播事件
     $('.live-select').change(function () {
-        creatUserId($(this).val())
+        var liveId = $(this).val();
+        let liveTestId = $(this).find("option:selected").data('testid');
+        creatUserId(isTest?liveTestId:liveId)
     })
 
+    creatUserId(isTest?'11190':'11185')
     // 直播参数获取、生成随机username
     function creatUserId(liveId) {
         let digit = Math.round(Math.random() * 10)
@@ -52,8 +59,6 @@ $(function () {
             `https://vhall.huawei.com/v2/watch/${liveId}?lang=zh&thirdId=${userName}`
         )
     }
-    creatUserId('11185')
- 
 
     // 分论坛切换
     var subIndex = 0
