@@ -60,6 +60,11 @@ $(function () {
         )
     }
 
+
+    $('.gotolive').click(function(){
+      document.getElementById('live').scrollIntoView({ behavior: "smooth", block: "start" })
+    })
+
     // 分论坛切换
     var subIndex = 0
     var subLen = 4
