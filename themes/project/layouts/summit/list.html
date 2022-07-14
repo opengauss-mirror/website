@@ -23,23 +23,15 @@
 
             {{ else }}
             <div class="summitPoster" style="background-image: url(/img/summit/banner.jpg) ">
-                <div class="poster">
-                    <!-- <div class="info">
-                        <h2>{{ .Params.summittitle }} </h2>
-                        <h3>{{ .Params.slogan }} </h3>
-                        <p class='txt time'>{{ .Params.time }} </p>
-                        <p
-                        <p class='txt address'>{{ .Params.address }} </p> 
-                    </div>
-                     -->
+                <div class="poster"> 
                     <div class="postertext" style="background-image: url(/img/summit2021/text@2x.png) "></div>
-                    <a class="btns" href='https://e-campaign.huawei.com/m/aIFru2' target="_blank">立即报名<i class="arrow"></i></a>
+                    <a class="btns gotolive"  href='javascript:;'>观看直播<i class="arrow"></i></a>
                 </div>
             </div>
             <div class="container summitMain">  
                 <p class="text">{{ .Params.infotext }} </p>
                 <p class="text">{{ .Params.infotext1 }} </p>
-                <div class="live">
+                <div class="live" id="live">
                   <h2 class="tit0" id="liveNav">{{ .Params.tit0 }} </h2> 
                   <div class="liveBox mo">
                     <select class="live-select">
@@ -228,16 +220,7 @@
                 {{ end }}
               </div>
 
-                <!-- <div class="meeting-content "> 
-                {{ range .Params.meetinglist }} 
-                    <div class="meeting-item "> 
-                      <a href="{{ .link }}" target="_blank">
-                        <p class="title">{{ .name }}</p>
-                        <p class="en">{{ .en }}</p>
-                      </a>
-                    </div>
-                {{ end }}
-              </div> -->
+               
 
               <!-- 演讲嘉宾 -->
               <h2 class="tit2" id="lecturerNav">{{ .Params.tit4 }} </h2>

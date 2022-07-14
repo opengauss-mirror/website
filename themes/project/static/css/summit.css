@@ -212,8 +212,7 @@
       margin: 0;
   }
   .liveBox{
-      position: relative;
-      padding-top: 58px;
+      position: relative; 
   }
   .liveBox a { 
       flex:1; 
@@ -576,41 +575,7 @@
     width: auto;
 }
 
-
-.meeting-content{
-  display: flex;
-  justify-content: space-between;
-  margin-top: 64px;
-}
-.meeting-item{
-  width: 296px;
-  height: 240px;
-  text-align: center;
-  background: url(../img/summit/img1.png) no-repeat center/cover;
-}
-.meeting-item a{
-  display: flex;
-  height: 100%;
-  width: 100%;;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-}
-.meeting-item .title{
-  font-size: 36px;
-  color: #FFFFFF;
-line-height: 48px;
-margin-bottom: 24px;
-}
-.meeting-item .en{
-  font-size: 28px;
-  color: #FFFFFF;
-  line-height: 36px;
-  padding: 0 55px;
-}
-.meeting-item a:hover{
-  text-decoration: none;
-}
+ 
  
 .review-wrapper{
   margin-top: 64px;
