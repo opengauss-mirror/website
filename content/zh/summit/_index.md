@@ -47,7 +47,7 @@ time = "下午"
 [[module]] 
     daytime = "7月14日（线下）" 
     [[module.item]]
-        time= "14:00 - 15:30"
+        time= "13:30 - 15:30"
         [[module.item.option]]
         desc = "技术委员会工作会议"
         [[module.item.option]]
