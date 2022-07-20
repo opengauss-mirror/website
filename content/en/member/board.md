@@ -70,14 +70,6 @@ company = "Postal Savings Bank of China Co., Ltd."
 
 
 [[card]]
-img = "/zh/member/img/hujie.png"
-name = "Jie Hu "
-title = "Director"
-email = "mailto:zhhujie@hxb.com.cn"
-company = "Hua Xia Bank Co., Limited"
-
-
-[[card]]
 img = "/zh/member/img/liguoliang.png"
 name = "Guoliang Li "
 title = "Director"

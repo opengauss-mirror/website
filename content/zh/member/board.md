@@ -72,14 +72,6 @@ company = "中国邮政储蓄银行股份有限公司"
 
 
 [[card]]
-img = "/zh/member/img/hujie.png"
-name = "胡捷"
-title = "理事"
-email = "mailto:zhhujie@hxb.com.cn"
-company = "华夏银行股份有限公司"
-
-
-[[card]]
 img = "/zh/member/img/liguoliang.png"
 name = "李国良"
 title = "理事"
