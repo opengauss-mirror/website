@@ -69,5 +69,12 @@ name = "晏海婷"
 title = "委员"
 email = "mailto:yanHT@xugudb.com"
 company = "成都虚谷伟业科技有限公司"
+
+[[card]]
+img = "/zh/member/img/zhangquan.png"
+name = "张荃"
+title = "委员"
+email = "mailto:zhangquan@tongtech.com"
+company = "北京东方通科技股份有限公司"
  
 +++

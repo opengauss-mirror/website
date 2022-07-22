@@ -69,5 +69,12 @@ name = "Haiting Yan "
 title = "Member"
 email = "mailto:yanHT@xugudb.com"
 company = "xugu"
+
+[[card]]
+img = "/zh/member/img/zhangquan.png"
+name = "Quan Zhang "
+title = "Member"
+email = "mailto:zhangquan@tongtech.com"
+company = "Beijing Tongtech Co.,Ltd."
  
 +++
