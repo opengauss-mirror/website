@@ -26,13 +26,6 @@ gitee = "https://gitee.com/justbk"
 
 
 [[card]]
-img = "/zh/member/img/zhaowenhao.png"
-name = "赵文浩"
-title = "Committer"
-email = "mailto:545612025@qq.com"
-gitee = "https://gitee.com/yang558"
-
-[[card]]
 img = "/zh/member/img/pengjiong.png"
 name = "彭炯"
 title = "Committer"
