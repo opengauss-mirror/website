@@ -51,12 +51,6 @@ title = "Committer"
 email = "mailto:yuzheng3@huawei.com"
 gitee = "https://gitee.com/yz_db"
 
-[[card]]
-img = "/zh/member/img/zhaowenhao.png"
-name = "Wenhao Zhao"
-title = "Committer"
-email = "mailto:zhaowenhao4@huawei.com"
-gitee = "https://gitee.com/yang558"
 
 
 +++
