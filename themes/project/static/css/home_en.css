@@ -3,16 +3,16 @@
     width: 456px;
     line-height: 32px;
     font-weight: normal;
-    font-family: Roboto;
+    
 }
 .banner_content.isPc h1{
     font-weight: normal;
-    font-family: Roboto;
+    
     font-size: 32px;
 }
 .content_character_lists ul li h4 {
     font-weight: normal;
-    font-family: Roboto;
+    
 }
 .desc_statistics {
     flex: 1;

@@ -20,16 +20,14 @@
     font-size: 38px; 
     font-weight: bold;
     color: #594599;
-    line-height: 48px;
-    font-family: Helvetica Neue,Helvetica,Arial,PingFang SC,Hiragino Sans GB,STHeiti,Microsoft YaHei,Microsoft JhengHei,SimSun,sans-serif;
+    line-height: 48px; 
 }
 .summitPoster h3{
     font-size: 20px; 
     font-weight: normal;
     color: #594599;
     line-height: 24px;
-    margin: 16px 0 24px;
-    font-family: Helvetica Neue,Helvetica,Arial,PingFang SC,Hiragino Sans GB,STHeiti,Microsoft YaHei,Microsoft JhengHei,SimSun,sans-serif;
+    margin: 16px 0 24px; 
 }
 .summitPoster .txt{
     font-size: 15px;  

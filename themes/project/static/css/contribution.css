@@ -9,7 +9,7 @@
     font-size: 14px;
     color: #4D4D4D;
     line-height: 32px;
-    font-family: FZLTHJW--GB1-0, FZLTHJW--GB1;
+    
 }
 .contribution p code{
     color: #4D4D4D;
@@ -24,7 +24,7 @@
     margin-top: 40px;
     margin-bottom:20px;
     font-size: 24px;
-    font-family: FZLTHJW--GB1-0, FZLTHJW--GB1;
+    
     font-weight: normal;
     color: #000000;
     line-height: 32px;
@@ -53,7 +53,7 @@
 }
 .contribution table th{
     font-size: 18px;
-    font-family: FZLTHJW--GB1-0, FZLTHJW--GB1;
+    
     font-weight: normal;
     color: #000000;
     line-height: 24px;
@@ -61,14 +61,14 @@
 }
 .contribution table tbody td a{
     font-size: 14px;
-    font-family: FZLTHJW--GB1-0, FZLTHJW--GB1;
+    
     font-weight: normal;
     color: #7D32EA;
     line-height: 32px;
 }
 .contribution table tbody tr td+td{
     font-size: 14px;
-    font-family: FZLTHJW--GB1-0, FZLTHJW--GB1;
+    
     font-weight: normal;
     color: #4D4D4D;
     line-height: 32px;
@@ -110,21 +110,21 @@
     }
     .contribution h3{
         font-size: 18px;
-        font-family: FZLTHJW--GB1-0, FZLTHJW--GB1;
+        
         font-weight: normal;
         color: #000000;
         line-height: 24px;
     }
     .contribution h4{
         font-size: 16px;
-        font-family: FZLTHJW--GB1-0, FZLTHJW--GB1;
+        
         font-weight: normal;
         color: #000000;
         line-height: 16px;
     }
     .contribution table th{
         font-size: 16px;
-        font-family: FZLTHJW--GB1-0, FZLTHJW--GB1;
+        
         font-weight: normal;
         color: #000000;
         line-height: 16px;
@@ -132,14 +132,14 @@
     }
     .contribution table tbody td a{
         font-size: 13px;
-        font-family: FZLTHJW--GB1-0, FZLTHJW--GB1;
+        
         font-weight: normal;
         color: #7D32EA;
         line-height: 20px;
     }
     .contribution table tbody tr td+td{
         font-size: 12px;
-        font-family: FZLTHJW--GB1-0, FZLTHJW--GB1;
+        
         font-weight: normal;
         color: #4D4D4D;
         line-height: 21px;

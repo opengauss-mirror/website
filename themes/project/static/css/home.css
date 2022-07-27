@@ -15,6 +15,7 @@
 /* ------------------------------------- banner -------------------------------------- */
 body {
   --theme: #7d32ea;
+  font-family: 'Helvetica', 'Arial', 'PingFang SC', 'Microsoft YaHei',  sans-serif;
 }
 .banner {
   position: relative;
@@ -85,7 +86,7 @@ body {
   height: 32px;
   background-color: #42d0ea;
   border-radius: 4px;
-  font-family: PingFangSC-Medium;
+  
   font-size: 14px;
   color: #fff;
   text-align: center;
@@ -221,18 +222,14 @@ body {
   font-size: 38px;
   font-weight: bold;
   color: #594599;
-  line-height: 48px;
-  font-family: Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB,
-    STHeiti, Microsoft YaHei, Microsoft JhengHei, SimSun, sans-serif;
+  line-height: 48px; 
 }
 .summitInfo h3 {
   font-size: 20px;
   font-weight: normal;
   color: #594599;
   line-height: 24px;
-  margin: 16px 0 24px;
-  font-family: Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB,
-    STHeiti, Microsoft YaHei, Microsoft JhengHei, SimSun, sans-serif;
+  margin: 16px 0 24px; 
 }
 .summitInfo .txt {
   font-size: 15px;
@@ -397,7 +394,7 @@ header #nav .menu_list p {
 }
 
 .content_character_title p {
-  font-family: PingFangSC-Regular;
+  
   font-size: 14px;
   color: #4d4d4d;
   line-height: 32px;
@@ -465,7 +462,7 @@ header #nav .menu_list p {
 }
 
 .content_character_lists ul li h4 {
-  font-family: PingFangSC-Semibold;
+  
   font-size: 24px;
   color: #000;
   font-weight: normal;
@@ -473,7 +470,7 @@ header #nav .menu_list p {
 }
 
 .content_character_lists ul li p {
-  font-family: PingFangSC-Regular;
+  
   width: 80%;
   font-size: 14px;
   color: #4d4d4d;
@@ -538,7 +535,7 @@ header #nav .menu_list p {
   margin: 12px 0 8px 0;
   font-size: 42px;
   line-height: 100%;
-  font-family: Roboto-Bold, Roboto;
+  
   font-weight: bold;
   color: var(--theme);
 }
@@ -657,7 +654,7 @@ header #nav .menu_list p {
   padding: 24px 0 12px 0;
 }
 .new_content li p {
-  font-family: PingFangSC-Regular;
+  
   font-size: 14px;
   line-height: 20px;
   color: #ffffff;
@@ -767,7 +764,7 @@ header #nav .menu_list p {
   text-decoration: none;
 }
 .events_items_right a h4 {
-  font-family: PingFangSC-Semibold;
+  
   font-size: 24px;
   color: #000;
   font-weight: normal;
@@ -1032,7 +1029,7 @@ header #nav .menu_list p {
 .content_college .content_college_content .content_college_title h3 {
   width: 160px;
   margin: 0 auto;
-  font-family: PingFangSC-Regular;
+  
   font-size: 40px;
   font-weight: 400;
   color: #333333;
@@ -1076,7 +1073,7 @@ header {
 }
 
 .navbar-nav > li > a {
-  font-family: "PingFangSC-Regular";
+   
 }
 
 .navbar ul.navbar-left > li > a {
@@ -1374,7 +1371,7 @@ header {
 
 .navbar-default .navbar-nav > li > a {
   color: #000;
-  font-family: FZLTZHJW-GB1-0;
+  
 }
 
 .navbar-nav > li > .dropdown-menu {

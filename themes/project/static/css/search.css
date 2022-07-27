@@ -31,7 +31,7 @@
     display: inline-block;
     font-size: 16px;
     color: #000;
-    font-family: FZLTZHJW-GB1-0;
+    
     margin-right: 55px;
     padding-bottom: 20px;
     position: relative;
@@ -57,15 +57,14 @@
     margin-top: 40px;
 }
 .content-box p {
-    font-size: 14px;
-    font-family: FZLTXIH;
+    font-size: 14px; 
     color: rgba(0, 0, 0, 0.5);
     margin-top: 15px;
     word-wrap: break-word;
 }
 .content-box .content-title {
     font-size: 20px;
-    font-family: FZLTZHJW-GB1-0;
+    
     color: #000;
     cursor: pointer;
 }

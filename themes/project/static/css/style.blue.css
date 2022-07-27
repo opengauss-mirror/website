@@ -409,8 +409,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 }
 
 /* scaffolding */
-body {
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
+body { 
   font-size: 14px;
   line-height: 1.42857143;
   color: #555555;
@@ -478,8 +477,7 @@ h6,
 .h3,
 .h4,
 .h5,
-.h6 {
-  font-family: PingFangSC-Medium, sans-serif;
+.h6 { 
   font-weight: 900;
   line-height: 1.1;
   color: #333333;
@@ -551,8 +549,7 @@ p {
   padding: 20px 0;
 }
 .btn {
-  font-weight: 700;
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-weight: 700; 
   letter-spacing: 0.08em;
   padding: 6px 12px;
   font-size: 13px;
@@ -817,8 +814,7 @@ fieldset[disabled] .btn-template-primary.active {
 .col-md-12 h2 {
   margin: 20px 0;
 }
-.container .col-md-12 > div > p {
-  font-family: FZLTHJW-GB1-0;
+.container .col-md-12 > div > p { 
   color: #333333;
   line-height: 2;
   letter-spacing: 0.05px;
@@ -889,7 +885,7 @@ fieldset[disabled] .btn-template-primary.active {
   position: relative;
 }
 .newsDetail_content_right h3 a {
-  font-family: FZLTZHJW-GB1-0;
+  
   font-size: 0.48rem;
   color: #666666;
   letter-spacing: 0;
@@ -907,8 +903,7 @@ fieldset[disabled] .btn-template-primary.active {
 }
 .newsDetail_content_right p,
 .newsDetail_content_right p span,
-.newsDetail_content_right div button {
-  font-family: FZLTHJW-GB1-0;
+.newsDetail_content_right div button { 
 }
 .newsDetail_content_right p span {
   font-size: 0.24rem;
@@ -950,8 +945,7 @@ fieldset[disabled] .btn-template-primary.active {
   color: #467fbf;
   border-color: #467fbf;
 }
-#post-content p {
-  font-family: FZLTHJW-GB1-0;
+#post-content p { 
   margin-bottom: 10px;
   line-height: 32px;
 }
@@ -1383,7 +1377,7 @@ fieldset[disabled] .btn-template-primary.active {
   text-align: right;
 }
 .video_more a {
-  font-family: HuaweiSans;
+  
   font-weight: 900;
   color: #3399FF;
   line-height: 36px;

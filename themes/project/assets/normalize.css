@@ -61,8 +61,7 @@ hr {
  * 2. Correct the odd `em` font sizing in all browsers.
  */
 
-pre {
-  font-family: monospace, monospace; /* 1 */
+pre { 
   font-size: 1em; /* 2 */
 }
 
@@ -104,8 +103,7 @@ strong {
 
 code,
 kbd,
-samp {
-  font-family: monospace, monospace; /* 1 */
+samp { 
   font-size: 1em; /* 2 */
 }
 

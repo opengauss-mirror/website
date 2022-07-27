@@ -9,7 +9,7 @@
     margin: 0;
     line-height: 1;
     color: #000000;
-    font-family: FZLTHJW--GB1-0, FZLTHJW--GB1;
+    
 }
 #cla-header .row .col-md-12 img{
     display: none;
@@ -18,7 +18,7 @@
     font-size: 14px;
     color: #4D4D4D;
     line-height: 32px;
-    font-family: FZLTHJW--GB1-0, FZLTHJW--GB1;
+    
     margin-bottom: 20px;
 }
 .container .cla-content p strong{
@@ -33,7 +33,7 @@
 }
 #sel li label{
     font-size: 14px;
-    font-family: FZLTHJW--GB1-0, FZLTHJW--GB1;
+    
     font-weight: normal;
     color: #000000;
     line-height: 24px;
@@ -113,7 +113,7 @@
 .form_one>p,
 .form_two>p {
     font-size: 12px;
-    font-family: FZLTXIHJW--GB1-0, FZLTXIHJW--GB1;
+    
     font-weight: normal;
     color: #000000;
     line-height: 16px;
@@ -127,7 +127,7 @@
     display: inline-block;
     width: 25%;
     font-size: 14px;
-    font-family: FZLTHJW--GB1-0, FZLTHJW--GB1;
+    
     font-weight: normal;
     color: #4D4D4D;
     line-height: 24px;
@@ -149,14 +149,14 @@
     height: 26px;
     border-radius: 1px;
     border: 1px solid rgba(0,0,0,.25);
-    font-family: FZLTHJW--GB1-0, FZLTHJW--GB1;
+    
     color: #4D4D4D;
     padding-left: 10px;
 }
 .form_one input::-webkit-input-placeholder,
 .form_two input::-webkit-input-placeholder {
     font-size: 12px;
-    font-family: FZLTXIHJW--GB1-0, FZLTXIHJW--GB1;
+    
     color: rgba(0, 0, 0, 0.1);
     line-height: 16px;
 }
@@ -174,7 +174,7 @@
     color: #7D32EA;
     border-radius: 4px;
     font-size: 14px;
-    font-family: FZLTHJW--GB1-0, FZLTHJW--GB1;
+    
     line-height: 1;
     outline: none;
 }
@@ -218,7 +218,7 @@
     padding: 10px 0;
     padding-left: 20px;
     font-size: 12px;
-    font-family: FZLTXIHJW--GB1-0, FZLTXIHJW--GB1;
+    
     font-weight: normal;
     color: #4D4D4D;
     line-height: 1;
