@@ -41,12 +41,30 @@ expiration = "2024-03-31"
 certificate = "https://distributioncertification-beijing4.obs.myhuaweicloud.com/MogDB%202.0.1/Certificate.pdf"
 
 [[product]]
-pro = "LNXDB-RDSV3.4"
+pro = "LNXDB-RDS V3.4"
 name = "北京太阳塔信息科技有限责任公司"
 version = "openGauss 2.0.0"
 award = "2022-05-07"
 expiration = "2024-03-31"
 certificate = "https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/LNX-RDS%20V3.4/Certificate.pdf"
+
+ 
+
+[[product]]
+pro = "有蓉数据库 V1.0"
+name = "成都虚谷伟业科技有限公司"
+version = "openGauss 2.0.0"
+award = "2022-07-15"
+expiration = "2024-03-31"
+certificate = "https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%9C%89%E8%93%89%E6%95%B0%E6%8D%AE%E5%BA%93%20V1.0/Certificate.pdf"
+
+[[product]]
+pro = "神通数据库管理系统 V7.0.21"
+name = "天津神舟通用数据技术有限公司"
+version = "openGauss 3.0.0"
+award = "2022-07-20"
+expiration = "2025-03-31"
+certificate = "https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E7%A5%9E%E9%80%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%20V7.0.21/Certificate.pdf"
 
 
 +++
