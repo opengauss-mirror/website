@@ -30,12 +30,6 @@ title = "Committer"
 email = "mailto:xiong_xiaojun@yeah.net"
 gitee = "https://gitee.com/xiong_xjun"
 
-[[card]]
-img = "/zh/member/img/zhaowenhao.png"
-name = "Wenhao Zhao"
-title = "Committer"
-email = "mailto:545612025@qq.com"
-gitee = "https://gitee.com/yang558"
 
 [[card]]
 img = "/zh/member/img/pengjiong.png"
