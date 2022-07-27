@@ -35,7 +35,7 @@
 }
 .download-version{
     font-size: 16px;
-    font-family: FZLTHJW--GB1-0, FZLTHJW--GB1;
+    
     color: #000000;
     margin-right: 16px;
 }
@@ -71,7 +71,7 @@
 }
 .download-container .download-discri a{
     font-size: 16px;
-    font-family: FZLTHJW--GB1-0, FZLTHJW--GB1;
+    
     color: #7D32EA;
     padding: 0 10px;
     line-height: 1;
@@ -94,7 +94,7 @@
 .download-content h3{
     padding: 40px 0 30px;
     font-size: 24px;
-    font-family: FZLTHJW--GB1-0, FZLTHJW--GB1;
+    
     font-weight: normal;
     color: #000000;
 }
@@ -146,7 +146,7 @@
 .tips-content-text{
     height: 48px;
     font-size: 14px;
-    font-family: FZLTHJW--GB1-0, FZLTHJW--GB1;
+    
     font-weight: normal;
     color: #4D4D4D;
     line-height: 48px;

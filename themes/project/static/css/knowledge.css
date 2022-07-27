@@ -22,7 +22,7 @@
     text-align: center;
     border-right: 1px solid rgba(0, 0, 0, 0.04);
     font-size: 20px;
-    font-family: FZLTHJW--GB1-0, FZLTHJW--GB1;
+    
     font-weight: normal;
     color: #000000;
     vertical-align: middle;
@@ -48,7 +48,7 @@
     width: 64px;
     height: 22px;
     font-size: 16px;
-    font-family: FZLTHJW--GB1-0, FZLTHJW--GB1;
+    
     font-weight: normal;
     color: #000000;
     line-height: 22px;
@@ -59,7 +59,7 @@
 .module-type .item {
     height: 26px;
     font-size: 14px;
-    font-family: FZLTHJW--GB1-0, FZLTHJW--GB1;
+    
     font-weight: normal;
     line-height: 26px;
     margin-right: 24px;
@@ -104,7 +104,7 @@
 
 .type-title {
     font-size: 30px;
-    font-family: FZLTHJW--GB1-0, FZLTHJW--GB1;
+    
     font-weight: normal;
     color: #000000;
     padding: 20px 0 20px 0;
@@ -130,7 +130,7 @@
     text-align: center;
     margin: 0;
     font-size: 20px;
-    font-family: FZLTHJW--GB1-0, FZLTHJW--GB1;
+    
     font-weight: normal;
     color: #000000;
     width: 100%;

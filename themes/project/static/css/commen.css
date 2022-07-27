@@ -35,8 +35,7 @@ h5 {
 
 body {
     background-color: #FFFFFF;
-    color: #666666;
-    font-family: Helvetica, Arial, sans-serif;
+    color: #666666; 
     font-size: 14px;
     text-align: left;
 }
@@ -116,7 +115,7 @@ table td {
     white-space: nowrap;
 }
 body {
-    font-family: Helvetica Neue,Helvetica,Arial,PingFang SC,Hiragino Sans GB,STHeiti,Microsoft YaHei,Microsoft JhengHei,SimSun,sans-serif!important;
+  font-family: 'Helvetica', 'Arial', 'PingFang SC', 'Microsoft YaHei',  sans-serif;
 }
 h5 {
     font-weight: normal;
