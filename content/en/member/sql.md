@@ -87,4 +87,19 @@ core = "Core Members"
     title = "Committer"
     email = "mailto:haoqingyun54@126.com"
     gitee = "https://gitee.com/haoqingyun"
+
+[[card]]
+    img = "/zh/member/img/zhangzhiyang.png"
+    name = "Zhiyang Zhang"
+    title = "Committer"
+    email = "mailto:zhangzhiyang@xfusion.com"
+    gitee = "https://gitee.com/zzy0310"
+
+
+[[card]]
+    img = "/zh/member/img/dengxuyue.png"
+    name = "Xuyue Deng"
+    title = "Committer"
+    email = "mailto:dengxueyue@xfusion.com"
+    gitee = "https://gitee.com/dengxuyue"
 +++

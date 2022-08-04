@@ -93,6 +93,7 @@ title = "Committer"
 email = "mailto:2235036288@qq.com"
 gitee = "https://gitee.com/min-sun"
 
+
 [[card]]
 img = "/zh/member/img/zhangao.png"
 name = " Ao Zhang"
@@ -104,8 +105,23 @@ gitee = "https://gitee.com/zhang_za"
 img = "/zh/member/img/mingpei.png"
 name = " Pei Ming"
 title = "Committer"
-email = "mailto:mingpei@huawei.com.com"
+email = "mailto:mingpei@huawei.com"
 gitee = "https://gitee.com/dolphin-m"
+
+[[card]]
+img = "/zh/member/img/wangmo.png"
+name = "Mo Wang"
+title = "Committer"
+email = "mailto:wangmo@xfusion.com"
+gitee = "https://gitee.com/wangmo"
+
+
+[[card]]
+img = "/zh/member/img/fanshujuan.png"
+name = "Shujuan Fan"
+title = "Committer"
+email = "mailto:fanshujuan@xfusion.com"
+gitee = "https://gitee.com/stella_fan"
 
 
 +++

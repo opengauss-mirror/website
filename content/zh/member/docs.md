@@ -43,8 +43,6 @@ name = "张翠娉"
 title = "Committer"
 email = "mailto:cuiping.zhang@enmotech.com"
 gitee = "https://gitee.com/zcp100_zcp100"
-
-
  
 
 [[card]]
@@ -74,5 +72,12 @@ name = "张乐奕"
 title = "Committer"
 email = "mailto:kamusis@gmail.com"
 gitee = "https://gitee.com/kamusis"
+
+[[card]]
+img = "/zh/member/img/jiangxiaoying.png"
+name = "姜晓颖"
+title = "Committer"
+email = "mailto:jiangxiaoying2@xfusion.com"
+gitee = "https://gitee.com/jiangxiaoying1"
 
 +++

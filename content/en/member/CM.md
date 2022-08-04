@@ -51,6 +51,11 @@ title = "Committer"
 email = "mailto:yuzheng3@huawei.com"
 gitee = "https://gitee.com/yz_db"
 
-
+[[card]]
+img = "/zh/member/img/xieweiping.png"
+name = "Weiping Xie"
+title = "Committer"
+email = "mailto:xieweiping@xfusion.com"
+gitee = "https://gitee.com/junhangis"
 
 +++

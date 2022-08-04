@@ -78,4 +78,11 @@ name = "Ronen Grosman"
 title = "Committer"
 email = "mailto:ronen.grosman@huawei.com"
 gitee = "https://gitee.com/roneng"
+
+[[card]]
+img = "/zh/member/img/hewenyu.png"
+name = "Wenyu He"
+title = "Committer"
+email = "mailto:hewenyu@xfusion.com"
+gitee = "https://gitee.com/wenfish9"
 +++
