@@ -1,4 +1,4 @@
-+++
+﻿+++
 member = "storage"
 title = "StorageEngine"
 goto = "前往Gitee仓库"
@@ -99,5 +99,12 @@ name = "陈琛"
 title = "Committer"
 email = "mailto:arcoalien@qq.com"
 gitee = "https://gitee.com/struggle_hw"
+
+[[card]]
+img = "/zh/member/img/xuexingrong.png"
+name = "薛兴荣"
+title = "Committer"
+email = "mailto:xuexingrong@xfusion.com"
+gitee = "https://gitee.com/dbxue"
 
 +++

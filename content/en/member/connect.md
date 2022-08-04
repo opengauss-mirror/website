@@ -47,11 +47,11 @@ gitee = "https://gitee.com/kamusis"
 
 
 [[card]]
-img = "/zh/member/img/yaoqian1.png"
-name = "Qian Yao"
+img = "/zh/member/img/wangwei2.png"
+name = "Wei Wang"
 title = "Committer"
-email = "mailto:i@vimiix.com"
-gitee = "https://gitee.com/vimiix"
+email = "mailto:wangwei3@xfusion.com"
+gitee = "https://gitee.com/wangweizz"
 
 
 

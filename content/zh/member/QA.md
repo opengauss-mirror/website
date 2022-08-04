@@ -107,5 +107,17 @@ title = "Committer"
 email = "mailto:mingpei@huawei.com.com"
 gitee = "https://gitee.com/dolphin-m"
 
+[[card]]
+img = "/zh/member/img/wangmo.png"
+name = "王默"
+title = "Committer"
+email = "mailto:wangmo@xfusion.com"
+gitee = "https://gitee.com/wangmo"
 
+[[card]]
+img = "/zh/member/img/fanshujuan.png"
+name = "樊书娟"
+title = "Committer"
+email = "mailto:fanshujuan@xfusion.com"
+gitee = "https://gitee.com/stella_fan"
 +++

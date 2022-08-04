@@ -76,4 +76,11 @@ email = "mailto:kamusis@gmail.com"
 gitee = "https://gitee.com/kamusis"
 
 
+[[card]]
+img = "/zh/member/img/jiangxiaoying.png"
+name = "Xiaoying Jiang"
+title = "Committer"
+email = "mailto:jiangxiaoying2@xfusion.com"
+gitee = "https://gitee.com/jiangxiaoying1"
+
 +++

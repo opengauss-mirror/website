@@ -1,4 +1,4 @@
-+++
+﻿+++
 member = "connect"
 title ="Connectors"
 goto = "前往Gitee仓库"
@@ -49,5 +49,12 @@ name = "姚前"
 title = "Committer"
 email = "mailto:i@vimiix.com"
 gitee = "https://gitee.com/vimiix"
+
+[[card]]
+img = "/zh/member/img/wangwei2.png"
+name = "汪伟"
+title = "Committer"
+email = "mailto:wangwei3@xfusion.com"
+gitee = "https://gitee.com/wangweizz"
 
 +++
