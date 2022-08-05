@@ -1757,3 +1757,15 @@ footer .foot {
 .four-a-line img {
   transform: scale(0.85);
 }
+
+
+.safety-tips{
+  position: fixed;
+  right: 10%;
+  bottom: 350px;
+  z-index: 10;
+}
+.safety-tips img{
+  width: 120px;
+  object-fit: cover;
+}
