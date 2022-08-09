@@ -80,4 +80,11 @@ title = "Committer"
 email = "mailto:jiangxiaoying2@xfusion.com"
 gitee = "https://gitee.com/jiangxiaoying1"
 
+[[card]]
+img = "/zh/member/img/liyinan2.png"
+name = "李轶楠"
+title = "Committer"
+email = "mailto:yinan.li@enmotech.com"
+gitee = "https://gitee.com/ora-600"
+
 +++
