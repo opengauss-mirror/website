@@ -108,4 +108,11 @@ name = "Xingrong Xue"
 title = "Committer"
 email = "mailto:xuexingrong@xfusion.com"
 gitee = "https://gitee.com/dbxue"
+
+[[card]]
+img = "/zh/member/img/maxiang.png"
+name = "Xiang Ma"
+title = "Committer"
+email = "mailto:maxiang21@huawei.com"
+gitee = "https://gitee.com/Xiao__ma"
 +++
