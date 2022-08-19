@@ -1,7 +1,7 @@
 ﻿+++
 title = "【成都】openGauss Meetup（8月25日）| 活动预告"
 time = "2022/08/25"
-date = "2022-08-15"
+date = "2022-08-25"
 tags = "会议"
 label = "线下"
 location = "成都"
