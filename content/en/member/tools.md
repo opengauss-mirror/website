@@ -10,11 +10,12 @@ core = "Core Members"
 
 
 [[card]]
-img = "/zh/member/img/miuyan.png"
-name = "Ting Mu"
+img = "/zh/member/img/xiongxiaojun.png"
+name = "Xiaojun Xiong"
 title = "Maintainer"
-email = "mailto:muting@huawei.com"
-gitee = "https://gitee.com/jeffee"
+email = "mailto:xiong_xiaojun@yeah.net"
+gitee = "https://gitee.com/xiong_xjun"
+
 
 [[card]]
 img = "/zh/member/img/zhoubin.png"
@@ -22,13 +23,6 @@ name = "Bin Zhou"
 title = "Committer"
 email = "mailto:249396768@qq.com"
 gitee = "https://gitee.com/justbk"
-
-[[card]]
-img = "/zh/member/img/xiongxiaojun.png"
-name = "Xiaojun Xiong"
-title = "Committer"
-email = "mailto:xiong_xiaojun@yeah.net"
-gitee = "https://gitee.com/xiong_xjun"
 
 
 [[card]]
@@ -44,5 +38,28 @@ name = "Zhenfeng Li"
 title = "Committer"
 email = "mailto:lizhenfeng001@chinasofti.com"
 gitee = "https://gitee.com/lizhenfeng123"
+
+
+[[card]]
+img = "/zh/member/img/hechenghan.png"
+name = "Chenghan He"
+title = "Committer"
+email = "mailto:hechenghan@huawei.com"
+gitee = "https://gitee.com/he-chenghan"
+
+[[card]]
+img = "/zh/member/img/zhangyaozhong.png"
+name = "Yaozhong Zhang"
+title = "Committer"
+email = "mailto:zhangyaozhong1@huawei.com"
+gitee = "https://gitee.com/buter"
+
+[[card]]
+img = "/zh/member/img/douxin.png"
+name = "Xin Dou"
+title = "Committer"
+email = "mailto:douxin5@huawei.com"
+gitee = "https://gitee.com/ywzq1161327784"
+
 
 +++
