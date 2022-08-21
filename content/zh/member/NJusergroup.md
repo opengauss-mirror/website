@@ -4,8 +4,8 @@ title ="南京用户组"
 goto = "前往Gitee仓库主页"
 gitlink = "https://gitee.com/opengauss/openGauss-User-Group/tree/master/NanJing"
 list = "邮件列表："
-email = "nanjing_user_group@opengauss.org"
-maillink = "mailto:nanjing_user_group@opengauss.org"
+email = "usergroup@opengauss.org"
+maillink = "mailto:usergroup@opengauss.org"
 core = "核心成员："
 
 

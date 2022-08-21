@@ -1,11 +1,11 @@
 ﻿+++
 member = "LZusergroup"
-title ="Lanzhou User Group"
+title ="LanZhou User Group"
 goto = "Go to Gitee home page"
-gitlink = "https://gitee.com/opengauss/openGauss-User-Group/tree/master/lanzhou"
+gitlink = "https://gitee.com/opengauss/openGauss-User-Group/tree/master/LanZhou"
 list = "Mailing List: "
-email = "lanzhou_user_group@opengauss.org"
-maillink = "mailto:lanzhou_user_group@opengauss.org"
+email = "usergroup@opengauss.org"
+maillink = "mailto:usergroup@opengauss.org"
 core = "Core Members"
 
 

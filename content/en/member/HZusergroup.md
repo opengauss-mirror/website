@@ -1,11 +1,11 @@
 ﻿+++
 member = "HZusergroup"
-title ="Hang zhou User Group"
+title ="HangZhou User Group"
 goto = "Go to Gitee home page"
-gitlink = "https://gitee.com/opengauss/openGauss-User-Group/tree/master/Hangzhou"
+gitlink = "https://gitee.com/opengauss/openGauss-User-Group/tree/master/HangZhou"
 list = "Mailing List: "
-email = "hangzhou_user_group@opengauss.org"
-maillink = "mailto:hangzhou_user_group@opengauss.org"
+email = "usergroup@opengauss.org"
+maillink = "mailto:usergroup@opengauss.org"
 core = "Core Members"
 
 
@@ -43,7 +43,7 @@ img = "/zh/member/img/jiangjian.png"
 name = " Jian Jiang"
 title = "Member"
 company = "Bo Bing Tech"
-email = "mailto:jiangjian@zjbobingtech"
+email = "mailto:jiangjian@zjbobingtech.com"
 
 [[card]]
 img = "/zh/member/img/zhaojian.png"

@@ -1,11 +1,11 @@
 +++
 member = "SZusergroup"
-title ="Shenzhen User Group"
+title ="ShenZhen User Group"
 goto = "Go to Gitee home page"
 gitlink = "https://gitee.com/opengauss/openGauss-User-Group/tree/master/ShenZhen"
 list = "Mailing List: "
-email = "shenzhen_user_group@opengauss.org"
-maillink = "mailto:shenzhen_user_group@opengauss.org"
+email = "usergroup@opengauss.org"
+maillink = "mailto:usergroup@opengauss.org"
 core = "Core Members"
 
 
