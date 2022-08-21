@@ -4,8 +4,8 @@ title ="长沙用户组"
 goto = "前往Gitee仓库主页"
 gitlink = "https://gitee.com/opengauss/openGauss-User-Group/tree/master/ChangSha"
 list = "邮件列表："
-email = "changsha_user_group@opengauss.org"
-maillink = "mailto:changsha_user_group@opengauss.org"
+email = "usergroup@opengauss.org"
+maillink = "mailto:usergroup@opengauss.org"
 core = "核心成员："
 
 

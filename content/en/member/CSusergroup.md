@@ -1,11 +1,11 @@
 +++
 member = "CSusergroup"
-title ="Changsha User Group"
+title ="ChangSha User Group"
 goto = "Go to Gitee home page"
 gitlink = "https://gitee.com/opengauss/openGauss-User-Group/tree/master/ChangSha"
 list = "Mailing List: "
-email = "changsha_user_group@opengauss.org"
-maillink = "mailto:changsha_user_group@opengauss.org"
+email = "usergroup@opengauss.org"
+maillink = "mailto:usergroup@opengauss.org"
 core = "Core Members"
 
 

@@ -3,5 +3,5 @@ member = "newusergroup"
 para1 = "Want to start a new openGauss User Group?"
 para2 = ""
 para3 = "Please send your application to: "
-link = "user_group@opengauss.org"
+link = "usergroup@opengauss.org"
 +++

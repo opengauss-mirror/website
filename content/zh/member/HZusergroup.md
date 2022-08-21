@@ -2,10 +2,10 @@
 member = "HZusergroup"
 title ="杭州用户组"
 goto = "前往Gitee仓库主页"
-gitlink = "https://gitee.com/opengauss/openGauss-User-Group/tree/master/Hangzhou"
+gitlink = "https://gitee.com/opengauss/openGauss-User-Group/tree/master/HangZhou"
 list = "邮件列表："
-email = "hangzhou_user_group@opengauss.org"
-maillink = "mailto:hangzhou_user_group@opengauss.org"
+email = "usergroup@opengauss.org"
+maillink = "mailto:usergroup@opengauss.org"
 core = "核心成员："
 
 
@@ -43,7 +43,7 @@ img = "/zh/member/img/jiangjian.png"
 name = " 蒋健"
 title = "Member"
 company = "薄冰网络科技"
-email = "mailto:jiangjian@zjbobingtech"
+email = "mailto:jiangjian@zjbobingtech.com"
 
 [[card]]
 img = "/zh/member/img/zhaojian.png"

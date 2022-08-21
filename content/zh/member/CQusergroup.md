@@ -4,8 +4,8 @@ title ="重庆用户组"
 goto = "前往Gitee仓库主页"
 gitlink = "https://gitee.com/opengauss/openGauss-User-Group/tree/master/ChongQing"
 list = "邮件列表："
-email = "chongqing_user_group@opengauss.org"
-maillink = "mailto:chongqing_user_group@opengauss.org"
+email = "usergroup@opengauss.org"
+maillink = "mailto:usergroup@opengauss.org"
 core = "核心成员："
 
 

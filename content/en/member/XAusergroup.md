@@ -1,11 +1,11 @@
 +++
 member = "XAusergroup"
-title ="Xi'an User Group"
+title ="XiAn User Group"
 goto = "Go to Gitee home page"
 gitlink = "https://gitee.com/opengauss/openGauss-User-Group/tree/master/XiAn"
 list = "Mailing List: "
-email = "xian_user_group@opengauss.org"
-maillink = "mailto:xian_user_group@opengauss.org"
+email = "usergroup@opengauss.org"
+maillink = "mailto:usergroup@opengauss.org"
 core = "Core Members"
 
 
