@@ -7,7 +7,7 @@ label = "线下"
 location = "成都"
 img = "/zh/events/2022-08-25/banner2.png"
 img_mobile = '/zh/events/2022-08-25/banner2.png'
-link = "/zh/events/2022-08-25/meetup.html"
+link = "/zh/events/2022-08-25/Meetup.html"
 author = "openGauss"
 summary = ""
 

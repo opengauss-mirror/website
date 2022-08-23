@@ -1,4 +1,4 @@
-+++
+﻿+++
 member = "Plugin"
 title = "Plugin"
 goto = "前往Gitee仓库"
@@ -30,12 +30,6 @@ title = "Committer"
 email = "mailto:huyinghao@shentongdata.com"
 gitee = "https://gitee.com/husan1024"
 
-[[card]]
-img = "/zh/member/img/lichuancheng.png"
-name = "李传成"
-title = "Committer"
-email = "mailto:chuancheng.li@enmotech.com"
-gitee = "https://gitee.com/movead"
 
 [[card]]
 img = "/zh/member/img/suzhangyan.png"
@@ -44,19 +38,6 @@ title = "Committer"
 email = "mailto:suzy1030@qq.com"
 gitee = "https://gitee.com/siven_dev"
 
-[[card]]
-img = "/zh/member/img/wushengyong.png"
-name = "吴生勇"
-title = "Committer"
-email = "mailto:wushy@xugudb.com"
-gitee = "https://gitee.com/sc_wushy"
-
-[[card]]
-img = "/zh/member/img/zhaoxiaohui.png"
-name = "赵晓晖"
-title = "Committer"
-email = "mailto:zhaoxiaohui@kingbase.com.cn"
-gitee = "https://gitee.com/zhaoxh_kingbase"
 
 [[card]]
 img = "/zh/member/img/chenxiaobin.png"
@@ -72,12 +53,6 @@ title = "Committer"
 email = "mailto:pengjiong1@huawei.com"
 gitee = "https://gitee.com/totaj"
 
-[[card]]
-img = "/zh/member/img/suzixin.png"
-name = "苏梓鑫"
-title = "Committer"
-email = "mailto:adahsuzixin@gmail.com"
-gitee = "https://gitee.com/su-zixin"
 
 [[card]]
 img = "/zh/member/img/wuyuechuan.png"
@@ -92,5 +67,29 @@ name = "熊小军"
 title = "Committer"
 email = "mailto:xiong_xiaojun@yeah.net"
 gitee = "https://gitee.com/xiong_xjun"
+
+[[card]]
+img = "/zh/member/img/wumingyuan2.png"
+name = "吴明远"
+title = "Committer"
+email = "mailto:wumingyuan@gbase.cn"
+gitee = "https://gitee.com/wumingyuan"
+
+
+[[card]]
+img = "/zh/member/img/wangxiuqiang.png"
+name = "王修强"
+title = "Committer"
+email = "mailto:xiuqiang.wang@enmotech.com"
+gitee = "https://gitee.com/xiu-qiang-wang-2022"
+
+
+[[card]]
+img = "/zh/member/img/zhaosiqi.png"
+name = "赵思骑"
+title = "Committer"
+email = "mailto:zhaosq76@chinaunicom.cn"
+gitee = "https://gitee.com/dreamalloc"
+
 
 +++
