@@ -39,7 +39,7 @@ summary = "参与openGauss资料捉虫活动，发现或解决资料中的待改
 
 ### 方式二：推荐他人参与社区贡献
 
--   1.受邀者完成“openGauss 资料捉虫活动”报名并发送邀请者微信昵称给 Gauss 松鼠会小助手。
+-   1.受邀者完成“**openGauss 资料捉虫活动**”报名并发送邀请者微信昵称给 Gauss 松鼠会小助手。
 
 -   2.受邀者在 openGauss 社区 **提交有效问题（Issue）和修改方法（PR,Pull Request）**。
 
@@ -47,11 +47,12 @@ summary = "参与openGauss资料捉虫活动，发现或解决资料中的待改
 
 #### 参与奖
 
-提交 1 个有效的 Issue 和 1 个有效的 PR，即可获赠华为官方出版的《openGauss 数据库核心技术》、《openGauss 数据库实战指南》或《openGauss 数据库源码解析》书籍一本。
+提交 1 个有效的 Issue 和 1 个有效的 PR，即可获赠华为官方出版的 **《openGauss 数据库核心技术》、《openGauss 数据库实战指南》或《openGauss 数据库源码解析》**书籍一本。
 
 #### 推广奖
 
 每邀请 2 个 openGauss 社区新用户，且受邀请人成功提交 1 个有效的 Issue 和 1 个有效的 PR，邀请人即可获赠以**下奖品之一**。同一邀请人最多可获得 5 份礼品。
+
 <img src="./pic3.png" style="margin-bottom: 0.2rem;" />
 
 ### 贡献奖（月度）
@@ -78,22 +79,23 @@ summary = "参与openGauss资料捉虫活动，发现或解决资料中的待改
 
 -   邀请好友参与活动，获得相应的积分：
     每成功邀请一个 openGauss 社区新用户（未参与过 openGauss 社区贡献），且受邀人提交 1 个有效 Issue 和 1 个有效的 PR，邀请人即可获得 20 积分，积分依次累加。
+
 -   对有效的 issue 和 PR 进行积分：
 
-<table class="meetup20210326">
-	<tr>
-	    <th>项目</th>
-	    <th>积分规则</th>
-	</tr>
-	<tr>
-	    <td>Issue</td>
-	    <td> </td>
-	</tr>
-	<tr>
-	    <td>PR</td>
-	    <td>提交第一个PR积 <strong>6分</strong>，后续每提交一个PR积 <strong>2分</strong>。</td>
-	</tr>
-</table>
+    <table class="meetup20210326">
+      <tr>
+          <th>项目</th>
+          <th>积分规则</th>
+      </tr>
+      <tr>
+          <td>Issue</td>
+          <td>提交第一个Issue积 <strong>3分</strong>，后续每提交一个Issue积 <strong>1分</strong>。</td>
+      </tr>
+      <tr>
+          <td>PR</td>
+          <td>提交第一个PR积 <strong>6分</strong>，后续每提交一个PR积 <strong>2分</strong>。</td>
+      </tr>
+    </table>
 
 ### 附录
 
@@ -111,23 +113,27 @@ summary = "参与openGauss资料捉虫活动，发现或解决资料中的待改
       <tr>
           <td>规范问题或低错</td>
           <td>
-    错别字或拼写错误；标点符号使用错误<br>
+          <div style='text-align:left'>
+            错别字或拼写错误；标点符号使用错误<br>
     链接错误、空单元格、格式错误<br>
     英文中包含中文字符<br>
     表述不通顺，但不影响理解<br>
     版本号不匹配：如软件包名称、界面版本号<br>
     上下文描述不一致
+          </div>
           </td>
       </tr>
       <tr>
           <td>易用性问题</td>
-          <td>
+          <td><div style='text-align:left'>
           关键步骤错误或缺失，无法指导用户完成任务<br>
     缺少必要的前提条件、注意事项等<br>
-    描述存在歧义
+    描述存在歧义</div>
     </td>
       </tr>  
     </table>
+
+
 
 -   活动主办方回复为“ **恭喜您！此 Issue 有效，感谢您的反馈** ”或 **PR 经审核后合入到社区**表示该 Issue 或 PR 有效。
 
