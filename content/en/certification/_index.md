@@ -71,6 +71,6 @@ name = "天津南大通用数据技术股份有限公司"
 version = "openGauss 3.0.0"
 award = "2022-09-10"
 expiration = "2025-03-31"
-certificate = "https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/GBase%208c%20V5/Certificate.pdf.pdf"
+certificate = "https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/GBase%208c%20V5/Certificate.pdf"
 
 +++
