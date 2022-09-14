@@ -48,4 +48,29 @@ expiration = "2024-03-31"
 certificate = "https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/LNX-RDS%20V3.4/Certificate.pdf"
 
 
+[[product]]
+pro = "有蓉数据库 V1.0"
+name = "成都虚谷伟业科技有限公司"
+version = "openGauss 2.0.0"
+award = "2022-07-15"
+expiration = "2024-03-31"
+certificate = "https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%9C%89%E8%93%89%E6%95%B0%E6%8D%AE%E5%BA%93%20V1.0/Certificate.pdf"
+
+[[product]]
+pro = "神通数据库管理系统 V7.0.21"
+name = "天津神舟通用数据技术有限公司"
+version = "openGauss 3.0.0"
+award = "2022-07-20"
+expiration = "2025-03-31"
+certificate = "https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E7%A5%9E%E9%80%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%20V7.0.21/Certificate.pdf"
+
+
+[[product]]
+pro = "GBase 8c V5"
+name = "天津南大通用数据技术股份有限公司"
+version = "openGauss 3.0.0"
+award = "2022-09-10"
+expiration = "2025-03-31"
+certificate = "https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/GBase%208c%20V5/Certificate.pdf.pdf"
+
 +++
