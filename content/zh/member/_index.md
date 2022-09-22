@@ -146,4 +146,8 @@ side = "left"
 id = "CQusergroup"
 side = "right"
 
+[[usergroups]]
+id = "CDusergroup"
+side = "left"
+
 +++
