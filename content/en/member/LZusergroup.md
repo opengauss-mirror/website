@@ -93,5 +93,12 @@ name = "Tao Yang"
 title = "Member"
 company = "VASTDATA"
 email = "mailto:Yangtao@vastdata.com.cn"
+
+[[card]]
+img = "/zh/member/img/yanghenian.png"
+name = "Henian Yang"
+title = "Member"
+company = "Jinchuan Group Co.,Ltd"
+email = "mailto:yanghenian@jnmc.com"
 wider = "wider"
 +++
