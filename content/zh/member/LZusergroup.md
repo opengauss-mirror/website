@@ -93,6 +93,13 @@ name = "杨涛"
 title = "Member"
 company = "海量数据"
 email = "mailto:Yangtao@vastdata.com.cn"
+
+[[card]]
+img = "/zh/member/img/yanghenian.png"
+name = "杨鹤年"
+title = "Member"
+company = "金川集团股份有限公司"
+email = "mailto:yanghenian@jnmc.com"
 wider = "wider"
 
 +++
