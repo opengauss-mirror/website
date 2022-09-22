@@ -42,7 +42,7 @@ gitee = "https://gitee.com/xfusiongaobo"
 img = "/zh/member/img/diaoxianfeng.png"
 name = "刁现峰"
 title = "Committer"
-email = "mailto:Qingyi.song@outlook.com"
+email = "mailto:diaoxianfeng@huawei.com"
 gitee = "https://gitee.com/windxd"
 
 [[card]]
