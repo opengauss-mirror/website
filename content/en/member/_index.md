@@ -148,4 +148,8 @@ side = "right"
 [[usergroups]]
 id = "CDusergroup"
 side = "left"
+
+[[usergroups]]
+id = "SHusergroup"
+side = "right"
 +++
