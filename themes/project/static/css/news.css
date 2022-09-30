@@ -94,6 +94,11 @@
     margin: 40px 0 20px 0;
     color: #000;
 }
+#post-content h5 {
+  margin: 24px 0 6px 0;
+  color: #000;
+  font-size: 16px;
+}
 .newsDetail_content {
     padding: 0;
 }
