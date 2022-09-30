@@ -38,7 +38,7 @@ $(document).ready(function() {
     var urls = currentUrl.split('/docs/');
     urls = urls.slice(0, urls.length - 1);
     
-    if(urls[1].indexOf("latest") != -1 || urls[1].indexOf("3.0.0") != -1){
+    if(urls[1].indexOf("latest") != -1 || urls[1].indexOf("3.0.0") != -1 || urls[1].indexOf("3.1.0") != -1){
         urls.push('BriefTutorial/BriefTutorial.html');
     }else{
         urls.push('Quickstart/Quickstart.html');

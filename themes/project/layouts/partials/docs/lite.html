@@ -36,7 +36,8 @@
     };
     
       // 区分版本显示
-      if(version === '3.0.0' || version === 'latest-lite' || version === 'latest'){
+      var support_lite_versions = ['3.1.0', '3.0.0', 'latest-lite', 'latest']
+      if(support_lite_versions.indexOf(version) > -1){
         switchVersion.show()
         var hasCookie = getCookieV('docVersion=true');
          

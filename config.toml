@@ -56,7 +56,7 @@ paginate = 10
 [[menu.main]]
     identifier = "docs"
     name = "Docs"
-    url  = "/en/docs/3.0.0/docs/BriefTutorial/BriefTutorial.html"
+    url  = "/en/docs/3.1.0/docs/BriefTutorial/BriefTutorial.html"
     weight = 3
 
 [[menu.main]]
@@ -257,7 +257,7 @@ paginate = 10
 [[languages.zh.menu.main]]
     identifier = "docs"
     name = "文档"
-    url  = "/zh/docs/3.0.0/docs/BriefTutorial/BriefTutorial.html"
+    url  = "/zh/docs/3.1.0/docs/BriefTutorial/BriefTutorial.html"
     weight = 3
 
 [[languages.zh.menu.main]]

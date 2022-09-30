@@ -1,0 +1,88 @@
+<div class="show-for-pc">
+    {{ range where $.Page.Site.Pages "Type" "download3.1.0"}}
+    {{ if .Params.title }}
+    <h3>{{.Params.title}}</h3>
+    <div class="down-teble">
+        <div class="tebla-td">
+            {{ range .Params.th}}
+            <div>{{ .name}}</div>
+            {{ end }}
+        </div>
+        {{ range .Params.item }}
+        <div class="tebla-td">
+            <div>
+                <span>{{ .name}}</span>
+                {{.title}}
+                {{ if eq .table "server"}}
+                <span class="download-tips-frame">
+                    <span class="download-tips">
+                        <img src="/img/download/tips.svg" alt="">
+                    </span>
+                    <div class="tips-content-frame tips-content-text">
+                        {{ if eq .edition "enterprise" }}
+                            {{ i18n "opengauss_edition_enterprise" }}
+                        {{ else if eq .edition "simple" }}
+                            {{ i18n "opengauss_edition_simple" }}
+                        {{ else if eq .edition "lite" }}
+                            {{ i18n "opengauss_edition_lite" }}
+                        {{ else }}
+                            {{ i18n "opengauss_edition_distributed" }}
+                        {{ end }}
+                    </div>
+                </span>
+                
+                {{ end }}
+            </div>
+            {{ range .list }}
+            {{ if ne .name "ds" }}
+            <div class="opera">
+                {{ if ne .download_url ""}}
+                <a class="down-teble-down" href="{{ .download_url }}"><img src="/img/download/down-down.png" alt=""><span>{{ i18n "download_download"}}</span></a>
+                <div class="down-teble-copy" name="{{.sha}}"><img src="/img/download/down-copy.png" alt=""><span>SHA256</span></div>
+                {{ end }}
+            </div>
+            {{ else }}
+            <div>
+                <div class="opera">
+                    <a style="float: left" class="down-teble-down" href="{{ .download_url }}"><img src="/img/download/down-down.png" alt=""><span>{{ i18n "download_download"}}</span></a>
+                    <div class="down-teble-copy" name="{{.sha}}"><img src="/img/download/down-copy.png" alt=""><span>SHA256</span></div>
+                    <a class="down-docs-table-down" target="_blank" href="{{ .download_guide_url }}"><img src="/img/download/download-icon.svg" alt="">
+                        <span>{{ i18n "download_documents"}}</span>
+                    </a>
+                </div>
+            </div>
+            {{ end }}
+            {{ end }}
+        </div>
+        {{ end }}
+    </div>
+    {{ end }}
+    {{ end }}
+</div>
+<div class="show-for-mo">
+    {{ range where $.Page.Site.Pages "Type" "download3.1.0"}}
+    {{ if .Params.title  }}
+    <h3>{{ .Params.title }}</h3>
+    {{ $th := .Params.th }}
+    {{ range .Params.item }}
+    <div class="down-teble">
+        <div class="tebla-td">
+            <div></div>
+            <div>{{ .name }}</div>
+        </div>
+            {{ range $index, $page := .list }}
+            {{ if ne $page.download_url ""}}
+            <div class="tebla-td">
+                {{ $item := index $th (add $index 1) }}
+                <div>{{ $item.name }}</div>
+                <div class="opera">
+                    <a class="down-teble-down" href="{{ $page.download_url }}"><img src="/img/download/down-down.png" alt=""><span>{{ i18n "download_download"}}</span></a>
+                </div>
+            </div>
+            {{ end }}
+            {{ end }}
+    </div>
+    {{ end }}
+    {{ end }}
+    {{ end }}
+</div>

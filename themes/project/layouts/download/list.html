@@ -30,6 +30,7 @@
                 <span class="download-version">{{ i18n "download_version" }}</span>
                 <div class="select-option">
                   <select class="download-sel-version">
+                    <option value="8">3.1.0</option>
                     <option value="7">3.0.0</option>
                     <option value="6">2.1.0</option>
                     <option value="5">2.0.1</option>
@@ -40,7 +41,18 @@
                   </select>
                 </div>
               </div>
-              <div class="download-discri download-version-7">
+              <div class="download-discri download-version-8">
+                <a href="{{ i18n "download_release_notes_link_3_1_0" }}" target="_blank">{{ i18n "download_release_notes" }}</a>
+                <span></span>
+                <a href="{{ i18n "download_installation_guide_link_3_1_0" }}" target="_blank">{{ i18n "download_enterprise_installation_guide" }}</a>
+                <span></span>
+                <a href="{{ i18n "download_simple_installation_guide_link_3_1_0" }}" target="_blank">{{ i18n "download_simple_installation_guide" }}</a>
+                <span></span>
+                <a href="{{ i18n "download_lite_installation_guide_link_3_1_0" }}" target="_blank">{{ i18n "download_lite_installation_guide" }}</a>
+                <span></span>
+                <a href="{{ i18n "download_feedback_question_link" }}" target="_blank">{{ i18n "download_feedback_question" }}</a>
+              </div>
+              <div class="download-discri download-version-7 hide">
                 <a href="{{ i18n "download_release_notes_link_3_0_0" }}" target="_blank">{{ i18n "download_release_notes" }}</a>
                 <span></span>
                 <a href="{{ i18n "download_installation_guide_link_3_0_0" }}" target="_blank">{{ i18n "download_enterprise_installation_guide" }}</a>
@@ -101,7 +113,8 @@
               </div>
             </div>
             
-            <div class="download-content download-version-7">{{ partial "download/version7" . }}</div>
+            <div class="download-content download-version-8">{{ partial "download/version8" . }}</div>
+            <div class="download-content download-version-7 hide">{{ partial "download/version7" . }}</div>
             <div class="download-content download-version-6 hide">{{ partial "download/version6" . }}</div>
             <div class="download-content download-version-5 hide">{{ partial "download/version5" . }}</div>
             <div class="download-content download-version-4 hide">{{ partial "download/version4" . }}</div>

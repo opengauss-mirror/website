@@ -45,6 +45,11 @@
   // lite下载判断
   var url=window.location.href;
   var version = url.split('docs')[1].split('/')[1].split('/')[0];//通过url获取版本号 
+  if (version.indexOf("3.1.0") == 0 || version.indexOf("latest") == 0) {
+    $('.download_link').hide()
+  } else {
+    $('.download_link').show()
+  }
   var lang = window.location.href.includes('/zh/') ? 'zh' : 'en'; 
   if(version.includes('-lite')){
       let lite = version.split('-')[0];
