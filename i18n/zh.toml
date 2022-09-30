@@ -234,6 +234,9 @@ other = "精简功能，缩减安装包大小，内存占用更少"
 [opengauss_edition_distributed]
 other = "基于ShardingSphere和k8s的分布式容器化镜像"
 
+[opengauss_edition_distributed_olk]
+other = "基于ShardingSphere和openLookeng的分布式HTAP软件包"
+
 [download_documents]
 other = "使用文档"
 
