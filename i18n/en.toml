@@ -223,6 +223,10 @@ other = "Thin provisioning reduces the installation package size and occupies le
 [opengauss_edition_distributed]
 other = "Distributed containerized image based on ShardingSphere and k8s."
 
+[opengauss_edition_distributed_olk]
+other = "Distributed HTAP software package based on ShardingSphere and openLookeng"
+
+
 [download_documents]
 other = "Documentation"
 
