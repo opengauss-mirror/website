@@ -49,7 +49,7 @@ paginate = 10
 [[menu.main]]
     identifier = "supportTool"
     name = "Support Tools"
-    url  = "/en/supportTools.html"
+    url  = "/en/supporttools.html"
     weight = 2
     parent = "download"
 
@@ -250,7 +250,7 @@ paginate = 10
 [[languages.zh.menu.main]]
     identifier="supportTool"
     name = "支持工具"
-    url  = "/zh/supportTools.html"
+    url  = "/zh/supporttools.html"
     weight = 2
     parent = "download"
 
