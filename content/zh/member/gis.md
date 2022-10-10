@@ -58,4 +58,11 @@ name = "吴松"
 title = "Committer"
 email = "mailto:sung.wu@qq.com"
 gitee = "https://gitee.com/sungwu_admin"
+
+[[card]]
+img = "/zh/member/img/huangning.png"
+name = "黄宁"
+title = "Committer"
+email = "mailto:huangning2@supermap.com"
+gitee = "https://gitee.com/huangning2"
 +++
