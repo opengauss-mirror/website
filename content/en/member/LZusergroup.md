@@ -21,8 +21,16 @@ wider = "wider"
 img = "/zh/member/img/zhaohong.png"
 name = "Hong Zhao"
 title = "Ambassador"
-company = "Lanzhou University of technology"
+company = "Northwest Normal University"
 email = "mailto:594286500@qq.com"
+
+[[card]]
+img = "/zh/member/img/tianran.png"
+name = "Ran Tian"
+title = "Ambassador"
+company = "Lanzhou University of technology"
+email = "mailto:tianran@nwnu.edu.cn"
+
 
 [[card]]
 img = "/zh/member/img/guoxiao.png"
