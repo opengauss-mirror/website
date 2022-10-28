@@ -25,6 +25,13 @@ company = "兰州理工大学"
 email = "mailto:594286500@qq.com"
 
 [[card]]
+img = "/zh/member/img/tianran.png"
+name = "田冉"
+title = "Ambassador"
+company = "西北师范大学"
+email = "mailto:tianran@nwnu.edu.cn"
+
+[[card]]
 img = "/zh/member/img/guoxiao.png"
 name = "郭霄"
 title = "Member"
