@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>切片</title>
+    <g id="PC" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="切图" transform="translate(-171.000000, -691.000000)">
+            <g id="插画/openEuler/三级插画/17备份" transform="translate(171.000000, 691.000000)">
+                <circle id="椭圆形备份-5" fill="#7D32EA" opacity="0.400000006" cx="40" cy="31" r="16"></circle>
+                <g id="编组-3" transform="translate(12.232646, 12.000000)">
+                    <polygon id="矩形" stroke="#000000" stroke-width="2" stroke-linejoin="round" points="27.7336971 14.4 40.5000403 20.7401137 27.7336971 27.0802274 14.9673539 20.7401137"></polygon>
+                    <polygon id="矩形" stroke="#000000" stroke-width="2" stroke-linejoin="round" points="14.9673539 20.8262295 27.819813 27.252459 27.819813 42.4 14.9673539 34.9447083"></polygon>
+                    <polygon id="矩形" stroke="#000000" stroke-width="2" stroke-linejoin="round" transform="translate(34.246042, 31.613115) scale(-1, 1) translate(-34.246042, -31.613115) " points="27.819813 20.8262295 40.672272 27.252459 40.672272 42.4 27.819813 34.9447083"></polygon>
+                    <g id="编组" transform="translate(23.767354, 0.000000)" stroke="#000000" stroke-width="2">
+                        <circle id="椭圆形" cx="4" cy="4" r="4"></circle>
+                        <line x1="4.05245902" y1="8" x2="4.05245902" y2="15.4" id="路径-14"></line>
+                    </g>
+                    <g id="编组" transform="translate(8.668396, 38.748503) rotate(-120.000000) translate(-8.668396, -38.748503) translate(4.668396, 31.048503)" stroke="#000000" stroke-width="2">
+                        <circle id="椭圆形" cx="4" cy="4" r="4"></circle>
+                        <line x1="4.05245902" y1="8" x2="4.05245902" y2="15.4" id="路径-14"></line>
+                    </g>
+                    <g id="编组" transform="translate(46.668396, 38.748503) scale(-1, 1) rotate(-120.000000) translate(-46.668396, -38.748503) translate(42.668396, 31.048503)" stroke="#000000" stroke-width="2">
+                        <circle id="椭圆形" cx="4" cy="4" r="4"></circle>
+                        <line x1="4.05245902" y1="8" x2="4.05245902" y2="15.4" id="路径-14"></line>
+                    </g>
+                    <g id="编组-2" transform="translate(6.767354, 16.000000) rotate(-60.000000) translate(-6.767354, -16.000000) translate(3.767354, 11.000000)" fill="#7D32EA">
+                        <circle id="椭圆形" cx="3" cy="3" r="3"></circle>
+                        <rect id="矩形" x="2" y="5" width="2" height="5" rx="1"></rect>
+                    </g>
+                    <g id="编组-2" transform="translate(27.767354, 51.000000) scale(1, -1) translate(-27.767354, -51.000000) translate(24.767354, 46.000000)" fill="#7D32EA">
+                        <circle id="椭圆形" cx="3" cy="3" r="3"></circle>
+                        <rect id="矩形" x="2" y="5" width="2" height="5" rx="1"></rect>
+                    </g>
+                    <g id="编组-2" transform="translate(48.767354, 16.000000) scale(-1, 1) rotate(-60.000000) translate(-48.767354, -16.000000) translate(45.767354, 11.000000)" fill="#7D32EA">
+                        <circle id="椭圆形" cx="3" cy="3" r="3"></circle>
+                        <rect id="矩形" x="2" y="5" width="2" height="5" rx="1"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

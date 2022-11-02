@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>切片</title>
+    <g id="PC" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.600000024">
+        <g id="切图" transform="translate(-908.000000, -995.000000)">
+            <g id="插画/openEuler/三级插画/1" transform="translate(908.000000, 995.000000)">
+                <rect id="矩形" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" x="21.25" y="21.25" width="25" height="25"></rect>
+                <rect id="矩形" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" x="21.25" y="53.75" width="25" height="25"></rect>
+                <rect id="矩形" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" x="53.75" y="53.75" width="25" height="25"></rect>
+                <polygon id="矩形" fill="#FFFFFF" transform="translate(66.250000, 33.750000) rotate(-315.000000) translate(-66.250000, -33.750000) " points="57.5 25 75 25 75 42.5 57.5 42.5"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
