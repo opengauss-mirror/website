@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>编组 11备份</title>
+    <g id="PC" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="切图" transform="translate(-313.000000, -62.000000)">
+            <g id="编组-11备份" transform="translate(313.000000, 62.000000)">
+                <rect id="矩形" x="0" y="0" width="80" height="80"></rect>
+                <g id="插画/openEuler/三级插画/12" transform="translate(14.000000, 16.000000)" stroke-width="2">
+                    <path d="M32,0 L32,8 L32,8 C27.496894,8 23.3413827,9.48823029 19.9984803,11.9996769 L0,12 L0,0 L32,0 Z" id="形状结合" stroke="#FFFFFF" stroke-linejoin="round"></path>
+                    <path d="M12.4000192,24.0002624 L0,24 L0,12 L19.9994852,11.998922 C16.1588966,14.8838927 13.3907219,19.1193589 12.4000192,24.0002624 Z" id="形状结合" stroke="#FFFFFF" stroke-linejoin="round"></path>
+                    <path d="M12,28 C12,30.8444363 12.5937973,33.5501839 13.6641945,36.0000452 L0,36 L0,24 L12.400222,23.9992634 C12.1377734,25.2919315 12,26.6298764 12,28 Z" id="形状结合" stroke="#FFFFFF" stroke-linejoin="round"></path>
+                    <path d="M32,48 L0,48 L0,36 L13.6645101,36.0007674 C16.7509117,43.0639767 23.7990209,48 32,48 Z" id="形状结合" stroke="#FFFFFF" stroke-linejoin="round"></path>
+                    <circle id="椭圆形" stroke="#FFFFFF" cx="32" cy="28" r="20"></circle>
+                    <path d="M26,24.1213203 L38,24.1213203 M32,24.1213203 L32,36.1213203 M27.8786797,19 L32.1213203,23.2426407 M36.1213203,19 L31.8786797,23.2426407 M25,28.1213203 L39,28.1213203" id="形状结合" stroke="#BD72FF" stroke-linecap="round" stroke-linejoin="round"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>切片</title>
+    <g id="PC" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.600000024">
+        <g id="切图" transform="translate(-908.000000, -306.000000)" stroke="#FFFFFF" stroke-width="2">
+            <g id="插画/openEuler/三级插画/1" transform="translate(908.000000, 306.000000)">
+                <path d="M57.5,20 L57.5,30 L57.5,30 C51.8708064,30 46.6761543,31.8604935 42.4974076,35.0001165 L17.5,35 L17.5,20 L57.5,20 Z" id="形状结合" stroke-linejoin="round"></path>
+                <path d="M33.0000707,50.0000979 L17.5,50 L17.5,35 L42.4984028,34.9993689 C37.6982228,38.6055218 34.2384074,43.8994695 33.0000707,50.0000979 Z" id="形状结合" stroke-linejoin="round"></path>
+                <path d="M32.5,55 C32.5,58.5555259 33.2422385,61.9376927 34.5802211,65.0000061 L17.5,65 L17.5,50 L33.0003558,49.9986935 C32.6722441,51.6146482 32.5,53.2872092 32.5,55 Z" id="形状结合" stroke-linejoin="round"></path>
+                <path d="M57.5,80 L17.5,80 L17.5,65 L34.5804412,65.0005099 C38.4383408,73.8297615 47.2486022,80 57.5,80 Z" id="形状结合" stroke-linejoin="round"></path>
+                <circle id="椭圆形" cx="57.5" cy="55" r="25"></circle>
+                <path d="M50,50.1516504 L65,50.1516504 M57.5,50.1516504 L57.5,65.1516504 M52.3483496,43.75 L57.6516504,49.0533009 M62.6516504,43.75 L57.3483496,49.0533009 M48.75,55.1516504 L66.25,55.1516504" id="形状结合" stroke-linecap="round" stroke-linejoin="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

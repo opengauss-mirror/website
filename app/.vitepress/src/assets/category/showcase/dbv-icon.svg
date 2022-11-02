@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="101px" viewBox="0 0 100 101" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>切片</title>
+    <defs>
+        <path d="M34.0865324,37.9464286 C34.0865324,34.2480932 37.1399762,31.25 40.90659,31.25 C44.6732037,31.25 47.7266475,34.2480932 47.7266475,37.9464286 C47.7266475,41.6447639 44.6732037,44.6428571 40.90659,44.6428571 C37.1399762,44.6428571 34.0865324,41.6447639 34.0865324,37.9464286 Z M59.09341,44.6428571 C62.8600238,44.6428571 65.9134676,41.6447639 65.9134676,37.9464286 C65.9134676,34.2480932 62.8600238,31.25 59.09341,31.25 C55.3267963,31.25 52.2733525,34.2480932 52.2733525,37.9464286 C52.2733525,41.6447639 55.3267963,44.6428571 59.09341,44.6428571 Z M74.7568089,59.2633929 L71.4831812,52.8125 C70.3301619,50.5447924 67.9719862,49.1106091 65.3905965,49.1071429 L56.2971865,49.1071429 C56.7131966,49.6385248 57.0784759,50.2063996 57.3883957,50.8035714 L60.6847568,57.2767857 C61.5004631,58.9064971 61.6071245,60.7916003 60.9802926,62.5 L72.7335251,62.5 C73.5214537,62.4976587 74.2519623,62.0948835 74.66414,61.4355309 C75.0763178,60.7761783 75.1113819,59.9542818 74.7568089,59.2633929 Z M53.2963611,52.8125 C52.1396853,50.5375946 49.7706219,49.1021459 47.1810429,49.1071299 L34.632137,49.1071299 C32.042558,49.1021459 29.6734946,50.5375946 28.5168188,52.8125 L25.2431911,59.2633929 C24.8886181,59.9542818 24.9236822,60.7761783 25.33586,61.4355309 C25.7480377,62.0948835 26.4785463,62.4976587 27.2664749,62.5 L54.546705,62.5 C55.3346336,62.4976587 56.0651422,62.0948835 56.4773199,61.4355309 C56.8894977,60.7761783 56.9245618,59.9542818 56.5699888,59.2633929 L53.2963611,52.8125 Z" id="path-1"></path>
+        <filter x="-108.0%" y="-134.4%" width="316.0%" height="445.6%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="12" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="16" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.746630668   0 0 0 0 0.770274784   0 0 0 0 0.801800272  0 0 0 0.199792395 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="PC" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.600000024">
+        <g id="切图" transform="translate(-908.000000, -765.000000)">
+            <g id="插画/openEuler/三级插画/1备份" transform="translate(908.000000, 765.500000)">
+                <rect id="矩形" stroke="#FFFFFF" stroke-width="2" x="20" y="65" width="60" height="20"></rect>
+                <g id="Icon-color">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <polyline id="路径-13" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="30 35 20 35 20 15 80 15 80 35 70 35"></polyline>
+                <polyline id="路径-15" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="30.0545247 40 20 40 20 60 22.6009115 60"></polyline>
+                <polyline id="路径-15" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(75.027262, 50.000000) scale(-1, 1) translate(-75.027262, -50.000000) " points="80.0545247 40 70 40 70 60 72.6009115 60"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>

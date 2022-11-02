@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="101px" viewBox="0 0 100 101" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>切片</title>
+    <defs>
+        <path d="M51.7104933,33.4585347 L36.1604442,59.5424565 C35.8553015,60.0493711 35.3185143,60.3598255 34.7387255,60.3647168 L34.2944384,60.3647168 C33.9832768,60.3641236 33.6860493,60.2319696 33.4725072,59.9992678 C33.2600544,59.7656684 33.1549489,59.4497762 33.1837206,59.1313264 L34.4277245,44.3763234 L26.4971995,44.3763234 C25.9005326,44.3696999 25.3515824,44.0397285 25.0532664,43.508382 L24.6311936,42.7546435 C24.4191788,42.3969498 24.4191788,41.9474685 24.6311936,41.5897748 L40.1812426,15.505853 C40.494657,14.9850209 41.0518156,14.6725493 41.6473901,14.6833095 L42.0916772,14.6833095 C42.4028388,14.684186 42.7000663,14.81634 42.9136084,15.0490418 C43.1260611,15.2826411 43.2311667,15.5985334 43.202395,15.9169831 L41.9361767,30.6719862 L49.8667017,30.6719862 C50.4633686,30.6786097 51.0123188,31.0085811 51.3106349,31.5399275 L51.7327076,32.2936661 C51.9379491,32.6556213 51.9293769,33.1051302 51.7104933,33.4585347 Z" id="path-1"></path>
+        <filter x="-197.0%" y="-91.9%" width="494.0%" height="336.4%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="12" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="16" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.746630668   0 0 0 0 0.770274784   0 0 0 0 0.801800272  0 0 0 0.199792395 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="PC" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.600000024">
+        <g id="切图" transform="translate(-908.000000, -650.000000)">
+            <g id="插画/openEuler/三级插画/1" transform="translate(908.000000, 650.500000)">
+                <g id="编组-2" transform="translate(12.500000, 12.500000)">
+                    <g id="编组" transform="translate(13.843557, 13.843557) rotate(-45.000000) translate(-13.843557, -13.843557) translate(7.317642, 0.791726)" stroke="#FFFFFF" stroke-width="2">
+                        <circle id="椭圆形" cx="6.52591533" cy="6.52591533" r="6.52591533"></circle>
+                        <line x1="6.52591533" y1="13.0518307" x2="6.52591533" y2="26.1036613" id="路径-12" stroke-linecap="round" stroke-linejoin="round"></line>
+                    </g>
+                    <g id="编组" transform="translate(61.156443, 13.843557) scale(-1, 1) rotate(-45.000000) translate(-61.156443, -13.843557) translate(54.630528, 0.791726)" stroke="#FFFFFF" stroke-width="2">
+                        <circle id="椭圆形" cx="6.52591533" cy="6.52591533" r="6.52591533"></circle>
+                        <line x1="6.52591533" y1="13.0518307" x2="6.52591533" y2="26.1036613" id="路径-12" stroke-linecap="round" stroke-linejoin="round"></line>
+                    </g>
+                    <g id="编组" transform="translate(13.843557, 61.156443) scale(1, -1) rotate(-45.000000) translate(-13.843557, -61.156443) translate(7.317642, 48.104612)" stroke="#FFFFFF" stroke-width="2">
+                        <circle id="椭圆形" cx="6.52591533" cy="6.52591533" r="6.52591533"></circle>
+                        <line x1="6.52591533" y1="13.0518307" x2="6.52591533" y2="26.1036613" id="路径-12" stroke-linecap="round" stroke-linejoin="round"></line>
+                    </g>
+                    <g id="编组" transform="translate(61.156443, 61.156443) scale(-1, -1) rotate(-45.000000) translate(-61.156443, -61.156443) translate(54.630528, 48.104612)" stroke="#FFFFFF" stroke-width="2">
+                        <circle id="椭圆形" cx="6.52591533" cy="6.52591533" r="6.52591533"></circle>
+                        <line x1="6.52591533" y1="13.0518307" x2="6.52591533" y2="26.1036613" id="路径-12" stroke-linecap="round" stroke-linejoin="round"></line>
+                    </g>
+                    <g id="Icon-color">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
