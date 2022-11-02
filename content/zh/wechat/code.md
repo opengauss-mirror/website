@@ -1,1 +1,0 @@
-openGauss微信公众号
