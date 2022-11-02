@@ -1,7 +1,0 @@
-version = "latest"
-##如下是文档下载链接
-downloadUrlZh = "https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/openGauss-document-zh-3.1.0.zip"
-downloadUrlEn = "https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/openGauss-document-en-3.1.0.zip"
-##如下是文档默认访问页面，用于版本切换后，跳转到对应版本的首页。因为不能做成章节一一对应，只能切换版本的时候跳转到文档默认首页。 
-defaultUrlZh = "/zh/docs/latest/docs/BriefTutorial/BriefTutorial.html"
-defaultUrlEn = "/en/docs/latest/docs/BriefTutorial/BriefTutorial.html"

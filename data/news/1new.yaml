@@ -1,7 +1,0 @@
-title: "main_news_title"
-more: "main_cards_title_enter_repository"
-herf: "main_news_herf"
-content:
-  - {plate: "main_news_title",name: "main_news_intro_one",time: 2020.03.20}
-  - {plate: "main_news_title",name: "main_news_intro_two",time: 2020.03.15}
-  - {plate: "main_news_title",name: "main_news_intro_three",time: 2020.03.01}
