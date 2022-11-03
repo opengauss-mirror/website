@@ -151,12 +151,8 @@ onMounted(async () => {
     background-color: var(--o-color-bg2);
     background-repeat: no-repeat;
     background-size: cover;
-    :deep(.el-card__body) {
-      width: 100%;
-      padding: var(--o-spacing-h2);
-      @media (max-width: 768px) {
-        padding: var(--o-spacing-h4) 0 0 0;
-      }
+    @media (max-width: 768px) {
+      padding: 24px 0;
     }
   }
 
@@ -168,7 +164,7 @@ onMounted(async () => {
     flex-wrap: wrap;
     width: 100%;
     @media (max-width: 768px) {
-      justify-content: center;
+      justify-content: space-between;
     }
   }
   &-item {
@@ -288,7 +284,7 @@ onMounted(async () => {
 
   &-detail {
     font-size: var(--o-font-size-text);
-    font-weight: 300;
+    font-weight: 400;
     color: var(--o-color-text1);
     line-height: var(--o-line-height-text);
     margin-top: var(--o-spacing-h4);

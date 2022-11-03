@@ -45,10 +45,10 @@ const resolveDate = (date: any) => {
   border-bottom: 1px solid var(--o-color-border2);
   padding-bottom: 24px;
   .page-title {
-    font-size: 36px;
-    line-height: 48px;
+    font-size: var(--o-font-size-h3);
+    line-height: var(--o-line-height-h3);
     margin: 0;
-    font-weight: 300;
+    font-weight: 500;
   }
   .info {
     color: var(--o-color-text4);
@@ -89,8 +89,8 @@ const resolveDate = (date: any) => {
     margin-bottom: 16px;
     padding-bottom: 16px;
     .page-title {
-      font-size: 16px;
-      line-height: 24px;
+      font-size: var(--o-font-size-h7);
+      line-height: var(--o-line-height-h7);
     }
   }
 }

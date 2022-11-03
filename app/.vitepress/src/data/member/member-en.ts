@@ -30,6 +30,7 @@ export default {
       ID: 'tc',
       GITEE_PATH: 'https://gitee.com/opengauss/tc',
       EMIAL: 'tc@opengauss.org',
+      NAMEL_TEXT: 'TC Members',
       LIST: data.en.TC,
     },
     {

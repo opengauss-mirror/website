@@ -7,10 +7,9 @@ import type { AxiosResponse } from '@/shared/axios';
  * @return {Array}
  */
 // /calendar
-const REQUEST_PREFIX = 'http://119.8.32.82:8080';
 
 export function getMeetingData(params: object) {
-  const url = REQUEST_PREFIX + '/meetingsdata/';
+  const url = '/calendar/meetingsdata/';
   return request
     .get(url, { params })
     .then((res: AxiosResponse) => res.data)
@@ -25,7 +24,7 @@ export function getMeetingData(params: object) {
  * @return {Array}
  */
 export function getMeetingSig() {
-  const url = REQUEST_PREFIX + '/groups/';
+  const url = '/calendar/groups/';
   return request
     .get(url)
     .then((res: AxiosResponse) => res.data)
@@ -39,7 +38,7 @@ export function getMeetingSig() {
  * @name giteeLogin
  */
 export function giteeLogin() {
-  const url = REQUEST_PREFIX + '/gitee_login/';
+  const url = '/calendar/gitee_login/';
   return request
     .get(url)
     .then((res: AxiosResponse) => res.data)
@@ -53,7 +52,7 @@ export function giteeLogin() {
  * @name meetingLogin
  */
 export function meetingLogin() {
-  const url = REQUEST_PREFIX + `/user/`;
+  const url = `/calendar/user/`;
   return request
     .get(url)
     .then((res: AxiosResponse) => res.data)
@@ -63,7 +62,7 @@ export function meetingLogin() {
 }
 
 export function meetingReserve(params: object) {
-  const url = REQUEST_PREFIX + `/meetings/`;
+  const url = `/calendar/meetings/`;
   return request
     .post(url, params)
     .then((res: AxiosResponse) => res.data)
@@ -73,7 +72,7 @@ export function meetingReserve(params: object) {
 }
 
 export function meetingDelete(mid: number | null) {
-  const url = REQUEST_PREFIX + `/meeting/action/delete/${mid}/`;
+  const url = `/calendar/meeting/action/delete/${mid}/`;
   return request
     .delete(url)
     .then((res: AxiosResponse) => res.data)
@@ -83,7 +82,7 @@ export function meetingDelete(mid: number | null) {
 }
 
 export function meetingUpdate(mid: number | null, params: object) {
-  const url = REQUEST_PREFIX + `/meeting/action/update/${mid}/`;
+  const url = `/calendar/meeting/action/update/${mid}/`;
   return request
     .put(url, params)
     .then((res: AxiosResponse) => res.data)
@@ -93,7 +92,7 @@ export function meetingUpdate(mid: number | null, params: object) {
 }
 
 export function meetingCheck(mid: number | null) {
-  const url = REQUEST_PREFIX + `/meeting/${mid}/`;
+  const url = `/calendar/meeting/${mid}/`;
   return request
     .get(url)
     .then((res: AxiosResponse) => res.data)

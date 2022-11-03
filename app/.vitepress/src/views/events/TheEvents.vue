@@ -50,7 +50,7 @@ const EVENTS_DATA = [
     label: '线上',
     location: '线上',
     img: lang.value === 'zh' ? eventPoster : eventPosterEn,
-    link: 'https://mp.weixin.qq.com/s/vM6p6d1uPVYkwOl7tY0nyA',
+    path: 'https://mp.weixin.qq.com/s/vM6p6d1uPVYkwOl7tY0nyA',
     author: 'openGauss',
     summary:
       '开源实习是openEuler社区、openGauss社区、openLooKeng等单位共同发起的线上实习项目，旨在鼓励在校学生积极参与开源社区，在实际的开源环境中提升实践能力。社区提供实习任务，并提供导师辅导，学生通过实习申请后，可在社区领取任务，每完成一个任务可获得相应积分，积分累计达规定量后，可获得实习证明和实习工资。',
@@ -70,8 +70,10 @@ const newsList = computed(() => {
   if (screenWidth.value > 768) {
     const showList: Ref<Array<any>> = ref([]);
     allReviewList.value.forEach((item: any) => {
-      if (item.date.slice(0, 7) === timeLineDate.value) {
-        showList.value.push(item);
+      if (item.date) {
+        if (item.date.slice(0, 7) === timeLineDate.value) {
+          showList.value.push(item);
+        }
       }
     });
     return showList.value;
@@ -79,6 +81,9 @@ const newsList = computed(() => {
     return allReviewList.value;
   }
 });
+
+latestList.value = EVENTS_DATA;
+
 const checkFlag = ref(false);
 const newEventList = ref([]);
 onMounted(async () => {
@@ -93,51 +98,22 @@ onMounted(async () => {
 
     responeData.obj.records.forEach((item: any) => {
       if (item.date) {
-        const time = item.time.split('-');
+        const time = item.time && item.time.split('-');
         if (time[1] && time[1].length !== 7) {
           if (Number(time[1].substring(0, 10).replace(/\//g, '')) >= curDate) {
             item.isLatest = true;
           }
         }
-
         if (
           new Date(item.date).getTime() >= nowDate.getTime() ||
           item.isLatest
         ) {
-          // latestList.value.push(item);
+          latestList.value.push(item);
         } else {
           allReviewList.value.push(item);
         }
       }
     });
-    latestList.value = EVENTS_DATA;
-    console.log('latestList.value :>> ', latestList.value);
-
-    // console.log('allReviewList :>> ', allReviewList.value);
-    // responeData.obj.records.forEach(function (item: any, index: number) {
-    //   //获取活动的起始年月
-    //   const month = item.date.split('-')[0].substring(0, 7);
-    //   if (index) {
-    //     checkFlag.value = false;
-    //     newEventList.value.forEach(function (newItem: any) {
-    //       if (month.includes(newItem.month)) {
-    //         checkFlag.value = true;
-    //         newItem.eventList.push(item);
-    //       }
-    //     });
-    //     if (!checkFlag.value) {
-    //       newEventList.value.push({
-    //         month: month,
-    //         eventList: [item],
-    //       });
-    //     }
-    //   } else {
-    //     newEventList.value.push({
-    //       month: month,
-    //       eventList: [item],
-    //     });
-    //   }
-    // });
   } catch (e: any) {
     throw new Error(e);
   }
@@ -157,23 +133,23 @@ const goDetail = (path: string) => {
     :title="i18n.common.COMMON_CONFIG.EVENTS"
     :illustration="illustration"
   />
-  <div class="salon-tabs">
+  <!-- <div class="salon-tabs">
     <OTabs v-model="activeName">
       <OTabPane :label="i18n.connect.EVENTS_NEW" name="first"></OTabPane>
       <OTabPane :label="i18n.connect.EVENTS_REVIEW" name="second"></OTabPane>
     </OTabs>
-  </div>
+  </div> -->
   <AppContent class="salon-content">
     <div class="latest-events">
       <h3 class="salon-title">{{ i18n.connect.EVENTS_NEW }}</h3>
       <template v-if="latestList && latestList.length != 0">
         <OContainer
-          :level-index="2"
           v-for="item in latestList"
           :key="item.id"
+          :level-index="2"
           class="activity-content"
           :class="item.img ? 'event-cover' : 'event-infos'"
-          @click="goDetail(item.link)"
+          @click="goDetail(item.path)"
         >
           <div v-if="item.img" class="activity-content-cover">
             <img :src="item.img" class="cover" alt="" />
@@ -187,10 +163,10 @@ const goDetail = (path: string) => {
               <p class="time">
                 <OIcon class="icon"><IconCalendar /></OIcon>{{ item.time }}
               </p>
-              <p class="online" v-if="item.location">
+              <p v-if="item.location" class="online">
                 <OIcon class="icon"><IconMapPin /></OIcon>{{ item.location }}
               </p>
-              <p class="info-tag" v-if="item.tags">
+              <p v-if="item.tags" class="info-tag">
                 <OIcon class="icon"><IconTag /></OIcon>
                 <OTag type="disabled">{{ item.tags }}</OTag>
               </p>
@@ -253,6 +229,7 @@ const goDetail = (path: string) => {
                 {{ item.title }}
               </div>
               <div
+                v-if="item.MEETUPS_DES"
                 class="salon-review-card-mobile-desc"
                 :title="item.MEETUPS_DES ? item.MEETUPS_DES : ''"
               >
@@ -260,17 +237,17 @@ const goDetail = (path: string) => {
               </div>
             </div>
             <div class="salon-review-card-info">
-              <span class="inline">
+              <span class="inline time">
                 <IconCalendar class="salon-review-card-icon" />
                 {{ item.time }}
               </span>
-              <span class="inline">
+              <span class="inline online">
                 <IconMapPin class="salon-review-card-icon" />
                 <span class="address" :title="item.location">
                   {{ item.location }}</span
                 >
               </span>
-              <span class="inline">
+              <span class="inline review-tag">
                 <IconTag class="salon-review-card-icon" />
                 <OTag type="disabled">{{ item.tags }}</OTag>
               </span>
@@ -310,6 +287,11 @@ const goDetail = (path: string) => {
   height: 100%;
   .empty-img {
     height: 300px;
+    object-fit: cover;
+    @media (max-width: 1100px) {
+      height: auto;
+      width: 100%;
+    }
   }
   .empty-text {
     margin-top: var(--o-spacing-h5);
@@ -317,7 +299,7 @@ const goDetail = (path: string) => {
 }
 .latest-events {
   margin-bottom: var(--o-spacing-h1);
-  @media (max-width: 1080px) {
+  @media (max-width: 1100px) {
     margin-bottom: var(--o-spacing-h2);
   }
 }
@@ -331,13 +313,24 @@ const goDetail = (path: string) => {
     .head {
       margin: 0;
     }
+    @media (max-width: 1100px) {
+      display: block;
+    }
   }
   &-cover {
     width: 100%;
+    @media (max-width: 1100px) {
+      height: 172px;
+    }
+    @media (max-width: 768px) {
+      height: 120px;
+    }
     .cover {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      @media (max-width: 1100px) {
+        object-fit: cover;
+      }
     }
   }
   &.event-infos {
@@ -362,14 +355,18 @@ const goDetail = (path: string) => {
     .activity-title {
       font-weight: 500;
       color: var(--o-color-text1);
-      font-size: 28px;
-      line-height: 36px;
+      font-size: var(--o-font-size-h4);
+      line-height: var(--o-line-height-h4);
+      @media (max-width: 1100px) {
+        font-size: var(--o-font-size-text);
+        line-height: var(--o-line-height-text);
+      }
     }
     .desc {
-      font-size: 14px;
       font-weight: normal;
-      color: var(--theme-text);
-      line-height: 22px;
+      color: var(--o-color-text4);
+      font-size: var(--o-font-size-text);
+      line-height: var(--o-line-height-text);
       margin: 24px 0 40px;
       text-align: justify;
       word-break: break-all;
@@ -378,23 +375,52 @@ const goDetail = (path: string) => {
       display: -webkit-box; //弹性盒模型
       -webkit-box-orient: vertical; //上下垂直
       -webkit-line-clamp: 3; //自定义行数
+      @media (max-width: 1100px) {
+        margin: var(--o-spacing-h9) 0;
+        font-size: var(--o-font-size-tip);
+        line-height: var(--o-line-height-tip);
+        height: var(--o-line-height-tip);
+        -webkit-line-clamp: 1;
+      }
     }
     .info {
       p {
-        font-size: 14px;
-        color: var(--theme-text);
+        color: var(--o-color-text4);
         margin-bottom: 12px;
-        line-height: 24px;
+        font-size: var(--o-font-size-text);
+        line-height: var(--o-line-height-text);
         display: flex;
         align-items: center;
+        @media (max-width: 1100px) {
+          display: inline-flex;
+          margin: 0 var(--o-spacing-h5) 0 0;
+          font-size: var(--o-font-size-tip);
+          line-height: var(--o-line-height-tip);
+        }
       }
       .info-tag {
         margin-bottom: 0;
+        @media (max-width: 767px) {
+          margin: 8px 0 0;
+          min-width: inherit;
+          width: 100%;
+        }
+      }
+      @media (max-width: 767px) {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
       }
     }
     .icon {
       margin-right: 8px;
       font-size: 24px;
+      @media (max-width: 1100px) {
+        font-size: 16px;
+      }
+    }
+    @media (max-width: 1100px) {
+      padding: var(--o-spacing-h5) var(--o-spacing-h6);
     }
   }
 }
@@ -449,6 +475,7 @@ const goDetail = (path: string) => {
           -webkit-box-orient: vertical;
           -webkit-line-clamp: 2;
           word-break: break-all;
+          font-weight: 500;
         }
         &-desc {
           font-size: var(--o-font-size-tip);
@@ -545,16 +572,32 @@ const goDetail = (path: string) => {
       &-info {
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
         width: 100%;
         margin-top: var(--o-spacing-h4);
-        gap: 40px;
+
         @media (max-width: 768px) {
-          margin-top: var(--o-spacing-h5);
-          gap: 24px;
+          margin-top: var(--o-spacing-h6);
         }
         .inline {
           display: flex;
           align-items: center;
+          margin-right: var(--o-spacing-h2);
+          @media (max-width: 768px) {
+            margin-right: var(--o-spacing-h5);
+          }
+        }
+        .review-tag {
+          min-width: 240px;
+          margin-top: 12px;
+          @media screen and (min-width: 768px) and (max-width: 1440px) {
+            margin-top: 0;
+          }
+          @media (max-width: 768px) {
+            margin-top: 8px;
+            min-width: inherit;
+            width: 100%;
+          }
         }
       }
 
@@ -602,7 +645,7 @@ const goDetail = (path: string) => {
   }
   &-title {
     font-size: var(--o-font-size-h3);
-    font-weight: 300;
+    font-weight: 400;
     color: var(--o-color-text1);
     line-height: var(--o-line-height-h3);
     width: 100%;
@@ -611,7 +654,7 @@ const goDetail = (path: string) => {
     @media (max-width: 768px) {
       font-size: var(--o-font-size-h8);
       line-height: var(--o-line-height-h8);
-      display: none;
+      margin-bottom: var(--o-spacing-h5);
     }
   }
   &-tabs {

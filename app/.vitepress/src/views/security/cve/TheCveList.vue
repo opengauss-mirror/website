@@ -264,7 +264,8 @@ watch(queryData, () => getCveLists(queryData));
       }
       span:nth-of-type(2) {
         color: var(--o-color-text3);
-        margin-right: var(--o-spacing-h8);
+        text-align: justify;
+        flex: 1;
       }
       #cve-name {
         color: var(--o-color-brand1);

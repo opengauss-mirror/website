@@ -1,26 +1,32 @@
 export interface DayData {
-  sponsor: string;
+  creator: string;
   duration_time?: string;
   join_url: string;
-  start: string;
-  end: string;
+  startTime: string;
+  endTime: string;
   url?: string;
   data?: string;
   id?: string;
-  etherpad?: string;
   topic?: string;
+  etherpad?: string;
+  name?: string;
   title?: string;
   schedules?: any;
   activity_category?: number;
   group_name?: string;
-  endTime?: string;
   platform?: string;
   meeting_id?: string;
   mid?: string;
+  sponsor?: string;
+  start?: string;
+  end?: string;
   video_url?: string;
-  summary?: string;
+  agenda?: string;
+  detail?: string;
   emaillist?: string;
-  record?: boolean;
+  record?: string;
+  start_date?: string;
+  end_date?: string;
 }
 
 export interface TableData {

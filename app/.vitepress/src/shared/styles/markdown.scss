@@ -41,7 +41,6 @@
   h5,
   h6 {
     color: var(--o-color-text1);
-    font-weight: 400;
 
     a {
       display: none;
@@ -116,7 +115,7 @@
     margin-top: var(--o-spacing-h8);
     margin-bottom: var(--o-spacing-h8);
     font-size: var(--o-font-size-text);
-    font-weight: 300;
+    font-weight: 400;
     color: var(--o-color-text4);
     line-height: var(--o-line-height-text);
     @media screen and (max-width: 768px) {
@@ -180,6 +179,9 @@
 
   img {
     max-width: 100%;
+    @media screen and (max-width: 767px) {
+      width: 100% !important;
+    }
   }
 
   a[href^='#'] {
@@ -216,6 +218,7 @@
     overflow-x: auto;
     z-index: 1;
     padding: 24px 40px;
+    font-size: 14px;
     &::-webkit-scrollbar-track {
       border-radius: 4px;
       background-color: var(--o-color-bg2);
@@ -234,7 +237,9 @@
       padding: 16px;
     }
   }
-
+  pre code {
+    color: var(--o-color-text1);
+  }
   p code,
   li code {
     line-height: 16px;

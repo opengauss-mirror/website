@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref, nextTick, computed, onUnmounted } from 'vue';
+import { onMounted, ref, computed, onUnmounted } from 'vue';
 import { useData } from 'vitepress';
 import { useCommon } from '@/stores/common';
 import IconArrowRight from '~icons/app/icon-arrow-right.svg';
@@ -14,8 +14,6 @@ const caseContent = ref<HTMLElement>();
 const caseData: any = ref({});
 const active = ref(0);
 const activeMobile = ref(0);
-
-const isShow = ref(false);
 
 const handleGo = (path: string) => {
   window.open(path.replace(/(index)$/g, ''), '_blank');
@@ -77,14 +75,6 @@ onMounted(() => {
 
   try {
     if (caseContent.value) {
-      const observer = new IntersectionObserver((res) => {
-        isShow.value = false;
-        if (res[0].intersectionRatio <= 0) return;
-        nextTick(() => {
-          isShow.value = true;
-        });
-      });
-      caseContent.value && observer.observe(caseContent.value);
       setCaseInterval();
       caseContent.value.addEventListener('mouseover', clearCaseInterval);
       //鼠标移出继续
@@ -138,7 +128,7 @@ onUnmounted(() => {
                   "
                 />
                 <div class="case-mobile-word">
-                  {{ item.TYPE }}
+                  {{ lang === 'zh' ? item.TYPE : item.TYPE_EN }}
                 </div>
               </div>
             </div>
@@ -156,7 +146,7 @@ onUnmounted(() => {
           </div>
         </OCollapseItem>
       </OCollapse>
-      <div ref="caseContent" class="case" :class="isShow ? '' : 'pc-height'">
+      <div ref="caseContent" class="case">
         <OCard class="case-card" shadow="never">
           <div class="case-tab">
             <div
@@ -277,11 +267,10 @@ onUnmounted(() => {
     margin-left: var(--o-spacing-h8);
     font-size: var(--o-font-size-h5);
     line-height: var(--o-line-height-h5);
-    font-weight: 300;
+    font-weight: 400;
     color: var(--o-color-text1);
     @media (max-width: 768px) {
       font-size: var(--o-font-size-text);
-      font-weight: 300;
       line-height: var(--o-line-height-text);
     }
   }

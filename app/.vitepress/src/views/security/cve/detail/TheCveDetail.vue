@@ -336,6 +336,7 @@ onMounted(() => {
       line-height: var(--o-line-height-text);
       margin-bottom: var(--o-spacing-h2);
       word-break: break-word;
+      text-align: justify;
       @media screen and (max-width: 768px) {
         font-size: var(--o-font-size-tip);
         line-height: var(--o-line-height-tip);

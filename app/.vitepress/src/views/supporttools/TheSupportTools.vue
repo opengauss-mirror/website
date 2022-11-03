@@ -14,11 +14,7 @@ import illustration from '@/assets/illustrations/supporttools.png';
 import SupportPanoramaZh from '@/assets/category/download/support-panorama-zh.png';
 import SupportPanoramaEn from '@/assets/category/download/support-panorama-en.png';
 import SupportPanoramaZh_dark from '@/assets/category/download/support-panorama-zh_dark.png';
-import SupportPanoramaEn_dark from '@/assets/category/download/support-panorama-zh_dark.png';
-interface ToolList {
-  id: string;
-  name: string;
-}
+import SupportPanoramaEn_dark from '@/assets/category/download/support-panorama-en_dark.png';
 
 const i18n = useI18n();
 const { lang } = useData();
@@ -34,18 +30,6 @@ const ToolsData = computed(() =>
 const panoramaImg = computed(() =>
   isZh.value ? SupportPanoramaZh : SupportPanoramaEn
 );
-const panoramaTheme = computed(() =>
-  isDark.value ? SupportPanoramaZh_dark : SupportPanoramaEn_dark
-);
-
-const anchorList = ref<ToolList[]>([]);
-
-ToolsData.value.forEach((item: any) => {
-  anchorList.value.push({
-    id: item.id,
-    name: item.name,
-  });
-});
 </script>
 
 <template>
@@ -57,11 +41,14 @@ ToolsData.value.forEach((item: any) => {
   <AppContent>
     <div class="supporttools-info" data-aos="fade-up">
       <p class="text">{{ i18n.supporttools.INFO }}</p>
-      <img v-if="isDark" class="cover" :src="panoramaTheme" />
-      <img v-else class="cover" :src="panoramaImg" />
-    </div>
 
-    <!-- <AppAnchor :data="anchorList" /> -->
+      <img v-show="!isDark" :src="panoramaImg" class="cover" />
+      <img
+        v-show="isDark"
+        :src="isZh ? SupportPanoramaZh_dark : SupportPanoramaEn_dark"
+        class="cover"
+      />
+    </div>
 
     <div class="tool-content">
       <OCard v-for="item in ToolsData" :key="item.id" class="tool-item">
@@ -107,6 +94,7 @@ ToolsData.value.forEach((item: any) => {
     font-size: var(--o-font-size-h7);
     line-height: var(--o-line-height-h7);
     color: var(--o-color-text1);
+    text-align: justify;
     @media screen and (max-width: 1100px) {
       margin-bottom: var(--o-spacing-h4);
       font-size: var(--o-font-size-text);

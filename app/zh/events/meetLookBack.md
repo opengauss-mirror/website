@@ -1,6 +1,7 @@
 ---
 title: '【北京】openGauss Meetup | 回顾'
 time: '2020/08/06'
+date: '2020-08-06'
 tags: 'Meetup'
 category: 'events'
 label: 'Meetup'
@@ -8,7 +9,7 @@ label2: '线上线下'
 location: '北京'
 img: '/category/banners/meetup/meetLookBack.jpg'
 img_mobile: '/category/banners/meetup/meetLookBack.jpg'
-link: '/zh/events/meetLookBack.html'
+link: 'events/meetLookBack.html'
 author: 'openGauss'
 summary: '回顾openGauss第一次Meetup的所有精彩内容'
 ---

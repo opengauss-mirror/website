@@ -501,6 +501,7 @@ const moblieCurrentChange = (val: string) => {
           v-for="item in blogCardData"
           :key="item"
           class="blog-list-item"
+          shadow="hover"
           @click="toBlogContent(item.path)"
         >
           <div class="blog-list-item-title">
@@ -584,7 +585,7 @@ const moblieCurrentChange = (val: string) => {
   color: var(--o-color-white);
   border-color: var(--o-color-white);
   @media (max-width: 767px) {
-    padding: 3px 16px;
+    padding: 3px 12px;
     font-size: var(--o-font-size-text);
     line-height: var(--o-line-height-text);
   }
@@ -744,7 +745,7 @@ const moblieCurrentChange = (val: string) => {
     margin-bottom: var(--o-spacing-h5);
     font-size: var(--o-font-size-text);
     line-height: var(--o-line-height-text);
-    font-weight: 300;
+    font-weight: 500;
     p {
       @include showline();
       -webkit-line-clamp: 1;

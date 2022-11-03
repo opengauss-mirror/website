@@ -29,7 +29,9 @@ MVCC 的主要优点是读数据的锁请求与写数据的锁请求不冲突，
 
 ### openGauss 事务整体架构
 
-<img src='http://img.luooofan.site/20211017-210839-v2-58a3a0df18e1a92b9cc209036fb149ab_b.jpg'>
+<!-- 图片地址已失效，暂时注释 -->
+
+<!-- <img src='http://img.luooofan.site/20211017-210839-v2-58a3a0df18e1a92b9cc209036fb149ab_b.jpg'> -->
 
 在 openGauss 中，事务的实现与存储引擎的实现有很强关联，代码主要集中在 src/gausskernel/storage/access/transam 及 src/gausskernel/storage/lmgr 下，关键文件如图所示。
 
@@ -123,26 +125,26 @@ t_infomask
 
 #### 元组在页中是如何存放的
 
-<img src='https://img.luooofan.site/20211015-225510-fig-5-03.png'>
+<!-- <img src='https://img.luooofan.site/20211015-225510-fig-5-03.png'> -->
 
-<img src='https://img.luooofan.site/20211015-225127-update.png'>
+<!-- <img src='https://img.luooofan.site/20211015-225127-update.png'> -->
 
 #### 插入
 
 假设一个 txid 为 99 的事务插入一个元组
 
-<img src='https://img.luooofan.site/20211015-225511-fig-5-04.png'>
+<!-- <img src='https://img.luooofan.site/20211015-225511-fig-5-04.png'> -->
 
 #### 删除
 
 假设一个 txid 为 111 的事务删除一个元组
 
-<img src='https://img.luooofan.site/20211015-225511-fig-5-05.png'>
+<!-- <img src='https://img.luooofan.site/20211015-225511-fig-5-05.png'> -->
 
 #### 更新
 
 假设 99 号事务插入的元组被 100 号事务更新了两次
-<img src='https://img.luooofan.site/20211015-225511-fig-5-06.png'>
+<!-- <img src='https://img.luooofan.site/20211015-225511-fig-5-06.png'> -->
 
 openGauss 通过 HeapTupleHeaderData 的几个特殊的字段，给元组设置了不同的版本号，元组的每次更新操作都会产生一条新版本的元组，版本之间从旧到新形成了一条版本链（旧的 ctid 指向新的元组）。
 
@@ -162,17 +164,17 @@ openGauss 通过 HeapTupleHeaderData 的几个特殊的字段，给元组设置�
 
 <!--以xmin为例，首先查询CLOG，判断该事务是否提交，如果未提交，则不可见；如果提交，则进一步判断该xmin是否在查询事务的活跃事务数组中。如果xmin在该数组中，或者xmin的值大于该数组中事务号的最大值(事务号是全局递增发放的)，那么该xmin事务一定在该查询事务开始之后才会提交，因此对于查询事务不可见；如果xmin不在该数组中，或者小于该数组中事务号的最小值，那么该xmin事务一定在该查询事务开始之前就已经提交，因此对于查询事务可见。判断元组xmax事务对查询事务的可见性与此类似。最终，xmin和xmax的不同组合决定了该元组是否对于查询事务可见。-->
 
-<img src='https://img.luooofan.site/20211015-225512-d34f1a911a8804c0b1f8d791a65f175e.png'>
+<!-- <img src='https://img.luooofan.site/20211015-225512-d34f1a911a8804c0b1f8d791a65f175e.png'> -->
 
 #### （2）时间戳方法
 
-<img src='https://img.luooofan.site/20211015-225512-72285f7db5051f38a7940e7f235f49df.png'>
+<!-- <img src='https://img.luooofan.site/20211015-225512-72285f7db5051f38a7940e7f235f49df.png'> -->
 
 在 openGauss 内部，使用一个全局自增的长整数作为逻辑的时间戳，模拟数据库内部的时序，该逻辑时间戳被称为提交顺序号（Commit Sequence Number，简称 CSN）。
 
 每当一个事务提交的时候，在 CSN 日志中会记录该事务号 XID 对应的逻辑时间戳 CSN 值。
 
-<img src='https://img.luooofan.site/20211015-225513-64eaedd1d1501b104652b104bd3152b2.png'>
+<!-- <img src='https://img.luooofan.site/20211015-225513-64eaedd1d1501b104652b104bd3152b2.png'> -->
 
 ```
 #define COMMITSEQNO_INPROGRESS UINT64CONST(0x0) // 表示该事务还未提交或回滚
@@ -448,7 +450,7 @@ recheck_xmax:
 
 如果采用可重复读的隔离级别，那么在一个事务块中，只会在第一条语句的执行开始阶段，获取一次快照，后面执行的所有语句都会采用这个快照，整个事务块中的所有语句均不会看到该快照之后提交的并发事务的效果。
 
-<img src='http://img.luooofan.site/20211017-204222-dc83a9cc72803e849caa49dae027369f.png'>
+<!-- <img src='http://img.luooofan.site/20211017-204222-dc83a9cc72803e849caa49dae027369f.png'> -->
 
 ## 总结
 

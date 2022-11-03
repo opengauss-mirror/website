@@ -1,13 +1,14 @@
 ﻿---
 title: '第二届【openGauss资料捉虫】活动来袭，你准备好了吗？'
 time: '2022/09/01-2022/10/31'
+date: '2022-09-01'
 category: 'events'
 tags: '活动'
 label: '线上'
 location: '线上'
 img: '/category/events/2022-09-05/pc_banner_bug.jpg'
 img_mobile: '/category/events/2022-09-05/mobile_banner_bug.png'
-link: '/zh/events/2022-09-05/findBug.html'
+link: 'events/2022-09-05/findBug.html'
 author: 'openGauss'
 summary: '参与openGauss资料捉虫活动，发现或解决资料中的待改进点，提交有效的问题（Issue）或修改方法（PR,Pull Request），即可赢取华为平板、手表、手环等多重礼品。'
 ---

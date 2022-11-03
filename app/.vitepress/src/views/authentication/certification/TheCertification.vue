@@ -48,7 +48,7 @@ onMounted(() => {
     </div>
     <OTable class="pc-list" :data="tableData" style="width: 100%">
       <OTableColumn
-        width="230"
+        width="250"
         :label="i18n.certification.pro"
         prop="pro"
         show-overflow-tooltip
@@ -59,20 +59,21 @@ onMounted(() => {
         show-overflow-tooltip
       ></OTableColumn>
       <OTableColumn
-        width="210"
+        width="200"
         :label="i18n.certification.version"
         prop="version"
       ></OTableColumn>
       <OTableColumn
-        width="200"
+        width="180"
         :label="i18n.certification.award"
         prop="award"
       ></OTableColumn>
       <OTableColumn
         :label="i18n.certification.expiration"
         prop="expiration"
+        width="180"
       ></OTableColumn>
-      <el-table-column :label="i18n.certification.certificate">
+      <el-table-column :label="i18n.certification.certificate" width="200">
         <template #default="scope">
           <a :href="scope.row.certificate" download target="_blank">{{
             i18n.certification.certify
@@ -165,6 +166,7 @@ onMounted(() => {
     span {
       color: var(--o-color-text1);
       margin-right: var(--o-spacing-h8);
+      text-align: justify;
       &:nth-of-type(2) {
         color: var(--o-color-neutral8);
       }

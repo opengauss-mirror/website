@@ -85,7 +85,7 @@ onUnmounted(() => {
   <HomeExplore data-aos="fade-down" />
   <AppContent>
     <ClientOnly>
-      <div v-if="lang === 'zh'" class="home-calendar" id="meetings" data-aos="fade-up">
+      <div id="meetings" class="home-calendar" data-aos="fade-up">
         <h3 class="home-title">{{ i18n.home.HOME_MEETING }}</h3>
         <HomeCalendar />
       </div>
@@ -116,7 +116,7 @@ onUnmounted(() => {
   color: var(--o-color-text1);
   font-size: var(--o-font-size-h3);
   line-height: var(--o-line-height-h3);
-
+  font-weight: 300;
   @media screen and (max-width: 1100px) {
     font-size: var(--o-font-size-h8);
     line-height: var(--o-line-height-h8);
@@ -126,6 +126,7 @@ onUnmounted(() => {
 .home-partner {
   h3 {
     margin-top: var(--o-spacing-h1);
+    font-weight: 300;
     @media screen and (max-width: 1100px) {
       margin-top: var(--o-spacing-h2);
     }

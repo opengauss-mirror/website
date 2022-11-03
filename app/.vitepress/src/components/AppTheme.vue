@@ -53,8 +53,8 @@ watch(
     <div class="theme-box-mobile">
       <OSwitch
         v-model="mobileTheme"
-        active-text="dark"
-        inactive-text="light"
+        active-text="Dark"
+        inactive-text="Light"
         active-color="#002fa7"
         @change="switchTheme"
       />
@@ -84,6 +84,11 @@ watch(
 .dark {
   .icon {
     color: var(--o-color-text1);
+  }
+}
+:deep(.el-switch__label) {
+  span {
+    font-size: 12px;
   }
 }
 </style>

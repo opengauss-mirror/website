@@ -29,7 +29,7 @@ const downloadData = [
       },
       {
         name: '轻量版安装指南',
-        nameEn: 'Release Notes',
+        nameEn: 'Lite Installation Guide',
         path: '/docs/3.1.0-lite/docs/installation/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html',
       },
     ],
@@ -56,7 +56,7 @@ const downloadData = [
       },
       {
         name: '轻量版安装指南',
-        nameEn: 'Release Notes',
+        nameEn: 'Lite Installation Guide',
         path: '/docs/3.0.0-lite/docs/installation/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html',
       },
     ],

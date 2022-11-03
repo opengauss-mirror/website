@@ -57,7 +57,7 @@ const go = (path: string) => {
 <style lang="scss" scoped>
 html[lang='zh'] .characterr .info {
   white-space: nowrap;
-  @media (max-width: 1100px) {
+  @media (max-width: 1440px) {
     white-space: inherit;
   }
 }
@@ -66,6 +66,7 @@ html[lang='zh'] .characterr .info {
     font-size: var(--o-font-size-h7);
     line-height: var(--o-line-height-h7);
     color: var(--o-color-text1);
+    text-align: justify;
 
     @media (max-width: 1100px) {
       font-size: var(--o-font-size-tip);
@@ -116,7 +117,6 @@ html[lang='zh'] .characterr .info {
         @media (max-width: 1100px) {
           font-size: var(--o-font-size-text);
           line-height: var(--o-line-height-text);
-          
         }
       }
       .text {
@@ -142,7 +142,7 @@ html[lang='zh'] .characterr .info {
     }
     @media (max-width: 1100px) {
       padding: 0 var(--o-spacing-h4);
-      margin: var(--o-spacing-h4) 0 0;
+      margin: var(--o-spacing-h5) 0 0;
     }
   }
 }

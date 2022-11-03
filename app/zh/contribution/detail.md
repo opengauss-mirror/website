@@ -27,7 +27,7 @@ openGauss 是一个开源社区，完全依赖于社区提供友好的开发和�
 
 ## 1. 注册 Gitee 账号
 
-openGauss 源代码托管在码云（Gitee）：https://gitee.com/opengauss
+openGauss 源代码托管在码云（Gitee）：<https://gitee.com/opengauss>
 
 请参考<https://gitee.com/help/articles/4113>注册您的码云（Gitee）账户，并在<http://gitee.com/profile/emails>设置您的主邮箱。
 
@@ -77,7 +77,7 @@ SIG 是开放的，欢迎任何人加入并参与贡献。每一个 SIG 在码�
 
 ### 4.1 给自己分配 Issue
 
-首先找到 openGauss 社区的 Issue 列表：https://gitee.com/organizations/opengauss/issues
+首先找到 openGauss 社区的 Issue 列表：<https://gitee.com/organizations/opengauss/issues>
 如果您愿意处理其中的 Issue，您可以将它分配给自己。
 只需要在评论框内输入`/assign`，机器人就会将问题分配给您。
 每个 Issue 下面可能已经有参与者的交流和讨论，如果您感兴趣，也可以在评论框中发表自己的意见参与 Issue 讨论。

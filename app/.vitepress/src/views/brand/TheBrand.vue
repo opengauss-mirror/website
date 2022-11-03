@@ -147,7 +147,6 @@ list.value = initList();
 .brand {
   &-title {
     font-size: var(--o-font-size-h3);
-    font-weight: 300;
     color: var(--o-color-text1);
     line-height: var(--o-line-height-h3);
     width: 100%;
@@ -218,9 +217,6 @@ list.value = initList();
           max-width: 240px;
         }
       }
-      @media (max-width: 768px) {
-        height: 80px;
-      }
     }
   }
 
@@ -230,11 +226,9 @@ list.value = initList();
 
     h3 {
       font-size: var(--o-font-size-h3);
-      font-weight: 300;
       color: var(--o-color-text1);
       line-height: var(--o-line-height-h3);
       width: 100%;
-      text-align: center;
       @media (max-width: 768px) {
         font-size: var(--o-font-size-h8);
         line-height: var(--o-line-height-h8);
@@ -296,6 +290,7 @@ list.value = initList();
   .ppt-list,
   .brand-list {
     grid-template-columns: repeat(2, 1fr);
+    margin-top: var(--o-spacing-h4);
   }
 }
 

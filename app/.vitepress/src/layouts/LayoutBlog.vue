@@ -34,11 +34,7 @@ const blogInfo = {
     margin-bottom: var(--o-spacing-h2);
   }
 }
-:deep(.markdown-body-title) {
-  .page-title {
-    font-weight: 300;
-  }
-}
+
 .bread {
   padding-top: 40px;
   padding-left: 44px;

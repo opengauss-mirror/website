@@ -133,6 +133,8 @@ onMounted(() => {
       margin-top: auto;
       margin-bottom: auto;
       max-width: 54%;
+      position: relative;
+      z-index: 3;
 
       .banner-text-bg {
         position: absolute;
@@ -195,6 +197,9 @@ onMounted(() => {
 
       .banner-operation {
         margin-top: var(--o-spacing-h4);
+        @media screen and (max-width: 768px) {
+          margin-top: var(--o-spacing-h6);
+        }
       }
     }
     .banner-illustration {

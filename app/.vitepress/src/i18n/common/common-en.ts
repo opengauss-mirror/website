@@ -177,7 +177,7 @@ export default {
   CODE: 'CODE',
   FOOTER: {
     MAIL: 'contact@opengauss.org',
-    COPY_RIGHT: 'Copyright © 2022 openGauss. All rights reserved.',
+    COPY_RIGHT: 'Copyright © openGauss 2022. All rights reserved.',
     RIGHT_LIST: [
       {
         NAME: 'Trademark',
@@ -213,9 +213,9 @@ export default {
     CHANGE: 'Change',
     PLEACHOLDER: 'Please enter the content',
   },
-  PREV: 'pre',
-  NEXT: 'next',
+  PREV: 'Prev',
+  NEXT: 'Next',
   ALL: 'All',
   TYPE: 'Type',
-  VIEW_MORE: 'View more',
+  VIEW_MORE: 'View More',
 };

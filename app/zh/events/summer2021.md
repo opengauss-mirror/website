@@ -1,8 +1,7 @@
 ---
+title: '开源软件供应链点亮计划 - 暑期 2021'
 tag: 'summer'
 category: 'events'
-bgimg: '/img/breadcrumbs/minisite_bg.png'
-moimg: '/img/breadcrumbs/minisite_mo.png'
 ---
 
 #### 活动简介

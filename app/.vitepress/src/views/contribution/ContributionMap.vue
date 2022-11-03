@@ -12,6 +12,7 @@ import contributionMap_dark_en from '@/assets/category/contribution/contribution
 import contributionMap_light_zh_mobile from '@/assets/category/contribution/contribution-map_light_zh_mobile.png';
 import contributionMap_light_en_mobile from '@/assets/category/contribution/contribution-map_light_en_mobile.png';
 import contributionMap_dark_zh_mobile from '@/assets/category/contribution/contribution-map_dark_zh_mobile.png';
+import contributionMap_dark_en_mobile from '@/assets/category/contribution/contribution-map_dark_en_mobile.png';
 
 const i18n = useI18n();
 const { lang } = useData();
@@ -57,7 +58,12 @@ const goLink = (url: string, isBlank: boolean) => {
             : contributionMap_light_en_mobile
         "
       />
-      <img v-show="isDark" :src="contributionMap_dark_zh_mobile" />
+      <img
+        v-show="isDark"
+        :src="
+          isZh ? contributionMap_dark_zh_mobile : contributionMap_dark_en_mobile
+        "
+      />
       <div
         v-for="(item, index) in i18n.contribution.LINK_LIST"
         :key="index"

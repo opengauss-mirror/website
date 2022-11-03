@@ -137,6 +137,7 @@ const moblieCurrentChange = (val: string) => {
           v-for="item in newsCardData"
           :key="item.path"
           class="news-list-item"
+          shadow="hover"
           @click="toNewsContent(item.path)"
         >
           <div class="news-img">
@@ -235,7 +236,6 @@ const moblieCurrentChange = (val: string) => {
       cursor: pointer;
     }
     &-item:hover {
-      box-shadow: var(--o-shadow-l2_hover);
       .news-img img {
         transform: scale(1.05);
       }
@@ -354,12 +354,12 @@ const moblieCurrentChange = (val: string) => {
   .news-time {
     line-height: var(--o-line-height-tip);
     font-size: var(--o-font-size-tip);
-    color: var(--o-color-neutral5);
+    color: var(--o-color-text1);
   }
   .news-content {
     line-height: var(--o-line-height-tip);
     font-size: var(--o-font-size-tip);
-    color: var(--o-color-neutral5);
+    color: var(--o-color-text4);
   }
 }
 </style>

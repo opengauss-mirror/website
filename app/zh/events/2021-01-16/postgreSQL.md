@@ -8,7 +8,7 @@ label: '线下'
 location: '广州'
 img: '/category/events/2021-01-16/banner.png'
 img_mobile: '/category/events/2021-01-16/banner.png'
-link: '/zh/events/2021-01-16/postgreSQL.html'
+link: 'events/2021-01-16/postgreSQL.html'
 author: 'openGauss'
 summary: ''
 ---

@@ -157,6 +157,7 @@ watch(
     font-size: var(--o-font-size-tip);
     color: var(--o-color-text4);
     margin-right: 12px;
+    cursor: pointer;
     &.active {
       color: var(--o-color-brand1);
       font-weight: 600;

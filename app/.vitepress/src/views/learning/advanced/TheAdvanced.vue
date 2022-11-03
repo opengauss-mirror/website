@@ -225,7 +225,6 @@ function clickChangeShowIndex(index: number) {
             font-size: var(--o-font-size-h7);
             line-height: var(--o-line-height-h7);
             color: var(--o-color-text1);
-            font-weight: 300;
           }
           p {
             margin-top: var(--o-spacing-h6);
@@ -297,9 +296,9 @@ function clickChangeShowIndex(index: number) {
           border-bottom: none;
           background-color: var(--o-color-bg1);
           justify-content: space-between;
-          font-size: var(--o-font-size-tip);
+          font-size: var(--o-font-size-text);
           color: var(--o-color-text1);
-          font-weight: 300;
+          font-weight: 500;
         }
         :deep(.el-collapse-item__wrap) {
           border-bottom: none;

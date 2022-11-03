@@ -27,7 +27,7 @@ Before contributing to the community, read and comply with the [openGauss Commun
 
 ## 1. Sign up for Gitee Account
 
-The source code of openGauss source code is hosted on Gitee: https://gitee.com/opengauss
+The source code of openGauss source code is hosted on Gitee: <https://gitee.com/opengauss>
 
 Please refer to <https://gitee.com/help/articles/4113> to register your Gitee account and Set up your primary E-mail at <http://gitee.com/profile/emails>.
 
@@ -77,7 +77,7 @@ Please send your application to: <tc@opengauss.org> , the email template is refe
 
 ### 4.1 Assigning an Issue to Yourself
 
-Firstly find the Issue list for the openGauss community: https://gitee.com/organizations/opengauss/issues
+Firstly find the Issue list for the openGauss community: <https://gitee.com/organizations/opengauss/issues>
 
 If you want to process one of the Issues, you can assign it to yourself. Enter `/assign` in the comment box, and then the robot will assign the issue to you.
 Participants communicate and discuss on each issue page. You can leave your opinions in the comment box.

@@ -1,7 +1,5 @@
 ---
 title: '安全公告'
-bgImg: '../img/breadcrumbs/advisory_bg.png'
-moImg: '../img/breadcrumbs/advisory_mo.png'
 search: '搜索'
 search_placeholder: '请输入关键词'
 year: '年份'

@@ -1,8 +1,6 @@
 export default {
   title: '培训认证',
   certificateDownload: '证书下载',
-  bgImg: '../img/breadcrumbs/training_bg.png',
-  moImg: '../img/breadcrumbs/certificate_mo.png',
   introtitle: '认证体系简介',
   intro1:
     '基于openGauss在中国良好的发展态势，由openGauss社区联合云和恩墨公司、中国软件行业协会培训中心共同打造openGauss培训认证体系。',

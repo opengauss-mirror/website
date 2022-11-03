@@ -1,6 +1,7 @@
 ﻿---
 title: '【成都】openGauss Meetup | 精彩回顾'
 time: '2020/11/19'
+date: '2020-11-19'
 tags: 'Meetup'
 category: 'events'
 label: 'Meetup'
@@ -8,7 +9,7 @@ label2: '线上线下'
 location: '成都'
 img: '/category/events/chengduMeetup/banner2.png'
 img_mobile: '/category/events/chengduMeetup/banner2.png'
-link: '/zh/events/meetLookBack-chengdu.html'
+link: 'events/meetLookBack-chengdu.html'
 author: 'openGauss'
 summary: '回顾openGauss成都Meetup的所有精彩内容'
 ---

@@ -8,7 +8,7 @@ label: '线上'
 location: '成都'
 img: '/category/events/2021-08-01/banner.jpg'
 img_mobile: '/category/events/2021-08-01/banner.jpg'
-link: '/zh/events/2021-08-01/meetup.html'
+link: 'events/2021-08-01/meetup.html'
 author: 'openGauss'
 summary: ''
 ---

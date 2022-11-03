@@ -1,6 +1,7 @@
 ﻿---
 title: '【我和openGauss的故事】第四届openGauss技术文章征集活动来啦！'
 time: '2022/09/10-2022/10/15'
+date: '2022-09-10'
 category: 'events'
 tags: '活动'
 label: '线上'
