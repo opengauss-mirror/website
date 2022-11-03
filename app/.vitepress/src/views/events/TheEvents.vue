@@ -84,8 +84,6 @@ const newsList = computed(() => {
 
 latestList.value = EVENTS_DATA;
 
-const checkFlag = ref(false);
-const newEventList = ref([]);
 onMounted(async () => {
   const sortParams = reactive({
     page: 1,
