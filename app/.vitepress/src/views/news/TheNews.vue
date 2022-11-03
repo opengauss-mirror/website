@@ -281,14 +281,10 @@ const moblieCurrentChange = (val: string) => {
   }
 }
 
-@media (max-width: 1450px) {
-  .news-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 @media (max-width: 1100px) {
   .news-list {
     margin-top: var(--o-spacing-h5);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (max-width: 980px) {

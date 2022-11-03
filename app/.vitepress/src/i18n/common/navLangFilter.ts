@@ -59,7 +59,7 @@ export default [
   },
   {
     name: 'training',
-    lang: ['zh', 'en'],
+    lang: ['zh'],
   },
   {
     name: 'security',

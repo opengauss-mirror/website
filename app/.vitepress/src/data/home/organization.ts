@@ -96,6 +96,22 @@ import guance from '@/assets/category/home/organization/light/guance.png';
 import epro from '@/assets/category/home/organization/light/epro.png';
 import bintools from '@/assets/category/home/organization/light/bintools.png';
 
+import dongfangshengxing from '@/assets/category/home/organization/light/dongfangshengxing.png';
+import guoxiangshuju from '@/assets/category/home/organization/light/guoxiangshuju.png';
+import honghaoyuanjing from '@/assets/category/home/organization/light/honghaoyuanjing.png';
+import meizhouyinhang from '@/assets/category/home/organization/light/meizhouyinhang.png';
+import ncti from '@/assets/category/home/organization/light/ncti.png';
+import piesat from '@/assets/category/home/organization/light/piesat.png';
+import sengkey from '@/assets/category/home/organization/light/sengkey.png';
+import shenzhoushuma from '@/assets/category/home/organization/light/shenzhoushuma.png';
+import shuzaowanxiang from '@/assets/category/home/organization/light/shuzaowanxiang.png';
+import yjd from '@/assets/category/home/organization/light/yjd.png';
+import xiding from '@/assets/category/home/organization/light/xiding.png';
+import yiruide from '@/assets/category/home/organization/light/yiruide.png';
+import zhixun from '@/assets/category/home/organization/light/zhixun.png';
+import zhongkexingtu from '@/assets/category/home/organization/light/zhongkexingtu.png';
+import landray from '@/assets/category/home/organization/light/landray.png';
+
 // dark
 import baolande_dark from '@/assets/category/home/organization/dark/baolande.png';
 import puyuan1_dark from '@/assets/category/home/organization/dark/puyuan1.png';
@@ -193,6 +209,22 @@ import stoneatom_dark from '@/assets/category/home/organization/dark/stoneatom.p
 import guance_dark from '@/assets/category/home/organization/dark/guance.png';
 import epro_dark from '@/assets/category/home/organization/dark/epro.png';
 import bintools_dark from '@/assets/category/home/organization/dark/bintools.png';
+
+import dongfangshengxing_dark from '@/assets/category/home/organization/dark/dongfangshengxing.png';
+import guoxiangshuju_dark from '@/assets/category/home/organization/dark/guoxiangshuju.png';
+import honghaoyuanjing_dark from '@/assets/category/home/organization/dark/honghaoyuanjing.png';
+import meizhouyinhang_dark from '@/assets/category/home/organization/dark/meizhouyinhang.png';
+import ncti_dark from '@/assets/category/home/organization/dark/ncti.png';
+import piesat_dark from '@/assets/category/home/organization/dark/piesat.png';
+import sengkey_dark from '@/assets/category/home/organization/dark/sengkey.png';
+import shenzhoushuma_dark from '@/assets/category/home/organization/dark/shenzhoushuma.png';
+import shuzaowanxiang_dark from '@/assets/category/home/organization/dark/shuzaowanxiang.png';
+import yjd_dark from '@/assets/category/home/organization/dark/yjd.png';
+import xiding_dark from '@/assets/category/home/organization/dark/xiding.png';
+import yiruide_dark from '@/assets/category/home/organization/dark/yiruide.png';
+import zhixun_dark from '@/assets/category/home/organization/dark/zhixun.png';
+import zhongkexingtu_dark from '@/assets/category/home/organization/dark/zhongkexingtu.png';
+import landray_dark from '@/assets/category/home/organization/dark/landray.png';
 
 export default [
   {
@@ -676,5 +708,86 @@ export default [
     IMG: bintools,
     DARK: bintools_dark,
     NAME: '杭州图尔兹信息技术有限公司',
+  },
+
+  {
+    IMG: dongfangshengxing,
+    DARK: dongfangshengxing_dark,
+    NAME: '成都东方盛行电子有限责任公司',
+  },
+
+  {
+    IMG: honghaoyuanjing,
+    DARK: honghaoyuanjing_dark,
+    NAME: '北京鸿鹄元数科技有限公司',
+  },
+  {
+    IMG: yjd,
+    DARK: yjd_dark,
+    NAME: '宁夏英杰达信息产业有限公司',
+  },
+  {
+    IMG: sengkey,
+    DARK: sengkey_dark,
+    NAME: '广州盛祺信息',
+  },
+
+  {
+    IMG: guoxiangshuju,
+    DARK: guoxiangshuju_dark,
+    NAME: '西安国翔数据信息有限公司',
+  },
+  {
+    IMG: ncti,
+    DARK: ncti_dark,
+    NAME: '粤港澳大湾区（广东）国创中心',
+  },
+
+  {
+    IMG: shenzhoushuma,
+    DARK: shenzhoushuma_dark,
+    NAME: '神州数码(中国)有限公司',
+  },
+  {
+    IMG: zhongkexingtu,
+    DARK: zhongkexingtu_dark,
+    NAME: '中科星图股份有限公司',
+  },
+  {
+    IMG: xiding,
+    DARK: xiding_dark,
+    NAME: '上海锡鼎智能科技有限公司',
+  },
+  {
+    IMG: piesat,
+    DARK: piesat_dark,
+    NAME: ' 航天宏图信息技术股份有限公司',
+  },
+  {
+    IMG: shuzaowanxiang,
+    DARK: shuzaowanxiang_dark,
+    NAME: '海南数造科技有限公司',
+  },
+
+  {
+    IMG: meizhouyinhang,
+    DARK: meizhouyinhang_dark,
+    NAME: '梅州客商银行股份有限公司',
+  },
+  {
+    IMG: zhixun,
+    DARK: zhixun_dark,
+    NAME: '西安智讯数据网络有限公司',
+  },
+  {
+    IMG: yiruide,
+    DARK: yiruide_dark,
+    NAME: '易睿德（武汉）物联网有限公司',
+  },
+
+  {
+    IMG: landray,
+    DARK: landray_dark,
+    NAME: '深圳市蓝凌软件股份有限公司',
   },
 ];

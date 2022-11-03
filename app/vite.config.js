@@ -52,9 +52,8 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/api-gauss/, ''),
       },
       '/calendar/': {
-        target: 'https://opengauss-website.test.osinfra.cn/',
+        target: 'https://www.opengauss.org/',
         changeOrigin: true,
-        // http://119.8.32.82:8080/
       },
       '/omapi/': {
         target: 'https://omapi.osinfra.cn/',
@@ -67,7 +66,7 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/ip-api/, ''),
       },
       '/api-search': {
-        target: 'https://doc-search.test.osinfra.cn',
+        target: 'https://doc-search.opengauss.org',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api-search/, ''),
       },

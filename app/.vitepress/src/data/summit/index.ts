@@ -34,7 +34,8 @@ import luohaixiong from '@/assets/category/summit/guests/luohaixiong.png';
 
 import ccf from '@/assets/category/summit/partners/ccf.png';
 import opengauss from '@/assets/category/summit/partners/opengauss.png';
-import vastdata from '@/assets/category/summit/partners/vastdata.png';
+import vastdata from '@/assets/category/home/organization/dark/hailiangshuju.png';
+import vastdata_dark from '@/assets/category/home/organization/dark/hailiangshuju.png';
 import enmotech from '@/assets/category/summit/partners/enmotech.png';
 import dft from '@/assets/category/summit/partners/dft.png';
 import qhdx from '@/assets/category/summit/partners/qhdx.png';
@@ -54,6 +55,9 @@ import beijingkunpeng from '@/assets/category/summit/partners/beijingkunpeng.png
 import gansukunpeng from '@/assets/category/summit/partners/gansukunpeng.png';
 import henankunpeng from '@/assets/category/summit/partners/henankunpeng.png';
 import xugu from '@/assets/category/summit/partners/xugu.png';
+
+import cjb_dark from '@/assets/category/summit/partners/cjb_dark.png';
+import SphereEx_dark from '@/assets/category/summit/partners/SphereEx_dark.png';
 
 const videoData = {
   page_name: '峰会',
@@ -670,7 +674,7 @@ const videoData = {
     p3: [
       {
         IMG: vastdata,
-        DARK: vastdata,
+        DARK: vastdata_dark,
         NAME: '海量数据',
       },
       {
@@ -717,7 +721,7 @@ const videoData = {
       },
       {
         IMG: cjb,
-        DARK: cjb,
+        DARK: cjb_dark,
         NAME: '超聚变',
       },
       {
@@ -732,7 +736,7 @@ const videoData = {
       },
       {
         IMG: SphereEx,
-        DARK: SphereEx,
+        DARK: SphereEx_dark,
         NAME: 'SphereEx',
       },
       {
