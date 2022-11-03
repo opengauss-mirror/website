@@ -29,7 +29,7 @@ const props = defineProps({
   },
   eventsData: {
     type: Object,
-    default: () => {},
+    default: undefined,
   },
 });
 

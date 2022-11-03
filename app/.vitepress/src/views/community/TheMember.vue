@@ -467,6 +467,9 @@ const handleChangeActiveMobile = (activeNames: any) => {
     padding: var(--o-spacing-h2) 166px;
     box-shadow: var(--o-shadow-l1);
     background: var(--o-color-bg2);
+    @media screen and (max-width: 1439px) {
+      padding: var(--o-spacing-h2) var(--o-spacing-h1);
+    }
   }
   .member-info {
     li {
@@ -534,14 +537,21 @@ const handleChangeActiveMobile = (activeNames: any) => {
   }
   .gap {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--o-font-size-h5);
     .member-panel-content {
       padding: var(--o-spacing-h2) var(--o-spacing-h1);
+      @media screen and (max-width: 1439px) {
+        padding: var(--o-spacing-h2);
+      }
     }
     .member-list {
       grid-template-columns: repeat(4, 1fr);
       gap: var(--o-spacing-h5) 56px;
+      @media screen and (max-width: 1439px) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--o-spacing-h5);
+      }
     }
   }
   .other {

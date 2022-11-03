@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, computed } from 'vue';
+import { computed } from 'vue';
 import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';
 import { useCommon } from '@/stores/common';
@@ -21,15 +21,17 @@ const { lang } = useData();
 const commonStore = useCommon();
 
 const isZh = computed(() => (lang.value === 'zh' ? true : false));
-const isDark = computed(() => (commonStore.theme === 'dark' ? true : false));
 
-const ToolsData = computed(() =>
-  isZh.value ? SupportToolsConfig.zh : SupportToolsConfig.en
-);
-
-const panoramaImg = computed(() =>
-  isZh.value ? SupportPanoramaZh : SupportPanoramaEn
-);
+const supporttoolsInfo = computed(() => {
+  return {
+    panoramaImg: isZh.value ? SupportPanoramaZh : SupportPanoramaEn,
+    panoramaImgDark: isZh.value
+      ? SupportPanoramaZh_dark
+      : SupportPanoramaEn_dark,
+    ToolsData: isZh.value ? SupportToolsConfig.zh : SupportToolsConfig.en,
+    isDark: commonStore.theme === 'dark' ? true : false,
+  };
+});
 </script>
 
 <template>
@@ -42,16 +44,24 @@ const panoramaImg = computed(() =>
     <div class="supporttools-info" data-aos="fade-up">
       <p class="text">{{ i18n.supporttools.INFO }}</p>
 
-      <img v-show="!isDark" :src="panoramaImg" class="cover" />
       <img
-        v-show="isDark"
-        :src="isZh ? SupportPanoramaZh_dark : SupportPanoramaEn_dark"
+        v-show="!supporttoolsInfo.isDark"
+        :src="supporttoolsInfo.panoramaImg"
+        class="cover"
+      />
+      <img
+        v-show="supporttoolsInfo.isDark"
+        :src="supporttoolsInfo.panoramaImgDark"
         class="cover"
       />
     </div>
 
     <div class="tool-content">
-      <OCard v-for="item in ToolsData" :key="item.id" class="tool-item">
+      <OCard
+        v-for="item in supporttoolsInfo.ToolsData"
+        :key="item.id"
+        class="tool-item"
+      >
         <h3 class="title">{{ item.name }}</h3>
         <div :id="item.id" class="tool-item-detail" data-aos="fade-up">
           <div

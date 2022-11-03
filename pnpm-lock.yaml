@@ -3739,6 +3739,7 @@ packages:
     version: 4.8.3
     engines: {node: '>=4.2.0'}
     hasBin: true
+    dev: true
 
   registry.npmmirror.com/unplugin-element-plus/0.4.1:
     resolution: {integrity: sha512-x8L35sppkbtnAf+aSPXNsLPjCUrM0mWKgujqMIgrHiDQaGbpMlNnbN2kjP5CMclykNOw8fUCreEhtxPyzg8tmw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/unplugin-element-plus/-/unplugin-element-plus-0.4.1.tgz}

@@ -56,6 +56,11 @@ const videoClickBtn = (path: string) => {
   videoLink.value = path;
   videoDialog.value = true;
 };
+
+// :autoplay="{
+//         delay: 5000,
+//         disableOnInteraction: false,
+//       }"
 </script>
 
 <template>
@@ -65,10 +70,6 @@ const videoClickBtn = (path: string) => {
       :loop="true"
       :pagination="{
         clickable: true,
-      }"
-      :autoplay="{
-        delay: 5000,
-        disableOnInteraction: false,
       }"
       :navigation="true"
       @swiper="onSwiper"
@@ -182,11 +183,14 @@ html[lang='zh'] {
 #video-player {
   position: absolute;
   top: 42%;
-  right: 10%;
+  right: 11%;
   width: 98px;
   height: 98px;
   z-index: 2;
   cursor: pointer;
+  @media screen and (max-width: 1430px) {
+    right: 12.5%;
+  }
   @media screen and (max-width: 1100px) {
     display: none;
   }
@@ -309,6 +313,9 @@ html[lang='zh'] {
       //   }
       // }
       @media screen and (max-width: 1440px) {
+        padding: 0 24px;
+      }
+      @media screen and (max-width: 1100px) {
         padding: 0 16px;
       }
       @media screen and (max-width: 824px) {
@@ -377,7 +384,7 @@ html[lang='zh'] {
       position: static !important;
     }
   }
-  @media screen and (max-width: 1100px) {
+  @media screen and (max-width: 1430px) {
     height: 400px;
   }
   @media screen and (max-width: 824px) {

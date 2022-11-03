@@ -67,7 +67,7 @@ const config: UserConfig = {
     },
   },
   themeConfig: {
-    docsUrl: 'https://opengauss-docs.test.osinfra.cn',
+    docsUrl: 'https://docs.opengauss.org',
   },
 };
 export default config;

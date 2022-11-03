@@ -32,28 +32,51 @@ import liwenjie from '@/assets/category/summit/guests/liwenjie.png';
 import lichao from '@/assets/category/summit/guests/lichao.png';
 import luohaixiong from '@/assets/category/summit/guests/luohaixiong.png';
 
-import ccf from '@/assets/category/summit/partners/ccf.png';
-import opengauss from '@/assets/category/summit/partners/opengauss.png';
-import vastdata from '@/assets/category/summit/partners/vastdata.png';
-import enmotech from '@/assets/category/summit/partners/enmotech.png';
-import dft from '@/assets/category/summit/partners/dft.png';
-import qhdx from '@/assets/category/summit/partners/qhdx.png';
+import ccf from '@/assets/category/summit/partners/light/ccf.png';
+import opengauss from '@/assets/category/summit/partners/light/opengauss.png';
+import vastdata from '@/assets/category/summit/partners/light/vastdata.png';
+import enmotech from '@/assets/category/summit/partners/light/enmotech.png';
+import dft from '@/assets/category/summit/partners/light/dft.png';
+import qhdx from '@/assets/category/summit/partners/light/qhdx.png';
 
-import mobile from '@/assets/category/summit/partners/mobile.png';
-import unicom from '@/assets/category/summit/partners/unicom.png';
-import SuperMap from '@/assets/category/summit/partners/SuperMap.png';
-import shenzhou from '@/assets/category/summit/partners/shenzhou.png';
-import gbase from '@/assets/category/summit/partners/gbase.png';
-import cjb from '@/assets/category/summit/partners/cjb.png';
-import tyt from '@/assets/category/summit/partners/tyt.png';
-import SphereEx from '@/assets/category/summit/partners/SphereEx.png';
-import bld from '@/assets/category/summit/partners/bld.png';
-import puyuan from '@/assets/category/summit/partners/puyuan.png';
-import jindie from '@/assets/category/summit/partners/jindie.png';
-import beijingkunpeng from '@/assets/category/summit/partners/beijingkunpeng.png';
-import gansukunpeng from '@/assets/category/summit/partners/gansukunpeng.png';
-import henankunpeng from '@/assets/category/summit/partners/henankunpeng.png';
-import xugu from '@/assets/category/summit/partners/xugu.png';
+import mobile from '@/assets/category/summit/partners/light/mobile.png';
+import unicom from '@/assets/category/summit/partners/light/unicom.png';
+import SuperMap from '@/assets/category/summit/partners/light/SuperMap.png';
+import shenzhou from '@/assets/category/summit/partners/light/shenzhou.png';
+import gbase from '@/assets/category/summit/partners/light/gbase.png';
+import cjb from '@/assets/category/summit/partners/light/cjb.png';
+import tyt from '@/assets/category/summit/partners/light/tyt.png';
+import SphereEx from '@/assets/category/summit/partners/light/SphereEx.png';
+import bld from '@/assets/category/summit/partners/light/bld.png';
+import puyuan from '@/assets/category/summit/partners/light/puyuan.png';
+import jindie from '@/assets/category/summit/partners/light/jindie.png';
+import beijingkunpeng from '@/assets/category/summit/partners/light/beijingkunpeng.png';
+import gansukunpeng from '@/assets/category/summit/partners/light/gansukunpeng.png';
+import henankunpeng from '@/assets/category/summit/partners/light/henankunpeng.png';
+import xugu from '@/assets/category/summit/partners/light/xugu.png';
+
+import ccf_dark from '@/assets/category/summit/partners/dark/ccf.png';
+import opengauss_dark from '@/assets/category/summit/partners/dark/opengauss.png';
+import vastdata_dark from '@/assets/category/summit/partners/dark/vastdata.png';
+import enmotech_dark from '@/assets/category/summit/partners/dark/enmotech.png';
+import dft_dark from '@/assets/category/summit/partners/dark/dft.png';
+import qhdx_dark from '@/assets/category/summit/partners/dark/qhdx.png';
+
+import mobile_dark from '@/assets/category/summit/partners/dark/mobile.png';
+import unicom_dark from '@/assets/category/summit/partners/dark/unicom.png';
+import SuperMap_dark from '@/assets/category/summit/partners/dark/SuperMap.png';
+import shenzhou_dark from '@/assets/category/summit/partners/dark/shenzhou.png';
+import gbase_dark from '@/assets/category/summit/partners/dark/gbase.png';
+import cjb_dark from '@/assets/category/summit/partners/dark/cjb.png';
+import tyt_dark from '@/assets/category/summit/partners/dark/tyt.png';
+import SphereEx_dark from '@/assets/category/summit/partners/dark/SphereEx.png';
+import bld_dark from '@/assets/category/summit/partners/dark/bld.png';
+import puyuan_dark from '@/assets/category/summit/partners/dark/puyuan.png';
+import jindie_dark from '@/assets/category/summit/partners/dark/jindie.png';
+import beijingkunpeng_dark from '@/assets/category/summit/partners/dark/beijingkunpeng.png';
+import gansukunpeng_dark from '@/assets/category/summit/partners/dark/gansukunpeng.png';
+import henankunpeng_dark from '@/assets/category/summit/partners/dark/henankunpeng.png';
+import xugu_dark from '@/assets/category/summit/partners/dark/xugu.png';
 
 const videoData = {
   page_name: '峰会',
@@ -656,113 +679,113 @@ const videoData = {
     p1: [
       {
         IMG: ccf,
-        DARK: ccf,
+        DARK: ccf_dark,
         NAME: '数据库专业委员会',
       },
     ],
     p2: [
       {
         IMG: opengauss,
-        DARK: opengauss,
+        DARK: opengauss_dark,
         NAME: 'opengauss',
       },
     ],
     p3: [
       {
         IMG: vastdata,
-        DARK: vastdata,
+        DARK: vastdata_dark,
         NAME: '海量数据',
       },
       {
         IMG: enmotech,
-        DARK: enmotech,
+        DARK: enmotech_dark,
         NAME: '云和恩墨',
       },
       {
         IMG: dft,
-        DARK: dft,
+        DARK: dft_dark,
         NAME: '东方通',
       },
       {
         IMG: qhdx,
-        DARK: qhdx,
+        DARK: qhdx_dark,
         NAME: '清华大学',
       },
     ],
     p4: [
       {
         IMG: mobile,
-        DARK: mobile,
+        DARK: mobile_dark,
         NAME: '中国移动',
       },
       {
         IMG: unicom,
-        DARK: unicom,
+        DARK: unicom_dark,
         NAME: '中国联通',
       },
       {
         IMG: SuperMap,
-        DARK: SuperMap,
+        DARK: SuperMap_dark,
         NAME: 'SuperMap',
       },
       {
         IMG: shenzhou,
-        DARK: shenzhou,
+        DARK: shenzhou_dark,
         NAME: '神舟通用',
       },
       {
         IMG: gbase,
-        DARK: gbase,
+        DARK: gbase_dark,
         NAME: '天津南大通用数据技术股份有限公司',
       },
       {
         IMG: cjb,
-        DARK: cjb,
+        DARK: cjb_dark,
         NAME: '超聚变',
       },
       {
         IMG: xugu,
-        DARK: xugu,
+        DARK: xugu_dark,
         NAME: '虚谷伟业',
       },
       {
         IMG: tyt,
-        DARK: tyt,
+        DARK: tyt_dark,
         NAME: '北京太阳塔信息科技有限责任公司',
       },
       {
         IMG: SphereEx,
-        DARK: SphereEx,
+        DARK: SphereEx_dark,
         NAME: 'SphereEx',
       },
       {
         IMG: bld,
-        DARK: bld,
+        DARK: bld_dark,
         NAME: '宝兰德',
       },
       {
         IMG: puyuan,
-        DARK: puyuan,
+        DARK: puyuan_dark,
         NAME: '普元信息技术股份有限公司',
       },
       {
         IMG: jindie,
-        DARK: jindie,
+        DARK: jindie_dark,
         NAME: '深圳市金蝶天燕云计算股份有限公司',
       },
       {
         IMG: beijingkunpeng,
-        DARK: beijingkunpeng,
+        DARK: beijingkunpeng_dark,
         NAME: '北京鲲鹏',
       },
       {
         IMG: gansukunpeng,
-        DARK: gansukunpeng,
+        DARK: gansukunpeng_dark,
         NAME: '甘肃鲲鹏',
       },
       {
         IMG: henankunpeng,
-        DARK: henankunpeng,
+        DARK: henankunpeng_dark,
         NAME: '河南鲲鹏',
       },
     ],

@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
-import { useI18n } from '@/i18n';
 import AppContent from '@/components/AppContent.vue';
 import SummitLive from './components/SummitLive.vue';
 import SummitSchedule from './components/SummitSchedule.vue';
@@ -17,8 +16,6 @@ import bannerText from '@/assets/category/summit/2022/text@2x.png';
 
 import IconTime from '~icons/app/icon-time.svg';
 import IconArrowRight from '~icons/app/icon-arrow-right.svg';
-
-const i18n = useI18n();
 
 const SummitData = SummitConfig.online.list;
 
@@ -158,11 +155,6 @@ const bannerInfo = {
   .picture-panel {
     margin-bottom: 40px;
     padding-top: 0;
-  }
-  :deep(.picture-panel) {
-    img {
-      transform: scale(0.7);
-    }
   }
 }
 .summit-info {

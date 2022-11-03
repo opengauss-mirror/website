@@ -84,6 +84,11 @@ export default {
           PATH: '/member/',
         },
         {
+          NAME: 'User Practice',
+          ID: 'userPractice',
+          PATH: '/userPractice/',
+        },
+        {
           NAME: 'Statistics',
           ID: 'statistics',
           PATH: 'https://datastat.opengauss.org/zh/overview',
