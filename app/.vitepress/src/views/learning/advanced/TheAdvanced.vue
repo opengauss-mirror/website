@@ -173,11 +173,21 @@ function clickChangeShowIndex(index: number) {
     font-weight: 300;
     color: var(--o-color-text1);
     margin: 0 auto;
-    width: 150px;
+    width: 184px;
+    padding: 0 20px;
     text-align: center;
+    background-image: url(@/assets/category/advanced/circle.png),
+      url(@/assets/category/advanced/ellipse.png),
+      url(@/assets/category/advanced/semicircle.png);
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: 0 10px, 70% 100%, 100% 0;
     @media screen and (max-width: 768px) {
+      width: 92px;
+      padding: 0 10px;
       font-size: var(--o-font-size-h7);
       line-height: var(--o-line-height-h7);
+      background-position: 0 4px, 70% 100%, 100% 0;
+      background-size: 19px 19px, 10px 5px, 31px 15px;
     }
   }
   .step-content-pc {
@@ -338,6 +348,16 @@ function clickChangeShowIndex(index: number) {
         }
       }
     }
+  }
+}
+.dark {
+  h2 {
+    background-image: url(@/assets/category/advanced/circle-dark.png),
+      url(@/assets/category/advanced/ellipse-dark.png),
+      url(@/assets/category/advanced/semicircle-dark.png);
+  }
+  .advanced .step-content-pc .step-nav .step-item-active {
+    background-image: url(/.vitepress/src/assets/category/advanced/active-dark.png);
   }
 }
 </style>
