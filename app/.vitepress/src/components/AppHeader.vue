@@ -29,12 +29,11 @@ const router = useRouter();
 const { lang, theme } = useData();
 const i18n = useI18n();
 const commonStore = useCommon();
-const documentElement = document.documentElement;
 
 // 导航数据
 const navRouter = computed(() => i18n.value.common.NAV_ROUTER_CONFIG);
 
-const activeNav = ref<string>();
+const activeNav = ref('');
 const logo = computed(() =>
   commonStore.theme === 'light' ? logo_light : logo_dark
 );
@@ -48,7 +47,7 @@ const mobileMenuPanel = () => {
   mobileChildMenu.value = [];
   setTimeout(() => {
     mobileMenuIcon.value = !mobileMenuIcon.value;
-    documentElement.classList.toggle('overflow');
+    document.documentElement.classList.toggle('overflow');
     activeNav.value = '';
     moudleItem();
   }, 200);
@@ -58,7 +57,7 @@ const handleMenuLayer = (e: any) => {
   if (e.target.className !== 'mobile-menu-side') {
     if (mobileChildMenu.value.length === 0) {
       mobileMenuIcon.value = false;
-      documentElement.classList.remove('overflow');
+      document.documentElement.classList.remove('overflow');
     }
   }
 };
@@ -71,7 +70,7 @@ const goMobile = (item: NavItem) => {
   } else {
     mobileMenuIcon.value = false;
     router.go('/' + lang.value + item.PATH);
-    documentElement.classList.remove('overflow');
+    document.documentElement.classList.remove('overflow');
   }
   activeNav.value = item.ID;
 };
@@ -79,7 +78,7 @@ const goMobile = (item: NavItem) => {
 // 移动端二级导航事件
 const goMobileSubList = (item: NavItem) => {
   if (item.IS_OPEN_WINDOW) {
-    window.open(theme.value.docsUrl + item.PATH);
+    window.open(theme.value.docsUrl + '/' + lang.value + '/' + item.PATH);
     return;
   }
   if (item.IS_OPEN_MINISITE_WINDOW) {
@@ -90,7 +89,7 @@ const goMobileSubList = (item: NavItem) => {
   if (item.PATH) {
     setTimeout(() => {
       mobileMenuIcon.value = false;
-      documentElement.classList.remove('overflow');
+      document.documentElement.classList.remove('overflow');
     }, 200);
     nextTick(() => {
       router.go('/' + lang.value + item.PATH);
@@ -109,7 +108,7 @@ watch(
         langShow.value = item.lang;
       }
       if (val === `/${lang.value}/`) {
-        langShow.value = ['zh', 'en', 'ru'];
+        langShow.value = ['zh', 'en'];
       }
     });
   },
@@ -130,7 +129,7 @@ const moudleItem = () => {
 // 返回首页
 const goHome = () => {
   mobileMenuIcon.value = false;
-  documentElement.classList.remove('overflow');
+  document.documentElement.classList.remove('overflow');
   router.go(`/${lang.value}/`);
 };
 
@@ -239,7 +238,9 @@ function search() {
             <OIcon class="icon" @click="showSearchBox"><IconSearch /></OIcon>
           </div>
           <!-- 中英文切换 -->
-          <AppLanguage :show="langShow" />
+          <ClientOnly>
+            <AppLanguage :show="langShow" />
+          </ClientOnly>
           <AppTheme />
         </div>
       </div>
@@ -265,10 +266,12 @@ function search() {
           </div>
           <div class="mobile-tools">
             <AppTheme />
-            <AppLanguage
-              :show="langShow"
-              @language-click="mobileMenuIcon = false"
-            />
+            <ClientOnly>
+              <AppLanguage
+                :show="langShow"
+                @language-click="mobileMenuIcon = false"
+              />
+            </ClientOnly>
           </div>
         </div>
         <transition name="menu-sub">

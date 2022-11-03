@@ -1,6 +1,7 @@
 ---
 title: '【北京】openGauss Meetup'
 time: '2020/08/06'
+date: '2020-08-06'
 tags: 'Meetup'
 category: 'events'
 label: 'Meetup'

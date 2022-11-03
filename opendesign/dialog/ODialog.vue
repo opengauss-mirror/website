@@ -22,6 +22,9 @@ const attrs = useAttrs();
     background-color: var(--o-dialog-bg-color);
     transition: none;
     border: none;
+    @media screen and (max-width: 768px) {
+      width: 90%;
+    }
   }
 }
 </style>

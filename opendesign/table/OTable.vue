@@ -27,10 +27,12 @@ const attrs = useAttrs();
       tr {
         background-color: var(--o-color-bg4);
       }
+      th {
+        font-weight: bold;
+      }
     }
     th.el-table__cell.is-leaf {
       border-bottom: none;
-      font-weight: 300;
       text-align: left;
     }
     tr {

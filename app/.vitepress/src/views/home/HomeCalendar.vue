@@ -25,13 +25,10 @@ import zhCn from 'element-plus/lib/locale/lang/zh-cn';
 
 import IconLeft from '~icons/app/icon-chevron-left.svg';
 import IconRight from '~icons/app/icon-chevron-right.svg';
-import IconArrowRight from '~icons/app/icon-arrow-right.svg';
 import IconDown from '~icons/app/icon-chevron-down.svg';
 import IconCalendar from '~icons/app/icon-calendar.svg';
 import notFoundImg_light from '@/assets/illustrations/404.png';
 import notFoundImg_dark from '@/assets/illustrations/404-dark.png';
-
-import Meeting_failed_img from '@/assets/category/home/meeting/failed.png';
 
 import useWindowResize from '@/components/hooks/useWindowResize';
 
@@ -43,17 +40,23 @@ let currentMeet = reactive<TableData>({
   date: '',
   timeData: [
     {
-      sponsor: '',
+      creator: '',
+      name: '',
       join_url: '',
-      start: '',
-      end: '',
+      startTime: '',
+      endTime: '',
       url: '',
       id: '',
       platform: '',
       video_url: '',
       mid: '',
       emaillist: '',
-      summary: '',
+      detail: '',
+      topic: '',
+      sponsor: '',
+      start: '',
+      end: '',
+      agenda: '',
     },
   ],
 });
@@ -62,17 +65,23 @@ const renderData = ref<TableData>({
   date: '',
   timeData: [
     {
-      sponsor: '',
+      creator: '',
+      name: '',
       join_url: '',
-      start: '',
-      end: '',
+      startTime: '',
+      endTime: '',
       url: '',
       id: '',
       platform: '',
       video_url: '',
       mid: '',
       emaillist: '',
-      summary: '',
+      detail: '',
+      topic: '',
+      sponsor: '',
+      start: '',
+      end: '',
+      agenda: '',
     },
   ],
 });
@@ -82,17 +91,23 @@ const calendarData = ref<TableData[]>([
     date: '',
     timeData: [
       {
-        sponsor: '',
+        creator: '',
+        name: '',
         join_url: '',
-        start: '',
-        end: '',
+        startTime: '',
+        endTime: '',
         url: '',
         id: '',
         platform: '',
         video_url: '',
         mid: '',
         emaillist: '',
-        summary: '',
+        detail: '',
+        topic: '',
+        sponsor: '',
+        start: '',
+        end: '',
+        agenda: '',
       },
     ],
   },
@@ -103,20 +118,15 @@ const activeName = ref('');
 const isCollapse = ref(false);
 
 const detailItem = [
-  { text: '会议详情', key: 'detail', isLink: false },
-  { text: '发起人', key: 'sponsor', isLink: false },
-  { text: '会议日期', key: 'date', isLink: false },
+  { text: '发起人', key: 'creator', isLink: false },
   { text: '会议平台', key: 'platform', isLink: false },
   { text: '会议ID', key: 'meeting_id', isLink: false },
   { text: '会议链接', key: 'join_url', isLink: true },
   { text: 'Etherpad链接', key: 'etherpad', isLink: true },
-  { text: '活动介绍', key: 'synopsis', isLink: false },
-  { text: '起始日期', key: 'start', isLink: false },
-  { text: '结束日期', key: 'end', isLink: false },
+  { text: '会议详情', key: 'detail', isLink: false },
   { text: '活动形式', key: 'activity_type', isLink: false },
   { text: '线上链接', key: 'online_url', isLink: true },
   { text: '报名链接', key: 'register_url', isLink: true },
-  { text: '活动地点', key: 'address', isLink: false },
   { text: '回放链接', key: 'replay_url', isLink: true },
   { text: '回放链接', key: 'video_url', isLink: true },
 ];
@@ -155,13 +165,13 @@ function meetClick(day: string, event: Event) {
           activeName.value = '';
           renderData.value.timeData.sort((a: DayData, b: DayData) => {
             return (
-              parseInt(a.start.replace(':', '')) -
-              parseInt(b.start.replace(':', ''))
+              parseInt(a.startTime.replace(':', '')) -
+              parseInt(b.startTime.replace(':', ''))
             );
           });
           renderData.value.timeData.map((item2) => {
             if (item2.etherpad) {
-              item2['duration_time'] = `${item2.start}-${item2.end}`;
+              item2['duration_time'] = `${item2.startTime}-${item2.endTime}`;
             }
           });
         }
@@ -193,12 +203,6 @@ function selectDate(val: string, date: string) {
     return;
   }
   calendar.value.selectDate(val);
-}
-
-function goDetail(index: number) {
-  window.open(
-    `/zh/interaction/salon-list/detail/?id=${renderData.value.timeData[index].id}`
-  );
 }
 
 function changeCollapse() {
@@ -291,40 +295,36 @@ const meetingStore = useMeeting();
 const meetingLoginApi = async () => {
   try {
     const res = await meetingLogin();
-    if (res.code > 200 || res.code < 300) {
+    if (res.code === 200) {
       meetingStore.userSigs = res.data.sigs;
       meetingStore.giteeId = res.data.user.gitee_id;
       meetingStore.userId = res.data.user.id;
     } else {
-      dialogTitle.value = i18nMeeting.value.PERMISSION;
-      meetingPermission.value = true;
-      meetingDialog.value = true;
+      // console.log('meeting Login :>> ', isZh.value ? res.msg : res.en_msg);
     }
   } catch (e: any) {
     throw new Error(e);
   }
 };
 onMounted(() => {
-  // meetingLoginApi();
+  const access = document.cookie.includes('access_token');
+  if (access !== null) {
+    meetingLoginApi();
+  }
 });
 
 const isZh = computed(() => (lang.value === 'zh' ? true : false));
 
 const dialogTitle = ref(i18nMeeting.value.LOGIN);
 const meetingDialog = ref(false);
+// 会议id
 const mId = ref<number | null>(null);
 const isModify = ref(false);
 const isReserve = ref(false);
 // 预订登录提示
 const dialogNoLogin = ref(false);
-// 预订会议出错
-const meetingFailed = ref(false);
-// 权限提示
-const meetingPermission = ref(false);
 // 删除提示
 const deleteTips = ref(false);
-// 删除、编辑权限提示
-const deletePermissionTips = ref(false);
 
 const handleClose = () => {
   clearData();
@@ -336,31 +336,20 @@ const handleGiteeLogin = () => {
   requestGiteeLogin();
 };
 
-const handleBackLogin = () => {};
-
-// 删除会议
-const handleDeleteMeeting = (item: any) => {
-  mId.value = item.mid;
-  if (isSelfLogin(item.sponsor)) {
-    dialogTitle.value = i18nMeeting.value.DELETE;
-    meetingDialog.value = true;
-    deleteTips.value = true;
-  }
-};
-
+const meetingRecord = ref(false);
 const meetingForm = ref({
-  topic: '',
-  sponsor: '',
   platform: '',
   group_name: '',
   join_url: '',
   date: '',
+  etherpad: '',
+  emaillist: '',
+  record: meetingRecord.value ? 'cloud' : '',
+  topic: '',
+  sponsor: '',
   start: '',
   end: '',
-  etherpad: '',
-  summary: '',
-  emaillist: '',
-  record: false,
+  agenda: '',
 });
 
 // 验证
@@ -419,68 +408,69 @@ const rules = reactive<FormRules>({
 
 // 判断是否登录
 const isLogin = () => {
-  if (meetingStore.userSigs.length >= 1) {
-    return true;
-  } else {
-    meetingDialog.value = true;
-    dialogTitle.value = i18nMeeting.value.LOGIN;
-    dialogNoLogin.value = true;
-    return false;
-  }
+  return meetingStore.giteeId !== '' ? true : false;
 };
 // 判断是否有权限
 const isAuthority = () => {
-  if (meetingStore.userSigs.length >= 1) {
-    if (mId.value !== null) {
-    } else {
-      meetingDialog.value = true;
-      dialogTitle.value = i18nMeeting.value.RESERVE_MEETING;
-      isReserve.value = true;
-    }
-    return true;
-  } else {
-    meetingDialog.value = true;
-    dialogTitle.value = i18nMeeting.value.PERMISSION;
-    meetingPermission.value = true;
-    return false;
-  }
+  return meetingStore.userSigs.length >= 1 ? true : false;
 };
-// 删除修改会议是，判断是否是本人的权限
+// 删除修改会议判断是否是本人
 const isSelfLogin = (name: string) => {
-  if (meetingStore.giteeId === name) {
-    return true;
-  } else {
+  return meetingStore.giteeId === name ? true : false;
+};
+
+// 编辑数据格式化
+const formatterResponse = (item: any, date: string) => {
+  meetingForm.value = {
+    platform: item.platform,
+    group_name: item.group_name,
+    join_url: item.join_url || '',
+    date: date,
+    etherpad: item.etherpad || '',
+    emaillist: item.emaillist || '',
+    record: item.record || '',
+    topic: item.name,
+    sponsor: item.creator || '',
+    start: item.startTime || '',
+    end: item.endTime || '',
+    agenda: item.detail || '',
+  };
+  meetingRecord.value = item.record;
+};
+// 修改会议
+const handleModifyMeeting = (item: any, date: string) => {
+  if (isSelfLogin(item.creator)) {
+    isModify.value = true;
     meetingDialog.value = true;
-    dialogTitle.value = i18nMeeting.value.PERMISSION;
-    meetingPermission.value = true;
-    return false;
+    dialogTitle.value = i18nMeeting.value.MODIFY;
+    // 深拷贝
+    const itemData = JSON.parse(JSON.stringify(item));
+    formatterResponse(itemData, date);
+    mId.value = itemData.mid;
+  } else {
+    ElMessage({
+      message: i18nMeeting.value.PERMISSION_TEXT1,
+      type: 'warning',
+    });
   }
 };
 
-// 修改会议
-const handleModifyMeeting = (item: any, date: string) => {
-  if (isSelfLogin(item.sponsor)) {
-    isModify.value = true;
-    meetingDialog.value = true;
-    // 深拷贝
-    meetingForm.value = JSON.parse(JSON.stringify(item));
-    meetingForm.value.date = date;
-    dialogTitle.value = i18nMeeting.value.MODIFY;
-    mId.value = item.mid;
-    console.log('handleModifyMeeting :>> ', mId.value);
-  }
-};
 //修改会议请求
 const requestMeetingUpdate = async () => {
   try {
     const res = await meetingUpdate(mId.value, meetingForm.value);
-    if (res.code > 200 || res.code < 300) {
+    if (res.code < 300) {
       meetingDialog.value = false;
       ElMessage({
         message: isZh.value ? res.msg : res.en_msg,
         type: 'success',
       });
       meetingData();
+    } else {
+      ElMessage({
+        message: isZh.value ? res.msg : res.en_msg,
+        type: 'warning',
+      });
     }
   } catch (e: any) {
     throw new Error(e);
@@ -513,7 +503,7 @@ const requestMeetingReserve = async () => {
 const requestMeetingDelete = async () => {
   try {
     const res = await meetingDelete(mId.value);
-    if (res.code > 200 || res.code < 300) {
+    if (res.code < 300) {
       meetingDialog.value = false;
       ElMessage({
         message: i18nMeeting.value.DELETE_SUCCESS,
@@ -529,15 +519,13 @@ const requestMeetingDelete = async () => {
 const requestGiteeLogin = async () => {
   try {
     const res = await giteeLogin();
-    if (res.code > 200 || res.code < 300) {
-      const url =
-        'https://gitee.com/oauth/authorize?client_id=' +
-        res.client_id +
-        '&redirect_uri=' +
-        res.redirect_url +
-        '&response_type=code';
-      window.location.href = url;
-    }
+    const url =
+      'https://gitee.com/oauth/authorize?client_id=' +
+      res.client_id +
+      '&redirect_uri=' +
+      res.redirect_url +
+      '&response_type=code';
+    window.open(url, '_self');
   } catch (e: any) {
     throw new Error(e);
   }
@@ -553,10 +541,15 @@ const handleMeetingReserve = () => {
       dialogTitle.value = i18nMeeting.value.RESERVE_MEETING;
       clearData();
     } else {
-      meetingDialog.value = true;
-      dialogTitle.value = i18nMeeting.value.PERMISSION;
-      meetingPermission.value = true;
+      ElMessage({
+        message: i18nMeeting.value.PERMISSION_TEXT,
+        type: 'warning',
+      });
     }
+  } else {
+    meetingDialog.value = true;
+    dialogTitle.value = i18nMeeting.value.LOGIN;
+    dialogNoLogin.value = true;
   }
 };
 
@@ -572,31 +565,44 @@ const handleResetMeeting = (formEl: FormInstance | undefined) => {
   clearDialogState();
 };
 
+// 删除会议
+const handleDeleteMeeting = (item: any) => {
+  mId.value = item.mid;
+  if (isSelfLogin(item.creator)) {
+    dialogTitle.value = i18nMeeting.value.DELETE;
+    meetingDialog.value = true;
+    deleteTips.value = true;
+  } else {
+    ElMessage({
+      message: i18nMeeting.value.PERMISSION_TEXT1,
+      type: 'warning',
+    });
+  }
+};
+
 // 清除弹框状态
 const clearDialogState = () => {
   meetingDialog.value = false;
   isModify.value = false;
   isReserve.value = false;
   dialogNoLogin.value = false;
-  meetingFailed.value = false;
-  meetingPermission.value = false;
   deleteTips.value = false;
 };
 
 const clearData = () => {
   meetingForm.value = {
-    topic: '',
-    sponsor: meetingStore.giteeId || '',
     platform: '',
     group_name: meetingStore.userSigs[0] || '',
     join_url: '',
     date: '',
+    etherpad: '',
+    emaillist: '',
+    record: '',
+    topic: '',
+    sponsor: meetingStore.giteeId || '',
     start: '',
     end: '',
-    etherpad: '',
-    summary: '',
-    emaillist: '',
-    record: false,
+    agenda: '',
   };
 };
 
@@ -614,6 +620,11 @@ const handleSubmitMeeting = async (formEl: FormInstance | undefined) => {
       console.log('error submit!', fields);
     }
   });
+};
+
+const changeRecord = () => {
+  meetingForm.value.record = meetingRecord.value ? 'cloud' : '';
+  console.log('object :>> ', meetingForm.value.record);
 };
 </script>
 <template>
@@ -753,7 +764,7 @@ const handleSubmitMeeting = async (formEl: FormInstance | undefined) => {
                     <div class="meet-item">
                       <div class="meet-left">
                         <div class="left-top">
-                          <p class="meet-name">{{ item.topic }}</p>
+                          <p class="meet-name">{{ item.name || item.title }}</p>
                         </div>
                         <div
                           v-if="item.group_name"
@@ -767,25 +778,14 @@ const handleSubmitMeeting = async (formEl: FormInstance | undefined) => {
                         </div>
                       </div>
                       <div class="item-right">
-                        <OButton
-                          v-if="item.schedules"
-                          animation
-                          type="text"
-                          @click.stop="goDetail(index)"
-                        >
-                          {{ i18nMeeting.LEARN_MORE }}
-                          <template #suffixIcon>
-                            <OIcon><icon-arrow-right></icon-arrow-right></OIcon>
-                          </template>
-                        </OButton>
                         <div class="detail-time">
                           <span class="start-time"
-                            ><i v-if="!item.schedules">{{ item.start }}</i>
+                            ><i v-if="!item.schedules">{{ item.startTime }}</i>
                             <i v-else>{{ item.schedules[0].start }}</i></span
                           >
                           <span v-if="windowWidth < 768">-</span>
                           <span class="end-time">
-                            <i v-if="!item.schedules">{{ item.end }}</i>
+                            <i v-if="!item.schedules">{{ item.endTime }}</i>
                             <i v-else>{{
                               item.schedules[item.schedules.length - 1].end
                             }}</i>
@@ -832,7 +832,10 @@ const handleSubmitMeeting = async (formEl: FormInstance | undefined) => {
                         <p v-else>{{ currentDay }}</p>
                       </div>
                     </template>
-                    <div class="meeting-action">
+                    <div
+                      v-if="isAuthority() || isLogin()"
+                      class="meeting-action"
+                    >
                       <OButton
                         size="mini"
                         type="outline"
@@ -874,7 +877,8 @@ const handleSubmitMeeting = async (formEl: FormInstance | undefined) => {
     center
     lock-scroll
     close-on-press-escape
-    close-on-click-modal
+    close-on-click-modalf
+    append-to-body
     width="550px"
   >
     <!-- 未登录 -->
@@ -889,26 +893,7 @@ const handleSubmitMeeting = async (formEl: FormInstance | undefined) => {
         {{ i18nMeeting.LOGIN_TIPS }}<a href="">{{ i18nMeeting.PRIVACY }}</a>
       </p>
     </div>
-    <!-- 预订失败 -->
-    <div v-if="meetingFailed" class="no-login tc">
-      <img :src="Meeting_failed_img" class="failed-img" alt="" />
-      <p class="text">{{ i18nMeeting.FAILED }}</p>
-      <div class="action">
-        <OButton type="primary" @click="handleBackLogin">
-          {{ i18nMeeting.BACK_LOGIN }}
-        </OButton>
-      </div>
-    </div>
-    <!-- 没有预定会议的权限 -->
-    <div v-if="meetingPermission" class="no-login tc">
-      <img :src="Meeting_failed_img" class="failed-img" alt="" />
-      <p class="text">{{ i18nMeeting.PERMISSION_TEXT }}</p>
-    </div>
-    <!-- 没有编辑会议的权限 -->
-    <div v-if="deletePermissionTips" class="no-login tc">
-      <img :src="Meeting_failed_img" class="failed-img" alt="" />
-      <p class="text">{{ i18nMeeting.PERMISSION_TEXT1 }}</p>
-    </div>
+
     <!-- 删除提示 -->
     <div v-if="deleteTips" class="no-login tc">
       <p class="text">{{ i18nMeeting.DELETE_TEXT }}</p>
@@ -990,7 +975,7 @@ const handleSubmitMeeting = async (formEl: FormInstance | undefined) => {
           </div>
         </ElFormItem>
         <ElFormItem :label="i18nMeeting.CONTENT">
-          <OInput v-model="meetingForm.summary" type="textarea" :rows="2" />
+          <OInput v-model="meetingForm.agenda" type="textarea" :rows="2" />
         </ElFormItem>
         <ElFormItem :label="i18nMeeting.EMAIL">
           <OInput
@@ -1004,7 +989,7 @@ const handleSubmitMeeting = async (formEl: FormInstance | undefined) => {
           <OInput v-model="meetingForm.etherpad" />
         </ElFormItem>
         <ElFormItem :label="i18nMeeting.RECORD">
-          <el-checkbox v-model="meetingForm.record" label="" />
+          <el-checkbox v-model="meetingRecord" @change="changeRecord" />
           <p class="tips">{{ i18nMeeting.RECORD_TEXT }}</p>
         </ElFormItem>
         <ElFormItem>
@@ -1115,7 +1100,10 @@ const handleSubmitMeeting = async (formEl: FormInstance | undefined) => {
     }
   }
   .o-button {
-    height: 34px;
+    height: 42px;
+    @media screen and (max-width: 768px) {
+      height: 34px;
+    }
   }
   .active {
     background-color: var(--o-color-brand1);
@@ -1155,12 +1143,6 @@ const handleSubmitMeeting = async (formEl: FormInstance | undefined) => {
       display: block;
       padding: 0;
       border: none;
-      @media screen and (max-width: 768px) {
-        background-color: var(--o-color-bg2);
-        .left-title {
-          margin: 0;
-        }
-      }
     }
     .el-calendar__body {
       background-color: var(--o-color-bg2);
@@ -1210,6 +1192,7 @@ const handleSubmitMeeting = async (formEl: FormInstance | undefined) => {
             padding: var(--o-spacing-h8) var(--o-spacing-h1);
             align-items: center;
             justify-content: space-between;
+            margin: 0;
             svg {
               cursor: pointer;
               width: 16px;
@@ -1397,9 +1380,7 @@ const handleSubmitMeeting = async (formEl: FormInstance | undefined) => {
       justify-content: flex-end;
       @media screen and (max-width: 768px) {
         margin-bottom: 0;
-        padding-bottom: var(--o-spacing-h5);
         justify-content: center;
-        background-color: var(--o-color-bg1);
         height: auto;
       }
       .el-tabs__header {
@@ -1450,6 +1431,7 @@ const handleSubmitMeeting = async (formEl: FormInstance | undefined) => {
             background-color: var(--o-color-bg1);
             .el-collapse-item__content {
               background-color: var(--o-color-bg1);
+              padding: 0;
             }
           }
         }
@@ -1727,10 +1709,8 @@ const handleSubmitMeeting = async (formEl: FormInstance | undefined) => {
   }
   .main-body {
     margin: 0 auto;
-    // width: 345px;
     align-items: center;
     flex-direction: column;
-    background-color: var(--o-color-bg2);
   }
 }
 </style>

@@ -54,10 +54,32 @@ onMounted(async () => {
 
 // 背景
 const ActiveBg = `url(${liveActiveBg})`;
+
+const liveRoom = ref(
+  isTest.value ? renderData[0].LIVETESTID : renderData[0].LIVEID
+);
+const selectliveChange = (val: number): void => {
+  creatUserId(val);
+};
 </script>
 
 <template>
   <div class="live-room">
+    <div class="select-room">
+      <OSelect
+        v-model="liveRoom"
+        clearable
+        filterable
+        @change="selectliveChange"
+      >
+        <OOption
+          v-for="item in renderData"
+          :key="item.ID"
+          :label="item.NAME"
+          :value="isTest ? item.LIVETESTID : item.LIVEID"
+        />
+      </OSelect>
+    </div>
     <iframe
       ref="livePage"
       height="740"
@@ -93,6 +115,18 @@ const ActiveBg = `url(${liveActiveBg})`;
 </template>
 
 <style scoped lang="scss">
+.select-room {
+  display: none;
+  :deep(.o-select) {
+    width: 100%;
+    .el-input {
+      height: 48px;
+    }
+  }
+  @media (max-width: 1100px) {
+    display: block;
+  }
+}
 .live-room {
   &-video {
     margin-bottom: var(--o-spacing-h4);
@@ -100,10 +134,14 @@ const ActiveBg = `url(${liveActiveBg})`;
     display: block;
     border: none;
     @media (max-width: 780px) {
-      margin-top: var(--o-spacing-h3);
+      margin-top: var(--o-spacing-h5);
     }
   }
   &-web {
+    display: block;
+    @media (max-width: 1100px) {
+      display: none;
+    }
     &-itembox {
       display: flex;
       flex-direction: row;

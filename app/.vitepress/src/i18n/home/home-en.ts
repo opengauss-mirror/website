@@ -74,24 +74,25 @@ export default {
       TITLE: 'Thriving openGauss Community',
       CONTENT:
         'openGauss is an open source database platform that encourages community contribution and collaboration.',
-      VIEW_DETAILS: 'View detail',
+      VIEW_DETAILS: 'Learn More',
       LINK: 'https://datastat.opengauss.org/en/overview',
     },
   },
   HOME_EXPLORE: {
-    EXPLORE_TITLE: 'openGauss 新手 ？点击探索成长路径',
+    EXPLORE_TITLE:
+      'New to openGauss? Come and start your openGauss exploration journey!',
     LIST: [
       {
-        NAME: '什么是 openGauss ',
-        PATH: 'https://opengauss.org/zh/docs/3.0.0/docs/BriefTutorial/%E4%BB%80%E4%B9%88%E6%98%AFopenGauss.html',
+        NAME: 'What is openGauss',
+        PATH: '/docs/3.0.0/docs/BriefTutorial/what-is-opengauss.html',
       },
       {
-        NAME: '如何安装部署openGauss ',
-        PATH: 'https://opengauss.org/zh/docs/3.0.0/docs/BriefTutorial/%E5%AE%89%E8%A3%85%E4%B8%8E%E7%99%BB%E5%BD%95.html',
+        NAME: 'How do I install and deploy openGauss',
+        PATH: '/docs/3.0.0/docs/BriefTutorial/installation-and-login.html',
       },
       {
-        NAME: '如何贡献代码 ',
-        PATH: 'https://datastat.opengauss.org/zh/overview',
+        NAME: 'How do I participate in openGauss contributions',
+        PATH: '/en/contribution/',
       },
     ],
   },
@@ -179,11 +180,11 @@ export default {
       { NAME: 'Blog', ID: 'blog' },
       { NAME: 'News', ID: 'news' },
     ],
-    EVENT_NAME: '最新活动',
-    BLOG_NAME: 'openGauss 博客',
-    NEWS_NAME: 'openGauss 新闻',
+    EVENT_NAME: 'Latest Activity',
+    BLOG_NAME: 'openGauss Blog',
+    NEWS_NAME: 'openGauss News',
   },
-  MORE: '更多',
-  EXPAND: '展开全部',
-  RETRACT: '收起全部',
+  MORE: 'Read More',
+  EXPAND: 'Expand All',
+  RETRACT: 'Collapse All',
 };

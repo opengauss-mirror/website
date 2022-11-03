@@ -1,9 +1,6 @@
 ---
 category: 'events'
-title1: '华为开发者大赛·'
-title2: 'openGauss赛道'
-bgimg: '/img/breadcrumbs/minisite_bg.png'
-moimg: '/img/breadcrumbs/security_mo.png'
+title: '华为开发者大赛· openGauss赛道'
 ---
 
 ## 大赛简介

@@ -460,8 +460,8 @@ watch(
     .label {
       color: var(--o-color-text4);
       @media screen and (max-width: 1100px) {
-        font-size: var(--o-font-size-text);
-        line-height: var(--o-line-height-text);
+        font-size: var(--o-font-size-tip);
+        line-height: var(--o-line-height-tip);
       }
     }
     .select-version {
@@ -549,6 +549,7 @@ watch(
     display: flex;
     align-items: center;
     gap: var(--o-spacing-h8);
+    color: var(--o-color-text1);
   }
   .server-tips {
     width: var(--o-font-size-h6);

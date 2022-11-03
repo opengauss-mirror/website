@@ -66,7 +66,7 @@ export default {
     ],
   },
   en: {
-    LOOK_DESC: 'View Details',
+    LOOK_DESC: 'Learn More',
     LOOK_MAP: 'Contribution Map',
     PRINT_MAP: 'Download',
     LINK_LIST: [

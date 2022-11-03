@@ -1,14 +1,21 @@
 <script lang="ts" setup>
 import { useI18n } from '@/i18n';
 import AppContent from '@/components/AppContent.vue';
+import { useData } from 'vitepress';
 
 import IconArrowRight from '~icons/app/icon-arrow-right.svg';
 import ExploreBg from '@/assets/category/home/explore-bg.png';
 
 const i18n = useI18n();
+const { lang, theme } = useData();
 
 const handleGo = (path: string) => {
-  window.open(path, '_blank');
+  if (path.startsWith('/docs/')) {
+    const link = theme.value.docsUrl + '/' + lang.value + path;
+    window.open(link, '_blank');
+  } else {
+    window.open(path, '_blank');
+  }
 };
 </script>
 
@@ -42,10 +49,14 @@ const handleGo = (path: string) => {
 $explore-color: #fff;
 .home-explore {
   height: 300px;
+  @media screen and (max-width: 760px) {
+    height: auto;
+  }
   h3 {
     text-align: center;
     font-size: var(--o-font-size-h3);
     color: #fff;
+    font-weight: 300;
     line-height: var(--o-line-height-h3);
     @media screen and (max-width: 760px) {
       font-size: var(--o-font-size-h8);
@@ -58,10 +69,10 @@ $explore-color: #fff;
     gap: var(--o-spacing-h1);
     margin-top: var(--o-spacing-h2);
     @media screen and (max-width: 760px) {
-      gap: var(--o-spacing-h4);
+      gap: var(--o-spacing-h5);
       flex-direction: column;
-      max-width: 80%;
-      margin: var(--o-spacing-h4) auto 0;
+      max-width: 85%;
+      margin: var(--o-spacing-h5) auto 0;
     }
   }
   .home-explore-btn {

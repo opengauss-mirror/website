@@ -116,14 +116,13 @@ const windowWidth = ref(useWindowResize());
   .text {
     font-size: var(--o-font-size-text);
     line-height: var(--o-line-height-text);
-    color: var(--o-color-text1);
+    color: var(--o-color-text4);
   }
   .title {
     font-size: var(--o-font-size-h5);
     line-height: var(--o-line-height-h5);
     color: var(--o-color-text1);
     margin: var(--o-spacing-h2) 0 var(--o-spacing-h4);
-    font-weight: 300;
     @media screen and (max-width: 1100px) {
       margin: var(--o-spacing-h4) 0 var(--o-spacing-h6);
       font-size: var(--o-font-size-h6);

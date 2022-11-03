@@ -166,6 +166,7 @@ const i18n = useI18n();
       line-height: 64px;
       font-size: var(--o-font-size-text);
       color: var(--o-color-white);
+      font-weight: 500;
     }
     .item-body {
       padding: var(--o-spacing-h8);
@@ -196,7 +197,7 @@ const i18n = useI18n();
           position: relative;
           font-size: var(--o-font-size-text);
           color: var(--o-color-text1);
-          font-weight: 300;
+          font-weight: 500;
           background-color: var(--o-color-bg2);
           &.is-active::before {
             content: '';

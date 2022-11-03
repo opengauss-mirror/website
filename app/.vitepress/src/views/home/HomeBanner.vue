@@ -10,25 +10,18 @@ import HomeConfig from '@/data/home/';
 
 import useWindowResize from '@/components/hooks/useWindowResize';
 
-import IconArrowRight from '~icons/app/icon-chevron-right.svg';
+import IconArrowRight from '~icons/app/icon-arrow-right.svg';
 import VideoGif from '@/assets/category/home/video-player.gif';
 
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 
 const { lang, theme } = useData();
 const flag = ref();
+
 const onSwiper = (swiper: any) => {
-  debugger
-  swiper.el.onmouseout = function () {
-    swiper.navigation.$nextEl.removeClass('show');
-    swiper.navigation.$prevEl.removeClass('show');
-  };
-  swiper.el.onmouseover = function () {
-    swiper.navigation.$nextEl.addClass('show');
-    swiper.navigation.$prevEl.addClass('show');
-  };
   flag.value = computed(() => swiper.animating);
 };
+
 const windowWidth = ref(useWindowResize());
 
 // 判断语言 banner
@@ -66,75 +59,82 @@ const videoClickBtn = (path: string) => {
 </script>
 
 <template>
-  <swiper
-    class="home-banner"
-    :loop="true"
-    :pagination="{
-      clickable: true,
-    }"
-    :autoplay="{
-      delay: 5000,
-      disableOnInteraction: false,
-    }"
-    :navigation="true"
-    @swiper="onSwiper"
-  >
-    <swiper-slide v-for="(item, index) in homeBanner" :key="item.link">
-      <a class="banner-panel" @click="jump(item)">
-        <div
-          class="banner-panel-cover"
-          :class="{ 'banner-pic': item.title === '' }"
-          :style="{
-            backgroundImage: `url(${
-              windowWidth < 767 ? item.moBanner : item.pcBanner
-            })`,
-          }"
-        >
+  <div class="swiper-banner">
+    <swiper
+      class="home-banner"
+      :loop="true"
+      :pagination="{
+        clickable: true,
+      }"
+      :autoplay="{
+        delay: 5000,
+        disableOnInteraction: false,
+      }"
+      :navigation="true"
+      @swiper="onSwiper"
+    >
+      <swiper-slide v-for="(item, index) in homeBanner" :key="item.link">
+        <a class="banner-panel" @click="jump(item)">
           <div
-            v-if="item.title !== ''"
-            :class="[{ 'flex-start': index === 1 }]"
-            class="banner-panel-content flex-column"
+            class="banner-panel-cover"
+            :class="{
+              'banner-pic': item.title === '',
+              'banner-img': item.type === 1,
+              'text-center': item.type === 3,
+              internship: item.type === 4,
+            }"
+            :style="{
+              backgroundImage: `url(${
+                windowWidth < 767 ? item.moBanner : item.pcBanner
+              })`,
+            }"
           >
-            <div class="box">
-              <p class="title" :class="{ experts: index === 1 }">
-                {{ item.title }}
-              </p>
-              <p class="desc" :class="{ experts: index === 1 }">
-                <span
-                  v-for="item2 in item.desc"
-                  :key="item2"
-                  class="inline-desc"
-                  >{{ item2 }}</span
-                >
-              </p>
-            </div>
             <div
-              v-if="item.btn"
-              class="action"
-              :class="{ liveBanner: index === 1 }"
+              v-if="item.title !== ''"
+              :class="[{ 'flex-start': index === 1 }]"
+              class="banner-panel-content flex-column"
             >
-              <OButton animation class="home-banner-btn">
-                {{ item.btn }}
-                <template #suffixIcon
-                  ><OIcon><IconArrowRight /></OIcon
-                ></template>
-              </OButton>
-            </div>
+              <div class="box">
+                <p class="title" :class="{ experts: index === 1 }">
+                  {{ item.title }}
+                </p>
+                <p class="desc" :class="{ experts: index === 1 }">
+                  <span
+                    v-for="item2 in item.desc"
+                    :key="item2"
+                    class="inline-desc"
+                    >{{ item2 }}</span
+                  >
+                </p>
+              </div>
+              <div
+                v-if="item.btn"
+                class="action"
+                :class="{ liveBanner: index === 1 }"
+              >
+                <OButton animation class="home-banner-btn">
+                  {{ item.btn }}
+                  <template #suffixIcon
+                    ><OIcon><IconArrowRight /></OIcon
+                  ></template>
+                </OButton>
+              </div>
 
-            <div v-if="item.video !== ''" id="video-player">
-              <img
-                class="video-player-btn"
-                :src="VideoGif"
-                alt=""
-                @click.stop="videoClickBtn(item.video)"
-              />
+              <div v-if="item.video !== ''" id="video-player">
+                <img
+                  class="video-player-btn"
+                  :src="VideoGif"
+                  alt=""
+                  @click.stop="videoClickBtn(item.video)"
+                />
+              </div>
             </div>
           </div>
-        </div>
-      </a>
-    </swiper-slide>
-  </swiper>
-  <div>
+        </a>
+      </swiper-slide>
+    </swiper>
+  </div>
+  <div v-if="videoDialog" class="video-box">
     <ODialog
       v-model="videoDialog"
       :before-close="handleCloseVideo"
@@ -173,6 +173,9 @@ html[lang='zh'] {
     }
   }
 }
+.banner-panel-cover {
+  cursor: pointer;
+}
 .dark .banner-panel-cover {
   filter: brightness(80%) grayscale(20%) contrast(1.2);
 }
@@ -191,13 +194,18 @@ html[lang='zh'] {
     width: 100%;
   }
 }
+.el-dialog {
+  background-color: red;
+}
+.video-box {
+  :deep(.el-dialog__header) {
+    display: none;
+  }
+  :deep(.el-dialog__body) {
+    padding: 0;
+  }
+}
 
-:deep(.el-dialog__body) {
-  padding: 0;
-}
-:deep(.el-dialog__header) {
-  display: none;
-}
 .home-banner-video {
   display: block;
   margin: 0 auto;
@@ -243,7 +251,7 @@ html[lang='zh'] {
         font-size: var(--o-font-size-h1);
         line-height: var(--o-line-height-h1);
         // filter: invert(1);
-        font-weight: 300;
+        font-weight: 600;
         @media screen and (max-width: 1439px) {
           font-size: var(--o-font-size-h2);
           line-height: var(--o-line-height-h2);
@@ -269,7 +277,7 @@ html[lang='zh'] {
         }
 
         font-size: var(--o-font-size-h5);
-        font-weight: 300;
+        font-weight: 400;
         line-height: var(--o-line-height-h5);
         margin-top: var(--o-spacing-h6);
         @media screen and (max-width: 1439px) {
@@ -289,7 +297,6 @@ html[lang='zh'] {
         .o-icon {
           @media screen and (max-width: 824px) {
             font-size: 16px;
-            color: var(--o-color-yellow5);
           }
         }
         @media screen and (max-width: 824px) {
@@ -305,7 +312,7 @@ html[lang='zh'] {
         padding: 0 16px;
       }
       @media screen and (max-width: 824px) {
-        padding: 72px 16px 50px;
+        padding: 60px 16px 50px;
         justify-content: space-between;
         box-sizing: border-box;
         text-align: center;
@@ -318,9 +325,41 @@ html[lang='zh'] {
       background-size: cover;
       width: 100%;
       height: 100%;
+      @media screen and (max-width: 768px) {
+        background-size: 100% 100%;
+      }
       &.banner-pic {
         @media screen and (min-width: 1921px) {
           background-size: contain;
+        }
+      }
+      &.banner-img {
+        @media screen and (min-width: 1921px) {
+          background-size: cover;
+        }
+      }
+      &.text-center {
+        .banner-panel-content {
+          flex-direction: initial;
+          align-items: center !important;
+        }
+        .title {
+          text-align: center;
+        }
+      }
+      &.internship {
+        .title,
+        .desc {
+          color: var(--o-color-black);
+          @media screen and (max-width: 768px) {
+            display: none;
+          }
+        }
+        .home-banner-btn {
+          background-color: #012fa8;
+          @media screen and (max-width: 768px) {
+            display: none;
+          }
         }
       }
     }
@@ -346,74 +385,79 @@ html[lang='zh'] {
   }
 }
 
-:deep(.swiper-pagination) {
-  width: 1416px !important;
-  bottom: 16px;
-  left: 50% !important;
-  transform: translateX(-50%);
-  text-align: left;
-  font-size: 0;
-  .swiper-pagination-bullet {
-    width: 40px;
-    height: 2px;
-    opacity: 1;
-    background: rgba(207, 211, 215, 0.6);
-    border-radius: 0;
-    margin: 0 4px;
-  }
-  .swiper-pagination-bullet-active {
-    background: var(--o-color-yellow5);
-    opacity: 1;
-  }
-  @media screen and (max-width: 1439px) {
-    width: 1080px !important;
-    padding: 0 16px;
-    left: 0 !important;
-    transform: translateX(0);
-  }
-  @media screen and (max-width: 1100px) {
-    width: 100% !important;
-    bottom: 72px;
-    .swiper-pagination-bullet {
-      width: 20px !important;
-      margin: 0 4px 0 0;
+.swiper-banner {
+  :deep(.swiper-container) {
+    .swiper-pagination {
+      width: 1416px !important;
+      bottom: 16px;
+      left: 50% !important;
+      transform: translateX(-50%);
+      text-align: left;
+      font-size: 0;
+      .swiper-pagination-bullet {
+        width: 40px;
+        opacity: 1;
+        background: none;
+        border-radius: 0;
+        margin: 0 4px;
+        height: 2px;
+        padding: 3px 0;
+      }
+      .swiper-pagination-bullet::after {
+        height: 2px;
+        width: 100%;
+        background: rgba(207, 211, 215, 0.6);
+        content: '';
+        display: block;
+      }
+      .swiper-pagination-bullet-active {
+        opacity: 1;
+      }
+      .swiper-pagination-bullet-active::after {
+        background: var(--o-color-yellow5);
+      }
+      @media screen and (max-width: 1439px) {
+        width: 1080px !important;
+        padding: 0 16px;
+        left: 0 !important;
+        transform: translateX(0);
+      }
+      @media screen and (max-width: 1100px) {
+        width: 100% !important;
+
+        .swiper-pagination-bullet {
+          width: 20px !important;
+          margin: 0 4px 0 0;
+        }
+      }
+      @media screen and (max-width: 824px) {
+        left: 50% !important;
+        transform: translateX(-50%);
+        text-align: center;
+      }
     }
-  }
-  @media screen and (max-width: 824px) {
-    left: 50% !important;
-    transform: translateX(-50%);
-    text-align: center;
-    bottom: 24px;
-  }
-}
-:deep(.swiper-button-prev) {
-  width: 32px;
-  height: 32px;
-  background: rgba(56, 56, 56, 0.5);
-  border-radius: 50%;
-  opacity: 0;
-  transition: all 0.3s;
-  &:after {
-    font-size: 20px;
-    color: #fff;
-  }
-  &.show {
-    opacity: 1;
-  }
-}
-:deep(.swiper-button-next) {
-  width: 32px;
-  height: 32px;
-  background: rgba(56, 56, 56, 0.5);
-  border-radius: 50%;
-  opacity: 0;
-  transition: all 0.3s;
-  &:after {
-    font-size: 20px;
-    color: #fff;
-  }
-  &.show {
-    opacity: 1;
+    .swiper-button-prev,
+    .swiper-button-next {
+      width: 32px;
+      height: 32px;
+      background: rgba(56, 56, 56, 0.5);
+      border-radius: 50%;
+      opacity: 0;
+      transition: all 0.5s;
+      &:after {
+        font-size: 16px;
+        color: #fff;
+      }
+      &.show {
+        opacity: 1;
+      }
+    }
+    &:hover {
+      .swiper-button-prev,
+      .swiper-button-next {
+        opacity: 1;
+      }
+    }
   }
 }
 </style>

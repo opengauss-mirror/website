@@ -53,14 +53,15 @@ const handlerVideo = (id: number, index: number) => {
 </script>
 
 <template>
-  <div class="event-list">
-    <h2 class="event-title">{{ isZh ? navItems.name : navItems.nameEn }}</h2>
+  <div class="video-list">
+    <h2 class="video-title">{{ isZh ? navItems.name : navItems.nameEn }}</h2>
     <div class="news-panel-content">
       <template v-for="(list, index) in dataList" :key="list.id">
         <OCard
           v-if="Number(index) < videoLen"
           class="video-item shadow"
           data-aos="fade-up"
+          shadow="hover"
         >
           <div
             class="video-item-link"
@@ -101,7 +102,7 @@ const handlerVideo = (id: number, index: number) => {
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
 }
-.event-list {
+.video-list {
   margin-top: var(--o-spacing-h1);
 }
 .tc {
@@ -109,13 +110,13 @@ const handlerVideo = (id: number, index: number) => {
   margin-top: 20px;
 }
 
-.event-title {
+.video-title {
   text-align: center;
   font-size: var(--o-font-size-h3);
   line-height: var(--o-line-height-h3);
   margin-bottom: var(--o-spacing-h2);
-  font-weight: 300;
   color: var(--o-color-text1);
+  font-weight: 300;
 }
 .video-item {
   :deep(.el-card__body) {
@@ -183,7 +184,7 @@ const handlerVideo = (id: number, index: number) => {
       min-height: 137px;
     }
   }
-  .event-title {
+  .video-title {
     font-size: 16px;
     line-height: 24px;
     margin-bottom: 16px;

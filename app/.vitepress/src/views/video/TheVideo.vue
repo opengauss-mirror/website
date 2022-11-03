@@ -97,7 +97,7 @@ const handlerVideoDetail = (id: number, index: number) => {
               v-for="(subitem, sindex) in dataList(item)"
               :key="subitem.id"
             >
-              <OCard class="video-item shadow">
+              <OCard class="video-item">
                 <div
                   class="video-item-link"
                   @click="handlerVideoDetail(item.id, sindex)"

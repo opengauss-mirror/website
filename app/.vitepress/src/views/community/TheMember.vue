@@ -25,7 +25,11 @@ const tabIndex = ref(0);
 const anchor = computed(() => {
   return i18n.value.member.MEMBER_LIST.map((item: any) => item.ID);
 });
-
+// 用于存放dom元素以方便识别滚动距离进而改变导航栏
+const navRef: any = ref([]);
+const navTitle = (el: any) => {
+  navRef.value.push(el);
+};
 function TabClick(e: any) {
   tabIndex.value = e.index - 0;
   handleScroll(e.index - 0);
@@ -58,6 +62,18 @@ const scroll = () => {
       (document.getElementById('tab') as HTMLElement).style.position = 'static';
     }
   }
+  // 根据滚动激活导航
+  (function () {
+    const scrollTop =
+      document.body.scrollTop || document.documentElement.scrollTop;
+    const activeList: Array<number> = [];
+    navRef.value.forEach((item: any, index: number) => {
+      if (scrollTop > item.offsetTop) {
+        activeList.push(index);
+      }
+    });
+    tabShow.value = activeList[activeList.length - 1];
+  })();
 };
 onMounted(() => {
   const body = window;
@@ -220,7 +236,9 @@ const handleChangeActiveMobile = (activeNames: any) => {
       class="member-panel member-pc"
     >
       <template v-if="!item.CHILDREN">
-        <h1 :id="item.ID" class="member-title">{{ item.NAME }}</h1>
+        <h1 :id="item.ID" :ref="navTitle" class="member-title">
+          {{ item.NAME }}
+        </h1>
         <div class="member-panel-content">
           <ul class="member-info">
             <li>
@@ -255,7 +273,9 @@ const handleChangeActiveMobile = (activeNames: any) => {
         </div>
       </template>
       <template v-else>
-        <h1 :id="item.ID" class="member-title">{{ item.NAME }}</h1>
+        <h1 :id="item.ID" :ref="navTitle" class="member-title">
+          {{ item.NAME }}
+        </h1>
         <div class="gap">
           <div
             v-for="subitem in item.CHILDREN"
@@ -418,7 +438,6 @@ const handleChangeActiveMobile = (activeNames: any) => {
     font-size: var(--o-font-size-h3);
     color: var(--o-color-text1);
     line-height: var(--o-line-height-h3);
-    font-weight: 300;
     margin-bottom: var(--o-spacing-h2);
     &::before {
       content: '';
@@ -455,8 +474,8 @@ const handleChangeActiveMobile = (activeNames: any) => {
       align-items: center;
       margin-bottom: var(--o-spacing-h5);
       font-size: var(--o-font-size-text);
-      color: var(--o-color-text1);
-      line-height: var(--o-line-height-text);
+      color: var(--o-color-text4);
+      line-height: var(--o-line-height-h8);
       @media screen and (max-width: 768px) {
         font-size: var(--o-font-size-tip);
         line-height: var(--o-line-height-tip);
@@ -482,6 +501,11 @@ const handleChangeActiveMobile = (activeNames: any) => {
         color: var(--o-color-text4);
         line-height: var(--o-line-height-tip);
         margin-top: var(--o-spacing-h10);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
       }
       .links {
         margin-top: var(--o-spacing-h9);

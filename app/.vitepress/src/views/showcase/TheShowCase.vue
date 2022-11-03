@@ -1,21 +1,21 @@
 <script lang="ts" setup>
 import { ref, computed } from 'vue';
 import { useI18n } from '@/i18n';
-import { useCommon } from '@/stores/common';
 import { useData } from 'vitepress';
 import useWindowScroll from '@/components/hooks/useWindowScroll';
+
+import ShowCaseData from '@/data/showcase';
 import useWindowResize from '@/components/hooks/useWindowResize';
 
 import TagFilter from '@/components/TagFilter.vue';
-import AppPaginationMo from '@/components/AppPaginationMo.vue';
-import ShowCaseData from '@/data/showcase';
-
 import BannerLevel2 from '@/components/BannerLevel2.vue';
-import Banner from '@/assets/banner/banner-secondary.png';
-import illustration from '@/assets/illustrations/userPractice.png';
-import IconArrowRight from '~icons/app/icon-arrow-right.svg';
+import AppPaginationMo from '@/components/AppPaginationMo.vue';
 
+import Banner from '@/assets/banner/banner-secondary.png';
 import CardBg from '@/assets/category/showcase/bg.png';
+import illustration from '@/assets/illustrations/userPractice.png';
+
+import IconArrowRight from '~icons/app/icon-arrow-right.svg';
 import financeIcon from '@/assets/category/showcase/finance-icon.svg';
 import industrialIcon from '@/assets/category/showcase/industrial-icon.svg';
 import isvIcon from '@/assets/category/showcase/isv-icon.svg';
@@ -23,14 +23,13 @@ import energyIcon from '@/assets/category/showcase/energy-icon.svg';
 import internetIcon from '@/assets/category/showcase/developer-icon.svg';
 import otherIcon from '@/assets/category/showcase/other-icon.svg';
 import dbvIcon from '@/assets/category/showcase/dbv-icon.svg';
+import IconChevronRight from '~icons/app/icon-chevron-right.svg';
 
 const i18n = useI18n();
 const userCaseData = computed(() => i18n.value.showcase);
-const commonStore = useCommon();
 const { lang } = useData();
 const activeIndex = ref(0);
 const screenWidth = useWindowResize();
-const isPc = computed(() => (screenWidth.value >= 1100 ? true : false));
 
 const isZh = computed(() => (lang.value === 'zh' ? true : false));
 
@@ -71,6 +70,19 @@ function filterCase() {
   }
 }
 
+// 控制更多icon的显示
+const showLength = computed(() => (screenWidth.value <= 1280 ? 68 : 48));
+const showList = computed(() => {
+  const detailList: any = [];
+  currentCaseList.value.forEach((item: any) => {
+    if (item.desc.length > showLength.value) {
+      detailList.push(true);
+    } else {
+      detailList.push(false);
+    }
+  });
+  return detailList;
+});
 // 当前显示的页码
 const currentPage = ref(1);
 const pageSize = ref(12);
@@ -134,6 +146,10 @@ const jump = (url: string) => {
 // 根据滚动位置移动端tag吸顶
 const scrollTop = useWindowScroll();
 const isTopNavMo = computed(() => (scrollTop.value > 156 ? true : false));
+const showIndex = ref(NaN);
+function toggleAll(index: number) {
+  showIndex.value = showIndex.value === index ? NaN : index;
+}
 </script>
 
 <template>
@@ -185,7 +201,7 @@ const isTopNavMo = computed(() => (scrollTop.value > 156 ? true : false));
     </p>
     <div class="case-list">
       <OCard
-        v-for="item in currentCaseList"
+        v-for="(item, index) in currentCaseList"
         :key="item.path"
         shadow="hover"
         class="case-card"
@@ -193,24 +209,15 @@ const isTopNavMo = computed(() => (scrollTop.value > 156 ? true : false));
       >
         <div class="case-card-box">
           <h4>{{ item.name }}</h4>
-          <template v-if="isPc">
-            <el-popover
-              placement="top-start"
-              :width="360"
-              trigger="hover"
-              popper-class="popover-showcase-desc"
-              :effect="commonStore.theme"
-              :content="item.desc"
-            >
-              <template #reference>
-                <p class="detail">
-                  {{ item.desc }}
-                </p>
-              </template>
-            </el-popover>
-          </template>
-          <p v-else class="detail">
+          <p class="detail" :class="showIndex === index ? 'all' : ''">
             {{ item.desc }}
+            <OIcon
+              v-if="showList[index]"
+              :class="showIndex === index ? 'show' : ''"
+              @click="toggleAll(index)"
+            >
+              <IconChevronRight />
+            </OIcon>
           </p>
           <OButton
             animation
@@ -341,7 +348,7 @@ $color: #fff;
   line-height: var(--o-line-height-tip);
   color: var(--o-color-text1);
   @media (max-width: 768px) {
-    display: none;
+    margin: var(--o-spacing-h5);
   }
 }
 .case-list {
@@ -390,12 +397,49 @@ $color: #fff;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     overflow: hidden;
-    text-align: justify;
+    text-align: start;
+    position: relative;
+    max-height: 44px;
+    transition: all 0.3s;
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+    &::-webkit-scrollbar-thumb {
+      width: 0;
+    }
+    &::-webkit-scrollbar-track {
+      width: 0;
+    }
+    &::-webkit-scrollbar-button {
+      width: 0;
+    }
     @media (max-width: 768px) {
       font-size: var(--o-font-size-tip);
       line-height: var(--o-line-height-tip);
       -webkit-line-clamp: inherit;
+      max-height: inherit;
+      text-align: justify;
     }
+    .o-icon {
+      position: absolute;
+      right: 0px;
+      bottom: 4px;
+      z-index: 9;
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.3s;
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+    .show {
+      transform: rotateZ(-90deg);
+    }
+  }
+  .all {
+    -webkit-line-clamp: initial;
+    max-height: 144px;
   }
   .website-btn {
     border-color: #fff;
@@ -403,6 +447,7 @@ $color: #fff;
   }
   @media screen and (max-width: 1280px) {
     grid-template-columns: repeat(2, 1fr);
+    margin-top: var(--o-spacing-h4);
   }
   @media screen and (max-width: 760px) {
     grid-template-columns: repeat(1, 1fr);

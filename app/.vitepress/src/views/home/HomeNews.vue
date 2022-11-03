@@ -109,7 +109,13 @@ onMounted(async () => {
           </div>
           <div class="activity-content-box" data-aos="fade-left">
             <div class="box">
-              <h3 class="activity-title">{{ eventsData.title }}</h3>
+              <a
+                :href="eventsData.path"
+                class="activity-title"
+                target="_blank"
+                >{{ eventsData.title }}</a
+              >
+
               <p class="desc">{{ eventsData.summary }}</p>
               <div class="info">
                 <p class="time">
@@ -340,7 +346,6 @@ onMounted(async () => {
     .type-title {
       font-size: var(--o-font-size-h7);
       line-height: var(--o-font-size-h7);
-      font-weight: 300;
       color: var(--o-color-text1);
       display: block;
       @media screen and (max-width: 1080px) {
@@ -559,6 +564,7 @@ onMounted(async () => {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
     }
   }
   &-box {
@@ -573,6 +579,9 @@ onMounted(async () => {
       font-weight: 500;
       color: var(--o-color-text1);
       line-height: var(--o-line-height-h4);
+      &:hover {
+        color: var(--o-color-brand1);
+      }
     }
     .desc {
       font-size: var(--o-font-size-text);
@@ -625,21 +634,23 @@ onMounted(async () => {
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
-        margin: 8px 0 14px;
+        margin: 8px 0;
         display: block;
       }
       .info {
         p {
           margin: 0;
           display: inline-flex;
-          margin-right: 24px;
+          margin-right: 16px;
+          font-size: var(--o-font-size-tip);
+          line-height: var(--o-line-height-tip);
           .o-icon {
             font-size: 16px;
             margin-right: 4px;
           }
         }
         .tag {
-          margin-top: 8px;
+          // margin-top: 8px;
         }
       }
       .link {
@@ -649,7 +660,7 @@ onMounted(async () => {
         font-size: 12px;
       }
       .box {
-        margin: 0 0 12px;
+        margin: 0 0 8px;
       }
     }
   }

@@ -1,9 +1,14 @@
 ---
-title : "Vulnerability Report"
-id : "security"
-bgImg : "../img/breadcrumbs/security_bg.png"
-moImg : "../img/breadcrumbs/security_mo.png"
-keywords : ["Vulnerability Response","Vulnerability Handling","Vulnerability Reporting","Vulnerability Severity Assessment","Vulnerability Disclosure"]
+title: 'Vulnerability Report'
+id: 'security'
+keywords:
+  [
+    'Vulnerability Response',
+    'Vulnerability Handling',
+    'Vulnerability Reporting',
+    'Vulnerability Severity Assessment',
+    'Vulnerability Disclosure',
+  ]
 category: 'security'
 ---
 
@@ -23,6 +28,7 @@ category: 'security'
         commonStore.theme === 'light' ? imgMoLight : imgMoDark
     );
 </script>
+
 ## 1. Vulnerability Response
 
 The openGauss community attaches great importance to the community version security. The SIG Security of openGauss community is responsible for receiving, investigating, and disclosing security vulnerabilities related to the community. Researchers and industry organizations working on vulnerability prevention are encouraged to report the potential security vulnerabilities in the openGauss community to the SIG Security. The reported security issues or vulnerabilities will be quickly analyzed and resolved by the SIG Security.
@@ -44,35 +50,34 @@ The details of vulnerability reporting, vulnerability assessment, and vulnerabil
 
 We hope that you can report the potential vulnerability of an openGauss product to the openGauss community and work with us to resolve and disclose the vulnerability.
 
-
 #### 3.1.1 Reporting Channel
 
-You can send the potential security vulnerabilities of an openGauss product to the e-mail of the openGauss security team (<securities@openGauss.org>). Given that the vulnerability information is sensitive, you are advised to use the <a Download href="/file/public-key/openGauss_0x912AD1B8_public.asc">public PGP key</a> of the security team to encrypt the e-mail. 
+You can send the potential security vulnerabilities of an openGauss product to the e-mail of the openGauss security team (<securities@openGauss.org>). Given that the vulnerability information is sensitive, you are advised to use the <a Download href="/file/public-key/openGauss_0x912AD1B8_public.asc">public PGP key</a> of the security team to encrypt the e-mail.
 The information of the SIG Security members is as follows:
 
-+ Jinwei Zhu[@zhujinwei], <zhujinwei@huawei.com>
+- Jinwei Zhu[@zhujinwei], <zhujinwei@huawei.com>
 
-+ Liang Guo[@blueloveki], <liang4358@163.com>
+- Liang Guo[@blueloveki], <liang4358@163.com>
 
-+ Jianfeng Li[@jianfenglee], <bigtimer@qq.com>
+- Jianfeng Li[@jianfenglee], <bigtimer@qq.com>
 
-+ Yaozhong Zhang[@buter], <zhangyaozhong1@huawei.com>
+- Yaozhong Zhang[@buter], <zhangyaozhong1@huawei.com>
 
-+ Zheli Liu[@liuzheli], <liuzheli@nankai.edu.cn>
+- Zheli Liu[@liuzheli], <liuzheli@nankai.edu.cn>
 
 #### 3.1.2 Reporting Content
 
 To quickly identify and verify suspected vulnerabilities, the reporting e-mail should include but is not limited to the following content:
 
-+ Basic information: including the modules affected by the vulnerability, triggering conditions of the vulnerability, and impact on the system after the vulnerability is exploited.
+- Basic information: including the modules affected by the vulnerability, triggering conditions of the vulnerability, and impact on the system after the vulnerability is exploited.
 
-+ Technical details: including system configuration, fault locating method, description of exploit, POC, and method and procedure of fault reproduction.
+- Technical details: including system configuration, fault locating method, description of exploit, POC, and method and procedure of fault reproduction.
 
-+ Suggestions on resolving the vulnerability.
+- Suggestions on resolving the vulnerability.
 
-+ Organization and contact information of the vulnerability reporter.
+- Organization and contact information of the vulnerability reporter.
 
-+ Reporter's possible plan for vulnerability disclosure.
+- Reporter's possible plan for vulnerability disclosure.
 
 #### 3.1.3 E-mail Response
 
@@ -86,43 +91,43 @@ The Common Vulnerability Scoring System (CVSS) is widely used in the industry to
 
 The CVSS v3 adopted by the openGauss community assesses the impact of a vulnerability based on the following variables:
 
-+ Attack vector (AV): indicating the remoteness of an attack and how to exploit this vulnerability.
+- Attack vector (AV): indicating the remoteness of an attack and how to exploit this vulnerability.
 
-+ Attack complexity (AC): describing the difficulty in executing an attack and the conditions for a successful attack.
+- Attack complexity (AC): describing the difficulty in executing an attack and the conditions for a successful attack.
 
-+ User interaction (UI): determining whether the attack requires users' participation.
+- User interaction (UI): determining whether the attack requires users' participation.
 
-+ Permission required (PR): recording the level of user authorization required for a successful attack.
+- Permission required (PR): recording the level of user authorization required for a successful attack.
 
-+ Scope (S): determining whether an attack can affect components of different permission levels.
+- Scope (S): determining whether an attack can affect components of different permission levels.
 
-+ Confidentiality (C): measuring the impact of unauthorized information disclosure.
+- Confidentiality (C): measuring the impact of unauthorized information disclosure.
 
-+ Integrity (I): measuring the impact of information tampering.
+- Integrity (I): measuring the impact of information tampering.
 
-+ Availability (A): measuring the impact on data access or services for users affected by the vulnerability.
+- Availability (A): measuring the impact on data access or services for users affected by the vulnerability.
 
 #### 3.2.2 Assessment Principles
 
-+ The severity of a vulnerability is assessed, not the risk of the vulnerability.
+- The severity of a vulnerability is assessed, not the risk of the vulnerability.
 
-+ The assessment must be based on an attack scenario where the system confidentiality, integrity, and availability are affected by a successful attack.
+- The assessment must be based on an attack scenario where the system confidentiality, integrity, and availability are affected by a successful attack.
 
-+ When a security vulnerability has multiple attack scenarios, the attack scenario with the highest CVSS score (that is, with the greatest impact) shall prevail in the assessment.
+- When a security vulnerability has multiple attack scenarios, the attack scenario with the highest CVSS score (that is, with the greatest impact) shall prevail in the assessment.
 
-+ When a library that is embedded or invoked has vulnerabilities, the assessment on its vulnerability severity should be based on an attack scenario, which is determined by the usage of the library in the product.
+- When a library that is embedded or invoked has vulnerabilities, the assessment on its vulnerability severity should be based on an attack scenario, which is determined by the usage of the library in the product.
 
-+ When a security defect does not trigger or affect the confidentiality/integrity/availability (CIA), the CVSS score is 0.
+- When a security defect does not trigger or affect the confidentiality/integrity/availability (CIA), the CVSS score is 0.
 
 #### 3.2.3 Assessment Procedure
 
 Perform this procedure to assess a vulnerability:
 
-+ Set a possible attack scenario and score based on this attack scenario.
+- Set a possible attack scenario and score based on this attack scenario.
 
-+ Identify vulnerable components and affected components.
+- Identify vulnerable components and affected components.
 
-+ Select the value of the basic assessment indicator, and perform the vulnerability impact assessment based on the exploitable indicators (attack vector, attack complexity, permission required, user interaction, and scope) and affected indicators (confidentiality, integrity, and availability).
+- Select the value of the basic assessment indicator, and perform the vulnerability impact assessment based on the exploitable indicators (attack vector, attack complexity, permission required, user interaction, and scope) and affected indicators (confidentiality, integrity, and availability).
 
 #### 3.2.4 Severity Rating
 

@@ -11,7 +11,7 @@ export default [
     type: '互联网',
     name: '北京超图软件股份有限公司',
     desc: 'Yukon（禹贡）空间数据库，基于openGauss扩展空间数据的存储、计算和管理能力，提供专业的GIS（Geographic Information System）功能，赋能传统关系型数据库。',
-    path: 'http://cn.supermap.com/',
+    path: 'https://www.supermap.com/cn/',
   },
   {
     id: 'Internet',

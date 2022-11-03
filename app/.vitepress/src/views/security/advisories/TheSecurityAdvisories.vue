@@ -179,7 +179,7 @@ watch(queryData, () => getSecurityLists(queryData));
             :key="item"
             :class="activeIndex === index ? 'selected' : ''"
             class="filter-item"
-            @click="tagClick(index, item.leval)"
+            @click="tagClick(index, item.LEVAL)"
           >
             {{ item.NAME }}
           </div>

@@ -79,19 +79,19 @@ export default {
     },
   },
   HOME_EXPLORE: {
-    EXPLORE_TITLE: 'openGauss 新手 ？点击探索成长路径',
+    EXPLORE_TITLE: 'openGauss新手？快来开启你的openGauss探索之旅吧！',
     LIST: [
       {
-        NAME: '什么是 openGauss ',
-        PATH: 'https://opengauss.org/zh/docs/3.0.0/docs/BriefTutorial/%E4%BB%80%E4%B9%88%E6%98%AFopenGauss.html',
+        NAME: 'openGauss是什么 ',
+        PATH: '/docs/3.0.0/docs/BriefTutorial/%E4%BB%80%E4%B9%88%E6%98%AFopenGauss.html',
       },
       {
         NAME: '如何安装部署openGauss ',
-        PATH: 'https://opengauss.org/zh/docs/3.0.0/docs/BriefTutorial/%E5%AE%89%E8%A3%85%E4%B8%8E%E7%99%BB%E5%BD%95.html',
+        PATH: '/docs/3.0.0/docs/BriefTutorial/%E5%AE%89%E8%A3%85%E4%B8%8E%E7%99%BB%E5%BD%95.html',
       },
       {
-        NAME: '如何贡献代码',
-        PATH: 'https://datastat.opengauss.org/zh/overview',
+        NAME: '如何参与openGauss社区贡献',
+        PATH: '/zh/contribution/',
       },
     ],
   },

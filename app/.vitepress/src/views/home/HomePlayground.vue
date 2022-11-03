@@ -8,6 +8,21 @@ import TryTitleMo from '@/assets/category/home/title-mo.png';
 const playground = ref(null);
 const textBlock = ref(false);
 
+const tryme = [
+  'select * from openGauss;',
+  'category',
+  '|',
+  'create_at',
+  '---------------------------------------------------',
+  '+',
+  '---------------',
+  'open source relational database',
+  '|',
+  '2020.06.30',
+  '(1 row)',
+  '➜ #',
+];
+
 onMounted(() => {
   const observer = new IntersectionObserver((res) => {
     if (res[0].intersectionRatio <= 0) return;
@@ -27,33 +42,33 @@ onMounted(() => {
     <div class="playground-content">
       <div v-if="textBlock" class="left-code">
         <div class="first">
-          ➜ # <span class="first-span typing">select * from openGauss;</span>
+          {{ tryme[11] }} <span class="first-span typing">{{ tryme[0] }}</span>
         </div>
         <div>
           <div class="block1 fast-hide">
-            <span class="min-l-w">category</span><span class="min-line">|</span
-            ><span class="min-r-w">create_at</span>
+            <span class="min-l-w">{{ tryme[1] }}</span
+            ><span class="min-line">{{ tryme[2] }}</span
+            ><span class="min-r-w">{{ tryme[3] }}</span>
           </div>
           <div class="block2 fast-hide">
-            <span class="min-l-w"
-              >---------------------------------------------------</span
-            ><span class="min-line">+</span
-            ><span class="min-r-w">---------------</span>
+            <span class="min-l-w">{{ tryme[4] }}</span
+            ><span class="min-line">{{ tryme[5] }}</span
+            ><span class="min-r-w">{{ tryme[6] }}</span>
           </div>
           <div class="block3 fast-hide">
-            <span class="min-l-w">open source relational database</span
-            ><span class="min-line">|</span
-            ><span class="min-r-w">2020.06.30</span>
+            <span class="min-l-w">{{ tryme[7] }}</span
+            ><span class="min-line">{{ tryme[8] }}</span
+            ><span class="min-r-w">{{ tryme[9] }}</span>
           </div>
-          <div class="block4 fast-hide">(1 row)</div>
-          <div class="block5 fast-hide typing last">➜ #</div>
+          <div class="block4 fast-hide">{{ tryme[10] }}</div>
+          <div class="block5 fast-hide typing last">{{ tryme[11] }}</div>
         </div>
       </div>
       <div class="right-text">
         <img :src="TryTitle" class="first-code" />
         <a
           class="lets-play"
-          href="https://moocstudio.openeuler.sh/"
+          href="https://tryme.opengauss.org/"
           target="_blank"
         >
           <img :src="letsPlay" alt="" />
@@ -74,6 +89,7 @@ onMounted(() => {
   }
   @media screen and (max-width: 760px) {
     display: block;
+    margin-bottom: var(--o-spacing-h5);
   }
 }
 .playground {
@@ -85,7 +101,7 @@ onMounted(() => {
   background: url('@/assets/category/home/bg-code-pc.png') no-repeat
     center/cover;
   height: 378px;
-  border-radius: 0 0 10px 10px;
+
   &-content {
     width: 845px;
     margin: 0 auto;
@@ -217,7 +233,8 @@ onMounted(() => {
     padding: 0;
     width: calc(100vw - 32px);
     height: 323px;
-    background-image: url('../../assets/category/home/bg-code-mo.png');
+    background-image: url('@/assets/category/home/bg-code-mo.png');
+    border-radius: 0 0 10px 10px;
     .left-code {
       margin-top: 25px;
       padding: 18px 10px 15px;

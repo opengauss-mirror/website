@@ -330,6 +330,7 @@ import douyao from '@/assets/category/member/avatar/douyao.png';
 import ganli from '@/assets/category/member/avatar/ganli.png';
 import chenshaoyun from '@/assets/category/member/avatar/chenshaoyun.png';
 import chenze from '@/assets/category/member/avatar/chenze.png';
+import tianran from '@/assets/category/member/avatar/tianran.png';
 
 export default {
   zh: {
@@ -2863,6 +2864,13 @@ export default {
         title: 'Ambassador',
         company: '兰州理工大学',
         email: '594286500@qq.com',
+      },
+      {
+        img: tianran,
+        name: '田冉',
+        title: 'Ambassador',
+        company: '西北师范大学',
+        email: 'tianran@nwnu.edu.cn',
       },
       {
         img: guoxiao,
@@ -5802,8 +5810,15 @@ export default {
         img: zhaohong,
         name: 'Hong Zhao',
         title: 'Ambassador',
-        company: 'Lanzhou University of technology',
+        company: 'Northwest Normal University',
         email: '594286500@qq.com',
+      },
+      {
+        img: tianran,
+        name: 'Ran Tian',
+        title: 'Ambassador',
+        company: 'Lanzhou University of technology',
+        email: 'tianran@nwnu.edu.cn',
       },
       {
         img: guoxiao,

@@ -9,8 +9,8 @@ export const useCommon = defineStore('common', {
 // ['Infra']
 export const useMeeting = defineStore('meeting', {
   state: () => ({
-    userSigs: ['Infra'],
-    giteeId: 'ailoooong',
-    userId: 1,
+    userSigs: [],
+    giteeId: '',
+    userId: null,
   }),
 });

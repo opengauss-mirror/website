@@ -25,7 +25,8 @@ interface NavItem {
 const router = useRouter();
 const { lang, theme } = useData();
 const activeItem = ref(router.route.path);
-
+const navActive = ref('');
+const isShow = ref(true);
 watch(
   () => router.route.path,
   (val: string) => {
@@ -35,14 +36,13 @@ watch(
 // 点击子导航事件
 const goPath = (item: NavItem) => {
   if (item.IS_OPEN_WINDOW) {
-    window.open(theme.value.docsUrl + item.PATH);
+    window.open(theme.value.docsUrl + '/' + lang.value + '/' + item.PATH);
     return;
   }
   if (item.IS_OPEN_MINISITE_WINDOW) {
     window.open(item.PATH);
     return;
   }
-
   if (item.PATH) {
     router.go('/' + lang.value + item.PATH);
     navActive.value = '';
@@ -51,8 +51,6 @@ const goPath = (item: NavItem) => {
 };
 
 // nav 鼠标滑过事件
-const isShow = ref(true);
-const navActive = ref('');
 const toggleSubDebounced = debounce(
   (item: NavItem | null) => {
     if (item === null) {
@@ -67,18 +65,10 @@ const toggleSubDebounced = debounce(
     trailing: true,
   }
 );
-// nav 点击事件
-const navItemClick = (item: NavItem) => {
-  navActive.value = item.ID;
-  isShow.value = true;
-};
+
 // nav 默认选中
 const menuActiveFn = (item: any) => {
-  return item.CLASS.some((el: string) =>
-    item.ID === 'download'
-      ? activeItem.value.includes(`/${lang.value}/${el}`)
-      : activeItem.value.includes(el)
-  );
+  return item.CLASS.some((el: string) => activeItem.value.includes(el));
 };
 </script>
 
@@ -95,13 +85,13 @@ const menuActiveFn = (item: any) => {
         @mouseenter="toggleSubDebounced(item)"
         @mouseleave="toggleSubDebounced(null)"
       >
-        <span class="text" @click="navItemClick(item)">{{ item.NAME }} </span>
+        <span class="text">{{ item.NAME }} </span>
 
         <div v-if="isShow" class="sub-menu">
           <ul class="sub-menu-content">
             <li
-              v-for="(subItem, subItemIndex) in item.CHILDREN"
-              :key="subItemIndex"
+              v-for="subItem in item.CHILDREN"
+              :key="subItem.ID"
               class="sub-menu-item"
               @click="goPath(subItem)"
             >

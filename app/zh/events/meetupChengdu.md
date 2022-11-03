@@ -1,6 +1,7 @@
 ---
 title: '【成都】openGauss Meetup'
 time: '2020/11/14'
+date: '2020-11-14'
 tags: 'Meetup'
 category: 'events'
 label: 'Meetup'

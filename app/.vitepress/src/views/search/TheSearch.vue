@@ -18,6 +18,8 @@ const isMobile = computed(() => (screenWidth.value <= 768 ? true : false));
 const { lang, site } = useData();
 const router = useRouter();
 const i18n = useI18n();
+// 接收搜索到的类型用于埋点传输数据
+let typeList: any = [];
 // 当前选择类型
 const currentIndex = ref(0);
 // 当前显示的页码
@@ -89,7 +91,13 @@ function searchCountAll() {
     getSearchCount(searchCount.value).then((res) => {
       if (res.status === 200 && res.obj.total[0]) {
         searchNumber.value = res.obj.total;
+        // 埋点数据
+        typeList = [];
+        Object.keys(searchNumber.value).forEach((item) => {
+          typeList.push(searchNumber.value[item].key);
+        });
       } else {
+        typeList = [];
         searchNumber.value = [];
       }
     });
@@ -108,6 +116,28 @@ function searchDataAll() {
         searchResultList.value = [];
         pageShow.value = false;
       }
+      // 搜索埋点数据添加
+      (function () {
+        const search_event_id = `${
+          searchData.value.keyword
+        }${new Date().getTime()}${window['sensorsCustomBuriedData']?.ip || ''}`;
+        const obj = {
+          search_key: searchData.value.keyword,
+          search_event_id,
+        };
+        window['addSearchBuriedData'] = obj;
+        const sensors = window['sensorsDataAnalytic201505'];
+        const searchKeyObj = {
+          search_tag: typeList,
+          search_result_total_num: total.value,
+        };
+        sensors?.setProfile({
+          profileType: 'searchValue',
+          ...(window['sensorsCustomBuriedData'] || {}),
+          ...(window['addSearchBuriedData'] || {}),
+          ...searchKeyObj,
+        });
+      })();
     });
   } catch (error: any) {
     throw Error(error);
@@ -128,6 +158,7 @@ function searchAll() {
 function goLink(data: any, index: number) {
   const { type, path } = data;
   const search_result_url = '/' + lang.value + '/' + path;
+  // 埋点数据
   const searchKeyObj = {
     search_tag: type,
     search_rank_num: pageSize.value * (currentPage.value - 1) + (index + 1),
@@ -146,10 +177,10 @@ function goLink(data: any, index: number) {
     const url =
       site.value.themeConfig.docsUrl + '/' + lang.value + '/' + path + '.html';
     sensorObj.search_result_url = url;
-    // sensors.setProfile(sensorObj);
+    sensors.setProfile(sensorObj);
     window.open(url, '_blank');
   } else {
-    // sensors.setProfile(sensorObj);
+    sensors.setProfile(sensorObj);
     router.go(search_result_url);
   }
 }

@@ -13,6 +13,12 @@ import Banner from '@/assets/banner/banner-secondary.png';
 import illustration from '@/assets/illustrations/training.png';
 import partnerLight from '@/assets/category/authentication/training/img/partner.png';
 import partnerDark from '@/assets/category/authentication/training/img/partner-dark.png';
+import gaussLogo from '@/assets/category/authentication/training/img/gauss-mo.png';
+import gaussLogoDark from '@/assets/category/authentication/training/img/gauss-mo-dark.png';
+import enmotechLogo from '@/assets/category/authentication/training/img/enmotech-mo.png';
+import enmotechLogoDark from '@/assets/category/authentication/training/img/enmotech-mo-dark.png';
+import csiaLogo from '@/assets/category/authentication/training/img/csia-mo.png';
+import csiaLogoDark from '@/assets/category/authentication/training/img/csia-mo-dark.png';
 
 import flashSale from '@/assets/category/authentication/training/img/flash-sale.png';
 
@@ -28,6 +34,11 @@ const router = useRouter();
 const commonStore = useCommon();
 const partner = computed(() =>
   commonStore.theme === 'light' ? partnerLight : partnerDark
+);
+const partnerMo = computed(() =>
+  commonStore.theme === 'light'
+    ? [gaussLogo, enmotechLogo, csiaLogo]
+    : [gaussLogoDark, enmotechLogoDark, csiaLogoDark]
 );
 // 右侧导航
 const isShowNav = ref(false);
@@ -354,7 +365,12 @@ onUnmounted(() => {
           {{ i18n.authentication.intro1 }}<br />{{ i18n.authentication.intro2 }}
         </p>
         <div class="intro-img">
-          <img :src="partner" alt="" />
+          <img
+            v-for="(item, index) in partnerMo"
+            :key="index"
+            :src="item"
+            alt=""
+          />
         </div>
       </div>
       <div id="advantage" data-aos="fade-up" class="train-advantage">
@@ -589,7 +605,8 @@ onUnmounted(() => {
 
 .app-content {
   :deep(.el-collapse-item__header) {
-    padding: 0 var(--o-spacing-h5);
+    height: auto;
+    padding: var(--o-spacing-h5);
     font-size: var(--o-font-size-text);
   }
   :deep(.el-collapse-item__wrap) {
@@ -702,6 +719,7 @@ onUnmounted(() => {
     }
     .intro-img {
       width: 100%;
+      height: 110px;
       margin-top: 36px;
       img {
         width: 100%;
@@ -830,6 +848,7 @@ onUnmounted(() => {
               font-size: var(--o-font-size-text);
               line-height: var(--o-line-height-text);
               color: var(--o-color-text1);
+              text-align: justify;
             }
             .course-title {
               margin-top: var(--o-spacing-h6);
@@ -1096,6 +1115,10 @@ onUnmounted(() => {
           bottom: 8px;
           text-align: center;
           color: var(--o-color-text1);
+          font-size: var(--o-font-size-text);
+          @media screen and (max-width: 1100px) {
+            font-size: var(--o-font-size-tip);
+          }
         }
       }
       .step1 {
@@ -1185,15 +1208,20 @@ onUnmounted(() => {
           font-size: var(--o-font-size-text);
           line-height: var(--o-line-height-text);
           color: var(--o-color-text3);
+          text-align: justify;
         }
       }
     }
   }
   .train-contact {
-    margin-top: var(--o-spacing-h2);
+    margin-top: var(--o-spacing-h4);
     p {
-      font-size: var(--o-font-size-tip);
-      line-height: var(--o-font-size-tip);
+      font-size: var(--o-font-size-text);
+      line-height: var(--o-font-size-text);
+      @media screen and (max-width: 1100px) {
+        font-size: var(--o-font-size-tip);
+        line-height: var(--o-font-size-tip);
+      }
       span {
         color: var(--o-color-text3);
       }
@@ -1228,8 +1256,12 @@ onUnmounted(() => {
     .intro-img {
       width: 100%;
       margin-top: var(--o-spacing-h5);
+      display: grid;
+      justify-content: space-between;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
       img {
-        width: 100%;
+        max-width: 100%;
       }
     }
   }
@@ -1545,6 +1577,10 @@ onUnmounted(() => {
           bottom: 0px;
           text-align: center;
           color: var(--o-color-text1);
+          font-size: var(--o-font-size-text);
+          @media screen and (max-width: 1100px) {
+            font-size: var(--o-font-size-tip);
+          }
         }
       }
       .step1 {
@@ -1591,6 +1627,7 @@ onUnmounted(() => {
           font-size: var(--o-font-size-tip);
           line-height: var(--o-line-height-tip);
           color: var(--o-color-text1);
+          text-align: justify;
         }
         :deep(.el-collapse) {
           border-top: none;
@@ -1612,6 +1649,9 @@ onUnmounted(() => {
       font-size: var(--o-font-size-text);
       line-height: var(--o-line-height-text);
       color: var(--o-color-text1);
+      @media screen and (max-width: 1100px) {
+        font-size: var(--o-font-size-tip);
+      }
     }
   }
 
