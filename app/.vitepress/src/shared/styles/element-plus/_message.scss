@@ -44,3 +44,7 @@
     display: none;
   }
 }
+:is(.el-loading-parent--relative) {
+  pointer-events: auto;
+  user-select: auto;
+}

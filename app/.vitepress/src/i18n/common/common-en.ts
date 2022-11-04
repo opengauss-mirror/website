@@ -223,4 +223,11 @@ export default {
   ALL: 'All',
   TYPE: 'Type',
   VIEW_MORE: 'View More',
+  COOKIE: {
+    TEXT: [
+      'This site uses cookies. By continuing to browse the site you are agreeing to our use of cookies.',
+      'Read our privacy policy>',
+    ],
+    PATH: '/en/privacyPolicy/',
+  },
 };

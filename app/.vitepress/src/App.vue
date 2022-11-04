@@ -4,7 +4,7 @@ import AppFooter from '@/components/AppFooter.vue';
 
 import { useData, useRoute } from 'vitepress';
 import type { Component } from 'vue';
-import { computed, watch, ref } from 'vue';
+import { computed, watch, ref, onMounted } from 'vue';
 import { useCommon } from '@/stores/common';
 
 import LayoutSecurity from '@/layouts/LayoutSecurity.vue';
@@ -56,6 +56,17 @@ watch(
   },
   { immediate: true }
 );
+
+// cookies使用提示
+const isCookieTip = ref(true);
+function clickCookieClose() {
+  isCookieTip.value = false;
+  localStorage.setItem('gauss-cookie', 'false');
+}
+onMounted(() => {
+  const show = localStorage.getItem('gauss-cookie');
+  isCookieTip.value = show ? false : true;
+});
 </script>
 
 <template>
@@ -70,7 +81,7 @@ watch(
       </a>
     </div>
   </main>
-  <AppFooter />
+  <AppFooter :is-cookie-tip="isCookieTip" @click-close="clickCookieClose" />
 </template>
 
 <style lang="scss" scoped>

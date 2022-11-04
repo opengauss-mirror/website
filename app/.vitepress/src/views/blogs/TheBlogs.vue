@@ -367,15 +367,17 @@ onMounted(() => {
 });
 // 页数改变
 const currentChange = (val: number) => {
-  const params = {
+  const params: ParamsType = {
     category: 'blog',
     lang: lang.value,
     page: val,
     pageSize: paginationData.value.pagesize,
   };
+  selectAuthorVal.value ? (params['author'] = selectAuthorVal.value) : '';
+  selectTagsVal.value ? (params['tags'] = selectTagsVal.value) : '';
+  selectTimeVal.value ? (params['archives'] = selectTimeVal.value) : '';
   getListData(params);
 };
-
 const postBlog = () => {
   router.go(`/${lang.value}/blogs/guidance/`);
 };
