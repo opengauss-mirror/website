@@ -5,7 +5,7 @@ import type { AxiosResponse } from '@/shared/axios';
  * @name getCertification
  */
 export function getCertification(params: any, lang: string) {
-  const url = `/api-gauss/api-certification/certification/list/verifyCode?email=${params}`;
+  const url = `/api-certification/certification/list/verifyCode?email=${params}`;
   return request
     .get(url, {
       headers: {
@@ -22,7 +22,7 @@ export function getCertification(params: any, lang: string) {
  * @name getSendCode
  */
 export function getSendCode(identification: string, code: string) {
-  const url = `/api-gauss/api-certification/certification/list?identification=${identification}&code=${code}`;
+  const url = `/api-certification/certification/list?identification=${identification}&code=${code}`;
   return request
     .get(url)
     .then((res: AxiosResponse) => res.data)
@@ -36,7 +36,7 @@ export function getSendCode(identification: string, code: string) {
  * @name getSendCode
  */
 export function downloadCard(pa: string, lang: string) {
-  const url = `/api-gauss/api-certification/certification?PA=${pa}`;
+  const url = `/api-certification/certification?PA=${pa}`;
   return request
     .get(url, {
       headers: {

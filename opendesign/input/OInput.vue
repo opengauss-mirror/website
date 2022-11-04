@@ -43,6 +43,7 @@ const attrs = useAttrs();
     .el-textarea__inner {
       box-shadow: 0 0 0 1px var(--o-input-border-color) inset;
       border-radius: 0;
+      background-color: var(--o-input-color-bg);
       color: var(--o-input-font-color);
     }
   }

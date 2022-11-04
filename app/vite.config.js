@@ -46,10 +46,15 @@ export default defineConfig({
   server: {
     port: 8989,
     proxy: {
-      '/api-gauss/': {
-        target: 'https://www.opengauss.org',
+      '/advisoryCVE/': {
+        target: 'https://api.openeuler.org/cve-manager/',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api-gauss/, ''),
+        rewrite: (path) => path.replace(/^\/advisoryCVE/, ''),
+      },
+      '/api-certification/': {
+        target: 'https://ccs.opengauss.org/ccs/base/',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api-certification/, ''),
       },
       '/calendar/': {
         target: 'https://www.opengauss.org/',

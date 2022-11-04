@@ -15,6 +15,7 @@ import { LoadingInstance } from 'element-plus/lib/components/loading/src/loading
 
 interface RequestConfig<D = any> extends AxiosRequestConfig {
   data?: D;
+  $doException?: boolean; // 是否弹出错误提示框
   global?: boolean; // 是否为全局请求， 全局请求在清除请求池时，不清除
 }
 
@@ -135,12 +136,13 @@ const responseInterceptorId = request.interceptors.response.use(
     if (loadingInstance) {
       loadingInstance.close();
     }
-    ElMessage({
-      type: 'error',
-      message: err.toString(),
-    });
     const { config } = err;
-
+    if (!(config as RequestConfig).$doException) {
+      ElMessage({
+        type: 'error',
+        message: err.toString(),
+      });
+    }
     // 非取消请求发生异常，同样将请求移除请求池
     if (!axios.isCancel(err) && config.url) {
       pendingPool.delete(config.url);
