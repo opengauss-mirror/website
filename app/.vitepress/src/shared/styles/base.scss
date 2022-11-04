@@ -97,3 +97,13 @@ h5,
 h6 {
   font-weight: 400;
 }
+
+// 顶部偏移
+html {
+  scroll-padding-top: 80px;
+}
+
+::target-text {
+  background-color: var(--o-color-brand1);
+  color: #fff;
+}

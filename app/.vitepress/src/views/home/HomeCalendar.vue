@@ -1018,6 +1018,12 @@ const changeRecord = () => {
   </ODialog>
 </template>
 <style lang="scss" scoped>
+:deep(.el-radio-button__inner) {
+  border-radius: 0 !important;
+  background: var(--o-color-bg1);
+  border: 1px solid var(--o-color-border1);
+}
+
 .meeting-form {
   .time-select {
     display: flex;
