@@ -258,4 +258,11 @@ export default {
   ALL: '全部',
   TYPE: '类型',
   VIEW_MORE: '查看更多',
+  COOKIE: {
+    TEXT: [
+      '本站点使用Cookies，继续浏览表示您同意我们使用Cookies。',
+      'Cookies和隐私政策>',
+    ],
+    PATH: '/zh/privacyPolicy/',
+  },
 };

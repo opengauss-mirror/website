@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { toRefs } from 'vue';
 import { useRouter, useData } from 'vitepress';
 import { useI18n } from '@/i18n';
 import AppContent from '@/components/AppContent.vue';
@@ -17,6 +18,14 @@ import LogoCsdn from '@/assets/footer/csdn.png';
 import Logo51cto from '@/assets/footer/cto.png';
 
 import CodeGzh from '@/assets/footer/wechat.png';
+import IconCancel from '~icons/app/icon-cancel.svg';
+
+const props = defineProps({
+  isCookieTip: {
+    type: Boolean,
+    default: false,
+  },
+});
 
 const { lang } = useData();
 const i18n = useI18n();
@@ -77,11 +86,24 @@ const footBg = {
   pc: `url(${FooterBg})`,
   mo: `url(${FooterBgMo})`,
 };
+
+// 点击关闭cookies使用提示
+const { isCookieTip } = toRefs(props);
+const emit2 = defineEmits(['click-close']);
+function clickClose() {
+  emit2('click-close');
+}
 </script>
 
 <template>
   <div class="footer">
     <div class="footer-content">
+      <!-- 隐私政策 -->
+      <div v-if="isCookieTip" class="cookie-privacy">
+        <span>{{ i18n.common.COOKIE.TEXT[0] }} </span>
+        <a :href="i18n.common.COOKIE.PATH">{{ i18n.common.COOKIE.TEXT[1] }}</a>
+        <OIcon class="icon" @click="clickClose"><IconCancel /></OIcon>
+      </div>
       <AppContent :pc-top="0" :mobile-top="0">
         <div class="inner">
           <div class="footer-logo">
@@ -298,6 +320,61 @@ $color: #fff;
     font-size: var(--o-font-size-text);
     @media (max-width: 1100px) {
       font-size: var(--o-font-size-tip);
+    }
+  }
+
+  .cookie-privacy {
+    line-height: 48px;
+    width: 100%;
+    height: 48px;
+    background-color: var(--o-color-bg1);
+    color: var(--o-color-text3);
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    box-shadow: var(--o-shadow-l1);
+    text-align: center;
+    &.ru {
+      line-height: 16px;
+      display: inline-block;
+      padding: 4px 0;
+    }
+    @media screen and (max-width: 1000px) {
+      font-size: 12px;
+      line-height: 20px;
+      display: inline-block;
+    }
+    a {
+      cursor: pointer;
+      text-decoration: solid;
+      white-space: pre;
+    }
+    .icon {
+      cursor: pointer;
+      vertical-align: middle;
+      margin-left: 16px;
+      width: 24px;
+      height: 24px;
+      background: var(--o-color-greyblack3);
+      border-radius: 50%;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      svg {
+        font-size: 20px;
+        color: var(--el-color-white);
+      }
+      @media screen and (max-width: 1000px) {
+        width: 20px;
+        height: 20px;
+        margin-left: 12px;
+      }
     }
   }
 }
