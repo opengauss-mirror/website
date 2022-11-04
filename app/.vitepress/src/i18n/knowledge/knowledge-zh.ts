@@ -91,15 +91,15 @@ export default {
           list: [
             {
               name: '将PostgreSQL插件移植到openGauss',
-              link: '/zh/blogs/chenxiaobin/%E5%B0%86postgresql%E6%8F%92%E4%BB%B6%E7%A7%BB%E6%A4%8D%E5%88%B0openGauss%E6%8C%87%E5%AF%BC.html',
+              link: '/zh/blogs/chenxiaobin/%E5%B0%86PostgreSQL%E6%8F%92%E4%BB%B6%E7%A7%BB%E6%A4%8D%E5%88%B0openGauss%E6%8C%87%E5%AF%BC.html',
             },
             {
               name: '使用pg_chameleon迁移MySQL数据库至openGauss',
-              link: '/zh/blogs/totaj/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8pg_chameleon%E8%BF%81%E7%A7%BBmysql%E6%95%B0%E6%8D%AE%E5%BA%93%E8%87%B3openGauss.html',
+              link: '/zh/blogs/totaj/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8pg_chameleon%E8%BF%81%E7%A7%BBMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E8%87%B3openGauss.html',
             },
             {
               name: '如何使用pgloader迁移MySQL数据库至openGauss',
-              link: '/zh/blogs/totaj/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8pgloader%E8%BF%81%E7%A7%BBmysql%E6%95%B0%E6%8D%AE%E5%BA%93%E8%87%B3openGauss.html',
+              link: '/zh/blogs/totaj/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8pgloader%E8%BF%81%E7%A7%BBMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E8%87%B3openGauss.html',
             },
           ],
         },
@@ -143,11 +143,11 @@ export default {
             },
             {
               name: 'B-tree索引读写并发原理',
-              link: '/zh/blogs/July/openGauss-b-tree%E7%B4%A2%E5%BC%95%E8%AF%BB%E5%86%99%E5%B9%B6%E5%8F%91%E5%8E%9F%E7%90%86.html',
+              link: '/zh/blogs/July/openGauss-B-tree%E7%B4%A2%E5%BC%95%E8%AF%BB%E5%86%99%E5%B9%B6%E5%8F%91%E5%8E%9F%E7%90%86.html',
             },
             {
               name: 'opengauss索引详解 ',
-              link: '/zh/blogs/zhengwen2/openGauss%E7%B4%A2%E5%BC%95%E8%AF%A6%E8%A7%A3.html',
+              link: '/zh/blogs/zhengwen2/OpenGauss%E7%B4%A2%E5%BC%95%E8%AF%A6%E8%A7%A3.html',
             },
             {
               name: 'openGauss内存管理初探',
@@ -155,7 +155,7 @@ export default {
             },
             {
               name: 'opengauss的mvcc以及vacuum机制源码解析csn-log',
-              link: '/zh/blogs/minshengyunwei/openGauss%E7%9A%84mvcc%E4%BB%A5%E5%8F%8Avacuum%E6%9C%BA%E5%88%B6%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90—CSN LOG.html',
+              link: '/zh/blogs/minshengyunwei/openGauss%E7%9A%84MVCC%E4%BB%A5%E5%8F%8Avacuum%E6%9C%BA%E5%88%B6%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90—CSN LOG.html',
             },
             {
               name: '插件化地为openGauss添加算子',

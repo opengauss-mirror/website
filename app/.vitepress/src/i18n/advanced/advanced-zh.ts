@@ -157,7 +157,7 @@ export default {
             },
             {
               name: '安装单机版数据库并使用Data Studio工具连接',
-              link: '/zh/blogs/mingruifu/openGauss%E5%AE%89%E8%A3%85%E5%B9%B6%E4%BD%BF%E7%94%A8datastudio%E5%B7%A5%E5%85%B7%E8%BF%9E%E6%8E%A5%E4%BD%BF%E7%94%A8.html',
+              link: '/zh/blogs/mingruifu/openGauss%E5%AE%89%E8%A3%85%E5%B9%B6%E4%BD%BF%E7%94%A8DataStudio%E5%B7%A5%E5%85%B7%E8%BF%9E%E6%8E%A5%E4%BD%BF%E7%94%A8.html',
             },
           ],
           videoList: [
@@ -235,11 +235,11 @@ export default {
             },
             {
               name: 'openGauss的sql引擎流程以及解析源码解读',
-              link: '/zh/blogs/jackey-wu/%E5%BC%80%E6%BA%90%E6%95%B0%E6%8D%AE%E5%BA%93openGauss%E7%9A%84sql%E8%A7%A3%E6%9E%90%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90.html',
+              link: '/zh/blogs/jackey-wu/%E5%BC%80%E6%BA%90%E6%95%B0%E6%8D%AE%E5%BA%93OpenGauss%E7%9A%84SQL%E8%A7%A3%E6%9E%90%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90.html',
             },
             {
               name: 'openGauss-sql执行器介绍',
-              link: '/zh/blogs/July/openGauss-sql%E6%89%A7%E8%A1%8C%E5%99%A8.html',
+              link: '/zh/blogs/July/openGauss-SQL%E6%89%A7%E8%A1%8C%E5%99%A8.html',
             },
           ],
           videoList: [
@@ -259,11 +259,11 @@ export default {
           docsList: [
             {
               name: 'openGauss数据库行存储源代码解析',
-              link: '/zh/blogs/vector524/%E5%8D%8E%E4%B8%BAopenGauss%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%8C%E5%AD%98%E5%82%A8%E6%BA%90%E4%BB%A3%E7%A0%81%E8%A7%A3%E6%9E%90.html',
+              link: '/zh/blogs/vector524/%E5%8D%8E%E4%B8%BAOpenGauss%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%8C%E5%AD%98%E5%82%A8%E6%BA%90%E4%BB%A3%E7%A0%81%E8%A7%A3%E6%9E%90.html',
             },
             {
               name: 'opengauss事务机制-mvcc技术的实现分析',
-              link: '/zh/blogs/luooofan/openGauss%E4%BA%8B%E5%8A%A1%E6%9C%BA%E5%88%B6-mvcc%E6%8A%80%E6%9C%AF%E7%9A%84%E5%AE%9E%E7%8E%B0.html',
+              link: '/zh/blogs/luooofan/openGauss%E4%BA%8B%E5%8A%A1%E6%9C%BA%E5%88%B6-MVCC%E6%8A%80%E6%9C%AF%E7%9A%84%E5%AE%9E%E7%8E%B0.html',
             },
             {
               name: 'openGauss备份恢复功能介绍',
