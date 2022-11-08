@@ -309,6 +309,14 @@ export default {
           LIST: data.en.CHENGDU,
         },
         {
+          NAME: 'GuangZhou User Group',
+          ID: 'GuangZhou',
+          GITEE_PATH:
+            'https://gitee.com/opengauss/openGauss-User-Group/tree/master/GuangZhou',
+          EMIAL: 'usergroup@opengauss.org',
+          LIST: data.en.GUANGZHOU,
+        },
+        {
           other: 'Want to start a new openGauss User Group?',
           other1: ' ',
           other2: 'Please send your application to: ',
