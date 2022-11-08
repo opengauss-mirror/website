@@ -309,6 +309,14 @@ export default {
           LIST: data.zh.CHENGDU,
         },
         {
+          NAME: '广州用户组',
+          ID: 'GuangZhou',
+          GITEE_PATH:
+            'https://gitee.com/opengauss/openGauss-User-Group/tree/master/GuangZhou',
+          EMIAL: 'usergroup@opengauss.org',
+          LIST: data.zh.GUANGZHOU,
+        },
+        {
           other: '你的城市还没有用户组?',
           other1: '新的用户组等你来发起！ ',
           other2: '欢迎发送申请邮件至：',

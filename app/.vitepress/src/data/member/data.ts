@@ -332,6 +332,21 @@ import chenshaoyun from '@/assets/category/member/avatar/chenshaoyun.png';
 import chenze from '@/assets/category/member/avatar/chenze.png';
 import tianran from '@/assets/category/member/avatar/tianran.png';
 
+import shiyangyang from '@/assets/category/member/avatar/shiyangyang.png';
+import baiyue from '@/assets/category/member/avatar/baiyue.png';
+import chenjuncong from '@/assets/category/member/avatar/chenjuncong.png';
+import chenruirong from '@/assets/category/member/avatar/chenruirong.png';
+import huangzhigang from '@/assets/category/member/avatar/huangzhigang.png';
+import menglingbin from '@/assets/category/member/avatar/menglingbin.png';
+import sunkai from '@/assets/category/member/avatar/sunkai.png';
+import wangjie from '@/assets/category/member/avatar/wangjie.png';
+import wangmingyue2 from '@/assets/category/member/avatar/wangmingyue2.png';
+import xiaoshaocong from '@/assets/category/member/avatar/xiaoshaocong.png';
+import xiepingran from '@/assets/category/member/avatar/xiepingran.png';
+import yangweixiong from '@/assets/category/member/avatar/yangweixiong.png';
+import yangzihao from '@/assets/category/member/avatar/yangzihao.png';
+import yangziqi from '@/assets/category/member/avatar/yangziqi.png';
+
 export default {
   zh: {
     BOARD: [
@@ -3287,6 +3302,106 @@ export default {
         email: '2415252314@qq.com',
       },
     ],
+    GUANGZHOU: [
+      {
+        img: shiyangyang,
+        name: '石阳阳',
+        title: 'Organizer',
+        company: '广州鲲鹏生态创新中心',
+        email: 'shiyangyang@huawei.com',
+      },
+      {
+        img: yangweixiong,
+        name: '杨伟雄',
+        title: 'Ambassador',
+        company: '广州天维信息技术股份有限公司',
+        email: 'ywx209100@126.com',
+      },
+      {
+        img: menglingbin,
+        name: '孟令彬',
+        title: 'Ambassador',
+        company: '海量数据',
+        email: 'm_lingbin@126.com',
+      },
+      {
+        img: wangjie,
+        name: '王杰',
+        title: 'Ambassador',
+        company: '广东开放大学',
+        email: 'm_lingbin@126.com',
+      },
+      {
+        img: xiaoshaocong,
+        name: ' 萧少聪',
+        title: 'Member',
+        company: '巨杉数据库',
+        email: 'xiaoshaocong@sequoiadb.com',
+      },
+      {
+        img: xiepingran,
+        name: '谢平然',
+        title: 'Member',
+        company: '粤港澳大湾区(广东)国创中心',
+        email: 'xiepingran@ncti-gba.cn',
+      },
+      {
+        img: sunkai,
+        name: '孙凯',
+        title: 'Member',
+        company: '宝兰德',
+        email: 'kai.sun@bessystem.com',
+      },
+      {
+        img: baiyue,
+        name: '白玥',
+        title: 'Member',
+        company: '海量数据',
+        email: '576314917@qq.com',
+      },
+      {
+        img: chenruirong,
+        name: '陈瑞荣',
+        title: 'Member',
+        company: '粤港澳大湾区(广东)国创中心',
+        email: 'chenruirong@ncti-gba.cn',
+      },
+      {
+        img: huangzhigang,
+        name: '黄志刚',
+        title: 'Member',
+        company: '梅州客商银行',
+        email: 'kong343536@qq.com',
+      },
+      {
+        img: yangziqi,
+        name: '杨梓棋',
+        title: 'Member',
+        company: '云和恩墨',
+        email: 'yangziqi96@163.com',
+      },
+      {
+        img: chenjuncong,
+        name: '陈俊聪',
+        title: 'Member',
+        company: '中移信息技术有限公司',
+        email: 'cjc44020@126.com',
+      },
+      {
+        img: wangmingyue2,
+        name: '王铭玥',
+        title: 'Member',
+        company: '海量数据',
+        email: 'wangmy@vastdata.com.cn',
+      },
+      {
+        img: yangzihao,
+        name: '杨子浩',
+        title: 'Member',
+        company: '粤港澳大湾区(广东)国创中心',
+        email: 'yangzihao@ncti-gba.cn',
+      },
+    ],
   },
   en: {
     BOARD: [
@@ -6235,5 +6350,106 @@ export default {
         email: 'mailto:2415252314@qq.com',
       },
     ],
+    GUANGZHOU: [
+      {
+        img: shiyangyang,
+        name: 'Yangyang Shi',
+        title: 'Organizer',
+        company: 'Guangzhou Kunpeng Eco-Innovation Center',
+        email: 'shiyangyang@huawei.com',
+      },
+      {
+        img: yangweixiong,
+        name: 'Weixiong Yang',
+        title: 'Ambassador',
+        company: 'Guangzhou Tiancom Information Technology Co.,ltd.',
+        email: 'ywx209100@126.com',
+      },
+      {
+        img: menglingbin,
+        name: 'Lingbin Meng',
+        title: 'Ambassador',
+        company: 'VASTDATA',
+        email: 'm_lingbin@126.com',
+      },
+      {
+        img: wangjie,
+        name: 'Jie Wang',
+        title: 'Ambassador',
+        company: 'Guangdong Open University',
+        email: 'm_lingbin@126.com',
+      },
+      {
+        img: xiaoshaocong,
+        name: ' Shaocong Xiao',
+        title: 'Member',
+        company: 'xiaoshaocong@sequoiadb.com',
+        email: 'xiaoshaocong@sequoiadb.com',
+      },
+      {
+        img: xiepingran,
+        name: 'Pingran Xie',
+        title: 'Member',
+        company: 'NCTI-ISDC',
+        email: 'xiepingran@ncti-gba.cn',
+      },
+      {
+        img: sunkai,
+        name: 'Kai Sun',
+        title: 'Member',
+        company: 'Beijing Baolande Software Corporation',
+        email: 'kai.sun@bessystem.com',
+      },
+      {
+        img: baiyue,
+        name: 'Yue Bai',
+        title: 'Member',
+        company: 'VASTDATA',
+        email: '576314917@qq.com',
+      },
+      {
+        img: chenruirong,
+        name: 'Ruirong Chen',
+        title: 'Member',
+        company: 'NCTI-ISDC',
+        email: 'chenruirong@ncti-gba.cn',
+      },
+      {
+        img: huangzhigang,
+        name: 'Zhigang Huang',
+        title: 'Member',
+        company: 'Meizhou Hakka Bank Co., Ltd.',
+        email: 'kong343536@qq.com',
+      },
+      {
+        img: yangziqi,
+        name: 'Ziqi Yang',
+        title: 'Member',
+        company: 'ENMOTECH',
+        email: 'yangziqi96@163.com',
+      },
+      {
+        img: chenjuncong,
+        name: 'Juncong Chen',
+        title: 'Member',
+        company: 'China Mobile Information Technology Co., Ltd.',
+        email: 'cjc44020@126.com',
+      },
+      {
+        img: wangmingyue2,
+        name: 'Mingyue Wang',
+        title: 'Member',
+        company: 'VASTDATA',
+        email: 'wangmy@vastdata.com.cn',
+      },
+      {
+        img: yangzihao,
+        name: 'Zihao Yang',
+        title: 'Member',
+        company: 'NCTI-ISDC',
+        email: 'yangzihao@ncti-gba.cn',
+      },
+    ],
   },
-};
+  };
+  
