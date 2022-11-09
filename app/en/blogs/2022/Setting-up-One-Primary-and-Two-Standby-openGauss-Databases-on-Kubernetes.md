@@ -309,7 +309,7 @@ spec:
       runAsUser: 0
     volumeMounts:
     - mountPath: /var/lib/opengauss/data/
-      name: openguass-volume
+      name: openGauss-volume
     ports:
     - containerPort: 5432
       name: opengauss
@@ -333,7 +333,7 @@ spec:
     - name: db_config
       value:
   volumes:
-  - name: openguass-volume
+  - name: openGauss-volume
     hostPath:
       path: /data/opengauss-1/
       type: DirectoryOrCreate
@@ -356,7 +356,7 @@ spec:
       runAsUser: 0
     volumeMounts:
     - mountPath: /var/lib/opengauss/data/
-      name: openguass-volume
+      name: openGauss-volume
     ports:
     - containerPort: 5432
       name: opengauss
@@ -380,7 +380,7 @@ spec:
     - name: db_config
       value:
   volumes:
-  - name: openguass-volume
+  - name: openGauss-volume
     hostPath:
       path: /data/opengauss-2/
       type: DirectoryOrCreate
@@ -403,7 +403,7 @@ spec:
       runAsUser: 0
     volumeMounts:
     - mountPath: /var/lib/opengauss/data/
-      name: openguass-volume
+      name: openGauss-volume
     ports:
     - containerPort: 5432
       name: opengauss
@@ -427,7 +427,7 @@ spec:
     - name: db_config
       value:
   volumes:
-  - name: openguass-volume
+  - name: openGauss-volume
     hostPath:
       path: /data/opengauss-3/
       type: DirectoryOrCreate

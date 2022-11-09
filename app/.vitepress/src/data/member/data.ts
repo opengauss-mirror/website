@@ -1197,7 +1197,7 @@ export default {
         gitee: 'https://gitee.com/liuzheli',
       },
     ],
-    IOT: [
+    OM: [
       {
         img: caodongsheng,
         name: '曹东升',
@@ -1248,7 +1248,7 @@ export default {
         gitee: 'https://gitee.com/liu_hui0228',
       },
     ],
-    OM: [
+    IOT: [
       {
         img: zhangchengwei,
         name: '张程伟',

@@ -133,7 +133,7 @@ export default {
           desc: '为捕获数据更改（Change Data Capture, CDC）提供了一个低延迟的流式处理平台',
           address: 'https://github.com/debezium/debezium',
           guide:
-            'https://opengauss.org/zh/blogs/blogs.html?post/lihongda/debezium-adapt-opengauss/',
+            'https://opengauss.org/zh/blogs/lihongda/Debezium-Adapt-openGauss.html',
         },
       ],
     },
@@ -147,7 +147,7 @@ export default {
           desc: '灵活的分析和设计特性允许使用一种结构化的方法有效地创建数据库或数据仓库',
           address: 'https://www.sap.com/products/database-data-management.html',
           guide:
-            'https://opengauss.org/zh/blogs/blogs.html?post/wangrui/powerdesigner_for_opengauss/',
+            'https://opengauss.org/zh/blogs/wangrui/PowerDesigner_for_openGauss.html',
           site: true,
         },
       ],
@@ -162,14 +162,14 @@ export default {
           desc: '开源多数据库客户端工具',
           address: 'https://github.com/dbeaver/dbeaver',
           guide:
-            'https://opengauss.org/zh/blogs/blogs.html?post/justbk/2020-10-30_dbeaver_for_opengauss/',
+            'https://opengauss.org/zh/blogs/justbk/2020-10-30_dbeaver_for_openGauss.html',
         },
         {
           iden: 'clientTools',
           name: 'Data Studio',
           desc: 'openGauss官方客户端工具',
           address: 'https://opengauss.org/zh/',
-          guide: 'https://opengauss.org/zh/download.html',
+          guide: 'https://opengauss.org/zh/download/',
           site: true,
         },
       ],
@@ -184,7 +184,7 @@ export default {
           desc: '实时监控的IT组件和服务,监控数据库需要额外适配',
           address: 'https://github.com/zabbix/zabbix',
           guide:
-            'https://opengauss.org/zh/blogs/blogs.html?post/justbk/2021-03-03_zabbix_for_opengauss/',
+            'https://opengauss.org/zh/blogs/justbk/2021-03-03_zabbix_for_openGauss.html',
         },
         {
           iden: 'devOpsTools',
@@ -343,7 +343,7 @@ export default {
           desc: 'It provides a low latency streaming processing platform for change data capture (CDC)',
           address: 'https://github.com/debezium/debezium',
           guide:
-            'https://opengauss.org/zh/blogs/blogs.html?post/lihongda/debezium-adapt-opengauss/',
+            'https://opengauss.org/zh/blogs/lihongda/Debezium-Adapt-openGauss.html',
         },
       ],
     },
@@ -357,7 +357,7 @@ export default {
           desc: 'Flexible analysis and design features allow you to effectively create a database or data warehouse using a structured approach',
           address: 'https://www.sap.com/products/database-data-management.html',
           guide:
-            'https://opengauss.org/zh/blogs/blogs.html?post/wangrui/powerdesigner_for_opengauss/',
+            'https://opengauss.org/zh/blogs/wangrui/PowerDesigner_for_openGauss.html',
           site: true,
         },
       ],
@@ -372,14 +372,14 @@ export default {
           desc: 'Open source multi database client tool',
           address: 'https://github.com/dbeaver/dbeaver',
           guide:
-            'https://opengauss.org/zh/blogs/blogs.html?post/justbk/2020-10-30_dbeaver_for_opengauss/',
+            'https://opengauss.org/zh/blogs/justbk/2020-10-30_dbeaver_for_openGauss.html',
         },
         {
           iden: 'clientTools',
           name: 'Data Studio',
           desc: 'openGauss official client tool',
           address: 'https://opengauss.org/zh/',
-          guide: 'https://opengauss.org/zh/download.html',
+          guide: 'https://opengauss.org/zh/download/',
           site: true,
         },
       ],
@@ -394,7 +394,7 @@ export default {
           desc: 'It components and services for real-time monitoring, and the monitoring database needs additional adaptation',
           address: 'https://github.com/zabbix/zabbix',
           guide:
-            'https://opengauss.org/zh/blogs/blogs.html?post/justbk/2021-03-03_zabbix_for_opengauss/',
+            'https://opengauss.org/zh/blogs/justbk/2021-03-03_zabbix_for_openGauss.html',
         },
         {
           iden: 'devOpsTools',

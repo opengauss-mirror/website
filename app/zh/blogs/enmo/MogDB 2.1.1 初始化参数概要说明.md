@@ -32,7 +32,7 @@ MogDB 数据库安装完成后，官方文档提供了刷新参数的脚本，�
 
 - 建议将 shell 内容拷贝到 notepad++等文本阅读器中设置为 shell 语言阅读
 - 刷新的参数都会写到配置文件/mogdb/data/db1/postgresql.conf 中（按照官方文档标准安装是该路径）
-- gs_guc set -I all -N all -c 是 openGuass/MogDB 设置参数的方法，说明见：https://www.modb.pro/db/30065
+- gs_guc set -I all -N all -c 是 openGauss/MogDB 设置参数的方法，说明见：https://www.modb.pro/db/30065
 - 部分参数设置仅适合测试环境使用
 - 在 MogDB 中查询参数级别及简单描述
 

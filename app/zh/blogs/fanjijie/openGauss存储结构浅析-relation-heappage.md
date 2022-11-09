@@ -72,7 +72,7 @@ space management information generic to any page
 	pd_prune_xid - oldest XID among potentially prunable tuples on page.
 ```
 
-pg 的 PageHeaderData 为 20 字节,openguass 的 HeapPageHeaderData 在此基础上增加了两个 8 字节数据项，pd_xid_base，pd_multi_base。这也说明 opengauss 把事物 ID 从 4 字节扩到了 8 字节。
+pg 的 PageHeaderData 为 20 字节,openGauss 的 HeapPageHeaderData 在此基础上增加了两个 8 字节数据项，pd_xid_base，pd_multi_base。这也说明 opengauss 把事物 ID 从 4 字节扩到了 8 字节。
 
 空闲空间起始位置：
 

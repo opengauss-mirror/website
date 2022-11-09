@@ -21,7 +21,7 @@ times: '17:30'
 
 目前已经支持 x86-64 和 ARM64 两种架构。
 
-x86-64 架构的 openGuass 运行在 CentOS 7.6 操作系统中。
+x86-64 架构的 openGauss 运行在 CentOS 7.6 操作系统中。
 
 ARM64 架构的 openGauss 运行在 openEuler 20.03 LTS 操作系统中。
 
