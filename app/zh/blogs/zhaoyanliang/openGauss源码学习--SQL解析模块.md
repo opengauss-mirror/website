@@ -33,7 +33,7 @@ openGauss 是基于 postgresql 数据库开发的。
 
 #### 三、SQL 解析总体功能
 
-1. 当 openGauss 的后台服务进程 openGuass 收到前台发来的查询语句后，首先将其传递到查询分析模块，进行词法分析，语法分析和语义分析。
+1. 当 openGauss 的后台服务进程 openGauss 收到前台发来的查询语句后，首先将其传递到查询分析模块，进行词法分析，语法分析和语义分析。
 2. 若是功能性命令(例如 create table,create user 和 backup 命令等)则将其分配到功能性命令处理模块；
 3. 对于查询处理命令(SELECT/INSERT/DELETE/UPDATE)则为其构建查询语法树，交给查询重写模块。
 

@@ -91,9 +91,9 @@ export default {
           LIST: data.en.SECURITY,
         },
         {
-          NAME: 'Iot',
+          NAME: 'IoT',
           ID: 'iot',
-          GITEE_PATH: 'https://gitee.com/opengauss/tc/tree/master/sigs/Iot',
+          GITEE_PATH: 'https://gitee.com/opengauss/tc/tree/master/sigs/IoT',
           EMIAL: 'iot@opengauss.org',
           LIST: data.en.IOT,
         },

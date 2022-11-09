@@ -77,7 +77,7 @@ Flex 文件由三个部分组成。或者说三个段。三个段之间用两个
 <img src='./figures/13.png'>
 
 ###3.语法分析
-openGuass 中定义了 bison 工具能够识别的语法文件 gram.y，同样在 Makefile 中可以通过 bison 工具对 gram.y 进行编译，生成 gram.cpp 文件。
+openGauss 中定义了 bison 工具能够识别的语法文件 gram.y，同样在 Makefile 中可以通过 bison 工具对 gram.y 进行编译，生成 gram.cpp 文件。
 openGauss 中，根据 SQL 语言的不同定义了一系列表达 Statement 的结构体（stmt），用来保存语法分析结果（如 SELECT，DELETE，CREATE）。
 
 源码分析 gram.y openGauss/openGauss-server - Gitee IDE ####（1）Bison 语法文件内容的布局

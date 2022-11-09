@@ -87,7 +87,7 @@ postgres=# show max_files_per_process;
 
 ```
 [Unit]
-Description=High Avilable service for MogDB or openGuass
+Description=High Avilable service for MogDB or openGauss
 After=network.target remote-fs.target nss-lookup.target
 
 [Service]

@@ -112,7 +112,6 @@ function clickClose() {
               <a
                 class="email"
                 :href="'mailto:' + i18n.common.FOOTER.MAIL"
-                target="_blank"
               >
                 {{ i18n.common.FOOTER.MAIL }}
               </a>

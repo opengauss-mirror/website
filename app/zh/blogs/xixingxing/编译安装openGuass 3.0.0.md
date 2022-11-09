@@ -1,16 +1,16 @@
 ---
-title: '编译安装openGuass 3.0.0'
+title: '编译安装openGauss 3.0.0'
 date: '2022-05-16'
 category: 'blog'
-tags: ['编译安装openGuass 3.0.0']
+tags: ['编译安装openGauss 3.0.0']
 archives: '2022-05'
 author: 'xixingxing'
-summary: '编译安装openGuass 3.0.0'
+summary: '编译安装openGauss 3.0.0'
 img: '/zh/blogs/xixingxing/title/title.jpg'
 times: '17:30'
 ---
 
-## 编译安装 openGuass 3.0.0
+## 编译安装 openGauss 3.0.0
 
 ### 1. 环境检查
 

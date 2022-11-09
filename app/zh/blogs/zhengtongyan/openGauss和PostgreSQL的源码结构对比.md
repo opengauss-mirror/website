@@ -205,8 +205,8 @@ gausskernel 在代码目录的组织结构上主要有以下变化：
 
 openGauss 将 PG 的 backend 目录的公共功能模块都统一移动到新建的 common 目录下，这样做的原因可能有两点：
 
-1. openGuass 认为这些模块是数据库系统共有的公共组件或者功能模块，比如 PG 中 backend 目录下的 catalog、lib、libpq 等模块；
-2. openGuass 基本都保留了这些模块的接口和公共函数代码，所以 openGauss 与现有的 PG 生态兼容性较好。openGauss 仅对这些代码做了适当优化，所以单独创建 common 目录可以和 gausskernel 这样修改较大的模块区分开来。
+1. openGauss 认为这些模块是数据库系统共有的公共组件或者功能模块，比如 PG 中 backend 目录下的 catalog、lib、libpq 等模块；
+2. openGauss 基本都保留了这些模块的接口和公共函数代码，所以 openGauss 与现有的 PG 生态兼容性较好。openGauss 仅对这些代码做了适当优化，所以单独创建 common 目录可以和 gausskernel 这样修改较大的模块区分开来。
 
 注意 openGauss 也有 backend 目录，但是该目录只保留了一些公用的功能模块，并且被移动到了 common 目录下。
 
@@ -238,7 +238,7 @@ openGauss-2.0.1\src
 │  │  └─util
 ```
 
-openGuass 在优化器目录中的变化主要是将 PG 中和 optimzier 同一目录级别的 commands 和 rewrite 移动到 optimzier 目录下，这说明 openGauss 将命令模块和查询重写模块归为优化器的一部分。
+openGauss 在优化器目录中的变化主要是将 PG 中和 optimzier 同一目录级别的 commands 和 rewrite 移动到 optimzier 目录下，这说明 openGauss 将命令模块和查询重写模块归为优化器的一部分。
 
 #### **(4) 从 postmaster 到 process 的变化**
 
