@@ -156,7 +156,7 @@ function searchAll() {
 }
 // 设置搜索结果的跳转路径
 function goLink(data: any, index: number) {
-  const { type, path } = data;
+  let { type, path } = data;
   const search_result_url = '/' + lang.value + '/' + path;
   // 埋点数据
   const searchKeyObj = {
@@ -174,6 +174,9 @@ function goLink(data: any, index: number) {
     ...searchKeyObj,
   };
   if (type === 'docs') {
+    if (/^docs\/master/g.test(path)) {
+      path = path.replace(/^docs\/master/g, 'docs/latest');
+    }
     const url =
       site.value.themeConfig.docsUrl + '/' + lang.value + '/' + path + '.html';
     sensorObj.search_result_url = url;
