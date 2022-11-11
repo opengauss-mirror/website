@@ -3,7 +3,7 @@ import { computed, ref, watch, nextTick } from 'vue';
 import { useRouter, useData } from 'vitepress';
 import { useCommon } from '@/stores/common';
 import { useI18n } from '@/i18n';
-import { getPop } from '@/api/api-search';
+// import { getPop } from '@/api/api-search';
 import HeaderNav from './HeaderNav.vue';
 import AppTheme from './AppTheme.vue';
 import AppLanguage from './AppLanguage.vue';
@@ -144,17 +144,34 @@ const showSearchBox = () => {
 // 搜索抽屉
 const popList = ref<string[]>([]);
 const isShowDrawer = ref(false);
+
+// 暂时固定数据 等接口出来在换
+const hotList = {
+  zh: [
+    '数据类型',
+    '逻辑复制',
+    '索引',
+    '迁移',
+    '远程连接',
+    '表空间',
+    '日志',
+    '闪回',
+  ],
+  en: ['check_point', 'dcf', 'copy', 'create_schema'],
+};
+
 const showDrawer = () => {
   isShowDrawer.value = true;
   //热搜
-  const params = `lang=${lang.value}`;
-  getPop(params).then((res) => {
-    if (popList.value.length === 0) {
-      res.obj.forEach((item: string) => {
-        popList.value.push(item);
-      });
-    }
-  });
+  // const params = `lang=${lang.value}`;
+  // getPop(params).then((res) => {
+  //   if (popList.value.length === 0) {
+  //     res.obj.forEach((item: string) => {
+  //       popList.value.push(item);
+  //     });
+  //   }
+  // });
+  popList.value = lang.value === 'zh' ? hotList.zh : hotList.en;
 };
 const topSearchClick = (val: string) => {
   searchInput.value = val;

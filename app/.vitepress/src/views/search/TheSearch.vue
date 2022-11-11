@@ -156,7 +156,7 @@ function searchAll() {
 }
 // 设置搜索结果的跳转路径
 function goLink(data: any, index: number) {
-  let { type, path } = data;
+  const { type, path } = data;
   const search_result_url = '/' + lang.value + '/' + path;
   // 埋点数据
   const searchKeyObj = {
@@ -240,9 +240,13 @@ onMounted(() => {
             <h3 @click="goLink(item, index)" v-html="item.title"></h3>
             <!-- eslint-disable-next-line -->
             <p class="detail" v-html="item.textContent"></p>
-            <p class="from">
+            <p class="from version">
               <span>{{ i18n.search.form }}</span>
               <span>{{ i18n.search.tagList[item.type] }}</span>
+            </p>
+            <p class="version">
+              <span>{{ i18n.search.version }}</span>
+              <span>{{ item.version }}</span>
             </p>
           </li>
         </ul>
@@ -457,6 +461,9 @@ onMounted(() => {
               line-height: var(--o-line-height-tip);
               color: var(--o-color-text4);
             }
+          }
+          .version {
+            margin-top: var(--o-spacing-h8);
           }
         }
       }

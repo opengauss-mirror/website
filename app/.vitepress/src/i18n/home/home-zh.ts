@@ -118,9 +118,6 @@ export default {
         ROUND_IMG: contributer,
         ROUND_IMG_DARK: contributerDark,
         ROUND_TEXT: '贡献者',
-        ROUND_STYLE: {
-          backcolor: 'blue',
-        },
       },
     ],
   },

@@ -185,48 +185,42 @@ export default [
     id: 'Others',
     type: '其他',
     name: '重庆市公安局江北分局',
-    desc: 
-    '使用openGauss商业发行版Vastbase G100，为社区警务网格平台提供有力的数据支撑，保障社区警务网络平台高效、稳定的运行，部署openGauss服务器节点数为1~10个。',
+    desc: '使用openGauss商业发行版Vastbase G100，为社区警务网格平台提供有力的数据支撑，保障社区警务网络平台高效、稳定的运行，部署openGauss服务器节点数为1~10个。',
     path: 'https://opengauss.org/zh/',
   },
   {
     id: 'Finance',
     type: '金融',
     name: '桂林银行股份有限公司',
-    desc: 
-    '使用openGauss商业发行版Vastbase G100，赋能金融信创试点工作，构筑全栈国产智慧办公平台，部署openGauss服务器节点数20~30个。',
+    desc: '使用openGauss商业发行版Vastbase G100，赋能金融信创试点工作，构筑全栈国产智慧办公平台，部署openGauss服务器节点数20~30个。',
     path: 'https://www.guilinbank.com.cn/',
   },
   {
     id: 'Finance',
     type: '金融',
     name: '中信证券',
-    desc: 
-    '使用openGauss商业发行版Vastbase G100，针对用户自有资金管理、外汇交易核算、API网关等业务系统，实现全栈国产化技术路线的演进，部署openGauss服务器节点数20~30个。',
+    desc: '使用openGauss商业发行版Vastbase G100，针对用户自有资金管理、外汇交易核算、API网关等业务系统，实现全栈国产化技术路线的演进，部署openGauss服务器节点数20~30个。',
     path: 'http://www.cs.ecitic.com/newsite/',
   },
   {
     id: 'Others',
     type: '其他',
     name: '中国交通信息科技集团有限公司',
-    desc: 
-    '使用openGauss商业发行版Vastbase G100，面向全集团打造“技术先进、安全可靠、自主可控”的信创领域攻关基地，实现集约化、标准化、专业化、规模化、安全化、服务化、产业化的建设目标，部署openGauss服务器节点数为1~10个。',
+    desc: '使用openGauss商业发行版Vastbase G100，面向全集团打造“技术先进、安全可靠、自主可控”的信创领域攻关基地，实现集约化、标准化、专业化、规模化、安全化、服务化、产业化的建设目标，部署openGauss服务器节点数为1~10个。',
     path: 'http://97467211.007swz.com/',
   },
   {
     id: 'Energy',
     type: '能源',
     name: '国家电网有限公司',
-    desc: 
-    '全国多个省份国网数字换流站建设项目使用openGauss商业发行版Vastbase G100，基于华为ROMA超融合集成平台，保障平台自主可控、架构灵活、性能优异，为上层应用提供强大的支撑能力，部署openGauss服务器节点数为50个以上。',
+    desc: '全国多个省份国网数字换流站建设项目使用openGauss商业发行版Vastbase G100，基于华为ROMA超融合集成平台，保障平台自主可控、架构灵活、性能优异，为上层应用提供强大的支撑能力，部署openGauss服务器节点数为50个以上。',
     path: 'http://www.sx.sgcc.com.cn/sgcc/index.html',
   },
   {
     id: 'Others',
     type: '其他',
     name: '广州天维信息技术股份有限公司',
-    desc: 
-    '专注银行绩效管理，帮助以银行为主的企业建立、运营绩效管理体系，部署openGauss服务器节点数1~10个。',
+    desc: '专注银行绩效管理，帮助以银行为主的企业建立、运营绩效管理体系，部署openGauss服务器节点数1~10个。',
     path: 'http://www.tiancom.com/#/index',
   },
   {
@@ -303,7 +297,7 @@ export default [
     id: 'Others',
     type: '其他',
     name: '某市政务云',
-    desc: '由数据库技术专家组成的数据库技术服务团队，提供全数据库、囊括了咨询顾问\分析规划\数据迁移\上线保障\售后维护\分析调优等阶段的全生命周期技术保障。为政务云提供自动化交付、自动化监控运维管理以及自动化故障切换等新能力。',
+    desc: '由数据库技术专家组成的数据库技术服务团队，提供全数据库、囊括了咨询顾问分析规划数据迁移上线保障售后维护分析调优等阶段的全生命周期技术保障。为政务云提供自动化交付、自动化监控运维管理以及自动化故障切换等新能力。',
     path: 'https://opengauss.org/zh/',
   },
   {

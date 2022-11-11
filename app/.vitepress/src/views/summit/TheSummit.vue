@@ -52,7 +52,9 @@ const bannerInfo = {
         >
           <span class="time"><IconTime />{{ item.time }}</span>
           <div class="info">
-            <span v-for="sub in item.option" class="inline">{{ sub }}</span>
+            <span v-for="sub in item.option" :key="sub" class="inline">
+              {{ sub }}
+            </span>
           </div>
         </div>
       </div>

@@ -12,7 +12,7 @@ defineProps({
 
 <template>
   <div class="dateList">
-    <div v-for="subitem in options" class="dataItem">
+    <div v-for="subitem in options" :key="subitem.time" class="dataItem">
       <span class="time"><IconTime />{{ subitem.time }}</span>
       <span class="desc">{{ subitem.desc }}</span>
       <div v-if="subitem.post" class="box">
@@ -20,15 +20,13 @@ defineProps({
         <span class="post">{{ subitem.post }} </span>
       </div>
       <div v-else class="db">
-        <template v-for="option in subitem.option">
-          <div class="inline">
-            <span class="name">{{ option.name }} </span>
-            <div class="post-more">
-              <span class="post">{{ option.post[0] }} </span>
-              <span class="post">{{ option.post[1] }} </span>
-            </div>
+        <div v-for="option in subitem.option" :key="option.name" class="inline">
+          <span class="name">{{ option.name }} </span>
+          <div class="post-more">
+            <span class="post">{{ option.post[0] }} </span>
+            <span class="post">{{ option.post[1] }} </span>
           </div>
-        </template>
+        </div>
       </div>
     </div>
   </div>
