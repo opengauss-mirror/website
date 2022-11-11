@@ -11,6 +11,7 @@ import IconCancel from '~icons/app/icon-cancel.svg';
 
 import useWindowResize from '@/components/hooks/useWindowResize';
 import { addSearchBuriedData } from '@/shared/utils';
+import { fa } from 'element-plus/es/locale';
 
 const screenWidth = useWindowResize();
 const isMobile = computed(() => (screenWidth.value <= 768 ? true : false));
@@ -173,12 +174,19 @@ function goLink(data: any, index: number) {
     ...((window as any)['addSearchBuriedData'] || {}),
     ...searchKeyObj,
   };
+
   if (type === 'docs') {
+    let goPath = path;
     if (/^docs\/master/g.test(path)) {
-      path = path.replace(/^docs\/master/g, 'docs/latest');
+      goPath = path.replace(/^docs\/master/g, 'docs/latest');
     }
     const url =
-      site.value.themeConfig.docsUrl + '/' + lang.value + '/' + path + '.html';
+      site.value.themeConfig.docsUrl +
+      '/' +
+      lang.value +
+      '/' +
+      goPath +
+      '.html';
     sensorObj.search_result_url = url;
     sensors.setProfile(sensorObj);
     window.open(url, '_blank');
@@ -240,13 +248,13 @@ onMounted(() => {
             <h3 @click="goLink(item, index)" v-html="item.title"></h3>
             <!-- eslint-disable-next-line -->
             <p class="detail" v-html="item.textContent"></p>
-            <p class="from version">
+            <p class="from">
               <span>{{ i18n.search.form }}</span>
               <span>{{ i18n.search.tagList[item.type] }}</span>
-            </p>
-            <p class="version">
-              <span>{{ i18n.search.version }}</span>
-              <span>{{ item.version }}</span>
+              <template v-if="item.version">
+                <span class="version">{{ i18n.search.version }}</span>
+                <span>{{ item.version }}</span>
+              </template>
             </p>
           </li>
         </ul>
@@ -425,7 +433,6 @@ onMounted(() => {
             font-size: var(--o-font-size-h5);
             color: var(--o-color-text1);
             line-height: var(--o-line-height-h5);
-            font-weight: 300;
             cursor: pointer;
             :deep(span) {
               color: var(--o-color-brand1);
@@ -454,7 +461,7 @@ onMounted(() => {
             margin-top: 15px;
             font-size: var(--o-font-size-text);
             line-height: var(--o-line-height-text);
-            color: var(--o-color-text1);
+            color: var(--o-color-text4);
             @media (max-width: 768px) {
               margin-top: 8px;
               font-size: var(--o-font-size-tip);
@@ -463,7 +470,7 @@ onMounted(() => {
             }
           }
           .version {
-            margin-top: var(--o-spacing-h8);
+            margin-left: var(--o-spacing-h4);
           }
         }
       }
