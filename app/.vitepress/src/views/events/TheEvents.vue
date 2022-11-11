@@ -58,7 +58,7 @@ const EVENTS_DATA = [
 ];
 
 // 当前导航栏
-const activeName = ref('first');
+// const activeName = ref('first');
 // 本月及以后最新活动列表
 const latestList: Ref<any> = ref([]);
 // 精彩回顾中所有的数据

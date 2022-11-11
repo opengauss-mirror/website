@@ -1,10 +1,5 @@
 import { request } from '@/shared/axios';
 import type { AxiosResponse } from '@/shared/axios';
-import {
-  CveQuery,
-  DetailQuery,
-  SelectParams,
-} from '@/shared/@types/type-security';
 
 /**
  * 调用接口获取安全公告列表
