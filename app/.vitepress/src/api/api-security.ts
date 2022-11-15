@@ -1,6 +1,5 @@
 import { request } from '@/shared/axios';
 import type { AxiosResponse } from '@/shared/axios';
-
 /**
  * 调用接口获取安全公告列表
  * @name getSecurityList

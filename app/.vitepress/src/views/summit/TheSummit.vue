@@ -17,7 +17,7 @@ import bannerText from '@/assets/category/summit/2022/text@2x.png';
 import IconTime from '~icons/app/icon-time.svg';
 import IconArrowRight from '~icons/app/icon-arrow-right.svg';
 
-const SummitData = SummitConfig.online.list;
+const SummitData: any = SummitConfig.data2022.online.list;
 
 const tabType = ref('main');
 const otherTabType = ref(0);
@@ -36,31 +36,34 @@ const bannerInfo = {
   <SummitBanner :banner="bannerInfo" />
   <AppContent>
     <div class="summit-info">
-      <p class="text">{{ SummitConfig.desc[0] }}</p>
-      <p class="text">{{ SummitConfig.desc[1] }}</p>
+      <p class="text">{{ SummitConfig.data2022.desc[0] }}</p>
+      <p class="text">{{ SummitConfig.data2022.desc[1] }}</p>
     </div>
-    <h3 class="titleBar">{{ SummitConfig.titleBar[0] }}</h3>
-    <SummitLive :live-data="SummitConfig.LIVEDATA" class-name="odd2022" />
-    <h3 class="titleBar">{{ SummitConfig.titleBar[1] }}</h3>
+    <h3 class="titleBar">{{ SummitConfig.data2022.titleBar[0] }}</h3>
+    <SummitLive
+      :live-data="SummitConfig.data2022.LIVEDATA"
+      class-name="odd2022"
+    />
+    <h3 class="titleBar">{{ SummitConfig.data2022.titleBar[1] }}</h3>
     <div class="offline-panel">
-      <h4 class="meetingtitle">{{ SummitConfig.offline.daytime }}</h4>
+      <h4 class="meetingtitle">{{ SummitConfig.data2022.offline.daytime }}</h4>
       <div class="agendaList">
         <div
-          v-for="item in SummitConfig.offline.list"
+          v-for="item in SummitConfig.data2022.offline.list"
           :key="item.time"
           class="agendaItem"
         >
           <span class="time"><IconTime />{{ item.time }}</span>
           <div class="info">
-            <span v-for="sub in item.option" :key="sub" class="inline">
-              {{ sub }}
-            </span>
+            <span v-for="sub in item.option" :key="sub" class="inline">{{
+              sub
+            }}</span>
           </div>
         </div>
       </div>
     </div>
     <div class="online-panel">
-      <h4 class="meetingtitle">{{ SummitConfig.online.daytime }}</h4>
+      <h4 class="meetingtitle">{{ SummitConfig.data2022.online.daytime }}</h4>
       <OTabs v-model="tabType" class="schedule-tabs">
         <el-tab-pane v-for="item in SummitData" :key="item.id" :name="item.id">
           <template #label>
@@ -112,40 +115,66 @@ const bannerInfo = {
         </div>
       </OContainer>
     </div>
-    <h3 class="titleBar">{{ SummitConfig.titleBar[2] }}</h3>
+    <h3 class="titleBar">{{ SummitConfig.data2022.titleBar[2] }}</h3>
     <SummitGuests
-      :lecturer-list="SummitConfig.LECTURER_LIST"
+      :lecturer-list="SummitConfig.data2022.LECTURER_LIST"
       shape="circle"
       :web-columns-num="4"
       :mobile-columns-num="2"
     />
     <div class="summit-partners">
-      <h3 class="titleBar">{{ SummitConfig.titleBar[3] }}</h3>
-      <h4 class="meetingtitle">{{ SummitConfig.partnersList.title[0] }}</h4>
+      <h3 class="titleBar">{{ SummitConfig.data2022.titleBar[3] }}</h3>
+      <h4 class="meetingtitle">
+        {{ SummitConfig.data2022.partnersList.title[0] }}
+      </h4>
       <LinkPanel
-        :link-list="SummitConfig.partnersList.p1"
+        :link-list="SummitConfig.data2022.partnersList.p1"
         :islink="false"
         class="one"
       />
-      <h4 class="meetingtitle">{{ SummitConfig.partnersList.title[1] }}</h4>
+      <h4 class="meetingtitle">
+        {{ SummitConfig.data2022.partnersList.title[1] }}
+      </h4>
       <LinkPanel
-        :link-list="SummitConfig.partnersList.p2"
+        :link-list="SummitConfig.data2022.partnersList.p2"
         :islink="false"
         class="one"
       />
-      <h4 class="meetingtitle">{{ SummitConfig.partnersList.title[2] }}</h4>
-      <LinkPanel :link-list="SummitConfig.partnersList.p3" :islink="false" />
-      <h4 class="meetingtitle">{{ SummitConfig.partnersList.title[3] }}</h4>
-      <LinkPanel :link-list="SummitConfig.partnersList.p4" :islink="false" />
+      <h4 class="meetingtitle">
+        {{ SummitConfig.data2022.partnersList.title[2] }}
+      </h4>
+      <LinkPanel
+        :link-list="SummitConfig.data2022.partnersList.p3"
+        :islink="false"
+      />
+      <h4 class="meetingtitle">
+        {{ SummitConfig.data2022.partnersList.title[3] }}
+      </h4>
+      <LinkPanel
+        :link-list="SummitConfig.data2022.partnersList.p4"
+        :islink="false"
+      />
+    </div>
+    <div class="previous">
+      <h4 class="meetingtitle">{{ SummitConfig.data2022.titleBar[4] }}</h4>
+      <a
+        v-for="item in SummitConfig.data2022.previous"
+        :key="item.link"
+        :href="item.link"
+        >{{ item.title }}</a
+      >
     </div>
   </AppContent>
 </template>
 
 <style lang="scss" scoped>
 .one {
-  width: 356px;
+  max-width: 356px;
   display: block;
   margin: 0 auto;
+  @media (max-width: 767px) {
+    width: 100%;
+  }
 }
 .summit-partners {
   .meetingtitle {
@@ -474,6 +503,21 @@ const bannerInfo = {
           align-items: center;
         }
       }
+    }
+  }
+}
+.previous {
+  margin: 0 auto;
+  text-align: center;
+  h2 {
+    margin-bottom: 24px;
+  }
+  a {
+    font-size: var(--o-font-size-h6);
+    line-height: var(--o-line-height-h6);
+    @media screen and(max-width:767px) {
+      font-size: var(--o-font-size-text);
+      line-height: var(--o-line-height-text);
     }
   }
 }

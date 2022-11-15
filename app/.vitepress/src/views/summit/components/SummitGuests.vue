@@ -87,15 +87,18 @@ onMounted(() => {
 .lecturer-list {
   margin: var(--o-spacing-h2) auto;
   display: grid;
-  grid-template-columns: repeat(var(--webColumnsNum), 1fr);
+  grid-template-columns: repeat(4, 1fr);
   justify-content: center;
   @media (max-width: 780px) {
-    width: 375px;
-    grid-template-columns: repeat(var(--mobileColumnsNum), 1fr);
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
   }
   &-item {
     width: 180px;
     margin: 0 auto;
+    @media (max-width: 780px) {
+      width: 100%;
+    }
     &-square {
       display: block;
       height: 130px;
@@ -117,6 +120,10 @@ onMounted(() => {
         height: 120px;
         margin: 0 auto;
         display: block;
+        @media (max-width: 780px) {
+          width: 95px;
+          height: 95px;
+        }
       }
     }
     p {
