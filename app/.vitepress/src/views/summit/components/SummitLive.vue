@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
+import AOS from 'aos';
 
 import liveActiveBg from '@/assets/category/summit/live-active-bg.png';
 
@@ -48,6 +49,11 @@ function creatUserId(liveId: number) {
   liveUrl.value = `https://vhall.huawei.com/v2/watch/${liveId}?lang=zh&thirdId=${userName}`;
 }
 onMounted(async () => {
+  AOS.init({
+    offset: 200,
+    duration: 800,
+    delay: 100,
+  });
   isTest.value = window.location.host.includes('test.osinfra');
   creatUserId(isTest.value ? renderData[0].LIVETESTID : renderData[0].LIVEID);
 });
@@ -158,6 +164,16 @@ const selectliveChange = (val: number): void => {
         justify-content: space-between;
         .link-main {
           grid-column: 1/5;
+        }
+      }
+      &.odd2021 {
+        display: grid;
+        grid-template-columns: 300px 1fr 300px;
+        grid-template-areas: 'a b c';
+        gap: 16px;
+        width: 100%;
+        .link-main {
+          grid-area: b;
         }
       }
       .link {
