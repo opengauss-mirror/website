@@ -281,7 +281,7 @@ import renxiaobin from '@/assets/category/member/avatar/renxiaobin.png';
 import yaoting from '@/assets/category/member/avatar/yaoting.png';
 import yangtao from '@/assets/category/member/avatar/yangtao.png';
 import youxinyi from '@/assets/category/member/avatar/youxinyi.png';
-import huyi from '@/assets/category/member/avatar/youxinyi.png';
+import huyi from '@/assets/category/member/avatar/huyi.png';
 import luobingseng from '@/assets/category/member/avatar/luobingseng.png';
 import liyuanpeng from '@/assets/category/member/avatar/liyuanpeng.png';
 import zhenquan from '@/assets/category/member/avatar/zhenquan.png';
