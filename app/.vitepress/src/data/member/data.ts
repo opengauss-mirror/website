@@ -25,7 +25,7 @@ import sunpeiyuan from '@/assets/category/member/avatar/sunpeiyuan.png';
 import wangjuanyj from '@/assets/category/member/avatar/wangjuanyj.png';
 import wangxiaotao from '@/assets/category/member/avatar/wangxiaotao.png';
 import yanht from '@/assets/category/member/avatar/yanht.png';
-import zhangquan from '@/assets/category/member/avatar/zhangmingxing.png';
+import zhangquan from '@/assets/category/member/avatar/zhangquan.png';
 
 import liangbing11 from '@/assets/category/member/avatar/liangbing11.png';
 import huangyuanxia from '@/assets/category/member/avatar/huangyuanxia.png';
