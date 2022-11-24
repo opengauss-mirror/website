@@ -214,7 +214,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
                       <a :href="'mailto:' + user.email" class="mail"
                         ><img :src="IconToemail"
                       /></a>
-                      <a :href="user.gitee" class="gitee" target="_blank"
+                      <a v-if="user.gitee" :href="user.gitee" class="gitee" target="_blank"
                         ><img :src="IconGit"
                       /></a>
                     </p>
@@ -330,7 +330,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
                     <a :href="'mailto:' + user.email" class="mail"
                       ><img :src="IconToemail"
                     /></a>
-                    <a :href="user.gitee" class="gitee" target="_blank"
+                    <a v-if="user.gitee" :href="user.gitee" class="gitee" target="_blank"
                       ><img :src="IconGit"
                     /></a>
                   </p>
