@@ -383,7 +383,7 @@ export default [
         x86_sha: '',
       },
       {
-        name: 'datacheker_3.1.0',
+        name: 'datachecker_3.1.0',
         centos_url: '',
         centos_sha: '',
         aarch_url:
@@ -442,7 +442,7 @@ export default [
         x86_sha: '',
       },
       {
-        name: 'datacheker_3.1.0',
+        name: 'datachecker_3.1.0',
         centos_url: '',
         centos_sha: '',
         aarch_url:
