@@ -66,6 +66,15 @@ export default {
       certificate:
         'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/GBase%208c%20V5/Certificate.pdf',
     },
+    {
+      pro: 'FusionDB 22',
+      name: '超聚变数字技术有限公司',
+      version: 'openGauss 3.0.0',
+      award: '2022-11-25',
+      expiration: '2025-03-31',
+      certificate:
+        'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/FusionDB%2022/Certificate.pdf',
+    },
   ],
   en: [
     {
@@ -133,6 +142,15 @@ export default {
       expiration: '2025-03-31',
       certificate:
         'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/GBase%208c%20V5/Certificate.pdf',
+    },
+    {
+      pro: 'FusionDB 22',
+      name: '超聚变数字技术有限公司',
+      version: 'openGauss 3.0.0',
+      award: '2022-11-25',
+      expiration: '2025-03-31',
+      certificate:
+        'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/FusionDB%2022/Certificate.pdf',
     },
   ],
 };
