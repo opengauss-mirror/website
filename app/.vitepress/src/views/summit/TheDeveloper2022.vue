@@ -195,9 +195,10 @@ const bannerInfo = {
     color: var(--o-color-text1);
     text-indent: 2em;
     text-align: justify;
+    margin-bottom: 8px;
     @media (max-width: 767px) {
-      font-size: var(--o-font-size-tip);
-      line-height: var(--o-line-height-tip);
+      font-size: var(--o-font-size-text);
+      line-height: var(--o-line-height-text);
     }
   }
 }
@@ -284,6 +285,7 @@ const bannerInfo = {
         display: flex;
         align-items: center;
         justify-content: center;
+        padding: 0 6px;
       }
     }
     @media (max-width: 1100px) {
