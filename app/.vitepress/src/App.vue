@@ -11,6 +11,7 @@ import LayoutSecurity from '@/layouts/LayoutSecurity.vue';
 import LayoutBlog from '@/layouts/LayoutBlog.vue';
 import LayoutNews from '@/layouts/LayoutNews.vue';
 import LayoutEvents from '@/layouts/LayoutEvents.vue';
+import LayoutShowcase from '@/layouts/LayoutShowcase.vue';
 
 import categories from '@/shared/category';
 
@@ -26,6 +27,7 @@ const compMapping: {
   blog: LayoutBlog,
   news: LayoutNews,
   events: LayoutEvents,
+  showcase: LayoutShowcase,
 };
 const commonStore = useCommon();
 const safetyImg = computed(() =>
