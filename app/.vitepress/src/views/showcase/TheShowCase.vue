@@ -1,8 +1,9 @@
 <script lang="ts" setup>
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';
 import useWindowScroll from '@/components/hooks/useWindowScroll';
+// import { getUserCaseData } from '@/api/api-showcase';
 
 import ShowCaseData from '@/data/showcase';
 import useWindowResize from '@/components/hooks/useWindowResize';
@@ -52,7 +53,21 @@ const tagClick = (i: number) => {
   activeIndex.value = i;
   filterCase();
 };
-
+// 设置当前tag的所有案例
+// const data = ref({
+//   page: 1,
+//   pageSize: 100,
+//   lang: lang.value,
+// });
+// function setCurrentCaseListAll() {
+//   try {
+//     getUserCaseData(data.value).then((res: any) => {
+//       console.log(res);
+//     });
+//   } catch (error: any) {
+//     throw Error(error);
+//   }
+// }
 function filterCase() {
   if (activeIndex.value === 0) {
     CaseListAll.value = ShowCaseData.DATA;
@@ -150,6 +165,9 @@ const showIndex = ref(NaN);
 function toggleAll(index: number) {
   showIndex.value = showIndex.value === index ? NaN : index;
 }
+onMounted(() => {
+  // setCurrentCaseListAll()
+});
 </script>
 
 <template>
@@ -226,6 +244,18 @@ function toggleAll(index: number) {
             @click="jump(item.path)"
           >
             {{ userCaseData.button }}
+            <template #suffixIcon>
+              <IconArrowRight class="icon-arror" />
+            </template>
+          </OButton>
+          <OButton
+            v-if="item.more"
+            animation
+            size="mini"
+            class="more-btn"
+            @click="jump(item.morePath)"
+          >
+            {{ userCaseData.buttonMore }}
             <template #suffixIcon>
               <IconArrowRight class="icon-arror" />
             </template>
@@ -442,6 +472,12 @@ $color: #fff;
     max-height: 144px;
   }
   .website-btn {
+    border-color: #fff;
+    color: #fff;
+    margin-right: var(--o-spacing-h8);
+    margin-bottom: var(--o-spacing-h8);
+  }
+  .more-btn {
     border-color: #fff;
     color: #fff;
   }
