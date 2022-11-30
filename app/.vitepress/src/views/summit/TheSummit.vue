@@ -1,16 +1,15 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { useCommon } from '@/stores/common';
-
 import AppContent from '@/components/AppContent.vue';
 
 import banner from '@/assets/category/summit/summit2022/banner.jpg';
 import bannerMo from '@/assets/category/summit/summit2022/banner-mo.png';
 import liveLight from '@/assets/category/summit/summit2022/live.png';
 import liveDark from '@/assets/category/summit/summit2022/live-dark.png';
-import demo from '@/assets/category/summit/summit2022/demo.png';
-import speaker from '@/assets/category/summit/summit2022/speaker.png';
-import organizer from '@/assets/category/summit/summit2022/organizer.png';
+import demoPng from '@/assets/category/summit/summit2022/demo.png';
+import speakerPng from '@/assets/category/summit/summit2022/speaker.png';
+import organizerPng from '@/assets/category/summit/summit2022/organizer.png';
 
 const commonStore = useCommon();
 const liveImg = computed(() =>
@@ -21,25 +20,27 @@ const bannerInfo = {
   mo_banner: bannerMo,
 };
 const summitData = {
-  detail:
-    'openGauss Summit 2022 是由openGauss开源社区发起并举办的年度开源数据库技术盛会。openGauss作为面向企业核心应用场景的开源数据库，开源以来快速发展。本次峰会聚焦数据库行业最新进展，将从开源、技术、生态、商业和人才等多个维度展开深入的探讨与交流。',
+  detail: [
+    'openGauss Summit 2022是由openGauss开源数据库社区联合行业组织，伙伴及客户共同举办的年度数据库产业界交流与分享峰会。openGauss作为面向企业核心应用场景的开源数据库，开源两年来，与产业界聚力创新，携手前行。在技术、商业、生态、社区和人才方面取得了令人瞩目的成绩。从数据出发为企业数字化转型提供了强大的动能。',
+    '本次峰会将邀请学术专家、行业组织、企业客户、生态伙伴和社区贡献者齐聚openGauss峰会，探讨数据库创新发展新路径、交流数据生态建设的新思维、分享企业数字化转型的新成果，共同加速推动开源数据库产业向前发展。',
+  ],
   contentList: [
     {
       name: '展示征集',
       nameEn: 'DEMO',
-      img: demo,
+      img: demoPng,
       link: 'https://shimo.im/forms/Clt43Er77rkQMPUX/fill',
     },
     {
       name: 'KN演讲者征集',
       nameEn: 'KN SPEAKER',
-      img: speaker,
+      img: speakerPng,
       link: 'https://shimo.im/forms/PP1S4qJ3YcguslYv/fill',
     },
     {
       name: '分论坛征集',
       nameEn: 'SESSION ORGANIZER',
-      img: organizer,
+      img: organizerPng,
       link: 'https://shimo.im/forms/hz1hXko4jW8CeSHK/fill',
     },
   ],
@@ -72,7 +73,10 @@ const summitData = {
   </div>
 
   <AppContent>
-    <div class="detail">{{ summitData.detail }}</div>
+    <div class="summit-detail">
+      <p>{{ summitData.detail[0] }}</p>
+      <p>{{ summitData.detail[1] }}</p>
+    </div>
     <div class="content">
       <div
         v-for="item in summitData.contentList"
@@ -96,13 +100,9 @@ const summitData = {
         <img :src="liveImg" alt="live" />
       </div>
       <div class="link-box">
-        <a
-          v-for="item in summitData.previous.list"
-          :key="item.link"
-          :href="item.link"
-          :target="item.target"
-          >{{ item.name }}</a
-        >
+        <p v-for="item in summitData.previous.list" :key="item.link">
+          <a :href="item.link" :target="item.target">{{ item.name }}</a>
+        </p>
       </div>
     </div>
   </AppContent>
@@ -134,19 +134,27 @@ const summitData = {
     }
   }
 }
-.detail {
-  font-size: var(--o-font-size-h6);
-  line-height: var(--o-line-height-h6);
-  color: var(--o-color-text1);
-  @media screen and (max-width: 768px) {
-    font-size: var(--o-font-size-text);
-    line-height: var(--o-line-height-text);
+.summit-detail {
+  p {
+    font-size: var(--o-font-size-h6);
+    line-height: var(--o-line-height-h6);
+    color: var(--o-color-text1);
+    font-weight: 300;
+    text-align: justify;
+    &:not(:last-child) {
+      margin-bottom: var(--o-spacing-h6);
+    }
+    @media screen and (max-width: 768px) {
+      font-size: var(--o-font-size-text);
+      line-height: var(--o-line-height-text);
+    }
   }
 }
 .content {
-  margin: var(--o-spacing-h2) auto 0 auto;
+  margin: var(--o-spacing-h1) auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
   @media screen and (max-width: 1470px) {
     grid-template-columns: repeat(2, 1fr);
     max-width: 948px;
@@ -154,6 +162,8 @@ const summitData = {
   @media screen and (max-width: 968px) {
     grid-template-columns: repeat(1, 1fr);
     max-width: 474px;
+    gap: 16px;
+    margin: var(--o-spacing-h2) auto;
   }
 
   .content-item {
@@ -164,12 +174,14 @@ const summitData = {
       display: inline-block;
       width: 100%;
       position: relative;
+      box-shadow: var(--o-shadow-l1);
       .text {
         width: 100%;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        z-index: 2;
         p {
           color: #fff;
           text-align: center;
@@ -196,20 +208,16 @@ const summitData = {
   }
 }
 .previous {
-  margin-top: var(--o-spacing-h2);
-  @media screen and (max-width: 768px) {
-    margin-top: var(--o-spacing-h4);
-  }
   .previous-title {
     display: flex;
     h3 {
-      font-size: 26px;
+      font-size: 24px;
       line-height: 30px;
       color: var(--o-color-text1);
       margin-right: var(--o-spacing-h6);
       @media screen and (max-width: 768px) {
-        font-size: var(--o-font-size-text);
-        line-height: var(--o-line-height-text);
+        font-size: var(--o-font-size-h8);
+        line-height: var(--o-line-height-h8);
         margin-right: var(--o-spacing-h7);
       }
     }
@@ -221,26 +229,23 @@ const summitData = {
   }
 
   .link-box {
-    margin-top: var(--o-spacing-h3);
-    display: flex;
-    width: 318px;
-    flex-wrap: wrap;
+    margin-top: var(--o-spacing-h2);
     @media screen and (max-width: 768px) {
-      width: 172px;
       margin-top: var(--o-spacing-h6);
+    }
+    p:not(:last-child) {
+      margin-bottom: var(--o-spacing-h4);
+      @media screen and (max-width: 768px) {
+        margin-bottom: var(--o-spacing-h6);
+      }
     }
     a {
       font-size: var(--o-font-size-h6);
       line-height: var(--o-line-height-h6);
+      display: inline-block;
       @media screen and (max-width: 768px) {
-        font-size: var(--o-font-size-tip);
-        line-height: var(--o-line-height-tip);
-      }
-      & + a {
-        margin-top: var(--o-spacing-h4);
-        @media screen and (max-width: 768px) {
-          margin-top: var(--o-spacing-h8);
-        }
+        font-size: var(--o-font-size-text);
+        line-height: var(--o-line-height-text);
       }
     }
   }
