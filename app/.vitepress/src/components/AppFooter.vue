@@ -96,7 +96,7 @@ function clickClose() {
 </script>
 
 <template>
-  <div class="footer">
+  <footer class="footer">
     <div class="footer-content">
       <!-- 隐私政策 -->
       <div v-if="isCookieTip" class="cookie-privacy">
@@ -169,7 +169,7 @@ function clickClose() {
         </div>
       </AppContent>
     </div>
-  </div>
+  </footer>
 </template>
 
 <style lang="scss" scoped>
