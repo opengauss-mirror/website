@@ -1,5 +1,5 @@
 ---
-title: '峰会2021'
+title: 'openGauss Summit 2021'
 ---
 
 <script setup lang="ts">

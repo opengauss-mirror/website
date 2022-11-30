@@ -141,6 +141,7 @@ const summitData = {
     color: var(--o-color-text1);
     font-weight: 300;
     text-align: justify;
+    text-indent: 2em;
     &:not(:last-child) {
       margin-bottom: var(--o-spacing-h6);
     }

@@ -87,7 +87,7 @@ function clickButton(link: string) {
     position: relative;
     .cover {
       object-fit: cover;
-      height: 160px;
+      height: 140px;
       display: block;
       @media (max-width: 767px) {
         width: inherit;
