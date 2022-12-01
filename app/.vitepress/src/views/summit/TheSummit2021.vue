@@ -4,7 +4,6 @@ import { ref } from 'vue';
 import AppContent from '@/components/AppContent.vue';
 import SummitLive from './components/SummitLive.vue';
 import SummitSchedule from './components/SummitSchedule.vue';
-import SummitBanner from './components/SummitBanner.vue';
 import LinkPanel from '@/components/LinkPanel.vue';
 
 import SummitConfig from '@/data/summit/';
@@ -20,16 +19,6 @@ const SummitData: any = SummitConfig.data2021.list;
 const tabType = ref('main');
 const otherTabType = ref(0);
 
-const bannerInfo = {
-  pc_banner: banner,
-  pc_text: bannerText,
-  mo_banner: banner_mo,
-  mo_text: null,
-  link: '',
-  pc_ill: illustration,
-  pc_text2: text2,
-};
-
 // video 事件
 const videoDialog = ref(false);
 const videoLink = ref('');
@@ -44,7 +33,17 @@ const videoClickBtn = (path: string) => {
 </script>
 
 <template>
-  <SummitBanner :banner="bannerInfo" />
+  <div class="summit-banner">
+    <img class="banner-img pc" :src="banner" alt="" />
+    <img class="banner-img mo" :src="banner_mo" alt="" />
+    <div class="inner">
+      <div>
+        <img v-if="bannerText" class="cover" :src="bannerText" alt="" />
+        <img class="cover2" :src="text2" alt="" />
+        <img class="ill" :src="illustration" alt="" />
+      </div>
+    </div>
+  </div>
   <AppContent>
     <div class="summit-info">
       <p class="text">{{ SummitConfig.data2021.desc[0] }}</p>
@@ -52,10 +51,12 @@ const videoClickBtn = (path: string) => {
     </div>
     <!-- 精彩回顾 -->
     <h3 id="live" class="titleBar">{{ SummitConfig.data2021.titleBar[0] }}</h3>
-    <SummitLive
-      :live-data="SummitConfig.data2021.LIVEDATA"
-      class-name="odd2021"
-    />
+    <ClientOnly>
+      <SummitLive
+        :live-data="SummitConfig.data2021.LIVEDATA"
+        class-name="odd2021"
+      />
+    </ClientOnly>
     <!-- 峰会日程 -->
     <h3 class="titleBar">{{ SummitConfig.data2021.titleBar[1] }}</h3>
     <div class="time">
@@ -160,6 +161,75 @@ const videoClickBtn = (path: string) => {
 </template>
 
 <style lang="scss" scoped>
+.summit-banner {
+  height: 380px;
+  background: no-repeat center/cover;
+  position: relative;
+  .banner-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    &.pc {
+      display: block;
+      @media (max-width: 767px) {
+        display: none;
+      }
+    }
+    &.mo {
+      display: none;
+      @media (max-width: 767px) {
+        display: block;
+      }
+    }
+  }
+  .inner {
+    max-width: 1504px;
+    padding: 0 44px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    .cover {
+      object-fit: cover;
+      height: 140px;
+      display: block;
+      @media (max-width: 767px) {
+        display: none;
+      }
+    }
+    .cover2 {
+      margin-top: 12px;
+      display: block;
+      @media (max-width: 767px) {
+        display: none;
+      }
+    }
+    .ill {
+      position: absolute;
+      right: 44px;
+      top: 50%;
+      transform: translateY(-50%);
+      @media (max-width: 767px) {
+        display: none;
+      }
+    }
+
+    @media (max-width: 767px) {
+      justify-content: center;
+      text-align: center;
+    }
+  }
+  @media (max-width: 767px) {
+    height: 320px;
+  }
+}
+
 .one {
   max-width: 356px;
   display: block;

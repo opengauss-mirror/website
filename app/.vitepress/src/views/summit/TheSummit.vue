@@ -49,7 +49,7 @@ const summitData = {
     list: [
       {
         name: 'openGauss Developer Day 2022',
-        link: '/zh/summit/summit2022/',
+        link: '/zh/summit/devday2022/',
         target: '_blank',
       },
       {
