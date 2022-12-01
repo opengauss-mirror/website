@@ -4,7 +4,7 @@ category: showcase
 industry: 金融
 company: 中华保险
 summary: 核心系统向鲲鹏全栈迁移，性能300%提升
-path: http://www.cic.cn/
+officialPath: http://www.cic.cn/
 detail: true
 id: Finance
 ---

@@ -4,7 +4,7 @@ category: showcase
 industry: 其他
 company: 央广网
 summary: 国产数据库快速平滑迁移，综合性能提升30%
-path: http://www.cnr.cn/
+officialPath: http://www.cnr.cn/
 detail: true
 id: Others
 ---

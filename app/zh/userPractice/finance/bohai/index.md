@@ -4,7 +4,7 @@ category: showcase
 industry: 金融
 company: 渤海财险
 summary: 数据合规，为企业持续经营保驾护航
-path: http://www.bpic.com.cn/
+officialPath: http://www.bpic.com.cn/
 detail: true
 id: Finance
 ---
@@ -34,5 +34,5 @@ id: Finance
 
 <div class=logo>
     <img src="./yunheenmo.png"/>
-    <img src="./modb.png"/>
+    <img src="./mogdb.png"/>
 </div>

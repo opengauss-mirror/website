@@ -4,7 +4,7 @@ category: showcase
 industry: 金融
 company: 合众人寿
 summary: MogDB 全方位护航公司合规工作管理平台和风险管理系统
-path: https://www.unionlife.com.cn/
+officialPath: https://www.unionlife.com.cn/
 detail: true
 id: Finance
 ---
@@ -34,5 +34,5 @@ id: Finance
 
 <div class=logo>
     <img src="./yunheenmo.png"/>
-    <img src="./modb.png"/>
+    <img src="./mogdb.png"/>
 </div>
