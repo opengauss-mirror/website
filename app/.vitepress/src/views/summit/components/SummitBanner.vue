@@ -1,6 +1,5 @@
 <script lang="ts" setup>
-import { ref, computed } from 'vue';
-// import { useRouter } from 'vitepress';
+import { computed } from 'vue';
 import useWindowResize from '@/components/hooks/useWindowResize';
 import IconArrowRight from '~icons/app/icon-arrow-right.svg';
 const props = defineProps({
@@ -13,19 +12,17 @@ const props = defineProps({
   },
 });
 
-const screenWidth = ref(useWindowResize());
+const screenWidth = useWindowResize();
+const isPc = computed(() => (screenWidth.value > 768 ? true : false));
 
-// const router = useRouter();
-const bannerInfo = computed(() => {
-  return {
-    banner:
-      screenWidth.value > 768 ? props.banner.pc_banner : props.banner.mo_banner,
-    text: screenWidth.value > 768 ? props.banner.pc_text : props.banner.mo_text,
-    text2:
-      screenWidth.value > 768 ? props.banner.pc_text2 : props.banner.mo_text2,
-    ill: screenWidth.value > 768 ? props.banner.pc_ill : props.banner.mo_ill,
-  };
-});
+const banner = computed(() =>
+  isPc.value ? props.banner.banner_pc : props.banner.banner_mo
+);
+const bannerText = computed(() =>
+  isPc.value ? props.banner.text_pc : props.banner.text_mo
+);
+const bannerText2 = computed(() => (isPc.value ? props.banner.text2 : null));
+
 function clickButton(link: string) {
   (document.getElementById(link) as HTMLElement).scrollIntoView({
     behavior: 'smooth',
@@ -35,34 +32,21 @@ function clickButton(link: string) {
 </script>
 
 <template>
-  <div
-    class="summit-banner"
-    :style="`background-image:url(${bannerInfo.banner}) ;`"
-  >
+  <div class="summit-banner" :style="`background-image:url(${banner}) ;`">
     <div class="inner">
       <div>
-        <img
-          v-if="bannerInfo.text"
-          class="cover"
-          :src="bannerInfo.text"
-          alt=""
-        />
-        <img
-          v-if="bannerInfo.text2"
-          class="cover2"
-          :src="bannerInfo.text2"
-          alt=""
-        />
-        <img v-if="bannerInfo.ill" class="ill" :src="bannerInfo.ill" alt="" />
-        <template v-if="banner.link !== ''">
+        <img v-if="bannerText" class="cover" :src="bannerText" alt="" />
+        <img v-if="bannerText2" class="cover2" :src="bannerText2" alt="" />
+        <img class="ill" :src="props.banner.illustration" alt="" />
+        <template v-if="props.banner.link">
           <OButton
             type="primary"
             size="small"
             animation
             class="banner-btn"
-            @click="clickButton(banner.link)"
+            @click="clickButton(props.banner.link)"
           >
-            {{ banner.button }}
+            {{ props.banner.button }}
             <template #suffixIcon
               ><OIcon><IconArrowRight /></OIcon
             ></template>
@@ -103,6 +87,9 @@ function clickButton(link: string) {
       right: 44px;
       top: 50%;
       transform: translateY(-50%);
+      @media (max-width: 767px) {
+        display: none;
+      }
     }
     .banner-btn {
       margin: 16px 0 0;

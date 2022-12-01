@@ -3,7 +3,6 @@ import { ref } from 'vue';
 import AppContent from '@/components/AppContent.vue';
 import SummitLive from './components/SummitLive.vue';
 import SummitSchedule from './components/SummitSchedule.vue';
-import SummitBanner from './components/SummitBanner.vue';
 import SummitGuests from './components/SummitGuests.vue';
 import LinkPanel from '@/components/LinkPanel.vue';
 
@@ -21,29 +20,30 @@ const SummitData: any = SummitConfig.data2022.online.list;
 
 const tabType = ref('main');
 const otherTabType = ref(0);
-
-const bannerInfo = {
-  pc_banner: banner,
-  pc_text: bannerText,
-  mo_banner: banner_mo,
-  mo_text: bannerText_mo,
-  link: '',
-  button: '观看直播',
-};
 </script>
 
 <template>
-  <SummitBanner :banner="bannerInfo" />
+  <div class="summit-banner">
+    <img class="banner-img pc" :src="banner" alt="" />
+    <img class="banner-img mo" :src="banner_mo" alt="" />
+    <div class="inner">
+      <div>
+        <img class="cover pc" :src="bannerText" alt="" />
+        <img class="cover mo" :src="bannerText_mo" alt="" />
+      </div>
+    </div>
+  </div>
   <AppContent>
     <div class="summit-info">
       <p class="text">{{ SummitConfig.data2022.desc[0] }}</p>
       <p class="text">{{ SummitConfig.data2022.desc[1] }}</p>
     </div>
     <h3 class="titleBar">{{ SummitConfig.data2022.titleBar[0] }}</h3>
-    <SummitLive
-      :live-data="SummitConfig.data2022.LIVEDATA"
-      class-name="odd2022"
-    />
+    <ClientOnly
+      ><SummitLive
+        :live-data="SummitConfig.data2022.LIVEDATA"
+        class-name="odd2022"
+    /></ClientOnly>
     <h3 class="titleBar">{{ SummitConfig.data2022.titleBar[1] }}</h3>
     <div class="offline-panel">
       <h4 class="meetingtitle">{{ SummitConfig.data2022.offline.daytime }}</h4>
@@ -168,6 +168,74 @@ const bannerInfo = {
 </template>
 
 <style lang="scss" scoped>
+.pc {
+  display: block;
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+.mo {
+  display: none;
+  @media (max-width: 767px) {
+    display: block;
+  }
+}
+.summit-banner {
+  height: 380px;
+  position: relative;
+  .banner-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+  .inner {
+    max-width: 1504px;
+    padding: 0 44px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    .cover {
+      object-fit: cover;
+      height: 140px;
+      @media (max-width: 767px) {
+        width: inherit;
+        height: 106px;
+      }
+    }
+    .cover2 {
+      margin-top: 12px;
+      display: block;
+    }
+    .ill {
+      position: absolute;
+      right: 44px;
+      top: 50%;
+      transform: translateY(-50%);
+      @media (max-width: 767px) {
+        display: none;
+      }
+    }
+    .banner-btn {
+      margin: 16px 0 0;
+      color: #fff;
+    }
+    @media (max-width: 767px) {
+      justify-content: center;
+      text-align: center;
+    }
+  }
+  @media (max-width: 767px) {
+    height: 320px;
+  }
+}
+
 .one {
   max-width: 356px;
   display: block;

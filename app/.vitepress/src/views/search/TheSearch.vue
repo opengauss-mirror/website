@@ -11,7 +11,6 @@ import IconCancel from '~icons/app/icon-cancel.svg';
 
 import useWindowResize from '@/components/hooks/useWindowResize';
 import { addSearchBuriedData } from '@/shared/utils';
-import { fa } from 'element-plus/es/locale';
 
 const screenWidth = useWindowResize();
 const isMobile = computed(() => (screenWidth.value <= 768 ? true : false));
