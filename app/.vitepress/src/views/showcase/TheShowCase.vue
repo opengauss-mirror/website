@@ -58,6 +58,7 @@ const tagClick = (i: number) => {
 //   page: 1,
 //   pageSize: 100,
 //   lang: lang.value,
+//   type: 'userPractice',
 // });
 // function setCurrentCaseListAll() {
 //   try {
@@ -165,9 +166,9 @@ const showIndex = ref(NaN);
 function toggleAll(index: number) {
   showIndex.value = showIndex.value === index ? NaN : index;
 }
-onMounted(() => {
-  // setCurrentCaseListAll()
-});
+// onMounted(() => {
+//   setCurrentCaseListAll()
+// });
 </script>
 
 <template>

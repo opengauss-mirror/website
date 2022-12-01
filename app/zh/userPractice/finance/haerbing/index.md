@@ -4,7 +4,7 @@ category: showcase
 industry: 金融
 company: 哈尔滨银行
 summary: MogDB 助力银行保障数据安全，应对业务新挑战
-path: https://www.hrbb.com.cn/
+officialPath: https://www.hrbb.com.cn/
 detail: true
 id: Finance
 ---
@@ -34,5 +34,5 @@ id: Finance
 
 <div class=logo>
     <img src="./yunheenmo.png"/>
-    <img src="./modb.png"/>
+    <img src="./mogdb.png"/>
 </div>

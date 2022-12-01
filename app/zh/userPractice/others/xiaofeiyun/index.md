@@ -4,7 +4,7 @@ category: showcase
 industry: 其他
 company: 华为消费者云
 summary: 支撑消费者云数据库分布式云化改造
-path: https://consumer.huawei.com/cn/mobileservices/
+officialPath: https://consumer.huawei.com/cn/mobileservices/
 detail: true
 id: Others
 ---

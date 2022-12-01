@@ -4,7 +4,7 @@ category: showcase
 industry: 工业
 company: 比亚迪
 summary: 制造核心数据库，性能整体提升50%
-path: https://www.bydauto.com.cn/pc/
+officialPath: https://www.bydauto.com.cn/pc/
 detail: true
 id: Industrial
 ---

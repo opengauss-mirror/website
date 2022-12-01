@@ -4,7 +4,7 @@ category: showcase
 industry: 金融
 company: 邮政储蓄银行
 summary: 基于鲲鹏全栈构筑新核心系统率先上线，加速数字银行建设
-path: https://www.psbc.com/cn/
+officialPath: https://www.psbc.com/cn/
 detail: true
 id: Finance
 ---

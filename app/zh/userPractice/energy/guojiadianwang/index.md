@@ -4,7 +4,7 @@ category: showcase
 industry: 能源
 company: 国家电网
 summary: 满足生产系统数据库高可用要求，降低监控成本和投入
-path: http://www.sx.sgcc.com.cn/sgcc/index.html
+officialPath: http://www.sx.sgcc.com.cn/sgcc/index.html
 detail: true
 id: Energy
 ---

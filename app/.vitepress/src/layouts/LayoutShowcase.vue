@@ -17,7 +17,6 @@ const caseInfo = {
 <template>
   <div class="layout">
     <BannerLevel2
-      v-if="frontmatter.banner"
       :background-image="banner"
       :title="frontmatter.title"
       :subtitle="frontmatter.summary"
@@ -111,7 +110,7 @@ const caseInfo = {
       &:nth-of-type(2) {
         position: relative;
         padding-left: var(--o-spacing-h8);
-        border-left: 2px solid var(--o-color-text1);
+        border-left: 3px solid var(--o-color-text1);
         @media (max-width: 448px) {
           border-left: none;
         }
