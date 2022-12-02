@@ -3,7 +3,7 @@ import { ref, computed, onMounted } from 'vue';
 import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';
 import useWindowScroll from '@/components/hooks/useWindowScroll';
-// import { getUserCaseData } from '@/api/api-showcase';
+import { getUserCaseData } from '@/api/api-showcase';
 
 import ShowCaseData from '@/data/showcase';
 import useWindowResize from '@/components/hooks/useWindowResize';
@@ -11,6 +11,7 @@ import useWindowResize from '@/components/hooks/useWindowResize';
 import TagFilter from '@/components/TagFilter.vue';
 import BannerLevel2 from '@/components/BannerLevel2.vue';
 import AppPaginationMo from '@/components/AppPaginationMo.vue';
+import NotFound from '@/NotFound.vue';
 
 import Banner from '@/assets/banner/banner-secondary.png';
 import CardBg from '@/assets/category/showcase/bg.png';
@@ -35,52 +36,65 @@ const screenWidth = useWindowResize();
 const isZh = computed(() => (lang.value === 'zh' ? true : false));
 
 // 接收所有案例
-const CaseListAll: any = ref(ShowCaseData.DATA || []);
-
+const CaseListAll: any = ref([]);
+// 接收当前分类的所有案例
+const currentCaseListAll: any = ref([]);
 // 当前显示的案例
 const currentCaseList = computed(() => {
-  if (CaseListAll.value.length > pageSize.value) {
-    return CaseListAll.value.slice(
+  if (currentCaseListAll.value.length > pageSize.value) {
+    return currentCaseListAll.value.slice(
       (currentPage.value - 1) * pageSize.value,
       currentPage.value * pageSize.value
     );
   } else {
-    return CaseListAll.value;
+    return currentCaseListAll.value;
   }
 });
-
-const tagClick = (i: number) => {
+const currentTag = ref('');
+const tagClick = (i: number, tag: string) => {
   activeIndex.value = i;
+  currentTag.value = tag;
+  currentPage.value = 1;
   filterCase();
 };
 // 设置当前tag的所有案例
-// const data = ref({
-//   page: 1,
-//   pageSize: 100,
-//   lang: lang.value,
-//   type: 'userPractice',
-// });
-// function setCurrentCaseListAll() {
-//   try {
-//     getUserCaseData(data.value).then((res: any) => {
-//       console.log(res);
-//     });
-//   } catch (error: any) {
-//     throw Error(error);
-//   }
-// }
-function filterCase() {
-  if (activeIndex.value === 0) {
-    CaseListAll.value = ShowCaseData.DATA;
-  } else {
-    CaseListAll.value = [];
-    ShowCaseData.CASE_LIST.filter((el: any) => {
-      if (el.ID === activeIndex.value) {
-        ShowCaseData.DATA.forEach((item: any) => {
-          if (item.id === el.TYPE_EN) {
-            CaseListAll.value.push(item);
-          }
+const data = ref({
+  page: 1,
+  pageSize: 10000,
+  lang: lang.value,
+  type: 'userPractice',
+});
+function setCurrentCaseListAll() {
+  try {
+    getUserCaseData(data.value).then((res: any) => {
+      currentCaseListAll.value = [];
+      if (res.status === 200 && res.obj.records[0]) {
+        CaseListAll.value = res.obj.records.filter((item: any) => {
+          return item.path !== 'userPractice/index';
         });
+        if (activeIndex.value === 0) {
+          currentCaseListAll.value = CaseListAll.value;
+        } else {
+          CaseListAll.value.forEach((item: any) => {
+            if (item.industry === currentTag.value) {
+              currentCaseListAll.value.push(item);
+            }
+          });
+        }
+      }
+    });
+  } catch (error: any) {
+    throw Error(error);
+  }
+}
+function filterCase() {
+  currentCaseListAll.value = [];
+  if (activeIndex.value === 0) {
+    currentCaseListAll.value = CaseListAll.value;
+  } else {
+    CaseListAll.value.forEach((item: any) => {
+      if (item.industry === currentTag.value) {
+        currentCaseListAll.value.push(item);
       }
     });
   }
@@ -91,7 +105,7 @@ const showLength = computed(() => (screenWidth.value <= 1280 ? 68 : 48));
 const showList = computed(() => {
   const detailList: any = [];
   currentCaseList.value.forEach((item: any) => {
-    if (item.desc.length > showLength.value) {
+    if ((item.summary + '').length > showLength.value) {
       detailList.push(true);
     } else {
       detailList.push(false);
@@ -104,7 +118,7 @@ const currentPage = ref(1);
 const pageSize = ref(12);
 // 数据总条数
 const total = computed(() => {
-  return CaseListAll.value.length;
+  return currentCaseListAll.value.length;
 });
 // 分页器总页数
 const totalPage = computed(() => {
@@ -154,11 +168,39 @@ const imgUrl = computed(() => (id: string) => {
       break;
   }
 });
-
-const jump = (url: string) => {
-  window.open(url, '_blank');
+// 跳案例官网或者详情（type:1跳官网，2跳详情）
+const jump = (url: string, type: number) => {
+  type === 1
+    ? window.open(url, '_blank')
+    : window.open(`/${lang.value}/${url.replace('index', '')}`, '_blank');
 };
-
+// 搜索功能
+// 搜索关键词
+const keyWord = ref('');
+// 搜索接口传递参数
+const searchData = computed(() => {
+  return {
+    keyword: keyWord.value,
+    page: 1,
+    pageSize: 10000,
+    lang: lang.value,
+    type: 'userPractice',
+  };
+});
+function searchCase() {
+  activeIndex.value = 0;
+  currentTag.value = userCaseData.value.all;
+  if (keyWord.value) {
+    getUserCaseData(searchData.value).then((res) => {
+      if (res.status === 200 && res.obj.records) {
+        CaseListAll.value = res.obj.records;
+      }
+      currentCaseListAll.value = CaseListAll.value;
+    });
+  } else {
+    setCurrentCaseListAll();
+  }
+}
 // 根据滚动位置移动端tag吸顶
 const scrollTop = useWindowScroll();
 const isTopNavMo = computed(() => (scrollTop.value > 156 ? true : false));
@@ -166,9 +208,23 @@ const showIndex = ref(NaN);
 function toggleAll(index: number) {
   showIndex.value = showIndex.value === index ? NaN : index;
 }
-// onMounted(() => {
-//   setCurrentCaseListAll()
-// });
+// 根据跳转时url携带的参数显示筛选内容
+function getUrlParam() {
+  const industry: any = decodeURI(window.location.href.split('=')[1]);
+  if (industry === 'undefined') {
+    activeIndex.value = 0;
+    currentTag.value = userCaseData.value.all;
+  } else {
+    activeIndex.value = industry * 1;
+    currentTag.value = isZh.value
+      ? ShowCaseData.CASE_LIST[activeIndex.value - 1].TYPE
+      : ShowCaseData.CASE_LIST[activeIndex.value - 1].TYPE_EN;
+  }
+}
+onMounted(() => {
+  getUrlParam();
+  setCurrentCaseListAll();
+});
 </script>
 
 <template>
@@ -178,12 +234,18 @@ function toggleAll(index: number) {
     :illustration="illustration"
   />
   <div class="user-case">
+    <OSearch
+      v-model="keyWord"
+      class="search"
+      :placeholder="userCaseData.placeHolder"
+      @change="searchCase"
+    ></OSearch>
     <div class="tag-box" :class="isTopNavMo ? 'tag-top' : ''">
       <TagFilter :label="userCaseData.type" class="tag-pc">
         <OTag
           :type="activeIndex === 0 ? 'primary' : 'text'"
           checkable
-          @click="tagClick(0)"
+          @click="tagClick(0, i18n.common.ALL)"
         >
           {{ i18n.common.ALL }}
         </OTag>
@@ -192,7 +254,7 @@ function toggleAll(index: number) {
           :key="item.ID"
           checkable
           :type="activeIndex === item.ID ? 'primary' : 'text'"
-          @click="tagClick(item.ID)"
+          @click="tagClick(item.ID, isZh ? item.TYPE : item.TYPE_EN)"
         >
           {{ isZh ? item.TYPE : item.TYPE_EN }}
         </OTag>
@@ -200,7 +262,7 @@ function toggleAll(index: number) {
       <TagFilter class="tag-h5">
         <OTag
           :type="activeIndex === 0 ? 'primary' : 'text'"
-          @click="tagClick(0)"
+          @click="tagClick(0, i18n.common.ALL)"
         >
           {{ i18n.common.ALL }}
         </OTag>
@@ -209,27 +271,28 @@ function toggleAll(index: number) {
           :key="item.ID"
           checkable
           :type="activeIndex === item.ID ? 'primary' : 'text'"
-          @click="tagClick(item.ID)"
+          @click="tagClick(item.ID, isZh ? item.TYPE : item.TYPE_EN)"
         >
           {{ isZh ? item.TYPE : item.TYPE_EN }}
         </OTag>
       </TagFilter>
     </div>
     <p class="case-number">
-      {{ userCaseData.find1 }}{{ CaseListAll.length }}{{ userCaseData.find2 }}
+      {{ userCaseData.find1 }}{{ currentCaseListAll.length
+      }}{{ userCaseData.find2 }}
     </p>
     <div class="case-list">
       <OCard
         v-for="(item, index) in currentCaseList"
-        :key="item.path"
+        :key="item.officialpath"
         shadow="hover"
         class="case-card"
         :style="`background:url(${CardBg}) no-repeat center/cover`"
       >
         <div class="case-card-box">
-          <h4>{{ item.name }}</h4>
+          <h4>{{ item.company }}</h4>
           <p class="detail" :class="showIndex === index ? 'all' : ''">
-            {{ item.desc }}
+            {{ item.summary }}
             <OIcon
               v-if="showList[index]"
               :class="showIndex === index ? 'show' : ''"
@@ -242,7 +305,7 @@ function toggleAll(index: number) {
             animation
             size="mini"
             class="website-btn"
-            @click="jump(item.path)"
+            @click="jump(item.officialpath, 1)"
           >
             {{ userCaseData.button }}
             <template #suffixIcon>
@@ -250,11 +313,11 @@ function toggleAll(index: number) {
             </template>
           </OButton>
           <OButton
-            v-if="item.more"
+            v-if="item.detail"
             animation
             size="mini"
             class="more-btn"
-            @click="jump(item.morePath)"
+            @click="jump(item.path, 2)"
           >
             {{ userCaseData.buttonMore }}
             <template #suffixIcon>
@@ -264,10 +327,11 @@ function toggleAll(index: number) {
         </div>
         <div class="card-type-img">
           <img :src="imgUrl(item.id)" :alt="`${item.id}Icon`" />
-          <p class="type">{{ isZh ? item.type : item.id }}</p>
+          <p class="type">{{ item.industry }}</p>
         </div>
       </OCard>
     </div>
+    <NotFound v-if="total === 0" />
     <div v-if="isShow" class="page-box">
       <ClientOnly>
         <OPagination
@@ -316,6 +380,7 @@ $color: #fff;
   }
   .tag-top {
     @media (max-width: 768px) {
+      width: 100%;
       position: fixed;
       top: 47px;
       left: 0;
@@ -324,7 +389,7 @@ $color: #fff;
   }
 }
 .tag-box {
-  margin: 0 0 var(--o-spacing-h4);
+  margin: var(--o-spacing-h4) 0 var(--o-spacing-h4);
   :deep(.el-card__body) {
     padding-top: 0;
     padding-bottom: 0;

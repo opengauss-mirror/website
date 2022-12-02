@@ -27,8 +27,6 @@ import industrialDark from '@/assets/category/showcase/industrial-dark.svg';
 import industrialActive from '@/assets/category/showcase/industrial-light-active.svg';
 import industrialActiveDark from '@/assets/category/showcase/industrial-dark-active.svg';
 
-import data from './data';
-
 export default {
   CASE_LIST: [
     {
@@ -95,5 +93,4 @@ export default {
       ACTIVE_DARK_URL: otherActiveDark,
     },
   ],
-  DATA: data,
 };
