@@ -66,6 +66,12 @@ list.value = initList();
       <h3 class="brand-title">{{ i18n.brand.MOBILETITLE }}</h3>
       <div class="brand-word">
         {{ i18n.brand.WORDS }}
+        <p>
+          {{ i18n.brand.WORDS1[0]
+          }}<a :href="i18n.brand.WORDS1[2]" download>{{
+            i18n.brand.WORDS1[1]
+          }}</a>
+        </p>
       </div>
     </div>
     <div class="brand-list">
@@ -150,6 +156,8 @@ list.value = initList();
     color: var(--o-color-text1);
     line-height: var(--o-line-height-h3);
     width: 100%;
+    font-weight: 300;
+    text-align: center;
     @media (max-width: 768px) {
       font-size: var(--o-font-size-h8);
       line-height: var(--o-line-height-h8);
@@ -161,6 +169,7 @@ list.value = initList();
     color: var(--o-color-text1);
     line-height: var(--o-line-height-text);
     margin-top: var(--o-spacing-h4);
+    font-weight: 300;
     @media (max-width: 768px) {
       font-size: var(--o-font-size-tip);
       line-height: var(--o-line-height-tip);
@@ -229,6 +238,8 @@ list.value = initList();
       color: var(--o-color-text1);
       line-height: var(--o-line-height-h3);
       width: 100%;
+      font-weight: 300;
+      text-align: center;
       @media (max-width: 768px) {
         font-size: var(--o-font-size-h8);
         line-height: var(--o-line-height-h8);
