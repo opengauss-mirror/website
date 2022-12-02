@@ -4,6 +4,7 @@ import { useData } from 'vitepress';
 import { useCommon } from '@/stores/common';
 import IconArrowRight from '~icons/app/icon-arrow-right.svg';
 import ShowCaseData from '@/data/showcase';
+import { getUserCaseData } from '@/api/api-showcase';
 
 import { useI18n } from '@/i18n';
 
@@ -31,19 +32,28 @@ const handleChangeActiveMobile = (activeNames: any) => {
     active.value = activeNames;
   }
 };
-
-const initData = (res: any) => {
+const data = ref({
+  page: 1,
+  pageSize: 10000,
+  lang: lang.value,
+  type: 'userPractice',
+});
+const initData = () => {
   const result: any = {};
-
-  res.forEach((item: { id: string }) => {
-    if (typeof result[item.id] === 'undefined') {
-      result[item.id] = [];
-    }
-    if (result[item.id].length < 2) {
-      result[item.id].push(item);
-    }
+  getUserCaseData(data.value).then((res: any) => {
+    const CaseListAll = res.obj.records.filter((item: any) => {
+      return item.path !== 'userPractice/index';
+    });
+    CaseListAll.forEach((item: { id: string }) => {
+      if (typeof result[item.id] === 'undefined') {
+        result[item.id] = [];
+      }
+      if (result[item.id].length < 2) {
+        result[item.id].push(item);
+      }
+    });
+    caseData.value = result;
   });
-  caseData.value = result;
 };
 const imgUrl = computed(() => (item: { URL_DARK: any; URL: any }) => {
   return commonStore.theme === 'dark' ? item.URL_DARK : item.URL;
@@ -71,7 +81,7 @@ const clearCaseInterval = () => {
 };
 
 onMounted(() => {
-  ShowCaseData && initData(ShowCaseData.DATA);
+  ShowCaseData && initData();
 
   try {
     if (caseContent.value) {
@@ -136,12 +146,12 @@ onUnmounted(() => {
           <div class="user-mobile">
             <div
               v-for="user in caseData && caseData[item.TYPE_EN]"
-              :key="user.name"
+              :key="user.company"
               class="user-card"
-              @click="handleGo(user.path)"
+              @click="handleGo(user.officialpath)"
             >
-              <div class="user-title">{{ user.name }}</div>
-              <div class="user-word">{{ user.desc }}</div>
+              <div class="user-title">{{ user.company }}</div>
+              <div class="user-word">{{ user.summary }}</div>
             </div>
           </div>
         </OCollapseItem>
@@ -175,12 +185,12 @@ onUnmounted(() => {
             <a
               v-for="item2 in caseData &&
               caseData[ShowCaseData.CASE_LIST[active].TYPE_EN]"
-              :key="item2.name"
+              :key="item2.company"
               class="user-card"
-              @click="handleGo(item2.path)"
+              @click="handleGo(item2.officialpath)"
             >
-              <div class="user-title">{{ item2.name }}</div>
-              <div class="user-word">{{ item2.desc }}</div>
+              <div class="user-title">{{ item2.company }}</div>
+              <div class="user-word">{{ item2.summary }}</div>
             </a>
           </div>
         </OCard>
@@ -190,7 +200,7 @@ onUnmounted(() => {
           animation
           type="text"
           class="case-more-item"
-          @click="handleGo(`/${lang}/userPractice/`)"
+          @click="handleGo(`/${lang}/userPractice/?industry=${active + 1}`)"
         >
           {{ i18n.common.VIEW_MORE }}
           <template #suffixIcon>
