@@ -31,7 +31,7 @@ export default [
   },
   {
     name: 'userPractice',
-    lang: ['zh', 'en'],
+    lang: ['zh'],
   },
   {
     name: 'news',
