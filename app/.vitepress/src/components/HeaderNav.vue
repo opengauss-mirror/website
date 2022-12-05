@@ -67,7 +67,7 @@ const toggleSubDebounced = debounce(
 );
 
 // nav 默认选中
-const menuActiveFn = (item: any) => {
+const menuChangeActive = (item: any) => {
   return item.CLASS.some((el: string) => activeItem.value.includes(el));
 };
 </script>
@@ -79,7 +79,7 @@ const menuActiveFn = (item: any) => {
         v-for="item in navItems"
         :key="item.ID"
         :class="{
-          active: menuActiveFn(item),
+          active: menuChangeActive(item),
           hover: navActive === item.ID,
         }"
         @mouseenter="toggleSubDebounced(item)"

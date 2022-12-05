@@ -89,9 +89,9 @@ const footBg = {
 
 // 点击关闭cookies使用提示
 const { isCookieTip } = toRefs(props);
-const emit2 = defineEmits(['click-close']);
-function clickClose() {
-  emit2('click-close');
+const emits = defineEmits(['cookie-click']);
+function onCookieClick() {
+  emits('cookie-click');
 }
 </script>
 
@@ -102,7 +102,7 @@ function clickClose() {
       <div v-if="isCookieTip" class="cookie-privacy">
         <span>{{ i18n.common.COOKIE.TEXT[0] }} </span>
         <a :href="i18n.common.COOKIE.PATH">{{ i18n.common.COOKIE.TEXT[1] }}</a>
-        <OIcon class="icon" @click="clickClose"><IconCancel /></OIcon>
+        <OIcon class="icon" @click="onCookieClick"><IconCancel /></OIcon>
       </div>
       <AppContent :pc-top="0" :mobile-top="0">
         <div class="inner">
