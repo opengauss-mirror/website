@@ -389,7 +389,7 @@ $color: #fff;
   }
 }
 .tag-box {
-  margin: var(--o-spacing-h4) 0 var(--o-spacing-h4);
+  margin: var(--o-spacing-h4) 0 0;
   :deep(.el-card__body) {
     padding-top: 0;
     padding-bottom: 0;
@@ -439,12 +439,12 @@ $color: #fff;
   margin: var(--o-spacing-h2) 0 0;
 }
 .case-number {
-  margin: var(--o-spacing-h4) 0 var(--o-spacing-h2);
+  margin: var(--o-spacing-h4) 0 0;
   font-size: var(--o-font-size-tip);
   line-height: var(--o-line-height-tip);
   color: var(--o-color-text1);
   @media (max-width: 768px) {
-    margin: var(--o-spacing-h5);
+    display: none;
   }
 }
 .case-list {
@@ -549,7 +549,7 @@ $color: #fff;
   }
   @media screen and (max-width: 1280px) {
     grid-template-columns: repeat(2, 1fr);
-    margin-top: var(--o-spacing-h4);
+    margin-top: var(--o-spacing-h2);
   }
   @media screen and (max-width: 760px) {
     grid-template-columns: repeat(1, 1fr);

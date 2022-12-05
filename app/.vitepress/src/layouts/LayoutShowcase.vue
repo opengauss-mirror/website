@@ -3,15 +3,15 @@ import { useData } from 'vitepress';
 // import { useI18n } from '@/i18n';
 
 import BannerLevel2 from '@/components/BannerLevel2.vue';
-import BreadCrumbs from '@/components/BreadCrumbs.vue';
+// import BreadCrumbs from '@/components/BreadCrumbs.vue';
 
 import banner from '@/assets/banner/banner-secondary.png';
 
-const { frontmatter, lang } = useData();
-const caseInfo = {
-  link: `/${lang.value}/userPractice/`,
-  name: '用户实践',
-};
+const { frontmatter } = useData();
+// const caseInfo = {
+//   link: `/${lang.value}/userPractice/`,
+//   name: '用户实践',
+// };
 </script>
 
 <template>
@@ -21,13 +21,13 @@ const caseInfo = {
       :title="frontmatter.title"
       :subtitle="frontmatter.summary"
     />
-    <div class="bread">
+    <!-- <div class="bread">
       <BreadCrumbs
         :bread1="caseInfo.name"
         :bread2="frontmatter.title"
         :link1="caseInfo.link"
       />
-    </div>
+    </div> -->
     <Content class="markdown" />
   </div>
 </template>
@@ -37,33 +37,13 @@ const caseInfo = {
   text-align: center;
   margin-top: var(--o-spacing-h4);
   img {
-    width: 58%;
     @media screen and (max-width: 768px) {
       width: 100%;
     }
   }
 }
-
-.bread {
-  padding-top: 40px;
-  padding-left: 44px;
-  padding-right: 44px;
-  max-width: 1504px;
-  margin: 0 auto;
-  @media (max-width: 1439px) {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-  @media (max-width: 1100px) {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-  @media (max-width: 768px) {
-    padding-top: 16px;
-  }
-}
 .markdown {
-  margin: var(--o-spacing-h1) auto;
+  margin: var(--o-spacing-h2) auto var(--o-spacing-h1);
   @media (max-width: 768px) {
     margin: var(--o-spacing-h2) auto;
     box-shadow: none;
@@ -110,7 +90,7 @@ const caseInfo = {
       &:nth-of-type(2) {
         position: relative;
         padding-left: var(--o-spacing-h8);
-        border-left: 3px solid var(--o-color-text1);
+        border-left: 3px solid #1e1e1e;
         @media (max-width: 448px) {
           border-left: none;
         }
@@ -119,6 +99,11 @@ const caseInfo = {
         height: 60px;
       }
     }
+  }
+}
+:deep(.banner-level2) {
+  .wrap .banner-text {
+    max-width: 100%;
   }
 }
 </style>
