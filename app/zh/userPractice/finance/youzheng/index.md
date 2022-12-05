@@ -32,5 +32,5 @@ id: Finance
 ## 合作伙伴
 
 <div class=logo>
-    <img src="./opengauss.png"/>
+    <img src="./opengauss.svg"/>
 </div>
