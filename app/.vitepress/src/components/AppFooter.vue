@@ -4,18 +4,18 @@ import { useRouter, useData } from 'vitepress';
 import { useI18n } from '@/i18n';
 import AppContent from '@/components/AppContent.vue';
 
-import FooterLogo from '@/assets/footer/footer-logo.svg';
-import FooterBg from '@/assets/footer/footer-bg.png';
-import FooterBgMo from '@/assets/footer/footer-bg-mo.png';
+import footerLogo from '@/assets/footer/footer-logo.svg';
+import footerBg from '@/assets/footer/footer-bg.png';
+import footerBgMo from '@/assets/footer/footer-bg-mo.png';
 
 // 中文友情链接
-import LogoBilibili from '@/assets/footer/bilibili.png';
-import LogoInfoq from '@/assets/footer/infoq.png';
-import LogoZhihu from '@/assets/footer/zhihu.png';
-import LogoModb from '@/assets/footer/modb.png';
-import LogoOschina from '@/assets/footer/oschina.png';
-import LogoCsdn from '@/assets/footer/csdn.png';
-import Logo51cto from '@/assets/footer/cto.png';
+import logoBilibili from '@/assets/footer/bilibili.png';
+import logoInfoq from '@/assets/footer/infoq.png';
+import logoZhihu from '@/assets/footer/zhihu.png';
+import logoModb from '@/assets/footer/modb.png';
+import logoOschina from '@/assets/footer/oschina.png';
+import logoCsdn from '@/assets/footer/csdn.png';
+import logo51cto from '@/assets/footer/cto.png';
 
 import CodeGzh from '@/assets/footer/wechat.png';
 import IconCancel from '~icons/app/icon-cancel.svg';
@@ -36,39 +36,39 @@ const footerLinks = {
   row: [
     {
       path: 'https://my.oschina.net/u/5059795',
-      logo: LogoOschina,
+      logo: logoOschina,
       id: 'oschina',
     },
     {
       path: 'https://blog.csdn.net/weixin_49727236?spm=1000.2115.3001.5343',
-      logo: LogoCsdn,
+      logo: logoCsdn,
       id: 'csdn',
     },
     {
       path: 'https://blog.51cto.com/u_15157671',
-      logo: Logo51cto,
+      logo: logo51cto,
       id: '51cto',
     },
   ],
   row1: [
     {
       path: 'https://www.modb.pro/u/429265',
-      logo: LogoModb,
+      logo: logoModb,
       id: 'modb',
     },
     {
       path: 'https://www.infoq.cn/u/opengauss/publish',
-      logo: LogoInfoq,
+      logo: logoInfoq,
       id: 'infoq',
     },
     {
       path: 'https://space.bilibili.com/543286270',
-      logo: LogoBilibili,
+      logo: logoBilibili,
       id: 'bilibili',
     },
     {
       path: 'https://www.zhihu.com/people/opengauss',
-      logo: LogoZhihu,
+      logo: logoZhihu,
       id: 'zhihu',
     },
   ],
@@ -83,8 +83,8 @@ const handleNavClick = (path: string) => {
 
 // 背景
 const footBg = {
-  pc: `url(${FooterBg})`,
-  mo: `url(${FooterBgMo})`,
+  pc: `url(${footerBg})`,
+  mo: `url(${footerBgMo})`,
 };
 
 // 点击关闭cookies使用提示
@@ -107,7 +107,7 @@ function onCookieClick() {
       <AppContent :pc-top="0" :mobile-top="0">
         <div class="inner">
           <div class="footer-logo">
-            <img class="show-pc" :src="FooterLogo" alt="" />
+            <img class="show-pc" :src="footerLogo" alt="" />
             <p>
               <a class="email" :href="'mailto:' + i18n.common.FOOTER.MAIL">
                 {{ i18n.common.FOOTER.MAIL }}
@@ -176,7 +176,6 @@ function onCookieClick() {
 $color: #fff;
 .footer {
   background: var(--o-color-greyblack1);
-
   :deep(.app-content) {
     padding-bottom: 0;
   }

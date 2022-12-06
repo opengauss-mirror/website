@@ -317,6 +317,22 @@ export default {
           LIST: data.en.GUANGZHOU,
         },
         {
+          NAME: 'GuiYang User Group',
+          ID: 'GuiYang',
+          GITEE_PATH:
+            'https://gitee.com/opengauss/openGauss-User-Group/tree/master/GuiYang',
+          EMIAL: 'usergroup@opengauss.org',
+          LIST: data.en.GUIYANG,
+        },
+        {
+          NAME: 'HeiFei User Group',
+          ID: 'HeFei',
+          GITEE_PATH:
+            'https://gitee.com/opengauss/openGauss-User-Group/tree/master/HeFei',
+          EMIAL: 'usergroup@opengauss.org',
+          LIST: data.en.HEFEI,
+        },
+        {
           other: 'Want to start a new openGauss User Group?',
           other1: ' ',
           other2: 'Please send your application to: ',
