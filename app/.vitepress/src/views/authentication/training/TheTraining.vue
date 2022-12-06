@@ -80,7 +80,7 @@ function clickRegistration(index: number) {
   if (index === 0) {
     window.open('https://enmoedu.com/');
   } else if (index === 6) {
-    router.go(`${router.route.path}search/`);
+    router.go(`${router.route.path}search.html`);
   }
 }
 function clickToggle(index: number) {

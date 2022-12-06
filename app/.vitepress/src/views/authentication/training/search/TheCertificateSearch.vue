@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { ref, computed } from 'vue';
-import AppContent from '@/components/AppContent.vue';
 import { useI18n } from '@/i18n';
+import { useCommon } from '@/stores/common';
 import { useRouter, useData } from 'vitepress';
 
 import {
@@ -12,16 +12,34 @@ import {
 
 import IconChevron from '~icons/app/icon-chevron-right.svg';
 import IconRequired from '~icons/train/icon-required.svg';
-import OInput from 'opendesign/input/OInput.vue';
 
+import notFoundImg_light from '@/assets/illustrations/404.png';
+import notFoundImg_dark from '@/assets/illustrations/404-dark.png';
+
+import OInput from 'opendesign/input/OInput.vue';
+import AppContent from '@/components/AppContent.vue';
+
+import hcia from '@/assets/category/authentication/certificate/hcia.png';
+import hcip from '@/assets/category/authentication/certificate/hcip.png';
 const i18n = useI18n();
 const { lang } = useData();
-const language = computed(() => (lang.value === 'zh' ? 'zh_CN' : 'en_US'));
+const commonStore = useCommon();
+
+const imgList: any = {
+  openGauss: hcia,
+  'openGauss-signet': hcip,
+};
+const language = computed(() =>
+  lang.value === 'zh' ? 'zh_CN' : lang.value === 'en' ? 'en_US' : 'ru_RU'
+);
+const notFoundImg = computed(() =>
+  commonStore.theme === 'light' ? notFoundImg_light : notFoundImg_dark
+);
 const router = useRouter();
 const isBreadShow = computed(() => (lang.value === 'zh' ? true : false));
 // 证书的选择控制
 const chooseList = ref([false, false]);
-// 面包屑及查询或下载显示控制
+// 查询或下载显示控制
 const isDownloadShow = ref(false);
 // 邮箱
 const emailInput = ref('');
@@ -80,10 +98,13 @@ function getCode(params: string, lang: string) {
         }
       })
       .catch((error: any) => {
+        successTip.value = false;
+        codeSuccess.value = false;
+        identification.value = '';
         throw new Error(error);
       });
   } else {
-    resultTip.value = i18n.value.authentication.emailErrorTip;
+    resultTip.value = i18n.value.authentication.certificattion.emailErrorTip;
   }
 }
 // 接收证书信息
@@ -136,62 +157,80 @@ function SendCode(identification: string, codeInput: string) {
 }
 // 面包屑点击事件
 function goBackPage() {
-  const i = router.route.path.replace('/search', '');
+  const i = router.route.path.replace('search.html', '');
   router.go(i);
 }
 // 证书点击选择事件
 function clickChoose(index: number) {
   chooseList.value[index] = !chooseList.value[index];
 }
-// 下载事件处理
+// 判断下载链接是否失效
+const disabledTip = ref('');
 function download(paString: string) {
-  downloadCard(paString, language.value).then((res) => {
-    if (res.success) {
-      function dataURLtoBlob(dataurl: any) {
-        const arr = dataurl.split(','),
-          mime = arr[0].match(/:(.*?);/)[1],
-          bstr = atob(arr[1]);
-        let n = bstr.length;
-        const u8arr = new Uint8Array(n);
-        while (n--) {
-          u8arr[n] = bstr.charCodeAt(n);
+  downloadCard(paString, language.value)
+    .then((res) => {
+      if (res.success) {
+        disabledTip.value = '';
+        function dataURLtoBlob(dataurl: any) {
+          const arr = dataurl.split(','),
+            mime = arr[0].match(/:(.*?);/)[1],
+            bstr = atob(arr[1]);
+          let n = bstr.length;
+          const u8arr = new Uint8Array(n);
+          while (n--) {
+            u8arr[n] = bstr.charCodeAt(n);
+          }
+          return new Blob([u8arr], { type: mime });
         }
-        return new Blob([u8arr], { type: mime });
+        function blobToFile(theBlob: any, fileName: any) {
+          theBlob.lastModifiedDate = new Date();
+          theBlob.name = fileName;
+          return theBlob;
+        }
+        const str = 'data:application/pdf;base64,' + res.data.data;
+        const blob = dataURLtoBlob(str);
+        const file = blobToFile(blob, 'zs');
+        const href = URL.createObjectURL(file);
+        const downloadElement = document.createElement('a');
+        downloadElement.href = href;
+        downloadElement.download = res.data.fileName;
+        document.body.appendChild(downloadElement);
+        downloadElement.click();
+        document.body.removeChild(downloadElement);
+      } else {
+        disabledTip.value = res.message;
       }
-      function blobToFile(theBlob: any, fileName: any) {
-        theBlob.lastModifiedDate = new Date();
-        theBlob.name = fileName;
-        return theBlob;
-      }
-      const str = 'data:application/pdf;base64,' + res.data.data;
-      const blob = dataURLtoBlob(str);
-      const file = blobToFile(blob, 'zs');
-      const href = URL.createObjectURL(file);
-      const downloadElement = document.createElement('a');
-      downloadElement.href = href;
-      downloadElement.download = res.data.fileName;
-      document.body.appendChild(downloadElement);
-      downloadElement.click();
-      document.body.removeChild(downloadElement);
-    } else {
-      console.log('下载错误');
-    }
-  });
+    })
+    .catch((error: any) => {
+      throw new Error(error);
+    });
 }
 // 点击下载按钮
+const showIcon = ref(false);
+const existChoose = ref(false);
 function clickDownload() {
-  if (chooseList.value[0]) {
-    download(paList.value[0]);
+  if (!showIcon.value) {
+    showIcon.value = true;
+    return;
   }
-  if (chooseList.value[1]) {
-    download(paList.value[1]);
+  existChoose.value = true;
+  chooseList.value.forEach((item, index) => {
+    if (item) {
+      download(paList.value[index]);
+      existChoose.value = false;
+    }
+  });
+  if (existChoose.value) {
+    setTimeout(() => {
+      existChoose.value = false;
+    }, 500);
   }
 }
 </script>
 
 <template>
   <AppContent>
-    <div v-if="isBreadShow" class="breadcrumb">
+    <div v-if="lang === 'zh'" class="breadcrumb">
       <p class="last-page" @click="goBackPage">
         {{ i18n.authentication.title }}
       </p>
@@ -200,9 +239,11 @@ function clickDownload() {
       ></span>
       <p class="current-page">
         <span v-if="!isDownloadShow">{{
-          i18n.authentication.verificationQuery
+          i18n.authentication.certificattion.verificationQuery
         }}</span>
-        <span v-else>{{ i18n.authentication.certificateDownload }}</span>
+        <span v-else>{{
+          i18n.authentication.certificattion.certificateDownload
+        }}</span>
       </p>
     </div>
     <div
@@ -210,7 +251,7 @@ function clickDownload() {
       class="certificate-search"
       :class="isBreadShow ? '' : 'false'"
     >
-      <h2>{{ i18n.authentication.verificationQuery }}</h2>
+      <h2>{{ i18n.authentication.certificattion.verificationQuery }}</h2>
       <div class="search-content">
         <div class="input-box">
           <div class="email-box">
@@ -218,15 +259,19 @@ function clickDownload() {
               <OIcon>
                 <IconRequired />
               </OIcon>
-              <span>{{ i18n.authentication.email }}</span>
+              <span>{{ i18n.authentication.certificattion.email }}</span>
             </div>
             <div class="right">
               <OInput
                 v-model="emailInput"
                 type="text"
-                :placeholder="i18n.authentication.placeholderEmail"
+                :placeholder="
+                  i18n.authentication.certificattion.placeholderEmail
+                "
               />
-              <p class="tip">{{ i18n.authentication.tipEmail }}</p>
+              <p class="tip">
+                {{ i18n.authentication.certificattion.tipEmail }}
+              </p>
             </div>
           </div>
           <div class="code-box">
@@ -234,27 +279,34 @@ function clickDownload() {
               <OIcon>
                 <IconRequired />
               </OIcon>
-              <span>{{ i18n.authentication.verificationCode }}</span>
+              <span>{{
+                i18n.authentication.certificattion.verificationCode
+              }}</span>
             </div>
             <div class="right">
               <OInput
                 v-model="codeInput"
                 type="text"
-                :placeholder="i18n.authentication.placeholderCode"
+                :placeholder="
+                  i18n.authentication.certificattion.placeholderCode
+                "
               />
               <p class="tip" :class="successTip ? 'success-tip' : 'error-tip'">
                 {{ resultTip }}
               </p>
-              <OButton size="small" @click="getCode(emailInput, language)">{{
-                buttonText
-              }}</OButton>
+              <OButton
+                size="small"
+                :class="codeSuccess ? 'await' : ''"
+                @click="getCode(emailInput, language)"
+                >{{ buttonText }}</OButton
+              >
             </div>
           </div>
           <div class="button-box">
             <OButton
               size="small"
               @click="SendCode(identification, codeInput)"
-              >{{ i18n.authentication.sure }}</OButton
+              >{{ i18n.authentication.certificattion.sure }}</OButton
             >
           </div>
         </div>
@@ -265,19 +317,23 @@ function clickDownload() {
       class="certificate-download"
       :class="isBreadShow ? '' : 'false'"
     >
-      <h2>{{ i18n.authentication.certificateDownload }}</h2>
-      <div class="certificate-box">
-        <div class="certificate-item-box">
+      <h2>{{ i18n.authentication.certificattion.certificateDownload }}</h2>
+      <div v-if="disabledTip === ''" class="certificate-box">
+        <div class="certificate-item-box" :class="'box-' + dataList.length">
           <div
             v-for="(item, index) in dataList"
-            :key="item.imageUrl"
+            :key="item.iconUrl"
             class="item"
-            :class="chooseList[index] ? 'checked' : ''"
-            @click="clickChoose(index)"
+            :class="{
+              checked: chooseList[index],
+              down: showIcon,
+              shakeShow: existChoose,
+            }"
+            @click="showIcon ? clickChoose(index) : ''"
           >
             <div class="choose-img"></div>
             <div class="item-img">
-              <img :src="'/' + item.imageUrl" alt="" />
+              <img :src="imgList[item.title[0]]" alt="" />
             </div>
             <div class="item-text">
               <p class="title">{{ item.title[0] }}</p>
@@ -286,8 +342,16 @@ function clickDownload() {
           </div>
         </div>
         <OButton size="small" @click="clickDownload">{{
-          i18n.authentication.certificateDownload
+          showIcon
+            ? i18n.authentication.certificattion.certificateDownload2
+            : i18n.authentication.certificattion.certificateDownload
         }}</OButton>
+      </div>
+      <div v-else class="nofound">
+        <img class="nofound-img" :src="notFoundImg" alt="404" />
+        <p class="nofound-text">
+          {{ disabledTip }}
+        </p>
       </div>
     </div>
   </AppContent>
@@ -298,8 +362,9 @@ function clickDownload() {
   color: var(--o-color-text1);
   background: var(--o-color-bg1);
   display: flex;
-  @media screen and (max-width: 768px) {
-    display: none;
+  margin-bottom: var(--o-spacing-h2);
+  @media screen and (max-width: 840px) {
+    margin-bottom: var(--o-spacing-h5);
   }
   .last-page {
     font-size: var(--o-font-size-tip);
@@ -323,7 +388,7 @@ function clickDownload() {
 }
 .certificate-search {
   margin-top: var(--o-spacing-h2);
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 840px) {
     margin-top: 0;
   }
   h2 {
@@ -332,7 +397,7 @@ function clickDownload() {
     color: var(--o-color-text1);
     text-align: center;
     font-weight: 300;
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 840px) {
       font-size: var(--o-font-size-h7);
       line-height: var(--o-line-height-h7);
     }
@@ -342,7 +407,7 @@ function clickDownload() {
     width: 100%;
     background-color: var(--o-color-bg2);
     padding: var(--o-spacing-h2) 0;
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 840px) {
       margin-top: var(--o-spacing-h7);
       padding: var(--o-spacing-h5);
       min-width: 328px;
@@ -352,12 +417,16 @@ function clickDownload() {
       margin: 0 auto;
       .email-box {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         max-width: 536px;
         .left {
           display: flex;
           align-items: center;
           width: 136px;
+          height: 38px;
+          @media screen and (max-width: 840px) {
+            height: 24px;
+          }
           @media screen and (max-width: 468px) {
             width: 90px;
           }
@@ -375,42 +444,45 @@ function clickDownload() {
           position: relative;
           max-width: 400px;
           flex-grow: 1;
-          @media screen and (max-width: 768px) {
+          @media screen and (max-width: 840px) {
             .o-input {
               height: 24px;
               font-size: var(--o-font-size-tip);
             }
           }
           @media screen and (max-width: 410px) {
-            width: 206px;
+            max-width: 223px;
           }
           .tip {
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            transform: translateY(100%);
             font-size: var(--o-font-size-tip);
             line-height: var(--o-line-height-tip);
             color: #ff8d4d;
-            @media screen and (max-width: 768px) {
-              bottom: -6px;
+            margin-top: var(--o-spacing-h8);
+            @media screen and (max-width: 840px) {
+              display: none;
             }
           }
         }
       }
       .code-box {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         max-width: 536px;
-        margin-top: 54px;
+        margin-top: 28px;
+        @media screen and (max-width: 840px) {
+          margin-top: 40px;
+        }
         .left {
           display: flex;
           align-items: center;
           width: 136px;
+          height: 38px;
+          @media screen and (max-width: 840px) {
+            height: 24px;
+          }
           @media screen and (max-width: 468px) {
             width: 90px;
           }
-
           .o-icon {
             font-size: var(--o-font-size-h5);
           }
@@ -424,7 +496,7 @@ function clickDownload() {
           position: relative;
           max-width: 400px;
           flex-grow: 1;
-          @media screen and (max-width: 768px) {
+          @media screen and (max-width: 840px) {
             padding-right: 88px;
             .o-input {
               height: 24px;
@@ -445,7 +517,7 @@ function clickDownload() {
             font-size: var(--o-font-size-tip);
             line-height: var(--o-line-height-tip);
             color: #ff8d4d;
-            @media screen and (max-width: 768px) {
+            @media screen and (max-width: 840px) {
               bottom: -6px;
             }
           }
@@ -460,14 +532,14 @@ function clickDownload() {
             right: -24px;
             top: 0;
             transform: translateX(100%);
-            padding-top: 7px;
-            padding-bottom: 7px;
+            height: 38px !important;
             white-space: nowrap;
             height: 100%;
             padding-left: 16px;
             padding-right: 16px;
             justify-content: center;
-            @media screen and (max-width: 768px) {
+            @media screen and (max-width: 840px) {
+              height: 24px !important;
               right: 0px;
               transform: none;
               background-color: var(--o-color-brand1);
@@ -475,20 +547,25 @@ function clickDownload() {
               font-size: var(--o-font-size-tip);
             }
           }
+          .await {
+            cursor: not-allowed;
+            border: 1px solid var(--o-color-text3);
+            color: var(--o-color-text3);
+          }
         }
       }
       .button-box {
         max-width: 536px;
         margin-top: var(--o-spacing-h2);
         text-align: center;
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 840px) {
           margin-top: var(--o-spacing-h2);
         }
         .o-button {
           padding-top: 7px;
           padding-bottom: 7px;
           height: 36px;
-          @media screen and (max-width: 768px) {
+          @media screen and (max-width: 840px) {
             height: 24px;
             color: var(--o-color-white);
             background-color: var(--o-color-brand1);
@@ -501,7 +578,7 @@ function clickDownload() {
 }
 .certificate-download {
   margin-top: var(--o-spacing-h2);
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 840px) {
     margin-top: 0;
   }
   h2 {
@@ -520,7 +597,7 @@ function clickDownload() {
   .certificate-box {
     margin-top: var(--o-spacing-h2);
     background-color: var(--o-color-bg2);
-    padding: var(--o-spacing-h2) 0;
+    padding: var(--o-spacing-h2);
     text-align: center;
     @media screen and (max-width: 1100px) {
       margin-top: var(--o-spacing-h5);
@@ -549,24 +626,7 @@ function clickDownload() {
           height: 98px;
           display: flex;
         }
-        .choose-img {
-          width: 24px;
-          height: 24px;
-          background-image: url(@/assets/category/authentication/certificate/icon-unchoose.png);
-          background-repeat: no-repeat;
-          background-size: 100% 100%;
-          position: absolute;
-          left: 16px;
-          top: 16px;
-          z-index: 9;
-          @media screen and (max-width: 1100px) {
-            width: 16px;
-            height: 16px;
-            left: auto;
-            right: 8px;
-            top: 8px;
-          }
-        }
+
         .item-img {
           background-color: var(--o-color-bg4);
           padding: 14px 0 10px;
@@ -616,22 +676,112 @@ function clickDownload() {
           }
         }
       }
-      .checked {
-        border: 1px solid var(--o-color-brand1);
+      .down {
+        cursor: pointer;
         .choose-img {
-          background-image: url(@/assets/category/authentication/certificate/icon-choose.png);
+          width: 24px;
+          height: 24px;
+          background-image: url(@/assets/category/authentication/certificate/unchoose.png);
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+          position: absolute;
+          left: 16px;
+          top: 16px;
+          z-index: 9;
+          @media screen and (max-width: 1100px) {
+            width: 16px;
+            height: 16px;
+            left: auto;
+            right: 8px;
+            top: 8px;
+          }
+        }
+        &.checked {
+          border: 1px solid var(--o-color-brand1);
+          .choose-img {
+            background-image: url(@/assets/category/authentication/certificate/choose.png);
+          }
+        }
+      }
+      .shakeShow {
+        animation: shake 0.1s infinite;
+      }
+      @keyframes shake {
+        0%,
+        100% {
+          transform: translateX(5px);
+        }
+        10% {
+          transform: translateX(5px);
+        }
+        15%,
+        25%,
+        35% {
+          transform: translateX(-5px);
+        }
+        20%,
+        30%,
+        40%,
+        50% {
+          transform: translateX(-5px);
+        }
+        55%,
+        90% {
+          transform: translateX(5px);
         }
       }
     }
+    .box-1 {
+      max-width: 334px;
+      grid-template-columns: repeat(1, 1fr);
+      @media screen and (max-width: 1100px) {
+        max-width: 100%;
+      }
+    }
+    .box-3 {
+      max-width: 100%;
+      grid-template-columns: repeat(3, 1fr);
+      @media screen and (max-width: 1100px) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+    .o-button {
+      margin-top: var(--o-spacing-h2);
+      @media screen and (max-width: 1100px) {
+        font-size: var(--o-font-size-tip);
+        height: 24px;
+        line-height: 24px;
+        background-color: var(--o-color-brand1);
+        color: var(--o-color-white);
+      }
+    }
   }
-  .o-button {
-    margin-top: var(--o-spacing-h2);
-    @media screen and (max-width: 1100px) {
-      font-size: var(--o-font-size-tip);
-      height: 24px;
-      line-height: 24px;
-      background-color: var(--o-color-brand1);
-      color: var(--o-color-white);
+  .nofound {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: var(--o-font-size-h6);
+    color: var(--o-color-text1);
+    padding: var(--o-spacing-h2) 0;
+    min-height: calc(100vh - 339px);
+    .nofound-text {
+      margin-top: var(--o-spacing-h5);
+      font-size: var(--o-font-size-h7);
+    }
+    .nofound-img {
+      height: 300px;
+    }
+    @media screen and (max-width: 840px) {
+      padding-top: var(--o-spacing-h2);
+      font-size: var(--o-font-size-text);
+      .nofound-img {
+        max-height: 232px;
+      }
+      .nofound-text {
+        margin-top: var(--o-spacing-h6);
+        font-size: var(--o-font-size-tip);
+      }
     }
   }
 }
