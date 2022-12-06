@@ -17,6 +17,7 @@ import yuanchunguang from '@/assets/category/member/avatar/yuanchunguang.png';
 import wanghaitao from '@/assets/category/member/avatar/wanghaitao.png';
 import zhangchun from '@/assets/category/member/avatar/zhangchun.png';
 import zhangmingxing from '@/assets/category/member/avatar/zhangmingxing.png';
+import yangziqi from '@/assets/category/member/avatar/yangziqi.png';
 
 import gengqiang from '@/assets/category/member/avatar/gengqiang.png';
 import luna from '@/assets/category/member/avatar/luna.png';
@@ -345,7 +346,45 @@ import xiaoshaocong from '@/assets/category/member/avatar/xiaoshaocong.png';
 import xiepingran from '@/assets/category/member/avatar/xiepingran.png';
 import yangweixiong from '@/assets/category/member/avatar/yangweixiong.png';
 import yangzihao from '@/assets/category/member/avatar/yangzihao.png';
-import yangziqi from '@/assets/category/member/avatar/yangziqi.png';
+
+import liuhong from '@/assets/category/member/avatar/liuhong.png';
+import lushuangquan from '@/assets/category/member/avatar/lushuangquan.png';
+import qushengnan from '@/assets/category/member/avatar/qushengnan.png';
+import renlinhu from '@/assets/category/member/avatar/renlinhu.png';
+import wangbei from '@/assets/category/member/avatar/wangbei.png';
+import wuzuoxin from '@/assets/category/member/avatar/wuzuoxin.png';
+import yanshuli from '@/assets/category/member/avatar/yanshuli.png';
+import zongsifeng from '@/assets/category/member/avatar/zongsifeng.png';
+import hanhao from '@/assets/category/member/avatar/hanhao.png';
+
+import caihengheng from '@/assets/category/member/avatar/caihengheng.png';
+import chengqiguo from '@/assets/category/member/avatar/chengqiguo.png';
+import daimingming from '@/assets/category/member/avatar/daimingming.png';
+import dongyajun from '@/assets/category/member/avatar/dongyajun.png';
+import fangzheng from '@/assets/category/member/avatar/fangzheng.png';
+import hongguangyu from '@/assets/category/member/avatar/hongguangyu.png';
+import huangdongping from '@/assets/category/member/avatar/huangdongping.png';
+import huangpeng from '@/assets/category/member/avatar/huangpeng.png';
+import hupeng from '@/assets/category/member/avatar/hupeng.png';
+import jinguojun from '@/assets/category/member/avatar/jinguojun.png';
+import limengjia from '@/assets/category/member/avatar/limengjia.png';
+import lizhi from '@/assets/category/member/avatar/lizhi.png';
+import maozhaoxin from '@/assets/category/member/avatar/maozhaoxin.png';
+import rongshiyuan from '@/assets/category/member/avatar/rongshiyuan.png';
+import suchanghe from '@/assets/category/member/avatar/suchanghe.png';
+import sunwei from '@/assets/category/member/avatar/sunwei.png';
+import tiandajun from '@/assets/category/member/avatar/tiandajun.png';
+import wangfan from '@/assets/category/member/avatar/wangfan.png';
+import wangmaofa from '@/assets/category/member/avatar/wangmaofa.png';
+import wangtong from '@/assets/category/member/avatar/wangtong.png';
+import xiewei from '@/assets/category/member/avatar/xiewei.png';
+import xuchengyu from '@/assets/category/member/avatar/xuchengyu.png';
+import xushicheng from '@/assets/category/member/avatar/xushicheng.png';
+import zengxiangbo from '@/assets/category/member/avatar/zengxiangbo.png';
+import zhanghuamin from '@/assets/category/member/avatar/zhanghuamin.png';
+import zhangtao from '@/assets/category/member/avatar/zhangtao.png';
+import zhengchonghang from '@/assets/category/member/avatar/zhengchonghang.png';
+import zhuli from '@/assets/category/member/avatar/zhuli.png';
 
 export default {
   zh: {
@@ -3402,6 +3441,269 @@ export default {
         email: 'yangzihao@ncti-gba.cn',
       },
     ],
+    GUIYANG: [
+      {
+        img: qushengnan,
+        name: '曲胜男',
+        title: 'Organizer',
+        company: '贵州省鲲鹏生态创新中心',
+        email: 'qsnqushengnan@163.com',
+      },
+      {
+        img: lushuangquan,
+        name: '陆双全',
+        title: 'Ambassador',
+        company: '个人开发者',
+        email: '632030286@qq.com',
+      },
+      {
+        img: yanshuli,
+        name: '阎书利',
+        title: 'Ambassador',
+        company: '云和恩墨',
+        email: 'shuli.yan@enmotech.com',
+      },
+      {
+        img: hanhao,
+        name: '韩浩',
+        title: 'Ambassador',
+        company: '海颐软件',
+        email: '2477059816@qq.com',
+      },
+      {
+        img: wuzuoxin,
+        name: ' 吴作鑫',
+        title: 'Member',
+        company: '北京希益丰技术',
+        email: '821257771@qq.com',
+      },
+      {
+        img: renlinhu,
+        name: '任林虎',
+        title: 'Member',
+        company: '贵州黔源电力股份有限公司',
+        email: '138991719@qq.com',
+      },
+      {
+        img: zongsifeng,
+        name: '宗思锋',
+        title: 'Member',
+        company: '百色学院',
+        email: 'zongsifeng@qq.com',
+      },
+      {
+        img: wangbei,
+        name: '王贝',
+        title: 'Member',
+        company: '云和恩墨',
+        email: '2809411090@qq.com',
+      },
+      {
+        img: liuhong,
+        name: '刘洪',
+        title: 'Member',
+        company: '云和恩墨',
+        email: 'liuhonggyu@126.com',
+      },
+    ],
+    HEFEI: [
+      {
+        img: daimingming,
+        name: '戴明明',
+        title: 'Organizer',
+        company: '科大讯飞股份有限公司',
+        email: 'databbase@ustc.edu',
+      },
+      {
+        img: suchanghe,
+        name: '苏昌和',
+        title: 'Ambassador',
+        company: '个人开发者',
+        email: 'suchanghe@126.com',
+      },
+      {
+        img: zhengchonghang,
+        name: '郑重珩',
+        title: 'Ambassador',
+        company: '安徽明生恒卓科技发展有限公司',
+        email: 'zhengzh_1106@163.com',
+      },
+      {
+        img: huangdongping,
+        name: '黄东平',
+        title: 'Member',
+        company: '中科美络科技股份有限公司',
+        email: 'hellohdp@qq.com',
+      },
+      {
+        img: rongshiyuan,
+        name: '荣世源',
+        title: 'Member',
+        company: '和信科技',
+        email: 'rongshiyuan@163.com',
+      },
+      {
+        img: hupeng,
+        name: '胡鹏',
+        title: 'Member',
+        company: '安徽省农村信用社联合社',
+        email: 'bankhp@163.com',
+      },
+      {
+        img: lizhi,
+        name: '李治',
+        title: 'Member',
+        company: '科大讯飞股份有限公司',
+        email: '719646092@qq.com',
+      },
+      {
+        img: fangzheng,
+        name: '方正',
+        title: 'Member',
+        company: '中科美络科技股份有限公司',
+        email: '891078458@qq.com',
+      },
+      {
+        img: zhanghuamin,
+        name: '张化敏',
+        title: 'Member',
+        company: '卫宁健康科技集团股份有限公司',
+        email: 'chinaitpmp@163.com',
+      },
+      {
+        img: wangtong,
+        name: '王通',
+        title: 'Member',
+        company: '安徽交控信息产业有限公司',
+        email: 'wangtongdba@163.com',
+      },
+      {
+        img: zengxiangbo,
+        name: '曾祥波',
+        title: 'Member',
+        company: '北京中电普华信息技术有限公司',
+        email: 'zengxiangbo@126.com',
+      },
+      {
+        img: maozhaoxin,
+        name: '毛兆欣',
+        title: 'Member',
+        company: '合肥智能语音创新发展有限公司',
+        email: 'zhaoxin_mao@163.com',
+      },
+      {
+        img: tiandajun,
+        name: '田大军',
+        title: 'Member',
+        company: '个人开发者',
+        email: 'dajun539@163.com',
+      },
+      {
+        img: limengjia,
+        name: '李梦嘉',
+        title: 'Member',
+        company: '科大讯飞股份有限公司',
+        email: 'mjli6@iflytek.com',
+      },
+      {
+        img: caihengheng,
+        name: '蔡恒恒',
+        title: 'Member',
+        company: '沃趣科技',
+        email: 'caihengau@163.com',
+      },
+      {
+        img: jinguojun,
+        name: '金国俊',
+        title: 'Member',
+        company: '个人开发者',
+        email: 'jgjun@sina.com',
+      },
+      {
+        img: sunwei,
+        name: '孙伟',
+        title: 'Member',
+        company: '安徽晶奇网络科技有限公司',
+        email: '15201344146@163.com',
+      },
+      {
+        img: xiewei,
+        name: '谢伟',
+        title: 'Member',
+        company: '科大国创软件股份有限公司',
+        email: '2440124013@qq.com',
+      },
+      {
+        img: dongyajun,
+        name: '董亚军',
+        title: 'Member',
+        company: '个人开发者',
+        email: '344077676@qq.com',
+      },
+      {
+        img: wangmaofa,
+        name: '汪茂法',
+        title: 'Member',
+        company: '个人开发者',
+        email: '1055338194@qq.com',
+      },
+      {
+        img: xuchengyu,
+        name: '徐澄宇',
+        title: 'Member',
+        company: '中通服和信科技有限公司',
+        email: '1135082184@qq.com',
+      },
+      {
+        img: chengqiguo,
+        name: '程起国',
+        title: 'Member',
+        company: '个人开发者',
+        email: '15395112123@189.cn',
+      },
+      {
+        img: hongguangyu,
+        name: '洪光玉',
+        title: 'Member',
+        company: '个人开发者',
+        email: '116343798@qq.com',
+      },
+      {
+        img: wangfan,
+        name: '王凡',
+        title: 'Member',
+        company: '个人开发者',
+        email: '1543307372@qq.com',
+      },
+      {
+        img: xushicheng,
+        name: '许世成',
+        title: 'Member',
+        company: '合肥维信诺科技有限公司',
+        email: 'scxu98@qq.com',
+      },
+      {
+        img: zhangtao,
+        name: '张涛',
+        title: 'Member',
+        company: '个人开发者',
+        email: '815383166@qq.com',
+      },
+      {
+        img: zhuli,
+        name: '朱丽',
+        title: 'Member',
+        company: '个人开发者',
+        email: 'zhuli87@foxmail.com',
+      },
+      {
+        img: huangpeng,
+        name: '黄鹏',
+        title: 'Member',
+        company: '安徽赛福贝特信息技术有限公司',
+        email: '806844529@qq.com',
+      },
+    ],
   },
   en: {
     BOARD: [
@@ -6448,6 +6750,269 @@ export default {
         title: 'Member',
         company: 'NCTI-ISDC',
         email: 'yangzihao@ncti-gba.cn',
+      },
+    ],
+    GUIYANG: [
+      {
+        img: qushengnan,
+        name: 'Shengnan Qu',
+        title: 'Organizer',
+        company: 'GuiZhou Kunpeng Eco-Innovation Center',
+        email: 'qsnqushengnan@163.com',
+      },
+      {
+        img: lushuangquan,
+        name: 'Shuangquan Lu',
+        title: 'Ambassador',
+        company: 'individual developer',
+        email: '632030286@qq.com',
+      },
+      {
+        img: yanshuli,
+        name: 'Shuli Yan',
+        title: 'Ambassador',
+        company: 'ENMOTECH',
+        email: 'shuli.yan@enmotech.com',
+      },
+      {
+        img: hanhao,
+        name: 'Hao Han',
+        title: 'Ambassador',
+        company: 'HAIYI SOFTWARE',
+        email: '2477059816@qq.com',
+      },
+      {
+        img: wuzuoxin,
+        name: ' Zuoxin Wu',
+        title: 'Member',
+        company: 'SIEFENG',
+        email: '821257771@qq.com',
+      },
+      {
+        img: renlinhu,
+        name: 'Linhu Ren',
+        title: 'Member',
+        company: 'GUIZHOU QIANYUAN POWER CO.LTD',
+        email: '138991719@qq.com',
+      },
+      {
+        img: zongsifeng,
+        name: 'Sifeng Zong',
+        title: 'Member',
+        company: 'Baise University',
+        email: 'zongsifeng@qq.com',
+      },
+      {
+        img: wangbei,
+        name: 'Bei Wang',
+        title: 'Member',
+        company: 'ENMOTECH',
+        email: '2809411090@qq.com',
+      },
+      {
+        img: liuhong,
+        name: 'Hong Liu',
+        title: 'Member',
+        company: 'ENMOTECH',
+        email: 'liuhonggyu@126.com',
+      },
+    ],
+    HEFEI: [
+      {
+        img: daimingming,
+        name: 'Mingming ',
+        title: 'Organizer',
+        company: 'iFLYTEK CO.LTD.',
+        email: 'databbase@ustc.edu',
+      },
+      {
+        img: suchanghe,
+        name: 'Changhe Su',
+        title: 'Ambassador',
+        company: 'individual developer',
+        email: 'suchanghe@126.com',
+      },
+      {
+        img: zhengchonghang,
+        name: 'Chonghang Zheng',
+        title: 'Ambassador',
+        company: 'Anhui Mingsheng Hengzhuo Technology Co.LTD.',
+        email: 'zhengzh_1106@163.com',
+      },
+      {
+        img: huangdongping,
+        name: 'Dongping Huang',
+        title: 'Member',
+        company: 'ZHONG KE MEI LUO',
+        email: 'hellohdp@qq.com',
+      },
+      {
+        img: rongshiyuan,
+        name: 'Shiyuan Rong',
+        title: 'Member',
+        company: 'Anhui Hexin Technology Development Co., Ltd',
+        email: 'rongshiyuan@163.com',
+      },
+      {
+        img: hupeng,
+        name: 'Peng Hu',
+        title: 'Member',
+        company: 'ANHUI RURAL CREDIT UNION',
+        email: 'bankhp@163.com',
+      },
+      {
+        img: lizhi,
+        name: 'Zhi Li',
+        title: 'Member',
+        company: 'iFLYTEK CO.LTD.',
+        email: '719646092@qq.com',
+      },
+      {
+        img: fangzheng,
+        name: 'Zheng Fang',
+        title: 'Member',
+        company: 'ZHONG KE MEI LUO',
+        email: '891078458@qq.com',
+      },
+      {
+        img: zhanghuamin,
+        name: 'Huamin Zhang',
+        title: 'Member',
+        company: 'Winning Health Technology Group Co.,Ltd.',
+        email: 'chinaitpmp@163.com',
+      },
+      {
+        img: wangtong,
+        name: 'Tong Wang',
+        title: 'Member',
+        company: 'ANHUI JIAOKONG INFORMATION INDUSTRY CO., LTD',
+        email: 'wangtongdba@163.com',
+      },
+      {
+        img: zengxiangbo,
+        name: 'Xiangbo Zeng',
+        title: 'Member',
+        company: 'BEIJING CHINA POWER INFORMATION TECHNOLOGY CO. Ltd.',
+        email: 'zengxiangbo@126.com',
+      },
+      {
+        img: maozhaoxin,
+        name: 'Zhaoxin Mao',
+        title: 'Member',
+        company: 'Hefei Intelligent Voice Innovation Development Co., Ltd',
+        email: 'zhaoxin_mao@163.com',
+      },
+      {
+        img: tiandajun,
+        name: 'Dajun Tian',
+        title: 'Member',
+        company: 'individual developer',
+        email: 'dajun539@163.com',
+      },
+      {
+        img: limengjia,
+        name: 'Mengjia Li',
+        title: 'Member',
+        company: 'iFLYTEK CO.LTD.',
+        email: 'mjli6@iflytek.com',
+      },
+      {
+        img: caihengheng,
+        name: 'Hengheng Cai',
+        title: 'Member',
+        company: 'Hangzhou WOQU Technology Co.,Ltd.',
+        email: 'caihengau@163.com',
+      },
+      {
+        img: jinguojun,
+        name: 'Guojun Jin',
+        title: 'Member',
+        company: 'individual developer',
+        email: 'jgjun@sina.com',
+      },
+      {
+        img: sunwei,
+        name: 'Wei Sun',
+        title: 'Member',
+        company: 'JINGQI NETWORK',
+        email: '15201344146@163.com',
+      },
+      {
+        img: xiewei,
+        name: 'Wei Xie',
+        title: 'Member',
+        company: 'kdgcsoft',
+        email: '2440124013@qq.com',
+      },
+      {
+        img: dongyajun,
+        name: 'Yajun Dong',
+        title: 'Member',
+        company: 'individual developer',
+        email: '344077676@qq.com',
+      },
+      {
+        img: wangmaofa,
+        name: 'Maofa Wang',
+        title: 'Member',
+        company: 'individual developer',
+        email: '1055338194@qq.com',
+      },
+      {
+        img: xuchengyu,
+        name: 'Chengyu Xu',
+        title: 'Member',
+        company: 'Anhui Hexin Technology Development Co., Ltd',
+        email: '1135082184@qq.com',
+      },
+      {
+        img: chengqiguo,
+        name: 'Qiguo Cheng',
+        title: 'Member',
+        company: 'individual developer',
+        email: '15395112123@189.cn',
+      },
+      {
+        img: hongguangyu,
+        name: 'Guangyu Hong',
+        title: 'Member',
+        company: 'individual developer',
+        email: '116343798@qq.com',
+      },
+      {
+        img: wangfan,
+        name: 'Fan Wang',
+        title: 'Member',
+        company: 'individual developer',
+        email: '1543307372@qq.com',
+      },
+      {
+        img: xushicheng,
+        name: 'Shicheng Xu',
+        title: 'Member',
+        company: 'Hefei Visionox Technology Co., Ltd.',
+        email: 'scxu98@qq.com',
+      },
+      {
+        img: zhangtao,
+        name: 'Tao Zhang',
+        title: 'Member',
+        company: 'individual developer',
+        email: '815383166@qq.com',
+      },
+      {
+        img: zhuli,
+        name: 'Li Zhu',
+        title: 'Member',
+        company: 'individual developer',
+        email: 'zhuli87@foxmail.com',
+      },
+      {
+        img: huangpeng,
+        name: 'Peng Huang',
+        title: 'Member',
+        company: 'Anhui safebetter Information Technology Co.,Ltd',
+        email: '806844529@qq.com',
       },
     ],
   },

@@ -317,6 +317,22 @@ export default {
           LIST: data.zh.GUANGZHOU,
         },
         {
+          NAME: '贵阳用户组',
+          ID: 'GuiYang',
+          GITEE_PATH:
+            'https://gitee.com/opengauss/openGauss-User-Group/tree/master/GuiYang',
+          EMIAL: 'usergroup@opengauss.org',
+          LIST: data.zh.GUIYANG,
+        },
+        {
+          NAME: '合肥用户组',
+          ID: 'HeFei',
+          GITEE_PATH:
+            'https://gitee.com/opengauss/openGauss-User-Group/tree/master/HeFei',
+          EMIAL: 'usergroup@opengauss.org',
+          LIST: data.zh.HEFEI,
+        },
+        {
           other: '你的城市还没有用户组?',
           other1: '新的用户组等你来发起！ ',
           other2: '欢迎发送申请邮件至：',
