@@ -1,6 +1,5 @@
 export default {
   title: '培训认证',
-  certificateDownload: '证书下载',
   introtitle: '认证体系简介',
   intro1:
     '基于openGauss在中国良好的发展态势，由openGauss社区联合云和恩墨公司、中国软件行业协会培训中心共同打造openGauss培训认证体系。',
@@ -95,15 +94,6 @@ export default {
       outline: 'OGCE课程大纲:',
     },
   ],
-  verificationQuery: 'Query Certificates',
-  email: 'Email',
-  placeholderEmail: 'Your email address',
-  tipEmail:
-    'Enter the email address used for the certification exam to obtain the verification code and query your certificate.',
-  verificationCode: 'Verification Code',
-  placeholderCode: 'Enter the verification code.',
-  buttonCode: 'Send a verification code',
-  sure: 'Confirm',
   steptitle: '认证流程介绍',
   stepList: [
     {
@@ -289,7 +279,22 @@ export default {
     },
   ],
   more: '更多',
-  emailErrorTip: 'Please enter a valid email address!',
   viewMore: '查看更多',
   collapse: '向上收起',
+  certificattion: {
+    title: 'openGauss Certification',
+    download: 'Download Certificates',
+    verificationQuery: 'Query Certificates',
+    certificateDownload: 'Download Certificates',
+    certificateDownload2: 'Download Selected Certificates',
+    email: 'Email',
+    placeholderEmail: 'Your email address',
+    tipEmail:
+      'Enter the email address used for the certification exam to obtain the verification code and query your certificate.',
+    emailErrorTip: 'Please enter a valid email address！',
+    verificationCode: 'Code',
+    placeholderCode: 'Enter the verification code.',
+    buttonCode: 'Send a verification code',
+    sure: 'Confirm',
+  },
 };

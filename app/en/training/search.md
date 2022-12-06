@@ -1,5 +1,5 @@
 ---
-title: '证书下载'
+title: 'Search Certificates'
 ---
 
 <script setup lang="ts">

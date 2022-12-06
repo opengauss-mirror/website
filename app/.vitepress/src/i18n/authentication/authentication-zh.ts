@@ -1,6 +1,5 @@
 export default {
   title: '培训认证',
-  certificateDownload: '证书下载',
   introtitle: '认证体系简介',
   intro1:
     '基于openGauss在中国良好的发展态势，由openGauss社区联合云和恩墨公司、中国软件行业协会培训中心共同打造openGauss培训认证体系。',
@@ -95,14 +94,6 @@ export default {
       outline: 'OGCE课程大纲:',
     },
   ],
-  verificationQuery: '证书查询',
-  email: '邮箱',
-  placeholderEmail: '输入您绑定的邮箱',
-  tipEmail: '请输入认证考试所用的邮箱以获取验证码，查询您的证书。',
-  verificationCode: '验证码',
-  placeholderCode: '输入您获取的验证码',
-  buttonCode: '发送验证码',
-  sure: '确认',
   steptitle: '认证流程介绍',
   stepList: [
     {
@@ -226,7 +217,6 @@ export default {
   signwechat: '欢迎添加老师微信进行咨询报名',
   teacher2: '张老师',
   phone2: '18311372955',
-
   ogcacard: [
     {
       num: '01',
@@ -288,7 +278,20 @@ export default {
     },
   ],
   more: '更多',
-  emailErrorTip: '邮箱格式错误，请重新输入！',
   viewMore: '查看更多',
   collapse: '向上收起',
+  certificattion: {
+    download: '证书下载',
+    verificationQuery: '证书查询',
+    certificateDownload: '证书下载',
+    certificateDownload2: '下载选中证书',
+    email: '邮箱',
+    placeholderEmail: '输入您绑定的邮箱',
+    tipEmail: '请输入认证考试所用的邮箱以获取验证码，查询您的证书。',
+    emailErrorTip: '邮箱格式错误，请重新输入！',
+    verificationCode: '验证码',
+    placeholderCode: '输入您获取的验证码',
+    buttonCode: '发送验证码',
+    sure: '确认',
+  },
 };
