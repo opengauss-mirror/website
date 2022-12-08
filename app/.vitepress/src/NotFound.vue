@@ -16,9 +16,7 @@ const notFoundImg = computed(() =>
 <template>
   <div class="nofound">
     <img class="nofound-img" :src="notFoundImg" alt="404" />
-    <p class="nofound-text">
-      {{ lang === 'zh' ? '暂无数据' : 'NotFound !' }}
-    </p>
+    <p class="nofound-text">404 Not Found</p>
   </div>
 </template>
 
