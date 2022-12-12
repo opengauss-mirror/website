@@ -1,7 +1,7 @@
 ---
 title: 某芯片制造企业
 category: showcase
-industry: 工业
+industry:  Industrial
 company: 某芯片制造企业
 summary: 核心数据库应用，助力国产芯片稳健智造
 officialPath: https://opengauss.org/zh/

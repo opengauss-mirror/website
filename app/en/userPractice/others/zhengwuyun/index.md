@@ -1,7 +1,7 @@
 ---
 title: 某市政务云
 category: showcase
-industry: 其他
+industry:  Others
 company: 某市政务云
 summary: 数据高效处理，安全可信，打造领先的数字化政务云平台
 officialPath: https://opengauss.org/zh/

@@ -1,7 +1,7 @@
 ---
 title: 华为消费者云
 category: showcase
-industry: 其他
+industry:  Others
 company: 华为消费者云
 summary: 支撑消费者云数据库分布式云化改造
 officialPath: https://consumer.huawei.com/cn/mobileservices/

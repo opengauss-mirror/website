@@ -1,7 +1,7 @@
 ---
 title: 比亚迪
 category: showcase
-industry: 工业
+industry:  Industrial
 company: 比亚迪
 summary: 制造核心数据库，性能整体提升50%
 officialPath: https://www.bydauto.com.cn/pc/

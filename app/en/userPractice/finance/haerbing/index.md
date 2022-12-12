@@ -1,7 +1,7 @@
 ---
 title: 哈尔滨银行
 category: showcase
-industry: 金融
+industry: Finance
 company: 哈尔滨银行
 summary: MogDB 助力银行保障数据安全，应对业务新挑战
 officialPath: https://www.hrbb.com.cn/

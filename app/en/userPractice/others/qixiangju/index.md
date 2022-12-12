@@ -1,7 +1,7 @@
 ---
 title: 四川省气象局
 category: showcase
-industry: 其他
+industry:  Others
 company: 四川省气象局
 summary: 为四川气象提供稳定气象服务保障，提升气象精度
 officialPath: http://sc.cma.gov.cn/
