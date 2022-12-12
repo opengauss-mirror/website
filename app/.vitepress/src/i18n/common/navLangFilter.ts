@@ -30,8 +30,8 @@ export default [
     lang: ['zh', 'en'],
   },
   {
-    name: 'userPractice',
-    lang: ['zh'],
+    name: `userPractice`,
+    lang: ['zh', 'en'],
   },
   {
     name: 'news',

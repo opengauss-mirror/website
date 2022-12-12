@@ -1,5 +1,5 @@
 ---
-title: '用户实践'
+title: 'userPractice'
 ---
 
 <script setup lang="ts">

@@ -9,7 +9,6 @@ export default {
     buttonMore: '案例详情',
     prev: '上一页',
     next: '下一页',
-    all: '全部',
   },
   en: {
     placeHolder: 'input user case',

@@ -189,7 +189,7 @@ const searchData = computed(() => {
 });
 function searchCase() {
   activeIndex.value = 0;
-  currentTag.value = userCaseData.value.all;
+  currentTag.value = i18n.value.common.ALL;
   if (keyWord.value) {
     getUserCaseData(searchData.value).then((res) => {
       if (res.status === 200 && res.obj.records) {
@@ -213,7 +213,7 @@ function getUrlParam() {
   const industry: any = decodeURI(window.location.href.split('=')[1]);
   if (industry === 'undefined') {
     activeIndex.value = 0;
-    currentTag.value = userCaseData.value.all;
+    currentTag.value = i18n.value.common.ALL;
   } else {
     activeIndex.value = industry * 1;
     currentTag.value = isZh.value
@@ -302,24 +302,25 @@ onMounted(() => {
             </OIcon>
           </p>
           <OButton
+            v-if="item.detail"
+            animation
+            size="mini"
+            class="more-btn"
+            type="primary"
+            @click="jump(item.path, 2)"
+          >
+            {{ userCaseData.buttonMore }}
+            <template #suffixIcon>
+              <IconArrowRight class="icon-arror" />
+            </template>
+          </OButton>
+          <OButton
             animation
             size="mini"
             class="website-btn"
             @click="jump(item.officialpath, 1)"
           >
             {{ userCaseData.button }}
-            <template #suffixIcon>
-              <IconArrowRight class="icon-arror" />
-            </template>
-          </OButton>
-          <OButton
-            v-if="item.detail"
-            animation
-            size="mini"
-            class="more-btn"
-            @click="jump(item.path, 2)"
-          >
-            {{ userCaseData.buttonMore }}
             <template #suffixIcon>
               <IconArrowRight class="icon-arror" />
             </template>
@@ -537,11 +538,13 @@ $color: #fff;
     -webkit-line-clamp: initial;
     max-height: 144px;
   }
+  .more-btn {
+    margin-right: var(--o-spacing-h8);
+    margin-bottom: var(--o-spacing-h8);
+  }
   .website-btn {
     border-color: #fff;
     color: #fff;
-    margin-right: var(--o-spacing-h8);
-    margin-bottom: var(--o-spacing-h8);
   }
   .more-btn {
     border-color: #fff;

@@ -60,7 +60,7 @@ watch(
 );
 
 // cookies使用提示
-const isCookieTip = ref(true);
+const isCookieTip = ref(false);
 function handleCookieClick() {
   isCookieTip.value = false;
   localStorage.setItem('gauss-cookie', 'false');
