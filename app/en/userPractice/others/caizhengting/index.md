@@ -1,7 +1,7 @@
 ---
 title: 陕西省财政厅
 category: showcase
-industry: 其他
+industry:  Others
 company: 陕西省财政厅
 summary: 为预算管理一体化核心业务系统打造企业级分布式数据库平台
 officialPath: http://pub.cnwest.com/data/html/headwords/26.html

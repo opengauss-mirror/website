@@ -1,7 +1,7 @@
 ---
 title: 央广网
 category: showcase
-industry: 其他
+industry:  Others
 company: 央广网
 summary: 国产数据库快速平滑迁移，综合性能提升30%
 officialPath: http://www.cnr.cn/

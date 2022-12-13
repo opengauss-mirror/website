@@ -1,7 +1,7 @@
 ---
 title: 渤海财险
 category: showcase
-industry: 金融
+industry: Finance
 company: 渤海财险
 summary: 数据合规，为企业持续经营保驾护航
 officialPath: http://www.bpic.com.cn/

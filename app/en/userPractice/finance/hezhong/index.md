@@ -1,7 +1,7 @@
 ---
 title: 合众人寿
 category: showcase
-industry: 金融
+industry: Finance
 company: 合众人寿
 summary: MogDB 全方位护航公司合规工作管理平台和风险管理系统
 officialPath: https://www.unionlife.com.cn/

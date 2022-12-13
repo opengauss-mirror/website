@@ -541,12 +541,9 @@ $color: #fff;
   .more-btn {
     margin-right: var(--o-spacing-h8);
     margin-bottom: var(--o-spacing-h8);
-  }
-  .website-btn {
-    border-color: #fff;
     color: #fff;
   }
-  .more-btn {
+  .website-btn {
     border-color: #fff;
     color: #fff;
   }
