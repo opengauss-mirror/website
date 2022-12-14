@@ -75,7 +75,7 @@ const videoClickBtn = (path: string) => {
       @swiper="onSwiper"
     >
       <swiper-slide v-for="(item, index) in homeBanner" :key="item.link">
-        <a class="banner-panel" @click="jump(item)">
+        <a class="banner-panel" :class="item.className" @click="jump(item)">
           <div
             class="banner-panel-cover"
             :class="{
@@ -382,6 +382,49 @@ html[lang='zh'] {
 
     @media screen and (max-width: 767px) {
       position: static !important;
+    }
+  }
+  .ques {
+    .banner-panel-content {
+      @media screen and (max-width: 824px) {
+        justify-content: center;
+      }
+      .title {
+        color: #000;
+      }
+      .home-banner-btn {
+        border-color: var(--o-color-brand1) !important;
+        color: var(--o-color-brand1) !important;
+      }
+      .liveBanner {
+        @media screen and (max-width: 824px) {
+          margin-top: 22px;
+          display: block;
+        }
+      }
+    }
+  }
+  .summit {
+    .banner-panel-content {
+      justify-content: center;
+      .box {
+        margin-top: 230px;
+        @media screen and (max-width: 824px) {
+          margin-top: 160px;
+        }
+        .title {
+          font-size: var(--o-font-size-h3);
+          line-height: var(--o-line-height-h3);
+          @media screen and (max-width: 824px) {
+            font-size: var(--o-font-size-h5);
+            line-height: var(--o-line-height-h5);
+          }
+        }
+        .desc {
+          max-width: 100%;
+          text-align: center;
+        }
+      }
     }
   }
   @media screen and (max-width: 1430px) {

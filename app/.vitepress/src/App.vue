@@ -2,7 +2,7 @@
 import AppHeader from '@/components/AppHeader.vue';
 import AppFooter from '@/components/AppFooter.vue';
 
-import { useData, useRoute } from 'vitepress';
+import { useData, useRoute, useRouter } from 'vitepress';
 import type { Component } from 'vue';
 import { computed, watch, ref, onMounted } from 'vue';
 import { useCommon } from '@/stores/common';
@@ -17,6 +17,7 @@ import categories from '@/shared/category';
 
 import safetyImgLight from '@/assets/category/security/img/safety-img-light.png';
 import safetyImgDark from '@/assets/category/security/img/safety-img-dark.png';
+import floating from '@/assets/category/questionnaire/floating.png';
 
 const { frontmatter } = useData();
 
@@ -42,9 +43,10 @@ const isCustomLayout = computed(() => {
 const comp = computed(() => {
   return compMapping[frontmatter.value.category];
 });
-
+const router = useRouter();
 const route = useRoute();
 const isTipShow = ref(false);
+const isQuesShow = ref(true);
 watch(
   route,
   (newValue) => {
@@ -53,6 +55,21 @@ watch(
     pathList.forEach((item) => {
       if (item === newValue.path.split('/')[2]) {
         isTipShow.value = true;
+      }
+    });
+    // 控制调查页面的浮窗入口显示
+    const pathList2 = [
+      'download',
+      'training',
+      'security',
+      'security-advisories',
+      'cve',
+      'questionnaire.html',
+    ];
+    isQuesShow.value = true;
+    pathList2.forEach((item) => {
+      if (item === newValue.path.split('/')[2]) {
+        isQuesShow.value = false;
       }
     });
   },
@@ -69,6 +86,12 @@ onMounted(() => {
   const show = localStorage.getItem('gauss-cookie');
   isCookieTip.value = show ? false : true;
 });
+function clickDeatilImg() {
+  router.go('/zh/questionnaire.html');
+}
+function closeDeatilImg() {
+  isQuesShow.value = false;
+}
 </script>
 
 <template>
@@ -81,6 +104,10 @@ onMounted(() => {
       <a href="https://opengausssrc.vulbox.com/" target="_blank">
         <img :src="safetyImg" alt="" />
       </a>
+    </div>
+    <div v-if="isQuesShow" class="asider">
+      <img :src="floating" alt="扫描二维码" @click="clickDeatilImg" />
+      <div class="close" @click="closeDeatilImg"></div>
     </div>
   </main>
   <AppFooter :is-cookie-tip="isCookieTip" @cookie-click="handleCookieClick" />
@@ -118,6 +145,26 @@ main {
         height: 60px;
       }
     }
+  }
+}
+.asider {
+  position: fixed;
+  right: 1vw;
+  top: 65vh;
+  @media screen and (max-width: 1100px) {
+    display: none;
+  }
+  img {
+    height: 239px;
+    cursor: pointer;
+  }
+  .close {
+    position: absolute;
+    right: 1px;
+    top: 4px;
+    width: 22px;
+    height: 20px;
+    cursor: pointer;
   }
 }
 </style>

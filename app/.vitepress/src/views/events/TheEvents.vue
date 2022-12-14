@@ -56,6 +56,20 @@ const EVENTS_DATA = [
       '开源实习是openEuler社区、openGauss社区、openLooKeng等单位共同发起的线上实习项目，旨在鼓励在校学生积极参与开源社区，在实际的开源环境中提升实践能力。社区提供实习任务，并提供导师辅导，学生通过实习申请后，可在社区领取任务，每完成一个任务可获得相应积分，积分累计达规定量后，可获得实习证明和实习工资。',
   },
 ];
+const addActiveData = {
+  title: '2022年度openGauss社区满意度调研',
+  time: '2022/12/15-2023/1/15',
+  date: '2022-12-15',
+  category: 'events',
+  tags: '活动',
+  label: '线上',
+  location: '线上',
+  img: '/category/events/2022-12-15/banner.png',
+  path: 'questionnaire',
+  author: 'openGauss',
+  summary:
+    '填写openGauss社区满意度调研问卷，可参与抽取HUAWEI MatePad SE、华为手环7标准版等惊喜大奖！快来参与吧～',
+};
 
 // 当前导航栏
 // const activeName = ref('first');
@@ -112,6 +126,7 @@ onMounted(async () => {
         }
       }
     });
+    lang.value === 'zh' ? latestList.value.push(addActiveData) : '';
   } catch (e: any) {
     throw new Error(e);
   }
