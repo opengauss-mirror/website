@@ -155,7 +155,7 @@ main {
     display: none;
   }
   img {
-    height: 239px;
+    height: 135px;
     cursor: pointer;
   }
   .close {

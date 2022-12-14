@@ -12,7 +12,7 @@ import cap from '@/assets/category/questionnaire/cap.png';
 // import floating from '@/assets/category/questionnaire/floating.png';
 
 const data = {
-  title: '2022年度openGauss社区满意度调研',
+  title: '2022年度社区满意度调研',
 
   introduce: {
     textList: [
@@ -43,9 +43,6 @@ const data = {
     },
   ],
 };
-function clickPartBth() {
-  window.open('https://huaweicompute.wjx.cn/vm/mnDjPR2.aspx?udsid=238148');
-}
 </script>
 
 <template>
@@ -58,14 +55,14 @@ function clickPartBth() {
         </div>
         <div class="right-img">
           <img :src="data.introduce.codeImg" alt="" />
-          <OButton
-            class="join-btn"
-            size="middle"
-            animation
-            type="primary"
-            @click="clickPartBth"
-            >{{ data.introduce.btn }}</OButton
+          <a
+            href="https://huaweicompute.wjx.cn/vm/mnDjPR2.aspx?udsid=238148"
+            target="_blank"
           >
+            <OButton class="join-btn" size="mini" animation type="primary">{{
+              data.introduce.btn
+            }}</OButton>
+          </a>
         </div>
       </div>
       <div class="panel2">
@@ -149,14 +146,13 @@ function clickPartBth() {
   width: 100%;
   padding: 44px 68px;
   display: flex;
-  background: url(@/assets/category/questionnaire/bg1.png) no-repeat;
-  background-size: cover;
+  background: var(--o-color-bg2) url(@/assets/category/questionnaire/bg1.png)
+    no-repeat center/cover;
   box-shadow: var(--o-shadow-l2);
   @media screen and (max-width: 1100px) {
     padding: 24px 16px;
     display: block;
-    background: url(@/assets/category/questionnaire/bg1-mo.png) no-repeat;
-    background-size: cover;
+    background-image: url(@/assets/category/questionnaire/bg1-mo.png);
   }
   .left-text {
     margin-right: 58px;
@@ -203,8 +199,8 @@ function clickPartBth() {
   width: 100%;
   padding: var(--o-spacing-h5) 0;
   display: flex;
-  background: url(@/assets/category/questionnaire/bg2.png) no-repeat;
-  background-size: cover;
+  background: var(--o-color-bg2) url(@/assets/category/questionnaire/bg2.png)
+    no-repeat center/cover;
   justify-content: center;
   box-shadow: var(--o-shadow-l2);
   @media screen and (max-width: 1100px) {
@@ -281,6 +277,7 @@ function clickPartBth() {
   .prize-box {
     width: 100%;
     box-shadow: var(--o-shadow-l2);
+    background: var(--o-color-bg2);
     .head {
       width: 100%;
       text-align: center;
