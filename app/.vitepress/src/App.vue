@@ -151,6 +151,7 @@ main {
   position: fixed;
   right: 1vw;
   top: 65vh;
+  z-index: 99;
   @media screen and (max-width: 1100px) {
     display: none;
   }
