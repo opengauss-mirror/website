@@ -36,7 +36,7 @@ export default {
     {
       pcBanner: bannerQues,
       moBanner: bannerQues_mo,
-      link: '/zh/questionnaire.html',
+      link: '/zh/questionnaire/',
       targetTap: 1,
       title: '参与社区满意度调研，领惊喜大奖',
       desc: [''],
