@@ -64,7 +64,7 @@ watch(
       'security',
       'security-advisories',
       'cve',
-      'questionnaire.html',
+      'questionnaire',
     ];
     isQuesShow.value = true;
     pathList2.forEach((item) => {
@@ -87,7 +87,7 @@ onMounted(() => {
   isCookieTip.value = show ? false : true;
 });
 function clickDeatilImg() {
-  router.go('/zh/questionnaire.html');
+  router.go('/zh/questionnaire/');
 }
 function closeDeatilImg() {
   isQuesShow.value = false;
@@ -105,7 +105,7 @@ function closeDeatilImg() {
         <img :src="safetyImg" alt="" />
       </a>
     </div>
-    <div v-if="isQuesShow" class="asider">
+    <div v-if="isQuesShow" class="code-datail">
       <img :src="floating" alt="扫描二维码" @click="clickDeatilImg" />
       <div class="close" @click="closeDeatilImg"></div>
     </div>
@@ -147,7 +147,7 @@ main {
     }
   }
 }
-.asider {
+.code-datail {
   position: fixed;
   right: 1vw;
   top: 65vh;
