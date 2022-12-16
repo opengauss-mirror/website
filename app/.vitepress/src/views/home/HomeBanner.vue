@@ -333,7 +333,7 @@ html[lang='zh'] {
       width: 100%;
       height: 100%;
       @media screen and (max-width: 768px) {
-        background-size: 100% 100%;
+        // background-size: 100% 100%;
       }
       &.banner-pic {
         @media screen and (min-width: 1921px) {

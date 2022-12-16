@@ -4,7 +4,7 @@ import { useCommon } from '@/stores/common';
 import AppContent from '@/components/AppContent.vue';
 
 import banner from '@/assets/category/summit/summit2022/banner.jpg';
-import bannerMo from '@/assets/category/summit/summit2022/banner-mo.png';
+import bannerMo from '@/assets/category/summit/summit2022/banner-mo.jpg';
 import liveLight from '@/assets/category/summit/summit2022/live.png';
 import liveDark from '@/assets/category/summit/summit2022/live-dark.png';
 import demoPng from '@/assets/category/summit/summit2022/demo.png';
@@ -56,6 +56,86 @@ const summitData = {
         name: 'openGauss Summit 2021',
         link: '/zh/summit/summit2021/',
         target: '_blank',
+      },
+    ],
+  },
+  agenda: {
+    title: '会议日程',
+    meetingList: [
+      {
+        daytime: '12月29日 openGauss Summit 2022',
+        list: [
+          {
+            type: '上午：主论坛',
+            id: 'main',
+            children: [
+              {
+                time: '09:30 - 09:35',
+                desc: '院士致辞',
+              },
+              {
+                time: '09:35 - 09:45',
+                desc: 'openGauss社区进展主题演讲',
+              },
+              {
+                time: '09:45 - 09:50',
+                desc: 'openGauss社区理事会升级仪式',
+              },
+              {
+                time: '09:50 - 10:10',
+                desc: 'openGauss技术创新主题演讲',
+              },
+              {
+                time: '10:10 - 10:25',
+                desc: '中国移动创新实践及成果发布仪式',
+              },
+              {
+                time: '10:25 - 10:45',
+                desc: '产学研联合创新、openGauss创新孵化成果分享',
+              },
+              {
+                time: '10:45 - 11:25',
+                desc: '伙伴与用户应用实践联合演讲',
+              },
+              {
+                time: '11:25 - 11:30',
+                desc: 'openGauss社区活动发布仪式',
+              },
+            ],
+          },
+          {
+            type: '下午：分论坛',
+            id: 'other',
+            duration: '14:00 - 17:00',
+            children: [
+              {
+                id: 0,
+                name: '云和恩墨',
+                desc: 'openEuler Summit 2022',
+                children: [
+                  {
+                    time: '1',
+                    desc: '数据中心服务器以太网链路聚合与高可用',
+                    name: '胡亚弟、孙守鑫',
+                    post: '天翼云科技有限公司 胡亚弟-技术专家，孙守鑫-高级后端开发工程师',
+                    detail:
+                      '本议题讲述各种linux bonding的基本工作原理，实现。 对于多种bond模式在DC场景下进行比较，分析。同时，介绍工作中遇到的相关问题及针对问题所做的一些优化。其中优化工作分为两部分，一个是开发bond6针对ipv6报文接收方向的负载均衡功能。另一个是修复bond6的vlan子接口加入Linux bridge之后丢包的问题。最后根据bond口的应用经验，提出一些应用建议。',
+                  },
+                ],
+              },
+              {
+                id: 1,
+                name: '海量数据',
+                desc: 'openEuler Summit 2022',
+              },
+              {
+                id: 2,
+                name: '南大通用',
+                desc: 'openEuler Summit 2022',
+              },
+            ],
+          },
+        ],
       },
     ],
   },
