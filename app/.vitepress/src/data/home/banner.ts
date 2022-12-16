@@ -13,7 +13,7 @@ import banner310_mo from '@/assets/category/home/banner/opengauss3.1.0_zh_mo.png
 import bannerQues from '@/assets/category/home/banner/banner-ques.jpg';
 import bannerQues_mo from '@/assets/category/home/banner/banner-ques-mo.png';
 import bannerSummit from '@/assets/category/home/banner/banner-summit.jpg';
-import bannerSummit_mo from '@/assets/category/home/banner/banner-summit-mo.png';
+import bannerSummit_mo from '@/assets/category/home/banner/banner-summit-mo.jpg';
 
 // import bannerSafety_mo from '@/assets/category/home/banner/banner-safety-mo.png';
 
@@ -26,10 +26,10 @@ export default {
       moBanner: bannerSummit_mo,
       link: '/zh/summit/summit2022/',
       targetTap: 1,
-      title: '聚力创新向未来 释放数据生产力',
-      desc: ['openGauss Summit 2022'],
+      title: '',
+      desc: [''],
       btn: '',
-      type: 3,
+      type: 1,
       className: 'summit',
       video: '',
     },
