@@ -125,12 +125,12 @@ const summitData = {
                 name: '云和恩墨',
                 desc: 'openEuler Summit 2022',
                 children: [
-                  {
-                    time: '14:00 - 14:05',
-                    desc: '领导致辞',
-                    name: '江大勇',
-                    post: 'openGauss社区理事会理事长',
-                  },
+                  // {
+                  //   time: '14:00 - 14:05',
+                  //   desc: '领导致辞',
+                  //   name: '江大勇',
+                  //   post: 'openGauss社区理事会理事长',
+                  // },
                   {
                     time: '14:05 - 14:10',
                     desc: '领导致辞',
@@ -187,16 +187,16 @@ const summitData = {
                 name: '海量数据',
                 desc: 'openEuler Summit 2022',
                 children: [
-                  {
-                    time: '14:00 - 14:05',
-                    desc: '领导致辞',
-                    option: [
-                      {
-                        name: '陈超',
-                        post: ['鲲鹏计算业务副总裁', '鲲鹏生态发展部部长'],
-                      },
-                    ],
-                  },
+                  // {
+                  //   time: '14:00 - 14:05',
+                  //   desc: '领导致辞',
+                  //   option: [
+                  //     {
+                  //       name: '陈超',
+                  //       post: ['鲲鹏计算业务副总裁', '鲲鹏生态发展部部长'],
+                  //     },
+                  //   ],
+                  // },
                   {
                     time: '14:05 - 14:25',
                     desc: '聚沙成塔，合力创新--Vastbase携手伙伴，助力行业用户应用升级',
@@ -453,9 +453,8 @@ onMounted(() => {
   </AppContent>
 </template>
 <style scoped lang="scss">
-.dark img,
-.dark .banner {
-  filter: brightness(0.8) grayscale(0.2) contrast(1.2);
+.dark img{
+  // filter: brightness(0.8) grayscale(0.2) contrast(1.2);
 }
 .banner {
   width: 100%;
