@@ -47,7 +47,7 @@ const data = {
     ruleList: [
       {
         clause: '1、活动时间：',
-        time:'2022年12月15日 - 2023年1月15日。'
+        time: '2022年12月15日 - 2023年1月15日。',
       },
       {
         clause:
@@ -151,7 +151,7 @@ const data = {
           <li v-for="item in data.rule.ruleList" :key="item.clause">
             <p>
               {{ item.clause }}
-              <strong v-if="item.time" >{{item.time}}</strong>
+              <strong v-if="item.time">{{ item.time }}</strong>
               <a v-if="item.clause1" :href="item.link1">{{ item.clause1 }}</a
               ><span v-if="item.clause2">{{ item.clause2 }}</span
               ><a v-if="item.clause3" :href="item.link2">{{ item.clause3 }}</a>
