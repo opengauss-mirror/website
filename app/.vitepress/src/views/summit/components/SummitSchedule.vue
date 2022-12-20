@@ -35,7 +35,7 @@ defineProps({
 <style lang="scss" scoped>
 .dataItem {
   display: grid;
-  grid-template-columns: 192px 580px 445px;
+  grid-template-columns: 192px 580px 550px;
   border-bottom: 1px solid var(--o-color-border2);
   padding: 20px 0;
   transition: all 0.25s ease;
