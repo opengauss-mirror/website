@@ -45,6 +45,7 @@ NCRE-openGauss 认证，点击下方链接：
 <https://ncre.neea.edu.cn/>
 
 <script setup lang="ts">
+  import { onMounted } from 'vue';
   import { getUrlParams } from '@/shared/utils';
   function setDownData() {
     const sensors = (window as any)['sensorsDataAnalytic201505'];
@@ -59,9 +60,11 @@ NCRE-openGauss 认证，点击下方链接：
       });
     }
   }
-  setTimeout(() => {
-    console.log('sensors')
-    setDownData();
-  }, 500);
+  
+  onMounted(() => {
+    setTimeout(() => {
+      setDownData();
+    }, 500);
+  });
 
 </script>
