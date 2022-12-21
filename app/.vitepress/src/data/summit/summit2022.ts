@@ -252,7 +252,7 @@ const summitData = {
                   {
                     time: '16:05 - 16:20',
                     desc: '强化生态合作，共赢数智未来——联合政务云解决方案分享',
-                    name: '朱敏捷',
+                    name: '朱敏健',
                     post: '云宏信息科技股份有限公司总裁助理',
                   },
                 ],
@@ -386,11 +386,11 @@ const summitData = {
         DARK: zhaoshangyinhang_dark,
         NAME: 'zhaoshangyinhang',
       },
-      {
-        IMG: xyyh,
-        DARK: xyyh_dark,
-        NAME: 'xyyh',
-      },
+      // {
+      //   IMG: xyyh,
+      //   DARK: xyyh_dark,
+      //   NAME: 'xyyh',
+      // },
       {
         IMG: SuperMap,
         DARK: SuperMap_dark,
