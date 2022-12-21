@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue';
 import { useCommon } from '@/stores/common';
+import { getUrlParams } from '@/shared/utils';
 import AppContent from '@/components/AppContent.vue';
 import SummitSchedule from './components/SummitSchedule.vue';
 import AOS from 'aos';
@@ -28,6 +29,21 @@ const bannerInfo = {
 const tabType = ref(['main', 'main', 'main']);
 const otherTabType = ref([0, 0, 0]);
 
+// 埋点
+function setDownData() {
+  const sensors = (window as any)['sensorsDataAnalytic201505'];
+  const { href } = window.location;
+  if (href.includes('?utm_source')) {
+    const paramsArr = getUrlParams(href);
+    sensors?.setProfile({
+      ...window['sensorsCustomBuriedData'],
+      profileType: 'fromAdvertised',
+      origin: href,
+      ...paramsArr,
+    });
+  }
+}
+
 onMounted(() => {
   AOS.init({
     offset: 50,
@@ -35,6 +51,9 @@ onMounted(() => {
     delay: 100,
     once: true,
   });
+  setTimeout(() => {
+    setDownData();
+  }, 300);
 });
 </script>
 <template>
@@ -485,7 +504,7 @@ onMounted(() => {
     }
     .schedule-tabs {
       text-align: center;
-      margin-top: 24px;
+      margin: 24px 0;
       :deep(.el-tabs__nav) {
         float: none;
         display: inline-block;
@@ -498,7 +517,6 @@ onMounted(() => {
       }
       .timeTabs {
         display: inline-block;
-        margin: 0 0 24px;
         cursor: pointer;
         border: 1px solid var(--o-color-border2);
         color: var(--o-color-text1);

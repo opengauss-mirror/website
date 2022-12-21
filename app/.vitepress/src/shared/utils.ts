@@ -88,3 +88,19 @@ export function addSearchBuriedData(search_key: string, num = 20) {
     }, 500);
   }
 }
+
+// URL参数转对象
+export function getUrlParams(url: string) {
+  const arrObj = url.split('?');
+  if (arrObj.length > 1) {
+    const arrPara = arrObj[1].split('&');
+    let list = {} as any;
+    for (let i = 0; i < arrPara.length; i++) {
+      const item = arrPara[i].split('=');
+      const key = item[0];
+      const value = item[1];
+      list[key] = value;
+    }
+    return list;
+  }
+}
