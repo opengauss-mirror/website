@@ -469,7 +469,7 @@ function initSensor() {
     server_url: 'https://omapi.osinfra.cn/query/track?community=opengauss',
     use_client_time:true,
     // 调试时开启
-    show_log: false,
+    show_log: true,
     send_type:'image',
     is_track_single_page: function(){
       return window['sensorsCustomBuriedData'];
