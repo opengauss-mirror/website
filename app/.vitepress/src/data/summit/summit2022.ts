@@ -75,6 +75,35 @@ const summitData = {
       },
     ],
   },
+  liver: {
+    title: '峰会直播',
+    liveData: [
+      {
+        liveId: 12292,
+        liveTestId: 12285,
+        id: 0,
+        name: 'openGauss Summit 2022 主论坛',
+      },
+      {
+        liveId: 12259,
+        liveTestId: 12262,
+        id: 1,
+        name: '云和恩墨',
+      },
+      {
+        liveId: 12269,
+        liveTestId: 12277,
+        id: 2,
+        name: '海量数据',
+      },
+      {
+        liveId: 12270,
+        liveTestId: 12278,
+        id: 3,
+        name: 'GBASE南大通用',
+      },
+    ],
+  },
   agenda: {
     title: '会议日程',
     meetingList: [

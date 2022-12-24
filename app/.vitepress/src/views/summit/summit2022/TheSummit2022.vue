@@ -7,6 +7,7 @@ import SummitSchedule from './components/SummitSchedule.vue';
 import AOS from 'aos';
 import SUMMITDATA from '@/data/summit/summit2022';
 import LinkPanel from '@/components/LinkPanel.vue';
+import SummitLive from './components/SummitLive.vue';
 
 import banner from '@/assets/category/summit/summit2022/banner.jpg';
 import bannerMo from '@/assets/category/summit/summit2022/banner-mo.jpg';
@@ -71,6 +72,16 @@ onMounted(() => {
     <div class="summit-detail">
       <p>{{ SUMMITDATA.detail[0] }}</p>
       <p>{{ SUMMITDATA.detail[1] }}</p>
+    </div>
+    <div class="liver">
+      <h3 class="titleBar">{{ SUMMITDATA.liver.title }}</h3>
+      <ClientOnly>
+        <SummitLive
+          :live-data="SUMMITDATA.liver.liveData"
+          class-name="odd2022"
+          class="summit2022-box"
+        />
+      </ClientOnly>
     </div>
     <div class="agenda">
       <h3>{{ SUMMITDATA.agenda.title }}</h3>
@@ -406,7 +417,82 @@ onMounted(() => {
     }
   }
 }
-
+.liver {
+  margin-top: var(--o-spacing-h1);
+  @media (max-width: 767px) {
+    margin-top: var(--o-spacing-h2);
+  }
+  h3 {
+    text-align: center;
+    font-size: var(--o-font-size-h3);
+    line-height: var(--o-line-height-h3);
+    color: var(--o-color-text1);
+    font-weight: 300;
+    margin-bottom: var(--o-spacing-h2);
+    @media (max-width: 767px) {
+      margin-bottom: var(--o-spacing-h4);
+      font-size: var(--o-font-size-h8);
+      line-height: var(--o-line-height-h8);
+    }
+  }
+  .summit2022-box{
+    :deep(.live-room-web-itembox.odd2022){
+      grid-template-columns: repeat(3, 1fr);
+      .link-main{
+        grid-column:1/4;
+      }
+    }
+  }
+  .live-room {
+    margin-top: var(--o-spacing-h2);
+    @media (max-width: 767px) {
+      margin-top: var(--o-spacing-h4);
+    }
+  }
+  :deep(.o-container-level1) {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  :deep(.el-tabs__item) {
+    padding: 0 !important;
+  }
+  :deep(.el-tabs__nav-scroll) {
+    display: flex;
+  }
+  :deep(.el-tabs__nav) {
+    float: none !important;
+    display: inline-block;
+    margin: 0 auto;
+  }
+  :deep(.el-tabs__active-bar) {
+    display: none;
+  }
+  .timeTabs {
+    padding: 0 var(--o-spacing-h5);
+    line-height: 38px;
+  }
+  .is-active .timeTabs {
+    color: #fff;
+    background: var(--o-color-brand1);
+    border-color: var(--o-color-brand2);
+  }
+  .summit-kv-box {
+    :deep(.live-room-web-itembox.odd2022) {
+      grid-template-columns: repeat(5, 1fr);
+      .link-main {
+        grid-column: 1/6;
+      }
+    }
+  }
+  .summit-box {
+    :deep(.live-room-web-itembox.odd2022) {
+      grid-template-columns: repeat(7, 1fr);
+      .link-main {
+        grid-column: 1/8;
+      }
+    }
+  }
+}
 .agenda {
   margin: var(--o-spacing-h1) 0;
   @media (max-width: 767px) {
