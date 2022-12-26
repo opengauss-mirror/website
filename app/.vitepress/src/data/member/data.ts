@@ -386,6 +386,38 @@ import zhangtao from '@/assets/category/member/avatar/zhangtao.png';
 import zhengchonghang from '@/assets/category/member/avatar/zhengchonghang.png';
 import zhuli from '@/assets/category/member/avatar/zhuli.png';
 
+import chengxuefeng from '@/assets/category/member/avatar/chengxuefeng.png';
+import duanfang from '@/assets/category/member/avatar/duanfang.png';
+import jiangxiaobing from '@/assets/category/member/avatar/jiangxiaobing.png';
+import lujunfeng from '@/assets/category/member/avatar/lujunfeng.png';
+import quxiuke from '@/assets/category/member/avatar/quxiuke.png';
+import wangcheng from '@/assets/category/member/avatar/wangcheng.png';
+import wangdengyang from '@/assets/category/member/avatar/wangdengyang.png';
+import xiejinchi from '@/assets/category/member/avatar/xiejinchi.png';
+import yebiao from '@/assets/category/member/avatar/yebiao.png';
+import yinfengjiao from '@/assets/category/member/avatar/yinfengjiao.png';
+import zhangshoushuai from '@/assets/category/member/avatar/zhangshoushuai.png';
+import zhangyuanzhen from '@/assets/category/member/avatar/zhangyuanzhen.png';
+import zhangzhiming from '@/assets/category/member/avatar/zhangzhiming.png';
+
+import chenzhengyu from '@/assets/category/member/avatar/chenzhengyu.png';
+import cuitao from '@/assets/category/member/avatar/cuitao.png';
+import dongtao from '@/assets/category/member/avatar/dongtao.png';
+import gaoran from '@/assets/category/member/avatar/gaoran.png';
+import huangxu from '@/assets/category/member/avatar/huangxu.png';
+import jiangyu from '@/assets/category/member/avatar/jiangyu.png';
+import libo from '@/assets/category/member/avatar/libo.png';
+import lihongwei from '@/assets/category/member/avatar/lihongwei.png';
+import liuchenguang from '@/assets/category/member/avatar/liuchenguang.png';
+import luoming from '@/assets/category/member/avatar/luoming.png';
+import tiankefeng from '@/assets/category/member/avatar/tiankefeng.png';
+import xukewei from '@/assets/category/member/avatar/xukewei.png';
+import yuanzhenzhe from '@/assets/category/member/avatar/yuanzhenzhe.png';
+import zhanghao from '@/assets/category/member/avatar/zhanghao.png';
+import zhaoqinghui from '@/assets/category/member/avatar/zhaoqinghui.png';
+import zhaotinyang from '@/assets/category/member/avatar/zhaotinyang.png';
+
+
 export default {
   zh: {
     BOARD: [
@@ -3704,6 +3736,213 @@ export default {
         email: '806844529@qq.com',
       },
     ],
+    WUHAN: [
+      {
+        img: wangdengyang,
+        name: '王登阳',
+        title: 'Organizer',
+        company: '湖北鲲鹏生态创新中心',
+        email: 'wangdengyang@huawei.com',
+      },
+      {
+        img: wangcheng,
+        name: ' 王成',
+        title: 'Member',
+        company: '海鑫科金',
+        email: '792516999@qq.com',
+      },
+      {
+        img: yinfengjiao,
+        name: '殷凤娇',
+        title: 'Member',
+        company: '个人开发者',
+        email: '820898397@qq.com',
+      },
+      {
+        img: duanfang,
+        name: '段芳',
+        title: 'Member',
+        company: '海量数据',
+        email: 'duanfang@vastdata.com.cn',
+      },
+      {
+        img: lujunfeng,
+        name: '卢俊锋',
+        title: 'Member',
+        company: '华中科技大学',
+        email: '1074289549@qq.com',
+      },
+      {
+        img: chengxuefeng,
+        name: '成雪峰',
+        title: 'Member',
+        company: '海量数据',
+        email: 'chengxf@vastdata.com.cn',
+      },
+      {
+        img: zhangyuanzhen,
+        name: '张远真',
+        title: 'Member',
+        company: '武汉东方赛思软件',
+        email: 'zhyz@succez.com',
+      },
+      {
+        img: quxiuke,
+        name: '屈秀柯',
+        title: 'Member',
+        company: '联友科技',
+        email: '823110460@qq.com',
+      },
+      {
+        img: yebiao,
+        name: '叶标',
+        title: 'Member',
+        company: '合众人寿',
+        email: 'yekbiao@163.com',
+      },
+      {
+        img: zhangshoushuai,
+        name: '张守帅',
+        title: 'Member',
+        company: '个人开发者',
+        email: 'shoushuai2002@163.com',
+      },
+      {
+        img: xiejinchi,
+        name: '谢金赤',
+        title: 'Member',
+        company: '个人开发者',
+        email: 'xsw1988@163.com',
+      },
+      {
+        img: zhangzhiming,
+        name: '张智明',
+        title: 'Member',
+        company: '海量数据',
+        email: 'zhangzm1@vastdata.com.cn',
+      },
+      {
+        img: jiangxiaobing,
+        name: '江小兵',
+        title: 'Member',
+        company: '海量数据',
+        email: '384662452@qq.com',
+      },
+    ],
+      SHENYANG: [
+        {
+          img: liuchenguang,
+          name: '刘辰光',
+          title: 'Organizer',
+          company: '辽宁鲲鹏生态创新中心',
+          email: '35910646@qq.com',
+        },
+        {
+          img: dongtao,
+          name: '董涛',
+          title: 'Ambassador',
+          company: '辽宁鲲鹏生态创新中心',
+          email: 'dongtao13@huawei-partners.com',
+        },
+        {
+          img: chenzhengyu,
+          name: '陈政瑀',
+          title: 'Ambassador',
+          company: '北方实验室（沈阳）股份有限公司',
+          email: 'chenzhyak@163.com',
+        },
+        {
+          img: zhaoqinghui,
+          name: '赵庆辉',
+          title: 'Ambassador',
+          company: '海量数据',
+          email: 'zhaoqh@vastdata.com.cn',
+        },
+        {
+          img: huangxu,
+          name: ' 黄旭',
+          title: 'Ambassador',
+          company: '海量数据',
+          email: 'huangxu@vastdata.com.cn',
+        },
+        {
+          img: zhaotinyang,
+          name: '赵廷阳',
+          title: 'Ambassador',
+          company: '海量数据',
+          email: 'zty6989@163.com',
+        },
+        {
+          img: luoming,
+          name: '罗明',
+          title: 'Ambassador',
+          company: '东软集团',
+          email: 'luo.m@neusoft.com',
+        },
+        {
+          img: xukewei,
+          name: '徐恪伟',
+          title: 'Member',
+          company: '东软集团',
+          email: 'xukw@neusoft.com',
+        },
+        {
+          img: yuanzhenzhe,
+          name: '袁振译',
+          title: 'Member',
+          company: '北京岳能科技股份有限公司',
+          email: 'yuanzy@bjyn.com',
+        },
+        {
+          img: tiankefeng,
+          name: '田可风',
+          title: 'Member',
+          company: '辽宁荣科智维云科技有限公司',
+          email: 'tiankefeng@bringspring.com',
+        },
+        {
+          img: cuitao,
+          name: '崔涛',
+          title: 'Member',
+          company: '北京岳能股份有限公司',
+          email: 'cuit@bjyn.com',
+        },
+        {
+          img: libo,
+          name: '李波',
+          title: 'Member',
+          company: '辽宁荣科智维云科技有限公司',
+          email: '298046437@qq.com',
+        },
+        {
+          img: lihongwei,
+          name: '李宏伟',
+          title: 'Member',
+          company: '东软集团',
+          email: 'lihw.neu@neusoft.com',
+        },
+        {
+          img: zhanghao,
+          name: '张昊',
+          title: 'Member',
+          company: '北方实验室（沈阳）股份有限公司',
+          email: '409006626@qq.com',
+        },
+        {
+          img: jiangyu,
+          name: '姜宇',
+          title: 'Member',
+          company: '个人开发者',
+          email: 'jiangyu731@163.com',
+        },
+        {
+          img: gaoran,
+          name: '高然',
+          title: 'Member',
+          company: '双杨信息科技（珠海）有限公司',
+          email: 'gaoranmsn@qq.com',
+        },
+      ],
   },
   en: {
     BOARD: [
@@ -7015,5 +7254,212 @@ export default {
         email: '806844529@qq.com',
       },
     ],
+    WUHAN: [
+      {
+        img: wangdengyang,
+        name: 'Dengyang Wang',
+        title: 'Organizer',
+        company: 'HuBei Kunpeng Eco-Innovation Center',
+        email: 'wangdengyang@huawei.com',
+      },
+      {
+        img: wangcheng,
+        name: ' Cheng Wang',
+        title: 'Member',
+        company: 'Beijing Hisign Technology Co., Ltd.',
+        email: '792516999@qq.com',
+      },
+      {
+        img: yinfengjiao,
+        name: 'Fengjiao Yin',
+        title: 'Member',
+        company: 'individual developer',
+        email: '820898397@qq.com',
+      },
+      {
+        img: duanfang,
+        name: 'Fang Duan',
+        title: 'Member',
+        company: 'VASTDATA',
+        email: 'duanfang@vastdata.com.cn',
+      },
+      {
+        img: lujunfeng,
+        name: 'Junfeng Lu',
+        title: 'Member',
+        company: 'Huazhong University Of Science And Technology',
+        email: '1074289549@qq.com',
+      },
+      {
+        img: chengxuefeng,
+        name: 'Xuefeng Cheng',
+        title: 'Member',
+        company: 'VASTDATA',
+        email: 'chengxf@vastdata.com.cn',
+      },
+      {
+        img: zhangyuanzhen,
+        name: 'Yuanzhen Zhang',
+        title: 'Member',
+        company: 'Wuhan Succez Software Co.,Ltd.',
+        email: 'zhyz@succez.com',
+      },
+      {
+        img: quxiuke,
+        name: 'Xiuke Qu',
+        title: 'Member',
+        company: 'LAN-YOU TECHNOLOGY',
+        email: '823110460@qq.com',
+      },
+      {
+        img: yebiao,
+        name: 'Biao Ye',
+        title: 'Member',
+        company: 'Unionlife Insurance Co.,Ltd.',
+        email: 'yekbiao@163.com',
+      },
+      {
+        img: zhangshoushuai,
+        name: 'Shoushuai Zhang',
+        title: 'Member',
+        company: 'individual developer',
+        email: 'shoushuai2002@163.com',
+      },
+      {
+        img: xiejinchi,
+        name: 'Jinchi Xie',
+        title: 'Member',
+        company: 'individual developer',
+        email: 'xsw1988@163.com',
+      },
+      {
+        img: zhangzhiming,
+        name: 'Zhiming Zhang',
+        title: 'Member',
+        company: 'VASTDATA',
+        email: 'zhangzm1@vastdata.com.cn',
+      },
+      {
+        img: jiangxiaobing,
+        name: 'Xiaobing Jiang',
+        title: 'Member',
+        company: 'VASTDATA',
+        email: '384662452@qq.com',
+      },
+    ],
+      SHENYANG: [
+        {
+          img: liuchenguang,
+          name: 'Chengguang Liu',
+          title: 'Organizer',
+          company: 'liaoNing Kunpeng Eco-Innovation Center',
+          email: '35910646@qq.com',
+        },
+        {
+          img: dongtao,
+          name: 'Tao Dong',
+          title: 'Ambassador',
+          company: 'liaoNing Kunpeng Eco-Innovation Center',
+          email: 'dongtao13@huawei-partners.com',
+        },
+        {
+          img: chenzhengyu,
+          name: 'Zhengyu Chen',
+          title: 'Ambassador',
+          company: 'Northlab(Shenyang)Inc.,Ltd.',
+          email: 'chenzhyak@163.com',
+        },
+        {
+          img: zhaoqinghui,
+          name: 'Qinghui Zhao',
+          title: 'Ambassador',
+          company: 'VASTDATA',
+          email: 'zhaoqh@vastdata.com.cn',
+        },
+        {
+          img: huangxu,
+          name: ' Xu Huang',
+          title: 'Ambassador',
+          company: 'VASTDATA',
+          email: 'huangxu@vastdata.com.cn',
+        },
+        {
+          img: zhaotinyang,
+          name: 'Tingyang Zhao',
+          title: 'Ambassador',
+          company: 'VASTDATA',
+          email: 'zty6989@163.com',
+        },
+        {
+          img: luoming,
+          name: 'Ming Luo',
+          title: 'Ambassador',
+          company: 'Neusoft Corporation',
+          email: 'luo.m@neusoft.com',
+        },
+        {
+          img: xukewei,
+          name: 'Kewei Xu',
+          title: 'Member',
+          company: 'Neusoft Corporation',
+          email: 'xukw@neusoft.com',
+        },
+        {
+          img: yuanzhenzhe,
+          name: 'Zhenyi Yuan',
+          title: 'Member',
+          company: 'Beijing Yueneng Technology Co.,ltd.',
+          email: 'yuanzy@bjyn.com',
+        },
+        {
+          img: tiankefeng,
+          name: 'Kefeng Tian',
+          title: 'Member',
+          company: 'Rongke Zhiwei Cloud Technology Co., Ltd',
+          email: 'tiankefeng@bringspring.com',
+        },
+        {
+          img: cuitao,
+          name: 'Tao Cui',
+          title: 'Member',
+          company: 'Beijing Yueneng Technology Co.,ltd.',
+          email: 'cuit@bjyn.com',
+        },
+        {
+          img: libo,
+          name: 'Bo Li',
+          title: 'Member',
+          company: 'Rongke Zhiwei Cloud Technology Co., Ltd',
+          email: '298046437@qq.com',
+        },
+        {
+          img: lihongwei,
+          name: 'Hongwei Li',
+          title: 'Member',
+          company: 'Neusoft Corporation',
+          email: 'lihw.neu@neusoft.com',
+        },
+        {
+          img: zhanghao,
+          name: 'Hao Zhang',
+          title: 'Member',
+          company: 'Northlab(Shenyang)Inc.,Ltd.',
+          email: '409006626@qq.com',
+        },
+        {
+          img: jiangyu,
+          name: 'Yu Jiang',
+          title: 'Member',
+          company: 'individual developer',
+          email: 'jiangyu731@163.com',
+        },
+        {
+          img: gaoran,
+          name: 'Ran Gao',
+          title: 'Member',
+          company: 'Shuangyang Information Technology (Zhuhai) Co., Ltd ',
+          email: 'gaoranmsn@qq.com',
+        },
+      ],
   },
 };

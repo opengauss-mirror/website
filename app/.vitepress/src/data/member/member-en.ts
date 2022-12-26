@@ -333,6 +333,22 @@ export default {
           LIST: data.en.HEFEI,
         },
         {
+          NAME: 'WuHan User Group',
+          ID: 'WuHan',
+          GITEE_PATH:
+            'https://gitee.com/opengauss/openGauss-User-Group/tree/master/WuHan',
+          EMIAL: 'usergroup@opengauss.org',
+          LIST: data.en.WUHAN,
+        },
+        {
+          NAME: 'ShenYang User Group',
+          ID: 'ShenYang',
+          GITEE_PATH:
+            'https://gitee.com/opengauss/openGauss-User-Group/tree/master/ShenYang',
+          EMIAL: 'usergroup@opengauss.org',
+          LIST: data.en.SHENYANG,
+        },
+        {
           other: 'Want to start a new openGauss User Group?',
           other1: ' ',
           other2: 'Please send your application to: ',
