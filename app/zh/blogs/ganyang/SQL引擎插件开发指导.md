@@ -89,7 +89,7 @@ times: '17:00'
 ## fastcheck 自测方法
 
 将测试用的.sql 文件放入 sql 文件夹 预期结果放入 expected 文件夹。注意使用 LF 行尾序列避免格式问题。
-![](./image/FASTCHECK.PNG)
+![](./image/FASTCHECK.png)
 
 通过 make installcheck p=xxx 或者 make check p=xxx 命令就能进行自测,如提示变量值不对需要手动修改 pg_regress.cpp 中相应值。
 其中 installcheck 是使用现有的数据库，因此需要保证端口号 p 与当前开启的数据库一致，check 则是会编译一个临时数据库用于测试，可以避免现有数据库的一些数据对结果产生的干扰，但速度会稍慢。
