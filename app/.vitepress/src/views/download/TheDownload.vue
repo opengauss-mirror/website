@@ -34,6 +34,8 @@ const selectVersion = ref(versionIndex);
 const getData = computed(() => {
   return DownloadConfig.filter((el) => el.id === versionIndex.value);
 });
+// 当前版本名称
+const versionName = ref(getData.value[0].name);
 
 const handleDownloadUrl = (url: string) => {
   window.open(url, '_blank');
@@ -91,8 +93,9 @@ const activeMobile = ref(activeName.value);
 
 watch(
   () => getData.value,
-  () => {
+  (val) => {
     activeMobile.value = activeName.value;
+    versionName.value = val[0].name;
   },
   { deep: true, immediate: true }
 );

@@ -19,6 +19,7 @@ const { lang, theme } = useData();
 const flag = ref();
 
 const onSwiper = (swiper: any) => {
+  console.log(swiper);
   flag.value = computed(() => swiper.animating);
 };
 
@@ -56,11 +57,6 @@ const videoClickBtn = (path: string) => {
   videoLink.value = path;
   videoDialog.value = true;
 };
-
-// :autoplay="{
-//         delay: 5000,
-//         disableOnInteraction: false,
-//       }"
 </script>
 
 <template>
@@ -70,6 +66,10 @@ const videoClickBtn = (path: string) => {
       :loop="true"
       :pagination="{
         clickable: true,
+      }"
+      :autoplay="{
+        delay: 5000,
+        disableOnInteraction: false,
       }"
       :navigation="true"
       @swiper="onSwiper"
