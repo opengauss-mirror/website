@@ -298,8 +298,10 @@ onMounted(() => {
     margin: 0 auto;
     background: no-repeat center/cover;
     video {
-      object-fit: cover;
       width: 100%;
+      @media screen and (max-width: 1920px) {
+        object-fit: cover;
+      }
     }
     @media screen and (max-width: 768px) {
       display: none;

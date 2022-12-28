@@ -77,7 +77,7 @@ const videoClickBtn = (path: string) => {
     >
       <swiper-slide v-for="(item, index) in homeBanner" :key="item.link">
         <a class="banner-panel" :class="item.className" @click="jump(item)">
-          <div v-if="item.type === 5">
+          <div v-if="item.type === 5" class="banner-video">
             <video
               muted
               playsinline="true"
@@ -258,10 +258,15 @@ html[lang='zh'] {
     height: 100%;
     opacity: 1;
     transition: all 0.33s;
+    .banner-video {
+      flex: 1;
+    }
     video {
-      object-fit: cover;
       width: 100%;
       height: 100%;
+      @media screen and (max-width: 1920px) {
+        object-fit: cover;
+      }
     }
     &-content {
       box-sizing: border-box;
