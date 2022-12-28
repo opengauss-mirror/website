@@ -23,8 +23,9 @@ defineProps({
         <div v-for="option in subitem.option" :key="option.name" class="inline">
           <span class="name" v-html="option.name"> </span>
           <div class="post-more">
-            <span class="post">{{ option.post[0] }} </span>
-            <span class="post">{{ option.post[1] }} </span>
+            <span class="post" v-for="sub in option.post" :key="sub"
+              >{{ sub }}
+            </span>
           </div>
         </div>
       </div>

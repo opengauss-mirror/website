@@ -136,8 +136,16 @@ const summitData = {
               {
                 time: '09:45 - 09:50',
                 desc: 'openGauss社区理事会升级',
-                name: '',
-                post: '',
+                option: [
+                  {
+                    name: ' ',
+                    post: [
+                      '中国交通信息科技集团有限公司',
+                      '京东科技集团',
+                      'GBASE南大通用',
+                    ],
+                  },
+                ],
               },
               {
                 time: '09:50 - 10:05',
@@ -147,7 +155,8 @@ const summitData = {
                     name: '李国良',
                     post: [
                       '清华大学计算机系长聘教授、副主任',
-                      'openGauss社区技术委员会主席; 中国计算机学会数据库专委会副主任',
+                      'openGauss社区技术委员会主席',
+                      '中国计算机学会数据库专委会副主任',
                     ],
                   },
                 ],
@@ -432,6 +441,80 @@ const summitData = {
       },
     ],
   },
+  videolist: [
+    {
+      name: 'openGauss开源数据库整体介绍',
+      link: 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/openGauss%20Summit%202022/%E4%B8%80%E3%80%81%E6%95%B4%E4%BD%93%E4%BB%8B%E7%BB%8D/01-openGauss%E5%BC%80%E6%BA%90%E6%95%B0%E6%8D%AE%E5%BA%93%E6%95%B4%E4%BD%93%E4%BB%8B%E7%BB%8D.mp4',
+    },
+    {
+      name: 'openGauss开源社区',
+      link: 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/openGauss%20Summit%202022/%E4%B8%89%E3%80%81openGauss%20%E5%BC%80%E6%BA%90%E7%A4%BE%E5%8C%BA/07-openGauss%E5%BC%80%E6%BA%90%E7%A4%BE%E5%8C%BA.mp4',
+    },
+    {
+      name: 'openGauss DataKit在线调试存储过程',
+      link: 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/openGauss%20Summit%202022/%E4%BA%8C%E3%80%81%E5%88%9B%E6%96%B0%E6%8A%80%E6%9C%AF/02-%E5%88%9B%E6%96%B0%E6%8A%80%E6%9C%AF-openGauss%20DataKit%E5%9C%A8%E7%BA%BF%E8%B0%83%E8%AF%95%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B.mp4',
+    },
+    {
+      name: 'openGauss DataKit智能运维',
+      link: 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/openGauss%20Summit%202022/%E4%BA%8C%E3%80%81%E5%88%9B%E6%96%B0%E6%8A%80%E6%9C%AF/03-%E5%88%9B%E6%96%B0%E6%8A%80%E6%9C%AF-openGauss%20DataKit%E6%99%BA%E8%83%BD%E8%BF%90%E7%BB%B4.mp4',
+    },
+    {
+      name: 'openGauss分布式一键式部署',
+      link: 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/openGauss%20Summit%202022/%E4%BA%8C%E3%80%81%E5%88%9B%E6%96%B0%E6%8A%80%E6%9C%AF/04-%E5%88%9B%E6%96%B0%E6%8A%80%E6%9C%AF-openGauss%E5%88%86%E5%B8%83%E5%BC%8F%E4%B8%80%E9%94%AE%E5%BC%8F%E9%83%A8%E7%BD%B2.mp4',
+    },
+    {
+      name: 'openGauss迁移工具链一键式部署',
+      link: 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/openGauss%20Summit%202022/%E4%BA%8C%E3%80%81%E5%88%9B%E6%96%B0%E6%8A%80%E6%9C%AF/05-%E5%88%9B%E6%96%B0%E6%8A%80%E6%9C%AF-openGauss%E8%BF%81%E7%A7%BB%E5%B7%A5%E5%85%B7%E9%93%BE%E4%B8%80%E9%94%AE%E5%BC%8F%E9%83%A8%E7%BD%B2.mp4',
+    },
+    {
+      name: 'openGauss应用无缝切换使用',
+      link: 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/openGauss%20Summit%202022/%E4%BA%8C%E3%80%81%E5%88%9B%E6%96%B0%E6%8A%80%E6%9C%AF/06-%E5%88%9B%E6%96%B0%E6%8A%80%E6%9C%AF-openGauss%E5%BA%94%E7%94%A8%E6%97%A0%E7%BC%9D%E5%88%87%E6%8D%A2%E4%BD%BF%E7%94%A8.mp4',
+    },
+    {
+      name: 'Vastbase G100全生命周期的数据安全保障 - 海量数据',
+      link: 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/openGauss%20Summit%202022/%E5%9B%9B%E3%80%81DBV%E5%8E%82%E5%95%86/%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE/08-%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE-Vastbase%20G100%E5%85%A8%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9A%84%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E4%BF%9D%E9%9A%9C.mp4',
+    },
+    {
+      name: 'Vastbase G100基于空间技术的企业级特性增强 - 海量数据',
+      link: 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/openGauss%20Summit%202022/%E5%9B%9B%E3%80%81DBV%E5%8E%82%E5%95%86/%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE/09-%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE-Vastbase%20G100%E5%9F%BA%E4%BA%8E%E7%A9%BA%E9%97%B4%E6%8A%80%E6%9C%AF%E7%9A%84%E4%BC%81%E4%B8%9A%E7%BA%A7%E7%89%B9%E6%80%A7%E5%A2%9E%E5%BC%BA.mp4',
+    },
+    {
+      name: 'Vastbase G100便捷、高效的异构数据库一键式迁移平台 - 海量数据',
+      link: 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/openGauss%20Summit%202022/%E5%9B%9B%E3%80%81DBV%E5%8E%82%E5%95%86/%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE/10-%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE-Vastbase%20G100%E4%BE%BF%E6%8D%B7%E3%80%81%E9%AB%98%E6%95%88%E7%9A%84%E5%BC%82%E6%9E%84%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%80%E9%94%AE%E5%BC%8F%E8%BF%81%E7%A7%BB%E5%B9%B3%E5%8F%B0.mp4',
+    },
+    {
+      name: 'Vastbase G100创新补丁机制，升级产品体验 - 海量数据',
+      link: 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/openGauss%20Summit%202022/%E5%9B%9B%E3%80%81DBV%E5%8E%82%E5%95%86/%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE/11-%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE-Vastbase%20G100%E5%88%9B%E6%96%B0%E8%A1%A5%E4%B8%81%E6%9C%BA%E5%88%B6%EF%BC%8C%E5%8D%87%E7%BA%A7%E4%BA%A7%E5%93%81%E4%BD%93%E9%AA%8C.mp4',
+    },
+    {
+      name: 'MogDB数据库查询性能优化增强 - 云和恩墨',
+      link: 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/openGauss%20Summit%202022/%E5%9B%9B%E3%80%81DBV%E5%8E%82%E5%95%86/%E4%BA%91%E5%92%8C%E6%81%A9%E5%A2%A8/12-%E4%BA%91%E5%92%8C%E6%81%A9%E5%A2%A8-MogDB%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9F%A5%E8%AF%A2%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%A2%9E%E5%BC%BA.mp4',
+    },
+    {
+      name: 'Trace工具增强MogDB不停库诊断与调优 - 云和恩墨',
+      link: 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/openGauss%20Summit%202022/%E5%9B%9B%E3%80%81DBV%E5%8E%82%E5%95%86/%E4%BA%91%E5%92%8C%E6%81%A9%E5%A2%A8/13-%E4%BA%91%E5%92%8C%E6%81%A9%E5%A2%A8-Trace%E5%B7%A5%E5%85%B7%E5%A2%9E%E5%BC%BAMogDB%E4%B8%8D%E5%81%9C%E5%BA%93%E8%AF%8A%E6%96%AD%E4%B8%8E%E8%B0%83%E4%BC%98.mp4',
+    },
+    {
+      name: 'MogDB中CM支持低成本两节点部署 - 云和恩墨',
+      link: 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/openGauss%20Summit%202022/%E5%9B%9B%E3%80%81DBV%E5%8E%82%E5%95%86/%E4%BA%91%E5%92%8C%E6%81%A9%E5%A2%A8/14-%E4%BA%91%E5%92%8C%E6%81%A9%E5%A2%A8-MogDB%E4%B8%ADCM%E6%94%AF%E6%8C%81%E4%BD%8E%E6%88%90%E6%9C%AC%E4%B8%A4%E8%8A%82%E7%82%B9%E9%83%A8%E7%BD%B2.mp4',
+    },
+    {
+      name: 'GBase 8c在线升级功能- 南大通用',
+      link: 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/openGauss%20Summit%202022/%E5%9B%9B%E3%80%81DBV%E5%8E%82%E5%95%86/%E5%8D%97%E5%A4%A7%E9%80%9A%E7%94%A8/15-%E5%8D%97%E5%A4%A7%E9%80%9A%E7%94%A8-GBase%208c%E5%9C%A8%E7%BA%BF%E5%8D%87%E7%BA%A7%E5%8A%9F%E8%83%BD.mp4',
+    },
+    {
+      name: 'GBase 8c在线弹性伸缩功能 - 南大通用',
+      link: 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/openGauss%20Summit%202022/%E5%9B%9B%E3%80%81DBV%E5%8E%82%E5%95%86/%E5%8D%97%E5%A4%A7%E9%80%9A%E7%94%A8/16-%E5%8D%97%E5%A4%A7%E9%80%9A%E7%94%A8-GBase%208c%E5%9C%A8%E7%BA%BF%E5%BC%B9%E6%80%A7%E4%BC%B8%E7%BC%A9%E5%8A%9F%E8%83%BD.mp4',
+    },
+    {
+      name: 'DockQuery新一代数据库客户端，全覆国内主流数据库 - 图尔兹 ',
+      link: 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/openGauss%20Summit%202022/%E5%9B%9B%E3%80%81DBV%E5%8E%82%E5%95%86/%E5%9B%BE%E5%B0%94%E5%85%B9/17-%E5%9B%BE%E5%B0%94%E5%85%B9-DockQuery%E6%96%B0%E4%B8%80%E4%BB%A3%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%A2%E6%88%B7%E7%AB%AF%EF%BC%8C%E5%85%A8%E8%A6%86%E5%9B%BD%E5%86%85%E4%B8%BB%E6%B5%81%E6%95%B0%E6%8D%AE%E5%BA%93.mp4',
+    },
+    {
+      name: 'CloudQuery智能化运维之安全管控，打造企业统一数据安全入口 - 图尔兹 ',
+      link: 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/openGauss%20Summit%202022/%E5%9B%9B%E3%80%81DBV%E5%8E%82%E5%95%86/%E5%9B%BE%E5%B0%94%E5%85%B9/18-%E5%9B%BE%E5%B0%94%E5%85%B9-CloudQuery%E6%99%BA%E8%83%BD%E5%8C%96%E8%BF%90%E7%BB%B4%E4%B9%8B%E5%AE%89%E5%85%A8%E7%AE%A1%E6%8E%A7%EF%BC%8C%E6%89%93%E9%80%A0%E4%BC%81%E4%B8%9A%E7%BB%9F%E4%B8%80%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E5%85%A5%E5%8F%A3.mp4',
+    },
+  ],
   partnersList: {
     title: ['共建单位', '指导单位', '主办单位', '协办单位'],
     p1: [
