@@ -59,7 +59,7 @@ onMounted(() => {
 
 // video 事件
 const videoDialog = ref(false);
-const videoLink = ref('');
+const videoLink = ref(''); 
 const handleCloseVideo = () => {
   videoDialog.value = false;
   videoLink.value = '';
@@ -165,13 +165,13 @@ const videoClickBtn = (path: string) => {
     <!-- 线上展厅 -->
     <h3 class="titleBar">线上展厅</h3>
     <div class="exhibition-online">
-      <a
+      <span
         v-for="item in SUMMITDATA.videolist"
         :key="item.name"
-        href=""
-        :name="item.name"
+        :title="item.name"
+        class="video-item"
         @click="videoClickBtn(item.link)"
-      ></a>
+      ></span>
       <div v-if="videoDialog" class="video-box">
         <ODialog
           v-model="videoDialog"
@@ -180,16 +180,13 @@ const videoClickBtn = (path: string) => {
           lock-scroll
           close-on-press-escape
           close-on-click-modal
+          destroy-on-close
           width="800px"
         >
           <div class="video-center">
-            <video
-              class="exhibition-video"
-              :src="videoLink"
-              width="100%"
-              controls
-              autoplay
-            ></video>
+            <video class="exhibition-video" width="100%" controls autoplay>
+              <source :src="videoLink" />
+            </video>
           </div>
         </ODialog>
       </div>
@@ -815,10 +812,12 @@ const videoClickBtn = (path: string) => {
     width: 100%;
     height: 58vw;
   }
-  a {
+  .video-item {
     position: absolute;
     // background: rgba($color: #ff0000, $alpha: 0.3);
     border-radius: 30px;
+    display: block;
+    cursor: pointer;
     &:nth-of-type(1) {
       width: 230px;
       height: 58px;
