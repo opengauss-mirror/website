@@ -19,7 +19,6 @@ const { lang, theme } = useData();
 const flag = ref();
 
 const onSwiper = (swiper: any) => {
-  console.log(swiper);
   flag.value = computed(() => swiper.animating);
 };
 
@@ -78,20 +77,22 @@ const videoClickBtn = (path: string) => {
       <swiper-slide v-for="(item, index) in homeBanner" :key="item.link">
         <a class="banner-panel" :class="item.className" @click="jump(item)">
           <div v-if="item.type === 5" class="banner-video">
-            <video
-              muted
-              playsinline="true"
-              autoplay="autoplay"
-              loop
-              ref="bannerVideo"
-              :poster="item.pcBanner"
-              preload=""
-            >
-              <source
-                type="video/mp4"
-                src="https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/openGauss%20Summit%202022/Banner/openGauss%20Banner%E5%8A%A8K_1920x480.mp4"
-              />
-            </video>
+            <template v-if="windowWidth > 767">
+              <video
+                muted
+                playsinline="true"
+                autoplay=""
+                loop
+                :poster="item.pcBanner"
+                preload=""
+              >
+                <source
+                  type="video/mp4"
+                  src="https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/openGauss%20Summit%202022/Banner/openGauss%20Banner%E5%8A%A8K_1920x480.mp4"
+                />
+              </video>
+            </template>
+            <img v-else :src="item.moBanner" />
           </div>
           <div
             v-else
@@ -260,10 +261,15 @@ html[lang='zh'] {
     transition: all 0.33s;
     .banner-video {
       flex: 1;
+      img {
+        max-width: 100%;
+        object-fit: cover;
+      }
     }
     video {
       width: 100%;
       height: 100%;
+      cursor: pointer;
       @media screen and (max-width: 1920px) {
         object-fit: cover;
       }

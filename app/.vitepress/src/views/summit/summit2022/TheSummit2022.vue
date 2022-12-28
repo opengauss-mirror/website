@@ -78,7 +78,9 @@ const videoClickBtn = (path: string) => {
         autoplay="autoplay"
         height="380"
         loop
-        ref="bannerVideo"
+        webkit-playsinline="true"
+        x5-playsinline="true"
+        mtt-playsinline="true"
         :poster="bannerInfo.pc_banner"
         preload=""
       >
@@ -160,7 +162,7 @@ const videoClickBtn = (path: string) => {
         </OContainer>
       </div>
     </div>
-    <!-- 线上展厅 
+    <!-- 线上展厅 -->
     <h3 class="titleBar">线上展厅</h3>
     <div class="exhibition-online">
       <a
@@ -191,7 +193,7 @@ const videoClickBtn = (path: string) => {
           </div>
         </ODialog>
       </div>
-    </div>-->
+    </div>
     <div class="summit-partners">
       <h3 class="titleBar">{{ SUMMITDATA.partnersList.title[0] }}</h3>
       <h4 class="meetingtitle">
@@ -807,7 +809,7 @@ const videoClickBtn = (path: string) => {
   background-size: 100% 100%;
   @media screen and (max-width: 1460px) {
     width: 1100px;
-    height: 536px;
+    height: 649px;
   }
   @media screen and (max-width: 1100px) {
     width: 100%;
@@ -815,7 +817,7 @@ const videoClickBtn = (path: string) => {
   }
   a {
     position: absolute;
-    background: rgba($color: #ff0000, $alpha: 0.3);
+    // background: rgba($color: #ff0000, $alpha: 0.3);
     border-radius: 30px;
     &:nth-of-type(1) {
       width: 230px;
@@ -823,16 +825,16 @@ const videoClickBtn = (path: string) => {
       left: 384px;
       top: 43px;
       @media screen and (max-width: 1460px) {
-        width: 158px;
-        height: 38px;
-        top: 8px;
-        left: 284px;
+        width: 178px;
+        height: 42px;
+        left: 300px;
+        top: 34px;
       }
       @media screen and (max-width: 1100px) {
-        width: 15%;
+        width: 16%;
         height: 4vw;
-        top: 1vw;
-        left: 23vw;
+        top: 3vw;
+        left: 25vw;
       }
     }
     &:nth-of-type(2) {
@@ -841,16 +843,16 @@ const videoClickBtn = (path: string) => {
       left: 681px;
       top: 44px;
       @media screen and (max-width: 1460px) {
-        width: 158px;
-        height: 38px;
-        top: 8px;
-        left: 284px;
+        width: 138px;
+        height: 42px;
+        top: 34px;
+        left: 529px;
       }
       @media screen and (max-width: 1100px) {
-        width: 15%;
+        width: 13%;
         height: 4vw;
-        top: 1vw;
-        left: 23vw;
+        top: 3vw;
+        left: 44vw;
       }
     }
     &:nth-of-type(3) {
@@ -859,16 +861,16 @@ const videoClickBtn = (path: string) => {
       right: 152px;
       top: 169px;
       @media screen and (max-width: 1460px) {
-        width: 158px;
-        height: 38px;
-        top: 8px;
-        left: 458px;
+        width: 150px;
+        height: 42px;
+        right: 120px;
+        top: 128px;
       }
       @media screen and (max-width: 1100px) {
-        width: 15%;
+        width: 14%;
         height: 4vw;
-        top: 1vw;
-        left: 38vw;
+        top: 11.5vw;
+        right: 10vw;
       }
     }
     &:nth-of-type(4) {
@@ -877,16 +879,16 @@ const videoClickBtn = (path: string) => {
       right: 127px;
       top: 293px;
       @media screen and (max-width: 1460px) {
-        width: 158px;
-        height: 38px;
-        top: 8px;
-        right: 310px;
+        width: 150px;
+        height: 42px;
+        right: 100px;
+        top: 224px;
       }
       @media screen and (max-width: 1100px) {
-        width: 15%;
+        width: 14%;
         height: 4vw;
-        top: 1vw;
-        right: 25vw;
+        top: 20vw;
+        right: 8vw;
       }
     }
     &:nth-of-type(5) {
@@ -895,373 +897,262 @@ const videoClickBtn = (path: string) => {
       right: 97px;
       top: 418px;
       @media screen and (max-width: 1460px) {
-        width: 158px;
-        height: 38px;
-        top: 8px;
-        right: 138px;
+        width: 150px;
+        height: 42px;
+        right: 76px;
+        top: 320px;
       }
       @media screen and (max-width: 1100px) {
-        width: 15%;
+        width: 14%;
         height: 4vw;
-        top: 1vw;
-        right: 11vw;
+        top: 28.5vw;
+        right: 6.5vw;
       }
     }
     &:nth-of-type(6) {
-      width: 202px;
-      height: 58px;
-      left: 140px;
-      top: 244px;
-      border-radius: 29px;
+      width: 195px;
+      height: 54px;
+      right: 66px;
+      top: 545px;
       @media screen and (max-width: 1460px) {
-        width: 158px;
-        height: 38px;
-        top: 154px;
-        left: 108px;
+        width: 150px;
+        height: 42px;
+        right: 54px;
+        top: 419px;
       }
       @media screen and (max-width: 1100px) {
-        width: 15%;
+        width: 14%;
         height: 4vw;
-        top: 16.5vw;
-        left: 9vw;
+        top: 37.5vw;
+        right: 4.5vw;
       }
     }
     &:nth-of-type(7) {
-      width: 202px;
-      height: 58px;
-      left: 552px;
-      top: 244px;
-      border-radius: 29px;
+      width: 195px;
+      height: 54px;
+      right: 38px;
+      top: 670px;
       @media screen and (max-width: 1460px) {
-        width: 158px;
-        height: 38px;
-        left: 428px;
-        top: 154px;
-        border-radius: 19px;
+        width: 150px;
+        height: 42px;
+        right: 31px;
+        top: 516px;
       }
       @media screen and (max-width: 1100px) {
-        width: 15%;
+        width: 14%;
         height: 4vw;
-        top: 16.5vw;
-        left: 35vw;
+        top: 46vw;
+        right: 2.5vw;
       }
     }
     &:nth-of-type(8) {
-      width: 202px;
+      width: 234px;
       height: 58px;
-      left: 342px;
-      top: 317px;
-      border-radius: 29px;
+      left: 104px;
+      top: 226px;
       @media screen and (max-width: 1460px) {
-        width: 158px;
-        height: 38px;
-        left: 266px;
-        top: 198px;
+        width: 182px;
+        height: 42px;
+        left: 81px;
+        top: 175px;
         border-radius: 19px;
       }
       @media screen and (max-width: 1100px) {
-        width: 15%;
+        width: 17%;
         height: 4vw;
-        top: 21.5vw;
-        left: 22vw;
-      }
-    }
-    &:nth-of-type(9) {
-      width: 202px;
-      height: 58px;
-      left: 112px;
-      top: 398px;
-      border-radius: 29px;
-      @media screen and (max-width: 1460px) {
-        width: 158px;
-        height: 38px;
-        left: 86px;
-        top: 251px;
-        border-radius: 19px;
-      }
-      @media screen and (max-width: 1100px) {
-        width: 15%;
-        height: 4vw;
-        top: 27vw;
+        top: 16vw;
         left: 7vw;
       }
     }
-    &:nth-of-type(10) {
-      width: 202px;
+    &:nth-of-type(9) {
+      width: 234px;
       height: 58px;
-      left: 556px;
-      top: 398px;
-      border-radius: 29px;
+      left: 382px;
+      top: 226px;
       @media screen and (max-width: 1460px) {
-        width: 158px;
-        height: 38px;
-        left: 428px;
-        top: 251px;
+        width: 181px;
+        height: 42px;
+        left: 296px;
+        top: 175px;
         border-radius: 19px;
       }
       @media screen and (max-width: 1100px) {
-        width: 15%;
+        width: 16%;
         height: 4vw;
-        top: 27vw;
-        left: 35vw;
+        top: 15vw;
+        left: 25vw;
+      }
+    }
+    &:nth-of-type(10) {
+      width: 234px;
+      height: 58px;
+      left: 71px;
+      top: 379px;
+      @media screen and (max-width: 1460px) {
+        width: 183px;
+        height: 42px;
+        left: 54px;
+        top: 294px;
+        border-radius: 19px;
+      }
+      @media screen and (max-width: 1100px) {
+        width: 16%;
+        height: 4vw;
+        top: 26vw;
+        left: 5vw;
       }
     }
     &:nth-of-type(11) {
-      width: 202px;
-      height: 58px;
-      right: 380px;
-      top: 244px;
-      border-radius: 29px;
+      width: 235px;
+      height: 54px;
+      left: 369px;
+      top: 381px;
       @media screen and (max-width: 1460px) {
-        width: 158px;
-        height: 38px;
-        right: 293px;
-        top: 154px;
+        width: 180px;
+        height: 42px;
+        left: 288px;
+        top: 294px;
         border-radius: 19px;
       }
       @media screen and (max-width: 1100px) {
-        width: 15%;
+        width: 17%;
         height: 4vw;
-        top: 16.5vw;
-        right: 24vw;
+        top: 26vw;
+        left: 24vw;
       }
     }
     &:nth-of-type(12) {
-      width: 202px;
-      height: 58px;
-      right: 366px;
-      top: 368px;
-      border-radius: 29px;
+      width: 258px;
+      height: 56px;
+      right: 536px;
+      top: 305px;
+
       @media screen and (max-width: 1460px) {
-        width: 158px;
-        height: 38px;
-        right: 285px;
-        top: 232px;
+        width: 200px;
+        height: 42px;
+        right: 417px;
+        top: 235px;
         border-radius: 19px;
       }
       @media screen and (max-width: 1100px) {
-        width: 15%;
+        width: 18%;
         height: 4vw;
-        top: 25vw;
-        right: 23vw;
+        top: 21vw;
+        right: 36vw;
       }
     }
     &:nth-of-type(13) {
-      width: 172px;
-      height: 62px;
-      right: 114px;
-      top: 255px;
+      width: 270px;
+      height: 52px;
+      right: 340px;
+      top: 230px;
       @media screen and (max-width: 1460px) {
-        width: 138px;
-        height: 38px;
-        right: 84px;
-        top: 160px;
+        width: 207px;
+        height: 42px;
+        right: 266px;
+        top: 176px;
+        border-radius: 19px;
       }
       @media screen and (max-width: 1100px) {
-        width: 12%;
+        width: 19%;
         height: 4vw;
-        top: 17.5vw;
-        right: 7vw;
+        top: 16vw;
+        right: 23vw;
       }
     }
     &:nth-of-type(14) {
-      width: 202px;
-      height: 58px;
-      left: 246px;
-      bottom: 218px;
-      border-radius: 29px;
+      width: 257px;
+      height: 54px;
+      right: 307px;
+      top: 381px;
       @media screen and (max-width: 1460px) {
-        width: 158px;
-        height: 38px;
-        left: 190px;
-        bottom: 136px;
+        width: 200px;
+        height: 42px;
+        right: 238px;
+        top: 294px;
         border-radius: 19px;
       }
       @media screen and (max-width: 1100px) {
-        width: 15%;
+        width: 18%;
         height: 4vw;
-        bottom: 15vw;
-        left: 15vw;
+        top: 26vw;
+        right: 20vw;
       }
     }
     &:nth-of-type(15) {
-      width: 202px;
-      height: 58px;
-      left: 476px;
-      bottom: 218px;
-      border-radius: 29px;
+      width: 208px;
+      height: 55px;
+      left: 365px;
+      bottom: 212px;
       @media screen and (max-width: 1460px) {
-        width: 158px;
-        height: 38px;
-        left: 371px;
-        bottom: 136px;
+        width: 164px;
+        height: 42px;
+        left: 283px;
+        bottom: 163px;
         border-radius: 19px;
       }
       @media screen and (max-width: 1100px) {
         width: 15%;
         height: 4vw;
-        bottom: 15vw;
-        left: 30vw;
+        bottom: 14.5vw;
+        left: 24vw;
       }
     }
     &:nth-of-type(16) {
-      width: 202px;
-      height: 58px;
-      left: 707px;
-      bottom: 218px;
-      border-radius: 29px;
+      width: 211px;
+      height: 55px;
+      left: 37px;
+      bottom: 119px;
       @media screen and (max-width: 1460px) {
-        width: 158px;
-        height: 38px;
-        left: 548px;
-        bottom: 136px;
+        width: 161px;
+        height: 42px;
+        left: 31px;
+        bottom: 90px;
         border-radius: 19px;
       }
       @media screen and (max-width: 1100px) {
         width: 15%;
         height: 4vw;
-        bottom: 15vw;
-        left: 45vw;
+        bottom: 8vw;
+        left: 2vw;
       }
     }
     &:nth-of-type(17) {
-      width: 202px;
+      width: 255px;
       height: 58px;
-      right: 276px;
-      bottom: 218px;
-      border-radius: 29px;
+      right: 544px;
+      bottom: 211px;
       @media screen and (max-width: 1460px) {
-        width: 158px;
-        height: 38px;
-        right: 214px;
-        bottom: 136px;
+        width: 200px;
+        height: 42px;
+        right: 421px;
+        bottom: 164px;
         border-radius: 19px;
       }
       @media screen and (max-width: 1100px) {
-        width: 15%;
+        width: 18%;
         height: 4vw;
-        bottom: 15vw;
-        right: 18vw;
+        bottom: 14.5vw;
+        right: 36vw;
       }
     }
     &:nth-of-type(18) {
-      width: 202px;
+      width: 255px;
       height: 58px;
-      right: 46px;
-      bottom: 218px;
-      border-radius: 29px;
+      right: 298px;
+      bottom: 117px;
       @media screen and (max-width: 1460px) {
-        width: 158px;
-        height: 38px;
-        right: 35px;
-        bottom: 136px;
+        width: 196px;
+        height: 42px;
+        right: 234px;
+        bottom: 92px;
         border-radius: 19px;
       }
       @media screen and (max-width: 1100px) {
-        width: 15%;
+        width: 18%;
         height: 4vw;
-        bottom: 15vw;
-        right: 3vw;
-      }
-    }
-    &:nth-of-type(19) {
-      width: 202px;
-      height: 58px;
-      left: 235px;
-      bottom: 101px;
-      border-radius: 29px;
-      @media screen and (max-width: 1460px) {
-        width: 158px;
-        height: 38px;
-        left: 183px;
-        bottom: 62px;
-        border-radius: 19px;
-      }
-      @media screen and (max-width: 1100px) {
-        width: 15%;
-        height: 4vw;
-        bottom: 6.5vw;
-        left: 15vw;
-      }
-    }
-    &:nth-of-type(20) {
-      width: 202px;
-      height: 58px;
-      left: 472px;
-      bottom: 101px;
-      border-radius: 29px;
-      @media screen and (max-width: 1460px) {
-        width: 158px;
-        height: 38px;
-        left: 368px;
-        bottom: 62px;
-        border-radius: 19px;
-      }
-      @media screen and (max-width: 1100px) {
-        width: 15%;
-        height: 4vw;
-        bottom: 6.5vw;
-        left: 30vw;
-      }
-    }
-    &:nth-of-type(21) {
-      width: 202px;
-      height: 58px;
-      left: 712px;
-      bottom: 101px;
-      border-radius: 29px;
-      @media screen and (max-width: 1460px) {
-        width: 158px;
-        height: 38px;
-        left: 554px;
-        bottom: 62px;
-        border-radius: 19px;
-      }
-      @media screen and (max-width: 1100px) {
-        width: 15%;
-        height: 4vw;
-        bottom: 6.5vw;
-        left: 45vw;
-      }
-    }
-    &:nth-of-type(22) {
-      width: 202px;
-      height: 58px;
-      right: 264px;
-      bottom: 101px;
-      border-radius: 29px;
-      @media screen and (max-width: 1460px) {
-        width: 158px;
-        height: 38px;
-        right: 204px;
-        bottom: 62px;
-        border-radius: 19px;
-      }
-      @media screen and (max-width: 1100px) {
-        width: 15%;
-        height: 4vw;
-        bottom: 6.5vw;
-        right: 17vw;
-      }
-    }
-    &:nth-of-type(23) {
-      width: 202px;
-      height: 58px;
-      right: 26px;
-      bottom: 101px;
-      border-radius: 29px;
-      @media screen and (max-width: 1460px) {
-        width: 158px;
-        height: 38px;
-        right: 18px;
-        bottom: 62px;
-        border-radius: 19px;
-      }
-      @media screen and (max-width: 1100px) {
-        width: 15%;
-        height: 4vw;
-        bottom: 6.5vw;
-        right: 1vw;
+        bottom: 8vw;
+        right: 20vw;
       }
     }
   }
