@@ -58,7 +58,7 @@ export function getUserAuth() {
 export function logout() {
   queryIDToken().then(() => {
     saveUserAuth();
-    window!.location!.href = window?.location?.origin;
+    window!.location!.href = location.href;
   });
 }
 
