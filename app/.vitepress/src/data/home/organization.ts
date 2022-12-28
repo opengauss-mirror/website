@@ -9,7 +9,7 @@ import youxuan from '@/assets/category/home/organization/light/youxuan.png';
 import shenxinfu from '@/assets/category/home/organization/light/shenxinfu.png';
 import dft from '@/assets/category/home/organization/light/dft.png';
 import yunheenmo from '@/assets/category/home/organization/light/yunheenmo.png';
-import hailiangshuju from '@/assets/category/home/organization/light/hailiangshuju.png';
+import vastdata from '@/assets/category/home/organization/light/vastdata.png';
 import zhongruan from '@/assets/category/home/organization/light/zhongruan.png';
 import xinshukeji from '@/assets/category/home/organization/light/xinshukeji.png';
 import xinghuo from '@/assets/category/home/organization/light/xinghuo.png';
@@ -123,7 +123,7 @@ import youxuan_dark from '@/assets/category/home/organization/dark/youxuan.png';
 import shenxinfu_dark from '@/assets/category/home/organization/dark/shenxinfu.png';
 import dft_dark from '@/assets/category/home/organization/dark/dft.png';
 import yunheenmo_dark from '@/assets/category/home/organization/dark/yunheenmo.png';
-import hailiangshuju_dark from '@/assets/category/home/organization/dark/hailiangshuju.png';
+import vastdata_dark from '@/assets/category/home/organization/dark/vastdata.png';
 import zhongruan_dark from '@/assets/category/home/organization/dark/zhongruan.png';
 import xinshukeji_dark from '@/assets/category/home/organization/dark/xinshukeji.png';
 import xinghuo_dark from '@/assets/category/home/organization/dark/xinghuo.png';
@@ -278,8 +278,8 @@ export default [
     NAME: '云和恩墨（北京）信息技术有限公司',
   },
   {
-    IMG: hailiangshuju,
-    DARK: hailiangshuju_dark,
+    IMG: vastdata,
+    DARK: vastdata_dark,
     NAME: '北京海量数据技术股份有限公司',
   },
   {

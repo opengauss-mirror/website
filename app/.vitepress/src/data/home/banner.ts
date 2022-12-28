@@ -8,17 +8,16 @@ import banner310_mo from '@/assets/category/home/banner/opengauss3.1.0_zh_mo.png
 
 // import internship from '@/assets/category/home/banner/internship.png';
 // import internship_mo from '@/assets/category/home/banner/internship_mo.png';
-
 // import bannerSafety from '@/assets/category/home/banner/banner-safety.png';
+// import bannerSafety_mo from '@/assets/category/home/banner/banner-safety-mo.png';
+
 import bannerQues from '@/assets/category/home/banner/banner-ques.jpg';
 import bannerQues_mo from '@/assets/category/home/banner/banner-ques-mo.png';
 import bannerSummit from '@/assets/category/home/banner/banner-summit.jpg';
 import bannerSummit_mo from '@/assets/category/home/banner/banner-summit-mo.jpg';
 
-// import bannerSafety_mo from '@/assets/category/home/banner/banner-safety-mo.png';
-
 // targetTap:1 新页签打开
-// type:1(只有图片)、2(文字居左)，3(文字居中),4(仅用于实习banner)
+// type:1(只有图片)、2(文字居左)，3(文字居中),4(仅用于实习banner),5 视频
 export default {
   zh: [
     {
@@ -29,7 +28,7 @@ export default {
       title: '',
       desc: [''],
       btn: '',
-      type: 1,
+      type: 5,
       className: 'summit',
       video: '',
     },

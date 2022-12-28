@@ -57,6 +57,11 @@ const videoClickBtn = (path: string) => {
   videoLink.value = path;
   videoDialog.value = true;
 };
+
+// :autoplay="{
+//         delay: 5000,
+//         disableOnInteraction: false,
+//       }"
 </script>
 
 <template>
@@ -67,16 +72,29 @@ const videoClickBtn = (path: string) => {
       :pagination="{
         clickable: true,
       }"
-      :autoplay="{
-        delay: 5000,
-        disableOnInteraction: false,
-      }"
       :navigation="true"
       @swiper="onSwiper"
     >
       <swiper-slide v-for="(item, index) in homeBanner" :key="item.link">
         <a class="banner-panel" :class="item.className" @click="jump(item)">
+          <div v-if="item.type === 5">
+            <video
+              muted
+              playsinline="true"
+              autoplay="autoplay"
+              loop
+              ref="bannerVideo"
+              :poster="item.pcBanner"
+              preload=""
+            >
+              <source
+                type="video/mp4"
+                src="https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/openGauss%20Summit%202022/Banner/openGauss%20Banner%E5%8A%A8K_1920x480.mp4"
+              />
+            </video>
+          </div>
           <div
+            v-else
             class="banner-panel-cover"
             :class="{
               'banner-pic': item.title === '',
@@ -240,6 +258,11 @@ html[lang='zh'] {
     height: 100%;
     opacity: 1;
     transition: all 0.33s;
+    video {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
     &-content {
       box-sizing: border-box;
       max-width: 1504px;

@@ -14,14 +14,14 @@ defineProps({
   <div class="dateList">
     <div v-for="subitem in options" :key="subitem.time" class="dataItem">
       <span class="time"><IconTime />{{ subitem.time }}</span>
-      <span class="desc">{{ subitem.desc }}</span>
+      <span class="desc" v-html="subitem.desc"></span>
       <div v-if="subitem.post" class="box">
         <span class="name">{{ subitem.name }} </span>
         <span class="post">{{ subitem.post }} </span>
       </div>
       <div v-else class="db">
         <div v-for="option in subitem.option" :key="option.name" class="inline">
-          <span class="name">{{ option.name }} </span>
+          <span class="name" v-html="option.name"> </span>
           <div class="post-more">
             <span class="post">{{ option.post[0] }} </span>
             <span class="post">{{ option.post[1] }} </span>
@@ -35,7 +35,7 @@ defineProps({
 <style lang="scss" scoped>
 .dataItem {
   display: grid;
-  grid-template-columns: 192px 580px 550px;
+  grid-template-columns: 192px 580px auto;
   border-bottom: 1px solid var(--o-color-border2);
   padding: 20px 0;
   transition: all 0.25s ease;
@@ -111,7 +111,6 @@ defineProps({
     color: var(--o-color-text4);
     font-size: var(--o-font-size-h8);
     line-height: var(--o-line-height-h8);
-    word-break: keep-all;
     flex: 1;
     @media (max-width: 1100px) {
       font-size: var(--o-font-size-tip);
@@ -119,7 +118,7 @@ defineProps({
     }
   }
   .post-more {
-    width: 345px;
+    flex: 1;
     @media screen and (max-width: 1100px) {
       width: 100%;
     }

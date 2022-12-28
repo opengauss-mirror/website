@@ -59,10 +59,23 @@ onMounted(() => {
 </script>
 <template>
   <div class="banner">
-    <div
-      class="summit-banner-pc"
-      :style="`background-image:url(${bannerInfo.pc_banner}) ;`"
-    ></div>
+    <div class="summit-banner-pc">
+      <video
+        muted
+        playsinline="true"
+        autoplay="autoplay"
+        height="380"
+        loop
+        ref="bannerVideo"
+        :poster="bannerInfo.pc_banner"
+        preload=""
+      >
+        <source
+          type="video/mp4"
+          src="https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/openGauss%20Summit%202022/Banner/openGauss%20Banner%E5%8A%A8K_1920x380.mp4"
+        />
+      </video>
+    </div>
     <div class="summit-banner-mo">
       <img :src="bannerInfo.mo_banner" alt="" />
     </div>
@@ -284,6 +297,10 @@ onMounted(() => {
     height: 380px;
     margin: 0 auto;
     background: no-repeat center/cover;
+    video {
+      object-fit: cover;
+      width: 100%;
+    }
     @media screen and (max-width: 768px) {
       display: none;
     }
@@ -435,11 +452,11 @@ onMounted(() => {
       line-height: var(--o-line-height-h8);
     }
   }
-  .summit2022-box{
-    :deep(.live-room-web-itembox.odd2022){
+  .summit2022-box {
+    :deep(.live-room-web-itembox.odd2022) {
       grid-template-columns: repeat(3, 1fr);
-      .link-main{
-        grid-column:1/4;
+      .link-main {
+        grid-column: 1/4;
       }
     }
   }
