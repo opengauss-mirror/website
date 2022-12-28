@@ -4,7 +4,7 @@ import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';
 import { ElMessage, ElMessageBox } from 'element-plus';
 import { useCommon } from '@/stores/common';
-import { showGuard, getUserAuth } from '@/shared/login';
+import { showGuard, useStoreData } from '@/shared/login';
 
 import DownloadConfig from '@/data/download';
 import AppContent from '@/components/AppContent.vue';
@@ -24,7 +24,8 @@ import QuesTipsImg1 from '@/assets/category/download/tips1.png';
 const i18n = useI18n();
 const { lang, theme } = useData();
 const commonStore = useCommon();
-const { token } = getUserAuth();
+const { guardAuthClient } = useStoreData();
+const isLogin = ref(false);
 
 const isZh = computed(() => (lang.value === 'zh' ? true : false));
 
@@ -85,10 +86,9 @@ const hoverTips = computed(() => (type: string) => {
   }
   return tips;
 });
-const isLogin = ref(false);
-onMounted(async () => {
+
+onMounted(() => {
   inputDom.value = document.getElementById('useCopy');
-  isLogin.value = token.value ? true : false;
 });
 
 const activeName = computed(() =>
@@ -107,26 +107,28 @@ watch(
   { deep: true, immediate: true }
 );
 
+watch(
+  () => guardAuthClient.value,
+  () => {
+    isLogin.value = guardAuthClient.value.username ? true : false;
+  }
+);
+
 // 下载权限
 const changeDownloadAuth = () => {
-  if (token.value) {
-    isLogin.value = true;
-  } else {
-    isLogin.value = false;
-    ElMessageBox.confirm(
-      `下载 ${downloadVersionAuth} 软件包，请先登录！`,
-      i18n.value.download.DONNLOAD_TIPS,
-      {
-        confirmButtonText: i18n.value.download.DONNLOAD_COMFIRM,
-        cancelButtonText: i18n.value.download.DONNLOAD_CANCEL,
-        type: 'warning',
-      }
-    )
-      .then(() => {
-        showGuard();
-      })
-      .catch(() => {});
-  }
+  ElMessageBox.confirm(
+    i18n.value.download.DONNLOAD_TEXT,
+    i18n.value.download.DONNLOAD_TIPS,
+    {
+      confirmButtonText: i18n.value.download.DONNLOAD_COMFIRM,
+      cancelButtonText: i18n.value.download.DONNLOAD_CANCEL,
+      type: 'warning',
+    }
+  )
+    .then(() => {
+      showGuard();
+    })
+    .catch(() => {});
 };
 </script>
 
