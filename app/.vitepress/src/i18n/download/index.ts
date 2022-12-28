@@ -8,6 +8,9 @@ export default {
     SIMPLE: '安装配置简单，解压可用，适合个人开发者',
     LITE: '精简功能，缩减安装包大小，内存占用更少',
     DISTRIBUTED: '基于ShardingSphere和k8s的分布式容器化镜像',
+    DONNLOAD_TIPS: '下载提示',
+    DONNLOAD_COMFIRM: '确定',
+    DONNLOAD_CANCEL: '取消',
     FEEDBACK_QUESTION: '反馈问题',
     LETTER: {
       NAME: '致openGauss社区用户的一封信：',
@@ -25,6 +28,9 @@ export default {
     VERSION: 'Version',
     BTN_TEXT: 'Download',
     DOCS_TEXT: 'Documentation',
+    DONNLOAD_TIPS: 'Download Tips',
+    DONNLOAD_COMFIRM: 'OK',
+    DONNLOAD_CANCEL: 'Cancel',
     FEEDBACK_QUESTION: 'Feedback Question',
     COPY_SUCCESS: 'copied successfully.',
     ENTERPRISE:
