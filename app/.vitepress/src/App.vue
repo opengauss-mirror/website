@@ -18,6 +18,7 @@ import categories from '@/shared/category';
 import safetyImgLight from '@/assets/category/security/img/safety-img-light.png';
 import safetyImgDark from '@/assets/category/security/img/safety-img-dark.png';
 import floating from '@/assets/category/questionnaire/floating.png';
+import { refreshInfo } from './shared/login';
 
 const { frontmatter } = useData();
 
@@ -85,6 +86,7 @@ function handleCookieClick() {
 onMounted(() => {
   const show = localStorage.getItem('gauss-cookie');
   isCookieTip.value = show ? false : true;
+  refreshInfo();
 });
 function clickDeatilImg() {
   router.go('/zh/questionnaire/');

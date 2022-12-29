@@ -48,3 +48,6 @@
   pointer-events: auto;
   user-select: auto;
 }
+:is(.el-button, .el-message-box) {
+  border-radius: 0;
+}
