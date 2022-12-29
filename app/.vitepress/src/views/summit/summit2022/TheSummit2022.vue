@@ -7,6 +7,7 @@ import SummitSchedule from './components/SummitSchedule.vue';
 import AOS from 'aos';
 import SUMMITDATA from '@/data/summit/summit2022';
 import LinkPanel from '@/components/LinkPanel.vue';
+import SummitLive from './components/SummitLive.vue';
 
 import banner from '@/assets/category/summit/summit2022/banner.jpg';
 import bannerMo from '@/assets/category/summit/summit2022/banner-mo.jpg';
@@ -55,13 +56,40 @@ onMounted(() => {
     setDownData();
   }, 300);
 });
+
+// video 事件
+const videoDialog = ref(false);
+const videoLink = ref(''); 
+const handleCloseVideo = () => {
+  videoDialog.value = false;
+  videoLink.value = '';
+};
+const videoClickBtn = (path: string) => {
+  videoLink.value = path;
+  videoDialog.value = true;
+};
 </script>
 <template>
   <div class="banner">
-    <div
-      class="summit-banner-pc"
-      :style="`background-image:url(${bannerInfo.pc_banner}) ;`"
-    ></div>
+    <div class="summit-banner-pc">
+      <video
+        muted
+        playsinline="true"
+        autoplay="autoplay"
+        height="380"
+        loop
+        webkit-playsinline="true"
+        x5-playsinline="true"
+        mtt-playsinline="true"
+        :poster="bannerInfo.pc_banner"
+        preload=""
+      >
+        <source
+          type="video/mp4"
+          src="https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/openGauss%20Summit%202022/Banner/openGauss%20Banner%E5%8A%A8K_1920x380.mp4"
+        />
+      </video>
+    </div>
     <div class="summit-banner-mo">
       <img :src="bannerInfo.mo_banner" alt="" />
     </div>
@@ -71,6 +99,16 @@ onMounted(() => {
     <div class="summit-detail">
       <p>{{ SUMMITDATA.detail[0] }}</p>
       <p>{{ SUMMITDATA.detail[1] }}</p>
+    </div>
+    <div class="liver">
+      <h3 class="titleBar">{{ SUMMITDATA.liver.title }}</h3>
+      <ClientOnly>
+        <SummitLive
+          :live-data="SUMMITDATA.liver.liveData"
+          class-name="odd2022"
+          class="summit2022-box"
+        />
+      </ClientOnly>
     </div>
     <div class="agenda">
       <h3>{{ SUMMITDATA.agenda.title }}</h3>
@@ -124,7 +162,35 @@ onMounted(() => {
         </OContainer>
       </div>
     </div>
-
+    <!-- 线上展厅 -->
+    <h3 class="titleBar">线上展厅</h3>
+    <div class="exhibition-online">
+      <span
+        v-for="item in SUMMITDATA.videolist"
+        :key="item.name"
+        :title="item.name"
+        class="video-item"
+        @click="videoClickBtn(item.link)"
+      ></span>
+      <div v-if="videoDialog" class="video-box">
+        <ODialog
+          v-model="videoDialog"
+          :before-close="handleCloseVideo"
+          :show-close="false"
+          lock-scroll
+          close-on-press-escape
+          close-on-click-modal
+          destroy-on-close
+          width="800px"
+        >
+          <div class="video-center">
+            <video class="exhibition-video" width="100%" controls autoplay>
+              <source :src="videoLink" />
+            </video>
+          </div>
+        </ODialog>
+      </div>
+    </div>
     <div class="summit-partners">
       <h3 class="titleBar">{{ SUMMITDATA.partnersList.title[0] }}</h3>
       <h4 class="meetingtitle">
@@ -175,23 +241,7 @@ onMounted(() => {
         </a>
       </div>
     </div>
-    <!-- <div class="content">
-      <div
-        v-for="item in SUMMITDATA.contentList"
-        :key="item.link"
-        class="content-item"
-      >
-        <a :href="item.link" target="_blank">
-          <div class="text">
-            <p>CALL FOR</p>
-            <p>{{ item.nameEn }}</p>
-            <p>{{ item.name }}</p>
-          </div>
 
-          <img :src="item.img" :alt="item.name" />
-        </a>
-      </div>
-    </div> -->
     <div class="previous">
       <div class="previous-title">
         <h3>{{ SUMMITDATA.previous.title }}</h3>
@@ -273,6 +323,12 @@ onMounted(() => {
     height: 380px;
     margin: 0 auto;
     background: no-repeat center/cover;
+    video {
+      width: 100%;
+      @media screen and (max-width: 1920px) {
+        object-fit: cover;
+      }
+    }
     @media screen and (max-width: 768px) {
       display: none;
     }
@@ -406,7 +462,82 @@ onMounted(() => {
     }
   }
 }
-
+.liver {
+  margin-top: var(--o-spacing-h1);
+  @media (max-width: 767px) {
+    margin-top: var(--o-spacing-h2);
+  }
+  h3 {
+    text-align: center;
+    font-size: var(--o-font-size-h3);
+    line-height: var(--o-line-height-h3);
+    color: var(--o-color-text1);
+    font-weight: 300;
+    margin-bottom: var(--o-spacing-h2);
+    @media (max-width: 767px) {
+      margin-bottom: var(--o-spacing-h4);
+      font-size: var(--o-font-size-h8);
+      line-height: var(--o-line-height-h8);
+    }
+  }
+  .summit2022-box {
+    :deep(.live-room-web-itembox.odd2022) {
+      grid-template-columns: repeat(3, 1fr);
+      .link-main {
+        grid-column: 1/4;
+      }
+    }
+  }
+  .live-room {
+    margin-top: var(--o-spacing-h2);
+    @media (max-width: 767px) {
+      margin-top: var(--o-spacing-h4);
+    }
+  }
+  :deep(.o-container-level1) {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  :deep(.el-tabs__item) {
+    padding: 0 !important;
+  }
+  :deep(.el-tabs__nav-scroll) {
+    display: flex;
+  }
+  :deep(.el-tabs__nav) {
+    float: none !important;
+    display: inline-block;
+    margin: 0 auto;
+  }
+  :deep(.el-tabs__active-bar) {
+    display: none;
+  }
+  .timeTabs {
+    padding: 0 var(--o-spacing-h5);
+    line-height: 38px;
+  }
+  .is-active .timeTabs {
+    color: #fff;
+    background: var(--o-color-brand1);
+    border-color: var(--o-color-brand2);
+  }
+  .summit-kv-box {
+    :deep(.live-room-web-itembox.odd2022) {
+      grid-template-columns: repeat(5, 1fr);
+      .link-main {
+        grid-column: 1/6;
+      }
+    }
+  }
+  .summit-box {
+    :deep(.live-room-web-itembox.odd2022) {
+      grid-template-columns: repeat(7, 1fr);
+      .link-main {
+        grid-column: 1/8;
+      }
+    }
+  }
+}
 .agenda {
   margin: var(--o-spacing-h1) 0;
   @media (max-width: 767px) {
@@ -662,6 +793,379 @@ onMounted(() => {
         font-size: var(--o-font-size-h8);
         line-height: var(--o-line-height-h8);
       }
+    }
+  }
+}
+
+.exhibition-online {
+  width: 1416px;
+  height: 844px;
+  position: relative;
+  margin: 0 auto;
+  background: url(@/assets/category/summit/summit2022/exhibition.png) no-repeat;
+  background-size: 100% 100%;
+  @media screen and (max-width: 1460px) {
+    width: 1100px;
+    height: 649px;
+  }
+  @media screen and (max-width: 1100px) {
+    width: 100%;
+    height: 58vw;
+  }
+  .video-item {
+    position: absolute;
+    // background: rgba($color: #ff0000, $alpha: 0.3);
+    border-radius: 30px;
+    display: block;
+    cursor: pointer;
+    &:nth-of-type(1) {
+      width: 230px;
+      height: 58px;
+      left: 384px;
+      top: 43px;
+      @media screen and (max-width: 1460px) {
+        width: 178px;
+        height: 42px;
+        left: 300px;
+        top: 34px;
+      }
+      @media screen and (max-width: 1100px) {
+        width: 16%;
+        height: 4vw;
+        top: 3vw;
+        left: 25vw;
+      }
+    }
+    &:nth-of-type(2) {
+      width: 178px;
+      height: 58px;
+      left: 681px;
+      top: 44px;
+      @media screen and (max-width: 1460px) {
+        width: 138px;
+        height: 42px;
+        top: 34px;
+        left: 529px;
+      }
+      @media screen and (max-width: 1100px) {
+        width: 13%;
+        height: 4vw;
+        top: 3vw;
+        left: 44vw;
+      }
+    }
+    &:nth-of-type(3) {
+      width: 195px;
+      height: 52px;
+      right: 152px;
+      top: 169px;
+      @media screen and (max-width: 1460px) {
+        width: 150px;
+        height: 42px;
+        right: 120px;
+        top: 128px;
+      }
+      @media screen and (max-width: 1100px) {
+        width: 14%;
+        height: 4vw;
+        top: 11.5vw;
+        right: 10vw;
+      }
+    }
+    &:nth-of-type(4) {
+      width: 195px;
+      height: 54px;
+      right: 127px;
+      top: 293px;
+      @media screen and (max-width: 1460px) {
+        width: 150px;
+        height: 42px;
+        right: 100px;
+        top: 224px;
+      }
+      @media screen and (max-width: 1100px) {
+        width: 14%;
+        height: 4vw;
+        top: 20vw;
+        right: 8vw;
+      }
+    }
+    &:nth-of-type(5) {
+      width: 195px;
+      height: 54px;
+      right: 97px;
+      top: 418px;
+      @media screen and (max-width: 1460px) {
+        width: 150px;
+        height: 42px;
+        right: 76px;
+        top: 320px;
+      }
+      @media screen and (max-width: 1100px) {
+        width: 14%;
+        height: 4vw;
+        top: 28.5vw;
+        right: 6.5vw;
+      }
+    }
+    &:nth-of-type(6) {
+      width: 195px;
+      height: 54px;
+      right: 66px;
+      top: 545px;
+      @media screen and (max-width: 1460px) {
+        width: 150px;
+        height: 42px;
+        right: 54px;
+        top: 419px;
+      }
+      @media screen and (max-width: 1100px) {
+        width: 14%;
+        height: 4vw;
+        top: 37.5vw;
+        right: 4.5vw;
+      }
+    }
+    &:nth-of-type(7) {
+      width: 195px;
+      height: 54px;
+      right: 38px;
+      top: 670px;
+      @media screen and (max-width: 1460px) {
+        width: 150px;
+        height: 42px;
+        right: 31px;
+        top: 516px;
+      }
+      @media screen and (max-width: 1100px) {
+        width: 14%;
+        height: 4vw;
+        top: 46vw;
+        right: 2.5vw;
+      }
+    }
+    &:nth-of-type(8) {
+      width: 234px;
+      height: 58px;
+      left: 104px;
+      top: 226px;
+      @media screen and (max-width: 1460px) {
+        width: 182px;
+        height: 42px;
+        left: 81px;
+        top: 175px;
+        border-radius: 19px;
+      }
+      @media screen and (max-width: 1100px) {
+        width: 17%;
+        height: 4vw;
+        top: 16vw;
+        left: 7vw;
+      }
+    }
+    &:nth-of-type(9) {
+      width: 234px;
+      height: 58px;
+      left: 382px;
+      top: 226px;
+      @media screen and (max-width: 1460px) {
+        width: 181px;
+        height: 42px;
+        left: 296px;
+        top: 175px;
+        border-radius: 19px;
+      }
+      @media screen and (max-width: 1100px) {
+        width: 16%;
+        height: 4vw;
+        top: 15vw;
+        left: 25vw;
+      }
+    }
+    &:nth-of-type(10) {
+      width: 234px;
+      height: 58px;
+      left: 71px;
+      top: 379px;
+      @media screen and (max-width: 1460px) {
+        width: 183px;
+        height: 42px;
+        left: 54px;
+        top: 294px;
+        border-radius: 19px;
+      }
+      @media screen and (max-width: 1100px) {
+        width: 16%;
+        height: 4vw;
+        top: 26vw;
+        left: 5vw;
+      }
+    }
+    &:nth-of-type(11) {
+      width: 235px;
+      height: 54px;
+      left: 369px;
+      top: 381px;
+      @media screen and (max-width: 1460px) {
+        width: 180px;
+        height: 42px;
+        left: 288px;
+        top: 294px;
+        border-radius: 19px;
+      }
+      @media screen and (max-width: 1100px) {
+        width: 17%;
+        height: 4vw;
+        top: 26vw;
+        left: 24vw;
+      }
+    }
+    &:nth-of-type(12) {
+      width: 258px;
+      height: 56px;
+      right: 536px;
+      top: 305px;
+
+      @media screen and (max-width: 1460px) {
+        width: 200px;
+        height: 42px;
+        right: 417px;
+        top: 235px;
+        border-radius: 19px;
+      }
+      @media screen and (max-width: 1100px) {
+        width: 18%;
+        height: 4vw;
+        top: 21vw;
+        right: 36vw;
+      }
+    }
+    &:nth-of-type(13) {
+      width: 270px;
+      height: 52px;
+      right: 340px;
+      top: 230px;
+      @media screen and (max-width: 1460px) {
+        width: 207px;
+        height: 42px;
+        right: 266px;
+        top: 176px;
+        border-radius: 19px;
+      }
+      @media screen and (max-width: 1100px) {
+        width: 19%;
+        height: 4vw;
+        top: 16vw;
+        right: 23vw;
+      }
+    }
+    &:nth-of-type(14) {
+      width: 257px;
+      height: 54px;
+      right: 307px;
+      top: 381px;
+      @media screen and (max-width: 1460px) {
+        width: 200px;
+        height: 42px;
+        right: 238px;
+        top: 294px;
+        border-radius: 19px;
+      }
+      @media screen and (max-width: 1100px) {
+        width: 18%;
+        height: 4vw;
+        top: 26vw;
+        right: 20vw;
+      }
+    }
+    &:nth-of-type(15) {
+      width: 208px;
+      height: 55px;
+      left: 365px;
+      bottom: 212px;
+      @media screen and (max-width: 1460px) {
+        width: 164px;
+        height: 42px;
+        left: 283px;
+        bottom: 163px;
+        border-radius: 19px;
+      }
+      @media screen and (max-width: 1100px) {
+        width: 15%;
+        height: 4vw;
+        bottom: 14.5vw;
+        left: 24vw;
+      }
+    }
+    &:nth-of-type(16) {
+      width: 211px;
+      height: 55px;
+      left: 37px;
+      bottom: 119px;
+      @media screen and (max-width: 1460px) {
+        width: 161px;
+        height: 42px;
+        left: 31px;
+        bottom: 90px;
+        border-radius: 19px;
+      }
+      @media screen and (max-width: 1100px) {
+        width: 15%;
+        height: 4vw;
+        bottom: 8vw;
+        left: 2vw;
+      }
+    }
+    &:nth-of-type(17) {
+      width: 255px;
+      height: 58px;
+      right: 544px;
+      bottom: 211px;
+      @media screen and (max-width: 1460px) {
+        width: 200px;
+        height: 42px;
+        right: 421px;
+        bottom: 164px;
+        border-radius: 19px;
+      }
+      @media screen and (max-width: 1100px) {
+        width: 18%;
+        height: 4vw;
+        bottom: 14.5vw;
+        right: 36vw;
+      }
+    }
+    &:nth-of-type(18) {
+      width: 255px;
+      height: 58px;
+      right: 298px;
+      bottom: 117px;
+      @media screen and (max-width: 1460px) {
+        width: 196px;
+        height: 42px;
+        right: 234px;
+        bottom: 92px;
+        border-radius: 19px;
+      }
+      @media screen and (max-width: 1100px) {
+        width: 18%;
+        height: 4vw;
+        bottom: 8vw;
+        right: 20vw;
+      }
+    }
+  }
+  .video-box {
+    :deep(.el-dialog__header) {
+      display: none;
+    }
+    :deep(.el-dialog__body) {
+      padding: 0;
+    }
+    .exhibition-video {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
     }
   }
 }

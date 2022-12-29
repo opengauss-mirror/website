@@ -1,43 +1,49 @@
 <script lang="ts" setup>
-import { computed, onMounted, ref, watch } from 'vue';
+import { computed, onMounted, watch } from 'vue';
 import { useCommon } from '@/stores/common';
 
-import IconMoonLight from '~icons/app/icon-sun-outline.svg';
-import IconMoonDark from '~icons/app/icon-moon-outline.svg';
+import IconSun from '~icons/app/icon-sun-outline.svg';
+import IconMoon from '~icons/app/icon-moon-outline.svg';
 
 // 风格切换
 const APPEARANCE_KEY = 'vitepress-theme-appearance';
+
 const commonStore = useCommon();
 
-const isDark = computed(() => (commonStore.theme === 'dark' ? true : false));
-const mobileTheme = ref(false);
+const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
 
 const changeTheme = () => {
   const theme = commonStore.theme === 'dark' ? 'light' : 'dark';
   commonStore.theme = theme;
   localStorage.setItem(APPEARANCE_KEY, theme);
-  mobileTheme.value = isDark.value;
 };
 
-const switchTheme = () => {
-  const theme = mobileTheme.value ? 'dark' : 'light';
-  commonStore.theme = theme;
-  localStorage.setItem(APPEARANCE_KEY, theme);
+const changeThemeMobile = () => {
+  localStorage.setItem(APPEARANCE_KEY, commonStore.theme);
 };
 
 onMounted(() => {
-  const theme = localStorage.getItem(APPEARANCE_KEY);
+  let theme;
+  if (!localStorage.getItem(APPEARANCE_KEY)) {
+    const prefereDark = window.matchMedia(
+      '(prefers-color-scheme: dark)'
+    ).matches;
+    theme = prefereDark ? 'dark' : 'light';
+  } else {
+    theme = localStorage.getItem(APPEARANCE_KEY);
+  }
+
   commonStore.theme = theme === 'dark' ? 'dark' : 'light';
-  mobileTheme.value = isDark.value;
 });
 
 watch(
-  () => commonStore.theme,
+  () => {
+    return commonStore.theme;
+  },
   (val) => {
     const documentElement = document.documentElement;
     val === 'light' && documentElement.classList.remove('dark');
-    val === 'dark' && documentElement.classList.add(val);
-    localStorage.setItem(APPEARANCE_KEY, val);
+    val === 'dark' && documentElement.classList.add('dark');
   }
 );
 </script>
@@ -46,17 +52,19 @@ watch(
   <div class="theme-box">
     <div class="theme-box-pc" @click="changeTheme">
       <OIcon class="icon">
-        <IconMoonLight v-if="isDark" />
-        <IconMoonDark v-else />
+        <IconMoon v-if="isLight" />
+        <IconSun v-else />
       </OIcon>
     </div>
     <div class="theme-box-mobile">
       <OSwitch
-        v-model="mobileTheme"
-        active-text="Dark"
-        inactive-text="Light"
-        active-color="#002fa7"
-        @change="switchTheme"
+        v-model="commonStore.theme"
+        active-text="dark"
+        active-value="dark"
+        inactive-text="light"
+        inactive-value="light"
+        active-color="#7d32ea"
+        @click="changeThemeMobile"
       />
     </div>
   </div>
@@ -76,6 +84,7 @@ watch(
   }
   &-mobile {
     display: none;
+
     @media screen and (max-width: 1100px) {
       display: block;
     }
@@ -86,6 +95,7 @@ watch(
     color: var(--o-color-text1);
   }
 }
+
 :deep(.el-switch__label) {
   span {
     font-size: 12px;

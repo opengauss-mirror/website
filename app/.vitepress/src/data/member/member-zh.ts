@@ -333,6 +333,22 @@ export default {
           LIST: data.zh.HEFEI,
         },
         {
+          NAME: '武汉用户组',
+          ID: 'WuHan',
+          GITEE_PATH:
+            'https://gitee.com/opengauss/openGauss-User-Group/tree/master/WuHan',
+          EMIAL: 'usergroup@opengauss.org',
+          LIST: data.zh.WUHAN,
+        },
+        {
+          NAME: '沈阳用户组',
+          ID: 'ShenYang',
+          GITEE_PATH:
+            'https://gitee.com/opengauss/openGauss-User-Group/tree/master/ShenYang',
+          EMIAL: 'usergroup@opengauss.org',
+          LIST: data.zh.SHENYANG,
+        },
+        {
           other: '你的城市还没有用户组?',
           other1: '新的用户组等你来发起！ ',
           other2: '欢迎发送申请邮件至：',

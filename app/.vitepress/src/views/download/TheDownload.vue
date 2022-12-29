@@ -36,6 +36,8 @@ const selectVersion = ref(versionIndex);
 const getData = computed(() => {
   return DownloadConfig.filter((el) => el.id === versionIndex.value);
 });
+// 当前版本名称
+const versionName = ref(getData.value[0].name);
 
 // 下载认证版本
 const downloadVersionAuth = '3.1.0';
