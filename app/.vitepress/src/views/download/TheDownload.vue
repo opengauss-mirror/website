@@ -40,7 +40,7 @@ const getData = computed(() => {
 const versionName = ref(getData.value[0].name);
 
 // 下载认证版本
-const downloadVersionAuth = '3.1.0';
+const downloadVersionAuth = '3.1.1';
 
 const handleDownloadUrl = (url: string) => {
   window.open(url, '_blank');
