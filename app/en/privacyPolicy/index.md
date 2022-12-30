@@ -123,6 +123,6 @@ We may update or modify this Statement from time to time according to changes of
 
 If you want to contact us or exercise your rights, please contact us at <contact@opengauss.org>.
 
-Last updated: March, 2022
+Last updated: December, 2022
 
 </div>
