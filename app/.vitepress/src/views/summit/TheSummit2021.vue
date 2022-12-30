@@ -116,16 +116,13 @@ const videoClickBtn = (path: string) => {
           lock-scroll
           close-on-press-escape
           close-on-click-modal
+          destroy-on-close
           width="800px"
         >
           <div class="video-center">
-            <video
-              class="exhibition-video"
-              :src="videoLink"
-              width="100%"
-              controls
-              autoplay
-            ></video>
+            <video class="exhibition-video" width="100%" controls autoplay>
+              <source :src="videoLink" />
+            </video>
           </div>
         </ODialog>
       </div>
