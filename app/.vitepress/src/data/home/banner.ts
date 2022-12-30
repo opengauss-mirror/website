@@ -16,10 +16,25 @@ import bannerQues_mo from '@/assets/category/home/banner/banner-ques-mo.png';
 import bannerSummit from '@/assets/category/home/banner/banner-summit.jpg';
 import bannerSummit_mo from '@/assets/category/home/banner/banner-summit-mo.jpg';
 
+import yearPc from '@/assets/category/home/banner/opengauss-year-pc.jpg';
+import yearMo from '@/assets/category/home/banner/opengauss-year-mo.png';
+
 // targetTap:1 新页签打开
 // type:1(只有图片)、2(文字居左)，3(文字居中),4(仅用于实习banner),5 视频
 export default {
   zh: [
+    {
+      pcBanner: yearPc,
+      moBanner: yearMo,
+      link: '',
+      targetTap: 1,
+      title: '',
+      desc: [''],
+      btn: '',
+      type: 1,
+      className: '',
+      video: '',
+    },
     {
       pcBanner: bannerSummit,
       moBanner: bannerSummit_mo,
@@ -108,6 +123,18 @@ export default {
     // },
   ],
   en: [
+    {
+      pcBanner: yearPc,
+      moBanner: yearMo,
+      link: '',
+      targetTap: 1,
+      title: '',
+      desc: [''],
+      btn: '',
+      type: 1,
+      className: '',
+      video: '',
+    },
     {
       pcBanner: liveImg_pc,
       moBanner: liveImg_mo,

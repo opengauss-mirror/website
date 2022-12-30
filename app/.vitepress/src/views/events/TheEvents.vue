@@ -65,7 +65,7 @@ const addActiveData = {
   label: '线上',
   location: '线上',
   img: '/category/events/2022-12-15/banner.png',
-  path: 'questionnaire',
+  path: `/${lang.value}/questionnaire/`,
   author: 'openGauss',
   summary:
     '填写openGauss社区满意度调研问卷，可参与抽取HUAWEI MatePad SE、华为手环7标准版等惊喜大奖！快来参与吧～',
@@ -134,6 +134,8 @@ onMounted(async () => {
 const goDetail = (path: string) => {
   if (path.startsWith('http')) {
     window.open(path, '_blank');
+  } else if (path.startsWith(`/${lang.value}/`)) {
+    router.go(path);
   } else {
     router.go(`/${lang.value + '/' + path}.html`);
   }
