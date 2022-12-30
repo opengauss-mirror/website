@@ -14,15 +14,17 @@ The openGauss Community understands the importance of your privacy and fully res
 
 **We generally do not require your personal data if you only browse the general content of the openGauss Community ("Community"). We will collect your personal data accordingly in the following circumstances:**
 
-(a) **Mail Subscription**. When you use our mail subscription service, we will collect your <u>**email address and name (optional)**</u>. We will provide you with the email subscription service through this email address to facilitate your participation in discussions in the community.
+(a) **Account Service**. The openGauss community provides the openGauss community account service for unified identity and permission management. When you register an openGauss community account, we will collect your mobile number for identity verification. We will also use your email address to verify your identity in the community and collect statistics based on the data so that we can understand the operating status of the openGauss community platform. We may collect your nickname, profile picture, and company name in the user center and display the data in the community. 
 
-(b) **Service Optimization**. To continuously understand the operating status of the openGauss Community and provide better services for you, we will deploy a third-party plugin in this program. The third-party plugin will collect and record information on your browser, computer, and mobile device, including but not limited to your <u>**IP address, access source, number of visits to the community, stay duration, access timestamp, browser type, and server type and version**</u>, etc. This will form the basis of our analysis, which helps us to better understand the openGauss Community operation.
+(b) **Mail Subscription**. When you use our mail subscription service, we will collect your <u>**email address and name (optional)**</u>. We will provide you with the email subscription service through this email address to facilitate your participation in discussions in the community.
 
-(c) **Contributor License Agreement Signing**. When you participate in code contribution through the Contributor License Agreement ("CLA") signing system (click [<u>here</u>](https://clasign.osinfra.cn/sign/Z2l0ZWUlMkZvcGVuZ2F1c3M=) to learn more), you need to submit your relevant personal data to the CLA signing system. We will obtain such personal data to verify whether you have signed the CLA, and to conduct relevant statistical analysis to understand how the community is operating.
+(c) **Service Optimization**. To continuously understand the operating status of the openGauss Community and provide better services for you, we will deploy a third-party plugin in this program. The third-party plugin will collect and record information on your browser, computer, and mobile device, including but not limited to your <u>**IP address, access source, number of visits to the community, stay duration, access timestamp, browser type, and server type and version**</u>, etc. This will form the basis of our analysis, which helps us to better understand the openGauss Community operation.
 
-(d) **Meeting Service**. When you use our meeting service, we will collect your Gitee ID, SIG group name, and (optional) email address for configuring related permissions. You can choose whether to record the meeting. If you agree to record the meeting, we will upload the meeting video to the third-party platform Bilibili (https://www.bilibili.com/) so that more interested individuals or organizations can participate in your meeting.
+(d) **Contributor License Agreement Signing**. When you participate in code contribution through the Contributor License Agreement ("CLA") signing system (click [<u>here</u>](https://clasign.osinfra.cn/sign/Z2l0ZWUlMkZvcGVuZ2F1c3M=) to learn more), you need to submit your relevant personal data to the CLA signing system. We will obtain such personal data to verify whether you have signed the CLA, and to conduct relevant statistical analysis to understand how the community is operating.
 
-(e) **Certificate Service**. When using our certificate query service, you need to enter your email address to query your OGCA certificate in the openGauss community. We will collect your personal information from our partner to generate an OGCA certificate.
+(e) **Meeting Service**. When you use our meeting service, we will collect your Gitee ID, SIG group name, and (optional) email address for configuring related permissions. You can choose whether to record the meeting. If you agree to record the meeting, we will upload the meeting video to the third-party platform Bilibili (https://www.bilibili.com/) so that more interested individuals or organizations can participate in your meeting.
+
+(f  ) **Certificate Service**. When using our certificate query service, you need to enter your email address to query your OGCA certificate in the openGauss community. We will collect your personal information from our partner to generate an OGCA certificate.
 
 We may also collect your personal information from third parties, including other platforms or communities, within the scope of your authorization and consent, or obtain your personal information from other legal and public channels. We promise to process your personal information in strict accordance with applicable laws and regulations. Please read the privacy policies and user agreements of the third parties carefully. If your personal information provided by a third party is required when you use the openGauss community, but you refuse to allow the third party to collect, use, transfer, or share your personal information when the third party provides services, you may not be able to use related services of the openGauss community. For example, when you use an authorized third-party account to log in to the openGauss community, we will obtain your personal information from the third party with your consent.
 
@@ -32,7 +34,7 @@ We may also collect your personal information from third parties, including othe
 
 (b) We use two types of cookies:
 
-&emsp;&emsp;(1)Strict and necessary cookies: used for login and verification. When you log in to the website with your HUAWEI ID, cookies improve your Web browsing experience.
+&emsp;&emsp;(1)Strict and necessary cookies: used for login and verification. When you log in to the website with your openGauss community account, cookies improve your Web browsing experience.
 
 &emsp;&emsp;(2)Statistical analysis cookies: We collect information about your use of our services, including your single or multiple visits, which help us understand how the services are running and used. We use the statistical analysis plugin provided by Baidu.
 
@@ -91,6 +93,21 @@ Please note that these rights are not absolute and may be restricted in accordan
 <u>**Generally, we will respond to you within one month, unless otherwise required by applicable laws. Depending on the complexity of your requests, we may extend the period by two further months. In this case, we will inform you of the extension and its reasons within one month of receiving your request.**</u> Please note that under some circumstances, for example where we cannot verify your identity, or your claim exceeds your rights under applicable laws, we may refuse your request. In this case, we will inform you in written form that your request is refused together with the reasons for our refusal.
 
 You can change the scope of your authorization for us to collect your personal data or withdraw your authorization. However, your decision to withdraw your consent or authorization does not affect any previous processing of personal information based on your authorization.
+
+### 6.1 Data Access
+You can log in to the user center using an openGauss community account using the browser on your local PC or mobile device to access your personal data.
+ 
+### 6.2 Data Correction
+You can log in to the user center using an openGauss community account and choose User Center > Info to view and correct your personal data.
+ 
+### 6.3 Data Deletion
+You can log in to the openGauss community and choose User Center > Info or Identity to unbind your email address or delete the company, nickname, and profile picture from your openGauss community account.
+ 
+### 6.4 Revocation of Consent
+If you have any further requests, questions, comments, or suggestions regarding your rights as a data subject, please contact us using the contact information provided in the "Contacting Us" section of this Statement.
+ 
+### 6.5 Deletion
+You can log in to the openGauss community and choose User Center > Security > Delete to delete your openGauss community account.
 
 ## 7.Personal Data Storage Location
 
