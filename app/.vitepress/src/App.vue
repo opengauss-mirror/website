@@ -6,6 +6,7 @@ import { useData, useRoute, useRouter } from 'vitepress';
 import type { Component } from 'vue';
 import { computed, watch, ref, onMounted } from 'vue';
 import { useCommon } from '@/stores/common';
+import { refreshInfo } from './shared/login';
 
 import LayoutSecurity from '@/layouts/LayoutSecurity.vue';
 import LayoutBlog from '@/layouts/LayoutBlog.vue';
@@ -18,9 +19,10 @@ import categories from '@/shared/category';
 import safetyImgLight from '@/assets/category/security/img/safety-img-light.png';
 import safetyImgDark from '@/assets/category/security/img/safety-img-dark.png';
 import floating from '@/assets/category/questionnaire/floating.png';
-import { refreshInfo } from './shared/login';
+import summaryTips from '@/assets/category/home/summary-tips.png';
+import summaryTipsClosed from '@/assets/category/home/closed.png';
 
-const { frontmatter } = useData();
+const { frontmatter, lang } = useData();
 
 const compMapping: {
   [name: string]: Component;
@@ -48,6 +50,7 @@ const router = useRouter();
 const route = useRoute();
 const isTipShow = ref(false);
 const isQuesShow = ref(true);
+const isSummaryShow = ref(false);
 watch(
   route,
   (newValue) => {
@@ -73,6 +76,11 @@ watch(
         isQuesShow.value = false;
       }
     });
+
+    // 年度报告
+    const summaryShow = sessionStorage.getItem('summary-tips');
+    isSummaryShow.value =
+      lang.value === 'en' ? false : summaryShow ? false : true;
   },
   { immediate: true }
 );
@@ -86,6 +94,12 @@ function handleCookieClick() {
 onMounted(() => {
   const show = localStorage.getItem('gauss-cookie');
   isCookieTip.value = show ? false : true;
+
+  // 年度报告
+  const summaryShow = sessionStorage.getItem('summary-tips');
+  isSummaryShow.value =
+    lang.value === 'en' ? false : summaryShow ? false : true;
+
   refreshInfo();
 });
 function clickDeatilImg() {
@@ -94,6 +108,12 @@ function clickDeatilImg() {
 function closeDeatilImg() {
   isQuesShow.value = false;
 }
+// 年度报告
+
+const summaryTipsClick = () => {
+  isSummaryShow.value = false;
+  sessionStorage.setItem('summary-tips', 'false');
+};
 </script>
 
 <template>
@@ -110,6 +130,17 @@ function closeDeatilImg() {
     <div v-if="isQuesShow" class="code-datail">
       <img :src="floating" alt="扫描二维码" @click="clickDeatilImg" />
       <div class="close" @click="closeDeatilImg"></div>
+    </div>
+    <div v-if="isSummaryShow" class="smmary-code">
+      <a href="https://summary.opengauss.org/zh/2022/" target="_blank">
+        <img class="code" :src="summaryTips" alt="扫描二维码" />
+      </a>
+      <img
+        :src="summaryTipsClosed"
+        class="close"
+        @click="summaryTipsClick"
+        alt="扫描二维码"
+      />
     </div>
   </main>
   <AppFooter :is-cookie-tip="isCookieTip" @cookie-click="handleCookieClick" />
@@ -168,6 +199,32 @@ main {
     width: 22px;
     height: 20px;
     cursor: pointer;
+  }
+}
+.smmary-code {
+  position: fixed;
+  left: 1vw;
+  top: 65vh;
+  z-index: 99;
+
+  .code {
+    width: 141px;
+    cursor: pointer;
+    @media screen and (max-width: 1100px) {
+      width: 85px;
+    }
+  }
+  .close {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    @media screen and (max-width: 1100px) {
+      width: 20px;
+      height: 20px;
+    }
   }
 }
 </style>
