@@ -77,11 +77,10 @@ watch(
       }
     });
 
-    // 年度报告 
-    const summaryShow = localStorage.getItem('summary-tips');
-      isSummaryShow.value =
-    lang.value === 'en' ? false : summaryShow ? false : true;
-
+    // 年度报告
+    const summaryShow = sessionStorage.getItem('summary-tips');
+    isSummaryShow.value =
+      lang.value === 'en' ? false : summaryShow ? false : true;
   },
   { immediate: true }
 );
@@ -97,7 +96,7 @@ onMounted(() => {
   isCookieTip.value = show ? false : true;
 
   // 年度报告
-  const summaryShow = localStorage.getItem('summary-tips');
+  const summaryShow = sessionStorage.getItem('summary-tips');
   isSummaryShow.value =
     lang.value === 'en' ? false : summaryShow ? false : true;
 
@@ -113,7 +112,7 @@ function closeDeatilImg() {
 
 const summaryTipsClick = () => {
   isSummaryShow.value = false;
-  localStorage.setItem('summary-tips', 'false');
+  sessionStorage.setItem('summary-tips', 'false');
 };
 </script>
 
