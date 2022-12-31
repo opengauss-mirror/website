@@ -102,6 +102,7 @@ const videoClickBtn = (path: string) => {
               'banner-img': item.type === 1,
               'text-center': item.type === 3,
               internship: item.type === 4,
+              'no-link': item.link === '',
             }"
             :style="{
               backgroundImage: `url(${
@@ -195,6 +196,9 @@ html[lang='zh'] {
 }
 .banner-panel-cover {
   cursor: pointer;
+}
+.no-link {
+  cursor: default;
 }
 .dark .banner-panel-cover {
   filter: brightness(80%) grayscale(20%) contrast(1.2);
