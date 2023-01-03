@@ -19,10 +19,8 @@ import categories from '@/shared/category';
 import safetyImgLight from '@/assets/category/security/img/safety-img-light.png';
 import safetyImgDark from '@/assets/category/security/img/safety-img-dark.png';
 import floating from '@/assets/category/questionnaire/floating.png';
-import summaryTips from '@/assets/category/home/summary-tips.png';
-import summaryTipsClosed from '@/assets/category/home/closed.png';
 
-const { frontmatter, lang } = useData();
+const { frontmatter } = useData();
 
 const compMapping: {
   [name: string]: Component;
@@ -50,40 +48,6 @@ const router = useRouter();
 const route = useRoute();
 const isTipShow = ref(false);
 const isQuesShow = ref(true);
-const isSummaryShow = ref(false);
-watch(
-  route,
-  (newValue) => {
-    const pathList = ['security-advisories', 'security', 'cve'];
-    isTipShow.value = false;
-    pathList.forEach((item) => {
-      if (item === newValue.path.split('/')[2]) {
-        isTipShow.value = true;
-      }
-    });
-    // 控制调查页面的浮窗入口显示
-    const pathList2 = [
-      'download',
-      'training',
-      'security',
-      'security-advisories',
-      'cve',
-      'questionnaire',
-    ];
-    isQuesShow.value = true;
-    pathList2.forEach((item) => {
-      if (item === newValue.path.split('/')[2]) {
-        isQuesShow.value = false;
-      }
-    });
-
-    // 年度报告
-    const summaryShow = sessionStorage.getItem('summary-tips');
-    isSummaryShow.value =
-      lang.value === 'en' ? false : summaryShow ? false : true;
-  },
-  { immediate: true }
-);
 
 // cookies使用提示
 const isCookieTip = ref(false);
@@ -94,13 +58,35 @@ function handleCookieClick() {
 onMounted(() => {
   const show = localStorage.getItem('gauss-cookie');
   isCookieTip.value = show ? false : true;
-
-  // 年度报告
-  const summaryShow = sessionStorage.getItem('summary-tips');
-  isSummaryShow.value =
-    lang.value === 'en' ? false : summaryShow ? false : true;
-
   refreshInfo();
+  watch(
+    route,
+    (newValue) => {
+      const pathList = ['security-advisories', 'security', 'cve'];
+      isTipShow.value = false;
+      pathList.forEach((item) => {
+        if (item === newValue.path.split('/')[2]) {
+          isTipShow.value = true;
+        }
+      });
+      // 控制调查页面的浮窗入口显示
+      const pathList2 = [
+        'download',
+        'training',
+        'security',
+        'security-advisories',
+        'cve',
+        'questionnaire',
+      ];
+      isQuesShow.value = true;
+      pathList2.forEach((item) => {
+        if (item === newValue.path.split('/')[2]) {
+          isQuesShow.value = false;
+        }
+      });
+    },
+    { immediate: true }
+  );
 });
 function clickDeatilImg() {
   router.go('/zh/questionnaire/');
@@ -108,12 +94,6 @@ function clickDeatilImg() {
 function closeDeatilImg() {
   isQuesShow.value = false;
 }
-// 年度报告
-
-const summaryTipsClick = () => {
-  isSummaryShow.value = false;
-  sessionStorage.setItem('summary-tips', 'false');
-};
 </script>
 
 <template>
@@ -130,17 +110,6 @@ const summaryTipsClick = () => {
     <div v-if="isQuesShow" class="code-datail">
       <img :src="floating" alt="扫描二维码" @click="clickDeatilImg" />
       <div class="close" @click="closeDeatilImg"></div>
-    </div>
-    <div v-if="isSummaryShow" class="smmary-code">
-      <a href="https://summary.opengauss.org/zh/2022/" target="_blank">
-        <img class="code" :src="summaryTips" alt="扫描二维码" />
-      </a>
-      <img
-        :src="summaryTipsClosed"
-        class="close"
-        alt="扫描二维码"
-        @click="summaryTipsClick"
-      />
     </div>
   </main>
   <AppFooter :is-cookie-tip="isCookieTip" @cookie-click="handleCookieClick" />
@@ -199,32 +168,6 @@ main {
     width: 22px;
     height: 20px;
     cursor: pointer;
-  }
-}
-.smmary-code {
-  position: fixed;
-  left: 1vw;
-  top: 65vh;
-  z-index: 99;
-
-  .code {
-    width: 141px;
-    cursor: pointer;
-    @media screen and (max-width: 1100px) {
-      width: 85px;
-    }
-  }
-  .close {
-    position: absolute;
-    right: -10px;
-    top: -10px;
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-    @media screen and (max-width: 1100px) {
-      width: 20px;
-      height: 20px;
-    }
   }
 }
 </style>

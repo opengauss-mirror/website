@@ -19,6 +19,9 @@ import { getSortData } from '@/api/api-search';
 
 import HomeConfig from '@/data/home/';
 
+import summaryTips from '@/assets/category/home/summary-tips.png';
+import summaryTipsClosed from '@/assets/category/home/closed.png';
+
 const { lang } = useData();
 const i18n = useI18n();
 const newsData = ref(undefined);
@@ -28,6 +31,12 @@ const blogData = ref(undefined);
 const eventsData = computed(() =>
   lang.value === 'zh' ? HomeConfig.HOME_EVENTS.zh : HomeConfig.HOME_EVENTS.en
 );
+// 年度报告显示控制
+const isSummaryShow = ref(false);
+const summaryTipsClick = () => {
+  isSummaryShow.value = false;
+  sessionStorage.setItem('summary-tips', 'false');
+};
 onMounted(async () => {
   const body = document.querySelector('body');
   if (body) {
@@ -63,6 +72,10 @@ onMounted(async () => {
   } catch (e: any) {
     throw new Error(e);
   }
+  // 年度报告
+  const summaryShow = sessionStorage.getItem('summary-tips');
+  isSummaryShow.value =
+    lang.value === 'en' ? false : summaryShow ? false : true;
 });
 onUnmounted(() => {
   const body = document.querySelector('body');
@@ -108,6 +121,17 @@ onUnmounted(() => {
       <LinkPanel :link-list="HomeConfig.LINK_LIST" :islink="true" />
     </div>
   </AppContent>
+  <div v-if="isSummaryShow" class="smmary-code">
+    <a href="https://summary.opengauss.org/zh/2022/" target="_blank">
+      <img class="code" :src="summaryTips" alt="扫描二维码" />
+    </a>
+    <img
+      :src="summaryTipsClosed"
+      class="close"
+      alt="扫描二维码"
+      @click="summaryTipsClick"
+    />
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -129,6 +153,32 @@ onUnmounted(() => {
     font-weight: 300;
     @media screen and (max-width: 1100px) {
       margin-top: var(--o-spacing-h2);
+    }
+  }
+}
+.smmary-code {
+  position: fixed;
+  left: 1vw;
+  top: 65vh;
+  z-index: 99;
+
+  .code {
+    width: 141px;
+    cursor: pointer;
+    @media screen and (max-width: 1100px) {
+      width: 85px;
+    }
+  }
+  .close {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    @media screen and (max-width: 1100px) {
+      width: 20px;
+      height: 20px;
     }
   }
 }

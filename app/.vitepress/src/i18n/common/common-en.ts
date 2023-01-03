@@ -184,7 +184,7 @@ export default {
   CODE: 'CODE',
   FOOTER: {
     MAIL: 'contact@opengauss.org',
-    COPY_RIGHT: 'Copyright © openGauss 2022. All rights reserved.',
+    COPY_RIGHT: 'Copyright © openGauss 2023. All rights reserved.',
     RIGHT_LIST: [
       {
         NAME: 'Trademark',
