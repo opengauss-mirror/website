@@ -223,23 +223,28 @@ export default {
     RIGHT_LIST: [
       {
         NAME: '品牌',
-        URL: '/brand/',
+        URL: '/zh/brand/',
+        TARGET: '_self',
       },
       {
         NAME: '隐私政策',
-        URL: '/privacyPolicy/',
+        URL: '/zh/privacyPolicy/',
+        TARGET: '_self',
       },
       {
         NAME: '法律声明',
-        URL: '/legal/',
+        URL: '/zh/legal/',
+        TARGET: '_self',
       },
       {
         NAME: '关于我们',
-        URL: '/aboutUs/',
+        URL: '/zh/aboutUs/',
+        TARGET: '_self',
       },
       {
         NAME: '服务状态',
         URL: 'https://status.opengauss.org/',
+        TARGET: '_blank',
       },
     ],
     QR_CODE: '扫码关注公众号',

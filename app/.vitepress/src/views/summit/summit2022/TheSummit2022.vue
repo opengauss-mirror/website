@@ -59,7 +59,7 @@ onMounted(() => {
 
 // video 事件
 const videoDialog = ref(false);
-const videoLink = ref(''); 
+const videoLink = ref('');
 const handleCloseVideo = () => {
   videoDialog.value = false;
   videoLink.value = '';

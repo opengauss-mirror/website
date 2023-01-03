@@ -188,23 +188,28 @@ export default {
     RIGHT_LIST: [
       {
         NAME: 'Trademark',
-        URL: '/brand/',
+        URL: '/en/brand/',
+        TARGET: '_self',
       },
       {
         NAME: 'Privacy Policy',
-        URL: '/privacyPolicy/',
+        URL: '/en/privacyPolicy/',
+        TARGET: '_self',
       },
       {
         NAME: 'Legal Notice',
-        URL: '/legal/',
+        URL: '/en/legal/',
+        TARGET: '_self',
       },
       {
         NAME: 'About Us',
-        URL: '/aboutUs/',
+        URL: '/en/aboutUs/',
+        TARGET: '_self',
       },
       {
         NAME: 'Service Status',
         URL: 'https://status.opengauss.org/',
+        TARGET: '_blank',
       },
     ],
     QR_CODE: 'WeChat Subscription',

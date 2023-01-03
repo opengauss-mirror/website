@@ -138,8 +138,8 @@ const summaryTipsClick = () => {
       <img
         :src="summaryTipsClosed"
         class="close"
-        @click="summaryTipsClick"
         alt="扫描二维码"
+        @click="summaryTipsClick"
       />
     </div>
   </main>
