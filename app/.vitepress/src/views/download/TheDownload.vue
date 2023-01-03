@@ -119,7 +119,9 @@ const changeDownloadAuth = () => {
     .then(() => {
       showGuard();
     })
-    .catch(() => {});
+    .catch((error: any) => {
+      throw new Error(error);
+    });
 };
 </script>
 
