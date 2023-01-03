@@ -183,7 +183,10 @@ const changeDownloadAuth = () => {
               <p class="text">{{ item.thead[1] }}</p>
               <div class="down-action">
                 <template
-                  v-if="versionName === downloadVersionAuth && !guardAuthClient.username"
+                  v-if="
+                    versionName === downloadVersionAuth &&
+                    !guardAuthClient.username
+                  "
                 >
                   <OButton
                     size="mini"
@@ -234,7 +237,10 @@ const changeDownloadAuth = () => {
               <p class="text">{{ item.thead[2] }}</p>
               <div class="down-action">
                 <template
-                  v-if="versionName === downloadVersionAuth && !guardAuthClient.username"
+                  v-if="
+                    versionName === downloadVersionAuth &&
+                    !guardAuthClient.username
+                  "
                 >
                   <OButton
                     size="mini"
@@ -275,7 +281,10 @@ const changeDownloadAuth = () => {
               <p class="text">{{ item.thead[3] }}</p>
               <div class="down-action">
                 <template
-                  v-if="versionName === downloadVersionAuth && !guardAuthClient.username"
+                  v-if="
+                    versionName === downloadVersionAuth &&
+                    !guardAuthClient.username
+                  "
                 >
                   <OButton
                     size="mini"
@@ -341,7 +350,12 @@ const changeDownloadAuth = () => {
         <el-table-column :label="item.thead[1]">
           <template #default="scope">
             <div v-if="scope.row.centos_url !== ''" class="down-action">
-              <template v-if="versionName === downloadVersionAuth && !guardAuthClient.username">
+              <template
+                v-if="
+                  versionName === downloadVersionAuth &&
+                  !guardAuthClient.username
+                "
+              >
                 <OButton
                   size="mini"
                   animation
@@ -392,7 +406,12 @@ const changeDownloadAuth = () => {
         <el-table-column :label="item.thead[2]" prop="aarch_url">
           <template #default="scope">
             <div v-if="scope.row.aarch_url !== ''" class="down-action">
-              <template v-if="versionName === downloadVersionAuth && !guardAuthClient.username">
+              <template
+                v-if="
+                  versionName === downloadVersionAuth &&
+                  !guardAuthClient.username
+                "
+              >
                 <OButton
                   size="mini"
                   animation
@@ -433,7 +452,12 @@ const changeDownloadAuth = () => {
         <el-table-column :label="item.thead[3]" prop="x86_url">
           <template #default="scope">
             <div v-if="scope.row.x86_url !== ''" class="down-action">
-              <template v-if="versionName === downloadVersionAuth && !guardAuthClient.username">
+              <template
+                v-if="
+                  versionName === downloadVersionAuth &&
+                  !guardAuthClient.username
+                "
+              >
                 <OButton
                   size="mini"
                   animation

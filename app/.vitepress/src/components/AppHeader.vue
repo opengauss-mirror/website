@@ -318,7 +318,11 @@ const jumpToUserZone = () => {
       <div class="opt-user">
         <div v-if="token">
           <div class="opt-info">
-            <img v-if="guardAuthClient.photo" :src="guardAuthClient.photo" class="opt-img" />
+            <img
+              v-if="guardAuthClient.photo"
+              :src="guardAuthClient.photo"
+              class="opt-img"
+            />
             <div v-else class="opt-img"></div>
             <p class="opt-name">{{ guardAuthClient.username }}</p>
           </div>

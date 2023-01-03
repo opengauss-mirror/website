@@ -94,7 +94,7 @@ export function getUrlParams(url: string) {
   const arrObj = url.split('?');
   if (arrObj.length > 1) {
     const arrPara = arrObj[1].split('&');
-    let list = {} as any;
+    const list = {} as any;
     for (let i = 0; i < arrPara.length; i++) {
       const item = arrPara[i].split('=');
       const key = item[0];

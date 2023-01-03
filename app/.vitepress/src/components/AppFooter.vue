@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { toRefs } from 'vue';
-import { useRouter, useData } from 'vitepress';
 import { useI18n } from '@/i18n';
 import AppContent from '@/components/AppContent.vue';
 
@@ -27,9 +26,7 @@ const props = defineProps({
   },
 });
 
-const { lang } = useData();
 const i18n = useI18n();
-const router = useRouter();
 
 // 友情链接
 const footerLinks = {
@@ -73,13 +70,6 @@ const footerLinks = {
     },
   ],
 };
-const handleNavClick = (path: string) => {
-  if (path.startsWith('https:')) {
-    window.open(path, '_blank');
-  } else {
-    router.go(`/${lang.value}` + path);
-  }
-};
 
 // 背景
 const footBg = {
@@ -119,9 +109,9 @@ function onCookieClick() {
               <a
                 v-for="link in i18n.common.FOOTER.RIGHT_LIST"
                 :key="link.URL"
-                href="javascript:;"
+                :href="link.URL"
                 class="link"
-                @click="handleNavClick(link.URL)"
+                :target="link.TARGET"
                 >{{ link.NAME }}</a
               >
             </div>

@@ -31,7 +31,7 @@ const homeBanner = computed(() =>
 
 // banner跳转事件
 const jump = (item: any) => {
-  if (flag.value) {
+  if (flag.value && item.link !== '') {
     if (item.targetTap === 1) {
       if (item.link.startsWith('/docs/')) {
         const path = theme.value.docsUrl + '/' + lang.value + item.link;

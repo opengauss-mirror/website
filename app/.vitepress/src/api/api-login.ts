@@ -13,7 +13,7 @@ import { ElMessage } from 'element-plus';
 const params = {
   community: 'opengauss',
   client_id: '90aa315f895544359209920da32ff75a',
-}
+};
 export function queryPermission() {
   const url = '/omapi/oneid/user/refresh';
   const { token } = getUserAuth();
