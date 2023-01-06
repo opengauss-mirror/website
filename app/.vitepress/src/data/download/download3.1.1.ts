@@ -5,62 +5,62 @@ export default [
     thead: ['', 'centos_x86_64', 'openeuler_aarch64', 'openeuler_x86_64'],
     zh: [
       {
-        name: 'openGauss_3.1.0 企业版',
+        name: 'openGauss_3.1.1 企业版',
         table: 'server',
         edition: 'enterprise',
         centos_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/x86/openGauss-3.1.0-CentOS-64bit-all.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/x86/openGauss-3.1.1-CentOS-64bit-all.tar.gz',
         centos_sha:
-          '94de095eb299886e3c60f93facb73a68d8a87ff3a4dabafa6986d45d5c175b0e',
+          'f2bd4b88a66d30d95c3c7e2ee1b980996e1f8830804e3ad66ab8a8a8d179e13a',
         aarch_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/arm/openGauss-3.1.0-openEuler-64bit-all.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/arm/openGauss-3.1.1-openEuler-64bit-all.tar.gz',
         aarch_sha:
-          '73deae0469b6ce156bcfe593bf7ab0c5cf048a7c2f0cddb882cf20219153b539',
+          '1e356c0c9d32c8e486bb243b58a90763efc16963fff64cdf704b2ce17798d72b',
         x86_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/x86_openEuler/openGauss-3.1.0-openEuler-64bit-all.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/x86_openEuler/openGauss-3.1.1-openEuler-64bit-all.tar.gz',
         x86_sha:
-          '047773045a21c582e015196752c9b8bfe13211eda970490907daacb9aff8d6a8',
+          '13d098c646d72349f79cb6a13c2ad4dc1a551ef160bf6ed5edf637692c167479',
       },
       {
-        name: 'openGauss_3.1.0 极简版',
+        name: 'openGauss_3.1.1 极简版',
         table: 'server',
         edition: 'simple',
         centos_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/x86/openGauss-3.1.0-CentOS-64bit.tar.bz2',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/x86/openGauss-3.1.1-CentOS-64bit.tar.bz2',
         centos_sha:
-          '9cf6f2762664d67889b4cd8d879c14a7f1dae70cff0552e4a7263a301b336115',
+          'a795338fa51ab2aa7ac0918ee22b396cc4cdd24f4482fe33ba6fd5d5843b9e50',
         aarch_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/arm/openGauss-3.1.0-openEuler-64bit.tar.bz2',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/arm/openGauss-3.1.1-openEuler-64bit.tar.bz2',
         aarch_sha:
-          'cbfd150d28fac8f58420458a8174cd0493db1ad77d003d83b6aa11e1548c3e49',
+          '6b3498f17dc9a3d96cb92ae1ea326d10d1a3159a9f15df556d376ac43c2b4792',
         x86_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/x86_openEuler/openGauss-3.1.0-openEuler-64bit.tar.bz2',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/x86_openEuler/openGauss-3.1.1-openEuler-64bit.tar.bz2',
         x86_sha:
-          'b07780213e779e296e456dbeb150bd644ae03cbc566eaf2f63006b8a1b1a0840',
+          '87b3dde1b5bb95c2ae397bcd391c36301f8fe851f148332e9af846fa6409b21e',
       },
       {
-        name: 'openGauss_3.1.0 轻量版',
+        name: 'openGauss_3.1.1 轻量版',
         table: 'server',
         edition: 'lite',
         centos_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/x86/openGauss-Lite-3.1.0-CentOS-x86_64.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/x86/openGauss-Lite-3.1.1-CentOS-x86_64.tar.gz',
         centos_sha:
-          '9d173e07b1c12c24ae8aaf4643c2de2e18a6b898877cf9d88cba396f2242450d',
+          '7885d8d66b1ea8517f590c5fc1c212d15e07c710dbae83e38a67828ce9a166e3',
         aarch_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/arm/openGauss-Lite-3.1.0-openEuler-aarch64.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/arm/openGauss-Lite-3.1.1-openEuler-aarch64.tar.gz',
         aarch_sha:
-          'b72f591121a02b91ddb00feb8863396876c1aa08c041927b940144c279337bfa',
+          '365c1a402d8cf3a0334159b64dd839a1915e1de82e6f75ade74438d06744c987',
         x86_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/x86_openEuler/openGauss-Lite-3.1.0-openEuler-x86_64.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/x86_openEuler/openGauss-Lite-3.1.1-openEuler-x86_64.tar.gz',
         x86_sha:
-          'd6bac5d9c85be47a3b585b95e2290c97854d2cf8abfe857f12e28886d3ed67e2',
+          'd54d16fe54675f8ac05dadf5ae199306b7848e172c96697a85beee0ab627724f',
       },
       {
-        name: 'openGauss_3.1.0 分布式镜像',
+        name: 'openGauss_3.1.1 分布式镜像',
         table: 'server',
         edition: 'distributed',
         centos_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/openGauss-distributed.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/openGauss-distributed.tar.gz',
         centos_sha:
           'ab0cf39bce79207e00aeb77694321d33c5c62f28d107c87400c46e91743d9202',
         aarch_url: '',
@@ -71,62 +71,62 @@ export default [
     ],
     en: [
       {
-        name: 'openGauss_3.1.0 Enterprise-Edition',
+        name: 'openGauss_3.1.1 Enterprise-Edition',
         table: 'server',
         edition: 'enterprise',
         centos_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/x86/openGauss-3.1.0-CentOS-64bit-all.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/x86/openGauss-3.1.1-CentOS-64bit-all.tar.gz',
         centos_sha:
-          '94de095eb299886e3c60f93facb73a68d8a87ff3a4dabafa6986d45d5c175b0e',
+          'f2bd4b88a66d30d95c3c7e2ee1b980996e1f8830804e3ad66ab8a8a8d179e13a',
         aarch_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/arm/openGauss-3.1.0-openEuler-64bit-all.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/arm/openGauss-3.1.1-openEuler-64bit-all.tar.gz',
         aarch_sha:
-          '73deae0469b6ce156bcfe593bf7ab0c5cf048a7c2f0cddb882cf20219153b539',
+          '1e356c0c9d32c8e486bb243b58a90763efc16963fff64cdf704b2ce17798d72b',
         x86_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/x86_openEuler/openGauss-3.1.0-openEuler-64bit-all.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/x86_openEuler/openGauss-3.1.1-openEuler-64bit-all.tar.gz',
         x86_sha:
-          '047773045a21c582e015196752c9b8bfe13211eda970490907daacb9aff8d6a8',
+          '13d098c646d72349f79cb6a13c2ad4dc1a551ef160bf6ed5edf637692c167479',
       },
       {
-        name: 'openGauss_3.1.0 Simplified',
+        name: 'openGauss_3.1.1 Simplified',
         table: 'server',
         edition: 'simple',
         centos_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/x86/openGauss-3.1.0-CentOS-64bit.tar.bz2',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/x86/openGauss-3.1.1-CentOS-64bit.tar.bz2',
         centos_sha:
-          '9cf6f2762664d67889b4cd8d879c14a7f1dae70cff0552e4a7263a301b336115',
+          'a795338fa51ab2aa7ac0918ee22b396cc4cdd24f4482fe33ba6fd5d5843b9e50',
         aarch_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/arm/openGauss-3.1.0-openEuler-64bit.tar.bz2',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/arm/openGauss-3.1.1-openEuler-64bit.tar.bz2',
         aarch_sha:
-          'cbfd150d28fac8f58420458a8174cd0493db1ad77d003d83b6aa11e1548c3e49',
+          '6b3498f17dc9a3d96cb92ae1ea326d10d1a3159a9f15df556d376ac43c2b4792',
         x86_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/x86_openEuler/openGauss-3.1.0-openEuler-64bit.tar.bz2',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/x86_openEuler/openGauss-3.1.1-openEuler-64bit.tar.bz2',
         x86_sha:
-          'b07780213e779e296e456dbeb150bd644ae03cbc566eaf2f63006b8a1b1a0840',
+          '87b3dde1b5bb95c2ae397bcd391c36301f8fe851f148332e9af846fa6409b21e',
       },
       {
-        name: 'openGauss_3.1.0 Lite',
+        name: 'openGauss_3.1.1 Lite',
         table: 'server',
         edition: 'lite',
         centos_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/x86/openGauss-Lite-3.1.0-CentOS-x86_64.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/x86/openGauss-Lite-3.1.1-CentOS-x86_64.tar.gz',
         centos_sha:
-          '9d173e07b1c12c24ae8aaf4643c2de2e18a6b898877cf9d88cba396f2242450d',
+          '7885d8d66b1ea8517f590c5fc1c212d15e07c710dbae83e38a67828ce9a166e3',
         aarch_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/arm/openGauss-Lite-3.1.0-openEuler-aarch64.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/arm/openGauss-Lite-3.1.1-openEuler-aarch64.tar.gz',
         aarch_sha:
-          'b72f591121a02b91ddb00feb8863396876c1aa08c041927b940144c279337bfa',
+          '365c1a402d8cf3a0334159b64dd839a1915e1de82e6f75ade74438d06744c987',
         x86_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/x86_openEuler/openGauss-Lite-3.1.0-openEuler-x86_64.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/x86_openEuler/openGauss-Lite-3.1.1-openEuler-x86_64.tar.gz',
         x86_sha:
-          'd6bac5d9c85be47a3b585b95e2290c97854d2cf8abfe857f12e28886d3ed67e2',
+          'd54d16fe54675f8ac05dadf5ae199306b7848e172c96697a85beee0ab627724f',
       },
       {
-        name: 'openGauss_3.1.0 Distributed',
+        name: 'openGauss_3.1.1 Distributed',
         table: 'server',
         edition: 'distributed',
         centos_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/openGauss-distributed.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/openGauss-distributed.tar.gz',
         centos_sha:
           'ab0cf39bce79207e00aeb77694321d33c5c62f28d107c87400c46e91743d9202',
         aarch_url: '',
@@ -141,126 +141,126 @@ export default [
     thead: ['', 'centos_x86_64', 'openeuler_aarch64', 'openeuler_x86_64'],
     zh: [
       {
-        name: 'JDBC_3.1.0',
+        name: 'JDBC_3.1.1',
         centos_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/x86/openGauss-3.1.0-JDBC.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/x86/openGauss-3.1.1-JDBC.tar.gz',
         centos_sha:
-          'fa017127668b653a6bacc516740c09a29af5bb9e1c125b60fd88bb8a60d9c55f',
+          '8ac337f4cbfae78e33901e9184bef7e417e470313cd08b0e038383ac3e6aa0af',
         aarch_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/arm/openGauss-3.1.0-JDBC.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/arm/openGauss-3.1.1-JDBC.tar.gz',
         aarch_sha:
-          'd6a5bdfa8f2cf52e5a81514d751842d28b84ac64f8cd2f7d651f8ae89435ffee',
+          'e4d3057961600dfe3883edb43d2ebc0c04ed56df6c1d42e00d7b2b936f129cae',
         x86_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/x86_openEuler/openGauss-3.1.0-JDBC.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/x86_openEuler/openGauss-3.1.1-JDBC.tar.gz',
         x86_sha:
-          'afe19fbf0830bdd74d4b407f470a170b2a81686911bd0455ed2c1b96057ebc86',
+          '4901515dd0b292fa636083928e70f051683f98907986d87c64ff78f3730c2645',
       },
       {
-        name: 'ODBC_3.1.0',
+        name: 'ODBC_3.1.1',
         centos_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/x86/openGauss-3.1.0-ODBC.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/x86/openGauss-3.1.1-ODBC.tar.gz',
         centos_sha:
-          'd597cd6251f74fef3c396d44773d767b2d238aacbcaa6585cd39a6599b432e01',
+          'a6d4ab8687aaa1540105d55b322549dae298abe7a8daf64cf19cfc1a588f0fd3',
         aarch_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/arm/openGauss-3.1.0-ODBC.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/arm/openGauss-3.1.1-ODBC.tar.gz',
         aarch_sha:
-          '4469e9519962b752515de0376c7e57842d2874ac901b778878f0eb86d3ac9d56',
+          '3f7db703bb3b8d15e5ab1c382c4daa0f85fb677c493c0019c89cf1d858f7fd33',
         x86_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/x86_openEuler/openGauss-3.1.0-ODBC.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/x86_openEuler/openGauss-3.1.1-ODBC.tar.gz',
         x86_sha:
-          'af16b18035b5bf02f16f3b021b0aa95eb4d45715527799831f85cf0d3dcec694',
+          '10494fdf7e77d164cf3df8f2ec707c61ee1639013d37288ca0ba95600e56b20b',
       },
       {
-        name: 'Python-psycopg2_3.1.0',
+        name: 'Python-psycopg2_3.1.1',
         centos_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/x86/openGauss-3.1.0-CentOS-x86_64-Python.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/x86/openGauss-3.1.1-CentOS-x86_64-Python.tar.gz',
         centos_sha:
-          'cb091dd0bf4d610cd27d9f225412abfb9630ce91636c264162a756030da01819',
+          '08bdbad98f8192ee406083850024a938be344fad12171204114bc47a2fa9d22e',
         aarch_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/arm/openGauss-3.1.0-openEuler-aarch64-Python.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/arm/openGauss-3.1.1-openEuler-aarch64-Python.tar.gz',
         aarch_sha:
-          '19c1134aa294cad675706695eb69bc67622028654320ec689c79803a9a81ad32',
+          'ab3c8aaec9db1282e393d457f230cc9b0eb84f4f92a4a119227479f8af1171d3',
         x86_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/x86_openEuler/openGauss-3.1.0-openEuler-x86_64-Python.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/x86_openEuler/openGauss-3.1.1-openEuler-x86_64-Python.tar.gz',
         x86_sha:
-          '062e109fc29551bc41d0e6b9d4091aaba3efc53b9e9c2044690089d431889e1d',
+          'b00bafa8d3d7c4cf81fa1684c944bdf28376f6c4aa10a68dcc95a2a98e9ea03f',
       },
       {
-        name: 'libpq_3.1.0',
+        name: 'libpq_3.1.1',
         centos_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/x86/openGauss-3.1.0-CentOS-64bit-Libpq.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/x86/openGauss-3.1.1-CentOS-64bit-Libpq.tar.gz',
         centos_sha:
-          '03a5358ca9763159dee78a0a07a3e728f63d320cd1e00f2076e11bdfacf0b651',
+          '8d3f1f40434068b5042360e6dc4a55645fc46b0a60a751824c7624b6f5d13a3d',
         aarch_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/arm/openGauss-3.1.0-openEuler-64bit-Libpq.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/arm/openGauss-3.1.1-openEuler-64bit-Libpq.tar.gz',
         aarch_sha:
-          'fda4b7ea551580dfdab6daf7335fe365de448ac2ec342a07f97d87be84dfe7e0',
+          'f56fee7e1857b6c2d226cb85e9879d6ef2c38d8eb2f1fe5750f8738f2a84773e',
         x86_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/x86_openEuler/openGauss-3.1.0-openEuler-64bit-Libpq.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/x86_openEuler/openGauss-3.1.1-openEuler-64bit-Libpq.tar.gz',
         x86_sha:
-          '5e585f9d5949cabf38851dad0b4172e3a71fb6b176ea6a940ec0304a5c6073ed',
+          '260df69f81e4b5e21ce58700ff92d384125a8f9c33133eee3ee221357b181eeb',
       },
     ],
     en: [
       {
-        name: 'JDBC_3.1.0',
+        name: 'JDBC_3.1.1',
         centos_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/x86/openGauss-3.1.0-JDBC.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/x86/openGauss-3.1.1-JDBC.tar.gz',
         centos_sha:
-          'fa017127668b653a6bacc516740c09a29af5bb9e1c125b60fd88bb8a60d9c55f',
+          '8ac337f4cbfae78e33901e9184bef7e417e470313cd08b0e038383ac3e6aa0af',
         aarch_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/arm/openGauss-3.1.0-JDBC.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/arm/openGauss-3.1.1-JDBC.tar.gz',
         aarch_sha:
-          'd6a5bdfa8f2cf52e5a81514d751842d28b84ac64f8cd2f7d651f8ae89435ffee',
+          'e4d3057961600dfe3883edb43d2ebc0c04ed56df6c1d42e00d7b2b936f129cae',
         x86_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/x86_openEuler/openGauss-3.1.0-JDBC.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/x86_openEuler/openGauss-3.1.1-JDBC.tar.gz',
         x86_sha:
-          'afe19fbf0830bdd74d4b407f470a170b2a81686911bd0455ed2c1b96057ebc86',
+          '4901515dd0b292fa636083928e70f051683f98907986d87c64ff78f3730c2645',
       },
       {
-        name: 'ODBC_3.1.0',
+        name: 'ODBC_3.1.1',
         centos_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/x86/openGauss-3.1.0-ODBC.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/x86/openGauss-3.1.1-ODBC.tar.gz',
         centos_sha:
-          'd597cd6251f74fef3c396d44773d767b2d238aacbcaa6585cd39a6599b432e01',
+          'a6d4ab8687aaa1540105d55b322549dae298abe7a8daf64cf19cfc1a588f0fd3',
         aarch_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/arm/openGauss-3.1.0-ODBC.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/arm/openGauss-3.1.1-ODBC.tar.gz',
         aarch_sha:
-          '4469e9519962b752515de0376c7e57842d2874ac901b778878f0eb86d3ac9d56',
+          '3f7db703bb3b8d15e5ab1c382c4daa0f85fb677c493c0019c89cf1d858f7fd33',
         x86_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/x86_openEuler/openGauss-3.1.0-ODBC.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/x86_openEuler/openGauss-3.1.1-ODBC.tar.gz',
         x86_sha:
-          'af16b18035b5bf02f16f3b021b0aa95eb4d45715527799831f85cf0d3dcec694',
+          '10494fdf7e77d164cf3df8f2ec707c61ee1639013d37288ca0ba95600e56b20b',
       },
       {
-        name: 'Python-psycopg2_3.1.0',
+        name: 'Python-psycopg2_3.1.1',
         centos_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/x86/openGauss-3.1.0-CentOS-x86_64-Python.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/x86/openGauss-3.1.1-CentOS-x86_64-Python.tar.gz',
         centos_sha:
-          'cb091dd0bf4d610cd27d9f225412abfb9630ce91636c264162a756030da01819',
+          '08bdbad98f8192ee406083850024a938be344fad12171204114bc47a2fa9d22e',
         aarch_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/arm/openGauss-3.1.0-openEuler-aarch64-Python.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/arm/openGauss-3.1.1-openEuler-aarch64-Python.tar.gz',
         aarch_sha:
-          '19c1134aa294cad675706695eb69bc67622028654320ec689c79803a9a81ad32',
+          'ab3c8aaec9db1282e393d457f230cc9b0eb84f4f92a4a119227479f8af1171d3',
         x86_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/x86_openEuler/openGauss-3.1.0-openEuler-x86_64-Python.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/x86_openEuler/openGauss-3.1.1-openEuler-x86_64-Python.tar.gz',
         x86_sha:
-          '062e109fc29551bc41d0e6b9d4091aaba3efc53b9e9c2044690089d431889e1d',
+          'b00bafa8d3d7c4cf81fa1684c944bdf28376f6c4aa10a68dcc95a2a98e9ea03f',
       },
       {
-        name: 'libpq_3.1.0',
+        name: 'libpq_3.1.1',
         centos_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/x86/openGauss-3.1.0-CentOS-64bit-Libpq.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/x86/openGauss-3.1.1-CentOS-64bit-Libpq.tar.gz',
         centos_sha:
-          '03a5358ca9763159dee78a0a07a3e728f63d320cd1e00f2076e11bdfacf0b651',
+          '8d3f1f40434068b5042360e6dc4a55645fc46b0a60a751824c7624b6f5d13a3d',
         aarch_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/arm/openGauss-3.1.0-openEuler-64bit-Libpq.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/arm/openGauss-3.1.1-openEuler-64bit-Libpq.tar.gz',
         aarch_sha:
-          'fda4b7ea551580dfdab6daf7335fe365de448ac2ec342a07f97d87be84dfe7e0',
+          'f56fee7e1857b6c2d226cb85e9879d6ef2c38d8eb2f1fe5750f8738f2a84773e',
         x86_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/x86_openEuler/openGauss-3.1.0-openEuler-64bit-Libpq.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/x86_openEuler/openGauss-3.1.1-openEuler-64bit-Libpq.tar.gz',
         x86_sha:
-          '5e585f9d5949cabf38851dad0b4172e3a71fb6b176ea6a940ec0304a5c6073ed',
+          '260df69f81e4b5e21ce58700ff92d384125a8f9c33133eee3ee221357b181eeb',
       },
     ],
   },
@@ -269,66 +269,66 @@ export default [
     thead: ['', 'centos_x86_64', 'openeuler_aarch64', 'openeuler_x86_64'],
     zh: [
       {
-        name: 'symbol_3.1.0',
+        name: 'symbol_3.1.1',
         centos_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/x86/openGauss-3.1.0-CentOS-64bit-symbol.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/x86/openGauss-3.1.1-CentOS-64bit-symbol.tar.gz',
         centos_sha:
-          'f4a49985c706b9350dcd4027692946cbc622de5848c0c13206286e3924d61842',
+          '796d16e952040308c31727e46597cb3491641b2d1b4acabd8ea9b66ac54fde0d',
         aarch_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/arm/openGauss-3.1.0-openEuler-64bit-symbol.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/arm/openGauss-3.1.1-openEuler-64bit-symbol.tar.gz',
         aarch_sha:
-          'aa556b8c490123aab930ab1995a3a4d3abaa73f1f7ccf976efaaa4578e580b0e',
+          '6a17de81c18e08abdabef24d6c17d33e16a437612f7136f4fe0d99de99c6526c',
         x86_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/x86_openEuler/openGauss-3.1.0-openEuler-64bit-symbol.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/x86_openEuler/openGauss-3.1.1-openEuler-64bit-symbol.tar.gz',
         x86_sha:
-          'f95c101c6bc279bface2b3adfcf49da02ea77fbd58303fe6ff36ebeafdc6a5fc',
+          'b2e407a9e8739a4ce3828db7290d1a142d44f8ddc037ef196c937cb97c614a18',
       },
       {
-        name: 'cm-symbol_3.1.0',
+        name: 'cm-symbol_3.1.1',
         centos_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/x86/openGauss-3.1.0-CentOS-64bit-cm-symbol.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/x86/openGauss-3.1.1-CentOS-64bit-cm-symbol.tar.gz',
         centos_sha:
-          'dd8d298e1b09aacd9cd91a25ef79c5800c89d59d802bac341693d8ce3ee2a025',
+          'bb31dc8d3895a0d94ff1194d42d260e718af2ab409bc2acf2813f265382f0378',
         aarch_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/arm/openGauss-3.1.0-openEuler-64bit-cm-symbol.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/arm/openGauss-3.1.1-openEuler-64bit-cm-symbol.tar.gz',
         aarch_sha:
-          'c5d8bdf2cd8e82ea9b62250396d4b9377b5bcacab8ce381a01b6fe0e711584a9',
+          'd0674dcbc76cbaedf61d9b27b266da6f56a2db887cd06808931a510966ede965',
         x86_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/x86_openEuler/openGauss-3.1.0-openEuler-64bit-cm-symbol.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/x86_openEuler/openGauss-3.1.1-openEuler-64bit-cm-symbol.tar.gz',
         x86_sha:
-          '34a4450e96c20af8429ce60298949ac1676d9da3fd994762a56ba79211de16ad',
+          '5adde4a86231011103f437f0c08abb95593c7d2ed0728754dff83db908a3a7f0',
       },
     ],
     en: [
       {
-        name: 'symbol_3.1.0',
+        name: 'symbol_3.1.1',
         centos_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/x86/openGauss-3.1.0-CentOS-64bit-symbol.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/x86/openGauss-3.1.1-CentOS-64bit-symbol.tar.gz',
         centos_sha:
-          'f4a49985c706b9350dcd4027692946cbc622de5848c0c13206286e3924d61842',
+          '796d16e952040308c31727e46597cb3491641b2d1b4acabd8ea9b66ac54fde0d',
         aarch_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/arm/openGauss-3.1.0-openEuler-64bit-symbol.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/arm/openGauss-3.1.1-openEuler-64bit-symbol.tar.gz',
         aarch_sha:
-          'aa556b8c490123aab930ab1995a3a4d3abaa73f1f7ccf976efaaa4578e580b0e',
+          '6a17de81c18e08abdabef24d6c17d33e16a437612f7136f4fe0d99de99c6526c',
         x86_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/x86_openEuler/openGauss-3.1.0-openEuler-64bit-symbol.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/x86_openEuler/openGauss-3.1.1-openEuler-64bit-symbol.tar.gz',
         x86_sha:
-          'f95c101c6bc279bface2b3adfcf49da02ea77fbd58303fe6ff36ebeafdc6a5fc',
+          'b2e407a9e8739a4ce3828db7290d1a142d44f8ddc037ef196c937cb97c614a18',
       },
       {
-        name: 'cm-symbol_3.1.0',
+        name: 'cm-symbol_3.1.1',
         centos_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/x86/openGauss-3.1.0-CentOS-64bit-cm-symbol.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/x86/openGauss-3.1.1-CentOS-64bit-cm-symbol.tar.gz',
         centos_sha:
-          'dd8d298e1b09aacd9cd91a25ef79c5800c89d59d802bac341693d8ce3ee2a025',
+          'bb31dc8d3895a0d94ff1194d42d260e718af2ab409bc2acf2813f265382f0378',
         aarch_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/arm/openGauss-3.1.0-openEuler-64bit-cm-symbol.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/arm/openGauss-3.1.1-openEuler-64bit-cm-symbol.tar.gz',
         aarch_sha:
-          'c5d8bdf2cd8e82ea9b62250396d4b9377b5bcacab8ce381a01b6fe0e711584a9',
+          'd0674dcbc76cbaedf61d9b27b266da6f56a2db887cd06808931a510966ede965',
         x86_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/x86_openEuler/openGauss-3.1.0-openEuler-64bit-cm-symbol.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/x86_openEuler/openGauss-3.1.1-openEuler-64bit-cm-symbol.tar.gz',
         x86_sha:
-          '34a4450e96c20af8429ce60298949ac1676d9da3fd994762a56ba79211de16ad',
+          '5adde4a86231011103f437f0c08abb95593c7d2ed0728754dff83db908a3a7f0',
       },
     ],
   },
@@ -337,118 +337,118 @@ export default [
     thead: ['', 'windows_x86_64', 'Linux', ''],
     zh: [
       {
-        name: 'Data Studio_3.1.0',
+        name: 'Data Studio_3.1.1',
         centos_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/DataStudio_win_64.zip',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/tools/DataStudio_win_64.zip',
         centos_sha:
-          'bcebeaf281433a163d93b1f295aabd05fafdee8cbc7277310140473b1e3498fb',
+          '8f9ea86295d7a2eceb0e528de832f83eae4936109cea8eb44376a0f4443c83af',
         download_guide_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/Data%20Studio%20%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C.pdf',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/tools/Data%20Studio%20%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C.pdf',
         aarch_url: '',
         aarch_sha: '',
         x86_url: '',
         x86_sha: '',
       },
       {
-        name: 'Chameleon_3.1.0',
+        name: 'Chameleon_3.1.1',
         centos_url: '',
         centos_sha: '',
         aarch_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/chameleon/chameleon-3.1.0-py3-none-any.whl',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/tools/chameleon-3.1.1-py3-none-any.whl',
         aarch_sha:
-          '575d241f127c009c796891937e4bec15b743b24d5c5d2beff7b2f94c17a58337',
+          'a1e190cb09500e4afb928d1305185a1718f09c23dfb50fcd8ed6825e4fce4173',
         x86_url: '',
         x86_sha: '',
       },
       {
-        name: 'online-migration_3.1.0',
+        name: 'online-migration_3.1.1',
         centos_url: '',
         centos_sha: '',
         aarch_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/tools/online-migration-mysql2openGauss-3.1.0.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/tools/online-migration-mysql2openGauss-3.1.1.tar.gz',
         aarch_sha:
-          '1c634a5003162ff61ba9eb33e82d267c00338251a1e6d5ab2e3b6f8f2fcc856c',
+          'a771416935beba130b837c7dfb58768a891abb99c3134dddd13e0d7e7723d9a7',
         x86_url: '',
         x86_sha: '',
       },
       {
-        name: 'reverse-migration_3.1.0',
+        name: 'reverse-migration_3.1.1',
         centos_url: '',
         centos_sha: '',
         aarch_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/tools/openGauss-reverse-migration-mysql-3.1.0.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/tools/openGauss-reverse-migration-mysql-3.1.1.tar.gz',
         aarch_sha:
-          'dd3a7f73ed94b11031d7783e317089df0033672baa8f48d679fe2d870a19df37',
+          'be7246dd95f181746b9799f9d5d8d415149e8ab442834ee0b20cbe62b1b3e06c',
         x86_url: '',
         x86_sha: '',
       },
       {
-        name: 'datachecker_3.1.0',
+        name: 'datachecker_3.1.1',
         centos_url: '',
         centos_sha: '',
         aarch_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/tools/openGauss-datachecker-performance-3.1.0.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/tools/openGauss-datachecker-performance-3.1.1.tar.gz',
         aarch_sha:
-          '44051b81fa973a631c7d0c23076ba7766e88a65cb141493c3e922756a7fcdea5',
+          '81313af28a71956894b6ab65883fbae4ff4cc55f6a2b381dd1fedff4ef218cf4',
         x86_url: '',
         x86_sha: '',
       },
     ],
     en: [
       {
-        name: 'Data Studio_3.1.0',
+        name: 'Data Studio_3.1.1',
         centos_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/DataStudio_win_64.zip',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/tools/DataStudio_win_64.zip',
         centos_sha:
-          'bcebeaf281433a163d93b1f295aabd05fafdee8cbc7277310140473b1e3498fb',
+          '8f9ea86295d7a2eceb0e528de832f83eae4936109cea8eb44376a0f4443c83af',
         download_guide_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/Data%20Studio%20User%20Manual.pdf',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/tools/Data%20Studio%20%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C.pdf',
         aarch_url: '',
         aarch_sha: '',
         x86_url: '',
         x86_sha: '',
       },
       {
-        name: 'Chameleon_3.1.0',
+        name: 'Chameleon_3.1.1',
         centos_url: '',
         centos_sha: '',
         aarch_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/chameleon/chameleon-3.1.0-py3-none-any.whl',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/tools/chameleon-3.1.1-py3-none-any.whl',
         aarch_sha:
-          '575d241f127c009c796891937e4bec15b743b24d5c5d2beff7b2f94c17a58337',
+          'a1e190cb09500e4afb928d1305185a1718f09c23dfb50fcd8ed6825e4fce4173',
         x86_url: '',
         x86_sha: '',
       },
       {
-        name: 'online-migration_3.1.0',
+        name: 'online-migration_3.1.1',
         centos_url: '',
         centos_sha: '',
         aarch_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/tools/online-migration-mysql2openGauss-3.1.0.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/tools/online-migration-mysql2openGauss-3.1.1.tar.gz',
         aarch_sha:
-          '1c634a5003162ff61ba9eb33e82d267c00338251a1e6d5ab2e3b6f8f2fcc856c',
+          'a771416935beba130b837c7dfb58768a891abb99c3134dddd13e0d7e7723d9a7',
         x86_url: '',
         x86_sha: '',
       },
       {
-        name: 'reverse-migration_3.1.0',
+        name: 'reverse-migration_3.1.1',
         centos_url: '',
         centos_sha: '',
         aarch_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/tools/openGauss-reverse-migration-mysql-3.1.0.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/tools/openGauss-reverse-migration-mysql-3.1.1.tar.gz',
         aarch_sha:
-          'dd3a7f73ed94b11031d7783e317089df0033672baa8f48d679fe2d870a19df37',
+          'be7246dd95f181746b9799f9d5d8d415149e8ab442834ee0b20cbe62b1b3e06c',
         x86_url: '',
         x86_sha: '',
       },
       {
-        name: 'datachecker_3.1.0',
+        name: 'datachecker_3.1.1',
         centos_url: '',
         centos_sha: '',
         aarch_url:
-          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.0/tools/openGauss-datachecker-performance-3.1.0.tar.gz',
+          'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/tools/openGauss-datachecker-performance-3.1.1.tar.gz',
         aarch_sha:
-          '44051b81fa973a631c7d0c23076ba7766e88a65cb141493c3e922756a7fcdea5',
+          '81313af28a71956894b6ab65883fbae4ff4cc55f6a2b381dd1fedff4ef218cf4',
         x86_url: '',
         x86_sha: '',
       },

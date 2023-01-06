@@ -16,22 +16,22 @@ const downloadData = [
       {
         name: '发行说明',
         nameEn: 'Release Notes',
-        path: '/docs/3.1.0/docs/Releasenotes/Releasenotes.html',
+        path: '/docs/3.1.1/docs/Releasenotes/Releasenotes.html',
       },
       {
         name: '企业版安装指南',
         nameEn: 'Enterprise-Edition Installation Guide',
-        path: '/docs/3.1.0/docs/installation/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html',
+        path: '/docs/3.1.1/docs/installation/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html',
       },
       {
         name: '极简版安装指南',
         nameEn: 'Simplified Installation Guide',
-        path: '/docs/3.1.0/docs/installation/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html',
+        path: '/docs/3.1.1/docs/installation/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html',
       },
       {
         name: '轻量版安装指南',
         nameEn: 'Lite Installation Guide',
-        path: '/docs/3.1.0-lite/docs/installation/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html',
+        path: '/docs/3.1.1-lite/docs/installation/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html',
       },
     ],
   },
