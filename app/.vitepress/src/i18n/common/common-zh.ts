@@ -59,7 +59,7 @@ export default {
       CHILDREN: [
         {
           NAME: '文档',
-          PATH: '',
+          PATH: 'docs/3.1.1/docs/BriefTutorial/BriefTutorial.html',
           ID: 'docs',
           IS_OPEN_WINDOW: 1,
         },
