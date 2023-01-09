@@ -6,6 +6,11 @@ import liveImg_mo from '@/assets/category/home/banner/liveBanner_mo.png';
 import banner310 from '@/assets/category/home/banner/opengauss3.1.0_zh_pc.png';
 import banner310_mo from '@/assets/category/home/banner/opengauss3.1.0_zh_mo.png';
 
+
+import banner0104 from '@/assets/category/home/banner/opengauss3.1.1_zh_pc.png';
+import banner0104_mo from '@/assets/category/home/banner/opengauss3.1.1_zh_mo.png';
+
+
 // import internship from '@/assets/category/home/banner/internship.png';
 // import internship_mo from '@/assets/category/home/banner/internship_mo.png';
 // import bannerSafety from '@/assets/category/home/banner/banner-safety.png';
@@ -72,7 +77,18 @@ export default {
       video:
         'https://learningvideo.obs.ap-southeast-1.myhuaweicloud.com/openGauss%E5%AE%A3%E4%BC%A0%E6%B4%BB%E5%8A%A8/openGauss%2BHC%E5%AE%A3%E4%BC%A0%E8%A7%86%E9%A2%91.mp4',
     },
-
+    {
+      pcBanner: banner0104,
+      moBanner: banner0104_mo,
+      link: '/zh/news/2023-01-04/20230104.html',
+      targetTap: 0,
+      title: '',
+      desc: [''],
+      btn: '',
+      type: 3,
+      className: '',
+      video: '',
+    },
     // {
     //   pcBanner: banner310,
     //   moBanner: banner310_mo,
