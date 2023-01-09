@@ -83,11 +83,11 @@ export default {
     LIST: [
       {
         NAME: 'openGauss是什么 ',
-        PATH: '/docs/3.0.0/docs/BriefTutorial/%E4%BB%80%E4%B9%88%E6%98%AFopenGauss.html',
+        PATH: '/docs/3.1.1/docs/BriefTutorial/%E4%BB%80%E4%B9%88%E6%98%AFopenGauss.html',
       },
       {
         NAME: '如何安装部署openGauss ',
-        PATH: '/docs/3.0.0/docs/BriefTutorial/%E5%AE%89%E8%A3%85%E4%B8%8E%E7%99%BB%E5%BD%95.html',
+        PATH: '/docs/3.1.1/docs/BriefTutorial/%E5%AE%89%E8%A3%85%E4%B8%8E%E7%99%BB%E5%BD%95.html',
       },
       {
         NAME: '如何参与openGauss社区贡献',

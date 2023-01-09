@@ -84,11 +84,11 @@ export default {
     LIST: [
       {
         NAME: 'What is openGauss',
-        PATH: '/docs/3.0.0/docs/BriefTutorial/what-is-opengauss.html',
+        PATH: '/docs/3.1.1/docs/BriefTutorial/what-is-opengauss.html',
       },
       {
         NAME: 'How do I install and deploy openGauss',
-        PATH: '/docs/3.0.0/docs/BriefTutorial/installation-and-login.html',
+        PATH: '/docs/3.1.1/docs/BriefTutorial/installation-and-login.html',
       },
       {
         NAME: 'How do I participate in openGauss contributions',
