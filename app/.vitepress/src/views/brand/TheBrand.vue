@@ -7,7 +7,7 @@ import BrandConfig from '@/data/brand';
 import BannerLevel2 from '@/components/BannerLevel2.vue';
 import AppContent from '@/components/AppContent.vue';
 
-import banner from '@/assets/banner/banner-secondary.png';
+import banner from '@/assets/illustrations/banner-secondary.png';
 import illustration from '@/assets/illustrations/brand.png';
 
 const i18n = useI18n();

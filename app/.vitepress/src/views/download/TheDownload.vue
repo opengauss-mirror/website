@@ -15,7 +15,7 @@ import IconCopy from '~icons/app/icon-copy.svg';
 import IconTips from '~icons/app/icon-tips.svg';
 
 import BannerLevel2 from '@/components/BannerLevel2.vue';
-import Banner from '@/assets/banner/banner-secondary.png';
+import Banner from '@/assets/illustrations/banner-secondary.png';
 import illustration from '@/assets/illustrations/download.png';
 
 import QuesTipsImg from '@/assets/category/download/tips.png';

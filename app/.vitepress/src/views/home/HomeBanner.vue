@@ -57,10 +57,8 @@ const videoClickBtn = (path: string) => {
   videoDialog.value = true;
 };
 
-// :autoplay="{
-//         delay: 5000,
-//         disableOnInteraction: false,
-//       }"
+const bannerVideoSrc =
+  'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/openGauss%20Summit%202022/Banner/openGauss%20Banner%E5%8A%A8K_1920x480.mp4';
 </script>
 
 <template>
@@ -71,28 +69,29 @@ const videoClickBtn = (path: string) => {
       :pagination="{
         clickable: true,
       }"
+      :autoplay="{
+        delay: 5000,
+        disableOnInteraction: false,
+      }"
       :navigation="true"
       @swiper="onSwiper"
     >
       <swiper-slide v-for="(item, index) in homeBanner" :key="item.link">
-        <a class="banner-panel" :class="item.className" @click="jump(item)">
+        <div class="banner-panel" :class="item.className" @click="jump(item)">
           <div v-if="item.type === 5" class="banner-video">
             <template v-if="windowWidth > 767">
               <video
                 muted
                 playsinline="true"
-                autoplay=""
+                autoplay
                 loop
                 :poster="item.pcBanner"
                 preload=""
               >
-                <source
-                  type="video/mp4"
-                  src="https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/openGauss%20Summit%202022/Banner/openGauss%20Banner%E5%8A%A8K_1920x480.mp4"
-                />
+                <source type="video/mp4" :src="bannerVideoSrc" />
               </video>
             </template>
-            <img v-else :src="item.moBanner" />
+            <img v-else :src="item.moBanner" :alt="item.title" />
           </div>
           <div
             v-else
@@ -145,13 +144,13 @@ const videoClickBtn = (path: string) => {
                 <img
                   class="video-player-btn"
                   :src="VideoGif"
-                  alt=""
+                  :alt="item.title"
                   @click.stop="videoClickBtn(item.video)"
                 />
               </div>
             </div>
           </div>
-        </a>
+        </div>
       </swiper-slide>
     </swiper>
   </div>

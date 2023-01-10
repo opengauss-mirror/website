@@ -299,8 +299,6 @@ const meetingLoginApi = async () => {
       meetingStore.userSigs = res.data.sigs;
       meetingStore.giteeId = res.data.user.gitee_id;
       meetingStore.userId = res.data.user.id;
-    } else {
-      // console.log('meeting Login :>> ', isZh.value ? res.msg : res.en_msg);
     }
   } catch (e: any) {
     throw new Error(e);
@@ -624,7 +622,6 @@ const handleSubmitMeeting = async (formEl: FormInstance | undefined) => {
 
 const changeRecord = () => {
   meetingForm.value.record = meetingRecord.value ? 'cloud' : '';
-  console.log('object :>> ', meetingForm.value.record);
 };
 </script>
 <template>

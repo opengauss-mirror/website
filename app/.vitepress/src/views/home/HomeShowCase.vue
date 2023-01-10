@@ -136,6 +136,7 @@ onUnmounted(() => {
                       ? item.ACTIVE_URL
                       : item.URL
                   "
+                  :alt="lang === 'zh' ? item.TYPE : item.TYPE_EN"
                 />
                 <div class="case-mobile-word">
                   {{ lang === 'zh' ? item.TYPE : item.TYPE_EN }}
@@ -169,10 +170,14 @@ onUnmounted(() => {
                 class="case-img-box"
                 :class="active === index ? 'active' : ''"
               >
-                <img :src="imgUrl(item)" alt="" class="nav-item-icon" />
+                <img
+                  :src="imgUrl(item)"
+                  :alt="lang === 'zh' ? item.TYPE : item.TYPE_EN"
+                  class="nav-item-icon"
+                />
                 <img
                   :src="imgUrlHover(item)"
-                  alt=""
+                  :alt="lang === 'zh' ? item.TYPE : item.TYPE_EN"
                   class="nav-item-icon-hover"
                 />
               </div>
@@ -182,7 +187,7 @@ onUnmounted(() => {
             </div>
           </div>
           <div class="case-user">
-            <a
+            <div
               v-for="item2 in caseData &&
               caseData[ShowCaseData.CASE_LIST[active].TYPE_EN]"
               :key="item2.company"
@@ -191,7 +196,7 @@ onUnmounted(() => {
             >
               <div class="user-title">{{ item2.company }}</div>
               <div class="user-word">{{ item2.summary }}</div>
-            </a>
+            </div>
           </div>
         </OCard>
       </div>

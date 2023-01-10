@@ -98,6 +98,7 @@ onMounted(async () => {
     </div>
     <OContainer :level-index="1">
       <div
+        v-if="eventsData"
         class="room-contain-new events"
         :class="{ isShow: tabType === 'events' }"
       >
@@ -132,19 +133,18 @@ onMounted(async () => {
                 </p>
               </div>
             </div>
-            <p v-if="eventsData.link" class="o-link-icon">
-              <OButton
-                animation
-                type="text"
-                class="activity-btn"
-                @click="handleGo(eventsData.link)"
-              >
+            <a
+              v-if="eventsData.link"
+              :href="eventsData.link"
+              class="o-link-icon"
+            >
+              <OButton animation type="text" class="activity-btn">
                 {{ i18n.common.VIEW_MORE }}
                 <template #suffixIcon>
                   <IconArrowRight class="statistics-icon"></IconArrowRight>
                 </template>
               </OButton>
-            </p>
+            </a>
           </div>
         </div>
       </div>
@@ -560,11 +560,20 @@ onMounted(async () => {
   &-cover {
     width: 100%;
     height: 546px;
+    overflow: hidden;
     .cover {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      // object-fit: cover;
       display: block;
+      transition: transform 0.6s ease;
+    }
+    @media (min-width: 1200px) {
+      &:hover {
+        .cover {
+          transform: scale(1.1);
+        }
+      }
     }
   }
   &-box {
@@ -648,9 +657,6 @@ onMounted(async () => {
             font-size: 16px;
             margin-right: 4px;
           }
-        }
-        .tag {
-          // margin-top: 8px;
         }
       }
       .link {
