@@ -5,7 +5,7 @@ import { useData } from 'vitepress';
 import BannerLevel2 from '@/components/BannerLevel2.vue';
 // import BreadCrumbs from '@/components/BreadCrumbs.vue';
 
-import banner from '@/assets/banner/banner-secondary.png';
+import banner from '@/assets/illustrations/banner-secondary.png';
 
 const { frontmatter } = useData();
 // const caseInfo = {

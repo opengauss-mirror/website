@@ -9,7 +9,7 @@ import useWindowResize from '@/components/hooks/useWindowResize';
 import AppContent from '@/components/AppContent.vue';
 import BannerLevel2 from '@/components/BannerLevel2.vue';
 
-import banner from '@/assets/banner/banner-secondary.png';
+import banner from '@/assets/illustrations/banner-secondary.png';
 import illustration from '@/assets/illustrations/events.png';
 import notFoundImg_light from '@/assets/illustrations/404.png';
 import notFoundImg_dark from '@/assets/illustrations/404-dark.png';
@@ -17,9 +17,6 @@ import notFoundImg_dark from '@/assets/illustrations/404-dark.png';
 import IconCalendar from '~icons/app/icon-calendar.svg';
 import IconMapPin from '~icons/app/icon-map-pin.svg';
 import IconTag from '~icons/app/icon-tag.svg';
-
-import eventPoster from '@/assets/category/home/events/internship.png';
-import eventPosterEn from '@/assets/category/home/events/internship-en.png';
 
 const commonStore = useCommon();
 const router = useRouter();
@@ -40,22 +37,6 @@ const thisDate =
     : nowDate.getDate();
 const curDate = Number('' + thisYear + thisMonth + thisDate);
 
-const EVENTS_DATA = [
-  {
-    title: '多重奖励 | openGauss开源实习来啦！',
-    time: '2022/02/01-2022/12/31',
-    date: '2022-02-01',
-    category: 'events',
-    tags: '活动',
-    label: '线上',
-    location: '线上',
-    img: lang.value === 'zh' ? eventPoster : eventPosterEn,
-    path: 'https://mp.weixin.qq.com/s/vM6p6d1uPVYkwOl7tY0nyA',
-    author: 'openGauss',
-    summary:
-      '开源实习是openEuler社区、openGauss社区、openLooKeng等单位共同发起的线上实习项目，旨在鼓励在校学生积极参与开源社区，在实际的开源环境中提升实践能力。社区提供实习任务，并提供导师辅导，学生通过实习申请后，可在社区领取任务，每完成一个任务可获得相应积分，积分累计达规定量后，可获得实习证明和实习工资。',
-  },
-];
 const addActiveData = {
   title: '2022年度openGauss社区满意度调研',
   time: '2022/12/15-2023/1/15',
@@ -95,8 +76,6 @@ const newsList = computed(() => {
     return allReviewList.value;
   }
 });
-
-latestList.value = EVENTS_DATA;
 
 onMounted(async () => {
   const sortParams = reactive({
@@ -334,6 +313,7 @@ const goDetail = (path: string) => {
   }
   &-cover {
     width: 100%;
+    overflow: hidden;
     @media (max-width: 1100px) {
       height: 172px;
     }
@@ -345,6 +325,14 @@ const goDetail = (path: string) => {
       height: 100%;
       @media (max-width: 1100px) {
         object-fit: cover;
+      }
+      transition: transform 0.6s ease;
+    }
+    @media (min-width: 1200px) {
+      &:hover {
+        .cover {
+          transform: scale(1.1);
+        }
       }
     }
   }

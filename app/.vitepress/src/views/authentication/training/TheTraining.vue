@@ -9,7 +9,7 @@ import BannerLevel2 from '@/components/BannerLevel2.vue';
 import AppContent from '@/components/AppContent.vue';
 import TrainingNav from './TrainingNav.vue';
 
-import Banner from '@/assets/banner/banner-secondary.png';
+import Banner from '@/assets/illustrations/banner-secondary.png';
 import illustration from '@/assets/illustrations/training.png';
 import partnerLight from '@/assets/category/authentication/training/img/partner.png';
 import partnerDark from '@/assets/category/authentication/training/img/partner-dark.png';

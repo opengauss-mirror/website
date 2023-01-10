@@ -8,7 +8,7 @@ import BannerLevel2 from '@/components/BannerLevel2.vue';
 import AppPaginationMo from '@/components/AppPaginationMo.vue';
 import AppContent from '@/components/AppContent.vue';
 
-import Banner from '@/assets/banner/banner-secondary.png';
+import Banner from '@/assets/illustrations/banner-secondary.png';
 import illustration from '@/assets/illustrations/cve.png';
 import IconCancel from '~icons/app/icon-cancel.svg';
 

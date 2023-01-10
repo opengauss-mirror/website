@@ -6,7 +6,7 @@ title: 'Contribution'
 import BannerLevel2 from '@/components/BannerLevel2.vue'
 import ContributionTab from "@/views/contribution/ContributionTab.vue";
 
-import banner from '@/assets/banner/banner-secondary.png';
+import banner from '@/assets/illustrations/banner-secondary.png';
 import illustration from '@/assets/illustrations/contribution.png';
 </script>
 

@@ -6,10 +6,8 @@ import liveImg_mo from '@/assets/category/home/banner/liveBanner_mo.png';
 import banner310 from '@/assets/category/home/banner/opengauss3.1.0_zh_pc.png';
 import banner310_mo from '@/assets/category/home/banner/opengauss3.1.0_zh_mo.png';
 
-
 import banner0104 from '@/assets/category/home/banner/opengauss3.1.1_zh_pc.png';
 import banner0104_mo from '@/assets/category/home/banner/opengauss3.1.1_zh_mo.png';
-
 
 // import internship from '@/assets/category/home/banner/internship.png';
 // import internship_mo from '@/assets/category/home/banner/internship_mo.png';
@@ -41,6 +39,18 @@ export default {
       video: '',
     },
     {
+      pcBanner: banner0104,
+      moBanner: banner0104_mo,
+      link: '/zh/news/2023-01-04/20230104.html',
+      targetTap: 0,
+      title: '',
+      desc: [''],
+      btn: '',
+      type: 3,
+      className: '',
+      video: '',
+    },
+    {
       pcBanner: bannerSummit,
       moBanner: bannerSummit_mo,
       link: '/zh/summit/summit2022/',
@@ -48,7 +58,7 @@ export default {
       title: '',
       desc: [''],
       btn: '',
-      type: 5,
+      type: 1,
       className: 'summit',
       video: '',
     },
@@ -67,7 +77,7 @@ export default {
     {
       pcBanner: liveImg_pc,
       moBanner: liveImg_mo,
-      link: '/docs/3.0.0/docs/BriefTutorial/BriefTutorial.html',
+      link: '/docs/3.1.1/docs/BriefTutorial/BriefTutorial.html',
       targetTap: 1,
       title: '欢迎加入openGauss社区',
       desc: ['openGauss是一款高性能、高安全、高可靠的企业级开源关系型数据库'],
@@ -77,18 +87,7 @@ export default {
       video:
         'https://learningvideo.obs.ap-southeast-1.myhuaweicloud.com/openGauss%E5%AE%A3%E4%BC%A0%E6%B4%BB%E5%8A%A8/openGauss%2BHC%E5%AE%A3%E4%BC%A0%E8%A7%86%E9%A2%91.mp4',
     },
-    {
-      pcBanner: banner0104,
-      moBanner: banner0104_mo,
-      link: '/zh/news/2023-01-04/20230104.html',
-      targetTap: 0,
-      title: '',
-      desc: [''],
-      btn: '',
-      type: 3,
-      className: '',
-      video: '',
-    },
+
     // {
     //   pcBanner: banner310,
     //   moBanner: banner310_mo,
@@ -154,7 +153,7 @@ export default {
     {
       pcBanner: liveImg_pc,
       moBanner: liveImg_mo,
-      link: '/docs/3.0.0/docs/BriefTutorial/BriefTutorial.html',
+      link: '/docs/3.1.0/docs/BriefTutorial/BriefTutorial.html',
       targetTap: 1,
       title: 'Welcome to openGauss Community',
       desc: [

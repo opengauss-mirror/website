@@ -76,7 +76,7 @@ const summitData = {
     ],
   },
   liver: {
-    title: '峰会直播',
+    title: '精彩回顾',
     liveData: [
       {
         liveId: 12292,

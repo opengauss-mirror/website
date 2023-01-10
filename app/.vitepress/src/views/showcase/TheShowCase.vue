@@ -13,7 +13,7 @@ import BannerLevel2 from '@/components/BannerLevel2.vue';
 import AppPaginationMo from '@/components/AppPaginationMo.vue';
 import NotFound from '@/NotFound.vue';
 
-import Banner from '@/assets/banner/banner-secondary.png';
+import Banner from '@/assets/illustrations/banner-secondary.png';
 import CardBg from '@/assets/category/showcase/bg.png';
 import illustration from '@/assets/illustrations/userPractice.png';
 
