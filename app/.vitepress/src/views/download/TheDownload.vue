@@ -181,7 +181,7 @@ const changeDownloadAuth = () => {
             <p v-if="subitem.table === 'server'" class="text tips">
               {{ hoverTips(subitem.edition) }}
             </p>
-            <div v-if="subitem.centos_url !== ''">
+            <template v-if="subitem.centos_url !== ''">
               <p class="text">{{ item.thead[1] }}</p>
               <div class="down-action">
                 <template
@@ -234,8 +234,8 @@ const changeDownloadAuth = () => {
                     </template> </OButton
                 ></a>
               </div>
-            </div>
-            <div v-if="subitem.aarch_url !== ''">
+            </template>
+            <template v-if="subitem.aarch_url !== ''">
               <p class="text">{{ item.thead[2] }}</p>
               <div class="down-action">
                 <template
@@ -278,8 +278,8 @@ const changeDownloadAuth = () => {
                   </template>
                 </OButton>
               </div>
-            </div>
-            <div v-if="subitem.x86_url !== ''">
+            </template>
+            <template v-if="subitem.x86_url !== ''">
               <p class="text">{{ item.thead[3] }}</p>
               <div class="down-action">
                 <template
@@ -322,7 +322,7 @@ const changeDownloadAuth = () => {
                   </template>
                 </OButton>
               </div>
-            </div>
+            </template>
           </div>
         </OCollapseItem>
       </OCollapse>
@@ -594,6 +594,7 @@ const changeDownloadAuth = () => {
   font-size: var(--o-font-size-text);
   gap: var(--o-spacing-h8);
   justify-content: center;
+
   .down-copy {
     color: var(--o-color-brand1);
     font-size: var(--o-font-size-text);
@@ -653,7 +654,9 @@ const changeDownloadAuth = () => {
       }
     }
     .down-action {
-      margin: var(--o-spacing-h9) 0 var(--o-spacing-h5);
+      &:not(:last-child) {
+        margin: var(--o-spacing-h9) 0 var(--o-spacing-h5);
+      }
       @media screen and (max-width: 1100px) {
         justify-content: left;
       }

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onMounted, Ref, ref } from 'vue';
 import { useI18n } from '@/i18n';
+import { useData } from 'vitepress';
 import dayjs from 'dayjs';
 
 import IconArrowRight from '~icons/app/icon-arrow-right.svg';
@@ -9,6 +10,7 @@ import IconMapPin from '~icons/app/icon-map-pin.svg';
 import IconTag from '~icons/app/icon-tag.svg';
 
 const i18n = useI18n();
+const { lang } = useData();
 
 const roomName = i18n.value.home.HOME_ROOMS.ROOM_NAME;
 
@@ -73,10 +75,6 @@ const initNewsData = (datas: any) => {
 
 const initBlogData = (datas: any) => {
   blogList.value = filterSiteData(datas);
-};
-
-const handleGo = (path: string) => {
-  window.open(path, '_blank');
 };
 
 onMounted(async () => {
@@ -200,17 +198,14 @@ onMounted(async () => {
         </div>
 
         <div class="statistics">
-          <OButton
-            animation
-            type="text"
-            class="statistics-button"
-            @click="handleGo('blogs/')"
-          >
-            {{ i18n.common.VIEW_MORE }}
-            <template #suffixIcon>
-              <IconArrowRight class="statistics-icon"></IconArrowRight>
-            </template>
-          </OButton>
+          <a :href="`/${lang}/blogs/`" target="_blank">
+            <OButton animation type="text" class="statistics-button">
+              {{ i18n.common.VIEW_MORE }}
+              <template #suffixIcon>
+                <IconArrowRight class="statistics-icon"></IconArrowRight>
+              </template>
+            </OButton>
+          </a>
         </div>
       </div>
       <div class="room-contain-new" :class="{ isShow: tabType === 'news' }">
@@ -264,17 +259,13 @@ onMounted(async () => {
           </div>
         </div>
         <div class="statistics">
-          <OButton
-            animation
-            type="text"
-            class="statistics-button"
-            @click="handleGo('news/')"
-          >
-            {{ i18n.common.VIEW_MORE }}
-            <template #suffixIcon>
-              <IconArrowRight class="statistics-icon"></IconArrowRight>
-            </template>
-          </OButton>
+          <a :href="`/${lang}/news/`" target="_blank">
+            <OButton animation type="text" class="statistics-button">
+              {{ i18n.common.VIEW_MORE }}
+              <template #suffixIcon>
+                <IconArrowRight class="statistics-icon"></IconArrowRight>
+              </template> </OButton
+          ></a>
         </div>
       </div>
     </OContainer>

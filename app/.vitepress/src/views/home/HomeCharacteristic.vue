@@ -7,9 +7,6 @@ import IconDownload from '~icons/app/icon-download.svg';
 const commonStore = useCommon();
 
 const i18n = useI18n();
-const jumpTo = (path: string) => {
-  window.open(path);
-};
 </script>
 
 <template>
@@ -38,17 +35,14 @@ const jumpTo = (path: string) => {
         </div>
       </div>
       <p class="down">
-        <OButton
-          animation
-          size="small"
-          type="text"
-          @click="jumpTo(i18n.home.CHARACTERR_INFO.DOWN_link)"
-        >
-          {{ i18n.home.CHARACTERR_INFO.DOWN_NAME }}
-          <template #suffixIcon>
-            <IconDownload class="icon-download" />
-          </template>
-        </OButton>
+        <a :href="i18n.home.CHARACTERR_INFO.DOWN_link" download target="_blank">
+          <OButton animation size="small" type="text">
+            {{ i18n.home.CHARACTERR_INFO.DOWN_NAME }}
+            <template #suffixIcon>
+              <IconDownload class="icon-download" />
+            </template>
+          </OButton>
+        </a>
       </p>
     </div>
   </div>

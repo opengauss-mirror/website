@@ -25,6 +25,9 @@ const attrs = useAttrs();
     @media screen and (max-width: 768px) {
       width: 90%;
     }
+    .el-dialog__title {
+      color: var(--o-color-text1);
+    }
   }
 }
 </style>
