@@ -20,7 +20,7 @@ const isZh = computed(() => (lang.value === 'zh' ? true : false));
 
 const activeIndex = ref(0);
 const isToggle = ref(false);
-const tagClick = (i: number) => {
+const selectTag = (i: number) => {
   activeIndex.value = i;
   isToggle.value = i !== 0 ? true : false;
 };
@@ -55,7 +55,7 @@ const handlerVideoDetail = (id: number, index: number) => {
           <OTag
             :type="activeIndex === 0 ? 'primary' : 'text'"
             checkable
-            @click="tagClick(0)"
+            @click="selectTag(0)"
             >{{ i18n.common.ALL }}</OTag
           >
           <OTag
@@ -63,7 +63,7 @@ const handlerVideoDetail = (id: number, index: number) => {
             :key="item.id"
             checkable
             :type="activeIndex === item.id ? 'primary' : 'text'"
-            @click="tagClick(item.id)"
+            @click="selectTag(item.id)"
           >
             {{ isZh ? item.name : item.nameEn }}
           </OTag>

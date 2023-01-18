@@ -101,7 +101,7 @@ const videoClickBtn = (path: string) => {
       <p>{{ SUMMITDATA.detail[1] }}</p>
     </div>
     <div class="liver">
-      <h3 class="titleBar">{{ SUMMITDATA.liver.title }}</h3>
+      <h3 class="title-bar">{{ SUMMITDATA.liver.title }}</h3>
       <ClientOnly>
         <SummitLive
           :live-data="SUMMITDATA.liver.liveData"
@@ -118,7 +118,7 @@ const videoClickBtn = (path: string) => {
         class="agenda-item"
         data-aos="fade-up"
       >
-        <h4 class="meetingtitle">
+        <h4 class="meeting-title">
           {{ item.daytime }}
         </h4>
         <OTabs v-model="tabType[index]" class="schedule-tabs">
@@ -128,7 +128,7 @@ const videoClickBtn = (path: string) => {
             :name="itemList.id"
           >
             <template #label>
-              <div class="timeTabs">
+              <div class="time-tabs">
                 {{ itemList.type }}
               </div>
             </template>
@@ -163,7 +163,7 @@ const videoClickBtn = (path: string) => {
       </div>
     </div>
     <!-- 线上展厅 -->
-    <h3 class="titleBar">线上展厅</h3>
+    <h3 class="title-bar">线上展厅</h3>
     <div class="exhibition-online">
       <span
         v-for="item in SUMMITDATA.videolist"
@@ -192,8 +192,8 @@ const videoClickBtn = (path: string) => {
       </div>
     </div>
     <div class="summit-partners">
-      <h3 class="titleBar">{{ SUMMITDATA.partnersList.title[0] }}</h3>
-      <h4 class="meetingtitle">
+      <h3 class="title-bar">{{ SUMMITDATA.partnersList.title[0] }}</h3>
+      <h4 class="meeting-title">
         {{ SUMMITDATA.partnersList.title[1] }}
       </h4>
       <LinkPanel
@@ -202,7 +202,7 @@ const videoClickBtn = (path: string) => {
         :row="3"
         class="there"
       />
-      <h4 class="meetingtitle">
+      <h4 class="meeting-title">
         {{ SUMMITDATA.partnersList.title[2] }}
       </h4>
       <LinkPanel
@@ -210,7 +210,7 @@ const videoClickBtn = (path: string) => {
         :islink="false"
         class="one"
       />
-      <h4 class="meetingtitle">
+      <h4 class="meeting-title">
         {{ SUMMITDATA.partnersList.title[3] }}
       </h4>
       <LinkPanel :link-list="SUMMITDATA.partnersList.p3" :islink="false" />
@@ -256,7 +256,7 @@ const videoClickBtn = (path: string) => {
   </AppContent>
 </template>
 <style scoped lang="scss">
-.titleBar {
+.title-bar {
   text-align: center;
   font-size: var(--o-font-size-h3);
   line-height: var(--o-line-height-h3);
@@ -269,7 +269,7 @@ const videoClickBtn = (path: string) => {
     margin: 40px 0 24px;
   }
 }
-.meetingtitle {
+.meeting-title {
   font-weight: 400;
   color: var(--o-color-text1);
   font-size: var(--o-font-size-h5);
@@ -284,7 +284,7 @@ const videoClickBtn = (path: string) => {
 }
 
 .summit-partners {
-  .meetingtitle {
+  .meeting-title {
     @media (max-width: 767px) {
       font-size: var(--o-font-size-tip);
       line-height: var(--o-line-height-tip);
@@ -512,11 +512,11 @@ const videoClickBtn = (path: string) => {
   :deep(.el-tabs__active-bar) {
     display: none;
   }
-  .timeTabs {
+  .time-tabs {
     padding: 0 var(--o-spacing-h5);
     line-height: 38px;
   }
-  .is-active .timeTabs {
+  .is-active .time-tabs {
     color: #fff;
     background: var(--o-color-brand1);
     border-color: var(--o-color-brand2);
@@ -620,7 +620,7 @@ const videoClickBtn = (path: string) => {
       }
     }
     // 暂时隐藏时间
-    .meetingtitle {
+    .meeting-title {
       font-weight: 400;
       color: var(--o-color-text1);
       font-size: var(--o-font-size-h6);
@@ -646,7 +646,7 @@ const videoClickBtn = (path: string) => {
           padding: 0;
         }
       }
-      .timeTabs {
+      .time-tabs {
         display: inline-block;
         cursor: pointer;
         border: 1px solid var(--o-color-border2);
@@ -663,7 +663,7 @@ const videoClickBtn = (path: string) => {
         }
       }
 
-      .is-active .timeTabs {
+      .is-active .time-tabs {
         color: #fff;
         background: var(--o-color-brand1);
         border-color: var(--o-color-brand2);
@@ -729,7 +729,7 @@ const videoClickBtn = (path: string) => {
             margin-right: var(--o-spacing-h8);
           }
         }
-        :deep(.dateList) {
+        :deep(.date-list) {
           .detail {
             display: none;
           }

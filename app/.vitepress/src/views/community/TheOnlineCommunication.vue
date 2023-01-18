@@ -22,7 +22,7 @@ const windowWidth = ref(useWindowResize());
     :illustration="illustration"
   />
   <AppContent>
-    <div class="onlineCommunication">
+    <div class="online-communication">
       <p class="text">
         {{ i18n.onlineCommunication.text }}
       </p>
@@ -94,7 +94,7 @@ const windowWidth = ref(useWindowResize());
           {{ i18n.onlineCommunication.tips }}
         </p>
         <img
-          class="img"
+          class="mail-img"
           :src="i18n.onlineCommunication.mailimg"
           style="width: 65%"
         />
@@ -112,7 +112,7 @@ const windowWidth = ref(useWindowResize());
 </template>
 
 <style lang="scss" scoped>
-.onlineCommunication {
+.online-communication {
   .text {
     font-size: var(--o-font-size-text);
     line-height: var(--o-line-height-text);
@@ -146,7 +146,7 @@ const windowWidth = ref(useWindowResize());
       list-style: circle;
     }
   }
-  .img {
+  .mail-img {
     margin-top: var(--o-spacing-h6);
   }
 }

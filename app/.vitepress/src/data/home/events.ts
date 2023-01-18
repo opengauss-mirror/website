@@ -25,8 +25,8 @@ export default {
     label: 'Online',
     location: 'Online',
     img: '/category/events/2022-12-15/banner.png',
-    path: '/en/questionnaire',
-    link: '/en/questionnaire/',
+    path: '/zh/questionnaire',
+    link: '/zh/questionnaire/',
     author: 'openGauss',
     summary:
       '填写openGauss社区满意度调研问卷，可参与抽取HUAWEI MatePad SE、华为手环7标准版等惊喜大奖！快来参与吧～',

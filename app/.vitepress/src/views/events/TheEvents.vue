@@ -86,7 +86,8 @@ onMounted(async () => {
   });
   try {
     const responeData = await getSortData(sortParams);
-
+    // 将单独存在的新增活动加入精彩回顾
+    lang.value === 'zh' ? responeData.obj.records.push(addActiveData) : '';
     responeData.obj.records.forEach((item: any) => {
       if (item.date) {
         const time = item.time && item.time.split('-');
@@ -105,7 +106,6 @@ onMounted(async () => {
         }
       }
     });
-    lang.value === 'zh' ? latestList.value.push(addActiveData) : '';
   } catch (e: any) {
     throw new Error(e);
   }

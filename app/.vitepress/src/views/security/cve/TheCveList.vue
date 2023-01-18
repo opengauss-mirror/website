@@ -64,7 +64,7 @@ const handleCurrentChange = (val: number) => {
   currentPage.value = val;
 };
 
-function searchValchange() {
+function changeSearchVal() {
   queryData.searchName = searchContent.value;
 }
 
@@ -80,7 +80,7 @@ function goCveDetail(name: string) {
   router.go(`${router.route.path}detail/?cveNum=${name}`);
 }
 // 点击搜索框的删除图标
-function donShowSearchBox() {
+function clearSearchInput() {
   searchContent.value = '';
 }
 onMounted(() => {
@@ -100,10 +100,10 @@ watch(queryData, () => getCveLists(queryData));
       <OSearch
         v-model="searchContent"
         :placeholder="i18n.security.INPUT_CVE_ID"
-        @change="searchValchange"
+        @change="changeSearchVal"
       >
         <template #suffix>
-          <OIcon class="close" @click="donShowSearchBox"><IconCancel /></OIcon>
+          <OIcon class="close" @click="clearSearchInput"><IconCancel /></OIcon>
         </template>
       </OSearch>
     </div>

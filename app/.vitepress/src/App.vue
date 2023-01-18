@@ -20,7 +20,7 @@ import safetyImgLight from '@/assets/category/security/img/safety-img-light.png'
 import safetyImgDark from '@/assets/category/security/img/safety-img-dark.png';
 import floating from '@/assets/category/questionnaire/floating.png';
 
-const { frontmatter } = useData();
+const { frontmatter, lang } = useData();
 
 const compMapping: {
   [name: string]: Component;
@@ -78,7 +78,7 @@ onMounted(() => {
         'cve',
         'questionnaire',
       ];
-      isQuesShow.value = true;
+      isQuesShow.value = lang.value === 'zh';
       pathList2.forEach((item) => {
         if (item === newValue.path.split('/')[2]) {
           isQuesShow.value = false;

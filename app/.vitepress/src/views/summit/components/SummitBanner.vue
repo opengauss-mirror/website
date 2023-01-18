@@ -23,7 +23,7 @@ const bannerText = computed(() =>
 );
 const bannerText2 = computed(() => (isPc.value ? props.banner.text2 : null));
 
-function clickButton(link: string) {
+function onButtonClick(link: string) {
   (document.getElementById(link) as HTMLElement).scrollIntoView({
     behavior: 'smooth',
     block: 'start',
@@ -44,7 +44,7 @@ function clickButton(link: string) {
             size="small"
             animation
             class="banner-btn"
-            @click="clickButton(props.banner.link)"
+            @click="onButtonClick(props.banner.link)"
           >
             {{ props.banner.button }}
             <template #suffixIcon

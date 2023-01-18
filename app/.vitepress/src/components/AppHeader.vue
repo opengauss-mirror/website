@@ -9,6 +9,7 @@ import HeaderNav from './HeaderNav.vue';
 import AppTheme from './AppTheme.vue';
 import AppLanguage from './AppLanguage.vue';
 import NavLangFilter from '@/i18n/common/navLangFilter';
+import HeaderSearch from './HeaderSearch.vue';
 
 import logo_light from '@/assets/logo.svg';
 import logo_dark from '@/assets/logo_dark.svg';
@@ -148,7 +149,8 @@ const showSearchBox = () => {
 
 // 搜索抽屉
 const popList = ref<string[]>([]);
-const isShowDrawer = ref(false);
+// 控制是否使用热门搜索功能
+const isShowDrawer = ref(true);
 
 // 暂时固定数据 等接口出来在换
 const hotList = {
@@ -166,7 +168,6 @@ const hotList = {
 };
 
 const showDrawer = () => {
-  isShowDrawer.value = true;
   //热搜
   // const params = `lang=${lang.value}`;
   // getPop(params).then((res) => {
@@ -178,30 +179,24 @@ const showDrawer = () => {
   // });
   popList.value = lang.value === 'zh' ? hotList.zh : hotList.en;
 };
-const topSearchClick = (val: string) => {
-  searchInput.value = val;
-  search();
-};
-const donShowSearchBox = () => {
-  isShowBox.value = false;
-  isShowDrawer.value = false;
-  searchInput.value = '';
-  popList.value = [];
-  commonStore.iconMenuShow = true;
-};
+
 // 搜索内容
 const searchInput = ref<string>('');
-// 搜索事件
-function search() {
-  window.open(`/${lang.value}/search/?search=${searchInput.value}`, '_self');
-  // router.go(`/${lang.value}/search/?search=${searchInput.value}`);
-  donShowSearchBox();
-}
+
 const jumpToUserZone = () => {
   const language = lang.value === 'zh' ? 'zh' : 'en';
   const origin = import.meta.env.VITE_LOGIN_ORIGIN;
   window.open(`${origin}/${language}/profile`, '_black');
 };
+// 关闭搜索框
+const closeSearchBox = () => {
+  isShowBox.value = false;
+  searchInput.value = '';
+  popList.value = [];
+  commonStore.iconMenuShow = true;
+};
+// 搜索组件跳转链接
+const searchLink = `/${lang.value}/search/`;
 </script>
 
 <template>
@@ -217,39 +212,15 @@ const jumpToUserZone = () => {
       <img class="logo" alt="openGauss logo" :src="logo" @click="goHome" />
 
       <ClientOnly>
-        <div v-if="isShowBox" class="header-search">
-          <div class="header-search-box">
-            <OSearch
-              v-model="searchInput"
-              :placeholder="searchValue.PLEACHOLDER"
-              @change="search"
-              @focus="showDrawer"
-            >
-              <template #suffix>
-                <OIcon class="close" @click="donShowSearchBox"
-                  ><IconCancel
-                /></OIcon>
-              </template>
-            </OSearch>
-          </div>
-          <div v-show="isShowDrawer" class="drawer">
-            <div class="hots">
-              <div class="hots-title">
-                <p class="hots-text">{{ searchValue.TOPSEARCH }}</p>
-              </div>
-              <div class="hots-list">
-                <OTag
-                  v-for="item in popList"
-                  :key="item"
-                  type="text"
-                  class="hots-list-item"
-                  @click="topSearchClick(item)"
-                  >{{ item }}</OTag
-                >
-              </div>
-            </div>
-          </div>
-        </div>
+        <HeaderSearch
+          v-if="isShowBox"
+          :placeholder="searchValue.PLEACHOLDER"
+          :pop-list="popList"
+          :link="searchLink"
+          :is-show-drawer="isShowDrawer"
+          @click-close="closeSearchBox"
+          @focus-input="showDrawer"
+        />
       </ClientOnly>
       <!-- 移动端搜索按钮 -->
       <div v-if="!isShowBox" class="mobile-search">
@@ -453,74 +424,6 @@ const jumpToUserZone = () => {
   .icon {
     font-size: 22px;
     color: var(--o-color-text1);
-  }
-}
-.header-search {
-  position: relative;
-  width: 900px;
-  margin-left: var(--o-spacing-h2);
-  @media (max-width: 1100px) {
-    :deep(.o-search) {
-      --o-search-height: 28px;
-    }
-    margin-left: 0;
-    z-index: 2;
-    position: fixed;
-    width: calc(100vw - 32px);
-    left: 16px;
-    right: 16px;
-  }
-
-  &-box {
-    .close {
-      cursor: pointer;
-      color: var(--o-color-text1);
-    }
-  }
-  .drawer {
-    position: absolute;
-    height: auto;
-    width: 100%;
-    margin-top: 21px;
-    box-shadow: var(--o-shadow-l4);
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(5px);
-    padding: var(--o-spacing-h3);
-
-    @media (max-width: 1100px) {
-      background: rgba(255, 255, 255, 1);
-      backdrop-filter: blur(0px);
-      margin-top: 8px;
-      left: -16px;
-      right: 0;
-      width: 100vw;
-      padding: var(--o-spacing-h5);
-    }
-    .hots {
-      &-title {
-        font-size: var(--o-font-size-tip);
-        line-height: var(--o-line-height-tip);
-        color: var(--o-color-text1);
-      }
-      &-list {
-        &-item {
-          margin-top: var(--o-spacing-h5);
-          margin-right: var(--o-spacing-h5);
-          background-color: var(--o-color-bg4);
-          color: var(--o-color-text-secondary);
-          cursor: pointer;
-          @media (max-width: 1100px) {
-            font-size: var(--o-font-size-tip);
-            line-height: var(--o-line-height-tip);
-          }
-        }
-      }
-    }
-    @media (max-width: 768px) {
-      .hots-list-item {
-        margin-right: var(--o-spacing-h8);
-      }
-    }
   }
 }
 

@@ -59,7 +59,7 @@ onMounted(async () => {
 });
 
 // 背景
-const ActiveBg = `url(${liveActiveBg})`;
+const activeBg = `url(${liveActiveBg})`;
 
 const liveRoom = ref(
   isTest.value ? renderData[0].LIVETESTID : renderData[0].LIVEID
@@ -199,7 +199,7 @@ const selectliveChange = (val: number): void => {
       }
 
       .link-active {
-        background: v-bind('ActiveBg') no-repeat center/cover;
+        background: v-bind('activeBg') no-repeat center/cover;
         p {
           color: #fff;
         }

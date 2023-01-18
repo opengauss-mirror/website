@@ -19,7 +19,7 @@ const notFoundImg = computed(() =>
 );
 const disabledTip = ref('');
 // 下载事件处理
-function download(paString: string) {
+function downloadCertification(paString: string) {
   downloadCard(paString, language.value)
     .then((res) => {
       if (res.success) {
@@ -69,7 +69,7 @@ function getQueryString(name: string) {
   return '';
 }
 onMounted(() => {
-  download(getQueryString('PA'));
+  downloadCertification(getQueryString('PA'));
 });
 </script>
 <template>

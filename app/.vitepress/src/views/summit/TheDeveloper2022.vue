@@ -16,7 +16,7 @@ import bannerText from '@/assets/category/summit/2022/text@2x.png';
 import IconTime from '~icons/app/icon-time.svg';
 import IconArrowRight from '~icons/app/icon-arrow-right.svg';
 
-const SummitData: any = SummitConfig.data2022.online.list;
+const summitData: any = SummitConfig.data2022.online.list;
 
 const tabType = ref('main');
 const otherTabType = ref(0);
@@ -38,20 +38,20 @@ const otherTabType = ref(0);
       <p class="text">{{ SummitConfig.data2022.desc[0] }}</p>
       <p class="text">{{ SummitConfig.data2022.desc[1] }}</p>
     </div>
-    <h3 class="titleBar">{{ SummitConfig.data2022.titleBar[0] }}</h3>
+    <h3 class="title-bar">{{ SummitConfig.data2022.titleBar[0] }}</h3>
     <ClientOnly
       ><SummitLive
         :live-data="SummitConfig.data2022.LIVEDATA"
         class-name="odd2022"
     /></ClientOnly>
-    <h3 class="titleBar">{{ SummitConfig.data2022.titleBar[1] }}</h3>
+    <h3 class="title-bar">{{ SummitConfig.data2022.titleBar[1] }}</h3>
     <div class="offline-panel">
-      <h4 class="meetingtitle">{{ SummitConfig.data2022.offline.daytime }}</h4>
-      <div class="agendaList">
+      <h4 class="meeting-title">{{ SummitConfig.data2022.offline.daytime }}</h4>
+      <div class="agenda-list">
         <div
           v-for="item in SummitConfig.data2022.offline.list"
           :key="item.time"
-          class="agendaItem"
+          class="agenda-item"
         >
           <span class="time"><IconTime />{{ item.time }}</span>
           <div class="info">
@@ -63,11 +63,11 @@ const otherTabType = ref(0);
       </div>
     </div>
     <div class="online-panel">
-      <h4 class="meetingtitle">{{ SummitConfig.data2022.online.daytime }}</h4>
+      <h4 class="meeting-title">{{ SummitConfig.data2022.online.daytime }}</h4>
       <OTabs v-model="tabType" class="schedule-tabs">
-        <el-tab-pane v-for="item in SummitData" :key="item.id" :name="item.id">
+        <el-tab-pane v-for="item in summitData" :key="item.id" :name="item.id">
           <template #label>
-            <div class="timeTabs">
+            <div class="time-tabs">
               <span class="taber-top"> {{ item.type }}</span>
               <span class="taber-bottom"> {{ item.time }}</span>
             </div>
@@ -76,7 +76,7 @@ const otherTabType = ref(0);
       </OTabs>
       <OContainer :level-index="1">
         <div class="schedule-item" :class="{ isShow: tabType === 'main' }">
-          <SummitSchedule :options="SummitData[0].children" />
+          <SummitSchedule :options="summitData[0].children" />
         </div>
         <div
           class="schedule-item other"
@@ -84,7 +84,7 @@ const otherTabType = ref(0);
         >
           <OTabs v-model="otherTabType" class="other-tabs">
             <OTabPane
-              v-for="item in SummitData[1].children"
+              v-for="item in summitData[1].children"
               :key="item.id"
               :label="item.name"
               :name="item.id"
@@ -96,16 +96,16 @@ const otherTabType = ref(0);
         </div>
         <div class="schedule-item" :class="{ isShow: tabType === 'sig' }">
           <div class="sig-box">
-            <h3>{{ SummitData[2].name }}</h3>
-            <a class="link" :href="SummitData[2].path" target="_blank">
-              {{ SummitData[2].desc }}
+            <h3>{{ summitData[2].name }}</h3>
+            <a class="link" :href="summitData[2].path" target="_blank">
+              {{ summitData[2].desc }}
               <IconArrowRight />
             </a>
           </div>
           <div class="sig-list">
-            <span class="time"><IconTime />{{ SummitData[2].time1 }}</span>
+            <span class="time"><IconTime />{{ summitData[2].time1 }}</span>
             <ul>
-              <li v-for="item in SummitData[2].children" :key="item.name">
+              <li v-for="item in summitData[2].children" :key="item.name">
                 <span class="name">{{ item.name }}</span>
                 <span class="desc">{{ item.desc }}</span>
                 <a :href="item.link" target="_blank" class="link">报名</a>
@@ -115,7 +115,7 @@ const otherTabType = ref(0);
         </div>
       </OContainer>
     </div>
-    <h3 class="titleBar">{{ SummitConfig.data2022.titleBar[2] }}</h3>
+    <h3 class="title-bar">{{ SummitConfig.data2022.titleBar[2] }}</h3>
     <SummitGuests
       :lecturer-list="SummitConfig.data2022.LECTURER_LIST"
       shape="circle"
@@ -123,8 +123,8 @@ const otherTabType = ref(0);
       :mobile-columns-num="2"
     />
     <div class="summit-partners">
-      <h3 class="titleBar">{{ SummitConfig.data2022.titleBar[3] }}</h3>
-      <h4 class="meetingtitle">
+      <h3 class="title-bar">{{ SummitConfig.data2022.titleBar[3] }}</h3>
+      <h4 class="meeting-title">
         {{ SummitConfig.data2022.partnersList.title[0] }}
       </h4>
       <LinkPanel
@@ -132,7 +132,7 @@ const otherTabType = ref(0);
         :islink="false"
         class="one"
       />
-      <h4 class="meetingtitle">
+      <h4 class="meeting-title">
         {{ SummitConfig.data2022.partnersList.title[1] }}
       </h4>
       <LinkPanel
@@ -140,14 +140,14 @@ const otherTabType = ref(0);
         :islink="false"
         class="one"
       />
-      <h4 class="meetingtitle">
+      <h4 class="meeting-title">
         {{ SummitConfig.data2022.partnersList.title[2] }}
       </h4>
       <LinkPanel
         :link-list="SummitConfig.data2022.partnersList.p3"
         :islink="false"
       />
-      <h4 class="meetingtitle">
+      <h4 class="meeting-title">
         {{ SummitConfig.data2022.partnersList.title[3] }}
       </h4>
       <LinkPanel
@@ -156,7 +156,7 @@ const otherTabType = ref(0);
       />
     </div>
     <div class="previous">
-      <h4 class="meetingtitle">{{ SummitConfig.data2022.titleBar[4] }}</h4>
+      <h4 class="meeting-title">{{ SummitConfig.data2022.titleBar[4] }}</h4>
       <a
         v-for="item in SummitConfig.data2022.previous"
         :key="item.link"
@@ -245,7 +245,7 @@ const otherTabType = ref(0);
   }
 }
 .summit-partners {
-  .meetingtitle {
+  .meeting-title {
     @media (max-width: 767px) {
       font-size: var(--o-font-size-tip);
       line-height: var(--o-line-height-tip);
@@ -270,7 +270,7 @@ const otherTabType = ref(0);
     }
   }
 }
-.titleBar {
+.title-bar {
   text-align: center;
   font-size: var(--o-font-size-h3);
   line-height: var(--o-line-height-h3);
@@ -283,7 +283,7 @@ const otherTabType = ref(0);
     margin: 40px 0 24px;
   }
 }
-.meetingtitle {
+.meeting-title {
   font-weight: 400;
   color: var(--o-color-text1);
   font-size: var(--o-font-size-h5);
@@ -296,13 +296,13 @@ const otherTabType = ref(0);
     line-height: var(--o-line-height-text);
   }
 }
-.agendaList {
+.agenda-list {
   margin: 0 0 40px;
   @media (max-width: 767px) {
     margin: 0 0 24px;
   }
 }
-.agendaItem {
+.agenda-item {
   display: flex;
   line-height: 32px;
   margin-bottom: 16px;
@@ -420,7 +420,7 @@ const otherTabType = ref(0);
       padding: 0 10px;
     }
   }
-  .timeTabs {
+  .time-tabs {
     display: inline-block;
     margin: 0 0 24px;
     cursor: pointer;
@@ -453,7 +453,7 @@ const otherTabType = ref(0);
     }
   }
 
-  .is-active .timeTabs {
+  .is-active .time-tabs {
     color: #fff;
     background: var(--o-color-brand1);
     border-color: var(--o-color-brand2);

@@ -60,7 +60,7 @@ function setHeight(data: any) {
     }
   }
 }
-function messageEvent() {
+function handleMessageEvent() {
   window.addEventListener(
     'message',
     function (event) {
@@ -87,11 +87,11 @@ onMounted(async () => {
   });
   isTest.value = window.location.host.includes('test.osinfra');
   creatUserId(isTest.value ? renderData[0].liveTestId : renderData[0].liveId);
-  messageEvent();
+  handleMessageEvent();
 });
 
 // 背景
-const ActiveBg = `url(${liveActiveBg})`;
+const activeBg = `url(${liveActiveBg})`;
 
 const liveRoom = ref(renderData[0].name);
 const selectliveChange = (val: number): void => {
@@ -229,7 +229,7 @@ const selectliveChange = (val: number): void => {
       }
 
       .link-active {
-        background: v-bind('ActiveBg') no-repeat center/cover;
+        background: v-bind('activeBg') no-repeat center/cover;
         p {
           color: #fff;
         }

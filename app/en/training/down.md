@@ -3,7 +3,7 @@ title: 'Download Certificates'
 ---
 
 <script setup lang="ts">
-  import TheDown from "@/views/authentication/training/down/TheDown.vue"
+  import TheCertificationDown from "@/views/authentication/training/certification-down/TheCertificationDown.vue"
 </script>
 
-<TheDown />
+<TheCertificationDown />

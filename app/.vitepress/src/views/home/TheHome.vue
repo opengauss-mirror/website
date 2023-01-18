@@ -33,7 +33,7 @@ const eventsData = computed(() =>
 );
 // 年度报告显示控制
 const isSummaryShow = ref(false);
-const summaryTipsClick = () => {
+const closeSummaryTips = () => {
   isSummaryShow.value = false;
   sessionStorage.setItem('summary-tips', 'false');
 };
@@ -129,7 +129,7 @@ onUnmounted(() => {
       :src="summaryTipsClosed"
       class="close"
       alt="扫描二维码"
-      @click="summaryTipsClick"
+      @click="closeSummaryTips"
     />
   </div>
 </template>

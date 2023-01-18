@@ -30,7 +30,7 @@ const navRef: any = ref([]);
 const navTitle = (el: any) => {
   navRef.value.push(el);
 };
-function TabClick(e: any) {
+function selectTab(e: any) {
   tabIndex.value = e.index - 0;
   handleScroll(e.index - 0);
 }
@@ -107,7 +107,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
   />
 
   <div id="tab" class="tab-box">
-    <OTabs v-model="tabShow" @tab-click="TabClick">
+    <OTabs v-model="tabShow" @tab-click="selectTab">
       <OTabPane
         v-for="(item, index) in i18n.member.MEMBER_LIST"
         :key="item.ID"
