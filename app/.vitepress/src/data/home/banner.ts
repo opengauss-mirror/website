@@ -12,6 +12,8 @@ import bannerQues_mo from '@/assets/category/home/banner/banner-ques-mo.png';
 import bannerSummit from '@/assets/category/home/banner/banner-summit.jpg';
 import bannerSummit_mo from '@/assets/category/home/banner/banner-summit-mo.jpg';
 
+import yearPcEn from '@/assets/category/home/banner/opengauss-year-pc_en.jpg';
+import yearMoEn from '@/assets/category/home/banner/opengauss-year-mo_en.png';
 import yearPc from '@/assets/category/home/banner/opengauss-year-pc.jpg';
 import yearMo from '@/assets/category/home/banner/opengauss-year-mo.png';
 
@@ -83,8 +85,8 @@ export default {
   ],
   en: [
     {
-      pcBanner: yearPc,
-      moBanner: yearMo,
+      pcBanner: yearPcEn,
+      moBanner: yearMoEn,
       link: '',
       targetTap: 1,
       title: '',

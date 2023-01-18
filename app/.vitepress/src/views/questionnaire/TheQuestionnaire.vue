@@ -6,7 +6,7 @@ import AppContent from '@/components/AppContent.vue';
 
 import banner from '@/assets/category/questionnaire/banner.jpg';
 // import bannerMo from '@/assets/category/questionnaire/banner-mo.png';
-import codeImg from '@/assets/category/questionnaire/code.png';
+// import codeImg from '@/assets/category/questionnaire/code.png';
 import padImg from '@/assets/category/questionnaire/pad.png';
 import watchImg from '@/assets/category/questionnaire/watch.png';
 import bookImg from '@/assets/category/questionnaire/book.png';
@@ -256,7 +256,7 @@ onMounted(() => {
         <h2 class="questionnaire-title">{{ data.winnersInfo.title }}</h2>
         <p class="text">{{ data.winnersInfo.text }}</p>
       </div>
-      <div class="panel2" v-for="(item, index) in data.prize" :key="item.rank">
+      <div v-for="(item, index) in data.prize" :key="item.rank" class="panel2">
         <div class="left-rank">
           <h4>{{ item.rank }}</h4>
         </div>
@@ -278,9 +278,9 @@ onMounted(() => {
         </table>
       </div>
       <div
-        class="panel2-mo"
         v-for="(item, index) in data.prize"
         :key="item.rank"
+        class="panel2-mo"
       >
         <div class="head">
           <img :src="item.prizeImg" alt="" />
@@ -364,6 +364,7 @@ onMounted(() => {
     font-size: var(--o-font-size-text);
     line-height: var(--o-line-height-text);
     margin-top: var(--o-spacing-h2);
+    color: var(--o-color-text1);
     @media screen and (max-width: 1100px) {
       margin-top: var(--o-spacing-h4);
       font-size: var(--o-font-size-tip);

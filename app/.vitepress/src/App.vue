@@ -2,7 +2,7 @@
 import AppHeader from '@/components/AppHeader.vue';
 import AppFooter from '@/components/AppFooter.vue';
 
-import { useData, useRoute, useRouter } from 'vitepress';
+import { useData, useRoute } from 'vitepress';
 import type { Component } from 'vue';
 import { computed, watch, ref, onMounted } from 'vue';
 import { useCommon } from '@/stores/common';
@@ -19,7 +19,7 @@ import categories from '@/shared/category';
 import safetyImgLight from '@/assets/category/security/img/safety-img-light.png';
 import safetyImgDark from '@/assets/category/security/img/safety-img-dark.png';
 
-const { frontmatter, lang } = useData();
+const { frontmatter } = useData();
 
 const compMapping: {
   [name: string]: Component;

@@ -366,7 +366,7 @@ html[lang='zh'] {
       background-size: cover;
       width: 100%;
       height: 100%;
-      
+
       &.text-center {
         .banner-panel-content {
           flex-direction: initial;
