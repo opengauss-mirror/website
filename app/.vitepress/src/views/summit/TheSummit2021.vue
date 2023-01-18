@@ -50,7 +50,7 @@ const videoClickBtn = (path: string) => {
       <p class="text">{{ SummitConfig.data2021.desc[1] }}</p>
     </div>
     <!-- 精彩回顾 -->
-    <h3 id="live" class="titleBar">{{ SummitConfig.data2021.titleBar[0] }}</h3>
+    <h3 id="live" class="title-bar">{{ SummitConfig.data2021.titleBar[0] }}</h3>
     <ClientOnly>
       <SummitLive
         :live-data="SummitConfig.data2021.LIVEDATA"
@@ -58,7 +58,7 @@ const videoClickBtn = (path: string) => {
       />
     </ClientOnly>
     <!-- 峰会日程 -->
-    <h3 class="titleBar">{{ SummitConfig.data2021.titleBar[1] }}</h3>
+    <h3 class="title-bar">{{ SummitConfig.data2021.titleBar[1] }}</h3>
     <div class="time">
       <OTabs v-model="tabType" class="schedule-tabs">
         <el-tab-pane
@@ -67,7 +67,7 @@ const videoClickBtn = (path: string) => {
           :name="item.id"
         >
           <template #label>
-            <div class="timeTabs">
+            <div class="time-tabs">
               {{ item.time }}
             </div>
           </template>
@@ -77,14 +77,14 @@ const videoClickBtn = (path: string) => {
     <div class="online-panel">
       <OContainer :level-index="1">
         <div class="schedule-item" :class="{ isShow: tabType === 'main' }">
-          <h4 class="meetingtitle">{{ SummitData[0].type }}</h4>
+          <h4 class="meeting-title">{{ SummitData[0].type }}</h4>
           <SummitSchedule :options="SummitData[0].children" />
         </div>
         <div
           class="schedule-item other"
           :class="{ isShow: tabType === 'other' }"
         >
-          <h4 class="meetingtitle">{{ SummitData[1].type }}</h4>
+          <h4 class="meeting-title">{{ SummitData[1].type }}</h4>
           <OTabs v-model="otherTabType" class="other-tabs">
             <OTabPane
               v-for="item in SummitData[1].children"
@@ -99,7 +99,7 @@ const videoClickBtn = (path: string) => {
       </OContainer>
     </div>
     <!-- 线上展厅 -->
-    <h3 class="titleBar">{{ SummitConfig.data2021.titleBar[2] }}</h3>
+    <h3 class="title-bar">{{ SummitConfig.data2021.titleBar[2] }}</h3>
     <div class="exhibition-online">
       <a
         v-for="item in SummitConfig.data2021.videolist"
@@ -129,8 +129,8 @@ const videoClickBtn = (path: string) => {
     </div>
     <!-- 共建单位 -->
     <div class="summit-partners">
-      <h3 class="titleBar">{{ SummitConfig.data2021.titleBar[3] }}</h3>
-      <h4 class="meetingtitle">
+      <h3 class="title-bar">{{ SummitConfig.data2021.titleBar[3] }}</h3>
+      <h4 class="meeting-title">
         {{ SummitConfig.data2021.partnersList.title[0] }}
       </h4>
       <LinkPanel
@@ -138,7 +138,7 @@ const videoClickBtn = (path: string) => {
         :islink="false"
         class="one"
       />
-      <h4 class="meetingtitle">
+      <h4 class="meeting-title">
         {{ SummitConfig.data2021.partnersList.title[1] }}
       </h4>
       <LinkPanel
@@ -146,7 +146,7 @@ const videoClickBtn = (path: string) => {
         :islink="false"
         class="one"
       />
-      <h4 class="meetingtitle">
+      <h4 class="meeting-title">
         {{ SummitConfig.data2021.partnersList.title[2] }}
       </h4>
       <LinkPanel
@@ -236,7 +236,7 @@ const videoClickBtn = (path: string) => {
   }
 }
 .summit-partners {
-  .meetingtitle {
+  .meeting-title {
     @media (max-width: 767px) {
       font-size: var(--o-font-size-tip);
       line-height: var(--o-line-height-tip);
@@ -261,7 +261,7 @@ const videoClickBtn = (path: string) => {
     }
   }
 }
-.titleBar {
+.title-bar {
   text-align: center;
   font-size: var(--o-font-size-h3);
   line-height: var(--o-line-height-h3);
@@ -274,7 +274,7 @@ const videoClickBtn = (path: string) => {
     margin: 40px 0 24px;
   }
 }
-.meetingtitle {
+.meeting-title {
   font-weight: 400;
   color: var(--o-color-text1);
   font-size: var(--o-font-size-h5);
@@ -411,7 +411,7 @@ const videoClickBtn = (path: string) => {
       padding: 0 10px;
     }
   }
-  .timeTabs {
+  .time-tabs {
     display: inline-block;
     margin: 0 0 24px;
     cursor: pointer;
@@ -444,7 +444,7 @@ const videoClickBtn = (path: string) => {
     }
   }
 
-  .is-active .timeTabs {
+  .is-active .time-tabs {
     color: #fff;
     background: var(--o-color-brand1);
     border-color: var(--o-color-brand2);
@@ -455,7 +455,7 @@ const videoClickBtn = (path: string) => {
     .el-tabs__nav {
       float: left;
     }
-    .timeTabs {
+    .time-tabs {
       width: auto;
       font-size: var(--o-font-size-h5);
       line-height: var(--o-line-height-h5);
@@ -469,7 +469,7 @@ const videoClickBtn = (path: string) => {
       }
     }
     .is-active {
-      .timeTabs {
+      .time-tabs {
         color: var(--o-color-brand1);
         background-color: transparent;
         border-bottom: 1px solid var(--o-color-brand1);

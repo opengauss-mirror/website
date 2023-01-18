@@ -11,22 +11,6 @@ import illustration from '@/assets/illustrations/certification.png';
 // const searchContent = ref('');
 const i18n = useI18n();
 const tableData: any = ref([]);
-// 搜索功能
-// function searchValchange() {
-//   tableData.value = [];
-//   const reg = RegExp(`${searchContent.value}`, 'ig');
-//   if (searchContent.value === '') {
-//     tableData.value = i18n.value.certification.tableData;
-//   } else {
-//     i18n.value.certification.tableData.forEach((item: any) => {
-//       Object.keys(item).forEach((itemProperty: any) => {
-//         if (reg.test(item[itemProperty])) {
-//           tableData.value.push(item);
-//         }
-//       });
-//     });
-//   }
-// }
 onMounted(() => {
   tableData.value = i18n.value.certification.tableData;
 });

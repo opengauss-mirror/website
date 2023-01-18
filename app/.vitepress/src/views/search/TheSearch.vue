@@ -66,7 +66,7 @@ const totalPage = computed(() => {
 });
 
 // 点击搜索框的删除图标
-function donShowSearchBox() {
+function clearSearchInput() {
   searchResultList.value = '';
   searchInput.value = '';
   searchNumber.value.map((item: any) => {
@@ -120,21 +120,23 @@ function searchDataAll() {
       (function () {
         const search_event_id = `${
           searchData.value.keyword
-        }${new Date().getTime()}${window['sensorsCustomBuriedData']?.ip || ''}`;
+        }${new Date().getTime()}${
+          (window as any)['sensorsCustomBuriedData']?.ip || ''
+        }`;
         const obj = {
           search_key: searchData.value.keyword,
           search_event_id,
         };
-        window['addSearchBuriedData'] = obj;
-        const sensors = window['sensorsDataAnalytic201505'];
+        (window as any)['addSearchBuriedData'] = obj;
+        const sensors = (window as any)['sensorsDataAnalytic201505'];
         const searchKeyObj = {
           search_tag: typeList,
           search_result_total_num: total.value,
         };
         sensors?.setProfile({
           profileType: 'searchValue',
-          ...(window['sensorsCustomBuriedData'] || {}),
-          ...(window['addSearchBuriedData'] || {}),
+          ...((window as any)['sensorsCustomBuriedData'] || {}),
+          ...((window as any)['addSearchBuriedData'] || {}),
           ...searchKeyObj,
         });
       })();
@@ -224,7 +226,7 @@ onMounted(() => {
       @change="searchAll"
     >
       <template #suffix>
-        <OIcon class="close" @click="donShowSearchBox"><IconCancel /></OIcon>
+        <OIcon class="close" @click="clearSearchInput"><IconCancel /></OIcon>
       </template>
     </OSearch>
     <div class="search-content">

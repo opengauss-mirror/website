@@ -19,8 +19,8 @@ import notFoundImg_dark from '@/assets/illustrations/404-dark.png';
 import OInput from 'opendesign/input/OInput.vue';
 import AppContent from '@/components/AppContent.vue';
 
-import hcia from '@/assets/category/authentication/certificate/hcia.png';
-import hcip from '@/assets/category/authentication/certificate/hcip.png';
+import hcia from '@/assets/category/authentication/certification/hcia.png';
+import hcip from '@/assets/category/authentication/certification/hcip.png';
 const i18n = useI18n();
 const { lang } = useData();
 const commonStore = useCommon();
@@ -63,12 +63,12 @@ buttonText.value = send.value;
 // 接收证书信息
 const paList: any = ref([]);
 // 成功获取验证码后再次获取需等待60s
-function waitSend() {
-  const waitSendtimer = setInterval(() => {
+function handleWaitingEvent() {
+  const setWaitingTime = setInterval(() => {
     countSecond.value--;
     buttonText.value = resend.value + '（' + countSecond.value + '）';
     if (countSecond.value === 0) {
-      clearInterval(waitSendtimer);
+      clearInterval(setWaitingTime);
       resultTip.value = '';
       codeSuccess.value = false;
       buttonText.value = send.value;
@@ -87,7 +87,7 @@ function getCode(params: string, lang: string) {
       .then((res) => {
         resultTip.value = res.message;
         if (res.success) {
-          waitSend();
+          handleWaitingEvent();
           identification.value = res.data.identification;
           codeSuccess.value = true;
           successTip.value = true;
@@ -110,7 +110,7 @@ function getCode(params: string, lang: string) {
 // 接收证书信息
 const dataList: any = ref([]);
 // 输入验证码后点击确认
-function SendCode(identification: string, codeInput: string) {
+function onConfirmationClick(identification: string, codeInput: string) {
   if (emailInput.value && codeInput) {
     if (identification === '') {
       resultTip.value =
@@ -166,7 +166,7 @@ function clickChoose(index: number) {
 }
 // 判断下载链接是否失效
 const disabledTip = ref('');
-function download(paString: string) {
+function downloadCertification(paString: string) {
   downloadCard(paString, language.value)
     .then((res) => {
       if (res.success) {
@@ -216,7 +216,7 @@ function clickDownload() {
   existChoose.value = true;
   chooseList.value.forEach((item, index) => {
     if (item) {
-      download(paList.value[index]);
+      downloadCertification(paList.value[index]);
       existChoose.value = false;
     }
   });
@@ -305,7 +305,7 @@ function clickDownload() {
           <div class="button-box">
             <OButton
               size="small"
-              @click="SendCode(identification, codeInput)"
+              @click="onConfirmationClick(identification, codeInput)"
               >{{ i18n.authentication.certificattion.sure }}</OButton
             >
           </div>
@@ -357,7 +357,7 @@ function clickDownload() {
   </AppContent>
 </template>
 
-<style lang="scss" scpoed>
+<style lang="scss" scoped>
 .breadcrumb {
   color: var(--o-color-text1);
   background: var(--o-color-bg1);
@@ -681,7 +681,7 @@ function clickDownload() {
         .choose-img {
           width: 24px;
           height: 24px;
-          background-image: url(@/assets/category/authentication/certificate/unchoose.png);
+          background-image: url(@/assets/category/authentication/certification/unchoose.png);
           background-repeat: no-repeat;
           background-size: 100% 100%;
           position: absolute;
@@ -699,7 +699,7 @@ function clickDownload() {
         &.checked {
           border: 1px solid var(--o-color-brand1);
           .choose-img {
-            background-image: url(@/assets/category/authentication/certificate/choose.png);
+            background-image: url(@/assets/category/authentication/certification/choose.png);
           }
         }
       }

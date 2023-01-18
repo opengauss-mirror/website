@@ -183,7 +183,7 @@ export default {
       key: '#step',
     },
     {
-      name: '常见问题',
+      name: '常见问题解答',
       key: '#qa',
     },
   ],

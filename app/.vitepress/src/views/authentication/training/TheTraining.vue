@@ -66,24 +66,25 @@ const navTitle = (el: any) => {
 };
 // 控制认证体系点击显示
 const isIndex = ref(-1);
-function clickSystemItem(index: number) {
+function onSystemItemClick(index: number) {
   isIndex.value = index;
   isMoreShow.value = -1;
 }
 // 控制认证体系介绍中课程大纲中的更多课程内容显示
 const isMoreShow = ref(-1);
 const isMoreShowMo = ref([false, false, false]);
-function clickCourseMore(index: number) {
+function onCourseMoreClick(index: number) {
   isMoreShow.value = isMoreShow.value === index ? -1 : index;
 }
-function clickRegistration(index: number) {
+function onRegistrationClick(index: number) {
   if (index === 0) {
     window.open('https://enmoedu.com/');
   } else if (index === 6) {
     router.go(`${router.route.path}search.html`);
   }
 }
-function clickToggle(index: number) {
+// 控制移动端更多课程内容显示的切换
+function onToggleClick(index: number) {
   isMoreShowMo.value[index] = !isMoreShowMo.value[index];
 }
 onMounted(() => {
@@ -197,7 +198,7 @@ onUnmounted(() => {
               :data-aos="
                 index === 0 ? 'fade-right' : index === 2 ? 'fade-left' : ''
               "
-              @click="clickSystemItem(index)"
+              @click="onSystemItemClick(index)"
             >
               <div class="item-head" :class="item.name">
                 <div class="head-left">{{ item.level }}</div>
@@ -240,7 +241,7 @@ onUnmounted(() => {
             :class="'system-' + item.name"
           >
             <div v-show="isIndex === index">
-              <div class="item-head" @click="clickSystemItem(-1)">
+              <div class="item-head" @click="onSystemItemClick(-1)">
                 <div class="leavel">{{ item.level }}</div>
                 <div class="name">
                   <h3>{{ item.name.toUpperCase() }}</h3>
@@ -263,7 +264,7 @@ onUnmounted(() => {
                     :class="
                       isMoreShow === indexCourse ? 'checked' : 'no-checked'
                     "
-                    @click="clickCourseMore(indexCourse)"
+                    @click="onCourseMoreClick(indexCourse)"
                   >
                     <div class="list-left">
                       <div class="order">{{ itemCourse.num }}</div>
@@ -321,7 +322,7 @@ onUnmounted(() => {
             :key="item.name"
             class="step-item"
             :class="'step' + (index + 1)"
-            @click="clickRegistration(index)"
+            @click="onRegistrationClick(index)"
           >
             <p>{{ item.name }}</p>
           </div>
@@ -445,7 +446,7 @@ onUnmounted(() => {
                       :class="
                         isMoreShow === indexCourse ? 'checked' : 'no-checked'
                       "
-                      @click="clickCourseMore(indexCourse)"
+                      @click="onCourseMoreClick(indexCourse)"
                     >
                       <div class="course-head">
                         <div class="list-left">
@@ -506,7 +507,7 @@ onUnmounted(() => {
                   type="text"
                   size="small"
                   animation
-                  @click="clickToggle(index)"
+                  @click="onToggleClick(index)"
                 >
                   {{
                     isMoreShowMo[index]
@@ -532,7 +533,7 @@ onUnmounted(() => {
             :key="item.name"
             class="step-item"
             :class="'step' + (index + 1)"
-            @click="clickRegistration(index)"
+            @click="onRegistrationClick(index)"
           >
             <p>{{ item.name }}</p>
           </div>

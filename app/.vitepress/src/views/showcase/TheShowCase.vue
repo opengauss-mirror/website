@@ -36,7 +36,7 @@ const screenWidth = useWindowResize();
 const isZh = computed(() => (lang.value === 'zh' ? true : false));
 
 // 接收所有案例
-const CaseListAll: any = ref([]);
+const caseListAll: any = ref([]);
 // 接收当前分类的所有案例
 const currentCaseListAll: any = ref([]);
 // 当前显示的案例
@@ -51,7 +51,7 @@ const currentCaseList = computed(() => {
   }
 });
 const currentTag = ref('');
-const tagClick = (i: number, tag: string) => {
+const selectTag = (i: number, tag: string) => {
   activeIndex.value = i;
   currentTag.value = tag;
   currentPage.value = 1;
@@ -69,13 +69,13 @@ function setCurrentCaseListAll() {
     getUserCaseData(data.value).then((res: any) => {
       currentCaseListAll.value = [];
       if (res.status === 200 && res.obj.records[0]) {
-        CaseListAll.value = res.obj.records.filter((item: any) => {
+        caseListAll.value = res.obj.records.filter((item: any) => {
           return item.path !== 'userPractice/index';
         });
         if (activeIndex.value === 0) {
-          currentCaseListAll.value = CaseListAll.value;
+          currentCaseListAll.value = caseListAll.value;
         } else {
-          CaseListAll.value.forEach((item: any) => {
+          caseListAll.value.forEach((item: any) => {
             if (item.industry === currentTag.value) {
               currentCaseListAll.value.push(item);
             }
@@ -90,9 +90,9 @@ function setCurrentCaseListAll() {
 function filterCase() {
   currentCaseListAll.value = [];
   if (activeIndex.value === 0) {
-    currentCaseListAll.value = CaseListAll.value;
+    currentCaseListAll.value = caseListAll.value;
   } else {
-    CaseListAll.value.forEach((item: any) => {
+    caseListAll.value.forEach((item: any) => {
       if (item.industry === currentTag.value) {
         currentCaseListAll.value.push(item);
       }
@@ -193,9 +193,9 @@ function searchCase() {
   if (keyWord.value) {
     getUserCaseData(searchData.value).then((res) => {
       if (res.status === 200 && res.obj.records) {
-        CaseListAll.value = res.obj.records;
+        caseListAll.value = res.obj.records;
       }
-      currentCaseListAll.value = CaseListAll.value;
+      currentCaseListAll.value = caseListAll.value;
     });
   } else {
     setCurrentCaseListAll();
@@ -245,7 +245,7 @@ onMounted(() => {
         <OTag
           :type="activeIndex === 0 ? 'primary' : 'text'"
           checkable
-          @click="tagClick(0, i18n.common.ALL)"
+          @click="selectTag(0, i18n.common.ALL)"
         >
           {{ i18n.common.ALL }}
         </OTag>
@@ -254,7 +254,7 @@ onMounted(() => {
           :key="item.ID"
           checkable
           :type="activeIndex === item.ID ? 'primary' : 'text'"
-          @click="tagClick(item.ID, isZh ? item.TYPE : item.TYPE_EN)"
+          @click="selectTag(item.ID, isZh ? item.TYPE : item.TYPE_EN)"
         >
           {{ isZh ? item.TYPE : item.TYPE_EN }}
         </OTag>
@@ -262,7 +262,7 @@ onMounted(() => {
       <TagFilter class="tag-h5">
         <OTag
           :type="activeIndex === 0 ? 'primary' : 'text'"
-          @click="tagClick(0, i18n.common.ALL)"
+          @click="selectTag(0, i18n.common.ALL)"
         >
           {{ i18n.common.ALL }}
         </OTag>
@@ -271,7 +271,7 @@ onMounted(() => {
           :key="item.ID"
           checkable
           :type="activeIndex === item.ID ? 'primary' : 'text'"
-          @click="tagClick(item.ID, isZh ? item.TYPE : item.TYPE_EN)"
+          @click="selectTag(item.ID, isZh ? item.TYPE : item.TYPE_EN)"
         >
           {{ isZh ? item.TYPE : item.TYPE_EN }}
         </OTag>

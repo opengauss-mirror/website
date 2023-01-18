@@ -173,7 +173,7 @@ const selectMethod = () => {
   getListData(params);
 };
 
-const timeChange = () => {
+const changeTime = () => {
   selectMethod();
   if (selectTimeVal.value !== '') {
     const wantauthor = {
@@ -236,7 +236,7 @@ const timeChange = () => {
     });
   }
 };
-const authorChange = () => {
+const changeAuthor = () => {
   selectMethod();
   if (selectAuthorVal.value !== '') {
     const wantarchive = {
@@ -297,7 +297,7 @@ const authorChange = () => {
     });
   }
 };
-const tagsChange = () => {
+const changeTags = () => {
   selectMethod();
   if (selectTagsVal.value !== '') {
     const wantarchive = {
@@ -366,7 +366,7 @@ onMounted(() => {
   getTagsList();
 });
 // 页数改变
-const currentChange = (val: number) => {
+const changeCurrent = (val: number) => {
   const params: ParamsType = {
     category: 'blog',
     lang: lang.value,
@@ -385,16 +385,16 @@ const postBlog = () => {
 const pageTotal = computed(() =>
   Math.ceil(paginationData.value.total / paginationData.value.pagesize)
 );
-const moblieCurrentChange = (val: string) => {
+const changeCurrentMoblie = (val: string) => {
   if (val === 'prev' && paginationData.value.currentpage > 1) {
     paginationData.value.currentpage = paginationData.value.currentpage - 1;
-    currentChange(paginationData.value.currentpage);
+    changeCurrent(paginationData.value.currentpage);
   } else if (
     val === 'next' &&
     paginationData.value.currentpage < pageTotal.value
   ) {
     paginationData.value.currentpage = paginationData.value.currentpage + 1;
-    currentChange(paginationData.value.currentpage);
+    changeCurrent(paginationData.value.currentpage);
   }
 };
 </script>
@@ -431,7 +431,7 @@ const moblieCurrentChange = (val: string) => {
               filterable
               clearable
               :placeholder="userCaseData.ALL"
-              @change="timeChange"
+              @change="changeTime"
             >
               <template #prefix>
                 <OIcon>
@@ -455,7 +455,7 @@ const moblieCurrentChange = (val: string) => {
               filterable
               clearable
               :placeholder="userCaseData.ALL"
-              @change="authorChange"
+              @change="changeAuthor"
             >
               <template #prefix>
                 <OIcon>
@@ -479,7 +479,7 @@ const moblieCurrentChange = (val: string) => {
               filterable
               clearable
               :placeholder="userCaseData.ALL"
-              @change="tagsChange"
+              @change="changeTags"
             >
               <template #prefix>
                 <OIcon>
@@ -545,8 +545,8 @@ const moblieCurrentChange = (val: string) => {
             layout="sizes, prev, pager, next, slot, jumper"
             :total="paginationData.total"
             :page-sizes="[3, 6, 9]"
-            @current-change="currentChange"
-            @size-change="currentChange(1)"
+            @current-change="changeCurrent"
+            @size-change="changeCurrent(1)"
           >
             <span class="pagination-slot"
               >{{ paginationData.currentpage }}/{{ pageTotal }}</span
@@ -556,7 +556,7 @@ const moblieCurrentChange = (val: string) => {
         <AppPaginationMo
           :current-page="paginationData.currentpage"
           :total-page="pageTotal"
-          @turn-page="moblieCurrentChange"
+          @turn-page="changeCurrentMoblie"
         >
         </AppPaginationMo>
       </div>

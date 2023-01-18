@@ -52,7 +52,7 @@ const handleCloseVideo = () => {
   videoDialog.value = false;
   videoLink.value = '';
 };
-const videoClickBtn = (path: string) => {
+const onVideoBtnClick = (path: string) => {
   videoLink.value = path;
   videoDialog.value = true;
 };
@@ -145,7 +145,7 @@ const bannerVideoSrc =
                   class="video-player-btn"
                   :src="VideoGif"
                   :alt="item.title"
-                  @click.stop="videoClickBtn(item.video)"
+                  @click.stop="onVideoBtnClick(item.video)"
                 />
               </div>
             </div>

@@ -7,7 +7,7 @@ import IconDownload from '~icons/app/icon-download.svg';
 const commonStore = useCommon();
 
 const i18n = useI18n();
-const go = (path: string) => {
+const jumpTo = (path: string) => {
   window.open(path);
 };
 </script>
@@ -42,7 +42,7 @@ const go = (path: string) => {
           animation
           size="small"
           type="text"
-          @click="go(i18n.home.CHARACTERR_INFO.DOWN_link)"
+          @click="jumpTo(i18n.home.CHARACTERR_INFO.DOWN_link)"
         >
           {{ i18n.home.CHARACTERR_INFO.DOWN_NAME }}
           <template #suffixIcon>

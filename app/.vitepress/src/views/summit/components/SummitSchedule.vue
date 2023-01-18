@@ -11,7 +11,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="dateList">
+  <div class="date-list">
     <div v-for="subitem in options" :key="subitem.time" class="dataItem">
       <span class="time"><IconTime />{{ subitem.time }}</span>
       <span class="desc">{{ subitem.desc }}</span>
@@ -153,7 +153,7 @@ defineProps({
   }
 }
 
-.dateList .sub-container .dataItem {
+.date-list .sub-container .dataItem {
   grid-template-columns: 192px auto 96px 410px;
 }
 </style>

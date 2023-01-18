@@ -69,12 +69,12 @@ function getSecurityLists(data: CveQuery) {
     });
 }
 
-const tagClick = (i: number, leval: string) => {
+const onTagClick = (i: number, leval: string) => {
   activeIndex.value = i;
   queryData.cveLevel = leval;
 };
 
-const yearTagClick = (i: number, type: string) => {
+const onYearTagClick = (i: number, type: string) => {
   queryData.years = type;
   activeIndex1.value = i;
   selectedYear.value = type === '' ? '全部' : type;
@@ -90,7 +90,7 @@ const handleCurrentChange = (val: number) => {
   currentPage.value = val;
 };
 
-function searchValchange() {
+function changeSearchVal() {
   queryData.searchName = inputName.value;
 }
 
@@ -135,7 +135,7 @@ watch(queryData, () => getSecurityLists(queryData));
       <OSearch
         v-model="inputName"
         :placeholder="i18n.security.SEARCH"
-        @change="searchValchange"
+        @change="changeSearchVal"
       >
         <template #suffix>
           <OIcon class="close" @click="donShowSearchBox"><IconCancel /></OIcon>
@@ -150,7 +150,7 @@ watch(queryData, () => getSecurityLists(queryData));
                 :key="'tag' + index"
                 checkable
                 :type="activeIndex === index ? 'primary' : 'text'"
-                @click="tagClick(index, item.LEVAL)"
+                @click="onTagClick(index, item.LEVAL)"
               >
                 {{ item.NAME }}
               </OTag>
@@ -164,7 +164,7 @@ watch(queryData, () => getSecurityLists(queryData));
               :key="'tag' + index"
               checkable
               :type="activeIndex1 === index ? 'primary' : 'text'"
-              @click="yearTagClick(index, item)"
+              @click="onYearTagClick(index, item)"
             >
               {{ item === '' ? i18n.security.ALL : item }}
             </OTag>
@@ -179,7 +179,7 @@ watch(queryData, () => getSecurityLists(queryData));
             :key="item"
             :class="activeIndex === index ? 'selected' : ''"
             class="filter-item"
-            @click="tagClick(index, item.LEVAL)"
+            @click="onTagClick(index, item.LEVAL)"
           >
             {{ item.NAME }}
           </div>

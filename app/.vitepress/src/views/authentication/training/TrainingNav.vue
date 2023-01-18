@@ -27,7 +27,7 @@ const { currentIndex, dataList } = toRefs(props);
   </ul>
 </template>
 
-<style lang="scss" scpoed>
+<style lang="scss" scoped>
 .title-nav {
   position: fixed;
   cursor: pointer;

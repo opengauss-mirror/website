@@ -41,10 +41,10 @@ const data = ref({
 const initData = () => {
   const result: any = {};
   getUserCaseData(data.value).then((res: any) => {
-    const CaseListAll = res.obj.records.filter((item: any) => {
+    const caseListAll = res.obj.records.filter((item: any) => {
       return item.path !== 'userPractice/index';
     });
-    CaseListAll.forEach((item: { id: string }) => {
+    caseListAll.forEach((item: { id: string }) => {
       if (typeof result[item.id] === 'undefined') {
         result[item.id] = [];
       }
