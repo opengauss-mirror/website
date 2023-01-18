@@ -220,9 +220,6 @@ html[lang='zh'] {
     width: 100%;
   }
 }
-.el-dialog {
-  background-color: red;
-}
 .video-box {
   :deep(.el-dialog__header) {
     display: none;
@@ -369,19 +366,7 @@ html[lang='zh'] {
       background-size: cover;
       width: 100%;
       height: 100%;
-      @media screen and (max-width: 768px) {
-        // background-size: 100% 100%;
-      }
-      &.banner-pic {
-        @media screen and (min-width: 1921px) {
-          background-size: contain;
-        }
-      }
-      &.banner-img {
-        @media screen and (min-width: 1921px) {
-          background-size: cover;
-        }
-      }
+      
       &.text-center {
         .banner-panel-content {
           flex-direction: initial;

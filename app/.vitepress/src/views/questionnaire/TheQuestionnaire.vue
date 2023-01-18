@@ -18,32 +18,166 @@ const data = {
 
   introduce: {
     textList: [
-      '亲爱的用户，为了给您提供更好的社区体验，现诚邀您参与openGauss社区满意度问卷调研。您的每一个宝贵建议都是我们进步的方向。',
-      '点击右侧“立即参与”按钮或手机扫描二维码即可填写问卷，完成后可随机抽取精美礼品。',
-      '请根据您真实的体验情况填写问卷，问卷反馈越真实有效越有机会抽取大奖哦！',
-      '我们将于活动结束后的5天内在社区中公布本期活动的所有获奖情况，敬请关注。',
+      '本次openGauss社区满意度调研活动现已结束 ',
+      '感谢您的每一个宝贵建议，中奖名单已公示如下',
+      '敬请关注我们社区之后的活动、期待您的参与哦~',
     ],
-    btn: '立即参与',
-    codeImg: codeImg,
   },
   prize: [
     {
       rank: '一等奖 2 名',
       name: 'HUAWEI MatePad SE',
       prizeImg: padImg,
+      list: [
+        {
+          name: 'HUAWEI MatePad SE',
+          phone: '185****6085',
+        },
+        {
+          name: 'HUAWEI MatePad SE',
+          phone: '135****8522',
+        },
+      ],
     },
     {
       rank: '二等奖 6 名',
       name: '华为手环7 标准版',
       prizeImg: watchImg,
+      list: [
+        {
+          name: '华为手环7 标准版',
+          phone: '176****6255',
+        },
+        {
+          name: '华为手环7 标准版',
+          phone: '150****8032',
+        },
+        {
+          name: '华为手环7 标准版',
+          phone: '188****0369',
+        },
+        {
+          name: '华为手环7 标准版',
+          phone: '173****2117',
+        },
+        {
+          name: '华为手环7 标准版',
+          phone: '186****0553',
+        },
+        {
+          name: '华为手环7 标准版',
+          phone: '131****0440',
+        },
+      ],
     },
     {
-      rank: '三等奖 30 名',
+      rank: '三等奖 23 名',
       name: '《openGauss数据库核心技术》 或 社区定制鸭舌帽',
       prizeImg: bookImg,
       prizeImg1: capImg,
+      list: [
+        {
+          name: 'openGauss定制鸭舌帽',
+          phone: '167****1491',
+        },
+        {
+          name: 'openGauss定制鸭舌帽',
+          phone: '188****9231',
+        },
+        {
+          name: 'openGauss定制鸭舌帽',
+          phone: '185****1032',
+        },
+        {
+          name: 'openGauss定制鸭舌帽',
+          phone: '158****5889',
+        },
+        {
+          name: 'openGauss定制鸭舌帽',
+          phone: '189****2242',
+        },
+        {
+          name: 'openGauss定制鸭舌帽',
+          phone: '158****0708',
+        },
+        {
+          name: 'openGauss定制鸭舌帽',
+          phone: '133****1465',
+        },
+        {
+          name: 'openGauss定制鸭舌帽',
+          phone: '151****9509',
+        },
+        {
+          name: 'openGauss定制鸭舌帽',
+          phone: '131****7781',
+        },
+        {
+          name: 'openGauss定制鸭舌帽',
+          phone: '185****8059',
+        },
+        {
+          name: 'openGauss定制鸭舌帽',
+          phone: '185****9522',
+        },
+        {
+          name: 'openGauss定制鸭舌帽',
+          phone: '185****0951',
+        },
+
+        {
+          name: '《openGauss数据库核心技术》',
+          phone: '134****7962',
+        },
+        {
+          name: '《openGauss数据库核心技术》',
+          phone: '185****1708',
+        },
+        {
+          name: '《openGauss数据库核心技术》',
+          phone: '186****8838',
+        },
+        {
+          name: '《openGauss数据库核心技术》',
+          phone: '187****7009',
+        },
+        {
+          name: '《openGauss数据库核心技术》',
+          phone: '156****0730',
+        },
+        {
+          name: '《openGauss数据库核心技术》',
+          phone: '180****5516',
+        },
+
+        {
+          name: '《openGauss数据库核心技术》',
+          phone: '135****8522',
+        },
+        {
+          name: '《openGauss数据库核心技术》',
+          phone: '150****3960',
+        },
+        {
+          name: '《openGauss数据库核心技术》',
+          phone: '136****4916',
+        },
+        {
+          name: '《openGauss数据库核心技术》',
+          phone: '183****6032',
+        },
+        {
+          name: '《openGauss数据库核心技术》',
+          phone: '133****0665',
+        },
+      ],
     },
   ],
+  winnersInfo: {
+    title: '中奖名单',
+    text: '因节日物流停运，奖品将于节后进行寄送，感谢您对openGauss社区的关注与支持，祝您新年快乐，阖家幸福！',
+  },
+
   rule: {
     title: '活动规则',
     ruleList: [
@@ -117,59 +251,60 @@ onMounted(() => {
         <div class="left-text">
           <p v-for="item in data.introduce.textList" :key="item">{{ item }}</p>
         </div>
-        <div class="right-img">
-          <img :src="data.introduce.codeImg" alt="" />
-          <a
-            href="https://huaweicompute.wjx.cn/vm/mnDjPR2.aspx?udsid=238148"
-            target="_blank"
-          >
-            <OButton class="join-btn" size="mini" animation type="primary">{{
-              data.introduce.btn
-            }}</OButton>
-          </a>
-        </div>
       </div>
-      <div class="panel2">
+      <div class="winners-info">
+        <h2 class="questionnaire-title">{{ data.winnersInfo.title }}</h2>
+        <p class="text">{{ data.winnersInfo.text }}</p>
+      </div>
+      <div class="panel2" v-for="(item, index) in data.prize" :key="item.rank">
         <div class="left-rank">
-          <h4>{{ data.prize[0].rank }}</h4>
-          <p>{{ data.prize[0].name }}</p>
+          <h4>{{ item.rank }}</h4>
         </div>
         <div class="right-img">
-          <img :src="data.prize[0].prizeImg" alt="" />
+          <img :src="item.prizeImg" alt="" />
+          <template v-if="index === 2">
+            <img :src="item.prizeImg1" alt="" />
+          </template>
         </div>
+        <table class="questionnaire-table">
+          <tr>
+            <th>奖品</th>
+            <th>中奖号码</th>
+          </tr>
+          <tr v-for="subitem in item.list" :key="subitem.phone">
+            <td>{{ subitem.name }}</td>
+            <td>{{ subitem.phone }}</td>
+          </tr>
+        </table>
       </div>
-      <div class="panel2-mo">
+      <div
+        class="panel2-mo"
+        v-for="(item, index) in data.prize"
+        :key="item.rank"
+      >
         <div class="head">
-          <img :src="data.prize[0].prizeImg" alt="" />
+          <img :src="item.prizeImg" alt="" />
+          <template v-if="index === 2">
+            <img :src="item.prizeImg1" alt="" />
+          </template>
         </div>
         <div class="body">
-          <h4>{{ data.prize[0].rank }}</h4>
-          <p>{{ data.prize[0].name }}</p>
+          <h4>{{ item.rank }}</h4>
+          <table class="questionnaire-table">
+            <tr>
+              <th>奖品</th>
+              <th>中奖号码</th>
+            </tr>
+            <tr v-for="subitem in item.list" :key="subitem.phone">
+              <td>{{ subitem.name }}</td>
+              <td>{{ subitem.phone }}</td>
+            </tr>
+          </table>
         </div>
       </div>
-      <div class="panel3">
-        <div class="prize-box">
-          <div class="head">
-            <img :src="data.prize[1].prizeImg" alt="" />
-          </div>
-          <div class="body">
-            <h4>{{ data.prize[1].rank }}</h4>
-            <p>{{ data.prize[1].name }}</p>
-          </div>
-        </div>
-        <div class="prize-box">
-          <div class="head">
-            <img :src="data.prize[2].prizeImg" alt="" />
-            <img :src="data.prize[2].prizeImg1" alt="" />
-          </div>
-          <div class="body">
-            <h4>{{ data.prize[2].rank }}</h4>
-            <p>{{ data.prize[2].name }}</p>
-          </div>
-        </div>
-      </div>
+
       <div class="rule">
-        <h2>{{ data.rule.title }}</h2>
+        <h2 class="questionnaire-title">{{ data.rule.title }}</h2>
         <ol>
           <li v-for="item in data.rule.ruleList" :key="item.clause">
             <p>
@@ -198,6 +333,57 @@ onMounted(() => {
 //     filter: brightness(0.8) grayscale(0.2) contrast(1.2);
 //   }
 // }
+.questionnaire-table {
+  width: 100%;
+  margin: 40px 0 0;
+  td,
+  th {
+    text-align: center;
+    border-bottom: 1px solid var(--o-color-border2);
+    line-height: 64px;
+    color: var(--o-color-text1);
+    width: 50%;
+    @media screen and (max-width: 1100px) {
+      line-height: 48px;
+      text-align: left;
+      padding: 0 16px;
+      font-size: var(--o-font-size-text);
+    }
+  }
+  td {
+    color: var(--o-color-text4);
+  }
+  @media screen and (max-width: 1100px) {
+    margin-top: var(--o-spacing-h4);
+  }
+}
+.winners-info {
+  margin: var(--o-spacing-h1) 0 var(--o-spacing-h2);
+  text-align: center;
+  .text {
+    font-size: var(--o-font-size-text);
+    line-height: var(--o-line-height-text);
+    margin-top: var(--o-spacing-h2);
+    @media screen and (max-width: 1100px) {
+      margin-top: var(--o-spacing-h4);
+      font-size: var(--o-font-size-tip);
+      line-height: var(--o-line-height-tip);
+    }
+  }
+  @media screen and (max-width: 1100px) {
+    margin: var(--o-spacing-h2) 0 var(--o-spacing-h4);
+  }
+}
+.questionnaire-title {
+  text-align: center;
+  font-size: var(--o-font-size-h4);
+  line-height: var(--o-line-height-h4);
+  color: var(--o-color-text1);
+  @media screen and (max-width: 1100px) {
+    font-size: var(--o-font-size-h7);
+    line-height: var(--o-line-height-h7);
+  }
+}
 .rule {
   background-color: var(--o-color-bg1);
   box-shadow: none;
@@ -208,16 +394,7 @@ onMounted(() => {
   @media screen and (max-width: 1100px) {
     margin-top: var(--o-spacing-h2);
   }
-  h2 {
-    text-align: center;
-    font-size: var(--o-font-size-h5);
-    line-height: var(--o-line-height-h5);
-    color: var(--o-color-text1);
-    @media screen and (max-width: 1100px) {
-      font-size: var(--o-font-size-h8);
-      line-height: var(--o-line-height-h8);
-    }
-  }
+
   ol {
     margin-top: var(--o-spacing-h3);
     @media screen and (max-width: 1100px) {
@@ -262,24 +439,16 @@ onMounted(() => {
     background-image: url(@/assets/category/questionnaire/bg1-mo.png);
   }
   .left-text {
-    margin-right: 58px;
-    @media screen and (max-width: 1100px) {
-      margin-right: 0;
-    }
+    width: 400px;
+    margin: 0 auto;
     p {
-      font-size: var(--o-font-size-text);
-      line-height: var(--o-line-height-text);
+      font-size: var(--o-font-size-h7);
+      line-height: var(--o-line-height-h7);
       color: var(--o-color-text1);
+      text-align: justify;
       @media screen and (max-width: 1100px) {
-        font-size: var(--o-font-size-tip);
-        line-height: var(--o-line-height-tip);
-      }
-      &:nth-of-type(2),
-      &:nth-of-type(4) {
-        margin-top: var(--o-spacing-h4);
-        @media screen and (max-width: 1100px) {
-          margin-top: var(--o-spacing-h5);
-        }
+        font-size: var(--o-font-size-text);
+        line-height: var(--o-line-height-text);
       }
     }
   }
@@ -304,34 +473,32 @@ onMounted(() => {
 .panel2 {
   margin-top: 54px;
   width: 100%;
-  padding: var(--o-spacing-h5) 0;
-  display: flex;
+  padding: var(--o-spacing-h1) 120px;
+  position: relative;
   background: var(--o-color-bg2) url(@/assets/category/questionnaire/bg2.png)
-    no-repeat center/cover;
-  justify-content: center;
+    no-repeat top center;
   box-shadow: var(--o-shadow-l2);
   @media screen and (max-width: 1100px) {
     display: none;
   }
   .left-rank {
-    padding-top: 52px;
-    margin-right: var(--o-spacing-h1);
+    text-align: center;
     h4 {
       font-size: 32px;
       line-height: 40px;
       color: var(--o-color-brand1);
       font-weight: normal;
     }
-    p {
-      margin-top: var(--o-spacing-h3);
-      font-size: var(--o-font-size-h5);
-      line-height: var(--o-line-height-h5);
-      color: var(--o-color-text4);
-    }
   }
   .right-img {
+    position: absolute;
+    top: 40px;
+    right: 120px;
     img {
-      height: 176px;
+      height: 100px;
+      &:nth-of-type(2) {
+        margin-left: 12px;
+      }
     }
   }
 }
@@ -347,7 +514,10 @@ onMounted(() => {
       background: url(@/assets/category/questionnaire/bg-mo.png) no-repeat;
       background-size: cover;
       img {
-        height: 168px;
+        height: 128px;
+        &:nth-of-type(2) {
+          margin-left: 12px;
+        }
       }
     }
     .body {
@@ -374,11 +544,9 @@ onMounted(() => {
 .panel3 {
   margin-top: 54px;
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--o-spacing-h4);
+  display: block;
+  margin-bottom: var(--o-spacing-h4);
   @media screen and (max-width: 1100px) {
-    margin-top: var(--o-spacing-h5);
     display: block;
   }
   .prize-box {

@@ -20,9 +20,6 @@ const roundNumber = ref([
     ROUND_VALUE: 0,
   },
 ]);
-const handleGo = (path: string) => {
-  window.open(path, '_blank');
-};
 
 const changeNum = () => {
   roundNumber.value.forEach((item: { ROUND_VALUE: number }, index: number) => {
@@ -91,18 +88,14 @@ onMounted(async () => {
           <div class="community-word">
             {{ i18n.home.COMMUNITY_ACTIVITY.CARD.CONTENT }}
           </div>
-
-          <OButton
-            animation
-            type="text"
-            class="community-detail"
-            @click="handleGo(i18n.home.COMMUNITY_ACTIVITY.CARD.LINK)"
-          >
-            {{ i18n.home.COMMUNITY_ACTIVITY.CARD.VIEW_DETAILS }}
-            <template #suffixIcon>
-              <IconArrowRight class="community-detail-icon"></IconArrowRight>
-            </template>
-          </OButton>
+          <a :href="i18n.home.COMMUNITY_ACTIVITY.CARD.LINK" target="_blank">
+            <OButton animation type="text" class="community-detail">
+              {{ i18n.home.COMMUNITY_ACTIVITY.CARD.VIEW_DETAILS }}
+              <template #suffixIcon>
+                <IconArrowRight class="community-detail-icon"></IconArrowRight>
+              </template>
+            </OButton>
+          </a>
         </OCard>
       </OContainer>
       <OContainer

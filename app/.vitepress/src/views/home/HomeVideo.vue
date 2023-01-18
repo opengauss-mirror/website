@@ -50,9 +50,6 @@ onMounted(() => {
 const handlerVideoDetail = (id: number, index: number) => {
   router.go(`/${lang.value}/video/detail/?id=${id}-${index}`);
 };
-const handleGo = (path: string) => {
-  router.go(path);
-};
 </script>
 
 <template>
@@ -89,12 +86,14 @@ const handleGo = (path: string) => {
       </swiper-slide>
     </swiper>
     <p class="video-more">
-      <OButton animation type="text" @click="handleGo(`/${lang}/video/`)">
-        {{ i18n.common.VIEW_MORE }}
-        <template #suffixIcon>
-          <IconArrowRight class="video-more-icon"></IconArrowRight>
-        </template>
-      </OButton>
+      <a :href="`/${lang}/video/`">
+        <OButton animation type="text">
+          {{ i18n.common.VIEW_MORE }}
+          <template #suffixIcon>
+            <IconArrowRight class="video-more-icon"></IconArrowRight>
+          </template>
+        </OButton>
+      </a>
     </p>
   </div>
 </template>

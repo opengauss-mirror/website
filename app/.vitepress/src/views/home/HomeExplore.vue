@@ -10,12 +10,9 @@ const i18n = useI18n();
 const { lang, theme } = useData();
 
 const handleGo = (path: string) => {
-  if (path.startsWith('/docs/')) {
-    const link = theme.value.docsUrl + '/' + lang.value + path;
-    window.open(link, '_blank');
-  } else {
-    window.open(path, '_blank');
-  }
+  return path.startsWith('/docs/')
+    ? theme.value.docsUrl + '/' + lang.value + path
+    : path;
 };
 </script>
 
@@ -27,19 +24,24 @@ const handleGo = (path: string) => {
     <AppContent>
       <h3>{{ i18n.home.HOME_EXPLORE.EXPLORE_TITLE }}</h3>
       <div class="home-explore-action">
-        <OButton
+        <a
           v-for="(item, index) in i18n.home.HOME_EXPLORE.LIST"
           :key="index"
-          size="small"
-          animation
-          class="home-explore-btn"
-          @click="handleGo(item.PATH)"
+          :href="handleGo(item.PATH)"
+          target="_blank"
         >
-          {{ item.NAME }}
-          <template #suffixIcon>
-            <IconArrowRight class="icon"></IconArrowRight>
-          </template>
-        </OButton>
+          <OButton
+            size="small"
+            animation
+            class="home-explore-btn"
+            @click="handleGo(item.PATH)"
+          >
+            {{ item.NAME }}
+            <template #suffixIcon>
+              <IconArrowRight class="icon"></IconArrowRight>
+            </template>
+          </OButton>
+        </a>
       </div>
     </AppContent>
   </div>

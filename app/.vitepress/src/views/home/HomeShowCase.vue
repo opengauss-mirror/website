@@ -201,17 +201,14 @@ onUnmounted(() => {
         </OCard>
       </div>
       <div class="case-more">
-        <OButton
-          animation
-          type="text"
-          class="case-more-item"
-          @click="handleGo(`/${lang}/userPractice/?industry=${active + 1}`)"
-        >
-          {{ i18n.common.VIEW_MORE }}
-          <template #suffixIcon>
-            <IconArrowRight class="case-more-icon"></IconArrowRight>
-          </template>
-        </OButton>
+        <a :href="`/${lang}/userPractice/?industry=${active + 1}`">
+          <OButton animation type="text" class="case-more-item">
+            {{ i18n.common.VIEW_MORE }}
+            <template #suffixIcon>
+              <IconArrowRight class="case-more-icon"></IconArrowRight>
+            </template>
+          </OButton>
+        </a>
       </div>
     </OContainer>
   </div>
