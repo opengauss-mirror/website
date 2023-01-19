@@ -112,6 +112,28 @@ import zhixun from '@/assets/category/home/organization/light/zhixun.png';
 import zhongkexingtu from '@/assets/category/home/organization/light/zhongkexingtu.png';
 import landray from '@/assets/category/home/organization/light/landray.png';
 
+import jingdongyun from '@/assets/category/home/organization/light/jingdongyun.png';
+import tiandy from '@/assets/category/home/organization/light/tiandy.png';
+import shenzhouhaotian from '@/assets/category/home/organization/light/shenzhouhaotian.png';
+import yusys from '@/assets/category/home/organization/light/yusys.png';
+import topspeeder from '@/assets/category/home/organization/light/topspeeder.png';
+import yunlizhihui from '@/assets/category/home/organization/light/yunlizhihui.png';
+import matter3D from '@/assets/category/home/organization/light/matter3D.png';
+import kongzhi from '@/assets/category/home/organization/light/kongzhi.png';
+import hanta from '@/assets/category/home/organization/light/hanta.png';
+import ina from '@/assets/category/home/organization/light/ina.png';
+import yuntun from '@/assets/category/home/organization/light/yuntun.png';
+import gientech from '@/assets/category/home/organization/light/gientech.png';
+import ydxsafe from '@/assets/category/home/organization/light/ydxsafe.png';
+import tianjia from '@/assets/category/home/organization/light/tianjia.png';
+import xieyun from '@/assets/category/home/organization/light/xieyun.png';
+import datafoundation from '@/assets/category/home/organization/light/datafoundation.png';
+import prowada from '@/assets/category/home/organization/light/prowada.png';
+import fermi from '@/assets/category/home/organization/light/fermi.png';
+import ecloudtech from '@/assets/category/home/organization/light/ecloudtech.png';
+import moan from '@/assets/category/home/organization/light/moan.png';
+import chaojubian from '@/assets/category/home/organization/light/chaojubian.png';
+
 // dark
 import baolande_dark from '@/assets/category/home/organization/dark/baolande.png';
 import puyuan1_dark from '@/assets/category/home/organization/dark/puyuan1.png';
@@ -225,6 +247,28 @@ import yiruide_dark from '@/assets/category/home/organization/dark/yiruide.png';
 import zhixun_dark from '@/assets/category/home/organization/dark/zhixun.png';
 import zhongkexingtu_dark from '@/assets/category/home/organization/dark/zhongkexingtu.png';
 import landray_dark from '@/assets/category/home/organization/dark/landray.png';
+
+import jingdongyun_dark from '@/assets/category/home/organization/dark/jingdongyun.png';
+import tiandy_dark from '@/assets/category/home/organization/dark/tiandy.png';
+import shenzhouhaotian_dark from '@/assets/category/home/organization/dark/shenzhouhaotian.png';
+import yusys_dark from '@/assets/category/home/organization/dark/yusys.png';
+import topspeeder_dark from '@/assets/category/home/organization/dark/topspeeder.png';
+import yunlizhihui_dark from '@/assets/category/home/organization/dark/yunlizhihui.png';
+import matter3D_dark from '@/assets/category/home/organization/dark/matter3D.png';
+import kongzhi_dark from '@/assets/category/home/organization/dark/kongzhi.png';
+import hanta_dark from '@/assets/category/home/organization/dark/hanta.png';
+import ina_dark from '@/assets/category/home/organization/dark/ina.png';
+import yuntun_dark from '@/assets/category/home/organization/dark/yuntun.png';
+import gientech_dark from '@/assets/category/home/organization/dark/gientech.png';
+import ydxsafe_dark from '@/assets/category/home/organization/dark/ydxsafe.png';
+import tianjia_dark from '@/assets/category/home/organization/dark/tianjia.png';
+import xieyun_dark from '@/assets/category/home/organization/dark/xieyun.png';
+import datafoundation_dark from '@/assets/category/home/organization/dark/datafoundation.png';
+import prowada_dark from '@/assets/category/home/organization/dark/prowada.png';
+import fermi_dark from '@/assets/category/home/organization/dark/fermi.png';
+import ecloudtech_dark from '@/assets/category/home/organization/dark/ecloudtech.png';
+import moan_dark from '@/assets/category/home/organization/dark/moan.png';
+import chaojubian_dark from '@/assets/category/home/organization/dark/chaojubian.png';
 
 export default [
   {
@@ -784,10 +828,114 @@ export default [
     DARK: yiruide_dark,
     NAME: '易睿德（武汉）物联网有限公司',
   },
-
   {
     IMG: landray,
     DARK: landray_dark,
     NAME: '深圳市蓝凌软件股份有限公司',
+  },
+  {
+    IMG: jingdongyun,
+    DARK: jingdongyun_dark,
+    NAME: '京东科技',
+  },
+  {
+    IMG: tiandy,
+    DARK: tiandy_dark,
+    NAME: '天地伟业技术有限公司',
+  },
+  {
+    IMG: shenzhouhaotian,
+    DARK: shenzhouhaotian_dark,
+    NAME: '天津神州浩天科技有限公司',
+  },
+  {
+    IMG: yusys,
+    DARK: yusys_dark,
+    NAME: '北京宇信科技集团股份有限公司',
+  },
+  {
+    IMG: topspeeder,
+    DARK: topspeeder_dark,
+    NAME: '河南省风速科技有限公司',
+  },
+  {
+    IMG: yunlizhihui,
+    DARK: yunlizhihui_dark,
+    NAME: '云粒智慧科技有限公司',
+  },
+  {
+    IMG: matter3D,
+    DARK: matter3D_dark,
+    NAME: '重庆物鲸数字科技有限公司',
+  },
+  {
+    IMG: kongzhi,
+    DARK: kongzhi_dark,
+    NAME: '孔智科技（徐州）有限公司',
+  },
+  {
+    IMG: hanta,
+    DARK: hanta_dark,
+    NAME: '重庆旱獭信息技术有限公司',
+  },
+  {
+    IMG: ina,
+    DARK: ina_dark,
+    NAME: '上海英拿信息技术有限公司',
+  },
+  {
+    IMG: yuntun,
+    DARK: yuntun_dark,
+    NAME: '上海云吞信息技术有限公司',
+  },
+  {
+    IMG: gientech,
+    DARK: gientech_dark,
+    NAME: '中电金信软件有限公司',
+  },
+  {
+    IMG: ydxsafe,
+    DARK: ydxsafe_dark,
+    NAME: '天津赢达信科技有限公司',
+  },
+  {
+    IMG: tianjia,
+    DARK: tianjia_dark,
+    NAME: '天嘉科技（南京）有限公司',
+  },
+  {
+    IMG: xieyun,
+    DARK: xieyun_dark,
+    NAME: '杭州谐云科技有限公司',
+  },
+  {
+    IMG: datafoundation,
+    DARK: datafoundation_dark,
+    NAME: '南京基石数据技术有限责任公司',
+  },
+  {
+    IMG: prowada,
+    DARK: prowada_dark,
+    NAME: '江苏保旺达软件技术有限公司',
+  },
+  {
+    IMG: fermi,
+    DARK: fermi_dark,
+    NAME: '西安费米星河科技有限公司',
+  },
+  {
+    IMG: ecloudtech,
+    DARK: ecloudtech_dark,
+    NAME: '南京云信达科技有限公司',
+  },
+  {
+    IMG: moan,
+    DARK: moan_dark,
+    NAME: '杭州默安科技有限公司',
+  },
+  {
+    IMG: chaojubian,
+    DARK: chaojubian_dark,
+    NAME: '超聚变数字技术有限公司',
   },
 ];
