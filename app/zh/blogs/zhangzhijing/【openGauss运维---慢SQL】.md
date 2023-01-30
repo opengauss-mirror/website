@@ -73,7 +73,7 @@ times: '00:40'
 | lwlock_wait_count    | bigint                   |                       轻量级等锁次数。                       | L0       |
 | lwlock_time          | bigint                   |                   轻量级加锁时间（预留）。                   | L1       |
 | lwlock_wait_time     | bigint                   |                       轻量级等锁时间。                       | L1       |
-| details              | bytea                    | 语句锁事件的列表，该列表按时间顺序记录事件，记录的数量受参数track_stmt_details_size的影响。该字段为二进制，需要借助解析函数pg_catalog.statement_detail_decode读取，见（[表6](mk:@MSITStore:D:\zzj\1230资料重整\03指标文件_参考资料\开发手册\openGauss-document-zh-3.0.0\openGauss-document-zh-3.0.0\openGauss%203.0.0%20开发者指南（企业版）01.chm::/zh-cn_topic_0289900063.html#ZH-CN_TOPIC_0289900063__table9745177191215)）。事件包括：加锁开始加锁结束等锁开始等锁结束放锁开始放锁结束轻量级等锁开始轻量级等锁结束 | L2       |
+| details              | bytea                    | 语句锁事件的列表，该列表按时间顺序记录事件，记录的数量受参数track_stmt_details_size的影响。该字段为二进制，需要借助解析函数pg_catalog.statement_detail_decode读取。事件包括：加锁开始加锁结束等锁开始等锁结束放锁开始放锁结束轻量级等锁开始轻量级等锁结束 | L2       |
 | is_slow_sql          | boolean                  | 该SQL是否为slow SQL。t（true）：表示是。f（false）：表示不是。 | L0       |
 | trace_id             | text                     |         驱动传入的trace id，与应用的一次请求相关联。         | L0       |
 
@@ -145,7 +145,7 @@ times: '00:40'
 
 周期性查询statement视图，并记录归一化SQL的波动情况，并绘制增长曲线。
 
-```SQL
+```sql
 select * from dbe_perf.statement;
 ```
 
@@ -168,7 +168,7 @@ from dbe_perf.statement_history(true,'2000-01-01 00:00:00','2000-01-01 00:00:00'
 
 第二步：根据业务受到影响的时刻，查看statement和statement_history视图排查业务影响是否因为数据库慢SQL导致。分别查看异常时刻和异常前相同业务量时间段的。
 
-```SQL
+```sql
 --按区间输出
 select
     sum(case when db_time < 20*1000 then 1 else 0 end)  as "(0,20)",
