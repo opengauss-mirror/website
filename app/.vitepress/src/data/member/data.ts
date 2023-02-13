@@ -417,6 +417,14 @@ import zhanghao from '@/assets/category/member/avatar/zhanghao.png';
 import zhaoqinghui from '@/assets/category/member/avatar/zhaoqinghui.png';
 import zhaotinyang from '@/assets/category/member/avatar/zhaotinyang.png';
 
+import cuikaifeng from '@/assets/category/member/avatar/cuikaifeng.png';
+import huangxianru from '@/assets/category/member/avatar/huangxianru.png';
+import liuchen from '@/assets/category/member/avatar/liuchen.png';
+import panchunbao from '@/assets/category/member/avatar/panchunbao.png';
+import xubing from '@/assets/category/member/avatar/xubing.png';
+import zhangyi from '@/assets/category/member/avatar/zhangyi.png';
+import zhongchengcheng from '@/assets/category/member/avatar/zhongchengcheng.png';
+
 export default {
   zh: {
     BOARD: [
@@ -547,11 +555,32 @@ export default {
         company: '中国移动通信集团有限公司',
       },
       {
-        img: zhangmingxing,
-        name: '章明星',
+        img: zhongchengcheng,
+        name: '钟承诚',
         title: '理事',
-        email: 'zhangmingxing@sangfor.com.cn',
+        email: 'zhongchengcheng@sangfor.com.cn',
         company: '深信服科技股份有限公司',
+      },
+      {
+        img: xubing,
+        name: '徐兵',
+        title: '理事',
+        email: 'xubing@ccccltd.cn',
+        company: '中国交通信息科技集团有限公司',
+      },
+      {
+        img: liuchen,
+        name: '刘辰',
+        title: '理事',
+        email: 'liuchen12@jd.com',
+        company: '京东科技集团 ',
+      },
+      {
+        img: zhangyi,
+        name: '张益',
+        title: '理事',
+        email: 'zhangyi@gbase.cn',
+        company: '天津南大通用数据技术股份有限公司 ',
       },
     ],
     UC: [
@@ -577,11 +606,11 @@ export default {
         email: 'luna@supermap.com',
       },
       {
-        img: lupanfeng,
-        name: '鲁攀峰',
+        img: huangxianru,
+        name: '黄贤儒',
         title: '委员',
         company: '华为技术有限公司',
-        email: 'lupanfeng@huawei.com',
+        email: 'huangxianru@huawei.com',
       },
       {
         img: sunpeiyuan,
@@ -591,10 +620,10 @@ export default {
         email: 'peiyuan.sun@enmotech.com',
       },
       {
-        img: wangjuanyj,
-        name: '王娟',
+        img: cuikaifeng,
+        name: '崔凯峰',
         title: '委员',
-        email: 'wangjuanyj@chinamobile.com',
+        email: '13810767894@139.com',
         company: '中国移动通信集团有限公司',
       },
       {
@@ -670,10 +699,10 @@ export default {
         company: '超聚变数字技术有限公司',
       },
       {
-        img: zhanwei,
-        name: '詹巍',
+        img: panchunbao,
+        name: '潘春宝',
         title: '委员',
-        email: 'zhanwei@vastdata.com.cn',
+        email: 'pancb@vastdata.com.cn',
         company: '北京海量数据技术股份有限公司',
       },
       {
@@ -4072,11 +4101,32 @@ export default {
         company: 'China Mobile Communications Group Co.,Ltd',
       },
       {
-        img: zhangmingxing,
-        name: 'Mingxing Zhang',
+        img: zhongchengcheng,
+        name: 'Chengcheng Zhong',
         title: 'Director',
-        email: 'zhangmingxing@sangfor.com.cn',
+        email: 'zhongchengcheng@sangfor.com.cn',
         company: 'Sangfor Technologies Inc',
+      },
+      {
+        img: xubing,
+        name: 'Bing Xu',
+        title: 'Director',
+        email: 'xubing@ccccltd.cn',
+        company: 'CHINA COMMUNICATIONS CONSTRUCTION',
+      },
+      {
+        img: liuchen,
+        name: 'Chen Liu',
+        title: 'Director',
+        email: 'liuchen12@jd.com',
+        company: 'Jd.Com, Inc ',
+      },
+      {
+        img: zhangyi,
+        name: 'Yi Zhang',
+        title: 'Director',
+        email: 'zhangyi@gbase.cn',
+        company: 'General Data Technology Co.,LTD ',
       },
     ],
     UC: [
@@ -4102,11 +4152,11 @@ export default {
         email: 'luna@supermap.com',
       },
       {
-        img: lupanfeng,
-        name: 'Panfeng Lu',
+        img: huangxianru,
+        name: 'Xianru Huang',
         title: 'Member',
         company: 'Huawei',
-        email: 'lupanfeng@huawei.com',
+        email: 'huangxianru@huawei.com',
       },
       {
         img: sunpeiyuan,
@@ -4116,10 +4166,10 @@ export default {
         email: 'peiyuan.sun@enmotech.com',
       },
       {
-        img: wangjuanyj,
-        name: 'Juan Wang',
+        img: cuikaifeng,
+        name: 'Kaifeng Cui',
         title: 'Member',
-        email: 'wangjuanyj@chinamobile.com',
+        email: '13810767894@139.com',
         company: 'China Mobile Communications Group Co.,Ltd',
       },
       {
@@ -4195,10 +4245,10 @@ export default {
         company: 'xFusion',
       },
       {
-        img: zhanwei,
-        name: 'Wei Zhan',
+        img: panchunbao,
+        name: 'Chunbao Pan',
         title: 'Member',
-        email: 'zhanwei@vastdata.com.cn',
+        email: 'pancb@vastdata.com.cn',
         company: 'Vastbase',
       },
       {
