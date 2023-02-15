@@ -12,26 +12,22 @@ import bannerQues_mo from '@/assets/category/home/banner/banner-ques-mo.png';
 import bannerSummit from '@/assets/category/home/banner/banner-summit.jpg';
 import bannerSummit_mo from '@/assets/category/home/banner/banner-summit-mo.jpg';
 
-import yearPcEn from '@/assets/category/home/banner/opengauss-year-pc_en.jpg';
-import yearMoEn from '@/assets/category/home/banner/opengauss-year-mo_en.png';
-import yearPc from '@/assets/category/home/banner/opengauss-year-pc.jpg';
-import yearMo from '@/assets/category/home/banner/opengauss-year-mo.png';
-
 // targetTap:1 新页签打开
 // type:1(只有图片)、2(文字居左)，3(文字居中),4(仅用于实习banner),5 视频
 export default {
   zh: [
     {
-      pcBanner: yearPc,
-      moBanner: yearMo,
-      link: '',
+      pcBanner: liveImg_pc,
+      moBanner: liveImg_mo,
+      link: '/docs/3.1.1/docs/BriefTutorial/BriefTutorial.html',
       targetTap: 1,
-      title: '',
-      desc: [''],
-      btn: '',
-      type: 1,
+      title: '欢迎加入openGauss社区',
+      desc: ['openGauss是一款高性能、高安全、高可靠的企业级开源关系型数据库'],
+      btn: '了解更多',
+      type: 2,
       className: '',
-      video: '',
+      video:
+        'https://learningvideo.obs.ap-southeast-1.myhuaweicloud.com/openGauss%E5%AE%A3%E4%BC%A0%E6%B4%BB%E5%8A%A8/openGauss%2BHC%E5%AE%A3%E4%BC%A0%E8%A7%86%E9%A2%91.mp4',
     },
     {
       pcBanner: banner0104,
@@ -69,33 +65,8 @@ export default {
       className: 'ques',
       video: '',
     },
-    {
-      pcBanner: liveImg_pc,
-      moBanner: liveImg_mo,
-      link: '/docs/3.1.1/docs/BriefTutorial/BriefTutorial.html',
-      targetTap: 1,
-      title: '欢迎加入openGauss社区',
-      desc: ['openGauss是一款高性能、高安全、高可靠的企业级开源关系型数据库'],
-      btn: '了解更多',
-      type: 2,
-      className: '',
-      video:
-        'https://learningvideo.obs.ap-southeast-1.myhuaweicloud.com/openGauss%E5%AE%A3%E4%BC%A0%E6%B4%BB%E5%8A%A8/openGauss%2BHC%E5%AE%A3%E4%BC%A0%E8%A7%86%E9%A2%91.mp4',
-    },
   ],
   en: [
-    {
-      pcBanner: yearPcEn,
-      moBanner: yearMoEn,
-      link: '',
-      targetTap: 1,
-      title: '',
-      desc: [''],
-      btn: '',
-      type: 1,
-      className: '',
-      video: '',
-    },
     {
       pcBanner: liveImg_pc,
       moBanner: liveImg_mo,
