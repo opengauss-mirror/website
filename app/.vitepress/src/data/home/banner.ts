@@ -4,7 +4,7 @@ import liveImg_mo from '@/assets/category/home/banner/liveBanner_mo.png';
 import banner310 from '@/assets/category/home/banner/opengauss3.1.0_zh_pc.png';
 import banner310_mo from '@/assets/category/home/banner/opengauss3.1.0_zh_mo.png';
 
-import banner0104 from '@/assets/category/home/banner/opengauss3.1.1_zh_pc.png';
+import banner0104 from '@/assets/category/home/banner/opengauss3.1.1_zh_pc.jpg';
 import banner0104_mo from '@/assets/category/home/banner/opengauss3.1.1_zh_mo.png';
 
 import bannerQues from '@/assets/category/home/banner/banner-ques.jpg';
