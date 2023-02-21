@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { onMounted, ref, computed } from 'vue';
+import { onMounted, ref, computed, watch } from 'vue';
 
 import { useData, useRouter } from 'vitepress';
 import { useI18n } from '@/i18n';
@@ -32,24 +32,22 @@ const currentNode = ref({
 });
 
 const page = () => {
-  if (window.location) {
-    const param = window.location.search.split('=')[1].split('-');
-    paramId.value = Number(param[0]);
-    paramIndex.value = Number(param[1]);
-    VideoConfig.forEach((el) => {
-      if (el.id === paramId.value) {
-        getData.value = el;
-        paramTotal.value = el.data.zh.length;
+  const param = window.location.search.split('=')[1].split('-');
+  paramId.value = Number(param[0]);
+  paramIndex.value = Number(param[1]);
+  VideoConfig.forEach((el) => {
+    if (el.id === paramId.value) {
+      getData.value = el;
+      paramTotal.value = el.data.zh.length;
 
-        currentNode.value.video = dataList.value[paramIndex.value].videourl;
-        currentNode.value.title = dataList.value[paramIndex.value].title;
-        currentNode.value.date = dataList.value[paramIndex.value].date;
+      currentNode.value.video = dataList.value[paramIndex.value].videourl;
+      currentNode.value.title = dataList.value[paramIndex.value].title;
+      currentNode.value.date = dataList.value[paramIndex.value].date;
 
-        chapterInfo.value.name = isZh.value ? el.name : el.nameEn;
-        chapterInfo.value.poster = el.poster;
-      }
-    });
-  }
+      chapterInfo.value.name = isZh.value ? el.name : el.nameEn;
+      chapterInfo.value.poster = el.poster;
+    }
+  });
 };
 
 const dataList = computed(() => {
@@ -57,11 +55,18 @@ const dataList = computed(() => {
 });
 
 const changeVideo = (index: string | number) => {
+  paramIndex.value = index;
   router.go(`/${lang.value}/video/detail/?id=${paramId.value}-${index}`);
 };
 onMounted(() => {
   page();
 });
+watch(
+  () => paramIndex.value,
+  (newValue) => {
+    page();
+  }
+);
 </script>
 
 <template>
@@ -99,6 +104,7 @@ onMounted(() => {
         </div>
         <div class="video-main">
           <video
+            v-if="currentNode.video"
             :src="currentNode.video"
             :poster="chapterInfo.poster"
             autoplay
