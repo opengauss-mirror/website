@@ -539,7 +539,7 @@ watch(queryData, () => getSecurityLists(queryData));
       line-height: var(--o-spacing-h4);
     }
   }
-  .pagination-h5 {
+  .pagination-mobile {
     display: none;
     @media screen and (max-width: 1100px) {
       display: flex;
