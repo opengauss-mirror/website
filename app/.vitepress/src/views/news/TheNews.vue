@@ -149,7 +149,7 @@ const changeCurrentMoblie = (val: string) => {
           <AppPaginationMo
             v-else
             :current-page="paginationData.currentpage"
-            :total-page="Math.ceil(paginationData.total / 10)"
+            :total-page="pageTotal"
             @turn-page="changeCurrentMoblie"
           />
         </ClientOnly>
