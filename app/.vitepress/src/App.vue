@@ -7,6 +7,8 @@ import type { Component } from 'vue';
 import { computed, watch, ref, onMounted } from 'vue';
 import { useCommon } from '@/stores/common';
 import { refreshInfo } from './shared/login';
+import zhCn from 'element-plus/lib/locale/lang/zh-cn';
+import en from 'element-plus/lib/locale/lang/en';
 
 import LayoutSecurity from '@/layouts/LayoutSecurity.vue';
 import LayoutBlog from '@/layouts/LayoutBlog.vue';
@@ -19,8 +21,11 @@ import categories from '@/shared/category';
 import safetyImgLight from '@/assets/category/security/img/safety-img-light.png';
 import safetyImgDark from '@/assets/category/security/img/safety-img-dark.png';
 
-const { frontmatter } = useData();
+const { frontmatter, lang } = useData();
 
+const locale = computed(() => {
+  return lang.value === 'zh' ? zhCn : en;
+});
 const compMapping: {
   [name: string]: Component;
 } = {
@@ -76,16 +81,17 @@ watch(
 
 <template>
   <AppHeader />
-  <main>
-    <component :is="comp" v-if="isCustomLayout"></component>
-    <Content v-else />
-
-    <div v-if="isTipShow" class="safety-tips">
-      <a href="https://opengausssrc.vulbox.com/" target="_blank">
-        <img :src="safetyImg" alt="" />
-      </a>
-    </div>
-  </main>
+  <el-config-provider :locale="locale">
+    <main>
+      <component :is="comp" v-if="isCustomLayout"></component>
+      <Content v-else />
+      <div v-if="isTipShow" class="safety-tips">
+        <a href="https://opengausssrc.vulbox.com/" target="_blank">
+          <img :src="safetyImg" alt="" />
+        </a>
+      </div>
+    </main>
+  </el-config-provider>
   <AppFooter :is-cookie-tip="isCookieTip" @cookie-click="handleCookieClick" />
 </template>
 
