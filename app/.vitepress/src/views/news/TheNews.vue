@@ -14,29 +14,7 @@ import banner from '@/assets/illustrations/banner-secondary.png';
 import illustration from '@/assets/illustrations/news.png';
 
 import { getSortData } from '@/api/api-search';
-
-interface NewsData {
-  articleName: string;
-  author: any;
-  banner: string;
-  category: string;
-  date: string;
-  deleteType: string;
-  lang: string;
-  path: string;
-  summary: string;
-  tags: string[];
-  textContent: string;
-  title: string;
-  type: string;
-}
-
-interface ParamsType {
-  page: number;
-  pageSize: number;
-  lang: string;
-  category: string;
-}
+import type { NewsData, ParamsType } from '@/shared/@types/type-news';
 
 const router = useRouter();
 const { lang } = useData();
@@ -63,8 +41,7 @@ const paginationData = ref({
 const i18n = useI18n();
 
 const toNewsContent = (path: string) => {
-  const path1 = router.route.path.substring(0, 3);
-  router.go(`${path1}/${path}`);
+  router.go(`${lang.value}/${path}`);
 };
 
 //获取数据
@@ -144,17 +121,11 @@ const changeCurrentMoblie = (val: string) => {
             <img :src="item.banner" :alt="item.banner" />
           </div>
           <div class="news-info">
-            <div class="news-title">
-              <p>{{ item.title }}</p>
-            </div>
-            <div class="news-time">
-              <p>{{ item.date }}</p>
-            </div>
-            <div class="news-content">
-              <p>
-                {{ item.summary }}
-              </p>
-            </div>
+            <p class="news-title">{{ item.title }}</p>
+            <p class="news-time">{{ item.date }}</p>
+            <p class="news-content">
+              {{ item.summary }}
+            </p>
           </div>
         </OCard>
       </div>
@@ -175,19 +146,14 @@ const changeCurrentMoblie = (val: string) => {
               >{{ paginationData.currentpage }}/{{ pageTotal }}</span
             >
           </OPagination>
+          <AppPaginationMo
+            v-else
+            :current-page="paginationData.currentpage"
+            :total-page="pageTotal"
+            @turn-page="changeCurrentMoblie"
+          />
         </ClientOnly>
-        <AppPaginationMo
-          :current-page="paginationData.currentpage"
-          :total-page="pageTotal"
-          @turn-page="changeCurrentMoblie"
-        >
-        </AppPaginationMo>
       </div>
-      <AppPaginationMo
-        :current-page="paginationData.currentpage"
-        :total-page="Math.ceil(paginationData.total / 10)"
-        @turn-page="changeCurrentMoblie"
-      />
     </template>
     <NotFound v-else />
   </AppContent>
@@ -203,6 +169,14 @@ const changeCurrentMoblie = (val: string) => {
 }
 :deep(.el-card__body) {
   padding: 0;
+  @media (max-width: 980px) {
+    display: flex;
+    flex-direction: row;
+  }
+  @media (max-width: 500px) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 ::-webkit-scrollbar {
   display: none;
@@ -210,152 +184,120 @@ const changeCurrentMoblie = (val: string) => {
 .dark img {
   filter: brightness(0.8) grayscale(0.2) contrast(1.2);
 }
+.news-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: var(--o-spacing-h4);
+  @media (max-width: 1100px) {
+    margin-top: var(--o-spacing-h5);
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 980px) {
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 0;
+  }
+  @media (max-width: 768px) {
+    grid-gap: var(--o-spacing-h5);
+  }
+  @media (max-width: 500px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .news-list-item {
+    justify-self: center;
+    align-self: center;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    @media (max-width: 620px) {
+      height: auto;
+    }
+    .news-img {
+      width: 100%;
+      height: 188px;
+      max-height: 188px;
+      object-fit: cover;
+      overflow: hidden;
+      @media (max-width: 980px) {
+        flex: 1;
+      }
+      @media (max-width: 500px) {
+        height: 180px;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+    }
+    .news-info {
+      padding: var(--o-spacing-h4);
+      color: var(--o-color-text1);
+      @media (max-width: 980px) {
+        flex: 1;
+      }
+      @media (max-width: 500px) {
+        width: 100%;
+        padding: var(--o-spacing-h6);
+      }
+      .news-title {
+        font-weight: 500;
+        height: 52px;
+        line-height: var(--o-line-height-h7);
+        font-size: var(--o-font-size-h7);
+        margin-bottom: var(--o-spacing-h10);
+        @include showline();
+        -webkit-line-clamp: 2;
+        @media (max-width: 500px) {
+          height: auto;
+          line-height: var(--o-line-height-text);
+          font-size: var(--o-font-size-text);
+          font-weight: 500;
+          -webkit-line-clamp: 1;
+          margin-bottom: var(--o-spacing-h8);
+        }
+      }
+      .news-time {
+        font-size: var(--o-font-size-text);
+        line-height: var(--o-line-height-text);
+        @media (max-width: 500px) {
+          line-height: var(--o-line-height-tip);
+          font-size: var(--o-font-size-tip);
+          color: var(--o-color-text1);
+        }
+      }
+      .news-content {
+        margin-top: var(--o-spacing-h5);
+        @include showline();
+        -webkit-line-clamp: 2;
+        color: var(--o-color-text4);
+        font-size: var(--o-font-size-text);
+        line-height: var(--o-line-height-text);
+        @media (max-width: 500px) {
+          line-height: var(--o-line-height-tip);
+          font-size: var(--o-font-size-tip);
+          color: var(--o-color-text4);
+        }
+      }
+    }
+  }
+  .news-list-item:hover {
+    .news-img img {
+      transform: scale(1.05);
+    }
+  }
+}
 .news-pagination {
   margin-top: var(--o-spacing-h2);
   @media screen and (max-width: 768px) {
-    display: none;
+    margin-top: var(--o-spacing-h5);
   }
   .pagination-slot {
     font-size: var(--o-font-size-text);
     font-weight: 300;
     color: var(--o-color-text1);
     line-height: var(--o-spacing-h4);
-  }
-}
-.news {
-  &-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: var(--o-spacing-h4);
-    &-item {
-      justify-self: center;
-      align-self: center;
-      flex: 1;
-      width: 100%;
-      height: 100%;
-      cursor: pointer;
-    }
-    &-item:hover {
-      .news-img img {
-        transform: scale(1.05);
-      }
-    }
-  }
-  &-img {
-    width: 100%;
-    height: 188px;
-    max-height: 188px;
-    object-fit: cover;
-    overflow: hidden;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-  }
-  &-info {
-    padding: var(--o-spacing-h4);
-    color: var(--o-color-text1);
-  }
-  &-title {
-    font-weight: 500;
-    height: 52px;
-    line-height: var(--o-line-height-h7);
-    font-size: var(--o-font-size-h7);
-    margin-bottom: var(--o-spacing-h10);
-    @include showline();
-    -webkit-line-clamp: 2;
-  }
-  &-time {
-    font-size: var(--o-font-size-text);
-    line-height: var(--o-line-height-text);
-  }
-  &-content {
-    margin-top: var(--o-spacing-h5);
-    @include showline();
-    -webkit-line-clamp: 2;
-    color: var(--o-color-text4);
-    font-size: var(--o-font-size-text);
-    line-height: var(--o-line-height-text);
-  }
-}
-
-@media (max-width: 1100px) {
-  .news-list {
-    margin-top: var(--o-spacing-h5);
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (max-width: 980px) {
-  .news-list {
-    grid-template-columns: repeat(1, 1fr);
-    margin-top: 0;
-  }
-
-  :deep(.el-card__body) {
-    display: flex;
-    flex-direction: row;
-  }
-  .news-img,
-  .news-info {
-    flex: 1;
-  }
-}
-@media (max-width: 768px) {
-  .news-list {
-    margin-bottom: var(--o-spacing-h5);
-    grid-gap: var(--o-spacing-h5);
-  }
-  .pcpagination {
-    display: none;
-  }
-}
-@media (max-width: 620px) {
-  .news-list-item {
-    height: auto;
-  }
-
-  :deep(.el-card__body) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-}
-@media (max-width: 500px) {
-  .news-list {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  :deep(.el-card__body) {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .news-img {
-    height: 180px;
-  }
-  .news-info {
-    width: 100%;
-    padding: var(--o-spacing-h6);
-  }
-  .news-title {
-    height: auto;
-    line-height: var(--o-line-height-text);
-    font-size: var(--o-font-size-text);
-    font-weight: 500;
-    @include showline();
-    -webkit-line-clamp: 1;
-    margin-bottom: var(--o-spacing-h8);
-  }
-  .news-time {
-    line-height: var(--o-line-height-tip);
-    font-size: var(--o-font-size-tip);
-    color: var(--o-color-text1);
-  }
-  .news-content {
-    line-height: var(--o-line-height-tip);
-    font-size: var(--o-font-size-tip);
-    color: var(--o-color-text4);
   }
 }
 </style>

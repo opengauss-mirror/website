@@ -19,32 +19,7 @@ import IconRight from '~icons/app/icon-arrow-right.svg';
 import IconSearch from '~icons/app/icon-search.svg';
 
 import { getSortData, getTagsData } from '@/api/api-search';
-
-interface BlogData {
-  archives: string;
-  articleName: string;
-  author: any;
-  category: string;
-  date: string;
-  deleteType: string;
-  lang: string;
-  path: string;
-  summary: string;
-  tags: string[];
-  textContent: string;
-  title: string;
-  type: string;
-}
-
-interface ParamsType {
-  page: number;
-  pageSize: number;
-  lang: string;
-  category: string;
-  archives?: string;
-  author?: string;
-  tags?: string;
-}
+import type { BlogData, ParamsType } from '@/shared/@types/type-blogs';
 
 const router = useRouter();
 const { lang } = useData();
@@ -97,8 +72,7 @@ const paginationData = ref({
 });
 
 const toBlogContent = (path: string) => {
-  const path1 = router.route.path.substring(0, 3);
-  router.go(`${path1}/${path}`);
+  router.go(`${lang.value}/${path}`);
 };
 // 获取标签数据
 const getTagsList = () => {
@@ -415,7 +389,7 @@ const changeCurrentMoblie = (val: string) => {
       >
         {{ userCaseData.STRATEGY }}
         <template #suffixIcon>
-          <OIcon class="bannericon"><IconRight /></OIcon>
+          <OIcon class="banner-icon"><IconRight /></OIcon>
         </template>
       </OButton>
     </template>
@@ -506,9 +480,7 @@ const changeCurrentMoblie = (val: string) => {
           shadow="hover"
           @click="toBlogContent(item.path)"
         >
-          <div class="blog-list-item-title">
-            <p>{{ item.title }}</p>
-          </div>
+          <p class="blog-list-item-title">{{ item.title }}</p>
           <div class="blog-list-item-info">
             <div class="infodetail">
               <OIcon class="icon"><IconUser /></OIcon>
@@ -521,15 +493,13 @@ const changeCurrentMoblie = (val: string) => {
               <p>{{ item.date }}</p>
             </div>
           </div>
-          <div class="blog-list-item-content">
-            <p>{{ item.summary }}</p>
-          </div>
+          <p class="blog-list-item-content">{{ item.summary }}</p>
           <div class="blog-list-item-tags">
             <OTag
               v-for="tag in item.tags"
               :key="tag"
               type="secondary"
-              class="tagitem"
+              class="tag-item"
               >{{ tag }}</OTag
             >
           </div>
@@ -552,13 +522,13 @@ const changeCurrentMoblie = (val: string) => {
               >{{ paginationData.currentpage }}/{{ pageTotal }}</span
             >
           </OPagination>
+          <AppPaginationMo
+            v-else
+            :current-page="paginationData.currentpage"
+            :total-page="pageTotal"
+            @turn-page="changeCurrentMoblie"
+          />
         </ClientOnly>
-        <AppPaginationMo
-          :current-page="paginationData.currentpage"
-          :total-page="pageTotal"
-          @turn-page="changeCurrentMoblie"
-        >
-        </AppPaginationMo>
       </div>
     </template>
     <NotFound v-else />
@@ -575,14 +545,16 @@ const changeCurrentMoblie = (val: string) => {
 }
 :deep(.el-card__body) {
   padding: var(--o-spacing-h2);
-}
-
-.bannericon {
-  @media (max-width: 767px) {
-    font-size: var(--o-font-size-text);
+  @media (max-width: 1100px) {
+    padding: var(--o-spacing-h4);
+    height: 100%;
+  }
+  @media (max-width: 415px) {
+    padding: var(--o-spacing-h6);
+    min-height: 152px;
+    max-height: 152px;
   }
 }
-
 .post-btn {
   color: var(--o-color-white);
   border-color: var(--o-color-white);
@@ -591,179 +563,154 @@ const changeCurrentMoblie = (val: string) => {
     font-size: var(--o-font-size-text);
     line-height: var(--o-line-height-text);
   }
+  .banner-icon {
+    @media (max-width: 767px) {
+      font-size: var(--o-font-size-text);
+    }
+  }
 }
-
-.pagination-slot {
-  font-size: var(--o-font-size-text);
-  font-weight: 300;
-  color: var(--o-color-text1);
-  line-height: var(--o-spacing-h4);
-}
-
-.blog {
-  &-tag2 {
+.blog-select {
+  display: flex;
+  flex-direction: row;
+  width: 1416px;
+  @media (max-width: 1100px) {
     display: none;
   }
-  &-select {
-    display: flex;
-    flex-direction: row;
-    width: 1416px;
-    &-item {
-      margin-right: var(--o-spacing-h1);
-      .o-icon {
-        font-size: var(--o-font-size-h7);
-        @media screen and (max-width: 768px) {
-          font-size: var(--o-font-size-h8);
-        }
-      }
-      &-title {
-        margin-right: var(--o-spacing-h5);
-        color: var(--o-color-text1);
-        font-size: var(--o-font-size-h7);
-        line-height: var(--o-line-height-h7);
+  .blog-select-item {
+    margin-right: var(--o-spacing-h1);
+    .o-icon {
+      font-size: var(--o-font-size-h7);
+      @media screen and (max-width: 768px) {
+        font-size: var(--o-font-size-h8);
       }
     }
-  }
-  &-list {
-    margin: var(--o-spacing-h2) auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: var(--o-spacing-h4);
-    &-item {
-      background-image: url(@/assets/category/blogs/blog-bg.png);
-      min-height: 248px;
-      max-height: 248px;
-      background-position: right bottom;
-      background-repeat: no-repeat;
-      background-size: cover;
-      cursor: pointer;
-      &-title {
-        font-size: var(--o-font-size-h7);
-        margin-bottom: var(--o-spacing-h3); // 32px
-        color: var(--o-color-text1);
-
-        p {
-          display: inline-block;
-          @include showline();
-          -webkit-line-clamp: 2;
-        }
-      }
-      &-info {
-        color: var(--o-color-text4);
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        .icon {
-          font-size: var(--o-font-size-h8);
-          display: inline-block;
-        }
-        p {
-          font-size: var(--o-font-size-tip);
-          display: inline-block;
-          margin-left: var(--o-spacing-h9);
-          line-height: var(--o-line-height-tip);
-          @include showline();
-          -webkit-line-clamp: 1;
-        }
-        .infodetail {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          margin-right: var(--o-spacing-h3);
-        }
-      }
-      &-content {
-        font-size: var(--o-font-size-text);
-        line-height: var(--o-line-height-text);
-        margin-top: var(--o-spacing-h5);
-        height: 44px;
-        color: var(--o-color-text1);
-        @include showline();
-        -webkit-line-clamp: 2;
-      }
-      &-tags {
-        display: flex;
-        margin-top: var(--o-spacing-h7);
-        height: 24px;
-        flex-wrap: wrap;
-        overflow: hidden;
-        .tagitem {
-          font-size: var(--o-spacing-h6);
-          margin-right: var(--o-spacing-h8);
-          color: var(--o-color-black);
-          margin-bottom: var(--o-spacing-h10);
-        }
-      }
-    }
-    &-item:hover {
-      box-shadow: var(--o-shadow-l2_hover);
+    .blog-select-item-title {
+      margin-right: var(--o-spacing-h5);
+      color: var(--o-color-text1);
+      font-size: var(--o-font-size-h7);
+      line-height: var(--o-line-height-h7);
     }
   }
 }
-@media (max-width: 1100px) {
-  .blog-list {
+.blog-list {
+  margin: var(--o-spacing-h2) auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: var(--o-spacing-h4);
+  @media (max-width: 1100px) {
     grid-template-columns: repeat(2, 1fr);
     margin-top: var(--o-spacing-h5);
   }
-  .blog-tag2 {
-    display: block;
-    margin-left: var(--o-spacing-h5);
-  }
-  .blog-select {
-    display: none;
-  }
-  :deep(.el-card__body) {
-    padding: var(--o-spacing-h4);
-    height: 100%;
-  }
-}
-@media (max-width: 768px) {
-  .blog-list {
+  @media (max-width: 768px) {
     margin-top: 0;
     margin-bottom: var(--o-spacing-h5);
     grid-template-columns: repeat(1, 1fr);
     grid-gap: var(--o-spacing-h5);
   }
-}
-@media (max-width: 415px) {
-  :deep(.el-card__body) {
-    padding: var(--o-spacing-h6);
-    min-height: 152px;
-    max-height: 152px;
-  }
   .blog-list-item {
-    min-height: 152px;
-    max-height: 152px;
-  }
-
-  .blog-list-item-content {
-    font-size: var(--o-font-size-tip);
-    line-height: var(--o-line-height-tip);
-    height: auto;
-    @include showline();
-    -webkit-line-clamp: 1;
-  }
-  .blog-list-item-title {
-    margin-bottom: var(--o-spacing-h5);
-    font-size: var(--o-font-size-text);
-    line-height: var(--o-line-height-text);
-    font-weight: 500;
-    p {
+    background-image: url(@/assets/category/blogs/blog-bg.png);
+    min-height: 248px;
+    max-height: 248px;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    &:hover {
+      box-shadow: var(--o-shadow-l2_hover);
+    }
+    @media (max-width: 415px) {
+      min-height: 152px;
+      max-height: 152px;
+    }
+    .blog-list-item-title {
+      font-size: var(--o-font-size-h7);
+      margin-bottom: var(--o-spacing-h3); // 32px
+      color: var(--o-color-text1);
+      height: 42px;
       @include showline();
-      -webkit-line-clamp: 1;
+      -webkit-line-clamp: 2;
+      @media (max-width: 768px) {
+        height: auto;
+      }
+      @media (max-width: 415px) {
+        margin-bottom: var(--o-spacing-h5);
+        font-size: var(--o-font-size-text);
+        line-height: var(--o-line-height-text);
+        font-weight: 500;
+        -webkit-line-clamp: 1;
+      }
+      p {
+        display: inline-block;
+        @include showline();
+        -webkit-line-clamp: 2;
+      }
+    }
+    .blog-list-item-info {
+      color: var(--o-color-text4);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      .icon {
+        font-size: var(--o-font-size-h8);
+        display: inline-block;
+      }
+      p {
+        font-size: var(--o-font-size-tip);
+        display: inline-block;
+        margin-left: var(--o-spacing-h9);
+        line-height: var(--o-line-height-tip);
+        @include showline();
+        -webkit-line-clamp: 1;
+      }
+      .infodetail {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-right: var(--o-spacing-h3);
+      }
+    }
+    .blog-list-item-content {
+      font-size: var(--o-font-size-text);
+      line-height: var(--o-line-height-text);
+      margin-top: var(--o-spacing-h5);
+      height: 44px;
+      color: var(--o-color-text1);
+      @include showline();
+      -webkit-line-clamp: 2;
+      @media (max-width: 415px) {
+        font-size: var(--o-font-size-tip);
+        line-height: var(--o-line-height-tip);
+        height: auto;
+        @include showline();
+        -webkit-line-clamp: 1;
+      }
+    }
+    .blog-list-item-tags {
+      display: flex;
+      margin-top: var(--o-spacing-h7);
+      height: 24px;
+      flex-wrap: wrap;
+      overflow: hidden;
+      @media (max-width: 415px) {
+        margin-top: var(--o-spacing-h5);
+      }
+      .tag-item {
+        font-size: var(--o-spacing-h6);
+        margin-right: var(--o-spacing-h8);
+        color: var(--o-color-black);
+        margin-bottom: var(--o-spacing-h10);
+        @media (max-width: 415px) {
+          font-size: var(--o-font-size-tip);
+          line-height: var(--o-line-height-tip);
+        }
+      }
     }
   }
-  .tagitem {
-    font-size: var(--o-font-size-tip);
-    line-height: var(--o-line-height-tip);
-  }
-  .blog-list-item-tags {
-    margin-top: var(--o-spacing-h5);
-  }
 }
-@media (max-width: 500px) {
-  .blog-select {
-    display: none;
-  }
+.pagination-slot {
+  font-size: var(--o-font-size-text);
+  font-weight: 300;
+  color: var(--o-color-text1);
+  line-height: var(--o-spacing-h4);
 }
 </style>
