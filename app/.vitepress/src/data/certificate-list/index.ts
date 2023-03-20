@@ -75,6 +75,15 @@ export default {
       certificate:
         'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/FusionDB%2022/Certificate.pdf',
     },
+    {
+      pro: 'GBase 8s V8.8.5',
+      name: '天津南大通用数据技术股份有限公司',
+      version: 'openGauss 3.0.0',
+      award: '2023-03-20',
+      expiration: '2025-03-31',
+      certificate:
+        'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/GBase%208s%20V8.8.5/Certificate.pdf',
+    },
   ],
   en: [
     {
@@ -151,6 +160,15 @@ export default {
       expiration: '2025-03-31',
       certificate:
         'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/FusionDB%2022/Certificate.pdf',
+    },
+    {
+      pro: 'GBase 8s V8.8.5',
+      name: '天津南大通用数据技术股份有限公司',
+      version: 'openGauss 3.0.0',
+      award: '2023-03-20',
+      expiration: '2025-03-31',
+      certificate:
+        'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/GBase%208s%20V8.8.5/Certificate.pdf',
     },
   ],
 };
