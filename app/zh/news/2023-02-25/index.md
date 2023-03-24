@@ -8,17 +8,17 @@ category: 'news'
 summary: '全国计算机等级二级考试新科目—openGauss数据库程序设计'
 ---
 
-### <center>全国计算机等级考试</center>
+### <p style="text-align:center;">全国计算机等级考试</p>
 
 全国计算机等级考试（简称NCRE），是经教育部批准，由教育部教育考试院主办，面向社会，用于考查应试人员计算机应用知识与技能的全国性计算机水平测评体系。
 
 2022年9月，教育考试院对NCRE考试科目进行调整，其中二级新增**openGauss数据库程序设计（科目代码68）**，欢迎考生学习报考。
 
-### <center>openGauss数据库</center>
+### <p style="text-align:center;">openGauss数据库</p>
 
 openGauss是一款携手伙伴共同打造全球领先的企业级开源关系型数据库，提供面向多核的极致性能、全链路的业务和数据安全、基于AI的调优和高效运维的能力。openGauss全面友好开放，采用木兰宽松许可证v2发行，深度融合华为在数据库领域多年的研发经验，结合企业级场景需求，持续构建竞争力特性。
 
-### <center>openGauss数据库关键特性</center>
+### <p style="text-align:center;">openGauss数据库关键特性</p>
 
 1、高性能
 
@@ -50,11 +50,11 @@ SQL-Bypass智能选路执行技术；
 开放运维监控、开放和迁移工具；
 开放伙伴认证、培训体系及高校课程。
 
-### <center>考试科目介绍—openGauss数据库程序设计</center>
+### <p style="text-align:center;">考试科目介绍—openGauss数据库程序设计</p>
 
 二级：程序设计/办公软件高级应用级。考核内容包括计算机语言与基础程序设计能力，要求参试者掌握一门计算机语言，可选类别有高级语言程序设计类、数据库程序设计类等。二级证书表明持有人具有计算机基础知识和基本应用能力，能够使用计算机高级语言编写程序，可以从事计算机程序的编制、初级计算机教学培训以及企业中与信息化有关的业务和营销服务工作。
 
-### <center>科目信息</center>
+### <p style="text-align:center;">科目信息</p>
 
 <div style="text-align:center;margin:24px 0;"><img src="/zh/news/2023-02-25/pic1.png" style="width: 50%"></div>
 
@@ -71,14 +71,14 @@ SQL-Bypass智能选路执行技术；
 
 5、成绩及证书：NCRE考试实行百分制计分，但以等第形式（分为“优秀”（100-90）、“良好”（89-80）、“及格”（79-60）、“不及格”（59-0））通知考生成绩，并在证书注明。
 
-### <center>学习资源</center>
+### <p style="text-align:center;">学习资源</p>
 
 1、考试大纲：全国计算机等级考试二级openGauss数据库程序设计考试大纲（2022年版），可通过中国教育考试网（https://www.neea.edu.cn/）进行查询。
 2、学习教材：《全国计算机等级考试二级教程—公共基础知识》、《全国计算机等级考试二级教程—openGauss数据库程序设计》，教材由高等教育出版社独家出版。
 
 <div style="text-align:center;margin:24px 0;"><img src="/zh/news/2023-02-25/pic2.png" style="width: 15%"></div>
 
-### <center>考试报名</center>
+### <p style="text-align:center;">考试报名</p>
 
 1、NCRE考试时间为每年3月、5月、9月、12月，其中3月到9月开考全部级别全部科目，5月和12月考试开考一、二级全部科目，省级承办机构根据情况决定是否开考5月和12月考试；每次考试具体报名时间由各省级承办机构规定，可登录各省级承办机构网站查询（ <https://ncre-bm.neea.cn/>）。
 
