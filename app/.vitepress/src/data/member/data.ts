@@ -425,6 +425,13 @@ import xubing from '@/assets/category/member/avatar/xubing.png';
 import zhangyi from '@/assets/category/member/avatar/zhangyi.png';
 import zhongchengcheng from '@/assets/category/member/avatar/zhongchengcheng.png';
 
+import zhouweiran from '@/assets/category/member/avatar/zhouweiran.png';
+import xiongqun from '@/assets/category/member/avatar/xiongqun.png';
+import zhangyuwen from '@/assets/category/member/avatar/zhangyuwen.png';
+import luoruping from '@/assets/category/member/avatar/luoruping.png';
+import lijun2 from '@/assets/category/member/avatar/lijun2.png';
+
+
 export default {
   zh: {
     BOARD: [
@@ -580,7 +587,14 @@ export default {
         name: '张益',
         title: '理事',
         email: 'zhangyi@gbase.cn',
-        company: '天津南大通用数据技术股份有限公司 ',
+        company: '天津南大通用数据技术股份有限公司',
+      },
+      {
+        img: zhouweiran,
+        name: '周伟然',
+        title: '理事',
+        email: 'zhouwr@cib.com.cn',
+        company: '兴业银行股份有限公司',
       },
     ],
     UC: [
@@ -3856,6 +3870,34 @@ export default {
         company: '海量数据',
         email: '384662452@qq.com',
       },
+      {
+        img: xiongqun,
+        name: '熊群',
+        title: 'Member',
+        company: '云和恩墨',
+        email: 'qun.xiong@enmotech.com',
+      },
+      {
+        img: zhangyuwen,
+        name: '章芋文',
+        title: 'Member',
+        company: '云和恩墨',
+        email: 'zhangyuwen@modb.pro',
+      },
+      {
+        img: luoruping,
+        name: '罗茹萍',
+        title: 'Member',
+        company: '云和恩墨',
+        email: '1084559208@qq.com',
+      },
+      {
+        img: lijun2,
+        name: '李俊',
+        title: 'Member',
+        company: '云和恩墨',
+        email: 'jun.li@enmotech.com',
+      },
     ],
     SHENYANG: [
       {
@@ -4127,6 +4169,13 @@ export default {
         title: 'Director',
         email: 'zhangyi@gbase.cn',
         company: 'General Data Technology Co.,LTD ',
+      },
+      {
+        img: zhouweiran,
+        name: 'Weiran Zhou',
+        title: 'Director',
+        email: 'zhouwr@cib.com.cn',
+        company: 'Industrial Bank CO.,LTD ',
       },
     ],
     UC: [
@@ -7394,6 +7443,34 @@ export default {
         title: 'Member',
         company: 'VASTDATA',
         email: '384662452@qq.com',
+      },
+      {
+        img: xiongqun,
+        name: 'Qun Xiong',
+        title: 'Member',
+        company: 'ENMOTECH',
+        email: 'qun.xiong@enmotech.com',
+      },
+      {
+        img: zhangyuwen,
+        name: 'Yuwen Zhang',
+        title: 'Member',
+        company: 'ENMOTECH',
+        email: 'zhangyuwen@modb.pro',
+      },
+      {
+        img: luoruping,
+        name: 'Ruping Luo',
+        title: 'Member',
+        company: 'ENMOTECH',
+        email: '1084559208@qq.com',
+      },
+      {
+        img: lijun2,
+        name: 'Jun Li',
+        title: 'Member',
+        company: 'ENMOTECH',
+        email: 'jun.li@enmotech.com',
       },
     ],
     SHENYANG: [
