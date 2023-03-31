@@ -41,7 +41,7 @@ const paginationData = ref({
 const i18n = useI18n();
 
 const toNewsContent = (path: string) => {
-  router.go(`${lang.value}/${path}`);
+  router.go(`/${path}`);
 };
 
 //获取数据

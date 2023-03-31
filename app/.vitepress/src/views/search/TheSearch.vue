@@ -159,7 +159,7 @@ function searchAll() {
 // 设置搜索结果的跳转路径
 function goLink(data: any, index: number) {
   const { type, path } = data;
-  const search_result_url = '/' + lang.value + '/' + path;
+  const search_result_url = '/' + path;
   // 埋点数据
   const searchKeyObj = {
     search_tag: type,
@@ -181,13 +181,7 @@ function goLink(data: any, index: number) {
     if (/^docs\/master/g.test(path)) {
       goPath = path.replace(/^docs\/master/g, 'docs/latest');
     }
-    const url =
-      site.value.themeConfig.docsUrl +
-      '/' +
-      lang.value +
-      '/' +
-      goPath +
-      '.html';
+    const url = site.value.themeConfig.docsUrl + '/' + goPath + '.html';
     sensorObj.search_result_url = url;
     sensors.setProfile(sensorObj);
     window.open(url, '_blank');

@@ -115,7 +115,9 @@ const goDetail = (path: string) => {
     window.open(path, '_blank');
   } else if (path.startsWith(`/${lang.value}/`)) {
     router.go(path);
-  } else {
+  } else if (path.startsWith(`${lang.value}/`)) {
+    router.go('/' +path);
+  }else {
     router.go(`/${lang.value + '/' + path}.html`);
   }
 };

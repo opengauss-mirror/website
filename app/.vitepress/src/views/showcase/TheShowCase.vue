@@ -172,7 +172,7 @@ const imgUrl = computed(() => (id: string) => {
 const jump = (url: string, type: number) => {
   type === 1
     ? window.open(url, '_blank')
-    : window.open(`/${lang.value}/${url.replace('index', '')}`, '_blank');
+    : window.open(`/${url.replace('index', '')}`, '_blank');
 };
 // 搜索功能
 // 搜索关键词
