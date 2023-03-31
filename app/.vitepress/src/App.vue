@@ -100,7 +100,6 @@ watch(
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 main {
   min-height: calc(100vh - 280px);
   background-color: var(--o-color-bg1);

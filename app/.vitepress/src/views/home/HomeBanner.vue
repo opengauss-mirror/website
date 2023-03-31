@@ -406,6 +406,18 @@ html[lang='zh'] {
       position: static !important;
     }
   }
+  .version {
+    .banner-panel-content {
+      @media screen and (max-width: 1100px) {
+        justify-content: center;
+      }
+    }
+    .title {
+      @media screen and (max-width: 1100px) {
+        font-size: var(--o-font-size-h6);
+      }
+    }
+  }
   .ques {
     .banner-panel-content {
       @media screen and (max-width: 824px) {

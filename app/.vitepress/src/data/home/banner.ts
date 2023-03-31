@@ -1,13 +1,8 @@
 import liveImg_pc from '@/assets/category/home/banner/liveBanner_pc.png';
 import liveImg_mo from '@/assets/category/home/banner/liveBanner_mo.png';
 
-import banner310 from '@/assets/category/home/banner/opengauss3.1.0_zh_pc.png';
-import banner310_mo from '@/assets/category/home/banner/opengauss3.1.0_zh_mo.png';
-
-import banner500_zh from '@/assets/category/home/banner/opengauss5.0.0_zh_pc.png';
-import banner500_zh_mo from '@/assets/category/home/banner/opengauss5.0.0_zh_mo.png';
-import banner500_en from '@/assets/category/home/banner/opengauss5.0.0_en_pc.png';
-import banner500_en_mo from '@/assets/category/home/banner/opengauss5.0.0_en_mo.png';
+import banner500 from '@/assets/category/home/banner/opengauss5.0.0_pc.jpg';
+import banner500_mo from '@/assets/category/home/banner/opengauss5.0.0_mo.png';
 
 import bannerQues from '@/assets/category/home/banner/banner-ques.jpg';
 import bannerQues_mo from '@/assets/category/home/banner/banner-ques-mo.png';
@@ -32,15 +27,15 @@ export default {
         'https://learningvideo.obs.ap-southeast-1.myhuaweicloud.com/openGauss%E5%AE%A3%E4%BC%A0%E6%B4%BB%E5%8A%A8/openGauss%2BHC%E5%AE%A3%E4%BC%A0%E8%A7%86%E9%A2%91.mp4',
     },
     {
-      pcBanner: banner500_zh,
-      moBanner: banner500_zh_mo,
-      link: '/zh/news/2023-03-31/index.html',
+      pcBanner: banner500,
+      moBanner: banner500_mo,
+      link: '/zh/news/2023-03-31/',
       targetTap: 0,
-      title: '',
+      title: 'openGauss 5.0.0 版本正式发布',
       desc: [''],
       btn: '',
       type: 3,
-      className: '',
+      className: 'version',
       video: '',
     },
     {
@@ -85,15 +80,15 @@ export default {
         'https://learningvideo.obs.ap-southeast-1.myhuaweicloud.com/openGauss%E5%AE%A3%E4%BC%A0%E6%B4%BB%E5%8A%A8/openGauss%2BHC%E5%AE%A3%E4%BC%A0%E8%A7%86%E9%A2%91.mp4',
     },
     {
-      pcBanner: banner500_en,
-      moBanner: banner500_en_mo,
-      link: '/zh/news/2023-03-31/index.html',
+      pcBanner: banner500,
+      moBanner: banner500_mo,
+      link: '/zh/news/2023-03-31/',
       targetTap: 0,
-      title: '',
+      title: 'openGauss Officially Releases Version 5.0.0',
       desc: [''],
       btn: '',
       type: 3,
-      className: '',
+      className: 'version',
       video: '',
     },
   ],
