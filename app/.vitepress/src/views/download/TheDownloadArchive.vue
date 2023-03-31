@@ -35,11 +35,8 @@ const selectVersion = ref(versionIndex);
 const getData: any = computed(() => {
   return DownloadConfig.filter((el) => el.id === versionIndex.value);
 });
-// 当前版本名称
-const versionName = ref(getData.value[0].name);
-
 // 下载认证版本
-const downloadVersionAuth = '3.1.1';
+// const downloadVersionAuthIndex = '3.1.1';
 
 const handleDownloadUrl = (url: string) => {
   window.open(url, '_blank');
@@ -98,14 +95,7 @@ const activeName = computed(() => {
 });
 const activeMobile = ref(activeName.value);
 
-watch(
-  () => getData.value,
-  (val) => {
-    activeMobile.value = activeName.value;
-    versionName.value = val[0].name;
-  },
-  { deep: true, immediate: true }
-);
+
 
 // 下载权限
 const changeDownloadAuth = () => {
@@ -128,6 +118,14 @@ const changeDownloadAuth = () => {
 //控制需要登录后才能下载的版本(默认仅为最新版需要登录后下载)
 const versionShownIndex = ref(DownloadConfig.length - 1);
 const downloadVersionAuthIndex = ref(DownloadConfig.length - 1);
+watch(
+  () => getData.value,
+  (val) => {
+    activeMobile.value = activeName.value;
+    versionShownIndex.value = val[0].id;
+  },
+  { deep: true, immediate: true }
+);
 </script>
 
 <template>
@@ -195,7 +193,7 @@ const downloadVersionAuthIndex = ref(DownloadConfig.length - 1);
                 <div class="down-action">
                   <template
                     v-if="
-                      versionName === downloadVersionAuth &&
+                      versionShownIndex === downloadVersionAuthIndex &&
                       !guardAuthClient.username
                     "
                   >
@@ -252,7 +250,7 @@ const downloadVersionAuthIndex = ref(DownloadConfig.length - 1);
                 <div class="down-action">
                   <template
                     v-if="
-                      versionName === downloadVersionAuth &&
+                      versionShownIndex === downloadVersionAuthIndex &&
                       !guardAuthClient.username
                     "
                   >
@@ -296,7 +294,7 @@ const downloadVersionAuthIndex = ref(DownloadConfig.length - 1);
                 <div class="down-action">
                   <template
                     v-if="
-                      versionName === downloadVersionAuth &&
+                      versionShownIndex === downloadVersionAuthIndex &&
                       !guardAuthClient.username
                     "
                   >
@@ -369,7 +367,7 @@ const downloadVersionAuthIndex = ref(DownloadConfig.length - 1);
               <div v-if="scope.row.centos_url !== ''" class="down-action">
                 <template
                   v-if="
-                    versionName === downloadVersionAuth &&
+                    versionShownIndex === downloadVersionAuthIndex &&
                     !guardAuthClient.username
                   "
                 >
@@ -428,7 +426,7 @@ const downloadVersionAuthIndex = ref(DownloadConfig.length - 1);
               <div v-if="scope.row.aarch_url !== ''" class="down-action">
                 <template
                   v-if="
-                    versionName === downloadVersionAuth &&
+                    versionShownIndex === downloadVersionAuthIndex &&
                     !guardAuthClient.username
                   "
                 >
@@ -474,7 +472,7 @@ const downloadVersionAuthIndex = ref(DownloadConfig.length - 1);
               <div v-if="scope.row.x86_url !== ''" class="down-action">
                 <template
                   v-if="
-                    versionName === downloadVersionAuth &&
+                    versionShownIndex === downloadVersionAuthIndex &&
                     !guardAuthClient.username
                   "
                 >
