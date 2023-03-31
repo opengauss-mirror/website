@@ -160,25 +160,12 @@ function setShowIndex(index: number) {
       <el-table-column :label="tableData.thead[2]" prop="down_url">
         <template #default="scope">
           <div v-if="scope.row.down_url !== ''" class="down-action">
-            <!-- <template
+            <template
               v-if="
                 versionShownIndex === downloadVersionAuthIndex &&
                 !guardAuthClient.username
               "
             >
-              <OButton
-                size="mini"
-                animation
-                type="primary"
-                @click="changeDownloadAuth"
-              >
-                {{ i18n.download.BTN_TEXT }}
-                <template #suffixIcon>
-                  <IconDownload />
-                </template>
-              </OButton>
-            </template> -->
-            <template v-if="false">
               <OButton
                 size="mini"
                 animation
@@ -269,16 +256,13 @@ function setShowIndex(index: number) {
         </p>
         <p class="item-text">
           <span>{{ tableData.thead[2] + ':' }}</span>
-          <!-- <a
+          <a
             v-if="
               versionShownIndex === downloadVersionAuthIndex &&
               !guardAuthClient.username
             "
             @click="changeDownloadAuth"
           >
-            {{ i18n.download.BTN_TEXT_MO }}</a
-          > -->
-          <a v-if="false" @click="changeDownloadAuth">
             {{ i18n.download.BTN_TEXT_MO }}</a
           >
           <a v-else :href="item.down_url">
