@@ -123,14 +123,18 @@
       text-align: justify;
     }
   }
+  p {
+    strong {
+      color: var(--o-color-text3);
+    }
+  }
 
   ul,
   ol {
-    padding-left: 1em;
-
+    padding-left: 2em;
     li {
       &::marker {
-        color: var(--o-color-text1);
+        color: var(--o-color-text3);
       }
     }
   }
