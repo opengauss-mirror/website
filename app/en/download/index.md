@@ -1,5 +1,5 @@
 ---
-title: '软件包'
+title: 'Software Packages'
 ---
 
 <script setup lang="ts">
