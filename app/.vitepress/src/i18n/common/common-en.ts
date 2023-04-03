@@ -57,7 +57,7 @@ export default {
       CHILDREN: [
         {
           NAME: 'Documentation',
-          PATH: 'docs/3.1.1/docs/BriefTutorial/BriefTutorial.html',
+          PATH: '',
           ID: 'docs',
           IS_OPEN_WINDOW: 1,
         },

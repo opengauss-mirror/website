@@ -18,7 +18,7 @@ export default [
               'eba32db3b0fb70020b7d7da754d898994fbf5f3e8f5f94c35e2fb29898cdc1f4',
             docsName: 'Enterprise-Edition Installation Guide',
             docs_url:
-              '/docs/5.0.0/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html',
+              '/docs/5.0.0/docs/InstallationGuide/enterprise-edition-installation-process.html',
           },
           {
             name: 'openGauss_5.0.0 Simplified',
@@ -31,7 +31,7 @@ export default [
               'e5cb78d48147fdbe2b5743caa992fa0b69dda1c104051fcd720f347d2afff4e0',
             docsName: 'Simplified Installation Guide',
             docs_url:
-              '/docs/5.0.0/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html',
+              '/docs/5.0.0/docs/InstallationGuide/simplified-installation-process.html',
           },
           {
             name: 'openGauss_5.0.0 Lite',
@@ -44,7 +44,7 @@ export default [
               '41bb5b4c7e0ff5cbac9db432bd87141bb57f6cdf858790b6bb4745985b8ec28e',
             docsName: 'Lite Installation Guide',
             docs_url:
-              '/docs/5.0.0-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html',
+              '/docs/5.0.0-lite/docs/InstallationGuide/installation.html',
           },
         ],
       },

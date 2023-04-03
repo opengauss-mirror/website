@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, computed, Ref, watch, toRefs } from 'vue';
+import { ref, computed, Ref, watch, toRefs,onMounted } from 'vue';
 import { useData } from 'vitepress';
 import { useCommon } from '@/stores/common';
 import { showGuard, useStoreData } from '@/shared/login';
@@ -70,6 +70,9 @@ async function handleUrlCopy(value: string | undefined) {
     type: 'success',
   });
 }
+onMounted(() => {
+  inputDom.value = document.getElementById('useCopy');
+});
 // 选择系统与架构
 const selectVersion = ref(props.tableData.content[0].system);
 const renderData: any = computed(() => {
@@ -135,7 +138,7 @@ function setShowIndex(index: number) {
       class="download-pc"
       style="width: 100%"
     >
-      <el-table-column width="300" :label="tableData.thead[0]" prop="name">
+      <el-table-column width="320" :label="tableData.thead[0]" prop="name">
         <template #default="scope">
           <div class="name-info">
             {{ scope.row.name }}
@@ -299,6 +302,10 @@ function setShowIndex(index: number) {
       </li>
     </ul>
   </div>
+  <div class="input-box">
+    <!-- 用于复制RSNC的值 -->
+    <input id="useCopy" type="text" />
+  </div>
 </template>
 <style lang="scss" scoped>
 .content-item {
@@ -429,5 +436,9 @@ function setShowIndex(index: number) {
       }
     }
   }
+}
+.input-box #useCopy {
+  position: absolute;
+  opacity: 0;
 }
 </style>
