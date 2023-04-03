@@ -4,51 +4,6 @@ export default [
     thead: ['软件包类型', '软件包大小', '软件包下载', '完整性校验', '说明文档'],
     content: [
       {
-        system: 'openEuler 22.03 LTS (x86_64)',
-        docs: true,
-        content: [
-          {
-            name: 'openGauss_5.0.0 企业版',
-            table: 'server',
-            size: '126.78MB',
-            edition: 'enterprise',
-            down_url:
-              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/x86_openEuler_2203/openGauss-5.0.0-openEuler-64bit-all.tar.gz',
-            sha_code:
-              'eba32db3b0fb70020b7d7da754d898994fbf5f3e8f5f94c35e2fb29898cdc1f4',
-            docsName: '企业版安装指南',
-            docs_url:
-              '/docs/5.0.0/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html',
-          },
-          {
-            name: 'openGauss_5.0.0 极简版',
-            table: 'server',
-            size: '95.41MB',
-            edition: 'simple',
-            down_url:
-              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/x86_openEuler_2203/openGauss-5.0.0-openEuler-64bit.tar.bz2',
-            sha_code:
-              'e5cb78d48147fdbe2b5743caa992fa0b69dda1c104051fcd720f347d2afff4e0',
-            docsName: '极简版安装指南',
-            docs_url:
-              '/docs/5.0.0/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html',
-          },
-          {
-            name: 'openGauss_5.0.0 轻量版',
-            table: 'server',
-            size: '22.32MB',
-            edition: 'lite',
-            down_url:
-              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/x86_openEuler_2203/openGauss-Lite-5.0.0-openEuler-x86_64.tar.gz',
-            sha_code:
-              '41bb5b4c7e0ff5cbac9db432bd87141bb57f6cdf858790b6bb4745985b8ec28e',
-            docsName: '轻量版安装指南',
-            docs_url:
-              '/docs/5.0.0-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html',
-          },
-        ],
-      },
-      {
         system: 'openEuler 22.03 LTS (aarch64)',
         docs: true,
         content: [
@@ -94,18 +49,18 @@ export default [
         ],
       },
       {
-        system: 'openEuler 20.03 LTS (x86_64)',
+        system: 'openEuler 22.03 LTS (x86_64)',
         docs: true,
         content: [
           {
             name: 'openGauss_5.0.0 企业版',
             table: 'server',
-            size: '126.80MB',
+            size: '126.78MB',
             edition: 'enterprise',
             down_url:
-              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/x86_openEuler/openGauss-5.0.0-openEuler-64bit-all.tar.gz',
+              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/x86_openEuler_2203/openGauss-5.0.0-openEuler-64bit-all.tar.gz',
             sha_code:
-              'f2d3df77abd8f5a0658d3002cfe53e13c7375203ce3a8f4cfeb727be07e32b1c',
+              'eba32db3b0fb70020b7d7da754d898994fbf5f3e8f5f94c35e2fb29898cdc1f4',
             docsName: '企业版安装指南',
             docs_url:
               '/docs/5.0.0/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html',
@@ -113,12 +68,12 @@ export default [
           {
             name: 'openGauss_5.0.0 极简版',
             table: 'server',
-            size: '95.43MB',
+            size: '95.41MB',
             edition: 'simple',
             down_url:
-              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/x86_openEuler/openGauss-5.0.0-openEuler-64bit.tar.bz2',
+              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/x86_openEuler_2203/openGauss-5.0.0-openEuler-64bit.tar.bz2',
             sha_code:
-              '589cc73ab8442c3de2fc8f133602ef7a47c98f848cc3c8a6fab40a67110de749',
+              'e5cb78d48147fdbe2b5743caa992fa0b69dda1c104051fcd720f347d2afff4e0',
             docsName: '极简版安装指南',
             docs_url:
               '/docs/5.0.0/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html',
@@ -127,11 +82,11 @@ export default [
             name: 'openGauss_5.0.0 轻量版',
             table: 'server',
             size: '22.32MB',
-            edition: 'simple',
+            edition: 'lite',
             down_url:
-              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/x86_openEuler/openGauss-Lite-5.0.0-openEuler-x86_64.tar.gz',
+              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/x86_openEuler_2203/openGauss-Lite-5.0.0-openEuler-x86_64.tar.gz',
             sha_code:
-              '91fe9adaebea73bcb92da7cf9d061cd5c6464f416ae77933c9bd4f748f3cd4b2',
+              '41bb5b4c7e0ff5cbac9db432bd87141bb57f6cdf858790b6bb4745985b8ec28e',
             docsName: '轻量版安装指南',
             docs_url:
               '/docs/5.0.0-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html',
@@ -192,6 +147,51 @@ export default [
               'd38fd8937534aa9d7b1fb34d92aefd16169c0cc737abc68da1361a9c6824cf60',
             docsName: '',
             docs_url: '',
+          },
+        ],
+      },
+      {
+        system: 'openEuler 20.03 LTS (x86_64)',
+        docs: true,
+        content: [
+          {
+            name: 'openGauss_5.0.0 企业版',
+            table: 'server',
+            size: '126.80MB',
+            edition: 'enterprise',
+            down_url:
+              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/x86_openEuler/openGauss-5.0.0-openEuler-64bit-all.tar.gz',
+            sha_code:
+              'f2d3df77abd8f5a0658d3002cfe53e13c7375203ce3a8f4cfeb727be07e32b1c',
+            docsName: '企业版安装指南',
+            docs_url:
+              '/docs/5.0.0/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html',
+          },
+          {
+            name: 'openGauss_5.0.0 极简版',
+            table: 'server',
+            size: '95.43MB',
+            edition: 'simple',
+            down_url:
+              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/x86_openEuler/openGauss-5.0.0-openEuler-64bit.tar.bz2',
+            sha_code:
+              '589cc73ab8442c3de2fc8f133602ef7a47c98f848cc3c8a6fab40a67110de749',
+            docsName: '极简版安装指南',
+            docs_url:
+              '/docs/5.0.0/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html',
+          },
+          {
+            name: 'openGauss_5.0.0 轻量版',
+            table: 'server',
+            size: '22.32MB',
+            edition: 'simple',
+            down_url:
+              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/x86_openEuler/openGauss-Lite-5.0.0-openEuler-x86_64.tar.gz',
+            sha_code:
+              '91fe9adaebea73bcb92da7cf9d061cd5c6464f416ae77933c9bd4f748f3cd4b2',
+            docsName: '轻量版安装指南',
+            docs_url:
+              '/docs/5.0.0-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html',
           },
         ],
       },
@@ -259,51 +259,6 @@ export default [
     thead: ['软件包类型', '软件包大小', '软件包下载', '完整性校验', ''],
     content: [
       {
-        system: 'openEuler 22.03 LTS (x86_64)',
-        content: [
-          {
-            name: 'JDBC_5.0.0',
-            size: '1.63MB',
-            down_url:
-              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/x86_openEuler_2203/openGauss-5.0.0-JDBC.tar.gz',
-            sha_code:
-              '31c292d56c0d286bc2c976a971e2ece87b8d159fa119d8b8951860bd39eda441',
-            docsName: '',
-            docs_url: '',
-          },
-          {
-            name: 'ODBC_5.0.0',
-            size: '9.02MB',
-            down_url:
-              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/x86_openEuler_2203/openGauss-5.0.0-ODBC.tar.gz',
-            sha_code:
-              '70ec7f259684b8050426701e163336d9c6fd0ba8aef517182f39b0a2f1997e08',
-            docsName: '',
-            docs_url: '',
-          },
-          {
-            name: 'Python-psycopg2_5.0.0',
-            size: '2.91MB',
-            down_url:
-              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/x86_openEuler_2203/openGauss-5.0.0-openEuler-x86_64-Python.tar.gz',
-            sha_code:
-              '7bf30cd6cc4b0ac63abdd8c406310d7580e0a2d82b0dd82237f34952272a9a34',
-            docsName: '',
-            docs_url: '',
-          },
-          {
-            name: 'libpq_5.0.0',
-            size: '5.00MB',
-            down_url:
-              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/x86_openEuler_2203/openGauss-5.0.0-openEuler-64bit-Libpq.tar.gz',
-            sha_code:
-              'f9c959e6ded4fcee897222e06f92f49f0be473779b128ed7027f2b3265a2c276',
-            docsName: '',
-            docs_url: '',
-          },
-        ],
-      },
-      {
         system: 'openEuler 22.03 LTS (aarch64)',
         content: [
           {
@@ -349,25 +304,25 @@ export default [
         ],
       },
       {
-        system: 'openEuler 20.03 LTS (x86_64)',
+        system: 'openEuler 22.03 LTS (x86_64)',
         content: [
           {
             name: 'JDBC_5.0.0',
             size: '1.63MB',
             down_url:
-              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/x86_openEuler/openGauss-5.0.0-JDBC.tar.gz',
+              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/x86_openEuler_2203/openGauss-5.0.0-JDBC.tar.gz',
             sha_code:
-              'e90754b90d36e16b64f85cfbf7053814075ca04b80b6c62a6f5e72c7e8b0386d',
+              '31c292d56c0d286bc2c976a971e2ece87b8d159fa119d8b8951860bd39eda441',
             docsName: '',
             docs_url: '',
           },
           {
             name: 'ODBC_5.0.0',
-            size: '9.03MB',
+            size: '9.02MB',
             down_url:
-              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/x86_openEuler/openGauss-5.0.0-ODBC.tar.gz',
+              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/x86_openEuler_2203/openGauss-5.0.0-ODBC.tar.gz',
             sha_code:
-              '152da313f38279bea0c5e1c03a44f0b2b90efc2cd5d91d6366a838cfbe21b693',
+              '70ec7f259684b8050426701e163336d9c6fd0ba8aef517182f39b0a2f1997e08',
             docsName: '',
             docs_url: '',
           },
@@ -375,9 +330,9 @@ export default [
             name: 'Python-psycopg2_5.0.0',
             size: '2.91MB',
             down_url:
-              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/x86_openEuler/openGauss-5.0.0-openEuler-x86_64-Python.tar.gz',
+              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/x86_openEuler_2203/openGauss-5.0.0-openEuler-x86_64-Python.tar.gz',
             sha_code:
-              'b16b343ba5ca5a164b5aa3a7d62a70a5de58d208ddea9b657b8b31ae2829206e',
+              '7bf30cd6cc4b0ac63abdd8c406310d7580e0a2d82b0dd82237f34952272a9a34',
             docsName: '',
             docs_url: '',
           },
@@ -385,9 +340,9 @@ export default [
             name: 'libpq_5.0.0',
             size: '5.00MB',
             down_url:
-              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/x86_openEuler/openGauss-5.0.0-openEuler-64bit-Libpq.tar.gz',
+              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/x86_openEuler_2203/openGauss-5.0.0-openEuler-64bit-Libpq.tar.gz',
             sha_code:
-              'e2116fa2a1884bc5ca3d8bc0d953277185f355a584cf03d320607c77cd223a52',
+              'f9c959e6ded4fcee897222e06f92f49f0be473779b128ed7027f2b3265a2c276',
             docsName: '',
             docs_url: '',
           },
@@ -433,6 +388,51 @@ export default [
               'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/arm/openGauss-5.0.0-openEuler-64bit-Libpq.tar.gz',
             sha_code:
               '0736a4dc7747685f76326533a101d528c0837f4b6ba1217dd068cdc5ff2bb47d',
+            docsName: '',
+            docs_url: '',
+          },
+        ],
+      },
+      {
+        system: 'openEuler 20.03 LTS (x86_64)',
+        content: [
+          {
+            name: 'JDBC_5.0.0',
+            size: '1.63MB',
+            down_url:
+              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/x86_openEuler/openGauss-5.0.0-JDBC.tar.gz',
+            sha_code:
+              'e90754b90d36e16b64f85cfbf7053814075ca04b80b6c62a6f5e72c7e8b0386d',
+            docsName: '',
+            docs_url: '',
+          },
+          {
+            name: 'ODBC_5.0.0',
+            size: '9.03MB',
+            down_url:
+              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/x86_openEuler/openGauss-5.0.0-ODBC.tar.gz',
+            sha_code:
+              '152da313f38279bea0c5e1c03a44f0b2b90efc2cd5d91d6366a838cfbe21b693',
+            docsName: '',
+            docs_url: '',
+          },
+          {
+            name: 'Python-psycopg2_5.0.0',
+            size: '2.91MB',
+            down_url:
+              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/x86_openEuler/openGauss-5.0.0-openEuler-x86_64-Python.tar.gz',
+            sha_code:
+              'b16b343ba5ca5a164b5aa3a7d62a70a5de58d208ddea9b657b8b31ae2829206e',
+            docsName: '',
+            docs_url: '',
+          },
+          {
+            name: 'libpq_5.0.0',
+            size: '5.00MB',
+            down_url:
+              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/x86_openEuler/openGauss-5.0.0-openEuler-64bit-Libpq.tar.gz',
+            sha_code:
+              'e2116fa2a1884bc5ca3d8bc0d953277185f355a584cf03d320607c77cd223a52',
             docsName: '',
             docs_url: '',
           },
@@ -515,31 +515,6 @@ export default [
     thead: ['软件包类型', '软件包大小', '软件包下载', '完整性校验', ''],
     content: [
       {
-        system: 'openEuler 22.03 LTS (x86_64)',
-        content: [
-          {
-            name: 'symbol_5.0.0',
-            size: '387.47MB',
-            down_url:
-              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/x86_openEuler_2203/openGauss-5.0.0-openEuler-64bit-symbol.tar.gz',
-            sha_code:
-              '284be2daac2694d6e0b04d20c7ba8a4531d64ea6176682ab8f2dd31b1721f2ff',
-            docsName: '',
-            docs_url: '',
-          },
-          {
-            name: 'cm-symbol_5.0.0',
-            size: '20.66MB',
-            down_url:
-              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/x86_openEuler_2203/openGauss-5.0.0-openEuler-64bit-cm-symbol.tar.gz',
-            sha_code:
-              '32f7b9de93bcb59986057c6cc70503f5b1a933d876c8c50eb69ef462260fa18c',
-            docsName: '',
-            docs_url: '',
-          },
-        ],
-      },
-      {
         system: 'openEuler 22.03 LTS (aarch64)',
         content: [
           {
@@ -565,15 +540,15 @@ export default [
         ],
       },
       {
-        system: 'openEuler 20.03 LTS (x86_64)',
+        system: 'openEuler 22.03 LTS (x86_64)',
         content: [
           {
             name: 'symbol_5.0.0',
-            size: '386.60MB',
+            size: '387.47MB',
             down_url:
-              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/x86_openEuler/openGauss-5.0.0-openEuler-64bit-symbol.tar.gz',
+              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/x86_openEuler_2203/openGauss-5.0.0-openEuler-64bit-symbol.tar.gz',
             sha_code:
-              'ed258f383e23d6dc93114db4e1d2a9cfdef12a4102cb431d0b868243f4209f61',
+              '284be2daac2694d6e0b04d20c7ba8a4531d64ea6176682ab8f2dd31b1721f2ff',
             docsName: '',
             docs_url: '',
           },
@@ -581,9 +556,9 @@ export default [
             name: 'cm-symbol_5.0.0',
             size: '20.66MB',
             down_url:
-              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/x86_openEuler/openGauss-5.0.0-openEuler-64bit-cm-symbol.tar.gz',
+              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/x86_openEuler_2203/openGauss-5.0.0-openEuler-64bit-cm-symbol.tar.gz',
             sha_code:
-              '359ea5530634f4d1dac9dca4281aedfce25bbf3f70019f8dc2043b5db2274282',
+              '32f7b9de93bcb59986057c6cc70503f5b1a933d876c8c50eb69ef462260fa18c',
             docsName: '',
             docs_url: '',
           },
@@ -609,6 +584,31 @@ export default [
               'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/arm/openGauss-5.0.0-openEuler-64bit-cm-symbol.tar.gz',
             sha_code:
               '3d85617d873901fbbe94f5f45267e4bca6dd041713bd1865e8f57f75ab056e97',
+            docsName: '',
+            docs_url: '',
+          },
+        ],
+      },
+      {
+        system: 'openEuler 20.03 LTS (x86_64)',
+        content: [
+          {
+            name: 'symbol_5.0.0',
+            size: '386.60MB',
+            down_url:
+              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/x86_openEuler/openGauss-5.0.0-openEuler-64bit-symbol.tar.gz',
+            sha_code:
+              'ed258f383e23d6dc93114db4e1d2a9cfdef12a4102cb431d0b868243f4209f61',
+            docsName: '',
+            docs_url: '',
+          },
+          {
+            name: 'cm-symbol_5.0.0',
+            size: '20.66MB',
+            down_url:
+              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/x86_openEuler/openGauss-5.0.0-openEuler-64bit-cm-symbol.tar.gz',
+            sha_code:
+              '359ea5530634f4d1dac9dca4281aedfce25bbf3f70019f8dc2043b5db2274282',
             docsName: '',
             docs_url: '',
           },
@@ -645,81 +645,6 @@ export default [
     name: 'openGauss Tools',
     thead: ['软件包类型', '软件包大小', '软件包下载', '完整性校验', '说明文档'],
     content: [
-      {
-        system: 'Linux (x86_64)',
-        content: [
-          {
-            name: 'Chameleon_5.0.0',
-            size: '6.29MB',
-            down_url:
-              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/tools/chameleon-5.0.0-py3-none-any.whl',
-            sha_code:
-              '20c286a6d392f0e004677727b3939c026757b3697912ba7ddd4ee854e01ad907',
-            docsName: '',
-            docs_url: '',
-          },
-          {
-            name: 'replicate-mysql2openGauss_5.0.0',
-            size: '9.74MB',
-            down_url:
-              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/tools/replicate-mysql2openGauss-5.0.0.tar.gz',
-            sha_code:
-              '491c8aa317a8a2038199b6336d7dc51b22ab02fc27750e3fcf536962a0e3a904',
-            docsName: '',
-            docs_url: '',
-          },
-          {
-            name: 'replicate-openGauss2mysql_5.0.0',
-            size: '8.23MB',
-            down_url:
-              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/tools/replicate-openGauss2mysql-5.0.0.tar.gz',
-            sha_code:
-              'cd430b0e0a2d485cc89d6174839e6407786046c9c314820d837b30c648a4290e',
-            docsName: '',
-            docs_url: '',
-          },
-          {
-            name: 'gs_datacheck_5.0.0',
-            size: '180.73MB',
-            down_url:
-              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/tools/gs_datacheck-5.0.0.tar.gz',
-            sha_code:
-              '4bdfbf92758f5fc4b9bf33942f4dbbb5943038835e5908232dc8e9efd854d983',
-            docsName: '',
-            docs_url: '',
-          },
-          {
-            name: 'Datakit_5.0.0',
-            size: '356.05MB',
-            down_url:
-              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/tools/Datakit-5.0.0.tar.gz',
-            sha_code:
-              '1240a6d866a35c5fa057aa937297d4670da950cc0cb5fab19f271ac482479804',
-            docsName: '',
-            docs_url: '',
-          },
-          {
-            name: 'dbmind_5.0.0',
-            size: '216.92MB',
-            down_url:
-              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/dbmind/x86/dbmind-installer-x86_64-python3.10.sh.tar.gz',
-            sha_code:
-              '3766a6928112a0636deb17659a062a8f55f4dea6fc7636c3547a90b115e1df8a',
-            docsName: '',
-            docs_url: '',
-          },
-          {
-            name: 'PortalControl_5.0.0',
-            size: '701.68MB',
-            down_url:
-              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/tools/portal/PortalControl-5.0.0.tar.gz',
-            sha_code:
-              '5574f496a3e5a116ffe25a690aeb888ae673e3be843cce4dcb0eb0ad386d4d30',
-            docsName: '',
-            docs_url: '',
-          },
-        ],
-      },
       {
         system: 'Linux (aarch64)',
         content: [
@@ -780,6 +705,81 @@ export default [
               'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/dbmind/arm/dbmind-installer-aarch64-python3.10.sh.tar.gz',
             sha_code:
               '313be578b2f73a5a38ed34ce35d54b642d86fbbc1451c9b9927622b8f78e7593',
+            docsName: '',
+            docs_url: '',
+          },
+          {
+            name: 'PortalControl_5.0.0',
+            size: '701.68MB',
+            down_url:
+              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/tools/portal/PortalControl-5.0.0.tar.gz',
+            sha_code:
+              '5574f496a3e5a116ffe25a690aeb888ae673e3be843cce4dcb0eb0ad386d4d30',
+            docsName: '',
+            docs_url: '',
+          },
+        ],
+      },
+      {
+        system: 'Linux (x86_64)',
+        content: [
+          {
+            name: 'Chameleon_5.0.0',
+            size: '6.29MB',
+            down_url:
+              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/tools/chameleon-5.0.0-py3-none-any.whl',
+            sha_code:
+              '20c286a6d392f0e004677727b3939c026757b3697912ba7ddd4ee854e01ad907',
+            docsName: '',
+            docs_url: '',
+          },
+          {
+            name: 'replicate-mysql2openGauss_5.0.0',
+            size: '9.74MB',
+            down_url:
+              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/tools/replicate-mysql2openGauss-5.0.0.tar.gz',
+            sha_code:
+              '491c8aa317a8a2038199b6336d7dc51b22ab02fc27750e3fcf536962a0e3a904',
+            docsName: '',
+            docs_url: '',
+          },
+          {
+            name: 'replicate-openGauss2mysql_5.0.0',
+            size: '8.23MB',
+            down_url:
+              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/tools/replicate-openGauss2mysql-5.0.0.tar.gz',
+            sha_code:
+              'cd430b0e0a2d485cc89d6174839e6407786046c9c314820d837b30c648a4290e',
+            docsName: '',
+            docs_url: '',
+          },
+          {
+            name: 'gs_datacheck_5.0.0',
+            size: '180.73MB',
+            down_url:
+              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/tools/gs_datacheck-5.0.0.tar.gz',
+            sha_code:
+              '4bdfbf92758f5fc4b9bf33942f4dbbb5943038835e5908232dc8e9efd854d983',
+            docsName: '',
+            docs_url: '',
+          },
+          {
+            name: 'Datakit_5.0.0',
+            size: '356.05MB',
+            down_url:
+              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/tools/Datakit-5.0.0.tar.gz',
+            sha_code:
+              '1240a6d866a35c5fa057aa937297d4670da950cc0cb5fab19f271ac482479804',
+            docsName: '',
+            docs_url: '',
+          },
+          {
+            name: 'dbmind_5.0.0',
+            size: '216.92MB',
+            down_url:
+              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/dbmind/x86/dbmind-installer-x86_64-python3.10.sh.tar.gz',
+            sha_code:
+              '3766a6928112a0636deb17659a062a8f55f4dea6fc7636c3547a90b115e1df8a',
             docsName: '',
             docs_url: '',
           },
