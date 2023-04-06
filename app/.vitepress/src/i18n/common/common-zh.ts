@@ -112,6 +112,11 @@ export default {
           PATH: 'https://datastat.opengauss.org/zh/overview',
           IS_OPEN_MINISITE_WINDOW: 1,
         },
+        {
+          NAME: '迁移专区',
+          ID: 'migration',
+          PATH: '/migration/',
+        },
       ],
       CLASS: [
         'contribution',

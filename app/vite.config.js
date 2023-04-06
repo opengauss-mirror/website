@@ -40,6 +40,9 @@ export default defineConfig({
             './.vitepress/src/assets/category/authentication/training/svg-icons'
           )
         ),
+        migration: FileSystemIconLoader(
+          path.resolve(__dirname, './.vitepress/src/assets/category/migration')
+        ),
       },
     }),
   ],

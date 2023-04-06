@@ -8,12 +8,17 @@ import AppContent from '@/components/AppContent.vue';
 import Banner from '@/assets/illustrations/banner-secondary.png';
 import illustration from '@/assets/illustrations/certification.png';
 
-// const searchContent = ref('');
+
 const i18n = useI18n();
 const tableData: any = ref([]);
 onMounted(() => {
   tableData.value = i18n.value.certification.tableData;
 });
+// 搜索功能
+const searchContent = ref('');
+function searchValchange(){
+
+}
 </script>
 <template>
   <BannerLevel2
@@ -22,14 +27,14 @@ onMounted(() => {
     :illustration="illustration"
   />
   <AppContent :mobile-top="16">
-    <!-- <div class="o-search">
+    <div class="o-search">
       <OSearch
         v-model="searchContent"
         clearable
         :placeholder="i18n.certification.search_placeholder"
         @change="searchValchange"
       ></OSearch>
-    </div> -->
+    </div>
     <OTable class="pc-list" :data="tableData" style="width: 100%">
       <OTableColumn
         width="250"

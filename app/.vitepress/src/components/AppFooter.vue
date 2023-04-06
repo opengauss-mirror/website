@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { toRefs } from 'vue';
+import { toRefs,computed } from 'vue';
+import { useRouter, useData } from 'vitepress';
+
 import { useI18n } from '@/i18n';
 import AppContent from '@/components/AppContent.vue';
 
@@ -27,6 +29,8 @@ const props = defineProps({
 });
 
 const i18n = useI18n();
+const { lang, frontmatter } = useData();
+const router = useRouter();
 
 // 友情链接
 const footerLinks = {
@@ -83,10 +87,17 @@ const emits = defineEmits(['cookie-click']);
 function onCookieClick() {
   emits('cookie-click');
 }
+// 迁移专区
+const isMigration = computed(() => {
+  return (
+    frontmatter.value.category === 'migration' ||
+    router.route.path.split('/')[2] === 'migration'
+  );
+});
 </script>
 
 <template>
-  <footer class="footer">
+  <footer class="footer" :class="{ 'is-doc': isMigration  }">
     <div class="footer-content">
       <!-- 隐私政策 -->
       <div v-if="isCookieTip" class="cookie-privacy">
@@ -166,6 +177,12 @@ function onCookieClick() {
 $color: #fff;
 .footer {
   background: var(--o-color-greyblack1);
+  &.is-doc {
+    margin-left: 300px;
+    @media (max-width: 1100px) {
+      margin-left: 0;
+    }
+  }
   :deep(.app-content) {
     padding-bottom: 0;
   }
