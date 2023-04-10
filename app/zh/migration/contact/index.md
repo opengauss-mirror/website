@@ -3,20 +3,20 @@ title: 联系我们
 category: migration
 ---
 
-迁移社区 SIG：迁移问题可在[兼容性 SIG](https://gitee.com/openeuler/oec-application/issues) 提交相关问题。
+迁移社区 SIG：迁移工具相关问题可在[Tools SIG](tools@opengauss.org) 邮件列表提交相关问题。MySQL兼容性相关问题可在[Plugin SIG](plugin@opengauss.org) 邮件列表提交相关问题。
 
-openEuler 公众号：进入迁移专区，点击“加群”，进入技术交流群，可在群内直接提问，我们会有专人为您解答。
+openGauss 公众号：点击“联系我们” - “加入社群”，添加openGauss社群小助手，备注“迁移”进入MySQL迁移技术交流群，可在群内直接提问，我们会有专人为您解答。
 
-openEuler 小助手：备注“迁移”进入技术交流群，可在群内直接提问，我们会有专人为您解答。
+openGauss 小助手：备注“迁移”进入技术交流群，可在群内直接提问，我们会有专人为您解答。
 
 <div class="contact">
     <div class="official">
         <img src="./official.png"/>
-        <p>openEuler公众号</p>
+        <p>openGauss公众号</p>
     </div>
-    <div>
-        <img src="./assistant.png"/>
-        <p>openEuler小助手</p>
+    <div class="official">
+        <img src="./assistant.jpg"/>
+        <p>openGauss小助手</p>
     </div>
 </div>
 
