@@ -164,6 +164,11 @@ export default {
           PATH: '/certification/',
         },
         {
+          NAME: '兼容性列表',
+          ID: 'compatibility',
+          PATH: '/compatibility/',
+        },
+        {
           NAME: '培训认证',
           ID: 'training',
           PATH: '/training/',

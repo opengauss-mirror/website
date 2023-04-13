@@ -93,4 +93,8 @@ export default [
     name: 'search',
     lang: ['zh', 'en'],
   },
+  {
+    name: 'compatibility',
+    lang: ['zh'],
+  },
 ];

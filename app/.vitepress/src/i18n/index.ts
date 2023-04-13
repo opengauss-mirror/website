@@ -13,6 +13,7 @@ import search from './search';
 import brand from './brand';
 
 import home from './home';
+import compatibility from './compatibility';
 import onlineCommunication from './community/onlineCommunication';
 import contribution from './community/contribution';
 import member from './community/member';
@@ -37,6 +38,7 @@ const i18n: { [key: string]: any } = {
     connect: connect.zh,
     search: search.zh,
     brand: brand.zh,
+    compatibility: compatibility.zh,
   },
   en: {
     home: home.en,
@@ -55,6 +57,7 @@ const i18n: { [key: string]: any } = {
     connect: connect.en,
     search: search.en,
     brand: brand.en,
+    compatibility: compatibility.en,
   },
 };
 
