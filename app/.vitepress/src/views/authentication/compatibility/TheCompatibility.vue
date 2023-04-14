@@ -98,22 +98,22 @@ onMounted(() => {
         </template>
       </el-table-column>
       <OTableColumn
-        width="150"
+        width="200"
         :label="i18n.compatibility.type"
         prop="type"
         show-overflow-tooltip
       ></OTableColumn>
       <OTableColumn
-        width="300"
+        width="400"
         :label="i18n.compatibility.company"
         prop="company"
       ></OTableColumn>
       <OTableColumn
-        width="200"
+        width="400"
         :label="i18n.compatibility.database"
         prop="database"
       ></OTableColumn>
-      <OTableColumn
+      <!-- <OTableColumn
         :label="i18n.compatibility.os"
         prop="os"
         width="180"
@@ -122,7 +122,7 @@ onMounted(() => {
         :label="i18n.compatibility.server"
         prop="server"
         width="180"
-      ></OTableColumn>
+      ></OTableColumn> -->
     </OTable>
 
     <ul class="mobile-list">
@@ -144,14 +144,13 @@ onMounted(() => {
             <span>{{ i18n.compatibility.database }}:</span
             ><span>{{ item.database }}</span>
           </li>
-          <li>
+          <!-- <li>
             <span>{{ i18n.compatibility.os }}:</span><span>{{ item.os }}</span>
           </li>
           <li>
             <span>{{ i18n.compatibility.server }}:</span>
             <span>{{ item.server }}</span>
-          </li>
-          <li></li>
+          </li> -->
         </ul>
       </li>
     </ul>
