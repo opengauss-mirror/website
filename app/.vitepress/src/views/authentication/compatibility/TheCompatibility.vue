@@ -18,6 +18,7 @@ interface CompatibilityData {
   database: string;
   os: string;
   server: string;
+  version: string;
 }
 
 const total = ref(0);
@@ -86,11 +87,16 @@ onMounted(() => {
       ></OSearch>
     </div>
     <OTable class="pc-list" :data="randerData" style="width: 100%">
-      <OTableColumn
+      <!-- <OTableColumn
         :label="i18n.compatibility.name"
         prop="name"
         show-overflow-tooltip
-      ></OTableColumn>
+      ></OTableColumn> -->
+      <el-table-column :label="i18n.compatibility.name">
+        <template #default="scope">
+          <span>{{ scope.row.name }} V{{ scope.row.version }}</span>
+        </template>
+      </el-table-column>
       <OTableColumn
         width="150"
         :label="i18n.compatibility.type"
@@ -124,7 +130,7 @@ onMounted(() => {
         <ul>
           <li>
             <span>{{ i18n.compatibility.name }}:</span
-            ><span>{{ item.name }}</span>
+            ><span>{{ item.name }} V{{ item.version }}</span>
           </li>
           <li>
             <span>{{ i18n.compatibility.type }}:</span
