@@ -61,6 +61,7 @@ const { contentData, versionShownIndex, downloadVersionAuthIndex } =
   margin-top: var(--o-spacing-h4);
   background-color: var(--o-color-bg2);
   padding: var(--o-spacing-h2) var(--o-spacing-h1);
+  box-shadow: var(--o-shadow-l2);
   @media (max-width: 1100px) {
     margin-top: var(--o-spacing-h5);
     padding: var(--o-spacing-h4) var(--o-spacing-h8);

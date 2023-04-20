@@ -4,11 +4,6 @@ import liveImg_mo from '@/assets/category/home/banner/liveBanner_mo.png';
 import banner500 from '@/assets/category/home/banner/opengauss5.0.0_pc.jpg';
 import banner500_mo from '@/assets/category/home/banner/opengauss5.0.0_mo.png';
 
-import bannerQues from '@/assets/category/home/banner/banner-ques.jpg';
-import bannerQues_mo from '@/assets/category/home/banner/banner-ques-mo.png';
-import bannerSummit from '@/assets/category/home/banner/banner-summit.jpg';
-import bannerSummit_mo from '@/assets/category/home/banner/banner-summit-mo.jpg';
-
 // targetTap:1 新页签打开
 // type:1(只有图片)、2(文字居左)，3(文字居中),4(仅用于实习banner),5 视频
 export default {
@@ -36,30 +31,6 @@ export default {
       btn: '',
       type: 3,
       className: 'version',
-      video: '',
-    },
-    {
-      pcBanner: bannerSummit,
-      moBanner: bannerSummit_mo,
-      link: '/zh/summit/summit2022/',
-      targetTap: 1,
-      title: '',
-      desc: [''],
-      btn: '',
-      type: 1,
-      className: 'summit',
-      video: '',
-    },
-    {
-      pcBanner: bannerQues,
-      moBanner: bannerQues_mo,
-      link: '/zh/questionnaire/',
-      targetTap: 1,
-      title: '参与社区满意度调研，领惊喜大奖',
-      desc: [''],
-      btn: '了解详情',
-      type: 2,
-      className: 'ques',
       video: '',
     },
   ],

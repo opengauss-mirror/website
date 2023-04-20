@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, computed, Ref, watch, toRefs,onMounted } from 'vue';
+import { ref, computed, Ref, watch, toRefs, onMounted } from 'vue';
 import { useData } from 'vitepress';
 import { useCommon } from '@/stores/common';
 import { showGuard, useStoreData } from '@/shared/login';
@@ -10,6 +10,8 @@ import useWindowResize from '@/components/hooks/useWindowResize';
 import IconDownload from '~icons/app/icon-download.svg';
 import IconCopy from '~icons/app/icon-copy.svg';
 import IconTips from '~icons/app/icon-tips.svg';
+
+import TagFilter from '@/components/TagFilter.vue';
 
 const props = defineProps({
   tableData: {
@@ -73,23 +75,6 @@ async function handleUrlCopy(value: string | undefined) {
 onMounted(() => {
   inputDom.value = document.getElementById('useCopy');
 });
-// 选择系统与架构
-const selectVersion = ref(props.tableData.content[0].system);
-const renderData: any = computed(() => {
-  let tempObj = {};
-  props.tableData.content.forEach((item: any) => {
-    if (item.system === selectVersion.value) {
-      tempObj = item;
-    }
-  });
-  return tempObj;
-});
-watch(
-  () => props.tableData.content[0],
-  () => {
-    selectVersion.value = props.tableData.content[0].system;
-  }
-);
 // 下载权限
 const changeDownloadAuth = () => {
   ElMessageBox.confirm(
@@ -114,122 +99,243 @@ const showIndex = ref(-1);
 function setShowIndex(index: number) {
   showIndex.value = index;
 }
+
+// tag筛选
+const architectureList = computed(() => {
+  const temp: any = [];
+  props.tableData.content.forEach((item: any) => {
+    if (!temp.includes(item.architecture)) {
+      temp.push(item.architecture);
+    }
+  });
+  return temp;
+});
+const osList = computed(() => {
+  const temp: any = [];
+  props.tableData.content.forEach((item: any) => {
+    if (!temp.includes(item.os)) {
+      temp.push(item.os);
+    }
+  });
+  return temp;
+});
+
+const activeArchitecture = ref('');
+const activeOs = ref('');
+const initActiveTag = function () {
+  activeArchitecture.value = props.tableData.content[0].architecture;
+  activeOs.value = props.tableData.content[0].os;
+};
+const onArchitectureTagClick = (i: number, select: string) => {
+  activeArchitecture.value = select;
+};
+const onOSTagClick = (i: number, select: string) => {
+  activeOs.value = select;
+};
+const renderData: any = ref({});
+function setRenderData() {
+  props.tableData.content.forEach((item: any) => {
+    if (
+      item.architecture === activeArchitecture.value &&
+      item.os === activeOs.value
+    ) {
+      renderData.value = item;
+    }
+  });
+}
+onMounted(() => {
+  initActiveTag();
+  watch(
+    () => props.tableData.content,
+    () => {
+      initActiveTag();
+      setTempTag();
+      setRenderData();
+    }
+  ),
+    {
+      immediate: true,
+    };
+});
+// 控制不能组合的tag的禁用
+const tempTag = ref('');
+function setTempTag() {
+  let flag = true;
+  props.tableData.content.forEach((item: any) => {
+    if (item.architecture === activeArchitecture.value) {
+      if (flag) {
+        tempTag.value = item.os;
+        flag = false;
+      }
+    }
+  });
+}
+function isDisable(tag: string) {
+  let flag = false;
+  props.tableData.content.forEach((item: any) => {
+    if (item.architecture === activeArchitecture.value && item.os === tag) {
+      flag = true;
+    }
+  });
+  if (!flag) {
+    if (activeOs.value === tag) {
+      activeOs.value = tempTag.value;
+    }
+  }
+  return !flag;
+}
+watch(
+  activeArchitecture,
+  () => {
+    setTempTag();
+    setRenderData();
+  },
+  {
+    immediate: true,
+  }
+);
+watch(
+  activeOs,
+  () => {
+    setRenderData();
+  },
+  {
+    immediate: true,
+  }
+);
 </script>
 <template>
   <div class="content-item">
     <h3>{{ tableData.name }}</h3>
-    <div class="select-box">
-      <span class="label">{{ i18n.download.SYSTEM }}</span>
-      <ClientOnly>
-        <OSelect v-model="selectVersion" class="select-version">
-          <OOption
-            v-for="itemData in tableData.content"
-            :key="itemData.system"
-            :label="itemData.system"
-            :value="itemData.system"
-          />
-        </OSelect>
-      </ClientOnly>
+    <div class="filter-card">
+      <TagFilter
+        class="architecture-box"
+        :label="i18n.download.ARCHITECTURE"
+        :show="false"
+      >
+        <OTag
+          v-for="(item, index) in architectureList"
+          :key="'tag' + index"
+          checkable
+          :type="activeArchitecture === item ? 'primary' : 'text'"
+          @click="onArchitectureTagClick(index, item)"
+        >
+          {{ item }}
+        </OTag>
+      </TagFilter>
+      <TagFilter class="os-box" :label="i18n.download.OS" :show="false">
+        <OTag
+          v-for="(item, index) in osList"
+          :key="item + index"
+          checkable
+          :type="activeOs === item ? 'primary' : 'text'"
+          :class="{ disable: isDisable(item) }"
+          @click="isDisable(item) ? '' : onOSTagClick(index, item)"
+        >
+          {{ item }}
+        </OTag>
+      </TagFilter>
     </div>
+
     <!-- pc  -->
-    <OTable
-      v-if="screenWidth > 1100"
-      :data="renderData.content"
-      class="download-pc"
-      style="width: 100%"
-    >
-      <el-table-column width="320" :label="tableData.thead[0]" prop="name">
-        <template #default="scope">
-          <div class="name-info">
-            {{ scope.row.name }}
-            <template v-if="scope.row.table === 'server'">
-              <el-tooltip :effect="commonStore.theme" placement="right-start">
-                <template #content>
-                  <p class="server-name">
-                    {{ hoverTips(scope.row.edition) }}
-                  </p>
-                </template>
-                <IconTips class="server-tips" />
-              </el-tooltip>
-            </template>
-          </div>
-        </template>
-      </el-table-column>
-      <el-table-column :label="tableData.thead[1]" prop="size">
-        <template #default="scope">
-          {{ scope.row.size }}
-        </template>
-      </el-table-column>
-      <el-table-column :label="tableData.thead[2]" prop="down_url">
-        <template #default="scope">
-          <div v-if="scope.row.down_url !== ''" class="down-action">
-            <template
-              v-if="
-                versionShownIndex === downloadVersionAuthIndex &&
-                !guardAuthClient.username
-              "
-            >
-              <OButton
-                size="mini"
-                animation
-                type="primary"
-                @click="changeDownloadAuth"
+    <div v-if="screenWidth > 1100" class="download-pc">
+      <OTable :data="renderData.content" style="width: 100%">
+        <el-table-column
+          width="320"
+          :label="i18n.download.TABLE_HEAD[0]"
+          prop="name"
+        >
+          <template #default="scope">
+            <div class="name-info">
+              {{ scope.row.name }}
+              <template v-if="scope.row.table === 'server'">
+                <el-tooltip :effect="commonStore.theme" placement="right-start">
+                  <template #content>
+                    <p class="server-name">
+                      {{ hoverTips(scope.row.edition) }}
+                    </p>
+                  </template>
+                  <IconTips class="server-tips" />
+                </el-tooltip>
+              </template>
+            </div>
+          </template>
+        </el-table-column>
+        <el-table-column :label="i18n.download.TABLE_HEAD[1]" prop="size">
+          <template #default="scope">
+            {{ scope.row.size }}
+          </template>
+        </el-table-column>
+        <el-table-column :label="i18n.download.TABLE_HEAD[2]" prop="down_url">
+          <template #default="scope">
+            <div v-if="scope.row.down_url !== ''" class="down-action">
+              <template
+                v-if="
+                  versionShownIndex === downloadVersionAuthIndex &&
+                  !guardAuthClient.username
+                "
               >
-                {{ i18n.download.BTN_TEXT }}
-                <template #suffixIcon>
-                  <IconDownload />
-                </template>
-              </OButton>
-            </template>
-            <template v-else>
-              <a :href="scope.row.down_url">
-                <OButton size="mini" type="primary" animation>
+                <OButton
+                  size="mini"
+                  type="primary"
+                  animation
+                  @click="changeDownloadAuth"
+                >
                   {{ i18n.download.BTN_TEXT }}
                   <template #suffixIcon>
                     <IconDownload />
                   </template>
                 </OButton>
-              </a>
-            </template>
-          </div>
-        </template>
-      </el-table-column>
-      <el-table-column :label="tableData.thead[3]" prop="sha_code">
-        <template #default="scope">
-          <div v-if="scope.row.x86_url !== ''" class="down-action">
-            <OButton
-              class="down-copy"
-              size="mini"
-              type="text"
-              animation
-              @click="handleUrlCopy(scope.row.sha_code)"
-            >
-              {{ shaText }}
-              <template #suffixIcon>
-                <IconCopy />
               </template>
-            </OButton>
-          </div>
-        </template>
-      </el-table-column>
-      <el-table-column
-        :label="renderData.docs ? tableData.thead[4] : ''"
-        prop="docsName"
-      >
-        <template #default="scope">
-          <a
-            v-if="scope.row.docsName !== ''"
-            :href="
-              scope.row.docs_url.includes('https')
-                ? scope.row.docs_url
-                : theme.docsUrl + '/' + lang + scope.row.docs_url
-            "
-            target="_blank"
-            >{{ scope.row.docsName }}</a
-          >
-        </template>
-      </el-table-column>
-    </OTable>
+              <template v-else>
+                <a :href="scope.row.down_url">
+                  <OButton size="mini" type="primary" animation>
+                    {{ i18n.download.BTN_TEXT }}
+                    <template #suffixIcon>
+                      <IconDownload />
+                    </template>
+                  </OButton>
+                </a>
+              </template>
+            </div>
+          </template>
+        </el-table-column>
+        <el-table-column :label="i18n.download.TABLE_HEAD[3]" prop="sha_code">
+          <template #default="scope">
+            <div v-if="scope.row.x86_url !== ''" class="down-action">
+              <OButton
+                class="down-copy"
+                size="mini"
+                type="text"
+                @click="handleUrlCopy(scope.row.sha_code)"
+              >
+                {{ shaText }}
+                <template #suffixIcon>
+                  <IconCopy />
+                </template>
+              </OButton>
+            </div>
+          </template>
+        </el-table-column>
+        <el-table-column
+          :label="renderData.docs ? i18n.download.TABLE_HEAD[4] : ''"
+          prop="docsName"
+        >
+          <template #default="scope">
+            <a
+              v-if="scope.row.docsName !== ''"
+              :href="
+                scope.row.docs_url.includes('https')
+                  ? scope.row.docs_url
+                  : theme.docsUrl + '/' + lang + scope.row.docs_url
+              "
+              target="_blank"
+              >{{ scope.row.docsName }}</a
+            >
+          </template>
+        </el-table-column>
+      </OTable>
+    </div>
     <!-- mobild -->
     <ul v-else class="download-mobile">
       <li
@@ -238,7 +344,7 @@ function setShowIndex(index: number) {
         class="download-item"
       >
         <p class="item-text">
-          <span>{{ tableData.thead[0] + ':' }}</span
+          <span>{{ i18n.download.TABLE_HEAD[0] + ':' }}</span
           ><span class="tips-box"
             >{{ item.name }}
             <template v-if="item.table === 'server'">
@@ -254,11 +360,11 @@ function setShowIndex(index: number) {
           ></span>
         </p>
         <p class="item-text">
-          <span>{{ tableData.thead[1] + ':' }}</span
+          <span>{{ i18n.download.TABLE_HEAD[1] + ':' }}</span
           ><span class="text-size">{{ item.size }}</span>
         </p>
         <p class="item-text">
-          <span>{{ tableData.thead[2] + ':' }}</span>
+          <span>{{ i18n.download.TABLE_HEAD[2] + ':' }}</span>
           <a
             v-if="
               versionShownIndex === downloadVersionAuthIndex &&
@@ -273,7 +379,7 @@ function setShowIndex(index: number) {
           </a>
         </p>
         <p class="item-text">
-          <span>{{ tableData.thead[3] + ':' }}</span>
+          <span>{{ i18n.download.TABLE_HEAD[3] + ':' }}</span>
           <OButton
             class="down-copy"
             size="mini"
@@ -287,8 +393,8 @@ function setShowIndex(index: number) {
             </template>
           </OButton>
         </p>
-        <p v-if="tableData.thead[4]" class="item-text">
-          <span>{{ tableData.thead[4] + ':' }}</span
+        <p v-if="item.docsName" class="item-text">
+          <span>{{ i18n.download.TABLE_HEAD[4] + ':' }}</span
           ><a
             :href="
               item.docs_url.includes('https')
@@ -323,39 +429,87 @@ function setShowIndex(index: number) {
       line-height: var(--o-line-height-text);
     }
   }
-  .select-box {
-    margin-top: var(--o-spacing-h4);
-    text-align: center;
-    font-size: var(--o-font-size-h8);
-    line-height: var(--o-line-height-h8);
-    :deep(.el-input__wrapper) {
-      min-width: 252px;
-      padding: 0 16px;
-    }
-    :deep(.el-input__prefix) {
-      display: none;
-    }
+  .filter-card {
+    margin-top: var(--o-spacing-h2);
     @media (max-width: 1100px) {
-      font-size: var(--o-font-size-tip);
-      line-height: var(--o-line-height-tip);
+      margin-top: var(--o-spacing-h5);
     }
-    .label {
-      margin-right: var(--o-spacing-h5);
-      color: var(--o-color-text3);
-      display: inline-block;
+    :deep(.tag-filter) {
+      padding: 0 var(--o-spacing-h2);
+      display: flex;
+      justify-content: start;
       @media (max-width: 1100px) {
-        padding-bottom: var(--o-spacing-h8);
+        padding: 0;
       }
-    }
-    .select-version {
-      color: var(--o-color-text1);
-      @media (max-width: 1100px) {
-        display: block;
+      &.architecture-box {
+        @media (max-width: 1100px) {
+          padding-left: 0;
+        }
+      }
+      &.os-box {
+        margin-top: var(--o-spacing-h5);
+        @media (max-width: 1100px) {
+          margin-top: 8px;
+        }
+        .disable {
+          color: var(--o-color-text5);
+          cursor: not-allowed;
+        }
+      }
+      .label {
+        white-space: nowrap;
+        color: var(--o-color-text1);
+        @media (max-width: 1100px) {
+          font-size: var(--o-font-size-tip);
+          min-width: 60px;
+        }
+      }
+      .tag-filter-box {
+        .o-tag {
+          @media (max-width: 1100px) {
+            font-size: var(--o-font-size-tip);
+            line-height: var(--o-line-height-tip);
+            padding: 3px 8px;
+            margin-bottom: 2px;
+          }
+        }
       }
     }
   }
+
   .download-pc {
-    margin-top: var(--o-spacing-h4);
+    margin-top: var(--o-spacing-h3);
+    @media (max-width: 1100px) {
+      margin-top: var(--o-spacing-h5);
+    }
+    :deep(.el-table) {
+      box-shadow: none !important;
+      .el-table__inner-wrapper::before {
+        display: none;
+      }
+      .cell {
+        padding-left: var(--o-spacing-h2);
+        a {
+          word-break: normal;
+          &:hover {
+            color: var(--o-color-brand2);
+          }
+        }
+      }
+      table {
+        position: relative;
+        .el-table__row {
+          &:hover {
+            > td.el-table__cell {
+              background-color: transparent;
+            }
+          }
+        }
+      }
+      .el-table__body-wrapper {
+        border-bottom: 1px solid var(--o-color-border2);
+      }
+    }
     .name-info {
       display: flex;
       align-items: center;
@@ -371,10 +525,8 @@ function setShowIndex(index: number) {
       font-size: var(--o-font-size-text);
       padding-left: 0;
       color: var(--o-color-brand1);
-    }
-    :deep(.cell) {
-      a {
-        word-break: normal;
+      &:hover {
+        color: var(--o-color-brand2);
       }
     }
   }
