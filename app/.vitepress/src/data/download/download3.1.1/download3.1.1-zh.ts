@@ -1,10 +1,11 @@
 export default [
   {
     name: 'openGauss Server',
-    thead: ['软件包类型', '软件包大小', '软件包下载', '完整性校验', '说明文档'],
     content: [
       {
         system: 'openEuler 20.03 LTS (aarch64)',
+        architecture: 'AArch64',
+        os: 'openEuler 20.03 LTS',
         docs: true,
         content: [
           {
@@ -18,7 +19,7 @@ export default [
               '1e356c0c9d32c8e486bb243b58a90763efc16963fff64cdf704b2ce17798d72b',
             docsName: '企业版安装指南',
             docs_url:
-              'https://docs.opengauss.org/zh/docs/3.1.1/docs/installation/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html',
+              '/docs/3.1.1/docs/installation/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html',
           },
           {
             name: 'openGauss_3.1.1 极简版',
@@ -31,7 +32,7 @@ export default [
               '6b3498f17dc9a3d96cb92ae1ea326d10d1a3159a9f15df556d376ac43c2b4792',
             docsName: '极简版安装指南',
             docs_url:
-              'https://docs.opengauss.org/zh/docs/3.1.1/docs/installation/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html',
+              '/docs/3.1.1/docs/installation/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html',
           },
           {
             name: 'openGauss_3.1.1 轻量版',
@@ -44,12 +45,14 @@ export default [
               '365c1a402d8cf3a0334159b64dd839a1915e1de82e6f75ade74438d06744c987',
             docsName: '轻量版安装指南',
             docs_url:
-              'https://docs.opengauss.org/zh/docs/3.1.1-lite/docs/installation/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html',
+              '/docs/3.1.1-lite/docs/installation/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html',
           },
         ],
       },
       {
         system: 'openEuler 20.03 LTS (x86_64)',
+        architecture: 'x86_64',
+        os: 'openEuler 20.03 LTS',
         docs: true,
         content: [
           {
@@ -63,7 +66,7 @@ export default [
               '13d098c646d72349f79cb6a13c2ad4dc1a551ef160bf6ed5edf637692c167479',
             docsName: '企业版安装指南',
             docs_url:
-              'https://docs.opengauss.org/zh/docs/3.1.1/docs/installation/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html',
+              '/docs/3.1.1/docs/installation/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html',
           },
           {
             name: 'openGauss_3.1.1 极简版',
@@ -76,7 +79,7 @@ export default [
               '87b3dde1b5bb95c2ae397bcd391c36301f8fe851f148332e9af846fa6409b21e',
             docsName: '极简版安装指南',
             docs_url:
-              'https://docs.opengauss.org/zh/docs/3.1.1/docs/installation/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html',
+              '/docs/3.1.1/docs/installation/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html',
           },
           {
             name: 'openGauss_3.1.1 轻量版',
@@ -89,12 +92,14 @@ export default [
               'd54d16fe54675f8ac05dadf5ae199306b7848e172c96697a85beee0ab627724f',
             docsName: '轻量版安装指南',
             docs_url:
-              'https://docs.opengauss.org/zh/docs/3.1.1-lite/docs/installation/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html',
+              '/docs/3.1.1-lite/docs/installation/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html',
           },
         ],
       },
       {
         system: 'Centos 7.6 (x86_64)',
+        architecture: 'x86_64',
+        os: 'Centos 7.6',
         docs: true,
         content: [
           {
@@ -108,7 +113,7 @@ export default [
               'f2bd4b88a66d30d95c3c7e2ee1b980996e1f8830804e3ad66ab8a8a8d179e13a',
             docsName: '企业版安装指南',
             docs_url:
-              'https://docs.opengauss.org/zh/docs/3.1.1/docs/installation/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html',
+              '/docs/3.1.1/docs/installation/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html',
           },
           {
             name: 'openGauss_3.1.1 极简版',
@@ -121,7 +126,7 @@ export default [
               'a795338fa51ab2aa7ac0918ee22b396cc4cdd24f4482fe33ba6fd5d5843b9e50',
             docsName: '极简版安装指南',
             docs_url:
-              'https://docs.opengauss.org/zh/docs/3.1.1/docs/installation/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html',
+              '/docs/3.1.1/docs/installation/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html',
           },
           {
             name: 'openGauss_3.1.1 轻量版',
@@ -134,7 +139,7 @@ export default [
               '7885d8d66b1ea8517f590c5fc1c212d15e07c710dbae83e38a67828ce9a166e3',
             docsName: '轻量版安装指南',
             docs_url:
-              'https://docs.opengauss.org/zh/docs/3.1.1-lite/docs/installation/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html',
+              '/docs/3.1.1-lite/docs/installation/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html',
           },
           {
             name: 'openGauss_3.1.1 分布式镜像',
@@ -154,10 +159,11 @@ export default [
   },
   {
     name: 'openGauss Connectors',
-    thead: ['软件包类型', '软件包大小', '软件包下载', '完整性校验', ''],
     content: [
       {
         system: 'openEuler 20.03 LTS (aarch64)',
+        architecture: 'AArch64',
+        os: 'openEuler 20.03 LTS',
         content: [
           {
             name: 'JDBC_3.1.1',
@@ -204,6 +210,8 @@ export default [
       },
       {
         system: 'openEuler 20.03 LTS (x86_64)',
+        architecture: 'x86_64',
+        os: 'openEuler 20.03 LTS',
         content: [
           {
             name: 'JDBC_3.1.1',
@@ -249,6 +257,8 @@ export default [
       },
       {
         system: 'Centos 7.6 (x86_64)',
+        architecture: 'x86_64',
+        os: 'Centos 7.6',
         content: [
           {
             name: 'JDBC_3.1.1',
@@ -297,10 +307,11 @@ export default [
   },
   {
     name: 'openGauss Symbol',
-    thead: ['软件包类型', '软件包大小', '软件包下载', '完整性校验', ''],
     content: [
       {
         system: 'openEuler 20.03 LTS (aarch64)',
+        architecture: 'AArch64',
+        os: 'openEuler 20.03 LTS',
         content: [
           {
             name: 'symbol_3.1.1',
@@ -328,6 +339,8 @@ export default [
       },
       {
         system: 'openEuler 20.03 LTS (x86_64)',
+        architecture: 'x86_64',
+        os: 'openEuler 20.03 LTS',
         content: [
           {
             name: 'symbol_3.1.1',
@@ -353,6 +366,8 @@ export default [
       },
       {
         system: 'Centos 7.6 (x86_64)',
+        architecture: 'x86_64',
+        os: 'Centos 7.6',
         content: [
           {
             name: 'symbol_3.1.1',
@@ -380,10 +395,58 @@ export default [
   },
   {
     name: 'openGauss Tools',
-    thead: ['软件包类型', '软件包大小', '软件包下载', '完整性校验', '说明文档'],
     content: [
       {
         system: 'Linux',
+        architecture: 'AArch64',
+        os: 'Linux',
+        content: [
+          {
+            name: 'Chameleon_3.1.1',
+            size: '6.28MB',
+            down_url:
+              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/tools/chameleon-3.1.1-py3-none-any.whl',
+            sha_code:
+              'a1e190cb09500e4afb928d1305185a1718f09c23dfb50fcd8ed6825e4fce4173',
+            docsName: '',
+            docs_url: '',
+          },
+          {
+            name: 'online-migration_3.1.1',
+            size: '9.32MB',
+            down_url:
+              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/tools/online-migration-mysql2openGauss-3.1.1.tar.gz',
+            sha_code:
+              'a771416935beba130b837c7dfb58768a891abb99c3134dddd13e0d7e7723d9a7',
+            docsName: '',
+            docs_url: '',
+          },
+          {
+            name: 'reverse-migration_3.1.1',
+            size: '11.80MB',
+            down_url:
+              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/tools/openGauss-reverse-migration-mysql-3.1.1.tar.gz',
+            sha_code:
+              'be7246dd95f181746b9799f9d5d8d415149e8ab442834ee0b20cbe62b1b3e06c',
+            docsName: '',
+            docs_url: '',
+          },
+          {
+            name: 'datachecker_3.1.1',
+            size: '179.00MB',
+            down_url:
+              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/tools/openGauss-datachecker-performance-3.1.1.tar.gz',
+            sha_code:
+              '81313af28a71956894b6ab65883fbae4ff4cc55f6a2b381dd1fedff4ef218cf4',
+            docsName: '',
+            docs_url: '',
+          },
+        ],
+      },
+      {
+        system: 'Linux',
+        architecture: 'x86_64',
+        os: 'Linux',
         content: [
           {
             name: 'Chameleon_3.1.1',
@@ -429,6 +492,8 @@ export default [
       },
       {
         system: 'Windows (x86_64)',
+        architecture: 'x86_64',
+        os: 'Windows',
         docs: true,
         content: [
           {

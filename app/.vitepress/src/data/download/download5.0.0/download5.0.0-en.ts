@@ -1,17 +1,12 @@
 export default [
   {
     name: 'openGauss Server',
-    thead: [
-      'Software Package',
-      'Size',
-      'Download',
-      'Integrity Check',
-      'Description Document',
-    ],
     content: [
       {
         system: 'openEuler 22.03 LTS (aarch64)',
         docs: true,
+        architecture: 'AArch64',
+        os: 'openEuler 22.03 LTS',
         content: [
           {
             name: 'openGauss_5.0.0 Enterprise-Edition',
@@ -24,7 +19,7 @@ export default [
               '589062c8de67ec8b7b00fb58d33331eedb19702ea47c2a55e1bcde06676a5a81',
             docsName: 'Enterprise-Edition Installation Guide',
             docs_url:
-              '/docs/5.0.0/docs/InstallationGuide/enterprise-edition-installation-process.html',
+              '/docs/5.0.0/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html',
           },
           {
             name: 'openGauss_5.0.0 Simplified',
@@ -37,7 +32,7 @@ export default [
               'ab583cdd61d77ab8dd8833796a500c515d81d57deeb7b4697352c3266601be70',
             docsName: 'Simplified Installation Guide',
             docs_url:
-              '/docs/5.0.0/docs/InstallationGuide/simplified-installation-process.html',
+              '/docs/5.0.0/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html',
           },
           {
             name: 'openGauss_5.0.0 Lite',
@@ -50,13 +45,15 @@ export default [
               '8af0212b84a926d2f904b35ce9545abe12bfa60882a903231043a6e197c15342',
             docsName: 'Lite Installation Guide',
             docs_url:
-              '/docs/5.0.0-lite/docs/InstallationGuide/installation.html',
+              '/docs/5.0.0-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html',
           },
         ],
       },
       {
         system: 'openEuler 22.03 LTS (x86_64)',
         docs: true,
+        architecture: 'x86_64',
+        os: 'openEuler 22.03 LTS',
         content: [
           {
             name: 'openGauss_5.0.0 Enterprise-Edition',
@@ -69,7 +66,7 @@ export default [
               'eba32db3b0fb70020b7d7da754d898994fbf5f3e8f5f94c35e2fb29898cdc1f4',
             docsName: 'Enterprise-Edition Installation Guide',
             docs_url:
-              '/docs/5.0.0/docs/InstallationGuide/enterprise-edition-installation-process.html',
+              '/docs/5.0.0/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html',
           },
           {
             name: 'openGauss_5.0.0 Simplified',
@@ -82,7 +79,7 @@ export default [
               'e5cb78d48147fdbe2b5743caa992fa0b69dda1c104051fcd720f347d2afff4e0',
             docsName: 'Simplified Installation Guide',
             docs_url:
-              '/docs/5.0.0/docs/InstallationGuide/simplified-installation-process.html',
+              '/docs/5.0.0/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html',
           },
           {
             name: 'openGauss_5.0.0 Lite',
@@ -95,13 +92,15 @@ export default [
               '41bb5b4c7e0ff5cbac9db432bd87141bb57f6cdf858790b6bb4745985b8ec28e',
             docsName: 'Lite Installation Guide',
             docs_url:
-              '/docs/5.0.0-lite/docs/InstallationGuide/installation.html',
+              '/docs/5.0.0-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html',
           },
         ],
       },
       {
         system: 'openEuler 20.03 LTS (aarch64)',
         docs: true,
+        architecture: 'AArch64',
+        os: 'openEuler 20.03 LTS',
         content: [
           {
             name: 'openGauss_5.0.0 Enterprise-Edition',
@@ -114,7 +113,7 @@ export default [
               '6082b990953b6cfbb2abddb207f803f9fd35db3744bdb45c292418f8fba4979d',
             docsName: 'Enterprise-Edition Installation Guide',
             docs_url:
-              '/docs/5.0.0/docs/InstallationGuide/enterprise-edition-installation-process.html',
+              '/docs/5.0.0/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html',
           },
           {
             name: 'openGauss_5.0.0 Simplified',
@@ -127,7 +126,7 @@ export default [
               'b69e48577dda3f8edd97fd48f1562042ecee4c6b6c78388cdb27dcb0ce1b4c94',
             docsName: 'Simplified Installation Guide',
             docs_url:
-              '/docs/5.0.0/docs/InstallationGuide/simplified-installation-process.html',
+              '/docs/5.0.0/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html',
           },
           {
             name: 'openGauss_5.0.0 Lite',
@@ -140,10 +139,10 @@ export default [
               '77c8c9f4de7c5bf438897c70d14a6c08f37979e6b068946ac41dd2ebdb67e0f3',
             docsName: 'Lite Installation Guide',
             docs_url:
-              '/docs/5.0.0-lite/docs/InstallationGuide/installation.html',
+              '/docs/5.0.0-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html',
           },
           {
-            name: 'openGauss_5.0.0 Distributed',
+            name: 'openGauss_5.0.0 分布式镜像',
             table: 'server',
             size: '3.41GB',
             edition: 'distributed',
@@ -158,6 +157,8 @@ export default [
       },
       {
         system: 'openEuler 20.03 LTS (x86_64)',
+        architecture: 'x86_64',
+        os: 'openEuler 20.03 LTS',
         docs: true,
         content: [
           {
@@ -171,7 +172,7 @@ export default [
               'f2d3df77abd8f5a0658d3002cfe53e13c7375203ce3a8f4cfeb727be07e32b1c',
             docsName: 'Enterprise-Edition Installation Guide',
             docs_url:
-              '/docs/5.0.0/docs/InstallationGuide/enterprise-edition-installation-process.html',
+              '/docs/5.0.0/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html',
           },
           {
             name: 'openGauss_5.0.0 Simplified',
@@ -184,7 +185,7 @@ export default [
               '589cc73ab8442c3de2fc8f133602ef7a47c98f848cc3c8a6fab40a67110de749',
             docsName: 'Simplified Installation Guide',
             docs_url:
-              '/docs/5.0.0/docs/InstallationGuide/simplified-installation-process.html',
+              '/docs/5.0.0/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html',
           },
           {
             name: 'openGauss_5.0.0 Lite',
@@ -197,12 +198,14 @@ export default [
               '91fe9adaebea73bcb92da7cf9d061cd5c6464f416ae77933c9bd4f748f3cd4b2',
             docsName: 'Lite Installation Guide',
             docs_url:
-              '/docs/5.0.0-lite/docs/InstallationGuide/installation.html',
+              '/docs/5.0.0-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html',
           },
         ],
       },
       {
         system: 'Centos 7.6 (x86_64)',
+        architecture: 'x86_64',
+        os: 'Centos 7.6',
         docs: true,
         content: [
           {
@@ -216,7 +219,7 @@ export default [
               'aa9fc724c5030f4cc79dad201675183029c8f36a07667028e681169a2f6482f5',
             docsName: 'Enterprise-Edition Installation Guide',
             docs_url:
-              '/docs/5.0.0/docs/InstallationGuide/enterprise-edition-installation-process.html',
+              '/docs/5.0.0/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html',
           },
           {
             name: 'openGauss_5.0.0 Simplified',
@@ -229,7 +232,7 @@ export default [
               'a9d3c809a13a0aee844d41bd89839a45b021004d2404ac04187657cf21b8dd83',
             docsName: 'Simplified Installation Guide',
             docs_url:
-              '/docs/5.0.0/docs/InstallationGuide/simplified-installation-process.html',
+              '/docs/5.0.0/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html',
           },
           {
             name: 'openGauss_5.0.0 Lite',
@@ -242,10 +245,10 @@ export default [
               'bd3ed37700cad798d8af72864b782647a2a739492360b1efdb136eef4a252016',
             docsName: 'Lite Installation Guide',
             docs_url:
-              '/docs/5.0.0-lite/docs/InstallationGuide/installation.html',
+              '/docs/5.0.0-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html',
           },
           {
-            name: 'openGauss_5.0.0 Distributed',
+            name: 'openGauss_5.0.0 分布式镜像',
             table: 'server',
             size: '3.29GB',
             edition: 'distributed',
@@ -262,10 +265,11 @@ export default [
   },
   {
     name: 'openGauss Connectors',
-    thead: ['Software Package', 'Size', 'Download', 'Integrity Check', ''],
     content: [
       {
         system: 'openEuler 22.03 LTS (aarch64)',
+        architecture: 'AArch64',
+        os: 'openEuler 22.03 LTS',
         content: [
           {
             name: 'JDBC_5.0.0',
@@ -311,6 +315,8 @@ export default [
       },
       {
         system: 'openEuler 22.03 LTS (x86_64)',
+        architecture: 'x86_64',
+        os: 'openEuler 22.03 LTS',
         content: [
           {
             name: 'JDBC_5.0.0',
@@ -356,6 +362,8 @@ export default [
       },
       {
         system: 'openEuler 20.03 LTS (aarch64)',
+        architecture: 'AArch64',
+        os: 'openEuler 20.03 LTS',
         content: [
           {
             name: 'JDBC_5.0.0',
@@ -401,6 +409,8 @@ export default [
       },
       {
         system: 'openEuler 20.03 LTS (x86_64)',
+        architecture: 'x86_64',
+        os: 'openEuler 20.03 LTS',
         content: [
           {
             name: 'JDBC_5.0.0',
@@ -446,6 +456,8 @@ export default [
       },
       {
         system: 'Centos 7.6 (x86_64)',
+        architecture: 'x86_64',
+        os: 'Centos 7.6',
         content: [
           {
             name: 'JDBC_5.0.0',
@@ -491,6 +503,8 @@ export default [
       },
       {
         system: 'Windows',
+        architecture: 'x86_64',
+        os: 'Windows',
         content: [
           {
             name: 'JDBC_5.0.0',
@@ -518,10 +532,11 @@ export default [
   },
   {
     name: 'openGauss Symbol',
-    thead: ['Software Package', 'Size', 'Download', 'Integrity Check', ''],
     content: [
       {
         system: 'openEuler 22.03 LTS (aarch64)',
+        architecture: 'AArch64',
+        os: 'openEuler 22.03 LTS',
         content: [
           {
             name: 'symbol_5.0.0',
@@ -547,6 +562,8 @@ export default [
       },
       {
         system: 'openEuler 22.03 LTS (x86_64)',
+        architecture: 'x86_64',
+        os: 'openEuler 22.03 LTS',
         content: [
           {
             name: 'symbol_5.0.0',
@@ -572,6 +589,8 @@ export default [
       },
       {
         system: 'openEuler 20.03 LTS (aarch64)',
+        architecture: 'AArch64',
+        os: 'openEuler 20.03 LTS',
         content: [
           {
             name: 'symbol_5.0.0',
@@ -597,6 +616,8 @@ export default [
       },
       {
         system: 'openEuler 20.03 LTS (x86_64)',
+        architecture: 'x86_64',
+        os: 'openEuler 20.03 LTS',
         content: [
           {
             name: 'symbol_5.0.0',
@@ -622,6 +643,8 @@ export default [
       },
       {
         system: 'Centos 7.6 (x86_64)',
+        architecture: 'x86_64',
+        os: 'Centos 7.6',
         content: [
           {
             name: 'symbol_5.0.0',
@@ -649,16 +672,11 @@ export default [
   },
   {
     name: 'openGauss Tools',
-    thead: [
-      'Software Package',
-      'Size',
-      'Download',
-      'Integrity Check',
-      'Description Document',
-    ],
     content: [
       {
         system: 'Linux (aarch64)',
+        architecture: 'AArch64',
+        os: 'Linux',
         content: [
           {
             name: 'Chameleon_5.0.0',
@@ -734,6 +752,8 @@ export default [
       },
       {
         system: 'Linux (x86_64)',
+        architecture: 'x86_64',
+        os: 'Linux',
         content: [
           {
             name: 'Chameleon_5.0.0',
@@ -809,6 +829,8 @@ export default [
       },
       {
         system: 'Windows',
+        architecture: 'x86_64',
+        os: 'Windows',
         docs: true,
         content: [
           {

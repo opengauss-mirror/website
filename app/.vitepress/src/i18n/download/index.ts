@@ -40,6 +40,15 @@ export default {
     CLICK_VIEW: '点此查看',
     HISTORY_LINK: 'download/archive/',
     SYSTEM: '选择操作系统与架构',
+    ARCHITECTURE: '架构',
+    OS: '操作系统',
+    TABLE_HEAD: [
+      '软件包类型',
+      '软件包大小',
+      '软件包下载',
+      '完整性校验',
+      '说明文档',
+    ],
   },
   en: {
     PAGE_TITLE: 'Software Packages',
@@ -78,5 +87,14 @@ export default {
     CLICK_VIEW: 'click here.',
     HISTORY_LINK: 'download/archive/',
     SYSTEM: 'OS and Architecture',
+    ARCHITECTURE: 'Architecture',
+    OS: 'OS',
+    TABLE_HEAD: [
+      'Software Package',
+      'Size',
+      'Download',
+      'Integrity Check',
+      'Description Document',
+    ],
   },
 };
