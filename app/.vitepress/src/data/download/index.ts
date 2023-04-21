@@ -23,7 +23,8 @@ const downloadData = [
       {
         name: '发行说明',
         nameEn: 'Release Notes',
-        path: '/docs/5.0.0/docs/Releasenotes/Releasenotes.html',
+        path: '/docs/5.0.0/docs/ReleaseNotes/Releasenotes.html',
+        pathEn: '/docs/5.0.0/docs/Releasenotes/Releasenotes.html',
       },
     ],
   },
@@ -37,6 +38,7 @@ const downloadData = [
         name: '发行说明',
         nameEn: 'Release Notes',
         path: '/docs/3.1.1/docs/Releasenotes/Releasenotes.html',
+        pathEn: '/docs/3.1.1/docs/Releasenotes/Releasenotes.html',
       },
     ],
   },
