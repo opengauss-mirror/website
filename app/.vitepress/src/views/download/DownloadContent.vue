@@ -35,7 +35,7 @@ const { contentData, versionShownIndex, downloadVersionAuthIndex } =
     <h4 class="subtitle">{{ (contentData[0] as any).plannedEOL }}</h4>
     <div class="other-link">
       <a
-        :href="theme.docsUrl + '/' + lang + (contentData[0] as any).docs_list[0].path"
+        :href="theme.docsUrl + '/' + lang + (contentData[0] as any).docs_list[0][ lang === 'zh'?'path':'pathEn']"
         target="_blank"
         >{{
           lang === 'zh'
