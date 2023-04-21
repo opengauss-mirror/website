@@ -77,14 +77,14 @@ export default {
     ],
     MORE_DETAIL: 'For more details,',
     VIEW_SPECIFICATION:
-      'click here to view the lifecycle management specifications of openGauss community releases.',
+      'click here to view the lifecycle management specifications of openGauss community releases',
     SPECIFICATION_LINK:
       'https://gitee.com/opengauss/release-management/blob/master/openGauss%E7%89%88%E6%9C%AC%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%AE%A1%E7%90%86.md',
     PECULIARITY_DETAIL:
       'openGauss 5.0.0 (LTS) is now officially available. For details, see ',
     WELCOME: '',
     MORE_HISTORY: 'For more earlier versions ',
-    CLICK_VIEW: 'click here.',
+    CLICK_VIEW: 'click here',
     HISTORY_LINK: 'download/archive/',
     SYSTEM: 'OS and Architecture',
     ARCHITECTURE: 'Architecture',

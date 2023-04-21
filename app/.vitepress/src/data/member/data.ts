@@ -23,7 +23,7 @@ import gengqiang from '@/assets/category/member/avatar/gengqiang.png';
 import luna from '@/assets/category/member/avatar/luna.png';
 import lupanfeng from '@/assets/category/member/avatar/lupanfeng.png';
 import sunpeiyuan from '@/assets/category/member/avatar/sunpeiyuan.png';
-import wangjuanyj from '@/assets/category/member/avatar/wangjuanyj.png';
+// import wangjuanyj from '@/assets/category/member/avatar/wangjuanyj.png';
 import wangxiaotao from '@/assets/category/member/avatar/wangxiaotao.png';
 import yanht from '@/assets/category/member/avatar/yanht.png';
 import zhangquan from '@/assets/category/member/avatar/zhangquan.png';
@@ -35,7 +35,7 @@ import mengzhen from '@/assets/category/member/avatar/mengzhen.png';
 import wangdan from '@/assets/category/member/avatar/wangdan.png';
 import wangxiao from '@/assets/category/member/avatar/wangxiao.png';
 import lindazeng from '@/assets/category/member/avatar/lindazeng.png';
-import zhanwei from '@/assets/category/member/avatar/zhanwei.png';
+// import zhanwei from '@/assets/category/member/avatar/zhanwei.png';
 import zhangwz95 from '@/assets/category/member/avatar/zhangwz95.png';
 import zhangyong05 from '@/assets/category/member/avatar/zhangyong05.png';
 import caiyajie from '@/assets/category/member/avatar/caiyajie.png';
@@ -430,7 +430,6 @@ import xiongqun from '@/assets/category/member/avatar/xiongqun.png';
 import zhangyuwen from '@/assets/category/member/avatar/zhangyuwen.png';
 import luoruping from '@/assets/category/member/avatar/luoruping.png';
 import lijun2 from '@/assets/category/member/avatar/lijun2.png';
-
 
 export default {
   zh: {

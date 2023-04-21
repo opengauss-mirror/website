@@ -28,12 +28,18 @@ const { guardAuthClient } = useStoreData();
 const isZh = computed(() => (lang.value === 'zh' ? true : false));
 
 const shaText = 'SHA256';
-const versionIndex = ref(DownloadConfig.length - 3);
-const selectVersion = ref(versionIndex);
-
+const selectVersion = ref(DownloadConfig[2].id);
+function initSelectVersion() {
+  DownloadConfig.forEach((item: any) => {
+    if (item.initPrevious) {
+      selectVersion.value = item.id;
+    }
+  });
+}
+initSelectVersion();
 // 获取版版本数据
 const getData: any = computed(() => {
-  return DownloadConfig.filter((el) => el.id === versionIndex.value);
+  return DownloadConfig.filter((el) => el.id === selectVersion.value);
 });
 // 下载认证版本
 // const downloadVersionAuthIndex = '3.1.1';
@@ -94,8 +100,6 @@ const activeName = computed(() => {
     : getData.value[0].data[0].en[0].name;
 });
 const activeMobile = ref(activeName.value);
-
-
 
 // 下载权限
 const changeDownloadAuth = () => {
@@ -559,10 +563,10 @@ watch(
     display: flex;
     align-items: center;
     gap: var(--o-spacing-h5);
-    :deep(.el-input__prefix){
+    :deep(.el-input__prefix) {
       display: none;
     }
-    :deep(.el-input__wrapper){
+    :deep(.el-input__wrapper) {
       padding: 0 16px;
     }
     @media screen and (max-width: 1100px) {

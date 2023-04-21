@@ -15,8 +15,8 @@ export interface NewsData {
 }
 
 export interface ParamsType {
-    page: number;
-    pageSize: number;
-    lang: string;
-    category: string;
-  }
+  page: number;
+  pageSize: number;
+  lang: string;
+  category: string;
+}
