@@ -51,7 +51,8 @@ const handleDownloadUrl = (url: string) => {
             {{ downloadData.MORE_DETAIL
             }}<a :href="downloadData.SPECIFICATION_LINK" target="_blank">{{
               downloadData.VIEW_SPECIFICATION
-            }}</a>
+            }}</a
+            ><span>{{ lang === 'zh' ? '。' : '.' }}</span>
           </p>
         </div>
         <div class="description-item">
@@ -71,7 +72,8 @@ const handleDownloadUrl = (url: string) => {
             {{ downloadData.MORE_HISTORY
             }}<a :href="'/' + lang + '/' + downloadData.HISTORY_LINK">{{
               downloadData.CLICK_VIEW
-            }}</a>
+            }}</a
+            ><span>{{ lang === 'zh' ? '。' : '.' }}</span>
           </p>
         </div>
       </div>
@@ -126,7 +128,6 @@ const handleDownloadUrl = (url: string) => {
 </template>
 
 <style lang="scss" scoped>
-
 .download-wrap {
   .description-wrap {
     .description-item {
@@ -140,9 +141,9 @@ const handleDownloadUrl = (url: string) => {
         }
       }
       & + .description-item {
-        margin-top: var(--o-spacing-h2);
+        margin-top: var(--o-spacing-h4);
         @media (max-width: 1100px) {
-          margin-top: var(--o-spacing-h4);
+          margin-top: var(--o-spacing-h5);
         }
       }
     }

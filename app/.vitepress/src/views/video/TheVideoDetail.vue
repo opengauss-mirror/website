@@ -63,7 +63,7 @@ onMounted(() => {
 });
 watch(
   () => paramIndex.value,
-  (newValue) => {
+  () => {
     page();
   }
 );
