@@ -11,7 +11,6 @@ const { lang } = useData();
 
     <div class="advantage-middle">
       <div v-for="item in advantageInfo.cards" :key="item.text" class="card">
-        <img :src="item.url" alt="" />
         <p>{{ item.text }}</p>
       </div>
     </div>

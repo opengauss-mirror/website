@@ -35,7 +35,7 @@ const { contentData, versionShownIndex, downloadVersionAuthIndex } =
     <h4 class="subtitle">{{ (contentData[0] as any).plannedEOL }}</h4>
     <div class="other-link">
       <a
-        :href="theme.docsUrl + '/' + lang + (contentData[0] as any).docs_list[0].path"
+        :href="theme.docsUrl + '/' + lang + (contentData[0] as any).docs_list[0][ lang === 'zh'?'path':'pathEn']"
         target="_blank"
         >{{
           lang === 'zh'
@@ -61,6 +61,7 @@ const { contentData, versionShownIndex, downloadVersionAuthIndex } =
   margin-top: var(--o-spacing-h4);
   background-color: var(--o-color-bg2);
   padding: var(--o-spacing-h2) var(--o-spacing-h1);
+  box-shadow: var(--o-shadow-l2);
   @media (max-width: 1100px) {
     margin-top: var(--o-spacing-h5);
     padding: var(--o-spacing-h4) var(--o-spacing-h8);

@@ -36,7 +36,7 @@ const data = ref({
   page: 1,
   pageSize: 10000,
   lang: lang.value,
-  type: 'userPractice',
+  type: 'showcase',
 });
 const initData = () => {
   const result: any = {};

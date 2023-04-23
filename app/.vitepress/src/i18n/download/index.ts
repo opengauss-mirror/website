@@ -36,10 +36,20 @@ export default {
     PECULIARITY_DETAIL:
       'openGauss现已正式发行 5.0.0 (LTS) 版本，详细版本特性请参看',
     WELCOME: '，欢迎下载体验！',
+    RELEASE_LINK:'/zh/docs/5.0.0/docs/ReleaseNotes/Releasenotes.html',
     MORE_HISTORY: '更多历史版本下载请',
     CLICK_VIEW: '点此查看',
     HISTORY_LINK: 'download/archive/',
     SYSTEM: '选择操作系统与架构',
+    ARCHITECTURE: '架构',
+    OS: '操作系统',
+    TABLE_HEAD: [
+      '软件包类型',
+      '软件包大小',
+      '软件包下载',
+      '完整性校验',
+      '说明文档',
+    ],
   },
   en: {
     PAGE_TITLE: 'Software Packages',
@@ -68,15 +78,25 @@ export default {
     ],
     MORE_DETAIL: 'For more details,',
     VIEW_SPECIFICATION:
-      'click here to view the lifecycle management specifications of openGauss community releases.',
+      'click here to view the lifecycle management specifications of openGauss community releases',
     SPECIFICATION_LINK:
       'https://gitee.com/opengauss/release-management/blob/master/openGauss%E7%89%88%E6%9C%AC%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%AE%A1%E7%90%86.md',
     PECULIARITY_DETAIL:
       'openGauss 5.0.0 (LTS) is now officially available. For details, see ',
     WELCOME: '',
+    RELEASE_LINK:'/en/docs/5.0.0/docs/Releasenotes/Releasenotes.html',
     MORE_HISTORY: 'For more earlier versions ',
-    CLICK_VIEW: 'click here.',
+    CLICK_VIEW: 'click here',
     HISTORY_LINK: 'download/archive/',
     SYSTEM: 'OS and Architecture',
+    ARCHITECTURE: 'Architecture',
+    OS: 'OS',
+    TABLE_HEAD: [
+      'Software Package',
+      'Size',
+      'Download',
+      'Integrity Check',
+      'Description Document',
+    ],
   },
 };

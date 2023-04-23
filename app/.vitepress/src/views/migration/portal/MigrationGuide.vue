@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import { useData } from 'vitepress';
+// import { useData } from 'vitepress';
 import portalInfo from '@/data/migration/migration-portal';
 
-import IconArrowRight from '~icons/app/icon-arrow-right.svg';
+// import IconArrowRight from '~icons/app/icon-arrow-right.svg';
 
-const { lang } = useData();
-const handleGo = (path: string) => {
-  window.open('/' + lang.value + path, '_blank');
-};
+// const { lang } = useData();
+// const handleGo = (path: string) => {
+//   window.open('/' + lang.value + path, '_blank');
+// };
 </script>
 
 <template>

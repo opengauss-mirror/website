@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import faqInfo from '@/data/migration/migration-faq';
-import IconBook from '~icons/app/icon-book.svg';
+// import IconBook from '~icons/app/icon-book.svg';
 </script>
 
 <template>
@@ -8,7 +8,7 @@ import IconBook from '~icons/app/icon-book.svg';
     <div class="instruction">
       <div class="content">
         <div class="title">
-          <o-icon><icon-book></icon-book></o-icon>
+          <!-- <o-icon><icon-book></icon-book></o-icon> -->
           <p>{{ faqInfo.instruction.title }}</p>
         </div>
         <div class="description">

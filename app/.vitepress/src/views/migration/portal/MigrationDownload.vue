@@ -1,26 +1,26 @@
 <script setup lang="ts">
-import { useCommon } from '@/stores/common';
+// import { useCommon } from '@/stores/common';
 
-import { computed } from 'vue';
+// import { computed } from 'vue';
 
 import portalInfo from '@/data/migration/migration-portal';
 
-import IconArrowRight from '~icons/app/icon-arrow-right.svg';
+// import IconArrowRight from '~icons/app/icon-arrow-right.svg';
 
-const commonStore = useCommon();
+// const commonStore = useCommon();
 
-const isDark = computed(() => (commonStore.theme === 'dark' ? true : false));
+// const isDark = computed(() => (commonStore.theme === 'dark' ? true : false));
 
-interface LinkItem {
-  name: string;
-  link: string;
-}
+// interface LinkItem {
+//   name: string;
+//   link: string;
+// }
 
-function handleClick(item: LinkItem) {
-  if (item.link) {
-    window.open(item.link);
-  }
-}
+// function handleClick(item: LinkItem) {
+//   if (item.link) {
+//     window.open(item.link);
+//   }
+// }
 </script>
 
 <template>

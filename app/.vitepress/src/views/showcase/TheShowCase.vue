@@ -62,7 +62,7 @@ const data = ref({
   page: 1,
   pageSize: 10000,
   lang: lang.value,
-  type: 'userPractice',
+  type: 'showcase',
 });
 function setCurrentCaseListAll() {
   try {
@@ -184,7 +184,7 @@ const searchData = computed(() => {
     page: 1,
     pageSize: 10000,
     lang: lang.value,
-    type: 'userPractice',
+    type: 'showcase',
   };
 });
 function searchCase() {

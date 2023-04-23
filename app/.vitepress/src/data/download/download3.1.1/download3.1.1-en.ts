@@ -1,16 +1,11 @@
 export default [
   {
     name: 'openGauss Server',
-    thead: [
-      'Software Package',
-      'Size',
-      'Download',
-      'Integrity Check',
-      'Description Document',
-    ],
     content: [
       {
         system: 'openEuler 20.03 LTS (aarch64)',
+        architecture: 'AArch64',
+        os: 'openEuler 22.03 LTS',
         docs: true,
         content: [
           {
@@ -56,6 +51,8 @@ export default [
       },
       {
         system: 'openEuler 20.03 LTS (x86_64)',
+        architecture: 'x86_64',
+        os: 'openEuler 22.03 LTS',
         docs: true,
         content: [
           {
@@ -101,6 +98,8 @@ export default [
       },
       {
         system: 'Centos 7.6 (x86_64)',
+        architecture: 'x86_64',
+        os: 'Centos 7.6',
         docs: true,
         content: [
           {
@@ -164,10 +163,11 @@ export default [
   },
   {
     name: 'openGauss Connectors',
-    thead: ['Software Package', 'Size', 'Download', 'Integrity Check', ''],
     content: [
       {
         system: 'openEuler 20.03 LTS (aarch64)',
+        architecture: 'AArch64',
+        os: 'openEuler 20.03 LTS',
         content: [
           {
             name: 'JDBC_3.1.1',
@@ -214,6 +214,8 @@ export default [
       },
       {
         system: 'openEuler 20.03 LTS (x86_64)',
+        architecture: 'x86_64',
+        os: 'openEuler 20.03 LTS',
         content: [
           {
             name: 'JDBC_3.1.1',
@@ -259,6 +261,8 @@ export default [
       },
       {
         system: 'Centos 7.6 (x86_64)',
+        architecture: 'x86_64',
+        os: 'Centos 7.6',
         content: [
           {
             name: 'JDBC_3.1.1',
@@ -307,10 +311,11 @@ export default [
   },
   {
     name: 'openGauss Symbol',
-    thead: ['Software Package', 'Size', 'Download', 'Integrity Check', ''],
     content: [
       {
         system: 'openEuler 20.03 LTS (aarch64)',
+        architecture: 'AArch64',
+        os: 'openEuler 20.03 LTS',
         content: [
           {
             name: 'symbol_3.1.1',
@@ -338,6 +343,8 @@ export default [
       },
       {
         system: 'openEuler 20.03 LTS (x86_64)',
+        architecture: 'x86_64',
+        os: 'openEuler 20.03 LTS',
         content: [
           {
             name: 'symbol_3.1.1',
@@ -363,6 +370,8 @@ export default [
       },
       {
         system: 'Centos 7.6 (x86_64)',
+        architecture: 'x86_64',
+        os: 'Centos 7.6',
         content: [
           {
             name: 'symbol_3.1.1',
@@ -390,16 +399,58 @@ export default [
   },
   {
     name: 'openGauss Tools',
-    thead: [
-      'Software Package',
-      'Size',
-      'Download',
-      'Integrity Check',
-      'Description Document',
-    ],
     content: [
       {
         system: 'Linux',
+        architecture: 'AArch64',
+        os: 'Linux',
+        content: [
+          {
+            name: 'Chameleon_3.1.1',
+            size: '6.28MB',
+            down_url:
+              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/tools/chameleon-3.1.1-py3-none-any.whl',
+            sha_code:
+              'a1e190cb09500e4afb928d1305185a1718f09c23dfb50fcd8ed6825e4fce4173',
+            docsName: '',
+            docs_url: '',
+          },
+          {
+            name: 'online-migration_3.1.1',
+            size: '9.32MB',
+            down_url:
+              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/tools/online-migration-mysql2openGauss-3.1.1.tar.gz',
+            sha_code:
+              'a771416935beba130b837c7dfb58768a891abb99c3134dddd13e0d7e7723d9a7',
+            docsName: '',
+            docs_url: '',
+          },
+          {
+            name: 'reverse-migration_3.1.1',
+            size: '11.80MB',
+            down_url:
+              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/tools/openGauss-reverse-migration-mysql-3.1.1.tar.gz',
+            sha_code:
+              'be7246dd95f181746b9799f9d5d8d415149e8ab442834ee0b20cbe62b1b3e06c',
+            docsName: '',
+            docs_url: '',
+          },
+          {
+            name: 'datachecker_3.1.1',
+            size: '179.00MB',
+            down_url:
+              'https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.1.1/tools/openGauss-datachecker-performance-3.1.1.tar.gz',
+            sha_code:
+              '81313af28a71956894b6ab65883fbae4ff4cc55f6a2b381dd1fedff4ef218cf4',
+            docsName: '',
+            docs_url: '',
+          },
+        ],
+      },
+      {
+        system: 'Linux',
+        architecture: 'x86_64',
+        os: 'Linux',
         content: [
           {
             name: 'Chameleon_3.1.1',
@@ -445,6 +496,8 @@ export default [
       },
       {
         system: 'Windows (x86_64)',
+        architecture: 'x86_64',
+        os: 'Windows',
         docs: true,
         content: [
           {
