@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, onMounted, computed, reactive } from 'vue';
+import { ref, onMounted, reactive, computed } from 'vue';
 import { useI18n } from '@/i18n';
 
 import BannerLevel2 from '@/components/BannerLevel2.vue';
@@ -7,18 +7,19 @@ import AppContent from '@/components/AppContent.vue';
 import AppPaginationMo from '@/components/AppPaginationMo.vue';
 
 import Banner from '@/assets/illustrations/banner-secondary.png';
-import illustration from '@/assets/illustrations/certification.png';
+import illustration from '@/assets/illustrations/compatibility.png';
 
-interface CertificationData {
-  pro: string;
+import { getCompatibilityData } from '@/api/api-compatibility';
+
+interface CompatibilityData {
   name: string;
+  type: string;
+  company: string;
+  database: string;
+  os: string;
+  server: string;
   version: string;
-  award: string;
-  expiration: string;
-  certificate: string;
 }
-
-const searchContent = ref('');
 
 const total = ref(0);
 const pageSize = ref(10);
@@ -26,20 +27,27 @@ const currentPage = ref(1);
 const totalPage = ref(0);
 const layout = ref('sizes, prev, pager, next, slot, jumper');
 
-const i18n = useI18n();
-const tableData = ref<CertificationData[]>([]);
+const queryData = reactive({
+  page: 1,
+  per_page: 10,
+  name: '',
+  community: 'opengauss',
+});
 
-// 前端分页
+const i18n = useI18n();
+const tableData = ref<CompatibilityData[]>([]);
+
 const randerData = computed(() => {
   return tableData.value.slice(
     pageSize.value * (currentPage.value - 1),
     pageSize.value * currentPage.value
   );
 });
-const queryData = reactive({
-  page: 1,
-  per_page: 10,
-});
+
+const searchValchange = () => {
+  handleGetCompatibilityData();
+};
+
 // 分页size修改
 const handleSizeChange = (val: number) => {
   queryData.per_page = val;
@@ -51,123 +59,98 @@ const handleCurrentChange = (val: number) => {
   currentPage.value = val;
 };
 
-// 前端搜索
-function searchProductOrName(data: CertificationData[], query: string) {
-  console.log(query);
-
-  if (!query) {
-    return i18n.value.certification.tableData;
-  }
-  const lowercaseQuery = query.toLowerCase();
-  return data.filter((item) => {
-    const lowercasePro = item.pro.toLowerCase();
-    const lowercaseName = item.name.toLowerCase();
-    return (
-      lowercasePro.includes(lowercaseQuery) ||
-      lowercaseName.includes(lowercaseQuery)
-    );
+const handleGetCompatibilityData = () => {
+  getCompatibilityData(queryData).then((res) => {
+    tableData.value = res?.data;
+    total.value = res?.data?.length;
+    handleSizeChange(10);
   });
-}
-// 搜索框change事件
-function searchValchange() {
-  tableData.value = searchProductOrName(
-    i18n.value.certification.tableData,
-    searchContent.value
-  );
-}
-function sortByAwardDescending(
-  certs: CertificationData[]
-): CertificationData[] {
-  return certs.sort(
-    (a, b) => new Date(b.award).getTime() - new Date(a.award).getTime()
-  );
-}
+};
 
 onMounted(() => {
-  tableData.value = i18n.value.certification.tableData;
-  sortByAwardDescending(tableData.value);
-  total.value = i18n.value.certification.tableData.length;
-  handleSizeChange(10);
+  handleGetCompatibilityData();
 });
 </script>
 <template>
   <BannerLevel2
     :background-image="Banner"
-    :title="i18n.certification.title"
+    :title="i18n.compatibility.title"
     :illustration="illustration"
   />
   <AppContent :mobile-top="16">
     <div class="o-search">
       <OSearch
-        v-model="searchContent"
+        v-model="queryData.name"
         clearable
-        :placeholder="i18n.certification.search_placeholder"
+        :placeholder="i18n.compatibility.search_placeholder"
         @change="searchValchange"
       ></OSearch>
     </div>
     <OTable class="pc-list" :data="randerData" style="width: 100%">
-      <OTableColumn
-        width="250"
-        :label="i18n.certification.pro"
-        prop="pro"
-        show-overflow-tooltip
-      ></OTableColumn>
-      <OTableColumn
-        :label="i18n.certification.name"
+      <!-- <OTableColumn
+        :label="i18n.compatibility.name"
         prop="name"
         show-overflow-tooltip
-      ></OTableColumn>
-      <OTableColumn
-        width="200"
-        :label="i18n.certification.version"
-        prop="version"
-      ></OTableColumn>
-      <OTableColumn
-        width="180"
-        :label="i18n.certification.award"
-        prop="award"
-      ></OTableColumn>
-      <OTableColumn
-        :label="i18n.certification.expiration"
-        prop="expiration"
-        width="180"
-      ></OTableColumn>
-      <el-table-column :label="i18n.certification.certificate" width="200">
+      ></OTableColumn> -->
+      <el-table-column :label="i18n.compatibility.name">
         <template #default="scope">
-          <a :href="scope.row.certificate" download target="_blank">{{
-            i18n.certification.certify
-          }}</a>
+          <span>{{ scope.row.name }} V{{ scope.row.version }}</span>
         </template>
       </el-table-column>
+      <OTableColumn
+        width="200"
+        :label="i18n.compatibility.type"
+        prop="type"
+        show-overflow-tooltip
+      ></OTableColumn>
+      <OTableColumn
+        width="400"
+        :label="i18n.compatibility.company"
+        prop="company"
+      ></OTableColumn>
+      <OTableColumn
+        width="400"
+        :label="i18n.compatibility.database"
+        prop="database"
+      ></OTableColumn>
+      <!-- <OTableColumn
+        :label="i18n.compatibility.os"
+        prop="os"
+        width="180"
+      ></OTableColumn>
+      <OTableColumn
+        :label="i18n.compatibility.server"
+        prop="server"
+        width="180"
+      ></OTableColumn> -->
     </OTable>
+
     <ul class="mobile-list">
-      <li v-for="(item, index) in tableData" :key="index" class="item">
+      <li v-for="item in tableData" :key="item.name" class="item">
         <ul>
           <li>
-            <span>{{ i18n.certification.pro }}:</span
-            ><span>{{ item.pro }}</span>
+            <span>{{ i18n.compatibility.name }}:</span
+            ><span>{{ item.name }} V{{ item.version }}</span>
           </li>
           <li>
-            <span>{{ i18n.certification.name }}:</span
-            ><span>{{ item.name }}</span>
+            <span>{{ i18n.compatibility.type }}:</span
+            ><span>{{ item.type }}</span>
           </li>
           <li>
-            <span>{{ i18n.certification.version }}:</span
-            ><span>{{ item.version }}</span>
+            <span>{{ i18n.compatibility.company }}:</span
+            ><span>{{ item.company }}</span>
           </li>
           <li>
-            <span>{{ i18n.certification.award }}:</span
-            ><span>{{ item.award }}</span>
+            <span>{{ i18n.compatibility.database }}:</span
+            ><span>{{ item.database }}</span>
+          </li>
+          <!-- <li>
+            <span>{{ i18n.compatibility.os }}:</span><span>{{ item.os }}</span>
           </li>
           <li>
-            <span>{{ i18n.certification.expiration }}:</span
-            ><span>{{ item.expiration }}</span>
-          </li>
-          <li>
-            <span>{{ i18n.certification.certificate }}:</span>
-            <a :href="item.certificate">{{ i18n.certification.certify }}</a>
-          </li>
-          <li></li>
+            <span>{{ i18n.compatibility.server }}:</span>
+            <span>{{ item.server }}</span>
+          </li> -->
         </ul>
       </li>
     </ul>
@@ -193,12 +176,11 @@ onMounted(() => {
       />
     </ClientOnly>
     <p class="introduce">
-      {{ i18n.certification.introduce1
-      }}<a
-        href="https://gitee.com/opengauss/distribution-certification"
+      关于商业软件兼容性技术测评，openGauss提供了完整的测试流程和工具，详见<a
+        href="https://gitee.com/opengauss/compatible-certification"
         target="_blank"
-        >{{ i18n.certification.introduce2 }}</a
-      >
+        >openGauss兼容性技术测评整体介绍</a
+      >。
     </p>
   </AppContent>
 </template>
@@ -261,6 +243,7 @@ onMounted(() => {
     }
   }
 }
+
 .o-pagination {
   margin-top: 24px;
   @media screen and (max-width: 768px) {

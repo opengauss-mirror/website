@@ -1,17 +1,17 @@
 <script setup lang="ts">
 import { useData } from 'vitepress';
-import { useCommon } from '@/stores/common';
-import { computed } from 'vue';
+// import { useCommon } from '@/stores/common';
+// import { computed } from 'vue';
 
 import portalInfo from '@/data/migration/migration-portal';
 
 import IconArrowRight from '~icons/app/icon-arrow-right.svg';
 
-const commonStore = useCommon();
+// const commonStore = useCommon();
 
 const { lang } = useData();
 
-const isDark = computed(() => (commonStore.theme === 'dark' ? true : false));
+// const isDark = computed(() => (commonStore.theme === 'dark' ? true : false));
 
 const handleGo = (path: string) => {
   window.open('/' + lang.value + path, '_blank');

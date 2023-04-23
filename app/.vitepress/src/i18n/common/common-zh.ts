@@ -113,7 +113,7 @@ export default {
           IS_OPEN_MINISITE_WINDOW: 1,
         },
         {
-          NAME: '迁移专区',
+          NAME: '迁移中心',
           ID: 'migration',
           PATH: '/migration/',
         },
@@ -167,6 +167,11 @@ export default {
           NAME: '发行版认证',
           ID: 'certification',
           PATH: '/certification/',
+        },
+        {
+          NAME: '兼容性列表',
+          ID: 'compatibility',
+          PATH: '/compatibility/',
         },
         {
           NAME: '培训认证',

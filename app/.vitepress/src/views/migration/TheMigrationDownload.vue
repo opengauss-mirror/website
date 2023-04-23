@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { useData } from 'vitepress';
+// import { useData } from 'vitepress';
 
 import downloadInfo from '@/data/migration/migration-download';
 import IconArrowRight from '~icons/app/icon-arrow-right.svg';
 
-const { lang } = useData();
+// const { lang } = useData();
 
 interface LinkItem {
   name: string;

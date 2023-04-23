@@ -12,19 +12,14 @@ export default {
     },
 
     cardTopRight: {
-     
       title01: 'openEuler',
       title02: '',
       description:
         '面向数字基础设施的开源操作系统\n聚焦内核能力，释放多样性算力，引领操作系统创新\n创新架构，全栈优化，打造全场景协同的数字基础设施操作系统',
     },
     benefit: {
-      light: [
-        
-      ],
-      dark: [
-        
-      ],
+      light: [],
+      dark: [],
     },
     btn: {
       text: '查看更多',
@@ -152,7 +147,6 @@ export default {
       top: {
         title: '原地升级（1h）',
         dexcription: '在原有的系统上一键升级',
-
       },
       bottom: {
         title: '适配迁移（4h）',

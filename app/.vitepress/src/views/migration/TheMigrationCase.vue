@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import { useData } from 'vitepress';
+// import { useData } from 'vitepress';
 import caseInfo from '@/data/migration/migration-case';
-
-const { lang } = useData();
 </script>
 
 <template>

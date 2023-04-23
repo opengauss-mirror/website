@@ -1,11 +1,12 @@
 export default [
   {
     name: 'openGauss Server',
-    thead: ['软件包类型', '软件包大小', '软件包下载', '完整性校验', '说明文档'],
     content: [
       {
         system: 'openEuler 22.03 LTS (aarch64)',
         docs: true,
+        architecture: 'AArch64',
+        os: 'openEuler 22.03 LTS',
         content: [
           {
             name: 'openGauss_5.0.0 企业版',
@@ -51,6 +52,8 @@ export default [
       {
         system: 'openEuler 22.03 LTS (x86_64)',
         docs: true,
+        architecture: 'x86_64',
+        os: 'openEuler 22.03 LTS',
         content: [
           {
             name: 'openGauss_5.0.0 企业版',
@@ -96,6 +99,8 @@ export default [
       {
         system: 'openEuler 20.03 LTS (aarch64)',
         docs: true,
+        architecture: 'AArch64',
+        os: 'openEuler 20.03 LTS',
         content: [
           {
             name: 'openGauss_5.0.0 企业版',
@@ -152,6 +157,8 @@ export default [
       },
       {
         system: 'openEuler 20.03 LTS (x86_64)',
+        architecture: 'x86_64',
+        os: 'openEuler 20.03 LTS',
         docs: true,
         content: [
           {
@@ -197,6 +204,8 @@ export default [
       },
       {
         system: 'Centos 7.6 (x86_64)',
+        architecture: 'x86_64',
+        os: 'Centos 7.6',
         docs: true,
         content: [
           {
@@ -256,10 +265,11 @@ export default [
   },
   {
     name: 'openGauss Connectors',
-    thead: ['软件包类型', '软件包大小', '软件包下载', '完整性校验', ''],
     content: [
       {
         system: 'openEuler 22.03 LTS (aarch64)',
+        architecture: 'AArch64',
+        os: 'openEuler 22.03 LTS',
         content: [
           {
             name: 'JDBC_5.0.0',
@@ -305,6 +315,8 @@ export default [
       },
       {
         system: 'openEuler 22.03 LTS (x86_64)',
+        architecture: 'x86_64',
+        os: 'openEuler 22.03 LTS',
         content: [
           {
             name: 'JDBC_5.0.0',
@@ -350,6 +362,8 @@ export default [
       },
       {
         system: 'openEuler 20.03 LTS (aarch64)',
+        architecture: 'AArch64',
+        os: 'openEuler 20.03 LTS',
         content: [
           {
             name: 'JDBC_5.0.0',
@@ -395,6 +409,8 @@ export default [
       },
       {
         system: 'openEuler 20.03 LTS (x86_64)',
+        architecture: 'x86_64',
+        os: 'openEuler 20.03 LTS',
         content: [
           {
             name: 'JDBC_5.0.0',
@@ -440,6 +456,8 @@ export default [
       },
       {
         system: 'Centos 7.6 (x86_64)',
+        architecture: 'x86_64',
+        os: 'Centos 7.6',
         content: [
           {
             name: 'JDBC_5.0.0',
@@ -485,6 +503,8 @@ export default [
       },
       {
         system: 'Windows',
+        architecture: 'x86_64',
+        os: 'Windows',
         content: [
           {
             name: 'JDBC_5.0.0',
@@ -512,10 +532,11 @@ export default [
   },
   {
     name: 'openGauss Symbol',
-    thead: ['软件包类型', '软件包大小', '软件包下载', '完整性校验', ''],
     content: [
       {
         system: 'openEuler 22.03 LTS (aarch64)',
+        architecture: 'AArch64',
+        os: 'openEuler 22.03 LTS',
         content: [
           {
             name: 'symbol_5.0.0',
@@ -541,6 +562,8 @@ export default [
       },
       {
         system: 'openEuler 22.03 LTS (x86_64)',
+        architecture: 'x86_64',
+        os: 'openEuler 22.03 LTS',
         content: [
           {
             name: 'symbol_5.0.0',
@@ -566,6 +589,8 @@ export default [
       },
       {
         system: 'openEuler 20.03 LTS (aarch64)',
+        architecture: 'AArch64',
+        os: 'openEuler 20.03 LTS',
         content: [
           {
             name: 'symbol_5.0.0',
@@ -591,6 +616,8 @@ export default [
       },
       {
         system: 'openEuler 20.03 LTS (x86_64)',
+        architecture: 'x86_64',
+        os: 'openEuler 20.03 LTS',
         content: [
           {
             name: 'symbol_5.0.0',
@@ -616,6 +643,8 @@ export default [
       },
       {
         system: 'Centos 7.6 (x86_64)',
+        architecture: 'x86_64',
+        os: 'Centos 7.6',
         content: [
           {
             name: 'symbol_5.0.0',
@@ -643,10 +672,11 @@ export default [
   },
   {
     name: 'openGauss Tools',
-    thead: ['软件包类型', '软件包大小', '软件包下载', '完整性校验', '说明文档'],
     content: [
       {
         system: 'Linux (aarch64)',
+        architecture: 'AArch64',
+        os: 'Linux',
         content: [
           {
             name: 'Chameleon_5.0.0',
@@ -722,6 +752,8 @@ export default [
       },
       {
         system: 'Linux (x86_64)',
+        architecture: 'x86_64',
+        os: 'Linux',
         content: [
           {
             name: 'Chameleon_5.0.0',
@@ -797,6 +829,8 @@ export default [
       },
       {
         system: 'Windows',
+        architecture: 'x86_64',
+        os: 'Windows',
         docs: true,
         content: [
           {

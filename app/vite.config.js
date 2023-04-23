@@ -41,13 +41,16 @@ export default defineConfig({
           )
         ),
         migration: FileSystemIconLoader(
-          path.resolve(__dirname, './.vitepress/src/assets/category/migration')
+          path.resolve(
+            __dirname,
+            './.vitepress/src/assets/category/migration/svg-icons'
+          )
         ),
       },
     }),
   ],
   server: {
-    port: 8989,
+    hmr: true, // 配置自动刷新
     proxy: {
       '/advisoryCVE/': {
         target: 'https://api.openeuler.org/cve-manager/',
@@ -58,6 +61,11 @@ export default defineConfig({
         target: 'https://ccs.opengauss.org/ccs/base/',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api-certification/, ''),
+      },
+      '/api-dsapi/': {
+        target: 'https://dsapi.osinfra.cn/',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api-dsapi/, ''),
       },
       '/calendar/': {
         target: 'https://www.opengauss.org/',

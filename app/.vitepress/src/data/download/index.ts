@@ -9,6 +9,10 @@ import download200 from './download2.0.0';
 import download110 from './download1.1.0';
 import download101 from './download1.0.1';
 import download100 from './download1.0.0';
+// 注意因为要求历史版本页面的初始版本显示要设为除最新LTS版本外的最新LTS版本
+// 因为Preview版本和LTS的各自发行顺序可能有变化不能使用确定的规律逻辑，所以需用特殊参数来设置
+// 例如目前最近第二个发行的LTS版本是3.0.3 (LTS)，所以就给它的数据增加一个(initPrevious:true)
+// 如果之后发行了新的LTS版本在本页面添加新版本数据时记得修改(initPrevious:true)所在版本的位置
 const downloadData = [
   {
     name: '5.0.0 (LTS)',
@@ -19,7 +23,8 @@ const downloadData = [
       {
         name: '发行说明',
         nameEn: 'Release Notes',
-        path: '/docs/5.0.0/docs/Releasenotes/Releasenotes.html',
+        path: '/docs/5.0.0/docs/ReleaseNotes/Releasenotes.html',
+        pathEn: '/docs/5.0.0/docs/Releasenotes/Releasenotes.html',
       },
     ],
   },
@@ -33,6 +38,7 @@ const downloadData = [
         name: '发行说明',
         nameEn: 'Release Notes',
         path: '/docs/3.1.1/docs/Releasenotes/Releasenotes.html',
+        pathEn: '/docs/3.1.1/docs/Releasenotes/Releasenotes.html',
       },
     ],
   },
@@ -67,6 +73,7 @@ const downloadData = [
     name: '3.0.3 (LTS)',
     id: 7,
     data: download303,
+    initPrevious: true,
     docs_list: [
       {
         name: '发行说明',

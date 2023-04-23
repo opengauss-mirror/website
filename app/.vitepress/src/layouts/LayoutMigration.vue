@@ -15,8 +15,8 @@ import DocAnchor from '@/components/DocAnchor.vue';
 import IconCancel from '~icons/app/icon-cancel.svg';
 import IconCatalog from '~icons/migration/catalog.svg';
 
-import logo_light from '@/assets/common/header/logo.png';
-import logo_dark from '@/assets/common/header/logo_dark.png';
+import logo_light from '@/assets/logo.svg';
+import logo_dark from '@/assets/logo_dark.svg';
 
 const { lang, frontmatter } = useData();
 const commonStore = useCommon();
