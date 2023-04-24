@@ -1,5 +1,5 @@
 import imgOffical from '@/assets/category/migration/portal/portal-help-official.png';
-import imgAssistant from '@/assets/category/migration/portal/portal-help-assistant.png';
+import imgAssistant from '@/assets/category/migration/portal/portal-help-assistant.jpg';
 
 export default {
   advantage: {
@@ -12,10 +12,10 @@ export default {
     },
 
     cardTopRight: {
-      title01: 'openEuler',
+      title01: 'openGauss',
       title02: '',
       description:
-        '面向数字基础设施的开源操作系统\n聚焦内核能力，释放多样性算力，引领操作系统创新\n创新架构，全栈优化，打造全场景协同的数字基础设施操作系统',
+        'openGauss是一款开源关系型数据库管理系统，采用木兰宽松许可证v2发行。openGauss内核深度融合华为在数据库领域多年的经验，结合企业级场景需求，持续构建竞争力特性。',
     },
     benefit: {
       light: [],
@@ -75,7 +75,7 @@ export default {
   download: {
     title: '快速下载',
     dexcription:
-      'x2openEuler工具是一款将源操作系统升级为目标操作系统的搬迁工具套件',
+      'DataKit提供了一个可视化操作的运维界面，可以帮助用户管理，安装，监控运维自己的openGauss数据库以及对应的物理机资源。',
     left: {
       img: {
         light: '',
@@ -171,13 +171,13 @@ export default {
         link: '',
       },
       {
-        textLeft: 'openEuler公众号进入迁移专区，点击“加群”，进入技术交流群',
+        textLeft: 'openGauss公众号，点击“联系我们” - “加入社群”，添加openGauss社群小助手，备注“迁移”进入MySQL迁移技术交流群',
         linkText: '',
         textRight: '',
         link: '',
       },
       {
-        textLeft: 'openEuler小助手，备注“迁移”，进入技术交流群',
+        textLeft: 'openGauss小助手，备注“迁移”，进入技术交流群',
         linkText: '',
         textRight: '',
         link: '',
@@ -185,11 +185,11 @@ export default {
     ],
     officalQR: {
       img: imgOffical,
-      text: 'openEuler公众号',
+      text: 'openGauss公众号',
     },
     assistantQR: {
       img: imgAssistant,
-      text: 'openEuler小助手',
+      text: 'openGauss小助手',
     },
   },
 };
