@@ -1,18 +1,25 @@
 ---
 title: 迁移方案说明
-titleTemplate: CentOS搬迁工具 | openEuler社区官网
+titleTemplate: MySQL迁移工具 | openGauss社区官网
 head:
   - - meta
     - name: description
-      content: openEuler 提供端到端的迁移方案，包括成立迁移保障组织、迁移分析、方案设计、移植适配、迁移实施和测试上线六个阶段，同时通过 x2openEuler 工具的迁移评估和原地升级技术，将繁琐的迁移过程简化，实现了全场景业务的“简单、平稳、高效”的迁移。想要了解更多服务器操作系统迁移相关内容，欢迎访问openEuler官网。
-  # - - meta
-  #   - name: keywords
-  #     content: CentOS迁移工具,操作系统迁移,操作系统替换,服务器系统迁移软件,服务器系统迁移工具,Centos系统迁移
+      content: openGauss是一款高性能、高安全、高可靠的企业级开源关系型数据库。想要了解更多数据库迁移相关信息，欢迎访问openGauss官网。
 category: migration
 anchor: true
 ---
 
 # 迁移方案说明
+
+|迁移步骤|工具支持|DataKit是否包含|备注|
+|:---|:---|:---|:---|
+|迁移评估|[assessment_database](https://docs.opengauss.org/zh/docs/latest/docs/DataMigrationGuide/MySQL%E8%AF%AD%E6%B3%95%E5%85%BC%E5%AE%B9%E6%80%A7%E8%AF%84%E4%BC%B0%E5%B7%A5%E5%85%B7.html)|是|用户导入SQL文件，工具可输出报告，展示SQL兼容情况|
+|应用适配|[DataKit](https://docs.opengauss.org/zh/docs/latest/docs/ToolandCommandReference/DataKit.html)|是|集成web datastudio，方便用户实时调测SQL，观察结果|
+|数据迁移|[全量迁移-gs_mysync](https://docs.opengauss.org/zh/docs/latest/docs/DataMigrationGuide/%E5%85%A8%E9%87%8F%E8%BF%81%E7%A7%BB.html) [增量迁移-gs_replicate](https://docs.opengauss.org/zh/docs/latest/docs/DataMigrationGuide/%E5%A2%9E%E9%87%8F%E8%BF%81%E7%A7%BB.html) [数据校验-gs_datacheck](https://docs.opengauss.org/zh/docs/latest/docs/DataMigrationGuide/%E6%95%B0%E6%8D%AE%E6%A0%A1%E9%AA%8C.html)|是|提供全量、增量、数据校验功能|
+|试运行|X|X||
+|生产割接|[反向迁移](https://docs.opengauss.org/zh/docs/latest/docs/DataMigrationGuide/%E5%8F%8D%E5%90%91%E8%BF%81%E7%A7%BB.html)|是|提供反向迁移工具，将openGauss端产生的增量数据迁移至MySQL端。|
+|运维|[DataKit](https://docs.opengauss.org/zh/docs/latest/docs/ToolandCommandReference/DataKit.html)|是|提供数据库监控功能|
+
 
 ## 迁移概述
 
