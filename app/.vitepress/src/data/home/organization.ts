@@ -134,6 +134,13 @@ import ecloudtech from '@/assets/category/home/organization/light/ecloudtech.png
 import moan from '@/assets/category/home/organization/light/moan.png';
 import chaojubian from '@/assets/category/home/organization/light/chaojubian.png';
 
+import airong from '@/assets/category/home/organization/light/airong.png';
+import antute from '@/assets/category/home/organization/light/antute.png';
+import huazhong from '@/assets/category/home/organization/light/huazhong.png';
+import shensi from '@/assets/category/home/organization/light/shensi.png';
+import xingye from '@/assets/category/home/organization/light/xingye.png';
+import zhilin from '@/assets/category/home/organization/light/zhilin.png';
+
 // dark
 import baolande_dark from '@/assets/category/home/organization/dark/baolande.png';
 import puyuan1_dark from '@/assets/category/home/organization/dark/puyuan1.png';
@@ -269,6 +276,13 @@ import fermi_dark from '@/assets/category/home/organization/dark/fermi.png';
 import ecloudtech_dark from '@/assets/category/home/organization/dark/ecloudtech.png';
 import moan_dark from '@/assets/category/home/organization/dark/moan.png';
 import chaojubian_dark from '@/assets/category/home/organization/dark/chaojubian.png';
+
+import airong_dark from '@/assets/category/home/organization/dark/airong.png';
+import antute_dark from '@/assets/category/home/organization/dark/antute.png';
+import huazhong_dark from '@/assets/category/home/organization/dark/huazhong.png';
+import shensi_dark from '@/assets/category/home/organization/dark/shensi.png';
+import xingye_dark from '@/assets/category/home/organization/dark/xingye.png';
+import zhilin_dark from '@/assets/category/home/organization/dark/zhilin.png';
 
 export default [
   {
@@ -937,5 +951,35 @@ export default [
     IMG: chaojubian,
     DARK: chaojubian_dark,
     NAME: '超聚变数字技术有限公司',
+  },
+  {
+    IMG: airong,
+    DARK: airong_dark,
+    NAME: '艾融软件',
+  },
+  {
+    IMG: antute,
+    DARK: antute_dark,
+    NAME: '安图特',
+  },
+  {
+    IMG: huazhong,
+    DARK: huazhong_dark,
+    NAME: '华中科技大学网络空间安全学院',
+  },
+  {
+    IMG: shensi,
+    DARK: shensi_dark,
+    NAME: '深思软件',
+  },
+  {
+    IMG: xingye,
+    DARK: xingye_dark,
+    NAME: '兴业银行',
+  },
+  {
+    IMG: zhilin,
+    DARK: zhilin_dark,
+    NAME: '智麟科技',
   },
 ];
