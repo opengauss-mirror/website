@@ -712,10 +712,10 @@ export default {
         company: '超聚变数字技术有限公司',
       },
       {
-        img: panchunbao,
-        name: '潘春宝',
+        img: wangmingyue2,
+        name: '王铭玥',
         title: '委员',
-        email: 'pancb@vastdata.com.cn',
+        email: 'wangmy@vastdata.com.cn',
         company: '北京海量数据技术股份有限公司',
       },
       {
@@ -4293,10 +4293,10 @@ export default {
         company: 'xFusion',
       },
       {
-        img: panchunbao,
-        name: 'Chunbao Pan',
+        img: wangmingyue2,
+        name: 'Mingyue Wang',
         title: 'Member',
-        email: 'pancb@vastdata.com.cn',
+        email: 'wangmy@vastdata.com.cn',
         company: 'Vastbase',
       },
       {
