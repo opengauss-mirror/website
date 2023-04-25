@@ -712,10 +712,10 @@ export default {
         company: '超聚变数字技术有限公司',
       },
       {
-        img: panchunbao,
-        name: '潘春宝',
+        img: wangmingyue2,
+        name: '王铭玥',
         title: '委员',
-        email: 'pancb@vastdata.com.cn',
+        email: 'wangmy@vastdata.com.cn',
         company: '北京海量数据技术股份有限公司',
       },
       {
@@ -2145,11 +2145,11 @@ export default {
         gitee: 'https://gitee.com/dbowner_zhang',
       },
       {
-        img: lupanfeng,
-        name: '鲁攀峰',
+        img: huangxianru,
+        name: '黄贤儒',
         title: 'Committer',
-        email: 'lupanfeng@huawei.com',
-        gitee: 'https://gitee.com/Alvin00372627',
+        email: 'huangxianru@huawei.com',
+        gitee: 'https://gitee.com/huang-xianru',
       },
       {
         img: xuxu,
@@ -4293,10 +4293,10 @@ export default {
         company: 'xFusion',
       },
       {
-        img: panchunbao,
-        name: 'Chunbao Pan',
+        img: wangmingyue2,
+        name: 'Mingyue Wang',
         title: 'Member',
-        email: 'pancb@vastdata.com.cn',
+        email: 'wangmy@vastdata.com.cn',
         company: 'Vastbase',
       },
       {
@@ -5719,11 +5719,11 @@ export default {
         gitee: 'https://gitee.com/dbowner_zhang',
       },
       {
-        img: lupanfeng,
-        name: 'Panfeng Lu',
+        img: huangxianru,
+        name: 'Xianru Huang',
         title: 'Committer',
-        email: 'lupanfeng@huawei.com',
-        gitee: 'https://gitee.com/Alvin00372627',
+        email: 'huangxianru@huawei.com',
+        gitee: 'https://gitee.com/huang-xianru',
       },
       {
         img: xuxu,
