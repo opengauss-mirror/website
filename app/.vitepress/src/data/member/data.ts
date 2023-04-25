@@ -2145,11 +2145,11 @@ export default {
         gitee: 'https://gitee.com/dbowner_zhang',
       },
       {
-        img: lupanfeng,
-        name: '鲁攀峰',
+        img: huangxianru,
+        name: '黄贤儒',
         title: 'Committer',
-        email: 'lupanfeng@huawei.com',
-        gitee: 'https://gitee.com/Alvin00372627',
+        email: 'huangxianru@huawei.com',
+        gitee: 'https://gitee.com/huang-xianru',
       },
       {
         img: xuxu,
@@ -5719,11 +5719,11 @@ export default {
         gitee: 'https://gitee.com/dbowner_zhang',
       },
       {
-        img: lupanfeng,
-        name: 'Panfeng Lu',
+        img: huangxianru,
+        name: 'Xianru Huang',
         title: 'Committer',
-        email: 'lupanfeng@huawei.com',
-        gitee: 'https://gitee.com/Alvin00372627',
+        email: 'huangxianru@huawei.com',
+        gitee: 'https://gitee.com/huang-xianru',
       },
       {
         img: xuxu,
