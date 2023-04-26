@@ -4,10 +4,25 @@ import liveImg_mo from '@/assets/category/home/banner/liveBanner_mo.png';
 import banner500 from '@/assets/category/home/banner/opengauss5.0.0_pc.jpg';
 import banner500_mo from '@/assets/category/home/banner/opengauss5.0.0_mo.png';
 
+import bannerDevdayPc from '@/assets/category/home/banner/banner-devday_pc.jpg';
+import bannerDevdayMo from '@/assets/category/home/banner/banner-devday_mo.png';
+
 // targetTap:1 新页签打开
 // type:1(只有图片)、2(文字居左)，3(文字居中),4(仅用于实习banner),5 视频
 export default {
   zh: [
+    {
+      pcBanner: bannerDevdayPc,
+      moBanner: bannerDevdayMo,
+      link: '/zh/summit/devday2023/',
+      targetTap: 0,
+      title: 'openGauss Developer Day 2023',
+      desc: ['2023.05.25-26', '北京昆泰嘉瑞文化中心'],
+      btn: '了解详情',
+      type: 2,
+      className: 'devday-banner',
+      video: '',
+    },
     {
       pcBanner: liveImg_pc,
       moBanner: liveImg_mo,

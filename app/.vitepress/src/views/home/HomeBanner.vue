@@ -70,7 +70,7 @@ const bannerVideoSrc =
         clickable: true,
       }"
       :autoplay="{
-        delay: 5000,
+        delay: 50000000,
         disableOnInteraction: false,
       }"
       :navigation="true"
@@ -438,26 +438,62 @@ html[lang='zh'] {
       }
     }
   }
-  .summit {
+  .devday-banner {
     .banner-panel-content {
-      justify-content: center;
-      .box {
-        margin-top: 230px;
+      @media screen and (max-width: 824px) {
+        display: block;
+      }
+    }
+    .box {
+      color: #000;
+      .title {
+        font-size: var(--o-font-size-h1);
         @media screen and (max-width: 824px) {
-          margin-top: 160px;
+          font-size: var(--o-font-size-h6);
+          line-height: 32px;
         }
-        .title {
-          font-size: var(--o-font-size-h3);
-          line-height: var(--o-line-height-h3);
+      }
+      .desc {
+        margin-top: 16px;
+        @media screen and (max-width: 824px) {
+          margin-top: 8px;
+        }
+        .inline-desc {
+          display: block;
+          font-size: var(--o-font-size-h5);
+          line-height: 40px;
+          &::before {
+            display: inline;
+            content: '时间：';
+            @media screen and (max-width: 824px) {
+              display: none;
+            }
+          }
           @media screen and (max-width: 824px) {
-            font-size: var(--o-font-size-h5);
-            line-height: var(--o-line-height-h5);
+            font-size: var(--o-font-size-text);
+            line-height: 24px;
+          }
+          & ~ .inline-desc {
+            padding-left: 0;
+            &::before {
+              display: inline;
+              content: '地点：';
+              @media screen and (max-width: 824px) {
+                display: none;
+              }
+            }
           }
         }
-        .desc {
-          max-width: 100%;
-          text-align: center;
-        }
+      }
+    }
+    .action {
+      margin-top: var(--o-spacing-h4);
+      @media screen and (max-width: 824px) {
+        margin-top: var(--o-spacing-h5);
+      }
+      .home-banner-btn {
+        color: #000 !important;
+        border: 1px solid #000 !important;
       }
     }
   }

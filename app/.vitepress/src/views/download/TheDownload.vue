@@ -59,7 +59,7 @@ const handleDownloadUrl = (url: string) => {
           <p>
             {{ downloadData.PECULIARITY_DETAIL
             }}<a
-              :href="theme.docsUrl  + downloadData.RELEASE_LINK"
+              :href="theme.docsUrl + downloadData.RELEASE_LINK"
               target="_blank"
               >{{
                 lang === 'zh'

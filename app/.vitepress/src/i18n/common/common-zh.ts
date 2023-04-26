@@ -148,7 +148,7 @@ export default {
         {
           NAME: '峰会',
           ID: 'summit',
-          PATH: '/summit/summit2022/',
+          PATH: '/summit/devday2023/',
           // IS_OPEN_MINISITE_WINDOW: 1,
         },
       ],
