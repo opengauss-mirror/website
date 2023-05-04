@@ -40,7 +40,7 @@ const sortParams = reactive({
 // 标签
 const tagsParams = reactive({
   lang: lang.value,
-  category: 'blog',
+  category: 'blogs',
   want: '',
 });
 // pc端筛选数据
@@ -152,7 +152,7 @@ const changeTime = () => {
   if (selectTimeVal.value !== '') {
     const wantauthor = {
       lang: lang.value,
-      category: 'blog',
+      category: 'blogs',
       want: 'author',
       condition: {
         archives: selectTimeVal.value,
@@ -161,7 +161,7 @@ const changeTime = () => {
     };
     const wanttags = {
       lang: lang.value,
-      category: 'blog',
+      category: 'blogs',
       want: 'tags',
       condition: {
         archives: selectTimeVal.value,
@@ -194,7 +194,7 @@ const changeTime = () => {
   } else {
     const params = {
       lang: lang.value,
-      category: 'blog',
+      category: 'blogs',
       want: 'archives',
       condition: {
         author:
@@ -215,7 +215,7 @@ const changeAuthor = () => {
   if (selectAuthorVal.value !== '') {
     const wantarchive = {
       lang: lang.value,
-      category: 'blog',
+      category: 'blogs',
       want: 'archives',
       condition: {
         author: selectAuthorVal.value,
@@ -224,7 +224,7 @@ const changeAuthor = () => {
     };
     const wanttags = {
       lang: lang.value,
-      category: 'blog',
+      category: 'blogs',
       want: 'tags',
       condition: {
         archives: selectTimeVal.value === '' ? undefined : selectTimeVal.value,
@@ -256,7 +256,7 @@ const changeAuthor = () => {
   } else {
     const params = {
       lang: lang.value,
-      category: 'blog',
+      category: 'blogs',
       want: 'author',
       condition: {
         archives: selectTimeVal.value === '' ? undefined : selectTimeVal.value,
@@ -276,7 +276,7 @@ const changeTags = () => {
   if (selectTagsVal.value !== '') {
     const wantarchive = {
       lang: lang.value,
-      category: 'blog',
+      category: 'blogs',
       want: 'archives',
       condition: {
         author:
@@ -286,7 +286,7 @@ const changeTags = () => {
     };
     const wantauthor = {
       lang: lang.value,
-      category: 'blog',
+      category: 'blogs',
       want: 'author',
       condition: {
         archives: selectTimeVal.value === '' ? undefined : selectTimeVal.value,
@@ -318,7 +318,7 @@ const changeTags = () => {
   } else {
     const params = {
       lang: lang.value,
-      category: 'blog',
+      category: 'blogs',
       want: 'tags',
       condition: {
         author:
