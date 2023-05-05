@@ -2,7 +2,7 @@
 title: 'openGauss荣获中国软协产业协会多个奖项'
 date: '2023-04-19'
 tags: ['theme']
-banner: '/category/news/2023-04-19/banner.banner'
+banner: '/category/news/2023-04-19/banner.png'
 author: 'openGauss'
 category: 'news'
 summary: 'openGauss技术、社区代表、解决方案等获中国软协产业协会多个荣誉奖项。'
