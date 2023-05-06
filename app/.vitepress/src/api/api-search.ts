@@ -73,6 +73,6 @@ export function getPop(params: any) {
  * @return  Array
  */
 export function getStatistic() {
-  const url = '/omapi/query/all?community=openGauss';
+  const url = '/api-dsapi/query/all?community=openGauss';
   return request.get(url).then((res: AxiosResponse) => res.data);
 }
