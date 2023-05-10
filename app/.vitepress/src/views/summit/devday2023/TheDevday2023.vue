@@ -218,8 +218,11 @@ watch(
           // }
           & + .item-title {
             margin-top: var(--o-spacing-h4);
+            margin-left: auto;
+            margin-right:auto;
             font-size: var(--o-font-size-h4);
             line-height: var(--o-line-height-h4);
+            width:180px;
             // @media screen and (max-width: 768px) {
             //   font-size: var(--o-font-size-text);
             // }
