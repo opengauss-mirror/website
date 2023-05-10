@@ -2,8 +2,11 @@
 import { onMounted } from 'vue';
 import AOS from 'aos';
 
+import useWindowResize from '@/components/hooks/useWindowResize';
+
 import IconArrowRight from '~icons/app/icon-arrow-right.svg';
 
+const screenWidth = useWindowResize();
 defineProps({
   bannerData: {
     type: Object,
@@ -31,8 +34,22 @@ onMounted(() => {
       :style="{ backgroundImage: `url(${bannerData.img_mo})` }"
     ></div>
     <div data-aos="fade-down" class="banner-text">
-      <h2>{{ bannerData.title }}</h2>
-      <h3 v-for="item in bannerData.subtitle" :key="item">{{ item }}</h3>
+      <h2>{{ bannerData.slogan }}</h2>
+      <h3>{{ bannerData.title }}</h3>
+      <h4>{{ bannerData.subtitle }}</h4>
+      <a :href="bannerData.btnLink" class="btn-box" target="_blank">
+        <OButton
+          animation
+          type="outline"
+          class="apply-btn"
+          :size="screenWidth > 767 ? 'middle' : 'mini'"
+        >
+          {{ bannerData.btn }}
+          <template #suffixIcon>
+            <OIcon><IconArrowRight /></OIcon>
+          </template>
+        </OButton>
+      </a>
     </div>
   </div>
 </template>
@@ -149,35 +166,37 @@ onMounted(() => {
       font-size: var(--o-font-size-h1);
       font-weight: 600;
       @media (max-width: 767px) {
-        font-size: var(--o-font-size-h6);
+        font-size: 32px;
       }
     }
     h3 {
+      margin-top: var(--o-spacing-h8);
+      font-size: var(--o-font-size-h3);
+      line-height: 40px;
+      font-weight: normal;
+      @media (max-width: 767px) {
+        margin-top: 8px;
+        font-size: var(--o-font-size-h7);
+        line-height: var(--o-line-height-h7);
+      }
+    }
+    h4 {
       margin-top: var(--o-spacing-h5);
       font-size: var(--o-font-size-h5);
       line-height: 40px;
       font-weight: normal;
-      &::before {
-        display: inline;
-        content: '时间：';
-        @media screen and (max-width: 824px) {
-          display: none;
-        }
-      }
       @media (max-width: 767px) {
-        margin-top: 8px;
+        margin-top: 6px;
         font-size: var(--o-font-size-text);
         line-height: var(--o-line-height-h8);
       }
-      & + h3 {
-        margin-top: 0;
-        &::before {
-          display: inline;
-          content: '地点：';
-          @media screen and (max-width: 824px) {
-            display: none;
-          }
-        }
+    }
+    .btn-box {
+      display: inline-block;
+      margin-top: var(--o-spacing-h5);
+      .apply-btn {
+        color: black;
+        border-color: black;
       }
     }
   }

@@ -70,7 +70,7 @@ const bannerVideoSrc =
         clickable: true,
       }"
       :autoplay="{
-        delay: 50000000,
+        delay: 5000,
         disableOnInteraction: false,
       }"
       :navigation="true"
@@ -117,6 +117,13 @@ const bannerVideoSrc =
               <div class="box">
                 <p class="title" :class="{ experts: index === 1 }">
                   {{ item.title }}
+                </p>
+                <p
+                  v-if="item.subtitle"
+                  class="subtitle"
+                  :class="{ experts: index === 1 }"
+                >
+                  {{ item.subtitle }}
                 </p>
                 <p class="desc" :class="{ experts: index === 1 }">
                   <span
@@ -448,9 +455,20 @@ html[lang='zh'] {
       color: #000;
       .title {
         font-size: var(--o-font-size-h1);
-        @media screen and (max-width: 824px) {
-          font-size: var(--o-font-size-h6);
-          line-height: 32px;
+        font-weight: 600;
+        @media (max-width: 767px) {
+          font-size: 32px;
+        }
+      }
+      .subtitle {
+        margin-top: var(--o-spacing-h8);
+        font-size: var(--o-font-size-h3);
+        line-height: 40px;
+        font-weight: normal;
+        @media (max-width: 767px) {
+          margin-top: 8px;
+          font-size: var(--o-font-size-h7);
+          line-height: var(--o-line-height-h7);
         }
       }
       .desc {
@@ -462,13 +480,6 @@ html[lang='zh'] {
           display: block;
           font-size: var(--o-font-size-h5);
           line-height: 40px;
-          &::before {
-            display: inline;
-            content: '时间：';
-            @media screen and (max-width: 824px) {
-              display: none;
-            }
-          }
           @media screen and (max-width: 824px) {
             font-size: var(--o-font-size-text);
             line-height: 24px;
@@ -487,7 +498,7 @@ html[lang='zh'] {
       }
     }
     .action {
-      margin-top: var(--o-spacing-h4);
+      margin-top: var(--o-spacing-h5);
       @media screen and (max-width: 824px) {
         margin-top: var(--o-spacing-h5);
       }
