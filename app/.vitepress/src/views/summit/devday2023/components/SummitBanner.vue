@@ -163,15 +163,17 @@ onMounted(() => {
       padding: 0;
     }
     h2 {
-      font-size: var(--o-font-size-h1);
+      font-size: var(--o-font-size-h2);
       font-weight: 600;
+      line-height: var(--o-line-height-h2);
       @media (max-width: 767px) {
         font-size: 32px;
+        line-height: 32px;
       }
     }
     h3 {
       margin-top: var(--o-spacing-h8);
-      font-size: var(--o-font-size-h3);
+      font-size: 30px;
       line-height: 40px;
       font-weight: normal;
       @media (max-width: 767px) {
