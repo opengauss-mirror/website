@@ -152,7 +152,7 @@ const handleNodeClick = (node: any) => {
         'anchor-exit': frontmatter.anchor,
       }"
     />
-    <DocAnchor v-if="frontmatter.anchor" />
+    <DocAnchor v-if="frontmatter.anchor && screenWidth > 1300" />
   </div>
 </template>
 
@@ -298,6 +298,9 @@ const handleNodeClick = (node: any) => {
       }
       > :deep(div) {
         max-width: calc(100% - 200px);
+        @media screen and (max-width: 1300px) {
+          max-width: 100%;
+        }
       }
     }
 
@@ -351,6 +354,121 @@ const handleNodeClick = (node: any) => {
     img {
       margin-top: 12px;
       width: 1024px;
+    }
+    :deep(.adavantage) {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      margin-top: var(--o-spacing-h2);
+      @media screen and (max-width: 1220px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: var(--o-spacing-h4);
+        grid-template-columns: repeat(1, 1fr);
+      }
+      .official {
+        padding-right: var(--o-spacing-h6);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        @media screen and (max-width: 768px) {
+          margin-bottom: var(--o-spacing-h6);
+          display: block;
+        }
+        & ~ .official {
+          padding-left: var(--o-spacing-h6);
+          &::before {
+            display: block;
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: calc(100% - 120px);
+            top: 60px;
+            left: 0;
+            background-color: var(--o-color-border1);
+            @media screen and (max-width: 768px) {
+              display: none;
+            }
+          }
+        }
+        .official-head {
+          min-height: 100px;
+          @media screen and (max-width: 768px) {
+            min-height: 0;
+          }
+          .head-title {
+            font-size: var(--o-font-size-h4);
+            font-weight: 600;
+            @media screen and (max-width: 768px) {
+              font-size: var(--o-font-size-h6);
+            }
+          }
+          .head-subhead {
+            font-size: var(--o-font-size-h6);
+            font-weight: 600;
+            color: var(--o-color-red2);
+            margin-top: var(--o-spacing-h5);
+            @media screen and (max-width: 768px) {
+              font-size: var(--o-font-size-h8);
+              margin-top: var(--o-spacing-h6);
+            }
+          }
+        }
+        .official-text {
+          min-height: 134px;
+          @media screen and (max-width: 768px) {
+            min-height: 0;
+            margin-top: 8px;
+          }
+          .text-detail {
+            text-align: left;
+            margin-top: 0;
+          }
+        }
+
+        .official-img {
+          width: 100%;
+          min-height: 248px;
+          display: flex;
+          align-items: flex-start;
+          justify-content: center;
+          @media screen and (max-width: 768px) {
+            min-height: 0;
+          }
+          img {
+            max-width: 200px;
+            width: 100%;
+            background-color: var(--o-color-greyblue3);
+          }
+        }
+      }
+
+      p {
+        font-size: var(--o-font-size-text);
+        font-weight: 400;
+        color: var(--o-color-text1);
+        text-align: center;
+        // margin-top: var(--o-spacing-h5);
+      }
+      & + table {
+        margin-top: var(--o-spacing-h2);
+        @media screen and (max-width: 768px) {
+          margin-top: var(--o-spacing-h4);
+        }
+        th,
+        td {
+          border: 1px solid var(--o-color-border1);
+          padding: var(--o-spacing-h8);
+          &:nth-of-type(1),
+          &.text-center {
+            text-align: center;
+          }
+        }
+      }
     }
   }
 
