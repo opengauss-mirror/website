@@ -1,5 +1,5 @@
 import bannerPc from '../img/banner_pc.jpg';
-import bannerMo from '../img/banner_mo.png';
+import bannerMo from '../img/banner_mo.jpg';
 import cardBg1 from '../img/card_bg1.png';
 import cardBg2 from '../img/card_bg2.png';
 import cardBg3 from '../img/card_bg3.png';

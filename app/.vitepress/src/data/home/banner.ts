@@ -5,7 +5,7 @@ import banner500 from '@/assets/category/home/banner/opengauss5.0.0_pc.jpg';
 import banner500_mo from '@/assets/category/home/banner/opengauss5.0.0_mo.png';
 
 import bannerDevdayPc from '@/assets/category/home/banner/banner-devday_pc.jpg';
-import bannerDevdayMo from '@/assets/category/home/banner/banner-devday_mo.png';
+import bannerDevdayMo from '@/assets/category/home/banner/banner-devday_mo.jpg';
 
 // targetTap:1 新页签打开
 // type:1(只有图片)、2(文字居左)，3(文字居中),4(仅用于实习banner),5 视频
