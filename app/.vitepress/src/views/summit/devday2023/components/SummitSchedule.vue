@@ -28,26 +28,16 @@ const otherTabType = ref(0);
 <template>
   <div class="schedule">
     <h4>{{ agendaData.lable }}</h4>
-    <!-- <span
-      v-if="agendaData.lable.includes('TC开放工作会议')"
-      class="go-etherpad"
-    >
-      <a
-        href="https://etherpad.openeuler.org/p/odd2023-TC-Meeting"
-        target="_blank"
-        >点击此处</a
-      >按要求填写议题需求
-    </span>
     <span
-      v-if="agendaData.lable.includes('SIG组开放工作会议')"
+      v-if="agendaData.lable.includes('SIG组版本规划工作会议')"
       class="go-etherpad"
     >
       <a
-        href="https://etherpad.openeuler.org/p/ODD-2023-SIG-Meeting"
+        href="https://etherpad.opengauss.org/p/ODD2023-SIG-Meeting"
         target="_blank"
         >点击此处</a
       >并选择感兴趣的SIG组-Etherpad文件，按要求填写议题和参会信息
-    </span> -->
+    </span>
     <div class="schedule-item other">
       <el-tabs
         v-if="agendaData.content[1]"

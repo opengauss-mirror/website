@@ -5,6 +5,7 @@ import common from './common';
 import security from './security';
 import authentication from './authentication';
 import certification from './certification';
+import ogsp from './ogsp';
 import knowledge from './knowledge';
 import advanced from './advanced';
 import showcase from './showcase';
@@ -29,6 +30,7 @@ const i18n: { [key: string]: any } = {
     contribution: contribution.zh,
     authentication: authentication.zh,
     certification: certification.zh,
+    ogsp: ogsp.zh,
     member: member.zh,
     download: download.zh,
     supporttools: supporttools.zh,
@@ -48,6 +50,7 @@ const i18n: { [key: string]: any } = {
     contribution: contribution.en,
     authentication: authentication.en,
     certification: certification.en,
+    ogsp: ogsp.en,
     member: member.en,
     download: download.en,
     supporttools: supporttools.en,

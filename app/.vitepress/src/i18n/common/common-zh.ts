@@ -168,13 +168,18 @@ export default {
           ID: 'compatibility',
           PATH: '/compatibility/',
         },
+        // {
+        //   NAME: '服务商认证',
+        //   ID: 'ogsp',
+        //   PATH: '/ogsp/',
+        // },
         {
           NAME: '培训认证',
           ID: 'training',
           PATH: '/training/',
         },
       ],
-      CLASS: ['certification', 'training'],
+      CLASS: ['certification', 'training', 'ogsp'],
     },
     {
       NAME: '安全',

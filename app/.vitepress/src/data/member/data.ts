@@ -109,6 +109,7 @@ import xiangxinyong from '@/assets/category/member/avatar/xiangxinyong.png';
 import zhangxubo from '@/assets/category/member/avatar/zhangxubo.png';
 import zhengyuhang from '@/assets/category/member/avatar/zhengyuhang.png';
 import ailong from '@/assets/category/member/avatar/ailong.png';
+import gongzhuangbang from '@/assets/category/member/avatar/gongzhuangbang.png';
 import lijianfeng from '@/assets/category/member/avatar/lijianfeng.png';
 import guoliang from '@/assets/category/member/avatar/guoliang.png';
 import liuzheli from '@/assets/category/member/avatar/liuzheli.png';
@@ -1263,6 +1264,13 @@ export default {
         title: 'Committer',
         email: 'zhengyuhang@huawei.com',
         gitee: 'https://gitee.com/zhengyuhanghans',
+      },
+      {
+        img: gongzhuangbang,
+        name: '龚壮邦',
+        title: 'Committer',
+        email: 'gognzhuangbang1@huawei.com',
+        gitee: 'https://gitee.com/gzbang',
       },
       {
         img: ailong,
@@ -4844,6 +4852,13 @@ export default {
         title: 'Committer',
         email: 'zhengyuhang@huawei.com',
         gitee: 'https://gitee.com/zhengyuhanghans',
+      },
+      {
+        img: gongzhuangbang,
+        name: 'Zhuangbang Gong',
+        title: 'Committer',
+        email: 'gognzhuangbang1@huawei.com',
+        gitee: 'https://gitee.com/gzbang',
       },
       {
         img: ailong,
