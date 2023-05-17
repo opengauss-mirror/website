@@ -1,15 +1,17 @@
 <script setup lang="ts">
-import { computed, onMounted } from 'vue';
+import { computed, onMounted, ref, watch } from 'vue';
 import { useCommon } from '@/stores/common';
 import AOS from 'aos';
 
 import AppContext from '@/components/AppContent.vue';
 import SummitBanner from './components/SummitBanner.vue';
+import SummitSchedule from './components/SummitSchedule.vue';
 
 import summitData from './data';
 
 import liveLight from '@/assets/category/summit/live.png';
 import liveDark from '@/assets/category/summit/live-dark.png';
+import applyImg from './img/apply.png';
 
 const commonStore = useCommon();
 const liveImg = computed(() =>
@@ -23,6 +25,26 @@ onMounted(() => {
     once: true,
   });
 });
+const showIndex = ref(1);
+function setShowIndex(index: number) {
+  showIndex.value = index;
+}
+// 控制上下午切换
+const tabType = ref(0);
+const agendaData2: any = ref([]);
+watch(
+  tabType,
+  () => {
+    if (tabType.value === 1 && summitData.agenda2) {
+      agendaData2.value = summitData.agenda2.content.slice(1);
+    } else {
+      agendaData2.value = summitData.agenda2.content.slice(0, 1);
+    }
+  },
+  {
+    immediate: true,
+  }
+);
 </script>
 <template>
   <SummitBanner :banner-data="summitData.banner" />
@@ -45,6 +67,51 @@ onMounted(() => {
         </a>
       </div>
     </div>
+    <div class="agenda" :class="{ 'min-height': showIndex === 1 }">
+      <h3>会议日程</h3>
+      <div class="date">
+        <div
+          class="date-item"
+          :class="{ active: showIndex === 0 }"
+          @click="setShowIndex(0)"
+        >
+          <p class="date-day">25</p>
+          <p class="date-month">MAY</p>
+        </div>
+        <div
+          class="date-item"
+          :class="{ active: showIndex === 1 }"
+          @click="setShowIndex(1)"
+        >
+          <p class="date-day">26</p>
+          <p class="date-month">MAY</p>
+        </div>
+      </div>
+      <div v-show="showIndex === 0">
+        <SummitSchedule
+          v-for="item in summitData.agenda1.content"
+          :key="item.lable"
+          :agenda-data="item"
+        />
+      </div>
+      <div v-show="showIndex === 1">
+        <el-tabs v-model.number="tabType" class="schedule-tabs">
+          <el-tab-pane :name="0">
+            <template #label>
+              <div class="time-tabs">上午</div>
+            </template>
+          </el-tab-pane>
+          <el-tab-pane :name="1">
+            <template #label>
+              <div class="time-tabs">下午</div>
+            </template>
+          </el-tab-pane>
+        </el-tabs>
+        <template v-for="item in agendaData2" :key="item.lable">
+          <SummitSchedule :agenda-data="item" />
+        </template>
+      </div>
+    </div>
     <div class="previous">
       <div class="previous-title">
         <h3>{{ summitData.previous.title }}</h3>
@@ -55,6 +122,11 @@ onMounted(() => {
           <a :href="item.link" target="_blank">{{ item.title }}</a>
         </p>
       </div>
+    </div>
+    <div class="apply-code">
+      <a href="https://e-campaign.huawei.com/m/6vaqiy" target="_blank">
+        <img :src="applyImg" alt="" />
+      </a>
     </div>
   </AppContext>
 </template>
@@ -98,11 +170,17 @@ onMounted(() => {
 .collect {
   @include floor-box();
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: repeat(4, 1fr);
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  gap: var(--o-spacing-h1);
+  gap: var(--o-spacing-h4);
+  @media screen and (max-width: 1170px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media screen and (max-width: 870px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
   @media screen and (max-width: 768px) {
     padding: 0 12px;
     grid-template-columns: auto;
@@ -110,7 +188,8 @@ onMounted(() => {
   }
 
   .collect-item {
-    width: 336px;
+    width: 100%;
+    max-width: 336px;
     height: 352px;
     background-size: cover;
     box-shadow: var(--o-shadow-l2);
@@ -139,8 +218,11 @@ onMounted(() => {
           // }
           & + .item-title {
             margin-top: var(--o-spacing-h4);
+            margin-left: auto;
+            margin-right:auto;
             font-size: var(--o-font-size-h4);
             line-height: var(--o-line-height-h4);
+            width:180px;
             // @media screen and (max-width: 768px) {
             //   font-size: var(--o-font-size-text);
             // }
@@ -150,6 +232,130 @@ onMounted(() => {
     }
   }
 }
+.agenda {
+  margin-top: var(--o-spacing-h1);
+  @media (max-width: 767px) {
+    margin-top: var(--o-spacing-h2);
+  }
+  h3 {
+    text-align: center;
+    font-size: var(--o-font-size-h3);
+    line-height: var(--o-line-height-h3);
+    color: var(--o-color-text1);
+    font-weight: 300;
+    @media (max-width: 767px) {
+      font-size: var(--o-font-size-h8);
+      line-height: var(--o-line-height-h8);
+    }
+  }
+  .date {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+    .date-item {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #cbcbcb;
+      border-radius: 8px;
+      border: 1px solid #cbcbcb;
+      transition: all 0.3s ease-out;
+
+      & ~ div {
+        margin-left: 40px;
+      }
+      &.active {
+        color: #fff;
+        background-color: var(--o-color-brand1);
+        border: 1px solid #fff;
+      }
+      .date-day {
+        padding: 13px 17px 3px 15px;
+        line-height: 48px;
+        font-size: 48px;
+        font-weight: 700;
+        border-bottom: 1px solid #cbcbcb;
+        @media screen and (max-width: 1120px) {
+          padding: 6px 16px;
+          font-size: 32px;
+          line-height: 32px;
+        }
+      }
+      .date-month {
+        padding: 6px 0;
+        font-size: 24px;
+        font-weight: 100;
+        line-height: 24px;
+        @media screen and (max-width: 1120px) {
+          padding: 4px 0;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  .schedule-tabs {
+    position: relative;
+    text-align: center;
+    margin-top: 24px;
+    :deep(.el-tabs__content) {
+      overflow: visible;
+      .el-button {
+        position: absolute;
+        left: 0;
+        top: -75px;
+        z-index: 1;
+      }
+    }
+    :deep(.el-tabs__nav) {
+      float: none;
+      display: inline-block;
+      .el-tabs__active-bar {
+        display: none;
+      }
+      .el-tabs__item {
+        padding: 0;
+      }
+    }
+    :deep(.el-tabs__nav-wrap) {
+      &::after {
+        display: none;
+      }
+    }
+    .time-tabs {
+      display: inline-block;
+      margin: 0 0 24px;
+      cursor: pointer;
+      border: 1px solid var(--o-color-border2);
+      color: var(--o-color-text1);
+      text-align: center;
+      background: var(--o-color-bg2);
+      font-size: 14px;
+      line-height: 38px;
+      padding: 0 16px;
+      min-width: 160px;
+      @media (max-width: 1100px) {
+        line-height: 28px;
+        font-size: 12px;
+        padding: 0 12px;
+        min-width: 100px;
+      }
+    }
+
+    .is-active .time-tabs {
+      color: #fff;
+      background: var(--o-color-brand1);
+      border-color: var(--o-color-brand1);
+    }
+  }
+}
+// .min-height {
+//   min-height: 1160px;
+//   @media screen and (max-width: 1100px) {
+//     min-height: fit-content;
+//   }
+// }
 .previous {
   @include floor-box();
   .previous-title {
@@ -200,7 +406,22 @@ onMounted(() => {
     }
   }
 }
-.dark .collect-item {
+.apply-code {
+  position: fixed;
+  top: 65vh;
+  right: 3vw;
+  a {
+    display: inline-block;
+    img {
+      width: 128px;
+      @media screen and (max-width: 768px) {
+        width: 68px;
+      }
+    }
+  }
+}
+.dark .collect-item,
+.dark img {
   filter: brightness(80%) grayscale(20%) contrast(1.2);
 }
 </style>
