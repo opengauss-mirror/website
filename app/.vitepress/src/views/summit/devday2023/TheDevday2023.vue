@@ -8,7 +8,9 @@ import SummitBanner from './components/SummitBanner.vue';
 import SummitSchedule from './components/SummitSchedule.vue';
 
 import summitData from './data';
-import { getEasyeditorInfo } from '@/api/api-easyeditor';
+// import { getEasyeditorInfo } from '@/api/api-easyeditor';
+import data1 from './data/agenda1';
+import data2 from './data/agenda2';
 
 import liveLight from '@/assets/category/summit/live.png';
 import liveDark from '@/assets/category/summit/live-dark.png';
@@ -32,30 +34,51 @@ const meetingTime = [
     label: 'MAY',
   },
 ];
-const getData: any = ref({});
+const getData: any = ref({
+  'schedule-25': {
+    name: 'schedule-25',
+    content: JSON.parse(data2.content),
+  },
+
+  'schedule-26': {
+    name: 'schedule-26',
+    content: JSON.parse(data1.content),
+  },
+});
+const agendaData2: any = ref([]);
+
+agendaData2.value = getData.value[meetingTime[1].name].content.content.slice(
+  0,
+  1
+);
+console.log(getData.value);
 
 // 获取会议日程
-const getSchedule = () => {
-  const href = 'https://opengauss.org/zh/summit/devday2023/';
-  getEasyeditorInfo(href)
-    .then((res) => {
-      if (res.data && res.data[0]) {
-        for (let i = 0; i < res.data.length; i++) {
-          res.data[i].content = JSON.parse(res.data[i].content);
-          getData.value[res.data[i].name] = res.data[i];
-        }
-        agendaData2.value = getData.value[
-          meetingTime[1].name
-        ].content.content.slice(0, 1);
-      }
-    })
-    .catch((e) => {
-      throw new Error(e);
-    });
-};
+// const getSchedule = () => {
+//   const href = 'https://opengauss.org/zh/summit/devday2023/';
+//   getEasyeditorInfo(href)
+//     .then((res) => {
+//       if (res.data && res.data[0]) {
+//         console.log(JSON.parse(data1.content));
+
+//         for (let i = 0; i < res.data.length; i++) {
+//           res.data[i].content = JSON.parse(res.data[i].content);
+//           getData.value[res.data[i].name] = res.data[i];
+//         }
+//         agendaData2.value = getData.value[
+//           meetingTime[1].name
+//         ].content.content.slice(0, 1);
+//         console.log(agendaData2);
+//         console.log(getData);
+//       }
+//     })
+//     .catch((e) => {
+//       throw new Error(e);
+//     });
+// };
 
 onMounted(() => {
-  getSchedule();
+  // getSchedule();
 
   AOS.init({
     offset: 50,
@@ -70,7 +93,6 @@ function setShowIndex(index: number) {
 }
 // 控制上下午切换
 const tabType = ref(0);
-const agendaData2: any = ref([]);
 watch(
   tabType,
   () => {
