@@ -166,8 +166,8 @@ Table Data Comparison Summary
 
 <img src="https://oss-emcsprod-public.modb.pro/image/editor/20210615-c6b4c094-1613-4ff8-bac7-739b214fe370.png" alt="1.png" />
 
-对象<br />
+对象
 <img src="https://oss-emcsprod-public.modb.pro/image/editor/20210615-052bc91a-875f-4a76-a3e4-28ae19ae9e20.png" alt="2.png" />
 
-表数据<br />
+表数据
 <img src="https://oss-emcsprod-public.modb.pro/image/editor/20210615-aa6ab68b-54d9-4b42-8fe4-612be03554f0.png" alt="3.png" />

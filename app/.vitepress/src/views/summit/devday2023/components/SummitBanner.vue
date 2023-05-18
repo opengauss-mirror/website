@@ -1,12 +1,9 @@
 <script setup lang="ts">
-import { onMounted } from 'vue';
+import { onMounted, computed } from 'vue';
 import AOS from 'aos';
-
-import useWindowResize from '@/components/hooks/useWindowResize';
 
 import IconArrowRight from '~icons/app/icon-arrow-right.svg';
 
-const screenWidth = useWindowResize();
 defineProps({
   bannerData: {
     type: Object,
@@ -14,6 +11,7 @@ defineProps({
     default: () => null,
   },
 });
+
 onMounted(() => {
   AOS.init({
     offset: 50,
@@ -38,12 +36,7 @@ onMounted(() => {
       <h3>{{ bannerData.title }}</h3>
       <h4>{{ bannerData.subtitle }}</h4>
       <a :href="bannerData.btnLink" class="btn-box" target="_blank">
-        <OButton
-          animation
-          type="outline"
-          class="apply-btn"
-          :size="screenWidth > 767 ? 'middle' : 'mini'"
-        >
+        <OButton animation type="outline" class="apply-btn" size="middle">
           {{ bannerData.btn }}
           <template #suffixIcon>
             <OIcon><IconArrowRight /></OIcon>
@@ -199,6 +192,15 @@ onMounted(() => {
       .apply-btn {
         color: black;
         border-color: black;
+        @media (max-width: 767px) {
+          padding: 6px 16px;
+          font-size: 12px;
+          line-height: 18px;
+          :deep(.suffix-icon) {
+            font-size: 12px;
+            margin-left: 4px;
+          }
+        }
       }
     }
   }

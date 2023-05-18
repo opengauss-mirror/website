@@ -60,7 +60,7 @@ count
 (1 row)
 ```
 
-2.可用于存储过程带有自治事务、自定义函数、游标、触发器等环境中<br />举例：
+2.可用于存储过程带有自治事务、自定义函数、游标、触发器等环境中 举例：
 
 ```
 CREATE FUNCTION func_loop(a int,b int,i int) return int
@@ -94,7 +94,7 @@ func_loop
 
 ## WHILE_LOOP 语句
 
-在每次循环开始判断，若为真值，继续循环，反之，退出循环。<br />举例：
+在每次循环开始判断，若为真值，继续循环，反之，退出循环。 举例：
 
 ```
 CREATE OR REPLACE PROCEDURE proc_while_loop(a int,b out int)
@@ -132,7 +132,7 @@ b
 
 ### 1.int 类型变量
 
-变量指定起始位置 min，遍历到达指定终点位置 max，其中 max>=min.<br />举例：
+变量指定起始位置 min，遍历到达指定终点位置 max，其中 max>=min. 举例：
 
 ```
 CREATE OR REPLACE PROCEDURE proc_for_loop(sum out int)
