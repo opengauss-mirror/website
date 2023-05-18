@@ -106,15 +106,10 @@ onMounted(() => {
         show-overflow-tooltip
       ></OTableColumn>
       <OTableColumn :label="i18n.ogsp.version" prop="version"></OTableColumn>
-      <OTableColumn
-        width="200"
-        :label="i18n.ogsp.award"
-        prop="award"
-      ></OTableColumn>
+      <OTableColumn :label="i18n.ogsp.award" prop="award"></OTableColumn>
       <OTableColumn
         :label="i18n.ogsp.expiration"
         prop="expiration"
-        width="200"
       ></OTableColumn>
       <el-table-column :label="i18n.ogsp.certificate" width="200">
         <template #default="scope">
