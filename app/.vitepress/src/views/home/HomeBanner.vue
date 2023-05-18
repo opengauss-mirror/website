@@ -360,8 +360,8 @@ html[lang='zh'] {
         padding: 0 16px;
       }
       @media screen and (max-width: 824px) {
-        padding: 60px 16px 50px;
-        justify-content: space-between;
+        padding: 40px 16px;
+        align-items: center;
         box-sizing: border-box;
         text-align: center;
       }
@@ -446,11 +446,6 @@ html[lang='zh'] {
     }
   }
   .devday-banner {
-    .banner-panel-content {
-      @media screen and (max-width: 824px) {
-        display: block;
-      }
-    }
     .box {
       color: #000;
       .title {
@@ -459,7 +454,7 @@ html[lang='zh'] {
         line-height: var(--o-line-height-h2);
         @media (max-width: 767px) {
           font-size: 32px;
-          line-height:32px;
+          line-height: 32px;
         }
       }
       .subtitle {
