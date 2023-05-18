@@ -96,7 +96,9 @@ const otherTabType = ref(0);
                   {{ personItem.name }}
                 </span>
                 <span v-if="personItem.post" class="post">
-                  {{ personItem.post }}
+                  <div v-for="item in personItem.post.split('\n')">
+                    {{ item }}
+                  </div>
                 </span>
               </div>
             </div>
@@ -368,7 +370,7 @@ const otherTabType = ref(0);
   }
   .content-item {
     display: grid;
-    grid-template-columns: 192px 580px 445px;
+    grid-template-columns: 192px 580px 560px;
     border-bottom: 1px solid var(--o-color-border2);
     padding: 20px 0px;
     transition: all 0.25s ease;
@@ -432,7 +434,7 @@ const otherTabType = ref(0);
     }
 
     .name {
-      min-width: 200px;
+      min-width: 120px;
       display: inline-block;
       color: var(--o-color-text3);
       font-size: 16px;
@@ -448,11 +450,13 @@ const otherTabType = ref(0);
       color: var(--o-color-text3);
       font-size: 16px;
       line-height: 24px;
-      // word-break: keep-all;
       flex: 1;
-      @media (max-width: 1100px) {
-        font-size: 12px;
-        line-height: 18px;
+      div {
+        line-height: 32px;
+        @media (max-width: 1100px) {
+          font-size: 12px;
+          line-height: 18px;
+        }
       }
     }
     .post-more {
