@@ -8,6 +8,9 @@ import SummitBanner from './components/SummitBanner.vue';
 import SummitSchedule from './components/SummitSchedule.vue';
 
 import summitData from './data';
+// import { getEasyeditorInfo } from '@/api/api-easyeditor';
+import data1 from './data/agenda1';
+import data2 from './data/agenda2';
 
 import liveLight from '@/assets/category/summit/live.png';
 import liveDark from '@/assets/category/summit/live-dark.png';
@@ -17,7 +20,66 @@ const commonStore = useCommon();
 const liveImg = computed(() =>
   commonStore.theme === 'light' ? liveLight : liveDark
 );
+
+// 会议时间
+const meetingTime = [
+  {
+    name: 'schedule-25',
+    day: 25,
+    label: 'MAY',
+  },
+  {
+    name: 'schedule-26',
+    day: 26,
+    label: 'MAY',
+  },
+];
+const getData: any = ref({
+  'schedule-25': {
+    name: 'schedule-25',
+    content: JSON.parse(data2.content),
+  },
+
+  'schedule-26': {
+    name: 'schedule-26',
+    content: JSON.parse(data1.content),
+  },
+});
+const agendaData2: any = ref([]);
+
+agendaData2.value = getData.value[meetingTime[1].name].content.content.slice(
+  0,
+  1
+);
+console.log(getData.value);
+
+// 获取会议日程
+// const getSchedule = () => {
+//   const href = 'https://opengauss.org/zh/summit/devday2023/';
+//   getEasyeditorInfo(href)
+//     .then((res) => {
+//       if (res.data && res.data[0]) {
+//         console.log(JSON.parse(data1.content));
+
+//         for (let i = 0; i < res.data.length; i++) {
+//           res.data[i].content = JSON.parse(res.data[i].content);
+//           getData.value[res.data[i].name] = res.data[i];
+//         }
+//         agendaData2.value = getData.value[
+//           meetingTime[1].name
+//         ].content.content.slice(0, 1);
+//         console.log(agendaData2);
+//         console.log(getData);
+//       }
+//     })
+//     .catch((e) => {
+//       throw new Error(e);
+//     });
+// };
+
 onMounted(() => {
+  // getSchedule();
+
   AOS.init({
     offset: 50,
     duration: 800,
@@ -31,14 +93,14 @@ function setShowIndex(index: number) {
 }
 // 控制上下午切换
 const tabType = ref(0);
-const agendaData2: any = ref([]);
 watch(
   tabType,
   () => {
-    if (tabType.value === 1 && summitData.agenda2) {
-      agendaData2.value = summitData.agenda2.content.slice(1);
-    } else {
-      agendaData2.value = summitData.agenda2.content.slice(0, 1);
+    const DATA = getData.value && getData.value[meetingTime[1].name];
+    if (tabType.value === 1 && DATA) {
+      agendaData2.value = DATA.content.content.slice(1);
+    } else if (DATA) {
+      agendaData2.value = DATA.content.content.slice(0, 1);
     }
   },
   {
@@ -52,48 +114,35 @@ watch(
     <div class="detail">
       <p v-for="item in summitData.detail" :key="item">{{ item }}</p>
     </div>
-    <div class="collect">
-      <div
-        v-for="item in summitData.collect"
-        :key="item.title"
-        class="collect-item"
-        :style="{ 'background-image': `url(${item.bgImg}) ` }"
-      >
-        <a :href="item.link" target="_blank">
-          <div class="text">
-            <p class="item-title">{{ item.title }}</p>
-            <p class="item-title">{{ item.titleEn }}</p>
-          </div>
-        </a>
-      </div>
-    </div>
     <div class="agenda" :class="{ 'min-height': showIndex === 1 }">
       <h3>会议日程</h3>
       <div class="date">
         <div
+          v-for="(item, index) in meetingTime"
+          :key="item.name"
           class="date-item"
-          :class="{ active: showIndex === 0 }"
-          @click="setShowIndex(0)"
+          :class="{ active: showIndex === index }"
+          @click="setShowIndex(index)"
         >
-          <p class="date-day">25</p>
-          <p class="date-month">MAY</p>
-        </div>
-        <div
-          class="date-item"
-          :class="{ active: showIndex === 1 }"
-          @click="setShowIndex(1)"
-        >
-          <p class="date-day">26</p>
-          <p class="date-month">MAY</p>
+          <p class="date-day">{{ item.day }}</p>
+          <p class="date-month">{{ item.label }}</p>
         </div>
       </div>
-      <div v-show="showIndex === 0">
-        <SummitSchedule
-          v-for="item in summitData.agenda1.content"
+      <!-- 25 -->
+      <template
+        v-if="
+          getData[meetingTime[0].name] &&
+          getData[meetingTime[0].name].content.content
+        "
+      >
+        <template
+          v-for="item in getData[meetingTime[0].name].content.content"
           :key="item.lable"
-          :agenda-data="item"
-        />
-      </div>
+        >
+          <SummitSchedule v-show="showIndex === 0" :agenda-data="item" />
+        </template>
+      </template>
+
       <div v-show="showIndex === 1">
         <el-tabs v-model.number="tabType" class="schedule-tabs">
           <el-tab-pane :name="0">
@@ -219,10 +268,10 @@ watch(
           & + .item-title {
             margin-top: var(--o-spacing-h4);
             margin-left: auto;
-            margin-right:auto;
+            margin-right: auto;
             font-size: var(--o-font-size-h4);
             line-height: var(--o-line-height-h4);
-            width:180px;
+            width: 180px;
             // @media screen and (max-width: 768px) {
             //   font-size: var(--o-font-size-text);
             // }
