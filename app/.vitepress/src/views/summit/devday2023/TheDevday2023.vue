@@ -190,6 +190,20 @@ watch(
   </AppContext>
 </template>
 <style scoped lang="scss">
+.title-bar {
+  text-align: center;
+  font-size: var(--o-font-size-h3);
+  line-height: var(--o-line-height-h3);
+  color: var(--o-color-text1);
+  font-weight: 300;
+  margin: 64px 0 40px;
+  @media (max-width: 767px) {
+    font-size: var(--o-font-size-h8);
+    line-height: var(--o-line-height-h8);
+    margin: 40px 0 24px;
+  }
+}
+
 @mixin floor-box {
   margin-top: var(--o-spacing-h1);
   @media screen and (max-width: 768px) {
