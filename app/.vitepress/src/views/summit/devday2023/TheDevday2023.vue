@@ -6,6 +6,8 @@ import AOS from 'aos';
 import AppContext from '@/components/AppContent.vue';
 import SummitBanner from './components/SummitBanner.vue';
 import SummitSchedule from './components/SummitSchedule.vue';
+import SummitGuests from '../components/SummitGuests.vue';
+import guestsData from './data/guests';
 
 import summitData from './data';
 // import { getEasyeditorInfo } from '@/api/api-easyeditor';
@@ -51,7 +53,6 @@ agendaData2.value = getData.value[meetingTime[1].name].content.content.slice(
   0,
   1
 );
-console.log(getData.value);
 
 // 获取会议日程
 // const getSchedule = () => {
@@ -160,6 +161,15 @@ watch(
           <SummitSchedule :agenda-data="item" />
         </template>
       </div>
+    </div>
+    <div class="guests">
+      <h3 class="title-bar">演讲嘉宾</h3>
+      <SummitGuests
+        :lecturer-list="guestsData"
+        shape="circle"
+        :web-columns-num="4"
+        :mobile-columns-num="2"
+      />
     </div>
     <div class="previous">
       <div class="previous-title">

@@ -1,4 +1,4 @@
-import lihuaizhan from '@/assets/category/summit/guests/lihuaizhan.png';
+import lizhanhuai from '@/assets/category/summit/guests/lizhanhuai.png';
 import jiangdayong from '@/assets/category/member/avatar/jiangdayong.png';
 import huzhengce from '@/assets/category/summit/guests/huzhengce.png';
 import liguoliang from '@/assets/category/summit/guests/liguoliang.png';
@@ -523,7 +523,7 @@ const summitData = {
     },
     LECTURER_LIST: [
       {
-        IMG: lihuaizhan,
+        IMG: lizhanhuai,
         NAME: '李战怀',
         POSITION: ['中国计算机学会', '数据库专委会主任'],
       },
