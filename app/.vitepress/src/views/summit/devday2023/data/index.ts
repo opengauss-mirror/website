@@ -6,6 +6,7 @@ import cardBg3 from '../img/card_bg3.png';
 import cardBg4 from '../img/card_bg4.png';
 import agenda1 from './agenda1';
 import agenda2 from './agenda2';
+import live from './live';
 
 export default {
   banner: {
@@ -21,6 +22,7 @@ export default {
     'openGauss Developer Day 2023是openGauss社区发起并举办的数据库开发者年度盛会。openGauss社区开源3年来，已在技术、生态、商业和社区治理等方面发展显著。为践行openGauss社区共建、共享、共治的理念，打造中国最具创新力的开源数据库根社区，大会诚邀学术专家，行业用户，合作伙伴，开发者共同探讨数据库面向多场景的技术创新，分享基于openGauss的行业联合创新成果及商业实践，献计社区治理完善，讨论社区版本规划。',
     'openGauss诚邀开发者齐参与，同贡献，繁荣开源数据库根社区。',
   ],
+  live,
   collect: [
     {
       bgImg: cardBg1,
