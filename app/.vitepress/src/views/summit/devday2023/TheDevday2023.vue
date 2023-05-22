@@ -431,12 +431,12 @@ watch(
     }
   }
 }
-// .min-height {
-//   min-height: 1160px;
-//   @media screen and (max-width: 1100px) {
-//     min-height: fit-content;
-//   }
-// }
+.min-height {
+  min-height: 1160px;
+  @media screen and (max-width: 1100px) {
+    min-height: fit-content;
+  }
+}
 .previous {
   @include floor-box();
   .previous-title {
