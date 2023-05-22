@@ -188,7 +188,7 @@ export default [
   {
     IMG: hechenghan,
     NAME: '贺承汉',
-    POSITION: ['云和恩墨·本原数据', 'openGauss开源数据库总工程师'],
+    POSITION: ['openGauss开源数据库总工程师'],
   },
   {
     IMG: dongliguo,
@@ -258,6 +258,6 @@ export default [
   {
     IMG: luqingyun,
     NAME: '陆青云',
-    POSITION: ['永城保险', '架构与安全处处长'],
+    POSITION: ['永诚保险', '架构与安全处处长'],
   },
 ];
