@@ -7,8 +7,9 @@ import AppContext from '@/components/AppContent.vue';
 import SummitBanner from './components/SummitBanner.vue';
 import SummitSchedule from './components/SummitSchedule.vue';
 import SummitGuests from '../components/SummitGuests.vue';
-import guestsData from './data/guests';
+// import SummitLive from './components/SummitLive.vue';
 
+import guestsData from './data/guests';
 import summitData from './data';
 import { getEasyeditorInfo } from '@/api/api-easyeditor';
 // import data1 from './data/agenda1';
@@ -39,7 +40,7 @@ const meetingTime = [
 const getData: any = ref({
   // 'schedule-25': {
   //   name: 'schedule-25',
-  //   // content: JSON.parse(data2.content),
+  //   content: JSON.parse(data2.content),
   // },
   // 'schedule-26': {
   //   name: 'schedule-26',
@@ -102,6 +103,8 @@ watch(
     immediate: true,
   }
 );
+// 控制直播
+// const isLiveShow = ref(0);
 </script>
 <template>
   <SummitBanner :banner-data="summitData.banner" />
@@ -109,6 +112,17 @@ watch(
     <div class="detail">
       <p v-for="item in summitData.detail" :key="item">{{ item }}</p>
     </div>
+    <!-- <div class="live">
+      <h3 class="title-bar">{{ summitData.live.title }}</h3>
+      <ClientOnly>
+        <SummitLive
+          v-if="isLiveShow === 0"
+          :live-data="summitData.live.liveData"
+          class-name="odd2022"
+          class="live-box"
+        />
+      </ClientOnly>
+    </div> -->
     <div class="agenda" :class="{ 'min-height': showIndex === 1 }">
       <h3>会议日程</h3>
       <div class="date">
@@ -299,7 +313,7 @@ watch(
     }
   }
 }
-.agenda {
+.live,.agenda {
   margin-top: var(--o-spacing-h1);
   @media (max-width: 767px) {
     margin-top: var(--o-spacing-h2);

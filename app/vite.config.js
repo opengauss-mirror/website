@@ -47,7 +47,7 @@ export default defineConfig({
     hmr: true, // 配置自动刷新
     proxy: {
       '/api-easyeditor/': {
-        target: 'https://easyeditor.openeuler.org',
+        target: 'https://easyeditor.opengauss.org',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api-easyeditor/, ''),
       },
