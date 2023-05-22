@@ -96,7 +96,7 @@ const otherTabType = ref(0);
                   {{ personItem.name }}
                 </span>
                 <span v-if="personItem.post" class="post">
-                  <div v-for="item in personItem.post.split('\n')">
+                  <div v-for="item in personItem.post.split('\n')" :key="item">
                     {{ item }}
                   </div>
                 </span>

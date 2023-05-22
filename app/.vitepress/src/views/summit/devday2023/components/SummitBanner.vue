@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, computed } from 'vue';
+import { onMounted } from 'vue';
 import AOS from 'aos';
 
 import IconArrowRight from '~icons/app/icon-arrow-right.svg';
