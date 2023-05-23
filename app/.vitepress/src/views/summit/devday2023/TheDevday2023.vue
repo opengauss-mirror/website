@@ -6,12 +6,13 @@ import AOS from 'aos';
 import AppContext from '@/components/AppContent.vue';
 import SummitBanner from './components/SummitBanner.vue';
 import SummitSchedule from './components/SummitSchedule.vue';
-import SummitGuests from '../components/SummitGuests.vue';
-// import SummitLive from './components/SummitLive.vue';
+import SummitGuests from './components/SummitGuests.vue';
+import SummitLive from './components/SummitLive.vue';
 
 import guestsData from './data/guests';
 import summitData from './data';
 import { getEasyeditorInfo } from '@/api/api-easyeditor';
+import { getUrlParams } from '@/shared/utils';
 // import data1 from './data/agenda1';
 // import data2 from './data/agenda2';
 
@@ -104,7 +105,24 @@ watch(
   }
 );
 // 控制直播
-// const isLiveShow = ref(0);
+const isLiveShow = ref(0);
+// 埋点
+function getAdvertisedData() {
+  const sensors = (window as any)['sensorsDataAnalytic201505'];
+  const { href } = window.location;
+  if (href.includes('utm_medium')) {
+    const paramsArr = getUrlParams(href);
+    sensors?.setProfile({
+      ...(window as any)['sensorsCustomBuriedData'],
+      profileType: 'fromAdvertised',
+      origin: href,
+      ...paramsArr,
+    });
+  }
+}
+onMounted(()=>{
+  getAdvertisedData()
+})
 </script>
 <template>
   <SummitBanner :banner-data="summitData.banner" />
@@ -112,17 +130,17 @@ watch(
     <div class="detail">
       <p v-for="item in summitData.detail" :key="item">{{ item }}</p>
     </div>
-    <!-- <div class="live">
+    <div class="live">
       <h3 class="title-bar">{{ summitData.live.title }}</h3>
       <ClientOnly>
         <SummitLive
           v-if="isLiveShow === 0"
           :live-data="summitData.live.liveData"
-          class-name="odd2022"
+          class-name="odd2023"
           class="live-box"
         />
       </ClientOnly>
-    </div> -->
+    </div>
     <div class="agenda" :class="{ 'min-height': showIndex === 1 }">
       <h3>会议日程</h3>
       <div class="date">

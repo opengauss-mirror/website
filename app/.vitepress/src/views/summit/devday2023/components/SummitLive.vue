@@ -2,8 +2,8 @@
 import { ref, onMounted } from 'vue';
 import useWindowResize from '@/components/hooks/useWindowResize';
 
-import liveActiveBg from '@/assets/category/summit/live-active-bg.png';
-import liveActiveBgLong from '@/assets/category/summit/live-active-bg.png';
+import liveActiveBg from '../img/active-bg2.png';
+import liveActiveBgLong from '../img/active-bg1.png';
 
 interface RenderData {
   id: number;
@@ -179,7 +179,7 @@ const changeLive = (val: number): void => {
       width: 100%;
       flex-wrap: wrap;
       justify-content: space-between;
-      &.odd2022 {
+      &.odd2023 {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 16px;
@@ -191,16 +191,6 @@ const changeLive = (val: number): void => {
           grid-column: 1/5;
         }
       }
-      &.odd2023 {
-        display: grid;
-        grid-template-columns: 300px 1fr 300px;
-        grid-template-areas: 'a b c';
-        gap: 16px;
-        width: 100%;
-        .link-main {
-          grid-area: b;
-        }
-      }
       .link {
         flex: 1;
         padding: var(--o-spacing-h6) 0;
@@ -210,7 +200,8 @@ const changeLive = (val: number): void => {
         text-align: center;
         display: grid;
         align-items: center;
-        border: 1px solid var(--o-color-brand1);
+        border: 1px solid #C0A4FF;
+        border-image: linear-gradient(90deg, #8AA2DC 0%, #C0A4FF 100%) 2 2 2 2;
         p {
           color: var(--o-color-text1);
           font-size: var(--o-font-size-h7);
@@ -225,13 +216,17 @@ const changeLive = (val: number): void => {
       .link-active {
         background: v-bind('ActiveBg') no-repeat center/cover;
         p {
-          color: #fff;
+          color: #000;
         }
       }
+
       .link-active.link-main {
         background: v-bind('ActiveBgLong') no-repeat center/cover;
       }
     }
   }
+}
+.dark .link-active{
+  filter: brightness(80%) grayscale(20%) contrast(1.2);
 }
 </style>
