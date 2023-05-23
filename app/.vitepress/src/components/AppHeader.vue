@@ -330,7 +330,7 @@ const searchLink = `/${lang.value}/search/`;
 }
 .app-header {
   background-color: var(--o-color-bg2);
-  position: fixed;
+  position: sticky;
   left: 0;
   right: 0;
   top: 0;

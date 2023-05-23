@@ -104,3 +104,15 @@ export function getUrlParams(url: string) {
     return list;
   }
 }
+
+/*
+ * setCookie 设置cookie
+ *  cname cookie的名称
+ *  cvalue cookie的值
+ *  day cookie的过期时间 默认1天
+ */
+export function setCustomCookie(cname: string, cvalue: string, day = 1) {
+  const expires = day * 24 * 60 * 60 * 1000;
+  const date = new Date(+new Date() + expires).toUTCString();
+  document.cookie = `${cname}=${cvalue};expires=${date}`;
+}

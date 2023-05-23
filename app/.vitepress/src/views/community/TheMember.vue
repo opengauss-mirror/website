@@ -42,26 +42,6 @@ const handleScroll = (index: number) => {
   }
 };
 const scroll = () => {
-  if (document.getElementById('tab')) {
-    const targetScrollTop =
-      screenWidth.value > 768
-        ? (
-            document.getElementById('tab') as HTMLElement
-          ).getBoundingClientRect().top
-        : (
-            document.getElementById('tab2') as HTMLElement
-          ).getBoundingClientRect().top;
-    const boardScrollTop = (
-      document.getElementById('board') as HTMLElement
-    ).getBoundingClientRect().top;
-
-    if (targetScrollTop < 0) {
-      (document.getElementById('tab') as HTMLElement).style.position = 'fixed';
-    }
-    if (boardScrollTop >= 0) {
-      (document.getElementById('tab') as HTMLElement).style.position = 'static';
-    }
-  }
   // 根据滚动激活导航
   (function () {
     const scrollTop =
@@ -409,7 +389,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
   top: 80px;
   width: 100%;
   z-index: 9;
-  position: static;
+  position: sticky;
   align-items: flex-end;
   justify-content: center;
   border-bottom: 1px solid var(--o-color-division1);

@@ -7,6 +7,7 @@ import type { Component } from 'vue';
 import { computed, watch, ref, onMounted } from 'vue';
 import { useCommon } from '@/stores/common';
 import { refreshInfo } from './shared/login';
+import { setCustomCookie } from './shared/utils';
 import zhCn from 'element-plus/lib/locale/lang/zh-cn';
 import en from 'element-plus/lib/locale/lang/en';
 
@@ -55,20 +56,14 @@ const isTipShow = ref(false);
 const isCookieTip = ref(false);
 function handleCookieClick() {
   isCookieTip.value = false;
-  document.cookie =
-    'agreed-cookiepolicy=false; expires=' + getCookieExpirationDate(6);
-}
-function getCookieExpirationDate(months: number) {
-  const date = new Date();
-  date.setMonth(date.getMonth() + months);
-  return date.toUTCString();
+  setCustomCookie('agreed-cookiepolicy', 'false', 180);
 }
 
 onMounted(() => {
   localStorage.getItem('gauss-cookie') &&
     localStorage.removeItem('gauss-cookie');
   isCookieTip.value =
-    document.cookie.indexOf('agreed-cookiepolicy') === 0 ? false : true;
+    document.cookie.indexOf('agreed-cookiepolicy') !== -1 ? false : true;
 
   refreshInfo();
 });
@@ -113,10 +108,7 @@ watch(
 main {
   min-height: calc(100vh - 280px);
   background-color: var(--o-color-bg1);
-  margin-top: 80px;
-  overflow: hidden;
   @media (max-width: 1100px) {
-    margin-top: 48px;
     min-height: calc(100vh - 329px);
   }
 }
