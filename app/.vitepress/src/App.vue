@@ -55,11 +55,21 @@ const isTipShow = ref(false);
 const isCookieTip = ref(false);
 function handleCookieClick() {
   isCookieTip.value = false;
-  localStorage.setItem('gauss-cookie', 'false');
+  document.cookie =
+    'agreed-cookiepolicy=false; expires=' + getCookieExpirationDate(6);
 }
+function getCookieExpirationDate(months: number) {
+  const date = new Date();
+  date.setMonth(date.getMonth() + months);
+  return date.toUTCString();
+}
+
 onMounted(() => {
-  const show = localStorage.getItem('gauss-cookie');
-  isCookieTip.value = show ? false : true;
+  localStorage.getItem('gauss-cookie') &&
+    localStorage.removeItem('gauss-cookie');
+  isCookieTip.value =
+    document.cookie.indexOf('agreed-cookiepolicy') === 0 ? false : true;
+
   refreshInfo();
 });
 
