@@ -7,7 +7,7 @@ import AppContent from '@/components/AppContent.vue';
 import AppPaginationMo from '@/components/AppPaginationMo.vue';
 
 import Banner from '@/assets/illustrations/banner-secondary.png';
-import illustration from '@/assets/illustrations/certification.png';
+import illustration from '@/assets/illustrations/ogsp.png';
 
 interface CertificationData {
   pro: string;
@@ -103,7 +103,7 @@ onMounted(() => {
       <OTableColumn
         :label="i18n.ogsp.name"
         prop="name"
-        show-overflow-tooltip
+        min-width="200"
       ></OTableColumn>
       <OTableColumn :label="i18n.ogsp.version" prop="version"></OTableColumn>
       <OTableColumn :label="i18n.ogsp.award" prop="award"></OTableColumn>
@@ -111,7 +111,7 @@ onMounted(() => {
         :label="i18n.ogsp.expiration"
         prop="expiration"
       ></OTableColumn>
-      <el-table-column :label="i18n.ogsp.certificate" width="200">
+      <el-table-column :label="i18n.ogsp.certificate">
         <template #default="scope">
           <a :href="scope.row.certificate" download target="_blank">{{
             i18n.ogsp.certify
@@ -181,12 +181,12 @@ onMounted(() => {
   :deep(.is-leaf) {
     background-color: var(--o-color-bg4);
   }
-  :deep(.el-tooltip) {
-    white-space: normal !important;
-  }
+
   :deep(.cell) {
     // white-space: nowrap;
     word-break: break-word;
+    white-space: nowrap;
+    padding: 0 var(--o-spacing-h5);
   }
 }
 .mobile-list {

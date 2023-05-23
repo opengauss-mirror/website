@@ -65,6 +65,15 @@ const searchCount = computed(() => {
       activeVersion.value === i18n.value.search.tagList.all
         ? ''
         : activeVersion.value,
+    limit: [
+      {
+        type: 'docs',
+        version:
+          activeVersion.value === i18n.value.search.tagList.all
+            ? ''
+            : activeVersion.value,
+      },
+    ],
   };
 });
 
@@ -103,6 +112,10 @@ function setCurrentType(index: number, type: string) {
 
 // 获取搜索结果各类型的数量
 function searchCountAll() {
+  // 全部时 limit 不传
+  if (activeVersion.value === i18n.value.search.tagList.all) {
+    searchCount.value.limit = [];
+  }
   try {
     getSearchCount(searchCount.value).then((res) => {
       if (res.status === 200 && res.obj.total[0]) {
@@ -400,6 +413,7 @@ watch(
     :deep(.o-search) {
       height: 28px;
       font-size: 14px;
+      width: 100vw;
       padding: 0 16px;
     }
 
@@ -413,7 +427,7 @@ watch(
   }
   .close {
     cursor: pointer;
-    font-size: var(--o-font-size-h5);
+    font-size: 20px;
   }
   .search-content {
     width: 100%;
@@ -504,6 +518,7 @@ watch(
       :deep(.el-select) {
         @media screen and (max-width: 768px) {
           width: 100%;
+          padding-bottom: 8px;
         }
         &:hover {
           box-shadow: none;
@@ -519,6 +534,7 @@ watch(
       box-shadow: var(--o-shadow-l1);
       background-color: var(--o-color-bg2);
       @media (max-width: 768px) {
+        width: 100vw;
         padding: var(--o-spacing-h5) var(--o-spacing-h5) 0 var(--o-spacing-h5);
         min-height: 0;
         background-color: var(--o-color-bg1);
