@@ -91,7 +91,9 @@ function onCookieClick() {
       <!-- 隐私政策 -->
       <div v-if="isCookieTip" class="cookie-privacy">
         <span>{{ i18n.common.COOKIE.TEXT[0] }} </span>
-        <a :href="i18n.common.COOKIE.PATH">{{ i18n.common.COOKIE.TEXT[1] }}</a>
+        <a :href="i18n.common.COOKIE.PATH" class="link">{{
+          i18n.common.COOKIE.TEXT[1]
+        }}</a>
         <OIcon class="icon" @click="onCookieClick"><IconCancel /></OIcon>
       </div>
       <AppContent :pc-top="0" :mobile-top="0">
@@ -325,20 +327,24 @@ $color: #fff;
     z-index: 999;
     box-shadow: var(--o-shadow-l1);
     text-align: center;
-    &.ru {
-      line-height: 16px;
-      display: inline-block;
-      padding: 4px 0;
-    }
     @media screen and (max-width: 1000px) {
       font-size: 12px;
       line-height: 20px;
-      display: inline-block;
     }
-    a {
+    @media screen and (max-width: 760px) {
+      display: block;
+      padding-left: 12px;
+      padding-right: 36px;
+      padding-top: 4px;
+      height: auto;
+    }
+    .link {
       cursor: pointer;
       text-decoration: solid;
       white-space: pre;
+      @media screen and (max-width: 760px) {
+        display: block;
+      }
     }
     .icon {
       cursor: pointer;
@@ -355,10 +361,14 @@ $color: #fff;
         font-size: 20px;
         color: var(--el-color-white);
       }
-      @media screen and (max-width: 1000px) {
+
+      @media screen and (max-width: 760px) {
         width: 20px;
         height: 20px;
         margin-left: 12px;
+        position: absolute;
+        top: 12px;
+        right: 12px;
       }
     }
   }
