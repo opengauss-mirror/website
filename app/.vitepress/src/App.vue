@@ -7,7 +7,7 @@ import type { Component } from 'vue';
 import { computed, watch, ref, onMounted } from 'vue';
 import { useCommon } from '@/stores/common';
 import { refreshInfo } from './shared/login';
-import { setCustomCookie } from './shared/utils';
+import { setCustomCookie, removeCustomCookie } from './shared/utils';
 import zhCn from 'element-plus/lib/locale/lang/zh-cn';
 import en from 'element-plus/lib/locale/lang/en';
 
@@ -56,12 +56,15 @@ const isTipShow = ref(false);
 const isCookieTip = ref(false);
 function handleCookieClick() {
   isCookieTip.value = false;
-  setCustomCookie('agreed-cookiepolicy', 'false', 180);
+  setCustomCookie('agreed-cookiepolicy', 'true', 180);
 }
 
 onMounted(() => {
   localStorage.getItem('gauss-cookie') &&
     localStorage.removeItem('gauss-cookie');
+
+  removeCustomCookie('agreed-cookiepolicy', 'false');
+
   isCookieTip.value =
     document.cookie.indexOf('agreed-cookiepolicy') !== -1 ? false : true;
 
