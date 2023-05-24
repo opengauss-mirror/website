@@ -103,7 +103,7 @@ onMounted(() => {
       <OTableColumn
         :label="i18n.ogsp.name"
         prop="name"
-        min-width="200"
+        min-width="150"
       ></OTableColumn>
       <OTableColumn :label="i18n.ogsp.version" prop="version"></OTableColumn>
       <OTableColumn :label="i18n.ogsp.award" prop="award"></OTableColumn>
