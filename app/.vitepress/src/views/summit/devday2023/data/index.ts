@@ -15,8 +15,6 @@ export default {
     slogan: '聚数成峰 共赢未来 ',
     title: 'openGauss Developer Day 2023',
     subtitle: '5月25-26日  中国·北京昆泰嘉瑞文化中心',
-    btn: '立即报名',
-    btnLink: 'https://e-campaign.huawei.com/m/6vaqiy',
   },
   detail: [
     'openGauss Developer Day 2023是openGauss社区发起并举办的数据库开发者年度盛会。openGauss社区开源3年来，已在技术、生态、商业和社区治理等方面发展显著。为践行openGauss社区共建、共享、共治的理念，打造中国最具创新力的开源数据库根社区，大会诚邀学术专家，行业用户，合作伙伴，开发者共同探讨数据库面向多场景的技术创新，分享基于openGauss的行业联合创新成果及商业实践，献计社区治理完善，讨论社区版本规划。',

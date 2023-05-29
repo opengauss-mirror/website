@@ -21,7 +21,7 @@ import yangziqi from '@/assets/category/member/avatar/yangziqi.png';
 
 import gengqiang from '@/assets/category/member/avatar/gengqiang.png';
 import luna from '@/assets/category/member/avatar/luna.png';
-import lupanfeng from '@/assets/category/member/avatar/lupanfeng.png';
+// import lupanfeng from '@/assets/category/member/avatar/lupanfeng.png';
 import sunpeiyuan from '@/assets/category/member/avatar/sunpeiyuan.png';
 // import wangjuanyj from '@/assets/category/member/avatar/wangjuanyj.png';
 import wangxiaotao from '@/assets/category/member/avatar/wangxiaotao.png';
@@ -421,7 +421,7 @@ import zhaotinyang from '@/assets/category/member/avatar/zhaotinyang.png';
 import cuikaifeng from '@/assets/category/member/avatar/cuikaifeng.png';
 import huangxianru from '@/assets/category/member/avatar/huangxianru.png';
 import liuchen from '@/assets/category/member/avatar/liuchen.png';
-import panchunbao from '@/assets/category/member/avatar/panchunbao.png';
+// import panchunbao from '@/assets/category/member/avatar/panchunbao.png';
 import xubing from '@/assets/category/member/avatar/xubing.png';
 import zhangyi from '@/assets/category/member/avatar/zhangyi.png';
 import zhongchengcheng from '@/assets/category/member/avatar/zhongchengcheng.png';

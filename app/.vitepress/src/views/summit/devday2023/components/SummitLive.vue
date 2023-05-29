@@ -200,8 +200,8 @@ const changeLive = (val: number): void => {
         text-align: center;
         display: grid;
         align-items: center;
-        border: 1px solid #C0A4FF;
-        border-image: linear-gradient(90deg, #8AA2DC 0%, #C0A4FF 100%) 2 2 2 2;
+        border: 1px solid #c0a4ff;
+        border-image: linear-gradient(90deg, #8aa2dc 0%, #c0a4ff 100%) 2 2 2 2;
         p {
           color: var(--o-color-text1);
           font-size: var(--o-font-size-h7);
@@ -226,7 +226,7 @@ const changeLive = (val: number): void => {
     }
   }
 }
-.dark .link-active{
+.dark .link-active {
   filter: brightness(80%) grayscale(20%) contrast(1.2);
 }
 </style>

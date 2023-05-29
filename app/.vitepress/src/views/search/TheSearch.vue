@@ -337,9 +337,9 @@ watch(
         <ul v-if="searchResultList.length" class="content-list">
           <li v-for="(item, index) in searchResultList" :key="item.id">
             <!-- eslint-disable-next-line -->
-            <h3 @click="goLink(item, index)" v-html="item.title"></h3>
+            <h3 @click="goLink(item, index)" v-dompurify-html="item.title"></h3>
             <!-- eslint-disable-next-line -->
-            <p class="detail" v-html="item.textContent"></p>
+            <p class="detail" v-dompurify-html="item.textContent"></p>
             <p class="from">
               <span>{{ i18n.search.form }}</span>
               <span>{{ i18n.search.tagList[item.type] }}</span>
