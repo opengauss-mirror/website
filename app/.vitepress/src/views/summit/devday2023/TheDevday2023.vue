@@ -16,9 +16,8 @@ import { getUrlParams } from '@/shared/utils';
 // import data1 from './data/agenda1';
 // import data2 from './data/agenda2';
 
-import liveLight from '@/assets/category/summit/live.png';
-import liveDark from '@/assets/category/summit/live-dark.png';
-import applyImg from './img/apply.png';
+import liveLight from './img/live.png';
+import liveDark from './img/live-dark.png';
 
 const commonStore = useCommon();
 const liveImg = computed(() =>
@@ -120,9 +119,9 @@ function getAdvertisedData() {
     });
   }
 }
-onMounted(()=>{
-  getAdvertisedData()
-})
+onMounted(() => {
+  getAdvertisedData();
+});
 </script>
 <template>
   <SummitBanner :banner-data="summitData.banner" />
@@ -207,11 +206,6 @@ onMounted(()=>{
           <a :href="item.link" target="_blank">{{ item.title }}</a>
         </p>
       </div>
-    </div>
-    <div class="apply-code">
-      <a href="https://e-campaign.huawei.com/m/6vaqiy" target="_blank">
-        <img :src="applyImg" alt="" />
-      </a>
     </div>
   </AppContext>
 </template>
@@ -331,7 +325,8 @@ onMounted(()=>{
     }
   }
 }
-.live,.agenda {
+.live,
+.agenda {
   margin-top: var(--o-spacing-h1);
   @media (max-width: 767px) {
     margin-top: var(--o-spacing-h2);
@@ -501,20 +496,6 @@ onMounted(()=>{
             margin-top: var(--o-spacing-h8);
           }
         }
-      }
-    }
-  }
-}
-.apply-code {
-  position: fixed;
-  top: 65vh;
-  right: 3vw;
-  a {
-    display: inline-block;
-    img {
-      width: 128px;
-      @media screen and (max-width: 768px) {
-        width: 68px;
       }
     }
   }

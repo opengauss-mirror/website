@@ -2,7 +2,7 @@
 import { ref, onMounted } from 'vue';
 import AOS from 'aos';
 
-import liveActiveBg from '@/assets/category/summit/live-active-bg.png';
+import liveActiveBg from '../img/live-active-bg.png';
 
 interface RENDERDATA {
   id: number;

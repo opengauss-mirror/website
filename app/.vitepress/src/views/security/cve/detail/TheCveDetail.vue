@@ -119,7 +119,10 @@ onMounted(() => {
       <!-- 概要 -->
       <div class="detail-item">
         <h2 class="detail-item-title">{{ i18n.security.SYNOPSIS }}</h2>
-        <p class="detail-item-content" v-html="cveDetailData.description"></p>
+        <p
+          v-dompurify-html="cveDetailData.description"
+          class="detail-item-content"
+        ></p>
       </div>
       <!-- CVSS v3指标 -->
       <div class="detail-item">
