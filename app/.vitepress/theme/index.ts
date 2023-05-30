@@ -10,6 +10,7 @@ import NotFound from '@/NotFound.vue';
 
 import ElementPlus from 'element-plus';
 import OpenDesign from 'opendesign';
+import VueDOMPurifyHTML from 'vue-dompurify-html'
 
 export default {
   Layout,
@@ -19,7 +20,7 @@ export default {
       // @ts-ignore
       global.window = {};
     }
-
+    app.use(VueDOMPurifyHTML);
     app.use(createPinia());
 
     app.use(ElementPlus);
