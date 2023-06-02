@@ -15,7 +15,12 @@ interface CertificationData {
   version: string;
   award: string;
   expiration: string;
+  patch: string;
+  content: string;
+  system: string;
   certificate: string;
+  experience: string;
+  commitment: string;
 }
 
 const searchContent = ref('');
@@ -99,19 +104,62 @@ onMounted(() => {
         @change="searchValchange"
       ></OSearch>
     </div>
-    <OTable class="pc-list" :data="randerData" style="width: 100%">
+    <OTable class="pc-list" :data="randerData"  style="width: 100%">
       <OTableColumn
         :label="i18n.ogsp.name"
+        show-overflow-tooltip
         prop="name"
-        min-width="150"
+        min-width="200"
       ></OTableColumn>
-      <OTableColumn :label="i18n.ogsp.version" prop="version"></OTableColumn>
-      <OTableColumn :label="i18n.ogsp.award" prop="award"></OTableColumn>
+      <OTableColumn
+        :label="i18n.ogsp.version"
+        show-overflow-tooltip
+        prop="version"
+        min-width="115"
+      ></OTableColumn>
+      <OTableColumn
+        :label="i18n.ogsp.award"
+        show-overflow-tooltip
+        prop="award"
+        min-width="115" 
+      ></OTableColumn>
       <OTableColumn
         :label="i18n.ogsp.expiration"
+        show-overflow-tooltip
         prop="expiration"
+        min-width="115" 
       ></OTableColumn>
-      <el-table-column :label="i18n.ogsp.certificate">
+      <OTableColumn
+        :label="i18n.ogsp.patch"
+        show-overflow-tooltip
+        prop="patch" 
+        align="center"
+      ></OTableColumn>
+      <OTableColumn
+        :label="i18n.ogsp.content"
+        prop="content"
+        
+        align="center"
+      ></OTableColumn>
+      <OTableColumn
+        :label="i18n.ogsp.system"
+        prop="system"
+        
+        align="center"
+      ></OTableColumn>
+      <OTableColumn
+        :label="i18n.ogsp.commitment"
+        prop="commitment"
+        
+        align="center"
+      ></OTableColumn>
+      <OTableColumn
+        :label="i18n.ogsp.experience"
+        prop="experience"
+        
+        align="center"
+      ></OTableColumn>
+      <el-table-column :label="i18n.ogsp.certificate"  align="center">
         <template #default="scope">
           <a :href="scope.row.certificate" download target="_blank">{{
             i18n.ogsp.certify
@@ -134,6 +182,23 @@ onMounted(() => {
           <li>
             <span>{{ i18n.ogsp.expiration }}:</span
             ><span>{{ item.expiration }}</span>
+          </li>
+          <li>
+            <span>{{ i18n.ogsp.patch }}:</span><span>{{ item.patch }}</span>
+          </li>
+          <li>
+            <span>{{ i18n.ogsp.content }}:</span><span>{{ item.content }}</span>
+          </li>
+          <li>
+            <span>{{ i18n.ogsp.system }}:</span><span>{{ item.system }}</span>
+          </li>
+          <li>
+            <span>{{ i18n.ogsp.commitment }}:</span
+            ><span>{{ item.commitment }}</span>
+          </li>
+          <li>
+            <span>{{ i18n.ogsp.experience }}:</span
+            ><span>{{ item.experience }}</span>
           </li>
           <li>
             <span>{{ i18n.ogsp.certificate }}:</span>
@@ -173,6 +238,10 @@ onMounted(() => {
     height: 36px;
   }
 }
+
+:deep(.is-center) {
+  text-align: center !important;
+}
 .pc-list {
   margin-top: var(--o-spacing-h2);
   @media screen and (max-width: 1100px) {
@@ -183,10 +252,8 @@ onMounted(() => {
   }
 
   :deep(.cell) {
-    // white-space: nowrap;
     word-break: break-word;
-    white-space: nowrap;
-    padding: 0 var(--o-spacing-h5);
+    padding: 0 var(--o-spacing-h6);
   }
 }
 .mobile-list {
