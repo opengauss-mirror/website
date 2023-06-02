@@ -57,6 +57,7 @@ const searchData = computed(() => {
     ],
   };
 });
+
 const searchCount = computed(() => {
   return {
     keyword: searchInput.value,
@@ -141,7 +142,6 @@ function searchDataAll() {
     if (activeVersion.value === i18n.value.search.tagList.all) {
       searchData.value.limit = [];
     }
-
     getSearchData(searchData.value).then((res) => {
       if (res.status === 200 && res.obj.records[0]) {
         searchResultList.value = res.obj.records;
@@ -294,7 +294,7 @@ watch(
     <OSearch
       v-model="searchInput"
       :placeholder="searchValue.PLEACHOLDER"
-      @change="searchAll"
+      @change="() => searchAll()"
     >
       <template #suffix>
         <OIcon class="close" @click="clearSearchInput"><IconCancel /></OIcon>

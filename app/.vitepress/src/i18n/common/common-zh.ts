@@ -168,11 +168,11 @@ export default {
           ID: 'compatibility',
           PATH: '/compatibility/',
         },
-        // {
-        //   NAME: '服务商认证',
-        //   ID: 'ogsp',
-        //   PATH: '/ogsp/',
-        // },
+        {
+          NAME: '服务商认证',
+          ID: 'ogsp',
+          PATH: '/ogsp/',
+        },
         {
           NAME: '培训认证',
           ID: 'training',
