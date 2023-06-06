@@ -1,6 +1,15 @@
 export default {
   zh: [
     {
+      pro: '【Vastbase G100】V2.2.10',
+      name: '北京海量数据技术股份有限公司',
+      version: 'openGauss 3.0.0',
+      award: '2023-06-01',
+      expiration: '2025-03-31',
+      certificate:
+        'https://distributioncertification-beijing4.obs.myhuaweicloud.com/Vastbase%20V2.2.10/Certificate.pdf',
+    },
+    {
       pro: 'MuDB 1.0.0',
       name: '北京沐融信息科技股份有限公司',
       version: 'openGauss 2.0.0',
@@ -86,6 +95,15 @@ export default {
     },
   ],
   en: [
+    {
+      pro: '【Vastbase G100】V2.2.10',
+      name: '北京海量数据技术股份有限公司',
+      version: 'openGauss 3.0.0',
+      award: '2023-06-01',
+      expiration: '2025-03-31',
+      certificate:
+        'https://distributioncertification-beijing4.obs.myhuaweicloud.com/Vastbase%20V2.2.10/Certificate.pdf',
+    },
     {
       pro: 'MuDB 1.0.0',
       name: '北京沐融信息科技股份有限公司',
