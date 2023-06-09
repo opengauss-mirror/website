@@ -46,11 +46,6 @@ export default defineConfig({
   server: {
     hmr: true, // 配置自动刷新
     proxy: {
-      '/api-easyeditor/': {
-        target: 'https://easyeditor.opengauss.org',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api-easyeditor/, ''),
-      },
       '/advisoryCVE/': {
         target: 'https://api.openeuler.org/cve-manager/',
         changeOrigin: true,
