@@ -7,14 +7,11 @@ import AppContext from '@/components/AppContent.vue';
 import SummitBanner from './components/SummitBanner.vue';
 import SummitSchedule from './components/SummitSchedule.vue';
 import SummitGuests from './components/SummitGuests.vue';
-import SummitLive from './components/SummitLive.vue';
 
 import guestsData from './data/guests';
 import summitData from './data';
-import { getEasyeditorInfo } from '@/api/api-easyeditor';
-import { getUrlParams } from '@/shared/utils';
-// import data1 from './data/agenda1';
-// import data2 from './data/agenda2';
+import data1 from './data/agenda1';
+import data2 from './data/agenda2';
 
 import liveLight from './img/live.png';
 import liveDark from './img/live-dark.png';
@@ -38,44 +35,23 @@ const meetingTime = [
   },
 ];
 const getData: any = ref({
-  // 'schedule-25': {
-  //   name: 'schedule-25',
-  //   content: JSON.parse(data2.content),
-  // },
-  // 'schedule-26': {
-  //   name: 'schedule-26',
-  //   content: JSON.parse(data1.content),
-  // },
+  'schedule-25': {
+    name: 'schedule-25',
+    content: JSON.parse(data2.content),
+  },
+  'schedule-26': {
+    name: 'schedule-26',
+    content: JSON.parse(data1.content),
+  },
 });
 const agendaData2: any = ref([]);
 
-// agendaData2.value = getData.value[meetingTime[1].name].content.content.slice(
-//   0,
-//   1
-// );
-
-// 获取会议日程
-const getSchedule = () => {
-  const href = 'https://opengauss.org/zh/summit/devday2023/';
-  getEasyeditorInfo(href)
-    .then((res) => {
-      if (res.data && res.data[0]) {
-        for (let i = 0; i < res.data.length; i++) {
-          res.data[i].content = JSON.parse(res.data[i].content);
-          getData.value[res.data[i].name] = res.data[i];
-        }
-        agendaData2.value = getData.value[
-          meetingTime[1].name
-        ].content.content.slice(0, 1);
-      }
-    })
-    .catch((e) => {
-      throw new Error(e);
-    });
-};
+agendaData2.value = getData.value[meetingTime[1].name].content.content.slice(
+  0,
+  1
+);
 
 onMounted(() => {
-  getSchedule();
   AOS.init({
     offset: 50,
     duration: 800,
@@ -103,42 +79,12 @@ watch(
     immediate: true,
   }
 );
-// 控制直播
-const isLiveShow = ref(0);
-// 埋点
-function getAdvertisedData() {
-  const sensors = (window as any)['sensorsDataAnalytic201505'];
-  const { href } = window.location;
-  if (href.includes('utm_medium')) {
-    const paramsArr = getUrlParams(href);
-    sensors?.setProfile({
-      ...(window as any)['sensorsCustomBuriedData'],
-      profileType: 'fromAdvertised',
-      origin: href,
-      ...paramsArr,
-    });
-  }
-}
-onMounted(() => {
-  getAdvertisedData();
-});
 </script>
 <template>
   <SummitBanner :banner-data="summitData.banner" />
   <AppContext>
     <div class="detail">
       <p v-for="item in summitData.detail" :key="item">{{ item }}</p>
-    </div>
-    <div class="live">
-      <h3 class="title-bar">{{ summitData.live.title }}</h3>
-      <ClientOnly>
-        <SummitLive
-          v-if="isLiveShow === 0"
-          :live-data="summitData.live.liveData"
-          class-name="odd2023"
-          class="live-box"
-        />
-      </ClientOnly>
     </div>
     <div class="agenda" :class="{ 'min-height': showIndex === 1 }">
       <h3>会议日程</h3>
