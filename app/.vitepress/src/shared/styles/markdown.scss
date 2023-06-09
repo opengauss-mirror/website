@@ -212,6 +212,8 @@
     -moz-hyphens: none;
     -ms-hyphens: none;
     hyphens: none;
+    line-height: 1.45;
+    font-family: "Helvetica", "Arial", "PingFang SC", "Microsoft YaHei", sans-serif;
   }
 
   pre {
@@ -242,7 +244,7 @@
     }
   }
   pre code {
-    color: var(--o-color-text1);
+    color: var(--o-color-text3) ;
   }
   p code,
   li code {

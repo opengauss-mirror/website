@@ -11,7 +11,6 @@ import IconCancel from '~icons/app/icon-cancel.svg';
 import IconSearch from '~icons/app/icon-search.svg';
 
 import useWindowResize from '@/components/hooks/useWindowResize';
-import { addSearchBuriedData } from '@/shared/utils';
 
 const screenWidth = useWindowResize();
 const isMobile = computed(() => (screenWidth.value <= 768 ? true : false));
@@ -154,30 +153,6 @@ function searchDataAll() {
         searchResultList.value = [];
         pageShow.value = false;
       }
-      // 搜索埋点数据添加
-      (function () {
-        const search_event_id = `${
-          searchData.value.keyword
-        }${new Date().getTime()}${
-          (window as any)['sensorsCustomBuriedData']?.ip || ''
-        }`;
-        const obj = {
-          search_key: searchData.value.keyword,
-          search_event_id,
-        };
-        (window as any)['addSearchBuriedData'] = obj;
-        const sensors = (window as any)['sensorsDataAnalytic201505'];
-        const searchKeyObj = {
-          search_tag: typeList,
-          search_result_total_num: total.value,
-        };
-        sensors?.setProfile({
-          profileType: 'searchValue',
-          ...((window as any)['sensorsCustomBuriedData'] || {}),
-          ...((window as any)['addSearchBuriedData'] || {}),
-          ...searchKeyObj,
-        });
-      })();
     });
   } catch (error: any) {
     throw Error(error);
@@ -190,7 +165,6 @@ function searchAll(current?: string) {
       currentIndex.value = 0;
     }
     currentPage.value = 1;
-    addSearchBuriedData(searchInput.value);
     searchType.value = current || '';
     searchCountAll();
     searchDataAll();
@@ -206,21 +180,6 @@ function handleSelectChange(val: string) {
 function goLink(data: any, index: number) {
   const { type, path } = data;
   const search_result_url = '/' + path;
-  // 埋点数据
-  const searchKeyObj = {
-    search_tag: type,
-    search_rank_num: pageSize.value * (currentPage.value - 1) + (index + 1),
-    search_result_total_num: total.value,
-    search_result_url: location.origin + search_result_url,
-  };
-  const sensors = (window as any)['sensorsDataAnalytic201505'];
-  const sensorObj = {
-    profileType: 'selectSearchResult',
-    ...(data || {}),
-    ...((window as any)['sensorsCustomBuriedData'] || {}),
-    ...((window as any)['addSearchBuriedData'] || {}),
-    ...searchKeyObj,
-  };
 
   if (type === 'docs') {
     let goPath = path;
@@ -228,11 +187,8 @@ function goLink(data: any, index: number) {
       goPath = path.replace(/^docs\/master/g, 'docs/latest');
     }
     const url = site.value.themeConfig.docsUrl + '/' + goPath + '.html';
-    sensorObj.search_result_url = url;
-    sensors.setProfile(sensorObj);
     window.open(url, '_blank');
   } else {
-    sensors.setProfile(sensorObj);
     router.go(search_result_url);
   }
 }

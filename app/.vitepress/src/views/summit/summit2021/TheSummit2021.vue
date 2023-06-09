@@ -2,7 +2,6 @@
 import { ref } from 'vue';
 
 import AppContent from '@/components/AppContent.vue';
-import SummitLive from './components/SummitLive.vue';
 import SummitSchedule from './components/SummitSchedule.vue';
 import LinkPanel from './components/LinkPanel.vue';
 
@@ -46,15 +45,6 @@ const videoClickBtn = (path: string) => {
     <div class="summit-info">
       <p class="text">{{ summitData.desc[0] }}</p>
       <p class="text">{{ summitData.desc[1] }}</p>
-    </div>
-    <!-- 精彩回顾 -->
-    <div class="live">
-      <h3 class="title-bar">
-        {{ summitData.titleBar[0] }}
-      </h3>
-      <ClientOnly>
-        <SummitLive :live-data="summitData.liveData" class-name="odd2021" />
-      </ClientOnly>
     </div>
     <!-- 峰会日程 -->
     <div class="agenda">

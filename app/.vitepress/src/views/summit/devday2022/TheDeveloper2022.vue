@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 import AppContent from '@/components/AppContent.vue';
-import SummitLive from './components/SummitLive.vue';
 import SummitSchedule from './components/SummitSchedule.vue';
 import SummitGuests from './components/SummitGuests.vue';
 import LinkPanel from './components/LinkPanel.vue';
@@ -36,10 +35,6 @@ const otherTabType = ref(0);
       <p class="text">{{ summitData.desc[0] }}</p>
       <p class="text">{{ summitData.desc[1] }}</p>
     </div>
-    <h3 class="title-bar">{{ summitData.titleBar[0] }}</h3>
-    <ClientOnly
-      ><SummitLive :live-data="summitData.liveData" class-name="odd2022"
-    /></ClientOnly>
     <h3 class="title-bar">{{ summitData.titleBar[1] }}</h3>
     <div class="offline-panel">
       <h4 class="meeting-title">{{ summitData.offline.daytime }}</h4>

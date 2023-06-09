@@ -1,17 +1,12 @@
-<script lang="ts" setup>
-import { onMounted } from 'vue';
-import { getUrlParams } from '@/shared/utils';
+<script lang="ts" setup> 
 import BannerLevel2 from '@/components/BannerLevel2.vue';
 import AppContent from '@/components/AppContent.vue';
 
 import banner from '@/assets/category/questionnaire/banner.jpg';
-// import bannerMo from '@/assets/category/questionnaire/banner-mo.png';
-// import codeImg from '@/assets/category/questionnaire/code.png';
 import padImg from '@/assets/category/questionnaire/pad.png';
 import watchImg from '@/assets/category/questionnaire/watch.png';
 import bookImg from '@/assets/category/questionnaire/book.png';
 import capImg from '@/assets/category/questionnaire/cap.png';
-// import floating from '@/assets/category/questionnaire/floating.png';
 
 const data = {
   title: '2022年度社区满意度调研',
@@ -220,27 +215,6 @@ const data = {
     ],
   },
 };
-
-// 埋点
-function setDownData() {
-  const sensors = (window as any)['sensorsDataAnalytic201505'];
-  const { href } = window.location;
-  if (href.includes('?utm_source')) {
-    const paramsArr = getUrlParams(href);
-    sensors?.setProfile({
-      ...window['sensorsCustomBuriedData'],
-      profileType: 'fromAdvertised',
-      origin: href,
-      ...paramsArr,
-    });
-  }
-}
-
-onMounted(() => {
-  setTimeout(() => {
-    setDownData();
-  }, 300);
-});
 </script>
 
 <template>
@@ -327,12 +301,6 @@ onMounted(() => {
 </template>
 
 <style lang="scss" scoped>
-// .dark {
-//   .panel1,
-//   .panel2 {
-//     filter: brightness(0.8) grayscale(0.2) contrast(1.2);
-//   }
-// }
 .questionnaire-table {
   width: 100%;
   margin: 40px 0 0;

@@ -1,13 +1,11 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue';
 import { useCommon } from '@/stores/common';
-import { getUrlParams } from '@/shared/utils';
 import AOS from 'aos';
 
 import AppContent from '@/components/AppContent.vue';
 import SummitSchedule from './components/SummitSchedule.vue';
 import LinkPanel from '@/components/LinkPanel.vue';
-import SummitLive from './components/SummitLive.vue';
 
 import summitData from './data';
 
@@ -31,21 +29,6 @@ const bannerInfo = {
 const tabType = ref(['main', 'main', 'main']);
 const otherTabType = ref([0, 0, 0]);
 
-// 埋点
-function setDownData() {
-  const sensors = (window as any)['sensorsDataAnalytic201505'];
-  const { href } = window.location;
-  if (href.includes('?utm_source')) {
-    const paramsArr = getUrlParams(href);
-    sensors?.setProfile({
-      ...(window as any)['sensorsCustomBuriedData'],
-      profileType: 'fromAdvertised',
-      origin: href,
-      ...paramsArr,
-    });
-  }
-}
-
 onMounted(() => {
   AOS.init({
     offset: 50,
@@ -53,9 +36,6 @@ onMounted(() => {
     delay: 100,
     once: true,
   });
-  setTimeout(() => {
-    setDownData();
-  }, 300);
 });
 
 // video 事件
@@ -100,16 +80,6 @@ const videoClickBtn = (path: string) => {
     <div class="summit-detail">
       <p>{{ summitData.detail[0] }}</p>
       <p>{{ summitData.detail[1] }}</p>
-    </div>
-    <div class="live">
-      <h3 class="title-bar">{{ summitData.live.title }}</h3>
-      <ClientOnly>
-        <SummitLive
-          :live-data="summitData.live.liveData"
-          class-name="odd2022"
-          class="summit2022-box"
-        />
-      </ClientOnly>
     </div>
     <div class="agenda">
       <h3>{{ summitData.agenda.title }}</h3>
