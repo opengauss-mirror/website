@@ -79,8 +79,6 @@ function onCourseMoreClick(index: number) {
 function onRegistrationClick(index: number) {
   if (index === 0) {
     window.open('https://enmoedu.com/');
-  } else if (index === 6) {
-    router.go(`${router.route.path}search.html`);
   }
 }
 // 控制移动端更多课程内容显示的切换
