@@ -113,18 +113,50 @@ export default {
       },
     ],
   },
-  PPT_LIST: [
-    {
-      URL: '/category/brand/download/PPT_Dark_cn.png',
-      FILE: '/category/brand/download/PPT_Dark_cn.pptx',
-      TEXT: '深色背景',
-      TEXT_EN: 'Dark Theme',
-    },
-    {
-      URL: '/category/brand/download/PPT_Light_cn.png',
-      FILE: '/category/brand/download/PPT_Light_cn.pptx',
-      TEXT: '浅色背景',
-      TEXT_EN: 'Light Theme',
-    },
-  ],
+  PPT_LIST: {
+    zh: [
+      {
+        URL: '/category/brand/download/2023/PPT_Dark_cn.png',
+        FILE: '/category/brand/download/2023/PPT_Dark_cn.pptx',
+        TEXT: '深色背景-2023',
+      },
+      {
+        URL: '/category/brand/download/2023/PPT_Light_cn.png',
+        FILE: '/category/brand/download/2023/PPT_Light_cn.pptx',
+        TEXT: '浅色背景-2023',
+      },
+      {
+        URL: '/category/brand/download/2022/openGauss_PPT_Dark_cn.png',
+        FILE: '/category/brand/download/2022/openGauss_PPT_Dark_cn.pptx',
+        TEXT: '深色背景-2022',
+      },
+      {
+        URL: '/category/brand/download/2022/openGauss_PPT_Light_cn.png',
+        FILE: '/category/brand/download/2022/openGauss_PPT_Light_cn.pptx',
+        TEXT: '浅色背景-2022',
+      },
+    ],
+    en: [
+      {
+        URL: '/category/brand/download/2023/PPT_Dark_en.png',
+        FILE: '/category/brand/download/2023/PPT_Dark_en.pptx',
+        TEXT: 'Dark Theme-2023',
+      },
+      {
+        URL: '/category/brand/download/2023/PPT_Light_en.png',
+        FILE: '/category/brand/download/2023/PPT_Light_en.pptx',
+        TEXT: 'Light Theme-2023',
+      },
+      {
+        URL: '/category/brand/download/2022/openGauss_PPT_Dark_en.png',
+        FILE: '/category/brand/download/2022/openGauss_PPT_Dark_en.pptx',
+        TEXT: 'Dark Theme-2022',
+      },
+      {
+        URL: '/category/brand/download/2022/openGauss_PPT_Light_en.png',
+        FILE: '/category/brand/download/2022/openGauss_PPT_Light_en.pptx',
+        TEXT: 'Light Theme-2022',
+      },
+    ],
+  },
 };
