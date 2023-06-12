@@ -14,6 +14,7 @@ const i18n = useI18n();
 const { lang } = useData();
 
 const isZh = computed(() => (lang.value === 'zh' ? true : false));
+const pptList = computed(()=> isZh.value?BrandConfig.PPT_LIST.zh:BrandConfig.PPT_LIST.en)
 
 const list: Ref<any[]> = ref([]);
 const initList = () => {
@@ -104,7 +105,7 @@ list.value = initList();
       <h3>{{ i18n.brand.PPT_TEXT }}</h3>
       <div class="ppt-list">
         <OCard
-          v-for="ppt in BrandConfig.PPT_LIST"
+          v-for="ppt in pptList"
           :key="ppt.URL"
           shadow="hover"
           class="ppt-item"
@@ -113,7 +114,7 @@ list.value = initList();
           <a :href="ppt.FILE" target="_blank" download>
             <img :src="ppt.URL" alt="" />
             <div class="ppt-word">
-              {{ isZh ? ppt.TEXT : ppt.TEXT_EN }}
+              {{ ppt.TEXT }}
             </div>
           </a>
         </OCard>
