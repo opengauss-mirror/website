@@ -2,10 +2,10 @@ import finance from '@/assets/category/showcase/finance-light.svg';
 import financeDark from '@/assets/category/showcase/finance-dark.svg';
 import financeActive from '@/assets/category/showcase/finance-light-active.svg';
 import financeActiveDark from '@/assets/category/showcase/finance-dark-active.svg';
-import carrier from '@/assets/category/showcase/developer-light.svg';
-import carrierDark from '@/assets/category/showcase/developer-dark.svg';
-import carrierActive from '@/assets/category/showcase/developer-light-active.svg';
-import carrierActiveDark from '@/assets/category/showcase/developer-dark-active.svg';
+import carrier from '@/assets/category/showcase/carrier-light.svg';
+import carrierDark from '@/assets/category/showcase/carrier-dark.svg';
+import carrierActive from '@/assets/category/showcase/carrier-light-active.svg';
+import carrierActiveDark from '@/assets/category/showcase/carrier-dark-active.svg';
 import developer from '@/assets/category/showcase/developer-light.svg';
 import developerDark from '@/assets/category/showcase/developer-dark.svg';
 import developerActive from '@/assets/category/showcase/developer-light-active.svg';
@@ -30,7 +30,6 @@ import industrial from '@/assets/category/showcase/industrial-light.svg';
 import industrialDark from '@/assets/category/showcase/industrial-dark.svg';
 import industrialActive from '@/assets/category/showcase/industrial-light-active.svg';
 import industrialActiveDark from '@/assets/category/showcase/industrial-dark-active.svg';
-
 export default {
   CASE_LIST: [
     {
