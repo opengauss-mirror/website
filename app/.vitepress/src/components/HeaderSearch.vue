@@ -101,7 +101,7 @@ const topSearch = computed(() =>
     right: 16px;
   }
 
-  &-box {
+  .header-search-box {
     .close {
       cursor: pointer;
       color: var(--o-color-text1);
@@ -116,7 +116,6 @@ const topSearch = computed(() =>
     background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(5px);
     padding: var(--o-spacing-h3);
-
     @media (max-width: 1100px) {
       background: rgba(255, 255, 255, 1);
       backdrop-filter: blur(0px);
@@ -127,13 +126,13 @@ const topSearch = computed(() =>
       padding: var(--o-spacing-h5);
     }
     .hots {
-      &-title {
+      .hots-title {
         font-size: var(--o-font-size-tip);
         line-height: var(--o-line-height-tip);
         color: var(--o-color-text1);
       }
-      &-list {
-        &-item {
+      .hots-list {
+        .hots-list-item {
           margin-top: var(--o-spacing-h5);
           margin-right: var(--o-spacing-h5);
           background-color: var(--o-color-bg4);
@@ -143,12 +142,10 @@ const topSearch = computed(() =>
             font-size: var(--o-font-size-tip);
             line-height: var(--o-line-height-tip);
           }
+          @media (max-width: 768px) {
+            margin-right: var(--o-spacing-h8);
+          }
         }
-      }
-    }
-    @media (max-width: 768px) {
-      .hots-list-item {
-        margin-right: var(--o-spacing-h8);
       }
     }
   }

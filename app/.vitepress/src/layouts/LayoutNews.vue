@@ -104,9 +104,7 @@ onMounted(() => {
   margin: 0 auto;
 }
 .bread {
-  padding-top: 40px;
-  padding-left: 44px;
-  padding-right: 44px;
+  padding: 40px 44px 0 44px;
   max-width: 1504px;
   margin: 0 auto;
   @media (max-width: 1439px) {

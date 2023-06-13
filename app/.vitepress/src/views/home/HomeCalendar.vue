@@ -640,7 +640,7 @@ const changeRecord = () => {
               </OIcon>
             </div>
           </template>
-          <template #dateCell="{ data }">
+          <template #date-cell="{ data }">
             <div
               class="out-box"
               :class="{ 'be-active': getMeetTimes(data.day) }"
@@ -713,7 +713,7 @@ const changeRecord = () => {
                       </OIcon>
                     </div>
                   </template>
-                  <template #dateCell="{ data }">
+                  <template #date-cell="{ data }">
                     <div
                       class="out-box"
                       :class="{ 'be-active': getMeetTimes(data.day) }"

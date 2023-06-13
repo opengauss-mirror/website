@@ -53,8 +53,6 @@ const handleCurrentChange = (val: number) => {
 
 // 前端搜索
 function searchProductOrName(data: CertificationData[], query: string) {
-  console.log(query);
-
   if (!query) {
     return i18n.value.certification.tableData;
   }

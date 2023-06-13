@@ -73,7 +73,7 @@ onMounted(async () => {
 <template>
   <div ref="community" class="community">
     <div v-if="isShowCommunity" class="community-list">
-      <OContainer data-aos="fade-right">
+      <OContainer>
         <OCard
           class="community-card"
           :style="{
@@ -101,7 +101,6 @@ onMounted(async () => {
       <OContainer
         :level-index="2"
         class="round-card"
-        data-aos="fade-left"
         :style="{
           'background-image': `url(${bg2}) `,
         }"

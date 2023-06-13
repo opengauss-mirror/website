@@ -104,12 +104,7 @@ onUnmounted(() => {
 <template>
   <div class="case-main">
     <h3>{{ i18n.home.USER_TITLE }}</h3>
-    <OContainer
-      ref="userCase"
-      :level-index="1"
-      data-aos="fade-down"
-      class="container"
-    >
+    <OContainer ref="userCase" :level-index="1" class="container">
       <OCollapse
         v-model="activeMobile"
         accordion

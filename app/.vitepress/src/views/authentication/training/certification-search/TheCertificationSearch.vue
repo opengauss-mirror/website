@@ -765,22 +765,22 @@ function clickDownload() {
     color: var(--o-color-text1);
     padding: var(--o-spacing-h2) 0;
     min-height: calc(100vh - 339px);
-    .nofound-text {
-      margin-top: var(--o-spacing-h5);
-      font-size: var(--o-font-size-h7);
-    }
-    .nofound-img {
-      height: 300px;
-    }
     @media screen and (max-width: 840px) {
       padding-top: var(--o-spacing-h2);
       font-size: var(--o-font-size-text);
-      .nofound-img {
-        max-height: 232px;
-      }
-      .nofound-text {
+    }
+    .nofound-text {
+      margin-top: var(--o-spacing-h5);
+      font-size: var(--o-font-size-h7);
+      @media screen and (max-width: 840px) {
         margin-top: var(--o-spacing-h6);
         font-size: var(--o-font-size-tip);
+      }
+    }
+    .nofound-img {
+      height: 300px;
+      @media screen and (max-width: 840px) {
+        max-height: 232px;
       }
     }
   }

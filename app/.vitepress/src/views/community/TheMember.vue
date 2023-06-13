@@ -245,7 +245,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
             <li><IconUser />{{ item.NAMEL_TEXT }}</li>
           </ul>
           <ul v-if="item.LIST.length > 0" class="member-list">
-            <li v-for="(user, i) in item.LIST" :key="i" data-aos="fade-up">
+            <li v-for="(user, i) in item.LIST" :key="i">
               <img class="avatar" :src="user.img" :alt="user.name" />
               <p class="m-name">{{ user.name }}</p>
               <p class="m-title">{{ user.title }}</p>
@@ -295,11 +295,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
                 <li><IconUser />{{ i18n.member.NAMEL_TEXT }}</li>
               </ul>
               <ul v-if="subitem.LIST.length > 0" class="member-list">
-                <li
-                  v-for="(user, i) in subitem.LIST"
-                  :key="i"
-                  data-aos="fade-up"
-                >
+                <li v-for="(user, i) in subitem.LIST" :key="i">
                   <img class="avatar" :src="user.img" :alt="user.name" />
                   <p class="m-name">{{ user.name }}</p>
                   <p class="m-title">{{ user.title }}</p>

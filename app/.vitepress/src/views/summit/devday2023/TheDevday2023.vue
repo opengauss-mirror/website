@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { computed, onMounted, ref, watch } from 'vue';
+import { computed, ref, watch } from 'vue';
 import { useCommon } from '@/stores/common';
-import AOS from 'aos';
 
 import AppContext from '@/components/AppContent.vue';
 import SummitBanner from './components/SummitBanner.vue';
@@ -51,14 +50,6 @@ agendaData2.value = getData.value[meetingTime[1].name].content.content.slice(
   1
 );
 
-onMounted(() => {
-  AOS.init({
-    offset: 50,
-    duration: 800,
-    delay: 100,
-    once: true,
-  });
-});
 const showIndex = ref(1);
 function setShowIndex(index: number) {
   showIndex.value = index;

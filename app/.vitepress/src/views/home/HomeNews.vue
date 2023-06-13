@@ -101,12 +101,12 @@ onMounted(async () => {
         :class="{ isShow: tabType === 'events' }"
       >
         <div class="activity-content">
-          <div class="activity-content-cover" data-aos="fade-right">
+          <div class="activity-content-cover">
             <a :href="eventsData.path" target="_blank"
               ><img :src="eventsData.img" class="cover" alt=""
             /></a>
           </div>
-          <div class="activity-content-box" data-aos="fade-left">
+          <div class="activity-content-box">
             <div class="box">
               <a
                 :href="eventsData.path"

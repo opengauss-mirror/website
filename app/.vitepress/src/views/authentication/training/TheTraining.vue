@@ -1,9 +1,7 @@
 <script lang="ts" setup>
 import { ref, onMounted, onUnmounted, computed } from 'vue';
-import { useRouter } from 'vitepress';
 import { useI18n } from '@/i18n';
 import { useCommon } from '@/stores/common';
-import AOS from 'aos';
 
 import BannerLevel2 from '@/components/BannerLevel2.vue';
 import AppContent from '@/components/AppContent.vue';
@@ -30,7 +28,6 @@ import IconChevronDown from '~icons/app/icon-chevron-down.svg';
 import IconChevronUp from '~icons/app/icon-chevron-up.svg';
 
 const i18n = useI18n();
-const router = useRouter();
 const commonStore = useCommon();
 const partner = computed(() =>
   commonStore.theme === 'light' ? partnerLight : partnerDark
@@ -86,7 +83,6 @@ function onToggleClick(index: number) {
   isMoreShowMo.value[index] = !isMoreShowMo.value[index];
 }
 onMounted(() => {
-  AOS.init();
   window.addEventListener('scroll', scroTop);
 });
 onUnmounted(() => {
@@ -151,12 +147,7 @@ onUnmounted(() => {
         </div>
       </div>
 
-      <div
-        id="introduction"
-        :ref="navTitle"
-        data-aos="fade-up"
-        class="train-introduction"
-      >
+      <div id="introduction" :ref="navTitle" class="train-introduction">
         <h2>{{ i18n.authentication.introtitle }}</h2>
         <p class="intro-info">
           {{ i18n.authentication.intro1 }}<br />{{ i18n.authentication.intro2 }}
@@ -165,12 +156,7 @@ onUnmounted(() => {
           <img :src="partner" alt="" />
         </div>
       </div>
-      <div
-        id="advantage"
-        :ref="navTitle"
-        data-aos="fade-up"
-        class="train-advantage"
-      >
+      <div id="advantage" :ref="navTitle" class="train-advantage">
         <h2>{{ i18n.authentication.advantage }}</h2>
         <div class="adv-box">
           <div
@@ -186,16 +172,13 @@ onUnmounted(() => {
         </div>
       </div>
       <div id="system" :ref="navTitle" class="train-system">
-        <h2 data-aos="fade-up">{{ i18n.authentication.systemtitle }}</h2>
+        <h2>{{ i18n.authentication.systemtitle }}</h2>
         <div class="system-box">
           <div v-show="isIndex === -1" class="system-short">
             <div
               v-for="(item, index) in i18n.authentication.system"
               :key="item.level"
               class="system-item"
-              :data-aos="
-                index === 0 ? 'fade-right' : index === 2 ? 'fade-left' : ''
-              "
               @click="onSystemItemClick(index)"
             >
               <div class="item-head" :class="item.name">
@@ -311,7 +294,7 @@ onUnmounted(() => {
           </div>
         </div>
       </div>
-      <div id="step" :ref="navTitle" data-aos="fade-up" class="train-step">
+      <div id="step" :ref="navTitle" class="train-step">
         <h2>{{ i18n.authentication.steptitle }}</h2>
         <div class="step-box">
           <!-- :style="{ backgroundImage: 'url(' + stepImgList[index] + ')' }" -->
@@ -327,13 +310,12 @@ onUnmounted(() => {
         </div>
       </div>
       <div id="qa" :ref="navTitle" class="train-qa">
-        <h2 data-aos="fade-up">{{ i18n.authentication.qatitle }}</h2>
+        <h2>{{ i18n.authentication.qatitle }}</h2>
         <div class="qa-box">
           <div
             v-for="(item, index) in i18n.authentication.qa"
             :key="index"
             class="qa-item"
-            data-aos="fade-up"
           >
             <el-collapse>
               <el-collapse-item>
@@ -348,7 +330,7 @@ onUnmounted(() => {
           </div>
         </div>
       </div>
-      <div data-aos="fade-up" class="train-contact">
+      <div class="train-contact">
         <p>
           <span>{{ i18n.authentication.contact }}</span>
           <a :href="'mailto:' + i18n.authentication.contactemail">{{
@@ -358,7 +340,7 @@ onUnmounted(() => {
       </div>
     </div>
     <div class="training-mobile">
-      <div id="introduction" data-aos="fade-up" class="train-introduction">
+      <div id="introduction" class="train-introduction">
         <h2>{{ i18n.authentication.introtitle }}</h2>
         <p class="intro-info">
           {{ i18n.authentication.intro1 }}<br />{{ i18n.authentication.intro2 }}
@@ -372,7 +354,7 @@ onUnmounted(() => {
           />
         </div>
       </div>
-      <div id="advantage" data-aos="fade-up" class="train-advantage">
+      <div id="advantage" class="train-advantage">
         <h2>{{ i18n.authentication.advantage }}</h2>
         <div class="adv-box">
           <div
@@ -388,14 +370,13 @@ onUnmounted(() => {
         </div>
       </div>
       <div id="system" class="train-system">
-        <h2 data-aos="fade-up">{{ i18n.authentication.systemtitle }}</h2>
+        <h2>{{ i18n.authentication.systemtitle }}</h2>
         <div class="system-box">
           <div v-show="isIndex === -1" class="system-short">
             <div
               v-for="(item, index) in i18n.authentication.system"
               :key="item.level"
               class="system-item"
-              data-aos="fade-up"
             >
               <div class="item-head" :class="item.name">
                 <div class="head-content">
@@ -523,7 +504,7 @@ onUnmounted(() => {
           </div>
         </div>
       </div>
-      <div id="step" data-aos="fade-up" class="train-step">
+      <div id="step" class="train-step">
         <h2>{{ i18n.authentication.steptitle }}</h2>
         <div class="step-box">
           <div
@@ -538,13 +519,12 @@ onUnmounted(() => {
         </div>
       </div>
       <div id="qa" class="train-qa">
-        <h2 data-aos="fade-up">{{ i18n.authentication.qatitle }}</h2>
+        <h2>{{ i18n.authentication.qatitle }}</h2>
         <div class="qa-box">
           <div
             v-for="(item, index) in i18n.authentication.qa"
             :key="index"
             class="qa-item"
-            data-aos="fade-up"
           >
             <el-collapse>
               <el-collapse-item>
@@ -559,7 +539,7 @@ onUnmounted(() => {
           </div>
         </div>
       </div>
-      <div data-aos="fade-up" class="train-contact">
+      <div class="train-contact">
         <p>
           <span>{{ i18n.authentication.contact }}</span>
           <a :href="'mailto:' + i18n.authentication.contactemail">{{

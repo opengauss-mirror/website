@@ -1,22 +1,10 @@
 <script setup lang="ts">
-import { onMounted } from 'vue';
-import AOS from 'aos';
-
 defineProps({
   bannerData: {
     type: Object,
     required: true,
     default: () => null,
   },
-});
-
-onMounted(() => {
-  AOS.init({
-    offset: 50,
-    duration: 800,
-    delay: 100,
-    once: true,
-  });
 });
 </script>
 <template>
@@ -29,7 +17,7 @@ onMounted(() => {
       class="summit-banner-mo summit-banner"
       :style="{ backgroundImage: `url(${bannerData.img_mo})` }"
     ></div>
-    <div data-aos="fade-down" class="banner-text">
+    <div class="banner-text">
       <h2>{{ bannerData.slogan }}</h2>
       <h3>{{ bannerData.title }}</h3>
       <h4>{{ bannerData.subtitle }}</h4>
