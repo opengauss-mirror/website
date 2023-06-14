@@ -70,7 +70,8 @@ function setCurrentCaseListAll() {
       currentCaseListAll.value = [];
       if (res.status === 200 && res.obj.records[0]) {
         caseListAll.value = res.obj.records.filter((item: any) => {
-          return item.path !== 'zh/userPractice/';
+          const pathArray = item.path.split('/');
+          return pathArray[pathArray.length - 2] !== 'userPractice';
         });
         if (activeIndex.value === 0) {
           currentCaseListAll.value = caseListAll.value;
@@ -541,7 +542,7 @@ $color: #fff;
     -webkit-line-clamp: initial;
     max-height: 90px;
     overflow-y: scroll;
-    .o-icon{
+    .o-icon {
       bottom: 0;
     }
   }
