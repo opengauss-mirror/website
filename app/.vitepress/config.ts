@@ -23,6 +23,18 @@ const config: UserConfig = {
         src: 'https://hm.baidu.com/hm.js?ace49cc6c2f3d0542e97ce86732094dc',
       },
     ],
+    [
+      'script',
+      {
+        src: '/allow_sensor/sensorsdata.min.js',
+      },
+    ],
+    [
+      'script',
+      {
+        src: '/allow_sensor/sensors.js',
+      },
+    ],
   ],
   appearance: true, // enable dynamic scripts for dark mode
   titleTemplate: false, //  vitepress supports pageTitileTemplate since 1.0.0
