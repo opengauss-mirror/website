@@ -8,6 +8,7 @@ import AppContext from '@/components/AppContent.vue';
 import SummitBanner from './components/SummitBanner.vue';
 import SummitSchedule from './components/SummitSchedule.vue';
 import SummitGuests from './components/SummitGuests.vue';
+import SummitLive from './components/SummitLive.vue';
 
 import guestsData from './data/guests';
 import summitData from './data';
@@ -103,6 +104,16 @@ onMounted(() => {
   <AppContext>
     <div class="detail">
       <p v-for="item in summitData.detail" :key="item">{{ item }}</p>
+    </div>
+    <div class="live" id="live-box">
+      <h3 class="titleBar">{{ summitData.live.title }}</h3>
+      <div>
+        <SummitLive
+          :live-data="summitData.live.liveData"
+          class-name="odd-box"
+          class="summit-kv-box"
+        />
+      </div>
     </div>
     <div class="agenda" :class="{ 'min-height': showIndex === 1 }">
       <h3>会议日程</h3>
