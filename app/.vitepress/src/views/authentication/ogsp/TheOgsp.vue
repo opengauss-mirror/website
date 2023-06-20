@@ -104,7 +104,7 @@ onMounted(() => {
         @change="searchValchange"
       ></OSearch>
     </div>
-    <OTable class="pc-list" :data="randerData"  style="width: 100%">
+    <OTable class="pc-list" :data="randerData" style="width: 100%">
       <OTableColumn
         :label="i18n.ogsp.name"
         show-overflow-tooltip
@@ -121,45 +121,41 @@ onMounted(() => {
         :label="i18n.ogsp.award"
         show-overflow-tooltip
         prop="award"
-        min-width="115" 
+        min-width="115"
       ></OTableColumn>
       <OTableColumn
         :label="i18n.ogsp.expiration"
         show-overflow-tooltip
         prop="expiration"
-        min-width="115" 
+        min-width="115"
       ></OTableColumn>
       <OTableColumn
         :label="i18n.ogsp.patch"
         show-overflow-tooltip
-        prop="patch" 
+        prop="patch"
         align="center"
       ></OTableColumn>
       <OTableColumn
         :label="i18n.ogsp.content"
         prop="content"
-        
         align="center"
       ></OTableColumn>
       <OTableColumn
         :label="i18n.ogsp.system"
         prop="system"
-        
         align="center"
       ></OTableColumn>
       <OTableColumn
         :label="i18n.ogsp.commitment"
         prop="commitment"
-        
         align="center"
       ></OTableColumn>
       <OTableColumn
         :label="i18n.ogsp.experience"
         prop="experience"
-        
         align="center"
       ></OTableColumn>
-      <el-table-column :label="i18n.ogsp.certificate"  align="center">
+      <el-table-column :label="i18n.ogsp.certificate" align="center">
         <template #default="scope">
           <a :href="scope.row.certificate" download target="_blank">{{
             i18n.ogsp.certify
@@ -197,14 +193,13 @@ onMounted(() => {
             ><span>{{ item.commitment }}</span>
           </li>
           <li>
-            <span>{{ i18n.ogsp.experience }}:</span
+            <spans>{{ i18n.ogsp.experience }}:</spans
             ><span>{{ item.experience }}</span>
           </li>
           <li>
             <span>{{ i18n.ogsp.certificate }}:</span>
             <a :href="item.certificate">{{ i18n.ogsp.certify }}</a>
           </li>
-          <li></li>
         </ul>
       </li>
     </ul>

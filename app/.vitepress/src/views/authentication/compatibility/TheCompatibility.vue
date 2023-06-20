@@ -113,16 +113,6 @@ onMounted(() => {
         :label="i18n.compatibility.database"
         prop="database"
       ></OTableColumn>
-      <!-- <OTableColumn
-        :label="i18n.compatibility.os"
-        prop="os"
-        width="180"
-      ></OTableColumn>
-      <OTableColumn
-        :label="i18n.compatibility.server"
-        prop="server"
-        width="180"
-      ></OTableColumn> -->
     </OTable>
 
     <ul class="mobile-list">
@@ -144,13 +134,6 @@ onMounted(() => {
             <span>{{ i18n.compatibility.database }}:</span
             ><span>{{ item.database }}</span>
           </li>
-          <!-- <li>
-            <span>{{ i18n.compatibility.os }}:</span><span>{{ item.os }}</span>
-          </li>
-          <li>
-            <span>{{ i18n.compatibility.server }}:</span>
-            <span>{{ item.server }}</span>
-          </li> -->
         </ul>
       </li>
     </ul>
@@ -203,7 +186,6 @@ onMounted(() => {
     white-space: normal !important;
   }
   :deep(.cell) {
-    // white-space: nowrap;
     word-break: break-word;
   }
 }

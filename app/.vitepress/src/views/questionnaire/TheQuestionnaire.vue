@@ -1,4 +1,4 @@
-<script lang="ts" setup> 
+<script lang="ts" setup>
 import BannerLevel2 from '@/components/BannerLevel2.vue';
 import AppContent from '@/components/AppContent.vue';
 

@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import AOS from 'aos';
-import { computed, onMounted } from 'vue';
+import { computed } from 'vue';
 
 const props = defineProps({
   lecturerList: {
@@ -39,13 +38,6 @@ const summitStyle = computed(() => {
         : props.mobileColumnsNum,
   };
 });
-onMounted(() => {
-  AOS.init({
-    offset: 200,
-    duration: 800,
-    delay: 100,
-  });
-});
 </script>
 
 <template>
@@ -53,7 +45,6 @@ onMounted(() => {
     <div
       v-for="item in lecturerList"
       :key="item.NAME"
-      data-aos="fade-zoom-in"
       class="lecturer-list-item"
     >
       <slot name="img">

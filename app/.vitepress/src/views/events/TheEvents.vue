@@ -170,21 +170,17 @@ const goDetail = (path: string) => {
           </div>
         </OContainer>
       </template>
-      <div v-else>
-        <div class="nofound">
-          <img
-            class="empty-img"
-            :src="
-              commonStore.theme === 'light'
-                ? notFoundImg_light
-                : notFoundImg_dark
-            "
-            alt="404"
-          />
-          <p class="empty-text">
-            {{ lang === 'zh' ? '暂无活动！' : 'NotFound !' }}
-          </p>
-        </div>
+      <div v-else class="nofound">
+        <img
+          class="empty-img"
+          :src="
+            commonStore.theme === 'light' ? notFoundImg_light : notFoundImg_dark
+          "
+          alt="404"
+        />
+        <p class="empty-text">
+          {{ lang === 'zh' ? '暂无活动！' : 'NotFound !' }}
+        </p>
       </div>
     </div>
     <div class="review-events">

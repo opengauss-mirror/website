@@ -235,7 +235,6 @@ onMounted(() => {
   color: var(--o-color-link1);
   cursor: pointer;
 }
-
 .breadcrumb {
   color: var(--o-color-text1);
   background: var(--o-color-bg1);

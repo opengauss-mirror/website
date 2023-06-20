@@ -54,7 +54,6 @@ export function getNowFormatDate() {
   return currentDate;
 }
 
- 
 // URL参数转对象
 export function getUrlParams(url: string) {
   const arrObj = url.split('?');
