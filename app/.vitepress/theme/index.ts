@@ -1,7 +1,6 @@
 import type { App } from 'vue';
 import { createPinia } from 'pinia';
 
-import 'aos/dist/aos.css';
 import '@/shared/styles/element-plus/index.scss';
 import '@/shared/styles/index.scss';
 
