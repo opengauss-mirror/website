@@ -123,7 +123,7 @@ We provide products and services for you through our global resources and server
 
 Jurisdictions where such personal data is stored may have laws that protect personal information to varying degrees or may not have personal data protection laws. We will ensure that your personal data is protected by applicable laws and regulations as well as this Statement.
 
-The openGauss community is registered in the Hong Kong Special Administrative Region of the People's Republic of China (HKSAR). Therefore, we need to store your personal data (such as phone number, email address, nickname, profile picture, and name) used to provide you with the account service and email subscription service on HUAWEI CLOUD servers in the HKSAR.
+The openGauss community is registered in the Hong Kong Special Administrative Region of the People's Republic of China (HKSAR). Therefore, we need to store your personal data (email address) used to provide email subscription service on HUAWEI CLOUD servers in the HKSAR.
 
 ## 8.How This Statement Is Updated
 
