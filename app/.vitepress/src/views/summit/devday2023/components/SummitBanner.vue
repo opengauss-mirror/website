@@ -62,10 +62,10 @@ defineProps({
             font-size: var(--o-font-size-text);
             line-height: var(--o-line-height-text);
             .o-icon {
-              font-size: var(--o-font-size-tip);
-              line-height: var(--o-line-height-tip);
               display: flex;
               align-items: center;
+              font-size: var(--o-font-size-tip);
+              line-height: var(--o-line-height-tip);
             }
           }
         }
@@ -154,14 +154,14 @@ defineProps({
       }
     }
     h4 {
-      margin-top: var(--o-spacing-h5);
       font-size: var(--o-font-size-h5);
       line-height: 40px;
       font-weight: normal;
+      margin-top: var(--o-spacing-h5);
       @media (max-width: 767px) {
-        margin-top: 6px;
         font-size: var(--o-font-size-text);
         line-height: var(--o-line-height-h8);
+        margin-top: 6px;
       }
     }
   }

@@ -22,8 +22,7 @@
     "pinia": "2.0.22",
     "swiper": "6.5.7",
     "vue": "3.2.39",
-    "vue-dompurify-html": "^4.0.0",
-    "@tweenjs/tween.js": "^18.6.4"
+    "vue-dompurify-html": "^4.0.0"
   },
   "devDependencies": {
     "@types/aos": "^3.0.4",
@@ -44,7 +43,7 @@
     "typescript": "^4.7.4",
     "unplugin-element-plus": "^0.4.1",
     "unplugin-icons": "^0.14.1",
-    "vitepress": "1.0.0-alpha.4"
+    "vitepress": "^0.22.4"
   },
   "lint-staged": {
     "app/.vitepress/src/**/*.{js,ts,vue,jsx,tsx}": [

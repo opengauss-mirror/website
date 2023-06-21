@@ -245,7 +245,7 @@ const data = {
             <th>奖品</th>
             <th>中奖号码</th>
           </tr>
-          <tr v-for="subitem in item.list" :key="subitem.phone">
+          <tr class="lable-name1" v-for="subitem in item.list" :key="subitem.phone">
             <td>{{ subitem.name }}</td>
             <td>{{ subitem.phone }}</td>
           </tr>
@@ -254,7 +254,7 @@ const data = {
       <div
         v-for="(item, index) in data.prize"
         :key="item.rank"
-        class="panel2-mo"
+        class="panel2-mo lable-name1"
       >
         <div class="head">
           <img :src="item.prizeImg" alt="" />

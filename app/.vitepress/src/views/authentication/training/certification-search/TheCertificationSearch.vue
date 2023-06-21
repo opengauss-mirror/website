@@ -92,14 +92,14 @@ function getCode(params: string, lang: string) {
           codeSuccess.value = true;
           successTip.value = true;
         } else {
-          successTip.value = false;
           codeSuccess.value = false;
+          successTip.value = false;
           identification.value = '';
         }
       })
       .catch((error: any) => {
-        successTip.value = false;
         codeSuccess.value = false;
+        successTip.value = false;
         identification.value = '';
         throw new Error(error);
       });
@@ -171,6 +171,11 @@ function downloadCertification(paString: string) {
     .then((res) => {
       if (res.success) {
         disabledTip.value = '';
+        function blobToFile(theBlob: any, fileName: any) {
+          theBlob.lastModifiedDate = new Date();
+          theBlob.name = fileName;
+          return theBlob;
+        }
         function dataURLtoBlob(dataurl: any) {
           const arr = dataurl.split(','),
             mime = arr[0].match(/:(.*?);/)[1],
@@ -181,11 +186,6 @@ function downloadCertification(paString: string) {
             u8arr[n] = bstr.charCodeAt(n);
           }
           return new Blob([u8arr], { type: mime });
-        }
-        function blobToFile(theBlob: any, fileName: any) {
-          theBlob.lastModifiedDate = new Date();
-          theBlob.name = fileName;
-          return theBlob;
         }
         const str = 'data:application/pdf;base64,' + res.data.data;
         const blob = dataURLtoBlob(str);
@@ -424,13 +424,12 @@ function clickDownload() {
           align-items: center;
           width: 136px;
           height: 38px;
-          @media screen and (max-width: 840px) {
-            height: 24px;
-          }
           @media screen and (max-width: 468px) {
             width: 90px;
           }
-
+          @media screen and (max-width: 840px) {
+            height: 24px;
+          }
           .o-icon {
             font-size: var(--o-font-size-h5);
           }

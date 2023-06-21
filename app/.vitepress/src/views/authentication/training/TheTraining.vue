@@ -173,16 +173,16 @@ onUnmounted(() => {
       </div>
       <div id="system" :ref="navTitle" class="train-system">
         <h2>{{ i18n.authentication.systemtitle }}</h2>
-        <div class="system-box">
+        <div class="system-box lable-name">
           <div v-show="isIndex === -1" class="system-short">
             <div
               v-for="(item, index) in i18n.authentication.system"
               :key="item.level"
-              class="system-item"
+              class="system-item lable-name"
               @click="onSystemItemClick(index)"
             >
               <div class="item-head" :class="item.name">
-                <div class="head-left">{{ item.level }}</div>
+                <div class="head-left lable-name">{{ item.level }}</div>
                 <div class="head-right">
                   <h3>{{ item.name.toUpperCase() }}</h3>
                   <p>{{ item.des }}</p>
@@ -218,18 +218,18 @@ onUnmounted(() => {
           <div
             v-for="(item, index) in i18n.authentication.system"
             :key="item.name"
-            class="system-active"
+            class="system-active lable-name"
             :class="'system-' + item.name"
           >
             <div v-show="isIndex === index">
               <div class="item-head" @click="onSystemItemClick(-1)">
                 <div class="leavel">{{ item.level }}</div>
-                <div class="name">
+                <div class="name lable-name">
                   <h3>{{ item.name.toUpperCase() }}</h3>
                   <p>{{ item.des }}</p>
                 </div>
                 <div class="detail">{{ item.description }}</div>
-                <div class="close">
+                <div class="close lable-name">
                   <OIcon>
                     <IconArrow />
                   </OIcon>
@@ -253,17 +253,17 @@ onUnmounted(() => {
                         <p>{{ itemCourse.cardtitle }}</p>
                         <div class="time">
                           <OIcon><IconPeriod /></OIcon>
-                          <span class="time-text">{{ itemCourse.period }}</span>
+                          <span class="time-text lable-name">{{ itemCourse.period }}</span>
                         </div>
                       </div>
                     </div>
-                    <div class="list-right">
+                    <div class="list-right lable-name">
                       <span class="more">{{ i18n.authentication.more }}</span>
                       <OIcon>
                         <IconChevronRight />
                       </OIcon>
                     </div>
-                    <transition name="fade">
+                    <transition name="fade lable-name">
                       <div
                         v-show="isMoreShow === indexCourse"
                         class="more-list"
@@ -283,7 +283,7 @@ onUnmounted(() => {
                     i18n.authentication.downpdf2
                   }}</a>
                 </div>
-                <div v-else class="no-data">
+                <div v-else class="no-data lable-name">
                   <img
                     src="@/assets/category/authentication/training/img/no-data.png"
                     alt=""
@@ -294,14 +294,14 @@ onUnmounted(() => {
           </div>
         </div>
       </div>
-      <div id="step" :ref="navTitle" class="train-step">
+      <div id="step" :ref="navTitle" class="train-step lable-name">
         <h2>{{ i18n.authentication.steptitle }}</h2>
         <div class="step-box">
           <!-- :style="{ backgroundImage: 'url(' + stepImgList[index] + ')' }" -->
           <div
             v-for="(item, index) in i18n.authentication.stepList"
             :key="item.name"
-            class="step-item"
+            class="step-item lable-name"
             :class="'step' + (index + 1)"
             @click="onRegistrationClick(index)"
           >
@@ -315,14 +315,14 @@ onUnmounted(() => {
           <div
             v-for="(item, index) in i18n.authentication.qa"
             :key="index"
-            class="qa-item"
+            class="qa-item lable-name"
           >
             <el-collapse>
               <el-collapse-item>
                 <template #title>
                   <span>{{ item.question }}</span>
                 </template>
-                <p class="qa-answer">
+                <p class="qa-answer lable-name">
                   {{ item.answer }}
                 </p>
               </el-collapse-item>
@@ -330,7 +330,7 @@ onUnmounted(() => {
           </div>
         </div>
       </div>
-      <div class="train-contact">
+      <div class="train-contact lable-name">
         <p>
           <span>{{ i18n.authentication.contact }}</span>
           <a :href="'mailto:' + i18n.authentication.contactemail">{{
@@ -339,13 +339,13 @@ onUnmounted(() => {
         </p>
       </div>
     </div>
-    <div class="training-mobile">
+    <div class="training-mobile lable-name">
       <div id="introduction" class="train-introduction">
         <h2>{{ i18n.authentication.introtitle }}</h2>
-        <p class="intro-info">
+        <p class="intro-info lable-name">
           {{ i18n.authentication.intro1 }}<br />{{ i18n.authentication.intro2 }}
         </p>
-        <div class="intro-img">
+        <div class="intro-img lable-name">
           <img
             v-for="(item, index) in partnerMo"
             :key="index"
@@ -354,7 +354,7 @@ onUnmounted(() => {
           />
         </div>
       </div>
-      <div id="advantage" class="train-advantage">
+      <div id="advantage" class="train-advantage lable-name">
         <h2>{{ i18n.authentication.advantage }}</h2>
         <div class="adv-box">
           <div
@@ -790,8 +790,8 @@ onUnmounted(() => {
               h3 {
                 font-size: var(--o-font-size-h5);
                 line-height: var(--o-line-height-h5);
-                color: var(--o-color-white);
                 font-weight: 300;
+                color: var(--o-color-white);
               }
               p {
                 font-size: var(--o-font-size-text);
@@ -812,16 +812,16 @@ onUnmounted(() => {
           .ogce {
             background-color: #420f8e;
             .head-left {
-              color: #7d32ea;
+              color: #420f8e;
             }
           }
           .item-body {
+            height: 322px;
+            padding: var(--o-spacing-h4) var(--o-spacing-h2) var(--o-spacing-h2);
             display: flex;
             flex-wrap: wrap;
-            height: 322px;
             align-content: space-between;
             background-color: var(--o-color-bg2);
-            padding: var(--o-spacing-h4) var(--o-spacing-h2) var(--o-spacing-h2);
             p {
               width: 100%;
               font-size: var(--o-font-size-text);
@@ -951,19 +951,19 @@ onUnmounted(() => {
                       color: var(--o-color-text1);
                     }
                     .time-text {
-                      color: var(--o-color-text4);
                       font-size: var(--o-font-size-text);
                       line-height: var(--o-line-height-text);
+                      color: var(--o-color-text4);
                     }
                   }
                 }
               }
               .list-right {
                 .more {
+                  margin-right: 8px;
                   font-size: var(--o-font-size-text);
                   line-height: var(--o-line-height-text);
                   color: var(--o-color-text1);
-                  margin-right: 8px;
                 }
                 .o-icon {
                   position: relative;
@@ -1040,10 +1040,10 @@ onUnmounted(() => {
     margin-top: var(--o-spacing-h1);
     h2 {
       font-size: var(--o-font-size-h3);
-      line-height: var(--o-line-height-h3);
-      color: var(--o-color-text1);
-      text-align: center;
       font-weight: 300;
+      line-height: var(--o-line-height-h3);
+      text-align: center;
+      color: var(--o-color-text1);
     }
     .step-box {
       margin: var(--o-spacing-h2) auto 0 auto;

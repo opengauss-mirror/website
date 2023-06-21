@@ -2,7 +2,7 @@
 title: 'Software Packages'
 ---
 
-<script setup lang="ts">
+<script setup>
   import TheDownload from "@/views/download/TheDownload.vue"
 </script>
 

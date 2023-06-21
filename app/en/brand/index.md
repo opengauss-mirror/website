@@ -2,7 +2,7 @@
 title: "TradeMark"
 
 ---
-<script setup lang="ts">
+<script setup>
   import TheBrand from "@/views/brand/TheBrand.vue"
 </script>
 

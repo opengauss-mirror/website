@@ -56,10 +56,10 @@ function clickChangeShowIndex(index: number) {
               >
                 <h4>{{ itemType.name }}</h4>
                 <p>{{ itemType.desc }}</p>
-                <div class="material">
+                <div class="material lable-name1">
                   <div v-if="itemType.docsList" class="material-item">
                     <h5>{{ i18n.advanced.type_docs_label }}</h5>
-                    <div class="link-box">
+                    <div class="link-box lable-name1">
                       <a
                         v-for="itemLink in itemType.docsList"
                         :key="itemLink.link"
@@ -71,7 +71,7 @@ function clickChangeShowIndex(index: number) {
                   </div>
                   <div v-if="itemType.videoList" class="material-item">
                     <h5>{{ i18n.advanced.type_video_label }}</h5>
-                    <div class="link-box">
+                    <div class="link-box lable-name2">
                       <a
                         v-for="itemLink in itemType.videoList"
                         :key="itemLink.link"
@@ -83,7 +83,7 @@ function clickChangeShowIndex(index: number) {
                   </div>
                   <div v-if="itemType.optionList" class="material-item">
                     <h5>{{ i18n.advanced.type_practice_label }}</h5>
-                    <div class="link-box">
+                    <div class="link-box lable-name3">
                       <a
                         v-for="itemLink in itemType.optionList"
                         :key="itemLink.link"

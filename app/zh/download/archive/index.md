@@ -2,7 +2,7 @@
 title: '软件包'
 ---
 
-<script setup lang="ts">
+<script setup>
   import TheDownloadArchive from "@/views/download/TheDownloadArchive.vue"
 </script>
 

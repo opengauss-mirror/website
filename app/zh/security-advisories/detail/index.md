@@ -10,7 +10,7 @@ affected_component : "影响组件"
 reference : "参考"
 ---
 
-<script setup lang="ts">
+<script setup>
   import TheSecurityAdvisoriesDetail from "@/views/security/advisories/detail/TheSecurityAdvisoriesDetail.vue"
 </script>
 

@@ -21,15 +21,15 @@ const props = defineProps({
       return {};
     },
   },
-  versionShownIndex: {
-    required: true,
-    type: Number,
-    default: -1,
-  },
   downloadVersionAuthIndex: {
     required: true,
     type: Number,
     default: NaN,
+  },
+  versionShownIndex: {
+    required: true,
+    type: Number,
+    default: -1,
   },
 });
 const { tableData, versionShownIndex, downloadVersionAuthIndex } =
@@ -43,17 +43,17 @@ const shaText = 'SHA256';
 const hoverTips = computed(() => (type: string) => {
   let tips = '';
   switch (type) {
-    case 'enterprise':
-      tips = i18n.value.download.ENTERPRISE;
-      break;
     case 'simple':
       tips = i18n.value.download.SIMPLE;
       break;
-    case 'lite':
-      tips = i18n.value.download.LITE;
+    case 'enterprise':
+      tips = i18n.value.download.ENTERPRISE;
       break;
     case 'distributed':
       tips = i18n.value.download.DISTRIBUTED;
+      break;
+    case 'lite':
+      tips = i18n.value.download.LITE;
       break;
   }
   return tips;
