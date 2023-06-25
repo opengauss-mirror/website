@@ -432,6 +432,10 @@ import zhangyuwen from '@/assets/category/member/avatar/zhangyuwen.png';
 import luoruping from '@/assets/category/member/avatar/luoruping.png';
 import lijun2 from '@/assets/category/member/avatar/lijun2.png';
 
+import yuanyuan from '@/assets/category/member/avatar/yuanyuan.png';
+import shengyongpan1 from '@/assets/category/member/avatar/shengyongpan1.png';
+
+
 export default {
   zh: {
     BOARD: [
@@ -2631,6 +2635,13 @@ export default {
         email: 'xuezhongbin@huawei.com',
         gitee: 'https://gitee.com/zbxue',
       },
+      {
+        img: shengyongpan1,
+        name: '盛泳潘',
+        title: 'Committer',
+        email: 'shengyp2011@163.com',
+        gitee: 'https://gitee.com/Syongpan',
+      },
     ],
     SHENZHEN: [
       {
@@ -3908,11 +3919,11 @@ export default {
     ],
     SHENYANG: [
       {
-        img: liuchenguang,
-        name: '刘辰光',
+        img: yuanyuan,
+        name: '袁园',
         title: 'Organizer',
         company: '辽宁鲲鹏生态创新中心',
-        email: '35910646@qq.com',
+        email: 'yuanyuan89@huawei-partners.com',
       },
       {
         img: dongtao,
@@ -6212,6 +6223,13 @@ export default {
         email: 'xuezhongbin@huawei.com',
         gitee: 'https://gitee.com/zbxue',
       },
+      {
+        img: shengyongpan1,
+        name: 'Yongpan Sheng',
+        title: 'Committer',
+        email: 'shengyp2011@163.com',
+        gitee: 'https://gitee.com/Syongpan',
+      },
     ],
     SHENZHEN: [
       {
@@ -7489,11 +7507,11 @@ export default {
     ],
     SHENYANG: [
       {
-        img: liuchenguang,
-        name: 'Chengguang Liu',
+        img: yuanyuan,
+        name: 'Yuan Yuan',
         title: 'Organizer',
         company: 'liaoNing Kunpeng Eco-Innovation Center',
-        email: '35910646@qq.com',
+        email: 'yuanyuan89@huawei-partners.com',
       },
       {
         img: dongtao,
