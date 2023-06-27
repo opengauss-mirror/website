@@ -85,14 +85,14 @@ onMounted(() => {
             <OTabPane :label="i18n.security.OVERVIEW">
               <div class="tab-content">
                 <div class="tab-content-item">
-                  <h5 class="tab-content-item-title">
+                  <h5 class="tab-content-item-title lable-name">
                     {{ i18n.security.BRIEF_INTRODUCTION }}
                   </h5>
                   <p class="tab-content-item-text">
                     {{ detailData.introduction }}
                   </p>
                 </div>
-                <div class="tab-content-item">
+                <div class="tab-content-item lable-name">
                   <h5 class="tab-content-item-title">
                     {{ i18n.security.SEVERITY }}
                   </h5>
@@ -101,14 +101,14 @@ onMounted(() => {
                   </p>
                 </div>
                 <div class="tab-content-item">
-                  <h5 class="tab-content-item-title">
+                  <h5 class="tab-content-item-title lable-name">
                     {{ i18n.security.THEME }}
                   </h5>
                   <p class="tab-content-item-text">
                     {{ detailData.theme }}
                   </p>
                 </div>
-                <div class="tab-content-item">
+                <div class="tab-content-item lable-name2">
                   <h5 class="tab-content-item-title">
                     {{ i18n.security.DESCRIPTION }}
                   </h5>
@@ -116,7 +116,7 @@ onMounted(() => {
                     {{ detailData.description }}
                   </p>
                 </div>
-                <div class="tab-content-item">
+                <div class="tab-content-item lable-name3">
                   <h5 class="tab-content-item-title">
                     {{ i18n.security.AFFECTED_COMPONENTS }}
                   </h5>
@@ -124,7 +124,7 @@ onMounted(() => {
                     {{ detailData.influenceComponent }}
                   </p>
                 </div>
-                <div class="tab-content-item">
+                <div class="tab-content-item lable-name4">
                   <h5 class="tab-content-item-title">
                     {{ i18n.security.CVE }}
                   </h5>
@@ -137,7 +137,7 @@ onMounted(() => {
                     {{ item }}
                   </p>
                 </div>
-                <div class="tab-content-item">
+                <div class="tab-content-item lable-name5">
                   <h5 class="tab-content-item-title">
                     {{ i18n.security.REFERENCE_DOCUMENTS }}
                   </h5>
@@ -382,9 +382,9 @@ onMounted(() => {
       margin-bottom: var(--o-spacing-h5);
     }
     .last-page {
+      color: var(--o-color-text4);
       font-size: var(--o-font-size-tip);
       font-weight: 300;
-      color: var(--o-color-text4);
       line-height: var(--o-line-height-tip);
       cursor: pointer;
     }
@@ -395,9 +395,9 @@ onMounted(() => {
       }
     }
     .current-page {
+      color: var(--o-color-text1);
       font-size: var(--o-font-size-tip);
       font-weight: 600;
-      color: var(--o-color-text1);
       line-height: var(--o-line-height-tip);
     }
   }

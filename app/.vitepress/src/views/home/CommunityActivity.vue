@@ -3,7 +3,6 @@ import { onMounted, Ref, ref } from 'vue';
 import { useI18n } from '@/i18n';
 import { useCommon } from '@/stores/common';
 import { getStatistic } from '@/api/api-search';
-import TWEEN from '@tweenjs/tween.js';
 
 import IconArrowRight from '~icons/app/icon-arrow-right.svg';
 import bg1 from '@/assets/category/home/img1.png';
@@ -23,20 +22,32 @@ const roundNumber = ref([
 
 const changeNum = () => {
   roundNumber.value.forEach((item: { ROUND_VALUE: number }, index: number) => {
-    new TWEEN.Tween(item)
-      .to(
-        {
-          ROUND_VALUE: roundList.value[index].ROUND_VALUE || 0,
-        },
-        2500
-      )
-      .start();
-    function animate() {
-      if (TWEEN.update()) {
-        requestAnimationFrame(animate);
+    function addNumber(start: number, end: number) {
+      let i = start;
+      let allTime = 2500;
+      let time = 10;
+      if (allTime / end > time) {
+        time = allTime / end;
+      }
+      if (i < end) {
+        const Interval = setInterval(function () {
+          // 设置每次增加的动态数字，可调整
+          if (allTime / end < time) {
+            i += end / (allTime / time);
+          } else {
+            i += 1;
+          }
+          if (i > end) {
+            clearInterval(Interval);
+            item.ROUND_VALUE = roundList.value[index].ROUND_VALUE;
+            i = 0;
+          } else {
+            item.ROUND_VALUE = i;
+          }
+        }, time);
       }
     }
-    animate();
+    addNumber(0, roundList.value[index].ROUND_VALUE);
   });
 };
 

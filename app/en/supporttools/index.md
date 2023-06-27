@@ -2,7 +2,7 @@
 title: '支持工具'
 ---
 
-<script setup lang="ts">
+<script setup>
   import TheSupportTools from "@/views/supporttools/TheSupportTools.vue"
 </script>
 

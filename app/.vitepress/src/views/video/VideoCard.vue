@@ -135,11 +135,11 @@ const handlerVideo = (id: number, index: number) => {
         font-size: var(--o-font-size-h8);
         line-height: var(--o-line-height-h8);
         color: #fff;
-        text-overflow: ellipsis;
         display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
-        overflow: hidden;
       }
     }
 

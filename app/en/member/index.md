@@ -2,7 +2,7 @@
 title: 'Organization'
 ---
 
-<script setup lang="ts">
+<script setup>
   import TheMember from "@/views/community/TheMember.vue"
 </script>
 

@@ -186,16 +186,16 @@ const changeTime = () => {
         });
     });
   } else if (
-    selectTimeVal.value === '' &&
     selectAuthorVal.value === '' &&
+    selectTimeVal.value === '' &&
     selectTagsVal.value === ''
   ) {
     getTagsList();
   } else {
     const params = {
       lang: lang.value,
-      category: 'blogs',
       want: 'archives',
+      category: 'blogs',
       condition: {
         author:
           selectAuthorVal.value === '' ? undefined : selectAuthorVal.value,

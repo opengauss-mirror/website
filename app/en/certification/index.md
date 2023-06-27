@@ -2,7 +2,7 @@
 title: 'Distribution Certification'
 ---
 
-<script setup lang="ts">
+<script setup>
   import TheCertification from "@/views/authentication/certification/TheCertification.vue"
 </script>
 
