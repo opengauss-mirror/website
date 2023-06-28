@@ -120,7 +120,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
             <ul class="member-info lable-name">
               <li>
                 <IconHome />
-                <a :href="item.GITEE_PATH" target="_blank">{{
+                <a :href="item.GITEE_PATH" target="_blank" rel="noopener noreferrer">{{
                   i18n.member.GITEE_TEXT
                 }}</a>
               </li>
@@ -147,7 +147,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
                     v-if="user.gitee"
                     :href="user.gitee"
                     class="gitee lable-name"
-                    target="_blank"
+                    target="_blank" rel="noopener noreferrer"
                     ><img :src="IconGit"
                   /></a>
                 </p>
@@ -167,7 +167,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
                 <ul class="member-info lable-name7">
                   <li>
                     <IconHome />
-                    <a :href="subitem.GITEE_PATH" target="_blank">{{
+                    <a :href="subitem.GITEE_PATH" target="_blank" rel="noopener noreferrer">{{
                       i18n.member.GITEE_TEXT
                     }}</a>
                   </li>
@@ -198,7 +198,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
                         v-if="user.gitee"
                         :href="user.gitee"
                         class="gitee lable-name10"
-                        target="_blank"
+                        target="_blank" rel="noopener noreferrer"
                         ><img :src="IconGit"
                       /></a>
                     </p>
@@ -233,7 +233,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
           <ul class="member-info">
             <li>
               <IconHome />
-              <a :href="item.GITEE_PATH" target="_blank">{{
+              <a :href="item.GITEE_PATH" target="_blank" rel="noopener noreferrer">{{
                 i18n.member.GITEE_TEXT
               }}</a>
             </li>
@@ -260,7 +260,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
                   v-if="user.gitee"
                   :href="user.gitee"
                   class="gitee lable-name3"
-                  target="_blank"
+                  target="_blank" rel="noopener noreferrer"
                   ><img :src="IconGit"
                 /></a>
               </p>
@@ -283,7 +283,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
               <ul class="member-info">
                 <li>
                   <IconHome />
-                  <a :href="subitem.GITEE_PATH" target="_blank">{{
+                  <a :href="subitem.GITEE_PATH" target="_blank" rel="noopener noreferrer">{{
                     i18n.member.GITEE_TEXT
                   }}</a>
                 </li>
@@ -314,7 +314,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
                       v-if="user.gitee"
                       :href="user.gitee"
                       class="gitee lable-name5"
-                      target="_blank"
+                      target="_blank" rel="noopener noreferrer"
                       ><img :src="IconGit"
                     /></a>
                   </p>

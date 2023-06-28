@@ -155,7 +155,7 @@ onMounted(() => {
       ></OTableColumn>
       <el-table-column :label="i18n.ogsp.certificate" align="center">
         <template #default="scope">
-          <a :href="scope.row.certificate" download target="_blank">{{
+          <a :href="scope.row.certificate" download target="_blank" rel="noopener noreferrer">{{
             i18n.ogsp.certify
           }}</a>
         </template>

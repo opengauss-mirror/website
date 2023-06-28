@@ -823,7 +823,7 @@ const changeRecord = () => {
                         <a
                           v-else-if="keys.isLink"
                           :href="item[keys.key]"
-                          target="_blank"
+                          target="_blank" rel="noopener noreferrer"
                           >{{ item[keys.key] }}</a
                         >
                         <p v-else>{{ currentDay }}</p>

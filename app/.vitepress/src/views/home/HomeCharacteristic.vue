@@ -35,7 +35,7 @@ const i18n = useI18n();
         </div>
       </div>
       <p class="down">
-        <a :href="i18n.home.CHARACTERR_INFO.DOWN_link" download target="_blank">
+        <a :href="i18n.home.CHARACTERR_INFO.DOWN_link" download target="_blank" rel="noopener noreferrer">
           <OButton animation size="small" type="text">
             {{ i18n.home.CHARACTERR_INFO.DOWN_NAME }}
             <template #suffixIcon>
