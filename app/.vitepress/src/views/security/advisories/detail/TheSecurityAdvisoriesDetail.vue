@@ -146,7 +146,7 @@ onMounted(() => {
                     :key="item"
                     class="tab-content-item-text"
                   >
-                    <a :href="item" target="_blank">{{ item }}</a>
+                    <a :href="item" target="_blank" rel="noopener noreferrer">{{ item }}</a>
                   </div>
                 </div>
               </div>
@@ -306,7 +306,7 @@ onMounted(() => {
                 :key="item"
                 class="tab-content-item-text"
               >
-                <a :href="item" target="_blank">{{ item }}</a>
+                <a :href="item" target="_blank" rel="noopener noreferrer">{{ item }}</a>
               </div>
             </div>
           </div>

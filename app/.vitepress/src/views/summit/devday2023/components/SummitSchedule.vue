@@ -34,7 +34,7 @@ const otherTabType = ref(0);
     >
       <a
         href="https://etherpad.opengauss.org/p/ODD2023-SIG-Meeting"
-        target="_blank"
+        target="_blank" rel="noopener noreferrer"
         >点击此处</a
       >并选择感兴趣的SIG组-Etherpad文件，按要求填写议题和参会信息
     </span>

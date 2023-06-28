@@ -329,7 +329,7 @@ watch(
                   ? scope.row.docs_url
                   : theme.docsUrl + '/' + lang + scope.row.docs_url
               "
-              target="_blank"
+              target="_blank" rel="noopener noreferrer"
               >{{ scope.row.docsName }}</a
             >
           </template>
@@ -401,7 +401,7 @@ watch(
                 ? item.docs_url
                 : theme.docsUrl + '/' + lang + item.docs_url
             "
-            target="_blank"
+            target="_blank" rel="noopener noreferrer"
             >{{ item.docsName }}</a
           >
         </p>

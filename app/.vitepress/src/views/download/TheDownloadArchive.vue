@@ -161,12 +161,12 @@ watch(
           v-for="item in getData[0].docs_list"
           :key="item.name"
           :href="theme.docsUrl + '/' + lang + item.path"
-          target="_blank"
+          target="_blank" rel="noopener noreferrer"
           >{{ isZh ? item.name : item.nameEn }}</a
         >
         <a
           href="https://gitee.com/opengauss/community/issues"
-          target="_blank"
+          target="_blank" rel="noopener noreferrer"
           >{{ i18n.download.FEEDBACK_QUESTION }}</a
         >
       </div>
