@@ -134,7 +134,7 @@ onMounted(() => {
       ></OTableColumn>
       <el-table-column :label="i18n.certification.certificate" width="200">
         <template #default="scope">
-          <a :href="scope.row.certificate" download target="_blank">{{
+          <a :href="scope.row.certificate" download target="_blank" rel="noopener noreferrer">{{
             i18n.certification.certify
           }}</a>
         </template>
@@ -196,7 +196,7 @@ onMounted(() => {
       {{ i18n.certification.introduce1
       }}<a
         href="https://gitee.com/opengauss/distribution-certification"
-        target="_blank"
+        target="_blank" rel="noopener noreferrer"
         >{{ i18n.certification.introduce2 }}</a
       >
     </p>

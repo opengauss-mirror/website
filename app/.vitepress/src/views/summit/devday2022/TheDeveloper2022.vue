@@ -116,7 +116,7 @@ onMounted(()=>{
             <a
               class="link"
               :href="summitData.online.list[2].path"
-              target="_blank"
+              target="_blank" rel="noopener noreferrer"
             >
               {{ summitData.online.list[2].desc }}
               <IconArrowRight />
@@ -133,7 +133,7 @@ onMounted(()=>{
               >
                 <span class="name">{{ item.name }}</span>
                 <span class="desc">{{ item.desc }}</span>
-                <a :href="item.link" target="_blank" class="link">报名</a>
+                <a :href="item.link" target="_blank" rel="noopener noreferrer" class="link">报名</a>
               </li>
             </ul>
           </div>
@@ -180,7 +180,7 @@ onMounted(()=>{
         v-for="item in summitData.previous"
         :key="item.link"
         :href="item.link"
-        target="_blank"
+        target="_blank" rel="noopener noreferrer"
         >{{ item.title }}</a
       >
     </div>

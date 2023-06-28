@@ -114,6 +114,7 @@ function onCookieClick() {
                 :href="link.URL"
                 class="link"
                 :target="link.TARGET"
+                :rel="link.TARGET === '_blank' ? 'noopener noreferrer' : ''"
                 >{{ link.NAME }}</a
               >
             </div>
@@ -123,6 +124,7 @@ function onCookieClick() {
                 class="email"
                 :href="'mailto:' + i18n.common.FOOTER.MAIL"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 {{ i18n.common.FOOTER.MAIL }}
               </a>
@@ -137,6 +139,7 @@ function onCookieClick() {
                   :href="item.path"
                   class="links-logo"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <img :src="item.logo" alt="" />
                 </a>
@@ -148,6 +151,7 @@ function onCookieClick() {
                   :href="item.path"
                   class="links-logo"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <img :src="item.logo" alt="" />
                 </a>

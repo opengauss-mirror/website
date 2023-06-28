@@ -102,7 +102,7 @@ onMounted(async () => {
       >
         <div class="activity-content">
           <div class="activity-content-cover" data-aos="fade-right">
-            <a :href="eventsData.path" target="_blank"
+            <a :href="eventsData.path" target="_blank" rel="noopener noreferrer"
               ><img :src="eventsData.img" class="cover" alt=""
             /></a>
           </div>
@@ -111,7 +111,7 @@ onMounted(async () => {
               <a
                 :href="eventsData.path"
                 class="activity-title"
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
                 >{{ eventsData.title }}</a
               >
 
@@ -206,7 +206,7 @@ onMounted(async () => {
         </div>
 
         <div class="statistics">
-          <a :href="`/${lang}/blogs/`" target="_blank">
+          <a :href="`/${lang}/blogs/`" target="_blank" rel="noopener noreferrer">
             <OButton animation type="text" class="statistics-button">
               {{ i18n.common.VIEW_MORE }}
               <template #suffixIcon>
@@ -275,7 +275,7 @@ onMounted(async () => {
           </div>
         </div>
         <div class="statistics">
-          <a :href="`/${lang}/news/`" target="_blank">
+          <a :href="`/${lang}/news/`" target="_blank" rel="noopener noreferrer">
             <OButton animation type="text" class="statistics-button">
               {{ i18n.common.VIEW_MORE }}
               <template #suffixIcon>
