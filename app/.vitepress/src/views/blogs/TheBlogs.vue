@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, reactive } from 'vue';
+import { ref, computed, onMounted, reactive, h } from 'vue';
 import { useRouter, useData } from 'vitepress';
 
 import { useI18n } from '@/i18n';
 import useWindowResize from '@/components/hooks/useWindowResize';
+import { ElMessage } from 'element-plus';
 
 import AppContent from '@/components/AppContent.vue';
 import AppPaginationMo from '@/components/AppPaginationMo.vue';
@@ -97,9 +98,15 @@ const getTagsList = () => {
           });
         });
       })
-      .catch((error: any) => {
+      .catch(() => {
         isShowData.value = false;
-        throw new Error(error);
+        ElMessage({
+          message: h(
+            'p',
+            { style: 'width: 5vw;display:flex;justify-content: center;' },
+            [h('span', { style: 'color: red;display:flex;' }, 'Error!')]
+          ),
+        });
       });
   });
 };
@@ -127,9 +134,15 @@ const getListData = (params: ParamsType) => {
         isShowData.value = true;
       }
     })
-    .catch((error: any) => {
+    .catch(() => {
       isShowData.value = false;
-      throw new Error(error);
+      ElMessage({
+        message: h(
+          'p',
+          { style: 'width: 5vw;display:flex;justify-content: center;' },
+          [h('span', { style: 'color: red;display:flex;' }, 'Error!')]
+        ),
+      });
     });
 };
 
@@ -181,8 +194,14 @@ const changeTime = () => {
             selectData.value[2].select.push(item.key);
           });
         })
-        .catch((error) => {
-          throw new Error(error);
+        .catch(() => {
+          ElMessage({
+            message: h(
+              'p',
+              { style: 'width: 5vw;display:flex;justify-content: center;' },
+              [h('span', { style: 'color: red;display:flex;' }, 'Error!')]
+            ),
+          });
         });
     });
   } else if (
@@ -243,8 +262,14 @@ const changeAuthor = () => {
             selectData.value[2].select.push(item.key);
           });
         })
-        .catch((error) => {
-          throw new Error(error);
+        .catch(() => {
+          ElMessage({
+            message: h(
+              'p',
+              { style: 'width: 5vw;display:flex;justify-content: center;' },
+              [h('span', { style: 'color: red;display:flex;' }, 'Error!')]
+            ),
+          });
         });
     });
   } else if (
@@ -305,8 +330,14 @@ const changeTags = () => {
             selectData.value[1].select.push(item.key);
           });
         })
-        .catch((error) => {
-          throw new Error(error);
+        .catch(() => {
+          ElMessage({
+            message: h(
+              'p',
+              { style: 'width: 5vw;display:flex;justify-content: center;' },
+              [h('span', { style: 'color: red;display:flex;' }, 'Error!')]
+            ),
+          });
         });
     });
   } else if (

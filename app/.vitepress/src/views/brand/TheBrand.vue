@@ -89,7 +89,8 @@ list.value = initList();
             v-for="item2 in item.image"
             :key="item2.STYLE"
             :href="item2.URL"
-            target="_blank" rel="noopener noreferrer"
+            target="_blank"
+            rel="noopener noreferrer"
             download
           >
             <OButton size="mini" class="button-item"
@@ -110,7 +111,12 @@ list.value = initList();
           class="ppt-item"
           :style="{ padding: '0px' }"
         >
-          <a :href="ppt.FILE" target="_blank" rel="noopener noreferrer" download>
+          <a
+            :href="ppt.FILE"
+            target="_blank"
+            rel="noopener noreferrer"
+            download
+          >
             <img :src="ppt.URL" alt="" />
             <div class="ppt-word">
               {{ isZh ? ppt.TEXT : ppt.TEXT_EN }}

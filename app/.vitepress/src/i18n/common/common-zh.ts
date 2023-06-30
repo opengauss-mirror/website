@@ -64,12 +64,6 @@ export default {
           IS_OPEN_WINDOW: 1,
         },
         {
-          NAME: '慕课',
-          ID: 'mooc',
-          PATH: 'https://moocstudio.opengauss.org',
-          IS_OPEN_MINISITE_WINDOW: 1,
-        },
-        {
           NAME: '知识图谱',
           ID: 'knowledge',
           PATH: '/knowledge/',

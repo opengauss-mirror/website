@@ -1,9 +1,10 @@
 <script lang="ts" setup>
-import { ref, computed, onMounted } from 'vue';
+import { ref, computed, onMounted, h } from 'vue';
 import { useData } from 'vitepress';
 import { useCommon } from '@/stores/common';
 import { useI18n } from '@/i18n';
 import { downloadCard } from '@/api/api-authentication';
+import { ElMessage } from 'element-plus';
 
 import AppContent from '@/components/AppContent.vue';
 
@@ -54,8 +55,14 @@ function downloadCertification(paString: string) {
         disabledTip.value = res.message;
       }
     })
-    .catch((error: any) => {
-      throw new Error(error);
+    .catch(() => {
+      ElMessage({
+        message: h(
+          'p',
+          { style: 'width: 5vw;display:flex;justify-content: center;' },
+          [h('span', { style: 'color: red;display:flex;' }, 'Error!')]
+        ),
+      });
     });
 }
 // 获取url里面携带的PA参数

@@ -74,7 +74,11 @@ const supporttoolsInfo = computed(() => {
               {{ subitem.desc }}
             </p>
             <p class="item-link">
-              <a :href="subitem.address" target="_blank" rel="noopener noreferrer">
+              <a
+                :href="subitem.address"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {{
                   subitem.site && subitem.site
                     ? i18n.supporttools.SITE_TEXT
@@ -82,9 +86,13 @@ const supporttoolsInfo = computed(() => {
                 }}
               </a>
 
-              <a v-if="subitem.guide" :href="subitem.guide" target="_blank" rel="noopener noreferrer">{{
-                i18n.supporttools.GUIDE_TEXT
-              }}</a>
+              <a
+                v-if="subitem.guide"
+                :href="subitem.guide"
+                target="_blank"
+                rel="noopener noreferrer"
+                >{{ i18n.supporttools.GUIDE_TEXT }}</a
+              >
             </p>
           </div>
         </div>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, nextTick, onMounted, reactive, watch, computed } from 'vue';
+import { ref, nextTick, onMounted, reactive, watch, computed, h } from 'vue';
 import { useData } from 'vitepress';
 import { useI18n } from '@/i18n';
 import type { FormInstance, FormRules } from 'element-plus';
@@ -607,7 +607,7 @@ const clearData = () => {
 // 提交
 const handleSubmitMeeting = async (formEl: FormInstance | undefined) => {
   if (!formEl) return;
-  await formEl.validate((valid, fields) => {
+  await formEl.validate((valid) => {
     if (valid) {
       if (isModify.value) {
         requestMeetingUpdate();
@@ -615,7 +615,13 @@ const handleSubmitMeeting = async (formEl: FormInstance | undefined) => {
         requestMeetingReserve();
       }
     } else {
-      console.log('error submit!', fields);
+      ElMessage({
+        message: h(
+          'p',
+          { style: 'width: 5vw;display:flex;justify-content: center;' },
+          [h('span', { style: 'color: red;display:flex;' }, 'Error Submit!')]
+        ),
+      });
     }
   });
 };
@@ -823,7 +829,8 @@ const changeRecord = () => {
                         <a
                           v-else-if="keys.isLink"
                           :href="item[keys.key]"
-                          target="_blank" rel="noopener noreferrer"
+                          target="_blank"
+                          rel="noopener noreferrer"
                           >{{ item[keys.key] }}</a
                         >
                         <p v-else>{{ currentDay }}</p>

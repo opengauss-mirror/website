@@ -79,7 +79,7 @@ export function getUrlParams(url: string) {
 export function setCustomCookie(cname: string, cvalue: string, day = 1) {
   const expires = day * 24 * 60 * 60 * 1000;
   const date = new Date(+new Date() + expires).toUTCString();
-  document.cookie = `${cname}=${cvalue};expires=${date}`;
+  document.cookie = `${cname}=${cvalue};expires=${date};path=/`;
 }
 // 删除cookie
 export function removeCustomCookie(cname: string, cvalue: string) {

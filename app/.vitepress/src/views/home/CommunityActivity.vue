@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { onMounted, Ref, ref } from 'vue';
+import { onMounted, Ref, ref, h } from 'vue';
 import { useI18n } from '@/i18n';
 import { useCommon } from '@/stores/common';
 import { getStatistic } from '@/api/api-search';
+import { ElMessage } from 'element-plus';
 
 import IconArrowRight from '~icons/app/icon-arrow-right.svg';
 import bg1 from '@/assets/category/home/img1.png';
@@ -24,7 +25,7 @@ const changeNum = () => {
   roundNumber.value.forEach((item: { ROUND_VALUE: number }, index: number) => {
     function addNumber(start: number, end: number) {
       let i = start;
-      let allTime = 2500;
+      const allTime = 2500;
       let time = 10;
       if (allTime / end > time) {
         time = allTime / end;
@@ -76,7 +77,13 @@ onMounted(async () => {
     });
     community.value && observe.observe(community.value);
   } catch (error: any) {
-    throw new Error(error);
+    ElMessage({
+      message: h(
+        'p',
+        { style: 'width: 5vw;display:flex;justify-content: center;' },
+        [h('span', { style: 'color: red;display:flex;' }, 'Error!')]
+      ),
+    });
   }
 });
 </script>
@@ -99,7 +106,11 @@ onMounted(async () => {
           <div class="community-word">
             {{ i18n.home.COMMUNITY_ACTIVITY.CARD.CONTENT }}
           </div>
-          <a :href="i18n.home.COMMUNITY_ACTIVITY.CARD.LINK" target="_blank" rel="noopener noreferrer">
+          <a
+            :href="i18n.home.COMMUNITY_ACTIVITY.CARD.LINK"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <OButton animation type="text" class="community-detail">
               {{ i18n.home.COMMUNITY_ACTIVITY.CARD.VIEW_DETAILS }}
               <template #suffixIcon>

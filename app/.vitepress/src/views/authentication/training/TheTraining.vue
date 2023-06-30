@@ -253,7 +253,9 @@ onUnmounted(() => {
                         <p>{{ itemCourse.cardtitle }}</p>
                         <div class="time">
                           <OIcon><IconPeriod /></OIcon>
-                          <span class="time-text lable-name">{{ itemCourse.period }}</span>
+                          <span class="time-text lable-name">{{
+                            itemCourse.period
+                          }}</span>
                         </div>
                       </div>
                     </div>
@@ -276,12 +278,18 @@ onUnmounted(() => {
                   </li>
                 </ul>
                 <div v-if="index === 0" class="down-box">
-                  <a :href="i18n.authentication.downurl1" target="_blank" rel="noopener noreferrer">{{
-                    i18n.authentication.downpdf1
-                  }}</a>
-                  <a :href="i18n.authentication.downurl1" target="_blank" rel="noopener noreferrer">{{
-                    i18n.authentication.downpdf2
-                  }}</a>
+                  <a
+                    :href="i18n.authentication.downurl1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >{{ i18n.authentication.downpdf1 }}</a
+                  >
+                  <a
+                    :href="i18n.authentication.downurl1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >{{ i18n.authentication.downpdf2 }}</a
+                  >
                 </div>
                 <div v-else class="no-data lable-name">
                   <img
@@ -465,12 +473,18 @@ onUnmounted(() => {
                     </li>
                   </ul>
                   <div v-if="index === 0" class="down-box">
-                    <a :href="i18n.authentication.downurl1" target="_blank" rel="noopener noreferrer">{{
-                      i18n.authentication.downpdf1
-                    }}</a>
-                    <a :href="i18n.authentication.downurl1" target="_blank" rel="noopener noreferrer">{{
-                      i18n.authentication.downpdf2
-                    }}</a>
+                    <a
+                      :href="i18n.authentication.downurl1"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >{{ i18n.authentication.downpdf1 }}</a
+                    >
+                    <a
+                      :href="i18n.authentication.downurl1"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >{{ i18n.authentication.downpdf2 }}</a
+                    >
                   </div>
                   <div v-else class="no-data">
                     <img

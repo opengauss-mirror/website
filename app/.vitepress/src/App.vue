@@ -94,7 +94,11 @@ watch(
       <component :is="comp" v-if="isCustomLayout"></component>
       <Content v-else />
       <div v-if="isTipShow" class="safety-tips">
-        <a href="https://opengausssrc.vulbox.com/" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://opengausssrc.vulbox.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img :src="safetyImg" alt="" />
         </a>
       </div>

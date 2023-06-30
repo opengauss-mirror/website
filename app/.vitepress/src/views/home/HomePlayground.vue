@@ -69,7 +69,8 @@ onMounted(() => {
         <a
           class="lets-play"
           href="https://tryme.opengauss.org/"
-          target="_blank" rel="noopener noreferrer"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <img :src="letsPlay" alt="" />
         </a>

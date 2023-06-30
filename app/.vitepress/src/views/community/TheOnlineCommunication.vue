@@ -39,7 +39,12 @@ const windowWidth = ref(useWindowResize());
             prop="listname"
           >
             <template #default="scope">
-              <a class="link" :href="scope.row.giteelink" target="_blank" rel="noopener noreferrer">
+              <a
+                class="link"
+                :href="scope.row.giteelink"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {{ scope.row.listname }}
               </a>
             </template>
@@ -49,7 +54,12 @@ const windowWidth = ref(useWindowResize());
             prop="emailaddress"
           >
             <template #default="scope">
-              <a class="link" target="_blank" rel="noopener noreferrer" :href="scope.row.websitelink">
+              <a
+                class="link"
+                target="_blank"
+                rel="noopener noreferrer"
+                :href="scope.row.websitelink"
+              >
                 {{ scope.row.emailaddress }}
               </a>
             </template>
@@ -71,7 +81,12 @@ const windowWidth = ref(useWindowResize());
             prop="archive"
           >
             <template #default="scope">
-              <a :href="scope.row.archivelink" class="link" target="_blank" rel="noopener noreferrer">
+              <a
+                :href="scope.row.archivelink"
+                class="link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {{ scope.row.archive }}
               </a>
             </template>

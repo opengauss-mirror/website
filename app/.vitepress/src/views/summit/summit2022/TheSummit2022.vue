@@ -209,7 +209,12 @@ const videoClickBtn = (path: string) => {
       </div>
       <div class="link-box">
         <p v-for="item in summitData.previous.list" :key="item.link">
-          <a :href="item.link" :target="item.target" :rel="item.target === '_blank' ? 'noopener noreferrer' : ''">{{ item.name }}</a>
+          <a
+            :href="item.link"
+            :target="item.target"
+            :rel="item.target === '_blank' ? 'noopener noreferrer' : ''"
+            >{{ item.name }}</a
+          >
         </p>
       </div>
     </div>

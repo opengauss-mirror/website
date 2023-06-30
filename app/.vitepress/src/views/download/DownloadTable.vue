@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, computed, Ref, watch, toRefs, onMounted } from 'vue';
+import { ref, computed, Ref, watch, toRefs, onMounted, h } from 'vue';
 import { useData } from 'vitepress';
 import { useCommon } from '@/stores/common';
 import { showGuard, useStoreData } from '@/shared/login';
@@ -89,8 +89,14 @@ const changeDownloadAuth = () => {
     .then(() => {
       showGuard();
     })
-    .catch((error: any) => {
-      throw new Error(error);
+    .catch(() => {
+      ElMessage({
+        message: h(
+          'p',
+          { style: 'width: 5vw;display:flex;justify-content: center;' },
+          [h('span', { style: 'color: red;display:flex;' }, 'Error!')]
+        ),
+      });
     });
 };
 // 移动端提示
@@ -329,7 +335,8 @@ watch(
                   ? scope.row.docs_url
                   : theme.docsUrl + '/' + lang + scope.row.docs_url
               "
-              target="_blank" rel="noopener noreferrer"
+              target="_blank"
+              rel="noopener noreferrer"
               >{{ scope.row.docsName }}</a
             >
           </template>
@@ -401,7 +408,8 @@ watch(
                 ? item.docs_url
                 : theme.docsUrl + '/' + lang + item.docs_url
             "
-            target="_blank" rel="noopener noreferrer"
+            target="_blank"
+            rel="noopener noreferrer"
             >{{ item.docsName }}</a
           >
         </p>

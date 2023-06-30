@@ -1,8 +1,9 @@
 <script lang="ts" setup>
-import { ref, computed } from 'vue';
+import { ref, computed, h } from 'vue';
 import { useI18n } from '@/i18n';
 import { useCommon } from '@/stores/common';
 import { useRouter, useData } from 'vitepress';
+import { ElMessage } from 'element-plus';
 
 import {
   getCertification,
@@ -97,11 +98,17 @@ function getCode(params: string, lang: string) {
           identification.value = '';
         }
       })
-      .catch((error: any) => {
+      .catch(() => {
         codeSuccess.value = false;
         successTip.value = false;
         identification.value = '';
-        throw new Error(error);
+        ElMessage({
+          message: h(
+            'p',
+            { style: 'width: 5vw;display:flex;justify-content: center;' },
+            [h('span', { style: 'color: red;display:flex;' }, 'Error!')]
+          ),
+        });
       });
   } else {
     resultTip.value = i18n.value.authentication.certificattion.emailErrorTip;
@@ -139,13 +146,19 @@ function onConfirmationClick(identification: string, codeInput: string) {
           successTip.value = false;
         }
       })
-      .catch((error: any) => {
+      .catch(() => {
         resultTip.value =
           lang.value === 'zh'
             ? '您输入的验证码有误！'
             : 'The verification code is incorrect.';
         successTip.value = false;
-        throw new Error(error);
+        ElMessage({
+          message: h(
+            'p',
+            { style: 'width: 5vw;display:flex;justify-content: center;' },
+            [h('span', { style: 'color: red;display:flex;' }, 'Error!')]
+          ),
+        });
       });
   } else {
     successTip.value = false;
@@ -201,8 +214,14 @@ function downloadCertification(paString: string) {
         disabledTip.value = res.message;
       }
     })
-    .catch((error: any) => {
-      throw new Error(error);
+    .catch(() => {
+      ElMessage({
+        message: h(
+          'p',
+          { style: 'width: 5vw;display:flex;justify-content: center;' },
+          [h('span', { style: 'color: red;display:flex;' }, 'Error!')]
+        ),
+      });
     });
 }
 // 点击下载按钮

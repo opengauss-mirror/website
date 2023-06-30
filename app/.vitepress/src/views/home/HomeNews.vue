@@ -111,7 +111,8 @@ onMounted(async () => {
               <a
                 :href="eventsData.path"
                 class="activity-title"
-                target="_blank" rel="noopener noreferrer"
+                target="_blank"
+                rel="noopener noreferrer"
                 >{{ eventsData.title }}</a
               >
 
@@ -151,7 +152,11 @@ onMounted(async () => {
           {{ i18n.home.HOME_ROOMS.BLOG_NAME }}
         </h4>
         <div class="room-box">
-          <div v-for="(item, index) in blogList" :key="index" class="room-item lable-name">
+          <div
+            v-for="(item, index) in blogList"
+            :key="index"
+            class="room-item lable-name"
+          >
             <div class="room-item-pc">
               <div class="room-item-left lable-name">
                 <span class="day">{{ item.date[2] }}</span>
@@ -206,7 +211,11 @@ onMounted(async () => {
         </div>
 
         <div class="statistics">
-          <a :href="`/${lang}/blogs/`" target="_blank" rel="noopener noreferrer">
+          <a
+            :href="`/${lang}/blogs/`"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <OButton animation type="text" class="statistics-button">
               {{ i18n.common.VIEW_MORE }}
               <template #suffixIcon>

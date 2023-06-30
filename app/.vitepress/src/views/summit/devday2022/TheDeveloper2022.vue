@@ -95,7 +95,8 @@ const otherTabType = ref(0);
             <a
               class="link"
               :href="summitData.online.list[2].path"
-              target="_blank" rel="noopener noreferrer"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               {{ summitData.online.list[2].desc }}
               <IconArrowRight />
@@ -112,7 +113,13 @@ const otherTabType = ref(0);
               >
                 <span class="name">{{ item.name }}</span>
                 <span class="desc">{{ item.desc }}</span>
-                <a :href="item.link" target="_blank" rel="noopener noreferrer" class="link">报名</a>
+                <a
+                  :href="item.link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="link"
+                  >报名</a
+                >
               </li>
             </ul>
           </div>
@@ -159,7 +166,8 @@ const otherTabType = ref(0);
         v-for="item in summitData.previous"
         :key="item.link"
         :href="item.link"
-        target="_blank" rel="noopener noreferrer"
+        target="_blank"
+        rel="noopener noreferrer"
         >{{ item.title }}</a
       >
     </div>

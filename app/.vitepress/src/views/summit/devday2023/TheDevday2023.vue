@@ -140,7 +140,9 @@ watch(
       </div>
       <div class="link-box">
         <p v-for="item in summitData.previous.content" :key="item.link">
-          <a :href="item.link" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
+          <a :href="item.link" target="_blank" rel="noopener noreferrer">{{
+            item.title
+          }}</a>
         </p>
       </div>
     </div>
