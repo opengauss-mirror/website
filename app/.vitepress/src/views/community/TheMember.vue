@@ -120,14 +120,19 @@ const handleChangeActiveMobile = (activeNames: any) => {
             <ul class="member-info lable-name">
               <li>
                 <IconHome />
-                <a :href="item.GITEE_PATH" target="_blank" rel="noopener noreferrer">{{
-                  i18n.member.GITEE_TEXT
-                }}</a>
+                <a
+                  :href="item.GITEE_PATH"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >{{ i18n.member.GITEE_TEXT }}</a
+                >
               </li>
               <li>
                 <IconMail />
                 {{ i18n.member.EMIAL_TEXT }}
-                <a class="lable-name" :href="'mailto:' + item.EMIAL">{{ item.EMIAL }}</a>
+                <a class="lable-name" :href="'mailto:' + item.EMIAL">{{
+                  item.EMIAL
+                }}</a>
               </li>
               <li><IconUser />{{ item.NAMEL_TEXT }}</li>
             </ul>
@@ -147,7 +152,8 @@ const handleChangeActiveMobile = (activeNames: any) => {
                     v-if="user.gitee"
                     :href="user.gitee"
                     class="gitee lable-name"
-                    target="_blank" rel="noopener noreferrer"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     ><img :src="IconGit"
                   /></a>
                 </p>
@@ -167,9 +173,12 @@ const handleChangeActiveMobile = (activeNames: any) => {
                 <ul class="member-info lable-name7">
                   <li>
                     <IconHome />
-                    <a :href="subitem.GITEE_PATH" target="_blank" rel="noopener noreferrer">{{
-                      i18n.member.GITEE_TEXT
-                    }}</a>
+                    <a
+                      :href="subitem.GITEE_PATH"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >{{ i18n.member.GITEE_TEXT }}</a
+                    >
                   </li>
                   <li>
                     <IconMail />
@@ -178,7 +187,10 @@ const handleChangeActiveMobile = (activeNames: any) => {
                   </li>
                   <li><IconUser />{{ i18n.member.NAMEL_TEXT }}</li>
                 </ul>
-                <ul v-if="subitem.LIST.length > 0" class="member-list lable-name8">
+                <ul
+                  v-if="subitem.LIST.length > 0"
+                  class="member-list lable-name8"
+                >
                   <li v-for="(user, i) in subitem.LIST" :key="i">
                     <img class="avatar" :src="user.img" :alt="user.name" />
                     <p class="m-name lable-name9">{{ user.name }}</p>
@@ -198,7 +210,8 @@ const handleChangeActiveMobile = (activeNames: any) => {
                         v-if="user.gitee"
                         :href="user.gitee"
                         class="gitee lable-name10"
-                        target="_blank" rel="noopener noreferrer"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         ><img :src="IconGit"
                       /></a>
                     </p>
@@ -233,9 +246,12 @@ const handleChangeActiveMobile = (activeNames: any) => {
           <ul class="member-info">
             <li>
               <IconHome />
-              <a :href="item.GITEE_PATH" target="_blank" rel="noopener noreferrer">{{
-                i18n.member.GITEE_TEXT
-              }}</a>
+              <a
+                :href="item.GITEE_PATH"
+                target="_blank"
+                rel="noopener noreferrer"
+                >{{ i18n.member.GITEE_TEXT }}</a
+              >
             </li>
             <li>
               <IconMail />
@@ -249,7 +265,11 @@ const handleChangeActiveMobile = (activeNames: any) => {
               <img class="avatar" :src="user.img" :alt="user.name" />
               <p class="m-name">{{ user.name }}</p>
               <p class="m-title">{{ user.title }}</p>
-              <p class="m-company lable-name1" :class="user.wider" :title="user.company">
+              <p
+                class="m-company lable-name1"
+                :class="user.wider"
+                :title="user.company"
+              >
                 {{ user.company }}
               </p>
               <p class="links lable-name3">
@@ -260,7 +280,8 @@ const handleChangeActiveMobile = (activeNames: any) => {
                   v-if="user.gitee"
                   :href="user.gitee"
                   class="gitee lable-name3"
-                  target="_blank" rel="noopener noreferrer"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   ><img :src="IconGit"
                 /></a>
               </p>
@@ -283,9 +304,12 @@ const handleChangeActiveMobile = (activeNames: any) => {
               <ul class="member-info">
                 <li>
                   <IconHome />
-                  <a :href="subitem.GITEE_PATH" target="_blank" rel="noopener noreferrer">{{
-                    i18n.member.GITEE_TEXT
-                  }}</a>
+                  <a
+                    :href="subitem.GITEE_PATH"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >{{ i18n.member.GITEE_TEXT }}</a
+                  >
                 </li>
                 <li>
                   <IconMail />
@@ -314,7 +338,8 @@ const handleChangeActiveMobile = (activeNames: any) => {
                       v-if="user.gitee"
                       :href="user.gitee"
                       class="gitee lable-name5"
-                      target="_blank" rel="noopener noreferrer"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       ><img :src="IconGit"
                     /></a>
                   </p>

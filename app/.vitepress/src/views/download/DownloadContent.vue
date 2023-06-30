@@ -36,15 +36,19 @@ const { contentData, versionShownIndex, downloadVersionAuthIndex } =
     <div class="other-link">
       <a
         :href="theme.docsUrl + '/' + lang + (contentData[0] as any).docs_list[0][ lang === 'zh'?'path':'pathEn']"
-        target="_blank" rel="noopener noreferrer"
+        target="_blank"
+        rel="noopener noreferrer"
         >{{
           lang === 'zh'
             ? (contentData[0] as any).docs_list[0].name
             : (contentData[0] as any).docs_list[0].nameEn
         }}</a
-      ><a href="https://gitee.com/opengauss/community/issues" target="_blank" rel="noopener noreferrer">{{
-        i18n.download.FEEDBACK_QUESTION
-      }}</a>
+      ><a
+        href="https://gitee.com/opengauss/community/issues"
+        target="_blank"
+        rel="noopener noreferrer"
+        >{{ i18n.download.FEEDBACK_QUESTION }}</a
+      >
     </div>
     <DownloadTable
       v-for="item in (contentData[0] as any).data[lang]"

@@ -1,7 +1,8 @@
 <script lang="ts" setup>
-import { reactive, ref, watch, onMounted } from 'vue';
+import { reactive, ref, watch, onMounted, h } from 'vue';
 import { useRouter } from 'vitepress';
 import { useI18n } from '@/i18n';
+import { ElMessage } from 'element-plus';
 
 import BannerLevel2 from '@/components/BannerLevel2.vue';
 import AppPaginationMo from '@/components/AppPaginationMo.vue';
@@ -64,8 +65,14 @@ function getSecurityLists(data: CveQuery) {
         tableData.value = [];
       }
     })
-    .catch((error: any) => {
-      throw new Error(error);
+    .catch(() => {
+      ElMessage({
+        message: h(
+          'p',
+          { style: 'width: 5vw;display:flex;justify-content: center;' },
+          [h('span', { style: 'color: red;display:flex;' }, 'Error!')]
+        ),
+      });
     });
 }
 

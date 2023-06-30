@@ -49,9 +49,11 @@ const handleDownloadUrl = (url: string) => {
           <p v-for="item in downloadData.DESCRIPTION" :key="item">{{ item }}</p>
           <p>
             {{ downloadData.MORE_DETAIL
-            }}<a :href="downloadData.SPECIFICATION_LINK" target="_blank" rel="noopener noreferrer">{{
-              downloadData.VIEW_SPECIFICATION
-            }}</a
+            }}<a
+              :href="downloadData.SPECIFICATION_LINK"
+              target="_blank"
+              rel="noopener noreferrer"
+              >{{ downloadData.VIEW_SPECIFICATION }}</a
             ><span>{{ lang === 'zh' ? '。' : '.' }}</span>
           </p>
         </div>
@@ -60,7 +62,8 @@ const handleDownloadUrl = (url: string) => {
             {{ downloadData.PECULIARITY_DETAIL
             }}<a
               :href="theme.docsUrl + downloadData.RELEASE_LINK"
-              target="_blank" rel="noopener noreferrer"
+              target="_blank"
+              rel="noopener noreferrer"
               >{{
                 lang === 'zh'
                   ? getData[0].docs_list[0].name

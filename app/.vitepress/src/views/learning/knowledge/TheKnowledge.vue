@@ -36,7 +36,8 @@ const i18n = useI18n();
                 v-for="itemList in itemType.list"
                 :key="itemList.name"
                 :href="itemList.link"
-                target="_blank" rel="noopener noreferrer"
+                target="_blank"
+                rel="noopener noreferrer"
                 >{{ itemList.name }}</a
               >
             </div>

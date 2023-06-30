@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, computed, onMounted, Ref, watch } from 'vue';
+import { ref, computed, onMounted, Ref, watch, h } from 'vue';
 import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';
 import { ElMessage, ElMessageBox } from 'element-plus';
@@ -115,8 +115,14 @@ const changeDownloadAuth = () => {
     .then(() => {
       showGuard();
     })
-    .catch((error: any) => {
-      throw new Error(error);
+    .catch(() => {
+      ElMessage({
+        message: h(
+          'p',
+          { style: 'width: 5vw;display:flex;justify-content: center;' },
+          [h('span', { style: 'color: red;display:flex;' }, 'Error!')]
+        ),
+      });
     });
 };
 //控制需要登录后才能下载的版本(默认仅为最新版需要登录后下载)
@@ -161,12 +167,14 @@ watch(
           v-for="item in getData[0].docs_list"
           :key="item.name"
           :href="theme.docsUrl + '/' + lang + item.path"
-          target="_blank" rel="noopener noreferrer"
+          target="_blank"
+          rel="noopener noreferrer"
           >{{ isZh ? item.name : item.nameEn }}</a
         >
         <a
           href="https://gitee.com/opengauss/community/issues"
-          target="_blank" rel="noopener noreferrer"
+          target="_blank"
+          rel="noopener noreferrer"
           >{{ i18n.download.FEEDBACK_QUESTION }}</a
         >
       </div>
@@ -272,7 +280,7 @@ watch(
                   </template>
                   <template v-else>
                     <a :href="subitem.aarch_url">
-                      <OButton animation size="mini" type="primary" >
+                      <OButton animation size="mini" type="primary">
                         {{ i18n.download.BTN_TEXT }}
                         <template #suffixIcon>
                           <IconDownload />

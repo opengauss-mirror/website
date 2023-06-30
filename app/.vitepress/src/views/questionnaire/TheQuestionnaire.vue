@@ -245,7 +245,11 @@ const data = {
             <th>奖品</th>
             <th>中奖号码</th>
           </tr>
-          <tr class="lable-name1" v-for="subitem in item.list" :key="subitem.phone">
+          <tr
+            v-for="subitem in item.list"
+            :key="subitem.phone"
+            class="lable-name1"
+          >
             <td>{{ subitem.name }}</td>
             <td>{{ subitem.phone }}</td>
           </tr>
