@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, nextTick, onMounted, reactive, watch, computed } from 'vue';
+import { ref, nextTick, onMounted, reactive, watch, computed, h } from 'vue';
 import { useData } from 'vitepress';
 import { useI18n } from '@/i18n';
 import type { FormInstance, FormRules } from 'element-plus';
@@ -40,6 +40,10 @@ let currentMeet = reactive<TableData>({
   date: '',
   timeData: [
     {
+      agenda: '',
+      platform: '',
+      video_url: '',
+      mid: '',
       creator: '',
       name: '',
       join_url: '',
@@ -47,16 +51,12 @@ let currentMeet = reactive<TableData>({
       endTime: '',
       url: '',
       id: '',
-      platform: '',
-      video_url: '',
-      mid: '',
       emaillist: '',
       detail: '',
       topic: '',
       sponsor: '',
       start: '',
       end: '',
-      agenda: '',
     },
   ],
 });
@@ -91,20 +91,20 @@ const calendarData = ref<TableData[]>([
     date: '',
     timeData: [
       {
+        detail: '',
+        topic: '',
+        sponsor: '',
         creator: '',
         name: '',
         join_url: '',
-        startTime: '',
-        endTime: '',
         url: '',
         id: '',
         platform: '',
         video_url: '',
         mid: '',
         emaillist: '',
-        detail: '',
-        topic: '',
-        sponsor: '',
+        startTime: '',
+        endTime: '',
         start: '',
         end: '',
         agenda: '',
@@ -607,7 +607,7 @@ const clearData = () => {
 // 提交
 const handleSubmitMeeting = async (formEl: FormInstance | undefined) => {
   if (!formEl) return;
-  await formEl.validate((valid, fields) => {
+  await formEl.validate((valid) => {
     if (valid) {
       if (isModify.value) {
         requestMeetingUpdate();
@@ -615,7 +615,13 @@ const handleSubmitMeeting = async (formEl: FormInstance | undefined) => {
         requestMeetingReserve();
       }
     } else {
-      console.log('error submit!', fields);
+      ElMessage({
+        message: h(
+          'p',
+          { style: 'width: 5vw;display:flex;justify-content: center;' },
+          [h('span', { style: 'color: red;display:flex;' }, 'Error Submit!')]
+        ),
+      });
     }
   });
 };
@@ -630,7 +636,7 @@ const changeRecord = () => {
       <div class="calendar">
         <el-calendar v-if="windowWidth > 768" ref="calendar" class="calender">
           <template #header="{ date }">
-            <div class="left-title">
+            <div class="left-title lable-name">
               <OIcon @click="selectDate('prev-month', date)">
                 <icon-left></icon-left>
               </OIcon>
@@ -640,16 +646,16 @@ const changeRecord = () => {
               </OIcon>
             </div>
           </template>
-          <template #dateCell="{ data }">
+          <template #date-cell="{ data }">
             <div
-              class="out-box"
+              class="out-box lable-name"
               :class="{ 'be-active': getMeetTimes(data.day) }"
               @click="meetClick(data.day, $event)"
             >
               <div class="day-box">
                 <p
                   :class="data.isSelected ? 'is-selected' : ''"
-                  class="date-calender"
+                  class="date-calender lable-name"
                 >
                   {{ data.day.split('-').slice(2)[0] }}
                 </p>
@@ -713,7 +719,7 @@ const changeRecord = () => {
                       </OIcon>
                     </div>
                   </template>
-                  <template #dateCell="{ data }">
+                  <template #date-cell="{ data }">
                     <div
                       class="out-box"
                       :class="{ 'be-active': getMeetTimes(data.day) }"

@@ -2,7 +2,7 @@
 title: '视频详情'
 ---
 
-<script setup lang="ts">
+<script setup>
   import TheVideoDetail from "@/views/video/TheVideoDetail.vue"
 </script>
 

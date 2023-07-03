@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { onMounted, Ref, ref } from 'vue';
+import { onMounted, Ref, ref, h } from 'vue';
 import { useI18n } from '@/i18n';
 import { useCommon } from '@/stores/common';
 import { getStatistic } from '@/api/api-search';
-import TWEEN from '@tweenjs/tween.js';
+import { ElMessage } from 'element-plus';
 
 import IconArrowRight from '~icons/app/icon-arrow-right.svg';
 import bg1 from '@/assets/category/home/img1.png';
@@ -23,20 +23,32 @@ const roundNumber = ref([
 
 const changeNum = () => {
   roundNumber.value.forEach((item: { ROUND_VALUE: number }, index: number) => {
-    new TWEEN.Tween(item)
-      .to(
-        {
-          ROUND_VALUE: roundList.value[index].ROUND_VALUE || 0,
-        },
-        2500
-      )
-      .start();
-    function animate() {
-      if (TWEEN.update()) {
-        requestAnimationFrame(animate);
+    function addNumber(start: number, end: number) {
+      let i = start;
+      const allTime = 2500;
+      let time = 10;
+      if (allTime / end > time) {
+        time = allTime / end;
+      }
+      if (i < end) {
+        const Interval = setInterval(function () {
+          // 设置每次增加的动态数字，可调整
+          if (allTime / end < time) {
+            i += end / (allTime / time);
+          } else {
+            i += 1;
+          }
+          if (i > end) {
+            clearInterval(Interval);
+            item.ROUND_VALUE = roundList.value[index].ROUND_VALUE;
+            i = 0;
+          } else {
+            item.ROUND_VALUE = i;
+          }
+        }, time);
       }
     }
-    animate();
+    addNumber(0, roundList.value[index].ROUND_VALUE);
   });
 };
 
@@ -65,7 +77,13 @@ onMounted(async () => {
     });
     community.value && observe.observe(community.value);
   } catch (error: any) {
-    throw new Error(error);
+    ElMessage({
+      message: h(
+        'p',
+        { style: 'width: 5vw;display:flex;justify-content: center;' },
+        [h('span', { style: 'color: red;display:flex;' }, 'Error!')]
+      ),
+    });
   }
 });
 </script>
@@ -73,7 +91,7 @@ onMounted(async () => {
 <template>
   <div ref="community" class="community">
     <div v-if="isShowCommunity" class="community-list">
-      <OContainer data-aos="fade-right">
+      <OContainer>
         <OCard
           class="community-card"
           :style="{
@@ -105,7 +123,6 @@ onMounted(async () => {
       <OContainer
         :level-index="2"
         class="round-card"
-        data-aos="fade-left"
         :style="{
           'background-image': `url(${bg2}) `,
         }"

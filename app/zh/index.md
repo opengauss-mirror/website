@@ -2,7 +2,7 @@
 title: 'openGauss'
 ---
 
-<script setup lang="ts">
+<script setup>
   import TheHome from "@/views/home/TheHome.vue"
 </script>
 

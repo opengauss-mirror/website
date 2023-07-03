@@ -160,20 +160,20 @@ list.value = initList();
   }
 }
 .brand {
-  &-title {
-    font-size: var(--o-font-size-h3);
-    color: var(--o-color-text1);
-    line-height: var(--o-line-height-h3);
+  .brand-title {
     width: 100%;
+    font-size: var(--o-font-size-h3);
     font-weight: 300;
+    line-height: var(--o-line-height-h3);
     text-align: center;
+    color: var(--o-color-text1);
     @media (max-width: 768px) {
       font-size: var(--o-font-size-h8);
       line-height: var(--o-line-height-h8);
     }
   }
 
-  &-word {
+  .brand-word {
     font-size: var(--o-font-size-text);
     color: var(--o-color-text1);
     line-height: var(--o-line-height-text);
@@ -186,7 +186,7 @@ list.value = initList();
     }
   }
 
-  &-list {
+  .brand-list {
     display: grid;
     width: 100%;
     margin-top: var(--o-spacing-h2);
@@ -196,7 +196,7 @@ list.value = initList();
     grid-gap: var(--o-spacing-h4);
   }
 
-  &-item {
+  .brand-item {
     width: 100%;
     padding: 0;
     @media (max-width: 768px) {
@@ -208,7 +208,7 @@ list.value = initList();
       }
     }
 
-    &-title {
+    .brand-item-title {
       font-size: var(--o-font-size-h7);
       font-weight: 300;
       color: var(--o-color-text1);
@@ -219,7 +219,7 @@ list.value = initList();
         line-height: var(--o-line-height-text);
       }
     }
-    &-img {
+    .brand-item-img {
       height: 120px;
       width: 100%;
       margin-top: var(--o-spacing-h5);
@@ -238,7 +238,7 @@ list.value = initList();
     }
   }
 
-  &-ppt {
+  .brand-ppt {
     margin-top: var(--o-spacing-h1);
     width: 100%;
 

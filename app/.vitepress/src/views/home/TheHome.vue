@@ -2,7 +2,7 @@
 import { onMounted, onUnmounted, ref, computed } from 'vue';
 import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';
-import AOS from 'aos';
+
 import AppContent from '@/components/AppContent.vue';
 import HomeCalendar from './HomeCalendar.vue';
 import HomeBanner from './HomeBanner.vue';
@@ -33,12 +33,6 @@ onMounted(async () => {
   if (body) {
     body.classList.add('home-loading');
   }
-  AOS.init({
-    offset: 50,
-    duration: 800,
-    delay: 100,
-    once: true,
-  });
   const paramsNews = {
     category: 'news',
     lang: lang.value,
@@ -75,17 +69,17 @@ onUnmounted(() => {
 <template>
   <HomeBanner />
   <AppContent>
-    <div data-aos="fade-up">
+    <div>
       <HomeCharacteristic />
       <HomePlayground />
     </div>
     <CommunityActivity />
   </AppContent>
 
-  <HomeExplore data-aos="fade-down" />
+  <HomeExplore />
   <AppContent>
     <ClientOnly>
-      <div id="meetings" class="home-calendar" data-aos="fade-up">
+      <div id="meetings" class="home-calendar">
         <h3 class="home-title">{{ i18n.home.HOME_MEETING }}</h3>
         <HomeCalendar />
       </div>
@@ -97,7 +91,7 @@ onUnmounted(() => {
       :events-data="eventsData"
     />
   </AppContent>
-  <HomeVideo data-aos="fade-up" />
+  <HomeVideo />
   <AppContent>
     <HomeShowCase />
     <div class="home-partner">

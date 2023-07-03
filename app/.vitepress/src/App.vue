@@ -115,6 +115,7 @@ watch(
 main {
   min-height: calc(100vh - 280px);
   background-color: var(--o-color-bg1);
+  overflow: auto;
   @media (max-width: 1100px) {
     min-height: calc(100vh - 329px);
   }

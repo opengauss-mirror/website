@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { computed, ref, onMounted, reactive } from 'vue';
+import { computed, ref, onMounted, reactive, h } from 'vue';
 import { useRouter, useData } from 'vitepress';
+import { ElMessage } from 'element-plus';
 
 import { useI18n } from '@/i18n';
 import useWindowResize from '@/components/hooks/useWindowResize';
@@ -64,9 +65,15 @@ const getListData = (params: ParamsType) => {
         isShowData.value = true;
       }
     })
-    .catch((error: any) => {
+    .catch(() => {
       isShowData.value = false;
-      throw new Error(error);
+      ElMessage({
+        message: h(
+          'p',
+          { style: 'width: 5vw;display:flex;justify-content: center;' },
+          [h('span', { style: 'color: red;display:flex;' }, 'Error!')]
+        ),
+      });
     });
 };
 
@@ -88,12 +95,12 @@ const pageTotal = computed(() =>
   Math.ceil(paginationData.value.total / paginationData.value.pagesize)
 );
 const changeCurrentMoblie = (val: string) => {
-  if (val === 'prev' && paginationData.value.currentpage > 1) {
+  if (paginationData.value.currentpage > 1 && val === 'prev') {
     paginationData.value.currentpage = paginationData.value.currentpage - 1;
     changeCurrent(paginationData.value.currentpage);
   } else if (
-    val === 'next' &&
-    paginationData.value.currentpage < pageTotal.value
+    paginationData.value.currentpage < pageTotal.value &&
+    val === 'next'
   ) {
     paginationData.value.currentpage = paginationData.value.currentpage + 1;
     changeCurrent(paginationData.value.currentpage);
@@ -136,20 +143,20 @@ const changeCurrentMoblie = (val: string) => {
             v-model:currentPage="paginationData.currentpage"
             v-model:page-size="paginationData.pagesize"
             :background="true"
-            layout="sizes, prev, pager, next, slot, jumper"
-            :total="paginationData.total"
             :page-sizes="[3, 6, 9]"
+            :total="paginationData.total"
+            layout="sizes, prev, pager, next, slot, jumper"
             @current-change="changeCurrent"
             @size-change="changeCurrent(1)"
           >
-            <span class="pagination-slot"
+            <span class="pagination-slot lable-name"
               >{{ paginationData.currentpage }}/{{ pageTotal }}</span
             >
           </OPagination>
           <AppPaginationMo
             v-else
-            :current-page="paginationData.currentpage"
             :total-page="pageTotal"
+            :current-page="paginationData.currentpage"
             @turn-page="changeCurrentMoblie"
           />
         </ClientOnly>
@@ -161,9 +168,9 @@ const changeCurrentMoblie = (val: string) => {
 
 <style lang="scss" scoped>
 @mixin showline {
+  overflow: hidden;
   word-break: break-all;
   text-overflow: ellipsis;
-  overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
 }

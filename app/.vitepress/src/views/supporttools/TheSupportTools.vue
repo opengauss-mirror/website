@@ -41,7 +41,7 @@ const supporttoolsInfo = computed(() => {
     :illustration="illustration"
   />
   <AppContent>
-    <div class="supporttools-info" data-aos="fade-up">
+    <div class="supporttools-info">
       <p class="text">{{ i18n.supporttools.INFO }}</p>
 
       <img
@@ -63,7 +63,7 @@ const supporttoolsInfo = computed(() => {
         class="tool-item"
       >
         <h3 class="title">{{ item.name }}</h3>
-        <div :id="item.id" class="tool-item-detail" data-aos="fade-up">
+        <div :id="item.id" class="tool-item-detail">
           <div
             v-for="subitem in item.children"
             :key="subitem.iden"

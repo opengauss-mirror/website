@@ -104,12 +104,7 @@ onUnmounted(() => {
 <template>
   <div class="case-main">
     <h3>{{ i18n.home.USER_TITLE }}</h3>
-    <OContainer
-      ref="userCase"
-      :level-index="1"
-      data-aos="fade-down"
-      class="container"
-    >
+    <OContainer ref="userCase" :level-index="1" class="container">
       <OCollapse
         v-model="activeMobile"
         accordion
@@ -346,8 +341,8 @@ onUnmounted(() => {
   &-title {
     font-size: var(--o-font-size-h7);
     font-weight: 500;
-    color: var(--o-color-text1);
     line-height: var(--o-line-height-h7);
+    color: var(--o-color-text1);
     @media (max-width: 768px) {
       font-size: var(--o-font-size-text);
       line-height: var(--o-line-height-text);
@@ -356,12 +351,12 @@ onUnmounted(() => {
 
   &-word {
     font-size: var(--o-font-size-text);
+    line-height: var(--o-line-height-text);
     font-weight: 400;
     color: var(--o-color-text4);
-    line-height: var(--o-line-height-text);
+    overflow: hidden;
     display: -webkit-box;
     text-overflow: ellipsis;
-    overflow: hidden;
     -webkit-line-clamp: 1; // 设置两行文字溢出
     -webkit-box-orient: vertical;
     @media (max-width: 768px) {

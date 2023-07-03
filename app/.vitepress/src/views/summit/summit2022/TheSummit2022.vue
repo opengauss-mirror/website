@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue';
+import { ref, computed } from 'vue';
 import { useCommon } from '@/stores/common';
-import AOS from 'aos';
 
 import AppContent from '@/components/AppContent.vue';
 import SummitSchedule from './components/SummitSchedule.vue';
@@ -29,15 +28,6 @@ const bannerInfo = {
 const tabType = ref(['main', 'main', 'main']);
 const otherTabType = ref([0, 0, 0]);
 
-onMounted(() => {
-  AOS.init({
-    offset: 50,
-    duration: 800,
-    delay: 100,
-    once: true,
-  });
-});
-
 // video 事件
 const videoDialog = ref(false);
 const videoLink = ref('');
@@ -56,7 +46,7 @@ const videoClickBtn = (path: string) => {
       <video
         muted
         playsinline="true"
-        autoplay="autoplay"
+        autoplay="true"
         height="380"
         loop
         webkit-playsinline="true"
@@ -87,7 +77,6 @@ const videoClickBtn = (path: string) => {
         v-for="(item, index) in summitData.agenda.meetingList"
         :key="item.daytime"
         class="agenda-item"
-        data-aos="fade-up"
       >
         <h4 class="meeting-title">
           {{ item.daytime }}

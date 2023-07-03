@@ -210,7 +210,6 @@ const searchLink = `/${lang.value}/search/`;
         <OIcon v-else class="icon"><IconCancel /></OIcon>
       </div>
       <img class="logo" alt="openGauss logo" :src="logo" @click="goHome" />
-
       <ClientOnly>
         <HeaderSearch
           v-if="isShowBox"

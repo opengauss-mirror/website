@@ -13,7 +13,7 @@ description: '您可以在此处查询安全公告的相关信息。'
 keywords: ['安全', '公告']
 ---
 
-<script setup lang="ts">
+<script setup>
   import TheSecurityAdvisories from "@/views/security/advisories/TheSecurityAdvisories.vue"
 </script>
 

@@ -117,7 +117,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
         </template>
         <div class="member-mobile">
           <template v-if="!item.CHILDREN">
-            <ul class="member-info">
+            <ul class="member-info lable-name">
               <li>
                 <IconHome />
                 <a
@@ -130,26 +130,28 @@ const handleChangeActiveMobile = (activeNames: any) => {
               <li>
                 <IconMail />
                 {{ i18n.member.EMIAL_TEXT }}
-                <a :href="'mailto:' + item.EMIAL">{{ item.EMIAL }}</a>
+                <a class="lable-name" :href="'mailto:' + item.EMIAL">{{
+                  item.EMIAL
+                }}</a>
               </li>
               <li><IconUser />{{ item.NAMEL_TEXT }}</li>
             </ul>
             <ul v-if="item.LIST.length > 0" class="member-list">
               <li v-for="(user, i) in item.LIST" :key="i">
                 <img class="avatar" :src="user.img" :alt="user.name" />
-                <p class="m-name">{{ user.name }}</p>
+                <p class="m-name lable-name">{{ user.name }}</p>
                 <p class="m-title">{{ user.title }}</p>
                 <p class="m-company" :class="user.wider" :title="user.company">
                   {{ user.company }}
                 </p>
-                <p class="links">
+                <p class="links lable-name">
                   <a :href="'mailto:' + user.email" class="mail"
                     ><img :src="IconToemail"
                   /></a>
                   <a
                     v-if="user.gitee"
                     :href="user.gitee"
-                    class="gitee"
+                    class="gitee lable-name"
                     target="_blank"
                     rel="noopener noreferrer"
                     ><img :src="IconGit"
@@ -168,7 +170,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
                 <h2 :id="subitem.ID" class="sub-title">
                   {{ subitem.NAME }}
                 </h2>
-                <ul class="member-info">
+                <ul class="member-info lable-name7">
                   <li>
                     <IconHome />
                     <a
@@ -185,10 +187,13 @@ const handleChangeActiveMobile = (activeNames: any) => {
                   </li>
                   <li><IconUser />{{ i18n.member.NAMEL_TEXT }}</li>
                 </ul>
-                <ul v-if="subitem.LIST.length > 0" class="member-list">
+                <ul
+                  v-if="subitem.LIST.length > 0"
+                  class="member-list lable-name8"
+                >
                   <li v-for="(user, i) in subitem.LIST" :key="i">
                     <img class="avatar" :src="user.img" :alt="user.name" />
-                    <p class="m-name">{{ user.name }}</p>
+                    <p class="m-name lable-name9">{{ user.name }}</p>
                     <p class="m-title">{{ user.title }}</p>
                     <p
                       class="m-company"
@@ -197,14 +202,14 @@ const handleChangeActiveMobile = (activeNames: any) => {
                     >
                       {{ user.company }}
                     </p>
-                    <p class="links">
+                    <p class="links lable-name9">
                       <a :href="'mailto:' + user.email" class="mail"
                         ><img :src="IconToemail"
                       /></a>
                       <a
                         v-if="user.gitee"
                         :href="user.gitee"
-                        class="gitee"
+                        class="gitee lable-name10"
                         target="_blank"
                         rel="noopener noreferrer"
                         ><img :src="IconGit"
@@ -213,9 +218,9 @@ const handleChangeActiveMobile = (activeNames: any) => {
                   </li>
                 </ul>
               </template>
-              <div v-else class="other">
+              <div v-else class="other lable-name10">
                 <h4>{{ subitem.other }}</h4>
-                <h4>{{ subitem.other1 }}</h4>
+                <h4 class="lable-name11">{{ subitem.other1 }}</h4>
                 <p>
                   {{ subitem.other2 }}
                   <a :href="'mailto:' + subitem.email" class="mail">{{
@@ -256,21 +261,25 @@ const handleChangeActiveMobile = (activeNames: any) => {
             <li><IconUser />{{ item.NAMEL_TEXT }}</li>
           </ul>
           <ul v-if="item.LIST.length > 0" class="member-list">
-            <li v-for="(user, i) in item.LIST" :key="i" data-aos="fade-up">
+            <li v-for="(user, i) in item.LIST" :key="i">
               <img class="avatar" :src="user.img" :alt="user.name" />
               <p class="m-name">{{ user.name }}</p>
               <p class="m-title">{{ user.title }}</p>
-              <p class="m-company" :class="user.wider" :title="user.company">
+              <p
+                class="m-company lable-name1"
+                :class="user.wider"
+                :title="user.company"
+              >
                 {{ user.company }}
               </p>
-              <p class="links">
+              <p class="links lable-name3">
                 <a :href="'mailto:' + user.email" class="mail"
                   ><img :src="IconToemail"
                 /></a>
                 <a
                   v-if="user.gitee"
                   :href="user.gitee"
-                  class="gitee"
+                  class="gitee lable-name3"
                   target="_blank"
                   rel="noopener noreferrer"
                   ><img :src="IconGit"
@@ -310,11 +319,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
                 <li><IconUser />{{ i18n.member.NAMEL_TEXT }}</li>
               </ul>
               <ul v-if="subitem.LIST.length > 0" class="member-list">
-                <li
-                  v-for="(user, i) in subitem.LIST"
-                  :key="i"
-                  data-aos="fade-up"
-                >
+                <li v-for="(user, i) in subitem.LIST" :key="i">
                   <img class="avatar" :src="user.img" :alt="user.name" />
                   <p class="m-name">{{ user.name }}</p>
                   <p class="m-title">{{ user.title }}</p>
@@ -325,14 +330,14 @@ const handleChangeActiveMobile = (activeNames: any) => {
                   >
                     {{ user.company }}
                   </p>
-                  <p class="links">
+                  <p class="links lable-name5">
                     <a :href="'mailto:' + user.email" class="mail"
                       ><img :src="IconToemail"
                     /></a>
                     <a
                       v-if="user.gitee"
                       :href="user.gitee"
-                      class="gitee"
+                      class="gitee lable-name5"
                       target="_blank"
                       rel="noopener noreferrer"
                       ><img :src="IconGit"
@@ -341,7 +346,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
                 </li>
               </ul>
             </template>
-            <div v-else class="other">
+            <div v-else class="other lable-name5">
               <h4>{{ subitem.other }}</h4>
               <h4>{{ subitem.other1 }}</h4>
               <p>

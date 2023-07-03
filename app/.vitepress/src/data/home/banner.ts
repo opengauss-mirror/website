@@ -7,10 +7,26 @@ import banner500_mo from '@/assets/category/home/banner/opengauss5.0.0_mo.png';
 import bannerDevdayPc from '@/assets/category/home/banner/banner-devday_pc.jpg';
 import bannerDevdayMo from '@/assets/category/home/banner/banner-devday_mo.jpg';
 
+import bannerHissPc from '@/assets/category/home/banner/banner-hiss_pc.png';
+import bannerHissMo from '@/assets/category/home/banner/banner-hiss_mo.png';
+
 // targetTap:1 新页签打开
 // type:1(只有图片)、2(文字居左)，3(文字居中),4(仅用于实习banner),5 视频
 export default {
   zh: [
+    {
+      pcBanner: bannerHissPc,
+      moBanner: bannerHissMo,
+      link: 'https://hiss.shixizhi.huawei.com/portal/1643780836745113602?pageId=1644234415967604737&activeIndex=-1&sxz-lang=zh_CN',
+      targetTap: 1,
+      title: '',
+      subtitle: '',
+      desc: [],
+      btn: '',
+      type: 2,
+      className: 'hiss-banner',
+      video: '',
+    },
     {
       pcBanner: bannerDevdayPc,
       moBanner: bannerDevdayMo,
