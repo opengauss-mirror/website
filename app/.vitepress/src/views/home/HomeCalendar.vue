@@ -823,7 +823,8 @@ const changeRecord = () => {
                         <a
                           v-else-if="keys.isLink"
                           :href="item[keys.key]"
-                          target="_blank" rel="noopener noreferrer"
+                          target="_blank"
+                          rel="noopener noreferrer"
                           >{{ item[keys.key] }}</a
                         >
                         <p v-else>{{ currentDay }}</p>
@@ -1377,7 +1378,7 @@ const changeRecord = () => {
   :deep(.detail-list) {
     width: 100%;
     @media screen and (max-width: 1100px) {
-      max-width:calc(100% - 400px);
+      max-width: calc(100% - 400px);
     }
     .right-title {
       display: flex;

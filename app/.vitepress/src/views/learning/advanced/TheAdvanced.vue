@@ -64,7 +64,8 @@ function clickChangeShowIndex(index: number) {
                         v-for="itemLink in itemType.docsList"
                         :key="itemLink.link"
                         :href="itemLink.link"
-                        target="_blank" rel="noopener noreferrer"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         >{{ itemLink.name }}</a
                       >
                     </div>
@@ -76,7 +77,8 @@ function clickChangeShowIndex(index: number) {
                         v-for="itemLink in itemType.videoList"
                         :key="itemLink.link"
                         :href="itemLink.link"
-                        target="_blank" rel="noopener noreferrer"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         >{{ itemLink.name }}</a
                       >
                     </div>
@@ -88,7 +90,8 @@ function clickChangeShowIndex(index: number) {
                         v-for="itemLink in itemType.optionList"
                         :key="itemLink.link"
                         :href="itemLink.link"
-                        target="_blank" rel="noopener noreferrer"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         >{{ itemLink.name }}</a
                       >
                     </div>
@@ -126,7 +129,8 @@ function clickChangeShowIndex(index: number) {
                         v-for="itemLink in itemType.docsList"
                         :key="itemLink.link"
                         :href="itemLink.link"
-                        target="_blank" rel="noopener noreferrer"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         >{{ itemLink.name }}</a
                       >
                     </div>
@@ -138,7 +142,8 @@ function clickChangeShowIndex(index: number) {
                         v-for="itemLink in itemType.videoList"
                         :key="itemLink.link"
                         :href="itemLink.link"
-                        target="_blank" rel="noopener noreferrer"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         >{{ itemLink.name }}</a
                       >
                     </div>
@@ -150,7 +155,8 @@ function clickChangeShowIndex(index: number) {
                         v-for="itemLink in itemType.optionList"
                         :key="itemLink.link"
                         :href="itemLink.link"
-                        target="_blank" rel="noopener noreferrer"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         >{{ itemLink.name }}</a
                       >
                     </div>

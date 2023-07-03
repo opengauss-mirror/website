@@ -120,9 +120,12 @@ const handleChangeActiveMobile = (activeNames: any) => {
             <ul class="member-info">
               <li>
                 <IconHome />
-                <a :href="item.GITEE_PATH" target="_blank" rel="noopener noreferrer">{{
-                  i18n.member.GITEE_TEXT
-                }}</a>
+                <a
+                  :href="item.GITEE_PATH"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >{{ i18n.member.GITEE_TEXT }}</a
+                >
               </li>
               <li>
                 <IconMail />
@@ -147,7 +150,8 @@ const handleChangeActiveMobile = (activeNames: any) => {
                     v-if="user.gitee"
                     :href="user.gitee"
                     class="gitee"
-                    target="_blank" rel="noopener noreferrer"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     ><img :src="IconGit"
                   /></a>
                 </p>
@@ -167,9 +171,12 @@ const handleChangeActiveMobile = (activeNames: any) => {
                 <ul class="member-info">
                   <li>
                     <IconHome />
-                    <a :href="subitem.GITEE_PATH" target="_blank" rel="noopener noreferrer">{{
-                      i18n.member.GITEE_TEXT
-                    }}</a>
+                    <a
+                      :href="subitem.GITEE_PATH"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >{{ i18n.member.GITEE_TEXT }}</a
+                    >
                   </li>
                   <li>
                     <IconMail />
@@ -198,7 +205,8 @@ const handleChangeActiveMobile = (activeNames: any) => {
                         v-if="user.gitee"
                         :href="user.gitee"
                         class="gitee"
-                        target="_blank" rel="noopener noreferrer"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         ><img :src="IconGit"
                       /></a>
                     </p>
@@ -233,9 +241,12 @@ const handleChangeActiveMobile = (activeNames: any) => {
           <ul class="member-info">
             <li>
               <IconHome />
-              <a :href="item.GITEE_PATH" target="_blank" rel="noopener noreferrer">{{
-                i18n.member.GITEE_TEXT
-              }}</a>
+              <a
+                :href="item.GITEE_PATH"
+                target="_blank"
+                rel="noopener noreferrer"
+                >{{ i18n.member.GITEE_TEXT }}</a
+              >
             </li>
             <li>
               <IconMail />
@@ -260,7 +271,8 @@ const handleChangeActiveMobile = (activeNames: any) => {
                   v-if="user.gitee"
                   :href="user.gitee"
                   class="gitee"
-                  target="_blank" rel="noopener noreferrer"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   ><img :src="IconGit"
                 /></a>
               </p>
@@ -283,9 +295,12 @@ const handleChangeActiveMobile = (activeNames: any) => {
               <ul class="member-info">
                 <li>
                   <IconHome />
-                  <a :href="subitem.GITEE_PATH" target="_blank" rel="noopener noreferrer">{{
-                    i18n.member.GITEE_TEXT
-                  }}</a>
+                  <a
+                    :href="subitem.GITEE_PATH"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >{{ i18n.member.GITEE_TEXT }}</a
+                  >
                 </li>
                 <li>
                   <IconMail />
@@ -318,7 +333,8 @@ const handleChangeActiveMobile = (activeNames: any) => {
                       v-if="user.gitee"
                       :href="user.gitee"
                       class="gitee"
-                      target="_blank" rel="noopener noreferrer"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       ><img :src="IconGit"
                     /></a>
                   </p>

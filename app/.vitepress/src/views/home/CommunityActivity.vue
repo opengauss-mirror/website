@@ -88,7 +88,11 @@ onMounted(async () => {
           <div class="community-word">
             {{ i18n.home.COMMUNITY_ACTIVITY.CARD.CONTENT }}
           </div>
-          <a :href="i18n.home.COMMUNITY_ACTIVITY.CARD.LINK" target="_blank" rel="noopener noreferrer">
+          <a
+            :href="i18n.home.COMMUNITY_ACTIVITY.CARD.LINK"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <OButton animation type="text" class="community-detail">
               {{ i18n.home.COMMUNITY_ACTIVITY.CARD.VIEW_DETAILS }}
               <template #suffixIcon>

@@ -111,7 +111,8 @@ onMounted(async () => {
               <a
                 :href="eventsData.path"
                 class="activity-title"
-                target="_blank" rel="noopener noreferrer"
+                target="_blank"
+                rel="noopener noreferrer"
                 >{{ eventsData.title }}</a
               >
 
@@ -206,7 +207,11 @@ onMounted(async () => {
         </div>
 
         <div class="statistics">
-          <a :href="`/${lang}/blogs/`" target="_blank" rel="noopener noreferrer">
+          <a
+            :href="`/${lang}/blogs/`"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <OButton animation type="text" class="statistics-button">
               {{ i18n.common.VIEW_MORE }}
               <template #suffixIcon>

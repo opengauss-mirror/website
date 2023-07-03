@@ -105,7 +105,7 @@ onMounted(() => {
     <div class="detail">
       <p v-for="item in summitData.detail" :key="item">{{ item }}</p>
     </div>
-    <div class="live" id="live-box">
+    <div id="live-box" class="live">
       <h3 class="titleBar">{{ summitData.live.title }}</h3>
       <div>
         <SummitLive
@@ -178,7 +178,9 @@ onMounted(() => {
       </div>
       <div class="link-box">
         <p v-for="item in summitData.previous.content" :key="item.link">
-          <a :href="item.link" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
+          <a :href="item.link" target="_blank" rel="noopener noreferrer">{{
+            item.title
+          }}</a>
         </p>
       </div>
     </div>

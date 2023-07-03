@@ -204,7 +204,7 @@ function handleSelectChange(val: string) {
 function goLink(data: any, index: number) {
   const { type, path } = data;
   const search_result_url = '/' + path;
-// 埋点数据
+  // 埋点数据
   const searchKeyObj = {
     search_tag: type,
     search_rank_num: pageSize.value * (currentPage.value - 1) + (index + 1),
