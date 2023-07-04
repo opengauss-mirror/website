@@ -1,5 +1,6 @@
 import { request } from '@/shared/axios';
 import type { AxiosResponse } from '@/shared/axios';
+import { handleError } from '@/shared/utils';
 
 /**
  * 获取会议数据
@@ -14,7 +15,7 @@ export function getMeetingData(params: object) {
     .get(url, { params })
     .then((res: AxiosResponse) => res.data)
     .catch((e: any) => {
-      throw new Error(e);
+      handleError('Error!')
     });
 }
 
@@ -29,7 +30,7 @@ export function getMeetingSig() {
     .get(url)
     .then((res: AxiosResponse) => res.data)
     .catch((e: any) => {
-      throw new Error(e);
+      handleError('Error!')
     });
 }
 
@@ -43,7 +44,7 @@ export function giteeLogin() {
     .get(url)
     .then((res: AxiosResponse) => res.data)
     .catch((e: any) => {
-      throw new Error(e);
+      handleError('Error!')
     });
 }
 
@@ -57,7 +58,7 @@ export function meetingLogin() {
     .get(url)
     .then((res: AxiosResponse) => res.data)
     .catch((e: any) => {
-      throw new Error(e);
+      handleError('Error!')
     });
 }
 
@@ -67,7 +68,7 @@ export function meetingReserve(params: object) {
     .post(url, params)
     .then((res: AxiosResponse) => res.data)
     .catch((e: any) => {
-      throw new Error(e);
+      handleError('Error!')
     });
 }
 
@@ -77,7 +78,7 @@ export function meetingDelete(mid: number | null) {
     .delete(url)
     .then((res: AxiosResponse) => res.data)
     .catch((e: any) => {
-      throw new Error(e);
+      handleError('Error!')
     });
 }
 
@@ -87,7 +88,7 @@ export function meetingUpdate(mid: number | null, params: object) {
     .put(url, params)
     .then((res: AxiosResponse) => res.data)
     .catch((e: any) => {
-      throw new Error(e);
+      handleError('Error!')
     });
 }
 
@@ -97,6 +98,6 @@ export function meetingCheck(mid: number | null) {
     .get(url)
     .then((res: AxiosResponse) => res.data)
     .catch((e: any) => {
-      throw new Error(e);
+      handleError('Error!')
     });
 }

@@ -14,7 +14,7 @@ import {
   getMeetingSig,
 } from '@/api/api-calendar';
 
-import { isValidKey, getNowFormatDate, isBrowser } from '@/shared/utils';
+import { isValidKey, getNowFormatDate, isBrowser,handleError } from '@/shared/utils';
 import {
   TableData,
   DayData,
@@ -241,7 +241,7 @@ const meetingData = async () => {
     const res = await getMeetingData(params);
     calendarData.value = res.tableData;
   } catch (e: any) {
-    throw new Error(e);
+    handleError('Error!')
   }
 };
 // sig 选择
@@ -255,7 +255,7 @@ const meetingSig = async () => {
     const res = await getMeetingSig();
     sigGroup.value = res;
   } catch (e: any) {
-    throw new Error(e);
+    handleError('Error!')
   }
 };
 
@@ -301,7 +301,7 @@ const meetingLoginApi = async () => {
       meetingStore.userId = res.data.user.id;
     }
   } catch (e: any) {
-    throw new Error(e);
+    handleError('Error!')
   }
 };
 onMounted(() => {
@@ -471,7 +471,7 @@ const requestMeetingUpdate = async () => {
       });
     }
   } catch (e: any) {
-    throw new Error(e);
+    handleError('Error!')
   }
 };
 //新增会议请求
@@ -494,7 +494,7 @@ const requestMeetingReserve = async () => {
       });
     }
   } catch (e: any) {
-    throw new Error(e);
+    handleError('Error!')
   }
 };
 //删除会议
@@ -510,7 +510,7 @@ const requestMeetingDelete = async () => {
       meetingData();
     }
   } catch (e: any) {
-    throw new Error(e);
+    handleError('Error!')
   }
 };
 //gitee登录鉴权
@@ -525,7 +525,7 @@ const requestGiteeLogin = async () => {
       '&response_type=code';
     window.open(url, '_self');
   } catch (e: any) {
-    throw new Error(e);
+    handleError('Error!')
   }
 };
 

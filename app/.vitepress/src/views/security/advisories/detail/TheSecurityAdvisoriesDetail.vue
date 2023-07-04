@@ -4,6 +4,7 @@ import { useI18n } from '@/i18n';
 import { useRouter, useData } from 'vitepress';
 
 import { getSecurityDetail } from '@/api/api-security';
+import { handleError } from '@/shared/utils';
 
 import AppContent from '@/components/AppContent.vue';
 
@@ -31,7 +32,7 @@ function getSecurityDetailInfo(data: any) {
       }
     });
   } catch (e: any) {
-    throw new Error(e);
+    handleError('Error!')
   }
 }
 

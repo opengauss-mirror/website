@@ -4,6 +4,7 @@ import { useI18n } from '@/i18n';
 import { getCveDetail } from '@/api/api-security';
 import { useRouter, useData } from 'vitepress';
 import { AffectProduct } from '@/shared/@types/type-security';
+import { handleError } from '@/shared/utils';
 
 import AppContent from '@/components/AppContent.vue';
 
@@ -87,7 +88,7 @@ onMounted(() => {
       affectedProductList.value = res.body.affectBody;
     });
   } catch (e: any) {
-    throw new Error(e);
+    handleError('Error!')
   }
 });
 </script>

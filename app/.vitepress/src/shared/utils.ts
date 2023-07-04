@@ -76,18 +76,33 @@ export function getUrlParams(url: string) {
  *  cvalue cookie的值
  *  day cookie的过期时间 默认1天
  */
+import Cookies from 'js-cookie';
+export function getCustomCookie(cname: string) {
+  try {
+    return Cookies.get(cname);
+  } catch {
+    return '';
+  }
+}
 export function setCustomCookie(cname: string, cvalue: string, day = 1) {
   const expires = day * 24 * 60 * 60 * 1000;
   const date = new Date(+new Date() + expires).toUTCString();
-  document.cookie = `${cname}=${cvalue};expires=${date};path=/`;
+
+  try {
+    Cookies.set(cname, cvalue, { expires: date, path: '/' });
+  } catch {
+    console.log('cookie设置失败');
+  }
 }
 // 删除cookie
-export function removeCustomCookie(cname: string, cvalue: string) {
-  const cookieArr = document.cookie.split(';');
-  for (let i = 0; i < cookieArr.length; i++) {
-    const c = cookieArr[i].trim();
-    if (c.includes(cvalue)) {
-      setCustomCookie(cname, '', -1);
-    }
-  }
+export function removeCustomCookie(cname: string) {
+  Cookies.remove(cname);
+}
+// 错误处理
+import { ElMessage } from 'element-plus';
+export function handleError(error: any) {
+  ElMessage({
+    message: error,
+    type: 'error',
+  });
 }

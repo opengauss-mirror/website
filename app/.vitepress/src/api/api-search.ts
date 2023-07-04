@@ -1,5 +1,6 @@
 import { request } from '@/shared/axios';
 import type { AxiosResponse } from '@/shared/axios';
+import { handleError } from '@/shared/utils';
 
 interface SortParams {
   category: string;
@@ -44,7 +45,7 @@ export function getSearchData(params: search) {
     .post(url, params)
     .then((res: AxiosResponse) => res.data)
     .catch((e: any) => {
-      throw new Error(e);
+      handleError('Error!')
     });
 }
 export function getSearchCount(params: any) {
@@ -53,7 +54,7 @@ export function getSearchCount(params: any) {
     .post(url, params)
     .then((res: AxiosResponse) => res.data)
     .catch((e: any) => {
-      throw new Error(e);
+      handleError('Error!')
     });
 }
 export function getPop(params: any) {
@@ -62,7 +63,7 @@ export function getPop(params: any) {
     .post(url)
     .then((res: AxiosResponse) => res.data)
     .catch((e: any) => {
-      throw new Error(e);
+      handleError('Error!')
     });
 }
 
