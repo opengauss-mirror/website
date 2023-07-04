@@ -1,3 +1,5 @@
+import { ElMessage } from 'element-plus';
+import Cookies from 'js-cookie';
 // 格式化数字
 export function formatNumber(num: number) {
   return num >= 1e3 && num < 1e4
@@ -76,7 +78,6 @@ export function getUrlParams(url: string) {
  *  cvalue cookie的值
  *  day cookie的过期时间 默认1天
  */
-import Cookies from 'js-cookie';
 export function getCustomCookie(cname: string) {
   try {
     return Cookies.get(cname);
@@ -85,21 +86,28 @@ export function getCustomCookie(cname: string) {
   }
 }
 export function setCustomCookie(cname: string, cvalue: string, day = 1) {
-  const expires = day * 24 * 60 * 60 * 1000;
-  const date = new Date(+new Date() + expires).toUTCString();
-
   try {
-    Cookies.set(cname, cvalue, { expires: date, path: '/' });
+    Cookies.set(cname, cvalue, { expires: day, path: '/' });
   } catch {
-    console.log('cookie设置失败');
+    ElMessage({
+      message: 'Error!',
+      type: 'error',
+    });
   }
 }
 // 删除cookie
 export function removeCustomCookie(cname: string) {
-  Cookies.remove(cname);
+  try {
+    Cookies.remove(cname);
+  } catch {
+    ElMessage({
+      message: 'Error!',
+      type: 'error',
+    });
+  }
 }
 // 错误处理
-import { ElMessage } from 'element-plus';
+
 export function handleError(error: any) {
   ElMessage({
     message: error,

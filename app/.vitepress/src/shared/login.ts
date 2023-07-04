@@ -1,7 +1,6 @@
 import { queryPermission, queryIDToken } from '../api/api-login';
 import { useLogin } from '../stores/login';
 import { storeToRefs } from 'pinia';
-import Cookies from 'js-cookie';
 
 const LOGIN_KEYS = {
   USER_TOKEN: '_U_T_',
@@ -12,15 +11,24 @@ function setCookie(cname: string, cvalue: string, isDelete?: boolean) {
   try {
     const domain = import.meta.env.VITE_COOKIE_DOMAIN;
     const expires = `${deleteStr}path=/; domain=${domain}`;
-    Cookies.set(cname, cvalue, { expires });
+    document.cookie = `${cname}=${cvalue}; ${expires}`;
   } catch {}
 }
 function getCookie(cname: string) {
+  const name = `${cname}=`;
+  let ca: any = [];
   try {
-    return Cookies.get(cname);
+    ca = document.cookie.split(';');
   } catch {
-    return '';
+    ca = [];
   }
+  for (let i = 0; i < ca.length; i++) {
+    const c = ca[i].trim();
+    if (c.indexOf(name) === 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return '';
 }
 function deleteCookie(cname: string) {
   setCookie(cname, 'null', true);

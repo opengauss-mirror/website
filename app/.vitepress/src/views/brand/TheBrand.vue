@@ -15,47 +15,8 @@ const { lang } = useData();
 
 const isZh = computed(() => (lang.value === 'zh' ? true : false));
 const pptList = computed(() =>
-  isZh.value ? BrandConfig.PPT_LIST.zh : BrandConfig.PPT_LIST.en
+  isZh.value ? BrandConfig.pptList.zh : BrandConfig.pptList.en
 );
-
-const list: Ref<any[]> = ref([]);
-const initList = () => {
-  const result = [];
-  const cndata = BrandConfig.BRAND_LIST;
-
-  const nameList = [
-    'VERTICAL_LEFT_IMAGE',
-    'VERTICAL_CENTER_IMAGE',
-    'VERTICAL_RIGHT_IMAGE',
-    'HORIZONTAL_LEFT_IMAGE',
-    'HORIZONTAL_CENTER_IMAGE',
-    'HORIZONTAL_RIGHT_IMAGE',
-    'BOTTOM_LEFT_IMAGE',
-    'BOTTOM_CENTER_IMAGE',
-  ];
-  const imageList = [
-    '/category/brand/view/logo1.png',
-    '/category/brand/view/logo2.png',
-    '/category/brand/view/logo3.png',
-    '/category/brand/view/logo4-view.png',
-    '/category/brand/view/logo5.png',
-    '/category/brand/view/logo6.png',
-    '/category/brand/view/logo7.png',
-    '/category/brand/view/logo8-view.png',
-  ];
-
-  for (let i = 0; i < imageList.length; i++) {
-    const temp = {
-      id: i,
-      url: imageList[i],
-      image: cndata[nameList[i]],
-    };
-    result.push(temp);
-  }
-  return result;
-};
-
-list.value = initList();
 </script>
 
 <template>
@@ -79,26 +40,27 @@ list.value = initList();
     </div>
     <div class="brand-list">
       <OCard
-        v-for="item in list"
+        v-for="item in BrandConfig.brandList"
         :key="item.id"
         class="brand-item"
         shadow="hover"
       >
         <div class="brand-item-img">
-          <img :src="item.url" />
+          <img
+            :style="{ backgroundColor: item.backgroundColor }"
+            :src="item.url"
+          />
         </div>
         <div class="button-group">
           <a
-            v-for="item2 in item.image"
-            :key="item2.STYLE"
-            :href="item2.URL"
+            v-for="item2 in item.downloadContent"
+            :key="item2.url"
+            :href="item2.url"
             target="_blank"
             rel="noopener noreferrer"
             download
           >
-            <OButton size="mini" class="button-item"
-              >{{ item2.STYLE }}
-            </OButton>
+            <OButton size="mini" class="button-item">{{ item2.type }} </OButton>
           </a>
         </div>
       </OCard>
@@ -231,6 +193,7 @@ list.value = initList();
         max-width: 220px;
         width: 100%;
         height: 100%;
+        background-color: #fff;
         @media (max-width: 768px) {
           max-width: 240px;
         }
