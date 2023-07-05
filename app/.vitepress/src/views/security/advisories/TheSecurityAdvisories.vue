@@ -1,7 +1,8 @@
 <script lang="ts" setup>
-import { reactive, ref, watch, onMounted } from 'vue';
+import { reactive, ref, watch, onMounted, h } from 'vue';
 import { useRouter } from 'vitepress';
 import { useI18n } from '@/i18n';
+import { ElMessage } from 'element-plus';
 
 import BannerLevel2 from '@/components/BannerLevel2.vue';
 import AppPaginationMo from '@/components/AppPaginationMo.vue';
@@ -64,8 +65,14 @@ function getSecurityLists(data: CveQuery) {
         tableData.value = [];
       }
     })
-    .catch((error: any) => {
-      throw new Error(error);
+    .catch(() => {
+      ElMessage({
+        message: h(
+          'p',
+          { style: 'width: 5vw;display:flex;justify-content: center;' },
+          [h('span', { style: 'color: red;display:flex;' }, 'Error!')]
+        ),
+      });
     });
 }
 
@@ -493,9 +500,9 @@ watch(queryData, () => getSecurityLists(queryData));
     }
   }
   .mobile-list {
-    display: none;
     margin-bottom: var(--o-spacing-h5);
     box-shadow: var(--e-shadow1);
+    display: none;
     @media screen and (max-width: 1100px) {
       display: block;
     }
@@ -503,8 +510,8 @@ watch(queryData, () => getSecurityLists(queryData));
       padding: var(--o-spacing-h5) var(--o-spacing-h5) var(--o-spacing-h8);
       font-size: var(--o-font-size-tip);
       font-weight: 300;
-      color: var(--o-color-neutral8);
       line-height: var(--o-line-height-tip);
+      color: var(--o-color-neutral8);
       background-color: var(--o-color-bg2);
       &:nth-child(odd) {
         background: var(--o-color-bg4);
@@ -512,21 +519,23 @@ watch(queryData, () => getSecurityLists(queryData));
       & li {
         margin-bottom: var(--o-spacing-h8);
       }
-      li:first-child {
-        margin-bottom: 0;
-        .notice {
-          color: var(--o-color-link1);
+      li {
+        &:first-child {
+          margin-bottom: 0;
+          .notice {
+            color: var(--o-color-link1);
+          }
         }
-      }
-      li:nth-child(4) {
-        display: flex;
-        span {
-          min-width: 52px;
+        &:nth-child(4) {
+          display: flex;
+          span {
+            min-width: 52px;
+          }
         }
       }
       span {
-        color: var(--o-color-text1);
         margin-right: var(--o-spacing-h8);
+        color: var(--o-color-text1);
       }
     }
   }

@@ -201,10 +201,10 @@ function handleSelectChange(val: string) {
   history.pushState(null, '', `?search=${val}`);
 }
 // 设置搜索结果的跳转路径
-function goLink(data: any, index: number) {
+function goLink(data: any) {
   const { type, path } = data;
   const search_result_url = '/' + path;
-// 埋点数据
+  // 埋点数据
   const searchKeyObj = {
     search_tag: type,
     search_rank_num: pageSize.value * (currentPage.value - 1) + (index + 1),

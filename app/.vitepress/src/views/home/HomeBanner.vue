@@ -146,7 +146,6 @@ const bannerVideoSrc =
                   ></template>
                 </OButton>
               </div>
-
               <div v-if="item.video !== ''" id="video-player">
                 <img
                   class="video-player-btn"
@@ -156,6 +155,9 @@ const bannerVideoSrc =
                 />
               </div>
             </div>
+            <!-- <div class="hiss-content" v-if="item.className === 'hiss-banner'">
+              <img :src="item.textImg" alt="" />
+            </div> -->
           </div>
         </div>
       </swiper-slide>

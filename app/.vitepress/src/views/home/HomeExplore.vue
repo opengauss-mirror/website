@@ -28,7 +28,8 @@ const handleGo = (path: string) => {
           v-for="(item, index) in i18n.home.HOME_EXPLORE.LIST"
           :key="index"
           :href="handleGo(item.PATH)"
-          target="_blank" rel="noopener noreferrer"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <OButton
             size="small"

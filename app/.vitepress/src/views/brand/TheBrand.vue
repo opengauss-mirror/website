@@ -14,46 +14,9 @@ const i18n = useI18n();
 const { lang } = useData();
 
 const isZh = computed(() => (lang.value === 'zh' ? true : false));
-const pptList = computed(()=> isZh.value?BrandConfig.PPT_LIST.zh:BrandConfig.PPT_LIST.en)
-
-const list: Ref<any[]> = ref([]);
-const initList = () => {
-  const result = [];
-  const cndata = BrandConfig.BRAND_LIST;
-
-  const nameList = [
-    'VERTICAL_LEFT_IMAGE',
-    'VERTICAL_CENTER_IMAGE',
-    'VERTICAL_RIGHT_IMAGE',
-    'HORIZONTAL_LEFT_IMAGE',
-    'HORIZONTAL_CENTER_IMAGE',
-    'HORIZONTAL_RIGHT_IMAGE',
-    'BOTTOM_LEFT_IMAGE',
-    'BOTTOM_CENTER_IMAGE',
-  ];
-  const imageList = [
-    '/category/brand/view/logo1.png',
-    '/category/brand/view/logo2.png',
-    '/category/brand/view/logo3.png',
-    '/category/brand/view/logo4-view.png',
-    '/category/brand/view/logo5.png',
-    '/category/brand/view/logo6.png',
-    '/category/brand/view/logo7.png',
-    '/category/brand/view/logo8-view.png',
-  ];
-
-  for (let i = 0; i < imageList.length; i++) {
-    const temp = {
-      id: i,
-      url: imageList[i],
-      image: cndata[nameList[i]],
-    };
-    result.push(temp);
-  }
-  return result;
-};
-
-list.value = initList();
+const pptList = computed(() =>
+  isZh.value ? BrandConfig.pptList.zh : BrandConfig.pptList.en
+);
 </script>
 
 <template>
@@ -77,25 +40,27 @@ list.value = initList();
     </div>
     <div class="brand-list">
       <OCard
-        v-for="item in list"
+        v-for="item in BrandConfig.brandList"
         :key="item.id"
         class="brand-item"
         shadow="hover"
       >
         <div class="brand-item-img">
-          <img :src="item.url" />
+          <img
+            :style="{ backgroundColor: item.backgroundColor }"
+            :src="item.url"
+          />
         </div>
         <div class="button-group">
           <a
-            v-for="item2 in item.image"
-            :key="item2.STYLE"
-            :href="item2.URL"
-            target="_blank" rel="noopener noreferrer"
+            v-for="item2 in item.downloadContent"
+            :key="item2.url"
+            :href="item2.url"
+            target="_blank"
+            rel="noopener noreferrer"
             download
           >
-            <OButton size="mini" class="button-item"
-              >{{ item2.STYLE }}
-            </OButton>
+            <OButton size="mini" class="button-item">{{ item2.type }} </OButton>
           </a>
         </div>
       </OCard>
@@ -111,7 +76,12 @@ list.value = initList();
           class="ppt-item"
           :style="{ padding: '0px' }"
         >
-          <a :href="ppt.FILE" target="_blank" rel="noopener noreferrer" download>
+          <a
+            :href="ppt.FILE"
+            target="_blank"
+            rel="noopener noreferrer"
+            download
+          >
             <img :src="ppt.URL" alt="" />
             <div class="ppt-word">
               {{ ppt.TEXT }}
@@ -152,20 +122,20 @@ list.value = initList();
   }
 }
 .brand {
-  &-title {
-    font-size: var(--o-font-size-h3);
-    color: var(--o-color-text1);
-    line-height: var(--o-line-height-h3);
+  .brand-title {
     width: 100%;
+    font-size: var(--o-font-size-h3);
     font-weight: 300;
+    line-height: var(--o-line-height-h3);
     text-align: center;
+    color: var(--o-color-text1);
     @media (max-width: 768px) {
       font-size: var(--o-font-size-h8);
       line-height: var(--o-line-height-h8);
     }
   }
 
-  &-word {
+  .brand-word {
     font-size: var(--o-font-size-text);
     color: var(--o-color-text1);
     line-height: var(--o-line-height-text);
@@ -178,7 +148,7 @@ list.value = initList();
     }
   }
 
-  &-list {
+  .brand-list {
     display: grid;
     width: 100%;
     margin-top: var(--o-spacing-h2);
@@ -188,7 +158,7 @@ list.value = initList();
     grid-gap: var(--o-spacing-h4);
   }
 
-  &-item {
+  .brand-item {
     width: 100%;
     padding: 0;
     @media (max-width: 768px) {
@@ -200,7 +170,7 @@ list.value = initList();
       }
     }
 
-    &-title {
+    .brand-item-title {
       font-size: var(--o-font-size-h7);
       font-weight: 300;
       color: var(--o-color-text1);
@@ -211,7 +181,7 @@ list.value = initList();
         line-height: var(--o-line-height-text);
       }
     }
-    &-img {
+    .brand-item-img {
       height: 120px;
       width: 100%;
       margin-top: var(--o-spacing-h5);
@@ -223,6 +193,7 @@ list.value = initList();
         max-width: 220px;
         width: 100%;
         height: 100%;
+        background-color: #fff;
         @media (max-width: 768px) {
           max-width: 240px;
         }
@@ -230,7 +201,7 @@ list.value = initList();
     }
   }
 
-  &-ppt {
+  .brand-ppt {
     margin-top: var(--o-spacing-h1);
     width: 100%;
 

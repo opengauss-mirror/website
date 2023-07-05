@@ -41,7 +41,7 @@ export default {
       URL_DARK: financeDark,
       ACTIVE_DARK_URL: financeActiveDark,
     },
-	{
+    {
       TYPE: '运营商',
       TYPE_EN: 'Carrier',
       ID: 2,

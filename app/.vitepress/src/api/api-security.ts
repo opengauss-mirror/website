@@ -1,5 +1,6 @@
 import { request } from '@/shared/axios';
 import type { AxiosResponse } from '@/shared/axios';
+import { handleError } from '@/shared/utils';
 /**
  * 调用接口获取安全公告列表
  * @name getSecurityList
@@ -10,7 +11,7 @@ export function getSecurityList(params: any) {
     .get(url)
     .then((res: AxiosResponse) => res.data)
     .catch((e: any) => {
-      throw new Error(e);
+      handleError('Error!')
     });
 }
 /**
@@ -23,7 +24,7 @@ export function getSecurityDetail(params: any) {
     .get(url)
     .then((res: AxiosResponse) => res.data)
     .catch((e: any) => {
-      throw new Error(e);
+      handleError('Error!')
     });
 }
 
@@ -37,7 +38,7 @@ export function getCveList(params: any) {
     .get(url)
     .then((res: AxiosResponse) => res.data)
     .catch((e: any) => {
-      throw new Error(e);
+      handleError('Error!')
     });
 }
 
@@ -51,6 +52,6 @@ export function getCveDetail(name: string) {
     .get(url)
     .then((res: AxiosResponse) => res.data)
     .catch((e: any) => {
-      throw new Error(e);
+      handleError('Error!')
     });
 }

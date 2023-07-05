@@ -1,119 +1,159 @@
 export default {
-  BRAND_LIST: {
-    VERTICAL_LEFT_IMAGE: [
-      {
-        STYLE: 'JPG',
-        URL: '/category/brand/view/logo1.jpg',
-      },
-      {
-        STYLE: 'PNG',
-        URL: '/category/brand/view/logo1.png',
-      },
-      {
-        STYLE: 'SVG',
-        URL: '/category/brand/view/logo1.svg',
-      },
-    ],
-    VERTICAL_CENTER_IMAGE: [
-      {
-        STYLE: 'JPG',
-        URL: '/category/brand/view/logo2.jpg',
-      },
-      {
-        STYLE: 'PNG',
-        URL: '/category/brand/view/logo2.png',
-      },
-      {
-        STYLE: 'SVG',
-        URL: '/category/brand/view/logo2.svg',
-      },
-    ],
-    VERTICAL_RIGHT_IMAGE: [
-      {
-        STYLE: 'JPG',
-        URL: '/category/brand/view/logo3.jpg',
-      },
-      {
-        STYLE: 'PNG',
-        URL: '/category/brand/view/logo3.png',
-      },
-      {
-        STYLE: 'SVG',
-        URL: '/category/brand/view/logo3.svg',
-      },
-    ],
-    HORIZONTAL_LEFT_IMAGE: [
-      {
-        STYLE: 'JPG',
-        URL: '/category/brand/view/logo4.jpg',
-      },
-      {
-        STYLE: 'PNG',
-        URL: '/category/brand/view/logo4.png',
-      },
-      {
-        STYLE: 'SVG',
-        URL: '/category/brand/view/logo4.svg',
-      },
-    ],
-    HORIZONTAL_CENTER_IMAGE: [
-      {
-        STYLE: 'JPG',
-        URL: '/category/brand/view/logo5.jpg',
-      },
-      {
-        STYLE: 'PNG',
-        URL: '/category/brand/view/logo5.png',
-      },
-      {
-        STYLE: 'SVG',
-        URL: '/category/brand/view/logo5.svg',
-      },
-    ],
-    HORIZONTAL_RIGHT_IMAGE: [
-      {
-        STYLE: 'JPG',
-        URL: '/category/brand/view/logo6.jpg',
-      },
-      {
-        STYLE: 'PNG',
-        URL: '/category/brand/view/logo6.png',
-      },
-      {
-        STYLE: 'SVG',
-        URL: '/category/brand/view/logo6.svg',
-      },
-    ],
-    BOTTOM_LEFT_IMAGE: [
-      {
-        STYLE: 'JPG',
-        URL: '/category/brand/view/logo7.jpg',
-      },
-      {
-        STYLE: 'PNG',
-        URL: '/category/brand/view/logo7.png',
-      },
-      {
-        STYLE: 'SVG',
-        URL: '/category/brand/view/logo7.svg',
-      },
-    ],
-    BOTTOM_CENTER_IMAGE: [
-      {
-        STYLE: 'JPG',
-        URL: '/category/brand/view/logo8.jpg',
-      },
-      {
-        STYLE: 'PNG',
-        URL: '/category/brand/view/logo8.png',
-      },
-      {
-        STYLE: 'SVG',
-        URL: '/category/brand/view/logo8.svg',
-      },
-    ],
-  },
-  PPT_LIST: {
+  brandList: [
+    {
+      id: 0,
+      backgroundColor:'white',
+      url: '/category/brand/view/logo1.png',
+      downloadContent: [
+        {
+          type: 'JPG',
+          url: '/category/brand/view/logo1.jpg',
+        },
+        {
+          type: 'PNG',
+          url: '/category/brand/view/logo1.png',
+        },
+        {
+          type: 'SVG',
+          url: '/category/brand/view/logo1.svg',
+        },
+      ],
+    },
+    {
+      id: 1,
+      backgroundColor:'white',
+      url: '/category/brand/view/logo2.png',
+      downloadContent: [
+        {
+          type: 'JPG',
+          url: '/category/brand/view/logo2.jpg',
+        },
+        {
+          type: 'PNG',
+          url: '/category/brand/view/logo2.png',
+        },
+        {
+          type: 'SVG',
+          url: '/category/brand/view/logo2.svg',
+        },
+      ],
+    },
+    {
+      id: 2,
+      backgroundColor:'white',
+      url: '/category/brand/view/logo3.png',
+      downloadContent: [
+        {
+          type: 'JPG',
+          url: '/category/brand/view/logo3.jpg',
+        },
+        {
+          type: 'PNG',
+          url: '/category/brand/view/logo3.png',
+        },
+        {
+          type: 'SVG',
+          url: '/category/brand/view/logo3.svg',
+        },
+      ],
+    },
+    {
+      id: 3,
+      backgroundColor:'black',
+      url: '/category/brand/view/logo4-view.png',
+      downloadContent: [
+        {
+          type: 'JPG',
+          url: '/category/brand/view/logo4.jpg',
+        },
+        {
+          type: 'PNG',
+          url: '/category/brand/view/logo4.png',
+        },
+        {
+          type: 'SVG',
+          url: '/category/brand/view/logo4.svg',
+        },
+      ],
+    },
+    {
+      id: 4,
+      backgroundColor:'white',
+      url: '/category/brand/view/logo5.png',
+      downloadContent: [
+        {
+          type: 'JPG',
+          url: '/category/brand/view/logo5.jpg',
+        },
+        {
+          type: 'PNG',
+          url: '/category/brand/view/logo5.png',
+        },
+        {
+          type: 'SVG',
+          url: '/category/brand/view/logo5.svg',
+        },
+      ],
+    },
+    {
+      id: 5,
+      backgroundColor:'white',
+      url: '/category/brand/view/logo6.png',
+      downloadContent: [
+        {
+          type: 'JPG',
+          url: '/category/brand/view/logo6.jpg',
+        },
+        {
+          type: 'PNG',
+          url: '/category/brand/view/logo6.png',
+        },
+        {
+          type: 'SVG',
+          url: '/category/brand/view/logo6.svg',
+        },
+      ],
+    },
+    {
+      id: 6,
+      backgroundColor:'white',
+      url: '/category/brand/view/logo7.png',
+      downloadContent: [
+        {
+          type: 'JPG',
+          url: '/category/brand/view/logo7.jpg',
+        },
+        {
+          type: 'PNG',
+          url: '/category/brand/view/logo7.png',
+        },
+        {
+          type: 'SVG',
+          url: '/category/brand/view/logo7.svg',
+        },
+      ],
+    },
+    {
+      id: 7,
+      backgroundColor:'black',
+      url: '/category/brand/view/logo8-view.png',
+      downloadContent: [
+        {
+          type: 'JPG',
+          url: '/category/brand/view/logo8.jpg',
+        },
+        {
+          type: 'PNG',
+          url: '/category/brand/view/logo8.png',
+        },
+        {
+          type: 'SVG',
+          url: '/category/brand/view/logo8.svg',
+        },
+      ],
+    },
+  ],
+  pptList: {
     zh: [
       {
         URL: '/category/brand/download/2023/PPT_Dark_cn.png',

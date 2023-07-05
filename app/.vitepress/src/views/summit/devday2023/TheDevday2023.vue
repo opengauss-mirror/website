@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { computed, onMounted, ref, watch } from 'vue';
+import { computed, ref, watch, onMounted } from 'vue';
 import { useCommon } from '@/stores/common';
-import AOS from 'aos';
 import { getUrlParams } from '@/shared/utils';
 
 import AppContext from '@/components/AppContent.vue';
@@ -53,14 +52,6 @@ agendaData2.value = getData.value[meetingTime[1].name].content.content.slice(
   1
 );
 
-onMounted(() => {
-  AOS.init({
-    offset: 50,
-    duration: 800,
-    delay: 100,
-    once: true,
-  });
-});
 const showIndex = ref(1);
 function setShowIndex(index: number) {
   showIndex.value = index;
@@ -82,10 +73,10 @@ watch(
   }
 );
 // 埋点
-function getAdvertisedData() {
+function setDownData() {
   const sensors = (window as any)['sensorsDataAnalytic201505'];
   const { href } = window.location;
-  if (href.includes('utm_medium')) {
+  if (href.includes('?utm_source')) {
     const paramsArr = getUrlParams(href);
     sensors?.setProfile({
       ...(window as any)['sensorsCustomBuriedData'],
@@ -96,7 +87,9 @@ function getAdvertisedData() {
   }
 }
 onMounted(() => {
-  getAdvertisedData();
+  setTimeout(() => {
+    setDownData();
+  }, 300);
 });
 </script>
 <template>
@@ -105,7 +98,7 @@ onMounted(() => {
     <div class="detail">
       <p v-for="item in summitData.detail" :key="item">{{ item }}</p>
     </div>
-    <div class="live" id="live-box">
+    <div id="live-box" class="live">
       <h3 class="titleBar">{{ summitData.live.title }}</h3>
       <div>
         <SummitLive
@@ -178,7 +171,9 @@ onMounted(() => {
       </div>
       <div class="link-box">
         <p v-for="item in summitData.previous.content" :key="item.link">
-          <a :href="item.link" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
+          <a :href="item.link" target="_blank" rel="noopener noreferrer">{{
+            item.title
+          }}</a>
         </p>
       </div>
     </div>

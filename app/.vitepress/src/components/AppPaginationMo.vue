@@ -38,7 +38,6 @@ const handleCurrentChange = (option: string) => {
 // }
 function jumpPage(e: any) {
   if (e.keyCode === 13 || e.type === 'blur') {
-    // console.log(page.value.value);
     if (page.value.value) {
       inputNumber.value = parseInt(page.value.value);
       if (!inputNumber.value || inputNumber.value < 1) {

@@ -53,8 +53,6 @@ const handleCurrentChange = (val: number) => {
 
 // 前端搜索
 function searchProductOrName(data: CertificationData[], query: string) {
-  console.log(query);
-
   if (!query) {
     return i18n.value.certification.tableData;
   }
@@ -134,9 +132,13 @@ onMounted(() => {
       ></OTableColumn>
       <el-table-column :label="i18n.certification.certificate" width="200">
         <template #default="scope">
-          <a :href="scope.row.certificate" download target="_blank" rel="noopener noreferrer">{{
-            i18n.certification.certify
-          }}</a>
+          <a
+            :href="scope.row.certificate"
+            download
+            target="_blank"
+            rel="noopener noreferrer"
+            >{{ i18n.certification.certify }}</a
+          >
         </template>
       </el-table-column>
     </OTable>
@@ -178,11 +180,11 @@ onMounted(() => {
         class="pagination"
         :page-sizes="[5, 10, 20, 40, 80]"
         :layout="layout"
+        :hide-on-single-page="true"
         :total="tableData.length"
         :background="true"
-        :hide-on-single-page="true"
-        @size-change="handleSizeChange"
         @current-change="handleCurrentChange"
+        @size-change="handleSizeChange"
       >
         <span class="pagination-slot">{{ currentPage }}/{{ totalPage }}</span>
       </OPagination>
@@ -196,7 +198,8 @@ onMounted(() => {
       {{ i18n.certification.introduce1
       }}<a
         href="https://gitee.com/opengauss/distribution-certification"
-        target="_blank" rel="noopener noreferrer"
+        target="_blank"
+        rel="noopener noreferrer"
         >{{ i18n.certification.introduce2 }}</a
       >
     </p>
@@ -217,43 +220,43 @@ onMounted(() => {
   :deep(.is-leaf) {
     background-color: var(--o-color-bg4);
   }
-  :deep(.el-tooltip) {
-    white-space: normal !important;
-  }
   :deep(.cell) {
     // white-space: nowrap;
     word-break: break-word;
   }
+  :deep(.el-tooltip) {
+    white-space: normal !important;
+  }
 }
 .mobile-list {
-  display: none;
   margin-top: var(--o-spacing-h5);
+  display: none;
   box-shadow: var(--o-shadow1);
   @media screen and (max-width: 1100px) {
     display: block;
   }
   .item {
     padding: var(--o-spacing-h5) var(--o-spacing-h5) var(--o-spacing-h8);
+    line-height: var(--o-line-height-tip);
     font-size: var(--o-font-size-tip);
     font-weight: 300;
     color: var(--o-color-neutral8);
-    line-height: var(--o-line-height-tip);
     background-color: var(--o-color-bg2);
-    &:nth-child(odd) {
-      background: var(--o-color-bg4);
-    }
-    & li {
-      margin-bottom: var(--o-spacing-h8);
-    }
     li:nth-child(4) {
       display: flex;
       span {
         min-width: 52px;
       }
     }
+    &:nth-child(odd) {
+      background: var(--o-color-bg4);
+    }
+    & li {
+      margin-bottom: var(--o-spacing-h8);
+    }
     span {
-      color: var(--o-color-text1);
       margin-right: var(--o-spacing-h8);
+      color: var(--o-color-text1);
       text-align: justify;
       &:nth-of-type(2) {
         color: var(--o-color-neutral8);
@@ -261,19 +264,19 @@ onMounted(() => {
     }
   }
 }
+.pagination-mobile {
+  margin-top: 24px;
+}
 .o-pagination {
   margin-top: 24px;
   @media screen and (max-width: 768px) {
     display: none;
   }
 }
-.pagination-mobile {
-  margin-top: 24px;
-}
 .introduce {
-  margin-top: 40px;
   font-size: var(--o-font-siez-text);
   color: var(--o-color-text-secondary);
   line-height: var(--o-line-height-text);
+  margin-top: 40px;
 }
 </style>

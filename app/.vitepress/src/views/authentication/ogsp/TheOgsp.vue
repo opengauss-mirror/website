@@ -23,35 +23,32 @@ interface CertificationData {
   commitment: string;
 }
 
-const searchContent = ref('');
-
+const i18n = useI18n();
 const total = ref(0);
 const pageSize = ref(10);
+const layout = ref('sizes, prev, pager, next, slot, jumper');
 const currentPage = ref(1);
 const totalPage = ref(0);
-const layout = ref('sizes, prev, pager, next, slot, jumper');
-
-const i18n = useI18n();
 const tableData = ref<CertificationData[]>([]);
-
+const searchContent = ref('');
 // 前端分页
-const randerData = computed(() => {
+const queryData = reactive({
+  page: 1,
+  per_page: 10,
+});
+const randerTableData = computed(() => {
   return tableData.value.slice(
     pageSize.value * (currentPage.value - 1),
     pageSize.value * currentPage.value
   );
 });
-const queryData = reactive({
-  page: 1,
-  per_page: 10,
-});
+
 // 分页size修改
-const handleSizeChange = (val: number) => {
+const handlePageSizeChange = (val: number) => {
   queryData.per_page = val;
   totalPage.value = Math.ceil(total.value / val);
 };
-
-const handleCurrentChange = (val: number) => {
+const setCurrentPage = (val: number) => {
   queryData.page = val;
   currentPage.value = val;
 };
@@ -68,12 +65,6 @@ function searchProductOrName(data: CertificationData[], query: string) {
   });
 }
 // 搜索框change事件
-function searchValchange() {
-  tableData.value = searchProductOrName(
-    i18n.value.ogsp.tableData,
-    searchContent.value
-  );
-}
 function sortByAwardDescending(
   certs: CertificationData[]
 ): CertificationData[] {
@@ -81,12 +72,18 @@ function sortByAwardDescending(
     (a, b) => new Date(b.award).getTime() - new Date(a.award).getTime()
   );
 }
+function searchValchange() {
+  tableData.value = searchProductOrName(
+    i18n.value.ogsp.tableData,
+    searchContent.value
+  );
+}
 
 onMounted(() => {
   tableData.value = i18n.value.ogsp.tableData;
   sortByAwardDescending(tableData.value);
   total.value = i18n.value.ogsp.tableData.length;
-  handleSizeChange(10);
+  handlePageSizeChange(10);
 });
 </script>
 <template>
@@ -104,7 +101,7 @@ onMounted(() => {
         @change="searchValchange"
       ></OSearch>
     </div>
-    <OTable class="pc-list" :data="randerData"  style="width: 100%">
+    <OTable class="pc-list" :data="randerTableData" style="width: 100%">
       <OTableColumn
         :label="i18n.ogsp.name"
         show-overflow-tooltip
@@ -121,49 +118,49 @@ onMounted(() => {
         :label="i18n.ogsp.award"
         show-overflow-tooltip
         prop="award"
-        min-width="115" 
+        min-width="115"
       ></OTableColumn>
       <OTableColumn
         :label="i18n.ogsp.expiration"
         show-overflow-tooltip
         prop="expiration"
-        min-width="115" 
+        min-width="115"
       ></OTableColumn>
       <OTableColumn
         :label="i18n.ogsp.patch"
         show-overflow-tooltip
-        prop="patch" 
+        prop="patch"
         align="center"
       ></OTableColumn>
       <OTableColumn
         :label="i18n.ogsp.content"
         prop="content"
-        
         align="center"
       ></OTableColumn>
       <OTableColumn
         :label="i18n.ogsp.system"
         prop="system"
-        
         align="center"
       ></OTableColumn>
       <OTableColumn
         :label="i18n.ogsp.commitment"
         prop="commitment"
-        
         align="center"
       ></OTableColumn>
       <OTableColumn
         :label="i18n.ogsp.experience"
         prop="experience"
-        
         align="center"
       ></OTableColumn>
-      <el-table-column :label="i18n.ogsp.certificate"  align="center">
+      <el-table-column :label="i18n.ogsp.certificate" align="center">
         <template #default="scope">
-          <a :href="scope.row.certificate" download target="_blank" rel="noopener noreferrer">{{
-            i18n.ogsp.certify
-          }}</a>
+          <a
+            :href="scope.row.certificate"
+            download
+            target="_blank"
+            rel="noopener noreferrer"
+            >{{ i18n.ogsp.certify }}</a
+          >
         </template>
       </el-table-column>
     </OTable>
@@ -197,14 +194,13 @@ onMounted(() => {
             ><span>{{ item.commitment }}</span>
           </li>
           <li>
-            <span>{{ i18n.ogsp.experience }}:</span
+            <spans>{{ i18n.ogsp.experience }}:</spans
             ><span>{{ item.experience }}</span>
           </li>
           <li>
             <span>{{ i18n.ogsp.certificate }}:</span>
             <a :href="item.certificate">{{ i18n.ogsp.certify }}</a>
           </li>
-          <li></li>
         </ul>
       </li>
     </ul>
@@ -218,15 +214,15 @@ onMounted(() => {
         :total="tableData.length"
         :background="true"
         :hide-on-single-page="true"
-        @size-change="handleSizeChange"
-        @current-change="handleCurrentChange"
+        @size-change="handlePageSizeChange"
+        @current-change="setCurrentPage"
       >
         <span class="pagination-slot">{{ currentPage }}/{{ totalPage }}</span>
       </OPagination>
       <AppPaginationMo
-        :current-page="currentPage"
         :total-page="tableData.length"
-        @turn-page="handleSizeChange"
+        :current-page="currentPage"
+        @turn-page="handlePageSizeChange"
       />
     </ClientOnly>
   </AppContent>
@@ -283,8 +279,8 @@ onMounted(() => {
       }
     }
     span {
-      color: var(--o-color-text1);
       margin-right: var(--o-spacing-h8);
+      color: var(--o-color-text1);
       text-align: justify;
       &:nth-of-type(2) {
         color: var(--o-color-neutral8);

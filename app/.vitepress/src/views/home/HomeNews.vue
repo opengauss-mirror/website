@@ -106,12 +106,13 @@ onMounted(async () => {
               ><img :src="eventsData.img" class="cover" alt=""
             /></a>
           </div>
-          <div class="activity-content-box" data-aos="fade-left">
+          <div class="activity-content-box">
             <div class="box">
               <a
                 :href="eventsData.path"
                 class="activity-title"
-                target="_blank" rel="noopener noreferrer"
+                target="_blank"
+                rel="noopener noreferrer"
                 >{{ eventsData.title }}</a
               >
 
@@ -151,21 +152,25 @@ onMounted(async () => {
           {{ i18n.home.HOME_ROOMS.BLOG_NAME }}
         </h4>
         <div class="room-box">
-          <div v-for="(item, index) in blogList" :key="index" class="room-item">
+          <div
+            v-for="(item, index) in blogList"
+            :key="index"
+            class="room-item lable-name"
+          >
             <div class="room-item-pc">
-              <div class="room-item-left">
+              <div class="room-item-left lable-name">
                 <span class="day">{{ item.date[2] }}</span>
                 <div class="left-bottom">
                   <span class="month">{{ item.date[1] }}</span>
                   <span class="year">{{ item.date[0] }}</span>
                 </div>
               </div>
-              <div class="room-item-right">
+              <div class="room-item-right lable-name">
                 <div class="room-top">
                   <a :href="'/' + item.path" :title="item.title">
                     {{ item.title }}
                   </a>
-                  <p>
+                  <p class="lable-name">
                     <span
                       v-for="(authorName, index2) in item.author"
                       :key="authorName"
@@ -174,9 +179,9 @@ onMounted(async () => {
                     </span>
                   </p>
                 </div>
-                <div class="room-bottom">
+                <div class="room-bottom lable-name">
                   <a
-                    class="word-hover"
+                    class="word-hover lable-name"
                     :title="item.summary"
                     :href="'/' + item.path"
                   >
@@ -186,7 +191,7 @@ onMounted(async () => {
               </div>
             </div>
             <div class="room-item-mo">
-              <p class="author">
+              <p class="author lable-name">
                 <span
                   v-for="(authorName, index2) in item.author"
                   :key="authorName"
@@ -195,7 +200,7 @@ onMounted(async () => {
                 </span>
               </p>
               <a
-                class="word-hover"
+                class="word-hover lable-name"
                 :title="item.summary"
                 :href="'/' + item.path"
               >
@@ -206,7 +211,11 @@ onMounted(async () => {
         </div>
 
         <div class="statistics">
-          <a :href="`/${lang}/blogs/`" target="_blank" rel="noopener noreferrer">
+          <a
+            :href="`/${lang}/blogs/`"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <OButton animation type="text" class="statistics-button">
               {{ i18n.common.VIEW_MORE }}
               <template #suffixIcon>
@@ -538,12 +547,6 @@ onMounted(async () => {
       justify-content: center;
     }
   }
-  // .el-tabs__item {
-  //   @media screen and (max-width: 768px) {
-  //     font-size: var(--o-font-size-text);
-  //     line-height: var(--o-line-height-text);
-  //   }
-  // }
   .el-tabs__nav-wrap::after {
     display: none;
   }
@@ -564,7 +567,7 @@ onMounted(async () => {
   display: grid;
   grid-template-columns: 66.2% 33.8%;
   height: 546px;
-  &-cover {
+  .activity-content-cover {
     width: 100%;
     height: 546px;
     overflow: hidden;
@@ -583,13 +586,13 @@ onMounted(async () => {
       }
     }
   }
-  &-box {
-    padding: var(--o-spacing-h2);
-    position: relative;
-    flex: 1;
+  .activity-content-box {
     display: flex;
+    flex: 1;
     flex-direction: column;
     justify-content: space-between;
+    padding: var(--o-spacing-h2);
+    position: relative;
     .activity-title {
       font-size: var(--o-font-size-h4);
       font-weight: 500;

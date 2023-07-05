@@ -409,7 +409,6 @@ import huangxu from '@/assets/category/member/avatar/huangxu.png';
 import jiangyu from '@/assets/category/member/avatar/jiangyu.png';
 import libo from '@/assets/category/member/avatar/libo.png';
 import lihongwei from '@/assets/category/member/avatar/lihongwei.png';
-import liuchenguang from '@/assets/category/member/avatar/liuchenguang.png';
 import luoming from '@/assets/category/member/avatar/luoming.png';
 import tiankefeng from '@/assets/category/member/avatar/tiankefeng.png';
 import xukewei from '@/assets/category/member/avatar/xukewei.png';
@@ -421,7 +420,6 @@ import zhaotinyang from '@/assets/category/member/avatar/zhaotinyang.png';
 import cuikaifeng from '@/assets/category/member/avatar/cuikaifeng.png';
 import huangxianru from '@/assets/category/member/avatar/huangxianru.png';
 import liuchen from '@/assets/category/member/avatar/liuchen.png';
-// import panchunbao from '@/assets/category/member/avatar/panchunbao.png';
 import xubing from '@/assets/category/member/avatar/xubing.png';
 import zhangyi from '@/assets/category/member/avatar/zhangyi.png';
 import zhongchengcheng from '@/assets/category/member/avatar/zhongchengcheng.png';
@@ -434,7 +432,6 @@ import lijun2 from '@/assets/category/member/avatar/lijun2.png';
 
 import yuanyuan from '@/assets/category/member/avatar/yuanyuan.png';
 import shengyongpan1 from '@/assets/category/member/avatar/shengyongpan1.png';
-
 
 export default {
   zh: {

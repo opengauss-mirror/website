@@ -33,7 +33,6 @@ const handerClick = (item: any) => {
     <div
       v-for="(item, index) in props.linkList"
       :key="index"
-      data-aos="fade-up"
       :class="[props.islink ? 'link-item path' : 'link-item']"
       @click="handerClick(item)"
     >
