@@ -90,9 +90,7 @@ const changeDownloadAuth = () => {
     .then(() => {
       showGuard();
     })
-    .catch(() => {
-      handleError('Error!')
-    });
+    .catch(() => {});
 };
 // 移动端提示
 const screenWidth = useWindowResize();
