@@ -52,4 +52,9 @@ const pageInfo = {
     padding-left: 24px;
   }
 }
+:deep(.award-box){
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
 </style>

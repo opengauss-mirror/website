@@ -3,7 +3,7 @@ export default {
     {
       id: 0,
       backgroundColor:'white',
-      url: '/category/brand/view/logo1.png',
+      url: '/category/brand/view/logo1-view.png',
       downloadContent: [
         {
           type: 'JPG',
@@ -22,7 +22,7 @@ export default {
     {
       id: 1,
       backgroundColor:'white',
-      url: '/category/brand/view/logo2.png',
+      url: '/category/brand/view/logo2-view.png',
       downloadContent: [
         {
           type: 'JPG',
@@ -41,7 +41,7 @@ export default {
     {
       id: 2,
       backgroundColor:'white',
-      url: '/category/brand/view/logo3.png',
+      url: '/category/brand/view/logo3-view.png',
       downloadContent: [
         {
           type: 'JPG',
@@ -79,7 +79,7 @@ export default {
     {
       id: 4,
       backgroundColor:'white',
-      url: '/category/brand/view/logo5.png',
+      url: '/category/brand/view/logo5-view.png',
       downloadContent: [
         {
           type: 'JPG',
@@ -98,7 +98,7 @@ export default {
     {
       id: 5,
       backgroundColor:'white',
-      url: '/category/brand/view/logo6.png',
+      url: '/category/brand/view/logo6-view.png',
       downloadContent: [
         {
           type: 'JPG',
@@ -117,7 +117,7 @@ export default {
     {
       id: 6,
       backgroundColor:'white',
-      url: '/category/brand/view/logo7.png',
+      url: '/category/brand/view/logo7-view.png',
       downloadContent: [
         {
           type: 'JPG',
