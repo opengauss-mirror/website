@@ -1,5 +1,5 @@
 ---
-title: '支持工具'
+title: 'Support Tools'
 ---
 
 <script setup>
