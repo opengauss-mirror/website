@@ -1,5 +1,5 @@
 ---
-title: '博客'
+title: 'Blog'
 ---
 
 <script setup>

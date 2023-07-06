@@ -1,5 +1,5 @@
 ---
-title: '活动'
+title: 'Events'
 ---
 
 <script setup>

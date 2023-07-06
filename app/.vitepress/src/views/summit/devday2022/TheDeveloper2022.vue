@@ -613,7 +613,7 @@ onMounted(() => {
   a {
     font-size: var(--o-font-size-h6);
     line-height: var(--o-line-height-h6);
-    @media screen and(max-width:767px) {
+    @media screen and (max-width: 767px) {
       font-size: var(--o-font-size-text);
       line-height: var(--o-line-height-text);
     }
