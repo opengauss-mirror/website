@@ -95,13 +95,13 @@ const pptList = computed(() =>
 
 <style lang="scss" scoped>
 .button-group {
-  display: grid;
   width: 100%;
+  display: grid;
+  margin: 0 auto;
   margin-top: var(--o-spacing-h5);
-  justify-items: center;
   align-items: center;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: var(--o-spacing-h8);
+  grid-gap: var(--o-spacing-h6);
   a {
     width: 100%;
     display: flex;
@@ -111,7 +111,11 @@ const pptList = computed(() =>
   }
 
   .button-item {
+    width: 100%;
     max-width: 70px;
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
     @media (max-width: 768px) {
       max-width: 80px;
     }
@@ -156,6 +160,16 @@ const pptList = computed(() =>
     align-items: center;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: var(--o-spacing-h4);
+    @media (max-width: 1280px){
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: 880px){
+      grid-template-columns: repeat(2, 1fr);
+    margin-top: var(--o-spacing-h4);
+    }
+    @media (max-width: 600px){
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
   .brand-item {
@@ -164,7 +178,7 @@ const pptList = computed(() =>
     @media (max-width: 768px) {
     }
     :deep(.el-card__body) {
-      padding: var(--o-spacing-h4);
+      padding: var(--o-spacing-h4) 60px;
       @media (max-width: 768px) {
         padding: var(--o-spacing-h5) var(--o-spacing-h6);
       }

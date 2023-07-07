@@ -1383,9 +1383,9 @@ const changeRecord = () => {
   }
   :deep(.detail-list) {
     width: 100%;
-    @media screen and (max-width: 1100px) {
-      max-width: calc(100% - 400px);
-    }
+    // @media screen and (max-width: 1100px) {
+    //   max-width: calc(100% - 400px);
+    // }
     .right-title {
       display: flex;
       height: 40px;
