@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import { ref, nextTick, onMounted, reactive, watch, computed, h } from 'vue';
+import { ref, nextTick, onMounted, reactive, watch, computed } from 'vue';
 import { useData } from 'vitepress';
 import { useI18n } from '@/i18n';
-import type { FormInstance, FormRules } from 'element-plus';
-import { ElMessage } from 'element-plus';
+import { FormInstance, FormRules, ElMessage } from 'element-plus';
 import {
   giteeLogin,
   meetingLogin,
@@ -12,16 +11,22 @@ import {
   meetingUpdate,
   getMeetingData,
   getMeetingSig,
+  giteeLogout,
 } from '@/api/api-calendar';
 
-import { isValidKey, getNowFormatDate, isBrowser,handleError } from '@/shared/utils';
+import {
+  isValidKey,
+  getNowFormatDate,
+  isBrowser,
+  handleError,
+  getCustomCookie,
+} from '@/shared/utils';
 import {
   TableData,
   DayData,
   SigGroupData,
 } from '@/shared/@types/type-calendar';
 import { useCommon, useMeeting } from '@/stores/common';
-import zhCn from 'element-plus/lib/locale/lang/zh-cn';
 
 import IconLeft from '~icons/app/icon-chevron-left.svg';
 import IconRight from '~icons/app/icon-chevron-right.svg';
@@ -116,6 +121,7 @@ const calendarData = ref<TableData[]>([
 const currentDay = ref('');
 const activeName = ref('');
 const isCollapse = ref(false);
+const isAgree = ref(false);
 
 const detailItem = [
   { text: '发起人', key: 'creator', isLink: false },
@@ -241,7 +247,7 @@ const meetingData = async () => {
     const res = await getMeetingData(params);
     calendarData.value = res.tableData;
   } catch (e: any) {
-    handleError('Error!')
+    handleError('Error!');
   }
 };
 // sig 选择
@@ -255,7 +261,7 @@ const meetingSig = async () => {
     const res = await getMeetingSig();
     sigGroup.value = res;
   } catch (e: any) {
-    handleError('Error!')
+    handleError('Error!');
   }
 };
 
@@ -301,12 +307,11 @@ const meetingLoginApi = async () => {
       meetingStore.userId = res.data.user.id;
     }
   } catch (e: any) {
-    handleError('Error!')
+    handleError('Error!');
   }
 };
 onMounted(() => {
-  const access = document.cookie.includes('access_token');
-  if (access !== null) {
+  if (getCustomCookie('meeting-csrftoken')) {
     meetingLoginApi();
   }
 });
@@ -331,7 +336,9 @@ const handleClose = () => {
 
 // 登录鉴权点击
 const handleGiteeLogin = () => {
-  requestGiteeLogin();
+  if (isAgree.value) {
+    requestGiteeLogin();
+  }
 };
 
 const meetingRecord = ref(false);
@@ -471,7 +478,7 @@ const requestMeetingUpdate = async () => {
       });
     }
   } catch (e: any) {
-    handleError('Error!')
+    handleError('Error!');
   }
 };
 //新增会议请求
@@ -494,7 +501,7 @@ const requestMeetingReserve = async () => {
       });
     }
   } catch (e: any) {
-    handleError('Error!')
+    handleError('Error!');
   }
 };
 //删除会议
@@ -510,7 +517,7 @@ const requestMeetingDelete = async () => {
       meetingData();
     }
   } catch (e: any) {
-    handleError('Error!')
+    handleError('Error!');
   }
 };
 //gitee登录鉴权
@@ -525,7 +532,7 @@ const requestGiteeLogin = async () => {
       '&response_type=code';
     window.open(url, '_self');
   } catch (e: any) {
-    handleError('Error!')
+    handleError('Error!');
   }
 };
 
@@ -552,9 +559,9 @@ const handleMeetingReserve = () => {
 };
 
 // 取消会议
-const handleMeetingClose = () => {
-  clearDialogState();
-};
+// const handleMeetingClose = () => {
+//   clearDialogState();
+// };
 // 重置会议
 const handleResetMeeting = (formEl: FormInstance | undefined) => {
   if (!formEl) return;
@@ -615,13 +622,7 @@ const handleSubmitMeeting = async (formEl: FormInstance | undefined) => {
         requestMeetingReserve();
       }
     } else {
-      ElMessage({
-        message: h(
-          'p',
-          { style: 'width: 5vw;display:flex;justify-content: center;' },
-          [h('span', { style: 'color: red;display:flex;' }, 'Error Submit!')]
-        ),
-      });
+      handleError('Error!');
     }
   });
 };
@@ -629,249 +630,261 @@ const handleSubmitMeeting = async (formEl: FormInstance | undefined) => {
 const changeRecord = () => {
   meetingForm.value.record = meetingRecord.value ? 'cloud' : '';
 };
+// 退出
+const handleLogout = async () => {
+  try {
+    await giteeLogout();
+    meetingStore.userSigs = [];
+    meetingStore.giteeId = '';
+    meetingStore.userId = null;
+    ElMessage({
+      message: i18nMeeting.value.LOGOUT_SUCCESS,
+      type: 'success',
+    });
+  } catch {
+    handleError('Error!');
+  }
+};
 </script>
 <template>
   <div class="main-body">
-    <el-config-provider :locale="zhCn">
-      <div class="calendar">
-        <el-calendar v-if="windowWidth > 768" ref="calendar" class="calender">
-          <template #header="{ date }">
-            <div class="left-title lable-name">
-              <OIcon @click="selectDate('prev-month', date)">
-                <icon-left></icon-left>
-              </OIcon>
-              <span class="month-date">{{ date }}</span>
-              <OIcon @click="selectDate('next-month', date)">
-                <icon-right></icon-right>
-              </OIcon>
-            </div>
-          </template>
-          <template #date-cell="{ data }">
-            <div
-              class="out-box lable-name"
-              :class="{ 'be-active': getMeetTimes(data.day) }"
-              @click="meetClick(data.day, $event)"
-            >
-              <div class="day-box">
-                <p
-                  :class="data.isSelected ? 'is-selected' : ''"
-                  class="date-calender lable-name"
-                >
-                  {{ data.day.split('-').slice(2)[0] }}
-                </p>
-              </div>
-            </div>
-          </template>
-        </el-calendar>
-      </div>
-      <div class="detail-list">
-        <div class="right-title">
-          <div class="title-list">
-            <OSelect
-              v-model="sigSelect"
-              clearable
-              filterable
-              @change="selectSigChange"
-            >
-              <OOption
-                value=""
-                :label="lang === 'zh' ? '全部sig组' : 'All SIGs'"
-              />
-              <OOption
-                v-for="item in sigGroup"
-                :key="item.name"
-                :label="item.name"
-                :value="item.name"
-              />
-            </OSelect>
-            <OButton
-              animation
-              size="mini"
-              type="primary"
-              @click="handleMeetingReserve"
-              >{{ i18nMeeting.RESERVE_MEETING }}</OButton
-            >
+    <div class="calendar">
+      <el-calendar v-if="windowWidth > 768" ref="calendar" class="calender">
+        <template #header="{ date }">
+          <div class="left-title lable-name">
+            <OIcon @click="selectDate('prev-month', date)">
+              <icon-left></icon-left>
+            </OIcon>
+            <span class="month-date">{{ date }}</span>
+            <OIcon @click="selectDate('next-month', date)">
+              <icon-right></icon-right>
+            </OIcon>
           </div>
-        </div>
-        <el-collapse v-if="windowWidth < 768" class="calendar calendar-mo">
-          <div class="collapse-box-mo">
-            <OCollapse-item>
-              <template #title>
-                <div class="mo-collapse">
-                  <OIcon>
-                    <icon-calendar></icon-calendar>
-                  </OIcon>
-                  <span class="month-date">
-                    {{ getNowFormatDate() }}
-                  </span>
-                </div>
-              </template>
-              <div class="meet-detail">
-                <el-calendar ref="calendar" class="calendar-mo calender">
-                  <template #header="{ date }">
-                    <div class="left-title">
-                      <OIcon @click="selectDate('prev-month', date)">
-                        <icon-left></icon-left>
-                      </OIcon>
-                      <span class="month-date">{{ date }}</span>
-                      <OIcon @click="selectDate('next-month', date)">
-                        <icon-right></icon-right>
-                      </OIcon>
-                    </div>
-                  </template>
-                  <template #date-cell="{ data }">
-                    <div
-                      class="out-box"
-                      :class="{ 'be-active': getMeetTimes(data.day) }"
-                      @click="meetClick(data.day, $event)"
-                    >
-                      <div class="day-box">
-                        <p
-                          :class="data.isSelected ? 'is-selected' : ''"
-                          class="date-calender"
-                        >
-                          {{ data.day.split('-').slice(2)[0] }}
-                        </p>
-                      </div>
-                    </div>
-                  </template>
-                </el-calendar>
-              </div>
-            </OCollapse-item>
-          </div>
-        </el-collapse>
-        <div class="detail-head">
-          {{ i18nMeeting.NEW_DATE }}
-          <span>{{ currentDay }}</span>
-        </div>
-        <div class="meeting-list">
+        </template>
+        <template #date-cell="{ data }">
           <div
-            v-if="
-              (renderData.timeData.length && renderData.date) ||
-              (renderData.timeData.length && renderData.start_date)
-            "
-            class="demo-collapse"
+            class="out-box lable-name"
+            :class="{ 'be-active': getMeetTimes(data.day) }"
+            @click="meetClick(data.day, $event)"
           >
-            <o-collapse
-              v-model="activeName"
-              accordion
-              @change="changeCollapse()"
-            >
-              <div
-                v-for="(item, index) in renderData.timeData"
-                :key="item.id"
-                class="collapse-box"
+            <div class="day-box">
+              <p
+                :class="data.isSelected ? 'is-selected' : ''"
+                class="date-calender lable-name"
               >
-                <o-collapse-item :name="index">
-                  <template #title>
-                    <div class="meet-item">
-                      <div class="meet-left">
-                        <div class="left-top">
-                          <p class="meet-name">{{ item.name || item.title }}</p>
-                        </div>
-                        <div
-                          v-if="item.group_name"
-                          class="group-name more-detail"
-                        >
-                          {{ i18nMeeting.SIG_GROUP }}
-                          {{ item.group_name }}
-                        </div>
-                        <div v-else class="group-name more-detail">
-                          openEuler
-                        </div>
+                {{ data.day.split('-').slice(2)[0] }}
+              </p>
+            </div>
+          </div>
+        </template>
+      </el-calendar>
+    </div>
+    <div class="detail-list">
+      <div class="right-title">
+        <div class="title-list">
+          <OSelect
+            v-model="sigSelect"
+            clearable
+            filterable
+            @change="selectSigChange"
+          >
+            <OOption
+              value=""
+              :label="lang === 'zh' ? '全部sig组' : 'All SIGs'"
+            />
+            <OOption
+              v-for="item in sigGroup"
+              :key="item.name"
+              :label="item.name"
+              :value="item.name"
+            />
+          </OSelect>
+          <OButton
+            animation
+            size="mini"
+            type="primary"
+            @click="handleMeetingReserve"
+            >{{ i18nMeeting.RESERVE_MEETING }}</OButton
+          >
+          <OButton
+            v-if="isLogin()"
+            animation
+            size="mini"
+            type="primary"
+            @click="handleLogout"
+            >{{ i18n.common.LOGOUT }}</OButton
+          >
+        </div>
+      </div>
+      <el-collapse v-if="windowWidth < 768" class="calendar calendar-mo">
+        <div class="collapse-box-mo">
+          <OCollapse-item>
+            <template #title>
+              <div class="mo-collapse">
+                <OIcon>
+                  <icon-calendar></icon-calendar>
+                </OIcon>
+                <span class="month-date">
+                  {{ getNowFormatDate() }}
+                </span>
+              </div>
+            </template>
+            <div class="meet-detail">
+              <el-calendar ref="calendar" class="calendar-mo calender">
+                <template #header="{ date }">
+                  <div class="left-title">
+                    <OIcon @click="selectDate('prev-month', date)">
+                      <icon-left></icon-left>
+                    </OIcon>
+                    <span class="month-date">{{ date }}</span>
+                    <OIcon @click="selectDate('next-month', date)">
+                      <icon-right></icon-right>
+                    </OIcon>
+                  </div>
+                </template>
+                <template #date-cell="{ data }">
+                  <div
+                    class="out-box"
+                    :class="{ 'be-active': getMeetTimes(data.day) }"
+                    @click="meetClick(data.day, $event)"
+                  >
+                    <div class="day-box">
+                      <p
+                        :class="data.isSelected ? 'is-selected' : ''"
+                        class="date-calender"
+                      >
+                        {{ data.day.split('-').slice(2)[0] }}
+                      </p>
+                    </div>
+                  </div>
+                </template>
+              </el-calendar>
+            </div>
+          </OCollapse-item>
+        </div>
+      </el-collapse>
+      <div class="detail-head">
+        {{ i18nMeeting.NEW_DATE }}
+        <span>{{ currentDay }}</span>
+      </div>
+      <div class="meeting-list">
+        <div
+          v-if="
+            (renderData.timeData.length && renderData.date) ||
+            (renderData.timeData.length && renderData.start_date)
+          "
+          class="demo-collapse"
+        >
+          <o-collapse v-model="activeName" accordion @change="changeCollapse()">
+            <div
+              v-for="(item, index) in renderData.timeData"
+              :key="item.id"
+              class="collapse-box"
+            >
+              <o-collapse-item :name="index">
+                <template #title>
+                  <div class="meet-item">
+                    <div class="meet-left">
+                      <div class="left-top">
+                        <p class="meet-name">{{ item.name || item.title }}</p>
                       </div>
-                      <div class="item-right">
-                        <div class="detail-time">
-                          <span class="start-time"
-                            ><i v-if="!item.schedules">{{ item.startTime }}</i>
-                            <i v-else>{{ item.schedules[0].start }}</i></span
-                          >
-                          <span v-if="windowWidth < 768">-</span>
-                          <span class="end-time">
-                            <i v-if="!item.schedules">{{ item.endTime }}</i>
-                            <i v-else>{{
-                              item.schedules[item.schedules.length - 1].end
-                            }}</i>
-                          </span>
-                        </div>
-                        <div class="extend">
-                          <OIcon
-                            :class="{
-                              reversal:
-                                isCollapse && activeName == index.toString(),
-                            }"
-                          >
-                            <icon-down></icon-down>
-                          </OIcon>
-                        </div>
+                      <div
+                        v-if="item.group_name"
+                        class="group-name more-detail"
+                      >
+                        {{ i18nMeeting.SIG_GROUP }}
+                        {{ item.group_name }}
+                      </div>
+                      <div v-else class="group-name more-detail">openEuler</div>
+                    </div>
+                    <div class="item-right">
+                      <div class="detail-time">
+                        <span class="start-time"
+                          ><i v-if="!item.schedules">{{ item.startTime }}</i>
+                          <i v-else>{{ item.schedules[0].start }}</i></span
+                        >
+                        <span v-if="windowWidth < 768">-</span>
+                        <span class="end-time">
+                          <i v-if="!item.schedules">{{ item.endTime }}</i>
+                          <i v-else>{{
+                            item.schedules[item.schedules.length - 1].end
+                          }}</i>
+                        </span>
+                      </div>
+                      <div class="extend">
+                        <OIcon
+                          :class="{
+                            reversal:
+                              isCollapse && activeName == index.toString(),
+                          }"
+                        >
+                          <icon-down></icon-down>
+                        </OIcon>
                       </div>
                     </div>
-                  </template>
-                  <div class="meet-detail">
-                    <template v-for="keys in detailItem" :key="keys.key">
-                      <div
-                        v-if="isValidKey(keys.key, item) && item[keys.key]"
-                        class="meeting-item"
-                      >
-                        <div class="item-title">{{ keys.text }}:</div>
-                        <p v-if="!keys.isLink && keys.key !== 'date'">
-                          {{ item[keys.key] }}
-                        </p>
-                        <p
-                          v-else-if="
+                  </div>
+                </template>
+                <div class="meet-detail">
+                  <template v-for="keys in detailItem" :key="keys.key">
+                    <div
+                      v-if="isValidKey(keys.key, item) && item[keys.key]"
+                      class="meeting-item"
+                    >
+                      <div class="item-title">{{ keys.text }}:</div>
+                      <p v-if="!keys.isLink && keys.key !== 'date'">
+                        {{ item[keys.key] }}
+                      </p>
+                      <p
+                        v-else-if="
                             keys.isLink &&
                             item[keys.key] &&
                             !(item[keys.key] as string).startsWith('http')
                           "
-                        >
-                          {{ item[keys.key] }}
-                        </p>
-                        <a
-                          v-else-if="keys.isLink"
-                          :href="item[keys.key]"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          >{{ item[keys.key] }}</a
-                        >
-                        <p v-else>{{ currentDay }}</p>
-                      </div>
-                    </template>
-                    <div
-                      v-if="isAuthority() || isLogin()"
-                      class="meeting-action"
-                    >
-                      <OButton
-                        size="mini"
-                        type="outline"
-                        @click.stop="handleDeleteMeeting(item)"
                       >
-                        {{ i18nMeeting.DELETE_MEETING }}
-                      </OButton>
-                      <OButton
-                        size="mini"
-                        type="outline"
-                        @click.stop="handleModifyMeeting(item, renderData.date)"
+                        {{ item[keys.key] }}
+                      </p>
+                      <a
+                        v-else-if="keys.isLink"
+                        :href="item[keys.key]"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >{{ item[keys.key] }}</a
                       >
-                        {{ i18nMeeting.MODIFY }}
-                      </OButton>
+                      <p v-else>{{ currentDay }}</p>
                     </div>
+                  </template>
+                  <div v-if="isAuthority() || isLogin()" class="meeting-action">
+                    <OButton
+                      size="mini"
+                      type="outline"
+                      @click.stop="handleDeleteMeeting(item)"
+                    >
+                      {{ i18nMeeting.DELETE_MEETING }}
+                    </OButton>
+                    <OButton
+                      size="mini"
+                      type="outline"
+                      @click.stop="handleModifyMeeting(item, renderData.date)"
+                    >
+                      {{ i18nMeeting.MODIFY }}
+                    </OButton>
                   </div>
-                </o-collapse-item>
-              </div>
-            </o-collapse>
-          </div>
-          <div v-else class="empty">
-            <img
-              v-if="commonStore.theme === 'light'"
-              :src="notFoundImg_light"
-              alt=""
-            />
-            <img v-else :src="notFoundImg_dark" alt="" />
-            <p>{{ i18nMeeting.EMPTY_TEXT }}</p>
-          </div>
+                </div>
+              </o-collapse-item>
+            </div>
+          </o-collapse>
+        </div>
+        <div v-else class="empty">
+          <img
+            v-if="commonStore.theme === 'light'"
+            :src="notFoundImg_light"
+            alt=""
+          />
+          <img v-else :src="notFoundImg_dark" alt="" />
+          <p>{{ i18nMeeting.EMPTY_TEXT }}</p>
         </div>
       </div>
-    </el-config-provider>
+    </div>
   </div>
   <!-- 提示 -->
   <ODialog
@@ -889,12 +902,22 @@ const changeRecord = () => {
     <div v-if="dialogNoLogin" class="no-login tc">
       <p class="text">{{ i18nMeeting.LOGIN_TEXT }}</p>
       <div class="tc action">
-        <OButton type="primary" @click="handleGiteeLogin">
+        <OButton
+          type="primary"
+          :class="isAgree ? '' : 'no-agree'"
+          @click="handleGiteeLogin"
+        >
           {{ i18nMeeting.GITEE_BEN }}
         </OButton>
       </div>
       <p class="text tc">
-        {{ i18nMeeting.LOGIN_TIPS }}<a href="">{{ i18nMeeting.PRIVACY }}</a>
+        <input type="checkbox" id="agree-input" v-model="isAgree" />
+        <span
+          ><label for="agree-input">{{ i18nMeeting.LOGIN_TIPS }}</label
+          ><a :href="'/' + lang + '/privacyPolicy/'">{{
+            i18nMeeting.PRIVACY
+          }}</a></span
+        >
       </p>
     </div>
 
@@ -902,11 +925,11 @@ const changeRecord = () => {
     <div v-if="deleteTips" class="no-login tc">
       <p class="text">{{ i18nMeeting.DELETE_TEXT }}</p>
       <div class="action">
-        <OButton @click="requestMeetingDelete">
-          {{ i18nMeeting.DELETE_MEETING }}
+        <OButton @click="clearDialogState">
+          {{ i18nMeeting.CANCEL }}
         </OButton>
-        <OButton type="primary" @click="handleGiteeLogin">
-          {{ i18nMeeting.MODIFY }}
+        <OButton type="primary" @click="requestMeetingDelete">
+          {{ i18nMeeting.DELETE_MEETING }}
         </OButton>
       </div>
     </div>
@@ -998,7 +1021,7 @@ const changeRecord = () => {
         </ElFormItem>
         <ElFormItem>
           <div class="meeting-action-box">
-            <OButton v-if="isModify" size="small" @click="handleMeetingClose">
+            <OButton v-if="isModify" size="small" @click="clearDialogState">
               {{ i18nMeeting.CANCEL }}
             </OButton>
             <OButton
@@ -1055,15 +1078,36 @@ const changeRecord = () => {
 }
 .no-login {
   .text {
+    width: 100%;
     font-size: var(--o-font-size-text);
     line-height: var(--o-line-height-text);
     color: var(--o-color-text3);
+    text-align: center;
+    &.tc {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      #agree-input {
+        cursor: pointer;
+      }
+      span {
+        label {
+          cursor: pointer;
+          margin-left: 3px;
+        }
+      }
+    }
   }
   .action {
     margin: var(--o-spacing-h4) 0;
     display: flex;
     gap: var(--o-spacing-h5);
     justify-content: center;
+    .no-agree {
+      background-color: #888888;
+      border-color: #888888;
+      cursor: not-allowed;
+    }
   }
   .failed-img {
     width: 108px;

@@ -130,7 +130,7 @@ export default {
     LOGIN_TEXT:
       'Using openGauss meeting reservation feature requires the identity permission of SIG group Maintainer or Committer. Please allow you to login Gitee to verify user information.',
     GITEE_BEN: 'Gitee authorized login',
-    LOGIN_TIPS: 'Signing in means you agree to',
+    LOGIN_TIPS: 'I have read and agreed to',
     BACK_LOGIN: '返回重新预定会议',
     PRIVACY: ' the privacy terms',
     RESERVE_MEETING: 'Schedule a meeting',
@@ -170,6 +170,7 @@ export default {
     SUBMIT: '立即预订',
     CANCEL: '取消',
     RESET: '重置',
+    LOGOUT_SUCCESS:'Logged Out',
   },
   HOME_ROOMS: {
     ROOM_NAME: [

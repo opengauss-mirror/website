@@ -129,7 +129,7 @@ export default {
     LOGIN_TEXT:
       '使用openGauss会议预定功能需要SIG组Maintainer或Committer身份权限，请您允许授权登录Gitee验证用户信息',
     GITEE_BEN: 'Gitee授权登录',
-    LOGIN_TIPS: '登录即表示同意',
+    LOGIN_TIPS: '我已阅读并同意',
     BACK_LOGIN: '返回重新预定会议',
     PRIVACY: '隐私政策',
     RESERVE_MEETING: '预订会议',
@@ -176,6 +176,7 @@ export default {
     SUCCESS: '预定会议成功！',
     EMAIL: '邮件地址',
     EMAIL_TEXT: '多个邮件地址之间用逗号,隔开',
+    LOGOUT_SUCCESS:'退出成功',
   },
   HOME_ROOMS: {
     ROOM_NAME: [

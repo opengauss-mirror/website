@@ -1,10 +1,11 @@
 <script lang="ts" setup>
-import { ref, computed, onMounted, Ref, watch, h } from 'vue';
+import { ref, computed, onMounted, Ref, watch } from 'vue';
 import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';
 import { ElMessage, ElMessageBox } from 'element-plus';
 import { useCommon } from '@/stores/common';
 import { showGuard, useStoreData } from '@/shared/login';
+import { handleError } from '@/shared/utils';
 
 import DownloadConfig from '@/data/download';
 import AppContent from '@/components/AppContent.vue';
@@ -27,7 +28,7 @@ const { guardAuthClient } = useStoreData();
 
 const isZh = computed(() => (lang.value === 'zh' ? true : false));
 
-const shaText = 'SHA256';
+const SHATEXT = 'SHA256';
 const selectVersion = ref(DownloadConfig[2].id);
 function initSelectVersion() {
   DownloadConfig.forEach((item: any) => {
@@ -116,13 +117,7 @@ const changeDownloadAuth = () => {
       showGuard();
     })
     .catch(() => {
-      ElMessage({
-        message: h(
-          'p',
-          { style: 'width: 5vw;display:flex;justify-content: center;' },
-          [h('span', { style: 'color: red;display:flex;' }, 'Error!')]
-        ),
-      });
+      handleError('Error!');
     });
 };
 //控制需要登录后才能下载的版本(默认仅为最新版需要登录后下载)
@@ -238,7 +233,7 @@ watch(
                     class="down-copy"
                     @click="handleUrlCopy(subitem.centos_sha)"
                   >
-                    {{ shaText }}
+                    {{ SHATEXT }}
                     <template #suffixIcon>
                       <IconCopy />
                     </template>
@@ -294,7 +289,7 @@ watch(
                     animation
                     @click="handleUrlCopy(subitem.aarch_sha)"
                   >
-                    {{ shaText }}
+                    {{ SHATEXT }}
                     <template #suffixIcon>
                       <IconCopy />
                     </template>
@@ -338,7 +333,7 @@ watch(
                     animation
                     @click="handleUrlCopy(subitem.x86_sha)"
                   >
-                    {{ shaText }}
+                    {{ SHATEXT }}
                     <template #suffixIcon>
                       <IconCopy />
                     </template>
@@ -411,7 +406,7 @@ watch(
                   animation
                   @click="handleUrlCopy(scope.row.centos_sha)"
                 >
-                  {{ shaText }}
+                  {{ SHATEXT }}
                   <template #suffixIcon>
                     <IconCopy />
                   </template>
@@ -471,7 +466,7 @@ watch(
                   animation
                   @click="handleUrlCopy(scope.row.aarch_sha)"
                 >
-                  {{ shaText }}
+                  {{ SHATEXT }}
                   <template #suffixIcon>
                     <IconCopy />
                   </template>
@@ -516,7 +511,7 @@ watch(
                   animation
                   @click="handleUrlCopy(scope.row.x86_sha)"
                 >
-                  {{ shaText }}
+                  {{ SHATEXT }}
                   <template #suffixIcon>
                     <IconCopy />
                   </template>
