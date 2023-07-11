@@ -14,45 +14,9 @@ const i18n = useI18n();
 const { lang } = useData();
 
 const isZh = computed(() => (lang.value === 'zh' ? true : false));
-
-const list: Ref<any[]> = ref([]);
-const initList = () => {
-  const result = [];
-  const cndata = BrandConfig.BRAND_LIST;
-
-  const nameList = [
-    'VERTICAL_LEFT_IMAGE',
-    'VERTICAL_CENTER_IMAGE',
-    'VERTICAL_RIGHT_IMAGE',
-    'HORIZONTAL_LEFT_IMAGE',
-    'HORIZONTAL_CENTER_IMAGE',
-    'HORIZONTAL_RIGHT_IMAGE',
-    'BOTTOM_LEFT_IMAGE',
-    'BOTTOM_CENTER_IMAGE',
-  ];
-  const imageList = [
-    '/category/brand/view/logo1.png',
-    '/category/brand/view/logo2.png',
-    '/category/brand/view/logo3.png',
-    '/category/brand/view/logo4-view.png',
-    '/category/brand/view/logo5.png',
-    '/category/brand/view/logo6.png',
-    '/category/brand/view/logo7.png',
-    '/category/brand/view/logo8-view.png',
-  ];
-
-  for (let i = 0; i < imageList.length; i++) {
-    const temp = {
-      id: i,
-      url: imageList[i],
-      image: cndata[nameList[i]],
-    };
-    result.push(temp);
-  }
-  return result;
-};
-
-list.value = initList();
+const pptList = computed(() =>
+  isZh.value ? BrandConfig.pptList.zh : BrandConfig.pptList.en
+);
 </script>
 
 <template>
@@ -76,26 +40,27 @@ list.value = initList();
     </div>
     <div class="brand-list">
       <OCard
-        v-for="item in list"
+        v-for="item in BrandConfig.brandList"
         :key="item.id"
         class="brand-item"
         shadow="hover"
       >
         <div class="brand-item-img">
-          <img :src="item.url" />
+          <img
+            :style="{ backgroundColor: item.backgroundColor }"
+            :src="item.url"
+          />
         </div>
         <div class="button-group">
           <a
-            v-for="item2 in item.image"
-            :key="item2.STYLE"
-            :href="item2.URL"
+            v-for="item2 in item.downloadContent"
+            :key="item2.url"
+            :href="item2.url"
             target="_blank"
             rel="noopener noreferrer"
             download
           >
-            <OButton size="mini" class="button-item"
-              >{{ item2.STYLE }}
-            </OButton>
+            <OButton size="mini" class="button-item">{{ item2.type }} </OButton>
           </a>
         </div>
       </OCard>
@@ -105,7 +70,7 @@ list.value = initList();
       <h3>{{ i18n.brand.PPT_TEXT }}</h3>
       <div class="ppt-list">
         <OCard
-          v-for="ppt in BrandConfig.PPT_LIST"
+          v-for="ppt in pptList"
           :key="ppt.URL"
           shadow="hover"
           class="ppt-item"
@@ -119,7 +84,7 @@ list.value = initList();
           >
             <img :src="ppt.URL" alt="" />
             <div class="ppt-word">
-              {{ isZh ? ppt.TEXT : ppt.TEXT_EN }}
+              {{ ppt.TEXT }}
             </div>
           </a>
         </OCard>
@@ -130,13 +95,13 @@ list.value = initList();
 
 <style lang="scss" scoped>
 .button-group {
-  display: grid;
   width: 100%;
+  display: grid;
+  margin: 0 auto;
   margin-top: var(--o-spacing-h5);
-  justify-items: center;
   align-items: center;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: var(--o-spacing-h8);
+  grid-gap: var(--o-spacing-h6);
   a {
     width: 100%;
     display: flex;
@@ -146,7 +111,11 @@ list.value = initList();
   }
 
   .button-item {
+    width: 100%;
     max-width: 70px;
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
     @media (max-width: 768px) {
       max-width: 80px;
     }
@@ -191,6 +160,16 @@ list.value = initList();
     align-items: center;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: var(--o-spacing-h4);
+    @media (max-width: 1280px){
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: 880px){
+      grid-template-columns: repeat(2, 1fr);
+    margin-top: var(--o-spacing-h4);
+    }
+    @media (max-width: 600px){
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
   .brand-item {
@@ -199,7 +178,7 @@ list.value = initList();
     @media (max-width: 768px) {
     }
     :deep(.el-card__body) {
-      padding: var(--o-spacing-h4);
+      padding: var(--o-spacing-h4) 60px;
       @media (max-width: 768px) {
         padding: var(--o-spacing-h5) var(--o-spacing-h6);
       }
@@ -228,6 +207,7 @@ list.value = initList();
         max-width: 220px;
         width: 100%;
         height: 100%;
+        background-color: #fff;
         @media (max-width: 768px) {
           max-width: 240px;
         }

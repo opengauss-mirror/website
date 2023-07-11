@@ -2,6 +2,7 @@
 import { onMounted, onUnmounted, ref, computed } from 'vue';
 import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';
+import { handleError } from '@/shared/utils';
 
 import AppContent from '@/components/AppContent.vue';
 import HomeCalendar from './HomeCalendar.vue';
@@ -49,13 +50,13 @@ onMounted(async () => {
     const responeData = await getSortData(paramsNews);
     newsData.value = responeData.obj.records;
   } catch (e: any) {
-    throw new Error(e);
+    handleError('Error!')
   }
   try {
     const responeData = await getSortData(paramsBlog);
     blogData.value = responeData.obj.records;
   } catch (e: any) {
-    throw new Error(e);
+    handleError('Error!')
   }
 });
 onUnmounted(() => {

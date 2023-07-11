@@ -2,6 +2,10 @@ import finance from '@/assets/category/showcase/finance-light.svg';
 import financeDark from '@/assets/category/showcase/finance-dark.svg';
 import financeActive from '@/assets/category/showcase/finance-light-active.svg';
 import financeActiveDark from '@/assets/category/showcase/finance-dark-active.svg';
+import carrier from '@/assets/category/showcase/carrier-light.svg';
+import carrierDark from '@/assets/category/showcase/carrier-dark.svg';
+import carrierActive from '@/assets/category/showcase/carrier-light-active.svg';
+import carrierActiveDark from '@/assets/category/showcase/carrier-dark-active.svg';
 import developer from '@/assets/category/showcase/developer-light.svg';
 import developerDark from '@/assets/category/showcase/developer-dark.svg';
 import developerActive from '@/assets/category/showcase/developer-light-active.svg';
@@ -26,7 +30,6 @@ import industrial from '@/assets/category/showcase/industrial-light.svg';
 import industrialDark from '@/assets/category/showcase/industrial-dark.svg';
 import industrialActive from '@/assets/category/showcase/industrial-light-active.svg';
 import industrialActiveDark from '@/assets/category/showcase/industrial-dark-active.svg';
-
 export default {
   CASE_LIST: [
     {
@@ -39,9 +42,18 @@ export default {
       ACTIVE_DARK_URL: financeActiveDark,
     },
     {
+      TYPE: '运营商',
+      TYPE_EN: 'Carrier',
+      ID: 2,
+      URL: carrier,
+      ACTIVE_URL: carrierActive,
+      URL_DARK: carrierDark,
+      ACTIVE_DARK_URL: carrierActiveDark,
+    },
+    {
       TYPE: '互联网',
       TYPE_EN: 'Internet',
-      ID: 2,
+      ID: 3,
       URL: developer,
       ACTIVE_URL: developerActive,
       URL_DARK: developerDark,
@@ -50,7 +62,7 @@ export default {
     {
       TYPE: '工业',
       TYPE_EN: 'Industrial',
-      ID: 3,
+      ID: 4,
       URL: industrial,
       ACTIVE_URL: industrialActive,
       URL_DARK: industrialDark,
@@ -59,7 +71,7 @@ export default {
     {
       TYPE: '能源',
       TYPE_EN: 'Energy',
-      ID: 4,
+      ID: 5,
       URL: energy,
       ACTIVE_URL: energyActive,
       URL_DARK: energyDark,
@@ -68,7 +80,7 @@ export default {
     {
       TYPE: 'DBV',
       TYPE_EN: 'DBV',
-      ID: 5,
+      ID: 6,
       URL: dbv,
       ACTIVE_URL: dbvActive,
       URL_DARK: dbvDark,
@@ -77,7 +89,7 @@ export default {
     {
       TYPE: 'ISV',
       TYPE_EN: 'ISV',
-      ID: 6,
+      ID: 7,
       URL: isv,
       ACTIVE_URL: isvActive,
       URL_DARK: isvDark,
@@ -86,7 +98,7 @@ export default {
     {
       TYPE: '其他',
       TYPE_EN: 'Others',
-      ID: 7,
+      ID: 8,
       URL: other,
       ACTIVE_URL: otherActive,
       URL_DARK: otherDark,

@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue';
+import { computed, ref, watch, onMounted } from 'vue';
 import { useCommon } from '@/stores/common';
+import { getUrlParams } from '@/shared/utils';
 
 import AppContext from '@/components/AppContent.vue';
 import SummitBanner from './components/SummitBanner.vue';
 import SummitSchedule from './components/SummitSchedule.vue';
 import SummitGuests from './components/SummitGuests.vue';
+import SummitLive from './components/SummitLive.vue';
 
 import guestsData from './data/guests';
 import summitData from './data';
@@ -70,12 +72,41 @@ watch(
     immediate: true,
   }
 );
+// 埋点
+function setDownData() {
+  const sensors = (window as any)['sensorsDataAnalytic201505'];
+  const { href } = window.location;
+  if (href.includes('?utm_source')) {
+    const paramsArr = getUrlParams(href);
+    sensors?.setProfile({
+      ...(window as any)['sensorsCustomBuriedData'],
+      profileType: 'fromAdvertised',
+      origin: href,
+      ...paramsArr,
+    });
+  }
+}
+onMounted(() => {
+  setTimeout(() => {
+    setDownData();
+  }, 300);
+});
 </script>
 <template>
   <SummitBanner :banner-data="summitData.banner" />
   <AppContext>
     <div class="detail">
       <p v-for="item in summitData.detail" :key="item">{{ item }}</p>
+    </div>
+    <div id="live-box" class="live">
+      <h3 class="titleBar">{{ summitData.live.title }}</h3>
+      <div>
+        <SummitLive
+          :live-data="summitData.live.liveData"
+          class-name="odd-box"
+          class="summit-kv-box"
+        />
+      </div>
     </div>
     <div class="agenda" :class="{ 'min-height': showIndex === 1 }">
       <h3>会议日程</h3>

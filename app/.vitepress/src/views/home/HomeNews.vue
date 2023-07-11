@@ -101,7 +101,7 @@ onMounted(async () => {
         :class="{ isShow: tabType === 'events' }"
       >
         <div class="activity-content">
-          <div class="activity-content-cover">
+          <div class="activity-content-cover" data-aos="fade-right">
             <a :href="eventsData.path" target="_blank" rel="noopener noreferrer"
               ><img :src="eventsData.img" class="cover" alt=""
             /></a>
@@ -567,23 +567,30 @@ onMounted(async () => {
   display: grid;
   grid-template-columns: 66.2% 33.8%;
   height: 546px;
+  @media (max-width: 1100px) {
+    display: block;
+    height: auto;
+  }
   .activity-content-cover {
     width: 100%;
     height: 546px;
     overflow: hidden;
-    .cover {
-      width: 100%;
-      height: 100%;
-      // object-fit: cover;
-      display: block;
-      transition: transform 0.6s ease;
-    }
     @media (min-width: 1200px) {
       &:hover {
         .cover {
           transform: scale(1.1);
         }
       }
+    }
+    @media (max-width: 1100px) {
+      height: 184px;
+    }
+    .cover {
+      width: 100%;
+      height: 100%;
+      // object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
     }
   }
   .activity-content-box {
@@ -593,6 +600,9 @@ onMounted(async () => {
     justify-content: space-between;
     padding: var(--o-spacing-h2);
     position: relative;
+    @media (max-width: 1100px){
+      padding: 12px;
+    }
     .activity-title {
       font-size: var(--o-font-size-h4);
       font-weight: 500;
@@ -600,6 +610,10 @@ onMounted(async () => {
       line-height: var(--o-line-height-h4);
       &:hover {
         color: var(--o-color-brand1);
+      }
+      @media (max-width: 1100px){
+        font-size: 14px;
+        line-height: 22px;
       }
     }
     .desc {
@@ -614,6 +628,16 @@ onMounted(async () => {
       display: -webkit-box;
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 6;
+      @media (max-width: 1100px){
+        font-size: 12px;
+        line-height: 18px;
+        height: 18px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        margin: 8px 0;
+        display: block;
+      }
     }
     .activity-btn {
       padding: 0;
@@ -626,9 +650,20 @@ onMounted(async () => {
         margin-bottom: 16px;
         display: flex;
         align-items: center;
+        @media (max-width: 1100px){
+          margin: 0;
+          display: inline-flex;
+          margin-right: 16px;
+          font-size: var(--o-font-size-tip);
+          line-height: var(--o-line-height-tip);
+        }
         .o-icon {
           margin-right: 8px;
           font-size: 24px;
+          @media (max-width: 1100px){
+            font-size: 16px;
+            margin-right: 4px;
+          }
         }
       }
     }
@@ -640,35 +675,6 @@ onMounted(async () => {
       height: 184px;
     }
     &-box {
-      padding: 12px;
-
-      .activity-title {
-        font-size: 14px;
-        line-height: 22px;
-      }
-      .desc {
-        font-size: 12px;
-        line-height: 18px;
-        height: 18px;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        margin: 8px 0;
-        display: block;
-      }
-      .info {
-        p {
-          margin: 0;
-          display: inline-flex;
-          margin-right: 16px;
-          font-size: var(--o-font-size-tip);
-          line-height: var(--o-line-height-tip);
-          .o-icon {
-            font-size: 16px;
-            margin-right: 4px;
-          }
-        }
-      }
       .link {
         display: none;
       }

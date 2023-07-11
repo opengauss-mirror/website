@@ -4,6 +4,7 @@ import { useI18n } from '@/i18n';
 import { useRouter, useData } from 'vitepress';
 
 import { getSecurityDetail } from '@/api/api-security';
+import { handleError } from '@/shared/utils';
 
 import AppContent from '@/components/AppContent.vue';
 
@@ -31,7 +32,7 @@ function getSecurityDetailInfo(data: any) {
       }
     });
   } catch (e: any) {
-    throw new Error(e);
+    handleError('Error!')
   }
 }
 
@@ -242,114 +243,6 @@ onMounted(() => {
         </OTabs>
       </div>
     </div>
-    <!-- <div class="detail-body-mobile">
-      <el-collapse>
-        <el-collapse-item :title="i18n.security.OVERVIEW" name="1">
-          <div class="tab-content">
-            <div class="tab-content-item">
-              <h5 class="tab-content-item-title first-title">
-                {{ i18n.security.BRIEF_INTRODUCTION }}
-              </h5>
-              <p class="tab-content-item-text">
-                {{ detailData.introduction }}
-              </p>
-            </div>
-            <div class="tab-content-item">
-              <h5 class="tab-content-item-title">
-                {{ i18n.security.SEVERITY }}
-              </h5>
-              <p class="tab-content-item-text">
-                {{ detailData.cveLevel }}
-              </p>
-            </div>
-            <div class="tab-content-item">
-              <h5 class="tab-content-item-title">
-                {{ i18n.security.THEME }}
-              </h5>
-              <p class="tab-content-item-text">
-                {{ detailData.theme }}
-              </p>
-            </div>
-            <div class="tab-content-item">
-              <h5 class="tab-content-item-title">
-                {{ i18n.security.DESCRIPTION }}
-              </h5>
-              <p class="tab-content-item-text">
-                {{ detailData.description }}
-              </p>
-            </div>
-            <div class="tab-content-item">
-              <h5 class="tab-content-item-title">
-                {{ i18n.security.AFFECTED_COMPONENTS }}
-              </h5>
-              <p class="tab-content-item-text">
-                {{ detailData.influenceComponent }}
-              </p>
-            </div>
-            <div class="tab-content-item">
-              <h5 class="tab-content-item-title">
-                {{ i18n.security.CVE }}
-              </h5>
-              <p
-                v-for="(item, index) in cveIdList"
-                :key="index"
-                class="tab-content-item-link"
-                @click="goCveDetail(item)"
-              >
-                {{ item }}
-              </p>
-            </div>
-            <div class="tab-content-item">
-              <h5 class="tab-content-item-title">
-                {{ i18n.security.REFERENCE_DOCUMENTS }}
-              </h5>
-              <div
-                v-for="item in referenceLinkList"
-                :key="item"
-                class="tab-content-item-text"
-              >
-                <a :href="item" target="_blank" rel="noopener noreferrer">{{ item }}</a>
-              </div>
-            </div>
-          </div>
-        </el-collapse-item>
-        <el-collapse-item :title="i18n.security.UPDATED_PACKAGES" name="2">
-          <div class="tab-content">
-            <div
-              v-for="item in detailData.versionsBody"
-              :key="item"
-              class="packge-item"
-            >
-              <h2 class="packge-item-title">openGauss-{{ item.versions }}</h2>
-              <div
-                v-for="it in item.packageBody"
-                :key="it"
-                class="packge-item-class"
-              >
-                <p class="packge-item-class-achitecture">
-                  {{ it.groupName }}
-                </p>
-                <div
-                  v-for="single in it.tagBody"
-                  :key="single"
-                  class="packge-item-class-rpm"
-                >
-                  <h5 class="first-title">{{ i18n.security.SOFT_PACK }}</h5>
-                  <p>{{ single.packageName }}</p>
-                  <h5>{{ i18n.security.PLAT }}</h5>
-                  <p
-                    v-for="platItem in single.affectedPlatform"
-                    :key="platItem"
-                  >
-                    {{ platItem }}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </el-collapse-item>
-      </el-collapse>
-    </div> -->
   </AppContent>
 </template>
 <style lang="scss" scoped>
@@ -626,63 +519,4 @@ onMounted(() => {
     }
   }
 }
-// .detail-body-mobile {
-//   display: none;
-//   @media screen and (max-width: 768px) {
-//     display: block;
-//   }
-//   :deep(.el-collapse-item__header) {
-//     padding: 0 var(--o-spacing-h5);
-//     background-color: var(--o-color-bg2);
-//     color: var(--o-color-text1);
-//   }
-//   :deep(.el-collapse-item__content) {
-//     padding-bottom: 0;
-//   }
-//   :deep(.el-collapse-item__wrap) {
-//     border-bottom: none;
-//   }
-//   .tab-content {
-//     padding: var(--o-spacing-h5);
-//     background-color: var(--o-color-bg1);
-//     h5 {
-//       margin-top: var(--o-spacing-h5);
-//       font-size: var(--o-font-size-text);
-//       line-height: var(--o-line-height-text);
-//       color: var(--o-color-text1);
-//       font-weight: 300;
-//     }
-//     .first-title {
-//       margin-top: 0;
-//     }
-//     p {
-//       margin-top: 10px;
-//       font-size: var(--o-font-size-tip);
-//       line-height: var(--o-line-height-tip);
-//       color: var(--o-color-text1);
-//     }
-//     .tab-content-item-text {
-//       margin-top: var(--o-spacing-h7);
-//     }
-//     .tab-content-item-link {
-//       color: var(--o-color-brand1);
-//     }
-//     .packge-item-title {
-//       font-size: var(--o-font-size-text);
-//       line-height: var(--o-line-height-text);
-//       color: var(--o-color-text1);
-//     }
-//     .packge-item-class-rpm {
-//       margin-top: var(--o-spacing-h8);
-//       padding: var(--o-spacing-h8);
-//       border: 1px solid var(--o-color-border2);
-//       &:nth-of-type(2n + 1) {
-//         background-color: var(--o-color-bg3);
-//       }
-//       p {
-//         color: var(--o-color-text4);
-//       }
-//     }
-//   }
-// }
 </style>

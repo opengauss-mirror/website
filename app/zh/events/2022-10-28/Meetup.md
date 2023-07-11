@@ -43,3 +43,28 @@ Huawei Certified ICT Associate-openGauss
 NCRE-openGauss 认证，点击下方链接：
 
 <https://ncre.neea.edu.cn/>
+
+<script setup>
+  import { onMounted } from 'vue';
+  import { getUrlParams } from '@/shared/utils';
+  function setDownData() {
+    const sensors = window['sensorsDataAnalytic201505'];
+    const { href } = window.location;
+    if (href.includes('?utm_source')) {
+      const paramsArr = getUrlParams(href);
+      sensors?.setProfile({
+        ...window['sensorsCustomBuriedData'],
+        profileType: 'fromAdvertised',
+        origin: href,
+        ...paramsArr
+      });
+    }
+  }
+  
+  onMounted(() => {
+    setTimeout(() => {
+      setDownData();
+    }, 500);
+  });
+
+</script>

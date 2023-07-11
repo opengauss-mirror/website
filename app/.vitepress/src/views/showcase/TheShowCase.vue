@@ -26,7 +26,7 @@ import internetIcon from '@/assets/category/showcase/developer-icon.svg';
 import otherIcon from '@/assets/category/showcase/other-icon.svg';
 import dbvIcon from '@/assets/category/showcase/dbv-icon.svg';
 import IconChevronRight from '~icons/app/icon-chevron-right.svg';
-
+import carrierIcon from '@/assets/category/showcase/carrier-icon.svg';
 const i18n = useI18n();
 const userCaseData = computed(() => i18n.value.showcase);
 const { lang } = useData();
@@ -70,7 +70,8 @@ function setCurrentCaseListAll() {
       currentCaseListAll.value = [];
       if (res.status === 200 && res.obj.records[0]) {
         caseListAll.value = res.obj.records.filter((item: any) => {
-          return item.path !== 'userPractice/index';
+          const pathArray = item.path.split('/');
+          return pathArray[pathArray.length - 2] !== 'userPractice';
         });
         if (activeIndex.value === 0) {
           currentCaseListAll.value = caseListAll.value;
@@ -165,6 +166,9 @@ const imgUrl = computed(() => (id: string) => {
       break;
     case 'Finance':
       return financeIcon;
+      break;
+    case 'Carrier':
+      return carrierIcon;
       break;
   }
 });
@@ -284,7 +288,7 @@ onMounted(() => {
     <div class="case-list">
       <OCard
         v-for="(item, index) in currentCaseList"
-        :key="item.officialpath"
+        :key="item.summary"
         shadow="hover"
         class="case-card"
         :style="`background:url(${CardBg}) no-repeat center/cover`"
@@ -536,7 +540,11 @@ $color: #fff;
   }
   .all {
     -webkit-line-clamp: initial;
-    max-height: 144px;
+    max-height: 90px;
+    overflow-y: scroll;
+    .o-icon {
+      bottom: 0;
+    }
   }
   .more-btn {
     margin-right: var(--o-spacing-h8);

@@ -6,6 +6,7 @@ import { showGuard, useStoreData } from '@/shared/login';
 import { useI18n } from '@/i18n';
 import { ElMessage, ElMessageBox } from 'element-plus';
 import useWindowResize from '@/components/hooks/useWindowResize';
+import { handleError } from '@/shared/utils';
 
 import IconDownload from '~icons/app/icon-download.svg';
 import IconCopy from '~icons/app/icon-copy.svg';
@@ -89,15 +90,7 @@ const changeDownloadAuth = () => {
     .then(() => {
       showGuard();
     })
-    .catch(() => {
-      ElMessage({
-        message: h(
-          'p',
-          { style: 'width: 5vw;display:flex;justify-content: center;' },
-          [h('span', { style: 'color: red;display:flex;' }, 'Error!')]
-        ),
-      });
-    });
+    .catch(() => {});
 };
 // 移动端提示
 const screenWidth = useWindowResize();

@@ -46,7 +46,7 @@ const videoClickBtn = (path: string) => {
       <video
         muted
         playsinline="true"
-        autoplay="autoplay"
+        autoplay="true"
         height="380"
         loop
         webkit-playsinline="true"

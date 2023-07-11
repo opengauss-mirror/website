@@ -2,6 +2,7 @@
 import { computed, ref, Ref, onMounted, reactive } from 'vue';
 import { useRouter, useData } from 'vitepress';
 import { getSortData } from '@/api/api-search';
+import { handleError } from '@/shared/utils';
 
 import { useI18n } from '@/i18n';
 import { useCommon } from '@/stores/common';
@@ -107,7 +108,7 @@ onMounted(async () => {
       }
     });
   } catch (e: any) {
-    throw new Error(e);
+    handleError('Error!')
   }
 });
 const goDetail = (path: string) => {
