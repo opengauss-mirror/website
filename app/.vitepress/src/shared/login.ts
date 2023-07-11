@@ -99,7 +99,6 @@ export function refreshInfo() {
       const { data } = res;
       if (Object.prototype.toString.call(data) === '[object Object]') {
         guardAuthClient.value = data;
-        saveUserAuth(token);
       }
     });
   }

@@ -1,49 +1,61 @@
 <script setup lang="ts">
-// import { useCommon } from '@/stores/common';
+import { useCommon } from '@/stores/common';
 
-// import { computed } from 'vue';
+import { computed } from 'vue';
 
 import portalInfo from '@/data/migration/migration-portal';
 
-// import IconArrowRight from '~icons/app/icon-arrow-right.svg';
+import IconDownload from '~icons/app/icon-download.svg';
+import IconArrowRight from '~icons/app/icon-arrow-right.svg';
 
-// const commonStore = useCommon();
+const commonStore = useCommon();
 
-// const isDark = computed(() => (commonStore.theme === 'dark' ? true : false));
+const isDark = computed(() => (commonStore.theme === 'dark' ? true : false));
+const downloadData = portalInfo.download;
 
-// interface LinkItem {
-//   name: string;
-//   link: string;
-// }
+interface LinkItem {
+  name: string;
+  link: string;
+}
 
-// function handleClick(item: LinkItem) {
-//   if (item.link) {
-//     window.open(item.link);
-//   }
-// }
+function handleClick(link: string) {
+  window.open(link);
+}
 </script>
 
 <template>
   <div class="migration-download">
-    <h3>{{ portalInfo.download.title }}</h3>
-    <p>{{ portalInfo.download.dexcription }}</p>
+    <h2>{{ downloadData.title }}</h2>
     <div class="migration-download-content">
       <OCard>
         <div class="card-box">
           <div class="card-box-left">
-            <!-- <img
+            <img
               :src="
-                isDark
-                  ? portalInfo.download.left.img.dark
-                  : portalInfo.download.left.img.light
+                isDark ? downloadData.left.imgDark : downloadData.left.imgLight
               "
             />
             <div class="card-info">
-              <span class="name">{{ portalInfo.download.left.name }}</span>
-              <span class="version">{{
-                portalInfo.download.left.version
-              }}</span>
-            </div> -->
+              {{ downloadData.left.name }}
+            </div>
+          </div>
+          <div class="card-box-right">
+            <OButton
+              :animation="item.btnIcon !== 1"
+              type="outline"
+              class="btn-box-item"
+              v-for="item in downloadData.btns"
+              :key="item.name"
+              @click="handleClick(item.link)"
+            >
+              <template v-if="item.btnIcon === 1" #suffixIcon>
+                <IconDownload class="btn-box-item-icon"></IconDownload>
+              </template>
+              <template v-else #suffixIcon>
+                <IconArrowRight class="btn-box-item-icon"></IconArrowRight>
+              </template>
+              {{ item.name }}
+            </OButton>
           </div>
         </div>
       </OCard>
@@ -66,7 +78,7 @@ import portalInfo from '@/data/migration/migration-portal';
   @media screen and (max-width: 768px) {
     margin-top: var(--o-spacing-h2);
   }
-  h3 {
+  h2 {
     font-size: var(--o-font-size-h3);
     font-weight: 300;
     color: var(--o-color-text1);
@@ -80,21 +92,7 @@ import portalInfo from '@/data/migration/migration-portal';
       margin: 0;
     }
   }
-  p {
-    font-size: var(--o-font-size-h7);
-    font-weight: 300;
-    color: var(--o-color-text1);
-    line-height: var(--o-line-height-h8);
-    width: 100%;
-    text-align: center;
-    margin-top: var(--o-spacing-h5);
-    @media screen and (max-width: 768px) {
-      font-size: var(--o-font-size-tip);
-      line-height: var(--o-line-height-tip);
-      margin-top: var(--o-spacing-h8);
-    }
-  }
-  &-content {
+  .migration-download-content {
     margin-top: var(--o-spacing-h3);
     @media screen and (max-width: 768px) {
       margin-top: var(--o-spacing-h5);
@@ -102,21 +100,23 @@ import portalInfo from '@/data/migration/migration-portal';
     .card-box {
       display: flex;
       justify-content: space-between;
-      @media screen and (max-width: 1410px) {
+      padding: 23px 0 15px 25px;
+      @media screen and (max-width: 768px) {
         flex-direction: column;
       }
-      &-left {
+      .card-box-left {
         display: flex;
         align-items: center;
-        padding: 23px 0 15px 25px;
+        // padding: 23px 0 15px 25px;
         @media screen and (max-width: 768px) {
           padding: 0;
         }
+        @media screen and (max-width: 440px) {
+            justify-content: center;
+          }
         img {
-          width: 109px;
-          height: 74px;
-          margin-right: var(--o-spacing-h4);
-
+          width: 130px;
+          height: 130px;
           @media screen and (max-width: 440px) {
             display: none;
           }
@@ -131,27 +131,33 @@ import portalInfo from '@/data/migration/migration-portal';
             font-size: var(--o-font-size-h7);
             line-height: var(--o-line-height-h7);
           }
+         
           .name {
             margin-right: var(--o-spacing-h6);
           }
         }
       }
 
-      &-right {
+      .card-box-right {
         display: flex;
         position: relative;
-        // @media screen and (max-width: 1410px) {
-        //   align-self: end;
-        // }
-        img {
-          width: 123px;
-          height: 95px;
-          // align-self: flex-end;
-          position: absolute;
-          right: 2px;
-          bottom: 0;
-          @media screen and (max-width: 768px) {
-            bottom: -35%;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding-right: 24px;
+        @media screen and (max-width: 1410px) {
+          max-width: 576px;
+          flex-wrap: wrap;
+        }
+        @media screen and (max-width: 440px) {
+          justify-content: center;
+          margin-top: 16px;
+        }
+        .btn-box-item {
+          padding: 0 16px;
+          .btn-box-item-icon {
+            width: 12px;
+            font-size: var(--o-font-size-tip);
           }
         }
         .card-btn {
@@ -165,61 +171,6 @@ import portalInfo from '@/data/migration/migration-portal';
           @media screen and (max-width: 768px) {
             padding: 0;
             margin: 16px 0 0 0;
-          }
-
-          .o-button {
-            position: relative;
-            margin-right: var(--o-spacing-h4);
-            ul {
-              display: none;
-              position: absolute;
-              top: 15px;
-              left: 60%;
-              width: 160px;
-              padding: var(--o-spacing-h5) 0;
-              background-color: var(--o-color-bg2);
-              border: 1px solid var(--o-color-brand1);
-              z-index: 20;
-              @media screen and (max-width: 768px) {
-                top: -120px;
-              }
-              li {
-                cursor: pointer;
-                display: block;
-                margin: 0;
-                padding: var(--o-spacing-h8) 0;
-                list-style: none;
-                text-align: center;
-                line-height: var(--o-line-height-h6);
-                color: var(--o-color-text1);
-              }
-              li:hover {
-                color: var(--o-color-brand1);
-              }
-            }
-            @media screen and (max-width: 440px) {
-              margin-right: 5px;
-            }
-            &:last-child {
-              margin-right: var(--o-spacing-h3);
-              @media screen and (max-width: 440px) {
-                margin-right: 5px;
-              }
-            }
-          }
-          .hover {
-            .o-icon {
-              transform: rotate(90deg) translateY(-3px);
-            }
-            &:hover {
-              :deep(.suffix-icon) {
-                transform: none;
-              }
-
-              ul {
-                display: block;
-              }
-            }
           }
         }
       }

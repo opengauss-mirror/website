@@ -27,11 +27,11 @@ const pcPaddingTop = computed(() => {
 
 <style lang="scss" scoped>
 .app-content {
+  max-width: 1504px;
   padding-top: v-bind('pcPaddingTop');
   padding-bottom: var(--o-spacing-h1);
   padding-left: 44px;
   padding-right: 44px;
-  max-width: 1504px;
   margin: 0 auto;
   @media (max-width: 1439px) {
     padding-left: 24px;

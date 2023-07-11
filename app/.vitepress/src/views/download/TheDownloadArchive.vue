@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, computed, onMounted, Ref, watch } from 'vue';
+import { ref, computed, onMounted, Ref, watch, h } from 'vue';
 import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';
 import { ElMessage, ElMessageBox } from 'element-plus';
@@ -107,16 +107,22 @@ const changeDownloadAuth = () => {
     i18n.value.download.DONNLOAD_TEXT,
     i18n.value.download.DONNLOAD_TIPS,
     {
-      confirmButtonText: i18n.value.download.DONNLOAD_COMFIRM,
-      cancelButtonText: i18n.value.download.DONNLOAD_CANCEL,
       type: 'warning',
+      cancelButtonText: i18n.value.download.DONNLOAD_CANCEL,
+      confirmButtonText: i18n.value.download.DONNLOAD_COMFIRM,
     }
   )
     .then(() => {
       showGuard();
     })
-    .catch((error: any) => {
-      throw new Error(error);
+    .catch(() => {
+      ElMessage({
+        message: h(
+          'p',
+          { style: 'width: 5vw;display:flex;justify-content: center;' },
+          [h('span', { style: 'color: red;display:flex;' }, 'Error!')]
+        ),
+      });
     });
 };
 //控制需要登录后才能下载的版本(默认仅为最新版需要登录后下载)
@@ -162,11 +168,13 @@ watch(
           :key="item.name"
           :href="theme.docsUrl + '/' + lang + item.path"
           target="_blank"
+          rel="noopener noreferrer"
           >{{ isZh ? item.name : item.nameEn }}</a
         >
         <a
           href="https://gitee.com/opengauss/community/issues"
           target="_blank"
+          rel="noopener noreferrer"
           >{{ i18n.download.FEEDBACK_QUESTION }}</a
         >
       </div>
@@ -194,7 +202,7 @@ watch(
               </p>
               <template v-if="subitem.centos_url !== ''">
                 <p class="text">{{ item.thead[1] }}</p>
-                <div class="down-action">
+                <div class="down-action lable-name2">
                   <template
                     v-if="
                       versionShownIndex === downloadVersionAuthIndex &&
@@ -202,9 +210,9 @@ watch(
                     "
                   >
                     <OButton
+                      type="primary"
                       size="mini"
                       animation
-                      type="primary"
                       @click="changeDownloadAuth"
                     >
                       {{ i18n.download.BTN_TEXT }}
@@ -224,10 +232,10 @@ watch(
                     </a>
                   </template>
                   <OButton
-                    class="down-copy"
                     size="mini"
                     type="text"
                     animation
+                    class="down-copy"
                     @click="handleUrlCopy(subitem.centos_sha)"
                   >
                     {{ shaText }}
@@ -251,7 +259,7 @@ watch(
               </template>
               <template v-if="subitem.aarch_url !== ''">
                 <p class="text">{{ item.thead[2] }}</p>
-                <div class="down-action">
+                <div class="down-action lable-name3">
                   <template
                     v-if="
                       versionShownIndex === downloadVersionAuthIndex &&
@@ -259,8 +267,8 @@ watch(
                     "
                   >
                     <OButton
-                      size="mini"
                       animation
+                      size="mini"
                       type="primary"
                       @click="changeDownloadAuth"
                     >
@@ -272,7 +280,7 @@ watch(
                   </template>
                   <template v-else>
                     <a :href="subitem.aarch_url">
-                      <OButton size="mini" type="primary" animation>
+                      <OButton animation size="mini" type="primary">
                         {{ i18n.download.BTN_TEXT }}
                         <template #suffixIcon>
                           <IconDownload />
@@ -280,7 +288,7 @@ watch(
                     ></a>
                   </template>
                   <OButton
-                    class="down-copy"
+                    class="down-copy lable-name3"
                     size="mini"
                     type="text"
                     animation
@@ -324,7 +332,7 @@ watch(
                     ></a>
                   </template>
                   <OButton
-                    class="down-copy"
+                    class="down-copy lable-name6"
                     size="mini"
                     type="text"
                     animation
@@ -356,11 +364,11 @@ watch(
                     placement="right-start"
                   >
                     <template #content>
-                      <p class="server-name">
+                      <p class="server-name lable-name">
                         {{ hoverTips(scope.row.edition) }}
                       </p>
                     </template>
-                    <IconTips class="server-tips" />
+                    <IconTips class="server-tips lable-name" />
                   </el-tooltip>
                 </template>
               </div>
@@ -526,23 +534,23 @@ watch(
       :download-version-auth-index="downloadVersionAuthIndex"
     />
   </AppContent>
-  <div class="input-box">
+  <div class="input-box lable-name">
     <!-- 用于复制RSNC的值 -->
     <input id="useCopy" type="text" />
   </div>
-  <div v-if="lang === 'zh'" class="questionnaire">
+  <div v-if="lang === 'zh'" class="questionnaire lable-name">
     <div class="ques-icon">
       <img :src="QuesTipsImg" class="img0" alt="" />
       <img :src="QuesTipsImg1" class="img1" alt="" />
     </div>
-    <div class="ques-info">
+    <div class="ques-info lable-name">
       <p class="title">{{ i18n.download.LETTER.NAME }}</p>
       <p class="letter-text">
         {{ i18n.download.LETTER.INFO }}
       </p>
       <OButton
-        size="mini"
         type="primary"
+        size="mini"
         @click="handleDownloadUrl(i18n.download.LETTER.PATH)"
       >
         {{ i18n.download.LETTER.BTN }}
@@ -729,42 +737,45 @@ watch(
 
 .questionnaire {
   position: fixed;
-  right: 5%;
   bottom: 350px;
+  right: 5%;
   z-index: 9;
+  @media screen and (max-width: 1100px) {
+    display: none;
+  }
   .ques-icon {
     position: relative;
     .img1 {
       width: 45px;
-      object-fit: cover;
       position: absolute;
       top: -6px;
       left: 17px;
+      object-fit: cover;
       z-index: 2;
     }
     .img0 {
+      object-fit: cover;
       width: 79px;
       height: 93px;
-      object-fit: cover;
     }
   }
 
   .ques-info {
     display: none;
-    width: 179px;
-    color: #fff;
-    background: #8d8bff;
     padding: 18px var(--o-spacing-h5) var(--o-spacing-h5);
+    width: 179px;
     position: absolute;
     top: 0;
     left: -50px;
     z-index: 1;
     border-radius: 6px;
     text-align: center;
+    color: #fff;
+    background: #8d8bff;
     p {
+      text-align: left;
       font-size: var(--o-font-size-tip);
       line-height: var(--o-line-height-tip);
-      text-align: left;
     }
     .letter-text {
       margin: var(--o-spacing-h8) 0;
@@ -775,9 +786,6 @@ watch(
     .ques-info {
       display: block;
     }
-  }
-  @media screen and (max-width: 1100px) {
-    display: none;
   }
 }
 </style>

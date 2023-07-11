@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { computed, CSSProperties, onMounted, useSlots } from 'vue';
-import AOS from 'aos';
+import { computed, CSSProperties, useSlots } from 'vue';
 
 const slots = useSlots();
 
@@ -39,22 +38,13 @@ const rootStyle = computed(() => {
   }
   return result;
 });
-
-onMounted(() => {
-  AOS.init();
-});
 </script>
 
 <template>
   <div class="banner-level2" :style="rootStyle">
     <img :src="props.backgroundImage" class="banner-bg" />
     <div class="wrap">
-      <div
-        class="banner-text"
-        data-aos="fade-up"
-        data-aos-once="true"
-        data-aos-duration="800"
-      >
+      <div class="banner-text">
         <p v-if="backgroundText" class="banner-text-bg">
           {{ backgroundText }}
         </p>
@@ -66,13 +56,7 @@ onMounted(() => {
           <slot></slot>
         </div>
       </div>
-      <div
-        v-if="illustration"
-        class="banner-illustration"
-        data-aos="fade-down"
-        data-aos-once="true"
-        data-aos-duration="800"
-      >
+      <div v-if="illustration" class="banner-illustration">
         <img :src="illustration" />
       </div>
     </div>
@@ -100,7 +84,7 @@ onMounted(() => {
   .banner-bg {
     position: absolute;
     height: 100%;
-    width: 100vw;
+    width: 100%;
     object-fit: cover;
     user-select: none;
     pointer-events: none;

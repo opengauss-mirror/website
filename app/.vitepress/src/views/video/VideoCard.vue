@@ -60,7 +60,6 @@ const handlerVideo = (id: number, index: number) => {
         <OCard
           v-if="Number(index) < videoLen"
           class="video-item shadow"
-          data-aos="fade-up"
           shadow="hover"
         >
           <div
@@ -122,25 +121,25 @@ const handlerVideo = (id: number, index: number) => {
   :deep(.el-card__body) {
     padding: 0;
   }
-  &-link {
+  .video-item-link {
     display: flex;
     flex-direction: column;
     height: 100%;
     cursor: pointer;
     .cover {
       height: 136px;
-      display: flex;
       align-items: center;
       padding: var(--o-spacing-h5);
+      display: flex;
       .title {
         font-size: var(--o-font-size-h8);
         line-height: var(--o-line-height-h8);
         color: #fff;
-        text-overflow: ellipsis;
         display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
-        overflow: hidden;
       }
     }
 

@@ -1,5 +1,6 @@
 import { request } from '@/shared/axios';
 import type { AxiosResponse } from '@/shared/axios';
+import { handleError } from '@/shared/utils';
 
 /**
  * 获取用户案例
@@ -12,6 +13,6 @@ export function getUserCaseData(params: object) {
     .post(url, params)
     .then((res: AxiosResponse) => res.data)
     .catch((e: any) => {
-      throw new Error(e);
+      handleError('Error!')
     });
 }

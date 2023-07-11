@@ -11,7 +11,7 @@ head:
 category: migration
 ---
 
-<script setup lang="ts">
+<script setup>
   import TheMigrationCase from "@/views/migration/TheMigrationCase.vue"
 </script>
 

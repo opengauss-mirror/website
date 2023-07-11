@@ -4,8 +4,7 @@ keywords: ['漏洞响应', '漏洞处理', '漏洞上报', '严重性评估', '�
 category: 'security'
 ---
 
-<script setup lang="ts">
-    import SecurityImg from "@/views/security/component/SecurityImg.vue"
+<script setup>
     import { computed } from 'vue';
     import { useCommon } from '@/stores/common';
 

@@ -118,6 +118,13 @@ const bannerVideoSrc =
                 <p class="title" :class="{ experts: index === 1 }">
                   {{ item.title }}
                 </p>
+                <p
+                  v-if="item.subtitle"
+                  class="subtitle"
+                  :class="{ experts: index === 1 }"
+                >
+                  {{ item.subtitle }}
+                </p>
                 <p class="desc" :class="{ experts: index === 1 }">
                   <span
                     v-for="item2 in item.desc"
@@ -139,7 +146,6 @@ const bannerVideoSrc =
                   ></template>
                 </OButton>
               </div>
-
               <div v-if="item.video !== ''" id="video-player">
                 <img
                   class="video-player-btn"
@@ -149,6 +155,9 @@ const bannerVideoSrc =
                 />
               </div>
             </div>
+            <!-- <div class="hiss-content" v-if="item.className === 'hiss-banner'">
+              <img :src="item.textImg" alt="" />
+            </div> -->
           </div>
         </div>
       </swiper-slide>
@@ -353,8 +362,8 @@ html[lang='zh'] {
         padding: 0 16px;
       }
       @media screen and (max-width: 824px) {
-        padding: 60px 16px 50px;
-        justify-content: space-between;
+        padding: 40px 16px;
+        align-items: center;
         box-sizing: border-box;
         text-align: center;
       }
@@ -438,26 +447,63 @@ html[lang='zh'] {
       }
     }
   }
-  .summit {
-    .banner-panel-content {
-      justify-content: center;
-      .box {
-        margin-top: 230px;
-        @media screen and (max-width: 824px) {
-          margin-top: 160px;
+  .devday-banner {
+    .box {
+      color: #000;
+      .title {
+        font-size: var(--o-font-size-h2);
+        font-weight: 600;
+        line-height: var(--o-line-height-h2);
+        @media (max-width: 767px) {
+          font-size: 32px;
+          line-height: 32px;
         }
-        .title {
-          font-size: var(--o-font-size-h3);
-          line-height: var(--o-line-height-h3);
+      }
+      .subtitle {
+        margin-top: var(--o-spacing-h8);
+        font-size: 30px;
+        line-height: 40px;
+        font-weight: normal;
+        @media (max-width: 767px) {
+          margin-top: 8px;
+          font-size: var(--o-font-size-h7);
+          line-height: var(--o-line-height-h7);
+        }
+      }
+      .desc {
+        margin-top: 16px;
+        @media screen and (max-width: 824px) {
+          margin-top: 8px;
+        }
+        .inline-desc {
+          display: block;
+          font-size: var(--o-font-size-h5);
+          line-height: 40px;
           @media screen and (max-width: 824px) {
-            font-size: var(--o-font-size-h5);
-            line-height: var(--o-line-height-h5);
+            font-size: var(--o-font-size-text);
+            line-height: 24px;
+          }
+          & ~ .inline-desc {
+            padding-left: 0;
+            &::before {
+              display: inline;
+              content: '地点：';
+              @media screen and (max-width: 824px) {
+                display: none;
+              }
+            }
           }
         }
-        .desc {
-          max-width: 100%;
-          text-align: center;
-        }
+      }
+    }
+    .action {
+      margin-top: var(--o-spacing-h5);
+      @media screen and (max-width: 824px) {
+        margin-top: var(--o-spacing-h5);
+      }
+      .home-banner-btn {
+        color: #000 !important;
+        border: 1px solid #000 !important;
       }
     }
   }

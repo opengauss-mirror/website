@@ -1,130 +1,202 @@
 export default {
-  BRAND_LIST: {
-    VERTICAL_LEFT_IMAGE: [
+  brandList: [
+    {
+      id: 0,
+      backgroundColor:'white',
+      url: '/category/brand/view/logo1-view.png',
+      downloadContent: [
+        {
+          type: 'JPG',
+          url: '/category/brand/view/logo1.jpg',
+        },
+        {
+          type: 'PNG',
+          url: '/category/brand/view/logo1.png',
+        },
+        {
+          type: 'SVG',
+          url: '/category/brand/view/logo1.svg',
+        },
+      ],
+    },
+    {
+      id: 1,
+      backgroundColor:'white',
+      url: '/category/brand/view/logo2-view.png',
+      downloadContent: [
+        {
+          type: 'JPG',
+          url: '/category/brand/view/logo2.jpg',
+        },
+        {
+          type: 'PNG',
+          url: '/category/brand/view/logo2.png',
+        },
+        {
+          type: 'SVG',
+          url: '/category/brand/view/logo2.svg',
+        },
+      ],
+    },
+    {
+      id: 2,
+      backgroundColor:'white',
+      url: '/category/brand/view/logo3-view.png',
+      downloadContent: [
+        {
+          type: 'JPG',
+          url: '/category/brand/view/logo3.jpg',
+        },
+        {
+          type: 'PNG',
+          url: '/category/brand/view/logo3.png',
+        },
+        {
+          type: 'SVG',
+          url: '/category/brand/view/logo3.svg',
+        },
+      ],
+    },
+    {
+      id: 3,
+      backgroundColor:'black',
+      url: '/category/brand/view/logo4-view.png',
+      downloadContent: [
+        {
+          type: 'JPG',
+          url: '/category/brand/view/logo4.jpg',
+        },
+        {
+          type: 'PNG',
+          url: '/category/brand/view/logo4.png',
+        },
+        {
+          type: 'SVG',
+          url: '/category/brand/view/logo4.svg',
+        },
+      ],
+    },
+    {
+      id: 4,
+      backgroundColor:'white',
+      url: '/category/brand/view/logo5-view.png',
+      downloadContent: [
+        {
+          type: 'JPG',
+          url: '/category/brand/view/logo5.jpg',
+        },
+        {
+          type: 'PNG',
+          url: '/category/brand/view/logo5.png',
+        },
+        {
+          type: 'SVG',
+          url: '/category/brand/view/logo5.svg',
+        },
+      ],
+    },
+    {
+      id: 5,
+      backgroundColor:'white',
+      url: '/category/brand/view/logo6-view.png',
+      downloadContent: [
+        {
+          type: 'JPG',
+          url: '/category/brand/view/logo6.jpg',
+        },
+        {
+          type: 'PNG',
+          url: '/category/brand/view/logo6.png',
+        },
+        {
+          type: 'SVG',
+          url: '/category/brand/view/logo6.svg',
+        },
+      ],
+    },
+    {
+      id: 6,
+      backgroundColor:'white',
+      url: '/category/brand/view/logo7-view.png',
+      downloadContent: [
+        {
+          type: 'JPG',
+          url: '/category/brand/view/logo7.jpg',
+        },
+        {
+          type: 'PNG',
+          url: '/category/brand/view/logo7.png',
+        },
+        {
+          type: 'SVG',
+          url: '/category/brand/view/logo7.svg',
+        },
+      ],
+    },
+    {
+      id: 7,
+      backgroundColor:'black',
+      url: '/category/brand/view/logo8-view.png',
+      downloadContent: [
+        {
+          type: 'JPG',
+          url: '/category/brand/view/logo8.jpg',
+        },
+        {
+          type: 'PNG',
+          url: '/category/brand/view/logo8.png',
+        },
+        {
+          type: 'SVG',
+          url: '/category/brand/view/logo8.svg',
+        },
+      ],
+    },
+  ],
+  pptList: {
+    zh: [
       {
-        STYLE: 'JPG',
-        URL: '/category/brand/view/logo1.jpg',
+        URL: '/category/brand/download/2023/PPT_Dark_cn.png',
+        FILE: '/category/brand/download/2023/PPT_Dark_cn.pptx',
+        TEXT: '深色背景-2023',
       },
       {
-        STYLE: 'PNG',
-        URL: '/category/brand/view/logo1.png',
+        URL: '/category/brand/download/2023/PPT_Light_cn.png',
+        FILE: '/category/brand/download/2023/PPT_Light_cn.pptx',
+        TEXT: '浅色背景-2023',
       },
       {
-        STYLE: 'SVG',
-        URL: '/category/brand/view/logo1.svg',
+        URL: '/category/brand/download/2022/openGauss_PPT_Dark_cn.png',
+        FILE: '/category/brand/download/2022/openGauss_PPT_Dark_cn.pptx',
+        TEXT: '深色背景-2022',
+      },
+      {
+        URL: '/category/brand/download/2022/openGauss_PPT_Light_cn.png',
+        FILE: '/category/brand/download/2022/openGauss_PPT_Light_cn.pptx',
+        TEXT: '浅色背景-2022',
       },
     ],
-    VERTICAL_CENTER_IMAGE: [
+    en: [
       {
-        STYLE: 'JPG',
-        URL: '/category/brand/view/logo2.jpg',
+        URL: '/category/brand/download/2023/PPT_Dark_en.png',
+        FILE: '/category/brand/download/2023/PPT_Dark_en.pptx',
+        TEXT: 'Dark Theme-2023',
       },
       {
-        STYLE: 'PNG',
-        URL: '/category/brand/view/logo2.png',
+        URL: '/category/brand/download/2023/PPT_Light_en.png',
+        FILE: '/category/brand/download/2023/PPT_Light_en.pptx',
+        TEXT: 'Light Theme-2023',
       },
       {
-        STYLE: 'SVG',
-        URL: '/category/brand/view/logo2.svg',
-      },
-    ],
-    VERTICAL_RIGHT_IMAGE: [
-      {
-        STYLE: 'JPG',
-        URL: '/category/brand/view/logo3.jpg',
+        URL: '/category/brand/download/2022/openGauss_PPT_Dark_en.png',
+        FILE: '/category/brand/download/2022/openGauss_PPT_Dark_en.pptx',
+        TEXT: 'Dark Theme-2022',
       },
       {
-        STYLE: 'PNG',
-        URL: '/category/brand/view/logo3.png',
-      },
-      {
-        STYLE: 'SVG',
-        URL: '/category/brand/view/logo3.svg',
-      },
-    ],
-    HORIZONTAL_LEFT_IMAGE: [
-      {
-        STYLE: 'JPG',
-        URL: '/category/brand/view/logo4.jpg',
-      },
-      {
-        STYLE: 'PNG',
-        URL: '/category/brand/view/logo4.png',
-      },
-      {
-        STYLE: 'SVG',
-        URL: '/category/brand/view/logo4.svg',
-      },
-    ],
-    HORIZONTAL_CENTER_IMAGE: [
-      {
-        STYLE: 'JPG',
-        URL: '/category/brand/view/logo5.jpg',
-      },
-      {
-        STYLE: 'PNG',
-        URL: '/category/brand/view/logo5.png',
-      },
-      {
-        STYLE: 'SVG',
-        URL: '/category/brand/view/logo5.svg',
-      },
-    ],
-    HORIZONTAL_RIGHT_IMAGE: [
-      {
-        STYLE: 'JPG',
-        URL: '/category/brand/view/logo6.jpg',
-      },
-      {
-        STYLE: 'PNG',
-        URL: '/category/brand/view/logo6.png',
-      },
-      {
-        STYLE: 'SVG',
-        URL: '/category/brand/view/logo6.svg',
-      },
-    ],
-    BOTTOM_LEFT_IMAGE: [
-      {
-        STYLE: 'JPG',
-        URL: '/category/brand/view/logo7.jpg',
-      },
-      {
-        STYLE: 'PNG',
-        URL: '/category/brand/view/logo7.png',
-      },
-      {
-        STYLE: 'SVG',
-        URL: '/category/brand/view/logo7.svg',
-      },
-    ],
-    BOTTOM_CENTER_IMAGE: [
-      {
-        STYLE: 'JPG',
-        URL: '/category/brand/view/logo8.jpg',
-      },
-      {
-        STYLE: 'PNG',
-        URL: '/category/brand/view/logo8.png',
-      },
-      {
-        STYLE: 'SVG',
-        URL: '/category/brand/view/logo8.svg',
+        URL: '/category/brand/download/2022/openGauss_PPT_Light_en.png',
+        FILE: '/category/brand/download/2022/openGauss_PPT_Light_en.pptx',
+        TEXT: 'Light Theme-2022',
       },
     ],
   },
-  PPT_LIST: [
-    {
-      URL: '/category/brand/download/PPT_Dark_cn.png',
-      FILE: '/category/brand/download/PPT_Dark_cn.pptx',
-      TEXT: '深色背景',
-      TEXT_EN: 'Dark Theme',
-    },
-    {
-      URL: '/category/brand/download/PPT_Light_cn.png',
-      FILE: '/category/brand/download/PPT_Light_cn.pptx',
-      TEXT: '浅色背景',
-      TEXT_EN: 'Light Theme',
-    },
-  ],
 };

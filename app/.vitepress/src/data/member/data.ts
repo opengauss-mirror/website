@@ -21,7 +21,7 @@ import yangziqi from '@/assets/category/member/avatar/yangziqi.png';
 
 import gengqiang from '@/assets/category/member/avatar/gengqiang.png';
 import luna from '@/assets/category/member/avatar/luna.png';
-import lupanfeng from '@/assets/category/member/avatar/lupanfeng.png';
+// import lupanfeng from '@/assets/category/member/avatar/lupanfeng.png';
 import sunpeiyuan from '@/assets/category/member/avatar/sunpeiyuan.png';
 // import wangjuanyj from '@/assets/category/member/avatar/wangjuanyj.png';
 import wangxiaotao from '@/assets/category/member/avatar/wangxiaotao.png';
@@ -109,6 +109,7 @@ import xiangxinyong from '@/assets/category/member/avatar/xiangxinyong.png';
 import zhangxubo from '@/assets/category/member/avatar/zhangxubo.png';
 import zhengyuhang from '@/assets/category/member/avatar/zhengyuhang.png';
 import ailong from '@/assets/category/member/avatar/ailong.png';
+import gongzhuangbang from '@/assets/category/member/avatar/gongzhuangbang.png';
 import lijianfeng from '@/assets/category/member/avatar/lijianfeng.png';
 import guoliang from '@/assets/category/member/avatar/guoliang.png';
 import liuzheli from '@/assets/category/member/avatar/liuzheli.png';
@@ -408,7 +409,6 @@ import huangxu from '@/assets/category/member/avatar/huangxu.png';
 import jiangyu from '@/assets/category/member/avatar/jiangyu.png';
 import libo from '@/assets/category/member/avatar/libo.png';
 import lihongwei from '@/assets/category/member/avatar/lihongwei.png';
-import liuchenguang from '@/assets/category/member/avatar/liuchenguang.png';
 import luoming from '@/assets/category/member/avatar/luoming.png';
 import tiankefeng from '@/assets/category/member/avatar/tiankefeng.png';
 import xukewei from '@/assets/category/member/avatar/xukewei.png';
@@ -420,7 +420,6 @@ import zhaotinyang from '@/assets/category/member/avatar/zhaotinyang.png';
 import cuikaifeng from '@/assets/category/member/avatar/cuikaifeng.png';
 import huangxianru from '@/assets/category/member/avatar/huangxianru.png';
 import liuchen from '@/assets/category/member/avatar/liuchen.png';
-import panchunbao from '@/assets/category/member/avatar/panchunbao.png';
 import xubing from '@/assets/category/member/avatar/xubing.png';
 import zhangyi from '@/assets/category/member/avatar/zhangyi.png';
 import zhongchengcheng from '@/assets/category/member/avatar/zhongchengcheng.png';
@@ -430,6 +429,9 @@ import xiongqun from '@/assets/category/member/avatar/xiongqun.png';
 import zhangyuwen from '@/assets/category/member/avatar/zhangyuwen.png';
 import luoruping from '@/assets/category/member/avatar/luoruping.png';
 import lijun2 from '@/assets/category/member/avatar/lijun2.png';
+
+import yuanyuan from '@/assets/category/member/avatar/yuanyuan.png';
+import shengyongpan1 from '@/assets/category/member/avatar/shengyongpan1.png';
 
 export default {
   zh: {
@@ -712,10 +714,10 @@ export default {
         company: '超聚变数字技术有限公司',
       },
       {
-        img: panchunbao,
-        name: '潘春宝',
+        img: wangmingyue2,
+        name: '王铭玥',
         title: '委员',
-        email: 'pancb@vastdata.com.cn',
+        email: 'wangmy@vastdata.com.cn',
         company: '北京海量数据技术股份有限公司',
       },
       {
@@ -1263,6 +1265,13 @@ export default {
         title: 'Committer',
         email: 'zhengyuhang@huawei.com',
         gitee: 'https://gitee.com/zhengyuhanghans',
+      },
+      {
+        img: gongzhuangbang,
+        name: '龚壮邦',
+        title: 'Committer',
+        email: 'gognzhuangbang1@huawei.com',
+        gitee: 'https://gitee.com/gzbang',
       },
       {
         img: ailong,
@@ -2145,11 +2154,11 @@ export default {
         gitee: 'https://gitee.com/dbowner_zhang',
       },
       {
-        img: lupanfeng,
-        name: '鲁攀峰',
+        img: huangxianru,
+        name: '黄贤儒',
         title: 'Committer',
-        email: 'lupanfeng@huawei.com',
-        gitee: 'https://gitee.com/Alvin00372627',
+        email: 'huangxianru@huawei.com',
+        gitee: 'https://gitee.com/huang-xianru',
       },
       {
         img: xuxu,
@@ -2622,6 +2631,13 @@ export default {
         title: 'Committer',
         email: 'xuezhongbin@huawei.com',
         gitee: 'https://gitee.com/zbxue',
+      },
+      {
+        img: shengyongpan1,
+        name: '盛泳潘',
+        title: 'Committer',
+        email: 'shengyp2011@163.com',
+        gitee: 'https://gitee.com/Syongpan',
       },
     ],
     SHENZHEN: [
@@ -3900,11 +3916,11 @@ export default {
     ],
     SHENYANG: [
       {
-        img: liuchenguang,
-        name: '刘辰光',
+        img: yuanyuan,
+        name: '袁园',
         title: 'Organizer',
         company: '辽宁鲲鹏生态创新中心',
-        email: '35910646@qq.com',
+        email: 'yuanyuan89@huawei-partners.com',
       },
       {
         img: dongtao,
@@ -4293,10 +4309,10 @@ export default {
         company: 'xFusion',
       },
       {
-        img: panchunbao,
-        name: 'Chunbao Pan',
+        img: wangmingyue2,
+        name: 'Mingyue Wang',
         title: 'Member',
-        email: 'pancb@vastdata.com.cn',
+        email: 'wangmy@vastdata.com.cn',
         company: 'Vastbase',
       },
       {
@@ -4844,6 +4860,13 @@ export default {
         title: 'Committer',
         email: 'zhengyuhang@huawei.com',
         gitee: 'https://gitee.com/zhengyuhanghans',
+      },
+      {
+        img: gongzhuangbang,
+        name: 'Zhuangbang Gong',
+        title: 'Committer',
+        email: 'gognzhuangbang1@huawei.com',
+        gitee: 'https://gitee.com/gzbang',
       },
       {
         img: ailong,
@@ -5719,11 +5742,11 @@ export default {
         gitee: 'https://gitee.com/dbowner_zhang',
       },
       {
-        img: lupanfeng,
-        name: 'Panfeng Lu',
+        img: huangxianru,
+        name: 'Xianru Huang',
         title: 'Committer',
-        email: 'lupanfeng@huawei.com',
-        gitee: 'https://gitee.com/Alvin00372627',
+        email: 'huangxianru@huawei.com',
+        gitee: 'https://gitee.com/huang-xianru',
       },
       {
         img: xuxu,
@@ -6196,6 +6219,13 @@ export default {
         title: 'Committer',
         email: 'xuezhongbin@huawei.com',
         gitee: 'https://gitee.com/zbxue',
+      },
+      {
+        img: shengyongpan1,
+        name: 'Yongpan Sheng',
+        title: 'Committer',
+        email: 'shengyp2011@163.com',
+        gitee: 'https://gitee.com/Syongpan',
       },
     ],
     SHENZHEN: [
@@ -7474,11 +7504,11 @@ export default {
     ],
     SHENYANG: [
       {
-        img: liuchenguang,
-        name: 'Chengguang Liu',
+        img: yuanyuan,
+        name: 'Yuan Yuan',
         title: 'Organizer',
         company: 'liaoNing Kunpeng Eco-Innovation Center',
-        email: '35910646@qq.com',
+        email: 'yuanyuan89@huawei-partners.com',
       },
       {
         img: dongtao,

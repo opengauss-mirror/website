@@ -1,8 +1,9 @@
 <script lang="ts" setup>
-import { ref, computed } from 'vue';
+import { ref, computed, h } from 'vue';
 import { useI18n } from '@/i18n';
 import { useCommon } from '@/stores/common';
 import { useRouter, useData } from 'vitepress';
+import { ElMessage } from 'element-plus';
 
 import {
   getCertification,
@@ -92,16 +93,22 @@ function getCode(params: string, lang: string) {
           codeSuccess.value = true;
           successTip.value = true;
         } else {
-          successTip.value = false;
           codeSuccess.value = false;
+          successTip.value = false;
           identification.value = '';
         }
       })
-      .catch((error: any) => {
-        successTip.value = false;
+      .catch(() => {
         codeSuccess.value = false;
+        successTip.value = false;
         identification.value = '';
-        throw new Error(error);
+        ElMessage({
+          message: h(
+            'p',
+            { style: 'width: 5vw;display:flex;justify-content: center;' },
+            [h('span', { style: 'color: red;display:flex;' }, 'Error!')]
+          ),
+        });
       });
   } else {
     resultTip.value = i18n.value.authentication.certificattion.emailErrorTip;
@@ -139,13 +146,19 @@ function onConfirmationClick(identification: string, codeInput: string) {
           successTip.value = false;
         }
       })
-      .catch((error: any) => {
+      .catch(() => {
         resultTip.value =
           lang.value === 'zh'
             ? '您输入的验证码有误！'
             : 'The verification code is incorrect.';
         successTip.value = false;
-        throw new Error(error);
+        ElMessage({
+          message: h(
+            'p',
+            { style: 'width: 5vw;display:flex;justify-content: center;' },
+            [h('span', { style: 'color: red;display:flex;' }, 'Error!')]
+          ),
+        });
       });
   } else {
     successTip.value = false;
@@ -171,6 +184,11 @@ function downloadCertification(paString: string) {
     .then((res) => {
       if (res.success) {
         disabledTip.value = '';
+        function blobToFile(theBlob: any, fileName: any) {
+          theBlob.lastModifiedDate = new Date();
+          theBlob.name = fileName;
+          return theBlob;
+        }
         function dataURLtoBlob(dataurl: any) {
           const arr = dataurl.split(','),
             mime = arr[0].match(/:(.*?);/)[1],
@@ -181,11 +199,6 @@ function downloadCertification(paString: string) {
             u8arr[n] = bstr.charCodeAt(n);
           }
           return new Blob([u8arr], { type: mime });
-        }
-        function blobToFile(theBlob: any, fileName: any) {
-          theBlob.lastModifiedDate = new Date();
-          theBlob.name = fileName;
-          return theBlob;
         }
         const str = 'data:application/pdf;base64,' + res.data.data;
         const blob = dataURLtoBlob(str);
@@ -201,8 +214,14 @@ function downloadCertification(paString: string) {
         disabledTip.value = res.message;
       }
     })
-    .catch((error: any) => {
-      throw new Error(error);
+    .catch(() => {
+      ElMessage({
+        message: h(
+          'p',
+          { style: 'width: 5vw;display:flex;justify-content: center;' },
+          [h('span', { style: 'color: red;display:flex;' }, 'Error!')]
+        ),
+      });
     });
 }
 // 点击下载按钮
@@ -424,13 +443,12 @@ function clickDownload() {
           align-items: center;
           width: 136px;
           height: 38px;
-          @media screen and (max-width: 840px) {
-            height: 24px;
-          }
           @media screen and (max-width: 468px) {
             width: 90px;
           }
-
+          @media screen and (max-width: 840px) {
+            height: 24px;
+          }
           .o-icon {
             font-size: var(--o-font-size-h5);
           }
@@ -765,22 +783,22 @@ function clickDownload() {
     color: var(--o-color-text1);
     padding: var(--o-spacing-h2) 0;
     min-height: calc(100vh - 339px);
-    .nofound-text {
-      margin-top: var(--o-spacing-h5);
-      font-size: var(--o-font-size-h7);
-    }
-    .nofound-img {
-      height: 300px;
-    }
     @media screen and (max-width: 840px) {
       padding-top: var(--o-spacing-h2);
       font-size: var(--o-font-size-text);
-      .nofound-img {
-        max-height: 232px;
-      }
-      .nofound-text {
+    }
+    .nofound-text {
+      margin-top: var(--o-spacing-h5);
+      font-size: var(--o-font-size-h7);
+      @media screen and (max-width: 840px) {
         margin-top: var(--o-spacing-h6);
         font-size: var(--o-font-size-tip);
+      }
+    }
+    .nofound-img {
+      height: 300px;
+      @media screen and (max-width: 840px) {
+        max-height: 232px;
       }
     }
   }

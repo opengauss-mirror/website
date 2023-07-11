@@ -83,11 +83,11 @@ export default {
     LIST: [
       {
         NAME: 'openGauss是什么 ',
-        PATH: '/docs/3.1.1/docs/BriefTutorial/%E4%BB%80%E4%B9%88%E6%98%AFopenGauss.html',
+        PATH: '/docs/5.0.0/docs/GettingStarted/%E4%BA%86%E8%A7%A3openGauss.html',
       },
       {
         NAME: '如何安装部署openGauss ',
-        PATH: '/docs/3.1.1/docs/BriefTutorial/%E5%AE%89%E8%A3%85%E4%B8%8E%E7%99%BB%E5%BD%95.html',
+        PATH: '/docs/5.0.0/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html',
       },
       {
         NAME: '如何参与openGauss社区贡献',
@@ -133,6 +133,7 @@ export default {
     BACK_LOGIN: '返回重新预定会议',
     PRIVACY: '隐私政策',
     RESERVE_MEETING: '预订会议',
+    LOGOUT:'退出登录',
     PERMISSION: '权限提示',
     PERMISSION_TEXT: '很抱歉！您暂时没有预定会议的权限',
     PERMISSION_TEXT1: '很抱歉！您暂时没有编辑会议的权限',

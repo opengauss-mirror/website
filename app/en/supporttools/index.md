@@ -1,8 +1,8 @@
 ---
-title: '支持工具'
+title: 'Support Tools'
 ---
 
-<script setup lang="ts">
+<script setup>
   import TheSupportTools from "@/views/supporttools/TheSupportTools.vue"
 </script>
 

@@ -131,15 +131,14 @@ watch(
       color: var(--o-color-text1);
       border-bottom: 1px solid var(--o-color-division1);
       padding: 0 var(--o-spacing-h5);
-      &:last-child {
+      .lang-item:last-child {
         border-bottom: 0 none;
       }
-
-      &:hover {
+      .lang-item:hover {
         background: var(--o-color-brand1);
         color: var(--o-color-text2);
       }
-      &.active {
+      .lang-item.active {
         color: var(--o-color-brand1);
         background: none;
         cursor: default;
@@ -158,20 +157,20 @@ watch(
     color: var(--o-color-text4);
     margin-right: 12px;
     cursor: pointer;
-    &.active {
+    @media screen and (max-width: 1100px) {
+      display: flex;
+    }
+    span.active {
       color: var(--o-color-brand1);
       font-weight: 600;
     }
-    &:not(:last-child) {
+    span:not(:last-child) {
       &:after {
         content: '|';
         margin-left: 12px;
         color: var(--o-color-text4);
       }
     }
-  }
-  @media screen and (max-width: 1100px) {
-    display: flex;
   }
 }
 </style>

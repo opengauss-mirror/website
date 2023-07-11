@@ -2,7 +2,7 @@
 title: 'Contribution'
 ---
 
-<script lang="ts" setup>
+<script setup>
 import ContributionMap from "@/views/contribution/ContributionMap.vue";
 import ContributionTab from "@/views/contribution/ContributionTab.vue";
 import BannerLevel2 from '@/components/BannerLevel2.vue'

@@ -1,8 +1,8 @@
 ---
-title: '活动'
+title: 'Events'
 ---
 
-<script setup lang="ts">
+<script setup>
   import TheEvents from "@/views/events/TheEvents.vue"
 </script>
 

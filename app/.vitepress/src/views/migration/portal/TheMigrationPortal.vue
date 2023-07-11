@@ -7,14 +7,10 @@ import MigrationCompatibility from './MigrationCompatibility.vue';
 import MigrationHelp from './MigrationHelp.vue';
 </script>
 <template>
-  <div>
-    <MigrationAdvantage />
-    <MigrationGuide />
-    <MigrationCompatibility />
-    <MigrationCase />
-    <MigrationDownload />
-    <MigrationHelp />
-  </div>
+  <MigrationAdvantage />
+  <MigrationDownload />
+  <MigrationGuide />
+  <!-- <MigrationCompatibility /> -->
+  <!-- <MigrationCase /> -->
+  <MigrationHelp />
 </template>
-
-<style lang="scss" scoped></style>

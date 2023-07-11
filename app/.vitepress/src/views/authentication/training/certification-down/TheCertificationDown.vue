@@ -1,9 +1,10 @@
 <script lang="ts" setup>
-import { ref, computed, onMounted } from 'vue';
+import { ref, computed, onMounted, h } from 'vue';
 import { useData } from 'vitepress';
 import { useCommon } from '@/stores/common';
 import { useI18n } from '@/i18n';
 import { downloadCard } from '@/api/api-authentication';
+import { ElMessage } from 'element-plus';
 
 import AppContent from '@/components/AppContent.vue';
 
@@ -54,8 +55,14 @@ function downloadCertification(paString: string) {
         disabledTip.value = res.message;
       }
     })
-    .catch((error: any) => {
-      throw new Error(error);
+    .catch(() => {
+      ElMessage({
+        message: h(
+          'p',
+          { style: 'width: 5vw;display:flex;justify-content: center;' },
+          [h('span', { style: 'color: red;display:flex;' }, 'Error!')]
+        ),
+      });
     });
 }
 // 获取url里面携带的PA参数
@@ -96,30 +103,30 @@ h2 {
   }
 }
 .nofound {
+  min-height: calc(100vh - 339px);
+  padding: var(--o-spacing-h2) 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   font-size: var(--o-font-size-h6);
   color: var(--o-color-text1);
-  padding: var(--o-spacing-h2) 0;
-  min-height: calc(100vh - 339px);
-  .nofound-text {
-    margin-top: var(--o-spacing-h5);
-    font-size: var(--o-font-size-h7);
-  }
-  .nofound-img {
-    height: 300px;
-  }
   @media screen and (max-width: 768px) {
     padding-top: var(--o-spacing-h2);
     font-size: var(--o-font-size-text);
-    .nofound-img {
-      max-height: 232px;
-    }
-    .nofound-text {
+  }
+  .nofound-text {
+    margin-top: var(--o-spacing-h5);
+    font-size: var(--o-font-size-h7);
+    @media screen and (max-width: 768px) {
       margin-top: var(--o-spacing-h6);
       font-size: var(--o-font-size-tip);
+    }
+  }
+  .nofound-img {
+    height: 300px;
+    @media screen and (max-width: 768px) {
+      max-height: 232px;
     }
   }
 }

@@ -64,12 +64,6 @@ export default {
           IS_OPEN_WINDOW: 1,
         },
         {
-          NAME: '慕课',
-          ID: 'mooc',
-          PATH: 'https://moocstudio.opengauss.org',
-          IS_OPEN_MINISITE_WINDOW: 1,
-        },
-        {
           NAME: '知识图谱',
           ID: 'knowledge',
           PATH: '/knowledge/',
@@ -107,15 +101,15 @@ export default {
           PATH: '/userPractice/',
         },
         {
+          NAME: '迁移中心',
+          ID: 'migration',
+          PATH: '/migration/',
+        },
+        {
           NAME: '贡献看板',
           ID: 'statistics',
           PATH: 'https://datastat.opengauss.org/zh/overview',
           IS_OPEN_MINISITE_WINDOW: 1,
-        },
-        {
-          NAME: '迁移中心',
-          ID: 'migration',
-          PATH: '/migration/',
         },
       ],
       CLASS: [
@@ -153,7 +147,7 @@ export default {
         {
           NAME: '峰会',
           ID: 'summit',
-          PATH: '/summit/summit2022/',
+          PATH: '/summit/devday2023/',
           // IS_OPEN_MINISITE_WINDOW: 1,
         },
       ],
@@ -174,12 +168,17 @@ export default {
           PATH: '/compatibility/',
         },
         {
+          NAME: '服务商认证',
+          ID: 'ogsp',
+          PATH: '/ogsp/',
+        },
+        {
           NAME: '培训认证',
           ID: 'training',
           PATH: '/training/',
         },
       ],
-      CLASS: ['certification', 'training'],
+      CLASS: ['certification', 'training', 'ogsp'],
     },
     {
       NAME: '安全',

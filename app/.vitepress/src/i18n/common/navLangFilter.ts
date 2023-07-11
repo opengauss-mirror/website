@@ -58,6 +58,10 @@ export default [
     lang: ['zh', 'en'],
   },
   {
+    name: 'ogsp',
+    lang: ['zh', 'en'],
+  },
+  {
     name: 'training',
     lang: ['zh'],
   },
