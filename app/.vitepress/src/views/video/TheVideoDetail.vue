@@ -191,16 +191,14 @@ watch(
     ul {
       overflow: hidden auto;
       height: 100%;
-      &::-webkit-scrollbar-track {
-        border-radius: 4px;
-        background-color: var(--o-color-bg2);
-      }
-
       &::-webkit-scrollbar {
-        width: 6px;
         background-color: var(--o-color-bg2);
+        width: 6px;
       }
-
+      &::-webkit-scrollbar-track {
+        background-color: var(--o-color-bg2);
+        border-radius: 4px;
+      }
       &::-webkit-scrollbar-thumb {
         border-radius: 4px;
         background: var(--o-color-division1);

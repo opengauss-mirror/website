@@ -1,20 +1,18 @@
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue';
+import { ref, computed } from 'vue';
 import { useCommon } from '@/stores/common';
-import { getUrlParams } from '@/shared/utils';
+
 import AppContent from '@/components/AppContent.vue';
 import SummitSchedule from './components/SummitSchedule.vue';
-import AOS from 'aos';
-import SUMMITDATA from '@/data/summit/summit2022';
 import LinkPanel from '@/components/LinkPanel.vue';
-import SummitLive from './components/SummitLive.vue';
 
-import banner from '@/assets/category/summit/summit2022/banner.jpg';
-import bannerMo from '@/assets/category/summit/summit2022/banner-mo.jpg';
-import liveLight from '@/assets/category/summit/summit2022/live.png';
-import liveDark from '@/assets/category/summit/summit2022/live-dark.png';
+import summitData from './data';
 
-import otherBg from '@/assets/category/summit/summit2022/cover.png';
+import banner from './img/banner.jpg';
+import bannerMo from './img/banner-mo.jpg';
+import liveLight from './img/live.png';
+import liveDark from './img/live-dark.png';
+import otherBg from './img/cover.png';
 
 import IconArrowRight from '~icons/app/icon-arrow-right.svg';
 
@@ -29,33 +27,6 @@ const bannerInfo = {
 
 const tabType = ref(['main', 'main', 'main']);
 const otherTabType = ref([0, 0, 0]);
-
-// 埋点
-function setDownData() {
-  const sensors = (window as any)['sensorsDataAnalytic201505'];
-  const { href } = window.location;
-  if (href.includes('?utm_source')) {
-    const paramsArr = getUrlParams(href);
-    sensors?.setProfile({
-      ...window['sensorsCustomBuriedData'],
-      profileType: 'fromAdvertised',
-      origin: href,
-      ...paramsArr,
-    });
-  }
-}
-
-onMounted(() => {
-  AOS.init({
-    offset: 50,
-    duration: 800,
-    delay: 100,
-    once: true,
-  });
-  setTimeout(() => {
-    setDownData();
-  }, 300);
-});
 
 // video 事件
 const videoDialog = ref(false);
@@ -75,7 +46,7 @@ const videoClickBtn = (path: string) => {
       <video
         muted
         playsinline="true"
-        autoplay="autoplay"
+        autoplay="true"
         height="380"
         loop
         webkit-playsinline="true"
@@ -97,33 +68,22 @@ const videoClickBtn = (path: string) => {
 
   <AppContent>
     <div class="summit-detail">
-      <p>{{ SUMMITDATA.detail[0] }}</p>
-      <p>{{ SUMMITDATA.detail[1] }}</p>
-    </div>
-    <div class="liver">
-      <h3 class="title-bar">{{ SUMMITDATA.liver.title }}</h3>
-      <ClientOnly>
-        <SummitLive
-          :live-data="SUMMITDATA.liver.liveData"
-          class-name="odd2022"
-          class="summit2022-box"
-        />
-      </ClientOnly>
+      <p>{{ summitData.detail[0] }}</p>
+      <p>{{ summitData.detail[1] }}</p>
     </div>
     <div class="agenda">
-      <h3>{{ SUMMITDATA.agenda.title }}</h3>
+      <h3>{{ summitData.agenda.title }}</h3>
       <div
-        v-for="(item, index) in SUMMITDATA.agenda.meetingList"
+        v-for="(item, index) in summitData.agenda.meetingList"
         :key="item.daytime"
         class="agenda-item"
-        data-aos="fade-up"
       >
         <h4 class="meeting-title">
           {{ item.daytime }}
         </h4>
         <OTabs v-model="tabType[index]" class="schedule-tabs">
           <el-tab-pane
-            v-for="itemList in SUMMITDATA.agenda.meetingList[0].list"
+            v-for="itemList in summitData.agenda.meetingList[0].list"
             :key="itemList.id"
             :name="itemList.id"
           >
@@ -140,7 +100,7 @@ const videoClickBtn = (path: string) => {
             :class="{ isShow: tabType[index] === 'main' }"
           >
             <SummitSchedule
-              :options="SUMMITDATA.agenda.meetingList[index].list[0].children"
+              :options="summitData.agenda.meetingList[index].list[0].children"
             />
           </div>
           <div
@@ -149,7 +109,7 @@ const videoClickBtn = (path: string) => {
           >
             <OTabs v-model="otherTabType[index]" class="other-tabs">
               <OTabPane
-                v-for="itemList in SUMMITDATA.agenda.meetingList[index].list[1]
+                v-for="itemList in summitData.agenda.meetingList[index].list[1]
                   .children"
                 :key="itemList.id"
                 :label="itemList.name"
@@ -166,7 +126,7 @@ const videoClickBtn = (path: string) => {
     <h3 class="title-bar">线上展厅</h3>
     <div class="exhibition-online">
       <span
-        v-for="item in SUMMITDATA.videolist"
+        v-for="item in summitData.videolist"
         :key="item.name"
         :title="item.name"
         class="video-item"
@@ -192,33 +152,33 @@ const videoClickBtn = (path: string) => {
       </div>
     </div>
     <div class="summit-partners">
-      <h3 class="title-bar">{{ SUMMITDATA.partnersList.title[0] }}</h3>
+      <h3 class="title-bar">{{ summitData.partnersList.title[0] }}</h3>
       <h4 class="meeting-title">
-        {{ SUMMITDATA.partnersList.title[1] }}
+        {{ summitData.partnersList.title[1] }}
       </h4>
       <LinkPanel
-        :link-list="SUMMITDATA.partnersList.p1"
+        :link-list="summitData.partnersList.p1"
         :islink="false"
         :row="3"
         class="there"
       />
       <h4 class="meeting-title">
-        {{ SUMMITDATA.partnersList.title[2] }}
+        {{ summitData.partnersList.title[2] }}
       </h4>
       <LinkPanel
-        :link-list="SUMMITDATA.partnersList.p2"
+        :link-list="summitData.partnersList.p2"
         :islink="false"
         class="one"
       />
       <h4 class="meeting-title">
-        {{ SUMMITDATA.partnersList.title[3] }}
+        {{ summitData.partnersList.title[3] }}
       </h4>
-      <LinkPanel :link-list="SUMMITDATA.partnersList.p3" :islink="false" />
+      <LinkPanel :link-list="summitData.partnersList.p3" :islink="false" />
     </div>
 
     <div class="other-content">
       <div
-        v-for="item in SUMMITDATA.other"
+        v-for="item in summitData.other"
         :key="item.path"
         class="other-content-item"
         :style="`background-image:url(${otherBg}) ;`"
@@ -227,7 +187,7 @@ const videoClickBtn = (path: string) => {
           <img :src="item.cover" :alt="item.name" />
         </div>
         <p class="name">{{ item.name }}</p>
-        <a :href="item.path" target="_blank">
+        <a :href="item.path" target="_blank" rel="noopener noreferrer">
           <OButton
             animation
             class="home-banner-btnimport LinkPanel from '@/components/LinkPanel.vue';"
@@ -244,12 +204,17 @@ const videoClickBtn = (path: string) => {
 
     <div class="previous">
       <div class="previous-title">
-        <h3>{{ SUMMITDATA.previous.title }}</h3>
+        <h3>{{ summitData.previous.title }}</h3>
         <img :src="liveImg" alt="live" />
       </div>
       <div class="link-box">
-        <p v-for="item in SUMMITDATA.previous.list" :key="item.link">
-          <a :href="item.link" :target="item.target">{{ item.name }}</a>
+        <p v-for="item in summitData.previous.list" :key="item.link">
+          <a
+            :href="item.link"
+            :target="item.target"
+            :rel="item.target === '_blank' ? 'noopener noreferrer' : ''"
+            >{{ item.name }}</a
+          >
         </p>
       </div>
     </div>
@@ -462,7 +427,7 @@ const videoClickBtn = (path: string) => {
     }
   }
 }
-.liver {
+.live {
   margin-top: var(--o-spacing-h1);
   @media (max-width: 767px) {
     margin-top: var(--o-spacing-h2);
@@ -802,7 +767,7 @@ const videoClickBtn = (path: string) => {
   height: 844px;
   position: relative;
   margin: 0 auto;
-  background: url(@/assets/category/summit/summit2022/exhibition.png) no-repeat;
+  background: url(./img/exhibition.png) no-repeat;
   background-size: 100% 100%;
   @media screen and (max-width: 1460px) {
     width: 1100px;

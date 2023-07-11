@@ -7,6 +7,7 @@ import type { Component } from 'vue';
 import { computed, watch, ref, onMounted } from 'vue';
 import { useCommon } from '@/stores/common';
 import { refreshInfo } from './shared/login';
+import { setCustomCookie, getCustomCookie } from './shared/utils';
 import zhCn from 'element-plus/lib/locale/lang/zh-cn';
 import en from 'element-plus/lib/locale/lang/en';
 
@@ -57,11 +58,11 @@ const isTipShow = ref(false);
 const isCookieTip = ref(false);
 function handleCookieClick() {
   isCookieTip.value = false;
-  localStorage.setItem('gauss-cookie', 'false');
+  setCustomCookie('agreed-cookiepolicy', 'true', 180);
 }
+
 onMounted(() => {
-  const show = localStorage.getItem('gauss-cookie');
-  isCookieTip.value = show ? false : true;
+  isCookieTip.value = getCustomCookie('agreed-cookiepolicy') ? false : true;
   refreshInfo();
 });
 
@@ -88,7 +89,11 @@ watch(
       <component :is="comp" v-if="isCustomLayout"></component>
       <Content v-else />
       <div v-if="isTipShow" class="safety-tips">
-        <a href="https://opengausssrc.vulbox.com/" target="_blank">
+        <a
+          href="https://opengausssrc.vulbox.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img :src="safetyImg" alt="" />
         </a>
       </div>
@@ -105,10 +110,11 @@ watch(
 main {
   min-height: calc(100vh - 280px);
   background-color: var(--o-color-bg1);
-  margin-top: 80px;
-  overflow: hidden;
+  &::after {
+    content: '';
+    display: table;
+  }
   @media (max-width: 1100px) {
-    margin-top: 48px;
     min-height: calc(100vh - 329px);
   }
 }

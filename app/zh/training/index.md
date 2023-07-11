@@ -2,7 +2,7 @@
 title: '培训认证'
 ---
 
-<script setup lang="ts">
+<script setup>
   import TheTraining from "@/views/authentication/training/TheTraining.vue"
 </script>
 

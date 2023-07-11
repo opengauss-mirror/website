@@ -1,3 +1,5 @@
+import { ElMessage } from 'element-plus';
+import Cookies from 'js-cookie';
 // 格式化数字
 export function formatNumber(num: number) {
   return num >= 1e3 && num < 1e4
@@ -54,41 +56,6 @@ export function getNowFormatDate() {
   return currentDate;
 }
 
-// 搜索对搜索词埋点
-export function setSearchBuriedData(search_key: string) {
-  const search_event_id = `${search_key}${new Date().getTime()}${
-    (window as any)['sensorsCustomBuriedData']?.ip || ''
-  }`;
-  const obj = {
-    search_key,
-    search_event_id,
-  };
-  (window as any)['addSearchBuriedData'] = obj;
-  const sensors = (window as any)['sensorsDataAnalytic201505'];
-  sensors?.setProfile({
-    profileType: 'searchValue',
-    ...((window as any)['sensorsCustomBuriedData'] || {}),
-    ...((window as any)['addSearchBuriedData'] || {}),
-  });
-}
-
-// 等待sensor加载完成
-export function addSearchBuriedData(search_key: string, num = 20) {
-  if (!num) {
-    // 重试最大次数
-    return;
-  }
-  if ((window as any)['sensorsCustomBuriedData']) {
-    setSearchBuriedData(search_key);
-  } else {
-    setTimeout(() => {
-      // 若是一开始没有值，则重试
-      num--;
-      addSearchBuriedData(search_key, num);
-    }, 500);
-  }
-}
-
 // URL参数转对象
 export function getUrlParams(url: string) {
   const arrObj = url.split('?');
@@ -103,4 +70,47 @@ export function getUrlParams(url: string) {
     }
     return list;
   }
+}
+
+/*
+ * setCookie 设置cookie
+ *  cname cookie的名称
+ *  cvalue cookie的值
+ *  day cookie的过期时间 默认1天
+ */
+export function getCustomCookie(cname: string) {
+  try {
+    return Cookies.get(cname);
+  } catch {
+    return '';
+  }
+}
+export function setCustomCookie(cname: string, cvalue: string, day = 1) {
+  try {
+    Cookies.set(cname, cvalue, { expires: day, path: '/' });
+  } catch {
+    ElMessage({
+      message: 'Error!',
+      type: 'error',
+    });
+  }
+}
+// 删除cookie
+export function removeCustomCookie(cname: string) {
+  try {
+    Cookies.remove(cname);
+  } catch {
+    ElMessage({
+      message: 'Error!',
+      type: 'error',
+    });
+  }
+}
+// 错误处理
+
+export function handleError(error: any) {
+  ElMessage({
+    message: error,
+    type: 'error',
+  });
 }

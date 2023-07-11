@@ -1,6 +1,33 @@
 export default {
   zh: [
     {
+      pro: 'CSIDB V1.0.0',
+      name: '中软国际科技服务有限公司',
+      version: 'openGauss 5.0.0',
+      award: '2023-06-30',
+      expiration: '2026-03-31',
+      certificate:
+        'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/CSIDB%20V1.0.0/Certificate.pdf',
+    },
+    {
+      pro: '【全真数据库平台】V5.0.0',
+      name: '苏大信创（青岛）信息科技有限公司',
+      version: 'openGauss 5.0.0',
+      award: '2023-06-30',
+      expiration: '2026-03-31',
+      certificate:
+        'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%85%A8%E7%9C%9F%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B3%E5%8F%B0%20V5.0.0/Certificate.pdf',
+    },
+    {
+      pro: '【Vastbase G100】V2.2.10',
+      name: '北京海量数据技术股份有限公司',
+      version: 'openGauss 3.0.0',
+      award: '2023-06-01',
+      expiration: '2025-03-31',
+      certificate:
+        'https://distributioncertification-beijing4.obs.myhuaweicloud.com/Vastbase%20V2.2.10/Certificate.pdf',
+    },
+    {
       pro: 'MuDB 1.0.0',
       name: '北京沐融信息科技股份有限公司',
       version: 'openGauss 2.0.0',
@@ -86,6 +113,33 @@ export default {
     },
   ],
   en: [
+    {
+      pro: 'CSIDB V1.0.0',
+      name: '中软国际科技服务有限公司',
+      version: 'openGauss 5.0.0',
+      award: '2023-06-30',
+      expiration: '2026-03-31',
+      certificate:
+        'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/CSIDB%20V1.0.0/Certificate.pdf',
+    },
+    {
+      pro: '【全真数据库平台】V5.0.0',
+      name: '苏大信创（青岛）信息科技有限公司',
+      version: 'openGauss 5.0.0',
+      award: '2023-06-30',
+      expiration: '2026-03-31',
+      certificate:
+        'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%85%A8%E7%9C%9F%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B3%E5%8F%B0%20V5.0.0/Certificate.pdf',
+    },
+    {
+      pro: '【Vastbase G100】V2.2.10',
+      name: '北京海量数据技术股份有限公司',
+      version: 'openGauss 3.0.0',
+      award: '2023-06-01',
+      expiration: '2025-03-31',
+      certificate:
+        'https://distributioncertification-beijing4.obs.myhuaweicloud.com/Vastbase%20V2.2.10/Certificate.pdf',
+    },
     {
       pro: 'MuDB 1.0.0',
       name: '北京沐融信息科技股份有限公司',

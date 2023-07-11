@@ -133,8 +133,13 @@ export default {
           ID: 'certification',
           PATH: '/certification/',
         },
+        {
+          NAME: 'oGSP Certification',
+          ID: 'ogsp',
+          PATH: '/ogsp/',
+        },
       ],
-      CLASS: ['certification'],
+      CLASS: ['certification', 'ogsp'],
     },
     {
       NAME: 'Security',

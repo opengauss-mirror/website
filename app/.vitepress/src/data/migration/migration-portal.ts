@@ -1,46 +1,125 @@
 import imgOffical from '@/assets/category/migration/portal/portal-help-official.png';
 import imgAssistant from '@/assets/category/migration/portal/portal-help-assistant.jpg';
 
+import imgAdvantage1 from '@/assets/category/migration/portal/advantage1.png';
+import imgAdvantage2 from '@/assets/category/migration/portal/advantage2.png';
+import imgAdvantage3 from '@/assets/category/migration/portal/advantage3.png';
+import imgAdvantage4 from '@/assets/category/migration/portal/advantage4.png';
+import imgDownload from '@/assets/category/migration/portal/download.png';
+import imgAdvantage1Dark from '@/assets/category/migration/portal/advantage1_dark.png';
+import imgAdvantage2Dark from '@/assets/category/migration/portal/advantage2_dark.png';
+import imgAdvantage3Dark from '@/assets/category/migration/portal/advantage3_dark.png';
+import imgAdvantage4Dark from '@/assets/category/migration/portal/advantage4_dark.png';
+import imgDownloadDark from '@/assets/category/migration/portal/download_dark.png';
+
 export default {
   advantage: {
     title: '迁移优势',
-    dexcription: 'openGauss 助力企业简单、平稳、高效进行数据库迁移。',
-    cardTopLeft: {
-      title01: '原操作系统EOM',
-      title02: '数字化改造',
-      description: '',
+    content: [
+      {
+        name: '端到端的迁移方案',
+        imgLight: imgAdvantage1,
+        imgDark: imgAdvantage1Dark,
+      },
+      {
+        name: '易用全能的迁移工具',
+        imgLight: imgAdvantage2,
+        imgDark: imgAdvantage2Dark,
+      },
+      {
+        name: '随时专业的服务',
+        imgLight: imgAdvantage3,
+        imgDark: imgAdvantage3Dark,
+      },
+      {
+        name: '迁移案例实践',
+        imgLight: imgAdvantage4,
+        imgDark: imgAdvantage4Dark,
+      },
+    ],
+  },
+  download: {
+    title: '快速下载',
+    dexcription:
+      'DataKit提供了一个可视化操作的运维界面，可以帮助用户管理，安装，监控运维自己的openGauss数据库以及对应的物理机资源。',
+    left: {
+      imgLight: imgDownload,
+      imgDark: imgDownloadDark,
+      name: 'Datakit_5.0.0',
     },
-
-    cardTopRight: {
-      title01: 'openGauss',
-      title02: '',
-      description:
-        'openGauss是一款开源关系型数据库管理系统，采用木兰宽松许可证v2发行。openGauss内核深度融合华为在数据库领域多年的经验，结合企业级场景需求，持续构建竞争力特性。',
-    },
-    benefit: {
-      light: [],
-      dark: [],
-    },
-    btn: {
-      text: '查看更多',
-      link: '/migration/advantage/',
-    },
+    btns: [
+      {
+        name: '软件下载',
+        btnIcon:1,
+        link: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.0/tools/Datakit-5.0.0.tar.gz',
+        // softLinks: [
+        //   {
+        //     name: 'x86_64 ',
+        //     link: 'https://repo.oepkgs.net/openEuler/rpm/openEuler-20.03-LTS-SP1/contrib/x2openEuler/x86_64/Packages/x2openEuler-core-2.0.0-4.x86_64.rpm',
+        //   },
+        //   {
+        //     name: 'aarch64 ',
+        //     link: 'https://repo.oepkgs.net/openEuler/rpm/openEuler-20.03-LTS-SP1/contrib/x2openEuler/aarch64/Packages/x2openEuler-core-2.0.0-4.aarch64.rpm',
+        //   },
+        // ],
+      },
+      // {
+      //   name: '特性说明',
+      //   btnIcon:2,
+      //   link: '',
+      // },
+      {
+        name: '使用指南',
+        btnIcon:2,
+        link: 'https://docs.opengauss.org/zh/docs/latest/docs/ToolandCommandReference/DataKit.html',
+      },
+      // {
+      //   name: '视频实操',
+      //   btnIcon:2,
+      //   link: '',
+      // },
+    ],
+    bgUrl: 'imgDownloadBG_dark',
   },
   guide: {
     title: '迁移方案说明',
-    dexcription: '',
-    list: [
+    content: [
       {
-        label: 'MySQL 5.7.21 移植指南',
-        link: '/zh/blog/randy1568/MySQL 5-7-21-migrate-guide.html',
+        title: '搬迁分析',
+        content: [
+          '· 当前业务部署架构、数据量、业务并发量、功能、性能',
+          '· 评估MySQL兼容性',
+        ],
       },
       {
-        label: 'Apache 2.4.39 移植指南',
-        link: '/zh/blog/randy1568/Apache 2-4-39-porting-guide.html',
+        title: '方案设计',
+        content: [
+          '· 根据客户业务场景以及业务诉求，制定搬迁策略，确定迁移任务流',
+          '· 一客一策，方案设计，包括高可用、部署架构',
+        ],
       },
       {
-        label: 'Nginx 1.14.2 移植指南',
-        link: '/zh/blog/randy1568/Nginx 1-14-2-porting-guide.html',
+        title: '应用适配',
+        content: [
+          '· 应用适配：针对不兼容语法在用户应用侧实施语法改造',
+          '· POC测试验证',
+        ],
+      },
+      {
+        title: '搬迁实施',
+        content: [
+          '· 内部迁移验证',
+          '· 客户侧搬迁实施',
+          '· 服务团队迁移支撑',
+          '· 评估MySQL兼容性',
+        ],
+      },
+      {
+        title: '上线保障',
+        content: [
+          '· 客户迁移后应用验证',
+          '· 业务巡检、运维服务',
+        ],
       },
     ],
     btn: {
@@ -72,43 +151,7 @@ export default {
       link: '/migration/user-cases/',
     },
   },
-  download: {
-    title: '快速下载',
-    dexcription:
-      'DataKit提供了一个可视化操作的运维界面，可以帮助用户管理，安装，监控运维自己的openGauss数据库以及对应的物理机资源。',
-    left: {
-      img: {
-        light: '',
-        dark: '',
-      },
-      name: 'x2openEuler',
-      version: '2.0.0',
-    },
-    btns: [
-      {
-        name: '软件下载',
-        softLinks: [
-          {
-            name: 'x86_64 ',
-            link: 'https://repo.oepkgs.net/openEuler/rpm/openEuler-20.03-LTS-SP1/contrib/x2openEuler/x86_64/Packages/x2openEuler-core-2.0.0-4.x86_64.rpm',
-          },
-          {
-            name: 'aarch64 ',
-            link: 'https://repo.oepkgs.net/openEuler/rpm/openEuler-20.03-LTS-SP1/contrib/x2openEuler/aarch64/Packages/x2openEuler-core-2.0.0-4.aarch64.rpm',
-          },
-        ],
-      },
-      {
-        name: '使用指南',
-        link: 'https://docs.openeuler.org/zh/docs/20.03_LTS_SP1/docs/thirdparty_migration/x2openEuler-Userguide.html',
-      },
-      {
-        name: '视频实操',
-        link: 'https://www.bilibili.com/video/BV1yR4y1b76k/?spm_id_from=333.999.0.0&vd_source=0aa547ea87e7a7505cf544eacc2236ac',
-      },
-    ],
-    bgUrl: 'imgDownloadBG_dark',
-  },
+
   instruction: {
     title: '轻松上手',
     dexcription:
@@ -171,7 +214,8 @@ export default {
         link: '',
       },
       {
-        textLeft: 'openGauss公众号，点击“联系我们” - “加入社群”，添加openGauss社群小助手，备注“迁移”进入MySQL迁移技术交流群',
+        textLeft:
+          'openGauss公众号，点击“联系我们” - “加入社群”，添加openGauss社群小助手，备注“迁移”进入MySQL迁移技术交流群',
         linkText: '',
         textRight: '',
         link: '',

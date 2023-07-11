@@ -152,7 +152,7 @@ const handleNodeClick = (node: any) => {
         'anchor-exit': frontmatter.anchor,
       }"
     />
-    <DocAnchor v-if="frontmatter.anchor && screenWidth > 1300" />
+    <!-- <DocAnchor v-if="frontmatter.anchor && screenWidth > 1300" /> -->
   </div>
 </template>
 
@@ -294,7 +294,7 @@ const handleNodeClick = (node: any) => {
         margin-left: 0;
       }
       @media screen and (max-width: 1100px) {
-        max-width: max-content;
+        max-width: auto;
       }
       > :deep(div) {
         max-width: calc(100% - 200px);

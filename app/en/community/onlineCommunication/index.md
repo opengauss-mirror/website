@@ -1,8 +1,8 @@
 ---
-title: '线上交流'
+title: 'Communication'
 ---
 
-<script setup lang="ts">
+<script setup>
   import TheOnlineCommunication from "@/views/community/TheOnlineCommunication.vue"
 </script>
 

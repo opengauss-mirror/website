@@ -88,7 +88,7 @@ const isDark = computed(() => (commonStore.theme === 'dark' ? true : false));
       @media screen and (max-width: 768px) {
         flex-direction: column;
       }
-      &-tips {
+      .help-box-tips {
         margin: 0 0 -24px 0;
         @media screen and (max-width: 768px) {
           margin: 0 0 -4px 0;
@@ -111,16 +111,18 @@ const isDark = computed(() => (commonStore.theme === 'dark' ? true : false));
           }
         }
       }
-      &-qrs {
+      .help-box-qrs {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+        align-items: center;
         width: 50%;
         @media screen and (max-width: 768px) {
           flex-direction: column;
           margin: auto;
         }
         .qrs-item {
+          text-align: center;
           @media screen and (max-width: 768px) {
             padding-top: 16px;
             margin: auto;

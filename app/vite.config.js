@@ -76,11 +76,6 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/omapi/, ''),
       },
-      '/ip-api/': {
-        target: 'http://ip-api.com/json/',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/ip-api/, ''),
-      },
       '/api-search': {
         target: 'https://doc-search.opengauss.org',
         changeOrigin: true,

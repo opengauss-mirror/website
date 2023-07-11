@@ -15,31 +15,16 @@ import portalInfo from '@/data/migration/migration-portal';
     <h3>{{ portalInfo.guide.title }}</h3>
     <div class="migration-guide-content">
       <OCard>
-        <!-- <div class="guide-box">
-          <a
-            v-for="item in portalInfo.guide.list"
-            :key="item.link"
-            :href="item.link"
-            target="_blank"
-            class="guide-box-item"
-          >
-            <p>{{ item.label }}</p>
-          </a>
-        </div>
-        <div class="line-box"></div>
-        <div class="btn-box">
-          <OButton
-            animation
-            type="text"
-            class="btn-box-item"
-            @click="handleGo(portalInfo.guide.btn.link)"
-          >
-            <template #suffixIcon>
-              <IconArrowRight class="btn-box-item-icon"></IconArrowRight>
-            </template>
-            {{ portalInfo.guide.btn.text }}
-          </OButton>
-        </div> -->
+        <ul class="content-box">
+          <li v-for="item in portalInfo.guide.content" :key="item.title">
+            <h5>{{ item.title }}</h5>
+            <div class="list-content">
+              <p v-for="itemList in item.content" :key="itemList">
+                {{ itemList }}
+              </p>
+            </div>
+          </li>
+        </ul>
       </OCard>
     </div>
   </div>
@@ -71,103 +56,65 @@ import portalInfo from '@/data/migration/migration-portal';
       margin: 0;
     }
   }
-  p {
-    font-size: var(--o-font-size-h7);
-    font-weight: 300;
-    color: var(--o-color-text1);
-    line-height: var(--o-line-height-h8);
-    width: 100%;
-    text-align: center;
-    margin-top: var(--o-spacing-h5);
-    @media screen and (max-width: 768px) {
-      font-size: var(--o-font-size-tip);
-      line-height: var(--o-line-height-tip);
-      margin-top: var(--o-spacing-h8);
-    }
-  }
-  &-content {
+  .migration-guide-content {
     margin-top: var(--o-spacing-h3);
-    @media screen and (max-width: 768px) {
-      margin-top: var(--o-spacing-h5);
-    }
-    .guide-box {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      @media screen and (max-width: 768px) {
-        flex-direction: column;
-        margin-top: -8px;
+    .content-box {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      list-style-type: none;
+      @media (max-width: 1600px) {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
       }
-      &-item {
-        background: var(--o-color-bg1);
-        padding: 16px 18px;
-        text-align: left;
-        width: 32%;
-        border: 1px solid rgba(0, 0, 0, 0);
-        @media screen and (max-width: 768px) {
-          width: 100%;
-          margin-top: 8px;
-          padding: 12px 8px;
+      @media (max-width: 1480px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @media (max-width: 678px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media (max-width: 468px) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+      li {
+        background-image: url(@/assets/category/migration/portal/guide-bg.png);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        height: 216px;
+        padding-top: var(--o-spacing-h4);
+        @media (max-width: 468px) {
+          height: auto;
+          padding: var(--o-spacing-h5) 0;
         }
-        p {
-          font-size: var(--o-font-size-h7);
-          line-height: var(--o-line-height-h8);
-          color: var(--o-color-text1);
-          font-weight: 500;
-          text-align: left;
-          margin: 0 0 4px 0;
-          @media screen and (max-width: 768px) {
+        h5 {
+          font-size: var(--o-font-size-h5);
+          line-height: var(--o-line-height-h5);
+          color: black;
+          text-align: center;
+          margin-top: 0;
+          @media (max-width: 768px) {
             font-size: var(--o-font-size-text);
             line-height: var(--o-line-height-text);
           }
         }
-        span {
-          font-size: var(--o-font-size-text);
-          line-height: var(--o-line-height-text);
-          color: var(--o-color-neutral5);
-          font-weight: 400;
-          text-align: left;
-          @media screen and (max-width: 768px) {
+        .list-content {
+          padding-left: 32px;
+          margin-top: var(--o-spacing-h5);
+          p {
+            max-width: 160px;
+            font-size: var(--o-font-size-text);
+            line-height: var(--o-line-height-text);
+            margin: 0 auto;
+            @media (max-width: 768px) {
             font-size: var(--o-font-size-tip);
             line-height: var(--o-line-height-tip);
           }
-        }
-      }
-      &-item:hover {
-        background-color: var(--o-color-bg2);
-        border: 1px solid var(--o-color-brand1);
-      }
-    }
-    .line-box {
-      margin: 32px 0 24px 0;
-      width: 100%;
-      height: 1px;
-      background: var(--o-color-division1);
-      @media screen and (max-width: 768px) {
-        margin: 16px 0;
-      }
-    }
-    .btn-box {
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      &-item {
-        margin: auto;
-        display: flex;
-        padding: 0;
-        justify-content: center;
-        align-items: center;
-        @media screen and (max-width: 1080px) {
-          padding: 0;
-          font-size: var(--o-font-size-text);
-        }
-        &-icon {
-          color: var(--o-color-brand1);
-          width: var(--o-font-size-h8);
-          height: var(--o-font-size-h8);
+          }
         }
       }
     }
   }
+}
+.dark li {
+  filter: brightness(0.8) grayscale(0.2) contrast(1.2);
 }
 </style>

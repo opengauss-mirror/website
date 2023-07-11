@@ -131,10 +131,10 @@ const handlerVideoDetail = (id: number, index: number) => {
     padding: 0;
   }
 
-  &-icon {
-    color: var(--o-color-brand1);
+  .video-more-icon {
     width: var(--o-font-size-h8);
     height: var(--o-font-size-h8);
+    color: var(--o-color-brand1);
   }
 }
 .dark .home-video-link {

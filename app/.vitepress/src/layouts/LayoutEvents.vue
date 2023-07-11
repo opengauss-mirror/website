@@ -35,21 +35,26 @@ const pageInfo = {
 }
 
 .bread {
+  max-width: 1504px;
+  margin: 0 auto;
   padding-top: 40px;
   padding-left: 44px;
   padding-right: 44px;
-  max-width: 1504px;
-  margin: 0 auto;
-  @media (max-width: 1439px) {
-    padding-left: 24px;
-    padding-right: 24px;
+  @media (max-width: 768px) {
+    padding-top: 16px;
   }
   @media (max-width: 1100px) {
     padding-left: 16px;
     padding-right: 16px;
   }
-  @media (max-width: 768px) {
-    padding-top: 16px;
+  @media (max-width: 1439px) {
+    padding-right: 24px;
+    padding-left: 24px;
   }
+}
+:deep(.award-box){
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
 }
 </style>

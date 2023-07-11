@@ -29,6 +29,7 @@ const handleGo = (path: string) => {
           :key="index"
           :href="handleGo(item.PATH)"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <OButton
             size="small"

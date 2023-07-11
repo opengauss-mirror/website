@@ -4,6 +4,7 @@ import { useI18n } from '@/i18n';
 import { getCveDetail } from '@/api/api-security';
 import { useRouter, useData } from 'vitepress';
 import { AffectProduct } from '@/shared/@types/type-security';
+import { handleError } from '@/shared/utils';
 
 import AppContent from '@/components/AppContent.vue';
 
@@ -87,7 +88,7 @@ onMounted(() => {
       affectedProductList.value = res.body.affectBody;
     });
   } catch (e: any) {
-    throw new Error(e);
+    handleError('Error!')
   }
 });
 </script>
@@ -119,7 +120,10 @@ onMounted(() => {
       <!-- 概要 -->
       <div class="detail-item">
         <h2 class="detail-item-title">{{ i18n.security.SYNOPSIS }}</h2>
-        <p class="detail-item-content" v-html="cveDetailData.description"></p>
+        <p
+          v-dompurify-html="cveDetailData.description"
+          class="detail-item-content"
+        ></p>
       </div>
       <!-- CVSS v3指标 -->
       <div class="detail-item">
@@ -232,19 +236,18 @@ onMounted(() => {
   color: var(--o-color-link1);
   cursor: pointer;
 }
-
 .breadcrumb {
+  display: flex;
   color: var(--o-color-text1);
   background: var(--o-color-bg1);
-  display: flex;
   @media screen and (max-width: 768px) {
     margin-bottom: var(--o-spacing-h5);
   }
   .last-page {
-    font-size: var(--o-font-size-tip);
     font-weight: 300;
-    color: var(--o-color-text4);
+    font-size: var(--o-font-size-tip);
     line-height: var(--o-line-height-tip);
+    color: var(--o-color-text4);
     cursor: pointer;
   }
   .separtor {
@@ -256,8 +259,8 @@ onMounted(() => {
   .current-page {
     font-size: var(--o-font-size-tip);
     font-weight: 600;
-    color: var(--o-color-text1);
     line-height: var(--o-line-height-tip);
+    color: var(--o-color-text1);
   }
 }
 .cve-head {
@@ -270,16 +273,16 @@ onMounted(() => {
     box-shadow: var(--o-shadow-l1);
   }
   .cve-name {
-    font-size: var(--o-font-size-h3);
     font-weight: 300;
-    color: var(--o-color-text1);
+    font-size: var(--o-font-size-h3);
     line-height: var(--o-line-height-h3);
+    color: var(--o-color-text1);
     @media screen and (max-width: 768px) {
-      line-height: var(--o-line-height-h8);
+      margin-bottom: var(--o-spacing-h8);
       font-size: var(--o-font-size-h8);
       font-weight: 300;
+      line-height: var(--o-line-height-h8);
       color: var(--o-color-text1);
-      margin-bottom: var(--o-spacing-h8);
     }
   }
   .cve-intro {
@@ -373,14 +376,14 @@ onMounted(() => {
         & li {
           margin-bottom: var(--o-spacing-h8);
         }
+        li:nth-child(2) {
+          display: flex;
+        }
         li:last-child {
           margin-bottom: 0;
           a {
             color: var(--o-color-link1);
           }
-        }
-        li:nth-child(2) {
-          display: flex;
         }
         span {
           color: var(--o-color-text1);

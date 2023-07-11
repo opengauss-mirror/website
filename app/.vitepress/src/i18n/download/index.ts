@@ -36,7 +36,7 @@ export default {
     PECULIARITY_DETAIL:
       'openGauss现已正式发行 5.0.0 (LTS) 版本，详细版本特性请参看',
     WELCOME: '，欢迎下载体验！',
-    RELEASE_LINK:'/zh/docs/5.0.0/docs/ReleaseNotes/Releasenotes.html',
+    RELEASE_LINK: '/zh/docs/5.0.0/docs/ReleaseNotes/Releasenotes.html',
     MORE_HISTORY: '更多历史版本下载请',
     CLICK_VIEW: '点此查看',
     HISTORY_LINK: 'download/archive/',
@@ -84,7 +84,7 @@ export default {
     PECULIARITY_DETAIL:
       'openGauss 5.0.0 (LTS) is now officially available. For details, see ',
     WELCOME: '',
-    RELEASE_LINK:'/en/docs/5.0.0/docs/Releasenotes/Releasenotes.html',
+    RELEASE_LINK: '/en/docs/5.0.0/docs/Releasenotes/Releasenotes.html',
     MORE_HISTORY: 'For more earlier versions ',
     CLICK_VIEW: 'click here',
     HISTORY_LINK: 'download/archive/',

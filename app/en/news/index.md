@@ -2,7 +2,7 @@
 title: 'News'
 ---
 
-<script setup lang="ts">
+<script setup>
   import TheNews from "@/views/news/TheNews.vue"
 </script>
 

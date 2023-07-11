@@ -36,21 +36,19 @@ const blogInfo = {
 }
 
 .bread {
-  padding-top: 40px;
-  padding-left: 44px;
-  padding-right: 44px;
   max-width: 1504px;
+  padding: 40px 44px 0 44px;
   margin: 0 auto;
   @media (max-width: 1439px) {
     padding-left: 24px;
     padding-right: 24px;
   }
+  @media (max-width: 768px) {
+    padding-top: 16px;
+  }
   @media (max-width: 1100px) {
     padding-left: 16px;
     padding-right: 16px;
-  }
-  @media (max-width: 768px) {
-    padding-top: 16px;
   }
 }
 </style>

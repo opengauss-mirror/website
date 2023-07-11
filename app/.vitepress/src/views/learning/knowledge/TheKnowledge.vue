@@ -37,6 +37,7 @@ const i18n = useI18n();
                 :key="itemList.name"
                 :href="itemList.link"
                 target="_blank"
+                rel="noopener noreferrer"
                 >{{ itemList.name }}</a
               >
             </div>

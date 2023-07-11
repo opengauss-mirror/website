@@ -14,14 +14,14 @@ defineProps({
   <div class="date-list">
     <div v-for="subitem in options" :key="subitem.time" class="data-item">
       <span class="time"><IconTime />{{ subitem.time }}</span>
-      <span class="desc" v-html="subitem.desc"></span>
+      <span v-dompurify-html="subitem.desc" class="desc"></span>
       <div v-if="subitem.post" class="box">
         <span class="name">{{ subitem.name }} </span>
         <span class="post">{{ subitem.post }} </span>
       </div>
       <div v-else class="db">
         <div v-for="option in subitem.option" :key="option.name" class="inline">
-          <span class="name" v-html="option.name"> </span>
+          <span v-dompurify-html="option.name" class="name"> </span>
           <div class="post-more">
             <span v-for="sub in option.post" :key="sub" class="post"
               >{{ sub }}

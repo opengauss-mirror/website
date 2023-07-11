@@ -14,6 +14,7 @@ import IconCancel from '~icons/app/icon-cancel.svg';
 
 import { getCveList } from '@/api/api-security';
 import { CveLists, CveQuery } from '@/shared/@types/type-security';
+import { handleError } from '@/shared/utils';
 
 const i18n = useI18n();
 const router = useRouter();
@@ -51,7 +52,7 @@ function getCveLists(data: CveQuery) {
       totalPage.value = Math.ceil(total.value / queryData.pageSize);
     });
   } catch (e: any) {
-    throw new Error(e);
+    handleError('Error!')
   }
 }
 const handleSizeChange = (val: number) => {

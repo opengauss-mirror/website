@@ -1,7 +1,6 @@
 import type { App } from 'vue';
 import { createPinia } from 'pinia';
 
-import 'aos/dist/aos.css';
 import '@/shared/styles/element-plus/index.scss';
 import '@/shared/styles/index.scss';
 
@@ -10,6 +9,7 @@ import NotFound from '@/NotFound.vue';
 
 import ElementPlus from 'element-plus';
 import OpenDesign from 'opendesign';
+import VueDOMPurifyHTML from 'vue-dompurify-html'
 
 export default {
   Layout,
@@ -19,7 +19,7 @@ export default {
       // @ts-ignore
       global.window = {};
     }
-
+    app.use(VueDOMPurifyHTML);
     app.use(createPinia());
 
     app.use(ElementPlus);

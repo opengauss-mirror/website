@@ -1,5 +1,6 @@
 import { request } from '@/shared/axios';
 import type { AxiosResponse } from '@/shared/axios';
+import { handleError } from '@/shared/utils';
 /**
  * 获取验证码
  * @name getCertification
@@ -13,8 +14,8 @@ export function getCertification(params: any, lang: string) {
       },
     })
     .then((res: AxiosResponse) => res.data)
-    .catch((e: any) => {
-      throw new Error(e);
+    .catch(() => {
+      handleError('Error!');
     });
 }
 /**
@@ -27,7 +28,7 @@ export function getSendCode(identification: string, code: string) {
     .get(url)
     .then((res: AxiosResponse) => res.data)
     .catch((e: any) => {
-      throw new Error(e);
+      handleError('Error!')
     });
 }
 
@@ -45,6 +46,6 @@ export function downloadCard(pa: string, lang: string) {
     })
     .then((res: AxiosResponse) => res.data)
     .catch((e: any) => {
-      throw new Error(e);
+      handleError('Error!')
     });
 }

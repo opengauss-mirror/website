@@ -466,7 +466,7 @@ function initSensor() {
     window['sensorsCustomBuriedData'][key] = value;
   };
   sensors.init({
-    server_url: 'https://omapi.osinfra.cn/query/track?community=opengauss',
+    server_url: 'https://dsapi.osinfra.cn/query/track?community=opengauss',
     use_client_time:true,
     // 调试时开启
     show_log: false,

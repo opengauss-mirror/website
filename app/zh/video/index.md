@@ -2,7 +2,7 @@
 title: '视频'
 ---
 
-<script setup lang="ts">
+<script setup>
   import TheVideo from "@/views/video/TheVideo.vue"
 </script>
 

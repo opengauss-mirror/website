@@ -11,6 +11,7 @@ import AppLanguage from './AppLanguage.vue';
 import NavLangFilter from '@/i18n/common/navLangFilter';
 import HeaderSearch from './HeaderSearch.vue';
 
+// import logo_light from '@/assets/logo.svg';
 import logo_light from '@/assets/logo.svg';
 import logo_dark from '@/assets/logo_dark.svg';
 
@@ -210,7 +211,6 @@ const searchLink = `/${lang.value}/search/`;
         <OIcon v-else class="icon"><IconCancel /></OIcon>
       </div>
       <img class="logo" alt="openGauss logo" :src="logo" @click="goHome" />
-
       <ClientOnly>
         <HeaderSearch
           v-if="isShowBox"
@@ -330,7 +330,7 @@ const searchLink = `/${lang.value}/search/`;
 }
 .app-header {
   background-color: var(--o-color-bg2);
-  position: fixed;
+  position: sticky;
   left: 0;
   right: 0;
   top: 0;

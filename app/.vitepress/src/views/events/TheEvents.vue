@@ -2,6 +2,7 @@
 import { computed, ref, Ref, onMounted, reactive } from 'vue';
 import { useRouter, useData } from 'vitepress';
 import { getSortData } from '@/api/api-search';
+import { handleError } from '@/shared/utils';
 
 import { useI18n } from '@/i18n';
 import { useCommon } from '@/stores/common';
@@ -107,7 +108,7 @@ onMounted(async () => {
       }
     });
   } catch (e: any) {
-    throw new Error(e);
+    handleError('Error!')
   }
 });
 const goDetail = (path: string) => {
@@ -170,21 +171,17 @@ const goDetail = (path: string) => {
           </div>
         </OContainer>
       </template>
-      <div v-else>
-        <div class="nofound">
-          <img
-            class="empty-img"
-            :src="
-              commonStore.theme === 'light'
-                ? notFoundImg_light
-                : notFoundImg_dark
-            "
-            alt="404"
-          />
-          <p class="empty-text">
-            {{ lang === 'zh' ? '暂无活动！' : 'NotFound !' }}
-          </p>
-        </div>
+      <div v-else class="nofound">
+        <img
+          class="empty-img"
+          :src="
+            commonStore.theme === 'light' ? notFoundImg_light : notFoundImg_dark
+          "
+          alt="404"
+        />
+        <p class="empty-text">
+          {{ lang === 'zh' ? '暂无活动！' : 'NotFound !' }}
+        </p>
       </div>
     </div>
     <div class="review-events">
