@@ -18,7 +18,6 @@ import IconCalendar from '~icons/app/icon-calendar.svg';
 import IconUser from '~icons/app/icon-user.svg';
 import IconRight from '~icons/app/icon-arrow-right.svg';
 import IconSearch from '~icons/app/icon-search.svg';
-import IconBrowse from '~icons/app/icon-browse.svg';
 
 import { getTagsData } from '@/api/api-search';
 import { getBlogsData } from '@/api/api-blogs';
@@ -121,11 +120,6 @@ const getListData = (params: ParamsType) => {
           if (typeof blogCardData.value[i].author === 'string') {
             blogCardData.value[i].author = [blogCardData.value[i].author];
           }
-          // if (blogCardData.value[i].archives.length > 10) {
-          //   blogCardData.value[i].archives = blogCardData.value[
-          //     i
-          //   ].archives.substring(0, 7);
-          // }
         }
         isShowData.value = true;
       }
@@ -494,10 +488,6 @@ const changeCurrentMoblie = (val: string) => {
             <div class="infodetail">
               <OIcon class="icon"><IconCalendar /></OIcon>
               <p>{{ item.date }}</p>
-            </div>
-            <div class="infodetail">
-              <OIcon class="icon"><IconBrowse /></OIcon>
-              <p>{{ userCaseData.BROWSE+' '+item.views+' '+userCaseData.TIMES }}</p>
             </div>
           </div>
           <p class="blog-list-item-content">{{ item.summary }}</p>
