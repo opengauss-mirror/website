@@ -50,13 +50,13 @@ onMounted(async () => {
     const responeData = await getSortData(paramsNews);
     newsData.value = responeData.obj.records;
   } catch (e: any) {
-    handleError('Error!')
+    handleError('Error!');
   }
   try {
     const responeData = await getSortData(paramsBlog);
     blogData.value = responeData.obj.records;
   } catch (e: any) {
-    handleError('Error!')
+    handleError('Error!');
   }
 });
 onUnmounted(() => {

@@ -32,7 +32,7 @@ function getSecurityDetailInfo(data: any) {
       }
     });
   } catch (e: any) {
-    handleError('Error!')
+    handleError('Error!');
   }
 }
 

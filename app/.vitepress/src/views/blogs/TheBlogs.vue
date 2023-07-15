@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, reactive, h } from 'vue';
+import { ref, computed, onMounted, reactive } from 'vue';
 import { useRouter, useData } from 'vitepress';
 
 import { useI18n } from '@/i18n';
 import useWindowResize from '@/components/hooks/useWindowResize';
-import { ElMessage } from 'element-plus';
+import { handleError } from '@/shared/utils';
 
 import AppContent from '@/components/AppContent.vue';
 import AppPaginationMo from '@/components/AppPaginationMo.vue';
@@ -18,8 +18,10 @@ import IconCalendar from '~icons/app/icon-calendar.svg';
 import IconUser from '~icons/app/icon-user.svg';
 import IconRight from '~icons/app/icon-arrow-right.svg';
 import IconSearch from '~icons/app/icon-search.svg';
+import IconBrowse from '~icons/app/icon-browse.svg';
 
-import { getSortData, getTagsData } from '@/api/api-search';
+import { getTagsData } from '@/api/api-search';
+import { getBlogsData } from '@/api/api-blogs';
 import type { BlogData, ParamsType } from '@/shared/@types/type-blogs';
 
 const router = useRouter();
@@ -100,19 +102,13 @@ const getTagsList = () => {
       })
       .catch(() => {
         isShowData.value = false;
-        ElMessage({
-          message: h(
-            'p',
-            { style: 'width: 5vw;display:flex;justify-content: center;' },
-            [h('span', { style: 'color: red;display:flex;' }, 'Error!')]
-          ),
-        });
+        handleError('Error!');
       });
   });
 };
 // 获取列表数据
 const getListData = (params: ParamsType) => {
-  getSortData(params)
+  getBlogsData(params)
     .then((res) => {
       if (res.obj.count === 0) {
         isShowData.value = false;
@@ -136,13 +132,7 @@ const getListData = (params: ParamsType) => {
     })
     .catch(() => {
       isShowData.value = false;
-      ElMessage({
-        message: h(
-          'p',
-          { style: 'width: 5vw;display:flex;justify-content: center;' },
-          [h('span', { style: 'color: red;display:flex;' }, 'Error!')]
-        ),
-      });
+      handleError('Error!');
     });
 };
 
@@ -195,13 +185,7 @@ const changeTime = () => {
           });
         })
         .catch(() => {
-          ElMessage({
-            message: h(
-              'p',
-              { style: 'width: 5vw;display:flex;justify-content: center;' },
-              [h('span', { style: 'color: red;display:flex;' }, 'Error!')]
-            ),
-          });
+          handleError('Error!');
         });
     });
   } else if (
@@ -263,13 +247,7 @@ const changeAuthor = () => {
           });
         })
         .catch(() => {
-          ElMessage({
-            message: h(
-              'p',
-              { style: 'width: 5vw;display:flex;justify-content: center;' },
-              [h('span', { style: 'color: red;display:flex;' }, 'Error!')]
-            ),
-          });
+          handleError('Error!');
         });
     });
   } else if (
@@ -331,13 +309,7 @@ const changeTags = () => {
           });
         })
         .catch(() => {
-          ElMessage({
-            message: h(
-              'p',
-              { style: 'width: 5vw;display:flex;justify-content: center;' },
-              [h('span', { style: 'color: red;display:flex;' }, 'Error!')]
-            ),
-          });
+          handleError('Error!');
         });
     });
   } else if (
@@ -522,6 +494,10 @@ const changeCurrentMoblie = (val: string) => {
             <div class="infodetail">
               <OIcon class="icon"><IconCalendar /></OIcon>
               <p>{{ item.date }}</p>
+            </div>
+            <div class="infodetail">
+              <OIcon class="icon"><IconBrowse /></OIcon>
+              <p>{{ userCaseData.BROWSE+' '+item.views+' '+userCaseData.TIMES }}</p>
             </div>
           </div>
           <p class="blog-list-item-content">{{ item.summary }}</p>
