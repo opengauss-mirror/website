@@ -25,12 +25,12 @@ const props = defineProps({
 });
 const { lang } = useData();
 const emits = defineEmits(['click-close', 'focus-input']);
-const isShowDrawer = ref(false);
+// const isShowDrawer = ref(false);
 const searchInput = ref('');
 // 搜索抽屉
 const showDrawer = () => {
   if (props.isShowDrawer) {
-    isShowDrawer.value = true;
+    // isShowDrawer.value = true;
     emits('focus-input');
   }
 };

@@ -12,6 +12,7 @@ export interface BlogData {
   textContent: string;
   title: string;
   type: string;
+  views:number;
 }
 
 export interface ParamsType {

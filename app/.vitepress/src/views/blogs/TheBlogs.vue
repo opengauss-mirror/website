@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, reactive, h } from 'vue';
+import { ref, computed, onMounted, reactive } from 'vue';
 import { useRouter, useData } from 'vitepress';
 
 import { useI18n } from '@/i18n';
 import useWindowResize from '@/components/hooks/useWindowResize';
-import { ElMessage } from 'element-plus';
+import { handleError } from '@/shared/utils';
 
 import AppContent from '@/components/AppContent.vue';
 import AppPaginationMo from '@/components/AppPaginationMo.vue';
@@ -19,7 +19,8 @@ import IconUser from '~icons/app/icon-user.svg';
 import IconRight from '~icons/app/icon-arrow-right.svg';
 import IconSearch from '~icons/app/icon-search.svg';
 
-import { getSortData, getTagsData } from '@/api/api-search';
+import { getTagsData } from '@/api/api-search';
+import { getBlogsData } from '@/api/api-blogs';
 import type { BlogData, ParamsType } from '@/shared/@types/type-blogs';
 
 const router = useRouter();
@@ -100,19 +101,13 @@ const getTagsList = () => {
       })
       .catch(() => {
         isShowData.value = false;
-        ElMessage({
-          message: h(
-            'p',
-            { style: 'width: 5vw;display:flex;justify-content: center;' },
-            [h('span', { style: 'color: red;display:flex;' }, 'Error!')]
-          ),
-        });
+        handleError('Error!');
       });
   });
 };
 // 获取列表数据
 const getListData = (params: ParamsType) => {
-  getSortData(params)
+  getBlogsData(params)
     .then((res) => {
       if (res.obj.count === 0) {
         isShowData.value = false;
@@ -125,24 +120,13 @@ const getListData = (params: ParamsType) => {
           if (typeof blogCardData.value[i].author === 'string') {
             blogCardData.value[i].author = [blogCardData.value[i].author];
           }
-          // if (blogCardData.value[i].archives.length > 10) {
-          //   blogCardData.value[i].archives = blogCardData.value[
-          //     i
-          //   ].archives.substring(0, 7);
-          // }
         }
         isShowData.value = true;
       }
     })
     .catch(() => {
       isShowData.value = false;
-      ElMessage({
-        message: h(
-          'p',
-          { style: 'width: 5vw;display:flex;justify-content: center;' },
-          [h('span', { style: 'color: red;display:flex;' }, 'Error!')]
-        ),
-      });
+      handleError('Error!');
     });
 };
 
@@ -195,13 +179,7 @@ const changeTime = () => {
           });
         })
         .catch(() => {
-          ElMessage({
-            message: h(
-              'p',
-              { style: 'width: 5vw;display:flex;justify-content: center;' },
-              [h('span', { style: 'color: red;display:flex;' }, 'Error!')]
-            ),
-          });
+          handleError('Error!');
         });
     });
   } else if (
@@ -263,13 +241,7 @@ const changeAuthor = () => {
           });
         })
         .catch(() => {
-          ElMessage({
-            message: h(
-              'p',
-              { style: 'width: 5vw;display:flex;justify-content: center;' },
-              [h('span', { style: 'color: red;display:flex;' }, 'Error!')]
-            ),
-          });
+          handleError('Error!');
         });
     });
   } else if (
@@ -331,13 +303,7 @@ const changeTags = () => {
           });
         })
         .catch(() => {
-          ElMessage({
-            message: h(
-              'p',
-              { style: 'width: 5vw;display:flex;justify-content: center;' },
-              [h('span', { style: 'color: red;display:flex;' }, 'Error!')]
-            ),
-          });
+          handleError('Error!');
         });
     });
   } else if (

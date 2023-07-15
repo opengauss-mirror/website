@@ -600,7 +600,7 @@ onMounted(async () => {
     justify-content: space-between;
     padding: var(--o-spacing-h2);
     position: relative;
-    @media (max-width: 1100px){
+    @media (max-width: 1100px) {
       padding: 12px;
     }
     .activity-title {
@@ -611,7 +611,7 @@ onMounted(async () => {
       &:hover {
         color: var(--o-color-brand1);
       }
-      @media (max-width: 1100px){
+      @media (max-width: 1100px) {
         font-size: 14px;
         line-height: 22px;
       }
@@ -628,7 +628,7 @@ onMounted(async () => {
       display: -webkit-box;
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 6;
-      @media (max-width: 1100px){
+      @media (max-width: 1100px) {
         font-size: 12px;
         line-height: 18px;
         height: 18px;
@@ -650,7 +650,7 @@ onMounted(async () => {
         margin-bottom: 16px;
         display: flex;
         align-items: center;
-        @media (max-width: 1100px){
+        @media (max-width: 1100px) {
           margin: 0;
           display: inline-flex;
           margin-right: 16px;
@@ -660,7 +660,7 @@ onMounted(async () => {
         .o-icon {
           margin-right: 8px;
           font-size: 24px;
-          @media (max-width: 1100px){
+          @media (max-width: 1100px) {
             font-size: 16px;
             margin-right: 4px;
           }

@@ -10,8 +10,8 @@ export function getSecurityList(params: any) {
   return request
     .get(url)
     .then((res: AxiosResponse) => res.data)
-    .catch((e: any) => {
-      handleError('Error!')
+    .catch(() => {
+      handleError('Error!');
     });
 }
 /**
@@ -23,8 +23,8 @@ export function getSecurityDetail(params: any) {
   return request
     .get(url)
     .then((res: AxiosResponse) => res.data)
-    .catch((e: any) => {
-      handleError('Error!')
+    .catch(() => {
+      handleError('Error!');
     });
 }
 
@@ -37,8 +37,8 @@ export function getCveList(params: any) {
   return request
     .get(url)
     .then((res: AxiosResponse) => res.data)
-    .catch((e: any) => {
-      handleError('Error!')
+    .catch(() => {
+      handleError('Error!');
     });
 }
 
@@ -51,7 +51,7 @@ export function getCveDetail(name: string) {
   return request
     .get(url)
     .then((res: AxiosResponse) => res.data)
-    .catch((e: any) => {
-      handleError('Error!')
+    .catch(() => {
+      handleError('Error!');
     });
 }

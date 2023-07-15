@@ -72,25 +72,6 @@ watch(
     immediate: true,
   }
 );
-// 埋点
-function setDownData() {
-  const sensors = (window as any)['sensorsDataAnalytic201505'];
-  const { href } = window.location;
-  if (href.includes('?utm_source')) {
-    const paramsArr = getUrlParams(href);
-    sensors?.setProfile({
-      ...(window as any)['sensorsCustomBuriedData'],
-      profileType: 'fromAdvertised',
-      origin: href,
-      ...paramsArr,
-    });
-  }
-}
-onMounted(() => {
-  setTimeout(() => {
-    setDownData();
-  }, 300);
-});
 </script>
 <template>
   <SummitBanner :banner-data="summitData.banner" />

@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { computed, ref, onMounted, reactive, h } from 'vue';
+import { computed, ref, onMounted, reactive } from 'vue';
 import { useRouter, useData } from 'vitepress';
-import { ElMessage } from 'element-plus';
 
 import { useI18n } from '@/i18n';
 import useWindowResize from '@/components/hooks/useWindowResize';
+import { handleError } from '@/shared/utils';
 
 import NotFound from '@/NotFound.vue';
 import AppContent from '@/components/AppContent.vue';
@@ -67,13 +67,7 @@ const getListData = (params: ParamsType) => {
     })
     .catch(() => {
       isShowData.value = false;
-      ElMessage({
-        message: h(
-          'p',
-          { style: 'width: 5vw;display:flex;justify-content: center;' },
-          [h('span', { style: 'color: red;display:flex;' }, 'Error!')]
-        ),
-      });
+      handleError('Error!');
     });
 };
 

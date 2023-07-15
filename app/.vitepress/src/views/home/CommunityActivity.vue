@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { onMounted, Ref, ref, h } from 'vue';
+import { onMounted, Ref, ref } from 'vue';
 import { useI18n } from '@/i18n';
 import { useCommon } from '@/stores/common';
 import { getStatistic } from '@/api/api-search';
-import { ElMessage } from 'element-plus';
+import { handleError } from '@/shared/utils';
 
 import IconArrowRight from '~icons/app/icon-arrow-right.svg';
 import bg1 from '@/assets/category/home/img1.png';
@@ -20,10 +20,7 @@ const roundNumber = ref([
     ROUND_VALUE: 0,
   },
 ]);
-
-const changeNum = () => {
-  roundNumber.value.forEach((item: { ROUND_VALUE: number }, index: number) => {
-    function addNumber(start: number, end: number) {
+function addNumber(start: number, end: number,item,index) {
       let i = start;
       const allTime = 2500;
       let time = 10;
@@ -48,7 +45,10 @@ const changeNum = () => {
         }, time);
       }
     }
-    addNumber(0, roundList.value[index].ROUND_VALUE);
+const changeNum = () => {
+  roundNumber.value.forEach((item: { ROUND_VALUE: number }, index: number) => {
+    
+    addNumber(0, roundList.value[index].ROUND_VALUE,item,index);
   });
 };
 
@@ -77,13 +77,7 @@ onMounted(async () => {
     });
     community.value && observe.observe(community.value);
   } catch (error: any) {
-    ElMessage({
-      message: h(
-        'p',
-        { style: 'width: 5vw;display:flex;justify-content: center;' },
-        [h('span', { style: 'color: red;display:flex;' }, 'Error!')]
-      ),
-    });
+    handleError('Error!');
   }
 });
 </script>
