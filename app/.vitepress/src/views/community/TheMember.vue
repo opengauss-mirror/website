@@ -16,9 +16,6 @@ import IconGit from '@/assets/category/member/git.svg';
 
 const i18n = useI18n();
 
-const windowWidth = ref(useWindowResize());
-const screenWidth = ref(1080);
-
 const tabShow = ref(0);
 const tabIndex = ref(0);
 
@@ -63,10 +60,6 @@ onMounted(() => {
 onUnmounted(() => {
   const body = window;
   body?.removeEventListener('scroll', scroll);
-});
-
-watch(windowWidth, () => {
-  screenWidth.value = windowWidth.value;
 });
 
 // 移动端事件

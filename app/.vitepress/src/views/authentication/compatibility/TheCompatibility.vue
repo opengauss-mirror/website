@@ -44,10 +44,6 @@ const randerData = computed(() => {
   );
 });
 
-const searchValchange = () => {
-  handleGetCompatibilityData();
-};
-
 // 分页size修改
 const handleSizeChange = (val: number) => {
   queryData.per_page = val;
@@ -59,7 +55,7 @@ const handleCurrentChange = (val: number) => {
   currentPage.value = val;
 };
 
-const handleGetCompatibilityData = () => {
+const queryCompatibilityData = () => {
   getCompatibilityData(queryData).then((res) => {
     tableData.value = res?.data;
     total.value = res?.data?.length;
@@ -68,7 +64,7 @@ const handleGetCompatibilityData = () => {
 };
 
 onMounted(() => {
-  handleGetCompatibilityData();
+  queryCompatibilityData();
 });
 </script>
 <template>
@@ -83,7 +79,7 @@ onMounted(() => {
         v-model="queryData.name"
         clearable
         :placeholder="i18n.compatibility.search_placeholder"
-        @change="searchValchange"
+        @change="queryCompatibilityData"
       ></OSearch>
     </div>
     <OTable class="pc-list" :data="randerData" style="width: 100%">

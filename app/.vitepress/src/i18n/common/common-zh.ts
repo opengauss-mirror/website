@@ -272,7 +272,7 @@ export default {
   COOKIE: {
     TEXT: [
       '本站点使用Cookies，继续浏览表示您同意我们使用Cookies。',
-      'Cookies和隐私政策>',
+      'Cookies和隐私政策。',
     ],
     PATH: '/zh/privacyPolicy/',
   },

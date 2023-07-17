@@ -141,7 +141,27 @@ import shensi from '@/assets/category/home/organization/light/shensi.png';
 import xingye from '@/assets/category/home/organization/light/xingye.png';
 import zhilin from '@/assets/category/home/organization/light/zhilin.png';
 
-// dark
+import aidong from '@/assets/category/home/organization/light/aidong.png'
+import andang from '@/assets/category/home/organization/light/andang.png'
+import easy_light from '@/assets/category/home/organization/light/easy_light.png'
+import jinxing from '@/assets/category/home/organization/light/jinxing.png'
+import koal from '@/assets/category/home/organization/light/koal.png'
+import ningsi from '@/assets/category/home/organization/light/ningsi.png'
+import paila_light from '@/assets/category/home/organization/light/paila_light.png'
+import qianyuan_light from '@/assets/category/home/organization/light/qianyuan_light.png'
+import suda_light from '@/assets/category/home/organization/light/suda_light.png'
+import yunshuju from '@/assets/category/home/organization/light/yunshuju.png'
+import zhongke_light from '@/assets/category/home/organization/light/zhongke_light.png'
+import zuxia from '@/assets/category/home/organization/light/zuxia.png'
+
+import easy_dark from '@/assets/category/home/organization/dark/easy_dark.png'
+import paila_dark from '@/assets/category/home/organization/dark/paila_dark.png'
+import qianyuan_dark from '@/assets/category/home/organization/dark/qianyuan_dark.png'
+import shuzaowanxiang_dark from '@/assets/category/home/organization/dark/shuzaowanxiang_dark.png'
+import suda_dark from '@/assets/category/home/organization/dark/suda_dark.png'
+import zhongke_dark from '@/assets/category/home/organization/dark/zhongke_dark.png'
+
+
 import baolande_dark from '@/assets/category/home/organization/dark/baolande.png';
 import puyuan1_dark from '@/assets/category/home/organization/dark/puyuan1.png';
 import borui_dark from '@/assets/category/home/organization/dark/borui.png';
@@ -203,7 +223,7 @@ import huaaoshuju_dark from '@/assets/category/home/organization/dark/huaaoshuju
 import aishu_dark from '@/assets/category/home/organization/dark/aishu.png';
 import huanxun_dark from '@/assets/category/home/organization/dark/huanxun.png';
 import shengruankeji_dark from '@/assets/category/home/organization/dark/shengruankeji.png';
-import vito_dark from '@/assets/category/home/organization/dark/vito.png';
+import vito_dark from '@/assets/category/home/organization/dark/vito_dark.png';
 import yunjihuahai_dark from '@/assets/category/home/organization/dark/yunjihuahai.png';
 import yingfangruanjian_dark from '@/assets/category/home/organization/dark/yingfangruanjian.png';
 import gaoxinxin_dark from '@/assets/category/home/organization/dark/gaoxinxin.png';
@@ -216,7 +236,7 @@ import greatdb_dark from '@/assets/category/home/organization/dark/greatdb.png';
 import suninfo_dark from '@/assets/category/home/organization/dark/suninfo.png';
 import scaleflux_dark from '@/assets/category/home/organization/dark/scaleflux.png';
 import dfjx_dark from '@/assets/category/home/organization/dark/dfjx.png';
-import hsxt_dark from '@/assets/category/home/organization/dark/hsxt.png';
+import hsxt_dark from '@/assets/category/home/organization/dark/hsxt_dark.png';
 import aks_dark from '@/assets/category/home/organization/dark/aks.png';
 import jiangnantianan_dark from '@/assets/category/home/organization/dark/jiangnantianan.png';
 import sitech_dark from '@/assets/category/home/organization/dark/si-tech.png';
@@ -228,11 +248,11 @@ import tidu_dark from '@/assets/category/home/organization/dark/tidu.png';
 import heming_dark from '@/assets/category/home/organization/dark/heming.png';
 import haitian_dark from '@/assets/category/home/organization/dark/haitian.png';
 import boda_dark from '@/assets/category/home/organization/dark/boda.png';
-import kingstar_dark from '@/assets/category/home/organization/dark/kingstar.png';
+import kingstar_dark from '@/assets/category/home/organization/dark/kingstar_dark.png';
 import shumashixun_dark from '@/assets/category/home/organization/dark/shumashixun.png';
 import dongfangdatang_dark from '@/assets/category/home/organization/dark/dongfangdatang.png';
 import wangman_dark from '@/assets/category/home/organization/dark/wangman.png';
-import newland_dark from '@/assets/category/home/organization/dark/newland.png';
+import newland_dark from '@/assets/category/home/organization/dark/newland_dark.png';
 import renbaoxinxi_dark from '@/assets/category/home/organization/dark/renbaoxinxi.png';
 import stoneatom_dark from '@/assets/category/home/organization/dark/stoneatom.png';
 import guance_dark from '@/assets/category/home/organization/dark/guance.png';
@@ -244,10 +264,9 @@ import guoxiangshuju_dark from '@/assets/category/home/organization/dark/guoxian
 import honghaoyuanjing_dark from '@/assets/category/home/organization/dark/honghaoyuanjing.png';
 import meizhouyinhang_dark from '@/assets/category/home/organization/dark/meizhouyinhang.png';
 import ncti_dark from '@/assets/category/home/organization/dark/ncti.png';
-import piesat_dark from '@/assets/category/home/organization/dark/piesat.png';
-import sengkey_dark from '@/assets/category/home/organization/dark/sengkey.png';
+import piesat_dark from '@/assets/category/home/organization/dark/piesat_dark.png';
+import sengkey_dark from '@/assets/category/home/organization/dark/sengkey_dark.png';
 import shenzhoushuma_dark from '@/assets/category/home/organization/dark/shenzhoushuma.png';
-import shuzaowanxiang_dark from '@/assets/category/home/organization/dark/shuzaowanxiang.png';
 import yjd_dark from '@/assets/category/home/organization/dark/yjd.png';
 import xiding_dark from '@/assets/category/home/organization/dark/xiding.png';
 import yiruide_dark from '@/assets/category/home/organization/dark/yiruide.png';
@@ -981,5 +1000,65 @@ export default [
     IMG: zhilin,
     DARK: zhilin_dark,
     NAME: '智麟科技',
+  },
+  {
+    IMG: suda_light,
+    DARK: suda_dark,
+    NAME: '苏大信创',
+  },
+  {
+    IMG: easy_light,
+    DARK: easy_dark,
+    NAME: 'Easy',
+  },
+  {
+    IMG: koal,
+    DARK: koal,
+    NAME: 'KOAL',
+  },
+  {
+    IMG: zhongke_light,
+    DARK: zhongke_dark,
+    NAME: '中科驭教',
+  },
+  {
+    IMG: andang,
+    DARK: andang,
+    NAME: '安当',
+  },
+  {
+    IMG: aidong,
+    DARK: aidong,
+    NAME: '艾动科技',
+  },
+  {
+    IMG: ningsi,
+    DARK: ningsi,
+    NAME: '凝思',
+  },
+  {
+    IMG: paila_light,
+    DARK: paila_dark,
+    NAME: '派拉软件',
+  },
+  {
+    IMG: jinxing,
+    DARK: jinxing,
+    NAME: '井星科技',
+  },
+  {
+    IMG: qianyuan_light,
+    DARK: qianyuan_dark,
+    NAME: '乾元大通',
+  },
+  {
+    IMG: zuxia,
+    DARK: zuxia,
+    NAME: '足下',
+  },
+  {
+    IMG: yunshuju,
+    DARK: yunshuju,
+    NAME: '云数聚',
   },
 ];

@@ -1,12 +1,11 @@
 <script lang="ts" setup>
-import { ref, computed, Ref, watch, toRefs, onMounted, h } from 'vue';
+import { ref, computed, Ref, watch, toRefs, onMounted } from 'vue';
 import { useData } from 'vitepress';
 import { useCommon } from '@/stores/common';
 import { showGuard, useStoreData } from '@/shared/login';
 import { useI18n } from '@/i18n';
 import { ElMessage, ElMessageBox } from 'element-plus';
 import useWindowResize from '@/components/hooks/useWindowResize';
-import { handleError } from '@/shared/utils';
 
 import IconDownload from '~icons/app/icon-download.svg';
 import IconCopy from '~icons/app/icon-copy.svg';
@@ -56,6 +55,9 @@ const hoverTips = computed(() => (type: string) => {
     case 'lite':
       tips = i18n.value.download.LITE;
       break;
+    default:
+      tips = '';
+      break;
   }
   return tips;
 });
@@ -90,7 +92,9 @@ const changeDownloadAuth = () => {
     .then(() => {
       showGuard();
     })
-    .catch(() => {});
+    .catch(() => {
+      return '';
+    });
 };
 // 移动端提示
 const screenWidth = useWindowResize();

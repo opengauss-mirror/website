@@ -196,9 +196,6 @@ const rootStyle = computed(() => {
       @media screen and (max-width: 1439px) {
         right: 24px;
       }
-      @media screen and (max-width: 1439px) {
-        right: 16px;
-      }
 
       img {
         user-select: none;

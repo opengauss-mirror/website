@@ -238,7 +238,7 @@ export default {
   COOKIE: {
     TEXT: [
       'This site uses cookies. By continuing to browse the site you are agreeing to our use of cookies.',
-      'Read our privacy policy>',
+      'Read our privacy policy.',
     ],
     PATH: '/en/privacyPolicy/',
   },

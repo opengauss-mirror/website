@@ -52,7 +52,7 @@ function getCveLists(data: CveQuery) {
       totalPage.value = Math.ceil(total.value / queryData.pageSize);
     });
   } catch (e: any) {
-    handleError('Error!')
+    handleError('Error!');
   }
 }
 const handleSizeChange = (val: number) => {

@@ -1140,15 +1140,8 @@ onUnmounted(() => {
         background-image: url(@/assets/category/authentication/training/img/step/06.png);
       }
       .step7 {
-        cursor: pointer;
         margin-right: 0;
         background-image: url(@/assets/category/authentication/training/img/step/07.png);
-        &:hover {
-          background-image: url(@/assets/category/authentication/training/img/step/07-hover.png);
-          p {
-            color: var(--o-color-white);
-          }
-        }
       }
     }
   }
