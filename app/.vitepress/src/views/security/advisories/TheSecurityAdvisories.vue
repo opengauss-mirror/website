@@ -16,7 +16,6 @@ import IconCancel from '~icons/app/icon-cancel.svg';
 
 import { getSecurityList } from '@/api/api-security';
 import { SecurityLists, CveQuery } from '@/shared/@types/type-security';
-// import OSearch from 'opendesign/search/OSearch.vue';
 
 const i18n = useI18n();
 const router = useRouter();
@@ -323,7 +322,6 @@ watch(queryData, () => getSecurityLists(queryData));
       display: flex;
       align-items: center;
       padding: 1px 16px;
-      // border: 1px solid var(--o-color-border1);
       .el-input__prefix {
         margin-right: 8px;
       }

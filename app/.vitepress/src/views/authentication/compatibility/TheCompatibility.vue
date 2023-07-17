@@ -10,6 +10,7 @@ import Banner from '@/assets/illustrations/banner-secondary.png';
 import illustration from '@/assets/illustrations/compatibility.png';
 
 import { getCompatibilityData } from '@/api/api-compatibility';
+import { GITEE_LINK } from '@/shared/url-config';
 
 interface CompatibilityData {
   name: string;
@@ -156,7 +157,7 @@ onMounted(() => {
     </ClientOnly>
     <p class="introduce">
       关于商业软件兼容性技术测评，openGauss提供了完整的测试流程和工具，详见<a
-        href="https://gitee.com/opengauss/compatible-certification"
+        :href="GITEE_LINK + 'opengauss/compatible-certification'"
         target="_blank"
         rel="noopener noreferrer"
         >openGauss兼容性技术测评整体介绍</a

@@ -1,9 +1,8 @@
 <script lang="ts" setup>
-import { computed, ref, onMounted, onUnmounted, watch } from 'vue';
+import { computed, ref, onMounted, onUnmounted } from 'vue';
 import { useI18n } from '@/i18n';
 import AppContent from '@/components/AppContent.vue';
 import BannerLevel2 from '@/components/BannerLevel2.vue';
-import useWindowResize from '@/components/hooks/useWindowResize';
 
 import banner from '@/assets/illustrations/banner-secondary.png';
 import illustration from '@/assets/illustrations/member.png';

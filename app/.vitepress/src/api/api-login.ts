@@ -15,7 +15,7 @@ const params = {
   client_id: '90aa315f895544359209920da32ff75a',
 };
 export function queryPermission() {
-  const url = '/omapi/oneid/user/refresh';
+  const url = '/api-oneid/oneid/user/refresh';
   const { token } = getUserAuth();
   return request
     .get(url, {
@@ -42,7 +42,7 @@ export function queryPermission() {
  * 获取idtoken用于退出
  */
 export function queryIDToken() {
-  const url = '/omapi/oneid/logout';
+  const url = '/api-oneid/oneid/logout';
   const { token } = getUserAuth();
   return request
     .get(url, {

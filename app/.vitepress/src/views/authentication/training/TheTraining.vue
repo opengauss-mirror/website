@@ -18,14 +18,14 @@ import enmotechLogoDark from '@/assets/category/authentication/training/img/enmo
 import csiaLogo from '@/assets/category/authentication/training/img/csia-mo.png';
 import csiaLogoDark from '@/assets/category/authentication/training/img/csia-mo-dark.png';
 
-import flashSale from '@/assets/category/authentication/training/img/flash-sale.png';
-
 import IconArrow from '~icons/train/icon-arrow.svg';
 import IconChevronRight from '~icons/app/icon-chevron-right.svg';
 import IconPeriod from '~icons/app/icon-period.svg';
 import OIcon from 'opendesign/icon/OIcon.vue';
 import IconChevronDown from '~icons/app/icon-chevron-down.svg';
 import IconChevronUp from '~icons/app/icon-chevron-up.svg';
+
+import { ENMOEDU_LINK } from '@/shared/url-config';
 
 const i18n = useI18n();
 const commonStore = useCommon();
@@ -75,7 +75,7 @@ function onCourseMoreClick(index: number) {
 }
 function onRegistrationClick(index: number) {
   if (index === 0) {
-    window.open('https://enmoedu.com/');
+    window.open(ENMOEDU_LINK);
   }
 }
 // 控制移动端更多课程内容显示的切换
@@ -103,50 +103,6 @@ onUnmounted(() => {
         :current-index="activeIndex"
         :data-list="i18n.authentication.navList"
       />
-      <div class="flash-sale">
-        <img :src="flashSale" alt="" />
-        <div class="sale-datail">
-          <h4>{{ i18n.authentication.discounttitle }}</h4>
-          <div class="train">
-            <p class="prime">
-              <span>{{ i18n.authentication.traintitle }}</span>
-              <span>{{ i18n.authentication.traincos }}</span>
-            </p>
-            <p class="discount">
-              <span>{{ i18n.authentication.limited }}</span>
-              <span>{{ i18n.authentication.trainoffset }}</span>
-              <span>{{ i18n.authentication.disunit }}</span>
-              <span>{{ i18n.authentication.trainprice }}</span>
-              <span>{{ i18n.authentication.yuan }}</span>
-            </p>
-          </div>
-          <div class="test">
-            <p class="prime">
-              <span>{{ i18n.authentication.examtitle }}</span>
-              <span>{{ i18n.authentication.examcos }}</span>
-            </p>
-            <p class="discount">
-              <span>{{ i18n.authentication.limited }}</span>
-              <span>{{ i18n.authentication.examoffset }}</span>
-              <span>{{ i18n.authentication.disunit }}</span>
-              <span>{{ i18n.authentication.examprice }}</span>
-              <span>{{ i18n.authentication.yuan }}</span>
-            </p>
-          </div>
-          <div class="time">
-            <p>{{ i18n.authentication.eventdl }}</p>
-            <p>{{ i18n.authentication.dlday }}</p>
-          </div>
-          <div class="entry-method">
-            <p>{{ i18n.authentication.signup }}</p>
-            <p>{{ i18n.authentication.signwechat }}</p>
-          </div>
-          <div class="number">
-            {{ i18n.authentication.teacher2 }}{{ i18n.authentication.phone2 }}
-          </div>
-        </div>
-      </div>
-
       <div id="introduction" :ref="navTitle" class="train-introduction">
         <h2>{{ i18n.authentication.introtitle }}</h2>
         <p class="intro-info">
@@ -566,8 +522,7 @@ onUnmounted(() => {
 </template>
 <style lang="scss" scoped>
 .dark {
-  .item-head,
-  .flash-sale img {
+  .item-head img {
     filter: brightness(0.8) grayscale(0.2) contrast(1.2);
   }
   .training-mobile .train-step .step-box,
@@ -614,87 +569,6 @@ onUnmounted(() => {
   --o-discount-bg: #fdfaff;
   @media screen and (max-width: 1100px) {
     display: none;
-  }
-  .flash-sale {
-    position: relative;
-    cursor: pointer;
-    &:hover .sale-datail {
-      display: block;
-    }
-    img {
-      position: fixed;
-      bottom: 395px;
-      right: 100px;
-      z-index: 1001;
-    }
-    .sale-datail {
-      position: fixed;
-      cursor: pointer;
-      bottom: 20px;
-      right: 20px;
-      z-index: 1000;
-      background-color: var(--o-color-bg2);
-      padding: 27px 22px 24px;
-      border-radius: 20px;
-      border: 2px solid var(--o-color-brand1);
-      display: none;
-      h4 {
-        font-size: var(--o-font-size-h8);
-        line-height: var(--o-line-height-h8);
-        color: var(--o-color-text1);
-      }
-      .train,
-      .test {
-        margin-top: var(--o-spacing-h8);
-        border-radius: 10px;
-        padding: 12px 25px;
-        border: 1px solid var(--o-color-brand2);
-        text-align: center;
-        background-color: var(--o-discount-bg);
-        .prime {
-          font-size: var(--o-font-size-text);
-          line-height: var(--o-line-height-text);
-          color: var(--o-color-text1);
-          span:nth-of-type(1) {
-            font-weight: 600;
-          }
-          span:nth-of-type(2) {
-            text-decoration: line-through;
-          }
-        }
-        .discount {
-          margin-top: var(--o-spacing-h8);
-          font-size: var(--o-font-size-h8);
-          line-height: var(--o-line-height-h8);
-          color: #feb32a;
-          span:nth-of-type(2) {
-            font-weight: 600;
-            font-size: var(--o-font-size-h5);
-          }
-          span:nth-of-type(4) {
-            font-weight: 600;
-            font-size: var(--o-font-size-h5);
-          }
-        }
-      }
-      .time,
-      .entry-method {
-        text-align: center;
-        margin-top: var(--o-spacing-h8);
-        font-size: var(--o-font-size-tip);
-        line-height: var(--o-line-height-tip);
-        color: var(--o-color-text1);
-      }
-      .number {
-        text-align: center;
-        margin-top: var(--o-spacing-h8);
-        font-size: var(--o-font-size-text);
-        line-height: var(--o-line-height-h4);
-        color: var(--o-color-text1);
-        background-color: var(--o-discount-bg);
-        border: 1px solid var(--o-color-trafficpurple9);
-      }
-    }
   }
   .train-introduction {
     h2 {
@@ -997,7 +871,6 @@ onUnmounted(() => {
                 overflow: hidden;
                 border: 1px solid var(--o-color-brand1);
                 border-top: none;
-                // transition: 0.3s height linear;
                 p {
                   font-size: var(--o-font-size-text);
                   line-height: var(--o-line-height-text);
@@ -1076,7 +949,6 @@ onUnmounted(() => {
         height: 144px;
         position: relative;
         background-size: 100% 100%;
-        // margin-right: var(--o-spacing-h1);
         & ~ .step-item::before {
           content: '';
           display: inline-block;
@@ -1177,7 +1049,6 @@ onUnmounted(() => {
           :deep(.el-collapse-item__wrap) {
             border: none;
             background-color: var(--o-color-bg2);
-            // color: var(--o-color-text1);
           }
           :deep(.el-collapse-item__content) {
             padding-bottom: 0;

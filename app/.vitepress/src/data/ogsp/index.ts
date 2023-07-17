@@ -1,3 +1,5 @@
+import { OBS_TRANSFER_LINK } from '@/shared/url-config';
+
 export default {
   zh: [
     {
@@ -10,8 +12,7 @@ export default {
       system: '良',
       commitment: '优',
       experience: '优',
-      certificate:
-        'https://obs-transfer.obs.cn-north-4.myhuaweicloud.com/opengauss/obsi-opengauss-oGSP/chinapost.jpg',
+      certificate: `${OBS_TRANSFER_LINK}opengauss/obsi-opengauss-oGSP/chinapost.jpg`,
     },
     {
       name: '中移动信息技术有限公司',
@@ -23,8 +24,7 @@ export default {
       system: '良',
       commitment: '优',
       experience: '优',
-      certificate:
-        'https://obs-transfer.obs.cn-north-4.myhuaweicloud.com/opengauss/oGSP/10086.jpg',
+      certificate: `${OBS_TRANSFER_LINK}opengauss/oGSP/10086.jpg`,
     },
     {
       name: '天津神舟通用数据技术有限公司',
@@ -36,8 +36,7 @@ export default {
       system: '良',
       commitment: '优',
       experience: '优',
-      certificate:
-        'https://obs-transfer.obs.cn-north-4.myhuaweicloud.com/opengauss/oGSP/shentongdata.jpg',
+      certificate: `${OBS_TRANSFER_LINK}opengauss/oGSP/shentongdata.jpg`,
     },
     {
       name: '天津南大通用数据技术股份有限公司',
@@ -49,8 +48,7 @@ export default {
       system: '良',
       commitment: '优',
       experience: '优',
-      certificate:
-        'https://obs-transfer.obs.cn-north-4.myhuaweicloud.com/opengauss/oGSP/gbase.jpg',
+      certificate: `${OBS_TRANSFER_LINK}opengauss/oGSP/gbase.jpg`,
     },
     {
       name: '北京海量数据技术股份有限公司',
@@ -62,8 +60,7 @@ export default {
       system: '优',
       commitment: '优',
       experience: '优',
-      certificate:
-        'https://obs-transfer.obs.cn-north-4.myhuaweicloud.com/opengauss/oGSP/vastdata.jpg',
+      certificate: `${OBS_TRANSFER_LINK}opengauss/oGSP/vastdata.jpg`,
     },
     {
       name: '云和恩墨（北京）信息技术有限公司',
@@ -75,8 +72,7 @@ export default {
       system: '优',
       commitment: '优',
       experience: '优',
-      certificate:
-        'https://obs-transfer.obs.cn-north-4.myhuaweicloud.com/opengauss/oGSP/enmotech.jpg',
+      certificate: `${OBS_TRANSFER_LINK}opengauss/oGSP/enmotech.jpg`,
     },
 
     {
@@ -89,8 +85,7 @@ export default {
       system: '良',
       commitment: '良',
       experience: '优',
-      certificate:
-        'https://obs-transfer.obs.cn-north-4.myhuaweicloud.com/opengauss/oGSP/chinasofti.jpg',
+      certificate: `${OBS_TRANSFER_LINK}opengauss/oGSP/chinasofti.jpg`,
     },
 
     {
@@ -103,8 +98,7 @@ export default {
       system: '良',
       commitment: '优',
       experience: '优',
-      certificate:
-        'https://obs-transfer.obs.cn-north-4.myhuaweicloud.com/opengauss/oGSP/antute.jpg',
+      certificate: `${OBS_TRANSFER_LINK}opengauss/oGSP/antute.jpg`,
     },
   ],
   en: [
@@ -118,8 +112,7 @@ export default {
       system: 'Good',
       commitment: 'Excellent',
       experience: 'Excellent',
-      certificate:
-        'https://obs-transfer.obs.cn-north-4.myhuaweicloud.com/opengauss/obsi-opengauss-oGSP/chinapost.jpg',
+      certificate: `${OBS_TRANSFER_LINK}opengauss/obsi-opengauss-oGSP/chinapost.jpg`,
     },
     {
       name: '中移动信息技术有限公司',
@@ -131,8 +124,7 @@ export default {
       system: 'Good',
       commitment: 'Excellent',
       experience: 'Excellent',
-      certificate:
-        'https://obs-transfer.obs.cn-north-4.myhuaweicloud.com/opengauss/oGSP/10086.jpg',
+      certificate: `${OBS_TRANSFER_LINK}opengauss/oGSP/10086.jpg`,
     },
     {
       name: '天津神舟通用数据技术有限公司',
@@ -144,8 +136,7 @@ export default {
       system: 'Good',
       commitment: 'Excellent',
       experience: 'Excellent',
-      certificate:
-        'https://obs-transfer.obs.cn-north-4.myhuaweicloud.com/opengauss/oGSP/shentongdata.jpg',
+      certificate: `${OBS_TRANSFER_LINK}opengauss/oGSP/shentongdata.jpg`,
     },
     {
       name: '天津南大通用数据技术股份有限公司',
@@ -157,8 +148,7 @@ export default {
       system: 'Good',
       commitment: 'Excellent',
       experience: 'Excellent',
-      certificate:
-        'https://obs-transfer.obs.cn-north-4.myhuaweicloud.com/opengauss/oGSP/gbase.jpg',
+      certificate: `${OBS_TRANSFER_LINK}opengauss/oGSP/gbase.jpg`,
     },
     {
       name: '北京海量数据技术股份有限公司',
@@ -170,8 +160,7 @@ export default {
       system: 'Excellent',
       commitment: 'Excellent',
       experience: 'Excellent',
-      certificate:
-        'https://obs-transfer.obs.cn-north-4.myhuaweicloud.com/opengauss/oGSP/vastdata.jpg',
+      certificate: `${OBS_TRANSFER_LINK}opengauss/oGSP/vastdata.jpg`,
     },
     {
       name: '云和恩墨（北京）信息技术有限公司',
@@ -183,8 +172,7 @@ export default {
       system: 'Excellent',
       commitment: 'Excellent',
       experience: 'Excellent',
-      certificate:
-        'https://obs-transfer.obs.cn-north-4.myhuaweicloud.com/opengauss/oGSP/enmotech.jpg',
+      certificate: `${OBS_TRANSFER_LINK}opengauss/oGSP/enmotech.jpg`,
     },
 
     {
@@ -197,8 +185,7 @@ export default {
       system: 'Good',
       commitment: 'Good',
       experience: 'Excellent',
-      certificate:
-        'https://obs-transfer.obs.cn-north-4.myhuaweicloud.com/opengauss/oGSP/chinasofti.jpg',
+      certificate: `${OBS_TRANSFER_LINK}opengauss/oGSP/chinasofti.jpg`,
     },
 
     {
@@ -211,8 +198,7 @@ export default {
       system: 'Good',
       commitment: 'Excellent',
       experience: 'Excellent',
-      certificate:
-        'https://obs-transfer.obs.cn-north-4.myhuaweicloud.com/opengauss/oGSP/antute.jpg',
+      certificate: `${OBS_TRANSFER_LINK}opengauss/oGSP/antute.jpg`,
     },
   ],
 };

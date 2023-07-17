@@ -36,6 +36,7 @@ import notFoundImg_light from '@/assets/illustrations/404.png';
 import notFoundImg_dark from '@/assets/illustrations/404-dark.png';
 
 import useWindowResize from '@/components/hooks/useWindowResize';
+import { GITEE_LINK } from '@/shared/url-config';
 
 const { lang } = useData();
 const i18n = useI18n();
@@ -525,7 +526,7 @@ const requestGiteeLogin = async () => {
   try {
     const res = await giteeLogin();
     const url =
-      'https://gitee.com/oauth/authorize?client_id=' +
+      `${GITEE_LINK}oauth/authorize?client_id=` +
       res.client_id +
       '&redirect_uri=' +
       res.redirect_url +
@@ -557,11 +558,6 @@ const handleMeetingReserve = () => {
     dialogNoLogin.value = true;
   }
 };
-
-// 取消会议
-// const handleMeetingClose = () => {
-//   clearDialogState();
-// };
 // 重置会议
 const handleResetMeeting = (formEl: FormInstance | undefined) => {
   if (!formEl) return;
@@ -911,9 +907,10 @@ const handleLogout = async () => {
         </OButton>
       </div>
       <p class="text tc">
-        <input type="checkbox" id="agree-input" v-model="isAgree" />
+        <el-checkbox v-model="isAgree">{{
+          i18nMeeting.LOGIN_TIPS
+        }}</el-checkbox>
         <span
-          ><label for="agree-input">{{ i18nMeeting.LOGIN_TIPS }}</label
           ><a :href="'/' + lang + '/privacyPolicy/'">{{
             i18nMeeting.PRIVACY
           }}</a></span
@@ -1090,11 +1087,8 @@ const handleLogout = async () => {
       #agree-input {
         cursor: pointer;
       }
-      span {
-        label {
-          cursor: pointer;
-          margin-left: 3px;
-        }
+      :deep(.el-checkbox__label) {
+        padding-left: 3px;
       }
     }
   }
@@ -1427,9 +1421,6 @@ const handleLogout = async () => {
   }
   :deep(.detail-list) {
     width: 100%;
-    // @media screen and (max-width: 1100px) {
-    //   max-width: calc(100% - 400px);
-    // }
     .right-title {
       display: flex;
       height: 40px;
@@ -1557,15 +1548,6 @@ const handleLogout = async () => {
               align-items: center;
               line-height: normal;
             }
-            // .introduce {
-            //   padding: 1px 7px;
-            //   display: -webkit-box;
-            //   -webkit-box-orient: vertical;
-            //   -webkit-line-clamp: 1;
-            //   overflow: hidden;
-            //   color: #fff;
-            //   background: linear-gradient(225deg, #feb32a 0%, #f6d365 100%);
-            // }
           }
           .more-detail {
             display: flex;

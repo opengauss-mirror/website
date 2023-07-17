@@ -361,7 +361,6 @@ const videoClickBtn = (path: string) => {
         padding: var(--o-spacing-h6) 0;
         cursor: pointer;
         background-color: var(--o-color-bg2);
-        // height: 88px;
         text-align: center;
         display: grid;
         align-items: center;

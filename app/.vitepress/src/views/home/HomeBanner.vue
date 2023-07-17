@@ -7,6 +7,7 @@ import 'swiper/components/navigation/navigation.min.css';
 import 'swiper/components/pagination/pagination.min.css';
 import { useData } from 'vitepress';
 import HomeConfig from '@/data/home/';
+import { OBS_VIDEO_LINK } from '@/shared/url-config';
 
 import useWindowResize from '@/components/hooks/useWindowResize';
 
@@ -57,8 +58,7 @@ const onVideoBtnClick = (path: string) => {
   videoDialog.value = true;
 };
 
-const bannerVideoSrc =
-  'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/openGauss%20Summit%202022/Banner/openGauss%20Banner%E5%8A%A8K_1920x480.mp4';
+const bannerVideoSrc = `${OBS_VIDEO_LINK}openGauss%20Summit%202022/Banner/openGauss%20Banner%E5%8A%A8K_1920x480.mp4`;
 </script>
 
 <template>
@@ -297,7 +297,6 @@ html[lang='zh'] {
       .title {
         font-size: var(--o-font-size-h1);
         line-height: var(--o-line-height-h1);
-        // filter: invert(1);
         font-weight: 600;
         @media screen and (max-width: 1439px) {
           font-size: var(--o-font-size-h2);
@@ -350,11 +349,6 @@ html[lang='zh'] {
           margin-top: 0;
         }
       }
-      // .liveBanner {
-      //   @media screen and (max-width: 768px) {
-      //     display: none;
-      //   }
-      // }
       @media screen and (max-width: 1440px) {
         padding: 0 24px;
       }

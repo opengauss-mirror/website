@@ -6,7 +6,7 @@ import { handleError } from '@/shared/utils';
  * @name getSecurityList
  */
 export function getSecurityList(params: any) {
-  const url = `/advisoryCVE/v1/gauss/sa?pageNum=${params.pageNum}&pageSize=${params.pageSize}&searchName=${params.searchName}&years=${params.years}&cveLevel=${params.cveLevel}&releaseFlag=${params.releaseFlag}`;
+  const url = `/api-cve/v1/gauss/sa?pageNum=${params.pageNum}&pageSize=${params.pageSize}&searchName=${params.searchName}&years=${params.years}&cveLevel=${params.cveLevel}&releaseFlag=${params.releaseFlag}`;
   return request
     .get(url)
     .then((res: AxiosResponse) => res.data)
@@ -19,7 +19,7 @@ export function getSecurityList(params: any) {
  * @name getSecurityDetail
  */
 export function getSecurityDetail(params: any) {
-  const url = `/advisoryCVE/v1/gauss/sa/detail?gaussSaNum=${params}`;
+  const url = `/api-cve/v1/gauss/sa/detail?gaussSaNum=${params}`;
   return request
     .get(url)
     .then((res: AxiosResponse) => res.data)
@@ -33,7 +33,7 @@ export function getSecurityDetail(params: any) {
  * @name getCveList
  */
 export function getCveList(params: any) {
-  const url = `/advisoryCVE/v1/gauss/cve?pageNum=${params.pageNum}&pageSize=${params.pageSize}&searchName=${params.searchName}&releaseFlag=${params.releaseFlag}`;
+  const url = `/api-cve/v1/gauss/cve?pageNum=${params.pageNum}&pageSize=${params.pageSize}&searchName=${params.searchName}&releaseFlag=${params.releaseFlag}`;
   return request
     .get(url)
     .then((res: AxiosResponse) => res.data)
@@ -47,7 +47,7 @@ export function getCveList(params: any) {
  * @name getCveDetail
  */
 export function getCveDetail(name: string) {
-  const url = `/advisoryCVE/v1/gauss/cve/detail?cveNum=${name}`;
+  const url = `/api-cve/v1/gauss/cve/detail?cveNum=${name}`;
   return request
     .get(url)
     .then((res: AxiosResponse) => res.data)

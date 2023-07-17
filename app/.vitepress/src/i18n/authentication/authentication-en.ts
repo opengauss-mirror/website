@@ -1,3 +1,4 @@
+import { ENMOEDU_LINK, DBOBS_LINK } from '@/shared/url-config';
 export default {
   title: '培训认证',
   introtitle: '认证体系简介',
@@ -98,7 +99,7 @@ export default {
   stepList: [
     {
       name: '培训报名',
-      link: 'https://enmoedu.com/',
+      link: ENMOEDU_LINK,
     },
     {
       name: '参加培训',
@@ -122,7 +123,7 @@ export default {
     },
     {
       name: '证书查询',
-      link: 'https://www.opengauss.org/zh/training/search.html',
+      link: '',
     },
   ],
   qatitle: '常见问题解答',
@@ -162,7 +163,7 @@ export default {
       answer:
         'openGauss社区优选了业界资深的数据库培训机构，为了保证培训效果，建议学员联系openGauss 授权的培训机构参加培训，点击如下链接可直接进入授权培训机构页面:',
       link: '《社区内的培训机构页面链接》',
-      url: 'https://enmoedu.com/',
+      url: '${ENMOEDU_LINK}',
     },
   ],
   navList: [
@@ -188,11 +189,9 @@ export default {
     },
   ],
   downpdf1: '点击此处下载OGCA课程介绍.pdf',
-  downurl1:
-    'https://dbacertification-beijing4.obs.cn-north-4.myhuaweicloud.com/OGCA%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.pdf',
+  downurl1: `${DBOBS_LINK}OGCA%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.pdf`,
   downpdf2: '点击此处下载OGCA考试说明.pdf',
-  downurl2:
-    'https://dbacertification-beijing4.obs.cn-north-4.myhuaweicloud.com/OGCA%E8%80%83%E8%AF%95%E8%AF%B4%E6%98%8E.pdf',
+  downurl2: `${DBOBS_LINK}OGCA%E8%80%83%E8%AF%95%E8%AF%B4%E6%98%8E.pdf`,
   contact: '若以上仍不能解决您的问题，可发邮件至 ',
   contactemail: 'common@certificate.opengauss.org',
   cantactend: ' 咨询',

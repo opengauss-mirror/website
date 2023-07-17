@@ -141,26 +141,25 @@ import shensi from '@/assets/category/home/organization/light/shensi.png';
 import xingye from '@/assets/category/home/organization/light/xingye.png';
 import zhilin from '@/assets/category/home/organization/light/zhilin.png';
 
-import aidong from '@/assets/category/home/organization/light/aidong.png'
-import andang from '@/assets/category/home/organization/light/andang.png'
-import easy_light from '@/assets/category/home/organization/light/easy_light.png'
-import jinxing from '@/assets/category/home/organization/light/jinxing.png'
-import koal from '@/assets/category/home/organization/light/koal.png'
-import ningsi from '@/assets/category/home/organization/light/ningsi.png'
-import paila_light from '@/assets/category/home/organization/light/paila_light.png'
-import qianyuan_light from '@/assets/category/home/organization/light/qianyuan_light.png'
-import suda_light from '@/assets/category/home/organization/light/suda_light.png'
-import yunshuju from '@/assets/category/home/organization/light/yunshuju.png'
-import zhongke_light from '@/assets/category/home/organization/light/zhongke_light.png'
-import zuxia from '@/assets/category/home/organization/light/zuxia.png'
+import aidong from '@/assets/category/home/organization/light/aidong.png';
+import andang from '@/assets/category/home/organization/light/andang.png';
+import easy_light from '@/assets/category/home/organization/light/easy_light.png';
+import jinxing from '@/assets/category/home/organization/light/jinxing.png';
+import koal from '@/assets/category/home/organization/light/koal.png';
+import ningsi from '@/assets/category/home/organization/light/ningsi.png';
+import paila_light from '@/assets/category/home/organization/light/paila_light.png';
+import qianyuan_light from '@/assets/category/home/organization/light/qianyuan_light.png';
+import suda_light from '@/assets/category/home/organization/light/suda_light.png';
+import yunshuju from '@/assets/category/home/organization/light/yunshuju.png';
+import zhongke_light from '@/assets/category/home/organization/light/zhongke_light.png';
+import zuxia from '@/assets/category/home/organization/light/zuxia.png';
 
-import easy_dark from '@/assets/category/home/organization/dark/easy_dark.png'
-import paila_dark from '@/assets/category/home/organization/dark/paila_dark.png'
-import qianyuan_dark from '@/assets/category/home/organization/dark/qianyuan_dark.png'
-import shuzaowanxiang_dark from '@/assets/category/home/organization/dark/shuzaowanxiang_dark.png'
-import suda_dark from '@/assets/category/home/organization/dark/suda_dark.png'
-import zhongke_dark from '@/assets/category/home/organization/dark/zhongke_dark.png'
-
+import easy_dark from '@/assets/category/home/organization/dark/easy_dark.png';
+import paila_dark from '@/assets/category/home/organization/dark/paila_dark.png';
+import qianyuan_dark from '@/assets/category/home/organization/dark/qianyuan_dark.png';
+import shuzaowanxiang_dark from '@/assets/category/home/organization/dark/shuzaowanxiang_dark.png';
+import suda_dark from '@/assets/category/home/organization/dark/suda_dark.png';
+import zhongke_dark from '@/assets/category/home/organization/dark/zhongke_dark.png';
 
 import baolande_dark from '@/assets/category/home/organization/dark/baolande.png';
 import puyuan1_dark from '@/assets/category/home/organization/dark/puyuan1.png';

@@ -28,14 +28,6 @@ const handleCurrentChange = (option: string) => {
   emit('turn-page', option);
   document.documentElement.scrollTop = 0;
 };
-// 写在父组件内的上下页翻页事件参考
-// function turnPage(option: string) {
-//   if (option === 'prev' && currentPage.value > 1) {
-//     currentPage.value = currentPage.value - 1;
-//   } else if (option === 'next' && currentPage.value < totalPage.value) {
-//     currentPage.value = currentPage.value + 1;
-//   }
-// }
 function jumpPage(e: any) {
   if (e.keyCode === 13 || e.type === 'blur') {
     if (page.value.value) {
@@ -53,10 +45,6 @@ function jumpPage(e: any) {
     ctx.$forceUpdate();
   }
 }
-// 写在父组件内的移动端跳转翻页事件参考
-// function jumpPage(page: number) {
-// currentPage.value = page
-// }
 </script>
 
 <template>

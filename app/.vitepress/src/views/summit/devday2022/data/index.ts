@@ -76,6 +76,8 @@ import gansukunpeng_dark from '../img/partners/dark/gansukunpeng.png';
 import henankunpeng_dark from '../img/partners/dark/henankunpeng.png';
 import xugu_dark from '../img/partners/dark/xugu.png';
 
+import { GITEE_LINK, ETHERPAD_LINK } from '@/shared/url-config';
+
 const summitData = {
   page_name: '峰会',
   desc: [
@@ -436,62 +438,62 @@ const summitData = {
         name: 'SIG组版本规划工作会议',
         desc: 'SIG组工作会议参会指南',
         time1: '16:00 - 18:00',
-        path: 'https://gitee.com/opengauss/community/blob/master/contributors/sig-planning-meeting-guide.md',
+        path: `${GITEE_LINK}opengauss/community/blob/master/contributors/sig-planning-meeting-guide.md`,
         children: [
           {
             name: 'AI',
             desc: '负责openGauss社区AI的开发和维护。',
-            link: 'https://etherpad.opengauss.org/p/2022ODD-sig-planning-AI',
+            link: `${ETHERPAD_LINK}p/2022ODD-sig-planning-AI`,
           },
           {
             name: 'Certification',
             desc: '负责openGauss认证流程、测试套件的定义和开发。',
-            link: 'https://etherpad.opengauss.org/p/2022ODD-sig-planning-Certification',
+            link: `${ETHERPAD_LINK}p/2022ODD-sig-planning-Certification`,
           },
           {
             name: 'CloudNative',
             desc: '负责openGauss社区云原生方向的开发和维护。',
-            link: 'https://etherpad.opengauss.org/p/2022ODD-sig-planning-CloudNative',
+            link: `${ETHERPAD_LINK}p/2022ODD-sig-planning-CloudNative`,
           },
           {
             name: 'Docs',
             desc: '负责openGauss社区文档的开发和维护。',
-            link: 'https://etherpad.opengauss.org/p/2022ODD-sig-planning-StorageEDocsngine',
+            link: `${ETHERPAD_LINK}p/2022ODD-sig-planning-StorageEDocsngine`,
           },
           {
             name: 'Infra',
             desc: '负责openGauss社区基础设施的开发和维护。',
-            link: 'https://etherpad.opengauss.org/p/2022ODD-sig-planning-Infra',
+            link: `${ETHERPAD_LINK}p/2022ODD-sig-planning-Infra`,
           },
           {
             name: 'OPS',
             desc: '聚焦openGauss维护能力建设，提升产品运维能力，总结和传递运维经验。',
-            link: 'https://etherpad.opengauss.org/p/2022ODD-sig-planning-OPS',
+            link: `${ETHERPAD_LINK}p/2022ODD-sig-planning-OPS`,
           },
           {
             name: 'Plugin',
             desc: '负责openGauss插件机制的规划、管理、开发等。',
-            link: 'https://etherpad.opengauss.org/p/2022ODD-sig-planning-Plugin',
+            link: `${ETHERPAD_LINK}p/2022ODD-sig-planning-Plugin`,
           },
           {
             name: 'ReleaseManagement',
             desc: '社区协同各SIG maintainer,规划openGauss社区版本的发布工作，为最终的竞争力目标达成负责。',
-            link: 'https://etherpad.opengauss.org/p/2022ODD-sig-planning-ReleaseManagement',
+            link: `${ETHERPAD_LINK}p/2022ODD-sig-planning-ReleaseManagement`,
           },
           {
             name: 'SecurityTechnology',
             desc: '负责openGauss社区数据库安全技术的开发和维护。',
-            link: 'https://etherpad.opengauss.org/p/2022ODD-sig-planning-SecurityTechnology',
+            link: `${ETHERPAD_LINK}p/2022ODD-sig-planning-SecurityTechnology`,
           },
           {
             name: 'SQLEngine',
             desc: '负责openGauss社区SQL引擎的开发和维护。',
-            link: 'https://etherpad.opengauss.org/p/2022ODD-sig-planning-SQLEngine',
+            link: `${ETHERPAD_LINK}p/2022ODD-sig-planning-SQLEngine`,
           },
           {
             name: 'StorageEngine',
             desc: '负责openGauss社区存储引擎的开发和维护。',
-            link: 'https://etherpad.opengauss.org/p/2022ODD-sig-planning-StorageEngine',
+            link: `${ETHERPAD_LINK}p/2022ODD-sig-planning-StorageEngine`,
           },
         ],
       },

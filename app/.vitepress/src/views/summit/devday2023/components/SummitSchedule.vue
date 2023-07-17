@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 import IconTime from '~icons/app/icon-time.svg';
+import { ETHERPAD_LINK } from '@/shared/url-config';
 
 defineProps({
   agendaData: {
@@ -33,7 +34,7 @@ const otherTabType = ref(0);
       class="go-etherpad"
     >
       <a
-        href="https://etherpad.opengauss.org/p/ODD2023-SIG-Meeting"
+        :href="ETHERPAD_LINK + 'p/ODD2023-SIG-Meeting'"
         target="_blank"
         rel="noopener noreferrer"
         >点击此处</a
@@ -378,9 +379,6 @@ const otherTabType = ref(0);
     align-items: center;
     min-height: 64px;
     position: relative;
-    // & + .content-item {
-    //   border-top: 1px solid var(--o-color-border2);
-    // }
     @media screen and (max-width: 1328px) {
       grid-template-columns: 192px 450px 400px;
     }
@@ -390,9 +388,6 @@ const otherTabType = ref(0);
       min-height: 36px;
       position: static;
     }
-    // &:hover {
-    //   background-color: var(--o-color-bg4);
-    // }
     .name-box {
       @media screen and (max-width: 1100px) {
         grid-column-end: 3;
@@ -513,7 +508,6 @@ const otherTabType = ref(0);
       &::-webkit-scrollbar {
         display: none; /* Chrome Safari */
       }
-      // display: none;
       p {
         display: flex;
         & + p {
