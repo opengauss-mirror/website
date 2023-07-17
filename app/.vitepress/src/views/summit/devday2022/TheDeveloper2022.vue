@@ -1,6 +1,5 @@
 <script lang="ts" setup>
-import { ref, onMounted } from 'vue';
-import { getUrlParams } from '@/shared/utils';
+import { ref } from 'vue';
 
 import AppContent from '@/components/AppContent.vue';
 import SummitSchedule from './components/SummitSchedule.vue';

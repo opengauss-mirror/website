@@ -36,6 +36,7 @@ import notFoundImg_light from '@/assets/illustrations/404.png';
 import notFoundImg_dark from '@/assets/illustrations/404-dark.png';
 
 import useWindowResize from '@/components/hooks/useWindowResize';
+import websiteLink from '@/data/common/websiteLink';
 
 const { lang } = useData();
 const i18n = useI18n();
@@ -525,7 +526,7 @@ const requestGiteeLogin = async () => {
   try {
     const res = await giteeLogin();
     const url =
-      'https://gitee.com/oauth/authorize?client_id=' +
+      `${websiteLink.common.giteeLink}oauth/authorize?client_id=` +
       res.client_id +
       '&redirect_uri=' +
       res.redirect_url +
@@ -911,7 +912,7 @@ const handleLogout = async () => {
         </OButton>
       </div>
       <p class="text tc">
-        <input type="checkbox" id="agree-input" v-model="isAgree" />
+        <input id="agree-input" v-model="isAgree" type="checkbox" />
         <span
           ><label for="agree-input">{{ i18nMeeting.LOGIN_TIPS }}</label
           ><a :href="'/' + lang + '/privacyPolicy/'">{{

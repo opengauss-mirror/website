@@ -4,6 +4,7 @@ import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';
 
 import DownloadTable from './DownloadTable.vue';
+import websiteLink from '@/data/common/websiteLink';
 const props = defineProps({
   contentData: {
     required: true,
@@ -44,7 +45,7 @@ const { contentData, versionShownIndex, downloadVersionAuthIndex } =
             : (contentData[0] as any).docs_list[0].nameEn
         }}</a
       ><a
-        href="https://gitee.com/opengauss/community/issues"
+        :href="websiteLink.common.giteeLink + 'opengauss/community/issues'"
         target="_blank"
         rel="noopener noreferrer"
         >{{ i18n.download.FEEDBACK_QUESTION }}</a

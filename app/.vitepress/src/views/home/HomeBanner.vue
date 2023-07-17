@@ -7,6 +7,7 @@ import 'swiper/components/navigation/navigation.min.css';
 import 'swiper/components/pagination/pagination.min.css';
 import { useData } from 'vitepress';
 import HomeConfig from '@/data/home/';
+import websiteLink from '@/data/common/websiteLink';
 
 import useWindowResize from '@/components/hooks/useWindowResize';
 
@@ -57,8 +58,7 @@ const onVideoBtnClick = (path: string) => {
   videoDialog.value = true;
 };
 
-const bannerVideoSrc =
-  'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/openGauss%20Summit%202022/Banner/openGauss%20Banner%E5%8A%A8K_1920x480.mp4';
+const bannerVideoSrc = `${websiteLink.common.obsVideoLink}openGauss%20Summit%202022/Banner/openGauss%20Banner%E5%8A%A8K_1920x480.mp4`;
 </script>
 
 <template>

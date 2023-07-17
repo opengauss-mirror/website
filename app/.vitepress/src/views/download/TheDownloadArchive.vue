@@ -8,6 +8,7 @@ import { showGuard, useStoreData } from '@/shared/login';
 import { handleError } from '@/shared/utils';
 
 import DownloadConfig from '@/data/download';
+import websiteLink from '@/data/common/websiteLink';
 import AppContent from '@/components/AppContent.vue';
 import OSelect from 'opendesign/select/OSelect.vue';
 import DownloadContent from './DownloadContent.vue';
@@ -167,7 +168,7 @@ watch(
           >{{ isZh ? item.name : item.nameEn }}</a
         >
         <a
-          href="https://gitee.com/opengauss/community/issues"
+          :href="websiteLink.common.giteeLink + 'opengauss/community/issues'"
           target="_blank"
           rel="noopener noreferrer"
           >{{ i18n.download.FEEDBACK_QUESTION }}</a

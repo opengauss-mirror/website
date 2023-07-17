@@ -176,7 +176,7 @@ export default {
     SUCCESS: '预定会议成功！',
     EMAIL: '邮件地址',
     EMAIL_TEXT: '多个邮件地址之间用逗号,隔开',
-    LOGOUT_SUCCESS:'退出成功',
+    LOGOUT_SUCCESS: '退出成功',
   },
   HOME_ROOMS: {
     ROOM_NAME: [

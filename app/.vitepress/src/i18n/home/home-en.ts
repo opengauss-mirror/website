@@ -170,7 +170,7 @@ export default {
     SUBMIT: '立即预订',
     CANCEL: '取消',
     RESET: '重置',
-    LOGOUT_SUCCESS:'Logged Out',
+    LOGOUT_SUCCESS: 'Logged Out',
   },
   HOME_ROOMS: {
     ROOM_NAME: [
