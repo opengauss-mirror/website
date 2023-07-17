@@ -19,6 +19,8 @@ import logo51cto from '@/assets/footer/cto.png';
 import CodeGzh from '@/assets/footer/wechat.png';
 import IconCancel from '~icons/app/icon-cancel.svg';
 
+import websiteLink from '@/data/common/websiteLink';
+
 const props = defineProps({
   isCookieTip: {
     type: Boolean,
@@ -32,39 +34,39 @@ const i18n = useI18n();
 const footerLinks = {
   row: [
     {
-      path: 'https://my.oschina.net/u/5059795',
+      path: `${websiteLink.footer.oschinaLink}u/5059795`,
       logo: logoOschina,
       id: 'oschina',
     },
     {
-      path: 'https://blog.csdn.net/weixin_49727236?spm=1000.2115.3001.5343',
+      path: `${websiteLink.footer.csdnLink}weixin_49727236?spm=1000.2115.3001.5343`,
       logo: logoCsdn,
       id: 'csdn',
     },
     {
-      path: 'https://blog.51cto.com/u_15157671',
+      path: `${websiteLink.footer.ctoLink}u_15157671`,
       logo: logo51cto,
       id: '51cto',
     },
   ],
   row1: [
     {
-      path: 'https://www.modb.pro/u/429265',
+      path: `${websiteLink.footer.modbLink}u/429265`,
       logo: logoModb,
       id: 'modb',
     },
     {
-      path: 'https://www.infoq.cn/u/opengauss/publish',
+      path: `${websiteLink.footer.infoqLink}u/opengauss/publish`,
       logo: logoInfoq,
       id: 'infoq',
     },
     {
-      path: 'https://space.bilibili.com/543286270',
+      path: `${websiteLink.footer.bilibiliLink}543286270`,
       logo: logoBilibili,
       id: 'bilibili',
     },
     {
-      path: 'https://www.zhihu.com/people/opengauss',
+      path: `${websiteLink.footer.zhihuLink}people/opengauss`,
       logo: logoZhihu,
       id: 'zhihu',
     },

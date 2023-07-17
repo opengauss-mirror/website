@@ -1,7 +1,4 @@
 <script lang="ts" setup>
-import { onMounted } from 'vue';
-import { getUrlParams } from '@/shared/utils';
-
 import BannerLevel2 from '@/components/BannerLevel2.vue';
 import AppContent from '@/components/AppContent.vue';
 

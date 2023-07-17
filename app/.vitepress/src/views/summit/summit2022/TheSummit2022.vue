@@ -7,6 +7,7 @@ import SummitSchedule from './components/SummitSchedule.vue';
 import LinkPanel from '@/components/LinkPanel.vue';
 
 import summitData from './data';
+import websiteLink from '@/data/common/websiteLink';
 
 import banner from './img/banner.jpg';
 import bannerMo from './img/banner-mo.jpg';
@@ -57,7 +58,10 @@ const videoClickBtn = (path: string) => {
       >
         <source
           type="video/mp4"
-          src="https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/openGauss%20Summit%202022/Banner/openGauss%20Banner%E5%8A%A8K_1920x380.mp4"
+          :src="
+            websiteLink.common.obsVideoLink +
+            'openGauss%20Summit%202022/Banner/openGauss%20Banner%E5%8A%A8K_1920x380.mp4'
+          "
         />
       </video>
     </div>

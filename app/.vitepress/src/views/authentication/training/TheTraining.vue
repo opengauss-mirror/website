@@ -27,6 +27,8 @@ import OIcon from 'opendesign/icon/OIcon.vue';
 import IconChevronDown from '~icons/app/icon-chevron-down.svg';
 import IconChevronUp from '~icons/app/icon-chevron-up.svg';
 
+import websiteLink from '@/data/common/websiteLink';
+
 const i18n = useI18n();
 const commonStore = useCommon();
 const partner = computed(() =>
@@ -75,7 +77,7 @@ function onCourseMoreClick(index: number) {
 }
 function onRegistrationClick(index: number) {
   if (index === 0) {
-    window.open('https://enmoedu.com/');
+    window.open(websiteLink.training.enmoeduLink);
   }
 }
 // 控制移动端更多课程内容显示的切换

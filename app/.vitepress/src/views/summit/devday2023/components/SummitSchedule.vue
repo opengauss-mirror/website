@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 import IconTime from '~icons/app/icon-time.svg';
+import websiteLink from '@/data/common/websiteLink';
 
 defineProps({
   agendaData: {
@@ -33,7 +34,7 @@ const otherTabType = ref(0);
       class="go-etherpad"
     >
       <a
-        href="https://etherpad.opengauss.org/p/ODD2023-SIG-Meeting"
+        :href="websiteLink.summit.etherpadLink + 'p/ODD2023-SIG-Meeting'"
         target="_blank"
         rel="noopener noreferrer"
         >点击此处</a

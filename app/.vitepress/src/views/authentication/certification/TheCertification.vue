@@ -9,6 +9,8 @@ import AppPaginationMo from '@/components/AppPaginationMo.vue';
 import Banner from '@/assets/illustrations/banner-secondary.png';
 import illustration from '@/assets/illustrations/certification.png';
 
+import websiteLink from '@/data/common/websiteLink';
+
 interface CertificationData {
   pro: string;
   name: string;
@@ -197,7 +199,9 @@ onMounted(() => {
     <p class="introduce">
       {{ i18n.certification.introduce1
       }}<a
-        href="https://gitee.com/opengauss/distribution-certification"
+        :href="
+          websiteLink.common.giteeLink + 'opengauss/distribution-certification'
+        "
         target="_blank"
         rel="noopener noreferrer"
         >{{ i18n.certification.introduce2 }}</a
