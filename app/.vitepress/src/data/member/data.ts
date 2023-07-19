@@ -433,6 +433,20 @@ import lijun2 from '@/assets/category/member/avatar/lijun2.png';
 import yuanyuan from '@/assets/category/member/avatar/yuanyuan.png';
 import shengyongpan1 from '@/assets/category/member/avatar/shengyongpan1.png';
 
+import yuexingzhi from '@/assets/category/member/avatar/yuexingzhi.png';
+import wuyujun from '@/assets/category/member/avatar/wuyujun.png';
+import jianghongbo from '@/assets/category/member/avatar/jianghongbo.png';
+import meixiangru from '@/assets/category/member/avatar/meixiangru.png';
+import liuhangyu from '@/assets/category/member/avatar/liuhangyu.png';
+import xiaojie from '@/assets/category/member/avatar/xiaojie.png';
+import luohao from '@/assets/category/member/avatar/luohao.png';
+import zhaojun from '@/assets/category/member/avatar/zhaojun.png';
+import peibaoyi from '@/assets/category/member/avatar/peibaoyi.png';
+import zhulixia from '@/assets/category/member/avatar/zhulixia.png';
+import zengseliang from '@/assets/category/member/avatar/zengseliang.png';
+import shayAkirav from '@/assets/category/member/avatar/shayAkirav.png';
+
+
 export default {
   zh: {
     BOARD: [
@@ -858,18 +872,18 @@ export default {
     ],
     SQLENGINE: [
       {
-        img: yangdi,
-        name: '杨迪',
+        img: yuexingzhi,
+        name: '岳行之',
         title: 'Maintainer',
-        email: 'yangdi14@huawei.com',
-        gitee: 'https://gitee.com/yangdi07',
+        email: 'yuexingzhi2@huawei.com',
+        gitee: 'https://gitee.com/GaussYuexz',
       },
       {
-        img: zhoupinggao,
-        name: '周平高',
+        img: wuyujun,
+        name: '吴禹均',
         title: 'Maintainer',
-        email: 'zhoupinggao@huawei.com',
-        gitee: 'https://gitee.com/zankyfun4',
+        email: 'wuyujun2@huawei.com',
+        gitee: 'https://gitee.com/wuyujun3',
       },
       {
         img: zhouzhaoqi,
@@ -1130,11 +1144,11 @@ export default {
         gitee: 'https://gitee.com/totaj',
       },
       {
-        img: lizhenfeng,
-        name: '李臻峰',
+        img: lichun,
+        name: '李春',
         title: 'Committer',
-        email: 'lizhenfeng001@chinasofti.com',
-        gitee: 'https://gitee.com/lizhenfeng123',
+        email: 'pickup.li@woqutech.com',
+        gitee: 'https://gitee.com/woqutech_0',
       },
       {
         img: hechenghan,
@@ -1144,11 +1158,11 @@ export default {
         gitee: 'https://gitee.com/he-chenghan',
       },
       {
-        img: zhangyaozhong,
-        name: '张耀中',
+        img: wumingyuan2,
+        name: '吴明远',
         title: 'Committer',
-        email: 'zhangyaozhong1@huawei.com',
-        gitee: 'https://gitee.com/buter',
+        email: 'wumingyuan@gbase.cn',
+        gitee: 'https://gitee.com/wmy_ld',
       },
       {
         img: douxin,
@@ -1280,6 +1294,13 @@ export default {
         email: 'ailong@outlook.com',
         gitee: 'https://gitee.com/ailoooong',
       },
+      {
+        img: meixiangru,
+        name: '梅相如',
+        title: 'Committer',
+        email: 'xiangrumei87@126.com',
+        gitee: 'https://gitee.com/xiangrumei',
+      },
     ],
     SECURITY: [
       {
@@ -1290,11 +1311,11 @@ export default {
         gitee: 'https://gitee.com/zhu_jinwei',
       },
       {
-        img: zhangyaozhong,
-        name: '张耀中',
+        img: jianghongbo,
+        name: '蒋宏博',
         title: 'Committer',
-        email: 'zhangyaozhong1@huawei.com',
-        gitee: 'https://gitee.com/buter',
+        email: 'xdhbj0022@163.com',
+        gitee: 'https://gitee.com/hwhbj',
       },
       {
         img: lijianfeng,
@@ -1316,6 +1337,13 @@ export default {
         title: 'Committer',
         email: 'liuzheli@nankai.edu.cn',
         gitee: 'https://gitee.com/liuzheli',
+      },
+      {
+        img: shayAkirav,
+        name: 'shay.akirav',
+        title: 'Committer',
+        email: 'shay.akirav@huawei.com',
+        gitee: 'https://gitee.com/shay-akirav',
       },
     ],
     OM: [
@@ -1341,11 +1369,11 @@ export default {
         gitee: 'https://gitee.com/wang-zili',
       },
       {
-        img: hangjin,
-        name: '杭进',
+        img: liuhangyu,
+        name: '刘航宇',
         title: 'Committer',
-        email: '850894759@qq.com',
-        gitee: 'https://gitee.com/hangjin2020',
+        email: 'liuhangyu6@huawei.com',
+        gitee: 'https://gitee.com/miffyrcee',
       },
       {
         img: liubin,
@@ -1961,11 +1989,11 @@ export default {
         gitee: 'https://gitee.com/dbowner_zhang',
       },
       {
-        img: liyansong,
-        name: '李岩松',
+        img: xiaojie,
+        name: '肖杰',
         title: 'Maintainer',
-        email: 'yansong_lee@163.com',
-        gitee: 'https://gitee.com/yansong_lee',
+        email: 'jiexiao1413@foxmail.com',
+        gitee: 'https://gitee.com/jiexiao1413',
       },
       {
         img: fuxiongdao,
@@ -2288,8 +2316,21 @@ export default {
         email: 'zhaosq76@chinaunicom.cn',
         gitee: 'https://gitee.com/dreamalloc',
       },
-    ],
-    CM: [
+      {
+        img: luohao,
+        name: '罗浩',
+        title: 'Committer',
+        email: '287095649@qq.com',
+        gitee: 'https://gitee.com/jeremytim',
+      },
+      {
+        img: zhaojun,
+        name: '赵俊',
+        title: 'Committer',
+        email: 'zhaoj296@chinaunicom.cn',
+        gitee: 'https://gitee.com/kelayzhao ',
+      }],
+      CM: [
       {
         img: zhangjianxun,
         name: '张建勋',
@@ -2338,6 +2379,20 @@ export default {
         title: 'Committer',
         email: 'xieweiping@xfusion.com',
         gitee: 'https://gitee.com/junhangis',
+      },
+      {
+        img: peibaoyi,
+        name: '裴鲍义',
+        title: 'Committer',
+        email: 'peibaoyi@huawei.com',
+        gitee: 'https://gitee.com/peibaoyi',
+      },
+      {
+        img: zhulixia,
+        name: '朱丽霞',
+        title: 'Committer',
+        email: 'zhulixia3@huawei.com',
+        gitee: 'https://gitee.com/zhulixia',
       },
     ],
     RELEASEMANAGEMENT: [
@@ -2419,11 +2474,11 @@ export default {
         gitee: 'https://gitee.com/lys6676',
       },
       {
-        img: suzhangyan,
-        name: '苏章艳',
+        img: liuwei,
+        name: '刘伟',
         title: 'Committer',
-        email: 'suzy1030@qq.com',
-        gitee: 'https://gitee.com/siven_dev',
+        email: 'wei.liu@enmotech.com',
+        gitee: 'https://gitee.com/llzx373',
       },
       {
         img: hexiaodong,
@@ -2440,11 +2495,11 @@ export default {
         gitee: 'https://gitee.com/tbing8803',
       },
       {
-        img: liuchun,
-        name: '刘春',
+        img: zhangxubo,
+        name: '张旭博',
         title: 'Committer',
-        email: 'liuchun3@huawei.com',
-        gitee: 'https://gitee.com/nifinity',
+        email: '2578876417@qq.com',
+        gitee: 'https://gitee.com/zhang_xubo',
       },
       {
         img: wumingyuan,
@@ -2459,6 +2514,27 @@ export default {
         title: 'Committer',
         email: 'vastdata.com.cn',
         gitee: 'https://gitee.com/willloong',
+      },
+      {
+        img: cuikaifeng,
+        name: '崔凯峰',
+        title: 'Committer',
+        email: '13810767894@139.com',
+        gitee: 'https://gitee.com/azurenake',
+      },
+      {
+        img: yangzihao,
+        name: '杨子浩',
+        title: 'Committer',
+        email: 'yangzihao@ncti-gba.cn',
+        gitee: ' https://gitee.com/Louisyzh',
+      },
+      {
+        img: zengseliang,
+        name: '曾色亮',
+        title: 'Committer',
+        email: 'zengseliang@ncti-gba.cn',
+        gitee: 'https://gitee.com/zengseliang',
       },
     ],
     OPS: [
@@ -3215,7 +3291,7 @@ export default {
         name: '刘长浩',
         title: 'Ambassador',
         company: '民生银行',
-        email: 'liuchanghao@cmbc.com.cn',
+      
       },
       {
         img: liutianshun,
@@ -4453,18 +4529,18 @@ export default {
     ],
     SQLENGINE: [
       {
-        img: yangdi,
-        name: 'Di Yang',
+        img: yuexingzhi,
+        name: 'Xingzhi Yue',
         title: 'Maintainer',
-        email: 'yangdi14@huawei.com',
-        gitee: 'https://gitee.com/yangdi07',
+        email: 'yuexingzhi2@huawei.com',
+        gitee: 'https://gitee.com/GaussYuexz',
       },
       {
-        img: zhoupinggao,
-        name: 'Pinggao Zhou',
+        img: wuyujun,
+        name: 'Yujun Wu',
         title: 'Maintainer',
-        email: 'zhoupinggao@huawei.com',
-        gitee: 'https://gitee.com/zankyfun4',
+        email: 'wuyujun2@huawei.com',
+        gitee: 'https://gitee.com/wuyujun3',
       },
       {
         img: zhouzhaoqi,
@@ -4725,11 +4801,11 @@ export default {
         gitee: 'https://gitee.com/totaj',
       },
       {
-        img: lizhenfeng,
-        name: 'Zhenfeng Li',
+        img: lichun,
+        name: 'Chun Li',
         title: 'Committer',
-        email: 'lizhenfeng001@chinasofti.com',
-        gitee: 'https://gitee.com/lizhenfeng123',
+        email: 'pickup.li@woqutech.com',
+        gitee: 'https://gitee.com/woqutech_0',
       },
       {
         img: hechenghan,
@@ -4739,11 +4815,11 @@ export default {
         gitee: 'https://gitee.com/he-chenghan',
       },
       {
-        img: zhangyaozhong,
-        name: 'Yaozhong Zhang',
+        img: wumingyuan2,
+        name: 'Mingyuan Wu',
         title: 'Committer',
-        email: 'zhangyaozhong1@huawei.com',
-        gitee: 'https://gitee.com/buter',
+        email: 'wumingyuan@gbase.cn',
+        gitee: 'https://gitee.com/wmy_ld',
       },
       {
         img: douxin,
@@ -4875,6 +4951,13 @@ export default {
         email: 'ailong@outlook.com',
         gitee: 'https://gitee.com/ailoooong',
       },
+      {
+        img: meixiangru,
+        name: 'Xiangru Mei',
+        title: 'Committer',
+        email: 'xiangrumei87@126.com',
+        gitee: 'https://gitee.com/xiangrumei',
+      },
     ],
     SECURITY: [
       {
@@ -4885,11 +4968,11 @@ export default {
         gitee: 'https://gitee.com/zhu_jinwei',
       },
       {
-        img: zhangyaozhong,
-        name: 'Yaozhong Zhang',
+        img: jianghongbo,
+        name: 'Hongbo Jiang',
         title: 'Committer',
-        email: 'zhangyaozhong1@huawei.com',
-        gitee: 'https://gitee.com/buter',
+        email: 'xdhbj0022@163.com',
+        gitee: 'https://gitee.com/hwhbj',
       },
       {
         img: lijianfeng,
@@ -4912,8 +4995,45 @@ export default {
         email: 'liuzheli@nankai.edu.cn',
         gitee: 'https://gitee.com/liuzheli',
       },
+      {
+        img: shayAkirav,
+        name: 'shay.akirav',
+        title: 'Committer',
+        email: 'shay.akirav@huawei.com',
+        gitee: 'https://gitee.com/shay-akirav',
+      },
     ],
     IOT: [
+      {
+        img: zhangchengwei,
+        name: 'Chengwei Zhang',
+        title: 'Maintainer',
+        email: 'flashspy@hotmail.com',
+        gitee: 'https://gitee.com/jarekzhang',
+      },
+      {
+        img: huxiangyu,
+        name: 'Xiangyu Hu',
+        title: 'Maintainer',
+        email: 'xiangyu.hu@outlook.com',
+        gitee: 'https://gitee.com/huxiangyu',
+      },
+      {
+        img: zhengzhenyu,
+        name: 'Zhenyu Zheng',
+        title: 'Committer',
+        email: 'zheng.zhenyu@outlook.com',
+        gitee: 'https://gitee.com/ZhengZhenyu',
+      },
+      {
+        img: zhaobo,
+        name: 'Bo Zhao',
+        title: 'Committer',
+        email: '270162781@qq.com',
+        gitee: 'https://gitee.com/bzhaoop',
+      },
+    ],
+    OM: [
       {
         img: caodongsheng,
         name: 'Dongsheng Cao',
@@ -4936,11 +5056,11 @@ export default {
         gitee: 'https://gitee.com/wang-zili',
       },
       {
-        img: hangjin,
-        name: 'Jin Hang',
+        img: liuhangyu,
+        name: 'Hangyu Liu',
         title: 'Committer',
-        email: '850894759@qq.com',
-        gitee: 'https://gitee.com/hangjin2020',
+        email: 'liuhangyu6@huawei.com',
+        gitee: 'https://gitee.com/miffyrcee',
       },
       {
         img: liubin,
@@ -4963,8 +5083,6 @@ export default {
         email: 'liu_hui0228@163.com',
         gitee: 'https://gitee.com/liu_hui0228',
       },
-    ],
-    OM: [
       {
         img: zhangchengwei,
         name: 'Chengwei Zhang',
@@ -5549,11 +5667,11 @@ export default {
         gitee: 'https://gitee.com/dbowner_zhang',
       },
       {
-        img: liyansong,
-        name: 'Yansong Li',
+        img: xiaojie,
+        name: 'Jie Xiao',
         title: 'Maintainer',
-        email: 'yansong_lee@163.com',
-        gitee: 'https://gitee.com/yansong_lee',
+        email: 'jiexiao1413@foxmail.com',
+        gitee: 'https://gitee.com/jiexiao1413',
       },
       {
         img: fuxiongdao,
@@ -5876,6 +5994,20 @@ export default {
         email: 'zhaosq76@chinaunicom.cn',
         gitee: 'https://gitee.com/dreamalloc',
       },
+      {
+        img: luohao,
+        name: 'Hao Luo',
+        title: 'Committer',
+        email: '287095649@qq.co',
+        gitee: 'https://gitee.com/jeremytim',
+      },
+      {
+        img: zhaojun,
+        name: 'Jun Zhao',
+        title: 'Committer',
+        email: 'zhaoj296@chinaunicom.cn',
+        gitee: 'https://gitee.com/kelayzhao',
+      },
     ],
     CM: [
       {
@@ -5926,6 +6058,20 @@ export default {
         title: 'Committer',
         email: 'xieweiping@xfusion.com',
         gitee: 'https://gitee.com/junhangis',
+      },
+      {
+        img: peibaoyi,
+        name: 'Baoyi Pei',
+        title: 'Committer',
+        email: 'peibaoyi@huawei.com',
+        gitee: 'https://gitee.com/peibaoyi',
+      },
+      {
+        img: zhulixia,
+        name: 'Lixia Zhu',
+        title: 'Committer',
+        email: 'zhulixia3@huawei.com',
+        gitee: 'https://gitee.com/zhulixia',
       },
     ],
     RELEASEMANAGEMENT: [
@@ -6007,11 +6153,11 @@ export default {
         gitee: 'https://gitee.com/lys6676',
       },
       {
-        img: suzhangyan,
-        name: 'Zhangyan Su',
+        img: liuwei,
+        name: 'Wei Liu',
         title: 'Committer',
-        email: 'suzy1030@qq.com',
-        gitee: 'https://gitee.com/siven_dev',
+        email: 'wei.liu@enmotech.com',
+        gitee: 'https://gitee.com/llzx373',
       },
       {
         img: hexiaodong,
@@ -6028,11 +6174,11 @@ export default {
         gitee: 'https://gitee.com/tbing8803',
       },
       {
-        img: liuchun,
-        name: 'Chun Liu',
+        img: zhangxubo,
+        name: 'Xubo Zhang',
         title: 'Committer',
-        email: 'liuchun3@huawei.com',
-        gitee: 'https://gitee.com/nifinity',
+        email: '2578876417@qq.com',
+        gitee: 'https://gitee.com/zhang_xubo',
       },
       {
         img: wumingyuan,
@@ -6047,6 +6193,27 @@ export default {
         title: 'Committer',
         email: 'vastdata.com.cn',
         gitee: 'https://gitee.com/willloong',
+      },
+      {
+        img: cuikaifeng,
+        name: 'Kaifeng Cui',
+        title: 'Committer',
+        email: '13810767894@139.com',
+        gitee: 'https://gitee.com/azurenake',
+      },
+      {
+        img: yangzihao,
+        name: 'Zihao Yang',
+        title: 'Committer',
+        email: 'yangzihao@ncti-gba.c',
+        gitee: ' https://gitee.com/Louisyzh',
+      },
+      {
+        img: zengseliang,
+        name: 'Seliang Zeng',
+        title: 'Committer',
+        email: 'zengseliang@ncti-gba.cn',
+        gitee: 'https://gitee.com/zengseliang',
       },
     ],
     OPS: [
@@ -6803,7 +6970,7 @@ export default {
         name: 'Changhao Liu',
         title: 'Ambassador',
         company: 'China Minsheng Bank Corp., Ltd.',
-        email: 'mailto:liuchanghao@cmbc.com.cn',
+      
       },
       {
         img: liutianshun,
