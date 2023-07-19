@@ -2329,7 +2329,7 @@ export default {
         title: 'Committer',
         email: 'zhaoj296@chinaunicom.cn',
         gitee: 'https://gitee.com/kelayzhao ',
-      },
+      }],
       CM: [
       {
         img: zhangjianxun,
