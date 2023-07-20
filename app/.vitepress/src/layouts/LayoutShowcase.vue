@@ -1,17 +1,11 @@
 <script setup lang="ts">
 import { useData } from 'vitepress';
-// import { useI18n } from '@/i18n';
 
 import BannerLevel2 from '@/components/BannerLevel2.vue';
-// import BreadCrumbs from '@/components/BreadCrumbs.vue';
 
 import banner from '@/assets/illustrations/banner-secondary.png';
 
 const { frontmatter } = useData();
-// const caseInfo = {
-//   link: `/${lang.value}/userPractice/`,
-//   name: '用户实践',
-// };
 </script>
 
 <template>
@@ -21,13 +15,6 @@ const { frontmatter } = useData();
       :title="frontmatter.title"
       :subtitle="frontmatter.summary"
     />
-    <!-- <div class="bread">
-      <BreadCrumbs
-        :bread1="caseInfo.name"
-        :bread2="frontmatter.title"
-        :link1="caseInfo.link"
-      />
-    </div> -->
     <Content class="markdown" />
   </div>
 </template>

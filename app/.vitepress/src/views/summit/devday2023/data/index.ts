@@ -8,6 +8,8 @@ import agenda1 from './agenda1';
 import agenda2 from './agenda2';
 import live from './live';
 
+import { SHIMO_LINK } from '@/shared/url-config';
+
 export default {
   banner: {
     img_pc: bannerPc,
@@ -26,25 +28,25 @@ export default {
       bgImg: cardBg1,
       title: '赞助征集',
       titleEn: 'CALL FOR SPONSOR',
-      link: 'https://shimo.im/forms/vVqRMGzO2ahP0X3y/fill',
+      link: `${SHIMO_LINK}forms/vVqRMGzO2ahP0X3y/fill`,
     },
     {
       bgImg: cardBg2,
       title: '议题征集',
       titleEn: 'CALL FOR PROPOSAL',
-      link: 'https://shimo.im/forms/wV3VMPlV9YfKjMAy/fill',
+      link: `${SHIMO_LINK}forms/wV3VMPlV9YfKjMAy/fill`,
     },
     {
       bgImg: cardBg3,
       title: '演讲者征集',
       titleEn: 'CALL FOR SPEAKER',
-      link: 'https://shimo.im/forms/1lq7rxzZxGsLnN3e/fill',
+      link: `${SHIMO_LINK}forms/1lq7rxzZxGsLnN3e/fill`,
     },
     {
       bgImg: cardBg4,
       title: 'SIG 征集',
       titleEn: 'CALL FOR SIG',
-      link: 'https://shimo.im/forms/0l3NMWYVOQTLMbAR/fill',
+      link: `${SHIMO_LINK}forms/0l3NMWYVOQTLMbAR/fill`,
     },
   ],
   agenda1,

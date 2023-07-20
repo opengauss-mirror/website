@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { computed, ref, watch, onMounted } from 'vue';
+import { computed, ref, watch } from 'vue';
 import { useCommon } from '@/stores/common';
-import { getUrlParams } from '@/shared/utils';
 
 import AppContext from '@/components/AppContent.vue';
 import SummitBanner from './components/SummitBanner.vue';
@@ -257,9 +256,6 @@ watch(
           text-align: center;
           font-size: var(--o-font-size-h3);
           color: #000;
-          // @media screen and (max-width: 768px) {
-          //   font-size: var(--o-font-size-text);
-          // }
           & + .item-title {
             margin-top: var(--o-spacing-h4);
             margin-left: auto;
@@ -267,9 +263,6 @@ watch(
             font-size: var(--o-font-size-h4);
             line-height: var(--o-line-height-h4);
             width: 180px;
-            // @media screen and (max-width: 768px) {
-            //   font-size: var(--o-font-size-text);
-            // }
           }
         }
       }

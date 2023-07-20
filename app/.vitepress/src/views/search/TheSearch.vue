@@ -177,7 +177,7 @@ function handleSelectChange(val: string) {
   history.pushState(null, '', `?search=${val}`);
 }
 // 设置搜索结果的跳转路径
-function goLink(data: any, index: number) {
+function goLink(data: any) {
   const { type, path } = data;
   const search_result_url = '/' + path;
   if (type === 'docs') {
@@ -231,8 +231,8 @@ async function getVersionTag() {
 
 onMounted(async () => {
   await getVersionTag();
-  if (decodeURI(location.href.split('=')[1]) !== 'undefined') {
-    searchInput.value = decodeURI(window.location.href.split('=')[1]) + '';
+  if (location.href.split('=')[1] !== 'undefined') {
+    searchInput.value = decodeURI(location.href.split('=')[1]) + '';
   }
   searchAll();
 });
@@ -415,7 +415,6 @@ watch(
         flex-shrink: 0;
         background-color: var(--o-color-bg2);
         @media (max-width: 768px) {
-          // min-width: 400px;
           width: 100%;
           padding: 0 16px;
           margin-bottom: 16px;

@@ -9,6 +9,7 @@ import bannerHissMo from '@/assets/category/home/banner/banner-hiss_mo.png';
 
 import bannerActivePc from '@/assets/category/home/banner/banner-active_pc.png';
 import bannerActiveMo from '@/assets/category/home/banner/banner-active_mo.png';
+import { HISS_LINK, LEARN_VIDEO_LINK } from '@/shared/url-config';
 
 // targetTap:1 新页签打开
 // type:1(只有图片)、2(文字居左)，3(文字居中),4(仅用于实习banner),5 视频
@@ -17,7 +18,7 @@ export default {
     {
       pcBanner: bannerHissPc,
       moBanner: bannerHissMo,
-      link: 'https://hiss.shixizhi.huawei.com/portal/1643780836745113602?pageId=1644234415967604737&activeIndex=-1&sxz-lang=zh_CN',
+      link: `${HISS_LINK}portal/1643780836745113602?pageId=1644234415967604737&activeIndex=-1&sxz-lang=zh_CN`,
       targetTap: 1,
       title: '',
       subtitle: '',
@@ -51,8 +52,7 @@ export default {
       btn: '了解更多',
       type: 2,
       className: '',
-      video:
-        'https://learningvideo.obs.ap-southeast-1.myhuaweicloud.com/openGauss%E5%AE%A3%E4%BC%A0%E6%B4%BB%E5%8A%A8/openGauss%2BHC%E5%AE%A3%E4%BC%A0%E8%A7%86%E9%A2%91.mp4',
+      video: `${LEARN_VIDEO_LINK}openGauss%E5%AE%A3%E4%BC%A0%E6%B4%BB%E5%8A%A8/openGauss%2BHC%E5%AE%A3%E4%BC%A0%E8%A7%86%E9%A2%91.mp4`,
     },
     {
       pcBanner: banner500,
@@ -82,8 +82,7 @@ export default {
       btn: 'Learn More',
       type: 2,
       className: '',
-      video:
-        'https://learningvideo.obs.ap-southeast-1.myhuaweicloud.com/openGauss%E5%AE%A3%E4%BC%A0%E6%B4%BB%E5%8A%A8/openGauss%2BHC%E5%AE%A3%E4%BC%A0%E8%A7%86%E9%A2%91.mp4',
+      video: `${LEARN_VIDEO_LINK}openGauss%E5%AE%A3%E4%BC%A0%E6%B4%BB%E5%8A%A8/openGauss%2BHC%E5%AE%A3%E4%BC%A0%E8%A7%86%E9%A2%91.mp4`,
     },
     {
       pcBanner: banner500,

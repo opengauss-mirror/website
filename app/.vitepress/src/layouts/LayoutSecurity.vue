@@ -1,11 +1,9 @@
 <script setup lang="ts">
-// import { useData } from 'vitepress';
 import { useI18n } from '@/i18n';
 
 import BannerLevel2 from '@/components/BannerLevel2.vue';
 import Banner from '@/assets/illustrations/banner-secondary.png';
 import illustration from '@/assets/illustrations/security.png';
-// const { frontmatter } = useData();
 const i18n = useI18n();
 </script>
 

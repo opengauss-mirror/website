@@ -10,7 +10,7 @@ import { handleError, getCustomCookie } from '@/shared/utils';
 // /calendar
 
 export function getMeetingData(params: object) {
-  const url = '/calendar/meetingsdata/';
+  const url = '/api-meeting/calendar/meetingsdata/';
   return request
     .get(url, params)
     .then((res: AxiosResponse) => res.data)
@@ -25,7 +25,7 @@ export function getMeetingData(params: object) {
  * @return {Array}
  */
 export function getMeetingSig() {
-  const url = '/calendar/groups/';
+  const url = '/api-meeting/calendar/groups/';
   return request
     .get(url)
     .then((res: AxiosResponse) => res.data)
@@ -39,7 +39,7 @@ export function getMeetingSig() {
  * @name giteeLogin
  */
 export function giteeLogin() {
-  const url = '/calendar/gitee_login/';
+  const url = '/api-meeting/calendar/gitee_login/';
   return request
     .get(url)
     .then((res: AxiosResponse) => res.data)
@@ -48,7 +48,7 @@ export function giteeLogin() {
     });
 }
 export function giteeLogout() {
-  const url = '/calendar/logout/';
+  const url = '/api-meeting/calendar/logout/';
   return request
     .get(url)
     .then((res: AxiosResponse) => res.data)
@@ -61,7 +61,7 @@ export function giteeLogout() {
  * @name meetingLogin
  */
 export function meetingLogin() {
-  const url = `/calendar/user/`;
+  const url = `/api-meeting/calendar/user/`;
   return request
     .get(url)
     .then((res: AxiosResponse) => res.data)
@@ -71,7 +71,7 @@ export function meetingLogin() {
 }
 
 export function meetingReserve(params: object) {
-  const url = `/calendar/meetings/`;
+  const url = `/api-meeting/calendar/meetings/`;
   return request
     .post(url, params, {
       headers: {
@@ -85,7 +85,7 @@ export function meetingReserve(params: object) {
 }
 
 export function meetingDelete(mid: number | null) {
-  const url = `/calendar/meeting/action/delete/${mid}/`;
+  const url = `/api-meeting/calendar/meeting/action/delete/${mid}/`;
   return request
     .delete(url, {
       headers: {
@@ -99,7 +99,7 @@ export function meetingDelete(mid: number | null) {
 }
 
 export function meetingUpdate(mid: number | null, params: object) {
-  const url = `/calendar/meeting/action/update/${mid}/`;
+  const url = `/api-meeting/calendar/meeting/action/update/${mid}/`;
   return request
     .put(url, params, {
       headers: {
