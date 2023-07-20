@@ -1,10 +1,10 @@
 ---
-title: 'Privacy Policy'
+title: 'Historical Privacy Policy'
 ---
 
 <div class='markdown legal-privacy' >
 
-<h1>Privacy Policy</h1>
+<h1>Historical Privacy Policy</h1>
 
 ---
 
@@ -26,8 +26,6 @@ The openGauss Community understands the importance of your privacy and fully res
 
 - (f) **Certificate Service**. When using our certificate query service, you need to enter your email address to query your OGCA certificate in the openGauss community. We will collect your personal information from our partner to generate an OGCA certificate.
 
-- (g)**Content Release**. When you participate in community meetings, live broadcasts, blogs, community activities, contribution in the open source community, or newsgroups, your user name and the information you publish will be visible to the community and the public. If you are a SIG member of the openGauss community, we will request your Gitee information for posting on our website.
-
 We may also collect your personal information from third parties, including other platforms or communities, within the scope of your authorization and consent, or obtain your personal information from other legal and public channels. We promise to process your personal information in strict accordance with applicable laws and regulations. Please read the privacy policies and user agreements of the third parties carefully. If your personal information provided by a third party is required when you use the openGauss community, but you refuse to allow the third party to collect, use, transfer, or share your personal information when the third party provides services, you may not be able to use related services of the openGauss community. For example, when you use an authorized third-party account to log in to the openGauss community, we will obtain your personal information from the third party with your consent.
 
 ## 2.How We Use Cookies and Similar Technologies
@@ -45,8 +43,6 @@ Many services require cookies. If you do not allow cookies related to these serv
 - (c) **Do Not Track**. Many Web browsers provide the **Do Not Track** function, which can be used to send **Do Not Track** requests to websites. Currently, major Internet standardization organizations have not established policies to specify how websites should handle these requests. If you enable **Do Not Track** or other similar functions that your browser may provide, we will not change the way your data is collected and used as described in this Statement. However, we reserve the right to respond to your **Do Not Track** request and stop collecting your data without prior notice.
 
 - (d) **Your Choice**. Most browsers allow you to delete or reject cookies. To do this, follow the instructions in the browser settings. By default, many browsers accept cookies until you change your settings.
-
-- (e) **Expiration Time**. We may use both session cookies (which will expire after you close the web browser) and persistent cookies (which will be retained on your computer or mobile device for six months according to applicable laws and regulations, or until you withdraw your consent or delete them).
 
 ## 3.How We Share Your Personal Data
 
@@ -133,16 +129,10 @@ The openGauss community is registered in the Hong Kong Special Administrative Re
 
 We may update or modify this Statement from time to time according to changes of our services or data processing. If we update this Statement, we will publish the latest version of the Statement on the website, and it will take effect immediately upon its release. You are advised to review this Statement periodically for any changes. If we make any substantial changes to this Statement (any change of personal data we collect or we use for), we will notify you through appropriate channels and obtain your consent.
 
-## 9. How We Protect Children's Online Privacy
-
-Our services are open only to enterprises and individuals over the age of 14.
-
-## 10.How to Contact Us
+## 9.How to Contact Us
 
 If you want to contact us or exercise your rights, please contact us at <contact@opengauss.org>.
 
-Last updated: **July, 2023**
-
-To view historical versions of the privacy policy, click [here](/en/privacyPolicy/historical/).
+Last updated: **June, 2023**
 
 </div>
