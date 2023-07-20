@@ -5,6 +5,8 @@ import letsPlay from '@/assets/category/home/letsPlay.png';
 import TryTitle from '@/assets/category/home/title.png';
 import TryTitleMo from '@/assets/category/home/title-mo.png';
 
+import { TRYME_LINK } from '@/shared/url-config';
+
 const playground = ref(null);
 const textBlock = ref(false);
 
@@ -68,7 +70,7 @@ onMounted(() => {
         <img :src="TryTitle" class="first-code" />
         <a
           class="lets-play"
-          href="https://tryme.opengauss.org/"
+          :href="TRYME_LINK"
           target="_blank"
           rel="noopener noreferrer"
         >

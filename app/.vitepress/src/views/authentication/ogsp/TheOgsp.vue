@@ -194,7 +194,7 @@ onMounted(() => {
             ><span>{{ item.commitment }}</span>
           </li>
           <li>
-            <spans>{{ i18n.ogsp.experience }}:</spans
+            <span>{{ i18n.ogsp.experience }}:</span
             ><span>{{ item.experience }}</span>
           </li>
           <li>

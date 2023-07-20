@@ -42,6 +42,7 @@ import ccb_dark from '../img/partners/dark/ccb-dark.png';
 import huaxia_dark from '../img/partners/dark/huaxia-dark.png';
 import shenxinfu_dark from '../img/partners/dark/shenxinfu-dark.png';
 import borui_dark from '../img/partners/dark/borui-dark.png';
+import { OBS_VIDEO_LINK } from '@/shared/url-config';
 
 const summitData = {
   desc: [
@@ -318,95 +319,95 @@ const summitData = {
   videolist: [
     {
       name: 'openGauss 生态繁荣发展',
-      link: 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/openGaussEcologyProsperityDevelopment/openGaussEcologyProsperityDevelopment/openGaussEcologyProsperityDevelopment.mp4',
+      link: `${OBS_VIDEO_LINK}openGaussEcologyProsperityDevelopment/openGaussEcologyProsperityDevelopment/openGaussEcologyProsperityDevelopment.mp4`,
     },
     {
       name: 'openGauss 开源社区',
-      link: 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/CooperationCommunity/openGauss/openGauss.mp4',
+      link: `${OBS_VIDEO_LINK}CooperationCommunity/openGauss/openGauss.mp4`,
     },
     {
       name: 'ShardingSphere 开源社区',
-      link: 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/CooperationCommunity/ShardingSphere/shardingSphere.mp4',
+      link: `${OBS_VIDEO_LINK}CooperationCommunity/ShardingSphere/shardingSphere.mp4`,
     },
     {
       name: 'openEuler 开源社区',
-      link: 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/CooperationCommunity/openEuler/openEuler.mp4',
+      link: `${OBS_VIDEO_LINK}CooperationCommunity/openEuler/openEuler.mp4`,
     },
     {
       name: 'openLookeng 开源社区',
-      link: 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/CooperationCommunity/openLooKeng/openLooKeng.mp4',
+      link: `${OBS_VIDEO_LINK}CooperationCommunity/openLooKeng/openLooKeng.mp4`,
     },
     {
       name: '海量数据',
-      link: 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/DBV/vastdata/vastdata.mp4',
+      link: `${OBS_VIDEO_LINK}DBV/vastdata/vastdata.mp4`,
     },
     {
       name: '神舟通用',
-      link: 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/DBV/shentongdata/shentongdata.mp4',
+      link: `${OBS_VIDEO_LINK}DBV/shentongdata/shentongdata.mp4`,
     },
     {
       name: '华为云',
-      link: 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/DBV/huaweicloud/huaweicloud.mp4',
+      link: `${OBS_VIDEO_LINK}DBV/huaweicloud/huaweicloud.mp4`,
     },
     {
       name: '云和恩墨',
-      link: 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/DBV/enmotech/enmotech.mp4',
+      link: `${OBS_VIDEO_LINK}DBV/enmotech/enmotech.mp4`,
     },
     {
       name: '虚谷伟业',
-      link: 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/DBV/xugucn/xugucn.mp4',
+      link: `${OBS_VIDEO_LINK}DBV/xugucn/xugucn.mp4`,
     },
     {
       name: '深信服',
-      link: 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/ISV/sangfor/sangfor.mp4',
+      link: `${OBS_VIDEO_LINK}ISV/sangfor/sangfor.mp4`,
     },
     {
       name: '北京超图',
-      link: 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/ISV/supermap/supermap.mp4',
+      link: `${OBS_VIDEO_LINK}ISV/supermap/supermap.mp4`,
     },
     {
       name: '用户证言',
-      link: 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/CustomerTestimony/CustomerTestimony/CustomerTestimony.mp4',
+      link: `${OBS_VIDEO_LINK}CustomerTestimony/CustomerTestimony/CustomerTestimony.mp4`,
     },
     {
       name: 'AI4DB - DBMind自治',
-      link: 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/InnovationTechnology/AI4DB-DBMind-AutomonomyPlatform/AI4D-DBMind-AutomonomyPlatform.mp4',
+      link: `${OBS_VIDEO_LINK}InnovationTechnology/AI4DB-DBMind-AutomonomyPlatform/AI4D-DBMind-AutomonomyPlatform.mp4`,
     },
     {
       name: 'DB4AI - 库内AI引擎',
-      link: 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/InnovationTechnology/DB4AI-InnerAIEngine/DB4AI-InnerAIEngine.mp4',
+      link: `${OBS_VIDEO_LINK}InnovationTechnology/DB4AI-InnerAIEngine/DB4AI-InnerAIEngine.mp4`,
     },
     {
       name: 'openLooKeng 跨源联合查询',
-      link: 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/InnovationTechnology/openLooKengUnitedSearch/openLooKengUnitedSearch.mp4',
+      link: `${OBS_VIDEO_LINK}InnovationTechnology/openLooKengUnitedSearch/openLooKengUnitedSearch.mp4`,
     },
     {
       name: '4路鲲鹏230万tpmC(NUMA-aware)',
-      link: 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/InnovationTechnology/fourEntrances-kunpeng-230m-tpmC/fourEntrances-kunpeng-230m-tpmC.mp4',
+      link: `${OBS_VIDEO_LINK}InnovationTechnology/fourEntrances-kunpeng-230m-tpmC/fourEntrances-kunpeng-230m-tpmC.mp4`,
     },
     {
       name: '数据库平滑迁移',
-      link: 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/InnovationTechnology/DatabaseSmoothessImmigration/DatabaseSmoothessImmigration.mp4',
+      link: `${OBS_VIDEO_LINK}InnovationTechnology/DatabaseSmoothessImmigration/DatabaseSmoothessImmigration.mp4`,
     },
     {
       name: 'openGauss统一管理平台',
-      link: 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/InnovationTechnology/openGaussUnifiedAdministrationPlatform/openGaussUnifiedAdministrationPlatform.mp4',
+      link: `${OBS_VIDEO_LINK}InnovationTechnology/openGaussUnifiedAdministrationPlatform/openGaussUnifiedAdministrationPlatform.mp4`,
     },
     {
       name: 'In-place Update 存储引擎',
-      link: 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/InnovationTechnology/In-place-Update-StorageEngine/In-place-Update-StorageEngine.mp4',
+      link: `${OBS_VIDEO_LINK}InnovationTechnology/In-place-Update-StorageEngine/In-place-Update-StorageEngine.mp4`,
     },
     {
       name: 'DCF 分布式共识框架',
-      link: 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/InnovationTechnology/DCF-distributed-consistency-architecture/DCF-distributed-consistency-architecture.mp4',
+      link: `${OBS_VIDEO_LINK}InnovationTechnology/DCF-distributed-consistency-architecture/DCF-distributed-consistency-architecture.mp4`,
     },
     {
       name: '全密态数据库',
-      link: 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/InnovationTechnology/wholeEncryptedDatabase/wholeEncryptedDatabase.mp4',
+      link: `${OBS_VIDEO_LINK}InnovationTechnology/wholeEncryptedDatabase/wholeEncryptedDatabase.mp4`,
     },
     {
       name: '动态脱敏',
-      link: 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/InnovationTechnology/dynamicDesensitization/dynamicDesensitization.mp4',
+      link: `${OBS_VIDEO_LINK}InnovationTechnology/dynamicDesensitization/dynamicDesensitization.mp4`,
     },
   ],
   partnersList: {

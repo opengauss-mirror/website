@@ -100,7 +100,6 @@ onMounted(() => {
   }
 }
 .news-markdown-detail {
-  // max-width: 880px;
   margin: 0 auto;
 }
 .bread {

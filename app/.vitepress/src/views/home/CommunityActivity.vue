@@ -20,35 +20,34 @@ const roundNumber = ref([
     ROUND_VALUE: 0,
   },
 ]);
-function addNumber(start: number, end: number,item,index) {
-      let i = start;
-      const allTime = 2500;
-      let time = 10;
-      if (allTime / end > time) {
-        time = allTime / end;
+function addNumber(start: number, end: number, item, index) {
+  let i = start;
+  const allTime = 2500;
+  let time = 10;
+  if (allTime / end > time) {
+    time = allTime / end;
+  }
+  if (i < end) {
+    const Interval = setInterval(function () {
+      // 设置每次增加的动态数字，可调整
+      if (allTime / end < time) {
+        i += end / (allTime / time);
+      } else {
+        i += 1;
       }
-      if (i < end) {
-        const Interval = setInterval(function () {
-          // 设置每次增加的动态数字，可调整
-          if (allTime / end < time) {
-            i += end / (allTime / time);
-          } else {
-            i += 1;
-          }
-          if (i > end) {
-            clearInterval(Interval);
-            item.ROUND_VALUE = roundList.value[index].ROUND_VALUE;
-            i = 0;
-          } else {
-            item.ROUND_VALUE = i;
-          }
-        }, time);
+      if (i > end) {
+        clearInterval(Interval);
+        item.ROUND_VALUE = roundList.value[index].ROUND_VALUE;
+        i = 0;
+      } else {
+        item.ROUND_VALUE = i;
       }
-    }
+    }, time);
+  }
+}
 const changeNum = () => {
   roundNumber.value.forEach((item: { ROUND_VALUE: number }, index: number) => {
-    
-    addNumber(0, roundList.value[index].ROUND_VALUE,item,index);
+    addNumber(0, roundList.value[index].ROUND_VALUE, item, index);
   });
 };
 

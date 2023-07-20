@@ -7,6 +7,7 @@ import SummitSchedule from './components/SummitSchedule.vue';
 import LinkPanel from '@/components/LinkPanel.vue';
 
 import summitData from './data';
+import { OBS_VIDEO_LINK } from '@/shared/url-config';
 
 import banner from './img/banner.jpg';
 import bannerMo from './img/banner-mo.jpg';
@@ -57,7 +58,10 @@ const videoClickBtn = (path: string) => {
       >
         <source
           type="video/mp4"
-          src="https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com/openGauss%20Summit%202022/Banner/openGauss%20Banner%E5%8A%A8K_1920x380.mp4"
+          :src="
+            OBS_VIDEO_LINK +
+            'openGauss%20Summit%202022/Banner/openGauss%20Banner%E5%8A%A8K_1920x380.mp4'
+          "
         />
       </video>
     </div>
@@ -279,9 +283,6 @@ const videoClickBtn = (path: string) => {
     display: block;
   }
 }
-.dark img {
-  // filter: brightness(0.8) grayscale(0.2) contrast(1.2);
-}
 .banner {
   width: 100%;
   .summit-banner-pc {
@@ -377,9 +378,6 @@ const videoClickBtn = (path: string) => {
 
       img {
         width: 100%;
-        // @media screen and (max-width: 490px) {
-        //   width: 100%;
-        // }
       }
     }
   }
@@ -525,15 +523,9 @@ const videoClickBtn = (path: string) => {
       margin-top: var(--o-spacing-h4);
     }
     &:nth-of-type(1) {
-      // .el-tabs__active-bar {
-      //   display: none;
-      // }
       // 暂时取消第一天的分会选中状态
       .other {
         :deep(.o-tabs) {
-          // .el-tabs__active-bar {
-          //   display: none;
-          // }
           .is-active {
             color: var(--o-color-brand1);
           }
@@ -779,7 +771,6 @@ const videoClickBtn = (path: string) => {
   }
   .video-item {
     position: absolute;
-    // background: rgba($color: #ff0000, $alpha: 0.3);
     border-radius: 30px;
     display: block;
     cursor: pointer;

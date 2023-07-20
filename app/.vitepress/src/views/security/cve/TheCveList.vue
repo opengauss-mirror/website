@@ -210,7 +210,6 @@ watch(queryData, () => getCveLists(queryData));
 .o-search {
   height: 56px;
   @media screen and (max-width: 768px) {
-    // display: none;
     height: 36px;
     margin-bottom: var(--o-spacing-h6);
   }

@@ -588,7 +588,6 @@ onMounted(async () => {
     .cover {
       width: 100%;
       height: 100%;
-      // object-fit: cover;
       display: block;
       transition: transform 0.6s ease;
     }

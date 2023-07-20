@@ -10,8 +10,6 @@ import AppContent from '@/components/AppContent.vue';
 
 import IconChevron from '~icons/app/icon-chevron-right.svg';
 
-// import type { AxiosResponse } from '@/shared/axios';
-
 const i18n = useI18n();
 const router = useRouter();
 const { lang } = useData();
@@ -261,7 +259,6 @@ onMounted(() => {
     justify-content: center;
     height: 48px;
     @media screen and (max-width: 768px) {
-      // margin: var(--o-spacing-h5) 0 0 0;
       height: 38px;
       background-color: var(--o-color-bg2);
     }
@@ -346,7 +343,6 @@ onMounted(() => {
   @media screen and (max-width: 768px) {
     width: 100%;
     padding: 0;
-    // display: none;
   }
   .tabs-container {
     .o-tabs {
@@ -355,15 +351,12 @@ onMounted(() => {
         margin: 0 auto;
         background-color: var(--o-color-bg1);
         @media screen and (max-width: 768px) {
-          // background-color: var(--o-color-bg1);
-          // margin: var(--o-spacing-h5) 0 var(--o-spacing-h2) 0;
           margin: 16px 0 40px;
         }
         .tab-content {
           padding: var(--o-spacing-h2);
           background-color: var(--o-color-bg2);
           @media screen and (max-width: 768px) {
-            // margin: var(--o-spacing-h5) var(--o-spacing-h5) 0;
             padding: var(--o-spacing-h5);
             &-item:last-child {
               margin-bottom: 0;
@@ -445,7 +438,6 @@ onMounted(() => {
             }
           }
           .packge-item {
-            // margin-bottom: 40px;
             @media screen and (max-width: 768px) {
               display: none;
             }
@@ -476,7 +468,6 @@ onMounted(() => {
                   line-height: var(--o-line-height-tip);
                   color: var(--o-color-text1);
                 }
-                // border-bottom: 1px solid var(--o-color-border1);
               }
               .packge-list {
                 .list-head {

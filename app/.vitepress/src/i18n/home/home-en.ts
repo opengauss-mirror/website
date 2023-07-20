@@ -24,6 +24,7 @@ import osv from '@/assets/category/home/community/osv.svg';
 import osvDark from '@/assets/category/home/community/osv-dark.svg';
 import contributer from '@/assets/category/home/community/contributors.svg';
 import contributerDark from '@/assets/category/home/community/contributors-dark.svg';
+import { LEARN_VIDEO_LINK, DATA_LINK } from '@/shared/url-config';
 
 export default {
   HOME_MEETING: 'Community Meeting',
@@ -65,8 +66,7 @@ export default {
       },
     ],
     DOWN_NAME: 'Click here to download openGauss Overview Slides',
-    DOWN_link:
-      'https://learningvideo.obs.ap-southeast-1.myhuaweicloud.com/openGauss%20%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84.pptx',
+    DOWN_link: `${LEARN_VIDEO_LINK}openGauss%20%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84.pptx`,
   },
   COMMUNITY_ACTIVITY: {
     TITLE: 'We Are Thriving',
@@ -75,7 +75,7 @@ export default {
       CONTENT:
         'openGauss is an open source database platform that encourages community contribution and collaboration.',
       VIEW_DETAILS: 'Learn More',
-      LINK: 'https://datastat.opengauss.org/en/overview',
+      LINK: `${DATA_LINK}en/overview`,
     },
   },
   HOME_EXPLORE: {
@@ -170,7 +170,7 @@ export default {
     SUBMIT: '立即预订',
     CANCEL: '取消',
     RESET: '重置',
-    LOGOUT_SUCCESS:'Logged Out',
+    LOGOUT_SUCCESS: 'Logged Out',
   },
   HOME_ROOMS: {
     ROOM_NAME: [

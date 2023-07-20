@@ -80,9 +80,6 @@ const summitStyle = computed(() => {
 }
 .lecturer-list {
   margin: var(--o-spacing-h2) auto;
-  // display: flex;
-  // flex-wrap: wrap;
-  // justify-content: center;
   display: grid;
   grid-template-columns: repeat(4, minmax(82px, 1fr));
   column-gap: 0;
@@ -94,7 +91,6 @@ const summitStyle = computed(() => {
     grid-template-columns: repeat(2, 1fr);
   }
   &-item {
-    // width: 354px;
     @media (max-width: 780px) {
       width: 100%;
       margin: 0 auto;
@@ -126,9 +122,6 @@ const summitStyle = computed(() => {
         }
       }
     }
-    // &:nth-of-type(1){
-    //   margin-top: 20px;
-    // }
     p {
       font-size: var(--o-spacing-h5);
       color: var(--o-color-brand1);

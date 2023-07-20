@@ -46,32 +46,23 @@ export default defineConfig({
   server: {
     hmr: true, // 配置自动刷新
     proxy: {
-      '/advisoryCVE/': {
+      '/api-cve/': {
         target: 'https://api.openeuler.org/cve-manager/',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/advisoryCVE/, ''),
-      },
-      '/api-certification/': {
-        target: 'https://ccs.opengauss.org/ccs/base/',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api-certification/, ''),
+        rewrite: (path) => path.replace(/^\/api-cve/, ''),
       },
       '/api-dsapi/': {
         target: 'https://dsapi.osinfra.cn/',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api-dsapi/, ''),
       },
-      '/calendar/': {
+      '/api-meeting/': {
         target: 'https://www.opengauss.org/',
         changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api-meeting/, ''),
       },
-      '/omapi/': {
-        target: 'https://omapi.osinfra.cn/',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/omapi/, ''),
-      },
-      '/api-search': {
-        target: 'https://doc-search.opengauss.org',
+      '/api-search/': {
+        target: 'https://doc-search.opengauss.org/',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api-search/, ''),
       },
