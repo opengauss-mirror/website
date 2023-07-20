@@ -57,7 +57,7 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/api-dsapi/, ''),
       },
       '/api-meeting/': {
-        target: 'https://www.opengauss.org/',
+        target: 'https://opengauss.myopeninfra.com/',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api-meeting/, ''),
       },
@@ -65,6 +65,11 @@ export default defineConfig({
         target: 'https://doc-search.opengauss.org/',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api-search/, ''),
+      },
+      '/api-oneid/': {
+        target: 'https://omapi.myopeninfra.com/',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api-oneid/, ''),
       },
     },
   },
