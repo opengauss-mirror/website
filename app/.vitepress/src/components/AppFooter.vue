@@ -19,6 +19,16 @@ import logo51cto from '@/assets/footer/cto.png';
 import CodeGzh from '@/assets/footer/wechat.png';
 import IconCancel from '~icons/app/icon-cancel.svg';
 
+import {
+  OSCHINA_LINK,
+  CSDN_LINK,
+  CTO_LINK,
+  MODB_LINK,
+  INFOQ_LINK,
+  BILIBILI_LINK,
+  ZHIZHU_LINK,
+} from '@/shared/url-config';
+
 const props = defineProps({
   isCookieTip: {
     type: Boolean,
@@ -32,39 +42,39 @@ const i18n = useI18n();
 const footerLinks = {
   row: [
     {
-      path: 'https://my.oschina.net/u/5059795',
+      path: `${OSCHINA_LINK}u/5059795`,
       logo: logoOschina,
       id: 'oschina',
     },
     {
-      path: 'https://blog.csdn.net/weixin_49727236?spm=1000.2115.3001.5343',
+      path: `${CSDN_LINK}weixin_49727236?spm=1000.2115.3001.5343`,
       logo: logoCsdn,
       id: 'csdn',
     },
     {
-      path: 'https://blog.51cto.com/u_15157671',
+      path: `${CTO_LINK}u_15157671`,
       logo: logo51cto,
       id: '51cto',
     },
   ],
   row1: [
     {
-      path: 'https://www.modb.pro/u/429265',
+      path: `${MODB_LINK}u/429265`,
       logo: logoModb,
       id: 'modb',
     },
     {
-      path: 'https://www.infoq.cn/u/opengauss/publish',
+      path: `${INFOQ_LINK}u/opengauss/publish`,
       logo: logoInfoq,
       id: 'infoq',
     },
     {
-      path: 'https://space.bilibili.com/543286270',
+      path: `${BILIBILI_LINK}543286270`,
       logo: logoBilibili,
       id: 'bilibili',
     },
     {
-      path: 'https://www.zhihu.com/people/opengauss',
+      path: `${ZHIZHU_LINK}people/opengauss`,
       logo: logoZhihu,
       id: 'zhihu',
     },

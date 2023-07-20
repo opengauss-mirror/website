@@ -18,6 +18,7 @@ import LayoutEvents from '@/layouts/LayoutEvents.vue';
 import LayoutShowcase from '@/layouts/LayoutShowcase.vue';
 
 import categories from '@/shared/category';
+import { VULBOX_LINK } from '@/shared/url-config';
 
 import safetyImgLight from '@/assets/category/security/img/safety-img-light.png';
 import safetyImgDark from '@/assets/category/security/img/safety-img-dark.png';
@@ -87,11 +88,7 @@ watch(
       <component :is="comp" v-if="isCustomLayout"></component>
       <Content v-else />
       <div v-if="isTipShow" class="safety-tips">
-        <a
-          href="https://opengausssrc.vulbox.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a :href="VULBOX_LINK" target="_blank" rel="noopener noreferrer">
           <img :src="safetyImg" alt="" />
         </a>
       </div>

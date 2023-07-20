@@ -10,35 +10,43 @@ import kunpeng_dark from '@/assets/category/home/link/dark/kunpeng.png';
 import songshuhui_dark from '@/assets/category/home/link/dark/songshuhui.png';
 import mindspore_dark from '@/assets/category/home/link/dark/mindspore.png';
 
+import {
+  EULER_LINK,
+  MINDSPORE_LINK,
+  LOOKENG_LINK,
+  KUNPENG_LINK,
+  BBSCSDN_LINK,
+} from '@/shared/url-config';
+
 export default [
   {
     IMG: openeuler,
     DARK: openeuler_dark,
-    PATH: 'https://www.openeuler.org/zh/',
-    PATH_EN: 'https://www.openeuler.org/en/',
+    PATH: EULER_LINK,
+    PATH_EN: `${EULER_LINK}en/`,
   },
   {
     IMG: mindspore,
     DARK: mindspore_dark,
-    PATH: 'https://mindspore.cn/',
-    PATH_EN: 'https://mindspore.cn/en/',
+    PATH: MINDSPORE_LINK,
+    PATH_EN: `${MINDSPORE_LINK}en/`,
   },
   {
     IMG: openlookeng,
     DARK: openlookeng_dark,
-    PATH: 'https://openlookeng.io/zh/',
-    PATH_EN: 'https://openlookeng.io/en/',
+    PATH: `${LOOKENG_LINK}zh/`,
+    PATH_EN: `${LOOKENG_LINK}en/`,
   },
   {
     IMG: kunpeng,
     DARK: kunpeng_dark,
-    PATH: 'https://www.hikunpeng.com/',
-    PATH_EN: 'https://www.hikunpeng.com/en/',
+    PATH: KUNPENG_LINK,
+    PATH_EN: `${KUNPENG_LINK}en/`,
   },
   {
     IMG: songshuhui,
     DARK: songshuhui_dark,
-    PATH: 'https://bbs.csdn.net/forums/gaussdb',
-    PATH_EN: 'https://bbs.csdn.net/forums/gaussdb',
+    PATH: `${BBSCSDN_LINK}forums/gaussdb`,
+    PATH_EN: `${BBSCSDN_LINK}forums/gaussdb`,
   },
 ];

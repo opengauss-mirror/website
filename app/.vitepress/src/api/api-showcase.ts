@@ -12,7 +12,7 @@ export function getUserCaseData(params: object) {
   return request
     .post(url, params)
     .then((res: AxiosResponse) => res.data)
-    .catch((e: any) => {
-      handleError('Error!')
+    .catch(() => {
+      handleError('Error!');
     });
 }

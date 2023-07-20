@@ -44,9 +44,6 @@ const { bread1, bread2, link1, link2 } = toRefs(props);
   line-height: var(--o-line-height-tip);
   display: flex;
   align-items: center;
-  // @media (max-width: 768px) {
-  //   height: var(--o-spacing-h4);
-  // }
   span {
     display: inline-block;
   }

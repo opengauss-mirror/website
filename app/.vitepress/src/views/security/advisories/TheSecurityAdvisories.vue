@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { reactive, ref, watch, onMounted, h } from 'vue';
+import { reactive, ref, watch, onMounted } from 'vue';
 import { useRouter } from 'vitepress';
 import { useI18n } from '@/i18n';
-import { ElMessage } from 'element-plus';
+import { handleError } from '@/shared/utils';
 
 import BannerLevel2 from '@/components/BannerLevel2.vue';
 import AppPaginationMo from '@/components/AppPaginationMo.vue';
@@ -16,7 +16,6 @@ import IconCancel from '~icons/app/icon-cancel.svg';
 
 import { getSecurityList } from '@/api/api-security';
 import { SecurityLists, CveQuery } from '@/shared/@types/type-security';
-// import OSearch from 'opendesign/search/OSearch.vue';
 
 const i18n = useI18n();
 const router = useRouter();
@@ -66,13 +65,7 @@ function getSecurityLists(data: CveQuery) {
       }
     })
     .catch(() => {
-      ElMessage({
-        message: h(
-          'p',
-          { style: 'width: 5vw;display:flex;justify-content: center;' },
-          [h('span', { style: 'color: red;display:flex;' }, 'Error!')]
-        ),
-      });
+      handleError('Error!');
     });
 }
 
@@ -329,7 +322,6 @@ watch(queryData, () => getSecurityLists(queryData));
       display: flex;
       align-items: center;
       padding: 1px 16px;
-      // border: 1px solid var(--o-color-border1);
       .el-input__prefix {
         margin-right: 8px;
       }

@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { computed, ref, watch, onMounted } from 'vue';
+import { computed, ref, watch } from 'vue';
 import { useCommon } from '@/stores/common';
-import { getUrlParams } from '@/shared/utils';
 
 import AppContext from '@/components/AppContent.vue';
 import SummitBanner from './components/SummitBanner.vue';
@@ -72,25 +71,6 @@ watch(
     immediate: true,
   }
 );
-// 埋点
-function setDownData() {
-  const sensors = (window as any)['sensorsDataAnalytic201505'];
-  const { href } = window.location;
-  if (href.includes('?utm_source')) {
-    const paramsArr = getUrlParams(href);
-    sensors?.setProfile({
-      ...(window as any)['sensorsCustomBuriedData'],
-      profileType: 'fromAdvertised',
-      origin: href,
-      ...paramsArr,
-    });
-  }
-}
-onMounted(() => {
-  setTimeout(() => {
-    setDownData();
-  }, 300);
-});
 </script>
 <template>
   <SummitBanner :banner-data="summitData.banner" />
@@ -276,9 +256,6 @@ onMounted(() => {
           text-align: center;
           font-size: var(--o-font-size-h3);
           color: #000;
-          // @media screen and (max-width: 768px) {
-          //   font-size: var(--o-font-size-text);
-          // }
           & + .item-title {
             margin-top: var(--o-spacing-h4);
             margin-left: auto;
@@ -286,9 +263,6 @@ onMounted(() => {
             font-size: var(--o-font-size-h4);
             line-height: var(--o-line-height-h4);
             width: 180px;
-            // @media screen and (max-width: 768px) {
-            //   font-size: var(--o-font-size-text);
-            // }
           }
         }
       }

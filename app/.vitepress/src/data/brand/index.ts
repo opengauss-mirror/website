@@ -2,7 +2,7 @@ export default {
   brandList: [
     {
       id: 0,
-      backgroundColor:'white',
+      backgroundColor: 'white',
       url: '/category/brand/view/logo1-view.png',
       downloadContent: [
         {
@@ -21,7 +21,7 @@ export default {
     },
     {
       id: 1,
-      backgroundColor:'white',
+      backgroundColor: 'white',
       url: '/category/brand/view/logo2-view.png',
       downloadContent: [
         {
@@ -40,7 +40,7 @@ export default {
     },
     {
       id: 2,
-      backgroundColor:'white',
+      backgroundColor: 'white',
       url: '/category/brand/view/logo3-view.png',
       downloadContent: [
         {
@@ -59,7 +59,7 @@ export default {
     },
     {
       id: 3,
-      backgroundColor:'black',
+      backgroundColor: 'black',
       url: '/category/brand/view/logo4-view.png',
       downloadContent: [
         {
@@ -78,7 +78,7 @@ export default {
     },
     {
       id: 4,
-      backgroundColor:'white',
+      backgroundColor: 'white',
       url: '/category/brand/view/logo5-view.png',
       downloadContent: [
         {
@@ -97,7 +97,7 @@ export default {
     },
     {
       id: 5,
-      backgroundColor:'white',
+      backgroundColor: 'white',
       url: '/category/brand/view/logo6-view.png',
       downloadContent: [
         {
@@ -116,7 +116,7 @@ export default {
     },
     {
       id: 6,
-      backgroundColor:'white',
+      backgroundColor: 'white',
       url: '/category/brand/view/logo7-view.png',
       downloadContent: [
         {
@@ -135,7 +135,7 @@ export default {
     },
     {
       id: 7,
-      backgroundColor:'black',
+      backgroundColor: 'black',
       url: '/category/brand/view/logo8-view.png',
       downloadContent: [
         {

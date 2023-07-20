@@ -27,16 +27,16 @@ const screenWidth = useWindowResize();
 
 // 所需日期
 const nowDate = new Date();
-const thisYear: number = nowDate.getFullYear();
-const thisMonth: number | string =
+const nowYear: number = nowDate.getFullYear();
+const nowMonth: number | string =
   nowDate.getMonth() < 9
     ? '0' + (nowDate.getMonth() + 1)
     : nowDate.getMonth() + 1;
-const thisDate =
+const nowDay =
   nowDate.getDate().toString().length === 1
     ? '0' + nowDate.getDate()
     : nowDate.getDate();
-const curDate = Number('' + thisYear + thisMonth + thisDate);
+const curDate = Number('' + nowYear + nowMonth + nowDay);
 
 const addActiveData = {
   title: '2022年度openGauss社区满意度调研',
@@ -60,7 +60,7 @@ const latestList: Ref<any> = ref([]);
 // 精彩回顾中所有的数据
 const allReviewList: Ref<Array<any>> = ref([]);
 // 时间线所选中的日期
-const timeLineDate: Ref<string> = ref(thisYear + '-' + thisMonth);
+const timeLineDate: Ref<string> = ref(nowYear + '-' + nowMonth);
 // 精彩回顾下展示列表
 const newsList = computed(() => {
   if (screenWidth.value > 768) {
@@ -108,7 +108,7 @@ onMounted(async () => {
       }
     });
   } catch (e: any) {
-    handleError('Error!')
+    handleError('Error!');
   }
 });
 const goDetail = (path: string) => {

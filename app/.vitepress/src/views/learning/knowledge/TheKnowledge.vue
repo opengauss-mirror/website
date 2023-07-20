@@ -93,10 +93,8 @@ const i18n = useI18n();
     }
     .item-left {
       width: 100%;
-      // height: 416px;
       color: var(--o-color-white);
       font-size: var(--o-font-h3);
-      // line-height: 416px;
       display: flex;
       align-items: center;
       justify-content: center;

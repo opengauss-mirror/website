@@ -1,12 +1,14 @@
 <script lang="ts" setup>
-import { ref, computed, onMounted, Ref, watch, h } from 'vue';
+import { ref, computed, onMounted, Ref, watch } from 'vue';
 import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';
 import { ElMessage, ElMessageBox } from 'element-plus';
 import { useCommon } from '@/stores/common';
 import { showGuard, useStoreData } from '@/shared/login';
+import { handleError } from '@/shared/utils';
 
 import DownloadConfig from '@/data/download';
+import { GITEE_LINK } from '@/shared/url-config';
 import AppContent from '@/components/AppContent.vue';
 import OSelect from 'opendesign/select/OSelect.vue';
 import DownloadContent from './DownloadContent.vue';
@@ -17,9 +19,6 @@ import IconTips from '~icons/app/icon-tips.svg';
 
 import BreadCrumbs from '@/components/BreadCrumbs.vue';
 
-import QuesTipsImg from '@/assets/category/download/tips.png';
-import QuesTipsImg1 from '@/assets/category/download/tips1.png';
-
 const i18n = useI18n();
 const { lang, theme } = useData();
 const commonStore = useCommon();
@@ -27,7 +26,7 @@ const { guardAuthClient } = useStoreData();
 
 const isZh = computed(() => (lang.value === 'zh' ? true : false));
 
-const shaText = 'SHA256';
+const SHATEXT = 'SHA256';
 const selectVersion = ref(DownloadConfig[2].id);
 function initSelectVersion() {
   DownloadConfig.forEach((item: any) => {
@@ -41,12 +40,6 @@ initSelectVersion();
 const getData: any = computed(() => {
   return DownloadConfig.filter((el) => el.id === selectVersion.value);
 });
-// 下载认证版本
-// const downloadVersionAuthIndex = '3.1.1';
-
-const handleDownloadUrl = (url: string) => {
-  window.open(url, '_blank');
-};
 
 // 复制
 const inputDom: Ref<HTMLElement | null> = ref(null);
@@ -116,13 +109,7 @@ const changeDownloadAuth = () => {
       showGuard();
     })
     .catch(() => {
-      ElMessage({
-        message: h(
-          'p',
-          { style: 'width: 5vw;display:flex;justify-content: center;' },
-          [h('span', { style: 'color: red;display:flex;' }, 'Error!')]
-        ),
-      });
+      handleError('Error!');
     });
 };
 //控制需要登录后才能下载的版本(默认仅为最新版需要登录后下载)
@@ -172,7 +159,7 @@ watch(
           >{{ isZh ? item.name : item.nameEn }}</a
         >
         <a
-          href="https://gitee.com/opengauss/community/issues"
+          :href="GITEE_LINK + 'opengauss/community/issues'"
           target="_blank"
           rel="noopener noreferrer"
           >{{ i18n.download.FEEDBACK_QUESTION }}</a
@@ -238,7 +225,7 @@ watch(
                     class="down-copy"
                     @click="handleUrlCopy(subitem.centos_sha)"
                   >
-                    {{ shaText }}
+                    {{ SHATEXT }}
                     <template #suffixIcon>
                       <IconCopy />
                     </template>
@@ -294,7 +281,7 @@ watch(
                     animation
                     @click="handleUrlCopy(subitem.aarch_sha)"
                   >
-                    {{ shaText }}
+                    {{ SHATEXT }}
                     <template #suffixIcon>
                       <IconCopy />
                     </template>
@@ -338,7 +325,7 @@ watch(
                     animation
                     @click="handleUrlCopy(subitem.x86_sha)"
                   >
-                    {{ shaText }}
+                    {{ SHATEXT }}
                     <template #suffixIcon>
                       <IconCopy />
                     </template>
@@ -411,7 +398,7 @@ watch(
                   animation
                   @click="handleUrlCopy(scope.row.centos_sha)"
                 >
-                  {{ shaText }}
+                  {{ SHATEXT }}
                   <template #suffixIcon>
                     <IconCopy />
                   </template>
@@ -471,7 +458,7 @@ watch(
                   animation
                   @click="handleUrlCopy(scope.row.aarch_sha)"
                 >
-                  {{ shaText }}
+                  {{ SHATEXT }}
                   <template #suffixIcon>
                     <IconCopy />
                   </template>
@@ -516,7 +503,7 @@ watch(
                   animation
                   @click="handleUrlCopy(scope.row.x86_sha)"
                 >
-                  {{ shaText }}
+                  {{ SHATEXT }}
                   <template #suffixIcon>
                     <IconCopy />
                   </template>
@@ -537,25 +524,6 @@ watch(
   <div class="input-box lable-name">
     <!-- 用于复制RSNC的值 -->
     <input id="useCopy" type="text" />
-  </div>
-  <div v-if="lang === 'zh'" class="questionnaire lable-name">
-    <div class="ques-icon">
-      <img :src="QuesTipsImg" class="img0" alt="" />
-      <img :src="QuesTipsImg1" class="img1" alt="" />
-    </div>
-    <div class="ques-info lable-name">
-      <p class="title">{{ i18n.download.LETTER.NAME }}</p>
-      <p class="letter-text">
-        {{ i18n.download.LETTER.INFO }}
-      </p>
-      <OButton
-        type="primary"
-        size="mini"
-        @click="handleDownloadUrl(i18n.download.LETTER.PATH)"
-      >
-        {{ i18n.download.LETTER.BTN }}
-      </OButton>
-    </div>
   </div>
 </template>
 
@@ -733,59 +701,5 @@ watch(
 .server-name {
   font-size: var(--o-font-size-text);
   line-height: var(--o-line-height-text);
-}
-
-.questionnaire {
-  position: fixed;
-  bottom: 350px;
-  right: 5%;
-  z-index: 9;
-  @media screen and (max-width: 1100px) {
-    display: none;
-  }
-  .ques-icon {
-    position: relative;
-    .img1 {
-      width: 45px;
-      position: absolute;
-      top: -6px;
-      left: 17px;
-      object-fit: cover;
-      z-index: 2;
-    }
-    .img0 {
-      object-fit: cover;
-      width: 79px;
-      height: 93px;
-    }
-  }
-
-  .ques-info {
-    display: none;
-    padding: 18px var(--o-spacing-h5) var(--o-spacing-h5);
-    width: 179px;
-    position: absolute;
-    top: 0;
-    left: -50px;
-    z-index: 1;
-    border-radius: 6px;
-    text-align: center;
-    color: #fff;
-    background: #8d8bff;
-    p {
-      text-align: left;
-      font-size: var(--o-font-size-tip);
-      line-height: var(--o-line-height-tip);
-    }
-    .letter-text {
-      margin: var(--o-spacing-h8) 0;
-    }
-  }
-
-  &:hover {
-    .ques-info {
-      display: block;
-    }
-  }
 }
 </style>

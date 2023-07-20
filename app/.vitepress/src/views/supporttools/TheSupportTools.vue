@@ -132,7 +132,6 @@ const supporttoolsInfo = computed(() => {
   }
 }
 .tool-content {
-  // flex: 1;
   .tool-item {
     &:not(:last-child) {
       margin-bottom: var(--o-spacing-h4);

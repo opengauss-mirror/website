@@ -88,7 +88,7 @@ onMounted(() => {
       affectedProductList.value = res.body.affectBody;
     });
   } catch (e: any) {
-    handleError('Error!')
+    handleError('Error!');
   }
 });
 </script>

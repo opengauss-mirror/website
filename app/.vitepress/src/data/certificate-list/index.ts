@@ -1,3 +1,8 @@
+import {
+  OBS_CERTIFICATION_LINK,
+  OBS_CERTIFICATION_LINK1,
+} from '@/shared/url-config';
+
 export default {
   zh: [
     {
@@ -6,8 +11,7 @@ export default {
       version: 'openGauss 5.0.0',
       award: '2023-06-30',
       expiration: '2026-03-31',
-      certificate:
-        'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/CSIDB%20V1.0.0/Certificate.pdf',
+      certificate: `${OBS_CERTIFICATION_LINK}CSIDB%20V1.0.0/Certificate.pdf`,
     },
     {
       pro: '【全真数据库平台】V5.0.0',
@@ -15,8 +19,7 @@ export default {
       version: 'openGauss 5.0.0',
       award: '2023-06-30',
       expiration: '2026-03-31',
-      certificate:
-        'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%85%A8%E7%9C%9F%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B3%E5%8F%B0%20V5.0.0/Certificate.pdf',
+      certificate: `${OBS_CERTIFICATION_LINK}%E5%85%A8%E7%9C%9F%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B3%E5%8F%B0%20V5.0.0/Certificate.pdf`,
     },
     {
       pro: '【Vastbase G100】V2.2.10',
@@ -24,8 +27,7 @@ export default {
       version: 'openGauss 3.0.0',
       award: '2023-06-01',
       expiration: '2025-03-31',
-      certificate:
-        'https://distributioncertification-beijing4.obs.myhuaweicloud.com/Vastbase%20V2.2.10/Certificate.pdf',
+      certificate: `${OBS_CERTIFICATION_LINK1}Vastbase%20V2.2.10/Certificate.pdf`,
     },
     {
       pro: 'MuDB 1.0.0',
@@ -33,8 +35,7 @@ export default {
       version: 'openGauss 2.0.0',
       award: '2021-06-15',
       expiration: '2024-03-31',
-      certificate:
-        'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/MuDB%201.0.0/Certificate.pdf',
+      certificate: `${OBS_CERTIFICATION_LINK}MuDB%201.0.0/Certificate.pdf`,
     },
     {
       pro: '【Vastbase G100】V2.2',
@@ -42,8 +43,7 @@ export default {
       version: 'openGauss 2.0.0',
       award: '2021-08-20',
       expiration: '2024-03-31',
-      certificate:
-        'https://distributioncertification-beijing4.obs.myhuaweicloud.com/Vastbase%20V2.2/Certificate.pdf',
+      certificate: `${OBS_CERTIFICATION_LINK1}Vastbase%20V2.2/Certificate.pdf`,
     },
 
     {
@@ -52,8 +52,7 @@ export default {
       version: 'openGauss 2.0.0',
       award: '2021-08-25',
       expiration: '2024-03-31',
-      certificate:
-        'https://distributioncertification-beijing4.obs.myhuaweicloud.com/MogDB%202.0.1/Certificate.pdf',
+      certificate: `${OBS_CERTIFICATION_LINK1}MogDB%202.0.1/Certificate.pdf`,
     },
 
     {
@@ -62,8 +61,7 @@ export default {
       version: 'openGauss 2.0.0',
       award: '2022-05-07',
       expiration: '2024-03-31',
-      certificate:
-        'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/LNX-RDS%20V3.4/Certificate.pdf',
+      certificate: `${OBS_CERTIFICATION_LINK}LNX-RDS%20V3.4/Certificate.pdf`,
     },
 
     {
@@ -72,8 +70,7 @@ export default {
       version: 'openGauss 2.0.0',
       award: '2022-07-15',
       expiration: '2024-03-31',
-      certificate:
-        'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%9C%89%E8%93%89%E6%95%B0%E6%8D%AE%E5%BA%93%20V1.0/Certificate.pdf',
+      certificate: `${OBS_CERTIFICATION_LINK}%E6%9C%89%E8%93%89%E6%95%B0%E6%8D%AE%E5%BA%93%20V1.0/Certificate.pdf`,
     },
     {
       pro: '神通数据库管理系统 V7.0.21',
@@ -81,8 +78,7 @@ export default {
       version: 'openGauss 3.0.0',
       award: '2022-07-20',
       expiration: '2025-03-31',
-      certificate:
-        'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E7%A5%9E%E9%80%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%20V7.0.21/Certificate.pdf',
+      certificate: `${OBS_CERTIFICATION_LINK}%E7%A5%9E%E9%80%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%20V7.0.21/Certificate.pdf`,
     },
     {
       pro: 'GBase 8c V5',
@@ -90,8 +86,7 @@ export default {
       version: 'openGauss 3.0.0',
       award: '2022-09-10',
       expiration: '2025-03-31',
-      certificate:
-        'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/GBase%208c%20V5/Certificate.pdf',
+      certificate: `${OBS_CERTIFICATION_LINK}GBase%208c%20V5/Certificate.pdf`,
     },
     {
       pro: 'FusionDB 22',
@@ -99,8 +94,7 @@ export default {
       version: 'openGauss 3.0.0',
       award: '2022-11-25',
       expiration: '2025-03-31',
-      certificate:
-        'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/FusionDB%2022/Certificate.pdf',
+      certificate: `${OBS_CERTIFICATION_LINK}FusionDB%2022/Certificate.pdf`,
     },
     {
       pro: 'GBase 8s V8.8.5',
@@ -108,8 +102,7 @@ export default {
       version: 'openGauss 3.0.0',
       award: '2023-03-20',
       expiration: '2025-03-31',
-      certificate:
-        'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/GBase%208s%20V8.8.5/Certificate.pdf',
+      certificate: `${OBS_CERTIFICATION_LINK}GBase%208s%20V8.8.5/Certificate.pdf`,
     },
   ],
   en: [
@@ -119,8 +112,7 @@ export default {
       version: 'openGauss 5.0.0',
       award: '2023-06-30',
       expiration: '2026-03-31',
-      certificate:
-        'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/CSIDB%20V1.0.0/Certificate.pdf',
+      certificate: `${OBS_CERTIFICATION_LINK}CSIDB%20V1.0.0/Certificate.pdf`,
     },
     {
       pro: '【全真数据库平台】V5.0.0',
@@ -128,8 +120,7 @@ export default {
       version: 'openGauss 5.0.0',
       award: '2023-06-30',
       expiration: '2026-03-31',
-      certificate:
-        'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%85%A8%E7%9C%9F%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B3%E5%8F%B0%20V5.0.0/Certificate.pdf',
+      certificate: `${OBS_CERTIFICATION_LINK}%E5%85%A8%E7%9C%9F%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B3%E5%8F%B0%20V5.0.0/Certificate.pdf`,
     },
     {
       pro: '【Vastbase G100】V2.2.10',
@@ -137,8 +128,7 @@ export default {
       version: 'openGauss 3.0.0',
       award: '2023-06-01',
       expiration: '2025-03-31',
-      certificate:
-        'https://distributioncertification-beijing4.obs.myhuaweicloud.com/Vastbase%20V2.2.10/Certificate.pdf',
+      certificate: `${OBS_CERTIFICATION_LINK1}Vastbase%20V2.2.10/Certificate.pdf`,
     },
     {
       pro: 'MuDB 1.0.0',
@@ -146,8 +136,7 @@ export default {
       version: 'openGauss 2.0.0',
       award: '2021-06-15',
       expiration: '2024-03-31',
-      certificate:
-        'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/MuDB%201.0.0/Certificate.pdf',
+      certificate: `${OBS_CERTIFICATION_LINK}MuDB%201.0.0/Certificate.pdf`,
     },
     {
       pro: '【Vastbase G100】V2.2',
@@ -155,8 +144,7 @@ export default {
       version: 'openGauss 2.0.0',
       award: '2021-08-20',
       expiration: '2024-03-31',
-      certificate:
-        'https://distributioncertification-beijing4.obs.myhuaweicloud.com/Vastbase%20V2.2/Certificate.pdf',
+      certificate: `${OBS_CERTIFICATION_LINK1}Vastbase%20V2.2/Certificate.pdf`,
     },
 
     {
@@ -165,8 +153,7 @@ export default {
       version: 'openGauss 2.0.0',
       award: '2021-08-25',
       expiration: '2024-03-31',
-      certificate:
-        'https://distributioncertification-beijing4.obs.myhuaweicloud.com/MogDB%202.0.1/Certificate.pdf',
+      certificate: `${OBS_CERTIFICATION_LINK1}MogDB%202.0.1/Certificate.pdf`,
     },
 
     {
@@ -175,8 +162,7 @@ export default {
       version: 'openGauss 2.0.0',
       award: '2022-05-07',
       expiration: '2024-03-31',
-      certificate:
-        'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/LNX-RDS%20V3.4/Certificate.pdf',
+      certificate: `${OBS_CERTIFICATION_LINK}LNX-RDS%20V3.4/Certificate.pdf`,
     },
 
     {
@@ -185,8 +171,7 @@ export default {
       version: 'openGauss 2.0.0',
       award: '2022-07-15',
       expiration: '2024-03-31',
-      certificate:
-        'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%9C%89%E8%93%89%E6%95%B0%E6%8D%AE%E5%BA%93%20V1.0/Certificate.pdf',
+      certificate: `${OBS_CERTIFICATION_LINK}%E6%9C%89%E8%93%89%E6%95%B0%E6%8D%AE%E5%BA%93%20V1.0/Certificate.pdf`,
     },
     {
       pro: '神通数据库管理系统 V7.0.21',
@@ -194,8 +179,7 @@ export default {
       version: 'openGauss 3.0.0',
       award: '2022-07-20',
       expiration: '2025-03-31',
-      certificate:
-        'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E7%A5%9E%E9%80%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%20V7.0.21/Certificate.pdf',
+      certificate: `${OBS_CERTIFICATION_LINK}%E7%A5%9E%E9%80%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%20V7.0.21/Certificate.pdf`,
     },
     {
       pro: 'GBase 8c V5',
@@ -203,8 +187,7 @@ export default {
       version: 'openGauss 3.0.0',
       award: '2022-09-10',
       expiration: '2025-03-31',
-      certificate:
-        'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/GBase%208c%20V5/Certificate.pdf',
+      certificate: `${OBS_CERTIFICATION_LINK}GBase%208c%20V5/Certificate.pdf`,
     },
     {
       pro: 'FusionDB 22',
@@ -212,8 +195,7 @@ export default {
       version: 'openGauss 3.0.0',
       award: '2022-11-25',
       expiration: '2025-03-31',
-      certificate:
-        'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/FusionDB%2022/Certificate.pdf',
+      certificate: `${OBS_CERTIFICATION_LINK}FusionDB%2022/Certificate.pdf`,
     },
     {
       pro: 'GBase 8s V8.8.5',
@@ -221,8 +203,7 @@ export default {
       version: 'openGauss 3.0.0',
       award: '2023-03-20',
       expiration: '2025-03-31',
-      certificate:
-        'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/GBase%208s%20V8.8.5/Certificate.pdf',
+      certificate: `${OBS_CERTIFICATION_LINK}GBase%208s%20V8.8.5/Certificate.pdf`,
     },
   ],
 };

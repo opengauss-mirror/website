@@ -10,6 +10,7 @@ import Banner from '@/assets/illustrations/banner-secondary.png';
 import illustration from '@/assets/illustrations/compatibility.png';
 
 import { getCompatibilityData } from '@/api/api-compatibility';
+import { GITEE_LINK } from '@/shared/url-config';
 
 interface CompatibilityData {
   name: string;
@@ -44,10 +45,6 @@ const randerData = computed(() => {
   );
 });
 
-const searchValchange = () => {
-  handleGetCompatibilityData();
-};
-
 // 分页size修改
 const handleSizeChange = (val: number) => {
   queryData.per_page = val;
@@ -59,7 +56,7 @@ const handleCurrentChange = (val: number) => {
   currentPage.value = val;
 };
 
-const handleGetCompatibilityData = () => {
+const queryCompatibilityData = () => {
   getCompatibilityData(queryData).then((res) => {
     tableData.value = res?.data;
     total.value = res?.data?.length;
@@ -68,7 +65,7 @@ const handleGetCompatibilityData = () => {
 };
 
 onMounted(() => {
-  handleGetCompatibilityData();
+  queryCompatibilityData();
 });
 </script>
 <template>
@@ -83,7 +80,7 @@ onMounted(() => {
         v-model="queryData.name"
         clearable
         :placeholder="i18n.compatibility.search_placeholder"
-        @change="searchValchange"
+        @change="queryCompatibilityData"
       ></OSearch>
     </div>
     <OTable class="pc-list" :data="randerData" style="width: 100%">
@@ -160,7 +157,7 @@ onMounted(() => {
     </ClientOnly>
     <p class="introduce">
       关于商业软件兼容性技术测评，openGauss提供了完整的测试流程和工具，详见<a
-        href="https://gitee.com/opengauss/compatible-certification"
+        :href="GITEE_LINK + 'opengauss/compatible-certification'"
         target="_blank"
         rel="noopener noreferrer"
         >openGauss兼容性技术测评整体介绍</a

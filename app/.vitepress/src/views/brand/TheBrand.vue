@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Ref, ref, computed } from 'vue';
+import { computed } from 'vue';
 import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';
 import BrandConfig from '@/data/brand';
@@ -160,14 +160,14 @@ const pptList = computed(() =>
     align-items: center;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: var(--o-spacing-h4);
-    @media (max-width: 1280px){
+    @media (max-width: 1280px) {
       grid-template-columns: repeat(3, 1fr);
     }
-    @media (max-width: 880px){
+    @media (max-width: 880px) {
       grid-template-columns: repeat(2, 1fr);
-    margin-top: var(--o-spacing-h4);
+      margin-top: var(--o-spacing-h4);
     }
-    @media (max-width: 600px){
+    @media (max-width: 600px) {
       grid-template-columns: repeat(1, 1fr);
     }
   }

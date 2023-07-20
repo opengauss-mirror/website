@@ -109,8 +109,11 @@ const goLink = (url: string, isBlank: boolean) => {
       display: block;
       cursor: pointer;
     }
-    @media screen and (max-width: 767px) {
-      display: none;
+    @media screen and (min-width: 1100px) and (max-width: 1439px) {
+      width: 1000px;
+      margin: var(--o-spacing-h2) auto;
+      background-color: inherit;
+      box-shadow: none;
     }
     @media screen and (min-width: 768px) and (max-width: 1100px) {
       width: 755px;
@@ -118,11 +121,8 @@ const goLink = (url: string, isBlank: boolean) => {
       background-color: inherit;
       box-shadow: none;
     }
-    @media screen and (min-width: 1100px) and (max-width: 1439px) {
-      width: 1000px;
-      margin: var(--o-spacing-h2) auto;
-      background-color: inherit;
-      box-shadow: none;
+    @media screen and (max-width: 767px) {
+      display: none;
     }
   }
   &-print {
@@ -163,16 +163,16 @@ const goLink = (url: string, isBlank: boolean) => {
         height: 10px;
       }
     }
-    @media screen and (min-width: 768px) and (max-width: 1100px) {
-      width: 100px;
-      top: 123px;
-      left: 171px;
-      height: 10px;
-    }
     @media screen and (min-width: 1100px) and (max-width: 1439px) {
       width: 98px;
       top: 164px;
       left: 260px;
+      height: 10px;
+    }
+    @media screen and (min-width: 768px) and (max-width: 1100px) {
+      width: 100px;
+      top: 123px;
+      left: 171px;
       height: 10px;
     }
   }

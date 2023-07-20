@@ -1,133 +1,139 @@
+import {
+  GITEE_LINK,
+  GITEE_LINK1,
+  CLA_LINK,
+  SAGE_LINK,
+} from '@/shared/url-config';
 export default {
   zh: {
-    LOOK_DESC: '查看文字版攻略',
-    LOOK_MAP: '贡献攻略地图',
+    LOOK_DESC: `查看文字版攻略`,
+    LOOK_MAP: `贡献攻略地图`,
     LINK_LIST: [
       {
-        URL: 'https://gitee.com/opengauss/community/blob/master/code-of-conduct.md',
+        URL: `${GITEE_LINK}opengauss/community/blob/master/code-of-conduct.md`,
         BLANK: true,
       },
       {
-        URL: 'https://gitee.com/opengauss',
+        URL: `${GITEE_LINK}opengauss`,
         BLANK: true,
       },
       {
-        URL: 'https://gitee.com/help/articles/4113',
+        URL: `${GITEE_LINK}help/articles/4113`,
         BLANK: true,
       },
       {
-        URL: 'http://gitee.com/profile/emails',
+        URL: `${GITEE_LINK1}profile/emails`,
         BLANK: true,
       },
       {
-        URL: 'https://clasign.osinfra.cn/sign/Z2l0ZWUlMkZvcGVuZ2F1c3M=',
+        URL: `${CLA_LINK}sign/Z2l0ZWUlMkZvcGVuZ2F1c3M=`,
         BLANK: true,
       },
       {
-        URL: 'https://clasign.osinfra.cn/sign/Z2l0ZWUlMkZvcGVuZ2F1c3M=',
+        URL: `${CLA_LINK}sign/Z2l0ZWUlMkZvcGVuZ2F1c3M=`,
         BLANK: true,
       },
       {
-        URL: 'https://clasign.osinfra.cn/sign/Z2l0ZWUlMkZvcGVuZ2F1c3M=',
+        URL: `${CLA_LINK}sign/Z2l0ZWUlMkZvcGVuZ2F1c3M=`,
         BLANK: true,
       },
       {
-        URL: 'https://clasign.osinfra.cn/sign/Z2l0ZWUlMkZvcGVuZ2F1c3M=',
+        URL: `${CLA_LINK}sign/Z2l0ZWUlMkZvcGVuZ2F1c3M=`,
         BLANK: true,
       },
       {
-        URL: '/zh/contribution/detail.html#_3-找到您感兴趣的-sig',
+        URL: `/zh/contribution/detail.html#_3-找到您感兴趣的-sig`,
         BLANK: true,
       },
       {
-        URL: '/zh/contribution/detail.html#感兴趣的-sig-组还未出现？',
+        URL: `/zh/contribution/detail.html#感兴趣的-sig-组还未出现？`,
         BLANK: true,
       },
       {
-        URL: 'https://gitee.com/opengauss/community/blob/master/community-membership.md',
+        URL: `${GITEE_LINK}opengauss/community/blob/master/community-membership.md`,
         BLANK: true,
       },
       {
-        URL: 'https://gitee.com/organizations/opengauss/issues',
+        URL: `${GITEE_LINK}organizations/opengauss/issues`,
         BLANK: true,
       },
       {
-        URL: 'https://gitee.com/opengauss/community',
+        URL: `${GITEE_LINK}opengauss/community`,
         BLANK: true,
       },
       {
-        URL: 'https://gitee.com/opengauss/community/blob/master/contributors/issue-submit.md',
+        URL: `${GITEE_LINK}opengauss/community/blob/master/contributors/issue-submit.md`,
         BLANK: true,
       },
       {
-        URL: 'https://sage.thesharps.us/2014/09/01/the-gentle-art-of-patch-review/',
+        URL: `${SAGE_LINK}2014/09/01/the-gentle-art-of-patch-review/`,
         BLANK: true,
       },
     ],
   },
   en: {
-    LOOK_DESC: 'Learn More',
-    LOOK_MAP: 'Contribution Map',
-    PRINT_MAP: 'Download',
+    LOOK_DESC: `Learn More`,
+    LOOK_MAP: `Contribution Map`,
+    PRINT_MAP: `Download`,
     LINK_LIST: [
       {
-        URL: 'https://gitee.com/opengauss/community/blob/master/code-of-conduct.md',
+        URL: `${GITEE_LINK}opengauss/community/blob/master/code-of-conduct.md`,
         BLANK: true,
       },
       {
-        URL: 'https://gitee.com/opengauss',
+        URL: `${GITEE_LINK}opengauss`,
         BLANK: true,
       },
       {
-        URL: 'https://gitee.com/help/articles/4113',
+        URL: `${GITEE_LINK}help/articles/4113`,
         BLANK: true,
       },
       {
-        URL: 'http://gitee.com/profile/emails',
+        URL: `${GITEE_LINK1}profile/emails`,
         BLANK: true,
       },
       {
-        URL: 'https://clasign.osinfra.cn/sign/Z2l0ZWUlMkZvcGVuZ2F1c3M=',
+        URL: `${CLA_LINK}sign/Z2l0ZWUlMkZvcGVuZ2F1c3M=`,
         BLANK: true,
       },
       {
-        URL: 'https://clasign.osinfra.cn/sign/Z2l0ZWUlMkZvcGVuZ2F1c3M=',
+        URL: `${CLA_LINK}sign/Z2l0ZWUlMkZvcGVuZ2F1c3M=`,
         BLANK: true,
       },
       {
-        URL: 'https://clasign.osinfra.cn/sign/Z2l0ZWUlMkZvcGVuZ2F1c3M=',
+        URL: `${CLA_LINK}sign/Z2l0ZWUlMkZvcGVuZ2F1c3M=`,
         BLANK: true,
       },
       {
-        URL: 'https://clasign.osinfra.cn/sign/Z2l0ZWUlMkZvcGVuZ2F1c3M=',
+        URL: `${CLA_LINK}sign/Z2l0ZWUlMkZvcGVuZ2F1c3M=`,
         BLANK: true,
       },
       {
-        URL: '/en/contribution/detail.html#_3-finding-your-interests',
+        URL: `/en/contribution/detail.html#_3-finding-your-interests`,
         BLANK: true,
       },
       {
-        URL: '/en/contribution/detail.html#want-to-start-a-new-sig',
+        URL: `/en/contribution/detail.html#want-to-start-a-new-sig`,
         BLANK: true,
       },
       {
-        URL: 'https://gitee.com/opengauss/community/blob/master/community-membership.md',
+        URL: `${GITEE_LINK}opengauss/community/blob/master/community-membership.md`,
         BLANK: true,
       },
       {
-        URL: 'https://gitee.com/organizations/opengauss/issues',
+        URL: `${GITEE_LINK}organizations/opengauss/issues`,
         BLANK: true,
       },
       {
-        URL: 'https://gitee.com/opengauss/community',
+        URL: `${GITEE_LINK}opengauss/community`,
         BLANK: true,
       },
       {
-        URL: 'https://gitee.com/opengauss/community/blob/master/contributors/issue-submit.md',
+        URL: `${GITEE_LINK}opengauss/community/blob/master/contributors/issue-submit.md`,
         BLANK: true,
       },
       {
-        URL: 'https://sage.thesharps.us/2014/09/01/the-gentle-art-of-patch-review/',
+        URL: `${SAGE_LINK}2014/09/01/the-gentle-art-of-patch-review/`,
         BLANK: true,
       },
     ],

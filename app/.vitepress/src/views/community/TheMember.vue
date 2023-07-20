@@ -1,9 +1,8 @@
 <script lang="ts" setup>
-import { computed, ref, onMounted, onUnmounted, watch } from 'vue';
+import { computed, ref, onMounted, onUnmounted } from 'vue';
 import { useI18n } from '@/i18n';
 import AppContent from '@/components/AppContent.vue';
 import BannerLevel2 from '@/components/BannerLevel2.vue';
-import useWindowResize from '@/components/hooks/useWindowResize';
 
 import banner from '@/assets/illustrations/banner-secondary.png';
 import illustration from '@/assets/illustrations/member.png';
@@ -15,9 +14,6 @@ import IconToemail from '@/assets/category/member/toemail.svg';
 import IconGit from '@/assets/category/member/git.svg';
 
 const i18n = useI18n();
-
-const windowWidth = ref(useWindowResize());
-const screenWidth = ref(1080);
 
 const tabShow = ref(0);
 const tabIndex = ref(0);
@@ -63,10 +59,6 @@ onMounted(() => {
 onUnmounted(() => {
   const body = window;
   body?.removeEventListener('scroll', scroll);
-});
-
-watch(windowWidth, () => {
-  screenWidth.value = windowWidth.value;
 });
 
 // 移动端事件

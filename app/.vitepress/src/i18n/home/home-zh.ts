@@ -25,6 +25,7 @@ import osvDark from '@/assets/category/home/community/osv-dark.svg';
 import contributer from '@/assets/category/home/community/contributors.svg';
 import contributerDark from '@/assets/category/home/community/contributors-dark.svg';
 
+import { LEARN_VIDEO_LINK, DATA_LINK } from '@/shared/url-config';
 export default {
   HOME_MEETING: '社区会议',
   CHARACTERR_INFO: {
@@ -66,8 +67,7 @@ export default {
       },
     ],
     DOWN_NAME: '下载openGauss整体概述PPT',
-    DOWN_link:
-      'https://learningvideo.obs.ap-southeast-1.myhuaweicloud.com/openGauss%20%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84.pptx',
+    DOWN_link: `${LEARN_VIDEO_LINK}openGauss%20%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84.pptx`,
   },
   COMMUNITY_ACTIVITY: {
     TITLE: '社区动态',
@@ -75,7 +75,7 @@ export default {
       TITLE: 'openGauss社区活力',
       CONTENT: 'openGauss也是一个开源的数据库平台，鼓励社区贡献、合作。',
       VIEW_DETAILS: '查看贡献详情',
-      LINK: 'https://datastat.opengauss.org/zh/overview',
+      LINK: `${DATA_LINK}zh/overview`,
     },
   },
   HOME_EXPLORE: {
@@ -129,7 +129,7 @@ export default {
     LOGIN_TEXT:
       '使用openGauss会议预定功能需要SIG组Maintainer或Committer身份权限，请您允许授权登录Gitee验证用户信息',
     GITEE_BEN: 'Gitee授权登录',
-    LOGIN_TIPS: '登录即表示同意',
+    LOGIN_TIPS: '我已阅读并同意',
     BACK_LOGIN: '返回重新预定会议',
     PRIVACY: '隐私政策',
     RESERVE_MEETING: '预订会议',
@@ -176,6 +176,7 @@ export default {
     SUCCESS: '预定会议成功！',
     EMAIL: '邮件地址',
     EMAIL_TEXT: '多个邮件地址之间用逗号,隔开',
+    LOGOUT_SUCCESS: '退出成功',
   },
   HOME_ROOMS: {
     ROOM_NAME: [

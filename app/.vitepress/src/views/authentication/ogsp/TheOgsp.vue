@@ -72,7 +72,7 @@ function sortByAwardDescending(
     (a, b) => new Date(b.award).getTime() - new Date(a.award).getTime()
   );
 }
-function searchValchange() {
+function queryTableData() {
   tableData.value = searchProductOrName(
     i18n.value.ogsp.tableData,
     searchContent.value
@@ -98,7 +98,7 @@ onMounted(() => {
         v-model="searchContent"
         clearable
         :placeholder="i18n.ogsp.search_placeholder"
-        @change="searchValchange"
+        @change="queryTableData"
       ></OSearch>
     </div>
     <OTable class="pc-list" :data="randerTableData" style="width: 100%">
@@ -194,7 +194,7 @@ onMounted(() => {
             ><span>{{ item.commitment }}</span>
           </li>
           <li>
-            <spans>{{ i18n.ogsp.experience }}:</spans
+            <span>{{ i18n.ogsp.experience }}:</span
             ><span>{{ item.experience }}</span>
           </li>
           <li>

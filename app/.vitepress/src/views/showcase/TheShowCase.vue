@@ -144,32 +144,21 @@ function jumpPage(page: number) {
 }
 
 // 图标
+const imgList: any = {
+  Energy: energyIcon,
+  Internet: internetIcon,
+  ISV: isvIcon,
+  DBV: dbvIcon,
+  Others: otherIcon,
+  Industrial: industrialIcon,
+  Finance: financeIcon,
+  Carrier: carrierIcon,
+};
 const imgUrl = computed(() => (id: string) => {
-  switch (id) {
-    case 'Energy':
-      return energyIcon;
-      break;
-    case 'Internet':
-      return internetIcon;
-      break;
-    case 'ISV':
-      return isvIcon;
-      break;
-    case 'DBV':
-      return dbvIcon;
-      break;
-    case 'Others':
-      return otherIcon;
-      break;
-    case 'Industrial':
-      return industrialIcon;
-      break;
-    case 'Finance':
-      return financeIcon;
-      break;
-    case 'Carrier':
-      return carrierIcon;
-      break;
+  if (imgList[id]) {
+    return imgList[id];
+  } else {
+    return '';
   }
 });
 // 跳案例官网或者详情（type:1跳官网，2跳详情）

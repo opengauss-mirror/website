@@ -131,13 +131,11 @@ const rootStyle = computed(() => {
         user-select: none;
         pointer-events: none;
         @media screen and (max-width: 1080px) {
-          // top: 64px;
           font-size: var(--o-font-size-h2);
           line-height: var(--o-line-height-h2);
         }
 
         @media screen and (max-width: 768px) {
-          // top: 32px;
           font-size: var(--o-font-size-h6);
           line-height: var(--o-line-height-h6);
         }
@@ -195,9 +193,6 @@ const rootStyle = computed(() => {
 
       @media screen and (max-width: 1439px) {
         right: 24px;
-      }
-      @media screen and (max-width: 1439px) {
-        right: 16px;
       }
 
       img {

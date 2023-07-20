@@ -27,8 +27,8 @@ export function getSendCode(identification: string, code: string) {
   return request
     .get(url)
     .then((res: AxiosResponse) => res.data)
-    .catch((e: any) => {
-      handleError('Error!')
+    .catch(() => {
+      handleError('Error!');
     });
 }
 
@@ -45,7 +45,7 @@ export function downloadCard(pa: string, lang: string) {
       },
     })
     .then((res: AxiosResponse) => res.data)
-    .catch((e: any) => {
-      handleError('Error!')
+    .catch(() => {
+      handleError('Error!');
     });
 }

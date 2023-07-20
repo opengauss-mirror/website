@@ -25,12 +25,10 @@ const props = defineProps({
 });
 const { lang } = useData();
 const emits = defineEmits(['click-close', 'focus-input']);
-const isShowDrawer = ref(false);
 const searchInput = ref('');
 // 搜索抽屉
 const showDrawer = () => {
   if (props.isShowDrawer) {
-    isShowDrawer.value = true;
     emits('focus-input');
   }
 };
@@ -39,7 +37,10 @@ const hiddenSearchBox = () => {
 };
 // 搜索事件
 function handleSearchEvent() {
-  window.open(`${props.link}?search=${searchInput.value}`, '_self');
+  window.open(
+    `${props.link}?search=${encodeURIComponent(searchInput.value)}`,
+    '_self'
+  );
   hiddenSearchBox();
 }
 // 点击热搜标签

@@ -15,7 +15,7 @@ import order5 from '@/assets/category/advanced/5.png';
 const i18n = useI18n();
 const order = [order1, order2, order3, order4, order5];
 const showIndex = ref(0);
-function clickChangeShowIndex(index: number) {
+function changeShowIndex(index: number) {
   showIndex.value = index;
 }
 </script>
@@ -36,7 +36,7 @@ function clickChangeShowIndex(index: number) {
             :key="item.name"
             class="step-item"
             :class="showIndex === index ? 'step-item-active' : ''"
-            @click="clickChangeShowIndex(index)"
+            @click="changeShowIndex(index)"
           >
             <img :src="order[index]" alt="" />
             <p>{{ item.name }}</p>

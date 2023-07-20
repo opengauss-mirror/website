@@ -44,8 +44,8 @@ export function getSearchData(params: search) {
   return request
     .post(url, params)
     .then((res: AxiosResponse) => res.data)
-    .catch((e: any) => {
-      handleError('Error!')
+    .catch(() => {
+      handleError('Error!');
     });
 }
 export function getSearchCount(params: any) {
@@ -53,8 +53,8 @@ export function getSearchCount(params: any) {
   return request
     .post(url, params)
     .then((res: AxiosResponse) => res.data)
-    .catch((e: any) => {
-      handleError('Error!')
+    .catch(() => {
+      handleError('Error!');
     });
 }
 export function getPop(params: any) {
@@ -62,8 +62,8 @@ export function getPop(params: any) {
   return request
     .post(url)
     .then((res: AxiosResponse) => res.data)
-    .catch((e: any) => {
-      handleError('Error!')
+    .catch(() => {
+      handleError('Error!');
     });
 }
 
