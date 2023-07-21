@@ -288,28 +288,30 @@ const searchLink = `/${lang.value}/search/`;
           </div>
         </transition>
       </div>
-      <div class="opt-user">
-        <div v-if="token">
-          <div class="opt-info">
-            <img
-              v-if="guardAuthClient.photo"
-              :src="guardAuthClient.photo"
-              class="opt-img"
-            />
-            <div v-else class="opt-img"></div>
-            <p class="opt-name">{{ guardAuthClient.username }}</p>
+      <ClientOnly>
+        <div class="opt-user">
+          <div v-if="token">
+            <div class="opt-info">
+              <img
+                v-if="guardAuthClient.photo"
+                :src="guardAuthClient.photo"
+                class="opt-img"
+              />
+              <div v-else class="opt-img"></div>
+              <p class="opt-name">{{ guardAuthClient.username }}</p>
+            </div>
+            <ul class="menu-list">
+              <li @click="jumpToUserZone()">{{ i18n.common.USER_CENTER }}</li>
+              <li @click="logout()">{{ i18n.common.LOGOUT }}</li>
+            </ul>
           </div>
-          <ul class="menu-list">
-            <li @click="jumpToUserZone()">{{ i18n.common.USER_CENTER }}</li>
-            <li @click="logout()">{{ i18n.common.LOGOUT }}</li>
-          </ul>
+          <div v-else class="login" @click="showGuard()">
+            <OIcon class="icon">
+              <IconLogin />
+            </OIcon>
+          </div>
         </div>
-        <div v-else class="login" @click="showGuard()">
-          <OIcon class="icon">
-            <IconLogin />
-          </OIcon>
-        </div>
-      </div>
+      </ClientOnly>
     </div>
   </header>
 </template>
