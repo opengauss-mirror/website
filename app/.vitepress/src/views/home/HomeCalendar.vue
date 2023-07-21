@@ -242,10 +242,7 @@ const meetingData = async () => {
   calendarData.value = [];
   renderData.value.timeData = [];
   try {
-    const params = {
-      group: sigSelect.value,
-    };
-    const res = await getMeetingData(params);
+    const res = await getMeetingData(sigSelect.value);
     calendarData.value = res.tableData;
   } catch (e: any) {
     handleError('Error!');
@@ -931,7 +928,7 @@ const handleLogout = async () => {
       </div>
     </div>
     <!-- 预定、编辑表单 -->
-    <div v-if="isModify || isReserve" class="">
+    <div v-else-if="isModify || isReserve" class="">
       <ElForm
         ref="ruleFormRef"
         :model="meetingForm"
@@ -1089,6 +1086,7 @@ const handleLogout = async () => {
       }
       :deep(.el-checkbox__label) {
         padding-left: 3px;
+        color: var(--o-color-text1);
       }
     }
   }
