@@ -9,10 +9,10 @@ import { handleError, getCustomCookie } from '@/shared/utils';
  */
 // /calendar
 
-export function getMeetingData(params: object) {
-  const url = '/api-meeting/calendar/meetingsdata/';
+export function getMeetingData(group: string) {
+  const url = `/api-meeting/calendar/meetingsdata/?group=${group}`;
   return request
-    .get(url, params)
+    .get(url)
     .then((res: AxiosResponse) => res.data)
     .catch(() => {
       handleError('Error!');
