@@ -868,18 +868,18 @@ export default {
     ],
     SQLENGINE: [
       {
-        img: yuexingzhi,
-        name: `岳行之`,
+        img: zhoupinggao,
+        name: `周平高`,
         title: `Maintainer`,
-        email: `yuexingzhi2@huawei.com`,
-        gitee: `${GITEE_LINK}GaussYuexz`,
+        email: `zhoupinggao@huawei.com`,
+        gitee: `${GITEE_LINK}zankyfun4`,
       },
       {
-        img: wuyujun,
-        name: `吴禹均`,
+        img: yangdi,
+        name: `杨迪`,
         title: `Maintainer`,
-        email: `wuyujun2@huawei.com`,
-        gitee: `${GITEE_LINK}wuyujun3`,
+        email: `yangdi14@huawei.com`,
+        gitee: `${GITEE_LINK}yangdi07`,
       },
       {
         img: zhouzhaoqi,
@@ -936,6 +936,13 @@ export default {
         title: `Committer`,
         email: `pengjiong1@huawei.com`,
         gitee: `${GITEE_LINK}totaj`,
+      },
+      {
+        img: huzhengchao,
+        name: `胡正超`,
+        title: `Committer`,
+        email: `gentle_hu@qq.com`,
+        gitee: `${GITEE_LINK}gentle_hu`,
       },
       {
         img: haoqingyun,
@@ -4525,18 +4532,18 @@ export default {
     ],
     SQLENGINE: [
       {
-        img: yuexingzhi,
-        name: `Xingzhi Yue`,
+        img: zhoupinggao,
+        name: `Pinggao Zhou`,
         title: `Maintainer`,
-        email: `yuexingzhi2@huawei.com`,
-        gitee: `${GITEE_LINK}GaussYuexz`,
+        email: `zhoupinggao@huawei.com`,
+        gitee: `${GITEE_LINK}zankyfun4`,
       },
       {
-        img: wuyujun,
-        name: `Yujun Wu`,
+        img: yangdi,
+        name: `Di Yang`,
         title: `Maintainer`,
-        email: `wuyujun2@huawei.com`,
-        gitee: `${GITEE_LINK}wuyujun3`,
+        email: `yangdi14@huawei.com`,
+        gitee: `${GITEE_LINK}yangdi07`,
       },
       {
         img: zhouzhaoqi,
@@ -4593,6 +4600,13 @@ export default {
         title: `Committer`,
         email: `pengjiong1@huawei.com`,
         gitee: `${GITEE_LINK}totaj`,
+      },
+      {
+        img: huzhengchao,
+        name: `Zhengchao Hu`,
+        title: `Committer`,
+        email: `gentle_hu@qq.com`,
+        gitee: `${GITEE_LINK}gentle_hu`,
       },
       {
         img: haoqingyun,
