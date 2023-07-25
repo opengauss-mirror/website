@@ -174,7 +174,7 @@ function searchAll(current?: string) {
   }
 }
 function handleSelectChange(val: string) {
-  history.pushState(null, '', `?search=${val}`);
+  history.pushState(null, '', `?search=${encodeURIComponent(val)}`);
 }
 // 设置搜索结果的跳转路径
 function goLink(data: any) {
@@ -232,7 +232,7 @@ async function getVersionTag() {
 onMounted(async () => {
   await getVersionTag();
   if (location.href.split('=')[1] !== 'undefined') {
-    searchInput.value = decodeURI(location.href.split('=')[1]) + '';
+    searchInput.value = decodeURIComponent(location.href.split('=')[1]) + '';
   }
   searchAll();
 });

@@ -27,7 +27,7 @@ specifiers:
   typescript: ^4.7.4
   unplugin-element-plus: ^0.4.1
   unplugin-icons: ^0.14.1
-  vitepress: ^0.22.4
+  vitepress: 0.22.4
   vue: 3.2.39
   vue-dompurify-html: 3.1.2
 
