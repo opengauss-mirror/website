@@ -11,6 +11,7 @@ import IconCancel from '~icons/app/icon-cancel.svg';
 import IconSearch from '~icons/app/icon-search.svg';
 
 import useWindowResize from '@/components/hooks/useWindowResize';
+import { handleError } from '@/shared/utils';
 
 const screenWidth = useWindowResize();
 const isMobile = computed(() => (screenWidth.value <= 768 ? true : false));
@@ -130,8 +131,8 @@ function searchCountAll() {
         searchNumber.value = [];
       }
     });
-  } catch (error: any) {
-    throw Error(error);
+  } catch {
+    handleError('Error!');
   }
 }
 // 获取搜索结果的数据
@@ -154,8 +155,8 @@ function searchDataAll() {
         pageShow.value = false;
       }
     });
-  } catch (error: any) {
-    throw Error(error);
+  } catch {
+    handleError('Error!');
   }
 }
 // 获取搜索结果的所有内容
@@ -290,9 +291,9 @@ watch(
       </div>
       <div class="content-box">
         <ul v-if="searchResultList.length" class="content-list">
-          <li v-for="(item, index) in searchResultList" :key="item.id">
+          <li v-for="item in searchResultList" :key="item.id">
             <!-- eslint-disable-next-line -->
-            <h3 @click="goLink(item, index)" v-dompurify-html="item.title"></h3>
+            <h3 @click="goLink(item)" v-dompurify-html="item.title"></h3>
             <!-- eslint-disable-next-line -->
             <p class="detail" v-dompurify-html="item.textContent"></p>
             <p class="from">

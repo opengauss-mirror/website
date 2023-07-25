@@ -7,6 +7,7 @@ import { getUserCaseData } from '@/api/api-showcase';
 
 import ShowCaseData from '@/data/showcase';
 import useWindowResize from '@/components/hooks/useWindowResize';
+import { handleError } from '@/shared/utils';
 
 import TagFilter from '@/components/TagFilter.vue';
 import BannerLevel2 from '@/components/BannerLevel2.vue';
@@ -84,8 +85,8 @@ function setCurrentCaseListAll() {
         }
       }
     });
-  } catch (error: any) {
-    throw Error(error);
+  } catch {
+    handleError('Error!');
   }
 }
 function filterCase() {
@@ -203,12 +204,13 @@ function toggleAll(index: number) {
 }
 // 根据跳转时url携带的参数显示筛选内容
 function getUrlParam() {
-  const industry: any = decodeURI(window.location.href.split('=')[1]);
+  const industry = decodeURI(window.location.href.split('=')[1]);
   if (industry === 'undefined') {
     activeIndex.value = 0;
     currentTag.value = i18n.value.common.ALL;
   } else {
-    activeIndex.value = industry * 1;
+    const tempIndex = parseInt(industry);
+    activeIndex.value = ShowCaseData.CASE_LIST[tempIndex - 1] ? tempIndex : 0;
     currentTag.value = isZh.value
       ? ShowCaseData.CASE_LIST[activeIndex.value - 1].TYPE
       : ShowCaseData.CASE_LIST[activeIndex.value - 1].TYPE_EN;
