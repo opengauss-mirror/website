@@ -4434,7 +4434,7 @@ export default {
       {
         img: wangwei3,
         name: `Wei Wang`,
-        title: `委员`,
+        title: `Member`,
         email: `wangwei1@gbase.cn`,
         company: `General Data Technology Co.,LTD`,
       },
