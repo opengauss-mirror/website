@@ -8,4 +8,6 @@ export default {
   database: '数据库软件',
   os: '操作系统',
   server: '服务器型号',
+  certify: '下载证书',
+  certificate: '认证证书',
 };
