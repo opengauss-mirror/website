@@ -442,6 +442,8 @@ import peibaoyi from '@/assets/category/member/avatar/peibaoyi.png';
 import zhulixia from '@/assets/category/member/avatar/zhulixia.png';
 import zengseliang from '@/assets/category/member/avatar/zengseliang.png';
 import shayAkirav from '@/assets/category/member/avatar/shayAkirav.png';
+import wangwei3 from '@/assets/category/member/avatar/wangwei3.png';
+import huangnan from '@/assets/category/member/avatar/huangnan.png';
 import { GITEE_LINK } from '@/shared/url-config';
 export default {
   zh: {
@@ -672,6 +674,13 @@ export default {
         email: `zhangquan@tongtech.com`,
         company: `北京东方通科技股份有限公司`,
       },
+      {
+        img: huangnan,
+        name: `黄楠`,
+        title: `委员`,
+        email: `huangnan@gbase.cn`,
+        company: `天津南大通用数据技术股份有限公司`,
+      },
     ],
     BC: [
       {
@@ -743,6 +752,13 @@ export default {
         title: `委员`,
         email: `zhangyong05@tsinghua.edu.cn`,
         company: `清华大学`,
+      },
+      {
+        img: wangwei3,
+        name: `王薇`,
+        title: `委员`,
+        email: `wangwei1@gbase.cn`,
+        company: `天津南大通用数据技术股份有限公司`,
       },
     ],
     TC: [
@@ -4336,6 +4352,13 @@ export default {
         email: `zhangquan@tongtech.com`,
         company: `Beijing Tongtech Co.,Ltd.`,
       },
+      {
+        img: huangnan,
+        name: `Nan Huang`,
+        title: `Member`,
+        email: `huangnan@gbase.cn`,
+        company: `General Data Technology Co.,LTD`,
+      },
     ],
     BC: [
       {
@@ -4407,6 +4430,13 @@ export default {
         title: `Member`,
         email: `zhangyong05@tsinghua.edu.cn`,
         company: `Tsinghua University`,
+      },
+      {
+        img: wangwei3,
+        name: `Wei Wang`,
+        title: `Member`,
+        email: `wangwei1@gbase.cn`,
+        company: `General Data Technology Co.,LTD`,
       },
     ],
     TC: [
