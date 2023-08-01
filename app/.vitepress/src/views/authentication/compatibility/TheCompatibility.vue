@@ -95,7 +95,7 @@ onMounted(() => {
         </template>
       </el-table-column>
       <OTableColumn
-        width="200"
+        width="150"
         :label="i18n.compatibility.type"
         prop="type"
         show-overflow-tooltip
@@ -106,10 +106,22 @@ onMounted(() => {
         prop="company"
       ></OTableColumn>
       <OTableColumn
-        width="400"
         :label="i18n.compatibility.database"
+        width="200"
         prop="database"
       ></OTableColumn>
+      <el-table-column :label="i18n.compatibility.certificate" width="150">
+        <template #default="scope">
+          <a
+            v-if="scope.row.download"
+            :href="scope.row.download"
+            download
+            target="_blank"
+            rel="noopener noreferrer"
+            >{{ i18n.certification.certify }}</a
+          >
+        </template>
+      </el-table-column>
     </OTable>
 
     <ul class="mobile-list">
@@ -130,6 +142,16 @@ onMounted(() => {
           <li>
             <span>{{ i18n.compatibility.database }}:</span
             ><span>{{ item.database }}</span>
+          </li>
+          <li v-if="item.download">
+            <span>{{ i18n.compatibility.certificate }}:</span>
+            <a
+              :href="item.download"
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+              >{{ i18n.certification.certify }}</a
+            >
           </li>
         </ul>
       </li>
