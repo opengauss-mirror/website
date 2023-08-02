@@ -189,7 +189,7 @@ function meetClick(day: string, event: Event) {
       }
     }
   } catch (e) {
-    throw Error();
+    handleError('Error!');
   }
 }
 

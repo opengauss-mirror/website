@@ -6,6 +6,14 @@ import {
 export default {
   zh: [
     {
+      pro: '宏数通数据库系统 V5.0.0',
+      name: '宏数通信息科技（苏州）有限公司',
+      version: 'openGauss 5.0.0',
+      award: '2023-08-01',
+      expiration: '2026-03-31',
+      certificate: `${OBS_CERTIFICATION_LINK}%E5%AE%8F%E6%95%B0%E9%80%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%20V5.0.0/Certificate.pdf `,
+    },
+    {
       pro: 'CSIDB V1.0.0',
       name: '中软国际科技服务有限公司',
       version: 'openGauss 5.0.0',
@@ -106,6 +114,14 @@ export default {
     },
   ],
   en: [
+    {
+      pro: '宏数通数据库系统 V5.0.0',
+      name: '宏数通信息科技（苏州）有限公司',
+      version: 'openGauss 5.0.0',
+      award: '2023-08-01',
+      expiration: '2026-03-31',
+      certificate: `${OBS_CERTIFICATION_LINK}%E5%AE%8F%E6%95%B0%E9%80%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%20V5.0.0/Certificate.pdf `,
+    },
     {
       pro: 'CSIDB V1.0.0',
       name: '中软国际科技服务有限公司',

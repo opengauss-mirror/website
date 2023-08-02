@@ -7,6 +7,7 @@ import ShowCaseData from '@/data/showcase';
 import { getUserCaseData } from '@/api/api-showcase';
 
 import { useI18n } from '@/i18n';
+import { handleError } from '@/shared/utils';
 
 const i18n = useI18n();
 const { lang } = useData();
@@ -90,8 +91,8 @@ onMounted(() => {
       //鼠标移出继续
       caseContent.value.addEventListener('mouseout', setCaseInterval);
     }
-  } catch (error: any) {
-    throw Error(error);
+  } catch {
+    handleError('Error!');
   }
 });
 onUnmounted(() => {
