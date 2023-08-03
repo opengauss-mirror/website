@@ -57,10 +57,8 @@ const STATUS_LINK = 'https://status.opengauss.org/';
 const CLA_LINK = 'https://clasign.osinfra.cn/';
 const SAGE_LINK = 'https://sage.thesharps.us/';
 const WJX_LINK = 'https://www.wjx.cn/';
-const TRYME_LINK = 'https://tryme.opengauss.org/';
 export {
   WJX_LINK,
-  TRYME_LINK,
   SAGE_LINK,
   CLA_LINK,
   GITEE_LINK1,
