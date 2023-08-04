@@ -444,6 +444,7 @@ import zengseliang from '@/assets/category/member/avatar/zengseliang.png';
 import shayAkirav from '@/assets/category/member/avatar/shayAkirav.png';
 import wangwei3 from '@/assets/category/member/avatar/wangwei3.png';
 import huangnan from '@/assets/category/member/avatar/huangnan.png';
+import zhaoxiaomin from '@/assets/category/member/avatar/zhaoxiaomin.png';
 import { GITEE_LINK } from '@/shared/url-config';
 export default {
   zh: {
@@ -705,11 +706,11 @@ export default {
         email: `maoyaming@shentongdata.com`,
       },
       {
-        img: mengzhen,
-        name: `孟震`,
+        img: zhaoxiaomin,
+        name: `赵晓敏`,
         title: `委员`,
         company: `中国移动通信集团有限公司`,
-        email: `mengzhen@chinamobile.com`,
+        email: `zhaoxiaomin@chinamobile.com`,
       },
       {
         img: wangdan,
@@ -4383,11 +4384,11 @@ export default {
         email: `maoyaming@shentongdata.com`,
       },
       {
-        img: mengzhen,
-        name: `Zhen Meng`,
+        img: zhaoxiaomin,
+        name: `Xiaomin Zhao`,
         title: `Member`,
         company: `China Mobile Communications Group Co.,Ltd`,
-        email: `mengzhen@chinamobile.com`,
+        email: `zhaoxiaomin@chinamobile.com`,
       },
       {
         img: wangdan,
