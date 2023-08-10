@@ -17,7 +17,7 @@ openGauss 5.0.0 版本与之前的版本功能特性保持兼容，在内核能�
 <img src='./banner.jpg' style="width:60%" alt=''>
 
 发行说明请参考官网：
-<https://docs.opengauss.org/zh/docs/latest/docs/Releasenotes/Releasenotes.html>
+<https://docs.opengauss.org/zh/docs/5.0.0/docs/ReleaseNotes/Releasenotes.html>
 
 立即体验 openGauss 5.0.0 版本！
 <https://opengauss.org/zh/download/>
