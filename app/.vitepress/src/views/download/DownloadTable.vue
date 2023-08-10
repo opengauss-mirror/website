@@ -36,7 +36,7 @@ const { tableData, versionShownIndex, downloadVersionAuthIndex } =
   toRefs(props);
 const { lang, theme } = useData();
 const commonStore = useCommon();
-const { guardAuthClient } = useStoreData();
+// const { guardAuthClient } = useStoreData();
 const i18n = useI18n();
 const shaText = 'SHA256';
 // tips
@@ -272,7 +272,7 @@ watch(
         <el-table-column :label="i18n.download.TABLE_HEAD[2]" prop="down_url">
           <template #default="scope">
             <div v-if="scope.row.down_url !== ''" class="down-action">
-              <template
+              <!-- <template
                 v-if="
                   versionShownIndex === downloadVersionAuthIndex &&
                   !guardAuthClient.username
@@ -290,16 +290,16 @@ watch(
                   </template>
                 </OButton>
               </template>
-              <template v-else>
-                <a :href="scope.row.down_url">
-                  <OButton size="mini" type="primary" animation>
-                    {{ i18n.download.BTN_TEXT }}
-                    <template #suffixIcon>
-                      <IconDownload />
-                    </template>
-                  </OButton>
-                </a>
-              </template>
+              <template v-else> -->
+              <a :href="scope.row.down_url">
+                <OButton size="mini" type="primary" animation>
+                  {{ i18n.download.BTN_TEXT }}
+                  <template #suffixIcon>
+                    <IconDownload />
+                  </template>
+                </OButton>
+              </a>
+              <!-- </template> -->
             </div>
           </template>
         </el-table-column>
@@ -369,7 +369,7 @@ watch(
         </p>
         <p class="item-text">
           <span>{{ i18n.download.TABLE_HEAD[2] + ':' }}</span>
-          <a
+          <!-- <a
             v-if="
               versionShownIndex === downloadVersionAuthIndex &&
               !guardAuthClient.username
@@ -377,8 +377,8 @@ watch(
             @click="changeDownloadAuth"
           >
             {{ i18n.download.BTN_TEXT_MO }}</a
-          >
-          <a v-else :href="item.down_url">
+          > -->
+          <a :href="item.down_url">
             {{ i18n.download.BTN_TEXT_MO }}
           </a>
         </p>
