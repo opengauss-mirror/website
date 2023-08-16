@@ -445,6 +445,7 @@ import shayAkirav from '@/assets/category/member/avatar/shayAkirav.png';
 import wangwei3 from '@/assets/category/member/avatar/wangwei3.png';
 import huangnan from '@/assets/category/member/avatar/huangnan.png';
 import zhaoxiaomin from '@/assets/category/member/avatar/zhaoxiaomin.png';
+import zhongxin from '@/assets/category/member/avatar/zhongxin.png';
 import { GITEE_LINK } from '@/shared/url-config';
 export default {
   zh: {
@@ -555,10 +556,10 @@ export default {
         company: `北京海量数据技术股份有限公司`,
       },
       {
-        img: xiejigang,
-        name: `谢继刚`,
+        img: zhongxin,
+        name: `钟忻`,
         title: `理事`,
-        email: `xiejg@chinaunicom.cn`,
+        email: `zhongx59@chinaunicom.cn`,
         company: `中国联合网络通信集团有限公司`,
       },
       {
@@ -4233,10 +4234,10 @@ export default {
         company: `Vastbase`,
       },
       {
-        img: xiejigang,
-        name: `Jigang Xie`,
+        img: zhongxin,
+        name: `Xin Zhong`,
         title: `Director`,
-        email: `xiejg@chinaunicom.cn`,
+        email: `zhongx59@chinaunicom.cn`,
         company: `China United Network Communications Limited`,
       },
       {
