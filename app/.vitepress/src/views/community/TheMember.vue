@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { computed, ref, onMounted, onUnmounted } from 'vue';
 import { useI18n } from '@/i18n';
+import { useData } from 'vitepress';
 import AppContent from '@/components/AppContent.vue';
 import BannerLevel2 from '@/components/BannerLevel2.vue';
 
@@ -12,8 +13,10 @@ import IconMail from '~icons/app/icon-mail.svg';
 import IconUser from '~icons/app/icon-user.svg';
 import IconToemail from '@/assets/category/member/toemail.svg';
 import IconGit from '@/assets/category/member/git.svg';
+import IconArrowRight from '~icons/app/icon-arrow-right.svg';
 
 const i18n = useI18n();
+const { lang } = useData();
 
 const tabShow = ref(0);
 const tabIndex = ref(0);
@@ -151,6 +154,16 @@ const handleChangeActiveMobile = (activeNames: any) => {
                 </p>
               </li>
             </ul>
+            <div v-if="item.ID === 'board'" class="board-view">
+              <a :href="`/${lang}/member/detail/`" target="_blank">
+                <OButton animation type="text" class="case-more-item">
+                  {{ i18n.member.VIEW_BOARD }}
+                  <template #suffixIcon>
+                    <IconArrowRight class="more"></IconArrowRight>
+                  </template>
+                </OButton>
+              </a>
+            </div>
           </template>
           <template v-else>
             <div
@@ -279,6 +292,16 @@ const handleChangeActiveMobile = (activeNames: any) => {
               </p>
             </li>
           </ul>
+          <div v-if="item.ID === 'board'" class="board-view">
+            <a :href="`/${lang}/member/detail/`" target="_blank">
+              <OButton animation type="text" class="case-more-item">
+                {{ i18n.member.VIEW_BOARD }}
+                <template #suffixIcon>
+                  <IconArrowRight class="more"></IconArrowRight>
+                </template>
+              </OButton>
+            </a>
+          </div>
         </div>
       </template>
       <template v-else>
@@ -574,6 +597,18 @@ const handleChangeActiveMobile = (activeNames: any) => {
       font-size: 24px;
       font-weight: 300;
       margin-bottom: 20px;
+    }
+  }
+}
+.board-view {
+  text-align: center;
+  margin-top: 24px;
+  .o-button {
+    padding: 0;
+    svg {
+      color: var(--o-color-brand1);
+      width: var(--o-font-size-h8);
+      height: var(--o-font-size-h8);
     }
   }
 }

@@ -1,13 +1,23 @@
 import data from './data';
 import { GITEE_LINK } from '@/shared/url-config';
 export default {
+  LIST_OLD: [
+    {
+      NAME: `First Board of Directors`,
+      ID: `board_one`,
+      GITEE_PATH: `${GITEE_LINK}opengauss/board`,
+      EMIAL: `board@opengauss.org`,
+      NAMEL_TEXT: `First Board of Directors`,
+      LIST: data.en.BOARD_ONE,
+    },
+  ],
   MEMBER_LIST: [
     {
       NAME: `Board`,
       ID: `board`,
       GITEE_PATH: `${GITEE_LINK}opengauss/board`,
       EMIAL: `board@opengauss.org`,
-      NAMEL_TEXT: `Board Members`,
+      NAMEL_TEXT: `Second Board of Directors`,
       LIST: data.en.BOARD,
     },
     {
