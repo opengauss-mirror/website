@@ -14,6 +14,7 @@ import HomeShowCase from './HomeShowCase.vue';
 import HomeVideo from './HomeVideo.vue';
 import HomeNews from './HomeNews.vue';
 import LinkPanel from '@/components/LinkPanel.vue';
+import HomePlayground from './HomePlayground.vue';
 
 import { getSortData } from '@/api/api-search';
 
@@ -70,6 +71,7 @@ onUnmounted(() => {
   <HomeBanner />
   <AppContent>
     <HomeCharacteristic />
+    <HomePlayground />
     <CommunityActivity />
   </AppContent>
 

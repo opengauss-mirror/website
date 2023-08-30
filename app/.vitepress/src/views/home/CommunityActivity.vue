@@ -82,8 +82,8 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div ref="community" class="community">
-    <div v-if="isShowCommunity" class="community-list">
+  <div v-if="isShowCommunity" ref="community" class="community">
+    <div class="community-list">
       <OContainer>
         <OCard
           class="community-card"
