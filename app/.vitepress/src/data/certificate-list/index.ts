@@ -8,7 +8,7 @@ export default {
     {
       pro: 'MogDB 3.0.0',
       name: '云和恩墨（北京）信息技术有限公司',
-      version: 'openGauss 5.0.0',
+      version: 'openGauss 3.0.0',
       award: '2023-09-01',
       expiration: '2025-03-31',
       certificate: `${OBS_CERTIFICATION_LINK}MogDB%203.0.0/Certificate.pdf`,
@@ -133,7 +133,7 @@ export default {
     {
       pro: 'MogDB 3.0.0',
       name: '云和恩墨（北京）信息技术有限公司',
-      version: 'openGauss 5.0.0',
+      version: 'openGauss 3.0.0',
       award: '2023-09-01',
       expiration: '2025-03-31',
       certificate: `${OBS_CERTIFICATION_LINK}MogDB%203.0.0/Certificate.pdf`,
