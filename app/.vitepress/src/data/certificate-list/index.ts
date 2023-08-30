@@ -6,6 +6,22 @@ import {
 export default {
   zh: [
     {
+      pro: 'MogDB 3.0.0',
+      name: '云和恩墨（北京）信息技术有限公司',
+      version: 'openGauss 5.0.0',
+      award: '2023-09-01',
+      expiration: '2025-03-31',
+      certificate: `${OBS_CERTIFICATION_LINK}MogDB%203.0.0/Certificate.pdf`,
+    },
+    {
+      pro: 'ArteryBase数据库管理系统 V3.6',
+      name: '北京华宇信息技术有限公司',
+      version: 'openGauss 5.0.0',
+      award: '2023-09-01',
+      expiration: '2026-03-31',
+      certificate: `${OBS_CERTIFICATION_LINK}ArtertBase%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%20V3.6/Certificate.pdf`,
+    },
+    {
       pro: '宏数通数据库系统 V5.0.0',
       name: '宏数通信息科技（苏州）有限公司',
       version: 'openGauss 5.0.0',
@@ -114,6 +130,22 @@ export default {
     },
   ],
   en: [
+    {
+      pro: 'MogDB 3.0.0',
+      name: '云和恩墨（北京）信息技术有限公司',
+      version: 'openGauss 5.0.0',
+      award: '2023-09-01',
+      expiration: '2025-03-31',
+      certificate: `${OBS_CERTIFICATION_LINK}MogDB%203.0.0/Certificate.pdf`,
+    },
+    {
+      pro: 'ArteryBase数据库管理系统 V3.6',
+      name: '北京华宇信息技术有限公司',
+      version: 'openGauss 5.0.0',
+      award: '2023-09-01',
+      expiration: '2026-03-31',
+      certificate: `${OBS_CERTIFICATION_LINK}ArtertBase%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%20V3.6/Certificate.pdf`,
+    },
     {
       pro: '宏数通数据库系统 V5.0.0',
       name: '宏数通信息科技（苏州）有限公司',
