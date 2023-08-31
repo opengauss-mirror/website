@@ -447,6 +447,7 @@ import huangnan from '@/assets/category/member/avatar/huangnan.png';
 import zhaoxiaomin from '@/assets/category/member/avatar/zhaoxiaomin.png';
 import zhongxin from '@/assets/category/member/avatar/zhongxin.png';
 import sunguorong from '@/assets/category/member/avatar/sunguorong.png';
+import hezhenyan from '@/assets/category/member/avatar/hezhenyan.png';
 import { GITEE_LINK } from '@/shared/url-config';
 export default {
   zh: {
@@ -473,11 +474,11 @@ export default {
         email: `eygle@enmotech.com`,
       },
       {
-        img: gaobo,
-        name: `高波`,
+        img: hezhenyan,
+        name: `何振岩`,
         title: `理事`,
         company: `超聚变数字技术有限公司`,
-        email: `gaobo@xfusion.com`,
+        email: `hezhenyan@xfusion.com`,
       },
       {
         img: guyunsu,
@@ -4314,11 +4315,11 @@ export default {
         email: `eygle@enmotech.com`,
       },
       {
-        img: gaobo,
-        name: `Bo Gao`,
+        img: hezhenyan,
+        name: `Zhenyan He`,
         title: `Director`,
         company: `xFusion`,
-        email: `gaobo@xfusion.com`,
+        email: `hezhenyan@xfusion.com`,
       },
       {
         img: guyunsu,
