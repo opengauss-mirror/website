@@ -448,6 +448,8 @@ import zhaoxiaomin from '@/assets/category/member/avatar/zhaoxiaomin.png';
 import zhongxin from '@/assets/category/member/avatar/zhongxin.png';
 import sunguorong from '@/assets/category/member/avatar/sunguorong.png';
 import hezhenyan from '@/assets/category/member/avatar/hezhenyan.png';
+import yangwei from '@/assets/category/member/avatar/yangwei.png';
+import songxuedong from '@/assets/category/member/avatar/songxuedong.png';
 import { GITEE_LINK } from '@/shared/url-config';
 export default {
   zh: {
@@ -893,10 +895,10 @@ export default {
         company: `云和恩墨(北京)信息技术有限公司`,
       },
       {
-        img: lindazeng,
-        name: `曾荣`,
+        img: songxuedong,
+        name: `宋雪冬`,
         title: `委员`,
-        email: `linda.zeng@xfusion.com`,
+        email: `xuedong0sox@qq.com`,
         company: `超聚变数字技术有限公司`,
       },
       {
@@ -937,11 +939,11 @@ export default {
         gitee: `${GITEE_LINK}guoliang_li`,
       },
       {
-        img: caiyajie,
-        name: `蔡亚杰`,
+        img: hechenghan,
+        name: `贺承汉`,
         title: `Member`,
-        email: `jikey.cai@huawei.com`,
-        gitee: `${GITEE_LINK}cyj10727`,
+        email: `hechenghan@huawei.com`,
+        gitee: `${GITEE_LINK}he-chenghan`,
       },
       {
         img: huangkaiyao,
@@ -2547,11 +2549,11 @@ export default {
         gitee: `${GITEE_LINK}hu-xilin`,
       },
       {
-        img: yangdi,
-        name: `杨迪`,
+        img: yangwei,
+        name: `杨葳`,
         title: `Committer`,
-        email: `yangdi14@huawei.com`,
-        gitee: `${GITEE_LINK}yangdi07`,
+        email: `yangwei129@huawei.com`,
+        gitee: `${GITEE_LINK}yangwei129`,
       },
       {
         img: yuzheng,
@@ -2561,11 +2563,11 @@ export default {
         gitee: `${GITEE_LINK}yz_db`,
       },
       {
-        img: xieweiping,
-        name: `谢卫平`,
+        img: chenchen,
+        name: `陈琛`,
         title: `Committer`,
-        email: `xieweiping@xfusion.com`,
-        gitee: `${GITEE_LINK}junhangis`,
+        email: `joshua.chen@huawei.com`,
+        gitee: `${GITEE_LINK}struggle_hw`,
       },
       {
         img: peibaoyi,
@@ -2580,6 +2582,13 @@ export default {
         title: `Committer`,
         email: `zhulixia3@huawei.com`,
         gitee: `${GITEE_LINK}zhulixia`,
+      },
+      {
+        img: chendong,
+        name: `陈栋`,
+        title: `Committer`,
+        email: `chendong76@huawei.com`,
+        gitee: `${GITEE_LINK}chendong76`,
       },
     ],
     RELEASEMANAGEMENT: [
@@ -4734,10 +4743,10 @@ export default {
         company: `enmotech`,
       },
       {
-        img: lindazeng,
-        name: `Rong Zeng`,
+        img: songxuedong,
+        name: `Xuedong Song`,
         title: `Member`,
-        email: `linda.zeng@xfusion.com`,
+        email: `xuedong0sox@qq.com`,
         company: `xFusion`,
       },
       {
@@ -4778,11 +4787,11 @@ export default {
         gitee: `${GITEE_LINK}guoliang_li`,
       },
       {
-        img: caiyajie,
-        name: `Yajie Cai`,
+        img: hechenghan,
+        name: `Chenghan He`,
         title: `Member`,
-        email: `jikey.cai@huawei.com`,
-        gitee: `${GITEE_LINK}cyj10727`,
+        email: `hechenghan@huawei.com`,
+        gitee: `${GITEE_LINK}he-chenghan`,
       },
       {
         img: huangkaiyao,
@@ -6409,11 +6418,11 @@ export default {
         gitee: `${GITEE_LINK}hu-xilin`,
       },
       {
-        img: yangdi,
-        name: `Di Yang`,
+        img: yangwei,
+        name: `Wei Yang`,
         title: `Committer`,
-        email: `yangdi14@huawei.com`,
-        gitee: `${GITEE_LINK}yangdi07`,
+        email: `yangwei129@huawei.com`,
+        gitee: `${GITEE_LINK}yangwei129`,
       },
       {
         img: yuzheng,
@@ -6423,11 +6432,11 @@ export default {
         gitee: `${GITEE_LINK}yz_db`,
       },
       {
-        img: xieweiping,
-        name: `Weiping Xie`,
+        img: chenchen,
+        name: `Chen Chen`,
         title: `Committer`,
-        email: `xieweiping@xfusion.com`,
-        gitee: `${GITEE_LINK}junhangis`,
+        email: `joshua.chen@huawei.com`,
+        gitee: `${GITEE_LINK}struggle_hw`,
       },
       {
         img: peibaoyi,
@@ -6442,6 +6451,13 @@ export default {
         title: `Committer`,
         email: `zhulixia3@huawei.com`,
         gitee: `${GITEE_LINK}zhulixia`,
+      },
+      {
+        img: chendong,
+        name: `Dong Chen`,
+        title: `Committer`,
+        email: `chendong76@huawei.com`,
+        gitee: `${GITEE_LINK}chendong76`,
       },
     ],
     RELEASEMANAGEMENT: [
