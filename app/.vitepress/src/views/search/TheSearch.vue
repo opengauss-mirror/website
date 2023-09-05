@@ -131,6 +131,7 @@ function searchCountAll() {
         searchNumber.value = [];
       }
     });
+
   } catch {
     handleError('Error!');
   }
@@ -155,6 +156,30 @@ function searchDataAll() {
         pageShow.value = false;
       }
     });
+    // 搜索埋点数据添加
+    (function () {
+        const search_event_id = `${
+          searchData.value.keyword
+        }${new Date().getTime()}${
+          (window as any)['sensorsCustomBuriedData']?.ip || ''
+        }`;
+        const obj = {
+          search_key: searchData.value.keyword,
+          search_event_id,
+        };
+        (window as any)['addSearchBuriedData'] = obj;
+        const sensors = (window as any)['sensorsDataAnalytic201505'];
+        const searchKeyObj = {
+          search_tag: typeList,
+          search_result_total_num: total.value,
+        };
+        sensors?.setProfile({
+          profileType: 'searchValue',
+          ...((window as any)['sensorsCustomBuriedData'] || {}),
+          ...((window as any)['addSearchBuriedData'] || {}),
+          ...searchKeyObj,
+        });
+      })();
   } catch {
     handleError('Error!');
   }

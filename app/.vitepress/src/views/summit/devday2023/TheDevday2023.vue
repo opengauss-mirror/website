@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue';
+import { computed, ref, watch, onMounted } from 'vue';
 import { useCommon } from '@/stores/common';
+import { getUrlParams } from '@/shared/utils';
 
 import AppContext from '@/components/AppContent.vue';
 import SummitBanner from './components/SummitBanner.vue';
@@ -71,6 +72,23 @@ watch(
     immediate: true,
   }
 );
+// 埋点
+function postAdvertisedData() {
+  const sensors = (window as any)['sensorsDataAnalytic201505'];
+  const { href } = window.location;
+  if (href.includes('utm_medium')) {
+    const paramsArr = getUrlParams(href);
+    sensors?.setProfile({
+      ...(window as any)['sensorsCustomBuriedData'],
+      profileType: 'fromAdvertised',
+      origin: href,
+      ...paramsArr,
+    });
+  }
+}
+onMounted(() => {
+  postAdvertisedData();
+});
 </script>
 <template>
   <SummitBanner :banner-data="summitData.banner" />

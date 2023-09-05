@@ -66,6 +66,11 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api-search/, ''),
       },
+      '/ip-api/': {
+        target: 'http://ip-api.com/json/',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/ip-api/, ''),
+      },
     },
   },
 });
