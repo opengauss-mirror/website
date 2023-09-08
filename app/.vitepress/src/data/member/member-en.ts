@@ -17,7 +17,7 @@ export default {
       ID: `board`,
       GITEE_PATH: `${GITEE_LINK}opengauss/board`,
       EMIAL: `board@opengauss.org`,
-      NAMEL_TEXT: `Second Board of Directors`,
+      NAMEL_TEXT: `Board of Directors`,
       LIST: data.en.BOARD,
     },
     {
