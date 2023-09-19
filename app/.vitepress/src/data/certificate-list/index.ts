@@ -6,6 +6,14 @@ import {
 export default {
   zh: [
     {
+      pro: '天鹤数据库 ISSEDB 5.0.0',
+      name: '软通动力信息技术（集团）股份有限公司',
+      version: 'openGauss 5.0.0',
+      award: '2023-09-19',
+      expiration: '2026-03-31',
+      certificate: `${OBS_CERTIFICATION_LINK}ISSEDB%205.0.0/Certificate.pdf`,
+    },
+    {
       pro: 'MogDB 3.0.0',
       name: '云和恩墨（北京）信息技术有限公司',
       version: 'openGauss 3.0.0',
@@ -130,6 +138,14 @@ export default {
     },
   ],
   en: [
+    {
+      pro: '天鹤数据库 ISSEDB 5.0.0',
+      name: '软通动力信息技术（集团）股份有限公司',
+      version: 'openGauss 5.0.0',
+      award: '2023-09-19',
+      expiration: '2026-03-31',
+      certificate: `${OBS_CERTIFICATION_LINK}ISSEDB%205.0.0/Certificate.pdf`,
+    },
     {
       pro: 'MogDB 3.0.0',
       name: '云和恩墨（北京）信息技术有限公司',
