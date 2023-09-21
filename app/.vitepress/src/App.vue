@@ -20,6 +20,8 @@ import LayoutShowcase from '@/layouts/LayoutShowcase.vue';
 import categories from '@/shared/category';
 import { VULBOX_LINK } from '@/shared/url-config';
 
+import seoConfig from '@/data/common/seo';
+
 import safetyImgLight from '@/assets/category/security/img/safety-img-light.png';
 import safetyImgDark from '@/assets/category/security/img/safety-img-dark.png';
 
@@ -85,6 +87,7 @@ watch(
   <AppHeader />
   <el-config-provider :locale="locale">
     <main>
+      <SeoBox :seo-data="seoConfig[lang]?.home" />
       <component :is="comp" v-if="isCustomLayout"></component>
       <Content v-else />
       <div v-if="isTipShow" class="safety-tips">
