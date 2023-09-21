@@ -6,6 +6,7 @@ import '@/shared/styles/index.scss';
 
 import Layout from '@/App.vue';
 import NotFound from '@/NotFound.vue';
+import { SeoBox } from '@/components/seo-box';
 
 import ElementPlus from 'element-plus';
 import OpenDesign from 'opendesign';
@@ -24,5 +25,6 @@ export default {
 
     app.use(ElementPlus);
     app.use(OpenDesign);
+    app.use(SeoBox as any);
   },
 };
