@@ -17,17 +17,17 @@ const { lang, theme } = useData();
 const downloadData = i18n.value.download;
 
 // 设置显示版本
-const idList = [DownloadConfig[0].id, DownloadConfig[1].id];
-const versionShown = ref(DownloadConfig.length - 1);
-function setVersionShown(index: number) {
-  versionShown.value = index;
+const versionList = [DownloadConfig[0].name, DownloadConfig[1].name];
+const versionShown = ref(DownloadConfig[0].name);
+function setVersionShown(version: string) {
+  versionShown.value = version;
 }
 //控制需要登录后才能下载的版本(默认仅为最新版需要登录后下载)
-const downloadVersionAuthIndex = ref(DownloadConfig.length - 1);
+const downloadVersionAuth = ref(DownloadConfig[0].name);
 
 // 获取版版本数据
 const getData: any = computed(() => {
-  return DownloadConfig.filter((el) => el.id === versionShown.value);
+  return DownloadConfig.filter((el) => el.name === versionShown.value);
 });
 </script>
 
@@ -79,23 +79,23 @@ const getData: any = computed(() => {
         <div class="content-selection">
           <div
             class="selection-item"
-            :class="{ active: versionShown === idList[0] }"
-            @click="setVersionShown(idList[0])"
+            :class="{ active: versionShown === versionList[0] }"
+            @click="setVersionShown(versionList[0])"
           >
             {{ 'openGauss ' + DownloadConfig[0].name }}
           </div>
           <div
             class="selection-item"
-            :class="{ active: versionShown === idList[1] }"
-            @click="setVersionShown(idList[1])"
+            :class="{ active: versionShown === versionList[1] }"
+            @click="setVersionShown(versionList[1])"
           >
             {{ 'openGauss ' + DownloadConfig[1].name }}
           </div>
         </div>
         <DownloadContent
           :content-data="getData"
-          :version-shown-index="versionShown"
-          :download-version-auth-index="downloadVersionAuthIndex"
+          :version-shown="versionShown"
+          :download-version-auth="downloadVersionAuth"
         />
       </div>
     </div>
