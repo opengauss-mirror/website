@@ -123,13 +123,13 @@ export default [
       },
       {
         name: 'Python-psycopg2_3.0.5',
-        centos_url: `${OBS_DOWNLOAD_LINK}3.0.5/x86/openGauss-3.0.5-CentOS-x86_64-Python.tar.gz`,
+        centos_url: `${OBS_DOWNLOAD_LINK}3.0.5/x86/openGauss-3.0.1-CentOS-x86_64-Python.tar.gz`,
         centos_sha:
           'c819fc29b993f8648a3a2c2e8a85fd42220a99cf91133f070c8e61e1ae4781ce',
-        aarch_url: `${OBS_DOWNLOAD_LINK}3.0.5/arm/openGauss-3.0.5-openEuler-aarch64-Python.tar.gz`,
+        aarch_url: `${OBS_DOWNLOAD_LINK}3.0.5/arm/openGauss-3.0.1-openEuler-aarch64-Python.tar.gz`,
         aarch_sha:
           '3a29fda93cb85c4e234c7be49b006234d25aa437cd693a7132d2aa1106e8250f',
-        x86_url: `${OBS_DOWNLOAD_LINK}3.0.5/x86_openEuler/openGauss-3.0.5-openEuler-x86_64-Python.tar.gz`,
+        x86_url: `${OBS_DOWNLOAD_LINK}3.0.5/x86_openEuler/openGauss-3.0.1-openEuler-x86_64-Python.tar.gz`,
         x86_sha:
           '6c9bb846fb65b973c3ecc8c770ca324dbeac245f1576122e3ef6438bbec87001',
       },
