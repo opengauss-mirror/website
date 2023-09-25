@@ -27,18 +27,18 @@ const { guardAuthClient } = useStoreData();
 const isZh = computed(() => (lang.value === 'zh' ? true : false));
 
 const SHATEXT = 'SHA256';
-const selectVersion = ref(DownloadConfig[2].id);
+const selectVersion = ref(DownloadConfig[2].name);
 function initSelectVersion() {
   DownloadConfig.forEach((item: any) => {
     if (item.initPrevious) {
-      selectVersion.value = item.id;
+      selectVersion.value = item.name;
     }
   });
 }
 initSelectVersion();
 // 获取版版本数据
 const getData: any = computed(() => {
-  return DownloadConfig.filter((el) => el.id === selectVersion.value);
+  return DownloadConfig.filter((el) => el.name === selectVersion.value);
 });
 
 // 复制
@@ -119,7 +119,7 @@ watch(
   () => getData.value,
   (val) => {
     activeMobile.value = activeName.value;
-    versionShownIndex.value = val[0].id;
+    versionShownIndex.value = val[0].name;
   },
   { deep: true, immediate: true }
 );
@@ -142,13 +142,13 @@ watch(
               v-for="item in DownloadConfig"
               :key="item.name"
               :label="item.name"
-              :value="item.id"
+              :value="item.name"
             />
           </OSelect>
         </ClientOnly>
       </div>
     </div>
-    <template v-if="getData[0].id < 9">
+    <template v-if="!getData[0].newLayout">
       <div class="link-box">
         <a
           v-for="item in getData[0].docs_list"

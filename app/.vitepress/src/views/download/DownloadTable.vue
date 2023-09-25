@@ -21,19 +21,18 @@ const props = defineProps({
       return {};
     },
   },
-  downloadVersionAuthIndex: {
+  downloadVersionAuth: {
     required: true,
-    type: Number,
-    default: NaN,
+    type: String,
+    default: '',
   },
-  versionShownIndex: {
+  versionShown: {
     required: true,
-    type: Number,
-    default: -1,
+    type: String,
+    default: '',
   },
 });
-const { tableData, versionShownIndex, downloadVersionAuthIndex } =
-  toRefs(props);
+const { tableData, versionShown, downloadVersionAuth } = toRefs(props);
 const { lang, theme } = useData();
 const commonStore = useCommon();
 // const { guardAuthClient } = useStoreData();
@@ -274,7 +273,7 @@ watch(
             <div v-if="scope.row.down_url !== ''" class="down-action">
               <!-- <template
                 v-if="
-                  versionShownIndex === downloadVersionAuthIndex &&
+                  versionShown === downloadVersionAuth &&
                   !guardAuthClient.username
                 "
               >
@@ -371,7 +370,7 @@ watch(
           <span>{{ i18n.download.TABLE_HEAD[2] + ':' }}</span>
           <!-- <a
             v-if="
-              versionShownIndex === downloadVersionAuthIndex &&
+              versionShown === downloadVersionAuth &&
               !guardAuthClient.username
             "
             @click="changeDownloadAuth"

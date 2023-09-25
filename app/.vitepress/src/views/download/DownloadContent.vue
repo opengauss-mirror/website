@@ -13,20 +13,20 @@ const props = defineProps({
       return [];
     },
   },
-  versionShownIndex: {
+  versionShown: {
     required: true,
-    type: Number,
-    default: -1,
+    type: String,
+    default: '',
   },
-  downloadVersionAuthIndex: {
+  downloadVersionAuth: {
     required: true,
-    type: Number,
-    default: NaN,
+    type: String,
+    default: '',
   },
 });
 const i18n = useI18n();
 const { lang, theme } = useData();
-const { contentData, versionShownIndex, downloadVersionAuthIndex } =
+const { contentData, versionShown, downloadVersionAuth } =
   toRefs(props);
 </script>
 
@@ -55,8 +55,8 @@ const { contentData, versionShownIndex, downloadVersionAuthIndex } =
       v-for="item in (contentData[0] as any).data[lang]"
       :key="item.name"
       :table-data="item"
-      :version-shown-index="versionShownIndex"
-      :download-version-auth-index="downloadVersionAuthIndex"
+      :version-shown="versionShown"
+      :download-version-auth="downloadVersionAuth"
     />
   </div>
 </template>
