@@ -450,6 +450,7 @@ import sunguorong from '@/assets/category/member/avatar/sunguorong.png';
 import hezhenyan from '@/assets/category/member/avatar/hezhenyan.png';
 import yangwei from '@/assets/category/member/avatar/yangwei.png';
 import songxuedong from '@/assets/category/member/avatar/songxuedong.png';
+import chaipeng from '@/assets/category/member/avatar/chaipeng.png';
 import { GITEE_LINK } from '@/shared/url-config';
 export default {
   zh: {
@@ -1049,6 +1050,27 @@ export default {
         title: `Member`,
         email: `zhujinwei@huawei.com`,
         gitee: `${GITEE_LINK}zhu_jinwei`,
+      },
+      {
+        img: chaipeng,
+        name: `柴鹏`,
+        title: `Member`,
+        email: `chaip3@chinaunicom.cn`,
+        gitee: `${GITEE_LINK}chaip3`,
+      },
+      {
+        img: wanglei,
+        name: `王磊`,
+        title: `Member`,
+        email: `wanglei110@huawei.com`,
+        gitee: `${GITEE_LINK}nonolili527`,
+      },
+      {
+        img: wumingyuan2,
+        name: `吴明远`,
+        title: `Member`,
+        email: `wumingyuan@gbase.cn`,
+        gitee: `${GITEE_LINK}wumingyuan`,
       },
     ],
     SQLENGINE: [
@@ -4897,6 +4919,27 @@ export default {
         title: `Member`,
         email: `zhujinwei@huawei.com`,
         gitee: `${GITEE_LINK}zhu_jinwei`,
+      },
+      {
+        img: chaipeng,
+        name: `Peng Chai`,
+        title: `Member`,
+        email: `chaip3@chinaunicom.cn`,
+        gitee: `${GITEE_LINK}chaip3`,
+      },
+      {
+        img: wanglei,
+        name: `Lei Wang`,
+        title: `Member`,
+        email: `wanglei110@huawei.com`,
+        gitee: `${GITEE_LINK}nonolili527`,
+      },
+      {
+        img: wumingyuan2,
+        name: `Mingyuan Wu`,
+        title: `Member`,
+        email: `wumingyuan@gbase.cn`,
+        gitee: `${GITEE_LINK}wumingyuan`,
       },
     ],
     SQLENGINE: [
