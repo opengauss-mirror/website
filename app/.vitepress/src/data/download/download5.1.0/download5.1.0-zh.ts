@@ -792,6 +792,131 @@ export default [
           },
         ],
       },
+      {
+        system: 'openEuler 22.03 LTS (aarch64)',
+        architecture: 'AArch64',
+        os: 'openEuler 22.03 LTS',
+        content: [
+          {
+            name: 'Chameleon_5.0.0',
+            size: '6.29MB',
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.0/tools/chameleon-5.0.0-py3-none-any.whl`,
+            sha_code:
+              '20c286a6d392f0e004677727b3939c026757b3697912ba7ddd4ee854e01ad907',
+            docsName: '',
+            docs_url: '',
+          },
+          {
+            name: 'PortalControl_5.0.0',
+            size: '701.68MB',
+            down_url: `${OBS_DOWNLOAD_LINK}tools/portal/PortalControl-5.0.0.tar.gz`,
+            sha_code:
+              '5574f496a3e5a116ffe25a690aeb888ae673e3be843cce4dcb0eb0ad386d4d30',
+            docsName: '',
+            docs_url: '',
+          },
+        ],
+      },
+      {
+        system: 'openEuler 22.03 LTS (x86_64)',
+        architecture: 'x86_64',
+        os: 'openEuler 22.03 LTS',
+        content: [
+          {
+            name: 'Chameleon_5.0.0',
+            size: '6.29MB',
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.0/tools/chameleon-5.0.0-py3-none-any.whl`,
+            sha_code:
+              '20c286a6d392f0e004677727b3939c026757b3697912ba7ddd4ee854e01ad907',
+            docsName: '',
+            docs_url: '',
+          },
+          {
+            name: 'PortalControl_5.0.0',
+            size: '701.68MB',
+            down_url: `${OBS_DOWNLOAD_LINK}tools/portal/PortalControl-5.0.0.tar.gz`,
+            sha_code:
+              '5574f496a3e5a116ffe25a690aeb888ae673e3be843cce4dcb0eb0ad386d4d30',
+            docsName: '',
+            docs_url: '',
+          },
+        ],
+      },
+      {
+        system: 'openEuler 20.03 LTS (aarch64)',
+        architecture: 'AArch64',
+        os: 'openEuler 20.03 LTS',
+        content: [
+          {
+            name: 'Chameleon_5.0.0',
+            size: '6.29MB',
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.0/tools/chameleon-5.0.0-py3-none-any.whl`,
+            sha_code:
+              '20c286a6d392f0e004677727b3939c026757b3697912ba7ddd4ee854e01ad907',
+            docsName: '',
+            docs_url: '',
+          },
+          {
+            name: 'PortalControl_5.0.0',
+            size: '701.68MB',
+            down_url: `${OBS_DOWNLOAD_LINK}tools/portal/PortalControl-5.0.0.tar.gz`,
+            sha_code:
+              '5574f496a3e5a116ffe25a690aeb888ae673e3be843cce4dcb0eb0ad386d4d30',
+            docsName: '',
+            docs_url: '',
+          },
+        ],
+      },
+      {
+        system: 'openEuler 20.03 LTS (x86_64)',
+        architecture: 'x86_64',
+        os: 'openEuler 20.03 LTS',
+        content: [
+          {
+            name: 'Chameleon_5.0.0',
+            size: '6.29MB',
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.0/tools/chameleon-5.0.0-py3-none-any.whl`,
+            sha_code:
+              '20c286a6d392f0e004677727b3939c026757b3697912ba7ddd4ee854e01ad907',
+            docsName: '',
+            docs_url: '',
+          },
+          {
+            name: 'PortalControl_5.0.0',
+            size: '701.68MB',
+            down_url: `${OBS_DOWNLOAD_LINK}tools/portal/PortalControl-5.0.0.tar.gz`,
+            sha_code:
+              '5574f496a3e5a116ffe25a690aeb888ae673e3be843cce4dcb0eb0ad386d4d30',
+            docsName: '',
+            docs_url: '',
+          },
+        ],
+      },
+      {
+        system: 'Centos 7.6 (x86_64)',
+        architecture: 'x86_64',
+        os: 'Centos 7.6',
+        content: [
+          {
+            name: 'Chameleon_5.0.0',
+            size: '6.29MB',
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.0/tools/chameleon-5.0.0-py3-none-any.whl`,
+            sha_code:
+              '20c286a6d392f0e004677727b3939c026757b3697912ba7ddd4ee854e01ad907',
+            docsName: '',
+            docs_url: '',
+          },
+          {
+            name: 'PortalControl_5.0.0',
+            size: '701.68MB',
+            down_url: `${OBS_DOWNLOAD_LINK}tools/portal/PortalControl-5.0.0.tar.gz`,
+            sha_code:
+              '5574f496a3e5a116ffe25a690aeb888ae673e3be843cce4dcb0eb0ad386d4d30',
+            docsName: '',
+            docs_url: '',
+          },
+        ],
+      },
     ],
   },
 ];
