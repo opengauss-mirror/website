@@ -26,8 +26,7 @@ const props = defineProps({
 });
 const i18n = useI18n();
 const { lang, theme } = useData();
-const { contentData, versionShown, downloadVersionAuth } =
-  toRefs(props);
+const { contentData, versionShown, downloadVersionAuth } = toRefs(props);
 </script>
 
 <template>
