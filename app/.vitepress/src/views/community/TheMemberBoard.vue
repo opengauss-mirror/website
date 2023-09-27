@@ -23,8 +23,6 @@ const handleChangeActiveMobile = (activeNames: any) => {
     active.value = activeNames;
   }
 };
-
-console.log('object :>> ', i18n.value.member.LIST_OLD);
 </script>
 
 <template>
