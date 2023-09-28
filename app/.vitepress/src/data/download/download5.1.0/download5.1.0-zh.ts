@@ -670,7 +670,7 @@ export default [
           {
             name: 'Datakit_5.1.0',
             size: '356.05MB',
-            down_url: `${OBS_DOWNLOAD_LINK}5.1.0/tools/Datakit-5.1.0.tar.gz`,
+            down_url: `${OBS_DOWNLOAD_LINK}5.1.0/tools/Datakit/Datakit-5.1.0.tar.gz`,
             sha_code:
               '09d5193923753b2bc365c3c913b6aeb0b80fc8567bca1f35ce26e4af3bc80f64',
             docsName: '',
@@ -722,7 +722,7 @@ export default [
           {
             name: 'Datakit_5.1.0',
             size: '356.05MB',
-            down_url: `${OBS_DOWNLOAD_LINK}5.1.0/tools/Datakit-5.1.0.tar.gz`,
+            down_url: `${OBS_DOWNLOAD_LINK}5.1.0/tools/Datakit/Datakit-5.1.0.tar.gz`,
             sha_code:
               '09d5193923753b2bc365c3c913b6aeb0b80fc8567bca1f35ce26e4af3bc80f64',
             docsName: '',
