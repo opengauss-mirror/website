@@ -134,7 +134,7 @@ export default [
               '/docs/5.0.0-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html',
           },
           {
-            name: 'openGauss_5.0.0 分布式镜像',
+            name: 'openGauss_5.0.0 Distributed',
             table: 'server',
             size: '3.41GB',
             edition: 'distributed',
@@ -233,7 +233,7 @@ export default [
               '/docs/5.0.0-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html',
           },
           {
-            name: 'openGauss_5.0.0 分布式镜像',
+            name: 'openGauss_5.0.0 Distributed',
             table: 'server',
             size: '3.29GB',
             edition: 'distributed',
