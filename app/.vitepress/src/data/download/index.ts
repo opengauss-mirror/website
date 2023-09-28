@@ -1,3 +1,4 @@
+import download510 from './download5.1.0';
 import download500 from './download5.0.0';
 import download311 from './download3.1.1';
 import download310 from './download3.1.0';
@@ -16,6 +17,20 @@ import download100 from './download1.0.0';
 // 如果之后发行了新的LTS版本在本页面添加新版本数据时记得修改(initPrevious:true)所在版本的位置
 // newLayout:true 代表使用新版下载页面结构布局，无此参数代表使用旧版
 const downloadData = [
+  {
+    name: '5.1.0 (Preview)',
+    newLayout:true,
+    data: download510,
+    plannedEOL: 'Planned EOL: 2024.03.31',
+    docs_list: [
+      {
+        name: '发行说明',
+        nameEn: 'Release Notes',
+        path: '/docs/5.1.0/docs/ReleaseNotes/Releasenotes.html',
+        pathEn: '/docs/5.1.0/docs/Releasenotes/Releasenotes.html',
+      },
+    ],
+  },
   {
     name: '5.0.0 (LTS)',
     newLayout:true,
