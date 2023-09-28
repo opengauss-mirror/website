@@ -645,7 +645,7 @@ export default [
             size: '10.41MB',
             down_url: `${OBS_DOWNLOAD_LINK}5.1.0/tools/replicate-mysql2openGauss-5.1.0.tar.gz`,
             sha_code:
-              'a30fdc14cbe9b7d83823305fe8f84e030ede21b33b47b2e54d439b1fc0c2f0b6',
+              '63051488384aa056da479e4e8e489e8c4933194e31bfe441cafe3539dea35ce0',
             docsName: '',
             docs_url: '',
           },
@@ -654,7 +654,7 @@ export default [
             size: '9.26MB',
             down_url: `${OBS_DOWNLOAD_LINK}5.1.0/tools/replicate-openGauss2mysql-5.1.0.tar.gz`,
             sha_code:
-              '1e7dddfb7a2d0ab31025532ddea4206981cb2aacac74c3853f7dbab883aa3869',
+              '913058814c587535a6b3dcef7a41f0345321848bca313413feef4dcabcf12dee',
             docsName: '',
             docs_url: '',
           },
@@ -663,16 +663,16 @@ export default [
             size: '79.57MB',
             down_url: `${OBS_DOWNLOAD_LINK}5.1.0/tools/gs_datacheck-5.1.0.tar.gz`,
             sha_code:
-              '789fef18224e35705dc9bbbadb9f5d921e3577aee27b38d6afccbcde6f51b2a2',
+              'cec483bdaa737a9cee70f7c04eae6e8d207494cbc6e832fd1d7d421f27865530',
             docsName: '',
             docs_url: '',
           },
           {
             name: 'Datakit_5.1.0',
             size: '356.05MB',
-            down_url: `${OBS_DOWNLOAD_LINK}5.1.0/tools/Datakit-5.1.0.tar.gz`,
+            down_url: `${OBS_DOWNLOAD_LINK}5.1.0/tools/Datakit/Datakit-5.1.0.tar.gz`,
             sha_code:
-              '1240a6d866a35c5fa057aa937297d4670da950cc0cb5fab19f271ac482479804',
+              '09d5193923753b2bc365c3c913b6aeb0b80fc8567bca1f35ce26e4af3bc80f64',
             docsName: '',
             docs_url: '',
           },
@@ -697,7 +697,7 @@ export default [
             size: '10.41MB',
             down_url: `${OBS_DOWNLOAD_LINK}5.1.0/tools/replicate-mysql2openGauss-5.1.0.tar.gz`,
             sha_code:
-              'a30fdc14cbe9b7d83823305fe8f84e030ede21b33b47b2e54d439b1fc0c2f0b6',
+              '63051488384aa056da479e4e8e489e8c4933194e31bfe441cafe3539dea35ce0',
             docsName: '',
             docs_url: '',
           },
@@ -706,7 +706,7 @@ export default [
             size: '9.26MB',
             down_url: `${OBS_DOWNLOAD_LINK}5.1.0/tools/replicate-openGauss2mysql-5.1.0.tar.gz`,
             sha_code:
-              '1e7dddfb7a2d0ab31025532ddea4206981cb2aacac74c3853f7dbab883aa3869',
+              '913058814c587535a6b3dcef7a41f0345321848bca313413feef4dcabcf12dee',
             docsName: '',
             docs_url: '',
           },
@@ -715,16 +715,16 @@ export default [
             size: '79.57MB',
             down_url: `${OBS_DOWNLOAD_LINK}5.1.0/tools/gs_datacheck-5.1.0.tar.gz`,
             sha_code:
-              '789fef18224e35705dc9bbbadb9f5d921e3577aee27b38d6afccbcde6f51b2a2',
+              'cec483bdaa737a9cee70f7c04eae6e8d207494cbc6e832fd1d7d421f27865530',
             docsName: '',
             docs_url: '',
           },
           {
             name: 'Datakit_5.1.0',
             size: '356.05MB',
-            down_url: `${OBS_DOWNLOAD_LINK}5.1.0/tools/Datakit-5.1.0.tar.gz`,
+            down_url: `${OBS_DOWNLOAD_LINK}5.1.0/tools/Datakit/Datakit-5.1.0.tar.gz`,
             sha_code:
-              '1240a6d866a35c5fa057aa937297d4670da950cc0cb5fab19f271ac482479804',
+              '09d5193923753b2bc365c3c913b6aeb0b80fc8567bca1f35ce26e4af3bc80f64',
             docsName: '',
             docs_url: '',
           },
@@ -766,7 +766,7 @@ export default [
             size: '74.36MB',
             down_url: `${OBS_DOWNLOAD_LINK}5.1.0/tools/openEuler22.03/chameleon-5.1.0-aarch64.tar.gz`,
             sha_code:
-              '338e4de14ad2375f76f0bb9ca09933e9ae49295ec985ece2e50f1c32d07490e2',
+              '1365776dfc640524f34c6db9b79e84cfe2d0257c7761e6d50d6a35b3e908c120',
             docsName: '',
             docs_url: '',
           },
@@ -775,7 +775,7 @@ export default [
             size: '566.99MB',
             down_url: `${OBS_DOWNLOAD_LINK}5.1.0/tools/openEuler22.03/PortalControl-5.1.0-aarch64.tar.gz`,
             sha_code:
-              '43250f89392e958c222cf3024ec4b1d0bddfdef7634e19f385a9746ee420826a',
+              '9aab2ded1d86ed27c9fcda8ddf5017ab848121ac284639422e181f88409f78e0',
             docsName: '',
             docs_url: '',
           },
@@ -791,7 +791,7 @@ export default [
             size: '74.62MB',
             down_url: `${OBS_DOWNLOAD_LINK}5.1.0/tools/openEuler22.03/chameleon-5.1.0-x86_64.tar.gz`,
             sha_code:
-              '20c286a6d392f0e004677727b3939c026757b3697912ba7ddd4ee854e01ad907',
+              '74b3703f619089111570d0b4963e52e4497e91cf7bcf00822537d1a6024986f5',
             docsName: '',
             docs_url: '',
           },
@@ -800,7 +800,7 @@ export default [
             size: '567.24MB',
             down_url: `${OBS_DOWNLOAD_LINK}5.1.0/tools/openEuler22.03/PortalControl-5.1.0-x86_64.tar.gz`,
             sha_code:
-              '5574f496a3e5a116ffe25a690aeb888ae673e3be843cce4dcb0eb0ad386d4d30',
+              '59c10f92524bca245ce8a3f3f46f9d9fddfcb1dcc6629171649618af87b73f2d',
             docsName: '',
             docs_url: '',
           },
@@ -816,7 +816,7 @@ export default [
             size: '71.84MB',
             down_url: `${OBS_DOWNLOAD_LINK}5.1.0/tools/openEuler20.03/chameleon-5.1.0-aarch64.tar.gz`,
             sha_code:
-              '88ab24bb2c343c89a62bbed199ebea0ebce5a283f186753a995c2623a561c7f6',
+              '51c6cb74226de9e98032f2fdd92ecf50a82f1fe2323855936f694d41ff85b0ee',
             docsName: '',
             docs_url: '',
           },
@@ -825,7 +825,7 @@ export default [
             size: '564.41MB',
             down_url: `${OBS_DOWNLOAD_LINK}5.1.0/tools/openEuler20.03/PortalControl-5.1.0-aarch64.tar.gz`,
             sha_code:
-              '672ba63e6e3f4d925d0d2c08e2c6c56c3178227d89b467c156c9e91f0ac998b8',
+              'f40b7161b7c9b093f2ec3752337ff650ec45399c94013f6290e538da9135cca3',
             docsName: '',
             docs_url: '',
           },
@@ -841,7 +841,7 @@ export default [
             size: '71.05MB',
             down_url: `${OBS_DOWNLOAD_LINK}5.1.0/tools/openEuler20.03/chameleon-5.1.0-x86_64.tar.gz`,
             sha_code:
-              '8a569e90ae647c885cd7ce1d173d40e38498c4bf9942429da85933f143e0f965',
+              'b6c4b8c02fb98531d548bfd7ee631f6cdb41105e8b8408cd6797687e1e46f239',
             docsName: '',
             docs_url: '',
           },
@@ -850,7 +850,7 @@ export default [
             size: '563.66MB',
             down_url: `${OBS_DOWNLOAD_LINK}5.1.0/tools/openEuler20.03/PortalControl-5.1.0-x86_64.tar.gz`,
             sha_code:
-              '398249c6eaad50a5d32fe78900eb11719993eb746735db47dd82bf137af2b34d',
+              '4b98430d7ca9ef8a7ec5fb9a36c4b517d153f8624cdedf5a3ba4b6dc862e903e',
             docsName: '',
             docs_url: '',
           },
@@ -866,7 +866,7 @@ export default [
             size: '72.12MB',
             down_url: `${OBS_DOWNLOAD_LINK}5.1.0/tools/centos7/chameleon-5.1.0-x86_64.tar.gz`,
             sha_code:
-              'cff42e9f2171504d8b0a8e91de562b5c5a51c730f1a4155b06793faa10ea4006',
+              '133e439fe43935841f709e154e3b4e7adf0207a2540b5b488b8467cb48aaa96b',
             docsName: '',
             docs_url: '',
           },
@@ -875,7 +875,7 @@ export default [
             size: '564.78MB',
             down_url: `${OBS_DOWNLOAD_LINK}5.1.0/tools/centos7/PortalControl-5.1.0-x86_64.tar.gz`,
             sha_code:
-              'a5032cfb9aeffb151535834070fe229b0e0d8c189cf2f45c5350cd0390498e22',
+              'efd017f3e755ea1ff629eb003305303b69bb47bff88710ce6384839377bb1603',
             docsName: '',
             docs_url: '',
           },
