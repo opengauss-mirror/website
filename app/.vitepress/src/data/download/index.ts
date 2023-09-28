@@ -18,10 +18,10 @@ import download100 from './download1.0.0';
 // newLayout:true 代表使用新版下载页面结构布局，无此参数代表使用旧版
 const downloadData = [
   {
-    name: '5.1.0 (LTS)',
+    name: '5.1.0 (Preview)',
     newLayout:true,
     data: download510,
-    plannedEOL: 'Planned EOL: 2026.03.31',
+    plannedEOL: 'Planned EOL: 2024.03.31',
     docs_list: [
       {
         name: '发行说明',
