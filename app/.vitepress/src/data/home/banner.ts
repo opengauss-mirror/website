@@ -1,46 +1,31 @@
 import liveImg_pc from '@/assets/category/home/banner/liveBanner_pc.png';
 import liveImg_mo from '@/assets/category/home/banner/liveBanner_mo.png';
 
-import banner500 from '@/assets/category/home/banner/opengauss5.0.0_pc.jpg';
-import banner500_mo from '@/assets/category/home/banner/opengauss5.0.0_mo.png';
+import banner510 from '@/assets/category/home/banner/opengauss5.1.0_pc_zh.png';
+import bannerEn510 from '@/assets/category/home/banner/opengauss5.1.0_pc_en.png';
+import banner510_mo from '@/assets/category/home/banner/opengauss5.1.0_mo_zh.png';
+import bannerEn510_mo from '@/assets/category/home/banner/opengauss5.1.0_mo_en.png';
 
-import bannerHissPc from '@/assets/category/home/banner/banner-hiss_pc.png';
-import bannerHissMo from '@/assets/category/home/banner/banner-hiss_mo.png';
-
-import bannerActivePc from '@/assets/category/home/banner/banner-active_pc.png';
-import bannerActiveMo from '@/assets/category/home/banner/banner-active_mo.png';
-import { HISS_LINK, LEARN_VIDEO_LINK } from '@/shared/url-config';
+import { LEARN_VIDEO_LINK } from '@/shared/url-config';
 
 // targetTap:1 新页签打开
 // type:1(只有图片)、2(文字居左)，3(文字居中),4(仅用于实习banner),5 视频
 export default {
   zh: [
     {
-      pcBanner: bannerHissPc,
-      moBanner: bannerHissMo,
-      link: `${HISS_LINK}portal/1643780836745113602?pageId=1644234415967604737&activeIndex=-1&sxz-lang=zh_CN`,
-      targetTap: 1,
-      title: '',
-      subtitle: '',
-      desc: [],
-      btn: '',
-      type: 2,
-      className: 'hiss-banner',
-      video: '',
-    },
-    {
-      pcBanner: bannerActivePc,
-      moBanner: bannerActiveMo,
-      link: '/zh/events/2023-07-05/',
+      pcBanner: banner510,
+      moBanner: banner510_mo,
+      link: '/zh/news/2023-09-28/',
       targetTap: 0,
       title: '',
       subtitle: '',
       desc: [''],
       btn: '',
-      type: 2,
-      className: '',
+      type: 3,
+      className: 'version',
       video: '',
     },
+
     {
       pcBanner: liveImg_pc,
       moBanner: liveImg_mo,
@@ -54,12 +39,14 @@ export default {
       className: '',
       video: `${LEARN_VIDEO_LINK}openGauss%E5%AE%A3%E4%BC%A0%E6%B4%BB%E5%8A%A8/openGauss%2BHC%E5%AE%A3%E4%BC%A0%E8%A7%86%E9%A2%91.mp4`,
     },
+  ],
+  en: [
     {
-      pcBanner: banner500,
-      moBanner: banner500_mo,
-      link: '/zh/news/2023-03-31/',
+      pcBanner: bannerEn510,
+      moBanner: bannerEn510_mo,
+      link: '/zh/news/2023-09-28/',
       targetTap: 0,
-      title: 'openGauss 5.0.0 版本正式发布',
+      title: '',
       subtitle: '',
       desc: [''],
       btn: '',
@@ -67,8 +54,6 @@ export default {
       className: 'version',
       video: '',
     },
-  ],
-  en: [
     {
       pcBanner: liveImg_pc,
       moBanner: liveImg_mo,
@@ -83,19 +68,6 @@ export default {
       type: 2,
       className: '',
       video: `${LEARN_VIDEO_LINK}openGauss%E5%AE%A3%E4%BC%A0%E6%B4%BB%E5%8A%A8/openGauss%2BHC%E5%AE%A3%E4%BC%A0%E8%A7%86%E9%A2%91.mp4`,
-    },
-    {
-      pcBanner: banner500,
-      moBanner: banner500_mo,
-      link: '/zh/news/2023-03-31/',
-      targetTap: 0,
-      title: 'openGauss Officially Releases Version 5.0.0',
-      subtitle: '',
-      desc: [''],
-      btn: '',
-      type: 3,
-      className: 'version',
-      video: '',
     },
   ],
 };

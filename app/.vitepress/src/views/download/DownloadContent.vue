@@ -20,8 +20,10 @@ const props = defineProps({
   },
   downloadVersionAuth: {
     required: true,
-    type: String,
-    default: '',
+    type: Array,
+    default: () => {
+      return [];
+    },
   },
 });
 const i18n = useI18n();

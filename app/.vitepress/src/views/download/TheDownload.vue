@@ -16,15 +16,12 @@ const i18n = useI18n();
 const { lang, theme } = useData();
 const downloadData = i18n.value.download;
 
-// 设置显示版本
+// 设置显示版本,最新版的LTS和Preview都需要登录后才能下载的版本
 const versionList = [DownloadConfig[0].name, DownloadConfig[1].name];
 const versionShown = ref(DownloadConfig[0].name);
 function setVersionShown(version: string) {
   versionShown.value = version;
 }
-//控制需要登录后才能下载的版本(默认仅为最新版需要登录后下载)
-const downloadVersionAuth = ref(DownloadConfig[0].name);
-
 // 获取版版本数据
 const getData: any = computed(() => {
   return DownloadConfig.filter((el) => el.name === versionShown.value);
@@ -95,7 +92,7 @@ const getData: any = computed(() => {
         <DownloadContent
           :content-data="getData"
           :version-shown="versionShown"
-          :download-version-auth="downloadVersionAuth"
+          :download-version-auth="versionList"
         />
       </div>
     </div>

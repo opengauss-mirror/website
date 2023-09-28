@@ -112,8 +112,8 @@ const changeDownloadAuth = () => {
       handleError('Error!');
     });
 };
-//控制需要登录后才能下载的版本(默认仅为最新版需要登录后下载)
-const downloadVersionAuthIndex = ref(DownloadConfig[0].name);
+//控制需要登录后才能下载的版本,最新版的LTS和Preview都需要登录后才能下载的版本
+const downloadVersionAuth = [DownloadConfig[0].name, DownloadConfig[1].name];;
 watch(
   () => getData.value,
   () => {
@@ -190,7 +190,7 @@ watch(
                 <div class="down-action lable-name2">
                   <template
                     v-if="
-                      selectVersion === downloadVersionAuthIndex &&
+                      downloadVersionAuth.includes(selectVersion) &&
                       !guardAuthClient.username
                     "
                   >
@@ -247,7 +247,7 @@ watch(
                 <div class="down-action lable-name3">
                   <template
                     v-if="
-                      selectVersion === downloadVersionAuthIndex &&
+                      downloadVersionAuth.includes(selectVersion) &&
                       !guardAuthClient.username
                     "
                   >
@@ -291,7 +291,7 @@ watch(
                 <div class="down-action">
                   <template
                     v-if="
-                      selectVersion === downloadVersionAuthIndex &&
+                      downloadVersionAuth.includes(selectVersion) &&
                       !guardAuthClient.username
                     "
                   >
@@ -364,7 +364,7 @@ watch(
               <div v-if="scope.row.centos_url !== ''" class="down-action">
                 <template
                   v-if="
-                    selectVersion === downloadVersionAuthIndex &&
+                    downloadVersionAuth.includes(selectVersion) &&
                     !guardAuthClient.username
                   "
                 >
@@ -423,7 +423,7 @@ watch(
               <div v-if="scope.row.aarch_url !== ''" class="down-action">
                 <template
                   v-if="
-                    selectVersion === downloadVersionAuthIndex &&
+                    downloadVersionAuth.includes(selectVersion) &&
                     !guardAuthClient.username
                   "
                 >
@@ -469,7 +469,7 @@ watch(
               <div v-if="scope.row.x86_url !== ''" class="down-action">
                 <template
                   v-if="
-                    selectVersion === downloadVersionAuthIndex &&
+                    downloadVersionAuth.includes(selectVersion) &&
                     !guardAuthClient.username
                   "
                 >
@@ -516,7 +516,7 @@ watch(
       v-else
       :content-data="getData"
       :version-shown="selectVersion"
-      :download-version-auth="downloadVersionAuthIndex"
+      :download-version-auth="downloadVersionAuth"
     />
   </AppContent>
   <div class="input-box lable-name">
