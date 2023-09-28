@@ -149,3 +149,10 @@ onMounted(() => {
   }
 }
 </style>
+<style lang="scss">
+.markdown .version-box img {
+  @media screen and (max-width: 767px) {
+    width: 33% !important;
+  }
+}
+</style>

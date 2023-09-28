@@ -23,8 +23,10 @@ const props = defineProps({
   },
   downloadVersionAuth: {
     required: true,
-    type: String,
-    default: '',
+    type: Array,
+    default: () => {
+      return [];
+    },
   },
   versionShown: {
     required: true,
@@ -273,7 +275,7 @@ watch(
             <div v-if="scope.row.down_url !== ''" class="down-action">
               <template
                 v-if="
-                  versionShown === downloadVersionAuth &&
+                  downloadVersionAuth.includes(versionShown) &&
                   !guardAuthClient.username
                 "
               >
@@ -370,7 +372,7 @@ watch(
           <span>{{ i18n.download.TABLE_HEAD[2] + ':' }}</span>
           <a
             v-if="
-              versionShown === downloadVersionAuth &&
+              downloadVersionAuth.includes(versionShown) &&
               !guardAuthClient.username
             "
             @click="changeDownloadAuth"
