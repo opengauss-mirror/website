@@ -506,6 +506,7 @@ $color: #fff;
     &::-webkit-scrollbar-button {
       width: 0;
     }
+    scrollbar-width:none;
     @media (max-width: 768px) {
       font-size: var(--o-font-size-tip);
       line-height: var(--o-line-height-tip);
