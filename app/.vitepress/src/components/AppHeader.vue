@@ -288,7 +288,7 @@ const searchLink = `/${lang.value}/search/`;
           </div>
         </transition>
       </div>
-      <ClientOnly>
+      <!-- <ClientOnly>
         <div class="opt-user">
           <div v-if="token">
             <div class="opt-info">
@@ -311,7 +311,7 @@ const searchLink = `/${lang.value}/search/`;
             </OIcon>
           </div>
         </div>
-      </ClientOnly>
+      </ClientOnly> -->
     </div>
   </header>
 </template>
