@@ -273,7 +273,7 @@ watch(
         <el-table-column :label="i18n.download.TABLE_HEAD[2]" prop="down_url">
           <template #default="scope">
             <div v-if="scope.row.down_url !== ''" class="down-action">
-              <template
+              <!-- <template
                 v-if="
                   downloadVersionAuth.includes(versionShown) &&
                   !guardAuthClient.username
@@ -290,8 +290,7 @@ watch(
                     <IconDownload />
                   </template>
                 </OButton>
-              </template>
-              <template v-else>
+              </template> -->
               <a :href="scope.row.down_url">
                 <OButton size="mini" type="primary" animation>
                   {{ i18n.download.BTN_TEXT }}
@@ -300,7 +299,6 @@ watch(
                   </template>
                 </OButton>
               </a>
-              </template>
             </div>
           </template>
         </el-table-column>
@@ -370,7 +368,7 @@ watch(
         </p>
         <p class="item-text">
           <span>{{ i18n.download.TABLE_HEAD[2] + ':' }}</span>
-          <a
+          <!-- <a
             v-if="
               downloadVersionAuth.includes(versionShown) &&
               !guardAuthClient.username
@@ -378,8 +376,8 @@ watch(
             @click="changeDownloadAuth"
           >
             {{ i18n.download.BTN_TEXT_MO }}</a
-          >
-          <a v-else :href="item.down_url">
+          > -->
+          <a :href="item.down_url">
             {{ i18n.download.BTN_TEXT_MO }}
           </a>
         </p>
