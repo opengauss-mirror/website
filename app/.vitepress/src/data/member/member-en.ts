@@ -45,6 +45,12 @@ export default {
       LIST: data.en.TC,
     },
     {
+      NAME: `Secretariat`,
+      ID: `secretariat`,
+      NAMEL_TEXT: `Secretariat Members`,
+      LIST: data.en.SECRETARIAT,
+    },
+    {
       NAME: `Special Interest Groups (SIGs)`,
       ID: `sig`,
       CHILDREN: [

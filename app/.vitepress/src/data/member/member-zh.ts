@@ -45,6 +45,12 @@ export default {
       LIST: data.zh.TC,
     },
     {
+      NAME: `秘书处`,
+      ID: `secretariat`,
+      NAMEL_TEXT: `秘书处成员：`,
+      LIST: data.zh.SECRETARIAT,
+    },
+    {
       NAME: `专项兴趣小组 (SIG)`,
       ID: `sig`,
       CHILDREN: [

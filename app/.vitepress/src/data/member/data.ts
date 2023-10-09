@@ -1,3 +1,4 @@
+import wenqi from '@/assets/category/member/avatar/wenqi.png';
 import jiangdayong from '@/assets/category/member/avatar/jiangdayong.png';
 import huzhengce from '@/assets/category/member/avatar/huzhengce.png';
 import gaiguoqiang from '@/assets/category/member/avatar/gaiguoqiang.png';
@@ -1071,6 +1072,38 @@ export default {
         title: `Member`,
         email: `wumingyuan@gbase.cn`,
         gitee: `${GITEE_LINK}wumingyuan`,
+      },
+    ],
+    SECRETARIAT:[
+      {
+        img: caiyajie,
+        name: `蔡亚杰`,
+        title: `秘书长`,
+        email: `jikey.cai@huawei.com`,
+      },
+      {
+        img: wangjiang,
+        name: `王江`,
+        title: `执行秘书`,
+        email: `wangjiang16@huawei.com`,
+      },
+      {
+        img: huangxianru,
+        name: `黄贤儒`,
+        title: `执行秘书`,
+        email: `huangxianru@huawei.com`,
+      },
+      {
+        img: wenqi,
+        name: `温祺`,
+        title: `执行秘书`,
+        email: `wenqi10@huawei.com`,
+      },
+      {
+        img: meixiangru,
+        name: `梅相如`,
+        title: `执行秘书`,
+        email: `xiangrumei87@126.com`,
       },
     ],
     SQLENGINE: [
@@ -4940,6 +4973,38 @@ export default {
         title: `Member`,
         email: `wumingyuan@gbase.cn`,
         gitee: `${GITEE_LINK}wumingyuan`,
+      },
+    ],
+    SECRETARIAT:[
+      {
+        img: caiyajie,
+        name: `Yajie Cai`,
+        title: `Secretary General`,
+        email: `jikey.cai@huawei.com`,
+      },
+      {
+        img: wangjiang,
+        name: `Jiang Wang`,
+        title: `Executive Secretary`,
+        email: `wangjiang16@huawei.com`,
+      },
+      {
+        img: huangxianru,
+        name: `Xianru Huang`,
+        title: `Executive Secretary`,
+        email: `huangxianru@huawei.com`,
+      },
+      {
+        img: wenqi,
+        name: `Qi Wen`,
+        title: `Executive Secretary`,
+        email: `wenqi10@huawei.com`,
+      },
+      {
+        img: meixiangru,
+        name: `Xiangru Mei`,
+        title: `Executive Secretary`,
+        email: `xiangrumei87@126.com`,
       },
     ],
     SQLENGINE: [
