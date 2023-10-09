@@ -20,6 +20,7 @@ const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
 const { lang } = useData();
 const isZh = computed(() => (lang.value === 'zh' ? true : false));
 
+// TODO:一般，拼写错误：handle
 const handerClick = (item: any) => {
   if (props.islink) {
     const path = isZh.value ? item.PATH : item.PATH_EN;

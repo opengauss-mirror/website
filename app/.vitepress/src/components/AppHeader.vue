@@ -20,6 +20,7 @@ import IconCancel from '~icons/app/icon-cancel.svg';
 import IconMenu from '~icons/app/icon-menu.svg';
 import IconLogin from '~icons/app/icon-login.svg';
 
+// TODO:一般，统一使用驼峰命名
 interface NavItem {
   NAME: string;
   PATH: string;
@@ -47,6 +48,7 @@ const logo = computed(() =>
 const roterPath = ref<string>(router.route.path);
 
 // 移动菜单事件
+// TODO:一般，统一使用mb结尾
 const mobileMenuIcon = ref(false);
 const mobileChildMenu = ref<NavItem | any>([]);
 

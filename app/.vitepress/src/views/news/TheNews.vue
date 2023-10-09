@@ -49,6 +49,7 @@ const toNewsContent = (path: string) => {
 const getListData = (params: ParamsType) => {
   getSortData(params)
     .then((res) => {
+      // TODO:一般，注意对返回值做校验，避免直接取值出现 undefined 的情况
       if (res.obj.count === 0) {
         isShowData.value = false;
       } else {

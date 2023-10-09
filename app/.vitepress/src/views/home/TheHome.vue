@@ -48,12 +48,14 @@ onMounted(async () => {
   };
   try {
     const responeData = await getSortData(paramsNews);
+    // TODO:一般，注意对返回值做校验，避免直接取值出现 undefined 的情况
     newsData.value = responeData.obj.records;
   } catch (e: any) {
     handleError('Error!');
   }
   try {
     const responeData = await getSortData(paramsBlog);
+    // TODO:一般，注意对返回值做校验，避免直接取值出现 undefined 的情况
     blogData.value = responeData.obj.records;
   } catch (e: any) {
     handleError('Error!');

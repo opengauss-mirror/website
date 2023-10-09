@@ -5,7 +5,7 @@ export default {
     {
       title: '数据技术嘉年华 | openGauss数据库新特性',
       date: '2020-11-29',
-      videourl: `${LEARN_VIDEO_LINK}openGauss%E5%AE%A3%E4%BC%A0%E6%B4%BB%E5%8A%A8/%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E5%98%89%E5%B9%B4%E5%8D%8E%E5%91%A8%E5%B9%B3%E9%AB%98%E8%80%81%E5%B8%88%E8%A7%86%E9%A2%91.mp4`,
+      videourl: `${LEARN_VIDEO_LINK}openGauss%E5%AE%A3%E4%BC%A0%E6%B4%BB%E5%8A%A8/%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E5%98%89%E5%B9%B4%E5%8D%8E%E5%91%A8%E5%B9%B3%E9%AB%98%E8%80%81%E5%B8%88%E8%A7%86%E9%A2%91.mp4`, // TODO:一般，统一使用驼峰命名
     },
     {
       title: '数据技术嘉年华 | openGauss企业级开源数据库',

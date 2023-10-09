@@ -14,7 +14,7 @@ import IconArrowRight from '~icons/app/icon-arrow-right.svg';
 
 const modules = [Autoplay];
 const perviewNum = ref(4);
-const videoList = ref<any>([]);
+const videoList = ref<any>([]); // TODO:一般，减少 any 的使用
 const { lang } = useData();
 const screenWidth = useWindowResize();
 const router = useRouter();
@@ -24,10 +24,11 @@ const isZh = computed(() => (lang.value === 'zh' ? true : false));
 
 function getVideoList() {
   const result = VideoConfig;
-  const resultList: any = [];
+  const resultList: any = []; // TODO:一般，减少 any 的使用
   result.forEach((item, k) => {
     const data = isZh.value ? item.data.zh : item.data.en;
     data.forEach((el: any, i) => {
+      // TODO:一般，减少 any 的使用
       if (i < 1) {
         el['cover'] = item.poster;
         el['name'] = item.name;
@@ -47,12 +48,14 @@ onMounted(() => {
     screenWidth.value > 1920 ? 6 : screenWidth.value < 994 ? 1 : 4;
 });
 
+// TODO:一般，函数以动词开头
 const handlerVideoDetail = (id: number, index: number) => {
   router.go(`/${lang.value}/video/detail/?id=${id}-${index}`);
 };
 </script>
 
 <template>
+  <!-- TODO:建议，home-video -->
   <div class="video-main">
     <h2 class="caption">{{ i18n.home.VIDEO_TITLE }}</h2>
     <swiper

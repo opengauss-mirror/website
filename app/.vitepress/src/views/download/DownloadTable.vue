@@ -69,6 +69,7 @@ async function handleUrlCopy(value: string | undefined) {
   if (inputDom.value) {
     (inputDom.value as HTMLInputElement).value = value;
     (inputDom.value as HTMLInputElement).select();
+    // TODO:严重，使用navigator.clipboard.writeText
     document.execCommand('copy');
   }
   ElMessage({
@@ -77,6 +78,7 @@ async function handleUrlCopy(value: string | undefined) {
   });
 }
 onMounted(() => {
+      // TODO:严重，vue使用ref获取dom
   inputDom.value = document.getElementById('useCopy');
 });
 // 下载权限
@@ -115,6 +117,7 @@ const architectureList = computed(() => {
   return temp;
 });
 const osList = computed(() => {
+  // TODO:一般，减少any的使用
   const temp: any = [];
   props.tableData.content.forEach((item: any) => {
     if (!temp.includes(item.os)) {
@@ -136,6 +139,7 @@ const onArchitectureTagClick = (i: number, select: string) => {
 const onOSTagClick = (i: number, select: string) => {
   activeOs.value = select;
 };
+// TODO:一般，减少any的使用
 const renderData: any = ref({});
 function setRenderData() {
   props.tableData.content.forEach((item: any) => {

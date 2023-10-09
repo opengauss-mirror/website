@@ -13,13 +13,17 @@ const commonStore = useCommon();
 
 const i18n = useI18n();
 const community = ref();
+// TODO:一般，减少 any 的使用
 const roundList: Ref<any[]> = ref([]);
 const isShowCommunity = ref(false);
+// TODO:一般，统一使用驼峰命名
 const roundNumber = ref([
   {
     ROUND_VALUE: 0,
   },
 ]);
+
+// TODO:一般，注意 TS 类型
 function addNumber(start: number, end: number, item, index) {
   let i = start;
   const allTime = 2500;
@@ -28,6 +32,7 @@ function addNumber(start: number, end: number, item, index) {
     time = allTime / end;
   }
   if (i < end) {
+    // TODO:一般，统一使用驼峰命名
     const Interval = setInterval(function () {
       // 设置每次增加的动态数字，可调整
       if (allTime / end < time) {
@@ -52,6 +57,7 @@ const changeNum = () => {
 };
 
 const addValue = (arr: any) => {
+  // TODO:一般，使用 json.parse 注意 try catch
   const template = JSON.parse(
     JSON.stringify(i18n.value.home.HOME_ROUND.ROUND_LIST)
   );
@@ -66,6 +72,7 @@ onMounted(async () => {
   try {
     const responeData = await getStatistic();
     roundList.value = addValue(responeData?.data);
+    // TODO:一般，使用 json.parse 注意 try catch
     roundNumber.value = JSON.parse(
       JSON.stringify(i18n.value.home.HOME_ROUND.ROUND_LIST)
     );
@@ -224,7 +231,7 @@ onMounted(async () => {
   }
 }
 .community {
-  margin-top:  var(--o-spacing-h2);
+  margin-top: var(--o-spacing-h2);
   @media (max-width: 768px) {
     .o-container {
       padding-bottom: 0;

@@ -16,6 +16,7 @@ const i18n = useI18n();
 const { lang, theme } = useData();
 const downloadData = i18n.value.download;
 
+// TODO:一般，优化逻辑
 // 设置显示版本,最新版的LTS和Preview都需要登录后才能下载的版本
 const versionList = [DownloadConfig[0].name, DownloadConfig[1].name];
 const versionShown = ref(DownloadConfig[0].name);

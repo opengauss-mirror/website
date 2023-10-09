@@ -12,7 +12,7 @@ import contributionMap_dark_en from '@/assets/category/contribution/contribution
 import contributionMap_light_zh_mobile from '@/assets/category/contribution/contribution-map_light_zh_mobile.png';
 import contributionMap_light_en_mobile from '@/assets/category/contribution/contribution-map_light_en_mobile.png';
 import contributionMap_dark_zh_mobile from '@/assets/category/contribution/contribution-map_dark_zh_mobile.png';
-import contributionMap_dark_en_mobile from '@/assets/category/contribution/contribution-map_dark_en_mobile.png';
+import contributionMap_dark_en_mobile from '@/assets/category/contribution/contribution-map_dark_en_mobile.png';// TODO:一般，统一使用mb结尾
 
 const i18n = useI18n();
 const { lang } = useData();
@@ -31,6 +31,7 @@ const goLink = (url: string, isBlank: boolean) => {
 };
 </script>
 <template>
+  <!-- TODO:建议，建议最外层class命名使用业务相关词汇 -->
   <div class="content-map">
     <div class="content-map-img">
       <img
@@ -64,6 +65,7 @@ const goLink = (url: string, isBlank: boolean) => {
           isZh ? contributionMap_dark_zh_mobile : contributionMap_dark_en_mobile
         "
       />
+      <!-- TODO:严重，不要使用index作为key -->
       <div
         v-for="(item, index) in i18n.contribution.LINK_LIST"
         :key="index"

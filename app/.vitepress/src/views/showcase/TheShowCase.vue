@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+// TODO:建议，建议 js、html、css 之间有换行，js 中不同逻辑块也使用换行区分
 import { ref, computed, onMounted } from 'vue';
 import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';

@@ -326,7 +326,7 @@ import xuantian_dark from '@/assets/category/home/organization/dark/xuantian_dar
 import yaxin_dark from '@/assets/category/home/organization/dark/yaxin_dark.png'
 import yixin_dark from '@/assets/category/home/organization/dark/yixin_dark.png'
 
-
+// TODO:一般，统一使用驼峰命名
 export default [
   {
     IMG: baolande,

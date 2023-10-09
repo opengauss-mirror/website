@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+// TODO:一般，优化逻辑
 import { ref, computed, onMounted, Ref, watch } from 'vue';
 import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';
@@ -48,6 +49,7 @@ async function handleUrlCopy(value: string | undefined) {
   if (inputDom.value) {
     (inputDom.value as HTMLInputElement).value = value;
     (inputDom.value as HTMLInputElement).select();
+    // TODO:严重，使用navigator.clipboard.writeText
     document.execCommand('copy');
   }
   ElMessage({
@@ -81,6 +83,7 @@ const hoverTips = computed(() => (type: string) => {
 });
 
 onMounted(() => {
+  // TODO:严重，vue使用ref获取dom
   inputDom.value = document.getElementById('useCopy');
 });
 
@@ -113,7 +116,7 @@ const changeDownloadAuth = () => {
     });
 };
 //控制需要登录后才能下载的版本,最新版的LTS和Preview都需要登录后才能下载的版本
-const downloadVersionAuth = [DownloadConfig[0].name, DownloadConfig[1].name];;
+const downloadVersionAuth = [DownloadConfig[0].name, DownloadConfig[1].name];
 watch(
   () => getData.value,
   () => {

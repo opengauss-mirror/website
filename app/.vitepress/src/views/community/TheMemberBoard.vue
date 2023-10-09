@@ -9,15 +9,16 @@ import IconMail from '~icons/app/icon-mail.svg';
 import IconUser from '~icons/app/icon-user.svg';
 import IconToemail from '@/assets/category/member/toemail.svg';
 import IconGit from '@/assets/category/member/git.svg';
-import IconArrowRight from '~icons/app/icon-arrow-right.svg';
+import IconArrowRight from '~icons/app/icon-arrow-right.svg'; // TODO:一般，无用的变量
 import IconChevron from '~icons/app/icon-chevron-right.svg';
 
 const i18n = useI18n();
 const { lang } = useData();
 
 // 移动端事件
-const activeMobile = ref(0);
-const active = ref(0);
+const activeMobile = ref(0); // TODO:建议，尽量见名知义，该处为index
+const active = ref(0); // TODO:建议，尽量见名知义，该处为index
+// TODO:一般，减少any的使用
 const handleChangeActiveMobile = (activeNames: any) => {
   if (activeNames !== '') {
     active.value = activeNames;
@@ -73,6 +74,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
             </li>
             <li><IconUser />{{ item.NAMEL_TEXT }}</li>
           </ul>
+          <!-- TODO:建议，调整一下标签的闭合符号换行-->
           <ul v-if="item.LIST.length > 0" class="member-list">
             <li v-for="(user, i) in item.LIST" :key="i">
               <img class="avatar" :src="user.img" :alt="user.name" />

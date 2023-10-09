@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+// TODO:一般，文件夹名建议使用support-tools，对应的class也建议做修改
 import { computed } from 'vue';
 import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';

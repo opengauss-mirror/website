@@ -47,7 +47,9 @@ watch(
   { immediate: true }
 );
 const emits = defineEmits(['video-click']);
+// TODO:一般，拼写错误：handle，建议handle-click
 const handlerVideo = (id: number, index: number) => {
+  // TODO:一般，click即可
   emits('video-click', id, index);
 };
 </script>

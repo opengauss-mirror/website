@@ -32,10 +32,12 @@ const { contentData, versionShown, downloadVersionAuth } = toRefs(props);
 </script>
 
 <template>
+<!-- TODO:建议，建议最外层class命名使用业务相关词汇 -->
   <div class="content-wrap">
     <h2 class="title">{{ 'openGauss ' + (contentData[0] as any).name }}</h2>
     <h4 class="subtitle">{{ (contentData[0] as any).plannedEOL }}</h4>
     <div class="other-link">
+      <!-- TODO:建议，调整一下标签的闭合符号换行-->
       <a
         :href="theme.docsUrl + '/' + lang + (contentData[0] as any).docs_list[0][ lang === 'zh'?'path':'pathEn']"
         target="_blank"

@@ -17,6 +17,7 @@ const tabType = ref('main');
 const otherTabType = ref(0);
 
 // video 事件
+// TODO:一般，布尔值以is开头
 const videoDialog = ref(false);
 const videoLink = ref('');
 const handleCloseVideo = () => {

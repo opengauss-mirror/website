@@ -25,6 +25,7 @@ const anchor = computed(() => {
   return i18n.value.member.MEMBER_LIST.map((item: any) => item.ID);
 });
 // 用于存放dom元素以方便识别滚动距离进而改变导航栏
+// TODO:一般，减少any的使用
 const navRef: any = ref([]);
 const navTitle = (el: any) => {
   navRef.value.push(el);
@@ -41,6 +42,7 @@ const handleScroll = (index: number) => {
   }
 };
 const scroll = () => {
+  // TODO:待讨论，为何使用立即执行函数
   // 根据滚动激活导航
   (function () {
     const scrollTop =
@@ -55,11 +57,13 @@ const scroll = () => {
   })();
 };
 onMounted(() => {
+  // TODO:严重，注意区分document.body和window对象
   const body = window;
   body?.addEventListener('scroll', scroll);
 });
 
 onUnmounted(() => {
+  // TODO:严重，注意区分document.body和window对象
   const body = window;
   body?.removeEventListener('scroll', scroll);
 });

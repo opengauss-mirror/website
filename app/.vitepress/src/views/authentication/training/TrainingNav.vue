@@ -20,6 +20,7 @@ const { currentIndex, dataList } = toRefs(props);
       :key="index"
       :class="+index === currentIndex ? 'active' : ''"
     >
+      <!-- TODO:一般，TS类型警告 -->
       <a :href="item.key">
         {{ item.name }}
       </a>

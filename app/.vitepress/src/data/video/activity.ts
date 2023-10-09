@@ -5,7 +5,7 @@ export default {
     {
       title: '广州Meetup | 鲲鹏(ARM) - 在DB领域的开疆扩土',
       date: '2020-12-30',
-      videourl: `${OBS_LEARN_LINK}openGauss%E5%B9%BF%E5%B7%9EMeetup/%E8%B5%B5%E6%B3%A2.MP4`,
+      videourl: `${OBS_LEARN_LINK}openGauss%E5%B9%BF%E5%B7%9EMeetup/%E8%B5%B5%E6%B3%A2.MP4`, // TODO:一般，统一使用驼峰命名
     },
     {
       title: '广州Meetup | 数据库迁移最佳实践',

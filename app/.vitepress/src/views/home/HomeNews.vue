@@ -15,9 +15,9 @@ const { lang } = useData();
 const roomName = i18n.value.home.HOME_ROOMS.ROOM_NAME;
 
 const tabType: Ref<string> = ref('events');
-
+// TODO:一般，注意 TS 类型
 const blogList: Ref<any[]> = ref([]);
-
+// TODO:一般，注意 TS 类型
 const newsList: Ref<any[]> = ref([]);
 
 const props = defineProps({
@@ -83,6 +83,7 @@ onMounted(async () => {
 });
 </script>
 <template>
+  <!-- TODO:建议，home-news -->
   <div class="home-newsroom">
     <div class="title-list">
       <OTabs v-model="tabType">

@@ -87,6 +87,7 @@ onMounted(async () => {
   });
   try {
     const responeData = await getSortData(sortParams);
+    // TODO:一般，注意对返回值做校验，避免直接取值出现undefined的情况
     // 将单独存在的新增活动加入精彩回顾
     lang.value === 'zh' ? responeData.obj.records.push(addActiveData) : '';
     responeData.obj.records.forEach((item: any) => {
@@ -114,8 +115,10 @@ onMounted(async () => {
 const goDetail = (path: string) => {
   if (path.startsWith('http')) {
     window.open(path, '_blank');
+    // TODO:一般，使用正则进行判断
   } else if (path.startsWith(`/${lang.value}/`)) {
     router.go(path);
+    // TODO:一般，使用正则进行判断
   } else if (path.startsWith(`${lang.value}/`)) {
     router.go('/' + path);
   } else {
@@ -180,6 +183,7 @@ const goDetail = (path: string) => {
           alt="404"
         />
         <p class="empty-text">
+          <!-- TODO:建议，可使用公共国际化 -->
           {{ lang === 'zh' ? '暂无活动！' : 'NotFound !' }}
         </p>
       </div>
@@ -260,6 +264,7 @@ const goDetail = (path: string) => {
             alt="404"
           />
           <p class="empty-text">
+            <!-- TODO:建议，可使用公共国际化 -->
             {{ lang === 'zh' ? '暂无数据！' : 'NotFound !' }}
           </p>
         </div>
