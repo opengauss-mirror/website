@@ -113,7 +113,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
         <div class="member-mobile">
           <template v-if="!item.CHILDREN">
             <ul class="member-info lable-name">
-              <li>
+              <li v-if="item.GITEE_PATH">
                 <IconHome />
                 <a
                   :href="item.GITEE_PATH"
@@ -122,7 +122,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
                   >{{ i18n.member.GITEE_TEXT }}</a
                 >
               </li>
-              <li>
+              <li v-if="item.EMIAL">
                 <IconMail />
                 {{ i18n.member.EMIAL_TEXT }}
                 <a class="lable-name" :href="'mailto:' + item.EMIAL">{{
@@ -249,7 +249,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
         </h1>
         <div class="member-panel-content">
           <ul class="member-info">
-            <li>
+            <li v-if="item.GITEE_PATH">
               <IconHome />
               <a
                 :href="item.GITEE_PATH"
@@ -258,7 +258,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
                 >{{ i18n.member.GITEE_TEXT }}</a
               >
             </li>
-            <li>
+            <li v-if="item.EMIAL">
               <IconMail />
               {{ i18n.member.EMIAL_TEXT }}
               <a :href="'mailto:' + item.EMIAL">{{ item.EMIAL }}</a>
