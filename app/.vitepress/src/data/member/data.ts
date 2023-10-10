@@ -452,6 +452,7 @@ import hezhenyan from '@/assets/category/member/avatar/hezhenyan.png';
 import yangwei from '@/assets/category/member/avatar/yangwei.png';
 import songxuedong from '@/assets/category/member/avatar/songxuedong.png';
 import chaipeng from '@/assets/category/member/avatar/chaipeng.png';
+import zhouzhengde from '@/assets/category/member/avatar/zhouzhengde.png';
 import { GITEE_LINK } from '@/shared/url-config';
 export default {
   zh: {
@@ -583,10 +584,10 @@ export default {
         company: `中国移动通信集团有限公司`,
       },
       {
-        img: zhongchengcheng,
-        name: `钟承诚`,
+        img: zhouzhengde,
+        name: `周正德`,
         title: `理事`,
-        email: `zhongchengcheng@sangfor.com.cn`,
+        email: `zhouzhengde@sangfor.com`,
         company: `深信服科技股份有限公司`,
       },
       {
@@ -4484,10 +4485,10 @@ export default {
         company: `China Mobile Communications Group Co.,Ltd`,
       },
       {
-        img: zhongchengcheng,
-        name: `Chengcheng Zhong`,
+        img: zhouzhengde,
+        name: `Zhengde Zhou`,
         title: `Director`,
-        email: `zhongchengcheng@sangfor.com.cn`,
+        email: `zhouzhengde@sangfor.com.cn`,
         company: `Sangfor Technologies Inc`,
       },
       {
