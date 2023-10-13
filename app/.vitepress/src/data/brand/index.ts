@@ -1,6 +1,8 @@
 export default {
+  // TODO:一般，统一使用驼峰命名
   brandList: [
     {
+      // TODO:一般，id是否有必要
       id: 0,
       backgroundColor: 'white',
       url: '/category/brand/view/logo1-view.png',

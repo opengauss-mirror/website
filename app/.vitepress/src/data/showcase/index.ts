@@ -30,7 +30,9 @@ import industrial from '@/assets/category/showcase/industrial-light.svg';
 import industrialDark from '@/assets/category/showcase/industrial-dark.svg';
 import industrialActive from '@/assets/category/showcase/industrial-light-active.svg';
 import industrialActiveDark from '@/assets/category/showcase/industrial-dark-active.svg';
+// TODO:一般，统一使用驼峰命名
 export default {
+  // TODO:一般，多余的层级，直接导出数组即可
   CASE_LIST: [
     {
       TYPE: '金融',

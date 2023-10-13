@@ -14,10 +14,10 @@ const { lang } = useData();
 const i18n = useI18n();
 const router = useRouter();
 
-const cveDetailData: any = ref({});
+const cveDetailData: any = ref({}); // TODO:一般，减少 any 的使用
 const affectedProductList = ref<AffectProduct[]>([]);
-const advisories: any = ref([]);
-const cvssList: any = ref([]);
+const advisories: any = ref([]); // TODO:一般，减少 any 的使用
+const cvssList: any = ref([]); // TODO:一般，减少 any 的使用
 
 function goBackPage() {
   const i = router.route.path.lastIndexOf('d');

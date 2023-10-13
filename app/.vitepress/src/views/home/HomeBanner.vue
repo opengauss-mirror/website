@@ -6,13 +6,13 @@ import 'swiper/swiper.min.css';
 import 'swiper/components/navigation/navigation.min.css';
 import 'swiper/components/pagination/pagination.min.css';
 import { useData } from 'vitepress';
-import HomeConfig from '@/data/home/';
+import HomeConfig from '@/data/home/'; // TODO:一般，统一使用驼峰命名
 import { OBS_VIDEO_LINK } from '@/shared/url-config';
 
 import useWindowResize from '@/components/hooks/useWindowResize';
 
 import IconArrowRight from '~icons/app/icon-arrow-right.svg';
-import VideoGif from '@/assets/category/home/video-player.gif';
+import VideoGif from '@/assets/category/home/video-player.gif'; // TODO:一般，统一使用驼峰命名
 
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 
@@ -34,6 +34,7 @@ const homeBanner = computed(() =>
 const jump = (item: any) => {
   if (flag.value && item.link !== '') {
     if (item.targetTap === 1) {
+      // TODO:一般，使用正则进行判断
       if (item.link.startsWith('/docs/')) {
         const path = theme.value.docsUrl + '/' + lang.value + item.link;
         window.open(path, '_blank');
@@ -47,8 +48,10 @@ const jump = (item: any) => {
 };
 
 // video 事件
+// TODO:一般，布尔值建议is开头
 const videoDialog = ref(false);
 const videoLink = ref('');
+  // TODO:建议，closeVideo
 const handleCloseVideo = () => {
   videoDialog.value = false;
   videoLink.value = '';
@@ -62,6 +65,7 @@ const bannerVideoSrc = `${OBS_VIDEO_LINK}openGauss%20Summit%202022/Banner/openGa
 </script>
 
 <template>
+  <!-- TODO:建议，home-banner -->
   <div class="swiper-banner">
     <swiper
       class="home-banner"

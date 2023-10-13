@@ -1,3 +1,4 @@
+// TODO:一般，统一使用驼峰命名
 import BANNER from './banner';
 
 import EVENTS from './events';

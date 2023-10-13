@@ -13,6 +13,7 @@ defineProps({
   },
 });
 
+// TODO:一般，使用驼峰命名
 interface NavItem {
   NAME: string;
   PATH: string;

@@ -57,7 +57,7 @@ const videoData = [
     name: '数据库基础系列',
     nameEn: 'Database basics',
     tag: 'database',
-    id: 6,
+    id: 6,// TODO:待讨论，id是否有必要
     data: database,
     poster: databasePoster,
   },

@@ -11,6 +11,7 @@ import illustration from '@/assets/illustrations/certification.png';
 
 import { GITEE_LINK } from '@/shared/url-config';
 
+// TODO:建议，interface、type统一使用T结尾
 interface CertificationData {
   pro: string;
   name: string;
@@ -68,6 +69,8 @@ function searchProductOrName(data: CertificationData[], query: string) {
     );
   });
 }
+
+// TODO:一般，1. 采用驼峰；2.函数以动词开头
 // 搜索框change事件
 function searchValchange() {
   tableData.value = searchProductOrName(

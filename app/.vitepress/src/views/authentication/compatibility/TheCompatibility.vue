@@ -12,6 +12,7 @@ import illustration from '@/assets/illustrations/compatibility.png';
 import { getCompatibilityData } from '@/api/api-compatibility';
 import { GITEE_LINK } from '@/shared/url-config';
 
+// TODO:建议，interface、type统一使用T结尾
 interface CompatibilityData {
   name: string;
   type: string;

@@ -5,7 +5,7 @@ export default {
     {
       title: '轻松上手openGauss之SQL语言（下）',
       date: '2020-12-24',
-      videourl: `${OBS_LEARN_LINK}%E8%BD%BB%E6%9D%BE%E4%B8%8A%E6%89%8BopenGauss/07%20%E8%BD%BB%E6%9D%BE%E4%B8%8A%E6%89%8BopenGauss%E4%B9%8BSQL%E8%AF%AD%E8%A8%80%EF%BC%88%E4%B8%8B%EF%BC%89.mp4`,
+      videourl: `${OBS_LEARN_LINK}%E8%BD%BB%E6%9D%BE%E4%B8%8A%E6%89%8BopenGauss/07%20%E8%BD%BB%E6%9D%BE%E4%B8%8A%E6%89%8BopenGauss%E4%B9%8BSQL%E8%AF%AD%E8%A8%80%EF%BC%88%E4%B8%8B%EF%BC%89.mp4`, // TODO:一般，统一使用驼峰命名
     },
     {
       title: '轻松上手openGauss之SQL语言（上）',

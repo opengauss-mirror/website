@@ -5,7 +5,7 @@ export default {
     {
       title: '第15期：openGauss与PostgreSQL差异对比',
       date: '2021-03-11',
-      videourl: `${OBS_LEARN_LINK}B%E7%AB%99%E7%9B%B4%E6%92%AD%E5%BD%95%E6%92%AD/3.11%E5%88%98%E9%82%A6%E8%89%BA%E8%A7%86%E9%A2%91.mp4`,
+      videourl: `${OBS_LEARN_LINK}B%E7%AB%99%E7%9B%B4%E6%92%AD%E5%BD%95%E6%92%AD/3.11%E5%88%98%E9%82%A6%E8%89%BA%E8%A7%86%E9%A2%91.mp4`, // TODO:一般，统一使用驼峰命名
     },
     {
       title: '第14期：openGauss针对交易性能优化方面的代码解析',

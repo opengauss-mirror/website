@@ -143,6 +143,7 @@ const calendarHeight = ref<number | string>(335);
 
 const windowWidth = ref(useWindowResize());
 
+// TODO:一般，函数以动词开头
 function meetClick(day: string, event: Event) {
   if (new Date(day.replace(/-/g, '/')).getTime() / 1000 < 1610380800) {
     event.stopPropagation();
@@ -157,6 +158,7 @@ function meetClick(day: string, event: Event) {
         calendarData.value[i].start_date === day
       ) {
         // 深拷贝
+        // TODO:一般，使用 json.parse 注意 try catch
         currentMeet = JSON.parse(JSON.stringify(calendarData.value[i]));
         renderData.value = JSON.parse(JSON.stringify(calendarData.value[i]));
         // 只有一个会议默认展开
@@ -289,12 +291,13 @@ watch(
   },
   { deep: true, immediate: true }
 );
-
+// TODO:一般，注意注释规范
 // 会议预定 事件》》》》
 
 const i18nMeeting = computed(() => i18n.value.home.HOME_CALENDAR);
 const meetingStore = useMeeting();
 
+// TODO:一般，函数以动词开头
 //用户登录
 const meetingLoginApi = async () => {
   try {
@@ -640,6 +643,7 @@ const handleLogout = async () => {
 };
 </script>
 <template>
+  <!-- TODO:建议，home-calendar -->
   <div class="main-body">
     <div class="calendar">
       <el-calendar v-if="windowWidth > 768" ref="calendar" class="calender">

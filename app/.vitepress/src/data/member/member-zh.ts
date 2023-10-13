@@ -1,5 +1,6 @@
 import data from './data';
 import { GITEE_LINK } from '@/shared/url-config';
+// TODO:一般，统一使用驼峰命名
 export default {
   LIST_OLD: [
     {

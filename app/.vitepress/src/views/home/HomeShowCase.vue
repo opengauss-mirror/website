@@ -12,8 +12,8 @@ import { handleError } from '@/shared/utils';
 const i18n = useI18n();
 const { lang } = useData();
 const commonStore = useCommon();
-const caseContent = ref<HTMLElement>();
-const caseData: any = ref({});
+const caseContent = ref<HTMLElement>(); // TODO:建议，caseRef
+const caseData: any = ref({}); // TODO:一般，减少 any 的使用
 const active = ref(0);
 const activeMobile = ref(0);
 
@@ -23,6 +23,7 @@ const handleGo = (path: string) => {
 
 const timer = ref();
 
+ // TODO:一般，命名太过重复，比如changeActive即可
 const handleChangeActive = (index: number) => {
   active.value = index;
   activeMobile.value = index;

@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+// TODO:建议，建议js、html、css之间有换行，js中不同逻辑块也使用换行区分
 import { ref, onMounted, onUnmounted, computed } from 'vue';
 import { useI18n } from '@/i18n';
 import { useCommon } from '@/stores/common';
@@ -41,6 +42,7 @@ const partnerMo = computed(() =>
 const isShowNav = ref(false);
 const activeIndex = ref(0);
 // 滚动激活导航
+// TODO:一般，拼写错误，建议onScrollTop
 const scroTop = () => {
   const scrollTop =
     document.body.scrollTop || document.documentElement.scrollTop;

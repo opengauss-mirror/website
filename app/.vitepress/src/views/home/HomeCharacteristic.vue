@@ -10,6 +10,7 @@ const i18n = useI18n();
 </script>
 
 <template>
+  <!-- TODO:建议，home-character，拼写错误，多了个r -->
   <div class="characterr">
     <p class="info">{{ i18n.home.CHARACTERR_INFO.TITLE }}</p>
 

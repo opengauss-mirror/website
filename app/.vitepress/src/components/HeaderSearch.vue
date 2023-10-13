@@ -24,6 +24,7 @@ const props = defineProps({
   },
 });
 const { lang } = useData();
+// TODO:一般，close即可
 const emits = defineEmits(['click-close', 'focus-input']);
 const searchInput = ref('');
 // 搜索抽屉

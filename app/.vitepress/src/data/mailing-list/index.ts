@@ -1,11 +1,12 @@
 import { GITEE_LINK, MAILWEB_LINK } from '@/shared/url-config';
+// TODO:一般，统一使用驼峰命名
 export default {
   zh: [
     {
       listname: `AI`,
       emailaddress: `ai@opengauss.org`,
-      description: `openGauss社区SIG AI讨论组。`,
-      mobiledesc: `openGauss社区SIG AI讨论组。`,
+      description: `openGauss社区SIG AI讨论组。`, // TODO:一般，可简写
+      mobiledesc: `openGauss社区SIG AI讨论组。`, // TODO:一般，统一使用mb
       archive: `Archive`,
       websitelink: `${MAILWEB_LINK}postorius/lists/ai.opengauss.org`,
       archivelink: `${MAILWEB_LINK}hyperkitty/list/ai@opengauss.org`,

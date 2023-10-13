@@ -5,7 +5,7 @@ export default {
     {
       title: '工具讲解',
       date: '2020-11-24',
-      videourl: `${LEARN_VIDEO_LINK}basicdb/7.mp4`,
+      videourl: `${LEARN_VIDEO_LINK}basicdb/7.mp4`, // TODO:一般，统一使用驼峰命名
       author: 'wang',
     },
     {

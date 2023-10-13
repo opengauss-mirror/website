@@ -81,6 +81,7 @@ const getTagsList = () => {
   tagsParams.want = 'archives';
   getTagsData(tagsParams).then((res) => {
     selectData.value[0].select = [];
+    // TODO:一般，注意对返回值做校验，避免直接取值出现undefined的情况
     res.obj.totalNum.forEach((item: any) => {
       selectData.value[0].select.push(item.key);
     });
@@ -94,6 +95,7 @@ const getTagsList = () => {
         tagsParams.want = 'tags';
         getTagsData(tagsParams).then((res) => {
           selectData.value[2].select = [];
+          // TODO:一般，注意对返回值做校验，避免直接取值出现undefined的情况
           res.obj.totalNum.forEach((item: any) => {
             selectData.value[2].select.push(item.key);
           });
@@ -109,6 +111,7 @@ const getTagsList = () => {
 const getListData = (params: ParamsType) => {
   getBlogsData(params)
     .then((res) => {
+      // TODO:一般，注意对返回值做校验，避免直接取值出现undefined的情况
       if (res.obj.count === 0) {
         isShowData.value = false;
       } else {
@@ -147,6 +150,7 @@ const selectMethod = () => {
 const changeTime = () => {
   selectMethod();
   if (selectTimeVal.value !== '') {
+    // TODO:一般，统一使用驼峰命名，wantedAuthor
     const wantauthor = {
       lang: lang.value,
       category: 'blogs',
@@ -168,12 +172,14 @@ const changeTime = () => {
     };
     getTagsData(wantauthor).then((res) => {
       selectData.value[1].select = [];
+      // TODO:一般，注意对返回值做校验，避免直接取值出现undefined的情况
       res.obj.totalNum.forEach((item: any) => {
         selectData.value[1].select.push(item.key);
       });
       getTagsData(wanttags)
         .then((res) => {
           selectData.value[2].select = [];
+          // TODO:一般，注意对返回值做校验，避免直接取值出现undefined的情况
           res.obj.totalNum.forEach((item: any) => {
             selectData.value[2].select.push(item.key);
           });

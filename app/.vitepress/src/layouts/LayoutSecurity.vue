@@ -8,6 +8,7 @@ const i18n = useI18n();
 </script>
 
 <template>
+  <!-- TODO:建议，建议最外层class命名使用业务相关词汇，eg：layout-security -->
   <div class="layout">
     <BannerLevel2
       :background-image="Banner"

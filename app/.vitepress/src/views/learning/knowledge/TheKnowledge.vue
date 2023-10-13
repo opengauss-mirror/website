@@ -15,6 +15,7 @@ const i18n = useI18n();
     :illustration="illustration"
   />
   <AppContent>
+    <!-- TODO:严重，使用v-if去判断 -->
     <div class="knowledge-pc">
       <div
         v-for="(item, index) in i18n.knowledge.module"

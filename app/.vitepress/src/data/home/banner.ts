@@ -1,4 +1,5 @@
 import liveImg_pc from '@/assets/category/home/banner/liveBanner_pc.png';
+// TODO:一般，统一使用mb
 import liveImg_mo from '@/assets/category/home/banner/liveBanner_mo.png';
 
 import banner510 from '@/assets/category/home/banner/opengauss5.1.0_pc_zh.png';
@@ -8,13 +9,14 @@ import bannerEn510_mo from '@/assets/category/home/banner/opengauss5.1.0_mo_en.p
 
 import { LEARN_VIDEO_LINK } from '@/shared/url-config';
 
+// TODO:一般，type有魔法数字问题
 // targetTap:1 新页签打开
 // type:1(只有图片)、2(文字居左)，3(文字居中),4(仅用于实习banner),5 视频
 export default {
   zh: [
     {
       pcBanner: banner510,
-      moBanner: banner510_mo,
+      moBanner: banner510_mo,// TODO:一般，统一使用mb
       link: '/zh/news/2023-09-28/',
       targetTap: 0,
       title: '',

@@ -33,6 +33,7 @@ defineProps({
 </template>
 
 <style lang="scss" scoped>
+// TODO:使用keb-case
 .dataItem {
   display: grid;
   grid-template-columns: 192px 580px 550px;

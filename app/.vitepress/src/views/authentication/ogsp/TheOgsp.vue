@@ -9,6 +9,7 @@ import AppPaginationMo from '@/components/AppPaginationMo.vue';
 import Banner from '@/assets/illustrations/banner-secondary.png';
 import illustration from '@/assets/illustrations/ogsp.png';
 
+// TODO:建议，interface、type统一使用T结尾
 interface CertificationData {
   pro: string;
   name: string;
@@ -164,6 +165,7 @@ onMounted(() => {
         </template>
       </el-table-column>
     </OTable>
+    <!-- TODO:一般，统一使用mb结尾 -->
     <ul class="mobile-list">
       <li v-for="(item, index) in tableData" :key="index" class="item">
         <ul>
