@@ -5,7 +5,7 @@ import { useI18n } from '@/i18n';
 import BannerLevel2 from '@/components/BannerLevel2.vue';
 import AppContent from '@/components/AppContent.vue';
 
-import Banner from '@/assets/illustrations/banner-secondary.png'; // TODO:一般，变量使用驼峰命名
+import banner from '@/assets/illustrations/banner-secondary.png';
 import illustration from '@/assets/illustrations/advanced.png';
 import order1 from '@/assets/category/advanced/1.png';
 import order2 from '@/assets/category/advanced/2.png';
@@ -22,7 +22,7 @@ function changeShowIndex(index: number) {
 
 <template>
   <BannerLevel2
-    :background-image="Banner"
+    :background-image="banner"
     :title="i18n.advanced.title"
     :illustration="illustration"
   />

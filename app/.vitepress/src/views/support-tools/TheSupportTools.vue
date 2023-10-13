@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-// TODO:一般，文件夹名建议使用support-tools，对应的class也建议做修改
 import { computed } from 'vue';
 import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';
@@ -42,7 +41,7 @@ const supporttoolsInfo = computed(() => {
     :illustration="illustration"
   />
   <AppContent>
-    <div class="supporttools-info">
+    <div class="support-tools">
       <p class="text">{{ i18n.supporttools.INFO }}</p>
 
       <img
@@ -106,7 +105,7 @@ const supporttoolsInfo = computed(() => {
 .dark .cover {
   filter: brightness(0.8) grayscale(0.2) contrast(1.2);
 }
-.supporttools-info {
+.support-tools {
   margin-bottom: var(--o-spacing-h4);
   .text {
     margin-bottom: var(--o-spacing-h2);

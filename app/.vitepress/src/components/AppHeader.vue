@@ -4,14 +4,12 @@ import { useRouter, useData } from 'vitepress';
 import { useCommon } from '@/stores/common';
 import { showGuard, logout, getUserAuth, useStoreData } from '@/shared/login';
 import { useI18n } from '@/i18n';
-// import { getPop } from '@/api/api-search';
 import HeaderNav from './HeaderNav.vue';
 import AppTheme from './AppTheme.vue';
 import AppLanguage from './AppLanguage.vue';
 import NavLangFilter from '@/i18n/common/navLangFilter';
 import HeaderSearch from './HeaderSearch.vue';
 
-// import logo_light from '@/assets/logo.svg';
 import logo_light from '@/assets/logo.svg';
 import logo_dark from '@/assets/logo_dark.svg';
 
@@ -20,12 +18,11 @@ import IconCancel from '~icons/app/icon-cancel.svg';
 import IconMenu from '~icons/app/icon-menu.svg';
 import IconLogin from '~icons/app/icon-login.svg';
 
-// TODO:一般，统一使用驼峰命名
-interface NavItem {
+interface NavItemT {
   NAME: string;
   PATH: string;
   ID: string;
-  CHILDREN: NavItem;
+  CHILDREN: NavItemT;
   IS_OPEN_WINDOW?: number;
   IS_OPEN_MINISITE_WINDOW?: string;
 }
@@ -48,14 +45,13 @@ const logo = computed(() =>
 const roterPath = ref<string>(router.route.path);
 
 // 移动菜单事件
-// TODO:一般，统一使用mb结尾
-const mobileMenuIcon = ref(false);
-const mobileChildMenu = ref<NavItem | any>([]);
+const isMenuIconMb = ref(false);
+const childMenuMb = ref<NavItemT | any>([]);
 
-const mobileMenuPanel = () => {
-  mobileChildMenu.value = [];
+const displayMenuPanelMb = () => {
+  childMenuMb.value = [];
   setTimeout(() => {
-    mobileMenuIcon.value = !mobileMenuIcon.value;
+    isMenuIconMb.value = !isMenuIconMb.value;
     document.documentElement.classList.toggle('overflow');
     activeNav.value = '';
     moudleItem();
@@ -64,20 +60,20 @@ const mobileMenuPanel = () => {
 
 const handleMenuLayer = (e: any) => {
   if (e.target.className !== 'mobile-menu-side') {
-    if (mobileChildMenu.value.length === 0) {
-      mobileMenuIcon.value = false;
+    if (childMenuMb.value.length === 0) {
+      isMenuIconMb.value = false;
       document.documentElement.classList.remove('overflow');
     }
   }
 };
 
 // 移动端一级导航事件
-const goMobile = (item: NavItem) => {
-  mobileChildMenu.value = [];
+const goMobile = (item: NavItemT) => {
+  childMenuMb.value = [];
   if (Object.prototype.hasOwnProperty.call(item, 'CHILDREN')) {
-    mobileChildMenu.value = item.CHILDREN;
+    childMenuMb.value = item.CHILDREN;
   } else {
-    mobileMenuIcon.value = false;
+    isMenuIconMb.value = false;
     router.go('/' + lang.value + item.PATH);
     document.documentElement.classList.remove('overflow');
   }
@@ -85,7 +81,7 @@ const goMobile = (item: NavItem) => {
 };
 
 // 移动端二级导航事件
-const goMobileSubList = (item: NavItem) => {
+const goMobileSubList = (item: NavItemT) => {
   if (item.IS_OPEN_WINDOW) {
     window.open(theme.value.docsUrl + '/' + lang.value + '/' + item.PATH);
     return;
@@ -97,7 +93,7 @@ const goMobileSubList = (item: NavItem) => {
 
   if (item.PATH) {
     setTimeout(() => {
-      mobileMenuIcon.value = false;
+      isMenuIconMb.value = false;
       document.documentElement.classList.remove('overflow');
     }, 200);
     nextTick(() => {
@@ -128,7 +124,7 @@ const moudleItem = () => {
   navRouter.value.forEach((item: any) => {
     item.CLASS.forEach((el: any) => {
       if (roterPath.value.includes(el)) {
-        mobileChildMenu.value = item.CHILDREN;
+        childMenuMb.value = item.CHILDREN;
         activeNav.value = item.ID;
       }
     });
@@ -137,7 +133,7 @@ const moudleItem = () => {
 
 // 返回首页
 const goHome = () => {
-  mobileMenuIcon.value = false;
+  isMenuIconMb.value = false;
   document.documentElement.classList.remove('overflow');
   router.go(`/${lang.value}/`);
 };
@@ -206,8 +202,8 @@ const searchLink = `/${lang.value}/search/`;
   <header class="app-header">
     <div class="app-header-body">
       <!-- 移动端菜单图标 -->
-      <div class="mobile-menu-icon" @click="mobileMenuPanel">
-        <OIcon v-if="!mobileMenuIcon" class="icon">
+      <div class="mobile-menu-icon" @click="displayMenuPanelMb">
+        <OIcon v-if="!isMenuIconMb" class="icon">
           <IconMenu />
         </OIcon>
         <OIcon v-else class="icon"><IconCancel /></OIcon>
@@ -220,7 +216,7 @@ const searchLink = `/${lang.value}/search/`;
           :pop-list="popList"
           :link="searchLink"
           :is-show-drawer="isShowDrawer"
-          @click-close="closeSearchBox"
+          @close="closeSearchBox"
           @focus-input="showDrawer"
         />
       </ClientOnly>
@@ -248,7 +244,7 @@ const searchLink = `/${lang.value}/search/`;
 
       <div
         class="mobile-menu"
-        :class="{ active: mobileMenuIcon }"
+        :class="{ active: isMenuIconMb }"
         @click="handleMenuLayer($event)"
       >
         <div class="mobile-menu-side">
@@ -270,16 +266,16 @@ const searchLink = `/${lang.value}/search/`;
             <ClientOnly>
               <AppLanguage
                 :show="langShow"
-                @language-click="mobileMenuIcon = false"
+                @language-click="isMenuIconMb = false"
               />
             </ClientOnly>
           </div>
         </div>
         <transition name="menu-sub">
-          <div v-if="mobileChildMenu.length > 0" class="mobile-menu-content">
+          <div v-if="childMenuMb.length > 0" class="mobile-menu-content">
             <div class="mobile-menu-list">
               <div
-                v-for="item in mobileChildMenu"
+                v-for="item in childMenuMb"
                 :key="item.ID"
                 class="link"
                 @click="goMobileSubList(item)"

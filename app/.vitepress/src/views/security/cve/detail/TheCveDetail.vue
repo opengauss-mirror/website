@@ -3,7 +3,12 @@ import { ref, onMounted } from 'vue';
 import { useI18n } from '@/i18n';
 import { getCveDetail } from '@/api/api-security';
 import { useRouter, useData } from 'vitepress';
-import { AffectProduct } from '@/shared/@types/type-security';
+import {
+  AffectProduct,
+  CveDetailT,
+  SaBodyItem,
+  CvsItemT,
+} from '@/shared/@types/type-security';
 import { handleError } from '@/shared/utils';
 
 import AppContent from '@/components/AppContent.vue';
@@ -14,10 +19,39 @@ const { lang } = useData();
 const i18n = useI18n();
 const router = useRouter();
 
-const cveDetailData: any = ref({}); // TODO:一般，减少 any 的使用
+const cveDetailData = ref<CveDetailT>({
+  CVSSV3: {
+    NVDScore: NaN,
+    nAttackComplexity: '',
+    nAttackVector: '',
+    nAvailability: '',
+    nConfidentiality: '',
+    nIntegrity: '',
+    nPrivilegeRequired: '',
+    nScope: '',
+    nUserInteraction: '',
+    oAttackComplexity: '',
+    oAttackVector: '',
+    oAvailability: '',
+    oConfidentiality: '',
+    oIntegrity: '',
+    oPrivilegeRequired: '',
+    oScope: '',
+    oUserInteraction: '',
+    openGaussScore: NaN,
+    scoreType: '',
+  },
+  affectBody: [],
+  cveId: NaN,
+  cveNum: '',
+  description: '',
+  releaseDate: '',
+  saBody: [],
+  updateTime: '',
+});
 const affectedProductList = ref<AffectProduct[]>([]);
-const advisories: any = ref([]); // TODO:一般，减少 any 的使用
-const cvssList: any = ref([]); // TODO:一般，减少 any 的使用
+const advisories = ref<Array<SaBodyItem>>([]);
+const cvssList = ref<Array<CvsItemT>>([]);
 
 function goBackPage() {
   const i = router.route.path.lastIndexOf('d');

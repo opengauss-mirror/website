@@ -18,26 +18,17 @@ const props = defineProps({
     type: String,
     default: '',
   },
-  downloadVersionAuth: {
-    required: true,
-    type: Array,
-    default: () => {
-      return [];
-    },
-  },
 });
 const i18n = useI18n();
 const { lang, theme } = useData();
-const { contentData, versionShown, downloadVersionAuth } = toRefs(props);
+const { contentData, versionShown } = toRefs(props);
 </script>
 
 <template>
-<!-- TODO:建议，建议最外层class命名使用业务相关词汇 -->
-  <div class="content-wrap">
+  <div class="download-content">
     <h2 class="title">{{ 'openGauss ' + (contentData[0] as any).name }}</h2>
     <h4 class="subtitle">{{ (contentData[0] as any).plannedEOL }}</h4>
     <div class="other-link">
-      <!-- TODO:建议，调整一下标签的闭合符号换行-->
       <a
         :href="theme.docsUrl + '/' + lang + (contentData[0] as any).docs_list[0][ lang === 'zh'?'path':'pathEn']"
         target="_blank"
@@ -46,26 +37,26 @@ const { contentData, versionShown, downloadVersionAuth } = toRefs(props);
           lang === 'zh'
             ? (contentData[0] as any).docs_list[0].name
             : (contentData[0] as any).docs_list[0].nameEn
-        }}</a
-      ><a
+        }}
+      </a>
+      <a
         :href="GITEE_LINK + 'opengauss/community/issues'"
         target="_blank"
         rel="noopener noreferrer"
-        >{{ i18n.download.FEEDBACK_QUESTION }}</a
-      >
+        >{{ i18n.download.FEEDBACK_QUESTION }}
+      </a>
     </div>
     <DownloadTable
       v-for="item in (contentData[0] as any).data[lang]"
       :key="item.name"
       :table-data="item"
       :version-shown="versionShown"
-      :download-version-auth="downloadVersionAuth"
     />
   </div>
 </template>
 
 <style lang="scss" scoped>
-.content-wrap {
+.download-content {
   margin-top: var(--o-spacing-h4);
   background-color: var(--o-color-bg2);
   padding: var(--o-spacing-h2) var(--o-spacing-h1);

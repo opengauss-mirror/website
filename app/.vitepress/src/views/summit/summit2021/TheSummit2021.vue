@@ -17,16 +17,15 @@ const tabType = ref('main');
 const otherTabType = ref(0);
 
 // video 事件
-// TODO:一般，布尔值以is开头
-const videoDialog = ref(false);
+const isVideoDialog = ref(false);
 const videoLink = ref('');
 const handleCloseVideo = () => {
-  videoDialog.value = false;
+  isVideoDialog.value = false;
   videoLink.value = '';
 };
 const videoClickBtn = (path: string) => {
   videoLink.value = path;
-  videoDialog.value = true;
+  isVideoDialog.value = true;
 };
 </script>
 
@@ -101,9 +100,9 @@ const videoClickBtn = (path: string) => {
           :name="item.name"
           @click="videoClickBtn(item.link)"
         ></a>
-        <div v-if="videoDialog" class="video-box">
+        <div v-if="isVideoDialog" class="video-box">
           <ODialog
-            v-model="videoDialog"
+            v-model="isVideoDialog"
             :before-close="handleCloseVideo"
             :show-close="false"
             lock-scroll
@@ -127,23 +126,15 @@ const videoClickBtn = (path: string) => {
       <h4 class="meeting-title">
         {{ summitData.partnersList.title[0] }}
       </h4>
-      <LinkPanel
-        :link-list="summitData.partnersList.p1"
-        :islink="false"
-        class="one"
-      />
+      <LinkPanel :link-list="summitData.partnersList.p1" class="one" />
       <h4 class="meeting-title">
         {{ summitData.partnersList.title[1] }}
       </h4>
-      <LinkPanel
-        :link-list="summitData.partnersList.p2"
-        :islink="false"
-        class="one"
-      />
+      <LinkPanel :link-list="summitData.partnersList.p2" class="one" />
       <h4 class="meeting-title">
         {{ summitData.partnersList.title[2] }}
       </h4>
-      <LinkPanel :link-list="summitData.partnersList.p3" :islink="false" />
+      <LinkPanel :link-list="summitData.partnersList.p3" />
     </div>
   </AppContent>
 </template>

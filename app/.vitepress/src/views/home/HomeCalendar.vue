@@ -143,8 +143,7 @@ const calendarHeight = ref<number | string>(335);
 
 const windowWidth = ref(useWindowResize());
 
-// TODO:一般，函数以动词开头
-function meetClick(day: string, event: Event) {
+function clickMeeting(day: string, event: Event) {
   if (new Date(day.replace(/-/g, '/')).getTime() / 1000 < 1610380800) {
     event.stopPropagation();
     return;
@@ -158,7 +157,6 @@ function meetClick(day: string, event: Event) {
         calendarData.value[i].start_date === day
       ) {
         // 深拷贝
-        // TODO:一般，使用 json.parse 注意 try catch
         currentMeet = JSON.parse(JSON.stringify(calendarData.value[i]));
         renderData.value = JSON.parse(JSON.stringify(calendarData.value[i]));
         // 只有一个会议默认展开
@@ -266,7 +264,7 @@ const meetingSig = async () => {
 };
 
 onMounted(() => {
-  const tbody = document.querySelector('.main-body tbody') as HTMLElement;
+  const tbody = document.querySelector('.home-calendar tbody') as HTMLElement;
   if (tbody) {
     watchChange(tbody);
     calendarHeight.value = `${tbody.offsetHeight - 2}px`;
@@ -291,15 +289,12 @@ watch(
   },
   { deep: true, immediate: true }
 );
-// TODO:一般，注意注释规范
-// 会议预定 事件》》》》
-
+// 会议预定事件
 const i18nMeeting = computed(() => i18n.value.home.HOME_CALENDAR);
 const meetingStore = useMeeting();
 
-// TODO:一般，函数以动词开头
 //用户登录
-const meetingLoginApi = async () => {
+const loginMeetingApi = async () => {
   try {
     const res = await meetingLogin();
     if (res.code === 200) {
@@ -313,7 +308,7 @@ const meetingLoginApi = async () => {
 };
 onMounted(() => {
   if (getCustomCookie('meeting-csrftoken')) {
-    meetingLoginApi();
+    loginMeetingApi();
   }
 });
 
@@ -643,8 +638,7 @@ const handleLogout = async () => {
 };
 </script>
 <template>
-  <!-- TODO:建议，home-calendar -->
-  <div class="main-body">
+  <div class="home-calendar">
     <div class="calendar">
       <el-calendar v-if="windowWidth > 768" ref="calendar" class="calender">
         <template #header="{ date }">
@@ -662,7 +656,7 @@ const handleLogout = async () => {
           <div
             class="out-box lable-name"
             :class="{ 'be-active': getMeetTimes(data.day) }"
-            @click="meetClick(data.day, $event)"
+            @click="clickMeeting(data.day, $event)"
           >
             <div class="day-box">
               <p
@@ -743,7 +737,7 @@ const handleLogout = async () => {
                   <div
                     class="out-box"
                     :class="{ 'be-active': getMeetTimes(data.day) }"
-                    @click="meetClick(data.day, $event)"
+                    @click="clickMeeting(data.day, $event)"
                   >
                     <div class="day-box">
                       <p
@@ -1180,7 +1174,7 @@ const handleLogout = async () => {
     }
   }
 }
-.main-body {
+.home-calendar {
   display: flex;
   :deep(.el-calendar) {
     --el-calendar-border: 1px solid var(--o-color-border2);
@@ -1748,7 +1742,7 @@ const handleLogout = async () => {
     flex-direction: column;
     padding: 0;
   }
-  .main-body {
+  .home-calendar {
     margin: 0 auto;
     align-items: center;
     flex-direction: column;

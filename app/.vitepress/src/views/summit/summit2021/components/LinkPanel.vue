@@ -2,8 +2,6 @@
 import { computed } from 'vue';
 import { useCommon } from '@/stores/common';
 
-import { useData } from 'vitepress';
-
 const props = withDefaults(
   defineProps<{
     linkList: any[];
@@ -12,21 +10,10 @@ const props = withDefaults(
   }>(),
   {
     row: 4,
-    islink: true,
   }
 );
 const commonStore = useCommon();
 const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
-const { lang } = useData();
-const isZh = computed(() => (lang.value === 'zh' ? true : false));
-
-// TODO:一般，拼写错误：handle
-const handerClick = (item: any) => {
-  if (props.islink) {
-    const path = isZh.value ? item.PATH : item.PATH_EN;
-    window.open(path, '_blank');
-  }
-};
 </script>
 
 <template>
@@ -34,8 +21,7 @@ const handerClick = (item: any) => {
     <div
       v-for="(item, index) in props.linkList"
       :key="index"
-      :class="[props.islink ? 'link-item path' : 'link-item']"
-      @click="handerClick(item)"
+      class="link-item"
     >
       <img :src="isLight ? item.img : item.imgDark" :alt="item.name" />
     </div>
@@ -63,9 +49,6 @@ const handerClick = (item: any) => {
       width: 100%;
       height: 100%;
       object-fit: cover;
-    }
-    &.path {
-      cursor: pointer;
     }
   }
   @media screen and (max-width: 1416px) {

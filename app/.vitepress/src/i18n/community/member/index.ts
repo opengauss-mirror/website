@@ -9,8 +9,8 @@ export default {
     NAMEL_TEXT: '核心成员：',
     VIEW_BOARD: '查看历届理事会成员',
     BOARD_TEXT: '历届理事会成员',
-    MEMBER_LIST: zh.MEMBER_LIST,
-    MEMBER_LIST_OLD: zh.LIST_OLD,
+    MEMBER_LIST: zh.memberList,
+    MEMBER_LIST_OLD: zh.oldList,
   },
   en: {
     PAGE_TITLE: 'Organization',
@@ -19,7 +19,7 @@ export default {
     NAMEL_TEXT: 'Core Members',
     VIEW_BOARD: 'View Former Board of Directors',
     BOARD_TEXT: 'Former Board of Directors',
-    MEMBER_LIST: en.MEMBER_LIST,
-    MEMBER_LIST_OLD: en.LIST_OLD,
+    MEMBER_LIST: en.memberList,
+    MEMBER_LIST_OLD: en.oldList,
   },
 };

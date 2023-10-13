@@ -22,7 +22,7 @@ const isZh = computed(() => (lang.value === 'zh' ? true : false));
 
 const handerClick = (item: any) => {
   if (props.islink) {
-    const path = isZh.value ? item.PATH : item.PATH_EN;
+    const path = isZh.value ? item.path : item.pathEn;
     window.open(path, '_blank');
   }
 };
@@ -36,7 +36,7 @@ const handerClick = (item: any) => {
       :class="[props.islink ? 'link-item path' : 'link-item']"
       @click="handerClick(item)"
     >
-      <img :src="isLight ? item.IMG : item.DARK" :alt="item.NAME" />
+      <img :src="isLight ? item.img : item.imgDark" :alt="item.name" />
     </div>
   </div>
 </template>

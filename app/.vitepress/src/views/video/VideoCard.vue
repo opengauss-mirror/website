@@ -46,11 +46,9 @@ watch(
   },
   { immediate: true }
 );
-const emits = defineEmits(['video-click']);
-// TODO:一般，拼写错误：handle，建议handle-click
-const handlerVideo = (id: number, index: number) => {
-  // TODO:一般，click即可
-  emits('video-click', id, index);
+const emits = defineEmits(['click']);
+const handleClick = (id: number, index: number) => {
+  emits('click', id, index);
 };
 </script>
 
@@ -66,7 +64,7 @@ const handlerVideo = (id: number, index: number) => {
         >
           <div
             class="video-item-link"
-            @click="handlerVideo(navItems.id, index)"
+            @click="handleClick(navItems.id, index)"
           >
             <div
               class="cover"

@@ -16,8 +16,7 @@ const i18n = useI18n();
 const { lang, theme } = useData();
 const downloadData = i18n.value.download;
 
-// TODO:一般，优化逻辑
-// 设置显示版本,最新版的LTS和Preview都需要登录后才能下载的版本
+// 设置显示版本
 const versionList = [DownloadConfig[0].name, DownloadConfig[1].name];
 const versionShown = ref(DownloadConfig[0].name);
 function setVersionShown(version: string) {
@@ -93,15 +92,10 @@ const getData: any = computed(() => {
         <DownloadContent
           :content-data="getData"
           :version-shown="versionShown"
-          :download-version-auth="versionList"
         />
       </div>
     </div>
   </AppContent>
-  <div class="input-box">
-    <!-- 用于复制RSNC的值 -->
-    <input id="useCopy" type="text" />
-  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -154,9 +148,5 @@ const getData: any = computed(() => {
       }
     }
   }
-}
-.input-box #useCopy {
-  position: absolute;
-  opacity: 0;
 }
 </style>

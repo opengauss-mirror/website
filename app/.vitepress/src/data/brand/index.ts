@@ -1,9 +1,6 @@
 export default {
-  // TODO:一般，统一使用驼峰命名
   brandList: [
     {
-      // TODO:一般，id是否有必要
-      id: 0,
       backgroundColor: 'white',
       url: '/category/brand/view/logo1-view.png',
       downloadContent: [
@@ -22,7 +19,6 @@ export default {
       ],
     },
     {
-      id: 1,
       backgroundColor: 'white',
       url: '/category/brand/view/logo2-view.png',
       downloadContent: [
@@ -41,7 +37,6 @@ export default {
       ],
     },
     {
-      id: 2,
       backgroundColor: 'white',
       url: '/category/brand/view/logo3-view.png',
       downloadContent: [
@@ -60,7 +55,6 @@ export default {
       ],
     },
     {
-      id: 3,
       backgroundColor: 'black',
       url: '/category/brand/view/logo4-view.png',
       downloadContent: [
@@ -79,7 +73,6 @@ export default {
       ],
     },
     {
-      id: 4,
       backgroundColor: 'white',
       url: '/category/brand/view/logo5-view.png',
       downloadContent: [
@@ -98,7 +91,6 @@ export default {
       ],
     },
     {
-      id: 5,
       backgroundColor: 'white',
       url: '/category/brand/view/logo6-view.png',
       downloadContent: [
@@ -117,7 +109,6 @@ export default {
       ],
     },
     {
-      id: 6,
       backgroundColor: 'white',
       url: '/category/brand/view/logo7-view.png',
       downloadContent: [
@@ -136,7 +127,6 @@ export default {
       ],
     },
     {
-      id: 7,
       backgroundColor: 'black',
       url: '/category/brand/view/logo8-view.png',
       downloadContent: [
@@ -158,46 +148,46 @@ export default {
   pptList: {
     zh: [
       {
-        URL: '/category/brand/download/2023/PPT_Dark_cn.png',
-        FILE: '/category/brand/download/2023/PPT_Dark_cn.pptx',
-        TEXT: '深色背景-2023',
+        url: '/category/brand/download/2023/PPT_Dark_cn.png',
+        file: '/category/brand/download/2023/PPT_Dark_cn.pptx',
+        text: '深色背景-2023',
       },
       {
-        URL: '/category/brand/download/2023/PPT_Light_cn.png',
-        FILE: '/category/brand/download/2023/PPT_Light_cn.pptx',
-        TEXT: '浅色背景-2023',
+        url: '/category/brand/download/2023/PPT_Light_cn.png',
+        file: '/category/brand/download/2023/PPT_Light_cn.pptx',
+        text: '浅色背景-2023',
       },
       {
-        URL: '/category/brand/download/2022/openGauss_PPT_Dark_cn.png',
-        FILE: '/category/brand/download/2022/openGauss_PPT_Dark_cn.pptx',
-        TEXT: '深色背景-2022',
+        url: '/category/brand/download/2022/openGauss_PPT_Dark_cn.png',
+        file: '/category/brand/download/2022/openGauss_PPT_Dark_cn.pptx',
+        text: '深色背景-2022',
       },
       {
-        URL: '/category/brand/download/2022/openGauss_PPT_Light_cn.png',
-        FILE: '/category/brand/download/2022/openGauss_PPT_Light_cn.pptx',
-        TEXT: '浅色背景-2022',
+        url: '/category/brand/download/2022/openGauss_PPT_Light_cn.png',
+        file: '/category/brand/download/2022/openGauss_PPT_Light_cn.pptx',
+        text: '浅色背景-2022',
       },
     ],
     en: [
       {
-        URL: '/category/brand/download/2023/PPT_Dark_en.png',
-        FILE: '/category/brand/download/2023/PPT_Dark_en.pptx',
-        TEXT: 'Dark Theme-2023',
+        url: '/category/brand/download/2023/PPT_Dark_en.png',
+        file: '/category/brand/download/2023/PPT_Dark_en.pptx',
+        text: 'Dark Theme-2023',
       },
       {
-        URL: '/category/brand/download/2023/PPT_Light_en.png',
-        FILE: '/category/brand/download/2023/PPT_Light_en.pptx',
-        TEXT: 'Light Theme-2023',
+        url: '/category/brand/download/2023/PPT_Light_en.png',
+        file: '/category/brand/download/2023/PPT_Light_en.pptx',
+        text: 'Light Theme-2023',
       },
       {
-        URL: '/category/brand/download/2022/openGauss_PPT_Dark_en.png',
-        FILE: '/category/brand/download/2022/openGauss_PPT_Dark_en.pptx',
-        TEXT: 'Dark Theme-2022',
+        url: '/category/brand/download/2022/openGauss_PPT_Dark_en.png',
+        file: '/category/brand/download/2022/openGauss_PPT_Dark_en.pptx',
+        text: 'Dark Theme-2022',
       },
       {
-        URL: '/category/brand/download/2022/openGauss_PPT_Light_en.png',
-        FILE: '/category/brand/download/2022/openGauss_PPT_Light_en.pptx',
-        TEXT: 'Light Theme-2022',
+        url: '/category/brand/download/2022/openGauss_PPT_Light_en.png',
+        file: '/category/brand/download/2022/openGauss_PPT_Light_en.pptx',
+        text: 'Light Theme-2022',
       },
     ],
   },

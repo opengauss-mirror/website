@@ -41,7 +41,7 @@ const pptList = computed(() =>
     <div class="brand-list">
       <OCard
         v-for="item in BrandConfig.brandList"
-        :key="item.id"
+        :key="item.url"
         class="brand-item"
         shadow="hover"
       >
@@ -71,20 +71,20 @@ const pptList = computed(() =>
       <div class="ppt-list">
         <OCard
           v-for="ppt in pptList"
-          :key="ppt.URL"
+          :key="ppt.url"
           shadow="hover"
           class="ppt-item"
           :style="{ padding: '0px' }"
         >
           <a
-            :href="ppt.FILE"
+            :href="ppt.file"
             target="_blank"
             rel="noopener noreferrer"
             download
           >
-            <img :src="ppt.URL" alt="" />
+            <img :src="ppt.url" alt="" />
             <div class="ppt-word">
-              {{ ppt.TEXT }}
+              {{ ppt.text }}
             </div>
           </a>
         </OCard>
