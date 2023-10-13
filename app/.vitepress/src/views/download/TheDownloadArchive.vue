@@ -65,6 +65,7 @@ const changeLangData = computed(
 // tips
 const hoverTips = computed(() => (type: string) => {
   let tips = '';
+  // TODO:严重，switch语句缺少default分支
   switch (type) {
     case 'enterprise':
       tips = i18n.value.download.ENTERPRISE;
