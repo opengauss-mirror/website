@@ -16,6 +16,7 @@ import LayoutBlog from '@/layouts/LayoutBlog.vue';
 import LayoutNews from '@/layouts/LayoutNews.vue';
 import LayoutEvents from '@/layouts/LayoutEvents.vue';
 import LayoutShowcase from '@/layouts/LayoutShowcase.vue';
+import AppFloat from '@/components/AppFloat.vue';
 
 import categories from '@/shared/category';
 import { VULBOX_LINK } from '@/shared/url-config';
@@ -95,6 +96,7 @@ watch(
           <img :src="safetyImg" alt="" />
         </a>
       </div>
+      <AppFloat/>
     </main>
   </el-config-provider>
   <AppFooter :is-cookie-tip="isCookieTip" @cookie-click="handleCookieClick" />
@@ -119,7 +121,7 @@ main {
 .safety-tips {
   position: fixed;
   right: 4%;
-  bottom: 350px;
+  bottom: 380px;
   z-index: 10;
   @media (max-width: 1100px) {
     bottom: 200px;
