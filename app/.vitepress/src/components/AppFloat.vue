@@ -21,52 +21,70 @@ const router = useRouter();
 const isDark = computed(() => {
   return useCommon().theme === 'dark' ? true : false;
 });
-const TITLES = [
-  '您向他人推荐 openGauss社区 的可能性有多大？',
-  '您对 openGauss下载 的整体满意度如何？',
-  '您对 openGauss学习 的整体满意度如何？',
-  '您对 openGauss社区 的整体满意度如何？',
-  '您对 openGauss认证 的整体满意度如何？',
-  '您对 openGauss互动 的整体满意度如何？',
-  '您对 openGauss安全 的整体满意度如何？',
+
+const TITLES1 = ['您向他人推荐 ', '您对 '];
+const TITLES2 = [
+  'openGauss社区',
+  'openGauss下载版块',
+  'openGauss学习版块',
+  'openGauss社区版块',
+  'openGauss认证版块',
+  'openGauss互动版块',
+  'openGauss安全版块',
 ];
+const TITLES3 = [' 的可能性有多大？', ' 的整体满意度如何？'];
+
 interface TitleItemT {
   [url: string]: string;
 }
 const tipsObj: TitleItemT = {
-  '/zh/': TITLES[0],
-  '/download/': TITLES[1],
-  '/supporttools/': TITLES[1],
-  '/knowledge/': TITLES[2],
-  '/advanced/': TITLES[2],
-  '/contribution/': TITLES[3],
-  '/community/onlineCommunication/': TITLES[3],
-  '/member/': TITLES[3],
-  '/userPractice/': TITLES[3],
-  '/certification/': TITLES[4],
-  '/compatibility/': TITLES[4],
-  '/ogsp/': TITLES[4],
-  '/training/': TITLES[4],
-  '/news/': TITLES[5],
-  '/blogs/': TITLES[5],
-  '/events/': TITLES[5],
-  '/video/': TITLES[5],
-  '/summit/': TITLES[5],
-  '/security/': TITLES[6],
-  '/security-advisories/': TITLES[6],
-  '/cve/': TITLES[6],
+  '/zh/': TITLES2[0],
+  '/download/': TITLES2[1],
+  '/supporttools/': TITLES2[1],
+  '/knowledge/': TITLES2[2],
+  '/advanced/': TITLES2[2],
+  '/contribution/': TITLES2[3],
+  '/community/onlineCommunication/': TITLES2[3],
+  '/member/': TITLES2[3],
+  '/userPractice/': TITLES2[3],
+  '/certification/': TITLES2[4],
+  '/compatibility/': TITLES2[4],
+  '/ogsp/': TITLES2[4],
+  '/training/': TITLES2[4],
+  '/news/': TITLES2[5],
+  '/blogs/': TITLES2[5],
+  '/events/': TITLES2[5],
+  '/video/': TITLES2[5],
+  '/summit/': TITLES2[5],
+  '/security/': TITLES2[6],
+  '/security-advisories/': TITLES2[6],
+  '/cve/': TITLES2[6],
 };
-const title = ref(TITLES[0]);
+const title2 = ref(TITLES2[0]);
+const title1 = computed(() => {
+  if (title2.value === TITLES2[0]) {
+    return TITLES1[0];
+  } else {
+    return TITLES1[1];
+  }
+});
+const title3 = computed(() => {
+  if (title2.value === TITLES2[0]) {
+    return TITLES3[0];
+  } else {
+    return TITLES3[1];
+  }
+});
 onMounted(() => {
   watch(
     () => router.route.path,
     () => {
       if (router.route.path === '/zh/') {
-        title.value = TITLES[0];
+        title2.value = TITLES2[0];
       } else {
         Object.keys(tipsObj).forEach((item) => {
           if (router.route.path.includes(item)) {
-            title.value = tipsObj[item];
+            title2.value = tipsObj[item];
           }
         });
       }
@@ -157,7 +175,7 @@ const infoData = {
   know: '知道了',
 };
 const placeholder = computed(() => {
-  if (title.value === TITLES[0]) {
+  if (title2.value === TITLES2[0]) {
     if (score.value / 10 < 7) {
       return '请输入您不太推荐的原因';
     } else if (score.value / 10 < 9) {
@@ -376,7 +394,11 @@ onMounted(() => {
                 <IconCancel />
               </OIcon>
               <div class="slider">
-                <p class="slider-title">{{ title }}</p>
+                <p class="slider-title">
+                  {{ title1 }}
+                  <span class="title-name">{{ title2 }}</span>
+                  {{ title3 }}
+                </p>
                 <div class="slider-body">
                   <div class="slider-tip">
                     <div v-show="isReasonShow" class="slide-btn-tip">
@@ -396,10 +418,10 @@ onMounted(() => {
                 </div>
                 <div class="grade-info">
                   <span>{{
-                    title === TITLES[0] ? infoData.grade1 : infoData.grade1_1
+                    title2 === TITLES2[0] ? infoData.grade1 : infoData.grade1_1
                   }}</span>
                   <span>{{
-                    title === TITLES[0] ? infoData.grade2 : infoData.grade2_1
+                    title2 === TITLES2[0] ? infoData.grade2 : infoData.grade2_1
                   }}</span>
                 </div>
               </div>
@@ -451,7 +473,7 @@ onMounted(() => {
                     {{ item.text }}
                   </p>
                   <p class="text-tip">
-                    <a :href="'mailto:'+item.emile">{{ item.emile }}</a>
+                    <a :href="'mailto:' + item.emile">{{ item.emile }}</a>
                   </p>
                 </div>
               </div>
@@ -465,95 +487,107 @@ onMounted(() => {
       </div>
     </template>
     <template v-else>
-      <div v-if="isMobileFloatShow" class="float-mobile">
-        <div class="float-head">
-          <div class="head-title" @click="toggleDialogVisible">
-            <OIcon class="icon-box"
-              ><component :is="IconSmileMobile"></component>
-            </OIcon>
-            {{ title }}
-          </div>
-          <OIcon class="icon-box" @click="closeMobileFloat"
-            ><component :is="IconCancel"></component>
-          </OIcon>
-        </div>
-        <el-dialog :show-close="false" v-model="dialogVisible">
-          <div class="o-popup1">
-            <div class="slider">
-              <p class="slider-title">{{ title }}</p>
-              <ul class="score-list">
-                <li
-                  v-for="item in marksMobile"
-                  :key="'mark' + item"
-                  :style="{ left: item * 10 + '%' }"
-                  :class="{ 'is-active': score / 10 === item }"
-                  @click="setScore(item)"
-                >
-                  {{ item }}
-                </li>
-              </ul>
-              <div class="slider-body">
-                <ClientOnly>
-                  <el-slider
-                    v-model="score"
-                    :step="STEP"
-                    :marks="marks"
-                    show-stops
-                    :show-tooltip="false"
-                    @input="handleInput"
-                  />
-                </ClientOnly>
-              </div>
-              <div class="grade-info">
-                <span>{{
-                  title === TITLES[0] ? infoData.grade1 : infoData.grade1_1
-                }}</span>
-                <span>{{
-                  title === TITLES[0] ? infoData.grade2 : infoData.grade2_1
-                }}</span>
-              </div>
-            </div>
-            <div v-show="isReasonShow" class="reason">
-              <div class="input-area" :class="{ 'is-focus': isFocuse }">
-                <textarea
-                  id="textarea-input"
-                  v-model="inputText"
-                  :placeholder="placeholder"
-                  maxlength="500"
-                ></textarea>
-                <p>
-                  <span>{{ inputText.length }}</span
-                  >/500
-                </p>
-              </div>
-              <p class="more-info">
-                {{ infoData.more }}
-                <a :href="'mailto:' + infoData.emile">
-                  {{ infoData.emile }}
-                </a>
+      <clientonly>
+        <div v-if="isMobileFloatShow" class="float-mobile">
+          <div class="float-head">
+            <div class="head-title" @click="toggleDialogVisible">
+              <OIcon class="icon-box"
+                ><component :is="IconSmileMobile"></component>
+              </OIcon>
+              <p>
+                {{ title1 }}
+                <span class="title-name">{{ title2 }}</span>
+                {{ title3 }}
               </p>
             </div>
-            <div class="btn-box">
-              <OButton type="outline" size="mini" @click="cancelDialog">{{
-                infoData.cancel
-              }}</OButton>
-              <OButton
-                type="outline"
-                size="mini"
-                @click="postScore"
-                :class="{ forbidden: !isReasonShow }"
-                >{{ infoData.confirm }}</OButton
-              >
-            </div>
+            <OIcon class="icon-box icon-close" @click="closeMobileFloat"
+              ><component :is="IconCancel"></component>
+            </OIcon>
           </div>
-        </el-dialog>
-      </div>
+          <el-dialog :show-close="false" v-model="dialogVisible">
+            <div class="o-popup1">
+              <div class="slider">
+                <p class="slider-title">
+                  {{ title1 }}
+                  <span class="title-name">{{ title2 }}</span>
+                  {{ title3 }}
+                </p>
+                <ul class="score-list">
+                  <li
+                    v-for="item in marksMobile"
+                    :key="'mark' + item"
+                    :style="{ left: item * 10 + '%' }"
+                    :class="{ 'is-active': score / 10 === item }"
+                    @click="setScore(item)"
+                  >
+                    {{ item }}
+                  </li>
+                </ul>
+                <div class="slider-body">
+                  <ClientOnly>
+                    <el-slider
+                      v-model="score"
+                      :step="STEP"
+                      :marks="marks"
+                      show-stops
+                      :show-tooltip="false"
+                      @input="handleInput"
+                    />
+                  </ClientOnly>
+                </div>
+                <div class="grade-info">
+                  <span>{{
+                    title2 === TITLES2[0] ? infoData.grade1 : infoData.grade1_1
+                  }}</span>
+                  <span>{{
+                    title2 === TITLES2[0] ? infoData.grade2 : infoData.grade2_1
+                  }}</span>
+                </div>
+              </div>
+              <div v-show="isReasonShow" class="reason">
+                <div class="input-area" :class="{ 'is-focus': isFocuse }">
+                  <textarea
+                    id="textarea-input"
+                    v-model="inputText"
+                    :placeholder="placeholder"
+                    maxlength="500"
+                  ></textarea>
+                  <p>
+                    <span>{{ inputText.length }}</span
+                    >/500
+                  </p>
+                </div>
+                <p class="more-info">
+                  {{ infoData.more }}
+                  <a :href="'mailto:' + infoData.emile">
+                    {{ infoData.emile }}
+                  </a>
+                </p>
+              </div>
+              <div class="btn-box">
+                <OButton type="outline" size="middle" @click="cancelDialog">{{
+                  infoData.cancel
+                }}</OButton>
+                <OButton
+                  type="outline"
+                  size="middle"
+                  @click="postScore"
+                  :class="{ forbidden: !isReasonShow }"
+                  >{{ infoData.confirm }}</OButton
+                >
+              </div>
+            </div>
+          </el-dialog>
+        </div>
+      </clientonly>
     </template>
   </div>
 </template>
 <style lang="scss" scoped>
 .float {
-  position: relative;
+  position: sticky;
+  bottom: 16px;
+  z-index: 9;
   .float-wrap {
     position: fixed;
     display: flex;
@@ -668,6 +702,9 @@ onMounted(() => {
             color: var(--o-color-text1);
             text-align: center;
             white-space: nowrap;
+            .title-name {
+              font-weight: 600;
+            }
           }
           .slider-body {
             padding-top: 30px;
@@ -772,7 +809,7 @@ onMounted(() => {
             padding: 8px 16px;
             height: 88px;
             font-size: var(--o-font-size-tip);
-            line-height: 18px;
+            line-height: var(--o-line-height-tip);
             position: relative;
             &:hover {
               border: 1px solid var(--o-color-border1);
@@ -884,7 +921,7 @@ onMounted(() => {
   }
   .float-mobile {
     width: 100%;
-    padding: 0 24px;
+    padding: 0 16px;
     margin-bottom: 16px;
     .float-head {
       height: 40px;
@@ -896,8 +933,15 @@ onMounted(() => {
       display: flex;
       align-items: center;
       justify-content: center;
+      position: relative;
       .o-icon {
         font-size: 16px;
+      }
+      .icon-close {
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
       }
       .head-title {
         display: flex;
@@ -906,6 +950,10 @@ onMounted(() => {
         font-size: 12px;
         line-height: 16px;
         white-space: nowrap;
+        position: relative;
+        .title-name {
+          font-weight: 600;
+        }
         .o-icon {
           margin-right: 8px;
         }
@@ -951,6 +999,9 @@ onMounted(() => {
           color: var(--o-color-text1);
           text-align: center;
           white-space: nowrap;
+          .title-name {
+            font-weight: 600;
+          }
         }
         .score-list {
           width: 100%;
@@ -1072,6 +1123,9 @@ onMounted(() => {
           font-size: var(--o-font-size-tip);
           color: var(--o-color-text4);
           margin-top: 8px;
+          span {
+            scale: 0.84;
+          }
         }
       }
       .reason {
@@ -1080,8 +1134,8 @@ onMounted(() => {
           border: 1px solid var(--o-color-border2);
           padding: 8px 16px;
           height: 88px;
-          font-size: var(--o-font-size-tip);
-          line-height: 18px;
+          font-size: var(--o-font-size-text);
+          line-height: var(--o-line-height-text);
           position: relative;
           border-radius: 4px;
           &:hover {
@@ -1116,7 +1170,7 @@ onMounted(() => {
         }
       }
       .btn-box {
-        margin-top: 12px;
+        margin-top: 20px;
         display: flex;
         justify-content: center;
         .o-button {
@@ -1124,12 +1178,27 @@ onMounted(() => {
           justify-content: center;
           border: none;
           color: var(--o-color-text1);
+          position: relative;
+          padding: 0;
           &.forbidden {
             color: var(--o-color-text5);
+          }
+          &:nth-of-type(1)::after {
+            display: block;
+            content: '';
+            width: 1px;
+            height: 100%;
+            background-color: var(--o-color-text5);
+            position: absolute;
+            right: 0;
+            top: 0;
           }
         }
       }
     }
   }
+}
+.dark .float-head {
+  filter: brightness(0.8) grayscale(0.2) contrast(1.2);
 }
 </style>
