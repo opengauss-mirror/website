@@ -369,7 +369,6 @@ onMounted(() => {
       <div
         v-show="lang === 'zh' && isFloShow"
         class="float-wrap"
-        :class="isDark ? 'dark-nav' : ''"
       >
         <div v-show="isFloatTipShow" class="float-tip">
           <h4 class="tip-title">{{ infoData.feedbackTitle }}</h4>
@@ -848,7 +847,8 @@ onMounted(() => {
               border-color: var(--o-color-border1);
               color: var(--o-color-text1);
               &:hover {
-                background-color: var(--o-color-border1);
+                background-color: var(--o-color-brand1);
+                border-color: var(--o-color-brand1);
                 color: var(--o-color-white);
               }
             }
