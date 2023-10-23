@@ -2,9 +2,12 @@
 import { onMounted, ref, computed, onUnmounted } from 'vue';
 import { useData } from 'vitepress';
 import { useCommon } from '@/stores/common';
+
 import IconArrowRight from '~icons/app/icon-arrow-right.svg';
+
 import ShowCaseData from '@/data/showcase';
 import { getUserCaseData } from '@/api/api-showcase';
+import { CaseDataT } from '@/shared/@types/type-home';
 
 import { useI18n } from '@/i18n';
 import { handleError } from '@/shared/utils';
@@ -12,8 +15,8 @@ import { handleError } from '@/shared/utils';
 const i18n = useI18n();
 const { lang } = useData();
 const commonStore = useCommon();
-const caseContent = ref<HTMLElement>(); // TODO:建议，caseRef
-const caseData: any = ref({}); // TODO:一般，减少 any 的使用
+const caseRef = ref<HTMLElement>();
+const caseData: any = ref({});
 const active = ref(0);
 const activeMobile = ref(0);
 
@@ -23,13 +26,12 @@ const handleGo = (path: string) => {
 
 const timer = ref();
 
- // TODO:一般，命名太过重复，比如changeActive即可
-const handleChangeActive = (index: number) => {
+const changeActive = (index: number) => {
   active.value = index;
   activeMobile.value = index;
 };
 
-const handleChangeActiveMobile = (activeNames: any) => {
+const changeActiveMobile = (activeNames: any) => {
   if (activeNames !== '') {
     active.value = activeNames;
   }
@@ -43,34 +45,34 @@ const data = ref({
 const initData = () => {
   const result: any = {};
   getUserCaseData(data.value).then((res: any) => {
-    const caseListAll = res.obj.records.filter((item: any) => {
-      return item.path !== 'userPractice/index';
-    });
-    caseListAll.forEach((item: { id: string }) => {
-      if (typeof result[item.id] === 'undefined') {
-        result[item.id] = [];
-      }
-      if (result[item.id].length < 2) {
-        result[item.id].push(item);
-      }
-    });
-    caseData.value = result;
+    if (res.obj && res.obj.records.length) {
+      const caseListAll = res.obj.records.filter((item: any) => {
+        return item.path !== 'userPractice/index';
+      });
+      caseListAll.forEach((item: { id: string }) => {
+        if (typeof result[item.id] === 'undefined') {
+          result[item.id] = [];
+        }
+        if (result[item.id].length < 2) {
+          result[item.id].push(item);
+        }
+      });
+      caseData.value = result;
+    }
   });
 };
-const imgUrl = computed(() => (item: { URL_DARK: any; URL: any }) => {
-  return commonStore.theme === 'dark' ? item.URL_DARK : item.URL;
+const imgUrl = computed(() => (item: { urlDark: string; url: string }) => {
+  return commonStore.theme === 'dark' ? item.urlDark : item.url;
 });
 
 const imgUrlHover = computed(
-  () => (item: { ACTIVE_DARK_URL: any; ACTIVE_URL: any }) => {
-    return commonStore.theme === 'dark'
-      ? item.ACTIVE_DARK_URL
-      : item.ACTIVE_URL;
+  () => (item: { activeDarkUrl: string; activeUrl: string }) => {
+    return commonStore.theme === 'dark' ? item.activeDarkUrl : item.activeUrl;
   }
 );
 
 const changeCase = () => {
-  active.value === ShowCaseData.CASE_LIST.length - 1
+  active.value === ShowCaseData.length - 1
     ? (active.value = 0)
     : active.value++;
 };
@@ -83,14 +85,14 @@ const clearCaseInterval = () => {
 };
 
 onMounted(() => {
-  ShowCaseData && initData();
+  ShowCaseData.length && initData();
 
   try {
-    if (caseContent.value) {
+    if (caseRef.value) {
       setCaseInterval();
-      caseContent.value.addEventListener('mouseover', clearCaseInterval);
+      caseRef.value.addEventListener('mouseover', clearCaseInterval);
       //鼠标移出继续
-      caseContent.value.addEventListener('mouseout', setCaseInterval);
+      caseRef.value.addEventListener('mouseout', setCaseInterval);
     }
   } catch {
     handleError('Error!');
@@ -98,8 +100,8 @@ onMounted(() => {
 });
 onUnmounted(() => {
   timer.value.clearInterval;
-  caseContent.value?.removeEventListener('mouseover', clearCaseInterval);
-  caseContent.value?.removeEventListener('mouseout', setCaseInterval);
+  caseRef.value?.removeEventListener('mouseover', clearCaseInterval);
+  caseRef.value?.removeEventListener('mouseout', setCaseInterval);
 });
 </script>
 
@@ -111,11 +113,11 @@ onUnmounted(() => {
         v-model="activeMobile"
         accordion
         class="case-mobile"
-        @change="handleChangeActiveMobile"
+        @change="changeActiveMobile"
       >
         <OCollapseItem
-          v-for="(item, index) in ShowCaseData.CASE_LIST"
-          :key="item.TYPE"
+          v-for="(item, index) in ShowCaseData"
+          :key="item.type"
           class="case-mobile-list"
           :name="index"
         >
@@ -127,23 +129,23 @@ onUnmounted(() => {
                   :src="
                     commonStore.theme === 'dark'
                       ? index === activeMobile
-                        ? item.ACTIVE_DARK_URL
-                        : item.URL_DARK
+                        ? item.activeDarkUrl
+                        : item.urlDark
                       : index === activeMobile
-                      ? item.ACTIVE_URL
-                      : item.URL
+                      ? item.activeUrl
+                      : item.url
                   "
-                  :alt="lang === 'zh' ? item.TYPE : item.TYPE_EN"
+                  :alt="lang === 'zh' ? item.type : item.typeEn"
                 />
                 <div class="case-mobile-word">
-                  {{ lang === 'zh' ? item.TYPE : item.TYPE_EN }}
+                  {{ lang === 'zh' ? item.type : item.typeEn }}
                 </div>
               </div>
             </div>
           </template>
           <div class="user-mobile">
             <div
-              v-for="user in caseData && caseData[item.TYPE_EN]"
+              v-for="user in caseData && caseData[item.typeEn]"
               :key="user.company"
               class="user-card"
               @click="handleGo(user.officialpath)"
@@ -154,14 +156,14 @@ onUnmounted(() => {
           </div>
         </OCollapseItem>
       </OCollapse>
-      <div ref="caseContent" class="case">
+      <div ref="caseRef" class="case">
         <OCard class="case-card" shadow="never">
           <div class="case-tab">
             <div
-              v-for="(item, index) in ShowCaseData.CASE_LIST"
-              :key="item.TYPE"
+              v-for="(item, index) in ShowCaseData"
+              :key="item.type"
               class="case-tab-item"
-              @click="handleChangeActive(index)"
+              @click="changeActive(index)"
             >
               <div
                 class="case-img-box"
@@ -169,24 +171,23 @@ onUnmounted(() => {
               >
                 <img
                   :src="imgUrl(item)"
-                  :alt="lang === 'zh' ? item.TYPE : item.TYPE_EN"
+                  :alt="lang === 'zh' ? item.type : item.typeEn"
                   class="nav-item-icon"
                 />
                 <img
                   :src="imgUrlHover(item)"
-                  :alt="lang === 'zh' ? item.TYPE : item.TYPE_EN"
+                  :alt="lang === 'zh' ? item.type : item.typeEn"
                   class="nav-item-icon-hover"
                 />
               </div>
               <div :class="['case-word', active === index ? 'active' : '']">
-                {{ lang === 'zh' ? item.TYPE : item.TYPE_EN }}
+                {{ lang === 'zh' ? item.type : item.typeEn }}
               </div>
             </div>
           </div>
           <div class="case-user">
             <div
-              v-for="item2 in caseData &&
-              caseData[ShowCaseData.CASE_LIST[active].TYPE_EN]"
+              v-for="item2 in caseData && caseData[ShowCaseData[active].typeEn]"
               :key="item2.company"
               class="user-card"
               @click="handleGo(item2.officialpath)"

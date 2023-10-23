@@ -18,7 +18,7 @@ import HomePlayground from './HomePlayground.vue';
 
 import { getSortData } from '@/api/api-search';
 
-import HomeConfig from '@/data/home/';
+import homeConfig from '@/data/home/';
 
 const { lang } = useData();
 const i18n = useI18n();
@@ -27,7 +27,7 @@ const blogData = ref(undefined);
 
 // 最新活动数据
 const eventsData = computed(() =>
-  lang.value === 'zh' ? HomeConfig.HOME_EVENTS.zh : HomeConfig.HOME_EVENTS.en
+  lang.value === 'zh' ? homeConfig.homeEvents.zh : homeConfig.homeEvents.en
 );
 onMounted(async () => {
   const body = document.querySelector('body');
@@ -48,15 +48,17 @@ onMounted(async () => {
   };
   try {
     const responeData = await getSortData(paramsNews);
-    // TODO:一般，注意对返回值做校验，避免直接取值出现 undefined 的情况
-    newsData.value = responeData.obj.records;
+    if (responeData.obj && responeData.obj.records) {
+      newsData.value = responeData.obj.records;
+    }
   } catch (e: any) {
     handleError('Error!');
   }
   try {
     const responeData = await getSortData(paramsBlog);
-    // TODO:一般，注意对返回值做校验，避免直接取值出现 undefined 的情况
-    blogData.value = responeData.obj.records;
+    if (responeData.obj && responeData.obj.records) {
+      blogData.value = responeData.obj.records;
+    }
   } catch (e: any) {
     handleError('Error!');
   }
@@ -97,10 +99,10 @@ onUnmounted(() => {
     <HomeShowCase />
     <div class="home-partner">
       <h3 class="home-title">{{ i18n.home.ORGANIZATION_TITLE }}</h3>
-      <LinkPanel :link-list="HomeConfig.ORGANIZATION" :islink="false" />
+      <LinkPanel :link-list="homeConfig.organization" :islink="false" />
 
       <h3 class="home-title">{{ i18n.home.LINK_TITLE }}</h3>
-      <LinkPanel :link-list="HomeConfig.LINK_LIST" :islink="true" />
+      <LinkPanel :link-list="homeConfig.linkList" :islink="true" />
     </div>
   </AppContent>
 </template>

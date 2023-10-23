@@ -1,22 +1,21 @@
-// TODO:一般，统一使用驼峰命名
-import BANNER from './banner';
+import banner from './banner';
 
-import EVENTS from './events';
+import events from './events';
 
-import ORGANIZATION from './organization';
+import organization from './organization';
 
-import LINK from './link';
+import link from './link';
 
 export default {
   // banner轮播
-  HOMEBANNER: BANNER,
+  homeBanner: banner,
 
   // 首页活动信息
-  HOME_EVENTS: EVENTS,
+  homeEvents: events,
 
   // 社区组织
-  ORGANIZATION: ORGANIZATION,
+  organization: organization,
 
   // 友情链接
-  LINK_LIST: LINK,
+  linkList: link,
 };

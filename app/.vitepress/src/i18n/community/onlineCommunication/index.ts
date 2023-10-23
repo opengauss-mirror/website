@@ -1,5 +1,5 @@
-import ImgMail from '@/assets/category/community/mailimg.png';
-import MailingList from '@/data/mailing-list';
+import imgMail from '@/assets/category/community/mailimg.png';
+import mailingList from '@/data/mailing-list';
 
 export default {
   zh: {
@@ -26,8 +26,8 @@ export default {
     caption3_text:
       '要查看邮件列表中以前发布的电子邮件，请点击上表中邮件列表的Archive链接访问存档地址。',
     thead: ['列表名称', '订阅邮件列表 ', '描述', '归档路径'],
-    mail_list: MailingList.zh,
-    mailimg: ImgMail,
+    mail_list: mailingList.zh,
+    mailimg: imgMail,
   },
   en: {
     title: 'Communication',
@@ -53,6 +53,6 @@ export default {
     caption3_text:
       'To view previous emails, visit the archive addresses as shown in the table above.',
     thead: ['Name', 'Email Address', 'Description', 'Archives'],
-    mail_list: MailingList.en,
+    mail_list: mailingList.en,
   },
 };

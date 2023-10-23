@@ -10,16 +10,14 @@ const i18n = useI18n();
 </script>
 
 <template>
-  <!-- TODO:建议，home-character，拼写错误，多了个r -->
-  <div class="characterr">
+  <div class="home-character">
     <p class="info">{{ i18n.home.CHARACTERR_INFO.TITLE }}</p>
-
-    <div class="characterr-content">
-      <div class="characterr-content-box">
+    <div class="character-content">
+      <div class="character-content-box">
         <div
           v-for="(item, index) in i18n.home.CHARACTERR_INFO.LIST"
           :key="index"
-          class="characterr-item"
+          class="character-item"
         >
           <img
             class="cover gif"
@@ -55,13 +53,13 @@ const i18n = useI18n();
 </template>
 
 <style lang="scss" scoped>
-html[lang='zh'] .characterr .info {
+html[lang='zh'] .home-character .info {
   white-space: nowrap;
   @media (max-width: 1440px) {
     white-space: inherit;
   }
 }
-.characterr {
+.home-character {
   .info {
     font-size: var(--o-font-size-h7);
     line-height: var(--o-line-height-h7);
@@ -80,18 +78,18 @@ html[lang='zh'] .characterr .info {
     width: var(--o-font-size-h8);
     height: var(--o-font-size-h8);
   }
-  &-content {
+  .character-content {
     margin: var(--o-spacing-h2) 0 0;
     padding: 0 var(--o-spacing-h1);
     box-shadow: var(--o-shadow-l1);
     background: var(--o-color-bg2);
     text-align: center;
-    &-box {
+    .character-content-box {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       padding: var(--o-spacing-h2) 0;
       border-bottom: 1px solid var(--o-color-division1);
-      .characterr-item {
+      .character-item {
         &:hover {
           .cover {
             display: none;

@@ -149,7 +149,6 @@ export default {
           NAME: `峰会`,
           ID: `summit`,
           PATH: `/summit/devday2023/`,
-          // IS_OPEN_MINISITE_WINDOW: 1,
         },
       ],
       CLASS: [`news`, `blog`, `video`, `events`, `summit`],
@@ -282,4 +281,5 @@ export default {
     ],
     PATH: `/zh/privacyPolicy/`,
   },
+  Not_Found:'暂无数据！'
 };

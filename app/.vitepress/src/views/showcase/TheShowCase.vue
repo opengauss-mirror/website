@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-// TODO:建议，建议 js、html、css 之间有换行，js 中不同逻辑块也使用换行区分
 import { ref, computed, onMounted } from 'vue';
 import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';
@@ -211,10 +210,10 @@ function getUrlParam() {
     currentTag.value = i18n.value.common.ALL;
   } else {
     const tempIndex = parseInt(industry);
-    activeIndex.value = ShowCaseData.CASE_LIST[tempIndex - 1] ? tempIndex : 0;
+    activeIndex.value = ShowCaseData[tempIndex - 1] ? tempIndex : 0;
     currentTag.value = isZh.value
-      ? ShowCaseData.CASE_LIST[activeIndex.value - 1].TYPE
-      : ShowCaseData.CASE_LIST[activeIndex.value - 1].TYPE_EN;
+      ? ShowCaseData[activeIndex.value - 1].type
+      : ShowCaseData[activeIndex.value - 1].typeEn;
   }
 }
 onMounted(() => {
@@ -246,13 +245,13 @@ onMounted(() => {
           {{ i18n.common.ALL }}
         </OTag>
         <OTag
-          v-for="item in ShowCaseData.CASE_LIST"
-          :key="item.ID"
+          v-for="item in ShowCaseData"
+          :key="item.id"
           checkable
-          :type="activeIndex === item.ID ? 'primary' : 'text'"
-          @click="selectTag(item.ID, isZh ? item.TYPE : item.TYPE_EN)"
+          :type="activeIndex === item.id ? 'primary' : 'text'"
+          @click="selectTag(item.id, isZh ? item.type : item.typeEn)"
         >
-          {{ isZh ? item.TYPE : item.TYPE_EN }}
+          {{ isZh ? item.type : item.typeEn }}
         </OTag>
       </TagFilter>
       <TagFilter class="tag-h5">
@@ -263,13 +262,13 @@ onMounted(() => {
           {{ i18n.common.ALL }}
         </OTag>
         <OTag
-          v-for="item in ShowCaseData.CASE_LIST"
-          :key="item.ID"
+          v-for="item in ShowCaseData"
+          :key="item.id"
           checkable
-          :type="activeIndex === item.ID ? 'primary' : 'text'"
-          @click="selectTag(item.ID, isZh ? item.TYPE : item.TYPE_EN)"
+          :type="activeIndex === item.id ? 'primary' : 'text'"
+          @click="selectTag(item.id, isZh ? item.type : item.typeEn)"
         >
-          {{ isZh ? item.TYPE : item.TYPE_EN }}
+          {{ isZh ? item.type : item.typeEn }}
         </OTag>
       </TagFilter>
     </div>
@@ -353,6 +352,7 @@ onMounted(() => {
     </div>
   </div>
 </template>
+
 <style lang="scss">
 .popover-showcase-desc {
   word-break: break-word;

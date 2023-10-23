@@ -53,8 +53,6 @@ const addActiveData = {
     '填写openGauss社区满意度调研问卷，可参与抽取HUAWEI MatePad SE、华为手环7标准版等惊喜大奖！快来参与吧～',
 };
 
-// 当前导航栏
-// const activeName = ref('first');
 // 本月及以后最新活动列表
 const latestList: Ref<any> = ref([]);
 // 精彩回顾中所有的数据
@@ -87,39 +85,43 @@ onMounted(async () => {
   });
   try {
     const responeData = await getSortData(sortParams);
-    // TODO:一般，注意对返回值做校验，避免直接取值出现undefined的情况
-    // 将单独存在的新增活动加入精彩回顾
-    lang.value === 'zh' ? responeData.obj.records.push(addActiveData) : '';
-    responeData.obj.records.forEach((item: any) => {
-      if (item.date) {
-        const time = item.time && item.time.split('-');
-        if (time[1] && time[1].length !== 7) {
-          if (Number(time[1].substring(0, 10).replace(/\//g, '')) >= curDate) {
-            item.isLatest = true;
+    if (responeData.obj && responeData.obj.records.length) {
+      // 将单独存在的新增活动加入精彩回顾
+      lang.value === 'zh' ? responeData.obj.records.push(addActiveData) : '';
+      responeData.obj.records.forEach((item: any) => {
+        if (item.date) {
+          const time = item.time && item.time.split('-');
+          if (time[1] && time[1].length !== 7) {
+            if (
+              Number(time[1].substring(0, 10).replace(/\//g, '')) >= curDate
+            ) {
+              item.isLatest = true;
+            }
+          }
+          if (
+            new Date(item.date).getTime() >= nowDate.getTime() ||
+            item.isLatest
+          ) {
+            latestList.value.push(item);
+          } else {
+            allReviewList.value.push(item);
           }
         }
-        if (
-          new Date(item.date).getTime() >= nowDate.getTime() ||
-          item.isLatest
-        ) {
-          latestList.value.push(item);
-        } else {
-          allReviewList.value.push(item);
-        }
-      }
-    });
+      });
+    }
   } catch (e: any) {
     handleError('Error!');
   }
 });
 const goDetail = (path: string) => {
-  if (path.startsWith('http')) {
+  const langPrefix1 = new RegExp(`^/${lang.value}/`);
+  const langPrefix2 = new RegExp(`^${lang.value}/`);
+  const httpPrefix = /^http/;
+  if (httpPrefix.test(path)) {
     window.open(path, '_blank');
-    // TODO:一般，使用正则进行判断
-  } else if (path.startsWith(`/${lang.value}/`)) {
+  } else if (langPrefix1.test(path)) {
     router.go(path);
-    // TODO:一般，使用正则进行判断
-  } else if (path.startsWith(`${lang.value}/`)) {
+  } else if (langPrefix2.test(path)) {
     router.go('/' + path);
   } else {
     router.go(`/${lang.value + '/' + path}.html`);
@@ -133,12 +135,6 @@ const goDetail = (path: string) => {
     :title="i18n.common.COMMON_CONFIG.EVENTS"
     :illustration="illustration"
   />
-  <!-- <div class="salon-tabs">
-    <OTabs v-model="activeName">
-      <OTabPane :label="i18n.connect.EVENTS_NEW" name="first"></OTabPane>
-      <OTabPane :label="i18n.connect.EVENTS_REVIEW" name="second"></OTabPane>
-    </OTabs>
-  </div> -->
   <AppContent class="salon-content">
     <div class="latest-events">
       <h3 class="salon-title">{{ i18n.connect.EVENTS_NEW }}</h3>
@@ -183,8 +179,7 @@ const goDetail = (path: string) => {
           alt="404"
         />
         <p class="empty-text">
-          <!-- TODO:建议，可使用公共国际化 -->
-          {{ lang === 'zh' ? '暂无活动！' : 'NotFound !' }}
+          {{ i18n.common.Not_Found }}
         </p>
       </div>
     </div>
@@ -264,8 +259,7 @@ const goDetail = (path: string) => {
             alt="404"
           />
           <p class="empty-text">
-            <!-- TODO:建议，可使用公共国际化 -->
-            {{ lang === 'zh' ? '暂无数据！' : 'NotFound !' }}
+            {{ i18n.common.Not_Found }}
           </p>
         </div>
       </div>

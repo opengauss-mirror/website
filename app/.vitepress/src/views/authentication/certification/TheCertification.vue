@@ -11,8 +11,7 @@ import illustration from '@/assets/illustrations/certification.png';
 
 import { GITEE_LINK } from '@/shared/url-config';
 
-// TODO:建议，interface、type统一使用T结尾
-interface CertificationData {
+interface CertificationDataT {
   pro: string;
   name: string;
   version: string;
@@ -30,7 +29,7 @@ const totalPage = ref(0);
 const layout = ref('sizes, prev, pager, next, slot, jumper');
 
 const i18n = useI18n();
-const tableData = ref<CertificationData[]>([]);
+const tableData = ref<CertificationDataT[]>([]);
 
 // 前端分页
 const randerData = computed(() => {
@@ -55,7 +54,7 @@ const handleCurrentChange = (val: number) => {
 };
 
 // 前端搜索
-function searchProductOrName(data: CertificationData[], query: string) {
+function searchProductOrName(data: CertificationDataT[], query: string) {
   if (!query) {
     return i18n.value.certification.tableData;
   }
@@ -69,18 +68,16 @@ function searchProductOrName(data: CertificationData[], query: string) {
     );
   });
 }
-
-// TODO:一般，1. 采用驼峰；2.函数以动词开头
 // 搜索框change事件
-function searchValchange() {
+function changeSearchVal() {
   tableData.value = searchProductOrName(
     i18n.value.certification.tableData,
     searchContent.value
   );
 }
 function sortByAwardDescending(
-  certs: CertificationData[]
-): CertificationData[] {
+  certs: CertificationDataT[]
+): CertificationDataT[] {
   return certs.sort(
     (a, b) => new Date(b.award).getTime() - new Date(a.award).getTime()
   );
@@ -105,7 +102,7 @@ onMounted(() => {
         v-model="searchContent"
         clearable
         :placeholder="i18n.certification.search_placeholder"
-        @change="searchValchange"
+        @change="changeSearchVal"
       ></OSearch>
     </div>
     <OTable class="pc-list" :data="randerData" style="width: 100%">

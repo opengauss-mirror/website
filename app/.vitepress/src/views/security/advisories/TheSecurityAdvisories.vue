@@ -112,9 +112,8 @@ function turnPage(option: string) {
     queryData.pageNum = queryData.pageNum + 1;
   }
 }
-// TODO:一般，注意函数命名知义
 // 点击搜索框的删除图标
-function donShowSearchBox() {
+function clearSearchInput() {
   inputName.value = '';
 }
 onMounted(() => {
@@ -139,7 +138,7 @@ watch(queryData, () => getSecurityLists(queryData));
         @change="changeSearchVal"
       >
         <template #suffix>
-          <OIcon class="close" @click="donShowSearchBox"><IconCancel /></OIcon>
+          <OIcon class="close" @click="clearSearchInput"><IconCancel /></OIcon>
         </template>
       </OSearch>
       <OCard class="filter-card">

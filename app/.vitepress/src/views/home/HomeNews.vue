@@ -4,6 +4,9 @@ import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';
 import dayjs from 'dayjs';
 
+import { BlogData } from '@/shared/@types/type-blogs';
+import { NewsData } from '@/shared/@types/type-news';
+
 import IconArrowRight from '~icons/app/icon-arrow-right.svg';
 import IconCalendar from '~icons/app/icon-calendar.svg';
 import IconMapPin from '~icons/app/icon-map-pin.svg';
@@ -14,11 +17,9 @@ const { lang } = useData();
 
 const roomName = i18n.value.home.HOME_ROOMS.ROOM_NAME;
 
-const tabType: Ref<string> = ref('events');
-// TODO:一般，注意 TS 类型
-const blogList: Ref<any[]> = ref([]);
-// TODO:一般，注意 TS 类型
-const newsList: Ref<any[]> = ref([]);
+const tabType = ref('events');
+const blogList: Ref<BlogData[]> = ref([]);
+const newsList: Ref<NewsData[]> = ref([]);
 
 const props = defineProps({
   newsData: {
@@ -83,8 +84,7 @@ onMounted(async () => {
 });
 </script>
 <template>
-  <!-- TODO:建议，home-news -->
-  <div class="home-newsroom">
+  <div class="home-news">
     <div class="title-list">
       <OTabs v-model="tabType">
         <OTabPane
@@ -351,7 +351,7 @@ onMounted(async () => {
 .room-item-mo {
   display: none;
 }
-.home-newsroom {
+.home-news {
   margin: var(--o-spacing-h2) auto 0;
   .room-contain-new {
     display: none;

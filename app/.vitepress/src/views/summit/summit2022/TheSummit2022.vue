@@ -4,7 +4,7 @@ import { useCommon } from '@/stores/common';
 
 import AppContent from '@/components/AppContent.vue';
 import SummitSchedule from './components/SummitSchedule.vue';
-import LinkPanel from '@/components/LinkPanel.vue';
+import LinkPanel from './components/LinkPanel.vue';
 
 import summitData from './data';
 import { OBS_VIDEO_LINK } from '@/shared/url-config';
@@ -162,22 +162,17 @@ const videoClickBtn = (path: string) => {
       </h4>
       <LinkPanel
         :link-list="summitData.partnersList.p1"
-        :islink="false"
         :row="3"
         class="there"
       />
       <h4 class="meeting-title">
         {{ summitData.partnersList.title[2] }}
       </h4>
-      <LinkPanel
-        :link-list="summitData.partnersList.p2"
-        :islink="false"
-        class="one"
-      />
+      <LinkPanel :link-list="summitData.partnersList.p2" class="one" />
       <h4 class="meeting-title">
         {{ summitData.partnersList.title[3] }}
       </h4>
-      <LinkPanel :link-list="summitData.partnersList.p3" :islink="false" />
+      <LinkPanel :link-list="summitData.partnersList.p3" />
     </div>
 
     <div class="other-content">
@@ -192,11 +187,7 @@ const videoClickBtn = (path: string) => {
         </div>
         <p class="name">{{ item.name }}</p>
         <a :href="item.path" target="_blank" rel="noopener noreferrer">
-          <OButton
-            animation
-            class="home-banner-btnimport LinkPanel from '@/components/LinkPanel.vue';"
-            size="mini"
-          >
+          <OButton animation class="home-banner-btnimport" size="mini">
             {{ item.btn_text }}
             <template #suffixIcon
               ><OIcon><IconArrowRight /></OIcon

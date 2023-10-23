@@ -6,6 +6,9 @@ import { showGuard, useStoreData } from '@/shared/login';
 import { useI18n } from '@/i18n';
 import { ElMessage, ElMessageBox } from 'element-plus';
 import useWindowResize from '@/components/hooks/useWindowResize';
+import { ContentItemT, DownloadItemT } from '@/shared/@types/type-download';
+
+import DownloadConfig from '@/data/download';
 
 import IconDownload from '~icons/app/icon-download.svg';
 import IconCopy from '~icons/app/icon-copy.svg';
@@ -21,27 +24,20 @@ const props = defineProps({
       return {};
     },
   },
-  downloadVersionAuth: {
-    required: true,
-    type: Array,
-    default: () => {
-      return [];
-    },
-  },
   versionShown: {
     required: true,
     type: String,
     default: '',
   },
 });
-const { tableData, versionShown, downloadVersionAuth } = toRefs(props);
+const { tableData, versionShown } = toRefs(props);
 const { lang, theme } = useData();
 const commonStore = useCommon();
 const { guardAuthClient } = useStoreData();
 const i18n = useI18n();
 const shaText = 'SHA256';
 // tips
-const hoverTips = computed(() => (type: string) => {
+const hoverTips = computed(() => (type: string | undefined) => {
   let tips = '';
   switch (type) {
     case 'simple':
@@ -62,26 +58,17 @@ const hoverTips = computed(() => (type: string) => {
   }
   return tips;
 });
-// 复制
-const inputDom: Ref<HTMLElement | null> = ref(null);
+// 复制sha值
 async function handleUrlCopy(value: string | undefined) {
   if (!value) return;
-  if (inputDom.value) {
-    (inputDom.value as HTMLInputElement).value = value;
-    (inputDom.value as HTMLInputElement).select();
-    // TODO:严重，使用navigator.clipboard.writeText
-    document.execCommand('copy');
-  }
+  navigator.clipboard.writeText(value);
   ElMessage({
     message: i18n.value.download.COPY_SUCCESS,
     type: 'success',
   });
 }
-onMounted(() => {
-      // TODO:严重，vue使用ref获取dom
-  inputDom.value = document.getElementById('useCopy');
-});
-// 下载权限
+//下载权限,控制需要登录后才能下载的版本,最新版的LTS和Preview都需要登录后才能下载的版本
+const downloadVersionAuth = [DownloadConfig[0].name, DownloadConfig[1].name];
 const changeDownloadAuth = () => {
   ElMessageBox.confirm(
     i18n.value.download.DONNLOAD_TEXT,
@@ -117,13 +104,14 @@ const architectureList = computed(() => {
   return temp;
 });
 const osList = computed(() => {
-  // TODO:一般，减少any的使用
-  const temp: any = [];
-  props.tableData.content.forEach((item: any) => {
+  const temp: Array<string> = [];
+  props.tableData.content.forEach((item: DownloadItemT) => {
     if (!temp.includes(item.os)) {
       temp.push(item.os);
     }
   });
+  console.log(temp);
+
   return temp;
 });
 
@@ -136,13 +124,17 @@ const initActiveTag = function () {
 const onArchitectureTagClick = (i: number, select: string) => {
   activeArchitecture.value = select;
 };
-const onOSTagClick = (i: number, select: string) => {
+const onOSTagClick = (select: string) => {
   activeOs.value = select;
 };
-// TODO:一般，减少any的使用
-const renderData: any = ref({});
+const renderData = ref<DownloadItemT>({
+  architecture: '',
+  content: [],
+  os: '',
+  system: '',
+});
 function setRenderData() {
-  props.tableData.content.forEach((item: any) => {
+  props.tableData.content.forEach((item: DownloadItemT) => {
     if (
       item.architecture === activeArchitecture.value &&
       item.os === activeOs.value
@@ -169,7 +161,7 @@ onMounted(() => {
 const tempTag = ref('');
 function setTempTag() {
   let flag = true;
-  props.tableData.content.forEach((item: any) => {
+  props.tableData.content.forEach((item: DownloadItemT) => {
     if (item.architecture === activeArchitecture.value) {
       if (flag) {
         tempTag.value = item.os;
@@ -180,7 +172,7 @@ function setTempTag() {
 }
 function isDisable(tag: string) {
   let flag = false;
-  props.tableData.content.forEach((item: any) => {
+  props.tableData.content.forEach((item: DownloadItemT) => {
     if (item.architecture === activeArchitecture.value && item.os === tag) {
       flag = true;
     }
@@ -238,7 +230,7 @@ watch(
           checkable
           :type="activeOs === item ? 'primary' : 'text'"
           :class="{ disable: isDisable(item) }"
-          @click="isDisable(item) ? '' : onOSTagClick(index, item)"
+          @click="isDisable(item) ? '' : onOSTagClick(item)"
         >
           {{ item }}
         </OTag>
@@ -296,14 +288,14 @@ watch(
                 </OButton>
               </template>
               <template v-else>
-              <a :href="scope.row.down_url">
-                <OButton size="mini" type="primary" animation>
-                  {{ i18n.download.BTN_TEXT }}
-                  <template #suffixIcon>
-                    <IconDownload />
-                  </template>
-                </OButton>
-              </a>
+                <a :href="scope.row.down_url">
+                  <OButton size="mini" type="primary" animation>
+                    {{ i18n.download.BTN_TEXT }}
+                    <template #suffixIcon>
+                      <IconDownload />
+                    </template>
+                  </OButton>
+                </a>
               </template>
             </div>
           </template>
@@ -417,10 +409,6 @@ watch(
         </p>
       </li>
     </ul>
-  </div>
-  <div class="input-box">
-    <!-- 用于复制RSNC的值 -->
-    <input id="useCopy" type="text" />
   </div>
 </template>
 <style lang="scss" scoped>

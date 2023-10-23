@@ -1,16 +1,21 @@
 <script lang="ts" setup>
 import { toRefs } from 'vue';
+interface NavItemT {
+  key: string;
+  name: string;
+}
 const props = defineProps({
   currentIndex: {
     type: Number,
     default: NaN,
   },
   dataList: {
-    type: Array,
+    type: Array<NavItemT>,
     default: () => [],
   },
 });
 const { currentIndex, dataList } = toRefs(props);
+console.log(dataList.value);
 </script>
 
 <template>
@@ -20,7 +25,6 @@ const { currentIndex, dataList } = toRefs(props);
       :key="index"
       :class="+index === currentIndex ? 'active' : ''"
     >
-      <!-- TODO:一般，TS类型警告 -->
       <a :href="item.key">
         {{ item.name }}
       </a>
