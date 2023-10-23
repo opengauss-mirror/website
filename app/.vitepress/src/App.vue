@@ -2,10 +2,9 @@
 import AppHeader from '@/components/AppHeader.vue';
 import AppFooter from '@/components/AppFooter.vue';
 
-import { useData, useRoute } from 'vitepress';
+import { useData } from 'vitepress';
 import type { Component } from 'vue';
-import { computed, watch, ref, onMounted } from 'vue';
-import { useCommon } from '@/stores/common';
+import { computed, ref, onMounted } from 'vue';
 import { refreshInfo } from './shared/login';
 import { setCustomCookie, getCustomCookie } from './shared/utils';
 import zhCn from 'element-plus/lib/locale/lang/zh-cn';
@@ -19,12 +18,8 @@ import LayoutShowcase from '@/layouts/LayoutShowcase.vue';
 import AppFloat from '@/components/AppFloat.vue';
 
 import categories from '@/shared/category';
-import { VULBOX_LINK } from '@/shared/url-config';
 
 import seoConfig from '@/data/common/seo';
-
-import safetyImgLight from '@/assets/category/security/img/safety-img-light.png';
-import safetyImgDark from '@/assets/category/security/img/safety-img-dark.png';
 
 const { frontmatter, lang } = useData();
 
@@ -40,10 +35,7 @@ const compMapping: {
   events: LayoutEvents,
   showcase: LayoutShowcase,
 };
-const commonStore = useCommon();
-const safetyImg = computed(() =>
-  commonStore.theme === 'dark' ? safetyImgDark : safetyImgLight
-);
+
 const isCustomLayout = computed(() => {
   return (
     !!frontmatter.value.category &&
@@ -53,9 +45,6 @@ const isCustomLayout = computed(() => {
 const comp = computed(() => {
   return compMapping[frontmatter.value.category];
 });
-const route = useRoute();
-const isTipShow = ref(false);
-
 // cookies使用提示
 const isCookieTip = ref(false);
 function handleCookieClick() {
@@ -68,20 +57,6 @@ onMounted(() => {
   refreshInfo();
 });
 
-// 漏洞奖励计划图标
-watch(
-  route,
-  (newValue) => {
-    const pathList = ['security-advisories', 'security', 'cve'];
-    isTipShow.value = false;
-    pathList.forEach((item) => {
-      if (item === newValue.path.split('/')[2]) {
-        isTipShow.value = true;
-      }
-    });
-  },
-  { immediate: true }
-);
 </script>
 
 <template>
@@ -91,11 +66,6 @@ watch(
       <SeoBox :seo-data="seoConfig[lang]?.home" />
       <component :is="comp" v-if="isCustomLayout"></component>
       <Content v-else />
-      <div v-if="isTipShow" class="safety-tips">
-        <a :href="VULBOX_LINK" target="_blank" rel="noopener noreferrer">
-          <img :src="safetyImg" alt="" />
-        </a>
-      </div>
       <AppFloat/>
     </main>
   </el-config-provider>
@@ -116,24 +86,6 @@ main {
   }
   @media (max-width: 1100px) {
     min-height: calc(100vh - 329px);
-  }
-}
-.safety-tips {
-  position: fixed;
-  right: 4%;
-  bottom: 380px;
-  z-index: 10;
-  @media (max-width: 1100px) {
-    bottom: 200px;
-  }
-  a {
-    display: inline-block;
-    img {
-      height: 120px;
-      @media (max-width: 1100px) {
-        height: 60px;
-      }
-    }
   }
 }
 </style>

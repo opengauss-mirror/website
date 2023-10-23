@@ -1,12 +1,15 @@
 <script setup lang="ts">
 import { computed, ref, Ref, CSSProperties, watch, onMounted } from 'vue';
-import { useRouter, useData } from 'vitepress';
-import { useCommon } from '@/stores/common';
+import { useRouter, useData,useRoute } from 'vitepress';
 import { postFeedback } from '@/api/api-feedback';
 import { ElMessage } from 'element-plus';
 
 import useWindowResize from '@/components/hooks/useWindowResize';
 import { useStoreData } from '@/shared/login';
+import { VULBOX_LINK } from '@/shared/url-config';
+
+import floatClose from '@/assets/category/float/float-close.png';
+
 import IconTop from '~icons/float/icon-top.svg';
 import IconSmile from '~icons/float/icon-smile.svg';
 import IconHeadset from '~icons/float/icon-headset.svg';
@@ -18,9 +21,27 @@ const screenWidth = useWindowResize();
 const { lang } = useData();
 const { guardAuthClient } = useStoreData();
 const router = useRouter();
-const isDark = computed(() => {
-  return useCommon().theme === 'dark' ? true : false;
-});
+
+// 漏洞奖励计划浮窗
+const isSafetyFloatShow=ref(false)
+const FLOAT_BUG_TEXT = '漏洞奖励';
+const route = useRoute();
+const closeSafetyFloat=()=>{
+  isSafetyFloatShow.value=false
+}
+watch(
+  route,
+  (newValue) => {
+    const pathList = ['security-advisories', 'security', 'cve'];
+    isSafetyFloatShow.value = false;
+    pathList.forEach((item) => {
+      if (item === newValue.path.split('/')[2]) {
+        isSafetyFloatShow.value = true;
+      }
+    });
+  },
+  { immediate: true }
+);
 
 const TITLES1 = ['您向他人推荐 ', '您对 '];
 const TITLES2 = [
@@ -47,6 +68,7 @@ const tipsObj: TitleItemT = {
   '/community/onlineCommunication/': TITLES2[3],
   '/member/': TITLES2[3],
   '/userPractice/': TITLES2[3],
+  '/financial/': TITLES2[3],
   '/certification/': TITLES2[4],
   '/compatibility/': TITLES2[4],
   '/ogsp/': TITLES2[4],
@@ -92,9 +114,6 @@ onMounted(() => {
     { immediate: true }
   );
 });
-
-const isFloShow = ref(true);
-
 // pop1 start
 const score = ref(0);
 const scoreTip = computed(() => {
@@ -366,127 +385,135 @@ onMounted(() => {
 <template>
   <div class="float">
     <template v-if="screenWidth > 1100">
-      <div
-        v-show="lang === 'zh' && isFloShow"
-        class="float-wrap"
-      >
-        <div v-show="isFloatTipShow" class="float-tip">
-          <h4 class="tip-title">{{ infoData.feedbackTitle }}</h4>
-          <div class="tip-detail">{{ infoData.welcome }}</div>
-          <div class="btn-box">
-            <OButton size="mini" @click="closeFloatTip">{{
-              infoData.know
-            }}</OButton>
+      <div v-if="isSafetyFloatShow" class="safety-tips">
+        <a :href="VULBOX_LINK" target="_blank" rel="noopener noreferrer">
+          {{ FLOAT_BUG_TEXT }}
+        </a>
+        <img @click="closeSafetyFloat" class="close-img" :src="floatClose" alt="" />
+      </div>
+      <div class="float-wrap">
+        <template v-if="lang === 'zh'">
+          <div v-show="isFloatTipShow" class="float-tip">
+            <h4 class="tip-title">{{ infoData.feedbackTitle }}</h4>
+            <div class="tip-detail">{{ infoData.welcome }}</div>
+            <div class="btn-box">
+              <OButton size="mini" @click="closeFloatTip">{{
+                infoData.know
+              }}</OButton>
+            </div>
           </div>
-        </div>
-        <div class="nav-box1">
-          <div
-            @mouseenter="toggleIsShow(true)"
-            @mouseleave="toggleIsShow(false)"
-            class="nav-item"
-          >
-            <OIcon @mouseleave.stop="closefloat" class="icon-box">
-              <component :is="IconSmile"> </component>
-            </OIcon>
-            <div v-if="isShow" class="o-popup1" :class="{ show: isDynamic }">
-              <OIcon class="icon-cancel" @click="cancelPopup">
-                <IconCancel />
+          <div class="nav-box1">
+            <div
+              @mouseenter="toggleIsShow(true)"
+              @mouseleave="toggleIsShow(false)"
+              class="nav-item"
+            >
+              <OIcon @mouseleave.stop="closefloat" class="icon-box">
+                <component :is="IconSmile"> </component>
               </OIcon>
-              <div class="slider">
-                <p class="slider-title">
-                  {{ title1 }}
-                  <span class="title-name">{{ title2 }}</span>
-                  {{ title3 }}
-                </p>
-                <div class="slider-body">
-                  <div class="slider-tip">
-                    <div v-show="isReasonShow" class="slide-btn-tip">
-                      {{ scoreTip }}
+              <div v-if="isShow" class="o-popup1" :class="{ show: isDynamic }">
+                <OIcon class="icon-cancel" @click="cancelPopup">
+                  <IconCancel />
+                </OIcon>
+                <div class="slider">
+                  <p class="slider-title">
+                    {{ title1 }}
+                    <span class="title-name">{{ title2 }}</span>
+                    {{ title3 }}
+                  </p>
+                  <div class="slider-body">
+                    <div class="slider-tip">
+                      <div v-show="isReasonShow" class="slide-btn-tip">
+                        {{ scoreTip }}
+                      </div>
                     </div>
+                    <ClientOnly>
+                      <el-slider
+                        show-stops
+                        v-model="score"
+                        :step="10"
+                        :marks="marks"
+                        :show-tooltip="false"
+                        @input="handleInput"
+                      />
+                    </ClientOnly>
                   </div>
-                  <ClientOnly>
-                    <el-slider
-                      show-stops
-                      v-model="score"
-                      :step="10"
-                      :marks="marks"
-                      :show-tooltip="false"
-                      @input="handleInput"
-                    />
-                  </ClientOnly>
+                  <div class="grade-info">
+                    <span>{{
+                      title2 === TITLES2[0]
+                        ? infoData.grade1
+                        : infoData.grade1_1
+                    }}</span>
+                    <span>{{
+                      title2 === TITLES2[0]
+                        ? infoData.grade2
+                        : infoData.grade2_1
+                    }}</span>
+                  </div>
                 </div>
-                <div class="grade-info">
-                  <span>{{
-                    title2 === TITLES2[0] ? infoData.grade1 : infoData.grade1_1
-                  }}</span>
-                  <span>{{
-                    title2 === TITLES2[0] ? infoData.grade2 : infoData.grade2_1
-                  }}</span>
+                <div v-show="isReasonShow" class="reason">
+                  <div class="input-area" :class="{ 'is-focus': isFocuse }">
+                    <textarea
+                      ref="textareaRef"
+                      v-model="inputText"
+                      :placeholder="placeholder"
+                      maxlength="500"
+                    ></textarea>
+                    <p>
+                      <span>{{ inputText.length }}</span
+                      >/500
+                    </p>
+                  </div>
+                  <p class="more-info">
+                    {{ infoData.more }}
+                    <a :href="'mailto:' + infoData.emile">
+                      {{ infoData.emile }}
+                    </a>
+                  </p>
+                  <div class="submit-btn">
+                    <OButton
+                      type="outline"
+                      size="mini"
+                      @click="handleClickSubmit"
+                    >
+                      {{ infoData.submit }}
+                    </OButton>
+                  </div>
                 </div>
               </div>
-              <div v-show="isReasonShow" class="reason">
-                <div class="input-area" :class="{ 'is-focus': isFocuse }">
-                  <textarea
-                    ref="textareaRef"
-                    v-model="inputText"
-                    :placeholder="placeholder"
-                    maxlength="500"
-                  ></textarea>
-                  <p>
-                    <span>{{ inputText.length }}</span
-                    >/500
-                  </p>
-                </div>
-                <p class="more-info">
-                  {{ infoData.more }}
-                  <a :href="'mailto:' + infoData.emile">
-                    {{ infoData.emile }}
-                  </a>
-                </p>
-                <div class="submit-btn">
-                  <OButton
-                    type="outline"
-                    size="mini"
-                    @click="handleClickSubmit"
-                  >
-                    {{ infoData.submit }}
-                  </OButton>
+            </div>
+            <div class="nav-item">
+              <OIcon class="icon-box"
+                ><component :is="IconHeadset"></component>
+              </OIcon>
+              <div class="o-popup2">
+                <div
+                  v-for="item in floatData"
+                  :key="item.emile"
+                  class="pop-item"
+                  rel="noopener noreferrer"
+                >
+                  <OIcon><component :is="item.img"></component></OIcon>
+                  <div class="text">
+                    <p class="text-name">
+                      {{ item.text }}
+                    </p>
+                    <p class="text-tip">
+                      <a :href="'mailto:' + item.emile">{{ item.emile }}</a>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="nav-item">
-            <OIcon class="icon-box"
-              ><component :is="IconHeadset"></component>
-            </OIcon>
-            <div class="o-popup2">
-              <div
-                v-for="item in floatData"
-                :key="item.emile"
-                class="pop-item"
-                rel="noopener noreferrer"
-              >
-                <OIcon><component :is="item.img"></component></OIcon>
-                <div class="text">
-                  <p class="text-name">
-                    {{ item.text }}
-                  </p>
-                  <p class="text-tip">
-                    <a :href="'mailto:' + item.emile">{{ item.emile }}</a>
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div class="nav-item nav-box2" @click="handleClickTop">
+            <OIcon><component :is="IconTop"></component> </OIcon>
           </div>
-        </div>
-
-        <div class="nav-item nav-box2" @click="handleClickTop">
-          <OIcon><component :is="IconTop"></component> </OIcon>
-        </div>
+        </template>
       </div>
     </template>
     <template v-else>
-      <clientonly>
+      <ClientOnly>
         <div v-if="isMobileFloatShow" class="float-mobile">
           <div class="float-head">
             <div class="head-title" @click="toggleDialogVisible">
@@ -578,22 +605,53 @@ onMounted(() => {
             </div>
           </el-dialog>
         </div>
-      </clientonly>
+      </ClientOnly>
     </template>
   </div>
 </template>
 <style lang="scss" scoped>
 .float {
-  position: sticky;
-  bottom: 16px;
-  z-index: 9;
+  position: fixed;
+  bottom: 200px;
+  right: 80px;
+  z-index: 10;
+  @media (max-width: 1100px) {
+    position: sticky;
+    bottom: 16px;
+    z-index: 9;
+  }
+  .safety-tips {
+    width: 48px;
+    height: 112px;
+    background-image: url('@/assets/category/float/float-safety.png');
+    background-size: 100%;
+    margin-bottom: 12px;
+    position: relative;
+    &:hover{
+      background-image: url('@/assets/category/float/float-safety-hover.png');
+      .close-img{
+        display: inline-block;
+      }
+    }
+    a {
+      display: inline-block;
+      color: var(--o-color-white);
+      font-size: var(--o-font-size-text);
+      padding: 20px 17px;
+    }
+    .close-img {
+      display: none;
+      position: absolute;
+      cursor: pointer;
+      right: 0;
+      top: 0;
+      transform: translate(50%, -50%);
+    }
+  }
   .float-wrap {
-    position: fixed;
     display: flex;
     flex-direction: column;
-    bottom: 200px;
-    right: 80px;
-    z-index: 10;
+
     .float-tip {
       position: absolute;
       width: 200px;
