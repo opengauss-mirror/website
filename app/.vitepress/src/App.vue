@@ -5,7 +5,6 @@ import AppFooter from '@/components/AppFooter.vue';
 import { useData } from 'vitepress';
 import type { Component } from 'vue';
 import { computed, ref, onMounted } from 'vue';
-import { refreshInfo } from './shared/login';
 import { setCustomCookie, getCustomCookie } from './shared/utils';
 import zhCn from 'element-plus/lib/locale/lang/zh-cn';
 import en from 'element-plus/lib/locale/lang/en';
@@ -54,7 +53,6 @@ function handleCookieClick() {
 
 onMounted(() => {
   isCookieTip.value = getCustomCookie('agreed-cookiepolicy') ? false : true;
-  refreshInfo();
 });
 
 </script>

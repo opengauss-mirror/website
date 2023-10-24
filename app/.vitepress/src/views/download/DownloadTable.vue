@@ -2,9 +2,8 @@
 import { ref, computed, watch, toRefs, onMounted } from 'vue';
 import { useData } from 'vitepress';
 import { useCommon } from '@/stores/common';
-import { showGuard, useStoreData } from '@/shared/login';
 import { useI18n } from '@/i18n';
-import { ElMessage, ElMessageBox } from 'element-plus';
+import { ElMessage } from 'element-plus';
 import useWindowResize from '@/components/hooks/useWindowResize';
 import { DownloadItemT } from '@/shared/@types/type-download';
 

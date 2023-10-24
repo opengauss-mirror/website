@@ -1,6 +1,5 @@
 <script lang="ts" setup>
-import { ref, onMounted } from 'vue';
-import { getUrlParams } from '@/shared/utils';
+import { ref } from 'vue';
 
 import AppContent from '@/components/AppContent.vue';
 import SummitSchedule from './components/SummitSchedule.vue';
@@ -19,25 +18,6 @@ import IconArrowRight from '~icons/app/icon-arrow-right.svg';
 
 const tabType = ref('main');
 const otherTabType = ref(0);
-// 埋点
-function postAdvertisedData() {
-  const sensors = (window as any)['sensorsDataAnalytic201505'];
-  const { href } = window.location;
-  if (href.includes('?utm_source')) {
-    const paramsArr = getUrlParams(href);
-    sensors?.setProfile({
-      ...(window as any)['sensorsCustomBuriedData'],
-      profileType: 'fromAdvertised',
-      origin: href,
-      ...paramsArr,
-    });
-  }
-}
-onMounted(() => {
-  setTimeout(() => {
-    postAdvertisedData();
-  }, 300);
-});
 </script>
 
 <template>

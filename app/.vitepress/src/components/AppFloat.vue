@@ -5,7 +5,6 @@ import { postFeedback } from '@/api/api-feedback';
 import { ElMessage } from 'element-plus';
 
 import useWindowResize from '@/components/hooks/useWindowResize';
-import { useStoreData } from '@/shared/login';
 import { VULBOX_LINK } from '@/shared/url-config';
 
 import floatClose from '@/assets/category/float/float-close.png';
@@ -19,7 +18,6 @@ import IconHeadsetBig from '~icons/float/icon-headset-big.svg';
 
 const screenWidth = useWindowResize();
 const { lang } = useData();
-const { guardAuthClient } = useStoreData();
 const router = useRouter();
 
 // 漏洞奖励计划浮窗
@@ -241,7 +239,6 @@ function postScore() {
     return;
   }
   const params = {
-    userName: guardAuthClient.value.username,
     feedbackPageUrl: window.location.href,
     feedbackText: inputText.value,
     feedbackValue: score.value / 10,
