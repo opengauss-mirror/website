@@ -70,6 +70,7 @@ const screenWidth = useWindowResize();
                     v-for="itemList in itemType.list"
                     :key="itemList.name"
                     :href="itemList.link"
+                    rel="noopener noreferrer"
                     >{{ itemList.name }}</a
                   >
                 </div>

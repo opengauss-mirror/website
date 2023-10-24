@@ -7,10 +7,9 @@ import IconArrowRight from '~icons/app/icon-arrow-right.svg';
 
 import ShowCaseData from '@/data/showcase';
 import { getUserCaseData } from '@/api/api-showcase';
-import { CaseDataT } from '@/shared/@types/type-home';
 
 import { useI18n } from '@/i18n';
-import { handleError } from '@/shared/utils';
+import { handleError, windowOpen } from '@/shared/utils';
 
 const i18n = useI18n();
 const { lang } = useData();
@@ -21,7 +20,7 @@ const active = ref(0);
 const activeMobile = ref(0);
 
 const handleGo = (path: string) => {
-  window.open(path.replace(/(index)$/g, ''), '_blank');
+  windowOpen(path.replace(/(index)$/g, ''), '_blank');
 };
 
 const timer = ref();
@@ -199,7 +198,10 @@ onUnmounted(() => {
         </OCard>
       </div>
       <div class="case-more">
-        <a :href="`/${lang}/userPractice/?industry=${active + 1}`">
+        <a
+          :href="`/${lang}/userPractice/?industry=${active + 1}`"
+          rel="noopener noreferrer"
+        >
           <OButton animation type="text" class="case-more-item">
             {{ i18n.common.VIEW_MORE }}
             <template #suffixIcon>

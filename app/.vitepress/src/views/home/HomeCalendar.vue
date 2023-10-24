@@ -20,6 +20,7 @@ import {
   isBrowser,
   handleError,
   getCustomCookie,
+  windowOpen,
 } from '@/shared/utils';
 import {
   TableData,
@@ -526,7 +527,7 @@ const requestGiteeLogin = async () => {
       '&redirect_uri=' +
       res.redirect_url +
       '&response_type=code';
-    window.open(url, '_self');
+    windowOpen(url, '_self');
   } catch (e: any) {
     handleError('Error!');
   }

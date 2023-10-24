@@ -289,9 +289,9 @@ const data = {
             <p>
               {{ item.clause }}
               <strong v-if="item.time">{{ item.time }}</strong>
-              <a v-if="item.clause1" :href="item.link1">{{ item.clause1 }}</a
+              <a v-if="item.clause1" :href="item.link1" rel="noopener noreferrer">{{ item.clause1 }}</a
               ><span v-if="item.clause2">{{ item.clause2 }}</span
-              ><a v-if="item.clause3" :href="item.link2">{{ item.clause3 }}</a>
+              ><a v-if="item.clause3" :href="item.link2" rel="noopener noreferrer">{{ item.clause3 }}</a>
             </p>
             <div v-if="item.children" class="rule-child">
               <p v-for="itemChild in item.children" :key="itemChild">

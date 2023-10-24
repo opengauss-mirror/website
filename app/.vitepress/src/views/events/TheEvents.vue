@@ -2,7 +2,7 @@
 import { computed, ref, Ref, onMounted, reactive } from 'vue';
 import { useRouter, useData } from 'vitepress';
 import { getSortData } from '@/api/api-search';
-import { handleError } from '@/shared/utils';
+import { handleError,windowOpen } from '@/shared/utils';
 
 import { useI18n } from '@/i18n';
 import { useCommon } from '@/stores/common';
@@ -118,7 +118,7 @@ const goDetail = (path: string) => {
   const langPrefix2 = new RegExp(`^${lang.value}/`);
   const httpPrefix = /^http/;
   if (httpPrefix.test(path)) {
-    window.open(path, '_blank');
+    windowOpen(path, '_blank');
   } else if (langPrefix1.test(path)) {
     router.go(path);
   } else if (langPrefix2.test(path)) {

@@ -90,7 +90,7 @@ const goVideoDetail = (item: VideoItemT) => {
       </swiper-slide>
     </swiper>
     <p class="video-more">
-      <a :href="`/${lang}/video/`">
+      <a :href="`/${lang}/video/`" rel="noopener noreferrer">
         <OButton animation type="text">
           {{ i18n.common.VIEW_MORE }}
           <template #suffixIcon>

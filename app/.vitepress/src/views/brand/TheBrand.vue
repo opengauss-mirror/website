@@ -32,7 +32,7 @@ const pptList = computed(() =>
         {{ i18n.brand.WORDS }}
         <p>
           {{ i18n.brand.WORDS1[0]
-          }}<a :href="i18n.brand.WORDS1[2]" download>{{
+          }}<a :href="i18n.brand.WORDS1[2]" download rel="noopener noreferrer">{{
             i18n.brand.WORDS1[1]
           }}</a>
         </p>

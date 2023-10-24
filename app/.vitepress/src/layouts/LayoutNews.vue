@@ -30,13 +30,11 @@ const prevLint = ref('');
 const nextLint = ref('');
 const next = ref('');
 const goPrve = () => {
-  const path = router.route.path.substring(0, 4);
-  router.go(`${path}${prevLint.value}`);
+  router.go(`${prevLint.value}`);
   getNewsData();
 };
 const goNext = () => {
-  const path = router.route.path.substring(0, 4);
-  router.go(`${path}${nextLint.value}`);
+  router.go(`${nextLint.value}`);
   getNewsData();
 };
 const getNewsData = async () => {

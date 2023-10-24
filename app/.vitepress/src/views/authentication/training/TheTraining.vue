@@ -3,6 +3,8 @@ import { ref, onMounted, onUnmounted, computed } from 'vue';
 import { useI18n } from '@/i18n';
 import { useCommon } from '@/stores/common';
 
+import { windowOpen } from '@/shared/utils';
+
 import BannerLevel2 from '@/components/BannerLevel2.vue';
 import AppContent from '@/components/AppContent.vue';
 import TrainingNav from './TrainingNav.vue';
@@ -75,7 +77,7 @@ function onCourseMoreClick(index: number) {
 }
 function onRegistrationClick(index: number) {
   if (index === 0) {
-    window.open(ENMOEDU_LINK);
+    windowOpen(ENMOEDU_LINK);
   }
 }
 // 控制移动端更多课程内容显示的切换

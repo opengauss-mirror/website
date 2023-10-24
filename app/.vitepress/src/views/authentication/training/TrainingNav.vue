@@ -25,7 +25,7 @@ console.log(dataList.value);
       :key="index"
       :class="+index === currentIndex ? 'active' : ''"
     >
-      <a :href="item.key">
+      <a :href="item.key" rel="noopener noreferrer">
         {{ item.name }}
       </a>
     </li>
