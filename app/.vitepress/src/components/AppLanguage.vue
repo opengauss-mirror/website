@@ -35,6 +35,8 @@ function changeLanguage(newlang: string) {
   const newHref = pathname.replace(`/${lang.value}/`, `/${newlang}/`);
 
   isMenu.value = false;
+  console.log(newHref, 'search'+search);
+
   router.go(newHref + search);
 }
 

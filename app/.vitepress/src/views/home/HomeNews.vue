@@ -137,6 +137,7 @@ onMounted(async () => {
               v-if="eventsData.link"
               :href="eventsData.link"
               class="o-link-icon"
+              rel="noopener noreferrer"
             >
               <OButton animation type="text" class="activity-btn">
                 {{ i18n.common.VIEW_MORE }}
@@ -168,7 +169,11 @@ onMounted(async () => {
               </div>
               <div class="room-item-right lable-name">
                 <div class="room-top">
-                  <a :href="'/' + item.path" :title="item.title">
+                  <a
+                    :href="'/' + item.path"
+                    :title="item.title"
+                    rel="noopener noreferrer"
+                  >
                     {{ item.title }}
                   </a>
                   <p class="lable-name">
@@ -185,6 +190,7 @@ onMounted(async () => {
                     class="word-hover lable-name"
                     :title="item.summary"
                     :href="'/' + item.path"
+                    rel="noopener noreferrer"
                   >
                     {{ item.summary }}
                   </a>
@@ -204,6 +210,7 @@ onMounted(async () => {
                 class="word-hover lable-name"
                 :title="item.summary"
                 :href="'/' + item.path"
+                rel="noopener noreferrer"
               >
                 {{ item.summary }}
               </a>
@@ -242,7 +249,11 @@ onMounted(async () => {
               </div>
               <div class="room-item-right">
                 <div class="room-top">
-                  <a :href="'/' + item.path" :title="item.title">
+                  <a
+                    :href="'/' + item.path"
+                    :title="item.title"
+                    rel="noopener noreferrer"
+                  >
                     {{ item.title }}
                   </a>
                   <p>
@@ -259,6 +270,7 @@ onMounted(async () => {
                     class="word-hover"
                     :title="item.summary"
                     :href="'/' + item.path"
+                    rel="noopener noreferrer"
                   >
                     {{ item.summary }}
                   </a>
@@ -278,6 +290,7 @@ onMounted(async () => {
                 class="word-hover"
                 :title="item.summary"
                 :href="'/' + item.path"
+                rel="noopener noreferrer"
               >
                 {{ item.summary }}
               </a>

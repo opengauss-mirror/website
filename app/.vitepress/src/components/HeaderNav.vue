@@ -4,6 +4,8 @@ import { useRouter, useData } from 'vitepress';
 
 import { debounce } from 'lodash';
 
+import { windowOpen } from '@/shared/utils';
+
 defineProps({
   navItems: {
     type: Object,
@@ -36,11 +38,11 @@ watch(
 // 点击子导航事件
 const goPath = (item: NavItemT) => {
   if (item.IS_OPEN_WINDOW) {
-    window.open(theme.value.docsUrl + '/' + lang.value + '/' + item.PATH);
+    windowOpen(theme.value.docsUrl + '/' + lang.value + '/' + item.PATH);
     return;
   }
   if (item.IS_OPEN_MINISITE_WINDOW) {
-    window.open(item.PATH);
+    windowOpen(item.PATH);
     return;
   }
   if (item.PATH) {

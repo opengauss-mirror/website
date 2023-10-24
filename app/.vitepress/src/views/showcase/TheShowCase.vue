@@ -5,9 +5,9 @@ import { useData } from 'vitepress';
 import useWindowScroll from '@/components/hooks/useWindowScroll';
 import { getUserCaseData } from '@/api/api-showcase';
 
-import ShowCaseData from '@/data/showcase';
+import showCaseData from '@/data/showcase';
 import useWindowResize from '@/components/hooks/useWindowResize';
-import { handleError } from '@/shared/utils';
+import { handleError, windowOpen } from '@/shared/utils';
 
 import TagFilter from '@/components/TagFilter.vue';
 import BannerLevel2 from '@/components/BannerLevel2.vue';
@@ -165,8 +165,8 @@ const imgUrl = computed(() => (id: string) => {
 // 跳案例官网或者详情（type:1跳官网，2跳详情）
 const jump = (url: string, type: number) => {
   type === 1
-    ? window.open(url, '_blank')
-    : window.open(`/${url.replace('index', '')}`, '_blank');
+    ? windowOpen(url, '_blank')
+    : windowOpen(`/${url.replace('index', '')}`, '_blank');
 };
 // 搜索功能
 // 搜索关键词
@@ -210,10 +210,10 @@ function getUrlParam() {
     currentTag.value = i18n.value.common.ALL;
   } else {
     const tempIndex = parseInt(industry);
-    activeIndex.value = ShowCaseData[tempIndex - 1] ? tempIndex : 0;
+    activeIndex.value = showCaseData[tempIndex - 1] ? tempIndex : 0;
     currentTag.value = isZh.value
-      ? ShowCaseData[activeIndex.value - 1].type
-      : ShowCaseData[activeIndex.value - 1].typeEn;
+      ? showCaseData[activeIndex.value - 1].type
+      : showCaseData[activeIndex.value - 1].typeEn;
   }
 }
 onMounted(() => {
@@ -245,7 +245,7 @@ onMounted(() => {
           {{ i18n.common.ALL }}
         </OTag>
         <OTag
-          v-for="item in ShowCaseData"
+          v-for="item in showCaseData"
           :key="item.id"
           checkable
           :type="activeIndex === item.id ? 'primary' : 'text'"
@@ -262,7 +262,7 @@ onMounted(() => {
           {{ i18n.common.ALL }}
         </OTag>
         <OTag
-          v-for="item in ShowCaseData"
+          v-for="item in showCaseData"
           :key="item.id"
           checkable
           :type="activeIndex === item.id ? 'primary' : 'text'"
@@ -507,7 +507,7 @@ $color: #fff;
     &::-webkit-scrollbar-button {
       width: 0;
     }
-    scrollbar-width:none;
+    scrollbar-width: none;
     @media (max-width: 768px) {
       font-size: var(--o-font-size-tip);
       line-height: var(--o-line-height-tip);

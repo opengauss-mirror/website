@@ -8,6 +8,7 @@ import 'swiper/components/pagination/pagination.min.css';
 import { useData } from 'vitepress';
 import homeConfig from '@/data/home/';
 import { OBS_VIDEO_LINK } from '@/shared/url-config';
+import { windowOpen } from '@/shared/utils';
 
 import useWindowResize from '@/components/hooks/useWindowResize';
 
@@ -36,9 +37,9 @@ const jump = (item: any) => {
     const prefix = /^\/docs\//;
     if (prefix.test(item.link)) {
       const path = theme.value.docsUrl + '/' + lang.value + item.link;
-      window.open(path, item.target);
+      windowOpen(path, item.target);
     } else {
-      window.open(item.link, item.target);
+      windowOpen(item.link, item.target);
     }
   }
 };

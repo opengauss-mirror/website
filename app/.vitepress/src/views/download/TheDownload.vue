@@ -65,9 +65,10 @@ const getData: any = computed(() => {
           </p>
           <p>
             {{ downloadData.MORE_HISTORY
-            }}<a :href="'/' + lang + '/' + downloadData.HISTORY_LINK">{{
-              downloadData.CLICK_VIEW
-            }}</a
+            }}<a
+              :href="'/' + lang + '/' + downloadData.HISTORY_LINK"
+              rel="noopener noreferrer"
+              >{{ downloadData.CLICK_VIEW }}</a
             ><span>{{ lang === 'zh' ? '。' : '.' }}</span>
           </p>
         </div>

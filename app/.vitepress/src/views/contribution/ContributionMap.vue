@@ -4,6 +4,7 @@ import { useRouter, useData } from 'vitepress';
 
 import { useI18n } from '@/i18n';
 import { useCommon } from '@/stores/common';
+import { windowOpen } from '@/shared/utils';
 
 import contributionMap_light_zh from '@/assets/category/contribution/contribution-map_light_zh.png';
 import contributionMap_light_en from '@/assets/category/contribution/contribution-map_light_en.png';
@@ -24,7 +25,7 @@ const isZh = computed(() => (lang.value === 'zh' ? true : false));
 
 const goLink = (url: string, isBlank: boolean) => {
   if (isBlank) {
-    window.open(url, '_blank');
+    windowOpen(url, '_blank');
     return;
   }
   router.go(url);

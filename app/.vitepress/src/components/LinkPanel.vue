@@ -4,6 +4,8 @@ import { useCommon } from '@/stores/common';
 
 import { useData } from 'vitepress';
 
+import { windowOpen } from '@/shared/utils';
+
 const props = withDefaults(
   defineProps<{
     linkList: any[];
@@ -23,7 +25,7 @@ const isZh = computed(() => (lang.value === 'zh' ? true : false));
 const handerClick = (item: any) => {
   if (props.islink) {
     const path = isZh.value ? item.path : item.pathEn;
-    window.open(path, '_blank');
+    windowOpen(path, '_blank');
   }
 };
 </script>

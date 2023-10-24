@@ -3,10 +3,13 @@ import { computed, ref, watch, nextTick } from 'vue';
 import { useRouter, useData } from 'vitepress';
 import { useCommon } from '@/stores/common';
 import { useI18n } from '@/i18n';
+import { windowOpen } from '@/shared/utils';
+
+import navLangFilter from '@/i18n/common/navLangFilter';
+
 import HeaderNav from './HeaderNav.vue';
 import AppTheme from './AppTheme.vue';
 import AppLanguage from './AppLanguage.vue';
-import NavLangFilter from '@/i18n/common/navLangFilter';
 import HeaderSearch from './HeaderSearch.vue';
 
 import logo_light from '@/assets/logo.svg';
@@ -78,11 +81,11 @@ const goMobile = (item: NavItemT) => {
 // 移动端二级导航事件
 const goMobileSubList = (item: NavItemT) => {
   if (item.IS_OPEN_WINDOW) {
-    window.open(theme.value.docsUrl + '/' + lang.value + '/' + item.PATH);
+    windowOpen(theme.value.docsUrl + '/' + lang.value + '/' + item.PATH);
     return;
   }
   if (item.IS_OPEN_MINISITE_WINDOW) {
-    window.open(item.PATH);
+    windowOpen(item.PATH);
     return;
   }
 
@@ -103,7 +106,7 @@ watch(
   (val: string) => {
     roterPath.value = val;
     // 语言过滤
-    NavLangFilter.forEach((item) => {
+    navLangFilter.forEach((item) => {
       if (val.includes(item.name)) {
         langShow.value = item.lang;
       }

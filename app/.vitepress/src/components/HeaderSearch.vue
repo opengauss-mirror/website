@@ -3,6 +3,8 @@ import { computed, ref } from 'vue';
 import { useData } from 'vitepress';
 import IconCancel from '~icons/app/icon-cancel.svg';
 
+import { windowOpen } from '@/shared/utils';
+
 const props = defineProps({
   placeholder: {
     type: String,
@@ -37,7 +39,7 @@ const hiddenSearchBox = () => {
 };
 // 搜索事件
 function handleSearchEvent() {
-  window.open(
+  windowOpen(
     `${props.link}?search=${encodeURIComponent(searchInput.value)}`,
     '_self'
   );

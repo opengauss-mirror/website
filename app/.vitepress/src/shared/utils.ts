@@ -106,11 +106,21 @@ export function removeCustomCookie(cname: string) {
     });
   }
 }
-// 错误处理
 
+// 错误处理
 export function handleError(error: any) {
   ElMessage({
     message: error,
     type: 'error',
   });
 }
+
+// safe window open
+export const windowOpen = (
+  url?: string | URL | undefined,
+  target?: string | undefined,
+  features?: string | undefined
+) => {
+  const opener = window.open(url, target, features);
+  opener && (opener.opener = null);
+};

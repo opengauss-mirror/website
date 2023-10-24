@@ -24,13 +24,13 @@ const { bread1, bread2, link1, link2 } = toRefs(props);
 <template>
   <div class="bread-crumbs">
     <span>
-      <a :href="link1">{{ bread1 }}</a>
+      <a :href="link1" rel="noopener noreferrer">{{ bread1 }}</a>
     </span>
     <OIcon>
       <IconChevronRight />
     </OIcon>
     <span
-      ><a :href="link2" :class="link2 === '#' ? 'no-click' : ''">{{
+      ><a :href="link2" :class="link2 === '#' ? 'no-click' : ''" rel="noopener noreferrer">{{
         bread2
       }}</a></span
     >

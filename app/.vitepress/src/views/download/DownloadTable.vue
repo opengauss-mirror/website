@@ -247,7 +247,7 @@ watch(
         <el-table-column :label="i18n.download.TABLE_HEAD[2]" prop="down_url">
           <template #default="scope">
             <div v-if="scope.row.down_url !== ''" class="down-action">
-              <a :href="scope.row.down_url">
+              <a :href="scope.row.down_url" rel="noopener noreferrer">
                 <OButton size="mini" type="primary" animation>
                   {{ i18n.download.BTN_TEXT }}
                   <template #suffixIcon>
@@ -324,7 +324,7 @@ watch(
         </p>
         <p class="item-text">
           <span>{{ i18n.download.TABLE_HEAD[2] + ':' }}</span>
-          <a :href="item.down_url">
+          <a :href="item.down_url" rel="noopener noreferrer">
             {{ i18n.download.BTN_TEXT_MO }}
           </a>
         </p>

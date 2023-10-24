@@ -154,7 +154,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
               </li>
             </ul>
             <div v-if="item.id === 'board'" class="board-view">
-              <a :href="`/${lang}/member/detail/`" target="_blank">
+              <a :href="`/${lang}/member/detail/`" target="_blank" rel="noopener noreferrer">
                 <OButton animation type="text" class="case-more-item">
                   {{ i18n.member.VIEW_BOARD }}
                   <template #suffixIcon>
@@ -292,7 +292,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
             </li>
           </ul>
           <div v-if="item.id === 'board'" class="board-view">
-            <a :href="`/${lang}/member/detail/`" target="_blank">
+            <a :href="`/${lang}/member/detail/`" target="_blank" rel="noopener noreferrer">
               <OButton animation type="text" class="case-more-item">
                 {{ i18n.member.VIEW_BOARD }}
                 <template #suffixIcon>

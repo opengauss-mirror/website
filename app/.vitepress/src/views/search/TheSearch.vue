@@ -11,7 +11,7 @@ import IconCancel from '~icons/app/icon-cancel.svg';
 import IconSearch from '~icons/app/icon-search.svg';
 
 import useWindowResize from '@/components/hooks/useWindowResize';
-import { handleError } from '@/shared/utils';
+import { handleError, windowOpen } from '@/shared/utils';
 
 const screenWidth = useWindowResize();
 const isMobile = computed(() => (screenWidth.value <= 768 ? true : false));
@@ -131,7 +131,6 @@ function searchCountAll() {
         searchNumber.value = [];
       }
     });
-
   } catch {
     handleError('Error!');
   }
@@ -188,7 +187,7 @@ function goLink(data: any) {
       goPath = path.replace(/^docs\/master/g, 'docs/latest');
     }
     const url = site.value.themeConfig.docsUrl + '/' + goPath + '.html';
-    window.open(url, '_blank');
+    windowOpen(url, '_blank');
   } else {
     router.go(search_result_url);
   }

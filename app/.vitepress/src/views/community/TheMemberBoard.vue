@@ -27,7 +27,7 @@ const handleChangeActiveMobile = (activeNames: number | '') => {
 <template>
   <AppContent>
     <div class="breadcrumb">
-      <a class="last-page" :href="`/${lang}/member/`">
+      <a class="last-page" :href="`/${lang}/member/`" rel="noopener noreferrer">
         {{ i18n.member.PAGE_TITLE }}
       </a>
       <span class="separtor"
