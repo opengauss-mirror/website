@@ -75,7 +75,7 @@ const handlerVideoDetail = (id: number, index: number) => {
           :key="item.id"
           :nav-items="item"
           :is-toggle="isToggle"
-          @video-click="handlerVideoDetail"
+          @click="handlerVideoDetail"
         >
         </VideoCard>
       </div>

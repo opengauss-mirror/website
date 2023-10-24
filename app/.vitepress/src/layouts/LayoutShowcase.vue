@@ -9,7 +9,7 @@ const { frontmatter } = useData();
 </script>
 
 <template>
-  <div class="layout">
+  <div class="layout-showcase">
     <BannerLevel2
       :background-image="banner"
       :title="frontmatter.title"

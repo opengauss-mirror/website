@@ -113,7 +113,7 @@ function turnPage(option: string) {
   }
 }
 // 点击搜索框的删除图标
-function donShowSearchBox() {
+function clearSearchInput() {
   inputName.value = '';
 }
 onMounted(() => {
@@ -138,7 +138,7 @@ watch(queryData, () => getSecurityLists(queryData));
         @change="changeSearchVal"
       >
         <template #suffix>
-          <OIcon class="close" @click="donShowSearchBox"><IconCancel /></OIcon>
+          <OIcon class="close" @click="clearSearchInput"><IconCancel /></OIcon>
         </template>
       </OSearch>
       <OCard class="filter-card">

@@ -24,7 +24,7 @@ const props = defineProps({
   },
 });
 const { lang } = useData();
-const emits = defineEmits(['click-close', 'focus-input']);
+const emits = defineEmits(['close', 'focus-input']);
 const searchInput = ref('');
 // 搜索抽屉
 const showDrawer = () => {
@@ -33,7 +33,7 @@ const showDrawer = () => {
   }
 };
 const hiddenSearchBox = () => {
-  emits('click-close');
+  emits('close');
 };
 // 搜索事件
 function handleSearchEvent() {

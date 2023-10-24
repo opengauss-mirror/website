@@ -1,16 +1,21 @@
 <script lang="ts" setup>
 import { toRefs } from 'vue';
+interface NavItemT {
+  key: string;
+  name: string;
+}
 const props = defineProps({
   currentIndex: {
     type: Number,
     default: NaN,
   },
   dataList: {
-    type: Array,
+    type: Array<NavItemT>,
     default: () => [],
   },
 });
 const { currentIndex, dataList } = toRefs(props);
+console.log(dataList.value);
 </script>
 
 <template>

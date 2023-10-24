@@ -12,7 +12,7 @@ import illustration from '@/assets/illustrations/compatibility.png';
 import { getCompatibilityData } from '@/api/api-compatibility';
 import { GITEE_LINK } from '@/shared/url-config';
 
-interface CompatibilityData {
+interface CompatibilityDataT {
   name: string;
   type: string;
   company: string;
@@ -36,7 +36,7 @@ const queryData = reactive({
 });
 
 const i18n = useI18n();
-const tableData = ref<CompatibilityData[]>([]);
+const tableData = ref<CompatibilityDataT[]>([]);
 
 const randerData = computed(() => {
   return tableData.value.slice(

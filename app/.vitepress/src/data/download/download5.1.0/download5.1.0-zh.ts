@@ -1,30 +1,3 @@
-// 参数说明
-// [
-//   {
-//     name: 'openGauss Server',---软件的模块名
-//     content: [
-//       {
-//         system: 'openEuler 22.03 LTS (aarch64)',---操作系统（架构）
-//         docs: true,---是否有说明文件
-//         architecture: 'AArch64',---架构
-//         os: 'openEuler 22.03 LTS',---操作系统
-//         content: [
-//           {
-//             name: 'openGauss_5.1.0 企业版',---软件包类型
-//             size: '120.99MB',---软件包大小
-//             edition: '',---软件包hover提示语
-//             down_url: `${OBS_DOWNLOAD_LINK}5.1.0/arm_2203/openGauss-5.1.0-openEuler-64bit-all.tar.gz`,---软件包下载地址
-//             sha_code:
-//               '589062c8de67ec8b7b00fb58d33331eedb19702ea47c2a55e1bcde06676a5a81',---软件包sha值
-//             docsName: '企业版安装指南',---软件包说明文档
-//             docs_url:
-//               '/docs/5.1.0/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html',---软件包说明文档链接
-//           },
-//         ],
-//       },
-//     ],
-//   },
-// ];
 import { OBS_DOWNLOAD_LINK } from '@/shared/url-config';
 export default [
   {

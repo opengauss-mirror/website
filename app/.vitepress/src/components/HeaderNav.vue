@@ -13,13 +13,13 @@ defineProps({
   },
 });
 
-interface NavItem {
+interface NavItemT {
   NAME: string;
   PATH: string;
   ID: string;
   IS_OPEN_WINDOW?: number;
   IS_OPEN_MINISITE_WINDOW?: string;
-  CHILDREN?: NavItem;
+  CHILDREN?: NavItemT;
 }
 
 const router = useRouter();
@@ -34,7 +34,7 @@ watch(
   }
 );
 // 点击子导航事件
-const goPath = (item: NavItem) => {
+const goPath = (item: NavItemT) => {
   if (item.IS_OPEN_WINDOW) {
     window.open(theme.value.docsUrl + '/' + lang.value + '/' + item.PATH);
     return;
@@ -52,7 +52,7 @@ const goPath = (item: NavItem) => {
 
 // nav 鼠标滑过事件
 const toggleSubDebounced = debounce(
-  (item: NavItem | null) => {
+  (item: NavItemT | null) => {
     if (item === null) {
       navActive.value = '';
     } else {

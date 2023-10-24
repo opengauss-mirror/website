@@ -40,7 +40,7 @@ const page = () => {
       getData.value = el;
       paramTotal.value = el.data.zh.length;
 
-      currentNode.value.video = dataList.value[paramIndex.value].videourl;
+      currentNode.value.video = dataList.value[paramIndex.value].videoUrl;
       currentNode.value.title = dataList.value[paramIndex.value].title;
       currentNode.value.date = dataList.value[paramIndex.value].date;
 
@@ -94,7 +94,7 @@ watch(
           <ul>
             <li
               v-for="(item, index) in dataList"
-              :key="item.videourl"
+              :key="item.videoUrl"
               :class="{ active: index === paramIndex }"
               @click="changeVideo(index)"
             >

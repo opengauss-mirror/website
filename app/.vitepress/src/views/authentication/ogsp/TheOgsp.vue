@@ -9,7 +9,7 @@ import AppPaginationMo from '@/components/AppPaginationMo.vue';
 import Banner from '@/assets/illustrations/banner-secondary.png';
 import illustration from '@/assets/illustrations/ogsp.png';
 
-interface CertificationData {
+interface CertificationDataT {
   pro: string;
   name: string;
   version: string;
@@ -29,7 +29,7 @@ const pageSize = ref(10);
 const layout = ref('sizes, prev, pager, next, slot, jumper');
 const currentPage = ref(1);
 const totalPage = ref(0);
-const tableData = ref<CertificationData[]>([]);
+const tableData = ref<CertificationDataT[]>([]);
 const searchContent = ref('');
 // 前端分页
 const queryData = reactive({
@@ -54,7 +54,7 @@ const setCurrentPage = (val: number) => {
 };
 
 // 前端搜索
-function searchProductOrName(data: CertificationData[], query: string) {
+function searchProductOrName(data: CertificationDataT[], query: string) {
   if (!query) {
     return i18n.value.ogsp.tableData;
   }
@@ -66,8 +66,8 @@ function searchProductOrName(data: CertificationData[], query: string) {
 }
 // 搜索框change事件
 function sortByAwardDescending(
-  certs: CertificationData[]
-): CertificationData[] {
+  certs: CertificationDataT[]
+): CertificationDataT[] {
   return certs.sort(
     (a, b) => new Date(b.award).getTime() - new Date(a.award).getTime()
   );
@@ -101,7 +101,7 @@ onMounted(() => {
         @change="queryTableData"
       ></OSearch>
     </div>
-    <OTable class="pc-list" :data="randerTableData" style="width: 100%">
+    <OTable class="list-pc" :data="randerTableData" style="width: 100%">
       <OTableColumn
         :label="i18n.ogsp.name"
         show-overflow-tooltip
@@ -164,7 +164,7 @@ onMounted(() => {
         </template>
       </el-table-column>
     </OTable>
-    <ul class="mobile-list">
+    <ul class="list-mb">
       <li v-for="(item, index) in tableData" :key="index" class="item">
         <ul>
           <li>
@@ -238,7 +238,7 @@ onMounted(() => {
 :deep(.is-center) {
   text-align: center !important;
 }
-.pc-list {
+.list-pc {
   margin-top: var(--o-spacing-h2);
   @media screen and (max-width: 1100px) {
     display: none;
@@ -252,7 +252,7 @@ onMounted(() => {
     padding: 0 var(--o-spacing-h6);
   }
 }
-.mobile-list {
+.list-mb {
   display: none;
   margin-top: var(--o-spacing-h5);
   box-shadow: var(--o-shadow1);

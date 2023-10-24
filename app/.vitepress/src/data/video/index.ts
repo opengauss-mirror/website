@@ -12,6 +12,7 @@ import racePoster from '@/assets/category/video/race.png';
 import crashPoster from '@/assets/category/video/crash.png';
 import databasePoster from '@/assets/category/video/database.png';
 
+// id 涉及详情页的跳转参数
 const videoData = [
   {
     name: '专题直播系列',

@@ -1,12 +1,15 @@
 <script lang="ts" setup>
 import { ref, onMounted, nextTick } from 'vue';
 
+import useWindowResize from '@/components/hooks/useWindowResize';
+
 import letsPlay from '@/assets/category/home/letsPlay.png';
 import TryTitle from '@/assets/category/home/title.png';
 import TryTitleMo from '@/assets/category/home/title-mo.png';
 
 import { TRYME_LINK } from '@/shared/url-config';
 
+const screenWidth = useWindowResize();
 const playground = ref(null);
 const textBlock = ref(false);
 
@@ -37,45 +40,48 @@ onMounted(() => {
 });
 </script>
 <template>
-  <div class="title-mo">
-    <img :src="TryTitleMo" />
-  </div>
-  <div ref="playground" class="playground">
-    <div class="playground-content">
-      <div v-if="textBlock" class="left-code">
-        <div class="first">
-          {{ tryme[11] }} <span class="first-span typing">{{ tryme[0] }}</span>
+  <div class="home-playground">
+    <div v-if="screenWidth < 760" class="title-mo">
+      <img :src="TryTitleMo" />
+    </div>
+    <div ref="playground" class="playground">
+      <div class="playground-content">
+        <div v-if="textBlock" class="left-code">
+          <div class="first">
+            {{ tryme[11] }}
+            <span class="first-span typing">{{ tryme[0] }}</span>
+          </div>
+          <div>
+            <div class="block1 fast-hide">
+              <span class="min-l-w">{{ tryme[1] }}</span
+              ><span class="min-line">{{ tryme[2] }}</span
+              ><span class="min-r-w">{{ tryme[3] }}</span>
+            </div>
+            <div class="block2 fast-hide">
+              <span class="min-l-w">{{ tryme[4] }}</span
+              ><span class="min-line">{{ tryme[5] }}</span
+              ><span class="min-r-w">{{ tryme[6] }}</span>
+            </div>
+            <div class="block3 fast-hide">
+              <span class="min-l-w">{{ tryme[7] }}</span
+              ><span class="min-line">{{ tryme[8] }}</span
+              ><span class="min-r-w">{{ tryme[9] }}</span>
+            </div>
+            <div class="block4 fast-hide">{{ tryme[10] }}</div>
+            <div class="block5 fast-hide typing last">{{ tryme[11] }}</div>
+          </div>
         </div>
-        <div>
-          <div class="block1 fast-hide">
-            <span class="min-l-w">{{ tryme[1] }}</span
-            ><span class="min-line">{{ tryme[2] }}</span
-            ><span class="min-r-w">{{ tryme[3] }}</span>
-          </div>
-          <div class="block2 fast-hide">
-            <span class="min-l-w">{{ tryme[4] }}</span
-            ><span class="min-line">{{ tryme[5] }}</span
-            ><span class="min-r-w">{{ tryme[6] }}</span>
-          </div>
-          <div class="block3 fast-hide">
-            <span class="min-l-w">{{ tryme[7] }}</span
-            ><span class="min-line">{{ tryme[8] }}</span
-            ><span class="min-r-w">{{ tryme[9] }}</span>
-          </div>
-          <div class="block4 fast-hide">{{ tryme[10] }}</div>
-          <div class="block5 fast-hide typing last">{{ tryme[11] }}</div>
+        <div class="right-text">
+          <img :src="TryTitle" class="first-code" />
+          <a
+            class="lets-play"
+            :href="TRYME_LINK"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img :src="letsPlay" alt="" />
+          </a>
         </div>
-      </div>
-      <div class="right-text">
-        <img :src="TryTitle" class="first-code" />
-        <a
-          class="lets-play"
-          :href="TRYME_LINK"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img :src="letsPlay" alt="" />
-        </a>
       </div>
     </div>
   </div>
@@ -83,7 +89,6 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .title-mo {
-  display: none;
   text-align: center;
   margin: var(--o-spacing-h2) 0 var(--o-spacing-h4);
   img {
@@ -91,7 +96,6 @@ onMounted(() => {
     object-fit: cover;
   }
   @media screen and (max-width: 760px) {
-    display: block;
     margin-bottom: var(--o-spacing-h5);
   }
 }
@@ -105,7 +109,7 @@ onMounted(() => {
     center/cover;
   height: 378px;
 
-  &-content {
+  .playground-content {
     width: 845px;
     margin: 0 auto;
     display: flex;

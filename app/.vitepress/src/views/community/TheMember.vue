@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { computed, ref, onMounted, onUnmounted } from 'vue';
+import { computed, ref, Ref, onMounted, onUnmounted } from 'vue';
 import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';
 import AppContent from '@/components/AppContent.vue';
@@ -22,10 +22,10 @@ const tabShow = ref(0);
 const tabIndex = ref(0);
 
 const anchor = computed(() => {
-  return i18n.value.member.MEMBER_LIST.map((item: any) => item.ID);
+  return i18n.value.member.MEMBER_LIST.map((item: any) => item.id);
 });
 // 用于存放dom元素以方便识别滚动距离进而改变导航栏
-const navRef: any = ref([]);
+const navRef: Ref<Array<HTMLElement | undefined>> = ref([]);
 const navTitle = (el: any) => {
   navRef.value.push(el);
 };
@@ -40,28 +40,27 @@ const handleScroll = (index: number) => {
     element.scrollIntoView({ behavior: 'smooth' });
   }
 };
+
+// 根据滚动激活导航
 const scroll = () => {
-  // 根据滚动激活导航
-  (function () {
-    const scrollTop =
-      document.body.scrollTop || document.documentElement.scrollTop;
-    const activeList: Array<number> = [];
-    navRef.value.forEach((item: any, index: number) => {
-      if (scrollTop > item.offsetTop) {
-        activeList.push(index);
-      }
-    });
-    tabShow.value = activeList[activeList.length - 1];
-  })();
+  const scrollTop =
+    document.body.scrollTop || document.documentElement.scrollTop;
+  const activeList: Array<number> = [];
+  console.log(navRef.value);
+
+  navRef.value.forEach((item: any, index: number) => {
+    if (scrollTop > item.offsetTop) {
+      activeList.push(index);
+    }
+  });
+  tabShow.value = activeList[activeList.length - 1];
 };
 onMounted(() => {
-  const body = window;
-  body?.addEventListener('scroll', scroll);
+  window?.addEventListener('scroll', scroll);
 });
 
 onUnmounted(() => {
-  const body = window;
-  body?.removeEventListener('scroll', scroll);
+  window?.removeEventListener('scroll', scroll);
 });
 
 // 移动端事件
@@ -85,8 +84,8 @@ const handleChangeActiveMobile = (activeNames: any) => {
     <OTabs v-model="tabShow" @tab-click="selectTab">
       <OTabPane
         v-for="(item, index) in i18n.member.MEMBER_LIST"
-        :key="item.ID"
-        :label="item.NAME"
+        :key="item.id"
+        :label="item.name"
         :name="index"
       ></OTabPane>
     </OTabs>
@@ -101,7 +100,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
     >
       <OCollapseItem
         v-for="(item, index) in i18n.member.MEMBER_LIST"
-        :key="item.ID"
+        :key="item.id"
         :name="index"
         class="member-panel"
       >
@@ -111,7 +110,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
           </div>
         </template>
         <div class="member-mobile">
-          <template v-if="!item.CHILDREN">
+          <template v-if="!item.children">
             <ul class="member-info lable-name">
               <li v-if="item.GITEE_PATH">
                 <IconHome />
@@ -129,10 +128,10 @@ const handleChangeActiveMobile = (activeNames: any) => {
                   item.EMIAL
                 }}</a>
               </li>
-              <li><IconUser />{{ item.NAMEL_TEXT }}</li>
+              <li><IconUser />{{ item.nameText }}</li>
             </ul>
-            <ul v-if="item.LIST.length > 0" class="member-list">
-              <li v-for="(user, i) in item.LIST" :key="i">
+            <ul v-if="item.list && item.list.length" class="member-list">
+              <li v-for="(user, i) in item.list" :key="i">
                 <img class="avatar" :src="user.img" :alt="user.name" />
                 <p class="m-name lable-name">{{ user.name }}</p>
                 <p class="m-title">{{ user.title }}</p>
@@ -154,7 +153,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
                 </p>
               </li>
             </ul>
-            <div v-if="item.ID === 'board'" class="board-view">
+            <div v-if="item.id === 'board'" class="board-view">
               <a :href="`/${lang}/member/detail/`" target="_blank">
                 <OButton animation type="text" class="case-more-item">
                   {{ i18n.member.VIEW_BOARD }}
@@ -167,12 +166,12 @@ const handleChangeActiveMobile = (activeNames: any) => {
           </template>
           <template v-else>
             <div
-              v-for="subitem in item.CHILDREN"
-              :key="subitem.ID"
+              v-for="subitem in item.children"
+              :key="subitem.id"
               class="member-subitem"
             >
               <template v-if="!subitem.other">
-                <h2 :id="subitem.ID" class="sub-title">
+                <h2 :id="subitem.id" class="sub-title">
                   {{ subitem.NAME }}
                 </h2>
                 <ul class="member-info lable-name7">
@@ -193,10 +192,10 @@ const handleChangeActiveMobile = (activeNames: any) => {
                   <li><IconUser />{{ i18n.member.NAMEL_TEXT }}</li>
                 </ul>
                 <ul
-                  v-if="subitem.LIST.length > 0"
+                  v-if="subitem.list && subitem.list.length"
                   class="member-list lable-name8"
                 >
-                  <li v-for="(user, i) in subitem.LIST" :key="i">
+                  <li v-for="(user, i) in subitem.list" :key="i">
                     <img class="avatar" :src="user.img" :alt="user.name" />
                     <p class="m-name lable-name9">{{ user.name }}</p>
                     <p class="m-title">{{ user.title }}</p>
@@ -239,12 +238,12 @@ const handleChangeActiveMobile = (activeNames: any) => {
       </OCollapseItem>
     </OCollapse>
     <div
-      v-for="item in i18n.member.MEMBER_LIST"
-      :key="item.ID"
+      v-for="(item, index) in i18n.member.MEMBER_LIST"
+      :key="item.id"
       class="member-panel member-pc"
     >
-      <template v-if="!item.CHILDREN">
-        <h1 :id="item.ID" :ref="navTitle" class="member-title">
+      <template v-if="!item.children">
+        <h1 :id="item.id" :ref="navTitle" class="member-title">
           {{ item.NAME }}
         </h1>
         <div class="member-panel-content">
@@ -263,10 +262,10 @@ const handleChangeActiveMobile = (activeNames: any) => {
               {{ i18n.member.EMIAL_TEXT }}
               <a :href="'mailto:' + item.EMIAL">{{ item.EMIAL }}</a>
             </li>
-            <li><IconUser />{{ item.NAMEL_TEXT }}</li>
+            <li><IconUser />{{ item.nameText }}</li>
           </ul>
-          <ul v-if="item.LIST.length > 0" class="member-list">
-            <li v-for="(user, i) in item.LIST" :key="i">
+          <ul v-if="item.list && item.list.length > 0" class="member-list">
+            <li v-for="(user, i) in item.list" :key="i">
               <img class="avatar" :src="user.img" :alt="user.name" />
               <p class="m-name">{{ user.name }}</p>
               <p class="m-title">{{ user.title }}</p>
@@ -292,7 +291,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
               </p>
             </li>
           </ul>
-          <div v-if="item.ID === 'board'" class="board-view">
+          <div v-if="item.id === 'board'" class="board-view">
             <a :href="`/${lang}/member/detail/`" target="_blank">
               <OButton animation type="text" class="case-more-item">
                 {{ i18n.member.VIEW_BOARD }}
@@ -305,17 +304,17 @@ const handleChangeActiveMobile = (activeNames: any) => {
         </div>
       </template>
       <template v-else>
-        <h1 :id="item.ID" :ref="navTitle" class="member-title">
+        <h1 :id="item.id" :ref="navTitle" class="member-title">
           {{ item.NAME }}
         </h1>
         <div class="gap">
           <div
-            v-for="subitem in item.CHILDREN"
-            :key="subitem.ID"
+            v-for="subitem in item.children"
+            :key="subitem.id"
             class="member-panel-content"
           >
             <template v-if="!subitem.other">
-              <h2 :id="subitem.ID" class="sub-title">{{ subitem.NAME }}</h2>
+              <h2 :id="subitem.id" class="sub-title">{{ subitem.NAME }}</h2>
               <ul class="member-info">
                 <li>
                   <IconHome />
@@ -333,8 +332,11 @@ const handleChangeActiveMobile = (activeNames: any) => {
                 </li>
                 <li><IconUser />{{ i18n.member.NAMEL_TEXT }}</li>
               </ul>
-              <ul v-if="subitem.LIST.length > 0" class="member-list">
-                <li v-for="(user, i) in subitem.LIST" :key="i">
+              <ul
+                v-if="subitem.list && subitem.list.length"
+                class="member-list"
+              >
+                <li v-for="(user, i) in subitem.list" :key="i">
                   <img class="avatar" :src="user.img" :alt="user.name" />
                   <p class="m-name">{{ user.name }}</p>
                   <p class="m-title">{{ user.title }}</p>
@@ -593,6 +595,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
     }
   }
   .other {
+    color: var(--o-color-text1);
     h4 {
       font-size: 24px;
       font-weight: 300;
