@@ -41,7 +41,7 @@ const partnerMo = computed(() =>
 const isShowNav = ref(false);
 const activeIndex = ref(0);
 // 滚动激活导航
-const scroTop = () => {
+const onScrollTop = () => {
   const scrollTop =
     document.body.scrollTop || document.documentElement.scrollTop;
   if (scrollTop < 270 || scrollTop > 7200) {
@@ -83,12 +83,13 @@ function onToggleClick(index: number) {
   isMoreShowMo.value[index] = !isMoreShowMo.value[index];
 }
 onMounted(() => {
-  window.addEventListener('scroll', scroTop);
+  window.addEventListener('scroll', onScrollTop);
 });
 onUnmounted(() => {
-  window.removeEventListener('scroll', scroTop);
+  window.removeEventListener('scroll', onScrollTop);
 });
 </script>
+
 <template>
   <BannerLevel2
     :background-image="Banner"
@@ -520,6 +521,7 @@ onUnmounted(() => {
     </div>
   </AppContent>
 </template>
+
 <style lang="scss" scoped>
 .dark {
   .item-head img {

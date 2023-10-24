@@ -8,7 +8,7 @@ const i18n = useI18n();
 </script>
 
 <template>
-  <div class="layout">
+  <div class="layout-security">
     <BannerLevel2
       :background-image="Banner"
       :title="i18n.security.REPORTING"
@@ -19,7 +19,7 @@ const i18n = useI18n();
 </template>
 
 <style lang="scss" scoped>
-.layout {
+.layout-security {
   overflow: hidden;
 }
 .markdown-security {

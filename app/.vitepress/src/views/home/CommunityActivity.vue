@@ -5,6 +5,8 @@ import { useCommon } from '@/stores/common';
 import { getStatistic } from '@/api/api-search';
 import { handleError } from '@/shared/utils';
 
+import { RoundItemT } from '@/shared/@types/type-home';
+
 import IconArrowRight from '~icons/app/icon-arrow-right.svg';
 import bg1 from '@/assets/category/home/img1.png';
 import bg2 from '@/assets/category/home/img2.png';
@@ -13,14 +15,20 @@ const commonStore = useCommon();
 
 const i18n = useI18n();
 const community = ref();
-const roundList: Ref<any[]> = ref([]);
+const roundList = ref(<Array<RoundItemT>>[]);
 const isShowCommunity = ref(false);
 const roundNumber = ref([
   {
     ROUND_VALUE: 0,
   },
 ]);
-function addNumber(start: number, end: number, item, index) {
+
+function addNumber(
+  start: number,
+  end: number,
+  item: RoundItemT,
+  index: number
+) {
   let i = start;
   const allTime = 2500;
   let time = 10;
@@ -28,7 +36,7 @@ function addNumber(start: number, end: number, item, index) {
     time = allTime / end;
   }
   if (i < end) {
-    const Interval = setInterval(function () {
+    const interval = setInterval(function () {
       // 设置每次增加的动态数字，可调整
       if (allTime / end < time) {
         i += end / (allTime / time);
@@ -36,7 +44,7 @@ function addNumber(start: number, end: number, item, index) {
         i += 1;
       }
       if (i > end) {
-        clearInterval(Interval);
+        clearInterval(interval);
         item.ROUND_VALUE = roundList.value[index].ROUND_VALUE;
         i = 0;
       } else {
@@ -46,21 +54,25 @@ function addNumber(start: number, end: number, item, index) {
   }
 }
 const changeNum = () => {
-  roundNumber.value.forEach((item: { ROUND_VALUE: number }, index: number) => {
+  roundNumber.value.forEach((item: RoundItemT, index: number) => {
     addNumber(0, roundList.value[index].ROUND_VALUE, item, index);
   });
 };
 
 const addValue = (arr: any) => {
-  const template = JSON.parse(
-    JSON.stringify(i18n.value.home.HOME_ROUND.ROUND_LIST)
-  );
-  template.forEach(
-    (item: { ROUND_VALUE: number; ROUND_KEY: string | number }) => {
-      item.ROUND_VALUE = arr[item.ROUND_KEY];
-    }
-  );
-  return template;
+  try {
+    const template = JSON.parse(
+      JSON.stringify(i18n.value.home.HOME_ROUND.ROUND_LIST)
+    );
+    template.forEach(
+      (item: { ROUND_VALUE: number; ROUND_KEY: string | number }) => {
+        item.ROUND_VALUE = arr[item.ROUND_KEY];
+      }
+    );
+    return template;
+  } catch {
+    return 'error';
+  }
 };
 onMounted(async () => {
   try {
@@ -75,7 +87,7 @@ onMounted(async () => {
       changeNum();
     });
     community.value && observe.observe(community.value);
-  } catch (error: any) {
+  } catch {
     handleError('Error!');
   }
 });
@@ -224,7 +236,7 @@ onMounted(async () => {
   }
 }
 .community {
-  margin-top:  var(--o-spacing-h2);
+  margin-top: var(--o-spacing-h2);
   @media (max-width: 768px) {
     .o-container {
       padding-bottom: 0;

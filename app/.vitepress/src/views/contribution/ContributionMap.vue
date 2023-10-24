@@ -9,10 +9,10 @@ import contributionMap_light_zh from '@/assets/category/contribution/contributio
 import contributionMap_light_en from '@/assets/category/contribution/contribution-map_light_en.png';
 import contributionMap_dark_zh from '@/assets/category/contribution/contribution-map_dark_zh.png';
 import contributionMap_dark_en from '@/assets/category/contribution/contribution-map_dark_en.png';
-import contributionMap_light_zh_mobile from '@/assets/category/contribution/contribution-map_light_zh_mobile.png';
-import contributionMap_light_en_mobile from '@/assets/category/contribution/contribution-map_light_en_mobile.png';
-import contributionMap_dark_zh_mobile from '@/assets/category/contribution/contribution-map_dark_zh_mobile.png';
-import contributionMap_dark_en_mobile from '@/assets/category/contribution/contribution-map_dark_en_mobile.png';
+import contributionMap_light_zh_mb from '@/assets/category/contribution/contribution-map_light_zh_mobile.png';
+import contributionMap_light_en_mb from '@/assets/category/contribution/contribution-map_light_en_mobile.png';
+import contributionMap_dark_zh_mb from '@/assets/category/contribution/contribution-map_dark_zh_mobile.png';
+import contributionMap_dark_en_mb from '@/assets/category/contribution/contribution-map_dark_en_mobile.png';
 
 const i18n = useI18n();
 const { lang } = useData();
@@ -31,8 +31,8 @@ const goLink = (url: string, isBlank: boolean) => {
 };
 </script>
 <template>
-  <div class="content-map">
-    <div class="content-map-img">
+  <div class="contribution-map">
+    <div class="contribution-map-img">
       <img
         v-show="!isDark"
         :src="isZh ? contributionMap_light_zh : contributionMap_light_en"
@@ -49,24 +49,24 @@ const goLink = (url: string, isBlank: boolean) => {
         @click="goLink(item.URL, item.BLANK)"
       ></div>
     </div>
-    <div class="content-map-mobile-img">
+    <div class="contribution-map-mobile-img">
       <img
         v-show="!isDark"
         :src="
           isZh
-            ? contributionMap_light_zh_mobile
-            : contributionMap_light_en_mobile
+            ? contributionMap_light_zh_mb
+            : contributionMap_light_en_mb
         "
       />
       <img
         v-show="isDark"
         :src="
-          isZh ? contributionMap_dark_zh_mobile : contributionMap_dark_en_mobile
+          isZh ? contributionMap_dark_zh_mb : contributionMap_dark_en_mb
         "
       />
       <div
-        v-for="(item, index) in i18n.contribution.LINK_LIST"
-        :key="index"
+        v-for="item in i18n.contribution.LINK_LIST"
+        :key="item.URL"
         :class="isZh ? 'mobile-link' : 'mobile-link en'"
         @click="goLink(item.URL, item.BLANK)"
       ></div>
@@ -74,7 +74,7 @@ const goLink = (url: string, isBlank: boolean) => {
   </div>
 </template>
 <style lang="scss" scoped>
-.content-map {
+.contribution-map {
   width: 100%;
   padding-bottom: var(--o-spacing-h1);
   @media screen and (max-width: 1439px) {
@@ -88,7 +88,7 @@ const goLink = (url: string, isBlank: boolean) => {
     padding-right: 16px;
     background-color: inherit;
   }
-  &-img {
+  .contribution-map-img {
     width: 1416px;
     position: relative;
     display: block;
@@ -124,22 +124,6 @@ const goLink = (url: string, isBlank: boolean) => {
     @media screen and (max-width: 767px) {
       display: none;
     }
-  }
-  &-print {
-    position: absolute;
-    cursor: pointer;
-    width: 100px;
-    height: 30px;
-    top: 22px;
-    right: 22px;
-    background-color: var(--o-color-bg2);
-    color: var(--o-color-brand1);
-    border: 1px solid var(--o-color-brand1);
-    font-size: var(--o-font-size-tip);
-    line-height: var(--o-line-height-h6);
-    text-align: center;
-    border-radius: 1px;
-    text-decoration: none;
   }
   .link:nth-of-type(1) {
     width: 137px;
@@ -599,7 +583,7 @@ const goLink = (url: string, isBlank: boolean) => {
       left: 660px;
     }
   }
-  &-mobile-img {
+  .contribution-map-mobile-img {
     width: 100%;
     height: auto;
     position: relative;

@@ -46,9 +46,9 @@ watch(
   },
   { immediate: true }
 );
-const emits = defineEmits(['video-click']);
-const handlerVideo = (id: number, index: number) => {
-  emits('video-click', id, index);
+const emits = defineEmits(['click']);
+const handleClick = (id: number, index: number) => {
+  emits('click', id, index);
 };
 </script>
 
@@ -64,7 +64,7 @@ const handlerVideo = (id: number, index: number) => {
         >
           <div
             class="video-item-link"
-            @click="handlerVideo(navItems.id, index)"
+            @click="handleClick(navItems.id, index)"
           >
             <div
               class="cover"

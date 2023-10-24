@@ -81,47 +81,53 @@ const getTagsList = () => {
   tagsParams.want = 'archives';
   getTagsData(tagsParams).then((res) => {
     selectData.value[0].select = [];
-    res.obj.totalNum.forEach((item: any) => {
-      selectData.value[0].select.push(item.key);
-    });
-    tagsParams.want = 'author';
-    getTagsData(tagsParams)
-      .then((res) => {
-        selectData.value[1].select = [];
-        res.obj.totalNum.forEach((item: any) => {
-          selectData.value[1].select.push(item.key);
-        });
-        tagsParams.want = 'tags';
-        getTagsData(tagsParams).then((res) => {
-          selectData.value[2].select = [];
-          res.obj.totalNum.forEach((item: any) => {
-            selectData.value[2].select.push(item.key);
-          });
-        });
-      })
-      .catch(() => {
-        isShowData.value = false;
-        handleError('Error!');
+    if (res.obj && res.obj.totalNum.length) {
+      res.obj.totalNum.forEach((item: any) => {
+        selectData.value[0].select.push(item.key);
       });
+      tagsParams.want = 'author';
+      getTagsData(tagsParams)
+        .then((res) => {
+          selectData.value[1].select = [];
+          res.obj.totalNum.forEach((item: any) => {
+            selectData.value[1].select.push(item.key);
+          });
+          tagsParams.want = 'tags';
+          getTagsData(tagsParams).then((res) => {
+            selectData.value[2].select = [];
+            if (res.obj.totalNum.length) {
+              res.obj.totalNum.forEach((item: any) => {
+                selectData.value[2].select.push(item.key);
+              });
+            }
+          });
+        })
+        .catch(() => {
+          isShowData.value = false;
+          handleError('Error!');
+        });
+    }
   });
 };
 // 获取列表数据
 const getListData = (params: ParamsType) => {
   getBlogsData(params)
     .then((res) => {
-      if (res.obj.count === 0) {
-        isShowData.value = false;
-      } else {
-        paginationData.value.total = res.obj.count;
-        paginationData.value.currentpage = res.obj.page;
-        paginationData.value.pagesize = res.obj.pageSize;
-        blogCardData.value = res.obj.records;
-        for (let i = 0; i < blogCardData.value.length; i++) {
-          if (typeof blogCardData.value[i].author === 'string') {
-            blogCardData.value[i].author = [blogCardData.value[i].author];
+      if (res.obj && res.obj.records.length) {
+        if (res.obj.count === 0) {
+          isShowData.value = false;
+        } else {
+          paginationData.value.total = res.obj.count;
+          paginationData.value.currentpage = res.obj.page;
+          paginationData.value.pagesize = res.obj.pageSize;
+          blogCardData.value = res.obj.records;
+          for (let i = 0; i < blogCardData.value.length; i++) {
+            if (typeof blogCardData.value[i].author === 'string') {
+              blogCardData.value[i].author = [blogCardData.value[i].author];
+            }
           }
+          isShowData.value = true;
         }
-        isShowData.value = true;
       }
     })
     .catch(() => {
@@ -147,7 +153,7 @@ const selectMethod = () => {
 const changeTime = () => {
   selectMethod();
   if (selectTimeVal.value !== '') {
-    const wantauthor = {
+    const wantedAuthor = {
       lang: lang.value,
       category: 'blogs',
       want: 'author',
@@ -166,14 +172,20 @@ const changeTime = () => {
           selectAuthorVal.value === '' ? undefined : selectAuthorVal.value,
       },
     };
-    getTagsData(wantauthor).then((res) => {
+    getTagsData(wantedAuthor).then((res) => {
       selectData.value[1].select = [];
+      if (!res.obj.totalNum.length) {
+        return;
+      }
       res.obj.totalNum.forEach((item: any) => {
         selectData.value[1].select.push(item.key);
       });
       getTagsData(wanttags)
         .then((res) => {
           selectData.value[2].select = [];
+          if (!res.obj.totalNum.length) {
+            return;
+          }
           res.obj.totalNum.forEach((item: any) => {
             selectData.value[2].select.push(item.key);
           });
@@ -281,7 +293,7 @@ const changeTags = () => {
         tags: selectTagsVal.value,
       },
     };
-    const wantauthor = {
+    const wantedAuthor = {
       lang: lang.value,
       category: 'blogs',
       want: 'author',
@@ -295,7 +307,7 @@ const changeTags = () => {
       res.obj.totalNum.forEach((item: any) => {
         selectData.value[0].select.push(item.key);
       });
-      getTagsData(wantauthor)
+      getTagsData(wantedAuthor)
         .then((res) => {
           selectData.value[1].select = [];
           res.obj.totalNum.forEach((item: any) => {

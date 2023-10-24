@@ -41,7 +41,7 @@ const supporttoolsInfo = computed(() => {
     :illustration="illustration"
   />
   <AppContent>
-    <div class="supporttools-info">
+    <div class="support-tools">
       <p class="text">{{ i18n.supporttools.INFO }}</p>
 
       <img
@@ -105,7 +105,7 @@ const supporttoolsInfo = computed(() => {
 .dark .cover {
   filter: brightness(0.8) grayscale(0.2) contrast(1.2);
 }
-.supporttools-info {
+.support-tools {
   margin-bottom: var(--o-spacing-h4);
   .text {
     margin-bottom: var(--o-spacing-h2);

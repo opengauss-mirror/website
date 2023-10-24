@@ -6,13 +6,13 @@ import 'swiper/swiper.min.css';
 import 'swiper/components/navigation/navigation.min.css';
 import 'swiper/components/pagination/pagination.min.css';
 import { useData } from 'vitepress';
-import HomeConfig from '@/data/home/';
+import homeConfig from '@/data/home/';
 import { OBS_VIDEO_LINK } from '@/shared/url-config';
 
 import useWindowResize from '@/components/hooks/useWindowResize';
 
 import IconArrowRight from '~icons/app/icon-arrow-right.svg';
-import VideoGif from '@/assets/category/home/video-player.gif';
+import videoGif from '@/assets/category/home/video-player.gif';
 
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 
@@ -27,44 +27,41 @@ const windowWidth = ref(useWindowResize());
 
 // 判断语言 banner
 const homeBanner = computed(() =>
-  lang.value === 'en' ? HomeConfig.HOMEBANNER.en : HomeConfig.HOMEBANNER.zh
+  lang.value === 'en' ? homeConfig.homeBanner.en : homeConfig.homeBanner.zh
 );
 
 // banner跳转事件
 const jump = (item: any) => {
   if (flag.value && item.link !== '') {
-    if (item.targetTap === 1) {
-      if (item.link.startsWith('/docs/')) {
-        const path = theme.value.docsUrl + '/' + lang.value + item.link;
-        window.open(path, '_blank');
-      } else {
-        window.open(item.link, '_blank');
-      }
+    const prefix = /^\/docs\//;
+    if (prefix.test(item.link)) {
+      const path = theme.value.docsUrl + '/' + lang.value + item.link;
+      window.open(path, item.target);
     } else {
-      window.open(item.link, '_self');
+      window.open(item.link, item.target);
     }
   }
 };
 
 // video 事件
-const videoDialog = ref(false);
+const isVideoDialog = ref(false);
 const videoLink = ref('');
-const handleCloseVideo = () => {
-  videoDialog.value = false;
+const closeVideo = () => {
+  isVideoDialog.value = false;
   videoLink.value = '';
 };
 const onVideoBtnClick = (path: string) => {
   videoLink.value = path;
-  videoDialog.value = true;
+  isVideoDialog.value = true;
 };
 
 const bannerVideoSrc = `${OBS_VIDEO_LINK}openGauss%20Summit%202022/Banner/openGauss%20Banner%E5%8A%A8K_1920x480.mp4`;
 </script>
 
 <template>
-  <div class="swiper-banner">
+  <div class="home-banner">
     <swiper
-      class="home-banner"
+      class="banner-content"
       :loop="true"
       :pagination="{
         clickable: true,
@@ -78,7 +75,7 @@ const bannerVideoSrc = `${OBS_VIDEO_LINK}openGauss%20Summit%202022/Banner/openGa
     >
       <swiper-slide v-for="(item, index) in homeBanner" :key="item.link">
         <div class="banner-panel" :class="item.className" @click="jump(item)">
-          <div v-if="item.type === 5" class="banner-video">
+          <div v-if="item.type === 'video'" class="banner-video">
             <template v-if="windowWidth > 767">
               <video
                 muted
@@ -98,9 +95,8 @@ const bannerVideoSrc = `${OBS_VIDEO_LINK}openGauss%20Summit%202022/Banner/openGa
             class="banner-panel-cover"
             :class="{
               'banner-pic': item.title === '',
-              'banner-img': item.type === 1,
-              'text-center': item.type === 3,
-              internship: item.type === 4,
+              'banner-img': item.type === 'text-left',
+              'text-center': item.type === 'text-center',
               'no-link': item.link === '',
             }"
             :style="{
@@ -149,7 +145,7 @@ const bannerVideoSrc = `${OBS_VIDEO_LINK}openGauss%20Summit%202022/Banner/openGa
               <div v-if="item.video !== ''" id="video-player">
                 <img
                   class="video-player-btn"
-                  :src="VideoGif"
+                  :src="videoGif"
                   :alt="item.title"
                   @click.stop="onVideoBtnClick(item.video)"
                 />
@@ -163,10 +159,10 @@ const bannerVideoSrc = `${OBS_VIDEO_LINK}openGauss%20Summit%202022/Banner/openGa
       </swiper-slide>
     </swiper>
   </div>
-  <div v-if="videoDialog" class="video-box">
+  <div v-if="isVideoDialog" class="video-box">
     <ODialog
-      v-model="videoDialog"
-      :before-close="handleCloseVideo"
+      v-model="isVideoDialog"
+      :before-close="closeVideo"
       :show-close="false"
       lock-scroll
       close-on-press-escape
@@ -254,7 +250,7 @@ html[lang='zh'] {
   }
 }
 
-.home-banner {
+.banner-content {
   height: 480px;
   position: relative;
   .banner-panel {
@@ -379,21 +375,6 @@ html[lang='zh'] {
           text-align: center;
         }
       }
-      &.internship {
-        .title,
-        .desc {
-          color: var(--o-color-black);
-          @media screen and (max-width: 768px) {
-            display: none;
-          }
-        }
-        .home-banner-btn {
-          background-color: #012fa8;
-          @media screen and (max-width: 768px) {
-            display: none;
-          }
-        }
-      }
     }
     .isH5show {
       display: none;
@@ -509,7 +490,7 @@ html[lang='zh'] {
   }
 }
 
-.swiper-banner {
+.home-banner {
   :deep(.swiper-container) {
     .swiper-pagination {
       width: 1416px !important;

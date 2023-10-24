@@ -49,20 +49,22 @@ const toNewsContent = (path: string) => {
 const getListData = (params: ParamsType) => {
   getSortData(params)
     .then((res) => {
-      if (res.obj.count === 0) {
-        isShowData.value = false;
-      } else {
-        paginationData.value.total = res.obj.count;
-        paginationData.value.currentpage = res.obj.page;
-        paginationData.value.pagesize = res.obj.pageSize;
-        newsCardData.value = res.obj.records;
-        for (let i = 0; i < newsCardData.value.length; i++) {
-          if (typeof newsCardData.value[i].author === 'string') {
-            newsCardData.value[i].author = [newsCardData.value[i].author];
+      if (res.obj) {
+        if (res.obj.count === 0) {
+          isShowData.value = false;
+        } else {
+          paginationData.value.total = res.obj.count;
+          paginationData.value.currentpage = res.obj.page;
+          paginationData.value.pagesize = res.obj.pageSize;
+          newsCardData.value = res.obj.records;
+          for (let i = 0; i < newsCardData.value.length; i++) {
+            if (typeof newsCardData.value[i].author === 'string') {
+              newsCardData.value[i].author = [newsCardData.value[i].author];
+            }
+            newsCardData.value[i].banner = newsCardData.value[i].banner;
           }
-          newsCardData.value[i].banner = newsCardData.value[i].banner;
+          isShowData.value = true;
         }
-        isShowData.value = true;
       }
     })
     .catch(() => {

@@ -1,11 +1,9 @@
 <script lang="ts" setup>
-import { ref, computed, onMounted, Ref, watch } from 'vue';
+import { ref, computed, watch } from 'vue';
 import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';
-import { ElMessage, ElMessageBox } from 'element-plus';
+import { ElMessage } from 'element-plus';
 import { useCommon } from '@/stores/common';
-import { showGuard, useStoreData } from '@/shared/login';
-import { handleError } from '@/shared/utils';
 
 import DownloadConfig from '@/data/download';
 import { GITEE_LINK } from '@/shared/url-config';
@@ -22,8 +20,6 @@ import BreadCrumbs from '@/components/BreadCrumbs.vue';
 const i18n = useI18n();
 const { lang, theme } = useData();
 const commonStore = useCommon();
-const { guardAuthClient } = useStoreData();
-
 const isZh = computed(() => (lang.value === 'zh' ? true : false));
 
 const SHATEXT = 'SHA256';
@@ -42,14 +38,9 @@ const getData: any = computed(() => {
 });
 
 // 复制
-const inputDom: Ref<HTMLElement | null> = ref(null);
 async function handleUrlCopy(value: string | undefined) {
   if (!value) return;
-  if (inputDom.value) {
-    (inputDom.value as HTMLInputElement).value = value;
-    (inputDom.value as HTMLInputElement).select();
-    document.execCommand('copy');
-  }
+  navigator.clipboard.writeText(value);
   ElMessage({
     message: i18n.value.download.COPY_SUCCESS,
     type: 'success',
@@ -76,12 +67,10 @@ const hoverTips = computed(() => (type: string) => {
     case 'distributed':
       tips = i18n.value.download.DISTRIBUTED;
       break;
+    default:
+      break;
   }
   return tips;
-});
-
-onMounted(() => {
-  inputDom.value = document.getElementById('useCopy');
 });
 
 const activeName = computed(() => {
@@ -94,26 +83,6 @@ const activeName = computed(() => {
 });
 const activeMobile = ref(activeName.value);
 
-// 下载权限
-const changeDownloadAuth = () => {
-  ElMessageBox.confirm(
-    i18n.value.download.DONNLOAD_TEXT,
-    i18n.value.download.DONNLOAD_TIPS,
-    {
-      type: 'warning',
-      cancelButtonText: i18n.value.download.DONNLOAD_CANCEL,
-      confirmButtonText: i18n.value.download.DONNLOAD_COMFIRM,
-    }
-  )
-    .then(() => {
-      showGuard();
-    })
-    .catch(() => {
-      handleError('Error!');
-    });
-};
-//控制需要登录后才能下载的版本,最新版的LTS和Preview都需要登录后才能下载的版本
-const downloadVersionAuth = [DownloadConfig[0].name, DownloadConfig[1].name];;
 watch(
   () => getData.value,
   () => {
@@ -130,7 +99,6 @@ watch(
       :bread2="i18n.download.DOWNLOAD_HISTORY"
       :link1="`/${lang}/download/`"
     />
-
     <div class="download-filter">
       <div class="slect-box">
         <span class="label">{{ i18n.download.VERSION }}</span>
@@ -188,34 +156,14 @@ watch(
               <template v-if="subitem.centos_url !== ''">
                 <p class="text">{{ item.thead[1] }}</p>
                 <div class="down-action lable-name2">
-                  <template
-                    v-if="
-                      downloadVersionAuth.includes(selectVersion) &&
-                      !guardAuthClient.username
-                    "
-                  >
-                    <OButton
-                      type="primary"
-                      size="mini"
-                      animation
-                      @click="changeDownloadAuth"
-                    >
+                  <a :href="subitem.centos_url">
+                    <OButton size="mini" animation type="primary">
                       {{ i18n.download.BTN_TEXT }}
                       <template #suffixIcon>
                         <IconDownload />
                       </template>
                     </OButton>
-                  </template>
-                  <template v-else>
-                    <a :href="subitem.centos_url">
-                      <OButton size="mini" animation type="primary">
-                        {{ i18n.download.BTN_TEXT }}
-                        <template #suffixIcon>
-                          <IconDownload />
-                        </template>
-                      </OButton>
-                    </a>
-                  </template>
+                  </a>
                   <OButton
                     size="mini"
                     type="text"
@@ -245,33 +193,13 @@ watch(
               <template v-if="subitem.aarch_url !== ''">
                 <p class="text">{{ item.thead[2] }}</p>
                 <div class="down-action lable-name3">
-                  <template
-                    v-if="
-                      downloadVersionAuth.includes(selectVersion) &&
-                      !guardAuthClient.username
-                    "
-                  >
-                    <OButton
-                      animation
-                      size="mini"
-                      type="primary"
-                      @click="changeDownloadAuth"
-                    >
+                  <a :href="subitem.aarch_url">
+                    <OButton animation size="mini" type="primary">
                       {{ i18n.download.BTN_TEXT }}
                       <template #suffixIcon>
                         <IconDownload />
-                      </template>
-                    </OButton>
-                  </template>
-                  <template v-else>
-                    <a :href="subitem.aarch_url">
-                      <OButton animation size="mini" type="primary">
-                        {{ i18n.download.BTN_TEXT }}
-                        <template #suffixIcon>
-                          <IconDownload />
-                        </template> </OButton
-                    ></a>
-                  </template>
+                      </template> </OButton
+                  ></a>
                   <OButton
                     class="down-copy lable-name3"
                     size="mini"
@@ -289,33 +217,14 @@ watch(
               <template v-if="subitem.x86_url !== ''">
                 <p class="text">{{ item.thead[3] }}</p>
                 <div class="down-action">
-                  <template
-                    v-if="
-                      downloadVersionAuth.includes(selectVersion) &&
-                      !guardAuthClient.username
-                    "
-                  >
-                    <OButton
-                      size="mini"
-                      animation
-                      type="primary"
-                      @click="changeDownloadAuth"
-                    >
+                  <a :href="subitem.x86_url">
+                    <OButton size="mini" type="primary" animation>
                       {{ i18n.download.BTN_TEXT }}
                       <template #suffixIcon>
                         <IconDownload />
                       </template>
                     </OButton>
-                  </template>
-                  <template v-else>
-                    <a :href="subitem.x86_url">
-                      <OButton size="mini" type="primary" animation>
-                        {{ i18n.download.BTN_TEXT }}
-                        <template #suffixIcon>
-                          <IconDownload />
-                        </template> </OButton
-                    ></a>
-                  </template>
+                  </a>
                   <OButton
                     class="down-copy lable-name6"
                     size="mini"
@@ -362,33 +271,14 @@ watch(
           <el-table-column :label="item.thead[1]">
             <template #default="scope">
               <div v-if="scope.row.centos_url !== ''" class="down-action">
-                <template
-                  v-if="
-                    downloadVersionAuth.includes(selectVersion) &&
-                    !guardAuthClient.username
-                  "
-                >
-                  <OButton
-                    size="mini"
-                    animation
-                    type="primary"
-                    @click="changeDownloadAuth"
-                  >
+                <a :href="scope.row.centos_url">
+                  <OButton size="mini" animation type="primary">
                     {{ i18n.download.BTN_TEXT }}
                     <template #suffixIcon>
                       <IconDownload />
                     </template>
                   </OButton>
-                </template>
-                <template v-else>
-                  <a :href="scope.row.centos_url">
-                    <OButton size="mini" animation type="primary">
-                      {{ i18n.download.BTN_TEXT }}
-                      <template #suffixIcon>
-                        <IconDownload />
-                      </template> </OButton
-                  ></a>
-                </template>
+                </a>
                 <OButton
                   class="down-copy"
                   size="mini"
@@ -421,34 +311,14 @@ watch(
           <el-table-column :label="item.thead[2]" prop="aarch_url">
             <template #default="scope">
               <div v-if="scope.row.aarch_url !== ''" class="down-action">
-                <template
-                  v-if="
-                    downloadVersionAuth.includes(selectVersion) &&
-                    !guardAuthClient.username
-                  "
-                >
-                  <OButton
-                    size="mini"
-                    animation
-                    type="primary"
-                    @click="changeDownloadAuth"
-                  >
+                <a :href="scope.row.aarch_url">
+                  <OButton size="mini" type="primary" animation>
                     {{ i18n.download.BTN_TEXT }}
                     <template #suffixIcon>
                       <IconDownload />
                     </template>
                   </OButton>
-                </template>
-                <template v-else>
-                  <a :href="scope.row.aarch_url">
-                    <OButton size="mini" type="primary" animation>
-                      {{ i18n.download.BTN_TEXT }}
-                      <template #suffixIcon>
-                        <IconDownload />
-                      </template>
-                    </OButton>
-                  </a>
-                </template>
+                </a>
                 <OButton
                   class="down-copy"
                   size="mini"
@@ -467,33 +337,14 @@ watch(
           <el-table-column :label="item.thead[3]" prop="x86_url">
             <template #default="scope">
               <div v-if="scope.row.x86_url !== ''" class="down-action">
-                <template
-                  v-if="
-                    downloadVersionAuth.includes(selectVersion) &&
-                    !guardAuthClient.username
-                  "
-                >
-                  <OButton
-                    size="mini"
-                    animation
-                    type="primary"
-                    @click="changeDownloadAuth"
-                  >
+                <a :href="scope.row.x86_url">
+                  <OButton size="mini" type="primary" animation>
                     {{ i18n.download.BTN_TEXT }}
                     <template #suffixIcon>
                       <IconDownload />
                     </template>
                   </OButton>
-                </template>
-                <template v-else>
-                  <a :href="scope.row.x86_url">
-                    <OButton size="mini" type="primary" animation>
-                      {{ i18n.download.BTN_TEXT }}
-                      <template #suffixIcon>
-                        <IconDownload />
-                      </template> </OButton
-                  ></a>
-                </template>
+                </a>
                 <OButton
                   class="down-copy"
                   size="mini"
@@ -516,13 +367,8 @@ watch(
       v-else
       :content-data="getData"
       :version-shown="selectVersion"
-      :download-version-auth="downloadVersionAuth"
     />
   </AppContent>
-  <div class="input-box lable-name">
-    <!-- 用于复制RSNC的值 -->
-    <input id="useCopy" type="text" />
-  </div>
 </template>
 
 <style lang="scss" scoped>

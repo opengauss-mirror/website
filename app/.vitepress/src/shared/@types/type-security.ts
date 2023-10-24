@@ -185,3 +185,29 @@ export interface AffectProduct {
 export interface DetailQuery {
   id: string;
 }
+export interface AffectBodyItem {
+  affectProduct: string;
+  fixLabel: string;
+  packName: string;
+}
+export interface SaBodyItem {
+  gaussSaNum: string;
+  releaseDate: string;
+  summary: string;
+  saId: number;
+}
+export interface CvsItemT {
+  NVD: number | string;
+  cate: string;
+  openGauss: number | string;
+}
+export interface CveDetailT {
+  CVSSV3: CveDetailCvss;
+  affectBody: Array<AffectBodyItem>;
+  cveId: number;
+  cveNum: string;
+  description: string;
+  releaseDate: string;
+  saBody: Array<SaBodyItem>;
+  updateTime: string;
+}

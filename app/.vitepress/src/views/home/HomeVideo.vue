@@ -9,12 +9,14 @@ import useWindowResize from '@/components/hooks/useWindowResize';
 
 import VideoConfig from '@/data/video';
 
+import type { VideoItemT } from '@/shared/@types/type-video';
+
 import videoBtn from '@/assets/category/home/video-btn.png';
 import IconArrowRight from '~icons/app/icon-arrow-right.svg';
 
 const modules = [Autoplay];
 const perviewNum = ref(4);
-const videoList = ref<any>([]);
+const videoList = ref<Array<VideoItemT>>([]);
 const { lang } = useData();
 const screenWidth = useWindowResize();
 const router = useRouter();
@@ -24,10 +26,10 @@ const isZh = computed(() => (lang.value === 'zh' ? true : false));
 
 function getVideoList() {
   const result = VideoConfig;
-  const resultList: any = [];
+  const resultList: Array<VideoItemT> = [];
   result.forEach((item, k) => {
     const data = isZh.value ? item.data.zh : item.data.en;
-    data.forEach((el: any, i) => {
+    data.forEach((el: VideoItemT, i) => {
       if (i < 1) {
         el['cover'] = item.poster;
         el['name'] = item.name;
@@ -47,13 +49,15 @@ onMounted(() => {
     screenWidth.value > 1920 ? 6 : screenWidth.value < 994 ? 1 : 4;
 });
 
-const handlerVideoDetail = (id: number, index: number) => {
-  router.go(`/${lang.value}/video/detail/?id=${id}-${index}`);
+const goVideoDetail = (item: VideoItemT) => {
+  if (item.id !== undefined && item.index !== undefined) {
+    router.go(`/${lang.value}/video/detail/?id=${item.id}-${item.index}`);
+  }
 };
 </script>
 
 <template>
-  <div class="video-main">
+  <div class="home-video">
     <h2 class="caption">{{ i18n.home.VIDEO_TITLE }}</h2>
     <swiper
       :slides-per-view="perviewNum"
@@ -73,7 +77,7 @@ const handlerVideoDetail = (id: number, index: number) => {
         <div
           class="home-video-link"
           :style="`background:url(${item.cover}) no-repeat center/cover`"
-          @click="handlerVideoDetail(item.id, item.index)"
+          @click="goVideoDetail(item)"
         >
           <img :src="videoBtn" class="video-btn" />
           <div class="box">

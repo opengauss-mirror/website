@@ -36,42 +36,42 @@ const windowWidth = ref(useWindowResize());
         >
           <el-table-column
             :label="i18n.onlineCommunication.thead[0]"
-            prop="listname"
+            prop="name"
           >
             <template #default="scope">
               <a
                 class="link"
-                :href="scope.row.giteelink"
+                :href="scope.row.giteeLink"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {{ scope.row.listname }}
+                {{ scope.row.name }}
               </a>
             </template>
           </el-table-column>
           <el-table-column
             :label="i18n.onlineCommunication.thead[1]"
-            prop="emailaddress"
+            prop="emailAddress"
           >
             <template #default="scope">
               <a
                 class="link"
                 target="_blank"
                 rel="noopener noreferrer"
-                :href="scope.row.websitelink"
+                :href="scope.row.websiteLink"
               >
-                {{ scope.row.emailaddress }}
+                {{ scope.row.emailAddress }}
               </a>
             </template>
           </el-table-column>
           <el-table-column
             v-if="windowWidth > 768"
             :label="i18n.onlineCommunication.thead[2]"
-            prop="description"
+            prop="desc"
           >
             <template #default="scope">
               <div class="ellipsis">
-                {{ scope.row.description }}
+                {{ scope.row.desc }}
               </div>
             </template>
           </el-table-column>
@@ -82,7 +82,7 @@ const windowWidth = ref(useWindowResize());
           >
             <template #default="scope">
               <a
-                :href="scope.row.archivelink"
+                :href="scope.row.archiveLink"
                 class="link"
                 target="_blank"
                 rel="noopener noreferrer"

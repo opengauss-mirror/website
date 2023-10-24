@@ -3,9 +3,12 @@ import { useI18n } from '@/i18n';
 import BannerLevel2 from '@/components/BannerLevel2.vue';
 import AppContent from '@/components/AppContent.vue';
 
+import useWindowResize from '@/components/hooks/useWindowResize';
+
 import Banner from '@/assets/illustrations/banner-secondary.png';
 import illustration from '@/assets/illustrations/knowledge.png';
 const i18n = useI18n();
+const screenWidth = useWindowResize();
 </script>
 
 <template>
@@ -15,7 +18,7 @@ const i18n = useI18n();
     :illustration="illustration"
   />
   <AppContent>
-    <div class="knowledge-pc">
+    <div v-if="screenWidth > 768" class="knowledge-pc">
       <div
         v-for="(item, index) in i18n.knowledge.module"
         :key="item.name"
@@ -45,7 +48,7 @@ const i18n = useI18n();
         </div>
       </div>
     </div>
-    <div class="knowledge-mobile">
+    <div  v-else class="knowledge-mobile">
       <div
         v-for="item in i18n.knowledge.module"
         :key="item.name"
@@ -81,9 +84,6 @@ const i18n = useI18n();
 
 <style lang="scss" scoped>
 .knowledge-pc {
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
   .module-item {
     display: grid;
     grid-template-columns: 240px 1fr;
@@ -148,10 +148,6 @@ const i18n = useI18n();
   }
 }
 .knowledge-mobile {
-  display: none;
-  @media screen and (max-width: 768px) {
-    display: block;
-  }
   .module-item {
     & + .module-item {
       margin-top: var(--o-spacing-h6);
