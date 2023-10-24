@@ -2,7 +2,6 @@
 import { computed, ref, watch, nextTick } from 'vue';
 import { useRouter, useData } from 'vitepress';
 import { useCommon } from '@/stores/common';
-import { showGuard, logout, getUserAuth, useStoreData } from '@/shared/login';
 import { useI18n } from '@/i18n';
 import HeaderNav from './HeaderNav.vue';
 import AppTheme from './AppTheme.vue';
@@ -16,7 +15,6 @@ import logo_dark from '@/assets/logo_dark.svg';
 import IconSearch from '~icons/app/icon-search.svg';
 import IconCancel from '~icons/app/icon-cancel.svg';
 import IconMenu from '~icons/app/icon-menu.svg';
-import IconLogin from '~icons/app/icon-login.svg';
 
 interface NavItemT {
   NAME: string;
@@ -26,9 +24,6 @@ interface NavItemT {
   IS_OPEN_WINDOW?: number;
   IS_OPEN_MINISITE_WINDOW?: string;
 }
-
-const { token } = getUserAuth();
-const { guardAuthClient } = useStoreData();
 
 const router = useRouter();
 const { lang, theme } = useData();
@@ -167,26 +162,12 @@ const hotList = {
 };
 
 const showDrawer = () => {
-  //热搜
-  // const params = `lang=${lang.value}`;
-  // getPop(params).then((res) => {
-  //   if (popList.value.length === 0) {
-  //     res.obj.forEach((item: string) => {
-  //       popList.value.push(item);
-  //     });
-  //   }
-  // });
   popList.value = lang.value === 'zh' ? hotList.zh : hotList.en;
 };
 
 // 搜索内容
 const searchInput = ref<string>('');
 
-const jumpToUserZone = () => {
-  const language = lang.value === 'zh' ? 'zh' : 'en';
-  const origin = import.meta.env.VITE_LOGIN_ORIGIN;
-  window.open(`${origin}/${language}/profile`, '_black');
-};
 // 关闭搜索框
 const closeSearchBox = () => {
   isShowBox.value = false;
@@ -286,30 +267,6 @@ const searchLink = `/${lang.value}/search/`;
           </div>
         </transition>
       </div>
-      <!-- <ClientOnly>
-        <div class="opt-user">
-          <div v-if="token">
-            <div class="opt-info">
-              <img
-                v-if="guardAuthClient.photo"
-                :src="guardAuthClient.photo"
-                class="opt-img"
-              />
-              <div v-else class="opt-img"></div>
-              <p class="opt-name">{{ guardAuthClient.username }}</p>
-            </div>
-            <ul class="menu-list">
-              <li @click="jumpToUserZone()">{{ i18n.common.USER_CENTER }}</li>
-              <li @click="logout()">{{ i18n.common.LOGOUT }}</li>
-            </ul>
-          </div>
-          <div v-else class="login" @click="showGuard()">
-            <OIcon class="icon">
-              <IconLogin />
-            </OIcon>
-          </div>
-        </div>
-      </ClientOnly> -->
     </div>
   </header>
 </template>
@@ -660,13 +617,6 @@ const searchLink = `/${lang.value}/search/`;
         cursor: default;
       }
     }
-  }
-}
-.login {
-  .icon {
-    font-size: var(--o-font-size-h6);
-    color: var(--o-color-text1);
-    cursor: pointer;
   }
 }
 </style>

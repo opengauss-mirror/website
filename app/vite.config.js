@@ -41,10 +41,7 @@ export default defineConfig({
           )
         ),
         float: FileSystemIconLoader(
-          path.resolve(
-            __dirname,
-            './.vitepress/src/assets/category/float'
-          )
+          path.resolve(__dirname, './.vitepress/src/assets/category/float')
         ),
       },
     }),
@@ -71,11 +68,6 @@ export default defineConfig({
         target: 'https://doc-search.opengauss.org/',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api-search/, ''),
-      },
-      '/ip-api/': {
-        target: 'http://ip-api.com/json/',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/ip-api/, ''),
       },
     },
   },
