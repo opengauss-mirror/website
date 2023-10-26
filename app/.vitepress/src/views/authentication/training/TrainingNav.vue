@@ -15,7 +15,6 @@ const props = defineProps({
   },
 });
 const { currentIndex, dataList } = toRefs(props);
-console.log(dataList.value);
 </script>
 
 <template>
