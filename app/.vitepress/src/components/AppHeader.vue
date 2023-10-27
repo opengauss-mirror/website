@@ -101,6 +101,7 @@ const goMobileSubList = (item: NavItemT) => {
 };
 
 const langShow = ref([] as any);
+const detailFilterList = ['events', 'news', 'blogs'];
 watch(
   () => router.route.path,
   (val: string) => {
@@ -112,6 +113,11 @@ watch(
       }
       if (val === `/${lang.value}/`) {
         langShow.value = ['zh', 'en'];
+      }
+    });
+    detailFilterList.forEach((item) => {
+      if (val.includes(item) && val.split('/')[3]) {
+        langShow.value = [lang.value];
       }
     });
   },
