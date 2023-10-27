@@ -112,9 +112,21 @@ const bannerVideoSrc = `${OBS_VIDEO_LINK}openGauss%20Summit%202022/Banner/openGa
               class="banner-panel-content flex-column"
             >
               <div class="box">
-                <p class="title" :class="{ experts: index === 1 }">
-                  {{ item.title }}
-                </p>
+                <template v-if="item.titleMb.length && windowWidth < 767">
+                  <p
+                    class="title"
+                    v-for="itemTitle in item.titleMb"
+                    :class="{ experts: index === 1 }"
+                  >
+                    {{ itemTitle }}
+                  </p>
+                </template>
+                <template v-else>
+                  <p class="title" :class="{ experts: index === 1 }">
+                    {{ item.title }}
+                  </p>
+                </template>
+
                 <p
                   v-if="item.subtitle"
                   class="subtitle"
@@ -343,7 +355,7 @@ html[lang='zh'] {
           }
         }
         @media screen and (max-width: 824px) {
-          margin-top: 0;
+          margin-top: 20px;
         }
       }
       @media screen and (max-width: 1440px) {

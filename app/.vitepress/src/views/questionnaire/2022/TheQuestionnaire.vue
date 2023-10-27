@@ -2,11 +2,11 @@
 import BannerLevel2 from '@/components/BannerLevel2.vue';
 import AppContent from '@/components/AppContent.vue';
 
-import banner from '@/assets/category/questionnaire/banner.jpg';
-import padImg from '@/assets/category/questionnaire/pad.png';
-import watchImg from '@/assets/category/questionnaire/watch.png';
-import bookImg from '@/assets/category/questionnaire/book.png';
-import capImg from '@/assets/category/questionnaire/cap.png';
+import banner from '@/assets/category/questionnaire/2022/banner.jpg';
+import padImg from '@/assets/category/questionnaire/2022/pad.png';
+import watchImg from '@/assets/category/questionnaire/2022/watch.png';
+import bookImg from '@/assets/category/questionnaire/2022/book.png';
+import capImg from '@/assets/category/questionnaire/2022/cap.png';
 
 const data = {
   title: '2022年度社区满意度调研',
@@ -404,13 +404,13 @@ const data = {
   width: 100%;
   padding: 44px 68px;
   display: flex;
-  background: var(--o-color-bg2) url(@/assets/category/questionnaire/bg1.png)
+  background: var(--o-color-bg2) url(@/assets/category/questionnaire/2022/bg1.png)
     no-repeat center/cover;
   box-shadow: var(--o-shadow-l2);
   @media screen and (max-width: 1100px) {
     padding: 24px 16px;
     display: block;
-    background-image: url(@/assets/category/questionnaire/bg1-mo.png);
+    background-image: url(@/assets/category/questionnaire/2022/bg1-mo.png);
   }
   .left-text {
     width: 400px;
@@ -449,7 +449,7 @@ const data = {
   width: 100%;
   padding: var(--o-spacing-h1) 120px;
   position: relative;
-  background: var(--o-color-bg2) url(@/assets/category/questionnaire/bg2.png)
+  background: var(--o-color-bg2) url(@/assets/category/questionnaire/2022/bg2.png)
     no-repeat top center;
   box-shadow: var(--o-shadow-l2);
   @media screen and (max-width: 1100px) {
@@ -485,7 +485,7 @@ const data = {
       width: 100%;
       text-align: center;
       padding: var(--o-spacing-h5) 0;
-      background: url(@/assets/category/questionnaire/bg-mo.png) no-repeat;
+      background: url(@/assets/category/questionnaire/2022/bg-mo.png) no-repeat;
       background-size: cover;
       img {
         height: 128px;
@@ -531,10 +531,10 @@ const data = {
       width: 100%;
       text-align: center;
       padding: var(--o-spacing-h5) 0;
-      background: url(@/assets/category/questionnaire/bg3.png) no-repeat;
+      background: url(@/assets/category/questionnaire/2022/bg3.png) no-repeat;
       background-size: cover;
       @media screen and (max-width: 1100px) {
-        background: url(@/assets/category/questionnaire/bg-mo.png) no-repeat;
+        background: url(@/assets/category/questionnaire/2022/bg-mo.png) no-repeat;
         background-size: cover;
       }
       img {

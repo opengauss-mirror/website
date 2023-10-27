@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, Ref, CSSProperties, watch, onMounted } from 'vue';
-import { useRouter, useData,useRoute } from 'vitepress';
+import { useRouter, useData, useRoute } from 'vitepress';
 import { postFeedback } from '@/api/api-feedback';
 import { ElMessage } from 'element-plus';
 
@@ -8,6 +8,7 @@ import useWindowResize from '@/components/hooks/useWindowResize';
 import { VULBOX_LINK } from '@/shared/url-config';
 
 import floatClose from '@/assets/category/float/float-close.png';
+import floatBg from '@/assets/category/questionnaire/2023/float-bg.png';
 
 import IconTop from '~icons/float/icon-top.svg';
 import IconSmile from '~icons/float/icon-smile.svg';
@@ -20,13 +21,18 @@ const screenWidth = useWindowResize();
 const { lang } = useData();
 const router = useRouter();
 
+// 满意度调研浮窗
+const FLOAT_QUESTIONNAIRE = '有奖问卷';
+const QUESTIONNAIRE_LINK = '/zh/events/2023-10-27/questionnaire.html';
+const isFloatShow = ref(false);
+
 // 漏洞奖励计划浮窗
-const isSafetyFloatShow=ref(false)
+const isSafetyFloatShow = ref(false);
 const FLOAT_BUG_TEXT = '漏洞奖励';
 const route = useRoute();
-const closeSafetyFloat=()=>{
-  isSafetyFloatShow.value=false
-}
+const closeBgFloat = () => {
+  isFloatShow.value = false;
+};
 watch(
   route,
   (newValue) => {
@@ -37,6 +43,11 @@ watch(
         isSafetyFloatShow.value = true;
       }
     });
+    if (newValue.path.split('/').pop() !== 'questionnaire.html') {
+      isFloatShow.value = true;
+    } else {
+      isFloatShow.value = false;
+    }
   },
   { immediate: true }
 );
@@ -380,133 +391,134 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="float">
+  <div v-if="lang === 'zh'" class="float">
     <template v-if="screenWidth > 1100">
-      <div v-if="isSafetyFloatShow" class="safety-tips">
-        <a :href="VULBOX_LINK" target="_blank" rel="noopener noreferrer">
-          {{ FLOAT_BUG_TEXT }}
+      <div
+        v-if="!isFloatTipShow && isFloatShow"
+        :class="isSafetyFloatShow ? 'safety-tips' : 'questionnaire-tips'"
+      >
+        <a
+          :href="isSafetyFloatShow ? VULBOX_LINK : QUESTIONNAIRE_LINK"
+          :target="isSafetyFloatShow ? '_blank' : '_self'"
+          rel="noopener noreferrer"
+        >
+          {{ isSafetyFloatShow ? FLOAT_BUG_TEXT : FLOAT_QUESTIONNAIRE }}
         </a>
-        <img @click="closeSafetyFloat" class="close-img" :src="floatClose" alt="" />
+        <img @click="closeBgFloat" class="close-img" :src="floatClose" alt="" />
       </div>
       <div class="float-wrap">
-        <template v-if="lang === 'zh'">
-          <div v-show="isFloatTipShow" class="float-tip">
-            <h4 class="tip-title">{{ infoData.feedbackTitle }}</h4>
-            <div class="tip-detail">{{ infoData.welcome }}</div>
-            <div class="btn-box">
-              <OButton size="mini" @click="closeFloatTip">{{
-                infoData.know
-              }}</OButton>
-            </div>
+        <div v-show="isFloatTipShow" class="float-tip">
+          <h4 class="tip-title">{{ infoData.feedbackTitle }}</h4>
+          <div class="tip-detail">{{ infoData.welcome }}</div>
+          <div class="btn-box">
+            <OButton size="mini" @click="closeFloatTip">{{
+              infoData.know
+            }}</OButton>
           </div>
-          <div class="nav-box1">
-            <div
-              @mouseenter="toggleIsShow(true)"
-              @mouseleave="toggleIsShow(false)"
-              class="nav-item"
-            >
-              <OIcon @mouseleave.stop="closefloat" class="icon-box">
-                <component :is="IconSmile"> </component>
+        </div>
+        <div class="nav-box1">
+          <div
+            @mouseenter="toggleIsShow(true)"
+            @mouseleave="toggleIsShow(false)"
+            class="nav-item"
+          >
+            <OIcon @mouseleave.stop="closefloat" class="icon-box">
+              <component :is="IconSmile"> </component>
+            </OIcon>
+            <div v-if="isShow" class="o-popup1" :class="{ show: isDynamic }">
+              <OIcon class="icon-cancel" @click="cancelPopup">
+                <IconCancel />
               </OIcon>
-              <div v-if="isShow" class="o-popup1" :class="{ show: isDynamic }">
-                <OIcon class="icon-cancel" @click="cancelPopup">
-                  <IconCancel />
-                </OIcon>
-                <div class="slider">
-                  <p class="slider-title">
-                    {{ title1 }}
-                    <span class="title-name">{{ title2 }}</span>
-                    {{ title3 }}
-                  </p>
-                  <div class="slider-body">
-                    <div class="slider-tip">
-                      <div v-show="isReasonShow" class="slide-btn-tip">
-                        {{ scoreTip }}
-                      </div>
+              <div class="slider">
+                <p class="slider-title">
+                  {{ title1 }}
+                  <span class="title-name">{{ title2 }}</span>
+                  {{ title3 }}
+                </p>
+                <div class="slider-body">
+                  <div class="slider-tip">
+                    <div v-show="isReasonShow" class="slide-btn-tip">
+                      {{ scoreTip }}
                     </div>
-                    <ClientOnly>
-                      <el-slider
-                        show-stops
-                        v-model="score"
-                        :step="10"
-                        :marks="marks"
-                        :show-tooltip="false"
-                        @input="handleInput"
-                      />
-                    </ClientOnly>
                   </div>
-                  <div class="grade-info">
-                    <span>{{
-                      title2 === TITLES2[0]
-                        ? infoData.grade1
-                        : infoData.grade1_1
-                    }}</span>
-                    <span>{{
-                      title2 === TITLES2[0]
-                        ? infoData.grade2
-                        : infoData.grade2_1
-                    }}</span>
-                  </div>
+                  <ClientOnly>
+                    <el-slider
+                      show-stops
+                      v-model="score"
+                      :step="10"
+                      :marks="marks"
+                      :show-tooltip="false"
+                      @input="handleInput"
+                    />
+                  </ClientOnly>
                 </div>
-                <div v-show="isReasonShow" class="reason">
-                  <div class="input-area" :class="{ 'is-focus': isFocuse }">
-                    <textarea
-                      ref="textareaRef"
-                      v-model="inputText"
-                      :placeholder="placeholder"
-                      maxlength="500"
-                    ></textarea>
-                    <p>
-                      <span>{{ inputText.length }}</span
-                      >/500
-                    </p>
-                  </div>
-                  <p class="more-info">
-                    {{ infoData.more }}
-                    <a :href="'mailto:' + infoData.emile">
-                      {{ infoData.emile }}
-                    </a>
+                <div class="grade-info">
+                  <span>{{
+                    title2 === TITLES2[0] ? infoData.grade1 : infoData.grade1_1
+                  }}</span>
+                  <span>{{
+                    title2 === TITLES2[0] ? infoData.grade2 : infoData.grade2_1
+                  }}</span>
+                </div>
+              </div>
+              <div v-show="isReasonShow" class="reason">
+                <div class="input-area" :class="{ 'is-focus': isFocuse }">
+                  <textarea
+                    ref="textareaRef"
+                    v-model="inputText"
+                    :placeholder="placeholder"
+                    maxlength="500"
+                  ></textarea>
+                  <p>
+                    <span>{{ inputText.length }}</span
+                    >/500
                   </p>
-                  <div class="submit-btn">
-                    <OButton
-                      type="outline"
-                      size="mini"
-                      @click="handleClickSubmit"
-                    >
-                      {{ infoData.submit }}
-                    </OButton>
-                  </div>
                 </div>
-              </div>
-            </div>
-            <div class="nav-item">
-              <OIcon class="icon-box"
-                ><component :is="IconHeadset"></component>
-              </OIcon>
-              <div class="o-popup2">
-                <div
-                  v-for="item in floatData"
-                  :key="item.emile"
-                  class="pop-item"
-                  rel="noopener noreferrer"
-                >
-                  <OIcon><component :is="item.img"></component></OIcon>
-                  <div class="text">
-                    <p class="text-name">
-                      {{ item.text }}
-                    </p>
-                    <p class="text-tip">
-                      <a :href="'mailto:' + item.emile">{{ item.emile }}</a>
-                    </p>
-                  </div>
+                <p class="more-info">
+                  {{ infoData.more }}
+                  <a :href="'mailto:' + infoData.emile">
+                    {{ infoData.emile }}
+                  </a>
+                </p>
+                <div class="submit-btn">
+                  <OButton
+                    type="outline"
+                    size="mini"
+                    @click="handleClickSubmit"
+                  >
+                    {{ infoData.submit }}
+                  </OButton>
                 </div>
               </div>
             </div>
           </div>
-          <div class="nav-item nav-box2" @click="handleClickTop">
-            <OIcon><component :is="IconTop"></component> </OIcon>
+          <div class="nav-item">
+            <OIcon class="icon-box"
+              ><component :is="IconHeadset"></component>
+            </OIcon>
+            <div class="o-popup2">
+              <div
+                v-for="item in floatData"
+                :key="item.emile"
+                class="pop-item"
+                rel="noopener noreferrer"
+              >
+                <OIcon><component :is="item.img"></component></OIcon>
+                <div class="text">
+                  <p class="text-name">
+                    {{ item.text }}
+                  </p>
+                  <p class="text-tip">
+                    <a :href="'mailto:' + item.emile">{{ item.emile }}</a>
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-        </template>
+        </div>
+        <div class="nav-item nav-box2" @click="handleClickTop">
+          <OIcon><component :is="IconTop"></component> </OIcon>
+        </div>
       </div>
     </template>
     <template v-else>
@@ -609,7 +621,7 @@ onMounted(() => {
 <style lang="scss" scoped>
 .float {
   position: fixed;
-  bottom: 200px;
+  bottom: 190px;
   right: 80px;
   z-index: 10;
   @media (max-width: 1100px) {
@@ -624,9 +636,9 @@ onMounted(() => {
     background-size: 100%;
     margin-bottom: 12px;
     position: relative;
-    &:hover{
+    &:hover {
       background-image: url('@/assets/category/float/float-safety-hover.png');
-      .close-img{
+      .close-img {
         display: inline-block;
       }
     }
@@ -634,6 +646,34 @@ onMounted(() => {
       display: inline-block;
       color: var(--o-color-white);
       font-size: var(--o-font-size-text);
+      padding: 20px 17px;
+    }
+    .close-img {
+      display: none;
+      position: absolute;
+      cursor: pointer;
+      right: 0;
+      top: 0;
+      transform: translate(50%, -50%);
+    }
+  }
+  .questionnaire-tips {
+    width: 48px;
+    height: 112px;
+    background-image: url('@/assets/category/questionnaire/2023/float-bg.png');
+    background-size: 100%;
+    margin-bottom: 12px;
+    position: relative;
+    &:hover {
+      .close-img {
+        display: inline-block;
+      }
+    }
+    a {
+      display: inline-block;
+      color: var(--o-color-white);
+      font-size: var(--o-font-size-text);
+      line-height: 16px;
       padding: 20px 17px;
     }
     .close-img {
@@ -1253,7 +1293,11 @@ onMounted(() => {
     }
   }
 }
-.dark .float-head {
-  filter: brightness(0.8) grayscale(0.2) contrast(1.2);
+.dark {
+  .safety-tips,
+  .questionnaire-tips,
+  .float-head {
+    filter: brightness(0.8) grayscale(0.2) contrast(1.2);
+  }
 }
 </style>

@@ -46,8 +46,6 @@ const scroll = () => {
   const scrollTop =
     document.body.scrollTop || document.documentElement.scrollTop;
   const activeList: Array<number> = [];
-  console.log(navRef.value);
-
   navRef.value.forEach((item: any, index: number) => {
     if (scrollTop > item.offsetTop) {
       activeList.push(index);

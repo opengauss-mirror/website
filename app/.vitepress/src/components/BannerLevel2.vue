@@ -44,7 +44,7 @@ const rootStyle = computed(() => {
   <div class="banner-level2" :style="rootStyle">
     <img :src="props.backgroundImage" class="banner-bg" />
     <div class="wrap">
-      <div class="banner-text">
+      <div class="banner-text" :class="illustration ? 'exit-illustration' : ''">
         <p v-if="backgroundText" class="banner-text-bg">
           {{ backgroundText }}
         </p>
@@ -116,9 +116,11 @@ const rootStyle = computed(() => {
       position: relative;
       margin-top: auto;
       margin-bottom: auto;
-      max-width: 54%;
       position: relative;
       z-index: 3;
+      &.exit-illustration {
+        max-width: 54%;
+      }
 
       .banner-text-bg {
         position: absolute;

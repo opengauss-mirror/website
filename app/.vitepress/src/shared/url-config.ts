@@ -1,4 +1,5 @@
 // 涉及的公网路径配置文件
+const HUAWEI_COMPUTE = 'https://huaweicompute.wjx.cn/';
 const DOCS_LINK = 'https://docs.opengauss.org/';
 const OSCHINA_LINK = 'https://my.oschina.net/';
 const CSDN_LINK = 'https://blog.csdn.net/';
@@ -59,6 +60,7 @@ const SAGE_LINK = 'https://sage.thesharps.us/';
 const WJX_LINK = 'https://www.wjx.cn/';
 const TRYME_LINK = 'https://tryme.opengauss.org/';
 export {
+  HUAWEI_COMPUTE,
   TRYME_LINK,
   WJX_LINK,
   SAGE_LINK,
