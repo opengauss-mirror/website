@@ -1,4 +1,4 @@
-FROM gplane/pnpm as Builder
+FROM node:18.14.1 as Builder
 
 RUN mkdir -p /home/opengauss/web
 WORKDIR /home/opengauss/web
@@ -9,6 +9,7 @@ RUN git clone -b v2 https://gitee.com/opengauss/blog.git /home/opengauss/blog &&
     cp -r /home/opengauss/blog/app/en/blogs/* /home/opengauss/web/app/en/blogs && \
     rm -rf /home/opengauss/blog
 
+RUN npm install pnpm -g
 RUN pnpm install
 RUN pnpm build
 
