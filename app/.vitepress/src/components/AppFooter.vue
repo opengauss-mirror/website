@@ -86,26 +86,11 @@ const footBg = {
   pc: `url(${footerBg})`,
   mo: `url(${footerBgMo})`,
 };
-
-// 点击关闭cookies使用提示
-const { isCookieTip } = toRefs(props);
-const emits = defineEmits(['cookie-click']);
-function onCookieClick() {
-  emits('cookie-click');
-}
 </script>
 
 <template>
   <footer class="footer">
     <div class="footer-content">
-      <!-- 隐私政策 -->
-      <div v-if="isCookieTip" class="cookie-privacy">
-        <span>{{ i18n.common.COOKIE.TEXT[0] }} </span>
-        <a :href="i18n.common.COOKIE.PATH" class="link" rel="noopener noreferrer">{{
-          i18n.common.COOKIE.TEXT[1]
-        }}</a>
-        <OIcon class="icon" @click="onCookieClick"><IconCancel /></OIcon>
-      </div>
       <AppContent :pc-top="0" :mobile-top="0">
         <div class="inner">
           <div class="footer-logo">

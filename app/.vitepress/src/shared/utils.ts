@@ -124,3 +124,9 @@ export const windowOpen = (
   const opener = window.open(url, target, features);
   opener && (opener.opener = null);
 };
+
+
+const opt = Object.prototype.toString;
+export function isBoolean(val: unknown): val is boolean {
+  return opt.call(val) === '[object Boolean]';
+}

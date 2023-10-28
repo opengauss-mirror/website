@@ -29,12 +29,6 @@ const config: UserConfig = {
       {},
       `(()=>{const e=localStorage.getItem("vitepress-theme-appearance"),t=window.matchMedia("(prefers-color-scheme: dark)").matches;(e?"dark"===e:t)&&document.documentElement.classList.add("dark");})();`,
     ],
-    [
-      'script',
-      {
-        src: 'https://hm.baidu.com/hm.js?ace49cc6c2f3d0542e97ce86732094dc',
-      },
-    ],
   ],
   appearance: true, // enable dynamic scripts for dark mode
   titleTemplate: false, //  vitepress supports pageTitileTemplate since 1.0.0
