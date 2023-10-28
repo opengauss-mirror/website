@@ -48,7 +48,7 @@ const screenWidth = useWindowResize();
         </div>
       </div>
     </div>
-    <div  v-else class="knowledge-mobile">
+    <div v-else class="knowledge-mobile">
       <div
         v-for="item in i18n.knowledge.module"
         :key="item.name"

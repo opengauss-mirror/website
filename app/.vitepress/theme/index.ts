@@ -10,7 +10,7 @@ import { SeoBox } from '@/components/seo-box';
 
 import ElementPlus from 'element-plus';
 import OpenDesign from 'opendesign';
-import VueDOMPurifyHTML from 'vue-dompurify-html'
+import VueDOMPurifyHTML from 'vue-dompurify-html';
 
 export default {
   Layout,

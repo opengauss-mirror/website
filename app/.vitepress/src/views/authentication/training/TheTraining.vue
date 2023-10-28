@@ -264,7 +264,6 @@ onUnmounted(() => {
       <div id="step" :ref="navTitle" class="train-step lable-name">
         <h2>{{ i18n.authentication.steptitle }}</h2>
         <div class="step-box">
-          <!-- :style="{ backgroundImage: 'url(' + stepImgList[index] + ')' }" -->
           <div
             v-for="(item, index) in i18n.authentication.stepList"
             :key="item.name"

@@ -19,7 +19,7 @@ import download100 from './download1.0.0';
 const downloadData = [
   {
     name: '5.1.0 (Preview)',
-    newLayout:true,
+    newLayout: true,
     data: download510,
     plannedEOL: 'Planned EOL: 2024.03.31',
     docs_list: [
@@ -33,7 +33,7 @@ const downloadData = [
   },
   {
     name: '5.0.0 (LTS)',
-    newLayout:true,
+    newLayout: true,
     data: download500,
     plannedEOL: 'Planned EOL: 2026.03.31',
     docs_list: [
@@ -47,7 +47,7 @@ const downloadData = [
   },
   {
     name: '3.1.1 (Preview)',
-    newLayout:true,
+    newLayout: true,
     data: download311,
     plannedEOL: 'Planned EOL: End-of-Life',
     docs_list: [

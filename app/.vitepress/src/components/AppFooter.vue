@@ -101,9 +101,12 @@ function onCookieClick() {
       <!-- 隐私政策 -->
       <div v-if="isCookieTip" class="cookie-privacy">
         <span>{{ i18n.common.COOKIE.TEXT[0] }} </span>
-        <a :href="i18n.common.COOKIE.PATH" class="link" rel="noopener noreferrer">{{
-          i18n.common.COOKIE.TEXT[1]
-        }}</a>
+        <a
+          :href="i18n.common.COOKIE.PATH"
+          class="link"
+          rel="noopener noreferrer"
+          >{{ i18n.common.COOKIE.TEXT[1] }}</a
+        >
         <OIcon class="icon" @click="onCookieClick"><IconCancel /></OIcon>
       </div>
       <AppContent :pc-top="0" :mobile-top="0">

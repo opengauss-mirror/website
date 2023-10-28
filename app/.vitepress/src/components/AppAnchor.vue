@@ -96,11 +96,6 @@ const selectAnchor = (id: string) => {
   });
 };
 
-// const scrollToTop = () => {
-//   const body = document.getElementById(props.id) || document.documentElement;
-//   body.scrollTop = 0;
-// };
-
 onMounted(() => {
   anchorData.value = flatten(props.data);
   const body = props.id ? document.getElementById(props.id) : window;

@@ -14,9 +14,6 @@ export function getCertification(params: any, lang: string) {
       },
     })
     .then((res: AxiosResponse) => res.data)
-    .catch(() => {
-      handleError('Error!');
-    });
 }
 /**
  * 输入验证码后的验证接口
@@ -27,9 +24,6 @@ export function getSendCode(identification: string, code: string) {
   return request
     .get(url)
     .then((res: AxiosResponse) => res.data)
-    .catch(() => {
-      handleError('Error!');
-    });
 }
 
 /**
@@ -45,7 +39,4 @@ export function downloadCard(pa: string, lang: string) {
       },
     })
     .then((res: AxiosResponse) => res.data)
-    .catch(() => {
-      handleError('Error!');
-    });
 }

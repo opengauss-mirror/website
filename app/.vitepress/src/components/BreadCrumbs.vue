@@ -30,9 +30,12 @@ const { bread1, bread2, link1, link2 } = toRefs(props);
       <IconChevronRight />
     </OIcon>
     <span
-      ><a :href="link2" :class="link2 === '#' ? 'no-click' : ''" rel="noopener noreferrer">{{
-        bread2
-      }}</a></span
+      ><a
+        :href="link2"
+        :class="link2 === '#' ? 'no-click' : ''"
+        rel="noopener noreferrer"
+        >{{ bread2 }}</a
+      ></span
     >
     <slot></slot>
   </div>

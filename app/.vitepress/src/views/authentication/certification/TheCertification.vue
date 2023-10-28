@@ -169,7 +169,9 @@ onMounted(() => {
           </li>
           <li>
             <span>{{ i18n.certification.certificate }}:</span>
-            <a :href="item.certificate" rel="noopener noreferrer">{{ i18n.certification.certify }}</a>
+            <a :href="item.certificate" rel="noopener noreferrer">{{
+              i18n.certification.certify
+            }}</a>
           </li>
           <li></li>
         </ul>
@@ -223,7 +225,6 @@ onMounted(() => {
     background-color: var(--o-color-bg4);
   }
   :deep(.cell) {
-    // white-space: nowrap;
     word-break: break-word;
   }
   :deep(.el-tooltip) {

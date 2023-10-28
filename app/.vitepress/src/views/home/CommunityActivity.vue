@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, Ref, ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import { useI18n } from '@/i18n';
 import { useCommon } from '@/stores/common';
 import { getStatistic } from '@/api/api-search';
@@ -15,7 +15,7 @@ const commonStore = useCommon();
 
 const i18n = useI18n();
 const community = ref();
-const roundList = ref(<Array<RoundItemT>>[]);
+const roundList = ref<Array<RoundItemT>>([]);
 const isShowCommunity = ref(false);
 const roundNumber = ref([
   {

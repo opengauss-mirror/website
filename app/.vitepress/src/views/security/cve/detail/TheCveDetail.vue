@@ -188,9 +188,6 @@ onMounted(() => {
           </OTableColumn>
           <OTableColumn :label="i18n.security.RELEASE_DATE" prop="releaseDate">
           </OTableColumn>
-
-          <!-- <OTableColumn :label="i18n.security.RELEASE_DATE" prop="releaseTime">
-          </OTableColumn> -->
         </OTable>
         <ul class="mobile-list">
           <li v-for="item in advisories" :key="item.saId" class="item">
