@@ -223,6 +223,9 @@ const placeholder = computed(() => {
 });
 const isFocuse = ref(false);
 const textareaRef: Ref<HTMLElement | null> = ref(null);
+const toggleIsFocuse = (focus: boolean) => {
+  isFocuse.value = focus;
+};
 onMounted(() => {
   if (textareaRef.value) {
     textareaRef.value.addEventListener('focus', () => {
@@ -451,36 +454,38 @@ onMounted(() => {
                       @input="handleInput"
                     />
                   </ClientOnly>
+                  <div class="grade-info">
+                    <span>{{
+                      title2 === TITLES2[0]
+                        ? infoData.grade1
+                        : infoData.grade1_1
+                    }}</span>
+                    <span>{{
+                      title2 === TITLES2[0]
+                        ? infoData.grade2
+                        : infoData.grade2_1
+                    }}</span>
+                  </div>
                 </div>
-                <div class="grade-info">
-                  <span>{{
-                    title2 === TITLES2[0] ? infoData.grade1 : infoData.grade1_1
-                  }}</span>
-                  <span>{{
-                    title2 === TITLES2[0] ? infoData.grade2 : infoData.grade2_1
-                  }}</span>
-                </div>
-              </div>
-              <div v-show="isReasonShow" class="reason">
-                <div class="input-area" :class="{ 'is-focus': isFocuse }">
-                  <textarea
-                    ref="textareaRef"
+                <div v-show="isReasonShow" class="reason">
+                  <el-input
                     v-model="inputText"
+                    :rows="3"
+                    type="textarea"
                     :placeholder="placeholder"
+                    @focus="toggleIsFocuse(true)"
+                    @blur="toggleIsFocuse(false)"
                     maxlength="500"
-                  ></textarea>
-                  <p>
-                    <span>{{ inputText.length }}</span
-                    >/500
+                    resize="none"
+                    show-word-limit
+                  />
+                  <p class="more-info">
+                    {{ infoData.more }}
+                    <a :href="'mailto:' + infoData.emile">
+                      {{ infoData.emile }}
+                    </a>
                   </p>
-                </div>
-                <p class="more-info">
-                  {{ infoData.more }}
-                  <a :href="'mailto:' + infoData.emile">
-                    {{ infoData.emile }}
-                  </a>
-                </p>
-                <div class="submit-btn">
+                  <div class="submit-btn">
                   <OButton
                     type="outline"
                     size="mini"
@@ -489,35 +494,36 @@ onMounted(() => {
                     {{ infoData.submit }}
                   </OButton>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="nav-item">
-            <OIcon class="icon-box"
-              ><component :is="IconHeadset"></component>
-            </OIcon>
-            <div class="o-popup2">
-              <div
-                v-for="item in floatData"
-                :key="item.emile"
-                class="pop-item"
-                rel="noopener noreferrer"
-              >
-                <OIcon><component :is="item.img"></component></OIcon>
-                <div class="text">
-                  <p class="text-name">
-                    {{ item.text }}
-                  </p>
-                  <p class="text-tip">
-                    <a :href="'mailto:' + item.emile">{{ item.emile }}</a>
-                  </p>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="nav-item nav-box2" @click="handleClickTop">
-          <OIcon><component :is="IconTop"></component> </OIcon>
+          <div class="nav-item">
+              <OIcon class="icon-box"
+                ><component :is="IconHeadset"></component>
+              </OIcon>
+              <div class="o-popup2">
+                <div
+                  v-for="item in floatData"
+                  :key="item.emile"
+                  class="pop-item"
+                  rel="noopener noreferrer"
+                >
+                  <OIcon><component :is="item.img"></component></OIcon>
+                  <div class="text">
+                    <p class="text-name">
+                      {{ item.text }}
+                    </p>
+                    <p class="text-tip">
+                      <a :href="'mailto:' + item.emile">{{ item.emile }}</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <div class="nav-item nav-box2" @click="handleClickTop">
+            <OIcon><component :is="IconTop"></component> </OIcon>
+          </div>
         </div>
       </div>
     </template>
@@ -580,18 +586,17 @@ onMounted(() => {
                 </div>
               </div>
               <div v-show="isReasonShow" class="reason">
-                <div class="input-area" :class="{ 'is-focus': isFocuse }">
-                  <textarea
-                    id="textarea-input"
-                    v-model="inputText"
-                    :placeholder="placeholder"
-                    maxlength="500"
-                  ></textarea>
-                  <p>
-                    <span>{{ inputText.length }}</span
-                    >/500
-                  </p>
-                </div>
+                <el-input
+                  v-model="inputText"
+                  :rows="5"
+                  type="textarea"
+                  :placeholder="placeholder"
+                  @focus="toggleIsFocuse(true)"
+                  @blur="toggleIsFocuse(false)"
+                  maxlength="500"
+                  resize="none"
+                  show-word-limit
+                />
                 <p class="more-info">
                   {{ infoData.more }}
                   <a :href="'mailto:' + infoData.emile">
@@ -898,34 +903,18 @@ onMounted(() => {
         }
         .reason {
           margin-top: 16px;
-          .input-area {
-            border: 1px solid var(--o-color-border2);
-            padding: 8px 16px;
-            height: 88px;
-            font-size: var(--o-font-size-tip);
-            line-height: var(--o-line-height-tip);
-            position: relative;
-            &:hover {
-              border: 1px solid var(--o-color-border1);
-            }
-            &.is-focus {
-              border: 1px solid var(--o-color-border1);
-            }
-            textarea {
-              width: 100%;
-              height: 100%;
-              border: none;
-              outline: none;
-              resize: none;
+          :deep(.el-textarea) {
+            .el-textarea__inner {
               background-color: var(--o-color-bg2);
+              border-radius: 0;
+              box-shadow: 0 0 0 1px var(--o-color-border2) inset;
               color: var(--o-color-text1);
+              &:focus {
+                box-shadow: 0 0 0 1px var(--o-color-border1) inset;
+              }
             }
-            p {
-              text-align: right;
-              color: var(--o-color-text4);
-              position: absolute;
-              right: 6px;
-              bottom: 6px;
+            .el-input__count {
+              background-color: var(--o-color-bg2);
             }
           }
           .more-info {
@@ -1225,35 +1214,18 @@ onMounted(() => {
       }
       .reason {
         margin-top: 16px;
-        .input-area {
-          border: 1px solid var(--o-color-border2);
-          padding: 8px 16px;
-          height: 88px;
-          font-size: var(--o-font-size-text);
-          line-height: var(--o-line-height-text);
-          position: relative;
-          border-radius: 4px;
-          &:hover {
-            border: 1px solid var(--o-color-border1);
-          }
-          &.is-focus {
-            border: 1px solid var(--o-color-border1);
-          }
-          textarea {
-            width: 100%;
-            height: 100%;
-            border: none;
-            outline: none;
-            resize: none;
+        :deep(.el-textarea) {
+          .el-textarea__inner {
             background-color: var(--o-color-bg2);
+            border-radius: 0;
+            box-shadow: 0 0 0 1px var(--o-color-border2) inset;
             color: var(--o-color-text1);
+            &:focus {
+              box-shadow: 0 0 0 1px var(--o-color-border1) inset;
+            }
           }
-          p {
-            text-align: right;
-            color: var(--o-color-text4);
-            position: absolute;
-            right: 6px;
-            bottom: 6px;
+          .el-input__count {
+            background-color: var(--o-color-bg2);
           }
         }
         .more-info {
