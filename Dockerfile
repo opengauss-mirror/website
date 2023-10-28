@@ -12,20 +12,59 @@ RUN git clone -b v2 https://gitee.com/opengauss/blog.git /home/opengauss/blog &&
 RUN pnpm install
 RUN pnpm build
 
-FROM swr.cn-north-4.myhuaweicloud.com/opensourceway/openeuler/nginx:1.22.0-22.03-lts
+FROM swr.cn-north-4.myhuaweicloud.com/opensourceway/openeuler/nginx:1.24.0-22.03-lts as NginxBuilder
 
+FROM openeuler/openeuler:22.03-lts-sp1
+
+COPY --from=NginxBuilder /usr/share/nginx /usr/share/nginx
+COPY --from=NginxBuilder /usr/sbin/nginx /usr/sbin/nginx
+COPY --from=NginxBuilder /etc/nginx/modules /etc/nginx/modules
+COPY --from=NginxBuilder /etc/nginx/geoip  /etc/nginx/geoip
+COPY --from=NginxBuilder /etc/nginx/mime.types  /etc/nginx/mime.types
 COPY --from=Builder /home/opengauss/web/app/.vitepress/dist /usr/share/nginx/html/
-RUN chmod -R 755 /usr/share/nginx/html
+RUN chmod -R 440 /usr/share/nginx/html
 COPY ./deploy/nginx/nginx.conf /etc/nginx/nginx.conf
 
+ENV PATH /usr/share/nginx/sbin:$PATH
+ENV NGINX_CONFIG_FILE /etc/nginx/nginx.conf
+ENV NGINX_PID /var/run/nginx.pid
+ENV NGINX_USER nginx
+ENV NGINX_GROUP nginx
+
 RUN touch /var/run/nginx.pid \
+    && groupadd -g 1000 nginx \
+    && useradd -u 1000 -g nginx -s /sbin/nologin nginx \
+    && chown -R nginx:nginx /usr/share/nginx \
+    && chmod -R 550 /usr/share/nginx/ \
+    && mkdir -p /var/log/nginx \
     && chown -R nginx:nginx /var/log/nginx \
+    && chmod -R 640 /var/log/nginx \
+    && mkdir -p /var/lib/nginx/tmp/client_body \
+    && chown -R nginx:nginx /var/lib/nginx/tmp/client_body \
+    && mkdir -p /var/lib/nginx/tmp/fastcgi \
+    && chown -R nginx:nginx /var/lib/nginx/tmp/fastcgi \
+    && mkdir -p /var/lib/nginx/tmp/proxy \
+    && chown -R nginx:nginx /var/lib/nginx/tmp/proxy \
+    && mkdir -p /var/lib/nginx/tmp/scgi \
+    && chown -R nginx:nginx /var/lib/nginx/tmp/scgi \
+    && mkdir -p /var/lib/nginx/tmp/uwsgi \
+    && chown -R nginx:nginx /var/lib/nginx/tmp/uwsgi \
+    && chmod -R 500 /var/lib/nginx/ \
+    && chown -R nginx:nginx /var/lib/nginx/ \
     && chown -R nginx:nginx /var/run/nginx.pid \
-    && chown -R nginx:nginx /etc/nginx
+    && chmod 640 /var/run/nginx.pid \
+    && chown -R nginx:nginx /etc/nginx \
+    && chmod 550 /etc/nginx \
+    && chmod 550 /etc/nginx/geoip \
+    && chmod 440 /etc/nginx/geoip/* \
+    && chmod 550 /etc/nginx/modules \
+    && chmod 440 /etc/nginx/modules/* \
+    && chmod 440 /etc/nginx/nginx.conf \
+    && chmod 440 /etc/nginx/mime.types \
+    && rm -rf /usr/share/nginx/html/50x.html
 
 EXPOSE 8080
 
 USER nginx
 
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
-
