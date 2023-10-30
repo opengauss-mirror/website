@@ -50,7 +50,7 @@ export default defineConfig({
     hmr: true, // 配置自动刷新
     proxy: {
       '/api-cve/': {
-        target: 'https://api.openeuler.org/cve-manager/',
+        target: 'https://cve-opengauss.osinfra.cn/cve-manager/',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api-cve/, ''),
       },
