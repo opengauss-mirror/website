@@ -1,11 +1,10 @@
 <script setup lang="ts">
 import AppHeader from '@/components/AppHeader.vue';
 import AppFooter from '@/components/AppFooter.vue';
-
+import CookieNotice from '@/components/CookieNotice.vue';
 import { useData } from 'vitepress';
 import type { Component } from 'vue';
-import { computed, ref, onMounted } from 'vue';
-import { setCustomCookie, getCustomCookie } from './shared/utils';
+import { computed } from 'vue';
 import zhCn from 'element-plus/lib/locale/lang/zh-cn';
 import en from 'element-plus/lib/locale/lang/en';
 
@@ -44,17 +43,6 @@ const isCustomLayout = computed(() => {
 const comp = computed(() => {
   return compMapping[frontmatter.value.category];
 });
-// cookies使用提示
-const isCookieTip = ref(false);
-function handleCookieClick() {
-  isCookieTip.value = false;
-  setCustomCookie('agreed-cookiepolicy', 'true', 180);
-}
-
-onMounted(() => {
-  isCookieTip.value = getCustomCookie('agreed-cookiepolicy') ? false : true;
-});
-
 </script>
 
 <template>
@@ -64,10 +52,11 @@ onMounted(() => {
       <SeoBox :seo-data="seoConfig[lang]?.home" />
       <component :is="comp" v-if="isCustomLayout"></component>
       <Content v-else />
-      <AppFloat/>
+      <AppFloat />
     </main>
   </el-config-provider>
-  <AppFooter :is-cookie-tip="isCookieTip" @cookie-click="handleCookieClick" />
+  <CookieNotice />
+  <AppFooter />
 </template>
 
 <style lang="scss" scoped>

@@ -29,7 +29,7 @@ interface TagsParams {
 }
 
 // 先用euler
-export function getSortData(params: SortParams) {
+export function getSortData(params: SortParams | object) {
   const url = '/api-search/search/sort';
   return request.post(url, params).then((res: AxiosResponse) => res.data);
 }
@@ -75,5 +75,9 @@ export function getPop(params: any) {
  */
 export function getStatistic() {
   const url = '/api-dsapi/query/all?community=openGauss';
-  return request.get(url).then((res: AxiosResponse) => res.data);
+  return request
+    .get(url, {
+      $doException: false,
+    })
+    .then((res: AxiosResponse) => res.data);
 }

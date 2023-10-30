@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { toRefs } from 'vue';
 import { useI18n } from '@/i18n';
 import AppContent from '@/components/AppContent.vue';
 
@@ -17,7 +16,6 @@ import logoCsdn from '@/assets/footer/csdn.png';
 import logo51cto from '@/assets/footer/cto.png';
 
 import CodeGzh from '@/assets/footer/wechat.png';
-import IconCancel from '~icons/app/icon-cancel.svg';
 
 import {
   OSCHINA_LINK,
@@ -28,13 +26,6 @@ import {
   BILIBILI_LINK,
   ZHIZHU_LINK,
 } from '@/shared/url-config';
-
-const props = defineProps({
-  isCookieTip: {
-    type: Boolean,
-    default: false,
-  },
-});
 
 const i18n = useI18n();
 
@@ -86,26 +77,11 @@ const footBg = {
   pc: `url(${footerBg})`,
   mo: `url(${footerBgMo})`,
 };
-
-// 点击关闭cookies使用提示
-const { isCookieTip } = toRefs(props);
-const emits = defineEmits(['cookie-click']);
-function onCookieClick() {
-  emits('cookie-click');
-}
 </script>
 
 <template>
   <footer class="footer">
     <div class="footer-content">
-      <!-- 隐私政策 -->
-      <div v-if="isCookieTip" class="cookie-privacy">
-        <span>{{ i18n.common.COOKIE.TEXT[0] }} </span>
-        <a :href="i18n.common.COOKIE.PATH" class="link" rel="noopener noreferrer">{{
-          i18n.common.COOKIE.TEXT[1]
-        }}</a>
-        <OIcon class="icon" @click="onCookieClick"><IconCancel /></OIcon>
-      </div>
       <AppContent :pc-top="0" :mobile-top="0">
         <div class="inner">
           <div class="footer-logo">
@@ -321,69 +297,6 @@ $color: #fff;
     font-size: var(--o-font-size-text);
     @media (max-width: 1100px) {
       font-size: var(--o-font-size-tip);
-    }
-  }
-
-  .cookie-privacy {
-    line-height: 48px;
-    width: 100%;
-    height: 48px;
-    background-color: var(--o-color-bg1);
-    color: var(--o-color-text3);
-    font-size: 14px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    z-index: 999;
-    box-shadow: var(--o-shadow-l1);
-    text-align: center;
-    @media screen and (max-width: 1000px) {
-      font-size: 12px;
-      line-height: 20px;
-    }
-    @media screen and (max-width: 760px) {
-      display: block;
-      padding-left: 12px;
-      padding-right: 36px;
-      padding-top: 4px;
-      height: auto;
-    }
-    .link {
-      cursor: pointer;
-      text-decoration: solid;
-      white-space: pre;
-      @media screen and (max-width: 760px) {
-        display: block;
-      }
-    }
-    .icon {
-      cursor: pointer;
-      vertical-align: middle;
-      margin-left: 16px;
-      width: 24px;
-      height: 24px;
-      background: var(--o-color-greyblack3);
-      border-radius: 50%;
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      svg {
-        font-size: 20px;
-        color: var(--el-color-white);
-      }
-
-      @media screen and (max-width: 760px) {
-        width: 20px;
-        height: 20px;
-        margin-left: 12px;
-        position: absolute;
-        top: 12px;
-        right: 12px;
-      }
     }
   }
 }

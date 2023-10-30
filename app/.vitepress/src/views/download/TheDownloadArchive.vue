@@ -181,7 +181,10 @@ watch(
                   v-if="subitem.download_guide_url"
                   class="download-guide-btn"
                 >
-                  <a :href="subitem.download_guide_url" rel="noopener noreferrer">
+                  <a
+                    :href="subitem.download_guide_url"
+                    rel="noopener noreferrer"
+                  >
                     <OButton size="mini" animation>
                       {{ i18n.download.DOCS_TEXT }}
                       <template #suffixIcon>
@@ -296,7 +299,10 @@ watch(
                 v-if="scope.row.download_guide_url"
                 class="download-guide-btn"
               >
-                <a :href="scope.row.download_guide_url" rel="noopener noreferrer">
+                <a
+                  :href="scope.row.download_guide_url"
+                  rel="noopener noreferrer"
+                >
                   <OButton size="mini" animation>
                     {{ i18n.download.DOCS_TEXT }}
                     <template #suffixIcon>

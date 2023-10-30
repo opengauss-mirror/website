@@ -6,9 +6,9 @@ import { ElMessage } from 'element-plus';
 
 import useWindowResize from '@/components/hooks/useWindowResize';
 import { VULBOX_LINK } from '@/shared/url-config';
+import { handleError } from '@/shared/utils';
 
 import floatClose from '@/assets/category/float/float-close.png';
-import floatBg from '@/assets/category/questionnaire/2023/float-bg.png';
 
 import IconTop from '~icons/float/icon-top.svg';
 import IconSmile from '~icons/float/icon-smile.svg';
@@ -266,17 +266,25 @@ function postScore() {
         });
         const summitTime = new Date().valueOf();
         if (screenWidth.value < 1100) {
-          localStorage.setItem(
-            'submit-time-mobile',
-            JSON.stringify(summitTime)
-          );
+          try {
+            localStorage.setItem(
+              'submit-time-mobile',
+              JSON.stringify(summitTime)
+            );
+          } catch {
+            handleError();
+          }
           isReasonShow.value = false;
           inputText.value = '';
           score.value = 0;
           isMobileFloatShow.value = false;
           dialogVisible.value = false;
         } else {
-          localStorage.setItem('submit-time', JSON.stringify(summitTime));
+          try {
+            localStorage.setItem('submit-time', JSON.stringify(summitTime));
+          } catch {
+            handleError();
+          }
           isReasonShow.value = false;
           inputText.value = '';
           score.value = 0;
@@ -302,14 +310,18 @@ function handleClickSubmit() {
   const intervalTime = 1 * 12 * 60 * 60 * 1000;
   const nowTime = new Date().valueOf();
   if (lastSummitTIME) {
-    const flag = nowTime - JSON.parse(lastSummitTIME) > intervalTime;
-    if (flag) {
-      postScore();
-    } else {
-      ElMessage({
-        message: '请不要频繁提交！',
-        type: 'warning',
-      });
+    try {
+      const flag = nowTime - JSON.parse(lastSummitTIME) > intervalTime;
+      if (flag) {
+        postScore();
+      } else {
+        ElMessage({
+          message: '请不要频繁提交！',
+          type: 'warning',
+        });
+      }
+    } catch {
+      handleError();
     }
   } else {
     postScore();
@@ -361,7 +373,11 @@ const isMobileFloatShow = ref(false);
 const closeMobileFloat = () => {
   isMobileFloatShow.value = false;
   const closeTime = new Date().valueOf();
-  localStorage.setItem('close-float-time', JSON.stringify(closeTime));
+  try {
+    localStorage.setItem('close-float-time', JSON.stringify(closeTime));
+  } catch {
+    handleError();
+  }
 };
 const setScore = (val: number) => {
   isReasonShow.value = true;
@@ -378,9 +394,17 @@ onMounted(() => {
     let flag1;
     let flag2;
     if (lastCloseTIME) {
-      flag1 = nowTime - JSON.parse(lastCloseTIME) > sevenDaysInMilliseconds;
+      try {
+        flag1 = nowTime - JSON.parse(lastCloseTIME) > sevenDaysInMilliseconds;
+      } catch {
+        handleError();
+      }
     } else if (lastSummitTIME) {
-      flag2 = nowTime - JSON.parse(lastSummitTIME) > thirtyInMilliseconds;
+      try {
+        flag2 = nowTime - JSON.parse(lastSummitTIME) > thirtyInMilliseconds;
+      } catch {
+        handleError();
+      }
     }
     if (flag1 && flag2) {
       isMobileFloatShow.value = true;
@@ -407,7 +431,7 @@ onMounted(() => {
         >
           {{ isSafetyFloatShow ? FLOAT_BUG_TEXT : FLOAT_QUESTIONNAIRE }}
         </a>
-        <img @click="closeBgFloat" class="close-img" :src="floatClose" alt="" />
+        <img class="close-img" :src="floatClose" alt="" @click="closeBgFloat" />
       </div>
       <div class="float-wrap">
         <div v-show="isFloatTipShow" class="float-tip">
@@ -421,11 +445,11 @@ onMounted(() => {
         </div>
         <div class="nav-box1">
           <div
+            class="nav-item"
             @mouseenter="toggleIsShow(true)"
             @mouseleave="toggleIsShow(false)"
-            class="nav-item"
           >
-            <OIcon @mouseleave.stop="closefloat" class="icon-box">
+            <OIcon class="icon-box" @mouseleave.stop="closefloat">
               <component :is="IconSmile"> </component>
             </OIcon>
             <div v-if="isShow" class="o-popup1" :class="{ show: isDynamic }">
@@ -446,8 +470,8 @@ onMounted(() => {
                   </div>
                   <ClientOnly>
                     <el-slider
-                      show-stops
                       v-model="score"
+                      show-stops
                       :step="10"
                       :marks="marks"
                       :show-tooltip="false"
@@ -473,11 +497,11 @@ onMounted(() => {
                     :rows="3"
                     type="textarea"
                     :placeholder="placeholder"
-                    @focus="toggleIsFocuse(true)"
-                    @blur="toggleIsFocuse(false)"
                     maxlength="500"
                     resize="none"
                     show-word-limit
+                    @focus="toggleIsFocuse(true)"
+                    @blur="toggleIsFocuse(false)"
                   />
                   <p class="more-info">
                     {{ infoData.more }}
@@ -486,41 +510,41 @@ onMounted(() => {
                     </a>
                   </p>
                   <div class="submit-btn">
-                  <OButton
-                    type="outline"
-                    size="mini"
-                    @click="handleClickSubmit"
-                  >
-                    {{ infoData.submit }}
-                  </OButton>
-                </div>
+                    <OButton
+                      type="outline"
+                      size="mini"
+                      @click="handleClickSubmit"
+                    >
+                      {{ infoData.submit }}
+                    </OButton>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="nav-item">
-              <OIcon class="icon-box"
-                ><component :is="IconHeadset"></component>
-              </OIcon>
-              <div class="o-popup2">
-                <div
-                  v-for="item in floatData"
-                  :key="item.emile"
-                  class="pop-item"
-                  rel="noopener noreferrer"
-                >
-                  <OIcon><component :is="item.img"></component></OIcon>
-                  <div class="text">
-                    <p class="text-name">
-                      {{ item.text }}
-                    </p>
-                    <p class="text-tip">
-                      <a :href="'mailto:' + item.emile">{{ item.emile }}</a>
-                    </p>
-                  </div>
+            <OIcon class="icon-box"
+              ><component :is="IconHeadset"></component>
+            </OIcon>
+            <div class="o-popup2">
+              <div
+                v-for="item in floatData"
+                :key="item.emile"
+                class="pop-item"
+                rel="noopener noreferrer"
+              >
+                <OIcon><component :is="item.img"></component></OIcon>
+                <div class="text">
+                  <p class="text-name">
+                    {{ item.text }}
+                  </p>
+                  <p class="text-tip">
+                    <a :href="'mailto:' + item.emile">{{ item.emile }}</a>
+                  </p>
                 </div>
               </div>
             </div>
+          </div>
           <div class="nav-item nav-box2" @click="handleClickTop">
             <OIcon><component :is="IconTop"></component> </OIcon>
           </div>
@@ -545,7 +569,7 @@ onMounted(() => {
               ><component :is="IconCancel"></component>
             </OIcon>
           </div>
-          <el-dialog :show-close="false" v-model="dialogVisible">
+          <el-dialog v-model="dialogVisible" :show-close="false">
             <div class="o-popup1">
               <div class="slider">
                 <p class="slider-title">
@@ -591,11 +615,11 @@ onMounted(() => {
                   :rows="5"
                   type="textarea"
                   :placeholder="placeholder"
-                  @focus="toggleIsFocuse(true)"
-                  @blur="toggleIsFocuse(false)"
                   maxlength="500"
                   resize="none"
                   show-word-limit
+                  @focus="toggleIsFocuse(true)"
+                  @blur="toggleIsFocuse(false)"
                 />
                 <p class="more-info">
                   {{ infoData.more }}
@@ -611,8 +635,8 @@ onMounted(() => {
                 <OButton
                   type="outline"
                   size="middle"
-                  @click="postScore"
                   :class="{ forbidden: !isReasonShow }"
+                  @click="postScore"
                   >{{ infoData.confirm }}</OButton
                 >
               </div>

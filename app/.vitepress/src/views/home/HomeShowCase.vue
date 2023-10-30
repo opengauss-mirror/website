@@ -6,7 +6,7 @@ import { useCommon } from '@/stores/common';
 import IconArrowRight from '~icons/app/icon-arrow-right.svg';
 
 import ShowCaseData from '@/data/showcase';
-import { getUserCaseData } from '@/api/api-showcase';
+import { getSortData } from '@/api/api-search';
 
 import { useI18n } from '@/i18n';
 import { handleError, windowOpen } from '@/shared/utils';
@@ -43,7 +43,7 @@ const data = ref({
 });
 const initData = () => {
   const result: any = {};
-  getUserCaseData(data.value).then((res: any) => {
+  getSortData(data.value).then((res: any) => {
     if (res.obj && res.obj.records.length) {
       const caseListAll = res.obj.records.filter((item: any) => {
         return item.path !== 'userPractice/index';

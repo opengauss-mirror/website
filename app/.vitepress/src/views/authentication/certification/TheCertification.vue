@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, onMounted, computed, reactive } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 import { useI18n } from '@/i18n';
 
 import BannerLevel2 from '@/components/BannerLevel2.vue';
@@ -25,7 +25,7 @@ const searchContent = ref('');
 const total = ref(0);
 const pageSize = ref(10);
 const currentPage = ref(1);
-const totalPage = ref(0);
+const totalPage = computed(() => Math.ceil(total.value / pageSize.value));
 const layout = ref('sizes, prev, pager, next, slot, jumper');
 
 const i18n = useI18n();
@@ -38,21 +38,25 @@ const randerData = computed(() => {
     pageSize.value * currentPage.value
   );
 });
-const queryData = reactive({
-  page: 1,
-  per_page: 10,
-});
 // 分页size修改
 const handleSizeChange = (val: number) => {
-  queryData.per_page = val;
-  totalPage.value = Math.ceil(total.value / val);
+  pageSize.value = val;
 };
 
 const handleCurrentChange = (val: number) => {
-  queryData.page = val;
   currentPage.value = val;
 };
-
+// 移动端分页器翻页
+const changeCurrentMb = (val: string) => {
+  if (val === 'prev' && currentPage.value > 1) {
+    currentPage.value = currentPage.value - 1;
+  } else if (val === 'next' && currentPage.value < totalPage.value) {
+    currentPage.value = currentPage.value + 1;
+  }
+};
+function jumpPageMb(page: number) {
+  currentPage.value = page;
+}
 // 前端搜索
 function searchProductOrName(data: CertificationDataT[], query: string) {
   if (!query) {
@@ -169,7 +173,9 @@ onMounted(() => {
           </li>
           <li>
             <span>{{ i18n.certification.certificate }}:</span>
-            <a :href="item.certificate" rel="noopener noreferrer">{{ i18n.certification.certify }}</a>
+            <a :href="item.certificate" rel="noopener noreferrer">{{
+              i18n.certification.certify
+            }}</a>
           </li>
           <li></li>
         </ul>
@@ -192,8 +198,9 @@ onMounted(() => {
       </OPagination>
       <AppPaginationMo
         :current-page="currentPage"
-        :total-page="tableData.length"
-        @turn-page="handleSizeChange"
+        :total-page="totalPage"
+        @turn-page="changeCurrentMb"
+        @jump-page="jumpPageMb"
       />
     </ClientOnly>
     <p class="introduce">
@@ -223,7 +230,6 @@ onMounted(() => {
     background-color: var(--o-color-bg4);
   }
   :deep(.cell) {
-    // white-space: nowrap;
     word-break: break-word;
   }
   :deep(.el-tooltip) {

@@ -53,17 +53,11 @@ const goLink = (url: string, isBlank: boolean) => {
     <div class="contribution-map-mobile-img">
       <img
         v-show="!isDark"
-        :src="
-          isZh
-            ? contributionMap_light_zh_mb
-            : contributionMap_light_en_mb
-        "
+        :src="isZh ? contributionMap_light_zh_mb : contributionMap_light_en_mb"
       />
       <img
         v-show="isDark"
-        :src="
-          isZh ? contributionMap_dark_zh_mb : contributionMap_dark_en_mb
-        "
+        :src="isZh ? contributionMap_dark_zh_mb : contributionMap_dark_en_mb"
       />
       <div
         v-for="item in i18n.contribution.LINK_LIST"

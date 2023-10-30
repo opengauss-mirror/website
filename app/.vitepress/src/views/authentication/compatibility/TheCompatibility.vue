@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, onMounted, reactive, computed } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 import { useI18n } from '@/i18n';
 
 import BannerLevel2 from '@/components/BannerLevel2.vue';
@@ -9,37 +9,20 @@ import AppPaginationMo from '@/components/AppPaginationMo.vue';
 import Banner from '@/assets/illustrations/banner-secondary.png';
 import illustration from '@/assets/illustrations/compatibility.png';
 
-import { getCompatibilityData } from '@/api/api-compatibility';
 import { GITEE_LINK } from '@/shared/url-config';
+import compatibilityData from '@/data/compatibility';
 
-interface CompatibilityDataT {
-  name: string;
-  type: string;
-  company: string;
-  database: string;
-  os: string;
-  server: string;
-  version: string;
-}
-
-const total = ref(0);
+const allData = ref(compatibilityData);
+const total = computed(() => allData.value.length);
 const pageSize = ref(10);
 const currentPage = ref(1);
-const totalPage = ref(0);
+const totalPage = computed(() => Math.ceil(total.value / pageSize.value));
 const layout = ref('sizes, prev, pager, next, slot, jumper');
 
-const queryData = reactive({
-  page: 1,
-  per_page: 10,
-  name: '',
-  community: 'opengauss',
-});
-
 const i18n = useI18n();
-const tableData = ref<CompatibilityDataT[]>([]);
 
 const randerData = computed(() => {
-  return tableData.value.slice(
+  return allData.value.slice(
     pageSize.value * (currentPage.value - 1),
     pageSize.value * currentPage.value
   );
@@ -47,26 +30,45 @@ const randerData = computed(() => {
 
 // 分页size修改
 const handleSizeChange = (val: number) => {
-  queryData.per_page = val;
-  totalPage.value = Math.ceil(total.value / val);
+  pageSize.value = val;
 };
 
 const handleCurrentChange = (val: number) => {
-  queryData.page = val;
   currentPage.value = val;
 };
 
+// 搜索功能
+const searchInput = ref('');
 const queryCompatibilityData = () => {
-  getCompatibilityData(queryData).then((res) => {
-    tableData.value = res?.data;
-    total.value = res?.data?.length;
-    handleSizeChange(10);
+  const regex = new RegExp(searchInput.value);
+  allData.value = [];
+  compatibilityData.forEach((item) => {
+    if (
+      regex.test(item.name) ||
+      regex.test(item.type) ||
+      regex.test(item.company)
+    ) {
+      allData.value.push(item);
+    }
   });
+  currentPage.value = 1;
 };
 
 onMounted(() => {
-  queryCompatibilityData();
+  handleSizeChange(10);
 });
+
+// 移动端翻页事件
+const changeCurrentMb = (val: string) => {
+  if (val === 'prev' && currentPage.value > 1) {
+    currentPage.value = currentPage.value - 1;
+  } else if (val === 'next' && currentPage.value < totalPage.value) {
+    currentPage.value = currentPage.value + 1;
+  }
+};
+function jumpPageMb(page: number) {
+  currentPage.value = page;
+}
 </script>
 <template>
   <BannerLevel2
@@ -77,18 +79,13 @@ onMounted(() => {
   <AppContent :mobile-top="16">
     <div class="o-search">
       <OSearch
-        v-model="queryData.name"
+        v-model="searchInput"
         clearable
         :placeholder="i18n.compatibility.search_placeholder"
         @change="queryCompatibilityData"
       ></OSearch>
     </div>
     <OTable class="pc-list" :data="randerData" style="width: 100%">
-      <!-- <OTableColumn
-        :label="i18n.compatibility.name"
-        prop="name"
-        show-overflow-tooltip
-      ></OTableColumn> -->
       <el-table-column :label="i18n.compatibility.name">
         <template #default="scope">
           <span>{{ scope.row.name }} V{{ scope.row.version }}</span>
@@ -125,7 +122,7 @@ onMounted(() => {
     </OTable>
 
     <ul class="mobile-list">
-      <li v-for="item in tableData" :key="item.name" class="item">
+      <li v-for="item in randerData" :key="item.name" class="item">
         <ul>
           <li>
             <span>{{ i18n.compatibility.name }}:</span
@@ -162,7 +159,7 @@ onMounted(() => {
         v-model:page-size="pageSize"
         class="pagination"
         :page-sizes="[5, 10, 20, 40, 80]"
-        :total="tableData.length"
+        :total="allData.length"
         :background="true"
         :layout="layout"
         :hide-on-single-page="true"
@@ -173,8 +170,9 @@ onMounted(() => {
       </OPagination>
       <AppPaginationMo
         :current-page="currentPage"
-        :total-page="tableData.length"
-        @turn-page="handleSizeChange"
+        :total-page="totalPage"
+        @turn-page="changeCurrentMb"
+        @jump-page="jumpPageMb"
       />
     </ClientOnly>
     <p class="introduce">

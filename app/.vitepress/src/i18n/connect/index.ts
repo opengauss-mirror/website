@@ -8,7 +8,7 @@ export default {
     VIDEO_TEXT1: '共',
     EVENTS_NEW: '最新活动',
     EVENTS_REVIEW: '精彩回顾',
-    Not_Found:'暂无数据！'
+    Not_Found: '暂无数据！',
   },
   en: {
     VIDEO_TITLE: 'Videos',
@@ -19,6 +19,6 @@ export default {
     VIDEO_TEXT1: '',
     EVENTS_NEW: 'Latest Activity',
     EVENTS_REVIEW: 'Review',
-    Not_Found:'NotFound !'
+    Not_Found: 'NotFound !',
   },
 };

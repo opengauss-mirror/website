@@ -1,18 +1,12 @@
 import { request } from '@/shared/axios';
 import type { AxiosResponse } from '@/shared/axios';
-import { handleError } from '@/shared/utils';
 /**
  * 调用接口获取安全公告列表
  * @name getSecurityList
  */
 export function getSecurityList(params: any) {
   const url = `/api-cve/v1/gauss/sa?pageNum=${params.pageNum}&pageSize=${params.pageSize}&searchName=${params.searchName}&years=${params.years}&cveLevel=${params.cveLevel}&releaseFlag=${params.releaseFlag}`;
-  return request
-    .get(url)
-    .then((res: AxiosResponse) => res.data)
-    .catch(() => {
-      handleError('Error!');
-    });
+  return request.get(url).then((res: AxiosResponse) => res.data);
 }
 /**
  * 调用接口获取安全公告详情
@@ -20,12 +14,7 @@ export function getSecurityList(params: any) {
  */
 export function getSecurityDetail(params: any) {
   const url = `/api-cve/v1/gauss/sa/detail?gaussSaNum=${params}`;
-  return request
-    .get(url)
-    .then((res: AxiosResponse) => res.data)
-    .catch(() => {
-      handleError('Error!');
-    });
+  return request.get(url).then((res: AxiosResponse) => res.data);
 }
 
 /**
@@ -34,12 +23,7 @@ export function getSecurityDetail(params: any) {
  */
 export function getCveList(params: any) {
   const url = `/api-cve/v1/gauss/cve?pageNum=${params.pageNum}&pageSize=${params.pageSize}&searchName=${params.searchName}&releaseFlag=${params.releaseFlag}`;
-  return request
-    .get(url)
-    .then((res: AxiosResponse) => res.data)
-    .catch(() => {
-      handleError('Error!');
-    });
+  return request.get(url).then((res: AxiosResponse) => res.data);
 }
 
 /**
@@ -48,10 +32,5 @@ export function getCveList(params: any) {
  */
 export function getCveDetail(name: string) {
   const url = `/api-cve/v1/gauss/cve/detail?cveNum=${name}`;
-  return request
-    .get(url)
-    .then((res: AxiosResponse) => res.data)
-    .catch(() => {
-      handleError('Error!');
-    });
+  return request.get(url).then((res: AxiosResponse) => res.data);
 }

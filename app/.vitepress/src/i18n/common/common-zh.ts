@@ -281,5 +281,5 @@ export default {
     ],
     PATH: `/zh/privacyPolicy/`,
   },
-  Not_Found:'暂无数据！'
+  Not_Found: '暂无数据！',
 };

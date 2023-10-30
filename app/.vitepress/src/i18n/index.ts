@@ -12,6 +12,7 @@ import showcase from './showcase';
 import connect from './connect';
 import search from './search';
 import brand from './brand';
+import cookie from './cookie';
 
 import home from './home';
 import compatibility from './compatibility';
@@ -41,6 +42,7 @@ const i18n: { [key: string]: any } = {
     search: search.zh,
     brand: brand.zh,
     compatibility: compatibility.zh,
+    cookie: cookie.zh,
   },
   en: {
     home: home.en,
@@ -61,6 +63,7 @@ const i18n: { [key: string]: any } = {
     search: search.en,
     brand: brand.en,
     compatibility: compatibility.en,
+    cookie: cookie.en,
   },
 };
 

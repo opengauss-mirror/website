@@ -8,7 +8,6 @@ import AppContent from '@/components/AppContent.vue';
 import HomeCalendar from './HomeCalendar.vue';
 import HomeBanner from './HomeBanner.vue';
 import HomeCharacteristic from './HomeCharacteristic.vue';
-import CommunityActivity from './CommunityActivity.vue';
 import HomeExplore from './HomeExplore.vue';
 import HomeShowCase from './HomeShowCase.vue';
 import HomeVideo from './HomeVideo.vue';
@@ -76,7 +75,6 @@ onUnmounted(() => {
   <AppContent>
     <HomeCharacteristic />
     <HomePlayground />
-    <CommunityActivity />
   </AppContent>
 
   <HomeExplore />
