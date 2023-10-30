@@ -158,8 +158,8 @@ watch(
           <p class="cookie-desc">
             {{ i18n.cookie.cookieDesc }}
             <a :href="isZh ? '/zh/privacyPolicy/' : '/en/privacyPolicy/'">
-              {{ i18n.cookie.privacy }}
-            </a>
+              {{ i18n.cookie.privacy }} </a
+            >{{ isZh ? '。' : '.' }}
           </p>
         </div>
         <div class="cookie-notice-right">
