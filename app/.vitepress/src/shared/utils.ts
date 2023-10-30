@@ -1,31 +1,14 @@
 import { ElMessage } from 'element-plus';
 import Cookies from 'js-cookie';
-// 格式化数字
-export function formatNumber(num: number) {
-  return num >= 1e3 && num < 1e4
-    ? `${(num / 1e3).toFixed(1)}K`
-    : num >= 1e4
-    ? `${(num / 1e4).toFixed(1)}W`
-    : num;
-}
 
-// TS 对象key合法检查
+/**
+ * TS 对象key合法检查
+ */
 export function isValidKey(
   key: string | number | symbol,
   object: object
 ): key is keyof typeof object {
   return Object.prototype.hasOwnProperty.call(object, key);
-}
-
-/**
- * 首页母大写其他字母小写
- * @param str 字符串
- * @returns 首字母大写其他字母小写的字符串
- */
-export function firstToUpper(str: string): string {
-  return str.replace(/(w)(w*)/g, function ($0, $1, $2) {
-    return $1.toUpperCase() + $2.toLowerCase();
-  });
 }
 
 /**
@@ -56,7 +39,9 @@ export function getNowFormatDate() {
   return currentDate;
 }
 
-// URL参数转对象
+/**
+ * URL参数转对象
+ */
 export function getUrlParams(url: string) {
   const arrObj = url.split('?');
   if (arrObj.length > 1) {
@@ -72,42 +57,37 @@ export function getUrlParams(url: string) {
   }
 }
 
-/*
- * setCookie 设置cookie
- *  cname cookie的名称
- *  cvalue cookie的值
- *  day cookie的过期时间 默认1天
+/**
+ * 获取指定key的cookie值
+ * @param key
+ * @returns
  */
-export function getCustomCookie(cname: string) {
-  try {
-    return Cookies.get(cname);
-  } catch {
-    return '';
-  }
-}
-export function setCustomCookie(cname: string, cvalue: string, day = 1) {
-  try {
-    Cookies.set(cname, cvalue, { expires: day, path: '/' });
-  } catch {
-    ElMessage({
-      message: 'Error!',
-      type: 'error',
-    });
-  }
-}
-// 删除cookie
-export function removeCustomCookie(cname: string) {
-  try {
-    Cookies.remove(cname);
-  } catch {
-    ElMessage({
-      message: 'Error!',
-      type: 'error',
-    });
-  }
+export function getCustomCookie(key: string) {
+  return Cookies.get(key);
 }
 
-// 错误处理
+/**
+ * 设置cookie
+ * @param key cookie的key
+ * @param value cookie的值
+ * @param day cookie的过期时间 默认1天
+ */
+export function setCustomCookie(key: string, value: string, day = 1) {
+  Cookies.set(key, value, { expires: day, path: '/' });
+}
+
+/**
+ * 删除cookie
+ * @param key cookie的key
+ * @param value cookie的值
+ */
+export function removeCustomCookie(key: string) {
+  Cookies.remove(key);
+}
+
+/**
+ * 错误处理
+ */
 export function handleError(error: any) {
   ElMessage({
     message: error,
@@ -115,7 +95,9 @@ export function handleError(error: any) {
   });
 }
 
-// safe window open
+/**
+ * safe window open
+ */
 export const windowOpen = (
   url?: string | URL | undefined,
   target?: string | undefined,
