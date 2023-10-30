@@ -154,17 +154,17 @@ import yunshuju from '@/assets/category/home/organization/light/yunshuju.png';
 import zhongke_light from '@/assets/category/home/organization/light/zhongke_light.png';
 import zuxia from '@/assets/category/home/organization/light/zuxia.png';
 
-import depai from '@/assets/category/home/organization/light/depai.png'
-import ecobay from '@/assets/category/home/organization/light/ecobay.png'
-import fujifilm from '@/assets/category/home/organization/light/fujifilm.png'
-import haeport from '@/assets/category/home/organization/light/haeport.png'
-import maiji from '@/assets/category/home/organization/light/maiji.png'
-import pengyun from '@/assets/category/home/organization/light/pengyun.png'
-import qiteng from '@/assets/category/home/organization/light/qiteng.png'
-import runnan from '@/assets/category/home/organization/light/runnan.png'
-import xuantian from '@/assets/category/home/organization/light/xuantian.png'
-import yaxin from '@/assets/category/home/organization/light/yaxin.png'
-import yixin from '@/assets/category/home/organization/light/yixin.png'
+import depai from '@/assets/category/home/organization/light/depai.png';
+import ecobay from '@/assets/category/home/organization/light/ecobay.png';
+import fujifilm from '@/assets/category/home/organization/light/fujifilm.png';
+import haeport from '@/assets/category/home/organization/light/haeport.png';
+import maiji from '@/assets/category/home/organization/light/maiji.png';
+import pengyun from '@/assets/category/home/organization/light/pengyun.png';
+import qiteng from '@/assets/category/home/organization/light/qiteng.png';
+import runnan from '@/assets/category/home/organization/light/runnan.png';
+import xuantian from '@/assets/category/home/organization/light/xuantian.png';
+import yaxin from '@/assets/category/home/organization/light/yaxin.png';
+import yixin from '@/assets/category/home/organization/light/yixin.png';
 
 import easy_dark from '@/assets/category/home/organization/dark/easy_dark.png';
 import paila_dark from '@/assets/category/home/organization/dark/paila_dark.png';
@@ -314,17 +314,17 @@ import shensi_dark from '@/assets/category/home/organization/dark/shensi.png';
 import xingye_dark from '@/assets/category/home/organization/dark/xingye.png';
 import zhilin_dark from '@/assets/category/home/organization/dark/zhilin.png';
 
-import depai_dark from '@/assets/category/home/organization/dark/depai_dark.png'
-import ecobay_dark from '@/assets/category/home/organization/dark/ecobay_dark.png'
-import fujifilm_dark from '@/assets/category/home/organization/dark/fujifilm_dark.png'
-import haeport_dark from '@/assets/category/home/organization/dark/haeport_dark.png'
-import maiji_dark from '@/assets/category/home/organization/dark/maiji_dark.png'
-import pengyun_dark from '@/assets/category/home/organization/dark/pengyun_dark.png'
-import qiteng_dark from '@/assets/category/home/organization/dark/qiteng_dark.png'
-import runnan_dark from '@/assets/category/home/organization/dark/runnan_dark.png'
-import xuantian_dark from '@/assets/category/home/organization/dark/xuantian_dark.png'
-import yaxin_dark from '@/assets/category/home/organization/dark/yaxin_dark.png'
-import yixin_dark from '@/assets/category/home/organization/dark/yixin_dark.png'
+import depai_dark from '@/assets/category/home/organization/dark/depai_dark.png';
+import ecobay_dark from '@/assets/category/home/organization/dark/ecobay_dark.png';
+import fujifilm_dark from '@/assets/category/home/organization/dark/fujifilm_dark.png';
+import haeport_dark from '@/assets/category/home/organization/dark/haeport_dark.png';
+import maiji_dark from '@/assets/category/home/organization/dark/maiji_dark.png';
+import pengyun_dark from '@/assets/category/home/organization/dark/pengyun_dark.png';
+import qiteng_dark from '@/assets/category/home/organization/dark/qiteng_dark.png';
+import runnan_dark from '@/assets/category/home/organization/dark/runnan_dark.png';
+import xuantian_dark from '@/assets/category/home/organization/dark/xuantian_dark.png';
+import yaxin_dark from '@/assets/category/home/organization/dark/yaxin_dark.png';
+import yixin_dark from '@/assets/category/home/organization/dark/yixin_dark.png';
 
 export default [
   {

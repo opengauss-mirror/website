@@ -54,7 +54,6 @@ function handleCookieClick() {
 onMounted(() => {
   isCookieTip.value = getCustomCookie('agreed-cookiepolicy') ? false : true;
 });
-
 </script>
 
 <template>
@@ -64,7 +63,7 @@ onMounted(() => {
       <SeoBox :seo-data="seoConfig[lang]?.home" />
       <component :is="comp" v-if="isCustomLayout"></component>
       <Content v-else />
-      <AppFloat/>
+      <AppFloat />
     </main>
   </el-config-provider>
   <AppFooter :is-cookie-tip="isCookieTip" @cookie-click="handleCookieClick" />

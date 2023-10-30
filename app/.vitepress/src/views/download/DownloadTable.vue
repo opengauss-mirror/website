@@ -7,8 +7,6 @@ import { ElMessage } from 'element-plus';
 import useWindowResize from '@/components/hooks/useWindowResize';
 import { DownloadItemT } from '@/shared/@types/type-download';
 
-import DownloadConfig from '@/data/download';
-
 import IconDownload from '~icons/app/icon-download.svg';
 import IconCopy from '~icons/app/icon-copy.svg';
 import IconTips from '~icons/app/icon-tips.svg';

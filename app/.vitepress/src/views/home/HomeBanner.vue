@@ -114,8 +114,9 @@ const bannerVideoSrc = `${OBS_VIDEO_LINK}openGauss%20Summit%202022/Banner/openGa
               <div class="box">
                 <template v-if="item.titleMb.length && windowWidth < 767">
                   <p
-                    class="title"
                     v-for="itemTitle in item.titleMb"
+                    :key="itemTitle"
+                    class="title"
                     :class="{ experts: index === 1 }"
                   >
                     {{ itemTitle }}
@@ -164,9 +165,6 @@ const bannerVideoSrc = `${OBS_VIDEO_LINK}openGauss%20Summit%202022/Banner/openGa
                 />
               </div>
             </div>
-            <!-- <div class="hiss-content" v-if="item.className === 'hiss-banner'">
-              <img :src="item.textImg" alt="" />
-            </div> -->
           </div>
         </div>
       </swiper-slide>

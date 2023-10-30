@@ -18,11 +18,7 @@ const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
 
 <template>
   <div class="picture-panel">
-    <div
-      v-for="(item, index) in props.linkList"
-      :key="index"
-      class="link-item"
-    >
+    <div v-for="(item, index) in props.linkList" :key="index" class="link-item">
       <img :src="isLight ? item.img : item.imgDark" :alt="item.name" />
     </div>
   </div>
