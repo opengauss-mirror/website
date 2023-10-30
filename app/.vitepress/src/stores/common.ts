@@ -14,3 +14,10 @@ export const useMeeting = defineStore('meeting', {
     userId: null,
   }),
 });
+
+// cookie
+export const useCookieStatus = defineStore('cookieStatus', {
+  state: () => ({
+      status: '0'
+    })
+});

@@ -164,4 +164,6 @@
   --o-color-fill3: var(--o-color-white); // SL3 三级投影容器背景，应用于一级投影上的卡片、组件等
   --o-color-fill4: var(--o-color-white); // SL4 覆盖阴影容器背景，应用于信息提示【tips、活动进入按钮等】等投影容器
   --o-color-fill5: var(--o-color-white); // SL5 弹出阴影容器背景，应用于模态弹窗投影
+
+  --o-color-fill6:255,255,255;
 }

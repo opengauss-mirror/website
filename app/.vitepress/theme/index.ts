@@ -11,6 +11,7 @@ import { SeoBox } from '@/components/seo-box';
 import ElementPlus from 'element-plus';
 import OpenDesign from 'opendesign';
 import VueDOMPurifyHTML from 'vue-dompurify-html';
+import 'element-plus/theme-chalk/dark/css-vars.css';
 
 export default {
   Layout,
