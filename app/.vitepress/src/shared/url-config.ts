@@ -53,7 +53,7 @@ const PLACE_LINK = 'https://marketplace.huaweicloud.com/';
 const LAB_LINK = 'https://lab.huaweicloud.com/';
 const DBOBS_LINK =
   'https://dbacertification-beijing4.obs.cn-north-4.myhuaweicloud.com/';
-const DATA_LINK = 'https://datastat.opengauss.org/';
+const DATA_LINK = 'https://datastat-opengauss.osinfra.cn/';
 const STATUS_LINK = 'https://status.opengauss.org/';
 const CLA_LINK = 'https://clasign.osinfra.cn/';
 const SAGE_LINK = 'https://sage.thesharps.us/';

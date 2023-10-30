@@ -6,6 +6,7 @@ import { ElMessage } from 'element-plus';
 
 import useWindowResize from '@/components/hooks/useWindowResize';
 import { VULBOX_LINK } from '@/shared/url-config';
+import { handleError } from '@/shared/utils';
 
 import floatClose from '@/assets/category/float/float-close.png';
 
@@ -265,17 +266,25 @@ function postScore() {
         });
         const summitTime = new Date().valueOf();
         if (screenWidth.value < 1100) {
-          localStorage.setItem(
-            'submit-time-mobile',
-            JSON.stringify(summitTime)
-          );
+          try {
+            localStorage.setItem(
+              'submit-time-mobile',
+              JSON.stringify(summitTime)
+            );
+          } catch {
+            handleError();
+          }
           isReasonShow.value = false;
           inputText.value = '';
           score.value = 0;
           isMobileFloatShow.value = false;
           dialogVisible.value = false;
         } else {
-          localStorage.setItem('submit-time', JSON.stringify(summitTime));
+          try {
+            localStorage.setItem('submit-time', JSON.stringify(summitTime));
+          } catch {
+            handleError();
+          }
           isReasonShow.value = false;
           inputText.value = '';
           score.value = 0;
@@ -301,14 +310,18 @@ function handleClickSubmit() {
   const intervalTime = 1 * 12 * 60 * 60 * 1000;
   const nowTime = new Date().valueOf();
   if (lastSummitTIME) {
-    const flag = nowTime - JSON.parse(lastSummitTIME) > intervalTime;
-    if (flag) {
-      postScore();
-    } else {
-      ElMessage({
-        message: '请不要频繁提交！',
-        type: 'warning',
-      });
+    try {
+      const flag = nowTime - JSON.parse(lastSummitTIME) > intervalTime;
+      if (flag) {
+        postScore();
+      } else {
+        ElMessage({
+          message: '请不要频繁提交！',
+          type: 'warning',
+        });
+      }
+    } catch {
+      handleError();
     }
   } else {
     postScore();
@@ -360,7 +373,11 @@ const isMobileFloatShow = ref(false);
 const closeMobileFloat = () => {
   isMobileFloatShow.value = false;
   const closeTime = new Date().valueOf();
-  localStorage.setItem('close-float-time', JSON.stringify(closeTime));
+  try {
+    localStorage.setItem('close-float-time', JSON.stringify(closeTime));
+  } catch {
+    handleError();
+  }
 };
 const setScore = (val: number) => {
   isReasonShow.value = true;
@@ -377,9 +394,17 @@ onMounted(() => {
     let flag1;
     let flag2;
     if (lastCloseTIME) {
-      flag1 = nowTime - JSON.parse(lastCloseTIME) > sevenDaysInMilliseconds;
+      try {
+        flag1 = nowTime - JSON.parse(lastCloseTIME) > sevenDaysInMilliseconds;
+      } catch {
+        handleError();
+      }
     } else if (lastSummitTIME) {
-      flag2 = nowTime - JSON.parse(lastSummitTIME) > thirtyInMilliseconds;
+      try {
+        flag2 = nowTime - JSON.parse(lastSummitTIME) > thirtyInMilliseconds;
+      } catch {
+        handleError();
+      }
     }
     if (flag1 && flag2) {
       isMobileFloatShow.value = true;

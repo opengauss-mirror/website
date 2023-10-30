@@ -88,7 +88,7 @@ export function removeCustomCookie(key: string) {
 /**
  * 错误处理
  */
-export function handleError(error: any) {
+export function handleError(error = 'Something Error!') {
   ElMessage({
     message: error,
     type: 'error',
@@ -106,7 +106,6 @@ export const windowOpen = (
   const opener = window.open(url, target, features);
   opener && (opener.opener = null);
 };
-
 
 const opt = Object.prototype.toString;
 export function isBoolean(val: unknown): val is boolean {

@@ -8,6 +8,8 @@ import SummitSchedule from './components/SummitSchedule.vue';
 import SummitGuests from './components/SummitGuests.vue';
 import SummitLive from './components/SummitLive.vue';
 
+import { handleError } from '@/shared/utils';
+
 import guestsData from './data/guests';
 import summitData from './data';
 import data1 from './data/agenda1';
@@ -34,14 +36,32 @@ const meetingTime = [
     label: 'MAY',
   },
 ];
+const dataContent1 = computed(() => {
+  let temp;
+  try {
+    temp = JSON.parse(data1.content);
+  } catch (error) {
+    handleError();
+  }
+  return temp;
+});
+const dataContent2 = computed(() => {
+  let temp;
+  try {
+    temp = JSON.parse(data2.content);
+  } catch (error) {
+    handleError();
+  }
+  return temp;
+});
 const getData: any = ref({
   'schedule-25': {
     name: 'schedule-25',
-    content: JSON.parse(data2.content),
+    content: dataContent2.value,
   },
   'schedule-26': {
     name: 'schedule-26',
-    content: JSON.parse(data1.content),
+    content: dataContent1.value,
   },
 });
 const agendaData2: any = ref([]);

@@ -29,7 +29,7 @@ interface TagsParams {
 }
 
 // 先用euler
-export function getSortData(params: SortParams) {
+export function getSortData(params: SortParams | object) {
   const url = '/api-search/search/sort';
   return request.post(url, params).then((res: AxiosResponse) => res.data);
 }

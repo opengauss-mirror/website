@@ -3,7 +3,7 @@ import { ref, computed, onMounted } from 'vue';
 import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';
 import useWindowScroll from '@/components/hooks/useWindowScroll';
-import { getUserCaseData } from '@/api/api-showcase';
+import { getSortData } from '@/api/api-search';
 
 import showCaseData from '@/data/showcase';
 import useWindowResize from '@/components/hooks/useWindowResize';
@@ -67,7 +67,7 @@ const data = ref({
 });
 function setCurrentCaseListAll() {
   try {
-    getUserCaseData(data.value).then((res: any) => {
+    getSortData(data.value).then((res: any) => {
       currentCaseListAll.value = [];
       if (res.status === 200 && res.obj.records[0]) {
         caseListAll.value = res.obj.records.filter((item: any) => {
@@ -185,7 +185,7 @@ function searchCase() {
   activeIndex.value = 0;
   currentTag.value = i18n.value.common.ALL;
   if (keyWord.value) {
-    getUserCaseData(searchData.value).then((res) => {
+    getSortData(searchData.value).then((res) => {
       if (res.status === 200 && res.obj.records) {
         caseListAll.value = res.obj.records;
       }

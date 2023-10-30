@@ -18,6 +18,6 @@ export const useMeeting = defineStore('meeting', {
 // cookie
 export const useCookieStatus = defineStore('cookieStatus', {
   state: () => ({
-      status: '0'
-    })
+    status: '0',
+  }),
 });
