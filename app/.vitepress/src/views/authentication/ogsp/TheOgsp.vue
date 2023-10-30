@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, onMounted, computed, reactive } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 import { useI18n } from '@/i18n';
 
 import BannerLevel2 from '@/components/BannerLevel2.vue';
@@ -32,10 +32,6 @@ const totalPage = ref(0);
 const tableData = ref<CertificationDataT[]>([]);
 const searchContent = ref('');
 // 前端分页
-const queryData = reactive({
-  page: 1,
-  per_page: 10,
-});
 const randerTableData = computed(() => {
   return tableData.value.slice(
     pageSize.value * (currentPage.value - 1),
@@ -45,13 +41,23 @@ const randerTableData = computed(() => {
 
 // 分页size修改
 const handlePageSizeChange = (val: number) => {
-  queryData.per_page = val;
   totalPage.value = Math.ceil(total.value / val);
 };
 const setCurrentPage = (val: number) => {
-  queryData.page = val;
   currentPage.value = val;
 };
+
+// 移动端分页器
+const changeCurrentMb = (val: string) => {
+  if (val === 'prev' && currentPage.value > 1) {
+    currentPage.value = currentPage.value - 1;
+  } else if (val === 'next' && currentPage.value < totalPage.value) {
+    currentPage.value = currentPage.value + 1;
+  }
+};
+function jumpPageMb(page: number) {
+  currentPage.value = page;
+}
 
 // 前端搜索
 function searchProductOrName(data: CertificationDataT[], query: string) {
@@ -224,7 +230,8 @@ onMounted(() => {
       <AppPaginationMo
         :total-page="tableData.length"
         :current-page="currentPage"
-        @turn-page="handlePageSizeChange"
+        @turn-page="changeCurrentMb"
+        @jump-page="jumpPageMb"
       />
     </ClientOnly>
   </AppContent>
