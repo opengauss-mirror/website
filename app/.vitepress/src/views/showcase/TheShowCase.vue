@@ -159,7 +159,7 @@ const imgUrl = computed(() => (id: string) => {
   if (imgList[id]) {
     return imgList[id];
   } else {
-    return '';
+    return otherIcon;
   }
 });
 // 跳案例官网或者详情（type:1跳官网，2跳详情）

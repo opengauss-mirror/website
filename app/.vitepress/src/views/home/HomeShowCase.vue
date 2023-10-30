@@ -434,10 +434,10 @@ onUnmounted(() => {
   }
 
   &-word {
-    font-size: var(--o-font-size-h5);
+    font-size: var(--o-font-size-h6);
     font-weight: 500;
     color: var(--o-color-text1);
-    line-height: var(--o-line-height-h5);
+    line-height: var(--o-line-height-h6);
     margin-top: 2px;
   }
 
@@ -452,13 +452,18 @@ onUnmounted(() => {
       flex-flow: column;
       justify-content: center;
       align-items: center;
-      margin: 0px 28px;
+      margin: 0px 20px;
+      .case-img-box {
+        width: 60px;
+        height: 60px;
+      }
       .nav-item-icon-hover {
-        width: 80px;
+        width: 100%;
         display: none;
       }
       .nav-item-icon {
         display: block;
+        width: 100%;
       }
       &:hover {
         @media screen and (min-width: 1100px) {
