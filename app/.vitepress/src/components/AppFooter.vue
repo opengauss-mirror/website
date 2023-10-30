@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { toRefs } from 'vue';
 import { useI18n } from '@/i18n';
 import AppContent from '@/components/AppContent.vue';
 
@@ -17,7 +16,6 @@ import logoCsdn from '@/assets/footer/csdn.png';
 import logo51cto from '@/assets/footer/cto.png';
 
 import CodeGzh from '@/assets/footer/wechat.png';
-import IconCancel from '~icons/app/icon-cancel.svg';
 
 import {
   OSCHINA_LINK,
@@ -28,13 +26,6 @@ import {
   BILIBILI_LINK,
   ZHIZHU_LINK,
 } from '@/shared/url-config';
-
-const props = defineProps({
-  isCookieTip: {
-    type: Boolean,
-    default: false,
-  },
-});
 
 const i18n = useI18n();
 

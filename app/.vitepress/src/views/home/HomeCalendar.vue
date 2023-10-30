@@ -446,9 +446,13 @@ const handleModifyMeeting = (item: any, date: string) => {
     meetingDialog.value = true;
     dialogTitle.value = i18nMeeting.value.MODIFY;
     // 深拷贝
-    const itemData = JSON.parse(JSON.stringify(item));
-    formatterResponse(itemData, date);
-    mId.value = itemData.mid;
+    try {
+      const itemData = JSON.parse(JSON.stringify(item));
+      formatterResponse(itemData, date);
+      mId.value = itemData.mid;
+    } catch {
+      handleError();
+    }
   } else {
     ElMessage({
       message: i18nMeeting.value.PERMISSION_TEXT1,
