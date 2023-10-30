@@ -633,7 +633,7 @@ const changeCurrentMoblie = (val: string) => {
     }
     .blog-list-item-title {
       font-size: var(--o-font-size-h7);
-      margin-bottom: var(--o-spacing-h3); // 32px
+      margin-bottom: var(--o-spacing-h3);
       color: var(--o-color-text1);
       height: 42px;
       @include showline();

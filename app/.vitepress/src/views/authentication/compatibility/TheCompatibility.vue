@@ -84,11 +84,6 @@ onMounted(() => {
       ></OSearch>
     </div>
     <OTable class="pc-list" :data="randerData" style="width: 100%">
-      <!-- <OTableColumn
-        :label="i18n.compatibility.name"
-        prop="name"
-        show-overflow-tooltip
-      ></OTableColumn> -->
       <el-table-column :label="i18n.compatibility.name">
         <template #default="scope">
           <span>{{ scope.row.name }} V{{ scope.row.version }}</span>

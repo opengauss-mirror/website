@@ -12,11 +12,10 @@ import { handleError, getCustomCookie } from '@/shared/utils';
 export function getMeetingData(group: string) {
   const url = `/api-meeting/calendar/meetingsdata/?group=${group}`;
   return request
-    .get(url)
-    .then((res: AxiosResponse) => res.data)
-    .catch(() => {
-      handleError('Error!');
-    });
+    .get(url, {
+      $doException: false,
+    })
+    .then((res: AxiosResponse) => res.data);
 }
 
 /**
@@ -27,11 +26,10 @@ export function getMeetingData(group: string) {
 export function getMeetingSig() {
   const url = '/api-meeting/calendar/groups/';
   return request
-    .get(url)
-    .then((res: AxiosResponse) => res.data)
-    .catch(() => {
-      handleError('Error!');
-    });
+    .get(url, {
+      $doException: false,
+    })
+    .then((res: AxiosResponse) => res.data);
 }
 
 /**
@@ -41,20 +39,18 @@ export function getMeetingSig() {
 export function giteeLogin() {
   const url = '/api-meeting/calendar/gitee_login/';
   return request
-    .get(url)
-    .then((res: AxiosResponse) => res.data)
-    .catch(() => {
-      handleError('Error!');
-    });
+    .get(url, {
+      $doException: false,
+    })
+    .then((res: AxiosResponse) => res.data);
 }
 export function giteeLogout() {
   const url = '/api-meeting/calendar/logout/';
   return request
-    .get(url)
-    .then((res: AxiosResponse) => res.data)
-    .catch(() => {
-      handleError('Error!');
-    });
+    .get(url, {
+      $doException: false,
+    })
+    .then((res: AxiosResponse) => res.data);
 }
 /**
  * 会议用户
@@ -63,11 +59,10 @@ export function giteeLogout() {
 export function meetingLogin() {
   const url = `/api-meeting/calendar/user/`;
   return request
-    .get(url)
-    .then((res: AxiosResponse) => res.data)
-    .catch(() => {
-      handleError('Error!');
-    });
+    .get(url, {
+      $doException: false,
+    })
+    .then((res: AxiosResponse) => res.data);
 }
 
 export function meetingReserve(params: object) {

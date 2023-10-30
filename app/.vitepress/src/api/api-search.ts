@@ -75,5 +75,9 @@ export function getPop(params: any) {
  */
 export function getStatistic() {
   const url = '/api-dsapi/query/all?community=openGauss';
-  return request.get(url).then((res: AxiosResponse) => res.data);
+  return request
+    .get(url, {
+      $doException: false,
+    })
+    .then((res: AxiosResponse) => res.data);
 }

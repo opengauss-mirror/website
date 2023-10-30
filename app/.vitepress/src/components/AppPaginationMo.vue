@@ -67,7 +67,6 @@ function jumpPage(e: any) {
         @keypress="jumpPage"
         @blur="jumpPage"
       />
-      <!-- <span>{{ currentPage }}</span> -->
       <span>/{{ totalPage }}</span>
     </span>
     <span

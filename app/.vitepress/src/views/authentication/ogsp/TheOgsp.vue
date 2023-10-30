@@ -199,7 +199,9 @@ onMounted(() => {
           </li>
           <li>
             <span>{{ i18n.ogsp.certificate }}:</span>
-            <a :href="item.certificate" rel="noopener noreferrer">{{ i18n.ogsp.certify }}</a>
+            <a :href="item.certificate" rel="noopener noreferrer">{{
+              i18n.ogsp.certify
+            }}</a>
           </li>
         </ul>
       </li>

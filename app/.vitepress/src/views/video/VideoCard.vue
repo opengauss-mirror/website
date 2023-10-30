@@ -62,10 +62,7 @@ const handleClick = (id: number, index: number) => {
           class="video-item shadow"
           shadow="hover"
         >
-          <div
-            class="video-item-link"
-            @click="handleClick(navItems.id, index)"
-          >
+          <div class="video-item-link" @click="handleClick(navItems.id, index)">
             <div
               class="cover"
               :style="`background:url(${navItems.poster}) no-repeat center/cover`"

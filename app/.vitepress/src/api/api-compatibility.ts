@@ -10,7 +10,4 @@ export function getCompatibilityData(params: any) {
   return request
     .get(url, { params })
     .then((res: AxiosResponse) => res.data)
-    .catch(() => {
-      handleError('Error!');
-    });
 }

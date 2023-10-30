@@ -59,7 +59,9 @@ const CLA_LINK = 'https://clasign.osinfra.cn/';
 const SAGE_LINK = 'https://sage.thesharps.us/';
 const WJX_LINK = 'https://www.wjx.cn/';
 const TRYME_LINK = 'https://tryme.opengauss.org/';
+const BAIDU_HM = 'https://hm.baidu.com/';
 export {
+  BAIDU_HM,
   HUAWEI_COMPUTE,
   TRYME_LINK,
   WJX_LINK,

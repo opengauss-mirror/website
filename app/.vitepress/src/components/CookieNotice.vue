@@ -2,10 +2,11 @@
 import { ref, watch, onMounted, computed } from 'vue';
 import { useRoute, useData } from 'vitepress';
 import { ElDialog, ElSwitch } from 'element-plus';
-import { setCustomCookie, isBoolean } from '@/shared/utils';
+import { setCustomCookie, isBoolean, getCustomCookie } from '@/shared/utils';
 import { useCookieStatus } from '@/stores/common';
 import { useScreen } from '@/shared/useScreen';
 import { useI18n } from '@/i18n';
+import { BAIDU_HM } from '@/shared/url-config';
 
 import IconClose from '~icons/app/icon-cancel.svg';
 
@@ -53,21 +54,9 @@ const toggleDlgVisible = (val: boolean) => {
   }
 };
 
-// 获取cookie值
-const getCookieByKey = (key: string) => {
-  const cookieArr = document.cookie.split('; ');
-  for (let i = 0, len = cookieArr.length; i < len; i++) {
-    const item = cookieArr[i];
-    const rlt = item.split('=');
-    if (rlt[0] === key) {
-      return rlt[1];
-    }
-  }
-};
-
 // 获取cookie状态
 const getUserCookieStatus = () => {
-  const cookieVal = getCookieByKey(COOKEY_KEY);
+  const cookieVal = getCustomCookie(COOKEY_KEY);
 
   if (cookieVal === COOKIE_AGREED_STATUS.ALL_AGREED) {
     return COOKIE_AGREED_STATUS.ALL_AGREED;
@@ -92,7 +81,7 @@ const isAllAgreed = () => {
 const initSensor = () => {
   (function () {
     const hm = document.createElement('script');
-    hm.src = 'https://hm.baidu.com/hm.js?ace49cc6c2f3d0542e97ce86732094dc';
+    hm.src = BAIDU_HM + 'hm.js?ace49cc6c2f3d0542e97ce86732094dc';
     const s = document.getElementsByTagName('HEAD')[0];
     s.appendChild(hm);
   })();

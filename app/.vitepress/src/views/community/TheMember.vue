@@ -152,7 +152,11 @@ const handleChangeActiveMobile = (activeNames: any) => {
               </li>
             </ul>
             <div v-if="item.id === 'board'" class="board-view">
-              <a :href="`/${lang}/member/detail/`" target="_blank" rel="noopener noreferrer">
+              <a
+                :href="`/${lang}/member/detail/`"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <OButton animation type="text" class="case-more-item">
                   {{ i18n.member.VIEW_BOARD }}
                   <template #suffixIcon>
@@ -236,7 +240,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
       </OCollapseItem>
     </OCollapse>
     <div
-      v-for="(item, index) in i18n.member.MEMBER_LIST"
+      v-for="item in i18n.member.MEMBER_LIST"
       :key="item.id"
       class="member-panel member-pc"
     >
@@ -290,7 +294,11 @@ const handleChangeActiveMobile = (activeNames: any) => {
             </li>
           </ul>
           <div v-if="item.id === 'board'" class="board-view">
-            <a :href="`/${lang}/member/detail/`" target="_blank" rel="noopener noreferrer">
+            <a
+              :href="`/${lang}/member/detail/`"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <OButton animation type="text" class="case-more-item">
                 {{ i18n.member.VIEW_BOARD }}
                 <template #suffixIcon>

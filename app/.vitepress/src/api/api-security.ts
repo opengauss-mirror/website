@@ -10,9 +10,6 @@ export function getSecurityList(params: any) {
   return request
     .get(url)
     .then((res: AxiosResponse) => res.data)
-    .catch(() => {
-      handleError('Error!');
-    });
 }
 /**
  * 调用接口获取安全公告详情
@@ -23,9 +20,6 @@ export function getSecurityDetail(params: any) {
   return request
     .get(url)
     .then((res: AxiosResponse) => res.data)
-    .catch(() => {
-      handleError('Error!');
-    });
 }
 
 /**
@@ -37,9 +31,6 @@ export function getCveList(params: any) {
   return request
     .get(url)
     .then((res: AxiosResponse) => res.data)
-    .catch(() => {
-      handleError('Error!');
-    });
 }
 
 /**
@@ -51,7 +42,4 @@ export function getCveDetail(name: string) {
   return request
     .get(url)
     .then((res: AxiosResponse) => res.data)
-    .catch(() => {
-      handleError('Error!');
-    });
 }

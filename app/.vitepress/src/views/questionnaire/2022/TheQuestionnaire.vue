@@ -215,7 +215,6 @@ const data = {
     ],
   },
 };
-
 </script>
 
 <template>
@@ -289,9 +288,18 @@ const data = {
             <p>
               {{ item.clause }}
               <strong v-if="item.time">{{ item.time }}</strong>
-              <a v-if="item.clause1" :href="item.link1" rel="noopener noreferrer">{{ item.clause1 }}</a
+              <a
+                v-if="item.clause1"
+                :href="item.link1"
+                rel="noopener noreferrer"
+                >{{ item.clause1 }}</a
               ><span v-if="item.clause2">{{ item.clause2 }}</span
-              ><a v-if="item.clause3" :href="item.link2" rel="noopener noreferrer">{{ item.clause3 }}</a>
+              ><a
+                v-if="item.clause3"
+                :href="item.link2"
+                rel="noopener noreferrer"
+                >{{ item.clause3 }}</a
+              >
             </p>
             <div v-if="item.children" class="rule-child">
               <p v-for="itemChild in item.children" :key="itemChild">
@@ -404,8 +412,8 @@ const data = {
   width: 100%;
   padding: 44px 68px;
   display: flex;
-  background: var(--o-color-bg2) url(@/assets/category/questionnaire/2022/bg1.png)
-    no-repeat center/cover;
+  background: var(--o-color-bg2)
+    url(@/assets/category/questionnaire/2022/bg1.png) no-repeat center/cover;
   box-shadow: var(--o-shadow-l2);
   @media screen and (max-width: 1100px) {
     padding: 24px 16px;
@@ -449,8 +457,8 @@ const data = {
   width: 100%;
   padding: var(--o-spacing-h1) 120px;
   position: relative;
-  background: var(--o-color-bg2) url(@/assets/category/questionnaire/2022/bg2.png)
-    no-repeat top center;
+  background: var(--o-color-bg2)
+    url(@/assets/category/questionnaire/2022/bg2.png) no-repeat top center;
   box-shadow: var(--o-shadow-l2);
   @media screen and (max-width: 1100px) {
     display: none;
@@ -534,7 +542,8 @@ const data = {
       background: url(@/assets/category/questionnaire/2022/bg3.png) no-repeat;
       background-size: cover;
       @media screen and (max-width: 1100px) {
-        background: url(@/assets/category/questionnaire/2022/bg-mo.png) no-repeat;
+        background: url(@/assets/category/questionnaire/2022/bg-mo.png)
+          no-repeat;
         background-size: cover;
       }
       img {

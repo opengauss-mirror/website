@@ -8,7 +8,6 @@ import useWindowResize from '@/components/hooks/useWindowResize';
 import { VULBOX_LINK } from '@/shared/url-config';
 
 import floatClose from '@/assets/category/float/float-close.png';
-import floatBg from '@/assets/category/questionnaire/2023/float-bg.png';
 
 import IconTop from '~icons/float/icon-top.svg';
 import IconSmile from '~icons/float/icon-smile.svg';
@@ -223,6 +222,9 @@ const placeholder = computed(() => {
 });
 const isFocuse = ref(false);
 const textareaRef: Ref<HTMLElement | null> = ref(null);
+const toggleIsFocuse = (focus: boolean) => {
+  isFocuse.value = focus;
+};
 onMounted(() => {
   if (textareaRef.value) {
     textareaRef.value.addEventListener('focus', () => {
@@ -404,7 +406,7 @@ onMounted(() => {
         >
           {{ isSafetyFloatShow ? FLOAT_BUG_TEXT : FLOAT_QUESTIONNAIRE }}
         </a>
-        <img @click="closeBgFloat" class="close-img" :src="floatClose" alt="" />
+        <img class="close-img" :src="floatClose" alt="" @click="closeBgFloat" />
       </div>
       <div class="float-wrap">
         <div v-show="isFloatTipShow" class="float-tip">
@@ -418,11 +420,11 @@ onMounted(() => {
         </div>
         <div class="nav-box1">
           <div
+            class="nav-item"
             @mouseenter="toggleIsShow(true)"
             @mouseleave="toggleIsShow(false)"
-            class="nav-item"
           >
-            <OIcon @mouseleave.stop="closefloat" class="icon-box">
+            <OIcon class="icon-box" @mouseleave.stop="closefloat">
               <component :is="IconSmile"> </component>
             </OIcon>
             <div v-if="isShow" class="o-popup1" :class="{ show: isDynamic }">
@@ -443,51 +445,54 @@ onMounted(() => {
                   </div>
                   <ClientOnly>
                     <el-slider
-                      show-stops
                       v-model="score"
+                      show-stops
                       :step="10"
                       :marks="marks"
                       :show-tooltip="false"
                       @input="handleInput"
                     />
                   </ClientOnly>
+                  <div class="grade-info">
+                    <span>{{
+                      title2 === TITLES2[0]
+                        ? infoData.grade1
+                        : infoData.grade1_1
+                    }}</span>
+                    <span>{{
+                      title2 === TITLES2[0]
+                        ? infoData.grade2
+                        : infoData.grade2_1
+                    }}</span>
+                  </div>
                 </div>
-                <div class="grade-info">
-                  <span>{{
-                    title2 === TITLES2[0] ? infoData.grade1 : infoData.grade1_1
-                  }}</span>
-                  <span>{{
-                    title2 === TITLES2[0] ? infoData.grade2 : infoData.grade2_1
-                  }}</span>
-                </div>
-              </div>
-              <div v-show="isReasonShow" class="reason">
-                <div class="input-area" :class="{ 'is-focus': isFocuse }">
-                  <textarea
-                    ref="textareaRef"
+                <div v-show="isReasonShow" class="reason">
+                  <el-input
                     v-model="inputText"
+                    :rows="3"
+                    type="textarea"
                     :placeholder="placeholder"
                     maxlength="500"
-                  ></textarea>
-                  <p>
-                    <span>{{ inputText.length }}</span
-                    >/500
+                    resize="none"
+                    show-word-limit
+                    @focus="toggleIsFocuse(true)"
+                    @blur="toggleIsFocuse(false)"
+                  />
+                  <p class="more-info">
+                    {{ infoData.more }}
+                    <a :href="'mailto:' + infoData.emile">
+                      {{ infoData.emile }}
+                    </a>
                   </p>
-                </div>
-                <p class="more-info">
-                  {{ infoData.more }}
-                  <a :href="'mailto:' + infoData.emile">
-                    {{ infoData.emile }}
-                  </a>
-                </p>
-                <div class="submit-btn">
-                  <OButton
-                    type="outline"
-                    size="mini"
-                    @click="handleClickSubmit"
-                  >
-                    {{ infoData.submit }}
-                  </OButton>
+                  <div class="submit-btn">
+                    <OButton
+                      type="outline"
+                      size="mini"
+                      @click="handleClickSubmit"
+                    >
+                      {{ infoData.submit }}
+                    </OButton>
+                  </div>
                 </div>
               </div>
             </div>
@@ -515,9 +520,9 @@ onMounted(() => {
               </div>
             </div>
           </div>
-        </div>
-        <div class="nav-item nav-box2" @click="handleClickTop">
-          <OIcon><component :is="IconTop"></component> </OIcon>
+          <div class="nav-item nav-box2" @click="handleClickTop">
+            <OIcon><component :is="IconTop"></component> </OIcon>
+          </div>
         </div>
       </div>
     </template>
@@ -539,7 +544,7 @@ onMounted(() => {
               ><component :is="IconCancel"></component>
             </OIcon>
           </div>
-          <el-dialog :show-close="false" v-model="dialogVisible">
+          <el-dialog v-model="dialogVisible" :show-close="false">
             <div class="o-popup1">
               <div class="slider">
                 <p class="slider-title">
@@ -580,18 +585,17 @@ onMounted(() => {
                 </div>
               </div>
               <div v-show="isReasonShow" class="reason">
-                <div class="input-area" :class="{ 'is-focus': isFocuse }">
-                  <textarea
-                    id="textarea-input"
-                    v-model="inputText"
-                    :placeholder="placeholder"
-                    maxlength="500"
-                  ></textarea>
-                  <p>
-                    <span>{{ inputText.length }}</span
-                    >/500
-                  </p>
-                </div>
+                <el-input
+                  v-model="inputText"
+                  :rows="5"
+                  type="textarea"
+                  :placeholder="placeholder"
+                  maxlength="500"
+                  resize="none"
+                  show-word-limit
+                  @focus="toggleIsFocuse(true)"
+                  @blur="toggleIsFocuse(false)"
+                />
                 <p class="more-info">
                   {{ infoData.more }}
                   <a :href="'mailto:' + infoData.emile">
@@ -606,8 +610,8 @@ onMounted(() => {
                 <OButton
                   type="outline"
                   size="middle"
-                  @click="postScore"
                   :class="{ forbidden: !isReasonShow }"
+                  @click="postScore"
                   >{{ infoData.confirm }}</OButton
                 >
               </div>
@@ -898,34 +902,18 @@ onMounted(() => {
         }
         .reason {
           margin-top: 16px;
-          .input-area {
-            border: 1px solid var(--o-color-border2);
-            padding: 8px 16px;
-            height: 88px;
-            font-size: var(--o-font-size-tip);
-            line-height: var(--o-line-height-tip);
-            position: relative;
-            &:hover {
-              border: 1px solid var(--o-color-border1);
-            }
-            &.is-focus {
-              border: 1px solid var(--o-color-border1);
-            }
-            textarea {
-              width: 100%;
-              height: 100%;
-              border: none;
-              outline: none;
-              resize: none;
+          :deep(.el-textarea) {
+            .el-textarea__inner {
               background-color: var(--o-color-bg2);
+              border-radius: 0;
+              box-shadow: 0 0 0 1px var(--o-color-border2) inset;
               color: var(--o-color-text1);
+              &:focus {
+                box-shadow: 0 0 0 1px var(--o-color-border1) inset;
+              }
             }
-            p {
-              text-align: right;
-              color: var(--o-color-text4);
-              position: absolute;
-              right: 6px;
-              bottom: 6px;
+            .el-input__count {
+              background-color: var(--o-color-bg2);
             }
           }
           .more-info {
@@ -1225,35 +1213,18 @@ onMounted(() => {
       }
       .reason {
         margin-top: 16px;
-        .input-area {
-          border: 1px solid var(--o-color-border2);
-          padding: 8px 16px;
-          height: 88px;
-          font-size: var(--o-font-size-text);
-          line-height: var(--o-line-height-text);
-          position: relative;
-          border-radius: 4px;
-          &:hover {
-            border: 1px solid var(--o-color-border1);
-          }
-          &.is-focus {
-            border: 1px solid var(--o-color-border1);
-          }
-          textarea {
-            width: 100%;
-            height: 100%;
-            border: none;
-            outline: none;
-            resize: none;
+        :deep(.el-textarea) {
+          .el-textarea__inner {
             background-color: var(--o-color-bg2);
+            border-radius: 0;
+            box-shadow: 0 0 0 1px var(--o-color-border2) inset;
             color: var(--o-color-text1);
+            &:focus {
+              box-shadow: 0 0 0 1px var(--o-color-border1) inset;
+            }
           }
-          p {
-            text-align: right;
-            color: var(--o-color-text4);
-            position: absolute;
-            right: 6px;
-            bottom: 6px;
+          .el-input__count {
+            background-color: var(--o-color-bg2);
           }
         }
         .more-info {

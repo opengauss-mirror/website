@@ -1068,7 +1068,7 @@ export default {
         gitee: `${GITEE_LINK}wumingyuan`,
       },
     ],
-    SECRETARIAT:[
+    SECRETARIAT: [
       {
         img: caiyajie,
         name: `蔡亚杰`,
@@ -4969,7 +4969,7 @@ export default {
         gitee: `${GITEE_LINK}wumingyuan`,
       },
     ],
-    SECRETARIAT:[
+    SECRETARIAT: [
       {
         img: caiyajie,
         name: `Yajie Cai`,

@@ -248,5 +248,5 @@ export default {
     ],
     PATH: `/en/privacyPolicy/`,
   },
-  Not_Found:'NotFound !'
+  Not_Found: 'NotFound !',
 };
