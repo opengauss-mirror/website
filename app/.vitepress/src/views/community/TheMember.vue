@@ -82,7 +82,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
     <OTabs v-model="tabShow" @tab-click="selectTab">
       <OTabPane
         v-for="(item, index) in i18n.member.MEMBER_LIST"
-        :key="item.id"
+        :key="item.name"
         :label="item.name"
         :name="index"
       ></OTabPane>
@@ -104,26 +104,26 @@ const handleChangeActiveMobile = (activeNames: any) => {
       >
         <template #title>
           <div class="member-mobile-title">
-            {{ item.NAME }}
+            {{ item.name }}
           </div>
         </template>
         <div class="member-mobile">
           <template v-if="!item.children">
             <ul class="member-info lable-name">
-              <li v-if="item.GITEE_PATH">
+              <li v-if="item.giteePath">
                 <IconHome />
                 <a
-                  :href="item.GITEE_PATH"
+                  :href="item.giteePath"
                   target="_blank"
                   rel="noopener noreferrer"
                   >{{ i18n.member.GITEE_TEXT }}</a
                 >
               </li>
-              <li v-if="item.EMIAL">
+              <li v-if="item.emial">
                 <IconMail />
                 {{ i18n.member.EMIAL_TEXT }}
-                <a class="lable-name" :href="'mailto:' + item.EMIAL">{{
-                  item.EMIAL
+                <a class="lable-name" :href="'mailto:' + item.emial">{{
+                  item.emial
                 }}</a>
               </li>
               <li><IconUser />{{ item.nameText }}</li>
@@ -174,13 +174,13 @@ const handleChangeActiveMobile = (activeNames: any) => {
             >
               <template v-if="!subitem.other">
                 <h2 :id="subitem.id" class="sub-title">
-                  {{ subitem.NAME }}
+                  {{ subitem.name }}
                 </h2>
                 <ul class="member-info lable-name7">
                   <li>
                     <IconHome />
                     <a
-                      :href="subitem.GITEE_PATH"
+                      :href="subitem.giteePath"
                       target="_blank"
                       rel="noopener noreferrer"
                       >{{ i18n.member.GITEE_TEXT }}</a
@@ -189,7 +189,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
                   <li>
                     <IconMail />
                     {{ i18n.member.EMIAL_TEXT }}
-                    <a :href="'mailto:' + subitem.EMIAL">{{ subitem.EMIAL }}</a>
+                    <a :href="'mailto:' + subitem.emial">{{ subitem.emial }}</a>
                   </li>
                   <li><IconUser />{{ i18n.member.NAMEL_TEXT }}</li>
                 </ul>
@@ -246,23 +246,23 @@ const handleChangeActiveMobile = (activeNames: any) => {
     >
       <template v-if="!item.children">
         <h1 :id="item.id" :ref="navTitle" class="member-title">
-          {{ item.NAME }}
+          {{ item.name }}
         </h1>
         <div class="member-panel-content">
           <ul class="member-info">
-            <li v-if="item.GITEE_PATH">
+            <li v-if="item.giteePath">
               <IconHome />
               <a
-                :href="item.GITEE_PATH"
+                :href="item.giteePath"
                 target="_blank"
                 rel="noopener noreferrer"
                 >{{ i18n.member.GITEE_TEXT }}</a
               >
             </li>
-            <li v-if="item.EMIAL">
+            <li v-if="item.emial">
               <IconMail />
               {{ i18n.member.EMIAL_TEXT }}
-              <a :href="'mailto:' + item.EMIAL">{{ item.EMIAL }}</a>
+              <a :href="'mailto:' + item.emial">{{ item.emial }}</a>
             </li>
             <li><IconUser />{{ item.nameText }}</li>
           </ul>
@@ -311,7 +311,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
       </template>
       <template v-else>
         <h1 :id="item.id" :ref="navTitle" class="member-title">
-          {{ item.NAME }}
+          {{ item.name }}
         </h1>
         <div class="gap">
           <div
@@ -320,12 +320,12 @@ const handleChangeActiveMobile = (activeNames: any) => {
             class="member-panel-content"
           >
             <template v-if="!subitem.other">
-              <h2 :id="subitem.id" class="sub-title">{{ subitem.NAME }}</h2>
+              <h2 :id="subitem.id" class="sub-title">{{ subitem.name }}</h2>
               <ul class="member-info">
                 <li>
                   <IconHome />
                   <a
-                    :href="subitem.GITEE_PATH"
+                    :href="subitem.giteePath"
                     target="_blank"
                     rel="noopener noreferrer"
                     >{{ i18n.member.GITEE_TEXT }}</a
@@ -334,7 +334,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
                 <li>
                   <IconMail />
                   {{ i18n.member.EMIAL_TEXT }}
-                  <a :href="'mailto:' + subitem.EMIAL">{{ subitem.EMIAL }}</a>
+                  <a :href="'mailto:' + subitem.emial">{{ subitem.emial }}</a>
                 </li>
                 <li><IconUser />{{ i18n.member.NAMEL_TEXT }}</li>
               </ul>

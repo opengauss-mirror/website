@@ -1,9 +1,4 @@
-import {
-  GITEE_LINK,
-  DATA_LINK,
-  STATUS_LINK,
-  GIYHUB_LINK,
-} from '@/shared/url-config';
+import { GITEE_LINK, DATA_LINK, GIYHUB_LINK } from '@/shared/url-config';
 export default {
   require_field: `必填`,
   COMMON_CONFIG: {
@@ -216,11 +211,6 @@ export default {
         NAME: `About Us`,
         URL: `/en/aboutUs/`,
         TARGET: `_self`,
-      },
-      {
-        NAME: `Service Status`,
-        URL: STATUS_LINK,
-        TARGET: `_blank`,
       },
     ],
     QR_CODE: `WeChat Subscription`,
