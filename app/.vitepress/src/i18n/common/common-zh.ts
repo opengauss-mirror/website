@@ -1,9 +1,4 @@
-import {
-  GITEE_LINK,
-  DATA_LINK,
-  GIYHUB_LINK,
-  STATUS_LINK,
-} from '@/shared/url-config';
+import { GITEE_LINK, DATA_LINK, GIYHUB_LINK } from '@/shared/url-config';
 export default {
   REQUIRE_FIELD: `必填`,
   COMMON_CONFIG: {
@@ -249,11 +244,6 @@ export default {
         NAME: `关于我们`,
         URL: `/zh/aboutUs/`,
         TARGET: `_self`,
-      },
-      {
-        NAME: `服务状态`,
-        URL: STATUS_LINK,
-        TARGET: `_blank`,
       },
     ],
     QR_CODE: `扫码关注公众号`,
