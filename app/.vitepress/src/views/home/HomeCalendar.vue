@@ -6,6 +6,7 @@ import { FormInstance, FormRules, ElMessage } from 'element-plus';
 import {
   giteeLogin,
   meetingLogin,
+  getUserInfo,
   meetingReserve,
   meetingDelete,
   meetingUpdate,
@@ -19,8 +20,7 @@ import {
   getNowFormatDate,
   isBrowser,
   handleError,
-  getCustomCookie,
-  windowOpen,
+  getUrlParams,
 } from '@/shared/utils';
 import {
   TableData,
@@ -41,7 +41,6 @@ import { GITEE_LINK } from '@/shared/url-config';
 
 const { lang } = useData();
 const i18n = useI18n();
-
 const commonStore = useCommon();
 let currentMeet = reactive<TableData>({
   date: '',
@@ -119,7 +118,6 @@ const calendarData = ref<TableData[]>([
     ],
   },
 ]);
-
 const currentDay = ref('');
 const activeName = ref('');
 const isCollapse = ref(false);
@@ -294,10 +292,10 @@ watch(
 const i18nMeeting = computed(() => i18n.value.home.HOME_CALENDAR);
 const meetingStore = useMeeting();
 
-//用户登录
+//获取用户信息
 const loginMeetingApi = async () => {
   try {
-    const res = await meetingLogin();
+    const res = await getUserInfo();
     if (res.code === 200) {
       meetingStore.userSigs = res.data.sigs;
       meetingStore.giteeId = res.data.user.gitee_id;
@@ -308,7 +306,24 @@ const loginMeetingApi = async () => {
   }
 };
 onMounted(() => {
-  if (getCustomCookie('meeting-csrftoken')) {
+  const paramsObj = getUrlParams(location.href);
+  const lastCode = localStorage.getItem('code') || '';
+  if (
+    paramsObj &&
+    paramsObj.code &&
+    !localStorage.getItem('meeting-accesstoken') &&
+    paramsObj.code !== lastCode
+  ) {
+    meetingLogin({
+      code: paramsObj.code,
+    }).then((res) => {
+      if (res.code === 200 && res.access) {
+        localStorage.setItem('meeting-accesstoken', res.access);
+        localStorage.setItem('code', paramsObj.code);
+        loginMeetingApi();
+      }
+    });
+  } else if (localStorage.getItem('meeting-accesstoken')) {
     loginMeetingApi();
   }
 });
@@ -446,13 +461,9 @@ const handleModifyMeeting = (item: any, date: string) => {
     meetingDialog.value = true;
     dialogTitle.value = i18nMeeting.value.MODIFY;
     // 深拷贝
-    try {
-      const itemData = JSON.parse(JSON.stringify(item));
-      formatterResponse(itemData, date);
-      mId.value = itemData.mid;
-    } catch {
-      handleError();
-    }
+    const itemData = JSON.parse(JSON.stringify(item));
+    formatterResponse(itemData, date);
+    mId.value = itemData.mid;
   } else {
     ElMessage({
       message: i18nMeeting.value.PERMISSION_TEXT1,
@@ -465,7 +476,8 @@ const handleModifyMeeting = (item: any, date: string) => {
 const requestMeetingUpdate = async () => {
   try {
     const res = await meetingUpdate(mId.value, meetingForm.value);
-    if (res.code < 300) {
+    if (res.code < 300 && res.access) {
+      localStorage.setItem('meeting-accesstoken', res.access);
       meetingDialog.value = false;
       ElMessage({
         message: isZh.value ? res.msg : res.en_msg,
@@ -487,7 +499,8 @@ const requestMeetingReserve = async () => {
   try {
     const res = await meetingReserve(meetingForm.value);
     if (res.code < 300) {
-      if (res.code > 200) {
+      if (res.code > 200 && res.access) {
+        localStorage.setItem('meeting-accesstoken', res.access);
         meetingDialog.value = false;
         ElMessage({
           message: i18nMeeting.value.SUCCESS,
@@ -509,7 +522,8 @@ const requestMeetingReserve = async () => {
 const requestMeetingDelete = async () => {
   try {
     const res = await meetingDelete(mId.value);
-    if (res.code < 300) {
+    if (res.code < 300 && res.access) {
+      localStorage.setItem('meeting-accesstoken', res.access);
       meetingDialog.value = false;
       ElMessage({
         message: i18nMeeting.value.DELETE_SUCCESS,
@@ -531,7 +545,7 @@ const requestGiteeLogin = async () => {
       '&redirect_uri=' +
       res.redirect_url +
       '&response_type=code';
-    windowOpen(url, '_self');
+    window.open(url, '_self');
   } catch (e: any) {
     handleError('Error!');
   }
@@ -629,14 +643,17 @@ const changeRecord = () => {
 // 退出
 const handleLogout = async () => {
   try {
-    await giteeLogout();
-    meetingStore.userSigs = [];
-    meetingStore.giteeId = '';
-    meetingStore.userId = null;
-    ElMessage({
-      message: i18nMeeting.value.LOGOUT_SUCCESS,
-      type: 'success',
-    });
+    const res = await giteeLogout();
+    if (res.code === 200) {
+      localStorage.removeItem('meeting-accesstoken')
+      meetingStore.userSigs = [];
+      meetingStore.giteeId = '';
+      meetingStore.userId = null;
+      ElMessage({
+        message: i18nMeeting.value.LOGOUT_SUCCESS,
+        type: 'success',
+      });
+    }
   } catch {
     handleError('Error!');
   }
