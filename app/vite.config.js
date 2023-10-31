@@ -60,12 +60,12 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/api-dsapi/, ''),
       },
       '/api-meeting/': {
-        target: 'https://www.opengauss.org/',
+        target: 'https://meetings-opengauss.osinfra.cn/',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api-meeting/, ''),
       },
       '/api-search/': {
-        target: 'https://https://opengauss.org/api-search/',
+        target: 'https://doc-search-opengauss.osinfra.cn/',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api-search/, ''),
       },

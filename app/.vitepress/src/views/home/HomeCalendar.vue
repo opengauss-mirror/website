@@ -4,14 +4,15 @@ import { useData } from 'vitepress';
 import { useI18n } from '@/i18n';
 import { FormInstance, FormRules, ElMessage } from 'element-plus';
 import {
-  giteeLogin,
-  meetingLogin,
-  meetingReserve,
-  meetingDelete,
-  meetingUpdate,
+  loginGitee,
+  loginMeeting,
+  getUserInfo,
+  addMeeting,
+  deleteMeeting,
+  updateMeeting,
   getMeetingData,
   getMeetingSig,
-  giteeLogout,
+  logoutMeeting,
 } from '@/api/api-calendar';
 
 import {
@@ -19,7 +20,7 @@ import {
   getNowFormatDate,
   isBrowser,
   handleError,
-  getCustomCookie,
+  getUrlParams,
   windowOpen,
 } from '@/shared/utils';
 import {
@@ -41,7 +42,6 @@ import { GITEE_LINK } from '@/shared/url-config';
 
 const { lang } = useData();
 const i18n = useI18n();
-
 const commonStore = useCommon();
 let currentMeet = reactive<TableData>({
   date: '',
@@ -119,11 +119,11 @@ const calendarData = ref<TableData[]>([
     ],
   },
 ]);
-
 const currentDay = ref('');
 const activeName = ref('');
 const isCollapse = ref(false);
 const isAgree = ref(false);
+const meetingToken = ref('');
 
 const detailItem = [
   { text: '发起人', key: 'creator', isLink: false },
@@ -294,10 +294,10 @@ watch(
 const i18nMeeting = computed(() => i18n.value.home.HOME_CALENDAR);
 const meetingStore = useMeeting();
 
-//用户登录
+//获取用户信息
 const loginMeetingApi = async () => {
   try {
-    const res = await meetingLogin();
+    const res = await getUserInfo(meetingToken.value);
     if (res.code === 200) {
       meetingStore.userSigs = res.data.sigs;
       meetingStore.giteeId = res.data.user.gitee_id;
@@ -308,8 +308,21 @@ const loginMeetingApi = async () => {
   }
 };
 onMounted(() => {
-  if (getCustomCookie('meeting-csrftoken')) {
-    loginMeetingApi();
+  const paramsObj = getUrlParams(location.href);
+  const lastCode = localStorage.getItem('code') || '';
+  if (paramsObj && paramsObj.code && paramsObj.code !== lastCode) {
+    loginMeeting(
+      {
+        code: paramsObj.code,
+      },
+      meetingToken.value
+    ).then((res) => {
+      if (res.code === 200 && res.access) {
+        meetingToken.value = res.access;
+        localStorage.setItem('code', paramsObj.code);
+        loginMeetingApi();
+      }
+    });
   }
 });
 
@@ -446,13 +459,9 @@ const handleModifyMeeting = (item: any, date: string) => {
     meetingDialog.value = true;
     dialogTitle.value = i18nMeeting.value.MODIFY;
     // 深拷贝
-    try {
-      const itemData = JSON.parse(JSON.stringify(item));
-      formatterResponse(itemData, date);
-      mId.value = itemData.mid;
-    } catch {
-      handleError();
-    }
+    const itemData = JSON.parse(JSON.stringify(item));
+    formatterResponse(itemData, date);
+    mId.value = itemData.mid;
   } else {
     ElMessage({
       message: i18nMeeting.value.PERMISSION_TEXT1,
@@ -464,8 +473,13 @@ const handleModifyMeeting = (item: any, date: string) => {
 //修改会议请求
 const requestMeetingUpdate = async () => {
   try {
-    const res = await meetingUpdate(mId.value, meetingForm.value);
-    if (res.code < 300) {
+    const res = await updateMeeting(
+      mId.value,
+      meetingForm.value,
+      meetingToken.value
+    );
+    if (res.code < 300 && res.access) {
+      meetingToken.value = res.access;
       meetingDialog.value = false;
       ElMessage({
         message: isZh.value ? res.msg : res.en_msg,
@@ -485,9 +499,10 @@ const requestMeetingUpdate = async () => {
 //新增会议请求
 const requestMeetingReserve = async () => {
   try {
-    const res = await meetingReserve(meetingForm.value);
+    const res = await addMeeting(meetingForm.value, meetingToken.value);
     if (res.code < 300) {
-      if (res.code > 200) {
+      if (res.code > 200 && res.access) {
+        meetingToken.value = res.access;
         meetingDialog.value = false;
         ElMessage({
           message: i18nMeeting.value.SUCCESS,
@@ -508,8 +523,9 @@ const requestMeetingReserve = async () => {
 //删除会议
 const requestMeetingDelete = async () => {
   try {
-    const res = await meetingDelete(mId.value);
-    if (res.code < 300) {
+    const res = await deleteMeeting(mId.value, meetingToken.value);
+    if (res.code < 300 && res.access) {
+      meetingToken.value = res.access;
       meetingDialog.value = false;
       ElMessage({
         message: i18nMeeting.value.DELETE_SUCCESS,
@@ -524,7 +540,7 @@ const requestMeetingDelete = async () => {
 //gitee登录鉴权
 const requestGiteeLogin = async () => {
   try {
-    const res = await giteeLogin();
+    const res = await loginGitee();
     const url =
       `${GITEE_LINK}oauth/authorize?client_id=` +
       res.client_id +
@@ -629,14 +645,17 @@ const changeRecord = () => {
 // 退出
 const handleLogout = async () => {
   try {
-    await giteeLogout();
-    meetingStore.userSigs = [];
-    meetingStore.giteeId = '';
-    meetingStore.userId = null;
-    ElMessage({
-      message: i18nMeeting.value.LOGOUT_SUCCESS,
-      type: 'success',
-    });
+    const res = await logoutMeeting(meetingToken.value);
+    if (res.code === 200) {
+      meetingToken.value = '';
+      meetingStore.userSigs = [];
+      meetingStore.giteeId = '';
+      meetingStore.userId = null;
+      ElMessage({
+        message: i18nMeeting.value.LOGOUT_SUCCESS,
+        type: 'success',
+      });
+    }
   } catch {
     handleError('Error!');
   }
@@ -891,6 +910,7 @@ const handleLogout = async () => {
     lock-scroll
     close-on-press-escape
     close-on-click-modalf
+    destroy-on-close
     append-to-body
     width="550px"
   >
@@ -931,7 +951,7 @@ const handleLogout = async () => {
       </div>
     </div>
     <!-- 预定、编辑表单 -->
-    <div v-else-if="isModify || isReserve" class="">
+    <div v-else-if="isModify || isReserve" class="meeting-content">
       <ElForm
         ref="ruleFormRef"
         :model="meetingForm"
@@ -1084,12 +1104,34 @@ const handleLogout = async () => {
       display: flex;
       justify-content: center;
       align-items: center;
+      height: 16px;
+      padding: 1px 0;
+      overflow: hidden;
       #agree-input {
         cursor: pointer;
       }
       :deep(.el-checkbox__label) {
         padding-left: 3px;
         color: var(--o-color-text1);
+        line-height: 14px;
+        display: flex;
+        align-items: center;
+      }
+      :deep(.el-checkbox) {
+        height: 16px;
+        display: flex;
+        align-items: center;
+        .el-checkbox__inner {
+          display: flex !important;
+          align-items: center;
+        }
+      }
+      span {
+        display: flex;
+        align-items: center;
+        a{
+          line-height: auto;
+        }
       }
     }
   }
@@ -1107,6 +1149,22 @@ const handleLogout = async () => {
   .failed-img {
     width: 108px;
     margin: var(--o-spacing-h4) 0;
+  }
+}
+.meeting-content {
+  .asterisk-left {
+    :deep(.el-input__wrapper) {
+      box-shadow: 0 0 0 1px var(--o-color-border1);
+    }
+    :deep(.el-form-item__content) {
+      .el-radio-button__inner {
+        border-right: 0;
+        border-left: 1px solid var(--o-color-border1);
+      }
+      .el-radio-button:nth-of-type(2) {
+        border-right: 1px solid var(--o-color-border1);
+      }
+    }
   }
 }
 .calendar-title {
