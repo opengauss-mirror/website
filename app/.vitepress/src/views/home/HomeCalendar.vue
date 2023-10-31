@@ -4,15 +4,15 @@ import { useData } from 'vitepress';
 import { useI18n } from '@/i18n';
 import { FormInstance, FormRules, ElMessage } from 'element-plus';
 import {
-  giteeLogin,
-  meetingLogin,
+  loginGitee,
+  loginMeeting,
   getUserInfo,
-  meetingReserve,
-  meetingDelete,
-  meetingUpdate,
+  addMeeting,
+  deleteMeeting,
+  updateMeeting,
   getMeetingData,
   getMeetingSig,
-  giteeLogout,
+  logoutMeeting,
 } from '@/api/api-calendar';
 
 import {
@@ -310,7 +310,7 @@ onMounted(() => {
   const paramsObj = getUrlParams(location.href);
   const lastCode = localStorage.getItem('code') || '';
   if (paramsObj && paramsObj.code && paramsObj.code !== lastCode) {
-    meetingLogin(
+    loginMeeting(
       {
         code: paramsObj.code,
       },
@@ -472,7 +472,7 @@ const handleModifyMeeting = (item: any, date: string) => {
 //修改会议请求
 const requestMeetingUpdate = async () => {
   try {
-    const res = await meetingUpdate(
+    const res = await updateMeeting(
       mId.value,
       meetingForm.value,
       meetingToken.value
@@ -498,7 +498,7 @@ const requestMeetingUpdate = async () => {
 //新增会议请求
 const requestMeetingReserve = async () => {
   try {
-    const res = await meetingReserve(meetingForm.value, meetingToken.value);
+    const res = await addMeeting(meetingForm.value, meetingToken.value);
     if (res.code < 300) {
       if (res.code > 200 && res.access) {
         meetingToken.value = res.access;
@@ -522,7 +522,7 @@ const requestMeetingReserve = async () => {
 //删除会议
 const requestMeetingDelete = async () => {
   try {
-    const res = await meetingDelete(mId.value, meetingToken.value);
+    const res = await deleteMeeting(mId.value, meetingToken.value);
     if (res.code < 300 && res.access) {
       meetingToken.value = res.access;
       meetingDialog.value = false;
@@ -539,7 +539,7 @@ const requestMeetingDelete = async () => {
 //gitee登录鉴权
 const requestGiteeLogin = async () => {
   try {
-    const res = await giteeLogin();
+    const res = await loginGitee();
     const url =
       `${GITEE_LINK}oauth/authorize?client_id=` +
       res.client_id +
@@ -644,7 +644,7 @@ const changeRecord = () => {
 // 退出
 const handleLogout = async () => {
   try {
-    const res = await giteeLogout(meetingToken.value);
+    const res = await logoutMeeting(meetingToken.value);
     if (res.code === 200) {
       meetingToken.value = '';
       meetingStore.userSigs = [];

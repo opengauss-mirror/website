@@ -35,9 +35,9 @@ export function getMeetingSig() {
 
 /**
  * gitee登录
- * @name giteeLogin
+ * @name loginGitee
  */
-export function giteeLogin() {
+export function loginGitee() {
   const url = '/api-meeting/gitee_login/';
   return request
     .get(url, { $doException: false })
@@ -47,7 +47,7 @@ export function giteeLogin() {
     });
 }
 // 会议登录
-export function meetingLogin(params: object, token = '') {
+export function loginMeeting(params: object, token = '') {
   const url = '/api-meeting/login/';
   return request
     .post(url, params, {
@@ -62,7 +62,7 @@ export function meetingLogin(params: object, token = '') {
     });
 }
 // 会议登出
-export function giteeLogout(token = '') {
+export function logoutMeeting(token = '') {
   const url = '/api-meeting/logout/';
   return request
     .get(url, {
@@ -93,7 +93,7 @@ export function getUserInfo(token = '') {
 }
 
 //新增会议
-export function meetingReserve(params: object, token = '') {
+export function addMeeting(params: object, token = '') {
   const url = `/api-meeting/meetings/`;
   return request
     .post(url, params, {
@@ -107,7 +107,7 @@ export function meetingReserve(params: object, token = '') {
     });
 }
 
-export function meetingDelete(mid: number | null, token = '') {
+export function deleteMeeting(mid: number | null, token = '') {
   const url = `/api-meeting/meeting/action/delete/${mid}/`;
   return request
     .delete(url, {
@@ -121,7 +121,7 @@ export function meetingDelete(mid: number | null, token = '') {
     });
 }
 
-export function meetingUpdate(mid: number | null, params: object, token = '') {
+export function updateMeeting(mid: number | null, params: object, token = '') {
   const url = `/api-meeting/meeting/action/update/${mid}/`;
   return request
     .put(url, params, {
