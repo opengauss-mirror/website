@@ -122,6 +122,7 @@ const currentDay = ref('');
 const activeName = ref('');
 const isCollapse = ref(false);
 const isAgree = ref(false);
+const meetingToken = ref('');
 
 const detailItem = [
   { text: '发起人', key: 'creator', isLink: false },
@@ -295,7 +296,7 @@ const meetingStore = useMeeting();
 //获取用户信息
 const loginMeetingApi = async () => {
   try {
-    const res = await getUserInfo();
+    const res = await getUserInfo(meetingToken.value);
     if (res.code === 200) {
       meetingStore.userSigs = res.data.sigs;
       meetingStore.giteeId = res.data.user.gitee_id;
@@ -308,23 +309,19 @@ const loginMeetingApi = async () => {
 onMounted(() => {
   const paramsObj = getUrlParams(location.href);
   const lastCode = localStorage.getItem('code') || '';
-  if (
-    paramsObj &&
-    paramsObj.code &&
-    !localStorage.getItem('meeting-accesstoken') &&
-    paramsObj.code !== lastCode
-  ) {
-    meetingLogin({
-      code: paramsObj.code,
-    }).then((res) => {
+  if (paramsObj && paramsObj.code && paramsObj.code !== lastCode) {
+    meetingLogin(
+      {
+        code: paramsObj.code,
+      },
+      meetingToken.value
+    ).then((res) => {
       if (res.code === 200 && res.access) {
-        localStorage.setItem('meeting-accesstoken', res.access);
+        meetingToken.value = res.access;
         localStorage.setItem('code', paramsObj.code);
         loginMeetingApi();
       }
     });
-  } else if (localStorage.getItem('meeting-accesstoken')) {
-    loginMeetingApi();
   }
 });
 
@@ -475,9 +472,13 @@ const handleModifyMeeting = (item: any, date: string) => {
 //修改会议请求
 const requestMeetingUpdate = async () => {
   try {
-    const res = await meetingUpdate(mId.value, meetingForm.value);
+    const res = await meetingUpdate(
+      mId.value,
+      meetingForm.value,
+      meetingToken.value
+    );
     if (res.code < 300 && res.access) {
-      localStorage.setItem('meeting-accesstoken', res.access);
+      meetingToken.value = res.access;
       meetingDialog.value = false;
       ElMessage({
         message: isZh.value ? res.msg : res.en_msg,
@@ -497,10 +498,10 @@ const requestMeetingUpdate = async () => {
 //新增会议请求
 const requestMeetingReserve = async () => {
   try {
-    const res = await meetingReserve(meetingForm.value);
+    const res = await meetingReserve(meetingForm.value, meetingToken.value);
     if (res.code < 300) {
       if (res.code > 200 && res.access) {
-        localStorage.setItem('meeting-accesstoken', res.access);
+        meetingToken.value = res.access;
         meetingDialog.value = false;
         ElMessage({
           message: i18nMeeting.value.SUCCESS,
@@ -521,9 +522,9 @@ const requestMeetingReserve = async () => {
 //删除会议
 const requestMeetingDelete = async () => {
   try {
-    const res = await meetingDelete(mId.value);
+    const res = await meetingDelete(mId.value, meetingToken.value);
     if (res.code < 300 && res.access) {
-      localStorage.setItem('meeting-accesstoken', res.access);
+      meetingToken.value = res.access;
       meetingDialog.value = false;
       ElMessage({
         message: i18nMeeting.value.DELETE_SUCCESS,
@@ -643,9 +644,9 @@ const changeRecord = () => {
 // 退出
 const handleLogout = async () => {
   try {
-    const res = await giteeLogout();
+    const res = await giteeLogout(meetingToken.value);
     if (res.code === 200) {
-      localStorage.removeItem('meeting-accesstoken')
+      meetingToken.value = '';
       meetingStore.userSigs = [];
       meetingStore.giteeId = '';
       meetingStore.userId = null;

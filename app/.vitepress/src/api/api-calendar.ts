@@ -47,13 +47,12 @@ export function giteeLogin() {
     });
 }
 // 会议登录
-export function meetingLogin(params: object) {
+export function meetingLogin(params: object, token = '') {
   const url = '/api-meeting/login/';
   return request
     .post(url, params, {
       headers: {
-        Authorization:
-          'Bearer ' + localStorage.getItem('meeting-accesstoken') || '',
+        Authorization: 'Bearer ' + token,
       },
       $doException: false,
     })
@@ -63,13 +62,12 @@ export function meetingLogin(params: object) {
     });
 }
 // 会议登出
-export function giteeLogout() {
+export function giteeLogout(token = '') {
   const url = '/api-meeting/logout/';
   return request
     .get(url, {
       headers: {
-        Authorization:
-          'Bearer ' + localStorage.getItem('meeting-accesstoken') || '',
+        Authorization: 'Bearer ' + token,
       },
       $doException: false,
     })
@@ -82,13 +80,12 @@ export function giteeLogout() {
  * 获取用户信息
  * @name getUserInfo
  */
-export function getUserInfo() {
+export function getUserInfo(token = '') {
   const url = `/api-meeting/user/`;
   return request
     .get(url, {
       headers: {
-        Authorization:
-          'Bearer ' + localStorage.getItem('meeting-accesstoken') || '',
+        Authorization: 'Bearer ' + token,
       },
       $doException: false,
     })
@@ -96,13 +93,12 @@ export function getUserInfo() {
 }
 
 //新增会议
-export function meetingReserve(params: object) {
+export function meetingReserve(params: object, token = '') {
   const url = `/api-meeting/meetings/`;
   return request
     .post(url, params, {
       headers: {
-        Authorization:
-          'Bearer ' + localStorage.getItem('meeting-accesstoken') || '',
+        Authorization: 'Bearer ' + token,
       },
     })
     .then((res: AxiosResponse) => res.data)
@@ -111,13 +107,12 @@ export function meetingReserve(params: object) {
     });
 }
 
-export function meetingDelete(mid: number | null) {
+export function meetingDelete(mid: number | null, token = '') {
   const url = `/api-meeting/meeting/action/delete/${mid}/`;
   return request
     .delete(url, {
       headers: {
-        Authorization:
-          'Bearer ' + localStorage.getItem('meeting-accesstoken') || '',
+        Authorization: 'Bearer ' + token,
       },
     })
     .then((res: AxiosResponse) => res.data)
@@ -126,13 +121,12 @@ export function meetingDelete(mid: number | null) {
     });
 }
 
-export function meetingUpdate(mid: number | null, params: object) {
+export function meetingUpdate(mid: number | null, params: object, token = '') {
   const url = `/api-meeting/meeting/action/update/${mid}/`;
   return request
     .put(url, params, {
       headers: {
-        Authorization:
-          'Bearer ' + localStorage.getItem('meeting-accesstoken') || '',
+        Authorization: 'Bearer ' + token,
       },
     })
     .then((res: AxiosResponse) => res.data)
