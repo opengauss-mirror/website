@@ -66,7 +66,7 @@ onMounted(async () => {
     page: 1,
     pageSize: 999,
     lang: lang.value,
-    category: 'events',
+    type: 'events',
   });
   try {
     const responeData = await getSortData(sortParams);

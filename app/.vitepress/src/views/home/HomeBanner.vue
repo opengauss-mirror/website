@@ -179,6 +179,7 @@ const bannerVideoSrc = `${OBS_VIDEO_LINK}openGauss%20Summit%202022/Banner/openGa
       close-on-press-escape
       close-on-click-modal
       width="800px"
+      destroy-on-close
     >
       <div class="video-center">
         <video
