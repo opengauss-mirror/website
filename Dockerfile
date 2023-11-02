@@ -67,7 +67,9 @@ RUN touch /var/run/nginx.pid \
     && chmod 440 /etc/nginx/modules/* \
     && chmod 440 /etc/nginx/nginx.conf \
     && chmod 440 /etc/nginx/mime.types \
-    && rm -rf /usr/share/nginx/html/50x.html
+    && rm -rf /usr/share/nginx/html/50x.html \
+    && umask 0022 \
+    && sed -i "s|PASS_MAX_DAYS[ \t]*99999|PASS_MAX_DAYS 30|" /etc/login.defs
 
 EXPOSE 8080
 
