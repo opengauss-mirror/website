@@ -143,6 +143,4 @@ If you want to contact us or exercise your rights, please contact us at <contact
 
 Last updated: **July, 2023**
 
-To view historical versions of the privacy policy, click [here](/en/privacyPolicy/historical/).
-
 </div>
