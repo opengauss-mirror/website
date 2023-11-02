@@ -15,6 +15,8 @@ RUN pnpm build
 FROM swr.cn-north-4.myhuaweicloud.com/opensourceway/openeuler/nginx:1.22.0-22.03-lts
 
 COPY --from=Builder /home/opengauss/web/app/.vitepress/dist /usr/share/nginx/html/
+COPY ./sitemap/sitemap-en.xml ./sitemap/sitemap-zh.xml /usr/share/nginx/html/
+
 RUN chmod -R 755 /usr/share/nginx/html
 COPY ./deploy/nginx/nginx.conf /etc/nginx/nginx.conf
 
