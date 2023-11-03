@@ -28,10 +28,16 @@ interface TagsParams {
   condition?: Condition;
 }
 
-// 先用euler
-export function getSortData(params: SortParams | object) {
+export function getSortData(
+  params: SortParams | object,
+  doException: boolean = false
+) {
   const url = '/api-search/search/sort';
-  return request.post(url, params).then((res: AxiosResponse) => res.data);
+  return request
+    .post(url, params, {
+      $doException: doException,
+    })
+    .then((res: AxiosResponse) => res.data);
 }
 
 export function getTagsData(params: TagsParams) {
@@ -56,28 +62,4 @@ export function getSearchCount(params: any) {
     .catch(() => {
       handleError('Error!');
     });
-}
-export function getPop(params: any) {
-  const url = `/api-search/search/pop?${params}`;
-  return request
-    .post(url)
-    .then((res: AxiosResponse) => res.data)
-    .catch(() => {
-      handleError('Error!');
-    });
-}
-
-/**
- * 首页数据卡片筛选
- * @name getStatistic
- * @param {}
- * @return  Array
- */
-export function getStatistic() {
-  const url = '/api-dsapi/query/all?community=openGauss';
-  return request
-    .get(url, {
-      $doException: false,
-    })
-    .then((res: AxiosResponse) => res.data);
 }

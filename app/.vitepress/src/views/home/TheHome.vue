@@ -45,21 +45,13 @@ onMounted(async () => {
     page: 1,
     pageSize: 4,
   };
-  try {
-    const responeData = await getSortData(paramsNews);
-    if (responeData.obj && responeData.obj.records) {
-      newsData.value = responeData.obj.records;
-    }
-  } catch (e: any) {
-    handleError('Error!');
+  const responeData1 = await getSortData(paramsNews, true);
+  if (responeData1.obj && responeData1.obj.records) {
+    newsData.value = responeData1.obj.records;
   }
-  try {
-    const responeData = await getSortData(paramsBlog);
-    if (responeData.obj && responeData.obj.records) {
-      blogData.value = responeData.obj.records;
-    }
-  } catch (e: any) {
-    handleError('Error!');
+  const responeData2 = await getSortData(paramsBlog, true);
+  if (responeData2.obj && responeData2.obj.records) {
+    blogData.value = responeData2.obj.records;
   }
 });
 onUnmounted(() => {
