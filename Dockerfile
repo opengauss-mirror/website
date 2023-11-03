@@ -13,7 +13,7 @@ RUN npm install pnpm -g
 RUN pnpm install
 RUN pnpm build
 
-FROM swr.cn-north-4.myhuaweicloud.com/opensourceway/openeuler/nginx:1.24.0-22.03-lts as NginxBuilder
+FROM swr.cn-north-4.myhuaweicloud.com/opensourceway/openeuler/nginx:1.24.0-22.03-lts-sp1 as NginxBuilder
 
 FROM openeuler/openeuler:22.03-lts-sp1
 
@@ -22,15 +22,17 @@ ENV NGINX_CONFIG_FILE /etc/nginx/nginx.conf
 ENV NGINX_PID /var/run/nginx.pid
 ENV NGINX_USER nginx
 ENV NGINX_GROUP nginx
+ENV NGINX_BIN /usr/share/nginx/sbin
+ENV NGINX_HOME /usr/share/nginx
 COPY --from=NginxBuilder /usr/share/nginx /usr/share/nginx
-COPY --from=NginxBuilder /usr/sbin/nginx /usr/sbin/nginx
+COPY --from=NginxBuilder /usr/share/nginx/sbin/nginx /usr/share/nginx/sbin/nginx
 COPY --from=NginxBuilder /etc/nginx/modules /etc/nginx/modules
 COPY --from=NginxBuilder /etc/nginx/geoip  /etc/nginx/geoip
 COPY --from=NginxBuilder /etc/nginx/mime.types  /etc/nginx/mime.types
 COPY --from=Builder /home/opengauss/web/app/.vitepress/dist /usr/share/nginx/html/
-RUN chmod -R 440 /usr/share/nginx/html
+RUN chmod -R 700 /usr/share/nginx/html
 COPY ./deploy/nginx/nginx.conf /etc/nginx/nginx.conf
-COPY --chown=$NGINX_USER:$NGINX_GROUP ./server.crt ./server.key ./password.txt /etc/nginx/cert/
+COPY --chown=$NGINX_USER:$NGINX_GROUP ./server.crt ./server.key ./password.txt ./dh2048.pem /etc/nginx/cert/
 
 
 RUN touch /var/run/nginx.pid \
@@ -61,14 +63,17 @@ RUN touch /var/run/nginx.pid \
     && chmod 400 /etc/nginx/cert/server.crt \
     && chmod 400 /etc/nginx/cert/server.key \
     && chmod 600 /etc/nginx/cert/password.txt \
+    && chmod 400 /etc/nginx/cert/dh2048.pem \
     && chmod 550 /etc/nginx/geoip/ \
     && chmod 440 /etc/nginx/geoip/* \
     && chmod 550 /etc/nginx/modules \
     && chmod 440 /etc/nginx/modules/* \
-    && chmod 440 /etc/nginx/nginx.conf \
+    && chmod 400 /etc/nginx/nginx.conf \
     && chmod 440 /etc/nginx/mime.types \
     && rm -rf /usr/share/nginx/html/50x.html \
-    && umask 0022 \
+    && echo "umask 0027" >> /etc/bashrc \
+    && echo "set +o history" >> /etc/bashrc \
+    && sed -i "s|HISTSIZE=1000|HISTSIZE=0|" /etc/profile \
     && sed -i "s|PASS_MAX_DAYS[ \t]*99999|PASS_MAX_DAYS 30|" /etc/login.defs
 
 EXPOSE 8080
