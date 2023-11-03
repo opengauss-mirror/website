@@ -3,7 +3,7 @@ import { ref, watch, onMounted, computed } from 'vue';
 import { useRoute, useData } from 'vitepress';
 import { ElDialog, ElSwitch } from 'element-plus';
 import { setCustomCookie, isBoolean, getCustomCookie } from '@/shared/utils';
-import { useCookieStatus } from '@/stores/common';
+import { useCookieStatus, usePrivacyVersion } from '@/stores/common';
 import { useScreen } from '@/shared/useScreen';
 import { useI18n } from '@/i18n';
 import { BAIDU_HM } from '@/shared/url-config';
@@ -16,6 +16,7 @@ const { lang } = useData();
 const isZh = computed(() => (lang.value === 'zh' ? true : false));
 
 const cookieStatus = useCookieStatus();
+const privacyVersion = usePrivacyVersion();
 
 const route = useRoute();
 
@@ -25,7 +26,7 @@ const COOKIE_AGREED_STATUS = {
   NECCESSARY_AGREED: '2', // 仅同意必要cookie
 };
 
-const COOKEY_KEY = 'agree-cookiepolicy';
+const COOKEY_KEY = 'agreed-cookiepolicy';
 
 // 是否允许分析cookie
 const analysisAllowed = ref(false);
@@ -56,11 +57,18 @@ const toggleDlgVisible = (val: boolean) => {
 
 // 获取cookie状态
 const getUserCookieStatus = () => {
-  const cookieVal = getCustomCookie(COOKEY_KEY);
+  const cookieVal = getCustomCookie(COOKEY_KEY) ?? '0';
 
-  if (cookieVal === COOKIE_AGREED_STATUS.ALL_AGREED) {
+  const cookieStatusVal = cookieVal[0];
+  const privacyVersionVal = cookieVal.slice(1);
+
+  if (privacyVersionVal !== privacyVersion.version) {
+    return COOKIE_AGREED_STATUS.NOT_SIGNED;
+  }
+
+  if (cookieStatusVal === COOKIE_AGREED_STATUS.ALL_AGREED) {
     return COOKIE_AGREED_STATUS.ALL_AGREED;
-  } else if (cookieVal === COOKIE_AGREED_STATUS.NECCESSARY_AGREED) {
+  } else if (cookieStatusVal === COOKIE_AGREED_STATUS.NECCESSARY_AGREED) {
     return COOKIE_AGREED_STATUS.NECCESSARY_AGREED;
   } else {
     return COOKIE_AGREED_STATUS.NOT_SIGNED;
@@ -103,7 +111,11 @@ onMounted(() => {
 // 用户同意所有cookie
 const acceptAll = () => {
   cookieStatus.status = COOKIE_AGREED_STATUS.ALL_AGREED;
-  setCustomCookie(COOKEY_KEY, COOKIE_AGREED_STATUS.ALL_AGREED, 180);
+  setCustomCookie(
+    COOKEY_KEY,
+    `${COOKIE_AGREED_STATUS.ALL_AGREED}${privacyVersion.version}`,
+    180
+  );
   toggleNoticeVisible(false);
   initSensor();
 };
@@ -111,7 +123,11 @@ const acceptAll = () => {
 // 用户拒绝所有cookie，即仅同意必要cookie
 const rejectAll = () => {
   cookieStatus.status = COOKIE_AGREED_STATUS.NECCESSARY_AGREED;
-  setCustomCookie(COOKEY_KEY, COOKIE_AGREED_STATUS.NECCESSARY_AGREED, 180);
+  setCustomCookie(
+    COOKEY_KEY,
+    `${COOKIE_AGREED_STATUS.NECCESSARY_AGREED}${privacyVersion.version}`,
+    180
+  );
   toggleNoticeVisible(false);
 };
 
@@ -132,9 +148,10 @@ const handleAllowAll = () => {
 };
 
 const onDlgChange = () => {
-  // 关闭时
-  if (analysisAllowed.value) {
-    acceptAll();
+  if (!isAllAgreed()) {
+    setTimeout(() => {
+      analysisAllowed.value = false;
+    }, 800);
   }
   toggleDlgVisible(false);
 };
@@ -154,20 +171,20 @@ watch(
     <div class="cookie-notice-content">
       <div class="cookie-notice-wrap">
         <div class="cookie-notice-left">
-          <p class="cookie-title">{{ i18n.cookie.cookieTitle }}</p>
+          <p class="cookie-title">{{ i18n.cookie.title }}</p>
           <p class="cookie-desc">
-            {{ i18n.cookie.cookieDesc }}
+            {{ i18n.cookie.desc }}
             <a :href="isZh ? '/zh/privacyPolicy/' : '/en/privacyPolicy/'">
-              {{ i18n.cookie.privacy }} </a
+              {{ i18n.cookie.link }} </a
             >{{ isZh ? '。' : '.' }}
           </p>
         </div>
         <div class="cookie-notice-right">
           <OButton type="outline" size="mini" @click="acceptAll">{{
-            i18n.cookie.accept
+            i18n.cookie.acceptAll
           }}</OButton>
           <OButton type="outline" size="mini" @click="rejectAll">{{
-            i18n.cookie.reject
+            i18n.cookie.rejectAll
           }}</OButton>
           <OButton type="outline" size="mini" @click="toggleDlgVisible(true)">
             {{ i18n.cookie.manage }}
@@ -192,32 +209,34 @@ watch(
         <div class="cookie-dlg-content">
           <div class="content-item">
             <div class="item-header">
-              <span class="item-title">{{ i18n.cookie.necessaryTitle }}</span>
-              <span class="item-extra">{{ i18n.cookie.enabled }}</span>
+              <span class="item-title">{{ i18n.cookie.necessaryCookie }}</span>
+              <span class="item-extra">{{
+                i18n.cookie.necessaryCookieTip
+              }}</span>
             </div>
             <div class="item-detail">
-              {{ i18n.cookie.necessaryDesc }}
+              {{ i18n.cookie.necessaryCookieDetail }}
             </div>
           </div>
           <div class="content-item">
             <div class="item-header">
-              <span class="item-title">{{ i18n.cookie.statisticsTitle }}</span>
+              <span class="item-title">{{ i18n.cookie.analyticalCookie }}</span>
               <span class="item-extra">
                 <ElSwitch v-model="analysisAllowed"></ElSwitch>
               </span>
             </div>
             <div class="item-detail">
-              {{ i18n.cookie.statisticsDesc }}
+              {{ i18n.cookie.analyticalCookieDetail }}
             </div>
           </div>
         </div>
         <template #footer>
           <span class="dialog-footer">
             <OButton type="outline" size="mini" @click="handleSave">{{
-              i18n.cookie.save
+              i18n.cookie.saveSetting
             }}</OButton>
             <OButton type="outline" size="mini" @click="handleAllowAll">
-              {{ i18n.cookie.accept }}
+              {{ i18n.cookie.acceptAll }}
             </OButton>
           </span>
         </template>
@@ -326,6 +345,9 @@ watch(
   cursor: pointer;
   transform-origin: center;
   color: var(--o-color-text1);
+  &:hover {
+    color: var(--o-color-brand1);
+  }
 }
 
 .cookie-dlg {
