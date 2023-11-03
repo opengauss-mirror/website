@@ -1,28 +1,14 @@
 <script lang="ts" setup>
 import { computed, ref } from 'vue';
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import SwiperCore, { Autoplay, Pagination, Navigation } from 'swiper';
-import 'swiper/swiper.min.css';
-import 'swiper/components/navigation/navigation.min.css';
-import 'swiper/components/pagination/pagination.min.css';
 import { useData } from 'vitepress';
 import homeConfig from '@/data/home/';
-import { OBS_VIDEO_LINK } from '@/shared/url-config';
 import { windowOpen } from '@/shared/utils';
 
 import useWindowResize from '@/components/hooks/useWindowResize';
 
 import IconArrowRight from '~icons/app/icon-arrow-right.svg';
-import videoGif from '@/assets/category/home/video-player.gif';
 
-SwiperCore.use([Autoplay, Pagination, Navigation]);
-
-const { lang, theme } = useData();
-const flag = ref();
-
-const onSwiper = (swiper: any) => {
-  flag.value = computed(() => swiper.animating);
-};
+const { lang } = useData();
 
 const windowWidth = ref(useWindowResize());
 
@@ -32,15 +18,12 @@ const homeBanner = computed(() =>
 );
 
 // banner跳转事件
-const jump = (item: any) => {
-  if (flag.value && item.link !== '') {
-    const prefix = /^\/docs\//;
-    if (prefix.test(item.link)) {
-      const path = theme.value.docsUrl + '/' + lang.value + item.link;
-      windowOpen(path, item.target);
-    } else {
-      windowOpen(item.link, item.target);
-    }
+const jump = (item: any, flag: boolean) => {
+  if (flag) {
+    return;
+  }
+  if (item.link) {
+    windowOpen(item.link, item.target);
   }
 };
 
@@ -51,146 +34,107 @@ const closeVideo = () => {
   isVideoDialog.value = false;
   videoLink.value = '';
 };
-const onVideoBtnClick = (path: string) => {
-  videoLink.value = path;
-  isVideoDialog.value = true;
+const clickRightInset = (path: string) => {
+  if (path === '') {
+    return;
+  }
+  const patternVideo = /.mp4/;
+  if (patternVideo.test(path)) {
+    videoLink.value = path;
+    isVideoDialog.value = true;
+  } else {
+    windowOpen(path);
+  }
 };
-
-const bannerVideoSrc = `${OBS_VIDEO_LINK}openGauss%20Summit%202022/Banner/openGauss%20Banner%E5%8A%A8K_1920x480.mp4`;
 </script>
-
 <template>
   <div class="home-banner">
-    <swiper
-      class="banner-content"
-      :loop="true"
-      :pagination="{
-        clickable: true,
-      }"
-      :autoplay="{
-        delay: 5000,
-        disableOnInteraction: false,
-      }"
-      :navigation="true"
-      @swiper="onSwiper"
+    <el-carousel
+      :height="windowWidth > 767 ? '400px' : '300px'"
+      :interval="5000"
+      trigger="click"
     >
-      <swiper-slide v-for="(item, index) in homeBanner" :key="item.link">
-        <div class="banner-panel" :class="item.className" @click="jump(item)">
-          <div v-if="item.type === 'video'" class="banner-video">
-            <template v-if="windowWidth > 767">
-              <video
-                muted
-                playsinline="true"
-                autoplay
-                loop
-                :poster="item.pcBanner"
-                preload=""
-              >
-                <source type="video/mp4" :src="bannerVideoSrc" />
-              </video>
-            </template>
-            <img v-else :src="item.moBanner" :alt="item.title" />
-          </div>
-          <div
-            v-else
-            class="banner-panel-cover"
-            :class="{
-              'banner-pic': item.title === '',
-              'banner-img': item.type === 'text-left',
-              'text-center': item.type === 'text-center',
-              'no-link': item.link === '',
-            }"
-            :style="{
-              backgroundImage: `url(${
-                windowWidth < 767 ? item.moBanner : item.pcBanner
-              })`,
-            }"
-          >
-            <div
-              v-if="item.title !== ''"
-              :class="[{ 'flex-start': index === 1 }]"
-              class="banner-panel-content flex-column"
-            >
-              <div class="box">
-                <template v-if="item.titleMb.length && windowWidth < 767">
-                  <p
-                    v-for="itemTitle in item.titleMb"
-                    :key="itemTitle"
-                    class="title"
-                    :class="{ experts: index === 1 }"
-                  >
-                    {{ itemTitle }}
-                  </p>
-                </template>
-                <template v-else>
-                  <p class="title" :class="{ experts: index === 1 }">
-                    {{ item.title }}
-                  </p>
-                </template>
-
-                <p
-                  v-if="item.subtitle"
-                  class="subtitle"
-                  :class="{ experts: index === 1 }"
+      <el-carousel-item v-for="item in homeBanner" :key="item.link">
+        <div
+          class="banner-img"
+          :class="{ 'no-btn': !item.btn, [item.className]: item.className }"
+          :style="`background:url(${
+            windowWidth > 767 ? item.pcBanner : item.moBanner
+          }) no-repeat top center/cover;`"
+          @click="jump(item, item.btn !== '')"
+        >
+          <div class="banner-content">
+            <div class="content-left">
+              <div class="content-text">
+                <div
+                  v-if="windowWidth < 767 && item.titleMb.length"
+                  class="title"
                 >
-                  {{ item.subtitle }}
+                  <p v-for="itemTitleMb in item.titleMb" :key="itemTitleMb">
+                    {{ itemTitleMb }}
+                  </p>
+                </div>
+                <p v-else class="title">
+                  {{ item.title }}
                 </p>
-                <p class="desc" :class="{ experts: index === 1 }">
-                  <span
-                    v-for="item2 in item.desc"
-                    :key="item2"
-                    class="inline-desc"
-                    >{{ item2 }}</span
-                  >
+                <p v-if="item.subtitle" class="subtitle">{{ item.subtitle }}</p>
+                <p v-if="item.desc.length" class="desc">
+                  <span v-for="itemDesc in item.desc" :key="itemDesc">{{
+                    itemDesc
+                  }}</span>
                 </p>
               </div>
-              <div
-                v-if="item.btn"
-                class="action"
-                :class="{ liveBanner: index === 1 }"
-              >
-                <OButton animation class="home-banner-btn">
+              <div v-if="item.btn" class="btn-box">
+                <OButton
+                  animation
+                  class="home-banner-btn"
+                  :size="windowWidth < 767 ? 'mini' : 'medium'"
+                  @click="jump(item, false)"
+                >
                   {{ item.btn }}
                   <template #suffixIcon
                     ><OIcon><IconArrowRight /></OIcon
                   ></template>
                 </OButton>
               </div>
-              <div v-if="item.video !== ''" id="video-player">
-                <img
-                  class="video-player-btn"
-                  :src="videoGif"
-                  :alt="item.title"
-                  @click.stop="onVideoBtnClick(item.video)"
-                />
-              </div>
+            </div>
+            <div
+              v-if="item.rightInset && windowWidth > 1100"
+              class="content-right"
+            >
+              <img
+                class="video-player-btn"
+                :src="item.rightInset"
+                :alt="item.title"
+                @click.stop="clickRightInset(item.rightLink)"
+              />
             </div>
           </div>
         </div>
-      </swiper-slide>
-    </swiper>
-  </div>
-  <div v-if="isVideoDialog" class="video-box">
-    <ODialog
-      v-model="isVideoDialog"
-      :before-close="closeVideo"
-      :show-close="false"
-      lock-scroll
-      close-on-press-escape
-      close-on-click-modal
-      width="800px"
-      destroy-on-close
-    >
-      <div class="video-center">
-        <video
-          class="home-banner-video"
-          :src="videoLink"
-          width="100%"
-          controls
-          autoplay
-        ></video>
-      </div>
-    </ODialog>
+      </el-carousel-item>
+    </el-carousel>
+    <div v-if="isVideoDialog && windowWidth > 767" class="video-box">
+      <ODialog
+        v-model="isVideoDialog"
+        :before-close="closeVideo"
+        :show-close="false"
+        lock-scroll
+        close-on-press-escape
+        close-on-click-modal
+        width="800px"
+        destroy-on-close
+      >
+        <div class="video-center">
+          <video
+            class="home-banner-video"
+            :src="videoLink"
+            width="100%"
+            controls
+            autoplay
+          ></video>
+        </div>
+      </ODialog>
+    </div>
   </div>
 </template>
 
@@ -210,369 +154,149 @@ html[lang='zh'] {
     }
   }
 }
-.banner-panel-cover {
-  cursor: pointer;
-}
-.no-link {
-  cursor: default;
-}
-.dark .banner-panel-cover {
-  filter: brightness(80%) grayscale(20%) contrast(1.2);
-}
-#video-player {
-  position: absolute;
-  top: 42%;
-  right: 11%;
-  width: 98px;
-  height: 98px;
-  z-index: 2;
-  cursor: pointer;
-  @media screen and (max-width: 1430px) {
-    right: 12.5%;
-  }
-  @media screen and (max-width: 1100px) {
-    display: none;
-  }
-  img {
-    width: 100%;
-  }
-}
-.video-box {
-  :deep(.el-dialog__header) {
-    display: none;
-  }
-  :deep(.el-dialog__body) {
-    padding: 0;
-  }
-}
-
-.home-banner-video {
-  display: block;
-  margin: 0 auto;
-  width: 100%;
-}
-
-.home-banner-btn {
-  border-color: $banner-color !important;
-  color: $banner-color !important;
-  @media screen and (max-width: 824px) {
-    padding: 5px 12px 5px 16px;
-    line-height: 22px;
-    font-size: 14px;
-  }
-}
-
-.banner-content {
-  height: 480px;
-  position: relative;
-  .banner-panel {
-    position: absolute;
-    background-color: var(--o-color-bg2);
-    display: flex;
-    background-position: 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
+.home-banner {
+  .banner-img {
     height: 100%;
-    opacity: 1;
-    transition: all 0.33s;
-    .banner-video {
-      flex: 1;
-      img {
-        max-width: 100%;
-        object-fit: cover;
-      }
-    }
-    video {
-      width: 100%;
-      height: 100%;
-      cursor: pointer;
-      @media screen and (max-width: 1920px) {
-        object-fit: cover;
-      }
-    }
-    &-content {
+    .banner-content {
       box-sizing: border-box;
       max-width: 1504px;
       margin: 0 auto;
       padding: 0 44px;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      justify-content: space-between;
       height: 100%;
       color: #fff;
       position: relative;
-      .title {
-        font-size: var(--o-font-size-h1);
-        line-height: var(--o-line-height-h1);
-        font-weight: 600;
-        @media screen and (max-width: 1439px) {
-          font-size: var(--o-font-size-h2);
-          line-height: var(--o-line-height-h2);
-        }
-        @media screen and (max-width: 824px) {
-          font-size: var(--o-font-size-h4);
-          line-height: var(--o-line-height-h4);
-        }
-      }
-      .box {
-        color: $banner-color;
-      }
-      .desc {
-        max-width: 56%;
-        .inline-desc {
-          &:nth-child(2) {
-            padding-left: 30px;
-            @media screen and (max-width: 768px) {
-              padding: 0;
-              display: block;
-            }
-          }
-        }
-
-        font-size: var(--o-font-size-h5);
-        font-weight: 400;
-        line-height: var(--o-line-height-h5);
-        margin-top: var(--o-spacing-h6);
-        @media screen and (max-width: 1439px) {
-          font-size: var(--o-font-size-h6);
-          line-height: var(--o-line-height-h6);
-        }
-        @media screen and (max-width: 824px) {
-          margin-top: var(--o-spacing-h9);
-          font-size: var(--o-font-size-text);
-          line-height: var(--o-line-height-text);
-          max-width: 100%;
-        }
-      }
-
-      .action {
-        margin-top: var(--o-spacing-h3);
-        .o-icon {
-          @media screen and (max-width: 824px) {
-            font-size: 16px;
-          }
-        }
-        @media screen and (max-width: 824px) {
-          margin-top: 20px;
-        }
-      }
       @media screen and (max-width: 1440px) {
         padding: 0 24px;
       }
       @media screen and (max-width: 1100px) {
         padding: 0 16px;
       }
-      @media screen and (max-width: 824px) {
-        padding: 40px 16px;
-        align-items: center;
-        box-sizing: border-box;
-        text-align: center;
-      }
-    }
-
-    &-cover {
-      background-position: 50%;
-      background-repeat: no-repeat;
-      background-size: cover;
-      width: 100%;
-      height: 100%;
-
-      &.text-center {
-        .banner-panel-content {
-          flex-direction: initial;
-          align-items: center !important;
-        }
-        .title {
-          text-align: center;
-        }
-      }
-    }
-    .isH5show {
-      display: none;
-      object-fit: cover;
-      width: 100%;
-      @media screen and (max-width: 824px) {
-        display: block;
-        height: 300px;
-      }
-    }
-
-    @media screen and (max-width: 767px) {
-      position: static !important;
-    }
-  }
-  .version {
-    .banner-panel-content {
-      @media screen and (max-width: 1100px) {
+      .content-left {
+        display: flex;
+        flex-direction: column;
         justify-content: center;
-      }
-    }
-    .title {
-      @media screen and (max-width: 1100px) {
-        font-size: var(--o-font-size-h6);
-      }
-    }
-  }
-  .ques {
-    .banner-panel-content {
-      @media screen and (max-width: 824px) {
-        justify-content: center;
-      }
-      .title {
-        color: #000;
-      }
-      .home-banner-btn {
-        border-color: var(--o-color-brand1) !important;
-        color: var(--o-color-brand1) !important;
-      }
-      .liveBanner {
-        @media screen and (max-width: 824px) {
-          margin-top: 22px;
-          display: block;
-        }
-      }
-    }
-  }
-  .devday-banner {
-    .box {
-      color: #000;
-      .title {
-        font-size: var(--o-font-size-h2);
-        font-weight: 600;
-        line-height: var(--o-line-height-h2);
-        @media (max-width: 767px) {
-          font-size: 32px;
-          line-height: 32px;
-        }
-      }
-      .subtitle {
-        margin-top: var(--o-spacing-h8);
-        font-size: 30px;
-        line-height: 40px;
-        font-weight: normal;
-        @media (max-width: 767px) {
-          margin-top: 8px;
-          font-size: var(--o-font-size-h7);
-          line-height: var(--o-line-height-h7);
-        }
-      }
-      .desc {
-        margin-top: 16px;
-        @media screen and (max-width: 824px) {
-          margin-top: 8px;
-        }
-        .inline-desc {
-          display: block;
-          font-size: var(--o-font-size-h5);
-          line-height: 40px;
-          @media screen and (max-width: 824px) {
-            font-size: var(--o-font-size-text);
-            line-height: 24px;
+        width: 100%;
+        .content-text {
+          color: var(--o-color-white);
+          .title {
+            font-size: var(--o-font-size-h1);
+            line-height: var(--o-line-height-h1);
+            font-weight: 600;
+            @media screen and (max-width: 1439px) {
+              font-size: var(--o-font-size-h2);
+              line-height: var(--o-line-height-h2);
+            }
+            @media screen and (max-width: 767px) {
+              font-size: var(--o-font-size-h4);
+              line-height: var(--o-line-height-h4);
+              text-align: center;
+            }
           }
-          & ~ .inline-desc {
-            padding-left: 0;
-            &::before {
-              display: inline;
-              content: '地点：';
-              @media screen and (max-width: 824px) {
-                display: none;
+          .subtitle {
+            margin-top: var(--o-spacing-h8);
+            font-size: 30px;
+            line-height: 40px;
+            font-weight: normal;
+            @media (max-width: 767px) {
+              margin-top: 8px;
+              font-size: var(--o-font-size-h7);
+              line-height: var(--o-line-height-h7);
+              text-align: center;
+            }
+          }
+          .desc {
+            margin-top: 16px;
+            @media screen and (max-width: 767px) {
+              text-align: center;
+              margin-top: 8px;
+            }
+            span {
+              font-size: var(--o-font-size-h5);
+              line-height: 40px;
+              @media screen and (max-width: 767px) {
+                font-size: var(--o-font-size-text);
+                line-height: 24px;
               }
             }
           }
         }
-      }
-    }
-    .action {
-      margin-top: var(--o-spacing-h5);
-      @media screen and (max-width: 824px) {
-        margin-top: var(--o-spacing-h5);
-      }
-      .home-banner-btn {
-        color: #000 !important;
-        border: 1px solid #000 !important;
-      }
-    }
-  }
-  @media screen and (max-width: 1430px) {
-    height: 400px;
-  }
-  @media screen and (max-width: 824px) {
-    height: 300px;
-  }
-}
-
-.home-banner {
-  :deep(.swiper-container) {
-    .swiper-pagination {
-      width: 1416px !important;
-      bottom: 16px;
-      left: 50% !important;
-      transform: translateX(-50%);
-      text-align: left;
-      font-size: 0;
-      .swiper-pagination-bullet {
-        width: 40px;
-        opacity: 1;
-        background: none;
-        border-radius: 0;
-        margin: 0 4px;
-        height: 2px;
-        padding: 3px 0;
-      }
-      .swiper-pagination-bullet::after {
-        height: 2px;
-        width: 100%;
-        background: rgba(207, 211, 215, 0.6);
-        content: '';
-        display: block;
-      }
-      .swiper-pagination-bullet-active {
-        opacity: 1;
-      }
-      .swiper-pagination-bullet-active::after {
-        background: var(--o-color-yellow5);
-      }
-      @media screen and (max-width: 1439px) {
-        width: 1080px !important;
-        padding: 0 16px;
-        left: 0 !important;
-        transform: translateX(0);
-      }
-      @media screen and (max-width: 1100px) {
-        width: 100% !important;
-
-        .swiper-pagination-bullet {
-          width: 20px !important;
-          margin: 0 4px 0 0;
+        .btn-box {
+          margin-top: var(--o-spacing-h3);
+          @media screen and (max-width: 767px) {
+            margin-top: var(--o-spacing-h5);
+            width: 100%;
+            display: flex;
+            justify-content: center;
+          }
+          .home-banner-btn {
+            color: var(--o-color-white);
+            border: 1px solid var(--o-color-white);
+          }
         }
       }
-      @media screen and (max-width: 824px) {
-        left: 50% !important;
-        transform: translateX(-50%);
-        text-align: center;
+      .content-right {
+        img {
+          width: 100%;
+        }
       }
     }
-    .swiper-button-prev,
-    .swiper-button-next {
-      width: 32px;
-      height: 32px;
-      background: rgba(56, 56, 56, 0.5);
-      border-radius: 50%;
-      opacity: 0;
-      transition: all 0.5s;
-      &:after {
-        font-size: 16px;
-        color: #fff;
-      }
-      &.show {
-        opacity: 1;
+    &.banner-video {
+      .banner-content {
+        .content-right {
+          margin-right: 11%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          img {
+            width: 98px;
+            cursor: pointer;
+          }
+        }
       }
     }
-    &:hover {
-      .swiper-button-prev,
-      .swiper-button-next {
-        opacity: 1;
+    &.no-btn {
+      cursor: pointer;
+    }
+  }
+  .video-box {
+    :deep(.el-dialog__header) {
+      display: none;
+    }
+    :deep(.el-dialog__body) {
+      padding: 0;
+    }
+    .home-banner-video {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
+  :deep(.el-carousel__indicators) {
+    width: 100%;
+    max-width: 1504px;
+    padding: 0 44px;
+    @media screen and (max-width: 1440px) {
+      padding: 0 24px;
+    }
+    @media screen and (max-width: 1100px) {
+      padding: 0 16px;
+    }
+    @media screen and (max-width: 767px) {
+      text-align: center;
+    }
+    .el-carousel__indicator {
+      .el-carousel__button {
+        width: 40px;
+        @media screen and (max-width: 767px) {
+          width: 20px;
+        }
+      }
+      &.is-active {
+        .el-carousel__button {
+          background-color: var(--o-color-yellow5);
+        }
       }
     }
   }

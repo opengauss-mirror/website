@@ -1868,14 +1868,6 @@ packages:
       esutils: registry.npmmirror.com/esutils@2.0.3
     dev: true
 
-  registry.npmmirror.com/dom7@3.0.0:
-    resolution: {integrity: sha512-oNlcUdHsC4zb7Msx7JN3K0Nro1dzJ48knvBOnDPKJ2GV9wl1i5vydJZUSyOfrkKFDZEud/jBsTk92S/VGSAe/g==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/dom7/-/dom7-3.0.0.tgz}
-    name: dom7
-    version: 3.0.0
-    dependencies:
-      ssr-window: registry.npmmirror.com/ssr-window@3.0.0
-    dev: false
-
   registry.npmmirror.com/dompurify@2.4.7:
     resolution: {integrity: sha512-kxxKlPEDa6Nc5WJi+qRgPbOAbgTpSULL+vI3NUXsZMlkJxTqYI9wg5ZTay2sFrdZRWHPWNi+EdAhcJf81WtoMQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/dompurify/-/dompurify-2.4.7.tgz}
     name: dompurify
@@ -3760,17 +3752,6 @@ packages:
     name: svg-tags
     version: 1.0.0
     dev: true
-
-  registry.npmmirror.com/swiper@6.8.4:
-    resolution: {integrity: sha512-O+buF9Q+sMA0H7luMS8R59hCaJKlpo8PXhQ6ZYu6Rn2v9OsFd4d1jmrv14QvxtQpKAvL/ZiovEeANI/uDGet7g==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/swiper/-/swiper-6.8.4.tgz}
-    name: swiper
-    version: 6.8.4
-    engines: {node: '>= 4.7.0'}
-    requiresBuild: true
-    dependencies:
-      dom7: registry.npmmirror.com/dom7@3.0.0
-      ssr-window: registry.npmmirror.com/ssr-window@3.0.0
-    dev: false
 
   registry.npmmirror.com/text-table@0.2.0:
     resolution: {integrity: sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/text-table/-/text-table-0.2.0.tgz}

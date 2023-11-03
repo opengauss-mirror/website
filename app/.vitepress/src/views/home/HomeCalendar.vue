@@ -1129,7 +1129,7 @@ const handleLogout = async () => {
       span {
         display: flex;
         align-items: center;
-        a{
+        a {
           line-height: auto;
         }
       }
