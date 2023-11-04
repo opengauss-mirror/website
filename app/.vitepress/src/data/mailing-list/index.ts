@@ -1,4 +1,4 @@
-import { GITEE_LINK, MAILWEB_LINK } from '@/shared/url-config';
+import { GITEE_LINK, MAILWEB_LINK } from '@/data/url-config';
 export default {
   zh: [
     {

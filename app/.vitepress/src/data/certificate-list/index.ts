@@ -1,7 +1,7 @@
 import {
   OBS_CERTIFICATION_LINK,
   OBS_CERTIFICATION_LINK1,
-} from '@/shared/url-config';
+} from '@/data/url-config';
 
 export default {
   zh: [

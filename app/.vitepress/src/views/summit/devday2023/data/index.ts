@@ -1,14 +1,8 @@
 import bannerPc from '../img/banner_pc.jpg';
 import bannerMo from '../img/banner_mo.jpg';
-import cardBg1 from '../img/card_bg1.png';
-import cardBg2 from '../img/card_bg2.png';
-import cardBg3 from '../img/card_bg3.png';
-import cardBg4 from '../img/card_bg4.png';
 import agenda1 from './agenda1';
 import agenda2 from './agenda2';
 import live from './live';
-
-import { SHIMO_LINK } from '@/shared/url-config';
 
 export default {
   banner: {
@@ -23,32 +17,6 @@ export default {
     'openGauss诚邀开发者齐参与，同贡献，繁荣开源数据库根社区。',
   ],
   live,
-  collect: [
-    {
-      bgImg: cardBg1,
-      title: '赞助征集',
-      titleEn: 'CALL FOR SPONSOR',
-      link: `${SHIMO_LINK}forms/vVqRMGzO2ahP0X3y/fill`,
-    },
-    {
-      bgImg: cardBg2,
-      title: '议题征集',
-      titleEn: 'CALL FOR PROPOSAL',
-      link: `${SHIMO_LINK}forms/wV3VMPlV9YfKjMAy/fill`,
-    },
-    {
-      bgImg: cardBg3,
-      title: '演讲者征集',
-      titleEn: 'CALL FOR SPEAKER',
-      link: `${SHIMO_LINK}forms/1lq7rxzZxGsLnN3e/fill`,
-    },
-    {
-      bgImg: cardBg4,
-      title: 'SIG 征集',
-      titleEn: 'CALL FOR SIG',
-      link: `${SHIMO_LINK}forms/0l3NMWYVOQTLMbAR/fill`,
-    },
-  ],
   agenda1,
   agenda2,
   previous: {

@@ -7,7 +7,7 @@ import { getSortData } from '@/api/api-search';
 
 import showCaseData from '@/data/showcase';
 import useWindowResize from '@/components/hooks/useWindowResize';
-import { handleError, windowOpen } from '@/shared/utils';
+import { windowOpen } from '@/shared/utils';
 
 import TagFilter from '@/components/TagFilter.vue';
 import BannerLevel2 from '@/components/BannerLevel2.vue';

@@ -76,7 +76,7 @@ import gansukunpeng_dark from '../img/partners/dark/gansukunpeng.png';
 import henankunpeng_dark from '../img/partners/dark/henankunpeng.png';
 import xugu_dark from '../img/partners/dark/xugu.png';
 
-import { GITEE_LINK, ETHERPAD_LINK } from '@/shared/url-config';
+import { GITEE_LINK, ETHERPAD_LINK } from '@/data/url-config';
 
 const summitData = {
   page_name: '峰会',

@@ -1,4 +1,4 @@
-import { OBS_MEETING_LINK } from '@/shared/url-config';
+import { OBS_MEETING_LINK } from '@/data/url-config';
 
 export default {
   title: '精彩回顾',

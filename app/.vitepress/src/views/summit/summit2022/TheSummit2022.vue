@@ -7,7 +7,7 @@ import SummitSchedule from './components/SummitSchedule.vue';
 import LinkPanel from './components/LinkPanel.vue';
 
 import summitData from './data';
-import { OBS_VIDEO_LINK } from '@/shared/url-config';
+import { OBS_VIDEO_LINK } from '@/data/url-config';
 
 import banner from './img/banner.jpg';
 import bannerMo from './img/banner-mo.jpg';

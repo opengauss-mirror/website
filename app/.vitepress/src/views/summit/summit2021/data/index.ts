@@ -42,7 +42,7 @@ import ccb_dark from '../img/partners/dark/ccb-dark.png';
 import huaxia_dark from '../img/partners/dark/huaxia-dark.png';
 import shenxinfu_dark from '../img/partners/dark/shenxinfu-dark.png';
 import borui_dark from '../img/partners/dark/borui-dark.png';
-import { OBS_VIDEO_LINK } from '@/shared/url-config';
+import { OBS_VIDEO_LINK } from '@/data/url-config';
 
 const summitData = {
   desc: [

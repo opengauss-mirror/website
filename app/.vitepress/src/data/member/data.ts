@@ -446,7 +446,7 @@ import yangwei from '@/assets/category/member/avatar/yangwei.png';
 import songxuedong from '@/assets/category/member/avatar/songxuedong.png';
 import chaipeng from '@/assets/category/member/avatar/chaipeng.png';
 import zhouzhengde from '@/assets/category/member/avatar/zhouzhengde.png';
-import { GITEE_LINK } from '@/shared/url-config';
+import { GITEE_LINK } from '@/data/url-config';
 export default {
   zh: {
     BOARD: [

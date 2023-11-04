@@ -1,9 +1,4 @@
-import {
-  GITEE_LINK,
-  GITEE_LINK1,
-  CLA_LINK,
-  SAGE_LINK,
-} from '@/shared/url-config';
+import { GITEE_LINK, CLA_LINK, SAGE_LINK } from '@/data/url-config';
 export default {
   zh: {
     LOOK_DESC: `查看文字版攻略`,
@@ -22,7 +17,7 @@ export default {
         BLANK: true,
       },
       {
-        URL: `${GITEE_LINK1}profile/emails`,
+        URL: `${GITEE_LINK}profile/emails`,
         BLANK: true,
       },
       {
@@ -89,7 +84,7 @@ export default {
         BLANK: true,
       },
       {
-        URL: `${GITEE_LINK1}profile/emails`,
+        URL: `${GITEE_LINK}profile/emails`,
         BLANK: true,
       },
       {

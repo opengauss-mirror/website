@@ -6,7 +6,7 @@ import { setCustomCookie, isBoolean, getCustomCookie } from '@/shared/utils';
 import { useCookieStatus, usePrivacyVersion } from '@/stores/common';
 import { useScreen } from '@/shared/useScreen';
 import { useI18n } from '@/i18n';
-import { BAIDU_HM } from '@/shared/url-config';
+import { BAIDU_HM } from '@/data/url-config';
 
 import IconClose from '~icons/app/icon-cancel.svg';
 

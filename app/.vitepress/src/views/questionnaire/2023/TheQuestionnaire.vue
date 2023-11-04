@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import useWindowResize from '@/components/hooks/useWindowResize';
-import { HUAWEI_COMPUTE } from '@/shared/url-config';
+import { HUAWEI_COMPUTE } from '@/data/url-config';
 
 import AppContent from '@/components/AppContent.vue';
 

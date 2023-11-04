@@ -4,7 +4,7 @@ import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';
 
 import DownloadTable from './DownloadTable.vue';
-import { GITEE_LINK } from '@/shared/url-config';
+import { GITEE_LINK } from '@/data/url-config';
 const props = defineProps({
   contentData: {
     required: true,

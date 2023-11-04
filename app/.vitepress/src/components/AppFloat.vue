@@ -5,7 +5,7 @@ import { postFeedback } from '@/api/api-feedback';
 import { ElMessage } from 'element-plus';
 
 import useWindowResize from '@/components/hooks/useWindowResize';
-import { VULBOX_LINK } from '@/shared/url-config';
+import { VULBOX_LINK } from '@/data/url-config';
 import { handleError } from '@/shared/utils';
 
 import floatClose from '@/assets/category/float/float-close.png';

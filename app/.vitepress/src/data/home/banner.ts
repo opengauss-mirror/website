@@ -8,7 +8,7 @@ import bannerQuestionnaire from '@/assets/category/home/banner/banner-questionna
 import bannerQuestionnaireMb from '@/assets/category/home/banner/banner-questionnaire-mb.png';
 import videoGif from '@/assets/category/home/video-player.gif';
 
-import { LEARN_VIDEO_LINK, DOCS_LINK } from '@/shared/url-config';
+import { LEARN_VIDEO_LINK, DOCS_LINK } from '@/data/url-config';
 
 // rightInset:banner右侧插图
 export default {

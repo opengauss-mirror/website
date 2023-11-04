@@ -27,7 +27,7 @@ import OIcon from 'opendesign/icon/OIcon.vue';
 import IconChevronDown from '~icons/app/icon-chevron-down.svg';
 import IconChevronUp from '~icons/app/icon-chevron-up.svg';
 
-import { ENMOEDU_LINK } from '@/shared/url-config';
+import { ENMOEDU_LINK } from '@/data/url-config';
 
 const i18n = useI18n();
 const commonStore = useCommon();

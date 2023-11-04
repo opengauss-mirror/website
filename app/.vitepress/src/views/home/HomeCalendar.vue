@@ -38,7 +38,7 @@ import notFoundImg_light from '@/assets/illustrations/404.png';
 import notFoundImg_dark from '@/assets/illustrations/404-dark.png';
 
 import useWindowResize from '@/components/hooks/useWindowResize';
-import { GITEE_LINK } from '@/shared/url-config';
+import { GITEE_LINK } from '@/data/url-config';
 
 const { lang } = useData();
 const i18n = useI18n();
