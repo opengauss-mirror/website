@@ -6,6 +6,6 @@ import type { AxiosResponse } from '@/shared/axios';
  * @name postFeedback
  */
 export function postFeedback(params: any) {
-  const url = '/api-dsapi/query/nps?community=opengauss';
+  const url = '/api-search/search/nps?community=opengauss';
   return request.post(url, params).then((res: AxiosResponse) => res.data);
 }
