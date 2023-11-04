@@ -25,7 +25,7 @@ import osvDark from '@/assets/category/home/community/osv-dark.svg';
 import contributer from '@/assets/category/home/community/contributors.svg';
 import contributerDark from '@/assets/category/home/community/contributors-dark.svg';
 
-import { LEARN_VIDEO_LINK, DATA_LINK } from '@/shared/url-config';
+import { LEARN_VIDEO_LINK, DATA_LINK } from '@/data/url-config';
 export default {
   HOME_MEETING: '社区会议',
   CHARACTERR_INFO: {

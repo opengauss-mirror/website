@@ -1,5 +1,27 @@
 export default [
   {
+    name: 'PBData-D信创数据库私有云平台',
+    version: '3',
+    type: '通用',
+    company: '上海天玑科技股份有限公司',
+    database: 'openGauss 5.0.0',
+    os: 'openEuler 20.03',
+    server: 'Kunpeng 920(Taishan 200)、Hygon 7280(H620-G30)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%A4%A9%E7%8E%91%E7%A7%91%E6%8A%80%20V3/Certificate.pdf',
+  },
+  {
+    name: '数据库统一安全管控平台SQLDEV',
+    version: '2.3.1.21',
+    type: '通用',
+    company: '南京树安信息技术有限公司',
+    database: 'openGauss 5.0.0',
+    os: 'CentOS 7.6',
+    server: 'Intel（其他）',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%8D%97%E4%BA%AC%E6%A0%91%E5%AE%89%20V2.3.1.21/Certificate.pdf',
+  },
+  {
     name: '智慧文旅大数据平台',
     version: '5.0',
     type: '数字政府',

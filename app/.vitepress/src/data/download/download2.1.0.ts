@@ -1,5 +1,5 @@
 // 中文：zh 、英文：en
-import { OBS_DOWNLOAD_LINK } from '@/shared/url-config';
+import { OBS_DOWNLOAD_LINK } from '@/data/url-config';
 export default [
   {
     name: 'openGauss Server',

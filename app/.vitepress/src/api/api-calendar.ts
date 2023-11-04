@@ -12,10 +12,7 @@ export function getMeetingData(group: string) {
   const url = `/api-meeting/meetingsdata/?group=${group}`;
   return request
     .get(url, { $doException: false })
-    .then((res: AxiosResponse) => res.data)
-    .catch(() => {
-      handleError('Error!');
-    });
+    .then((res: AxiosResponse) => res.data);
 }
 
 /**
@@ -27,10 +24,7 @@ export function getMeetingSig() {
   const url = '/api-meeting/groups/';
   return request
     .get(url, { $doException: false })
-    .then((res: AxiosResponse) => res.data)
-    .catch(() => {
-      handleError('Error!');
-    });
+    .then((res: AxiosResponse) => res.data);
 }
 
 /**
@@ -41,10 +35,7 @@ export function loginGitee() {
   const url = '/api-meeting/gitee_login/';
   return request
     .get(url, { $doException: false })
-    .then((res: AxiosResponse) => res.data)
-    .catch(() => {
-      handleError('Error!');
-    });
+    .then((res: AxiosResponse) => res.data);
 }
 // 会议登录
 export function loginMeeting(params: object, token = '') {
@@ -71,10 +62,7 @@ export function logoutMeeting(token = '') {
       },
       $doException: false,
     })
-    .then((res: AxiosResponse) => res.data)
-    .catch(() => {
-      handleError('Error!');
-    });
+    .then((res: AxiosResponse) => res.data);
 }
 /**
  * 获取用户信息

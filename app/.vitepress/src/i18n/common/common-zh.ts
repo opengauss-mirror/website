@@ -2,8 +2,8 @@ import {
   GITEE_LINK,
   DATA_LINK,
   GIYHUB_LINK,
-  STATUS_LINK,
-} from '@/shared/url-config';
+  GAUSS_EMAIL,
+} from '@/data/url-config';
 export default {
   REQUIRE_FIELD: `必填`,
   COMMON_CONFIG: {
@@ -227,7 +227,7 @@ export default {
   GITTE: `源码`,
   CODE: `代码`,
   FOOTER: {
-    MAIL: `contact@opengauss.org`,
+    MAIL: GAUSS_EMAIL,
     COPY_RIGHT: `版权所有 ©  openGauss 2023 保留一切权利`,
     RIGHT_LIST: [
       {
@@ -249,11 +249,6 @@ export default {
         NAME: `关于我们`,
         URL: `/zh/aboutUs/`,
         TARGET: `_self`,
-      },
-      {
-        NAME: `服务状态`,
-        URL: STATUS_LINK,
-        TARGET: `_blank`,
       },
     ],
     QR_CODE: `扫码关注公众号`,

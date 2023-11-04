@@ -1,5 +1,5 @@
 import data from './data';
-import { GITEE_LINK } from '@/shared/url-config';
+import { GITEE_LINK } from '@/data/url-config';
 export default {
   oldList: [
     {

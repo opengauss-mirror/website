@@ -1,4 +1,4 @@
-import { GITEE_LINK, WJX_LINK } from '@/shared/url-config';
+import { GITEE_LINK } from '@/data/url-config';
 export default {
   zh: {
     PAGE_TITLE: `软件包`,
@@ -16,12 +16,6 @@ export default {
     DONNLOAD_COMFIRM: `确定`,
     DONNLOAD_CANCEL: `取消`,
     FEEDBACK_QUESTION: `反馈问题`,
-    LETTER: {
-      NAME: `致openGauss社区用户的一封信：`,
-      INFO: `为了让我们未来能够更加科学有效地为您提供更好的服务，我们想了解一些关于openGauss在贵单位实际应用的信息，以便了解您的真实诉求。`,
-      BTN: `点此反馈`,
-      PATH: `${WJX_LINK}vj/OmBWuRQ.aspx`,
-    },
     COPY_SUCCESS: `复制成功`,
     DOWNTIPS: `Data Studio引用的Apache Log4j工具存在安全风险，社区已经修复了该漏洞。请下载和使用Data Studio 2.1.2版本工具。`,
     DESCRIPTION: [

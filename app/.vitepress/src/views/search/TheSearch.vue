@@ -41,7 +41,7 @@ const searchNumber: any = ref([]);
 const searchType = ref('');
 const searchData = computed(() => {
   return {
-    keyword: searchInput.value,
+    keyword: searchInput.value.trim(),
     page: currentPage.value,
     pageSize: pageSize.value,
     lang: lang.value,
@@ -60,7 +60,7 @@ const searchData = computed(() => {
 
 const searchCount = computed(() => {
   return {
-    keyword: searchInput.value,
+    keyword: searchInput.value.trim(),
     lang: lang.value,
     docsVersion:
       activeVersion.value === i18n.value.search.tagList.all

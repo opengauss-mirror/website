@@ -6,10 +6,11 @@ import banner510_mb from '@/assets/category/home/banner/opengauss5.1.0_mo_zh.png
 import bannerEn510_mb from '@/assets/category/home/banner/opengauss5.1.0_mo_en.png';
 import bannerQuestionnaire from '@/assets/category/home/banner/banner-questionnaire.jpg';
 import bannerQuestionnaireMb from '@/assets/category/home/banner/banner-questionnaire-mb.png';
+import videoGif from '@/assets/category/home/video-player.gif';
 
-import { LEARN_VIDEO_LINK } from '@/shared/url-config';
+import { LEARN_VIDEO_LINK, DOCS_LINK } from '@/data/url-config';
 
-// type:only-img(只有图片)、text-left(文字居左)，text-center(文字居中),video 视频
+// rightInset:banner右侧插图
 export default {
   zh: [
     {
@@ -22,9 +23,9 @@ export default {
       subtitle: '',
       desc: [''],
       btn: '了解详情',
-      type: 'text-left',
       className: '',
-      video: '',
+      rightInset: '',
+      rightLink: '',
     },
     {
       pcBanner: banner510,
@@ -36,23 +37,23 @@ export default {
       subtitle: '',
       desc: [''],
       btn: '',
-      type: 'only-img',
       className: 'version',
-      video: '',
+      rightInset: '',
+      rightLink: '',
     },
     {
       pcBanner: liveImg_pc,
       moBanner: liveImg_mb,
-      link: '/docs/3.1.1/docs/BriefTutorial/BriefTutorial.html',
+      link: DOCS_LINK + 'zh/docs/3.1.1/docs/BriefTutorial/BriefTutorial.html',
       target: '_blank',
       title: '欢迎加入openGauss社区',
       titleMb: [],
       subtitle: '',
       desc: ['openGauss是一款高性能、高安全、高可靠的企业级开源关系型数据库'],
       btn: '了解更多',
-      type: 'text-left',
-      className: '',
-      video: `${LEARN_VIDEO_LINK}openGauss%E5%AE%A3%E4%BC%A0%E6%B4%BB%E5%8A%A8/openGauss%2BHC%E5%AE%A3%E4%BC%A0%E8%A7%86%E9%A2%91.mp4`,
+      className: 'banner-video',
+      rightInset: videoGif,
+      rightLink: `${LEARN_VIDEO_LINK}openGauss%E5%AE%A3%E4%BC%A0%E6%B4%BB%E5%8A%A8/openGauss%2BHC%E5%AE%A3%E4%BC%A0%E8%A7%86%E9%A2%91.mp4`,
     },
   ],
   en: [
@@ -66,14 +67,14 @@ export default {
       subtitle: '',
       desc: [''],
       btn: '',
-      type: 'text-center',
       className: 'version',
-      video: '',
+      rightInset: '',
+      rightLink: '',
     },
     {
       pcBanner: liveImg_pc,
       moBanner: liveImg_mb,
-      link: '/docs/3.1.0/docs/BriefTutorial/BriefTutorial.html',
+      link: DOCS_LINK + 'en/docs/3.1.0/docs/BriefTutorial/BriefTutorial.html',
       target: '_blank',
       title: 'Welcome to openGauss Community',
       titleMb: [],
@@ -82,9 +83,9 @@ export default {
         'openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability',
       ],
       btn: 'Learn More',
-      type: 'text-left',
       className: '',
-      video: `${LEARN_VIDEO_LINK}openGauss%E5%AE%A3%E4%BC%A0%E6%B4%BB%E5%8A%A8/openGauss%2BHC%E5%AE%A3%E4%BC%A0%E8%A7%86%E9%A2%91.mp4`,
+      rightInset: videoGif,
+      rightLink: `${LEARN_VIDEO_LINK}openGauss%E5%AE%A3%E4%BC%A0%E6%B4%BB%E5%8A%A8/openGauss%2BHC%E5%AE%A3%E4%BC%A0%E8%A7%86%E9%A2%91.mp4`,
     },
   ],
 };

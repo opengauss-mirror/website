@@ -21,35 +21,25 @@
     "lodash": "4.17.21",
     "opendesign": "./opendesign",
     "pinia": "2.0.33",
-    "swiper": "6.8.4",
     "vue": "3.2.47",
     "vue-dompurify-html": "3.1.2"
   },
   "devDependencies": {
-    "@types/aos": "^3.0.4",
-    "@types/lodash": "^4.14.186",
-    "@types/node": "^18.0.1",
-    "@typescript-eslint/eslint-plugin": "^5.30.5",
-    "@typescript-eslint/parser": "^5.30.5",
-    "@vitejs/plugin-vue-jsx": "^1.3.10",
+    "@types/lodash": "4.14.197",
+    "@types/node": "20.5.9",
+    "@typescript-eslint/eslint-plugin": "5.51.0",
+    "@typescript-eslint/parser": "5.51.0",
+    "@vitejs/plugin-vue-jsx": "2.1.1",
     "@vue/eslint-config-prettier": "^7.0.0",
     "@vue/eslint-config-typescript": "^11.0.0",
-    "eslint": "^8.19.0",
-    "eslint-plugin-vue": "^9.1.1",
-    "husky": "^8.0.1",
-    "install": "^0.13.0",
-    "lint-staged": "^13.0.3",
-    "prettier": "^2.7.1",
-    "sass": "^1.51.0",
-    "typescript": "^4.7.4",
-    "unplugin-element-plus": "^0.4.1",
-    "unplugin-icons": "^0.14.1",
+    "eslint": "8.34.0",
+    "eslint-plugin-vue": "9.9.0",
+    "husky": "8.0.3",
+    "prettier": "2.8.4",
+    "sass": "1.62.0",
+    "typescript": "4.9.4",
+    "unplugin-icons": "0.17.1",
     "vitepress": "0.22.4"
-  },
-  "lint-staged": {
-    "app/.vitepress/src/**/*.{js,ts,vue,jsx,tsx}": [
-      "pnpm lint"
-    ]
   },
   "pnpm": {
     "peerDependencyRules": {

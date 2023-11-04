@@ -1,9 +1,9 @@
 import {
   GITEE_LINK,
   DATA_LINK,
-  STATUS_LINK,
   GIYHUB_LINK,
-} from '@/shared/url-config';
+  GAUSS_EMAIL,
+} from '@/data/url-config';
 export default {
   require_field: `必填`,
   COMMON_CONFIG: {
@@ -194,7 +194,7 @@ export default {
   GITTE: `Source code`,
   CODE: `CODE`,
   FOOTER: {
-    MAIL: `contact@opengauss.org`,
+    MAIL: GAUSS_EMAIL,
     COPY_RIGHT: `Copyright © openGauss 2023. All rights reserved.`,
     RIGHT_LIST: [
       {
@@ -216,11 +216,6 @@ export default {
         NAME: `About Us`,
         URL: `/en/aboutUs/`,
         TARGET: `_self`,
-      },
-      {
-        NAME: `Service Status`,
-        URL: STATUS_LINK,
-        TARGET: `_blank`,
       },
     ],
     QR_CODE: `WeChat Subscription`,

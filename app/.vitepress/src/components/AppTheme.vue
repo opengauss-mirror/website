@@ -6,7 +6,7 @@ import IconSun from '~icons/app/icon-sun-outline.svg';
 import IconMoon from '~icons/app/icon-moon-outline.svg';
 
 // 风格切换
-const APPEARANCE_KEY = 'vitepress-theme-appearance';
+const APPEARANCE_KEY = 'opengauss-theme';
 
 const commonStore = useCommon();
 

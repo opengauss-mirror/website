@@ -22,6 +22,7 @@ import {
   handleError,
   getUrlParams,
 } from '@/shared/utils';
+
 import {
   TableData,
   DayData,
@@ -37,7 +38,7 @@ import notFoundImg_light from '@/assets/illustrations/404.png';
 import notFoundImg_dark from '@/assets/illustrations/404-dark.png';
 
 import useWindowResize from '@/components/hooks/useWindowResize';
-import { GITEE_LINK } from '@/shared/url-config';
+import { GITEE_LINK } from '@/data/url-config';
 
 const { lang } = useData();
 const i18n = useI18n();
@@ -909,6 +910,7 @@ const handleLogout = async () => {
     lock-scroll
     close-on-press-escape
     close-on-click-modalf
+    destroy-on-close
     append-to-body
     width="550px"
   >
@@ -949,7 +951,7 @@ const handleLogout = async () => {
       </div>
     </div>
     <!-- 预定、编辑表单 -->
-    <div v-else-if="isModify || isReserve" class="">
+    <div v-else-if="isModify || isReserve" class="meeting-content">
       <ElForm
         ref="ruleFormRef"
         :model="meetingForm"
@@ -1102,12 +1104,34 @@ const handleLogout = async () => {
       display: flex;
       justify-content: center;
       align-items: center;
+      height: 16px;
+      padding: 1px 0;
+      overflow: hidden;
       #agree-input {
         cursor: pointer;
       }
       :deep(.el-checkbox__label) {
         padding-left: 3px;
         color: var(--o-color-text1);
+        line-height: 14px;
+        display: flex;
+        align-items: center;
+      }
+      :deep(.el-checkbox) {
+        height: 16px;
+        display: flex;
+        align-items: center;
+        .el-checkbox__inner {
+          display: flex !important;
+          align-items: center;
+        }
+      }
+      span {
+        display: flex;
+        align-items: center;
+        a {
+          line-height: auto;
+        }
       }
     }
   }
@@ -1125,6 +1149,22 @@ const handleLogout = async () => {
   .failed-img {
     width: 108px;
     margin: var(--o-spacing-h4) 0;
+  }
+}
+.meeting-content {
+  .asterisk-left {
+    :deep(.el-input__wrapper) {
+      box-shadow: 0 0 0 1px var(--o-color-border1);
+    }
+    :deep(.el-form-item__content) {
+      .el-radio-button__inner {
+        border-right: 0;
+        border-left: 1px solid var(--o-color-border1);
+      }
+      .el-radio-button:nth-of-type(2) {
+        border-right: 1px solid var(--o-color-border1);
+      }
+    }
   }
 }
 .calendar-title {

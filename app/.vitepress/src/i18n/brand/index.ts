@@ -1,3 +1,4 @@
+import { GAUSS_EMAIL } from '@/data/url-config';
 export default {
   zh: {
     BRAND: '品牌',
@@ -8,7 +9,7 @@ export default {
       '《openGauss商标使用规范》 。',
       '/file/brand/openGauss商标使用规范.pdf',
     ],
-    FAQ_LINK: 'mailto:contact@opengauss.org',
+    FAQ_LINK: 'mailto:' + GAUSS_EMAIL,
     MOBILETITLE: '商标',
     PPT_TEXT: 'PPT模板',
   },
@@ -21,7 +22,7 @@ export default {
       ' openGauss Trademark Usage Specifications.',
       '/file/brand/openGauss商标使用规范.pdf',
     ],
-    FAQ_LINK: 'mailto:contact@opengauss.org',
+    FAQ_LINK: 'mailto:' + GAUSS_EMAIL,
     MOBILETITLE: 'Trademark',
     PPT_TEXT: 'PPT Templates',
   },

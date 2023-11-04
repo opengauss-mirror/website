@@ -7,7 +7,7 @@ export default (response: AxiosResponse) => {
     return response;
   } else {
     const code = parseInt(response.data && response.data.code);
-    const message = (response.data || {}).msg;
+    const message = response.data?.msg || 'Error';
 
     return {
       code,

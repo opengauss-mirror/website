@@ -43,7 +43,7 @@ const data = ref({
 });
 const initData = () => {
   const result: any = {};
-  getSortData(data.value).then((res: any) => {
+  getSortData(data.value, true).then((res: any) => {
     if (res.obj && res.obj.records.length) {
       const caseListAll = res.obj.records.filter((item: any) => {
         return item.path !== 'userPractice/index';

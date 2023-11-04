@@ -7,7 +7,7 @@ import { getSortData } from '@/api/api-search';
 
 import showCaseData from '@/data/showcase';
 import useWindowResize from '@/components/hooks/useWindowResize';
-import { handleError, windowOpen } from '@/shared/utils';
+import { windowOpen } from '@/shared/utils';
 
 import TagFilter from '@/components/TagFilter.vue';
 import BannerLevel2 from '@/components/BannerLevel2.vue';
@@ -66,28 +66,24 @@ const data = ref({
   type: 'showcase',
 });
 function setCurrentCaseListAll() {
-  try {
-    getSortData(data.value).then((res: any) => {
-      currentCaseListAll.value = [];
-      if (res.status === 200 && res.obj.records[0]) {
-        caseListAll.value = res.obj.records.filter((item: any) => {
-          const pathArray = item.path.split('/');
-          return pathArray[pathArray.length - 2] !== 'userPractice';
+  getSortData(data.value).then((res: any) => {
+    currentCaseListAll.value = [];
+    if (res.status === 200 && res.obj.records[0]) {
+      caseListAll.value = res.obj.records.filter((item: any) => {
+        const pathArray = item.path.split('/');
+        return pathArray[pathArray.length - 2] !== 'userPractice';
+      });
+      if (activeIndex.value === 0) {
+        currentCaseListAll.value = caseListAll.value;
+      } else {
+        caseListAll.value.forEach((item: any) => {
+          if (item.industry === currentTag.value) {
+            currentCaseListAll.value.push(item);
+          }
         });
-        if (activeIndex.value === 0) {
-          currentCaseListAll.value = caseListAll.value;
-        } else {
-          caseListAll.value.forEach((item: any) => {
-            if (item.industry === currentTag.value) {
-              currentCaseListAll.value.push(item);
-            }
-          });
-        }
       }
-    });
-  } catch {
-    handleError('Error!');
-  }
+    }
+  });
 }
 function filterCase() {
   currentCaseListAll.value = [];
