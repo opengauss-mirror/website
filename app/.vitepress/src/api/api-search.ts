@@ -28,10 +28,7 @@ interface TagsParams {
   condition?: Condition;
 }
 
-export function getSortData(
-  params: SortParams | object,
-  doException: boolean = false
-) {
+export function getSortData(params: SortParams | object, doException = false) {
   const url = '/api-search/search/sort';
   return request
     .post(url, params, {

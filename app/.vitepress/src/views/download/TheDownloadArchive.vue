@@ -6,7 +6,7 @@ import { ElMessage } from 'element-plus';
 import { useCommon } from '@/stores/common';
 
 import DownloadConfig from '@/data/download';
-import { GITEE_LINK } from '@/shared/url-config';
+import { GITEE_LINK } from '@/data/url-config';
 import AppContent from '@/components/AppContent.vue';
 import OSelect from 'opendesign/select/OSelect.vue';
 import DownloadContent from './DownloadContent.vue';

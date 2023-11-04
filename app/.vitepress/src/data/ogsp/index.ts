@@ -1,4 +1,4 @@
-import { OBS_TRANSFER_LINK } from '@/shared/url-config';
+import { OBS_TRANSFER_LINK } from '@/data/url-config';
 
 export default {
   zh: [

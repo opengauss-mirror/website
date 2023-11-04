@@ -1,4 +1,4 @@
-import { OBS_DOWNLOAD_LINK } from '@/shared/url-config';
+import { OBS_DOWNLOAD_LINK } from '@/data/url-config';
 
 export default [
   {

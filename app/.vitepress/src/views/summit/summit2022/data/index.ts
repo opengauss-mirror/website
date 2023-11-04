@@ -1,6 +1,3 @@
-import demoPng from '../img/demo.png';
-import speakerPng from '../img/speaker.png';
-import organizerPng from '../img/organizer.png';
 import otherCover1 from '../img/cover1.png';
 import otherCover2 from '../img/cover2.png';
 
@@ -34,32 +31,12 @@ import ccf_dark from '../img/partners/dark/ccf.png';
 import csia_dark from '../img/partners/dark/csia.png';
 import zhaoshangyinhang_dark from '../img/partners/dark/zhaoshangyinhang.png';
 
-import { SHIMO_LINK, OBS_VIDEO_LINK } from '@/shared/url-config';
+import { OBS_VIDEO_LINK } from '@/data/url-config';
 
 const summitData = {
   detail: [
     'openGauss Summit 2022是由openGauss开源数据库社区联合行业组织，伙伴及客户共同举办的年度数据库产业界交流与分享峰会。openGauss作为面向企业核心应用场景的开源数据库，开源两年来，与产业界聚力创新，携手前行。在技术、商业、生态、社区和人才方面取得了令人瞩目的成绩。从数据出发为企业数字化转型提供了强大的动能。',
     '本次峰会将邀请学术专家、行业组织、企业客户、生态伙伴和社区贡献者齐聚openGauss峰会，探讨数据库创新发展新路径、交流数据生态建设的新思维、分享企业数字化转型的新成果，共同加速推动开源数据库产业向前发展。',
-  ],
-  contentList: [
-    {
-      name: '展示征集',
-      nameEn: 'DEMO',
-      img: demoPng,
-      link: `${SHIMO_LINK}forms/Clt43Er77rkQMPUX/fill`,
-    },
-    {
-      name: 'KN演讲者征集',
-      nameEn: 'KN SPEAKER',
-      img: speakerPng,
-      link: `${SHIMO_LINK}forms/PP1S4qJ3YcguslYv/fill`,
-    },
-    {
-      name: '分论坛征集',
-      nameEn: 'SESSION ORGANIZER',
-      img: organizerPng,
-      link: `${SHIMO_LINK}forms/hz1hXko4jW8CeSHK/fill`,
-    },
   ],
   previous: {
     title: '精彩回顾',

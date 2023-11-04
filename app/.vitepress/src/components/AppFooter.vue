@@ -25,7 +25,7 @@ import {
   INFOQ_LINK,
   BILIBILI_LINK,
   ZHIZHU_LINK,
-} from '@/shared/url-config';
+} from '@/data/url-config';
 
 const i18n = useI18n();
 

@@ -2,7 +2,6 @@
 import { onMounted, onUnmounted, ref, computed } from 'vue';
 import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';
-import { handleError } from '@/shared/utils';
 
 import AppContent from '@/components/AppContent.vue';
 import HomeCalendar from './HomeCalendar.vue';

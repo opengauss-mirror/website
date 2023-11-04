@@ -1,4 +1,4 @@
-import { OBS_LEARN_LINK, LEARN_VIDEO_LINK } from '@/shared/url-config';
+import { OBS_LEARN_LINK, LEARN_VIDEO_LINK } from '@/data/url-config';
 
 export default {
   zh: [

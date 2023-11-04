@@ -1,4 +1,9 @@
-import { GITEE_LINK, DATA_LINK, GIYHUB_LINK } from '@/shared/url-config';
+import {
+  GITEE_LINK,
+  DATA_LINK,
+  GIYHUB_LINK,
+  GAUSS_EMAIL,
+} from '@/data/url-config';
 export default {
   require_field: `必填`,
   COMMON_CONFIG: {
@@ -189,7 +194,7 @@ export default {
   GITTE: `Source code`,
   CODE: `CODE`,
   FOOTER: {
-    MAIL: `contact@opengauss.org`,
+    MAIL: GAUSS_EMAIL,
     COPY_RIGHT: `Copyright © openGauss 2023. All rights reserved.`,
     RIGHT_LIST: [
       {

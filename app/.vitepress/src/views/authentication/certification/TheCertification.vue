@@ -9,7 +9,7 @@ import AppPaginationMo from '@/components/AppPaginationMo.vue';
 import Banner from '@/assets/illustrations/banner-secondary.png';
 import illustration from '@/assets/illustrations/certification.png';
 
-import { GITEE_LINK } from '@/shared/url-config';
+import { GITEE_LINK } from '@/data/url-config';
 
 interface CertificationDataT {
   pro: string;

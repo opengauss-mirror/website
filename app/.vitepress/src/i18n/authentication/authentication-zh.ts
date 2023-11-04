@@ -1,4 +1,8 @@
-import { ENMOEDU_LINK, DBOBS_LINK } from '@/shared/url-config';
+import {
+  ENMOEDU_LINK,
+  DBOBS_LINK,
+  GAUSS_CERTIFICATE_EMAIL,
+} from '@/data/url-config';
 export default {
   title: '培训认证',
   introtitle: '认证体系简介',
@@ -193,7 +197,7 @@ export default {
   downpdf2: '点击此处下载OGCA考试说明.pdf',
   downurl2: `${DBOBS_LINK}OGCA%E8%80%83%E8%AF%95%E8%AF%B4%E6%98%8E.pdf`,
   contact: '若以上仍不能解决您的问题，可发邮件至 ',
-  contactemail: 'common@certificate.opengauss.org',
+  contactemail: GAUSS_CERTIFICATE_EMAIL,
   cantactend: ' 咨询',
   searchingUrl: '/zh/training/search.html',
   costeach: '）元/人',

@@ -16,7 +16,7 @@ import {
   LOOKENG_LINK,
   KUNPENG_LINK,
   BBSCSDN_LINK,
-} from '@/shared/url-config';
+} from '@/data/url-config';
 export default [
   {
     img: openeuler,

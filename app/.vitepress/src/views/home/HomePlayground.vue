@@ -7,7 +7,7 @@ import letsPlay from '@/assets/category/home/letsPlay.png';
 import TryTitle from '@/assets/category/home/title.png';
 import TryTitleMo from '@/assets/category/home/title-mo.png';
 
-import { TRYME_LINK } from '@/shared/url-config';
+import { TRYME_LINK } from '@/data/url-config';
 
 const screenWidth = useWindowResize();
 const playground = ref(null);

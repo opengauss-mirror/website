@@ -12,7 +12,7 @@ import {
   PATRONI_LINK,
   PROME_LINK,
   YUKON_LINK,
-} from '@/shared/url-config';
+} from '@/data/url-config';
 export default {
   zh: [
     {

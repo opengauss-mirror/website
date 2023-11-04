@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 import IconTime from '~icons/app/icon-time.svg';
-import { ETHERPAD_LINK } from '@/shared/url-config';
+import { ETHERPAD_LINK } from '@/data/url-config';
 
 defineProps({
   agendaData: {

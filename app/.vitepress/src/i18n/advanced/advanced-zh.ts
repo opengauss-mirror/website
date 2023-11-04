@@ -5,7 +5,7 @@ import {
   RUNOOB_LINK,
   PLACE_LINK,
   LAB_LINK,
-} from '@/shared/url-config';
+} from '@/data/url-config';
 export default {
   title: `学习进阶`,
   subhead: `进阶步骤`,
