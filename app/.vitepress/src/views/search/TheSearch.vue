@@ -312,7 +312,7 @@ watch(
             </p>
           </li>
         </ul>
-        <NotFound v-else />
+        <NotFound v-else :no-data-tip="i18n.common.Not_Found" />
       </div>
       <div v-if="totalPage > 1 && pageShow" class="page-box">
         <ClientOnly>

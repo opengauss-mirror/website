@@ -4,8 +4,14 @@ import { useCommon } from '@/stores/common';
 import notFoundImg_light from '@/assets/illustrations/404.png';
 import notFoundImg_dark from '@/assets/illustrations/404-dark.png';
 import { computed } from 'vue';
-const commonStore = useCommon();
+defineProps({
+  noDataTip: {
+    type: String,
+    default: '404 Not Found',
+  },
+});
 
+const commonStore = useCommon();
 const notFoundImg = computed(() =>
   commonStore.theme === 'light' ? notFoundImg_light : notFoundImg_dark
 );
@@ -14,7 +20,7 @@ const notFoundImg = computed(() =>
 <template>
   <div class="nofound">
     <img class="nofound-img" :src="notFoundImg" alt="404" />
-    <p class="nofound-text">404 Not Found</p>
+    <p class="nofound-text">{{ noDataTip }}</p>
   </div>
 </template>
 
