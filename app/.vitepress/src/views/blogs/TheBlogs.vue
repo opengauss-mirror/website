@@ -540,7 +540,7 @@ const changeCurrentMoblie = (val: string) => {
         </ClientOnly>
       </div>
     </template>
-    <NotFound v-else />
+    <NotFound v-else :no-data-tip="i18n.common.Not_Found" />
   </AppContent>
 </template>
 

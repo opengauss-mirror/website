@@ -323,7 +323,7 @@ onMounted(() => {
         </div>
       </OCard>
     </div>
-    <NotFound v-if="total === 0" />
+    <NotFound v-if="total === 0" :no-data-tip="i18n.common.Not_Found" />
     <div v-if="isShow" class="page-box">
       <ClientOnly>
         <OPagination
