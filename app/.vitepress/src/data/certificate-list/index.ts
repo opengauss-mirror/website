@@ -6,6 +6,30 @@ import {
 export default {
   zh: [
     {
+      pro: 'FitRDB数据库 V1.0.0',
+      name: '南京烽火星空通信发展有限公司',
+      version: 'openGauss 5.0.0',
+      award: '2023-11-06',
+      expiration: '2026-03-31',
+      certificate: `${OBS_CERTIFICATION_LINK}%E7%83%BD%E7%81%AB%E6%98%9F%E7%A9%BA/FitRDB%20V1.0.0/Certificate.pdf`,
+    },
+    {
+      pro: 'StarDB 5.0.0',
+      name: '京东科技信息技术有限公司',
+      version: 'openGauss 5.0.0',
+      award: '2023-11-01',
+      expiration: '2026-03-31',
+      certificate: `${OBS_CERTIFICATION_LINK}%E4%BA%AC%E4%B8%9C%E7%A7%91%E6%8A%80/StarDB%205.0.0/Certificate.pdf`,
+    },
+    {
+      pro: 'MogDB 5.0.0',
+      name: '云和恩墨（北京）信息技术有限公司',
+      version: 'openGauss 5.0.0',
+      award: '2023-11-01',
+      expiration: '2026-03-31',
+      certificate: `${OBS_CERTIFICATION_LINK}MogDB%205.0.0/Certificate.pdf`,
+    },
+    {
       pro: '天鹤数据库 ISSEDB 5.0.0',
       name: '软通动力信息技术（集团）股份有限公司',
       version: 'openGauss 5.0.0',
@@ -138,6 +162,30 @@ export default {
     },
   ],
   en: [
+    {
+      pro: 'FitRDB数据库 V1.0.0',
+      name: '南京烽火星空通信发展有限公司',
+      version: 'openGauss 5.0.0',
+      award: '2023-11-06',
+      expiration: '2026-03-31',
+      certificate: `${OBS_CERTIFICATION_LINK}%E7%83%BD%E7%81%AB%E6%98%9F%E7%A9%BA/FitRDB%20V1.0.0/Certificate.pdf`,
+    },
+    {
+      pro: 'StarDB 5.0.0',
+      name: '京东科技信息技术有限公司',
+      version: 'openGauss 5.0.0',
+      award: '2023-11-01',
+      expiration: '2026-03-31',
+      certificate: `${OBS_CERTIFICATION_LINK}%E4%BA%AC%E4%B8%9C%E7%A7%91%E6%8A%80/StarDB%205.0.0/Certificate.pdf`,
+    },
+    {
+      pro: 'MogDB 5.0.0',
+      name: '云和恩墨（北京）信息技术有限公司',
+      version: 'openGauss 5.0.0',
+      award: '2023-11-01',
+      expiration: '2026-03-31',
+      certificate: `${OBS_CERTIFICATION_LINK}MogDB%205.0.0/Certificate.pdf`,
+    },
     {
       pro: '天鹤数据库 ISSEDB 5.0.0',
       name: '软通动力信息技术（集团）股份有限公司',
