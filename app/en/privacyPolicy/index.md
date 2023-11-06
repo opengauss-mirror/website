@@ -22,7 +22,7 @@ The openGauss Community understands the importance of your privacy and fully res
 
 - (d) **Meeting Service**. When you use our meeting service, we will collect your Gitee ID for configuring related permissions. If you have meeting scheduling permission, we will collect your email address used when you edit the meeting details for the purpose of sending meeting invitations. If you enable automatically screen recording when you schedule a meeting, the recording will be uploaded to the third-party platform Bilibili (https://www.bilibili.com/) after the meeting so that more interested individuals and organizations can review your meeting.
 
-- (e)**Content Release**. When you participate in Community meetings, live broadcasts, blogs, Community activities, contribution in the open source Community, or newsgroups, your user name and the information you publish will be visible to the Community and the public. If you are a member of an openGauss Community organization, we will request your avatar, name, email address, position, company name，school，and individual resume (and your Gitee home page if you are a member of the Technical Committee or a SIG) for posting on our website so that developers can better understand the community, quickly make contact, and participate in the community.
+- (e)**Content Release**. When you participate in Community meetings, live broadcasts, blogs, Community activities, contribution in the open source Community, or newsgroups, your user name and the information you publish will be visible to the Community and the public for presenting your participation in the community. If you are a member of an openGauss Community organization or participate in community activities, we will request your avatar, name, email address, position, company name，school，individual resume and Gitee home page for posting on our website so that developers can better understand the community, quickly make contact, and participate in the community.
 
 We may also collect your personal data from third parties, including other platforms or communities, within the scope of your authorization and consent, or obtain your personal data from other legal and public channels. We promise to process your personal data in strict accordance with applicable laws and regulations. Please read the privacy policies and user agreements of the third parties carefully. If a third party is required to provide your personal data when you use the openGauss Community, but you refuse to allow the third party to collect, use, transfer, or share your personal data when the third party provides services, you may not be able to use related services of the openGauss Community.
 
@@ -122,8 +122,8 @@ Email: **contact@opengauss.org**
 
 Hotline: **+86 187-4087-2239**
 
-Last updated: **November 3, 2023**
+Last updated: **November 6, 2023**
 
-Privacy policy version: **v20231103**
+Privacy policy version: **v20231106**
 
 </div>
