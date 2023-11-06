@@ -249,7 +249,7 @@ watch(
 .cookie-notice {
   position: fixed;
   bottom: 0;
-  z-index: 100;
+  z-index: 999;
   width: 100%;
   .o-button {
     --o-button-font-size-mini: 14px;
