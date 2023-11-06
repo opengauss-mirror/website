@@ -1,6 +1,5 @@
 import { request } from '@/shared/axios';
 import type { AxiosResponse } from '@/shared/axios';
-import { handleError } from '@/shared/utils';
 
 interface SortParams {
   category: string;
@@ -37,26 +36,28 @@ export function getSortData(params: SortParams | object, doException = false) {
     .then((res: AxiosResponse) => res.data);
 }
 
-export function getTagsData(params: TagsParams) {
+export function getTagsData(params: TagsParams, doException = false) {
   const url = '/api-search/search/tags';
-  return request.post(url, params).then((res: AxiosResponse) => res.data);
+  return request
+    .post(url, params, {
+      $doException: doException,
+    })
+    .then((res: AxiosResponse) => res.data);
 }
 
-export function getSearchData(params: search) {
+export function getSearchData(params: search, doException = false) {
   const url = '/api-search/search/docs';
   return request
-    .post(url, params)
-    .then((res: AxiosResponse) => res.data)
-    .catch(() => {
-      handleError('Error!');
-    });
+    .post(url, params, {
+      $doException: doException,
+    })
+    .then((res: AxiosResponse) => res.data);
 }
-export function getSearchCount(params: any) {
+export function getSearchCount(params: any, doException = false) {
   const url = '/api-search/search/count';
   return request
-    .post(url, params)
-    .then((res: AxiosResponse) => res.data)
-    .catch(() => {
-      handleError('Error!');
-    });
+    .post(url, params, {
+      $doException: doException,
+    })
+    .then((res: AxiosResponse) => res.data);
 }
