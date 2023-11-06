@@ -5,7 +5,7 @@ import { postFeedback } from '@/api/api-feedback';
 import { ElMessage } from 'element-plus';
 
 import useWindowResize from '@/components/hooks/useWindowResize';
-import { VULBOX_LINK } from '@/data/url-config';
+import { VULBOX_LINK, GAUSS_EMAIL } from '@/data/url-config';
 import { handleError } from '@/shared/utils';
 
 import floatClose from '@/assets/category/float/float-close.png';
@@ -194,7 +194,7 @@ const infoData = {
   placeholder2: '改进哪些方面会让您更满意？（7-8）',
   placeholder3: '请输入您满意的原因（9-10）',
   more: '感谢您的反馈，如需帮助可联系',
-  emile: 'contact@opengauss.org',
+  emile: GAUSS_EMAIL,
   submit: '提交',
   cancel: '取消',
   confirm: '确认',
@@ -242,7 +242,7 @@ const floatData = ref([
   {
     img: IconHeadsetBig,
     text: '问题反馈',
-    emile: 'contact@opengauss.org',
+    emile: GAUSS_EMAIL,
   },
 ]);
 function handleClickTop() {

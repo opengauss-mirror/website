@@ -89,7 +89,7 @@ const isAllAgreed = () => {
 const initSensor = () => {
   (function () {
     const hm = document.createElement('script');
-    hm.src = BAIDU_HM + 'hm.js?ace49cc6c2f3d0542e97ce86732094dc';
+    hm.src = BAIDU_HM;
     const s = document.getElementsByTagName('HEAD')[0];
     s.appendChild(hm);
   })();
@@ -249,7 +249,7 @@ watch(
 .cookie-notice {
   position: fixed;
   bottom: 0;
-  z-index: 100;
+  z-index: 999;
   width: 100%;
   .o-button {
     --o-button-font-size-mini: 14px;

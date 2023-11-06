@@ -19,6 +19,8 @@ import IconSearch from '~icons/app/icon-search.svg';
 import IconCancel from '~icons/app/icon-cancel.svg';
 import IconMenu from '~icons/app/icon-menu.svg';
 
+import { DOCS_LINK } from '@/data/url-config';
+
 interface NavItemT {
   NAME: string;
   PATH: string;
@@ -29,7 +31,7 @@ interface NavItemT {
 }
 
 const router = useRouter();
-const { lang, theme } = useData();
+const { lang } = useData();
 const i18n = useI18n();
 const commonStore = useCommon();
 
@@ -81,7 +83,7 @@ const goMobile = (item: NavItemT) => {
 // 移动端二级导航事件
 const goMobileSubList = (item: NavItemT) => {
   if (item.IS_OPEN_WINDOW) {
-    windowOpen(theme.value.docsUrl + '/' + lang.value + '/' + item.PATH);
+    windowOpen(DOCS_LINK + '/' + lang.value + '/' + item.PATH);
     return;
   }
   if (item.IS_OPEN_MINISITE_WINDOW) {

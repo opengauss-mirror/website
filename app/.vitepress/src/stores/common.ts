@@ -6,7 +6,7 @@ export const useCommon = defineStore('common', {
     iconMenuShow: true,
   }),
 });
-// ['Infra']
+
 export const useMeeting = defineStore('meeting', {
   state: () => ({
     userSigs: [],
@@ -15,15 +15,16 @@ export const useMeeting = defineStore('meeting', {
   }),
 });
 
-// cookie
+// cookie状态
 export const useCookieStatus = defineStore('cookieStatus', {
   state: () => ({
     status: '0',
   }),
 });
 
+// 隐私版本
 export const usePrivacyVersion = defineStore('privacyVersion', {
   state: () => ({
-    version: '20231103',
+    version: '20231106',
   }),
 });

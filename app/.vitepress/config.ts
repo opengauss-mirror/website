@@ -60,8 +60,5 @@ const config: UserConfig = {
       });
     },
   },
-  themeConfig: {
-    docsUrl: 'https://docs.opengauss.org',
-  },
 };
 export default config;

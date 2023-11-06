@@ -11,12 +11,14 @@ import IconCancel from '~icons/app/icon-cancel.svg';
 import IconSearch from '~icons/app/icon-search.svg';
 
 import useWindowResize from '@/components/hooks/useWindowResize';
-import { handleError, windowOpen } from '@/shared/utils';
+import { windowOpen, handleError } from '@/shared/utils';
+
+import { DOCS_LINK } from '@/data/url-config';
 
 const screenWidth = useWindowResize();
 const isMobile = computed(() => (screenWidth.value <= 768 ? true : false));
 
-const { lang, site } = useData();
+const { lang } = useData();
 const router = useRouter();
 const i18n = useI18n();
 const activeVersion = ref('');
@@ -117,8 +119,8 @@ function searchCountAll() {
   if (activeVersion.value === i18n.value.search.tagList.all) {
     searchCount.value.limit = [];
   }
-  try {
-    getSearchCount(searchCount.value).then((res) => {
+  getSearchCount(searchCount.value, true)
+    .then((res) => {
       if (res.status === 200 && res.obj.total[0]) {
         searchNumber.value = res.obj.total;
         // 埋点数据
@@ -130,19 +132,19 @@ function searchCountAll() {
         typeList = [];
         searchNumber.value = [];
       }
+    })
+    .catch(() => {
+      handleError();
     });
-  } catch {
-    handleError('Error!');
-  }
 }
 // 获取搜索结果的数据
 function searchDataAll() {
-  try {
-    // 全部时 limit 不传
-    if (activeVersion.value === i18n.value.search.tagList.all) {
-      searchData.value.limit = [];
-    }
-    getSearchData(searchData.value).then((res) => {
+  // 全部时 limit 不传
+  if (activeVersion.value === i18n.value.search.tagList.all) {
+    searchData.value.limit = [];
+  }
+  getSearchData(searchData.value, true)
+    .then((res) => {
       if (res.status === 200 && res.obj.records[0]) {
         searchResultList.value = res.obj.records;
         pageShow.value = true;
@@ -154,10 +156,10 @@ function searchDataAll() {
         searchResultList.value = [];
         pageShow.value = false;
       }
+    })
+    .catch(() => {
+      handleError();
     });
-  } catch {
-    handleError('Error!');
-  }
 }
 // 获取搜索结果的所有内容
 function searchAll(current?: string) {
@@ -186,7 +188,7 @@ function goLink(data: any) {
     if (/^docs\/master/g.test(path)) {
       goPath = path.replace(/^docs\/master/g, 'docs/latest');
     }
-    const url = site.value.themeConfig.docsUrl + '/' + goPath + '.html';
+    const url = DOCS_LINK + '/' + goPath + '.html';
     windowOpen(url, '_blank');
   } else {
     router.go(search_result_url);
@@ -221,13 +223,17 @@ const versionList = ref([
 ]);
 
 async function getVersionTag() {
-  await getTagsData(tagsParams).then((res) => {
-    if (res.obj?.totalNum.length) {
-      // 默认选中latest
-      activeVersion.value = res.obj?.totalNum[1].key;
-    }
-    versionList.value.push(...res.obj?.totalNum);
-  });
+  await getTagsData(tagsParams, true)
+    .then((res) => {
+      if (res.obj?.totalNum.length) {
+        // 默认选中latest
+        activeVersion.value = res.obj?.totalNum[1].key;
+      }
+      versionList.value.push(...res.obj?.totalNum);
+    })
+    .catch(() => {
+      handleError();
+    });
 }
 
 onMounted(async () => {
@@ -306,7 +312,7 @@ watch(
             </p>
           </li>
         </ul>
-        <NotFound v-else />
+        <NotFound v-else :no-data-tip="i18n.common.Not_Found" />
       </div>
       <div v-if="totalPage > 1 && pageShow" class="page-box">
         <ClientOnly>
