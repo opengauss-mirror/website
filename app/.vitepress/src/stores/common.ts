@@ -6,7 +6,7 @@ export const useCommon = defineStore('common', {
     iconMenuShow: true,
   }),
 });
-// ['Infra']
+
 export const useMeeting = defineStore('meeting', {
   state: () => ({
     userSigs: [],

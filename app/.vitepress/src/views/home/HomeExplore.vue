@@ -6,12 +6,14 @@ import { useData } from 'vitepress';
 import IconArrowRight from '~icons/app/icon-arrow-right.svg';
 import ExploreBg from '@/assets/category/home/explore-bg.png';
 
+import { DOCS_LINK } from '@/data/url-config';
+
 const i18n = useI18n();
-const { lang, theme } = useData();
+const { lang } = useData();
 
 const handleGo = (path: string) => {
   return path.startsWith('/docs/')
-    ? theme.value.docsUrl + '/' + lang.value + path
+    ? DOCS_LINK + '/' + lang.value + path
     : path;
 };
 </script>

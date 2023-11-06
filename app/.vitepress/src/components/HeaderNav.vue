@@ -6,6 +6,8 @@ import { debounce } from 'lodash';
 
 import { windowOpen } from '@/shared/utils';
 
+import { DOCS_LINK } from '@/data/url-config';
+
 defineProps({
   navItems: {
     type: Object,
@@ -25,7 +27,7 @@ interface NavItemT {
 }
 
 const router = useRouter();
-const { lang, theme } = useData();
+const { lang } = useData();
 const activeItem = ref(router.route.path);
 const navActive = ref('');
 const isShow = ref(true);
@@ -38,7 +40,7 @@ watch(
 // 点击子导航事件
 const goPath = (item: NavItemT) => {
   if (item.IS_OPEN_WINDOW) {
-    windowOpen(theme.value.docsUrl + '/' + lang.value + '/' + item.PATH);
+    windowOpen(DOCS_LINK + '/' + lang.value + '/' + item.PATH);
     return;
   }
   if (item.IS_OPEN_MINISITE_WINDOW) {

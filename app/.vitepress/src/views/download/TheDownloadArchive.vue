@@ -6,7 +6,7 @@ import { ElMessage } from 'element-plus';
 import { useCommon } from '@/stores/common';
 
 import DownloadConfig from '@/data/download';
-import { GITEE_LINK } from '@/data/url-config';
+import { GITEE_LINK, DOCS_LINK } from '@/data/url-config';
 import AppContent from '@/components/AppContent.vue';
 import OSelect from 'opendesign/select/OSelect.vue';
 import DownloadContent from './DownloadContent.vue';
@@ -18,7 +18,7 @@ import IconTips from '~icons/app/icon-tips.svg';
 import BreadCrumbs from '@/components/BreadCrumbs.vue';
 
 const i18n = useI18n();
-const { lang, theme } = useData();
+const { lang } = useData();
 const commonStore = useCommon();
 const isZh = computed(() => (lang.value === 'zh' ? true : false));
 
@@ -119,7 +119,7 @@ watch(
         <a
           v-for="item in getData[0].docs_list"
           :key="item.name"
-          :href="theme.docsUrl + '/' + lang + item.path"
+          :href="DOCS_LINK + '/' + lang + item.path"
           target="_blank"
           rel="noopener noreferrer"
           >{{ isZh ? item.name : item.nameEn }}</a

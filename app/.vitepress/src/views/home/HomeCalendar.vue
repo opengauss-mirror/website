@@ -309,8 +309,8 @@ const loginMeetingApi = async () => {
 };
 onMounted(() => {
   const paramsObj = getUrlParams(location.href);
-  const lastCode = localStorage.getItem('code') || '';
-  if (paramsObj && paramsObj.code && paramsObj.code !== lastCode) {
+  history.pushState(null, '', location.origin + '/' + lang.value + '/');
+  if (paramsObj && paramsObj.code) {
     loginMeeting(
       {
         code: paramsObj.code,
@@ -319,7 +319,6 @@ onMounted(() => {
     ).then((res) => {
       if (res.code === 200 && res.access) {
         meetingToken.value = res.access;
-        localStorage.setItem('code', paramsObj.code);
         loginMeetingApi();
       }
     });

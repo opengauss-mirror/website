@@ -56,7 +56,7 @@ const DATA_LINK = 'https://datastat-opengauss.osinfra.cn/'; // 贡献看板
 const CLA_LINK = 'https://clasign.osinfra.cn/'; // cla签署
 const SAGE_LINK = 'https://sage.thesharps.us/'; // Sage Sharp
 const TRYME_LINK = 'https://tryme.opengauss.org/'; // tryme
-const BAIDU_HM = 'https://hm.baidu.com/'; // 百度埋点
+const BAIDU_HM = 'https://hm.baidu.com/hm.js?ace49cc6c2f3d0542e97ce86732094dc'; // 百度埋点
 export {
   GAUSS_EMAIL,
   GAUSS_CERTIFICATE_EMAIL,
