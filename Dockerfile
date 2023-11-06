@@ -32,7 +32,7 @@ COPY --from=NginxBuilder /etc/nginx/mime.types  /etc/nginx/mime.types
 COPY --from=Builder /home/opengauss/web/app/.vitepress/dist /usr/share/nginx/html/
 RUN chmod -R 700 /usr/share/nginx/html
 COPY ./deploy/nginx/nginx.conf /etc/nginx/nginx.conf
-COPY --chown=$NGINX_USER:$NGINX_GROUP ./server.crt ./server.key ./password.txt ./dh2048.pem /etc/nginx/cert/
+COPY --chown=$NGINX_USER:$NGINX_GROUP ./server.crt ./server.key ./password.txt ./dhparam.pem /etc/nginx/cert/
 
 
 RUN touch /var/run/nginx.pid \
@@ -63,7 +63,7 @@ RUN touch /var/run/nginx.pid \
     && chmod 400 /etc/nginx/cert/server.crt \
     && chmod 400 /etc/nginx/cert/server.key \
     && chmod 600 /etc/nginx/cert/password.txt \
-    && chmod 400 /etc/nginx/cert/dh2048.pem \
+    && chmod 400 /etc/nginx/cert/dhparam.pem \
     && chmod 550 /etc/nginx/geoip/ \
     && chmod 440 /etc/nginx/geoip/* \
     && chmod 550 /etc/nginx/modules \
