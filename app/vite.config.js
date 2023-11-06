@@ -46,24 +46,4 @@ export default defineConfig({
       },
     }),
   ],
-  server: {
-    hmr: true, // 配置自动刷新
-    proxy: {
-      '/api-cve/': {
-        target: 'https://cve-opengauss.osinfra.cn/cve-manager/',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api-cve/, ''),
-      },
-      '/api-meeting/': {
-        target: 'https://meetings-opengauss.osinfra.cn/',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api-meeting/, ''),
-      },
-      '/api-search/': {
-        target: 'https://opengauss.org/api-search/',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api-search/, ''),
-      },
-    },
-  },
 });

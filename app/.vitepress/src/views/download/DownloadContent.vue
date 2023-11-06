@@ -4,7 +4,7 @@ import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';
 
 import DownloadTable from './DownloadTable.vue';
-import { GITEE_LINK } from '@/data/url-config';
+import { GITEE_LINK, DOCS_LINK } from '@/data/url-config';
 const props = defineProps({
   contentData: {
     required: true,
@@ -20,7 +20,7 @@ const props = defineProps({
   },
 });
 const i18n = useI18n();
-const { lang, theme } = useData();
+const { lang } = useData();
 const { contentData, versionShown } = toRefs(props);
 </script>
 
@@ -30,7 +30,7 @@ const { contentData, versionShown } = toRefs(props);
     <h4 class="subtitle">{{ (contentData[0] as any).plannedEOL }}</h4>
     <div class="other-link">
       <a
-        :href="theme.docsUrl + '/' + lang + (contentData[0] as any).docs_list[0][ lang === 'zh'?'path':'pathEn']"
+        :href="DOCS_LINK + '/' + lang + (contentData[0] as any).docs_list[0][ lang === 'zh'?'path':'pathEn']"
         target="_blank"
         rel="noopener noreferrer"
         >{{

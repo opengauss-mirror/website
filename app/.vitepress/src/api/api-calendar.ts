@@ -6,7 +6,6 @@ import { handleError } from '@/shared/utils';
  * 获取会议数据
  * @name getMeetingData
  */
-// /calendar
 
 export function getMeetingData(group: string) {
   const url = `/api-meeting/meetingsdata/?group=${group}`;

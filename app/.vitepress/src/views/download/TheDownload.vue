@@ -12,8 +12,10 @@ import DownloadContent from './DownloadContent.vue';
 import Banner from '@/assets/illustrations/banner-secondary.png';
 import illustration from '@/assets/illustrations/download.png';
 
+import { DOCS_LINK } from '@/data/url-config';
+
 const i18n = useI18n();
-const { lang, theme } = useData();
+const { lang } = useData();
 const downloadData = i18n.value.download;
 
 // 设置显示版本
@@ -53,7 +55,7 @@ const getData: any = computed(() => {
           <p>
             {{ downloadData.PECULIARITY_DETAIL
             }}<a
-              :href="theme.docsUrl + downloadData.RELEASE_LINK"
+              :href="DOCS_LINK + downloadData.RELEASE_LINK"
               target="_blank"
               rel="noopener noreferrer"
               >{{

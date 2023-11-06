@@ -7,12 +7,12 @@ import BannerLevel2 from '@/components/BannerLevel2.vue';
 
 import banner from '@/assets/illustrations/banner-secondary.png';
 import illustration from '@/assets/illustrations/member.png';
+import emailImg from '@/assets/category/member/toemail.svg';
+import gitImg from '@/assets/category/member/git.svg';
 
 import IconHome from '~icons/app/icon-home.svg';
 import IconMail from '~icons/app/icon-mail.svg';
 import IconUser from '~icons/app/icon-user.svg';
-import IconToemail from '@/assets/category/member/toemail.svg';
-import IconGit from '@/assets/category/member/git.svg';
 import IconArrowRight from '~icons/app/icon-arrow-right.svg';
 
 const i18n = useI18n();
@@ -138,7 +138,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
                 </p>
                 <p class="links lable-name">
                   <a :href="'mailto:' + user.email" class="mail"
-                    ><img :src="IconToemail"
+                    ><img :src="emailImg"
                   /></a>
                   <a
                     v-if="user.gitee"
@@ -146,7 +146,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
                     class="gitee lable-name"
                     target="_blank"
                     rel="noopener noreferrer"
-                    ><img :src="IconGit"
+                    ><img :src="gitImg"
                   /></a>
                 </p>
               </li>
@@ -210,7 +210,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
                     </p>
                     <p class="links lable-name9">
                       <a :href="'mailto:' + user.email" class="mail"
-                        ><img :src="IconToemail"
+                        ><img :src="emailImg"
                       /></a>
                       <a
                         v-if="user.gitee"
@@ -218,7 +218,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
                         class="gitee lable-name10"
                         target="_blank"
                         rel="noopener noreferrer"
-                        ><img :src="IconGit"
+                        ><img :src="gitImg"
                       /></a>
                     </p>
                   </li>
@@ -280,7 +280,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
               </p>
               <p class="links lable-name3">
                 <a :href="'mailto:' + user.email" class="mail"
-                  ><img :src="IconToemail"
+                  ><img :src="emailImg"
                 /></a>
                 <a
                   v-if="user.gitee"
@@ -288,7 +288,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
                   class="gitee lable-name3"
                   target="_blank"
                   rel="noopener noreferrer"
-                  ><img :src="IconGit"
+                  ><img :src="gitImg"
                 /></a>
               </p>
             </li>
@@ -355,7 +355,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
                   </p>
                   <p class="links lable-name5">
                     <a :href="'mailto:' + user.email" class="mail"
-                      ><img :src="IconToemail"
+                      ><img :src="emailImg"
                     /></a>
                     <a
                       v-if="user.gitee"
@@ -363,7 +363,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
                       class="gitee lable-name5"
                       target="_blank"
                       rel="noopener noreferrer"
-                      ><img :src="IconGit"
+                      ><img :src="gitImg"
                     /></a>
                   </p>
                 </li>

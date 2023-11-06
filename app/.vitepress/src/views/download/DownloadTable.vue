@@ -13,6 +13,8 @@ import IconTips from '~icons/app/icon-tips.svg';
 
 import TagFilter from '@/components/TagFilter.vue';
 
+import { DOCS_LINK } from '@/data/url-config';
+
 const props = defineProps({
   tableData: {
     required: true,
@@ -28,7 +30,7 @@ const props = defineProps({
   },
 });
 const { tableData } = toRefs(props);
-const { lang, theme } = useData();
+const { lang } = useData();
 const commonStore = useCommon();
 const i18n = useI18n();
 const shaText = 'SHA256';
@@ -283,7 +285,7 @@ watch(
               :href="
                 scope.row.docs_url.includes('https')
                   ? scope.row.docs_url
-                  : theme.docsUrl + '/' + lang + scope.row.docs_url
+                  : DOCS_LINK + '/' + lang + scope.row.docs_url
               "
               target="_blank"
               rel="noopener noreferrer"
@@ -347,7 +349,7 @@ watch(
             :href="
               item.docs_url.includes('https')
                 ? item.docs_url
-                : theme.docsUrl + '/' + lang + item.docs_url
+                : DOCS_LINK + '/' + lang + item.docs_url
             "
             target="_blank"
             rel="noopener noreferrer"

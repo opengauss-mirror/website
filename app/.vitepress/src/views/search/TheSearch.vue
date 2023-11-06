@@ -13,10 +13,12 @@ import IconSearch from '~icons/app/icon-search.svg';
 import useWindowResize from '@/components/hooks/useWindowResize';
 import { handleError, windowOpen } from '@/shared/utils';
 
+import { DOCS_LINK } from '@/data/url-config';
+
 const screenWidth = useWindowResize();
 const isMobile = computed(() => (screenWidth.value <= 768 ? true : false));
 
-const { lang, site } = useData();
+const { lang } = useData();
 const router = useRouter();
 const i18n = useI18n();
 const activeVersion = ref('');
@@ -186,7 +188,7 @@ function goLink(data: any) {
     if (/^docs\/master/g.test(path)) {
       goPath = path.replace(/^docs\/master/g, 'docs/latest');
     }
-    const url = site.value.themeConfig.docsUrl + '/' + goPath + '.html';
+    const url = DOCS_LINK + '/' + goPath + '.html';
     windowOpen(url, '_blank');
   } else {
     router.go(search_result_url);
