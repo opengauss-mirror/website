@@ -19,11 +19,14 @@ FROM openeuler/openeuler:22.03-lts-sp1
 
 ENV PATH /usr/share/nginx/sbin:$PATH
 ENV NGINX_CONFIG_FILE /etc/nginx/nginx.conf
+ENV NGINX_CONFIG_PATH /etc/nginx/
 ENV NGINX_PID /var/run/nginx.pid
 ENV NGINX_USER nginx
 ENV NGINX_GROUP nginx
-ENV NGINX_BIN /usr/share/nginx/sbin
-ENV NGINX_HOME /usr/share/nginx
+ENV NGINX_BIN /usr/share/nginx/sbin/
+ENV NGINX_HOME /usr/share/nginx/
+ENV NGINX_EXE_FILE /usr/share/nginx/sbin/nginx
+
 COPY --from=NginxBuilder /usr/share/nginx /usr/share/nginx
 COPY --from=NginxBuilder /usr/share/nginx/sbin/nginx /usr/share/nginx/sbin/nginx
 COPY --from=NginxBuilder /etc/nginx/modules /etc/nginx/modules
@@ -82,7 +85,7 @@ RUN touch /var/run/nginx.pid \
     && sed -i "s|HISTSIZE=1000|HISTSIZE=0|" /etc/profile \
     && sed -i "s|PASS_MAX_DAYS[ \t]*99999|PASS_MAX_DAYS 30|" /etc/login.defs \
     && passwd -l $NGINX_USER \
-    && yum remove findutils passwd -y \
+    && yum remove passwd -y \
     && yum clean all
 
 EXPOSE 8080
