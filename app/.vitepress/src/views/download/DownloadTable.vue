@@ -285,7 +285,7 @@ watch(
               :href="
                 scope.row.docs_url.includes('https')
                   ? scope.row.docs_url
-                  : DOCS_LINK + '/' + lang + scope.row.docs_url
+                  : DOCS_LINK + lang + scope.row.docs_url
               "
               target="_blank"
               rel="noopener noreferrer"
@@ -349,7 +349,7 @@ watch(
             :href="
               item.docs_url.includes('https')
                 ? item.docs_url
-                : DOCS_LINK + '/' + lang + item.docs_url
+                : DOCS_LINK + lang + item.docs_url
             "
             target="_blank"
             rel="noopener noreferrer"

@@ -68,8 +68,8 @@ function jumpBulletinDetail(val: any) {
 onMounted(() => {
   const i1 = window.location.href.indexOf('=');
   const cveNum = window.location.href.substring(i1 + 1);
-  try {
-    getCveDetail(cveNum).then((res: any) => {
+  getCveDetail(cveNum).then((res: any) => {
+    if (res && res.body && res.body.saBody && res.body.affectBody) {
       cveDetailData.value = res.body;
       cvssList.value = [
         {
@@ -120,10 +120,10 @@ onMounted(() => {
       ];
       advisories.value = [res.body.saBody];
       affectedProductList.value = res.body.affectBody;
-    });
-  } catch (e: any) {
-    handleError('Error!');
-  }
+    } else {
+      handleError();
+    }
+  });
 });
 </script>
 <template>

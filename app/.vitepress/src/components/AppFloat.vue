@@ -257,52 +257,45 @@ function postScore() {
     feedbackText: inputText.value,
     feedbackValue: score.value / 10,
   };
-  postFeedback(params)
-    .then((res) => {
-      if (res.code === 200) {
-        ElMessage({
-          message: '提交成功，感谢您的反馈！',
-          type: 'success',
-        });
-        const summitTime = new Date().valueOf();
-        if (screenWidth.value < 1100) {
-          try {
-            localStorage.setItem(
-              'submit-time-mobile',
-              JSON.stringify(summitTime)
-            );
-          } catch {
-            handleError();
-          }
-          isReasonShow.value = false;
-          inputText.value = '';
-          score.value = 0;
-          isMobileFloatShow.value = false;
-          dialogVisible.value = false;
-        } else {
-          try {
-            localStorage.setItem('submit-time', JSON.stringify(summitTime));
-          } catch {
-            handleError();
-          }
-          isReasonShow.value = false;
-          inputText.value = '';
-          score.value = 0;
-          isDynamic.value = false;
-        }
-      } else {
-        ElMessage({
-          message: res.msg,
-          type: 'error',
-        });
-      }
-    })
-    .catch(() => {
+  postFeedback(params).then((res) => {
+    if (res.code === 200) {
       ElMessage({
-        message: '提交失败，请刷新页面后重新提交！',
+        message: '提交成功，感谢您的反馈！',
+        type: 'success',
+      });
+      const summitTime = new Date().valueOf();
+      if (screenWidth.value < 1100) {
+        try {
+          localStorage.setItem(
+            'submit-time-mobile',
+            JSON.stringify(summitTime)
+          );
+        } catch {
+          handleError();
+        }
+        isReasonShow.value = false;
+        inputText.value = '';
+        score.value = 0;
+        isMobileFloatShow.value = false;
+        dialogVisible.value = false;
+      } else {
+        try {
+          localStorage.setItem('submit-time', JSON.stringify(summitTime));
+        } catch {
+          handleError();
+        }
+        isReasonShow.value = false;
+        inputText.value = '';
+        score.value = 0;
+        isDynamic.value = false;
+      }
+    } else {
+      ElMessage({
+        message: res.msg,
         type: 'error',
       });
-    });
+    }
+  });
 }
 function handleClickSubmit() {
   // pc12小时之内只能提交一次
@@ -419,56 +412,61 @@ onMounted(() => {
 
 <template>
   <div v-if="lang === 'zh'" class="float">
-    <template v-if="screenWidth > 1100">
-      <div
-        v-if="!isFloatTipShow && isFloatShow"
-        :class="isSafetyFloatShow ? 'safety-tips' : 'questionnaire-tips'"
-      >
-        <a
-          :href="isSafetyFloatShow ? VULBOX_LINK : QUESTIONNAIRE_LINK"
-          :target="isSafetyFloatShow ? '_blank' : '_self'"
-          rel="noopener noreferrer"
+    <ClientOnly>
+      <template v-if="screenWidth > 1100">
+        <div
+          v-if="!isFloatTipShow && isFloatShow"
+          :class="isSafetyFloatShow ? 'safety-tips' : 'questionnaire-tips'"
         >
-          {{ isSafetyFloatShow ? FLOAT_BUG_TEXT : FLOAT_QUESTIONNAIRE }}
-        </a>
-        <img class="close-img" :src="floatClose" alt="" @click="closeBgFloat" />
-      </div>
-      <div class="float-wrap">
-        <div v-show="isFloatTipShow" class="float-tip">
-          <h4 class="tip-title">{{ infoData.feedbackTitle }}</h4>
-          <div class="tip-detail">{{ infoData.welcome }}</div>
-          <div class="btn-box">
-            <OButton size="mini" @click="closeFloatTip">{{
-              infoData.know
-            }}</OButton>
-          </div>
-        </div>
-        <div class="nav-box1">
-          <div
-            class="nav-item"
-            @mouseenter="toggleIsShow(true)"
-            @mouseleave="toggleIsShow(false)"
+          <a
+            :href="isSafetyFloatShow ? VULBOX_LINK : QUESTIONNAIRE_LINK"
+            :target="isSafetyFloatShow ? '_blank' : '_self'"
+            rel="noopener noreferrer"
           >
-            <OIcon class="icon-box" @mouseleave.stop="closefloat">
-              <component :is="IconSmile"> </component>
-            </OIcon>
-            <div v-if="isShow" class="o-popup1" :class="{ show: isDynamic }">
-              <OIcon class="icon-cancel" @click="cancelPopup">
-                <IconCancel />
+            {{ isSafetyFloatShow ? FLOAT_BUG_TEXT : FLOAT_QUESTIONNAIRE }}
+          </a>
+          <img
+            class="close-img"
+            :src="floatClose"
+            alt=""
+            @click="closeBgFloat"
+          />
+        </div>
+        <div class="float-wrap">
+          <div v-show="isFloatTipShow" class="float-tip">
+            <h4 class="tip-title">{{ infoData.feedbackTitle }}</h4>
+            <div class="tip-detail">{{ infoData.welcome }}</div>
+            <div class="btn-box">
+              <OButton size="mini" @click="closeFloatTip">{{
+                infoData.know
+              }}</OButton>
+            </div>
+          </div>
+          <div class="nav-box1">
+            <div
+              class="nav-item"
+              @mouseenter="toggleIsShow(true)"
+              @mouseleave="toggleIsShow(false)"
+            >
+              <OIcon class="icon-box" @mouseleave.stop="closefloat">
+                <component :is="IconSmile"> </component>
               </OIcon>
-              <div class="slider">
-                <p class="slider-title">
-                  {{ title1 }}
-                  <span class="title-name">{{ title2 }}</span>
-                  {{ title3 }}
-                </p>
-                <div class="slider-body">
-                  <div class="slider-tip">
-                    <div v-show="isReasonShow" class="slide-btn-tip">
-                      {{ scoreTip }}
+              <div v-if="isShow" class="o-popup1" :class="{ show: isDynamic }">
+                <OIcon class="icon-cancel" @click="cancelPopup">
+                  <IconCancel />
+                </OIcon>
+                <div class="slider">
+                  <p class="slider-title">
+                    {{ title1 }}
+                    <span class="title-name">{{ title2 }}</span>
+                    {{ title3 }}
+                  </p>
+                  <div class="slider-body">
+                    <div class="slider-tip">
+                      <div v-show="isReasonShow" class="slide-btn-tip">
+                        {{ scoreTip }}
+                      </div>
                     </div>
-                  </div>
-                  <ClientOnly>
                     <el-slider
                       v-model="score"
                       show-stops
@@ -477,82 +475,80 @@ onMounted(() => {
                       :show-tooltip="false"
                       @input="handleInput"
                     />
-                  </ClientOnly>
-                  <div class="grade-info">
-                    <span>{{
-                      title2 === TITLES2[0]
-                        ? infoData.grade1
-                        : infoData.grade1_1
-                    }}</span>
-                    <span>{{
-                      title2 === TITLES2[0]
-                        ? infoData.grade2
-                        : infoData.grade2_1
-                    }}</span>
+                    <div class="grade-info">
+                      <span>{{
+                        title2 === TITLES2[0]
+                          ? infoData.grade1
+                          : infoData.grade1_1
+                      }}</span>
+                      <span>{{
+                        title2 === TITLES2[0]
+                          ? infoData.grade2
+                          : infoData.grade2_1
+                      }}</span>
+                    </div>
                   </div>
-                </div>
-                <div v-show="isReasonShow" class="reason">
-                  <el-input
-                    v-model="inputText"
-                    :rows="3"
-                    type="textarea"
-                    :placeholder="placeholder"
-                    maxlength="500"
-                    resize="none"
-                    show-word-limit
-                    @focus="toggleIsFocuse(true)"
-                    @blur="toggleIsFocuse(false)"
-                  />
-                  <p class="more-info">
-                    {{ infoData.more }}
-                    <a :href="'mailto:' + infoData.emile">
-                      {{ infoData.emile }}
-                    </a>
-                  </p>
-                  <div class="submit-btn">
-                    <OButton
-                      type="outline"
-                      size="mini"
-                      @click="handleClickSubmit"
-                    >
-                      {{ infoData.submit }}
-                    </OButton>
+                  <div v-show="isReasonShow" class="reason">
+                    <el-input
+                      v-model="inputText"
+                      :rows="3"
+                      type="textarea"
+                      :placeholder="placeholder"
+                      maxlength="500"
+                      resize="none"
+                      show-word-limit
+                      @focus="toggleIsFocuse(true)"
+                      @blur="toggleIsFocuse(false)"
+                    />
+                    <p class="more-info">
+                      {{ infoData.more }}
+                      <a :href="'mailto:' + infoData.emile">
+                        {{ infoData.emile }}
+                      </a>
+                    </p>
+                    <div class="submit-btn">
+                      <OButton
+                        type="outline"
+                        size="mini"
+                        @click="handleClickSubmit"
+                      >
+                        {{ infoData.submit }}
+                      </OButton>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="nav-item">
-            <OIcon class="icon-box"
-              ><component :is="IconHeadset"></component>
-            </OIcon>
-            <div class="o-popup2">
-              <div
-                v-for="item in floatData"
-                :key="item.emile"
-                class="pop-item"
-                rel="noopener noreferrer"
-              >
-                <OIcon><component :is="item.img"></component></OIcon>
-                <div class="text">
-                  <p class="text-name">
-                    {{ item.text }}
-                  </p>
-                  <p class="text-tip">
-                    <a :href="'mailto:' + item.emile">{{ item.emile }}</a>
-                  </p>
+            <div class="nav-item">
+              <OIcon class="icon-box"
+                ><component :is="IconHeadset"></component>
+              </OIcon>
+              <div class="o-popup2">
+                <div
+                  v-for="item in floatData"
+                  :key="item.emile"
+                  class="pop-item"
+                  rel="noopener noreferrer"
+                >
+                  <OIcon><component :is="item.img"></component></OIcon>
+                  <div class="text">
+                    <p class="text-name">
+                      {{ item.text }}
+                    </p>
+                    <p class="text-tip">
+                      <a :href="'mailto:' + item.emile">{{ item.emile }}</a>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="nav-item nav-box2" @click="handleClickTop">
-            <OIcon><component :is="IconTop"></component> </OIcon>
+            <div class="nav-item nav-box2" @click="handleClickTop">
+              <OIcon><component :is="IconTop"></component> </OIcon>
+            </div>
           </div>
         </div>
-      </div>
-    </template>
-    <template v-else>
-      <ClientOnly>
+      </template>
+      <template v-else>
         <div v-if="isMobileFloatShow" class="float-mobile">
           <div class="float-head">
             <div class="head-title" @click="toggleDialogVisible">
@@ -589,16 +585,14 @@ onMounted(() => {
                   </li>
                 </ul>
                 <div class="slider-body">
-                  <ClientOnly>
-                    <el-slider
-                      v-model="score"
-                      :step="STEP"
-                      :marks="marks"
-                      show-stops
-                      :show-tooltip="false"
-                      @input="handleInput"
-                    />
-                  </ClientOnly>
+                  <el-slider
+                    v-model="score"
+                    :step="STEP"
+                    :marks="marks"
+                    show-stops
+                    :show-tooltip="false"
+                    @input="handleInput"
+                  />
                 </div>
                 <div class="grade-info">
                   <span>{{
@@ -643,8 +637,8 @@ onMounted(() => {
             </div>
           </el-dialog>
         </div>
-      </ClientOnly>
-    </template>
+      </template>
+    </ClientOnly>
   </div>
 </template>
 <style lang="scss" scoped>

@@ -119,7 +119,7 @@ watch(
         <a
           v-for="item in getData[0].docs_list"
           :key="item.name"
-          :href="DOCS_LINK + '/' + lang + item.path"
+          :href="DOCS_LINK + lang + item.path"
           target="_blank"
           rel="noopener noreferrer"
           >{{ isZh ? item.name : item.nameEn }}</a

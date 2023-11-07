@@ -45,15 +45,15 @@ const queryData: CveQuery = reactive({
 });
 
 function getCveLists(data: CveQuery) {
-  try {
-    getCveList(data).then((res: any) => {
+  getCveList(data).then((res: any) => {
+    if (res && res.body && res.totalCount) {
       tableData.value = res.body;
       total.value = res.totalCount;
       totalPage.value = Math.ceil(total.value / queryData.pageSize);
-    });
-  } catch (e: any) {
-    handleError('Error!');
-  }
+    } else {
+      handleError();
+    }
+  });
 }
 const handleSizeChange = (val: number) => {
   queryData.pageSize = val;

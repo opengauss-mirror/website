@@ -40,7 +40,7 @@ watch(
 // 点击子导航事件
 const goPath = (item: NavItemT) => {
   if (item.IS_OPEN_WINDOW) {
-    windowOpen(DOCS_LINK + '/' + lang.value + '/' + item.PATH);
+    windowOpen(DOCS_LINK + lang.value + '/' + item.PATH);
     return;
   }
   if (item.IS_OPEN_MINISITE_WINDOW) {

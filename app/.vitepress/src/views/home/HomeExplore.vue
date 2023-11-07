@@ -13,7 +13,7 @@ const { lang } = useData();
 
 const handleGo = (path: string) => {
   return path.startsWith('/docs/')
-    ? DOCS_LINK + '/' + lang.value + path
+    ? DOCS_LINK + lang.value + path
     : path;
 };
 </script>
