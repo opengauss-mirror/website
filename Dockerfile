@@ -29,8 +29,12 @@ COPY --from=NginxBuilder /usr/share/nginx/sbin/nginx /usr/share/nginx/sbin/nginx
 COPY --from=NginxBuilder /etc/nginx/modules /etc/nginx/modules
 COPY --from=NginxBuilder /etc/nginx/geoip  /etc/nginx/geoip
 COPY --from=NginxBuilder /etc/nginx/mime.types  /etc/nginx/mime.types
-COPY --from=Builder /home/opengauss/web/app/.vitepress/dist /usr/share/nginx/html/
-RUN chmod -R 700 /usr/share/nginx/html
+COPY --from=Builder /home/opengauss/web/app/.vitepress/dist /usr/share/nginx/www/
+
+RUN yum update -y \
+    && yum install -y findutils passwd \
+    && find /usr/share/nginx/www -type d -print0| xargs -0 chmod 500 \
+    && find /usr/share/nginx/www -type f -print0| xargs -0 chmod 400
 COPY ./deploy/nginx/nginx.conf /etc/nginx/nginx.conf
 COPY --chown=$NGINX_USER:$NGINX_GROUP ./server.crt ./server.key ./password.txt ./dhparam.pem /etc/nginx/cert/
 
@@ -39,7 +43,8 @@ RUN touch /var/run/nginx.pid \
     && groupadd -g 1000 nginx \
     && useradd -u 1000 -g nginx -s /sbin/nologin nginx \
     && chown -R nginx:nginx /usr/share/nginx \
-    && chmod -R 550 /usr/share/nginx/ \
+    && find /usr/share/nginx -type d -print0 | xargs -0 chmod 500 \
+    && chmod 500 /usr/share/nginx/sbin/nginx \
     && mkdir -p /var/log/nginx \
     && chown -R nginx:nginx /var/log/nginx \
     && chmod -R 640 /var/log/nginx \
@@ -70,11 +75,15 @@ RUN touch /var/run/nginx.pid \
     && chmod 440 /etc/nginx/modules/* \
     && chmod 400 /etc/nginx/nginx.conf \
     && chmod 440 /etc/nginx/mime.types \
-    && rm -rf /usr/share/nginx/html/50x.html \
+    && rm -rf /usr/share/nginx/html/ \
+    && rm -rf /usr/share/nginx/logs/ \
     && echo "umask 0027" >> /etc/bashrc \
     && echo "set +o history" >> /etc/bashrc \
     && sed -i "s|HISTSIZE=1000|HISTSIZE=0|" /etc/profile \
-    && sed -i "s|PASS_MAX_DAYS[ \t]*99999|PASS_MAX_DAYS 30|" /etc/login.defs
+    && sed -i "s|PASS_MAX_DAYS[ \t]*99999|PASS_MAX_DAYS 30|" /etc/login.defs \
+    && passwd -l $NGINX_USER \
+    && yum remove findutils passwd -y \
+    && yum clean all
 
 EXPOSE 8080
 
