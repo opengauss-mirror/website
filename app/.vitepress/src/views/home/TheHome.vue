@@ -62,38 +62,38 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <HomeBanner />
-  <AppContent>
-    <HomeCharacteristic />
-    <HomePlayground />
-  </AppContent>
+  <ClientOnly>
+    <HomeBanner />
+    <AppContent>
+      <HomeCharacteristic />
+      <HomePlayground />
+    </AppContent>
 
-  <HomeExplore />
-  <AppContent>
-    <ClientOnly>
+    <HomeExplore />
+    <AppContent>
       <div id="meetings" class="home-calendar">
         <h3 class="home-title">{{ i18n.home.HOME_MEETING }}</h3>
         <HomeCalendar />
       </div>
-    </ClientOnly>
-    <HomeNews
-      v-if="blogData && newsData"
-      :blog-data="blogData"
-      :news-data="newsData"
-      :events-data="eventsData"
-    />
-  </AppContent>
-  <HomeVideo />
-  <AppContent>
-    <HomeShowCase />
-    <div class="home-partner">
-      <h3 class="home-title">{{ i18n.home.ORGANIZATION_TITLE }}</h3>
-      <LinkPanel :link-list="homeConfig.organization" :islink="false" />
+      <HomeNews
+        v-if="blogData && newsData"
+        :blog-data="blogData"
+        :news-data="newsData"
+        :events-data="eventsData"
+      />
+    </AppContent>
+    <HomeVideo />
+    <AppContent>
+      <HomeShowCase />
+      <div class="home-partner">
+        <h3 class="home-title">{{ i18n.home.ORGANIZATION_TITLE }}</h3>
+        <LinkPanel :link-list="homeConfig.organization" :islink="false" />
 
-      <h3 class="home-title">{{ i18n.home.LINK_TITLE }}</h3>
-      <LinkPanel :link-list="homeConfig.linkList" :islink="true" />
-    </div>
-  </AppContent>
+        <h3 class="home-title">{{ i18n.home.LINK_TITLE }}</h3>
+        <LinkPanel :link-list="homeConfig.linkList" :islink="true" />
+      </div>
+    </AppContent>
+  </ClientOnly>
 </template>
 
 <style lang="scss" scoped>

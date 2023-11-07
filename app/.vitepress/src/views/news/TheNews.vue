@@ -69,7 +69,7 @@ const getListData = (params: ParamsType) => {
     })
     .catch(() => {
       isShowData.value = false;
-      handleError('Error!');
+      handleError();
     });
 };
 

@@ -188,7 +188,7 @@ function goLink(data: any) {
     if (/^docs\/master/g.test(path)) {
       goPath = path.replace(/^docs\/master/g, 'docs/latest');
     }
-    const url = DOCS_LINK + '/' + goPath + '.html';
+    const url = DOCS_LINK + goPath + '.html';
     windowOpen(url, '_blank');
   } else {
     router.go(search_result_url);

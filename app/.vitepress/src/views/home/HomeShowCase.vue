@@ -94,7 +94,7 @@ onMounted(() => {
       caseRef.value.addEventListener('mouseout', setCaseInterval);
     }
   } catch {
-    handleError('Error!');
+    handleError();
   }
 });
 onUnmounted(() => {

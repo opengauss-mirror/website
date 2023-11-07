@@ -1,6 +1,5 @@
 import { request } from '@/shared/axios';
 import type { AxiosResponse } from '@/shared/axios';
-import { handleError } from '@/shared/utils';
 
 /**
  * 获取会议数据
@@ -10,7 +9,7 @@ import { handleError } from '@/shared/utils';
 export function getMeetingData(group: string) {
   const url = `/api-meeting/meetingsdata/?group=${group}`;
   return request
-    .get(url, { $doException: false })
+    .get(url, { $doException: true })
     .then((res: AxiosResponse) => res.data);
 }
 
@@ -22,7 +21,7 @@ export function getMeetingData(group: string) {
 export function getMeetingSig() {
   const url = '/api-meeting/groups/';
   return request
-    .get(url, { $doException: false })
+    .get(url, { $doException: true })
     .then((res: AxiosResponse) => res.data);
 }
 
@@ -32,9 +31,7 @@ export function getMeetingSig() {
  */
 export function loginGitee() {
   const url = '/api-meeting/gitee_login/';
-  return request
-    .get(url, { $doException: false })
-    .then((res: AxiosResponse) => res.data);
+  return request.get(url).then((res: AxiosResponse) => res.data);
 }
 // 会议登录
 export function loginMeeting(params: object, token = '') {
@@ -44,12 +41,9 @@ export function loginMeeting(params: object, token = '') {
       headers: {
         Authorization: 'Bearer ' + token,
       },
-      $doException: false,
+      $doException: true,
     })
-    .then((res: AxiosResponse) => res.data)
-    .catch(() => {
-      handleError('Error!');
-    });
+    .then((res: AxiosResponse) => res.data);
 }
 // 会议登出
 export function logoutMeeting(token = '') {
@@ -59,7 +53,6 @@ export function logoutMeeting(token = '') {
       headers: {
         Authorization: 'Bearer ' + token,
       },
-      $doException: false,
     })
     .then((res: AxiosResponse) => res.data);
 }
@@ -74,7 +67,7 @@ export function getUserInfo(token = '') {
       headers: {
         Authorization: 'Bearer ' + token,
       },
-      $doException: false,
+      $doException: true,
     })
     .then((res: AxiosResponse) => res.data);
 }
@@ -88,10 +81,7 @@ export function addMeeting(params: object, token = '') {
         Authorization: 'Bearer ' + token,
       },
     })
-    .then((res: AxiosResponse) => res.data)
-    .catch(() => {
-      handleError('Error!');
-    });
+    .then((res: AxiosResponse) => res.data);
 }
 
 export function deleteMeeting(mid: number | null, token = '') {
@@ -102,10 +92,7 @@ export function deleteMeeting(mid: number | null, token = '') {
         Authorization: 'Bearer ' + token,
       },
     })
-    .then((res: AxiosResponse) => res.data)
-    .catch(() => {
-      handleError('Error!');
-    });
+    .then((res: AxiosResponse) => res.data);
 }
 
 export function updateMeeting(mid: number | null, params: object, token = '') {
@@ -116,8 +103,5 @@ export function updateMeeting(mid: number | null, params: object, token = '') {
         Authorization: 'Bearer ' + token,
       },
     })
-    .then((res: AxiosResponse) => res.data)
-    .catch(() => {
-      handleError('Error!');
-    });
+    .then((res: AxiosResponse) => res.data);
 }

@@ -104,36 +104,34 @@ const getTagsList = () => {
         })
         .catch(() => {
           isShowData.value = false;
-          handleError('Error!');
+          handleError();
         });
     }
   });
 };
 // 获取列表数据
 const getListData = (params: ParamsType) => {
-  getBlogsData(params)
-    .then((res) => {
-      if (res.obj && res.obj.records.length) {
-        if (res.obj.count === 0) {
-          isShowData.value = false;
-        } else {
-          paginationData.value.total = res.obj.count;
-          paginationData.value.currentpage = res.obj.page;
-          paginationData.value.pagesize = res.obj.pageSize;
-          blogCardData.value = res.obj.records;
-          for (let i = 0; i < blogCardData.value.length; i++) {
-            if (typeof blogCardData.value[i].author === 'string') {
-              blogCardData.value[i].author = [blogCardData.value[i].author];
-            }
+  getBlogsData(params).then((res) => {
+    if (res.obj && res.obj.records.length) {
+      if (res.obj.count === 0) {
+        isShowData.value = false;
+      } else {
+        paginationData.value.total = res.obj.count;
+        paginationData.value.currentpage = res.obj.page;
+        paginationData.value.pagesize = res.obj.pageSize;
+        blogCardData.value = res.obj.records;
+        for (let i = 0; i < blogCardData.value.length; i++) {
+          if (typeof blogCardData.value[i].author === 'string') {
+            blogCardData.value[i].author = [blogCardData.value[i].author];
           }
-          isShowData.value = true;
         }
+        isShowData.value = true;
       }
-    })
-    .catch(() => {
+    } else {
       isShowData.value = false;
-      handleError('Error!');
-    });
+      handleError();
+    }
+  });
 };
 
 // pc筛选
@@ -191,7 +189,7 @@ const changeTime = () => {
           });
         })
         .catch(() => {
-          handleError('Error!');
+          handleError();
         });
     });
   } else if (
@@ -253,7 +251,7 @@ const changeAuthor = () => {
           });
         })
         .catch(() => {
-          handleError('Error!');
+          handleError();
         });
     });
   } else if (
@@ -315,7 +313,7 @@ const changeTags = () => {
           });
         })
         .catch(() => {
-          handleError('Error!');
+          handleError();
         });
     });
   } else if (

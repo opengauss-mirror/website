@@ -12,75 +12,77 @@ const screenWidth = useWindowResize();
 </script>
 
 <template>
-  <BannerLevel2
-    :background-image="Banner"
-    :title="i18n.knowledge.title"
-    :illustration="illustration"
-  />
-  <AppContent>
-    <div v-if="screenWidth > 768" class="knowledge-pc">
-      <div
-        v-for="(item, index) in i18n.knowledge.module"
-        :key="item.name"
-        class="module-item"
-      >
-        <div class="item-left" :class="'left' + (index + 1)">
-          {{ item.name }}
-        </div>
-        <div class="item-right">
-          <div
-            v-for="itemType in item.moduleTypes"
-            :key="itemType.name"
-            class="type-item"
-          >
-            <h4>{{ itemType.name }}</h4>
-            <div class="link-box">
-              <a
-                v-for="itemList in itemType.list"
-                :key="itemList.name"
-                :href="itemList.link"
-                target="_blank"
-                rel="noopener noreferrer"
-                >{{ itemList.name }}</a
-              >
+  <ClientOnly>
+    <BannerLevel2
+      :background-image="Banner"
+      :title="i18n.knowledge.title"
+      :illustration="illustration"
+    />
+    <AppContent>
+      <div v-if="screenWidth > 768" class="knowledge-pc">
+        <div
+          v-for="(item, index) in i18n.knowledge.module"
+          :key="item.name"
+          class="module-item"
+        >
+          <div class="item-left" :class="'left' + (index + 1)">
+            {{ item.name }}
+          </div>
+          <div class="item-right">
+            <div
+              v-for="itemType in item.moduleTypes"
+              :key="itemType.name"
+              class="type-item"
+            >
+              <h4>{{ itemType.name }}</h4>
+              <div class="link-box">
+                <a
+                  v-for="itemList in itemType.list"
+                  :key="itemList.name"
+                  :href="itemList.link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >{{ itemList.name }}</a
+                >
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div v-else class="knowledge-mobile">
-      <div
-        v-for="item in i18n.knowledge.module"
-        :key="item.name"
-        class="module-item"
-      >
-        <div class="item-head">
-          {{ item.name }}
-        </div>
-        <div class="item-body">
-          <div
-            v-for="(itemType, index) in item.moduleTypes"
-            :key="itemType.name"
-            class="type-item"
-          >
-            <el-collapse>
-              <el-collapse-item :title="itemType.name" :name="index">
-                <div class="link-box">
-                  <a
-                    v-for="itemList in itemType.list"
-                    :key="itemList.name"
-                    :href="itemList.link"
-                    rel="noopener noreferrer"
-                    >{{ itemList.name }}</a
-                  >
-                </div>
-              </el-collapse-item>
-            </el-collapse>
+      <div v-else class="knowledge-mobile">
+        <div
+          v-for="item in i18n.knowledge.module"
+          :key="item.name"
+          class="module-item"
+        >
+          <div class="item-head">
+            {{ item.name }}
+          </div>
+          <div class="item-body">
+            <div
+              v-for="(itemType, index) in item.moduleTypes"
+              :key="itemType.name"
+              class="type-item"
+            >
+              <el-collapse>
+                <el-collapse-item :title="itemType.name" :name="index">
+                  <div class="link-box">
+                    <a
+                      v-for="itemList in itemType.list"
+                      :key="itemList.name"
+                      :href="itemList.link"
+                      rel="noopener noreferrer"
+                      >{{ itemList.name }}</a
+                    >
+                  </div>
+                </el-collapse-item>
+              </el-collapse>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </AppContent>
+    </AppContent>
+  </ClientOnly>
 </template>
 
 <style lang="scss" scoped>

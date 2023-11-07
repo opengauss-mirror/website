@@ -18,7 +18,7 @@ export default [
             sha_code:
               '1e356c0c9d32c8e486bb243b58a90763efc16963fff64cdf704b2ce17798d72b',
             docsName: 'Enterprise-Edition Installation Guide',
-            docs_url: `${DOCS_LINK}/en/docs/3.1.1/docs/installation/enterprise-edition-installation-process.html`,
+            docs_url: `${DOCS_LINK}en/docs/3.1.1/docs/installation/enterprise-edition-installation-process.html`,
           },
           {
             name: 'openGauss_3.1.1 Simplified',
@@ -29,7 +29,7 @@ export default [
             sha_code:
               '6b3498f17dc9a3d96cb92ae1ea326d10d1a3159a9f15df556d376ac43c2b4792',
             docsName: 'Simplified Installation Guide',
-            docs_url: `${DOCS_LINK}/en/docs/3.1.1/docs/installation/simplified-installation-process.html`,
+            docs_url: `${DOCS_LINK}en/docs/3.1.1/docs/installation/simplified-installation-process.html`,
           },
           {
             name: 'openGauss_3.1.1 Lite',
@@ -40,7 +40,7 @@ export default [
             sha_code:
               '365c1a402d8cf3a0334159b64dd839a1915e1de82e6f75ade74438d06744c987',
             docsName: 'Lite Installation Guide',
-            docs_url: `${DOCS_LINK}/en/docs/3.1.1-lite/docs/installation/installation-overview.html`,
+            docs_url: `${DOCS_LINK}en/docs/3.1.1-lite/docs/installation/installation-overview.html`,
           },
         ],
       },
@@ -59,7 +59,7 @@ export default [
             sha_code:
               '13d098c646d72349f79cb6a13c2ad4dc1a551ef160bf6ed5edf637692c167479',
             docsName: 'Enterprise-Edition Installation Guide',
-            docs_url: `${DOCS_LINK}/en/docs/3.1.1/docs/installation/enterprise-edition-installation-process.html`,
+            docs_url: `${DOCS_LINK}en/docs/3.1.1/docs/installation/enterprise-edition-installation-process.html`,
           },
           {
             name: 'openGauss_3.1.1 Simplified',
@@ -70,7 +70,7 @@ export default [
             sha_code:
               '87b3dde1b5bb95c2ae397bcd391c36301f8fe851f148332e9af846fa6409b21e',
             docsName: 'Simplified Installation Guide',
-            docs_url: `${DOCS_LINK}/en/docs/3.1.1/docs/installation/simplified-installation-process.html`,
+            docs_url: `${DOCS_LINK}en/docs/3.1.1/docs/installation/simplified-installation-process.html`,
           },
           {
             name: 'openGauss_3.1.1 Lite',
@@ -81,7 +81,7 @@ export default [
             sha_code:
               'd54d16fe54675f8ac05dadf5ae199306b7848e172c96697a85beee0ab627724f',
             docsName: 'Lite Installation Guide',
-            docs_url: `${DOCS_LINK}/en/docs/3.1.1-lite/docs/installation/installation-overview.html`,
+            docs_url: `${DOCS_LINK}en/docs/3.1.1-lite/docs/installation/installation-overview.html`,
           },
         ],
       },
@@ -102,7 +102,7 @@ export default [
               'f2bd4b88a66d30d95c3c7e2ee1b980996e1f8830804e3ad66ab8a8a8d179e13a',
 
             docsName: 'Enterprise-Edition Installation Guide',
-            docs_url: `${DOCS_LINK}/en/docs/3.1.1/docs/installation/enterprise-edition-installation-process.html`,
+            docs_url: `${DOCS_LINK}en/docs/3.1.1/docs/installation/enterprise-edition-installation-process.html`,
           },
           {
             name: 'openGauss_3.1.1 Simplified',
@@ -115,7 +115,7 @@ export default [
               'a795338fa51ab2aa7ac0918ee22b396cc4cdd24f4482fe33ba6fd5d5843b9e50',
 
             docsName: 'Simplified Installation Guide',
-            docs_url: `${DOCS_LINK}/en/docs/3.1.1/docs/installation/simplified-installation-process.html`,
+            docs_url: `${DOCS_LINK}en/docs/3.1.1/docs/installation/simplified-installation-process.html`,
           },
           {
             name: 'openGauss_3.1.1 Lite',
@@ -126,7 +126,7 @@ export default [
             sha_code:
               '7885d8d66b1ea8517f590c5fc1c212d15e07c710dbae83e38a67828ce9a166e3',
             docsName: 'Lite Installation Guide',
-            docs_url: `${DOCS_LINK}/en/docs/3.1.1-lite/docs/installation/installation-overview.html`,
+            docs_url: `${DOCS_LINK}en/docs/3.1.1-lite/docs/installation/installation-overview.html`,
           },
           {
             name: 'openGauss_3.1.1 Distributed',
