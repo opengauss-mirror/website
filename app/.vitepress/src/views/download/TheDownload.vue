@@ -31,74 +31,78 @@ const getData: any = computed(() => {
 </script>
 
 <template>
-  <BannerLevel2
-    :background-image="Banner"
-    :title="i18n.download.PAGE_TITLE"
-    :illustration="illustration"
-  />
-  <AppContent>
-    <div class="download-wrap">
-      <div class="description-wrap">
-        <div class="description-item">
-          <p v-for="item in downloadData.DESCRIPTION" :key="item">{{ item }}</p>
-          <p>
-            {{ downloadData.MORE_DETAIL
-            }}<a
-              :href="downloadData.SPECIFICATION_LINK"
-              target="_blank"
-              rel="noopener noreferrer"
-              >{{ downloadData.VIEW_SPECIFICATION }}</a
-            ><span>{{ lang === 'zh' ? '。' : '.' }}</span>
-          </p>
-        </div>
-        <div class="description-item">
-          <p>
-            {{ downloadData.PECULIARITY_DETAIL
-            }}<a
-              :href="DOCS_LINK + downloadData.RELEASE_LINK"
-              target="_blank"
-              rel="noopener noreferrer"
-              >{{
-                lang === 'zh'
-                  ? getData[0].docs_list[0].name
-                  : getData[0].docs_list[0].nameEn
-              }}</a
-            >{{ downloadData.WELCOME }}
-          </p>
-          <p>
-            {{ downloadData.MORE_HISTORY
-            }}<a
-              :href="'/' + lang + '/' + downloadData.HISTORY_LINK"
-              rel="noopener noreferrer"
-              >{{ downloadData.CLICK_VIEW }}</a
-            ><span>{{ lang === 'zh' ? '。' : '.' }}</span>
-          </p>
-        </div>
-      </div>
-      <div class="download-content">
-        <div class="content-selection">
-          <div
-            class="selection-item"
-            :class="{ active: versionShown === versionList[0] }"
-            @click="setVersionShown(versionList[0])"
-          >
-            {{ 'openGauss ' + DownloadConfig[0].name }}
+  <ClientOnly>
+    <BannerLevel2
+      :background-image="Banner"
+      :title="i18n.download.PAGE_TITLE"
+      :illustration="illustration"
+    />
+    <AppContent>
+      <div class="download-wrap">
+        <div class="description-wrap">
+          <div class="description-item">
+            <p v-for="item in downloadData.DESCRIPTION" :key="item">
+              {{ item }}
+            </p>
+            <p>
+              {{ downloadData.MORE_DETAIL
+              }}<a
+                :href="downloadData.SPECIFICATION_LINK"
+                target="_blank"
+                rel="noopener noreferrer"
+                >{{ downloadData.VIEW_SPECIFICATION }}</a
+              ><span>{{ lang === 'zh' ? '。' : '.' }}</span>
+            </p>
           </div>
-          <div
-            class="selection-item"
-            :class="{ active: versionShown === versionList[1] }"
-            @click="setVersionShown(versionList[1])"
-          >
-            {{ 'openGauss ' + DownloadConfig[1].name }}
+          <div class="description-item">
+            <p>
+              {{ downloadData.PECULIARITY_DETAIL
+              }}<a
+                :href="DOCS_LINK + downloadData.RELEASE_LINK"
+                target="_blank"
+                rel="noopener noreferrer"
+                >{{
+                  lang === 'zh'
+                    ? getData[0].docs_list[0].name
+                    : getData[0].docs_list[0].nameEn
+                }}</a
+              >{{ downloadData.WELCOME }}
+            </p>
+            <p>
+              {{ downloadData.MORE_HISTORY
+              }}<a
+                :href="'/' + lang + '/' + downloadData.HISTORY_LINK"
+                rel="noopener noreferrer"
+                >{{ downloadData.CLICK_VIEW }}</a
+              ><span>{{ lang === 'zh' ? '。' : '.' }}</span>
+            </p>
           </div>
         </div>
-        <DownloadContent
-          :content-data="getData"
-          :version-shown="versionShown"
-        />
+        <div class="download-content">
+          <div class="content-selection">
+            <div
+              class="selection-item"
+              :class="{ active: versionShown === versionList[0] }"
+              @click="setVersionShown(versionList[0])"
+            >
+              {{ 'openGauss ' + DownloadConfig[0].name }}
+            </div>
+            <div
+              class="selection-item"
+              :class="{ active: versionShown === versionList[1] }"
+              @click="setVersionShown(versionList[1])"
+            >
+              {{ 'openGauss ' + DownloadConfig[1].name }}
+            </div>
+          </div>
+          <DownloadContent
+            :content-data="getData"
+            :version-shown="versionShown"
+          />
+        </div>
       </div>
-    </div>
-  </AppContent>
+    </AppContent>
+  </ClientOnly>
 </template>
 
 <style lang="scss" scoped>

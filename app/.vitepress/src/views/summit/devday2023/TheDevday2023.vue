@@ -95,88 +95,90 @@ watch(
 <template>
   <SummitBanner :banner-data="summitData.banner" />
   <AppContext>
-    <div class="detail">
-      <p v-for="item in summitData.detail" :key="item">{{ item }}</p>
-    </div>
-    <div id="live-box" class="live">
-      <h3 class="titleBar">{{ summitData.live.title }}</h3>
-      <div>
-        <SummitLive
-          :live-data="summitData.live.liveData"
-          class-name="odd-box"
-          class="summit-kv-box"
-        />
+    <ClientOnly>
+      <div class="detail">
+        <p v-for="item in summitData.detail" :key="item">{{ item }}</p>
       </div>
-    </div>
-    <div class="agenda" :class="{ 'min-height': showIndex === 1 }">
-      <h3>会议日程</h3>
-      <div class="date">
-        <div
-          v-for="(item, index) in meetingTime"
-          :key="item.name"
-          class="date-item"
-          :class="{ active: showIndex === index }"
-          @click="setShowIndex(index)"
-        >
-          <p class="date-day">{{ item.day }}</p>
-          <p class="date-month">{{ item.label }}</p>
+      <div id="live-box" class="live">
+        <h3 class="titleBar">{{ summitData.live.title }}</h3>
+        <div>
+          <SummitLive
+            :live-data="summitData.live.liveData"
+            class-name="odd-box"
+            class="summit-kv-box"
+          />
         </div>
       </div>
-      <!-- 25 -->
-      <template
-        v-if="
-          getData[meetingTime[0].name] &&
-          getData[meetingTime[0].name].content.content
-        "
-      >
+      <div class="agenda" :class="{ 'min-height': showIndex === 1 }">
+        <h3>会议日程</h3>
+        <div class="date">
+          <div
+            v-for="(item, index) in meetingTime"
+            :key="item.name"
+            class="date-item"
+            :class="{ active: showIndex === index }"
+            @click="setShowIndex(index)"
+          >
+            <p class="date-day">{{ item.day }}</p>
+            <p class="date-month">{{ item.label }}</p>
+          </div>
+        </div>
+        <!-- 25 -->
         <template
-          v-for="item in getData[meetingTime[0].name].content.content"
-          :key="item.lable"
+          v-if="
+            getData[meetingTime[0].name] &&
+            getData[meetingTime[0].name].content.content
+          "
         >
-          <SummitSchedule v-show="showIndex === 0" :agenda-data="item" />
+          <template
+            v-for="item in getData[meetingTime[0].name].content.content"
+            :key="item.lable"
+          >
+            <SummitSchedule v-show="showIndex === 0" :agenda-data="item" />
+          </template>
         </template>
-      </template>
 
-      <div v-show="showIndex === 1">
-        <el-tabs v-model.number="tabType" class="schedule-tabs">
-          <el-tab-pane :name="0">
-            <template #label>
-              <div class="time-tabs">上午</div>
-            </template>
-          </el-tab-pane>
-          <el-tab-pane :name="1">
-            <template #label>
-              <div class="time-tabs">下午</div>
-            </template>
-          </el-tab-pane>
-        </el-tabs>
-        <template v-for="item in agendaData2" :key="item.lable">
-          <SummitSchedule :agenda-data="item" />
-        </template>
+        <div v-show="showIndex === 1">
+          <el-tabs v-model.number="tabType" class="schedule-tabs">
+            <el-tab-pane :name="0">
+              <template #label>
+                <div class="time-tabs">上午</div>
+              </template>
+            </el-tab-pane>
+            <el-tab-pane :name="1">
+              <template #label>
+                <div class="time-tabs">下午</div>
+              </template>
+            </el-tab-pane>
+          </el-tabs>
+          <template v-for="item in agendaData2" :key="item.lable">
+            <SummitSchedule :agenda-data="item" />
+          </template>
+        </div>
       </div>
-    </div>
-    <div class="guests">
-      <h3 class="title-bar">演讲嘉宾</h3>
-      <SummitGuests
-        :lecturer-list="guestsData"
-        shape="circle"
-        :web-columns-num="4"
-        :mobile-columns-num="2"
-      />
-    </div>
-    <div class="previous">
-      <div class="previous-title">
-        <h3>{{ summitData.previous.title }}</h3>
-        <img :src="liveImg" alt="live" />
+      <div class="guests">
+        <h3 class="title-bar">演讲嘉宾</h3>
+        <SummitGuests
+          :lecturer-list="guestsData"
+          shape="circle"
+          :web-columns-num="4"
+          :mobile-columns-num="2"
+        />
       </div>
-      <div class="link-box">
-        <p v-for="item in summitData.previous.content" :key="item.link">
-          <a :href="item.link" target="_blank" rel="noopener noreferrer">{{
-            item.title
-          }}</a>
-        </p>
+      <div class="previous">
+        <div class="previous-title">
+          <h3>{{ summitData.previous.title }}</h3>
+          <img :src="liveImg" alt="live" />
+        </div>
+        <div class="link-box">
+          <p v-for="item in summitData.previous.content" :key="item.link">
+            <a :href="item.link" target="_blank" rel="noopener noreferrer">{{
+              item.title
+            }}</a>
+          </p>
+        </div>
       </div>
-    </div>
+    </ClientOnly>
   </AppContext>
 </template>
 <style scoped lang="scss">
