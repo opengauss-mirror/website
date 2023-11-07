@@ -53,20 +53,17 @@ const queryData: CveQuery = reactive({
 });
 
 function getSecurityLists(data: CveQuery) {
-  getSecurityList(data)
-    .then((res: any) => {
-      if (res.code === '200' && res.body[0]) {
-        tableData.value = res.body;
-        total.value = res.totalCount;
-        totalPage.value = Math.ceil(total.value / queryData.pageSize);
-      } else {
-        total.value = 0;
-        tableData.value = [];
-      }
-    })
-    .catch(() => {
-      handleError('Error!');
-    });
+  getSecurityList(data).then((res: any) => {
+    if (res.code === '200' && res.body[0]) {
+      tableData.value = res.body;
+      total.value = res.totalCount;
+      totalPage.value = Math.ceil(total.value / queryData.pageSize);
+    } else {
+      total.value = 0;
+      tableData.value = [];
+      handleError();
+    }
+  });
 }
 
 const onTagClick = (i: number, leval: string) => {

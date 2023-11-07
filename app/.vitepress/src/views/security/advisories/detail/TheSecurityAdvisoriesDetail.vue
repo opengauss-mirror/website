@@ -21,17 +21,15 @@ const referenceLinkList = ref<string[]>([]);
 const queryData = ref('');
 
 function getSecurityDetailInfo(data: any) {
-  try {
-    getSecurityDetail(data).then((res: any) => {
-      if (res) {
-        detailData.value = res.body;
-        cveIdList.value = res.body.cveNumbers.split(';');
-        referenceLinkList.value = res.body.referenceLink.split(';');
-      }
-    });
-  } catch (e: any) {
-    handleError('Error!');
-  }
+  getSecurityDetail(data).then((res: any) => {
+    if (res && res.body && res.body.cveNumbers && res.body.referenceLink) {
+      detailData.value = res.body;
+      cveIdList.value = res.body.cveNumbers.split(';');
+      referenceLinkList.value = res.body.referenceLink.split(';');
+    } else {
+      handleError();
+    }
+  });
 }
 
 function goBackPage() {

@@ -190,7 +190,7 @@ function clickMeeting(day: string, event: Event) {
       }
     }
   } catch (e) {
-    handleError('Error!');
+    handleError();
   }
 }
 
@@ -242,12 +242,8 @@ const sigSelect = ref('');
 const meetingData = async () => {
   calendarData.value = [];
   renderData.value.timeData = [];
-  try {
-    const res = await getMeetingData(sigSelect.value);
-    calendarData.value = res.tableData;
-  } catch (e: any) {
-    handleError('Error!');
-  }
+  const res = await getMeetingData(sigSelect.value);
+  calendarData.value = res.tableData || [];
 };
 // sig 选择
 const selectSigChange = () => {
@@ -256,12 +252,8 @@ const selectSigChange = () => {
 // sig列表
 const sigGroup = ref<SigGroupData[]>([]);
 const meetingSig = async () => {
-  try {
-    const res = await getMeetingSig();
-    sigGroup.value = res;
-  } catch (e: any) {
-    handleError('Error!');
-  }
+  const res = await getMeetingSig();
+  sigGroup.value = res.length ? res : [];
 };
 
 onMounted(() => {
@@ -296,15 +288,11 @@ const meetingStore = useMeeting();
 
 //获取用户信息
 const loginMeetingApi = async () => {
-  try {
-    const res = await getUserInfo(meetingToken.value);
-    if (res.code === 200) {
-      meetingStore.userSigs = res.data.sigs;
-      meetingStore.giteeId = res.data.user.gitee_id;
-      meetingStore.userId = res.data.user.id;
-    }
-  } catch (e: any) {
-    handleError('Error!');
+  const res = await getUserInfo(meetingToken.value);
+  if (res.code === 200) {
+    meetingStore.userSigs = res.data.sigs;
+    meetingStore.giteeId = res.data.user.gitee_id;
+    meetingStore.userId = res.data.user.id;
   }
 };
 onMounted(() => {
@@ -471,58 +459,50 @@ const handleModifyMeeting = (item: any, date: string) => {
 
 //修改会议请求
 const requestMeetingUpdate = async () => {
-  try {
-    const res = await updateMeeting(
-      mId.value,
-      meetingForm.value,
-      meetingToken.value
-    );
-    if (res.code < 300 && res.access) {
-      meetingToken.value = res.access;
-      meetingDialog.value = false;
-      ElMessage({
-        message: isZh.value ? res.msg : res.en_msg,
-        type: 'success',
-      });
-      meetingData();
-    } else {
-      ElMessage({
-        message: isZh.value ? res.msg : res.en_msg,
-        type: 'warning',
-      });
-    }
-  } catch (e: any) {
-    handleError('Error!');
+  const res = await updateMeeting(
+    mId.value,
+    meetingForm.value,
+    meetingToken.value
+  );
+  if (res.code < 300 && res.access) {
+    meetingToken.value = res.access;
+    meetingDialog.value = false;
+    ElMessage({
+      message: isZh.value ? res.msg : res.en_msg,
+      type: 'success',
+    });
+    meetingData();
+  } else {
+    ElMessage({
+      message: isZh.value ? res.msg : res.en_msg,
+      type: 'warning',
+    });
   }
 };
 //新增会议请求
 const requestMeetingReserve = async () => {
-  try {
-    const res = await addMeeting(meetingForm.value, meetingToken.value);
-    if (res.code < 300) {
-      if (res.code > 200 && res.access) {
-        meetingToken.value = res.access;
-        meetingDialog.value = false;
-        ElMessage({
-          message: i18nMeeting.value.SUCCESS,
-          type: 'success',
-        });
-        meetingData();
-      }
-    } else {
+  const res = await addMeeting(meetingForm.value, meetingToken.value);
+  if (res.code < 300) {
+    if (res.code > 200 && res.access) {
+      meetingToken.value = res.access;
+      meetingDialog.value = false;
       ElMessage({
-        message: isZh.value ? res.msg : res.en_msg,
-        type: 'warning',
+        message: i18nMeeting.value.SUCCESS,
+        type: 'success',
       });
+      meetingData();
     }
-  } catch (e: any) {
-    handleError('Error!');
+  } else {
+    ElMessage({
+      message: isZh.value ? res.msg : res.en_msg,
+      type: 'warning',
+    });
   }
 };
 //删除会议
 const requestMeetingDelete = async () => {
+  const res = await deleteMeeting(mId.value, meetingToken.value);
   try {
-    const res = await deleteMeeting(mId.value, meetingToken.value);
     if (res.code < 300 && res.access) {
       meetingToken.value = res.access;
       meetingDialog.value = false;
@@ -533,23 +513,21 @@ const requestMeetingDelete = async () => {
       meetingData();
     }
   } catch (e: any) {
-    handleError('Error!');
+    handleError();
   }
 };
 //gitee登录鉴权
 const requestGiteeLogin = async () => {
-  try {
-    const res = await loginGitee();
-    const url =
-      `${GITEE_LINK}oauth/authorize?client_id=` +
-      res.client_id +
-      '&redirect_uri=' +
-      res.redirect_url +
-      '&response_type=code';
-    windowOpen(url, '_self');
-  } catch (e: any) {
-    handleError('Error!');
-  }
+  const res = await loginGitee();
+  const clientId = res.client_id || '';
+  const redirectUrl = res.redirect_url || '';
+  const url =
+    `${GITEE_LINK}oauth/authorize?client_id=` +
+    clientId +
+    '&redirect_uri=' +
+    redirectUrl +
+    '&response_type=code';
+  windowOpen(url, '_self');
 };
 
 // 预订会议按钮事件
@@ -633,7 +611,7 @@ const handleSubmitMeeting = async (formEl: FormInstance | undefined) => {
         requestMeetingReserve();
       }
     } else {
-      handleError('Error!');
+      handleError();
     }
   });
 };
@@ -643,20 +621,18 @@ const changeRecord = () => {
 };
 // 退出
 const handleLogout = async () => {
-  try {
-    const res = await logoutMeeting(meetingToken.value);
-    if (res.code === 200) {
-      meetingToken.value = '';
-      meetingStore.userSigs = [];
-      meetingStore.giteeId = '';
-      meetingStore.userId = null;
-      ElMessage({
-        message: i18nMeeting.value.LOGOUT_SUCCESS,
-        type: 'success',
-      });
-    }
-  } catch {
-    handleError('Error!');
+  const res = await logoutMeeting(meetingToken.value);
+  if (res.code === 200) {
+    meetingToken.value = '';
+    meetingStore.userSigs = [];
+    meetingStore.giteeId = '';
+    meetingStore.userId = null;
+    ElMessage({
+      message: i18nMeeting.value.LOGOUT_SUCCESS,
+      type: 'success',
+    });
+  } else {
+    handleError();
   }
 };
 </script>

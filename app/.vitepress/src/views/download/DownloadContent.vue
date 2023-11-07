@@ -30,7 +30,7 @@ const { contentData, versionShown } = toRefs(props);
     <h4 class="subtitle">{{ (contentData[0] as any).plannedEOL }}</h4>
     <div class="other-link">
       <a
-        :href="DOCS_LINK + '/' + lang + (contentData[0] as any).docs_list[0][ lang === 'zh'?'path':'pathEn']"
+        :href="DOCS_LINK + lang + (contentData[0] as any).docs_list[0][ lang === 'zh'?'path':'pathEn']"
         target="_blank"
         rel="noopener noreferrer"
         >{{

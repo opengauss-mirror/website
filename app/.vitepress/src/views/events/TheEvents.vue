@@ -93,7 +93,7 @@ onMounted(async () => {
       });
     }
   } catch (e: any) {
-    handleError('Error!');
+    handleError();
   }
 });
 const goDetail = (path: string) => {
