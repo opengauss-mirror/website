@@ -123,7 +123,6 @@ const currentDay = ref('');
 const activeName = ref('');
 const isCollapse = ref(false);
 const isAgree = ref(false);
-const meetingToken = ref('');
 
 const detailItem = [
   { text: '发起人', key: 'creator', isLink: false },
@@ -288,7 +287,7 @@ const meetingStore = useMeeting();
 
 //获取用户信息
 const loginMeetingApi = async () => {
-  const res = await getUserInfo(meetingToken.value);
+  const res = await getUserInfo(meetingStore.meetingToken);
   if (res.code === 200) {
     meetingStore.userSigs = res.data.sigs;
     meetingStore.giteeId = res.data.user.gitee_id;
@@ -303,10 +302,10 @@ onMounted(() => {
       {
         code: paramsObj.code,
       },
-      meetingToken.value
+      meetingStore.meetingToken
     ).then((res) => {
       if (res.code === 200 && res.access) {
-        meetingToken.value = res.access;
+        meetingStore.meetingToken = res.access;
         loginMeetingApi();
       }
     });
@@ -462,10 +461,10 @@ const requestMeetingUpdate = async () => {
   const res = await updateMeeting(
     mId.value,
     meetingForm.value,
-    meetingToken.value
+    meetingStore.meetingToken
   );
   if (res.code < 300 && res.access) {
-    meetingToken.value = res.access;
+    meetingStore.meetingToken = res.access;
     meetingDialog.value = false;
     ElMessage({
       message: isZh.value ? res.msg : res.en_msg,
@@ -481,10 +480,10 @@ const requestMeetingUpdate = async () => {
 };
 //新增会议请求
 const requestMeetingReserve = async () => {
-  const res = await addMeeting(meetingForm.value, meetingToken.value);
+  const res = await addMeeting(meetingForm.value, meetingStore.meetingToken);
   if (res.code < 300) {
     if (res.code > 200 && res.access) {
-      meetingToken.value = res.access;
+      meetingStore.meetingToken = res.access;
       meetingDialog.value = false;
       ElMessage({
         message: i18nMeeting.value.SUCCESS,
@@ -501,10 +500,10 @@ const requestMeetingReserve = async () => {
 };
 //删除会议
 const requestMeetingDelete = async () => {
-  const res = await deleteMeeting(mId.value, meetingToken.value);
+  const res = await deleteMeeting(mId.value, meetingStore.meetingToken);
   try {
     if (res.code < 300 && res.access) {
-      meetingToken.value = res.access;
+      meetingStore.meetingToken = res.access;
       meetingDialog.value = false;
       ElMessage({
         message: i18nMeeting.value.DELETE_SUCCESS,
@@ -621,9 +620,9 @@ const changeRecord = () => {
 };
 // 退出
 const handleLogout = async () => {
-  const res = await logoutMeeting(meetingToken.value);
+  const res = await logoutMeeting(meetingStore.meetingToken);
   if (res.code === 200) {
-    meetingToken.value = '';
+    meetingStore.meetingToken = '';
     meetingStore.userSigs = [];
     meetingStore.giteeId = '';
     meetingStore.userId = null;

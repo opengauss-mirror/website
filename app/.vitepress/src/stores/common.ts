@@ -12,6 +12,7 @@ export const useMeeting = defineStore('meeting', {
     userSigs: [],
     giteeId: '',
     userId: null,
+    meetingToken:''
   }),
 });
 
