@@ -326,7 +326,169 @@ import xuantian_dark from '@/assets/category/home/organization/dark/xuantian_dar
 import yaxin_dark from '@/assets/category/home/organization/dark/yaxin_dark.png';
 import yixin_dark from '@/assets/category/home/organization/dark/yixin_dark.png';
 
+import airdwing_dark from '@/assets/category/home/organization/dark/airdwing.png';
+import anchao_dark from '@/assets/category/home/organization/dark/anchao.png';
+import centfor_dark from '@/assets/category/home/organization/dark/centfor.png';
+import farben_dark from '@/assets/category/home/organization/dark/farben.png';
+import huaruijishu_dark from '@/assets/category/home/organization/dark/huaruijishu.png';
+import huizhizhineng_dark from '@/assets/category/home/organization/dark/huizhizhineng.png';
+import jiajieyunxing_dark from '@/assets/category/home/organization/dark/jiajieyunxing.png';
+import jinzhengyinqing_dark from '@/assets/category/home/organization/dark/jinzhengyinqing.png';
+import lihaihongjin_dark from '@/assets/category/home/organization/dark/lihaihongjin.png';
+import moshuzhiqing_dark from '@/assets/category/home/organization/dark/moshuzhiqing.png';
+import muhuakeji_dark from '@/assets/category/home/organization/dark/muhuakeji.png';
+import pengyunwangluo_dark from '@/assets/category/home/organization/dark/pengyunwangluo.png';
+import qingdakeyue_dark from '@/assets/category/home/organization/dark/qingdakeyue.png';
+import qishi_dark from '@/assets/category/home/organization/dark/qishi.png';
+import runpuwangluo_dark from '@/assets/category/home/organization/dark/runpuwangluo.png';
+import shengjian_dark from '@/assets/category/home/organization/dark/shengjian.png';
+import tiandazhitu_dark from '@/assets/category/home/organization/dark/tiandazhitu.png';
+import tianjikeji_dark from '@/assets/category/home/organization/dark/tianjikeji.png';
+import tiliatech_dark from '@/assets/category/home/organization/dark/tiliatech.png';
+import xinfengruishi_dark from '@/assets/category/home/organization/dark/xinfengruishi.png';
+import yunjixinxi_dark from '@/assets/category/home/organization/dark/yunjixinxi.png';
+import zhengzhouzhengda_dark from '@/assets/category/home/organization/dark/zhengzhouzhengda.png';
+import zhidian_dark from '@/assets/category/home/organization/dark/zhidian.png';
+import airdwing from '@/assets/category/home/organization/light/airdwing.png';
+import anchao from '@/assets/category/home/organization/light/anchao.png';
+import centfor from '@/assets/category/home/organization/light/centfor.png';
+import farben from '@/assets/category/home/organization/light/farben.png';
+import huaruijishu from '@/assets/category/home/organization/light/huaruijishu.png';
+import huizhizhineng from '@/assets/category/home/organization/light/huizhizhineng.png';
+import jiajieyunxing from '@/assets/category/home/organization/light/jiajieyunxing.png';
+import jinzhengyinqing from '@/assets/category/home/organization/light/jinzhengyinqing.png';
+import lihaihongjin from '@/assets/category/home/organization/light/lihaihongjin.png';
+import moshuzhiqing from '@/assets/category/home/organization/light/moshuzhiqing.png';
+import muhuakeji from '@/assets/category/home/organization/light/muhuakeji.png';
+import pengyunwangluo from '@/assets/category/home/organization/light/pengyunwangluo.png';
+import qingdakeyue from '@/assets/category/home/organization/light/qingdakeyue.png';
+import qishi from '@/assets/category/home/organization/light/qishi.png';
+import runpuwangluo from '@/assets/category/home/organization/light/runpuwangluo.png';
+import shengjian from '@/assets/category/home/organization/light/shengjian.png';
+import tiandazhitu from '@/assets/category/home/organization/light/tiandazhitu.png';
+import tianjikeji from '@/assets/category/home/organization/light/tianjikeji.png';
+import tiliatech from '@/assets/category/home/organization/light/tiliatech.png';
+import xinfengruishi from '@/assets/category/home/organization/light/xinfengruishi.png';
+import yunjixinxi from '@/assets/category/home/organization/light/yunjixinxi.png';
+import zhengzhouzhengda from '@/assets/category/home/organization/light/zhengzhouzhengda.png';
+import zhidian from '@/assets/category/home/organization/light/zhidian.png';
+
 export default [
+  {
+    img: airdwing,
+    imgDark: airdwing_dark,
+    name: '大翼航空',
+  },
+  {
+    img: anchao,
+    imgDark: anchao_dark,
+    name: '安超',
+  },
+  {
+    img: centfor,
+    imgDark: centfor_dark,
+    name: '向心力',
+  },
+  {
+    img: farben,
+    imgDark: farben_dark,
+    name: 'Farben',
+  },
+  {
+    img: huaruijishu,
+    imgDark: huaruijishu_dark,
+    name: '华锐技术',
+  },
+  {
+    img: huizhizhineng,
+    imgDark: huizhizhineng_dark,
+    name: '汇智智能',
+  },
+  {
+    img: jiajieyunxing,
+    imgDark: jiajieyunxing_dark,
+    name: '佳杰云星',
+  },
+  {
+    img: jinzhengyinqing,
+    imgDark: jinzhengyinqing_dark,
+    name: '金证引擎',
+  },
+  {
+    img: lihaihongjin,
+    imgDark: lihaihongjin_dark,
+    name: '丽海弘金',
+  },
+  {
+    img: moshuzhiqing,
+    imgDark: moshuzhiqing_dark,
+    name: '魔数智擎',
+  },
+  {
+    img: muhuakeji,
+    imgDark: muhuakeji_dark,
+    name: '慕华科技',
+  },
+  {
+    img: pengyunwangluo,
+    imgDark: pengyunwangluo_dark,
+    name: '鹏云网络',
+  },
+  {
+    img: qingdakeyue,
+    imgDark: qingdakeyue_dark,
+    name: '清大科越',
+  },
+  {
+    img: qishi,
+    imgDark: qishi_dark,
+    name: '祺石',
+  },
+  {
+    img: runpuwangluo,
+    imgDark: runpuwangluo_dark,
+    name: '润普网络',
+  },
+  {
+    img: shengjian,
+    imgDark: shengjian_dark,
+    name: '盛见',
+  },
+  {
+    img: tiandazhitu,
+    imgDark: tiandazhitu_dark,
+    name: '天大智图',
+  },
+  {
+    img:tianjikeji ,
+    imgDark: tianjikeji_dark,
+    name: '天玑科技',
+  },
+  {
+    img: tiliatech,
+    imgDark: tiliatech_dark,
+    name: 'TILIATECH',
+  },
+  {
+    img:xinfengruishi ,
+    imgDark: xinfengruishi_dark,
+    name: '新锋睿视',
+  },
+  {
+    img: yunjixinxi,
+    imgDark: yunjixinxi_dark,
+    name: '云玑信息',
+  },
+  {
+    img: zhengzhouzhengda,
+    imgDark:zhengzhouzhengda_dark ,
+    name: '郑州郑大信息技术有限公司',
+  },
+  {
+    img: zhidian,
+    imgDark:zhidian_dark,
+    name: '蜘点',
+  },
   {
     img: baolande,
     imgDark: baolande_dark,
