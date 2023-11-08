@@ -76,7 +76,7 @@ RUN touch /var/run/nginx.pid \
     && chmod 440 /etc/nginx/geoip/* \
     && chmod 550 /etc/nginx/modules \
     && chmod 440 /etc/nginx/modules/* \
-    && chmod 400 /etc/nginx/nginx.conf \
+    && chmod 440 /etc/nginx/nginx.conf \
     && chmod 440 /etc/nginx/mime.types \
     && rm -rf /usr/share/nginx/html/ \
     && rm -rf /usr/share/nginx/logs/ \
@@ -85,7 +85,7 @@ RUN touch /var/run/nginx.pid \
     && sed -i "s|HISTSIZE=1000|HISTSIZE=0|" /etc/profile \
     && sed -i "s|PASS_MAX_DAYS[ \t]*99999|PASS_MAX_DAYS 30|" /etc/login.defs \
     && passwd -l $NGINX_USER \
-    && yum remove passwd -y \
+    && yum remove gdb-gdbserver -y \
     && yum clean all
 
 EXPOSE 8080
