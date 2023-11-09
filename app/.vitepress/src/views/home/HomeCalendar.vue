@@ -298,12 +298,9 @@ onMounted(() => {
   const paramsObj = getUrlParams(location.href);
   history.pushState(null, '', location.origin + '/' + lang.value + '/');
   if (paramsObj && paramsObj.code) {
-    loginMeeting(
-      {
-        code: paramsObj.code,
-      },
-      meetingStore.meetingToken
-    ).then((res) => {
+    loginMeeting({
+      code: paramsObj.code,
+    }).then((res) => {
       if (res.code === 200 && res.access) {
         meetingStore.meetingToken = res.access;
         loginMeetingApi();
@@ -520,14 +517,7 @@ const requestGiteeLogin = async () => {
   const res = await loginGitee();
   const clientId = res.client_id || '';
   const redirectUrl = res.redirect_url || '';
-  const url =
-    `${GITEE_LINK}oauth/authorize?client_id=` +
-    clientId +
-    '&redirect_uri=' +
-    redirectUrl +
-    lang.value +
-    '/' +
-    '&response_type=code';
+  const url = `${GITEE_LINK}oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUrl}/${lang.value}/&response_type=code`;
   windowOpen(url, '_self');
 };
 
