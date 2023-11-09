@@ -300,6 +300,7 @@ onMounted(() => {
   if (paramsObj && paramsObj.code) {
     loginMeeting({
       code: paramsObj.code,
+      language: lang.value,
     }).then((res) => {
       if (res.code === 200 && res.access) {
         meetingStore.meetingToken = res.access;
