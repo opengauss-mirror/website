@@ -26,6 +26,7 @@ ENV NGINX_GROUP nginx
 ENV NGINX_BIN /usr/share/nginx/sbin/
 ENV NGINX_HOME /usr/share/nginx/
 ENV NGINX_EXE_FILE /usr/share/nginx/sbin/nginx
+ENV DST_PATH /etc/nginx/cert
 
 COPY --from=NginxBuilder /usr/share/nginx /usr/share/nginx
 COPY --from=NginxBuilder /usr/share/nginx/sbin/nginx /usr/share/nginx/sbin/nginx
@@ -39,7 +40,7 @@ RUN yum update -y \
     && find /usr/share/nginx/www -type d -print0| xargs -0 chmod 500 \
     && find /usr/share/nginx/www -type f -print0| xargs -0 chmod 400
 COPY ./deploy/nginx/nginx.conf /etc/nginx/nginx.conf
-COPY --chown=$NGINX_USER:$NGINX_GROUP ./server.crt ./server.key ./password.txt ./dhparam.pem /etc/nginx/cert/
+COPY --chown=$NGINX_USER:$NGINX_GROUP ./server.crt ./server.key ./abc.txt ./dhparam.pem /etc/nginx/cert/
 
 
 RUN touch /var/run/nginx.pid \
@@ -70,7 +71,7 @@ RUN touch /var/run/nginx.pid \
     && chmod 700 /etc/nginx/cert/ \
     && chmod 400 /etc/nginx/cert/server.crt \
     && chmod 400 /etc/nginx/cert/server.key \
-    && chmod 600 /etc/nginx/cert/password.txt \
+    && chmod 600 /etc/nginx/cert/abc.txt \
     && chmod 400 /etc/nginx/cert/dhparam.pem \
     && chmod 550 /etc/nginx/geoip/ \
     && chmod 440 /etc/nginx/geoip/* \
