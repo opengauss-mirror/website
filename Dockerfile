@@ -88,8 +88,15 @@ RUN touch /var/run/nginx.pid \
     && yum remove gdb-gdbserver -y \
     && yum clean all
 
+COPY ./monitor.sh ./entrypoint.sh /etc/nginx
+RUN chmod 500 /etc/nginx/monitor.sh \
+    && chmod 500 /etc/nginx/entrypoint.sh \
+    && chown nginx:nginx /etc/nginx/monitor.sh \
+    && chown nginx:nginx /etc/nginx/entrypoint.sh
+
 EXPOSE 8080
 
 USER nginx
 
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
+ENTRYPOINT ["/etc/nginx/entrypoint.sh"]
+
