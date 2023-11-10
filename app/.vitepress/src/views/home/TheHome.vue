@@ -1,7 +1,5 @@
 <script lang="ts" setup>
-import { onMounted, onUnmounted, ref, computed } from 'vue';
 import { useI18n } from '@/i18n';
-import { useData } from 'vitepress';
 
 import AppContent from '@/components/AppContent.vue';
 import HomeCalendar from './HomeCalendar.vue';
@@ -14,51 +12,10 @@ import HomeNews from './HomeNews.vue';
 import LinkPanel from '@/components/LinkPanel.vue';
 import HomePlayground from './HomePlayground.vue';
 
-import { getSortData } from '@/api/api-search';
-
 import homeConfig from '@/data/home/';
 
-const { lang } = useData();
 const i18n = useI18n();
-const newsData = ref(undefined);
-const blogData = ref(undefined);
 
-// 最新活动数据
-const eventsData = computed(() =>
-  lang.value === 'zh' ? homeConfig.homeEvents.zh : homeConfig.homeEvents.en
-);
-onMounted(async () => {
-  const body = document.querySelector('body');
-  if (body) {
-    body.classList.add('home-loading');
-  }
-  const paramsNews = {
-    category: 'news',
-    lang: lang.value,
-    page: 1,
-    pageSize: 4,
-  };
-  const paramsBlog = {
-    category: 'blog',
-    lang: lang.value,
-    page: 1,
-    pageSize: 4,
-  };
-  const responeData1 = await getSortData(paramsNews, true);
-  if (responeData1.obj && responeData1.obj.records) {
-    newsData.value = responeData1.obj.records;
-  }
-  const responeData2 = await getSortData(paramsBlog, true);
-  if (responeData2.obj && responeData2.obj.records) {
-    blogData.value = responeData2.obj.records;
-  }
-});
-onUnmounted(() => {
-  const body = document.querySelector('body');
-  if (body) {
-    body.classList.remove('home-loading');
-  }
-});
 </script>
 
 <template>
@@ -75,12 +32,7 @@ onUnmounted(() => {
         <h3 class="home-title">{{ i18n.home.HOME_MEETING }}</h3>
         <HomeCalendar />
       </div>
-      <HomeNews
-        v-if="blogData && newsData"
-        :blog-data="blogData"
-        :news-data="newsData"
-        :events-data="eventsData"
-      />
+      <HomeNews/>
     </AppContent>
     <HomeVideo />
     <AppContent>

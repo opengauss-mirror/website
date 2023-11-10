@@ -159,7 +159,6 @@ import ecobay from '@/assets/category/home/organization/light/ecobay.png';
 import fujifilm from '@/assets/category/home/organization/light/fujifilm.png';
 import haeport from '@/assets/category/home/organization/light/haeport.png';
 import maiji from '@/assets/category/home/organization/light/maiji.png';
-import pengyun from '@/assets/category/home/organization/light/pengyun.png';
 import qiteng from '@/assets/category/home/organization/light/qiteng.png';
 import runnan from '@/assets/category/home/organization/light/runnan.png';
 import xuantian from '@/assets/category/home/organization/light/xuantian.png';
@@ -319,7 +318,6 @@ import ecobay_dark from '@/assets/category/home/organization/dark/ecobay_dark.pn
 import fujifilm_dark from '@/assets/category/home/organization/dark/fujifilm_dark.png';
 import haeport_dark from '@/assets/category/home/organization/dark/haeport_dark.png';
 import maiji_dark from '@/assets/category/home/organization/dark/maiji_dark.png';
-import pengyun_dark from '@/assets/category/home/organization/dark/pengyun_dark.png';
 import qiteng_dark from '@/assets/category/home/organization/dark/qiteng_dark.png';
 import runnan_dark from '@/assets/category/home/organization/dark/runnan_dark.png';
 import xuantian_dark from '@/assets/category/home/organization/dark/xuantian_dark.png';
@@ -374,121 +372,6 @@ import zhengzhouzhengda from '@/assets/category/home/organization/light/zhengzho
 import zhidian from '@/assets/category/home/organization/light/zhidian.png';
 
 export default [
-  {
-    img: airdwing,
-    imgDark: airdwing_dark,
-    name: '大翼航空',
-  },
-  {
-    img: anchao,
-    imgDark: anchao_dark,
-    name: '安超',
-  },
-  {
-    img: centfor,
-    imgDark: centfor_dark,
-    name: '向心力',
-  },
-  {
-    img: farben,
-    imgDark: farben_dark,
-    name: 'Farben',
-  },
-  {
-    img: huaruijishu,
-    imgDark: huaruijishu_dark,
-    name: '华锐技术',
-  },
-  {
-    img: huizhizhineng,
-    imgDark: huizhizhineng_dark,
-    name: '汇智智能',
-  },
-  {
-    img: jiajieyunxing,
-    imgDark: jiajieyunxing_dark,
-    name: '佳杰云星',
-  },
-  {
-    img: jinzhengyinqing,
-    imgDark: jinzhengyinqing_dark,
-    name: '金证引擎',
-  },
-  {
-    img: lihaihongjin,
-    imgDark: lihaihongjin_dark,
-    name: '丽海弘金',
-  },
-  {
-    img: moshuzhiqing,
-    imgDark: moshuzhiqing_dark,
-    name: '魔数智擎',
-  },
-  {
-    img: muhuakeji,
-    imgDark: muhuakeji_dark,
-    name: '慕华科技',
-  },
-  {
-    img: pengyunwangluo,
-    imgDark: pengyunwangluo_dark,
-    name: '鹏云网络',
-  },
-  {
-    img: qingdakeyue,
-    imgDark: qingdakeyue_dark,
-    name: '清大科越',
-  },
-  {
-    img: qishi,
-    imgDark: qishi_dark,
-    name: '祺石',
-  },
-  {
-    img: runpuwangluo,
-    imgDark: runpuwangluo_dark,
-    name: '润普网络',
-  },
-  {
-    img: shengjian,
-    imgDark: shengjian_dark,
-    name: '盛见',
-  },
-  {
-    img: tiandazhitu,
-    imgDark: tiandazhitu_dark,
-    name: '天大智图',
-  },
-  {
-    img:tianjikeji ,
-    imgDark: tianjikeji_dark,
-    name: '天玑科技',
-  },
-  {
-    img: tiliatech,
-    imgDark: tiliatech_dark,
-    name: 'TILIATECH',
-  },
-  {
-    img:xinfengruishi ,
-    imgDark: xinfengruishi_dark,
-    name: '新锋睿视',
-  },
-  {
-    img: yunjixinxi,
-    imgDark: yunjixinxi_dark,
-    name: '云玑信息',
-  },
-  {
-    img: zhengzhouzhengda,
-    imgDark:zhengzhouzhengda_dark ,
-    name: '郑州郑大信息技术有限公司',
-  },
-  {
-    img: zhidian,
-    imgDark:zhidian_dark,
-    name: '蜘点',
-  },
   {
     img: baolande,
     imgDark: baolande_dark,
@@ -1282,8 +1165,8 @@ export default [
     name: '七腾机器人',
   },
   {
-    img: pengyun,
-    imgDark: pengyun_dark,
+    img: pengyunwangluo,
+    imgDark: pengyunwangluo_dark,
     name: '鹏云网络',
   },
   {
@@ -1300,5 +1183,115 @@ export default [
     img: maiji,
     imgDark: maiji_dark,
     name: '麦秸映象',
+  },
+  {
+    img: yunjixinxi,
+    imgDark: yunjixinxi_dark,
+    name: '云玑信息',
+  },
+  {
+    img: centfor,
+    imgDark: centfor_dark,
+    name: '向心力',
+  },
+  {
+    img: jiajieyunxing,
+    imgDark: jiajieyunxing_dark,
+    name: '佳杰云星',
+  },
+  {
+    img: airdwing,
+    imgDark: airdwing_dark,
+    name: '大翼航空',
+  },
+  {
+    img: muhuakeji,
+    imgDark: muhuakeji_dark,
+    name: '慕华科技',
+  },
+  {
+    img:xinfengruishi ,
+    imgDark: xinfengruishi_dark,
+    name: '新锋睿视',
+  },
+  {
+    img: qingdakeyue,
+    imgDark: qingdakeyue_dark,
+    name: '清大科越',
+  },
+  {
+    img: huizhizhineng,
+    imgDark: huizhizhineng_dark,
+    name: '汇智智能',
+  },
+  {
+    img: zhengzhouzhengda,
+    imgDark:zhengzhouzhengda_dark ,
+    name: '郑州郑大信息技术有限公司',
+  },
+  {
+    img: runpuwangluo,
+    imgDark: runpuwangluo_dark,
+    name: '润普网络',
+  },
+  {
+    img: moshuzhiqing,
+    imgDark: moshuzhiqing_dark,
+    name: '魔数智擎',
+  },
+  {
+    img: jinzhengyinqing,
+    imgDark: jinzhengyinqing_dark,
+    name: '金证引擎',
+  },
+  {
+    img: huaruijishu,
+    imgDark: huaruijishu_dark,
+    name: '华锐技术',
+  },
+  {
+    img: farben,
+    imgDark: farben_dark,
+    name: 'Farben',
+  },
+  {
+    img: tiliatech,
+    imgDark: tiliatech_dark,
+    name: 'TILIATECH',
+  },
+  {
+    img: qishi,
+    imgDark: qishi_dark,
+    name: '祺石',
+  },
+  {
+    img: shengjian,
+    imgDark: shengjian_dark,
+    name: '盛见',
+  },
+  {
+    img: lihaihongjin,
+    imgDark: lihaihongjin_dark,
+    name: '丽海弘金',
+  },
+  {
+    img: zhidian,
+    imgDark:zhidian_dark,
+    name: '蜘点',
+  },
+  {
+    img:tianjikeji ,
+    imgDark: tianjikeji_dark,
+    name: '天玑科技',
+  },
+  {
+    img: tiandazhitu,
+    imgDark: tiandazhitu_dark,
+    name: '天大智图',
+  },
+  {
+    img: anchao,
+    imgDark: anchao_dark,
+    name: '安超',
   },
 ];
