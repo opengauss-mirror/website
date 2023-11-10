@@ -34,13 +34,10 @@ export function loginGitee() {
   return request.get(url).then((res: AxiosResponse) => res.data);
 }
 // 会议登录
-export function loginMeeting(params: object, token = '') {
+export function loginMeeting(params: object) {
   const url = '/api-meeting/login/';
   return request
     .post(url, params, {
-      headers: {
-        Authorization: 'Bearer ' + token,
-      },
       $doException: true,
     })
     .then((res: AxiosResponse) => res.data);
