@@ -40,7 +40,6 @@ RUN yum update -y \
     && find /usr/share/nginx/www -type d -print0| xargs -0 chmod 500 \
     && find /usr/share/nginx/www -type f -print0| xargs -0 chmod 400
 COPY ./deploy/nginx/nginx.conf /etc/nginx/nginx.conf
-COPY --chown=$NGINX_USER:$NGINX_GROUP ./server.crt ./server.key ./abc.txt ./dhparam.pem /etc/nginx/cert/
 
 
 RUN touch /var/run/nginx.pid \
@@ -68,11 +67,6 @@ RUN touch /var/run/nginx.pid \
     && chmod 640 /var/run/nginx.pid \
     && chown -R nginx:nginx /etc/nginx \
     && chmod 550 /etc/nginx \
-    && chmod 700 /etc/nginx/cert/ \
-    && chmod 400 /etc/nginx/cert/server.crt \
-    && chmod 400 /etc/nginx/cert/server.key \
-    && chmod 600 /etc/nginx/cert/abc.txt \
-    && chmod 400 /etc/nginx/cert/dhparam.pem \
     && chmod 550 /etc/nginx/geoip/ \
     && chmod 440 /etc/nginx/geoip/* \
     && chmod 550 /etc/nginx/modules \
