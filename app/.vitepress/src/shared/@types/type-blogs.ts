@@ -1,4 +1,4 @@
-export interface BlogData {
+export interface BlogItemT {
   archives: string;
   articleName: string;
   author: any;

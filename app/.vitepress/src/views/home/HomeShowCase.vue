@@ -5,8 +5,7 @@ import { useCommon } from '@/stores/common';
 
 import IconArrowRight from '~icons/app/icon-arrow-right.svg';
 
-import ShowCaseData from '@/data/showcase';
-import { getSortData } from '@/api/api-search';
+import showCaseData from '@/data/showcase';
 
 import { useI18n } from '@/i18n';
 import { handleError, windowOpen } from '@/shared/utils';
@@ -18,7 +17,12 @@ const caseRef = ref<HTMLElement>();
 const caseData: any = ref({});
 const active = ref(0);
 const activeMobile = ref(0);
-
+const caseCategory = showCaseData.category;
+const caseList = computed(() => {
+  return lang.value === 'zh'
+    ? showCaseData.constList.zh
+    : showCaseData.constList.en;
+});
 const handleGo = (path: string) => {
   windowOpen(path.replace(/(index)$/g, ''), '_blank');
 };
@@ -35,30 +39,17 @@ const changeActiveMobile = (activeNames: any) => {
     active.value = activeNames;
   }
 };
-const data = ref({
-  page: 1,
-  pageSize: 10000,
-  lang: lang.value,
-  type: 'showcase',
-});
 const initData = () => {
   const result: any = {};
-  getSortData(data.value, true).then((res: any) => {
-    if (res.obj && res.obj.records.length) {
-      const caseListAll = res.obj.records.filter((item: any) => {
-        return item.path !== 'userPractice/index';
-      });
-      caseListAll.forEach((item: { id: string }) => {
-        if (typeof result[item.id] === 'undefined') {
-          result[item.id] = [];
-        }
-        if (result[item.id].length < 2) {
-          result[item.id].push(item);
-        }
-      });
-      caseData.value = result;
+  caseList.value.forEach((item: any) => {
+    if (typeof result[item.id] === 'undefined') {
+      result[item.id] = [];
+    }
+    if (result[item.id].length < 2) {
+      result[item.id].push(item);
     }
   });
+  caseData.value = result;
 };
 const imgUrl = computed(() => (item: { urlDark: string; url: string }) => {
   return commonStore.theme === 'dark' ? item.urlDark : item.url;
@@ -71,7 +62,7 @@ const imgUrlHover = computed(
 );
 
 const changeCase = () => {
-  active.value === ShowCaseData.length - 1
+  active.value === caseCategory.length - 1
     ? (active.value = 0)
     : active.value++;
 };
@@ -84,7 +75,7 @@ const clearCaseInterval = () => {
 };
 
 onMounted(() => {
-  ShowCaseData.length && initData();
+  caseCategory.length && initData();
 
   try {
     if (caseRef.value) {
@@ -115,7 +106,7 @@ onUnmounted(() => {
         @change="changeActiveMobile"
       >
         <OCollapseItem
-          v-for="(item, index) in ShowCaseData"
+          v-for="(item, index) in caseCategory"
           :key="item.type"
           class="case-mobile-list"
           :name="index"
@@ -159,7 +150,7 @@ onUnmounted(() => {
         <OCard class="case-card" shadow="never">
           <div class="case-tab">
             <div
-              v-for="(item, index) in ShowCaseData"
+              v-for="(item, index) in caseCategory"
               :key="item.type"
               class="case-tab-item"
               @click="changeActive(index)"
@@ -186,7 +177,7 @@ onUnmounted(() => {
           </div>
           <div class="case-user">
             <div
-              v-for="item2 in caseData && caseData[ShowCaseData[active].typeEn]"
+              v-for="item2 in caseData && caseData[caseCategory[active].typeEn]"
               :key="item2.company"
               class="user-card"
               @click="handleGo(item2.officialpath)"

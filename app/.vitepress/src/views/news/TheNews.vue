@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import { computed, ref, onMounted, reactive } from 'vue';
+import { computed, ref } from 'vue';
 import { useRouter, useData } from 'vitepress';
 
 import { useI18n } from '@/i18n';
 import useWindowResize from '@/components/hooks/useWindowResize';
-import { handleError } from '@/shared/utils';
 
 import NotFound from '@/NotFound.vue';
 import AppContent from '@/components/AppContent.vue';
@@ -14,93 +13,44 @@ import BannerLevel2 from '@/components/BannerLevel2.vue';
 import banner from '@/assets/illustrations/banner-secondary.png';
 import illustration from '@/assets/illustrations/news.png';
 
-import { getSortData } from '@/api/api-search';
-import type { NewsData, ParamsType } from '@/shared/@types/type-news';
+import newsAllData from '@/data/news';
 
+const i18n = useI18n();
 const router = useRouter();
 const { lang } = useData();
 const screenWidth = useWindowResize();
-
-const sortParams = reactive({
-  page: 1,
-  pageSize: 9,
-  lang: lang.value,
-  category: 'news',
-});
-// 新闻列表数据
-const newsCardData = ref<NewsData[]>([]);
-const isShowData = ref(false);
 const isPad = computed(() => (screenWidth.value <= 768 ? true : false));
-
-// 分页数据
-const paginationData = ref({
-  total: 0,
-  pagesize: 9,
-  currentpage: 0,
+const newsData = computed(() => {
+  return lang.value === 'zh' ? newsAllData.zh : newsAllData.en;
 });
+// 分页器数据
+const total = computed(() => {
+  return newsData.value.length;
+});
+const pagesize = ref(9);
+const currentPage = ref(1);
+const pageTotal = computed(() => Math.ceil(total.value / pagesize.value));
+const changePagesize = () => {
+  currentPage.value = 1;
+};
+const changeCurrentMoblie = (val: string) => {
+  if (currentPage.value > 1 && val === 'prev') {
+    currentPage.value = currentPage.value - 1;
+  } else if (currentPage.value < pageTotal.value && val === 'next') {
+    currentPage.value = currentPage.value + 1;
+  }
+};
 
-const i18n = useI18n();
+// 新闻列表数据
+const newsCardData = computed(() => {
+  return newsData.value.slice(
+    (currentPage.value - 1) * pagesize.value,
+    currentPage.value * pagesize.value
+  );
+});
 
 const toNewsContent = (path: string) => {
   router.go(`/${path}`);
-};
-
-//获取数据
-const getListData = (params: ParamsType) => {
-  getSortData(params)
-    .then((res) => {
-      if (res.obj) {
-        if (res.obj.count === 0) {
-          isShowData.value = false;
-        } else {
-          paginationData.value.total = res.obj.count;
-          paginationData.value.currentpage = res.obj.page;
-          paginationData.value.pagesize = res.obj.pageSize;
-          newsCardData.value = res.obj.records;
-          for (let i = 0; i < newsCardData.value.length; i++) {
-            if (typeof newsCardData.value[i].author === 'string') {
-              newsCardData.value[i].author = [newsCardData.value[i].author];
-            }
-            newsCardData.value[i].banner = newsCardData.value[i].banner;
-          }
-          isShowData.value = true;
-        }
-      }
-    })
-    .catch(() => {
-      isShowData.value = false;
-      handleError();
-    });
-};
-
-onMounted(() => {
-  getListData(sortParams);
-});
-
-const changeCurrent = (val: number) => {
-  const params = {
-    category: 'news',
-    lang: lang.value,
-    page: val,
-    pageSize: paginationData.value.pagesize,
-  };
-  getListData(params);
-};
-
-const pageTotal = computed(() =>
-  Math.ceil(paginationData.value.total / paginationData.value.pagesize)
-);
-const changeCurrentMoblie = (val: string) => {
-  if (paginationData.value.currentpage > 1 && val === 'prev') {
-    paginationData.value.currentpage = paginationData.value.currentpage - 1;
-    changeCurrent(paginationData.value.currentpage);
-  } else if (
-    paginationData.value.currentpage < pageTotal.value &&
-    val === 'next'
-  ) {
-    paginationData.value.currentpage = paginationData.value.currentpage + 1;
-    changeCurrent(paginationData.value.currentpage);
-  }
 };
 </script>
 
@@ -111,7 +61,7 @@ const changeCurrentMoblie = (val: string) => {
     :illustration="illustration"
   />
   <AppContent :mobile-top="16">
-    <template v-if="isShowData">
+    <template v-if="newsCardData.length">
       <div class="news-list">
         <OCard
           v-for="item in newsCardData"
@@ -136,23 +86,22 @@ const changeCurrentMoblie = (val: string) => {
         <ClientOnly>
           <OPagination
             v-if="!isPad"
-            v-model:currentPage="paginationData.currentpage"
-            v-model:page-size="paginationData.pagesize"
+            v-model:currentPage="currentPage"
+            v-model:page-size="pagesize"
             :background="true"
             :page-sizes="[3, 6, 9]"
-            :total="paginationData.total"
+            :total="total"
             layout="sizes, prev, pager, next, slot, jumper"
-            @current-change="changeCurrent"
-            @size-change="changeCurrent(1)"
+            @size-change="changePagesize"
           >
             <span class="pagination-slot lable-name"
-              >{{ paginationData.currentpage }}/{{ pageTotal }}</span
+              >{{ currentPage }}/{{ pageTotal }}</span
             >
           </OPagination>
           <AppPaginationMo
             v-else
             :total-page="pageTotal"
-            :current-page="paginationData.currentpage"
+            :current-page="currentPage"
             @turn-page="changeCurrentMoblie"
           />
         </ClientOnly>

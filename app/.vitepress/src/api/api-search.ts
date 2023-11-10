@@ -1,12 +1,6 @@
 import { request } from '@/shared/axios';
 import type { AxiosResponse } from '@/shared/axios';
 
-interface SortParams {
-  category: string;
-  lang: string;
-  page: number;
-  pageSize: number;
-}
 interface search {
   keyword: string;
   page: number;
@@ -27,14 +21,6 @@ interface TagsParams {
   condition?: Condition;
 }
 
-export function getSortData(params: SortParams | object, doException = false) {
-  const url = '/api-search/search/sort';
-  return request
-    .post(url, params, {
-      $doException: doException,
-    })
-    .then((res: AxiosResponse) => res.data);
-}
 
 export function getTagsData(params: TagsParams, doException = false) {
   const url = '/api-search/search/tags';

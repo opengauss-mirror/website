@@ -50,8 +50,8 @@ const clickRightInset = (path: string) => {
 <template>
   <div class="home-banner">
     <el-carousel
-      :height="windowWidth > 767 ? '400px' : '300px'"
-      :interval="5000"
+      :height="windowWidth > 767 ? '480px' : '300px'"
+      :interval="5000000"
       trigger="click"
     >
       <el-carousel-item v-for="item in homeBanner" :key="item.link">

@@ -3,7 +3,6 @@ import { ref, computed, onMounted } from 'vue';
 import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';
 import useWindowScroll from '@/components/hooks/useWindowScroll';
-import { getSortData } from '@/api/api-search';
 
 import showCaseData from '@/data/showcase';
 import useWindowResize from '@/components/hooks/useWindowResize';
@@ -36,10 +35,28 @@ const screenWidth = useWindowResize();
 
 const isZh = computed(() => (lang.value === 'zh' ? true : false));
 
+const caseCategory = showCaseData.category;
 // 接收所有案例
-const caseListAll: any = ref([]);
+const caseListAll = computed(() => {
+  return lang.value === 'zh'
+    ? showCaseData.constList.zh
+    : showCaseData.constList.en;
+});
 // 接收当前分类的所有案例
 const currentCaseListAll: any = ref([]);
+const setCurrentCaseListAll = () => {
+  let temp1: any = [];
+  if (activeIndex.value === 0) {
+    temp1 = searchCaseList.value;
+  } else {
+    searchCaseList.value.forEach((item: any) => {
+      if (item.industry === currentTag.value) {
+        temp1.push(item);
+      }
+    });
+  }
+  currentCaseListAll.value = temp1;
+};
 // 当前显示的案例
 const currentCaseList = computed(() => {
   if (currentCaseListAll.value.length > pageSize.value) {
@@ -59,38 +76,26 @@ const selectTag = (i: number, tag: string) => {
   filterCase();
 };
 // 设置当前tag的所有案例
-const data = ref({
-  page: 1,
-  pageSize: 10000,
-  lang: lang.value,
-  type: 'showcase',
-});
-function setCurrentCaseListAll() {
-  getSortData(data.value).then((res: any) => {
-    currentCaseListAll.value = [];
-    if (res.status === 200 && res.obj.records[0]) {
-      caseListAll.value = res.obj.records.filter((item: any) => {
-        const pathArray = item.path.split('/');
-        return pathArray[pathArray.length - 2] !== 'userPractice';
-      });
-      if (activeIndex.value === 0) {
-        currentCaseListAll.value = caseListAll.value;
-      } else {
-        caseListAll.value.forEach((item: any) => {
-          if (item.industry === currentTag.value) {
-            currentCaseListAll.value.push(item);
-          }
-        });
-      }
-    }
-  });
-}
 function filterCase() {
   currentCaseListAll.value = [];
-  if (activeIndex.value === 0) {
-    currentCaseListAll.value = caseListAll.value;
-  } else {
+  let temp: any = [];
+  if (keyWord.value) {
     caseListAll.value.forEach((item: any) => {
+      if (
+        item.summary.includes(keyWord.value) ||
+        item.title.includes(keyWord.value) ||
+        item.industry.includes(keyWord.value)
+      ) {
+        temp.push(item);
+      }
+    });
+  } else {
+    temp = caseListAll.value;
+  }
+  if (activeIndex.value === 0) {
+    currentCaseListAll.value = temp;
+  } else {
+    temp.forEach((item: any) => {
       if (item.industry === currentTag.value) {
         currentCaseListAll.value.push(item);
       }
@@ -165,31 +170,33 @@ const jump = (url: string, type: number) => {
     : windowOpen(`/${url.replace('index', '')}`, '_blank');
 };
 // 搜索功能
-// 搜索关键词
 const keyWord = ref('');
-// 搜索接口传递参数
-const searchData = computed(() => {
-  return {
-    keyword: keyWord.value,
-    page: 1,
-    pageSize: 10000,
-    lang: lang.value,
-    type: 'showcase',
-  };
+const searchCaseList: any = ref([]);
+const setSearchCaseList = () => {
+  if (keyWord.value) {
+    let temp: any = [];
+    caseListAll.value.forEach((item: any) => {
+      if (
+        item.summary.includes(keyWord.value) ||
+        item.title.includes(keyWord.value) ||
+        item.industry.includes(keyWord.value)
+      ) {
+        temp.push(item);
+      }
+    });
+    searchCaseList.value = temp;
+  } else {
+    searchCaseList.value = caseListAll.value;
+  }
+};
+onMounted(() => {
+  setSearchCaseList();
 });
 function searchCase() {
   activeIndex.value = 0;
   currentTag.value = i18n.value.common.ALL;
-  if (keyWord.value) {
-    getSortData(searchData.value).then((res) => {
-      if (res.status === 200 && res.obj.records) {
-        caseListAll.value = res.obj.records;
-      }
-      currentCaseListAll.value = caseListAll.value;
-    });
-  } else {
-    setCurrentCaseListAll();
-  }
+  setSearchCaseList();
+  setCurrentCaseListAll();
 }
 // 根据滚动位置移动端tag吸顶
 const scrollTop = useWindowScroll();
@@ -206,10 +213,10 @@ function getUrlParam() {
     currentTag.value = i18n.value.common.ALL;
   } else {
     const tempIndex = parseInt(industry);
-    activeIndex.value = showCaseData[tempIndex - 1] ? tempIndex : 0;
+    activeIndex.value = caseCategory[tempIndex - 1] ? tempIndex : 0;
     currentTag.value = isZh.value
-      ? showCaseData[activeIndex.value - 1].type
-      : showCaseData[activeIndex.value - 1].typeEn;
+      ? caseCategory[activeIndex.value - 1].type
+      : caseCategory[activeIndex.value - 1].typeEn;
   }
 }
 onMounted(() => {
@@ -241,7 +248,7 @@ onMounted(() => {
           {{ i18n.common.ALL }}
         </OTag>
         <OTag
-          v-for="item in showCaseData"
+          v-for="item in caseCategory"
           :key="item.id"
           checkable
           :type="activeIndex === item.id ? 'primary' : 'text'"
@@ -258,7 +265,7 @@ onMounted(() => {
           {{ i18n.common.ALL }}
         </OTag>
         <OTag
-          v-for="item in showCaseData"
+          v-for="item in caseCategory"
           :key="item.id"
           checkable
           :type="activeIndex === item.id ? 'primary' : 'text'"

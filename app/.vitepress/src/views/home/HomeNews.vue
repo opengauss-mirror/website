@@ -1,11 +1,15 @@
 <script setup lang="ts">
-import { onMounted, Ref, ref } from 'vue';
+import { onMounted, Ref, ref, computed } from 'vue';
 import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';
 import dayjs from 'dayjs';
 
-import { BlogData } from '@/shared/@types/type-blogs';
-import { NewsData } from '@/shared/@types/type-news';
+import type { BlogItemT } from '@/shared/@types/type-blogs';
+import type { NewsItemT } from '@/shared/@types/type-news';
+
+import blogsAllData from '@/data/blogs';
+import NewsAllData from '@/data/news';
+import homeConfig from '@/data/home/';
 
 import IconArrowRight from '~icons/app/icon-arrow-right.svg';
 import IconCalendar from '~icons/app/icon-calendar.svg';
@@ -18,22 +22,17 @@ const { lang } = useData();
 const roomName = i18n.value.home.HOME_ROOMS.ROOM_NAME;
 
 const tabType = ref('events');
-const blogList: Ref<BlogData[]> = ref([]);
-const newsList: Ref<NewsData[]> = ref([]);
+const blogList: Ref<BlogItemT[]> = ref([]);
+const newsList: Ref<NewsItemT[]> = ref([]);
 
-const props = defineProps({
-  newsData: {
-    type: Object,
-    default: undefined,
-  },
-  blogData: {
-    type: Object,
-    default: undefined,
-  },
-  eventsData: {
-    type: Object,
-    default: undefined,
-  },
+const blogData = computed(() => {
+  return lang.value === 'zh' ? blogsAllData.zh : blogsAllData.en;
+});
+const newsData = computed(() => {
+  return lang.value === 'zh' ? NewsAllData.zh : NewsAllData.en;
+});
+const eventsData = computed(() => {
+  return lang.value === 'zh' ? homeConfig.homeEvents.zh : homeConfig.homeEvents.en;
 });
 
 const resolvePostDate = (date: any) => {
@@ -79,8 +78,8 @@ const initBlogData = (datas: any) => {
 };
 
 onMounted(async () => {
-  props.blogData && initBlogData(props.blogData);
-  props.newsData && initNewsData(props.newsData);
+  initBlogData(blogData.value.slice(0, 4));
+  initNewsData(newsData.value.slice(0, 4));
 });
 </script>
 <template>
