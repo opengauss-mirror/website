@@ -1,4 +1,4 @@
-export interface NewsData {
+export interface NewsItemT {
   articleName: string;
   author: any;
   banner: string;

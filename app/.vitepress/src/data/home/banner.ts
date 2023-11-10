@@ -83,7 +83,7 @@ export default {
         'openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability',
       ],
       btn: 'Learn More',
-      className: '',
+      className: 'banner-video',
       rightInset: videoGif,
       rightLink: `${LEARN_VIDEO_LINK}openGauss%E5%AE%A3%E4%BC%A0%E6%B4%BB%E5%8A%A8/openGauss%2BHC%E5%AE%A3%E4%BC%A0%E8%A7%86%E9%A2%91.mp4`,
     },

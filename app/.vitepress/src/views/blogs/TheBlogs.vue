@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, reactive } from 'vue';
+import { ref, computed } from 'vue';
 import { useRouter, useData } from 'vitepress';
 
 import { useI18n } from '@/i18n';
 import useWindowResize from '@/components/hooks/useWindowResize';
-import { handleError } from '@/shared/utils';
 
 import AppContent from '@/components/AppContent.vue';
 import AppPaginationMo from '@/components/AppPaginationMo.vue';
@@ -19,9 +18,8 @@ import IconUser from '~icons/app/icon-user.svg';
 import IconRight from '~icons/app/icon-arrow-right.svg';
 import IconSearch from '~icons/app/icon-search.svg';
 
-import { getTagsData } from '@/api/api-search';
-import { getBlogsData } from '@/api/api-blogs';
-import type { BlogData, ParamsType } from '@/shared/@types/type-blogs';
+import blogsAllData from '@/data/blogs';
+import type { BlogItemT } from '@/shared/@types/type-blogs';
 
 const router = useRouter();
 const { lang } = useData();
@@ -31,351 +29,118 @@ const screenWidth = useWindowResize();
 
 const isMobile = computed(() => (screenWidth.value <= 768 ? true : false));
 
-const isShowData = ref(false);
-// 博客列表
-const sortParams = reactive({
-  page: 1,
-  pageSize: 9,
-  lang: lang.value,
-  category: 'blog',
+// pc端tag筛选
+const selectData = computed(() => {
+  let tempTag: any = [
+    {
+      title: '时间',
+      select: [],
+    },
+    {
+      title: '作者',
+      select: [],
+    },
+    {
+      title: '标签',
+      select: [],
+    },
+  ];
+  blogCardAllData.value.forEach((item: any) => {
+    if (item.archives && !tempTag[0].select.includes(item.archives)) {
+      tempTag[0].select.push(item.archives);
+    }
+    if (item.author && item.author.length) {
+      item.author.forEach((itemAuthor: string) => {
+        if (!tempTag[1].select.includes(itemAuthor)) {
+          tempTag[1].select.push(itemAuthor);
+        }
+      });
+    }
+    if (item.tags && item.tags.length) {
+      item.tags.forEach((itemTag: string) => {
+        if (!tempTag[2].select.includes(itemTag)) {
+          tempTag[2].select.push(itemTag);
+        }
+      });
+    }
+  });
+  return tempTag;
 });
-// 标签
-const tagsParams = reactive({
-  lang: lang.value,
-  category: 'blogs',
-  want: '',
-});
-// pc端筛选数据
-const selectData = ref<any>([
-  {
-    title: '时间',
-    select: [],
-  },
-  {
-    title: '作者',
-    select: [],
-  },
-  {
-    title: '标签',
-    select: [],
-  },
-]);
 const selectTimeVal = ref('');
 const selectAuthorVal = ref('');
 const selectTagsVal = ref('');
 
-// 博客列表数据
-const blogCardData = ref<BlogData[]>([]);
-// 分页数据
-const paginationData = ref({
-  total: 0,
-  pagesize: 9,
-  currentpage: 0,
+// 分页筛选
+const blogsData = computed(() => {
+  return lang.value === 'zh' ? blogsAllData.zh : blogsAllData.en;
+});
+const total = computed(() => {
+  return blogCardAllData.value.length;
+});
+const pagesize = ref(9);
+const currentPage = ref(1);
+const pageTotal = computed(() => Math.ceil(total.value / pagesize.value));
+const blogCardAllData = computed(() => {
+  let temp1: any = [];
+  let temp2: BlogItemT[] = [];
+  let temp3: BlogItemT[] = [];
+  if (!selectTimeVal.value && !selectAuthorVal.value && !selectTagsVal.value) {
+    return blogsData.value;
+  } else {
+    if (selectTimeVal.value) {
+      blogsData.value.forEach((item: any) => {
+        if (item.archives === selectTimeVal.value) {
+          temp1.push(item);
+        }
+      });
+    } else {
+      temp1 = blogsData.value;
+    }
+    if (selectAuthorVal.value) {
+      temp1.forEach((item: BlogItemT) => {
+        if (item.author?.includes(selectAuthorVal.value)) {
+          temp2.push(item);
+        }
+      });
+    } else {
+      temp2 = temp1;
+    }
+
+    if (selectTagsVal.value) {
+      temp2.forEach((item: BlogItemT) => {
+        if (item.tags?.includes(selectTagsVal.value)) {
+          temp3.push(item);
+        }
+      });
+    } else {
+      temp3 = temp2;
+    }
+    return temp3;
+  }
+});
+const blogCardData = computed(() => {
+  return blogCardAllData.value.slice(
+    (currentPage.value - 1) * pagesize.value,
+    currentPage.value * pagesize.value
+  );
 });
 
 const toBlogContent = (path: string) => {
   router.go(`/${path}`);
 };
-// 获取标签数据
-const getTagsList = () => {
-  tagsParams.want = 'archives';
-  getTagsData(tagsParams).then((res) => {
-    selectData.value[0].select = [];
-    if (res.obj && res.obj.totalNum.length) {
-      res.obj.totalNum.forEach((item: any) => {
-        selectData.value[0].select.push(item.key);
-      });
-      tagsParams.want = 'author';
-      getTagsData(tagsParams)
-        .then((res) => {
-          selectData.value[1].select = [];
-          res.obj.totalNum.forEach((item: any) => {
-            selectData.value[1].select.push(item.key);
-          });
-          tagsParams.want = 'tags';
-          getTagsData(tagsParams).then((res) => {
-            selectData.value[2].select = [];
-            if (res.obj.totalNum.length) {
-              res.obj.totalNum.forEach((item: any) => {
-                selectData.value[2].select.push(item.key);
-              });
-            }
-          });
-        })
-        .catch(() => {
-          isShowData.value = false;
-          handleError();
-        });
-    }
-  });
-};
-// 获取列表数据
-const getListData = (params: ParamsType) => {
-  getBlogsData(params).then((res) => {
-    if (res.obj && res.obj.records.length) {
-      if (res.obj.count === 0) {
-        isShowData.value = false;
-      } else {
-        paginationData.value.total = res.obj.count;
-        paginationData.value.currentpage = res.obj.page;
-        paginationData.value.pagesize = res.obj.pageSize;
-        blogCardData.value = res.obj.records;
-        for (let i = 0; i < blogCardData.value.length; i++) {
-          if (typeof blogCardData.value[i].author === 'string') {
-            blogCardData.value[i].author = [blogCardData.value[i].author];
-          }
-        }
-        isShowData.value = true;
-      }
-    } else {
-      isShowData.value = false;
-      handleError();
-    }
-  });
+const resetCurrentPage = () => {
+  currentPage.value = 1;
 };
 
-// pc筛选
-const selectMethod = () => {
-  const params = {
-    page: 1,
-    pageSize: 9,
-    lang: lang.value,
-    category: 'blog',
-    archives: selectTimeVal.value === '' ? undefined : selectTimeVal.value,
-    author: selectAuthorVal.value === '' ? undefined : selectAuthorVal.value,
-    tags: selectTagsVal.value === '' ? undefined : selectTagsVal.value,
-  };
-  getListData(params);
-};
-
-const changeTime = () => {
-  selectMethod();
-  if (selectTimeVal.value !== '') {
-    const wantedAuthor = {
-      lang: lang.value,
-      category: 'blogs',
-      want: 'author',
-      condition: {
-        archives: selectTimeVal.value,
-        tags: selectTagsVal.value === '' ? undefined : selectTagsVal.value,
-      },
-    };
-    const wanttags = {
-      lang: lang.value,
-      category: 'blogs',
-      want: 'tags',
-      condition: {
-        archives: selectTimeVal.value,
-        author:
-          selectAuthorVal.value === '' ? undefined : selectAuthorVal.value,
-      },
-    };
-    getTagsData(wantedAuthor).then((res) => {
-      selectData.value[1].select = [];
-      if (!res.obj.totalNum.length) {
-        return;
-      }
-      res.obj.totalNum.forEach((item: any) => {
-        selectData.value[1].select.push(item.key);
-      });
-      getTagsData(wanttags)
-        .then((res) => {
-          selectData.value[2].select = [];
-          if (!res.obj.totalNum.length) {
-            return;
-          }
-          res.obj.totalNum.forEach((item: any) => {
-            selectData.value[2].select.push(item.key);
-          });
-        })
-        .catch(() => {
-          handleError();
-        });
-    });
-  } else if (
-    selectAuthorVal.value === '' &&
-    selectTimeVal.value === '' &&
-    selectTagsVal.value === ''
-  ) {
-    getTagsList();
-  } else {
-    const params = {
-      lang: lang.value,
-      want: 'archives',
-      category: 'blogs',
-      condition: {
-        author:
-          selectAuthorVal.value === '' ? undefined : selectAuthorVal.value,
-        tags: selectTagsVal.value === '' ? undefined : selectTagsVal.value,
-      },
-    };
-    getTagsData(params).then((res) => {
-      selectData.value[0].select = [];
-      res.obj.totalNum.forEach((item: any) => {
-        selectData.value[0].select.push(item.key);
-      });
-    });
-  }
-};
-const changeAuthor = () => {
-  selectMethod();
-  if (selectAuthorVal.value !== '') {
-    const wantarchive = {
-      lang: lang.value,
-      category: 'blogs',
-      want: 'archives',
-      condition: {
-        author: selectAuthorVal.value,
-        tags: selectTagsVal.value === '' ? undefined : selectTagsVal.value,
-      },
-    };
-    const wanttags = {
-      lang: lang.value,
-      category: 'blogs',
-      want: 'tags',
-      condition: {
-        archives: selectTimeVal.value === '' ? undefined : selectTimeVal.value,
-        author: selectAuthorVal.value,
-      },
-    };
-    getTagsData(wantarchive).then((res) => {
-      selectData.value[0].select = [];
-      res.obj.totalNum.forEach((item: any) => {
-        selectData.value[0].select.push(item.key);
-      });
-      getTagsData(wanttags)
-        .then((res) => {
-          selectData.value[2].select = [];
-          res.obj.totalNum.forEach((item: any) => {
-            selectData.value[2].select.push(item.key);
-          });
-        })
-        .catch(() => {
-          handleError();
-        });
-    });
-  } else if (
-    selectTimeVal.value === '' &&
-    selectAuthorVal.value === '' &&
-    selectTagsVal.value === ''
-  ) {
-    getTagsList();
-  } else {
-    const params = {
-      lang: lang.value,
-      category: 'blogs',
-      want: 'author',
-      condition: {
-        archives: selectTimeVal.value === '' ? undefined : selectTimeVal.value,
-        tags: selectTagsVal.value === '' ? undefined : selectTagsVal.value,
-      },
-    };
-    getTagsData(params).then((res) => {
-      selectData.value[1].select = [];
-      res.obj.totalNum.forEach((item: any) => {
-        selectData.value[1].select.push(item.key);
-      });
-    });
-  }
-};
-const changeTags = () => {
-  selectMethod();
-  if (selectTagsVal.value !== '') {
-    const wantarchive = {
-      lang: lang.value,
-      category: 'blogs',
-      want: 'archives',
-      condition: {
-        author:
-          selectAuthorVal.value === '' ? undefined : selectAuthorVal.value,
-        tags: selectTagsVal.value,
-      },
-    };
-    const wantedAuthor = {
-      lang: lang.value,
-      category: 'blogs',
-      want: 'author',
-      condition: {
-        archives: selectTimeVal.value === '' ? undefined : selectTimeVal.value,
-        tags: selectTagsVal.value,
-      },
-    };
-    getTagsData(wantarchive).then((res) => {
-      selectData.value[0].select = [];
-      res.obj.totalNum.forEach((item: any) => {
-        selectData.value[0].select.push(item.key);
-      });
-      getTagsData(wantedAuthor)
-        .then((res) => {
-          selectData.value[1].select = [];
-          res.obj.totalNum.forEach((item: any) => {
-            selectData.value[1].select.push(item.key);
-          });
-        })
-        .catch(() => {
-          handleError();
-        });
-    });
-  } else if (
-    selectTimeVal.value === '' &&
-    selectAuthorVal.value === '' &&
-    selectTagsVal.value === ''
-  ) {
-    getTagsList();
-  } else {
-    const params = {
-      lang: lang.value,
-      category: 'blogs',
-      want: 'tags',
-      condition: {
-        author:
-          selectAuthorVal.value === '' ? undefined : selectAuthorVal.value,
-        archives: selectTimeVal.value === '' ? undefined : selectTimeVal.value,
-      },
-    };
-    getTagsData(params).then((res) => {
-      selectData.value[2].select = [];
-      res.obj.totalNum.forEach((item: any) => {
-        selectData.value[2].select.push(item.key);
-      });
-    });
-  }
-};
-
-onMounted(() => {
-  getListData(sortParams);
-  getTagsList();
-});
-// 页数改变
-const changeCurrent = (val: number) => {
-  const params: ParamsType = {
-    category: 'blog',
-    lang: lang.value,
-    page: val,
-    pageSize: paginationData.value.pagesize,
-  };
-  selectAuthorVal.value ? (params['author'] = selectAuthorVal.value) : '';
-  selectTagsVal.value ? (params['tags'] = selectTagsVal.value) : '';
-  selectTimeVal.value ? (params['archives'] = selectTimeVal.value) : '';
-  getListData(params);
-};
 const postBlog = () => {
   router.go(`/${lang.value}/blogs/guidance/`);
 };
-// 计算总页数
-const pageTotal = computed(() =>
-  Math.ceil(paginationData.value.total / paginationData.value.pagesize)
-);
+
 const changeCurrentMoblie = (val: string) => {
-  if (val === 'prev' && paginationData.value.currentpage > 1) {
-    paginationData.value.currentpage = paginationData.value.currentpage - 1;
-    changeCurrent(paginationData.value.currentpage);
-  } else if (
-    val === 'next' &&
-    paginationData.value.currentpage < pageTotal.value
-  ) {
-    paginationData.value.currentpage = paginationData.value.currentpage + 1;
-    changeCurrent(paginationData.value.currentpage);
+  if (val === 'prev' && currentPage.value > 1) {
+    currentPage.value = currentPage.value - 1;
+  } else if (val === 'next' && currentPage.value < pageTotal.value) {
+    currentPage.value = currentPage.value + 1;
   }
 };
 </script>
@@ -412,7 +177,7 @@ const changeCurrentMoblie = (val: string) => {
               filterable
               clearable
               :placeholder="userCaseData.ALL"
-              @change="changeTime"
+              @change="resetCurrentPage"
             >
               <template #prefix>
                 <OIcon>
@@ -436,7 +201,7 @@ const changeCurrentMoblie = (val: string) => {
               filterable
               clearable
               :placeholder="userCaseData.ALL"
-              @change="changeAuthor"
+              @change="resetCurrentPage"
             >
               <template #prefix>
                 <OIcon>
@@ -460,7 +225,7 @@ const changeCurrentMoblie = (val: string) => {
               filterable
               clearable
               :placeholder="userCaseData.ALL"
-              @change="changeTags"
+              @change="resetCurrentPage"
             >
               <template #prefix>
                 <OIcon>
@@ -478,7 +243,7 @@ const changeCurrentMoblie = (val: string) => {
         </div>
       </div>
     </template>
-    <template v-if="isShowData">
+    <template v-if="blogCardData.length">
       <div class="blog-list">
         <OCard
           v-for="item in blogCardData"
@@ -516,22 +281,21 @@ const changeCurrentMoblie = (val: string) => {
         <ClientOnly>
           <OPagination
             v-if="!isMobile"
-            v-model:currentPage="paginationData.currentpage"
-            v-model:page-size="paginationData.pagesize"
+            v-model:currentPage="currentPage"
+            v-model:page-size="pagesize"
             :background="true"
             layout="sizes, prev, pager, next, slot, jumper"
-            :total="paginationData.total"
+            :total="total"
             :page-sizes="[3, 6, 9]"
-            @current-change="changeCurrent"
-            @size-change="changeCurrent(1)"
+            @size-change="resetCurrentPage"
           >
             <span class="pagination-slot"
-              >{{ paginationData.currentpage }}/{{ pageTotal }}</span
+              >{{ currentPage }}/{{ pageTotal }}</span
             >
           </OPagination>
           <AppPaginationMo
             v-else
-            :current-page="paginationData.currentpage"
+            :current-page="currentPage"
             :total-page="pageTotal"
             @turn-page="changeCurrentMoblie"
           />

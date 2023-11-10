@@ -5,11 +5,14 @@ import { useI18n } from '@/i18n';
 import AppMdHead from './AppMdHead.vue';
 import BreadCrumbs from '@/components/BreadCrumbs.vue';
 
-import { getSortData } from '@/api/api-search';
+import newsData from '@/data/news';
 
 const { frontmatter, lang } = useData();
 const i18n = useI18n();
 const userCaseData = computed(() => i18n.value.common.COMMON_CONFIG);
+const newsList = computed(() => {
+  return lang.value === 'zh' ? newsData.zh : newsData.en;
+});
 const newsInfo = {
   link: `/${lang.value}/news/`,
   name: i18n.value.common.COMMON_CONFIG.NEWS,
@@ -37,25 +40,23 @@ const goNext = () => {
   router.go(`${nextLint.value}`);
   getNewsData();
 };
-const getNewsData = async () => {
-  await getSortData(sortParams).then((res) => {
-    res.obj.records.forEach((item: any) => {
-      newsTitle.value.push(item.title);
-      newsLint.value.push(item.path);
-    });
-    newsTitle.value.forEach((item: any, index: number) => {
-      if (item === frontmatter.value.title && index !== 0) {
-        prev.value = newsTitle.value[index - 1];
-        prevLint.value = newsLint.value[index - 1];
-      }
-      if (
-        item === frontmatter.value.title &&
-        index !== res.obj.records.length - 1
-      ) {
-        next.value = newsTitle.value[index + 1];
-        nextLint.value = newsLint.value[index + 1];
-      }
-    });
+const getNewsData = () => {
+  newsList.value.forEach((item: any) => {
+    newsTitle.value.push(item.title);
+    newsLint.value.push(item.path);
+  });
+  newsTitle.value.forEach((item: any, index: number) => {
+    if (item === frontmatter.value.title && index !== 0) {
+      prev.value = newsTitle.value[index - 1];
+      prevLint.value = newsLint.value[index - 1];
+    }
+    if (
+      item === frontmatter.value.title &&
+      index !== newsList.value.length - 1
+    ) {
+      next.value = newsTitle.value[index + 1];
+      nextLint.value = newsLint.value[index + 1];
+    }
   });
 };
 onMounted(() => {

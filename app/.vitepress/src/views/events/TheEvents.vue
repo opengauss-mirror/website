@@ -1,12 +1,14 @@
 <script lang="ts" setup>
-import { computed, ref, Ref, onMounted, reactive } from 'vue';
+import { computed, ref, Ref, onMounted } from 'vue';
 import { useRouter, useData } from 'vitepress';
-import { getSortData } from '@/api/api-search';
-import { handleError, windowOpen } from '@/shared/utils';
+import { windowOpen } from '@/shared/utils';
 
 import { useI18n } from '@/i18n';
 import { useCommon } from '@/stores/common';
 import useWindowResize from '@/components/hooks/useWindowResize';
+
+import eventsAllData from '@/data/events';
+
 import AppContent from '@/components/AppContent.vue';
 import BannerLevel2 from '@/components/BannerLevel2.vue';
 
@@ -24,6 +26,9 @@ const router = useRouter();
 const { lang } = useData();
 const i18n = useI18n();
 const screenWidth = useWindowResize();
+const eventsData = computed(() => {
+  return lang.value === 'zh' ? eventsAllData.zh : eventsAllData.en;
+});
 
 // 所需日期
 const nowDate = new Date();
@@ -60,41 +65,25 @@ const newsList = computed(() => {
     return allReviewList.value;
   }
 });
-
-onMounted(async () => {
-  const sortParams = reactive({
-    page: 1,
-    pageSize: 999,
-    lang: lang.value,
-    type: 'events',
-  });
-  try {
-    const responeData = await getSortData(sortParams);
-    if (responeData.obj && responeData.obj.records.length) {
-      responeData.obj.records.forEach((item: any) => {
-        if (item.date) {
-          const time = item.time && item.time.split('-');
-          if (time[1] && time[1].length !== 7) {
-            if (
-              Number(time[1].substring(0, 10).replace(/\//g, '')) >= curDate
-            ) {
-              item.isLatest = true;
-            }
-          }
-          if (
-            new Date(item.date).getTime() >= nowDate.getTime() ||
-            item.isLatest
-          ) {
-            latestList.value.push(item);
-          } else {
-            allReviewList.value.push(item);
-          }
+const initDataList = () => {
+  eventsData.value.forEach((item: any) => {
+    if (item.date) {
+      const time = item.time && item.time.split('-');
+      if (time[1] && time[1].length !== 7) {
+        if (Number(time[1].substring(0, 10).replace(/\//g, '')) >= curDate) {
+          item.isLatest = true;
         }
-      });
+      }
+      if (new Date(item.date).getTime() >= nowDate.getTime() || item.isLatest) {
+        latestList.value.push(item);
+      } else {
+        allReviewList.value.push(item);
+      }
     }
-  } catch (e: any) {
-    handleError();
-  }
+  });
+};
+onMounted(() => {
+  initDataList()
 });
 const goDetail = (path: string) => {
   const langPrefix1 = new RegExp(`^/${lang.value}/`);
