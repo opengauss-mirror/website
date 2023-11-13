@@ -8,6 +8,9 @@ import useWindowResize from '@/components/hooks/useWindowResize';
 
 import IconArrowRight from '~icons/app/icon-arrow-right.svg';
 
+import bannerText from '@/assets/category/summit/bannerText.png';
+import bannerTextMo from '@/assets/category/summit/bannerTextMo.png';
+
 const { lang } = useData();
 
 const windowWidth = ref(useWindowResize());
@@ -64,6 +67,13 @@ const clickRightInset = (path: string) => {
           @click="jump(item, item.btn !== '')"
         >
           <div class="banner-content">
+            <img
+              v-if="item.link.includes('/summit')"
+              :src="windowWidth > 767 ? bannerText : bannerTextMo"
+              alt=""
+              class="summit-title"
+            />
+
             <div class="content-left">
               <div class="content-text">
                 <div
@@ -172,6 +182,21 @@ html[lang='zh'] {
       }
       @media screen and (max-width: 1100px) {
         padding: 0 16px;
+      }
+      .summit-title {
+        position: absolute;
+        right: 44px;
+        bottom: 50%;
+        transform: translateY(50%);
+        width: 536px;
+        height: 208px;
+        @media screen and (max-width: 767px) {
+          width: 247px;
+          height: 96px;
+          right: 50%;
+          bottom: 28px;
+          transform: translateX(50%);
+        }
       }
       .content-left {
         display: flex;
