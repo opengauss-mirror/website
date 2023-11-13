@@ -81,7 +81,11 @@ RUN touch /var/run/nginx.pid \
     && sed -i "s|PASS_MAX_DAYS[ \t]*99999|PASS_MAX_DAYS 30|" /etc/login.defs \
     && passwd -l $NGINX_USER \
     && yum remove gdb-gdbserver -y \
-    && yum clean all
+    && yum clean all \
+    && usermod -s /sbin/nologin sync \
+    && usermod -s /sbin/nologin shutdown \
+    && usermod -s /sbin/nologin halt \
+    && echo "export TMOUT=1800 readonly TMOUT" >> /etc/profile
 
 COPY ./monitor.sh ./entrypoint.sh /etc/nginx
 RUN chmod 500 /etc/nginx/monitor.sh \
