@@ -16,7 +16,7 @@ The openGauss Community understands the importance of your privacy and fully res
 
 - (a) **Mail Subscription**. When you use our mail subscription service, we will collect your <u>**email address and name (optional)**</u>. We will provide you with the email subscription service through this email address to facilitate your participation in discussions in the Community.
 
-- (b) **Service Optimization**. To continuously understand the operating status of the openGauss Community and provide better services for you, we will deploy a third-party plugin in this program. The third-party plugin will collect and record information on your browser, computer, and mobile device, including but not limited to your <u>**IP address, access source, number of visits to the Community, stay duration, access timestamp, browser type, and server type and version**</u>, etc. This will form the basis of our analysis, which helps us to better understand the openGauss Community operation.
+- (b) **Service Optimization**. To continuously understand the operating status of the openGauss Community and provide better services for you, we will deploy a third-party plugin in this program. The third-party plugin will collect and record information on your browser, computer, and mobile device, including but not limited to your <u>**IP address, access timestamp, access source, accessed pages, access status, accessed resource size, OS, system language, browser type, browser language, browser version, and server type and version**</u>, etc. This will form the basis of our analysis, which helps us to better understand the openGauss Community operation.
 
 - (c) **Contributor License Agreement Signing**. When you participate in code contribution through the Contributor License Agreement ("CLA") signing system (click [<u>here</u>](https://clasign.osinfra.cn/sign/gitee_opengauss-1614047760000855378) to learn more), you need to submit your relevant personal data to the CLA signing system. We will obtain such personal data to verify whether you have signed the CLA, and to conduct relevant statistical analysis to understand how the Community is operating.
 
@@ -30,9 +30,9 @@ We may also collect your personal data from third parties, including other platf
 
 - (a) To ensure our website works properly, we may at times place cookies on your computer or mobile device. A cookie is a small data file placed on your computer or mobile device when you access a website. The content of a cookie can be retrieved or read only by the server that creates the cookie. Cookies serve different purposes. For example, they help us understand how the website is used, help you efficiently browse pages, remember your preferences, and improve your browsing experience.
 
-- (b) We use two types of cookies:
+- (b) We categorize cookies on our websites into two categories:
 
-  - (1)Strict and necessary cookies: used for login and verification. When you log in to the website with your openGauss Community account, cookies improve your Web browsing experience.
+  - (1)Required cookies: When you use the websites, cookies improve your Web browsing experience.
 
   - (2)Statistical analysis cookies: We collect information about your use of our services, including your single or multiple visits, which help us understand how the services are running and used. We use the statistical analysis plugin provided by Baidu.
 
@@ -52,17 +52,13 @@ Sharing means providing third parties with your personal data. The third parties
 
 - (a) **Sharing under your instruction**. We may share your personal data with your consent and under your instruction to the third parties indicated by you.
 
-- (b) Sharing your personal information as necessary for protecting national security, public security, and your and other individuals' crucial legitimate rights and interests.
+- (b) Sharing your personal data as necessary for protecting national security, public security, and your and other individuals' crucial legitimate rights and interests.
 
-- (c) **Affiliates**. We may share your personal data with our affiliates, for the purposes of transaction support, service support, or security support.
+- (c) **Affiliates**. We may share your personal data with our affiliates (Huawei Technologies Co., Ltd. and its affiliates), for the purposes of service support or security support.
 
 - (d) **Partners**. We may share your personal data with our partners. However, we will share your personal data only for legitimate, justified, necessary, specified, and explicit purposes, and share only the personal data necessary for providing our services. Our partners may include:
 
-  - (1) **Developers, platforms, and social media networks**. Some products or services may be directly provided to you by third parties. In this case, we need to provide them with the transaction information. If you associate our services or products with third-party platforms or social media networks (for example, direct login through a third-party website, virtual login, or associated login), we may disclose your personal data with your authorization. We do not control the third party's use of your personal data.
-
-  - (2) **Service suppliers or professional service providers**. We may share your personal data with third-party companies and individuals that provide services on our behalf or help us operate the website and services (such as supply, infrastructure, hosting, customer support, marketing and analytics, and data processing services). We share such data only for purposes consistent with this Statement or under your authorization.
-
-  - (3) We integrate Baidu Statistics SDK to provide more complete and high-quality services and better support daily data analysis requirements of activity operations, user operations, and technology development. Baidu Statistics SDK needs to collect and use your necessary personal information. For details about the types and purposes of personal information collected and used by Baidu Statistics SDK, and how Baidu Statistics SDK protects the collected and used personal information, please read the [<u>Baidu Statistics Privacy Policy</u>](https://tongji.baidu.com/web/help/article?id=330&type=0) carefully.
+   We integrate Baidu Statistics SDK from Beijing Baidu Netcom Science Technology Co., Ltd. to provide more complete and high-quality services and better support daily data analysis requirements of activity operations, user operations, and technology development. Baidu Statistics SDK needs to collect and use your necessary personal data, including device information (IP address, OS, network service provider, system language, screen resolution, screen color, region, browser type, browser language, and browser version), usage information (access source, search keyword, accessed pages, pop-ups, visitor ID, number of community accesses, stay duration, access timestamp, and server type and version). For details about the types and purposes of personal data collected and used by Baidu Statistics SDK, and how Baidu Statistics SDK protects the collected and used personal data, please read the [<u>Baidu Statistics Privacy Policy</u>](https://tongji.baidu.com/web/help/article?id=330&type=0) carefully.
 
 When we share your personal data with associated companies or partners, their responsibilities and obligations will be governed by contracts and we will require them to take appropriate measures to ensure the safety of the personal data processed.
 
@@ -72,7 +68,9 @@ We will retain your personal data for no longer than is necessary for the purpos
 
 Generally, we will store or retain your personal data within the retention period according to applicable laws or service agreements from the date when you obtain your personal data in the openGauss Community. If your personal data has exceeded the retention period and no law requires us to continue processing your specific personal data, we will delete your personal data or anonymize it according to applicable laws.
 
-For example, the IP address, access source, number of community accesses, stay duration, access timestamp, browser type, and server type and version information collected for service optimization will be automatically deleted after 10 days.
+For example, the  IP address, access timestamp, access source, accessed pages, access status, accessed resource size, OS, system language, browser type, browser language, browser version, and server type and version information collected for service optimization will be automatically deleted after 10 days.
+
+For example, when the community no longer displays you as a member of the community, we will delete your personal data (Gitee information, GitHub information, avatar, name, email address, company/school, position/degree, personal profile, MindSpore development overview, personal photos) within one month.
 
 ## 5. How We Protect Your Personal Data
 
@@ -99,16 +97,15 @@ Please note that these rights are not absolute and may be restricted in accordan
 
 <u>**Generally, we will respond to you within one month, unless otherwise required by applicable laws. Depending on the complexity of your requests, we may extend the period by two further months. In this case, we will inform you of the extension and its reasons within one month of receiving your request.**</u> Please note that under some circumstances, for example where we cannot verify your identity, or your claim exceeds your rights under applicable laws, we may refuse your request. In this case, we will inform you in written form that your request is refused together with the reasons for our refusal.
 
-You can change the scope of your authorization for us to collect your personal data or withdraw your authorization. However, your decision to withdraw your consent or authorization does not affect any previous processing of personal information based on your authorization.
+You can change the scope of your authorization for us to collect your personal data or withdraw your authorization. However, your decision to withdraw your consent or authorization does not affect any previous processing of personal data based on your authorization.
 
 ## 7. Personal Data Storage Location
 
-Your personal data will be stored on servers in the People's Republic of China. We provide services for you through our global resources and servers. Your personal data collected by us may be stored in the countries or regions where we, our affiliates, and service providers are located. This means that your personal data may be transferred to other jurisdictions outside the country or region where the product or service you use is located, or may be accessed from these jurisdictions.
-Jurisdictions where such personal data is stored may have laws that protect personal information to varying degrees or may not have personal data protection laws. We will ensure that your personal data is protected by applicable laws and regulations as well as this Statement.
+Your personal data will be stored on servers in the People's Republic of China.
 
 ## 8. How This Statement Is Updated
 
-We may update or modify this Statement from time to time according to changes of our services or data processing. If we update this Statement, we will publish the latest version of the Statement on the website, and it will take effect immediately upon its release. You are advised to review this Statement periodically for any changes. If we make any substantial changes to this Statement (any change of personal data we collect or we use for), we will notify you through appropriate channels and obtain your consent.
+We may update or modify this Statement from time to time according to changes of our services or data processing. If we update this Statement, we will publish the latest version of the Statement on the website, and it will take effect immediately upon its release. You are advised to review this Statement periodically for any changes. If we make any substantial changes to this Statement (any change of personal data we collect or we use for), we will notify you through appropriate channels (bulletins and pop-ups) and obtain your consent.
 
 ## 9. How We Protect Children's Online Privacy
 
@@ -122,8 +119,8 @@ Email: **contact@opengauss.org**
 
 Hotline: **+86 187-4087-2239**
 
-Last updated: **November 6, 2023**
+Last updated: **November 13, 2023**
 
-Privacy policy version: **v20231106**
+Privacy policy version: **v20231113**
 
 </div>
