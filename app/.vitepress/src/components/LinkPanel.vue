@@ -69,9 +69,9 @@ const handerClick = (item: any) => {
       cursor: pointer;
     }
   }
-  @media screen and (max-width: 1416px) {
+  @media screen and (max-width: 1100px) {
     padding-top: 0;
-    grid-template-columns: repeat(v-bind('(props.row)-1'), minmax(82px, 270px));
+    grid-template-columns: repeat(v-bind('(props.row)-1'), minmax(82px, 1fr));
     justify-content: center;
     .link-item {
       min-height: 40px;
@@ -81,7 +81,7 @@ const handerClick = (item: any) => {
     }
   }
   @media screen and (max-width: 768px) {
-    grid-template-columns: repeat(v-bind('(props.row)-2'), minmax(82px, 270px));
+    grid-template-columns: repeat(v-bind('(props.row)-2'), minmax(82px, 1fr));
   }
 }
 </style>

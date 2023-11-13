@@ -131,7 +131,7 @@ export default {
     GITEE_BEN: 'Gitee授权登录',
     LOGIN_TIPS: '我已阅读并同意',
     BACK_LOGIN: '返回重新预定会议',
-    PRIVACY: '隐私政策',
+    PRIVACY: '《隐私政策》',
     RESERVE_MEETING: '预订会议',
     PERMISSION: '权限提示',
     PERMISSION_TEXT: '很抱歉！您暂时没有预定会议的权限',

@@ -148,7 +148,7 @@ export default {
         {
           NAME: `峰会`,
           ID: `summit`,
-          PATH: `/summit/devday2023/`,
+          PATH: `/summit/summit2023/`,
         },
       ],
       CLASS: [`news`, `blog`, `video`, `events`, `summit`],

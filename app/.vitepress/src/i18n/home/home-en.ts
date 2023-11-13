@@ -132,7 +132,7 @@ export default {
     GITEE_BEN: 'Gitee authorized login',
     LOGIN_TIPS: 'I have read and agreed to',
     BACK_LOGIN: '返回重新预定会议',
-    PRIVACY: ' the privacy terms',
+    PRIVACY: 'Privacy Policy',
     RESERVE_MEETING: 'Schedule a meeting',
     PERMISSION: 'Permission prompt',
     PERMISSION_TEXT:
