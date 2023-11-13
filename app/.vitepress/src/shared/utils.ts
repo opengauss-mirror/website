@@ -88,7 +88,7 @@ export function removeCustomCookie(key: string) {
 /**
  * 错误处理
  */
-export function handleError(error = 'Something Error!') {
+export function handleError(error = 'Error!') {
   ElMessage({
     message: error,
     type: 'error',

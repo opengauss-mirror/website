@@ -897,11 +897,10 @@ const handleLogout = async () => {
         <el-checkbox v-model="isAgree">{{
           i18nMeeting.LOGIN_TIPS
         }}</el-checkbox>
-        <span
-          ><a :href="'/' + lang + '/privacyPolicy/'">{{
-            i18nMeeting.PRIVACY
-          }}</a></span
-        >
+        <a :href="'/' + lang + '/privacyPolicy/'">
+          <template v-if="lang === 'en'">&nbsp;</template>
+          {{ i18nMeeting.PRIVACY }}
+        </a>
       </p>
     </div>
 
