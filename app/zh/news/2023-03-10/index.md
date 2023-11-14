@@ -176,7 +176,7 @@ openGauss在2月进行了四次例行技术直播分享活动，错过的朋友�
 
 openGauss 3.1.0提供中文离线文档下载：
 
-<https://docs.opengauss.org/zh/docs/3.1.0/docs/BriefTutorial/BriefTutorial.html>
+<https://docs-opengauss.osinfra.cn/zh/docs/3.1.0/docs/BriefTutorial/BriefTutorial.html>
 
 **openGauss提供个人账号注册登录下载软件包**
 

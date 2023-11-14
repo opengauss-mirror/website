@@ -2,7 +2,7 @@
 const GAUSS_EMAIL = 'contact@opengauss.org'; // gauss邮箱
 const GAUSS_CERTIFICATE_EMAIL = 'common@certificate.opengauss.org'; // gauss证书相关联系邮箱
 const HUAWEI_COMPUTE = 'https://huaweicompute.wjx.cn/'; // 华为在线问卷、调查投票平台
-const DOCS_LINK = 'https://docs.opengauss.org/'; // gauss文档
+const DOCS_LINK = 'https://docs-opengauss.osinfra.cn/'; // gauss文档
 const OSCHINA_LINK = 'https://my.oschina.net/'; // oschina官网
 const CSDN_LINK = 'https://blog.csdn.net/'; // csdn官网
 const CTO_LINK = 'https://blog.51cto.com/'; // 51cto官网
@@ -55,7 +55,7 @@ const DBOBS_LINK =
 const DATA_LINK = 'https://datastat-opengauss.osinfra.cn/'; // 贡献看板
 const CLA_LINK = 'https://clasign.osinfra.cn/'; // cla签署
 const SAGE_LINK = 'https://sage.thesharps.us/'; // Sage Sharp
-const TRYME_LINK = 'https://tryme.opengauss.org/'; // tryme
+const TRYME_LINK = 'https://tryme-opengauss.osinfra.cn/'; // tryme
 const BAIDU_HM = 'https://hm.baidu.com/hm.js?ace49cc6c2f3d0542e97ce86732094dc'; // 百度埋点
 const SUMMIT_LINK = 'https://shimo.im'; // SUMMIT报名
 
