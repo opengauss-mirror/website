@@ -83,7 +83,7 @@ const initDataList = () => {
   });
 };
 onMounted(() => {
-  initDataList()
+  initDataList();
 });
 const goDetail = (path: string) => {
   const langPrefix1 = new RegExp(`^/${lang.value}/`);
@@ -110,7 +110,7 @@ const goDetail = (path: string) => {
   <AppContent class="salon-content">
     <div class="latest-events">
       <h3 class="salon-title">{{ i18n.connect.EVENTS_NEW }}</h3>
-      <template v-if="latestList && latestList.length != 0">
+      <template v-if="latestList && latestList.length !== 0">
         <OContainer
           v-for="item in latestList"
           :key="item.id"
@@ -165,7 +165,7 @@ const goDetail = (path: string) => {
         :right-arrow="true"
         :left-arrow="true"
       ></OTimeline>
-      <div v-if="newsList && newsList.length != 0" class="salon-review">
+      <div v-if="newsList && newsList.length !== 0" class="salon-review">
         <OCard
           v-for="item in newsList"
           :key="item.ID"
