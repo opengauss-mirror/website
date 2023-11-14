@@ -15,7 +15,6 @@ const { lang } = useData();
 
 const windowWidth = ref(useWindowResize());
 
-// 判断语言 banner
 const homeBanner = computed(() =>
   lang.value === 'en' ? homeConfig.homeBanner.en : homeConfig.homeBanner.zh
 );
