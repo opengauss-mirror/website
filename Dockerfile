@@ -80,12 +80,13 @@ RUN touch /var/run/nginx.pid \
     && sed -i "s|HISTSIZE=1000|HISTSIZE=0|" /etc/profile \
     && sed -i "s|PASS_MAX_DAYS[ \t]*99999|PASS_MAX_DAYS 30|" /etc/login.defs \
     && passwd -l $NGINX_USER \
-    && yum remove gdb-gdbserver -y \
+    && yum remove gdb-gdbserver findutils passwd -y \
     && yum clean all \
     && usermod -s /sbin/nologin sync \
     && usermod -s /sbin/nologin shutdown \
     && usermod -s /sbin/nologin halt \
-    && echo "export TMOUT=1800 readonly TMOUT" >> /etc/profile
+    && echo "export TMOUT=1800 readonly TMOUT" >> /etc/profile \
+    && rm -rf /usr/bin/gdb*
 
 COPY ./monitor.sh ./entrypoint.sh /etc/nginx
 RUN chmod 500 /etc/nginx/monitor.sh \
