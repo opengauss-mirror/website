@@ -1,6 +1,6 @@
 import slogan from '../img/slogan.png'
 import sloganMO from '../img/slogan-mo.png'
-
+import { SUMMIT_LINK } from '@/data/url-config'
 export default {
     banner: {
         slogan: slogan,
@@ -11,17 +11,17 @@ export default {
         {
             title: ['共建单位', '征集'],
             titleEN: ['CALL FOR', 'SPONSOR'],
-            link: 'https://shimo.im/forms/0oYbBcXZoEkADafV/fill'
+            link: `${SUMMIT_LINK}/forms/0oYbBcXZoEkADafV/fill`
         },
         {
             title: ['演讲发言人', '征集'],
             titleEN: ['CALL FOR', 'SPEAKER'],
-            link: 'https://shimo.im/forms/AtU818fux10g43pb/fill'
+            link: `${SUMMIT_LINK}/forms/AtU818fux10g43pb/fill`
         },
         {
             title: ['DEMO', '征集'],
             titleEN: ['CALL FOR', 'DEMO'],
-            link: 'https://shimo.im/forms/1AKIZ5GlFNaH31sY/fill'
+            link: `${SUMMIT_LINK}/forms/1AKIZ5GlFNaH31sY/fill`
         },
     ],
     previous: {
