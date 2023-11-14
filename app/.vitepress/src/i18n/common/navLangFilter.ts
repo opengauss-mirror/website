@@ -101,4 +101,8 @@ export default [
     name: 'compatibility',
     lang: ['zh'],
   },
+  {
+    name: 'finance',
+    lang: ['zh'],
+  }
 ];

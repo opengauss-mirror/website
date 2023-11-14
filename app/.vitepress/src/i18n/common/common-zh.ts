@@ -107,6 +107,11 @@ export default {
           PATH: `/userPractice/`,
         },
         {
+          NAME: `金融专区`,
+          ID: `finance`,
+          PATH: `/finance/`,
+        },
+        {
           NAME: `贡献看板`,
           ID: `statistics`,
           PATH: `${DATA_LINK}zh/overview`,

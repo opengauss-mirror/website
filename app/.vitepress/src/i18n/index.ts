@@ -21,6 +21,7 @@ import contribution from './community/contribution';
 import member from './community/member';
 import download from './download';
 import supporttools from './supporttools';
+import finance from './finance';
 
 const i18n: { [key: string]: any } = {
   zh: {
@@ -43,6 +44,7 @@ const i18n: { [key: string]: any } = {
     brand: brand.zh,
     compatibility: compatibility.zh,
     cookie: cookie.zh,
+    finance: finance.zh
   },
   en: {
     home: home.en,

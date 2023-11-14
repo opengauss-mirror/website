@@ -77,7 +77,7 @@ const tipsObj: TitleItemT = {
   '/community/onlineCommunication/': TITLES2[3],
   '/member/': TITLES2[3],
   '/userPractice/': TITLES2[3],
-  '/financial/': TITLES2[3],
+  '/finance/': TITLES2[3],
   '/certification/': TITLES2[4],
   '/compatibility/': TITLES2[4],
   '/ogsp/': TITLES2[4],
@@ -106,6 +106,8 @@ const title3 = computed(() => {
     return TITLES3[1];
   }
 });
+// 移动端是否需要单独设置margin
+const isMargin = ref(false);
 onMounted(() => {
   watch(
     () => router.route.path,
@@ -118,6 +120,9 @@ onMounted(() => {
             title2.value = tipsObj[item];
           }
         });
+        if (router.route.path.includes('finance')) {
+          isMargin.value = true;
+        }
       }
     },
     { immediate: true }
@@ -549,7 +554,11 @@ onMounted(() => {
         </div>
       </template>
       <template v-else>
-        <div v-if="isMobileFloatShow" class="float-mobile">
+        <div
+          v-if="isMobileFloatShow"
+          class="float-mobile"
+          :class="{ 'mobile-margin': isMargin }"
+        >
           <div class="float-head">
             <div class="head-title" @click="toggleDialogVisible">
               <OIcon class="icon-box"
@@ -1025,6 +1034,9 @@ onMounted(() => {
     width: 100%;
     padding: 0 16px;
     margin-bottom: 16px;
+    &.mobile-margin {
+      margin-top: 16px;
+    }
     .float-head {
       height: 40px;
       padding: 12px;
