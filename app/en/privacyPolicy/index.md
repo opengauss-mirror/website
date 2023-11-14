@@ -16,13 +16,13 @@ The openGauss Community understands the importance of your privacy and fully res
 
 - (a) **Mail Subscription**. When you use our mail subscription service, we will collect your <u>**email address and name (optional)**</u>. We will provide you with the email subscription service through this email address to facilitate your participation in discussions in the Community.
 
-- (b) **Service Optimization**. To continuously understand the operating status of the openGauss Community and provide better services for you, we will deploy a third-party plugin in this program. The third-party plugin will collect and record information on your browser, computer, and mobile device, including but not limited to your <u>**IP address, access timestamp, access source, accessed pages, access status, accessed resource size, OS, system language, browser type, browser language, browser version, and server type and version**</u>, etc. This will form the basis of our analysis, which helps us to better understand the openGauss Community operation.
+- (b) **Service Optimization**. To continuously understand the operating status of the openGauss Community and provide better services for you, we will deploy a third-party plugin in this program. The third-party plugin will collect and record information on your browser, computer, and mobile device <u>**IP address, access timestamp, access source, accessed pages, access status, accessed resource size, OS, system language, browser type, browser language, browser version, and server type and version**</u>. This will form the basis of our analysis, which helps us to better understand the openGauss Community operation.
 
 - (c) **Contributor License Agreement Signing**. When you participate in code contribution through the Contributor License Agreement ("CLA") signing system (click [<u>here</u>](https://clasign.osinfra.cn/sign/gitee_opengauss-1614047760000855378) to learn more), you need to submit your relevant personal data to the CLA signing system. We will obtain such personal data to verify whether you have signed the CLA, and to conduct relevant statistical analysis to understand how the Community is operating.
 
-- (d) **Meeting Service**. When you use our meeting service, we will collect your Gitee ID for configuring related permissions. If you have meeting scheduling permission, we will collect your email address used when you edit the meeting details for the purpose of sending meeting invitations. If you enable automatically screen recording when you schedule a meeting, the recording will be uploaded to the third-party platform Bilibili (https://www.bilibili.com/) after the meeting so that more interested individuals and organizations can review your meeting.
+- (d) **Meeting Service**. When you use our meeting service, we will collect your Gitee ID for configuring related permissions. If you have meeting scheduling permission, we will collect your email address used when you edit the meeting details for the purpose of sending meeting invitations. If you enable automatically screen recording when you schedule a meeting, the recording will be uploaded to the third-party platform [<u>Bilibili</u>](https://www.bilibili.com/) after the meeting so that more interested individuals and organizations can review your meeting.
 
-- (e)**Content Release**. When you participate in Community meetings, live broadcasts, blogs, Community activities, contribution in the open source Community, or newsgroups, your user name and the information you publish will be visible to the Community and the public for presenting your participation in the community. If you are a member of an openGauss Community organization or participate in community activities, we will request your avatar, name, email address, position, company name，school，individual resume and Gitee home page for posting on our website so that developers can better understand the community, quickly make contact, and participate in the community.
+- (e) **Content Release**. When you participate in Community meetings, Community activities, contribution in the open source Community, blogs, newsgroups, or Community organization, we will request your avatar, name, email address, company name, position, school, individual resume and Gitee ID for posting on our website so that developers can better understand the community, quickly make contact, and participate in the community.
 
 We may also collect your personal data from third parties, including other platforms or communities, within the scope of your authorization and consent, or obtain your personal data from other legal and public channels. We promise to process your personal data in strict accordance with applicable laws and regulations. Please read the privacy policies and user agreements of the third parties carefully. If a third party is required to provide your personal data when you use the openGauss Community, but you refuse to allow the third party to collect, use, transfer, or share your personal data when the third party provides services, you may not be able to use related services of the openGauss Community.
 
@@ -34,9 +34,9 @@ We may also collect your personal data from third parties, including other platf
 
   - (1)Required cookies: When you use the websites, cookies improve your Web browsing experience.
 
-  - (2)Statistical analysis cookies: We collect information about your use of our services, including your single or multiple visits, which help us understand how the services are running and used. We use the statistical analysis plugin provided by Baidu.
+  - (2)Statistical analysis cookies: We collect information about your use of our services, including your single or multiple visits, which help us understand how you interact with the services. We use the statistical analysis plugin provided by Baidu.
 
-Many services require cookies. If you do not allow cookies related to these services, you may not be able to use these services or some functions of these services.
+  Many services require cookies. If you do not allow cookies related to these services, you may not be able to use these services or specific functions of these services.
 
 - (c) **Do Not Track**. Many Web browsers provide the **Do Not Track** function, which can be used to send **Do Not Track** requests to websites. Currently, major Internet standardization organizations have not established policies to specify how websites should handle these requests. If you enable **Do Not Track** or other similar functions that your browser may provide, we will not change the way your data is collected and used as described in this Statement. However, we reserve the right to respond to your **Do Not Track** request and stop collecting your data without prior notice.
 
@@ -58,19 +58,17 @@ Sharing means providing third parties with your personal data. The third parties
 
 - (d) **Partners**. We may share your personal data with our partners. However, we will share your personal data only for legitimate, justified, necessary, specified, and explicit purposes, and share only the personal data necessary for providing our services. Our partners may include:
 
-   We integrate Baidu Statistics SDK from Beijing Baidu Netcom Science Technology Co., Ltd. to provide more complete and high-quality services and better support daily data analysis requirements of activity operations, user operations, and technology development. Baidu Statistics SDK needs to collect and use your necessary personal data, including device information (IP address, OS, network service provider, system language, screen resolution, screen color, region, browser type, browser language, and browser version), usage information (access source, search keyword, accessed pages, pop-ups, visitor ID, number of community accesses, stay duration, access timestamp, and server type and version). For details about the types and purposes of personal data collected and used by Baidu Statistics SDK, and how Baidu Statistics SDK protects the collected and used personal data, please read the [<u>Baidu Statistics Privacy Policy</u>](https://tongji.baidu.com/web/help/article?id=330&type=0) carefully.
+  - **1)** We integrate Baidu Statistics SDK from Beijing Baidu Netcom Science Technology Co., Ltd. to provide more complete and high-quality services and better support daily data analysis requirements of activity operations, user operations, and technology development. Baidu Statistics SDK needs to collect and use your necessary personal data, including device information (IP address, OS, network service provider, system language, screen resolution, screen color, region, browser type, browser language, and browser version), usage information (access source, search keyword, accessed pages, pop-ups, visitor ID, number of community accesses, stay duration, access timestamp, and server type and version). For details about the types and purposes of personal data collected and used by Baidu Statistics SDK, and how Baidu Statistics SDK protects the collected and used personal data, please read the [<u>Baidu Statistics Privacy Policy</u>](https://tongji.baidu.com/web/help/article?id=330&type=0) carefully.
 
 When we share your personal data with associated companies or partners, their responsibilities and obligations will be governed by contracts and we will require them to take appropriate measures to ensure the safety of the personal data processed.
 
 ## 4. How Long We Retain Your Personal Data For
 
-We will retain your personal data for no longer than is necessary for the purposes set out in this Statement, unless otherwise required by laws or requested by you.
+We will retain your personal data for no longer than is necessary for the purposes set out in this Statement, unless otherwise required by laws or requested by you. Generally, we will store or retain your personal data within the retention period according to applicable laws or service agreements from the date when you obtain your personal data in the openGauss Community. If your personal data has exceeded the retention period and no law requires us to continue processing your specific personal data, we will delete your personal data or anonymize it according to applicable laws.
 
-Generally, we will store or retain your personal data within the retention period according to applicable laws or service agreements from the date when you obtain your personal data in the openGauss Community. If your personal data has exceeded the retention period and no law requires us to continue processing your specific personal data, we will delete your personal data or anonymize it according to applicable laws.
+For example, the IP address, access timestamp, access source, accessed pages, access status, accessed resource size, OS, system language, browser type, browser language, browser version, and server type and version information collected for service optimization will be automatically deleted after 10 days.
 
-For example, the  IP address, access timestamp, access source, accessed pages, access status, accessed resource size, OS, system language, browser type, browser language, browser version, and server type and version information collected for service optimization will be automatically deleted after 10 days.
-
-For example, when the community no longer displays you as a member of the community, we will delete your personal data (Gitee information, GitHub information, avatar, name, email address, company/school, position/degree, personal profile, MindSpore development overview, personal photos) within one month.
+For example, when the community no longer displays you as a member of the community, we will delete your personal data (avatar, name, email address, company name, position, school, individual resume, Gitee ID) within one month.
 
 ## 5. How We Protect Your Personal Data
 
@@ -101,7 +99,7 @@ You can change the scope of your authorization for us to collect your personal d
 
 ## 7. Personal Data Storage Location
 
-Your personal data will be stored on servers in the People's Republic of China.
+Your personal data will be stored on servers in the Hong Kong Special Administrative Region of the People's Republic of China.
 
 ## 8. How This Statement Is Updated
 
@@ -119,8 +117,8 @@ Email: **contact@opengauss.org**
 
 Hotline: **+86 187-4087-2239**
 
-Last updated: **November 13, 2023**
+Last updated: **November 14, 2023**
 
-Privacy policy version: **v20231113**
+Privacy policy version: **v20231114**
 
 </div>

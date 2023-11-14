@@ -797,7 +797,7 @@ const handleLogout = async () => {
                         <OIcon
                           :class="{
                             reversal:
-                              isCollapse && activeName == index.toString(),
+                              isCollapse && activeName === index.toString(),
                           }"
                         >
                           <icon-down></icon-down>

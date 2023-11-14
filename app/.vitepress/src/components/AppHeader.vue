@@ -408,7 +408,6 @@ const searchLink = `/${lang.value}/search/`;
   width: 100%;
   position: fixed;
   left: 0;
-  // transition: all 0.3s linear;
   overflow: hidden;
   display: flex;
   opacity: 0;
