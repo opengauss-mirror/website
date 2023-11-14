@@ -86,7 +86,9 @@ RUN touch /var/run/nginx.pid \
     && usermod -s /sbin/nologin shutdown \
     && usermod -s /sbin/nologin halt \
     && echo "export TMOUT=1800 readonly TMOUT" >> /etc/profile \
-    && rm -rf /usr/bin/gdb*
+    && rm -rf /usr/bin/gdb* \
+    && rm -rf /usr/share/gdb \
+    && rm -rf /usr/share/gcc-10.3.1
 
 COPY ./monitor.sh ./entrypoint.sh /etc/nginx
 RUN chmod 500 /etc/nginx/monitor.sh \
