@@ -63,7 +63,7 @@ DSS 能力增强：DSS 支持通过 NoF+协议对接存储设备，实现更低�
 - 存储过程支持 resignal、signal、DIAGNOSTICS 语法，实现对报错、诊断信息的处理
 - 支持对 MySQL 协议的兼容，包括 unix domain socket、MySQL 系统参数、用户建连断连、prepare-execute 协议、普通 SQL 执行协议等
 
-更多具体发行说明请参考官网：https://docs.opengauss.org/zh/docs/5.1.0/docs/ReleaseNotes/Releasenotes.html
+更多具体发行说明请参考官网：https://docs-opengauss.osinfra.cn/zh/docs/5.1.0/docs/ReleaseNotes/Releasenotes.html
 
 ## 感谢 openGauss 社区的 5625 名开发者
 
