@@ -4,7 +4,8 @@ RUN mkdir -p /home/opengauss/web
 WORKDIR /home/opengauss/web
 COPY . /home/opengauss/web
 
-RUN git clone -b v2 https://gitee.com/opengauss/blog.git /home/opengauss/blog && \
+ARG BLOG_REPOSITORY
+RUN git clone -b v2 ${BLOG_REPOSITORY} /home/opengauss/blog && \
     cp -r /home/opengauss/blog/app/zh/blogs/* /home/opengauss/web/app/zh/blogs && \
     cp -r /home/opengauss/blog/app/en/blogs/* /home/opengauss/web/app/en/blogs && \
     rm -rf /home/opengauss/blog
