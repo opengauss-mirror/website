@@ -59,8 +59,6 @@ export default {
   RELEASE_DATE: '发布日期',
   CVSS_SCORE: 'CVSS评分',
   MODIFIED_TIME: '修改时间',
-  // OPERATION: '操作',
-  // DETAIL: '详情',
   REPORTING: '漏洞管理',
   INPUT_CVE_ID: '请输入CVE ID',
   INPUT_STATUS: '请输入状态',

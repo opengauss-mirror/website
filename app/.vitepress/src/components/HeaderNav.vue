@@ -78,7 +78,7 @@ const menuChangeActive = (item: any) => {
 
 <template>
   <nav class="o-nav">
-    <ul class="o-nav-list" :class="{ 'lang-en': lang == 'en' }">
+    <ul class="o-nav-list" :class="{ 'lang-en': lang === 'en' }">
       <li
         v-for="item in navItems"
         :key="item.ID"
