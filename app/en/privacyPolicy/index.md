@@ -16,13 +16,13 @@ The openGauss Community understands the importance of your privacy and fully res
 
 - (a) **Mail Subscription**. When you use our mail subscription service, we will collect your <u>**email address and name (optional)**</u>. We will provide you with the email subscription service through this email address to facilitate your participation in discussions in the Community.
 
-- (b) **Service Optimization**. To continuously understand the operating status of the openGauss Community and provide better services for you, we will deploy a third-party plugin in this program. The third-party plugin will collect and record information on your browser, computer, and mobile device, including but not limited to your <u>**IP address, access timestamp, access source, accessed pages, access status, accessed resource size, OS, system language, browser type, browser language, browser version, and server type and version**</u>. This will form the basis of our analysis, which helps us to better understand the openGauss Community operation.
+- (b) **Service Optimization**. To continuously understand the operating status of the openGauss Community and provide better services for you, we will deploy a third-party plugin in this program. The third-party plugin will collect and record information on your browser, computer, and mobile device <u>**IP address, access timestamp, access source, accessed pages, access status, accessed resource size, OS, system language, browser type, browser language, browser version, and server type and version**</u>. This will form the basis of our analysis, which helps us to better understand the openGauss Community operation.
 
 - (c) **Contributor License Agreement Signing**. When you participate in code contribution through the Contributor License Agreement ("CLA") signing system (click [<u>here</u>](https://clasign.osinfra.cn/sign/gitee_opengauss-1614047760000855378) to learn more), you need to submit your relevant personal data to the CLA signing system. We will obtain such personal data to verify whether you have signed the CLA, and to conduct relevant statistical analysis to understand how the Community is operating.
 
 - (d) **Meeting Service**. When you use our meeting service, we will collect your Gitee ID for configuring related permissions. If you have meeting scheduling permission, we will collect your email address used when you edit the meeting details for the purpose of sending meeting invitations. If you enable automatically screen recording when you schedule a meeting, the recording will be uploaded to the third-party platform [<u>Bilibili</u>](https://www.bilibili.com/) after the meeting so that more interested individuals and organizations can review your meeting.
 
-- (e)**Content Release**. When you participate in Community meetings, live broadcasts, blogs, Community activities, contribution in the open source Community, or newsgroups, your user name and the information you publish will be visible to the Community and the public for presenting your participation in the community. If you are a member of an openGauss Community organization or participate in community activities, we will request your avatar, name, email address, position, company name，school，individual resume and Gitee home page for posting on our website so that developers can better understand the community, quickly make contact, and participate in the community.
+- (e)**Content Release**. When you participate in Community meetings, Community activities, contribution in the open source Community, blogs, newsgroups, or Community  organization, we will request your avatar, name, email address, position, company name, school, individual resume and Gitee ID for posting on our website so that developers can better understand the community, quickly make contact, and participate in the community.
 
 We may also collect your personal data from third parties, including other platforms or communities, within the scope of your authorization and consent, or obtain your personal data from other legal and public channels. We promise to process your personal data in strict accordance with applicable laws and regulations. Please read the privacy policies and user agreements of the third parties carefully. If a third party is required to provide your personal data when you use the openGauss Community, but you refuse to allow the third party to collect, use, transfer, or share your personal data when the third party provides services, you may not be able to use related services of the openGauss Community.
 
@@ -70,7 +70,7 @@ Generally, we will store or retain your personal data within the retention perio
 
 For example, the  IP address, access timestamp, access source, accessed pages, access status, accessed resource size, OS, system language, browser type, browser language, browser version, and server type and version information collected for service optimization will be automatically deleted after 10 days.
 
-For example, when the community no longer displays you as a member of the community, we will delete your personal data (Gitee information, GitHub information, avatar, name, email address, company/school, position/degree, personal profile, MindSpore development overview, personal photos) within one month.
+For example, when the community no longer displays you as a member of the community, we will delete your personal data (avatar, name, email address, position, company name, school, individual resume, Gitee ID) within one month.
 
 ## 5. How We Protect Your Personal Data
 
@@ -101,7 +101,7 @@ You can change the scope of your authorization for us to collect your personal d
 
 ## 7. Personal Data Storage Location
 
-Your personal data will be stored on servers in the People's Republic of China.
+Your personal data will be stored on servers in the Hong Kong Special Administrative Region of the People's Republic of China.
 
 ## 8. How This Statement Is Updated
 
