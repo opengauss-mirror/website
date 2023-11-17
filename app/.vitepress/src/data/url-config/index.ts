@@ -57,6 +57,7 @@ const CLA_LINK = 'https://clasign.osinfra.cn/'; // cla签署
 const SAGE_LINK = 'https://sage.thesharps.us/'; // Sage Sharp
 const TRYME_LINK = 'https://tryme-opengauss.osinfra.cn/'; // tryme
 const BAIDU_HM = 'https://hm.baidu.com/hm.js?ace49cc6c2f3d0542e97ce86732094dc'; // 百度埋点
+const SUMMIT_LINK = 'https://shimo.im'; // SUMMIT报名
 
 export {
   GAUSS_EMAIL,
@@ -109,4 +110,5 @@ export {
   GIYHUB_LINK,
   APACHE_LINK,
   HAPROXY_LINK,
+  SUMMIT_LINK
 };

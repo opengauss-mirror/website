@@ -29,6 +29,25 @@ const goCollectPage = (link: string) => {
         <p v-for="item in summitData.details" :key="item">{{ item }}</p>
       </div>
 
+      <div class="collects">
+        <div
+          v-for="item in summitData.collects"
+          :key="item.link"
+          class="collects-item"
+          @click="goCollectPage(item.link)"
+        >
+          <div class="item-top">
+            <p v-for="title in item.title" :key="title">{{ title }}</p>
+          </div>
+
+          <div class="item-bottom">
+            <p v-for="titleEn in item.titleEN" :key="titleEn">
+              {{ titleEn }}
+            </p>
+          </div>
+        </div>
+      </div>
+
       <div class="previous">
         <div class="previous-title">
           <h3>{{ summitData.previous.title }}</h3>
@@ -58,6 +77,54 @@ const goCollectPage = (link: string) => {
     font-size: var(--o-font-size-tip);
     line-height: var(--o-line-height-tip);
     gap: 4px;
+  }
+}
+
+.collects {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  @media screen and (max-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media screen and (max-width: 767px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .collects-item {
+    padding: 64px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url('./img/card-bg.png');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    cursor: pointer;
+    height: 432px;
+    @media screen and (max-width: 820px) {
+      height: 388px;
+    }
+    @media screen and (max-width: 767px) {
+      padding: 40px 0;
+      width: 100%;
+      max-height: 312px;
+    }
+    .item-top {
+      font-size: 48px;
+      line-height: 64px;
+      color: #ffffff;
+      @media screen and (max-width: 768px) {
+        font-size: 40px;
+        line-height: 56px;
+      }
+    }
+    .item-bottom {
+      font-size: 32px;
+      line-height: 48px;
+      color: #ffffff;
+    }
   }
 }
 
