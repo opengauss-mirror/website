@@ -491,7 +491,6 @@ watch(
       }
     }
     .content-box {
-      min-height: 1948px;
       box-shadow: var(--o-shadow-l1);
       background-color: var(--o-color-bg2);
       @media (max-width: 768px) {
