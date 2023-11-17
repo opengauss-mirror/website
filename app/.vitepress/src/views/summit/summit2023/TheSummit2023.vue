@@ -6,8 +6,10 @@ import AppContent from '@/components/AppContent.vue';
 
 import liveLight from './img/live.png';
 import liveDark from './img/live-dark.png';
+import qrcode from './img/qrcode.png';
 
 import summitData from './data';
+import { SUMMIT2023_JOIN } from '@/data/url-config';
 import { useCommon } from '@/stores/common';
 import { windowOpen } from '@/shared/utils';
 
@@ -27,6 +29,18 @@ const goCollectPage = (link: string) => {
     <AppContent :mobile-top="40">
       <div class="summit-intro">
         <p v-for="item in summitData.details" :key="item">{{ item }}</p>
+      </div>
+
+      <div class="quick-start">
+        <img class="qrcode" :src="qrcode" />
+        <a
+          class="start-link"
+          :href="SUMMIT2023_JOIN"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <OButton size="small" type="primary"> 扫码报名 </OButton>
+        </a>
       </div>
 
       <div class="collects">
@@ -64,6 +78,7 @@ const goCollectPage = (link: string) => {
     </AppContent>
   </div>
 </template>
+
 <style lang="scss" scoped>
 .summit-intro {
   display: flex;
@@ -80,11 +95,36 @@ const goCollectPage = (link: string) => {
   }
 }
 
+.quick-start {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+  .start-link {
+    margin-top: 16px;
+  }
+
+  .qrcode {
+    width: 200px;
+    @media screen and (max-width: 1200px) {
+      width: 180px;
+    }
+  }
+}
+
+.dark {
+  .qrcode {
+    filter: brightness(0.8) grayscale(0.2) contrast(1.2);
+  }
+}
+
 .collects {
   margin-top: 40px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+
   @media screen and (max-width: 1200px) {
     grid-template-columns: repeat(2, 1fr);
   }
