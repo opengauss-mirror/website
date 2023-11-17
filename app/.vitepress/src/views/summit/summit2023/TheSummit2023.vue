@@ -137,7 +137,7 @@ const goCollectPage = (link: string) => {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-image: url('./img/card-bg.png');
+    background-image: url('@/views/summit/summit2023/img/card-bg.png');
     background-size: cover;
     background-position: center;
     text-align: center;
