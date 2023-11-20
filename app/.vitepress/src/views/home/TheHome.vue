@@ -10,7 +10,7 @@ import HomeShowCase from './HomeShowCase.vue';
 import HomeVideo from './HomeVideo.vue';
 import HomeNews from './HomeNews.vue';
 import LinkPanel from '@/components/LinkPanel.vue';
-import HomePlayground from './HomePlayground.vue';
+// import HomePlayground from './HomePlayground.vue';
 
 import homeConfig from '@/data/home/';
 
@@ -23,7 +23,7 @@ const i18n = useI18n();
     <HomeBanner />
     <AppContent>
       <HomeCharacteristic />
-      <HomePlayground />
+      <!-- <HomePlayground /> -->
     </AppContent>
 
     <HomeExplore />
