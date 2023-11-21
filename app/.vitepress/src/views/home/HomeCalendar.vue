@@ -241,7 +241,7 @@ const sigSelect = ref('');
 const meetingData = async () => {
   calendarData.value = [];
   renderData.value.timeData = [];
-  const res = await getMeetingData(sigSelect.value);
+  const res = await getMeetingData(sigSelect.value, true);
   calendarData.value = res.tableData || [];
 };
 // sig 选择
@@ -251,7 +251,7 @@ const selectSigChange = () => {
 // sig列表
 const sigGroup = ref<SigGroupData[]>([]);
 const meetingSig = async () => {
-  const res = await getMeetingSig();
+  const res = await getMeetingSig(true);
   sigGroup.value = res.length ? res : [];
 };
 
@@ -298,10 +298,13 @@ onMounted(() => {
   const paramsObj = getUrlParams(location.href);
   history.pushState(null, '', location.origin + '/' + lang.value + '/');
   if (paramsObj && paramsObj.code) {
-    loginMeeting({
-      code: paramsObj.code,
-      language: lang.value,
-    }).then((res) => {
+    loginMeeting(
+      {
+        code: paramsObj.code,
+        language: lang.value,
+      },
+      true
+    ).then((res) => {
       if (res.code === 200 && res.access) {
         meetingStore.meetingToken = res.access;
         loginMeetingApi();

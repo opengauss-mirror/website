@@ -6,8 +6,8 @@ import banner510_mb from '@/assets/category/home/banner/opengauss5.1.0_mo_zh.png
 import bannerEn510_mb from '@/assets/category/home/banner/opengauss5.1.0_mo_en.png';
 import bannerQuestionnaire from '@/assets/category/home/banner/banner-questionnaire.jpg';
 import bannerQuestionnaireMb from '@/assets/category/home/banner/banner-questionnaire-mb.png';
-import bannerSummit from '@/assets/category/summit/banner.png'
-import bannerSummitMo from '@/assets/category/summit/banner-mo.png'
+import bannerSummit from '@/assets/category/home/banner/banner-summit.jpg'
+import bannerSummitMo from '@/assets/category/home/banner/banner-summit_mo.png'
 import videoGif from '@/assets/category/home/video-player.gif';
 
 import { LEARN_VIDEO_LINK, DOCS_LINK } from '@/data/url-config';

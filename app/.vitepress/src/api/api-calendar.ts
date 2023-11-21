@@ -6,10 +6,10 @@ import type { AxiosResponse } from '@/shared/axios';
  * @name getMeetingData
  */
 
-export function getMeetingData(group: string) {
+export function getMeetingData(group: string, noLoading: boolean = false) {
   const url = `/api-meeting/meetingsdata/?group=${group}`;
   return request
-    .get(url, { $doException: true })
+    .get(url, { $doException: true, noLoading })
     .then((res: AxiosResponse) => res.data);
 }
 
@@ -18,10 +18,10 @@ export function getMeetingData(group: string) {
  * @name getMeetingSig
  * @return {Array}
  */
-export function getMeetingSig() {
+export function getMeetingSig(noLoading: boolean = false) {
   const url = '/api-meeting/groups/';
   return request
-    .get(url, { $doException: true })
+    .get(url, { $doException: true, noLoading })
     .then((res: AxiosResponse) => res.data);
 }
 
@@ -34,11 +34,12 @@ export function loginGitee() {
   return request.get(url).then((res: AxiosResponse) => res.data);
 }
 // 会议登录
-export function loginMeeting(params: object) {
+export function loginMeeting(params: object, noLoading: boolean = false) {
   const url = '/api-meeting/login/';
   return request
     .post(url, params, {
       $doException: true,
+      noLoading,
     })
     .then((res: AxiosResponse) => res.data);
 }
@@ -65,6 +66,7 @@ export function getUserInfo(token = '') {
         Authorization: 'Bearer ' + token,
       },
       $doException: true,
+      noLoading: true,
     })
     .then((res: AxiosResponse) => res.data);
 }
