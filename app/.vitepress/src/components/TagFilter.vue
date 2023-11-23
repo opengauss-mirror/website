@@ -69,20 +69,7 @@ const toggle = () => {
     &.max {
       max-height: 90px;
       overflow: auto;
-      &::-webkit-scrollbar-track {
-        border-radius: 4px;
-        background-color: #fff;
-      }
-
-      &::-webkit-scrollbar {
-        width: 6px;
-        background-color: #fff;
-      }
-
-      &::-webkit-scrollbar-thumb {
-        border-radius: 4px;
-        background: #ccc;
-      }
+      @include scrollbar;
     }
   }
 }

@@ -129,6 +129,11 @@ const windowWidth = ref(useWindowResize());
 </template>
 
 <style lang="scss" scoped>
+@include in-dark {
+  img {
+    @include img-in-dark;
+  }
+}
 .online-communication {
   .text {
     font-size: var(--o-font-size-text);

@@ -120,8 +120,10 @@ const handlerVideoDetail = (id: number, index: number) => {
 </template>
 
 <style lang="scss" scoped>
-.dark .cover {
-  filter: brightness(0.8) grayscale(0.2) contrast(1.2);
+@include in-dark {
+  .cover {
+    @include img-in-dark;
+  }
 }
 .tag-box {
   :deep(.el-card__body) {

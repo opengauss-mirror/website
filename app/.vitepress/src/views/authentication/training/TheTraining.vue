@@ -524,9 +524,9 @@ onUnmounted(() => {
 </template>
 
 <style lang="scss" scoped>
-.dark {
+@include in-dark {
   .item-head img {
-    filter: brightness(0.8) grayscale(0.2) contrast(1.2);
+    @include img-in-dark;
   }
   .training-mobile .train-step .step-box,
   .training-pc .train-step .step-box {
@@ -1091,8 +1091,10 @@ onUnmounted(() => {
     }
   }
 }
-.dark .training-pc {
-  --o-discount-bg: var(--o-color-greyblack4);
+@include in-dark {
+  .training-pc {
+    --o-discount-bg: var(--o-color-greyblack4);
+  }
 }
 .training-mobile {
   display: none;

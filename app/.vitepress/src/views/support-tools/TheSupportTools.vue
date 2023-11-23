@@ -102,8 +102,10 @@ const supporttoolsInfo = computed(() => {
 </template>
 
 <style lang="scss" scoped>
-.dark .cover {
-  filter: brightness(0.8) grayscale(0.2) contrast(1.2);
+@include in-dark {
+  .cover {
+    @include img-in-dark;
+  }
 }
 .support-tools {
   margin-bottom: var(--o-spacing-h4);

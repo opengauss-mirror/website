@@ -90,7 +90,7 @@ watch(
     }
   }
 }
-.dark {
+@include in-dark {
   .icon {
     color: var(--o-color-text1);
   }

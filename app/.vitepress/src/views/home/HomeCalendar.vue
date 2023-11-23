@@ -1517,20 +1517,7 @@ const handleLogout = async () => {
         height: fit-content;
         overflow: auto;
       }
-      &::-webkit-scrollbar-track {
-        border-radius: 4px;
-        background-color: var(--o-color-bg2);
-      }
-
-      &::-webkit-scrollbar {
-        width: 6px;
-        background-color: var(--o-color-bg2);
-      }
-
-      &::-webkit-scrollbar-thumb {
-        border-radius: 4px;
-        background: var(--o-color-division1);
-      }
+      @include scrollbar;
       .el-collapse-item__arrow {
         display: none;
       }

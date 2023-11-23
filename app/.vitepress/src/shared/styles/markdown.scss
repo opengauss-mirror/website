@@ -219,20 +219,7 @@
     z-index: 1;
     padding: 24px 40px;
     font-size: 14px;
-    &::-webkit-scrollbar-track {
-      border-radius: 4px;
-      background-color: var(--o-color-bg2);
-    }
-
-    &::-webkit-scrollbar {
-      height: 8px;
-      background-color: var(--o-color-bg2);
-    }
-
-    &::-webkit-scrollbar-thumb {
-      border-radius: 4px;
-      background: var(--o-color-bg4);
-    }
+    @include scrollbar;
     @media (max-width: 768px) {
       padding: 16px;
     }
@@ -301,8 +288,10 @@
     margin-bottom: --o-spacing-h8;
   }
 }
-.dark .markdown img {
-  filter: brightness(0.8) grayscale(0.2) contrast(1.2);
+@include in-dark {
+  .markdown img {
+    @include img-in-dark;
+  }
 }
 
 .contribution-markdown {

@@ -47,7 +47,7 @@ const scroll = () => {
     document.body.scrollTop || document.documentElement.scrollTop;
   const activeList: Array<number> = [];
   navRef.value.forEach((item: any, index: number) => {
-    if (scrollTop > item.offsetTop) {
+    if (scrollTop > item.offsetTop - 10) {
       activeList.push(index);
     }
   });
@@ -387,8 +387,10 @@ const handleChangeActiveMobile = (activeNames: any) => {
 </template>
 
 <style lang="scss" scoped>
-.dark .avatar {
-  filter: brightness(0.8) grayscale(0.2) contrast(1.2);
+@include in-dark {
+  .avatar {
+    @include img-in-dark;
+  }
 }
 .member-pc {
   display: block;

@@ -407,7 +407,9 @@ watch(
     }
   }
 }
-.dark img {
-  filter: brightness(80%) grayscale(20%) contrast(1.2);
+@include in-dark {
+  img {
+    filter: brightness(80%) grayscale(20%) contrast(1.2);
+  }
 }
 </style>

@@ -395,7 +395,7 @@ const searchLink = `/${lang.value}/search/`;
   }
 }
 
-.dark {
+@include in-dark {
   .drawer {
     background: rgba($color: #2e2e2e, $alpha: 0.9);
     @media screen and (max-width: 1439px) {

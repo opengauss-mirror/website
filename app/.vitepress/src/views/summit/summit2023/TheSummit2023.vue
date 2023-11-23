@@ -113,9 +113,10 @@ const goCollectPage = (link: string) => {
   }
 }
 
-.dark {
-  .qrcode {
-    filter: brightness(0.8) grayscale(0.2) contrast(1.2);
+@include in-dark {
+  .qrcode,
+  .collects-item {
+    @include img-in-dark;
   }
 }
 

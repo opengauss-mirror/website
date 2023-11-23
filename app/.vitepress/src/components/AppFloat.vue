@@ -1283,11 +1283,11 @@ onMounted(() => {
     }
   }
 }
-.dark {
+@include in-dark {
   .safety-tips,
   .questionnaire-tips,
   .float-head {
-    filter: brightness(0.8) grayscale(0.2) contrast(1.2);
+    @include img-in-dark;
   }
 }
 </style>

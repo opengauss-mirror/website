@@ -54,4 +54,9 @@ const isMobile = computed(() => (screenWidth.value <= 768 ? true : false));
     }
   }
 }
+@include in-dark {
+  .summit-banner {
+    @include img-in-dark;
+  }
+}
 </style>

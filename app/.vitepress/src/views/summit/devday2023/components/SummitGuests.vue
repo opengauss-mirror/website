@@ -75,8 +75,10 @@ const summitStyle = computed(() => {
 </template>
 
 <style scoped lang="scss">
-.dark img {
-  filter: brightness(0.8) grayscale(0.2) contrast(1.2);
+@include in-dark {
+  img {
+    @include img-in-dark;
+  }
 }
 .lecturer-list {
   margin: var(--o-spacing-h2) auto;

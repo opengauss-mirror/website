@@ -25,8 +25,10 @@ defineProps({
   </div>
 </template>
 <style scoped lang="scss">
-.dark .banner {
-  filter: brightness(80%) grayscale(20%) contrast(1.2);
+@include in-dark {
+  .banner {
+    filter: brightness(80%) grayscale(20%) contrast(1.2);
+  }
 }
 .banner {
   width: 100%;
