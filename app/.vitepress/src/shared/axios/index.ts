@@ -17,6 +17,7 @@ interface RequestConfig<D = any> extends AxiosRequestConfig {
   data?: D;
   $doException?: boolean; // 是否弹出错误提示框
   global?: boolean; // 是否为全局请求， 全局请求在清除请求池时，不清除
+  noLoading?: boolean; // 是否使用loading
 }
 
 // 全局loading
@@ -80,7 +81,7 @@ const pendingPool: Map<string, any> = new Map();
  */
 const requestInterceptorId = request.interceptors.request.use(
   (config: AxiosRequestConfig) => {
-    if (loadingCount === 0) {
+    if (loadingCount === 0 && !(config as RequestConfig).noLoading) {
       loadingInstance = ElLoading.service({
         fullscreen: true,
         target: 'body',

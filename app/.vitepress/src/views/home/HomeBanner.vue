@@ -8,8 +8,8 @@ import useWindowResize from '@/components/hooks/useWindowResize';
 
 import IconArrowRight from '~icons/app/icon-arrow-right.svg';
 
-import bannerText from '@/assets/category/summit/bannerText.png';
-import bannerTextMo from '@/assets/category/summit/bannerTextMo.png';
+import bannerText from '@/assets/category/home/banner/banner-summit-text.png';
+import bannerTextMo from '@/assets/category/home/banner/banner-summit-text_mo.png';
 
 const { lang } = useData();
 

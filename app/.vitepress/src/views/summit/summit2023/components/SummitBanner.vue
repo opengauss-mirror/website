@@ -20,7 +20,7 @@ const isMobile = computed(() => (screenWidth.value <= 768 ? true : false));
 </template>
 <style lang="scss" scoped>
 .summit-banner {
-  background-image: url('../img/banner.png');
+  background-image: url('../img/banner.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
