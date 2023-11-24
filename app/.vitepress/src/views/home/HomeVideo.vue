@@ -240,7 +240,9 @@ const windowWidth = useWindowResize();
   }
 }
 
-.dark .home-video-link {
-  filter: brightness(0.8) grayscale(0.2) contrast(1.2);
+@include in-dark {
+  .home-video-link {
+    @include img-in-dark;
+  }
 }
 </style>

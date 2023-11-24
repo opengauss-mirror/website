@@ -133,8 +133,10 @@ const toNewsContent = (path: string) => {
 ::-webkit-scrollbar {
   display: none;
 }
-.dark img {
-  filter: brightness(0.8) grayscale(0.2) contrast(1.2);
+@include in-dark {
+  img {
+    @include img-in-dark;
+  }
 }
 .news-list {
   display: grid;

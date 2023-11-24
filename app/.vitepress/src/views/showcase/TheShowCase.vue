@@ -432,8 +432,10 @@ $color: #fff;
     }
   }
 }
-.dark .el-card {
-  filter: brightness(80%) grayscale(20%) contrast(1.2);
+@include in-dark {
+  .el-card {
+    filter: brightness(80%) grayscale(20%) contrast(1.2);
+  }
 }
 .page-box {
   margin: var(--o-spacing-h2) 0 0;

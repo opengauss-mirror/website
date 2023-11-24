@@ -185,8 +185,10 @@ const handleChangeActiveMobile = (activeNames: number | '') => {
     line-height: var(--o-line-height-tip);
   }
 }
-.dark .avatar {
-  filter: brightness(0.8) grayscale(0.2) contrast(1.2);
+@include in-dark {
+  .avatar {
+    @include img-in-dark;
+  }
 }
 .member-pc {
   display: block;

@@ -356,7 +356,7 @@ function changeShowIndex(index: number) {
     }
   }
 }
-.dark {
+@include in-dark {
   h2 {
     background-image: url(@/assets/category/advanced/circle-dark.png),
       url(@/assets/category/advanced/ellipse-dark.png),

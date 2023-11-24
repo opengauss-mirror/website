@@ -32,7 +32,9 @@ const newsData = computed(() => {
   return lang.value === 'zh' ? NewsAllData.zh : NewsAllData.en;
 });
 const eventsData = computed(() => {
-  return lang.value === 'zh' ? homeConfig.homeEvents.zh : homeConfig.homeEvents.en;
+  return lang.value === 'zh'
+    ? homeConfig.homeEvents.zh
+    : homeConfig.homeEvents.en;
 });
 
 const resolvePostDate = (date: any) => {
@@ -310,9 +312,9 @@ onMounted(async () => {
   </div>
 </template>
 <style lang="scss" scoped>
-.dark {
+@include in-dark {
   .cover {
-    filter: brightness(0.8) grayscale(0.2) contrast(1.2);
+    @include img-in-dark;
   }
   .room-item-left {
     background-color: rgba($color: #bd72ff, $alpha: 0.11) !important;

@@ -326,4 +326,9 @@ html[lang='zh'] {
     }
   }
 }
+@include in-dark {
+  .banner-img {
+    @include img-in-dark;
+  }
+}
 </style>
