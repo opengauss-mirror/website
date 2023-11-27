@@ -4,6 +4,8 @@ import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';
 import dayjs from 'dayjs';
 
+import { cloneDeep } from 'lodash';
+
 import type { BlogItemT } from '@/shared/@types/type-blogs';
 import type { NewsItemT } from '@/shared/@types/type-news';
 
@@ -26,10 +28,10 @@ const blogList: Ref<BlogItemT[]> = ref([]);
 const newsList: Ref<NewsItemT[]> = ref([]);
 
 const blogData = computed(() => {
-  return lang.value === 'zh' ? blogsAllData.zh : blogsAllData.en;
+  return lang.value === 'zh' ? cloneDeep(blogsAllData.zh) : cloneDeep(blogsAllData.en);
 });
 const newsData = computed(() => {
-  return lang.value === 'zh' ? NewsAllData.zh : NewsAllData.en;
+  return lang.value === 'zh' ? cloneDeep(NewsAllData.zh) : cloneDeep(NewsAllData.en);
 });
 const eventsData = computed(() => {
   return lang.value === 'zh'
