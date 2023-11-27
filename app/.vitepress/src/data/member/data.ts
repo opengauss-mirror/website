@@ -2642,11 +2642,11 @@ export default {
     ],
     RELEASEMANAGEMENT: [
       {
-        img: caiyajie,
-        name: `蔡亚杰`,
+        img: zhubin,
+        name: `朱彬`,
         title: `Maintainer`,
-        email: `jieky.cai@huawei.com`,
-        gitee: `${GITEE_LINK}Cyj10727`,
+        email: `zhubin6@huawei.com`,
+        gitee: `${GITEE_LINK}Yoota_zhu`,
       },
       {
         img: wangjiang,
@@ -6564,11 +6564,11 @@ export default {
     ],
     RELEASEMANAGEMENT: [
       {
-        img: caiyajie,
-        name: `Yajie Cai`,
+        img: zhubin,
+        name: `Bin Zhu`,
         title: `Maintainer`,
-        email: `jieky.cai@huawei.com`,
-        gitee: `${GITEE_LINK}Cyj10727`,
+        email: `zhubin6@huawei.com`,
+        gitee: `${GITEE_LINK}Yoota_zhu`,
       },
       {
         img: wangjiang,
