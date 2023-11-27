@@ -3,7 +3,7 @@ title: '获奖名单出炉 ，鲲鹏应用创新大赛2023全国总决赛圆满
 date: '2023-11-03'
 tags: ['theme']
 category: 'news'
-banner: '/category/news/2023-11-03/banner.JPG'
+banner: '/category/news/2023-11-03/banner.jpg'
 author: 'openGauss'
 summary: '鲲鹏应用创新大赛2023全国总决赛openGauss赛道获奖名单公布'
 ---
@@ -16,5 +16,5 @@ summary: '鲲鹏应用创新大赛2023全国总决赛openGauss赛道获奖名单
 本次大赛在企业赛的基础上，增加了高校赛和科研赛，为高校团队提供了一个更加公平的竞赛环境，吸引了来自全国50多个顶尖院校的400多支队伍参赛，相比去年翻了两倍，并贡献了openEuler开源操作系统、openGauss开源数据库、鲲鹏HPC、机密计算等技术方向的优秀作品。**openGauss作为高校赛事的其中一个赛道，最终评选出2个金奖、2个银奖、2个铜奖。**
 
 
-<div style="text-align:center;margin:24px 0;"><img src="/zh/news/2023-11-03/poster.JPG" style="width: 50%"></div>
+<div style="text-align:center;margin:24px 0;"><img src="/zh/news/2023-11-03/poster.jpg" style="width: 50%"></div>
 
