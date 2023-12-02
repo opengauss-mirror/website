@@ -80,8 +80,6 @@ RUN touch /var/run/nginx.pid \
     && sed -i "s|HISTSIZE=1000|HISTSIZE=0|" /etc/profile \
     && sed -i "s|PASS_MAX_DAYS[ \t]*99999|PASS_MAX_DAYS 30|" /etc/login.defs \
     && passwd -l $NGINX_USER \
-    && yum remove gdb-gdbserver findutils passwd shadow -y \
-    && yum clean all \
     && usermod -s /sbin/nologin sync \
     && usermod -s /sbin/nologin shutdown \
     && usermod -s /sbin/nologin halt \
@@ -94,7 +92,9 @@ COPY ./deploy/monitor.sh ./deploy/entrypoint.sh /etc/nginx
 RUN chmod 500 /etc/nginx/monitor.sh \
     && chmod 500 /etc/nginx/entrypoint.sh \
     && chown nginx:nginx /etc/nginx/monitor.sh \
-    && chown nginx:nginx /etc/nginx/entrypoint.sh
+    && chown nginx:nginx /etc/nginx/entrypoint.sh \
+    && yum remove gdb-gdbserver findutils passwd shadow -y \
+    && yum clean all
 
 EXPOSE 8080
 
