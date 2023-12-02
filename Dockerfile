@@ -37,7 +37,7 @@ COPY --from=Builder /home/opengauss/web/app/.vitepress/dist /usr/share/nginx/www
 COPY ./sitemap/sitemap-en.xml ./sitemap/sitemap-zh.xml /usr/share/nginx/html/
 
 RUN yum update -y \
-    && yum install -y findutils passwd \
+    && yum install -y findutils passwd shadow \
     && find /usr/share/nginx/www -type d -print0| xargs -0 chmod 500 \
     && find /usr/share/nginx/www -type f -print0| xargs -0 chmod 400
 COPY ./deploy/nginx/nginx.conf /etc/nginx/nginx.conf
@@ -80,7 +80,7 @@ RUN touch /var/run/nginx.pid \
     && sed -i "s|HISTSIZE=1000|HISTSIZE=0|" /etc/profile \
     && sed -i "s|PASS_MAX_DAYS[ \t]*99999|PASS_MAX_DAYS 30|" /etc/login.defs \
     && passwd -l $NGINX_USER \
-    && yum remove gdb-gdbserver findutils passwd -y \
+    && yum remove gdb-gdbserver findutils passwd shadow -y \
     && yum clean all \
     && usermod -s /sbin/nologin sync \
     && usermod -s /sbin/nologin shutdown \
