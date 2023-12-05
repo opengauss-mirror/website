@@ -6,6 +6,14 @@ import {
 export default {
   zh: [
     {
+      pro: 'AScoDb数据库V1.0.0',
+      name: '首杭数字科技(山东)有限公司',
+      version: 'openGauss 5.0.0',
+      award: '2023-12-01',
+      expiration: '2026-03-31',
+      certificate: `${OBS_CERTIFICATION_LINK}%E9%A6%96%E6%9D%AD%E6%95%B0%E5%AD%97/AScoDb%20V1.0.0/Certificate.pdf`,
+    },
+    {
       pro: 'FitRDB数据库 V1.0.0',
       name: '南京烽火星空通信发展有限公司',
       version: 'openGauss 5.0.0',
@@ -162,6 +170,14 @@ export default {
     },
   ],
   en: [
+    {
+      pro: 'AScoDb数据库V1.0.0',
+      name: '首杭数字科技(山东)有限公司',
+      version: 'openGauss 5.0.0',
+      award: '2023-12-01',
+      expiration: '2026-03-31',
+      certificate: `${OBS_CERTIFICATION_LINK}%E9%A6%96%E6%9D%AD%E6%95%B0%E5%AD%97/AScoDb%20V1.0.0/Certificate.pdf`,
+    },
     {
       pro: 'FitRDB数据库 V1.0.0',
       name: '南京烽火星空通信发展有限公司',
