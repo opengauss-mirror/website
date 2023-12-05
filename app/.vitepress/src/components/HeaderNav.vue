@@ -190,16 +190,18 @@ const menuChangeActive = (item: any) => {
           line-height: var(--o-line-height-h3);
           text-align: center;
           font-size: var(--o-font-size-text);
-          color: var(--o-color-white);
+          color: var(--o-color-text1);
           display: block;
           white-space: nowrap;
           padding: 0 var(--o-spacing-h8);
           min-width: 106px;
-          &.active {
-            background-color: var(--o-color-brand1);
-          }
           &:hover {
             background-color: var(--o-color-brand1);
+            color: var(--o-color-white);
+          }
+          &.active {
+            background-color: var(--o-color-brand1);
+            color: var(--o-color-white);
           }
         }
       }
