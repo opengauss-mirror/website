@@ -5,7 +5,7 @@ export default [
     type: '操作系统',
     company: '统信软件技术有限公司',
     database: 'openGauss 5.0.0',
-    os: 'Ubuntu 18.04.4',
+    os: null,
     server: 'Kunpeng 920(Taishan 200)、Hygon 3185(H210-G30)',
     download:
       'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E7%BB%9F%E4%BF%A1%E8%BD%AF%E4%BB%B6/V20/Certificate.pdf',
