@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 
-import SummitBanner from './components/SummitBanner.vue';
 import AppContent from '@/components/AppContent.vue';
+import SummitBanner from './components/SummitBanner.vue';
+import SummitSchedule from './components/SummitSchedule.vue';
 
 import liveLight from './img/live.png';
 import liveDark from './img/live-dark.png';
@@ -11,16 +12,21 @@ import qrcode from './img/qrcode.png';
 import summitData from './data';
 import { SUMMIT2023_JOIN } from '@/data/url-config';
 import { useCommon } from '@/stores/common';
-import { windowOpen } from '@/shared/utils';
 
 const commonStore = useCommon();
 const liveImg = computed(() =>
   commonStore.theme === 'light' ? liveLight : liveDark
 );
-
-const goCollectPage = (link: string) => {
-  windowOpen(link, '_blank');
-};
+const getData = computed<Array<any>>(() => summitData.agenda);
+// 控制上下午切换
+const tabType = ref(0);
+const renderData = computed<Array<Object>>(() => {
+  if (tabType.value === 1) {
+    return getData.value[0].content.content.slice(1);
+  } else if (getData.value) {
+    return getData.value[0].content.content.slice(0, 1);
+  }
+});
 </script>
 <template>
   <div class="summit-2023">
@@ -42,26 +48,29 @@ const goCollectPage = (link: string) => {
           <OButton size="small" type="primary"> 扫码报名 </OButton>
         </a>
       </div>
-
-      <div class="collects">
-        <div
-          v-for="item in summitData.collects"
-          :key="item.link"
-          class="collects-item"
-          @click="goCollectPage(item.link)"
-        >
-          <div class="item-top">
-            <p v-for="title in item.title" :key="title">{{ title }}</p>
-          </div>
-
-          <div class="item-bottom">
-            <p v-for="titleEn in item.titleEN" :key="titleEn">
-              {{ titleEn }}
-            </p>
-          </div>
+      <div class="agenda">
+        <h3>会议日程</h3>
+        <div class="date">
+          {{ getData[0].title }}
+        </div>
+        <div>
+          <el-tabs v-model.number="tabType" class="schedule-tabs">
+            <el-tab-pane :name="0">
+              <template #label>
+                <div class="time-tabs">上午：主论坛</div>
+              </template>
+            </el-tab-pane>
+            <el-tab-pane :name="1">
+              <template #label>
+                <div class="time-tabs">下午：分论坛</div>
+              </template>
+            </el-tab-pane>
+          </el-tabs>
+          <template v-for="item in renderData" :key="item.lable">
+            <SummitSchedule :agenda-data="item" />
+          </template>
         </div>
       </div>
-
       <div class="previous">
         <div class="previous-title">
           <h3>{{ summitData.previous.title }}</h3>
@@ -114,58 +123,8 @@ const goCollectPage = (link: string) => {
 }
 
 @include in-dark {
-  .qrcode,
-  .collects-item {
+  .qrcode {
     @include img-in-dark;
-  }
-}
-
-.collects {
-  margin-top: 40px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-
-  @media screen and (max-width: 1200px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  @media screen and (max-width: 767px) {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  .collects-item {
-    padding: 64px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    background-image: url('@/views/summit/summit2023/img/card-bg.png');
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-    cursor: pointer;
-    height: 432px;
-    @media screen and (max-width: 820px) {
-      height: 388px;
-    }
-    @media screen and (max-width: 767px) {
-      padding: 40px 0;
-      width: 100%;
-      max-height: 312px;
-    }
-    .item-top {
-      font-size: 48px;
-      line-height: 64px;
-      color: #ffffff;
-      @media screen and (max-width: 768px) {
-        font-size: 40px;
-        line-height: 56px;
-      }
-    }
-    .item-bottom {
-      font-size: 32px;
-      line-height: 48px;
-      color: #ffffff;
-    }
   }
 }
 
@@ -173,6 +132,85 @@ const goCollectPage = (link: string) => {
   margin-top: var(--o-spacing-h1);
   @media screen and (max-width: 768px) {
     margin-top: var(--o-spacing-h2);
+  }
+}
+.agenda {
+  margin-top: var(--o-spacing-h1);
+  @media (max-width: 767px) {
+    margin-top: var(--o-spacing-h2);
+  }
+  h3 {
+    text-align: center;
+    font-size: var(--o-font-size-h3);
+    line-height: var(--o-line-height-h3);
+    color: var(--o-color-text1);
+    font-weight: 300;
+    @media (max-width: 767px) {
+      font-size: var(--o-font-size-h8);
+      line-height: var(--o-line-height-h8);
+    }
+  }
+  .date {
+    font-weight: 400;
+    color: var(--o-color-text1);
+    font-size: var(--o-font-size-h6);
+    line-height: var(--o-line-height-h6);
+    text-align: center;
+    margin-top: var(--o-spacing-h2);
+  }
+  .schedule-tabs {
+    position: relative;
+    text-align: center;
+    margin-top: 24px;
+    :deep(.el-tabs__content) {
+      overflow: visible;
+      .el-button {
+        position: absolute;
+        left: 0;
+        top: -75px;
+        z-index: 1;
+      }
+    }
+    :deep(.el-tabs__nav) {
+      float: none;
+      display: inline-block;
+      .el-tabs__active-bar {
+        display: none;
+      }
+      .el-tabs__item {
+        padding: 0;
+      }
+    }
+    :deep(.el-tabs__nav-wrap) {
+      &::after {
+        display: none;
+      }
+    }
+    .time-tabs {
+      display: inline-block;
+      margin: 0 0 24px;
+      cursor: pointer;
+      border: 1px solid var(--o-color-border2);
+      color: var(--o-color-text1);
+      text-align: center;
+      background: var(--o-color-bg2);
+      font-size: 14px;
+      line-height: 38px;
+      padding: 0 16px;
+      min-width: 172px;
+      @media (max-width: 1100px) {
+        line-height: 28px;
+        font-size: 12px;
+        padding: 0 12px;
+        min-width: 100px;
+      }
+    }
+
+    .is-active .time-tabs {
+      color: #fff;
+      background: var(--o-color-brand1);
+      border-color: var(--o-color-brand1);
+    }
   }
 }
 .previous {
