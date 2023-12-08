@@ -1,18 +1,12 @@
 <script setup lang="ts">
-import { computed } from 'vue';
 import summitData from '../data';
-
-import useWindowResize from '@/components/hooks/useWindowResize';
-
-const screenWidth = useWindowResize();
-const isMobile = computed(() => (screenWidth.value <= 768 ? true : false));
 </script>
 <template>
   <div class="summit-banner">
     <div class="banner-content">
       <img
         class="slogan"
-        :src="isMobile ? summitData.banner.slogan_mo : summitData.banner.slogan"
+        :src="summitData.banner.slogan"
         alt=""
       />
     </div>
