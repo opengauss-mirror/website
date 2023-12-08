@@ -9,8 +9,6 @@ import useWindowResize from '@/components/hooks/useWindowResize';
 import IconArrowRight from '~icons/app/icon-arrow-right.svg';
 
 import bannerText from '@/assets/category/home/banner/banner-summit-text.png';
-import bannerTextMo from '@/assets/category/home/banner/banner-summit-text_mo.png';
-
 const { lang } = useData();
 
 const windowWidth = ref(useWindowResize());
@@ -69,7 +67,7 @@ const clickRightInset = (path: string) => {
           <div class="banner-content">
             <img
               v-if="item.link.includes('/summit')"
-              :src="windowWidth > 767 ? bannerText : bannerTextMo"
+              :src=" bannerText"
               alt=""
               class="summit-title"
             />

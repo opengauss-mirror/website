@@ -17,14 +17,25 @@ const commonStore = useCommon();
 const liveImg = computed(() =>
   commonStore.theme === 'light' ? liveLight : liveDark
 );
-const getData = computed<Array<any>>(() => summitData.agenda);
+
+// 议程日期切换
+const dateList = [
+  { day: 27, month: 'DEC' },
+  { day: 28, month: 'DEC' },
+];
+const showIndex = ref(0);
+function setShowIndex(index: number) {
+  showIndex.value = index;
+  tabType.value = 0;
+}
+const getData = computed<any>(() => summitData.agenda[showIndex.value]);
 // 控制上下午切换
 const tabType = ref(0);
 const renderData = computed<Array<Object>>(() => {
   if (tabType.value === 1) {
-    return getData.value[0].content.content.slice(1);
+    return getData.value.content.content.slice(1);
   } else if (getData.value) {
-    return getData.value[0].content.content.slice(0, 1);
+    return getData.value.content.content.slice(0, 1);
   }
 });
 </script>
@@ -51,10 +62,23 @@ const renderData = computed<Array<Object>>(() => {
       <div class="agenda">
         <h3>会议日程</h3>
         <div class="date">
-          {{ getData[0].title }}
+          <div
+            v-for="(item, index) in dateList"
+            :key="item.day"
+            class="date-item"
+            :class="{ active: showIndex === index }"
+            @click="setShowIndex(index)"
+          >
+            <p class="date-day">{{ item.day }}</p>
+            <p class="date-month">{{ item.month }}</p>
+          </div>
         </div>
         <div>
-          <el-tabs v-model.number="tabType" class="schedule-tabs">
+          <el-tabs
+            v-if="showIndex === 1"
+            v-model.number="tabType"
+            class="schedule-tabs"
+          >
             <el-tab-pane :name="0">
               <template #label>
                 <div class="time-tabs">上午：主论坛</div>
@@ -151,12 +175,51 @@ const renderData = computed<Array<Object>>(() => {
     }
   }
   .date {
-    font-weight: 400;
-    color: var(--o-color-text1);
-    font-size: var(--o-font-size-h6);
-    line-height: var(--o-line-height-h6);
-    text-align: center;
-    margin-top: var(--o-spacing-h2);
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+    .date-item {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #cbcbcb;
+      border-radius: 8px;
+      border: 1px solid #cbcbcb;
+      transition: all 0.3s ease-out;
+
+      & ~ div {
+        margin-left: 40px;
+      }
+      &.active {
+        color: #fff;
+        background-color: var(--o-color-brand1);
+        border: 1px solid #fff;
+      }
+      .date-day {
+        padding: 13px 17px 3px 15px;
+        line-height: 48px;
+        font-size: 48px;
+        font-weight: 700;
+        border-bottom: 1px solid #cbcbcb;
+        @media screen and (max-width: 1120px) {
+          padding: 6px 16px;
+          font-size: 32px;
+          line-height: 32px;
+        }
+      }
+      .date-month {
+        padding: 6px 0;
+        font-size: 24px;
+        font-weight: 100;
+        line-height: 24px;
+        @media screen and (max-width: 1120px) {
+          padding: 4px 0;
+          font-size: 16px;
+        }
+      }
+    }
   }
   .schedule-tabs {
     position: relative;

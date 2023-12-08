@@ -1,12 +1,85 @@
 export default [
   {
-    name: 'agenda-28',
+    name: 'agenda-27',
     description: '',
-    title: '12月28日 openGauss Summit 2023',
+    title: '',
     content: {
       content: [
         {
-          lable: '',
+          lable: '工作会议（13:00-17:00）',
+          id: 'agenda27_1',
+          content: [
+            {
+              id: 'agenda27_1_1',
+              name: '',
+              content: [
+                {
+                  id: 'agenda27_1_1_1',
+                  time: '13:00-15:00',
+                  desc: '技术委员会工作会议',
+                  person: [
+                    {
+                      id: 'agenda27_1_1_1_1',
+                      name: '',
+                      post: '',
+                    },
+                  ],
+                  detail: '',
+                },
+                {
+                  id: 'agenda27_1_1_2',
+                  time: '13:00-15:00',
+                  desc: '用户委员会工作会议',
+                  person: [
+                    {
+                      id: 'agenda27_1_1_2_1',
+                      name: '',
+                      post: '',
+                    },
+                  ],
+                  detail: '',
+                },
+                {
+                  id: 'agenda27_1_1_3',
+                  time: '13:00-15:00',
+                  desc: '品牌委员会工作会议',
+                  person: [
+                    {
+                      id: 'agenda27_1_1_3_1',
+                      name: '',
+                      post: '',
+                    },
+                  ],
+                  detail: '',
+                },
+                {
+                  id: 'agenda27_1_1_4',
+                  time: '15:00-17:00',
+                  desc: '理事会工作会议',
+                  person: [
+                    {
+                      id: 'agenda27_1_1_4_1',
+                      name: '',
+                      post: '',
+                    },
+                  ],
+                  detail: '',
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+  },
+  {
+    name: 'agenda-28',
+    description: '',
+    title: '',
+    content: {
+      content: [
+        {
+          lable: 'openGauss Summit 2023 主论坛（09: 30-12: 15）',
           id: 'agenda28_1',
           content: [
             {
@@ -146,7 +219,7 @@ export default [
                 {
                   id: 'agenda28_1_1_11',
                   time: '10:50-10:55',
-                  desc: '2023年度openGauss标杆应用实践案例颁奖、2023年度优秀企业贡献奖颁奖、2023年度优秀开发者颁奖',
+                  desc: '2023年度openGauss标杆应用实践案例颁奖\n2023年度优秀企业贡献奖颁奖\n2023年度优秀开发者颁奖',
                   person: [
                     {
                       id: 'agenda28_1_1_11_1',
