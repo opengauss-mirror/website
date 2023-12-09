@@ -36,7 +36,8 @@ COPY --from=NginxBuilder /etc/nginx/mime.types  /etc/nginx/mime.types
 COPY --from=Builder /home/opengauss/web/app/.vitepress/dist /usr/share/nginx/www/
 COPY ./sitemap/sitemap-en.xml ./sitemap/sitemap-zh.xml /usr/share/nginx/html/
 
-RUN yum update -y \
+RUN sed -i "s|repo.openeuler.org|mirrors.pku.edu.cn/openeuler|g" /etc/yum.repos.d/openEuler.repo \
+    && yum update -y \
     && yum install -y findutils passwd shadow \
     && find /usr/share/nginx/www -type d -print0| xargs -0 chmod 500 \
     && find /usr/share/nginx/www -type f -print0| xargs -0 chmod 400
