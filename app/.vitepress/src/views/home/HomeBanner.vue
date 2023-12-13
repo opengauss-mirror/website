@@ -9,6 +9,8 @@ import useWindowResize from '@/components/hooks/useWindowResize';
 import IconArrowRight from '~icons/app/icon-arrow-right.svg';
 
 import bannerText from '@/assets/category/home/banner/banner-summit-text.png';
+
+import bannerKv from '@/assets/category/home/banner/summit-kv.mp4';
 const { lang } = useData();
 
 const windowWidth = ref(useWindowResize());
@@ -52,11 +54,33 @@ const clickRightInset = (path: string) => {
   <div class="home-banner">
     <el-carousel
       :height="windowWidth > 767 ? '480px' : '300px'"
-      :interval="5000000"
+      :interval="5000"
       trigger="click"
     >
       <el-carousel-item v-for="item in homeBanner" :key="item.link">
+        <div v-if="item.link.includes('/summit')" class="banner-summit" @click="jump(item, item.btn !== '')">
+          <div class="summit-banner-pc">
+            <video
+              muted
+              playsinline="true"
+              autoplay="true"
+              height="480"
+              loop
+              webkit-playsinline="true"
+              x5-playsinline="true"
+              mtt-playsinline="true"
+              :poster="item.pcBanner"
+              preload=""
+            >
+              <source type="video/mp4" :src="bannerKv" />
+            </video>
+          </div>
+          <div class="summit-banner-mo">
+            <img :src="bannerText" alt="" />
+          </div>
+        </div>
         <div
+          v-else
           class="banner-img"
           :class="{ 'no-btn': !item.btn, [item.className]: item.className }"
           :style="`background:url(${
@@ -65,13 +89,6 @@ const clickRightInset = (path: string) => {
           @click="jump(item, item.btn !== '')"
         >
           <div class="banner-content">
-            <img
-              v-if="item.link.includes('/summit')"
-              :src=" bannerText"
-              alt=""
-              class="summit-title"
-            />
-
             <div class="content-left">
               <div class="content-text">
                 <div
@@ -323,6 +340,46 @@ html[lang='zh'] {
       }
     }
   }
+  .banner-summit {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+  .summit-banner-pc {
+    height: 100%;
+    margin: 0 auto;
+    background: no-repeat center/cover;
+    video {
+      width: 100%;
+      @media screen and (max-width: 1920px) {
+        object-fit: cover;
+      }
+    }
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+  .summit-banner-mo {
+    display: none;
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      height: 100%;
+      display: block;
+      background-image: url(@/assets/category/home/banner/banner-summit_mo.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      position: relative;
+      img {
+        width: 247px;
+        position: absolute;
+        bottom: 8%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}
 }
 @include in-dark {
   .banner-img {

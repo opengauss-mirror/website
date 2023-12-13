@@ -3,48 +3,67 @@ import summitData from '../data';
 </script>
 <template>
   <div class="summit-banner">
-    <div class="banner-content">
-      <img
-        class="slogan"
-        :src="summitData.banner.slogan"
-        alt=""
-      />
+    <div class="summit-banner-pc">
+      <video
+        muted
+        playsinline="true"
+        autoplay="true"
+        height="380"
+        loop
+        webkit-playsinline="true"
+        x5-playsinline="true"
+        mtt-playsinline="true"
+        :poster="summitData.banner.bannerBg"
+        preload=""
+      >
+        <source type="video/mp4" :src="summitData.banner.bannerMp4" />
+      </video>
+    </div>
+    <div class="summit-banner-mo">
+      <img :src="summitData.banner.slogan" alt="" />
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
 .summit-banner {
-  background-image: url('../img/banner.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
   height: 380px;
   width: 100%;
   position: relative;
   @media screen and (max-width: 768px) {
-    background-image: url('../img/banner-mo.png');
     height: 300px;
   }
-  .banner-content {
-    width: 100%;
-    max-width: 1504px;
-    padding: 0 44px;
-    position: absolute;
-    bottom: 50%;
-    left: 50%;
-    transform: translate(-50%, 50%);
-    display: flex;
-    justify-content: end;
+  .summit-banner-pc {
+    height: 100%;
+    margin: 0 auto;
+    background: no-repeat center/cover;
+    video {
+      width: 100%;
+      @media screen and (max-width: 1920px) {
+        object-fit: cover;
+      }
+    }
     @media screen and (max-width: 768px) {
-      bottom: 28px;
-      transform: translate(-50%, 0%);
-      justify-content: center;
+      display: none;
     }
   }
-  .slogan {
-    width: 536px;
+  .summit-banner-mo {
+    display: none;
     @media screen and (max-width: 768px) {
-      width: 247px;
+      width: 100%;
+      height: 100%;
+      display: block;
+      background-image: url(../img/banner-mo.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      position: relative;
+      img {
+        width: 247px;
+        position: absolute;
+        bottom: 8%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
   }
 }
