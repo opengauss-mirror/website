@@ -1,8 +1,11 @@
 import slogan from '../img/slogan.png';
+import bannerBg from '../img/banner.jpg';
+import summitKv from '../video/summit-kv.mp4';
 import agenda from './agenda';
-
 export default {
   banner: {
+    bannerBg: bannerBg,
+    bannerMp4: summitKv,
     slogan: slogan,
   },
   details: [
