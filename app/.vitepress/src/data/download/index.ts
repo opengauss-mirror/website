@@ -1,3 +1,4 @@
+import download501 from './download5.0.1';
 import download510 from './download5.1.0';
 import download500 from './download5.0.0';
 import download311 from './download3.1.1';
@@ -11,12 +12,25 @@ import download200 from './download2.0.0';
 import download110 from './download1.1.0';
 import download101 from './download1.0.1';
 import download100 from './download1.0.0';
-// 注意因为要求历史版本页面的初始版本显示要设为除最新LTS版本外的最新LTS版本
-// 因为Preview版本和LTS的各自发行顺序可能有变化不能使用确定的规律逻辑，所以需用特殊参数来设置
-// 例如目前最近第二个发行的LTS版本是3.0.3 (LTS)，所以就给它的数据增加一个(initPrevious:true)
-// 如果之后发行了新的LTS版本在本页面添加新版本数据时记得修改(initPrevious:true)所在版本的位置
+// initPrevious参数表示控制进入历史版本页面后默认选中的版本
+// 因为目前的主力版本是3.0.5 (LTS)，所以就给它的数据增加一个(initPrevious:true)
+// 如果之后要修改历史版本页面的默认选中版本，可以修改(initPrevious:true)所在版本的位置
 // newLayout:true 代表使用新版下载页面结构布局，无此参数代表使用旧版
 const downloadData = [
+  {
+    name: '5.0.1 (LTS)',
+    newLayout:true,
+    data: download501,
+    plannedEOL: 'Planned EOL: 2026.03.31',
+    docs_list: [
+      {
+        name: '发行说明',
+        nameEn: 'Release Notes',
+        path: '/zh/news/2023-12-20/',
+        pathEn: '/zh/news/2023-12-20/',
+      },
+    ],
+  },
   {
     name: '5.1.0 (Preview)',
     newLayout: true,

@@ -50,6 +50,9 @@ const hoverTips = computed(() => (type: string | undefined) => {
     case 'lite':
       tips = i18n.value.download.LITE;
       break;
+      case 'finance':
+      tips = i18n.value.download.FINANCE;
+      break;
     default:
       tips = '';
       break;
@@ -226,7 +229,11 @@ watch(
           <template #default="scope">
             <div class="name-info">
               {{ scope.row.name }}
-              <template v-if="scope.row.table === 'server'">
+              <template
+                v-if="
+                  scope.row.table === 'server' && hoverTips(scope.row.edition)
+                "
+              >
                 <el-tooltip :effect="commonStore.theme" placement="right-start">
                   <template #content>
                     <p class="server-name">
