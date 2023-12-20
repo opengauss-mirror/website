@@ -58,7 +58,7 @@ const getData: any = computed(() => {
             <p>
               {{ downloadData.PECULIARITY_DETAIL
               }}<a
-                :href="DOCS_LINK + downloadData.RELEASE_LINK"
+                :href="downloadData.RELEASE_LINK"
                 target="_blank"
                 rel="noopener noreferrer"
                 >{{

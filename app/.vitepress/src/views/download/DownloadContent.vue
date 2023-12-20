@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { toRefs } from 'vue';
+import { toRefs, computed } from 'vue';
 import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';
 
@@ -22,6 +22,11 @@ const props = defineProps({
 const i18n = useI18n();
 const { lang } = useData();
 const { contentData, versionShown } = toRefs(props);
+const explainLink = computed(() => {
+  return (contentData.value[0] as any).docs_list[0][
+    lang.value === 'zh' ? 'path' : 'pathEn'
+  ];
+});
 </script>
 
 <template>
@@ -30,7 +35,11 @@ const { contentData, versionShown } = toRefs(props);
     <h4 class="subtitle">{{ (contentData[0] as any).plannedEOL }}</h4>
     <div class="other-link">
       <a
-        :href="DOCS_LINK + lang + (contentData[0] as any).docs_list[0][ lang === 'zh'?'path':'pathEn']"
+        :href="
+          explainLink.includes('.html')
+            ? DOCS_LINK + lang + explainLink
+            : explainLink
+        "
         target="_blank"
         rel="noopener noreferrer"
         >{{
