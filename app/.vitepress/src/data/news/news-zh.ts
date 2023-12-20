@@ -4,7 +4,7 @@ export default [
     summary: 'openGauss 5.0.1 Update 版本是 openGauss 5.0.0 Release 的补丁版本。基于 5.0.0 版本基础上，回合主干分支的部分需求和缺陷，发布 5.0.1 补丁版本。',
     archives: '2023-12',
     author: ['openGauss'],
-    banner: '/category/news/2023-11-21/banner.jpg',
+    banner: '/category/news/2023-12-20/banner.png',
     title: 'openGauss 5.0.1版本正式发布！',
     tags: ['theme'],
     path: 'zh/news/2023-12-20/',
