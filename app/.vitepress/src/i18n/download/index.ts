@@ -10,7 +10,7 @@ export default {
     ENTERPRISE: `具备更齐全的集群管理功能，适合企业用户`,
     SIMPLE: `安装配置简单，解压可用，适合个人开发者`,
     LITE: `精简功能，缩减安装包大小，内存占用更少`,
-    FINANCE:`安装指南同企业版`,
+    FINANCE:`满足金融行业标准，更适合金融行业用户；安装指南同企业版`,
     DISTRIBUTED: `基于ShardingSphere和k8s的分布式容器化镜像`,
     DONNLOAD_TIPS: `登录提示`,
     DONNLOAD_TEXT: `您尚未登录，请您登录或注册后继续下载最新版软件`,
@@ -60,7 +60,7 @@ export default {
     ENTERPRISE: `With more complete cluster management functions, suitable for enterprise users.`,
     SIMPLE: `Simple installation configuration, decompression available, suitable for individual developers.`,
     LITE: `Thin provisioning reduces the installation package size and occupies less memory.`,
-    FINANCE:`The installation guide is same as that of the Enterprise-Edition.`,
+    FINANCE:`Meets financial industry standards and is more suitable for users in the financial industry.`,
     DISTRIBUTED: `Distributed containerized image based on ShardingSphere and k8s.`,
     DESCRIPTION: [
       `The openGauss community releases are classified into two types: LTS and preview`,
