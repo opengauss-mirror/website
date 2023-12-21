@@ -365,7 +365,7 @@ watch(
   }
   .content-item {
     display: grid;
-    grid-template-columns: 192px 580px 445px;
+    grid-template-columns: 192px 580px 560px;
     padding: 20px 0px;
     transition: all 0.25s ease;
     align-items: center;
@@ -374,7 +374,10 @@ watch(
     & + .content-item {
       border-top: 1px solid var(--o-color-border2);
     }
-    @media screen and (max-width: 1328px) {
+    @media screen and (max-width: 1470px) {
+      grid-template-columns: 192px 580px 500px;
+    }
+    @media screen and (max-width: 1342px) {
       grid-template-columns: 192px 450px 400px;
     }
     @media screen and (max-width: 1100px) {

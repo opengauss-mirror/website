@@ -2,6 +2,7 @@ import slogan from '../img/slogan.png';
 import bannerBg from '../img/banner.jpg';
 import summitKv from '../video/summit-kv.mp4';
 import agenda from './agenda';
+import guests from './guests';
 export default {
   banner: {
     bannerBg: bannerBg,
@@ -13,6 +14,7 @@ export default {
     'openGauss Summit 2023是openGauss社区的年度盛会。本次峰会将汇聚学术专家、行业组织、企业客户、生态伙伴和社区贡献者，探讨数据库行业新趋势，交流生态共建新思路，分享企业联合创新成果，共同构建数据库新生态。',
   ],
   agenda,
+  guests,
   previous: {
     title: '精彩回顾',
     content: [
