@@ -647,6 +647,18 @@ onMounted(() => {
   bottom: 190px;
   right: 80px;
   z-index: 10;
+  @media (max-width: 1700px) {
+    right: 20px;
+  }
+  @media (max-width: 1560px) {
+    right: 2px;
+  }
+  @media (max-width: 1526px) {
+    right: 44px;
+  }
+  @media (max-width: 1439px) {
+    right: 24px;
+  }
   @media (max-width: 1100px) {
     position: sticky;
     bottom: 16px;
@@ -716,10 +728,13 @@ onMounted(() => {
       position: absolute;
       width: 200px;
       top: 0;
-      left: 0;
+      right: 0;
       background-color: var(--o-color-bg2);
       padding: 16px;
-      transform: translate(-42%, -110%);
+      transform: translate(34%, -110%);
+      @media (max-width: 1700px) {
+        transform: translate(0, -110%);
+      }
       .tip-title {
         color: var(--o-color-text1);
         font-size: 16px;
@@ -751,6 +766,9 @@ onMounted(() => {
         position: absolute;
         bottom: -14px;
         left: 50%;
+        @media (max-width: 1700px) {
+          left: 84%;
+        }
       }
     }
     .nav-item {
