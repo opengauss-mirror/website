@@ -4,6 +4,7 @@ import { computed, ref } from 'vue';
 import AppContent from '@/components/AppContent.vue';
 import SummitBanner from './components/SummitBanner.vue';
 import SummitSchedule from './components/SummitSchedule.vue';
+import SummitGuests from './components/SummitGuests.vue';
 
 import liveLight from './img/live.png';
 import liveDark from './img/live-dark.png';
@@ -23,7 +24,7 @@ const dateList = [
   { day: 27, month: 'DEC' },
   { day: 28, month: 'DEC' },
 ];
-const showIndex = ref(0);
+const showIndex = ref(1);
 function setShowIndex(index: number) {
   showIndex.value = index;
   tabType.value = 0;
@@ -94,6 +95,56 @@ const renderData = computed<Array<Object>>(() => {
             <SummitSchedule :agenda-data="item" />
           </template>
         </div>
+      </div>
+      <div class="guest">
+        <h3 class="guest-title">
+          {{ summitData.guests.title }}
+        </h3>
+        <h4>
+          {{ summitData.guests.guestListMain.title }}
+        </h4>
+        <SummitGuests
+          :lecturer-list="summitData.guests.guestListMain.guestList"
+          shape="circle"
+          :web-columns-num="4"
+          :mobile-columns-num="2"
+        />
+        <h4>
+          {{ summitData.guests.guestListSub1.title }}
+        </h4>
+        <SummitGuests
+          :lecturer-list="summitData.guests.guestListSub1.guestList"
+          shape="circle"
+          :web-columns-num="4"
+          :mobile-columns-num="2"
+        />
+        <h4>
+          {{ summitData.guests.guestListSub2.title }}
+        </h4>
+        <SummitGuests
+          :lecturer-list="summitData.guests.guestListSub2.guestList"
+          shape="circle"
+          :web-columns-num="4"
+          :mobile-columns-num="2"
+        />
+        <h4>
+          {{ summitData.guests.guestListSub3.title }}
+        </h4>
+        <SummitGuests
+          :lecturer-list="summitData.guests.guestListSub3.guestList"
+          shape="circle"
+          :web-columns-num="4"
+          :mobile-columns-num="2"
+        />
+        <h4>
+          {{ summitData.guests.guestListSub4.title }}
+        </h4>
+        <SummitGuests
+          :lecturer-list="summitData.guests.guestListSub4.guestList"
+          shape="circle"
+          :web-columns-num="4"
+          :mobile-columns-num="2"
+        />
       </div>
       <div class="previous">
         <div class="previous-title">
@@ -273,6 +324,42 @@ const renderData = computed<Array<Object>>(() => {
       color: #fff;
       background: var(--o-color-brand1);
       border-color: var(--o-color-brand1);
+    }
+  }
+}
+.guest {
+  margin-top: var(--o-spacing-h1);
+  @media (max-width: 767px) {
+    margin-top: var(--o-spacing-h2);
+  }
+  h3 {
+    text-align: center;
+    font-size: var(--o-font-size-h3);
+    line-height: var(--o-line-height-h3);
+    color: var(--o-color-text1);
+    font-weight: 300;
+    @media (max-width: 767px) {
+      font-size: var(--o-font-size-h8);
+      line-height: var(--o-line-height-h8);
+    }
+  }
+  h4 {
+    margin-top: 20px;
+    font-size: var(--o-font-size-h5);
+    line-height: var(--o-line-height-h5);
+    color: var(--o-color-text1);
+    font-weight: 400;
+    text-align: center;
+    @media screen and (max-width: 768px) {
+      font-size: var(--o-font-size-text);
+      line-height: var(--o-line-height-text);
+      margin-top: var(--o-spacing-h5);
+    }
+  }
+  .live-box {
+    margin-top: var(--o-spacing-h2);
+    @media (max-width: 767px) {
+      margin-top: var(--o-spacing-h4);
     }
   }
 }
