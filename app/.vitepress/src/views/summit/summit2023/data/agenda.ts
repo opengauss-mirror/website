@@ -79,7 +79,7 @@ export default [
     content: {
       content: [
         {
-          lable: 'openGauss Summit 2023 主论坛',
+          lable: '',
           id: 'agenda28_1',
           content: [
             {
@@ -89,7 +89,7 @@ export default [
                 {
                   id: 'agenda28_1_1_1',
                   time: '09:30-09:35',
-                  desc: '院士致辞',
+                  desc: '致辞',
                   person: [
                     {
                       id: 'agenda28_1_1_1_1',
@@ -102,7 +102,7 @@ export default [
                 {
                   id: 'agenda28_1_1_2',
                   time: '09:35-09:40',
-                  desc: '院士致辞',
+                  desc: '致辞',
                   person: [
                     {
                       id: 'agenda28_1_1_2_1',
@@ -115,7 +115,7 @@ export default [
                 {
                   id: 'agenda28_1_1_3',
                   time: '09:40-09:45',
-                  desc: '一所致辞',
+                  desc: '致辞',
                   person: [
                     {
                       id: 'agenda28_1_1_3_1',
@@ -128,7 +128,7 @@ export default [
                 {
                   id: 'agenda28_1_1_3',
                   time: '09:45-09:50',
-                  desc: 'CCF致辞',
+                  desc: '致辞',
                   person: [
                     {
                       id: 'agenda28_1_1_3_1',
@@ -141,7 +141,7 @@ export default [
                 {
                   id: 'agenda28_1_1_4',
                   time: '09:50-09:55',
-                  desc: '华为致辞',
+                  desc: '致辞',
                   person: [
                     {
                       id: 'agenda28_1_1_4_1',
@@ -193,7 +193,7 @@ export default [
                 {
                   id: 'agenda28_1_1_8',
                   time: '10:15-10:20',
-                  desc: '数据库产业发展趋势软协报告发布仪式 - 《根技术白皮书（数据库册）》',
+                  desc: '数据库产业发展趋势《中国软件根技术发展白皮书（数据库册）》发布',
                   person: [
                     {
                       id: 'agenda28_1_1_8_1',
@@ -223,7 +223,7 @@ export default [
                 },
                 {
                   id: 'agenda28_1_1_10',
-                  time: '10:35-10:38',
+                  time: '10:35-10:40',
                   desc: '2023年度openGauss标杆应用实践案例',
                   person: [
                     {
@@ -236,7 +236,7 @@ export default [
                 },
                 {
                   id: 'agenda28_1_1_11',
-                  time: '10:38-10:45',
+                  time: '10:40-10:45',
                   desc: '《重点行业数据库应用调研报告》',
                   person: [
                     {
@@ -249,19 +249,35 @@ export default [
                 },
                 {
                   id: 'agenda28_1_1_12',
-                  time: '10:45-11:15',
-                  desc: '客户案例分享',
+                  time: '10:45-10:55',
+                  desc: '依托磐维数据基石 共创自主创新之路',
                   person: [
                     {
                       id: 'agenda28_1_1_12_1',
                       name: '陈国',
                       post: '中移信息技术中心副总经理',
                     },
+                  ],
+                  detail: '',
+                },
+                {
+                  id: 'agenda28_1_1_12',
+                  time: '10:55-11:05',
+                  desc: '共建openGauss社区生态繁荣，打造联通CUDB云数据库核心能力',
+                  person: [
                     {
                       id: 'agenda28_1_1_12_1',
                       name: '钟忻',
-                      post: '联通云CTO',
+                      post: '联通云基础技术研发总经理',
                     },
+                  ],
+                  detail: '',
+                },
+                {
+                  id: 'agenda28_1_1_12',
+                  time: '11:05-11:15',
+                  desc: '联合打造openGauss金融版本赋能行业数字化转型',
+                  person: [
                     {
                       id: 'agenda28_1_1_12_1',
                       name: '周伟然',
@@ -271,37 +287,61 @@ export default [
                   detail: '',
                 },
                 {
-                  id: 'agenda28_1_1_13',
-                  time: '11:15-12:05',
-                  desc: '伙伴案例分享',
+                  id: 'agenda28_1_1_12',
+                  time: '11:15-11:30',
+                  desc: '智创未来-京东方携手海量数据夯实制造产业数据库新基座',
                   person: [
                     {
-                      id: 'agenda28_1_1_13_1',
+                      id: 'agenda28_1_1_12_1',
                       name: '林华',
                       post: '京东方CTIO组织云中心中心长',
                     },
                     {
-                      id: 'agenda28_1_1_13_1',
+                      id: 'agenda28_1_1_12_1',
                       name: '肖枫',
                       post: '海量数据总裁',
                     },
+                  ],
+                  detail: '',
+                },
+                {
+                  id: 'agenda28_1_1_12',
+                  time: '11:30-11:45',
+                  desc: '银行关键系统的选型考虑和最佳实践',
+                  person: [
                     {
-                      id: 'agenda28_1_1_13_1',
+                      id: 'agenda28_1_1_12_1',
                       name: '姜岩',
                       post: '哈尔滨银行科技管理部总经理',
                     },
                     {
-                      id: 'agenda28_1_1_13_1',
+                      id: 'agenda28_1_1_12_1',
                       name: '盖国强',
                       post: '云和恩墨创始人&总经理',
                     },
+                  ],
+                  detail: '',
+                },
+                {
+                  id: 'agenda28_1_1_12',
+                  time: '11:45-11:55',
+                  desc: '向量加持 一专多能GBase 8c赋能大模型时代政企数字化转型',
+                  person: [
                     {
-                      id: 'agenda28_1_1_13_1',
+                      id: 'agenda28_1_1_12_1',
                       name: '张益',
                       post: '南大通用产品总经理',
                     },
+                  ],
+                  detail: '',
+                },
+                {
+                  id: 'agenda28_1_1_12',
+                  time: '11:55-12:05',
+                  desc: '神通企业云管平台分享',
+                  person: [
                     {
-                      id: 'agenda28_1_1_13_1',
+                      id: 'agenda28_1_1_12_1',
                       name: '王天访',
                       post: '神舟通用售前咨询总监',
                     },
@@ -311,7 +351,20 @@ export default [
                 {
                   id: 'agenda28_1_1_14',
                   time: '12:05-12:10',
-                  desc: '2023年度优秀企业贡献奖颁奖仪式\n2023年度优秀开发者颁奖仪式',
+                  desc: '2023年度优秀企业贡献奖颁奖仪式',
+                  person: [
+                    {
+                      id: 'agenda28_1_1_14_1',
+                      name: '',
+                      post: '',
+                    },
+                  ],
+                  detail: '',
+                },
+                {
+                  id: 'agenda28_1_1_15',
+                  time: '12:10-12:15',
+                  desc: '2023年度优秀开发者颁奖仪式',
                   person: [
                     {
                       id: 'agenda28_1_1_14_1',
@@ -445,7 +498,7 @@ export default [
                     {
                       id: 'agenda28_2_1_9_1',
                       name: '刁新',
-                      post: '拓维信息智能计算事业群 副总裁',
+                      post: '拓维信息智能计算事业群副总裁',
                     },
                   ],
                   detail: '',
@@ -853,12 +906,17 @@ export default [
                 {
                   id: 'agenda28_2_1_1',
                   time: '15:00-15:30',
-                  desc: '中国移动磐维数据库产品技术分享',
+                  desc: '中国移动自研数据库产品介绍',
                   person: [
                     {
                       id: 'agenda28_2_1_1_1',
                       name: '崔凯峰',
                       post: '中国移动信息技术中心平台能力中心组件研发组总监&磐维数据库架构师',
+                    },
+                    {
+                      id: 'agenda28_2_1_1_2',
+                      name: '王小玉',
+                      post: '中国移动信息技术中心大数据BG数据库研发架构师',
                     },
                   ],
                   detail: '',

@@ -45,6 +45,7 @@ import wangjianye from '../img/guests/wangjianye.png';
 import wangtao from '../img/guests/wangtao.png';
 import zhangyubo from '../img/guests/zhangyubo.png';
 import zhannianke from '../img/guests/zhannianke.png';
+import wangtianfang from '../img/guests/wangtianfang.png';
 export default {
   title: '演讲嘉宾',
   guestListMain: {
@@ -145,6 +146,11 @@ export default {
         name: '张益',
         position: ['南大通用', '产品总经理'],
       },
+      {
+        img: wangtianfang,
+        name: '王天访',
+        position: ['神舟通用', '售前咨询总监'],
+      },
     ],
   },
   guestListSub1: {
@@ -221,7 +227,7 @@ export default {
       {
         img: yangzhao,
         name: '杨昭',
-        position: ['泛微信创', '解决方案负责人'],
+        position: ['泛微战略', '客户部总经理'],
       },
       {
         img: luohaixiong,
@@ -249,11 +255,6 @@ export default {
         position: ['openGauss社区', '秘书长'],
       },
       {
-        img: hechenghan,
-        name: '贺承汉',
-        position: ['openGauss开源数据库', '总工程师'],
-      },
-      {
         img: shayong,
         name: '沙勇',
         position: ['时代亿信', 'CTO'],
@@ -269,6 +270,11 @@ export default {
         position: ['宝兰德', '技术总监'],
       },
       {
+        img: hechenghan,
+        name: '贺承汉',
+        position: ['openGauss开源数据库', '总工程师'],
+      },
+      {
         img: tangyue,
         name: '唐月',
         position: ['易华录', '智慧城市事业部产品总监'],
@@ -278,6 +284,11 @@ export default {
   guestListSub4: {
     title: '神舟通用&中国移动分论坛嘉宾',
     guestList: [
+      {
+        img: wangtianfang,
+        name: '王天访',
+        position: ['神舟通用', '售前咨询总监'],
+      },
       {
         img: jiangdayong,
         name: '江大勇',
