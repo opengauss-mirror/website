@@ -159,7 +159,7 @@ export default [
                     {
                       id: 'agenda28_1_1_5_1',
                       name: '胡正策',
-                      post: '华为计算openEuler总经理、鲲鹏计算领域副总裁',
+                      post: 'openGauss社区理事会理事长',
                     },
                   ],
                   detail: '',
@@ -171,7 +171,7 @@ export default [
                   person: [
                     {
                       id: 'agenda28_1_1_6_1',
-                      name: '郑纬民、王小云、周傲英、江大勇、陈国、潘妍',
+                      name: '',
                       post: '',
                     },
                   ],
@@ -180,7 +180,7 @@ export default [
                 {
                   id: 'agenda28_1_1_7',
                   time: '10:10-10:15',
-                  desc: '联合发布仪式（行业用户自用版本发布）',
+                  desc: '联合发布仪式',
                   person: [
                     {
                       id: 'agenda28_1_1_7_1',
@@ -211,7 +211,7 @@ export default [
                     {
                       id: 'agenda28_1_1_9_1',
                       name: '李国良',
-                      post: 'openGauss社区技术委员会主席',
+                      post: 'openGauss社区技术委员会主席、清华计算机系长聘教授',
                     },
                     {
                       id: 'agenda28_1_1_9_2',
@@ -224,7 +224,7 @@ export default [
                 {
                   id: 'agenda28_1_1_10',
                   time: '10:35-10:40',
-                  desc: '2023年度openGauss标杆应用实践案例',
+                  desc: '2023年度openGauss标杆应用实践案例颁奖仪式',
                   person: [
                     {
                       id: 'agenda28_1_1_10_1',
@@ -556,7 +556,7 @@ export default [
                     {
                       id: 'agenda28_2_2_1_1',
                       name: '胡正策',
-                      post: 'openGauss社区理事长',
+                      post: 'openGauss社区理事会理事长',
                     },
                   ],
                   detail: '',

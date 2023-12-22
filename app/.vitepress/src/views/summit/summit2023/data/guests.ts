@@ -46,6 +46,10 @@ import wangtao from '../img/guests/wangtao.png';
 import zhangyubo from '../img/guests/zhangyubo.png';
 import zhannianke from '../img/guests/zhannianke.png';
 import wangtianfang from '../img/guests/wangtianfang.png';
+import sungang from '../img/guests/sungang.png';
+import wangxiaoyu from '../img/guests/wangxiaoyu.png';
+import liyuzhang from '../img/guests/liyuzhang.png';
+import liyongle from '../img/guests/liyongle.png';
 export default {
   title: '演讲嘉宾',
   guestListMain: {
@@ -79,12 +83,12 @@ export default {
       {
         img: huzhengce,
         name: '胡正策',
-        position: ['华为计算openEuler总经理', '鲲鹏计算领域副总裁'],
+        position: ['openGauss社区理事会', '理事长'],
       },
       {
         img: jiangdayong,
         name: '江大勇',
-        position: ['开放原子开源基金会理事长助理', 'openGauss顾问委员会委员'],
+        position: ['开放原子开源基金会', '理事长助理'],
       },
       {
         img: chenguo,
@@ -99,7 +103,7 @@ export default {
       {
         img: liguoliang,
         name: '李国良',
-        position: ['openGauss社区技术委员会', '主席'],
+        position: ['openGauss社区技术委员会主席', '清华计算机系长聘教授'],
       },
       {
         img: caiyajie,
@@ -150,6 +154,26 @@ export default {
         img: wangtianfang,
         name: '王天访',
         position: ['神舟通用', '售前咨询总监'],
+      },
+      {
+        img: xiongwei,
+        name: '熊伟',
+        position: ['开放原子开源基金会', 'TOC副主席'],
+      },
+      {
+        img: sungang,
+        name: '孙刚',
+        position: ['华为', 'ICT人才伙伴发展部部长'],
+      },
+      {
+        img: liyuzhang,
+        name: '李玉章',
+        position: ['华为', '2012实验室高斯部部长'],
+      },
+      {
+        img: liyongle,
+        name: '李永乐',
+        position: ['华为', '计算开源业务总经理'],
       },
     ],
   },
@@ -255,6 +279,16 @@ export default {
         position: ['openGauss社区', '秘书长'],
       },
       {
+        img: zhangyi,
+        name: '张益',
+        position: ['南大通用', 'GBase 8c产品总经理'],
+      },
+      {
+        img: sungang,
+        name: '孙刚',
+        position: ['华为', 'ICT人才伙伴发展部部长'],
+      },
+      {
         img: shayong,
         name: '沙勇',
         position: ['时代亿信', 'CTO'],
@@ -285,14 +319,14 @@ export default {
     title: '神舟通用&中国移动分论坛嘉宾',
     guestList: [
       {
+        img: jiangdayong,
+        name: '江大勇',
+        position: ['开放原子开源基金会', '理事长助理'],
+      },
+      {
         img: wangtianfang,
         name: '王天访',
         position: ['神舟通用', '售前咨询总监'],
-      },
-      {
-        img: jiangdayong,
-        name: '江大勇',
-        position: ['开放原子开源基金会理事长助理', 'openGauss顾问委员会委员'],
       },
       {
         img: guyunsu,
@@ -321,6 +355,11 @@ export default {
           '中国移动信息技术中心',
           '平台能力中心组件研发组总监&磐维数据库架构师',
         ],
+      },
+      {
+        img: wangxiaoyu,
+        name: '王小玉',
+        position: ['中国移动信息技术中心', '大数据BG数据库研发架构师'],
       },
       {
         img: guoyue,
