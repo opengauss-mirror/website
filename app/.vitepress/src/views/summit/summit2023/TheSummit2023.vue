@@ -5,6 +5,7 @@ import AppContent from '@/components/AppContent.vue';
 import SummitBanner from './components/SummitBanner.vue';
 import SummitSchedule from './components/SummitSchedule.vue';
 import SummitGuests from './components/SummitGuests.vue';
+import SummitLive from './components/SummitLive.vue';
 
 import liveLight from './img/live.png';
 import liveDark from './img/live-dark.png';
@@ -60,7 +61,14 @@ const renderData = computed<Array<Object>>(() => {
           <OButton size="small" type="primary"> 扫码报名 </OButton>
         </a>
       </div>
-      <div class="agenda">
+      <div class="summit-live">
+        <h3>{{ summitData.live.title }}</h3>
+        <SummitLive
+          :live-data="summitData.live.liveData"
+          class-name="live-btn2"
+        ></SummitLive>
+      </div>
+      <div class="summit-agenda">
         <h3>会议日程</h3>
         <div class="date">
           <div
@@ -96,7 +104,7 @@ const renderData = computed<Array<Object>>(() => {
           </template>
         </div>
       </div>
-      <div class="guest">
+      <div class="summit-guest">
         <h3 class="guest-title">
           {{ summitData.guests.title }}
         </h3>
@@ -146,7 +154,7 @@ const renderData = computed<Array<Object>>(() => {
           :mobile-columns-num="2"
         />
       </div>
-      <div class="previous">
+      <div class="summit-previous">
         <div class="previous-title">
           <h3>{{ summitData.previous.title }}</h3>
           <img :src="liveImg" alt="live" />
@@ -164,6 +172,29 @@ const renderData = computed<Array<Object>>(() => {
 </template>
 
 <style lang="scss" scoped>
+@include in-dark {
+  .qrcode {
+    @include img-in-dark;
+  }
+}
+
+@mixin floor-box {
+  margin-top: var(--o-spacing-h1);
+  @media screen and (max-width: 768px) {
+    margin-top: var(--o-spacing-h2);
+  }
+}
+@mixin floor-title {
+  text-align: center;
+  font-size: var(--o-font-size-h3);
+  line-height: var(--o-line-height-h3);
+  color: var(--o-color-text1);
+  font-weight: 300;
+  @media (max-width: 767px) {
+    font-size: var(--o-font-size-h8);
+    line-height: var(--o-line-height-h8);
+  }
+}
 .summit-intro {
   display: flex;
   flex-direction: column;
@@ -196,34 +227,19 @@ const renderData = computed<Array<Object>>(() => {
     }
   }
 }
-
-@include in-dark {
-  .qrcode {
-    @include img-in-dark;
-  }
-}
-
-@mixin floor-box {
-  margin-top: var(--o-spacing-h1);
-  @media screen and (max-width: 768px) {
-    margin-top: var(--o-spacing-h2);
-  }
-}
-.agenda {
-  margin-top: var(--o-spacing-h1);
-  @media (max-width: 767px) {
-    margin-top: var(--o-spacing-h2);
-  }
+.summit-live {
+  @include floor-box();
   h3 {
-    text-align: center;
-    font-size: var(--o-font-size-h3);
-    line-height: var(--o-line-height-h3);
-    color: var(--o-color-text1);
-    font-weight: 300;
-    @media (max-width: 767px) {
-      font-size: var(--o-font-size-h8);
-      line-height: var(--o-line-height-h8);
-    }
+    @include floor-title();
+  }
+  .live-room {
+    @include floor-title();
+  }
+}
+.summit-agenda {
+  @include floor-box();
+  h3 {
+    @include floor-title();
   }
   .date {
     display: flex;
@@ -327,21 +343,10 @@ const renderData = computed<Array<Object>>(() => {
     }
   }
 }
-.guest {
-  margin-top: var(--o-spacing-h1);
-  @media (max-width: 767px) {
-    margin-top: var(--o-spacing-h2);
-  }
+.summit-guest {
+  @include floor-box();
   h3 {
-    text-align: center;
-    font-size: var(--o-font-size-h3);
-    line-height: var(--o-line-height-h3);
-    color: var(--o-color-text1);
-    font-weight: 300;
-    @media (max-width: 767px) {
-      font-size: var(--o-font-size-h8);
-      line-height: var(--o-line-height-h8);
-    }
+    @include floor-title();
   }
   h4 {
     margin-top: 20px;
@@ -363,7 +368,7 @@ const renderData = computed<Array<Object>>(() => {
     }
   }
 }
-.previous {
+.summit-previous {
   @include floor-box();
   .previous-title {
     display: flex;
