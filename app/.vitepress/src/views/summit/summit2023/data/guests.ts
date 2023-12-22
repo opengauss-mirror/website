@@ -118,7 +118,7 @@ export default {
       {
         img: zhongxin,
         name: '钟忻',
-        position: ['联通云', 'CTO'],
+        position: ['联通云', '基础技术研发总经理'],
       },
       {
         img: zhouweiran,

@@ -191,8 +191,21 @@ export default [
                   detail: '',
                 },
                 {
-                  id: 'agenda28_1_1_8',
+                  id: 'agenda28_1_1_11',
                   time: '10:15-10:20',
+                  desc: '《重点行业数据库应用调研报告》',
+                  person: [
+                    {
+                      id: 'agenda28_1_1_11_1',
+                      name: '杨晓骋',
+                      post: '沙利文咨询合伙人兼董事总经理',
+                    },
+                  ],
+                  detail: '',
+                },
+                {
+                  id: 'agenda28_1_1_8',
+                  time: '10:20-10:25',
                   desc: '数据库产业发展趋势《中国软件根技术发展白皮书（数据库册）》发布',
                   person: [
                     {
@@ -205,7 +218,7 @@ export default [
                 },
                 {
                   id: 'agenda28_1_1_9',
-                  time: '10:20-10:35',
+                  time: '10:25-10:40',
                   desc: '全方位技术创新，共创数据库新未来',
                   person: [
                     {
@@ -216,14 +229,14 @@ export default [
                     {
                       id: 'agenda28_1_1_9_2',
                       name: '蔡亚杰',
-                      post: 'openGauss 社区秘书长',
+                      post: 'openGauss社区秘书长',
                     },
                   ],
                   detail: '',
                 },
                 {
                   id: 'agenda28_1_1_10',
-                  time: '10:35-10:40',
+                  time: '10:40-10:45',
                   desc: '2023年度openGauss标杆应用实践案例颁奖仪式',
                   person: [
                     {
@@ -234,19 +247,7 @@ export default [
                   ],
                   detail: '',
                 },
-                {
-                  id: 'agenda28_1_1_11',
-                  time: '10:40-10:45',
-                  desc: '《重点行业数据库应用调研报告》',
-                  person: [
-                    {
-                      id: 'agenda28_1_1_11_1',
-                      name: '杨晓骋',
-                      post: '沙利文咨询合伙人兼董事总经理',
-                    },
-                  ],
-                  detail: '',
-                },
+               
                 {
                   id: 'agenda28_1_1_12',
                   time: '10:45-10:55',
