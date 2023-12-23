@@ -116,6 +116,7 @@ const renderData = computed<Array<Object>>(() => {
           shape="circle"
           :web-columns-num="4"
           :mobile-columns-num="2"
+          class="prime-forum"
         />
         <h4>
           {{ summitData.guests.guestListSub1.title }}
@@ -414,6 +415,45 @@ const renderData = computed<Array<Object>>(() => {
             margin-top: var(--o-spacing-h8);
           }
         }
+      }
+    }
+  }
+}
+
+:deep(.prime-forum) {
+  .lecturer-list-item {
+    &:nth-child(1) {
+      grid-column-start: 2;
+      grid-column-end: 3;
+
+      @media (max-width: 1416px) {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        margin-right: -100%;
+      }
+
+      @media (max-width: 768px) {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        margin-right: 0;
+      }
+    }
+
+    &:nth-child(2) {
+      grid-column-start: 3;
+      grid-column-end: 5;
+      margin-left: -50%;
+
+      @media (max-width: 1416px) {
+        grid-column-start: 3;
+        grid-column-end: 4;
+        margin-left: -100%;
+      }
+
+      @media (max-width: 768px) {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        margin-left: 0;
       }
     }
   }
