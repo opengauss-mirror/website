@@ -418,4 +418,16 @@ const renderData = computed<Array<Object>>(() => {
     }
   }
 }
+
+:deep(.lecturer-list-item) {
+  &:nth-child(1) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  &:nth-child(2) {
+    grid-column-start: 3;
+    grid-column-end: 5;
+  }
+}
 </style>

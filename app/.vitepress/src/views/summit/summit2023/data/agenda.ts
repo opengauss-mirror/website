@@ -247,11 +247,10 @@ export default [
                   ],
                   detail: '',
                 },
-               
                 {
                   id: 'agenda28_1_1_12',
                   time: '10:45-10:55',
-                  desc: '依托磐维数据基石 共创自主创新之路',
+                  desc: '依托磐维数据基石 共谋自主创新之路',
                   person: [
                     {
                       id: 'agenda28_1_1_12_1',
@@ -313,7 +312,7 @@ export default [
                     {
                       id: 'agenda28_1_1_12_1',
                       name: '姜岩',
-                      post: '哈尔滨银行科技管理部总经理',
+                      post: '哈尔滨银行数据中心总经理',
                     },
                     {
                       id: 'agenda28_1_1_12_1',
@@ -339,7 +338,7 @@ export default [
                 {
                   id: 'agenda28_1_1_12',
                   time: '11:55-12:05',
-                  desc: '神通企业云管平台分享',
+                  desc: '神舟通用数据库创新实践',
                   person: [
                     {
                       id: 'agenda28_1_1_12_1',
@@ -710,8 +709,8 @@ export default [
                   person: [
                     {
                       id: 'agenda28_2_1_1_1',
-                      name: '蔡亚杰',
-                      post: 'openGauss社区秘书长',
+                      name: '江大勇',
+                      post: '开放原子开源基金会理事长助理',
                     },
                   ],
                   detail: '',
@@ -846,8 +845,8 @@ export default [
                   person: [
                     {
                       id: 'agenda28_2_1_1_1',
-                      name: '江大勇',
-                      post: '开放原子开源基金会理事长助理',
+                      name: '李永乐',
+                      post: '华为计算开源业务总经理',
                     },
                   ],
                   detail: '',
