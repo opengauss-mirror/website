@@ -61,7 +61,7 @@ const renderData = computed<Array<Object>>(() => {
           <OButton size="small" type="primary"> 扫码报名 </OButton>
         </a>
       </div>
-      <div v-if="false" class="summit-live">
+      <div class="summit-live">
         <h3>{{ summitData.live.title }}</h3>
         <SummitLive
           :live-data="summitData.live.liveData"
