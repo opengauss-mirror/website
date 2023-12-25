@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue';
+import { computed, ref,onMounted } from 'vue';
 
 import AppContent from '@/components/AppContent.vue';
 import SummitBanner from './components/SummitBanner.vue';
@@ -14,6 +14,7 @@ import qrcode from './img/qrcode.png';
 import summitData from './data';
 import { SUMMIT2023_JOIN } from '@/data/url-config';
 import { useCommon } from '@/stores/common';
+import { getUrlParams } from '@/shared/utils';
 
 const commonStore = useCommon();
 const liveImg = computed(() =>
@@ -39,6 +40,30 @@ const renderData = computed<Array<Object>>(() => {
   } else if (getData.value) {
     return getData.value.content.content.slice(0, 1);
   }
+});
+
+// 埋点统计投放流量
+function collectAdvertisedData() {
+  const sensors = (window as any)['sensorsDataAnalytic201505'];
+  const { href } = window.location;
+  const regex = /[\?&]utm_source=/;
+  const containsUtmSource = regex.test(href);
+  if (!containsUtmSource) {
+    return;
+  }
+  const paramsArr = getUrlParams(href);
+  sensors?.setProfile({
+    ...(window as any)['sensorsCustomBuriedData'],
+    profileType: 'fromAdvertised',
+    origin: href,
+    ...paramsArr,
+  });
+  history.pushState(null, '', location.origin + location.pathname);
+}
+onMounted(() => {
+  setTimeout(() => {
+    collectAdvertisedData();
+  }, 300);
 });
 </script>
 <template>
