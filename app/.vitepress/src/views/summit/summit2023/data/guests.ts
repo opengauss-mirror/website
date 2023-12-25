@@ -50,6 +50,7 @@ import sungang from '../img/guests/sungang.png';
 import wangxiaoyu from '../img/guests/wangxiaoyu.png';
 import liyuzhang from '../img/guests/liyuzhang.png';
 import liyongle from '../img/guests/liyongle.png';
+import xuyang from '../img/guests/xuyang.png';
 
 export default {
   title: '演讲嘉宾',
@@ -260,6 +261,11 @@ export default {
         position: ['云和恩墨', '客户成功部研发架构师'],
       },
       {
+        img: xuyang,
+        name: '徐杨',
+        position: ['民生银行', '数据库技术专家'],
+      },
+      {
         img: lijing,
         name: '李京',
         position: ['百信信息技术有限公司', '解决方案总经理'],
@@ -282,7 +288,7 @@ export default {
       {
         img: zhangyi,
         name: '张益',
-        position: ['南大通用', 'GBase 8c产品总经理'],
+        position: ['南大通用', '产品总经理'],
       },
       {
         img: sungang,

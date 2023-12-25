@@ -135,6 +135,7 @@ const renderData = computed<Array<Object>>(() => {
           shape="circle"
           :web-columns-num="4"
           :mobile-columns-num="2"
+          class="last-forum"
         />
         <h4>
           {{ summitData.guests.guestListSub3.title }}
@@ -153,6 +154,7 @@ const renderData = computed<Array<Object>>(() => {
           shape="circle"
           :web-columns-num="4"
           :mobile-columns-num="2"
+          class="last-forum2"
         />
       </div>
       <div class="summit-previous">
@@ -422,14 +424,14 @@ const renderData = computed<Array<Object>>(() => {
 
 :deep(.prime-forum) {
   .lecturer-list-item {
-    &:nth-child(1) {
+    &:nth-child(1),
+    &:nth-last-of-type(2) {
       grid-column-start: 2;
       grid-column-end: 3;
 
       @media (max-width: 1416px) {
         grid-column-start: 1;
         grid-column-end: 2;
-        margin-right: -100%;
       }
 
       @media (max-width: 768px) {
@@ -439,21 +441,84 @@ const renderData = computed<Array<Object>>(() => {
       }
     }
 
-    &:nth-child(2) {
+    &:nth-child(2),
+    &:nth-last-of-type(1) {
       grid-column-start: 3;
       grid-column-end: 5;
       margin-left: -50%;
 
       @media (max-width: 1416px) {
-        grid-column-start: 3;
-        grid-column-end: 4;
-        margin-left: -100%;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        margin-left: 0;
       }
 
       @media (max-width: 768px) {
         grid-column-start: 2;
         grid-column-end: 3;
         margin-left: 0;
+      }
+    }
+    &:nth-last-of-type(2) {
+      @media (max-width: 1416px) {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        @media (max-width: 768px) {
+          grid-column-start: 1;
+          grid-column-end: 2;
+          margin-right: 0;
+        }
+      }
+    }
+    &:nth-last-of-type(1) {
+      @media (max-width: 1416px) {
+        grid-column-start: 3;
+        grid-column-end: 4;
+        @media (max-width: 768px) {
+          grid-column-start: 2;
+          grid-column-end: 3;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+:deep(.last-forum) {
+  .lecturer-list-item {
+    &:nth-last-of-type(1) {
+      grid-column-end: span 4;
+      justify-self: center;
+      @media (max-width: 1416px) {
+        grid-column-end: span 1;
+      }
+    }
+  }
+}
+:deep(.last-forum2) {
+  .lecturer-list-item {
+    &:nth-last-of-type(2) {
+      grid-column-start: 2;
+      grid-column-end: 3;
+      @media (max-width: 1416px) {
+        grid-column-start: 3;
+        grid-column-end: 4;
+      }
+      @media (max-width: 768px) {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        margin-right: 0;
+      }
+    }
+    &:nth-last-of-type(1) {
+      grid-column-start: 3;
+      grid-column-end: 4;
+      @media (max-width: 1416px) {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        @media (max-width: 768px) {
+          grid-column-start: 2;
+          grid-column-end: 3;
+        }
       }
     }
   }

@@ -206,7 +206,7 @@ export default [
                 {
                   id: 'agenda28_1_1_8',
                   time: '10:20-10:25',
-                  desc: '数据库产业发展趋势《中国软件根技术发展白皮书（数据库册）》发布',
+                  desc: '数据库产业发展趋势\n《中国软件根技术发展白皮书（数据库册）》发布',
                   person: [
                     {
                       id: 'agenda28_1_1_8_1',
@@ -723,7 +723,7 @@ export default [
                     {
                       id: 'agenda28_2_1_1_1',
                       name: '张益',
-                      post: '南大通用GBase 8c产品总经理',
+                      post: '南大通用产品总经理',
                     },
                   ],
                   detail: '',
