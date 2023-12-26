@@ -10,40 +10,16 @@ export default [
         os: 'openEuler 22.03 LTS',
         content: [
           {
-            name: 'openGauss_5.0.1 企业版',
+            name: 'openGauss_5.0.1 金融版',
             table: 'server',
-            size: '125.09MB',
-            edition: 'enterprise',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/arm_2203/openGauss-5.0.1-openEuler-64bit-all.tar.gz`,
+            size: '120.9MB',
+            edition: 'finance',
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/finance/arm_2203/openGauss-Finance-5.0.1-openEuler-64bit-all.tar.gz`,
             sha_code:
-              '942e5d664918643b701fa393d99f813768dce7b87c79d21542b2b823c3601cba',
-            docsName: '企业版安装指南',
+              '839eeca541e37c9781bed1c2e9578f705314dbb1dd3e8c84fe435fba71a218f7',
+            docsName: '金融版安装指南',
             docs_url:
               '/docs/5.0.0/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html',
-          },
-          {
-            name: 'openGauss_5.0.1 极简版',
-            table: 'server',
-            size: '93.07MB',
-            edition: 'simple',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/arm_2203/openGauss-5.0.1-openEuler-64bit.tar.bz2`,
-            sha_code:
-              'e7014722976e75f68128ebbbc08db34d226766c39cadc47ece3e77ca7036da56',
-            docsName: '极简版安装指南',
-            docs_url:
-              '/docs/5.0.0/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html',
-          },
-          {
-            name: 'openGauss_5.0.1 轻量版',
-            table: 'server',
-            size: '25.12MB',
-            edition: 'lite',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/arm_2203/openGauss-Lite-5.0.1-openEuler-aarch64.tar.gz`,
-            sha_code:
-              '7a53ce1c5159c1c271abdd7110c1b5d20fecc2742610cc427af34da8bd6cf007',
-            docsName: '轻量版安装指南',
-            docs_url:
-              '/docs/5.0.0-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html',
           },
         ],
       },
@@ -54,40 +30,16 @@ export default [
         os: 'openEuler 22.03 LTS',
         content: [
           {
-            name: 'openGauss_5.0.1 企业版',
+            name: 'openGauss_5.0.1 金融版',
             table: 'server',
-            size: '130.85MB',
-            edition: 'enterprise',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/x86_openEuler_2203/openGauss-5.0.1-openEuler-64bit-all.tar.gz`,
+            size: '126.78MB',
+            edition: 'finance',
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/finance/x86_openEuler_2203/openGauss-Finance-5.0.1-openEuler-64bit-all.tar.gz`,
             sha_code:
-              '79234ea93152a3be27fbd80e4080d8bba7c7e8971fcd33ec36cf3d4f00d951ce',
-            docsName: '企业版安装指南',
+              'ba0bc210925ce8fe4426dd2e5324ca109eb1c236ed61b0b9c52363f707373471',
+            docsName: '金融版安装指南',
             docs_url:
               '/docs/5.0.0/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html',
-          },
-          {
-            name: 'openGauss_5.0.1 极简版',
-            table: 'server',
-            size: '98.53MB',
-            edition: 'simple',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/x86_openEuler_2203/openGauss-5.0.1-openEuler-64bit.tar.bz2`,
-            sha_code:
-              '615833e160c7e69ea5014e7a238bb967bd1ee938b03b11a0697d2c548c764d74',
-            docsName: '极简版安装指南',
-            docs_url:
-              '/docs/5.0.0/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html',
-          },
-          {
-            name: 'openGauss_5.0.1 轻量版',
-            table: 'server',
-            size: '26.35MB',
-            edition: 'lite',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/x86_openEuler_2203/openGauss-Lite-5.0.1-openEuler-x86_64.tar.gz`,
-            sha_code:
-              '1e1fe3bce64dd1cf4ce7aff614277487257d3efbd5d9a6f30b663df9409d97f5',
-            docsName: '轻量版安装指南',
-            docs_url:
-              '/docs/5.0.0-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html',
           },
         ],
       },
@@ -98,40 +50,16 @@ export default [
         os: 'openEuler 20.03 LTS',
         content: [
           {
-            name: 'openGauss_5.0.1 企业版',
+            name: 'openGauss_5.0.1 金融版',
             table: 'server',
-            size: '125.05MB',
-            edition: 'enterprise',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/arm/openGauss-5.0.1-openEuler-64bit-all.tar.gz`,
+            size: '120.95MB',
+            edition: 'finance',
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/finance/arm/openGauss-Finance-5.0.1-openEuler-64bit-all.tar.gz`,
             sha_code:
-              '6123f190856a5da0a50d46812eac8c618182065ab3771d405f5059ba304a9f47',
-            docsName: '企业版安装指南',
+              '60a546922aa0c860c081d66317bd656e15e8a7fd1b41ce99b2a9c4e15050a88a',
+            docsName: '金融版安装指南',
             docs_url:
               '/docs/5.0.0/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html',
-          },
-          {
-            name: 'openGauss_5.0.1 极简版',
-            table: 'server',
-            size: '93.09MB',
-            edition: 'simple',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/arm/openGauss-5.0.1-openEuler-64bit.tar.bz2`,
-            sha_code:
-              '5550c246b10bf462210d527859337c31d448d4b873715cd6ce0dbbeb0a617336',
-            docsName: '极简版安装指南',
-            docs_url:
-              '/docs/5.0.0/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html',
-          },
-          {
-            name: 'openGauss_5.0.1 轻量版',
-            table: 'server',
-            size: '25.12MB',
-            edition: 'simple',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/arm/openGauss-Lite-5.0.1-openEuler-aarch64.tar.gz`,
-            sha_code:
-              '9b68924642af14d22337540b6c2e4f64586515379e1578d6eff206501f1ea5f6',
-            docsName: '轻量版安装指南',
-            docs_url:
-              '/docs/5.0.0-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html',
           },
         ],
       },
@@ -142,40 +70,16 @@ export default [
         docs: true,
         content: [
           {
-            name: 'openGauss_5.0.1 企业版',
+            name: 'openGauss_5.0.1 金融版',
             table: 'server',
-            size: '130.89MB',
-            edition: 'enterprise',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/x86_openEuler/openGauss-5.0.1-openEuler-64bit-all.tar.gz`,
+            size: '126.80MB',
+            edition: 'finance',
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/finance/x86_openEuler/openGauss-Finance-5.0.1-openEuler-64bit-all.tar.gz`,
             sha_code:
-              'c4687aa6bb02ffc1402b972a01a2515ba8524def624f4c8227c40dcaf38aa9e4',
-            docsName: '企业版安装指南',
+              '8994a248730b72589a81ec47eb3811cba3de8891e8a8becc08ca176570ea40e1',
+            docsName: '金融版安装指南',
             docs_url:
               '/docs/5.0.0/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html',
-          },
-          {
-            name: 'openGauss_5.0.1 极简版',
-            table: 'server',
-            size: '98.56MB',
-            edition: 'simple',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/x86_openEuler/openGauss-5.0.1-openEuler-64bit.tar.bz2`,
-            sha_code:
-              '5e35ac31fdc03cbc64d00f96d8f3802d85092cd2135f1728068ae4c8aec94584',
-            docsName: '极简版安装指南',
-            docs_url:
-              '/docs/5.0.0/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html',
-          },
-          {
-            name: 'openGauss_5.0.1 轻量版',
-            table: 'server',
-            size: '26.35MB',
-            edition: 'simple',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/x86_openEuler/openGauss-Lite-5.0.1-openEuler-x86_64.tar.gz`,
-            sha_code:
-              'fcb5c96931ba8b6dc69929380f3b3c0fda0a5158666511ab6b7d20fb1c07e2e7',
-            docsName: '轻量版安装指南',
-            docs_url:
-              '/docs/5.0.0-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html',
           },
         ],
       },
@@ -186,40 +90,16 @@ export default [
         docs: true,
         content: [
           {
-            name: 'openGauss_5.0.1 企业版',
+            name: 'openGauss_5.0.1 金融版',
             table: 'server',
-            size: '130.71MB',
-            edition: 'enterprise',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/x86/openGauss-5.0.1-CentOS-64bit-all.tar.gz`,
+            size: '126.91MB',
+            edition: 'finance',
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/finance/x86/openGauss-Finance-5.0.1-CentOS-64bit-all.tar.gz`,
             sha_code:
-              'de94515c28f83d1d801ce5bec17d3fb36265edb223fbdc409c3647b120aaae94',
-            docsName: '企业版安装指南',
+              'b761c31f3693eebd96e381e3150eceab3524ad93971d103360e7d0abbbcee46b',
+            docsName: '金融版安装指南',
             docs_url:
               '/docs/5.0.0/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html',
-          },
-          {
-            name: 'openGauss_5.0.1 极简版',
-            table: 'server',
-            size: '97.56MB',
-            edition: 'simple',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/x86/openGauss-5.0.1-CentOS-64bit.tar.bz2`,
-            sha_code:
-              '6e2ee1eadd12fb619185362f74c725a5f9b67674df67e2ee1064980a34f725bc',
-            docsName: '极简版安装指南',
-            docs_url:
-              '/docs/5.0.0/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html',
-          },
-          {
-            name: 'openGauss_5.0.1 轻量版',
-            table: 'server',
-            size: '26.16MB',
-            edition: 'enterprise',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/x86/openGauss-Lite-5.0.1-CentOS-x86_64.tar.gz`,
-            sha_code:
-              'ee9a40d7ca2fe07344976a7d913cba3abf9380ed877fe85b4137a581cbabcf77',
-            docsName: '轻量版安装指南',
-            docs_url:
-              '/docs/5.0.0-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html',
           },
         ],
       },
