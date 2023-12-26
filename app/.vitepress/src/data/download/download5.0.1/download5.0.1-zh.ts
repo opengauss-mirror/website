@@ -50,9 +50,9 @@ export default [
             table: 'server',
             size: '120.9MB',
             edition: 'finance',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/finance/arm_2203/openGauss-5.0.1-openEuler-64bit-all.tar.gz`,
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/finance/arm_2203/openGauss-Finance-5.0.1-openEuler-64bit-all.tar.gz`,
             sha_code:
-              '815451918d353e45dc62793418f760633e9c13998584879d0dbb941a259d9bb8',
+              '839eeca541e37c9781bed1c2e9578f705314dbb1dd3e8c84fe435fba71a218f7',
             docsName: '金融版安装指南',
             docs_url:
               '/docs/5.0.0/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html',
@@ -106,9 +106,9 @@ export default [
             table: 'server',
             size: '126.78MB',
             edition: 'finance',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/finance/x86_openEuler_2203/openGauss-5.0.1-openEuler-64bit-all.tar.gz`,
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/finance/x86_openEuler_2203/openGauss-Finance-5.0.1-openEuler-64bit-all.tar.gz`,
             sha_code:
-              'f2ebd8e33ca0b53a7220ed93258fa87638cf9b1328fc2c80765cda8a62c49763',
+              'ba0bc210925ce8fe4426dd2e5324ca109eb1c236ed61b0b9c52363f707373471',
             docsName: '金融版安装指南',
             docs_url:
               '/docs/5.0.0/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html',
@@ -162,9 +162,9 @@ export default [
             table: 'server',
             size: '120.95MB',
             edition: 'finance',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/finance/arm/openGauss-5.0.1-openEuler-64bit-all.tar.gz`,
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/finance/arm/openGauss-Finance-5.0.1-openEuler-64bit-all.tar.gz`,
             sha_code:
-              '57ba200c120d019e9a394426eab7a9b58b0ed8e4e02065abbc40487c0ab1c157',
+              '60a546922aa0c860c081d66317bd656e15e8a7fd1b41ce99b2a9c4e15050a88a',
             docsName: '金融版安装指南',
             docs_url:
               '/docs/5.0.0/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html',
@@ -218,9 +218,9 @@ export default [
             table: 'server',
             size: '126.80MB',
             edition: 'finance',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/finance/x86_openEuler/openGauss-5.0.1-openEuler-64bit-all.tar.gz`,
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/finance/x86_openEuler/openGauss-Finance-5.0.1-openEuler-64bit-all.tar.gz`,
             sha_code:
-              '2730ef6eab914047ecd7c623db45dc94d2061c876eb4791f4cdcb78279626f32',
+              '8994a248730b72589a81ec47eb3811cba3de8891e8a8becc08ca176570ea40e1',
             docsName: '金融版安装指南',
             docs_url:
               '/docs/5.0.0/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html',
@@ -274,9 +274,9 @@ export default [
             table: 'server',
             size: '126.91MB',
             edition: 'finance',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/finance/x86/openGauss-5.0.1-CentOS-64bit-all.tar.gz`,
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/finance/x86/openGauss-Finance-5.0.1-CentOS-64bit-all.tar.gz`,
             sha_code:
-              '300937a31e7bd947d1ed24026e6e71d9670f6007a2c7ddefac3fb4f44763ca2a',
+              'b761c31f3693eebd96e381e3150eceab3524ad93971d103360e7d0abbbcee46b',
             docsName: '金融版安装指南',
             docs_url:
               '/docs/5.0.0/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html',
