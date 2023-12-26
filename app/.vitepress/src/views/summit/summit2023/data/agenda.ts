@@ -351,7 +351,7 @@ export default [
                 {
                   id: 'agenda28_1_1_14',
                   time: '12:05-12:10',
-                  desc: '2023年度优秀企业贡献奖颁奖仪式',
+                  desc: '2023年度openGauss社区优秀贡献单位颁奖仪式',
                   person: [
                     {
                       id: 'agenda28_1_1_14_1',
@@ -364,7 +364,7 @@ export default [
                 {
                   id: 'agenda28_1_1_15',
                   time: '12:10-12:15',
-                  desc: '2023年度优秀开发者颁奖仪式',
+                  desc: '2023年度openGauss社区优秀开发者颁奖仪式',
                   person: [
                     {
                       id: 'agenda28_1_1_14_1',
@@ -941,8 +941,8 @@ export default [
                   person: [
                     {
                       id: 'agenda28_2_1_1_1',
-                      name: '王建业',
-                      post: '中国移动信息技术中心平台能力中心解决方案专家',
+                      name: '韩家玮',
+                      post: '中国移动信息技术中心平台能力中心解决方案总监',
                     },
                   ],
                   detail: '',
