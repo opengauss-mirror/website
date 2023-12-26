@@ -48,7 +48,7 @@ const secarchMore = () => {
 };
 // 下载页
 const goDownloadPage = () => {
-  router.go(`/${lang.value}/download/`);
+  router.go(`/${lang.value}/download/finance/`);
 };
 </script>
 <template>
