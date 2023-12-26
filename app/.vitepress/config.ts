@@ -29,6 +29,18 @@ const config: UserConfig = {
       {},
       `(()=>{const e=localStorage.getItem("opengauss-theme"),t=window.matchMedia("(prefers-color-scheme: dark)").matches;(e?"dark"===e:t)&&document.documentElement.classList.add("dark");})();`,
     ],
+    [
+      'script',
+      {
+        src: '/allow_sensor/sensorsdata.min.js',
+      },
+    ],
+    [
+      'script',
+      {
+        src: '/allow_sensor/sensors.js',
+      },
+    ],
   ],
   appearance: true, // enable dynamic scripts for dark mode
   titleTemplate: false, //  vitepress supports pageTitileTemplate since 1.0.0
