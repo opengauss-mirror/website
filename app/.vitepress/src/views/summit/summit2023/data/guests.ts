@@ -41,7 +41,6 @@ import hechenghan from '../img/guests/hechenghan.png';
 import liuyongsheng from '../img/guests/liuyongsheng.png';
 import shayong from '../img/guests/shayong.png';
 import tangyue from '../img/guests/tangyue.png';
-import wangjianye from '../img/guests/wangjianye.png';
 import wangtao from '../img/guests/wangtao.png';
 import zhangyubo from '../img/guests/zhangyubo.png';
 import zhannianke from '../img/guests/zhannianke.png';
@@ -51,6 +50,7 @@ import wangxiaoyu from '../img/guests/wangxiaoyu.png';
 import liyuzhang from '../img/guests/liyuzhang.png';
 import liyongle from '../img/guests/liyongle.png';
 import xuyang from '../img/guests/xuyang.png';
+import hanjiawei from '../img/guests/hanjiawei.png';
 
 export default {
   title: '演讲嘉宾',
@@ -377,9 +377,9 @@ export default {
         ],
       },
       {
-        img: wangjianye,
-        name: '王建业',
-        position: ['中国移动信息技术中心', '平台能力中心解决方案专家'],
+        img: hanjiawei,
+        name: '韩家玮',
+        position: ['中国移动信息技术中心', '平台能力中心解决方案总监'],
       },
     ],
   },

@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import { computed, ref,onMounted } from 'vue';
+import { computed, ref, onMounted } from 'vue';
 
 import AppContent from '@/components/AppContent.vue';
 import SummitBanner from './components/SummitBanner.vue';
 import SummitSchedule from './components/SummitSchedule.vue';
 import SummitGuests from './components/SummitGuests.vue';
 import SummitLive from './components/SummitLive.vue';
+import SummitPartner from './components/SummitPartner.vue';
 
 import liveLight from './img/live.png';
 import liveDark from './img/live-dark.png';
@@ -180,6 +181,15 @@ onMounted(() => {
           :web-columns-num="4"
           :mobile-columns-num="2"
           class="last-forum2"
+        />
+      </div>
+      <div class="summit-partner">
+        <h3 class="partner-title">
+          {{ summitData.partner.title }}
+        </h3>
+        <SummitPartner
+          class="partner-content"
+          :partner-data="summitData.partner.content"
         />
       </div>
       <div class="summit-previous">
@@ -390,6 +400,18 @@ onMounted(() => {
     }
   }
   .live-box {
+    margin-top: var(--o-spacing-h2);
+    @media (max-width: 767px) {
+      margin-top: var(--o-spacing-h4);
+    }
+  }
+}
+.summit-partner {
+  @include floor-box();
+  .partner-title {
+    @include floor-title();
+  }
+  .partner-content {
     margin-top: var(--o-spacing-h2);
     @media (max-width: 767px) {
       margin-top: var(--o-spacing-h4);

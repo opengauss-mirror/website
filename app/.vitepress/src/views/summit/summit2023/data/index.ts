@@ -4,6 +4,7 @@ import summitKv from '../video/summit-kv.mp4';
 import agenda from './agenda';
 import guests from './guests';
 import live from './live';
+import partner from './partner';
 export default {
   banner: {
     bannerBg: bannerBg,
@@ -17,6 +18,7 @@ export default {
   live,
   agenda,
   guests,
+  partner,
   previous: {
     title: '精彩回顾',
     content: [
