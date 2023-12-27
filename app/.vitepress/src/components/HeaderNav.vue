@@ -37,22 +37,6 @@ watch(
     activeItem.value = val;
   }
 );
-// 点击子导航事件
-const goPath = (item: NavItemT) => {
-  if (item.IS_OPEN_WINDOW) {
-    windowOpen(DOCS_LINK + lang.value + '/' + item.PATH);
-    return;
-  }
-  if (item.IS_OPEN_MINISITE_WINDOW) {
-    windowOpen(item.PATH);
-    return;
-  }
-  if (item.PATH) {
-    router.go('/' + lang.value + item.PATH);
-    navActive.value = '';
-  }
-  isShow.value = false;
-};
 
 // nav 鼠标滑过事件
 const toggleSubDebounced = debounce(
@@ -97,9 +81,14 @@ const menuChangeActive = (item: any) => {
               v-for="subItem in item.CHILDREN"
               :key="subItem.ID"
               class="sub-menu-item"
-              @click="goPath(subItem)"
             >
-              {{ subItem.NAME }}
+              <a
+                class="item-link"
+                :href="subItem.PATH"
+                :target="subItem.PATH.includes('https:') ? '_blank' : '_self'"
+              >
+                {{ subItem.NAME }}
+              </a>
             </li>
           </ul>
         </div>
@@ -182,11 +171,11 @@ const menuChangeActive = (item: any) => {
         display: table;
         z-index: 99;
         box-shadow: var(--o-shadow-l1);
-        &-content {
+        .sub-menu-content {
           margin: 0;
           padding: 0;
         }
-        &-item {
+        .sub-menu-item {
           line-height: var(--o-line-height-h3);
           text-align: center;
           font-size: var(--o-font-size-text);
@@ -198,16 +187,28 @@ const menuChangeActive = (item: any) => {
           &:hover {
             background-color: var(--o-color-brand1);
             color: var(--o-color-white);
+            .item-link {
+              color: var(--o-color-white);
+            }
           }
           &.active {
             background-color: var(--o-color-brand1);
             color: var(--o-color-white);
+            .item-link {
+              color: var(--o-color-white);
+            }
+          }
+          .item-link {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            color: var(--o-color-text1);
           }
         }
       }
     }
   }
-  &-line {
+  .o-nav-line {
     position: absolute;
     left: 0;
     bottom: 0;

@@ -3,6 +3,7 @@ import {
   DATA_LINK,
   GIYHUB_LINK,
   GAUSS_EMAIL,
+  DOCS_LINK
 } from '@/data/url-config';
 export default {
   REQUIRE_FIELD: `必填`,
@@ -49,12 +50,12 @@ export default {
         {
           NAME: `软件包`,
           ID: `iso`,
-          PATH: `/download/`,
+          PATH: `/zh/download/`,
         },
         {
           NAME: `支持工具`,
           ID: `supporttools`,
-          PATH: `/supporttools/`,
+          PATH: `/zh/supporttools/`,
         },
       ],
       CLASS: [`download`, `supporttools`],
@@ -65,19 +66,19 @@ export default {
       CHILDREN: [
         {
           NAME: `文档`,
-          PATH: ``,
+          PATH: DOCS_LINK+'zh/',
           ID: `docs`,
           IS_OPEN_WINDOW: 1,
         },
         {
           NAME: `知识图谱`,
           ID: `knowledge`,
-          PATH: `/knowledge/`,
+          PATH: `/zh/knowledge/`,
         },
         {
           NAME: `学习进阶`,
           ID: `advanced`,
-          PATH: `/advanced/`,
+          PATH: `/zh/advanced/`,
         },
       ],
       CLASS: [`learning`, `knowledge`, `advanced`],
@@ -89,27 +90,27 @@ export default {
         {
           NAME: `社区贡献`,
           ID: `contribution`,
-          PATH: `/contribution/`,
+          PATH: `/zh/contribution/`,
         },
         {
           NAME: `线上交流`,
           ID: `onlineCommunication`,
-          PATH: `/community/onlineCommunication/`,
+          PATH: `/zh/community/onlineCommunication/`,
         },
         {
           NAME: `社区组织`,
           ID: `member`,
-          PATH: `/member/`,
+          PATH: `/zh/member/`,
         },
         {
           NAME: `用户实践`,
           ID: `userPractice`,
-          PATH: `/userPractice/`,
+          PATH: `/zh/userPractice/`,
         },
         {
           NAME: `金融专区`,
           ID: `finance`,
-          PATH: `/finance/`,
+          PATH: `/zh/finance/`,
         },
         {
           NAME: `贡献看板`,
@@ -123,6 +124,7 @@ export default {
         `member`,
         `userPractice`,
         `community`,
+        `finance`,
         `onlineCommunication`,
       ],
     },
@@ -133,27 +135,27 @@ export default {
         {
           NAME: `新闻`,
           ID: `news`,
-          PATH: `/news/`,
+          PATH: `/zh/news/`,
         },
         {
           NAME: `博客`,
           ID: `blog`,
-          PATH: `/blogs/`,
+          PATH: `/zh/blogs/`,
         },
         {
           NAME: `活动`,
           ID: `events`,
-          PATH: `/events/`,
+          PATH: `/zh/events/`,
         },
         {
           NAME: `视频`,
           ID: `video`,
-          PATH: `/video/`,
+          PATH: `/zh/video/`,
         },
         {
           NAME: `峰会`,
           ID: `summit`,
-          PATH: `/summit/summit2023/`,
+          PATH: `/zh/summit/summit2023/`,
         },
       ],
       CLASS: [`news`, `blog`, `video`, `events`, `summit`],
@@ -165,22 +167,22 @@ export default {
         {
           NAME: `发行版认证`,
           ID: `certification`,
-          PATH: `/certification/`,
+          PATH: `/zh/certification/`,
         },
         {
           NAME: `兼容性列表`,
           ID: `compatibility`,
-          PATH: `/compatibility/`,
+          PATH: `/zh/compatibility/`,
         },
         {
           NAME: `服务商认证`,
           ID: `ogsp`,
-          PATH: `/ogsp/`,
+          PATH: `/zh/ogsp/`,
         },
         {
           NAME: `培训认证`,
           ID: `training`,
-          PATH: `/training/`,
+          PATH: `/zh/training/`,
         },
       ],
       CLASS: [`certification`, `training`, `ogsp`],
@@ -192,17 +194,17 @@ export default {
         {
           NAME: `漏洞管理`,
           ID: `security`,
-          PATH: `/security/`,
+          PATH: `/zh/security/`,
         },
         {
           NAME: `安全公告`,
           ID: `advisories`,
-          PATH: `/security-advisories/`,
+          PATH: `/zh/security-advisories/`,
         },
         {
           NAME: `CVE`,
           ID: `cve`,
-          PATH: `/cve/`,
+          PATH: `/zh/cve/`,
         },
       ],
       CLASS: [`security`, `advisories`, `cve`],
