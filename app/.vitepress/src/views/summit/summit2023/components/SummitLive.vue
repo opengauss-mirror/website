@@ -59,24 +59,29 @@ function createUserId(liveId: string) {
 }
 const height = ref(screenWidth.value <= 1100 ? 600 : 800);
 function setHeight(data: any) {
+  // 响应式尺寸要去除左右两边的padding
+  let iframeWidth = 1416;
+  if (screenWidth.value >= 1504) {
+    iframeWidth = 1416;
+  } else if (screenWidth.value >= 1440) {
+    iframeWidth = screenWidth.value - 88;
+  } else if (screenWidth.value >= 1100) {
+    iframeWidth = screenWidth.value - 48;
+  } else {
+    iframeWidth = screenWidth.value - 32;
+  }
   // data.state=0,1直播未开始,2直播中，4直播已结束
   if (screenWidth.value <= 1100) {
     if (data.data.liveRoomStatus === 2) {
       height.value = 600;
     } else {
-      height.value = screenWidth.value * (9 / 16);
+      height.value = iframeWidth * (9 / 16);
     }
   } else {
     if (data.data.liveRoomStatus === 4) {
-      height.value =
-        screenWidth.value > 1416
-          ? 1416 * (9 / 16)
-          : screenWidth.value * (9 / 16);
+      height.value = iframeWidth * (9 / 16);
     } else {
-      height.value =
-        screenWidth.value > 1416
-          ? (1416 - 360) * (9 / 16)
-          : (screenWidth.value - 360) * (9 / 16);
+      height.value = (iframeWidth - 360) * (9 / 16);
     }
   }
 }
