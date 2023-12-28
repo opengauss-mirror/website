@@ -3,7 +3,6 @@ import { computed, ref, watch, nextTick } from 'vue';
 import { useRouter, useData } from 'vitepress';
 import { useCommon } from '@/stores/common';
 import { useI18n } from '@/i18n';
-import { windowOpen } from '@/shared/utils';
 
 import navLangFilter from '@/i18n/common/navLangFilter';
 
@@ -18,8 +17,6 @@ import logo_dark from '@/assets/logo_dark.svg';
 import IconSearch from '~icons/app/icon-search.svg';
 import IconCancel from '~icons/app/icon-cancel.svg';
 import IconMenu from '~icons/app/icon-menu.svg';
-
-import { DOCS_LINK } from '@/data/url-config';
 
 interface NavItemT {
   NAME: string;
@@ -80,28 +77,6 @@ const goMobile = (item: NavItemT) => {
   activeNav.value = item.ID;
 };
 
-// 移动端二级导航事件
-const goMobileSubList = (item: NavItemT) => {
-  if (item.IS_OPEN_WINDOW) {
-    windowOpen(DOCS_LINK + lang.value + '/' + item.PATH);
-    return;
-  }
-  if (item.IS_OPEN_MINISITE_WINDOW) {
-    windowOpen(item.PATH);
-    return;
-  }
-
-  if (item.PATH) {
-    setTimeout(() => {
-      isMenuIconMb.value = false;
-      document.documentElement.classList.remove('overflow');
-    }, 200);
-    nextTick(() => {
-      router.go('/' + lang.value + item.PATH);
-    });
-  }
-};
-
 const langShow = ref([] as any);
 const detailFilterList = ['events', 'news', 'blogs'];
 watch(
@@ -137,11 +112,10 @@ const moudleItem = () => {
   });
 };
 
-// 返回首页
-const goHome = () => {
+// 关闭移动端菜单
+const closeMenu = () => {
   isMenuIconMb.value = false;
   document.documentElement.classList.remove('overflow');
-  router.go(`/${lang.value}/`);
 };
 
 const searchValue = computed(() => i18n.value.common.SEARCH);
@@ -200,7 +174,9 @@ const searchLink = `/${lang.value}/search/`;
         </OIcon>
         <OIcon v-else class="icon"><IconCancel /></OIcon>
       </div>
-      <img class="logo" alt="openGauss logo" :src="logo" @click="goHome" />
+      <a @click="closeMenu" class="logo" :href="`/${lang}/`">
+        <img alt="openGauss logo" :src="logo" />
+      </a>
       <ClientOnly>
         <HeaderSearch
           v-if="isShowBox"
@@ -266,14 +242,16 @@ const searchLink = `/${lang.value}/search/`;
         <transition name="menu-sub">
           <div v-if="childMenuMb.length > 0" class="mobile-menu-content">
             <div class="mobile-menu-list">
-              <div
+              <a
                 v-for="item in childMenuMb"
                 :key="item.ID"
                 class="link"
-                @click="goMobileSubList(item)"
+                :href="item.PATH"
+                @click="closeMenu"
+                :target="item.PATH.startsWith('http') ? '_blank' : '_self'"
               >
                 {{ item.NAME }}
-              </div>
+              </a>
             </div>
           </div>
         </transition>
@@ -323,16 +301,21 @@ const searchLink = `/${lang.value}/search/`;
   }
 }
 .logo {
-  height: 32px;
+  display: inline-block;
   cursor: pointer;
   margin-right: var(--o-spacing-h4);
   @media (max-width: 1100px) {
-    height: 24px;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     top: 12px;
     margin-right: 0;
+  }
+  img{
+    height: 32px;
+    @media (max-width: 1100px) {
+      height: 24px;
+    }
   }
 }
 .mobile-menu-icon {

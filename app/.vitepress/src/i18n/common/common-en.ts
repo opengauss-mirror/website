@@ -3,6 +3,7 @@ import {
   DATA_LINK,
   GIYHUB_LINK,
   GAUSS_EMAIL,
+  DOCS_LINK,
 } from '@/data/url-config';
 export default {
   require_field: `必填`,
@@ -47,12 +48,12 @@ export default {
         {
           NAME: `Software Packages`,
           ID: `iso`,
-          PATH: `/download/`,
+          PATH: `/en/download/`,
         },
         {
           NAME: `Support Tools`,
           ID: `supporttools`,
-          PATH: `/supporttools/`,
+          PATH: `/en/supporttools/`,
         },
       ],
       CLASS: [`download`, `supporttools`],
@@ -63,7 +64,7 @@ export default {
       CHILDREN: [
         {
           NAME: `Documentation`,
-          PATH: ``,
+          PATH: DOCS_LINK+'en/',
           ID: `docs`,
           IS_OPEN_WINDOW: 1,
         },
@@ -77,22 +78,22 @@ export default {
         {
           NAME: `Contribution`,
           ID: `contribution`,
-          PATH: `/contribution/`,
+          PATH: `/en/contribution/`,
         },
         {
           NAME: `Communication`,
           ID: `onlineCommunication`,
-          PATH: `/community/onlineCommunication/`,
+          PATH: `/en/community/onlineCommunication/`,
         },
         {
           NAME: `Organization`,
           ID: `member`,
-          PATH: `/member/`,
+          PATH: `/en/member/`,
         },
         {
           NAME: `User Practice`,
           ID: `userPractice`,
-          PATH: `/userPractice/`,
+          PATH: `/en/userPractice/`,
         },
         {
           NAME: `Statistics`,
@@ -110,22 +111,22 @@ export default {
         {
           NAME: `News`,
           ID: `News`,
-          PATH: `/news/`,
+          PATH: `/en/news/`,
         },
         {
           NAME: `Blog`,
           ID: `blog`,
-          PATH: `/blogs/`,
+          PATH: `/en/blogs/`,
         },
         {
           NAME: `Events`,
           ID: `events`,
-          PATH: `/events/`,
+          PATH: `/en/events/`,
         },
         {
           NAME: `Videos`,
           ID: `video`,
-          PATH: `/video/`,
+          PATH: `/en/video/`,
         },
       ],
       CLASS: [`news`, `blog`, `video`, `events`],
@@ -137,12 +138,12 @@ export default {
         {
           NAME: `Distribution Certification`,
           ID: `certification`,
-          PATH: `/certification/`,
+          PATH: `/en/certification/`,
         },
         {
           NAME: `oGSP Certification`,
           ID: `ogsp`,
-          PATH: `/ogsp/`,
+          PATH: `/en/ogsp/`,
         },
       ],
       CLASS: [`certification`, `ogsp`],
@@ -154,17 +155,17 @@ export default {
         {
           NAME: `Vulnerability Report`,
           ID: `security`,
-          PATH: `/security/`,
+          PATH: `/en/security/`,
         },
         {
           NAME: `Security Advisories`,
           ID: `advisories`,
-          PATH: `/security-advisories/`,
+          PATH: `/en/security-advisories/`,
         },
         {
           NAME: `CVE`,
           ID: `cve`,
-          PATH: `/cve/`,
+          PATH: `/en/cve/`,
         },
       ],
       CLASS: [`security`, `advisories`, `cve`],
