@@ -127,44 +127,46 @@ const changeLive = (val: string): void => {
 
 <template>
   <div class="live-room">
-    <div class="select-room">
-      <OSelect v-model="liveRoom" clearable filterable @change="changeLive">
-        <OOption
-          v-for="item in renderData"
-          :key="item.liveTestId"
-          :label="item.name"
-          :value="isTest ? item.liveTestId : item.liveId"
-        />
-      </OSelect>
-    </div>
-    <iframe
-      ref="livePage"
-      :height="height"
-      allow="camera *;microphone *;"
-      border="0"
-      scolling="no"
-      :src="liveUrl"
-      allowfullscreen="true"
-      webkitallowfullscreen="true"
-      mozallowfullscreen="true"
-      class="live-room-video"
-    ></iframe>
-    <div class="live-room-web">
-      <div class="live-room-web-itembox" :class="className">
-        <div
-          v-for="(item, index) in renderData"
-          :key="item.liveTestId"
-          :class="[
-            'link',
-            roomId === index ? 'link-active' : '',
-            index === 0 ? 'link-main' : ' ',
-          ]"
-          @click="setLiveRoom(item, index)"
-        >
-          <p class="name">{{ item.name }}</p>
+    <ClientOnly>
+      <div class="select-room">
+        <OSelect v-model="liveRoom" clearable filterable @change="changeLive">
+          <OOption
+            v-for="item in renderData"
+            :key="item.liveTestId"
+            :label="item.name"
+            :value="isTest ? item.liveTestId : item.liveId"
+          />
+        </OSelect>
+      </div>
+      <iframe
+        ref="livePage"
+        :height="height"
+        allow="camera *;microphone *;"
+        border="0"
+        scolling="no"
+        :src="liveUrl"
+        allowfullscreen="true"
+        webkitallowfullscreen="true"
+        mozallowfullscreen="true"
+        class="live-room-video"
+      ></iframe>
+      <div class="live-room-web">
+        <div class="live-room-web-itembox" :class="className">
+          <div
+            v-for="(item, index) in renderData"
+            :key="item.liveTestId"
+            :class="[
+              'link',
+              roomId === index ? 'link-active' : '',
+              index === 0 ? 'link-main' : ' ',
+            ]"
+            @click="setLiveRoom(item, index)"
+          >
+            <p class="name">{{ item.name }}</p>
+          </div>
         </div>
       </div>
-    </div>
+    </ClientOnly>
   </div>
 </template>
 
