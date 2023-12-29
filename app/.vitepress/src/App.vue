@@ -14,6 +14,7 @@ import LayoutNews from '@/layouts/LayoutNews.vue';
 import LayoutEvents from '@/layouts/LayoutEvents.vue';
 import LayoutShowcase from '@/layouts/LayoutShowcase.vue';
 import AppFloat from '@/components/AppFloat.vue';
+import AppYear from '@/components/AppYear.vue';
 
 import categories from '@/shared/category';
 
@@ -53,6 +54,7 @@ const comp = computed(() => {
       <component :is="comp" v-if="isCustomLayout"></component>
       <Content v-else />
       <AppFloat />
+      <AppYear />
     </main>
   </el-config-provider>
   <CookieNotice />
