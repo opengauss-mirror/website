@@ -2,7 +2,12 @@
 import { ref, watch, onMounted, computed } from 'vue';
 import { useRoute, useData } from 'vitepress';
 import { ElDialog, ElSwitch } from 'element-plus';
-import { setCustomCookie, isBoolean, getCustomCookie } from '@/shared/utils';
+import {
+  setCustomCookie,
+  isBoolean,
+  getCustomCookie,
+  removeCustomCookie,
+} from '@/shared/utils';
 import { useCookieStatus, usePrivacyVersion } from '@/stores/common';
 import { useScreen } from '@/shared/useScreen';
 import { useI18n } from '@/i18n';
@@ -111,6 +116,7 @@ onMounted(() => {
 // 用户同意所有cookie
 const acceptAll = () => {
   cookieStatus.status = COOKIE_AGREED_STATUS.ALL_AGREED;
+  removeCustomCookie(COOKEY_KEY);
   setCustomCookie(
     COOKEY_KEY,
     `${COOKIE_AGREED_STATUS.ALL_AGREED}${privacyVersion.version}`,
@@ -123,6 +129,7 @@ const acceptAll = () => {
 // 用户拒绝所有cookie，即仅同意必要cookie
 const rejectAll = () => {
   cookieStatus.status = COOKIE_AGREED_STATUS.NECCESSARY_AGREED;
+  removeCustomCookie(COOKEY_KEY);
   setCustomCookie(
     COOKEY_KEY,
     `${COOKIE_AGREED_STATUS.NECCESSARY_AGREED}${privacyVersion.version}`,
