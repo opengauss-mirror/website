@@ -1,4 +1,5 @@
 // 涉及的公网路径及邮箱地址的配置文件
+const GAUSS_YEAR ='https://summary.opengauss.org/'
 const GAUSS_EMAIL = 'contact@opengauss.org'; // gauss邮箱
 const GAUSS_CERTIFICATE_EMAIL = 'common@certificate.opengauss.org'; // gauss证书相关联系邮箱
 const HUAWEI_COMPUTE = 'https://huaweicompute.wjx.cn/'; // 华为在线问卷、调查投票平台
@@ -62,6 +63,7 @@ const SHIMO_LINK = 'https://shimo.im'; // 石墨报名
 const SUMMIT2023_JOIN = 'https://e-campaign.huawei.com/t/BbuQr2'; // SUMMIT报名
 
 export {
+  GAUSS_YEAR,
   GAUSS_EMAIL,
   GAUSS_CERTIFICATE_EMAIL,
   BAIDU_HM,
