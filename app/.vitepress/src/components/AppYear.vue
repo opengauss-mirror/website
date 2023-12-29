@@ -24,7 +24,7 @@ function closeYear() {
   position: fixed;
   left: 80px;
   bottom: 190px;
-  z-index: 99;
+  z-index: 12;
   @media (max-width: 1700px) {
     left: 20px;
   }
