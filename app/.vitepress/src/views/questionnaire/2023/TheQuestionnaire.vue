@@ -18,9 +18,9 @@ const data = {
   backgroundText: 'QUEATIONNAIRE',
   introduce: {
     textList: [
-      '亲爱的用户，为了给您提供更好的社区体验，现诚邀您参与openGauss社区满意度问卷调研。您的每一个宝贵建议都是我们进步的方向。',
-      '点击右侧“立即参与”按钮或手机扫描二维码即可填写问卷，请根据您真实的体验情况填写问卷，问卷反馈越真实有效越有机会抽取大奖哦！',
-      '我们将于活动结束后的 10 个工作日内在社区中公布本期活动的所有获奖情况，敬请关注。',
+      '本次openGauss社区满意度调研活动现已结束',
+      '感谢您的每一个宝贵建议，中奖名单已公示如下',
+      '敬请关注我们社区之后的活动、期待您的参与哦～',
     ],
     joinLink: HUAWEI_COMPUTE + 'vm/mLFTkDm.aspx?udsid=817974',
   },
@@ -29,16 +29,166 @@ const data = {
       rank: '最佳反馈奖 1 名',
       name: 'HUAWEI WATCH GT 4',
       prizeImg: watch,
+      list: [
+        {
+          name: 'HUAWEI WATCH GT 4',
+          phone: '185****6085',
+        },
+      ],
     },
     {
       rank: '优秀反馈奖 5 名',
       name: 'HUAWEI 轻尚双肩包 第二代',
       prizeImg: knapsack,
+      list: [
+        {
+          name: 'HUAWEI 轻尚双肩包 第二代',
+          phone: '188****5107',
+        },
+        {
+          name: 'HUAWEI 轻尚双肩包 第二代',
+          phone: '157****9532',
+        },
+        {
+          name: 'HUAWEI 轻尚双肩包 第二代',
+          phone: '18****274@qq.com',
+        },
+        {
+          name: 'HUAWEI 轻尚双肩包 第二代',
+          phone: '185****1416',
+        },
+        {
+          name: 'HUAWEI 轻尚双肩包 第二代',
+          phone: 'ya***3@chinatelecom.cn',
+        },
+      ],
     },
     {
       rank: '积极用户奖 30 名',
       name: 'openGauss社区定制水杯',
       prizeImg: cup,
+      list: [
+        {
+          name: 'openGauss社区定制水杯',
+          phone: 'ziy****30@163.com',
+        },
+        {
+          name: 'openGauss社区定制水杯',
+          phone: '339****844@qq.com',
+        },
+        {
+          name: 'openGauss社区定制水杯',
+          phone: '185****9021',
+        },
+        {
+          name: 'openGauss社区定制水杯',
+          phone: '151****6815',
+        },
+        {
+          name: 'openGauss社区定制水杯',
+          phone: '159****2730@139.com',
+        },
+        {
+          name: 'openGauss社区定制水杯',
+          phone: '186****5257',
+        },
+        {
+          name: 'openGauss社区定制水杯',
+          phone: '183****1871',
+        },
+        {
+          name: 'openGauss社区定制水杯',
+          phone: '319****428@qq.com',
+        },
+        {
+          name: 'openGauss社区定制水杯',
+          phone: 'zh****ei@qq.com',
+        },
+        {
+          name: 'openGauss社区定制水杯',
+          phone: '132****5860',
+        },
+        {
+          name: 'openGauss社区定制水杯',
+          phone: 'liu****hu@tju.edu.cn',
+        },
+        {
+          name: 'openGauss社区定制水杯',
+          phone: '18****0949@qq.com',
+        },
+        {
+          name: 'openGauss社区定制水杯',
+          phone: 'vo****d@163.com',
+        },
+        {
+          name: 'openGauss社区定制水杯',
+          phone: '36****328@qq.com',
+        },
+        {
+          name: 'openGauss社区定制水杯',
+          phone: '136****6712',
+        },
+        {
+          name: 'openGauss社区定制水杯',
+          phone: '194****138@qq.com',
+        },
+        {
+          name: 'openGauss社区定制水杯',
+          phone: '138****9751',
+        },
+        {
+          name: 'openGauss社区定制水杯',
+          phone: '131****0920',
+        },
+        {
+          name: 'openGauss社区定制水杯',
+          phone: '185****9522',
+        },
+        {
+          name: 'openGauss社区定制水杯',
+          phone: '151****9230',
+        },
+        {
+          name: 'openGauss社区定制水杯',
+          phone: '130****3601',
+        },
+        {
+          name: 'openGauss社区定制水杯',
+          phone: '137****1081@163.com',
+        },
+        {
+          name: 'openGauss社区定制水杯',
+          phone: 'xue****ng08@163.com',
+        },
+        {
+          name: 'openGauss社区定制水杯',
+          phone: '188****5346',
+        },
+        {
+          name: 'openGauss社区定制水杯',
+          phone: '188****5733',
+        },
+        {
+          name: 'openGauss社区定制水杯',
+          phone: '193****212@qq.com',
+        },
+        {
+          name: 'openGauss社区定制水杯',
+          phone: '342****665@qq.com',
+        },
+        {
+          name: 'openGauss社区定制水杯',
+          phone: '173****1858',
+        },
+        {
+          name: 'openGauss社区定制水杯',
+          phone: 'son****sh@nudt.edu.cn',
+        },
+        {
+          name: 'openGauss社区定制水杯',
+          phone: '350****205@qq.com',
+        },
+      ],
     },
   ],
 
@@ -91,66 +241,97 @@ const data = {
       </template>
     </div>
     <AppContent>
-      <div class="questionnaire-introduce">
+      <div class="panel1">
         <div class="left-text">
           <p v-for="item in data.introduce.textList" :key="item">{{ item }}</p>
         </div>
-        <div class="right-img">
-          <img class="code-img" :src="code" alt="" />
-          <a
-            :href="data.introduce.joinLink"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <OButton
-              class="join-btn"
-              type="primary"
-              :size="screenWidth > 1100 ? 'middle' : 'mini'"
-            >
-              立即参与
-            </OButton>
-          </a>
-        </div>
       </div>
-      <div class="questionnaire-prize1">
-        <template v-if="screenWidth > 1100">
-          <div class="prize-content">
-            <div class="prize-text">
-              <p class="prize-name">{{ data.prize[0].rank }}</p>
-              <p class="award-name">{{ data.prize[0].name }}</p>
+      <div class="panel2" v-if="screenWidth > 1100">
+        <div class="rank-head">
+          <div class="head-content">
+            <div class="left-rank">
+              <h4>{{ data.prize[0].rank }}</h4>
+              <h5>{{ data.prize[0].name }}</h5>
             </div>
-            <div class="prize-img">
+            <div class="right-img">
               <img :src="data.prize[0].prizeImg" alt="" />
             </div>
           </div>
-        </template>
-        <template v-else>
-          <div class="prize-head">
-            <img :src="data.prize[0].prizeImg" alt="" />
+        </div>
+        <div class="questionnaire-list">
+          <div class="prize-item item-title">
+            <div class="item-content">
+              <p>奖品</p>
+              <p>中奖号码/邮箱</p>
+            </div>
           </div>
-          <div class="prize-body">
-            <p class="prize-name">{{ data.prize[0].rank }}</p>
-            <p class="award-name">{{ data.prize[0].name }}</p>
-          </div>
-        </template>
-      </div>
-      <div class="questionnaire-prize2">
-        <div class="prize-box">
-          <div class="prize-head">
-            <img :src="data.prize[1].prizeImg" alt="" />
-          </div>
-          <div class="prize-body">
-            <p class="prize-name">{{ data.prize[1].rank }}</p>
-            <p class="award-name">{{ data.prize[1].name }}</p>
+          <div
+            class="prize-item"
+            v-for="subitem in data.prize[0].list"
+            :key="subitem.phone"
+          >
+            <div class="item-content">
+              <p>{{ subitem.name }}</p>
+              <p>{{ subitem.phone }}</p>
+            </div>
           </div>
         </div>
-        <div class="prize-box">
-          <div class="prize-head">
-            <img :src="data.prize[2].prizeImg" alt="" />
+      </div>
+      <div class="panel3" v-else>
+        <div class="rank-head">
+          <div class="head-content">
+            <img :src="data.prize[0].prizeImg" alt="" />
           </div>
-          <div class="prize-body">
-            <p class="prize-name">{{ data.prize[2].rank }}</p>
-            <p class="award-name">{{ data.prize[2].name }}</p>
+        </div>
+        <div class="rank-title">
+          <h4>{{ data.prize[0].rank }}</h4>
+          <h5>{{ data.prize[0].name }}</h5>
+        </div>
+        <div class="questionnaire-list">
+          <div class="prize-item item-title">
+            <div class="item-content">
+              <p>奖品</p>
+              <p>中奖号码/邮箱</p>
+            </div>
+          </div>
+          <div
+            class="prize-item"
+            v-for="subitem in data.prize[0].list"
+            :key="subitem.phone"
+          >
+            <div class="item-content">
+              <p>{{ subitem.name }}</p>
+              <p>{{ subitem.phone }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel3" v-for="item in data.prize.slice(1)" :key="item.name">
+        <div class="rank-head">
+          <div class="head-content">
+            <img :src="item.prizeImg" alt="" />
+          </div>
+        </div>
+        <div class="rank-title">
+          <h4>{{ item.rank }}</h4>
+          <h5>{{ item.name }}</h5>
+        </div>
+        <div class="questionnaire-list">
+          <div class="prize-item item-title">
+            <div class="item-content">
+              <p>奖品</p>
+              <p>中奖号码/邮箱</p>
+            </div>
+          </div>
+          <div
+            class="prize-item"
+            v-for="subitem in item.list"
+            :key="subitem.phone"
+          >
+            <div class="item-content">
+              <p>{{ subitem.name }}</p>
+              <p>{{ subitem.phone }}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -170,6 +351,58 @@ const data = {
 </template>
 
 <style lang="scss" scoped>
+.questionnaire-list {
+  padding: 0 40px;
+  @media screen and (max-width: 1100px) {
+    padding: 0;
+  }
+  .prize-item {
+    border-bottom: 1px solid var(--o-color-border2);
+    .item-content {
+      width: 100%;
+      max-width: 800px;
+      padding: 0 32px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      @media screen and (max-width: 1100px) {
+        padding: 0 16px;
+      }
+      p {
+        font-size: 16px;
+        line-height: 64px;
+        color: var(--o-color-text4);
+        text-align: left;
+        @media screen and (max-width: 1100px) {
+          font-size: 14px;
+          line-height: 16px;
+          padding: 12px 0;
+        }
+        &:nth-of-type(2){
+          width: 200px;
+          transform: translateX(96px);
+          @media screen and (max-width: 1100px) {
+            max-width: 200px;
+          transform: translateX(0);
+        }
+        @media screen and (max-width: 500px) {
+          margin-left: 12px;
+        width: 50%;
+          transform: translateX(0);
+        }
+        }
+      }
+    }
+    &.item-title {
+      .item-content {
+        p {
+          color: var(--o-color-text1);
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
 .questionnaire {
   .questionnaire-banner {
     width: 100%;
@@ -204,208 +437,144 @@ const data = {
       width: 100%;
     }
   }
-  .questionnaire-introduce {
+  .panel1 {
     width: 100%;
-    padding: 0 64px;
+    padding: 40px 68px;
     display: flex;
     background: var(--o-color-bg2)
       url(@/assets/category/questionnaire/2023/bg1.png) no-repeat center/cover;
     box-shadow: var(--o-shadow-l2);
-    justify-content: space-between;
+    justify-content: center;
+    font-size: 14px;
+    line-height: 22px;
     @media screen and (max-width: 1100px) {
+      font-size: 12px;
+      line-height: 18px;
       padding: 24px 16px;
-      display: block;
       background-image: url(@/assets/category/questionnaire/2023/bg1-mo.png);
     }
-    .left-text {
-      padding: 40px 0;
-      max-width: 930px;
-      @media screen and (max-width: 1100px) {
-        padding: 0;
-      }
-      p {
-        font-size: var(--o-font-size-text);
-        line-height: var(--o-line-height-h7);
-        color: var(--o-color-text1);
-        text-align: justify;
-        &:nth-of-type(2) {
-          margin-top: 24px;
-          @media screen and (max-width: 1100px) {
-            margin-top: 16px;
-          }
-        }
-        &:nth-last-of-type(1) {
-          margin-top: 24px;
-          @media screen and (max-width: 1100px) {
-            margin-top: 16px;
-          }
-        }
-        @media screen and (max-width: 1100px) {
-          font-size: var(--o-font-size-tip);
-          line-height: var(--o-line-height-tip);
-        }
-      }
-    }
-    .right-img {
-      width: 114px;
-      padding: 28px 0;
-      margin-right: 190px;
-      @media screen and (max-width: 1100px) {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        margin-top: 16px;
-      }
-      img {
-        width: 100%;
-        display: block;
-        @media screen and (max-width: 1100px) {
-          width: 126px;
-          margin: 0 auto;
-        }
-      }
-      a {
-        display: block;
-        margin-top: var(--o-spacing-h8);
-        @media screen and (max-width: 1100px) {
-          width: 104px;
-          margin: 8px auto 0;
-        }
-        .join-btn {
-          width: 100%;
-          padding: 8px 0;
-          justify-content: center;
-          @media screen and (max-width: 1100px) {
-            font-size: var(--o-font-size-text);
-          }
-        }
-      }
-    }
   }
-  .questionnaire-prize1 {
-    margin-top: 64px;
+  .panel2 {
+    margin-top: 118px;
     width: 100%;
-    height: 200px;
+    padding: 0 0 64px;
+    position: relative;
+    background-color: var(--o-color-bg2);
     box-shadow: var(--o-shadow-l2);
-    background-image: url('@/assets/category/questionnaire/2023/bg-prize1.png');
-    background-size: cover;
-    padding: 0 200px;
     @media screen and (max-width: 1100px) {
-      margin-top: 40px;
-      height: auto;
-      display: block;
-      padding: 0;
+      padding: 0 0 24px;
     }
-    .prize-content {
-      display: flex;
-      justify-content: space-between;
-      width: 736px;
-      margin: 0 auto;
-      .prize-text {
-        padding: 48px 0;
-        .prize-name {
-          font-size: 32px;
-          line-height: 40px;
-          color: var(--o-color-brand1);
+    .rank-head {
+      padding: 48px 0;
+      background: var(--o-color-bg2)
+        url(@/assets/category/questionnaire/2023/bg2.png) no-repeat top center;
+      @media screen and (max-width: 1100px) {
+        background: var(--o-color-bg2)
+          url(@/assets/category/questionnaire/2023/bg-mo.png) no-repeat top
+          center;
+      }
+      .head-content {
+        display: flex;
+        width: 100%;
+        max-width: 800px;
+        padding: 0 0 0 32px;
+        justify-content: space-between;
+        margin: 0 auto;
+        .left-rank {
+          h4 {
+            font-size: 32px;
+            line-height: 40px;
+            color: var(--o-color-brand1);
+            font-weight: normal;
+            @media screen and (max-width: 1100px) {
+              font-size: 20px;
+              line-height: 28px;
+            }
+          }
+          h5 {
+            margin-top: 32px;
+            font-size: 24px;
+            line-height: 32px;
+            color: var(--o-color-text4);
+            font-weight: normal;
+            @media screen and (max-width: 1100px) {
+              font-size: 20px;
+              line-height: 28px;
+            }
+          }
         }
-        .award-name {
-          margin-top: 32px;
-          font-size: var(--o-font-size-h5);
-          line-height: var(--o-line-height-h5);
-          color: var(--o-color-text1);
+        .right-img {
+          position: relative;
+          img {
+            position: absolute;
+            height: 240px;
+            bottom: -36px;
+            right: 0;
+            &:nth-of-type(2) {
+              margin-left: 12px;
+            }
+          }
         }
-      }
-      .prize-img {
-        position: relative;
-        width: 151px;
-        img {
-          position: absolute;
-          height: 240px;
-          bottom: 12px;
-        }
-      }
-    }
-
-    .prize-head {
-      text-align: center;
-      padding: 16px 0;
-      background-image: url('@/assets/category/questionnaire/2023/bg-prize2.png');
-      background-size: cover;
-      img {
-        height: 168px;
-      }
-    }
-    .prize-body {
-      text-align: center;
-      padding: 18px 0 16px;
-      .prize-name {
-        font-size: var(--o-font-size-h6);
-        line-height: 30px;
-        color: var(--o-color-brand1);
-      }
-      .award-name {
-        margin-top: 8px;
-        font-size: var(--o-font-size-text);
-        line-height: 30px;
-        color: var(--o-color-text1);
       }
     }
   }
-  .questionnaire-prize2 {
+  .panel3 {
     margin-top: 64px;
     width: 100%;
-    display: flex;
-    gap: 20px;
+    padding: 0 0 64px;
+    position: relative;
+    background-color: var(--o-color-bg2);
+    box-shadow: var(--o-shadow-l2);
     @media screen and (max-width: 1100px) {
-      margin-top: 16px;
-      display: block;
+      margin-top: 24px;
+      padding: 0 0 24px;
     }
-    .prize-box {
-      box-shadow: var(--o-shadow-l2);
-      flex-grow: 1;
-      max-width: 696px;
-      @media screen and (max-width: 1100px) {
-        max-width: 100%;
-        & + .prize-box {
-          margin-top: 16px;
-        }
-      }
-      .prize-head {
-        width: 100%;
-        padding: 16px 0;
-        background-image: url('@/assets/category/questionnaire/2023/bg-prize2.png');
-        background-size: cover;
+    .rank-head {
+      padding: 16px 0;
+      background: var(--o-color-bg2)
+        url(@/assets/category/questionnaire/2023/bg2.png) no-repeat top center;
+        @media screen and (max-width: 1100px) {
+          background: var(--o-color-bg2)
+        url(@/assets/category/questionnaire/2023/bg-mo.png) no-repeat top center;
+          }
+      .head-content {
         display: flex;
+        width: 100%;
+        max-width: 800px;
         justify-content: center;
+        margin: 0 auto;
         img {
           height: 168px;
+          @media screen and (max-width: 1100px) {
+            height: 128px;
+          }
         }
       }
-      .prize-body {
+    }
+    .rank-title {
+      padding: 24px 0;
+      h4 {
+        font-size: 28px;
+        line-height: 40px;
+        color: var(--o-color-brand1);
+        font-weight: normal;
         text-align: center;
-        padding: 24px 0;
         @media screen and (max-width: 1100px) {
-          padding: 18px 0 16px;
+          font-size: 20px;
+          line-height: 28px;
         }
-        .prize-name {
-          font-size: var(--o-font-size-h4);
-          line-height: 40px;
-          color: var(--o-color-brand1);
-          @media screen and (max-width: 1100px) {
-            font-size: var(--o-font-size-h6);
-            line-height: 30px;
-          }
-        }
-        .award-name {
-          margin-top: 16px;
-          font-size: var(--o-font-size-h7);
-          line-height: var(--o-line-height-h5);
-          color: var(--o-color-text1);
-          @media screen and (max-width: 1100px) {
-            margin-top: 8px;
-            font-size: var(--o-font-size-text);
-            line-height: 30px;
-          }
+      }
+      h5 {
+        margin-top: 16px;
+        font-size: 18px;
+        line-height: 32px;
+        color: var(--o-color-text4);
+        font-weight: normal;
+        text-align: center;
+        @media screen and (max-width: 1100px) {
+          margin-top: 8px;
+          font-size: 20px;
+          line-height: 28px;
         }
       }
     }
