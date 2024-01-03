@@ -126,18 +126,29 @@ const handleChangeActiveMobile = (activeNames: any) => {
                   item.emial
                 }}</a>
               </li>
-              <li><IconUser />{{ item.nameText }}</li>
+              <li v-if="item.nameText"><IconUser />{{ item.nameText }}</li>
             </ul>
             <ul v-if="item.list && item.list.length" class="member-list">
               <li v-for="(user, i) in item.list" :key="i">
                 <img class="avatar" :src="user.img" :alt="user.name" />
                 <p class="m-name lable-name">{{ user.name }}</p>
                 <p class="m-title">{{ user.title }}</p>
-                <p class="m-company" :class="user.wider" :title="user.company">
-                  {{ user.company }}
-                </p>
+                <template v-if="user.company">
+                  <p
+                    v-for="itemCompany in user.company.split('\n')"
+                    :key="itemCompany"
+                    class="m-company"
+                    :class="user.wider"
+                    :title="itemCompany"
+                  >
+                    {{ itemCompany }}
+                  </p>
+                </template>
                 <p class="links lable-name">
-                  <a :href="'mailto:' + user.email" class="mail"
+                  <a
+                    v-if="user.email"
+                    :href="'mailto:' + user.email"
+                    class="mail"
                     ><img :src="emailImg"
                   /></a>
                   <a
@@ -264,35 +275,118 @@ const handleChangeActiveMobile = (activeNames: any) => {
               {{ i18n.member.EMIAL_TEXT }}
               <a :href="'mailto:' + item.emial">{{ item.emial }}</a>
             </li>
-            <li><IconUser />{{ item.nameText }}</li>
+            <li v-if="item.nameText"><IconUser />{{ item.nameText }}</li>
           </ul>
-          <ul v-if="item.list && item.list.length > 0" class="member-list">
-            <li v-for="(user, i) in item.list" :key="i">
-              <img class="avatar" :src="user.img" :alt="user.name" />
-              <p class="m-name">{{ user.name }}</p>
-              <p class="m-title">{{ user.title }}</p>
-              <p
-                class="m-company lable-name1"
-                :class="user.wider"
-                :title="user.company"
-              >
-                {{ user.company }}
-              </p>
-              <p class="links lable-name3">
-                <a :href="'mailto:' + user.email" class="mail"
-                  ><img :src="emailImg"
-                /></a>
-                <a
-                  v-if="user.gitee"
-                  :href="user.gitee"
-                  class="gitee lable-name3"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  ><img :src="gitImg"
-                /></a>
-              </p>
-            </li>
-          </ul>
+          <template v-if="item.id === 'counselor'">
+            <ul v-if="item.list && item.list.length > 0" class="member-list">
+              <li v-for="(user, i) in item.list.slice(0, 2)" :key="i">
+                <img class="avatar" :src="user.img" :alt="user.name" />
+                <p class="m-name">{{ user.name }}</p>
+                <p class="m-title">{{ user.title }}</p>
+                <template v-if="user.company">
+                  <p
+                    v-for="itemCompany in user.company.split('\n')"
+                    :key="itemCompany"
+                    class="m-company lable-name1"
+                    :class="user.wider"
+                    :title="itemCompany"
+                  >
+                    {{ itemCompany }}
+                  </p>
+                </template>
+
+                <p class="links lable-name3">
+                  <a
+                    v-if="user.email"
+                    :href="'mailto:' + user.email"
+                    class="mail"
+                    ><img :src="emailImg"
+                  /></a>
+                  <a
+                    v-if="user.gitee"
+                    :href="user.gitee"
+                    class="gitee lable-name3"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    ><img :src="gitImg"
+                  /></a>
+                </p>
+              </li>
+            </ul>
+            <ul v-if="item.list && item.list.length > 0" class="member-list">
+              <li v-for="(user, i) in item.list.slice(2)" :key="i">
+                <img class="avatar" :src="user.img" :alt="user.name" />
+                <p class="m-name">{{ user.name }}</p>
+                <p class="m-title">{{ user.title }}</p>
+                <template v-if="user.company">
+                  <p
+                    v-for="itemCompany in user.company.split('\n')"
+                    :key="itemCompany"
+                    class="m-company lable-name1"
+                    :class="user.wider"
+                    :title="itemCompany"
+                  >
+                    {{ itemCompany }}
+                  </p>
+                </template>
+
+                <p class="links lable-name3">
+                  <a
+                    v-if="user.email"
+                    :href="'mailto:' + user.email"
+                    class="mail"
+                    ><img :src="emailImg"
+                  /></a>
+                  <a
+                    v-if="user.gitee"
+                    :href="user.gitee"
+                    class="gitee lable-name3"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    ><img :src="gitImg"
+                  /></a>
+                </p>
+              </li>
+            </ul>
+          </template>
+          <template v-else>
+            <ul v-if="item.list && item.list.length > 0" class="member-list">
+              <li v-for="(user, i) in item.list" :key="i">
+                <img class="avatar" :src="user.img" :alt="user.name" />
+                <p class="m-name">{{ user.name }}</p>
+                <p class="m-title">{{ user.title }}</p>
+                <template v-if="user.company">
+                  <p
+                    v-for="itemCompany in user.company.split('\n')"
+                    :key="itemCompany"
+                    class="m-company lable-name1"
+                    :class="user.wider"
+                    :title="itemCompany"
+                  >
+                    {{ itemCompany }}
+                  </p>
+                </template>
+
+                <p class="links lable-name3">
+                  <a
+                    v-if="user.email"
+                    :href="'mailto:' + user.email"
+                    class="mail"
+                    ><img :src="emailImg"
+                  /></a>
+                  <a
+                    v-if="user.gitee"
+                    :href="user.gitee"
+                    class="gitee lable-name3"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    ><img :src="gitImg"
+                  /></a>
+                </p>
+              </li>
+            </ul>
+          </template>
+
           <div v-if="item.id === 'board'" class="board-view">
             <a
               :href="`/${lang}/member/detail/`"
@@ -354,7 +448,10 @@ const handleChangeActiveMobile = (activeNames: any) => {
                     {{ user.company }}
                   </p>
                   <p class="links lable-name5">
-                    <a :href="'mailto:' + user.email" class="mail"
+                    <a
+                      v-if="user.email"
+                      :href="'mailto:' + user.email"
+                      class="mail"
                       ><img :src="emailImg"
                     /></a>
                     <a
@@ -496,6 +593,23 @@ const handleChangeActiveMobile = (activeNames: any) => {
       @media screen and (max-width: 768px) {
         height: 120px;
         margin-top: -120px;
+      }
+    }
+    &#counselor + .member-panel-content {
+      .member-list {
+        display: flex;
+        gap: 32px;
+        justify-content: center;
+        max-width: 510px;
+        margin: 0 auto;
+        & + .member-list {
+          margin-top: 12px;
+          gap: 0;
+          justify-content: space-between;
+        }
+        li{
+          width: 152px;
+        }
       }
     }
   }

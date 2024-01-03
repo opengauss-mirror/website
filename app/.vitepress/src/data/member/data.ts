@@ -446,9 +446,41 @@ import yangwei from '@/assets/category/member/avatar/yangwei.png';
 import songxuedong from '@/assets/category/member/avatar/songxuedong.png';
 import chaipeng from '@/assets/category/member/avatar/chaipeng.png';
 import zhouzhengde from '@/assets/category/member/avatar/zhouzhengde.png';
+
+import panyan from '@/assets/category/member/avatar/panyan.png';
+import wangxiaoyun from '@/assets/category/member/avatar/wangxiaoyun.png';
+import zhengweimin from '@/assets/category/member/avatar/zhengweimin.png';
+import zhouaoying from '@/assets/category/member/avatar/zhouaoying.png';
 import { GITEE_LINK } from '@/data/url-config';
 export default {
   zh: {
+    COUNSELOR: [
+      {
+        img: zhengweimin,
+        name: `郑纬民`,
+        company: `中国工程院院士`,
+      },
+      {
+        img: wangxiaoyun,
+        name: `王小云`,
+        company: `中国科学院院士`,
+      },
+      {
+        img: panyan,
+        name: `潘妍`,
+        company: `国家工业信息安全发展\n研究中心软件所所长`,
+      },
+      {
+        img: zhouaoying,
+        name: `周傲英`,
+        company: `华东师范大学数据学院教授\n中国计算机学会常务理事`,
+      },
+      {
+        img: jiangdayong,
+        name: `江大勇`,
+        company: `中科院软件研究所副总工`,
+      },
+    ],
     BOARD: [
       {
         img: huzhengce,
@@ -4350,6 +4382,33 @@ export default {
     ],
   },
   en: {
+    COUNSELOR: [
+      {
+        img: zhengweimin,
+        name: `Weimin Zheng`,
+        company: `Academician of Chinese Academy of Engineering`,
+      },
+      {
+        img: wangxiaoyun,
+        name: `Xiaoyun Wang`,
+        company: `Academician of Chinese Academy of Sciences`,
+      },
+      {
+        img: panyan,
+        name: `Yan Pan`,
+        company: `Director of the Software Institute of the CIC`,
+      },
+      {
+        img: zhouaoying,
+        name: `Aoying Zhou`,
+        company: `Professor, School of Data, East China Normal University，Executive Director of CCF`,
+      },
+      {
+        img: jiangdayong,
+        name: `Dayong Jiang`,
+        company: `Deputy Chief Engineer, Institute of Software, Chinese Academy of Sciences`,
+      },
+    ],
     BOARD: [
       {
         img: huzhengce,
