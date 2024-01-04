@@ -4,7 +4,7 @@ import AppFooter from '@/components/AppFooter.vue';
 import CookieNotice from '@/components/CookieNotice.vue';
 import { useData } from 'vitepress';
 import type { Component } from 'vue';
-import { computed } from 'vue';
+import { computed, onMounted } from 'vue';
 import zhCn from 'element-plus/lib/locale/lang/zh-cn';
 import en from 'element-plus/lib/locale/lang/en';
 
