@@ -98,6 +98,7 @@ const getData: any = computed(() => {
           <DownloadContent
             :content-data="getData"
             :version-shown="versionShown"
+            :download-version-auth="versionList"
           />
         </div>
       </div>
