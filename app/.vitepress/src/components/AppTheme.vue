@@ -72,17 +72,17 @@ watch(
 
 <style lang="scss" scoped>
 .theme-box {
-  &-pc {
+  .theme-box-pc {
     cursor: pointer;
     .icon {
-      font-size: var(--o-font-size-h5);
+      font-size: var(--o-font-size-h6);
       color: var(--o-color-text1);
     }
     @media screen and (max-width: 1100px) {
       display: none;
     }
   }
-  &-mobile {
+  .theme-box-mobile {
     display: none;
 
     @media screen and (max-width: 1100px) {
