@@ -346,7 +346,7 @@ const jumpToUserZone = () => {
     top: 12px;
     margin-right: 0;
   }
-  img{
+  img {
     height: 32px;
     @media (max-width: 1100px) {
       height: 24px;
@@ -408,7 +408,7 @@ const jumpToUserZone = () => {
     }
   }
   .icon {
-    font-size: 22px;
+    font-size: var(--o-font-size-h6);
     color: var(--o-color-text1);
   }
 }
@@ -645,6 +645,11 @@ const jumpToUserZone = () => {
         cursor: default;
       }
     }
+  }
+  .login {
+    cursor: pointer;
+    font-size: var(--o-font-size-h6);
+    color: var(--o-color-text1);
   }
 }
 </style>
