@@ -1,0 +1,10 @@
+---
+title: 合芯科技
+category: showcase
+industry: Others
+company: 合芯科技
+summary: 合芯科技聚焦于高端服务器处理器芯片及配套芯片产品与基础软硬件解决方案业务，致力于与国际顶尖技术授权方和开源组织深度合作，研究开发国产化高端服务器中央处理器，设计、销售可定制的服务器和整体解决方案。部署和使用openGauss
+officialPath: https://www.shingroup.cn/index.html
+detail: false
+id: Others
+---

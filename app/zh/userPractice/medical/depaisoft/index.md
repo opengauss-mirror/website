@@ -1,0 +1,10 @@
+---
+title: 德派软件(北京)有限公司
+category: showcase
+industry: 医疗
+company: 德派软件(北京)有限公司
+summary: 德派软件访问专家软件致力于采集和管理数据，支持电话访问、APP移动面访、网络调查、神秘客检查、政府机构/店面巡查、现场实时统计的投票，提供了高质量数据管理所需的质控体系。其中访问专家 V4.0使用和适配openGauss
+officialPath: https://www.dapchina.cn/sy
+detail: false
+id: Medical
+---
