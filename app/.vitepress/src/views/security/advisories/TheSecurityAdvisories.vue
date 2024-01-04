@@ -15,7 +15,7 @@ import IconCalendar from '~icons/security/icon-calendar.svg';
 import IconCancel from '~icons/app/icon-cancel.svg';
 
 import { getSecurityList } from '@/api/api-security';
-import { SecurityLists, CveQuery } from '@/shared/@types/type-security';
+import { SecurityListsT, SecurityQueryT } from '@/shared/@types/type-security';
 
 const i18n = useI18n();
 const router = useRouter();
@@ -30,7 +30,7 @@ const selectedYear = ref('2022');
 const activeIndex = ref(0);
 const activeIndex1 = ref(0);
 
-const tableData = ref<SecurityLists[]>([
+const tableData = ref<SecurityListsT[]>([
   {
     affectProduct: '',
     cveLevel: '',
@@ -43,7 +43,7 @@ const tableData = ref<SecurityLists[]>([
   },
 ]);
 
-const queryData: CveQuery = reactive({
+const queryData: SecurityQueryT = reactive({
   pageNum: 1,
   pageSize: 10,
   searchName: '',
@@ -52,7 +52,7 @@ const queryData: CveQuery = reactive({
   releaseFlag: 2,
 });
 
-function getSecurityLists(data: CveQuery) {
+function getSecurityLists(data: SecurityQueryT) {
   getSecurityList(data).then((res: any) => {
     if (res.code === '200' && res.body[0]) {
       tableData.value = res.body;

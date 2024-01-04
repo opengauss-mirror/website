@@ -13,10 +13,3 @@ export interface NewsItemT {
   title: string;
   type: string;
 }
-
-export interface ParamsType {
-  page: number;
-  pageSize: number;
-  lang: string;
-  category: string;
-}
