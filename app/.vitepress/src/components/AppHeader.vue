@@ -1,9 +1,15 @@
 <script setup lang="ts">
-import { computed, ref, watch, nextTick } from 'vue';
+import { computed, onMounted, ref, watch } from 'vue';
 import { useRouter, useData } from 'vitepress';
 import { useCommon } from '@/stores/common';
 import { useI18n } from '@/i18n';
-import { showGuard, logout, getUserAuth, useStoreData } from '@/shared/login';
+import {
+  showGuard,
+  logout,
+  getUserAuth,
+  useStoreData,
+  refreshInfo,
+} from '@/shared/login';
 
 import navLangFilter from '@/i18n/common/navLangFilter';
 
@@ -173,6 +179,9 @@ const jumpToUserZone = () => {
   const origin = import.meta.env.VITE_LOGIN_ORIGIN;
   window.open(`${origin}/${language}/profile`, '_black');
 };
+onMounted(() => {
+  refreshInfo();
+});
 </script>
 
 <template>
