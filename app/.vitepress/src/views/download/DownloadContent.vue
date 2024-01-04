@@ -18,10 +18,17 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  downloadVersionAuth: {
+    required: true,
+    type: Array,
+    default: () => {
+      return [];
+    },
+  },
 });
 const i18n = useI18n();
 const { lang } = useData();
-const { contentData, versionShown } = toRefs(props);
+const { contentData, versionShown, downloadVersionAuth } = toRefs(props);
 const explainLink = computed(() => {
   return (contentData.value[0] as any).docs_list[0][
     lang.value === 'zh' ? 'path' : 'pathEn'
@@ -60,6 +67,7 @@ const explainLink = computed(() => {
       :key="item.name"
       :table-data="item"
       :version-shown="versionShown"
+      :download-version-auth="downloadVersionAuth"
     />
   </div>
 </template>

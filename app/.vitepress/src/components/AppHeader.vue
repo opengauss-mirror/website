@@ -3,6 +3,7 @@ import { computed, ref, watch, nextTick } from 'vue';
 import { useRouter, useData } from 'vitepress';
 import { useCommon } from '@/stores/common';
 import { useI18n } from '@/i18n';
+import { showGuard, logout, getUserAuth, useStoreData } from '@/shared/login';
 
 import navLangFilter from '@/i18n/common/navLangFilter';
 
@@ -17,6 +18,7 @@ import logo_dark from '@/assets/logo_dark.svg';
 import IconSearch from '~icons/app/icon-search.svg';
 import IconCancel from '~icons/app/icon-cancel.svg';
 import IconMenu from '~icons/app/icon-menu.svg';
+import IconLogin from '~icons/app/icon-login.svg';
 
 interface NavItemT {
   NAME: string;
@@ -162,6 +164,15 @@ const closeSearchBox = () => {
 };
 // 搜索组件跳转链接
 const searchLink = `/${lang.value}/search/`;
+
+// 账号登录
+const { token } = getUserAuth();
+const { guardAuthClient } = useStoreData();
+const jumpToUserZone = () => {
+  const language = lang.value === 'zh' ? 'zh' : 'en';
+  const origin = import.meta.env.VITE_LOGIN_ORIGIN;
+  window.open(`${origin}/${language}/profile`, '_black');
+};
 </script>
 
 <template>
@@ -256,6 +267,30 @@ const searchLink = `/${lang.value}/search/`;
           </div>
         </transition>
       </div>
+      <ClientOnly>
+        <div class="opt-user">
+          <div v-if="token">
+            <div class="opt-info">
+              <img
+                v-if="guardAuthClient.photo"
+                :src="guardAuthClient.photo"
+                class="opt-img"
+              />
+              <div v-else class="opt-img"></div>
+              <p class="opt-name">{{ guardAuthClient.username }}</p>
+            </div>
+            <ul class="menu-list">
+              <li @click="jumpToUserZone()">{{ i18n.common.USER_CENTER }}</li>
+              <li @click="logout()">{{ i18n.common.LOGOUT }}</li>
+            </ul>
+          </div>
+          <div v-else class="login" @click="showGuard()">
+            <OIcon class="icon">
+              <IconLogin />
+            </OIcon>
+          </div>
+        </div>
+      </ClientOnly>
     </div>
   </header>
 </template>

@@ -90,6 +90,8 @@ watch(
   },
   { deep: true, immediate: true }
 );
+//控制需要登录后才能下载的版本,最新版的LTS和Preview都需要登录后才能下载的版本
+const downloadVersionAuth = [DownloadConfig[0].name, DownloadConfig[1].name];;
 </script>
 
 <template>
@@ -373,6 +375,7 @@ watch(
       v-else
       :content-data="getData"
       :version-shown="selectVersion"
+      :download-version-auth="downloadVersionAuth"
     />
   </AppContent>
 </template>

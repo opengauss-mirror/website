@@ -3,9 +3,10 @@ import { ref, computed, watch, toRefs, onMounted } from 'vue';
 import { useData } from 'vitepress';
 import { useCommon } from '@/stores/common';
 import { useI18n } from '@/i18n';
-import { ElMessage } from 'element-plus';
+import { ElMessage, ElMessageBox } from 'element-plus';
 import useWindowResize from '@/components/hooks/useWindowResize';
 import { DownloadItemT } from '@/shared/@types/type-download';
+import { showGuard, useStoreData } from '@/shared/login';
 
 import IconDownload from '~icons/app/icon-download.svg';
 import IconCopy from '~icons/app/icon-copy.svg';
@@ -23,13 +24,20 @@ const props = defineProps({
       return {};
     },
   },
+  downloadVersionAuth: {
+    required: true,
+    type: Array,
+    default: () => {
+      return [];
+    },
+  },
   versionShown: {
     required: true,
     type: String,
     default: '',
   },
 });
-const { tableData } = toRefs(props);
+const { tableData, versionShown, downloadVersionAuth } = toRefs(props);
 const { lang } = useData();
 const commonStore = useCommon();
 const i18n = useI18n();
@@ -50,7 +58,7 @@ const hoverTips = computed(() => (type: string | undefined) => {
     case 'lite':
       tips = i18n.value.download.LITE;
       break;
-      case 'finance':
+    case 'finance':
       tips = i18n.value.download.FINANCE;
       break;
     default:
@@ -184,6 +192,25 @@ watch(
     immediate: true,
   }
 );
+// 下载权限
+const { guardAuthClient } = useStoreData();
+const changeDownloadAuth = () => {
+  ElMessageBox.confirm(
+    i18n.value.download.DONNLOAD_TEXT,
+    i18n.value.download.DONNLOAD_TIPS,
+    {
+      confirmButtonText: i18n.value.download.DONNLOAD_COMFIRM,
+      cancelButtonText: i18n.value.download.DONNLOAD_CANCEL,
+      type: 'warning',
+    }
+  )
+    .then(() => {
+      showGuard();
+    })
+    .catch(() => {
+      return '';
+    });
+};
 </script>
 <template>
   <div class="content-item">
@@ -254,14 +281,34 @@ watch(
         <el-table-column :label="i18n.download.TABLE_HEAD[2]" prop="down_url">
           <template #default="scope">
             <div v-if="scope.row.down_url !== ''" class="down-action">
-              <a :href="scope.row.down_url" rel="noopener noreferrer">
-                <OButton size="mini" type="primary" animation>
+              <template
+                v-if="
+                  downloadVersionAuth.includes(versionShown) &&
+                  !guardAuthClient.username
+                "
+              >
+                <OButton
+                  size="mini"
+                  type="primary"
+                  animation
+                  @click="changeDownloadAuth"
+                >
                   {{ i18n.download.BTN_TEXT }}
                   <template #suffixIcon>
                     <IconDownload />
                   </template>
                 </OButton>
-              </a>
+              </template>
+              <template v-else>
+                <a :href="scope.row.down_url">
+                  <OButton size="mini" type="primary" animation>
+                    {{ i18n.download.BTN_TEXT }}
+                    <template #suffixIcon>
+                      <IconDownload />
+                    </template>
+                  </OButton>
+                </a>
+              </template>
             </div>
           </template>
         </el-table-column>
@@ -331,7 +378,16 @@ watch(
         </p>
         <p class="item-text">
           <span>{{ i18n.download.TABLE_HEAD[2] + ':' }}</span>
-          <a :href="item.down_url" rel="noopener noreferrer">
+          <a
+            v-if="
+              downloadVersionAuth.includes(versionShown) &&
+              !guardAuthClient.username
+            "
+            @click="changeDownloadAuth"
+          >
+            {{ i18n.download.BTN_TEXT_MO }}</a
+          >
+          <a v-else :href="item.down_url">
             {{ i18n.download.BTN_TEXT_MO }}
           </a>
         </p>
