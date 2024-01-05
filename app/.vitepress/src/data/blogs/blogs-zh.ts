@@ -1,5 +1,23 @@
 export default [
   {
+    title: 'OS兼容性weak-modules脚本修改方法',
+    date: '2023-12-27',
+    tags: ['openGauss'],
+    archives: '2023-12',
+    author: ['why涛'],
+    summary: 'OS兼容性weak-modules脚本修改方法',
+    path: 'zh/blogs/weak-modules/OS兼容性weak-modules脚本修改方法',
+  },
+  {
+    date: '2023-12-19',
+    summary: 'openGauss事务回滚时清理xid流程分析',
+    archives: '2023-12',
+    author: ['zhoucong'],
+    title: 'openGauss事务回滚时清理xid流程分析',
+    tags: ['openGauss事务回滚时清理xid流程分析'],
+    path: 'zh/blogs/zhoucong/子事务回滚时清理pgproc流程分析',
+  },
+  {
     date: '2023-11-22',
     summary: 'openGauss分布式与openLooKeng部署指南',
     archives: '2023-11',
@@ -23,7 +41,7 @@ export default [
     archives: '2023-11',
     author: ['wangyuxuan'],
     title: '如何使用Flink连接openGauss数据库（flink-cdc-connector）',
-    tags: ["openGauss社区开发入门","flink","cdc"],
+    tags: ['openGauss社区开发入门', 'flink', 'cdc'],
     path: 'zh/blogs/wangyuxuan/Flink-cdc-connector',
   },
   {
@@ -41,7 +59,7 @@ export default [
     archives: '2023-10',
     author: ['laishenghao'],
     title: 'openGauss基于4路鲲鹏服务器的性能调优',
-    tags: ["性能调优", "TPCC", "openGauss"],
+    tags: ['性能调优', 'TPCC', 'openGauss'],
     path: 'zh/blogs/laishenghao/openGauss基于4路鲲鹏服务器的性能调优',
   },
   {
@@ -73,8 +91,7 @@ export default [
   },
   {
     date: '2023-07-27',
-    summary:
-      'openGauss资源池化开发者入门指南',
+    summary: 'openGauss资源池化开发者入门指南',
     path: 'zh/blogs/liuzhanfeng/资源池化模拟环境部署脚本介绍',
     archives: '2023-07',
     author: ['liuzhanfeng'],
