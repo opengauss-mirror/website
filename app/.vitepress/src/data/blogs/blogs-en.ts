@@ -1,5 +1,23 @@
 export default [
   {
+    date: '2023-12-27',
+    summary: 'Modification_of_the_weak-modules_Script_for_OS_Compatibility',
+    title: 'Modification_of_the_weak-modules_Script_for_OS_Compatibility',
+    tags: ['openGauss'],
+    archives: '2023-12',
+    author: ['why涛'],
+    path: 'en/blogs/weak-modules/Modification_of_the_weak-modules_Script_for_OS_Compatibility',
+  },
+  {
+    date: '2023-12-27',
+    summary: 'RDMA_Network_Guide',
+    archives: '2023-12',
+    tags: ['openGauss'],
+    author: ['why涛'],
+    title: 'RDMA_Network_Guide',
+    path: 'en/blogs/RDMA/RDMA_Network_Guide',
+  },
+  {
     date: '2022-03-15',
     summary: 'New Feature of openGauss 3.0.0: Parallel Decoding',
     archives: '2022-03',
