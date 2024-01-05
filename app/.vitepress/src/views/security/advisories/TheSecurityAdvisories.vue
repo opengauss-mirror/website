@@ -22,10 +22,9 @@ const router = useRouter();
 
 const inputName = ref('');
 const total = ref(0);
-const currentPage = ref(1);
 const totalPage = ref(0);
 const layout = ref('sizes, prev, pager, next, slot, jumper');
-const years = ['', '2022', '2021'];
+const years = ['', '2023', '2022', '2021'];
 const selectedYear = ref('2022');
 const activeIndex = ref(0);
 const activeIndex1 = ref(0);
@@ -69,26 +68,29 @@ function getSecurityLists(data: CveQuery) {
 const onTagClick = (i: number, leval: string) => {
   activeIndex.value = i;
   queryData.cveLevel = leval;
+  queryData.pageNum = 1;
 };
 
 const onYearTagClick = (i: number, type: string) => {
   queryData.years = type;
   activeIndex1.value = i;
   selectedYear.value = type === '' ? '全部' : type;
+  queryData.pageNum = 1;
 };
 
 const handleSizeChange = (val: number) => {
   queryData.pageSize = val;
   totalPage.value = Math.ceil(total.value / val);
+  queryData.pageNum = 1;
 };
 
 const handleCurrentChange = (val: number) => {
   queryData.pageNum = val;
-  currentPage.value = val;
 };
 
 function changeSearchVal() {
   queryData.searchName = inputName.value;
+  queryData.pageNum = 1;
 }
 
 function jumpAdvisoriesDetail(val: any) {
@@ -112,6 +114,7 @@ function turnPage(option: string) {
 // 点击搜索框的删除图标
 function clearSearchInput() {
   inputName.value = '';
+  queryData.searchName = '';
 }
 onMounted(() => {
   optionYear.value = i18n.value.security.ALL;
@@ -283,7 +286,7 @@ watch(queryData, () => getSecurityLists(queryData));
           v-model:page-size="queryData.pageSize"
           v-model:currentPage="queryData.pageNum"
           class="pagination"
-          :page-sizes="[1, 2, 4, 8]"
+          :page-sizes="[10]"
           :layout="layout"
           :total="total"
           :background="true"
@@ -291,7 +294,9 @@ watch(queryData, () => getSecurityLists(queryData));
           @size-change="handleSizeChange"
           @current-change="handleCurrentChange"
         >
-          <span class="slot-content">{{ currentPage }}/{{ totalPage }}</span>
+          <span class="slot-content"
+            >{{ queryData.pageNum }}/{{ totalPage }}</span
+          >
         </OPagination>
       </ClientOnly>
 
