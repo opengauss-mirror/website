@@ -1,0 +1,10 @@
+---
+title: 聚力创智科技有限公司
+category: showcase
+industry: Others
+company: 聚力创智科技有限公司
+summary: 聚力创智是一家区域型IT解决方案供应商，通过与业界领先的IT解决方案厂商战略合作，自主研发适用于行业应用场景的聚力创智创新型产品，优化整合IT生态中优质的第三方网络、安全和应用产品，形成了良好的本地化集成资源，为用户提供完整的场景化解决方案。其中，创智数据综合查询服务平台 V1.0使用和兼容openGauss
+officialPath: http://www.julicloud.com/
+detail: false
+id: Others
+---
