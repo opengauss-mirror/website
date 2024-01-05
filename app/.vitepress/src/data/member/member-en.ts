@@ -13,6 +13,11 @@ export default {
   ],
   memberList: [
     {
+      name: `Advisory Committee`,
+      id: `counselor`,
+      list: data.en.COUNSELOR,
+    },
+    {
       name: `Board`,
       id: `board`,
       giteePath: `${GITEE_LINK}opengauss/board`,

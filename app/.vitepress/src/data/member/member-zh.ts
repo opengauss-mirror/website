@@ -13,6 +13,11 @@ export default {
   ],
   memberList: [
     {
+      name: `顾问委员会`,
+      id: `counselor`,
+      list: data.zh.COUNSELOR,
+    },
+    {
       name: `理事会`,
       id: `board`,
       giteePath: `${GITEE_LINK}opengauss/board`,
@@ -231,7 +236,7 @@ export default {
       ],
     },
     {
-      name: `openGauss用户组（oGUG）`,
+      name: `用户组（oGUG）`,
       id: `ogug`,
       children: [
         {
