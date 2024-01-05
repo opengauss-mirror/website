@@ -1,5 +1,60 @@
 export default [
   {
+    name: '创建基于微服务架构的市民卡系统平台软件',
+    version: '3.0',
+    type: '数字政府',
+    company: '浙江创建科技有限公司',
+    database: 'openGauss 5.0.0',
+    os: 'CentOS 7.6',
+    server: 'Intel（其他）',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%B5%99%E6%B1%9F%E5%88%9B%E5%BB%BA/%E5%B8%82%E6%B0%91%E5%8D%A1%E7%B3%BB%E7%BB%9F%E5%B9%B3%E5%8F%B0%E8%BD%AF%E4%BB%B6V3.0/Certificate.pdf',
+  },
+  {
+    name: '创建统一支付平台软件',
+    version: '2.0',
+    type: '数字政府',
+    company: '浙江创建科技有限公司',
+    database: 'openGauss 5.0.0',
+    os: 'CentOS 7.6',
+    server: 'Intel（其他）',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%B5%99%E6%B1%9F%E5%88%9B%E5%BB%BA/%E7%BB%9F%E4%B8%80%E6%94%AF%E4%BB%98%E5%B9%B3%E5%8F%B0%E8%BD%AF%E4%BB%B6V2.0/Certificate.pdf',
+  },
+  {
+    name: '创建居民服务一卡通系统软件',
+    version: '1.0',
+    type: '数字政府',
+    company: '浙江创建科技有限公司',
+    database: 'openGauss 5.0.0',
+    os: 'CentOS 7.6',
+    server: 'Intel（其他）',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%B5%99%E6%B1%9F%E5%88%9B%E5%BB%BA/%E5%B1%85%E6%B0%91%E6%9C%8D%E5%8A%A1%E4%B8%80%E5%8D%A1%E9%80%9A%E7%B3%BB%E7%BB%9F%E8%BD%AF%E4%BB%B6V1.0/Certificate.pdf',
+  },
+  {
+    name: '马上办',
+    version: '1.0',
+    type: '数字政府',
+    company: '浙江翼信科技有限公司',
+    database: 'openGauss 5.0.0',
+    os: 'Kylin V10 SP3',
+    server: 'Kunpeng 920(TaiShan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%B5%99%E6%B1%9F%E7%BF%BC%E4%BF%A1/%E9%A9%AC%E4%B8%8A%E5%8A%9EV1.0/Certificate.pdf',
+  },
+  {
+    name: '流程易RPA控制台系统',
+    version: '1.0',
+    type: '通用',
+    company: '广州云迪科技有限公司',
+    database: 'openGauss 5.0.0',
+    os: 'Kylin V10',
+    server: 'Hygon C86 7151（曙光H60-G30）',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%B9%BF%E5%B7%9E%E4%BA%91%E8%BF%AA/%E6%B5%81%E7%A8%8B%E6%98%93RPA%E6%8E%A7%E5%88%B6%E5%8F%B0%E7%B3%BB%E7%BB%9FV1.0/Certificate.pdf',
+  },
+  {
     name: '统信服务器操作系统',
     version: '20',
     type: '操作系统',
