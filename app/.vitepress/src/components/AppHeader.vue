@@ -223,7 +223,7 @@ onMounted(() => {
           </div>
           <!-- 中英文切换 -->
           <ClientOnly>
-            <AppLanguage :show="langShow" />
+            <AppLanguage :lang-list="langShow" />
           </ClientOnly>
           <AppTheme />
         </div>
@@ -253,8 +253,8 @@ onMounted(() => {
             <AppTheme />
             <ClientOnly>
               <AppLanguage
-                :show="langShow"
-                @language-click="isMenuIconMb = false"
+                :lang-list="langShow"
+                @click="closeMenu"
               />
             </ClientOnly>
           </div>
