@@ -24,9 +24,9 @@ import {
   windowOpen,
 } from '@/shared/utils';
 import {
-  TableData,
-  DayData,
-  SigGroupData,
+  TableDataT,
+  DayDataT,
+  SigGroupDataT,
 } from '@/shared/@types/type-calendar';
 import { useCommon, useMeeting } from '@/stores/common';
 
@@ -43,7 +43,7 @@ import { GITEE_LINK } from '@/data/url-config';
 const { lang } = useData();
 const i18n = useI18n();
 const commonStore = useCommon();
-let currentMeet = reactive<TableData>({
+let currentMeet = reactive<TableDataT>({
   date: '',
   timeData: [
     {
@@ -68,7 +68,7 @@ let currentMeet = reactive<TableData>({
   ],
 });
 
-const renderData = ref<TableData>({
+const renderData = ref<TableDataT>({
   date: '',
   timeData: [
     {
@@ -93,7 +93,7 @@ const renderData = ref<TableData>({
   ],
 });
 
-const calendarData = ref<TableData[]>([
+const calendarData = ref<TableDataT[]>([
   {
     date: '',
     timeData: [
@@ -170,7 +170,7 @@ function clickMeeting(day: string, event: Event) {
         } else {
           // 会议时间排序
           activeName.value = '';
-          renderData.value.timeData.sort((a: DayData, b: DayData) => {
+          renderData.value.timeData.sort((a: DayDataT, b: DayDataT) => {
             return (
               parseInt(a.startTime.replace(':', '')) -
               parseInt(b.startTime.replace(':', ''))
@@ -249,7 +249,7 @@ const selectSigChange = () => {
   meetingData();
 };
 // sig列表
-const sigGroup = ref<SigGroupData[]>([]);
+const sigGroup = ref<SigGroupDataT[]>([]);
 const meetingSig = async () => {
   const res = await getMeetingSig(true);
   sigGroup.value = res.length ? res : [];

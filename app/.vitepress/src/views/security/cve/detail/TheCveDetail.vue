@@ -4,9 +4,9 @@ import { useI18n } from '@/i18n';
 import { getCveDetail } from '@/api/api-security';
 import { useRouter, useData } from 'vitepress';
 import {
-  AffectProduct,
+  AffectProductT,
   CveDetailT,
-  SaBodyItem,
+  SaBodyItemT,
   CvsItemT,
 } from '@/shared/@types/type-security';
 import { handleError } from '@/shared/utils';
@@ -49,8 +49,8 @@ const cveDetailData = ref<CveDetailT>({
   saBody: [],
   updateTime: '',
 });
-const affectedProductList = ref<AffectProduct[]>([]);
-const advisories = ref<Array<SaBodyItem>>([]);
+const affectedProductList = ref<AffectProductT[]>([]);
+const advisories = ref<Array<SaBodyItemT>>([]);
 const cvssList = ref<Array<CvsItemT>>([]);
 
 function goBackPage() {

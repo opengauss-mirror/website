@@ -13,7 +13,7 @@ import illustration from '@/assets/illustrations/cve.png';
 import IconCancel from '~icons/app/icon-cancel.svg';
 
 import { getCveList } from '@/api/api-security';
-import { CveLists, CveQuery } from '@/shared/@types/type-security';
+import { CveListsT, CveQueryT } from '@/shared/@types/type-security';
 import { handleError } from '@/shared/utils';
 
 const i18n = useI18n();
@@ -24,7 +24,7 @@ const total = ref(0);
 const layout = ref('sizes, prev, pager, next, slot, jumper');
 const searchContent = ref('');
 
-const tableData = ref<CveLists[]>([
+const tableData = ref<CveListsT[]>([
   {
     NVDScore: NaN,
     cveId: NaN,
@@ -35,16 +35,14 @@ const tableData = ref<CveLists[]>([
   },
 ]);
 
-const queryData: CveQuery = reactive({
+const queryData: CveQueryT = reactive({
   pageNum: 1,
   pageSize: 10,
-  years: '1',
-  cveLevel: '2',
   searchName: '',
   releaseFlag: 2,
 });
 
-function getCveLists(data: CveQuery) {
+function getCveLists(data: CveQueryT) {
   getCveList(data).then((res: any) => {
     if (res && res.body && res.totalCount) {
       tableData.value = res.body;

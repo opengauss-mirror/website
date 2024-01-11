@@ -1,4 +1,4 @@
-export interface DayData {
+export interface DayDataT {
   creator: string;
   duration_time?: string;
   join_url: string;
@@ -29,13 +29,43 @@ export interface DayData {
   end_date?: string;
 }
 
-export interface TableData {
+export interface TableDataT {
   date: string;
   start_date?: string;
-  timeData: DayData[];
+  timeData: DayDataT[];
 }
 
-export interface SigGroupData {
+export interface SigGroupDataT {
   id: number;
   name: string;
+}
+
+export interface LoginMeetingT {
+  access: string;
+  code: number;
+  msg: string;
+}
+export interface LoginGiteeT {
+  client_id: string;
+  redirect_url: string;
+}
+
+export interface UserGiteeInfoT {
+  gitee_id: string;
+  id: string;
+}
+export interface UserInfoT {
+  code: number;
+  data: {
+    sigs: string[];
+    user: UserGiteeInfoT;
+  };
+  msg: string;
+}
+
+export interface UpdateMeetingInfoT {
+  code: number;
+  access: string;
+  msg?: string;
+  en_msg?: string;
 }

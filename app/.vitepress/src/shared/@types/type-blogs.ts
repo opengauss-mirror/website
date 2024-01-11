@@ -14,13 +14,3 @@ export interface BlogItemT {
   type: string;
   views: number;
 }
-
-export interface ParamsType {
-  page: number;
-  pageSize: number;
-  lang: string;
-  category: string;
-  archives?: string;
-  author?: string;
-  tags?: string;
-}
