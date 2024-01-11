@@ -1,5 +1,25 @@
 export default [
   {
+    date: '2023-12-30',
+    summary: '汇聚数据库创新力量，打造千行万业数据基石',
+    archives: '2023-12',
+    author: ['openGauss'],
+    banner: '/category/news/2023-12-30/banner.png',
+    title: '汇聚数据库创新力量，打造千行万业数据基石',
+    tags: ['theme'],
+    path: 'zh/news/2023-12-30/',
+  },
+  {
+    date: '2023-12-29',
+    summary: 'openGauss系新增市场份额达21.9%，跨越生态拐点',
+    archives: '2023-12',
+    author: ['openGauss'],
+    banner: '/category/news/2023-12-29/banner.jpg',
+    title: 'openGauss系新增市场份额达21.9%，跨越生态拐点',
+    tags: ['theme'],
+    path: 'zh/news/2023-12-29/',
+  },
+  {
     date: '2023-12-20',
     summary: 'openGauss 5.0.1 Update 版本是 openGauss 5.0.0 Release 的补丁版本。基于 5.0.0 版本基础上，回合主干分支的部分需求和缺陷，发布 5.0.1 补丁版本。',
     archives: '2023-12',
