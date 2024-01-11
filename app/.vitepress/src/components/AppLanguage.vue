@@ -2,17 +2,20 @@
 import { ref, Ref, watch } from 'vue';
 import { useRouter, useData } from 'vitepress';
 
+import useWindowResize from '@/components/hooks/useWindowResize';
+
 import IconDown from '~icons/app/icon-chevron-down.svg';
 
-const props = defineProps({
-  show: {
-    type: Object,
-    default() {
-      return [];
-    },
-  },
-});
+const props = withDefaults(
+  defineProps<{
+    langList: string[];
+  }>(),
+  {
+    langList: () => ['zh'],
+  }
+);
 
+const screenWidth = useWindowResize();
 const router = useRouter();
 const { lang } = useData();
 
@@ -23,10 +26,10 @@ const langOptions = [
 ];
 
 // 选择语言
-const emits = defineEmits(['language-click']);
+const emits = defineEmits(['click']);
 const changeLanguageMobile = (newlang: string) => {
   changeLanguage(newlang);
-  emits('language-click');
+  emits('click');
 };
 
 function changeLanguage(newlang: string) {
@@ -53,7 +56,7 @@ interface LangType {
 const langList: Ref<LangType[]> = ref([]);
 const filterLang = () => {
   langList.value = [];
-  props.show.forEach((item: string) => {
+  props.langList.forEach((item: string) => {
     langOptions.filter((el: LangType) => {
       if (el.id === item) {
         langList.value.push(el);
@@ -63,7 +66,7 @@ const filterLang = () => {
 };
 
 watch(
-  () => props.show,
+  () => props.langList,
   () => {
     filterLang();
   },
@@ -72,7 +75,12 @@ watch(
 </script>
 
 <template>
-  <div class="lang-menu" @mouseenter="showSub()" @mouseleave="hideSub()">
+  <div
+    v-if="screenWidth > 1100"
+    class="lang-menu"
+    @mouseenter="showSub()"
+    @mouseleave="hideSub()"
+  >
     <span class="lang-menu-link" :class="{ 'no-state': langList.length < 2 }">
       {{ lang === 'zh' ? '中文' : 'English' }}
       <OIcon v-if="langList.length > 1"><icon-down></icon-down></OIcon>
@@ -89,7 +97,7 @@ watch(
       </li>
     </ul>
   </div>
-  <div class="mobile-change-language">
+  <div v-else class="mobile-change-language">
     <span
       v-for="item in langList"
       :key="item.id"
@@ -104,7 +112,7 @@ watch(
 .lang-menu {
   position: relative;
   height: 100%;
-  &-link {
+  .lang-menu-link {
     display: flex;
     align-items: center;
     font-size: var(--o-font-size-text);
@@ -115,10 +123,11 @@ watch(
       cursor: default;
     }
   }
-  &-list {
+  .lang-menu-list {
     position: absolute;
     top: 80px;
-    left: -24px;
+    left: 50%;
+    transform: translateX(-50%);
     background: var(--o-color-bg2);
     cursor: pointer;
     z-index: 999;
@@ -131,27 +140,24 @@ watch(
       color: var(--o-color-text1);
       border-bottom: 1px solid var(--o-color-division1);
       padding: 0 var(--o-spacing-h5);
-      .lang-item:last-child {
+      &:last-child {
         border-bottom: 0 none;
       }
-      .lang-item:hover {
+      &:hover {
         background: var(--o-color-brand1);
         color: var(--o-color-text2);
       }
-      .lang-item.active {
+      &.active {
         color: var(--o-color-brand1);
         background: none;
         cursor: default;
       }
     }
   }
-  @media screen and (max-width: 1100px) {
-    display: none;
-  }
 }
 .mobile-change-language {
-  display: none;
   line-height: var(--o-line-height-h3);
+  display: flex;
   span {
     font-size: var(--o-font-size-tip);
     color: var(--o-color-text4);
@@ -160,11 +166,11 @@ watch(
     @media screen and (max-width: 1100px) {
       display: flex;
     }
-    span.active {
+    &.active {
       color: var(--o-color-brand1);
       font-weight: 600;
     }
-    span:not(:last-child) {
+    &:not(:last-child) {
       &:after {
         content: '|';
         margin-left: 12px;
