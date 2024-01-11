@@ -3,34 +3,58 @@ import { ref, Ref, watch } from 'vue';
 import { useRouter, useData } from 'vitepress';
 
 import useWindowResize from '@/components/hooks/useWindowResize';
+import navLangFilter from '@/data/header/nav-lang-filter';
 
 import IconDown from '~icons/app/icon-chevron-down.svg';
-
-const props = withDefaults(
-  defineProps<{
-    langList: string[];
-  }>(),
-  {
-    langList: () => ['zh'],
-  }
-);
 
 const screenWidth = useWindowResize();
 const router = useRouter();
 const { lang } = useData();
 
-// 选择语言;
+// 语言过滤
+const langShow = ref(['zh']);
+const detailFilterList = ['events', 'news', 'blogs'];
 const langOptions = [
   { id: 'zh', label: '中文' },
   { id: 'en', label: 'English' },
 ];
+interface LangType {
+  id: string;
+  label: string;
+}
+const langList: Ref<LangType[]> = ref([]);
 
-// 选择语言
-const emits = defineEmits(['click']);
-const changeLanguageMobile = (newlang: string) => {
-  changeLanguage(newlang);
-  emits('click');
+const filterLang = () => {
+  langList.value = [];
+  langShow.value.forEach((item: string) => {
+    langOptions.filter((el: LangType) => {
+      if (el.id === item) {
+        langList.value.push(el);
+      }
+    });
+  });
 };
+watch(
+  () => router.route.path,
+  (val: string) => {
+    navLangFilter.forEach((item) => {
+      if (val.includes(item.name)) {
+        langShow.value = item.lang;
+      }
+      if (val === `/${lang.value}/`) {
+        langShow.value = ['zh', 'en'];
+      }
+    });
+    detailFilterList.forEach((item) => {
+      if (val.includes(item) && val.split('/')[3]) {
+        langShow.value = [lang.value];
+      }
+    });
+    filterLang();
+  },
+  { immediate: true }
+);
+// 选择语言
 
 function changeLanguage(newlang: string) {
   if (lang.value === newlang) return;
@@ -48,30 +72,6 @@ const showSub = () => {
 const hideSub = () => {
   isMenu.value = false;
 };
-
-interface LangType {
-  id: string;
-  label: string;
-}
-const langList: Ref<LangType[]> = ref([]);
-const filterLang = () => {
-  langList.value = [];
-  props.langList.forEach((item: string) => {
-    langOptions.filter((el: LangType) => {
-      if (el.id === item) {
-        langList.value.push(el);
-      }
-    });
-  });
-};
-
-watch(
-  () => props.langList,
-  () => {
-    filterLang();
-  },
-  { immediate: true }
-);
 </script>
 
 <template>
@@ -102,7 +102,7 @@ watch(
       v-for="item in langList"
       :key="item.id"
       :class="{ active: lang === item.id }"
-      @click.stop="changeLanguageMobile(item.id)"
+      @click.stop="changeLanguage(item.id)"
       >{{ item.label }}</span
     >
   </div>
