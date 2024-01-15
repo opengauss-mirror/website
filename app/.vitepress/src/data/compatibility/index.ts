@@ -1,5 +1,16 @@
 export default [
   {
+    name: '城市静态交通管理平台',
+    version: '1.0.0',
+    type: 'GIS',
+    company: '成都旋极历通信息技术有限公司',
+    database: 'openGauss 5.0.1',
+    os: 'openEuler 20.03 LTS SP1',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%97%8B%E6%9E%81%E5%8E%86%E9%80%9A/GIS%20V1.0.0/Certificate.pdf',
+  },
+  {
     name: '创建基于微服务架构的市民卡系统平台软件',
     version: '3.0',
     type: '数字政府',
