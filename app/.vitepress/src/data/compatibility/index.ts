@@ -1,5 +1,25 @@
 export default [
   {
+    name: 'LeadmapCloud平台',
+    version: '1.1.5',
+    type: 'GIS',
+    company: '杭州领图信息科技有限公司',
+    database: 'openGauss 5.0.0',
+    os: 'openEuler 20.03 LTS SP1',
+    server: 'Intel(其他)',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%9D%AD%E5%B7%9E%E9%A2%86%E5%9B%BE/LeadmapCloud%20V1.1.5/Certificate.pdf',
+  },
+  {
+    name: '当虹在线直播编转码系统',
+    version: '8.0',
+    type: '广电',
+    company: '杭州当虹科技股份有限公司',
+    database: 'openGauss 5.0.0',
+    os: 'openEuler 22.03 LTS SP1',
+    server: 'Taishan 200(Kunpeng 920)',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%9D%AD%E5%B7%9E%E5%BD%93%E8%99%B9/%E5%BD%93%E8%99%B9%E5%9C%A8%E7%BA%BF%E7%9B%B4%E6%92%AD%E7%BC%96%E8%BD%AC%E7%A0%81%E7%B3%BB%E7%BB%9F%20V8.0/Certificate.pdf',
+  },
+  {
     name: '城市静态交通管理平台',
     version: '1.0.0',
     type: 'GIS',
