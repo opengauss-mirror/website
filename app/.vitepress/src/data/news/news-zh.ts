@@ -1,5 +1,15 @@
 export default [
   {
+    date: '2024-01-19',
+    summary: 'openGauss 3.0.5版本发行说明',
+    archives: '2024-01',
+    author: ['openGauss'],
+    banner: '/category/news/2024-01-19/banner.png',
+    title: 'openGauss 3.0.5版本发行说明',
+    tags: ['theme'],
+    path: 'zh/news/2024-01-19/index',
+  },
+  {
     date: '2023-12-30',
     summary: '汇聚数据库创新力量，打造千行万业数据基石',
     archives: '2023-12',
@@ -7,7 +17,7 @@ export default [
     banner: '/category/news/2023-12-30/banner.png',
     title: '汇聚数据库创新力量，打造千行万业数据基石',
     tags: ['theme'],
-    path: 'zh/news/2023-12-30/',
+    path: 'zh/news/2023-12-30/index',
   },
   {
     date: '2023-12-29',
@@ -17,7 +27,7 @@ export default [
     banner: '/category/news/2023-12-29/banner.jpg',
     title: 'openGauss系新增市场份额达21.9%，跨越生态拐点',
     tags: ['theme'],
-    path: 'zh/news/2023-12-29/',
+    path: 'zh/news/2023-12-29/index',
   },
   {
     date: '2023-12-20',
@@ -27,7 +37,7 @@ export default [
     banner: '/category/news/2023-12-20/banner.png',
     title: 'openGauss 5.0.1版本正式发布！',
     tags: ['theme'],
-    path: 'zh/news/2023-12-20/',
+    path: 'zh/news/2023-12-20/index',
   },
   {
     date: '2023-11-21',

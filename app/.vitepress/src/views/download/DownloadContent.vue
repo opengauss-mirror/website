@@ -43,7 +43,7 @@ const explainLink = computed(() => {
     <div class="other-link">
       <a
         :href="
-          explainLink.includes('.html')
+          explainLink.startsWith('/docs/')
             ? DOCS_LINK + lang + explainLink
             : explainLink
         "

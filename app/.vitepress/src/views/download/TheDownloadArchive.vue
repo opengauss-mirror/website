@@ -91,7 +91,7 @@ watch(
   { deep: true, immediate: true }
 );
 //控制需要登录后才能下载的版本,最新版的LTS和Preview都需要登录后才能下载的版本
-const downloadVersionAuth = [DownloadConfig[0].name, DownloadConfig[1].name];;
+const downloadVersionAuth = [DownloadConfig[0].name, DownloadConfig[1].name];
 </script>
 
 <template>
@@ -121,7 +121,11 @@ const downloadVersionAuth = [DownloadConfig[0].name, DownloadConfig[1].name];;
         <a
           v-for="item in getData[0].docs_list"
           :key="item.name"
-          :href="DOCS_LINK + lang + item.path"
+          :href="
+            item.path.startsWith('/docs/')
+              ? DOCS_LINK + lang + item.path
+              : item.path
+          "
           target="_blank"
           rel="noopener noreferrer"
           >{{ isZh ? item.name : item.nameEn }}</a
