@@ -9,10 +9,10 @@ export const useCommon = defineStore('common', {
 
 export const useMeeting = defineStore('meeting', {
   state: () => ({
-    userSigs: [],
+    userSigs: [''],
     giteeId: '',
-    userId: null,
-    meetingToken:''
+    userId: '',
+    meetingToken: '',
   }),
 });
 

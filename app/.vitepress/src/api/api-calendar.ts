@@ -1,7 +1,7 @@
 import { request } from '@/shared/axios';
 import type { AxiosResponse } from '@/shared/axios';
 import type {
-  TableDataT,
+  MeettingTableDataT,
   SigGroupDataT,
   LoginMeetingT,
   LoginGiteeT,
@@ -14,13 +14,13 @@ import type {
  * @param {string} group           - sig名字
  * @param {boolean} noLoading      - 是否使用加载动画。默认为 true。
  *                                   传入 true 表示使用加载动画，传入 false 表示不使用。
- * @return {Promise{TableDataT}} - 一个 Promise，解析为解析为会议 SIG 的对象。
+ * @return {Promise{MeettingTableDataT}} - 一个 Promise，解析为解析为会议 SIG 的对象。
  */
 
 export function getMeetingData(
   group: string,
   noLoading: boolean = false
-): Promise<TableDataT> {
+): Promise<{ tableData: MeettingTableDataT[] }> {
   const url = `/api-meeting/meetingsdata/?group=${group}`;
   return request
     .get(url, { $doException: true, noLoading })

@@ -29,7 +29,7 @@ export interface DayDataT {
   end_date?: string;
 }
 
-export interface TableDataT {
+export interface MeettingTableDataT {
   date: string;
   start_date?: string;
   timeData: DayDataT[];

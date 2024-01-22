@@ -245,4 +245,6 @@ export default {
     PATH: `/en/privacyPolicy/`,
   },
   Not_Found: 'No Data',
+  COPY_SUCCESS: `复制成功`,
+  COPY_FAILED: `复制失败，请刷新重试`,
 };
