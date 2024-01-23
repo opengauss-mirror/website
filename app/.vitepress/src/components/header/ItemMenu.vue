@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue';
+import { computed, ref, watch } from 'vue';
 import { useRouter, useData } from 'vitepress';
 
 import navData from '@/data/header';
@@ -14,7 +14,9 @@ import IconMenu from '~icons/app/icon-menu.svg';
 const router = useRouter();
 const { lang } = useData();
 
-const roterPath = ref<string>(router.route.path);
+const roterPath = computed(() => {
+  return router.route.path;
+});
 
 // 移动端菜单切换事件
 const menuVisible = ref(false);
