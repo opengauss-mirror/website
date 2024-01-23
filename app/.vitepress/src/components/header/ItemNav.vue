@@ -1,42 +1,14 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue';
-import { useRouter, useData } from 'vitepress';
-
+import { ref, computed } from 'vue';
+import { useData, useRoute } from 'vitepress';
 import { debounce } from 'lodash';
 
-import { windowOpen } from '@/shared/utils';
+import navData from '@/data/header';
+import { NavItemT, NavChildrenItemT } from '@/shared/@types/type-nav';
 
-import { DOCS_LINK } from '@/data/url-config';
-
-defineProps({
-  navItems: {
-    type: Object,
-    default() {
-      return {};
-    },
-  },
-});
-
-interface NavItemT {
-  NAME: string;
-  PATH: string;
-  ID: string;
-  IS_OPEN_WINDOW?: number;
-  IS_OPEN_MINISITE_WINDOW?: string;
-  CHILDREN?: NavItemT;
-}
-
-const router = useRouter();
 const { lang } = useData();
-const activeItem = ref(router.route.path);
 const navActive = ref('');
 const isShow = ref(true);
-watch(
-  () => router.route.path,
-  (val: string) => {
-    activeItem.value = val;
-  }
-);
 
 // nav 鼠标滑过事件
 const toggleSubDebounced = debounce(
@@ -44,7 +16,7 @@ const toggleSubDebounced = debounce(
     if (item === null) {
       navActive.value = '';
     } else {
-      navActive.value = item.ID;
+      navActive.value = item.id;
       isShow.value = true;
     }
   },
@@ -53,42 +25,65 @@ const toggleSubDebounced = debounce(
     trailing: true,
   }
 );
-
 // nav 默认选中
-const menuChangeActive = (item: any) => {
-  return item.CLASS.some((el: string) => activeItem.value.includes(el));
+const route = useRoute();
+const findIndexByPath = (
+  path: string,
+  lang: string,
+  data: NavChildrenItemT[]
+) => {
+  return data.findIndex((item) => {
+    const tempPath = (item.href as Record<string, string>)[lang];
+    return path.includes(tempPath);
+  });
 };
+const selectedIndex = computed(() => {
+  const tempIndex = navData.findIndex((item) => {
+    if (item.children?.length) {
+      return findIndexByPath(route.path, lang.value, item.children) !== -1;
+    } else {
+      return -1;
+    }
+  });
+
+  return tempIndex;
+});
 </script>
 
 <template>
   <nav class="o-nav">
     <ul class="o-nav-list" :class="{ 'lang-en': lang === 'en' }">
       <li
-        v-for="item in navItems"
-        :key="item.ID"
+        v-for="(item, index) in navData"
+        :key="item.id"
         :class="{
-          active: menuChangeActive(item),
-          hover: navActive === item.ID,
+          active: selectedIndex === index,
+          hover: navActive === item.id,
         }"
         @mouseenter="toggleSubDebounced(item)"
         @mouseleave="toggleSubDebounced(null)"
       >
-        <span class="text">{{ item.NAME }} </span>
+        <span class="text" v-if="item.label[lang as 'zh'|'en' ]"
+          >{{ item.label[lang as 'zh' | 'en'] }}
+        </span>
 
-        <div v-if="isShow" class="sub-menu">
+        <div v-if="isShow && item.children" class="sub-menu">
           <ul class="sub-menu-content">
             <li
-              v-for="subItem in item.CHILDREN"
-              :key="subItem.ID"
+              v-for="subItem in item.children"
+              :key="subItem.id"
               class="sub-menu-item"
             >
-              <a
-                class="item-link"
-                :href="subItem.PATH"
-                :target="subItem.PATH.includes('https:') ? '_blank' : '_self'"
-              >
-                {{ subItem.NAME }}
-              </a>
+              <template v-if="subItem.href&&subItem.href[lang as 'zh' | 'en']">
+                <a
+                  class="item-link"
+                  :href="subItem.href[lang as 'zh' | 'en']"
+                  :target="subItem.jumOut ? '_blank' : 'self'"
+                  rel="noopener noreferrer"
+                >
+                  {{ subItem.label[lang as 'zh' | 'en'] }}
+                </a>
+              </template>
             </li>
           </ul>
         </div>
@@ -99,13 +94,6 @@ const menuChangeActive = (item: any) => {
 
 <style lang="scss" scoped>
 @media (max-width: 1366px) {
-  html[lang='ru'] .o-nav .o-nav-list > li {
-    padding: 0 var(--o-spacing-h6);
-    &::after {
-      left: var(--o-spacing-h6);
-      width: calc(100% - var(--o-spacing-h6) * 2);
-    }
-  }
   html[lang='en'] .o-nav .o-nav-list > li {
     padding: 0 var(--o-spacing-h5);
     &::after {

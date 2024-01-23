@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import AppHeader from '@/components/AppHeader.vue';
+import AppHeader from '@/components/header/AppHeader.vue';
 import AppFooter from '@/components/AppFooter.vue';
 import CookieNotice from '@/components/CookieNotice.vue';
 import { useData } from 'vitepress';
 import type { Component } from 'vue';
-import { computed, onMounted } from 'vue';
+import { computed } from 'vue';
 import zhCn from 'element-plus/lib/locale/lang/zh-cn';
 import en from 'element-plus/lib/locale/lang/en';
 

@@ -15,9 +15,9 @@ const props = defineProps({
     default: '',
   },
   popList: {
-    type: Array,
+    type: Array<string>,
     default: () => {
-      return [];
+      return [''];
     },
   },
   isShowDrawer: {
@@ -46,7 +46,7 @@ function handleSearchEvent() {
   hiddenSearchBox();
 }
 // 点击热搜标签
-const onTopSearchItemClick = (val: any) => {
+const onTopSearchItemClick = (val: string) => {
   searchInput.value = val;
   handleSearchEvent();
 };
