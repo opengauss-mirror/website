@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { ref, nextTick, onMounted, reactive, watch, computed } from 'vue';
 import { useData } from 'vitepress';
-import { useI18n } from '@/i18n';
 import { FormInstance, FormRules, ElMessage } from 'element-plus';
+import Clipboard from 'clipboard';
+
+import { useI18n } from '@/i18n';
 import {
   loginGitee,
   loginMeeting,
@@ -24,7 +26,7 @@ import {
   windowOpen,
 } from '@/shared/utils';
 import {
-  TableDataT,
+  MeettingTableDataT,
   DayDataT,
   SigGroupDataT,
 } from '@/shared/@types/type-calendar';
@@ -32,10 +34,10 @@ import { useCommon, useMeeting } from '@/stores/common';
 
 import IconLeft from '~icons/app/icon-chevron-left.svg';
 import IconRight from '~icons/app/icon-chevron-right.svg';
-import IconDown from '~icons/app/icon-chevron-down.svg';
 import IconCalendar from '~icons/app/icon-calendar.svg';
 import notFoundImg_light from '@/assets/illustrations/404.png';
 import notFoundImg_dark from '@/assets/illustrations/404-dark.png';
+import IconCopy from '~icons/app/icon-copy.svg';
 
 import useWindowResize from '@/components/hooks/useWindowResize';
 import { GITEE_LINK } from '@/data/url-config';
@@ -43,7 +45,7 @@ import { GITEE_LINK } from '@/data/url-config';
 const { lang } = useData();
 const i18n = useI18n();
 const commonStore = useCommon();
-let currentMeet = reactive<TableDataT>({
+let currentMeet = reactive<MeettingTableDataT>({
   date: '',
   timeData: [
     {
@@ -68,7 +70,7 @@ let currentMeet = reactive<TableDataT>({
   ],
 });
 
-const renderData = ref<TableDataT>({
+const renderData = ref<MeettingTableDataT>({
   date: '',
   timeData: [
     {
@@ -93,7 +95,7 @@ const renderData = ref<TableDataT>({
   ],
 });
 
-const calendarData = ref<TableDataT[]>([
+const calendarData = ref<MeettingTableDataT[]>([
   {
     date: '',
     timeData: [
@@ -125,17 +127,18 @@ const isCollapse = ref(false);
 const isAgree = ref(false);
 
 const detailItem = [
-  { text: '发起人', key: 'creator', isLink: false },
-  { text: '会议平台', key: 'platform', isLink: false },
-  { text: '会议ID', key: 'meeting_id', isLink: false },
-  { text: '会议链接', key: 'join_url', isLink: true },
-  { text: 'Etherpad链接', key: 'etherpad', isLink: true },
-  { text: '会议详情', key: 'detail', isLink: false },
-  { text: '活动形式', key: 'activity_type', isLink: false },
-  { text: '线上链接', key: 'online_url', isLink: true },
-  { text: '报名链接', key: 'register_url', isLink: true },
-  { text: '回放链接', key: 'replay_url', isLink: true },
-  { text: '回放链接', key: 'video_url', isLink: true },
+  { text: '发起人：', key: 'creator', isLink: false },
+  { text: 'SIG组：', key: 'group_name', isLink: false },
+  { text: '会议平台：', key: 'platform', isLink: false },
+  { text: '会议ID：', key: 'meeting_id', isLink: false },
+  { text: '会议链接：', key: 'join_url', isLink: true },
+  { text: 'Etherpad链接：', key: 'etherpad', isLink: true },
+  { text: '会议详情：', key: 'detail', isLink: false },
+  { text: '活动形式：', key: 'activity_type', isLink: false },
+  { text: '线上链接：', key: 'online_url', isLink: true },
+  { text: '报名链接：', key: 'register_url', isLink: true },
+  { text: '回放链接：', key: 'replay_url', isLink: true },
+  { text: '回放链接：', key: 'video_url', isLink: true },
 ];
 
 const calendar = ref();
@@ -621,7 +624,7 @@ const handleLogout = async () => {
     meetingStore.meetingToken = '';
     meetingStore.userSigs = [];
     meetingStore.giteeId = '';
-    meetingStore.userId = null;
+    meetingStore.userId = '';
     ElMessage({
       message: i18nMeeting.value.LOGOUT_SUCCESS,
       type: 'success',
@@ -629,6 +632,40 @@ const handleLogout = async () => {
   } else {
     handleError();
   }
+};
+// 复制会议信息
+let clipboardInstance = null;
+let meetingInfo = ref('');
+const initClipboard = (info: string) => {
+  clipboardInstance = new Clipboard('.copy-btn', {
+    text: () => info,
+  });
+  // 监听成功复制事件
+  clipboardInstance.on('success', () => {
+    ElMessage({
+      message: i18n.value.common.COPY_SUCCESS,
+      type: 'success',
+    });
+  });
+  // 监听复制失败事件
+  clipboardInstance.on('error', () => {
+    ElMessage({
+      message: i18n.value.common.COPY_FAILED,
+      type: 'error',
+    });
+  });
+};
+const copyMeetingInfo = (meetingItem: DayDataT) => {
+  meetingInfo.value =
+    meetingItem.name +
+    `\n${i18nMeeting.value.TIME}${renderData.value.date} ${meetingItem.duration_time}`;
+  detailItem.forEach((item) => {
+    if (isValidKey(item.key, meetingItem) && meetingItem[item.key]) {
+      meetingInfo.value =
+        meetingInfo.value + `\n${item.text + meetingItem[item.key]}`;
+    }
+  });
+  initClipboard(meetingInfo.value);
 };
 </script>
 <template>
@@ -766,47 +803,42 @@ const handleLogout = async () => {
               :key="item.id"
               class="collapse-box"
             >
+              <div class="detail-time">
+                <OButton
+                  class="copy-btn"
+                  @click="copyMeetingInfo(item)"
+                  size="mini"
+                  type="text"
+                >
+                  <template #prefixIcon>
+                    <IconCopy />
+                  </template>
+                  {{
+                    windowWidth > 852
+                      ? i18nMeeting.COPY_INFO
+                      : i18nMeeting.COPY_INFO_MB
+                  }}</OButton
+                >
+              </div>
               <o-collapse-item :name="index">
                 <template #title>
                   <div class="meet-item">
-                    <div class="meet-left">
-                      <div class="left-top">
-                        <p class="meet-name">{{ item.name || item.title }}</p>
-                      </div>
-                      <div
-                        v-if="item.group_name"
-                        class="group-name more-detail"
-                      >
-                        {{ i18nMeeting.SIG_GROUP }}
-                        {{ item.group_name }}
-                      </div>
-                      <div v-else class="group-name more-detail">openEuler</div>
+                    <div class="left-top">
+                      <p class="meet-name">{{ item.name || item.title }}</p>
                     </div>
-                    <div class="item-right">
-                      <div class="detail-time">
-                        <span class="start-time"
-                          ><i v-if="!item.schedules">{{ item.startTime }}</i>
-                          <i v-else>{{ item.schedules[0].start }}</i></span
-                        >
-                        <span v-if="windowWidth < 768">-</span>
-                        <span class="end-time">
-                          <i v-if="!item.schedules">{{ item.endTime }}</i>
-                          <i v-else>{{
-                            item.schedules[item.schedules.length - 1].end
-                          }}</i>
-                        </span>
-                      </div>
-                      <div class="extend">
-                        <OIcon
-                          :class="{
-                            reversal:
-                              isCollapse && activeName === index.toString(),
-                          }"
-                        >
-                          <icon-down></icon-down>
-                        </OIcon>
+                    <div
+                      v-if="renderData.date"
+                      class="meeting-time more-detail"
+                    >
+                      <span class="time-title" v-if="windowWidth > 852">{{
+                        i18nMeeting.TIME
+                      }}</span>
+                      <div class="time-box">
+                        <span class="time-day">{{ renderData.date }}</span>
+                        <span class="time-hour">{{ item.duration_time }}</span>
                       </div>
                     </div>
+                    <div v-else class="group-name more-detail">openEuler</div>
                   </div>
                 </template>
                 <div class="meet-detail">
@@ -815,7 +847,7 @@ const handleLogout = async () => {
                       v-if="isValidKey(keys.key, item) && item[keys.key]"
                       class="meeting-item"
                     >
-                      <div class="item-title">{{ keys.text }}:</div>
+                      <div class="item-title">{{ keys.text }}</div>
                       <p v-if="!keys.isLink && keys.key !== 'date'">
                         {{ item[keys.key] }}
                       </p>
@@ -1482,11 +1514,15 @@ const handleLogout = async () => {
       overflow-y: scroll;
       box-shadow: 0 1px 5px rgba(45, 47, 51, 0.1);
       .el-collapse {
+        position: relative;
         border: none;
         --el-collapse-header-height: 96px;
-        .collapse-box:last-child {
-          .el-collapse-item {
-            margin-bottom: 0;
+        .collapse-box {
+          position: relative;
+          &:last-child {
+            .el-collapse-item {
+              margin-bottom: 0;
+            }
           }
         }
         .el-collapse-item {
@@ -1502,6 +1538,9 @@ const handleLogout = async () => {
           border: none;
           padding: var(--o-spacing-h6) var(--o-spacing-h5);
           background-color: var(--o-collapse-color-bg2);
+          .el-collapse-item__content {
+            padding: 0;
+          }
           @media screen and (max-width: 768px) {
             padding: var(--o-spacing-h6);
             background-color: var(--o-color-bg1);
@@ -1519,7 +1558,13 @@ const handleLogout = async () => {
       }
       @include scrollbar;
       .el-collapse-item__arrow {
-        display: none;
+        margin-right: 20px;
+        position: absolute;
+        right: 4px;
+        transform: rotateZ(90deg);
+        @media screen and (max-width: 768px) {
+          font-size: var(--o-font-size-text);
+        }
       }
       .el-collapse-item__content {
         @media screen and (max-width: 768px) {
@@ -1528,155 +1573,130 @@ const handleLogout = async () => {
       }
       .meet-item {
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
+        text-align: left;
         padding: var(--o-spacing-h5);
         width: 100%;
         height: 100%;
         background-color: var(--o-color-bg3);
         border: 1px solid var(--o-color-bg3);
-        border-left: 2px solid var(--o-color-brand1);
-        .meet-left {
+        border-left: none;
+        position: relative;
+        &::before {
+          display: block;
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 2px;
+          height: 100%;
+          background-color: var(--o-color-brand1);
+        }
+        .left-top {
           display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          text-align: left;
-          .left-top {
-            display: flex;
-            align-items: center;
-            .meet-name {
-              margin-right: var(--o-spacing-h5);
-              max-width: 400px;
-              overflow: hidden;
-              text-overflow: ellipsis;
-              white-space: nowrap;
-              font-size: var(--o-font-size-h7);
-              color: var(--o-color-text1);
-              line-height: var(--o-line-height-tip);
-            }
-            .el-collapse-item__content {
-              padding: 0 20px;
-            }
-            p {
-              margin: 0;
-              height: fit-content;
-              justify-content: center;
-              align-items: center;
-              line-height: normal;
-            }
+          align-items: center;
+          .meet-name {
+            margin-right: var(--o-spacing-h5);
+            max-width: 400px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: var(--o-font-size-h7);
+            color: var(--o-color-text1);
+            line-height: var(--o-line-height-tip);
           }
-          .more-detail {
-            display: flex;
-            flex-shrink: 0;
+          .el-collapse-item__content {
+            padding: 0 20px;
+          }
+          p {
+            margin: 0;
+            height: fit-content;
+            justify-content: center;
             align-items: center;
-            width: fit-content;
-            height: 24px;
-            font-size: var(--o-font-size-h8);
-            line-height: var(--o-line-height-h8);
-            @media screen and (max-width: 768px) {
-              font-size: var(--o-font-size-text);
-            }
-            .o-icon {
-              margin: 0 5px;
-              color: var(--o-color-brand1);
-              font-size: var(--o-font-size-h5);
-              transition: all 0.3s;
-              svg {
-                color: var(--o-color-brand1);
-              }
-            }
+            line-height: normal;
+          }
+        }
+        .more-detail {
+          display: flex;
+          flex-shrink: 0;
+          align-items: center;
+          width: fit-content;
+          height: 24px;
+          font-size: var(--o-font-size-h8);
+          line-height: var(--o-line-height-h8);
+          @media screen and (max-width: 768px) {
+            font-size: var(--o-font-size-text);
+          }
+          @media screen and (min-width: 768px) {
             &:hover {
               .o-icon {
                 transform: translateX(5px);
               }
             }
           }
+          .o-icon {
+            margin: 0 5px;
+            color: var(--o-color-brand1);
+            font-size: var(--o-font-size-h5);
+            transition: all 0.3s;
+            svg {
+              color: var(--o-color-brand1);
+            }
+          }
         }
-        .item-right {
-          display: flex;
+        .meeting-time {
           font-size: var(--o-font-size-text);
-          .o-button {
-            flex-shrink: 0;
-            padding: 0;
-            .o-icon {
-              color: var(--o-color-brand1);
-              font-size: var(--o-font-size-h5);
-            }
-            &:hover {
-              color: var(--o-color-brand1);
-            }
-            @media screen and (max-width: 768px) {
-              display: none;
-            }
+          color: var(--o-color-text4);
+          line-height: var(--o-line-height-text);
+          margin-top: 2px;
+          @media screen and (min-width: 768px) {
+            font-size: var(--o-font-size-tip);
+            line-height: var(--o-line-height-tip);
           }
-
-          .detail-time {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            padding: 0 var(--o-spacing-h5);
-            font-weight: 300;
-            text-align: center;
-            font-size: var(--o-font-size-h8);
-            span {
-              line-height: var(--o-line-height-h8);
-              i {
-                font-style: normal;
-              }
-            }
-          }
-          .extend {
-            display: flex;
-            align-items: center;
-            width: 24px;
-            .o-icon {
-              font-size: var(--o-font-size-h5);
-              color: var(--o-color-text1);
-              transition: all 0.3s;
-            }
-            .reversal {
-              transform: rotate(180deg);
-            }
+          .time-hour {
+            margin-left: 6px;
           }
         }
         @media screen and (max-width: 768px) {
           background-color: var(--o-color-bg2);
           padding: var(--o-spacing-h6);
           border-left: 2px solid var(--o-color-brand1);
-          .meet-left {
-            max-width: 200px;
-            .left-top {
-              .meet-name {
-                font-size: var(--o-font-size-text);
-                font-weight: 700;
-              }
-            }
-            .group-name {
-              white-space: nowrap;
-              overflow: hidden;
-              text-overflow: ellipsis;
-              font-size: var(--o-font-size-tip);
-              color: var(--o-color-text4);
+          .left-top {
+            .meet-name {
+              font-size: var(--o-font-size-text);
+              font-weight: 700;
             }
           }
-          .item-right {
-            .detail-time {
-              flex-direction: row;
-              align-items: flex-end;
-              padding: 0 var(--o-spacing-h8);
-              font-size: var(--o-font-size-tip);
+          .group-name {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: var(--o-font-size-tip);
+            color: var(--o-color-text4);
+          }
+        }
+      }
+      .detail-time {
+        position: absolute;
+        top: 39px;
+        transform: translateY(-50%);
+        right: 32px;
+        z-index: 8;
+        @media screen and (max-width: 768px) {
+          top: 35px;
+        }
+        .o-button {
+          @media screen and (min-width: 768px) {
+            &:hover {
+              color: var(--o-color-brand1);
             }
-            .extend {
-              align-items: flex-end;
-              .o-icon {
-                display: inline-block;
-                height: var(--o-line-height-h8);
-                line-height: var(--o-line-height-h8);
-                font-size: var(--o-font-size-h8);
-                svg {
-                  vertical-align: middle;
-                }
-              }
-            }
+          }
+          @media screen and (max-width: 768px) {
+            color: var(--o-color-brand1);
+          }
+          .prefix-icon {
+            width: 16px;
           }
         }
       }

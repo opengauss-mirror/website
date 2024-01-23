@@ -93,4 +93,6 @@ export default {
     PATH: `/zh/privacyPolicy/`,
   },
   Not_Found: '暂无数据',
+  COPY_SUCCESS: `复制成功`,
+  COPY_FAILED: `复制失败，请刷新重试`,
 };

@@ -150,7 +150,7 @@ export default {
     SIG: 'SIG name',
     PLATFORM: '平台:',
     DAY: 'Date:',
-    TIME: '会议时间:',
+    TIME: '会议时间：',
     CONTENT: '会议内容:',
     ID: '会议ID:',
     LINK: '链接:',
@@ -171,6 +171,8 @@ export default {
     CANCEL: '取消',
     RESET: '重置',
     LOGOUT_SUCCESS: 'Logged Out',
+    COPY_INFO: '复制会议信息',
+    COPY_INFO_MB: '复制信息',
   },
   HOME_ROOMS: {
     ROOM_NAME: [

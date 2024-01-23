@@ -148,7 +148,7 @@ export default {
     PLATFORM: '平台:',
     PLATFORM_TEXT: '请选择会议平台',
     DAY: '会议日期:',
-    TIME: '会议时间:',
+    TIME: '会议时间：',
     CONTENT: '会议内容:',
     ID: '会议ID:',
     LINK: '链接:',
@@ -174,9 +174,11 @@ export default {
     MODIFY_SUCCESS: '修改成功！',
     DELETE_SUCCESS: '删除成功！',
     SUCCESS: '预定会议成功！',
-    EMAIL: '邮件地址',
+    EMAIL: '邮件地址:',
     EMAIL_TEXT: '多个邮件地址之间用逗号,隔开',
     LOGOUT_SUCCESS: '退出成功',
+    COPY_INFO: '复制会议信息',
+    COPY_INFO_MB: '复制信息',
   },
   HOME_ROOMS: {
     ROOM_NAME: [
