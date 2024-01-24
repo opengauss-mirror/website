@@ -6,9 +6,16 @@ import { useData } from 'vitepress';
 
 import { windowOpen } from '@/shared/utils';
 
+interface linkListItemT {
+  img: string;
+  imgDark: string;
+  name: string;
+  path?: string;
+  pathEn?: string;
+}
 const props = withDefaults(
   defineProps<{
-    linkList: any[];
+    linkList: linkListItemT[];
     row?: number;
     islink: boolean;
   }>(),
@@ -22,7 +29,7 @@ const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
 const { lang } = useData();
 const isZh = computed(() => (lang.value === 'zh' ? true : false));
 
-const handerClick = (item: any) => {
+const handerClick = (item: linkListItemT) => {
   if (props.islink) {
     const path = isZh.value ? item.path : item.pathEn;
     windowOpen(path, '_blank');
