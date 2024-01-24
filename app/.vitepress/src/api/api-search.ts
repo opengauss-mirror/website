@@ -1,88 +1,15 @@
 import { request } from '@/shared/axios';
 import type { AxiosResponse } from '@/shared/axios';
+import type {
+  TagsParamsT,
+  TagsDataT,
+  SearchParamsT,
+  SearchDataT,
+  SearchCountParamsT,
+  SearchCountT,
+} from '@/shared/@types/type-search';
+import type { ResponseSearchT } from '@/shared/@types/type-common';
 
-interface SearchParamsT {
-  keyword: string;
-  page: number;
-  pageSize: number;
-  lang: string;
-  type: string;
-}
-
-interface ConditionT {
-  archives?: string;
-  tags?: string;
-  author?: string;
-}
-interface TagsParamsT {
-  lang: string;
-  category: string;
-  want: string;
-  condition?: ConditionT;
-}
-
-interface TotalNumItemT {
-  count: number;
-  key: string;
-}
-interface TagsDataT {
-  msg: string;
-  obj: {
-    totalNum: TotalNumItemT[];
-  };
-  status: number;
-}
-
-interface SearchDataItemT {
-  title: string;
-  type: string;
-  summary: string;
-  textContent: string;
-  author?: string[];
-  [key: string]: string | string[] | undefined;
-}
-interface SearchDataT {
-  msg: string;
-  obj: {
-    keyword: string;
-    page: number;
-    pageSize: number;
-    records: SearchDataItemT[];
-  };
-  status: number;
-}
-interface SearchCountItemT {
-  doc_count: number;
-  key: string;
-}
-interface SearchCountT {
-  msg: string;
-  obj: {
-    total: SearchCountItemT[];
-  };
-  status: number;
-}
-
-interface LimitItemT {
-  type: string;
-  version: string;
-}
-interface SearchCountParamsT {
-  keyword: string;
-  lang: string;
-  docsVersion: number;
-  limit: LimitItemT[];
-}
-interface LimitItemT {
-  type: string;
-  version: string;
-}
-interface SearchCountParamsT {
-  keyword: string;
-  lang: string;
-  docsVersion: number;
-  limit: LimitItemT[];
-}
 /**
  * 获取搜索关键词出现的文档版本及每个版本的数据量
  * @param {Object} params
@@ -90,12 +17,12 @@ interface SearchCountParamsT {
  * @param {string} params.category    - 分类
  * @param {string} params.want        - tag关键词
  * @param doException             - 是否使用axios配置的弹窗
- * @return {Promise<TagsDataT>}     返回一个 Promise，解析为搜索关键词在不同版本文档中的数量
+ * @return {Promise<ResponseSearchT<TagsDataT>>}     返回一个 Promise，解析为搜索关键词在不同版本文档中的数量
  */
 export function getTagsData(
   params: TagsParamsT,
   doException = false
-): Promise<TagsDataT> {
+): Promise<ResponseSearchT<TagsDataT>> {
   const url = '/api-search/search/tags';
   return request
     .post(url, params, {
@@ -116,12 +43,12 @@ export function getTagsData(
  * @param {string} params.limit.type       - 限制类型
  * @param {string} params.limit.version       - 版本号
  * @param doException             - 是否使用axios配置的弹窗
- * @return {Promise<SearchDataT>}     返回一个 Promise，解析为搜索关键词搜索出来的内容
+ * @return {Promise<ResponseSearchT<SearchDataT>>}     返回一个 Promise，解析为搜索关键词搜索出来的内容
  */
 export function getSearchData(
   params: SearchParamsT,
   doException = false
-): Promise<SearchDataT> {
+): Promise<ResponseSearchT<SearchDataT>> {
   const url = '/api-search/search/docs';
   return request
     .post(url, params, {
@@ -138,12 +65,12 @@ export function getSearchData(
  * @param {string} params.lang            - 当前语言
  * @param {Array..<{ type: string, version: string }>}  params.limit           - 版本限制参数
  * @param doException             - 是否使用axios配置的弹窗
- * @return {Promise<SearchCountT>}     返回一个 Promise，解析为搜索关键词搜索出来内容在不同分类中的数量
+ * @return {Promise<ResponseSearchT<SearchCountT>>}     返回一个 Promise，解析为搜索关键词搜索出来内容在不同分类中的数量
  */
 export function getSearchCount(
   params: SearchCountParamsT,
   doException = false
-): Promise<SearchCountT> {
+): Promise<ResponseSearchT<SearchCountT>> {
   const url = '/api-search/search/count';
   return request
     .post(url, params, {

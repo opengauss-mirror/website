@@ -8,7 +8,7 @@ import type {
   UserInfoT,
   UpdateMeetingInfoT,
 } from '@/shared/@types/type-calendar';
-
+import type { ResponseT } from '@/shared/@types/type-common';
 /**
  * 获取会议数据
  * @param {string} group           - sig名字
@@ -92,9 +92,9 @@ export function logoutMeeting(token = ''): Promise<LoginMeetingT> {
 /**
  * 获取登录用户信息
  * @param {string} token             - 登录后的认证码
- * @return {Promise<UserInfoT>}
+ * @return {Promise<ResponseT<UserInfoT>>}
  */
-export function getUserInfo(token = ''): Promise<UserInfoT> {
+export function getUserInfo(token = ''): Promise<ResponseT<UserInfoT>> {
   const url = `/api-meeting/user/`;
   return request
     .get(url, {
