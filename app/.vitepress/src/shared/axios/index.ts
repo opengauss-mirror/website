@@ -13,7 +13,6 @@ import handleError from './handleError';
 import setConfig from './setConfig';
 import { ElLoading, ElMessage } from 'element-plus';
 import { LoadingInstance } from 'element-plus/lib/components/loading/src/loading';
-import { tokenFailIndicateLogin } from '../login';
 
 interface RequestConfig<D = any> extends AxiosRequestConfig {
   data?: D;
@@ -173,11 +172,6 @@ const responseInterceptorId = request.interceptors.response.use(
         type: 'error',
         message: err.message.toString(),
       });
-    }
-
-    // token过期，重新登录
-    if (err.response?.status === 401) {
-      tokenFailIndicateLogin();
     }
 
     return Promise.reject(err).catch(() => {});

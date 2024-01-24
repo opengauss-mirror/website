@@ -1,109 +1,113 @@
-import { queryPermission, queryIDToken } from '../api/api-login';
-import { useLogin } from '../stores/login';
-import { storeToRefs } from 'pinia';
+import { getUserInfo, getUserIdToken } from '@/api/api-user';
+import { useLoginStore, useUserInfoStore } from '@/stores/user';
+import type { UserInfoT } from '@/shared/@types/type-user';
+import Cookies from 'js-cookie';
+import { handleError } from '@/shared/utils';
 
-const LOGIN_KEYS = {
-  USER_TOKEN: '_U_T_',
+const LOGIN_URL = import.meta.env.VITE_LOGIN_URL;
+const DOMAIN = import.meta.env.VITE_COOKIE_DOMAIN;
+// 登录状态
+// -1: 登录失败；0：未登录；1：登录中；2：登录成功
+export enum LOGIN_STATUS {
+  FAILED = -1,
+  NOT = 0,
+  DOING = 1,
+  DONE = 2,
+}
+
+export type LoginStatusT =
+  | typeof LOGIN_STATUS.FAILED
+  | LOGIN_STATUS.NOT
+  | LOGIN_STATUS.DOING
+  | LOGIN_STATUS.DONE;
+
+// 登录存储字段
+export const LOGIN_KEYS = {
+  CSRF_TOKEN: '_U_T_',
 };
 
-function setCookie(cname: string, cvalue: string, isDelete?: boolean) {
-  const deleteStr = isDelete ? 'max-age=0; ' : '';
-  try {
-    const domain = import.meta.env.VITE_COOKIE_DOMAIN;
-    const expires = `${deleteStr}path=/; domain=${domain}`;
-    document.cookie = `${cname}=${cvalue}; ${expires}`;
-  } catch {}
-}
-function getCookie(cname: string) {
-  const name = `${cname}=`;
-  let ca: any = [];
-  try {
-    ca = document.cookie.split(';');
-  } catch {
-    ca = [];
-  }
-  for (let i = 0; i < ca.length; i++) {
-    const c = ca[i].trim();
-    if (c.indexOf(name) === 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return '';
-}
-function deleteCookie(cname: string) {
-  setCookie(cname, 'null', true);
-}
+// 修改pinia登录状态
+const setStatus = (status: LoginStatusT) => {
+  const loginStore = useLoginStore();
+  loginStore.setLoginStatus(status);
+};
 
-// 存储用户id及token，用于下次登录
-export function saveUserAuth(code = '') {
-  if (!code) {
-    deleteCookie(LOGIN_KEYS.USER_TOKEN);
-  } else {
-    setCookie(LOGIN_KEYS.USER_TOKEN, code);
-  }
-}
-
-// 获取用户id及token
+// 获取用户认证凭据
 export function getUserAuth() {
-  const token = getCookie(LOGIN_KEYS.USER_TOKEN) || '';
-  if (!token) {
-    saveUserAuth();
-  }
   return {
-    token,
+    csrfToken: Cookies.get(LOGIN_KEYS.CSRF_TOKEN),
   };
 }
 
-// 退出登录
-export function logout() {
-  queryIDToken().then(() => {
-    saveUserAuth();
-    window!.location!.href = location.href;
-  });
+// 清除用户认证凭据
+export function clearUserAuth() {
+  // 清除内存中用户信息
+  const userInfoStore = useUserInfoStore();
+  userInfoStore.$reset();
+  // 清除cookie
+  Cookies.remove(LOGIN_KEYS.CSRF_TOKEN, { path: '/', domain: DOMAIN });
 }
 
-// 跳转首页
-export function goToHome() {
-  window?.location?.reload();
-}
+// 登录之后的回调
+const afterLogined = (userInfo: UserInfoT) => {
+  const { username } = userInfo;
+  if (!username) {
+    setStatus(LOGIN_STATUS.FAILED);
+    clearUserAuth();
+  }
+  setStatus(LOGIN_STATUS.DONE);
 
-export function showGuard() {
-  const origin = import.meta.env.VITE_LOGIN_ORIGIN;
-  const { lang } = getLanguage();
-  location.href = `${origin}/login?redirect_uri=${location.href}&lang=${lang}`;
-}
+  const userInfoStore = useUserInfoStore();
+  userInfoStore.$patch(userInfo);
+};
 
-// token失效跳转首页
-export function tokenFailIndicateLogin() {
-  saveUserAuth();
-  const { guardAuthClient } = useStoreData();
-  guardAuthClient.value = {};
-  goToHome();
-}
-
-/**
- * @callback store 将store返回，使用解构赋值接受
- */
-export function useStoreData() {
-  const login = useLogin();
-  const stores = storeToRefs(login);
-  return stores;
-}
-
-// 刷新后重新请求登录用户信息
-export function refreshInfo() {
-  const { token } = getUserAuth();
-  if (token) {
-    const { guardAuthClient } = useStoreData();
-    queryPermission().then((res) => {
-      const { data } = res;
-      if (Object.prototype.toString.call(data) === '[object Object]') {
-        guardAuthClient.value = data;
-      }
-    });
+// 退出
+export async function doLogout() {
+  try {
+    const idTokenRes = await getUserIdToken();
+    if (idTokenRes.code === 200) {
+      setStatus(LOGIN_STATUS.NOT);
+      clearUserAuth();
+      window.location.href = location.href;
+    } else {
+      handleError();
+    }
+  } catch (error) {
+    /* empty */
   }
 }
 
+// 获取用户信息
+export async function requestUserInfo() {
+  const { csrfToken } = getUserAuth();
+  if (csrfToken) {
+    try {
+      setStatus(LOGIN_STATUS.DOING);
+      const res = await getUserInfo();
+      if (res && res.data) {
+        afterLogined(res.data);
+      } else {
+        doLogout();
+        setStatus(LOGIN_STATUS.FAILED);
+      }
+    } catch (err) {
+      doLogout();
+      setStatus(LOGIN_STATUS.FAILED);
+    }
+  }
+}
+
+// authing认证登录
+export async function doLogin() {
+  const { lang } = getLanguage();
+  try {
+    window.location.href = `${LOGIN_URL}/login?redirect_uri=${decodeURIComponent(
+      window.location.href
+    )}&lang=${lang}`;
+  } catch (error) {
+    setStatus(LOGIN_STATUS.FAILED);
+  }
+}
 export function getLanguage() {
   if (location.pathname.includes('/zh/')) {
     return {
