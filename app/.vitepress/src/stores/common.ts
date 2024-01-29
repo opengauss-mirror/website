@@ -26,6 +26,6 @@ export const useCookieStatus = defineStore('cookieStatus', {
 // 隐私版本
 export const usePrivacyVersion = defineStore('privacyVersion', {
   state: () => ({
-    version: '20240125',
+    version: '20240129',
   }),
 });
