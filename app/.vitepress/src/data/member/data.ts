@@ -451,6 +451,8 @@ import panyan from '@/assets/category/member/avatar/panyan.png';
 import wangxiaoyun from '@/assets/category/member/avatar/wangxiaoyun.png';
 import zhengweimin from '@/assets/category/member/avatar/zhengweimin.png';
 import zhouaoying from '@/assets/category/member/avatar/zhouaoying.png';
+
+import huangyanjiao from '@/assets/category/member/avatar/huangyanjiao.png';
 import { GITEE_LINK } from '@/data/url-config';
 export default {
   zh: {
@@ -930,10 +932,10 @@ export default {
         company: `超聚变数字技术有限公司`,
       },
       {
-        img: wangmingyue2,
-        name: `王铭玥`,
+        img: baiyue,
+        name: `白玥`,
         title: `委员`,
-        email: `wangmy@vastdata.com.cn`,
+        email: `baiyue@vastdata.com.cn`,
         company: `北京海量数据技术股份有限公司`,
       },
       {
@@ -2670,6 +2672,20 @@ export default {
         title: `Committer`,
         email: `chendong76@huawei.com`,
         gitee: `${GITEE_LINK}chendong76`,
+      },
+      {
+        img: wanghuanzhuo,
+        name: `王焕卓`,
+        title: `Committer`,
+        email: `wanghuanzhuo@huawei.com`,
+        gitee: `${GITEE_LINK}wanghuanzhuo`,
+      },
+      {
+        img: huangyanjiao,
+        name: `黄堰姣`,
+        title: `Committer`,
+        email: `huangyanjiao@huawei.com`,
+        gitee: `${GITEE_LINK}huang-yanjiao`,
       },
     ],
     RELEASEMANAGEMENT: [
@@ -4858,10 +4874,10 @@ export default {
         company: `xFusion`,
       },
       {
-        img: wangmingyue2,
-        name: `Mingyue Wang`,
+        img: baiyue,
+        name: `Yue Bai`,
         title: `Member`,
-        email: `wangmy@vastdata.com.cn`,
+        email: `baiyue@vastdata.com.cn`,
         company: `Vastbase`,
       },
       {
@@ -6619,6 +6635,20 @@ export default {
         title: `Committer`,
         email: `chendong76@huawei.com`,
         gitee: `${GITEE_LINK}chendong76`,
+      },
+      {
+        img: wanghuanzhuo,
+        name: `Huanzhuo Wang`,
+        title: `Committer`,
+        email: `wanghuanzhuo@huawei.com`,
+        gitee: `${GITEE_LINK}wanghuanzhuo`,
+      },
+      {
+        img: huangyanjiao,
+        name: `Yanjiao Huang`,
+        title: `Committer`,
+        email: `huangyanjiao@huawei.com`,
+        gitee: `${GITEE_LINK}huang-yanjiao`,
       },
     ],
     RELEASEMANAGEMENT: [
