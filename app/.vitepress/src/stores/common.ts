@@ -21,6 +21,9 @@ export const useCookieStatus = defineStore('cookieStatus', {
   state: () => ({
     status: '0',
   }),
+  getters: {
+    isAllAgreed: (state) => state.status === '1',
+  },
 });
 
 // 隐私版本
