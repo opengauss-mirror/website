@@ -55,12 +55,8 @@ export interface UserGiteeInfoT {
   id: string;
 }
 export interface UserInfoT {
-  code: number;
-  data: {
-    sigs: string[];
-    user: UserGiteeInfoT;
-  };
-  msg: string;
+  sigs: string[];
+  user: UserGiteeInfoT;
 }
 
 export interface UpdateMeetingInfoT {
