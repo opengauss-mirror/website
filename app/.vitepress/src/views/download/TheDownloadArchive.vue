@@ -3,10 +3,12 @@ import { ref, computed, watch } from 'vue';
 import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';
 import { ElMessage } from 'element-plus';
-import { useCommon } from '@/stores/common';
 
+import { useCommon, useCookieStatus } from '@/stores/common';
 import DownloadConfig from '@/data/download';
 import { GITEE_LINK, DOCS_LINK } from '@/data/url-config';
+import { getCustomCookie } from '@/shared/utils';
+
 import AppContent from '@/components/AppContent.vue';
 import OSelect from 'opendesign/select/OSelect.vue';
 import DownloadContent from './DownloadContent.vue';
@@ -21,6 +23,7 @@ const i18n = useI18n();
 const { lang } = useData();
 const commonStore = useCommon();
 const isZh = computed(() => (lang.value === 'zh' ? true : false));
+const cookieStatus = useCookieStatus();
 
 const SHATEXT = 'SHA256';
 const selectVersion = ref(DownloadConfig[2].name);
@@ -92,6 +95,27 @@ watch(
 );
 //控制需要登录后才能下载的版本,最新版的LTS和Preview都需要登录后才能下载的版本
 const downloadVersionAuth = [DownloadConfig[0].name, DownloadConfig[1].name];
+// 下载埋点
+const collectDownloadData = (name: string, architectureAndOs: string) => {
+  if (cookieStatus.isAllAgreed) {
+    const sensors = (window as any)['sensorsDataAnalytic201505'];
+    const { href } = window.location;
+    const downloadTime = new Date();
+    const _U_T_ = getCustomCookie('_U_T_') || 'notLog';
+    const startIndex = architectureAndOs.indexOf('_');
+    sensors?.setProfile({
+      ...(window as any)['sensorsCustomBuriedData'],
+      profileType: 'download',
+      origin: href,
+      softwareName: name,
+      softwareArchitecture:
+        startIndex === -1 ? '' : architectureAndOs.slice(startIndex + 1),
+      softwareOs: architectureAndOs.slice(0, startIndex),
+      downloadTime,
+      _U_T_,
+    });
+  }
+};
 </script>
 
 <template>
@@ -162,7 +186,11 @@ const downloadVersionAuth = [DownloadConfig[0].name, DownloadConfig[1].name];
               <template v-if="subitem.centos_url !== ''">
                 <p class="text">{{ item.thead[1] }}</p>
                 <div class="down-action lable-name2">
-                  <a :href="subitem.centos_url" rel="noopener noreferrer">
+                  <a
+                    :href="subitem.centos_url"
+                    @click="collectDownloadData(subitem.name, item.thead[1])"
+                    rel="noopener noreferrer"
+                  >
                     <OButton size="mini" animation type="primary">
                       {{ i18n.download.BTN_TEXT }}
                       <template #suffixIcon>
@@ -202,7 +230,11 @@ const downloadVersionAuth = [DownloadConfig[0].name, DownloadConfig[1].name];
               <template v-if="subitem.aarch_url !== ''">
                 <p class="text">{{ item.thead[2] }}</p>
                 <div class="down-action lable-name3">
-                  <a :href="subitem.aarch_url" rel="noopener noreferrer">
+                  <a
+                    :href="subitem.aarch_url"
+                    rel="noopener noreferrer"
+                    @click="collectDownloadData(subitem.name, item.thead[2])"
+                  >
                     <OButton animation size="mini" type="primary">
                       {{ i18n.download.BTN_TEXT }}
                       <template #suffixIcon>
@@ -226,7 +258,11 @@ const downloadVersionAuth = [DownloadConfig[0].name, DownloadConfig[1].name];
               <template v-if="subitem.x86_url !== ''">
                 <p class="text">{{ item.thead[3] }}</p>
                 <div class="down-action">
-                  <a :href="subitem.x86_url" rel="noopener noreferrer">
+                  <a
+                    :href="subitem.x86_url"
+                    rel="noopener noreferrer"
+                    @click="collectDownloadData(subitem.name, item.thead[3])"
+                  >
                     <OButton size="mini" type="primary" animation>
                       {{ i18n.download.BTN_TEXT }}
                       <template #suffixIcon>
@@ -280,7 +316,11 @@ const downloadVersionAuth = [DownloadConfig[0].name, DownloadConfig[1].name];
           <el-table-column :label="item.thead[1]">
             <template #default="scope">
               <div v-if="scope.row.centos_url !== ''" class="down-action">
-                <a :href="scope.row.centos_url" rel="noopener noreferrer">
+                <a
+                  :href="scope.row.centos_url"
+                  @click="collectDownloadData(scope.row.name, item.thead[1])"
+                  rel="noopener noreferrer"
+                >
                   <OButton size="mini" animation type="primary">
                     {{ i18n.download.BTN_TEXT }}
                     <template #suffixIcon>
@@ -323,7 +363,11 @@ const downloadVersionAuth = [DownloadConfig[0].name, DownloadConfig[1].name];
           <el-table-column :label="item.thead[2]" prop="aarch_url">
             <template #default="scope">
               <div v-if="scope.row.aarch_url !== ''" class="down-action">
-                <a :href="scope.row.aarch_url" rel="noopener noreferrer">
+                <a
+                  :href="scope.row.aarch_url"
+                  rel="noopener noreferrer"
+                  @click="collectDownloadData(scope.row.name, item.thead[2])"
+                >
                   <OButton size="mini" type="primary" animation>
                     {{ i18n.download.BTN_TEXT }}
                     <template #suffixIcon>
@@ -349,7 +393,11 @@ const downloadVersionAuth = [DownloadConfig[0].name, DownloadConfig[1].name];
           <el-table-column :label="item.thead[3]" prop="x86_url">
             <template #default="scope">
               <div v-if="scope.row.x86_url !== ''" class="down-action">
-                <a :href="scope.row.x86_url" rel="noopener noreferrer">
+                <a
+                  :href="scope.row.x86_url"
+                  rel="noopener noreferrer"
+                  @click="collectDownloadData(scope.row.name, item.thead[3])"
+                >
                   <OButton size="mini" type="primary" animation>
                     {{ i18n.download.BTN_TEXT }}
                     <template #suffixIcon>
