@@ -6,12 +6,12 @@ import {
 export default {
   zh: [
     {
-      pro: 'InDB 3.0',
+      pro: 'InDB V3.0',
       name: '浪潮云信息技术股份公司',
       version: 'openGauss 5.0.0',
       award: '2024-01-17',
       expiration: '2026-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}Inspur/InDB%203.0/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}Inspur/InDB%20V3.0/Certificate.pdf`,
     },
     {
       pro: 'AScoDb数据库V1.0.0',
@@ -179,12 +179,12 @@ export default {
   ],
   en: [
     {
-      pro: 'InDB 3.0',
+      pro: 'InDB V3.0',
       name: '浪潮云信息技术股份公司',
       version: 'openGauss 5.0.0',
       award: '2024-01-17',
       expiration: '2026-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}Inspur/InDB%203.0/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}Inspur/InDB%20V3.0/Certificate.pdf`,
     },
     {
       pro: 'AScoDb数据库V1.0.0',

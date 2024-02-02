@@ -1,5 +1,137 @@
 export default [
   {
+    name: '麒麟云平台系统',
+    version: '7',
+    type: '操作系统',
+    company: '湖南麒麟信安科技股份有限公司',
+    database: 'openGauss 5.0.0',
+    os: null,
+    server: 'Kunpeng 920(Taishan 200)、Intel(其他)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E9%BA%92%E9%BA%9F%E4%BF%A1%E5%AE%89/SKM_C55824020111151.pdf',
+  },
+  {
+    name: '麒麟信安云虚拟化资源管理平台',
+    version: '7',
+    type: '操作系统',
+    company: '湖南麒麟信安科技股份有限公司',
+    database: 'openGauss 5.0.0',
+    os: null,
+    server: 'Kunpeng 920(Taishan 200)、Intel(其他)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E9%BA%92%E9%BA%9F%E4%BF%A1%E5%AE%89/SKM_C55824020111150.pdf',
+  },
+  {
+    name: '麒麟信安操作系统',
+    version: '3',
+    type: '操作系统',
+    company: '湖南麒麟信安科技股份有限公司',
+    database: 'openGauss 5.0.0',
+    os: null,
+    server: 'Kunpeng 920(Taishan 200)、Intel(其他)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E9%BA%92%E9%BA%9F%E4%BF%A1%E5%AE%89/SKM_C55824020111170.pdf',
+  },
+  {
+    name: '麒麟信安服务器操作系统',
+    version: '3',
+    type: '操作系统',
+    company: '湖南麒麟信安科技股份有限公司',
+    database: 'openGauss 5.0.0',
+    os: null,
+    server: 'Kunpeng 920(Taishan 200)、Intel(其他)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E9%BA%92%E9%BA%9F%E4%BF%A1%E5%AE%89/SKM_C55824020111160.pdf',
+  },
+  {
+    name: '麒麟信安服务器虚拟化系统',
+    version: '3.0',
+    type: '操作系统',
+    company: '湖南麒麟信安科技股份有限公司',
+    database: 'openGauss 5.0.0',
+    os: null,
+    server: 'Kunpeng 920(Taishan 200)、Intel(其他)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E9%BA%92%E9%BA%9F%E4%BF%A1%E5%AE%89/SKM_C55824020111180.pdf',
+  },
+  {
+    name: '麒麟服务器虚拟化系统',
+    version: '3.0',
+    type: '操作系统',
+    company: '湖南麒麟信安科技股份有限公司',
+    database: 'openGauss 5.0.0',
+    os: null,
+    server: 'Kunpeng 920(Taishan 200)、Intel(其他)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E9%BA%92%E9%BA%9F%E4%BF%A1%E5%AE%89/SKM_C55824020111110.pdf',
+  },
+  {
+    name: '医疗资质统一授权管理系统',
+    version: '1.0',
+    type: '医疗',
+    company: '广州智云信息技术有限公司',
+    database: 'openGauss 5.0.1',
+    os: 'openEuler 22.03 LTS',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%B9%BF%E5%B7%9E%E5%BF%97%E4%BA%91/%E5%8C%BB%E7%96%97%E8%B5%84%E8%B4%A8%E7%BB%9F%E4%B8%80%E6%8E%88%E6%9D%83%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%20V1.0.pdf',
+  },
+  {
+    name: '智云全数据医事务管理平台',
+    version: '1.0',
+    type: '医疗',
+    company: '广州智云信息技术有限公司',
+    database: 'openGauss 5.0.1',
+    os: 'openEuler 22.03 LTS',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%B9%BF%E5%B7%9E%E5%BF%97%E4%BA%91/%E6%99%BA%E4%BA%91%E5%85%A8%E6%95%B0%E6%8D%AE%E5%8C%BB%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%20V1.0.pdf',
+  },
+  {
+    name: '智云医疗质量管理与控制平台',
+    version: '1.0',
+    type: '医疗',
+    company: '广州智云信息技术有限公司',
+    database: 'openGauss 5.0.1',
+    os: 'openEuler 22.03 LTS',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%B9%BF%E5%B7%9E%E5%BF%97%E4%BA%91/%E6%99%BA%E4%BA%91%E5%8C%BB%E7%96%97%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86%E4%B8%8E%E6%8E%A7%E5%88%B6%E5%B9%B3%E5%8F%B0%20V1.0.pdf',
+  },
+  {
+    name: '柔性专家管理系统',
+    version: '1.0',
+    type: '医疗',
+    company: '广州智云信息技术有限公司',
+    database: 'openGauss 5.0.1',
+    os: 'openEuler 22.03 LTS',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%B9%BF%E5%B7%9E%E5%BF%97%E4%BA%91/%E6%9F%94%E6%80%A7%E4%B8%93%E5%AE%B6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%20V1.0.pdf',
+  },
+  {
+    name: '等级医院评审系统',
+    version: '1.0',
+    type: '医疗',
+    company: '广州智云信息技术有限公司',
+    database: 'openGauss 5.0.1',
+    os: 'openEuler 22.03 LTS',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%B9%BF%E5%B7%9E%E5%BF%97%E4%BA%91/%E7%AD%89%E7%BA%A7%E5%8C%BB%E9%99%A2%E8%AF%84%E5%AE%A1%E7%B3%BB%E7%BB%9F%20V1.0.pdf',
+  },
+  {
+    name: '统一文件管理平台',
+    version: '1.0',
+    type: '医疗',
+    company: '广州智云信息技术有限公司',
+    database: 'openGauss 5.0.1',
+    os: 'openEuler 22.03 LTS',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%B9%BF%E5%B7%9E%E5%BF%97%E4%BA%91/%E7%BB%9F%E4%B8%80%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%20V1.0.pdf',
+  },
+  {
     name: 'LeadmapCloud平台',
     version: '1.1.5',
     type: 'GIS',
@@ -7,7 +139,8 @@ export default [
     database: 'openGauss 5.0.0',
     os: 'openEuler 20.03 LTS SP1',
     server: 'Intel(其他)',
-    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%9D%AD%E5%B7%9E%E9%A2%86%E5%9B%BE/LeadmapCloud%20V1.1.5/Certificate.pdf',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%9D%AD%E5%B7%9E%E9%A2%86%E5%9B%BE/LeadmapCloud%20V1.1.5/Certificate.pdf',
   },
   {
     name: '当虹在线直播编转码系统',
@@ -17,7 +150,8 @@ export default [
     database: 'openGauss 5.0.0',
     os: 'openEuler 22.03 LTS SP1',
     server: 'Taishan 200(Kunpeng 920)',
-    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%9D%AD%E5%B7%9E%E5%BD%93%E8%99%B9/%E5%BD%93%E8%99%B9%E5%9C%A8%E7%BA%BF%E7%9B%B4%E6%92%AD%E7%BC%96%E8%BD%AC%E7%A0%81%E7%B3%BB%E7%BB%9F%20V8.0/Certificate.pdf',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%9D%AD%E5%B7%9E%E5%BD%93%E8%99%B9/%E5%BD%93%E8%99%B9%E5%9C%A8%E7%BA%BF%E7%9B%B4%E6%92%AD%E7%BC%96%E8%BD%AC%E7%A0%81%E7%B3%BB%E7%BB%9F%20V8.0/Certificate.pdf',
   },
   {
     name: '城市静态交通管理平台',
