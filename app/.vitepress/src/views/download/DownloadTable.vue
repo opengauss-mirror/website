@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { ref, computed, watch, toRefs, onMounted } from 'vue';
 import { useData } from 'vitepress';
-import { useCommon } from '@/stores/common';
+import { useCommon, useCookieStatus } from '@/stores/common';
 import { useI18n } from '@/i18n';
 import { ElMessage, ElMessageBox } from 'element-plus';
 import useWindowResize from '@/components/hooks/useWindowResize';
@@ -42,6 +42,7 @@ const { lang } = useData();
 const commonStore = useCommon();
 const i18n = useI18n();
 const shaText = 'SHA256';
+const cookieStatus = useCookieStatus();
 // tips
 const hoverTips = computed(() => (type: string | undefined) => {
   let tips = '';
@@ -211,6 +212,23 @@ const changeDownloadAuth = () => {
       return '';
     });
 };
+
+// 下载埋点
+const collectDownloadData = (name: string) => {
+  if (cookieStatus.isAllAgreed) {
+    const sensors = (window as any)['sensorsDataAnalytic201505'];
+    const { href } = window.location;
+    sensors?.setProfile({
+      ...(window as any)['sensorsCustomBuriedData'],
+      profileType: 'download',
+      origin: href,
+      softwareName: name,
+      architecture: activeArchitecture.value,
+      os: activeOs.value,
+      date: new Date(),
+    });
+  }
+};
 </script>
 <template>
   <div class="content-item">
@@ -300,7 +318,10 @@ const changeDownloadAuth = () => {
                 </OButton>
               </template>
               <template v-else>
-                <a :href="scope.row.down_url">
+                <a
+                  :href="scope.row.down_url"
+                  @click="collectDownloadData(scope.row.name)"
+                >
                   <OButton size="mini" type="primary" animation>
                     {{ i18n.download.BTN_TEXT }}
                     <template #suffixIcon>
@@ -387,7 +408,11 @@ const changeDownloadAuth = () => {
           >
             {{ i18n.download.BTN_TEXT_MO }}</a
           >
-          <a v-else :href="item.down_url">
+          <a
+            v-else
+            :href="item.down_url"
+            @click="collectDownloadData(item.name)"
+          >
             {{ i18n.download.BTN_TEXT_MO }}
           </a>
         </p>
