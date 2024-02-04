@@ -32,6 +32,8 @@ const currentPage = ref(1);
 const pageSize = ref(12);
 // 控制分页器显示的时机
 const pageShow = ref(false);
+// 控制无数据状态显示
+const isNotFound = ref(false);
 // 搜索内容
 const searchInput = ref<string>('');
 const searchValue = computed(() => {
@@ -96,11 +98,7 @@ const totalPage = computed(() => {
 
 // 点击搜索框的删除图标
 function clearSearchInput() {
-  // searchResultList.value = '';
   searchInput.value = '';
-  // searchNumber.value.map((item: any) => {
-  //   item.doc_count = 0;
-  // });
 }
 // 点击数据的类型导航
 function setCurrentType(index: number, type: string) {
@@ -142,6 +140,7 @@ function searchCountAll() {
 function searchDataAll() {
   searchResultList.value = [];
   pageShow.value = false;
+  isNotFound.value = false;
   // 全部时 limit 不传
   if (activeVersion.value === i18n.value.search.tagList.all) {
     searchData.value.limit = [];
@@ -151,12 +150,14 @@ function searchDataAll() {
       if (res.status === 200 && res.obj.records[0]) {
         searchResultList.value = res.obj.records;
         pageShow.value = true;
+        isNotFound.value = false;
       } else {
         if (searchType.value === 'docs') {
           searchType.value = '';
           searchAll();
         }
         searchResultList.value = [];
+        isNotFound.value = true;
         pageShow.value = false;
       }
     })
@@ -251,17 +252,6 @@ watch(
   () => activeVersion.value,
   () => {
     searchAll('docs');
-  }
-);
-const isNotFound = ref(false);
-watch(
-  () => activeVersion.value,
-  () => {
-    if (activeVersion.value.length) {
-      isNotFound.value = false;
-    } else {
-      isNotFound.value = true;
-    }
   }
 );
 </script>
