@@ -205,6 +205,9 @@ const searchLink = `/${lang.value}/search/`;
       grid-template-columns: repeat(3, auto);
       align-items: center;
       height: 100%;
+      .header-tool-search {
+        cursor: pointer;
+      }
     }
   }
   .icon {

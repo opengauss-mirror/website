@@ -43,7 +43,8 @@ const searchNumber: any = ref([]);
 const searchType = ref('');
 const searchData = computed(() => {
   return {
-    keyword: searchInput.value.trim(),
+    keyword:
+      searchInput.value || decodeURIComponent(location.href.split('=')[1]),
     page: currentPage.value,
     pageSize: pageSize.value,
     lang: lang.value,
@@ -95,11 +96,11 @@ const totalPage = computed(() => {
 
 // 点击搜索框的删除图标
 function clearSearchInput() {
-  searchResultList.value = '';
+  // searchResultList.value = '';
   searchInput.value = '';
-  searchNumber.value.map((item: any) => {
-    item.doc_count = 0;
-  });
+  // searchNumber.value.map((item: any) => {
+  //   item.doc_count = 0;
+  // });
 }
 // 点击数据的类型导航
 function setCurrentType(index: number, type: string) {
@@ -139,6 +140,8 @@ function searchCountAll() {
 }
 // 获取搜索结果的数据
 function searchDataAll() {
+  searchResultList.value = [];
+  pageShow.value = false;
   // 全部时 limit 不传
   if (activeVersion.value === i18n.value.search.tagList.all) {
     searchData.value.limit = [];
@@ -250,6 +253,17 @@ watch(
     searchAll('docs');
   }
 );
+const isNotFound = ref(false);
+watch(
+  () => activeVersion.value,
+  () => {
+    if (activeVersion.value.length) {
+      isNotFound.value = false;
+    } else {
+      isNotFound.value = true;
+    }
+  }
+);
 </script>
 <template>
   <div class="search">
@@ -312,7 +326,7 @@ watch(
             </p>
           </li>
         </ul>
-        <NotFound v-else :no-data-tip="i18n.common.Not_Found" />
+        <NotFound v-if="isNotFound" :no-data-tip="i18n.common.Not_Found" />
       </div>
       <div v-if="totalPage > 1 && pageShow" class="page-box">
         <ClientOnly>
