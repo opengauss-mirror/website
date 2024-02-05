@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { ref, computed, watch } from 'vue';
 import { useRouter, useData } from 'vitepress';
 
 import { useI18n } from '@/i18n';
@@ -143,6 +143,16 @@ const changeCurrentMoblie = (val: string) => {
     currentPage.value = currentPage.value + 1;
   }
 };
+// 翻页滚动到顶部
+watch(
+  () => currentPage.value,
+  () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }
+);
 </script>
 
 <template>
