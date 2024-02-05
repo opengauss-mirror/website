@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, computed, onMounted } from 'vue';
+import { ref, computed, onMounted, watch } from 'vue';
 import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';
 import useWindowScroll from '@/components/hooks/useWindowScroll';
@@ -223,6 +223,16 @@ onMounted(() => {
   getUrlParam();
   setCurrentCaseListAll();
 });
+// 翻页滚动到顶部
+watch(
+  () => currentPage.value,
+  () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }
+);
 </script>
 
 <template>

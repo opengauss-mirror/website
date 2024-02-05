@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue';
+import { computed, ref, watch } from 'vue';
 import { useRouter, useData } from 'vitepress';
 
 import { useI18n } from '@/i18n';
@@ -52,6 +52,16 @@ const newsCardData = computed(() => {
 const toNewsContent = (path: string) => {
   router.go(`/${path}`);
 };
+// 翻页滚动到顶部
+watch(
+  () => currentPage.value,
+  () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }
+);
 </script>
 
 <template>
