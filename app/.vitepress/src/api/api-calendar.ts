@@ -12,34 +12,25 @@ import type { ResponseT } from '@/shared/@types/type-common';
 /**
  * 获取会议数据
  * @param {string} group           - sig名字
- * @param {boolean} noLoading      - 是否使用加载动画。默认为 true。
+ * @param {boolean} showLoading      - 是否使用加载动画。默认为 true。
  *                                   传入 true 表示使用加载动画，传入 false 表示不使用。
  * @return {Promise{MeettingTableDataT}} - 一个 Promise，解析为解析为会议 SIG 的对象。
  */
 
 export function getMeetingData(
-  group: string,
-  noLoading: boolean = false
+  group: string
 ): Promise<{ tableData: MeettingTableDataT[] }> {
   const url = `/api-meeting/meetingsdata/?group=${group}`;
-  return request
-    .get(url, { $doException: true, noLoading })
-    .then((res: AxiosResponse) => res.data);
+  return request.get(url).then((res: AxiosResponse) => res.data);
 }
 
 /**
  * 获取会议 sig组
- * @param {boolean} noLoading      - 是否使用加载动画。默认为 true。
- *                                   传入 true 表示使用加载动画，传入 false 表示不使用。
  * @return {Promise<SigGroupDataT[]>} - 一个 Promise，解析为解析为会议 SIG 的数组。
  */
-export function getMeetingSig(
-  noLoading: boolean = false
-): Promise<SigGroupDataT[]> {
+export function getMeetingSig(): Promise<SigGroupDataT[]> {
   const url = '/api-meeting/groups/';
-  return request
-    .get(url, { $doException: true, noLoading })
-    .then((res: AxiosResponse) => res.data);
+  return request.get(url).then((res: AxiosResponse) => res.data);
 }
 
 /**
@@ -48,7 +39,9 @@ export function getMeetingSig(
  */
 export function loginGitee(): Promise<LoginGiteeT> {
   const url = '/api-meeting/gitee_login/';
-  return request.get(url).then((res: AxiosResponse) => res.data);
+  return request
+    .get(url, { showLoading: true })
+    .then((res: AxiosResponse) => res.data);
 }
 
 /**
@@ -56,21 +49,16 @@ export function loginGitee(): Promise<LoginGiteeT> {
  * @param {Object} params - 输入的新增会议信息
  * @param {string} params.code     - 登录验证码
  * @param {string} params.language - 目前的语言
- * @param noLoading      - 是否使用加载动画。默认为 true。
+ * @param showLoading      - 是否使用加载动画。默认为 true。
  *                         传入 true 表示使用加载动画，传入 false 表示不使用。
  * @return {Promise<LoginMeetingT>} - 一个 Promise，解析为登录成功返回的认证信息。
  */
 export function loginMeeting(
   params: object,
-  noLoading: boolean = false
+  showLoading: boolean
 ): Promise<LoginMeetingT> {
   const url = '/api-meeting/login/';
-  return request
-    .post(url, params, {
-      $doException: true,
-      noLoading,
-    })
-    .then((res: AxiosResponse) => res.data);
+  return request.post(url, params).then((res: AxiosResponse) => res.data);
 }
 
 /**
@@ -101,8 +89,7 @@ export function getUserInfo(token = ''): Promise<ResponseT<UserInfoT>> {
       headers: {
         Authorization: 'Bearer ' + token,
       },
-      $doException: true,
-      noLoading: true,
+      showLoading: true,
     })
     .then((res: AxiosResponse) => res.data);
 }
