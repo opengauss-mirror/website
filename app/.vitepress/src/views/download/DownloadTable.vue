@@ -7,6 +7,7 @@ import { ElMessage, ElMessageBox } from 'element-plus';
 import useWindowResize from '@/components/hooks/useWindowResize';
 import { DownloadItemT } from '@/shared/@types/type-download';
 import { showGuard, useStoreData } from '@/shared/login';
+import { getCustomCookie } from '@/shared/utils';
 
 import IconDownload from '~icons/app/icon-download.svg';
 import IconCopy from '~icons/app/icon-copy.svg';
@@ -218,14 +219,17 @@ const collectDownloadData = (name: string) => {
   if (cookieStatus.isAllAgreed) {
     const sensors = (window as any)['sensorsDataAnalytic201505'];
     const { href } = window.location;
+    const downloadTime = new Date();
+    const _U_T_ = getCustomCookie('_U_T_') || 'notLog';
     sensors?.setProfile({
       ...(window as any)['sensorsCustomBuriedData'],
       profileType: 'download',
       origin: href,
       softwareName: name,
-      architecture: activeArchitecture.value,
-      os: activeOs.value,
-      date: new Date(),
+      softwareArchitecture: activeArchitecture.value,
+      softwareOs: activeOs.value,
+      downloadTime,
+      _U_T_,
     });
   }
 };
