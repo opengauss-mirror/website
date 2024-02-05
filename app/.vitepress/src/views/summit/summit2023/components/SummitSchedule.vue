@@ -30,7 +30,6 @@ watch(
     otherTabType.value = 0;
   }
 );
-
 </script>
 
 <template>
@@ -85,7 +84,18 @@ watch(
               <span
                 v-for="item in subItem.desc.split('\n')"
                 :key="item + '1'"
-              >{{ item }}</span>
+                >{{ item }}</span
+              >
+              <template v-if="subItem.pptLink && subItem.pptLink.length">
+                <p v-for="(itemLink, indexLink) in subItem.pptLink">
+                  <a :href="itemLink">
+                    演讲材料下载
+                    <span v-if="subItem.pptLink[1]">
+                      --{{ subItem.person[indexLink].name }}
+                    </span>
+                  </a>
+                </p>
+              </template>
             </span>
             <div v-if="subItem.person[0]" class="name-box">
               <div v-for="personItem in subItem.person" :key="personItem.id">
@@ -128,11 +138,7 @@ watch(
               </p>
             </div>
           </div>
-          <div
-            v-show="idSubItemShow !== '' && idShow === itemList.id"
-            class="mask"
-            @click="changeIndexShow('', '')"
-          ></div>
+          <div v-if="false" class="mask" @click="changeIndexShow('', '')"></div>
         </div>
       </div>
     </div>
