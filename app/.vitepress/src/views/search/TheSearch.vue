@@ -118,7 +118,7 @@ function searchCountAll() {
   if (activeVersion.value === i18n.value.search.tagList.all) {
     searchCount.value.limit = [];
   }
-  getSearchCount(searchCount.value, true)
+  getSearchCount(searchCount.value)
     .then((res) => {
       if (res.status === 200 && res.obj.total[0]) {
         searchNumber.value = res.obj.total;
@@ -145,7 +145,7 @@ function searchDataAll() {
   if (activeVersion.value === i18n.value.search.tagList.all) {
     searchData.value.limit = [];
   }
-  getSearchData(searchData.value, true)
+  getSearchData(searchData.value)
     .then((res) => {
       if (res.status === 200 && res.obj.records[0]) {
         searchResultList.value = res.obj.records;
@@ -227,7 +227,7 @@ const versionList = ref([
 ]);
 
 async function getVersionTag() {
-  await getTagsData(tagsParams, true)
+  await getTagsData(tagsParams)
     .then((res) => {
       if (res.obj?.totalNum.length) {
         // 默认选中latest

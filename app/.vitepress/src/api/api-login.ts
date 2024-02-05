@@ -21,7 +21,6 @@ export function queryPermission() {
     .get(url, {
       params,
       global: true,
-      $doException: true,
       headers: {
         token,
       },
@@ -47,7 +46,6 @@ export function queryIDToken() {
   return request
     .get(url, {
       params,
-      $doException: true,
       headers: {
         token,
       },

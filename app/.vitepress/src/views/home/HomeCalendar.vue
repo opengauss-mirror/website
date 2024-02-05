@@ -244,7 +244,7 @@ const sigSelect = ref('');
 const meetingData = async () => {
   calendarData.value = [];
   renderData.value.timeData = [];
-  const res = await getMeetingData(sigSelect.value, true);
+  const res = await getMeetingData(sigSelect.value);
   calendarData.value = res.tableData || [];
 };
 // sig 选择
@@ -254,7 +254,7 @@ const selectSigChange = () => {
 // sig列表
 const sigGroup = ref<SigGroupDataT[]>([]);
 const meetingSig = async () => {
-  const res = await getMeetingSig(true);
+  const res = await getMeetingSig();
   sigGroup.value = res.length ? res : [];
 };
 

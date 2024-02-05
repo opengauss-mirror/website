@@ -16,19 +16,13 @@ import type { ResponseSearchT } from '@/shared/@types/type-common';
  * @param {string} params.lang        - 语言
  * @param {string} params.category    - 分类
  * @param {string} params.want        - tag关键词
- * @param doException             - 是否使用axios配置的弹窗
  * @return {Promise<ResponseSearchT<TagsDataT>>}     返回一个 Promise，解析为搜索关键词在不同版本文档中的数量
  */
 export function getTagsData(
-  params: TagsParamsT,
-  doException = false
+  params: TagsParamsT
 ): Promise<ResponseSearchT<TagsDataT>> {
   const url = '/api-search/search/tags';
-  return request
-    .post(url, params, {
-      $doException: doException,
-    })
-    .then((res: AxiosResponse) => res.data);
+  return request.post(url, params).then((res: AxiosResponse) => res.data);
 }
 
 /**
@@ -42,18 +36,14 @@ export function getTagsData(
  * @param {Object} params.limit       - 版本限制参数
  * @param {string} params.limit.type       - 限制类型
  * @param {string} params.limit.version       - 版本号
- * @param doException             - 是否使用axios配置的弹窗
  * @return {Promise<ResponseSearchT<SearchDataT>>}     返回一个 Promise，解析为搜索关键词搜索出来的内容
  */
 export function getSearchData(
-  params: SearchParamsT,
-  doException = false
+  params: SearchParamsT
 ): Promise<ResponseSearchT<SearchDataT>> {
   const url = '/api-search/search/docs';
   return request
-    .post(url, params, {
-      $doException: doException,
-    })
+    .post(url, params, { showLoading: true })
     .then((res: AxiosResponse) => res.data);
 }
 
@@ -64,17 +54,11 @@ export function getSearchData(
  * @param {string} params.keyword         - 搜索关键词
  * @param {string} params.lang            - 当前语言
  * @param {Array..<{ type: string, version: string }>}  params.limit           - 版本限制参数
- * @param doException             - 是否使用axios配置的弹窗
  * @return {Promise<ResponseSearchT<SearchCountT>>}     返回一个 Promise，解析为搜索关键词搜索出来内容在不同分类中的数量
  */
 export function getSearchCount(
-  params: SearchCountParamsT,
-  doException = false
+  params: SearchCountParamsT
 ): Promise<ResponseSearchT<SearchCountT>> {
   const url = '/api-search/search/count';
-  return request
-    .post(url, params, {
-      $doException: doException,
-    })
-    .then((res: AxiosResponse) => res.data);
+  return request.post(url, params).then((res: AxiosResponse) => res.data);
 }
