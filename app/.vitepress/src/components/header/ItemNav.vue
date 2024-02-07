@@ -1,32 +1,24 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import { useData, useRoute } from 'vitepress';
-import { debounce } from 'lodash';
 
 import navData from '@/data/header';
-import { NavItemT, NavChildrenItemT } from '@/shared/@types/type-nav';
+import { NavChildrenItemT, LocaleT } from '@/shared/@types/type-nav';
 
 const { lang } = useData();
-const navActive = ref('');
-const isShow = ref(true);
-
-// nav 鼠标滑过事件
-const toggleSubDebounced = debounce(
-  (item: NavItemT | null) => {
-    if (item === null) {
-      navActive.value = '';
-    } else {
-      navActive.value = item.id;
-      isShow.value = true;
-    }
-  },
-  100,
-  {
-    trailing: true,
-  }
-);
-// nav 默认选中
+const activeIndex = ref(-1);
 const route = useRoute();
+
+// hover事件
+const onMouseEnter = (idx: number) => {
+  activeIndex.value = idx;
+};
+
+const onMouseLeave = () => {
+  activeIndex.value = -1;
+};
+
+// nav 默认选中
 const findIndexByPath = (
   path: string,
   lang: string,
@@ -48,45 +40,75 @@ const selectedIndex = computed(() => {
 
   return tempIndex;
 });
+
+// 过渡动画
+const onBeforeEnter = (el: Element) => {
+  (el as HTMLUListElement).style.height = '0px';
+  (el as HTMLUListElement).style.opacity = '0';
+};
+const onEnter = (el: Element) => {
+  (el as HTMLUListElement).style.height = `${el.scrollHeight}px`;
+  (el as HTMLUListElement).style.opacity = '1';
+};
+const onBeforeLeave = (el: Element) => {
+  (el as HTMLUListElement).style.height = `${
+    (el as HTMLUListElement).offsetHeight
+  }px`;
+  (el as HTMLUListElement).style.opacity = '1';
+};
+const onLeave = (el: Element) => {
+  (el as HTMLUListElement).style.height = '0px';
+  (el as HTMLUListElement).style.opacity = '0';
+};
 </script>
 
 <template>
   <nav class="o-nav">
     <ul class="o-nav-list" :class="{ 'lang-en': lang === 'en' }">
       <li
-        v-for="(item, index) in navData"
+        v-for="(item, idx) in navData"
         :key="item.id"
         :class="{
-          active: selectedIndex === index,
-          hover: navActive === item.id,
+          active: selectedIndex === idx,
+          'is-active': activeIndex === idx,
         }"
-        @mouseenter="toggleSubDebounced(item)"
-        @mouseleave="toggleSubDebounced(null)"
+        @mouseenter="onMouseEnter(idx)"
+        @mouseleave="onMouseLeave()"
       >
-        <span class="text" v-if="item.label[lang as 'zh'|'en' ]"
-          >{{ item.label[lang as 'zh' | 'en'] }}
+        <span class="text" v-if="item.label[lang as LocaleT ]"
+          >{{ item.label[lang as LocaleT] }}
         </span>
-
-        <div v-if="isShow && item.children" class="sub-menu">
-          <ul class="sub-menu-content">
+        <Transition
+          @before-enter="onBeforeEnter"
+          @enter="onEnter"
+          @before-leave="onBeforeLeave"
+          @leave="onLeave"
+        >
+          <ul
+            v-show="
+              item.children && item.children.length && activeIndex === idx
+            "
+            class="sub-menu"
+          >
             <li
               v-for="subItem in item.children"
               :key="subItem.id"
               class="sub-menu-item"
             >
-              <template v-if="subItem.href&&subItem.href[lang as 'zh' | 'en']">
+              <template v-if="subItem.href&&subItem.href[lang as LocaleT]">
                 <a
                   class="item-link"
-                  :href="subItem.href[lang as 'zh' | 'en']"
+                  :href="subItem.href[lang as LocaleT]"
                   :target="subItem.jumOut ? '_blank' : 'self'"
+                  @click="activeIndex = -1"
                   rel="noopener noreferrer"
                 >
-                  {{ subItem.label[lang as 'zh' | 'en'] }}
+                  {{ subItem.label[lang as LocaleT] }}
                 </a>
               </template>
             </li>
           </ul>
-        </div>
+        </Transition>
       </li>
     </ul>
   </nav>
@@ -149,29 +171,18 @@ const selectedIndex = computed(() => {
 
       .sub-menu {
         position: absolute;
-        top: 80px;
+        top: 100%;
         left: 50%;
-        right: 0;
         background-color: var(--o-color-bg2);
-        transform: translate(-50%) scaleY(0);
-        transform-origin: top;
+        transform: translate(-50%);
         transition: all 0.3s ease-in-out;
-        display: table;
         z-index: 99;
+        height: 0;
+        opacity: 0;
         box-shadow: var(--o-shadow-l1);
-        .sub-menu-content {
-          margin: 0;
-          padding: 0;
-        }
+        overflow: hidden;
+
         .sub-menu-item {
-          line-height: var(--o-line-height-h3);
-          text-align: center;
-          font-size: var(--o-font-size-text);
-          color: var(--o-color-text1);
-          display: block;
-          white-space: nowrap;
-          padding: 0 var(--o-spacing-h8);
-          min-width: 106px;
           &:hover {
             background-color: var(--o-color-brand1);
             color: var(--o-color-white);
@@ -187,9 +198,16 @@ const selectedIndex = computed(() => {
             }
           }
           .item-link {
-            display: inline-block;
+            line-height: var(--o-line-height-h3);
+            text-align: center;
+            font-size: var(--o-font-size-text);
+            color: var(--o-color-text1);
+            display: block;
+            padding: 0 var(--o-spacing-h8);
+            min-width: 106px;
+            white-space: nowrap;
             width: 100%;
-            height: 100%;
+            display: block;
             color: var(--o-color-text1);
           }
         }

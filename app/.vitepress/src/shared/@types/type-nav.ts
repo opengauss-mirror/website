@@ -23,3 +23,5 @@ export interface NavItemT {
   }; // 跳转链接
   children?: NavChildrenItemT[];
 }
+
+export type LocaleT = 'zh' | 'en';
