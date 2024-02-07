@@ -66,11 +66,31 @@ function changeLanguage(newlang: string) {
 }
 
 const isMenu = ref(false);
-const showSub = () => {
+const onMouseEnter = () => {
   isMenu.value = true;
 };
-const hideSub = () => {
+const onMouseLeave = () => {
   isMenu.value = false;
+};
+
+// 过渡动画
+const onBeforeEnter = (el: Element) => {
+  (el as HTMLUListElement).style.height = '0px';
+  (el as HTMLUListElement).style.opacity = '0';
+};
+const onEnter = (el: Element) => {
+  (el as HTMLUListElement).style.height = `${el.scrollHeight}px`;
+  (el as HTMLUListElement).style.opacity = '1';
+};
+const onBeforeLeave = (el: Element) => {
+  (el as HTMLUListElement).style.height = `${
+    (el as HTMLUListElement).offsetHeight
+  }px`;
+  (el as HTMLUListElement).style.opacity = '1';
+};
+const onLeave = (el: Element) => {
+  (el as HTMLUListElement).style.height = '0px';
+  (el as HTMLUListElement).style.opacity = '0';
 };
 </script>
 
@@ -78,24 +98,31 @@ const hideSub = () => {
   <div
     v-if="screenWidth > 1100"
     class="lang-menu"
-    @mouseenter="showSub()"
-    @mouseleave="hideSub()"
+    @mouseenter="onMouseEnter()"
+    @mouseleave="onMouseLeave()"
   >
     <span class="lang-menu-link" :class="{ 'no-state': langList.length < 2 }">
       {{ lang === 'zh' ? '中文' : 'English' }}
       <OIcon v-if="langList.length > 1"><icon-down></icon-down></OIcon>
     </span>
-    <ul v-if="isMenu && langList.length > 1" class="lang-menu-list">
-      <li
-        v-for="item in langList"
-        :key="item.id"
-        class="lang-item"
-        :class="{ active: lang === item.id }"
-        @click="changeLanguage(item.id)"
-      >
-        {{ item.label }}
-      </li>
-    </ul>
+    <Transition
+      @before-enter="onBeforeEnter"
+      @enter="onEnter"
+      @before-leave="onBeforeLeave"
+      @leave="onLeave"
+    >
+      <ul v-show="isMenu && langList.length > 1" class="lang-menu-list">
+        <li
+          v-for="item in langList"
+          :key="item.id"
+          class="lang-item"
+          :class="{ active: lang === item.id }"
+          @click="changeLanguage(item.id)"
+        >
+          {{ item.label }}
+        </li>
+      </ul>
+    </Transition>
   </div>
   <div v-else class="mobile-change-language">
     <span
@@ -125,7 +152,7 @@ const hideSub = () => {
   }
   .lang-menu-list {
     position: absolute;
-    top: 80px;
+    top: 100%;
     left: 50%;
     transform: translateX(-50%);
     background: var(--o-color-bg2);
@@ -133,6 +160,9 @@ const hideSub = () => {
     z-index: 999;
     box-shadow: var(--o-shadow-l1);
     min-width: 78px;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
     .lang-item {
       line-height: var(--o-line-height-h3);
       text-align: center;

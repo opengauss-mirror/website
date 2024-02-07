@@ -3,7 +3,7 @@ import { computed, ref, watch } from 'vue';
 import { useRouter, useData } from 'vitepress';
 
 import navData from '@/data/header';
-import { NavItemT } from '@/shared/@types/type-nav';
+import { NavItemT, LocaleT } from '@/shared/@types/type-nav';
 
 import ItemTheme from './ItemTheme.vue';
 import ItemLang from './ItemLang.vue';
@@ -101,7 +101,7 @@ watch(
                 :class="{ active: selectedIndex === index }"
                 @click.stop="clickMenuNav(item, index)"
               >
-                {{ item.label[lang as 'zh' | 'en'] }}
+                {{ item.label[lang as LocaleT] }}
               </div>
             </div>
             <div class="mobile-tools">
