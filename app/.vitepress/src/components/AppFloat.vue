@@ -447,102 +447,108 @@ onMounted(() => {
               }}</OButton>
             </div>
           </div>
-          <div class="nav-box1">
-            <div
-              class="nav-item"
-              @mouseenter="toggleIsShow(true)"
-              @mouseleave="toggleIsShow(false)"
-            >
-              <OIcon class="icon-box" @mouseleave.stop="closefloat">
-                <component :is="IconSmile"> </component>
-              </OIcon>
-              <div v-if="isShow" class="o-popup1" :class="{ show: isDynamic }">
-                <OIcon class="icon-cancel" @click="cancelPopup">
-                  <IconCancel />
+          <div class="nav-box">
+            <div class="nav-box1">
+              <div
+                class="nav-item"
+                @mouseenter="toggleIsShow(true)"
+                @mouseleave="toggleIsShow(false)"
+              >
+                <OIcon class="icon-box" @mouseleave.stop="closefloat">
+                  <component :is="IconSmile"> </component>
                 </OIcon>
-                <div class="slider">
-                  <p class="slider-title">
-                    {{ title1 }}
-                    <span class="title-name">{{ title2 }}</span>
-                    {{ title3 }}
-                  </p>
-                  <div class="slider-body">
-                    <div class="slider-tip">
-                      <div v-show="isReasonShow" class="slide-btn-tip">
-                        {{ scoreTip }}
+                <div
+                  v-if="isShow"
+                  class="o-popup1"
+                  :class="{ show: isDynamic }"
+                >
+                  <OIcon class="icon-cancel" @click="cancelPopup">
+                    <IconCancel />
+                  </OIcon>
+                  <div class="slider">
+                    <p class="slider-title">
+                      {{ title1 }}
+                      <span class="title-name">{{ title2 }}</span>
+                      {{ title3 }}
+                    </p>
+                    <div class="slider-body">
+                      <div class="slider-tip">
+                        <div v-show="isReasonShow" class="slide-btn-tip">
+                          {{ scoreTip }}
+                        </div>
+                      </div>
+                      <el-slider
+                        v-model="score"
+                        show-stops
+                        :step="10"
+                        :marks="marks"
+                        :show-tooltip="false"
+                        @input="handleInput"
+                      />
+                      <div class="grade-info">
+                        <span>{{
+                          title2 === TITLES2[0]
+                            ? infoData.grade1
+                            : infoData.grade1_1
+                        }}</span>
+                        <span>{{
+                          title2 === TITLES2[0]
+                            ? infoData.grade2
+                            : infoData.grade2_1
+                        }}</span>
                       </div>
                     </div>
-                    <el-slider
-                      v-model="score"
-                      show-stops
-                      :step="10"
-                      :marks="marks"
-                      :show-tooltip="false"
-                      @input="handleInput"
-                    />
-                    <div class="grade-info">
-                      <span>{{
-                        title2 === TITLES2[0]
-                          ? infoData.grade1
-                          : infoData.grade1_1
-                      }}</span>
-                      <span>{{
-                        title2 === TITLES2[0]
-                          ? infoData.grade2
-                          : infoData.grade2_1
-                      }}</span>
-                    </div>
-                  </div>
-                  <div v-show="isReasonShow" class="reason">
-                    <el-input
-                      v-model="inputText"
-                      :rows="3"
-                      type="textarea"
-                      :placeholder="placeholder"
-                      maxlength="500"
-                      resize="none"
-                      show-word-limit
-                      @focus="toggleIsFocuse(true)"
-                      @blur="toggleIsFocuse(false)"
-                    />
-                    <p class="more-info">
-                      {{ infoData.more }}
-                      <a :href="'mailto:' + infoData.emile">
-                        {{ infoData.emile }}
-                      </a>
-                    </p>
-                    <div class="submit-btn">
-                      <OButton
-                        type="outline"
-                        size="mini"
-                        @click="handleClickSubmit"
-                      >
-                        {{ infoData.submit }}
-                      </OButton>
+                    <div v-show="isReasonShow" class="reason">
+                      <el-input
+                        v-model="inputText"
+                        :rows="3"
+                        type="textarea"
+                        :placeholder="placeholder"
+                        maxlength="500"
+                        resize="none"
+                        show-word-limit
+                        @focus="toggleIsFocuse(true)"
+                        @blur="toggleIsFocuse(false)"
+                      />
+                      <p class="more-info">
+                        {{ infoData.more }}
+                        <a :href="'mailto:' + infoData.emile">
+                          {{ infoData.emile }}
+                        </a>
+                      </p>
+                      <div class="submit-btn">
+                        <OButton
+                          type="outline"
+                          size="mini"
+                          @click="handleClickSubmit"
+                        >
+                          {{ infoData.submit }}
+                        </OButton>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="nav-item">
-              <OIcon class="icon-box"
-                ><component :is="IconHeadset"></component>
-              </OIcon>
-              <div class="o-popup2">
-                <div
-                  v-for="item in floatData"
-                  :key="item.emile"
-                  class="pop-item"
-                  rel="noopener noreferrer"
-                >
-                  <OIcon><component :is="item.img"></component></OIcon>
-                  <div class="text">
-                    <p class="text-name">
-                      {{ item.text }}
-                    </p>
-                    <p class="text-tip">
-                      <a :href="'mailto:' + item.emile">{{ item.emile }}</a>
-                    </p>
+              <div class="nav-item">
+                <OIcon class="icon-box"
+                  ><component :is="IconHeadset"></component>
+                </OIcon>
+                <div class="o-popup2">
+                  <div
+                    v-for="item in floatData"
+                    :key="item.emile"
+                    class="pop-item"
+                    rel="noopener noreferrer"
+                  >
+                    <OIcon><component :is="item.img"></component></OIcon>
+                    <div class="text">
+                      <p class="text-name">
+                        {{ item.text }}
+                      </p>
+                      <p class="text-tip">
+                        <a :href="'mailto:' + item.emile">{{ item.emile }}</a>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
