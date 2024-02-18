@@ -9,5 +9,5 @@ summary: '2023年度openGauss开源社区年度运营报告'
 ---
 
 
-<div style="text-align:center;margin:24px 0;"><img src="/zh/news/2024-02-02/pic.png" style="width: 60%"></div>
+<div style="text-align:center;margin:24px 0;"><img src="/zh/news/2024-02-02/pic.jpg" style="width: 60%"></div>
 
