@@ -71,119 +71,130 @@ function jumpPageMb(page: number) {
 }
 </script>
 <template>
-  <BannerLevel2
-    :background-image="Banner"
-    :title="i18n.compatibility.title"
-    :illustration="illustration"
-  />
-  <AppContent :mobile-top="16">
-    <div class="o-search">
-      <OSearch
-        v-model="searchInput"
-        clearable
-        :placeholder="i18n.compatibility.search_placeholder"
-        @change="queryCompatibilityData"
-      ></OSearch>
-    </div>
-    <OTable class="pc-list" :data="randerData" style="width: 100%">
-      <el-table-column :label="i18n.compatibility.name">
-        <template #default="scope">
-          <span>{{ scope.row.name }} V{{ scope.row.version }}</span>
-        </template>
-      </el-table-column>
-      <OTableColumn
-        width="150"
-        :label="i18n.compatibility.type"
-        prop="type"
-        show-overflow-tooltip
-      ></OTableColumn>
-      <OTableColumn
-        width="400"
-        :label="i18n.compatibility.company"
-        prop="company"
-      ></OTableColumn>
-      <OTableColumn
-        :label="i18n.compatibility.database"
-        width="200"
-        prop="database"
-      ></OTableColumn>
-      <el-table-column :label="i18n.compatibility.certificate" width="150">
-        <template #default="scope">
-          <a
-            v-if="scope.row.download"
-            :href="scope.row.download"
-            download
-            target="_blank"
-            rel="noopener noreferrer"
-            >{{ i18n.certification.certify }}</a
-          >
-        </template>
-      </el-table-column>
-    </OTable>
-
-    <ul class="mobile-list">
-      <li v-for="item in randerData" :key="item.name" class="item">
-        <ul>
-          <li>
-            <span>{{ i18n.compatibility.name }}:</span
-            ><span>{{ item.name }} V{{ item.version }}</span>
-          </li>
-          <li>
-            <span>{{ i18n.compatibility.type }}:</span
-            ><span>{{ item.type }}</span>
-          </li>
-          <li>
-            <span>{{ i18n.compatibility.company }}:</span
-            ><span>{{ item.company }}</span>
-          </li>
-          <li>
-            <span>{{ i18n.compatibility.database }}:</span
-            ><span>{{ item.database }}</span>
-          </li>
-          <li v-if="item.download">
-            <span>{{ i18n.compatibility.certificate }}:</span>
+  <div class="compatibility">
+    <BannerLevel2
+      :background-image="Banner"
+      :title="i18n.compatibility.title"
+      :illustration="illustration"
+      class="compatibility-banner"
+    />
+    <AppContent :mobile-top="16" class="compatibility-content">
+      <div class="o-search">
+        <OSearch
+          v-model="searchInput"
+          clearable
+          :placeholder="i18n.compatibility.search_placeholder"
+          @change="queryCompatibilityData"
+        ></OSearch>
+      </div>
+      <OTable class="pc-list" :data="randerData" style="width: 100%">
+        <el-table-column :label="i18n.compatibility.name">
+          <template #default="scope">
+            <span>
+              {{ scope.row.name }}
+              <template v-if="scope.row.version">
+                V{{ scope.row.version }}
+              </template>
+            </span>
+          </template>
+        </el-table-column>
+        <OTableColumn
+          width="150"
+          :label="i18n.compatibility.type"
+          prop="type"
+          show-overflow-tooltip
+        ></OTableColumn>
+        <OTableColumn
+          width="400"
+          :label="i18n.compatibility.company"
+          prop="company"
+        ></OTableColumn>
+        <OTableColumn
+          :label="i18n.compatibility.database"
+          width="200"
+          prop="database"
+        ></OTableColumn>
+        <el-table-column :label="i18n.compatibility.certificate" width="150">
+          <template #default="scope">
             <a
-              :href="item.download"
+              v-if="scope.row.download"
+              :href="scope.row.download"
               download
               target="_blank"
               rel="noopener noreferrer"
               >{{ i18n.certification.certify }}</a
             >
-          </li>
-        </ul>
-      </li>
-    </ul>
-    <ClientOnly>
-      <OPagination
-        v-model:currentPage="currentPage"
-        v-model:page-size="pageSize"
-        class="pagination"
-        :page-sizes="[5, 10, 20, 40, 80]"
-        :total="allData.length"
-        :background="true"
-        :layout="layout"
-        :hide-on-single-page="true"
-        @size-change="handleSizeChange"
-        @current-change="handleCurrentChange"
-      >
-        <span class="pagination-slot">{{ currentPage }}/{{ totalPage }}</span>
-      </OPagination>
-      <AppPaginationMo
-        :current-page="currentPage"
-        :total-page="totalPage"
-        @turn-page="changeCurrentMb"
-        @jump-page="jumpPageMb"
-      />
-    </ClientOnly>
-    <p class="introduce">
-      关于商业软件兼容性技术测评，openGauss提供了完整的测试流程和工具，详见<a
-        :href="GITEE_LINK + 'opengauss/compatible-certification'"
-        target="_blank"
-        rel="noopener noreferrer"
-        >openGauss兼容性技术测评整体介绍</a
-      >。
-    </p>
-  </AppContent>
+          </template>
+        </el-table-column>
+      </OTable>
+
+      <ul class="mobile-list">
+        <li v-for="item in randerData" :key="item.name" class="item">
+          <ul>
+            <li>
+              <span>{{ i18n.compatibility.name }}:</span>
+              <span>
+                {{ item.name }}
+                <template v-if="item.version">V{{ item.version }}</template>
+              </span>
+            </li>
+            <li>
+              <span>{{ i18n.compatibility.type }}:</span>
+              <span>{{ item.type }}</span>
+            </li>
+            <li>
+              <span>{{ i18n.compatibility.company }}:</span>
+              <span>{{ item.company }}</span>
+            </li>
+            <li>
+              <span>{{ i18n.compatibility.database }}:</span>
+              <span>{{ item.database }}</span>
+            </li>
+            <li v-if="item.download">
+              <span>{{ i18n.compatibility.certificate }}:</span>
+              <a
+                :href="item.download"
+                download
+                target="_blank"
+                rel="noopener noreferrer"
+                >{{ i18n.certification.certify }}</a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ClientOnly>
+        <OPagination
+          v-model:currentPage="currentPage"
+          v-model:page-size="pageSize"
+          class="pagination"
+          :page-sizes="[5, 10, 20, 40, 80]"
+          :total="allData.length"
+          :background="true"
+          :layout="layout"
+          :hide-on-single-page="true"
+          @size-change="handleSizeChange"
+          @current-change="handleCurrentChange"
+        >
+          <span class="pagination-slot">{{ currentPage }}/{{ totalPage }}</span>
+        </OPagination>
+        <AppPaginationMo
+          :current-page="currentPage"
+          :total-page="totalPage"
+          @turn-page="changeCurrentMb"
+          @jump-page="jumpPageMb"
+        />
+      </ClientOnly>
+      <p class="introduce">
+        关于商业软件兼容性技术测评，openGauss提供了完整的测试流程和工具，详见<a
+          :href="GITEE_LINK + 'opengauss/compatible-certification'"
+          target="_blank"
+          rel="noopener noreferrer"
+          >openGauss兼容性技术测评整体介绍</a
+        >。
+      </p>
+    </AppContent>
+  </div>
 </template>
 <style lang="scss" scoped>
 .o-search {

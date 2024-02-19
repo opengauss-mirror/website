@@ -1,5 +1,27 @@
 export default [
   {
+    name: '综合资源管理系统/云网资源中心 R9',
+    version: '',
+    type: '电信',
+    company: '浩鲸云计算科技股份有限公司',
+    database: 'openGauss 3.0.0',
+    os: 'CentOS 7.6',
+    server: 'Intel(其他)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%B5%A9%E9%B2%B8%E4%BA%91/%E7%BB%BC%E5%90%88%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F-%E4%BA%91%E7%BD%91%E8%B5%84%E6%BA%90%E4%B8%AD%E5%BF%83%20R9/Certificate.pdf',
+  },
+  {
+    name: 'Rhapsody Integration Engine集成引擎系统',
+    version: '7',
+    type: '医疗',
+    company: '傲医软件科技（上海）有限公司',
+    database: 'openGauss 5.0.0',
+    os: 'CentOS 7.3',
+    server: 'Intel(其他)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%82%B2%E5%8C%BB%E8%BD%AF%E4%BB%B6/V7/Certificate.pdf',
+  },
+  {
     name: '麒麟云平台系统',
     version: '7',
     type: '操作系统',
