@@ -3,12 +3,12 @@ import { onMounted } from 'vue';
 import { useData } from 'vitepress';
 import { useI18n } from '@/i18n';
 import {
-  showGuard,
-  logout,
+  doLogin,
+  doLogout,
   getUserAuth,
-  useStoreData,
-  refreshInfo,
+  requestUserInfo,
 } from '@/shared/login';
+import { useUserInfoStore } from '@/stores/user';
 
 import IconLogin from '~icons/app/icon-login.svg';
 
@@ -16,37 +16,37 @@ const { lang } = useData();
 const i18n = useI18n();
 
 // 账号登录
-const { token } = getUserAuth();
-const { guardAuthClient } = useStoreData();
+const { csrfToken } = getUserAuth();
+const userInfoStore = useUserInfoStore();
 const jumpToUserZone = () => {
   const language = lang.value === 'zh' ? 'zh' : 'en';
-  const origin = import.meta.env.VITE_LOGIN_ORIGIN;
+  const origin = import.meta.env.VITE_LOGIN_URL;
   window.open(`${origin}/${language}/profile`, '_black');
 };
 onMounted(() => {
-  refreshInfo();
+  requestUserInfo();
 });
 </script>
 
 <template>
   <ClientOnly>
     <div class="header-user">
-      <div v-if="token">
+      <div v-if="csrfToken">
         <div class="user-info">
           <img
-            v-if="guardAuthClient.photo"
-            :src="guardAuthClient.photo"
+            v-if="userInfoStore.photo"
+            :src="userInfoStore.photo"
             class="user-img"
           />
           <div v-else class="user-img"></div>
-          <p class="user-name">{{ guardAuthClient.username }}</p>
+          <p class="user-name">{{ userInfoStore.username }}</p>
         </div>
         <ul class="menu-list">
           <li @click="jumpToUserZone()">{{ i18n.common.USER_CENTER }}</li>
-          <li @click="logout()">{{ i18n.common.LOGOUT }}</li>
+          <li @click="doLogout()">{{ i18n.common.LOGOUT }}</li>
         </ul>
       </div>
-      <div v-else class="login" @click="showGuard()">
+      <div v-else class="login" @click="doLogin()">
         <OIcon class="icon">
           <IconLogin />
         </OIcon>

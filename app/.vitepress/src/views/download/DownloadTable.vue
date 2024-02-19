@@ -6,8 +6,10 @@ import { useI18n } from '@/i18n';
 import { ElMessage, ElMessageBox } from 'element-plus';
 import useWindowResize from '@/components/hooks/useWindowResize';
 import { DownloadItemT } from '@/shared/@types/type-download';
-import { showGuard, useStoreData } from '@/shared/login';
+
 import { getCustomCookie } from '@/shared/utils';
+import { doLogin } from '@/shared/login';
+import { useUserInfoStore } from '@/stores/user';
 
 import IconDownload from '~icons/app/icon-download.svg';
 import IconCopy from '~icons/app/icon-copy.svg';
@@ -195,7 +197,7 @@ watch(
   }
 );
 // 下载权限
-const { guardAuthClient } = useStoreData();
+const userInfoStore = useUserInfoStore();
 const changeDownloadAuth = () => {
   ElMessageBox.confirm(
     i18n.value.download.DONNLOAD_TEXT,
@@ -207,7 +209,7 @@ const changeDownloadAuth = () => {
     }
   )
     .then(() => {
-      showGuard();
+      doLogin();
     })
     .catch(() => {
       return '';
@@ -306,7 +308,7 @@ const collectDownloadData = (name: string) => {
               <template
                 v-if="
                   downloadVersionAuth.includes(versionShown) &&
-                  !guardAuthClient.username
+                  !userInfoStore.username
                 "
               >
                 <OButton
@@ -406,7 +408,7 @@ const collectDownloadData = (name: string) => {
           <a
             v-if="
               downloadVersionAuth.includes(versionShown) &&
-              !guardAuthClient.username
+              !userInfoStore.username
             "
             @click="changeDownloadAuth"
           >
