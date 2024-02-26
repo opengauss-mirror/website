@@ -484,22 +484,31 @@ const requestMeetingUpdate = async () => {
 };
 //新增会议请求
 const requestMeetingReserve = async () => {
-  const res = await addMeeting(meetingForm.value, meetingStore.meetingToken);
-  if (res.code < 300) {
-    if (res.code > 200 && res.access) {
-      meetingStore.meetingToken = res.access;
-      meetingDialog.value = false;
+  try {
+    const res = await addMeeting(meetingForm.value, meetingStore.meetingToken);
+    if (res.code < 300) {
+      if (res.code > 200 && res.access) {
+        meetingStore.meetingToken = res.access;
+        meetingDialog.value = false;
+        ElMessage({
+          message: i18nMeeting.value.SUCCESS,
+          type: 'success',
+        });
+        meetingData();
+      } else {
+        ElMessage({
+          message: isZh.value ? res.msg : res.en_msg,
+          type: 'warning',
+        });
+      }
+    } else {
       ElMessage({
-        message: i18nMeeting.value.SUCCESS,
-        type: 'success',
+        message: isZh.value ? res.msg : res.en_msg,
+        type: 'warning',
       });
-      meetingData();
     }
-  } else {
-    ElMessage({
-      message: isZh.value ? res.msg : res.en_msg,
-      type: 'warning',
-    });
+  } catch (error) {
+    handleError();
   }
 };
 //删除会议
