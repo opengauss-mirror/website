@@ -417,7 +417,7 @@ const isLogin = () => {
 };
 // 判断是否有权限
 const isAuthority = () => {
-  return meetingStore.userSigs.length >= 1 ? true : false;
+  return meetingStore.userSigs[0] ? true : false;
 };
 // 删除修改会议判断是否是本人
 const isSelfLogin = (name: string) => {
