@@ -1,5 +1,25 @@
 export default [
   {
+    date: '2024-02-02',
+    summary: '2023年度openGauss开源社区年度运营报告',
+    archives: '2024-02',
+    author: ['openGauss'],
+    banner: '/category/news/2024-02-02/banner.png',
+    title: '2023 openGauss开源社区年度运营报告',
+    tags: ['theme'],
+    path: 'zh/news/2024-02-02/index',
+  },
+  {
+    date: '2024-02-01',
+    summary: 'openGauss 资源池化技术获"金融科技产业联盟2023年十佳课题',
+    archives: '2024-02',
+    author: ['openGauss'],
+    banner: '/category/news/2024-02-01/banner.jpg',
+    title: 'openGauss DataPod资源池化技术获"金融科技产业联盟2023年十佳课题',
+    tags: ['theme'],
+    path: 'zh/news/2024-02-01/index',
+  },
+  {
     date: '2024-01-19',
     summary: 'openGauss 3.0.5版本发行说明',
     archives: '2024-01',
