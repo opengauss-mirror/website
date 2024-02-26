@@ -6,6 +6,22 @@ import {
 export default {
   zh: [
     {
+      pro: '【VastbaseG100】V2.2.15',
+      name: '北京海量数据技术股份有限公司',
+      version: 'openGauss 5.0.0',
+      award: '2024-02-19',
+      expiration: '2026-03-31',
+      certificate: `${OBS_CERTIFICATION_LINK}%E5%8C%97%E4%BA%AC%E6%B5%B7%E9%87%8F/Vastbase%20G100%20V2.2.15/Certificate.pdf`,
+    },
+    {
+      pro: '勤龙数据库系统 1.0',
+      name: '上海舜源计算机科技股份有限公司',
+      version: 'openGauss 5.0.0',
+      award: '2024-02-19',
+      expiration: '2026-03-31',
+      certificate: `${OBS_CERTIFICATION_LINK}%E4%B8%8A%E6%B5%B7%E8%88%9C%E6%BA%90/V1.0/Certificate.pdf`,
+    },
+    {
       pro: 'InDB V3.0',
       name: '浪潮云信息技术股份公司',
       version: 'openGauss 5.0.0',
@@ -178,6 +194,22 @@ export default {
     },
   ],
   en: [
+    {
+      pro: '【VastbaseG100】V2.2.15',
+      name: '北京海量数据技术股份有限公司',
+      version: 'openGauss 5.0.0',
+      award: '2024-02-19',
+      expiration: '2026-03-31',
+      certificate: `${OBS_CERTIFICATION_LINK}%E5%8C%97%E4%BA%AC%E6%B5%B7%E9%87%8F/Vastbase%20G100%20V2.2.15/Certificate.pdf`,
+    },
+    {
+      pro: '勤龙数据库系统 1.0',
+      name: '上海舜源计算机科技股份有限公司',
+      version: 'openGauss 5.0.0',
+      award: '2024-02-19',
+      expiration: '2026-03-31',
+      certificate: `${OBS_CERTIFICATION_LINK}%E4%B8%8A%E6%B5%B7%E8%88%9C%E6%BA%90/V1.0/Certificate.pdf`,
+    },
     {
       pro: 'InDB V3.0',
       name: '浪潮云信息技术股份公司',
