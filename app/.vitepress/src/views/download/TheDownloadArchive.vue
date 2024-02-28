@@ -8,6 +8,7 @@ import { useCommon, useCookieStatus } from '@/stores/common';
 import DownloadConfig from '@/data/download';
 import { GITEE_LINK, DOCS_LINK } from '@/data/url-config';
 import { getCustomCookie } from '@/shared/utils';
+import { useUserInfoStore } from '@/stores/user';
 
 import AppContent from '@/components/AppContent.vue';
 import OSelect from 'opendesign/select/OSelect.vue';
@@ -94,10 +95,16 @@ watch(
   { deep: true, immediate: true }
 );
 //控制需要登录后才能下载的版本,最新版的LTS和Preview都需要登录后才能下载的版本
-const downloadVersionAuth = [DownloadConfig[0].name, DownloadConfig[1].name];
+const downloadVersionAuth = [
+  DownloadConfig[0].name,
+  DownloadConfig[1].name,
+  DownloadConfig[2].name,
+];
 // 下载埋点
+const userInfoStore = useUserInfoStore();
+// 老版本下载判断
 const collectDownloadData = (name: string, architectureAndOs: string) => {
-  if (cookieStatus.isAllAgreed) {
+  if (cookieStatus.isAllAgreed || userInfoStore.username) {
     const sensors = (window as any)['sensorsDataAnalytic201505'];
     const { href } = window.location;
     const downloadTime = new Date();
