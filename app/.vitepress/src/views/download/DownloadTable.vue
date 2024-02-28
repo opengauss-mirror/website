@@ -216,9 +216,9 @@ const changeDownloadAuth = () => {
     });
 };
 
-// 下载埋点
+// 下载埋点  新版本判断
 const collectDownloadData = (name: string) => {
-  if (cookieStatus.isAllAgreed) {
+  if (cookieStatus.isAllAgreed || userInfoStore.username) {
     const sensors = (window as any)['sensorsDataAnalytic201505'];
     const { href } = window.location;
     const downloadTime = new Date();
