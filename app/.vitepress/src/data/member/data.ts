@@ -453,6 +453,8 @@ import zhengweimin from '@/assets/category/member/avatar/zhengweimin.png';
 import zhouaoying from '@/assets/category/member/avatar/zhouaoying.png';
 
 import huangyanjiao from '@/assets/category/member/avatar/huangyanjiao.png';
+import hanzhaoxia from '@/assets/category/member/avatar/hanzhaoxia.png';
+
 import { GITEE_LINK } from '@/data/url-config';
 export default {
   zh: {
@@ -825,11 +827,11 @@ export default {
         email: `gengqiang@shentongdata.com`,
       },
       {
-        img: luna,
-        name: `卢娜`,
+        img: hanzhaoxia,
+        name: `韩朝霞`,
         title: `委员`,
         company: `北京超图软件股份有限公司`,
-        email: `luna@supermap.com`,
+        email: `hanzhaoxia@supermap.com`,
       },
       {
         img: huangxianru,
@@ -4767,11 +4769,11 @@ export default {
         email: `gengqiang@shentongdata.com`,
       },
       {
-        img: luna,
-        name: `Na Lun`,
+        img: hanzhaoxia,
+        name: `Zhaoxia Han`,
         title: `Member`,
         company: `SuperMap Software Co., Ltd.`,
-        email: `luna@supermap.com`,
+        email: `hanzhaoxia@supermap.com`,
       },
       {
         img: huangxianru,
