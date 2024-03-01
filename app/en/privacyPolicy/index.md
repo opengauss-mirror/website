@@ -103,7 +103,7 @@ Your personal data will be stored on servers in the Hong Kong Special Administra
 
 ## 8. How This Statement Is Updated
 
-We may update or modify this Statement from time to time according to changes of our services or data processing. If we update this Statement, we will publish the latest version of the Statement on the website, and it will take effect immediately upon its release. You are advised to review this Statement periodically for any changes. If we make any substantial changes to this Statement (any change of personal data we collect or we use for), we will notify you through appropriate channels (bulletins and pop-ups) and obtain your consent.
+We may update or modify this Statement from time to time according to changes of our services or data processing. If we update this Statement, we will publish the latest version of the Statement on the website, and it will take effect immediately upon its release. You are advised to review this Statement periodically for any changes. If we make changes to this Statement, we will notify you through appropriate channels (bulletins and pop-ups) and obtain your consent.
 
 ## 9. How We Protect Children's Online Privacy
 
@@ -117,8 +117,8 @@ Email: **contact@opengauss.org**
 
 Hotline: **+86 187-4087-2239**
 
-Last updated: **January 29, 2024**
+Last updated: **March 1, 2024**
 
-Privacy policy version: **v20240129**
+Privacy policy version: **v20240301**
 
 </div>
