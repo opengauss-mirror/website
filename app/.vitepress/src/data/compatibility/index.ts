@@ -1,5 +1,16 @@
 export default [
   {
+    name: '齐治运维安全管理系统',
+    version: '3.0',
+    type: '金融',
+    company: '浙江齐治科技股份有限公司',
+    database: 'openGauss 3.0.0 LTS',
+    os: 'Kylin V10',
+    server: 'Hygon 7365(R3240H0)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E9%BD%90%E6%B2%BB%E7%A7%91%E6%8A%80/%E8%BF%90%E7%BB%B4%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%20V3.0/Certificate.pdf',
+  },
+  {
     name: '智云医疗纠纷管理系统',
     version: '1.0',
     type: '医疗',
