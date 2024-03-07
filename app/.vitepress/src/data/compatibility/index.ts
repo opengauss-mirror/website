@@ -4,7 +4,7 @@ export default [
     version: '3.0',
     type: '金融',
     company: '浙江齐治科技股份有限公司',
-    database: 'openGauss 3.0.0 LTS',
+    database: 'openGauss 3.0.0',
     os: 'Kylin V10',
     server: 'Hygon 7365(R3240H0)',
     download:
