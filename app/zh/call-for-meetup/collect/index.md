@@ -94,7 +94,7 @@ const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
       flex-direction: column;
       gap:16px;
     }
-    .img{
+    img{
         max-width:650px
     }
   }
