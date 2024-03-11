@@ -1095,6 +1095,9 @@ onMounted(() => {
         .o-icon {
           margin-right: 8px;
         }
+        p {
+          color: #000;
+        }
       }
     }
     :deep(.el-dialog) {
