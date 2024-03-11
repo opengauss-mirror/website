@@ -101,6 +101,13 @@ const navData: Array<NavItemT> = [
         },
       },
       {
+        label: { zh: 'Call for Meetup' },
+        id: 'meetup',
+        href: {
+          zh: '/zh/call-for-meetup/',
+        },
+      },
+      {
         label: { zh: '贡献看板', en: 'Statistics' },
         id: 'statistics',
         href: {

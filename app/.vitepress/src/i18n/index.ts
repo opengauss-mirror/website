@@ -12,6 +12,7 @@ import showcase from './showcase';
 import connect from './connect';
 import search from './search';
 import brand from './brand';
+import meetup from './meetup';
 import cookie from './cookie';
 
 import home from './home';
@@ -44,6 +45,7 @@ const i18n: { [key: string]: any } = {
     brand: brand.zh,
     compatibility: compatibility.zh,
     cookie: cookie.zh,
+    meetup: meetup.zh,
     finance: finance.zh
   },
   en: {
