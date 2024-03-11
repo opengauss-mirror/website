@@ -1,5 +1,27 @@
 export default [
   {
+    name: '数据治理平台 V1.0',
+    version: '1.0',
+    type: '医疗',
+    company: '广州智云信息技术有限公司',
+    database: 'openGauss 5.0.1',
+    os: 'openEuler 22.03 LTS',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%B9%BF%E5%B7%9E%E6%99%BA%E4%BA%91/%E6%95%B0%E6%8D%AE%E6%B2%BB%E7%90%86%E5%B9%B3%E5%8F%B0%20V1.0/Certificate.pdf',
+  },
+  {
+    name: '智云大数据采集平台 V1.0',
+    version: '1.0',
+    type: '医疗',
+    company: '广州智云信息技术有限公司',
+    database: 'openGauss 5.0.1',
+    os: 'openEuler 22.03 LTS',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%B9%BF%E5%B7%9E%E6%99%BA%E4%BA%91/%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E5%B9%B3%E5%8F%B0%20V1.0/Certificate.pdf',
+  },
+  {
     name: '齐治运维安全管理系统',
     version: '3.0',
     type: '金融',
