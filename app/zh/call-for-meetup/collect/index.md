@@ -3,12 +3,21 @@ title: '活动征集'
 ---
 
 <script  setup>
+import { computed } from 'vue';
+import { useCommon } from '@/stores/common';
 import BannerLevel2 from '@/components/BannerLevel2.vue'
 
 import banner from '@/assets/illustrations/banner-secondary.png';
 import illustration from '@/assets/illustrations/meetup.png';
+
+import img2 from '@/assets/category/meetup/img2.png';
+import img3 from '@/assets/category/meetup/img3.png';
+import img2Dark from '@/assets/category/meetup/img2_dark.png';
+import img3Dark from '@/assets/category/meetup/img3_dark.png';
 import IconDownload from '~icons/app/icon-download.svg';
 
+const commonStore = useCommon();
+const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
 </script>
 
 <ClientOnly>
@@ -59,8 +68,8 @@ import IconDownload from '~icons/app/icon-download.svg';
 - 社区纪念品（支持 100 人规模以下的实际人数申请）
 
 <p class='collect-img'>
-  <img src='./img2.png' class='img' />
-  <img src='./img3.png' class='img' />
+  <img :src='isLight?img2:img2Dark'  />
+  <img :src='isLight?img3:img3Dark'  />
 </p>
 
 ## 活动举办
@@ -77,7 +86,6 @@ import IconDownload from '~icons/app/icon-download.svg';
 </div>
 
 <style lang="scss" scoped>
- 
   .collect-img {
     display:flex;
     gap:40px;
