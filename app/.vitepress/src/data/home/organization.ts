@@ -371,6 +371,9 @@ import yunjixinxi from '@/assets/category/home/organization/light/yunjixinxi.png
 import zhengzhouzhengda from '@/assets/category/home/organization/light/zhengzhouzhengda.png';
 import zhidian from '@/assets/category/home/organization/light/zhidian.png';
 
+import langchao from '@/assets/category/home/organization/light/langchao.png';
+import langchao_dark from '@/assets/category/home/organization/dark/langchao.png';
+
 export default [
   {
     img: baolande,
@@ -1210,7 +1213,7 @@ export default [
     name: '慕华科技',
   },
   {
-    img:xinfengruishi ,
+    img: xinfengruishi,
     imgDark: xinfengruishi_dark,
     name: '新锋睿视',
   },
@@ -1226,7 +1229,7 @@ export default [
   },
   {
     img: zhengzhouzhengda,
-    imgDark:zhengzhouzhengda_dark ,
+    imgDark: zhengzhouzhengda_dark,
     name: '郑州郑大信息技术有限公司',
   },
   {
@@ -1276,11 +1279,11 @@ export default [
   },
   {
     img: zhidian,
-    imgDark:zhidian_dark,
+    imgDark: zhidian_dark,
     name: '蜘点',
   },
   {
-    img:tianjikeji ,
+    img: tianjikeji,
     imgDark: tianjikeji_dark,
     name: '天玑科技',
   },
@@ -1293,5 +1296,10 @@ export default [
     img: anchao,
     imgDark: anchao_dark,
     name: '安超',
+  },
+  {
+    img: langchao,
+    imgDark: langchao_dark,
+    name: '浪潮云',
   },
 ];
