@@ -1,6 +1,6 @@
 export default [
   {
-    name: '数据治理平台 V1.0',
+    name: '数据治理平台',
     version: '1.0',
     type: '医疗',
     company: '广州智云信息技术有限公司',
@@ -11,7 +11,7 @@ export default [
       'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%B9%BF%E5%B7%9E%E6%99%BA%E4%BA%91/%E6%95%B0%E6%8D%AE%E6%B2%BB%E7%90%86%E5%B9%B3%E5%8F%B0%20V1.0/Certificate.pdf',
   },
   {
-    name: '智云大数据采集平台 V1.0',
+    name: '智云大数据采集平台',
     version: '1.0',
     type: '医疗',
     company: '广州智云信息技术有限公司',
@@ -73,7 +73,8 @@ export default [
     database: 'openGauss 5.0.1',
     os: 'openEuler 22.03 LTS',
     server: 'Kunpeng 920(Taishan 200)',
-    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%B9%BF%E5%B7%9E%E5%BF%97%E4%BA%91/%E8%80%83%E8%AF%95%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%20V1.0.pdf',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%B9%BF%E5%B7%9E%E5%BF%97%E4%BA%91/%E8%80%83%E8%AF%95%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%20V1.0.pdf',
   },
   {
     name: '低代码统一表单配置平台',
@@ -83,7 +84,8 @@ export default [
     database: 'openGauss 5.0.1',
     os: 'openEuler 22.03 LTS',
     server: 'Kunpeng 920(Taishan 200)',
-    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%B9%BF%E5%B7%9E%E5%BF%97%E4%BA%91/%E4%BD%8E%E4%BB%A3%E7%A0%81%E7%BB%9F%E4%B8%80%E8%A1%A8%E5%8D%95%E9%85%8D%E7%BD%AE%E5%B9%B3%E5%8F%B0%20V1.0.pdf',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%B9%BF%E5%B7%9E%E5%BF%97%E4%BA%91/%E4%BD%8E%E4%BB%A3%E7%A0%81%E7%BB%9F%E4%B8%80%E8%A1%A8%E5%8D%95%E9%85%8D%E7%BD%AE%E5%B9%B3%E5%8F%B0%20V1.0.pdf',
   },
   {
     name: '综合资源管理系统/云网资源中心 R9',
