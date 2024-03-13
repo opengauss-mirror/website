@@ -33,6 +33,28 @@ export function getUserInfo(): Promise<ResponseT | void> | undefined {
 }
 
 /**
+ * 获取全量用户信息
+ * @returns {Promise<ResponseT | void> | undefined} 用户信息
+ */
+export function getUserAllInfo(): Promise<ResponseT | void> | undefined {
+  const { csrfToken } = getUserAuth();
+  if (csrfToken) {
+    const url = `/api-oneid/oneid/personal/center/user?community=opengauss&client_id=${APP_ID}`;
+    return request
+      .get(url, {
+        global: true,
+        headers: {
+          token: csrfToken,
+        },
+      })
+      .then((res) => res.data)
+      .catch(() => {
+        clearUserAuth();
+      });
+  }
+}
+
+/**
  * 获取id token，构造登出URL
  * @returns {Promise<ResponseT>} id token
  */
