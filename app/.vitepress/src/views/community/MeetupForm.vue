@@ -224,10 +224,25 @@ async function meetupApply() {
 
         setTimeout(() => {
           router.go('/zh/call-for-meetup/collect/');
-        }, 600);
+        }, 2000);
       }
     });
   } catch (error: any) {
+    Object.assign(meetupData.value, {
+      topic: '',
+      company: '',
+      date: '',
+      duration: '',
+      city: '',
+      meetupSize: '',
+      principalUser: '',
+      principalCompany: '',
+      principalPhone: '',
+      principalEmail: '',
+      meetupFormat: '',
+      supports: [],
+      details: '',
+    });
     console.error(error);
   }
 }

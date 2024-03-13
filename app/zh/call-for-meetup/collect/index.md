@@ -32,7 +32,7 @@ const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
 
 ## 如何申请
 
-如果您有兴趣在所在城市举办 openGauss，为了保证活动顺利进行，在举办社区开发者活动前，您需要[在此处申请](/zh/community/meetup-form/)。
+如果您有兴趣在所在城市举办 openGauss，为了保证活动顺利进行，在举办社区开发者活动前，请向社区邮箱 [common@public.opengauss.org](mailto:common@public.opengauss.org) 发邮件获取申请表格。
 
 ## 申办审核
 
