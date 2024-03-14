@@ -111,3 +111,12 @@ const opt = Object.prototype.toString;
 export function isBoolean(val: unknown): val is boolean {
   return opt.call(val) === '[object Boolean]';
 }
+
+export function isTestEmail(str: string) {
+  return /^[a-zA-Z0-9]+([-_.][A-Za-zd]+)*@([a-zA-Z0-9]+[-.])+[A-Za-zd]{2,5}$/.test(
+    str
+  );
+}
+export function isTestPhone(str: string) {
+  return /^1[3|4|5|6|7|8|9][0-9]\d{8}$/.test(str);
+}
