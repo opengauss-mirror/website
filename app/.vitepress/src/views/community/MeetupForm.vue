@@ -374,7 +374,7 @@ onMounted(() => {
                 >openGauss社区介绍PPT</OCheckbox
               >
               <OCheckbox value="宣传资料"
-                >宣传资料（报名小程序、公众号推文、社群宣传）</OCheckbox
+                >宣传资料（公众号推文、社群宣传）</OCheckbox
               >
               <OCheckbox value="物料源文件"
                 >物料源文件（易拉宝、宣传海报、主KV、横幅、拍照异形牌、直播背景框等源文件）</OCheckbox
