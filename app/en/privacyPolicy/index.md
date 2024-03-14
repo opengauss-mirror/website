@@ -24,6 +24,8 @@ The openGauss Community understands the importance of your privacy and fully res
 
 - (e) **Content Release**. When you participate in Community meetings, Community activities, contribution in the open source Community, blogs, newsgroups, or Community organization, we will request your avatar, name, email address, company name, position, school, individual resume and Gitee ID for posting on our website so that developers can better understand the community, quickly make contact, and participate in the community.
 
+- (f) **Meetup**. When you apply for an openGauss meetup, the community will collect your mobile number and email address from the application form you fill in. The collected mobile number and email address will be used to contact you later to communicate about the meetup details. Furthermore, the community will request your name and company name for the purpose of meetup sign-ins, nameplates, and other related activities.
+
 We may also collect your personal data from third parties, including other platforms or communities, within the scope of your authorization and consent, or obtain your personal data from other legal and public channels. We promise to process your personal data in strict accordance with applicable laws and regulations. Please read the privacy policies and user agreements of the third parties carefully. If a third party is required to provide your personal data when you use the openGauss Community, but you refuse to allow the third party to collect, use, transfer, or share your personal data when the third party provides services, you may not be able to use related services of the openGauss Community.
 
 ## 2. How We Use Cookies and Similar Technologies
@@ -117,8 +119,8 @@ Email: **contact@opengauss.org**
 
 Hotline: **+86 187-4087-2239**
 
-Last updated: **March 1, 2024**
+Last updated: **March 14, 2024**
 
-Privacy policy version: **v20240301**
+Privacy policy version: **v20240314**
 
 </div>
