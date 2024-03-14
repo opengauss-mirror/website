@@ -7,7 +7,9 @@ import { isTestEmail, isTestPhone } from '@/shared/utils';
 import { meetupApplyForm } from '@/api/api-community';
 import { getUserAllInfo } from '@/api/api-user';
 import { getUserAuth, doLogin } from '@/shared/login';
+import { useRouter } from 'vitepress';
 
+const router = useRouter();
 const { csrfToken } = getUserAuth();
 const ruleFormRef = ref<FormInstance>();
 const meetupData = ref({
@@ -219,6 +221,10 @@ async function meetupApply() {
         });
         ruleFormRef.value?.resetFields();
         meetupPrivacy.value = '';
+
+        setTimeout(() => {
+          router.go('/zh/call-for-meetup/collect/');
+        }, 600);
       }
     });
   } catch (error: any) {
