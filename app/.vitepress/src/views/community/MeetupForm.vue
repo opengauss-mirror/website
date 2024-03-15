@@ -431,7 +431,7 @@ onMounted(() => {
                   href="/zh/privacyPolicy/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >隐私声明</a
+                  >《隐私声明》</a
                 >
               </OCheckbox>
             </OCheckboxGroup>
