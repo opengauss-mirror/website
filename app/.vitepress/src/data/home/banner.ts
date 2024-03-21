@@ -1,20 +1,48 @@
 import liveImg_pc from '@/assets/category/home/banner/liveBanner_pc.png';
 import liveImg_mb from '@/assets/category/home/banner/liveBanner_mo.png';
-import banner510 from '@/assets/category/home/banner/opengauss5.1.0_pc_zh.png';
-import bannerEn510 from '@/assets/category/home/banner/opengauss5.1.0_pc_en.png';
-import banner510_mb from '@/assets/category/home/banner/opengauss5.1.0_mo_zh.png';
-import bannerEn510_mb from '@/assets/category/home/banner/opengauss5.1.0_mo_en.png';
-import bannerQuestionnaire from '@/assets/category/home/banner/banner-questionnaire.jpg';
-import bannerQuestionnaireMb from '@/assets/category/home/banner/banner-questionnaire-mb.png';
-import bannerSummit from '@/assets/category/home/banner/banner-summit.jpg'
-import bannerSummitMo from '@/assets/category/home/banner/banner-summit_mo.png'
+import bannerSummit from '@/assets/category/home/banner/banner-summit.jpg';
+import bannerSummitMo from '@/assets/category/home/banner/banner-summit_mo.png';
 import videoGif from '@/assets/category/home/video-player.gif';
+
+import banner20240321 from '@/assets/category/home/banner/banner20240321.jpg';
+import banner20240321_mb from '@/assets/category/home/banner/banner20240321_mb.png';
+
+import bannerCallFor from '@/assets/category/home/banner/banner-call-for.jpg';
+import bannerCallFor_mb from '@/assets/category/home/banner/banner-call-for_mb.png';
 
 import { LEARN_VIDEO_LINK, DOCS_LINK } from '@/data/url-config';
 
 // rightInset:banner右侧插图
 export default {
   zh: [
+    {
+      pcBanner: bannerCallFor,
+      moBanner: bannerCallFor_mb,
+      link: '/zh/call-for-meetup/',
+      target: '_self',
+      title: '',
+      titleMb: [],
+      subtitle: '',
+      desc: [''],
+      btn: '',
+      className: '',
+      rightInset: '',
+      rightLink: '',
+    },
+    {
+      pcBanner: banner20240321,
+      moBanner: banner20240321_mb,
+      link: '/zh/news/2024-03-21/',
+      target: '_self',
+      title: '',
+      titleMb: [],
+      subtitle: '',
+      desc: [''],
+      btn: '',
+      className: '',
+      rightInset: '',
+      rightLink: '',
+    },
     {
       pcBanner: bannerSummit,
       moBanner: bannerSummitMo,
@@ -26,34 +54,6 @@ export default {
       desc: [''],
       btn: '',
       className: '',
-      rightInset: '',
-      rightLink: '',
-    },
-    {
-      pcBanner: bannerQuestionnaire,
-      moBanner: bannerQuestionnaireMb,
-      link: '/zh/events/2023-10-27/questionnaire.html',
-      target: '_self',
-      title: '参与社区满意度调研，领惊喜大奖',
-      titleMb: ['参与社区满意度调研', '领惊喜大奖'],
-      subtitle: '',
-      desc: [''],
-      btn: '了解详情',
-      className: '',
-      rightInset: '',
-      rightLink: '',
-    },
-    {
-      pcBanner: banner510,
-      moBanner: banner510_mb,
-      link: '/zh/news/2023-09-28/',
-      target: '_self',
-      title: '',
-      titleMb: [],
-      subtitle: '',
-      desc: [''],
-      btn: '',
-      className: 'version',
       rightInset: '',
       rightLink: '',
     },
@@ -73,20 +73,6 @@ export default {
     },
   ],
   en: [
-    {
-      pcBanner: bannerEn510,
-      moBanner: bannerEn510_mb,
-      link: '/zh/news/2023-09-28/',
-      target: '_self',
-      title: '',
-      titleMb: [],
-      subtitle: '',
-      desc: [''],
-      btn: '',
-      className: 'version',
-      rightInset: '',
-      rightLink: '',
-    },
     {
       pcBanner: liveImg_pc,
       moBanner: liveImg_mb,

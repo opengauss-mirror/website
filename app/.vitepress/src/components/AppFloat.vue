@@ -8,8 +8,6 @@ import useWindowResize from '@/components/hooks/useWindowResize';
 import { VULBOX_LINK, GAUSS_EMAIL } from '@/data/url-config';
 import { handleError } from '@/shared/utils';
 
-import floatClose from '@/assets/category/float/float-close.png';
-
 import IconTop from '~icons/float/icon-top.svg';
 import IconSmile from '~icons/float/icon-smile.svg';
 import IconHeadset from '~icons/float/icon-headset.svg';
@@ -21,18 +19,11 @@ const screenWidth = useWindowResize();
 const { lang } = useData();
 const router = useRouter();
 
-// 满意度调研浮窗
-const FLOAT_QUESTIONNAIRE = '有奖问卷';
-const QUESTIONNAIRE_LINK = '/zh/events/2023-10-27/questionnaire.html';
-const isFloatShow = ref(false);
-
 // 漏洞奖励计划浮窗
 const isSafetyFloatShow = ref(false);
 const FLOAT_BUG_TEXT = '漏洞奖励';
 const route = useRoute();
-const closeBgFloat = () => {
-  isFloatShow.value = false;
-};
+
 watch(
   route,
   (newValue) => {
@@ -43,11 +34,6 @@ watch(
         isSafetyFloatShow.value = true;
       }
     });
-    if (newValue.path.split('/').pop() !== 'questionnaire.html') {
-      isFloatShow.value = true;
-    } else {
-      isFloatShow.value = false;
-    }
   },
   { immediate: true }
 );
@@ -420,22 +406,16 @@ onMounted(() => {
     <ClientOnly>
       <template v-if="screenWidth > 1100">
         <div
-          v-if="!isFloatTipShow && isFloatShow"
-          :class="isSafetyFloatShow ? 'safety-tips' : 'questionnaire-tips'"
+          v-if="!isFloatTipShow"
+          :class="isSafetyFloatShow ? 'safety-tips' : ''"
         >
           <a
-            :href="isSafetyFloatShow ? VULBOX_LINK : QUESTIONNAIRE_LINK"
+            :href="isSafetyFloatShow ? VULBOX_LINK : ''"
             :target="isSafetyFloatShow ? '_blank' : '_self'"
             rel="noopener noreferrer"
           >
-            {{ isSafetyFloatShow ? FLOAT_BUG_TEXT : FLOAT_QUESTIONNAIRE }}
+            {{ isSafetyFloatShow ? FLOAT_BUG_TEXT : '' }}
           </a>
-          <img
-            class="close-img"
-            :src="floatClose"
-            alt=""
-            @click="closeBgFloat"
-          />
         </div>
         <div class="float-wrap">
           <div v-show="isFloatTipShow" class="float-tip">
