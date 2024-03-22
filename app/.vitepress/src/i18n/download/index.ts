@@ -20,9 +20,9 @@ export default {
     COPY_SUCCESS: `复制成功`,
     DOWNTIPS: `Data Studio引用的Apache Log4j工具存在安全风险，社区已经修复了该漏洞。请下载和使用Data Studio 2.1.2版本工具。`,
     DESCRIPTION: [
-      `openGauss社区版本分为长期支持版本和创新版本：`,
-      `· 长期支持版本 (LTS) ——规模上线使用，openGauss 6.0.0 LTS及后续LTS版本发布间隔周期为2年，提供3年社区支持。`,
-      `· 创新版本 (RCx) ——作为LTS版本发布前的阶段性特性体验版本，仅供联创测试使用，提供6个月社区支持。`,
+      `openGauss社区版本分为长期支持版本和创新版本： `,
+      `· 长期支持版本 (LTS) ：规模上线使用，openGauss 6.0.0 LTS及后续LTS版本发布间隔周期为2年，社区去提供3年支持，社区OGSP伙伴提供3年以后维护支持服务。`,
+      `· 创新版本 (RCx) ：作为LTS版本发布前的阶段性特性体验版本，仅供联创测试使用，提供6个月社区支持。`,
     ],
     MORE_DETAIL: `更多详细信息请`,
     VIEW_SPECIFICATION: `点此查看openGauss社区版本生命周期管理规范`,
