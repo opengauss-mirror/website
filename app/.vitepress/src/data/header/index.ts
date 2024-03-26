@@ -108,6 +108,13 @@ const navData: Array<NavItemT> = [
         },
       },
       {
+        label: { zh: '社区荣誉' },
+        id: 'honor',
+        href: {
+          zh: '/zh/honor/',
+        },
+      },
+      {
         label: { zh: '贡献看板', en: 'Statistics' },
         id: 'statistics',
         href: {
