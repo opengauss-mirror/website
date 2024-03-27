@@ -1048,11 +1048,11 @@ export default {
         gitee: `${GITEE_LINK}jarekzhang`,
       },
       {
-        img: zhangshujie,
-        name: `张树杰`,
+        img: sunji,
+        name: `孙佶`,
         title: `Member`,
-        email: `zhangshujie1@huawei.com`,
-        gitee: `${GITEE_LINK}zhangshujie82`,
+        email: `sunji@greatji.com`,
+        gitee: `${GITEE_LINK}greatjigreatji`,
       },
       {
         img: zhoupinggao,
@@ -4990,11 +4990,11 @@ export default {
         gitee: `${GITEE_LINK}jarekzhang`,
       },
       {
-        img: zhangshujie,
-        name: `Shujie Zhang`,
+        img: sunji,
+        name: `Ji Sun`,
         title: `Member`,
-        email: `zhangshujie1@huawei.com`,
-        gitee: `${GITEE_LINK}zhangshujie82`,
+        email: `sunji@greatji.com`,
+        gitee: `${GITEE_LINK}greatjigreatji`,
       },
       {
         img: zhoupinggao,
