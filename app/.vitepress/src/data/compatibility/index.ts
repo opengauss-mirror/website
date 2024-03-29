@@ -1,5 +1,27 @@
 export default [
   {
+    name: '柯诺药械SPD物资管理软件',
+    version: '1.0',
+    type: '医疗',
+    company: '柯诺医疗供应链管理有限公司',
+    database: 'openGauss 5.0.0',
+    os: 'openEuler 22.03 LTS',
+    server: 'Intel',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%9F%AF%E8%AF%BA%E5%8C%BB%E7%96%97/SPD%20V1.0/Certificate.pdf',
+  },
+  {
+    name: '中资源Bossmail邮件系统',
+    version: '2.3',
+    type: '通用',
+    company: '厦门中资源网络服务有限公司',
+    database: 'openGauss 5.0.1',
+    os: 'Kylin V10 SP2、openEuler 22.03 LTS',
+    server: 'Kunpeng 920(Taishan 200)、Hygon 5380(R5240H0)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E4%B8%AD%E8%B5%84%E6%BA%90/Bossmail%20V2.3/Certificate.pdf',
+  },
+  {
     name: '数据治理平台',
     version: '1.0',
     type: '医疗',
