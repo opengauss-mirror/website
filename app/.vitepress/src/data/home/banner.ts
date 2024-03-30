@@ -10,11 +10,28 @@ import banner20240321_mb from '@/assets/category/home/banner/banner20240321_mb.p
 import bannerCallFor from '@/assets/category/home/banner/banner-call-for.jpg';
 import bannerCallFor_mb from '@/assets/category/home/banner/banner-call-for_mb.png';
 
+import banner600 from '@/assets/category/home/banner/banner6.0.0.jpg';
+import banner600_mb from '@/assets/category/home/banner/banner6.0.0_mo.jpg';
+
 import { LEARN_VIDEO_LINK, DOCS_LINK } from '@/data/url-config';
 
 // rightInset:banner右侧插图
 export default {
   zh: [
+    {
+      pcBanner: banner600,
+      moBanner: banner600_mb,
+      link: '/zh/news/2024-03-30/',
+      target: '_self',
+      title: '',
+      titleMb: [],
+      subtitle: '',
+      desc: [''],
+      btn: '',
+      className: '',
+      rightInset: '',
+      rightLink: '',
+    },
     {
       pcBanner: bannerCallFor,
       moBanner: bannerCallFor_mb,

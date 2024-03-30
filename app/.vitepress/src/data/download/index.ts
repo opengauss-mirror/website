@@ -1,3 +1,4 @@
+import download600RC1 from './download6.0.0-RC1';
 import download501 from './download5.0.1';
 import download510 from './download5.1.0';
 import download500 from './download5.0.0';
@@ -18,8 +19,22 @@ import download100 from './download1.0.0';
 // newLayout:true 代表使用新版下载页面结构布局，无此参数代表使用旧版
 const downloadData = [
   {
+    name: '6.0.0-RC1',
+    newLayout: true,
+    data: download600RC1,
+    plannedEOL: 'Planned EOL: 2024.09.30',
+    docs_list: [
+      {
+        name: '发行说明',
+        nameEn: 'Release Notes',
+        path: '/zh/news/2024-03-30/index.html',
+        pathEn: '/zh/news/2024-03-30/index.html',
+      },
+    ],
+  },
+  {
     name: '5.0.1 (LTS)',
-    newLayout:true,
+    newLayout: true,
     data: download501,
     plannedEOL: 'Planned EOL: 2026.03.31',
     docs_list: [

@@ -1,5 +1,15 @@
 export default [
   {
+    date: '2024-03-30',
+    summary: 'openGauss 6.0.0-RC1版本正式发布',
+    archives: '2024-03',
+    author: ['openGauss'],
+    banner: '/category/news/2024-03-30/banner.jpg',
+    title: 'openGauss 6.0.0-RC1版本正式发布',
+    tags: ['theme'],
+    path: 'zh/news/2024-03-30/index',
+  },
+  {
     date: '2024-03-21',
     summary: 'openGauss 社区版本发布节奏与命名调整公告',
     archives: '2024-03',
