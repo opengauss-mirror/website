@@ -454,6 +454,7 @@ import zhouaoying from '@/assets/category/member/avatar/zhouaoying.png';
 
 import huangyanjiao from '@/assets/category/member/avatar/huangyanjiao.png';
 import hanzhaoxia from '@/assets/category/member/avatar/hanzhaoxia.png';
+import gongmingyang from '@/assets/category/member/avatar/gongmingyang.png';
 
 import { GITEE_LINK } from '@/data/url-config';
 export default {
@@ -913,11 +914,11 @@ export default {
         email: `zhaoxiaomin@chinamobile.com`,
       },
       {
-        img: wangdan,
-        name: `王丹`,
+        img: gongmingyang,
+        name: `宫铭阳`,
         title: `委员`,
         company: `北京超图软件股份有限公司`,
-        email: `wangdan@supermap.com`,
+        email: `gongmingyang@supermap.com.cn`,
       },
       {
         img: wangxiao,
@@ -4855,11 +4856,11 @@ export default {
         email: `zhaoxiaomin@chinamobile.com`,
       },
       {
-        img: wangdan,
-        name: `Dan Wang`,
+        img: gongmingyang,
+        name: `Mingyang Gong`,
         title: `Member`,
         company: `SuperMap Software Co., Ltd.`,
-        email: `wangdan@supermap.com`,
+        email: `gongmingyang@supermap.com.cn`,
       },
       {
         img: wangxiao,
