@@ -11,22 +11,22 @@ export default [
         content: [
           {
             name: 'openGauss_6.0.0-RC1 企业版',
-            size: '141.24MB',
+            size: '141.25MB',
             edition: 'enterprise',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/arm_2203/openGauss-6.0.0-RC1-openEuler-64bit-all.tar.gz`,
             sha_code:
-              '9378a596d8218700cdc7f8c1a1edaa1540f4ae3302b14bdfee252c28387db9a6',
+              'a074a81274f457e4343a88640d2fef4d21330eab1e0518b73f0bfaf609b4da01',
             docsName: '企业版安装指南',
             docs_url:
               '/docs/6.0.0-RC1/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html',
           },
           {
             name: 'openGauss_6.0.0-RC1 极简版',
-            size: '96.82MB',
+            size: '96.83MB',
             edition: 'simple',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/arm_2203/openGauss-6.0.0-RC1-openEuler-64bit.tar.bz2`,
             sha_code:
-              'd389a66f586fbd917264cdc2ddfa2c264cccbded1914af9374db4bd88281f25f',
+              '37f18dd9b0516f948a7fc6e463c85cd0c9be9fd857737e60c60902e6601c8557',
             docsName: '极简版安装指南',
             docs_url:
               '/docs/6.0.0-RC1/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html',
@@ -37,7 +37,7 @@ export default [
             edition: 'lite',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/arm_2203/openGauss-Lite-6.0.0-RC1-openEuler-aarch64.tar.gz`,
             sha_code:
-              '8604716e87d331b1c242c23f0b9a900bc1443266fce8ec0479b2bfc2be379e60',
+              'a14e7bcdfcf49532c55fccba17625fd3e3bd8d8a839231a0adee4d67e971e77b',
             docsName: '轻量版安装指南',
             docs_url:
               '/docs/6.0.0-RC1-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html',
@@ -52,33 +52,33 @@ export default [
         content: [
           {
             name: 'openGauss_6.0.0-RC1 企业版',
-            size: '144.49MB',
+            size: '144.51MB',
             edition: 'enterprise',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/x86_openEuler_2203/openGauss-6.0.0-RC1-openEuler-64bit-all.tar.gz`,
             sha_code:
-              '43c033caf40304b4c944a1233c1f39bfc4514a6375acce2ca51c4bd6e656e69b',
+              '96a89b1bbaffdac4829a4290f773e1eae0b73c4942de94016cc70f4ec24faa73',
             docsName: '企业版安装指南',
             docs_url:
               '/docs/6.0.0-RC1/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html',
           },
           {
             name: 'openGauss_6.0.0-RC1 极简版',
-            size: '100.69MB',
+            size: '100.71MB',
             edition: 'simple',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/x86_openEuler_2203/openGauss-6.0.0-RC1-openEuler-64bit.tar.bz2`,
             sha_code:
-              'd04ecb515354db611c3c74b83eeafa853d8744950bcbb22edc1f861c0dd0cf01',
+              '585991488be1eba3d4f24f6c66123808223941e56912c66cc963271b1e78d24b',
             docsName: '极简版安装指南',
             docs_url:
               '/docs/6.0.0-RC1/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html',
           },
           {
             name: 'openGauss_6.0.0-RC1 轻量版',
-            size: '26.69MB',
+            size: '26.70MB',
             edition: 'lite',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/x86_openEuler_2203/openGauss-Lite-6.0.0-RC1-openEuler-x86_64.tar.gz`,
             sha_code:
-              '651fc21eac327f14b0159d1eb47a9634e2167147c11607086769fc0f2cb754e8',
+              '3b3905ef77202a51e99ece9717424a8c2bced22a672679f10d323ac315cbbb7e',
             docsName: '轻量版安装指南',
             docs_url:
               '/docs/6.0.0-RC1-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html',
@@ -93,11 +93,11 @@ export default [
         content: [
           {
             name: 'openGauss_6.0.0-RC1 企业版',
-            size: '140.23MB',
+            size: '140.24MB',
             edition: 'enterprise',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/arm/openGauss-6.0.0-RC1-openEuler-64bit-all.tar.gz`,
             sha_code:
-              '9378a596d8218700cdc7f8c1a1edaa1540f4ae3302b14bdfee252c28387db9a6',
+              '7aaf86b9ca3c35a49893a9aa5ab02383039da78c9b0d90bc2e3bd0dbbf7d0384',
             docsName: '企业版安装指南',
             docs_url:
               '/docs/6.0.0-RC1/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html',
@@ -108,7 +108,7 @@ export default [
             edition: 'simple',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/arm/openGauss-6.0.0-RC1-openEuler-64bit.tar.bz2`,
             sha_code:
-              'd389a66f586fbd917264cdc2ddfa2c264cccbded1914af9374db4bd88281f25f',
+              'ef2fe745a71b0ca45ef94a9f9357868acef884975d7f5aa939d1881fe631dbdc',
             docsName: '极简版安装指南',
             docs_url:
               '/docs/6.0.0-RC1/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html',
@@ -119,7 +119,7 @@ export default [
             edition: 'simple',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/arm/openGauss-Lite-6.0.0-RC1-openEuler-aarch64.tar.gz`,
             sha_code:
-              '8604716e87d331b1c242c23f0b9a900bc1443266fce8ec0479b2bfc2be379e60',
+              '8ca45d179bbac132dd33eb6b1da2c272b56761892597891bb38fa280ca1dd94c',
             docsName: '轻量版安装指南',
             docs_url:
               '/docs/6.0.0-RC1-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html',
@@ -144,22 +144,22 @@ export default [
         content: [
           {
             name: 'openGauss_6.0.0-RC1 企业版',
-            size: '144.66MB',
+            size: '144.68MB',
             edition: 'enterprise',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/x86_openEuler/openGauss-6.0.0-RC1-openEuler-64bit-all.tar.gz`,
             sha_code:
-              '6b6c644b4443c397f574dbbb596f7841742d5796cf92af7fd3e25329bb334cf1',
+              'f680e742d6ae9354f010e8b5764c044dbc04a4324ce167331a47443229dbea28',
             docsName: '企业版安装指南',
             docs_url:
               '/docs/6.0.0-RC1/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html',
           },
           {
             name: 'openGauss_6.0.0-RC1 极简版',
-            size: '101.03MB',
+            size: '101.05MB',
             edition: 'simple',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/x86_openEuler/openGauss-6.0.0-RC1-openEuler-64bit.tar.bz2`,
             sha_code:
-              '8b58b3a716eeebfb32bb7c256b1e7e65d08507138a723650d810dee845c3cb5d',
+              'a455d901b1433e637bce96465ea1cc20131bf2f08e3a79c0a32054aa288b1214',
             docsName: '极简版安装指南',
             docs_url:
               '/docs/6.0.0-RC1/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html',
@@ -170,7 +170,7 @@ export default [
             edition: 'simple',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/x86_openEuler/openGauss-Lite-6.0.0-RC1-openEuler-x86_64.tar.gz`,
             sha_code:
-              '394f5d41ff552a7a560a798538d039e31af65801012b1288906f93ea484df331',
+              '64d62cd0e181ec1ae15a8895242e6c20fe4842ef258c6a70d67e37a6de480afe',
             docsName: '轻量版安装指南',
             docs_url:
               '/docs/6.0.0-RC1-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html',
@@ -185,22 +185,22 @@ export default [
         content: [
           {
             name: 'openGauss_6.0.0-RC1 企业版',
-            size: '142.51MB',
+            size: '142.53MB',
             edition: 'enterprise',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/x86/openGauss-6.0.0-RC1-CentOS-64bit-all.tar.gz`,
             sha_code:
-              '68715e7fd415fbbe355ffbb259f1edeafd05c4941bee4cad72dda5d4e7a1d56b',
+              '2dad94f35807c0d6945bf84f638693148a2de05b4fe51b420f04fd5d94015977',
             docsName: '企业版安装指南',
             docs_url:
               '/docs/6.0.0-RC1/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html',
           },
           {
             name: 'openGauss_6.0.0-RC1 极简版',
-            size: '99.80MB',
+            size: '99.82MB',
             edition: 'simple',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/x86/openGauss-6.0.0-RC1-CentOS-64bit.tar.bz2`,
             sha_code:
-              '2a3df495c7c9c0b484d8cf60fcc8578dd68cff83cc01e0eaaf4318785e50c9ee',
+              'fca7b2137f58d4562dec1359b3db31ea4dfe7119bec74a6d1db02d6ee867b480',
             docsName: '极简版安装指南',
             docs_url:
               '/docs/6.0.0-RC1/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html',
@@ -211,7 +211,7 @@ export default [
             edition: 'enterprise',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/x86/openGauss-Lite-6.0.0-RC1-CentOS-x86_64.tar.gz`,
             sha_code:
-              '18b055321a6e6a8ef4f8ba03a6143dc56a7fc2a6eb9b02d01c0d0af0b5b0e751',
+              '6f779f95075153b78c00e9b0e76b5f12edd0ebd7ba332be4e6993047c4782e0a',
             docsName: '轻量版安装指南',
             docs_url:
               '/docs/6.0.0-RC1-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html',
@@ -243,7 +243,7 @@ export default [
             size: '1.73MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/arm_2203/openGauss-6.0.0-RC1-JDBC.tar.gz`,
             sha_code:
-              '771560e37ae170eeecf0d2e0a7ac6d002d3e6659606c4938d4e9a3a8632ad194',
+              '5ad4ffe33907c4315ebb697fc3aeff6d56f6455f6a37389a3bc86c9f10c99aed',
             docsName: '',
             docs_url: '',
           },
@@ -252,7 +252,7 @@ export default [
             size: '8.98MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/arm_2203/openGauss-6.0.0-RC1-ODBC.tar.gz`,
             sha_code:
-              'a2f06ad9c4db7701c5a22b0e29b7bac791a87c1e48527599ca39aa02629e45fd',
+              '7bd1be8f9a7c88eda25b77df8f6b48b5bbf7dd4d640990d3dd8018e0fff82625',
             docsName: '',
             docs_url: '',
           },
@@ -261,7 +261,7 @@ export default [
             size: '2.93MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/arm_2203/openGauss-6.0.0-RC1-openEuler-aarch64-Python.tar.gz`,
             sha_code:
-              'fa2ea6494bef555a3baaeb18c7d70367e1a3cbefcf696cf40f6f1412955a1d4a',
+              '5638a1b49bc3b9c6c3b22d0f9b712e0857a4736a24d0111e689ff7ba5fe22710',
             docsName: '',
             docs_url: '',
           },
@@ -270,7 +270,7 @@ export default [
             size: '4.99MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/arm_2203/openGauss-6.0.0-RC1-openEuler-64bit-Libpq.tar.gz`,
             sha_code:
-              '62e532e9db01a27832eebc60d18d5ac87363309942f461adfbc10c26e6e4f346',
+              '5de203ce28346368d0b467924f585ce7f446e1749e5c56a03b38828260b9340d',
             docsName: '',
             docs_url: '',
           },
@@ -286,7 +286,7 @@ export default [
             size: '1.73MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/x86_openEuler_2203/openGauss-6.0.0-RC1-JDBC.tar.gz`,
             sha_code:
-              '4af7a45f77f2658ced85c168cde4e0241dac303a5b8591014b715c81ea965ea2',
+              '3170a768bc1f6bbfb72b55b2fdb2ee0f97a57846346c9aa3e246e2ac69e761b6',
             docsName: '',
             docs_url: '',
           },
@@ -295,7 +295,7 @@ export default [
             size: '9.23MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/x86_openEuler_2203/openGauss-6.0.0-RC1-ODBC.tar.gz`,
             sha_code:
-              'b0f7023449ec82eea2f8e6c6dcc6170522a6c0305393500e76901941e6d1dc3c',
+              'a3b00ccdc8fe9d72abf4bee8053aaaa71cf65584b06a73e078f339b174508c36',
             docsName: '',
             docs_url: '',
           },
@@ -304,7 +304,7 @@ export default [
             size: '3.09MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/x86_openEuler_2203/openGauss-6.0.0-RC1-openEuler-x86_64-Python.tar.gz`,
             sha_code:
-              '6d8d0168d8ce6d18d8d509b76267b668015e39738c20e1779b09f89f4f8df574',
+              'a3dca69fafa4fd6147b72e9f4b13c00af03d9d7976716a8a5ef842421c8a9037',
             docsName: '',
             docs_url: '',
           },
@@ -313,7 +313,7 @@ export default [
             size: '5.26MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/x86_openEuler_2203/openGauss-6.0.0-RC1-openEuler-64bit-Libpq.tar.gz`,
             sha_code:
-              '1e63f4181c3d9462b966cc0b85237e798317a062239e0895b51d5a41e5977059',
+              'e4b54d64fa4f4dfbccd561d298e7ade02a2244077893eb57ffa2860063c668f0',
             docsName: '',
             docs_url: '',
           },
@@ -326,10 +326,10 @@ export default [
         content: [
           {
             name: 'JDBC_6.0.0-RC1',
-            size: '1.73MB',
+            size: '1.72MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/arm/openGauss-6.0.0-RC1-JDBC.tar.gz`,
             sha_code:
-              '57a606617365a2b77e1373af5d73ed8d8bd47f02787422c055bc2cbec709919c',
+              'b039c07693a40cf03c7a13a7fb65f8500af1467ac85adaa23378d92cac1bfdad',
             docsName: '',
             docs_url: '',
           },
@@ -338,7 +338,7 @@ export default [
             size: '9.03MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/arm/openGauss-6.0.0-RC1-ODBC.tar.gz`,
             sha_code:
-              '809656e6c4c8cce92916c3147e723e9388b00a9412716d6454a495e4bfb3d814',
+              '0319f160d985b23f19d0d6aaf717206593bf9b1e6769589785d10d23e5c85493',
             docsName: '',
             docs_url: '',
           },
@@ -347,7 +347,7 @@ export default [
             size: '2.94MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/arm/openGauss-6.0.0-RC1-openEuler-aarch64-Python.tar.gz`,
             sha_code:
-              '65c81b89002ddb854411710365a9d15a868df2df9ea66ee3bc237facba9ba288',
+              '6039575f7a230305b3b8ed0a2a9a98f7f2bd75b76fbd8422be13b6070352560a',
             docsName: '',
             docs_url: '',
           },
@@ -356,7 +356,7 @@ export default [
             size: '5.03MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/arm/openGauss-6.0.0-RC1-openEuler-64bit-Libpq.tar.gz`,
             sha_code:
-              '7b7117e8b5ad5195ce14c7f1eb8414f783adb93b950b1e41e0eb37b4b2317c3a',
+              '0b44ffc4fe978e6823b79198665c59989df06a0832f231997a9bc137ca5f5c65',
             docsName: '',
             docs_url: '',
           },
@@ -372,7 +372,7 @@ export default [
             size: '1.73MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/x86_openEuler/openGauss-6.0.0-RC1-JDBC.tar.gz`,
             sha_code:
-              '8f1c5ed06ad94fedfdef2a9d5acad8ba0a7f0b0797dba2d95ba7fe1190307150',
+              'ad496f6468f24bf4c4e89f2aeabdbc59ef1e185b3726fb6db963cbe249b2fcfa',
             docsName: '',
             docs_url: '',
           },
@@ -381,7 +381,7 @@ export default [
             size: '9.24MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/x86_openEuler/openGauss-6.0.0-RC1-ODBC.tar.gz`,
             sha_code:
-              'a4fe0abc0ccda1a921c2e8fe60a97325b2edd9c7e0d3092a8ea09bb598b99449',
+              '269ed5d25edce82bb06d78280238c7c8c58390d7d69d769556e261f2b18e3c5a',
             docsName: '',
             docs_url: '',
           },
@@ -390,7 +390,7 @@ export default [
             size: '3.09MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/x86_openEuler/openGauss-6.0.0-RC1-openEuler-x86_64-Python.tar.gz`,
             sha_code:
-              '5797bb84fe06d7f3079eab7ffc058c18feb117acc791c0fbc7c0c65a2915f1fe',
+              '172c1f0c87a7a057634a04785727197436faae4cf58f67b9db6b129b286e6f9b',
             docsName: '',
             docs_url: '',
           },
@@ -399,7 +399,7 @@ export default [
             size: '5.26MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/x86_openEuler/openGauss-6.0.0-RC1-openEuler-64bit-Libpq.tar.gz`,
             sha_code:
-              '1e5fc0202587129a6c8cab0709b7d50dc8e371ab95de8131d18241c2fc81914f',
+              'fd982936e7b576e87a818665db87ef87001ece0af4783ecd5ac828ad9f06f908',
             docsName: '',
             docs_url: '',
           },
@@ -415,7 +415,7 @@ export default [
             size: '1.73MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/x86/openGauss-6.0.0-RC1-JDBC.tar.gz`,
             sha_code:
-              'f3daeffefd4a11673af75f54f845c08388d72f0801fff53081799fcbb0cb1d2f',
+              '47ebbbfc889805e55357861711f37e57e3d8da877b87431aca1ceda33b37ac4f',
             docsName: '',
             docs_url: '',
           },
@@ -424,7 +424,7 @@ export default [
             size: '9.11MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/x86/openGauss-6.0.0-RC1-ODBC.tar.gz`,
             sha_code:
-              '16ced045674152f6d20eb51f5e0b5c43e2fe933f8526a84fce03ccfd06a76942',
+              '79762930e48054c8b62f06b559d95aa0effa73fd99211e30ad8b83e3681ce4e6',
             docsName: '',
             docs_url: '',
           },
@@ -433,7 +433,7 @@ export default [
             size: '3.29MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/x86/openGauss-6.0.0-RC1-CentOS-x86_64-Python.tar.gz`,
             sha_code:
-              'f6a8d173afb3d15e14fd0c2f9177be5dd29a7dcccf0d11e9f55c8d40e5c3121c',
+              '554f95e225292f2492c84fff74488f8cb273ed45746acd426ddbacebb9ea6fcd',
             docsName: '',
             docs_url: '',
           },
@@ -442,7 +442,7 @@ export default [
             size: '5.14MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/x86/openGauss-6.0.0-RC1-CentOS-64bit-Libpq.tar.gz`,
             sha_code:
-              '3540d8fa13cc1d489c16dc796f5116279f4a5a9b0b01ae7c5033a147394900b6',
+              '5d81fc08082cc52c1063038e00dd504f655c09e0f75c7cab3f2f4d614e0f8b7c',
             docsName: '',
             docs_url: '',
           },
@@ -458,7 +458,7 @@ export default [
             size: '1.73MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/x86/openGauss-6.0.0-RC1-JDBC.tar.gz`,
             sha_code:
-              'f98affcc98d00a631e79e4a5bdb88b17ab065bf670b0b240a61c4827712d2053',
+              '47ebbbfc889805e55357861711f37e57e3d8da877b87431aca1ceda33b37ac4f',
             docsName: '',
             docs_url: '',
           },
@@ -485,19 +485,19 @@ export default [
         content: [
           {
             name: 'symbol_6.0.0-RC1',
-            size: '395.26MB',
+            size: '396.82MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/arm_2203/openGauss-6.0.0-RC1-openEuler-64bit-symbol.tar.gz`,
             sha_code:
-              '9de05140762f98268a73ab359b8682b4e4c7a6b8ff78101faceadb9c7c336488',
+              '4c76483316f3f8a3af10cbea349006d3b0507e8e2e17e3c823280afd0711e890',
             docsName: '',
             docs_url: '',
           },
           {
             name: 'cm-symbol_6.0.0-RC1',
-            size: '23.94MB',
+            size: '21.73MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/arm_2203/openGauss-6.0.0-RC1-openEuler-64bit-cm-symbol.tar.gz`,
             sha_code:
-              '011f812a4d3b84ede3132c885400dea59c3597fc720982eae7e4fd1ab39b86e6',
+              'f82de47d6ceac6703220e743598a3c84a4a9a9553933b608807449ff9dbabd2d',
             docsName: '',
             docs_url: '',
           },
@@ -510,10 +510,10 @@ export default [
         content: [
           {
             name: 'symbol_6.0.0-RC1',
-            size: '392.76MB',
+            size: '394.35MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/x86_openEuler_2203/openGauss-6.0.0-RC1-openEuler-64bit-symbol.tar.gz`,
             sha_code:
-              '7a6209adb1ee10dcaf21b686cd71d866842487b2d8f9160f03fb8b546c3c0afb',
+              '49d0a563738193b2fb5118f94def1b93bc29d6c60e116fbc142d1d39ed8f3ae9',
             docsName: '',
             docs_url: '',
           },
@@ -522,7 +522,7 @@ export default [
             size: '22.05MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/x86_openEuler_2203/openGauss-6.0.0-RC1-openEuler-64bit-cm-symbol.tar.gz`,
             sha_code:
-              '4f9ba37a07a13bb8ad1473619d0221ae7de8398371beed4eba26f6f95bc9f9d3',
+              '0c02fb737f58edcdb0795a67d32bfca4bbdddb841ac7c4556d0ea5ab8f5e37dd',
             docsName: '',
             docs_url: '',
           },
@@ -535,10 +535,10 @@ export default [
         content: [
           {
             name: 'symbol_6.0.0-RC1',
-            size: '395.768MB',
+            size: '395.78MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/arm/openGauss-6.0.0-RC1-openEuler-64bit-symbol.tar.gz`,
             sha_code:
-              '5956cc744893423d846c5da1f22bf0265d17fb7ba4a5119cf7b664800ef60b9c',
+              'db2b22aadbf19caead1d3fa1809d924b786bacf4b95faa26e1b307e09846d765',
             docsName: '',
             docs_url: '',
           },
@@ -547,7 +547,7 @@ export default [
             size: '23.85MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/arm/openGauss-6.0.0-RC1-openEuler-64bit-cm-symbol.tar.gz`,
             sha_code:
-              'ae2ba8c691f0f32e41b8c2d521665681901f7c651ff6a9f6bb451567dc963897',
+              '5ef6b051bdb9a973cd0443e977c904d887e945d893f69a27c33924fd58c63662',
             docsName: '',
             docs_url: '',
           },
@@ -560,10 +560,10 @@ export default [
         content: [
           {
             name: 'symbol_6.0.0-RC1',
-            size: '393.33MB',
+            size: '393.31MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/x86_openEuler/openGauss-6.0.0-RC1-openEuler-64bit-symbol.tar.gz`,
             sha_code:
-              'bbdc2e3edac835b1d56c139a563eb6c3b89f3cde8a4af7fbf58bc738d6b11992',
+              '45ca8931c0bfb9facc0c1edc75580dbf0fbe134de6858d89a6d15903aa8e008d',
             docsName: '',
             docs_url: '',
           },
@@ -572,7 +572,7 @@ export default [
             size: '22.04MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/x86_openEuler/openGauss-6.0.0-RC1-openEuler-64bit-cm-symbol.tar.gz`,
             sha_code:
-              'bd75af31fae7045bb8cbbd968927b0c0aa9d1fd1251e1bf520d34f91030ceb97',
+              '9e6233477afae7eed6521ce9c93849f937f6239caf5a6ae8ecc33dd4c7e8fe33',
             docsName: '',
             docs_url: '',
           },
@@ -585,10 +585,10 @@ export default [
         content: [
           {
             name: 'symbol_6.0.0-RC1',
-            size: '380.46MB',
+            size: '380.48MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/x86/openGauss-6.0.0-RC1-CentOS-64bit-symbol.tar.gz`,
             sha_code:
-              '45a65fa380e35a15bea11c9db52ecf99994a8eab598520e5f89f01724f742f04',
+              '13e73147b8b0bd55f425640dcc717ed7ab6f323605e87a014b9e62a31136054b',
             docsName: '',
             docs_url: '',
           },
@@ -597,7 +597,7 @@ export default [
             size: '20.74MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/x86/openGauss-6.0.0-RC1-CentOS-64bit-cm-symbol.tar.gz`,
             sha_code:
-              '5f6b1d19e13dc3e9ad8ae9297e260d23342764eecfbbb3d6aadfa10ba0f0cf33',
+              'c36733da6abb54e5041cee6b77f7594ccfa6d1a172e9651431cef404b044f937',
             docsName: '',
             docs_url: '',
           },
