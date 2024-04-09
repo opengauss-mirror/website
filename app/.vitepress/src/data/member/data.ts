@@ -455,6 +455,7 @@ import zhouaoying from '@/assets/category/member/avatar/zhouaoying.png';
 import huangyanjiao from '@/assets/category/member/avatar/huangyanjiao.png';
 import hanzhaoxia from '@/assets/category/member/avatar/hanzhaoxia.png';
 import gongmingyang from '@/assets/category/member/avatar/gongmingyang.png';
+import xieweiping1 from '@/assets/category/member/avatar/xieweiping1.png';
 
 import { GITEE_LINK } from '@/data/url-config';
 export default {
@@ -979,18 +980,18 @@ export default {
         gitee: `${GITEE_LINK}he-chenghan`,
       },
       {
-        img: huangkaiyao,
-        name: `黄凯耀`,
+        img: zhubin,
+        name: `朱彬`,
         title: `Member`,
-        email: `huangkaiyao@huawei.com`,
-        gitee: `${GITEE_LINK}huangkaiyao`,
+        email: `zhubin6@huawei.com`,
+        gitee: `${GITEE_LINK}Yoota_zhu`,
       },
       {
-        img: huangxiaotao,
-        name: `黄晓涛`,
+        img: xieweiping1,
+        name: `谢卫平`,
         title: `Member`,
-        email: `vinson.huang@126.com`,
-        gitee: `${GITEE_LINK}xiaotao-huang`,
+        email: `xiewp@vastdata.com.cn`,
+        gitee: `${GITEE_LINK}junhangis`,
       },
       {
         img: lishifu,
@@ -4921,18 +4922,18 @@ export default {
         gitee: `${GITEE_LINK}he-chenghan`,
       },
       {
-        img: huangkaiyao,
-        name: `Kaiyao Huang`,
+        img: zhubin,
+        name: `Bin Zhu`,
         title: `Member`,
-        email: `huangkaiyao@huawei.com`,
-        gitee: `${GITEE_LINK}huangkaiyao`,
+        email: `zhubin6@huawei.com`,
+        gitee: `${GITEE_LINK}Yoota_zhu`,
       },
       {
-        img: huangxiaotao,
-        name: `Xiaotao Huang`,
+        img: xieweiping1,
+        name: `Weiping Xie`,
         title: `Member`,
-        email: `vinson.huang@126.com`,
-        gitee: `${GITEE_LINK}xiaotao-huang`,
+        email: `xiewp@vastdata.com.cn`,
+        gitee: `${GITEE_LINK}junhangis`,
       },
       {
         img: lishifu,
