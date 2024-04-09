@@ -175,7 +175,7 @@ export default {
     DELETE_SUCCESS: '删除成功！',
     SUCCESS: '预定会议成功！',
     EMAIL: '邮件地址:',
-    EMAIL_TEXT: '多个邮件地址之间用逗号,隔开',
+    EMAIL_TEXT: '多个邮件地址之间用分号;隔开',
     LOGOUT_SUCCESS: '退出成功',
     COPY_INFO: '复制会议信息',
     COPY_INFO_MB: '复制信息',
