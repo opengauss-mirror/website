@@ -501,11 +501,6 @@ const requestMeetingReserve = async () => {
           type: 'warning',
         });
       }
-    } else {
-      ElMessage({
-        message: isZh.value ? res.msg : res.en_msg,
-        type: 'warning',
-      });
     }
   } catch (error) {
     handleError();
@@ -667,7 +662,8 @@ const initClipboard = (info: string) => {
 const copyMeetingInfo = (meetingItem: DayDataT) => {
   meetingInfo.value =
     meetingItem.name +
-    `\n${i18nMeeting.value.TIME}${renderData.value.date} ${meetingItem.duration_time}`;
+    `\n${i18nMeeting.value.TIME}${renderData.value.date} ${meetingItem.startTime} - ${meetingItem.endTime}`;
+  console.log('object :>> ', meetingInfo.value);
   detailItem.forEach((item) => {
     if (isValidKey(item.key, meetingItem) && meetingItem[item.key]) {
       meetingInfo.value =
@@ -844,7 +840,9 @@ const copyMeetingInfo = (meetingItem: DayDataT) => {
                       }}</span>
                       <div class="time-box">
                         <span class="time-day">{{ renderData.date }}</span>
-                        <span class="time-hour">{{ item.duration_time }}</span>
+                        <span class="time-hour"
+                          >{{ item.startTime }} - {{ item.endTime }}</span
+                        >
                       </div>
                     </div>
                     <div v-else class="group-name more-detail">openEuler</div>
@@ -1719,7 +1717,7 @@ const copyMeetingInfo = (meetingItem: DayDataT) => {
           word-break: break-all;
           .item-title {
             flex-shrink: 0;
-            width: 90px;
+            width: 95px;
           }
           .sponsor {
             display: flex;
