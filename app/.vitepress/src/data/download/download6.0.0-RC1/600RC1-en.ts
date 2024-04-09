@@ -714,20 +714,10 @@ export default [
       },
       {
         system: 'Windows',
-        architecture: 'x86_64',
+        architecture: '',
         os: 'Windows',
         docs: true,
-        content: [
-          {
-            name: 'Data Studio_6.0.0-RC1',
-            size: '98.72MB',
-            down_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/tools/DataStudio_win_64.zip`,
-            sha_code:
-              'c3e3f16a68e6bd7f7e8c963f638f6afd486c907e99926963021602e297d88390',
-            docsName: '使用文档',
-            docs_url: `${OBS_DOWNLOAD_LINK}6.0.0-RC1/tools/Data%20Studio%20%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C.pdf`,
-          },
-        ],
+        content: [],
       },
       {
         system: 'openEuler 22.03 LTS (aarch64)',
