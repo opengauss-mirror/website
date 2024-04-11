@@ -4,6 +4,8 @@ import { useData } from 'vitepress';
 import { useCommon, useCookieStatus } from '@/stores/common';
 import { useI18n } from '@/i18n';
 import { ElMessage, ElMessageBox } from 'element-plus';
+import Clipboard from 'clipboard';
+
 import useWindowResize from '@/components/hooks/useWindowResize';
 import { DownloadItemT } from '@/shared/@types/type-download';
 
@@ -71,14 +73,33 @@ const hoverTips = computed(() => (type: string | undefined) => {
   }
   return tips;
 });
+
 // 复制sha值
-async function handleUrlCopy(value: string | undefined) {
-  if (!value) return;
-  navigator.clipboard.writeText(value);
-  ElMessage({
-    message: i18n.value.download.COPY_SUCCESS,
-    type: 'success',
+let clipboardInstance = null;
+const initClipboard = (info: string) => {
+  clipboardInstance = new Clipboard('.down-copy', {
+    text: () => info,
   });
+  // 监听成功复制事件
+  clipboardInstance.on('success', () => {
+    ElMessage({
+      message: i18n.value.common.COPY_SUCCESS,
+      type: 'success',
+    });
+  });
+  // 监听复制失败事件
+  clipboardInstance.on('error', () => {
+    ElMessage({
+      message: i18n.value.common.COPY_FAILED,
+      type: 'error',
+    });
+  });
+};
+async function handleUrlCopy(value: string | undefined) {
+  if (!value) {
+    return;
+  }
+  initClipboard(value);
 }
 
 // 移动端提示
