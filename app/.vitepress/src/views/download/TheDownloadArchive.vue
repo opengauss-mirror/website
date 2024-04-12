@@ -3,7 +3,7 @@ import { ref, computed, watch } from 'vue';
 import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';
 import { ElMessage } from 'element-plus';
-import Clipboard from 'clipboard';
+import { useClipboard } from '@/components/hooks/useClipboard';
 
 import { useCommon, useCookieStatus } from '@/stores/common';
 import DownloadConfig from '@/data/download';
@@ -43,31 +43,39 @@ const getData: any = computed(() => {
 });
 
 // 复制sha值
-let clipboardInstance = null;
-const initClipboard = (info: string) => {
-  clipboardInstance = new Clipboard('.down-copy', {
-    text: () => info,
-  });
-  // 监听成功复制事件
-  clipboardInstance.on('success', () => {
-    ElMessage({
-      message: i18n.value.common.COPY_SUCCESS,
-      type: 'success',
-    });
-  });
-  // 监听复制失败事件
-  clipboardInstance.on('error', () => {
-    ElMessage({
-      message: i18n.value.common.COPY_FAILED,
-      type: 'error',
-    });
+const isClipboard = ref(true);
+const initClipboard = (text: string, e: MouseEvent) => {
+  isClipboard.value = false;
+  useClipboard({
+    text,
+    target: e,
+    success: () => {
+      ElMessage({
+        message: i18n.value.common.COPY_SUCCESS,
+        type: 'success',
+        onClose: () => {
+          isClipboard.value = true;
+        },
+      });
+    },
+    error: () => {
+      ElMessage({
+        message: i18n.value.common.COPY_FAILED,
+        type: 'error',
+        onClose: () => {
+          isClipboard.value = true;
+        },
+      });
+    },
   });
 };
-async function handleUrlCopy(value: string | undefined) {
+async function handleUrlCopy(value: string | undefined, e: MouseEvent) {
   if (!value) {
     return;
   }
-  initClipboard(value);
+  if (isClipboard.value) {
+    initClipboard(value, e);
+  }
 }
 
 // 根据语言切换数据
@@ -229,7 +237,7 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
                     type="text"
                     animation
                     class="down-copy"
-                    @click="handleUrlCopy(subitem.centos_sha)"
+                    @click="handleUrlCopy(subitem.centos_sha, $event)"
                   >
                     {{ SHATEXT }}
                     <template #suffixIcon>
@@ -272,7 +280,7 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
                     size="mini"
                     type="text"
                     animation
-                    @click="handleUrlCopy(subitem.aarch_sha)"
+                    @click="handleUrlCopy(subitem.aarch_sha, $event)"
                   >
                     {{ SHATEXT }}
                     <template #suffixIcon>
@@ -301,7 +309,7 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
                     size="mini"
                     type="text"
                     animation
-                    @click="handleUrlCopy(subitem.x86_sha)"
+                    @click="handleUrlCopy(subitem.x86_sha, $event)"
                   >
                     {{ SHATEXT }}
                     <template #suffixIcon>
@@ -359,7 +367,7 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
                   size="mini"
                   type="text"
                   animation
-                  @click="handleUrlCopy(scope.row.centos_sha)"
+                  @click="handleUrlCopy(scope.row.centos_sha, $event)"
                 >
                   {{ SHATEXT }}
                   <template #suffixIcon>
@@ -406,7 +414,7 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
                   size="mini"
                   type="text"
                   animation
-                  @click="handleUrlCopy(scope.row.aarch_sha)"
+                  @click="handleUrlCopy(scope.row.aarch_sha, $event)"
                 >
                   {{ SHATEXT }}
                   <template #suffixIcon>
@@ -436,7 +444,7 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
                   size="mini"
                   type="text"
                   animation
-                  @click="handleUrlCopy(scope.row.x86_sha)"
+                  @click="handleUrlCopy(scope.row.x86_sha, $event)"
                 >
                   {{ SHATEXT }}
                   <template #suffixIcon>

@@ -2,7 +2,8 @@
 import { ref, nextTick, onMounted, reactive, watch, computed } from 'vue';
 import { useData } from 'vitepress';
 import { FormInstance, FormRules, ElMessage } from 'element-plus';
-import Clipboard from 'clipboard';
+
+import { useClipboard } from '@/components/hooks/useClipboard';
 
 import { useI18n } from '@/i18n';
 import {
@@ -503,7 +504,7 @@ const requestMeetingReserve = async () => {
       }
     }
   } catch (error) {
-    handleError();
+    // handleError();
   }
 };
 //删除会议
@@ -638,39 +639,47 @@ const handleLogout = async () => {
   }
 };
 // 复制会议信息
-let clipboardInstance = null;
+const isClipboard = ref(true);
 let meetingInfo = ref('');
-const initClipboard = (info: string) => {
-  clipboardInstance = new Clipboard('.copy-btn', {
-    text: () => info,
-  });
-  // 监听成功复制事件
-  clipboardInstance.on('success', () => {
-    ElMessage({
-      message: i18n.value.common.COPY_SUCCESS,
-      type: 'success',
-    });
-  });
-  // 监听复制失败事件
-  clipboardInstance.on('error', () => {
-    ElMessage({
-      message: i18n.value.common.COPY_FAILED,
-      type: 'error',
-    });
+const initClipboard = (text: string, e: MouseEvent) => {
+  isClipboard.value = false;
+  useClipboard({
+    text,
+    target: e,
+    success: () => {
+      ElMessage({
+        message: i18n.value.common.COPY_SUCCESS,
+        type: 'success',
+        onClose: () => {
+          isClipboard.value = true;
+        },
+      });
+    },
+    error: () => {
+      ElMessage({
+        message: i18n.value.common.COPY_FAILED,
+        type: 'error',
+        onClose: () => {
+          isClipboard.value = true;
+        },
+      });
+    },
   });
 };
-const copyMeetingInfo = (meetingItem: DayDataT) => {
+const copyMeetingInfo = (meetingItem: DayDataT, e: MouseEvent) => {
   meetingInfo.value =
     meetingItem.name +
     `\n${i18nMeeting.value.TIME}${renderData.value.date} ${meetingItem.startTime} - ${meetingItem.endTime}`;
-  console.log('object :>> ', meetingInfo.value);
+
   detailItem.forEach((item) => {
     if (isValidKey(item.key, meetingItem) && meetingItem[item.key]) {
       meetingInfo.value =
         meetingInfo.value + `\n${item.text + meetingItem[item.key]}`;
     }
   });
-  initClipboard(meetingInfo.value);
+  if (isClipboard.value) {
+    initClipboard(meetingInfo.value, e);
+  }
 };
 </script>
 <template>
@@ -811,7 +820,7 @@ const copyMeetingInfo = (meetingItem: DayDataT) => {
               <div class="detail-time">
                 <OButton
                   class="copy-btn"
-                  @click="copyMeetingInfo(item)"
+                  @click="copyMeetingInfo(item, $event)"
                   size="mini"
                   type="text"
                 >
