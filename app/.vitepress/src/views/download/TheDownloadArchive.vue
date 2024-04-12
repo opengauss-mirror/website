@@ -3,6 +3,7 @@ import { ref, computed, watch } from 'vue';
 import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';
 import { ElMessage } from 'element-plus';
+import Clipboard from 'clipboard';
 
 import { useCommon, useCookieStatus } from '@/stores/common';
 import DownloadConfig from '@/data/download';
@@ -41,14 +42,32 @@ const getData: any = computed(() => {
   return DownloadConfig.filter((el) => el.name === selectVersion.value);
 });
 
-// 复制
-async function handleUrlCopy(value: string | undefined) {
-  if (!value) return;
-  navigator.clipboard.writeText(value);
-  ElMessage({
-    message: i18n.value.download.COPY_SUCCESS,
-    type: 'success',
+// 复制sha值
+let clipboardInstance = null;
+const initClipboard = (info: string) => {
+  clipboardInstance = new Clipboard('.down-copy', {
+    text: () => info,
   });
+  // 监听成功复制事件
+  clipboardInstance.on('success', () => {
+    ElMessage({
+      message: i18n.value.common.COPY_SUCCESS,
+      type: 'success',
+    });
+  });
+  // 监听复制失败事件
+  clipboardInstance.on('error', () => {
+    ElMessage({
+      message: i18n.value.common.COPY_FAILED,
+      type: 'error',
+    });
+  });
+};
+async function handleUrlCopy(value: string | undefined) {
+  if (!value) {
+    return;
+  }
+  initClipboard(value);
 }
 
 // 根据语言切换数据
