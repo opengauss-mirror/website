@@ -4,7 +4,7 @@ import { useData } from 'vitepress';
 import { useCommon, useCookieStatus } from '@/stores/common';
 import { useI18n } from '@/i18n';
 import { ElMessage, ElMessageBox } from 'element-plus';
-import Clipboard from 'clipboard';
+import { useClipboard } from '@/components/hooks/useClipboard';
 
 import useWindowResize from '@/components/hooks/useWindowResize';
 import { DownloadItemT } from '@/shared/@types/type-download';
@@ -75,31 +75,41 @@ const hoverTips = computed(() => (type: string | undefined) => {
 });
 
 // 复制sha值
-let clipboardInstance = null;
-const initClipboard = (info: string) => {
-  clipboardInstance = new Clipboard('.down-copy', {
-    text: () => info,
-  });
-  // 监听成功复制事件
-  clipboardInstance.on('success', () => {
-    ElMessage({
-      message: i18n.value.common.COPY_SUCCESS,
-      type: 'success',
-    });
-  });
-  // 监听复制失败事件
-  clipboardInstance.on('error', () => {
-    ElMessage({
-      message: i18n.value.common.COPY_FAILED,
-      type: 'error',
-    });
+const isClipboard = ref(true);
+const initClipboard = (text: string, e: MouseEvent) => {
+  isClipboard.value = false;
+  useClipboard({
+    text,
+    target: e,
+    success: () => {
+      ElMessage({
+        message: i18n.value.common.COPY_SUCCESS,
+        type: 'success',
+        onClose: () => {
+          isClipboard.value = true;
+        },
+      });
+    },
+    error: () => {
+      ElMessage({
+        message: i18n.value.common.COPY_FAILED,
+        type: 'error',
+        onClose: () => {
+          isClipboard.value = true;
+        },
+      });
+    },
   });
 };
-async function handleUrlCopy(value: string | undefined) {
+
+function handleUrlCopy(value: string | undefined, e: MouseEvent) {
   if (!value) {
     return;
   }
-  initClipboard(value);
+
+  if (isClipboard.value) {
+    initClipboard(value, e);
+  }
 }
 
 // 移动端提示
@@ -367,7 +377,7 @@ const collectDownloadData = (name: string) => {
                 class="down-copy"
                 size="mini"
                 type="text"
-                @click="handleUrlCopy(scope.row.sha_code)"
+                @click="handleUrlCopy(scope.row.sha_code, $event)"
               >
                 {{ shaText }}
                 <template #suffixIcon>
@@ -450,7 +460,7 @@ const collectDownloadData = (name: string) => {
             size="mini"
             type="text"
             animation
-            @click="handleUrlCopy(item.sha_code)"
+            @click="handleUrlCopy(item.sha_code, $event)"
           >
             {{ shaText }}
             <template #suffixIcon>
