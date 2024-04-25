@@ -13,6 +13,8 @@ import bannerCallFor_mb from '@/assets/category/home/banner/banner-call-for_mb.p
 import banner600 from '@/assets/category/home/banner/banner6.0.0.jpg';
 import banner600_mb from '@/assets/category/home/banner/banner6.0.0_mo.jpg';
 
+import banner7 from '@/assets/category/home/banner/banner7.jpg';
+
 import { LEARN_VIDEO_LINK, DOCS_LINK } from '@/data/url-config';
 
 // rightInset:banner右侧插图
@@ -28,6 +30,20 @@ export default {
       subtitle: '',
       desc: [''],
       btn: '',
+      className: '',
+      rightInset: '',
+      rightLink: '',
+    },
+    {
+      pcBanner: banner7,
+      moBanner: banner7,
+      link: 'https://mp.weixin.qq.com/s/ALbCj2hAsjmFfOMu9gMlEw',
+      target: '_blank',
+      title: '第七届openGauss技术文章征集',
+      titleMb: [],
+      subtitle: 'openGauss新版本征文活动来啦！',
+      desc: [''],
+      btn: '了解更多',
       className: '',
       rightInset: '',
       rightLink: '',
