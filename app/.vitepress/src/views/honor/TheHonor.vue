@@ -8,6 +8,7 @@ import { windowOpen } from '@/shared/utils';
 
 import banner from '@/assets/illustrations/banner-secondary.png';
 import illustration from '@/assets/illustrations/honor.png';
+import emailImg from '@/assets/category/member/toemail.svg';
 
 import IconChecked from '~icons/app/icon-checked.svg';
 import IconUnchecked from '~icons/app/icon-unchecked.svg';
@@ -23,6 +24,11 @@ const clickBtn = (href: string) => {
 };
 const clickDetail = (index: number) => {
   showNumber.value = index;
+};
+
+const showedCommentKey = ref(-1);
+const showPersonCard = (key: number) => {
+  showedCommentKey.value = showedCommentKey.value === key ? -1 : key;
 };
 </script>
 
@@ -107,6 +113,188 @@ const clickDetail = (index: number) => {
           </OCard>
         </div>
       </template>
+
+      <div class="excellent-panel">
+        <template v-for="item in honorData.honorList" :key="item.name">
+          <template v-if="activeYear === item.id">
+            <!-- openGauss 年度优秀开发者 -->
+            <div v-if="item.developerData">
+              <h1 class="honor-title">
+                {{ honorData.excellentDeveloperTitle }}
+              </h1>
+              <div class="developer-wrap">
+                <div
+                  class="developer-card"
+                  v-for="(devItem, idx) in item.developerData"
+                  :key="idx"
+                >
+                  <h2 class="developer-title">{{ devItem.name }}</h2>
+                  <ul class="member-list">
+                    <li v-for="(user, i) in devItem.mebmers" :key="i">
+                      <img class="avatar" :src="user.avatar" :alt="user.name" />
+                      <p class="m-name" :title="user.name">{{ user.name }}</p>
+                      <p
+                        class="m-company m-company-multi-line"
+                        :title="user.company"
+                      >
+                        {{ user.company }}
+                      </p>
+                      <p class="links" v-if="user.showEmail">
+                        <a :href="`mailto:${user.email}`"
+                          ><img class="img-email" :src="emailImg"
+                        /></a>
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="rules">
+                <div
+                  v-for="(rule, i) in item.devoloperRules"
+                  :key="i"
+                  :class="rule.type === 'tip' ? 'tip' : ''"
+                >
+                  {{ rule.value }}
+                </div>
+              </div>
+            </div>
+
+            <!-- openGauss 年度优秀SIG -->
+            <div v-if="item.sigData">
+              <h1
+                class="honor-title"
+                :class="
+                  item.id === '2022' ? 'common-title-2022' : 'common-title'
+                "
+              >
+                {{ honorData.excellentSigTitle }}
+              </h1>
+              <div class="sig-wrap">
+                <div
+                  v-for="sig in item.sigData"
+                  :key="sig.name"
+                  class="sig-card"
+                >
+                  <h1 class="sig-title" :title="sig.name">{{ sig.name }}</h1>
+                  <OButton
+                    class="repo-detail-btn"
+                    type="text"
+                    animation
+                    size="nomral"
+                    @click="clickBtn(sig.href)"
+                  >
+                    项目地址
+                    <template #suffixIcon>
+                      <OIcon class="repo-detail-icon">
+                        <IconRight />
+                      </OIcon>
+                    </template>
+                  </OButton>
+                </div>
+              </div>
+
+              <div class="rules">
+                <div
+                  v-for="(rule, i) in item.sigRules"
+                  :key="i"
+                  :class="rule.type === 'tip' ? 'tip' : ''"
+                >
+                  {{ rule.value }}
+                </div>
+              </div>
+            </div>
+
+            <!-- openGauss 优秀企业贡献奖 -->
+            <div v-if="item.enterpriseData">
+              <h1 class="honor-title common-title">
+                {{ honorData.excellentEnterpriseTitle }}
+              </h1>
+              <div class="enterprise-wrap">
+                <div
+                  v-for="enterprise in item.enterpriseData"
+                  :key="enterprise.firstName + enterprise.secondName"
+                  class="enterprise-card"
+                >
+                  <div
+                    class="enterprise-title-wrap"
+                    :title="enterprise.firstName + enterprise.secondName"
+                  >
+                    <p class="enterprise-title" :title="enterprise.firstName">
+                      {{ enterprise.firstName }}
+                    </p>
+                    <p class="enterprise-title" :title="enterprise.secondName">
+                      {{ enterprise.secondName }}
+                    </p>
+                  </div>
+                  <p class="enterprise-prize-title">openGauss 优秀企业贡献奖</p>
+                </div>
+              </div>
+
+              <div class="rules">
+                <div
+                  v-for="(rule, i) in item.enterpriseRules"
+                  :key="i"
+                  :class="rule.type === 'tip' ? 'tip' : ''"
+                >
+                  {{ rule.value }}
+                </div>
+              </div>
+            </div>
+
+            <!-- openGauss 优秀个人贡献奖 -->
+            <div v-if="item.personData">
+              <h1 class="honor-title common-title">
+                {{ honorData.excellentPersonTitle }}
+              </h1>
+              <div class="person-wrap">
+                <div
+                  v-for="(person, i) in item.personData"
+                  :key="i"
+                  class="person-card"
+                  @mouseenter="showPersonCard(i)"
+                  @mouseleave="showPersonCard(-1)"
+                >
+                  <div>
+                    <img
+                      class="avatar"
+                      :src="person.avatar"
+                      :alt="person.name"
+                    />
+                  </div>
+                  <p class="name">{{ person.name }}</p>
+                  <p class="company">{{ person.company }}</p>
+                  <Transition name="bounce">
+                    <div v-if="showedCommentKey === i" class="comment">
+                      <template v-for="c in person.comment">
+                        <a
+                          v-if="c.startsWith('link: ')"
+                          :href="c.replace('link: ', '')"
+                          class="link"
+                          target="_blank"
+                          @click.stop
+                          >{{ c.replace('link: ', '') }}</a
+                        >
+                        <p v-else @click.stop>{{ c }}</p>
+                      </template>
+                    </div>
+                  </Transition>
+                </div>
+              </div>
+
+              <div class="rules">
+                <div
+                  v-for="(rule, i) in item.personRules"
+                  :key="i"
+                  :class="rule.type === 'tip' ? 'tip' : ''"
+                >
+                  {{ rule.value }}
+                </div>
+              </div>
+            </div>
+          </template>
+        </template>
+      </div>
     </div>
   </AppContent>
 </template>
@@ -301,6 +489,359 @@ const clickDetail = (index: number) => {
         }
       }
     }
+  }
+
+  .excellent-panel {
+    padding: var(--o-spacing-h1) 0 0 0;
+    color: var(--o-color-text1);
+    font-family: PingFangSC-Regular;
+
+    @media (max-width: 768px) {
+      padding: var(--o-spacing-h5) 0 0 0;
+    }
+
+    .honor-title {
+      margin-bottom: var(--o-spacing-h2);
+      line-height: var(--o-line-height-h3);
+      text-align: center;
+      font-size: var(--o-font-size-h3);
+      font-weight: 200;
+      font-family: PingFangSC-Light;
+
+      @media (max-width: 768px) {
+        margin-bottom: var(--o-spacing-h5);
+        font-size: var(--o-font-size-h7);
+      }
+    }
+
+    .common-title-2022 {
+      margin-top: 172px;
+    }
+
+    .common-title {
+      margin-top: var(--o-spacing-h1);
+    }
+
+    .rules {
+      margin-top: var(--o-spacing-h4);
+      line-height: 16px;
+      font-size: var(--o-font-size-tip);
+      color: #4d4d4d;
+
+      .tip {
+        margin-bottom: var(--o-spacing-h8);
+      }
+    }
+
+    .avatar {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+    }
+
+    .developer-wrap {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--o-spacing-h4);
+
+      .developer-card:first-child {
+        grid-column: 1 / span 2;
+
+        @media (max-width: 768px) {
+          grid-column: auto;
+        }
+      }
+
+      @media (max-width: 768px) {
+        grid-template-columns: repeat(1, 1fr);
+        gap: var(--o-spacing-h5);
+      }
+
+      .developer-card {
+        padding: var(--o-spacing-h2);
+        background: var(--o-color-bg2);
+        box-shadow: 0 1px 5px 0 rgba(45, 47, 51, 0.1);
+
+        @media (max-width: 768px) {
+          padding: var(--o-spacing-h4);
+          grid-column: auto;
+        }
+
+        .developer-title {
+          margin-bottom: var(--o-spacing-h4);
+          text-align: center;
+          font-size: var(-o-font-size-h5);
+          font-weight: 500;
+
+          @media (max-width: 768px) {
+            font-size: var(--o-font-size-h7);
+          }
+        }
+
+        .member-list {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+
+          li {
+            vertical-align: top;
+            text-align: center;
+            padding: 0 var(--o-spacing-h3);
+
+            .m-name {
+              margin-top: var(--o-spacing-h8);
+              font-size: var(--o-font-size-h8);
+              line-height: var(--o-line-height-h8);
+            }
+
+            .m-company {
+              min-height: var(--o-line-height-h4);
+              margin-top: var(--o-spacing-h10);
+              color: #999999;
+              font-size: var(--o-font-size-tip);
+              line-height: var(--o-line-height-tip);
+              text-align: center;
+            }
+
+            .m-company-multi-line {
+              max-width: 100px;
+              word-break: break-all;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: 2;
+              overflow: hidden;
+            }
+
+            p {
+              font-size: var(-o-font-size-h8);
+              line-height: var(--o-line-height-h8);
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-line-clamp: 1;
+              -webkit-box-orient: vertical;
+            }
+
+            .links {
+              margin-top: var(--o-spacing-h8);
+              padding: 4px 2px;
+              text-align: center;
+
+              .img-email {
+                width: 20px;
+                height: 16px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .sig-wrap {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--o-spacing-h4);
+
+      @media (max-width: 768px) {
+        grid-template-columns: repeat(1, 1fr);
+        gap: var(--o-spacing-h5);
+      }
+
+      .sig-card {
+        padding: var(--o-spacing-h4) var(--o-spacing-h3);
+        background-color: var(--o-color-bg2);
+        background-image: url(@/assets/category/honor/sig-item-bg.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        box-shadow: 0 1px 5px 0 rgba(45, 47, 51, 0.1);
+
+        @media (max-width: 768px) {
+          padding: var(--o-spacing-h5) var(--o-spacing-h4);
+          gap: var(--o-spacing-h5);
+        }
+
+        .sig-title {
+          font-family: HarmonyHeiTi-Medium;
+          font-size: var(--o-font-size-h5);
+          letter-spacing: 0;
+          line-height: var(--o-line-height-h5);
+          font-weight: 500;
+
+          @media (max-width: 768px) {
+            font-size: var(--o-font-size-h6);
+            line-height: var(--o-line-height-h6);
+          }
+        }
+
+        .repo-detail-btn {
+          margin-top: var(--o-spacing-h6);
+          padding-left: 0;
+          padding-bottom: 0;
+          color: var(--o-color-text3);
+          font-size: var(--o-font-size-text);
+          line-height: var(--o-line-height-text);
+          font-family: PingFangSC-Regular;
+
+          @media (max-width: 768px) {
+            margin-top: 24px;
+            font-size: var(--o-font-size-tip);
+            line-height: var(--o-line-height-tip);
+            padding-bottom: 0;
+            padding-top: 0;
+          }
+
+          .repo-detail-icon {
+            color: var(--o-color-brand1);
+            font-size: var(--o-font-size-h8);
+          }
+        }
+      }
+    }
+
+    .enterprise-wrap {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: var(--o-spacing-h4);
+
+      @media (max-width: 1500px) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      @media (max-width: 1200px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @media (max-width: 900px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--o-spacing-h6);
+      }
+
+      .enterprise-card {
+        background: var(--o-color-bg2);
+        box-shadow: 0 1px 5px 0 rgba(45, 47, 51, 0.1);
+        background-color: var(--o-color-bg2);
+        background-image: url(@/assets/category/honor/enterprise-item-bg.png);
+        background-repeat: no-repeat;
+        background-size: 90% 90%;
+        background-position: center;
+        text-align: center;
+
+        .enterprise-title-wrap {
+          padding: 65px 0 77px;
+
+          .enterprise-title {
+            padding: 0 var(--o-spacing-h8);
+            font-family: HarmonyHeiTi-Bold;
+            font-size: var(--o-font-size-h7);
+            font-weight: 700;
+
+            @media (max-width: 900px) {
+              font-size: var(--o-font-size-text);
+            }
+          }
+        }
+
+        .enterprise-prize-title {
+          padding: 24px 12px 30px;
+          line-height: var(--o-line-height-h8);
+          font-family: HarmonyHeiTi;
+          font-size: var(--o-font-size-h8);
+
+          @media (max-width: 900px) {
+            font-size: var(--o-font-size-tip);
+          }
+        }
+      }
+    }
+
+    .person-wrap {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--o-spacing-h4);
+      font-family: PingFangSC-Regular;
+
+      @media (max-width: 1500px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @media (max-width: 1100px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (max-width: 800px) {
+        grid-template-columns: repeat(1, 1fr);
+        gap: var(--o-spacing-h5);
+      }
+
+      .person-card {
+        position: relative;
+        padding: 102px 118px;
+        background: var(--o-color-bg2);
+        box-shadow: 0 1px 5px 0 rgba(45, 47, 51, 0.1);
+        text-align: center;
+
+        .name {
+          margin-top: var(--o-spacing-h8);
+          font-size: var(--o-font-size-h8);
+          line-height: var(--o-line-height-h8);
+        }
+
+        .company {
+          margin-top: var(--o-spacing-h8);
+          font-size: var(--o-font-size-tip);
+          line-height: var(--o-line-height-tip);
+          color: #999999;
+        }
+
+        .comment {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          padding: var(--o-spacing-h6);
+          line-height: 20px;
+          background: #2d0a60;
+          color: var(--o-color-white);
+          opacity: 0.9;
+          font-size: var(--o-font-size-text);
+          text-align: left;
+
+          @media (max-width: 768px) {
+            font-size: var(--o-font-size-tip);
+          }
+
+          .link {
+            word-wrap: break-word;
+            word-break: break-all;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
+
+.bounce-enter-active {
+  animation: anim-bounce-in 0.2s;
+}
+.bounce-leave-active {
+  animation: anim-bounce-in 0.1s reverse;
+}
+
+@keyframes anim-bounce-in {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }
 </style>
