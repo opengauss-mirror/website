@@ -2,7 +2,7 @@
 title: 'About Us'
 ---
 
-<div class='markdown legal-privacy' >
+<div class='markdown markdown-statement' >
 
 <h1>About Us</h1>
 

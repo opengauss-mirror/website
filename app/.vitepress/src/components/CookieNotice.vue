@@ -8,7 +8,7 @@ import {
   getCustomCookie,
   removeCustomCookie,
 } from '@/shared/utils';
-import { useCookieStatus, usePrivacyVersion } from '@/stores/common';
+import { useCookieStore } from '@/stores/common';
 import { useScreen } from '@/shared/useScreen';
 import { useI18n } from '@/i18n';
 import { BAIDU_HM } from '@/data/url-config';
@@ -20,8 +20,7 @@ const i18n = useI18n();
 const { lang } = useData();
 const isZh = computed(() => (lang.value === 'zh' ? true : false));
 
-const cookieStatus = useCookieStatus();
-const privacyVersion = usePrivacyVersion();
+const cookieStore = useCookieStore();
 
 const route = useRoute();
 
@@ -65,9 +64,9 @@ const getUserCookieStatus = () => {
   const cookieVal = getCustomCookie(COOKEY_KEY) ?? '0';
 
   const cookieStatusVal = cookieVal[0];
-  const privacyVersionVal = cookieVal.slice(1);
+  const cookieVersionVal = cookieVal.slice(1);
 
-  if (privacyVersionVal !== privacyVersion.version) {
+  if (cookieVersionVal !== cookieStore.version) {
     return COOKIE_AGREED_STATUS.NOT_SIGNED;
   }
 
@@ -85,17 +84,30 @@ const isNotSigned = () => {
   return getUserCookieStatus() === COOKIE_AGREED_STATUS.NOT_SIGNED;
 };
 
-// 是否未签署
+// 是否全部同意
 const isAllAgreed = () => {
   return getUserCookieStatus() === COOKIE_AGREED_STATUS.ALL_AGREED;
 };
 
 // 埋点 百度统计
 const initSensor = () => {
+  // 百度统计
   (function () {
     const hm = document.createElement('script');
     hm.src = BAIDU_HM;
     const s = document.getElementsByTagName('HEAD')[0];
+    s.appendChild(hm);
+  })();
+
+  // ds埋点
+  (function () {
+    const sensorsdata = document.createElement('script');
+    sensorsdata.src = '/allow_sensor/sensorsdata.min.js';
+
+    const hm = document.createElement('script');
+    hm.src = '/allow_sensor/sensors.js';
+    const s = document.getElementsByTagName('HEAD')[0];
+    s.appendChild(sensorsdata);
     s.appendChild(hm);
   })();
 };
@@ -107,7 +119,7 @@ onMounted(() => {
   }
 
   if (isAllAgreed()) {
-    cookieStatus.status = COOKIE_AGREED_STATUS.ALL_AGREED;
+    cookieStore.status = COOKIE_AGREED_STATUS.ALL_AGREED;
     analysisAllowed.value = true;
     initSensor();
   }
@@ -115,11 +127,11 @@ onMounted(() => {
 
 // 用户同意所有cookie
 const acceptAll = () => {
-  cookieStatus.status = COOKIE_AGREED_STATUS.ALL_AGREED;
+  cookieStore.status = COOKIE_AGREED_STATUS.ALL_AGREED;
   removeCustomCookie(COOKEY_KEY);
   setCustomCookie(
     COOKEY_KEY,
-    `${COOKIE_AGREED_STATUS.ALL_AGREED}${privacyVersion.version}`,
+    `${COOKIE_AGREED_STATUS.ALL_AGREED}${cookieStore.version}`,
     180
   );
   toggleNoticeVisible(false);
@@ -128,11 +140,11 @@ const acceptAll = () => {
 
 // 用户拒绝所有cookie，即仅同意必要cookie
 const rejectAll = () => {
-  cookieStatus.status = COOKIE_AGREED_STATUS.NECCESSARY_AGREED;
+  cookieStore.status = COOKIE_AGREED_STATUS.NECCESSARY_AGREED;
   removeCustomCookie(COOKEY_KEY);
   setCustomCookie(
     COOKEY_KEY,
-    `${COOKIE_AGREED_STATUS.NECCESSARY_AGREED}${privacyVersion.version}`,
+    `${COOKIE_AGREED_STATUS.NECCESSARY_AGREED}${cookieStore.version}`,
     180
   );
   toggleNoticeVisible(false);
@@ -181,7 +193,7 @@ watch(
           <p class="cookie-title">{{ i18n.cookie.title }}</p>
           <p class="cookie-desc">
             {{ i18n.cookie.desc }}
-            <a :href="isZh ? '/zh/privacyPolicy/' : '/en/privacyPolicy/'">
+            <a :href="isZh ? '/zh/cookies/' : '/en/cookies/'" target="_blank">
               {{ i18n.cookie.link }} </a
             >{{ isZh ? '。' : '.' }}
           </p>

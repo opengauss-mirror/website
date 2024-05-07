@@ -49,22 +49,27 @@ export default {
       {
         NAME: `品牌`,
         URL: `/zh/brand/`,
-        TARGET: `_self`,
+        TARGET: `_blank`,
       },
       {
         NAME: `隐私政策`,
         URL: `/zh/privacyPolicy/`,
-        TARGET: `_self`,
+        TARGET: `_blank`,
       },
       {
         NAME: `法律声明`,
         URL: `/zh/legal/`,
-        TARGET: `_self`,
+        TARGET: `_blank`,
+      },
+      {
+        NAME: `关于cookies`,
+        URL: `/zh/cookies/`,
+        TARGET: `_blank`,
       },
       {
         NAME: `关于我们`,
         URL: `/zh/aboutUs/`,
-        TARGET: `_self`,
+        TARGET: `_blank`,
       },
     ],
     QR_CODE: `扫码关注公众号`,
