@@ -60,7 +60,7 @@ const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
   }
 }
 .list {
-  margin-top: var(--o-spacing-h5);
+  margin-top: var(--o-spacing-h2);
   .item {
     font-size: var(--o-font-size-h7);
     color: var(--o-color-text1);

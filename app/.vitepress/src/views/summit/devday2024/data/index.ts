@@ -100,7 +100,7 @@ export default {
               {
                 title: 'SIG组版本规划工作会议',
                 date: '2024/06/21',
-                time: '09:00-18:00',
+                time: '15:00-18:00',
               }
             ]
           }
@@ -117,10 +117,12 @@ export default {
       {
         title: 'Call  For Speaker',
         text: '提交演示议题',
+        href: 'https://shimo.im/forms/9030Jd4z85TWEgkw/fill',
       },
       {
         title: 'Call for SIG',
         text: '申报现场会议',
+        href: 'https://shimo.im/forms/m8AZMlraoQHKnjkb/fill',
       }
     ]
   }

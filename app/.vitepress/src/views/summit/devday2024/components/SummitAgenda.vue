@@ -45,12 +45,7 @@ const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
   justify-content: center;
   margin-top: 44px;
   img {
-    width: 312px;
-  }
-  @media screen and (max-width: 1440px) {
-    img {
-      width: 250px;
-    }
+    width: 174px;
   }
   @media (max-width: 767px) {
     height: 32px;

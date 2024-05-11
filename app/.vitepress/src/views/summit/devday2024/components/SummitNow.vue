@@ -14,6 +14,10 @@ defineProps({
 
 const commonStore = useCommon();
 const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
+
+const jumpPage = (href: string) => {
+  window.open(href)
+}
 </script>
 <template>
   <div class="summit-now">
@@ -22,7 +26,7 @@ const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
     </div>
     <p class="title">{{ nowData.title }}</p>
     <ul class="list">
-      <li v-for="(item, i) in nowData.list" :key="i" class="item">
+      <li v-for="(item, i) in nowData.list" :key="i" class="item" @click="jumpPage(item.href)">
         <p class="item-title">{{ item.title }}</p>
         <a :href="item.href" target="_blank" rel="noopener noreferrer" class="link">
           {{ item.text }}
@@ -40,7 +44,7 @@ const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
   justify-content: center;
   margin-top: 44px;
   img {
-    width: 312px;
+    width: 282px;
   }
   @media (max-width: 767px) {
     height: 32px;
