@@ -57,7 +57,7 @@ export default {
             type: '下午',
             children: [
               {
-                title: '理事会会工作会议',
+                title: '理事会工作会议',
                 date: '2024/06/20',
                 time: '14:00-17:30',
               }
