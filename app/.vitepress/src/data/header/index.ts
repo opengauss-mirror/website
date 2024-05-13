@@ -165,7 +165,7 @@ const navData: Array<NavItemT> = [
         label: { zh: '峰会' },
         id: 'summit',
         href: {
-          zh: '/zh/summit/summit2023/',
+          zh: '/zh/summit/devday2024/',
         },
       },
     ],
