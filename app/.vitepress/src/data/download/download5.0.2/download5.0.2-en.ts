@@ -10,37 +10,37 @@ export default [
         os: 'openEuler 22.03 LTS',
         content: [
           {
-            name: 'openGauss_5.0.1 Enterprise-Edition',
+            name: 'openGauss_5.0.2 Enterprise-Edition',
             table: 'server',
-            size: '125.09MB',
+            size: '123MB',
             edition: 'enterprise',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/arm_2203/openGauss-5.0.1-openEuler-64bit-all.tar.gz`,
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/arm_2203/openGauss-5.0.2-openEuler-64bit-all.tar.gz`,
             sha_code:
-              '942e5d664918643b701fa393d99f813768dce7b87c79d21542b2b823c3601cba',
+              '1f562c212b0a776812deabe129b62e9abbd885c0a57cef486c1349e5d52cf26f',
             docsName: 'Enterprise-Edition Installation Guide',
             docs_url:
               '/docs/5.0.0/docs/InstallationGuide/enterprise-edition-installation-process.html',
           },
           {
-            name: 'openGauss_5.0.1 Simplified',
+            name: 'openGauss_5.0.2 Simplified',
             table: 'server',
-            size: '93.07MB',
+            size: '92MB',
             edition: 'simple',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/arm_2203/openGauss-5.0.1-openEuler-64bit.tar.bz2`,
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/arm_2203/openGauss-5.0.2-openEuler-64bit.tar.bz2`,
             sha_code:
-              'e7014722976e75f68128ebbbc08db34d226766c39cadc47ece3e77ca7036da56',
+              '0d527e621203d2f1535291655321bf2185d2106e3d96101bdd643facd22d4ee4',
             docsName: 'Simplified Installation Guide',
             docs_url:
               '/docs/5.0.0/docs/InstallationGuide/simplified-installation-process.html',
           },
           {
-            name: 'openGauss_5.0.1 Lite',
+            name: 'openGauss_5.0.2 Lite',
             table: 'server',
-            size: '25.12MB',
+            size: '25MB',
             edition: 'lite',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/arm_2203/openGauss-Lite-5.0.1-openEuler-aarch64.tar.gz`,
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/arm_2203/openGauss-Lite-5.0.2-openEuler-aarch64.tar.gz`,
             sha_code:
-              '7a53ce1c5159c1c271abdd7110c1b5d20fecc2742610cc427af34da8bd6cf007',
+              'd501f8756cfc225bd54c165aac85333be97c904e71559faae51238ec91ce60f7',
             docsName: 'Lite Installation Guide',
             docs_url:
               '/docs/5.0.0-lite/docs/InstallationGuide/installation.html',
@@ -54,37 +54,37 @@ export default [
         os: 'openEuler 22.03 LTS',
         content: [
           {
-            name: 'openGauss_5.0.1 Enterprise-Edition',
+            name: 'openGauss_5.0.2 Enterprise-Edition',
             table: 'server',
-            size: '130.85MB',
+            size: '129MB',
             edition: 'enterprise',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/x86_openEuler_2203/openGauss-5.0.1-openEuler-64bit-all.tar.gz`,
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/x86_openEuler_2203/openGauss-5.0.2-openEuler-64bit-all.tar.gz`,
             sha_code:
-              '79234ea93152a3be27fbd80e4080d8bba7c7e8971fcd33ec36cf3d4f00d951ce',
+              'f86a79483a184a595b3a39efc34ef9f0e641da4b87d72def9629ca00afbb2a6e',
             docsName: 'Enterprise-Edition Installation Guide',
             docs_url:
               '/docs/5.0.0/docs/InstallationGuide/enterprise-edition-installation-process.html',
           },
           {
-            name: 'openGauss_5.0.1 Simplified',
+            name: 'openGauss_5.0.2 Simplified',
             table: 'server',
-            size: '98.53MB',
+            size: '98MB',
             edition: 'simple',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/x86_openEuler_2203/openGauss-5.0.1-openEuler-64bit.tar.bz2`,
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/x86_openEuler_2203/openGauss-5.0.2-openEuler-64bit.tar.bz2`,
             sha_code:
-              '615833e160c7e69ea5014e7a238bb967bd1ee938b03b11a0697d2c548c764d74',
+              '32a5d26813486ae098cd1da438554ea806b35eed9dabfb4e460b5b966d11a9a1',
             docsName: 'Simplified Installation Guide',
             docs_url:
               '/docs/5.0.0/docs/InstallationGuide/simplified-installation-process.html',
           },
           {
-            name: 'openGauss_5.0.1 Lite',
+            name: 'openGauss_5.0.2 Lite',
             table: 'server',
-            size: '26.35MB',
+            size: '27MB',
             edition: 'lite',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/x86_openEuler_2203/openGauss-Lite-5.0.1-openEuler-x86_64.tar.gz`,
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/x86_openEuler_2203/openGauss-Lite-5.0.2-openEuler-x86_64.tar.gz`,
             sha_code:
-              '1e1fe3bce64dd1cf4ce7aff614277487257d3efbd5d9a6f30b663df9409d97f5',
+              'e0e8c6c26fbe0c425fe9ef7ff1e3bfa18a6fb5065f927ea254f0e3ed0cc8c780',
             docsName: 'Lite Installation Guide',
             docs_url:
               '/docs/5.0.0-lite/docs/InstallationGuide/installation.html',
@@ -98,37 +98,37 @@ export default [
         os: 'openEuler 20.03 LTS',
         content: [
           {
-            name: 'openGauss_5.0.1 Enterprise-Edition',
+            name: 'openGauss_5.0.2 Enterprise-Edition',
             table: 'server',
-            size: '125.05MB',
+            size: '123MB',
             edition: 'enterprise',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/arm/openGauss-5.0.1-openEuler-64bit-all.tar.gz`,
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/arm/openGauss-5.0.2-openEuler-64bit-all.tar.gz`,
             sha_code:
-              '6123f190856a5da0a50d46812eac8c618182065ab3771d405f5059ba304a9f47',
+              '3265c751e033bc7e95327fb448d07777d481f5b611e6b10776be6f8b59a11dbf',
             docsName: 'Enterprise-Edition Installation Guide',
             docs_url:
               '/docs/5.0.0/docs/InstallationGuide/enterprise-edition-installation-process.html',
           },
           {
-            name: 'openGauss_5.0.1 Simplified',
+            name: 'openGauss_5.0.2 Simplified',
             table: 'server',
-            size: '93.09MB',
+            size: '92MB',
             edition: 'simple',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/arm/openGauss-5.0.1-openEuler-64bit.tar.bz2`,
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/arm/openGauss-5.0.2-openEuler-64bit.tar.bz2`,
             sha_code:
-              '5550c246b10bf462210d527859337c31d448d4b873715cd6ce0dbbeb0a617336',
+              'bee85c8ec9d656bba388384d5b62ffdcfb47a92ad1d2e140e3fff4b0586328ee',
             docsName: 'Simplified Installation Guide',
             docs_url:
               '/docs/5.0.0/docs/InstallationGuide/simplified-installation-process.html',
           },
           {
-            name: 'openGauss_5.0.1 Lite',
+            name: 'openGauss_5.0.2 Lite',
             table: 'server',
-            size: '25.12MB',
+            size: '25MB',
             edition: 'simple',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/arm/openGauss-Lite-5.0.1-openEuler-aarch64.tar.gz`,
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/arm/openGauss-Lite-5.0.2-openEuler-aarch64.tar.gz`,
             sha_code:
-              '9b68924642af14d22337540b6c2e4f64586515379e1578d6eff206501f1ea5f6',
+              '71464586c4dd29c0398646f5b7158ffe311f9deb787d0f2734f0a9acefe9c1ce',
             docsName: 'Lite Installation Guide',
             docs_url:
               '/docs/5.0.0-lite/docs/InstallationGuide/installation.html',
@@ -142,37 +142,37 @@ export default [
         docs: true,
         content: [
           {
-            name: 'openGauss_5.0.1 Enterprise-Edition',
+            name: 'openGauss_5.0.2 Enterprise-Edition',
             table: 'server',
-            size: '130.89MB',
+            size: '129MB',
             edition: 'enterprise',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/x86_openEuler/openGauss-5.0.1-openEuler-64bit-all.tar.gz`,
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/x86_openEuler/openGauss-5.0.2-openEuler-64bit-all.tar.gz`,
             sha_code:
-              'c4687aa6bb02ffc1402b972a01a2515ba8524def624f4c8227c40dcaf38aa9e4',
+              'fc736c114576db7a10fca9df05d1cf9dda6cda14ff595fc0841b585b6df1d29c',
             docsName: 'Enterprise-Edition Installation Guide',
             docs_url:
               '/docs/5.0.0/docs/InstallationGuide/enterprise-edition-installation-process.html',
           },
           {
-            name: 'openGauss_5.0.1 Simplified',
+            name: 'openGauss_5.0.2 Simplified',
             table: 'server',
-            size: '98.56MB',
+            size: '98MB',
             edition: 'simple',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/x86_openEuler/openGauss-5.0.1-openEuler-64bit.tar.bz2`,
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/x86_openEuler/openGauss-5.0.2-openEuler-64bit.tar.bz2`,
             sha_code:
-              '5e35ac31fdc03cbc64d00f96d8f3802d85092cd2135f1728068ae4c8aec94584',
+              '665b2df4be1cd0de6f03e9488b8fd53a0b5a59952913d6d6de2208b95c53ab4e',
             docsName: 'Simplified Installation Guide',
             docs_url:
               '/docs/5.0.0/docs/InstallationGuide/simplified-installation-process.html',
           },
           {
-            name: 'openGauss_5.0.1 Lite',
+            name: 'openGauss_5.0.2 ������',
             table: 'server',
-            size: '26.35MB',
+            size: '27MB',
             edition: 'simple',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/x86_openEuler/openGauss-Lite-5.0.1-openEuler-x86_64.tar.gz`,
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/x86_openEuler/openGauss-Lite-5.0.2-openEuler-x86_64.tar.gz`,
             sha_code:
-              'fcb5c96931ba8b6dc69929380f3b3c0fda0a5158666511ab6b7d20fb1c07e2e7',
+              '372d157d72329df55eed1ab572d80b2846c835e3ebd60f6c5f0e88a922698d06',
             docsName: 'Lite Installation Guide',
             docs_url:
               '/docs/5.0.0-lite/docs/InstallationGuide/installation.html',
@@ -186,37 +186,37 @@ export default [
         docs: true,
         content: [
           {
-            name: 'openGauss_5.0.1 Enterprise-Edition',
+            name: 'openGauss_5.0.2 Enterprise-Edition',
             table: 'server',
-            size: '130.71MB',
+            size: '129MB',
             edition: 'enterprise',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/x86/openGauss-5.0.1-CentOS-64bit-all.tar.gz`,
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/x86/openGauss-5.0.2-CentOS-64bit-all.tar.gz`,
             sha_code:
-              'de94515c28f83d1d801ce5bec17d3fb36265edb223fbdc409c3647b120aaae94',
+              '9744bb4e7ac9706d9aef9f418ec508d7e197a200c5eb91f9c37fc4fb747af74b',
             docsName: 'Enterprise-Edition Installation Guide',
             docs_url:
               '/docs/5.0.0/docs/InstallationGuide/enterprise-edition-installation-process.html',
           },
           {
-            name: 'openGauss_5.0.1 Simplified',
+            name: 'openGauss_5.0.2 Simplified',
             table: 'server',
-            size: '97.56MB',
+            size: '97MB',
             edition: 'simple',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/x86/openGauss-5.0.1-CentOS-64bit.tar.bz2`,
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/x86/openGauss-5.0.2-CentOS-64bit.tar.bz2`,
             sha_code:
-              '6e2ee1eadd12fb619185362f74c725a5f9b67674df67e2ee1064980a34f725bc',
+              '13d427eb75429eb6377e87faa5eb9b7da9bb89895fb65dbcdf677547adfadf8b',
             docsName: 'Simplified Installation Guide',
             docs_url:
               '/docs/5.0.0/docs/InstallationGuide/simplified-installation-process.html',
           },
           {
-            name: 'openGauss_5.0.1 Lite',
+            name: 'openGauss_5.0.2 Lite',
             table: 'server',
-            size: '26.16MB',
+            size: '26MB',
             edition: 'enterprise',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/x86/openGauss-Lite-5.0.1-CentOS-x86_64.tar.gz`,
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/x86/openGauss-Lite-5.0.2-CentOS-x86_64.tar.gz`,
             sha_code:
-              'ee9a40d7ca2fe07344976a7d913cba3abf9380ed877fe85b4137a581cbabcf77',
+              'ddc68d7f1a666756ac0dba3dca76b320d98f13e77807833d2cf538f6fdc0b05c',
             docsName: 'Lite Installation Guide',
             docs_url:
               '/docs/5.0.0-lite/docs/InstallationGuide/installation.html',
@@ -234,38 +234,38 @@ export default [
         os: 'openEuler 22.03 LTS',
         content: [
           {
-            name: 'JDBC_5.0.1',
-            size: '1.67MB',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/arm_2203/openGauss-5.0.1-JDBC.tar.gz`,
+            name: 'JDBC_5.0.2',
+            size: '1.7MB',
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/arm_2203/openGauss-5.0.2-JDBC.tar.gz`,
             sha_code:
-              'd357db5549dde8e05b087b4a8b09c35bce25aee56515051b47294c0f77eb0567',
+              '4a235f1bedf84a33a1f5e7d5092d012908ef7770775bd4cecc954dabaf2e8c60',
             docsName: '',
             docs_url: '',
           },
           {
-            name: 'ODBC_5.0.1',
-            size: '8.52MB',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/arm_2203/openGauss-5.0.1-ODBC.tar.gz`,
+            name: 'ODBC_5.0.2',
+            size: '8.4MB',
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/arm_2203/openGauss-5.0.2-ODBC.tar.gz`,
             sha_code:
-              '63b5aacff7db8ace0ed7e271571177b6b1a884bbd98de6e1c463d4dc3b1a1e8e',
+              '256fc28c791864c4583708c2bb2701fc21af4a3598e396b20669d45ba974017f',
             docsName: '',
             docs_url: '',
           },
           {
-            name: 'Python-psycopg2_5.0.1',
-            size: '2.67MB',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/arm_2203/openGauss-5.0.1-openEuler-aarch64-Python.tar.gz`,
+            name: 'Python-psycopg2_5.0.2',
+            size: '2.7MB',
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/arm_2203/openGauss-5.0.2-openEuler-aarch64-Python.tar.gz`,
             sha_code:
-              'e9f52382c37cc87c63bb4bbabb3d8cdd91e0e5f70ab094e890a77b01365b0101',
+              'aa358e7dc67514c0bdda7ef7c25e578e60762b66da87f13105dde12a520f9bca',
             docsName: '',
             docs_url: '',
           },
           {
-            name: 'libpq_5.0.1',
-            size: '4.62MB',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/arm_2203/openGauss-5.0.1-openEuler-64bit-Libpq.tar.gz`,
+            name: 'libpq_5.0.2',
+            size: '4.6MB',
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/arm_2203/openGauss-5.0.2-openEuler-64bit-Libpq.tar.gz`,
             sha_code:
-              '3bbafd26a764aa7bc523f52ce7f38c2d44cca0c49c09970c1f8023986d7ed7ee',
+              'e7258efdbf1166b7db215cd4530c08587042dd5a7e1fe37ed5fe1559f4e507e9',
             docsName: '',
             docs_url: '',
           },
@@ -277,38 +277,38 @@ export default [
         os: 'openEuler 22.03 LTS',
         content: [
           {
-            name: 'JDBC_5.0.1',
-            size: '1.67MB',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/x86_openEuler_2203/openGauss-5.0.1-JDBC.tar.gz`,
+            name: 'JDBC_5.0.2',
+            size: '1.7MB',
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/x86_openEuler_2203/openGauss-5.0.2-JDBC.tar.gz`,
             sha_code:
-              '09c8a6a7046077eb5437a885a6889b5b23643210e09c5a12ed162df20e8c5d7f',
+              '2e71fe1dbda24951fbab956c9e03b7ca9737d494e7718fcd3dce3594d6c40187',
             docsName: '',
             docs_url: '',
           },
           {
-            name: 'ODBC_5.0.1',
-            size: '9.24MB',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/x86_openEuler_2203/openGauss-5.0.1-ODBC.tar.gz`,
+            name: 'ODBC_5.0.2',
+            size: '9.1MB',
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/x86_openEuler_2203/openGauss-5.0.2-ODBC.tar.gz`,
             sha_code:
-              'e044b6b4660a91ab83f9e7d344cb2ef2179202fad42221ea3dffcd4f7707d1a4',
+              '4b9af5aa62c1ebce776cc521311ba2ad156c3f8db00a465c488aa3a02bf82af9',
             docsName: '',
             docs_url: '',
           },
           {
-            name: 'Python-psycopg2_5.0.1',
-            size: '2.98MB',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/x86_openEuler_2203/openGauss-5.0.1-openEuler-x86_64-Python.tar.gz`,
+            name: 'Python-psycopg2_5.0.2',
+            size: '3.0MB',
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/x86_openEuler_2203/openGauss-5.0.2-openEuler-x86_64-Python.tar.gz`,
             sha_code:
-              'f45b431f6ab58914975b0992c5f3156c493a6194cb5f487c5f19275b13bed610',
+              '062a75176d4ddaad512633ac620a15cc2affd16de8675f8a25b422291e9f1ef6',
             docsName: '',
             docs_url: '',
           },
           {
-            name: 'libpq_5.0.1',
-            size: '5.12MB',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/x86_openEuler_2203/openGauss-5.0.1-openEuler-64bit-Libpq.tar.gz`,
+            name: 'libpq_5.0.2',
+            size: '5.1MB',
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/x86_openEuler_2203/openGauss-5.0.2-openEuler-64bit-Libpq.tar.gz`,
             sha_code:
-              '0a9951385805a330094af7d1457c23421c8e431093f174e7151787ff3773f8a6',
+              '7706cfaa797d4efbae9b28aad33409f7eb92f6d6df8e641c8533d08f13502f77',
             docsName: '',
             docs_url: '',
           },
@@ -320,38 +320,38 @@ export default [
         os: 'openEuler 20.03 LTS',
         content: [
           {
-            name: 'JDBC_5.0.1',
-            size: '1.67MB',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/arm/openGauss-5.0.1-JDBC.tar.gz`,
+            name: 'JDBC_5.0.2',
+            size: '1.7MB',
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/arm/openGauss-5.0.2-JDBC.tar.gz`,
             sha_code:
-              'cb77932ebd349ec2552e98e3c57e021939149a4cd9f00be38016fdb0e337e466',
+              'dc6defc7ae14964aa5ddf1cc12098ef83156b669d1a54bd3d144821a56120dcd',
             docsName: '',
             docs_url: '',
           },
           {
-            name: 'ODBC_5.0.1',
-            size: '8.53MB',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/arm/openGauss-5.0.1-ODBC.tar.gz`,
+            name: 'ODBC_5.0.2',
+            size: '8.4MB',
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/arm/openGauss-5.0.2-ODBC.tar.gz`,
             sha_code:
-              '5b6e419290a866c07e71d587a691984f254107979bee5574a4a953bbebe89641',
+              'ea9e6e79c0343fdeaa8fa80240b97a2ba92ac026c920d69ab1210ca9adfb83cb',
             docsName: '',
             docs_url: '',
           },
           {
-            name: 'Python-psycopg2_5.0.1',
-            size: '2.67MB',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/arm/openGauss-5.0.1-openEuler-aarch64-Python.tar.gz`,
+            name: 'Python-psycopg2_5.0.2',
+            size: '2.7MB',
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/arm/openGauss-5.0.2-openEuler-aarch64-Python.tar.gz`,
             sha_code:
-              'b1186b999a9d9ddede5b1c8325a60dde54651f8dc8cc49bb326c65e15df1abb3',
+              '54e181fd3f5627f3e8f7b7501ddaa509b71a6be1861b06aceee3410b312bc06a',
             docsName: '',
             docs_url: '',
           },
           {
-            name: 'libpq_5.0.1',
-            size: '4.62MB',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/arm/openGauss-5.0.1-openEuler-64bit-Libpq.tar.gz`,
+            name: 'libpq_5.0.2',
+            size: '4.6MB',
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/arm/openGauss-5.0.2-openEuler-64bit-Libpq.tar.gz`,
             sha_code:
-              '03c94a0f814fdaa11c4d5bcd7e1f090d72b3844a5bafa59fa9975e4921954d57',
+              '5b32066dfc57a26106fd8a997850be6fdc2416bb668eb116e8957f4305848356',
             docsName: '',
             docs_url: '',
           },
@@ -363,38 +363,38 @@ export default [
         os: 'openEuler 20.03 LTS',
         content: [
           {
-            name: 'JDBC_5.0.1',
-            size: '1.67MB',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/x86_openEuler/openGauss-5.0.1-JDBC.tar.gz`,
+            name: 'JDBC_5.0.2',
+            size: '1.7MB',
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/x86_openEuler/openGauss-5.0.2-JDBC.tar.gz`,
             sha_code:
-              '9adbc0f1992c5acaa0f8ceac999d76b67385bcf63fe13355444565ffdd725c96',
+              'b1b06550b8dd51242334fa3f48beba1029b990b70b45bc5657427ec46f6e4ddc',
             docsName: '',
             docs_url: '',
           },
           {
-            name: 'ODBC_5.0.1',
-            size: '9.03MB',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/x86_openEuler/openGauss-5.0.1-ODBC.tar.gz`,
+            name: 'ODBC_5.0.2',
+            size: '9.1MB',
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/x86_openEuler/openGauss-5.0.2-ODBC.tar.gz`,
             sha_code:
-              'dbd3ceb8c74ad7cf4227de94e042b8f44872944b1fdbf593349fe89b49fab141',
+              '614d52530ad77ee0043c409608b7e92627bd8d8430f1b293b00b411120c9c455',
             docsName: '',
             docs_url: '',
           },
           {
-            name: 'Python-psycopg2_5.0.1',
-            size: '2.98MB',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/x86_openEuler/openGauss-5.0.1-openEuler-x86_64-Python.tar.gz`,
+            name: 'Python-psycopg2_5.0.2',
+            size: '3.0MB',
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/x86_openEuler/openGauss-5.0.2-openEuler-x86_64-Python.tar.gz`,
             sha_code:
-              '43c957515985cf24e0319925160c9eaef7c53fe9fadb9e12ffa17b6b00b41d37',
+              '2d0d62aea6434eb49eb65f203a322bdefc528b3801c10d1942f694bb9c6f393f',
             docsName: '',
             docs_url: '',
           },
           {
-            name: 'libpq_5.0.1',
-            size: '5.12MB',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/x86_openEuler/openGauss-5.0.1-openEuler-64bit-Libpq.tar.gz`,
+            name: 'libpq_5.0.2',
+            size: '5.1MB',
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/x86_openEuler/openGauss-5.0.2-openEuler-64bit-Libpq.tar.gz`,
             sha_code:
-              '6d770190392d1b636970544e3ac6244810e05fee8840df7a42b15a7e9cf6ef72',
+              'f43b158ad8d240e20f4eaea91d2edf68c5155c3d792c229530f1a49020b35234',
             docsName: '',
             docs_url: '',
           },
@@ -406,38 +406,38 @@ export default [
         os: 'Centos 7.6',
         content: [
           {
-            name: 'JDBC_5.0.1',
-            size: '1.67MB',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/x86/openGauss-5.0.1-JDBC.tar.gz`,
+            name: 'JDBC_5.0.2',
+            size: '1.7MB',
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/x86/openGauss-5.0.2-JDBC.tar.gz`,
             sha_code:
-              'd424cc018689d1c84ceeabcb3259c14342e2d81fa5620f67ee0a90677ab25f87',
+              '5344e8c96a056c5e86fb74c7229c6bbea02c809a7f0eb66f29307dd348cb6fb1',
             docsName: '',
             docs_url: '',
           },
           {
-            name: 'ODBC_5.0.1',
-            size: '9.11MB',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/x86/openGauss-5.0.1-ODBC.tar.gz`,
+            name: 'ODBC_5.0.2',
+            size: '8.9MB',
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/x86/openGauss-5.0.2-ODBC.tar.gz`,
             sha_code:
-              '77c0dcacf8aa8f3337e2ba65371039d69acc2424f198e67052b52c87e5a6e569',
+              '8c5000840ca5812700dd671bec483dd78251fb648d14487ac70ff8318cada4ad',
             docsName: '',
             docs_url: '',
           },
           {
-            name: 'Python-psycopg2_5.0.1',
-            size: '3.20MB',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/x86/openGauss-5.0.1-CentOS-x86_64-Python.tar.gz`,
+            name: 'Python-psycopg2_5.0.2',
+            size: '3.2MB',
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/x86/openGauss-5.0.2-CentOS-x86_64-Python.tar.gz`,
             sha_code:
-              '92cf0fb70d0feba5afb4a4c54de791ff5a97cd3c915b9b41ad8fd1344be4b211',
+              '23793ac0ceff73224f5db73f23edaa24e51b418f67e7a93f26cfacdf65d397d9',
             docsName: '',
             docs_url: '',
           },
           {
-            name: 'libpq_5.0.1',
-            size: '5.00MB',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/x86/openGauss-5.0.1-CentOS-64bit-Libpq.tar.gz`,
+            name: 'libpq_5.0.2',
+            size: '4.9MB',
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/x86/openGauss-5.0.2-CentOS-64bit-Libpq.tar.gz`,
             sha_code:
-              '7dcaff5a5699878936442bef6a7cb4f9b0f80037bb872445f93810b133872c83',
+              '9cb3e8f9d9e9a3653bcdcf9f8b9bd261d2233651857618ade3e8fbd0ed48e128',
             docsName: '',
             docs_url: '',
           },
@@ -449,11 +449,11 @@ export default [
         os: 'Windows',
         content: [
           {
-            name: 'JDBC_5.0.1',
-            size: '1.67MB',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/x86/openGauss-5.0.1-JDBC.tar.gz`,
+            name: 'JDBC_5.0.2',
+            size: '1.7MB',
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/x86/openGauss-5.0.2-JDBC.tar.gz`,
             sha_code:
-              'd424cc018689d1c84ceeabcb3259c14342e2d81fa5620f67ee0a90677ab25f87',
+              '5344e8c96a056c5e86fb74c7229c6bbea02c809a7f0eb66f29307dd348cb6fb1',
             docsName: '',
             docs_url: '',
           },
@@ -479,20 +479,20 @@ export default [
         os: 'openEuler 22.03 LTS',
         content: [
           {
-            name: 'symbol_5.0.1',
-            size: '412.58MB',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/arm_2203/openGauss-5.0.1-openEuler-64bit-symbol.tar.gz`,
+            name: 'symbol_5.0.2',
+            size: '406MB',
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/arm_2203/openGauss-5.0.2-openEuler-64bit-symbol.tar.gz`,
             sha_code:
-              '2cf375f05374bd82451e5294a0e21ecb4c4c2d423643d3fa7cf87c0f31c47044',
+              '2a9649cc172ed6840cbc7da89ad0f8399ea3f55ac2d1555f2a7c6eba4b9758e7',
             docsName: '',
             docs_url: '',
           },
           {
-            name: 'cm-symbol_5.0.1',
-            size: '22.91MB',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/arm_2203/openGauss-5.0.1-openEuler-64bit-cm-symbol.tar.gz`,
+            name: 'cm-symbol_5.0.2',
+            size: '23MB',
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/arm_2203/openGauss-5.0.2-openEuler-64bit-cm-symbol.tar.gz`,
             sha_code:
-              '1cbdfb2431130b508a0ed8ef2369f8e86af12d4e48bfe7071a3ddba0f79f762b',
+              '2587ed83d6f26dc086a6aeaa608e9f41493e8d3aad56b370b6c247ce6faf53d0',
             docsName: '',
             docs_url: '',
           },
@@ -504,20 +504,20 @@ export default [
         os: 'openEuler 22.03 LTS',
         content: [
           {
-            name: 'symbol_5.0.1',
-            size: '408.44MB',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/x86_openEuler_2203/openGauss-5.0.1-openEuler-64bit-symbol.tar.gz`,
+            name: 'symbol_5.0.2',
+            size: '402MB',
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/x86_openEuler_2203/openGauss-5.0.2-openEuler-64bit-symbol.tar.gz`,
             sha_code:
-              'dba1fc2ec5653a497687b65e959b4717e916896d27ef0faebfee3a77cf287b3b',
+              '4b645e01ef3e81fd40c64cfa0e1413d04d34adb545fed404b1933afe7a6fe6ec',
             docsName: '',
             docs_url: '',
           },
           {
-            name: 'cm-symbol_5.0.1',
-            size: '21.23MB',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/x86_openEuler_2203/openGauss-5.0.1-openEuler-64bit-cm-symbol.tar.gz`,
+            name: 'cm-symbol_5.0.2',
+            size: '22MB',
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/x86_openEuler_2203/openGauss-5.0.2-openEuler-64bit-cm-symbol.tar.gz`,
             sha_code:
-              'f37af286d8d1bc276d1ac0dfd7defafb13db988cbc55fc87331fcab6e1f8a6ec',
+              '7e1559b3d96d7f417b1039ffc794e7288e00606f07f6fc67d43ee914bcb07bd7',
             docsName: '',
             docs_url: '',
           },
@@ -529,20 +529,20 @@ export default [
         os: 'openEuler 20.03 LTS',
         content: [
           {
-            name: 'symbol_5.0.1',
-            size: '411.53MB',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/arm/openGauss-5.0.1-openEuler-64bit-symbol.tar.gz`,
+            name: 'symbol_5.0.2',
+            size: '405MB',
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/arm/openGauss-5.0.2-openEuler-64bit-symbol.tar.gz`,
             sha_code:
-              '09f6bed4c1575b3f90e8ad0d9d1708306f4fb69d9028aee86c7ef140fc912b9c',
+              'a2f683a3149a7589f2acf4d87b442ea4b75d6ffbf416736bd3a6fcb4ef653437',
             docsName: '',
             docs_url: '',
           },
           {
-            name: 'cm-symbol_5.0.1',
-            size: '22.84MB',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/arm/openGauss-5.0.1-openEuler-64bit-cm-symbol.tar.gz`,
+            name: 'cm-symbol_5.0.2',
+            size: '23MB',
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/arm/openGauss-5.0.2-openEuler-64bit-cm-symbol.tar.gz`,
             sha_code:
-              '95864c558e6e66388b79ca23392abdd3cb0bb2a0aa132e0b694c1be19ea04139',
+              '6c170ec712082a32f3f567674f994bb7a6092f51c0c63e559d1362d73cdf65fb',
             docsName: '',
             docs_url: '',
           },
@@ -554,20 +554,20 @@ export default [
         os: 'openEuler 20.03 LTS',
         content: [
           {
-            name: 'symbol_5.0.1',
-            size: '407.55MB',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/x86_openEuler/openGauss-5.0.1-openEuler-64bit-symbol.tar.gz`,
+            name: 'symbol_5.0.2',
+            size: '401MB',
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/x86_openEuler/openGauss-5.0.2-openEuler-64bit-symbol.tar.gz`,
             sha_code:
-              '1f7f90bfb1286002f351253f37380e6091674fd8dc10d96912f289e09aa59669',
+              '17900220b969f1a38f6e04a13d75814d9a9f2becf01b67f5210ae2b5c827cc87',
             docsName: '',
             docs_url: '',
           },
           {
-            name: 'cm-symbol_5.0.1',
-            size: '21.23MB',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/x86_openEuler/openGauss-5.0.1-openEuler-64bit-cm-symbol.tar.gz`,
+            name: 'cm-symbol_5.0.2',
+            size: '21MB',
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/x86_openEuler/openGauss-5.0.2-openEuler-64bit-cm-symbol.tar.gz`,
             sha_code:
-              'a627f7dee42d606a83f5a05ed14303be4b3a42e16766fc52a8c6e3d99c33cd01',
+              '0b5620c696934d28bffa84cdd20f0f69ca8b51b6bdf000010b8efe90ec7ccdad',
             docsName: '',
             docs_url: '',
           },
@@ -579,20 +579,20 @@ export default [
         os: 'Centos 7.6',
         content: [
           {
-            name: 'symbol_5.0.1',
-            size: '406.36MB',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/x86/openGauss-5.0.1-CentOS-64bit-symbol.tar.gz`,
+            name: 'symbol_5.0.2',
+            size: '400MB',
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/x86/openGauss-5.0.2-CentOS-64bit-symbol.tar.gz`,
             sha_code:
-              '9b81cf1a0ceb3b53d6e4ee0bcb485b8199ba6cc009f832efb6865143765db2cf',
+              '748b72f486670dcc2f069cbcf1c828f21d4d1b7348e2fa54db662820b615b80f',
             docsName: '',
             docs_url: '',
           },
           {
-            name: 'cm-symbol_5.0.1',
-            size: '21.21MB',
-            down_url: `${OBS_DOWNLOAD_LINK}5.0.1/x86/openGauss-5.0.1-CentOS-64bit-cm-symbol.tar.gz`,
+            name: 'cm-symbol_5.0.2',
+            size: '21MB',
+            down_url: `${OBS_DOWNLOAD_LINK}5.0.2/x86/openGauss-5.0.2-CentOS-64bit-cm-symbol.tar.gz`,
             sha_code:
-              '02140e60da5195005cadffe1e6233d8a14106d929559fc4249e213e1287d1cf9',
+              '44f977e8399fb0467fe0cb33225375306ef4b53332fa44070ff1ed2b6bfc4337',
             docsName: '',
             docs_url: '',
           },
