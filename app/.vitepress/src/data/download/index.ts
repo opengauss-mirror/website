@@ -1,4 +1,5 @@
 import download600RC1 from './download6.0.0-RC1';
+import download502 from './download5.0.2';
 import download501 from './download5.0.1';
 import download510 from './download5.1.0';
 import download500 from './download5.0.0';
@@ -29,6 +30,20 @@ const downloadData = [
         nameEn: 'Release Notes',
         path: '/docs/6.0.0-RC1/docs/ReleaseNotes/Releasenotes.html',
         pathEn: '/docs/6.0.0-RC1/docs/ReleaseNotes/Releasenotes.html',
+      },
+    ],
+  },
+  {
+    name: '5.0.2 (LTS)',
+    newLayout: true,
+    data: download502,
+    plannedEOL: 'Planned EOL: 2026.03.31',
+    docs_list: [
+      {
+        name: '发行说明',
+        nameEn: 'Release Notes',
+        path: '/zh/news/2023-12-20/index.html',
+        pathEn: '/zh/news/2023-12-20/index.html',
       },
     ],
   },
