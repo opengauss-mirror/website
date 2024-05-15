@@ -238,7 +238,7 @@ export default [
             size: '1.7MB',
             down_url: `${OBS_DOWNLOAD_LINK}5.0.2/arm_2203/openGauss-5.0.2-JDBC.tar.gz`,
             sha_code:
-              '4a235f1bedf84a33a1f5e7d5092d012908ef7770775bd4cecc954dabaf2e8c60',
+              '9693059e35249165e64abe9a7532f3c94da448999159233b1522cc8407bb8a76',
             docsName: '',
             docs_url: '',
           },
@@ -281,7 +281,7 @@ export default [
             size: '1.7MB',
             down_url: `${OBS_DOWNLOAD_LINK}5.0.2/x86_openEuler_2203/openGauss-5.0.2-JDBC.tar.gz`,
             sha_code:
-              '2e71fe1dbda24951fbab956c9e03b7ca9737d494e7718fcd3dce3594d6c40187',
+              '9693059e35249165e64abe9a7532f3c94da448999159233b1522cc8407bb8a76',
             docsName: '',
             docs_url: '',
           },
@@ -324,7 +324,7 @@ export default [
             size: '1.7MB',
             down_url: `${OBS_DOWNLOAD_LINK}5.0.2/arm/openGauss-5.0.2-JDBC.tar.gz`,
             sha_code:
-              'dc6defc7ae14964aa5ddf1cc12098ef83156b669d1a54bd3d144821a56120dcd',
+              '9693059e35249165e64abe9a7532f3c94da448999159233b1522cc8407bb8a76',
             docsName: '',
             docs_url: '',
           },
@@ -367,7 +367,7 @@ export default [
             size: '1.7MB',
             down_url: `${OBS_DOWNLOAD_LINK}5.0.2/x86_openEuler/openGauss-5.0.2-JDBC.tar.gz`,
             sha_code:
-              'b1b06550b8dd51242334fa3f48beba1029b990b70b45bc5657427ec46f6e4ddc',
+              '9693059e35249165e64abe9a7532f3c94da448999159233b1522cc8407bb8a76',
             docsName: '',
             docs_url: '',
           },
@@ -410,7 +410,7 @@ export default [
             size: '1.7MB',
             down_url: `${OBS_DOWNLOAD_LINK}5.0.2/x86/openGauss-5.0.2-JDBC.tar.gz`,
             sha_code:
-              '5344e8c96a056c5e86fb74c7229c6bbea02c809a7f0eb66f29307dd348cb6fb1',
+              '9693059e35249165e64abe9a7532f3c94da448999159233b1522cc8407bb8a76',
             docsName: '',
             docs_url: '',
           },
@@ -453,7 +453,7 @@ export default [
             size: '1.7MB',
             down_url: `${OBS_DOWNLOAD_LINK}5.0.2/x86/openGauss-5.0.2-JDBC.tar.gz`,
             sha_code:
-              '5344e8c96a056c5e86fb74c7229c6bbea02c809a7f0eb66f29307dd348cb6fb1',
+              '9693059e35249165e64abe9a7532f3c94da448999159233b1522cc8407bb8a76',
             docsName: '',
             docs_url: '',
           },
