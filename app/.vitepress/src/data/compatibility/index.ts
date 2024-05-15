@@ -1,5 +1,27 @@
 export default [
   {
+    name: '瑞思捷仓储管理系统',
+    version: '4.0',
+    type: '通用',
+    company: '深圳瑞泰信资讯有限公司',
+    database: 'openGauss 5.0.0',
+    os: 'openEuler 22.03 LTS',
+    server: 'Intel',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%B7%B1%E5%9C%B3%E7%91%9E%E6%B3%B0%E4%BF%A1/V4.0/Certificate.pdf',
+  },
+  {
+    name: '易元中间件平台',
+    version: '1.0.0',
+    type: '中间件',
+    company: '成都文双软件有限公司',
+    database: 'openGauss 5.0.0',
+    os: 'openEuler 22.03 LTS',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%88%90%E9%83%BD%E6%96%87%E5%8F%8C/v1.0.0/Certificate.pdf',
+  },
+  {
     name: '柯诺药械SPD物资管理软件',
     version: '1.0',
     type: '医疗',
