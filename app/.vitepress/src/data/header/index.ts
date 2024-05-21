@@ -108,6 +108,13 @@ const navData: Array<NavItemT> = [
         },
       },
       {
+        label: { zh: '迁移专区' },
+        id: 'migration',
+        href: {
+          zh: '/zh/migration/',
+        },
+      },
+      {
         label: { zh: '社区荣誉' },
         id: 'honor',
         href: {

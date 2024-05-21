@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="53px" height="8px" viewBox="0 0 53 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>路径 2</title>
+    <defs>
+        <linearGradient x1="100%" y1="100%" x2="0%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#969696" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="迁移流程其他TAB" transform="translate(-596.000000, -1099.000000)" stroke="url(#linearGradient-1)" stroke-width="2">
+            <g id="编组备份" transform="translate(252.000000, 1023.000000)">
+                <polyline id="路径-2" points="344 83 394 83 387.597957 77"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>

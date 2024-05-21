@@ -43,6 +43,7 @@ const props = defineProps({
   },
 });
 const { tableData, versionShown, downloadVersionAuth } = toRefs(props);
+
 const { lang } = useData();
 const commonStore = useCommon();
 const i18n = useI18n();
@@ -167,8 +168,27 @@ function setRenderData() {
     }
   });
 }
+
+// 替换空格
+const replaceSpace = (v: string) => {
+  return v.replace(/ /g, '-');
+};
+
 onMounted(() => {
   initActiveTag();
+  // 迁移专区跳转锚点显示
+  if (window.location.hash) {
+    setTimeout(() => {
+      try {
+        const toolId = window.location.hash?.split('#')[1] as string;
+        const top = document.getElementById(toolId)?.offsetTop;
+        window.scrollTo({
+          top,
+          behavior: 'smooth',
+        });
+      } catch {}
+    }, 300);
+  }
   watch(
     () => props.tableData.content,
     () => {
@@ -268,7 +288,10 @@ const collectDownloadData = (name: string) => {
 };
 </script>
 <template>
-  <div class="content-item">
+  <div
+    :id="replaceSpace(tableData.name) + '-' + replaceSpace(versionShown)"
+    class="content-item"
+  >
     <h3>{{ tableData.name }}</h3>
     <div class="filter-card">
       <TagFilter

@@ -13,6 +13,7 @@ import LayoutBlog from '@/layouts/LayoutBlog.vue';
 import LayoutNews from '@/layouts/LayoutNews.vue';
 import LayoutEvents from '@/layouts/LayoutEvents.vue';
 import LayoutShowcase from '@/layouts/LayoutShowcase.vue';
+import LayoutMigration from '@/layouts/LayoutMigration.vue';
 import AppFloat from '@/components/AppFloat.vue';
 
 import categories from '@/shared/category';
@@ -32,6 +33,7 @@ const compMapping: {
   news: LayoutNews,
   events: LayoutEvents,
   showcase: LayoutShowcase,
+  migration: LayoutMigration,
 };
 
 const isCustomLayout = computed(() => {
