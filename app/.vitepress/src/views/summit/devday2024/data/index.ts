@@ -1,4 +1,4 @@
-import bannerBg from '../img/banner.jpg';
+import bannerBg from '../img/banner2.jpg';
 import introTitleImg from '../img/intro-title-img.png';
 import agendaTitleImg from '../img/agenda-title-img.png';
 import nowTitleImg from '../img/now-title-img.png';
