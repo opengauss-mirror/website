@@ -115,7 +115,7 @@ export default {
     title: '立即参与',
     list: [
       {
-        title: 'Call  For Speaker',
+        title: 'Call For Sponsor',
         text: '提交演示议题',
         href: 'https://shimo.im/forms/9030Jd4z85TWEgkw/fill',
       },
