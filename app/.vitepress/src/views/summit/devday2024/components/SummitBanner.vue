@@ -21,12 +21,12 @@ defineProps({
         <p class="subtitle">{{ bannerData.subtitle }}</p>
         <div class="btn-wrap">
           <a
-            href="https://e-campaign.huawei.com/t/V7zuQb"
+            :href="bannerData.signUpHref"
             target="_blank"
             rel="noopener noreferrer"
           >
             <OButton animation>
-              立即报名
+              {{ bannerData.signUpTitle }}
               <template #suffixIcon>
                 <IconArrowRight></IconArrowRight>
               </template>
