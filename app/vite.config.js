@@ -44,6 +44,9 @@ export default defineConfig({
         float: FileSystemIconLoader(
           path.resolve(__dirname, './.vitepress/src/assets/category/float')
         ),
+        migration: FileSystemIconLoader(
+          path.resolve(__dirname, './.vitepress/src/assets/category/migration')
+        ),
       },
     }),
   ],

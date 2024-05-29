@@ -105,4 +105,8 @@ export default [
     name: 'finance',
     lang: ['zh'],
   },
+  {
+    name: 'migration',
+    lang: ['zh'],
+  },
 ];
