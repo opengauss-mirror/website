@@ -13,6 +13,8 @@ export default {
     bg: bannerBg,
     title: 'openGauss Developer Day 2024',
     subtitle: '6月20-21日 | 北京.昆泰嘉瑞文化中心',
+    signUpHref: 'https://e-campaign.huawei.com/t/V7zuQb',
+    signUpTitle: '立即报名',
   },
   intro: {
     titleImg: introTitleImg,
@@ -50,8 +52,8 @@ export default {
                 title: '品牌委员会工作会议',
                 date: '2024/06/20',
                 time: '10:00-12:00',
-              }
-            ]
+              },
+            ],
           },
           {
             type: '下午',
@@ -60,10 +62,10 @@ export default {
                 title: '理事会工作会议',
                 date: '2024/06/20',
                 time: '14:00-17:30',
-              }
-            ]
-          }
-        ]
+              },
+            ],
+          },
+        ],
       },
       {
         time: '06月21日',
@@ -77,7 +79,7 @@ export default {
                 date: '2024/06/21',
                 time: '',
               },
-            ]
+            ],
           },
           {
             type: '上午',
@@ -87,7 +89,7 @@ export default {
                 date: '2024/06/21',
                 time: '09:00-11:30',
               },
-            ]
+            ],
           },
           {
             type: '下午',
@@ -101,11 +103,11 @@ export default {
                 title: 'SIG组版本规划工作会议',
                 date: '2024/06/21',
                 time: '15:00-18:00',
-              }
-            ]
-          }
-        ]
-      }
+              },
+            ],
+          },
+        ],
+      },
     ],
   },
   now: {
@@ -123,7 +125,7 @@ export default {
         title: 'Call for SIG',
         text: '申报现场会议',
         href: 'https://shimo.im/forms/m8AZMlraoQHKnjkb/fill',
-      }
-    ]
-  }
-}
+      },
+    ],
+  },
+};
