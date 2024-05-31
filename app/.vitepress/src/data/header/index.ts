@@ -169,6 +169,13 @@ const navData: Array<NavItemT> = [
         },
       },
       {
+        label: { zh: '大咖之声' },
+        id: 'bigshot',
+        href: {
+          zh: '/zh/bigshot-voice/',
+        },
+      },
+      {
         label: { zh: '峰会' },
         id: 'summit',
         href: {

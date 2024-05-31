@@ -71,7 +71,7 @@ const { bread1, bread2, link1, link2 } = toRefs(props);
   }
 
   span:nth-of-type(3) {
-    max-width: calc(100% - 50px);
+    max-width: calc(100% - 80px);
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
