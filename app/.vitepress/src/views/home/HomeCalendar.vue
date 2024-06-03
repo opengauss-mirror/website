@@ -46,6 +46,8 @@ import { GITEE_LINK } from '@/data/url-config';
 const { lang } = useData();
 const i18n = useI18n();
 const commonStore = useCommon();
+const screenWidth = useWindowResize();
+const isMobile = computed(() => (screenWidth.value <= 768 ? true : false));
 let currentMeet = reactive<MeettingTableDataT>({
   date: '',
   timeData: [
@@ -256,7 +258,7 @@ const selectSigChange = () => {
 const sigGroup = ref<SigGroupDataT[]>([]);
 const meetingSig = async () => {
   const res = await getMeetingSig();
-  sigGroup.value = res.length ? res : [];
+  sigGroup.value = Array.isArray(res.length) ? res : [];
 };
 
 onMounted(() => {
@@ -931,6 +933,7 @@ const copyMeetingInfo = (meetingItem: DayDataT, e: MouseEvent) => {
     destroy-on-close
     append-to-body
     width="550px"
+    class="book-dialog"
   >
     <!-- 未登录 -->
     <div v-if="dialogNoLogin" class="no-login tc">
@@ -972,7 +975,7 @@ const copyMeetingInfo = (meetingItem: DayDataT, e: MouseEvent) => {
       <ElForm
         ref="ruleFormRef"
         :model="meetingForm"
-        label-width="120px"
+        :label-width="isMobile ? '100px' : '120px'"
         :rules="rules"
         class="meeting-form"
       >
@@ -1091,6 +1094,10 @@ const copyMeetingInfo = (meetingItem: DayDataT, e: MouseEvent) => {
     justify-content: space-between;
     width: 100%;
     margin: 0;
+
+    @media screen and (max-width: 768px) {
+      flex-wrap: wrap;
+    }
   }
   :deep(.el-form-item__label) {
     height: 38px;
@@ -1802,5 +1809,41 @@ const copyMeetingInfo = (meetingItem: DayDataT, e: MouseEvent) => {
     align-items: center;
     flex-direction: column;
   }
+}
+</style>
+
+<style lang="scss">
+.book-dialog {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-height: calc(100% - 10px);
+  max-width: calc(100% - 10px);
+  margin: 0;
+  transform: translate(-50%, -50%);
+
+  @media screen and (max-width: 768px) {
+    .el-dialog__title {
+      font-size: var(--o-font-size-text);
+      line-height: var(--o-line-height-text);
+    }
+
+    .el-form-item__label {
+      font-size: var(--o-font-size-tip);
+    }
+
+    .o-button-size-small {
+      font-size: var(--o-font-size-tip);
+      line-height: var(--o-line-height-tip);
+      padding: var(--o-spacing-h9) var(--o-spacing-h6);
+    }
+  }
+}
+.book-dialog .el-dialog__body {
+  max-height: 100%;
+  flex: 1;
+  overflow-y: auto;
 }
 </style>
