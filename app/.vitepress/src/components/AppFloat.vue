@@ -229,13 +229,13 @@ onMounted(() => {
 });
 // pop1 end
 // pop2 start
-const floatData = ref([
+const floatData = [
   {
     img: IconHeadsetBig,
     text: '问题反馈',
     emile: GAUSS_EMAIL,
   },
-]);
+];
 function handleClickTop() {
   window.scrollTo(0, 0);
 }
