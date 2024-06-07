@@ -32,6 +32,8 @@ const OBS_TRANSFER_LINK =
   'https://obs-transfer.obs.cn-north-4.myhuaweicloud.com/'; // 服务商认证存储的obs地址
 const OBS_LEARN_LINK =
   'https://learningvideo.obs.ap-southeast-1.myhuaweicloud.com:443/'; // 资讯视频存储的obs地址
+const OBS_JIACAN_LINK =
+  'https://jiacan.obs.ap-southeast-1.myhuaweicloud.com'; // 资讯视频存储的obs地址
 const EULER_LINK = 'https://www.openeuler.org/'; // openeuler官网
 const MINDSPORE_LINK = 'https://mindspore.cn/'; // mindspore官网
 const LOOKENG_LINK = 'https://openlookeng.io/'; // openlookeng官网
@@ -118,4 +120,5 @@ export {
   XINGYEBANK_LINK,
   SHIMO_LINK,
   SUMMIT2023_JOIN,
+  OBS_JIACAN_LINK
 };

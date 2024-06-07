@@ -109,4 +109,8 @@ export default [
     name: 'migration',
     lang: ['zh'],
   },
+  {
+    name: 'bigshot',
+    lang: ['zh'],
+  },
 ];

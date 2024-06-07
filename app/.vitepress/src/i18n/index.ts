@@ -23,6 +23,7 @@ import member from './community/member';
 import download from './download';
 import supporttools from './supporttools';
 import finance from './finance';
+import bigshot from './bigshot';
 
 const i18n: { [key: string]: any } = {
   zh: {
@@ -46,7 +47,8 @@ const i18n: { [key: string]: any } = {
     compatibility: compatibility.zh,
     cookie: cookie.zh,
     meetup: meetup.zh,
-    finance: finance.zh
+    finance: finance.zh,
+    bigshot: bigshot.zh
   },
   en: {
     home: home.en,
