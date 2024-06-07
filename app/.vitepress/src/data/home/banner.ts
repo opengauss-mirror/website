@@ -1,7 +1,7 @@
 import liveImg_pc from '@/assets/category/home/banner/liveBanner_pc.png';
 import liveImg_mb from '@/assets/category/home/banner/liveBanner_mo.png';
-import bannerSummit from '@/assets/category/home/banner/banner-summit.jpg';
-import bannerSummitMo from '@/assets/category/home/banner/banner-summit_mo.png';
+import bannerSummit from '@/assets/category/home/banner/banner-summit-2024.jpg';
+import bannerSummitMo from '@/assets/category/home/banner/banner-summit_mo-2024.jpg';
 import videoGif from '@/assets/category/home/video-player.gif';
 
 import banner20240321 from '@/assets/category/home/banner/banner20240321.jpg';
@@ -79,7 +79,7 @@ export default {
     {
       pcBanner: bannerSummit,
       moBanner: bannerSummitMo,
-      link: '/zh/summit/summit2023/',
+      link: '/zh/summit/devday2024/',
       target: '_self',
       title: '',
       titleMb: [],

@@ -8,9 +8,9 @@ import useWindowResize from '@/components/hooks/useWindowResize';
 
 import IconArrowRight from '~icons/app/icon-arrow-right.svg';
 
-import bannerText from '@/assets/category/home/banner/banner-summit-text.png';
+import bannerText from '@/assets/category/home/banner/banner-summit-text-2024.png';
+import bannerTextMo from '@/assets/category/home/banner/banner-summit-text_mo-2024.png';
 
-import bannerKv from '@/assets/category/home/banner/summit-kv.mp4';
 const { lang } = useData();
 
 const windowWidth = ref(useWindowResize());
@@ -60,23 +60,12 @@ const clickRightInset = (path: string) => {
       <el-carousel-item v-for="item in homeBanner" :key="item.link">
         <div v-if="item.link.includes('/summit')" class="banner-summit" @click="jump(item, item.btn !== '')">
           <div class="summit-banner-pc">
-            <video
-              muted
-              playsinline="true"
-              autoplay="true"
-              height="480"
-              loop
-              webkit-playsinline="true"
-              x5-playsinline="true"
-              mtt-playsinline="true"
-              :poster="item.pcBanner"
-              preload=""
-            >
-              <source type="video/mp4" :src="bannerKv" />
-            </video>
+            <div class="img-wrap">
+              <img :src="bannerText" alt="" />
+            </div>
           </div>
           <div class="summit-banner-mo">
-            <img :src="bannerText" alt="" />
+            <img :src="bannerTextMo" alt="" />
           </div>
         </div>
         <div
@@ -346,13 +335,24 @@ html[lang='zh'] {
   position: relative;
   cursor: pointer;
   .summit-banner-pc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100%;
     margin: 0 auto;
-    background: no-repeat center/cover;
-    video {
+    background: url(@/assets/category/home/banner/banner-summit-2024.jpg)no-repeat center/cover;
+    .img-wrap {
       width: 100%;
-      @media screen and (max-width: 1920px) {
-        object-fit: cover;
+      max-width: 1504px;
+      padding: 0 44px;
+      @media screen and (max-width: 1440px) {
+        padding: 0 24px;
+      }
+      @media screen and (max-width: 1100px) {
+        padding: 0 16px;
+        img {
+          width: 660px;
+        }
       }
     }
     @media screen and (max-width: 768px) {
@@ -365,15 +365,15 @@ html[lang='zh'] {
       width: 100%;
       height: 100%;
       display: block;
-      background-image: url(@/assets/category/home/banner/banner-summit_mo.png);
+      background-image: url(@/assets/category/home/banner/banner-summit_mo-2024.jpg);
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
       position: relative;
       img {
-        width: 247px;
+        width: 300px;
         position: absolute;
-        bottom: 8%;
+        bottom: 9%;
         left: 50%;
         transform: translateX(-50%);
       }
