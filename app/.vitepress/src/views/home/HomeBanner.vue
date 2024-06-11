@@ -8,9 +8,6 @@ import useWindowResize from '@/components/hooks/useWindowResize';
 
 import IconArrowRight from '~icons/app/icon-arrow-right.svg';
 
-import bannerText from '@/assets/category/home/banner/banner-summit-text-2024.png';
-import bannerTextMo from '@/assets/category/home/banner/banner-summit-text_mo-2024.png';
-
 const { lang } = useData();
 
 const windowWidth = ref(useWindowResize());
@@ -58,18 +55,7 @@ const clickRightInset = (path: string) => {
       trigger="click"
     >
       <el-carousel-item v-for="item in homeBanner" :key="item.link">
-        <div v-if="item.link.includes('/summit')" class="banner-summit" @click="jump(item, item.btn !== '')">
-          <div class="summit-banner-pc">
-            <div class="img-wrap">
-              <img :src="bannerText" alt="" />
-            </div>
-          </div>
-          <div class="summit-banner-mo">
-            <img :src="bannerTextMo" alt="" />
-          </div>
-        </div>
         <div
-          v-else
           class="banner-img"
           :class="{ 'no-btn': !item.btn, [item.className]: item.className }"
           :style="`background:url(${
