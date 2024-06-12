@@ -28,4 +28,9 @@ defineProps({
     }
   }
 }
+@include in-dark {
+  .summit-banner {
+    @include img-in-dark;
+  }
+}
 </style>
