@@ -8,23 +8,46 @@ defineProps({
 });
 </script>
 <template>
-  <div class="summit-banner">
-    <img :src="bannerData.bg" />
+  <div class="banner">
+    <div
+      class="summit-banner-pc summit-banner"
+      :style="{ backgroundImage: `url(${bannerData.bg})` }"
+    ></div>
+    <div
+      class="summit-banner-mo summit-banner"
+      :style="{ backgroundImage: `url(${bannerData.bgMo})` }"
+    ></div>
   </div>
 </template>
 <style scoped lang="scss">
-.summit-banner {
+@include in-dark {
+  .banner {
+    filter: brightness(80%) grayscale(20%) contrast(1.2);
+  }
+}
+.banner {
   width: 100%;
-  max-height: 760px;
-
-  img {
-    width: 100%;
-    max-height: 760px;
-    object-fit: scale-down;
-
+  height: 380px;
+  position: relative;
+  @media (max-width: 767px) {
+    height: auto;
+  }
+  .summit-banner {
+    height: 100%;
+    margin: 0 auto;
+    background: no-repeat center/cover;
+  }
+  .summit-banner-pc {
     @media (max-width: 768px) {
-      object-fit: cover;
-      height: 120px;
+      display: none;
+    }
+  }
+  .summit-banner-mo {
+    display: none;
+    height: 300px;
+    @media (max-width: 768px) {
+      width: 100%;
+      display: block;
     }
   }
 }
