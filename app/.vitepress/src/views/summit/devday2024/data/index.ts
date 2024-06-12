@@ -1,4 +1,5 @@
 import bannerBg from '../img/banner2.jpg';
+import bannerSummitMo from '@/assets/category/home/banner/banner-summit_mo-2024.jpg';
 import introTitleImg from '../img/intro-title-img.png';
 import agendaTitleImg from '../img/agenda-title-img.png';
 import nowTitleImg from '../img/now-title-img.png';
@@ -11,6 +12,7 @@ import nowTitleImgDark from '../img/now-title-img-dark.png';
 export default {
   banner: {
     bg: bannerBg,
+    bgMo: bannerSummitMo,
     title: 'openGauss Developer Day 2024',
     subtitle: '6月20-21日 | 北京.昆泰嘉瑞文化中心',
     signUpHref: 'https://e-campaign.huawei.com/t/V7zuQb',
