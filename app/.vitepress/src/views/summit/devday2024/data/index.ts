@@ -72,16 +72,6 @@ export default {
         id: 'other',
         list: [
           {
-            type: '展台',
-            children: [
-              {
-                title: '上午09:00-下午18:00',
-                date: '2024/06/21',
-                time: '',
-              },
-            ],
-          },
-          {
             type: '上午',
             children: [
               {
