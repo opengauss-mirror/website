@@ -8,16 +8,18 @@ defineProps({
 });
 </script>
 <template>
-  <div class="banner">
-    <div
-      class="summit-banner-pc summit-banner"
-      :style="{ backgroundImage: `url(${bannerData.bg})` }"
-    ></div>
-    <div
-      class="summit-banner-mo summit-banner"
-      :style="{ backgroundImage: `url(${bannerData.bgMo})` }"
-    ></div>
-  </div>
+  <a :href="bannerData.signUpHref" target="_blank" rel="noopener noreferrer">
+    <div class="banner">
+      <div
+        class="summit-banner-pc summit-banner"
+        :style="{ backgroundImage: `url(${bannerData.bg})` }"
+      ></div>
+      <div
+        class="summit-banner-mo summit-banner"
+        :style="{ backgroundImage: `url(${bannerData.bgMo})` }"
+      ></div>
+    </div>
+  </a>
 </template>
 <style scoped lang="scss">
 @include in-dark {
