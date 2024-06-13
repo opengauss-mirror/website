@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { computed } from 'vue';
+import { useCommon } from '@/stores/common';
 
 defineProps({
   reviewData: {
@@ -8,11 +10,13 @@ defineProps({
   },
 });
 
+const commonStore = useCommon();
+const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
 </script>
 
 <template>
   <div class="summit-review">
-    <div class="title-box">
+    <div class="title-box" :class="{'title-box-dark': !isLight}">
       <p class="title-bg">{{ reviewData.titleBg }}</p>
       <p class="title">{{ reviewData.title }}</p>
     </div>

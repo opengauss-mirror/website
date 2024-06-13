@@ -56,4 +56,9 @@ import summitData from './data';
     }
   }
 }
+:deep(.title-box-dark) {
+  .title-bg {
+    background-image: linear-gradient(to bottom, rgba(#b461f6, 0.4) 0, rgba(#7d32ea, 0) 100%);
+  }
+}
 </style>

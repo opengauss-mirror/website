@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import IconArrowRight from '~icons/app/icon-arrow-right.svg';
+
 defineProps({
   bannerData: {
     type: Object,
@@ -8,18 +10,33 @@ defineProps({
 });
 </script>
 <template>
-  <a :href="bannerData.signUpHref" target="_blank" rel="noopener noreferrer">
-    <div class="banner">
-      <div
-        class="summit-banner-pc summit-banner"
-        :style="{ backgroundImage: `url(${bannerData.bg})` }"
-      ></div>
-      <div
-        class="summit-banner-mo summit-banner"
-        :style="{ backgroundImage: `url(${bannerData.bgMo})` }"
-      ></div>
+  <!-- <a :href="bannerData.signUpHref" target="_blank" rel="noopener noreferrer"> -->
+  <div class="banner">
+    <div
+      class="summit-banner-pc summit-banner"
+      :style="{ backgroundImage: `url(${bannerData.bg})` }"
+    ></div>
+    <div
+      class="summit-banner-mo summit-banner"
+      :style="{ backgroundImage: `url(${bannerData.bgMo})` }"
+    ></div>
+    <div class="banner-main">
+      <div class="banner-text">
+        <h2>{{ bannerData.slogan }}</h2>
+        <h3>{{ bannerData.title }}</h3>
+        <h4>{{ bannerData.subtitle }}</h4>
+        <a :href="bannerData.signUpHref" target="_blank" rel="noopener noreferrer">
+          <OButton animation class="home-banner-btnimport">
+            {{ bannerData.signUpTitle }}
+            <template #suffixIcon
+              ><OIcon><IconArrowRight /></OIcon
+            ></template>
+          </OButton>
+        </a>
+      </div>
     </div>
-  </a>
+  </div>
+  <!-- </a> -->
 </template>
 <style scoped lang="scss">
 @include in-dark {
@@ -51,6 +68,88 @@ defineProps({
     @media (max-width: 768px) {
       width: 100%;
       display: block;
+    }
+  }
+
+  .banner-main {
+    position: absolute;
+    width: 100%;
+    max-width: 1416px;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    @media (max-width: 1439px) {
+      padding: 0 24px;
+    }
+    @media (max-width: 1100px) {
+      padding: 0 16px;
+    }
+  }
+  .banner-text {
+    width: 970px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    @media (max-width: 767px) {
+      width: 100%;
+    }
+    h2 {
+      font-size: 48px;
+      font-weight: 500;
+      line-height: 46px;
+      @media (max-width: 767px) {
+        font-size: 22px;
+        line-height: 32px;
+      }
+    }
+    h3 {
+      margin-top: var(--o-spacing-h8);
+      font-size: var(--o-font-size-h4);
+      line-height: var(--o-line-height-h4);
+      font-weight: normal;
+      @media (max-width: 767px) {
+        margin-top: var(--o-spacing-h10);
+        font-size: var(--o-font-size-tip);
+        line-height: var(--o-line-height-tip);
+      }
+    }
+    h4 {
+      font-size: var(--o-font-size-h8);
+      line-height: var(--o-line-height-h8);
+      font-weight: normal;
+      margin-top: 20px;
+      @media (max-width: 767px) {
+        font-size: var(--o-font-size-tip);
+        line-height: var(--o-line-height-tip);
+        margin-top: var(--o-spacing-h10);
+      }
+    }
+  }
+  a {
+    margin-top: var(--o-spacing-h4);
+  }
+  .home-banner-btnimport {
+    --o-button-padding: 11px 19px 11px 27px;
+    --o-color-brand1: var(--o-color-text1);
+    --o-color-brand2: var(--o-color-text1);
+  }
+  @media (max-width: 767px) {
+    .banner-text {
+      justify-content: flex-end;
+      padding-bottom: var(--o-spacing-h5);
+    }
+    a {
+      margin-top: var(--o-spacing-h6);
+    }
+    .home-banner-btnimport {
+      --o-button-padding: 6px 10px;
+      --o-button-font-size: var(--o-font-size-tip);
+      --o-button-line-height: var(--o-line-height-tip);
+      --o-button-icon-font-size: var(--o-font-size-h8);
     }
   }
 }
