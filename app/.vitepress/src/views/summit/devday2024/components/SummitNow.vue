@@ -21,10 +21,10 @@ const jumpPage = (href: string) => {
 </script>
 <template>
   <div class="summit-now">
-    <div class="title-img">
-      <img :src="isLight ? nowData.titleImg : nowData.titleImgDark" alt="" />
+    <div class="title-box">
+      <p class="title-bg">{{ nowData.titleBg }}</p>
+      <p class="title">{{ nowData.title }}</p>
     </div>
-    <p class="title">{{ nowData.title }}</p>
     <ul class="list">
       <li v-for="(item, i) in nowData.list" :key="i" class="item" @click="jumpPage(item.href)">
         <p class="item-title">{{ item.title }}</p>
@@ -37,37 +37,10 @@ const jumpPage = (href: string) => {
   </div>
 </template>
 <style scoped lang="scss">
-.title-img {
-  height: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 44px;
-  img {
-    width: 282px;
-  }
+.summit-now {
+  margin-bottom: 44px;
   @media (max-width: 767px) {
-    height: 32px;
-    img {
-      width: 180px;
-    }
-  }
-}
-.title {
-  font-size: 40px;
-  color: var(--o-color-text1);
-  line-height: 56px;
-  font-weight: 500;
-  text-align: center;
-  margin-top: -36px;
-  @media screen and (max-width: 1440px) {
-    font-size: var(--o-font-size-h3);
-    line-height: var(--o-line-height-h3);
-  }
-  @media (max-width: 767px) {
-    font-size: var(--o-font-size-h8);
-    line-height: var(--o-line-height-h8);
-    margin-top: -18px;
+    margin-bottom: 31px;
   }
 }
 .list {
@@ -121,16 +94,16 @@ const jumpPage = (href: string) => {
   }
   @media (max-width: 767px) {
     flex-direction: column;
-    margin-top: var(--o-spacing-h4);
+    margin-top: var(--o-spacing-h5);
     .item {
       width: 100%;
-      padding: var(--o-spacing-h5);
+      padding: var(--o-spacing-h6);
       .item-title {
-        font-size: var(--o-font-size-text);
-        line-height: var(--o-line-height-text);
+        font-size: var(--o-font-size-tip);
+        line-height: var(--o-line-height-tip);
       }
       .link {
-        margin-top: var(--o-spacing-h5);
+        margin-top: var(--o-spacing-h8);
         font-size: var(--o-font-size-tip);
         line-height: var(--o-line-height-tip);
         .o-icon {
