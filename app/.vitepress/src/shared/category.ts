@@ -5,6 +5,7 @@ const categories: string[] = [
   'events',
   'showcase',
   'migration',
+  'faq',
 ];
 
 export default categories;
