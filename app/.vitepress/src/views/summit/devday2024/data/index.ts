@@ -1,5 +1,5 @@
 import bannerBg from '../img/banner2.jpg';
-import bannerSummitMo from '@/assets/category/home/banner/banner-summit_mo-2024.jpg';
+import bannerSummitMo from '../img/banner-mb.jpg';
 import introTitleImg from '../img/intro-title-img.png';
 import agendaTitleImg from '../img/agenda-title-img.png';
 import nowTitleImg from '../img/now-title-img.png';
