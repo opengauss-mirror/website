@@ -10,7 +10,6 @@ defineProps({
 });
 </script>
 <template>
-  <!-- <a :href="bannerData.signUpHref" target="_blank" rel="noopener noreferrer"> -->
   <div class="banner">
     <div
       class="summit-banner-pc summit-banner"
@@ -36,7 +35,6 @@ defineProps({
       </div>
     </div>
   </div>
-  <!-- </a> -->
 </template>
 <style scoped lang="scss">
 @include in-dark {
