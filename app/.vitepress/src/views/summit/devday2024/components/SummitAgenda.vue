@@ -18,10 +18,10 @@ const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
 </script>
 <template>
   <div class="summit-agenda">
-    <div class="title-img">
-      <img :src="isLight ? agendaData.titleImg : agendaData.titleImgDark" alt="" />
+    <div class="title-box">
+      <p class="title-bg">{{ agendaData.titleBg }}</p>
+      <p class="title">{{ agendaData.title }}</p>
     </div>
-    <p class="title">{{ agendaData.title }}</p>
     <div class="agenda">
       <OTabs v-model="tabType" class="agenda-tabs">
         <OTabPane
@@ -38,42 +38,18 @@ const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
   </div>
 </template>
 <style scoped lang="scss">
-.title-img {
-  height: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 44px;
-  img {
-    width: 174px;
-  }
+.summit-agenda {
+  margin-bottom: 44px;
   @media (max-width: 767px) {
-    height: 32px;
-    img {
-      width: 130px;
-    }
-  }
-}
-.title {
-  font-size: 40px;
-  color: var(--o-color-text1);
-  line-height: 56px;
-  font-weight: 500;
-  text-align: center;
-  margin-top: -36px;
-  @media screen and (max-width: 1440px) {
-    font-size: var(--o-font-size-h3);
-    line-height: var(--o-line-height-h3);
-  }
-  @media (max-width: 767px) {
-    font-size: var(--o-font-size-h8);
-    line-height: var(--o-line-height-h8);
-    margin-top: -18px;
+    margin-bottom: 31px;
   }
 }
 .agenda {
   position: relative;
   margin-top: 42px;
+  @media (max-width: 767px) {
+    margin-top: var(--o-spacing-h5);
+  }
 }
 .agenda-tabs {
   :deep(.el-tabs__header) {
@@ -84,9 +60,15 @@ const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
       font-size: var(--o-font-size-h6);
       line-height: var(--o-line-height-h6);
       @media (max-width: 767px) {
-        font-size: var(--o-font-size-h8);
-        line-height: var(--o-line-height-h8);
-        padding-bottom: 16px;
+        font-size: var(--o-font-size-text);
+        line-height: var(--o-line-height-text);
+        padding-bottom: 2px;
+      }
+    }
+    @media (max-width: 767px) {
+      .el-tabs__active-bar {
+        width: 24px !important;
+        margin-left: 16px;
       }
     }
   }

@@ -1,36 +1,28 @@
 import bannerBg from '../img/banner2.jpg';
 import bannerSummitMo from '../img/banner-mb.jpg';
-import introTitleImg from '../img/intro-title-img.png';
-import agendaTitleImg from '../img/agenda-title-img.png';
-import nowTitleImg from '../img/now-title-img.png';
 import nowHoverImg from '../img/now-hover.jpg';
-
-import introTitleImgDark from '../img/intro-title-img-dark.png';
-import agendaTitleImgDark from '../img/agenda-title-img-dark.png';
-import nowTitleImgDark from '../img/now-title-img-dark.png';
 
 export default {
   banner: {
     bg: bannerBg,
     bgMo: bannerSummitMo,
+    slogan: '万数汇海 同创共赢',
     title: 'openGauss Developer Day 2024',
-    subtitle: '6月20-21日 | 北京.昆泰嘉瑞文化中心',
+    subtitle: '2024年6月21日 | 中国 北京',
     signUpHref: 'https://e-campaign.huawei.com/t/V7zuQb',
     signUpTitle: '立即报名',
   },
   intro: {
-    titleImg: introTitleImg,
-    titleImgDark: introTitleImgDark,
     title: '大会简介',
+    titleBg: 'INTRODUCTION',
     desc: [
-      'openGauss Developer Day 2024是openGauss社区发起并举办的数据库开发者年度盛会。同参与，齐贡献，openGauss社区开源4年来在内核、DataPod、DataKit、生态兼容、云原生五大方向上汇聚产业链大量创新力量。一方面内核竞争力上持续投入，另一方面实现DataPod、DataKit两大架构创新，分层解耦、资源池化，持续引领数据库技术发展方向；同时在生态兼容、云原生方向上取得良好成果。同时，得益于产业链共建、共享、共治，openGauss在产业、生态、商业和社区治理等方面也发展显著，正式跨越生态拐点。',
-      '为了持续打造中国最具创新力的开源数据库根社区，全面构筑面向数字基础设施的开源数据库，大会诚邀学术专家，行业用户，合作伙伴，开发者共同探讨数据库面向多场景的技术创新，分享基于openGauss的行业联合创新成果及商业实践，献计社区治理完善，讨论社区版本规划。openGauss诚邀开发者齐参与，同贡献，繁荣开源数据库根社区。',
+      'openGauss Developer Day 2024是openGauss社区发起的年度开发者盛会。大会将于6月21日在北京 · 昆泰嘉瑞文化中心举行。',
+      '本次开发者大会将聚集学术专家、行业用户、合作伙伴和开发者，共同探讨数据库面向多场景的技术创新，分享基于openGauss的行业联合创新成果及实践案例，献计社区治理，讨论社区版本规划，庆祝openGauss开源四周年。',
     ],
   },
   agenda: {
-    titleImg: agendaTitleImg,
-    titleImgDark: agendaTitleImgDark,
     title: '会议日程',
+    titleBg: 'AGENDA',
     date: 'June 20 -June 21',
     list: [
       {
@@ -74,27 +66,78 @@ export default {
         id: 'other',
         list: [
           {
-            type: '上午',
+            type: '上午·openGauss开发者大会主论坛',
+            time: 'am',
             children: [
               {
-                title: 'openGauss开发者大会主论坛  ',
+                title: '开场致辞：行业专家洞见',
                 date: '2024/06/21',
-                time: '09:00-11:30',
+                time: '09:30-09:40',
+              },
+              {
+                title: '主题演讲：社区最新进展及伙伴生态贡献',
+                date: '2024/06/21',
+                time: '09:40-10:20',
+              },
+              {
+                title: '联合发布：新增五大商业版本齐发布',
+                date: '2024/06/21',
+                time: '10:20-10:30',
+              },
+              {
+                title: '技术展示：openGauss最新特性+Demo演示',
+                date: '2024/06/21',
+                time: '10:30-10:45',
+              },
+              {
+                title: '实践案例：覆盖金融、运营商、政府等多领域优秀实践案例',
+                date: '2024/06/21',
+                time: '10:45-11:40',
+              },
+              {
+                title: '发证：培训认证伙伴发布',
+                date: '2024/06/21',
+                time: '11:40-11:45',
+              },
+              {
+                title: '颁奖：openGauss社区优秀SIG及开发者颁奖',
+                date: '2024/06/21',
+                time: '11:45-11:50',
               },
             ],
           },
           {
-            type: '下午',
+            type: '下午·分论坛',
             children: [
               {
-                title: '分论坛',
+                title: '数智时代，共赢未来-海量数据分论坛',
                 date: '2024/06/21',
-                time: '13:00-15:00',
+                time: '13:30-15:30',
               },
               {
-                title: 'SIG组版本规划工作会议',
+                title: '慧聚创新，智启未来-云和恩墨分论坛',
                 date: '2024/06/21',
-                time: '15:00-18:00',
+                time: '13:30-15:30',
+              },
+              {
+                title: 'openGauss全场景能力分论坛',
+                date: '2024/06/21',
+                time: '13:30-15:30',
+              },
+              {
+                title: 'openGauss应用&运维分论坛',
+                date: '2024/06/21',
+                time: '13:30-15:30',
+              },
+            ],
+          },
+          {
+            type: '下午·SIG组线下工作会议',
+            children: [
+              {
+                title: 'SIG组版本规划工作会议&社区四周年庆祝',
+                date: '2024/06/21',
+                time: '15:30-18:30',
               },
             ],
           },
@@ -103,10 +146,9 @@ export default {
     ],
   },
   now: {
-    titleImg: nowTitleImg,
-    titleImgDark: nowTitleImgDark,
     hoverImg: nowHoverImg,
     title: '立即参与',
+    titleBg: 'ENGAGEMENT',
     list: [
       {
         title: 'Call For Sponsor',
@@ -117,6 +159,32 @@ export default {
         title: 'Call for SIG',
         text: '申报现场会议',
         href: 'https://shimo.im/forms/m8AZMlraoQHKnjkb/fill',
+      },
+    ],
+  },
+  review: {
+    title: '精彩回顾',
+    titleBg: 'HIGHLIGHTS REVIEW',
+    list: [
+      {
+        title: 'openGauss Summit 2023',
+        link: '/zh/summit/summit2023/',
+      },
+      {
+        title: 'openGauss Developer Day 2023',
+        link: '/zh/summit/devday2023/',
+      },
+      {
+        title: 'openGauss Summit 2022',
+        link: '/zh/summit/summit2022/',
+      },
+      {
+        title: 'openGauss Developer Day 2022',
+        link: '/zh/summit/devday2022/',
+      },
+      {
+        title: 'openGauss Summit 2021',
+        link: '/zh/summit/summit2021/',
       },
     ],
   },
