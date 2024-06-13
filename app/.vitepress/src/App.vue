@@ -4,7 +4,7 @@ import AppFooter from '@/components/AppFooter.vue';
 import CookieNotice from '@/components/CookieNotice.vue';
 import { useData } from 'vitepress';
 import type { Component } from 'vue';
-import { computed } from 'vue';
+import { computed, onMounted } from 'vue';
 import zhCn from 'element-plus/lib/locale/lang/zh-cn';
 import en from 'element-plus/lib/locale/lang/en';
 
@@ -14,6 +14,8 @@ import LayoutNews from '@/layouts/LayoutNews.vue';
 import LayoutEvents from '@/layouts/LayoutEvents.vue';
 import LayoutShowcase from '@/layouts/LayoutShowcase.vue';
 import LayoutMigration from '@/layouts/LayoutMigration.vue';
+import LayoutFaq from '@/layouts/LayoutFaq.vue';
+
 import AppFloat from '@/components/AppFloat.vue';
 
 import categories from '@/shared/category';
@@ -34,6 +36,7 @@ const compMapping: {
   events: LayoutEvents,
   showcase: LayoutShowcase,
   migration: LayoutMigration,
+  faq: LayoutFaq,
 };
 
 const isCustomLayout = computed(() => {
@@ -44,6 +47,11 @@ const isCustomLayout = computed(() => {
 });
 const comp = computed(() => {
   return compMapping[frontmatter.value.category];
+});
+
+onMounted(() => {
+  window.xxx = comp;
+  window.aaa = isCustomLayout;
 });
 </script>
 
