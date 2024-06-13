@@ -21,7 +21,7 @@ const jumpPage = (href: string) => {
 </script>
 <template>
   <div class="summit-now">
-    <div class="title-box">
+    <div class="title-box" :class="{'title-box-dark': !isLight}">
       <p class="title-bg">{{ nowData.titleBg }}</p>
       <p class="title">{{ nowData.title }}</p>
     </div>

@@ -18,7 +18,7 @@ const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
 </script>
 <template>
   <div class="summit-agenda">
-    <div class="title-box">
+    <div class="title-box" :class="{'title-box-dark': !isLight}">
       <p class="title-bg">{{ agendaData.titleBg }}</p>
       <p class="title">{{ agendaData.title }}</p>
     </div>
@@ -66,6 +66,10 @@ const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
       }
     }
     @media (max-width: 767px) {
+      .el-tabs__item {
+        padding-left: 0;
+        padding-right: 16px;
+      }
       .el-tabs__active-bar {
         width: 24px !important;
         margin-left: 16px;

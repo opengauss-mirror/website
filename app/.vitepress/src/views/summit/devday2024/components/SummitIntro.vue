@@ -15,7 +15,7 @@ const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
 </script>
 <template>
   <div class="summit-intro">
-    <div class="title-box">
+    <div class="title-box" :class="{'title-box-dark': !isLight}">
       <p class="title-bg">{{ introData.titleBg }}</p>
       <p class="title">{{ introData.title }}</p>
     </div>
@@ -29,6 +29,7 @@ const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
 <style scoped lang="scss">
 .list {
   margin-top: var(--o-spacing-h2);
+  margin-bottom: 44px;
   .item {
     font-size: var(--o-font-size-h7);
     color: var(--o-color-text1);
@@ -43,6 +44,7 @@ const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
   }
   @media (max-width: 767px) {
     margin-top: var(--o-spacing-h5);
+    margin-bottom: 31px;
   }
 }
 </style>

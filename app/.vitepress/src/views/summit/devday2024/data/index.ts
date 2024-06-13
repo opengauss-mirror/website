@@ -1,5 +1,5 @@
-import bannerBg from '../img/banner2.jpg';
-import bannerSummitMo from '../img/banner-mb.jpg';
+import bannerBg from '../img/bg.jpg';
+import bannerSummitMo from '../img/bgMo.jpg';
 import nowHoverImg from '../img/now-hover.jpg';
 
 export default {
