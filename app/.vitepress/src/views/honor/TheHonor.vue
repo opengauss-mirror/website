@@ -662,7 +662,6 @@ const showPersonCard = (key: number) => {
         }
 
         .sig-title {
-          font-family: HarmonyHeiTi-Medium;
           font-size: var(--o-font-size-h5);
           letter-spacing: 0;
           line-height: var(--o-line-height-h5);
@@ -732,7 +731,6 @@ const showPersonCard = (key: number) => {
 
           .enterprise-title {
             padding: 0 var(--o-spacing-h8);
-            font-family: HarmonyHeiTi-Bold;
             font-size: var(--o-font-size-h7);
             font-weight: 700;
 
@@ -745,7 +743,6 @@ const showPersonCard = (key: number) => {
         .enterprise-prize-title {
           padding: 24px 12px 30px;
           line-height: var(--o-line-height-h8);
-          font-family: HarmonyHeiTi;
           font-size: var(--o-font-size-h8);
 
           @media (max-width: 900px) {
