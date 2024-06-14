@@ -55,6 +55,13 @@ const navData: Array<NavItemT> = [
           zh: '/zh/advanced/',
         },
       },
+      {
+        label: { zh: 'FAQ' },
+        id: 'faq',
+        href: {
+          zh: '/zh/faq/',
+        },
+      },
     ],
   },
   {
