@@ -55,7 +55,6 @@ defineProps({
     background: no-repeat center/cover;
   }
   .summit-banner-pc {
-    background-size: auto 100%;
     @media (max-width: 768px) {
       display: none;
     }
