@@ -23,11 +23,11 @@ ubuntu  / centos8 /centos10 / 红旗 需要适配编译数据库；在飞腾/海
 
 openGauss社区每两年发布一个LTS版本，LTS版本作为长期支持版本，可规模上线使用。半年发布一个创新版本，创新版本供用户联创测试使用；涉及重大问题修复时，会按需发布补丁版本。同时按照不同场景分为以下版本：
 
-(1) openGauss 企业版:具备更齐全的集群管理功能,适合企业用户。
+(1) openGauss 企业版:具备更齐全的集群管理功能,适合企业用户；
 
-(2) openGauss极简版:安装配置简单,解压可用,适合个人开发者。
+(2) openGauss极简版:安装配置简单,解压可用,适合个人开发者；
 
-(3) openGauss 轻量版:精简功能,缩减安装包大小,内存占用更少。
+(3) openGauss 轻量版:精简功能,缩减安装包大小,内存占用更少；
 
 (4) openGauss 分布式镜像:基于ShardingSphere和k8s的分布式容器化镜像。
 
@@ -35,21 +35,21 @@ openGauss社区每两年发布一个LTS版本，LTS版本作为长期支持版�
 
 ## 4. openGauss分布式部署方案是什么？
 
-1. 基于openLookeng实现分布式分析能力，与shardingsphere配合openGauss组成HTAP数据库。
-2. 基于分布式中间件shardingsphere使openGauss具备分布式数据库能力。
-3. 使用kubernetes部署分布式数据库
+1. 基于openLookeng实现分布式分析能力，与shardingsphere配合openGauss组成HTAP数据库；
+2. 基于分布式中间件shardingsphere使openGauss具备分布式数据库能力；
+3. 使用kubernetes部署分布式数据库。
 
 更多分布式部署方案请参考openGauss官网“学习”->“文档”区域。
 
 ## 5. openGauss支持的连接方式有哪些？
 
-1. 连接方式有JDBC / ODBC以及其它语言的驱动
-2. 连接客户端工具Data Studio 、Dbeaver、Navicat，可以参考官网“下载”->"支持工具"区域；同时DataKit的WebDS也支持客户端连接, 在官网“下载”->版本包 里，下载DataKit即可
+1. 连接方式有JDBC / ODBC以及其它语言的驱动；
+2. 连接客户端工具Data Studio 、Dbeaver、Navicat，可以参考官网“下载”->"支持工具"区域；同时DataKit的WebDS也支持客户端连接, 在官网“下载”->版本包 里，下载DataKit即可。
 
 ## 6. openGauss迁移方案有哪些？
 
 1. openGauss社区版本支持MySQL迁移，提供全量的迁移工具集，可在官网 ""下载""->版本包 ，openGauss Tools 里下载；操作可参考openGauss社区官网“社区”->“迁移专区”；
-2. openGauss DBV的商业发行版支持常见数据库的迁移工具
+2. openGauss DBV的商业发行版支持常见数据库的迁移工具。
 
 ## 7. openGauss支持的生态工具有哪些？
 
@@ -83,8 +83,8 @@ openGauss已经在包括金融、电信、政府、制造、能源、交通、�
 
 cm的命令可以远程执行，所以通常在任意节点均可执行，执行方式主要由两种：
 
-1. 依赖节点间互信由cm_ctl工具直接远程执行。
-2. 将待执行指令发送给cms主，再由cms主下发到对应节点的cma。因此只要互信和网络没有问题在集群中任意节点均可执行
+1. 依赖节点间互信由cm_ctl工具直接远程执行；
+2. 将待执行指令发送给cms主，再由cms主下发到对应节点的cma。因此只要互信和网络没有问题在集群中任意节点均可执行。
 
 ## 13. openGauss 5.0.0集群同步是否支持v6地址？
 
@@ -108,20 +108,20 @@ cm的命令可以远程执行，所以通常在任意节点均可执行，执行
 
 ## 17. xlog文件堆积可能有哪些原因
 
-1. 存在异常备机
-2. 存在非活跃的逻辑或物理复制槽
-3. 开启了归档，但是由于某些原因导致归档受阻
-4. 备份失败
-5. Xlog回收速率慢于日志产生速度
-6. Xlog相关参数配置不合理，与xlog保留数量相关的参数包括`wal_keep_segments`、`checkpoint_segments`，集群状态正常的情况下最多有wal_keep_segments + checkpoint_segments * 2 + 1个
+1. 存在异常备机；
+2. 存在非活跃的逻辑或物理复制槽；
+3. 开启了归档，但是由于某些原因导致归档受阻；
+4. 备份失败；
+5. Xlog回收速率慢于日志产生速度；
+6. Xlog相关参数配置不合理，与xlog保留数量相关的参数包括`wal_keep_segments`、`checkpoint_segments`，集群状态正常的情况下最多有wal_keep_segments + checkpoint_segments * 2 + 1个。
 
 ## 18. 根据core文件解析core堆栈步骤
 
-1. 官网下载版本、系统、架构匹配的符号表
-2. 将下载的符号表压缩包上传到环境，解压，将`symbol/lib/和symbol/bin/`目录下的所有内容拷贝到对应的`$GAUSSHOME/lib`和`$GAUSSHOME/bin`目录下，并保证权限正确
-3. 找到core文件目录，解压core文件，lz4 -d  文件名
-4. gdb gaussdb 解压后的core文件名（如果是其他的进程core了，gaussdb替换为其他的二进制名称）
-5. bt查看core堆栈
+1. 官网下载版本、系统、架构匹配的符号表；
+2. 将下载的符号表压缩包上传到环境，解压，将`symbol/lib/和symbol/bin/`目录下的所有内容拷贝到对应的`$GAUSSHOME/lib`和`$GAUSSHOME/bin`目录下，并保证权限正确；
+3. 找到core文件目录，解压core文件，lz4 -d  文件名；
+4. gdb gaussdb 解压后的core文件名（如果是其他的进程core了，gaussdb替换为其他的二进制名称）；
+5. bt查看core堆栈。
 
 ## 19. 数据库启动报错回显信息为waitpid xxx failed
 
