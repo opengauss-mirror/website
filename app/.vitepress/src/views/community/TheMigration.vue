@@ -434,7 +434,6 @@ const closeVideo = () => {
   --migration-desc-text-color: rgba(0, 0, 0, 0.6);
   padding-top: 0;
   padding-bottom: 0;
-  font-family: HarmonyHeiTi;
 
   .title {
     padding: 80px 0 var(--o-spacing-h2) 0;
@@ -522,7 +521,6 @@ const closeVideo = () => {
       }
 
       .card-title {
-        font-family: HarmonyHeiTi-Medium;
         font-size: var(--o-font-size-h5);
         color: var(--o-color-text1);
         line-height: var(--o-line-height-h5);
@@ -620,7 +618,6 @@ const closeVideo = () => {
           .number {
             width: 80px;
             height: 40px;
-            font-family: HarmonyHeiTi-Medium;
             font-size: 48px;
             color: var(--migration-number-text-color);
             text-align: center;
@@ -688,7 +685,6 @@ const closeVideo = () => {
           }
 
           &-title {
-            font-family: HarmonyHeiTi-Medium;
             font-size: var(--o-font-size-h6);
             color: var(--o-color-text1);
             line-height: var(--o-line-height-h6);
@@ -714,7 +710,6 @@ const closeVideo = () => {
 
           &-feature-title {
             padding-bottom: var(--o-spacing-h6);
-            font-family: HarmonyHeiTi-Medium;
             font-size: var(--o-font-size-text);
             color: var(--o-color-text1);
             line-height: var(--o-line-height-text);
@@ -828,7 +823,6 @@ const closeVideo = () => {
         padding: var(--o-spacing-h6) 0;
         text-align: center;
         background: var(--migration-step-card-bg-color);
-        font-family: HarmonyHeiTi-Medium;
         font-size: var(--o-font-size-h6);
         color: var(--o-color-text1);
         line-height: var(--o-line-height-h6);
@@ -908,7 +902,6 @@ const closeVideo = () => {
         &-left {
           display: flex;
           align-items: center;
-          font-family: HarmonyHeiTi-Medium;
           font-size: var(--o-font-size-h5);
           color: var(--o-color-text1);
           line-height: var(--o-line-height-h5);
@@ -988,7 +981,6 @@ const closeVideo = () => {
         color: #fff;
 
         &-title {
-          font-family: HarmonyHeiTi-Medium;
           font-size: var(--o-font-size-h7);
           line-height: var(--o-line-height-h7);
           font-weight: 500;
@@ -1091,7 +1083,6 @@ const closeVideo = () => {
           flex: 1;
           display: flex;
           align-items: center;
-          font-family: HarmonyHeiTi-Medium;
           font-size: var(--o-font-size-h5);
           line-height: var(--o-line-height-h5);
           font-weight: 500;
@@ -1181,7 +1172,6 @@ const closeVideo = () => {
   }
 
   &-title {
-    font-family: HarmonyHeiTi-Medium;
     font-size: 40px;
     color: #fff;
     line-height: 56px;
@@ -1199,7 +1189,6 @@ const closeVideo = () => {
 
   &-desc {
     padding: var(--o-spacing-h3) 0 var(--o-spacing-h4);
-    font-family: HarmonyHeiTi-Medium;
     font-size: 32px;
     color: #fff;
     line-height: 44px;
