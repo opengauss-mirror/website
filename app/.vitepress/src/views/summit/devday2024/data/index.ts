@@ -1,6 +1,8 @@
 import bannerBg from '../img/bg.jpg';
 import bannerSummitMo from '../img/bgMo.jpg';
 import nowHoverImg from '../img/now-hover.jpg';
+import agenda1 from './agenda1';
+import agenda2 from './agenda2';
 
 export default {
   banner: {
@@ -23,128 +25,9 @@ export default {
   agenda: {
     title: '会议日程',
     titleBg: 'AGENDA',
-    date: 'June 20 -June 21',
-    list: [
-      {
-        time: '06月20日',
-        id: 'main',
-        list: [
-          {
-            type: '上午',
-            children: [
-              {
-                title: '技术委员会工作会议',
-                date: '2024/06/20',
-                time: '10:00-12:00',
-              },
-              {
-                title: '用户委员会工作会议',
-                date: '2024/06/20',
-                time: '10:00-12:00',
-              },
-              {
-                title: '品牌委员会工作会议',
-                date: '2024/06/20',
-                time: '10:00-12:00',
-              },
-            ],
-          },
-          {
-            type: '下午',
-            children: [
-              {
-                title: '理事会工作会议',
-                date: '2024/06/20',
-                time: '14:00-17:30',
-              },
-            ],
-          },
-        ],
-      },
-      {
-        time: '06月21日',
-        id: 'other',
-        list: [
-          {
-            type: '上午·openGauss开发者大会主论坛',
-            time: 'am',
-            children: [
-              {
-                title: '开场致辞：行业专家洞见',
-                date: '2024/06/21',
-                time: '09:30-09:40',
-              },
-              {
-                title: '主题演讲：社区最新进展及伙伴生态贡献',
-                date: '2024/06/21',
-                time: '09:40-10:20',
-              },
-              {
-                title: '联合发布：基于openGauss的数据库发行版正式发布',
-                date: '2024/06/21',
-                time: '10:20-10:30',
-              },
-              {
-                title: '技术展示：openGauss最新特性+Demo演示',
-                date: '2024/06/21',
-                time: '10:30-10:45',
-              },
-              {
-                title: '实践案例：覆盖金融、运营商、政府等多领域优秀实践案例',
-                date: '2024/06/21',
-                time: '10:45-11:40',
-              },
-              {
-                title: '发证：培训认证伙伴发布',
-                date: '2024/06/21',
-                time: '11:40-11:45',
-              },
-              {
-                title: '颁奖：openGauss社区优秀SIG及开发者颁奖',
-                date: '2024/06/21',
-                time: '11:45-11:50',
-              },
-            ],
-          },
-          {
-            type: '下午·分论坛',
-            children: [
-              {
-                title: '数智时代，共赢未来-海量数据分论坛',
-                date: '2024/06/21',
-                time: '13:30-15:30',
-              },
-              {
-                title: '慧聚创新，智启未来-云和恩墨分论坛',
-                date: '2024/06/21',
-                time: '13:30-15:30',
-              },
-              {
-                title: 'openGauss全场景能力分论坛',
-                date: '2024/06/21',
-                time: '13:30-15:30',
-              },
-              {
-                title: 'openGauss应用&运维分论坛',
-                date: '2024/06/21',
-                time: '13:30-15:30',
-              },
-            ],
-          },
-          {
-            type: '下午·SIG组线下工作会议',
-            children: [
-              {
-                title: 'SIG组版本规划工作会议&社区四周年庆祝',
-                date: '2024/06/21',
-                time: '15:30-18:30',
-              },
-            ],
-          },
-        ],
-      },
-    ],
   },
+  agenda1,
+  agenda2,
   now: {
     hoverImg: nowHoverImg,
     title: '立即参与',
