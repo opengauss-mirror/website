@@ -4,8 +4,6 @@ import BreadCrumbs from '@/components/BreadCrumbs.vue';
 
 const { frontmatter } = useData();
 
-console.log(frontmatter);
-
 const migrationInfo = {
   link: `/zh/migration/`,
   name: '迁移专区',

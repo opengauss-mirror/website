@@ -15,6 +15,9 @@ import banner600_mb from '@/assets/category/home/banner/banner6.0.0_mo.jpg';
 
 import banner7 from '@/assets/category/home/banner/banner7.jpg';
 
+import bannerTeamUp from '@/assets/category/home/banner/banner-team-up.jpg';
+import bannerTeamUpMo from '@/assets/category/home/banner/banner-team-up_mo.jpg';
+
 import { LEARN_VIDEO_LINK, DOCS_LINK } from '@/data/url-config';
 
 // rightInset:banner右侧插图
@@ -26,6 +29,20 @@ export default {
       link: '/zh/summit/devday2024/',
       target: '_self',
       title: '',
+      titleMb: [],
+      subtitle: '',
+      desc: [''],
+      btn: '',
+      className: '',
+      rightInset: '',
+      rightLink: '',
+    },
+    {
+      pcBanner: bannerTeamUp,
+      moBanner: bannerTeamUpMo,
+      link: '/zh/team-up/',
+      target: '_self',
+      title: 'openGauss 结队计划 正式上线',
       titleMb: [],
       subtitle: '',
       desc: [''],

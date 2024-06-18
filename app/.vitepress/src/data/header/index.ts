@@ -115,6 +115,13 @@ const navData: Array<NavItemT> = [
         },
       },
       {
+        label: { zh: '结队计划' },
+        id: 'teamUp',
+        href: {
+          zh: '/zh/team-up/',
+        },
+      },
+      {
         label: { zh: '迁移专区' },
         id: 'migration',
         href: {
