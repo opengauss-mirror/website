@@ -64,7 +64,10 @@ const clickRightInset = (path: string) => {
           @click="jump(item, item.btn !== '')"
         >
           <div class="banner-content">
-            <div class="content-left">
+            <div
+              class="content-left"
+              :class="{ 'teamup-content-left': item.link.includes('team-up') }"
+            >
               <div class="content-text">
                 <div
                   v-if="windowWidth < 767 && item.titleMb.length"
@@ -74,7 +77,11 @@ const clickRightInset = (path: string) => {
                     {{ itemTitleMb }}
                   </p>
                 </div>
-                <p v-else class="title">
+                <p
+                  v-else
+                  class="title"
+                  :class="{ 'teamup-title': item.link.includes('team-up') }"
+                >
                   {{ item.title }}
                 </p>
                 <p v-if="item.subtitle" class="subtitle">{{ item.subtitle }}</p>
@@ -236,6 +243,21 @@ html[lang='zh'] {
               }
             }
           }
+          .teamup-title {
+            font-size: 56px;
+            line-height: 84px;
+            font-weight: 600;
+            @media screen and (max-width: 1439px) {
+              font-size: var(--o-font-size-h3);
+              line-height: var(--o-line-height-h3);
+            }
+            @media screen and (max-width: 767px) {
+              padding-bottom: var(--o-spacing-h5);
+              font-size: 20px;
+              line-height: 30px;
+              text-align: center;
+            }
+          }
         }
         .btn-box {
           margin-top: var(--o-spacing-h3);
@@ -249,6 +271,11 @@ html[lang='zh'] {
             color: var(--o-color-white);
             border: 1px solid var(--o-color-white);
           }
+        }
+      }
+      .teamup-content-left {
+        @media screen and (max-width: 767px) {
+          justify-content: flex-end;
         }
       }
       .content-right {
@@ -316,56 +343,57 @@ html[lang='zh'] {
     }
   }
   .banner-summit {
-  height: 100%;
-  width: 100%;
-  position: relative;
-  cursor: pointer;
-  .summit-banner-pc {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     height: 100%;
-    margin: 0 auto;
-    background: url(@/assets/category/home/banner/banner-summit-2024.jpg)no-repeat center/cover;
-    .img-wrap {
-      width: 100%;
-      max-width: 1504px;
-      padding: 0 44px;
-      @media screen and (max-width: 1440px) {
-        padding: 0 24px;
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+    .summit-banner-pc {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      margin: 0 auto;
+      background: url(@/assets/category/home/banner/banner-summit-2024.jpg)
+        no-repeat center/cover;
+      .img-wrap {
+        width: 100%;
+        max-width: 1504px;
+        padding: 0 44px;
+        @media screen and (max-width: 1440px) {
+          padding: 0 24px;
+        }
+        @media screen and (max-width: 1100px) {
+          padding: 0 16px;
+          img {
+            width: 660px;
+          }
+        }
       }
-      @media screen and (max-width: 1100px) {
-        padding: 0 16px;
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
+    }
+    .summit-banner-mo {
+      display: none;
+      @media screen and (max-width: 768px) {
+        width: 100%;
+        height: 100%;
+        display: block;
+        background-image: url(@/assets/category/home/banner/banner-summit_mo-2024.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: relative;
         img {
-          width: 660px;
+          width: 300px;
+          position: absolute;
+          bottom: 9%;
+          left: 50%;
+          transform: translateX(-50%);
         }
       }
     }
-    @media screen and (max-width: 768px) {
-      display: none;
-    }
   }
-  .summit-banner-mo {
-    display: none;
-    @media screen and (max-width: 768px) {
-      width: 100%;
-      height: 100%;
-      display: block;
-      background-image: url(@/assets/category/home/banner/banner-summit_mo-2024.jpg);
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      position: relative;
-      img {
-        width: 300px;
-        position: absolute;
-        bottom: 9%;
-        left: 50%;
-        transform: translateX(-50%);
-      }
-    }
-  }
-}
 }
 @include in-dark {
   .banner-img {
