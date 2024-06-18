@@ -1,5 +1,5 @@
 ---
-title: '组队计划申请表'
+title: '结队计划申请表'
 ---
 
 <script setup>
