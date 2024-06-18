@@ -66,7 +66,7 @@ const otherTabType = ref(0);
             v-for="subItem in itemList.content"
             :key="subItem.id"
             class="content-item"
-            :class="{'no-name': !subItem.person[0]}"
+            :class="{'no-name': !subItem.person[0], 'content-item-sig': agendaData.lable.includes('SIG组线下工作会议')}"
           >
             <span class="time">
               <img :src="isLight ? time : timeDark" />
@@ -302,7 +302,7 @@ const otherTabType = ref(0);
       padding-top: 0;
     }
     @media screen and (max-width: 1328px) {
-      grid-template-columns: 185px 530px 450px;
+      grid-template-columns: 185px 410px 450px;
     }
     @media screen and (max-width: 1100px) {
       grid-template-columns: 80px auto;
@@ -338,9 +338,6 @@ const otherTabType = ref(0);
       margin-right: 56px;
       > span {
         display: block;
-        & ~ span {
-          margin-top: var(--o-spacing-h6);
-        }
       }
       @media (max-width: 1100px) {
         margin-right: 0;
@@ -350,11 +347,11 @@ const otherTabType = ref(0);
     }
 
     .name {
-      min-width: 206px;
+      min-width: 180px;
       display: inline-block;
       color: var(--o-color-text3);
-      font-size: 16px;
-      line-height: var(--o-line-height-h8);
+      font-size: 18px;
+      line-height: 26px;
       @media screen and (max-width: 1328px) {
         min-width: 160px;
       }
@@ -367,11 +364,10 @@ const otherTabType = ref(0);
       width: 100%;
       display: inline-block;
       color: var(--o-color-text3);
-      font-size: 16px;
-      line-height: 24px;
+      font-size: 18px;
+      line-height: 26px;
       flex: 1;
       div {
-        line-height: 32px;
         @media (max-width: 1100px) {
           font-size: 12px;
           line-height: 18px;
@@ -412,10 +408,21 @@ const otherTabType = ref(0);
       display: inline-block;
     }
   }
+  .content-item-sig {
+    grid-template-columns: 185px 403px 650px;
+    @media screen and (max-width: 1328px) {
+      grid-template-columns: 185px 350px 450px;
+    }
+    @media screen and (max-width: 1100px) {
+      grid-template-columns: 80px auto;
+      padding: 6px 0;
+      position: static;
+    }
+  }
   .no-name {
     grid-template-columns: 590px 564px;
     @media screen and (max-width: 1328px) {
-      grid-template-columns: 460px 450px;
+      grid-template-columns: 536px 450px;
     }
     @media screen and (max-width: 1100px) {
       grid-template-columns: 80px auto;
