@@ -20,7 +20,7 @@ export default [
   {
     img: chenhao,
     name: '陈浩',
-    position: ['云和恩墨.本原数据库', '技术合伙人'],
+    position: ['云和恩墨本原数据库', '技术合伙人'],
   },
   {
     img: suntengfei,
