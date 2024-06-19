@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { computed } from 'vue';
 import { useCommon } from '@/stores/common';
+import { computed, onMounted, ref, watch } from 'vue';
 
 import AppContent from '@/components/AppContent.vue';
 import SummitBanner from './components/SummitBanner.vue';
@@ -20,6 +20,53 @@ import appSubForumGuests from './data/appSubForumGuests';
 
 const commonStore = useCommon();
 const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
+
+import { useCookieStatus } from '@/stores/common';
+
+import { getUrlParams } from '@/shared/utils';
+
+const hasReported = ref(false);
+const cookieStatus = useCookieStatus();
+
+// 埋点统计投放流量
+function collectAdvertisedData() {
+  if (hasReported.value) {
+    return;
+  }
+  const sensors = (window as any)['sensorsDataAnalytic201505'];
+  const { href } = window.location;
+  const regex = /[\?&]utm_source=/;
+  const containsUtmSource = regex.test(href);
+  if (!containsUtmSource) {
+    return;
+  }
+  const paramsArr = getUrlParams(href);
+  sensors?.setProfile({
+    ...(window as any)['sensorsCustomBuriedData'],
+    profileType: 'fromAdvertised',
+    origin: href,
+    ...paramsArr,
+  });
+  history.pushState(null, '', location.origin + location.pathname);
+  hasReported.value = true;
+}
+
+watch(
+  () => cookieStatus.isAllAgreed,
+  (val) => {
+    if (val) {
+      collectAdvertisedData();
+    }
+  }
+);
+
+onMounted(() => {
+  setTimeout(() => {
+    if (cookieStatus.isAllAgreed) {
+      collectAdvertisedData();
+    }
+  }, 300);
+});
 </script>
 
 <template>
@@ -29,15 +76,35 @@ const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
     <SummitLive :live-data="summitData.live" />
     <SummitAgenda :agenda-data="summitData.agenda" />
     <div class="summit-guests">
-      <div class="title-box" :class="{'title-box-dark': !isLight}">
+      <div class="title-box" :class="{ 'title-box-dark': !isLight }">
         <p class="title-bg">{{ summitData.guests.titleBg }}</p>
         <p class="title">{{ summitData.guests.title }}</p>
       </div>
-      <SummitGuests :title="summitData.guests.mainForumTitle" :lecturer-list="guestsData" class="main-forum" />
-      <SummitGuests :title="summitData.guests.dataSubForumTitle" :lecturer-list="dataSubForumGuests" class="data-forum" />
-      <SummitGuests :title="summitData.guests.yunSubForumTitle" :lecturer-list="yunSubForumGuests" class="yun-forum" />
-      <SummitGuests :title="summitData.guests.fullSubForumTitle" :lecturer-list="fullSubForumGuests" class="full-forum" />
-      <SummitGuests :title="summitData.guests.appSubForumTitle" :lecturer-list="appSubForumGuests" class="app-forum" />
+      <SummitGuests
+        :title="summitData.guests.mainForumTitle"
+        :lecturer-list="guestsData"
+        class="main-forum"
+      />
+      <SummitGuests
+        :title="summitData.guests.dataSubForumTitle"
+        :lecturer-list="dataSubForumGuests"
+        class="data-forum"
+      />
+      <SummitGuests
+        :title="summitData.guests.yunSubForumTitle"
+        :lecturer-list="yunSubForumGuests"
+        class="yun-forum"
+      />
+      <SummitGuests
+        :title="summitData.guests.fullSubForumTitle"
+        :lecturer-list="fullSubForumGuests"
+        class="full-forum"
+      />
+      <SummitGuests
+        :title="summitData.guests.appSubForumTitle"
+        :lecturer-list="appSubForumGuests"
+        class="app-forum"
+      />
     </div>
     <SummitNow :now-data="summitData.now" />
     <SummitReview :review-data="summitData.review" />
@@ -51,7 +118,11 @@ const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
     font-size: 40px;
     line-height: 56px;
     font-weight: 600;
-    background-image: linear-gradient(to bottom, rgba(#b461f6, 0.24) 0, rgba(#7d32ea, 0) 100%);
+    background-image: linear-gradient(
+      to bottom,
+      rgba(#b461f6, 0.24) 0,
+      rgba(#7d32ea, 0) 100%
+    );
     -webkit-background-clip: text;
     color: transparent;
     @media screen and (max-width: 1440px) {
@@ -83,7 +154,11 @@ const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
 }
 :deep(.title-box-dark) {
   .title-bg {
-    background-image: linear-gradient(to bottom, rgba(#b461f6, 0.4) 0, rgba(#7d32ea, 0) 100%);
+    background-image: linear-gradient(
+      to bottom,
+      rgba(#b461f6, 0.4) 0,
+      rgba(#7d32ea, 0) 100%
+    );
   }
 }
 </style>
