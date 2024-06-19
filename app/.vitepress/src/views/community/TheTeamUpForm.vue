@@ -32,11 +32,21 @@ const rules: FormRules = {
       message: '请输入openGauss使用场景',
       trigger: 'blur',
     },
+    {
+      max: 50,
+      message: '最多输入50个字符',
+      trigger: 'blur',
+    },
   ],
   version: [
     {
       required: true,
       message: '请输入使用openGauss版本信息',
+      trigger: 'blur',
+    },
+    {
+      max: 50,
+      message: '最多输入50个字符',
       trigger: 'blur',
     },
   ],
@@ -46,11 +56,21 @@ const rules: FormRules = {
       message: '请输入部署openGauss节点数',
       trigger: 'blur',
     },
+    {
+      max: 50,
+      message: '最多输入50个字符',
+      trigger: 'blur',
+    },
   ],
   hardware: [
     {
       required: true,
       message: '请输入部署openGauss硬件信息',
+      trigger: 'blur',
+    },
+    {
+      max: 50,
+      message: '最多输入50个字符',
       trigger: 'blur',
     },
   ],
@@ -60,6 +80,11 @@ const rules: FormRules = {
       message: '请输入目前遇到的问题描述',
       trigger: 'blur',
     },
+    {
+      max: 500,
+      message: '最多输入500个字符',
+      trigger: 'blur',
+    },
   ],
   name: [
     {
@@ -67,11 +92,21 @@ const rules: FormRules = {
       message: '请输入申请人姓名',
       trigger: 'blur',
     },
+    {
+      max: 50,
+      message: '最多输入50个字符',
+      trigger: 'blur',
+    },
   ],
   company: [
     {
       required: true,
       message: '请输入申请人单位',
+      trigger: 'blur',
+    },
+    {
+      max: 50,
+      message: '最多输入50个字符',
       trigger: 'blur',
     },
   ],
@@ -85,6 +120,11 @@ const rules: FormRules = {
         }
         return callback();
       },
+      trigger: 'blur',
+    },
+    {
+      max: 50,
+      message: '最多输入50个字符',
       trigger: 'blur',
     },
   ],
@@ -108,24 +148,27 @@ const checkedPrivacyPolicy = ref(false);
 
 const formRef = ref<FormInstance>();
 
-let loading = false;
-const handleSubmit = async () => {
-  if (loading) {
-    return;
-  }
+const validateForm = () => {
+  formRef.value
+    ?.validate((valid) => {
+      if (valid) {
+        if (checkedPrivacyPolicy.value) {
+          submitForm();
+        } else {
+          ElMessage({
+            type: 'error',
+            message: '请勾选隐私声明',
+          });
+        }
+      }
+    })
+    .catch(() => {
+      //nothing
+    });
+};
 
-  loading = true;
+const submitForm = async () => {
   try {
-    await formRef.value?.validate();
-
-    if (!checkedPrivacyPolicy.value) {
-      ElMessage({
-        type: 'error',
-        message: '请勾选隐私声明',
-      });
-      return;
-    }
-
     const res = await teamupApplyForm(formData);
     if (res.code === 200) {
       ElMessage({
@@ -135,14 +178,19 @@ const handleSubmit = async () => {
       setTimeout(() => {
         formRef.value?.resetFields();
         checkedPrivacyPolicy.value = false;
-        loading = false;
         router.go('/zh/team-up/');
       }, 2000);
     } else {
-      loading = false;
+      ElMessage({
+        type: 'error',
+        message: '申请提交失败！',
+      });
     }
   } catch (_) {
-    loading = false;
+    ElMessage({
+      type: 'error',
+      message: '申请提交失败！',
+    });
   }
 };
 
@@ -225,7 +273,7 @@ onMounted(() => {
           >
         </el-checkbox>
         <div class="btn-wrap">
-          <OButton type="primary" @click="handleSubmit"> 提交申请 </OButton>
+          <OButton type="primary" @click="validateForm"> 提交申请 </OButton>
         </div>
       </el-form>
 
