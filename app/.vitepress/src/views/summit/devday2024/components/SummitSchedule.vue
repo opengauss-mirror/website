@@ -66,7 +66,7 @@ const otherTabType = ref(0);
             v-for="subItem in itemList.content"
             :key="subItem.id"
             class="content-item"
-            :class="{'no-name': !subItem.person[0], 'content-item-sig': agendaData.lable.includes('SIG组线下工作会议')}"
+            :class="{'no-name': !subItem.person[0], 'sub-forum': agendaData.lable.includes('分论坛'), 'content-item-sig': agendaData.lable.includes('SIG组线下工作会议')}"
           >
             <span class="time">
               <img :src="isLight ? time : timeDark" />
@@ -84,7 +84,7 @@ const otherTabType = ref(0);
             </span>
             <div v-if="subItem.person[0]" class="name-box">
               <div v-for="personItem in subItem.person" :key="personItem.id">
-                <span class="name">
+                <span class="name" :class="{'name-no': personItem.id.includes('id21_1_8') || personItem.id.includes('id21_1_11')}">
                   {{ personItem.name }}
                 </span>
                 <span v-if="personItem.post" class="post">
@@ -347,11 +347,11 @@ const otherTabType = ref(0);
     }
 
     .name {
-      min-width: 180px;
+      min-width: 144px;
       display: inline-block;
       color: var(--o-color-text3);
-      font-size: 18px;
-      line-height: 26px;
+      font-size: 16px;
+      line-height: 24px;
       @media screen and (max-width: 1328px) {
         min-width: 160px;
       }
@@ -360,12 +360,17 @@ const otherTabType = ref(0);
         line-height: 18px;
       }
     }
+    .name-no {
+      @media (max-width: 1100px) {
+        display: none;
+      }
+    }
     .post {
       width: 100%;
       display: inline-block;
       color: var(--o-color-text3);
-      font-size: 18px;
-      line-height: 26px;
+      font-size: 16px;
+      line-height: 24px;
       flex: 1;
       div {
         @media (max-width: 1100px) {
@@ -409,9 +414,9 @@ const otherTabType = ref(0);
     }
   }
   .content-item-sig {
-    grid-template-columns: 185px 403px 650px;
+    grid-template-columns: 185px 335px 840px;
     @media screen and (max-width: 1328px) {
-      grid-template-columns: 185px 350px 450px;
+      grid-template-columns: 185px 335px 600px;
     }
     @media screen and (max-width: 1100px) {
       grid-template-columns: 80px auto;
@@ -419,15 +424,9 @@ const otherTabType = ref(0);
       position: static;
     }
   }
-  .no-name {
-    grid-template-columns: 590px 564px;
-    @media screen and (max-width: 1328px) {
-      grid-template-columns: 536px 450px;
-    }
-    @media screen and (max-width: 1100px) {
-      grid-template-columns: 80px auto;
-      padding: 6px 0;
-      position: static;
+  .sub-forum {
+    .name {
+      min-width: 114px;
     }
   }
 }

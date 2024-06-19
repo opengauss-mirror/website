@@ -1,19 +1,44 @@
 <script setup lang="ts">
+import { computed } from 'vue';
+import { useCommon } from '@/stores/common';
+
 import AppContent from '@/components/AppContent.vue';
 import SummitBanner from './components/SummitBanner.vue';
 import SummitIntro from './components/SummitIntro.vue';
+import SummitLive from './components/SummitLive.vue';
 import SummitAgenda from './components/SummitAgenda.vue';
+import SummitGuests from './components/SummitGuests.vue';
 import SummitNow from './components/SummitNow.vue';
 import SummitReview from './components/SummitReview.vue';
 
 import summitData from './data';
+import guestsData from './data/mainForumGuests';
+import dataSubForumGuests from './data/dataSubForumGuests';
+import yunSubForumGuests from './data/yunSubForumGuests';
+import fullSubForumGuests from './data/fullSubForumGuests';
+import appSubForumGuests from './data/appSubForumGuests';
+
+const commonStore = useCommon();
+const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
 </script>
 
 <template>
   <SummitBanner :banner-data="summitData.banner" />
   <AppContent>
     <SummitIntro :intro-data="summitData.intro" />
+    <SummitLive :live-data="summitData.live" />
     <SummitAgenda :agenda-data="summitData.agenda" />
+    <div class="summit-guests">
+      <div class="title-box" :class="{'title-box-dark': !isLight}">
+        <p class="title-bg">{{ summitData.guests.titleBg }}</p>
+        <p class="title">{{ summitData.guests.title }}</p>
+      </div>
+      <SummitGuests :title="summitData.guests.mainForumTitle" :lecturer-list="guestsData" class="main-forum" />
+      <SummitGuests :title="summitData.guests.dataSubForumTitle" :lecturer-list="dataSubForumGuests" class="data-forum" />
+      <SummitGuests :title="summitData.guests.yunSubForumTitle" :lecturer-list="yunSubForumGuests" class="yun-forum" />
+      <SummitGuests :title="summitData.guests.fullSubForumTitle" :lecturer-list="fullSubForumGuests" class="full-forum" />
+      <SummitGuests :title="summitData.guests.appSubForumTitle" :lecturer-list="appSubForumGuests" class="app-forum" />
+    </div>
     <SummitNow :now-data="summitData.now" />
     <SummitReview :review-data="summitData.review" />
   </AppContent>
