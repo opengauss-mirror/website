@@ -118,24 +118,21 @@ const props = defineProps({
   .lecturer-list {
     @media (min-width: 1417px) {
       .lecturer-list-item {
-        &:nth-of-type(1) {
-          grid-column: 2 / span 1;
-        }
-        &:nth-of-type(2) {
-          grid-column: 3 / span 1;
-        }
+        &:nth-of-type(1),
+        &:nth-of-type(2),
         &:nth-of-type(3) {
-          grid-column: 1 / span 1;
+          transform: translateX(50%);
         }
-        &:last-of-type {
-          grid-column: 1 / span 4;
+        &:nth-of-type(4) {
+          grid-column: 1 / span 1;
         }
       }
     }
   }
 }
 .yun-forum,
-.app-forum {
+.app-forum,
+.data-forum {
   .lecturer-list {
     @media (min-width: 1417px) {
       .lecturer-list-item {
