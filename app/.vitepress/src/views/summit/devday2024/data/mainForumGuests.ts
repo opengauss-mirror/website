@@ -1,5 +1,5 @@
 import wuhequan from '../img/guests/main/wuhequan.png';
-import zhouping from '../img/guests/main/zhouping.png';
+import dingzhiming from '../img/guests/main/dingzhiming.png';
 import tanzhongyi from '../img/guests/main/tanzhongyi.png';
 import xiongwei from '../img/guests/main/xiongwei.png';
 import sunhu from '../img/guests/main/sunhu.png';
@@ -25,9 +25,9 @@ export default [
     position: ['中国工程院', '院士',],
   },
   {
-    img: zhouping,
-    name: '周平',
-    position: ['国家工业信息安全发展研究中心', '总工程师'],
+    img: dingzhiming,
+    name: '丁治明',
+    position: ['中国科学院软件研究所研究员', '时空数据管理与数据科学研究中心主任'],
   },
   {
     img: tanzhongyi,
