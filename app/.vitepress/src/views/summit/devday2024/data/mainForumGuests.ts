@@ -17,6 +17,10 @@ import wumingyuan from '../img/guests/main/wumingyuan.png';
 import licong from '../img/guests/main/licong.png';
 import wanglei from '../img/guests/main/wanglei.png';
 import quemingjian from '../img/guests/main/quemingjian.png';
+import langhonhbin from '../img/guests/main/langhonhbin.png';
+import luoyuquan from '../img/guests/main/luoyuquan.png';
+import wangyue from '../img/guests/main/wangyue.png';
+import sunxiaobo from '../img/guests/main/sunxiaobo.png';
 
 export default [
   {
@@ -93,6 +97,26 @@ export default [
     img: caiyajie,
     name: '蔡亚杰',
     position: ['openGauss社区', '秘书长'],
+  },
+  {
+    img: langhonhbin,
+    name: '郎宏彬',
+    position: ['尚博信', '架构师'],
+  },
+  {
+    img: luoyuquan,
+    name: '罗玉泉',
+    position: ['大汉软件', '产品与解决方案高级经理'],
+  },
+  {
+    img: wangyue,
+    name: '王悦',
+    position: ['鼎桥通信', '市场部经理'],
+  },
+  {
+    img: sunxiaobo,
+    name: '孙小波',
+    position: ['四川虹微技术有限公司', '数据库首席架构师'],
   },
   {
     img: wumingyuan,
