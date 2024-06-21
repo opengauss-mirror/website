@@ -101,22 +101,22 @@ export default [
   {
     img: langhonhbin,
     name: '郎宏彬',
-    position: ['尚博信', '架构师'],
+    position: ['北京尚博信科技有限公司', '架构师'],
   },
   {
     img: luoyuquan,
     name: '罗玉泉',
-    position: ['大汉软件', '产品与解决方案高级经理'],
-  },
-  {
-    img: wangyue,
-    name: '王悦',
-    position: ['鼎桥通信', '市场部经理'],
+    position: ['大汉软件股份有限公司', '产品与解决方案高级经理'],
   },
   {
     img: sunxiaobo,
     name: '孙小波',
     position: ['四川虹微技术有限公司', '数据库首席架构师'],
+  },
+  {
+    img: wangyue,
+    name: '王悦',
+    position: ['成都鼎桥通信技术有限公司', '市场部经理'],
   },
   {
     img: wumingyuan,
