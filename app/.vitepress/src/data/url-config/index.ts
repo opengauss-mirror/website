@@ -30,6 +30,8 @@ const OBS_CERTIFICATION_LINK1 =
 const MAILWEB_LINK = 'https://mailweb.opengauss.org/'; // 社区线上交流sig组归档的mailweb地址
 const OBS_TRANSFER_LINK =
   'https://obs-transfer.obs.cn-north-4.myhuaweicloud.com/'; // 服务商认证存储的obs地址
+const OBS_TRANSFER_LINK1 =
+  'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/'; // 服务商认证存储的obs地址
 const OBS_LEARN_LINK =
   'https://learningvideo.obs.ap-southeast-1.myhuaweicloud.com:443/'; // 资讯视频存储的obs地址
 const OBS_JIACAN_LINK =
@@ -105,6 +107,7 @@ export {
   OBS_CERTIFICATION_LINK1,
   MAILWEB_LINK,
   OBS_TRANSFER_LINK,
+  OBS_TRANSFER_LINK1,
   OBS_LEARN_LINK,
   EULER_LINK,
   MINDSPORE_LINK,

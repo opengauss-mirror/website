@@ -6,6 +6,14 @@ import {
 export default {
   zh: [
     {
+      pro: '大汉HanDB数据库软件V2.0',
+      name: '大汉软件股份有限公司',
+      version: 'openGauss 5.0.0',
+      award: '2024-06-04',
+      expiration: '2026-03-31',
+      certificate: `${OBS_CERTIFICATION_LINK}%E5%A4%A7%E6%B1%89%E8%BD%AF%E4%BB%B6/HanDB%20V2.0/Certificate.pdf`,
+    },
+    {
       pro: '【VastbaseG100】V2.2.15',
       name: '北京海量数据技术股份有限公司',
       version: 'openGauss 5.0.0',
@@ -194,6 +202,14 @@ export default {
     },
   ],
   en: [
+    {
+      pro: '大汉HanDB数据库软件V2.0',
+      name: '大汉软件股份有限公司',
+      version: 'openGauss 5.0.0',
+      award: '2024-06-04',
+      expiration: '2026-03-31',
+      certificate: `${OBS_CERTIFICATION_LINK}%E5%A4%A7%E6%B1%89%E8%BD%AF%E4%BB%B6/HanDB%20V2.0/Certificate.pdf`,
+    },
     {
       pro: '【VastbaseG100】V2.2.15',
       name: '北京海量数据技术股份有限公司',
