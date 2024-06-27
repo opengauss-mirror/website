@@ -28,6 +28,26 @@ const randerData = computed(() => {
   );
 });
 
+// 获取类型下拉选项
+const set = new Set<string>();
+compatibilityData.forEach((item) => {
+  set.add(item.type);
+});
+
+const typeOptionData = [
+  {
+    label: '全部产品类型',
+    value: '',
+  },
+];
+
+for (const el of set) {
+  typeOptionData.push({
+    label: el,
+    value: el,
+  });
+}
+
 // 分页size修改
 const handleSizeChange = (val: number) => {
   pageSize.value = val;
@@ -39,16 +59,20 @@ const handleCurrentChange = (val: number) => {
 
 // 搜索功能
 const searchInput = ref('');
+const searchType = ref('');
 const queryCompatibilityData = () => {
-  const regex = new RegExp(searchInput.value);
+  const regex = new RegExp(searchInput.value.trim(), 'i');
   allData.value = [];
   compatibilityData.forEach((item) => {
     if (
       regex.test(item.name) ||
       regex.test(item.type) ||
-      regex.test(item.company)
+      regex.test(item.company) ||
+      regex.test(`${item.name} V${item.version}`)
     ) {
-      allData.value.push(item);
+      if (searchType.value === '' || searchType.value === item.type) {
+        allData.value.push(item);
+      }
     }
   });
   currentPage.value = 1;
@@ -80,6 +104,21 @@ function jumpPageMb(page: number) {
     />
     <AppContent :mobile-top="16" class="compatibility-content">
       <div class="o-search">
+        <OSelect
+          v-model="searchType"
+          class="type-select"
+          clearable
+          filterable
+          :placeholder="i18n.compatibility.type_search_placeholder"
+          @change="queryCompatibilityData"
+        >
+          <OOption
+            v-for="item in typeOptionData"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value"
+          />
+        </OSelect>
         <OSearch
           v-model="searchInput"
           clearable
@@ -198,9 +237,30 @@ function jumpPageMb(page: number) {
 </template>
 <style lang="scss" scoped>
 .o-search {
+  display: flex;
   height: 48px;
   @media screen and (max-width: 1100px) {
     height: 36px;
+  }
+
+  .type-select {
+    margin-right: 16px;
+
+    :deep(.el-input__prefix) {
+      display: none;
+    }
+
+    :deep(.el-input) {
+      height: 48px;
+
+      @media screen and (max-width: 1100px) {
+        height: 36px;
+      }
+    }
+
+    @media screen and (max-width: 1100px) {
+      margin-right: 12px;
+    }
   }
 }
 .pc-list {

@@ -1,9 +1,10 @@
 export default {
   title: '兼容性列表',
   search: '搜索',
-  search_placeholder: '请输入关键词',
-  name: '软件名称',
-  type: '软件类型',
+  search_placeholder: '请输入产品名称',
+  type_search_placeholder: '全部产品类型',
+  name: '产品名称',
+  type: '产品类型',
   manufacturer_name: '厂家名称',
   software: '数据库软件',
   system: '操作系统',
