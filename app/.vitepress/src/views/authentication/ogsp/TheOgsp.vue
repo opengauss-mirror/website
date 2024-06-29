@@ -228,7 +228,7 @@ onMounted(() => {
         <span class="pagination-slot">{{ currentPage }}/{{ totalPage }}</span>
       </OPagination>
       <AppPaginationMo
-        :total-page="tableData.length"
+        :total-page="totalPage"
         :current-page="currentPage"
         @turn-page="changeCurrentMb"
         @jump-page="jumpPageMb"
