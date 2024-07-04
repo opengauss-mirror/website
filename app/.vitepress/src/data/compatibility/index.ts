@@ -1,5 +1,38 @@
 export default [
   {
+    name: '网络货运平台',
+    version: '1.0',
+    type: '物流',
+    company: '厦门同创空间信息技术有限公司',
+    database: 'openGauss 2.1.0',
+    os: 'Kylin V10 SP3',
+    server: 'Kunpeng 920(R2260)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%90%8C%E5%88%9B%E7%A9%BA%E9%97%B4/V1.0/Certificate.pdf',
+  },
+  {
+    name: '奇安信网神威胁监测与分析系统V4.0产品',
+    version: '',
+    type: '安平',
+    company: '奇安信网神信息技术(北京)股份有限公司',
+    database: 'openGauss 5.0.1',
+    os: 'Kylin V10',
+    server: 'Kunpeng 920',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%A5%87%E5%AE%89%E4%BF%A1/V4.0/Certificate.pdf',
+  },
+  {
+    name: '数学审计一体化管理平台',
+    version: '1.0',
+    type: '通用',
+    company: '广东铭太信息科技有限公司',
+    database: 'openGauss 5.0.0',
+    os: 'openEuler 22.03 LTS',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E9%93%AD%E5%A4%AA%E7%A7%91%E6%8A%80/1.0/Certificate.pdf',
+  },
+  {
     name: '瑞思捷仓储管理系统',
     version: '4.0',
     type: '通用',
@@ -36,7 +69,7 @@ export default [
     name: '中资源Bossmail邮件系统',
     version: '2.3',
     type: '通用',
-    company: '厦门中资源网络服务有限公司',
+    company: '厦门市中资源网络服务有限公司',
     database: 'openGauss 5.0.1',
     os: 'Kylin V10 SP2、openEuler 22.03 LTS',
     server: 'Kunpeng 920(Taishan 200)、Hygon 5380(R5240H0)',
