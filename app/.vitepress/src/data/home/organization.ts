@@ -373,6 +373,40 @@ import zhidian from '@/assets/category/home/organization/light/zhidian.png';
 
 import langchao from '@/assets/category/home/organization/light/langchao.png';
 import langchao_dark from '@/assets/category/home/organization/dark/langchao.png';
+import shandonguniversity from '@/assets/category/home/organization/light/shandonguniversity.png';
+import shandonguniversity_dark from '@/assets/category/home/organization/dark/shandonguniversity.png';
+import healink from '@/assets/category/home/organization/light/healink.png';
+import healink_dark from '@/assets/category/home/organization/dark/healink.png';
+import tien from '@/assets/category/home/organization/light/tien.png';
+import tien_dark from '@/assets/category/home/organization/dark/tien.png';
+import qst from '@/assets/category/home/organization/light/qst.png';
+import qst_dark from '@/assets/category/home/organization/dark/qst.png';
+import lianzhongzhihui from '@/assets/category/home/organization/light/lianzhongzhihui.png';
+import lianzhongzhihui_dark from '@/assets/category/home/organization/dark/lianzhongzhihui.png';
+import cowatertek from '@/assets/category/home/organization/light/cowatertek.png';
+import cowatertek_dark from '@/assets/category/home/organization/dark/cowatertek.png';
+import zzy from '@/assets/category/home/organization/light/zzy.png';
+import zzy_dark from '@/assets/category/home/organization/dark/zzy.png';
+import jiajiu from '@/assets/category/home/organization/light/jiajiu.png';
+import jiajiu_dark from '@/assets/category/home/organization/dark/jiajiu.png';
+import changgeng from '@/assets/category/home/organization/light/changgeng.png';
+import changgeng_dark from '@/assets/category/home/organization/dark/changgeng.png';
+import raysmart from '@/assets/category/home/organization/light/raysmart.png';
+import raysmart_dark from '@/assets/category/home/organization/dark/raysmart.png';
+import qianxin from '@/assets/category/home/organization/light/qianxin.png';
+import qianxin_dark from '@/assets/category/home/organization/dark/qianxin.png';
+import ymk from '@/assets/category/home/organization/light/ymk.png';
+import ymk_dark from '@/assets/category/home/organization/dark/ymk.png';
+import largerhealth from '@/assets/category/home/organization/light/largerhealth.png';
+import largerhealth_dark from '@/assets/category/home/organization/dark/largerhealth.png';
+import schw from '@/assets/category/home/organization/light/schw.png';
+import schw_dark from '@/assets/category/home/organization/dark/schw.png';
+import xxjsgs from '@/assets/category/home/organization/light/xxjsgs.png';
+import xxjsgs_dark from '@/assets/category/home/organization/dark/xxjsgs.png';
+import jetvoice from '@/assets/category/home/organization/light/jetvoice.png';
+import jetvoice_dark from '@/assets/category/home/organization/dark/jetvoice.png';
+import whaleops from '@/assets/category/home/organization/light/whaleops.png';
+import whaleops_dark from '@/assets/category/home/organization/dark/whaleops.png';
 
 export default [
   {
@@ -1301,5 +1335,90 @@ export default [
     img: langchao,
     imgDark: langchao_dark,
     name: '浪潮云',
+  },
+  {
+    img: shandonguniversity,
+    imgDark: shandonguniversity_dark,
+    name: '山东大学',
+  },
+  {
+    img: healink,
+    imgDark: healink_dark,
+    name: '慧联',
+  },
+  {
+    img: tien,
+    imgDark: tien_dark,
+    name: 'tien',
+  },
+  {
+    img: qst,
+    imgDark: qst_dark,
+    name: '青软集团',
+  },
+  {
+    img: lianzhongzhihui,
+    imgDark: lianzhongzhihui_dark,
+    name: '联众智慧',
+  },
+  {
+    img: cowatertek,
+    imgDark: cowatertek_dark,
+    name: '成都旋极',
+  },
+  {
+    img: zzy,
+    imgDark: zzy_dark,
+    name: '中资源',
+  },
+  {
+    img: jiajiu,
+    imgDark: jiajiu_dark,
+    name: '嘉九',
+  },
+  {
+    img: changgeng,
+    imgDark: changgeng_dark,
+    name: 'changgeng',
+  },
+  {
+    img: raysmart,
+    imgDark: raysmart_dark,
+    name: '锐思数智',
+  },
+  {
+    img: qianxin,
+    imgDark: qianxin_dark,
+    name: '奇安信',
+  },
+  {
+    img: ymk,
+    imgDark: ymk_dark,
+    name: '依米康·龙控',
+  },
+  {
+    img: largerhealth,
+    imgDark: largerhealth_dark,
+    name: '乐九医疗',
+  },
+  {
+    img: schw,
+    imgDark: schw_dark,
+    name: '四川虹微',
+  },
+  {
+    img: xxjsgs,
+    imgDark: xxjsgs_dark,
+    name: '国家能源集团信息技术公司（数据中心）',
+  },
+  {
+    img: jetvoice,
+    imgDark: jetvoice_dark,
+    name: '捷途慧声',
+  },
+  {
+    img: whaleops,
+    imgDark: whaleops_dark,
+    name: 'WhaleOps',
   },
 ];
