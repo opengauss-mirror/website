@@ -20,7 +20,7 @@ summary: '浪潮云签署CLA正式加入openGauss社区'
 
 
 <div style="text-align:center;margin:16px 0;">
-  <img src="/category/news/2024-04-24/pic1.png" alt ='' />
+  <img src="/category/news/2024-04-25/pic1.png" alt ='' />
 </div>
 
 浪潮云携手openGauss共同打造的企业级数据库InDB，当前已完成浪潮云平台数据库改造并稳定运行，并在多个区域云中心提供浪潮云岳InDB的云数据库服务，未来将在120个云中心全面推广InDB产品，为客户数据提供稳定、可靠的数据基座。
