@@ -6,6 +6,14 @@ import {
 export default {
   zh: [
     {
+      pro: '长虹数据库 CHDB V1.0.0',
+      name: '四川虹微技术有限公司',
+      version: 'openGauss 5.0.0',
+      award: '2024-07-11',
+      expiration: '2026-03-31',
+      certificate: `${OBS_CERTIFICATION_LINK}%E9%95%BF%E8%99%B9/CHDB%20V1.0.0/Certificate.pdf`,
+    },
+    {
       pro: '大汉HanDB数据库软件V2.0',
       name: '大汉软件股份有限公司',
       version: 'openGauss 5.0.0',

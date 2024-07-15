@@ -1,5 +1,115 @@
 export default [
   {
+    name: 'Zabbix',
+    version: '6.0.29',
+    type: '通用',
+    company: '上海宏时数据系统有限公司',
+    database: 'openGauss 5.0.1',
+    os: 'CentOS 7.6、CentOS 8.2',
+    server: 'Intel(其他)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%AE%8F%E6%97%B6%E6%95%B0%E6%8D%AE/Zabbix%20V6.0.29/Certificate.pdf',
+  },
+  {
+    name: '业务开发平台',
+    version: '4.0',
+    type: '通用',
+    company: '四川川大智胜系统集成有限公司',
+    database: 'openGauss 5.0.1',
+    os: 'openEuler 20.03 LTS SP1',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%B7%9D%E5%A4%A7%E6%99%BA%E8%83%9C/%E5%9B%9B%E5%B7%9D%E5%B7%9D%E5%A4%A7%E6%99%BA%E8%83%9C%E7%B3%BB%E7%BB%9F%E9%9B%86%E6%88%90%E5%85%AC%E5%8F%B8_001.pdf',
+  },
+  {
+    name: '协同办公系统[简称：0A系统]',
+    version: '4.0',
+    type: '通用',
+    company: '四川川大智胜系统集成有限公司',
+    database: 'openGauss 5.0.1',
+    os: 'openEuler 20.03 LTS SP1',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%B7%9D%E5%A4%A7%E6%99%BA%E8%83%9C/%E5%9B%9B%E5%B7%9D%E5%B7%9D%E5%A4%A7%E6%99%BA%E8%83%9C%E7%B3%BB%E7%BB%9F%E9%9B%86%E6%88%90%E5%85%AC%E5%8F%B8_002.pdf',
+  },
+  {
+    name: '应用集成平台',
+    version: '4.0',
+    type: '通用',
+    company: '四川川大智胜系统集成有限公司',
+    database: 'openGauss 5.0.1',
+    os: 'openEuler 20.03 LTS SP1',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%B7%9D%E5%A4%A7%E6%99%BA%E8%83%9C/%E5%9B%9B%E5%B7%9D%E5%B7%9D%E5%A4%A7%E6%99%BA%E8%83%9C%E7%B3%BB%E7%BB%9F%E9%9B%86%E6%88%90%E5%85%AC%E5%8F%B8_003.pdf',
+  },
+  {
+    name: '国资监管',
+    version: '4.0',
+    type: '通用',
+    company: '四川川大智胜系统集成有限公司',
+    database: 'openGauss 5.0.1',
+    os: 'openEuler 20.03 LTS SP1',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%B7%9D%E5%A4%A7%E6%99%BA%E8%83%9C/%E5%9B%9B%E5%B7%9D%E5%B7%9D%E5%A4%A7%E6%99%BA%E8%83%9C%E7%B3%BB%E7%BB%9F%E9%9B%86%E6%88%90%E5%85%AC%E5%8F%B8_004.pdf',
+  },
+  {
+    name: '数据采集交换平台',
+    version: '4.0',
+    type: '通用',
+    company: '四川川大智胜系统集成有限公司',
+    database: 'openGauss 5.0.1',
+    os: 'openEuler 20.03 LTS SP1',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%B7%9D%E5%A4%A7%E6%99%BA%E8%83%9C/%E5%9B%9B%E5%B7%9D%E5%B7%9D%E5%A4%A7%E6%99%BA%E8%83%9C%E7%B3%BB%E7%BB%9F%E9%9B%86%E6%88%90%E5%85%AC%E5%8F%B8_006.pdf',
+  },
+  {
+    name: '数字档案管理系统',
+    version: '4.0',
+    type: '通用',
+    company: '四川川大智胜系统集成有限公司',
+    database: 'openGauss 5.0.1',
+    os: 'openEuler 20.03 LTS SP1',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%B7%9D%E5%A4%A7%E6%99%BA%E8%83%9C/%E5%9B%9B%E5%B7%9D%E5%B7%9D%E5%A4%A7%E6%99%BA%E8%83%9C%E7%B3%BB%E7%BB%9F%E9%9B%86%E6%88%90%E5%85%AC%E5%8F%B8_007.pdf',
+  },
+  {
+    name: '医真云平台',
+    version: '1.0',
+    type: '医疗',
+    company: '西安盈谷网络科技有限公司',
+    database: 'openGauss 5.0.1',
+    os: 'openEuler 20.03 LTS',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E7%9B%88%E8%B0%B7%E7%A7%91%E6%8A%80/V1.0/Certificate.pdf',
+  },
+  {
+    name: '长擎安全操作系统 24',
+    version: '',
+    type: '操作系统',
+    company: '北京长擎软件有限公司',
+    database: 'openGauss 5.0.1',
+    os: '',
+    server: 'Kunpeng 920(Taishan 200)、Intel(其他)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E9%95%BF%E6%93%8E%E8%BD%AF%E4%BB%B6/24/Certificate.pdf',
+  },
+  {
+    name: '微众银行多方大数据隐私计算平台',
+    version: '2.1.0',
+    type: '金融',
+    company: '深圳前海微众银行股份有限公司',
+    database: 'openGauss 5.0.1',
+    os: 'Kylin V10',
+    server: 'Kunpeng 920(Taishan 200)、Intel(其他)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%BE%AE%E4%BC%97%E9%93%B6%E8%A1%8C/V2.1.0/Certificate.pdf',
+  },
+  {
     name: '网络货运平台',
     version: '1.0',
     type: '物流',
