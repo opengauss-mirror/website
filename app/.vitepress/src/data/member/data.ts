@@ -3410,20 +3410,6 @@ export default {
         email: `ljli@lzu.edu.cn`,
       },
       {
-        img: zhaoyishou,
-        name: `赵益寿`,
-        title: `Member`,
-        company: `中电万维`,
-        email: `603444498@qq.com`,
-      },
-      {
-        img: sushengjun,
-        name: `苏胜军`,
-        title: `Member`,
-        company: `中电万维`,
-        email: `18919312275@189.cn`,
-      },
-      {
         img: sunwenjie,
         name: `孙雯杰`,
         title: `Member`,
