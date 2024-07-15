@@ -202,6 +202,16 @@ export default {
       giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/ReleaseManagement`,
     },
     {
+      name: `RISC-V`,
+      emailAddress: `riscv@opengauss.org`,
+      desc: `openGauss社区SIG RISC-V讨论组。`,
+      descMb: `openGauss社区SIG RISC-V讨论组。`,
+      archive: `Archive`,
+      websiteLink: `${MAILWEB_LINK}postorius/lists/riscv.opengauss.org`,
+      archiveLink: `${MAILWEB_LINK}hyperkitty/list/riscv@opengauss.org`,
+      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/RISC-V`,
+    },
+    {
       name: `SecurityAnnounce`,
       emailAddress: `securityannounce@opengauss.org`,
       desc: `openGauss社区SIG Security Announce讨论组。`,
@@ -462,6 +472,16 @@ export default {
       websiteLink: `${MAILWEB_LINK}postorius/lists/releasemanagement.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/releasemanagement@opengauss.org`,
       giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/ReleaseManagement`,
+    },
+    {
+      name: `RISC-V`,
+      emailAddress: `riscv@opengauss.org`,
+      desc: `Mailing list for SIG RISC-V discussion group in openGauss community.`,
+      descMb: `Mailing list for SIG RISC-V discussion group`,
+      archive: `Archive`,
+      websiteLink: `${MAILWEB_LINK}postorius/lists/riscv.opengauss.org`,
+      archiveLink: `${MAILWEB_LINK}hyperkitty/list/riscv@opengauss.org`,
+      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/RISC-V`,
     },
     {
       name: `SecurityAnnounce`,
