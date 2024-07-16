@@ -11,14 +11,6 @@ import TrainingNav from './TrainingNav.vue';
 
 import Banner from '@/assets/illustrations/banner-secondary.png';
 import illustration from '@/assets/illustrations/training.png';
-import partnerLight from '@/assets/category/authentication/training/img/partner.png';
-import partnerDark from '@/assets/category/authentication/training/img/partner-dark.png';
-import gaussLogo from '@/assets/category/authentication/training/img/gauss-mo.png';
-import gaussLogoDark from '@/assets/category/authentication/training/img/gauss-mo-dark.png';
-import enmotechLogo from '@/assets/category/authentication/training/img/enmotech-mo.png';
-import enmotechLogoDark from '@/assets/category/authentication/training/img/enmotech-mo-dark.png';
-import csiaLogo from '@/assets/category/authentication/training/img/csia-mo.png';
-import csiaLogoDark from '@/assets/category/authentication/training/img/csia-mo-dark.png';
 
 import IconArrow from '~icons/train/icon-arrow.svg';
 import IconChevronRight from '~icons/app/icon-chevron-right.svg';
@@ -26,19 +18,11 @@ import IconPeriod from '~icons/app/icon-period.svg';
 import OIcon from 'opendesign/icon/OIcon.vue';
 import IconChevronDown from '~icons/app/icon-chevron-down.svg';
 import IconChevronUp from '~icons/app/icon-chevron-up.svg';
-
-import { ENMOEDU_LINK } from '@/data/url-config';
+import IconRight from '~icons/app/icon-arrow-right.svg';
 
 const i18n = useI18n();
 const commonStore = useCommon();
-const partner = computed(() =>
-  commonStore.theme === 'light' ? partnerLight : partnerDark
-);
-const partnerMo = computed(() =>
-  commonStore.theme === 'light'
-    ? [gaussLogo, enmotechLogo, csiaLogo]
-    : [gaussLogoDark, enmotechLogoDark, csiaLogoDark]
-);
+const isDark = computed(() => commonStore.theme === 'dark');
 // 右侧导航
 const isShowNav = ref(false);
 const activeIndex = ref(0);
@@ -75,9 +59,9 @@ const isMoreShowMo = ref([false, false, false]);
 function onCourseMoreClick(index: number) {
   isMoreShow.value = isMoreShow.value === index ? -1 : index;
 }
-function onRegistrationClick(index: number) {
-  if (index === 0) {
-    windowOpen(ENMOEDU_LINK);
+function onRegistrationClick(url: string) {
+  if (url) {
+    windowOpen(url);
   }
 }
 // 控制移动端更多课程内容显示的切换
@@ -90,6 +74,11 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener('scroll', onScrollTop);
 });
+// 控制人才优选显示更多
+const talentSelectedIndex = ref(-1);
+function onTalentItemClick(index: number) {
+  talentSelectedIndex.value = talentSelectedIndex.value === index ? -1 : index;
+}
 </script>
 
 <template>
@@ -97,7 +86,22 @@ onUnmounted(() => {
     :background-image="Banner"
     :title="i18n.authentication.title"
     :illustration="illustration"
-  />
+  >
+    <template #default>
+      <a
+        :href="i18n.authentication.signupUrl"
+        target="_self"
+        rel="noopener noreferrer"
+      >
+        <OButton class="signup-btn" type="outline" animation size="nomral">
+          {{ i18n.authentication.signupTitle }}
+          <template #suffixIcon>
+            <OIcon class="banner-icon"><IconRight /></OIcon>
+          </template>
+        </OButton>
+      </a>
+    </template>
+  </BannerLevel2>
   <AppContent>
     <div class="training-pc">
       <TrainingNav
@@ -111,9 +115,6 @@ onUnmounted(() => {
         <p class="intro-info">
           {{ i18n.authentication.intro1 }}<br />{{ i18n.authentication.intro2 }}
         </p>
-        <div class="intro-img">
-          <img :src="partner" alt="" />
-        </div>
       </div>
       <div id="advantage" :ref="navTitle" class="train-advantage">
         <h2>{{ i18n.authentication.advantage }}</h2>
@@ -149,27 +150,8 @@ onUnmounted(() => {
               </div>
               <div class="item-body">
                 <div>
-                  <p class="model-name">{{ item.module }}</p>
                   <p class="course-title">{{ item.contenttitle }}</p>
                   <p class="course-detail">{{ item.content }}</p>
-                </div>
-
-                <div>
-                  <p class="course-day">{{ item.trainDay }}</p>
-                  <p class="course-cost">
-                    <span>{{ item.trainCosts }}</span>
-                    <span v-if="item.originexam">{{ item.origintrain }}</span>
-                    <span v-if="item.originexam">{{
-                      i18n.authentication.costeach
-                    }}</span>
-                  </p>
-                  <p class="exam-cost">
-                    <span>{{ item.examCoste }}</span>
-                    <span v-if="item.originexam">{{ item.originexam }}</span>
-                    <span v-if="item.originexam">{{
-                      i18n.authentication.costeach
-                    }}</span>
-                  </p>
                 </div>
               </div>
             </div>
@@ -196,10 +178,9 @@ onUnmounted(() => {
               </div>
               <div class="item-body">
                 <p class="title">{{ item.outline }}</p>
-                <ul v-if="index === 0">
+                <ul v-if="Array.isArray(item.courseOutline)">
                   <li
-                    v-for="(itemCourse, indexCourse) in i18n.authentication
-                      .ogcacard"
+                    v-for="(itemCourse, indexCourse) in item.courseOutline"
                     :key="itemCourse.cardtitle"
                     :class="
                       isMoreShow === indexCourse ? 'checked' : 'no-checked'
@@ -210,12 +191,6 @@ onUnmounted(() => {
                       <div class="order">{{ itemCourse.num }}</div>
                       <div class="course">
                         <p>{{ itemCourse.cardtitle }}</p>
-                        <div class="time">
-                          <OIcon><IconPeriod /></OIcon>
-                          <span class="time-text lable-name">{{
-                            itemCourse.period
-                          }}</span>
-                        </div>
                       </div>
                     </div>
                     <div class="list-right lable-name">
@@ -236,25 +211,12 @@ onUnmounted(() => {
                     </transition>
                   </li>
                 </ul>
-                <div v-if="index === 0" class="down-box">
-                  <a
-                    :href="i18n.authentication.downurl1"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >{{ i18n.authentication.downpdf1 }}</a
-                  >
-                  <a
-                    :href="i18n.authentication.downurl1"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >{{ i18n.authentication.downpdf2 }}</a
-                  >
-                </div>
                 <div v-else class="no-data lable-name">
                   <img
-                    src="@/assets/category/authentication/training/img/no-data.png"
+                    src="@/assets/category/authentication/training/img/empty.png"
                     alt=""
                   />
+                  <p class="tip">{{ i18n.authentication.emptyTip }}</p>
                 </div>
               </div>
             </div>
@@ -269,9 +231,42 @@ onUnmounted(() => {
             :key="item.name"
             class="step-item lable-name"
             :class="'step' + (index + 1)"
-            @click="onRegistrationClick(index)"
+            @click="onRegistrationClick(item.link)"
           >
             <p>{{ item.name }}</p>
+          </div>
+        </div>
+      </div>
+      <div id="talent" class="train-talent">
+        <h2>{{ i18n.authentication.talentTitle }}</h2>
+        <p class="talent-desc">{{ i18n.authentication.talentDesc }}</p>
+        <div class="talent-card-container">
+          <div
+            v-for="(item, index) in i18n.authentication.talentList"
+            class="talent-card"
+            :class="
+              talentSelectedIndex === index
+                ? 'talent-card-checked'
+                : 'talent-card-unchecked'
+            "
+            @mouseenter="onTalentItemClick(index)"
+            @mouseleave="onTalentItemClick(-1)"
+          >
+            <img
+              class="talent-icon"
+              :src="isDark ? item.iconDark : item.icon"
+            />
+            <div v-show="talentSelectedIndex === index" class="talent-expended">
+              <div>{{ item.desc }}</div>
+              <a :href="item.url" target="_blank" rel="noopener noreferrer">
+                <OButton animation type="text">
+                  {{ i18n.authentication.talentDetail }}
+                  <template #suffixIcon>
+                    <OIcon class="right-icon"><IconRight /></OIcon>
+                  </template>
+                </OButton>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -311,14 +306,6 @@ onUnmounted(() => {
         <p class="intro-info lable-name">
           {{ i18n.authentication.intro1 }}<br />{{ i18n.authentication.intro2 }}
         </p>
-        <div class="intro-img lable-name">
-          <img
-            v-for="(item, index) in partnerMo"
-            :key="index"
-            :src="item"
-            alt=""
-          />
-        </div>
       </div>
       <div id="advantage" class="train-advantage lable-name">
         <h2>{{ i18n.authentication.advantage }}</h2>
@@ -338,7 +325,7 @@ onUnmounted(() => {
       <div id="system" class="train-system">
         <h2>{{ i18n.authentication.systemtitle }}</h2>
         <div class="system-box">
-          <div v-show="isIndex === -1" class="system-short">
+          <div class="system-short">
             <div
               v-for="(item, index) in i18n.authentication.system"
               :key="item.level"
@@ -356,37 +343,18 @@ onUnmounted(() => {
               </div>
               <div class="item-body">
                 <div class="body-head">
-                  <p class="model-name">{{ item.module }}</p>
                   <p class="course">
                     <span>{{ item.contenttitle }}</span
                     ><span>{{ item.content }}</span>
-                  </p>
-                </div>
-                <div class="body-inner">
-                  <p class="course-day">{{ item.trainDay }}</p>
-                  <p class="course-cost">
-                    <span>{{ item.trainCosts }}</span>
-                    <span v-if="item.originexam">{{ item.origintrain }}</span>
-                    <span v-if="item.originexam">{{
-                      i18n.authentication.costeach
-                    }}</span>
-                  </p>
-                  <p class="exam-cost">
-                    <span>{{ item.examCoste }}</span>
-                    <span v-if="item.originexam">{{ item.originexam }}</span>
-                    <span v-if="item.originexam">{{
-                      i18n.authentication.costeach
-                    }}</span>
                   </p>
                 </div>
               </div>
               <transition name="course">
                 <div v-show="isMoreShowMo[index]" class="course-list">
                   <p class="title">{{ item.outline }}</p>
-                  <ul v-if="index === 0">
+                  <ul v-if="Array.isArray(item.courseOutline)">
                     <li
-                      v-for="(itemCourse, indexCourse) in i18n.authentication
-                        .ogcacard"
+                      v-for="(itemCourse, indexCourse) in item.courseOutline"
                       :key="itemCourse.cardtitle"
                       :class="
                         isMoreShow === indexCourse ? 'checked' : 'no-checked'
@@ -398,12 +366,6 @@ onUnmounted(() => {
                           <div class="order">{{ itemCourse.num }}</div>
                           <div class="course">
                             <p>{{ itemCourse.cardtitle }}</p>
-                            <div class="time">
-                              <OIcon><IconPeriod /></OIcon>
-                              <span class="time-text">{{
-                                itemCourse.period
-                              }}</span>
-                            </div>
                           </div>
                         </div>
                         <div
@@ -430,25 +392,12 @@ onUnmounted(() => {
                       </transition>
                     </li>
                   </ul>
-                  <div v-if="index === 0" class="down-box">
-                    <a
-                      :href="i18n.authentication.downurl1"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >{{ i18n.authentication.downpdf1 }}</a
-                    >
-                    <a
-                      :href="i18n.authentication.downurl1"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >{{ i18n.authentication.downpdf2 }}</a
-                    >
-                  </div>
                   <div v-else class="no-data">
                     <img
-                      src="@/assets/category/authentication/training/img/no-data.png"
+                      src="@/assets/category/authentication/training/img/empty.png"
                       alt=""
                     />
+                    <p class="tip">{{ i18n.authentication.emptyTip }}</p>
                   </div>
                 </div>
               </transition>
@@ -484,9 +433,44 @@ onUnmounted(() => {
             :key="item.name"
             class="step-item"
             :class="'step' + (index + 1)"
-            @click="onRegistrationClick(index)"
+            @click="onRegistrationClick(item.link)"
           >
             <p>{{ item.name }}</p>
+          </div>
+        </div>
+      </div>
+      <div id="talent" class="train-talent">
+        <h2>{{ i18n.authentication.talentTitle }}</h2>
+        <p class="talent-desc">{{ i18n.authentication.talentDesc }}</p>
+        <div class="talent-box">
+          <div
+            v-for="(item, index) in i18n.authentication.talentList"
+            :key="index"
+            class="talent-item"
+          >
+            <el-collapse>
+              <el-collapse-item>
+                <template #title>
+                  <div class="talent-icon-wrap">
+                    <img
+                      class="talent-icon"
+                      :src="isDark ? item.iconDark : item.icon"
+                    />
+                  </div>
+                </template>
+                <p class="talent-info">
+                  {{ item.desc }}
+                </p>
+                <a :href="item.url" target="_blank" rel="noopener noreferrer">
+                  <OButton animation type="text">
+                    {{ i18n.authentication.talentDetail }}
+                    <template #suffixIcon>
+                      <OIcon class="right-icon"><IconRight /></OIcon>
+                    </template>
+                  </OButton>
+                </a>
+              </el-collapse-item>
+            </el-collapse>
           </div>
         </div>
       </div>
@@ -552,6 +536,15 @@ onUnmounted(() => {
       background-image: url(/.vitepress/src/assets/category/authentication/training/img/step/07-dark.png);
     }
   }
+  .training-pc,
+  .training-mobile {
+    --empty-tip: #fff;
+  }
+}
+
+.training-pc,
+.training-mobile {
+  --empty-tip: rgba(0, 0, 0, 0.6);
 }
 
 .app-content {
@@ -566,6 +559,20 @@ onUnmounted(() => {
   }
   :deep(.el-collapse-item__content) {
     padding: var(--o-spacing-h5) 0;
+  }
+}
+.signup-btn {
+  color: var(--o-color-white);
+  border-color: var(--o-color-white);
+  @media (max-width: 767px) {
+    padding: 3px 12px;
+    font-size: var(--o-font-size-text);
+    line-height: var(--o-line-height-text);
+  }
+  .banner-icon {
+    @media (max-width: 767px) {
+      font-size: var(--o-font-size-text);
+    }
   }
 }
 .training-pc {
@@ -586,14 +593,6 @@ onUnmounted(() => {
       font-size: var(--o-font-size-text);
       line-height: var(--o-line-height-text);
       color: var(--o-color-text1);
-    }
-    .intro-img {
-      width: 100%;
-      height: 110px;
-      margin-top: 36px;
-      img {
-        width: 100%;
-      }
     }
   }
   .train-advantage {
@@ -707,7 +706,7 @@ onUnmounted(() => {
             }
           }
           .item-body {
-            height: 322px;
+            height: 172px;
             padding: var(--o-spacing-h4) var(--o-spacing-h2) var(--o-spacing-h2);
             display: flex;
             flex-wrap: wrap;
@@ -803,21 +802,22 @@ onUnmounted(() => {
               padding: var(--o-spacing-h4);
               display: flex;
               justify-content: space-between;
-              align-items: flex-start;
+              align-items: center;
               position: relative;
               box-sizing: border-box;
               cursor: pointer;
               .list-left {
                 display: flex;
+                align-items: center;
                 .order {
-                  width: 72px;
-                  height: 72px;
-                  line-height: 72px;
+                  width: 48px;
+                  height: 48px;
+                  line-height: 48px;
                   text-align: center;
                   font-size: var(--o-font-size-h5);
                   border: 1px solid var(--o-color-brand1);
                   margin-right: var(--o-spacing-h4);
-                  color: var(--o-color-text1);
+                  color: var(--o-color-brand1);
                 }
                 .course {
                   p {
@@ -874,6 +874,7 @@ onUnmounted(() => {
                 overflow: hidden;
                 border: 1px solid var(--o-color-brand1);
                 border-top: none;
+                box-shadow: var(--o-shadow-l2_hover);
                 p {
                   font-size: var(--o-font-size-text);
                   line-height: var(--o-line-height-text);
@@ -893,18 +894,18 @@ onUnmounted(() => {
               box-shadow: var(--o-shadow-l2_hover);
             }
           }
-          .down-box {
-            margin-top: var(--o-spacing-h4);
-            a {
-              width: auto;
-              display: block;
-              & ~ a {
-                margin-top: var(--o-spacing-h6);
-              }
-            }
-          }
           .no-data {
             text-align: center;
+            img {
+              width: 200px;
+            }
+            .tip {
+              color: var(--empty-tip);
+              margin-top: var(--o-spacing-h5);
+              font-size: var(--o-font-size-h8);
+              line-height: var(--o-line-height-h6);
+              font-weight: 500;
+            }
           }
         }
       }
@@ -1020,6 +1021,73 @@ onUnmounted(() => {
       }
     }
   }
+  .train-talent {
+    margin-top: var(--o-spacing-h1);
+    h2 {
+      font-size: var(--o-font-size-h3);
+      font-weight: 300;
+      line-height: var(--o-line-height-h3);
+      text-align: center;
+      color: var(--o-color-text1);
+    }
+    .talent-desc {
+      margin-top: var(--o-spacing-h2);
+      font-size: var(--o-font-size-text);
+      line-height: var(--o-line-height-text);
+      color: var(--o-color-text1);
+    }
+    .talent-card-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: var(--o-spacing-h4);
+      margin-top: var(--o-spacing-h2);
+      .talent-card {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        box-shadow: var(--o-shadow-l2);
+        background-color: var(--o-color-bg2);
+        cursor: pointer;
+        .talent-icon {
+          width: 150px;
+          image-rendering: -webkit-optimize-contrast;
+        }
+        .talent-expended {
+          z-index: 1;
+          position: absolute;
+          left: -1px;
+          right: -1px;
+          top: 99px;
+          padding: var(--o-spacing-h4);
+          background-color: var(--o-color-bg4);
+          font-size: var(--o-font-size-text);
+          line-height: var(--o-line-height-text);
+          border: 1px solid var(--o-color-brand1);
+          border-top: none;
+          box-shadow: var(--o-shadow-l2_hover);
+          .o-button {
+            padding: var(--o-spacing-h4) 0 0 0;
+            font-size: var(--o-font-size-h8);
+            line-height: var(--o-line-height-h8);
+            .right-icon {
+              color: var(--o-color-brand1);
+            }
+          }
+        }
+      }
+      .talent-card-unchecked:hover {
+        border: 1px solid var(--o-color-brand1);
+        box-shadow: var(--o-shadow-l2_hover);
+      }
+      .talent-card-checked {
+        border: 1px solid var(--o-color-brand1);
+        border-bottom: 1px solid rgba(var(--o-color-bg2), 0);
+        box-shadow: var(--o-shadow-l2_hover);
+      }
+    }
+  }
   .certificate-query {
     margin-top: var(--o-spacing-h1);
   }
@@ -1114,17 +1182,6 @@ onUnmounted(() => {
       font-size: var(--o-font-size-tip);
       line-height: var(--o-line-height-tip);
       color: var(--o-color-text1);
-    }
-    .intro-img {
-      width: 100%;
-      margin-top: var(--o-spacing-h5);
-      display: grid;
-      justify-content: space-between;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      img {
-        max-width: 100%;
-      }
     }
   }
   .train-advantage {
@@ -1271,19 +1328,20 @@ onUnmounted(() => {
                   padding: var(--o-spacing-h5);
                   display: flex;
                   justify-content: space-between;
-                  align-items: flex-start;
+                  align-items: center;
                   position: relative;
                   .list-left {
                     display: flex;
+                    align-items: center;
                     .order {
-                      width: 58px;
-                      height: 58px;
-                      line-height: 58px;
+                      width: 48px;
+                      height: 48px;
+                      line-height: 48px;
                       text-align: center;
                       font-size: var(--o-font-size-h6);
                       border: 1px solid var(--o-color-brand1);
                       margin-right: var(--o-spacing-h8);
-                      color: var(--o-color-text1);
+                      color: var(--o-color-brand1);
                     }
                     .course {
                       p {
@@ -1361,6 +1419,16 @@ onUnmounted(() => {
           }
           .no-data {
             text-align: center;
+            img {
+              width: 150px;
+            }
+            .tip {
+              color: var(--empty-tip);
+              margin-top: var(--o-spacing-h7);
+              font-size: var(--o-font-size-tip);
+              line-height: var(--o-line-height-tip);
+              font-weight: 500;
+            }
           }
           .more-button {
             width: 100%;
@@ -1471,6 +1539,54 @@ onUnmounted(() => {
         background-image: url(@/assets/category/authentication/training/img/step/07.png);
         &:active {
           background-image: url(@/assets/category/authentication/training/img/step/07-hover.png) !important;
+        }
+      }
+    }
+  }
+  .train-talent {
+    margin-top: var(--o-spacing-h2);
+    .talent-desc {
+      margin-top: 8px;
+      font-size: var(--o-font-size-tip);
+      line-height: var(--o-line-height-tip);
+      color: var(--o-color-text1);
+    }
+    .talent-box {
+      margin-top: var(--o-spacing-h5);
+      .talent-item {
+        .talent-icon-wrap {
+          display: flex;
+          align-items: center;
+          min-height: 28px;
+        }
+        .talent-icon {
+          width: 80px;
+        }
+        .talent-info {
+          font-size: var(--o-font-size-tip);
+          line-height: var(--o-line-height-tip);
+          color: var(--o-color-text1);
+          text-align: justify;
+        }
+        :deep(.el-collapse) {
+          border-top: none;
+          border-bottom: none;
+        }
+        :deep(.el-collapse-item__header) {
+          font-size: var(--o-font-size-tip);
+          line-height: var(--o-line-height-tip);
+        }
+        :deep(.el-collapse-item__wrap) {
+          background-color: var(--o-color-bg4);
+        }
+        .o-button {
+          padding: var(--o-spacing-h5) 0 0 0;
+          font-size: var(--o-font-size-tip);
+          line-height: var(--o-font-size-tip);
+          .right-icon {
+            font-size: var(--o-font-size-tip);
+            color: var(--o-color-brand1);
+          }
         }
       }
     }
