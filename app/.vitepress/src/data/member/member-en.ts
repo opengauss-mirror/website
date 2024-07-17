@@ -6,9 +6,15 @@ export default {
       name: `First Board of Directors`,
       id: `board_one`,
       giteePath: `${GITEE_LINK}opengauss/board`,
-      emial: `board@opengauss.org`,
       nameText: `First Board of Directors`,
       list: data.en.BOARD_ONE,
+    },
+    {
+      name: `Second Board of Directors`,
+      id: `board_two`,
+      giteePath: `${GITEE_LINK}opengauss/board`,
+      nameText: `Second Board of Directors`,
+      list: data.en.BOARD_TWO,
     },
   ],
   memberList: [

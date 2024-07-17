@@ -6,9 +6,15 @@ export default {
       name: `第一届理事会`,
       id: `board_one`,
       giteePath: `${GITEE_LINK}opengauss/board`,
-      emial: `board@opengauss.org`,
       nameText: `第一届理事会成员：`,
       list: data.zh.BOARD_ONE,
+    },
+    {
+      name: `第二届理事会`,
+      id: `board_two`,
+      giteePath: `${GITEE_LINK}opengauss/board`,
+      nameText: `第二届理事会成员：`,
+      list: data.zh.BOARD_TWO,
     },
   ],
   memberList: [
