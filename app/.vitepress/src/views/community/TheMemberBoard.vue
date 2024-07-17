@@ -8,7 +8,6 @@ import emailImg from '@/assets/category/member/toemail.svg';
 import gitImg from '@/assets/category/member/git.svg';
 
 import IconHome from '~icons/app/icon-home.svg';
-import IconMail from '~icons/app/icon-mail.svg';
 import IconUser from '~icons/app/icon-user.svg';
 import IconChevron from '~icons/app/icon-chevron-right.svg';
 
@@ -50,7 +49,7 @@ const handleChangeActiveMobile = (activeNames: number | '') => {
       >
         <template #title>
           <div class="member-mobile-title">
-            {{ item.NAME }}
+            {{ item.name }}
           </div>
         </template>
         <div class="member-mobile">
@@ -63,13 +62,6 @@ const handleChangeActiveMobile = (activeNames: number | '') => {
                 rel="noopener noreferrer"
                 >{{ i18n.member.GITEE_TEXT }}</a
               >
-            </li>
-            <li>
-              <IconMail />
-              {{ i18n.member.EMIAL_TEXT }}
-              <a class="lable-name" :href="'mailto:' + item.EMIAL">{{
-                item.EMIAL
-              }}</a>
             </li>
             <li><IconUser />{{ item.nameText }}</li>
           </ul>
@@ -118,11 +110,6 @@ const handleChangeActiveMobile = (activeNames: number | '') => {
               rel="noopener noreferrer"
               >{{ i18n.member.GITEE_TEXT }}</a
             >
-          </li>
-          <li>
-            <IconMail />
-            {{ i18n.member.EMIAL_TEXT }}
-            <a :href="'mailto:' + item.EMIAL">{{ item.EMIAL }}</a>
           </li>
           <li><IconUser />{{ item.nameText }}</li>
         </ul>
