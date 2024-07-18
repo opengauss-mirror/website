@@ -48,6 +48,38 @@ import cuikaifeng2023 from '@/assets/category/honor/2023/member/cuikaifeng.png';
 import zhangwenlong2023 from '@/assets/category/honor/2023/member/zhangwenlong.png';
 import zengseliang2023 from '@/assets/category/honor/2023/member/zengseliang.png';
 
+import mostInfluentialDbImg from '@/assets/category/honor/2024/most-influential-db.jpg';
+import chenbingda2024 from '@/assets/category/honor/2024/member/chenbingda.png';
+import chenzhikai2024 from '@/assets/category/honor/2024/member/chenzhikai.png';
+import dongning2024 from '@/assets/category/honor/2024/member/dongning.png';
+import guohuan2024 from '@/assets/category/honor/2024/member/guohuan.png';
+import guoweibiao2024 from '@/assets/category/honor/2024/member/guoweibiao.png';
+import guowei2024 from '@/assets/category/honor/2024/member/guowei.png';
+import huyinghao2024 from '@/assets/category/honor/2024/member/huyinghao.png';
+import jianghongbo2024 from '@/assets/category/honor/2024/member/jianghongbo.png';
+import lexin2024 from '@/assets/category/honor/2024/member/lexin.png';
+import lichuancheng2024 from '@/assets/category/honor/2024/member/lichuancheng.png';
+import litong2024 from '@/assets/category/honor/2024/member/litong.png';
+import liangyan2024 from '@/assets/category/honor/2024/member/liangyan.png';
+import liujunpeng2024 from '@/assets/category/honor/2024/member/liujunpeng.png';
+import liuyang2024 from '@/assets/category/honor/2024/member/liuyang.png';
+import liuyang22024 from '@/assets/category/honor/2024/member/liuyang2.png';
+import luomeng2024 from '@/assets/category/honor/2024/member/luomeng.png';
+import wangpeng2024 from '@/assets/category/honor/2024/member/wangpeng.png';
+import wangchao2024 from '@/assets/category/honor/2024/member/wangchao.png';
+import wangshanshan2024 from '@/assets/category/honor/2024/member/wangshanshan.png';
+import wangtao2024 from '@/assets/category/honor/2024/member/wangtao.png';
+import wuxiang2024 from '@/assets/category/honor/2024/member/wuxiang.png';
+import xiaqi2024 from '@/assets/category/honor/2024/member/xiaqi.png';
+import xiaoxue2024 from '@/assets/category/honor/2024/member/xiaoxue.png';
+import xvchunyang2024 from '@/assets/category/honor/2024/member/xvchunyang.png';
+import xvji2024 from '@/assets/category/honor/2024/member/xvji.png';
+import xvtianyi2024 from '@/assets/category/honor/2024/member/xvtianyi.png';
+import yanghao2024 from '@/assets/category/honor/2024/member/yanghao.png';
+import zhangbingbing2024 from '@/assets/category/honor/2024/member/zhangbingbing.png';
+import zhangting2024 from '@/assets/category/honor/2024/member/zhangting.png';
+import zhaoxiaolin2024 from '@/assets/category/honor/2024/member/zhaoxiaolin.png';
+
 import { GITEE_LINK } from '@/data/url-config';
 
 export default {
@@ -727,6 +759,288 @@ export default {
           type: 'label',
           value:
             '注：此奖项的评选是由openGauss社区各个SIG组Maintainer其SIG组员的贡献进行择优推荐，推荐对象为2023年1月-2023年12月在openGauss社区的技术创新、技术生态发展、工程能力提升等工作中成果突出的开发者，包含但不限于PR提交、Issue反馈、Issue修复、CVE修复、特性开发、生态发展、公共事务等，经过最终评选，本次评选出22名优秀个人贡献者。',
+        },
+      ],
+    },
+    {
+      id: '2024',
+      data: [
+        {
+          name: '最具影响力数据库',
+          href: '',
+          img: mostInfluentialDbImg,
+        },
+        {
+          name: '北京金融科技产业联盟发布《openGauss金融应用关键能力研究报告》',
+          href: '/zh/news/2024-07-02/index.html',
+          img: '',
+        },
+      ],
+      developerData: [
+        {
+          name: '',
+          mebmers: [
+            {
+              name: '陈炳达',
+              company: '北京海量数据技术股份有限公司',
+              showEmail: true,
+              email: 'chenbd@vastdata.com.cn',
+              avatar: chenbingda2024,
+            },
+            {
+              name: '陈志凯',
+              company: '华为技术有限公司',
+              showEmail: true,
+              email: 'chenzhikai11@huawei.com',
+              avatar: chenzhikai2024,
+            },
+            {
+              name: '董宁',
+              company: '华为技术有限公司',
+              showEmail: true,
+              email: '',
+              avatar: dongning2024,
+            },
+            {
+              name: '郭欢',
+              company: '云和恩墨（北京）信息技术有限公司',
+              showEmail: true,
+              email: '',
+              avatar: guohuan2024,
+            },
+            {
+              name: '郭维彪',
+              company: '中软国际科技有限公司',
+              showEmail: true,
+              email: 'guoweibiao2@h-partners.com',
+              avatar: guoweibiao2024,
+            },
+            {
+              name: '郭委',
+              company: '华为技术有限公司',
+              showEmail: true,
+              email: 'guowei115@huawei.com',
+              avatar: guowei2024,
+            },
+            {
+              name: '胡英豪',
+              company: '天津神舟通用数据技术有限公司',
+              showEmail: true,
+              email: 'huyinghao@shentongdata.com',
+              avatar: huyinghao2024,
+            },
+            {
+              name: '蒋宏博',
+              company: '华为技术有限公司',
+              showEmail: true,
+              email: 'jianghongbo4@huawei.com',
+              avatar: jianghongbo2024,
+            },
+            {
+              name: '乐忻',
+              company: '天津南大通用数据技术股份有限公司',
+              showEmail: true,
+              email: 'lexin@gbase.cn',
+              avatar: lexin2024,
+            },
+            {
+              name: '李传成',
+              company: '云和恩墨（北京）信息技术有限公司',
+              showEmail: true,
+              email: 'lchch1990@sina.cn',
+              avatar: lichuancheng2024,
+            },
+            {
+              name: '李童',
+              company: '北京海量数据技术股份有限公司',
+              showEmail: true,
+              email: '',
+              avatar: litong2024,
+            },
+            {
+              name: '梁燕',
+              company: '北京海量数据技术股份有限公司',
+              showEmail: true,
+              email: 'liangyan@vastdata.com.cn',
+              avatar: liangyan2024,
+            },
+            {
+              name: '刘军鹏',
+              company: '软通动力信息技术股份有限公司',
+              showEmail: true,
+              email: 'liujunpeng13@h-partners.com',
+              avatar: liujunpeng2024,
+            },
+            {
+              name: '刘阳',
+              company: '天津泰凡科技有限公司',
+              showEmail: true,
+              email: '1176881129@qq.com',
+              avatar: liuyang2024,
+            },
+            {
+              name: '刘洋',
+              company: '软通动力信息技术股份有限公司',
+              showEmail: true,
+              email: 'yang_liu0418@163.com',
+              avatar: liuyang22024,
+            },
+            {
+              name: '罗梦',
+              company: ' 粤港澳大湾区国家技术创新中心',
+              showEmail: true,
+              email: 'luomeng@ncti-gba.cn ',
+              avatar: luomeng2024,
+            },
+            {
+              name: '汪鹏',
+              company: '北京海量数据技术股份有限公司',
+              showEmail: true,
+              email: 'wangpeng@vastdata.com.cn',
+              avatar: wangpeng2024,
+            },
+            {
+              name: '王超',
+              company: '华为技术有限公司',
+              showEmail: true,
+              email: 'wangchao496@huawei.com',
+              avatar: wangchao2024,
+            },
+            {
+              name: '王珊珊',
+              company: '中国移动通信集团有限公司',
+              showEmail: true,
+              email: '',
+              avatar: wangshanshan2024,
+            },
+            {
+              name: '王涛',
+              company: '天津南大通用数据技术股份有限公司',
+              showEmail: true,
+              email: 'wangtao@gbase.cn',
+              avatar: wangtao2024,
+            },
+            {
+              name: '武祥',
+              company: '万宝盛华人力资源（中国）有限公司常熟分公司',
+              showEmail: true,
+              email: '1197913499@qq.com',
+              avatar: wuxiang2024,
+            },
+            {
+              name: '夏琦',
+              company: '中软国际科技有限公司',
+              showEmail: true,
+              email: 'xiaqi14@h-partners.com',
+              avatar: xiaqi2024,
+            },
+            {
+              name: '肖雪',
+              company: '云和恩墨（北京）信息技术有限公司',
+              showEmail: true,
+              email: 'xue.xiao@enmotech.com',
+              avatar: xiaoxue2024,
+            },
+            {
+              name: '徐春阳',
+              company: '中国民生银行股份有限公司',
+              showEmail: true,
+              email: '',
+              avatar: xvchunyang2024,
+            },
+            {
+              name: '徐吉',
+              company: '北京海量数据技术股份有限公司',
+              showEmail: true,
+              email: 'xuji@vastdata.com.cn',
+              avatar: xvji2024,
+            },
+            {
+              name: '徐天一',
+              company: '华为技术有限公司',
+              showEmail: true,
+              email: 'xutianyi5@huawei.com',
+              avatar: xvtianyi2024,
+            },
+            {
+              name: '杨皓 ',
+              company: '华为技术有限公司',
+              showEmail: true,
+              email: 'yanghao37@huawei.com',
+              avatar: yanghao2024,
+            },
+            {
+              name: '张冰冰',
+              company: '北京新数科技有限公司',
+              showEmail: true,
+              email: 'zhangbb@shindata.com',
+              avatar: zhangbingbing2024,
+            },
+            {
+              name: '张婷',
+              company: '华为技术有限公司',
+              showEmail: true,
+              email: 'zt1819798371@163.com ',
+              avatar: zhangting2024,
+            },
+            {
+              name: '赵晓琳',
+              company: '北京海量数据技术股份有限公司',
+              showEmail: true,
+              email: 'zhaoxl@vastdata.com.cn',
+              avatar: zhaoxiaolin2024,
+            },
+          ],
+        },
+      ],
+      devoloperRules: [
+        {
+          type: 'tip',
+          value:
+            '注：本次结果根据以下评选规则，取2023年6月~2024年5月的贡献值进行评选，最终展示不分先后。',
+        },
+        {
+          type: 'label',
+          value:
+            '优秀开发者：由各个SIG组根据组内成员的贡献度进行推荐，包含但不限于PR、Issue、CVE、特性开发、会议组织、技术布道等事务等。',
+        },
+      ],
+      sigData: [
+        {
+          name: 'SIG SQLEngine',
+          href: `${GITEE_LINK}opengauss/tc/tree/master/sigs/SQLEngine`,
+        },
+        {
+          name: 'SIG ReleaseManagement',
+          href: `${GITEE_LINK}opengauss/tc/tree/master/sigs/ReleaseManagement`,
+        },
+        {
+          name: 'SIG QA',
+          href: `${GITEE_LINK}opengauss/tc/tree/master/sigs/QA`,
+        },
+        {
+          name: 'SIG Plugin',
+          href: `${GITEE_LINK}opengauss/tc/tree/master/sigs/Plugin`,
+        },
+        {
+          name: 'SIG Docs',
+          href: `${GITEE_LINK}opengauss/tc/tree/master/sigs/Docs`,
+        },
+        {
+          name: 'SIG Certification',
+          href: `${GITEE_LINK}opengauss/tc/tree/master/sigs/Certification`,
+        },
+      ],
+      sigRules: [
+        {
+          type: 'tip',
+          value:
+            '注：本次结果根据以下评选规则，取2023年6月~2024年5月的贡献值进行评选，最终展示不分先后。',
+        },
+        {
+          type: 'label',
+          value:
+            '优秀SIG组：1、发布技术竞争力特性数量最多  2、组织、开发者多样性  3、社区式开发运作规范包括不限于会议频次&纪要、社区CICD、社区公开讨论等',
         },
       ],
     },

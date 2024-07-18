@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 
 import BannerLevel2 from '@/components/BannerLevel2.vue';
 import AppContent from '@/components/AppContent.vue';
 import honorData from '@/data/honor';
 import { windowOpen } from '@/shared/utils';
+import useWindowResize from '@/components/hooks/useWindowResize';
 
 import banner from '@/assets/illustrations/banner-secondary.png';
 import illustration from '@/assets/illustrations/honor.png';
@@ -14,7 +15,7 @@ import IconChecked from '~icons/app/icon-checked.svg';
 import IconUnchecked from '~icons/app/icon-unchecked.svg';
 import IconRight from '~icons/app/icon-arrow-right.svg';
 
-const activeYear = ref('2023');
+const activeYear = ref('2024');
 const showNumber = ref(-1);
 const useClickTab = (year: string) => {
   activeYear.value = year;
@@ -29,6 +30,18 @@ const clickDetail = (index: number) => {
 const showedCommentKey = ref(-1);
 const showPersonCard = (key: number) => {
   showedCommentKey.value = showedCommentKey.value === key ? -1 : key;
+};
+
+const screenWidth = useWindowResize();
+const isMobile = computed(() => (screenWidth.value <= 768 ? true : false));
+const getCertificateBoxGridTemplateColumns = (
+  length: number,
+  isMobile: boolean
+) => {
+  if (isMobile) {
+    return 'repeat(1, 1fr)';
+  }
+  return `repeat(${length < 3 ? length : 3}, minmax(0, 456px))`;
 };
 </script>
 
@@ -65,8 +78,15 @@ const showPersonCard = (key: number) => {
       </ul>
     </div>
     <div class="content">
-      <template v-for="item in honorData.honorList" :key="item.name">
-        <div v-show="activeYear === item.id" class="certificate-box">
+      <template v-for="item in honorData.honorList" :key="item.id">
+        <div
+          v-show="activeYear === item.id"
+          class="certificate-box"
+          :style="`grid-template-columns: ${getCertificateBoxGridTemplateColumns(
+            item.data.length,
+            isMobile
+          )}`"
+        >
           <OCard
             v-for="(subItem, index) in item.data"
             :key="subItem.name"
@@ -115,7 +135,7 @@ const showPersonCard = (key: number) => {
       </template>
 
       <div class="excellent-panel">
-        <template v-for="item in honorData.honorList" :key="item.name">
+        <template v-for="item in honorData.honorList" :key="item.id">
           <template v-if="activeYear === item.id">
             <!-- openGauss 年度优秀开发者 -->
             <div v-if="item.developerData">
@@ -128,7 +148,9 @@ const showPersonCard = (key: number) => {
                   v-for="(devItem, idx) in item.developerData"
                   :key="idx"
                 >
-                  <h2 class="developer-title">{{ devItem.name }}</h2>
+                  <h2 v-if="devItem.name" class="developer-title">
+                    {{ devItem.name }}
+                  </h2>
                   <ul class="member-list">
                     <li v-for="(user, i) in devItem.mebmers" :key="i">
                       <img class="avatar" :src="user.avatar" :alt="user.name" />
@@ -409,6 +431,7 @@ const showPersonCard = (key: number) => {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--o-spacing-h4);
+    justify-content: center;
 
     @media (max-width: 768px) {
       grid-template-columns: repeat(1, 1fr);
@@ -427,6 +450,10 @@ const showPersonCard = (key: number) => {
       }
 
       :deep(.el-card__body) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
         padding: 0;
       }
 
@@ -558,6 +585,9 @@ const showPersonCard = (key: number) => {
       }
 
       .developer-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         padding: var(--o-spacing-h2);
         background: var(--o-color-bg2);
         box-shadow: 0 1px 5px 0 rgba(45, 47, 51, 0.1);
@@ -580,8 +610,8 @@ const showPersonCard = (key: number) => {
 
         .member-list {
           display: flex;
-          justify-content: center;
           flex-wrap: wrap;
+          width: fit-content;
 
           li {
             vertical-align: top;
