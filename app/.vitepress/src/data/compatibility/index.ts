@@ -1,5 +1,115 @@
 export default [
   {
+    name: '龙控Centralink数据中心智能运营管理平台',
+    version: '1.0',
+    type: '通用',
+    company: '依米康软件技术(深圳)有限责任公司',
+    database: 'openGauss 5.0.1',
+    os: 'openEuler 22.03 LTS',
+    server: 'Intel(其他)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E4%BE%9D%E7%B1%B3%E5%BA%B7%E8%BD%AF%E4%BB%B6/V1.0/Certificate.pdf',
+  },
+  {
+    name: '智诚医保结算清单质控系统',
+    version: '3.0',
+    type: '医疗',
+    company: '北京智诚民康信息技术有限公司',
+    database: 'openGauss 5.0.2',
+    os: 'openEuler 22.03 LTS SP3',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%20%E6%99%BA%E8%AF%9A%E6%B0%91%E5%BA%B7/01-%E5%8C%BB%E4%BF%9D%E7%BB%93%E7%AE%97%E6%B8%85%E5%8D%95%E8%B4%A8%E6%8E%A7.pdf',
+  },
+  {
+    name: 'DIP智能医保管理系统',
+    version: '3.0',
+    type: '医疗',
+    company: '北京智诚民康信息技术有限公司',
+    database: 'openGauss 5.0.2',
+    os: 'openEuler 22.03 LTS SP3',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%20%E6%99%BA%E8%AF%9A%E6%B0%91%E5%BA%B7/02-DIP%E6%99%BA%E8%83%BD%E5%8C%BB%E4%BF%9D%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F.pdf',
+  },
+  {
+    name: 'DRG/DIP绩效评价分析系统',
+    version: '3.0',
+    type: '医疗',
+    company: '北京智诚民康信息技术有限公司',
+    database: 'openGauss 5.0.2',
+    os: 'openEuler 22.03 LTS SP3',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%20%E6%99%BA%E8%AF%9A%E6%B0%91%E5%BA%B7/03-%E7%BB%A9%E6%95%88%E5%88%86%E6%9E%90%E8%AF%84%E4%BB%B7.pdf',
+  },
+  {
+    name: 'DRG智能医保管理系统',
+    version: '3.0',
+    type: '医疗',
+    company: '北京智诚民康信息技术有限公司',
+    database: 'openGauss 5.0.2',
+    os: 'openEuler 22.03 LTS SP3',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%20%E6%99%BA%E8%AF%9A%E6%B0%91%E5%BA%B7/04-DRG%E6%99%BA%E8%83%BD%E5%8C%BB%E4%BF%9D%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F.pdf',
+  },
+  {
+    name: '飞检管理系统',
+    version: '3.0',
+    type: '医疗',
+    company: '北京智诚民康信息技术有限公司',
+    database: 'openGauss 5.0.2',
+    os: 'openEuler 22.03 LTS SP3',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%20%E6%99%BA%E8%AF%9A%E6%B0%91%E5%BA%B7/05-%E9%A3%9E%E6%A3%80%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F.pdf',
+  },
+  {
+    name: '智诚DIP病组成本核算系统',
+    version: '3.0',
+    type: '医疗',
+    company: '北京智诚民康信息技术有限公司',
+    database: 'openGauss 5.0.2',
+    os: 'openEuler 22.03 LTS SP3',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%20%E6%99%BA%E8%AF%9A%E6%B0%91%E5%BA%B7/07-DIP%E7%97%85%E7%BB%84%E6%88%90%E6%9C%AC%E6%A0%B8%E7%AE%97.pdf',
+  },
+  {
+    name: '智诚DRG病组成本核算系统',
+    version: '3.0',
+    type: '医疗',
+    company: '北京智诚民康信息技术有限公司',
+    database: 'openGauss 5.0.2',
+    os: 'openEuler 22.03 LTS SP3',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%20%E6%99%BA%E8%AF%9A%E6%B0%91%E5%BA%B7/08-DRG%E7%97%85%E7%BB%84%E6%88%90%E6%9C%AC%E6%A0%B8%E7%AE%97.pdf',
+  },
+  {
+    name: '智诚病案首页质控系统',
+    version: '3.0',
+    type: '医疗',
+    company: '北京智诚民康信息技术有限公司',
+    database: 'openGauss 5.0.2',
+    os: 'openEuler 22.03 LTS SP3',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%20%E6%99%BA%E8%AF%9A%E6%B0%91%E5%BA%B7/09-%E7%97%85%E6%A1%88%E9%A6%96%E9%A1%B5%E8%B4%A8%E6%8E%A7.pdf',
+  },
+  {
+    name: '智诚三级公立医院绩效考核监管系统',
+    version: '3.0',
+    type: '医疗',
+    company: '北京智诚民康信息技术有限公司',
+    database: 'openGauss 5.0.2',
+    os: 'openEuler 22.03 LTS SP3',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%20%E6%99%BA%E8%AF%9A%E6%B0%91%E5%BA%B7/10-%E4%B8%89%E7%BA%A7%E5%85%AC%E7%AB%8B%E5%8C%BB%E9%99%A2%E7%BB%A9%E6%95%88%E8%80%83%E6%A0%B8%E7%9B%91%E7%AE%A1.pdf',
+  },
+  {
     name: 'Zabbix',
     version: '6.0.29',
     type: '通用',
