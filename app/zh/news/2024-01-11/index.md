@@ -1,11 +1,11 @@
 ---
-title: '祝贺！openGauss系多个产品荣获"2023年度技术卓越奖'
+title: '祝贺！openGauss系多个产品荣获"2023年度技术卓越奖"'
 date: '2024-01-11'
 tags: ['theme']
 category: 'news'
 banner: '/category/news/2024-01-11/banner.jpg'
 author: 'openGauss'
-summary: 'openGauss系多个产品荣获"2023年度技术卓越奖'
+summary: 'openGauss系多个产品荣获"2023年度技术卓越奖"'
 ---
 
 

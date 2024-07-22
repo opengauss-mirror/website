@@ -131,11 +131,11 @@ export default [
   },
   {
     date: '2024-01-11',
-    summary: 'openGauss系多个产品荣获"2023年度技术卓越奖',
+    summary: 'openGauss系多个产品荣获"2023年度技术卓越奖"',
     archives: '2024-01',
     author: ['openGauss'],
     banner: '/category/news/2024-01-11/banner.jpg',
-    title: '祝贺！openGauss系多个产品荣获"2023年度技术卓越奖',
+    title: '祝贺！openGauss系多个产品荣获"2023年度技术卓越奖"',
     tags: ['theme'],
     path: 'zh/news/2024-01-11/index',
   },
