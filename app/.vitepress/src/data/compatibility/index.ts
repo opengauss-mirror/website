@@ -66,6 +66,17 @@ export default [
       'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%20%E6%99%BA%E8%AF%9A%E6%B0%91%E5%BA%B7/05-%E9%A3%9E%E6%A3%80%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F.pdf',
   },
   {
+    name: '医保智能管理系统',
+    version: '3.0',
+    type: '医疗',
+    company: '北京智诚民康信息技术有限公司',
+    database: 'openGauss 5.0.2',
+    os: 'openEuler 22.03 LTS SP3',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%20%E6%99%BA%E8%AF%9A%E6%B0%91%E5%BA%B7/06-%E5%8C%BB%E4%BF%9D%E6%99%BA%E8%83%BD%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F.pdf',
+  },
+  {
     name: '智诚DIP病组成本核算系统',
     version: '3.0',
     type: '医疗',

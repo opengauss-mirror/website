@@ -609,14 +609,19 @@ const getCertificateBoxGridTemplateColumns = (
         }
 
         .member-list {
-          display: flex;
-          flex-wrap: wrap;
-          width: fit-content;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, 100px);
+          gap: 0 64px;
+          width: 100%;
+          justify-content: center;
+
+          @media (max-width: 768px) {
+            gap: 0 32px;
+          }
 
           li {
             vertical-align: top;
             text-align: center;
-            padding: 0 var(--o-spacing-h3);
 
             .m-name {
               margin-top: var(--o-spacing-h8);
