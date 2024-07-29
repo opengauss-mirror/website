@@ -1,5 +1,14 @@
 export default [
   {
+    date: '2024-05-29',
+    summary: 'openGauss客户端接入认证',
+    archives: '2024-05',
+    author: ['ningyali'],
+    title: '使用gsql进行SSL连接测试',
+    tags: ['openGauss-ssl连接测试'],
+    path: 'zh/blogs/ningyali/openGauss使用gsql进行SSL连接测试',
+  },
+  {
     date: '2024-05-19',
     summary: '磐维数据库switchover实现机制及其涉及的线程通信',
     archives: '2024-05',
