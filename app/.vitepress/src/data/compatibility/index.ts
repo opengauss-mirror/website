@@ -1,5 +1,115 @@
 export default [
   {
+    name: '能泊车停车稽查管理子系统',
+    version: '1.0.0',
+    type: '交通',
+    company: '成都能泊数产科技有限公司',
+    database: 'openGauss 5.0.1',
+    os: 'openEuler 20.03 LTS SP1',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E8%83%BD%E6%B3%8A%E8%BD%A6/V1.0.0/%E8%83%BD%E6%B3%8A%E8%BD%A6%E5%81%9C%E8%BD%A6%E7%A8%BD%E6%9F%A5%E7%AE%A1%E7%90%86%E5%AD%90%E7%B3%BB%E7%BB%9F-openGauss%E6%8A%80%E6%9C%AF%E8%AE%A4%E8%AF%81%E4%B9%A6.pdf',
+  },
+  {
+    name: '能泊车停车运营报表子系统',
+    version: '1.0.0',
+    type: '交通',
+    company: '成都能泊数产科技有限公司',
+    database: 'openGauss 5.0.1',
+    os: 'openEuler 20.03 LTS SP1',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E8%83%BD%E6%B3%8A%E8%BD%A6/V1.0.0/%E8%83%BD%E6%B3%8A%E8%BD%A6%E5%81%9C%E8%BD%A6%E8%BF%90%E8%90%A5%E6%8A%A5%E8%A1%A8%E5%AD%90%E7%B3%BB%E7%BB%9F-openGauss%E6%8A%80%E6%9C%AF%E8%AE%A4%E8%AF%81%E4%B9%A6.pdf',
+  },
+  {
+    name: '能泊车停车运营监控子系统',
+    version: '1.0.0',
+    type: '交通',
+    company: '成都能泊数产科技有限公司',
+    database: 'openGauss 5.0.1',
+    os: 'openEuler 20.03 LTS SP1',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E8%83%BD%E6%B3%8A%E8%BD%A6/V1.0.0/%E8%83%BD%E6%B3%8A%E8%BD%A6%E5%81%9C%E8%BD%A6%E8%BF%90%E8%90%A5%E7%9B%91%E6%8E%A7%E5%AD%90%E7%B3%BB%E7%BB%9F-openGauss%E6%8A%80%E6%9C%AF%E8%AE%A4%E8%AF%81%E4%B9%A6.pdf',
+  },
+  {
+    name: '能泊车停车运营管理子系统',
+    version: '1.0.0',
+    type: '交通',
+    company: '成都能泊数产科技有限公司',
+    database: 'openGauss 5.0.1',
+    os: 'openEuler 20.03 LTS SP1',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E8%83%BD%E6%B3%8A%E8%BD%A6/V1.0.0/%E8%83%BD%E6%B3%8A%E8%BD%A6%E5%81%9C%E8%BD%A6%E8%BF%90%E8%90%A5%E7%AE%A1%E7%90%86%E5%AD%90%E7%B3%BB%E7%BB%9F-openGauss%E6%8A%80%E6%9C%AF%E8%AE%A4%E8%AF%81%E4%B9%A6.pdf',
+  },
+  {
+    name: '能泊车城市静态交通管理平台',
+    version: '1.0.0',
+    type: '交通',
+    company: '成都能泊数产科技有限公司',
+    database: 'openGauss 5.0.1',
+    os: 'openEuler 20.03 LTS SP1',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E8%83%BD%E6%B3%8A%E8%BD%A6/V1.0.0/%E8%83%BD%E6%B3%8A%E8%BD%A6%E5%9F%8E%E5%B8%82%E9%9D%99%E6%80%81%E4%BA%A4%E9%80%9A%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0-openGauss%E6%8A%80%E6%9C%AF%E8%AE%A4%E8%AF%81%E4%B9%A6.pdf',
+  },
+  {
+    name: '能泊车历史数据查询子系统',
+    version: '1.0.0',
+    type: '交通',
+    company: '成都能泊数产科技有限公司',
+    database: 'openGauss 5.0.1',
+    os: 'openEuler 20.03 LTS SP1',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E8%83%BD%E6%B3%8A%E8%BD%A6/V1.0.0/%E8%83%BD%E6%B3%8A%E8%BD%A6%E5%8E%86%E5%8F%B2%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2%E5%AD%90%E7%B3%BB%E7%BB%9F-openGauss%E6%8A%80%E6%9C%AF%E8%AE%A4%E8%AF%81%E4%B9%A6.pdf',
+  },
+  {
+    name: '能泊车结算管理子系统',
+    version: '1.0.0',
+    type: '交通',
+    company: '成都能泊数产科技有限公司',
+    database: 'openGauss 5.0.1',
+    os: 'openEuler 20.03 LTS SP1',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E8%83%BD%E6%B3%8A%E8%BD%A6/V1.0.0/%E8%83%BD%E6%B3%8A%E8%BD%A6%E7%BB%93%E7%AE%97%E7%AE%A1%E7%90%86%E5%AD%90%E7%B3%BB%E7%BB%9F-openGauss%E6%8A%80%E6%9C%AF%E8%AE%A4%E8%AF%81%E4%B9%A6.pdf',
+  },
+  {
+    name: '能泊车运营基础数据子系统',
+    version: '1.0.0',
+    type: '交通',
+    company: '成都能泊数产科技有限公司',
+    database: 'openGauss 5.0.1',
+    os: 'openEuler 20.03 LTS SP1',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E8%83%BD%E6%B3%8A%E8%BD%A6/V1.0.0/%E8%83%BD%E6%B3%8A%E8%BD%A6%E8%BF%90%E8%90%A5%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E5%AD%90%E7%B3%BB%E7%BB%9F-openGauss%E6%8A%80%E6%9C%AF%E8%AE%A4%E8%AF%81%E4%B9%A6.pdf',
+  },
+  {
+    name: '能泊车路外运营管理子系统',
+    version: '1.0.0',
+    type: '交通',
+    company: '成都能泊数产科技有限公司',
+    database: 'openGauss 5.0.1',
+    os: 'openEuler 20.03 LTS SP1',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E8%83%BD%E6%B3%8A%E8%BD%A6/V1.0.0/%E8%83%BD%E6%B3%8A%E8%BD%A6%E8%B7%AF%E5%A4%96%E8%BF%90%E8%90%A5%E7%AE%A1%E7%90%86%E5%AD%90%E7%B3%BB%E7%BB%9F-openGauss%E6%8A%80%E6%9C%AF%E8%AE%A4%E8%AF%81%E4%B9%A6.pdf',
+  },
+  {
+    name: '锡鼎运维管理系统',
+    version: '1.0',
+    type: '通用',
+    company: '上海锡鼎智能科技有限公司',
+    database: 'openGauss 5.0.0',
+    os: 'Kylin V10 SP3',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E9%94%A1%E9%BC%8E%E6%99%BA%E8%83%BD/V1.0/Certificate.pdf',
+  },
+  {
     name: '龙控Centralink数据中心智能运营管理平台',
     version: '1.0',
     type: '通用',
