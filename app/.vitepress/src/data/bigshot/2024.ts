@@ -13,105 +13,111 @@ export default [
       },
       {
         name: '超图软件集团 黄宁',
-        desc: '为openGauss加油助威',
+        desc: '赠言openGauss开发者大会',
         videoUrl:
           '/2024%20%E5%A4%A7%E5%92%96%E4%B9%8B%E5%A3%B0/%E8%B6%85%E5%9B%BE%E8%BD%AF%E4%BB%B6%E9%9B%86%E5%9B%A2%20%E9%BB%84%E5%AE%81.mp4',
       },
       {
         name: '大湾区国创中心工业软件产业发展中心 集体',
-        desc: '为openGauss加油助威',
+        desc: '赠言openGauss开发者大会',
         videoUrl:
           '/2024%20%E5%A4%A7%E5%92%96%E4%B9%8B%E5%A3%B0/%E5%A4%A7%E6%B9%BE%E5%8C%BA%E5%9B%BD%E5%88%9B%E4%B8%AD%E5%BF%83%E5%B7%A5%E4%B8%9A%E8%BD%AF%E4%BB%B6%E4%BA%A7%E4%B8%9A%E5%8F%91%E5%B1%95%E4%B8%AD%E5%BF%83%20%E9%9B%86%E4%BD%93.mp4',
       },
       {
         name: '大湾区国创中心工业软件产业发展中心 李玉祥',
-        desc: '为openGauss加油助威',
+        desc: '赠言openGauss开发者大会',
         videoUrl:
           '/2024%20%E5%A4%A7%E5%92%96%E4%B9%8B%E5%A3%B0/%E5%A4%A7%E6%B9%BE%E5%8C%BA%E5%9B%BD%E5%88%9B%E4%B8%AD%E5%BF%83%E5%B7%A5%E4%B8%9A%E8%BD%AF%E4%BB%B6%E4%BA%A7%E4%B8%9A%E5%8F%91%E5%B1%95%E4%B8%AD%E5%BF%83%20%E6%9D%8E%E7%8E%89%E7%A5%A5.mp4',
       },
       {
         name: '大湾区国创中心工业软件产业发展中心 李振',
-        desc: '为openGauss加油助威',
+        desc: '赠言openGauss开发者大会',
         videoUrl:
           '/2024%20%E5%A4%A7%E5%92%96%E4%B9%8B%E5%A3%B0/%E5%A4%A7%E6%B9%BE%E5%8C%BA%E5%9B%BD%E5%88%9B%E4%B8%AD%E5%BF%83%E5%B7%A5%E4%B8%9A%E8%BD%AF%E4%BB%B6%E4%BA%A7%E4%B8%9A%E5%8F%91%E5%B1%95%E4%B8%AD%E5%BF%83%20%E6%9D%8E%E6%8C%AF.mp4',
       },
       {
         name: '大湾区国创中心工业软件产业发展中心 刘保玉',
-        desc: '为openGauss加油助威',
+        desc: '赠言openGauss开发者大会',
         videoUrl:
           '/2024%20%E5%A4%A7%E5%92%96%E4%B9%8B%E5%A3%B0/%E5%A4%A7%E6%B9%BE%E5%8C%BA%E5%9B%BD%E5%88%9B%E4%B8%AD%E5%BF%83%E5%B7%A5%E4%B8%9A%E8%BD%AF%E4%BB%B6%E4%BA%A7%E4%B8%9A%E5%8F%91%E5%B1%95%E4%B8%AD%E5%BF%83%20%E5%88%98%E4%BF%9D%E7%8E%89.mp4',
       },
       {
         name: '大湾区国创中心工业软件产业发展中心 罗梦',
-        desc: '为openGauss加油助威',
+        desc: '赠言openGauss开发者大会',
         videoUrl:
           '/2024%20%E5%A4%A7%E5%92%96%E4%B9%8B%E5%A3%B0/%E5%A4%A7%E6%B9%BE%E5%8C%BA%E5%9B%BD%E5%88%9B%E4%B8%AD%E5%BF%83%E5%B7%A5%E4%B8%9A%E8%BD%AF%E4%BB%B6%E4%BA%A7%E4%B8%9A%E5%8F%91%E5%B1%95%E4%B8%AD%E5%BF%83%20%E7%BD%97%E6%A2%A6.mp4',
       },
       {
         name: '大湾区国创中心工业软件产业发展中心 彭斐灵',
-        desc: '为openGauss加油助威',
+        desc: '赠言openGauss开发者大会',
         videoUrl:
           '/2024%20%E5%A4%A7%E5%92%96%E4%B9%8B%E5%A3%B0/%E5%A4%A7%E6%B9%BE%E5%8C%BA%E5%9B%BD%E5%88%9B%E4%B8%AD%E5%BF%83%E5%B7%A5%E4%B8%9A%E8%BD%AF%E4%BB%B6%E4%BA%A7%E4%B8%9A%E5%8F%91%E5%B1%95%E4%B8%AD%E5%BF%83%20%E5%BD%AD%E6%96%90%E7%81%B5.mp4',
       },
       {
         name: '大湾区国创中心工业软件产业发展中心 杨子浩',
-        desc: '为openGauss加油助威',
+        desc: '赠言openGauss开发者大会',
         videoUrl:
           '/2024%20%E5%A4%A7%E5%92%96%E4%B9%8B%E5%A3%B0/%E5%A4%A7%E6%B9%BE%E5%8C%BA%E5%9B%BD%E5%88%9B%E4%B8%AD%E5%BF%83%E5%B7%A5%E4%B8%9A%E8%BD%AF%E4%BB%B6%E4%BA%A7%E4%B8%9A%E5%8F%91%E5%B1%95%E4%B8%AD%E5%BF%83%20%E6%9D%A8%E5%AD%90%E6%B5%A9.mp4',
       },
       {
         name: '海量数据 陈炳达',
-        desc: '为openGauss加油助威',
+        desc: '赠言openGauss开发者大会',
         videoUrl:
           '/2024%20%E5%A4%A7%E5%92%96%E4%B9%8B%E5%A3%B0/%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%20%E9%99%88%E7%82%B3%E8%BE%BE.mp4',
       },
       {
         name: '海量数据 孟祥飞',
-        desc: '为openGauss加油助威',
+        desc: '赠言openGauss开发者大会',
         videoUrl:
           '/2024%20%E5%A4%A7%E5%92%96%E4%B9%8B%E5%A3%B0/%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%20%E5%AD%9F%E7%A5%A5%E9%A3%9E.mp4',
       },
       {
         name: '海量数据 王皓',
-        desc: '为openGauss加油助威',
+        desc: '赠言openGauss开发者大会',
         videoUrl:
           '/2024%20%E5%A4%A7%E5%92%96%E4%B9%8B%E5%A3%B0/%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%20%E7%8E%8B%E7%9A%93.mp4',
       },
       {
         name: '海量数据 谢卫平',
-        desc: '为openGauss加油助威',
+        desc: '赠言openGauss开发者大会',
         videoUrl:
           '/2024%20%E5%A4%A7%E5%92%96%E4%B9%8B%E5%A3%B0/%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%20%E8%B0%A2%E5%8D%AB%E5%B9%B3.mp4',
       },
       {
         name: '华为 南洋',
-        desc: '为openGauss加油助威',
+        desc: '赠言openGauss开发者大会',
         videoUrl:
           '/2024%20%E5%A4%A7%E5%92%96%E4%B9%8B%E5%A3%B0/%E5%8D%8E%E4%B8%BA%20%E5%8D%97%E6%B4%8B.mp4',
       },
       {
         name: '南大通用 薛欣怡',
-        desc: '为openGauss加油助威',
+        desc: '赠言openGauss开发者大会',
         videoUrl:
           '/2024%20%E5%A4%A7%E5%92%96%E4%B9%8B%E5%A3%B0/%E5%8D%97%E5%A4%A7%E9%80%9A%E7%94%A8%20%E8%96%9B%E6%AC%A3%E6%80%A1.mp4',
       },
       {
         name: '神舟通用 张御博',
-        desc: '为openGauss加油助威',
+        desc: '赠言openGauss开发者大会',
         videoUrl:
           '/2024%20%E5%A4%A7%E5%92%96%E4%B9%8B%E5%A3%B0/%E7%A5%9E%E8%88%9F%E9%80%9A%E7%94%A8%20%E5%BC%A0%E5%BE%A1%E5%8D%9A.mp4',
       },
       {
         name: '开发者采访',
-        desc: '为openGauss加油助威',
+        desc: '赠言openGauss开发者大会',
         videoUrl:
           '/2024%20%E5%A4%A7%E5%92%96%E4%B9%8B%E5%A3%B0/%E5%BC%80%E5%8F%91%E8%80%85%E9%87%87%E8%AE%BF.MP4',
       },
       {
         name: '四周年 集体',
-        desc: '为openGauss加油助威',
+        desc: '赠言openGauss开发者大会',
         videoUrl:
           '/2024%20%E5%A4%A7%E5%92%96%E4%B9%8B%E5%A3%B0/%E5%9B%9B%E5%91%A8%E5%B9%B4%20%E9%9B%86%E4%BD%93.mp4',
+      },
+      {
+        name: '四周年 完整版',
+        desc: '赠言openGauss开发者大会',
+        videoUrl:
+          '/2024%20%E5%A4%A7%E5%92%96%E4%B9%8B%E5%A3%B0/%E5%9B%9B%E5%91%A8%E5%B9%B4%20%E5%AE%8C%E6%95%B4%E7%89%88.mp4',
       },
     ],
   },
