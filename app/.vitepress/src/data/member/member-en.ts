@@ -234,6 +234,13 @@ export default {
           list: data.en.KNOWLEDGEGRAPH,
         },
         {
+          name: `RISC-V`,
+          id: `RISC-V`,
+          giteePath: `${GITEE_LINK}opengauss/tc/tree/master/sigs/RISC-V`,
+          emial: `riscv@opengauss.org`,
+          list: data.en.RISCV,
+        },
+        {
           other: `Want to start a new SIG?`,
           other1: ``,
           other2: `Please send your application to : `,
