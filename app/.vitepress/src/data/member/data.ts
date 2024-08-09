@@ -501,6 +501,8 @@ import zhangsongsong from '@/assets/category/member/avatar/zhangsongsong.png';
 import wangjingwei from '@/assets/category/member/avatar/wangjingwei.png';
 import keyiran from '@/assets/category/member/avatar/keyiran.png';
 import xvxiaoqin from '@/assets/category/member/avatar/xvxiaoqin.png';
+import wangxiaofei from '@/assets/category/member/avatar/wangxiaofei.png';
+import xucheng from '@/assets/category/member/avatar/xucheng.png';
 
 import { GITEE_LINK } from '@/data/url-config';
 export default {
@@ -1359,7 +1361,7 @@ export default {
         name: '杨皓',
         title: 'Maintainer',
         email: 'yanghao37@huawei.com',
-        gitee: `${GITEE_LINK}yangahos`,
+        gitee: `${GITEE_LINK}yanghaos`,
       },
       {
         img: yuexingzhi,
@@ -1683,7 +1685,7 @@ export default {
         gitee: `${GITEE_LINK}shenzheng4`,
       },
       {
-        img: user,
+        img: wangxiaofei,
         name: `王晓非`,
         title: `Committer`,
         email: `wangxiaofeiit@chinamobile.com`,
@@ -1841,7 +1843,7 @@ export default {
         gitee: `${GITEE_LINK}xiangrumei`,
       },
       {
-        img: user,
+        img: xucheng,
         name: `许成`,
         title: `Committer`,
         email: `xucheng@chinamobile.com`,
@@ -5627,7 +5629,7 @@ export default {
         name: 'Hao Yang',
         title: 'Maintainer',
         email: 'yanghao37@huawei.com',
-        gitee: `${GITEE_LINK}yangahos`,
+        gitee: `${GITEE_LINK}yanghaos`,
       },
       {
         img: yuexingzhi,
@@ -5951,7 +5953,7 @@ export default {
         gitee: `${GITEE_LINK}shenzheng4`,
       },
       {
-        img: user,
+        img: wangxiaofei,
         name: `Xiaofei Wang`,
         title: `Committer`,
         email: `wangxiaofeiit@chinamobile.com`,
@@ -6109,7 +6111,7 @@ export default {
         gitee: `${GITEE_LINK}xiangrumei`,
       },
       {
-        img: user,
+        img: xucheng,
         name: `Cheng Xu`,
         title: `Committer`,
         email: `xucheng@chinamobile.com`,

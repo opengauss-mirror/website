@@ -1,5 +1,49 @@
 export default [
   {
+    name: '凝思安全操作系统',
+    version: '6.0',
+    type: '操作系统',
+    company: '北京凝思软件股份有限公司',
+    database: 'openGauss 5.0.0',
+    os: '凝思安全操作系统 V6.0',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%87%9D%E6%80%9D%E8%BD%AF%E4%BB%B6/V6.0/Certificate.pdf',
+  },
+  {
+    name: '南京慧目视光系统软件(V3.0)',
+    version: '',
+    type: '医疗',
+    company: '南京慧目信息技术有限公司',
+    database: 'openGauss 5.0.1',
+    os: 'Kylin V10',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%85%A7%E7%9B%AE%E4%BF%A1%E6%81%AF/V3.0/Certificate.pdf',
+  },
+  {
+    name: 'FASS分布式全闪存储系统',
+    version: '2',
+    type: '通用',
+    company: '北京大道云行科技有限公司',
+    database: 'openGauss 5.0.2',
+    os: 'CentOS V7.6',
+    server: 'Intel(其他)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%A4%A7%E9%81%93%E4%BA%91%E8%A1%8C/V2/Certificate.pdf',
+  },
+  {
+    name: '合明监控分析中心软件HMCS',
+    version: '10.0',
+    type: '通用',
+    company: '广州合明软件科技有限公司',
+    database: 'openGauss 3.0.0',
+    os: 'Kylin V10 SP1',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%90%88%E6%98%8E%E8%BD%AF%E4%BB%B6/V10.0/Certificate.pdf',
+  },
+  {
     name: '能泊车停车稽查管理子系统',
     version: '1.0.0',
     type: '交通',

@@ -66,6 +66,7 @@ const BAIDU_HM = 'https://hm.baidu.com/hm.js?ace49cc6c2f3d0542e97ce86732094dc'; 
 const XINGYEBANK_LINK = 'https://www.cib.com.cn'; // 兴业银行
 const SHIMO_LINK = 'https://shimo.im'; // 石墨报名
 const SUMMIT2023_JOIN = 'https://e-campaign.huawei.com/t/BbuQr2'; // SUMMIT报名
+const CECN_LINK = 'http://www.ce.cn/'; // 中国经济网
 
 export {
   OBS_Summit_PPT,
@@ -123,5 +124,6 @@ export {
   XINGYEBANK_LINK,
   SHIMO_LINK,
   SUMMIT2023_JOIN,
-  OBS_JIACAN_LINK
+  OBS_JIACAN_LINK,
+  CECN_LINK,
 };
