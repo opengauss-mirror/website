@@ -17,6 +17,8 @@ import liuwei2022 from '@/assets/category/honor/2022/member/liuwei.png';
 import zhangxvbo2022 from '@/assets/category/honor/2022/member/zhangxvbo.png';
 import zengqingfeng2022 from '@/assets/category/honor/2022/member/zengqingfeng.png';
 
+import mostInfluentialDatabaseImg from '@/assets/category/honor/2023/most-influential-database.jpg';
+
 import pengjiong2023 from '@/assets/category/honor/2023/member/pengjiong.png';
 import yanghao2023 from '@/assets/category/honor/2023/member/yanghao.jpg';
 import lilong2023 from '@/assets/category/honor/2023/member/lilong.jpg';
@@ -80,7 +82,7 @@ import zhangbingbing2024 from '@/assets/category/honor/2024/member/zhangbingbing
 import zhangting2024 from '@/assets/category/honor/2024/member/zhangting.png';
 import zhaoxiaolin2024 from '@/assets/category/honor/2024/member/zhaoxiaolin.png';
 
-import { GITEE_LINK } from '@/data/url-config';
+import { GITEE_LINK, CECN_LINK } from '@/data/url-config';
 
 export default {
   title: '社区荣誉',
@@ -339,6 +341,16 @@ export default {
         {
           name: '金融科技产业联盟2023年十佳课题',
           href: '/zh/news/2024-02-01/index.html',
+          img: '',
+        },
+        {
+          name: '最具影响力数据库',
+          href: '',
+          img: mostInfluentialDatabaseImg,
+        },
+        {
+          name: '2023年中国开源创新大赛一等奖',
+          href: `${CECN_LINK}cysc/tech/gd2012/202306/05/t20230605_38576356.shtml?share_token=7e2113fc-2e7a-4604-b369-b2b9a2ae38c7`,
           img: '',
         },
       ],
