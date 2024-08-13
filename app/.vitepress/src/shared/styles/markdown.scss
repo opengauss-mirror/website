@@ -139,6 +139,12 @@
     }
   }
 
+  .lang,
+  .copy {
+    display: none;
+  }
+
+
   table {
     width: 100%;
     font-size: var(--o-font-size-text);
@@ -233,6 +239,20 @@
     border: 1px solid var(--o-color-border2);
     display: inline-block;
     font-weight: 300;
+  }
+}
+
+.vp-code {
+  span {
+    color: var(--shiki-light, var(--o-color-text3));
+  }
+}
+
+.dark {
+  .vp-code {
+    span {
+      color: var(--shiki-dark, #fff);
+    }
   }
 }
 
