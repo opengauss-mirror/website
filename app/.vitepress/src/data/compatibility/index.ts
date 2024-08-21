@@ -1,5 +1,93 @@
 export default [
   {
+    name: '联想自动恢复验证系统',
+    version: '1.0',
+    type: '通用',
+    company: '联想（北京）有限公司',
+    database: 'openGauss 5.0.1',
+    os: 'openEuler 20.03 LTS SP1',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E8%81%94%E6%83%B3/V1.0/%E8%81%94%E6%83%B3%E8%87%AA%E5%8A%A8%E6%81%A2%E5%A4%8D%E9%AA%8C%E8%AF%81%E7%B3%BB%E7%BB%9F%20V1.0.pdf',
+  },
+  {
+    name: '联想自助备份平台',
+    version: '1.0',
+    type: '通用',
+    company: '联想（北京）有限公司',
+    database: 'openGauss 5.0.1',
+    os: 'openEuler 20.03 LTS SP1',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E8%81%94%E6%83%B3/V1.0/%E8%81%94%E6%83%B3%E8%87%AA%E5%8A%A9%E5%A4%87%E4%BB%BD%E5%B9%B3%E5%8F%B0%20V1.0.pdf',
+  },
+  {
+    name: '当虹IP多屏视频监控系统',
+    version: '2.8',
+    type: '广电',
+    company: '杭州当虹科技股份有限公司',
+    database: 'openGauss 5.0.2',
+    os: 'openEuler 20.03 LTS SP1',
+    server: 'Kunpeng 920(Taishan 200)、Hygon 7380(X7340H0)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%9D%AD%E5%B7%9E%E5%BD%93%E8%99%B9/%E5%BD%93%E8%99%B9IP%E5%A4%9A%E5%B1%8F%E8%A7%86%E9%A2%91%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%20v2.8.pdf',
+  },
+  {
+    name: '当虹在线直播编转码系统',
+    version: '8.0',
+    type: '广电',
+    company: '杭州当虹科技股份有限公司',
+    database: 'openGauss 5.0.2',
+    os: 'openEuler 20.03 LTS SP1',
+    server: 'Kunpeng 920(Taishan 200)、Hygon 7380(X7340H0)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%9D%AD%E5%B7%9E%E5%BD%93%E8%99%B9/%E5%BD%93%E8%99%B9%E5%9C%A8%E7%BA%BF%E7%9B%B4%E6%92%AD%E7%BC%96%E8%BD%AC%E7%A0%81%E7%B3%BB%E7%BB%9F%20v8.0.pdf',
+  },
+  {
+    name: '当虹多功能视频转码平台软件',
+    version: '8.1',
+    type: '广电',
+    company: '杭州当虹科技股份有限公司',
+    database: 'openGauss 5.0.2',
+    os: 'openEuler 20.03 LTS SP1',
+    server: 'Kunpeng 920(Taishan 200)、Hygon 7380(X7340H0)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%9D%AD%E5%B7%9E%E5%BD%93%E8%99%B9/%E5%BD%93%E8%99%B9%E5%A4%9A%E5%8A%9F%E8%83%BD%E8%A7%86%E9%A2%91%E8%BD%AC%E7%A0%81%E5%B9%B3%E5%8F%B0%E8%BD%AF%E4%BB%B6V8.1.pdf',
+  },
+  {
+    name: '当虹流媒体安全切换系统',
+    version: '5.0',
+    type: '广电',
+    company: '杭州当虹科技股份有限公司',
+    database: 'openGauss 5.0.2',
+    os: 'openEuler 20.03 LTS SP1',
+    server: 'Kunpeng 920(Taishan 200)、Hygon 7380(X7340H0)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%9D%AD%E5%B7%9E%E5%BD%93%E8%99%B9/%E5%BD%93%E8%99%B9%E6%B5%81%E5%AA%92%E4%BD%93%E5%AE%89%E5%85%A8%E5%88%87%E6%8D%A2%E7%B3%BB%E7%BB%9F%20V5.0.pdf',
+  },
+  {
+    name: '当虹视频收录平台软件',
+    version: '3.4',
+    type: '广电',
+    company: '杭州当虹科技股份有限公司',
+    database: 'openGauss 5.0.2',
+    os: 'openEuler 20.03 LTS SP1',
+    server: 'Kunpeng 920(Taishan 200)、Hygon 7380(X7340H0)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%9D%AD%E5%B7%9E%E5%BD%93%E8%99%B9/%E5%BD%93%E8%99%B9%E8%A7%86%E9%A2%91%E6%94%B6%E5%BD%95%E5%B9%B3%E5%8F%B0%E8%BD%AF%E4%BB%B6%20V3.4.pdf',
+  },
+  {
+    name: '当虹轮播系统',
+    version: '2.5',
+    type: '广电',
+    company: '杭州当虹科技股份有限公司',
+    database: 'openGauss 5.0.2',
+    os: 'openEuler 20.03 LTS SP1',
+    server: 'Kunpeng 920(Taishan 200)、Hygon 7380(X7340H0)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%9D%AD%E5%B7%9E%E5%BD%93%E8%99%B9/%E5%BD%93%E8%99%B9%E8%BD%AE%E6%92%AD%E7%B3%BB%E7%BB%9F%20V2.5.pdf',
+  },
+  {
     name: '凝思安全操作系统',
     version: '6.0',
     type: '操作系统',
