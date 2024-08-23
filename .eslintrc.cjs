@@ -28,4 +28,5 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'off',
     'vue/no-v-model-argument': 'off',
   },
+  ignorePatterns: ['genSitemap.js']
 };

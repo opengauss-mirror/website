@@ -12,6 +12,8 @@ RUN git clone -b v2 ${BLOG_REPOSITORY} /home/opengauss/blog && \
 
 RUN npm install pnpm -g
 RUN pnpm install
+RUN pnpm sitemap:zh
+RUN pnpm sitemap:en
 RUN pnpm build
 
 FROM swr.cn-north-4.myhuaweicloud.com/opensourceway/openeuler/nginx:1.24.0-22.03-lts-sp1 as NginxBuilder
@@ -34,7 +36,7 @@ COPY --from=NginxBuilder /etc/nginx/modules /etc/nginx/modules
 COPY --from=NginxBuilder /etc/nginx/geoip  /etc/nginx/geoip
 COPY --from=NginxBuilder /etc/nginx/mime.types  /etc/nginx/mime.types
 COPY --from=Builder /home/opengauss/web/app/.vitepress/dist /usr/share/nginx/www/
-COPY ./sitemap/sitemap-en.xml ./sitemap/sitemap-zh.xml /usr/share/nginx/www/
+# COPY ./sitemap/sitemap-en.xml ./sitemap/sitemap-zh.xml /usr/share/nginx/www/
 COPY ./sitemap/51e990e4796e419eb4a6e0c35efbb50f.txt /usr/share/nginx/www/
 
 RUN sed -i "s|repo.openeuler.org|mirrors.pku.edu.cn/openeuler|g" /etc/yum.repos.d/openEuler.repo \

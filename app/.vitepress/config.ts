@@ -1,4 +1,5 @@
 import type { UserConfig } from 'vitepress';
+import tdks from './tdks'
 
 const config: UserConfig = {
   base: '/',
@@ -44,6 +45,33 @@ const config: UserConfig = {
   ],
   appearance: true, // enable dynamic scripts for dark mode
   titleTemplate: false, //  vitepress supports pageTitileTemplate since 1.0.0
+  transformPageData(pageData) {
+    const filePath = pageData.filePath;
+    let lookupKey: string;
+    if (filePath.endsWith('index.md')) {
+      lookupKey = filePath.slice(0, -9);
+    } else {
+      lookupKey = filePath.slice(0, -2).concat('html');
+    }
+    const locale = filePath.slice(0, 2) as 'zh' | 'en';
+    const tdkInfo = tdks[locale]?.[lookupKey];
+    if (!tdkInfo) {
+      return;
+    }
+    const { title, description, keywords } = tdkInfo;
+    description && (pageData.description = description);
+    if (title) {
+      pageData.title = title;
+      pageData.titleTemplate = tdks.titleSuffix[locale];
+    }
+    if (keywords) {
+      pageData.frontmatter.head ??= [];
+      pageData.frontmatter.head.push([
+        'meta',
+        { name: 'keywords', content: keywords }
+      ]);
+    }
+  },
   locales: {
     root: {
       label: '中文',
