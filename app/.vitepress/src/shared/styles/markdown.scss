@@ -282,7 +282,7 @@
     letter-spacing: 0;
     line-height: var(--o-line-height-text);
     font-weight: 300;
-    margin-bottom: --o-spacing-h8;
+    margin-bottom: var(--o-spacing-h8);
   }
 }
 @include in-dark {
