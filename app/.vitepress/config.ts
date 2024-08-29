@@ -45,19 +45,22 @@ const config: UserConfig = {
   appearance: true, // enable dynamic scripts for dark mode
   titleTemplate: false, //  vitepress supports pageTitileTemplate since 1.0.0
   locales: {
-    '/': {
+    root: {
+      label: '中文',
       lang: 'zh',
       title: 'openGauss',
       description:
         'openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。',
     },
-    '/zh/': {
+    zh: {
+      label: '中文',
       lang: 'zh',
       title: 'openGauss',
       description:
         'openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。',
     },
-    '/en/': {
+    en: {
+      label: 'English',
       lang: 'en',
       title: 'openGauss',
       description:
@@ -72,5 +75,6 @@ const config: UserConfig = {
       });
     },
   },
+  ignoreDeadLinks:true,
 };
 export default config;

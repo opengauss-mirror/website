@@ -119,6 +119,7 @@ dist
 .DS_Store
 
 app/.vitepress/.cache
+app/.vitepress/cache
 app/.vitepress/.temp
 app/.vitepress/dist
 .vscode/settings.json
