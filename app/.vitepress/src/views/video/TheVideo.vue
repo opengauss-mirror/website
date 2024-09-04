@@ -1,45 +1,55 @@
 <script lang="ts" setup>
-import { ref, computed } from 'vue';
+import { ref, computed, watch } from 'vue';
 import { useI18n } from '@/i18n';
-import { useData, useRouter } from 'vitepress';
+import { useData } from 'vitepress';
 
-import VideoConfig from '@/data/video';
+import VideoConfig from '@/data/video/new';
 import AppContent from '@/components/AppContent.vue';
-import TagFilter from '@/components/TagFilter.vue';
 import VideoCard from './VideoCard.vue';
+import VideoMobileCard from './VideoMobileCard.vue';
+import VideoTab from './VideoTab.vue';
+import VideoNav from './VideoAnchor.vue';
 
 import BannerLevel2 from '@/components/BannerLevel2.vue';
 import Banner from '@/assets/illustrations/banner-secondary.png';
 import illustration from '@/assets/illustrations/blog.png';
 
 const i18n = useI18n();
-const router = useRouter();
 const { lang } = useData();
-
 const isZh = computed(() => (lang.value === 'zh' ? true : false));
 
-const activeIndex = ref(0);
-const isToggle = ref(false);
-const selectTag = (i: number) => {
-  activeIndex.value = i;
-  isToggle.value = i !== 0 ? true : false;
-};
-
-const getData = computed(() =>
-  activeIndex.value === 0
-    ? VideoConfig
-    : VideoConfig.filter((el) => el.id === activeIndex.value)
-);
-
+// ------------------------------ tab ------------------------------
 const activeMobile = ref(0);
+const activeTab = ref(1);
 
-const dataList = computed(
-  () => (item: any) => isZh.value ? item.data.zh : item.data.en
-);
-
-const handlerVideoDetail = (id: number, index: number) => {
-  router.go(`/${lang.value}/video/detail/?id=${id}-${index}`);
+const initActiveTab = () => {
+  const url = new URL(location.href);
+  const id = Number(url.searchParams.get('id'));
+  if (VideoConfig.find((e) => e.id === id)) {
+    activeTab.value = id;
+  }
 };
+initActiveTab();
+
+watch(activeTab, () => {
+  activeMobile.value = 0;
+  const url = new URL(location.href);
+  url.searchParams.set('id', activeTab.value.toString());
+  history.pushState({}, '', url);
+  activeIndex.value = 0;
+});
+
+// ------------------------------ 当前数据 ------------------------------
+const videoItem = computed(() => {
+  return VideoConfig.find((item) => item.id === activeTab.value);
+});
+const videoData = computed(() => {
+  return videoItem.value?.data.zh || [];
+});
+
+// ------------------------------锚点 ------------------------------
+const activeIndex = ref(0);
+const pcContainer = ref<HTMLDivElement>();
 </script>
 
 <template>
@@ -48,71 +58,46 @@ const handlerVideoDetail = (id: number, index: number) => {
     :title="i18n.connect.VIDEO_TITLE"
     :illustration="illustration"
   />
-  <AppContent>
+  <!-- Tab -->
+  <VideoTab v-model="activeTab" :tab-data="VideoConfig" />
+  <!-- Content -->
+  <AppContent :pcTop="0">
+    <!-- PC端 -->
     <div class="video-pc">
-      <OCard class="tag-box">
-        <TagFilter :label="i18n.common.TYPE">
-          <OTag
-            :type="activeIndex === 0 ? 'primary' : 'text'"
-            checkable
-            @click="selectTag(0)"
-            >{{ i18n.common.ALL }}</OTag
-          >
-          <OTag
-            v-for="item in VideoConfig"
-            :key="item.id"
-            checkable
-            :type="activeIndex === item.id ? 'primary' : 'text'"
-            @click="selectTag(item.id)"
-          >
-            {{ isZh ? item.name : item.nameEn }}
-          </OTag>
-        </TagFilter>
-      </OCard>
-      <div class="pc">
+      <div ref="pcContainer" class="pc">
+        <VideoNav
+          v-if="Array.isArray(videoItem?.data?.navList)"
+          v-model:current-index="activeIndex"
+          :target="pcContainer"
+          :list="videoItem?.data?.navList"
+        />
         <VideoCard
-          v-for="item in getData"
+          v-for="item in videoData"
           :key="item.id"
-          :nav-items="item"
-          :is-toggle="isToggle"
-          @click="handlerVideoDetail"
-        >
-        </VideoCard>
+          :data-source="item"
+        />
       </div>
     </div>
     <!-- 移动端 -->
     <div class="video-mobile">
       <OCollapse v-model="activeMobile" accordion>
         <OCollapseItem
-          v-for="(item, index) in getData"
+          v-for="(item, index) in videoData"
           :key="item.id"
           :name="index"
-          class="video-mobile-card"
+          :class="{ 'single-video-item': videoData.length === 1 }"
         >
           <template #title>
-            <p class="caption">{{ isZh ? item.name : item.nameEn }}</p>
+            <p class="caption">{{ item.name }}</p>
           </template>
-          <div class="video-mobile-box">
-            <template
-              v-for="(subitem, sindex) in dataList(item)"
-              :key="subitem.id"
-            >
-              <OCard class="video-item">
-                <div
-                  class="video-item-link"
-                  @click="handlerVideoDetail(item.id, sindex)"
-                >
-                  <div
-                    class="cover"
-                    :style="`background:url(${item.poster}) no-repeat center/cover`"
-                  >
-                    <p class="title">{{ subitem.title }}</p>
-                  </div>
-                  <p class="caption">{{ subitem.title }}</p>
-                </div>
-              </OCard>
-            </template>
-          </div>
+          <VideoMobileCard
+            v-for="(subitem, i) in item.data"
+            :key="i"
+            :cover="item.poster"
+            :cover-title="subitem.title"
+            :title="subitem.title"
+            :href="subitem.videoUrl"
+          />
         </OCollapseItem>
       </OCollapse>
     </div>
@@ -123,6 +108,12 @@ const handlerVideoDetail = (id: number, index: number) => {
 @include in-dark {
   .cover {
     @include img-in-dark;
+  }
+}
+.app-content {
+  @media screen and (max-width: 1100px) {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 .tag-box {
@@ -141,54 +132,47 @@ const handlerVideoDetail = (id: number, index: number) => {
   .o-collapse {
     :deep(.el-collapse-item__content) {
       padding: var(--o-spacing-h5);
+      background-color: var(--o-color-bg1);
     }
     .caption {
+      padding-left: var(--o-spacing-h5);
       font-size: var(--o-font-size-text);
       line-height: var(--o-line-height-text);
+      font-weight: 400;
+    }
+
+    :deep(.el-collapse-item__header) {
+      height: 54px;
+      padding-right: 24px;
+    }
+
+    :deep(.el-collapse-item__content) {
+      padding: var(--o-spacing-h4) var(--o-spacing-h5);
+    }
+
+    :deep(.el-collapse-item__arrow) {
+      transform: rotate(90deg);
+    }
+
+    :deep(.el-collapse-item__arrow.is-active) {
+      transform: rotate(-90deg);
+    }
+
+    :deep(.el-collapse-item__header::after) {
+      right: 0;
+    }
+
+    .single-video-item {
+      :deep(.el-collapse-item__header) {
+        display: none;
+      }
+      :deep(.el-collapse-item__content) {
+        padding: 0 var(--o-spacing-h5);
+      }
     }
   }
   @media screen and (max-width: 1100px) {
     display: block;
-  }
-}
-.video-item {
-  &:not(:last-child) {
-    margin-bottom: var(--o-spacing-h5);
-  }
-
-  :deep(.el-card__body) {
-    padding: 0;
-  }
-  &-link {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    cursor: pointer;
-    .cover {
-      height: 98px;
-      display: flex;
-      align-items: center;
-      padding: var(--o-spacing-h5);
-      .title {
-        font-size: var(--o-font-size-h8);
-        line-height: var(--o-line-height-h8);
-        color: #fff;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
-        overflow: hidden;
-      }
-    }
-
-    .caption {
-      padding: var(--o-spacing-h5);
-      font-size: var(--o-font-size-text);
-      line-height: var(--o-line-height-text);
-      font-weight: 300;
-      color: var(--o-color-text1);
-      box-sizing: content-box;
-    }
   }
 }
 </style>

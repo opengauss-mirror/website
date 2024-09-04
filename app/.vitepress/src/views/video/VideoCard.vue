@@ -1,84 +1,77 @@
 <script lang="ts" setup>
-import { ref, computed, toRefs, watch } from 'vue';
-import { useData } from 'vitepress';
+import { ref, computed } from 'vue';
 import { useI18n } from '@/i18n';
 
 import IconChevronDown from '~icons/app/icon-chevron-down.svg';
 import IconChevronUp from '~icons/app/icon-chevron-up.svg';
+import { PropType } from 'vue';
+
+interface DataSource {
+  id: string;
+  name: string;
+  poster: string;
+  displayCount: number;
+  data: Array<{
+    title: string;
+    author: string;
+    videoUrl: string;
+  }>;
+}
 
 const props = defineProps({
-  navItems: {
-    type: Object,
+  dataSource: {
+    type: Object as PropType<DataSource>,
     default() {
       return {};
     },
   },
   isToggle: {
     type: Boolean,
-    default() {
-      return false;
-    },
+    default: false,
   },
 });
 
 const i18n = useI18n();
-const { navItems, isToggle } = toRefs(props);
-const { lang } = useData();
-const isZh = computed(() => (lang.value === 'zh' ? true : false));
-
-const len = ref(4);
-const isAll = ref(false);
-const clickToggle = () => {
-  isAll.value = !isAll.value;
-};
-const videoLen = computed(() => {
-  return isAll.value ? 10000 : 4;
+const viewAll = ref(props.isToggle);
+const displayData = computed(() => {
+  return viewAll.value
+    ? props.dataSource.data
+    : props.dataSource.data.slice(0, props.dataSource.displayCount);
 });
-
-const dataList = computed(() => {
-  return isZh.value ? navItems.value.data.zh : navItems.value.data.en;
-});
-
-watch(
-  () => isToggle.value,
-  () => {
-    isAll.value = isToggle.value;
-  },
-  { immediate: true }
-);
-const emits = defineEmits(['click']);
-const handleClick = (id: number, index: number) => {
-  emits('click', id, index);
-};
 </script>
 
 <template>
   <div class="video-list">
-    <h2 class="video-title">{{ isZh ? navItems.name : navItems.nameEn }}</h2>
+    <!-- title -->
+    <h2 class="video-title" :id="dataSource.id">
+      {{ dataSource.name }}
+    </h2>
+    <!-- card -->
     <div class="news-panel-content">
-      <template v-for="(list, index) in dataList" :key="list.id">
-        <OCard
-          v-if="Number(index) < videoLen"
-          class="video-item shadow"
-          shadow="hover"
-        >
-          <div class="video-item-link" @click="handleClick(navItems.id, index)">
+      <OCard
+        v-for="item in displayData"
+        class="video-item shadow"
+        shadow="hover"
+      >
+        <a :href="item.videoUrl" target="_blank" rel="noopener noreferrer">
+          <div class="video-item-link">
             <div
               class="cover"
-              :style="`background:url(${navItems.poster}) no-repeat center/cover`"
+              :style="`background:url(${dataSource.poster}) no-repeat center/cover`"
             >
-              <p class="title">{{ list.title }}</p>
+              <p class="title">{{ item.title }}</p>
             </div>
-            <p class="caption">{{ list.title }}</p>
+            <p class="caption">{{ item.title }}</p>
           </div>
-        </OCard>
-      </template>
+        </a>
+      </OCard>
     </div>
-    <p v-if="dataList.length > len" class="tc">
-      <OButton type="text" size="small" animation @click="clickToggle">
-        {{ isAll ? i18n.connect.COLLAPSE : i18n.connect.VIEW_MORE }}
+    <!-- view all -->
+    <p v-if="dataSource.data.length > dataSource.displayCount" class="tc">
+      <OButton type="text" size="small" animation @click="viewAll = !viewAll">
+        {{ viewAll ? i18n.connect.COLLAPSE : i18n.connect.VIEW_MORE }}
         <template #suffixIcon>
-          <IconChevronUp v-if="isAll" /><IconChevronDown v-else />
+          <IconChevronUp v-if="viewAll" /><IconChevronDown v-else />
         </template>
       </OButton>
     </p>
@@ -98,7 +91,7 @@ const handleClick = (id: number, index: number) => {
 .news-panel-content {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: var(--o-spacing-h4);
 }
 .video-list {
   margin-top: var(--o-spacing-h1);
@@ -112,7 +105,7 @@ const handleClick = (id: number, index: number) => {
   text-align: center;
   font-size: var(--o-font-size-h3);
   line-height: var(--o-line-height-h3);
-  margin-bottom: var(--o-spacing-h2);
+  margin-bottom: var(--o-spacing-h4);
   color: var(--o-color-text1);
   font-weight: 300;
 }
