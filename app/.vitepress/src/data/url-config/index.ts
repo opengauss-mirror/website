@@ -11,6 +11,7 @@ const CTO_LINK = 'https://blog.51cto.com/'; // 51cto官网
 const MODB_LINK = 'https://www.modb.pro/'; // modb官网
 const INFOQ_LINK = 'https://www.infoq.cn/'; // infoq官网
 const BILIBILI_LINK = 'https://space.bilibili.com/'; // bilibili官网
+const BILIBILI_LINK2 = 'https://www.bilibili.com/'; // bilibili官网
 const ZHIZHU_LINK = 'https://www.zhihu.com/'; // 知乎官网
 const ENMOEDU_LINK = 'https://enmoedu.com/'; // 恩墨学院
 const GITEE_LINK = 'https://gitee.com/'; // gitee官网
@@ -95,6 +96,7 @@ export {
   MODB_LINK,
   INFOQ_LINK,
   BILIBILI_LINK,
+  BILIBILI_LINK2,
   ZHIZHU_LINK,
   ENMOEDU_LINK,
   GITEE_LINK,

@@ -4,7 +4,7 @@ import { useData, useRouter } from 'vitepress';
 import { useI18n } from '@/i18n';
 import useWindowResize from '@/components/hooks/useWindowResize';
 
-import VideoConfig from '@/data/video';
+import VideoConfig from '@/data/video/new';
 
 import type { VideoItemT } from '@/shared/@types/type-video';
 
@@ -21,22 +21,17 @@ const i18n = useI18n();
 const isZh = computed(() => (lang.value === 'zh' ? true : false));
 
 function getVideoList() {
-  const result = VideoConfig;
-  const resultList: Array<VideoItemT> = [];
-  result.forEach((item, k) => {
-    const data = isZh.value ? item.data.zh : item.data.en;
-    data.forEach((el: VideoItemT, i) => {
-      if (i < 1) {
-        el['cover'] = item.poster;
-        el['name'] = item.name;
-        el['nameEn'] = item.nameEn;
-        el['id'] = k + 1;
-        el['index'] = i;
-        resultList.push(el);
-      }
-    });
+  videoList.value = VideoConfig.map((item) => {
+    return {
+      id: item.id,
+      cover: item.poster,
+      name: item.name,
+      nameEn: item.nameEn,
+      title: isZh.value ? item.name : item.nameEn,
+      videoUrl: `/${lang.value}/video/?id=${item.id}`,
+      date: '',
+    };
   });
-  videoList.value = resultList;
 }
 
 onMounted(() => {
@@ -46,8 +41,8 @@ onMounted(() => {
 });
 
 const goVideoDetail = (item: VideoItemT) => {
-  if (item.id !== undefined && item.index !== undefined) {
-    router.go(`/${lang.value}/video/detail/?id=${item.id}-${item.index}`);
+  if (item.id !== undefined) {
+    router.go(`/${lang.value}/video/?id=${item.id}`);
   }
 };
 const windowWidth = useWindowResize();
@@ -66,10 +61,7 @@ const windowWidth = useWindowResize();
           >
             <img :src="videoBtn" class="video-btn" />
             <div class="box">
-              <p class="title">{{ item.title }}</p>
-              <p class="type" :title="item.title">
-                {{ isZh ? item.name : item.nameEn }}
-              </p>
+              <p class="title">{{ isZh ? item.name : item.nameEn }}</p>
             </div>
           </div>
         </div>
@@ -138,7 +130,7 @@ const windowWidth = useWindowResize();
     .video-list {
       display: grid;
       gap: 24px;
-      grid-template-columns: repeat(6, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       .home-video-item {
         .home-video-link {
           height: 236px;

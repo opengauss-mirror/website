@@ -1,5 +1,38 @@
 export default [
   {
+    name: '数据中心智慧运营管理平台 WiseEMP-DCIM',
+    version: '1.0',
+    type: '通用',
+    company: '科华数据股份有限公司',
+    database: 'openGauss 5.0.0',
+    os: 'CentOS 7.9',
+    server: 'Intel(其他)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E7%A7%91%E5%8D%8E%E6%95%B0%E6%8D%AE/V1.0/WiseEMP-DCIM.pdf',
+  },
+  {
+    name: '跨境贸易金融服务平台',
+    version: '3.0',
+    type: '金融',
+    company: '厦门至恒融兴信息技术股份有限公司',
+    database: 'openGauss 6.0.0 RC1',
+    os: 'openEuler 20.03 LTS、Kylin V10 SP3',
+    server: 'Hygon 3280(H210-G30)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E8%87%B3%E6%81%92%E8%9E%8D%E5%85%B4/V3.0/6.0.0RC1.pdf',
+  },
+  {
+    name: '跨境贸易金融服务平台',
+    version: '3.0',
+    type: '金融',
+    company: '厦门至恒融兴信息技术股份有限公司',
+    database: 'openGauss 5.0.3',
+    os: 'openEuler 20.03 LTS、Kylin V10 SP3',
+    server: 'Hygon 3280(H210-G30)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E8%87%B3%E6%81%92%E8%9E%8D%E5%85%B4/V3.0/5.0.3LTS.pdf',
+  },
+  {
     name: '联想自动恢复验证系统',
     version: '1.0',
     type: '通用',

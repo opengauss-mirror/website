@@ -15,110 +15,35 @@ export default {
   type_practice_label: `实践操作`,
   modules: [
     {
-      name: `基础准备`,
+      name: `数据库基础知识`,
       itemList: [
         {
-          name: `git使用`,
-          desc: `git是一个开源的分布式版本控制系统，openGauss托管在gitee平台，使用git来管理源码。`,
-          docsList: [
-            {
-              name: `git使用教程`,
-              link: `${GITSCM_LINK}book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%91%BD%E4%BB%A4%E8%A1%8C`,
-            },
-            {
-              name: `openGauss社区入门-使用git提交代码`,
-              link: `/zh/blogs/xingchen/2020-05-30-start1.html`,
-            },
-          ],
-        },
-        {
-          name: `Linux使用`,
-          desc: `openGauss部署和运行在Linux操作系统上，请先了解和学习下Linux的基础操作。`,
-          docsList: [
-            {
-              name: `使用vmware安装Linux虚拟机`,
-              link: `/zh/blogs/zhaoyanliang/openGauss%E5%AD%A6%E4%B9%A0%E4%B8%80-centos%E5%AE%89%E8%A3%85.html`,
-            },
-            {
-              name: `Linux基础命令介绍`,
-              link: `${RUNOOB_LINK}linux/linux-command-manual.html`,
-            },
-          ],
-        },
-        {
-          name: `openGauss介绍`,
-          desc: `openGauss是一款企业级的开源关系型数据库管理系统。`,
+          name: `数据库介绍`,
+          desc: `了解数据库的基本概念，数据库技术的发展历史，关系型数据库的架构演进以及关系型数据库的主流应用场景`,
           videoList: [
             {
-              name: `初识openGauss`,
-              link: `/zh/video/detail/?id=5-6`,
-            },
-            {
-              name: `openGauss的过去、现在和未来`,
-              link: `/zh/video/detail/?id=1-14`,
-            },
-            {
-              name: `openGauss开源社区介绍`,
-              link: `/zh/video/detail/?id=1-12`,
-            },
-            {
-              name: `openGauss认证培训课程 OGCA`,
-              link: `${PLACE_LINK}contents/70fffafd-db76-4940-b928-0f22a60c504c`,
-            },
-          ],
-          optionList: [
-            {
-              name: `openGauss认证培训课程 OGCA`,
-              link: `${PLACE_LINK}contents/70fffafd-db76-4940-b928-0f22a60c504c`,
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: `部署openGauss`,
-      itemList: [
-        {
-          name: `极简安装`,
-          desc: `极简安装可以快速的部署起来一个数据库实例，省掉了集群管理工具安装时候的复杂流程，使用起来简单快捷。`,
-          docsList: [
-            {
-              name: `极简安装指南`,
-              link: `${DOCS_LINK}zh/docs/2.1.0/docs/installation/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html`,
-            },
-            {
-              name: `基于openGauss2.0.0版本极简安装文档`,
-              link: `/zh/blogs/jiajunfeng/openGauss2-0-0%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html`,
-            },
-            {
-              name: `vmware+centos7.6+opengauss2.0.1极简版安装`,
-              link: `/zh/blogs/luooofan/20211127.html`,
+              name: `数据库介绍`,
+              link: `/zh/video/detail/?id=6-6`,
             },
           ],
         },
         {
-          name: `OM安装数据库`,
-          desc: `OM(Operation Manager)即运维管理模块。提供对数据库配置管理、部署安装、日常运维等能力。`,
-          docsList: [
-            {
-              name: `OM安装单机版openGauss数据库`,
-              link: `/zh/blogs/zhangxb/%E5%AE%89%E8%A3%85%E5%8D%95%E6%9C%BA%E7%89%88openGauss%E6%95%B0%E6%8D%AE%E5%BA%93.html`,
-            },
-            {
-              name: `使用OM工具安装一主一备指导`,
-              link: `/zh/blogs/jiajunfeng/openGauss2-0-0%E4%B8%BB%E5%A4%87%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2.html`,
-            },
-          ],
+          name: `数据库基础知识`,
+          desc: `数据库管理的主要职责和内容，一些常见的、重要的数据库的基本概念`,
           videoList: [
             {
-              name: `轻松上手openGauss之openGauss安装部署`,
-              link: `/zh/video/detail/?id=5-5`,
+              name: `数据库基础知识`,
+              link: `/zh/video/detail/?id=6-5`,
             },
           ],
-          optionList: [
+        },
+        {
+          name: `SQL语法入门、分类`,
+          desc: `openGauss数据类型、系统函数及操作符、SQL入门级基础语法介绍`,
+          videoList: [
             {
-              name: `基于华为云ECS安装openGauss沙箱实验`,
-              link: `${LAB_LINK}testdetail_483`,
+              name: `SQL语法入门、分类`,
+              link: `/zh/video/detail/?id=6-4`,
             },
           ],
         },
@@ -129,7 +54,7 @@ export default {
       itemList: [
         {
           name: `gsql工具`,
-          desc: `gsql是openGauss提供在Linux终端命令行下运行的数据库连接工具，可以通过此工具连接服务器并对其进行操作和维护。`,
+          desc: `gsql是openGauss提供在Linux终端命令行下运行的数据库连接工具，可以通过此工具连接服务器并对其进行操作和维护`,
           docsList: [
             {
               name: `gsql工具文档`,
@@ -157,7 +82,7 @@ export default {
         },
         {
           name: `Data Studio工具`,
-          desc: `Data Studio 是一个集成开发环境（IDE），帮助数据库开发人员便捷地构建应用程序，以图形化界面形式提供数据库关键特性。`,
+          desc: `Data Studio 是一个集成开发环境（IDE），帮助数据库开发人员便捷地构建应用程序，以图形化界面形式提供数据库关键特性`,
           docsList: [
             {
               name: `Data Studio用户手册`,
@@ -177,7 +102,7 @@ export default {
         },
         {
           name: `数据库驱动`,
-          desc: `数据库驱动，即数据库应用程序接口，可以为多种关系数据库提供统一访问接口，应用程序可基于它操作数据。 openGauss支持多种开发语言的驱动，如JDBC、ODBC、Python等。`,
+          desc: `数据库驱动，即数据库应用程序接口，可以为多种关系数据库提供统一访问接口，应用程序可基于它操作数据。 openGauss支持多种开发语言的驱动，如JDBC、ODBC、Python等`,
           docsList: [
             {
               name: `JDBC开发文档`,
@@ -206,10 +131,14 @@ export default {
       itemList: [
         {
           name: `数据库编译`,
-          desc: `介绍数据库从源码编译为二进制文件的过程，包含三方库编译、源码自身编译，以及编译过程中常遇到问题解决。`,
+          desc: `介绍数据库从源码编译为二进制文件的过程，包含三方库编译、源码自身编译，以及编译过程中常遇到问题解决`,
           docsList: [
             {
-              name: `openGauss数据库编译指导`,
+              name: `openGauss编译指南`,
+              link: `${DOCS_LINK}zh/docs/latest/docs/CompilationGuide/Compilation.html`,
+            },
+            {
+              name: `openGauss数据库编译实践`,
               link: `/zh/blogs/xingchen/opengauss_compile.html`,
             },
             {
@@ -220,7 +149,7 @@ export default {
         },
         {
           name: `数据库调试`,
-          desc: `介绍下通过源码以debug方式编译数据库，以及使用gdb工具进行单步调试。`,
+          desc: `介绍下通过源码以debug方式编译数据库，以及使用gdb工具进行单步调试`,
           docsList: [
             {
               name: `如何使用gdb工具调试数据库`,
@@ -235,7 +164,7 @@ export default {
       itemList: [
         {
           name: `SQL引擎`,
-          desc: `SQL引擎作为数据库系统的入口，主要承担对用户输入的SQL语句进行解析、优化以及执行。`,
+          desc: `SQL引擎作为数据库系统的入口，主要承担对用户输入的SQL语句进行解析、优化以及执行`,
           docsList: [
             {
               name: `如何在openGauss添加一个系统函数`,
@@ -263,7 +192,7 @@ export default {
         },
         {
           name: `存储引擎`,
-          desc: `存储引擎向上对接SQL引擎，提供准确查询数据。向下对接存储介质，持久化数据到磁盘。openGauss支持多种存储引擎，如行存引擎、列存引擎以及内存引擎等，能够同时满足OLTP和OLAP下不同的业务场景。`,
+          desc: `存储引擎向上对接SQL引擎，提供准确查询数据。向下对接存储介质，持久化数据到磁盘。openGauss支持多种存储引擎，如行存引擎、列存引擎以及内存引擎等，能够同时满足OLTP和OLAP下不同的业务场景`,
           docsList: [
             {
               name: `openGauss数据库行存储源代码解析`,
@@ -291,7 +220,7 @@ export default {
         },
         {
           name: `性能调优`,
-          desc: `高性能是openGauss的一大特点。为了能够达到数据库的极致性能，需要对数据库在系统层面进行调优配置。`,
+          desc: `高性能是openGauss的一大特点。为了能够达到数据库的极致性能，需要对数据库在系统层面进行调优配置`,
           docsList: [
             {
               name: `benchmark使用介绍`,

@@ -1,5 +1,5 @@
 ---
-title: '知识图谱'
+title: '快速体验'
 ---
 
 <script setup>
