@@ -1,8 +1,7 @@
 import { test } from '@playwright/test';
 
 test('中文导航栏', async ({ page }) => {
-  test.setTimeout(120000);
-  await page.goto('http://localhost:5173/zh/');
+  await page.goto('/zh');
   await page.getByRole('link', { name: '软件包' }).click();
   await page.getByRole('link', { name: '支持工具' }).click();
   const page1Promise = page.waitForEvent('popup');

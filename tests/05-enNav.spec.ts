@@ -1,8 +1,7 @@
 import { test } from '@playwright/test';
 
 test('英文导航栏', async ({ page }) => {
-  test.setTimeout(120000);
-  await page.goto('http://localhost:5173/en/');
+  await page.goto('/en');
   await page.getByRole('link', { name: 'Software Packages' }).click();
   await page.getByRole('link', { name: 'Support Tools' }).click();
   const page1Promise = page.waitForEvent('popup');
