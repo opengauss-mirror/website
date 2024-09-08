@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vitepress dev app",
     "build": "vitepress build app",
+    "test": "playwright test && playwright show-report",
     "lint": "eslint \"app/.vitepress/src/**/*.{js,ts,vue,jsx,tsx}\"",
     "fix": "eslint --fix \"app/.vitepress/src/**/*.{js,ts,vue,jsx,tsx}\"",
     "lint:components": "eslint \"opendesign/**/*.{js,ts,vue,jsx,tsx}\"",
@@ -27,6 +28,7 @@
     "vue-dompurify-html": "3.1.2"
   },
   "devDependencies": {
+    "@playwright/test": "^1.47.0",
     "@types/node": "20.5.9",
     "@typescript-eslint/eslint-plugin": "5.51.0",
     "@typescript-eslint/parser": "5.51.0",
