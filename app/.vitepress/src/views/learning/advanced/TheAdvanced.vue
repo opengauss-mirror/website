@@ -26,7 +26,7 @@ function changeShowIndex(index: number) {
     :title="i18n.advanced.title"
     :illustration="illustration"
   />
-  <AppContent>
+  <AppContent :mobile-top="24">
     <div class="advanced">
       <h2>{{ i18n.advanced.subhead }}</h2>
       <div class="step-content-pc">
@@ -173,6 +173,8 @@ function changeShowIndex(index: number) {
 
 <style lang="scss" scoped>
 .advanced {
+  --color-text: 0,0,0;
+
   h2 {
     font-size: var(--o-font-size-h3);
     line-height: var(--o-line-height-h3);
@@ -241,6 +243,7 @@ function changeShowIndex(index: number) {
             font-size: var(--o-font-size-h7);
             line-height: var(--o-line-height-h7);
             color: var(--o-color-text1);
+            font-weight: 500;
           }
           p {
             margin-top: var(--o-spacing-h6);
@@ -260,6 +263,7 @@ function changeShowIndex(index: number) {
                 font-size: var(--o-font-size-h7);
                 line-height: var(--o-line-height-h7);
                 color: var(--o-color-text1);
+                font-weight: 500;
               }
               .link-box {
                 margin-top: var(--o-spacing-h6);
@@ -279,12 +283,12 @@ function changeShowIndex(index: number) {
     display: none;
     @media screen and (max-width: 768px) {
       display: block;
-      margin-top: var(--o-spacing-h2);
+      margin-top: var(--o-spacing-h4);
     }
     .step-item {
       border: 6px solid var(--o-color-brand1);
       & ~ .step-item {
-        margin-top: var(--o-spacing-h2);
+        margin-top: var(--o-spacing-h4);
       }
       .item-head {
         height: 48px;
@@ -306,7 +310,7 @@ function changeShowIndex(index: number) {
       .item-body {
         :deep(.el-collapse) {
           border: none;
-          padding: 0 10px;
+          padding: 0 10px 4px 10px;
         }
         :deep(.el-collapse-item__header) {
           border-bottom: none;
@@ -316,19 +320,28 @@ function changeShowIndex(index: number) {
           color: var(--o-color-text1);
           font-weight: 500;
         }
+        :deep(.el-collapse-item__arrow) {
+          transform: rotate(90deg);
+        }
+        :deep(.el-collapse-item__arrow.is-active) {
+          transform: rotate(-90deg);
+        }
         :deep(.el-collapse-item__wrap) {
           border-bottom: none;
           background-color: transparent;
         }
+        :deep(.el-collapse-item__content) {
+          padding-bottom: var(--o-spacing-h5);
+        }
         .detail {
           font-size: var(--o-font-size-tip);
-          line-height: var(--o-line-height-tip);
-          color: var(--o-color-text4);
+          line-height: var(--o-line-height-text);
+          color: rgba( var(--color-text), 0.6);
         }
         .material {
           margin-top: var(--o-spacing-h8);
           padding: var(--o-spacing-h8) var(--o-spacing-h6);
-          background-color: var(--o-color-bg-secondary);
+          background-color: var(--o-color-bg4);
           .material-item {
             & ~ .material-item {
               margin-top: var(--o-spacing-h8);
@@ -336,8 +349,7 @@ function changeShowIndex(index: number) {
             h5 {
               font-size: var(--o-font-size-tip);
               line-height: var(--o-line-height-tip);
-              color: var(--o-color-text4);
-              font-weight: 300;
+              color: var(--o-color-text-secondary);
             }
             .link-box {
               font-size: var(--o-font-size-tip);
@@ -361,6 +373,9 @@ function changeShowIndex(index: number) {
     background-image: url(@/assets/category/advanced/circle-dark.png),
       url(@/assets/category/advanced/ellipse-dark.png),
       url(@/assets/category/advanced/semicircle-dark.png);
+  }
+  .advanced {
+    --color-text: 255,255,255;
   }
   .advanced .step-content-pc .step-nav .step-item-active {
     background-image: url(/.vitepress/src/assets/category/advanced/active-dark.png);

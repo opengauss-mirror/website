@@ -35,6 +35,7 @@ const screenWidth = useWindowResize();
               class="type-item"
             >
               <h4>{{ itemType.name }}</h4>
+              <p>{{ itemType.desc }}</p>
               <div class="link-box">
                 <a
                   v-for="itemList in itemType.list"
@@ -65,7 +66,13 @@ const screenWidth = useWindowResize();
               class="type-item"
             >
               <el-collapse>
-                <el-collapse-item :title="itemType.name" :name="index">
+                <el-collapse-item :name="index">
+                  <template #title>
+                    <div class="mb-collapse-header">
+                      <div class="mb-title">{{ itemType.name }}</div>
+                      <div class="mb-desc">{{ itemType.desc }}</div>
+                    </div>
+                  </template>
                   <div class="link-box">
                     <a
                       v-for="itemList in itemType.list"
@@ -97,7 +104,8 @@ const screenWidth = useWindowResize();
     .item-left {
       width: 100%;
       color: var(--o-color-white);
-      font-size: var(--o-font-h3);
+      font-size: var(--o-font-size-h4);
+      font-weight: 500;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -108,22 +116,23 @@ const screenWidth = useWindowResize();
       box-shadow: var(--o-shadow-l2);
     }
     .left1 {
-      background-image: url(@/assets/category/knowledge/left-bg1.png);
+      background-image: url(@/assets/category/knowledge/left-bg1.jpg);
     }
     .left2 {
-      background-image: url(@/assets/category/knowledge/left-bg2.png);
+      background-image: url(@/assets/category/knowledge/left-bg2.jpg);
     }
     .left3 {
-      background-image: url(@/assets/category/knowledge/left-bg3.png);
+      background-image: url(@/assets/category/knowledge/left-bg3.jpg);
     }
     .left4 {
-      background-image: url(@/assets/category/knowledge/left-bg4.png);
+      background-image: url(@/assets/category/knowledge/left-bg4.jpg);
     }
     .item-right {
       max-width: 1150px;
       flex-grow: 1;
       .type-item {
-        padding: var(--o-spacing-h4);
+        padding: var(--o-spacing-h4) var(--o-spacing-h4) var(--o-spacing-h5)
+          var(--o-spacing-h4);
         background-color: var(--o-color-bg2);
         box-shadow: var(--o-shadow-l2);
         & ~ .type-item {
@@ -135,10 +144,16 @@ const screenWidth = useWindowResize();
           color: var(--o-color-text1);
           font-weight: 500;
           padding-bottom: 12px;
-          border-bottom: 1px solid var(--o-color-division1);
+        }
+        p {
+          padding-bottom: 12px;
+          font-size: var(--o-font-size-text);
+          line-height: var(--o-line-height-text);
+          color: var(--o-color-text1);
         }
         .link-box {
-          padding-top: 10px;
+          padding-top: 20px;
+          border-top: 1px solid var(--o-color-division1);
           a {
             font-size: var(--o-font-size-text);
             line-height: var(--o-line-height-h7);
@@ -151,6 +166,8 @@ const screenWidth = useWindowResize();
   }
 }
 .knowledge-mobile {
+  --color-text: 0,0,0;
+
   .module-item {
     & + .module-item {
       margin-top: var(--o-spacing-h6);
@@ -158,7 +175,7 @@ const screenWidth = useWindowResize();
     .item-head {
       width: 100%;
       height: 64px;
-      background: url(@/assets/category/knowledge/bg-title-mo.png) no-repeat;
+      background: url(@/assets/category/knowledge/bg-title-mo.jpg) no-repeat;
       background-size: cover;
       padding-left: var(--o-spacing-h6);
       line-height: 64px;
@@ -190,7 +207,8 @@ const screenWidth = useWindowResize();
           border-bottom: none;
         }
         :deep(.el-collapse-item__header) {
-          padding-left: var(--o-spacing-h6);
+          padding: var(--o-spacing-h6) 0 var(--o-spacing-h6) var(--o-spacing-h6);
+          height: auto;
           border: 1px solid var(--o-color-border2);
           position: relative;
           font-size: var(--o-font-size-text);
@@ -207,16 +225,45 @@ const screenWidth = useWindowResize();
             top: -1px;
             background-color: var(--o-color-brand1);
           }
+          .mb-collapse-header {
+            margin-right: var(--o-spacing-h4);
+          }
+          .mb-title {
+            font-size: var(--o-font-size-text);
+            line-height: var(--o-line-height-text);
+          }
+          .mb-desc {
+            margin-top: 4px;
+            font-size: var(--o-font-size-tip);
+            line-height: 20px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            font-weight: 400;
+            color: rgba(var(--color-text), 0.6);
+          }
         }
         :deep(.el-collapse-item__arrow) {
           margin-right: var(--o-spacing-h6);
+          transform: rotate(90deg);
+        }
+        :deep(.el-collapse-item__arrow.is-active) {
+          transform: rotate(-90deg);
         }
         :deep(.el-collapse-item__content) {
-          background-color: var(--o-color-bg4);
+          background-color: var(--o-color-bg1);
           padding: var(--o-spacing-h5);
         }
       }
     }
+  }
+}
+
+@include in-dark { 
+  .knowledge-mobile {
+    --color-text: 255,255,255;
   }
 }
 </style>
