@@ -139,6 +139,12 @@
     }
   }
 
+  .lang,
+  .copy {
+    display: none;
+  }
+
+
   table {
     width: 100%;
     font-size: var(--o-font-size-text);
@@ -236,6 +242,20 @@
   }
 }
 
+.vp-code {
+  span {
+    color: var(--shiki-light, var(--o-color-text3));
+  }
+}
+
+.dark {
+  .vp-code {
+    span {
+      color: var(--shiki-dark, #fff);
+    }
+  }
+}
+
 /**
  * 法律声明 && 隐私政策
  **/
@@ -282,7 +302,7 @@
     letter-spacing: 0;
     line-height: var(--o-line-height-text);
     font-weight: 300;
-    margin-bottom: --o-spacing-h8;
+    margin-bottom: var(--o-spacing-h8);
   }
 }
 @include in-dark {

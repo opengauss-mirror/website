@@ -1202,9 +1202,7 @@ onMounted(() => {
             .el-slider__marks {
               width: 100%;
               transform: translateY(-42px);
-              .el-slider__marks-text:nth-of-type(v-bind(score2)) {
-                color: red;
-              }
+
               .el-slider__marks-text:nth-last-child(1) {
                 left: 99% !important;
                 white-space: nowrap;

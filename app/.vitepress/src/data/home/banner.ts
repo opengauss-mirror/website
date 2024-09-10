@@ -1,7 +1,6 @@
 import liveImg_pc from '@/assets/category/home/banner/liveBanner_pc.png';
 import liveImg_mb from '@/assets/category/home/banner/liveBanner_mo.png';
-import bannerSummit from '@/assets/category/home/banner/banner-summit-2024.jpg';
-import bannerSummitMo from '@/assets/category/home/banner/banner-summit_mo-2024.jpg';
+
 import videoGif from '@/assets/category/home/video-player.gif';
 
 import banner20240321 from '@/assets/category/home/banner/banner20240321.jpg';
@@ -13,10 +12,11 @@ import bannerCallFor_mb from '@/assets/category/home/banner/banner-call-for_mb.p
 import banner600 from '@/assets/category/home/banner/banner6.0.0.jpg';
 import banner600_mb from '@/assets/category/home/banner/banner6.0.0_mo.jpg';
 
-import banner7 from '@/assets/category/home/banner/banner7.jpg';
-
 import bannerTeamUp from '@/assets/category/home/banner/banner-team-up.jpg';
 import bannerTeamUpMo from '@/assets/category/home/banner/banner-team-up_mo.jpg';
+
+import bannerOpenGaussV6 from '@/assets/category/home/banner/banner-opengaussv6.jpg';
+import bannerOpenGaussV6Mo from '@/assets/category/home/banner/banner-opengaussv6_mo.jpg';
 
 import { LEARN_VIDEO_LINK, DOCS_LINK } from '@/data/url-config';
 
@@ -24,15 +24,15 @@ import { LEARN_VIDEO_LINK, DOCS_LINK } from '@/data/url-config';
 export default {
   zh: [
     {
-      pcBanner: bannerSummit,
-      moBanner: bannerSummitMo,
-      link: '/zh/summit/devday2024/',
-      target: '_self',
-      title: '',
+      pcBanner: bannerOpenGaussV6,
+      moBanner: bannerOpenGaussV6Mo,
+      link: '/zh/news/2024-08-14/',
+      target: '_blank',
+      title: 'openGauss6.0.0版本更改数据库发布包名公告',
       titleMb: [],
       subtitle: '',
       desc: [''],
-      btn: '',
+      btn: '了解更多',
       className: '',
       rightInset: '',
       rightLink: '',
@@ -61,20 +61,6 @@ export default {
       subtitle: '',
       desc: [''],
       btn: '',
-      className: '',
-      rightInset: '',
-      rightLink: '',
-    },
-    {
-      pcBanner: banner7,
-      moBanner: banner7,
-      link: 'https://mp.weixin.qq.com/s/ALbCj2hAsjmFfOMu9gMlEw',
-      target: '_blank',
-      title: '第七届openGauss技术文章征集',
-      titleMb: [],
-      subtitle: 'openGauss新版本征文活动来啦！',
-      desc: [''],
-      btn: '了解更多',
       className: '',
       rightInset: '',
       rightLink: '',

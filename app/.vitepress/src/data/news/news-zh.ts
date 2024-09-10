@@ -1,5 +1,15 @@
 export default [
   {
+    date: '2024-08-14',
+    summary: 'openGauss6.0.0版本更改数据库发布包名公告',
+    archives: '2024-08',
+    author: ['openGauss'],
+    banner: '/category/news/2024-08-14/banner.jpg',
+    title: 'openGauss6.0.0版本更改数据库发布包名公告',
+    tags: ['theme'],
+    path: 'zh/news/2024-08-14/index',
+  },
+  {
     date: '2024-07-02',
     summary: '北京金融科技产业联盟发布《openGauss金融应用关键能力研究报告》',
     archives: '2024-06',

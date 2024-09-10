@@ -42,7 +42,7 @@ const navData: Array<NavItemT> = [
         jumOut: true,
       },
       {
-        label: { zh: '知识图谱' },
+        label: { zh: '快速体验' },
         id: 'knowledge',
         href: {
           zh: '/zh/knowledge/',
