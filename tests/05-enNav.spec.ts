@@ -1,0 +1,31 @@
+import { test } from '@playwright/test';
+
+test('英文导航栏', async ({ page }) => {
+  await page.goto('/en');
+  await page.getByRole('link', { name: 'Software Packages' }).click();
+  await page.getByRole('link', { name: 'Support Tools' }).click();
+  const page1Promise = page.waitForEvent('popup');
+  await page.getByRole('link', { name: 'Documentation' }).click();
+  const page1 = await page1Promise;
+  await page.getByRole('link', { name: 'Contribution' }).click();
+  await page.getByRole('link', { name: 'Communication' }).click();
+  await page.getByRole('link', { name: 'Organization' }).click();
+  await page.getByRole('link', { name: 'User Practice' }).click();
+  const page2Promise = page.waitForEvent('popup');
+  await page.getByRole('link', { name: 'Statistics' }).click();
+  const page2 = await page2Promise;
+  await page.getByRole('link', { name: 'News' }).click();
+  await page.getByRole('link', { name: 'Blog' }).click();
+  await page.getByRole('link', { name: 'Events' }).click();
+  await page.getByRole('link', { name: 'Videos' }).click();
+  await page.getByRole('link', { name: 'Distribution Certification' }).click();
+  await page.getByRole('link', { name: 'oGSP Certification' }).click();
+  await page.getByRole('link', { name: 'Security Advisories' }).click();
+  await page.getByRole('link', { name: 'CVE' }).click();
+  const page3Promise = page.waitForEvent('popup');
+  await page.getByRole('link', { name: 'Gitee' }).click();
+  const page3 = await page3Promise;
+  const page4Promise = page.waitForEvent('popup');
+  await page.getByRole('link', { name: 'Github' }).click();
+  const page4 = await page4Promise;
+});

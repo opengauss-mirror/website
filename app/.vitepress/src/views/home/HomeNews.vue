@@ -4,7 +4,7 @@ import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';
 import dayjs from 'dayjs';
 
-import { cloneDeep } from 'lodash';
+import { useCloned } from '@vueuse/core'
 
 import type { BlogItemT } from '@/shared/@types/type-blogs';
 import type { NewsItemT } from '@/shared/@types/type-news';
@@ -28,10 +28,10 @@ const blogList: Ref<BlogItemT[]> = ref([]);
 const newsList: Ref<NewsItemT[]> = ref([]);
 
 const blogData = computed(() => {
-  return lang.value === 'zh' ? cloneDeep(blogsAllData.zh) : cloneDeep(blogsAllData.en);
+  return lang.value === 'zh' ? useCloned(blogsAllData.zh) : useCloned(blogsAllData.en);
 });
 const newsData = computed(() => {
-  return lang.value === 'zh' ? cloneDeep(NewsAllData.zh) : cloneDeep(NewsAllData.en);
+  return lang.value === 'zh' ? useCloned(NewsAllData.zh) : useCloned(NewsAllData.en);
 });
 const eventsData = computed(() => {
   return lang.value === 'zh'
@@ -82,8 +82,8 @@ const initBlogData = (datas: any) => {
 };
 
 onMounted(async () => {
-  initBlogData(blogData.value.slice(0, 4));
-  initNewsData(newsData.value.slice(0, 4));
+  initBlogData(Array.prototype.slice.call(blogData.value, 0, 4));
+  initNewsData(Array.prototype.slice.call(newsData.value, 0, 4));
 });
 </script>
 <template>
