@@ -1,0 +1,855 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://opengauss.org/en/aboutUs</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/aboutUs"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/aboutUs"/>
+    <lastmod>2022-11-02</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/blogs</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/blogs"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/blogs"/>
+    <lastmod>2023-07-06</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/brand</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/brand"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/brand"/>
+    <lastmod>2023-06-27</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/certification</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/certification"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/certification"/>
+    <lastmod>2023-06-27</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/community/onlineCommunication</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/community/onlineCommunication"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/community/onlineCommunication"/>
+    <lastmod>2023-07-06</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/contribution/detail.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/contribution/detail.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/contribution/detail.html"/>
+    <lastmod>2024-03-27</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/contribution</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/contribution"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/contribution"/>
+    <lastmod>2023-06-27</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/cve/detail</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/cve/detail"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/cve/detail"/>
+    <lastmod>2023-06-27</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/cve</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/cve"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/cve"/>
+    <lastmod>2023-06-27</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/download/archive</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/download/archive"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/download/archive"/>
+    <lastmod>2023-06-27</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/download</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/download"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/download"/>
+    <lastmod>2023-06-27</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/events/2021-01-15/2021-01-15-PostgreSQL.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/events/2021-01-15/2021-01-15-PostgreSQL.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/events/2021-01-15/2021-01-15-PostgreSQL.html"/>
+    <lastmod>2022-11-02</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/events/2021-03-26/meetup.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/events/2021-03-26/meetup.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/events/2021-03-26/meetup.html"/>
+    <lastmod>2022-11-02</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/events/2021-04-17/meetup.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/events/2021-04-17/meetup.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/events/2021-04-17/meetup.html"/>
+    <lastmod>2022-11-02</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/events/bootcamp.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/events/bootcamp.html"/>
+    <lastmod>2022-11-02</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/events</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/events"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/events"/>
+    <lastmod>2023-07-06</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/"/>
+    <lastmod>2023-06-27</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/legal</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/legal"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/legal"/>
+    <lastmod>2023-07-20</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/member/detail</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/member/detail"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/member/detail"/>
+    <lastmod>2023-08-22</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/member</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/member"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/member"/>
+    <lastmod>2023-06-27</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/news/2020-06-15/20200615.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/news/2020-06-15/20200615.html"/>
+    <lastmod>2022-11-02</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/news/2020-07-01/20200701.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/news/2020-07-01/20200701.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/news/2020-07-01/20200701.html"/>
+    <lastmod>2022-11-02</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/news/2020-10-12/20201012.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/news/2020-10-12/20201012.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/news/2020-10-12/20201012.html"/>
+    <lastmod>2022-11-02</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/news/2020-12-31/20201231.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/news/2020-12-31/20201231.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/news/2020-12-31/20201231.html"/>
+    <lastmod>2022-11-02</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/news/2021-01-07/cloudsbrain.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/news/2021-01-07/cloudsbrain.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/news/2021-01-07/cloudsbrain.html"/>
+    <lastmod>2022-11-02</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/news/2021-04-01/20210401.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/news/2021-04-01/20210401.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/news/2021-04-01/20210401.html"/>
+    <lastmod>2022-11-02</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/news/2021-09-30/20210930.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/news/2021-09-30/20210930.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/news/2021-09-30/20210930.html"/>
+    <lastmod>2022-11-02</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/news</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/news"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/news"/>
+    <lastmod>2023-06-27</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/ogsp</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/ogsp"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/ogsp"/>
+    <lastmod>2023-06-27</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/privacyPolicy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/privacyPolicy"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/privacyPolicy"/>
+    <lastmod>2024-03-14</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/search</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/search"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/search"/>
+    <lastmod>2023-07-06</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/security</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/security"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/security"/>
+    <lastmod>2023-06-27</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/security-advisories/detail</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/security-advisories/detail"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/security-advisories/detail"/>
+    <lastmod>2023-06-27</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/security-advisories</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/security-advisories"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/security-advisories"/>
+    <lastmod>2023-06-27</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/supporttools</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/supporttools"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/supporttools"/>
+    <lastmod>2023-10-19</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/bigbusiness/caizhengting</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/bigbusiness/caizhengting"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/bigbusiness/caizhengting"/>
+    <lastmod>2023-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/bigbusiness/gaoxinxingtech</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/bigbusiness/gaoxinxingtech"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/bigbusiness/gaoxinxingtech"/>
+    <lastmod>2024-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/bigbusiness/nanjingshuaninfo</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/bigbusiness/nanjingshuaninfo"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/bigbusiness/nanjingshuaninfo"/>
+    <lastmod>2024-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/bigbusiness/nctid</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/bigbusiness/nctid"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/bigbusiness/nctid"/>
+    <lastmod>2023-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/bigbusiness/qixiangju</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/bigbusiness/qixiangju"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/bigbusiness/qixiangju"/>
+    <lastmod>2023-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/bigbusiness/shanghaiqingchuanginfo</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/bigbusiness/shanghaiqingchuanginfo"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/bigbusiness/shanghaiqingchuanginfo"/>
+    <lastmod>2024-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/bigbusiness/shanghaitianjitech</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/bigbusiness/shanghaitianjitech"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/bigbusiness/shanghaitianjitech"/>
+    <lastmod>2024-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/bigbusiness/tianjinshichangjianduwei</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/bigbusiness/tianjinshichangjianduwei"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/bigbusiness/tianjinshichangjianduwei"/>
+    <lastmod>2023-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/bigbusiness/xiaofeiyun</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/bigbusiness/xiaofeiyun"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/bigbusiness/xiaofeiyun"/>
+    <lastmod>2023-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/bigbusiness/yangguangwang</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/bigbusiness/yangguangwang"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/bigbusiness/yangguangwang"/>
+    <lastmod>2023-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/bigbusiness/youlintongxun</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/bigbusiness/youlintongxun"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/bigbusiness/youlintongxun"/>
+    <lastmod>2024-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/carrier/beijingyidong</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/carrier/beijingyidong"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/carrier/beijingyidong"/>
+    <lastmod>2024-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/carrier/chinamobileonline</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/carrier/chinamobileonline"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/carrier/chinamobileonline"/>
+    <lastmod>2024-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/carrier/chinaunicom</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/carrier/chinaunicom"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/carrier/chinaunicom"/>
+    <lastmod>2023-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/carrier/hebeiyidong</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/carrier/hebeiyidong"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/carrier/hebeiyidong"/>
+    <lastmod>2023-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/carrier/zhejiangyidong</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/carrier/zhejiangyidong"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/carrier/zhejiangyidong"/>
+    <lastmod>2023-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/carrier/zhongguoliantong</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/carrier/zhongguoliantong"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/carrier/zhongguoliantong"/>
+    <lastmod>2023-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/dbv/chaojubian</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/dbv/chaojubian"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/dbv/chaojubian"/>
+    <lastmod>2024-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/dbv/enmotech</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/dbv/enmotech"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/dbv/enmotech"/>
+    <lastmod>2022-12-08</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/dbv/gbase</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/dbv/gbase"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/dbv/gbase"/>
+    <lastmod>2023-06-13</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/dbv/hongshutong</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/dbv/hongshutong"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/dbv/hongshutong"/>
+    <lastmod>2024-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/dbv/huayuxinxi</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/dbv/huayuxinxi"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/dbv/huayuxinxi"/>
+    <lastmod>2024-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/dbv/jingdongyun</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/dbv/jingdongyun"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/dbv/jingdongyun"/>
+    <lastmod>2024-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/dbv/langchaoyun</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/dbv/langchaoyun"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/dbv/langchaoyun"/>
+    <lastmod>2024-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/dbv/nanjingfenghuo</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/dbv/nanjingfenghuo"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/dbv/nanjingfenghuo"/>
+    <lastmod>2024-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/dbv/shentongdata</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/dbv/shentongdata"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/dbv/shentongdata"/>
+    <lastmod>2022-12-08</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/dbv/shouhangshuzitech</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/dbv/shouhangshuzitech"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/dbv/shouhangshuzitech"/>
+    <lastmod>2024-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/dbv/taryartar</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/dbv/taryartar"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/dbv/taryartar"/>
+    <lastmod>2022-12-08</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/dbv/tiandazhitu</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/dbv/tiandazhitu"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/dbv/tiandazhitu"/>
+    <lastmod>2024-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/dbv/tianhedb</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/dbv/tianhedb"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/dbv/tianhedb"/>
+    <lastmod>2024-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/dbv/vastdata</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/dbv/vastdata"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/dbv/vastdata"/>
+    <lastmod>2022-12-08</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/dbv/xugucn</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/dbv/xugucn"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/dbv/xugucn"/>
+    <lastmod>2022-12-08</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/dbv/zhongruanguoji</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/dbv/zhongruanguoji"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/dbv/zhongruanguoji"/>
+    <lastmod>2024-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/education/beidayanjiushengyuan</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/education/beidayanjiushengyuan"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/education/beidayanjiushengyuan"/>
+    <lastmod>2023-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/energy/guangxidianwang</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/energy/guangxidianwang"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/energy/guangxidianwang"/>
+    <lastmod>2023-11-09</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/energy/guojiadianwang</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/energy/guojiadianwang"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/energy/guojiadianwang"/>
+    <lastmod>2022-12-12</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/finance/bohai</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/finance/bohai"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/finance/bohai"/>
+    <lastmod>2022-12-12</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/finance/changchenghuaxiyinhang</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/finance/changchenghuaxiyinhang"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/finance/changchenghuaxiyinhang"/>
+    <lastmod>2023-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/finance/cmbc</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/finance/cmbc"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/finance/cmbc"/>
+    <lastmod>2022-12-12</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/finance/ecitic</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/finance/ecitic"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/finance/ecitic"/>
+    <lastmod>2022-12-12</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/finance/guangdianyuntong</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/finance/guangdianyuntong"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/finance/guangdianyuntong"/>
+    <lastmod>2024-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/finance/guilinbank</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/finance/guilinbank"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/finance/guilinbank"/>
+    <lastmod>2023-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/finance/haerbing</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/finance/haerbing"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/finance/haerbing"/>
+    <lastmod>2022-12-12</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/finance/hengshengdianzi</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/finance/hengshengdianzi"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/finance/hengshengdianzi"/>
+    <lastmod>2024-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/finance/hezhong</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/finance/hezhong"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/finance/hezhong"/>
+    <lastmod>2022-12-12</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/finance/huabaojijin</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/finance/huabaojijin"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/finance/huabaojijin"/>
+    <lastmod>2023-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/finance/moukaifayinhang</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/finance/moukaifayinhang"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/finance/moukaifayinhang"/>
+    <lastmod>2023-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/finance/murongtech</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/finance/murongtech"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/finance/murongtech"/>
+    <lastmod>2022-12-12</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/finance/primeton</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/finance/primeton"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/finance/primeton"/>
+    <lastmod>2022-12-12</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/finance/shanghaiqihuojiaoyi</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/finance/shanghaiqihuojiaoyi"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/finance/shanghaiqihuojiaoyi"/>
+    <lastmod>2023-06-13</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/finance/shengjianwangluo</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/finance/shengjianwangluo"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/finance/shengjianwangluo"/>
+    <lastmod>2024-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/finance/shenzhenjinzhengtech</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/finance/shenzhenjinzhengtech"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/finance/shenzhenjinzhengtech"/>
+    <lastmod>2024-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/finance/sichuantianfuyinhang</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/finance/sichuantianfuyinhang"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/finance/sichuantianfuyinhang"/>
+    <lastmod>2023-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/finance/xingyecollectionsystem</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/finance/xingyecollectionsystem"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/finance/xingyecollectionsystem"/>
+    <lastmod>2023-12-20</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/finance/xingyemanagesystem</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/finance/xingyemanagesystem"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/finance/xingyemanagesystem"/>
+    <lastmod>2023-12-20</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/finance/xingyepaymentsystem</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/finance/xingyepaymentsystem"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/finance/xingyepaymentsystem"/>
+    <lastmod>2023-12-20</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/finance/yingshisheng</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/finance/yingshisheng"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/finance/yingshisheng"/>
+    <lastmod>2024-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/finance/youzheng</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/finance/youzheng"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/finance/youzheng"/>
+    <lastmod>2022-12-12</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/finance/zhonghua</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/finance/zhonghua"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/finance/zhonghua"/>
+    <lastmod>2022-12-12</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice"/>
+    <lastmod>2023-06-27</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/internet/100trust</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/internet/100trust"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/internet/100trust"/>
+    <lastmod>2022-12-12</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/internet/chinasofti</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/internet/chinasofti"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/internet/chinasofti"/>
+    <lastmod>2022-12-12</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/internet/datapipeline</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/internet/datapipeline"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/internet/datapipeline"/>
+    <lastmod>2022-12-12</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/internet/hoperun</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/internet/hoperun"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/internet/hoperun"/>
+    <lastmod>2022-12-12</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/internet/jingdongyun</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/internet/jingdongyun"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/internet/jingdongyun"/>
+    <lastmod>2024-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/internet/sphere</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/internet/sphere"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/internet/sphere"/>
+    <lastmod>2022-12-12</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/internet/supermap</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/internet/supermap"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/internet/supermap"/>
+    <lastmod>2022-12-12</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/internet/suzhou</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/internet/suzhou"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/internet/suzhou"/>
+    <lastmod>2022-12-12</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/internet/tass</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/internet/tass"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/internet/tass"/>
+    <lastmod>2022-12-12</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/internet/tuerzi</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/internet/tuerzi"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/internet/tuerzi"/>
+    <lastmod>2024-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/internet/woqutech</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/internet/woqutech"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/internet/woqutech"/>
+    <lastmod>2024-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/internet/xieyun</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/internet/xieyun"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/internet/xieyun"/>
+    <lastmod>2024-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/internet/xiyuntu</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/internet/xiyuntu"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/internet/xiyuntu"/>
+    <lastmod>2023-11-09</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/isv/bessystem</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/isv/bessystem"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/isv/bessystem"/>
+    <lastmod>2022-12-08</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/manufacture/beilianguoxin</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/manufacture/beilianguoxin"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/manufacture/beilianguoxin"/>
+    <lastmod>2023-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/manufacture/biyadi</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/manufacture/biyadi"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/manufacture/biyadi"/>
+    <lastmod>2023-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/manufacture/jingdongfang</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/manufacture/jingdongfang"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/manufacture/jingdongfang"/>
+    <lastmod>2024-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/manufacture/scaleflux</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/manufacture/scaleflux"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/manufacture/scaleflux"/>
+    <lastmod>2023-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/manufacture/xinpian</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/manufacture/xinpian"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/manufacture/xinpian"/>
+    <lastmod>2023-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/manufacture/zhaozhaoqu</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/manufacture/zhaozhaoqu"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/manufacture/zhaozhaoqu"/>
+    <lastmod>2023-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/medical/depaisoft</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/medical/depaisoft"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/medical/depaisoft"/>
+    <lastmod>2024-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/medical/fushijiaopian</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/medical/fushijiaopian"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/medical/fushijiaopian"/>
+    <lastmod>2024-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/medical/nanjingweijianwei</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/medical/nanjingweijianwei"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/medical/nanjingweijianwei"/>
+    <lastmod>2023-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/others/007swz</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/others/007swz"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/others/007swz"/>
+    <lastmod>2022-12-12</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/others/caizhengting</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/others/caizhengting"/>
+    <lastmod>2022-12-12</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/others/dongfangyunwei</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/others/dongfangyunwei"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/others/dongfangyunwei"/>
+    <lastmod>2023-11-09</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/others/gonganju</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/others/gonganju"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/others/gonganju"/>
+    <lastmod>2022-12-12</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/others/gzsubzero</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/others/gzsubzero"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/others/gzsubzero"/>
+    <lastmod>2022-12-12</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/others/haitianqidian</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/others/haitianqidian"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/others/haitianqidian"/>
+    <lastmod>2024-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/others/hexintech</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/others/hexintech"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/others/hexintech"/>
+    <lastmod>2024-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/others/jindietianyan</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/others/jindietianyan"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/others/jindietianyan"/>
+    <lastmod>2024-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/others/julichuangzhi</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/others/julichuangzhi"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/others/julichuangzhi"/>
+    <lastmod>2024-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/others/nctid</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/others/nctid"/>
+    <lastmod>2022-12-12</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/others/qixiangju</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/others/qixiangju"/>
+    <lastmod>2022-12-12</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/others/shanghaixiding</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/others/shanghaixiding"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/others/shanghaixiding"/>
+    <lastmod>2024-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/others/shanxijiangong</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/others/shanxijiangong"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/others/shanxijiangong"/>
+    <lastmod>2024-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/others/tiancom</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/others/tiancom"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/others/tiancom"/>
+    <lastmod>2022-12-12</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/others/xiaofeiyun</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/others/xiaofeiyun"/>
+    <lastmod>2022-12-12</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/others/xingjikongjian</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/others/xingjikongjian"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/others/xingjikongjian"/>
+    <lastmod>2024-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/others/xinshutech</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/others/xinshutech"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/others/xinshutech"/>
+    <lastmod>2024-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/others/yangguangwang</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/others/yangguangwang"/>
+    <lastmod>2022-12-12</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/others/ytebuy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/others/ytebuy"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/others/ytebuy"/>
+    <lastmod>2023-11-09</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/others/yuexiu</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/others/yuexiu"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/others/yuexiu"/>
+    <lastmod>2024-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/others/zhejiangzhengyuanzhihui</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/others/zhejiangzhengyuanzhihui"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/others/zhejiangzhengyuanzhihui"/>
+    <lastmod>2024-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/others/zhengwuyun</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/others/zhengwuyun"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/others/zhengwuyun"/>
+    <lastmod>2022-12-12</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/userPractice/others/zhongselantutech</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/userPractice/others/zhongselantutech"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/userPractice/others/zhongselantutech"/>
+    <lastmod>2024-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/video/detail</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/video/detail"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/video/detail"/>
+    <lastmod>2023-06-27</lastmod>
+  </url>
+  <url>
+    <loc>https://opengauss.org/en/video</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://opengauss.org/en/video"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://opengauss.org/zh/video"/>
+    <lastmod>2023-06-27</lastmod>
+  </url>
+</urlset>
