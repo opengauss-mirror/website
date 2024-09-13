@@ -503,6 +503,7 @@ import keyiran from '@/assets/category/member/avatar/keyiran.png';
 import xvxiaoqin from '@/assets/category/member/avatar/xvxiaoqin.png';
 import wangxiaofei from '@/assets/category/member/avatar/wangxiaofei.png';
 import xucheng from '@/assets/category/member/avatar/xucheng.png';
+import sunmin3 from '@/assets/category/member/avatar/sunmin3.png';
 
 import { GITEE_LINK } from '@/data/url-config';
 export default {
@@ -3351,7 +3352,7 @@ export default {
         gitee: `${GITEE_LINK}wuwei_plct`,
       },
       {
-        img: sunmin2,
+        img: sunmin3,
         name: '孙敏',
         title: 'Maintainer',
         email: 'sunmin89@outlook.com',
@@ -7619,7 +7620,7 @@ export default {
         gitee: `${GITEE_LINK}wuwei_plct`,
       },
       {
-        img: sunmin2,
+        img: sunmin3,
         name: 'Min Sun',
         title: 'Maintainer',
         email: 'sunmin89@outlook.com',
