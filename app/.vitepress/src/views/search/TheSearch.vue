@@ -251,7 +251,7 @@ onMounted(async () => {
 watch(
   () => activeVersion.value,
   () => {
-    searchAll('docs');
+    searchAll(searchType.value);
   }
 );
 </script>
