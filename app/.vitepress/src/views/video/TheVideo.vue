@@ -2,6 +2,7 @@
 import { ref, computed, watch } from 'vue';
 import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';
+import { isBrowser } from '@/shared/utils';
 
 import VideoConfig from '@/data/video/new';
 import AppContent from '@/components/AppContent.vue';
@@ -23,10 +24,12 @@ const activeMobile = ref(0);
 const activeTab = ref(1);
 
 const initActiveTab = () => {
-  const url = new URL(location.href);
-  const id = Number(url.searchParams.get('id'));
-  if (VideoConfig.find((e) => e.id === id)) {
-    activeTab.value = id;
+  if (isBrowser()) {
+    const url = new URL(location.href);
+    const id = Number(url.searchParams.get('id'));
+    if (VideoConfig.find((e) => e.id === id)) {
+      activeTab.value = id;
+    }
   }
 };
 initActiveTab();

@@ -270,7 +270,7 @@ export default {
       iconSignup: vastdataSignup,
       iconSignupDark: vastdataSignupDark,
       desc: '北京海量数据技术股份有限公司(股票代码:603138.SH)成立于2007年，是国内首家以数据库为主营业务的主板上市企业。公司十余年来秉承“专注做好数据库”的初心，始终致力于数据库产品的研发、销售和服务。',
-      url: 'https://www.vastdata.com.cn/recruit/campus.html',
+      url: 'http://education.vastdata.com.cn',
       signupUrl: 'https://www.vastdata.com.cn/',
     },
     {

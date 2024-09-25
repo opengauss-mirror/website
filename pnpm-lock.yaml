@@ -36,8 +36,8 @@ importers:
         specifier: 3.2.47
         version: 3.2.47
       vue-dompurify-html:
-        specifier: 3.1.2
-        version: 3.1.2(vue@3.2.47)
+        specifier: 5.1.0
+        version: 5.1.0(vue@3.2.47)
     devDependencies:
       '@playwright/test':
         specifier: ^1.47.0
@@ -1069,8 +1069,8 @@ packages:
     resolution: {integrity: sha512-yS+Q5i3hBf7GBkd4KG8a7eBNNWNGLTaEwwYWUijIYM7zrlYDM0BFXHjjPWlWZ1Rg7UaddZeIDmi9jF3HmqiQ2w==}
     engines: {node: '>=6.0.0'}
 
-  dompurify@2.4.7:
-    resolution: {integrity: sha512-kxxKlPEDa6Nc5WJi+qRgPbOAbgTpSULL+vI3NUXsZMlkJxTqYI9wg5ZTay2sFrdZRWHPWNi+EdAhcJf81WtoMQ==}
+  dompurify@3.1.6:
+    resolution: {integrity: sha512-cTOAhc36AalkjtBpfG6O8JimdTMWNXjiePT2xQH/ppBGi/4uIpmj8eKyIkMJErXWARyINV/sB38yf8JCLF5pbQ==}
 
   electron-to-chromium@1.4.622:
     resolution: {integrity: sha512-GZ47DEy0Gm2Z8RVG092CkFvX7SdotG57c4YZOe8W8qD4rOmk3plgeNmiLVRHP/Liqj1wRiY3uUUod9vb9hnxZA==}
@@ -1854,17 +1854,6 @@ packages:
       postcss:
         optional: true
 
-  vue-demi@0.13.11:
-    resolution: {integrity: sha512-IR8HoEEGM65YY3ZJYAjMlKygDQn25D5ajNFNoKh9RSDMQtlzCxtfQjdQgv9jjK+m3377SsJXY8ysq8kLCZL25A==}
-    engines: {node: '>=12'}
-    hasBin: true
-    peerDependencies:
-      '@vue/composition-api': ^1.0.0-rc.1
-      vue: ^3.0.0-0 || ^2.6.0
-    peerDependenciesMeta:
-      '@vue/composition-api':
-        optional: true
-
   vue-demi@0.14.10:
     resolution: {integrity: sha512-nMZBOwuzabUO0nLgIcc6rycZEebF6eeUfaiQx9+WSk8e29IbLvPU9feI6tqW4kTo3hvoYAJkMh8n8D0fuISphg==}
     engines: {node: '>=12'}
@@ -1887,10 +1876,10 @@ packages:
       '@vue/composition-api':
         optional: true
 
-  vue-dompurify-html@3.1.2:
-    resolution: {integrity: sha512-2xCnSuog5+OPUtmeAwPZY/6oV9YKuLhjgcl5EUw3jKbmhnyPo8YyCczCeRNGBorVcz1fCGm6PEOIUSXNS8I0ZA==}
+  vue-dompurify-html@5.1.0:
+    resolution: {integrity: sha512-616o2/PBdOLM2bwlRWLdzeEC9NerLkwiudqNgaIJ5vBQWXec+u7Kuzh+45DtQQrids67s4pHnTnJZLVfyPMxbA==}
     peerDependencies:
-      vue: ^2.7.0 || ^3.0.0
+      vue: ^3.0.0
 
   vue-eslint-parser@9.3.2:
     resolution: {integrity: sha512-q7tWyCVaV9f8iQyIA5Mkj/S6AoJ9KBN8IeUSf3XEmBrOtxOZnfTg5s4KClbZBCK3GtnT/+RyCLZyDHuZwTuBjg==}
@@ -3009,7 +2998,7 @@ snapshots:
     dependencies:
       esutils: 2.0.3
 
-  dompurify@2.4.7: {}
+  dompurify@3.1.6: {}
 
   electron-to-chromium@1.4.622: {}
 
@@ -3784,10 +3773,6 @@ snapshots:
       - typescript
       - universal-cookie
 
-  vue-demi@0.13.11(vue@3.2.47):
-    dependencies:
-      vue: 3.2.47
-
   vue-demi@0.14.10(vue@3.2.47):
     dependencies:
       vue: 3.2.47
@@ -3800,13 +3785,10 @@ snapshots:
     dependencies:
       vue: 3.2.47
 
-  vue-dompurify-html@3.1.2(vue@3.2.47):
+  vue-dompurify-html@5.1.0(vue@3.2.47):
     dependencies:
-      dompurify: 2.4.7
+      dompurify: 3.1.6
       vue: 3.2.47
-      vue-demi: 0.13.11(vue@3.2.47)
-    transitivePeerDependencies:
-      - '@vue/composition-api'
 
   vue-eslint-parser@9.3.2(eslint@8.34.0):
     dependencies:
