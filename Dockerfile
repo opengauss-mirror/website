@@ -12,8 +12,7 @@ RUN git clone -b v2 ${BLOG_REPOSITORY} /home/opengauss/blog && \
 
 RUN npm install pnpm -g
 RUN pnpm install
-RUN pnpm sitemap:zh
-RUN pnpm sitemap:en
+RUN pnpm sitemap
 RUN pnpm build
 
 FROM swr.cn-north-4.myhuaweicloud.com/opensourceway/openeuler/nginx:1.24.0-22.03-lts-sp1 as NginxBuilder
