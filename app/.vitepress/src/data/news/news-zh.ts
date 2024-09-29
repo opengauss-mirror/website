@@ -1,5 +1,15 @@
 export default [
   {
+    date: '2024-09-30',
+    summary: 'openGauss 6.0.0 LTS 版本正式发布',
+    archives: '2024-09',
+    author: ['openGauss'],
+    banner: '/category/news/2024-09-30/banner.jpg',
+    title: 'openGauss 6.0.0 LTS 版本正式发布',
+    tags: ['theme'],
+    path: 'zh/news/2024-09-30/index',
+  },
+  {
     date: '2024-08-14',
     summary: 'openGauss6.0.0版本更改数据库发布包名公告',
     archives: '2024-08',
