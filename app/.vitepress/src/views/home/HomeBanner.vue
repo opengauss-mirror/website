@@ -57,7 +57,7 @@ const clickRightInset = (path: string) => {
       <el-carousel-item v-for="item in homeBanner" :key="item.link">
         <div
           class="banner-img"
-          :class="{ 'no-btn': !item.btn, [item.className]: item.className }"
+          :class="{ 'no-btn': !item.btn && item.link, [item.className]: item.className }"
           :style="`background:url(${
             windowWidth > 767 ? item.pcBanner : item.moBanner
           }) no-repeat top center/cover;`"
