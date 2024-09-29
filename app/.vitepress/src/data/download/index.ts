@@ -1,3 +1,4 @@
+import download600 from './download6.0.0';
 import download600RC1 from './download6.0.0-RC1';
 import download503 from './download5.0.3';
 import download502 from './download5.0.2';
@@ -21,16 +22,16 @@ import download100 from './download1.0.0';
 // newLayout:true 代表使用新版下载页面结构布局，无此参数代表使用旧版
 const downloadData = [
   {
-    name: '6.0.0-RC1',
+    name: '6.0.0',
     newLayout: true,
-    data: download600RC1,
-    plannedEOL: 'Planned EOL: 2024.09.30',
+    data: download600,
+    plannedEOL: 'Planned EOL: 2027.03.30',
     docs_list: [
       {
         name: '发行说明',
         nameEn: 'Release Notes',
-        path: '/docs/6.0.0-RC1/docs/ReleaseNotes/Releasenotes.html',
-        pathEn: '/docs/6.0.0-RC1/docs/ReleaseNotes/Releasenotes.html',
+        path: '/docs/6.0.0/docs/ReleaseNotes/Releasenotes.html',
+        pathEn: '/docs/6.0.0/docs/ReleaseNotes/Releasenotes.html',
       },
     ],
   },
@@ -45,6 +46,20 @@ const downloadData = [
         nameEn: 'Release Notes',
         path: '/zh/news/2024-08-15/index.html',
         pathEn: '/zh/news/2024-08-15/index.html',
+      },
+    ],
+  },
+  {
+    name: '6.0.0-RC1',
+    newLayout: true,
+    data: download600RC1,
+    plannedEOL: 'Planned EOL: 2024.09.30',
+    docs_list: [
+      {
+        name: '发行说明',
+        nameEn: 'Release Notes',
+        path: '/docs/6.0.0-RC1/docs/ReleaseNotes/Releasenotes.html',
+        pathEn: '/docs/6.0.0-RC1/docs/ReleaseNotes/Releasenotes.html',
       },
     ],
   },
