@@ -22,7 +22,7 @@ import download100 from './download1.0.0';
 // newLayout:true 代表使用新版下载页面结构布局，无此参数代表使用旧版
 const downloadData = [
   {
-    name: '6.0.0',
+    name: '6.0.0 (LTS)',
     newLayout: true,
     data: download600,
     plannedEOL: 'Planned EOL: 2027.03.30',

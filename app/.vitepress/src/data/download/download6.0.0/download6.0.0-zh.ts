@@ -15,7 +15,7 @@ export default [
             edition: 'enterprise',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler22.03/arm/openGauss-All-6.0.0-openEuler22.03-aarch64.tar.gz`,
             sha_code:
-              'a074a81274f457e4343a88640d2fef4d21330eab1e0518b73f0bfaf609b4da01',
+              'c6be8fb7e71449db18429b9fd71048ec64219a338532be3428a11ff811f069a2',
             docsName: '企业版安装指南',
             docs_url:
               '/docs/6.0.0/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html',
@@ -26,7 +26,7 @@ export default [
             edition: 'simple',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler22.03/arm/openGauss-Server-6.0.0-openEuler22.03-aarch64.tar.bz2`,
             sha_code:
-              '37f18dd9b0516f948a7fc6e463c85cd0c9be9fd857737e60c60902e6601c8557',
+              '1790524d39d38a8888c501dc3eb10a6a1841af6189ddfcaad963bb67d4844c65',
             docsName: '极简版安装指南',
             docs_url:
               '/docs/6.0.0/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html',
@@ -37,7 +37,7 @@ export default [
             edition: 'lite',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler22.03/arm/openGauss-Lite-6.0.0-openEuler22.03-aarch64.tar.gz`,
             sha_code:
-              'a14e7bcdfcf49532c55fccba17625fd3e3bd8d8a839231a0adee4d67e971e77b',
+              'b6eaf0d0962f0e9d38269c608413672b97d2859e8b2fc92496217e53eb64a931',
             docsName: '轻量版安装指南',
             docs_url:
               '/docs/6.0.0-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html',
@@ -56,7 +56,7 @@ export default [
             edition: 'enterprise',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler22.03/x86/openGauss-All-6.0.0-openEuler22.03-x86_64.tar.gz`,
             sha_code:
-              '96a89b1bbaffdac4829a4290f773e1eae0b73c4942de94016cc70f4ec24faa73',
+              'ab67c6616e2ba640474e71e34657baf09b69d76f779a34c4a4b37d2f46eb26c4',
             docsName: '企业版安装指南',
             docs_url:
               '/docs/6.0.0/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html',
@@ -67,7 +67,7 @@ export default [
             edition: 'simple',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler22.03/x86/openGauss-Server-6.0.0-openEuler22.03-x86_64.tar.bz2`,
             sha_code:
-              '585991488be1eba3d4f24f6c66123808223941e56912c66cc963271b1e78d24b',
+              '12ab04418f4282d8e6536faa16859e4f64ba727203c2c1839e95c6e9afd2257b',
             docsName: '极简版安装指南',
             docs_url:
               '/docs/6.0.0/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html',
@@ -78,7 +78,7 @@ export default [
             edition: 'lite',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler22.03/x86/openGauss-Lite-6.0.0-openEuler22.03-x86_64.tar.gz`,
             sha_code:
-              '3b3905ef77202a51e99ece9717424a8c2bced22a672679f10d323ac315cbbb7e',
+              '0343d838609ec695ee5b347fc2e1047eaa9e64e3d139c019e6ad3e588a380fce',
             docsName: '轻量版安装指南',
             docs_url:
               '/docs/6.0.0-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html',
@@ -97,7 +97,7 @@ export default [
             edition: 'enterprise',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler20.03/arm/openGauss-All-6.0.0-openEuler20.03-aarch64.tar.gz`,
             sha_code:
-              '7aaf86b9ca3c35a49893a9aa5ab02383039da78c9b0d90bc2e3bd0dbbf7d0384',
+              'fb2f06fcabc841157b8b6064417414c41e07d448fb2af32e082d46bdce2f57e6',
             docsName: '企业版安装指南',
             docs_url:
               '/docs/6.0.0/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html',
@@ -108,7 +108,7 @@ export default [
             edition: 'simple',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler20.03/arm/openGauss-Server-6.0.0-openEuler20.03-aarch64.tar.bz2`,
             sha_code:
-              'ef2fe745a71b0ca45ef94a9f9357868acef884975d7f5aa939d1881fe631dbdc',
+              '6bfd69c8d3070c64c5d6b4c42aa842a01f905ed3ecc0db9ba63a518ee5472a1d',
             docsName: '极简版安装指南',
             docs_url:
               '/docs/6.0.0/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html',
@@ -119,7 +119,7 @@ export default [
             edition: 'simple',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler20.03/arm/openGauss-Lite-6.0.0-openEuler20.03-aarch64.tar.gz`,
             sha_code:
-              '8ca45d179bbac132dd33eb6b1da2c272b56761892597891bb38fa280ca1dd94c',
+              'c84352863cf4aa4f511f121c5fb08ba5e8e4acf5bf5d1a299756222a0f5c3563',
             docsName: '轻量版安装指南',
             docs_url:
               '/docs/6.0.0-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html',
@@ -148,7 +148,7 @@ export default [
             edition: 'enterprise',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler20.03/x86/openGauss-All-6.0.0-openEuler20.03-x86_64.tar.gz`,
             sha_code:
-              'f680e742d6ae9354f010e8b5764c044dbc04a4324ce167331a47443229dbea28',
+              'ab67c6616e2ba640474e71e34657baf09b69d76f779a34c4a4b37d2f46eb26c4',
             docsName: '企业版安装指南',
             docs_url:
               '/docs/6.0.0/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html',
@@ -159,7 +159,7 @@ export default [
             edition: 'simple',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler20.03/x86/openGauss-Server-6.0.0-openEuler20.03-x86_64.tar.bz2`,
             sha_code:
-              'a455d901b1433e637bce96465ea1cc20131bf2f08e3a79c0a32054aa288b1214',
+              '12ab04418f4282d8e6536faa16859e4f64ba727203c2c1839e95c6e9afd2257b',
             docsName: '极简版安装指南',
             docs_url:
               '/docs/6.0.0/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html',
@@ -170,7 +170,7 @@ export default [
             edition: 'simple',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler20.03/x86/openGauss-Lite-6.0.0-openEuler20.03-x86_64.tar.gz`,
             sha_code:
-              '64d62cd0e181ec1ae15a8895242e6c20fe4842ef258c6a70d67e37a6de480afe',
+              '0343d838609ec695ee5b347fc2e1047eaa9e64e3d139c019e6ad3e588a380fce',
             docsName: '轻量版安装指南',
             docs_url:
               '/docs/6.0.0-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html',
@@ -189,7 +189,7 @@ export default [
             edition: 'enterprise',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/CentOS7/x86/openGauss-All-6.0.0-CentOS7-x86_64.tar.gz`,
             sha_code:
-              '2dad94f35807c0d6945bf84f638693148a2de05b4fe51b420f04fd5d94015977',
+              'a163cb51e05f94144fc0cb58a4114270100c25d4ff6882dd3a4c0fde0b5e1302',
             docsName: '企业版安装指南',
             docs_url:
               '/docs/6.0.0/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html',
@@ -200,7 +200,7 @@ export default [
             edition: 'simple',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/CentOS7/x86/openGauss-Server-6.0.0-CentOS7-x86_64.tar.bz2`,
             sha_code:
-              'fca7b2137f58d4562dec1359b3db31ea4dfe7119bec74a6d1db02d6ee867b480',
+              'c8cd8f90955c22a932e5f66375572cc17e60c49b0ac5afdf03031c1607aaf5a2',
             docsName: '极简版安装指南',
             docs_url:
               '/docs/6.0.0/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html',
@@ -211,7 +211,7 @@ export default [
             edition: 'enterprise',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/CentOS7/x86/openGauss-Lite-6.0.0-CentOS7-x86_64.tar.gz`,
             sha_code:
-              '6f779f95075153b78c00e9b0e76b5f12edd0ebd7ba332be4e6993047c4782e0a',
+              '7c486e3de25138644235c80d4623627b420f4c4eea67532785a716304602d36c',
             docsName: '轻量版安装指南',
             docs_url:
               '/docs/6.0.0-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html',
@@ -243,7 +243,7 @@ export default [
             size: '1.73MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler22.03/arm/openGauss-JDBC-6.0.0.tar.gz`,
             sha_code:
-              '5ad4ffe33907c4315ebb697fc3aeff6d56f6455f6a37389a3bc86c9f10c99aed',
+              'f0fbfd8c538ad0d294b64dd810acd3dbdcbd2851b805ce5f76d10877d708f613',
             docsName: '',
             docs_url: '',
           },
@@ -252,7 +252,7 @@ export default [
             size: '8.98MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler22.03/arm/openGauss-ODBC-6.0.0-openEuler22.03-aarch64.tar.gz`,
             sha_code:
-              '7bd1be8f9a7c88eda25b77df8f6b48b5bbf7dd4d640990d3dd8018e0fff82625',
+              '4ffff50d1afc6a4d55d84ab0ba7db8ce9f3fdb43c5f66d9fee4f629e8b91cc83',
             docsName: '',
             docs_url: '',
           },
@@ -261,7 +261,7 @@ export default [
             size: '2.93MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler22.03/arm/openGauss-Python-6.0.0-openEuler22.03-aarch64.tar.gz`,
             sha_code:
-              '5638a1b49bc3b9c6c3b22d0f9b712e0857a4736a24d0111e689ff7ba5fe22710',
+              '5fae23d788e5867a3da66e7785da2a711cd11b2a5ddb62aca87b925fdf198ce9',
             docsName: '',
             docs_url: '',
           },
@@ -270,7 +270,7 @@ export default [
             size: '4.99MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler22.03/arm/openGauss-Libpq-6.0.0-openEuler22.03-aarch64.tar.gz`,
             sha_code:
-              '5de203ce28346368d0b467924f585ce7f446e1749e5c56a03b38828260b9340d',
+              '410a61bbb666092a69434d3c6d691cfccee2beaa363dc27ca35f7883aa1b59a2',
             docsName: '',
             docs_url: '',
           },
@@ -286,7 +286,7 @@ export default [
             size: '1.73MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler22.03/x86/openGauss-JDBC-6.0.0.tar.gz`,
             sha_code:
-              '3170a768bc1f6bbfb72b55b2fdb2ee0f97a57846346c9aa3e246e2ac69e761b6',
+              '7791b438c24f465cff9ecf6ff9fab6de7861aa5d0450a5ee6d6b32059d0c9bfe',
             docsName: '',
             docs_url: '',
           },
@@ -295,7 +295,7 @@ export default [
             size: '9.23MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler22.03/x86/openGauss-ODBC-6.0.0-openEuler22.03-x86_64.tar.gz`,
             sha_code:
-              'a3b00ccdc8fe9d72abf4bee8053aaaa71cf65584b06a73e078f339b174508c36',
+              'f7d6dc79c2f8c6d2d07a7afa73a471fb19d7c2e04c176d4f116f0d355d57e76e',
             docsName: '',
             docs_url: '',
           },
@@ -304,7 +304,7 @@ export default [
             size: '3.09MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler22.03/x86/openGauss-Python-6.0.0-openEuler22.03-x86_64.tar.gz`,
             sha_code:
-              'a3dca69fafa4fd6147b72e9f4b13c00af03d9d7976716a8a5ef842421c8a9037',
+              'c980e2f4af1b31a1f8d0bfe4e656229490c70f01c8104a608a64c32ca83aa826',
             docsName: '',
             docs_url: '',
           },
@@ -313,7 +313,7 @@ export default [
             size: '5.26MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler22.03/x86/openGauss-Libpq-6.0.0-openEuler22.03-x86_64.tar.gz`,
             sha_code:
-              'e4b54d64fa4f4dfbccd561d298e7ade02a2244077893eb57ffa2860063c668f0',
+              '90abc0ab2158d17cb3436e90f98cd7e649b460ab670dae48390eacda143aa935',
             docsName: '',
             docs_url: '',
           },
@@ -329,7 +329,7 @@ export default [
             size: '1.72MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler20.03/arm/openGauss-JDBC-6.0.0.tar.gz`,
             sha_code:
-              'b039c07693a40cf03c7a13a7fb65f8500af1467ac85adaa23378d92cac1bfdad',
+              '8bcd94b379c46c9671436c0d23a8e00042159b5f6ce30eb4fb18356b8d102ce6',
             docsName: '',
             docs_url: '',
           },
@@ -338,7 +338,7 @@ export default [
             size: '9.03MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler20.03/arm/openGauss-ODBC-6.0.0-openEuler20.03-aarch64.tar.gz`,
             sha_code:
-              '0319f160d985b23f19d0d6aaf717206593bf9b1e6769589785d10d23e5c85493',
+              '3c73f7204d628c25ad1deb21c1aa32724dab4f1d9836e543e755c11b1880aad1',
             docsName: '',
             docs_url: '',
           },
@@ -347,7 +347,7 @@ export default [
             size: '2.94MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler20.03/arm/openGauss-Python-6.0.0-openEuler20.03-aarch64.tar.gz`,
             sha_code:
-              '6039575f7a230305b3b8ed0a2a9a98f7f2bd75b76fbd8422be13b6070352560a',
+              '20b61f525f991fb7ff425753959e09a05cfaf33f0b8edf7546f7e9078cc9e2ab',
             docsName: '',
             docs_url: '',
           },
@@ -356,7 +356,7 @@ export default [
             size: '5.03MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler20.03/arm/openGauss-Libpq-6.0.0-openEuler20.03-aarch64.tar.gz`,
             sha_code:
-              '0b44ffc4fe978e6823b79198665c59989df06a0832f231997a9bc137ca5f5c65',
+              '7514cd379bcbccde5d5e409ad1ab55fcd32db1032224acc7021ed050f8308a6d',
             docsName: '',
             docs_url: '',
           },
@@ -372,7 +372,7 @@ export default [
             size: '1.73MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler20.03/x86/openGauss-JDBC-6.0.0.tar.gz`,
             sha_code:
-              'ad496f6468f24bf4c4e89f2aeabdbc59ef1e185b3726fb6db963cbe249b2fcfa',
+              'e822209f72c748ebdc218fbe9d45a7f322aab6378e9546bd3700385bc88deac9',
             docsName: '',
             docs_url: '',
           },
@@ -381,7 +381,7 @@ export default [
             size: '9.24MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler20.03/x86/openGauss-ODBC-6.0.0-openEuler20.03-x86_64.tar.gz`,
             sha_code:
-              '269ed5d25edce82bb06d78280238c7c8c58390d7d69d769556e261f2b18e3c5a',
+              'f4b34fc0c09b9c86045bc373ecc9ef3fb13d27e25f12be31876446acaaef2154',
             docsName: '',
             docs_url: '',
           },
@@ -390,7 +390,7 @@ export default [
             size: '3.09MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler20.03/x86/openGauss-Python-6.0.0-openEuler20.03-x86_64.tar.gz`,
             sha_code:
-              '172c1f0c87a7a057634a04785727197436faae4cf58f67b9db6b129b286e6f9b',
+              'f83a6229b196d13a923cb681d88f7d798a600506dabe6698161a72107b113de0',
             docsName: '',
             docs_url: '',
           },
@@ -399,7 +399,7 @@ export default [
             size: '5.26MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler20.03/x86/openGauss-Libpq-6.0.0-openEuler20.03-x86_64.tar.gz`,
             sha_code:
-              'fd982936e7b576e87a818665db87ef87001ece0af4783ecd5ac828ad9f06f908',
+              'f3c33dacd8a3c6e8021313b0afa667a28b729f7e0b6694f98706eebe7e6b3c8f',
             docsName: '',
             docs_url: '',
           },
@@ -415,7 +415,7 @@ export default [
             size: '1.73MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/CentOS7/x86/openGauss-JDBC-6.0.0.tar.gz`,
             sha_code:
-              '47ebbbfc889805e55357861711f37e57e3d8da877b87431aca1ceda33b37ac4f',
+              'c175e3e9117c3b1265288b4774dcd5604a9c8fc7e869b24288870d09ae0f2a85',
             docsName: '',
             docs_url: '',
           },
@@ -424,7 +424,7 @@ export default [
             size: '9.11MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/CentOS7/x86/openGauss-ODBC-6.0.0-CentOS7-x86_64.tar.gz`,
             sha_code:
-              '79762930e48054c8b62f06b559d95aa0effa73fd99211e30ad8b83e3681ce4e6',
+              '4ef2fbc6bf2e3bf9da2b92c8b5c8c3d71142c885ed0d28937067296b01a0a289',
             docsName: '',
             docs_url: '',
           },
@@ -433,7 +433,7 @@ export default [
             size: '3.29MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/CentOS7/x86/openGauss-Python-6.0.0-CentOS7-x86_64.tar.gz`,
             sha_code:
-              '554f95e225292f2492c84fff74488f8cb273ed45746acd426ddbacebb9ea6fcd',
+              'a9b6ab64277d3600172886ac47930ce5a4868a97f4df3bef0e740ebd6074a3ca',
             docsName: '',
             docs_url: '',
           },
@@ -442,7 +442,7 @@ export default [
             size: '5.14MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/CentOS7/x86/openGauss-Libpq-6.0.0-CentOS7-x86_64.tar.gz`,
             sha_code:
-              '5d81fc08082cc52c1063038e00dd504f655c09e0f75c7cab3f2f4d614e0f8b7c',
+              '5b9c25a67f9bfe14cd65796e677050ad90c357afc42e65066769b3cdf8dbfe75',
             docsName: '',
             docs_url: '',
           },
@@ -456,16 +456,16 @@ export default [
           {
             name: 'JDBC_6.0.0',
             size: '1.73MB',
-            down_url: `${OBS_DOWNLOAD_LINK}6.0.0/CentOS7/x86/openGauss-6.0.0-JDBC.tar.gz`,
+            down_url: `${OBS_DOWNLOAD_LINK}6.0.0/CentOS7/x86/openGauss-JDBC-6.0.0.tar.gz`,
             sha_code:
-              '47ebbbfc889805e55357861711f37e57e3d8da877b87431aca1ceda33b37ac4f',
+              'c175e3e9117c3b1265288b4774dcd5604a9c8fc7e869b24288870d09ae0f2a85',
             docsName: '',
             docs_url: '',
           },
           {
             name: 'ODBC_6.0.0',
             size: '5.24MB',
-            down_url: `${OBS_DOWNLOAD_LINK}6.0.0/windows/openGauss-6.0.0-ODBC-windows.tar.gz`,
+            down_url: `${OBS_DOWNLOAD_LINK}6.0.0/windows/openGauss-ODBC-6.0.0-windows.tar.gz`,
             sha_code:
               'c8118e11f6a5be259f3704783591b9d3e833a97c8a924964ae00d973cd9c83f5',
             docsName: '',
