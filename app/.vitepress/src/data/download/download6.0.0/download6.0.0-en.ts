@@ -10,8 +10,8 @@ export default [
         os: 'openEuler 22.03 LTS',
         content: [
           {
-            name: 'openGauss_6.0.0 Enterprise-Edition',
-            size: '141.25MB',
+            name: 'openGauss_6.0.0 Enterprise-Edition',            
+            size: '143.96MB',
             edition: 'enterprise',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler22.03/arm/openGauss-All-6.0.0-openEuler22.03-aarch64.tar.gz`,
             sha_code:
@@ -22,7 +22,7 @@ export default [
           },
           {
             name: 'openGauss_6.0.0 Simplified',
-            size: '96.83MB',
+            size: '100.82MB',
             edition: 'simple',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler22.03/arm/openGauss-Server-6.0.0-openEuler22.03-aarch64.tar.bz2`,
             sha_code:
@@ -33,7 +33,7 @@ export default [
           },
           {
             name: 'openGauss_6.0.0 Lite',
-            size: '25.40MB',
+            size: '28.02MB',
             edition: 'lite',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler22.03/arm/openGauss-Lite-6.0.0-openEuler22.03-aarch64.tar.gz`,
             sha_code:
@@ -52,7 +52,7 @@ export default [
         content: [
           {
             name: 'openGauss_6.0.0 Enterprise-Edition',
-            size: '144.51MB',
+            size: '147.62MB',
             edition: 'enterprise',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler22.03/x86/openGauss-All-6.0.0-openEuler22.03-x86_64.tar.gz`,
             sha_code:
@@ -63,7 +63,7 @@ export default [
           },
           {
             name: 'openGauss_6.0.0 Simplified',
-            size: '100.71MB',
+            size: '104.26MB',
             edition: 'simple',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler22.03/x86/openGauss-Server-6.0.0-openEuler22.03-x86_64.tar.bz2`,
             sha_code:
@@ -74,7 +74,7 @@ export default [
           },
           {
             name: 'openGauss_6.0.0 Lite',
-            size: '26.70MB',
+            size: '29.02MB',
             edition: 'lite',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler22.03/x86/openGauss-Lite-6.0.0-openEuler22.03-x86_64.tar.gz`,
             sha_code:
@@ -93,7 +93,7 @@ export default [
         content: [
           {
             name: 'openGauss_6.0.0 Enterprise-Edition',
-            size: '140.24MB',
+            size: '143.78MB',
             edition: 'enterprise',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler20.03/arm/openGauss-All-6.0.0-openEuler20.03-aarch64.tar.gz`,
             sha_code:
@@ -104,7 +104,7 @@ export default [
           },
           {
             name: 'openGauss_6.0.0 Simplified',
-            size: '97.36MB',
+            size: '100.83MB',
             edition: 'simple',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler20.03/arm/openGauss-Server-6.0.0-openEuler20.03-aarch64.tar.bz2`,
             sha_code:
@@ -115,7 +115,7 @@ export default [
           },
           {
             name: 'openGauss_6.0.0 Lite',
-            size: '25.69MB',
+            size: '28.03MB',
             edition: 'simple',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler20.03/arm/openGauss-Lite-6.0.0-openEuler20.03-aarch64.tar.gz`,
             sha_code:
@@ -144,7 +144,7 @@ export default [
         content: [
           {
             name: 'openGauss_6.0.0 Enterprise-Edition',
-            size: '144.68MB',
+            size: '148.18MB',
             edition: 'enterprise',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler20.03/x86/openGauss-All-6.0.0-openEuler20.03-x86_64.tar.gz`,
             sha_code:
@@ -155,7 +155,7 @@ export default [
           },
           {
             name: 'openGauss_6.0.0 Simplified',
-            size: '101.05MB',
+            size: '104.48MB',
             edition: 'simple',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler20.03/x86/openGauss-Server-6.0.0-openEuler20.03-x86_64.tar.bz2`,
             sha_code:
@@ -166,7 +166,7 @@ export default [
           },
           {
             name: 'openGauss_6.0.0 Lite',
-            size: '26.95MB',
+            size: '29.39MB',
             edition: 'simple',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler20.03/x86/openGauss-Lite-6.0.0-openEuler20.03-x86_64.tar.gz`,
             sha_code:
@@ -185,7 +185,7 @@ export default [
         content: [
           {
             name: 'openGauss_6.0.0 Enterprise-Edition',
-            size: '142.53MB',
+            size: '146.25MB',
             edition: 'enterprise',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/CentOS7/x86/openGauss-All-6.0.0-CentOS7-x86_64.tar.gz`,
             sha_code:
@@ -196,7 +196,7 @@ export default [
           },
           {
             name: 'openGauss_6.0.0 Simplified',
-            size: '99.82MB',
+            size: '103.55MB',
             edition: 'simple',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/CentOS7/x86/openGauss-Server-6.0.0-CentOS7-x86_64.tar.bz2`,
             sha_code:
@@ -207,7 +207,7 @@ export default [
           },
           {
             name: 'openGauss_6.0.0 Lite',
-            size: '26.57MB',
+            size: '28.95MB',
             edition: 'enterprise',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/CentOS7/x86/openGauss-Lite-6.0.0-CentOS7-x86_64.tar.gz`,
             sha_code:
@@ -240,7 +240,7 @@ export default [
         content: [
           {
             name: 'JDBC_6.0.0',
-            size: '1.73MB',
+            size: '1.75MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler22.03/arm/openGauss-JDBC-6.0.0.tar.gz`,
             sha_code:
               'f0fbfd8c538ad0d294b64dd810acd3dbdcbd2851b805ce5f76d10877d708f613',
@@ -249,7 +249,7 @@ export default [
           },
           {
             name: 'ODBC_6.0.0',
-            size: '8.98MB',
+            size: '9.04MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler22.03/arm/openGauss-ODBC-6.0.0-openEuler22.03-aarch64.tar.gz`,
             sha_code:
               '4ffff50d1afc6a4d55d84ab0ba7db8ce9f3fdb43c5f66d9fee4f629e8b91cc83',
@@ -258,7 +258,7 @@ export default [
           },
           {
             name: 'Python-psycopg2_6.0.0',
-            size: '2.93MB',
+            size: '2.95MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler22.03/arm/openGauss-Python-6.0.0-openEuler22.03-aarch64.tar.gz`,
             sha_code:
               '5fae23d788e5867a3da66e7785da2a711cd11b2a5ddb62aca87b925fdf198ce9',
@@ -267,7 +267,7 @@ export default [
           },
           {
             name: 'libpq_6.0.0',
-            size: '4.99MB',
+            size: '5.04MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler22.03/arm/openGauss-Libpq-6.0.0-openEuler22.03-aarch64.tar.gz`,
             sha_code:
               '410a61bbb666092a69434d3c6d691cfccee2beaa363dc27ca35f7883aa1b59a2',
@@ -283,7 +283,7 @@ export default [
         content: [
           {
             name: 'JDBC_6.0.0',
-            size: '1.73MB',
+            size: '1.75MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler22.03/x86/openGauss-JDBC-6.0.0.tar.gz`,
             sha_code:
               '7791b438c24f465cff9ecf6ff9fab6de7861aa5d0450a5ee6d6b32059d0c9bfe',
@@ -292,7 +292,7 @@ export default [
           },
           {
             name: 'ODBC_6.0.0',
-            size: '9.23MB',
+            size: '9.25MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler22.03/x86/openGauss-ODBC-6.0.0-openEuler22.03-x86_64.tar.gz`,
             sha_code:
               'f7d6dc79c2f8c6d2d07a7afa73a471fb19d7c2e04c176d4f116f0d355d57e76e',
@@ -310,7 +310,7 @@ export default [
           },
           {
             name: 'libpq_6.0.0',
-            size: '5.26MB',
+            size: '5.27MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler22.03/x86/openGauss-Libpq-6.0.0-openEuler22.03-x86_64.tar.gz`,
             sha_code:
               '90abc0ab2158d17cb3436e90f98cd7e649b460ab670dae48390eacda143aa935',
@@ -326,7 +326,7 @@ export default [
         content: [
           {
             name: 'JDBC_6.0.0',
-            size: '1.72MB',
+            size: '1.75MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler20.03/arm/openGauss-JDBC-6.0.0.tar.gz`,
             sha_code:
               '8bcd94b379c46c9671436c0d23a8e00042159b5f6ce30eb4fb18356b8d102ce6',
@@ -335,7 +335,7 @@ export default [
           },
           {
             name: 'ODBC_6.0.0',
-            size: '9.03MB',
+            size: '9.05MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler20.03/arm/openGauss-ODBC-6.0.0-openEuler20.03-aarch64.tar.gz`,
             sha_code:
               '3c73f7204d628c25ad1deb21c1aa32724dab4f1d9836e543e755c11b1880aad1',
@@ -353,7 +353,7 @@ export default [
           },
           {
             name: 'libpq_6.0.0',
-            size: '5.03MB',
+            size: '5.04MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler20.03/arm/openGauss-Libpq-6.0.0-openEuler20.03-aarch64.tar.gz`,
             sha_code:
               '7514cd379bcbccde5d5e409ad1ab55fcd32db1032224acc7021ed050f8308a6d',
@@ -369,7 +369,7 @@ export default [
         content: [
           {
             name: 'JDBC_6.0.0',
-            size: '1.73MB',
+            size: '1.75MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler20.03/x86/openGauss-JDBC-6.0.0.tar.gz`,
             sha_code:
               'e822209f72c748ebdc218fbe9d45a7f322aab6378e9546bd3700385bc88deac9',
@@ -378,7 +378,7 @@ export default [
           },
           {
             name: 'ODBC_6.0.0',
-            size: '9.24MB',
+            size: '9.26MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler20.03/x86/openGauss-ODBC-6.0.0-openEuler20.03-x86_64.tar.gz`,
             sha_code:
               'f4b34fc0c09b9c86045bc373ecc9ef3fb13d27e25f12be31876446acaaef2154',
@@ -396,7 +396,7 @@ export default [
           },
           {
             name: 'libpq_6.0.0',
-            size: '5.26MB',
+            size: '5.27MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler20.03/x86/openGauss-Libpq-6.0.0-openEuler20.03-x86_64.tar.gz`,
             sha_code:
               'f3c33dacd8a3c6e8021313b0afa667a28b729f7e0b6694f98706eebe7e6b3c8f',
@@ -412,7 +412,7 @@ export default [
         content: [
           {
             name: 'JDBC_6.0.0',
-            size: '1.73MB',
+            size: '1.75MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/CentOS7/x86/openGauss-JDBC-6.0.0.tar.gz`,
             sha_code:
               'c175e3e9117c3b1265288b4774dcd5604a9c8fc7e869b24288870d09ae0f2a85',
@@ -421,7 +421,7 @@ export default [
           },
           {
             name: 'ODBC_6.0.0',
-            size: '9.11MB',
+            size: '9.12MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/CentOS7/x86/openGauss-ODBC-6.0.0-CentOS7-x86_64.tar.gz`,
             sha_code:
               '4ef2fbc6bf2e3bf9da2b92c8b5c8c3d71142c885ed0d28937067296b01a0a289',
@@ -439,7 +439,7 @@ export default [
           },
           {
             name: 'libpq_6.0.0',
-            size: '5.14MB',
+            size: '5.15MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/CentOS7/x86/openGauss-Libpq-6.0.0-CentOS7-x86_64.tar.gz`,
             sha_code:
               '5b9c25a67f9bfe14cd65796e677050ad90c357afc42e65066769b3cdf8dbfe75',
@@ -455,7 +455,7 @@ export default [
         content: [
           {
             name: 'JDBC_6.0.0',
-            size: '1.73MB',
+            size: '1.75MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/CentOS7/x86/openGauss-JDBC-6.0.0.tar.gz`,
             sha_code:
               'c175e3e9117c3b1265288b4774dcd5604a9c8fc7e869b24288870d09ae0f2a85',
@@ -485,19 +485,19 @@ export default [
         content: [
           {
             name: 'symbol_6.0.0',
-            size: '396.82MB',
+            size: '407.54MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler22.03/arm/openGauss-Symbol-6.0.0-openEuler22.03-aarch64.tar.gz`,
             sha_code:
-              '4c76483316f3f8a3af10cbea349006d3b0507e8e2e17e3c823280afd0711e890',
+              '38d560010ac4a9f50fa91766dcf56c9ceae8bee9c433743b881c1a80fc1c4c56',
             docsName: '',
             docs_url: '',
           },
           {
             name: 'cm-symbol_6.0.0',
-            size: '21.73MB',
+            size: '24.12MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler22.03/arm/openGauss-CM-6.0.0-openEuler22.03-aarch64.tar.gz`,
             sha_code:
-              'f82de47d6ceac6703220e743598a3c84a4a9a9553933b608807449ff9dbabd2d',
+              '6d5151268636bc7e5f2bc82c3e0d53b815d432d20d5b722dae754d6a195ecd29',
             docsName: '',
             docs_url: '',
           },
@@ -510,19 +510,19 @@ export default [
         content: [
           {
             name: 'symbol_6.0.0',
-            size: '394.35MB',
+            size: '404.64MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler22.03/x86/openGauss-Symbol-6.0.0-openEuler22.03-x86_64.tar.gz`,
             sha_code:
-              '49d0a563738193b2fb5118f94def1b93bc29d6c60e116fbc142d1d39ed8f3ae9',
+              'f249af442c6de21c674c4f33504e1baaabf189c9a552eb6c9c739f434e5de48a',
             docsName: '',
             docs_url: '',
           },
           {
             name: 'cm-symbol_6.0.0',
-            size: '22.05MB',
+            size: '22.22MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler22.03/x86/openGauss-CM-Symbol-6.0.0-openEuler22.03-x86_64.tar.gz`,
             sha_code:
-              '0c02fb737f58edcdb0795a67d32bfca4bbdddb841ac7c4556d0ea5ab8f5e37dd',
+              '50642f6eb271137dd369d6a32ef3184214d47dc779550e7d3c1f4ec6b418e9df',
             docsName: '',
             docs_url: '',
           },
@@ -535,19 +535,19 @@ export default [
         content: [
           {
             name: 'symbol_6.0.0',
-            size: '395.78MB',
+            size: '406.21MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler20.03/arm/openGauss-Symbol-6.0.0-openEuler20.03-aarch64.tar.gz`,
             sha_code:
-              'db2b22aadbf19caead1d3fa1809d924b786bacf4b95faa26e1b307e09846d765',
+              '4f9535b3b10c6d0d217cb2b5e29e03c2e70aba06365e618e7382d5d1e625a346',
             docsName: '',
             docs_url: '',
           },
           {
             name: 'cm-symbol_6.0.0',
-            size: '23.85MB',
+            size: '21.47MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler20.03/arm/openGauss-CM-Symbol-6.0.0-openEuler20.03-aarch64.tar.gz`,
             sha_code:
-              '5ef6b051bdb9a973cd0443e977c904d887e945d893f69a27c33924fd58c63662',
+              'bce364066e06155e93102d40344aec1d7ae0fed5081148df1ce11cfe9f8dc3ae',
             docsName: '',
             docs_url: '',
           },
@@ -560,19 +560,19 @@ export default [
         content: [
           {
             name: 'symbol_6.0.0',
-            size: '393.31MB',
+            size: '403.73MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler20.03/x86/openGauss-Symbol-6.0.0-openEuler20.03-x86_64.tar.gz`,
             sha_code:
-              '45ca8931c0bfb9facc0c1edc75580dbf0fbe134de6858d89a6d15903aa8e008d',
+              '8daf5af22f5f4616b911aac11514fea3270bd3f0c9a97ecaae11b7f06947266d',
             docsName: '',
             docs_url: '',
           },
           {
             name: 'cm-symbol_6.0.0',
-            size: '22.04MB',
+            size: '22.20MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/openEuler20.03/x86/openGauss-CM-Symbol-6.0.0-openEuler20.03-x86_64.tar.gz`,
             sha_code:
-              '9e6233477afae7eed6521ce9c93849f937f6239caf5a6ae8ecc33dd4c7e8fe33',
+              'ad645835e57d7d0db7a0f7d418d14756e8873a234b8f604556912a67c1943362',
             docsName: '',
             docs_url: '',
           },
@@ -585,19 +585,19 @@ export default [
         content: [
           {
             name: 'symbol_6.0.0',
-            size: '380.48MB',
+            size: '390.49MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/CentOS7/x86/openGauss-Symbol-6.0.0-CentOS7-x86_64.tar.gz`,
             sha_code:
-              '13e73147b8b0bd55f425640dcc717ed7ab6f323605e87a014b9e62a31136054b',
+              'b79e3994e00418b2beae002f19040d30c19f81ccbb0ff358f20a596c6d0c7c69',
             docsName: '',
             docs_url: '',
           },
           {
             name: 'cm-symbol_6.0.0',
-            size: '20.74MB',
+            size: '20.MB',
             down_url: `${OBS_DOWNLOAD_LINK}6.0.0/CentOS7/x86/openGauss-CM-Symbol-6.0.0-CentOS7-x86_64.tar.gz`,
             sha_code:
-              'c36733da6abb54e5041cee6b77f7594ccfa6d1a172e9651431cef404b044f937',
+              '0fee79ae881468a2541210f7b911af310aa77f50f99901ee9517d48316f24fe3',
             docsName: '',
             docs_url: '',
           },

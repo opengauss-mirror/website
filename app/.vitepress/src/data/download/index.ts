@@ -25,7 +25,7 @@ const downloadData = [
     name: '6.0.0 (LTS)',
     newLayout: true,
     data: download600,
-    plannedEOL: 'Planned EOL: 2027.03.30',
+    plannedEOL: 'Planned EOL: 2027.09.30',
     docs_list: [
       {
         name: '发行说明',
