@@ -1,5 +1,19 @@
 export default [
   {
+    date: '2024-09-07',
+    summary: '',
+    img: '/category/events/2024-09-07/banner.jpg',
+    archives: '2024-09',
+    author: ['openGauss'],
+    img_mobile: '/category/events/2024-09-07/banner.jpg',
+    link: '/zh/events/2024-09-07/meetup.html',
+    title: '【9月07日】openGauss  Meetup 南京站，精彩回顾',
+    tags: '会议',
+    path: 'zh/events/2024-09-07/meetup',
+    location: '南京',
+    time: '2024/09/07',
+  },
+  {
     date: '2024-07-19',
     summary: '',
     img: '/category/events/2024-07-19/banner.jpg',
