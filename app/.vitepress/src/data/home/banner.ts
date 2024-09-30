@@ -9,9 +9,6 @@ import banner20240321_mb from '@/assets/category/home/banner/banner20240321_mb.p
 import bannerCallFor from '@/assets/category/home/banner/banner-call-for.jpg';
 import bannerCallFor_mb from '@/assets/category/home/banner/banner-call-for_mb.png';
 
-import banner600 from '@/assets/category/home/banner/banner6.0.0.jpg';
-import banner600_mb from '@/assets/category/home/banner/banner6.0.0_mo.jpg';
-
 import bannerTeamUp from '@/assets/category/home/banner/banner-team-up.jpg';
 import bannerTeamUpMo from '@/assets/category/home/banner/banner-team-up_mo.jpg';
 
@@ -77,20 +74,6 @@ export default {
       link: '/zh/team-up/',
       target: '_self',
       title: 'openGauss 结队计划 正式上线',
-      titleMb: [],
-      subtitle: '',
-      desc: [''],
-      btn: '',
-      className: '',
-      rightInset: '',
-      rightLink: '',
-    },
-    {
-      pcBanner: banner600,
-      moBanner: banner600_mb,
-      link: '/zh/news/2024-03-30/',
-      target: '_self',
-      title: '',
       titleMb: [],
       subtitle: '',
       desc: [''],
