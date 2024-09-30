@@ -17,7 +17,7 @@ summary: 'openGauss 6.0.0 LTS 版本正式发布'
 **openGauss 6.0.0 LTS 是社区最新发布的长期支持版本，版本生命周期为3年。** 本次发布包含2个数据库服务端安装版本：企业版、轻量版，用户可根据使用场景需要下载不同版本，并基于此进行场景化验证，提前发现问题并反馈社区，社区将在下个创新版本发布前进行问题修复，openGauss 7.0.0-RC1 版本将在2025年3月30日进行发布。
 
 发行说明请参考官网：
-<https://docs-opengauss.osinfra.cn/zh/docs/latest/docs/ReleaseNotes/Releasenotes.html>
+<https://docs-opengauss.osinfra.cn/zh/docs/6.0.0/docs/ReleaseNotes/Releasenotes.html>
 
 立即体验 openGauss 6.0.0 LTS 版本：
 <https://opengauss.org/zh/download/>
