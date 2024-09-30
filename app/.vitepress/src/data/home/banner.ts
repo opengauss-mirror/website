@@ -21,6 +21,9 @@ import bannerOpenGaussV6Mo from '@/assets/category/home/banner/banner-opengaussv
 import bannerGuoqing from '@/assets/category/home/banner/banner-guoqing.jpg';
 import bannerGuoqingMo from '@/assets/category/home/banner/banner-guoqing_mo.jpg';
 
+import banner600Pc from '@/assets/category/home/banner/banner-opengauss-6.0.0-pc.jpg';
+import banner600Mo from '@/assets/category/home/banner/banner-opengauss-6.0.0-mo.jpg';
+
 import { LEARN_VIDEO_LINK, DOCS_LINK } from '@/data/url-config';
 
 // rightInset:banner右侧插图
@@ -37,6 +40,20 @@ export default {
       desc: [''],
       btn: '',
       className: '',
+      rightInset: '',
+      rightLink: '',
+    },
+    {
+      pcBanner: banner600Pc,
+      moBanner: banner600Mo,
+      link: '/zh/news/2024-09-30/',
+      target: '_blank',
+      title: 'openGauss 6.0.0 LTS 版本正式发布',
+      titleMb: ['openGauss 6.0.0 LTS \n版本正式发布'],
+      subtitle: '',
+      desc: [''],
+      btn: '',
+      className: 'banner-version',
       rightInset: '',
       rightLink: '',
     },

@@ -206,6 +206,7 @@ html[lang='zh'] {
             font-size: var(--o-font-size-h1);
             line-height: var(--o-line-height-h1);
             font-weight: 600;
+            white-space: pre-wrap;
             @media screen and (max-width: 1439px) {
               font-size: var(--o-font-size-h2);
               line-height: var(--o-line-height-h2);
@@ -294,6 +295,29 @@ html[lang='zh'] {
           img {
             width: 98px;
             cursor: pointer;
+          }
+        }
+      }
+    }
+    &.banner-version {
+      text-align: center;
+      .banner-content .content-left .content-text {
+        :deep(.title) {
+          font-size: 56px;
+          font-weight: 600;
+
+          @media screen and (max-width: 1439px) {
+            font-size: var(--o-font-size-h2);
+            line-height: var(--o-line-height-h2);
+          }
+          @media screen and (max-width: 1100px) {
+            font-size: var(--o-font-size-h3);
+            line-height: var(--o-line-height-h3);
+          }
+          @media screen and (max-width: 767px) {
+            font-size: var(--o-font-size-h4);
+            line-height: var(--o-line-height-h3);
+            text-align: center;
           }
         }
       }
