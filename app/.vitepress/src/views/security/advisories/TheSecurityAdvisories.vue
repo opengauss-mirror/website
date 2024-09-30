@@ -2,7 +2,6 @@
 import { reactive, ref, watch, onMounted } from 'vue';
 import { useRouter } from 'vitepress';
 import { useI18n } from '@/i18n';
-import { handleError } from '@/shared/utils';
 
 import BannerLevel2 from '@/components/BannerLevel2.vue';
 import AppPaginationMo from '@/components/AppPaginationMo.vue';
@@ -60,7 +59,6 @@ function getSecurityLists(data: SecurityQueryT) {
     } else {
       total.value = 0;
       tableData.value = [];
-      handleError();
     }
   });
 }
