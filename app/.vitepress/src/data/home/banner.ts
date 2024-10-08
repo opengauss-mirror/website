@@ -15,9 +15,6 @@ import bannerTeamUpMo from '@/assets/category/home/banner/banner-team-up_mo.jpg'
 import bannerOpenGaussV6 from '@/assets/category/home/banner/banner-opengaussv6.jpg';
 import bannerOpenGaussV6Mo from '@/assets/category/home/banner/banner-opengaussv6_mo.jpg';
 
-import bannerGuoqing from '@/assets/category/home/banner/banner-guoqing.jpg';
-import bannerGuoqingMo from '@/assets/category/home/banner/banner-guoqing_mo.jpg';
-
 import banner600Pc from '@/assets/category/home/banner/banner-opengauss-6.0.0-pc.jpg';
 import banner600Mo from '@/assets/category/home/banner/banner-opengauss-6.0.0-mo.jpg';
 
@@ -26,20 +23,6 @@ import { LEARN_VIDEO_LINK, DOCS_LINK } from '@/data/url-config';
 // rightInset:banner右侧插图
 export default {
   zh: [
-    {
-      pcBanner: bannerGuoqing,
-      moBanner: bannerGuoqingMo,
-      link: '',
-      target: '',
-      title: '',
-      titleMb: [],
-      subtitle: '',
-      desc: [''],
-      btn: '',
-      className: '',
-      rightInset: '',
-      rightLink: '',
-    },
     {
       pcBanner: banner600Pc,
       moBanner: banner600Mo,
