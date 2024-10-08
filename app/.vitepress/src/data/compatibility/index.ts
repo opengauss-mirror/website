@@ -1,5 +1,16 @@
 export default [
   {
+    name: 'OneNET城市物联网平台',
+    version: '3',
+    type: '物流',
+    company: '中移物联网有限公司',
+    database: 'openGauss 5.0.1',
+    os: 'openEuler 22.03',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E4%B8%AD%E7%A7%BB%E7%89%A9%E8%81%94/V3/Certificate.pdf',
+  },
+  {
     name: '集约化内容管理系统',
     version: '1.0',
     type: '数字政府',
