@@ -106,7 +106,6 @@ onMounted(() => {
         class="app-forum"
       />
     </div>
-    <SummitNow :now-data="summitData.now" />
     <SummitReview :review-data="summitData.review" />
   </AppContent>
 </template>

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import IconArrowRight from '~icons/app/icon-arrow-right.svg';
 
 defineProps({
   bannerData: {
@@ -24,14 +23,6 @@ defineProps({
         <h2>{{ bannerData.slogan }}</h2>
         <h3>{{ bannerData.title }}</h3>
         <h4>{{ bannerData.subtitle }}</h4>
-        <a :href="bannerData.signUpHref" target="_blank" rel="noopener noreferrer">
-          <OButton animation class="home-banner-btnimport">
-            {{ bannerData.signUpTitle }}
-            <template #suffixIcon
-              ><OIcon><IconArrowRight /></OIcon
-            ></template>
-          </OButton>
-        </a>
       </div>
     </div>
   </div>
