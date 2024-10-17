@@ -1,5 +1,19 @@
 export default [
   {
+    date: '2024-11-29',
+    summary: '',
+    img: '/category/events/2024-10-15/banner.jpg',
+    archives: '2024-10',
+    author: ['openGauss'],
+    img_mobile: '/category/events/2024-10-15/banner.jpg',
+    link: '/zh/events/2024-10-15/index.html',
+    title: '【我和openGauss的故事】第八届openGauss技术文章征集活动',
+    tags: '活动',
+    path: 'zh/events/2024-10-15/index',
+    location: '线上',
+    time: '2024/10/15',
+  },
+  {
     date: '2024-09-07',
     summary: '',
     img: '/category/events/2024-09-07/banner.jpg',
