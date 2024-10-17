@@ -532,7 +532,7 @@ export default {
       {
         img: jiangdayong,
         name: `江大勇`,
-        company: `中科院软件研究所副总工`,
+        company: `中国科学院软件研究所\n副总工`,
       },
     ],
     BOARD: [
