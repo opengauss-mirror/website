@@ -404,7 +404,7 @@ export default [
     industry: '大企业',
     title: '粤港澳大湾区国家技术创新中心',
     path: 'zh/userPractice/bigbusiness/nctid/',
-    officialpath: 'https://www.nctid.com/',
+    officialpath: '',
     company: '粤港澳大湾区国家技术创新中心',
     detail: false,
     id: 'Bigbusiness',

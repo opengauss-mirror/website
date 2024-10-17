@@ -323,6 +323,7 @@ watch(
             </template>
           </OButton>
           <OButton
+            v-if="item.officialpath"
             animation
             size="mini"
             class="website-btn"
