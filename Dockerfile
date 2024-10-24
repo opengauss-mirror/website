@@ -5,14 +5,17 @@ WORKDIR /home/opengauss/web
 COPY . /home/opengauss/web
 
 ARG BLOG_REPOSITORY
-RUN git clone -b v2 ${BLOG_REPOSITORY} /home/opengauss/blog && \
+RUN git clone -b v2 ${BLOG_REPOSITORY} /home/opengauss/blog
+
+RUN cp /home/opengauss/web/recordGitTimestamp.js /home/opengauss/blog/app/recordGitTimestamp.js && \
+    node /home/opengauss/blog/app/recordGitTimestamp.js && \
+    mv /home/opengauss/blog/app/records.json /home/opengauss/web/app/.vitepress/records.json && \
     cp -r /home/opengauss/blog/app/zh/blogs/* /home/opengauss/web/app/zh/blogs && \
     cp -r /home/opengauss/blog/app/en/blogs/* /home/opengauss/web/app/en/blogs && \
     rm -rf /home/opengauss/blog
 
 RUN npm install pnpm -g
 RUN pnpm install
-RUN pnpm sitemap
 RUN pnpm build
 
 FROM swr.cn-north-4.myhuaweicloud.com/opensourceway/openeuler/nginx:1.24.0-22.03-lts-sp1 as NginxBuilder

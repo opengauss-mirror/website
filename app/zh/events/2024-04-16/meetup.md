@@ -10,7 +10,7 @@ img: '/category/events/2024-04-16/banner.jpg'
 img_mobile: '/category/events/2024-04-16/banner.jpg'
 link: '/zh/events/2024-04-16/meetup.html'
 author: 'openGauss'
-summary: ''
+summary: '由中国DBA联盟和墨天轮社区共同主办的第十三届数据技术嘉年华（DTC 2024）于4月11-12日在北京新云南皇冠假日酒店成功举办。openGauss深度参与其中，三位重量级技术专家和中国移动用户代表'
 ---
 
 由中国DBA联盟和墨天轮社区共同主办的第十三届数据技术嘉年华（DTC 2024）于4月11-12日在北京新云南皇冠假日酒店成功举办。openGauss深度参与其中，三位重量级技术专家和中国移动用户代表，分别在主论坛和三个专题论坛发表演讲，为大家分享openGauss开源数据库内核能力、架构创新、创新特性和落地实践成果。

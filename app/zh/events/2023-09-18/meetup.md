@@ -10,7 +10,7 @@ img: '/category/events/2023-09-18/banner.png'
 img_mobile: '/category/events/2023-09-18/banner.png'
 link: '/zh/events/2023-09-18/meetup.html'
 author: 'openGauss'
-summary: ''
+summary: '9月16日，由云和恩墨、图尔兹、浙江鲲鹏、openGauss社区联合主办的“openGauss Meetup （杭州站）”活动在杭州市拱墅区中国智慧信息产业园成功举办，此次活动邀请到众多业内技术专家，'
 ---
 
 

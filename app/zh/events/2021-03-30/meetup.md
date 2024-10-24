@@ -10,7 +10,7 @@ img: '/category/events/2021-03-30/detail3.jpg'
 img_mobile: '/category/events/2021-03-30/detail3.jpg'
 link: '/zh/events/2021-03-30/meetup.html'
 author: 'openGauss'
-summary: ''
+summary: '3 月 26 日，由 openGauss 社区和海量数据共同举办的 openGauss Meetup 在深圳国际开源谷顺利举行，同时 openGauss 首个城市用户组也正式成立。'
 ---
 
 3 月 26 日，由 openGauss 社区和海量数据共同举办的 openGauss Meetup 在深圳国际开源谷顺利举行，同时 openGauss 首个城市用户组也正式成立。

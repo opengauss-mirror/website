@@ -10,7 +10,7 @@ img: '/category/events/2023-03-20/banner.jpg'
 img_mobile: '/category/events/2023-03-20/banner.jpg'
 link: '/zh/events/2023-03-20/meetup.html'
 author: 'openGauss'
-summary: ''
+summary: '3月17日，由云和恩墨、长江鲲鹏、openGauss社区联合主办的“云和恩墨大讲堂 x 长江鲲鹏 x openGauss Meetup（武汉站）”活动在湖北武汉成功举办！我们此次邀请多位行业领军人物'
 ---
 
 

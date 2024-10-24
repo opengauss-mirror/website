@@ -1,7 +1,25 @@
 import type { UserConfig } from 'vitepress';
 import tdks from './tdks'
+import { createRequire } from 'node:module';
+const require = createRequire(import.meta.url);
+
+const isBlog = /.+\/(?:userPractice|events|news)\/.+$/;
 
 const config: UserConfig = {
+  sitemap: {
+    hostname: 'https://opengauss.org',
+    transformItems(items) {
+      const records = require('./records.json');
+      items.forEach((item) => {
+        const timestamp = records[item.url];
+        if (timestamp) {
+          item.lastmod = new Date(timestamp);
+        }
+      })
+      return items;
+    },
+  },
+  lastUpdated: true,
   base: '/',
   head: [
     [
@@ -45,7 +63,7 @@ const config: UserConfig = {
   ],
   appearance: true, // enable dynamic scripts for dark mode
   titleTemplate: false, //  vitepress supports pageTitileTemplate since 1.0.0
-  transformPageData(pageData) {
+  async transformPageData(pageData) {
     const filePath = pageData.filePath;
     let lookupKey: string;
     if (filePath.endsWith('index.md')) {
@@ -55,7 +73,13 @@ const config: UserConfig = {
     }
     const locale = filePath.slice(0, 2) as 'zh' | 'en';
     const tdkInfo = tdks[locale]?.[lookupKey];
-    if (!tdkInfo) {
+    pageData.titleTemplate = tdks.titleSuffix[locale];
+    if (!tdkInfo || isBlog.test(lookupKey)) {
+      const frontmatter = pageData.frontmatter;
+      const description = frontmatter?.summary || frontmatter?.Summary;
+      if (!pageData.description && description) {
+        pageData.description = description
+      }
       return;
     }
     const { title, description, keywords } = tdkInfo;

@@ -10,7 +10,7 @@ img: '/category/events/2023-10-13/banner.jpg'
 img_mobile: '/category/events/2023-10-13/banner.jpg'
 link: '/zh/events/2023-10-13/meetup.html'
 author: 'openGauss'
-summary: ''
+summary: '主题：汇聚数据库创新力量，共赢行业数智未来时间：2023 年 10 月 13 日 13:30-17:30地点：天津市南开区科研东路天津科技广场6号楼一层报告厅'
 ---
 
 ## 活动信息

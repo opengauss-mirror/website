@@ -10,7 +10,7 @@ img: '/category/events/2021-03-26/poster.png'
 img_mobile: '/category/events/2021-03-26/poster.png'
 link: '/zh/events/2021-03-26/meetup.html'
 author: 'openGauss'
-summary: ''
+summary: '主题：把企业级数据库能力带给用户'
 ---
 
 ### 活动信息

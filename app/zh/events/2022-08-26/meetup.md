@@ -10,7 +10,7 @@ img: '/category/events/2022-08-26/banner.jpg'
 img_mobile: '/category/events/2022-08-26/banner.jpg'
 link: '/zh/events/2022-08-26/meetup.html'
 author: 'openGauss'
-summary: ''
+summary: '2022 年 8 月 25 日，由云和恩墨、openGauss 社区、四川鲲鹏生态创新中心主办的云和恩墨大讲堂 X openGauss Meetup X 鲲鹏生态孵化营在成都成功举办。'
 ---
 
 2022 年 8 月 25 日，由云和恩墨、openGauss 社区、四川鲲鹏生态创新中心主办的云和恩墨大讲堂 X openGauss Meetup X 鲲鹏生态孵化营在成都成功举办。此次活动以 openGauss 社区生态建设、内核架构创新、商业应用实践、基于鲲鹏全栈国产环境的优化与实践，数据库人才培养作为核心展开，全面展示“产学研用”正在合力共建数据库主流根社区。

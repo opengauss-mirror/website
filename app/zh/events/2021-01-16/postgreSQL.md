@@ -10,7 +10,7 @@ img: '/category/events/2021-01-16/banner.png'
 img_mobile: '/category/events/2021-01-16/banner.png'
 link: 'events/2021-01-16/postgreSQL.html'
 author: 'openGauss'
-summary: ''
+summary: '1 月 15 日-16 日，由 PostgreSQL 中文社区主办的《第十届 PostgreSQL 中国技术大会》，在广州万富希尔顿酒店隆重召开。openGauss 受邀出席本次大会并带来众多精彩分享。'
 ---
 
 1 月 15 日-16 日，由 PostgreSQL 中文社区主办的《第十届 PostgreSQL 中国技术大会》，在广州万富希尔顿酒店隆重召开。openGauss 受邀出席本次大会并带来众多精彩分享。

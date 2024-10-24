@@ -10,7 +10,7 @@ img: '/category/events/2023-11-06/banner.jpg'
 img_mobile: '/category/events/2023-11-06/banner.jpg'
 link: '/zh/events/2023-11-06/meetup.html'
 author: 'openGauss'
-summary: ''
+summary: '由openGauss社区、天津南大通用数据技术股份有限公司联合主办的“openGauss Meetup • 合肥站”已于11月4日落下帷幕，此次活动邀请到数据库行业专家与行业同仁共同探讨数据库技术发展'
 ---
 
 

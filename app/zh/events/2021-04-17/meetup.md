@@ -10,7 +10,7 @@ img: '/category/events/2021-04-17/poster.png'
 img_mobile: '/category/events/2021-04-17/poster.png'
 link: '/zh/events/2021-04-17/meetup.html'
 author: 'openGauss'
-summary: ''
+summary: '活动主题：共话开源数据库未来'
 ---
 
 ### 活动信息

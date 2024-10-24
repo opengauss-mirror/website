@@ -10,7 +10,7 @@ img: '/category/events/2022-06-16/banner.jpg'
 img_mobile: '/category/events/2022-06-16/大合照.jpg'
 link: '/zh/events/2022-06-16/meetup.html'
 author: 'openGauss'
-summary: ''
+summary: '2022 年 6 月 15 日，甘肃 openGauss Meetup（生态全国行）在甘肃鲲鹏生态创新中心成功举办。'
 ---
 
 2022 年 6 月 15 日，甘肃 openGauss Meetup（生态全国行）在甘肃鲲鹏生态创新中心成功举办。此次活动由兰州市工业和信息化局、兰州高新技术产业开发区管理委员会指导，openGauss 社区主办，甘肃鲲鹏生态创新中心、甘肃九霄鲲鹏科技有限责任公司、北京海量数据技术股份有限公司承办。

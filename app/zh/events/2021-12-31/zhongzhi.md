@@ -10,7 +10,7 @@ img: '/category/events/2021-12-31/cover.jpg'
 img_mobile: '/category/events/2021-12-31/cover.jpg'
 link: '/zh/events/2021-12-31/zhongzhi.html'
 author: 'openGauss'
-summary: ''
+summary: '鲲鹏计算产业是基于鲲鹏处理器构建的全栈 IT 基础设施、行业应用及服务，包括 PC、服务器、存储、操作系统、中间件、虚拟化、数据库、云服务、行业应用以及咨询管理服务等。鲲鹏计算产业利用华为强大的基'
 ---
 
 #### 关于鲲鹏众智计划

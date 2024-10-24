@@ -10,7 +10,7 @@ img: '/category/events/2023-08-26/banner.jpg'
 img_mobile: '/category/events/2023-08-26/banner.jpg'
 link: '/zh/events/2023-08-26/meetup.html'
 author: 'openGauss'
-summary: ''
+summary: '昨日，由海量数据、黑龙江鲲鹏生态创新中心、openGauss社区联合主办的“海量数据 x 黑龙江鲲鹏 x openGauss Meetup（哈尔滨站）”活动在黑龙江鲲鹏生态创新中心成功举办！ 此次活'
 ---
 
 

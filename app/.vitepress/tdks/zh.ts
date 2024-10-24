@@ -195,4 +195,119 @@ export default {
     keywords:
       'openGauss,开源数据库,openGauss社区官网,开源社区,openGauss CVE案例',
   },
+  'zh/bigshot-voice/detail': {
+    title: '大咖声音详情 | 大咖声音',
+    description: '了解openGauss社区大咖的声音及其分享内容。',
+    keywords: 'openGauss, 大咖声音, 社区, 分享'
+  },
+  'zh/cve/detail': {
+    title: 'openGauss CVE详情 | CVE',
+    description: '获取与openGauss相关的具体CVE信息，以确保数据库安全。',
+    keywords: 'openGauss, CVE, 详情, 安全'
+  },
+  'zh/contribution/detail.html': {
+    title: 'openGauss贡献详情 | 贡献',
+    description: '查找如何参与openGauss项目的详细信息，包括代码和文档贡献。',
+    keywords: 'openGauss, 贡献, 社区, 参与'
+  },
+  'zh/brand': {
+    title: 'openGauss品牌概述 | 品牌',
+    description: '了解openGauss品牌的使命、价值观以及在数据库生态系统中的独特之处。',
+    keywords: 'openGauss, 品牌, 数据库, 使命, 价值观'
+  },
+  'zh/community/meetup-form': {
+    title: 'openGauss社区聚会表单 | 社区',
+    description: '参与openGauss社区聚会，填写相关表单以获取更多信息。',
+    keywords: 'openGauss, 社区, 聚会, 表单'
+  },
+  'zh/call-for-meetup/collect': {
+    title: 'openGauss聚会征集 | 聚会征集',
+    description: '查看openGauss的聚会征集信息和参与方式。',
+    keywords: 'openGauss, 聚会, 征集, 参与'
+  },
+  'zh/download/finance': {
+    title: 'openGauss财经下载 | 下载',
+    description: '下载与openGauss财经相关的资源和材料。',
+    keywords: 'openGauss, 下载, 财经, 资源'
+  },
+  'zh/aboutUs': {
+    title: '关于openGauss | 关于我们',
+    description: '了解openGauss的开发历程和背后的社区。',
+    keywords: 'openGauss, 关于我们, 社区, 开发'
+  },
+  'zh/download/archive': {
+    title: 'openGauss下载档案 | 下载',
+    description: '探索openGauss下载档案，获取过去的发行版和文档。',
+    keywords: 'openGauss, 下载, 档案, 发行版'
+  },
+  'zh/member/detail': {
+    title: 'openGauss会员详情 | 会员',
+    description: '获取openGauss社区会员的重要信息。',
+    keywords: 'openGauss, 会员, 详情, 社区'
+  },
+  'zh/legal': {
+    title: 'openGauss法律信息 | 法律',
+    description: '查看与openGauss有关的法律方面信息，包括许可和合规性。',
+    keywords: 'openGauss, 法律, 许可, 合规'
+  },
+  'zh/migration/case': {
+    title: 'openGauss迁移案例 | 迁移案例',
+    description: '了解openGauss中的成功迁移案例和最佳实践。',
+    keywords: 'openGauss, 迁移案例, 成功, 最佳实践'
+  },
+  'zh/privacyPolicy': {
+    title: 'openGauss隐私政策 | 隐私政策',
+    description: '查看openGauss的隐私政策，以了解您的数据如何处理。',
+    keywords: 'openGauss, 隐私政策, 数据处理'
+  },
+  'zh/security-advisories/detail': {
+    title: 'openGauss安全警告详情 | 安全警告',
+    description: '阅读有关openGauss的具体安全警告，保持信息更新。',
+    keywords: 'openGauss, 安全警告, 详情, 更新'
+  },
+  'zh/summit/devday2022': {
+    title: 'openGauss开发者日2022 | 峰会',
+    description: '了解openGauss开发者日2022的相关信息和亮点。',
+    keywords: 'openGauss, 开发者日, 峰会, 2022'
+  },
+  'zh/summit/devday2023': {
+    title: 'openGauss开发者日2023 | 峰会',
+    description: '预览openGauss开发者日2023的议程和主题。',
+    keywords: 'openGauss, 开发者日, 峰会, 2023'
+  },
+  'zh/summit/summit2021': {
+    title: 'openGauss峰会2021 | 峰会',
+    description: '回顾openGauss峰会2021的演讲和讨论内容。',
+    keywords: 'openGauss, 峰会, 2021, 回顾'
+  },
+  'zh/summit/summit2023': {
+    title: 'openGauss峰会2023 | 峰会',
+    description: '了解openGauss峰会2023的最新信息和更新。',
+    keywords: 'openGauss, 峰会, 2023, 更新'
+  },
+  'zh/training/signup': {
+    title: 'openGauss培训报名 | 培训',
+    description: '报名参加openGauss的培训课程，提升您的数据库技能。',
+    keywords: 'openGauss, 培训, 报名, 数据库技能'
+  },
+  'zh/search': {
+    title: '搜索openGauss资源 | 搜索',
+    description: '使用搜索功能查找与openGauss相关的资源和文档。',
+    keywords: 'openGauss, 搜索, 资源, 文档'
+  },
+  'zh/summit/summit2022': {
+    title: 'openGauss峰会2022 | 峰会',
+    description: '了解openGauss峰会2022的重点活动和主题。',
+    keywords: 'openGauss, 峰会, 2022, 重点'
+  },
+  'zh/team-up/form': {
+    title: 'openGauss团队合作表单 | 团队合作',
+    description: '填写表单，与openGauss社区合作，参与项目和活动。',
+    keywords: 'openGauss, 团队合作, 表单, 参与'
+  },
+  'zh/video/detail':{
+    title: 'openGauss视频详情 | 视频',
+    description: '探索具体openGauss视频的信息，包括主题和讲者。',
+    keywords: 'openGauss, 视频, 详情, 讲者'
+  },
 };

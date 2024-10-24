@@ -10,7 +10,7 @@ img: '/category/events/2024-03-22/banner.png'
 img_mobile: '/category/events/2024-03-22/banner.png'
 link: '/zh/events/2024-03-22/meetup.html'
 author: 'openGauss'
-summary: ''
+summary: '3 月 16 日，北京站 · 第101期 OSC 源创会在北京圆满举办。本期源创会以“数据库，2024 开炫”为主题，汇聚 openGauss、TDengine、Apache Doris、MatrixOne、Apache IoTDB 五大数据库。'
 ---
 
 

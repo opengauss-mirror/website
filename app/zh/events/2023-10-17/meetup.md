@@ -10,7 +10,7 @@ img: '/category/events/2023-10-17/banner.jpg'
 img_mobile: '/category/events/2023-10-17/banner.jpg'
 link: '/zh/events/2023-10-17/meetup.html'
 author: 'openGauss'
-summary: ''
+summary: '由openGauss社区、天开发展集团、天津市软件行业协会、天大智图（天津）科技有限公司联合主办的“openGauss Meetup • 天津站”已于10月13日落下帷幕，此次活动邀请到众多业内技术专'
 ---
 
 

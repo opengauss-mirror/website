@@ -10,7 +10,7 @@ img: '/category/events/2021-04-18/banner.jpg'
 img_mobile: '/category/events/2021-04-18/banner.jpg'
 link: '/zh/events/2021-04-18/meetup.html'
 author: 'openGauss'
-summary: ''
+summary: '4 月 17 日，由 openGauss 社区主办，江苏鲲鹏·昇腾生态创新中心、南京集成电路大学、江苏北联国芯技术有限公司、北京海量数据技术股份有限公司、中软国际有限公司合办的【南京】openGauss Meetup 活动在南京集成电路大学顺利举行，同时 openGauss 南京用户组也正式成立。'
 ---
 
 <video id="my-video" class="video-js" controls preload="auto" width="100%" >

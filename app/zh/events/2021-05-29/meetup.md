@@ -10,7 +10,7 @@ img: '/category/events/2021-05-29/banner.png'
 img_mobile: '/category/events/2021-05-29/banner.png'
 link: '/zh/events/2021-05-29/meetup.html'
 author: 'openGauss'
-summary: ''
+summary: '随着开源开放的理念兴起，openGauss 在众多领域商业应用，众多机构积极拥抱开源，坚持开放共享。由 openGauss 社区主办，北京鲲鹏联合创新中心、云和恩墨、深信服、SphereEx '
 ---
 
 <img src="./头图.jpg" style="width: 50%; margin-bottom: 0.2rem;"  />
