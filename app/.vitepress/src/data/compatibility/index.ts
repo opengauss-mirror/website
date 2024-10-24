@@ -1,5 +1,27 @@
 export default [
   {
+    name: '国遥新天地云GIS服务器软件',
+    version: '7.2',
+    type: 'GIS',
+    company: '北京国遥新天地信息技术股份有限公司',
+    database: 'openGauss 5.0.2',
+    os: 'CentOS 7.4',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%8C%97%E4%BA%AC%E5%9B%BD%E9%81%A5/V7.2/Certificate.pdf',
+  },
+  {
+    name: '霄练压测平台',
+    version: '3',
+    type: '通用',
+    company: '江苏碧英科技有限公司',
+    database: 'openGauss 5.0.0',
+    os: 'Kylin V10 SP3',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%B1%9F%E8%8B%8F%E7%A2%A7%E8%8B%B1/%E9%9C%84%E7%BB%83%E5%8E%8B%E6%B5%8B%E5%B9%B3%E5%8F%B0V3.pdf',
+  },
+  {
     name: 'OneNET城市物联网平台',
     version: '3',
     type: '物流',
