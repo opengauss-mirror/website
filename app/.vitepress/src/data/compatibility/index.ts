@@ -1,5 +1,71 @@
 export default [
   {
+    name: '东华医为数字化医院信息管理系统（信创版）',
+    version: '1.0',
+    type: '医疗',
+    company: '东华医为科技有限公司',
+    database: 'openGauss 5.0.1',
+    os: 'openEuler 20.03',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E4%B8%9C%E5%8D%8E%E5%8C%BB%E4%B8%BA/V%201.0/Certificate.pdf',
+  },
+  {
+    name: '医疗物资智慧物流服务平台系统软件',
+    version: '3.0',
+    type: '医疗',
+    company: '北京至诚悠远科技有限公司',
+    database: 'openGauss 5.0.2',
+    os: 'openEuler 22.03',
+    server: 'Intel(其他)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%8C%97%E4%BA%AC%E8%87%B3%E8%AF%9A%E6%82%A0%E8%BF%9C/V%203.0/Certificate.pdf',
+  },
+  {
+    name: '推推-智慧中台系统',
+    version: '4.0',
+    type: '通用',
+    company: '北京三六零智领科技有限公司',
+    database: 'openGauss 5.0.1',
+    os: 'Centos 7.2',
+    server: 'Intel(其他)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/360/V%204.0/Certificate.pdf',
+  },
+  {
+    name: '凝思安全操作系统欧拉版',
+    version: '6.0.99',
+    type: '操作系统',
+    company: '北京凝思软件股份有限公司',
+    database: 'openGauss 5.0.0',
+    os: '',
+    server: 'Kunpeng 920(Taishan 200)、Hygon C86 7380(SR658H v2)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%87%9D%E6%80%9D%E8%BD%AF%E4%BB%B6/V6.0.99/Certificate01.pdf',
+  },
+  {
+    name: '凝思安全操作系统欧拉版',
+    version: '6.0.99',
+    type: '操作系统',
+    company: '四川凝思软件股份有限公司',
+    database: 'openGauss 5.0.0',
+    os: '',
+    server: 'Kunpeng 920(Taishan 200)、Hygon C86 7380(SR658H v2)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%87%9D%E6%80%9D%E8%BD%AF%E4%BB%B6/V6.0.99/Certificate02.pdf',
+  },
+  {
+    name: '慧目近视防控系统软件',
+    version: '3.0',
+    type: '医疗',
+    company: '南京慧目信息科技有限公司',
+    database: 'openGauss 5.0.1',
+    os: 'Kylin V10',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%85%A7%E7%9B%AE%E4%BF%A1%E6%81%AF/V3.0/%E6%85%A7%E7%9B%AE%E8%BF%91%E8%A7%86%E9%98%B2%E6%8E%A7%E7%B3%BB%E7%BB%9F%E8%BD%AF%E4%BB%B6.pdf',
+  },
+  {
     name: '国遥新天地云GIS服务器软件',
     version: '7.2',
     type: 'GIS',
