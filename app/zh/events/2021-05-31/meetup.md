@@ -10,7 +10,7 @@ img: '/category/events/2021-05-31/banner.jpg'
 img_mobile: '/category/events/2021-05-31/banner.jpg'
 link: '/zh/events/2021-05-31/meetup.html'
 author: 'openGauss'
-summary: ''
+summary: '5 月 29 日，由 openGauss 社区主办，北京鲲鹏联合创新中心、云和恩墨、深信服、SphereEx 合力承办的“【北京】openGauss Meetup”活动在北京海淀区中关村智能制造创新中心成功举行。'
 ---
 
 <video id="my-video" class="video-js" controls preload="auto" width="100%" >

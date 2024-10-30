@@ -10,7 +10,7 @@ img: '/category/events/2022-06-15/banner1.png'
 img_mobile: '/category/events/2022-06-15/banner1.png'
 link: '/zh/events/2022-06-15/meetup.html'
 author: 'openGauss'
-summary: ''
+summary: '主题：打造最具创新力开源数据库社区 把企业级的数据库能力带给用户'
 ---
 
 ### 活动信息

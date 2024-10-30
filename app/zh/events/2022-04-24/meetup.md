@@ -10,7 +10,7 @@ img: '/category/events/2022-04-24/picture1.jpg'
 img_mobile: '/category/events/2022-04-24/picture1.jpg'
 link: '/zh/events/2022-04-24/meetup.html'
 author: 'openGauss'
-summary: ''
+summary: '4 月 23 日，由 openGauss 社区主办，重庆鲲鹏创新中心、云和恩墨承办的 openGauss Meetup 活动在重庆西永微电产业园成功举办。此次活动是“openGauss 生态全国行'
 ---
 
 **4 月 23 日，由 openGauss 社区主办，重庆鲲鹏创新中心、云和恩墨承办的 openGauss Meetup 活动在重庆西永微电产业园成功举办。**此次活动是“openGauss 生态全国行”系列活动 2022 年第一站，吸引了来自重庆地区各个行业的 20+家企业的多个专家和开发者踊跃参与，是 openGauss 社区发展过程中的又一个重要历史节点。

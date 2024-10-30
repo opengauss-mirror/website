@@ -10,7 +10,7 @@ img: '/category/events/2021-06-28/合照.jpg'
 img_mobile: '/category/events/2021-06-28/合照.jpg'
 link: '/zh/events/2021-06-28/meetup.html'
 author: 'openGauss'
-summary: ''
+summary: '6 月 25 日，由 openGauss 社区主办，陕西鲲鹏创新中心、云和恩墨、宝兰德、Gauss 松鼠会联合举办的【西安】openGaussMeetup 成功举办，此次活动邀约 openGauss'
 ---
 
 <video id="my-video" class="video-js" controls preload="auto" width="100%" >

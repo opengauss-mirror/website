@@ -10,7 +10,7 @@ img: '/category/events/2023-06-30/banner.jpg'
 img_mobile: '/category/events/2023-06-30/banner.jpg'
 link: '/zh/events/2023-06-30/meetup.html'
 author: 'openGauss'
-summary: ''
+summary: '主题：汇聚数据库创新力量，共赢行业数智未来时间：2023 年 6 月 30 日（周五）13:30-18:00地点：陕西省西安市雁塔区天谷八路西安软件新城软件研发基地二期c2四层'
 ---
 
 ## 活动信息

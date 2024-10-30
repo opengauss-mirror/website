@@ -10,7 +10,7 @@ img: '/category/events/2023-11-04/banner.jpg'
 img_mobile: '/category/events/2023-11-04/banner.jpg'
 link: '/zh/events/2023-11-04/meetup.html'
 author: 'openGauss'
-summary: ''
+summary: '主题：汇聚数据库创新力量，共赢行业数智未来时间：2023 年 11 月 4 日 13:30-17:00地点：合肥市高新区云飞路66号天源迪科科技园一号2层东海会议室'
 ---
 
 ## 活动信息

@@ -10,7 +10,7 @@ img: '/category/events/2023-09-11/banner.png'
 img_mobile: '/category/events/2023-09-11/banner.png'
 link: '/zh/events/2023-09-11/meetup.html'
 author: 'openGauss'
-summary: ''
+summary: '主题：汇聚数据库创新力量，共赢行业数智未来时间：2023 年 9 月 16 日（周六）13:30-18:00地点：杭州市拱墅区祥园路108号中国智慧信息产业园G座3楼连廊1号会议室'
 ---
 
 ## 活动信息

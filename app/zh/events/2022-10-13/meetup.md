@@ -10,7 +10,7 @@ img: '/category/events/2022-10-13/banner.jpg'
 img_mobile: '/category/events/2022-10-13/banner.jpg'
 link: '/zh/events/2022-10-13/meetup.html'
 author: 'openGauss'
-summary: ''
+summary: '主题：把企业级的数据库能力带给用户，共筑计算新生态共赢数字新时代'
 ---
 
 ## 活动信息

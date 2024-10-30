@@ -10,7 +10,7 @@ img: '/category/events/2023-08-25/banner.jpg'
 img_mobile: '/category/events/2023-08-25/banner.jpg'
 link: '/zh/events/2023-08-25/meetup.html'
 author: 'openGauss'
-summary: ''
+summary: '主题：汇聚数据库创新力量，共赢行业数智未来时间：2023 年 8 月 25 日（周五）13:30-18:00地点：智谷大街288号深哈产业园B6栋八楼黑龙江鲲鹏生态创新中心'
 ---
 
 ## 活动信息

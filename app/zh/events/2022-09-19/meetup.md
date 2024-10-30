@@ -10,7 +10,7 @@ img: '/category/events/2022-09-19/banner.jpg'
 img_mobile: '/category/events/2022-09-19/banner.jpg'
 link: '/zh/events/2022-09-19/meetup.html'
 author: 'openGauss'
-summary: ''
+summary: '2022 年 9 月 16 日，由云和恩墨、openGauss 社区、上海鲲鹏生态创新中心联合主办的云和恩墨大讲堂 x openGauss Meetup x 鲲鹏生态孵化营在上海成功举行。'
 ---
 
 2022 年 9 月 16 日，由云和恩墨、openGauss 社区、上海鲲鹏生态创新中心联合主办的云和恩墨大讲堂 x openGauss Meetup x 鲲鹏生态孵化营在上海成功举行。此次活动以技术创新、学术创新、以及生态共建等维度，与大家共同交流开源数据库 openGauss 的技术能力及商业实践，把企业级的数据库能力带给用户，共筑计算新生态，共赢数字新时代。

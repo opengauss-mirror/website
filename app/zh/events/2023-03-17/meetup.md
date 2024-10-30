@@ -10,7 +10,7 @@ img: '/category/events/2023-03-17/banner.png'
 img_mobile: '/category/events/2023-03-17/banner.png'
 link: '/zh/events/2023-03-17/meetup.html'
 author: 'openGauss'
-summary: ''
+summary: '主题：汇聚数据库创新力量，共建鲲鹏生态新未来'
 ---
 
 ## 活动信息

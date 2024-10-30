@@ -10,7 +10,7 @@ img: '/category/events/2022-08-25/banner2.png'
 img_mobile: '/category/events/2022-08-25/banner2.png'
 link: '/zh/events/2022-08-25/Meetup.html'
 author: 'openGauss'
-summary: ''
+summary: '主题：把企业级的数据库能力带给用户，共筑计算新生态共赢数字新时代'
 ---
 
 ### 活动信息

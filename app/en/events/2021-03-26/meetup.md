@@ -9,7 +9,7 @@ img: '/category/events/2021-03-26/poster.png'
 img_mobile: '/category/events/2021-03-26/poster.png'
 link: '/en/events/2021-03-26/meetup.html'
 author: 'openGauss'
-summary: ''
+summary: 'Bringing Enterprise Database Capabilities to Users'
 ---
 
 ### Activity information

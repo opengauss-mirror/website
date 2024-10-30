@@ -10,7 +10,7 @@ img: '/en/events/2021-04-17/poster.png'
 img_mobile: '/en/events/2021-04-17/poster.png'
 link: '/en/events/2021-04-17/meetup.html'
 author: 'openGauss'
-summary: ''
+summary: 'Talk about the future of open source database'
 ---
 
 Activity theme: Talk about the future of open source database

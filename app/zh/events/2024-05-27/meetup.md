@@ -10,7 +10,7 @@ img: '/category/events/2024-05-27/banner.png'
 img_mobile: '/category/events/2024-05-27/banner.png'
 link: '/zh/events/2024-05-27/meetup.html'
 author: 'openGauss'
-summary: ''
+summary: '由海量数据、openGauss社区联合主办，辽宁鲲鹏生态创新中心协办的“海量数据 x  openGauss Meetup（沈阳站）”活动在辽宁鲲鹏生态创新中心成功举办！此次活动邀请到众多业内技术专家'
 ---
 
 

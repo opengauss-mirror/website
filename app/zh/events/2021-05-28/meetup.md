@@ -10,7 +10,7 @@ img: '/category/events/2021-05-28/banner.png'
 img_mobile: '/category/events/2021-05-28/banner.png'
 link: '/zh/events/2021-05-28/meetup.html'
 author: 'openGauss'
-summary: ''
+summary: 'Gauss 松鼠会主办的第二届 openGauss 知识问答活动即将开启，本次活动奖品价值总额达 8 万元，参与线上问答，只需答 3 次，每次十分钟就有机会获得华为 PAD、手表、运动手环、机械键盘、华为耳机、京东购物卡等精美礼品！'
 ---
 
 openGauss 自 2020 年 6 月 30 日上线开源，至今已更新至 2.0.0 版本。相信很多伙伴正在学习或者使用 openGauss，但是，你对 openGauss 了解多少呢？

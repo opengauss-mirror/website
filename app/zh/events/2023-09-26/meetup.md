@@ -10,7 +10,7 @@ img: '/category/events/2023-09-26/banner.jpg'
 img_mobile: '/category/events/2023-09-26/banner.jpg'
 link: '/zh/events/2023-09-26/meetup.html'
 author: 'openGauss'
-summary: ''
+summary: '华为全联接大会2023（HUAWEI CONNECT 2023）于9月20-22日在上海世博展览馆隆重举行。同期，“openGauss内核架构双引擎，全新打造数据底座分论坛”成功举办，本次分论坛数据库'
 ---
 
 

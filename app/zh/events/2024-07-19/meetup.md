@@ -10,7 +10,7 @@ img: '/category/events/2024-07-19/banner.jpg'
 img_mobile: '/category/events/2024-07-19/banner.jpg'
 link: '/zh/events/2024-07-19/meetup.html'
 author: 'openGauss'
-summary: ''
+summary: '由openGauss社区、海量数据主办的“海量数据 x openGauss Meetup（苏州站）”活动将于7月19日在苏州市协鑫广场22楼举办，诚邀数据库开发者、用户、合作伙伴们的莅临！'
 ---
 
 ## 活动信息

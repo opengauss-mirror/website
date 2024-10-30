@@ -9,7 +9,7 @@ img: '/category/events/2021-08-16/直播预告banner.png'
 img_mobile: '/category/events/2021-08-16/直播预告banner.png'
 link: '/zh/events/2021-08-16/meetup.html'
 author: 'openGauss'
-summary: ''
+summary: '由华为数据库高级讲师贾军锋老师为大家带来“轻松上手 openGauss[DBA 篇]之 openGauss 概述”。'
 ---
 
 由华为数据库高级讲师贾军锋老师为大家带来“轻松上手 openGauss[DBA 篇]之 openGauss 概述”。

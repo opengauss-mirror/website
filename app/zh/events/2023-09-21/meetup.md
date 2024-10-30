@@ -10,7 +10,7 @@ img: '/category/events/2023-09-21/banner.jpg'
 img_mobile: '/category/events/2023-09-21/banner.jpg'
 link: '/zh/events/2023-09-21/meetup.html'
 author: 'openGauss'
-summary: ''
+summary: '主题：华为全联接大会2023 专题演讲：openGauss 内核架构双引擎，全新打造数据底座时间：2023 年 9 月 22 日 14:00-15:40地点：上海世博中心430'
 ---
 
 ## 活动信息

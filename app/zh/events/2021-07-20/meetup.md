@@ -10,7 +10,7 @@ img: '/category/events/2021-07-20/大合照.jpg'
 img_mobile: '/category/events/2021-07-20/大合照.jpg'
 link: '/zh/events/2021-07-20/meetup.html'
 author: 'openGauss'
-summary: ''
+summary: '7 月 15 日，由 openGauss 社区主办，湖南鲲鹏生态创新中心、北京海量数据技术股份有限公司、普元信息技术股份有限公司、Gauss 松鼠会联合举办的（长沙）openGauss Meetup 成功举办。'
 ---
 
 <video id="my-video" class="video-js" controls preload="auto" width="100%" >

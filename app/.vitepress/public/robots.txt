@@ -1,5 +1,4 @@
 User-agent:*
 Allow: /
 
-Sitemap:https://opengauss.org/sitemap-zh.xml
-Sitemap:https://opengauss.org/sitemap-en.xml
+Sitemap:https://opengauss.org/sitemap.xml

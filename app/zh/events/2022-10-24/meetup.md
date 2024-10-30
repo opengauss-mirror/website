@@ -10,7 +10,7 @@ img: '/category/events/2022-10-24/banner.jpg'
 img_mobile: '/category/events/2022-10-24/banner.jpg'
 link: '/zh/events/2022-10-24/meetup.html'
 author: 'openGauss'
-summary: ''
+summary: '2022 年 10 月 21 日，由海量数据、宝兰徳、openGauss 社区联合主办，广州市天河区信创联盟协办的海量数据 x 宝兰德 x openGauss Meetup 在广州成功举行。此次活动从'
 ---
 
 2022 年 10 月 21 日，由海量数据、宝兰徳、openGauss 社区联合主办，广州市天河区信创联盟协办的海量数据 x 宝兰德 x openGauss Meetup 在广州成功举行。此次活动从技术创新、学术创新、发展创新、以及生态共建等维度，与大家共同探讨数据库应用体系建设，保障系统稳定性和业务连续性，把企业级的数据库能力带给用户，共筑计算新生态，共赢数字新时代。

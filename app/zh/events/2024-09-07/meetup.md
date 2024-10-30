@@ -10,7 +10,7 @@ img: '/category/events/2024-09-07/banner.jpg'
 img_mobile: '/category/events/2024-09-07/banner.jpg'
 link: '/zh/events/2024-09-07/meetup.html'
 author: 'openGauss'
-summary: ''
+summary: '9月7日，openGauss社区携手字节跳动ByConity社区、TechTalk社区、江苏鲲鹏.昇腾生态创新中心在南京举办了“开源数据库 Meetup活动”，邀请到多位数据库行业技术专家，分享了o'
 ---
 
 <div style="text-align:center;margin:24px 0;"><img src="/category/events/2024-09-07/banner.jpg" style="width: 50%"></div>
