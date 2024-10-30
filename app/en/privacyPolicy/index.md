@@ -123,8 +123,8 @@ Email: **contact@opengauss.org**
 
 Hotline: **+86 187-4087-2239**
 
-Last updated: **March 14, 2024**
+Last updated: **October 14, 2024**
 
-Privacy policy version: **v20240314**
+Privacy policy version: **v20241031**
 
 </div>
