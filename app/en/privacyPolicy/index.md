@@ -26,6 +26,8 @@ The openGauss Community understands the importance of your privacy and fully res
 
 - (f) **Meetup**. When you apply for an openGauss meetup, the community will collect your mobile number and email address from the application form you fill in. The collected mobile number and email address will be used to contact you later to communicate about the meetup details. Furthermore, the community will request your name and company name for the purpose of meetup sign-ins, nameplates, and other related activities.
 
+- (g) **Satisfaction Questionnaire**. When you fill out and submit the satisfaction questionnaire, we will collect your feedback on your experience with the community. If you voluntarily provide your contact information, we will process your name/nickname and phone number so that we can reach out to you for a deeper understanding of your feedback.
+
 We may also collect your personal data from third parties, including other platforms or communities, within the scope of your authorization and consent, or obtain your personal data from other legal and public channels. We promise to process your personal data in strict accordance with applicable laws and regulations. Please read the privacy policies and user agreements of the third parties carefully. If a third party is required to provide your personal data when you use the openGauss Community, but you refuse to allow the third party to collect, use, transfer, or share your personal data when the third party provides services, you may not be able to use related services of the openGauss Community.
 
 ## 2. How We Use Cookies and Similar Technologies
@@ -61,6 +63,8 @@ Sharing means providing third parties with your personal data. The third parties
 - (d) **Partners**. We may share your personal data with our partners. However, we will share your personal data only for legitimate, justified, necessary, specified, and explicit purposes, and share only the personal data necessary for providing our services. Our partners may include:
 
   - **1)** We integrate Baidu Statistics SDK from Beijing Baidu Netcom Science Technology Co., Ltd. to provide more complete and high-quality services and better support daily data analysis requirements of activity operations, user operations, and technology development. Baidu Statistics SDK needs to collect and use your necessary personal data, including device information (IP address, OS, network service provider, system language, screen resolution, screen color, region, browser type, browser language, and browser version), usage information (access source, search keyword, accessed pages, pop-ups, visitor ID, number of community accesses, stay duration, access timestamp, and server type and version). For details about the types and purposes of personal data collected and used by Baidu Statistics SDK, and how Baidu Statistics SDK protects the collected and used personal data, please read the [<u>Baidu Statistics Privacy Policy</u>](https://tongji.baidu.com/web/help/article?id=330&type=0) carefully.
+
+- (e) **We collect your satisfaction feedback through a questionnaire provided by WJX utilities**. Please carefully read the [<u>WJX Privacy Policy</u>](https://www.wjx.cn/wjx/license.aspx?type=1) to understand the types of personal information collected and used, the purposes for which this information is used, and how WJX will protect the personal information it collects and uses.
 
 When we share your personal data with associated companies or partners, their responsibilities and obligations will be governed by contracts and we will require them to take appropriate measures to ensure the safety of the personal data processed.
 
@@ -119,8 +123,8 @@ Email: **contact@opengauss.org**
 
 Hotline: **+86 187-4087-2239**
 
-Last updated: **March 14, 2024**
+Last updated: **October 14, 2024**
 
-Privacy policy version: **v20240314**
+Privacy policy version: **v20241031**
 
 </div>

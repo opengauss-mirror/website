@@ -5,7 +5,7 @@ import { postFeedback } from '@/api/api-feedback';
 import { ElMessage } from 'element-plus';
 
 import useWindowResize from '@/components/hooks/useWindowResize';
-import { VULBOX_LINK, GAUSS_EMAIL } from '@/data/url-config';
+import { VULBOX_LINK, GAUSS_EMAIL, HUAWEI_COMPUTE } from '@/data/url-config';
 import { handleError } from '@/shared/utils';
 
 import IconTop from '~icons/float/icon-top.svg';
@@ -18,6 +18,9 @@ import IconHeadsetBig from '~icons/float/icon-headset-big.svg';
 const screenWidth = useWindowResize();
 const { lang } = useData();
 const router = useRouter();
+
+// 满意度问卷
+const QUESTIONNAIRE_URL = `${HUAWEI_COMPUTE}/vm/OlCIbg8.aspx#`;
 
 // 漏洞奖励计划浮窗
 const isSafetyFloatShow = ref(false);
@@ -428,6 +431,9 @@ onMounted(() => {
             </div>
           </div>
           <div class="nav-box">
+            <a :href="QUESTIONNAIRE_URL" target="_blank" rel="noopener noreferrer">
+              <div class="nav-box-question">满意度问卷</div>
+            </a>
             <div class="nav-box1">
               <div
                 class="nav-item"
@@ -1019,7 +1025,27 @@ onMounted(() => {
         }
       }
     }
+    .nav-box-question {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 48px;
+      height: 134px;
+      background-image: url('@/assets/category/float/float-question.png');
+      text-align: center;
+      color: var(--o-color-white);
+      writing-mode: vertical-lr;
+      letter-spacing: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: var(--o-shadow-l1);
+
+      &:hover {
+        background-image: url('@/assets/category/float/float-question-hover.png');
+      }
+    }
     .nav-box1 {
+      margin-top: 12px;
       box-shadow: var(--o-shadow-l1);
     }
     .nav-box2 {
