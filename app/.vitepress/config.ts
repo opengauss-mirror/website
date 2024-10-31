@@ -73,7 +73,13 @@ const config: UserConfig = {
     }
     const locale = filePath.slice(0, 2) as 'zh' | 'en';
     const tdkInfo = tdks[locale]?.[lookupKey];
-    pageData.titleTemplate = tdks.titleSuffix[locale];
+    if (lookupKey === 'zh') {
+      pageData.titleTemplate = 'openGauss社区官网';
+    } else if (lookupKey === 'en') {
+      pageData.titleTemplate = 'openGauss Official Website';
+    } else {
+      pageData.titleTemplate = `:title | ${tdks.titleSuffix[locale]}`;
+    }
     if (!tdkInfo || isBlog.test(lookupKey)) {
       const frontmatter = pageData.frontmatter;
       const description = frontmatter?.summary || frontmatter?.Summary;
@@ -86,7 +92,6 @@ const config: UserConfig = {
     description && (pageData.description = description);
     if (title) {
       pageData.title = title;
-      pageData.titleTemplate = tdks.titleSuffix[locale];
     }
     if (keywords) {
       pageData.frontmatter.head ??= [];

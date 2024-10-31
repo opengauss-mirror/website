@@ -5,7 +5,7 @@ export default {
   zh,
   en,
   titleSuffix: {
-    zh: 'openGauss社区官网',
-    en: 'openGauss Official Website',
+    zh: 'openGauss社区',
+    en: 'openGauss',
   }
 };
