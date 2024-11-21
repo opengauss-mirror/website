@@ -504,6 +504,7 @@ import xvxiaoqin from '@/assets/category/member/avatar/xvxiaoqin.png';
 import wangxiaofei from '@/assets/category/member/avatar/wangxiaofei.png';
 import xucheng from '@/assets/category/member/avatar/xucheng.png';
 import sunmin3 from '@/assets/category/member/avatar/sunmin3.png';
+import guangang from '@/assets/category/member/avatar/guangang.png';
 
 import { GITEE_LINK } from '@/data/url-config';
 export default {
@@ -1198,11 +1199,11 @@ export default {
         gitee: `${GITEE_LINK}Yoota_zhu`,
       },
       {
-        img: xieweiping1,
-        name: `谢卫平`,
+        img: guangang,
+        name: `关刚`,
         title: `Member`,
-        email: `xiewp@vastdata.com.cn`,
-        gitee: `${GITEE_LINK}junhangis`,
+        email: `guangang@vastadata.com.cn`,
+        gitee: `${GITEE_LINK}guangang1981`,
       },
       {
         img: lishifu,
@@ -5466,11 +5467,11 @@ export default {
         gitee: `${GITEE_LINK}Yoota_zhu`,
       },
       {
-        img: xieweiping1,
-        name: `Weiping Xie`,
+        img: guangang,
+        name: `Gang Guan`,
         title: `Member`,
-        email: `xiewp@vastdata.com.cn`,
-        gitee: `${GITEE_LINK}junhangis`,
+        email: `guangang@vastadata.com.cn`,
+        gitee: `${GITEE_LINK}guangang1981`,
       },
       {
         img: lishifu,
