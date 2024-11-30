@@ -6,6 +6,14 @@ import {
 export default {
   zh: [
     {
+      pro: 'LNXDB-RDS V3.4.4 私有云数据库',
+      name: '北京太阳塔信息科技有限责任公司',
+      version: 'openGauss 5.0.0',
+      award: '2024-11-19',
+      expiration: '2026-03-31',
+      certificate: `${OBS_CERTIFICATION_LINK}%E5%A4%AA%E9%98%B3%E5%A1%94/V3.4.4/Certificate.pdf`,
+    },
+    {
       pro: '鼎桥数据库 TDDB V1.0.0',
       name: '鼎桥通信技术有限公司',
       version: 'openGauss 5.0.0',
@@ -226,6 +234,14 @@ export default {
     },
   ],
   en: [
+    {
+      pro: 'LNXDB-RDS V3.4.4 私有云数据库',
+      name: '北京太阳塔信息科技有限责任公司',
+      version: 'openGauss 5.0.0',
+      award: '2024-11-19',
+      expiration: '2026-03-31',
+      certificate: `${OBS_CERTIFICATION_LINK}%E5%A4%AA%E9%98%B3%E5%A1%94/V3.4.4/Certificate.pdf`,
+    },
     {
       pro: '鼎桥数据库 TDDB V1.0.0',
       name: '鼎桥通信技术有限公司',

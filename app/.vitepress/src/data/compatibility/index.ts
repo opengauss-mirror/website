@@ -1,5 +1,49 @@
 export default [
   {
+    name: 'UDCAP变电站综合自动化系统',
+    version: '2',
+    type: '能源',
+    company: '清能华控科技有限公司',
+    database: 'openGauss 5.0.3',
+    os: 'CentOS 7.9',
+    server: 'Intel(其他)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%B8%85%E8%83%BD%E5%8D%8E%E6%8E%A7/V2/UDCAP.pdf',
+  },
+  {
+    name: 'ePower电力集控（调度）系统',
+    version: '2',
+    type: '能源',
+    company: '清能华控科技有限公司',
+    database: 'openGauss 5.0.3',
+    os: 'CentOS 7.9',
+    server: 'Intel(其他)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%B8%85%E8%83%BD%E5%8D%8E%E6%8E%A7/V2/ePower.pdf',
+  },
+  {
+    name: '数据中心智慧运营管理平台 WiseEMP-DCIM',
+    version: '1.0',
+    type: '能源',
+    company: '科华数据股份有限公司',
+    database: 'openGauss 5.0.3',
+    os: 'openEuler 22.03',
+    server: 'Intel(其他)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E7%A7%91%E5%8D%8E%E6%95%B0%E6%8D%AE/V1.0/Certificate.pdf',
+  },
+  {
+    name: '履安智能物联超融合平台',
+    version: '4.0',
+    type: '安平',
+    company: '广东履安实业有限公司',
+    database: 'openGauss 5.0.3',
+    os: 'Kylin V10 SP2',
+    server: 'Kunpeng 920 (Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%B1%A5%E5%AE%89%E5%AE%9E%E4%B8%9A/V4.0/Certificate.pdf',
+  },
+  {
     name: '东华医为数字化医院信息管理系统（信创版）',
     version: '1.0',
     type: '医疗',
