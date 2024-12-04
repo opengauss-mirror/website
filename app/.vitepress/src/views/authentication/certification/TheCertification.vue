@@ -111,7 +111,7 @@ onMounted(() => {
     </div>
     <OTable class="pc-list" :data="randerData" style="width: 100%">
       <OTableColumn
-        width="250"
+        width="300"
         :label="i18n.certification.pro"
         prop="pro"
         show-overflow-tooltip
