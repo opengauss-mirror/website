@@ -290,18 +290,14 @@
   font-size: var(--o-font-size-h7);
   letter-spacing: 0;
   line-height: var(--o-line-height-h8);
-  font-weight: 300;
   margin-bottom: var(--o-spacing-h6);
 }
-.markdown-statement h3 {
-  font-weight: 300;
-}
+
 @media screen and (max-width: 768px) {
   .markdown-statement h2 {
     font-size: var(--o-font-size-text);
     letter-spacing: 0;
     line-height: var(--o-line-height-text);
-    font-weight: 300;
     margin-bottom: var(--o-spacing-h8);
   }
 }
