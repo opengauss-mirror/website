@@ -144,7 +144,6 @@
     display: none;
   }
 
-
   table {
     width: 100%;
     font-size: var(--o-font-size-text);
@@ -267,6 +266,18 @@
   max-width: 880px;
   background: var(--o-color-bg1);
   box-shadow: none;
+  ol {
+    list-style-type: decimal;
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+
+  ol li::marker,
+  ul li::marker {
+    color: inherit;
+  }
 }
 @media screen and (max-width: 768px) {
   .markdown-statement {
