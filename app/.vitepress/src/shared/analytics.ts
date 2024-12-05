@@ -27,12 +27,9 @@ export const initSensor = () => {
 };
 
 export const removeSensor = () => {
-  const scripts = document.getElementsByClassName('analytics-script');
-  const head = document.getElementsByTagName('HEAD')[0];
-  for (let i = 0, len = scripts.length; i < len; i++) {
-    const script = scripts[i];
-    if (script && head.contains(script)) {
-      head.removeChild(script);
-    }
-  }
+  const scripts = document.querySelectorAll('script.analytics-script');
+
+  scripts.forEach((script) => {
+    script.remove();
+  });
 };

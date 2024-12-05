@@ -20,31 +20,45 @@ openGauss 社区有时会在计算机或移动设备上存储 Cookie，我们启
 
 1. 严格必要的 Cookie：当您使用网站时，Cookie 将确保您对该网站的访问尽可能顺利、安全；
    - **a)** 账号 Cookie：\_Y_G\_
-     来源：openGauss 网站
-     到期时间：会话
-     目的：维护用户登录会话
+            <br/>
+            来源：openGauss 网站
+            <br/>
+            到期时间：会话
+             <br/>
+            目的：维护用户登录会话
    - **b)** 账号 Cookie：\_U_T\_
-     来源：openGauss 网站
-     到期时间：30 分钟
-     目的：防止跨站请求伪造攻击
+            <br/>
+            来源：openGauss 网站
+            <br/>
+            到期时间：30 分钟
+            <br/>
+            目的：防止跨站请求伪造攻击
    - **c)** Web 应用防火墙 Cookie ：HWWAFSESID，HWWAFSESID
-     来源：华为云 Waf
-     到期时间：会话
-     目的：防止恶意攻击
-
+            <br/>
+            来源：华为云 Waf
+            <br/>
+            到期时间：会话
+            <br/>
+            目的：防止恶意攻击
 2. 存储您的偏好和设置。网站能够借助 Cookie 来保存设置，如计算机或移动设备的语言、网站主题风格和其他浏览偏好等；
    - **a)** agreed-cookiepolicy
-     来源：openGauss 网站
-     到期时间：6 个月
-     目的：记录您对非必要 Cookie 的选择
+            <br/>
+            来源：openGauss 网站
+            <br/>
+            到期时间：6 个月
+            <br/>
+             目的：记录您对非必要 Cookie 的选择
    - **b)** openGauss-theme-appearance
-     来源：openGauss 网站
-     到期时间：6 个月
-     目的：记录您对网站主题风格的选择
-
+            <br/>
+            来源：openGauss 网站
+            <br/>
+            到期时间：6 个月
+            <br/>
+            目的：记录您对网站主题风格的选择
 3. 统计分析。用于收集用户如何访问网页, 以便帮助我们了解本服务是如何运行、使用的。
    - **a)** 百度统计 Cookie
-     有关 Cookie 的名称、来源、处理目的及留存期，请参见：[百度统计相关 Cookie 列表](https://tongji.baidu.com/holmes/Analytics/%E9%9A%90%E7%A7%81%E5%90%88%E8%A7%84%E6%8C%87%E5%8D%97/%E7%99%BE%E5%BA%A6%E7%BB%9F%E8%AE%A1%E7%9B%B8%E5%85%B3Cookie%E5%88%97%E8%A1%A8/)
+            <br/>
+            有关 Cookie 的名称、来源、处理目的及留存期，请参见：[百度统计相关 Cookie 列表](https://tongji.baidu.com/holmes/Analytics/%E9%9A%90%E7%A7%81%E5%90%88%E8%A7%84%E6%8C%87%E5%8D%97/%E7%99%BE%E5%BA%A6%E7%BB%9F%E8%AE%A1%E7%9B%B8%E5%85%B3Cookie%E5%88%97%E8%A1%A8/)
 
 openGauss 社区不会将 Cookie 用于本声明所述目的之外的任何用途。您可根据自己的偏好管理或删除 Cookie。有关详情，请参见 [AboutCookies.org](https://www.aboutcookies.org/)。您可以清除计算机上保存的所有 Cookie，大部分网络浏览器都设有阻止 Cookie 的功能。但如果您这么做，则需要在每一次访问我们的网站时亲自更改用户设置。如需详细了解如何更改浏览器设置，请访问以下链接：[internet Explorer](https://support.microsoft.com/zh-cn/help/17442/windows-internet-explorer-delete-manage-cookies)、 [google Chrome](https://support.google.com/chrome/answer/95647)、 [mozilla Firefox](https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer?redirectlocale=en-US&redirectslug=Cookies)、 [safari](https://support.apple.com/kb/PH19214?locale=zh_CN) 和 [opera](https://help.opera.com/en/latest/security-and-privacy/)。
 
