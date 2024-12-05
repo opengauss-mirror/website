@@ -1,12 +1,14 @@
 <script setup lang="ts">
+import { computed } from 'vue';
+import type { Component } from 'vue';
+import { useData } from 'vitepress';
+
+import zhCn from 'element-plus/lib/locale/lang/zh-cn';
+import en from 'element-plus/lib/locale/lang/en';
+
 import AppHeader from '@/components/header/AppHeader.vue';
 import AppFooter from '@/components/AppFooter.vue';
 import CookieNotice from '@/components/CookieNotice.vue';
-import { useData } from 'vitepress';
-import type { Component } from 'vue';
-import { computed, onMounted } from 'vue';
-import zhCn from 'element-plus/lib/locale/lang/zh-cn';
-import en from 'element-plus/lib/locale/lang/en';
 
 import LayoutSecurity from '@/layouts/LayoutSecurity.vue';
 import LayoutBlog from '@/layouts/LayoutBlog.vue';
@@ -47,11 +49,6 @@ const isCustomLayout = computed(() => {
 });
 const comp = computed(() => {
   return compMapping[frontmatter.value.category];
-});
-
-onMounted(() => {
-  window.xxx = comp;
-  window.aaa = isCustomLayout;
 });
 </script>
 

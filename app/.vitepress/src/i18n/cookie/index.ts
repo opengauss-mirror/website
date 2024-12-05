@@ -13,7 +13,8 @@ export default {
     analyticalCookie: '统计分析Cookie',
     analyticalCookieDetail:
       '我们将根据您的同意使用和处理这些非必要Cookie。这些Cookie允许我们获得摘要统计数据，例如，统计访问量和访问者来源，便于我们改进我们的网站。',
-    saveSetting: '保存并接受',
+    saveSetting: '保存设置',
+    setting: 'Cookie设置',
   },
   en: {
     title: 'openGauss Community Respects Your Privacy',
@@ -29,6 +30,7 @@ export default {
     analyticalCookie: 'Analytics Cookies',
     analyticalCookieDetail:
       'We will use these cookies only with your consent. These cookies help us make improvements by collecting statistics such as the number of visits and traffic sources.',
-    saveSetting: 'Save and Accept',
+    saveSetting: 'Save Settings',
+    setting: 'Cookie settings',
   },
 };

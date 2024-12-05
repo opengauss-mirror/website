@@ -10,8 +10,8 @@ import {
 } from '@/shared/utils';
 import { useCookieStore } from '@/stores/common';
 import { useScreen } from '@/shared/useScreen';
+import { initSensor, removeSensor } from '@/shared/analytics';
 import { useI18n } from '@/i18n';
-import { BAIDU_HM } from '@/data/url-config';
 
 import IconClose from '~icons/app/icon-cancel.svg';
 
@@ -30,20 +30,17 @@ const COOKIE_AGREED_STATUS = {
   NECCESSARY_AGREED: '2', // 仅同意必要cookie
 };
 
-const COOKEY_KEY = 'agreed-cookiepolicy';
+const COOKIE_KEY = 'agreed-cookiepolicy';
 
 // 是否允许分析cookie
 const analysisAllowed = ref(false);
 
-// cookie提示是否显示
-const isNoticeVisible = ref(false);
-
 // 显示/隐藏cookie提示
 const toggleNoticeVisible = (val: boolean) => {
   if (isBoolean(val)) {
-    isNoticeVisible.value = val;
+    cookieStore.isNoticeVisible = val;
   } else {
-    isNoticeVisible.value = !isNoticeVisible.value;
+    cookieStore.isNoticeVisible = !cookieStore.isNoticeVisible;
   }
 };
 
@@ -55,13 +52,13 @@ const toggleDlgVisible = (val: boolean) => {
   if (isBoolean(val)) {
     isDlgVisible.value = val;
   } else {
-    isDlgVisible.value = !isNoticeVisible.value;
+    isDlgVisible.value = !isDlgVisible.value;
   }
 };
 
 // 获取cookie状态
 const getUserCookieStatus = () => {
-  const cookieVal = getCustomCookie(COOKEY_KEY) ?? '0';
+  const cookieVal = getCustomCookie(COOKIE_KEY) ?? '0';
 
   const cookieStatusVal = cookieVal[0];
   const cookieVersionVal = cookieVal.slice(1);
@@ -89,29 +86,6 @@ const isAllAgreed = () => {
   return getUserCookieStatus() === COOKIE_AGREED_STATUS.ALL_AGREED;
 };
 
-// 埋点 百度统计
-const initSensor = () => {
-  // 百度统计
-  (function () {
-    const hm = document.createElement('script');
-    hm.src = BAIDU_HM;
-    const s = document.getElementsByTagName('HEAD')[0];
-    s.appendChild(hm);
-  })();
-
-  // ds埋点
-  (function () {
-    const sensorsdata = document.createElement('script');
-    sensorsdata.src = '/allow_sensor/sensorsdata.min.js';
-
-    const hm = document.createElement('script');
-    hm.src = '/allow_sensor/sensors.js';
-    const s = document.getElementsByTagName('HEAD')[0];
-    s.appendChild(sensorsdata);
-    s.appendChild(hm);
-  })();
-};
-
 onMounted(() => {
   // 未签署，展示cookie notice
   if (isNotSigned()) {
@@ -127,23 +101,30 @@ onMounted(() => {
 
 // 用户同意所有cookie
 const acceptAll = () => {
+  if (cookieStore.status !== COOKIE_AGREED_STATUS.ALL_AGREED) {
+    initSensor();
+  }
+  analysisAllowed.value = true;
   cookieStore.status = COOKIE_AGREED_STATUS.ALL_AGREED;
-  removeCustomCookie(COOKEY_KEY);
+  removeCustomCookie(COOKIE_KEY);
   setCustomCookie(
-    COOKEY_KEY,
+    COOKIE_KEY,
     `${COOKIE_AGREED_STATUS.ALL_AGREED}${cookieStore.version}`,
     180
   );
   toggleNoticeVisible(false);
-  initSensor();
 };
 
 // 用户拒绝所有cookie，即仅同意必要cookie
 const rejectAll = () => {
+  if (cookieStore.status !== COOKIE_AGREED_STATUS.NECCESSARY_AGREED) {
+    removeSensor();
+  }
+  analysisAllowed.value = false;
   cookieStore.status = COOKIE_AGREED_STATUS.NECCESSARY_AGREED;
-  removeCustomCookie(COOKEY_KEY);
+  removeCustomCookie(COOKIE_KEY);
   setCustomCookie(
-    COOKEY_KEY,
+    COOKIE_KEY,
     `${COOKIE_AGREED_STATUS.NECCESSARY_AGREED}${cookieStore.version}`,
     180
   );
@@ -161,7 +142,6 @@ const handleSave = () => {
 };
 
 const handleAllowAll = () => {
-  analysisAllowed.value = true;
   acceptAll();
   toggleDlgVisible(false);
 };
@@ -186,7 +166,7 @@ watch(
 </script>
 
 <template>
-  <div v-if="isNoticeVisible" class="cookie-notice">
+  <div v-if="cookieStore.isNoticeVisible" class="cookie-notice">
     <div class="cookie-notice-content">
       <div class="cookie-notice-wrap">
         <div class="cookie-notice-left">

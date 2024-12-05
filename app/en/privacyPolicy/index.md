@@ -16,8 +16,8 @@ The openGauss Community understands the importance of your privacy and fully res
 
 **a) Account Service**
 
-1) When you register for an openGauss community account, we will collect your user name, **email address**, **phone number**, **password**, and **email**/phone verification code. A unique account identifier will be automatically generated. Refusal to provide this information will prevent account creation.
-2) When you log in to the openGauss community using your user name, **email address**, or **phone number**, we will collect the provided credentials and verification code for authentication. Refusal to provide this information will prevent login.
+1) When you register for an openGauss community account, we will collect your user name, **email address**, **phone number**, **password**, and **email**/**phone verification code**. A unique account identifier will be automatically generated. Refusal to provide this information will prevent account creation.
+2) When you log in to the openGauss community using your user name, **email address**, or **phone number**, we will collect the provided credentials and **verification code** for authentication. Refusal to provide this information will prevent login.
 3) When you log in using a third-party account (Gitee), we will collect your user name, user ID, nickname, avatar, and **email address** from that platform for authentication and code repository access management. When you log in using a third-party account that is not bound to any openGauss account, a new openGauss account with a unique identifier will be automatically generated, deriving its user name from your third-party account. Refusal to provide this information will prevent login via third-party accounts.
 4) After logging in, you can optionally provide your avatar, nickname, and **company name**. This information is not required for using openGauss community features.
 5) After logging in, you can modify your **email address**, **phone number**, and **password**, we will collect the provided credentials and verification code for authentication.
