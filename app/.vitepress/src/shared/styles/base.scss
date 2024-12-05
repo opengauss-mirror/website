@@ -36,6 +36,9 @@ img {
 a {
   color: var(--o-color-link1);
   text-decoration: none;
+  &:hover {
+    color: var(--o-color-link2);
+  }
   &:active {
     color: var(--o-color-link3);
   }
