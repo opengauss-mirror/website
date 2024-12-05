@@ -1,6 +1,8 @@
 import type { UserConfig } from 'vitepress';
-import tdks from './tdks'
+import tdks from './tdks';
 import { createRequire } from 'node:module';
+import fs from 'node:fs';
+import path from 'node:path';
 const require = createRequire(import.meta.url);
 
 const isBlog = /.+\/(?:userPractice|events|news)\/.+$/;
@@ -9,13 +11,15 @@ const config: UserConfig = {
   sitemap: {
     hostname: 'https://opengauss.org',
     transformItems(items) {
-      const records = require('./records.json');
-      items.forEach((item) => {
-        const timestamp = records[item.url];
-        if (timestamp) {
-          item.lastmod = new Date(timestamp);
-        }
-      })
+      if (fs.existsSync(path.join(__dirname, 'records.json'))) {
+        const records = require('./records.json');
+        items.forEach((item) => {
+          const timestamp = records[item.url];
+          if (timestamp) {
+            item.lastmod = new Date(timestamp);
+          }
+        });
+      }
       return items;
     },
   },
@@ -84,7 +88,7 @@ const config: UserConfig = {
       const frontmatter = pageData.frontmatter;
       const description = frontmatter?.summary || frontmatter?.Summary;
       if (!pageData.description && description) {
-        pageData.description = description
+        pageData.description = description;
       }
       return;
     }
@@ -97,7 +101,7 @@ const config: UserConfig = {
       pageData.frontmatter.head ??= [];
       pageData.frontmatter.head.push([
         'meta',
-        { name: 'keywords', content: keywords }
+        { name: 'keywords', content: keywords },
       ]);
     }
   },
@@ -132,6 +136,6 @@ const config: UserConfig = {
       });
     },
   },
-  ignoreDeadLinks:true,
+  ignoreDeadLinks: true,
 };
 export default config;
