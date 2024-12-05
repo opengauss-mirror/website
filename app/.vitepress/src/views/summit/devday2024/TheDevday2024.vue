@@ -21,12 +21,12 @@ import appSubForumGuests from './data/appSubForumGuests';
 const commonStore = useCommon();
 const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
 
-import { useCookieStatus } from '@/stores/common';
+import { useCookieStore } from '@/stores/common';
 
 import { getUrlParams } from '@/shared/utils';
 
 const hasReported = ref(false);
-const cookieStatus = useCookieStatus();
+const cookieStatus = useCookieStore();
 
 // 埋点统计投放流量
 function collectAdvertisedData() {

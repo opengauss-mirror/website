@@ -2,7 +2,7 @@
 title: 'Legal Notice'
 ---
 
-<div class='markdown legal-privacy' >
+<div class='markdown markdown-statement' >
 
 <h1>Legal Notice</h1>
 

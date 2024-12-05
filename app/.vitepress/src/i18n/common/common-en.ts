@@ -47,22 +47,27 @@ export default {
       {
         NAME: `Trademark`,
         URL: `/en/brand/`,
-        TARGET: `_self`,
+        TARGET: `_blank`,
       },
       {
         NAME: `Privacy Policy`,
         URL: `/en/privacyPolicy/`,
-        TARGET: `_self`,
+        TARGET: `_blank`,
       },
       {
         NAME: `Legal Notice`,
         URL: `/en/legal/`,
-        TARGET: `_self`,
+        TARGET: `_blank`,
+      },
+      {
+        NAME: `About Cookies`,
+        URL: `/zh/cookies/`,
+        TARGET: `_blank`,
       },
       {
         NAME: `About Us`,
         URL: `/en/aboutUs/`,
-        TARGET: `_self`,
+        TARGET: `_blank`,
       },
     ],
     QR_CODE: `WeChat Subscription`,

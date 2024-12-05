@@ -2,7 +2,7 @@
 title: '关于我们'
 ---
 
-<div class='markdown legal-privacy' >
+<div class='markdown markdown-statement' >
 <h1>关于我们</h1>
 
 openGauss是一款融合了高性能、高可靠、高安全与高智能特性的开源数据库，以技术创新为核心，通过资源池化架构，软硬协同优化等领先技术，全面提升集群性能，同时支持金融级高可用和大容量数据处理，内置AI能力，打造大模型数据基座，并与伙伴携手共同推动openGauss生态繁荣。

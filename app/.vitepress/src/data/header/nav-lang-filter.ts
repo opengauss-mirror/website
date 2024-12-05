@@ -90,6 +90,10 @@ export default [
     lang: ['zh', 'en'],
   },
   {
+    name: 'cookies',
+    lang: ['zh', 'en'],
+  },
+  {
     name: 'aboutUs',
     lang: ['zh', 'en'],
   },

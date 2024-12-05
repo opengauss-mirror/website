@@ -12,10 +12,10 @@ import liveLight from './img/live.png';
 import liveDark from './img/live-dark.png';
 
 import summitData from './data';
-import { useCommon, useCookieStatus } from '@/stores/common';
+import { useCommon, useCookieStore } from '@/stores/common';
 import { getUrlParams } from '@/shared/utils';
 
-const cookieStatus = useCookieStatus();
+const cookieStore = useCookieStore();
 const commonStore = useCommon();
 const liveImg = computed(() =>
   commonStore.theme === 'light' ? liveLight : liveDark
@@ -62,7 +62,7 @@ function collectAdvertisedData() {
 }
 onMounted(() => {
   setTimeout(() => {
-    if (cookieStatus.isAllAgreed) {
+    if (cookieStore.isAllAgreed) {
       collectAdvertisedData();
     }
   }, 300);
