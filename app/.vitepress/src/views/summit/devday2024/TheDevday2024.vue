@@ -24,6 +24,7 @@ const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
 import { useCookieStore } from '@/stores/common';
 
 import { getUrlParams } from '@/shared/utils';
+import { oa } from '@/shared/analytics';
 
 const hasReported = ref(false);
 const cookieStatus = useCookieStore();
@@ -33,7 +34,6 @@ function collectAdvertisedData() {
   if (hasReported.value) {
     return;
   }
-  const sensors = (window as any)['sensorsDataAnalytic201505'];
   const { href } = window.location;
   const regex = /[\?&]utm_source=/;
   const containsUtmSource = regex.test(href);
@@ -41,12 +41,10 @@ function collectAdvertisedData() {
     return;
   }
   const paramsArr = getUrlParams(href);
-  sensors?.setProfile({
-    ...(window as any)['sensorsCustomBuriedData'],
-    profileType: 'fromAdvertised',
+  oa.report('fromAdvertised', () => ({
     origin: href,
     ...paramsArr,
-  });
+  }));
   history.pushState(null, '', location.origin + location.pathname);
   hasReported.value = true;
 }
