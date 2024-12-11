@@ -69,8 +69,8 @@ export default [
                   person: [
                     {
                       id: 'agenda27_1_1_1_1',
-                      name: '特邀嘉宾',
-                      post: '特邀嘉宾',
+                      name: '钱德沛',
+                      post: '中国科学院院士，北京航空航天大学教授、博士生导师，中国计算机学会会士',
                     },
                   ],
                   detail: '',
@@ -129,40 +129,41 @@ export default [
                 },
                 {
                   id: 'agenda27_1_1_5',
-                  time: '09:55-10:20',
-                  desc: '同创共赢，走出一条开源数据库根社区之路',
-                  person: [
+                  time: '09:55-10:25',
+                  children: [
                     {
-                      id: 'agenda27_1_1_5_1',
-                      name: '熊伟',
-                      post: 'openGauss社区理事长',
+                      desc: '同创共赢，走出一条开源数据库根社区之路',
+                      person: [
+                        {
+                          id: 'agenda27_1_1_5_1',
+                          name: '熊伟',
+                          post: 'openGauss社区理事长',
+                        },
+                        {
+                          id: 'agenda27_1_1_5_2',
+                          name: '孙虎',
+                          post: '华为公司服务Fellow 2012服务实验室主任',
+                        },
+                        {
+                          id: 'agenda27_1_1_5_3',
+                          name: '特邀嘉宾',
+                          post: '特邀嘉宾',
+                        },
+                      ],
                     },
                     {
-                      id: 'agenda27_1_1_5_2',
-                      name: '孙虎',
-                      post: '华为公司服务Fellow 2012服务实验室主任',
-                    },
-                    {
-                      id: 'agenda27_1_1_5_3',
-                      name: '特邀嘉宾',
-                      post: '特邀嘉宾',
+                      desc: '见证仪式',
+                      person: [
+                        {
+                          id: 'agenda27_1_1_6_1',
+                          name: '',
+                          post: '特邀嘉宾、获奖成员代表',
+                        },
+                      ],
                     },
                   ],
                   detail: '',
                   pptLink: [],
-                },
-                {
-                  id: 'agenda27_1_1_6',
-                  time: '10:20-10:25',
-                  desc: '见证仪式',
-                  person: [
-                    {
-                      id: 'agenda27_1_1_6_1',
-                      name: '',
-                      post: '特邀嘉宾、获奖成员代表',
-                    },
-                  ],
-                  detail: '',
                 },
                 {
                   id: 'agenda27_1_1_7',

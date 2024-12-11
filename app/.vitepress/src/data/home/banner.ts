@@ -18,11 +18,32 @@ import bannerOpenGaussV6Mo from '@/assets/category/home/banner/banner-opengaussv
 import banner600Pc from '@/assets/category/home/banner/banner-opengauss-6.0.0-pc.jpg';
 import banner600Mo from '@/assets/category/home/banner/banner-opengauss-6.0.0-mo.jpg';
 
+import banner20241211 from '@/assets/category/home/banner/banner_pc20241211.jpg';
+import banner20241211_mb from '@/assets/category/home/banner/banner_mo20211211.jpg';
+import banner_text20241211 from '@/assets/category/home/banner/banner_text_pc20241211.png';
+import banner_text20241211_mb from '@/assets/category/home/banner/banner_text_mo20241211.png';
+
 import { LEARN_VIDEO_LINK, DOCS_LINK } from '@/data/url-config';
 
 // rightInset:banner右侧插图
 export default {
   zh: [
+    {
+      pcBanner: banner20241211,
+      moBanner: banner20241211_mb,
+      link: '/zh/summit/summit2024/',
+      target: '_blank',
+      title: '',
+      titleMb: [],
+      subtitle: '',
+      desc: [''],
+      btn: '了解更多',
+      className: 'summit202412',
+      rightInset: '',
+      rightLink: '',
+      textImg: banner_text20241211,
+      textImgMb: banner_text20241211_mb,
+    },
     {
       pcBanner: banner600Pc,
       moBanner: banner600Mo,

@@ -70,63 +70,93 @@ watch(
             :class="{
               'show-detail':
                 idSubItemShow === subItem.id && idShow === itemList.id,
+              'content-children': subItem.children,
             }"
           >
             <span v-if="subItem.time" class="time">
               <IconTime v-show="subItem.time" />
               {{ subItem.time }}
             </span>
-            <span
-              class="desc"
-              :class="{ 'exit-detail': subItem.detail }"
-              @click="changeIndexShow(itemList.id, subItem.id)"
-            >
-              <span
-                v-for="item in subItem.desc.split('\n')"
-                :key="item + '1'"
-                >{{ item }}</span
+            <div v-if="subItem.children">
+              <div
+                v-for="(child, c) in subItem.children"
+                :key="c"
+                class="children-item"
               >
-            </span>
-            <div v-if="subItem.person[0]" class="name-box">
-              <div v-for="personItem in subItem.person" :key="personItem.id">
-                <span class="name">
-                  {{ personItem.name }}
+                <span class="desc" :class="{ 'exit-detail': child.detail }">
+                  <span
+                    v-for="item in child.desc.split('\n')"
+                    :key="item + '1'"
+                    >{{ item }}</span
+                  >
                 </span>
-                <span v-if="personItem.post" class="post">
-                  {{ personItem.post }}
-                </span>
+                <div v-if="child.person[0]" class="name-box">
+                  <div v-for="personItem in child.person" :key="personItem.id">
+                    <span class="name">
+                      {{ personItem.name }}
+                    </span>
+                    <span v-if="personItem.post" class="post">
+                      {{ personItem.post }}
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
-            <div v-if="subItem.detail" class="detail">
-              <p>
-                <span>议题名称：</span
-                ><span
-                  ><span v-for="item in subItem.desc.split('\n')" :key="item">{{
-                    item
-                  }}</span></span
+            <template v-else>
+              <span
+                class="desc"
+                :class="{ 'exit-detail': subItem.detail }"
+                @click="changeIndexShow(itemList.id, subItem.id)"
+              >
+                <span
+                  v-for="item in subItem.desc.split('\n')"
+                  :key="item + '1'"
+                  >{{ item }}</span
                 >
-              </p>
-              <p v-if="subItem.detail">
-                <span>议题简介：</span>
-                <span>
-                  <span v-for="item in subItem.detail.split('\n')" :key="item"
-                    >{{ item }}
+              </span>
+              <div v-if="subItem.person[0]" class="name-box">
+                <div v-for="personItem in subItem.person" :key="personItem.id">
+                  <span class="name">
+                    {{ personItem.name }}
                   </span>
-                </span>
-              </p>
-              <p v-if="subItem.person[0]">
-                <span>发言人：</span>
-                <span>
-                  <span
-                    v-for="personItem in subItem.person"
-                    :key="personItem.id"
-                    class="person-box"
-                    >{{ personItem.name }}
-                    <span v-if="personItem.post">{{ personItem.post }}</span>
+                  <span v-if="personItem.post" class="post">
+                    {{ personItem.post }}
                   </span>
-                </span>
-              </p>
-            </div>
+                </div>
+              </div>
+              <div v-if="subItem.detail" class="detail">
+                <p>
+                  <span>议题名称：</span
+                  ><span
+                    ><span
+                      v-for="item in subItem.desc.split('\n')"
+                      :key="item"
+                      >{{ item }}</span
+                    ></span
+                  >
+                </p>
+                <p v-if="subItem.detail">
+                  <span>议题简介：</span>
+                  <span>
+                    <span v-for="item in subItem.detail.split('\n')" :key="item"
+                      >{{ item }}
+                    </span>
+                  </span>
+                </p>
+                <p v-if="subItem.person[0]">
+                  <span>发言人：</span>
+                  <span>
+                    <span
+                      v-for="personItem in subItem.person"
+                      :key="personItem.id"
+                      class="person-box"
+                      >{{ personItem.name }}
+                      <span v-if="personItem.post">{{ personItem.post }}</span>
+                    </span>
+                  </span>
+                </p>
+              </div>
+            </template>
           </div>
           <div v-if="false" class="mask" @click="changeIndexShow('', '')"></div>
         </div>
@@ -548,6 +578,32 @@ watch(
           bottom: auto;
         }
       }
+    }
+  }
+  .content-children {
+    grid-template-columns: 192px auto;
+    padding: 0;
+    @media screen and (max-width: 1100px) {
+      grid-template-columns: 80px auto;
+    }
+    .children-item {
+      display: grid;
+      grid-template-columns: 580px auto;
+      padding: 20px 0;
+      @media screen and (max-width: 1342px) {
+        grid-template-columns: 450px auto;
+      }
+      @media screen and (max-width: 1100px) {
+        display: block;
+        grid-template-columns: auto auto;
+      }
+      .desc {
+        display: flex;
+        align-items: center;
+      }
+    }
+    .children-item + .children-item {
+      border-top: 1px solid var(--o-color-border2);
     }
   }
   .mask {
