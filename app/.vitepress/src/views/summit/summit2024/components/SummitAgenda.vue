@@ -40,7 +40,6 @@ const renderData = computed<Array<Object>>(() => {
 <template>
   <div class="summit-agenda">
     <div class="title-box" :class="{ 'title-box-dark': !isLight }">
-      <p class="title-bg">{{ agendaData.titleBg }}</p>
       <p class="title">{{ agendaData.title }}</p>
     </div>
     <div class="date">

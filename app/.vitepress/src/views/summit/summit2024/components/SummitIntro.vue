@@ -16,7 +16,6 @@ const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
 <template>
   <div class="summit-intro">
     <div class="title-box" :class="{ 'title-box-dark': !isLight }">
-      <p class="title-bg">{{ introData.titleBg }}</p>
       <p class="title">{{ introData.title }}</p>
     </div>
     <ul class="list">
