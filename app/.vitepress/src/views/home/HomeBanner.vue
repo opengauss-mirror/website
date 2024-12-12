@@ -57,7 +57,10 @@ const clickRightInset = (path: string) => {
       <el-carousel-item v-for="item in homeBanner" :key="item.link">
         <div
           class="banner-img"
-          :class="{ 'no-btn': !item.btn && item.link, [item.className]: item.className }"
+          :class="{
+            'no-btn': !item.btn && item.link,
+            [item.className]: item.className,
+          }"
           :style="`background:url(${
             windowWidth > 767 ? item.pcBanner : item.moBanner
           }) no-repeat top center/cover;`"
@@ -90,6 +93,12 @@ const clickRightInset = (path: string) => {
                     itemDesc
                   }}</span>
                 </p>
+                <img
+                  v-if="item.textImg"
+                  class="text-img"
+                  :src="windowWidth > 767 ? item.textImg : item.textImgMb"
+                  alt=""
+                />
               </div>
               <div v-if="item.btn" class="btn-box">
                 <OButton
@@ -324,6 +333,30 @@ html[lang='zh'] {
     }
     &.no-btn {
       cursor: pointer;
+    }
+  }
+  .summit202412 {
+    .banner-content {
+      .content-left {
+        .content-text {
+          .text-img {
+            object-fit: cover;
+            height: 201px;
+            display: block;
+            @media (max-width: 767px) {
+              width: inherit;
+              height: 92px;
+            }
+          }
+        }
+        @media (max-width: 767px) {
+          align-items: center;
+          justify-content: flex-end;
+          .btn-box {
+            margin-bottom: var(--o-spacing-h3);
+          }
+        }
+      }
     }
   }
   .video-box {
