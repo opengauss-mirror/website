@@ -228,8 +228,8 @@ export default [
                   person: [
                     {
                       id: 'agenda27_1_1_9_1',
-                      name: '中国移动信息技术中心特邀嘉宾',
-                      post: '中国移动信息技术中心特邀嘉宾',
+                      name: '特邀嘉宾',
+                      post: '中国移动信息技术中心',
                     },
                   ],
                   detail: '',
@@ -242,8 +242,8 @@ export default [
                   person: [
                     {
                       id: 'agenda27_1_1_10_1',
-                      name: '国家能源集团信息技术公司（数据中心）特邀嘉宾',
-                      post: '国家能源集团信息技术公司（数据中心）特邀嘉宾',
+                      name: '特邀嘉宾',
+                      post: '国家能源集团信息技术公司',
                     },
                   ],
                   detail: '',
@@ -270,12 +270,12 @@ export default [
                     {
                       id: 'agenda27_1_1_12_1',
                       name: '肖微',
-                      post: '中国联通软件研究院公共平台与架构研发事业部副总架构师',
+                      post: '中国联通软件研究院 公共平台与架构研发事业部副总架构师',
                     },
                     {
                       id: 'agenda27_1_1_12_2',
                       name: '白玥',
-                      post: '海量数据 解决方案部总经理',
+                      post: '北京海量数据技术股份有限公司 解决方案部总经理',
                     },
                   ],
                   detail: '',
@@ -289,7 +289,7 @@ export default [
                     {
                       id: 'agenda27_1_1_12_1',
                       name: '张御博',
-                      post: '神舟通用售前总监',
+                      post: '天津神舟通用数据技术有限公司 售前总监',
                     },
                   ],
                   detail: '',
@@ -772,7 +772,7 @@ export default [
                     {
                       id: 'agenda27_2_1_1_1',
                       name: '程浩',
-                      post: '技术架构师',
+                      post: '兴业银行 技术架构师',
                     },
                   ],
                   detail: '',
@@ -798,7 +798,7 @@ export default [
                     {
                       id: 'agenda27_2_1_1_1',
                       name: '尹中骥',
-                      post: '	远景智能-技术总监',
+                      post: '远景智能 技术总监',
                     },
                   ],
                   detail: '',
@@ -811,7 +811,7 @@ export default [
                     {
                       id: 'agenda27_2_1_1_1',
                       name: '李洪举',
-                      post: '',
+                      post: '烽火星空 解决方案总监',
                     },
                   ],
                   detail: '',
@@ -824,7 +824,7 @@ export default [
                     {
                       id: 'agenda27_2_1_1_1',
                       name: '詹年科',
-                      post: '技术总监',
+                      post: '宝兰德 技术总监',
                     },
                   ],
                   detail: '',
@@ -863,7 +863,7 @@ export default [
                     {
                       id: 'agenda27_2_1_1_1',
                       name: '李文京',
-                      post: '软件产品经理',
+                      post: '英方软件 软件产品经理',
                     },
                   ],
                   detail: '',
