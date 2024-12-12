@@ -265,17 +265,17 @@ export default [
                 {
                   id: 'agenda27_1_1_12',
                   time: '11:25-11:40',
-                  desc: '海量数据商业成果分享',
+                  desc: '中国联通携手海量数据探索数据库自主创新之路',
                   person: [
                     {
                       id: 'agenda27_1_1_12_1',
-                      name: '白玥',
-                      post: '海量数据 解决方案部总经理',
+                      name: '肖微',
+                      post: '中国联通软件研究院公共平台与架构研发事业部副总架构师',
                     },
                     {
                       id: 'agenda27_1_1_12_2',
-                      name: '特邀嘉宾',
-                      post: '特邀嘉宾',
+                      name: '白玥',
+                      post: '海量数据 解决方案部总经理',
                     },
                   ],
                   detail: '',
@@ -284,12 +284,12 @@ export default [
                 {
                   id: 'agenda27_1_1_12',
                   time: '11:40-11:55',
-                  desc: '生态伙伴商业成果分享',
+                  desc: '智能时代的创新汇聚，神通数据库携手伙伴共赢未来',
                   person: [
                     {
                       id: 'agenda27_1_1_12_1',
-                      name: '特邀嘉宾',
-                      post: '特邀嘉宾',
+                      name: '张御博',
+                      post: '神舟通用售前总监',
                     },
                   ],
                   detail: '',
@@ -377,7 +377,7 @@ export default [
                 {
                   id: 'agenda27_2_1_4',
                   time: '14:25-14:40',
-                  desc: '海量数据演讲',
+                  desc: '专注数据，创造价值——海量数据库Vastbase的创新与突破',
                   person: [
                     {
                       id: 'agenda27_2_1_4_1',
@@ -390,7 +390,7 @@ export default [
                 {
                   id: 'agenda27_2_1_5',
                   time: '14:40-14:55',
-                  desc: 'Vastbase客户案例分享',
+                  desc: '首发集团：打造北京交通行业“首方案”',
                   person: [
                     {
                       id: 'agenda27_2_1_5_1',
@@ -403,7 +403,7 @@ export default [
                 {
                   id: 'agenda27_2_1_6',
                   time: '14:55-15:10',
-                  desc: 'Vastbase客户案例分享',
+                  desc: '承德银行核心系统基于Vastbase的创新实践',
                   person: [
                     {
                       id: 'agenda27_2_1_6_1',
@@ -429,7 +429,7 @@ export default [
                 {
                   id: 'agenda27_2_1_8',
                   time: '15:15-15:30',
-                  desc: '生态伙伴应用实践',
+                  desc: '聚焦企业网络安全，深信服&海量数据开展全面合作',
                   person: [
                     {
                       id: 'agenda27_2_1_8_1',
@@ -442,7 +442,7 @@ export default [
                 {
                   id: 'agenda27_2_1_9',
                   time: '15:30-15:45',
-                  desc: '生态伙伴应用实践',
+                  desc: '予力企业，共创共赢——金蝶携手Vastbase打造自主可控的企业级解决方案',
                   person: [
                     {
                       id: 'agenda27_2_1_9_1',
@@ -455,12 +455,12 @@ export default [
                 {
                   id: 'agenda27_2_1_10',
                   time: '15:45-16:00',
-                  desc: '生态伙伴应用实践',
+                  desc: '以自主创新为基石，打造金融数智化转型一体化方案',
                   person: [
                     {
                       id: 'agenda27_2_1_10_1',
                       name: '特邀嘉宾',
-                      post: '医疗/教育ISV（邀请中）',
+                      post: '恒生电子',
                     },
                   ],
                   detail: '',
@@ -480,7 +480,7 @@ export default [
                     {
                       id: 'agenda27_2_1_12_1',
                       name: '',
-                      post: '自媒体大咖',
+                      post: '',
                     },
                   ],
                   detail: '',
@@ -501,7 +501,7 @@ export default [
                 {
                   id: 'agenda27_2_2_2',
                   time: '14:05-14:10',
-                  desc: '领导致辞',
+                  desc: '社区领导致辞',
                   person: [
                     {
                       id: 'agenda27_2_2_2_1',
@@ -514,7 +514,7 @@ export default [
                 {
                   id: 'agenda27_2_2_3',
                   time: '14:10-14:15',
-                  desc: '领导致辞',
+                  desc: '神舟通用公司领导致辞',
                   person: [
                     {
                       id: 'agenda27_2_2_3_1',
@@ -527,7 +527,7 @@ export default [
                 {
                   id: 'agenda27_2_2_4',
                   time: '14:15-14:45',
-                  desc: '神通数据库openGauss版产品特点分享',
+                  desc: '神通数据库产品特点分享',
                   person: [
                     {
                       id: 'agenda27_2_2_4_1',
@@ -540,7 +540,7 @@ export default [
                 {
                   id: 'agenda27_2_2_5',
                   time: '14:45-15:15',
-                  desc: '神通数据库openGauss版产品应用分享',
+                  desc: '神通数据库产品应用分享',
                   person: [
                     {
                       id: 'agenda27_2_2_5_1',
@@ -604,19 +604,6 @@ export default [
                       id: 'agenda27_2_1_1_1',
                       name: '王泽琪',
                       post: '中国移动信息技术中心 平台能力中心产品经理',
-                    },
-                  ],
-                  detail: '',
-                },
-                {
-                  id: 'agenda27_2_1_1',
-                  time: '14:10-14:20',
-                  desc: '领导致辞',
-                  person: [
-                    {
-                      id: 'agenda27_2_1_1_1',
-                      name: '张益',
-                      post: '南大通用产品总经理',
                     },
                   ],
                   detail: '',
@@ -741,11 +728,11 @@ export default [
                 {
                   id: 'agenda27_2_1_1',
                   time: '16:00-16:10',
-                  desc: '应用案例分享',
+                  desc: '互动抽奖',
                   person: [
                     {
                       id: 'agenda27_2_1_1_1',
-                      name: '互动抽奖',
+                      name: '',
                       post: '',
                     },
                   ],
@@ -771,8 +758,8 @@ export default [
                   person: [
                     {
                       id: 'agenda27_2_1_1_1',
-                      name: '特邀嘉宾',
-                      post: '',
+                      name: '朱彬',
+                      post: 'openGauss研发总监',
                     },
                   ],
                   detail: '',
@@ -780,12 +767,12 @@ export default [
                 {
                   id: 'agenda27_2_1_1',
                   time: '14:15-14:30',
-                  desc: '金融行业实践案例分享',
+                  desc: '基于openGauss存算分离架构的金融领域应用实践',
                   person: [
                     {
                       id: 'agenda27_2_1_1_1',
-                      name: '特邀嘉宾',
-                      post: '',
+                      name: '程浩',
+                      post: '技术架构师',
                     },
                   ],
                   detail: '',
@@ -793,12 +780,12 @@ export default [
                 {
                   id: 'agenda27_2_1_1',
                   time: '14:30-14:45',
-                  desc: '制造行业实践案例分享',
+                  desc: '创维基于国创灵梭数据库（IntarkDB）的联创实践',
                   person: [
                     {
                       id: 'agenda27_2_1_1_1',
-                      name: '特邀嘉宾',
-                      post: '',
+                      name: '陈伟',
+                      post: '创维集团智能装备有限公司 装备经理',
                     },
                   ],
                   detail: '',
@@ -806,12 +793,12 @@ export default [
                 {
                   id: 'agenda27_2_1_1',
                   time: '14:45-15:00',
-                  desc: '互联网行业实践案例分享',
+                  desc: '能源行业实践案例分享',
                   person: [
                     {
                       id: 'agenda27_2_1_1_1',
-                      name: '特邀嘉宾',
-                      post: '',
+                      name: '尹中骥',
+                      post: '	远景智能-技术总监',
                     },
                   ],
                   detail: '',
@@ -819,11 +806,11 @@ export default [
                 {
                   id: 'agenda27_2_1_1',
                   time: '15:00-15:15',
-                  desc: '能源行业实践案例分享',
+                  desc: '烽火星空实践案例分享',
                   person: [
                     {
                       id: 'agenda27_2_1_1_1',
-                      name: '特邀嘉宾',
+                      name: '李洪举',
                       post: '',
                     },
                   ],
@@ -832,12 +819,12 @@ export default [
                 {
                   id: 'agenda27_2_1_1',
                   time: '15:15-15:30',
-                  desc: '安平行业实践案例分享',
+                  desc: '携手共生、成长-宝兰德openGauss实践',
                   person: [
                     {
                       id: 'agenda27_2_1_1_1',
-                      name: '特邀嘉宾',
-                      post: '',
+                      name: '詹年科',
+                      post: '技术总监',
                     },
                   ],
                   detail: '',
@@ -845,12 +832,12 @@ export default [
                 {
                   id: 'agenda27_2_1_1',
                   time: '15:30-15:45',
-                  desc: '行业实践案例分享',
+                  desc: '数据库高可用及同步工具技术分享',
                   person: [
                     {
                       id: 'agenda27_2_1_1_1',
-                      name: '特邀嘉宾',
-                      post: '',
+                      name: '韩西杰',
+                      post: '中软国际 数据库工具产品经理',
                     },
                   ],
                   detail: '',
@@ -858,12 +845,25 @@ export default [
                 {
                   id: 'agenda27_2_1_1',
                   time: '15:45-16:00',
-                  desc: '行业实践案例分享',
+                  desc: '助力智改数转保障产业安全，长虹数据库的创新实践',
                   person: [
                     {
                       id: 'agenda27_2_1_1_1',
-                      name: '特邀嘉宾',
-                      post: '',
+                      name: '孙瑞',
+                      post: '四川虹微技术有限公司 数据库产品总监',
+                    },
+                  ],
+                  detail: '',
+                },
+                {
+                  id: 'agenda27_2_1_1',
+                  time: '16:00-16:15',
+                  desc: '实时流转，数据共舞',
+                  person: [
+                    {
+                      id: 'agenda27_2_1_1_1',
+                      name: '李文京',
+                      post: '软件产品经理',
                     },
                   ],
                   detail: '',
