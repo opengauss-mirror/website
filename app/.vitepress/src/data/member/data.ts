@@ -506,6 +506,12 @@ import xucheng from '@/assets/category/member/avatar/xucheng.png';
 import sunmin3 from '@/assets/category/member/avatar/sunmin3.png';
 import guangang from '@/assets/category/member/avatar/guangang.png';
 
+import jingce from '@/assets/category/member/avatar/jingce.png';
+import tianye from '@/assets/category/member/avatar/tianye.png';
+import yangzhizheng from '@/assets/category/member/avatar/yangzhizheng.png';
+import zhangzhongliang from '@/assets/category/member/avatar/zhangzhongliang.png';
+import zhaoliwei from '@/assets/category/member/avatar/zhaoliwei.png';
+
 import { GITEE_LINK } from '@/data/url-config';
 export default {
   zh: {
@@ -1435,6 +1441,20 @@ export default {
         email: 'laishenghao1@huawei.com',
         gitee: `${GITEE_LINK}dodders`,
       },
+      {
+        img: zhaoliwei,
+        name: '赵立伟',
+        title: 'Committer',
+        email: 'zhaoliwei@chinamobile.com',
+        gitee: `${GITEE_LINK}levy5307`,
+      },
+      {
+        img: yangzhizheng,
+        name: '杨志铮',
+        title: 'Committer',
+        email: 'yangzhizheng@chinamobile.com',
+        gitee: `${GITEE_LINK}yangzhizheng94`,
+      },
     ],
     STORAGEENGINE: [
       {
@@ -1562,6 +1582,13 @@ export default {
         title: 'Committer',
         email: 'chenxiaoyu12@huawei.com',
         gitee: `${GITEE_LINK}rain-666`,
+      },
+      {
+        img: zhangzhongliang,
+        name: '张仲良',
+        title: 'Committer',
+        email: 'zhangzhongliangit@chinamobile.com',
+        gitee: `${GITEE_LINK}julian_zl_zhang`,
       },
     ],
     CONNECTORS: [
@@ -1692,6 +1719,20 @@ export default {
         title: `Committer`,
         email: `wangxiaofeiit@chinamobile.com`,
         gitee: `${GITEE_LINK}wangxf12345`,
+      },
+      {
+        img: jingce,
+        name: `景策`,
+        title: `Committer`,
+        email: `jingce@chinamobile.com`,
+        gitee: `${GITEE_LINK}cinjingce`,
+      },
+      {
+        img: tianye,
+        name: `田野`,
+        title: `Committer`,
+        email: `tianyeit@chinamobile.com`,
+        gitee: `${GITEE_LINK}ty2145621`,
       },
     ],
     DOCS: [
@@ -5703,6 +5744,20 @@ export default {
         email: 'laishenghao1@huawei.com',
         gitee: `${GITEE_LINK}dodders`,
       },
+      {
+        img: zhaoliwei,
+        name: 'Liwei Zhao',
+        title: 'Committer',
+        email: 'zhaoliwei@chinamobile.com',
+        gitee: `${GITEE_LINK}levy5307`,
+      },
+      {
+        img: yangzhizheng,
+        name: 'Zhizheng Yang',
+        title: 'Committer',
+        email: 'yangzhizheng@chinamobile.com',
+        gitee: `${GITEE_LINK}yangzhizheng94`,
+      },
     ],
     STORAGEENGINE: [
       {
@@ -5830,6 +5885,13 @@ export default {
         title: 'Committer',
         email: 'chenxiaoyu12@huawei.com',
         gitee: `${GITEE_LINK}rain-666`,
+      },
+      {
+        img: zhangzhongliang,
+        name: 'Zhongliang Zhang',
+        title: 'Committer',
+        email: 'zhangzhongliangit@chinamobile.com',
+        gitee: `${GITEE_LINK}julian_zl_zhang`,
       },
     ],
     CONNECTORS: [
@@ -5960,6 +6022,20 @@ export default {
         title: `Committer`,
         email: `wangxiaofeiit@chinamobile.com`,
         gitee: `${GITEE_LINK}wangxf12345`,
+      },
+      {
+        img: jingce,
+        name: `Ce Jing`,
+        title: `Committer`,
+        email: `jingce@chinamobile.com`,
+        gitee: `${GITEE_LINK}cinjingce`,
+      },
+      {
+        img: tianye,
+        name: `Ye Tian`,
+        title: `Committer`,
+        email: `tianyeit@chinamobile.com`,
+        gitee: `${GITEE_LINK}ty2145621`,
       },
     ],
     DOCS: [
