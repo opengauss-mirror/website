@@ -7,6 +7,7 @@ import download510 from './download5.1.0';
 import download500 from './download5.0.0';
 import download311 from './download3.1.1';
 import download310 from './download3.1.0';
+import download306 from './download3.0.6';
 import download305 from './download3.0.5';
 import download303 from './download3.0.3';
 import download300 from './download3.0.0';
@@ -17,7 +18,7 @@ import download110 from './download1.1.0';
 import download101 from './download1.0.1';
 import download100 from './download1.0.0';
 // initPrevious参数表示控制进入历史版本页面后默认选中的版本
-// 因为目前的主力版本是3.0.5 (LTS)，所以就给它的数据增加一个(initPrevious:true)
+// 因为目前的主力版本是3.0.6 (LTS)，所以就给它的数据增加一个(initPrevious:true)
 // 如果之后要修改历史版本页面的默认选中版本，可以修改(initPrevious:true)所在版本的位置
 // newLayout:true 代表使用新版下载页面结构布局，无此参数代表使用旧版
 const downloadData = [
@@ -160,9 +161,35 @@ const downloadData = [
     ],
   },
   {
+    name: '3.0.6 (LTS)',
+    data: download306,
+    initPrevious: true,
+    docs_list: [
+      {
+        name: '发行说明',
+        nameEn: 'Release Notes',
+        path: '/zh/news/2024-12-25-306/index.html',
+      },
+      {
+        name: '企业版安装指南',
+        nameEn: 'Enterprise-Edition Installation Guide',
+        path: '/docs/3.0.0/docs/installation/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html',
+      },
+      {
+        name: '极简版安装指南',
+        nameEn: 'Simplified Installation Guide',
+        path: '/docs/3.0.0/docs/installation/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html',
+      },
+      {
+        name: '轻量版安装指南',
+        nameEn: 'Lite Installation Guide',
+        path: '/docs/3.0.0-lite/docs/installation/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html',
+      },
+    ],
+  },
+  {
     name: '3.0.5 (LTS)',
     data: download305,
-    initPrevious: true,
     docs_list: [
       {
         name: '发行说明',
