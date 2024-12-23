@@ -102,7 +102,7 @@ export default [
                         {
                           id: 'agenda27_1_1_6_1',
                           name: '潘妍',
-                          post: '国家工业信息安全发展研究中心软件所 所长',
+                          post: '',
                         },
                       ],
                     },
