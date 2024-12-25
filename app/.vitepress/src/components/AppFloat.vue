@@ -293,12 +293,12 @@ function postScore() {
 }
 function handleClickSubmit() {
   // pc12小时之内只能提交一次
-  const lastSummitTIME = localStorage.getItem('submit-time');
+  const lastSubmitTime = localStorage.getItem('submit-time');
   const intervalTime = 1 * 12 * 60 * 60 * 1000;
   const nowTime = new Date().valueOf();
-  if (lastSummitTIME) {
+  if (lastSubmitTime) {
     try {
-      const flag = nowTime - JSON.parse(lastSummitTIME) > intervalTime;
+      const flag = nowTime - JSON.parse(lastSubmitTime) > intervalTime;
       if (flag) {
         postScore();
       } else {
@@ -315,12 +315,19 @@ function handleClickSubmit() {
   }
 }
 
+// 峰会页面不显示floating button
+const isSummit = ref(true);
+
+const startsWithSlashSummit = (path: string) => {
+  return /^\/(zh|en)\/summit/.test(path);
+};
+
 const isFloatTipShow = ref(false);
 onMounted(() => {
   watch(
     () => router.route.path,
-    () => {
-      if (router.route.path === '/zh/') {
+    (v) => {
+      if (v === '/zh/') {
         isFloatTipShow.value = true;
         setTimeout(() => {
           isFloatTipShow.value = false;
@@ -328,6 +335,8 @@ onMounted(() => {
       } else {
         isFloatTipShow.value = false;
       }
+
+      isSummit.value = startsWithSlashSummit(v);
     },
     { immediate: true }
   );
@@ -372,23 +381,23 @@ const setScore = (val: number) => {
 };
 // 移动端用户关闭后7天不展示,提交后30日内不出现入口
 onMounted(() => {
-  const lastCloseTIME = localStorage.getItem('close-float-time');
-  const lastSummitTIME = localStorage.getItem('submit-time-mobile');
+  const lastCloseTime = localStorage.getItem('close-float-time');
+  const lastSubmitTime = localStorage.getItem('submit-time-mobile');
   const sevenDaysInMilliseconds = 7 * 24 * 60 * 60 * 1000;
   const thirtyInMilliseconds = 30 * 24 * 60 * 60 * 1000;
   const nowTime = new Date().valueOf();
-  if (lastCloseTIME || lastSummitTIME) {
+  if (lastCloseTime || lastSubmitTime) {
     let flag1;
     let flag2;
-    if (lastCloseTIME) {
+    if (lastCloseTime) {
       try {
-        flag1 = nowTime - JSON.parse(lastCloseTIME) > sevenDaysInMilliseconds;
+        flag1 = nowTime - JSON.parse(lastCloseTime) > sevenDaysInMilliseconds;
       } catch {
         handleError();
       }
-    } else if (lastSummitTIME) {
+    } else if (lastSubmitTime) {
       try {
-        flag2 = nowTime - JSON.parse(lastSummitTIME) > thirtyInMilliseconds;
+        flag2 = nowTime - JSON.parse(lastSubmitTime) > thirtyInMilliseconds;
       } catch {
         handleError();
       }
@@ -431,7 +440,11 @@ onMounted(() => {
             </div>
           </div>
           <div class="nav-box">
-            <a :href="QUESTIONNAIRE_URL" target="_blank" rel="noopener noreferrer">
+            <a
+              :href="QUESTIONNAIRE_URL"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <div class="nav-box-question">满意度问卷</div>
             </a>
             <div class="nav-box1">
@@ -547,7 +560,7 @@ onMounted(() => {
       </template>
       <template v-else>
         <div
-          v-if="isMobileFloatShow"
+          v-if="isMobileFloatShow && !isSummit"
           class="float-mobile"
           :class="{ 'mobile-margin': isMargin }"
         >
