@@ -7,6 +7,7 @@ import SummitIntro from './components/SummitIntro.vue';
 import SummitAgenda from './components/SummitAgenda.vue';
 import SummitPartner from './components/SummitPartner.vue';
 import SummitReview from './components/SummitReview.vue';
+import SummitLive from './components/SummitLive.vue';
 
 import summitData from './data';
 </script>
@@ -15,6 +16,7 @@ import summitData from './data';
     <SummitBanner :banner-data="summitData.banner" />
     <AppContent>
       <SummitIntro :intro-data="summitData.intro" />
+      <SummitLive :live-data="summitData.live" />
       <SummitAgenda :agenda-data="summitData.agenda" />
       <SummitPartner :partner-data="summitData.partner" />
       <SummitReview :review-data="summitData.review" />

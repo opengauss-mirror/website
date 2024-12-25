@@ -64,7 +64,7 @@ export default [
               content: [
                 {
                   id: 'agenda27_1_1_1',
-                  time: '09:30-09:50',
+                  time: '09:30-09:45',
                   children: [
                     {
                       desc: '大会致辞',
@@ -101,8 +101,8 @@ export default [
                       person: [
                         {
                           id: 'agenda27_1_1_6_1',
-                          name: '潘妍',
-                          post: '',
+                          name: 'Thierry Carrez',
+                          post: 'OpenInfra General Manager',
                         },
                       ],
                     },
@@ -110,21 +110,8 @@ export default [
                   detail: '',
                 },
                 {
-                  id: 'agenda27_1_1_2',
-                  time: '09:50-09:55',
-                  desc: '认证仪式',
-                  person: [
-                    {
-                      id: 'agenda27_1_1_2_1',
-                      name: '',
-                      post: '特邀领导、代表',
-                    },
-                  ],
-                  detail: '',
-                },
-                {
                   id: 'agenda27_1_1_5',
-                  time: '09:55-10:25',
+                  time: '09:45-10:15',
                   children: [
                     {
                       desc: '汇聚数据库创新力量，引领智能时代新未来',
@@ -147,7 +134,7 @@ export default [
                       ],
                     },
                     {
-                      desc: 'openGauss关键技术突破与创新见证仪式',
+                      desc: 'openGauss 荣获中国通信学会科技进步奖一等奖 暨 openGauss关键技术突破与创新',
                       person: [
                         {
                           id: 'agenda27_1_1_6_1',
@@ -157,17 +144,17 @@ export default [
                       ],
                     },
                     {
-                      desc: 'openGauss社区顾问委员会扩容仪式',
+                      desc: '仪式 ：openGauss 社区新增顾问专家委员会成员',
                       person: [
                         {
                           id: 'agenda27_1_1_6_1',
-                          name: '特邀嘉宾',
-                          post: '特邀嘉宾',
+                          name: '陈国',
+                          post: '中国移动信息技术中心 副总经理',
                         },
                       ],
                     },
                     {
-                      desc: '仪式：openGauss和全球计算联盟(GCC)建立战略合作关系',
+                      desc: '仪式：openGauss开源社区与全球计算联盟建立战略合作',
                       person: [
                         {
                           id: 'agenda27_1_1_6_1',
@@ -182,7 +169,20 @@ export default [
                 },
                 {
                   id: 'agenda27_1_1_7',
-                  time: '10:25-10:30',
+                  time: '10:15-10:20',
+                  desc: '数据库根社区产品自主创新测评证书颁证仪式',
+                  person: [
+                    {
+                      id: 'agenda27_1_1_7_1',
+                      name: '',
+                      post: '特邀嘉宾',
+                    },
+                  ],
+                  detail: '',
+                },
+                {
+                  id: 'agenda27_1_1_7',
+                  time: '10:20-10:25',
                   desc: '仪式：openGauss 6.0.0 LTS 数据库商用版本发布',
                   person: [
                     {
@@ -195,7 +195,7 @@ export default [
                 },
                 {
                   id: 'agenda27_1_1_11',
-                  time: '10:30-10:45',
+                  time: '10:25-10:40',
                   desc: 'openGauss技术发展展望',
                   person: [
                     {
@@ -214,7 +214,7 @@ export default [
                 },
                 {
                   id: 'agenda27_1_1_8',
-                  time: '10:45-10:50',
+                  time: '10:40-10:45',
                   desc: '中国关系型数据库产业发展和行业应用（2024）暨openGauss市场份额报告',
                   person: [
                     {
@@ -228,7 +228,7 @@ export default [
                 },
                 {
                   id: 'agenda27_1_1_9',
-                  time: '10:50-11:00',
+                  time: '10:45-10:55',
                   desc: '中国移动信息技术中心优秀商业实践案例演讲',
                   person: [
                     {
@@ -242,34 +242,20 @@ export default [
                 },
                 {
                   id: 'agenda27_1_1_10',
-                  time: '11:00-11:10',
-                  desc: '国家能源集团信息技术公司（数据中心）优秀商业实践案例演讲',
+                  time: '10:55-11:05',
+                  desc: '国家能源集团信息技术公司优秀商业实践案例演讲',
                   person: [
                     {
                       id: 'agenda27_1_1_10_1',
-                      name: '特邀嘉宾',
-                      post: '国家能源集团信息技术公司（数据中心）',
+                      name: '平雷',
+                      post: '国家能源集团信息技术公司 网络安全中心副总经理',
                     },
                   ],
                   detail: '',
                 },
                 {
                   id: 'agenda27_1_1_12',
-                  time: '11:10-11:20',
-                  desc: '客户优秀商业实践案例演讲',
-                  person: [
-                    {
-                      id: 'agenda27_1_1_12_1',
-                      name: '特邀嘉宾',
-                      post: '特邀嘉宾',
-                    },
-                  ],
-                  detail: '',
-                  pptLink: [],
-                },
-                {
-                  id: 'agenda27_1_1_12',
-                  time: '11:20-11:30',
+                  time: '11:05-11:15',
                   desc: '钉钉（中国）有限公司优秀商业实践案例演讲',
                   person: [
                     {
@@ -283,8 +269,8 @@ export default [
                 },
                 {
                   id: 'agenda27_1_1_12',
-                  time: '11:30-11:45',
-                  desc: '联通集约系统携手海量数据库的自主创新实践',
+                  time: '11:15-11:30',
+                  desc: '中国联通携手海量数据探索数据库自主创新之路',
                   person: [
                     {
                       id: 'agenda27_1_1_12_1',
@@ -293,8 +279,8 @@ export default [
                     },
                     {
                       id: 'agenda27_1_1_12_2',
-                      name: '白玥',
-                      post: '北京海量数据技术股份有限公司 解决方案部总监',
+                      name: '肖枫',
+                      post: '北京海量数据技术股份有限公司 总裁',
                     },
                   ],
                   detail: '',
@@ -302,7 +288,7 @@ export default [
                 },
                 {
                   id: 'agenda27_1_1_12',
-                  time: '11:45-12:00',
+                  time: '11:30-11:45',
                   desc: '智能时代的创新汇聚，神通数据库携手伙伴共赢未来',
                   person: [
                     {
@@ -316,7 +302,7 @@ export default [
                 },
                 {
                   id: 'agenda27_1_1_12',
-                  time: '12:00-12:05',
+                  time: '11:45-11:50',
                   desc: '2024年度openGauss领先商业实践颁奖仪式',
                   person: [
                     {
@@ -330,7 +316,7 @@ export default [
                 },
                 {
                   id: 'agenda27_1_1_12',
-                  time: '12:05-12:15',
+                  time: '11:50-12:00',
                   desc: '2024年度openGauss社区突出贡献单位及优秀开发者颁奖仪式',
                   person: [
                     {
@@ -357,7 +343,7 @@ export default [
                 {
                   id: 'agenda27_2_1_1',
                   time: '14:30-14:40',
-                  desc: '社区领导致辞',
+                  desc: '领导致辞',
                   person: [
                     {
                       id: 'agenda27_2_1_1_1',
@@ -507,7 +493,7 @@ export default [
                 {
                   id: 'agenda27_2_2_2',
                   time: '14:35-14:40',
-                  desc: 'openGauss社区领导致辞',
+                  desc: '领导致辞',
                   person: [
                     {
                       id: 'agenda27_2_2_2_1',
@@ -563,8 +549,8 @@ export default [
                   person: [
                     {
                       id: 'agenda27_2_2_6_1',
-                      name: '吴锋',
-                      post: '北京星航智造科技有限公司 市场总监',
+                      name: '李志虎',
+                      post: '北京星航智造科技有限公司 董事长',
                     },
                   ],
                   detail: '',
@@ -610,26 +596,13 @@ export default [
               content: [
                 {
                   id: 'agenda27_2_1_1',
-                  time: '14:30-14:35',
-                  desc: '主持人开场',
+                  time: '14:30-14:40',
+                  desc: '中国移动领导开场致辞',
                   person: [
                     {
                       id: 'agenda27_2_1_1_1',
-                      name: '王泽琪',
-                      post: '中国移动信息技术中心 平台能力中心产品经理',
-                    },
-                  ],
-                  detail: '',
-                },
-                {
-                  id: 'agenda27_2_1_1',
-                  time: '14:35-14:40',
-                  desc: '领导致辞',
-                  person: [
-                    {
-                      id: 'agenda27_2_1_1_1',
-                      name: '',
-                      post: '',
+                      name: '陈国',
+                      post: '中国移动信息技术公司 副总经理',
                     },
                   ],
                   detail: '',
@@ -637,123 +610,208 @@ export default [
                 {
                   id: 'agenda27_2_1_1',
                   time: '14:40-14:45',
-                  desc: '中国移动领导致辞',
+                  desc: 'openGauss社区领导致辞',
                   person: [
                     {
                       id: 'agenda27_2_1_1_1',
-                      name: '白国涛',
-                      post: '中国移动信息技术中心 平台能力中心部门总经理',
+                      name: '熊伟',
+                      post: 'openGauss社区理事长',
                     },
                   ],
                   detail: '',
                 },
                 {
                   id: 'agenda27_2_1_1',
-                  time: '14:45-14:50',
-                  desc: '外部嘉宾致辞',
+                  time: '14:45-14:55',
+                  desc: '重要嘉宾致辞',
                   person: [
                     {
                       id: 'agenda27_2_1_1_1',
-                      name: '梁斌',
-                      post: '亚信科技 高级总裁',
+                      name: '邓昌义',
+                      post: '国家工业信息安全发展研究中心软件所副所长',
                     },
                   ],
                   detail: '',
                 },
                 {
                   id: 'agenda27_2_1_1',
-                  time: '14:50-14:55',
-                  desc: '外部嘉宾致辞',
-                  person: [
-                    {
-                      id: 'agenda27_2_1_1_1',
-                      name: '盖国强',
-                      post: '云和恩墨 总经理',
-                    },
-                  ],
-                  detail: '',
-                },
-                {
-                  id: 'agenda27_2_1_1',
-                  time: '14:55-15:30',
-                  desc: '中国移动自研数据库产品介绍',
+                  time: '14:55-15:10',
+                  desc: '中国移动磐维数据库年度发展报告',
                   person: [
                     {
                       id: 'agenda27_2_1_1_1',
                       name: '魏可伟',
-                      post: '中国移动信息技术中心 平台能力中心磐维数据库架构师',
+                      post: '中国移动信息技术公司 数据库研发首席架构师',
                     },
                   ],
                   detail: '',
                 },
                 {
                   id: 'agenda27_2_1_1',
-                  time: '15:30-15:50',
-                  desc: '乘风破浪、稳如磐石 – 内蒙古移动磐维数据库实践案例分享',
+                  time: '15:10-15:25',
+                  desc: '中国移动数据库联合体年度总结与领奖',
                   person: [
                     {
                       id: 'agenda27_2_1_1_1',
-                      name: '张永涛',
-                      post: '中国移动统信集团内蒙古有限公司 信息技术部副总经理',
+                      name: '赵淳',
+                      post: '中国移动信息技术公司 数据库研发中心副总经理',
+                    },
+                  ],
+                  detail: '',
+                },
+                {
+                  id: 'agenda27_3_1_5',
+                  time: '15:25-16:05',
+                  children: [
+                    {
+                      desc: '内部优秀案例分享环节',
+                      person: [
+                        {
+                          id: 'agenda27_3_1_5_1',
+                          name: '主持人',
+                          post: '',
+                        },
+                      ],
+                    },
+                    {
+                      desc: '磐维在海量批处理计算（BOSS）场景的应用实践',
+                      person: [
+                        {
+                          id: 'agenda27_3_1_6_1',
+                          name: '陈辉',
+                          post: '广东移动信息系统部副总经理',
+                        },
+                      ],
+                    },
+                    {
+                      desc: '选用融，磨自己的剑——磐维在高并发交易（CRM）场景的应用实践',
+                      person: [
+                        {
+                          id: 'agenda27_3_1_6_1',
+                          name: '郭岳',
+                          post: '浙江移动信息数据副总经理兼并智慧中台运营中心主任',
+                        },
+                      ],
+                    },
+                    {
+                      desc: '北京移动磐维数据库应用实践和生态研发创新',
+                      person: [
+                        {
+                          id: 'agenda27_3_1_6_1',
+                          name: '吴杰',
+                          post: '北京移动信息技术副总经理',
+                        },
+                      ],
+                    },
+                    {
+                      desc: '上海移动网关支撑系统磐维数据库应用实践',
+                      person: [
+                        {
+                          id: 'agenda27_3_1_6_1',
+                          name: '周鸣',
+                          post: '上海移动信息技术管理部总经理',
+                        },
+                      ],
+                    },
+                    {
+                      desc: '乘风破浪，稳如磐石——全栈业务ALL in磐维的最新实践',
+                      person: [
+                        {
+                          id: 'agenda27_3_1_6_1',
+                          name: '张永涛',
+                          post: '内蒙古移动信息技术副总经理',
+                        },
+                      ],
                     },
                   ],
                   detail: '',
                 },
                 {
                   id: 'agenda27_2_1_1',
-                  time: '15:50-16:10',
-                  desc: '一体化全程可信身份底座与磐维数据库的深度融合',
+                  time: '16:05-16:15',
+                  desc: '以史为鉴，需求致胜——从墨天轮社区看国产数据库最新发展与生态',
                   person: [
                     {
                       id: 'agenda27_2_1_1_1',
-                      name: '杨显兵',
-                      post: '启明星辰天榕产线副总经理',
+                      name: '盖国强',
+                      post: '云和恩墨公司总经理',
                     },
                   ],
                   detail: '',
                 },
                 {
                   id: 'agenda27_2_1_1',
-                  time: '16:10-16:30',
-                  desc: '客户案例分享',
+                  time: '16:15-16:25',
+                  desc: '生态联盟发布仪式',
                   person: [
                     {
                       id: 'agenda27_2_1_1_1',
-                      name: '江宁',
-                      post: '云和恩墨 总经理',
+                      name: '陈国/赵淳',
+                      post: '磐维生态伙伴',
                     },
                   ],
                   detail: '',
                 },
                 {
-                  id: 'agenda27_2_1_1',
-                  time: '16:30-16:50',
-                  desc: '客户案例分享',
-                  person: [
+                  id: 'agenda27_8_1_5',
+                  time: '16:25-16:45',
+                  children: [
                     {
-                      id: 'agenda27_2_1_1_1',
-                      name: '徐健',
-                      post: '上海移动',
+                      desc: '外部优秀案例分享',
+                      person: [
+                        {
+                          id: 'agenda27_8_1_5_1',
+                          name: '主持人',
+                          post: '',
+                        },
+                      ],
                     },
-                  ],
-                  detail: '',
-                },
-                {
-                  id: 'agenda27_2_1_1',
-                  time: '16:50-17:10',
-                  desc: '客户案例分享',
-                  person: [
                     {
-                      id: 'agenda27_2_1_1_1',
-                      name: '王弘',
-                      post: '天津移动',
+                      desc: '全球领先的业务运营支撑软件供应商与磐维的设备的深度合作实践',
+                      person: [
+                        {
+                          id: 'agenda27_8_1_6_1',
+                          name: '黄柳生',
+                          post: '亚信科技移动支撑事业部副总经理',
+                        },
+                      ],
+                    },
+                    {
+                      desc: '从央企数智化转型看国产数据库发展趋势',
+                      person: [
+                        {
+                          id: 'agenda27_8_1_6_1',
+                          name: '盛凌志',
+                          post: '北京移动重要行业客户中心副总经理',
+                        },
+                      ],
+                    },
+                    {
+                      desc: '磐维数据库在制造行业的落地案例分享',
+                      person: [
+                        {
+                          id: 'agenda27_8_1_6_1',
+                          name: '李侠',
+                          post: '南昌惠联网络技术有限公司副总经理',
+                        },
+                      ],
+                    },
+                    {
+                      desc: '磐维数据库在安全领域的落地案例分享',
+                      person: [
+                        {
+                          id: 'agenda27_8_1_6_1',
+                          name: '程顺川',
+                          post: '启明星辰天榕产线副总经理',
+                        },
+                      ],
                     },
                   ],
                   detail: '',
                 },
                 {
                   id: 'agenda28_2_1_1',
-                  time: '17:10-17:20',
+                  time: '16:45-16:55',
                   desc: '互动抽奖',
                   person: [],
                   detail: '',
@@ -778,8 +836,8 @@ export default [
                   person: [
                     {
                       id: 'agenda27_2_1_1_1',
-                      name: '',
-                      post: '',
+                      name: '蔡亚杰',
+                      post: 'openGauss社区秘书长',
                     },
                   ],
                   detail: '',
@@ -826,19 +884,6 @@ export default [
                 {
                   id: 'agenda27_2_1_1',
                   time: '15:30-15:45',
-                  desc: 'FitRDB数据库助力集团自主创新改造',
-                  person: [
-                    {
-                      id: 'agenda27_2_1_1_1',
-                      name: '李洪举',
-                      post: '烽火星空 解决方案总监',
-                    },
-                  ],
-                  detail: '',
-                },
-                {
-                  id: 'agenda27_2_1_1',
-                  time: '15:45-16:00',
                   desc: '携手共生、成长——宝兰德openGauss实践',
                   person: [
                     {
@@ -851,7 +896,7 @@ export default [
                 },
                 {
                   id: 'agenda27_2_1_1',
-                  time: '16:00-16:15',
+                  time: '15:45-16:00',
                   desc: '数据库高可用及同步工具技术分享',
                   person: [
                     {
@@ -864,7 +909,7 @@ export default [
                 },
                 {
                   id: 'agenda27_2_1_1',
-                  time: '16:15-16:30',
+                  time: '16:00-16:15',
                   desc: '助力智改数转保障产业安全，长虹数据库的创新实践',
                   person: [
                     {
@@ -877,7 +922,7 @@ export default [
                 },
                 {
                   id: 'agenda27_2_1_1',
-                  time: '16:30-16:45',
+                  time: '16:15-16:30',
                   desc: '实时流转，数据共舞',
                   person: [
                     {
@@ -889,12 +934,12 @@ export default [
                   detail: '',
                 },
                 {
-                  id: 'agenda28_2_1_1',
-                  time: '16:45-17:00',
+                  id: 'agenda27_2_1_1',
+                  time: '16:30-16:45',
                   desc: '相得益彰，MogDB与鼎捷ERP在制造业的深度协同与创新应用',
                   person: [
                     {
-                      id: 'agenda28_2_1_1_1',
+                      id: 'agenda27_2_1_1_1',
                       name: '李聪',
                       post: '云和恩墨 客户成功部总经理',
                     },
