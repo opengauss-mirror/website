@@ -411,6 +411,7 @@ watch(
       padding: 6px 0;
       min-height: 36px;
       position: static;
+      align-items: flex-start;
     }
 
     .name-box {
@@ -582,6 +583,9 @@ watch(
     padding: 0;
     @media screen and (max-width: 1100px) {
       grid-template-columns: 80px auto;
+      .time {
+        padding: 6px 0;
+      }
     }
     .children-item {
       display: grid;
@@ -593,6 +597,7 @@ watch(
       @media screen and (max-width: 1100px) {
         display: block;
         grid-template-columns: auto auto;
+        padding: 6px 0;
       }
       .desc {
         display: flex;
