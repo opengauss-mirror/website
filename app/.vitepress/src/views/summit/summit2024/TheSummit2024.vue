@@ -49,7 +49,7 @@ onMounted(() => {
     <SummitBanner :banner-data="summitData.banner" />
     <AppContent>
       <SummitIntro :intro-data="summitData.intro" />
-      <SummitLive :live-data="summitData.live" />
+      <SummitLive id="live" :live-data="summitData.live" />
       <SummitAgenda :agenda-data="summitData.agenda" />
       <SummitPartner :partner-data="summitData.partner" />
       <SummitReview :review-data="summitData.review" />

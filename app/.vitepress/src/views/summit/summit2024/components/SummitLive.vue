@@ -216,11 +216,11 @@ const changeLive = (val: string): void => {
       justify-content: space-between;
       &.live-btn {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 24px 32px;
         width: 100%;
         .link-main {
-          grid-column: 1/4;
+          grid-column: 1/3;
         }
       }
       .link {
@@ -246,6 +246,7 @@ const changeLive = (val: string): void => {
 
       .link-active {
         background: v-bind('ActiveBg') no-repeat center/cover;
+        border: none;
         p {
           color: #fff;
         }
