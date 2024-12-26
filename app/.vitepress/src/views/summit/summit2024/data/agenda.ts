@@ -65,130 +65,81 @@ export default [
                 {
                   id: 'agenda27_1_1_1',
                   time: '09:30-09:45',
-                  children: [
+                  desc: '致辞',
+                  person: [
                     {
-                      desc: '大会致辞',
-                      person: [
-                        {
-                          id: 'agenda27_1_1_5_1',
-                          name: '钱德沛',
-                          post: '中国科学院院士，北京航空航天大学教授、博士生导师，中国计算机学会会士',
-                        },
-                      ],
+                      id: 'agenda27_1_1_1_1',
+                      name: '钱德沛',
+                      post: '中国科学院院士，北京航空航天大学教授、博士生导师，中国计算机学会会士',
                     },
                     {
-                      desc: '大会致辞',
-                      person: [
-                        {
-                          id: 'agenda27_1_1_6_1',
-                          name: '主管单位领导',
-                          post: '主管单位领导',
-                        },
-                      ],
+                      id: 'agenda27_1_1_1_2',
+                      name: '姜涛',
+                      post: '华为计算产品线副总裁',
                     },
                     {
-                      desc: '大会致辞',
-                      person: [
-                        {
-                          id: 'agenda27_1_1_6_1',
-                          name: '华为领导',
-                          post: '华为领导',
-                        },
-                      ],
-                    },
-                    {
-                      desc: '大会致辞',
-                      person: [
-                        {
-                          id: 'agenda27_1_1_6_1',
-                          name: 'Thierry Carrez',
-                          post: 'OpenInfra General Manager',
-                        },
-                      ],
+                      id: 'agenda27_1_1_1_3',
+                      name: 'Thierry Carrez',
+                      post: 'OpenInfra Foundation General Manager',
                     },
                   ],
                   detail: '',
                 },
                 {
-                  id: 'agenda27_1_1_5',
+                  id: 'agenda27_1_1_2',
                   time: '09:45-10:15',
-                  children: [
+                  desc: '	汇聚数据库创新力量，引领智能时代新未来',
+                  person: [
                     {
-                      desc: '汇聚数据库创新力量，引领智能时代新未来',
-                      person: [
-                        {
-                          id: 'agenda27_1_1_5_1',
-                          name: '熊伟',
-                          post: 'openGauss社区理事长',
-                        },
-                        {
-                          id: 'agenda27_1_1_5_2',
-                          name: '孙虎',
-                          post: '华为公司服务Fellow 2012服务实验室主任',
-                        },
-                        {
-                          id: 'agenda27_1_1_5_3',
-                          name: '特邀嘉宾',
-                          post: '特邀嘉宾',
-                        },
-                      ],
+                      id: 'agenda27_1_1_2_1',
+                      name: '熊伟',
+                      post: 'openGauss社区理事长',
                     },
                     {
-                      desc: 'openGauss 荣获中国通信学会科技进步奖一等奖 暨 openGauss关键技术突破与创新',
-                      person: [
-                        {
-                          id: 'agenda27_1_1_6_1',
-                          name: '',
-                          post: '特邀嘉宾、获奖成员代表',
-                        },
-                      ],
+                      id: 'agenda27_1_1_2_2',
+                      name: '特邀嘉宾',
+                      post: '',
                     },
                     {
-                      desc: '仪式 ：openGauss 社区新增顾问专家委员会成员',
-                      person: [
-                        {
-                          id: 'agenda27_1_1_6_1',
-                          name: '陈国',
-                          post: '中国移动信息技术中心 副总经理',
-                        },
-                      ],
+                      id: 'agenda27_1_1_2_3',
+                      name: '陈国',
+                      post: '中国移动信息技术公司 副总经理',
                     },
                     {
-                      desc: '仪式：openGauss开源社区与全球计算联盟建立战略合作',
-                      person: [
-                        {
-                          id: 'agenda27_1_1_6_1',
-                          name: '迟学斌',
-                          post: '全球计算联盟副理事长、中国科学院特聘核心骨干研究员、原中国科学院计算机网络信息中心副主任',
-                        },
-                      ],
+                      id: 'agenda27_1_1_2_4',
+                      name: '迟学斌',
+                      post: '全球计算联盟副理事长、中国科学院特聘核心骨干研究员',
+                    },
+                    {
+                      id: 'agenda27_1_1_2_5',
+                      name: '孙虎',
+                      post: '	华为公司服务Fellow、2012服务实验室主任',
                     },
                   ],
                   detail: '',
-                  pptLink: [],
                 },
                 {
-                  id: 'agenda27_1_1_7',
+                  id: 'agenda27_1_1_3',
                   time: '10:15-10:20',
                   desc: '数据库根社区产品自主创新测评证书颁证仪式',
                   person: [
                     {
                       id: 'agenda27_1_1_7_1',
                       name: '',
-                      post: '特邀嘉宾',
+                      post: '',
                     },
                   ],
                   detail: '',
                 },
                 {
-                  id: 'agenda27_1_1_7',
+                  id: 'agenda27_1_1_4',
                   time: '10:20-10:25',
-                  desc: '仪式：openGauss 6.0.0 LTS 数据库商用版本发布',
+                  desc: 'openGauss 6.0.0 LTS 数据库商用版本发布',
                   person: [
                     {
                       id: 'agenda27_1_1_7_1',
                       name: '',
-                      post: '伙伴代表',
+                      post: '',
                     },
                   ],
                   detail: '',
@@ -215,7 +166,7 @@ export default [
                 {
                   id: 'agenda27_1_1_8',
                   time: '10:40-10:45',
-                  desc: '中国关系型数据库产业发展和行业应用（2024）暨openGauss市场份额报告',
+                  desc: '关系型数据库推动产业升级，开启数字化未来新篇章\n中国关系型数据库产业发展和应用洞察',
                   person: [
                     {
                       id: 'agenda27_1_1_8_1',
@@ -229,12 +180,12 @@ export default [
                 {
                   id: 'agenda27_1_1_9',
                   time: '10:45-10:55',
-                  desc: '中国移动信息技术中心优秀商业实践案例演讲',
+                  desc: '潮起岸阔风正劲，磐维扬帆正逢时',
                   person: [
                     {
                       id: 'agenda27_1_1_9_1',
-                      name: '陈国',
-                      post: '中国移动信息技术中心 副总经理',
+                      name: '魏可伟',
+                      post: '中国移动信息技术公司数据研发首席架构师',
                     },
                   ],
                   detail: '',
@@ -243,7 +194,7 @@ export default [
                 {
                   id: 'agenda27_1_1_10',
                   time: '10:55-11:05',
-                  desc: '国家能源集团信息技术公司优秀商业实践案例演讲',
+                  desc: '国能磐石 稳筑云基\nopenGauss数据库在国家能源集团的实践与分享',
                   person: [
                     {
                       id: 'agenda27_1_1_10_1',
@@ -256,7 +207,7 @@ export default [
                 {
                   id: 'agenda27_1_1_12',
                   time: '11:05-11:15',
-                  desc: '钉钉（中国）有限公司优秀商业实践案例演讲',
+                  desc: '钉钉&openGauss的生成式AI商业探索之旅',
                   person: [
                     {
                       id: 'agenda27_1_1_12_1',
@@ -268,9 +219,9 @@ export default [
                   pptLink: [],
                 },
                 {
-                  id: 'agenda27_1_1_12',
+                  id: 'agenda27_1_1_13',
                   time: '11:15-11:30',
-                  desc: '中国联通携手海量数据探索数据库自主创新之路',
+                  desc: '共创共赢：联通集约系统携手海量数据库的自主创新实践',
                   person: [
                     {
                       id: 'agenda27_1_1_12_1',
@@ -287,9 +238,9 @@ export default [
                   pptLink: [],
                 },
                 {
-                  id: 'agenda27_1_1_12',
+                  id: 'agenda27_1_1_14',
                   time: '11:30-11:45',
-                  desc: '智能时代的创新汇聚，神通数据库携手伙伴共赢未来',
+                  desc: '智能时代的创新汇聚 神通数据库携手伙伴共赢未来',
                   person: [
                     {
                       id: 'agenda27_1_1_12_1',
@@ -303,7 +254,7 @@ export default [
                 {
                   id: 'agenda27_1_1_12',
                   time: '11:45-11:50',
-                  desc: '2024年度openGauss领先商业实践颁奖仪式',
+                  desc: '2024年度openGauss领先商业实践颁奖',
                   person: [
                     {
                       id: 'agenda27_1_1_12_1',
@@ -317,7 +268,7 @@ export default [
                 {
                   id: 'agenda27_1_1_12',
                   time: '11:50-12:00',
-                  desc: '2024年度openGauss社区突出贡献单位及优秀开发者颁奖仪式',
+                  desc: '2024年度openGauss社区突出贡献单位及优秀开发者颁奖',
                   person: [
                     {
                       id: 'agenda27_1_1_12_1',
