@@ -444,9 +444,6 @@ watch(
       word-wrap: break-word;
       > span {
         display: block;
-        & ~ span {
-          margin-top: var(--o-spacing-h6);
-        }
       }
       @media (max-width: 1100px) {
         margin-right: 0;

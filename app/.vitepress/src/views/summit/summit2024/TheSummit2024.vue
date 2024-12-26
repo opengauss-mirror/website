@@ -10,6 +10,39 @@ import SummitReview from './components/SummitReview.vue';
 import SummitLive from './components/SummitLive.vue';
 
 import summitData from './data';
+
+import { useCookieStore } from '@/stores/common';
+import { getUrlParams } from '@/shared/utils';
+
+const cookieStore = useCookieStore();
+
+// 埋点统计投放流量
+const collectAdvertisedData = () => {
+  if (cookieStore.isAllAgreed) {
+    const sensors = (window as any)['sensorsDataAnalytic201505'];
+    const { href } = window.location;
+    const regex = /[\?&]utm_source=/;
+    const containsUtmSource = regex.test(href);
+    if (!containsUtmSource) {
+      return;
+    }
+    const paramsArr = getUrlParams(href);
+
+    sensors?.setProfile({
+      profileType: 'fromAdvertised',
+      ...(window as any)['sensorsCustomBuriedData'],
+      ...paramsArr,
+      url: location.href,
+    });
+  }
+  history.pushState(null, '', location.origin + location.pathname);
+};
+
+onMounted(() => {
+  setTimeout(() => {
+    collectAdvertisedData();
+  }, 300);
+});
 </script>
 <template>
   <div class="summit-2024">
