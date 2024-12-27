@@ -12,7 +12,7 @@ export default {
     textImg: bannerText,
     textImgMo: bannerTextMO,
     linkTitle: '立即报名',
-    link: 'https://e-campaign.huawei.com/t/7bEvia',
+    link: '',
   },
   intro: {
     title: '大会简介',
@@ -22,7 +22,7 @@ export default {
     ],
   },
   live: {
-    title: '会议直播',
+    title: '精彩回顾',
     list: [
       {
         liveId: '15104',
