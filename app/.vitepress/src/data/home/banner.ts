@@ -37,7 +37,7 @@ export default {
       titleMb: [],
       subtitle: '',
       desc: [''],
-      btn: '立即观看',
+      btn: '精彩回顾',
       className: 'summit202412',
       rightInset: '',
       rightLink: '',
