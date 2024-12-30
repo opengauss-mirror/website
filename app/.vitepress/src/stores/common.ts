@@ -20,7 +20,7 @@ export const useMeeting = defineStore('meeting', {
 export const useCookieStore = defineStore('cookie', {
   state: () => ({
     status: '0',
-    version: '20241205',
+    version: '20241230',
     isNoticeVisible: false,
   }),
   getters: {
