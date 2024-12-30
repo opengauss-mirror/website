@@ -20,6 +20,7 @@ import IconCopy from '~icons/app/icon-copy.svg';
 import IconTips from '~icons/app/icon-tips.svg';
 
 import BreadCrumbs from '@/components/BreadCrumbs.vue';
+import { oa } from '@/shared/analytics';
 
 const i18n = useI18n();
 const { lang } = useData();
@@ -132,14 +133,11 @@ const userInfoStore = useUserInfoStore();
 // 老版本下载判断
 const collectDownloadData = (name: string, architectureAndOs: string) => {
   if (cookieStore.isAllAgreed || userInfoStore.username) {
-    const sensors = (window as any)['sensorsDataAnalytic201505'];
     const { href } = window.location;
     const downloadTime = new Date();
     const _U_T_ = getCustomCookie('_U_T_') || 'notLog';
     const startIndex = architectureAndOs.indexOf('_');
-    sensors?.setProfile({
-      ...(window as any)['sensorsCustomBuriedData'],
-      profileType: 'download',
+    oa.report('download', () => ({
       origin: href,
       softwareName: name,
       softwareArchitecture:
@@ -147,7 +145,7 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
       softwareOs: architectureAndOs.slice(0, startIndex),
       downloadTime,
       _U_T_,
-    });
+    }));
   }
 };
 </script>

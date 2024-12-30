@@ -1,4 +1,32 @@
 import { BAIDU_HM } from '@/data/url-config';
+import {
+  OpenAnalytics,
+  OpenEventKeys,
+  getClientInfo,
+} from '@opensig/open-analytics';
+import { reportAnalytics } from '@/api/api-analytics';
+
+export const oa = new OpenAnalytics({
+  appKey: 'openGauss',
+  request: (data) => {
+    reportAnalytics(data);
+  },
+});
+
+export const reportPV = () => {
+  oa.report(OpenEventKeys.PV);
+};
+
+export const reportPerformance = () => {
+  oa.report(OpenEventKeys.LCP);
+  oa.report(OpenEventKeys.INP);
+  oa.report(OpenEventKeys.PageBasePerformance);
+};
+
+export const enableOA = () => {
+  oa.setHeader(getClientInfo());
+  oa.enableReporting(true);
+};
 
 export const initSensor = () => {
   // 百度统计
@@ -11,22 +39,13 @@ export const initSensor = () => {
   })();
 
   // ds埋点
-  (function () {
-    const s1 = document.createElement('script');
-    s1.src = '/allow_sensor/sensorsdata.min.js';
-    s1.classList.add('analytics-script');
-
-    const s2 = document.createElement('script');
-    s2.src = '/allow_sensor/sensors.js';
-    s2.classList.add('analytics-script');
-
-    const head = document.getElementsByTagName('HEAD')[0];
-    head.appendChild(s1);
-    head.appendChild(s2);
-  })();
+  enableOA();
+  reportPV();
+  reportPerformance();
 };
 
 export const removeSensor = () => {
+  oa.enableReporting(false);
   const scripts = document.querySelectorAll('script.analytics-script');
 
   scripts.forEach((script) => {

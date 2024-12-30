@@ -14,6 +14,7 @@ import liveDark from './img/live-dark.png';
 import summitData from './data';
 import { useCommon, useCookieStore } from '@/stores/common';
 import { getUrlParams } from '@/shared/utils';
+import { oa } from '@/shared/analytics';
 
 const cookieStore = useCookieStore();
 const commonStore = useCommon();
@@ -44,7 +45,6 @@ const renderData = computed<Array<Object>>(() => {
 
 // 埋点统计投放流量
 function collectAdvertisedData() {
-  const sensors = (window as any)['sensorsDataAnalytic201505'];
   const { href } = window.location;
   const regex = /[\?&]utm_source=/;
   const containsUtmSource = regex.test(href);
@@ -52,12 +52,10 @@ function collectAdvertisedData() {
     return;
   }
   const paramsArr = getUrlParams(href);
-  sensors?.setProfile({
-    ...(window as any)['sensorsCustomBuriedData'],
-    profileType: 'fromAdvertised',
+  oa.report('fromAdvertised', () => ({
     origin: href,
     ...paramsArr,
-  });
+  }));
   history.pushState(null, '', location.origin + location.pathname);
 }
 onMounted(() => {

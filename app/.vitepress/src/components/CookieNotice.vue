@@ -14,6 +14,8 @@ import { initSensor, removeSensor } from '@/shared/analytics';
 import { useI18n } from '@/i18n';
 
 import IconClose from '~icons/app/icon-cancel.svg';
+import { reportPV } from '@/shared/analytics';
+import { nextTick } from 'vue';
 
 const { lePadV } = useScreen();
 const i18n = useI18n();
@@ -161,6 +163,7 @@ watch(
     if (isNotSigned()) {
       toggleNoticeVisible(true);
     }
+    nextTick(reportPV);
   }
 );
 </script>

@@ -20,6 +20,7 @@ import IconTips from '~icons/app/icon-tips.svg';
 import TagFilter from '@/components/TagFilter.vue';
 
 import { DOCS_LINK } from '@/data/url-config';
+import { oa } from '@/shared/analytics';
 
 const props = defineProps({
   tableData: {
@@ -270,12 +271,10 @@ const changeDownloadAuth = () => {
 // 下载埋点  新版本判断
 const collectDownloadData = (name: string) => {
   if (cookieStore.isAllAgreed || userInfoStore.username) {
-    const sensors = (window as any)['sensorsDataAnalytic201505'];
     const { href } = window.location;
     const downloadTime = new Date();
     const _U_T_ = getCustomCookie('_U_T_') || 'notLog';
-    sensors?.setProfile({
-      ...(window as any)['sensorsCustomBuriedData'],
+    oa.report('download', () => ({
       profileType: 'download',
       origin: href,
       softwareName: name,
@@ -283,7 +282,7 @@ const collectDownloadData = (name: string) => {
       softwareOs: activeOs.value,
       downloadTime,
       _U_T_,
-    });
+    }));
   }
 };
 </script>
