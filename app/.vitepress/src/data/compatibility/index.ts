@@ -1,5 +1,49 @@
 export default [
   {
+    name: 'InforCube智能运维安全管理平台',
+    version: '4',
+    type: '通用',
+    company: '上海上讯信息技术股份有限公司',
+    database: 'openGauss 5.0.0',
+    os: 'Kylin V10',
+    server: 'Intel(R630)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E4%B8%8A%E6%B5%B7%E4%B8%8A%E8%AE%AF/%E6%99%BA%E8%83%BD%E8%BF%90%E7%BB%B4%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0V4/Certificate.pdf',
+  },
+  {
+    name: '天润三维信息模型平台',
+    version: '1.0',
+    type: 'GIS',
+    company: '陕西天润科技股份有限公司',
+    database: 'openGauss 5.0.2',
+    os: 'Kylin V10 SP3',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E9%99%95%E8%A5%BF%E5%A4%A9%E6%B6%A6/%E4%B8%89%E7%BB%B4%E4%BF%A1%E6%81%AF%E6%A8%A1%E5%9E%8B%E5%B9%B3%E5%8F%B0V1.0.pdf',
+  },
+  {
+    name: '天润城市信息模型（CIM）基础平台',
+    version: '1.0',
+    type: 'GIS',
+    company: '陕西天润科技股份有限公司',
+    database: 'openGauss 5.0.2',
+    os: 'Kylin V10 SP3',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E9%99%95%E8%A5%BF%E5%A4%A9%E6%B6%A6/%E5%9F%8E%E5%B8%82%E4%BF%A1%E6%81%AF%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80%E5%B9%B3%E5%8F%B0V1.0.pdf',
+  },
+  {
+    name: '互联网+群防群治系统',
+    version: '1.0',
+    type: '数字政府',
+    company: '厦门身份宝网络科技有限公司',
+    database: 'openGauss 5.0.3',
+    os: 'openEuler 22.03 LTS',
+    server: 'Kunpeng 920(KunTai R2280)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%8E%A6%E9%97%A8%E8%BA%AB%E4%BB%BD%E5%AE%9D/%E4%BA%92%E8%81%94%E7%BD%91%2B%E7%BE%A4%E9%98%B2%E7%BE%A4%E6%B2%BB%E7%B3%BB%E7%BB%9F%20v1.0.pdf',
+  },
+  {
     name: 'UDCAP变电站综合自动化系统',
     version: '2',
     type: '能源',
