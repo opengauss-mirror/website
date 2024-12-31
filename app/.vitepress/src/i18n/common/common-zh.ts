@@ -44,7 +44,7 @@ export default {
   CODE: `代码`,
   FOOTER: {
     MAIL: GAUSS_EMAIL,
-    COPY_RIGHT: `版权所有 ©  openGauss 2024 保留一切权利`,
+    COPY_RIGHT: `版权所有 ©  openGauss {year} 保留一切权利`,
     RIGHT_LIST: [
       {
         NAME: `品牌`,

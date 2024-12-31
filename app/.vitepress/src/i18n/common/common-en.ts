@@ -42,7 +42,7 @@ export default {
   CODE: `CODE`,
   FOOTER: {
     MAIL: GAUSS_EMAIL,
-    COPY_RIGHT: `Copyright © openGauss 2024. All rights reserved.`,
+    COPY_RIGHT: `Copyright © openGauss {year}. All rights reserved.`,
     RIGHT_LIST: [
       {
         NAME: `Trademark`,
