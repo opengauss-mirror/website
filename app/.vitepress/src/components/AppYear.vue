@@ -1,7 +1,14 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+
 import gaussYear from '@/assets/category/year/gauss-year.png';
+import gaussYearMb from '@/assets/category/year/gauss-year-mb.png';
 import { GAUSS_YEAR } from '@/data/url-config';
+
+import useWindowResize from '@/components/hooks/useWindowResize';
+
+const screenWidth = useWindowResize();
+
 const isShow = ref(true);
 function closeYear() {
   isShow.value = false;
@@ -16,7 +23,7 @@ function closeYear() {
       rel="noopener noreferrer"
       target="_blank"
     ></a>
-    <img :src="gaussYear" alt="" />
+    <img :src="screenWidth > 1200 ? gaussYear : gaussYearMb" alt="" />
   </div>
 </template>
 <style lang="scss" scoped>
@@ -31,9 +38,7 @@ function closeYear() {
   @media (max-width: 1200px) {
     left: 16px;
   }
-  @media (max-width: 1200px) {
-    display: none;
-  }
+
   .year-link {
     position: absolute;
     width: 100%;
