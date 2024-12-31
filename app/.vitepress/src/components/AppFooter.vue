@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useI18n } from '@/i18n';
 import AppContent from '@/components/AppContent.vue';
+import { getYearByOffset } from '@/shared/utils';
 
 import footerLogo from '@/assets/footer/footer-logo.svg';
 import footerBg from '@/assets/footer/footer-bg.png';
@@ -104,7 +105,14 @@ const footBg = {
                 >{{ link.NAME }}</a
               >
             </div>
-            <p class="copyright">{{ i18n.common.FOOTER.COPY_RIGHT }}</p>
+            <p class="copyright">
+              {{
+                i18n.common.FOOTER.COPY_RIGHT.replace(
+                  '{year}',
+                  getYearByOffset()
+                )
+              }}
+            </p>
             <p class="mo-emial">
               <a
                 class="email"
