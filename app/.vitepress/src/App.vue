@@ -61,7 +61,7 @@ const comp = computed(() => {
       <component :is="comp" v-if="isCustomLayout"></component>
       <Content v-else />
       <AppFloat />
-      <AppYear />
+      <AppYear v-if="lang === 'zh'" />
     </main>
   </el-config-provider>
   <CookieNotice />
