@@ -19,6 +19,7 @@ import LayoutMigration from '@/layouts/LayoutMigration.vue';
 import LayoutFaq from '@/layouts/LayoutFaq.vue';
 
 import AppFloat from '@/components/AppFloat.vue';
+import AppYear from '@/components/AppYear.vue';
 
 import categories from '@/shared/category';
 
@@ -60,6 +61,7 @@ const comp = computed(() => {
       <component :is="comp" v-if="isCustomLayout"></component>
       <Content v-else />
       <AppFloat />
+      <AppYear />
     </main>
   </el-config-provider>
   <CookieNotice />
