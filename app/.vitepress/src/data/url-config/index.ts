@@ -1,4 +1,5 @@
 // 涉及的公网路径及邮箱地址的配置文件
+const GAUSS_YEAR = 'https://summary.opengauss.org/';
 const OBS_Summit_PPT =
   'https://obs-for-opengauss-summit.obs.cn-north-4.myhuaweicloud.com/';
 const GAUSS_EMAIL = 'contact@opengauss.org'; // gauss邮箱
@@ -35,8 +36,7 @@ const OBS_TRANSFER_LINK1 =
   'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/'; // 服务商认证存储的obs地址
 const OBS_LEARN_LINK =
   'https://learningvideo.obs.ap-southeast-1.myhuaweicloud.com:443/'; // 资讯视频存储的obs地址
-const OBS_JIACAN_LINK =
-  'https://jiacan.obs.ap-southeast-1.myhuaweicloud.com'; // 资讯视频存储的obs地址
+const OBS_JIACAN_LINK = 'https://jiacan.obs.ap-southeast-1.myhuaweicloud.com'; // 资讯视频存储的obs地址
 const EULER_LINK = 'https://www.openeuler.org/'; // openeuler官网
 const MINDSPORE_LINK = 'https://mindspore.cn/'; // mindspore官网
 const LOOKENG_LINK = 'https://openlookeng.io/'; // openlookeng官网
@@ -70,6 +70,7 @@ const SUMMIT2023_JOIN = 'https://e-campaign.huawei.com/t/BbuQr2'; // SUMMIT报�
 const CECN_LINK = 'http://www.ce.cn/'; // 中国经济网
 
 export {
+  GAUSS_YEAR,
   OBS_Summit_PPT,
   GAUSS_EMAIL,
   GAUSS_CERTIFICATE_EMAIL,
