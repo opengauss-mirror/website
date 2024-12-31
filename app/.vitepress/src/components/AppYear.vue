@@ -28,8 +28,11 @@ function closeYear() {
   @media (max-width: 1439px) {
     left: 24px;
   }
-  @media (max-width: 1100px) {
+  @media (max-width: 1200px) {
     left: 16px;
+  }
+  @media (max-width: 1200px) {
+    display: none;
   }
   .year-link {
     position: absolute;
