@@ -1,52 +1,23 @@
 <script setup lang="ts">
-import { computed } from 'vue';
-
-import IconArrowRight from '~icons/app/icon-arrow-right.svg';
-
-import useWindowResize from '@/components/hooks/useWindowResize';
-import { windowOpen } from '@/shared/utils';
-
-const props = defineProps({
+defineProps({
   bannerData: {
     type: Object,
     required: true,
     default: () => null,
   },
 });
-
-const screenWidth = useWindowResize();
-const isPc = computed(() => (screenWidth.value > 768 ? true : false));
-
-const banner = computed(() =>
-  isPc.value ? props.bannerData.bg : props.bannerData.bgMo
-);
-const bannerText = computed(() =>
-  isPc.value ? props.bannerData.textImg : props.bannerData.textImgMo
-);
-
-const onButtonClick = (link: string) => {
-  windowOpen(link, '_blank');
-};
 </script>
 <template>
-  <div class="summit-banner" :style="`background-image:url(${banner}) ;`">
+  <div class="summit-banner">
+    <img class="banner-img pc" :src="bannerData.bg" alt="" />
+    <img class="banner-img mo" :src="bannerData.bgMo" alt="" />
     <div class="inner">
-      <div>
-        <img v-if="bannerText" class="cover" :src="bannerText" alt="" />
-        <template v-if="bannerData.link">
-          <OButton
-            type="outline"
-            animation
-            class="banner-btn"
-            @click="onButtonClick(bannerData.link)"
-          >
-            {{ bannerData.linkTitle }}
-            <template #suffixIcon
-              ><OIcon><IconArrowRight /></OIcon
-            ></template>
-          </OButton>
-        </template>
-      </div>
+      <img
+        v-if="bannerData.textImg"
+        class="cover"
+        :src="bannerData.textImg"
+        alt=""
+      />
     </div>
   </div>
 </template>
@@ -54,7 +25,29 @@ const onButtonClick = (link: string) => {
 <style lang="scss" scoped>
 .summit-banner {
   height: 380px;
-  background: no-repeat center/cover;
+  position: relative;
+  .banner-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    &.pc {
+      display: block;
+      @media (max-width: 767px) {
+        display: none;
+      }
+    }
+    &.mo {
+      display: none;
+      @media (max-width: 767px) {
+        display: block;
+      }
+    }
+  }
   .inner {
     max-width: 1504px;
     padding: 0 44px;
@@ -70,14 +63,8 @@ const onButtonClick = (link: string) => {
       @media (max-width: 767px) {
         width: inherit;
         height: 92px;
+        margin-bottom: 40px;
       }
-    }
-    .banner-btn {
-      margin: 24px 0 0;
-      color: #fff;
-      --o-color-brand1: #fff;
-      --o-color-brand2: #fff;
-      --o-color-brand3: #fff;
     }
     @media (max-width: 767px) {
       justify-content: center;
@@ -87,17 +74,6 @@ const onButtonClick = (link: string) => {
   }
   @media (max-width: 767px) {
     height: 320px;
-    .inner {
-      .banner-btn {
-        margin: 10px 0 16px;
-        --o-button-padding: 7px 10px;
-        --o-button-font-size: var(--o-font-size-tip);
-        --o-button-line-height: var(--o-line-height-tip);
-        :deep(.suffix-icon) {
-          --o-button-icon-font-size: var(--o-font-size-h8);
-        }
-      }
-    }
   }
 }
 @include in-dark {

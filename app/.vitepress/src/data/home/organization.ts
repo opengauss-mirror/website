@@ -408,6 +408,13 @@ import jetvoice_dark from '@/assets/category/home/organization/dark/jetvoice.png
 import whaleops from '@/assets/category/home/organization/light/whaleops.png';
 import whaleops_dark from '@/assets/category/home/organization/dark/whaleops.png';
 
+import vensung from '@/assets/category/home/organization/light/vensung.png';
+import vensung_dark from '@/assets/category/home/organization/dark/vensung.png';
+import ayxx from '@/assets/category/home/organization/light/ayxx.png';
+import ayxx_dark from '@/assets/category/home/organization/dark/ayxx.png';
+import tydk from '@/assets/category/home/organization/light/tydk.png';
+import tydk_dark from '@/assets/category/home/organization/dark/tydk.png';
+
 export default [
   {
     img: baolande,
@@ -1420,5 +1427,20 @@ export default [
     img: whaleops,
     imgDark: whaleops_dark,
     name: 'WhaleOps',
+  },
+  {
+    img: vensung,
+    imgDark: vensung_dark,
+    name: 'Vensung文双',
+  },
+  {
+    img: ayxx,
+    imgDark: ayxx_dark,
+    name: '安永信息',
+  },
+  {
+    img: tydk,
+    imgDark: tydk_dark,
+    name: '天源迪科',
   },
 ];
