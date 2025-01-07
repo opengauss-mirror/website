@@ -511,6 +511,38 @@ import tianye from '@/assets/category/member/avatar/tianye.png';
 import yangzhizheng from '@/assets/category/member/avatar/yangzhizheng.png';
 import zhangzhongliang from '@/assets/category/member/avatar/zhangzhongliang.png';
 import zhaoliwei from '@/assets/category/member/avatar/zhaoliwei.png';
+import chenguo from '@/assets/category/member/avatar/chenguo.png';
+import dashimin from '@/assets/category/member/avatar/dashimin.png';
+import lihongju from '@/assets/category/member/avatar/lihongju.png';
+import liutianyu from '@/assets/category/member/avatar/liutianyu.png';
+import pinglei from '@/assets/category/member/avatar/pinglei.png';
+import raohaoquan from '@/assets/category/member/avatar/raohaoquan.png';
+import wangdan2 from '@/assets/category/member/avatar/wangdan2.png';
+import caoyu from '@/assets/category/member/avatar/caoyu.png';
+import wangwei4 from '@/assets/category/member/avatar/wangwei4.png';
+import liangyuansheng from '@/assets/category/member/avatar/liangyuansheng.png';
+import xichutian from '@/assets/category/member/avatar/xichutian.png';
+import zhangjinyu2 from '@/assets/category/member/avatar/zhangjinyu2.png';
+import wangwei5 from '@/assets/category/member/avatar/wangwei5.png';
+import xiongxiaojun2 from '@/assets/category/member/avatar/xiongxiaojun2.png';
+import quemingjian from '@/assets/category/member/avatar/quemingjian.png';
+import hechenghan2 from '@/assets/category/member/avatar/hechenghan2.png';
+import zhenggaoqi from '@/assets/category/member/avatar/zhenggaoqi.png';
+import qinbiao from '@/assets/category/member/avatar/qinbiao.png';
+import lijie from '@/assets/category/member/avatar/lijie.png';
+import liuchunmiao from '@/assets/category/member/avatar/liuchunmiao.png';
+import sunquancheng from '@/assets/category/member/avatar/sunquancheng.png';
+import wangzhenglv2 from '@/assets/category/member/avatar/wangzhenglv2.png';
+import lijunyun from '@/assets/category/member/avatar/lijunyun.png';
+import yangcan from '@/assets/category/member/avatar/yangcan.png';
+import liubaoyu from '@/assets/category/member/avatar/liubaoyu.png';
+import wufeng from '@/assets/category/member/avatar/wufeng.png';
+import lizhen from '@/assets/category/member/avatar/lizhen.png';
+import suntianfei from '@/assets/category/member/avatar/suntianfei.png';
+import liyuxiang from '@/assets/category/member/avatar/liyuxiang.png';
+import caiwenyi from '@/assets/category/member/avatar/caiwenyi.png';
+import yangzihao2 from '@/assets/category/member/avatar/yangzihao2.png';
+import zengseliang2 from '@/assets/category/member/avatar/zengseliang2.png';
 
 import { GITEE_LINK } from '@/data/url-config';
 export default {
@@ -540,6 +572,11 @@ export default {
         img: jiangdayong,
         name: `江大勇`,
         company: `中国科学院软件研究所\n副总工`,
+      },
+      {
+        img: chenguo,
+        name: `陈国`,
+        company: `中移信息技术中心\n副总经理`,
       },
     ],
     BOARD: [
@@ -1102,6 +1139,48 @@ export default {
         email: `huangnan@gbase.cn`,
         company: `天津南大通用数据技术股份有限公司`,
       },
+      {
+        img: dashimin,
+        name: `达世敏`,
+        title: `委员`,
+        email: `dashimin@cib.com.cn`,
+        company: `兴业银行股份有限公司`,
+      },
+      {
+        img: haoqingyun,
+        name: `郝庆运`,
+        title: `委员`,
+        email: `haoqingyun@cmbc.com.cn`,
+        company: `中国民生银行`,
+      },
+      {
+        img: lihongju,
+        name: `李洪举`,
+        title: `委员`,
+        email: `lhjnjnu@sina.com`,
+        company: `烽火通信科技股份有限公司`,
+      },
+      {
+        img: liutianyu,
+        name: `刘田宇`,
+        title: `委员`,
+        email: `liutianyu01@picc.com.cn`,
+        company: `中国人民保险集团股份有限公司`,
+      },
+      {
+        img: pinglei,
+        name: `平雷`,
+        title: `委员`,
+        email: `lei.ping@ceic.com`,
+        company: `国能信息技术公司`,
+      },
+      {
+        img: raohaoquan,
+        name: `饶昊泉`,
+        title: `委员`,
+        email: `rhqjy@126.com`,
+        company: `邮储银行运营数据中心`,
+      },
     ],
     BC: [
       {
@@ -1133,11 +1212,11 @@ export default {
         email: `zhaoxiaomin@chinamobile.com`,
       },
       {
-        img: gongmingyang,
-        name: `宫铭阳`,
+        img: wangdan2,
+        name: `王丹`,
         title: `委员`,
         company: `北京超图软件股份有限公司`,
-        email: `gongmingyang@supermap.com.cn`,
+        email: `wangdan@supermap.com.cn`,
       },
       {
         img: wangxiao,
@@ -2601,11 +2680,11 @@ export default {
         gitee: `${GITEE_LINK}dbowner_zhang`,
       },
       {
-        img: zhoubin,
-        name: `周斌`,
-        title: `Maintainer`,
-        email: `249396768@qq.com`,
-        gitee: `${GITEE_LINK}justbk`,
+        img: sungang,
+        name: '孙刚',
+        title: 'Committer',
+        email: 'sungang14@huawei.com',
+        gitee: `${GITEE_LINK}sungang14`,
       },
       {
         img: fuxiongdao,
@@ -3441,6 +3520,206 @@ export default {
         title: 'Committer',
         email: 'hoka@milkv.io',
         gitee: `${GITEE_LINK}hokamilkv`,
+      },
+    ],
+    CTMM: [
+      {
+        img: caoyu,
+        name: '曹宇',
+        title: 'Maintainer',
+        email: 'caoyu09@huawei.com',
+        gitee: `${GITEE_LINK}Caoy`,
+      },
+      {
+        img: wangwei4,
+        name: '王伟',
+        title: 'Maintainer',
+        email: 'wangwei321@huawei.com',
+        gitee: `${GITEE_LINK}weithu`,
+      },
+      {
+        img: liangyuansheng,
+        name: '梁远胜',
+        title: 'Maintainer',
+        email: 'liangyuansheng@huawei.com',
+        gitee: `${GITEE_LINK}liangyuansheng`,
+      },
+      {
+        img: xichutian,
+        name: '习楚天',
+        title: 'Maintainer',
+        email: 'xichutian@huawei.com',
+        gitee: `${GITEE_LINK}xicoding`,
+      },
+      {
+        img: zhangjinyu2,
+        name: '张金玉',
+        title: 'Committer',
+        email: 'zhangjinyu.zhang@huawei.com',
+        gitee: `${GITEE_LINK}jinyu_opengauss`,
+      },
+      {
+        img: wangwei5,
+        name: '王炜',
+        title: 'Committer',
+        email: 'wangwei5@huawei.com',
+        gitee: `${GITEE_LINK}wangwei5`,
+      },
+      {
+        img: xiongxiaojun2,
+        name: '熊小军',
+        title: 'Committer',
+        email: 'xiongxiaojun2@huawei.com',
+        gitee: `${GITEE_LINK}xiong_xjun`,
+      },
+      {
+        img: quemingjian,
+        name: '阙鸣健',
+        title: 'Committer',
+        email: 'quemingjian2@huawei.com',
+        gitee: `${GITEE_LINK}quemingjian`,
+      },
+      {
+        img: hechenghan2,
+        name: '贺成汉',
+        title: 'Committer',
+        email: 'he-chenghan@user.noreply.gitee.com',
+        gitee: `${GITEE_LINK}he-chenghan`,
+      },
+      {
+        img: zhenggaoqi,
+        name: '郑高启',
+        title: 'Committer',
+        email: 'zgqhope@163.com',
+        gitee: `${GITEE_LINK}zgqhope`,
+      },
+      {
+        img: qinbiao,
+        name: '秦彪',
+        title: 'Committer',
+        email: 'qinbiao1@huawei.com',
+        gitee: `${GITEE_LINK}biaoqin`,
+      },
+      {
+        img: lijie,
+        name: '李杰',
+        title: 'Committer',
+        email: 'lijie34@huawei.com',
+        gitee: `${GITEE_LINK}lijieac`,
+      },
+      {
+        img: liuchunmiao,
+        name: '刘春苗',
+        title: 'Committer',
+        email: 'liuchunmiao1@huawei.com',
+        gitee: `${GITEE_LINK}mio310`,
+      },
+      {
+        img: sunquancheng,
+        name: '孙全成',
+        title: 'Committer',
+        email: 'quancheng.sun@enmotech.com',
+        gitee: `${GITEE_LINK}sunquancheng`,
+      },
+      {
+        img: wangzhenglv2,
+        name: '王正侣',
+        title: 'Committer',
+        email: 'wangzl@vastdata.com.cn',
+        gitee: `${GITEE_LINK}april01xxx`,
+      },
+      {
+        img: lijunyun,
+        name: '黎俊云',
+        title: 'Committer',
+        email: 'lijy1@vastdata.com.cn',
+        gitee: `${GITEE_LINK}jinyyu`,
+      },
+      {
+        img: yangcan,
+        name: '阳灿',
+        title: 'Committer',
+        email: 'volcano.yangcan@huawei.com',
+        gitee: `${GITEE_LINK}yangcancq`,
+      },
+    ],
+    Embedded: [
+      {
+        img: liubaoyu,
+        name: '刘保玉',
+        title: 'Maintainer',
+        email: 'liubaoyu@ncti-gba.cn',
+        gitee: `${GITEE_LINK}borisfly`,
+      },
+      {
+        img: wufeng,
+        name: '吴峰',
+        title: 'Maintainer',
+        email: 'wufeng@ncti-gba.cn',
+        gitee: `${GITEE_LINK}aiminralph`,
+      },
+      {
+        img: quemingjian,
+        name: '阙鸣健',
+        title: 'Maintainer',
+        email: 'quemingjian2@huawei.com',
+        gitee: `${GITEE_LINK}quemingjian`,
+      },
+      {
+        img: douxin,
+        name: '窦欣',
+        title: 'Committer',
+        email: 'xdou1995@163.com',
+        gitee: `${GITEE_LINK}ywzq1161327784`,
+      },
+      {
+        img: shenzheng,
+        name: '申正',
+        title: 'Committer',
+        email: 'shenzheng4@huawei.com',
+        gitee: `${GITEE_LINK}shenzheng4`,
+      },
+      {
+        img: lizhen,
+        name: '李振',
+        title: 'Committer',
+        email: 'lizhen@ncti-gba.cn',
+        gitee: `${GITEE_LINK}lizhen29`,
+      },
+      {
+        img: suntianfei,
+        name: '孙天飞',
+        title: 'Committer',
+        email: 'suntianfei@ncti-gba.cn',
+        gitee: `${GITEE_LINK}telebby`,
+      },
+      {
+        img: liyuxiang,
+        name: '李玉祥',
+        title: 'Committer',
+        email: 'liyuxiang@ncti-gba.cn',
+        gitee: `${GITEE_LINK}zxccxz`,
+      },
+      {
+        img: caiwenyi,
+        name: '蔡文艺',
+        title: 'Committer',
+        email: 'caiwenyi@ncti-gba.cn',
+        gitee: `${GITEE_LINK}vanbars`,
+      },
+      {
+        img: yangzihao2,
+        name: '杨子浩',
+        title: 'Committer',
+        email: 'yangzihao@ncti-gba.cn',
+        gitee: `${GITEE_LINK}Louisyzh`,
+      },
+      {
+        img: zengseliang2,
+        name: '曾色亮',
+        title: 'Committer',
+        email: 'zengseliang@ncti-gba.cn',
+        gitee: `${GITEE_LINK}zengseliang`,
       },
     ],
     SHENZHEN: [
@@ -4844,6 +5123,11 @@ export default {
         name: `Dayong Jiang`,
         company: `Deputy Chief Engineer, Institute of Software, Chinese Academy of Sciences`,
       },
+      {
+        img: chenguo,
+        name: `Guo Chen`,
+        company: `Dupty Gerneral Manager , China Mobile Information Technology Co., Ltd.`,
+      },
     ],
     BOARD: [
       {
@@ -5405,6 +5689,48 @@ export default {
         email: `huangnan@gbase.cn`,
         company: `General Data Technology Co.,LTD`,
       },
+      {
+        img: dashimin,
+        name: `Shimin Da`,
+        title: `Member`,
+        email: `dashimin@cib.com.cn`,
+        company: `Industrial Bank Co., Ltd.`,
+      },
+      {
+        img: haoqingyun,
+        name: `Qingyun Hao`,
+        title: `Member`,
+        email: `haoqingyun@cmbc.com.cn`,
+        company: `China Minsheng Banking Corp., Ltd.`,
+      },
+      {
+        img: lihongju,
+        name: `Hongju Li`,
+        title: `Member`,
+        email: `lhjnjnu@sina.com`,
+        company: `FiberHome Telecommunication Technologies Co., Ltd.`,
+      },
+      {
+        img: liutianyu,
+        name: `Tianyu Liu`,
+        title: `Member`,
+        email: `liutianyu01@picc.com.cn`,
+        company: `The People's Insurance Company (Group) Of China Limited`,
+      },
+      {
+        img: pinglei,
+        name: `Ping Lei`,
+        title: `Member`,
+        email: `lei.ping@ceic.com`,
+        company: `CHN Energy Information Technology Corporation(Data Center)`,
+      },
+      {
+        img: raohaoquan,
+        name: `Haoquan Rao`,
+        title: `Member`,
+        email: `rhqjy@126.com`,
+        company: `Postal Savings Bank of China Co., Ltd.`,
+      },
     ],
     BC: [
       {
@@ -5436,11 +5762,11 @@ export default {
         email: `zhaoxiaomin@chinamobile.com`,
       },
       {
-        img: gongmingyang,
-        name: `Mingyang Gong`,
+        img: wangdan2,
+        name: `Dan Wang`,
         title: `Member`,
         company: `SuperMap Software Co., Ltd.`,
-        email: `gongmingyang@supermap.com.cn`,
+        email: `wangdan@supermap.com.cn`,
       },
       {
         img: wangxiao,
@@ -6904,11 +7230,11 @@ export default {
         gitee: `${GITEE_LINK}dbowner_zhang`,
       },
       {
-        img: zhoubin,
-        name: `Bin Zhou`,
-        title: `Maintainer`,
-        email: `249396768@qq.com`,
-        gitee: `${GITEE_LINK}justbk`,
+        img: sungang,
+        name: 'Gang sun',
+        title: 'Committer',
+        email: 'sungang14@huawei.com',
+        gitee: `${GITEE_LINK}sungang14`,
       },
       {
         img: fuxiongdao,
@@ -7744,6 +8070,206 @@ export default {
         title: 'Committer',
         email: 'hoka@milkv.io',
         gitee: `${GITEE_LINK}hokamilkv`,
+      },
+    ],
+    CTMM: [
+      {
+        img: caoyu,
+        name: 'Yu Cao',
+        title: 'Maintainer',
+        email: 'caoyu09@huawei.com',
+        gitee: `${GITEE_LINK}Caoy`,
+      },
+      {
+        img: wangwei4,
+        name: 'Wei Wang',
+        title: 'Maintainer',
+        email: 'wangwei321@huawei.com',
+        gitee: `${GITEE_LINK}weithu`,
+      },
+      {
+        img: liangyuansheng,
+        name: 'Yuansheng Liang',
+        title: 'Maintainer',
+        email: 'liangyuansheng@huawei.com',
+        gitee: `${GITEE_LINK}liangyuansheng`,
+      },
+      {
+        img: xichutian,
+        name: 'Chutian Xi',
+        title: 'Maintainer',
+        email: 'xichutian@huawei.com',
+        gitee: `${GITEE_LINK}xicoding`,
+      },
+      {
+        img: zhangjinyu2,
+        name: 'Jinyu Zhang',
+        title: 'Committer',
+        email: 'zhangjinyu.zhang@huawei.com',
+        gitee: `${GITEE_LINK}jinyu_opengauss`,
+      },
+      {
+        img: wangwei5,
+        name: 'Wei Wang',
+        title: 'Committer',
+        email: 'wangwei5@huawei.com',
+        gitee: `${GITEE_LINK}wangwei5`,
+      },
+      {
+        img: xiongxiaojun2,
+        name: 'Xiaojun Xiong',
+        title: 'Committer',
+        email: 'xiongxiaojun2@huawei.com',
+        gitee: `${GITEE_LINK}xiong_xjun`,
+      },
+      {
+        img: quemingjian,
+        name: 'Mingjian Que',
+        title: 'Committer',
+        email: 'quemingjian2@huawei.com',
+        gitee: `${GITEE_LINK}quemingjian`,
+      },
+      {
+        img: hechenghan2,
+        name: 'Chenghan He',
+        title: 'Committer',
+        email: 'he-chenghan@user.noreply.gitee.com',
+        gitee: `${GITEE_LINK}he-chenghan`,
+      },
+      {
+        img: zhenggaoqi,
+        name: 'Gaoqi Zheng',
+        title: 'Committer',
+        email: 'zgqhope@163.com',
+        gitee: `${GITEE_LINK}zgqhope`,
+      },
+      {
+        img: qinbiao,
+        name: 'Biao Qin',
+        title: 'Committer',
+        email: 'qinbiao1@huawei.com',
+        gitee: `${GITEE_LINK}biaoqin`,
+      },
+      {
+        img: lijie,
+        name: 'Jie Li',
+        title: 'Committer',
+        email: 'lijie34@huawei.com',
+        gitee: `${GITEE_LINK}lijieac`,
+      },
+      {
+        img: liuchunmiao,
+        name: 'Chunmiao Liu',
+        title: 'Committer',
+        email: 'liuchunmiao1@huawei.com',
+        gitee: `${GITEE_LINK}mio310`,
+      },
+      {
+        img: sunquancheng,
+        name: 'Quancheng Sun',
+        title: 'Committer',
+        email: 'quancheng.sun@enmotech.com',
+        gitee: `${GITEE_LINK}sunquancheng`,
+      },
+      {
+        img: wangzhenglv2,
+        name: 'Zhenglv Wang',
+        title: 'Committer',
+        email: 'wangzl@vastdata.com.cn',
+        gitee: `${GITEE_LINK}april01xxx`,
+      },
+      {
+        img: lijunyun,
+        name: 'Junyun Li',
+        title: 'Committer',
+        email: 'lijy1@vastdata.com.cn',
+        gitee: `${GITEE_LINK}jinyyu`,
+      },
+      {
+        img: yangcan,
+        name: 'Can Yang',
+        title: 'Committer',
+        email: 'volcano.yangcan@huawei.com',
+        gitee: `${GITEE_LINK}yangcancq`,
+      },
+    ],
+    Embedded: [
+      {
+        img: liubaoyu,
+        name: 'Baoyu Liu',
+        title: 'Maintainer',
+        email: 'liubaoyu@ncti-gba.cn',
+        gitee: `${GITEE_LINK}borisfly`,
+      },
+      {
+        img: wufeng,
+        name: 'Feng Wu',
+        title: 'Maintainer',
+        email: 'wufeng@ncti-gba.cn',
+        gitee: `${GITEE_LINK}aiminralph`,
+      },
+      {
+        img: quemingjian,
+        name: 'Mingjian Que',
+        title: 'Maintainer',
+        email: 'quemingjian2@huawei.com',
+        gitee: `${GITEE_LINK}quemingjian`,
+      },
+      {
+        img: douxin,
+        name: 'Xin Dou',
+        title: 'Committer',
+        email: 'xdou1995@163.com',
+        gitee: `${GITEE_LINK}ywzq1161327784`,
+      },
+      {
+        img: shenzheng,
+        name: 'Zheng Shen',
+        title: 'Committer',
+        email: 'shenzheng4@huawei.com',
+        gitee: `${GITEE_LINK}shenzheng4`,
+      },
+      {
+        img: lizhen,
+        name: 'Zhen Li',
+        title: 'Committer',
+        email: 'lizhen@ncti-gba.cn',
+        gitee: `${GITEE_LINK}lizhen29`,
+      },
+      {
+        img: suntianfei,
+        name: 'Tianfei Sun',
+        title: 'Committer',
+        email: 'suntianfei@ncti-gba.cn',
+        gitee: `${GITEE_LINK}telebby`,
+      },
+      {
+        img: liyuxiang,
+        name: 'Yuxiang Li',
+        title: 'Committer',
+        email: 'liyuxiang@ncti-gba.cn',
+        gitee: `${GITEE_LINK}zxccxz`,
+      },
+      {
+        img: caiwenyi,
+        name: 'Wenyi Cai',
+        title: 'Committer',
+        email: 'caiwenyi@ncti-gba.cn',
+        gitee: `${GITEE_LINK}vanbars`,
+      },
+      {
+        img: yangzihao2,
+        name: 'Zihao Yang',
+        title: 'Committer',
+        email: 'yangzihao@ncti-gba.cn',
+        gitee: `${GITEE_LINK}Louisyzh`,
+      },
+      {
+        img: zengseliang2,
+        name: 'Seliang Zeng',
+        title: 'Committer',
+        email: 'zengseliang@ncti-gba.cn',
+        gitee: `${GITEE_LINK}zengseliang`,
       },
     ],
     SHENZHEN: [
