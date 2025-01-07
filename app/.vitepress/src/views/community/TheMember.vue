@@ -600,14 +600,14 @@ const handleChangeActiveMobile = (activeNames: any) => {
         display: flex;
         gap: 32px;
         justify-content: center;
-        max-width: 510px;
+        max-width: 720px;
         margin: 0 auto;
         & + .member-list {
           margin-top: 12px;
           gap: 0;
           justify-content: space-between;
         }
-        li{
+        li {
           width: 152px;
         }
       }

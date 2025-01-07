@@ -241,6 +241,20 @@ export default {
           list: data.en.RISCV,
         },
         {
+          name: `CTMM`,
+          id: `CTMM`,
+          giteePath: `${GITEE_LINK}opengauss/tc/tree/master/sigs/CTMM`,
+          emial: `ctmm@opengauss.org`,
+          list: data.en.CTMM,
+        },
+        {
+          name: `Embedded`,
+          id: `Embedded`,
+          giteePath: `${GITEE_LINK}opengauss/tc/tree/master/sigs/Embedded`,
+          emial: `embedded@opengauss.org`,
+          list: data.en.Embedded,
+        },
+        {
           other: `Want to start a new SIG?`,
           other1: ``,
           other2: `Please send your application to : `,

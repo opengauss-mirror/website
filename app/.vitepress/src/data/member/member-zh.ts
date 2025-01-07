@@ -241,6 +241,20 @@ export default {
           list: data.zh.RISCV,
         },
         {
+          name: `CTMM`,
+          id: `CTMM`,
+          giteePath: `${GITEE_LINK}opengauss/tc/tree/master/sigs/CTMM`,
+          emial: `ctmm@opengauss.org`,
+          list: data.zh.CTMM,
+        },
+        {
+          name: `Embedded`,
+          id: `Embedded`,
+          giteePath: `${GITEE_LINK}opengauss/tc/tree/master/sigs/Embedded`,
+          emial: `embedded@opengauss.org`,
+          list: data.zh.Embedded,
+        },
+        {
           other: `感兴趣的SIG组还未出现?`,
           other1: `新的SIG组等你来发起！`,
           other2: `欢迎发送申请邮件至：`,
