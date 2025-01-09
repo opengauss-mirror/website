@@ -10,6 +10,7 @@ import useWindowResize from '@/components/hooks/useWindowResize';
 import banner from '@/assets/illustrations/banner-secondary.png';
 import illustration from '@/assets/illustrations/honor.png';
 import emailImg from '@/assets/category/member/toemail.svg';
+import opengaussIcon from '@/assets/category/honor/opengauss-icon.png';
 
 import IconChecked from '~icons/app/icon-checked.svg';
 import IconUnchecked from '~icons/app/icon-unchecked.svg';
@@ -230,7 +231,7 @@ const getCertificateBoxGridTemplateColumns = (
             <!-- openGauss 优秀企业贡献奖 -->
             <div v-if="item.enterpriseData">
               <h1 class="honor-title common-title">
-                {{ honorData.excellentEnterpriseTitle }}
+                {{ item.excellentEnterpriseTitle }}
               </h1>
               <div class="enterprise-wrap">
                 <div
@@ -238,18 +239,29 @@ const getCertificateBoxGridTemplateColumns = (
                   :key="enterprise.firstName + enterprise.secondName"
                   class="enterprise-card"
                 >
+                  <img class="gauss-icon" :src="opengaussIcon" />
+                  <p class="enterprise-title">荣誉证书</p>
                   <div
                     class="enterprise-title-wrap"
                     :title="enterprise.firstName + enterprise.secondName"
                   >
-                    <p class="enterprise-title" :title="enterprise.firstName">
-                      {{ enterprise.firstName }}
-                    </p>
-                    <p class="enterprise-title" :title="enterprise.secondName">
-                      {{ enterprise.secondName }}
-                    </p>
+                    <template v-if="isMobile">
+                      <p class="enterprise-title">
+                        {{ enterprise.firstName }}{{ enterprise.secondName }}
+                      </p>
+                    </template>
+                    <template v-else>
+                      <p class="enterprise-title">
+                        {{ enterprise.firstName }}
+                      </p>
+                      <p class="enterprise-title">
+                        {{ enterprise.secondName }}
+                      </p>
+                    </template>
                   </div>
-                  <p class="enterprise-prize-title">openGauss 优秀企业贡献奖</p>
+                  <p class="enterprise-prize-title">
+                    {{ item.excellentEnterpriseTitle }}
+                  </p>
                 </div>
               </div>
 
@@ -267,7 +279,7 @@ const getCertificateBoxGridTemplateColumns = (
             <!-- openGauss 优秀个人贡献奖 -->
             <div v-if="item.personData">
               <h1 class="honor-title common-title">
-                {{ honorData.excellentPersonTitle }}
+                {{ item.excellentPersonTitle }}
               </h1>
               <div class="person-wrap">
                 <div
@@ -752,36 +764,66 @@ const getCertificateBoxGridTemplateColumns = (
       }
 
       .enterprise-card {
+        padding: 25px 10px 16px;
         background: var(--o-color-bg2);
         box-shadow: 0 1px 5px 0 rgba(45, 47, 51, 0.1);
         background-color: var(--o-color-bg2);
         background-image: url(@/assets/category/honor/enterprise-item-bg.png);
         background-repeat: no-repeat;
-        background-size: 90% 90%;
+        background-size: 100% 100%;
         background-position: center;
         text-align: center;
+        color: #ffd499;
+
+        @media (max-width: 768px) {
+          padding: 16px 8px 8px;
+          line-height: var(--o-line-height-text);
+          font-size: var(--o-font-size-text);
+        }
+
+        .gauss-icon {
+          width: 50px;
+          height: 40px;
+          margin-bottom: 4px;
+        }
 
         .enterprise-title-wrap {
-          padding: 65px 0 77px;
+          min-height: 52px;
+          margin: 40px 0 90px;
 
-          .enterprise-title {
-            padding: 0 var(--o-spacing-h8);
-            font-size: var(--o-font-size-h7);
-            font-weight: 700;
+          @media (max-width: 768px) {
+            min-height: 44px;
+            margin: 12px 0 30px;
+          }
+        }
 
-            @media (max-width: 900px) {
-              font-size: var(--o-font-size-text);
-            }
+        .enterprise-title {
+          line-height: var(--o-line-height-h7);
+          font-size: var(--o-font-size-h7);
+          font-weight: 500;
+
+          @media (max-width: 900px) {
+            line-height: var(--o-line-height-h8);
+            font-size: var(--o-font-size-h8);
+          }
+
+          @media (max-width: 768px) {
+            line-height: var(--o-line-height-text);
+            font-size: var(--o-font-size-text);
           }
         }
 
         .enterprise-prize-title {
-          padding: 24px 12px 30px;
           line-height: var(--o-line-height-h8);
           font-size: var(--o-font-size-h8);
 
           @media (max-width: 900px) {
-            font-size: var(--o-font-size-tip);
+            line-height: var(--o-line-height-text);
+            font-size: var(--o-font-size-text);
+          }
+
+          @media (max-width: 768px) {
+            font-size: 10px;
           }
         }
       }
@@ -812,6 +854,7 @@ const getCertificateBoxGridTemplateColumns = (
         background: var(--o-color-bg2);
         box-shadow: 0 1px 5px 0 rgba(45, 47, 51, 0.1);
         text-align: center;
+        overflow: visible;
 
         .name {
           margin-top: var(--o-spacing-h8);
@@ -827,16 +870,17 @@ const getCertificateBoxGridTemplateColumns = (
         }
 
         .comment {
+          z-index: 1;
           position: absolute;
           top: 0;
           right: 0;
-          bottom: 0;
           left: 0;
+          min-height: 100%;
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: flex-start;
-          padding: var(--o-spacing-h6);
+          padding: 16px;
           line-height: 20px;
           background: #2d0a60;
           color: var(--o-color-white);

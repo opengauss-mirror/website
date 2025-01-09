@@ -81,6 +81,29 @@ import yanghao2024 from '@/assets/category/honor/2024/member/yanghao.png';
 import zhangbingbing2024 from '@/assets/category/honor/2024/member/zhangbingbing.png';
 import zhangting2024 from '@/assets/category/honor/2024/member/zhangting.png';
 import zhaoxiaolin2024 from '@/assets/category/honor/2024/member/zhaoxiaolin.png';
+import tongmeixia2024 from '@/assets/category/honor/2024/member/tongmeixia.png';
+import duanguoqiang2024 from '@/assets/category/honor/2024/member/duanguoqiang.png';
+import jiangyan2024 from '@/assets/category/honor/2024/member/jiangyan.png';
+import zhoujing2024 from '@/assets/category/honor/2024/member/zhoujing.png';
+import meicheng2024 from '@/assets/category/honor/2024/member/meicheng.png';
+import xuexinyi2024 from '@/assets/category/honor/2024/member/xuexinyi.png';
+import liangyan22024 from '@/assets/category/honor/2024/member/liangyan2.png';
+import chaiyi2024 from '@/assets/category/honor/2024/member/chaiyi.png';
+import zhengjiaxing2024 from '@/assets/category/honor/2024/member/zhengjiaxing.png';
+import leiziwei2024 from '@/assets/category/honor/2024/member/leiziwei.png';
+import xvdabiao2024 from '@/assets/category/honor/2024/member/xvdabiao.png';
+import zhangzhongliang2024 from '@/assets/category/honor/2024/member/zhangzhongliang.png';
+import liuwei2024 from '@/assets/category/honor/2024/member/liuwei.png';
+import ningyali2024 from '@/assets/category/honor/2024/member/ningyali.png';
+import liuyao2024 from '@/assets/category/honor/2024/member/liuyao.png';
+import wuyuelin2024 from '@/assets/category/honor/2024/member/wuyuelin.png';
+import youyiheng2024 from '@/assets/category/honor/2024/member/youyiheng.png';
+import tanxiaofan2024 from '@/assets/category/honor/2024/member/tanxiaofan.png';
+import huangning2024 from '@/assets/category/honor/2024/member/huangning.png';
+import wuyueliang2024 from '@/assets/category/honor/2024/member/wuyueliang.png';
+import songfei2024 from '@/assets/category/honor/2024/member/songfei.png';
+import yangzhizheng2024 from '@/assets/category/honor/2024/member/yangzhizheng.png';
+import zhaoliwei2024 from '@/assets/category/honor/2024/member/zhaoliwei.png';
 
 import { GITEE_LINK, CECN_LINK } from '@/data/url-config';
 
@@ -90,8 +113,6 @@ export default {
   viewCertificate: '查看证书',
   excellentDeveloperTitle: 'openGauss 年度优秀开发者',
   excellentSigTitle: 'openGauss 年度优秀SIG',
-  excellentEnterpriseTitle: 'openGauss 优秀企业贡献奖',
-  excellentPersonTitle: 'openGauss 优秀个人贡献奖',
 
   honorList: [
     {
@@ -327,6 +348,8 @@ export default {
     },
     {
       id: '2023',
+      excellentEnterpriseTitle: 'openGauss 优秀企业贡献奖',
+      excellentPersonTitle: 'openGauss 优秀个人贡献奖',
       data: [
         {
           name: '加入 CNCF Landscape',
@@ -776,6 +799,8 @@ export default {
     },
     {
       id: '2024',
+      excellentEnterpriseTitle: 'openGauss 社区突出贡献单位',
+      excellentPersonTitle: 'openGauss 优秀个人贡献奖',
       data: [
         {
           name: '最具影响力数据库',
@@ -1053,6 +1078,359 @@ export default {
           type: 'label',
           value:
             '优秀SIG组：1、发布技术竞争力特性数量最多  2、组织、开发者多样性  3、社区式开发运作规范包括不限于会议频次&纪要、社区CICD、社区公开讨论等',
+        },
+      ],
+      enterpriseData: [
+        {
+          firstName: '北京海量数据技术',
+          secondName: '股份有限公司',
+        },
+        {
+          firstName: '云和恩墨（北京）信息',
+          secondName: '技术有限公司',
+        },
+        {
+          firstName: '中国移动信息技术公司',
+          secondName: '数据库研发中心',
+        },
+        {
+          firstName: '天津神舟通用数据技术',
+          secondName: '有限公司',
+        },
+        {
+          firstName: '天津南大通用数据技术',
+          secondName: '股份有限公司',
+        },
+        {
+          firstName: '中国民生银行',
+          secondName: '股份有限公司',
+        },
+        {
+          firstName: '粤港澳大湾区',
+          secondName: '国家技术创新中心',
+        },
+        {
+          firstName: '中国邮政储蓄银行',
+          secondName: '股份有限公司',
+        },
+        {
+          firstName: '软通动力信息技术（集团）',
+          secondName: '股份有限公司',
+        },
+        {
+          firstName: '中软国际科技服务',
+          secondName: '有限公司',
+        },
+      ],
+      enterpriseRules: [
+        {
+          type: 'tip',
+          value:
+            '注：本次结果依据2024年1月-2024年12月在openGauss社区生态合作、技术创新、商业应用三个方面做出突出贡献的企事业单位',
+        },
+        {
+          type: 'label',
+          value:
+            '商业成功：2024年度累计装机量排名，1-3名5分，3-6名3分，6-10名2分，10-15名各1分。',
+        },
+        {
+          type: 'label',
+          value:
+            '技术创新：2024年合入代码贡献排名，1-3名5分，3-6名3分，6-10名1分。',
+        },
+        {
+          type: 'label',
+          value:
+            '生态建设：2024年联合营销排名（活动、直播、费用、宣传等维度支持）第一名3分，第二名2分，第3名-第5名1分。',
+        },
+      ],
+      personData: [
+        {
+          name: '李童',
+          company: '海量数据',
+          avatar: litong2024,
+          comment: [
+            '参与docs SIG组双周例会，统计社区issue和pr情况，完成committer工作汇报；完成330和930版本海量合入需求的手册内容提交。',
+          ],
+        },
+        {
+          name: '郭欢',
+          company: '云和恩墨',
+          avatar: guohuan2024,
+          comment: ['docs仓反馈52个issue，提交36个pr，评审合并331个pr。'],
+        },
+        {
+          name: '童美霞',
+          company: '中软国际',
+          avatar: tongmeixia2024,
+          comment: [
+            '6.0.0版本资料处理优化包括特性模块跟踪、评审流程、资料调整、日常 Issue 和 PR 处理，创建issue8个，修改50+ 个 issue，提交 60+ 个 PR（包括 issue 修改、需求合入和 bug 修复。审核 290+ 个 PR，对开发和用户提交的内容进行审核，并提出审核意见，跟踪修改进展。',
+          ],
+        },
+        {
+          name: '罗梦',
+          company: '粤港澳大湾区国创中心',
+          avatar: luomeng2024,
+          comment: [
+            '主要负责openGauss DataKit平台智能运维相关插件的详细设计、核心代码开发，其中包括实例监控插件、日志检索插件、智能诊断插件以及告警监控插件等。',
+            '在过程中与openGauss社区以及生态伙伴（海量数据以及邮储银行、中移在线）紧密联系与协作，确保需求与技术方案符合社区与伙伴的真实需求，实现技术共建共享。近一年提交PR 38个、协助解决issue 7个，提交issue 9个。每双周参与OPS SIG组例会，积极组织和参与DataKit相关特性的评审工作。',
+          ],
+        },
+        {
+          name: '段国强',
+          company: '华为',
+          avatar: duanguoqiang2024,
+          comment: [
+            '1.解决社区issue 77个，提交pr 89个，贡献代码13000+行。',
+            '2.完成“DataKit支持SSO与DevKit统一登录”、“DataKit迁移插件支持连接到数据库集群”、“Portal支持依赖包离线安装”需求交付。',
+            '3.搭建“DataKit接口测试框架”并补充接口用例100+，并主导实现门禁对DataKit接口功能的测试看护。',
+            '4.输出“DataKit自动化安装脚本”和“DataKit数据迁移”系列文档。',
+            '5.社区直播分享DataKit数据迁移功能使用。',
+            '6.并支撑解决客户及同事在DataKit使用和数据迁移相关问题20+次。',
+          ],
+        },
+        {
+          name: '董宁',
+          company: '华为',
+          avatar: dongning2024,
+          comment: [
+            '特性开发：全年交付资源池化项目CBB MES线程池化、DMS在线reform增强、DMS DRC rebuild流程优化等重点特性3个，总代码量6k+，代码质量高，整体缺陷密度小于千分之三。PR合入：CM SIG中共合入41个，其中DMS仓26个，CBB仓10个；',
+            'Issue修复：闭环23个，其中包括openGauss TPCC重复主键错误、MES网卡重启建联慢等疑难问题；',
+            '公共事务：技术布道分享资源池化DMS架构和缓存一致性算法。',
+          ],
+        },
+        {
+          name: '姜岩',
+          company: '华为',
+          avatar: jiangyan2024,
+          comment: [
+            '特性开发：全年交付CM选主逻辑优化，多数派备机未回放完时，及时选出旧主，总代码量300+，有效提升CM选主仲裁稳定性。',
+            'PR合入：CM SIG中共合入27个，其中CM仓近一年合入PR 23个；',
+            'Issue修复：闭环CM模块相关Issue 19个；',
+            '代码检视：积极参与Code Review，提出有效检视意见86条。',
+          ],
+        },
+        {
+          name: '周婧',
+          company: '中国移动',
+          avatar: zhoujing2024,
+          comment: ['Plugin仓发现issue 18个，评审comment 11个，pr数3个'],
+        },
+        {
+          name: '赵晓琳',
+          company: '海量数据',
+          avatar: zhaoxiaolin2024,
+          comment: [
+            '近一年社区贡献171次，提出了6个issue，解决了2个issue，修改积极参与社区评审会议，根据评审意见修改完善代码实现。并在开发和使用过程中发现提出和修复多个社区代码缺陷。',
+          ],
+        },
+        {
+          name: '梅程',
+          company: '华为',
+          avatar: meicheng2024,
+          comment: [
+            '1. 高质量交付datakit支持容灾集群需求，构建容灾集群搭建可视化界面，代码量2k+。',
+            '2. 高质量交付MySql兼容性需求，完成4个兼容功能点，支持interval表达式，支持straight_join, 支持删除视图基表依赖解耦，部分关键字降级与MySql一致。代码量4k+。',
+            '3. 高质量交付A兼容性需求，完成16个兼容功能点，代码量6k+。',
+            '4. 全年解决社区issue 65个，反馈问题单17个。',
+            '5. 全年提交PR79个，代码量30k+。',
+            '6. 负责升级问题专项，分析推进伙伴解决升级问题30+个。',
+            '7. openGauss社区发布wiki、博客10余篇。',
+          ],
+        },
+        {
+          name: '薛欣怡',
+          company: '南大通用',
+          avatar: xuexinyi2024,
+          comment: [
+            '1.devcloud完成上传测试方案10个（其中7条由于没有账号，托同事代传）',
+            '2.issues反馈3个+验收4个',
+            '3.上传南大特性相关文本用例涉及10个特性，共439条文本用例（一小部分由于当时没有账号，由同事代传）',
+            '4.社区特性测试报告评审以及合入gitee，共5个特性相关+1个南大集成版本测试报告',
+          ],
+        },
+        {
+          name: '梁燕',
+          company: '海量数据',
+          avatar: liangyan22024,
+          comment: [
+            '1. 提交issue： 自2024.1.1 -2024.11.28，提交102个',
+            '2.  提交需求：自2024.1.1 -2024.11.28，提交13个',
+            '3. 参与大部分的测试报告评审，测试方案评审',
+            '4. 针对资源池化缺陷较多的情况，主动与社区联合研发做根因分析，推动资源池化质量提升',
+            '5. 积极配合缺陷或者需求的沟通，共同推进社区版本质量',
+          ],
+        },
+        {
+          name: '柴毅',
+          company: '南大通用',
+          avatar: chaiyi2024,
+          comment: [
+            '修复了若干问题包括：',
+            '1.使用大写模式的序列向表中插入数据，报错小写模式不存在的问题',
+            '2.解决内置函数pg_catalog_pg_relation_size执行宕机问题',
+            '3.修复gs_probackup工具中pgut_execute_extended函数有libpq内存泄漏问题',
+            '4，修复gs_probackup工具中process_by_type函数有内存泄漏问题',
+            '5.修复当表空间设置成最大值后，并发插入数据并撑满表空间，发生core问题',
+            '6.修复CheckIdleInTransactionSessionTimeout()中计数变量错误',
+            '7.修复createuser工具在密码不合规情况下有内存泄漏问题',
+            '8.修复bin/script下的工具help命令有内存泄漏问题',
+            '9.解决gs_om -t status --detail打印的主机名被脱敏导致生成错误的静态配置文件，导致扩容失败问题',
+            '10.修复建立容灾关系后，主集群扩容报错问题',
+          ],
+        },
+        {
+          name: '郑嘉星',
+          company: '海量数据',
+          avatar: zhengjiaxing2024,
+          comment: [
+            '开发了物化视图功能增强特性，支持创建删除物化视图日志，支持物化视图创建时不立即刷新。修复server仓issue共10个。合入PR共12个。为openGauss的兼容性和质量提升做出了贡献',
+          ],
+        },
+        {
+          name: '雷紫薇',
+          company: '神舟通用',
+          avatar: leiziwei2024,
+          comment: [
+            '近一年在社区openGauss-server仓提交需求PR 2个，实现了A兼容性模式下的《完善PL中的type、record类型使用》。提交bugfix PR 20个，修复issue 20个。',
+          ],
+        },
+        {
+          name: '徐达标',
+          company: '华为',
+          avatar: xvdabiao2024,
+          comment: [
+            '在oGengine商用交付项目中，完成了多个关键需求的开发，主导和协助参与了多个疑难问题的解决。',
+          ],
+        },
+        {
+          name: '张仲良',
+          company: '中国移动',
+          avatar: zhangzhongliang2024,
+          comment: [
+            '1．在社区存储引擎贡献根据阈值预分配xlog文件的特性开发，积极兼容性的相关问题，提交PR共计约20+',
+            '2．在openGauss磐维数据库现场应用过程中，和社区专家一起讨论现场问题的相关解决方案，提升openGauss存储引擎的质量',
+          ],
+        },
+        {
+          name: '刘伟',
+          company: '云和恩墨',
+          avatar: liuwei2024,
+          comment: [
+            '支持了最新版本的orafce在openGauss上的兼容性编译与运行，支持了关键字作为别名可以不带as的特性',
+          ],
+        },
+        {
+          name: '宁雅黎',
+          company: '中软国际',
+          avatar: ningyali2024,
+          comment: [
+            '累计参与38家客户ISV兼容性认证、OS兼容性认证、发行版认证，提出250+有效问题，指导用户修复问题250+，在社区发布blog【openGauss使用gsql进行ssl连接测试】，帮助客户能快速熟悉ssl连接流程以便完成认证。',
+          ],
+        },
+        {
+          name: '郭委',
+          company: '华为',
+          avatar: guowei2024,
+          comment: [
+            '1、dbmind社区提交并合入11个,解决索引推荐，web界面展示，索引推荐，慢SQL诊断等相关bug;',
+            '2、支撑DBMind在农行等客户侧应用。',
+          ],
+        },
+        {
+          name: '刘遥',
+          company: '海量数据',
+          avatar: liuyao2024,
+          comment: [
+            '1.封装硬件密码模块接口库约3K行代码',
+            '2.逻辑备份回复支持加解密和hmac约1.7K行代码',
+          ],
+        },
+        {
+          name: '巫悦彬',
+          company: '粤港澳大湾区国创中心',
+          avatar: wuyuelin2024,
+          comment: [
+            '主要负责openGauss DataKit平台智能运维相关插件的详细设计、核心代码开发，其中包括实例监控插件、日志检索插件、告警监控插件。在过程中与openGauss社区以及生态伙伴（海量数据以及邮储银行、中移在线）紧密联系与协作，确保需求与技术方案符合社区与伙伴的真实需求，实现技术共建共享。',
+            '近一年提交PR42个，协助解决issue4个，提交issue2个，每双周参与OPS SIG组例会，积极组织和参与DataKit相关特性的评审工作。',
+          ],
+        },
+        {
+          name: '游奕桁',
+          company: '天津大学',
+          avatar: youyiheng2024,
+          comment: [
+            '参与了openGauss-graph开发项目，基于openGauss行式存储引擎，设计并实现了兼容RDF图和属性图的知识图谱数据存储与管理方案。与此同时，负责开发知识图谱数据库的查询处理方法，新增了对SPARQL语法的支持，实现了路径查询、链式查询、星型查询及复杂查询等基本图模式查询功能。在此基础上，还实现了对Cypher语法的兼容，完成了两种语言的语义对齐。此外，还开发了包括最短路径查询、PageRank值计算等在内的图分析查询功能，进一步提升了系统的查询性能与分析能力。',
+          ],
+        },
+        {
+          name: '陈炳达',
+          company: '海量数据',
+          avatar: chenbingda2024,
+          comment: [
+            '1、RM 贡献跟踪',
+            '2、新需求承接及版本进度对齐',
+            '3、需求进度追踪。',
+            '4、Issue 进展跟进及解决。',
+          ],
+        },
+        {
+          name: '谭小凡',
+          company: '中科院软件研究所',
+          avatar: tanxiaofan2024,
+          comment: [
+            '目前 openGauss 5.1.0 和 openGauss 6.0.0 都成功移植到了RISC-V架构（参见：https://gitee.com/opengauss/riscv）, 这两大重要的成果都是谭小凡主导完成',
+          ],
+        },
+        {
+          name: '黄宁',
+          company: '北京超图',
+          avatar: huangning2024,
+          comment: [
+            '代码贡献：修复关键 Bug、优化性能、增加新功能特性',
+            '问题处理：累计回复 Issue：13 个，平均响应时间约 1 天',
+            '社区互动：帮助 GIS 模块的使用者分析处理问题，积极参与项目讨论',
+            '关键成就：与openGauss社区协作，解决华为、南大通用项目中 postgis的编译适配、性能等问题， 改进代码质量，提升项目稳定性，增强项目功能',
+          ],
+        },
+        {
+          name: '吴沃亮',
+          company: '粤港澳大湾区国创中心',
+          avatar: wuyueliang2024,
+          comment: [
+            '主要负责openGauss/openGauss-embedded社区仓库的SQL引擎开发与缺陷修复开发工作，个人代码提交共1125次，积极促进社区仓库的发展与迭代。高效处理数据库各子模块的问题单共52个，有效提升了社区问题的响应与解决速度。深度参与SQL引擎的设计与开发，从0开始设计并实现包括类型系统、表达式系统、较完整的查询功能以及执行引擎在内的各个子模块，为社区提供了坚实的SQL处理能力。在SQL引擎中实现了基于规则的优化器，显著提升了SQL引擎的查询性能，为用户带来更快的查询体验。比如select count(*)操作，在千万级的表中，添加优化器后，耗时从10s下降到30ms。实现SQL引擎独立的内存管理模块，通过智能的内存分配限制，在内存受限环境下有效保护了数据库进程的安全，进一步提升了系统的稳定性和可靠性。',
+          ],
+        },
+        {
+          name: '宋菲',
+          company: '神舟通用',
+          avatar: songfei2024,
+          comment: [
+            '负责了openGauss社区8个特性（I7V9W7、I6UE6N、I6TP6U、I85TUH、I8WWP9、I8WPK8、I85TS6）的测试相关工作；编写并管理测试设计8个，提交文本用例625个（自动化用例386个），编写并管理测试报告9个（包含1个集成测试报告）。共参与20次QA SIG会议，提出至少5个评审意见。共提交有效缺陷31个，包含11个严重及主要缺陷。',
+          ],
+        },
+        {
+          name: '杨志铮',
+          company: '中国移动',
+          avatar: yangzhizheng2024,
+          comment: [
+            '有导出同义词问题，提出issue3个， 目前正在做向量数据库融合查询，支持HNSW索引进行融合查询，并且使用独立的代价计算、执行计划、执行算子。',
+          ],
+        },
+        {
+          name: '赵立伟',
+          company: '中国移动',
+          avatar: zhaoliwei2024,
+          comment: [
+            '在包括tablespace_map文件可能导致后续备份失败、索引实现中的数组长度问题、更新表复制标识的数组长度问题、alter index invisible代码优化、h alter index提示信息缺失问题修复等关键问题上提供了切实的解决方案；积极参与社区下一个版本的需求开发比如支持CREATE OR REPLACE TRIGGER语法、支持给for循环的索引指定类型、支持REVERSE i+1..i+10的语法等以及创建唯一函数值索引，插入相同值时未触发唯一索引bug修复工作。',
+          ],
+        },
+      ],
+      personRules: [
+        {
+          type: 'label',
+          value:
+            '注：此奖项的评选是由openGauss社区各个SIG组Maintainer其SIG组员的贡献进行择优推荐，推荐对象为2024年1月-2024年12月在openGauss社区的技术创新、技术生态发展、工程能力提升等工作中成果突出的开发者，包含但不限于PR提交、Issue反馈、Issue修复、CVE修复、特性开发、生态发展、公共事务等，经过最终评选，本次评选出30名优秀个人贡献者。',
         },
       ],
     },
