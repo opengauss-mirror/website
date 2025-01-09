@@ -42,6 +42,7 @@ import IconCopy from '~icons/app/icon-copy.svg';
 
 import useWindowResize from '@/components/hooks/useWindowResize';
 import { GITEE_LINK } from '@/data/url-config';
+import { oaReport } from '@/shared/analytics';
 
 const { lang } = useData();
 const i18n = useI18n();
@@ -683,9 +684,13 @@ const copyMeetingInfo = (meetingItem: DayDataT, e: MouseEvent) => {
     initClipboard(meetingInfo.value, e);
   }
 };
+
+const onCalendarClick = () => {
+  oaReport('meetingClick', undefined, 'meeting');
+};
 </script>
 <template>
-  <div class="home-calendar">
+  <div class="home-calendar" @click="onCalendarClick">
     <div class="calendar">
       <el-calendar v-if="windowWidth > 768" ref="calendar" class="calender">
         <template #header="{ date }">

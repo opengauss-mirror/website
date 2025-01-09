@@ -20,7 +20,7 @@ import IconTips from '~icons/app/icon-tips.svg';
 import TagFilter from '@/components/TagFilter.vue';
 
 import { DOCS_LINK } from '@/data/url-config';
-import { oa } from '@/shared/analytics';
+import { oaReport } from '@/shared/analytics';
 
 const props = defineProps({
   tableData: {
@@ -274,7 +274,7 @@ const collectDownloadData = (name: string) => {
     const { href } = window.location;
     const downloadTime = new Date();
     const _U_T_ = getCustomCookie('_U_T_') || 'notLog';
-    oa.report('download', () => ({
+    oaReport('download', {
       profileType: 'download',
       origin: href,
       softwareName: name,
@@ -282,7 +282,7 @@ const collectDownloadData = (name: string) => {
       softwareOs: activeOs.value,
       downloadTime,
       _U_T_,
-    }));
+    });
   }
 };
 </script>

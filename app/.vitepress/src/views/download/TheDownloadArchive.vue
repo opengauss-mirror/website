@@ -20,7 +20,7 @@ import IconCopy from '~icons/app/icon-copy.svg';
 import IconTips from '~icons/app/icon-tips.svg';
 
 import BreadCrumbs from '@/components/BreadCrumbs.vue';
-import { oa } from '@/shared/analytics';
+import { oaReport } from '@/shared/analytics';
 
 const i18n = useI18n();
 const { lang } = useData();
@@ -137,7 +137,7 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
     const downloadTime = new Date();
     const _U_T_ = getCustomCookie('_U_T_') || 'notLog';
     const startIndex = architectureAndOs.indexOf('_');
-    oa.report('download', () => ({
+    oaReport('download', {
       origin: href,
       softwareName: name,
       softwareArchitecture:
@@ -145,7 +145,7 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
       softwareOs: architectureAndOs.slice(0, startIndex),
       downloadTime,
       _U_T_,
-    }));
+    });
   }
 };
 </script>
