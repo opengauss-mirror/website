@@ -71,7 +71,8 @@ export default [
     industry: 'DBV',
     title: '超聚变数字技术有限公司',
     path: 'zh/userPractice/dbv/chaojubian/',
-    officialpath: 'https://www.xfusion.com/cn/product/database-solution/fusiondb',
+    officialpath:
+      'https://www.xfusion.com/cn/product/database-solution/fusiondb',
     company: '超聚变数字技术有限公司',
     detail: false,
     id: 'DBV',
@@ -159,7 +160,8 @@ export default [
     industry: 'DBV',
     title: '软通动力信息技术（集团）股份有限公司',
     path: 'zh/userPractice/dbv/tianhedb/',
-    officialpath: 'https://www.isoftstone.com/zh-cn/htmls/tianHeDataBase/index.html',
+    officialpath:
+      'https://www.isoftstone.com/zh-cn/htmls/tianHeDataBase/index.html',
     company: '软通动力信息技术（集团）股份有限公司',
     detail: false,
     id: 'DBV',
@@ -187,6 +189,17 @@ export default [
     id: 'ISV',
   },
   {
+    summary:
+      '数据库自主创新实践，电子病历系统项目，实现了住院管理业务应用在高可靠、高性能、高安全的国产自主数据库平台上的平稳运行',
+    industry: '医疗',
+    title: '山东省第二人民医院',
+    path: 'zh/userPractice/medical/sdent/',
+    officialpath: 'https://www.sdent.com.cn/',
+    company: '山东省第二人民医院',
+    detail: true,
+    id: 'Medical',
+  },
+  {
     summary: 'Vastbase助力医疗行业信息化升级',
     industry: '医疗',
     title: '南京卫健委',
@@ -197,7 +210,8 @@ export default [
     id: 'Medical',
   },
   {
-    summary: '德派软件访问专家软件致力于采集和管理数据，支持电话访问、APP移动面访、网络调查、神秘客检查、政府机构/店面巡查、现场实时统计的投票，提供了高质量数据管理所需的质控体系。其中访问专家 V4.0使用和适配openGauss',
+    summary:
+      '德派软件访问专家软件致力于采集和管理数据，支持电话访问、APP移动面访、网络调查、神秘客检查、政府机构/店面巡查、现场实时统计的投票，提供了高质量数据管理所需的质控体系。其中访问专家 V4.0使用和适配openGauss',
     industry: '医疗',
     title: '德派软件(北京)有限公司',
     path: 'zh/userPractice/medical/depaisoft/',
@@ -207,7 +221,8 @@ export default [
     id: 'Medical',
   },
   {
-    summary: '富士胶片通过利用人工智能及其他技术的医疗系统、服务和解决方案为医疗专业人员提供支持。其中富医睿影医用电子云胶片软件V2.0（云电子胶片及报告系统软件）使用和适配openGauss',
+    summary:
+      '富士胶片通过利用人工智能及其他技术的医疗系统、服务和解决方案为医疗专业人员提供支持。其中富医睿影医用电子云胶片软件V2.0（云电子胶片及报告系统软件）使用和适配openGauss',
     industry: '医疗',
     title: '富士胶片（中国）投资有限公司',
     path: 'zh/userPractice/medical/fushijiaopian/',
@@ -215,6 +230,16 @@ export default [
     company: '富士胶片（中国）投资有限公司',
     detail: false,
     id: 'Medical',
+  },
+  {
+    summary: '钉钉专属AI助理，openGauss+DataVec一体化，简化部署运维',
+    industry: '互联网',
+    title: '钉钉（中国）有限公司',
+    path: 'zh/userPractice/internet/dingding/',
+    officialpath: 'https://www.dingtalk.com/',
+    company: '钉钉（中国）有限公司',
+    detail: true,
+    id: 'Internet',
   },
   {
     summary:
@@ -347,8 +372,7 @@ export default [
     id: 'Internet',
   },
   {
-    summary:
-      '谐云基于openGauss提供容器版本服务。',
+    summary: '谐云基于openGauss提供容器版本服务。',
     industry: '互联网',
     title: '谐云',
     path: 'zh/userPractice/internet/xieyun/',
@@ -356,6 +380,40 @@ export default [
     company: '谐云',
     detail: false,
     id: 'Internet',
+  },
+  {
+    summary:
+      '国网河南省电力公司信息通信分公司国产数据库适配改造项目，满足了在多个关键业务系统（企业门户、短信平台、指标中心系统、检修专区管理系统以及精益化运营平台等）的多个典型场景的系统需求',
+    industry: '能源',
+    title: '国网河南省电力公司信息通信分公司',
+    path: 'zh/userPractice/energy/guowanghenan/',
+    officialpath:
+      'https://zhaopin.sgcc.com.cn/sgcchr/static/unitInfo.html?obj_id=10522000',
+    company: '国网河南省电力公司信息通信分公司',
+    detail: true,
+    id: 'Energy',
+  },
+  {
+    summary:
+      '基于国能磐石关系型数据库创新实践，承载用户规模30万人，业务满意度高',
+    industry: '能源',
+    title: '国家能源集团信息技术公司（数据中心）',
+    path: 'zh/userPractice/energy/guojianengyuan/',
+    officialpath: 'https://www.ceic.com/',
+    company: '国家能源集团信息技术公司（数据中心）',
+    detail: true,
+    id: 'Energy',
+  },
+  {
+    summary:
+      '智能一体化管理系统升级实践，覆盖多个核心业务系统（非常规业务支持系统SuperModel企业绩效管理系统、油化事业部实验数据采集应用系统、油化EPS作业管理系统、气电城燃系统、终端外输智能一体化平台）',
+    industry: '能源',
+    title: '深圳中海油能源发展销售服务有限公司',
+    path: 'zh/userPractice/energy/szzhonghaiyou/',
+    officialpath: 'https://cenertech.cnooc.com.cn/',
+    company: '深圳中海油能源发展销售服务有限公司',
+    detail: true,
+    id: 'Energy',
   },
   {
     summary: '满足生产系统数据库高可用要求，降低监控成本和投入',
@@ -389,12 +447,32 @@ export default [
     id: 'Education',
   },
   {
+    summary: '基于openGauss的智能开发平台，承载用户规模超7万',
+    industry: '教育',
+    title: '复旦大学',
+    path: 'zh/userPractice/education/fudan/',
+    officialpath: 'https://www.fudan.edu.cn/',
+    company: '复旦大学',
+    detail: true,
+    id: 'Education',
+  },
+  {
     summary: '为四川气象提供稳定气象服务保障，提升气象精度',
     industry: '大企业',
     title: '四川省气象局',
     path: 'zh/userPractice/bigbusiness/qixiangju/',
     officialpath: 'http://sc.cma.gov.cn/',
     company: '四川省气象局',
+    detail: true,
+    id: 'Bigbusiness',
+  },
+  {
+    summary: '国产数据库快速平滑迁移，综合性能提升30%',
+    industry: '大企业',
+    title: '央广网',
+    path: 'zh/userPractice/bigbusiness/yangguangwang/',
+    officialpath: 'http://www.cnr.cn/',
+    company: '央广网',
     detail: true,
     id: 'Bigbusiness',
   },
@@ -407,16 +485,6 @@ export default [
     officialpath: '',
     company: '粤港澳大湾区国家技术创新中心',
     detail: false,
-    id: 'Bigbusiness',
-  },
-  {
-    summary: '国产数据库快速平滑迁移，综合性能提升30%',
-    industry: '大企业',
-    title: '央广网',
-    path: 'zh/userPractice/bigbusiness/yangguangwang/',
-    officialpath: 'http://www.cnr.cn/',
-    company: '央广网',
-    detail: true,
     id: 'Bigbusiness',
   },
   {
@@ -450,7 +518,8 @@ export default [
     id: 'Bigbusiness',
   },
   {
-    summary: '高新兴科技集团主要从事基于物联网、人工智能等核心技术、产品及解决方案的研发和应用。其中高云·视频联网系统GoCloud-Video V1.0使用和适配openGauss',
+    summary:
+      '高新兴科技集团主要从事基于物联网、人工智能等核心技术、产品及解决方案的研发和应用。其中高云·视频联网系统GoCloud-Video V1.0使用和适配openGauss',
     industry: '大企业',
     title: '高新兴科技集团股份有限公司',
     path: 'zh/userPractice/bigbusiness/gaoxinxingtech/',
@@ -460,7 +529,8 @@ export default [
     id: 'Bigbusiness',
   },
   {
-    summary: '树安信息是一家以技术为核心的安全公司,树安团队核心成员均来自互联网行业，具有多年企业安全实施及产品研发经验。其中数据库统一安全管控平台SQLDEV V2.3.1.21使用和适配openGauss',
+    summary:
+      '树安信息是一家以技术为核心的安全公司,树安团队核心成员均来自互联网行业，具有多年企业安全实施及产品研发经验。其中数据库统一安全管控平台SQLDEV V2.3.1.21使用和适配openGauss',
     industry: '大企业',
     title: '南京树安信息技术有限公司',
     path: 'zh/userPractice/bigbusiness/nanjingshuaninfo/',
@@ -470,7 +540,8 @@ export default [
     id: 'Bigbusiness',
   },
   {
-    summary: '擎创科技，是被Gartner连续推荐的国内智能运维AIOps领域标杆供应商。公司专注于将人工智能赋能运维管理，激活运维数据智慧，助力客户数字化转型。其中擎创夏洛克智能运维日志精析中心软件 V1.0使用和适配openGauss',
+    summary:
+      '擎创科技，是被Gartner连续推荐的国内智能运维AIOps领域标杆供应商。公司专注于将人工智能赋能运维管理，激活运维数据智慧，助力客户数字化转型。其中擎创夏洛克智能运维日志精析中心软件 V1.0使用和适配openGauss',
     industry: '大企业',
     title: '上海擎创信息技术有限公司',
     path: 'zh/userPractice/bigbusiness/shanghaiqingchuanginfo/',
@@ -480,7 +551,8 @@ export default [
     id: 'Bigbusiness',
   },
   {
-    summary: '上海天玑科技是领先的IT服务、基础架构国产化和智慧行业应用解决方案提供商。其中PBData-D信创数据库私有云平台 V3使用和适配openGauss',
+    summary:
+      '上海天玑科技是领先的IT服务、基础架构国产化和智慧行业应用解决方案提供商。其中PBData-D信创数据库私有云平台 V3使用和适配openGauss',
     industry: '大企业',
     title: '上海天玑科技股份有限公司',
     path: 'zh/userPractice/bigbusiness/shanghaitianjitech/',
@@ -490,7 +562,8 @@ export default [
     id: 'Bigbusiness',
   },
   {
-    summary: '友邻通讯，国内领先的呼叫中心质量管理解决方案提供商。其中友邻通讯电话录音系统客/服软件 V5.0使用和适配openGauss',
+    summary:
+      '友邻通讯，国内领先的呼叫中心质量管理解决方案提供商。其中友邻通讯电话录音系统客/服软件 V5.0使用和适配openGauss',
     industry: '大企业',
     title: '深圳市友邻通讯设备有限公司',
     path: 'zh/userPractice/bigbusiness/youlintongxun/',
@@ -498,6 +571,27 @@ export default [
     company: '深圳市友邻通讯设备有限公司',
     detail: true,
     id: 'Bigbusiness',
+  },
+  {
+    summary: '数智化管理创新实践，承载30万用户规模',
+    industry: '制造',
+    title: '东风汽车集团有限公司',
+    path: 'zh/userPractice/manufacture/dfmc/',
+    officialpath: 'https://www.dfmc.com.cn/',
+    company: '东风汽车集团有限公司',
+    detail: true,
+    id: 'Manufacture',
+  },
+  {
+    summary:
+      '基于国创灵梭数据库（IntarkDB）的智能装备应用实践，基于openGauss创新系统架构，优化运维成本，支持多模态数据库',
+    industry: '制造',
+    title: '创维集团智能装备有限公司',
+    path: 'zh/userPractice/manufacture/chuangwei/',
+    officialpath: 'https://mould.skyworth.com/home',
+    company: '创维集团智能装备有限公司',
+    detail: true,
+    id: 'Manufacture',
   },
   {
     summary: '制造核心数据库，性能整体提升50%',
@@ -551,7 +645,8 @@ export default [
     id: 'Manufacture',
   },
   {
-    summary: 'Vastbase助力用户夯实制造产业数据库新基座。秉持“由易到难”的数字化转型理念，从简单的办公业务场景入手试点。海量数据库Vastbase已上线京东方内HR电子档案、绿色积分、内部竞聘等办公类业务系统。',
+    summary:
+      'Vastbase助力用户夯实制造产业数据库新基座。秉持“由易到难”的数字化转型理念，从简单的办公业务场景入手试点。海量数据库Vastbase已上线京东方内HR电子档案、绿色积分、内部竞聘等办公类业务系统。',
     industry: '制造',
     title: '京东方',
     path: 'zh/userPractice/manufacture/jingdongfang/',
@@ -561,13 +656,14 @@ export default [
     id: 'Manufacture',
   },
   {
-    summary: '使用openGauss承载自己的业务。',
+    summary:
+      '2024年度西咸政务云升级改造，覆盖了14个厅局单位的三十多个业务系统，满足多领域政务服务需求',
     industry: '其他',
-    title: '东方云微科技有限公司',
-    path: 'zh/userPractice/others/dongfangyunwei/',
-    officialpath: 'http://www.dongfangyunwei.com.cn',
-    company: '东方云微科技有限公司',
-    detail: false,
+    title: 'XX省政务大数据局',
+    path: 'zh/userPractice/others/xxzw/',
+    officialpath: 'https://zwfw.shaanxi.gov.cn/sx/complement/about',
+    company: 'XX省政务大数据局',
+    detail: true,
     id: 'Others',
   },
   {
@@ -576,18 +672,8 @@ export default [
     industry: '其他',
     title: '越秀集团',
     path: 'zh/userPractice/others/yuexiu/',
-    officialpath: "https://www.yuexiu.com/'",
+    officialpath: 'https://www.yuexiu.com',
     company: '越秀集团',
-    detail: false,
-    id: 'Others',
-  },
-  {
-    summary: '使用openGauss承载公司的边缘业务。',
-    industry: '其他',
-    title: '亚太飞鸿科技集团有限公司',
-    path: 'zh/userPractice/others/ytebuy/',
-    officialpath: 'http://ds.ytebuy.cn/',
-    company: '亚太飞鸿科技集团有限公司',
     detail: false,
     id: 'Others',
   },
@@ -609,17 +695,6 @@ export default [
     path: 'zh/userPractice/others/007swz/',
     officialpath: 'http://97467211.007swz.com/',
     company: '中国交通信息科技集团有限公司',
-    detail: false,
-    id: 'Others',
-  },
-  {
-    summary:
-      '使用openGauss商业发行版Vastbase G100，为社区警务网格平台提供有力的数据支撑，保障社区警务网络平台高效、稳定的运行，部署openGauss服务器节点数为1~10个。',
-    industry: '其他',
-    title: '重庆市公安局江北分局',
-    path: 'zh/userPractice/others/gonganju/',
-    officialpath: 'https://opengauss.org/zh/',
-    company: '重庆市公安局江北分局',
     detail: false,
     id: 'Others',
   },
@@ -701,8 +776,7 @@ export default [
     id: 'Others',
   },
   {
-    summary:
-      '陕西建工集团BIM系统使用和适配openGauss',
+    summary: '陕西建工集团BIM系统使用和适配openGauss',
     industry: '其他',
     title: '陕西建工控股集团',
     path: 'zh/userPractice/others/shanxijiangong/',
@@ -800,8 +874,7 @@ export default [
     id: 'Others',
   },
   {
-    summary:
-      '适配openGauss为存储数据库，助力企业邮箱系统高效运作',
+    summary: '适配openGauss为存储数据库，助力企业邮箱系统高效运作',
     industry: '其他',
     title: '厦门市中资源网络服务有限公司',
     path: 'https://www.zzy.cn/',
@@ -811,8 +884,7 @@ export default [
     id: 'Others',
   },
   {
-    summary:
-      '旋极科技城市静态交通管理平台使用openGauss承载静态交通核心业务。',
+    summary: '旋极科技城市静态交通管理平台使用openGauss承载静态交通核心业务。',
     industry: '其他',
     title: '成都旋极历通信息技术有限公司',
     path: 'https://www.cdwatertek.com/',
@@ -822,8 +894,7 @@ export default [
     id: 'Others',
   },
   {
-    summary:
-      '使用openGauss替换区域医疗信息化、医院信息化项目核心数据库。',
+    summary: '使用openGauss替换区域医疗信息化、医院信息化项目核心数据库。',
     industry: '其他',
     title: '东软集团',
     path: 'https://www.neusoft.com/cn/',
@@ -833,8 +904,7 @@ export default [
     id: 'Others',
   },
   {
-    summary:
-      '核心场景部署openGauss服务节点数1~10个。',
+    summary: '核心场景部署openGauss服务节点数1~10个。',
     industry: '其他',
     title: '福建星瑞格',
     path: 'https://www.sinoregal.cn/',
@@ -855,8 +925,7 @@ export default [
     id: 'Others',
   },
   {
-    summary:
-      '宁波拓普集团股份有限公司部署openGauss服务节点数1~10个',
+    summary: '宁波拓普集团股份有限公司部署openGauss服务节点数1~10个',
     industry: '其他',
     title: '宁波拓普集团股份有限公司',
     path: 'https://www.tuopu.com/',
@@ -866,12 +935,12 @@ export default [
     id: 'Others',
   },
   {
-    summary:
-      '智能化云综合服务提供商北京华创方舟部署openGauss服务节点数1~10个',
+    summary: '智能化云综合服务提供商北京华创方舟部署openGauss服务节点数1~10个',
     industry: '其他',
     title: '北京华创方舟',
     path: 'http://huachuangark.com/about.aspx?ParentId=2&BaseInfoCateId=1&CateId=1',
-    officialpath: 'http://huachuangark.com/about.aspx?ParentId=2&BaseInfoCateId=1&CateId=1',
+    officialpath:
+      'http://huachuangark.com/about.aspx?ParentId=2&BaseInfoCateId=1&CateId=1',
     company: '北京华创方舟',
     detail: false,
     id: 'Others',
@@ -899,8 +968,7 @@ export default [
     id: 'Others',
   },
   {
-    summary:
-      '核心场景核心场景部署openGauss服务节点数1~10个',
+    summary: '核心场景核心场景部署openGauss服务节点数1~10个',
     industry: '其他',
     title: '北京市太极华青信息系统有限公司',
     path: 'https://www.tjhq.com/',
@@ -908,6 +976,70 @@ export default [
     company: '北京市太极华青信息系统有限公司',
     detail: false,
     id: 'Others',
+  },
+  {
+    summary: '使用openGauss承载自己的业务。',
+    industry: '其他',
+    title: '东方云微科技有限公司',
+    path: 'zh/userPractice/others/dongfangyunwei/',
+    officialpath: '',
+    company: '东方云微科技有限公司',
+    detail: false,
+    id: 'Others',
+  },
+  {
+    summary:
+      '使用openGauss商业发行版Vastbase G100，为社区警务网格平台提供有力的数据支撑，保障社区警务网络平台高效、稳定的运行，部署openGauss服务器节点数为1~10个。',
+    industry: '其他',
+    title: '重庆市公安局江北分局',
+    path: 'zh/userPractice/others/gonganju/',
+    officialpath: '',
+    company: '重庆市公安局江北分局',
+    detail: false,
+    id: 'Others',
+  },
+  {
+    summary: '使用openGauss承载公司的边缘业务。',
+    industry: '其他',
+    title: '亚太飞鸿科技集团有限公司',
+    path: 'zh/userPractice/others/ytebuy/',
+    officialpath: '',
+    company: '亚太飞鸿科技集团有限公司',
+    detail: false,
+    id: 'Others',
+  },
+  {
+    summary:
+      '交易级总账系统创新升级实践，2023年至今首批部署30套，解决交易级总账系统等核心系统GCH转型中的数据库迁移问题',
+    industry: '金融',
+    title: '承德银行股份有限公司',
+    path: 'zh/userPractice/finance/chengdebank2/',
+    officialpath: 'https://www.chengdebank.com/',
+    company: '承德银行股份有限公司',
+    detail: true,
+    id: 'Finance',
+  },
+  {
+    summary:
+      '支撑跨境支付清算和统一积分项目的openGauss数据库管理平台，成功支持行内百余套业务系统，系统客户基数超过5000万。',
+    industry: '金融',
+    title: '兴业银行股份有限公司',
+    path: 'zh/userPractice/finance/xingyebank/',
+    officialpath: 'https://www.cib.com.cn/cn/index.html',
+    company: '兴业银行股份有限公司',
+    detail: true,
+    id: 'Finance',
+  },
+  {
+    summary:
+      '中国民生银行数据库规模化自主创新实践，支持全行各类系统模块200+，系统客户基数超过7000万',
+    industry: '金融',
+    title: '中国民生银行',
+    path: 'zh/userPractice/finance/minshengbank/',
+    officialpath: 'https://www.cmbc.com.cn/',
+    company: '中国民生银行',
+    detail: true,
+    id: 'Finance',
   },
   {
     summary: '核心系统向鲲鹏全栈迁移，性能300%提升',
@@ -1199,6 +1331,73 @@ export default [
     id: 'Finance',
   },
   {
+    summary:
+      '中国移动广东公司新一代核心系统集中式数据库创新实践，日均90亿条计费话单的采集分拣和结算处理，以及日均2000万条账单的累账出账等生产工作。',
+    industry: '运营商',
+    title: '中国移动通信集团广东有限公司',
+    path: 'zh/userPractice/carrier/guangdongyidong/',
+    officialpath:
+      'https://www.10086.cn/aboutus/culture/intro/province_culture_intro_detail/gd/index.html?id=1',
+    company: '中国移动通信集团广东有限公司',
+    detail: true,
+    id: 'Carrier',
+  },
+  {
+    summary:
+      '内蒙古移动BOSS数据库升级改造项目，磐维数据库助力BOSS系统计费帐处，实现全生命周期智化支撑',
+    industry: '运营商',
+    title: '中国移动通信集团内蒙古有限公司',
+    path: 'zh/userPractice/carrier/neimengguyidong/',
+    officialpath: 'https://www.10086.cn/index/nm/index_471_471.html',
+    company: '中国移动通信集团内蒙古有限公司',
+    detail: true,
+    id: 'Carrier',
+  },
+  {
+    summary:
+      '江西移动省公司智慧网格数据库自主创新迁移项目，在运营商领域的核心业务系统中发挥关键作用',
+    industry: '运营商',
+    title: '中国移动通信集团江西有限公司',
+    path: 'zh/userPractice/carrier/jiangxiyidong/',
+    officialpath:
+      'https://www.10086.cn/aboutus/culture/intro/province_culture_intro_detail/jx/index.html?id=1',
+    company: '中国移动通信集团江西有限公司',
+    detail: true,
+    id: 'Carrier',
+  },
+  {
+    summary:
+      '基于磐维数据库的生态研发和创新实践，为行业应用提供高兼容、高可靠、高性能、无开源传染风险的OLTP数据库及配套工具。',
+    industry: '运营商',
+    title: '中移动信息技术有限公司',
+    path: 'zh/userPractice/carrier/yidong/',
+    officialpath: 'https://it.10086.cn/indexc.html',
+    company: '中移动信息技术有限公司',
+    detail: true,
+    id: 'Carrier',
+  },
+  {
+    summary:
+      '中移金科磐维数据库实践，解决了公司内部的自主创新难题，包含改造成本、高可用、平滑割接、稳定性等问题。',
+    industry: '运营商',
+    title: '中移动金融科技有限公司',
+    path: 'zh/userPractice/carrier/yidong2/',
+    officialpath: 'https://cmft.10086.cn/',
+    company: '中移动金融科技有限公司',
+    detail: true,
+    id: 'Carrier',
+  },
+  {
+    summary: 'IT系统数据库自主创新实践，高性能高并发处理应对多样化场景',
+    industry: '运营商',
+    title: '中国铁塔股份有限公司',
+    path: 'zh/userPractice/carrier/chinatower/',
+    officialpath: 'https://www.china-tower.com/',
+    company: '中国铁塔股份有限公司',
+    detail: true,
+    id: 'Carrier',
+  },
+  {
     summary: 'openGauss助力河北移动核心应用系统升级',
     industry: '运营商',
     title: '河北移动',
@@ -1239,7 +1438,8 @@ export default [
     id: 'Carrier',
   },
   {
-    summary: '北京移动全面启动数字化转型和基础软硬件自主创新，探索自研数据库和自研数据交换工具在业务系统的解决方案，推出基于磐维分布式数据库创新实践。解决了北京公司核心业务系统数据库严重依赖国外商用软件的问题，实现了数据库的国产自主知识产权，提升技术创新能力，同时大大提高北京移动核心数据安全性。新建超大规模分布式磐维数据库集群，迁移超大容量核心数据，部署生产业务系统实践磐维数据库分布式能力，并完成磐维数据库的替换上线。',
+    summary:
+      '北京移动全面启动数字化转型和基础软硬件自主创新，探索自研数据库和自研数据交换工具在业务系统的解决方案，推出基于磐维分布式数据库创新实践。解决了北京公司核心业务系统数据库严重依赖国外商用软件的问题，实现了数据库的国产自主知识产权，提升技术创新能力，同时大大提高北京移动核心数据安全性。新建超大规模分布式磐维数据库集群，迁移超大容量核心数据，部署生产业务系统实践磐维数据库分布式能力，并完成磐维数据库的替换上线。',
     industry: '运营商',
     title: '北京移动',
     path: 'zh/userPractice/carrier/beijingyidong/',
@@ -1249,7 +1449,8 @@ export default [
     id: 'Carrier',
   },
   {
-    summary: '中国移动在线营销服务中心基于openGauss5.0进行业务系统升级，实现赋能业务场景生产落地：客服系统试点业务已覆盖31省份投产使用，日处理请求1.1亿次，整体性能较替换前提升3.5%左右。新电商等试点业务进行了“两地三中心”架构部署应用，在业务零改造的基础上，实现了业务跨域容灾能力。业务代码兼容性和性能检查工具，保障了迁移替代兼容性风险问题的提前发现，提前解决，降低替换改造成本。',
+    summary:
+      '中国移动在线营销服务中心基于openGauss5.0进行业务系统升级，实现赋能业务场景生产落地：客服系统试点业务已覆盖31省份投产使用，日处理请求1.1亿次，整体性能较替换前提升3.5%左右。新电商等试点业务进行了“两地三中心”架构部署应用，在业务零改造的基础上，实现了业务跨域容灾能力。业务代码兼容性和性能检查工具，保障了迁移替代兼容性风险问题的提前发现，提前解决，降低替换改造成本。',
     industry: '运营商',
     title: '中国移动在线营销服务中心',
     path: 'zh/userPractice/carrier/chinamobileonline/',

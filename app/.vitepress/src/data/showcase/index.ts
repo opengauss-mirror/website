@@ -30,6 +30,18 @@ import industrial from '@/assets/category/showcase/industrial-light.svg';
 import industrialDark from '@/assets/category/showcase/industrial-dark.svg';
 import industrialActive from '@/assets/category/showcase/industrial-light-active.svg';
 import industrialActiveDark from '@/assets/category/showcase/industrial-dark-active.svg';
+import education from '@/assets/category/showcase/education-light.svg';
+import educationDark from '@/assets/category/showcase/education-dark.svg';
+import educationActive from '@/assets/category/showcase/education-light-active.svg';
+import educationActiveDark from '@/assets/category/showcase/education-dark-active.svg';
+import business from '@/assets/category/showcase/business-light.svg';
+import businessDark from '@/assets/category/showcase/business-dark.svg';
+import businessActive from '@/assets/category/showcase/business-light-active.svg';
+import businessActiveDark from '@/assets/category/showcase/business-dark-active.svg';
+import medical from '@/assets/category/showcase/medical-light.svg';
+import medicalDark from '@/assets/category/showcase/medical-dark.svg';
+import medicalActive from '@/assets/category/showcase/medical-light-active.svg';
+import medicalActiveDark from '@/assets/category/showcase/medical-dark-active.svg';
 
 import showcaseZh from './showcase-zh';
 import showcaseEn from './showcase-en';
@@ -102,28 +114,28 @@ export default {
       type: '教育',
       typeEn: 'Education',
       id: 8,
-      url: other,
-      activeUrl: otherActive,
-      urlDark: otherDark,
-      activeDarkUrl: otherActiveDark,
+      url: education,
+      activeUrl: educationActive,
+      urlDark: educationDark,
+      activeDarkUrl: educationActiveDark,
     },
     {
       type: '大企业',
       typeEn: 'Bigbusiness',
       id: 9,
-      url: other,
-      activeUrl: otherActive,
-      urlDark: otherDark,
-      activeDarkUrl: otherActiveDark,
+      url: business,
+      activeUrl: businessActive,
+      urlDark: businessDark,
+      activeDarkUrl: businessActiveDark,
     },
     {
       type: '医疗',
       typeEn: 'Medical',
       id: 10,
-      url: other,
-      activeUrl: otherActive,
-      urlDark: otherDark,
-      activeDarkUrl: otherActiveDark,
+      url: medical,
+      activeUrl: medicalActive,
+      urlDark: medicalDark,
+      activeDarkUrl: medicalActiveDark,
     },
     {
       type: '其他',
