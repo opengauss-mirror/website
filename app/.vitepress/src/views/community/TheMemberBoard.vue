@@ -116,7 +116,7 @@ const handleChangeActiveMobile = (activeNames: number | '') => {
         <ul v-if="item.list.length > 0" class="member-list">
           <li v-for="(user, i) in item.list" :key="i">
             <img class="avatar" :src="user.img" :alt="user.name" />
-            <p class="m-name">{{ user.name }}</p>
+            <p class="m-name" :title="user.name">{{ user.name }}</p>
             <p class="m-title">{{ user.title }}</p>
             <p
               class="m-company lable-name1"
