@@ -26,7 +26,7 @@ export const oa = new OpenAnalytics({
  * @param $service service字段取值
  * @param options options
  */
-export const oaReport = async <T extends Record<string, any>>(
+export const oaReport = <T extends Record<string, any>>(
   event: string,
   eventData?: T | ((...opt: any[]) => Awaitable<T>),
   $service = 'portal',
@@ -35,18 +35,13 @@ export const oaReport = async <T extends Record<string, any>>(
     eventOptions?: any;
   }
 ) => {
-  let data: T | undefined;
-  if (eventData) {
-    data =
-      typeof eventData === 'function'
-        ? await (eventData as (...opt: any[]) => Awaitable<T>)()
-        : eventData;
-  }
-  await oa.report(
+  return oa.report(
     event,
-    () => ({
+    async (...opt) => ({
       $service,
-      ...data,
+      ...(typeof eventData === 'function'
+        ? await eventData(...opt)
+        : eventData),
     }),
     options
   );

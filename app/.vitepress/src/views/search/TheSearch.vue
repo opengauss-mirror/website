@@ -14,16 +14,20 @@ import useWindowResize from '@/components/hooks/useWindowResize';
 import { windowOpen, handleError } from '@/shared/utils';
 
 import { DOCS_LINK } from '@/data/url-config';
+import { useCookieStore } from '@/stores/common';
+import { v4 as uniqueId } from 'uuid';
+import { oaReport } from '@/shared/analytics';
+
+import { SearchCountItemT } from '@/shared/@types/type-search';
 
 const screenWidth = useWindowResize();
 const isMobile = computed(() => (screenWidth.value <= 768 ? true : false));
 
 const { lang } = useData();
+const cookieStore = useCookieStore();
 const router = useRouter();
 const i18n = useI18n();
 const activeVersion = ref('');
-// 接收搜索到的类型用于埋点传输数据
-let typeList: any = [];
 // 当前选择类型
 const currentIndex = ref(0);
 // 当前显示的页码
@@ -40,7 +44,7 @@ const searchValue = computed(() => {
   return i18n.value.common.SEARCH;
 });
 // 接收搜索数量的数据
-const searchNumber: any = ref([]);
+const searchNumber = ref<SearchCountItemT[]>([]);
 // 显示的数据类型
 const searchType = ref('');
 const searchData = computed(() => {
@@ -123,12 +127,7 @@ function searchCountAll() {
       if (res.status === 200 && res.obj.total[0]) {
         searchNumber.value = res.obj.total;
         // 埋点数据
-        typeList = [];
-        Object.keys(searchNumber.value).forEach((item) => {
-          typeList.push(searchNumber.value[item].key);
-        });
       } else {
-        typeList = [];
         searchNumber.value = [];
       }
     })
@@ -171,6 +170,9 @@ function searchAll(current?: string) {
     if (!current) {
       currentIndex.value = 0;
     }
+    if (cookieStore.isAllAgreed) {
+      reportSearch(searchValue.value);
+    }
     currentPage.value = 1;
     searchType.value = current || '';
     searchCountAll();
@@ -180,11 +182,25 @@ function searchAll(current?: string) {
     clearSearchInput();
   }
 }
+
+let SEARCH_EVENT_ID = uniqueId();
+const reportSearch = (keyword: string) => {
+  SEARCH_EVENT_ID = uniqueId();
+  oaReport(
+    'searchValue',
+    {
+      search_event_id: SEARCH_EVENT_ID,
+      search_key: keyword,
+    },
+    'search_portal'
+  );
+};
+
 function handleSelectChange(val: string) {
   history.pushState(null, '', `?search=${encodeURIComponent(val)}`);
 }
 // 设置搜索结果的跳转路径
-function goLink(data: any) {
+function goLink(data: any, index: number) {
   const { type, path } = data;
   const search_result_url = '/' + path;
   if (type === 'docs') {
@@ -193,11 +209,42 @@ function goLink(data: any) {
       goPath = path.replace(/^docs\/master/g, 'docs/latest');
     }
     const url = DOCS_LINK + goPath + '.html';
+    reportSelectSearchResult(data, index, url, searchData.value.keyword);
     windowOpen(url, '_blank');
   } else {
+    reportSelectSearchResult(
+      data,
+      index,
+      search_result_url,
+      searchData.value.keyword
+    );
     router.go(search_result_url);
   }
 }
+
+const reportSelectSearchResult = (
+  data: any,
+  index: number,
+  path: string,
+  keyword: string
+) => {
+  oaReport(
+    'selectSearchResult',
+    {
+      search_event_id: SEARCH_EVENT_ID,
+      search_key: keyword,
+      search_result_detail: data,
+      search_tag: data.type,
+      search_rank_num: pageSize.value * (currentPage.value - 1) + (index + 1),
+      search_result_total_num: searchNumber.value.find(
+        (item) => item.key === (searchType.value || 'all')
+      ),
+      search_result_url: path,
+    },
+    'search_portal'
+  );
+};
+
 // 移动端上下翻页事件
 function turnPage(option: string) {
   if (option === 'prev' && currentPage.value > 1) {
@@ -301,9 +348,9 @@ watch(
       </div>
       <div class="content-box">
         <ul v-if="searchResultList.length" class="content-list">
-          <li v-for="item in searchResultList" :key="item.id">
+          <li v-for="(item, index) in searchResultList" :key="item.id">
             <!-- eslint-disable-next-line -->
-            <h3 @click="goLink(item)" v-dompurify-html="item.title"></h3>
+            <h3 @click="goLink(item, index)" v-dompurify-html="item.title"></h3>
             <!-- eslint-disable-next-line -->
             <p class="detail" v-dompurify-html="item.textContent"></p>
             <p class="from">

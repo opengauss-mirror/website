@@ -685,8 +685,10 @@ const copyMeetingInfo = (meetingItem: DayDataT, e: MouseEvent) => {
   }
 };
 
-const onCalendarClick = () => {
-  oaReport('meetingClick', undefined, 'meeting');
+const onCalendarClick = (e: MouseEvent) => {
+  if (e.isTrusted) {
+    oaReport('click', undefined, 'meeting');
+  }
 };
 </script>
 <template>
