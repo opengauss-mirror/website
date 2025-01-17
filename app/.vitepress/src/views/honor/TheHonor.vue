@@ -533,7 +533,6 @@ const getCertificateBoxGridTemplateColumns = (
   .excellent-panel {
     padding: var(--o-spacing-h1) 0 0 0;
     color: var(--o-color-text1);
-    font-family: PingFangSC-Regular;
 
     @media (max-width: 768px) {
       padding: var(--o-spacing-h5) 0 0 0;
@@ -545,7 +544,6 @@ const getCertificateBoxGridTemplateColumns = (
       text-align: center;
       font-size: var(--o-font-size-h3);
       font-weight: 200;
-      font-family: PingFangSC-Light;
 
       @media (max-width: 768px) {
         margin-bottom: var(--o-spacing-h5);
@@ -727,7 +725,6 @@ const getCertificateBoxGridTemplateColumns = (
           color: var(--o-color-text3);
           font-size: var(--o-font-size-text);
           line-height: var(--o-line-height-text);
-          font-family: PingFangSC-Regular;
 
           @media (max-width: 768px) {
             margin-top: 24px;
@@ -833,7 +830,6 @@ const getCertificateBoxGridTemplateColumns = (
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: var(--o-spacing-h4);
-      font-family: PingFangSC-Regular;
 
       @media (max-width: 1500px) {
         grid-template-columns: repeat(3, 1fr);

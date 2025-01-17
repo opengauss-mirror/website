@@ -167,11 +167,7 @@ const closeVideo = () => {
           </template>
 
           <div class="step-view-detail">
-            <a
-              :href="step.href"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a :href="step.href" target="_blank" rel="noopener noreferrer">
               <OButton animation type="text">
                 {{ data.viewDetailText }}
                 <template #suffixIcon>
@@ -761,7 +757,6 @@ const closeVideo = () => {
           padding: var(--o-spacing-h3) 0;
           border-top: 1px solid rgba(0, 0, 0, 0.1);
           text-align: center;
-          font-family: PingFangSC-Regular;
           color: var(--o-color-text1);
           line-height: 22px;
 
