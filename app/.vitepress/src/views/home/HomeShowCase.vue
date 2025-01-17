@@ -138,7 +138,9 @@ onUnmounted(() => {
               v-for="user in caseData && caseData[item.typeEn]"
               :key="user.company"
               class="user-card"
-              @click="handleGo(user.officialpath)"
+              @click="
+                handleGo(user.detail ? `/${user.path}` : user.officialpath)
+              "
             >
               <div class="user-title">{{ user.company }}</div>
               <div class="user-word">{{ user.summary }}</div>
@@ -180,7 +182,9 @@ onUnmounted(() => {
               v-for="item2 in caseData && caseData[caseCategory[active].typeEn]"
               :key="item2.company"
               class="user-card"
-              @click="handleGo(item2.officialpath)"
+              @click="
+                handleGo(item2.detail ? `/${item2.path}` : item2.officialpath)
+              "
             >
               <div class="user-title">{{ item2.company }}</div>
               <div class="user-word">{{ item2.summary }}</div>

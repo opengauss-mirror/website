@@ -77,7 +77,7 @@ const migrationInfo = {
     width: 24px;
     height: 24px;
   }
-  
+
   :deep(.markdown-body-title) {
     border-bottom: none;
     padding-bottom: 0;
@@ -190,7 +190,6 @@ const migrationInfo = {
 
   :deep(pre) {
     padding: 12px;
-    font-family: PingFangSC-Regular;
     font-size: var(--o-font-size-h8);
     color: #202329;
     line-height: var(--o-line-height-h8);

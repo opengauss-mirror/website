@@ -27,6 +27,10 @@ import otherIcon from '@/assets/category/showcase/other-icon.svg';
 import dbvIcon from '@/assets/category/showcase/dbv-icon.svg';
 import IconChevronRight from '~icons/app/icon-chevron-right.svg';
 import carrierIcon from '@/assets/category/showcase/carrier-icon.svg';
+import edcationIcon from '@/assets/category/showcase/education-icon.svg';
+import medicalIcon from '@/assets/category/showcase/medical-icon.svg';
+import businessIcon from '@/assets/category/showcase/business-icon.svg';
+
 const i18n = useI18n();
 const userCaseData = computed(() => i18n.value.showcase);
 const { lang } = useData();
@@ -103,19 +107,6 @@ function filterCase() {
   }
 }
 
-// 控制更多icon的显示
-const showLength = computed(() => (screenWidth.value <= 1280 ? 68 : 48));
-const showList = computed(() => {
-  const detailList: any = [];
-  currentCaseList.value.forEach((item: any) => {
-    if ((item.summary + '').length > showLength.value) {
-      detailList.push(true);
-    } else {
-      detailList.push(false);
-    }
-  });
-  return detailList;
-});
 // 当前显示的页码
 const currentPage = ref(1);
 const pageSize = ref(12);
@@ -132,6 +123,11 @@ const isShow = computed(() => {
   return totalPage.value > 1 ? true : false;
 });
 
+// 翻页重置已展开的索引记录
+watch(currentPage, () => {
+  showIndex.value = NaN;
+});
+
 // 移动端翻页事件
 function turnPage(option: string) {
   if (option === 'prev' && currentPage.value > 1) {
@@ -142,6 +138,7 @@ function turnPage(option: string) {
 }
 // 移动端跳转翻页
 function jumpPage(page: number) {
+  showIndex.value = NaN;
   currentPage.value = page;
 }
 
@@ -152,9 +149,12 @@ const imgList: any = {
   ISV: isvIcon,
   DBV: dbvIcon,
   Others: otherIcon,
-  Industrial: industrialIcon,
+  Manufacture: industrialIcon,
   Finance: financeIcon,
   Carrier: carrierIcon,
+  Education: edcationIcon,
+  Bigbusiness: businessIcon,
+  Medical: medicalIcon,
 };
 const imgUrl = computed(() => (id: string) => {
   if (imgList[id]) {
@@ -233,6 +233,29 @@ watch(
     });
   }
 );
+
+// 控制更多icon的显示
+let timeoutHandler: string | number | NodeJS.Timeout | undefined;
+const descRefs = ref();
+const showList = ref(Array(currentCaseList.value?.length || 0).fill(false));
+watch(
+  () => [currentCaseList.value, screenWidth.value, descRefs.value],
+  () => {
+    clearTimeout(timeoutHandler);
+    timeoutHandler = setTimeout(() => {
+      showIndex.value = NaN;
+      const newShowList = Array(currentCaseList.value?.length || 0).fill(false);
+      newShowList.forEach((_, index) => {
+        const item = descRefs.value?.find?.((el: HTMLElement) => {
+          return el.textContent === currentCaseList.value[index].summary;
+        });
+        newShowList[index] = item?.scrollHeight > item?.clientHeight;
+      });
+
+      showList.value = newShowList;
+    }, 100);
+  }
+);
 </script>
 
 <template>
@@ -299,8 +322,8 @@ watch(
       >
         <div class="case-card-box">
           <h4>{{ item.company }}</h4>
-          <p class="detail" :class="showIndex === index ? 'all' : ''">
-            {{ item.summary }}
+          <div class="detail" :class="showIndex === index ? 'all' : ''">
+            <p ref="descRefs" class="two-lines">{{ item.summary }}</p>
             <OIcon
               v-if="showList[index]"
               :class="showIndex === index ? 'show' : ''"
@@ -308,7 +331,7 @@ watch(
             >
               <IconChevronRight />
             </OIcon>
-          </p>
+          </div>
           <OButton
             v-if="item.detail"
             animation
@@ -497,44 +520,24 @@ $color: #fff;
     }
   }
   .detail {
+    position: relative;
+    max-height: 44px;
+    margin: var(--o-spacing-h10) 0 var(--o-spacing-h6);
     font-size: var(--o-font-size-text);
     line-height: var(--o-line-height-text);
     color: $color;
-    margin: var(--o-spacing-h10) 0 var(--o-spacing-h6);
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    overflow: hidden;
-    text-align: start;
-    position: relative;
-    max-height: 44px;
     transition: all 0.3s;
-    &::-webkit-scrollbar {
-      width: 0;
-      height: 0;
-    }
-    &::-webkit-scrollbar-thumb {
-      width: 0;
-    }
-    &::-webkit-scrollbar-track {
-      width: 0;
-    }
-    &::-webkit-scrollbar-button {
-      width: 0;
-    }
-    scrollbar-width: none;
+
     @media (max-width: 768px) {
       font-size: var(--o-font-size-tip);
       line-height: var(--o-line-height-tip);
-      -webkit-line-clamp: inherit;
       max-height: inherit;
       text-align: justify;
     }
     .o-icon {
       position: absolute;
-      right: 0px;
-      bottom: 4px;
+      right: -4px;
+      bottom: 2px;
       z-index: 9;
       color: #fff;
       cursor: pointer;
@@ -546,13 +549,47 @@ $color: #fff;
     .show {
       transform: rotateZ(-90deg);
     }
+
+    .two-lines {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-height: 90px;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+      }
+      &::-webkit-scrollbar-thumb {
+        width: 0;
+      }
+      &::-webkit-scrollbar-track {
+        width: 0;
+      }
+      &::-webkit-scrollbar-button {
+        width: 0;
+      }
+
+      @media (max-width: 768px) {
+        -webkit-line-clamp: inherit;
+        max-height: inherit;
+        text-align: justify;
+      }
+    }
   }
   .all {
-    -webkit-line-clamp: initial;
     max-height: 90px;
-    overflow-y: scroll;
+
     .o-icon {
-      bottom: 0;
+      bottom: -10px;
+    }
+
+    .two-lines {
+      -webkit-line-clamp: inherit;
+      overflow-y: auto;
     }
   }
   .more-btn {

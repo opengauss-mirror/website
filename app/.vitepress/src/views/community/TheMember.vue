@@ -131,7 +131,9 @@ const handleChangeActiveMobile = (activeNames: any) => {
             <ul v-if="item.list && item.list.length" class="member-list">
               <li v-for="(user, i) in item.list" :key="i">
                 <img class="avatar" :src="user.img" :alt="user.name" />
-                <p class="m-name lable-name">{{ user.name }}</p>
+                <p class="m-name lable-name">
+                  {{ user.name }}
+                </p>
                 <p class="m-title">{{ user.title }}</p>
                 <template v-if="user.company">
                   <p
@@ -281,7 +283,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
             <ul v-if="item.list && item.list.length > 0" class="member-list">
               <li v-for="(user, i) in item.list.slice(0, 2)" :key="i">
                 <img class="avatar" :src="user.img" :alt="user.name" />
-                <p class="m-name">{{ user.name }}</p>
+                <p class="m-name" :title="user.name">{{ user.name }}</p>
                 <p class="m-title">{{ user.title }}</p>
                 <template v-if="user.company">
                   <p
@@ -316,7 +318,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
             <ul v-if="item.list && item.list.length > 0" class="member-list">
               <li v-for="(user, i) in item.list.slice(2)" :key="i">
                 <img class="avatar" :src="user.img" :alt="user.name" />
-                <p class="m-name">{{ user.name }}</p>
+                <p class="m-name" :title="user.name">{{ user.name }}</p>
                 <p class="m-title">{{ user.title }}</p>
                 <template v-if="user.company">
                   <p
@@ -353,7 +355,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
             <ul v-if="item.list && item.list.length > 0" class="member-list">
               <li v-for="(user, i) in item.list" :key="i">
                 <img class="avatar" :src="user.img" :alt="user.name" />
-                <p class="m-name">{{ user.name }}</p>
+                <p class="m-name" :title="user.name">{{ user.name }}</p>
                 <p class="m-title">{{ user.title }}</p>
                 <template v-if="user.company">
                   <p
@@ -438,7 +440,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
               >
                 <li v-for="(user, i) in subitem.list" :key="i">
                   <img class="avatar" :src="user.img" :alt="user.name" />
-                  <p class="m-name">{{ user.name }}</p>
+                  <p class="m-name" :title="user.name">{{ user.name }}</p>
                   <p class="m-title">{{ user.title }}</p>
                   <p
                     class="m-company"
