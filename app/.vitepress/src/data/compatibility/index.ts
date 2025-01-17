@@ -1,5 +1,38 @@
 export default [
   {
+    name: '域华信科服务器操作系统',
+    version: '8',
+    type: '操作系统',
+    company: '北京域华信息科技有限公司',
+    database: 'openGauss 5.0.3',
+    os: '',
+    server: 'Kunpeng 920(Huanghe 2280 V2)、Hygon C86 3285(Suma H210-G30)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%9F%9F%E5%8D%8E%E4%BF%A1%E7%A7%91/V8/Certificate.pdf',
+  },
+  {
+    name: 'CNware WinSphere 服务器虚拟化软件',
+    version: '9.1',
+    type: '通用',
+    company: '云宏信息科技股份有限公司',
+    database: 'openGauss 6.0.0',
+    os: 'openEuler 22.03',
+    server: 'Kunpeng 920(Hengshan TS02F-F30)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E4%BA%91%E5%AE%8F%E4%BF%A1%E7%A7%91/V9.1/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%99%9A%E6%8B%9F%E5%8C%96%E8%BD%AF%E4%BB%B6%E8%AF%81%E4%B9%A6.pdf',
+  },
+  {
+    name: 'CNware WinStack 虚拟化云平台软件',
+    version: '9.1',
+    type: '通用',
+    company: '云宏信息科技股份有限公司',
+    database: 'openGauss 6.0.0',
+    os: 'openEuler 22.03',
+    server: 'Kunpeng 920(Hengshan TS02F-F30)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E4%BA%91%E5%AE%8F%E4%BF%A1%E7%A7%91/V9.1/%E8%99%9A%E6%8B%9F%E5%8C%96%E4%BA%91%E5%B9%B3%E5%8F%B0%E8%BD%AF%E4%BB%B6%E8%AF%81%E4%B9%A6.pdf',
+  },
+  {
     name: 'InforCube智能运维安全管理平台',
     version: '4',
     type: '通用',
