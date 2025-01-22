@@ -24,7 +24,7 @@ const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
 import { useCookieStore } from '@/stores/common';
 
 import { getUrlParams } from '@/shared/utils';
-import { oa } from '@/shared/analytics';
+import { oaReport } from '@/shared/analytics';
 
 const hasReported = ref(false);
 const cookieStatus = useCookieStore();
@@ -41,10 +41,10 @@ function collectAdvertisedData() {
     return;
   }
   const paramsArr = getUrlParams(href);
-  oa.report('fromAdvertised', () => ({
+  oaReport('fromAdvertised', {
     origin: href,
     ...paramsArr,
-  }));
+  });
   history.pushState(null, '', location.origin + location.pathname);
   hasReported.value = true;
 }

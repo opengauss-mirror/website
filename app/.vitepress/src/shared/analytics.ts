@@ -5,6 +5,13 @@ import {
   getClientInfo,
 } from '@opensig/open-analytics';
 import { reportAnalytics } from '@/api/api-analytics';
+import { Awaitable } from 'vitepress';
+
+const REGEXP = /^\/(?:zh|en)\/(cve)\/?/;
+
+const pathServiceMap = {
+  cve: 'cvemanager',
+} as Record<string, string>;
 
 export const oa = new OpenAnalytics({
   appKey: 'openGauss',
@@ -13,14 +20,43 @@ export const oa = new OpenAnalytics({
   },
 });
 
+/**
+ * @param event 事件名
+ * @param eventData 上报数据
+ * @param $service service字段取值
+ * @param options options
+ */
+export const oaReport = <T extends Record<string, any>>(
+  event: string,
+  eventData?: T | ((...opt: any[]) => Awaitable<T>),
+  $service = 'portal',
+  options?: {
+    immediate?: boolean;
+    eventOptions?: any;
+  }
+) => {
+  return oa.report(
+    event,
+    async (...opt) => ({
+      $service,
+      ...(typeof eventData === 'function'
+        ? await eventData(...opt)
+        : eventData),
+    }),
+    options
+  );
+};
+
 export const reportPV = () => {
-  oa.report(OpenEventKeys.PV);
+  const path = REGEXP.exec(window.location.pathname)?.[1];
+  const service = path && pathServiceMap[path];
+  oaReport(OpenEventKeys.PV, undefined, service);
 };
 
 export const reportPerformance = () => {
-  oa.report(OpenEventKeys.LCP);
-  oa.report(OpenEventKeys.INP);
-  oa.report(OpenEventKeys.PageBasePerformance);
+  oaReport(OpenEventKeys.LCP);
+  oaReport(OpenEventKeys.INP);
+  oaReport(OpenEventKeys.PageBasePerformance);
 };
 
 export const enableOA = () => {

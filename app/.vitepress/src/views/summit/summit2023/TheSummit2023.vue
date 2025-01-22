@@ -14,7 +14,7 @@ import liveDark from './img/live-dark.png';
 import summitData from './data';
 import { useCommon, useCookieStore } from '@/stores/common';
 import { getUrlParams } from '@/shared/utils';
-import { oa } from '@/shared/analytics';
+import { oaReport } from '@/shared/analytics';
 
 const cookieStore = useCookieStore();
 const commonStore = useCommon();
@@ -52,10 +52,10 @@ function collectAdvertisedData() {
     return;
   }
   const paramsArr = getUrlParams(href);
-  oa.report('fromAdvertised', () => ({
+  oaReport('fromAdvertised', {
     origin: href,
     ...paramsArr,
-  }));
+  });
   history.pushState(null, '', location.origin + location.pathname);
 }
 onMounted(() => {

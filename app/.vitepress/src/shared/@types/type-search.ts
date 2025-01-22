@@ -56,7 +56,7 @@ export interface SearchCountParamsT {
   limit: LimitItemT[];
 }
 
-interface SearchCountItemT {
+export interface SearchCountItemT {
   doc_count: number;
   key: string;
 }
