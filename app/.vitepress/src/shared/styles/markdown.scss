@@ -214,7 +214,6 @@
   pre {
     position: relative;
     margin: 8px 0;
-    background-color: var(--o-color-bg1);
     box-shadow: var(--o-shadow-l1);
     overflow-x: auto;
     z-index: 1;
@@ -233,8 +232,6 @@
     line-height: 16px;
     font-size: var(--o-font-size-text);
     padding: 0 4px;
-    background-color: var(--o-color-bg-secondary);
-    border: 1px solid var(--o-color-border2);
     display: inline-block;
     font-weight: 300;
   }
