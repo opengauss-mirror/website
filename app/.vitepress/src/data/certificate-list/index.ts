@@ -46,12 +46,12 @@ export default {
       certificate: `${OBS_CERTIFICATION_LINK}%E5%A4%A7%E6%B1%89%E8%BD%AF%E4%BB%B6/HanDB%20V2.0/Certificate.pdf`,
     },
     {
-      pro: '【VastbaseG100】V2.2.15',
+      pro: '海量数据库G100管理系统V2.2',
       name: '北京海量数据技术股份有限公司',
       version: 'openGauss 5.0.0',
       award: '2024-02-19',
       expiration: '2026-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}%E5%8C%97%E4%BA%AC%E6%B5%B7%E9%87%8F/Vastbase%20G100%20V2.2.15/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}%E5%8C%97%E4%BA%AC%E6%B5%B7%E9%87%8F/Vastbase%20G100%20V2.2/Certificate.pdf`,
     },
     {
       pro: '勤龙数据库系统 1.0',
@@ -275,12 +275,12 @@ export default {
       certificate: `${OBS_CERTIFICATION_LINK}%E5%A4%A7%E6%B1%89%E8%BD%AF%E4%BB%B6/HanDB%20V2.0/Certificate.pdf`,
     },
     {
-      pro: '【VastbaseG100】V2.2.15',
+      pro: '海量数据库G100管理系统V2.2',
       name: '北京海量数据技术股份有限公司',
       version: 'openGauss 5.0.0',
       award: '2024-02-19',
       expiration: '2026-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}%E5%8C%97%E4%BA%AC%E6%B5%B7%E9%87%8F/Vastbase%20G100%20V2.2.15/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}%E5%8C%97%E4%BA%AC%E6%B5%B7%E9%87%8F/Vastbase%20G100%20V2.2/Certificate.pdf`,
     },
     {
       pro: '勤龙数据库系统 1.0',
