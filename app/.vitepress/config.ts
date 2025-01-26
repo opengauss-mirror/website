@@ -3,6 +3,8 @@ import tdks from './tdks';
 import { createRequire } from 'node:module';
 import fs from 'node:fs';
 import path from 'node:path';
+import hljs from 'highlight.js';
+
 const require = createRequire(import.meta.url);
 
 const isBlog = /.+\/(?:userPractice|events|news)\/.+$/;
@@ -117,6 +119,19 @@ const config: UserConfig = {
     },
   },
   markdown: {
+    highlight: (code: string, lang: string) => {
+      try {
+        return `<pre class="hljs"><code v-pre>${
+          lang && hljs.getLanguage(lang)
+            ? hljs.highlight(code, {
+                language: lang === 'shell' ? 'bash' : lang,
+              }).value
+            : hljs.highlightAuto(code).value
+        }</code></pre>`;
+      } catch {
+        return `<pre class="hljs"><code v-pre>${code}</code></pre>`;
+      }
+    },
     config(md) {
       md.set({
         html: true,
