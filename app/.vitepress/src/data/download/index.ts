@@ -32,8 +32,8 @@ const downloadData = [
       {
         name: '发行说明',
         nameEn: 'Release Notes',
-        path: '/docs/6.0.0/docs/ReleaseNotes/Releasenotes.html',
-        pathEn: '/docs/6.0.0/docs/ReleaseNotes/Releasenotes.html',
+        path: '/zh/news/2025-02-05-601/index.html',
+        pathEn: '/zh/news/2025-02-05-601/index.html',
       },
     ],
   },

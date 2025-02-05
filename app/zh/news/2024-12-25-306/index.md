@@ -37,8 +37,8 @@ openGauss 3.0.6 补丁版本回合的需求列表：
 ### 缺陷回合列表
 
 
-|	描述	|	PR链接	|	ISSUE链接	|	级别	|
-| ----- | ----- | ----- | ----- |
+|	描述	|	PR链接	|	ISSUE链接	|
+| ----- | ----- | ----- | 
 |	openGauss305版本，数据库由于压缩表问题启动失败【M】	|	https://gitee.com/opengauss/openGauss-server/pulls/5459	|	https://gitee.com/opengauss/openGauss-server/issues/I9OTX6?from=project-issue	|
 |	305版本，执行 \d 查看gs_obsscaninfo 系统表报错：Oid 5680 does not belong to any catalog relation【M】	|	https://gitee.com/opengauss/openGauss-server/pulls/5209	|	https://gitee.com/opengauss/openGauss-server/issues/I9JSPN	|
 |	开启querydop后，产生synchronize quit等待事件且无法清理【M】	|	https://gitee.com/opengauss/openGauss-server/pulls/5489	|	https://gitee.com/opengauss/openGauss-server/issues/I9IRI9	|
