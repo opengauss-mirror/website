@@ -122,6 +122,7 @@ app/.vitepress/.cache
 app/.vitepress/cache
 app/.vitepress/.temp
 app/.vitepress/dist
+app/.env.*
 .vscode/settings.json
 /test-results/
 /playwright-report/
