@@ -31,35 +31,17 @@ const commonStore = useCommon();
 const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
 
 const screenWidth = useWindowResize();
-const isTest = ref(false);
 const liveUrl = ref('');
-const renderData = props.liveData.list;;
+const renderData = props.liveData.list;
 const roomId = ref(0);
 const setLiveRoom = (item: RenderData, index: number): void => {
   roomId.value = index;
-  createUserId((isTest.value ? item.liveTestId : item.liveId) as string);
+  createLiveUrl(item.liveId as string);
 };
 
-const createUserId = (liveId: string) => {
-  let returnId = '';
-  let userName = '';
-  if (localStorage.getItem('live-user-name')) {
-    userName = localStorage.getItem('live-user-name') || '';
-  } else {
-    let digit = Math.round(Math.random() * 10);
-    digit > 3 ? digit : (digit = 3);
-
-    const charStr = '0123456789@#$%&~ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-    for (let i = 0; i < digit; i++) {
-      const index = Math.round(Math.random() * (charStr.length - 1));
-      returnId += charStr.substring(index, index + 1);
-    }
-    userName = returnId;
-    localStorage.setItem('live-user-name', userName);
-  }
-
-  liveUrl.value = `https://hwlive.263live.net/clv/live/login/${liveId}?name=${userName}&userId=${userName}`;
-}
+const createLiveUrl = (liveId: string) => {
+  liveUrl.value = `https://hwlive.263live.net/clv/live/login/${liveId}`;
+};
 
 const height = ref(screenWidth.value <= 1100 ? 600 : 800);
 const setHeight = (data: any) => {
@@ -88,11 +70,13 @@ const setHeight = (data: any) => {
       height.value = (iframeWidth - 360) * (9 / 16);
     }
   }
-}
+};
 
 const messageEvent = () => {
-  window.addEventListener('message', (event) => {
-    if (event.origin === 'https://hwlive.263live.net') {
+  window.addEventListener(
+    'message',
+    (event) => {
+      if (event.origin === 'https://hwlive.263live.net') {
         let data;
         data = event.data;
         if (data.eventType === 'is_iframe_resize') {
@@ -102,13 +86,10 @@ const messageEvent = () => {
     },
     false
   );
-}
+};
 
 onMounted(async () => {
-  isTest.value =
-    window.location.host.includes('test.osinfra') ||
-    window.location.host.includes('localhost');
-  createUserId(isTest.value ? renderData[0].liveTestId : renderData[0].liveId);
+  createLiveUrl(renderData[0].liveId);
   messageEvent();
 });
 
@@ -119,7 +100,7 @@ const ActiveBgDark = `url(${liveActiveDarkBg})`;
 
 <template>
   <div class="summit-live">
-    <div class="title-box" :class="{'title-box-dark': !isLight}">
+    <div class="title-box" :class="{ 'title-box-dark': !isLight }">
       <p class="title-bg">{{ liveData.titleBg }}</p>
       <p class="title">{{ liveData.title }}</p>
     </div>
@@ -145,13 +126,17 @@ const ActiveBgDark = `url(${liveActiveDarkBg})`;
               'link',
               roomId === index ? 'link-active' : '',
               index === 0 ? 'link-main' : ' ',
-              !isLight ? 'link-dark' : 'link-light'
+              !isLight ? 'link-dark' : 'link-light',
             ]"
             @click="setLiveRoom(item, index)"
           >
             <p class="name">{{ item.name }}</p>
             <div class="bottom">
-              <span class="date"><img :src="isLight ? time : timeDark" /><span>{{ item.date }}</span></span>
+              <span class="date"
+                ><img :src="isLight ? time : timeDark" /><span>{{
+                  item.date
+                }}</span></span
+              >
               <span class="time">{{ item.time }}</span>
             </div>
           </div>
