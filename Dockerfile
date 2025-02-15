@@ -1,4 +1,4 @@
-FROM node:18.14.1 as Builder
+FROM swr.cn-north-4.myhuaweicloud.com/opensourceway/node:latest as Builder
 
 RUN mkdir -p /home/opengauss/web
 WORKDIR /home/opengauss/web
@@ -19,9 +19,9 @@ RUN pnpm install
 RUN pnpm generate:blog-data
 RUN pnpm build
 
-FROM swr.cn-north-4.myhuaweicloud.com/opensourceway/openeuler/nginx:1.24.0-22.03-lts-sp1 as NginxBuilder
+FROM swr.cn-north-4.myhuaweicloud.com/opensourceway/openeuler/nginx:latest as NginxBuilder
 
-FROM openeuler/openeuler:22.03-lts-sp1
+FROM swr.cn-north-4.myhuaweicloud.com/opensourceway/openeuler/base:latest
 
 ENV PATH /usr/share/nginx/sbin:$PATH
 ENV NGINX_CONFIG_FILE /etc/nginx/nginx.conf
@@ -45,7 +45,7 @@ COPY ./sitemap/google3a54a06bdf13cacc.html /usr/share/nginx/www/
 
 RUN sed -i "s|repo.openeuler.org|mirrors.pku.edu.cn/openeuler|g" /etc/yum.repos.d/openEuler.repo \
     && yum update -y \
-    && yum install -y findutils passwd shadow \
+    && yum install -y findutils passwd shadow pcre-devel \
     && find /usr/share/nginx/www -type d -print0| xargs -0 chmod 500 \
     && find /usr/share/nginx/www -type f -print0| xargs -0 chmod 400
 COPY ./deploy/nginx/nginx.conf /etc/nginx/nginx.conf
@@ -96,7 +96,7 @@ RUN touch /var/run/nginx.pid \
     && rm -rf /usr/share/gdb \
     && rm -rf /usr/share/gcc-10.3.1
 
-COPY ./deploy/monitor.sh ./deploy/entrypoint.sh /etc/nginx
+COPY ./deploy/monitor.sh ./deploy/entrypoint.sh /etc/nginx/
 RUN chmod 500 /etc/nginx/monitor.sh \
     && chmod 500 /etc/nginx/entrypoint.sh \
     && chown nginx:nginx /etc/nginx/monitor.sh \
