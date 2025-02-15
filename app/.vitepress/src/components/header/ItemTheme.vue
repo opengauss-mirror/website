@@ -4,9 +4,10 @@ import { useCommon } from '@/stores/common';
 
 import IconSun from '~icons/app/icon-sun-outline.svg';
 import IconMoon from '~icons/app/icon-moon-outline.svg';
+import { getCustomCookie, setCustomCookie } from '@/shared/utils';
 
 // 风格切换
-const APPEARANCE_KEY = 'opengauss-theme';
+const APPEARANCE_KEY = 'openGauss-theme-appearance';
 
 const commonStore = useCommon();
 
@@ -15,24 +16,33 @@ const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
 const changeTheme = () => {
   const theme = commonStore.theme === 'dark' ? 'light' : 'dark';
   commonStore.theme = theme;
-  localStorage.setItem(APPEARANCE_KEY, theme);
+  setCustomCookie(
+    APPEARANCE_KEY,
+    theme,
+    180,
+    import.meta.env.VITE_COOKIE_DOMAIN
+  );
 };
 
 const changeThemeMobile = () => {
-  localStorage.setItem(APPEARANCE_KEY, commonStore.theme);
+  setCustomCookie(
+    APPEARANCE_KEY,
+    commonStore.theme,
+    180,
+    import.meta.env.VITE_COOKIE_DOMAIN
+  );
 };
 
 onMounted(() => {
   let theme;
-  if (!localStorage.getItem(APPEARANCE_KEY)) {
+  if (!getCustomCookie(APPEARANCE_KEY)) {
     const prefereDark = window.matchMedia(
       '(prefers-color-scheme: dark)'
     ).matches;
     theme = prefereDark ? 'dark' : 'light';
   } else {
-    theme = localStorage.getItem(APPEARANCE_KEY);
+    theme = getCustomCookie(APPEARANCE_KEY);
   }
-
   commonStore.theme = theme === 'dark' ? 'dark' : 'light';
 });
 
@@ -42,8 +52,13 @@ watch(
   },
   (val) => {
     const documentElement = document.documentElement;
+    val === 'light' && documentElement.removeAttribute('data-o-theme');
+    val === 'dark' && documentElement.setAttribute('data-o-theme', 'dark');
     val === 'light' && documentElement.classList.remove('dark');
     val === 'dark' && documentElement.classList.add('dark');
+  },
+  {
+    immediate: true,
   }
 );
 </script>

@@ -51,11 +51,12 @@ const config: UserConfig = {
     ],
     [
       'script',
-      {},
-      `(()=>{const e=localStorage.getItem("opengauss-theme"),t=window.matchMedia("(prefers-color-scheme: dark)").matches;(e?"dark"===e:t)&&document.documentElement.classList.add("dark");})();`,
+      {
+        src: '/check-dark-mode-v2.js',
+      },
     ],
   ],
-  appearance: true, // enable dynamic scripts for dark mode
+  appearance: false, // enable dynamic scripts for dark mode
   titleTemplate: false, //  vitepress supports pageTitileTemplate since 1.0.0
   async transformPageData(pageData) {
     const filePath = pageData.filePath;
