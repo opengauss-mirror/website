@@ -27,35 +27,16 @@ const props = defineProps({
   },
 });
 const screenWidth = useWindowResize();
-const isTest = ref(false);
 const liveUrl = ref('');
 const renderData: Array<RenderData> = props.liveData as any;
 const roomId = ref(0);
 const setLiveRoom = (item: RenderData, index: number): void => {
   roomId.value = index;
-  createUserId(isTest.value ? item.liveTestId : item.liveId);
+  createLiveUrl(item.liveId);
 };
 
-function createUserId(liveId: string) {
-  let returnId = '',
-    userName = '';
-  if (localStorage.getItem('live-user-name')) {
-    userName = localStorage.getItem('live-user-name') || '';
-  } else {
-    let digit = Math.round(Math.random() * 10);
-    digit > 3 ? digit : (digit = 3);
-
-    const charStr =
-      '0123456789@#$%&~ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-    for (let i = 0; i < digit; i++) {
-      const index = Math.round(Math.random() * (charStr.length - 1));
-      returnId += charStr.substring(index, index + 1);
-    }
-    userName = returnId;
-    localStorage.setItem('live-user-name', userName);
-  }
-
-  liveUrl.value = `https://hwlive.263live.net/clv/live/login/${liveId}?name=${userName}&userId=${userName}`;
+function createLiveUrl(liveId: string) {
+  liveUrl.value = `https://hwlive.263live.net/clv/live/login/${liveId}`;
 }
 const height = ref(screenWidth.value <= 1100 ? 600 : 800);
 function setHeight(data: any) {
@@ -99,10 +80,7 @@ function messageEvent() {
   );
 }
 onMounted(async () => {
-  isTest.value =
-    window.location.host.includes('test.osinfra') ||
-    window.location.host.includes('localhost');
-  createUserId(isTest.value ? renderData[0].liveTestId : renderData[0].liveId);
+  createLiveUrl(renderData[0].liveId);
   messageEvent();
 });
 
@@ -121,7 +99,7 @@ watch(
   }
 );
 const changeLive = (val: string): void => {
-  createUserId(val);
+  createLiveUrl(val);
 };
 </script>
 
@@ -134,7 +112,7 @@ const changeLive = (val: string): void => {
             v-for="item in renderData"
             :key="item.liveTestId"
             :label="item.name"
-            :value="isTest ? item.liveTestId : item.liveId"
+            :value="item.liveId"
           />
         </OSelect>
       </div>
