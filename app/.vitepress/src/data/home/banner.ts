@@ -23,30 +23,11 @@ import banner20241211_mb from '@/assets/category/home/banner/banner_mo20211211.j
 import banner_text20241211 from '@/assets/category/home/banner/banner_text_pc20241211.png';
 import banner_text20241211_mb from '@/assets/category/home/banner/banner_text_mo20241211.png';
 
-import banner2025Mo from '@/assets/category/home/banner/banner-2025-mo.jpg';
-import banner2025 from '@/assets/category/home/banner/banner-2025.jpg';
-import banner2025Text from '@/assets/category/home/banner/banner-2025-text.png';
-
 import { LEARN_VIDEO_LINK, DOCS_LINK } from '@/data/url-config';
 
 // rightInset:banner右侧插图
 export default {
   zh: [
-    {
-      pcBanner: banner2025,
-      moBanner: banner2025Mo,
-      link: '',
-      target: '',
-      title: '',
-      titleMb: [],
-      subtitle: '',
-      desc: [''],
-      btn: '',
-      className: 'summit202412',
-      rightInset: '',
-      rightLink: '',
-      textImg: banner2025Text,
-    },
     {
       pcBanner: banner20241211,
       moBanner: banner20241211_mb,
