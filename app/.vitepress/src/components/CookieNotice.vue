@@ -2,13 +2,12 @@
 import { ref, watch, onMounted, computed } from 'vue';
 import { useRoute, useData } from 'vitepress';
 import { ElDialog, ElSwitch } from 'element-plus';
+import { setCustomCookie, isBoolean, removeCustomCookie } from '@/shared/utils';
 import {
-  setCustomCookie,
-  isBoolean,
-  getCustomCookie,
-  removeCustomCookie,
-} from '@/shared/utils';
-import { useCookieStore } from '@/stores/common';
+  useCookieStore,
+  COOKIE_AGREED_STATUS,
+  COOKIE_KEY,
+} from '@/stores/common';
 import { useScreen } from '@/shared/useScreen';
 import { initSensor, removeSensor } from '@/shared/analytics';
 import { useI18n } from '@/i18n';
@@ -23,16 +22,9 @@ const { lang } = useData();
 const isZh = computed(() => (lang.value === 'zh' ? true : false));
 
 const cookieStore = useCookieStore();
+const COOKIE_DOMAIN = import.meta.env.VITE_COOKIE_DOMAIN;
 
 const route = useRoute();
-
-const COOKIE_AGREED_STATUS = {
-  NOT_SIGNED: '0', // 未签署
-  ALL_AGREED: '1', // 同意所有cookie
-  NECCESSARY_AGREED: '2', // 仅同意必要cookie
-};
-
-const COOKIE_KEY = 'agreed-cookiepolicy';
 
 // 是否允许分析cookie
 const analysisAllowed = ref(false);
@@ -58,34 +50,14 @@ const toggleDlgVisible = (val: boolean) => {
   }
 };
 
-// 获取cookie状态
-const getUserCookieStatus = () => {
-  const cookieVal = getCustomCookie(COOKIE_KEY) ?? '0';
-
-  const cookieStatusVal = cookieVal[0];
-  const cookieVersionVal = cookieVal.slice(1);
-
-  if (cookieVersionVal !== cookieStore.version) {
-    return COOKIE_AGREED_STATUS.NOT_SIGNED;
-  }
-
-  if (cookieStatusVal === COOKIE_AGREED_STATUS.ALL_AGREED) {
-    return COOKIE_AGREED_STATUS.ALL_AGREED;
-  } else if (cookieStatusVal === COOKIE_AGREED_STATUS.NECCESSARY_AGREED) {
-    return COOKIE_AGREED_STATUS.NECCESSARY_AGREED;
-  } else {
-    return COOKIE_AGREED_STATUS.NOT_SIGNED;
-  }
-};
-
 // 是否未签署
 const isNotSigned = () => {
-  return getUserCookieStatus() === COOKIE_AGREED_STATUS.NOT_SIGNED;
+  return cookieStore.getUserCookieStatus() === COOKIE_AGREED_STATUS.NOT_SIGNED;
 };
 
 // 是否全部同意
 const isAllAgreed = () => {
-  return getUserCookieStatus() === COOKIE_AGREED_STATUS.ALL_AGREED;
+  return cookieStore.getUserCookieStatus() === COOKIE_AGREED_STATUS.ALL_AGREED;
 };
 
 onMounted(() => {
@@ -94,43 +66,42 @@ onMounted(() => {
     toggleNoticeVisible(true);
   }
 
-  if (isAllAgreed()) {
-    cookieStore.status = COOKIE_AGREED_STATUS.ALL_AGREED;
+  if (cookieStore.isAllAgreed) {
     analysisAllowed.value = true;
     initSensor();
+  } else {
+    removeSensor();
   }
 });
 
 // 用户同意所有cookie
 const acceptAll = () => {
-  if (cookieStore.status !== COOKIE_AGREED_STATUS.ALL_AGREED) {
-    initSensor();
-  }
   analysisAllowed.value = true;
   cookieStore.status = COOKIE_AGREED_STATUS.ALL_AGREED;
   removeCustomCookie(COOKIE_KEY);
   setCustomCookie(
     COOKIE_KEY,
     `${COOKIE_AGREED_STATUS.ALL_AGREED}${cookieStore.version}`,
-    180
+    180,
+    COOKIE_DOMAIN
   );
   toggleNoticeVisible(false);
+  initSensor();
 };
 
 // 用户拒绝所有cookie，即仅同意必要cookie
 const rejectAll = () => {
-  if (cookieStore.status !== COOKIE_AGREED_STATUS.NECCESSARY_AGREED) {
-    removeSensor();
-  }
   analysisAllowed.value = false;
   cookieStore.status = COOKIE_AGREED_STATUS.NECCESSARY_AGREED;
   removeCustomCookie(COOKIE_KEY);
   setCustomCookie(
     COOKIE_KEY,
     `${COOKIE_AGREED_STATUS.NECCESSARY_AGREED}${cookieStore.version}`,
-    180
+    180,
+    COOKIE_DOMAIN
   );
   toggleNoticeVisible(false);
+  removeSensor();
 };
 
 const handleSave = () => {

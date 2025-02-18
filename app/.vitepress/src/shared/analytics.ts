@@ -6,6 +6,7 @@ import {
 } from '@opensig/open-analytics';
 import { reportAnalytics } from '@/api/api-analytics';
 import { Awaitable } from 'vitepress';
+import { COOKIE_AGREED_STATUS, useCookieStore } from '@/stores/common';
 
 const REGEXP = /^\/(?:zh|en)\/(cve)\/?/;
 
@@ -16,6 +17,12 @@ const pathServiceMap = {
 export const oa = new OpenAnalytics({
   appKey: 'openGauss',
   request: (data) => {
+    if (
+      useCookieStore().getUserCookieStatus() !== COOKIE_AGREED_STATUS.ALL_AGREED
+    ) {
+      removeSensor();
+      return;
+    }
     reportAnalytics(data);
   },
 });
@@ -35,6 +42,9 @@ export const oaReport = <T extends Record<string, any>>(
     eventOptions?: any;
   }
 ) => {
+  if (!oa.enabled) {
+    return;
+  }
   return oa.report(
     event,
     async (...opt) => ({
@@ -82,8 +92,14 @@ export const initSensor = () => {
 
 export const removeSensor = () => {
   oa.enableReporting(false);
+  [
+    'oa-openGauss-client',
+    'oa-openGauss-events',
+    'oa-openGauss-session',
+  ].forEach((key) => {
+    localStorage.removeItem(key);
+  });
   const scripts = document.querySelectorAll('script.analytics-script');
-
   scripts.forEach((script) => {
     script.remove();
   });
