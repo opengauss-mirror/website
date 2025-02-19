@@ -5,14 +5,7 @@ const GAUSS_EMAIL = 'contact@opengauss.org'; // gauss邮箱
 const GAUSS_CERTIFICATE_EMAIL = 'common@certificate.opengauss.org'; // gauss证书相关联系邮箱
 const HUAWEI_COMPUTE = 'https://huaweicompute.wjx.cn/'; // 华为在线问卷、调查投票平台
 const DOCS_LINK = 'https://docs-opengauss.osinfra.cn/'; // gauss文档
-const OSCHINA_LINK = 'https://my.oschina.net/'; // oschina官网
-const CSDN_LINK = 'https://blog.csdn.net/'; // csdn官网
-const CTO_LINK = 'https://blog.51cto.com/'; // 51cto官网
-const MODB_LINK = 'https://www.modb.pro/'; // modb官网
-const INFOQ_LINK = 'https://www.infoq.cn/'; // infoq官网
-const BILIBILI_LINK = 'https://space.bilibili.com/'; // bilibili官网
 const BILIBILI_LINK2 = 'https://www.bilibili.com/'; // bilibili官网
-const ZHIZHU_LINK = 'https://www.zhihu.com/'; // 知乎官网
 const ENMOEDU_LINK = 'https://enmoedu.com/'; // 恩墨学院
 const GITEE_LINK = 'https://gitee.com/'; // gitee官网
 const OBS_VIDEO_LINK =
@@ -89,14 +82,7 @@ export {
   PROME_LINK,
   YUKON_LINK,
   DOCS_LINK,
-  OSCHINA_LINK,
-  CSDN_LINK,
-  CTO_LINK,
-  MODB_LINK,
-  INFOQ_LINK,
-  BILIBILI_LINK,
   BILIBILI_LINK2,
-  ZHIZHU_LINK,
   ENMOEDU_LINK,
   GITEE_LINK,
   OBS_VIDEO_LINK,

@@ -5,7 +5,7 @@ import { postFeedback } from '@/api/api-feedback';
 import { ElMessage } from 'element-plus';
 
 import useWindowResize from '@/components/hooks/useWindowResize';
-import { VULBOX_LINK, GAUSS_EMAIL, HUAWEI_COMPUTE } from '@/data/url-config';
+import { VULBOX_LINK, GAUSS_EMAIL } from '@/data/url-config';
 import { handleError } from '@/shared/utils';
 
 import IconTop from '~icons/float/icon-top.svg';
@@ -18,9 +18,6 @@ import IconHeadsetBig from '~icons/float/icon-headset-big.svg';
 const screenWidth = useWindowResize();
 const { lang } = useData();
 const router = useRouter();
-
-// 满意度问卷
-const QUESTIONNAIRE_URL = `${HUAWEI_COMPUTE}/vm/OlCIbg8.aspx#`;
 
 // 漏洞奖励计划浮窗
 const isSafetyFloatShow = ref(false);
@@ -42,15 +39,7 @@ watch(
 );
 
 const TITLES1 = ['您向他人推荐 ', '您对 '];
-const TITLES2 = [
-  'openGauss社区',
-  'openGauss下载版块',
-  'openGauss学习版块',
-  'openGauss社区版块',
-  'openGauss认证版块',
-  'openGauss互动版块',
-  'openGauss安全版块',
-];
+const TITLES2 = ['openGauss社区', 'openGauss下载版块', 'openGauss学习版块', 'openGauss社区版块', 'openGauss认证版块', 'openGauss互动版块', 'openGauss安全版块'];
 const TITLES3 = [' 的可能性有多大？', ' 的整体满意度如何？'];
 
 interface TitleItemT {
@@ -260,10 +249,7 @@ function postScore() {
       const summitTime = new Date().valueOf();
       if (screenWidth.value < 1100) {
         try {
-          localStorage.setItem(
-            'submit-time-mobile',
-            JSON.stringify(summitTime)
-          );
+          localStorage.setItem('submit-time-mobile', JSON.stringify(summitTime));
         } catch {
           handleError();
         }
@@ -417,15 +403,8 @@ onMounted(() => {
   <div v-if="lang === 'zh'" class="float">
     <ClientOnly>
       <template v-if="screenWidth > 1100">
-        <div
-          v-if="!isFloatTipShow"
-          :class="isSafetyFloatShow ? 'safety-tips' : ''"
-        >
-          <a
-            :href="isSafetyFloatShow ? VULBOX_LINK : ''"
-            :target="isSafetyFloatShow ? '_blank' : '_self'"
-            rel="noopener noreferrer"
-          >
+        <div v-if="!isFloatTipShow" :class="isSafetyFloatShow ? 'safety-tips' : ''">
+          <a :href="isSafetyFloatShow ? VULBOX_LINK : ''" :target="isSafetyFloatShow ? '_blank' : '_self'" rel="noopener noreferrer">
             {{ isSafetyFloatShow ? FLOAT_BUG_TEXT : '' }}
           </a>
         </div>
@@ -434,33 +413,16 @@ onMounted(() => {
             <h4 class="tip-title">{{ infoData.feedbackTitle }}</h4>
             <div class="tip-detail">{{ infoData.welcome }}</div>
             <div class="btn-box">
-              <OButton size="mini" @click="closeFloatTip">{{
-                infoData.know
-              }}</OButton>
+              <OButton size="mini" @click="closeFloatTip">{{ infoData.know }}</OButton>
             </div>
           </div>
           <div class="nav-box">
-            <a
-              :href="QUESTIONNAIRE_URL"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div class="nav-box-question">满意度问卷</div>
-            </a>
             <div class="nav-box1">
-              <div
-                class="nav-item"
-                @mouseenter="toggleIsShow(true)"
-                @mouseleave="toggleIsShow(false)"
-              >
+              <div class="nav-item" @mouseenter="toggleIsShow(true)" @mouseleave="toggleIsShow(false)">
                 <OIcon class="icon-box" @mouseleave.stop="closefloat">
                   <component :is="IconSmile"> </component>
                 </OIcon>
-                <div
-                  v-if="isShow"
-                  class="o-popup1"
-                  :class="{ show: isDynamic }"
-                >
+                <div v-if="isShow" class="o-popup1" :class="{ show: isDynamic }">
                   <OIcon class="icon-cancel" @click="cancelPopup">
                     <IconCancel />
                   </OIcon>
@@ -476,25 +438,10 @@ onMounted(() => {
                           {{ scoreTip }}
                         </div>
                       </div>
-                      <el-slider
-                        v-model="score"
-                        show-stops
-                        :step="10"
-                        :marks="marks"
-                        :show-tooltip="false"
-                        @input="handleInput"
-                      />
+                      <el-slider v-model="score" show-stops :step="10" :marks="marks" :show-tooltip="false" @input="handleInput" />
                       <div class="grade-info">
-                        <span>{{
-                          title2 === TITLES2[0]
-                            ? infoData.grade1
-                            : infoData.grade1_1
-                        }}</span>
-                        <span>{{
-                          title2 === TITLES2[0]
-                            ? infoData.grade2
-                            : infoData.grade2_1
-                        }}</span>
+                        <span>{{ title2 === TITLES2[0] ? infoData.grade1 : infoData.grade1_1 }}</span>
+                        <span>{{ title2 === TITLES2[0] ? infoData.grade2 : infoData.grade2_1 }}</span>
                       </div>
                     </div>
                     <div v-show="isReasonShow" class="reason">
@@ -516,11 +463,7 @@ onMounted(() => {
                         </a>
                       </p>
                       <div class="submit-btn">
-                        <OButton
-                          type="outline"
-                          size="mini"
-                          @click="handleClickSubmit"
-                        >
+                        <OButton type="outline" size="mini" @click="handleClickSubmit">
                           {{ infoData.submit }}
                         </OButton>
                       </div>
@@ -529,16 +472,9 @@ onMounted(() => {
                 </div>
               </div>
               <div class="nav-item">
-                <OIcon class="icon-box"
-                  ><component :is="IconHeadset"></component>
-                </OIcon>
+                <OIcon class="icon-box"><component :is="IconHeadset"></component> </OIcon>
                 <div class="o-popup2">
-                  <div
-                    v-for="item in floatData"
-                    :key="item.emile"
-                    class="pop-item"
-                    rel="noopener noreferrer"
-                  >
+                  <div v-for="item in floatData" :key="item.emile" class="pop-item" rel="noopener noreferrer">
                     <OIcon><component :is="item.img"></component></OIcon>
                     <div class="text">
                       <p class="text-name">
@@ -559,25 +495,17 @@ onMounted(() => {
         </div>
       </template>
       <template v-else>
-        <div
-          v-if="isMobileFloatShow && !isSummit"
-          class="float-mobile"
-          :class="{ 'mobile-margin': isMargin }"
-        >
+        <div v-if="isMobileFloatShow && !isSummit" class="float-mobile" :class="{ 'mobile-margin': isMargin }">
           <div class="float-head">
             <div class="head-title" @click="toggleDialogVisible">
-              <OIcon class="icon-box"
-                ><component :is="IconSmileMobile"></component>
-              </OIcon>
+              <OIcon class="icon-box"><component :is="IconSmileMobile"></component> </OIcon>
               <p>
                 {{ title1 }}
                 <span class="title-name">{{ title2 }}</span>
                 {{ title3 }}
               </p>
             </div>
-            <OIcon class="icon-box icon-close" @click="closeMobileFloat"
-              ><component :is="IconCancel"></component>
-            </OIcon>
+            <OIcon class="icon-box icon-close" @click="closeMobileFloat"><component :is="IconCancel"></component> </OIcon>
           </div>
           <el-dialog v-model="dialogVisible" :show-close="false">
             <div class="o-popup1">
@@ -599,22 +527,11 @@ onMounted(() => {
                   </li>
                 </ul>
                 <div class="slider-body">
-                  <el-slider
-                    v-model="score"
-                    :step="STEP"
-                    :marks="marks"
-                    show-stops
-                    :show-tooltip="false"
-                    @input="handleInput"
-                  />
+                  <el-slider v-model="score" :step="STEP" :marks="marks" show-stops :show-tooltip="false" @input="handleInput" />
                 </div>
                 <div class="grade-info">
-                  <span>{{
-                    title2 === TITLES2[0] ? infoData.grade1 : infoData.grade1_1
-                  }}</span>
-                  <span>{{
-                    title2 === TITLES2[0] ? infoData.grade2 : infoData.grade2_1
-                  }}</span>
+                  <span>{{ title2 === TITLES2[0] ? infoData.grade1 : infoData.grade1_1 }}</span>
+                  <span>{{ title2 === TITLES2[0] ? infoData.grade2 : infoData.grade2_1 }}</span>
                 </div>
               </div>
               <div v-show="isReasonShow" class="reason">
@@ -637,16 +554,8 @@ onMounted(() => {
                 </p>
               </div>
               <div class="btn-box">
-                <OButton type="outline" size="middle" @click="cancelDialog">{{
-                  infoData.cancel
-                }}</OButton>
-                <OButton
-                  type="outline"
-                  size="middle"
-                  :class="{ forbidden: !isReasonShow }"
-                  @click="postScore"
-                  >{{ infoData.confirm }}</OButton
-                >
+                <OButton type="outline" size="middle" @click="cancelDialog">{{ infoData.cancel }}</OButton>
+                <OButton type="outline" size="middle" :class="{ forbidden: !isReasonShow }" @click="postScore">{{ infoData.confirm }}</OButton>
               </div>
             </div>
           </el-dialog>
@@ -893,11 +802,7 @@ onMounted(() => {
                 background-color: var(--o-color-bg-secondary);
               }
               .el-slider__bar {
-                background-image: linear-gradient(
-                  90deg,
-                  #b461f6 0%,
-                  #7d32ea 100%
-                );
+                background-image: linear-gradient(90deg, #b461f6 0%, #7d32ea 100%);
               }
               .el-slider__button-wrapper + div {
                 position: relative;
@@ -1216,11 +1121,7 @@ onMounted(() => {
             .el-slider__bar {
               height: 100%;
               border-radius: 8px;
-              background-image: linear-gradient(
-                90deg,
-                #b461f6 0%,
-                #7d32ea 100%
-              );
+              background-image: linear-gradient(90deg, #b461f6 0%, #7d32ea 100%);
             }
             .el-slider__button-wrapper + div {
               position: relative;
