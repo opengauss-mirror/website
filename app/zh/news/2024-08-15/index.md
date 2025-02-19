@@ -21,6 +21,10 @@ openGauss 5.0.3 Update版本是openGauss 5.0.0 Release的第三个补丁版本�
 | 5.0.2(不带CM + 带CM) | 5.0.3(不带CM + 带CM) |
 | 5.0.3(不带CM + 带CM) | 6.0.0(不带CM + 带CM) |
 
+## CVE漏洞
+
+当前补丁版本没有CVE披露漏洞。
+
 ## 回合缺陷
 
 ### 统计
