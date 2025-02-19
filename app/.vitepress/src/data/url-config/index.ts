@@ -58,7 +58,7 @@ const PLACE_LINK = 'https://marketplace.huaweicloud.com/'; // 华为云云商店
 const LAB_LINK = 'https://lab.huaweicloud.com/'; // 华为云开发者学堂
 const DBOBS_LINK =
   'https://dbacertification-beijing4.obs.cn-north-4.myhuaweicloud.com/'; // 认证的培训认证课程资料obs存放地址
-const DATA_LINK = 'https://datastat-opengauss.osinfra.cn/'; // 贡献看板
+const DATA_LINK = 'https://datastat.opengauss.org/'; // 贡献看板
 const CLA_LINK = 'https://clasign.osinfra.cn/'; // cla签署
 const SAGE_LINK = 'https://sage.thesharps.us/'; // Sage Sharp
 const TRYME_LINK = 'https://tryme-opengauss.osinfra.cn/'; // tryme
