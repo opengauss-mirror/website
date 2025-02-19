@@ -7,71 +7,9 @@ import footerLogo from '@/assets/footer/footer-logo.svg';
 import footerBg from '@/assets/footer/footer-bg.png';
 import footerBgMo from '@/assets/footer/footer-bg-mo.png';
 
-// 中文友情链接
-import logoBilibili from '@/assets/footer/bilibili.png';
-import logoInfoq from '@/assets/footer/infoq.png';
-import logoZhihu from '@/assets/footer/zhihu.png';
-import logoModb from '@/assets/footer/modb.png';
-import logoOschina from '@/assets/footer/oschina.png';
-import logoCsdn from '@/assets/footer/csdn.png';
-import logo51cto from '@/assets/footer/cto.png';
-
 import CodeGzh from '@/assets/footer/wechat.png';
 
-import {
-  OSCHINA_LINK,
-  CSDN_LINK,
-  CTO_LINK,
-  MODB_LINK,
-  INFOQ_LINK,
-  BILIBILI_LINK,
-  ZHIZHU_LINK,
-} from '@/data/url-config';
-
 const i18n = useI18n();
-
-// 友情链接
-const footerLinks = {
-  row: [
-    {
-      path: `${OSCHINA_LINK}u/5059795`,
-      logo: logoOschina,
-      id: 'oschina',
-    },
-    {
-      path: `${CSDN_LINK}weixin_49727236?spm=1000.2115.3001.5343`,
-      logo: logoCsdn,
-      id: 'csdn',
-    },
-    {
-      path: `${CTO_LINK}u_15157671`,
-      logo: logo51cto,
-      id: '51cto',
-    },
-  ],
-  row1: [
-    {
-      path: `${MODB_LINK}u/429265`,
-      logo: logoModb,
-      id: 'modb',
-    },
-    {
-      path: `${INFOQ_LINK}u/opengauss/publish`,
-      logo: logoInfoq,
-      id: 'infoq',
-    },
-    {
-      path: `${BILIBILI_LINK}543286270`,
-      logo: logoBilibili,
-      id: 'bilibili',
-    },
-    {
-      path: `${ZHIZHU_LINK}people/opengauss`,
-      logo: logoZhihu,
-      id: 'zhihu',
-    },
-  ],
-};
 
 // 背景
 const footBg = {
@@ -106,51 +44,15 @@ const footBg = {
               >
             </div>
             <p class="copyright">
-              {{
-                i18n.common.FOOTER.COPY_RIGHT.replace(
-                  '{year}',
-                  getYearByOffset()
-                )
-              }}
+              {{ i18n.common.FOOTER.COPY_RIGHT.replace('{year}', getYearByOffset()) }}
             </p>
             <p class="mo-emial">
-              <a
-                class="email"
-                :href="'mailto:' + i18n.common.FOOTER.MAIL"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a class="email" :href="'mailto:' + i18n.common.FOOTER.MAIL" target="_blank" rel="noopener noreferrer">
                 {{ i18n.common.FOOTER.MAIL }}
               </a>
             </p>
           </div>
           <div class="footer-right">
-            <div class="footer-links">
-              <div class="row">
-                <a
-                  v-for="item in footerLinks.row"
-                  :key="item.id"
-                  :href="item.path"
-                  class="links-logo"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img :src="item.logo" alt="" />
-                </a>
-              </div>
-              <div class="row1">
-                <a
-                  v-for="item in footerLinks.row1"
-                  :key="item.id"
-                  :href="item.path"
-                  class="links-logo"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img :src="item.logo" alt="" />
-                </a>
-              </div>
-            </div>
             <div class="code-box">
               <img :src="CodeGzh" class="code-img" alt="" />
               <p class="txt">{{ i18n.common.FOOTER.QR_CODE }}</p>
