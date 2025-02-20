@@ -1,7 +1,7 @@
 // 涉及的公网路径及邮箱地址的配置文件
 const OBS_Summit_PPT =
   'https://obs-for-opengauss-summit.obs.cn-north-4.myhuaweicloud.com/';
-const GAUSS_EMAIL = 'contact@opengauss.org'; // gauss邮箱
+const GAUSS_EMAIL = 'common@public.opengauss.org'; // gauss邮箱
 const GAUSS_CERTIFICATE_EMAIL = 'common@certificate.opengauss.org'; // gauss证书相关联系邮箱
 const HUAWEI_COMPUTE = 'https://huaweicompute.wjx.cn/'; // 华为在线问卷、调查投票平台
 const DOCS_LINK = 'https://docs-opengauss.osinfra.cn/'; // gauss文档
