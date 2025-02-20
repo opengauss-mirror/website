@@ -72,15 +72,13 @@ export default {
     TITLE: 'We Are Thriving',
     CARD: {
       TITLE: 'Thriving openGauss Community',
-      CONTENT:
-        'openGauss is an open source database platform that encourages community contribution and collaboration.',
+      CONTENT: 'openGauss is an open source database platform that encourages community contribution and collaboration.',
       VIEW_DETAILS: 'Learn More',
       LINK: `${DATA_LINK}en/overview`,
     },
   },
   HOME_EXPLORE: {
-    EXPLORE_TITLE:
-      'New to openGauss? Come and start your openGauss exploration journey!',
+    EXPLORE_TITLE: 'New to openGauss? Come and start your openGauss exploration journey!',
     LIST: [
       {
         NAME: 'What is openGauss',
@@ -127,18 +125,15 @@ export default {
   },
   HOME_CALENDAR: {
     LOGIN: 'Login prompt',
-    LOGIN_TEXT:
-      'Using openGauss meeting reservation feature requires the identity permission of SIG group Maintainer or Committer. Please allow you to login Gitee to verify user information.',
+    LOGIN_TEXT: 'Using openGauss meeting reservation feature requires the identity permission of SIG group Maintainer or Committer',
     GITEE_BEN: 'Gitee authorized login',
     LOGIN_TIPS: 'I have read and agreed to',
     BACK_LOGIN: '返回重新预定会议',
     PRIVACY: 'Privacy Policy',
     RESERVE_MEETING: 'Schedule a meeting',
     PERMISSION: 'Permission prompt',
-    PERMISSION_TEXT:
-      "Very sorry! You don't have permission to schedule a meeting at the moment.",
-    PERMISSION_TEXT1:
-      "Very sorry! You don't have permission to edit a meeting at the moment.",
+    PERMISSION_TEXT: "Very sorry! You don't have permission to schedule a meeting at the moment.",
+    PERMISSION_TEXT1: "Very sorry! You don't have permission to edit a meeting at the moment.",
     DELETE: '删除提示',
     DELETE_TEXT: '是否确定要删除当前会议？',
     SIG_GROUP: 'SIG组:',
@@ -161,7 +156,7 @@ export default {
     MODIFY: 'Modify Meeting',
     NETERROR: '服务开小差',
     REQUIRE: '请完成所有必填项',
-    FAILED: '很抱歉！因XXX会议预定失败',
+    FAILED: '很抱歉！会议预定失败',
     DATA_TEXT: '选择会议日期',
     STARTTIME: '选择起始时间',
     ENDTIME: '选择结束时间',
@@ -173,6 +168,7 @@ export default {
     LOGOUT_SUCCESS: 'Logged Out',
     COPY_INFO: '复制会议信息',
     COPY_INFO_MB: '复制信息',
+    failed: 'Operation failed!',
   },
   HOME_ROOMS: {
     ROOM_NAME: [

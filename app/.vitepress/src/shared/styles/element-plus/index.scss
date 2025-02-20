@@ -19,3 +19,10 @@
 );
 
 @use 'element-plus/theme-chalk/src/index.scss' as *;
+
+
+.el-dialog__header{
+  &.show-close{
+    padding-right:0 !important;
+  }
+}

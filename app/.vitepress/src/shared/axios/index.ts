@@ -1,13 +1,6 @@
 /* eslint-disable */
 import axios from 'axios';
-import type {
-  AxiosError,
-  AxiosInstance,
-  AxiosRequestConfig,
-  AxiosRequestHeaders,
-  AxiosResponse,
-  AxiosStatic,
-} from 'axios';
+import type { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosRequestHeaders, AxiosResponse, AxiosStatic } from 'axios';
 import handleResponse from './handleResponse';
 import handleError from './handleError';
 import setConfig from './setConfig';
@@ -26,40 +19,14 @@ interface RequestInstance extends AxiosInstance {
   removeResponseInterceptor(): void;
   clearPendingPool(whiteList: Array<string>): Array<string> | null;
   getUri(config?: RequestConfig): string;
-  request<T = any, R = AxiosResponse<T>, D = any>(
-    config: RequestConfig<D>
-  ): Promise<R>;
-  get<T = any, R = AxiosResponse<T>, D = any>(
-    url: string,
-    config?: RequestConfig<D>
-  ): Promise<R>;
-  delete<T = any, R = AxiosResponse<T>, D = any>(
-    url: string,
-    config?: RequestConfig<D>
-  ): Promise<R>;
-  head<T = any, R = AxiosResponse<T>, D = any>(
-    url: string,
-    config?: RequestConfig<D>
-  ): Promise<R>;
-  options<T = any, R = AxiosResponse<T>, D = any>(
-    url: string,
-    config?: RequestConfig<D>
-  ): Promise<R>;
-  post<T = any, R = AxiosResponse<T>, D = any>(
-    url: string,
-    data?: D,
-    config?: RequestConfig<D>
-  ): Promise<R>;
-  put<T = any, R = AxiosResponse<T>, D = any>(
-    url: string,
-    data?: D,
-    config?: RequestConfig<D>
-  ): Promise<R>;
-  patch<T = any, R = AxiosResponse<T>, D = any>(
-    url: string,
-    data?: D,
-    config?: RequestConfig<D>
-  ): Promise<R>;
+  request<T = any, R = AxiosResponse<T>, D = any>(config: RequestConfig<D>): Promise<R>;
+  get<T = any, R = AxiosResponse<T>, D = any>(url: string, config?: RequestConfig<D>): Promise<R>;
+  delete<T = any, R = AxiosResponse<T>, D = any>(url: string, config?: RequestConfig<D>): Promise<R>;
+  head<T = any, R = AxiosResponse<T>, D = any>(url: string, config?: RequestConfig<D>): Promise<R>;
+  options<T = any, R = AxiosResponse<T>, D = any>(url: string, config?: RequestConfig<D>): Promise<R>;
+  post<T = any, R = AxiosResponse<T>, D = any>(url: string, data?: D, config?: RequestConfig<D>): Promise<R>;
+  put<T = any, R = AxiosResponse<T>, D = any>(url: string, data?: D, config?: RequestConfig<D>): Promise<R>;
+  patch<T = any, R = AxiosResponse<T>, D = any>(url: string, data?: D, config?: RequestConfig<D>): Promise<R>;
 }
 
 interface InternalRequestConfig extends RequestConfig {
@@ -174,7 +141,7 @@ const responseInterceptorId = request.interceptors.response.use(
       });
     }
 
-    return Promise.reject(err).catch(() => {});
+    return Promise.reject(err);
   }
 );
 // 移除全局的请求拦截器
@@ -198,9 +165,7 @@ function clearPendingPool(whiteList: Array<string> = []) {
     return null;
   }
 
-  const pendingUrlList: Array<string> = Array.from(pendingPool.keys()).filter(
-    (url: string) => !whiteList.includes(url)
-  );
+  const pendingUrlList: Array<string> = Array.from(pendingPool.keys()).filter((url: string) => !whiteList.includes(url));
   if (!pendingUrlList.length) {
     return null;
   }
