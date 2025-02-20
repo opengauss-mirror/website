@@ -168,21 +168,6 @@ export default [
     time: '2023/11/04',
   },
   {
-    date: '2023-10-27',
-    summary:
-      '填写openGauss社区满意度调研问卷，可参与抽取HUAWEI WATCH GT 4、HUAWEI 轻尚双肩包 第二代等惊喜大奖！快来参与吧～',
-    img: '/category/events/2023-10-27/banner.png',
-    archives: '2023-10',
-    author: ['openGauss'],
-    img_mobile: '/category/events/2023-10-27/banner.png',
-    link: '/zh/events/2023-10-27/questionnaire.html',
-    title: '2023年度openGauss社区满意度调研',
-    tags: '活动',
-    path: 'zh/events/2023-10-27/questionnaire',
-    location: '线上',
-    time: '2023/10/27-2023/12/17',
-  },
-  {
     date: '2023-10-17',
     summary: '',
     img: '/category/events/2023-10-17/banner.jpg',
@@ -352,22 +337,8 @@ export default [
     time: '2023/03/17',
   },
   {
-    date: '2022-12-15',
-    summary:
-      '填写openGauss社区满意度调研问卷，可参与抽取HUAWEI MatePad SE、华为手环7标准版等惊喜大奖！快来参与吧～',
-    img: '/category/events/2022-12-15/banner.png',
-    archives: '2022-12',
-    author: ['openGauss'],
-    title: '2022年度openGauss社区满意度调研',
-    tags: '活动',
-    path: '/zh/events/2022-12-25/questionnaire.html',
-    location: '线上',
-    time: '2022/12/15-2023/1/15',
-  },
-  {
     date: '2022-11-01',
-    summary:
-      'Huawei Certified ICT Associate-openGauss培训和认证具备华为 openGauss 数据库开发和管理能力的工程师',
+    summary: 'Huawei Certified ICT Associate-openGauss培训和认证具备华为 openGauss 数据库开发和管理能力的工程师',
     img: '/category/events/2022-10-28/banner.png',
     archives: '2022-11',
     author: ['openGauss'],
@@ -415,8 +386,7 @@ export default [
     author: ['openGauss'],
     img_mobile: '/category/events/2022-09-19/banner.jpg',
     link: '/zh/events/2022-09-19/meetup.html',
-    title:
-      '云和恩墨大讲堂 x openGauss Meetup x 鲲鹏生态孵化营(上海站）圆满落幕',
+    title: '云和恩墨大讲堂 x openGauss Meetup x 鲲鹏生态孵化营(上海站）圆满落幕',
     tags: '会议',
     path: 'zh/events/2022-09-19/meetup',
     location: '上海',
@@ -438,8 +408,7 @@ export default [
   },
   {
     date: '2022-09-10',
-    summary:
-      '第四届openGauss技术文章征集活动，即可赢取华为平板、手表、手环等多重礼品。',
+    summary: '第四届openGauss技术文章征集活动，即可赢取华为平板、手表、手环等多重礼品。',
     img: '/category/events/2022-09-13/Banner1.png',
     archives: '2022-09',
     author: ['openGauss'],
@@ -474,8 +443,7 @@ export default [
     author: ['openGauss'],
     img_mobile: '/category/events/2022-08-26/banner.jpg',
     link: '/zh/events/2022-08-26/meetup.html',
-    title:
-      '共筑计算新生态共赢数字新时代，云和恩墨大讲堂 x openGauss Meetup x 鲲鹏生态孵化营（成都站）圆满落幕',
+    title: '共筑计算新生态共赢数字新时代，云和恩墨大讲堂 x openGauss Meetup x 鲲鹏生态孵化营（成都站）圆满落幕',
     tags: '会议',
     path: 'zh/events/2022-08-26/meetup',
     location: '成都',
@@ -564,20 +532,6 @@ export default [
     path: 'zh/events/2021-12-31/zhongzhi',
     location: '线上',
     time: '2021/12/31',
-  },
-  {
-    date: '2021-12-28',
-    summary: '',
-    img: '/category/events/2021-12-31/questionnaire-cover.jpg',
-    archives: '2021-12',
-    author: ['openGauss'],
-    img_mobile: '/category/events/2021-12-31/questionnaire-cover.jpg',
-    link: 'questionnaire.html',
-    title: '参与openGauss社区满意度调研，丰富大奖等你来拿',
-    tags: '活动',
-    path: 'zh/events/2021-12-31/questionnaire',
-    location: '线上',
-    time: '2021/12/28-2022/01/28',
   },
   {
     date: '2021-08-16',
@@ -833,8 +787,7 @@ export default [
   },
   {
     date: '2021-01-15',
-    summary:
-      'openGauss将参加第十届PostgreSQL中国技术大会，分享Keynote、Session。',
+    summary: 'openGauss将参加第十届PostgreSQL中国技术大会，分享Keynote、Session。',
     img: '/category/events/2021-01-15/banner.png',
     archives: '2021-01',
     author: ['openGauss'],
