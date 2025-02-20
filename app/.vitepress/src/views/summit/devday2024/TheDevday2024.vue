@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useCommon } from '@/stores/common';
-import { computed, onMounted, ref, watch } from 'vue';
+import { computed } from 'vue';
 
 import AppContent from '@/components/AppContent.vue';
 import SummitBanner from './components/SummitBanner.vue';
@@ -8,7 +8,6 @@ import SummitIntro from './components/SummitIntro.vue';
 import SummitLive from './components/SummitLive.vue';
 import SummitAgenda from './components/SummitAgenda.vue';
 import SummitGuests from './components/SummitGuests.vue';
-import SummitNow from './components/SummitNow.vue';
 import SummitReview from './components/SummitReview.vue';
 
 import summitData from './data';
@@ -20,51 +19,6 @@ import appSubForumGuests from './data/appSubForumGuests';
 
 const commonStore = useCommon();
 const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
-
-import { useCookieStore } from '@/stores/common';
-
-import { getUrlParams } from '@/shared/utils';
-import { oaReport } from '@/shared/analytics';
-
-const hasReported = ref(false);
-const cookieStatus = useCookieStore();
-
-// 埋点统计投放流量
-function collectAdvertisedData() {
-  if (hasReported.value) {
-    return;
-  }
-  const { href } = window.location;
-  const regex = /[\?&]utm_source=/;
-  const containsUtmSource = regex.test(href);
-  if (!containsUtmSource) {
-    return;
-  }
-  const paramsArr = getUrlParams(href);
-  oaReport('fromAdvertised', {
-    origin: href,
-    ...paramsArr,
-  });
-  history.pushState(null, '', location.origin + location.pathname);
-  hasReported.value = true;
-}
-
-watch(
-  () => cookieStatus.isAllAgreed,
-  (val) => {
-    if (val) {
-      collectAdvertisedData();
-    }
-  }
-);
-
-onMounted(() => {
-  setTimeout(() => {
-    if (cookieStatus.isAllAgreed) {
-      collectAdvertisedData();
-    }
-  }, 300);
-});
 </script>
 
 <template>
