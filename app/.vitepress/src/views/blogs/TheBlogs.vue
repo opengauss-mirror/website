@@ -119,10 +119,7 @@ const blogCardAllData = computed(() => {
   }
 });
 const blogCardData = computed(() => {
-  return blogCardAllData.value.slice(
-    (currentPage.value - 1) * pagesize.value,
-    currentPage.value * pagesize.value
-  );
+  return blogCardAllData.value.slice((currentPage.value - 1) * pagesize.value, currentPage.value * pagesize.value);
 });
 
 const toBlogContent = (path: string) => {
@@ -156,19 +153,9 @@ watch(
 </script>
 
 <template>
-  <BannerLevel2
-    :background-image="banner"
-    :title="userCaseData.BLOG"
-    :illustration="illustration"
-  >
+  <BannerLevel2 :background-image="banner" :title="userCaseData.BLOG" :illustration="illustration">
     <template #default>
-      <OButton
-        class="post-btn"
-        type="outline"
-        animation
-        size="nomral"
-        @click="postBlog"
-      >
+      <OButton class="post-btn" type="outline" animation size="nomral" @click="postBlog">
         {{ userCaseData.STRATEGY }}
         <template #suffixIcon>
           <OIcon class="banner-icon"><IconRight /></OIcon>
@@ -181,85 +168,46 @@ watch(
       <div class="blog-select-item">
         <span class="blog-select-item-title">{{ userCaseData.TIME }}</span>
         <ClientOnly>
-          <OSelect
-            v-model="selectTimeVal"
-            filterable
-            clearable
-            :placeholder="userCaseData.ALL"
-            @change="resetCurrentPage"
-          >
+          <OSelect v-model="selectTimeVal" filterable clearable :placeholder="userCaseData.ALL" @change="resetCurrentPage">
             <template #prefix>
               <OIcon>
                 <IconSearch />
               </OIcon>
             </template>
-            <OOption
-              v-for="item in selectData[0].select"
-              :key="item"
-              :label="item"
-              :value="item"
-            />
+            <OOption v-for="item in selectData[0].select" :key="item" :label="item" :value="item" />
           </OSelect>
         </ClientOnly>
       </div>
       <div class="blog-select-item">
         <span class="blog-select-item-title">{{ userCaseData.AUTHOR }}</span>
         <ClientOnly>
-          <OSelect
-            v-model="selectAuthorVal"
-            filterable
-            clearable
-            :placeholder="userCaseData.ALL"
-            @change="resetCurrentPage"
-          >
+          <OSelect v-model="selectAuthorVal" filterable clearable :placeholder="userCaseData.ALL" @change="resetCurrentPage">
             <template #prefix>
               <OIcon>
                 <IconSearch />
               </OIcon>
             </template>
-            <OOption
-              v-for="item in selectData[1].select"
-              :key="item"
-              :label="item"
-              :value="item"
-            />
+            <OOption v-for="item in selectData[1].select" :key="item" :label="item" :value="item" />
           </OSelect>
         </ClientOnly>
       </div>
       <div class="blog-select-item">
         <span class="blog-select-item-title">{{ userCaseData.TAGS }}</span>
         <ClientOnly>
-          <OSelect
-            v-model="selectTagsVal"
-            filterable
-            clearable
-            :placeholder="userCaseData.ALL"
-            @change="resetCurrentPage"
-          >
+          <OSelect v-model="selectTagsVal" filterable clearable :placeholder="userCaseData.ALL" @change="resetCurrentPage">
             <template #prefix>
               <OIcon>
                 <IconSearch />
               </OIcon>
             </template>
-            <OOption
-              v-for="item in selectData[2].select"
-              :key="item"
-              :label="item"
-              :value="item"
-            />
+            <OOption v-for="item in selectData[2].select" :key="item" :label="item" :value="item" />
           </OSelect>
         </ClientOnly>
       </div>
     </div>
     <template v-if="blogCardData.length">
       <div class="blog-list">
-        <OCard
-          v-for="item in blogCardData"
-          :key="item"
-          class="blog-list-item"
-          shadow="hover"
-          @click="toBlogContent(item.path)"
-        >
+        <OCard v-for="item in blogCardData" :key="item" class="blog-list-item" shadow="hover" @click="toBlogContent(item.path)">
           <p class="blog-list-item-title">{{ item.title }}</p>
           <div class="blog-list-item-info">
             <div class="infodetail">
@@ -275,13 +223,7 @@ watch(
           </div>
           <p class="blog-list-item-content">{{ item.summary }}</p>
           <div class="blog-list-item-tags">
-            <OTag
-              v-for="tag in item.tags"
-              :key="tag"
-              type="secondary"
-              class="tag-item"
-              >{{ tag }}</OTag
-            >
+            <OTag v-for="tag in item.tags" :key="tag" type="secondary" class="tag-item">{{ tag }}</OTag>
           </div>
         </OCard>
       </div>
@@ -297,16 +239,9 @@ watch(
             :page-sizes="[3, 6, 9]"
             @size-change="resetCurrentPage"
           >
-            <span class="pagination-slot"
-              >{{ currentPage }}/{{ pageTotal }}</span
-            >
+            <span class="pagination-slot">{{ currentPage }}/{{ pageTotal }}</span>
           </OPagination>
-          <AppPaginationMo
-            v-else
-            :current-page="currentPage"
-            :total-page="pageTotal"
-            @turn-page="changeCurrentMoblie"
-          />
+          <AppPaginationMo v-else :current-page="currentPage" :total-page="pageTotal" @turn-page="changeCurrentMoblie" />
         </ClientOnly>
       </div>
     </template>
@@ -357,6 +292,7 @@ watch(
   }
   .blog-select-item {
     margin-right: var(--o-spacing-h1);
+    display: flex;
     .o-icon {
       font-size: var(--o-font-size-h7);
       @media screen and (max-width: 768px) {
@@ -368,6 +304,7 @@ watch(
       color: var(--o-color-text1);
       font-size: var(--o-font-size-h7);
       line-height: var(--o-line-height-h7);
+      min-width: 40px;
     }
   }
 }
