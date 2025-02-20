@@ -35,6 +35,9 @@ openGauss 5.0.2 补丁版本回合的需求列表如下，主要针对兼容性�
 |	16	|	支持在不带as，不带反引号情况下，关键字作为表别名与列别名	|	https://gitee.com/opengauss/Plugin/pulls/1538	|
 |	17	|	MySQL兼容性-rand/random_bytes函数、ASCII/BINARY列属性、16进制输入	|	https://gitee.com/opengauss/Plugin/pulls/1538	|
 
+## CVE漏洞
+
+当前补丁版本没有CVE披露漏洞。
 
 ## 回合缺陷
 
