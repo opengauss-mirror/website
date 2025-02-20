@@ -6,7 +6,6 @@ title: 'About Cookies'
   import CookieReset from '@/components/CookieReset.vue';
 </script>
 
-
 <div class='markdown markdown-statement'>
 
 # About Cookies
@@ -34,7 +33,7 @@ The openGauss community sometimes stores cookies on computers or mobile devices.
             Expiration: 30 minutes
             <br/>
             Purpose: Prevent cross-site request forgery (CSRF) attacks
-   - **c)** Web Application Firewall cookies: HWWAFSESID and HWWAFSESID
+   - **c)** Web Application Firewall cookies: HWWAFSESID and HWWAFSESTIME
             <br/>
             Source: Huawei Cloud WAF
             <br/>

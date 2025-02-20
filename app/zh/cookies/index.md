@@ -33,7 +33,7 @@ openGauss 社区有时会在计算机或移动设备上存储 Cookie，我们启
             到期时间：30 分钟
             <br/>
             目的：防止跨站请求伪造攻击
-   - **c)** Web 应用防火墙 Cookie ：HWWAFSESID，HWWAFSESID
+   - **c)** Web 应用防火墙 Cookie ：HWWAFSESID，HWWAFSESTIME
             <br/>
             来源：华为云 Waf
             <br/>
