@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import { ref, computed, watch } from 'vue';
 import { useI18n } from '@/i18n';
-import { useData } from 'vitepress';
 import { isBrowser } from '@/shared/utils';
 
 import VideoConfig from '@/data/video/new';
@@ -16,8 +15,6 @@ import Banner from '@/assets/illustrations/banner-secondary.png';
 import illustration from '@/assets/illustrations/blog.png';
 
 const i18n = useI18n();
-const { lang } = useData();
-const isZh = computed(() => (lang.value === 'zh' ? true : false));
 
 // ------------------------------ tab ------------------------------
 const activeMobile = ref(0);
@@ -56,11 +53,7 @@ const pcContainer = ref<HTMLDivElement>();
 </script>
 
 <template>
-  <BannerLevel2
-    :background-image="Banner"
-    :title="i18n.connect.VIDEO_TITLE"
-    :illustration="illustration"
-  />
+  <BannerLevel2 :background-image="Banner" :title="i18n.connect.VIDEO_TITLE" :illustration="illustration" />
   <!-- Tab -->
   <VideoTab v-model="activeTab" :tab-data="VideoConfig" />
   <!-- Content -->
@@ -68,28 +61,14 @@ const pcContainer = ref<HTMLDivElement>();
     <!-- PC端 -->
     <div class="video-pc">
       <div ref="pcContainer" class="pc">
-        <VideoNav
-          v-if="Array.isArray(videoItem?.data?.navList)"
-          v-model:current-index="activeIndex"
-          :target="pcContainer"
-          :list="videoItem?.data?.navList"
-        />
-        <VideoCard
-          v-for="item in videoData"
-          :key="item.id"
-          :data-source="item"
-        />
+        <VideoNav v-if="Array.isArray(videoItem?.data?.navList)" v-model:current-index="activeIndex" :target="pcContainer" :list="videoItem?.data?.navList" />
+        <VideoCard v-for="item in videoData" :key="item.id" :data-source="item" />
       </div>
     </div>
     <!-- 移动端 -->
     <div class="video-mobile">
       <OCollapse v-model="activeMobile" accordion>
-        <OCollapseItem
-          v-for="(item, index) in videoData"
-          :key="item.id"
-          :name="index"
-          :class="{ 'single-video-item': videoData.length === 1 }"
-        >
+        <OCollapseItem v-for="(item, index) in videoData" :key="item.id" :name="index" :class="{ 'single-video-item': videoData.length === 1 }">
           <template #title>
             <p class="caption">{{ item.name }}</p>
           </template>

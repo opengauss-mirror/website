@@ -1,6 +1,5 @@
 <script lang="ts" setup>
-import { ref, computed } from 'vue';
-import { useData } from 'vitepress';
+import { computed } from 'vue';
 import { useI18n } from '@/i18n';
 import { useCommon } from '@/stores/common';
 import AppContent from '@/components/AppContent.vue';
@@ -39,7 +38,6 @@ import meetupImgDark from '@/assets/category/meetup/img1_dark.png';
 import meetupImgMoDark from '@/assets/category/meetup/img1_mo.png';
 
 const i18n = useI18n();
-const { lang } = useData();
 
 const screenWidth = useWindowResize();
 const commonStore = useCommon();
@@ -85,25 +83,12 @@ const applyList = [
   },
 ];
 
-const planImg = computed(() =>
-  isLight.value
-    ? isMobile.value
-      ? meetupImgMo
-      : meetupImg
-    : isMobile.value
-    ? meetupImgMoDark
-    : meetupImgDark
-);
+const planImg = computed(() => (isLight.value ? (isMobile.value ? meetupImgMo : meetupImg) : isMobile.value ? meetupImgMoDark : meetupImgDark));
 </script>
 
 <template>
   <ClientOnly>
-    <BannerLevel2
-      :background-image="banner"
-      :title="i18n.meetup.title"
-      :subtitle="i18n.meetup.subTitle"
-      :illustration="illustration"
-    />
+    <BannerLevel2 :background-image="banner" :title="i18n.meetup.title" :subtitle="i18n.meetup.subTitle" :illustration="illustration" />
     <AppContent>
       <p class="meetup-text">
         {{ i18n.meetup.desc }}
@@ -114,22 +99,9 @@ const planImg = computed(() =>
         <div class="apply">
           <h4>{{ i18n.meetup.plan.applyTitle }}</h4>
           <div class="apply-box">
-            <div
-              v-for="(item, index) in applyList"
-              :key="item.name"
-              class="apply-item"
-              :class="'step' + (index + 1)"
-            >
-              <img
-                :src="isLight ? item.img : item.imgDark"
-                class="icon"
-                alt=""
-              />
-              <img
-                :src="isLight ? item.num : item.numDark"
-                class="num"
-                alt=""
-              />
+            <div v-for="(item, index) in applyList" :key="item.name" class="apply-item" :class="'step' + (index + 1)">
+              <img :src="isLight ? item.img : item.imgDark" class="icon" alt="" />
+              <img :src="isLight ? item.num : item.numDark" class="num" alt="" />
               <p class="name">{{ item.name }}</p>
             </div>
           </div>

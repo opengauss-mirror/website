@@ -1,13 +1,6 @@
 import { request } from '@/shared/axios';
 import type { AxiosResponse } from '@/shared/axios';
-import type {
-  MeettingTableDataT,
-  SigGroupDataT,
-  LoginMeetingT,
-  LoginGiteeT,
-  UserInfoT,
-  UpdateMeetingInfoT,
-} from '@/shared/@types/type-calendar';
+import type { MeettingTableDataT, SigGroupDataT, LoginMeetingT, LoginGiteeT, UserInfoT, UpdateMeetingInfoT } from '@/shared/@types/type-calendar';
 import type { ResponseT } from '@/shared/@types/type-common';
 /**
  * 获取会议数据
@@ -17,9 +10,7 @@ import type { ResponseT } from '@/shared/@types/type-common';
  * @return {Promise{MeettingTableDataT}} - 一个 Promise，解析为解析为会议 SIG 的对象。
  */
 
-export function getMeetingData(
-  group: string
-): Promise<{ tableData: MeettingTableDataT[] }> {
+export function getMeetingData(group: string): Promise<{ tableData: MeettingTableDataT[] }> {
   const url = `/api-meeting/meetingsdata/?group=${group}`;
   return request.get(url).then((res: AxiosResponse) => res.data);
 }
@@ -39,9 +30,7 @@ export function getMeetingSig(): Promise<SigGroupDataT[]> {
  */
 export function loginGitee(): Promise<LoginGiteeT> {
   const url = '/api-meeting/gitee_login/';
-  return request
-    .get(url, { showLoading: true })
-    .then((res: AxiosResponse) => res.data);
+  return request.get(url, { showLoading: true }).then((res: AxiosResponse) => res.data);
 }
 
 /**
@@ -53,10 +42,7 @@ export function loginGitee(): Promise<LoginGiteeT> {
  *                         传入 true 表示使用加载动画，传入 false 表示不使用。
  * @return {Promise<LoginMeetingT>} - 一个 Promise，解析为登录成功返回的认证信息。
  */
-export function loginMeeting(
-  params: object,
-  showLoading: boolean
-): Promise<LoginMeetingT> {
+export function loginMeeting(params: object): Promise<LoginMeetingT> {
   const url = '/api-meeting/login/';
   return request.post(url, params).then((res: AxiosResponse) => res.data);
 }
@@ -112,10 +98,7 @@ export function getUserInfo(token = ''): Promise<ResponseT<UserInfoT>> {
  * @param {string} token - 登录后的认证码
  * @return {Promise<UpdateMeetingInfoT>} 返回一个 Promise，解析为添加会议是否成功的反馈信息
  */
-export function addMeeting(
-  params: object,
-  token = ''
-): Promise<UpdateMeetingInfoT> {
+export function addMeeting(params: object, token = ''): Promise<UpdateMeetingInfoT> {
   const url = `/api-meeting/meetings/`;
   return request
     .post(url, params, {
@@ -132,10 +115,7 @@ export function addMeeting(
  * @param {string} token             - 登录后的认证码
  * @return {Promise<UpdateMeetingInfoT>} 返回一个 Promise，解析为删除会议是否成功的反馈信息
  */
-export function deleteMeeting(
-  mid: number | null,
-  token = ''
-): Promise<UpdateMeetingInfoT> {
+export function deleteMeeting(mid: number | null, token = ''): Promise<UpdateMeetingInfoT> {
   const url = `/api-meeting/meeting/action/delete/${mid}/`;
   return request
     .delete(url, {
@@ -165,11 +145,7 @@ export function deleteMeeting(
  * @param {string} token             - 登录后的认证码
  * @return {Promise<UpdateMeetingInfoT>} 返回一个 Promise，解析为更新会议是否成功的反馈信息
  */
-export function updateMeeting(
-  mid: number | null,
-  params: object,
-  token = ''
-): Promise<UpdateMeetingInfoT> {
+export function updateMeeting(mid: number | null, params: object, token = ''): Promise<UpdateMeetingInfoT> {
   const url = `/api-meeting/meeting/action/update/${mid}/`;
   return request
     .put(url, params, {

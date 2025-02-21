@@ -11,7 +11,6 @@ import AppContent from '@/components/AppContent.vue';
 const i18n = useI18n();
 const router = useRouter();
 const { lang } = useData();
-const isZh = computed(() => (lang.value === 'zh' ? true : false));
 
 const pId = ref();
 const paramId = ref();
@@ -62,9 +61,7 @@ const dataList = computed(() => {
 
 const changeVideo = (index: string | number) => {
   paramIndex.value = index;
-  router.go(
-    `/${lang.value}/bigshot-voice/detail/?id=${pId.value}-${paramId.value}-${index}`
-  );
+  router.go(`/${lang.value}/bigshot-voice/detail/?id=${pId.value}-${paramId.value}-${index}`);
 };
 onMounted(() => {
   page();
@@ -79,17 +76,10 @@ watch(
 
 <template>
   <AppContent>
-    <BreadCrumbs
-      :bread1="i18n.bigshot.title"
-      :bread2="chapterInfo.name"
-      :link1="`/${lang}/bigshot-voice/`"
-    />
+    <BreadCrumbs :bread1="i18n.bigshot.title" :bread2="chapterInfo.name" :link1="`/${lang}/bigshot-voice/`" />
     <div class="page-tile">
       <h2>{{ chapterInfo.name }}</h2>
-      <span class="num"
-        >{{ i18n.connect.VIDEO_TEXT1 }}{{ paramTotal
-        }}{{ i18n.connect.VIDEO_TEXT }}</span
-      >
+      <span class="num">{{ i18n.connect.VIDEO_TEXT1 }}{{ paramTotal }}{{ i18n.connect.VIDEO_TEXT }}</span>
     </div>
     <div class="video-content">
       <p class="text">{{ i18n.connect.LIST }}</p>
@@ -100,25 +90,13 @@ watch(
       <div class="video-detail">
         <div class="video-nav">
           <ul>
-            <li
-              v-for="(item, index) in dataList"
-              :key="item.videoUrl"
-              :class="{ active: index === paramIndex }"
-              @click="changeVideo(index)"
-            >
+            <li v-for="(item, index) in dataList" :key="item.videoUrl" :class="{ active: index === paramIndex }" @click="changeVideo(index)">
               {{ item.name }}
             </li>
           </ul>
         </div>
         <div class="video-main">
-          <video
-            v-if="currentNode.video"
-            :src="OBS_JIACAN_LINK + currentNode.video"
-            :poster="chapterInfo.poster"
-            autoplay
-            controls
-            style="width: 100%"
-          ></video>
+          <video v-if="currentNode.video" :src="OBS_JIACAN_LINK + currentNode.video" :poster="chapterInfo.poster" autoplay controls style="width: 100%"></video>
         </div>
       </div>
     </div>

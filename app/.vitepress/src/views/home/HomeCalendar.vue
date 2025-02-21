@@ -18,19 +18,8 @@ import {
   logoutMeeting,
 } from '@/api/api-calendar';
 
-import {
-  isValidKey,
-  getNowFormatDate,
-  isBrowser,
-  handleError,
-  getUrlParams,
-  windowOpen,
-} from '@/shared/utils';
-import {
-  MeettingTableDataT,
-  DayDataT,
-  SigGroupDataT,
-} from '@/shared/@types/type-calendar';
+import { isValidKey, getNowFormatDate, isBrowser, handleError, getUrlParams, windowOpen } from '@/shared/utils';
+import { MeettingTableDataT, DayDataT, SigGroupDataT } from '@/shared/@types/type-calendar';
 import { useCommon, useMeeting } from '@/stores/common';
 
 import IconLeft from '~icons/app/icon-chevron-left.svg';
@@ -159,10 +148,7 @@ function clickMeeting(day: string, event: Event) {
   try {
     for (let i = 0; i < calendarData.value.length; i++) {
       isCollapse.value = false;
-      if (
-        calendarData.value[i].date === day ||
-        calendarData.value[i].start_date === day
-      ) {
+      if (calendarData.value[i].date === day || calendarData.value[i].start_date === day) {
         // 深拷贝
         currentMeet = JSON.parse(JSON.stringify(calendarData.value[i]));
         renderData.value = JSON.parse(JSON.stringify(calendarData.value[i]));
@@ -178,10 +164,7 @@ function clickMeeting(day: string, event: Event) {
           // 会议时间排序
           activeName.value = '';
           renderData.value.timeData.sort((a: DayDataT, b: DayDataT) => {
-            return (
-              parseInt(a.startTime.replace(':', '')) -
-              parseInt(b.startTime.replace(':', ''))
-            );
+            return parseInt(a.startTime.replace(':', '')) - parseInt(b.startTime.replace(':', ''));
           });
           renderData.value.timeData.map((item2) => {
             if (item2.etherpad) {
@@ -233,7 +216,7 @@ function watchChange(element: HTMLElement) {
   });
 }
 const resolveDate = (date: string) => {
-  const reg = /(\d{4})\-(\d{2})\-(\d{2})/;
+  const reg = /(\d{4})-(\d{2})-(\d{2})/;
   date = date.replace(reg, '$1年$2月$3日');
   if (date.charAt(5) === '0') {
     date = date.substring(6);
@@ -277,9 +260,7 @@ watch(
   () => {
     if (isBrowser()) {
       nextTick(() => {
-        const activeBoxs = document.querySelector(
-          '.is-today .out-box'
-        ) as HTMLElement;
+        const activeBoxs = document.querySelector('.is-today .out-box') as HTMLElement;
         if (activeBoxs) {
           activeBoxs.click();
         }
@@ -466,11 +447,7 @@ const handleModifyMeeting = (item: any, date: string) => {
 
 //修改会议请求
 const requestMeetingUpdate = async () => {
-  const res = await updateMeeting(
-    mId.value,
-    meetingForm.value,
-    meetingStore.meetingToken
-  );
+  const res = await updateMeeting(mId.value, meetingForm.value, meetingStore.meetingToken);
   if (res.code < 300 && res.access) {
     meetingStore.meetingToken = res.access;
     meetingDialog.value = false;
@@ -670,14 +647,11 @@ const initClipboard = (text: string, e: MouseEvent) => {
   });
 };
 const copyMeetingInfo = (meetingItem: DayDataT, e: MouseEvent) => {
-  meetingInfo.value =
-    meetingItem.name +
-    `\n${i18nMeeting.value.TIME}${renderData.value.date} ${meetingItem.startTime} - ${meetingItem.endTime}`;
+  meetingInfo.value = meetingItem.name + `\n${i18nMeeting.value.TIME}${renderData.value.date} ${meetingItem.startTime} - ${meetingItem.endTime}`;
 
   detailItem.forEach((item) => {
     if (isValidKey(item.key, meetingItem) && meetingItem[item.key]) {
-      meetingInfo.value =
-        meetingInfo.value + `\n${item.text + meetingItem[item.key]}`;
+      meetingInfo.value = meetingInfo.value + `\n${item.text + meetingItem[item.key]}`;
     }
   });
   if (isClipboard.value) {
@@ -707,16 +681,9 @@ const onCalendarClick = (e: MouseEvent) => {
           </div>
         </template>
         <template #date-cell="{ data }">
-          <div
-            class="out-box lable-name"
-            :class="{ 'be-active': getMeetTimes(data.day) }"
-            @click="clickMeeting(data.day, $event)"
-          >
+          <div class="out-box lable-name" :class="{ 'be-active': getMeetTimes(data.day) }" @click="clickMeeting(data.day, $event)">
             <div class="day-box">
-              <p
-                :class="data.isSelected ? 'is-selected' : ''"
-                class="date-calender lable-name"
-              >
+              <p :class="data.isSelected ? 'is-selected' : ''" class="date-calender lable-name">
                 {{ data.day.split('-').slice(2)[0] }}
               </p>
             </div>
@@ -727,38 +694,12 @@ const onCalendarClick = (e: MouseEvent) => {
     <div class="detail-list">
       <div class="right-title">
         <div class="title-list">
-          <OSelect
-            v-model="sigSelect"
-            clearable
-            filterable
-            @change="selectSigChange"
-          >
-            <OOption
-              value=""
-              :label="lang === 'zh' ? '全部sig组' : 'All SIGs'"
-            />
-            <OOption
-              v-for="item in sigGroup"
-              :key="item.name"
-              :label="item.name"
-              :value="item.name"
-            />
+          <OSelect v-model="sigSelect" clearable filterable @change="selectSigChange">
+            <OOption value="" :label="lang === 'zh' ? '全部sig组' : 'All SIGs'" />
+            <OOption v-for="item in sigGroup" :key="item.name" :label="item.name" :value="item.name" />
           </OSelect>
-          <OButton
-            animation
-            size="mini"
-            type="primary"
-            @click="handleMeetingReserve"
-            >{{ i18nMeeting.RESERVE_MEETING }}</OButton
-          >
-          <OButton
-            v-if="isLogin()"
-            animation
-            size="mini"
-            type="primary"
-            @click="handleLogout"
-            >{{ i18n.common.LOGOUT }}</OButton
-          >
+          <OButton animation size="mini" type="primary" @click="handleMeetingReserve">{{ i18nMeeting.RESERVE_MEETING }}</OButton>
+          <OButton v-if="isLogin()" animation size="mini" type="primary" @click="handleLogout">{{ i18n.common.LOGOUT }}</OButton>
         </div>
       </div>
       <el-collapse v-if="windowWidth < 768" class="calendar calendar-mo">
@@ -788,16 +729,9 @@ const onCalendarClick = (e: MouseEvent) => {
                   </div>
                 </template>
                 <template #date-cell="{ data }">
-                  <div
-                    class="out-box"
-                    :class="{ 'be-active': getMeetTimes(data.day) }"
-                    @click="clickMeeting(data.day, $event)"
-                  >
+                  <div class="out-box" :class="{ 'be-active': getMeetTimes(data.day) }" @click="clickMeeting(data.day, $event)">
                     <div class="day-box">
-                      <p
-                        :class="data.isSelected ? 'is-selected' : ''"
-                        class="date-calender"
-                      >
+                      <p :class="data.isSelected ? 'is-selected' : ''" class="date-calender">
                         {{ data.day.split('-').slice(2)[0] }}
                       </p>
                     </div>
@@ -813,34 +747,15 @@ const onCalendarClick = (e: MouseEvent) => {
         <span>{{ currentDay }}</span>
       </div>
       <div class="meeting-list">
-        <div
-          v-if="
-            (renderData.timeData.length && renderData.date) ||
-            (renderData.timeData.length && renderData.start_date)
-          "
-          class="demo-collapse"
-        >
+        <div v-if="(renderData.timeData.length && renderData.date) || (renderData.timeData.length && renderData.start_date)" class="demo-collapse">
           <o-collapse v-model="activeName" accordion @change="changeCollapse()">
-            <div
-              v-for="(item, index) in renderData.timeData"
-              :key="item.id"
-              class="collapse-box"
-            >
+            <div v-for="(item, index) in renderData.timeData" :key="item.id" class="collapse-box">
               <div class="detail-time">
-                <OButton
-                  class="copy-btn"
-                  @click="copyMeetingInfo(item, $event)"
-                  size="mini"
-                  type="text"
-                >
+                <OButton class="copy-btn" @click="copyMeetingInfo(item, $event)" size="mini" type="text">
                   <template #prefixIcon>
                     <IconCopy />
                   </template>
-                  {{
-                    windowWidth > 852
-                      ? i18nMeeting.COPY_INFO
-                      : i18nMeeting.COPY_INFO_MB
-                  }}</OButton
+                  {{ windowWidth > 852 ? i18nMeeting.COPY_INFO : i18nMeeting.COPY_INFO_MB }}</OButton
                 >
               </div>
               <o-collapse-item :name="index">
@@ -849,18 +764,11 @@ const onCalendarClick = (e: MouseEvent) => {
                     <div class="left-top">
                       <p class="meet-name">{{ item.name || item.title }}</p>
                     </div>
-                    <div
-                      v-if="renderData.date"
-                      class="meeting-time more-detail"
-                    >
-                      <span class="time-title" v-if="windowWidth > 852">{{
-                        i18nMeeting.TIME
-                      }}</span>
+                    <div v-if="renderData.date" class="meeting-time more-detail">
+                      <span class="time-title" v-if="windowWidth > 852">{{ i18nMeeting.TIME }}</span>
                       <div class="time-box">
                         <span class="time-day">{{ renderData.date }}</span>
-                        <span class="time-hour"
-                          >{{ item.startTime }} - {{ item.endTime }}</span
-                        >
+                        <span class="time-hour">{{ item.startTime }} - {{ item.endTime }}</span>
                       </div>
                     </div>
                     <div v-else class="group-name more-detail">openEuler</div>
@@ -868,46 +776,23 @@ const onCalendarClick = (e: MouseEvent) => {
                 </template>
                 <div class="meet-detail">
                   <template v-for="keys in detailItem" :key="keys.key">
-                    <div
-                      v-if="isValidKey(keys.key, item) && item[keys.key]"
-                      class="meeting-item"
-                    >
+                    <div v-if="isValidKey(keys.key, item) && item[keys.key]" class="meeting-item">
                       <div class="item-title">{{ keys.text }}</div>
                       <p v-if="!keys.isLink && keys.key !== 'date'">
                         {{ item[keys.key] }}
                       </p>
-                      <p
-                        v-else-if="
-                            keys.isLink &&
-                            item[keys.key] &&
-                            !(item[keys.key] as string).startsWith('http')
-                          "
-                      >
+                      <p v-else-if="keys.isLink && item[keys.key] && !(item[keys.key] as string).startsWith('http')">
                         {{ item[keys.key] }}
                       </p>
-                      <a
-                        v-else-if="keys.isLink"
-                        :href="item[keys.key]"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >{{ item[keys.key] }}</a
-                      >
+                      <a v-else-if="keys.isLink" :href="item[keys.key]" target="_blank" rel="noopener noreferrer">{{ item[keys.key] }}</a>
                       <p v-else>{{ currentDay }}</p>
                     </div>
                   </template>
                   <div v-if="isAuthority() || isLogin()" class="meeting-action">
-                    <OButton
-                      size="mini"
-                      type="outline"
-                      @click.stop="handleDeleteMeeting(item)"
-                    >
+                    <OButton size="mini" type="outline" @click.stop="handleDeleteMeeting(item)">
                       {{ i18nMeeting.DELETE_MEETING }}
                     </OButton>
-                    <OButton
-                      size="mini"
-                      type="outline"
-                      @click.stop="handleModifyMeeting(item, renderData.date)"
-                    >
+                    <OButton size="mini" type="outline" @click.stop="handleModifyMeeting(item, renderData.date)">
                       {{ i18nMeeting.MODIFY }}
                     </OButton>
                   </div>
@@ -917,11 +802,7 @@ const onCalendarClick = (e: MouseEvent) => {
           </o-collapse>
         </div>
         <div v-else class="empty">
-          <img
-            v-if="commonStore.theme === 'light'"
-            :src="notFoundImg_light"
-            alt=""
-          />
+          <img v-if="commonStore.theme === 'light'" :src="notFoundImg_light" alt="" />
           <img v-else :src="notFoundImg_dark" alt="" />
           <p>{{ i18nMeeting.EMPTY_TEXT }}</p>
         </div>
@@ -946,18 +827,12 @@ const onCalendarClick = (e: MouseEvent) => {
     <div v-if="dialogNoLogin" class="no-login tc">
       <p class="text">{{ i18nMeeting.LOGIN_TEXT }}</p>
       <div class="tc action">
-        <OButton
-          type="primary"
-          :class="isAgree ? '' : 'no-agree'"
-          @click="handleGiteeLogin"
-        >
+        <OButton type="primary" :class="isAgree ? '' : 'no-agree'" @click="handleGiteeLogin">
           {{ i18nMeeting.GITEE_BEN }}
         </OButton>
       </div>
       <p class="text tc">
-        <el-checkbox v-model="isAgree">{{
-          i18nMeeting.LOGIN_TIPS
-        }}</el-checkbox>
+        <el-checkbox v-model="isAgree">{{ i18nMeeting.LOGIN_TIPS }}</el-checkbox>
         <a :href="'/' + lang + '/privacyPolicy/'">
           <template v-if="lang === 'en'">&nbsp;</template>
           {{ i18nMeeting.PRIVACY }}
@@ -979,30 +854,16 @@ const onCalendarClick = (e: MouseEvent) => {
     </div>
     <!-- 预定、编辑表单 -->
     <div v-else-if="isModify || isReserve" class="meeting-content">
-      <ElForm
-        ref="ruleFormRef"
-        :model="meetingForm"
-        :label-width="isMobile ? '100px' : '120px'"
-        :rules="rules"
-        class="meeting-form"
-      >
+      <ElForm ref="ruleFormRef" :model="meetingForm" :label-width="isMobile ? '100px' : '120px'" :rules="rules" class="meeting-form">
         <ElFormItem :label="i18nMeeting.REVERSE" prop="topic">
-          <OInput
-            v-model="meetingForm.topic"
-            :placeholder="i18nMeeting.NAME_TEXT"
-          />
+          <OInput v-model="meetingForm.topic" :placeholder="i18nMeeting.NAME_TEXT" />
         </ElFormItem>
         <ElFormItem :label="i18nMeeting.CREATOR" prop="sponsor">
           <OInput v-model="meetingForm.sponsor" disabled />
         </ElFormItem>
         <ElFormItem :label="i18nMeeting.SIG" prop="group_name">
           <OSelect v-model="meetingForm.group_name" style="width: 100%">
-            <OOption
-              v-for="item in meetingStore.userSigs"
-              :key="item"
-              :label="item"
-              :value="item"
-            />
+            <OOption v-for="item in meetingStore.userSigs" :key="item" :label="item" :value="item" />
           </OSelect>
         </ElFormItem>
         <ElFormItem :label="i18nMeeting.PLATFORM" prop="platform">
@@ -1012,12 +873,7 @@ const onCalendarClick = (e: MouseEvent) => {
           </el-radio-group>
         </ElFormItem>
         <ElFormItem :label="i18nMeeting.DAY" prop="date">
-          <ODatePicker
-            v-model="meetingForm.date"
-            :placeholder="i18nMeeting.DATA_TEXT"
-            value-format="YYYY-MM-DD"
-            style="width: 100%"
-          />
+          <ODatePicker v-model="meetingForm.date" :placeholder="i18nMeeting.DATA_TEXT" value-format="YYYY-MM-DD" style="width: 100%" />
         </ElFormItem>
         <ElFormItem :label="i18nMeeting.TIME" required>
           <div class="time-select">
@@ -1049,12 +905,7 @@ const onCalendarClick = (e: MouseEvent) => {
           <OInput v-model="meetingForm.agenda" type="textarea" :rows="2" />
         </ElFormItem>
         <ElFormItem :label="i18nMeeting.EMAIL">
-          <OInput
-            v-model="meetingForm.emaillist"
-            :placeholder="i18nMeeting.EMAIL_TEXT"
-            type="textarea"
-            :rows="2"
-          />
+          <OInput v-model="meetingForm.emaillist" :placeholder="i18nMeeting.EMAIL_TEXT" type="textarea" :rows="2" />
         </ElFormItem>
         <ElFormItem :label="i18nMeeting.ETHERPAD">
           <OInput v-model="meetingForm.etherpad" />
@@ -1068,18 +919,10 @@ const onCalendarClick = (e: MouseEvent) => {
             <OButton v-if="isModify" size="small" @click="clearDialogState">
               {{ i18nMeeting.CANCEL }}
             </OButton>
-            <OButton
-              v-else
-              size="small"
-              @click="handleResetMeeting(ruleFormRef)"
-            >
+            <OButton v-else size="small" @click="handleResetMeeting(ruleFormRef)">
               {{ i18nMeeting.RESET }}
             </OButton>
-            <OButton
-              size="small"
-              type="primary"
-              @click="handleSubmitMeeting(ruleFormRef)"
-            >
+            <OButton size="small" type="primary" @click="handleSubmitMeeting(ruleFormRef)">
               {{ isModify ? i18nMeeting.MODIFY_SUBMIT : i18nMeeting.SUBMIT }}
             </OButton>
           </div>

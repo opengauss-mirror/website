@@ -17,9 +17,7 @@ import IconStepArrow from '~icons/app/icon-step-arrow.svg';
 import useWindowResize from '@/components/hooks/useWindowResize';
 import migration from '@/data/migration';
 import { computed, ref } from 'vue';
-import { useData } from 'vitepress';
 
-const { lang } = useData();
 const data = migration.zh;
 const screenWidth = useWindowResize();
 const isMobile = computed(() => (screenWidth.value <= 768 ? true : false));
@@ -40,23 +38,14 @@ const closeVideo = () => {
 </script>
 
 <template>
-  <BannerLevel2
-    class="app-banner"
-    :background-image="banner"
-    :illustration="bannerIcon"
-    title="迁移专区"
-  />
+  <BannerLevel2 class="app-banner" :background-image="banner" :illustration="bannerIcon" title="迁移专区" />
 
   <AppContent class="migration">
     <!-- 迁移优势 -->
     <div class="advantage-panel">
       <h1 class="title">{{ data.advantage.title }}</h1>
       <div class="advantage-card-wrap">
-        <div
-          v-for="(item, i) in data.advantage.list"
-          :key="i"
-          class="advantage-card"
-        >
+        <div v-for="(item, i) in data.advantage.list" :key="i" class="advantage-card">
           <OIcon class="card-icon">
             <component :is="item.icon"> </component>
           </OIcon>
@@ -76,31 +65,16 @@ const closeVideo = () => {
       <div v-if="!isMobile" class="step-content-container">
         <!-- tab -->
         <ul class="step-list">
-          <li
-            v-for="(item, i) in data.step.list"
-            :key="i"
-            :class="selectedStepIndex === i ? 'selected' : ''"
-            @click="selectedStepIndex = i"
-          >
+          <li v-for="(item, i) in data.step.list" :key="i" :class="selectedStepIndex === i ? 'selected' : ''" @click="selectedStepIndex = i">
             <div class="step-wrap">
               <OIcon class="step-icon">
-                <component
-                  :is="
-                    selectedStepIndex === i
-                      ? item.iconSelected
-                      : item.iconUnselected
-                  "
-                >
-                </component>
+                <component :is="selectedStepIndex === i ? item.iconSelected : item.iconUnselected"> </component>
               </OIcon>
               <p class="number">0{{ i + 1 }}</p>
               <p class="name">{{ item.stepName }}</p>
               <div class="bottom"></div>
             </div>
-            <IconStepArrow
-              v-if="i !== data.step.list.length - 1"
-              class="step-arrow"
-            />
+            <IconStepArrow v-if="i !== data.step.list.length - 1" class="step-arrow" />
           </li>
         </ul>
 
@@ -108,7 +82,7 @@ const closeVideo = () => {
         <div class="step-content">
           <p class="step-desc">{{ step.desc }}</p>
           <div :class="`step-${step.id}`">
-            <div v-for="item in step.detail" class="step-card">
+            <div v-for="item in step.detail" :key="item.title" class="step-card">
               <div class="step-card-title">{{ item.title }}</div>
               <div class="step-card-desc" v-if="item.desc">{{ item.desc }}</div>
               <div class="step-card-line" v-if="item.showLine"></div>
@@ -116,14 +90,8 @@ const closeVideo = () => {
                 {{ item.feature }}
               </div>
               <template v-if="Array.isArray(item.features)">
-                <div
-                  v-for="subItem in item.features"
-                  class="step-card-feature-wrap"
-                >
-                  <OIcon
-                    class="step-card-feature-img"
-                    v-if="subItem.icon === 'right'"
-                  >
+                <div v-for="subItem in item.features" :key="subItem.title" class="step-card-feature-wrap">
+                  <OIcon class="step-card-feature-img" v-if="subItem.icon === 'right'">
                     <component :is="imgRight"> </component>
                   </OIcon>
                   <p class="step-card-feature-number" v-else>
@@ -147,10 +115,7 @@ const closeVideo = () => {
               {{ data.requirementText }}
             </div>
             <div class="step-migration-data-requirement">
-              <div
-                v-for="item in step.requirement"
-                class="step-card-feature-wrap"
-              >
+              <div v-for="item in step.requirement" :key="item.title" class="step-card-feature-wrap">
                 <OIcon class="step-card-feature-img">
                   <component :is="imgRight"> </component>
                 </OIcon>
@@ -179,24 +144,15 @@ const closeVideo = () => {
         </div>
       </div>
 
-      <OCollapse
-        v-if="isMobile"
-        v-model="selectedCollapseStepIndex"
-        class="step-collapse"
-        accordion
-      >
-        <OCollapseItem
-          v-for="(stepItem, index) in data.step.list"
-          :key="stepItem.id"
-          :name="index"
-        >
+      <OCollapse v-if="isMobile" v-model="selectedCollapseStepIndex" class="step-collapse" accordion>
+        <OCollapseItem v-for="(stepItem, index) in data.step.list" :key="stepItem.id" :name="index">
           <template #title>{{ stepItem.stepName }}</template>
 
           <div class="step-collapse-panel">
             <div class="step-content">
               <p class="step-desc">{{ stepItem.desc }}</p>
 
-              <div v-for="item in stepItem.detail" class="step-card">
+              <div v-for="item in stepItem.detail" :key="item.title" class="step-card">
                 <div class="step-card-title">{{ item.title }}</div>
                 <div class="step-card-desc" v-if="item.desc">
                   {{ item.desc }}
@@ -205,24 +161,15 @@ const closeVideo = () => {
                   {{ item.feature }}
                 </div>
                 <template v-if="Array.isArray(item.features)">
-                  <div
-                    v-for="subItem in item.features"
-                    class="step-card-feature-wrap"
-                  >
-                    <OIcon
-                      v-if="subItem.icon === 'right'"
-                      class="step-card-feature-img"
-                    >
+                  <div v-for="subItem in item.features" :key="subItem.title" class="step-card-feature-wrap">
+                    <OIcon v-if="subItem.icon === 'right'" class="step-card-feature-img">
                       <component :is="imgRight"> </component>
                     </OIcon>
                     <p class="step-card-feature-number" v-else>
                       {{ subItem.icon }}
                     </p>
                     <div>
-                      <p
-                        class="step-card-feature-sub-title"
-                        v-if="subItem.title"
-                      >
+                      <p class="step-card-feature-sub-title" v-if="subItem.title">
                         {{ subItem.title }}
                       </p>
                       <p class="step-card-feature-desc" v-if="subItem.desc">
@@ -233,20 +180,10 @@ const closeVideo = () => {
                 </template>
               </div>
 
-              <template
-                v-if="
-                  selectedCollapseStepIndex > 0 &&
-                  data.step.list[selectedCollapseStepIndex].id ===
-                    'migration-data'
-                "
-              >
+              <template v-if="selectedCollapseStepIndex > 0 && data.step.list[selectedCollapseStepIndex].id === 'migration-data'">
                 <div class="step-card">
                   <div class="step-card-title">{{ data.requirementText }}</div>
-                  <div
-                    v-for="item in data.step.list[selectedCollapseStepIndex]
-                      .requirement"
-                    class="step-card-feature-wrap"
-                  >
+                  <div v-for="item in data.step.list[selectedCollapseStepIndex].requirement" :key="item.title" class="step-card-feature-wrap">
                     <OIcon class="step-card-feature-img">
                       <component :is="imgRight"> </component>
                     </OIcon>
@@ -271,19 +208,14 @@ const closeVideo = () => {
     <div class="video-panel">
       <h1 class="title">{{ data.video.title }}</h1>
       <div class="video-card-wrap">
-        <div v-for="(item, i) in data.video.list" class="video-card">
+        <div v-for="item in data.video.list" :key="item.title" class="video-card">
           <div class="video-card-left">
             <OIcon class="video-card-icon">
               <component :is="imgVideo"> </component>
             </OIcon>
             <span class="video-card-left-title">{{ item.title }}</span>
           </div>
-          <OButton
-            class="play-video-btn"
-            :size="isMobile ? 'mini' : ''"
-            animation
-            @click="showVideo(item.href)"
-          >
+          <OButton class="play-video-btn" :size="isMobile ? 'mini' : ''" animation @click="showVideo(item.href)">
             <span class="play-video-btn-text">{{ data.playVideoText }}</span>
             <template #suffixIcon>
               <OIcon class="play-video-icon">
@@ -301,6 +233,7 @@ const closeVideo = () => {
       <div class="practice-card-wrap">
         <OCard
           v-for="item in data.practice.list"
+          :key="item.title"
           shadow="hover"
           class="case-card"
           :style="`background:url(${imgPracticeCardBg}) no-repeat center/cover`"
@@ -313,10 +246,7 @@ const closeVideo = () => {
                 {{ data.readCaseText }}
               </OButton>
             </a>
-            <a
-              :href="item.officalHref"
-              target="_blank"
-              rel="noopener noreferrer"
+            <a :href="item.officalHref" target="_blank" rel="noopener noreferrer"
               ><OButton animation size="mini" class="website-btn">
                 {{ data.visitOfficialSiteText }}
                 <template #suffixIcon>
@@ -339,7 +269,7 @@ const closeVideo = () => {
     <div class="interactive-panel">
       <h1 class="title">{{ data.interactive.title }}</h1>
       <div class="interactive-card-wrap">
-        <div v-for="item in data.interactive.list" class="interactive-card">
+        <div v-for="item in data.interactive.list" :key="item.title" class="interactive-card">
           <div class="interactive-card-left">
             <OIcon class="interactive-card-icon">
               <component :is="imgInteractive"> </component>
@@ -347,15 +277,8 @@ const closeVideo = () => {
             <span class="interactive-card-left-title">{{ item.title }}</span>
           </div>
 
-          <a
-            :href="item.href"
-            target="_blank"
-            class="interactive-card-right"
-            rel="noopener noreferrer"
-          >
-            <OButton v-if="isMobile" size="mini" animation>{{
-              data.visitAreaText
-            }}</OButton>
+          <a :href="item.href" target="_blank" class="interactive-card-right" rel="noopener noreferrer">
+            <OButton v-if="isMobile" size="mini" animation>{{ data.visitAreaText }}</OButton>
             <template v-else>
               <div class="interactive-card-right-desc">{{ item.desc }}</div>
               <OIcon class="interactive-card-right-arrow">
@@ -394,13 +317,7 @@ const closeVideo = () => {
       destroy-on-close
     >
       <div class="video-center">
-        <video
-          class="home-banner-video"
-          :src="videoLink"
-          width="100%"
-          controls
-          autoplay
-        ></video>
+        <video class="home-banner-video" :src="videoLink" width="100%" controls autoplay></video>
       </div>
     </ODialog>
   </div>
@@ -955,8 +872,7 @@ const closeVideo = () => {
       flex-wrap: wrap;
 
       :deep(.el-card__body) {
-        padding: var(--o-spacing-h2) var(--o-spacing-h4) var(--o-spacing-h2)
-          var(--o-spacing-h2);
+        padding: var(--o-spacing-h2) var(--o-spacing-h4) var(--o-spacing-h2) var(--o-spacing-h2);
         height: 198px;
         display: flex;
         align-items: center;
@@ -1153,8 +1069,7 @@ const closeVideo = () => {
   align-items: center;
   padding: 48px 0 var(--o-spacing-h1);
   margin-top: 80px;
-  background: url('@/assets/category/migration//download-bg.png') no-repeat
-    center;
+  background: url('@/assets/category/migration//download-bg.png') no-repeat center;
   background-size: cover;
 
   @media screen and (max-width: 1280px) {

@@ -36,16 +36,8 @@ watch(
   <div class="schedule">
     <h4 v-if="agendaData.lable">{{ agendaData.lable }}</h4>
     <div class="schedule-item other">
-      <el-tabs
-        v-if="agendaData.content[1]"
-        v-model.number="otherTabType"
-        class="other-tabs"
-      >
-        <el-tab-pane
-          v-for="(itemList, scheduleIndex) in agendaData.content"
-          :key="itemList.id"
-          :name="scheduleIndex"
-        >
+      <el-tabs v-if="agendaData.content[1]" v-model.number="otherTabType" class="other-tabs">
+        <el-tab-pane v-for="(itemList, scheduleIndex) in agendaData.content" :key="itemList.id" :name="scheduleIndex">
           <template #label>
             <div class="time-tabs">
               {{ itemList.name }}
@@ -53,12 +45,7 @@ watch(
           </template>
         </el-tab-pane>
       </el-tabs>
-      <div
-        v-for="(itemList, listIndex) in agendaData.content"
-        v-show="otherTabType === listIndex"
-        :key="itemList.id"
-        class="content"
-      >
+      <div v-for="(itemList, listIndex) in agendaData.content" v-show="otherTabType === listIndex" :key="itemList.id" class="content">
         <h4 v-if="itemList.title" class="other-title">
           {{ itemList.title }}
         </h4>
@@ -68,31 +55,20 @@ watch(
             :key="subItem.id"
             class="content-item"
             :class="{
-              'show-detail':
-                idSubItemShow === subItem.id && idShow === itemList.id,
+              'show-detail': idSubItemShow === subItem.id && idShow === itemList.id,
             }"
           >
             <span v-if="subItem.time" class="time">
               <IconTime v-show="subItem.time" />
               {{ subItem.time }}
             </span>
-            <span
-              class="desc"
-              :class="{ 'exit-detail': subItem.detail }"
-              @click="changeIndexShow(itemList.id, subItem.id)"
-            >
-              <span
-                v-for="item in subItem.desc.split('\n')"
-                :key="item + '1'"
-                >{{ item }}</span
-              >
+            <span class="desc" :class="{ 'exit-detail': subItem.detail }" @click="changeIndexShow(itemList.id, subItem.id)">
+              <span v-for="item in subItem.desc.split('\n')" :key="item + '1'">{{ item }}</span>
               <template v-if="subItem.pptLink && subItem.pptLink.length">
-                <p v-for="(itemLink, indexLink) in subItem.pptLink">
+                <p v-for="(itemLink, indexLink) in subItem.pptLink" :key="itemLink">
                   <a :href="itemLink">
                     演讲材料下载
-                    <span v-if="subItem.pptLink[1]">
-                      --{{ subItem.person[indexLink].name }}
-                    </span>
+                    <span v-if="subItem.pptLink[1]"> --{{ subItem.person[indexLink].name }} </span>
                   </a>
                 </p>
               </template>
@@ -111,26 +87,19 @@ watch(
               <p>
                 <span>议题名称：</span
                 ><span
-                  ><span v-for="item in subItem.desc.split('\n')" :key="item">{{
-                    item
-                  }}</span></span
+                  ><span v-for="item in subItem.desc.split('\n')" :key="item">{{ item }}</span></span
                 >
               </p>
               <p v-if="subItem.detail">
                 <span>议题简介：</span>
                 <span>
-                  <span v-for="item in subItem.detail.split('\n')" :key="item"
-                    >{{ item }}
-                  </span>
+                  <span v-for="item in subItem.detail.split('\n')" :key="item">{{ item }} </span>
                 </span>
               </p>
               <p v-if="subItem.person[0]">
                 <span>发言人：</span>
                 <span>
-                  <span
-                    v-for="personItem in subItem.person"
-                    :key="personItem.id"
-                    class="person-box"
+                  <span v-for="personItem in subItem.person" :key="personItem.id" class="person-box"
                     >{{ personItem.name }}
                     <span v-if="personItem.post">{{ personItem.post }}</span>
                   </span>

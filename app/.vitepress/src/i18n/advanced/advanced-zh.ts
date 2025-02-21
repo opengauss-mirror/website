@@ -1,11 +1,4 @@
-import {
-  OBS_DOWNLOAD_LINK,
-  DOCS_LINK,
-  GITSCM_LINK,
-  RUNOOB_LINK,
-  PLACE_LINK,
-  LAB_LINK,
-} from '@/data/url-config';
+import { OBS_DOWNLOAD_LINK, DOCS_LINK, LAB_LINK } from '@/data/url-config';
 export default {
   title: `学习进阶`,
   subhead: `进阶步骤`,

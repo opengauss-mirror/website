@@ -14,7 +14,6 @@ import illustration from '@/assets/illustrations/training.png';
 
 import IconArrow from '~icons/train/icon-arrow.svg';
 import IconChevronRight from '~icons/app/icon-chevron-right.svg';
-import IconPeriod from '~icons/app/icon-period.svg';
 import OIcon from 'opendesign/icon/OIcon.vue';
 import IconChevronDown from '~icons/app/icon-chevron-down.svg';
 import IconChevronUp from '~icons/app/icon-chevron-up.svg';
@@ -28,8 +27,7 @@ const isShowNav = ref(false);
 const activeIndex = ref(0);
 // 滚动激活导航
 const onScrollTop = () => {
-  const scrollTop =
-    document.body.scrollTop || document.documentElement.scrollTop;
+  const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
   if (scrollTop < 270 || scrollTop > 7200) {
     isShowNav.value = false;
   } else {
@@ -82,17 +80,9 @@ function onTalentItemClick(index: number) {
 </script>
 
 <template>
-  <BannerLevel2
-    :background-image="Banner"
-    :title="i18n.authentication.title"
-    :illustration="illustration"
-  >
+  <BannerLevel2 :background-image="Banner" :title="i18n.authentication.title" :illustration="illustration">
     <template #default>
-      <a
-        :href="i18n.authentication.signupUrl"
-        target="_self"
-        rel="noopener noreferrer"
-      >
+      <a :href="i18n.authentication.signupUrl" target="_self" rel="noopener noreferrer">
         <OButton class="signup-btn" type="outline" animation size="nomral">
           {{ i18n.authentication.signupTitle }}
           <template #suffixIcon>
@@ -104,27 +94,15 @@ function onTalentItemClick(index: number) {
   </BannerLevel2>
   <AppContent>
     <div class="training-pc">
-      <TrainingNav
-        v-show="isShowNav"
-        class="titlenav"
-        :current-index="activeIndex"
-        :data-list="i18n.authentication.navList"
-      />
+      <TrainingNav v-show="isShowNav" class="titlenav" :current-index="activeIndex" :data-list="i18n.authentication.navList" />
       <div id="introduction" :ref="navTitle" class="train-introduction">
         <h2>{{ i18n.authentication.introtitle }}</h2>
-        <p class="intro-info">
-          {{ i18n.authentication.intro1 }}<br />{{ i18n.authentication.intro2 }}
-        </p>
+        <p class="intro-info">{{ i18n.authentication.intro1 }}<br />{{ i18n.authentication.intro2 }}</p>
       </div>
       <div id="advantage" :ref="navTitle" class="train-advantage">
         <h2>{{ i18n.authentication.advantage }}</h2>
         <div class="adv-box">
-          <div
-            v-for="item in i18n.authentication.adv"
-            :key="item.advTitle"
-            class="adv-item"
-            :class="item.dark"
-          >
+          <div v-for="item in i18n.authentication.adv" :key="item.advTitle" class="adv-item" :class="item.dark">
             <h3>{{ item.advTitle }}</h3>
             <p>{{ item.advDes1 }}</p>
             <p>{{ item.advDes2 }}</p>
@@ -135,12 +113,7 @@ function onTalentItemClick(index: number) {
         <h2>{{ i18n.authentication.systemtitle }}</h2>
         <div class="system-box lable-name">
           <div v-show="isIndex === -1" class="system-short">
-            <div
-              v-for="(item, index) in i18n.authentication.system"
-              :key="item.level"
-              class="system-item lable-name"
-              @click="onSystemItemClick(index)"
-            >
+            <div v-for="(item, index) in i18n.authentication.system" :key="item.level" class="system-item lable-name" @click="onSystemItemClick(index)">
               <div class="item-head" :class="item.name">
                 <div class="head-left lable-name">{{ item.level }}</div>
                 <div class="head-right">
@@ -156,12 +129,7 @@ function onTalentItemClick(index: number) {
               </div>
             </div>
           </div>
-          <div
-            v-for="(item, index) in i18n.authentication.system"
-            :key="item.name"
-            class="system-active lable-name"
-            :class="'system-' + item.name"
-          >
+          <div v-for="(item, index) in i18n.authentication.system" :key="item.name" class="system-active lable-name" :class="'system-' + item.name">
             <div v-show="isIndex === index">
               <div class="item-head" @click="onSystemItemClick(-1)">
                 <div class="leavel">{{ item.level }}</div>
@@ -182,9 +150,7 @@ function onTalentItemClick(index: number) {
                   <li
                     v-for="(itemCourse, indexCourse) in item.courseOutline"
                     :key="itemCourse.cardtitle"
-                    :class="
-                      isMoreShow === indexCourse ? 'checked' : 'no-checked'
-                    "
+                    :class="isMoreShow === indexCourse ? 'checked' : 'no-checked'"
                     @click="onCourseMoreClick(indexCourse)"
                   >
                     <div class="list-left">
@@ -200,10 +166,7 @@ function onTalentItemClick(index: number) {
                       </OIcon>
                     </div>
                     <transition name="fade lable-name">
-                      <div
-                        v-show="isMoreShow === indexCourse"
-                        class="more-list"
-                      >
+                      <div v-show="isMoreShow === indexCourse" class="more-list">
                         <p v-for="itemDes in itemCourse.desList" :key="itemDes">
                           {{ itemDes }}
                         </p>
@@ -212,10 +175,7 @@ function onTalentItemClick(index: number) {
                   </li>
                 </ul>
                 <div v-else class="no-data lable-name">
-                  <img
-                    src="@/assets/category/authentication/training/img/empty.png"
-                    alt=""
-                  />
+                  <img src="@/assets/category/authentication/training/img/empty.png" alt="" />
                   <p class="tip">{{ i18n.authentication.emptyTip }}</p>
                 </div>
               </div>
@@ -243,19 +203,13 @@ function onTalentItemClick(index: number) {
         <div class="talent-card-container">
           <div
             v-for="(item, index) in i18n.authentication.talentList"
+            :key="item.url"
             class="talent-card"
-            :class="
-              talentSelectedIndex === index
-                ? 'talent-card-checked'
-                : 'talent-card-unchecked'
-            "
+            :class="talentSelectedIndex === index ? 'talent-card-checked' : 'talent-card-unchecked'"
             @mouseenter="onTalentItemClick(index)"
             @mouseleave="onTalentItemClick(-1)"
           >
-            <img
-              class="talent-icon"
-              :src="isDark ? item.iconDark : item.icon"
-            />
+            <img class="talent-icon" :src="isDark ? item.iconDark : item.icon" />
             <div v-show="talentSelectedIndex === index" class="talent-expended">
               <div>{{ item.desc }}</div>
               <a :href="item.url" target="_blank" rel="noopener noreferrer">
@@ -273,11 +227,7 @@ function onTalentItemClick(index: number) {
       <div id="qa" :ref="navTitle" class="train-qa">
         <h2>{{ i18n.authentication.qatitle }}</h2>
         <div class="qa-box">
-          <div
-            v-for="(item, index) in i18n.authentication.qa"
-            :key="index"
-            class="qa-item lable-name"
-          >
+          <div v-for="(item, index) in i18n.authentication.qa" :key="index" class="qa-item lable-name">
             <el-collapse>
               <el-collapse-item>
                 <template #title>
@@ -294,28 +244,19 @@ function onTalentItemClick(index: number) {
       <div class="train-contact lable-name">
         <p>
           <span>{{ i18n.authentication.contact }}</span>
-          <a :href="'mailto:' + i18n.authentication.contactemail">{{
-            i18n.authentication.contactemail
-          }}</a>
+          <a :href="'mailto:' + i18n.authentication.contactemail">{{ i18n.authentication.contactemail }}</a>
         </p>
       </div>
     </div>
     <div class="training-mobile lable-name">
       <div id="introduction" class="train-introduction">
         <h2>{{ i18n.authentication.introtitle }}</h2>
-        <p class="intro-info lable-name">
-          {{ i18n.authentication.intro1 }}<br />{{ i18n.authentication.intro2 }}
-        </p>
+        <p class="intro-info lable-name">{{ i18n.authentication.intro1 }}<br />{{ i18n.authentication.intro2 }}</p>
       </div>
       <div id="advantage" class="train-advantage lable-name">
         <h2>{{ i18n.authentication.advantage }}</h2>
         <div class="adv-box">
-          <div
-            v-for="item in i18n.authentication.adv"
-            :key="item.advTitle"
-            class="adv-item"
-            :class="item.dark"
-          >
+          <div v-for="item in i18n.authentication.adv" :key="item.advTitle" class="adv-item" :class="item.dark">
             <h3>{{ item.advTitle }}</h3>
             <p>{{ item.advDes1 }}</p>
             <p>{{ item.advDes2 }}</p>
@@ -326,11 +267,7 @@ function onTalentItemClick(index: number) {
         <h2>{{ i18n.authentication.systemtitle }}</h2>
         <div class="system-box">
           <div class="system-short">
-            <div
-              v-for="(item, index) in i18n.authentication.system"
-              :key="item.level"
-              class="system-item"
-            >
+            <div v-for="(item, index) in i18n.authentication.system" :key="item.level" class="system-item">
               <div class="item-head" :class="item.name">
                 <div class="head-content">
                   <div class="head-left">{{ item.level }}</div>
@@ -356,9 +293,7 @@ function onTalentItemClick(index: number) {
                     <li
                       v-for="(itemCourse, indexCourse) in item.courseOutline"
                       :key="itemCourse.cardtitle"
-                      :class="
-                        isMoreShow === indexCourse ? 'checked' : 'no-checked'
-                      "
+                      :class="isMoreShow === indexCourse ? 'checked' : 'no-checked'"
                       @click="onCourseMoreClick(indexCourse)"
                     >
                       <div class="course-head">
@@ -368,24 +303,15 @@ function onTalentItemClick(index: number) {
                             <p>{{ itemCourse.cardtitle }}</p>
                           </div>
                         </div>
-                        <div
-                          class="list-right"
-                          :class="isMoreShow === indexCourse ? 'more-show' : ''"
-                        >
+                        <div class="list-right" :class="isMoreShow === indexCourse ? 'more-show' : ''">
                           <OIcon>
                             <IconChevronRight />
                           </OIcon>
                         </div>
                       </div>
                       <transition name="fade">
-                        <div
-                          v-show="isMoreShow === indexCourse"
-                          class="more-list"
-                        >
-                          <p
-                            v-for="itemDes in itemCourse.desList"
-                            :key="itemDes"
-                          >
+                        <div v-show="isMoreShow === indexCourse" class="more-list">
+                          <p v-for="itemDes in itemCourse.desList" :key="itemDes">
                             {{ itemDes }}
                           </p>
                         </div>
@@ -393,32 +319,16 @@ function onTalentItemClick(index: number) {
                     </li>
                   </ul>
                   <div v-else class="no-data">
-                    <img
-                      src="@/assets/category/authentication/training/img/empty.png"
-                      alt=""
-                    />
+                    <img src="@/assets/category/authentication/training/img/empty.png" alt="" />
                     <p class="tip">{{ i18n.authentication.emptyTip }}</p>
                   </div>
                 </div>
               </transition>
 
               <div class="more-button">
-                <OButton
-                  type="text"
-                  size="small"
-                  animation
-                  @click="onToggleClick(index)"
-                >
-                  {{
-                    isMoreShowMo[index]
-                      ? i18n.authentication.collapse
-                      : i18n.authentication.viewMore
-                  }}
-                  <template #suffixIcon>
-                    <IconChevronUp v-if="isMoreShowMo[index]" /><IconChevronDown
-                      v-else
-                    />
-                  </template>
+                <OButton type="text" size="small" animation @click="onToggleClick(index)">
+                  {{ isMoreShowMo[index] ? i18n.authentication.collapse : i18n.authentication.viewMore }}
+                  <template #suffixIcon> <IconChevronUp v-if="isMoreShowMo[index]" /><IconChevronDown v-else /> </template>
                 </OButton>
               </div>
             </div>
@@ -443,19 +353,12 @@ function onTalentItemClick(index: number) {
         <h2>{{ i18n.authentication.talentTitle }}</h2>
         <p class="talent-desc">{{ i18n.authentication.talentDesc }}</p>
         <div class="talent-box">
-          <div
-            v-for="(item, index) in i18n.authentication.talentList"
-            :key="index"
-            class="talent-item"
-          >
+          <div v-for="(item, index) in i18n.authentication.talentList" :key="index" class="talent-item">
             <el-collapse>
               <el-collapse-item>
                 <template #title>
                   <div class="talent-icon-wrap">
-                    <img
-                      class="talent-icon"
-                      :src="isDark ? item.iconDark : item.icon"
-                    />
+                    <img class="talent-icon" :src="isDark ? item.iconDark : item.icon" />
                   </div>
                 </template>
                 <p class="talent-info">
@@ -477,11 +380,7 @@ function onTalentItemClick(index: number) {
       <div id="qa" class="train-qa">
         <h2>{{ i18n.authentication.qatitle }}</h2>
         <div class="qa-box">
-          <div
-            v-for="(item, index) in i18n.authentication.qa"
-            :key="index"
-            class="qa-item"
-          >
+          <div v-for="(item, index) in i18n.authentication.qa" :key="index" class="qa-item">
             <el-collapse>
               <el-collapse-item>
                 <template #title>
@@ -498,9 +397,7 @@ function onTalentItemClick(index: number) {
       <div class="train-contact">
         <p>
           <span>{{ i18n.authentication.contact }}</span>
-          <a :href="'mailto:' + i18n.authentication.contactemail">{{
-            i18n.authentication.contactemail
-          }}</a>
+          <a :href="'mailto:' + i18n.authentication.contactemail">{{ i18n.authentication.contactemail }}</a>
         </p>
       </div>
     </div>
@@ -656,8 +553,7 @@ function onTalentItemClick(index: number) {
         grid-gap: var(--o-spacing-h4);
         .system-item {
           .item-head {
-            padding: var(--o-spacing-h2) 10px var(--o-spacing-h2)
-              var(--o-spacing-h2);
+            padding: var(--o-spacing-h2) 10px var(--o-spacing-h2) var(--o-spacing-h2);
             display: flex;
             width: 100%;
             max-height: 160px;
@@ -736,8 +632,7 @@ function onTalentItemClick(index: number) {
         box-shadow: var(--o-shadow-l2);
         .item-head {
           background-color: #bd72ff;
-          padding: var(--o-spacing-h2) var(--o-spacing-h4) var(--o-spacing-h2)
-            var(--o-spacing-h2);
+          padding: var(--o-spacing-h2) var(--o-spacing-h4) var(--o-spacing-h2) var(--o-spacing-h2);
           display: flex;
           align-items: center;
           position: relative;

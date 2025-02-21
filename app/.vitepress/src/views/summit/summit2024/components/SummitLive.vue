@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, computed, watch } from 'vue';
+import { ref, onMounted, watch } from 'vue';
 import { useData } from 'vitepress';
 import useWindowResize from '@/components/hooks/useWindowResize';
 import { useScreen } from '@/shared/useScreen';
@@ -81,9 +81,7 @@ const messageEvent = () => {
 };
 
 onMounted(async () => {
-  isTest.value =
-    window.location.host.includes('test.osinfra') ||
-    window.location.host.includes('localhost');
+  isTest.value = window.location.host.includes('test.osinfra') || window.location.host.includes('localhost');
   createLiveUrl(isTest.value ? renderData[0].liveTestId : renderData[0].liveId);
   messageEvent();
 });
@@ -116,12 +114,7 @@ const changeLive = (val: string): void => {
     <ClientOnly>
       <div class="select-room">
         <OSelect v-model="liveRoom" clearable filterable @change="changeLive">
-          <OOption
-            v-for="item in renderData"
-            :key="item.liveTestId"
-            :label="item.name"
-            :value="isTest ? item.liveTestId : item.liveId"
-          />
+          <OOption v-for="item in renderData" :key="item.liveTestId" :label="item.name" :value="isTest ? item.liveTestId : item.liveId" />
         </OSelect>
       </div>
       <iframe
@@ -141,11 +134,7 @@ const changeLive = (val: string): void => {
           <div
             v-for="(item, index) in renderData"
             :key="item.liveTestId"
-            :class="[
-              'link',
-              roomId === index ? 'link-active' : '',
-              index === 0 ? 'link-main' : ' ',
-            ]"
+            :class="['link', roomId === index ? 'link-active' : '', index === 0 ? 'link-main' : ' ']"
             @click="setLiveRoom(item, index)"
           >
             <p class="name">{{ item.name }}</p>

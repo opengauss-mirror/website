@@ -18,9 +18,7 @@ import { oaReport } from '@/shared/analytics';
 
 const cookieStore = useCookieStore();
 const commonStore = useCommon();
-const liveImg = computed(() =>
-  commonStore.theme === 'light' ? liveLight : liveDark
-);
+const liveImg = computed(() => (commonStore.theme === 'light' ? liveLight : liveDark));
 
 // 议程日期切换
 const dateList = [
@@ -35,18 +33,19 @@ function setShowIndex(index: number) {
 const getData = computed<any>(() => summitData.agenda[showIndex.value]);
 // 控制上下午切换
 const tabType = ref(0);
-const renderData = computed<Array<Object>>(() => {
+const renderData = computed(() => {
   if (tabType.value === 1) {
     return getData.value.content.content.slice(1);
   } else if (getData.value) {
     return getData.value.content.content.slice(0, 1);
   }
+  return [];
 });
 
 // 埋点统计投放流量
 function collectAdvertisedData() {
   const { href } = window.location;
-  const regex = /[\?&]utm_source=/;
+  const regex = /[\\?&]utm_source=/;
   const containsUtmSource = regex.test(href);
   if (!containsUtmSource) {
     return;
@@ -76,31 +75,18 @@ onMounted(() => {
       </div>
       <div class="summit-live">
         <h3>{{ summitData.live.title }}</h3>
-        <SummitLive
-          :live-data="summitData.live.liveData"
-          class-name="live-btn2"
-        ></SummitLive>
+        <SummitLive :live-data="summitData.live.liveData" class-name="live-btn2"></SummitLive>
       </div>
       <div class="summit-agenda">
         <h3>会议日程</h3>
         <div class="date">
-          <div
-            v-for="(item, index) in dateList"
-            :key="item.day"
-            class="date-item"
-            :class="{ active: showIndex === index }"
-            @click="setShowIndex(index)"
-          >
+          <div v-for="(item, index) in dateList" :key="item.day" class="date-item" :class="{ active: showIndex === index }" @click="setShowIndex(index)">
             <p class="date-day">{{ item.day }}</p>
             <p class="date-month">{{ item.month }}</p>
           </div>
         </div>
         <div>
-          <el-tabs
-            v-if="showIndex === 1"
-            v-model.number="tabType"
-            class="schedule-tabs"
-          >
+          <el-tabs v-if="showIndex === 1" v-model.number="tabType" class="schedule-tabs">
             <el-tab-pane :name="0">
               <template #label>
                 <div class="time-tabs">上午：主论坛</div>
@@ -134,12 +120,7 @@ onMounted(() => {
         <h4>
           {{ summitData.guests.guestListSub1.title }}
         </h4>
-        <SummitGuests
-          :lecturer-list="summitData.guests.guestListSub1.guestList"
-          shape="circle"
-          :web-columns-num="4"
-          :mobile-columns-num="2"
-        />
+        <SummitGuests :lecturer-list="summitData.guests.guestListSub1.guestList" shape="circle" :web-columns-num="4" :mobile-columns-num="2" />
         <h4>
           {{ summitData.guests.guestListSub2.title }}
         </h4>
@@ -153,12 +134,7 @@ onMounted(() => {
         <h4>
           {{ summitData.guests.guestListSub3.title }}
         </h4>
-        <SummitGuests
-          :lecturer-list="summitData.guests.guestListSub3.guestList"
-          shape="circle"
-          :web-columns-num="4"
-          :mobile-columns-num="2"
-        />
+        <SummitGuests :lecturer-list="summitData.guests.guestListSub3.guestList" shape="circle" :web-columns-num="4" :mobile-columns-num="2" />
         <h4>
           {{ summitData.guests.guestListSub4.title }}
         </h4>
@@ -174,10 +150,7 @@ onMounted(() => {
         <h3 class="partner-title">
           {{ summitData.partner.title }}
         </h3>
-        <SummitPartner
-          class="partner-content"
-          :partner-data="summitData.partner.content"
-        />
+        <SummitPartner class="partner-content" :partner-data="summitData.partner.content" />
       </div>
       <div class="summit-previous">
         <div class="previous-title">
@@ -186,9 +159,7 @@ onMounted(() => {
         </div>
         <div class="link-box">
           <p v-for="item in summitData.previous.content" :key="item.link">
-            <a :href="item.link" target="_blank" rel="noopener noreferrer">{{
-              item.title
-            }}</a>
+            <a :href="item.link" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
           </p>
         </div>
       </div>

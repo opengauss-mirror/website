@@ -343,7 +343,7 @@ const marksMobile = computed(() => {
 const toggleDialogVisible = () => {
   dialogVisible.value = true;
 };
-const score2 = computed(() => score.value / 10);
+
 const cancelDialog = () => {
   dialogVisible.value = false;
   isReasonShow.value = false;
