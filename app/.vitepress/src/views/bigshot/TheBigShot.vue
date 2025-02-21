@@ -16,8 +16,6 @@ const i18n = useI18n();
 const router = useRouter();
 const { lang } = useData();
 
-const isZh = computed(() => (lang.value === 'zh' ? true : false));
-
 const activeIndex = ref(0);
 const isToggle = ref(false);
 const selectTag = (i: number) => {
@@ -26,11 +24,7 @@ const selectTag = (i: number) => {
   isToggle.value = i !== 0 ? true : false;
 };
 
-const getData = computed(() =>
-  activeIndex.value === 0
-    ? BigShotData
-    : BigShotData.filter((el) => el.id === activeIndex.value)
-);
+const getData = computed(() => (activeIndex.value === 0 ? BigShotData : BigShotData.filter((el) => el.id === activeIndex.value)));
 
 const handlerVideoDetail = (pid: number, id: number, index: number) => {
   router.go(`/${lang.value}/bigshot-voice/detail/?id=${pid}-${id}-${index}`);
@@ -52,74 +46,37 @@ const activeMobile = ref(activeName.value);
 </script>
 
 <template>
-  <BannerLevel2
-    :background-image="Banner"
-    :title="i18n.bigshot.title"
-    :illustration="illustration"
-  />
+  <BannerLevel2 :background-image="Banner" :title="i18n.bigshot.title" :illustration="illustration" />
   <AppContent>
     <div class="video-pc">
       <OCard class="tag-box">
         <TagFilter label="时间">
-          <OTag
-            :type="activeIndex === 0 ? 'primary' : 'text'"
-            checkable
-            @click="selectTag(0)"
-            >{{ i18n.common.ALL }}</OTag
-          >
-          <OTag
-            v-for="item in BigShotData"
-            :key="item.id"
-            checkable
-            :type="activeIndex === item.id ? 'primary' : 'text'"
-            @click="selectTag(item.id)"
-          >
+          <OTag :type="activeIndex === 0 ? 'primary' : 'text'" checkable @click="selectTag(0)">{{ i18n.common.ALL }}</OTag>
+          <OTag v-for="item in BigShotData" :key="item.id" checkable :type="activeIndex === item.id ? 'primary' : 'text'" @click="selectTag(item.id)">
             {{ item.year }}
           </OTag>
         </TagFilter>
       </OCard>
       <div class="pc">
-        <VideoCard
-          v-for="item in getData"
-          :key="item.id"
-          :nav-items="item.data"
-          :is-toggle="isToggle"
-          :pid="item.id"
-          @click="handlerVideoDetail"
-        >
-        </VideoCard>
+        <VideoCard v-for="item in getData" :key="item.id" :nav-items="item.data" :is-toggle="isToggle" :pid="item.id" @click="handlerVideoDetail"> </VideoCard>
       </div>
     </div>
     <!-- 移动端 -->
     <div v-for="list in getData" :key="list.id" class="video-mobile">
       <h2>{{ list.year }}</h2>
       <OCollapse v-model="activeMobile" accordion>
-        <OCollapseItem
-          v-for="(item, index) in list.data"
-          :key="item.title"
-          :name="item.title"
-          class="video-mobile-card"
-        >
+        <OCollapseItem v-for="(item, index) in list.data" :key="item.title" :name="item.title" class="video-mobile-card">
           <template #title>
             <p class="caption">{{ item.title }}</p>
           </template>
           <div class="video-mobile-box">
             <template v-for="(subitem, sindex) in item.list" :key="subitem.id">
               <OCard class="video-item">
-                <div
-                  class="video-item-link"
-                  @click="handlerVideoDetail(list.id, index, sindex)"
-                >
-                  <div
-                    class="cover"
-                    :style="`background:url(${item.poster}) no-repeat center/cover`"
-                  >
+                <div class="video-item-link" @click="handlerVideoDetail(list.id, index, sindex)">
+                  <div class="cover" :style="`background:url(${item.poster}) no-repeat center/cover`">
                     <p class="title">{{ subitem.desc }}</p>
                   </div>
-                  <p
-                    v-dompurify-html="nameStr(subitem.name)"
-                    class="caption"
-                  ></p>
+                  <p v-dompurify-html="nameStr(subitem.name)" class="caption"></p>
                 </div>
               </OCard>
             </template>

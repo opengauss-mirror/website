@@ -1,8 +1,4 @@
-import {
-  ENMOEDU_LINK,
-  DBOBS_LINK,
-  GAUSS_CERTIFICATE_EMAIL,
-} from '@/data/url-config';
+import { GAUSS_CERTIFICATE_EMAIL } from '@/data/url-config';
 
 import yshl from '@/assets/category/authentication/training/img/talent/yshl.png';
 import yshlDark from '@/assets/category/authentication/training/img/talent/yshl_dark.png';
@@ -28,8 +24,7 @@ import qstSignupDark from '@/assets/category/authentication/training/img/talent/
 export default {
   title: '培训认证',
   introtitle: '认证体系简介',
-  intro1:
-    '基于openGauss在中国良好的发展态势，由openGauss社区联合培训认证伙伴、中国软件行业协会培训中心共同打造openGauss培训认证体系。',
+  intro1: '基于openGauss在中国良好的发展态势，由openGauss社区联合培训认证伙伴、中国软件行业协会培训中心共同打造openGauss培训认证体系。',
   intro2:
     'openGauss培训认证体系旨在帮助企业快速培养专业DBA人才，推动相关从业人员高效获得权威资质认证，促使技术爱好者踊跃融入社区技术生态。该体系填补了openGauss系数据库培训认证领域的空白，对openGauss的技术推广和生态发展起到积极的推动和促进作用。',
   advantage: '认证体系优势',
@@ -129,14 +124,7 @@ export default {
         {
           num: '05',
           cardtitle: 'openGauss基本管理与SQL',
-          desList: [
-            '·数据库启动、关闭与状态查看',
-            '·数据库监听管理与连接机制',
-            '·表空间管理',
-            '·数据库管理',
-            '·用户管理',
-            '·DQL语句/DDL语句/DML语/DCL语句',
-          ],
+          desList: ['·数据库启动、关闭与状态查看', '·数据库监听管理与连接机制', '·表空间管理', '·数据库管理', '·用户管理', '·DQL语句/DDL语句/DML语/DCL语句'],
         },
       ],
     },
@@ -149,8 +137,7 @@ export default {
       empty: 'true',
       module: '考试模块:敬请期待',
       contenttitle: '课程内容:',
-      content:
-        '涵盖openGauss的生态发展、深入解析体系架构、深度维护、数据管理、功能特性、安全管理、性能优化、高级SQL、备份恢复、高可用技术以及相关管理工具等。',
+      content: '涵盖openGauss的生态发展、深入解析体系架构、深度维护、数据管理、功能特性、安全管理、性能优化、高级SQL、备份恢复、高可用技术以及相关管理工具等。',
       outline: 'OGCP课程大纲:',
       courseOutline: [
         {
@@ -161,24 +148,12 @@ export default {
         {
           num: '02',
           cardtitle: '数据库对象管理',
-          desList: [
-            '·系统表和系统视图',
-            '·物化视图',
-            '·对象权限管理',
-            '·定时任务',
-          ],
+          desList: ['·系统表和系统视图', '·物化视图', '·对象权限管理', '·定时任务'],
         },
         {
           num: '03',
           cardtitle: '数据库安全管理',
-          desList: [
-            '·客户端接入认证',
-            '·用户及角色',
-            '·数据库审计',
-            '·密态等值查询',
-            '·账本数据库',
-            '·透明数据加密',
-          ],
+          desList: ['·客户端接入认证', '·用户及角色', '·数据库审计', '·密态等值查询', '·账本数据库', '·透明数据加密'],
         },
         {
           num: '04',
@@ -188,22 +163,12 @@ export default {
         {
           num: '05',
           cardtitle: '数据库系统管理',
-          desList: [
-            '·日程检查',
-            '·操作系统及openGauss健康检查',
-            '·备份恢复管理',
-            '·容灾管理',
-          ],
+          desList: ['·日程检查', '·操作系统及openGauss健康检查', '·备份恢复管理', '·容灾管理'],
         },
         {
           num: '06',
           cardtitle: '数据库迁移管理',
-          desList: [
-            '·数据迁移概述',
-            '·openGauss迁移工具',
-            '·异构数据库语法差异',
-            '·MySQL数据库迁移实践',
-          ],
+          desList: ['·数据迁移概述', '·openGauss迁移工具', '·异构数据库语法差异', '·MySQL数据库迁移实践'],
         },
       ],
     },
@@ -215,8 +180,7 @@ export default {
       empty: 'true',
       module: '考试模块:敬请期待',
       contenttitle: '课程内容:',
-      content:
-        '涵盖数据库高级安全管控、数据库深度诊断与优化、人工智能、负载均衡、分布式等。',
+      content: '涵盖数据库高级安全管控、数据库深度诊断与优化、人工智能、负载均衡、分布式等。',
       outline: 'OGCE课程大纲:',
     },
   ],
@@ -252,8 +216,7 @@ export default {
     },
   ],
   talentTitle: '认证人才优选',
-  talentDesc:
-    'openGauss培训认证体系致力于为企业、在校大学生和IT从业者提供全方位的支持和帮助，共同推动数据库技术的发展和人才培养。',
+  talentDesc: 'openGauss培训认证体系致力于为企业、在校大学生和IT从业者提供全方位的支持和帮助，共同推动数据库技术的发展和人才培养。',
   talentList: [
     {
       icon: yshl,
@@ -305,15 +268,13 @@ export default {
   qatitle: '常见问题解答',
   qa: [
     {
-      question:
-        ' 1、社区颁发的openGauss认证证书是市面上唯一的openGauss认证证书吗？',
+      question: ' 1、社区颁发的openGauss认证证书是市面上唯一的openGauss认证证书吗？',
       answer:
         '是的，openGauss是开源数据库，由社区负责数据库的生态推广，社区希望通过规范的组织与专业的培训考试，让openGauss的爱好者能够系统的学习与掌握相关技能，成为企业可信的openGauss数据库技术人才。',
     },
     {
       question: '2、openGauss认证证书有纸质证书吗？',
-      answer:
-        '有，在通过认证考试后，3天内将会收到电子版证书，1个月内将会收到纸质证书。',
+      answer: '有，在通过认证考试后，3天内将会收到电子版证书，1个月内将会收到纸质证书。',
     },
     {
       question: '3、openGauss证书上有国家相关部门协会的资质证明吗？',
@@ -321,8 +282,7 @@ export default {
     },
     {
       question: '4、不参加培训是否可以直接参加OGCA与OGCP考试？',
-      answer:
-        '可以，但为了确保学员能够体系的掌握openGauss的相关技能，成为真正的技术者而非应试者，建议系统的学习后再进行考试。',
+      answer: '可以，但为了确保学员能够体系的掌握openGauss的相关技能，成为真正的技术者而非应试者，建议系统的学习后再进行考试。',
     },
     {
       question: '5、认证证书有有效期么？',
@@ -331,8 +291,7 @@ export default {
     },
     {
       question: '6、如何参加培训？',
-      answer:
-        'openGauss社区优选了业界资深的数据库培训机构，为了保证培训效果，建议学员联系openGauss 授权的培训机构参加培训。',
+      answer: 'openGauss社区优选了业界资深的数据库培训机构，为了保证培训效果，建议学员联系openGauss 授权的培训机构参加培训。',
       link: '《社区内的培训机构页面链接》',
       url: '${ENMOEDU_LINK}',
     },
@@ -409,11 +368,9 @@ export default {
   signupUrl: '/zh/training/signup/',
   signupDetail: {
     entrustTitle: '合作委托声明',
-    entrustDesc:
-      '为方便学员参加openGauss培训认证，openGauss开源社区优选了多家业界资深的数据库培训认证机构作为培训认证合作伙伴，并为相关合作伙伴授权。',
+    entrustDesc: '为方便学员参加openGauss培训认证，openGauss开源社区优选了多家业界资深的数据库培训认证机构作为培训认证合作伙伴，并为相关合作伙伴授权。',
     entranceTitle: '报名入口',
-    entranceDesc:
-      '当前已经授权如下合作伙伴，选择任一合作伙伴即可跳转至培训认证报名页面：',
+    entranceDesc: '当前已经授权如下合作伙伴，选择任一合作伙伴即可跳转至培训认证报名页面：',
   },
   emptyTip: '敬请期待',
 };

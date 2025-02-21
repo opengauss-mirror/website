@@ -5,7 +5,6 @@ import { useI18n } from '@/i18n';
 import BreadCrumbs from '@/components/BreadCrumbs.vue';
 import AppContent from '@/components/AppContent.vue';
 
-
 const i18n = useI18n();
 const commonStore = useCommon();
 const isDark = computed(() => commonStore.theme === 'dark');
@@ -13,11 +12,7 @@ const isDark = computed(() => commonStore.theme === 'dark');
 
 <template>
   <div class="bread">
-    <BreadCrumbs
-      :bread1="i18n.authentication.title"
-      :bread2="i18n.authentication.signupTitle"
-      :link1="i18n.authentication.signupParentUrl"
-    />
+    <BreadCrumbs :bread1="i18n.authentication.title" :bread2="i18n.authentication.signupTitle" :link1="i18n.authentication.signupParentUrl" />
   </div>
   <AppContent :pc-top="40" :mobile-top="16">
     <div class="signup-page">
@@ -38,6 +33,7 @@ const isDark = computed(() => commonStore.theme === 'dark');
         <a
           v-for="item in i18n.authentication.talentList"
           :href="item.signupUrl"
+          :key="item.signupUrl"
           target="_blank"
           rel="noopener noreferrer"
           class="signup-card"

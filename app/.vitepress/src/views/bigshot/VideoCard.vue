@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { ref, computed, toRefs, watch } from 'vue';
-import { useData } from 'vitepress';
 import { useI18n } from '@/i18n';
 
 import IconChevronDown from '~icons/app/icon-chevron-down.svg';
@@ -29,8 +28,6 @@ const props = defineProps({
 
 const i18n = useI18n();
 const { navItems, isToggle, pid } = toRefs(props);
-const { lang } = useData();
-const isZh = computed(() => (lang.value === 'zh' ? true : false));
 
 const len = ref(4);
 const isAll = ref(false);
@@ -65,21 +62,11 @@ const handleClick = (id: number, index: number) => {
 <template>
   <div v-for="(item, idx) in navItems" :key="item.title" class="video-list">
     <h2 class="video-title">{{ item.title }}</h2>
-    <div
-      class="news-panel-content"
-      :class="item.list.length > 2 ? 'max' : 'min'"
-    >
+    <div class="news-panel-content" :class="item.list.length > 2 ? 'max' : 'min'">
       <template v-for="(list, index) in item.list" :key="list.name">
-        <OCard
-          v-if="Number(index) < videoLen"
-          class="video-item shadow"
-          shadow="hover"
-        >
+        <OCard v-if="Number(index) < videoLen" class="video-item shadow" shadow="hover">
           <div class="video-item-link" @click="handleClick(Number(idx), index)">
-            <div
-              class="cover"
-              :style="`background:url(${item.poster}) no-repeat center/cover`"
-            >
+            <div class="cover" :style="`background:url(${item.poster}) no-repeat center/cover`">
               <p class="title">{{ list.desc }}</p>
             </div>
             <p v-dompurify-html="nameStr(list.name)" class="caption"></p>
@@ -90,9 +77,7 @@ const handleClick = (id: number, index: number) => {
     <p v-if="item.list.length > len" class="tc">
       <OButton type="text" size="small" animation @click="clickToggle">
         {{ isAll ? i18n.connect.COLLAPSE : i18n.connect.VIEW_MORE }}
-        <template #suffixIcon>
-          <IconChevronUp v-if="isAll" /><IconChevronDown v-else />
-        </template>
+        <template #suffixIcon> <IconChevronUp v-if="isAll" /><IconChevronDown v-else /> </template>
       </OButton>
     </p>
   </div>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive, onMounted, ref, computed } from 'vue';
+import { onMounted, ref, computed } from 'vue';
 import { useData, useRouter } from 'vitepress';
 import { useI18n } from '@/i18n';
 import AppMdHead from './AppMdHead.vue';
@@ -20,12 +20,6 @@ const newsInfo = {
 
 const router = useRouter();
 
-const sortParams = reactive({
-  page: 1,
-  pageSize: 100,
-  lang: lang.value,
-  category: 'news',
-});
 const newsTitle = ref<any>([]);
 const newsLint = ref<any>([]);
 const prev = ref('');
@@ -50,10 +44,7 @@ const getNewsData = () => {
       prev.value = newsTitle.value[index - 1];
       prevLint.value = newsLint.value[index - 1];
     }
-    if (
-      item === frontmatter.value.title &&
-      index !== newsList.value.length - 1
-    ) {
+    if (item === frontmatter.value.title && index !== newsList.value.length - 1) {
       next.value = newsTitle.value[index + 1];
       nextLint.value = newsLint.value[index + 1];
     }
@@ -66,11 +57,7 @@ onMounted(() => {
 
 <template>
   <div class="bread">
-    <BreadCrumbs
-      :bread1="newsInfo.name"
-      :bread2="frontmatter.title"
-      :link1="newsInfo.link"
-    />
+    <BreadCrumbs :bread1="newsInfo.name" :bread2="frontmatter.title" :link1="newsInfo.link" />
   </div>
   <div class="markdown">
     <div class="news-markdown-detail">

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const props = defineProps({
+defineProps({
   // 封面图
   cover: {
     type: String,
@@ -25,16 +25,9 @@ const props = defineProps({
 
 <template>
   <OCard class="video-item">
-    <a
-      :href="href"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <a :href="href" target="_blank" rel="noopener noreferrer">
       <div class="video-item-link">
-        <div
-          class="cover"
-          :style="`background:url(${cover}) no-repeat center/cover`"
-        >
+        <div class="cover" :style="`background:url(${cover}) no-repeat center/cover`">
           <p class="title">{{ coverTitle }}</p>
         </div>
         <p class="caption">{{ title }}</p>

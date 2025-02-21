@@ -21,7 +21,6 @@ const isLight = computed(() => {
   return commonStore.theme === 'light' ? true : false;
 });
 
-const tabShow = ref(0);
 // 案例详情
 const goCaseDetail = (link: string) => {
   window.open(`/${lang.value}${link}`, '_blank');
@@ -53,20 +52,12 @@ const handleChange = (val: any) => {
 <template>
   <div class="finance">
     <div class="section">
-      <p
-        v-for="item in financial.zh.version.title.split('：')"
-        :key="item"
-        class="section-title"
-      >
+      <p v-for="item in financial.zh.version.title.split('：')" :key="item" class="section-title">
         {{ item }}
       </p>
 
       <div class="section-content">
-        <p
-          v-for="item in financial.zh.version.descs"
-          :key="item"
-          class="section-desc"
-        >
+        <p v-for="item in financial.zh.version.descs" :key="item" class="section-desc">
           {{ item }}
         </p>
       </div>
@@ -76,11 +67,7 @@ const handleChange = (val: any) => {
       <p class="section-title">{{ financial.zh.advantages.title }}</p>
 
       <div class="advantages">
-        <div
-          v-for="item in financial.zh.advantages.lists"
-          :key="item.feature"
-          class="advantage-item"
-        >
+        <div v-for="item in financial.zh.advantages.lists" :key="item.feature" class="advantage-item">
           <img :src="isLight ? item.img : item.img_dark" alt="" />
           <p class="feature">{{ item.feature }}</p>
           <p class="feature-desc">{{ item.desc }}</p>
@@ -91,70 +78,33 @@ const handleChange = (val: any) => {
     <div class="section">
       <p class="section-title">{{ financial.zh.technologies.title }}</p>
 
-      <el-collapse
-        v-for="(item, index) in financial.zh.technologies.tab_lists"
-        :key="item.title"
-        v-model="activeNames"
-        @change="handleChange"
-      >
-        <el-collapse-item
-          v-if="index === 0"
-          :title="item.title"
-          :name="index + ''"
-        >
+      <el-collapse v-for="(item, index) in financial.zh.technologies.tab_lists" :key="item.title" v-model="activeNames" @change="handleChange">
+        <el-collapse-item v-if="index === 0" :title="item.title" :name="index + ''">
           <div class="tab-content">
             <p v-for="child in item.desc_lists" :key="child">{{ child }}</p>
 
-            <img
-              class="storage"
-              :src="isLight ? item.img : item.img_dark"
-              alt=""
-            />
+            <img class="storage" :src="isLight ? item.img : item.img_dark" alt="" />
           </div>
         </el-collapse-item>
 
-        <el-collapse-item
-          v-if="index === 1"
-          :title="item.title"
-          :name="index + ''"
-        >
+        <el-collapse-item v-if="index === 1" :title="item.title" :name="index + ''">
           <div class="tab-content">
             <p v-for="child in item.desc_lists" :key="child">{{ child }}</p>
-            <img
-              class="capability"
-              :src="isLight ? item.img : item.img_dark"
-              alt=""
-            />
+            <img class="capability" :src="isLight ? item.img : item.img_dark" alt="" />
           </div>
         </el-collapse-item>
 
-        <el-collapse-item
-          v-if="index === 2"
-          :title="item.title"
-          :name="index + ''"
-        >
+        <el-collapse-item v-if="index === 2" :title="item.title" :name="index + ''">
           <div class="tab-content">
             <p v-for="child in item.desc_lists" :key="child">{{ child }}</p>
-            <img
-              class="scale-out"
-              :src="isLight ? item.img : item.img_dark"
-              alt=""
-            />
+            <img class="scale-out" :src="isLight ? item.img : item.img_dark" alt="" />
           </div>
         </el-collapse-item>
 
-        <el-collapse-item
-          v-if="index === 3"
-          :title="item.title"
-          :name="index + ''"
-        >
+        <el-collapse-item v-if="index === 3" :title="item.title" :name="index + ''">
           <div class="tab-content">
             <p v-for="child in item.desc_lists" :key="child">{{ child }}</p>
-            <img
-              class="db-mind"
-              :src="isLight ? item.img : item.img_dark"
-              alt=""
-            />
+            <img class="db-mind" :src="isLight ? item.img : item.img_dark" alt="" />
           </div>
         </el-collapse-item>
       </el-collapse>
@@ -171,24 +121,13 @@ const handleChange = (val: any) => {
             <p class="card-desc">{{ card.desc }}</p>
 
             <div class="btn-box">
-              <OButton
-                type="primary"
-                size="mini"
-                class="more-btn"
-                animation
-                @click="goCaseDetail(card.detailLink)"
-              >
+              <OButton type="primary" size="mini" class="more-btn" animation @click="goCaseDetail(card.detailLink)">
                 {{ i18n.finance.CASE_DETAIL }}
                 <template #suffixIcon>
                   <IconArrowRight class="btn-icon" />
                 </template>
               </OButton>
-              <OButton
-                size="mini"
-                class="website-btn"
-                animation
-                @click="goOfficialWeb(card.officialLink)"
-              >
+              <OButton size="mini" class="website-btn" animation @click="goOfficialWeb(card.officialLink)">
                 {{ i18n.finance.OFFICIAL_WEBSITE }}
                 <template #suffixIcon>
                   <IconArrowRight class="btn-icon" />
@@ -234,13 +173,7 @@ const handleChange = (val: any) => {
       <div class="version-download">
         <h1 class="experience">{{ i18n.finance.EXPERIENCE }}</h1>
 
-        <OButton
-          type="primary"
-          size="mini"
-          animation
-          class="download-btn"
-          @click="goDownloadPage"
-        >
+        <OButton type="primary" size="mini" animation class="download-btn" @click="goDownloadPage">
           {{ i18n.finance.DOWNLOAD }}
           <template #suffixIcon>
             <IconArrowRight />
@@ -442,8 +375,7 @@ const handleChange = (val: any) => {
   }
 }
 .version-download {
-  background: url('@/assets/category/finance/download-bg.png') no-repeat
-    center;
+  background: url('@/assets/category/finance/download-bg.png') no-repeat center;
   background-size: cover;
   padding: 24px 0;
   display: flex;

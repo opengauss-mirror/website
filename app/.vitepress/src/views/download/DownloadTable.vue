@@ -161,10 +161,7 @@ const renderData = ref<DownloadItemT>({
 });
 function setRenderData() {
   props.tableData.content.forEach((item: DownloadItemT) => {
-    if (
-      item.architecture === activeArchitecture.value &&
-      item.os === activeOs.value
-    ) {
+    if (item.architecture === activeArchitecture.value && item.os === activeOs.value) {
       renderData.value = item;
     }
   });
@@ -180,14 +177,12 @@ onMounted(() => {
   // 迁移专区跳转锚点显示
   if (window.location.hash) {
     setTimeout(() => {
-      try {
-        const toolId = window.location.hash?.split('#')[1] as string;
-        const top = document.getElementById(toolId)?.offsetTop;
-        window.scrollTo({
-          top,
-          behavior: 'smooth',
-        });
-      } catch {}
+      const toolId = window.location.hash?.split('#')[1] as string;
+      const top = document.getElementById(toolId)?.offsetTop;
+      window.scrollTo({
+        top,
+        behavior: 'smooth',
+      });
     }, 300);
   }
   watch(
@@ -251,15 +246,11 @@ watch(
 // 下载权限
 const userInfoStore = useUserInfoStore();
 const changeDownloadAuth = () => {
-  ElMessageBox.confirm(
-    i18n.value.download.DONNLOAD_TEXT,
-    i18n.value.download.DONNLOAD_TIPS,
-    {
-      confirmButtonText: i18n.value.download.DONNLOAD_COMFIRM,
-      cancelButtonText: i18n.value.download.DONNLOAD_CANCEL,
-      type: 'warning',
-    }
-  )
+  ElMessageBox.confirm(i18n.value.download.DONNLOAD_TEXT, i18n.value.download.DONNLOAD_TIPS, {
+    confirmButtonText: i18n.value.download.DONNLOAD_COMFIRM,
+    cancelButtonText: i18n.value.download.DONNLOAD_CANCEL,
+    type: 'warning',
+  })
     .then(() => {
       doLogin();
     })
@@ -287,17 +278,10 @@ const collectDownloadData = (name: string) => {
 };
 </script>
 <template>
-  <div
-    :id="replaceSpace(tableData.name) + '-' + replaceSpace(versionShown)"
-    class="content-item"
-  >
+  <div :id="replaceSpace(tableData.name) + '-' + replaceSpace(versionShown)" class="content-item">
     <h3>{{ tableData.name }}</h3>
     <div class="filter-card">
-      <TagFilter
-        class="architecture-box"
-        :label="i18n.download.ARCHITECTURE"
-        :show="false"
-      >
+      <TagFilter class="architecture-box" :label="i18n.download.ARCHITECTURE" :show="false">
         <OTag
           v-for="(item, index) in architectureList"
           :key="'tag' + index"
@@ -325,19 +309,11 @@ const collectDownloadData = (name: string) => {
     <!-- pc  -->
     <div v-if="screenWidth > 1100" class="download-pc">
       <OTable :data="renderData.content" style="width: 100%">
-        <el-table-column
-          width="320"
-          :label="i18n.download.TABLE_HEAD[0]"
-          prop="name"
-        >
+        <el-table-column width="320" :label="i18n.download.TABLE_HEAD[0]" prop="name">
           <template #default="scope">
             <div class="name-info">
               {{ scope.row.name }}
-              <template
-                v-if="
-                  scope.row.table === 'server' && hoverTips(scope.row.edition)
-                "
-              >
+              <template v-if="scope.row.table === 'server' && hoverTips(scope.row.edition)">
                 <el-tooltip :effect="commonStore.theme" placement="right-start">
                   <template #content>
                     <p class="server-name">
@@ -358,18 +334,8 @@ const collectDownloadData = (name: string) => {
         <el-table-column :label="i18n.download.TABLE_HEAD[2]" prop="down_url">
           <template #default="scope">
             <div v-if="scope.row.down_url !== ''" class="down-action">
-              <template
-                v-if="
-                  downloadVersionAuth.includes(versionShown) &&
-                  !userInfoStore.username
-                "
-              >
-                <OButton
-                  size="mini"
-                  type="primary"
-                  animation
-                  @click="changeDownloadAuth"
-                >
+              <template v-if="downloadVersionAuth.includes(versionShown) && !userInfoStore.username">
+                <OButton size="mini" type="primary" animation @click="changeDownloadAuth">
                   {{ i18n.download.BTN_TEXT }}
                   <template #suffixIcon>
                     <IconDownload />
@@ -377,10 +343,7 @@ const collectDownloadData = (name: string) => {
                 </OButton>
               </template>
               <template v-else>
-                <a
-                  :href="scope.row.down_url"
-                  @click="collectDownloadData(scope.row.name)"
-                >
+                <a :href="scope.row.down_url" @click="collectDownloadData(scope.row.name)">
                   <OButton size="mini" type="primary" animation>
                     {{ i18n.download.BTN_TEXT }}
                     <template #suffixIcon>
@@ -395,12 +358,7 @@ const collectDownloadData = (name: string) => {
         <el-table-column :label="i18n.download.TABLE_HEAD[3]" prop="sha_code">
           <template #default="scope">
             <div v-if="scope.row.x86_url !== ''" class="down-action">
-              <OButton
-                class="down-copy"
-                size="mini"
-                type="text"
-                @click="handleUrlCopy(scope.row.sha_code, $event)"
-              >
+              <OButton class="down-copy" size="mini" type="text" @click="handleUrlCopy(scope.row.sha_code, $event)">
                 {{ shaText }}
                 <template #suffixIcon>
                   <IconCopy />
@@ -409,18 +367,11 @@ const collectDownloadData = (name: string) => {
             </div>
           </template>
         </el-table-column>
-        <el-table-column
-          :label="renderData.docs ? i18n.download.TABLE_HEAD[4] : ''"
-          prop="docsName"
-        >
+        <el-table-column :label="renderData.docs ? i18n.download.TABLE_HEAD[4] : ''" prop="docsName">
           <template #default="scope">
             <a
               v-if="scope.row.docsName !== ''"
-              :href="
-                scope.row.docs_url.includes('https')
-                  ? scope.row.docs_url
-                  : DOCS_LINK + lang + scope.row.docs_url
-              "
+              :href="scope.row.docs_url.includes('https') ? scope.row.docs_url : DOCS_LINK + lang + scope.row.docs_url"
               target="_blank"
               rel="noopener noreferrer"
               >{{ scope.row.docsName }}</a
@@ -431,11 +382,7 @@ const collectDownloadData = (name: string) => {
     </div>
     <!-- mobild -->
     <ul v-else class="download-mobile">
-      <li
-        v-for="(item, index) in renderData.content"
-        :key="item.name"
-        class="download-item"
-      >
+      <li v-for="(item, index) in renderData.content" :key="item.name" class="download-item">
         <p class="item-text">
           <span>{{ i18n.download.TABLE_HEAD[0] + ':' }}</span
           ><span class="tips-box"
@@ -445,11 +392,7 @@ const collectDownloadData = (name: string) => {
                 {{ hoverTips(item.edition) }}
               </p>
               <IconTips class="server-tips" @click="setShowIndex(index)" />
-              <div
-                v-show="showIndex !== -1"
-                class="mask-mobile"
-                @click="setShowIndex(-1)"
-              ></div> </template
+              <div v-show="showIndex !== -1" class="mask-mobile" @click="setShowIndex(-1)"></div> </template
           ></span>
         </p>
         <p class="item-text">
@@ -458,32 +401,14 @@ const collectDownloadData = (name: string) => {
         </p>
         <p class="item-text">
           <span>{{ i18n.download.TABLE_HEAD[2] + ':' }}</span>
-          <a
-            v-if="
-              downloadVersionAuth.includes(versionShown) &&
-              !userInfoStore.username
-            "
-            @click="changeDownloadAuth"
-          >
-            {{ i18n.download.BTN_TEXT_MO }}</a
-          >
-          <a
-            v-else
-            :href="item.down_url"
-            @click="collectDownloadData(item.name)"
-          >
+          <a v-if="downloadVersionAuth.includes(versionShown) && !userInfoStore.username" @click="changeDownloadAuth"> {{ i18n.download.BTN_TEXT_MO }}</a>
+          <a v-else :href="item.down_url" @click="collectDownloadData(item.name)">
             {{ i18n.download.BTN_TEXT_MO }}
           </a>
         </p>
         <p class="item-text">
           <span>{{ i18n.download.TABLE_HEAD[3] + ':' }}</span>
-          <OButton
-            class="down-copy"
-            size="mini"
-            type="text"
-            animation
-            @click="handleUrlCopy(item.sha_code, $event)"
-          >
+          <OButton class="down-copy" size="mini" type="text" animation @click="handleUrlCopy(item.sha_code, $event)">
             {{ shaText }}
             <template #suffixIcon>
               <IconCopy />
@@ -492,16 +417,9 @@ const collectDownloadData = (name: string) => {
         </p>
         <p v-if="item.docsName" class="item-text">
           <span>{{ i18n.download.TABLE_HEAD[4] + ':' }}</span
-          ><a
-            :href="
-              item.docs_url.includes('https')
-                ? item.docs_url
-                : DOCS_LINK + lang + item.docs_url
-            "
-            target="_blank"
-            rel="noopener noreferrer"
-            >{{ item.docsName }}</a
-          >
+          ><a :href="item.docs_url.includes('https') ? item.docs_url : DOCS_LINK + lang + item.docs_url" target="_blank" rel="noopener noreferrer">{{
+            item.docsName
+          }}</a>
         </p>
       </li>
     </ul>

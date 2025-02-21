@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const props = defineProps({
+defineProps({
   title: {
     type: String,
     default: '',
@@ -10,18 +10,13 @@ const props = defineProps({
     default: () => null,
   },
 });
-
 </script>
 
 <template>
   <div class="summit-guests">
     <p class="title">{{ title }}</p>
     <div class="lecturer-list">
-      <div
-        v-for="item in lecturerList"
-        :key="item.name"
-        class="lecturer-list-item"
-      >
+      <div v-for="item in lecturerList" :key="item.name" class="lecturer-list-item">
         <slot name="img">
           <div>
             <img :src="item.img" />
@@ -31,11 +26,7 @@ const props = defineProps({
           <p>{{ item.name }}</p>
         </slot>
         <slot name="title">
-          <div
-            v-for="titleItem in item.position"
-            :key="titleItem"
-            class="lecturer-list-item-title"
-          >
+          <div v-for="titleItem in item.position" :key="titleItem" class="lecturer-list-item-title">
             <p>{{ titleItem }}</p>
           </div>
         </slot>

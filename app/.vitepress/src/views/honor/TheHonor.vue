@@ -35,10 +35,7 @@ const showPersonCard = (key: number) => {
 
 const screenWidth = useWindowResize();
 const isMobile = computed(() => (screenWidth.value <= 768 ? true : false));
-const getCertificateBoxGridTemplateColumns = (
-  length: number,
-  isMobile: boolean
-) => {
+const getCertificateBoxGridTemplateColumns = (length: number, isMobile: boolean) => {
   if (isMobile) {
     return 'repeat(1, 1fr)';
   }
@@ -47,18 +44,9 @@ const getCertificateBoxGridTemplateColumns = (
 </script>
 
 <template>
-  <BannerLevel2
-    :background-image="banner"
-    :title="honorData.title"
-    :illustration="illustration"
-  />
+  <BannerLevel2 :background-image="banner" :title="honorData.title" :illustration="illustration" />
   <ul class="h5-time">
-    <li
-      v-for="item in honorData.honorList"
-      :key="item.id"
-      :class="activeYear === item.id ? 'active' : ''"
-      @click="useClickTab(item.id)"
-    >
+    <li v-for="item in honorData.honorList" :key="item.id" :class="activeYear === item.id ? 'active' : ''" @click="useClickTab(item.id)">
       {{ item.id }}
     </li>
   </ul>
@@ -83,25 +71,11 @@ const getCertificateBoxGridTemplateColumns = (
         <div
           v-show="activeYear === item.id"
           class="certificate-box"
-          :style="`grid-template-columns: ${getCertificateBoxGridTemplateColumns(
-            item.data.length,
-            isMobile
-          )}`"
+          :style="`grid-template-columns: ${getCertificateBoxGridTemplateColumns(item.data.length, isMobile)}`"
         >
-          <OCard
-            v-for="(subItem, index) in item.data"
-            :key="subItem.name"
-            class="certificate-item"
-          >
+          <OCard v-for="(subItem, index) in item.data" :key="subItem.name" class="certificate-item">
             <p>{{ subItem.name }}</p>
-            <OButton
-              v-if="subItem.href"
-              class="detail-btn"
-              type="text"
-              animation
-              size="nomral"
-              @click="clickBtn(subItem.href)"
-            >
+            <OButton v-if="subItem.href" class="detail-btn" type="text" animation size="nomral" @click="clickBtn(subItem.href)">
               {{ honorData.readNews }}
               <template #suffixIcon>
                 <OIcon class="detail-icon">
@@ -109,14 +83,7 @@ const getCertificateBoxGridTemplateColumns = (
                 </OIcon>
               </template>
             </OButton>
-            <OButton
-              v-if="subItem.img"
-              class="detail-btn"
-              type="text"
-              animation
-              size="nomral"
-              @click="clickDetail(index)"
-            >
+            <OButton v-if="subItem.img" class="detail-btn" type="text" animation size="nomral" @click="clickDetail(index)">
               {{ honorData.viewCertificate }}
               <template #suffixIcon>
                 <OIcon class="detail-icon">
@@ -124,13 +91,7 @@ const getCertificateBoxGridTemplateColumns = (
                 </OIcon>
               </template>
             </OButton>
-            <div
-              v-if="showNumber === index"
-              class="certificate"
-              @click="clickDetail(-1)"
-            >
-              <img :class="'img' + index" :src="subItem.img" alt="" />``
-            </div>
+            <div v-if="showNumber === index" class="certificate" @click="clickDetail(-1)"><img :class="'img' + index" :src="subItem.img" alt="" />``</div>
           </OCard>
         </div>
       </template>
@@ -144,11 +105,7 @@ const getCertificateBoxGridTemplateColumns = (
                 {{ honorData.excellentDeveloperTitle }}
               </h1>
               <div class="developer-wrap">
-                <div
-                  class="developer-card"
-                  v-for="(devItem, idx) in item.developerData"
-                  :key="idx"
-                >
+                <div class="developer-card" v-for="(devItem, idx) in item.developerData" :key="idx">
                   <h2 v-if="devItem.name" class="developer-title">
                     {{ devItem.name }}
                   </h2>
@@ -156,16 +113,11 @@ const getCertificateBoxGridTemplateColumns = (
                     <li v-for="(user, i) in devItem.mebmers" :key="i">
                       <img class="avatar" :src="user.avatar" :alt="user.name" />
                       <p class="m-name" :title="user.name">{{ user.name }}</p>
-                      <p
-                        class="m-company m-company-multi-line"
-                        :title="user.company"
-                      >
+                      <p class="m-company m-company-multi-line" :title="user.company">
                         {{ user.company }}
                       </p>
                       <p class="links" v-if="user.showEmail">
-                        <a :href="`mailto:${user.email}`"
-                          ><img class="img-email" :src="emailImg"
-                        /></a>
+                        <a :href="`mailto:${user.email}`"><img class="img-email" :src="emailImg" /></a>
                       </p>
                     </li>
                   </ul>
@@ -173,11 +125,7 @@ const getCertificateBoxGridTemplateColumns = (
               </div>
 
               <div class="rules">
-                <div
-                  v-for="(rule, i) in item.devoloperRules"
-                  :key="i"
-                  :class="rule.type === 'tip' ? 'tip' : ''"
-                >
+                <div v-for="(rule, i) in item.devoloperRules" :key="i" :class="rule.type === 'tip' ? 'tip' : ''">
                   {{ rule.value }}
                 </div>
               </div>
@@ -185,28 +133,13 @@ const getCertificateBoxGridTemplateColumns = (
 
             <!-- openGauss 年度优秀SIG -->
             <div v-if="item.sigData">
-              <h1
-                class="honor-title"
-                :class="
-                  item.id === '2022' ? 'common-title-2022' : 'common-title'
-                "
-              >
+              <h1 class="honor-title" :class="item.id === '2022' ? 'common-title-2022' : 'common-title'">
                 {{ honorData.excellentSigTitle }}
               </h1>
               <div class="sig-wrap">
-                <div
-                  v-for="sig in item.sigData"
-                  :key="sig.name"
-                  class="sig-card"
-                >
+                <div v-for="sig in item.sigData" :key="sig.name" class="sig-card">
                   <h1 class="sig-title" :title="sig.name">{{ sig.name }}</h1>
-                  <OButton
-                    class="repo-detail-btn"
-                    type="text"
-                    animation
-                    size="nomral"
-                    @click="clickBtn(sig.href)"
-                  >
+                  <OButton class="repo-detail-btn" type="text" animation size="nomral" @click="clickBtn(sig.href)">
                     项目地址
                     <template #suffixIcon>
                       <OIcon class="repo-detail-icon">
@@ -218,11 +151,7 @@ const getCertificateBoxGridTemplateColumns = (
               </div>
 
               <div class="rules">
-                <div
-                  v-for="(rule, i) in item.sigRules"
-                  :key="i"
-                  :class="rule.type === 'tip' ? 'tip' : ''"
-                >
+                <div v-for="(rule, i) in item.sigRules" :key="i" :class="rule.type === 'tip' ? 'tip' : ''">
                   {{ rule.value }}
                 </div>
               </div>
@@ -234,21 +163,12 @@ const getCertificateBoxGridTemplateColumns = (
                 {{ item.excellentEnterpriseTitle }}
               </h1>
               <div class="enterprise-wrap">
-                <div
-                  v-for="enterprise in item.enterpriseData"
-                  :key="enterprise.firstName + enterprise.secondName"
-                  class="enterprise-card"
-                >
+                <div v-for="enterprise in item.enterpriseData" :key="enterprise.firstName + enterprise.secondName" class="enterprise-card">
                   <img class="gauss-icon" :src="opengaussIcon" />
                   <p class="enterprise-title">荣誉证书</p>
-                  <div
-                    class="enterprise-title-wrap"
-                    :title="enterprise.firstName + enterprise.secondName"
-                  >
+                  <div class="enterprise-title-wrap" :title="enterprise.firstName + enterprise.secondName">
                     <template v-if="isMobile">
-                      <p class="enterprise-title">
-                        {{ enterprise.firstName }}{{ enterprise.secondName }}
-                      </p>
+                      <p class="enterprise-title">{{ enterprise.firstName }}{{ enterprise.secondName }}</p>
                     </template>
                     <template v-else>
                       <p class="enterprise-title">
@@ -266,11 +186,7 @@ const getCertificateBoxGridTemplateColumns = (
               </div>
 
               <div class="rules">
-                <div
-                  v-for="(rule, i) in item.enterpriseRules"
-                  :key="i"
-                  :class="rule.type === 'tip' ? 'tip' : ''"
-                >
+                <div v-for="(rule, i) in item.enterpriseRules" :key="i" :class="rule.type === 'tip' ? 'tip' : ''">
                   {{ rule.value }}
                 </div>
               </div>
@@ -282,33 +198,18 @@ const getCertificateBoxGridTemplateColumns = (
                 {{ item.excellentPersonTitle }}
               </h1>
               <div class="person-wrap">
-                <div
-                  v-for="(person, i) in item.personData"
-                  :key="i"
-                  class="person-card"
-                  @mouseenter="showPersonCard(i)"
-                  @mouseleave="showPersonCard(-1)"
-                >
+                <div v-for="(person, i) in item.personData" :key="i" class="person-card" @mouseenter="showPersonCard(i)" @mouseleave="showPersonCard(-1)">
                   <div>
-                    <img
-                      class="avatar"
-                      :src="person.avatar"
-                      :alt="person.name"
-                    />
+                    <img class="avatar" :src="person.avatar" :alt="person.name" />
                   </div>
                   <p class="name">{{ person.name }}</p>
                   <p class="company">{{ person.company }}</p>
                   <Transition name="bounce">
                     <div v-if="showedCommentKey === i" class="comment">
-                      <template v-for="c in person.comment">
-                        <a
-                          v-if="c.startsWith('link: ')"
-                          :href="c.replace('link: ', '')"
-                          class="link"
-                          target="_blank"
-                          @click.stop
-                          >{{ c.replace('link: ', '') }}</a
-                        >
+                      <template v-for="(c, index) in person.comment" :key="index">
+                        <a v-if="typeof c === 'string' && c.startsWith('link: ')" :href="c.replace('link: ', '')" class="link" target="_blank" @click.stop>
+                          {{ c.replace('link: ', '') }}
+                        </a>
                         <p v-else @click.stop>{{ c }}</p>
                       </template>
                     </div>
@@ -317,11 +218,7 @@ const getCertificateBoxGridTemplateColumns = (
               </div>
 
               <div class="rules">
-                <div
-                  v-for="(rule, i) in item.personRules"
-                  :key="i"
-                  :class="rule.type === 'tip' ? 'tip' : ''"
-                >
+                <div v-for="(rule, i) in item.personRules" :key="i" :class="rule.type === 'tip' ? 'tip' : ''">
                   {{ rule.value }}
                 </div>
               </div>

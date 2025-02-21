@@ -15,13 +15,7 @@ const data = teamUpData.zh;
 </script>
 
 <template>
-  <BannerLevel2
-    class="app-banner"
-    :background-image="banner"
-    :illustration="bannerIcon"
-    :title="data.title"
-    :subtitle="data.subtitle"
-  />
+  <BannerLevel2 class="app-banner" :background-image="banner" :illustration="bannerIcon" :title="data.title" :subtitle="data.subtitle" />
 
   <AppContent>
     <div class="team-up">
@@ -33,10 +27,7 @@ const data = teamUpData.zh;
       <div class="team-process">
         <div class="section-title">{{ data.process.title }}</div>
         <div class="process">
-          <div
-            class="process-item-wrap"
-            v-for="(item, i) in data.process.steps"
-          >
+          <div v-for="(item, i) in data.process.steps" :key="item.title" class="process-item-wrap">
             <div class="process-item">
               <div>
                 <OIcon class="process-icon">
@@ -50,14 +41,11 @@ const data = teamUpData.zh;
               </div>
               <div class="process-title">{{ item.title }}</div>
               <div class="process-text-wrap" :class="{ 'process-first-text': i === 0 }">
-                <div v-for="subItem in item.list">{{ subItem }}</div>
+                <div v-for="subItem in item.list" :key="subItem">{{ subItem }}</div>
               </div>
             </div>
 
-            <IconStepArrow
-              v-if="i !== data.process.steps.length - 1"
-              class="step-arrow"
-            />
+            <IconStepArrow v-if="i !== data.process.steps.length - 1" class="step-arrow" />
           </div>
         </div>
       </div>
@@ -68,12 +56,12 @@ const data = teamUpData.zh;
       <div class="team-detail">
         <div class="section-title">{{ data.detail.title }}</div>
         <div class="detail-card-wrap">
-          <div v-for="item in data.detail.list" class="detail-card">
+          <div v-for="item in data.detail.list" :key="item.title" class="detail-card">
             <div>
               <div class="detail-card-title">{{ item.title }}</div>
               <div class="detail-card-desc">
                 <template v-if="Array.isArray(item.desc)">
-                  <div v-for="subItem in item.desc" class="desc-point">
+                  <div v-for="subItem in item.desc" :key="subItem" class="desc-point">
                     <OIcon class="right-icon">
                       <IconRight class="right-icon" />
                     </OIcon>

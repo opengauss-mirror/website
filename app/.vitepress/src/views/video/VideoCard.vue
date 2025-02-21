@@ -34,9 +34,7 @@ const props = defineProps({
 const i18n = useI18n();
 const viewAll = ref(props.isToggle);
 const displayData = computed(() => {
-  return viewAll.value
-    ? props.dataSource.data
-    : props.dataSource.data.slice(0, props.dataSource.displayCount);
+  return viewAll.value ? props.dataSource.data : props.dataSource.data.slice(0, props.dataSource.displayCount);
 });
 </script>
 
@@ -48,17 +46,10 @@ const displayData = computed(() => {
     </h2>
     <!-- card -->
     <div class="news-panel-content">
-      <OCard
-        v-for="item in displayData"
-        class="video-item shadow"
-        shadow="hover"
-      >
+      <OCard v-for="item in displayData" :key="item.title" class="video-item shadow" shadow="hover">
         <a :href="item.videoUrl" target="_blank" rel="noopener noreferrer">
           <div class="video-item-link">
-            <div
-              class="cover"
-              :style="`background:url(${dataSource.poster}) no-repeat center/cover`"
-            >
+            <div class="cover" :style="`background:url(${dataSource.poster}) no-repeat center/cover`">
               <p class="title">{{ item.title }}</p>
             </div>
             <p class="caption">{{ item.title }}</p>
@@ -70,9 +61,7 @@ const displayData = computed(() => {
     <p v-if="dataSource.data.length > dataSource.displayCount" class="tc">
       <OButton type="text" size="small" animation @click="viewAll = !viewAll">
         {{ viewAll ? i18n.connect.COLLAPSE : i18n.connect.VIEW_MORE }}
-        <template #suffixIcon>
-          <IconChevronUp v-if="viewAll" /><IconChevronDown v-else />
-        </template>
+        <template #suffixIcon> <IconChevronUp v-if="viewAll" /><IconChevronDown v-else /> </template>
       </OButton>
     </p>
   </div>

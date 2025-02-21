@@ -49,8 +49,7 @@ const searchNumber = ref<SearchCountItemT[]>([]);
 const searchType = ref('');
 const searchData = computed(() => {
   return {
-    keyword:
-      searchInput.value || decodeURIComponent(location.href.split('=')[1]),
+    keyword: searchInput.value || decodeURIComponent(location.href.split('=')[1]),
     page: currentPage.value,
     pageSize: pageSize.value,
     lang: lang.value,
@@ -58,10 +57,7 @@ const searchData = computed(() => {
     limit: [
       {
         type: 'docs',
-        version:
-          activeVersion.value === i18n.value.search.tagList.all
-            ? ''
-            : activeVersion.value,
+        version: activeVersion.value === i18n.value.search.tagList.all ? '' : activeVersion.value,
       },
     ],
   };
@@ -71,17 +67,11 @@ const searchCount = computed(() => {
   return {
     keyword: searchInput.value.trim(),
     lang: lang.value,
-    docsVersion:
-      activeVersion.value === i18n.value.search.tagList.all
-        ? ''
-        : activeVersion.value,
+    docsVersion: activeVersion.value === i18n.value.search.tagList.all ? '' : activeVersion.value,
     limit: [
       {
         type: 'docs',
-        version:
-          activeVersion.value === i18n.value.search.tagList.all
-            ? ''
-            : activeVersion.value,
+        version: activeVersion.value === i18n.value.search.tagList.all ? '' : activeVersion.value,
       },
     ],
   };
@@ -91,9 +81,7 @@ const searchCount = computed(() => {
 const searchResultList: any = ref([]);
 // 总数据数量
 const total = computed(() => {
-  return searchNumber.value[currentIndex.value]
-    ? searchNumber.value[currentIndex.value].doc_count
-    : 0;
+  return searchNumber.value[currentIndex.value] ? searchNumber.value[currentIndex.value].doc_count : 0;
 });
 // 分页器总页数
 const totalPage = computed(() => {
@@ -212,22 +200,12 @@ function goLink(data: any, index: number) {
     reportSelectSearchResult(data, index, url, searchData.value.keyword);
     windowOpen(url, '_blank');
   } else {
-    reportSelectSearchResult(
-      data,
-      index,
-      search_result_url,
-      searchData.value.keyword
-    );
+    reportSelectSearchResult(data, index, search_result_url, searchData.value.keyword);
     router.go(search_result_url);
   }
 }
 
-const reportSelectSearchResult = (
-  data: any,
-  index: number,
-  path: string,
-  keyword: string
-) => {
+const reportSelectSearchResult = (data: any, index: number, path: string, keyword: string) => {
   oaReport(
     'selectSearchResult',
     {
@@ -236,9 +214,7 @@ const reportSelectSearchResult = (
       search_result_detail: data,
       search_tag: data.type,
       search_rank_num: pageSize.value * (currentPage.value - 1) + (index + 1),
-      search_result_total_num: searchNumber.value.find(
-        (item) => item.key === (searchType.value || 'all')
-      ),
+      search_result_total_num: searchNumber.value.find((item) => item.key === (searchType.value || 'all')),
       search_result_url: path,
     },
     'search_portal'
@@ -274,17 +250,17 @@ const versionList = ref([
 ]);
 
 async function getVersionTag() {
-  await getTagsData(tagsParams)
-    .then((res) => {
-      if (res.obj?.totalNum.length) {
-        // 默认选中latest
-        activeVersion.value = res.obj?.totalNum[1].key;
-      }
-      versionList.value.push(...res.obj?.totalNum);
-    })
-    .catch(() => {
-      handleError();
-    });
+  try {
+    const res = await getTagsData(tagsParams);
+    // 确保 res.obj 和 res.obj.totalNum 都存在
+    if (res.obj && res.obj.totalNum && res.obj.totalNum.length) {
+      // 默认选中 latest
+      activeVersion.value = res.obj.totalNum[1]?.key; // 这里仍然可以使用可选链
+      versionList.value.push(...res.obj.totalNum);
+    }
+  } catch (error) {
+    handleError();
+  }
 }
 
 onMounted(async () => {
@@ -304,11 +280,7 @@ watch(
 </script>
 <template>
   <div class="search">
-    <OSearch
-      v-model="searchInput"
-      :placeholder="searchValue.PLEACHOLDER"
-      @change="() => searchAll()"
-    >
+    <OSearch v-model="searchInput" :placeholder="searchValue.PLEACHOLDER" @change="() => searchAll()">
       <template #suffix>
         <OIcon class="close" @click="clearSearchInput"><IconCancel /></OIcon>
       </template>
@@ -328,21 +300,13 @@ watch(
           </li>
         </ul>
         <ClientOnly>
-          <OSelect
-            v-model="activeVersion"
-            :placeholder="i18n.search.tagList.all"
-          >
+          <OSelect v-model="activeVersion" :placeholder="i18n.search.tagList.all">
             <template #prefix>
               <OIcon>
                 <IconSearch />
               </OIcon>
             </template>
-            <OOption
-              v-for="item in versionList"
-              :key="item.key"
-              :label="item.key"
-              :value="item.key"
-            />
+            <OOption v-for="item in versionList" :key="item.key" :label="item.key" :value="item.key" />
           </OSelect>
         </ClientOnly>
       </div>
@@ -379,17 +343,10 @@ watch(
             :total="total"
             @current-change="searchDataAll"
           >
-            <span class="pagination-slot"
-              >{{ currentPage }}/{{ totalPage }}</span
-            >
+            <span class="pagination-slot">{{ currentPage }}/{{ totalPage }}</span>
           </OPagination>
         </ClientOnly>
-        <AppPaginationMo
-          :current-page="currentPage"
-          :total-page="totalPage"
-          @turn-page="turnPage"
-          @jump-page="jumpPage"
-        />
+        <AppPaginationMo :current-page="currentPage" :total-page="totalPage" @turn-page="turnPage" @jump-page="jumpPage" />
       </div>
     </div>
   </div>
