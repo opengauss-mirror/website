@@ -20,6 +20,12 @@
 
 @use 'element-plus/theme-chalk/src/index.scss' as *;
 
+
+.el-dialog__header{
+  &.show-close{
+    padding-right:0 !important;
+  }
+}
 .el-select {
   --o-select-border-color: transparent;
   &:hover {

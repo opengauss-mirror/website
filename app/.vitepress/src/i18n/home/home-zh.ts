@@ -126,8 +126,7 @@ export default {
   LINK_TITLE: '友情链接',
   HOME_CALENDAR: {
     LOGIN: '登录提示',
-    LOGIN_TEXT:
-      '使用openGauss会议预定功能需要SIG组Maintainer或Committer身份权限，请您允许授权登录Gitee验证用户信息',
+    LOGIN_TEXT: '使用openGauss会议预定功能需要SIG组Maintainer或Committer身份权限',
     GITEE_BEN: 'Gitee授权登录',
     LOGIN_TIPS: '我已阅读并同意',
     BACK_LOGIN: '返回重新预定会议',
@@ -155,13 +154,12 @@ export default {
     ETHERPAD: 'Etherpad:',
     PLAYBACK: '回放链接:',
     RECORD: '是否录制此会议:',
-    RECORD_TEXT:
-      '若开启会议录制功能，会议开始后会自动开始录屏，并在会议结束后自动将录屏上传至B站openGauss账号下。录制服务由Zoom提供。',
+    RECORD_TEXT: '若开启会议录制功能，会议开始后会自动开始录屏，并在会议结束后自动将录屏上传至B站openGauss账号下。录制服务由Zoom提供。',
     DELETE_MEETING: '删除会议',
     MODIFY: '编辑会议',
     NETERROR: '服务开小差',
     REQUIRE: '请完成所有必填项',
-    FAILED: '很抱歉！因XXX会议预定失败',
+    FAILED: '很抱歉！会议预定失败',
     DATA_TEXT: '选择会议日期',
     STARTTIME: '选择起始时间',
     ENDTIME: '选择结束时间',
@@ -179,6 +177,7 @@ export default {
     LOGOUT_SUCCESS: '退出成功',
     COPY_INFO: '复制会议信息',
     COPY_INFO_MB: '复制信息',
+    failed: '操作失败！',
   },
   HOME_ROOMS: {
     ROOM_NAME: [

@@ -2,7 +2,7 @@
 import { useI18n } from '@/i18n';
 
 import AppContent from '@/components/AppContent.vue';
-import HomeCalendar from './HomeCalendar.vue';
+import HomeMeeting from './HomeMeeting.vue';
 import HomeBanner from './HomeBanner.vue';
 import HomeCharacteristic from './HomeCharacteristic.vue';
 import HomeExplore from './HomeExplore.vue';
@@ -10,12 +10,10 @@ import HomeShowCase from './HomeShowCase.vue';
 import HomeVideo from './HomeVideo.vue';
 import HomeNews from './HomeNews.vue';
 import LinkPanel from '@/components/LinkPanel.vue';
-// import HomePlayground from './HomePlayground.vue';
 
 import homeConfig from '@/data/home/';
 
 const i18n = useI18n();
-
 </script>
 
 <template>
@@ -23,16 +21,16 @@ const i18n = useI18n();
     <HomeBanner />
     <AppContent>
       <HomeCharacteristic />
-      <!-- <HomePlayground /> -->
     </AppContent>
 
     <HomeExplore />
     <AppContent>
       <div id="meetings" class="home-calendar">
         <h3 class="home-title">{{ i18n.home.HOME_MEETING }}</h3>
-        <HomeCalendar />
+        <p class="meeting-text">{{ i18n.home.HOME_CALENDAR.LOGIN_TEXT }}</p>
+        <HomeMeeting />
       </div>
-      <HomeNews/>
+      <HomeNews />
     </AppContent>
     <HomeVideo />
     <AppContent>
@@ -60,6 +58,13 @@ const i18n = useI18n();
     line-height: var(--o-line-height-h8);
     margin-bottom: var(--o-spacing-h5);
   }
+}
+.meeting-text {
+  color: var(--o-color-text4);
+  font-size: var(--o-font-size-text);
+  line-height: var(--o-line-height-text);
+  text-align: center;
+  margin: 16px 0 24px;
 }
 .home-partner {
   h3 {

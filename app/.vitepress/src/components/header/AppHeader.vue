@@ -184,6 +184,11 @@ const searchLink = `/${lang.value}/search/`;
   color: var(--o-color-text1);
   @media (max-width: 1100px) {
     display: block;
+    font-size: 0;
+    svg{
+      width: 20px;
+      height: 20px;
+    }
   }
 }
 .header-content {
@@ -217,6 +222,8 @@ const searchLink = `/${lang.value}/search/`;
 }
 .header-content-mobile {
   display: flex;
+      height: 100%;
+    align-items: center;
 }
 
 @include in-dark {
