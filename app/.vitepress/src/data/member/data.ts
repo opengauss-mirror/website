@@ -543,6 +543,7 @@ import liyuxiang from '@/assets/category/member/avatar/liyuxiang.png';
 import caiwenyi from '@/assets/category/member/avatar/caiwenyi.png';
 import yangzihao2 from '@/assets/category/member/avatar/yangzihao2.png';
 import zengseliang2 from '@/assets/category/member/avatar/zengseliang2.png';
+import weikewei from '@/assets/category/member/avatar/weikewei.png';
 
 import { GITEE_LINK } from '@/data/url-config';
 export default {
@@ -1401,6 +1402,13 @@ export default {
         title: `Member`,
         email: `wumingyuan@gbase.cn`,
         gitee: `${GITEE_LINK}wmy_ld`,
+      },
+      {
+        img: weikewei,
+        name: `魏可伟`,
+        title: `Member`,
+        email: `weikewei@chinamobile.com`,
+        gitee: `${GITEE_LINK}weikewei`,
       },
     ],
     SECRETARIAT: [
@@ -5951,6 +5959,13 @@ export default {
         title: `Member`,
         email: `wumingyuan@gbase.cn`,
         gitee: `${GITEE_LINK}wmy_ld`,
+      },
+      {
+        img: weikewei,
+        name: `Weike Wei`,
+        title: `Member`,
+        email: `weikewei@chinamobile.com`,
+        gitee: `${GITEE_LINK}weikewei`,
       },
     ],
     SECRETARIAT: [
