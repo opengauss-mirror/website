@@ -22,10 +22,7 @@ const layout = ref('sizes, prev, pager, next, slot, jumper');
 const i18n = useI18n();
 
 const randerData = computed(() => {
-  return allData.value.slice(
-    pageSize.value * (currentPage.value - 1),
-    pageSize.value * currentPage.value
-  );
+  return allData.value.slice(pageSize.value * (currentPage.value - 1), pageSize.value * currentPage.value);
 });
 
 // 获取类型下拉选项
@@ -64,12 +61,7 @@ const queryCompatibilityData = () => {
   const regex = new RegExp(searchInput.value.trim(), 'i');
   allData.value = [];
   compatibilityData.forEach((item) => {
-    if (
-      regex.test(item.name) ||
-      regex.test(item.type) ||
-      regex.test(item.company) ||
-      regex.test(`${item.name} V${item.version}`)
-    ) {
+    if (regex.test(item.name) || regex.test(item.type) || regex.test(item.company) || regex.test(`${item.name} V${item.version}`)) {
       if (searchType.value === '' || searchType.value === item.type) {
         allData.value.push(item);
       }
@@ -96,12 +88,7 @@ function jumpPageMb(page: number) {
 </script>
 <template>
   <div class="compatibility">
-    <BannerLevel2
-      :background-image="Banner"
-      :title="i18n.compatibility.title"
-      :illustration="illustration"
-      class="compatibility-banner"
-    />
+    <BannerLevel2 :background-image="Banner" :title="i18n.compatibility.title" :illustration="illustration" class="compatibility-banner" />
     <AppContent :mobile-top="16" class="compatibility-content">
       <div class="o-search">
         <OSelect
@@ -112,57 +99,25 @@ function jumpPageMb(page: number) {
           :placeholder="i18n.compatibility.type_search_placeholder"
           @change="queryCompatibilityData"
         >
-          <OOption
-            v-for="item in typeOptionData"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value"
-          />
+          <OOption v-for="item in typeOptionData" :key="item.value" :label="item.label" :value="item.value" />
         </OSelect>
-        <OSearch
-          v-model="searchInput"
-          clearable
-          :placeholder="i18n.compatibility.search_placeholder"
-          @change="queryCompatibilityData"
-        ></OSearch>
+        <OSearch v-model="searchInput" clearable :placeholder="i18n.compatibility.search_placeholder" @change="queryCompatibilityData"></OSearch>
       </div>
       <OTable class="pc-list" :data="randerData" style="width: 100%">
         <el-table-column :label="i18n.compatibility.name">
           <template #default="scope">
             <span>
               {{ scope.row.name }}
-              <template v-if="scope.row.version">
-                V{{ scope.row.version }}
-              </template>
+              <template v-if="scope.row.version"> V{{ scope.row.version }} </template>
             </span>
           </template>
         </el-table-column>
-        <OTableColumn
-          width="150"
-          :label="i18n.compatibility.type"
-          prop="type"
-          show-overflow-tooltip
-        ></OTableColumn>
-        <OTableColumn
-          width="400"
-          :label="i18n.compatibility.company"
-          prop="company"
-        ></OTableColumn>
-        <OTableColumn
-          :label="i18n.compatibility.database"
-          width="200"
-          prop="database"
-        ></OTableColumn>
+        <OTableColumn width="150" :label="i18n.compatibility.type" prop="type" show-overflow-tooltip></OTableColumn>
+        <OTableColumn width="400" :label="i18n.compatibility.company" prop="company"></OTableColumn>
+        <OTableColumn :label="i18n.compatibility.database" width="200" prop="database"></OTableColumn>
         <el-table-column :label="i18n.compatibility.certificate" width="150">
           <template #default="scope">
-            <a
-              v-if="scope.row.download"
-              :href="scope.row.download"
-              download
-              target="_blank"
-              rel="noopener noreferrer"
-              >{{ i18n.certification.certify }}</a
-            >
+            <a v-if="scope.row.download" :href="scope.row.download" download target="_blank" rel="noopener noreferrer">{{ i18n.certification.certify }}</a>
           </template>
         </el-table-column>
       </OTable>
@@ -191,13 +146,7 @@ function jumpPageMb(page: number) {
             </li>
             <li v-if="item.download">
               <span>{{ i18n.compatibility.certificate }}:</span>
-              <a
-                :href="item.download"
-                download
-                target="_blank"
-                rel="noopener noreferrer"
-                >{{ i18n.certification.certify }}</a
-              >
+              <a :href="item.download" download target="_blank" rel="noopener noreferrer">{{ i18n.certification.certify }}</a>
             </li>
           </ul>
         </li>
@@ -217,12 +166,7 @@ function jumpPageMb(page: number) {
         >
           <span class="pagination-slot">{{ currentPage }}/{{ totalPage }}</span>
         </OPagination>
-        <AppPaginationMo
-          :current-page="currentPage"
-          :total-page="totalPage"
-          @turn-page="changeCurrentMb"
-          @jump-page="jumpPageMb"
-        />
+        <AppPaginationMo :current-page="currentPage" :total-page="totalPage" @turn-page="changeCurrentMb" @jump-page="jumpPageMb" />
       </ClientOnly>
       <p class="introduce">
         关于商业软件兼容性技术测评，openGauss提供了完整的测试流程和工具，详见<a
@@ -241,6 +185,16 @@ function jumpPageMb(page: number) {
   height: 48px;
   @media screen and (max-width: 1100px) {
     height: 36px;
+  }
+  :deep(.o-select) {
+    width: 200px;
+    .el-select__wrapper {
+      height: 48px;
+      min-width: auto;
+      @media screen and (max-width: 1100px) {
+        height: 36px;
+      }
+    }
   }
 
   .type-select {

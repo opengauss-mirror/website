@@ -3,8 +3,8 @@ import { computed } from 'vue';
 import type { Component } from 'vue';
 import { useData } from 'vitepress';
 
-import zhCn from 'element-plus/lib/locale/lang/zh-cn';
-import en from 'element-plus/lib/locale/lang/en';
+import zhCn from 'element-plus/es/locale/lang/zh-cn';
+import en from 'element-plus/es/locale/lang/en';
 
 import AppHeader from '@/components/header/AppHeader.vue';
 import AppFooter from '@/components/AppFooter.vue';
@@ -42,10 +42,7 @@ const compMapping: {
 };
 
 const isCustomLayout = computed(() => {
-  return (
-    !!frontmatter.value.category &&
-    categories.indexOf(frontmatter.value.category) !== -1
-  );
+  return !!frontmatter.value.category && categories.indexOf(frontmatter.value.category) !== -1;
 });
 const comp = computed(() => {
   return compMapping[frontmatter.value.category];
