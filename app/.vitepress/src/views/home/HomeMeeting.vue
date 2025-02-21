@@ -30,9 +30,6 @@ const userName = ref('');
 const i18n = useI18n();
 const i18nMeeting = computed(() => i18n.value.home.HOME_CALENDAR);
 
-const screenWidth = useWindowResize();
-const isMobile = computed(() => (screenWidth.value <= 768 ? true : false));
-
 const commonStore = useCommon();
 const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
 
