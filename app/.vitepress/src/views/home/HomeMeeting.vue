@@ -85,33 +85,31 @@ const clickMeeting = async (day?: string) => {
       loading.value = true;
       const date = dayjs(day).format('YYYY-MM-DD');
       const res = await getMeetingListApi(date, sig.value);
-      if (res && res.length > 0) {
-        renderData.value = res.map((v) => {
-          return {
-            ...v,
-            time: `${v.start}-${v.end}`,
-          };
+      renderData.value = res.map((v) => {
+        return {
+          ...v,
+          time: `${v.start}-${v.end}`,
+        };
+      });
+      // 更新日历
+      setTimeout(() => {
+        getMeetingDays(day);
+      }, 100);
+
+      // 只有一个会议默认展开
+      if (renderData.value.length === 1) {
+        activeName.value = '0';
+        nextTick(() => {
+          if (document.querySelector('.meet-item')) {
+            (document.querySelector('.meet-item') as HTMLElement).click();
+          }
         });
-        // 更新日历
-        setTimeout(() => {
-          getMeetingDays(day);
-        }, 100);
+      }
+      isRefresh.value = false;
+      sigOptions.value = [...new Set(renderData.value.map((v) => v.group_name))].map((v) => ({ group_name: v }));
 
-        // 只有一个会议默认展开
-        if (renderData.value.length === 1) {
-          activeName.value = '0';
-          nextTick(() => {
-            if (document.querySelector('.meet-item')) {
-              (document.querySelector('.meet-item') as HTMLElement).click();
-            }
-          });
-        }
-        isRefresh.value = false;
-        sigOptions.value = [...new Set(renderData.value.map((v) => v.group_name))].map((v) => ({ group_name: v }));
-
-        if (!sigOptions.value.find((v) => v.group_name === sig.value)) {
-          sig.value = '';
-        }
+      if (!sigOptions.value.find((v) => v.group_name === sig.value)) {
+        sig.value = '';
       }
     } finally {
       loading.value = false;
