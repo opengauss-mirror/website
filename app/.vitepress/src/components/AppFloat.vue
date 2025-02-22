@@ -246,29 +246,6 @@ function postScore() {
         message: '提交成功，感谢您的反馈！',
         type: 'success',
       });
-      const summitTime = new Date().valueOf();
-      if (screenWidth.value < 1100) {
-        try {
-          localStorage.setItem('submit-time-mobile', JSON.stringify(summitTime));
-        } catch {
-          handleError();
-        }
-        isReasonShow.value = false;
-        inputText.value = '';
-        score.value = 0;
-        isMobileFloatShow.value = false;
-        dialogVisible.value = false;
-      } else {
-        try {
-          localStorage.setItem('submit-time', JSON.stringify(summitTime));
-        } catch {
-          handleError();
-        }
-        isReasonShow.value = false;
-        inputText.value = '';
-        score.value = 0;
-        isDynamic.value = false;
-      }
     } else {
       ElMessage({
         message: res.msg,
@@ -278,27 +255,7 @@ function postScore() {
   });
 }
 function handleClickSubmit() {
-  // pc12小时之内只能提交一次
-  const lastSubmitTime = localStorage.getItem('submit-time');
-  const intervalTime = 1 * 12 * 60 * 60 * 1000;
-  const nowTime = new Date().valueOf();
-  if (lastSubmitTime) {
-    try {
-      const flag = nowTime - JSON.parse(lastSubmitTime) > intervalTime;
-      if (flag) {
-        postScore();
-      } else {
-        ElMessage({
-          message: '请不要频繁提交！',
-          type: 'warning',
-        });
-      }
-    } catch {
-      handleError();
-    }
-  } else {
-    postScore();
-  }
+  postScore();
 }
 
 // 峰会页面不显示floating button
@@ -351,52 +308,14 @@ const cancelDialog = () => {
   score.value = 0;
 };
 
-const isMobileFloatShow = ref(false);
+const isMobileFloatShow = ref(true);
 const closeMobileFloat = () => {
   isMobileFloatShow.value = false;
-  const closeTime = new Date().valueOf();
-  try {
-    localStorage.setItem('close-float-time', JSON.stringify(closeTime));
-  } catch {
-    handleError();
-  }
 };
 const setScore = (val: number) => {
   isReasonShow.value = true;
   score.value = val * 10;
 };
-// 移动端用户关闭后7天不展示,提交后30日内不出现入口
-onMounted(() => {
-  const lastCloseTime = localStorage.getItem('close-float-time');
-  const lastSubmitTime = localStorage.getItem('submit-time-mobile');
-  const sevenDaysInMilliseconds = 7 * 24 * 60 * 60 * 1000;
-  const thirtyInMilliseconds = 30 * 24 * 60 * 60 * 1000;
-  const nowTime = new Date().valueOf();
-  if (lastCloseTime || lastSubmitTime) {
-    let flag1;
-    let flag2;
-    if (lastCloseTime) {
-      try {
-        flag1 = nowTime - JSON.parse(lastCloseTime) > sevenDaysInMilliseconds;
-      } catch {
-        handleError();
-      }
-    } else if (lastSubmitTime) {
-      try {
-        flag2 = nowTime - JSON.parse(lastSubmitTime) > thirtyInMilliseconds;
-      } catch {
-        handleError();
-      }
-    }
-    if (flag1 && flag2) {
-      isMobileFloatShow.value = true;
-    } else {
-      isMobileFloatShow.value = false;
-    }
-  } else {
-    isMobileFloatShow.value = true;
-  }
-});
 </script>
 
 <template>
@@ -874,6 +793,7 @@ onMounted(() => {
           }
           .more-info {
             display: flex;
+            flex-wrap: wrap;
             margin-top: 8px;
             color: var(--o-color-text4);
             font-size: var(--o-font-size-tip);
@@ -898,7 +818,7 @@ onMounted(() => {
         position: absolute;
         top: 0;
         right: 64px;
-        width: 240px;
+        min-width: 240px;
         padding: 24px;
         background-color: var(--o-color-bg2);
         transition: all 0.5s;
@@ -918,8 +838,8 @@ onMounted(() => {
           .text {
             margin-left: 12px;
             text-align: left;
+            font-size: var(--o-font-size-text);
             .text-name {
-              font-size: var(--o-font-size-text);
               line-height: 32px;
               font-weight: 600;
               a {
