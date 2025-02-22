@@ -12,7 +12,7 @@ import { getGroupInfosApi, getMeetingDateListApi, getMeetingListApi, deleteMeeti
 import { isBrowser } from '@/shared/utils';
 
 import { doLogin, getUserAuth } from '@/shared/login';
-import { useCommon } from '@/stores/common';
+import { useCommon, useMeeting } from '@/stores/common';
 
 import IconLeft from '~icons/app/icon-chevron-left.svg';
 import IconRight from '~icons/app/icon-chevron-right.svg';
@@ -31,6 +31,7 @@ const i18n = useI18n();
 const i18nMeeting = computed(() => i18n.value.home.HOME_CALENDAR);
 
 const commonStore = useCommon();
+const meetingStore = useMeeting();
 const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
 
 const activeName = ref('');
@@ -84,32 +85,33 @@ const clickMeeting = async (day?: string) => {
       loading.value = true;
       const date = dayjs(day).format('YYYY-MM-DD');
       const res = await getMeetingListApi(date, sig.value);
-
-      renderData.value = res.map((v) => {
-        return {
-          ...v,
-          time: `${v.start}-${v.end}`,
-        };
-      });
-      // 更新日历
-      setTimeout(() => {
-        getMeetingDays(day);
-      }, 100);
-
-      // 只有一个会议默认展开
-      if (renderData.value.length === 1) {
-        activeName.value = '0';
-        nextTick(() => {
-          if (document.querySelector('.meet-item')) {
-            (document.querySelector('.meet-item') as HTMLElement).click();
-          }
+      if (res && res.length > 0) {
+        renderData.value = res.map((v) => {
+          return {
+            ...v,
+            time: `${v.start}-${v.end}`,
+          };
         });
-      }
-      isRefresh.value = false;
-      sigOptions.value = [...new Set(renderData.value.map((v) => v.group_name))].map((v) => ({ group_name: v }));
+        // 更新日历
+        setTimeout(() => {
+          getMeetingDays(day);
+        }, 100);
 
-      if (!sigOptions.value.find((v) => v.group_name === sig.value)) {
-        sig.value = '';
+        // 只有一个会议默认展开
+        if (renderData.value.length === 1) {
+          activeName.value = '0';
+          nextTick(() => {
+            if (document.querySelector('.meet-item')) {
+              (document.querySelector('.meet-item') as HTMLElement).click();
+            }
+          });
+        }
+        isRefresh.value = false;
+        sigOptions.value = [...new Set(renderData.value.map((v) => v.group_name))].map((v) => ({ group_name: v }));
+
+        if (!sigOptions.value.find((v) => v.group_name === sig.value)) {
+          sig.value = '';
+        }
       }
     } finally {
       loading.value = false;
@@ -132,9 +134,14 @@ function watchChange(element: HTMLElement) {
 // sig组
 const sigGroup = ref([]);
 const getSigData = () => {
+  if (meetingStore.userSigs.length > 0) {
+    return;
+  }
   getGroupInfosApi()
     .then((res) => {
       sigGroup.value = res;
+
+      meetingStore.userSigs = res;
     })
     .catch(() => {
       sigGroup.value = [];
@@ -153,10 +160,16 @@ const getPersonalInfo = async () => {
       const { identities } = res.data;
       const giteeData = identities.find((e) => e.provider?.includes('gitee'));
       userName.value = giteeData.username;
+
+      meetingStore.giteeId = giteeData.username;
     }
   } catch (error: any) {
     console.error(error);
   }
+};
+// 删除修改会议判断是否是本人
+const isSelf = (name: string) => {
+  return userName.value === name;
 };
 
 onMounted(() => {
@@ -235,11 +248,6 @@ const confirmCancel = async () => {
     });
     cancelVisible.value = false;
   }
-};
-
-// 删除修改会议判断是否是本人
-const isSelf = (name: string) => {
-  return userName.value === name;
 };
 
 // -------------------- 表单事件 --------------------

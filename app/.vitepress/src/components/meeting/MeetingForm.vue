@@ -2,14 +2,15 @@
 import { ref, onMounted, reactive, watch, computed } from 'vue';
 import { useI18n } from '@/i18n';
 import { FormInstance, FormRules, ElMessage } from 'element-plus';
-import { useUserInfoStore } from '@/stores/user';
+import { useMeeting } from '@/stores/common';
 import useWindowResize from '@/components/hooks/useWindowResize';
 import { editMeetingApi, creatMeetingApi, getPlatformsApi } from '@/api/api-meeting';
 import type { MeetingItemT } from '/@types/type-meeting';
 
 const props = defineProps<{ data?: MeetingItemT; sig: any }>();
 
-const userInfoStore = useUserInfoStore();
+const meetingStore = useMeeting();
+
 const screenWidth = useWindowResize();
 const isMobile = computed(() => (screenWidth.value <= 768 ? true : false));
 const emits = defineEmits(['confirm', 'close']);
@@ -26,7 +27,7 @@ const form = ref({
   email_list: '',
   is_record: meetingRecord.value,
   topic: '',
-  sponsor: userInfoStore.username,
+  sponsor: meetingStore.giteeId,
   start: '',
   end: '',
   agenda: '',
@@ -172,11 +173,18 @@ const submitMeeting = async (formEl: FormInstance | undefined) => {
 // 获取会议平台信息
 const platformOptions = ref([]);
 const getPlatforms = async () => {
-  if (platformOptions.value.length > 0) {
+  if (meetingStore.platformOptions.length > 0) {
+    platformOptions.value = meetingStore.platformOptions;
+    if (!props.data) {
+      form.value.platform = platformOptions.value[0];
+    }
     return;
   }
 
   platformOptions.value = await getPlatformsApi();
+
+  meetingStore.platformOptions = platformOptions.value;
+
   if (!props.data) {
     form.value.platform = platformOptions.value[0];
   }
@@ -221,7 +229,6 @@ onMounted(() => {
     </ElFormItem>
     <ElFormItem :label="i18nMeeting.PLATFORM" prop="platform">
       <ElRadioGroup v-model="form.platform" :disabled="!!data">
-        {{ platformOptions }}
         <ElRadioButton v-for="item in platformOptions" :key="item" :label="item" />
       </ElRadioGroup>
     </ElFormItem>
