@@ -30,9 +30,6 @@ const userName = ref('');
 const i18n = useI18n();
 const i18nMeeting = computed(() => i18n.value.home.HOME_CALENDAR);
 
-const screenWidth = useWindowResize();
-const isMobile = computed(() => (screenWidth.value <= 768 ? true : false));
-
 const commonStore = useCommon();
 const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
 
@@ -227,9 +224,12 @@ const confirmCancel = async () => {
     }
     confirmForm();
   } catch (err) {
-    const { code, msg } = err?.response?.data;
+    let failed = i18nMeeting.value.failed;
+    if (err && err.response && err.response.data) {
+      failed = err.response.data.msg;
+    }
     ElMessage({
-      message: msg || i18nMeeting.value.failed,
+      message: failed,
       type: 'error',
     });
     cancelVisible.value = false;

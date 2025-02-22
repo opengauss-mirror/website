@@ -1,14 +1,15 @@
 <script setup lang="ts">
-import { ref, reactive, onMounted } from 'vue';
+import { ref, reactive } from 'vue';
 import AppContent from '@/components/AppContent.vue';
 import { ElMessage, FormInstance, FormRules } from 'element-plus';
 
 import { isTestEmail, isTestPhone } from '@/shared/utils';
 import { meetupApplyForm } from '@/api/api-community';
-import { getUserAllInfo } from '@/api/api-user';
 import { getUserAuth, doLogin } from '@/shared/login';
 import { useRouter } from 'vitepress';
+import useWindowResize from '@/components/hooks/useWindowResize';
 
+const windowWidth = ref(useWindowResize());
 const router = useRouter();
 const { csrfToken } = getUserAuth();
 const ruleFormRef = ref<FormInstance>();
@@ -162,10 +163,7 @@ const supportsFormat = () => {
   meetupData.value.supports = supports;
 
   // 活动时长
-  if (
-    typeof meetupData.value.duration === 'string' ||
-    typeof meetupData.value.meetupFormat === 'string'
-  ) {
+  if (typeof meetupData.value.duration === 'string' || typeof meetupData.value.meetupFormat === 'string') {
     const duration = {
       optional: meetupData.value.duration,
       comment: durationComment.value,
@@ -184,8 +182,7 @@ const supportsFormat = () => {
 const durationComment = ref('');
 const isDurationOptional = ref(false);
 const durationChange = () => {
-  isDurationOptional.value =
-    meetupData.value.duration === '其他' ? true : false;
+  isDurationOptional.value = meetupData.value.duration === '其他' ? true : false;
 };
 
 // 获取用户信息,回填表单
@@ -196,8 +193,7 @@ queryUserInfo();
 const isMeetupFormat = ref(false);
 const meetupFormatComment = ref('');
 const meetupFormatChange = () => {
-  isMeetupFormat.value =
-    meetupData.value.meetupFormat === '其他' ? true : false;
+  isMeetupFormat.value = meetupData.value.meetupFormat === '其他' ? true : false;
 };
 
 // 需要支持
@@ -264,60 +260,21 @@ const submitMeetupForm = async (formEl: FormInstance | undefined) => {
     }
   });
 };
-
-// 获取用户信息
-async function getPersonalInfo() {
-  try {
-    const res = await getUserAllInfo();
-
-    if (res && res.data) {
-      const { username, email, phone } = res.data;
-      meetupData.value.principalUser = username;
-      meetupData.value.principalEmail = email;
-      meetupData.value.principalPhone = phone;
-    }
-  } catch (error: any) {
-    console.error(error);
-  }
-}
-onMounted(() => {
-  if (csrfToken) {
-    getPersonalInfo();
-  }
-});
 </script>
 <template>
   <AppContent :pc-top="40" :mobile-top="12">
     <div class="meetup-form">
       <h2>openGauss Meetup申请表</h2>
       <template v-if="csrfToken">
-        <el-form
-          ref="ruleFormRef"
-          :model="meetupData"
-          :rules="rules"
-          label-width="120px"
-          label-position="left"
-          status-icon
-        >
+        <el-form ref="ruleFormRef" :model="meetupData" :rules="rules" label-width="125px" :label-position="windowWidth > 768 ? 'left' : 'top'" status-icon>
           <el-form-item label="活动组织" prop="company">
-            <OInput
-              v-model="meetupData.company"
-              :placeholder="placeholderList[0]"
-            />
+            <OInput v-model="meetupData.company" :placeholder="placeholderList[0]" />
           </el-form-item>
           <el-form-item label="活动主题" prop="topic">
-            <OInput
-              v-model="meetupData.topic"
-              :placeholder="placeholderList[1]"
-            />
+            <OInput v-model="meetupData.topic" :placeholder="placeholderList[1]" />
           </el-form-item>
           <el-form-item label="活动日期" prop="date">
-            <el-date-picker
-              v-model="meetupData.date"
-              type="date"
-              value-format="YYYY-MM-DD"
-              :placeholder="placeholderList[2]"
-            />
+            <el-date-picker v-model="meetupData.date" type="date" value-format="YYYY-MM-DD" :placeholder="placeholderList[2]" />
           </el-form-item>
           <el-form-item label="活动时长" prop="duration">
             <ORadioGroup v-model="meetupData.duration" @change="durationChange">
@@ -325,122 +282,60 @@ onMounted(() => {
               <ORadio value="全天">全天（需准备8-10个议题）</ORadio>
               <ORadio value="其他">其他</ORadio>
             </ORadioGroup>
-            <OInput
-              v-if="isDurationOptional"
-              v-model="durationComment"
-              class="other-input"
-              :placeholder="placeholderList[3]"
-            />
+            <OInput v-if="isDurationOptional" v-model="durationComment" class="other-input" :placeholder="placeholderList[3]" />
           </el-form-item>
           <el-form-item label="活动城市" prop="city">
-            <OInput
-              v-model="meetupData.city"
-              :placeholder="placeholderList[4]"
-            />
+            <OInput v-model="meetupData.city" :placeholder="placeholderList[4]" />
           </el-form-item>
           <el-form-item label="活动规模" prop="meetupSize">
-            <OInput
-              v-model="meetupData.meetupSize"
-              :placeholder="placeholderList[5]"
-            />
+            <OInput v-model="meetupData.meetupSize" :placeholder="placeholderList[5]" />
           </el-form-item>
           <el-form-item label="活动负责人姓名" prop="principalUser">
-            <OInput
-              v-model="meetupData.principalUser"
-              :placeholder="placeholderList[6]"
-            />
+            <OInput v-model="meetupData.principalUser" :placeholder="placeholderList[6]" />
           </el-form-item>
           <el-form-item label="负责人所在公司" prop="principalCompany">
-            <OInput
-              v-model="meetupData.principalCompany"
-              :placeholder="placeholderList[7]"
-            />
+            <OInput v-model="meetupData.principalCompany" :placeholder="placeholderList[7]" />
           </el-form-item>
           <el-form-item label="负责人手机号" prop="principalPhone">
-            <OInput
-              v-model="meetupData.principalPhone"
-              :placeholder="placeholderList[8]"
-            />
+            <OInput v-model="meetupData.principalPhone" :placeholder="placeholderList[8]" />
           </el-form-item>
           <el-form-item label="活动负责人邮箱" prop="principalEmail">
-            <OInput
-              v-model="meetupData.principalEmail"
-              :placeholder="placeholderList[9]"
-            />
+            <OInput v-model="meetupData.principalEmail" :placeholder="placeholderList[9]" />
           </el-form-item>
           <el-form-item label="活动形式" prop="meetupFormat">
-            <ORadioGroup
-              v-model="meetupData.meetupFormat"
-              @change="meetupFormatChange"
-            >
+            <ORadioGroup v-model="meetupData.meetupFormat" @change="meetupFormatChange">
               <ORadio value="线上活动">线上活动</ORadio>
               <ORadio value="线下活动">线下活动</ORadio>
               <ORadio value="线上+线下">线上+线下</ORadio>
               <ORadio value="其他">其他</ORadio>
             </ORadioGroup>
-            <OInput
-              v-if="isMeetupFormat"
-              v-model="meetupFormatComment"
-              class="other-input"
-              :placeholder="placeholderList[10]"
-            />
+            <OInput v-if="isMeetupFormat" v-model="meetupFormatComment" class="other-input" :placeholder="placeholderList[10]" />
           </el-form-item>
           <el-form-item label="需要什么支持" prop="supports">
-            <OCheckboxGroup
-              v-model="meetupData.supports"
-              class="column"
-              @change="supportsChange"
-            >
-              <OCheckbox value="openGauss社区介绍PPT"
-                >openGauss社区介绍PPT</OCheckbox
-              >
-              <OCheckbox value="宣传资料"
-                >宣传资料（公众号推文、社群宣传）</OCheckbox
-              >
-              <OCheckbox value="物料源文件"
-                >物料源文件（易拉宝、宣传海报、主KV、横幅、拍照异形牌、直播背景框等源文件）</OCheckbox
-              >
-              <OCheckbox value="openGauss B站直播资源"
-                >openGauss B站直播资源（如需直播）</OCheckbox
-              >
-              <OCheckbox value="社区周边礼品"
-                >社区周边礼品（支持100人规模以下的实际人数申请）</OCheckbox
-              >
+            <OCheckboxGroup v-model="meetupData.supports" class="column" @change="supportsChange">
+              <OCheckbox value="openGauss社区介绍PPT">openGauss社区介绍PPT</OCheckbox>
+              <OCheckbox value="宣传资料">宣传资料（公众号推文、社群宣传）</OCheckbox>
+              <OCheckbox value="物料源文件">物料源文件（易拉宝、宣传海报、主KV、横幅、拍照异形牌、直播背景框等源文件）</OCheckbox>
+              <OCheckbox value="openGauss B站直播资源">openGauss B站直播资源（如需直播）</OCheckbox>
+              <OCheckbox value="社区周边礼品">社区周边礼品（支持100人规模以下的实际人数申请）</OCheckbox>
               <OCheckbox value="其他">其他</OCheckbox>
             </OCheckboxGroup>
-            <OInput
-              v-if="isSupportsComment"
-              v-model="supportsComment"
-              class="other-input"
-              :placeholder="placeholderList[11]"
-            />
+            <OInput v-if="isSupportsComment" v-model="supportsComment" class="other-input" :placeholder="placeholderList[11]" />
           </el-form-item>
           <el-form-item label="活动环节议题" prop="details">
-            <OInput
-              v-model="meetupData.details"
-              type="textarea"
-              :rows="3"
-              :placeholder="placeholderList[12]"
-            />
+            <OInput v-model="meetupData.details" type="textarea" :rows="3" :placeholder="placeholderList[12]" />
           </el-form-item>
           <el-form-item>
             <OCheckboxGroup v-model="meetupPrivacy">
               <OCheckbox value="1"
                 >您理解并同意，请填写并提交的内容，即视为您已充分阅读并理解openGauss的
-                <a
-                  href="/zh/privacyPolicy/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >《隐私声明》</a
-                >
+                <a href="/zh/privacyPolicy/" target="_blank" rel="noopener noreferrer">《隐私声明》</a>
               </OCheckbox>
             </OCheckboxGroup>
           </el-form-item>
           <el-form-item>
             <div style="margin-top: 12px">
-              <OButton type="primary" @click="submitMeetupForm(ruleFormRef)">
-                提交申请
-              </OButton>
+              <OButton type="primary" @click="submitMeetupForm(ruleFormRef)"> 提交申请 </OButton>
             </div>
           </el-form-item>
         </el-form>
@@ -448,9 +343,7 @@ onMounted(() => {
 
       <template v-else>
         <div class="auth-box">
-          <OButton type="primary" @click="doLogin()"
-            >请先登录后，在填写</OButton
-          >
+          <OButton type="primary" @click="doLogin()">请先登录后，在填写</OButton>
         </div>
       </template>
     </div>

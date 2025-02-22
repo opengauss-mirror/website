@@ -5,7 +5,7 @@ import { FormInstance, FormRules, ElMessage } from 'element-plus';
 import { useUserInfoStore } from '@/stores/user';
 import useWindowResize from '@/components/hooks/useWindowResize';
 import { editMeetingApi, creatMeetingApi, getPlatformsApi } from '@/api/api-meeting';
-import type { MeetingItemT, MeetingPostT, OptionItemT } from '/@types/type-meeting';
+import type { MeetingItemT } from '/@types/type-meeting';
 
 const props = defineProps<{ data?: MeetingItemT; sig: any }>();
 
@@ -111,9 +111,12 @@ const updateMeeting = async () => {
       });
     }
   } catch (err) {
-    const { code, msg } = err?.response?.data;
+    let failed = i18nMeeting.value.failed;
+    if (err && err.response && err.response.data) {
+      failed = err.response.data.msg;
+    }
     ElMessage({
-      message: msg || i18nMeeting.value.failed,
+      message: failed,
       type: 'error',
     });
   }
@@ -132,9 +135,12 @@ const creatMeeting = async () => {
       });
     }
   } catch (err) {
-    const { code, msg } = err?.response?.data;
+    let failed = i18nMeeting.value.failed;
+    if (err && err.response && err.response.data) {
+      failed = err.response.data.msg;
+    }
     ElMessage({
-      message: msg || i18nMeeting.value.FAILED,
+      message: failed,
       type: 'error',
     });
   }
@@ -148,21 +154,19 @@ const close = () => {
 // 提交
 const submitMeeting = async (formEl: FormInstance | undefined) => {
   if (!formEl) return;
-  try {
-    await formEl.validate((valid) => {
-      if (valid) {
-        if (isModify.value) {
-          updateMeeting();
-        } else {
-          creatMeeting();
-        }
 
-        close();
-        emits('confirm');
+  await formEl.validate((valid) => {
+    if (valid) {
+      if (isModify.value) {
+        updateMeeting();
+      } else {
+        creatMeeting();
       }
-    });
-  } finally {
-  }
+
+      close();
+      emits('confirm');
+    }
+  });
 };
 
 // 获取会议平台信息
@@ -171,12 +175,10 @@ const getPlatforms = async () => {
   if (platformOptions.value.length > 0) {
     return;
   }
-  try {
-    platformOptions.value = await getPlatformsApi();
-    if (!props.data) {
-      form.value.platform = platformOptions.value[0];
-    }
-  } finally {
+
+  platformOptions.value = await getPlatformsApi();
+  if (!props.data) {
+    form.value.platform = platformOptions.value[0];
   }
 };
 
@@ -276,10 +278,11 @@ onMounted(() => {
   padding-right: 24px;
   .time-select {
     display: flex;
-    justify-content: space-between;
     width: 100%;
     margin: 0;
-
+    .line {
+      margin: 0 8px;
+    }
     @media screen and (max-width: 768px) {
       flex-wrap: wrap;
     }
@@ -313,10 +316,12 @@ onMounted(() => {
     }
   }
   :deep(.el-select) {
+    --o-select-border-color: var(--o-color-border1);
     .el-select__wrapper {
       min-height: 36px;
       border-radius: 0;
       box-shadow: 0 0 0 1px var(--o-select-border-color) inset;
+      min-width: auto;
       &.is-focused {
         --o-select-border-color: var(--o-color-brand1);
       }
