@@ -150,8 +150,9 @@ const getPersonalInfo = async () => {
     const res = await getUserAllInfo();
 
     if (res && res.data) {
-      const { username } = res.data;
-      userName.value = username;
+      const { identities } = res.data;
+      const giteeData = identities.find((e) => e.provider?.includes('gitee'));
+      userName.value = giteeData.username;
     }
   } catch (error: any) {
     console.error(error);
@@ -289,11 +290,11 @@ watch(
       <ElCalendar v-if="windowWidth > 768" ref="calendarRef" class="calender">
         <template #header="{ date }">
           <div class="left-title lable-name">
-            <OIcon @click="selectDate('prev-month', date)">
+            <OIcon @click="selectDate(-1)">
               <icon-left></icon-left>
             </OIcon>
             <span class="month-date">{{ date }}</span>
-            <OIcon @click="selectDate('next-month', date)">
+            <OIcon @click="selectDate(1)">
               <icon-right></icon-right>
             </OIcon>
           </div>
@@ -332,14 +333,14 @@ watch(
               </div>
             </template>
             <div class="meet-detail">
-              <ElCalendar ref="calendar" class="calendar-mo calender">
+              <ElCalendar ref="calendarRef" class="calendar-mo calender">
                 <template #header="{ date }">
                   <div class="left-title">
-                    <OIcon @click="selectDate('prev-month', date)">
+                    <OIcon @click="selectDate(-1)">
                       <icon-left></icon-left>
                     </OIcon>
                     <span class="month-date">{{ date }}</span>
-                    <OIcon @click="selectDate('next-month', date)">
+                    <OIcon @click="selectDate(1)">
                       <icon-right></icon-right>
                     </OIcon>
                   </div>
@@ -348,7 +349,7 @@ watch(
                   <div class="out-box" :class="{ 'be-active': dates.includes(data.day) }" @click="clickMeeting(data.day)">
                     <div class="day-box">
                       <p :class="data.isSelected ? 'is-selected' : ''" class="date-calender">
-                        {{ data.day.split('-').slice(2)[0] }}
+                        {{ Number(data.day.slice(-2)) }}
                       </p>
                     </div>
                   </div>

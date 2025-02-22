@@ -12,7 +12,7 @@ import { ElMessage } from 'element-plus';
  */
 const params = {
   community: 'opengauss',
-  client_id: '538af6967c724b1fabd0da83109ede6e',
+  client_id: import.meta.env.VITE_APP_ID,
 };
 export function queryPermission() {
   const url = '/api-oneid/oneid/user/refresh';
