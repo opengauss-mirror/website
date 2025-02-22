@@ -1,11 +1,10 @@
 <script setup lang="ts">
-import { ref, reactive, onMounted } from 'vue';
+import { ref, reactive } from 'vue';
 import AppContent from '@/components/AppContent.vue';
 import { ElMessage, FormInstance, FormRules } from 'element-plus';
 
 import { isTestEmail, isTestPhone } from '@/shared/utils';
 import { meetupApplyForm } from '@/api/api-community';
-import { getUserAllInfo } from '@/api/api-user';
 import { getUserAuth, doLogin } from '@/shared/login';
 import { useRouter } from 'vitepress';
 import useWindowResize from '@/components/hooks/useWindowResize';

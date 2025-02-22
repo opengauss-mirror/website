@@ -111,9 +111,12 @@ const updateMeeting = async () => {
       });
     }
   } catch (err) {
-    const { msg } = err?.response?.data;
+    let failed = i18nMeeting.value.failed;
+    if (err && err.response && err.response.data) {
+      failed = err.response.data.msg;
+    }
     ElMessage({
-      message: msg || i18nMeeting.value.failed,
+      message: failed,
       type: 'error',
     });
   }
@@ -132,9 +135,12 @@ const creatMeeting = async () => {
       });
     }
   } catch (err) {
-    const { msg } = err?.response?.data;
+    let failed = i18nMeeting.value.failed;
+    if (err && err.response && err.response.data) {
+      failed = err.response.data.msg;
+    }
     ElMessage({
-      message: msg || i18nMeeting.value.FAILED,
+      message: failed,
       type: 'error',
     });
   }
@@ -169,12 +175,10 @@ const getPlatforms = async () => {
   if (platformOptions.value.length > 0) {
     return;
   }
-  try {
-    platformOptions.value = await getPlatformsApi();
-    if (!props.data) {
-      form.value.platform = platformOptions.value[0];
-    }
-  } finally {
+
+  platformOptions.value = await getPlatformsApi();
+  if (!props.data) {
+    form.value.platform = platformOptions.value[0];
   }
 };
 

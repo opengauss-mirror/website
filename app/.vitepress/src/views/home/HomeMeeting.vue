@@ -224,9 +224,12 @@ const confirmCancel = async () => {
     }
     confirmForm();
   } catch (err) {
-    const { code, msg } = err?.response?.data;
+    let failed = i18nMeeting.value.failed;
+    if (err && err.response && err.response.data) {
+      failed = err.response.data.msg;
+    }
     ElMessage({
-      message: msg || i18nMeeting.value.failed,
+      message: failed,
       type: 'error',
     });
     cancelVisible.value = false;
