@@ -247,7 +247,7 @@ const submitMeetupForm = async (formEl: FormInstance | undefined) => {
   if (meetupPrivacy.value.length < 1) {
     ElMessage({
       type: 'error',
-      message: '请勾选隐私声明',
+      message: '请勾选隐私政策',
     });
     return;
   }
@@ -329,7 +329,12 @@ const submitMeetupForm = async (formEl: FormInstance | undefined) => {
             <OCheckboxGroup v-model="meetupPrivacy">
               <OCheckbox value="1"
                 >您理解并同意，请填写并提交的内容，即视为您已充分阅读并理解openGauss的
-                <a href="/zh/privacyPolicy/" target="_blank" rel="noopener noreferrer">《隐私声明》</a>
+                <a
+                  href="/zh/privacyPolicy/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >《隐私政策》</a
+                >
               </OCheckbox>
             </OCheckboxGroup>
           </el-form-item>
