@@ -28,7 +28,7 @@ export const COOKIE_KEY = 'agreed-cookiepolicy';
 export const useCookieStore = defineStore('cookie', {
   state: () => ({
     status: '0',
-    version: '20241230',
+    version: '20250223',
     isNoticeVisible: false,
   }),
   getters: {
