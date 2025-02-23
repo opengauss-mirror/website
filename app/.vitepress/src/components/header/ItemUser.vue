@@ -21,7 +21,7 @@ const userInfoStore = useUserInfoStore();
 const jumpToUserZone = () => {
   const language = lang.value === 'zh' ? 'zh' : 'en';
   const origin = import.meta.env.VITE_LOGIN_URL;
-  window.open(`${origin}/${language}/profile`, '_black');
+  window.open(`${origin}/${language}/profile`, '_blank');
 };
 onMounted(() => {
   requestUserInfo();
