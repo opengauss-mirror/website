@@ -12,18 +12,12 @@ To ensure the secure and stable running of the website of the openGauss communit
 
 ## Third-Party Partners
 
-Third-party company name: Beijing Baidu Netcom Science Technology Co., Ltd.
-
-Product/Type: Baidu Statistics SDK
-
-Shared data: device information (including the IP address, operating system, Internet service provider, system language, screen resolution, screen color, region, browser type, browser language, and browser version) and access information (including the access source, searched keywords, accessed pages, exit page, visitor identifier, number of community access times, stay duration, access timestamp, and type and version of the server used to access the community)
-
-Data sharing purpose: daily data analysis of community operations
-
-Application scenario: user access to the community website
-
-Data sharing method: transmission through background interfaces
-
-Third-party personal data processing rules: [https://tongji.baidu.com/web/help/article?id=330&type=0](https://tongji.baidu.com/web/help/article?id=330&type=0)
+- **Third-party company name**: Beijing Baidu Netcom Science Technology Co., Ltd.
+- **Product/Type**: Baidu Statistics SDK
+- **Shared data**: device information (including the IP address, operating system, Internet service provider, system language, screen resolution, screen color, region, browser type, browser language, and browser version) and access information (including the access source, searched keywords, accessed pages, exit page, visitor identifier, number of community access times, stay duration, access timestamp, and type and version of the server used to access the community)
+- **Data sharing purpose**: daily data analysis of community operations
+- **Application scenario**: user access to the community website
+- **Data sharing method**: transmission through background interfaces
+- **Third-party personal data processing rules**: [https://tongji.baidu.com/web/help/article?id=330&type=0](https://tongji.baidu.com/web/help/article?id=330&type=0)
 
 </div>

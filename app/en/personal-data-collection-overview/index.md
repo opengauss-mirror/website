@@ -14,84 +14,63 @@ This website involves the following personal data collection scenarios:
 
 ## 1. Account Service
 
-Purpose: Verify identity during login and registration on this website and maintain your personal data.
+- **Purpose**: Verify identity during login and registration on this website and maintain your personal data.
+- **Personal data type**: data you voluntarily submit
+- **Collection method**: user input or shared by third-party accounts
+- **Personal data fields**: user name, company name, **email address**, **phone number**, password, **email or phone verification code** and Gitee account details (UUID, ID, nickname, and **email address**).
 
-Personal data type: data you voluntarily submit
+## 2. Mailing List Service
 
-Collection method: user input or shared by third-party accounts
+- **Purpose**: Provide email subscription services, enabling participation in community discussions.
+- **Personal data type**: data you voluntarily submit
+- **Collection method**: user input
+- **Personal data fields**: **email address** and name (optional)
 
-Personal data fields: user name, company name, **email address**, **phone number**, password, **email or phone verification code** and Gitee account details (UUID, user ID, nickname, and **email address**).
+## 3. Service Optimization
 
-## 2. Mailing List
+- **Purpose**: Maintain service quality and operational requirements by automatically collecting and storing essential log data for community management and system security.
+- **Personal data type**: application or device information
+- **Collection method**: collected by the system
+- **Personal data fields**: access timestamp, IP address, request details, access status, accessed resource size, access source, user agent, application information (application ID, SDK version, browser, and browser version), device information (operating system, operating system version, device type, device vendor, screen width, and screen height), application usage information (event name, event attributes, reporting time, previous page URL, page title, current page URL)
 
-Purpose: Provide email subscription services, enabling participation in community discussions.
+## 4. Contributor License Agreement (CLA) Signing
 
-Personal data type: data you voluntarily submit
-Collection method: user input
+- **Purpose**: Verify your CLA signing status for code contributions and perform statistical analysis to assess community operations.
+- **Personal data type**: data you voluntarily submit
+- **Collection method**: user input
+- **Personal data fields**: We collect personal data based on the scenario:
+  - For corporate CLA signing: name of the authorized representative, position, company name, **email address**, **email verification code**, **phone number (optional)**, address (optional), fax number (optional), and the signed CLA document
+  - For corporate contributor registration: name, **email address**, corporation, and **email verification code**
+  - For individual CLA signing: name, **email address**, and **email verification code**
+  - For enterprise administrator login: account, password, and **email address**
+  - For community administrator login: Gitee ID, Gitee organization name, GitHub ID, and GitHub organization name
 
-Personal data fields: **email address** and name (optional)
+## 5. Meeting Service
 
-## 3. Contributor License Agreement (CLA) Signing
+- **Purpose**: Configure meeting permissions and send meeting invitation emails.
+- **Personal data type**: data you voluntarily submit
+- **Collection method**: user input
+- **Personal data fields**: Gitee ID and **email address**
 
-Purpose: Verify your CLA signing status for code contributions and perform statistical analysis to assess community operations.
+## 6. Content Release
 
-Personal data type: data you voluntarily submit
-Collection method: user input
+- **Purpose**: Help developers better understand and connect with the community, enabling faster engagement.
+- **Personal data type**: data you voluntarily submit
+- **Collection method**: user input
+- **Personal data fields**: **photo**, name, **email address**, company name, position, school, profile, and Gitee ID
 
-Personal data fields: We collect personal data based on the scenario:
+## 7. Meetup Application
 
-- For corporate CLA signing: name of the authorized representative, position, company name, **email address**, **email verification code**, **phone number (optional)**, address (optional), fax number (optional), and the signed CLA document
-- For corporate contributor registration: name, **email address**, corporation, and **email verification code**
-- For individual CLA signing: name, **email address**, and **email verification code**
-- For enterprise administrator login: account, password, and **email address**
-- For community administrator login: Gitee ID, Gitee organization name, GitHub ID, and GitHub organization name
+- **Purpose**: Contact you and coordinate event arrangements, including sign-ins and event nameplates.
+- **Personal data type**: data you voluntarily submit
+- **Collection method**: user input
+- **Personal data fields**: contact information (name, **phone number**, **email address** and company) and meetup details (organization, agenda, date, duration, city, event scale, event form, and topics)
 
-## 4. Meeting Service
+## 8. Pairing Plan Application
 
-Purpose: Configure meeting permissions and send meeting invitation emails.
-
-Personal data type: data you voluntarily submit
-
-Collection method: user input
-
-Personal data fields: Gitee ID and **email address**
-
-## 5.Content Release
-
-Purpose: Help developers better understand and connect with the community, enabling faster engagement.
-
-Personal data type: data you voluntarily submit
-
-Collection method: user input
-
-Personal data fields: photo, name, **email address**, company name, position, school, profile, and Gitee ID
-
-## 6. Meetup Application
-
-Purpose: Contact you and coordinate event arrangements, including sign-ins and event nameplates.
-
-Personal data type: data you voluntarily submit
-Collection method: user input
-
-Personal data fields: contact information (name, company, **phone number**, and **email address**) and meetup details (organization, agenda, date, duration, city, event scale, event form, and topics)
-
-## 7. Pairing Plan Application
-
-Purpose: Contact you and verify your application and related details.
-
-Personal data type: data you voluntarily submit
-Collection method: user input
-
-Personal data fields: name, organization, **email address**, **phone number**, openGauss usage (scenario, version, number of nodes, hardware details, issue description)
-
-## 8. Service Optimization
-
-Purpose: Maintain service quality and operational requirements by automatically collecting and storing essential log data for community management and system security.
-
-Personal data type: application or device information
-
-Collection method: collected by the system
-
-Personal data fields: access timestamp, IP address, request details, access status, accessed resource size, access source, and user agent
+- **Purpose**: Contact you and verify your application and related details.
+- **Personal data type**: data you voluntarily submit
+- **Collection method**: user input
+- **Personal data fields**: name, organization, **email address**, **phone number**, openGauss usage (scenario, version, number of nodes, hardware details, issue description)
 
 </div>
