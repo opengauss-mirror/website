@@ -40,6 +40,7 @@ The openGauss community sometimes stores cookies on computers or mobile devices.
      Expiration: session
      <br/>
      Purpose: Prevent malicious attacks
+
 2. Your preferences and settings. A website can use cookies to save settings, such as the languages, website theme, and other browsing preferences of computers or mobile devices.
    - **a)** agreed-cookiepolicy
      <br/>
@@ -55,6 +56,7 @@ The openGauss community sometimes stores cookies on computers or mobile devices.
      Expiration: 6 months
      <br/>
      Purpose: Record your preference for the website theme.
+
 3. Statistical analysis cookies. We collect information about your use of our website. These cookies help us understand how the services are performing and being used.
    - **a)** Baidu Analytics cookies
      <br/>

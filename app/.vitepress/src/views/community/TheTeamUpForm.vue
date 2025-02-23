@@ -157,7 +157,7 @@ const validateForm = () => {
         } else {
           ElMessage({
             type: 'error',
-            message: '请勾选隐私声明',
+            message: '请勾选隐私政策',
           });
         }
       }
@@ -269,7 +269,7 @@ onMounted(() => {
             >您理解并同意，请填写并提交的内容，即视为您已充分阅读并理解openGauss的</span
           >
           <a :href="privacyPolicy" target="_blank" rel="noopener noreferrer"
-            >《隐私声明》</a
+            >《隐私政策》</a
           >
         </el-checkbox>
         <div class="btn-wrap">

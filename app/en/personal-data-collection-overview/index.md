@@ -64,7 +64,7 @@ This website involves the following personal data collection scenarios:
 - **Purpose**: Contact you and coordinate event arrangements, including sign-ins and event nameplates.
 - **Personal data type**: data you voluntarily submit
 - **Collection method**: user input
-- **Personal data fields**: contact information (name, **phone number**, **email address** and company) and meetup details (organization, agenda, date, duration, city, event scale, event form, and topics)
+- **Personal data fields**: contact information (name, **phone number**, **email address** and company) and meetup details (organization, agenda, date, duration, city, event scale, event form, event support, and topics)
 
 ## 8. Pairing Plan Application
 
