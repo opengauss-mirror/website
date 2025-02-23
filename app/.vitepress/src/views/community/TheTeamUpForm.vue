@@ -213,7 +213,7 @@ async function getPersonalInfo() {
 const { csrfToken } = getUserAuth();
 onMounted(() => {
   if (csrfToken) {
-    getPersonalInfo();
+    // getPersonalInfo();
   }
 });
 </script>
@@ -261,7 +261,7 @@ onMounted(() => {
         <el-form-item label="申请人邮箱" prop="email">
           <OInput v-model="formData.email" placeholder="请输入" />
         </el-form-item>
-        <el-form-item label="申请人电话" prop="phone">
+        <el-form-item label="申请人手机号" prop="phone">
           <OInput v-model="formData.phone" placeholder="请输入" />
         </el-form-item>
         <el-checkbox v-model="checkedPrivacyPolicy">
