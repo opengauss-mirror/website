@@ -206,7 +206,7 @@ const supportsChange = () => {
 };
 
 // 提交申请
-const meetupPrivacy = ref('');
+const meetupPrivacy = ref([]);
 async function meetupApply() {
   try {
     await meetupApplyForm(meetupData.value).then((res) => {
@@ -216,7 +216,8 @@ async function meetupApply() {
           message: '申请成功！',
         });
         ruleFormRef.value?.resetFields();
-        meetupPrivacy.value = '';
+        meetupPrivacy.value = [];
+        isPrivacy.value = false;
 
         setTimeout(() => {
           router.go('/zh/call-for-meetup/collect/');
@@ -243,12 +244,10 @@ async function meetupApply() {
   }
 }
 
+const isPrivacy = ref(false);
 const submitMeetupForm = async (formEl: FormInstance | undefined) => {
   if (meetupPrivacy.value.length < 1) {
-    ElMessage({
-      type: 'error',
-      message: '请勾选隐私政策',
-    });
+    isPrivacy.value = true;
     return;
   }
 
@@ -326,22 +325,18 @@ const submitMeetupForm = async (formEl: FormInstance | undefined) => {
             <OInput v-model="meetupData.details" type="textarea" :rows="3" :placeholder="placeholderList[12]" />
           </el-form-item>
           <el-form-item>
-            <OCheckboxGroup v-model="meetupPrivacy">
-              <OCheckbox value="1"
-                >您理解并同意，请填写并提交的内容，即视为您已充分阅读并理解openGauss的
-                <a
-                  href="/zh/privacyPolicy/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >《隐私政策》</a
-                >
-              </OCheckbox>
-            </OCheckboxGroup>
+            <div class="privacy-box">
+              <OCheckboxGroup v-model="meetupPrivacy">
+                <OCheckbox value="1"
+                  >您理解并同意，请填写并提交的内容，即视为您已充分阅读并理解openGauss的
+                  <a href="/zh/privacyPolicy/" target="_blank" rel="noopener noreferrer">《隐私政策》</a>
+                </OCheckbox>
+              </OCheckboxGroup>
+              <p v-if="isPrivacy && meetupPrivacy.length === 0" class="privacy-error">请勾选隐私政策</p>
+            </div>
           </el-form-item>
           <el-form-item>
-            <div style="margin-top: 12px">
-              <OButton type="primary" @click="submitMeetupForm(ruleFormRef)"> 提交申请 </OButton>
-            </div>
+            <OButton type="primary" @click="submitMeetupForm(ruleFormRef)"> 提交申请 </OButton>
           </el-form-item>
         </el-form>
       </template>
@@ -355,6 +350,20 @@ const submitMeetupForm = async (formEl: FormInstance | undefined) => {
   </AppContent>
 </template>
 <style lan="scss" scoped>
+.privacy-box {
+  position: relative;
+  padding-bottom: 18px;
+  .privacy-error {
+    color: var(--el-color-danger);
+    font-size: 12px;
+    line-height: 1;
+    padding-top: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
+
 .meetup-form {
   background: var(--o-color-bg2);
   box-shadow: var(--o-shadow-l1);
@@ -362,6 +371,7 @@ const submitMeetupForm = async (formEl: FormInstance | undefined) => {
   @media (max-width: 1100px) {
     padding: 16px;
   }
+
   h2 {
     font-size: 32px;
     font-weight: 500;

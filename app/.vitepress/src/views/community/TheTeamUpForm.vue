@@ -6,7 +6,6 @@ import { ElMessage, FormInstance, FormRules } from 'element-plus';
 import { isTestEmail, isTestPhone } from '@/shared/utils';
 import useWindowResize from '@/components/hooks/useWindowResize';
 import { getUserAuth, doLogin } from '@/shared/login';
-import { getUserAllInfo } from '@/api/api-user';
 import { teamupApplyForm } from '@/api/api-community';
 
 const router = useRouter();
@@ -149,6 +148,10 @@ const checkedPrivacyPolicy = ref(false);
 const formRef = ref<FormInstance>();
 
 const validateForm = () => {
+  if (!checkedPrivacyPolicy.value) {
+    isPrivacy.value = true;
+    return;
+  }
   formRef.value
     ?.validate((valid) => {
       if (valid) {
@@ -167,6 +170,7 @@ const validateForm = () => {
     });
 };
 
+const isPrivacy = ref(false);
 const submitForm = async () => {
   try {
     const res = await teamupApplyForm(formData);
@@ -194,28 +198,7 @@ const submitForm = async () => {
   }
 };
 
-// 获取用户信息
-async function getPersonalInfo() {
-  try {
-    const res = await getUserAllInfo();
-
-    if (res && res.data) {
-      const { username, email, phone } = res.data;
-      formData.name = username;
-      formData.email = email;
-      formData.phone = phone;
-    }
-  } catch (error: any) {
-    console.error(error);
-  }
-}
-
 const { csrfToken } = getUserAuth();
-onMounted(() => {
-  if (csrfToken) {
-    // getPersonalInfo();
-  }
-});
 </script>
 
 <template>
@@ -245,12 +228,7 @@ onMounted(() => {
           <OInput v-model="formData.hardware" placeholder="请输入" />
         </el-form-item>
         <el-form-item label="目前遇到的问题描述" prop="description">
-          <OInput
-            v-model="formData.description"
-            placeholder="请输入"
-            type="textarea"
-            :autosize="{ minRows: 6 }"
-          />
+          <OInput v-model="formData.description" placeholder="请输入" type="textarea" :autosize="{ minRows: 6 }" />
         </el-form-item>
         <el-form-item label="申请人姓名" prop="name">
           <OInput v-model="formData.name" placeholder="请输入" />
@@ -264,24 +242,25 @@ onMounted(() => {
         <el-form-item label="申请人手机号" prop="phone">
           <OInput v-model="formData.phone" placeholder="请输入" />
         </el-form-item>
-        <el-checkbox v-model="checkedPrivacyPolicy">
-          <span
-            >您理解并同意，请填写并提交的内容，即视为您已充分阅读并理解openGauss的</span
-          >
-          <a :href="privacyPolicy" target="_blank" rel="noopener noreferrer"
-            >《隐私政策》</a
-          >
-        </el-checkbox>
-        <div class="btn-wrap">
-          <OButton type="primary" @click="validateForm"> 提交申请 </OButton>
-        </div>
+        <el-form-item>
+          <div class="privacy-box">
+            <el-checkbox v-model="checkedPrivacyPolicy">
+              <span>您理解并同意，请填写并提交的内容，即视为您已充分阅读并理解openGauss的</span>
+              <a :href="privacyPolicy" target="_blank" rel="noopener noreferrer">《隐私政策》</a>
+            </el-checkbox>
+            <p v-if="isPrivacy && !checkedPrivacyPolicy" class="privacy-error">请勾选隐私政策</p>
+          </div>
+        </el-form-item>
+        <el-form-item>
+          <div class="btn-wrap">
+            <OButton type="primary" @click="validateForm"> 提交申请 </OButton>
+          </div>
+        </el-form-item>
       </el-form>
 
       <template v-else>
         <div class="auth-box">
-          <OButton type="primary" @click="doLogin()"
-            >请先登录后，在填写</OButton
-          >
+          <OButton type="primary" @click="doLogin()">请先登录后，在填写</OButton>
         </div>
       </template>
     </div>
@@ -289,6 +268,19 @@ onMounted(() => {
 </template>
 
 <style lan="scss" scoped>
+.privacy-box {
+  position: relative;
+  .privacy-error {
+    color: var(--el-color-danger);
+    font-size: 12px;
+    line-height: 1;
+    padding-top: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
+
 .team-up-form {
   background-color: var(--o-color-bg2);
   padding: 40px 56px 40px 46px;
@@ -337,10 +329,6 @@ onMounted(() => {
       font-size: var(--o-font-size-text);
       line-height: var(--o-line-height-text);
     }
-  }
-
-  .btn-wrap {
-    margin-top: 22px;
   }
 
   .auth-box {
