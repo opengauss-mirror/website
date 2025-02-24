@@ -34,7 +34,7 @@ signing system (click [here](https://clasign.osinfra.cn/sign/gitee_opengauss-161
 
 **f) Content Release**. When you participate in Community meetings, Community activities, contribution in the open source Community, blogs, newsgroups, or Community organization, you may submit your **photo**, name, **email address**, company name, position, school, profile and Gitee ID for posting on our website so that developers can better understand the community, quickly make contact, and participate in the community.
 
-**g) Meetups**. When you apply for an openGauss meetup, the community will collect your name, **phone number**, **email address**, company, and meetup details (including organization, agenda, date, duration, city, event scale, event form, event support, and topics) from the application form you fill in. The collected data will be used to contact you for the purpose of confirming your application and related matters, as well as arranging for relevant affairs, including sign-ins and nameplates.
+**g) Meetups**. When you apply organize an openGauss meetup, the community will collect your name, **phone number**, **email address**, company, and meetup details (including organization, agenda, date, duration, city, event scale, event form, event support, and topics) from the application form you fill in. The collected data will be used to contact you for the purpose of confirming your application and related matters, as well as arranging for relevant affairs, including sign-ins and nameplates.
 
 **h) Pairing Plan Application**. When you apply for participation in the openGauss pairing plan, the community will collect your name, company, **email address**, **phone number**, and openGauss usage information (including use cases, version details, number of nodes, hardware information, and issue description) from the application form you fill in. The collected data will be used to contact you for the purpose of confirming your application and related matters.
 
@@ -88,7 +88,7 @@ Please note that these rights are not absolute and may be restricted in accordan
   - If you request us to delete the data (including your name and **email address**) collected for the purpose of signing the CLA, we will no longer be able to provide you with the corresponding services.**<u>You should understand that the CLA is a legally binding document signed by you or the corporation you represent. It serves as a proof of your permanent grants of rights over your contributions. Therefore, we will not delete your personal data upon your request, unless deleting the data does not affect the legal effect of the CLA you have signed</u>**.
   - any personal data you publicly display on the community website will be stored in the relevant code repository, and historical records will persist even after deletion.
 
-**<u>Generally, we will respond to you within one month, unless otherwise required by applicable laws. Depending on the complexity of your requests, we may extend the period by two further months. In this case, we will inform you of the extension and its reasons within one month of receiving your request</u>**. Please note that under some circumstances, for example where we cannot verify your identity, or your claim exceeds your rights under applicable laws, we may refuse your request. In this case, we will inform you in written form that your request is refused together with the reasons for our refusal.
+**<u>Generally, we will respond to you within one month, unless otherwise required by applicable laws</u>**. Please note that under some circumstances, for example where we cannot verify your identity, or your claim exceeds your rights under applicable laws, we may refuse your request. In this case, we will inform you in written form that your request is refused together with the reasons for our refusal.
 
 You can change the scope of your authorization for us to collect your personal data or withdraw your authorization. However, your decision to withdraw your consent or authorization does not affect any previous processing of personal data based on your authorization.
 
@@ -101,7 +101,7 @@ You can log in to the user center using an openGauss community account using the
 You can log in using an openGauss community account and perform the following operations in User Center:
 
 1. Change your avatar.
-2. Choose Info to view and correct your personal data.
+2. Choose Info to view and correct your basic informatio(nickname, company name).
 3. Choose Identity to check and correct you **email address**, **phone number**, and Gitee account.
 4. Choose Security to reset your login password.
 
@@ -109,22 +109,24 @@ You have the right to update or modify your personal data processed by us when y
 
 ### 6.3 Data Deletion
 
-You can log in using an openGauss community account and choose User Center > Info to delete basic information about your openGauss community account, or choose User Center > Identity to unbind your Gitee account.
+You can log in using an openGauss community account and perform the following operations in User Center:
+
+1. Choose User Center > Identity to unbind your Gitee account.
 
 ### 6.4 Revocation of Consent
 
 1. You can contact us via email to object to the processing of your personal information.
 2. You can contact us via email to restrict the processing of your personal information.
-3. You can choose to unsubscribe from the mailing list,
-    - If you are not a registered user of the mailing list, you can enter your email address on the unsubscribe page, and that email address will receive a unsubscribe notification email. Click the corresponding confirmation link to complete the unsubscribe process
-    - If you are a registered user of the mailing list, you can directly unsubscribe from the mailing list by clicking unsubscribe
+3. You can choose to unsubscribe from the mailing list:
+    - If you are not a registered user of the mailing list, you can enter your email address on the unsubscribe page, and that email address will receive a unsubscribe notification email. Click the corresponding confirmation link to complete the unsubscribe process;
+    - If you are a registered user of the mailing list, you can directly enter the mailing list that needs to be unsubscribed and click unsubscribe to unsubscribe;
 4. You can choose User Center > Security > Cancel signature to withdraw consent to the policy.
 
 **Please note that if you withdraw your consent to the policy, we will be unable to continue providing services to you, but your account will remain active.**
 
 ### 6.5 Deletion
 
-You can log in to the openGauss community and choose User Center > Security > Delete to delete your openGauss community account. This action will also delete your personal information in the openGauss community. Exercise caution when performing this operation.
+You can log in to the openGauss community and choose User Center -> Security -> Delete to delete your openGauss community account. This action will also delete your personal information in the openGauss community. Exercise caution when performing this operation.
 
 ## 7. Where Your Personal Data Is Stored
 
@@ -154,8 +156,8 @@ Email: **<common@public.opengauss.org>**
 
 Hotline: **+86 18628259905**
 
-Last updated: **February 23, 2025**
+Last updated: **February 24, 2025**
 
-Privacy policy version: **v20250223**
+Privacy policy version: **v20250224**
 
 </div>
