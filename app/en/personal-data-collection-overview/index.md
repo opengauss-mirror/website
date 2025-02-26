@@ -17,7 +17,7 @@ This website involves the following personal data collection scenarios:
 - **Purpose**: Verify identity during login and registration on this website and maintain your personal data.
 - **Personal data type**: data you voluntarily submit
 - **Collection method**: user input or shared by third-party accounts
-- **Personal data fields**: user name, company name, **email address**, **phone number**, password, **email or phone verification code** and Gitee account details (UUID, ID, nickname, and **email address**).
+- **Personal data fields**: user name, company, **email address**, **phone number**, password, **email or phone verification code** and Gitee account details (UUID, ID, nickname, and **email address**).
 
 ## 2. Mailing List Service
 

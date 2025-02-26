@@ -40,6 +40,20 @@ openGauss社区有时会在计算机或移动设备上存储Cookie，我们启�
      到期时间：会话
      <br/>
      目的：防止恶意攻击
+   - **d)** etherpad Cookie：express_sid
+     <br/>
+     来源：etherpad网站
+     <br/>
+     到期时间: 1天
+     <br/>
+     目的：维持用户会话
+   - **e)** etherpad Cookie：token
+     <br/>
+     来源：etherpad网站
+     <br/>
+     到期时间: 60天
+     <br/>
+     目的：记录由客户端生成的作者随机令牌
 
 2. 存储您的偏好和设置。网站能够借助Cookie来保存设置，如计算机或移动设备的语言、网站主题风格和其他浏览偏好等；
    - **a)** agreed-cookiepolicy
@@ -56,6 +70,13 @@ openGauss社区有时会在计算机或移动设备上存储Cookie，我们启�
      到期时间：6个月
      <br/>
      目的：记录您对网站主题风格的选择
+   - **c)** etherpad Cookie：prefs
+     <br/>
+     来源：etherpad网站
+     <br/>
+     到期时间：1年1月1周
+     <br/>
+     目的：记录客户端的偏好设置，用来设置字体系列，显示作者颜色等内容
 
 3. 统计分析。用于收集用户如何访问网页, 以便帮助我们了解本服务是如何运行、使用的。
    - **a)** 百度统计Cookie
