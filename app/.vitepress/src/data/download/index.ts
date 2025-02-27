@@ -39,7 +39,7 @@ const downloadData = [
   },
   {
     name: '6.0.0 (LTS)',
-    newLayout: false,
+    newLayout: true,
     data: download600,
     plannedEOL: 'Planned EOL: 2027.09.30',
     docs_list: [
