@@ -46,6 +46,6 @@ The contents on this website are provided for your convenience only. The openGau
 
 ### Applicable Law and Dispute Resolution
 
-Access and all related activities on or through this website shall be governed by, construed, and interpreted in accordance with the laws of the People's Republic of China. You agree that any dispute between the parties arising out of or in connection with this legal notice or your access and all related activities on or through this website shall be governed by a court with jurisdiction in Shenzhen, Guangdong Province of the People's Republic of China.
+Access and all related activities on or through this website shall be governed by, construed, and interpreted in accordance with the laws of the People's Republic of China. You agree that any dispute between the parties arising out of or in connection with this legal notice or your access and all related activities on or through this website shall be governed by a court with jurisdiction in Longgang District, Shenzhen, Guangdong Province of the People's Republic of China.
 
 </div>

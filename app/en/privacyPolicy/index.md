@@ -25,7 +25,7 @@ The openGauss Community understands the importance of your privacy and fully res
 
 **b) Mail List Service**. When you use our mail list service, we will collect your **email address** and **name (optional)**. We will provide you with the email subscription service to facilitate your participation in discussions in the community.
 
-**c) Service Optimization**. To ensure service quality and operations, we automatically collect and store necessary log data, including access timestamps, IP addresses, request details, access status, resource size, access origin, and user agent information. In addition, we will collect application information (application ID, SDK version, browser, and browser version), device information (operating system, operating system version, device type, device vendor, screen width, and screen height), application usage information (event name, event attributes, reporting time, previous page URL, page title, current page URL). This data is collected for the purposes of community operations and O&M security.
+**c) Service Optimization**. To ensure service quality and operations, we automatically collect and store necessary log data, including access timestamps, IP addresses, request details, access status, resource size, access origin, and user agent information. In addition, we will collect your device information (device name, device type, device vendor, operating system, operating system version, screen width, screen height), application information (application ID, SDK version , browser, browser version, browser viewport width, browser viewport height), application usage information (event name, event attributes, reporting time, client anonymous ID). This data is collected for the purposes of community operations and O&M security.
 
 **d) Contributor License Agreement(CLA) Signing**. When you participate in code contribution through the CLA
 signing system (click [here](https://clasign.osinfra.cn/sign/gitee_opengauss-1614047760000855378) to learn more), you need to submit your [relevant personal data](https://clasign.osinfra.cn/privacy/gitee_opengauss-1614047760000855378) to the CLA signing system. We will obtain such personal data to verify whether you have signed the CLA, and to conduct relevant statistical analysis to understand how the Community is operating.
@@ -160,8 +160,8 @@ Email: **<common@public.opengauss.org>**
 
 Hotline: **+86 18628259905**
 
-Last updated: **February 25, 2026**
+Last updated: **February 27, 2025**
 
-Privacy policy version: **v20250226**
+Privacy policy version: **v20250227**
 
 </div>
