@@ -27,6 +27,7 @@ const meetupData = ref({
   meetupFormat: '' as any,
   supports: [] as any,
   details: '',
+  acceptPrivacy: false,
 });
 const placeholderList = [
   '如：xxx有限公司/xxx SIG/xxx城市组',
@@ -218,6 +219,7 @@ async function meetupApply() {
         ruleFormRef.value?.resetFields();
         meetupPrivacy.value = [];
         isPrivacy.value = false;
+        meetupData.value.acceptPrivacy = false;
 
         setTimeout(() => {
           router.go('/zh/call-for-meetup/collect/');
@@ -239,6 +241,7 @@ async function meetupApply() {
       meetupFormat: '',
       supports: [],
       details: '',
+      acceptPrivacy: false,
     });
     console.error(error);
   }
@@ -255,6 +258,7 @@ const submitMeetupForm = async (formEl: FormInstance | undefined) => {
   await formEl.validate((valid) => {
     if (valid) {
       supportsFormat();
+      meetupData.value.acceptPrivacy = meetupPrivacy.value.length > 0;
       meetupApply();
     }
   });

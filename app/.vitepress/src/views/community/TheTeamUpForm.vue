@@ -22,6 +22,7 @@ const formData = reactive({
   company: '',
   email: '',
   phone: '',
+  acceptPrivacy: false,
 });
 
 const rules: FormRules = {
@@ -156,6 +157,8 @@ const validateForm = () => {
     ?.validate((valid) => {
       if (valid) {
         if (checkedPrivacyPolicy.value) {
+          formData.acceptPrivacy = checkedPrivacyPolicy.value;
+
           submitForm();
         } else {
           ElMessage({

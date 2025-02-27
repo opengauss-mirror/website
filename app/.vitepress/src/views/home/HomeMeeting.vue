@@ -179,10 +179,10 @@ onMounted(() => {
 
   if (csrfToken) {
     getPersonalInfo();
+    getSigData();
   }
 
   clickMeeting();
-  getSigData();
 });
 
 // 弹窗信息
