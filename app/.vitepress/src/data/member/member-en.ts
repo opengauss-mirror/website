@@ -40,7 +40,7 @@ export default {
       list: data.en.UC,
     },
     {
-      name: `Board Committee`,
+      name: `Brand Committee`,
       id: `bc`,
       giteePath: `${GITEE_LINK}opengauss/bc`,
       emial: `bc@opengauss.org`,
