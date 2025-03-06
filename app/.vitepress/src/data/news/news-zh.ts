@@ -1,15 +1,5 @@
 export default [
   {
-    date: '2024-12-22',
-    summary: 'openGauss 3.0.6版本发行说明',
-    archives: '2024-12',
-    author: ['openGauss'],
-    banner: '/category/news/2024-01-19/banner.png',
-    title: 'openGauss 3.0.6版本发行说明',
-    tags: ['theme'],
-    path: 'zh/news/2024-12-22/index',
-  },
-  {
     date: '2024-09-30',
     summary: 'openGauss 6.0.0 LTS 版本正式发布',
     archives: '2024-09',
