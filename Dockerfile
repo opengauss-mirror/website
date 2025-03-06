@@ -91,7 +91,8 @@ RUN touch /var/run/nginx.pid \
     && echo "export TMOUT=1800 readonly TMOUT" >> /etc/profile \
     && rm -rf /usr/bin/gdb* \
     && rm -rf /usr/share/gdb \
-    && rm -rf /usr/share/gcc-10.3.1
+    && rm -rf /usr/share/gcc-12 \
+    && rm -rf /usr/lib64/python3.11/pdb.py
 
 COPY ./deploy/monitor.sh ./deploy/entrypoint.sh /etc/nginx/
 RUN chmod 500 /etc/nginx/monitor.sh \
@@ -99,6 +100,8 @@ RUN chmod 500 /etc/nginx/monitor.sh \
     && chown nginx:nginx /etc/nginx/monitor.sh \
     && chown nginx:nginx /etc/nginx/entrypoint.sh \
     && yum remove gdb-gdbserver findutils passwd shadow -y \
+    && sed -i "/PATH=/d" /home/nginx/.bashrc \
+    && source /home/nginx/.bashrc \
     && yum clean all
 
 EXPOSE 8080
