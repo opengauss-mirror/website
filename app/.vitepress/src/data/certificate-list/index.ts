@@ -6,6 +6,14 @@ import {
 export default {
   zh: [
     {
+      pro: '海量数据库管理系统G100 V3.0',
+      name: '北京海量数据技术股份有限公司',
+      version: 'openGauss 6.0.0',
+      award: '2025-02-13',
+      expiration: '2027-03-30',
+      certificate: `${OBS_CERTIFICATION_LINK}%E5%8C%97%E4%BA%AC%E6%B5%B7%E9%87%8F/Vastbase%20G100%20V3.0/%E5%8F%91%E8%A1%8C%E7%89%88%E8%AF%81%E4%B9%A6.pdf`,
+    },
+    {
       pro: 'LNXDB-RDS V3.4.4 私有云数据库',
       name: '北京太阳塔信息科技有限责任公司',
       version: 'openGauss 5.0.0',
@@ -234,6 +242,14 @@ export default {
     },
   ],
   en: [
+    {
+      pro: '海量数据库管理系统G100 V3.0',
+      name: '北京海量数据技术股份有限公司',
+      version: 'openGauss 6.0.0',
+      award: '2025-02-13',
+      expiration: '2027-03-30',
+      certificate: `${OBS_CERTIFICATION_LINK}%E5%8C%97%E4%BA%AC%E6%B5%B7%E9%87%8F/Vastbase%20G100%20V3.0/%E5%8F%91%E8%A1%8C%E7%89%88%E8%AF%81%E4%B9%A6.pdf`,
+    },
     {
       pro: 'LNXDB-RDS V3.4.4 私有云数据库',
       name: '北京太阳塔信息科技有限责任公司',

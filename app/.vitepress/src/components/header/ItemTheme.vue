@@ -4,7 +4,7 @@ import { useCommon } from '@/stores/common';
 
 import IconSun from '~icons/app/icon-sun-outline.svg';
 import IconMoon from '~icons/app/icon-moon-outline.svg';
-import { getCustomCookie, setCustomCookie } from '@/shared/utils';
+import { getCustomCookie, isBrowser, setCustomCookie } from '@/shared/utils';
 
 // 风格切换
 const APPEARANCE_KEY = 'openGauss-theme-appearance';
@@ -51,11 +51,13 @@ watch(
     return commonStore.theme;
   },
   (val) => {
-    const documentElement = document.documentElement;
-    val === 'light' && documentElement.removeAttribute('data-o-theme');
-    val === 'dark' && documentElement.setAttribute('data-o-theme', 'dark');
-    val === 'light' && documentElement.classList.remove('dark');
-    val === 'dark' && documentElement.classList.add('dark');
+    if (isBrowser()) {
+      const documentElement = document.documentElement;
+      val === 'light' && documentElement.removeAttribute('data-o-theme');
+      val === 'dark' && documentElement.setAttribute('data-o-theme', 'dark');
+      val === 'light' && documentElement.classList.remove('dark');
+      val === 'dark' && documentElement.classList.add('dark');
+    }
   },
   {
     immediate: true,

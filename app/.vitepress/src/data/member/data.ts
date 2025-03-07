@@ -511,6 +511,10 @@ import caiwenyi from '@/assets/category/member/avatar/caiwenyi.png';
 import yangzihao2 from '@/assets/category/member/avatar/yangzihao2.png';
 import zengseliang2 from '@/assets/category/member/avatar/zengseliang2.png';
 import weikewei from '@/assets/category/member/avatar/weikewei.png';
+import liuchangfeng from '@/assets/category/member/avatar/liuchangfeng.png';
+import liming from '@/assets/category/member/avatar/liming.png';
+import pansiyan from '@/assets/category/member/avatar/pansiyan.png';
+import mengpengbo from '@/assets/category/member/avatar/mengpengbo.png';
 
 import { GITEE_LINK } from '@/data/url-config';
 export default {
@@ -1228,6 +1232,20 @@ export default {
         email: `wangwei1@gbase.cn`,
         company: `天津南大通用数据技术股份有限公司`,
       },
+      {
+        img: liming,
+        name: `李明`,
+        title: `委员`,
+        email: `liming107@huawei.com`,
+        company: `华为技术有限公司`,
+      },
+      {
+        img: pansiyan,
+        name: `潘思言`,
+        title: `委员`,
+        email: `pansiyan@huawei.com`,
+        company: `华为技术有限公司`,
+      },
     ],
     TC: [
       {
@@ -1377,6 +1395,41 @@ export default {
         email: `weikewei@chinamobile.com`,
         gitee: `${GITEE_LINK}weikewei`,
       },
+      {
+        img: zhouzhaoqi,
+        name: '周兆琦',
+        title: 'Member',
+        email: 'zhouzhaoqi1@huawei.com',
+        gitee: `${GITEE_LINK}ziki77`,
+      },
+      {
+        img: quemingjian,
+        name: '阙鸣健',
+        title: 'Member',
+        email: 'quemingjian2@huawei.com',
+        gitee: `${GITEE_LINK}quemingjian`,
+      },
+      {
+        img: xiongxiaojun,
+        name: `熊小军`,
+        title: `Member`,
+        email: `xiong_xiaojun@yeah.net`,
+        gitee: `${GITEE_LINK}xiong_xjun`,
+      },
+      {
+        img: yanghao,
+        name: '杨皓',
+        title: 'Member',
+        email: 'yanghao37@huawei.com',
+        gitee: `${GITEE_LINK}yanghaos`,
+      },
+      {
+        img: herui,
+        name: `何睿`,
+        title: `Committer`,
+        email: `he.rui@139.com`,
+        gitee: `${GITEE_LINK}he_ray`,
+      },
     ],
     SECRETARIAT: [
       {
@@ -1398,16 +1451,22 @@ export default {
         email: `huangxianru@huawei.com`,
       },
       {
-        img: wenqi,
-        name: `温祺`,
+        img: liming,
+        name: `李明`,
         title: `执行秘书`,
-        email: `wenqi10@huawei.com`,
+        email: `liming107@huawei.com`,
       },
       {
-        img: meixiangru,
-        name: `梅相如`,
+        img: pansiyan,
+        name: `潘思言`,
         title: `执行秘书`,
-        email: `xiangrumei87@126.com`,
+        email: `pansiyan@huawei.com`,
+      },
+      {
+        img: mengpengbo,
+        name: `孟鹏博`,
+        title: `执行秘书`,
+        email: `mengpengbo@huawei.com`,
       },
     ],
     SQLENGINE: [
@@ -1431,6 +1490,13 @@ export default {
         title: 'Maintainer',
         email: 'yuexingzhi2@huawei.com',
         gitee: `${GITEE_LINK}gaussyuexz`,
+      },
+      {
+        img: zhouzhaoqi,
+        name: '周兆琦',
+        title: 'Maintainer',
+        email: 'zhouzhaoqi1@huawei.com',
+        gitee: `${GITEE_LINK}ziki77`,
       },
       {
         img: cailei,
@@ -1482,13 +1548,6 @@ export default {
         gitee: `${GITEE_LINK}jc-zhang`,
       },
       {
-        img: zhouzhaoqi,
-        name: '周兆琪',
-        title: 'Committer',
-        email: 'zhouzhaoqi1@huawei.com',
-        gitee: `${GITEE_LINK}ziki77`,
-      },
-      {
         img: laishenghao,
         name: '赖盛好',
         title: 'Committer',
@@ -1508,6 +1567,13 @@ export default {
         title: 'Committer',
         email: 'yangzhizheng@chinamobile.com',
         gitee: `${GITEE_LINK}yangzhizheng94`,
+      },
+      {
+        img: liuchangfeng,
+        name: '柳长沣',
+        title: 'Committer',
+        email: 'liuchangfeng2@huawei.com',
+        gitee: `${GITEE_LINK}superblaker`,
       },
     ],
     STORAGEENGINE: [
@@ -1931,13 +1997,6 @@ export default {
         title: `Committer`,
         email: `ailong@outlook.com`,
         gitee: `${GITEE_LINK}ailoooong`,
-      },
-      {
-        img: meixiangru,
-        name: `梅相如`,
-        title: `Committer`,
-        email: `xiangrumei87@126.com`,
-        gitee: `${GITEE_LINK}xiangrumei`,
       },
       {
         img: xucheng,
@@ -5785,6 +5844,20 @@ export default {
         email: `wangwei1@gbase.cn`,
         company: `General Data Technology Co.,LTD`,
       },
+      {
+        img: liming,
+        name: `Ming Li`,
+        title: `Member`,
+        email: `liming107@huawei.com`,
+        company: `Huawei`,
+      },
+      {
+        img: pansiyan,
+        name: `Siyan Pan`,
+        title: `Member`,
+        email: `pansiyan@huawei.com`,
+        company: `Huawei`,
+      },
     ],
     TC: [
       {
@@ -5934,6 +6007,41 @@ export default {
         email: `weikewei@chinamobile.com`,
         gitee: `${GITEE_LINK}weikewei`,
       },
+      {
+        img: zhouzhaoqi,
+        name: 'Zhaoqi Zhou',
+        title: 'Member',
+        email: 'zhouzhaoqi1@huawei.com',
+        gitee: `${GITEE_LINK}ziki77`,
+      },
+      {
+        img: quemingjian,
+        name: 'Mingjian Que',
+        title: 'Member',
+        email: 'quemingjian2@huawei.com',
+        gitee: `${GITEE_LINK}quemingjian`,
+      },
+      {
+        img: xiongxiaojun,
+        name: `Xiaojun Xiong`,
+        title: `Member`,
+        email: `xiong_xiaojun@yeah.net`,
+        gitee: `${GITEE_LINK}xiong_xjun`,
+      },
+      {
+        img: yanghao,
+        name: 'Hao Yang',
+        title: 'Member',
+        email: 'yanghao37@huawei.com',
+        gitee: `${GITEE_LINK}yanghaos`,
+      },
+      {
+        img: herui,
+        name: `Rui He`,
+        title: `Committer`,
+        email: `he.rui@139.com`,
+        gitee: `${GITEE_LINK}he_ray`,
+      },
     ],
     SECRETARIAT: [
       {
@@ -5955,16 +6063,22 @@ export default {
         email: `huangxianru@huawei.com`,
       },
       {
-        img: wenqi,
-        name: `Qi Wen`,
+        img: liming,
+        name: `Ming Li`,
         title: `Executive Secretary`,
-        email: `wenqi10@huawei.com`,
+        email: `liming107@huawei.com`,
       },
       {
-        img: meixiangru,
-        name: `Xiangru Mei`,
+        img: pansiyan,
+        name: `Siyan Pan`,
         title: `Executive Secretary`,
-        email: `xiangrumei87@126.com`,
+        email: `pansiyan@huawei.com`,
+      },
+      {
+        img: mengpengbo,
+        name: `Pengbo Meng`,
+        title: `Executive Secretary`,
+        email: `mengpengbo@huawei.com`,
       },
     ],
     SQLENGINE: [
@@ -5988,6 +6102,13 @@ export default {
         title: 'Maintainer',
         email: 'yuexingzhi2@huawei.com',
         gitee: `${GITEE_LINK}gaussyuexz`,
+      },
+      {
+        img: zhouzhaoqi,
+        name: 'Zhaoqi Zhou',
+        title: 'Maintainer',
+        email: 'zhouzhaoqi1@huawei.com',
+        gitee: `${GITEE_LINK}ziki77`,
       },
       {
         img: cailei,
@@ -6039,13 +6160,6 @@ export default {
         gitee: `${GITEE_LINK}jc-zhang`,
       },
       {
-        img: zhouzhaoqi,
-        name: 'Zhaoqi Zhou',
-        title: 'Committer',
-        email: 'zhouzhaoqi1@huawei.com',
-        gitee: `${GITEE_LINK}ziki77`,
-      },
-      {
         img: laishenghao,
         name: 'Shenghao Lai',
         title: 'Committer',
@@ -6065,6 +6179,13 @@ export default {
         title: 'Committer',
         email: 'yangzhizheng@chinamobile.com',
         gitee: `${GITEE_LINK}yangzhizheng94`,
+      },
+      {
+        img: liuchangfeng,
+        name: 'Changfeng Liu',
+        title: 'Committer',
+        email: 'liuchangfeng2@huawei.com',
+        gitee: `${GITEE_LINK}superblaker`,
       },
     ],
     STORAGEENGINE: [
@@ -6488,13 +6609,6 @@ export default {
         title: `Committer`,
         email: `ailong@outlook.com`,
         gitee: `${GITEE_LINK}ailoooong`,
-      },
-      {
-        img: meixiangru,
-        name: `Xiangru Mei`,
-        title: `Committer`,
-        email: `xiangrumei87@126.com`,
-        gitee: `${GITEE_LINK}xiangrumei`,
       },
       {
         img: xucheng,

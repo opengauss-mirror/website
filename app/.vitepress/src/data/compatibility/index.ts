@@ -1,5 +1,49 @@
 export default [
   {
+    name: '大任人力资源管理系统软件',
+    version: '5',
+    type: '安平',
+    company: '成都市大任软件有限责任公司',
+    database: 'openGauss 5.0.3',
+    os: 'CentOS 7',
+    server: 'Intel(其他）',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%88%90%E9%83%BD%E5%A4%A7%E4%BB%BB/%E5%A4%A7%E4%BB%BB%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E8%BD%AF%E4%BB%B6%20V5-1.pdf',
+  },
+  {
+    name: '奇安信网神威胁监测与分析系统V4.0产品',
+    version: '',
+    type: '安平',
+    company: '奇安信网神信息技术(北京)股份有限公司',
+    database: 'openGauss 6.0.0',
+    os: 'Kylin V10',
+    server: 'Kunpeng 920',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%A5%87%E5%AE%89%E4%BF%A1/V4.0/%E5%A5%87%E5%AE%89%E4%BF%A1%E7%BD%91%E7%A5%9E%E5%A8%81%E8%83%81%E7%9B%91%E6%B5%8B%E4%B8%8E%E5%88%86%E6%9E%90%E7%B3%BB%E7%BB%9FV4.0%E4%BA%A7%E5%93%81-opengauss%206.0.0%20LTS.pdf',
+  },
+  {
+    name: '百融云创绿色金融数智化平台',
+    version: '1.0',
+    type: '金融',
+    company: '百融云创科技股份有限公司',
+    database: 'openGauss 5.0.2',
+    os: 'CentOS 7.9',
+    server: 'Intel(其他)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E7%99%BE%E8%9E%8D/%E7%99%BE%E8%9E%8D%E4%BA%91%E5%88%9B%E7%BB%BF%E8%89%B2%E9%87%91%E8%9E%8D%E6%95%B0%E6%99%BA%E5%8C%96%E5%B9%B3%E5%8F%B0%20V1.0.pdf',
+  },
+  {
+    name: '百融至信绿色金融数智化平台',
+    version: '1.0',
+    type: '金融',
+    company: '百融云创科技股份有限公司',
+    database: 'openGauss 5.0.2',
+    os: 'CentOS 7.9',
+    server: 'Intel(其他)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E7%99%BE%E8%9E%8D/%E7%99%BE%E8%9E%8D%E8%87%B3%E4%BF%A1%E7%BB%BF%E8%89%B2%E9%87%91%E8%9E%8D%E6%95%B0%E6%99%BA%E5%8C%96%E5%B9%B3%E5%8F%B0%20V1.0.pdf',
+  },
+  {
     name: '域华信科服务器操作系统',
     version: '8',
     type: '操作系统',
@@ -7,8 +51,7 @@ export default [
     database: 'openGauss 5.0.3',
     os: '',
     server: 'Kunpeng 920(Huanghe 2280 V2)、Hygon C86 3285(Suma H210-G30)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%9F%9F%E5%8D%8E%E4%BF%A1%E7%A7%91/V8/Certificate.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%9F%9F%E5%8D%8E%E4%BF%A1%E7%A7%91/V8/Certificate.pdf',
   },
   {
     name: 'CNware WinSphere 服务器虚拟化软件',
@@ -84,8 +127,7 @@ export default [
     database: 'openGauss 5.0.3',
     os: 'CentOS 7.9',
     server: 'Intel(其他)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%B8%85%E8%83%BD%E5%8D%8E%E6%8E%A7/V2/UDCAP.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%B8%85%E8%83%BD%E5%8D%8E%E6%8E%A7/V2/UDCAP.pdf',
   },
   {
     name: 'ePower电力集控（调度）系统',
@@ -95,8 +137,7 @@ export default [
     database: 'openGauss 5.0.3',
     os: 'CentOS 7.9',
     server: 'Intel(其他)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%B8%85%E8%83%BD%E5%8D%8E%E6%8E%A7/V2/ePower.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%B8%85%E8%83%BD%E5%8D%8E%E6%8E%A7/V2/ePower.pdf',
   },
   {
     name: '数据中心智慧运营管理平台 WiseEMP-DCIM',
@@ -106,8 +147,7 @@ export default [
     database: 'openGauss 5.0.3',
     os: 'openEuler 22.03',
     server: 'Intel(其他)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E7%A7%91%E5%8D%8E%E6%95%B0%E6%8D%AE/V1.0/Certificate.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E7%A7%91%E5%8D%8E%E6%95%B0%E6%8D%AE/V1.0/Certificate.pdf',
   },
   {
     name: '履安智能物联超融合平台',
@@ -117,8 +157,7 @@ export default [
     database: 'openGauss 5.0.3',
     os: 'Kylin V10 SP2',
     server: 'Kunpeng 920 (Taishan 200)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%B1%A5%E5%AE%89%E5%AE%9E%E4%B8%9A/V4.0/Certificate.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%B1%A5%E5%AE%89%E5%AE%9E%E4%B8%9A/V4.0/Certificate.pdf',
   },
   {
     name: '东华医为数字化医院信息管理系统（信创版）',
@@ -128,8 +167,7 @@ export default [
     database: 'openGauss 5.0.1',
     os: 'openEuler 20.03',
     server: 'Kunpeng 920(Taishan 200)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E4%B8%9C%E5%8D%8E%E5%8C%BB%E4%B8%BA/V%201.0/Certificate.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E4%B8%9C%E5%8D%8E%E5%8C%BB%E4%B8%BA/V%201.0/Certificate.pdf',
   },
   {
     name: '医疗物资智慧物流服务平台系统软件',
@@ -150,8 +188,7 @@ export default [
     database: 'openGauss 5.0.1',
     os: 'Centos 7.2',
     server: 'Intel(其他)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/360/V%204.0/Certificate.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/360/V%204.0/Certificate.pdf',
   },
   {
     name: '凝思安全操作系统欧拉版',
@@ -161,8 +198,7 @@ export default [
     database: 'openGauss 5.0.0',
     os: '',
     server: 'Kunpeng 920(Taishan 200)、Hygon C86 7380(SR658H v2)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%87%9D%E6%80%9D%E8%BD%AF%E4%BB%B6/V6.0.99/Certificate01.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%87%9D%E6%80%9D%E8%BD%AF%E4%BB%B6/V6.0.99/Certificate01.pdf',
   },
   {
     name: '凝思安全操作系统欧拉版',
@@ -172,8 +208,7 @@ export default [
     database: 'openGauss 5.0.0',
     os: '',
     server: 'Kunpeng 920(Taishan 200)、Hygon C86 7380(SR658H v2)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%87%9D%E6%80%9D%E8%BD%AF%E4%BB%B6/V6.0.99/Certificate02.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%87%9D%E6%80%9D%E8%BD%AF%E4%BB%B6/V6.0.99/Certificate02.pdf',
   },
   {
     name: '慧目近视防控系统软件',
@@ -194,8 +229,7 @@ export default [
     database: 'openGauss 5.0.2',
     os: 'CentOS 7.4',
     server: 'Kunpeng 920(Taishan 200)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%8C%97%E4%BA%AC%E5%9B%BD%E9%81%A5/V7.2/Certificate.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%8C%97%E4%BA%AC%E5%9B%BD%E9%81%A5/V7.2/Certificate.pdf',
   },
   {
     name: '霄练压测平台',
@@ -216,8 +250,7 @@ export default [
     database: 'openGauss 5.0.1',
     os: 'openEuler 22.03',
     server: 'Kunpeng 920(Taishan 200)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E4%B8%AD%E7%A7%BB%E7%89%A9%E8%81%94/V3/Certificate.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E4%B8%AD%E7%A7%BB%E7%89%A9%E8%81%94/V3/Certificate.pdf',
   },
   {
     name: '集约化内容管理系统',
@@ -227,8 +260,7 @@ export default [
     database: 'openGauss 5.0.3',
     os: 'openEuler 20.03',
     server: 'Kunpeng 920(Taishan 200)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%BE%B7%E9%9B%85%E9%80%9A/V1.0/Certificate.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%BE%B7%E9%9B%85%E9%80%9A/V1.0/Certificate.pdf',
   },
   {
     name: '印美P&ID智能管道和仪表流程图软件',
@@ -238,8 +270,7 @@ export default [
     database: 'openGauss 5.0.1',
     os: 'CentOS 7',
     server: 'Intel(其他)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%8D%B0%E7%BE%8E%E8%BD%AF%E4%BB%B6/V1.0/Certificate.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%8D%B0%E7%BE%8E%E8%BD%AF%E4%BB%B6/V1.0/Certificate.pdf',
   },
   {
     name: '云支付密码器系统管理平台软件',
@@ -315,8 +346,7 @@ export default [
     database: 'openGauss 5.0.3',
     os: 'openEuler 22.03 LTS SP3',
     server: 'Kunpeng 920(Taishan 200)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E7%81%AB%E6%A0%91%E7%A7%91%E6%8A%80/%E8%AF%81%E4%B9%A61.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E7%81%AB%E6%A0%91%E7%A7%91%E6%8A%80/%E8%AF%81%E4%B9%A61.pdf',
   },
   {
     name: '火树医保智能审核系统',
@@ -326,8 +356,7 @@ export default [
     database: 'openGauss 5.0.3',
     os: 'openEuler 22.03 LTS SP3',
     server: 'Kunpeng 920(Taishan 200)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E7%81%AB%E6%A0%91%E7%A7%91%E6%8A%80/%E8%AF%81%E4%B9%A62.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E7%81%AB%E6%A0%91%E7%A7%91%E6%8A%80/%E8%AF%81%E4%B9%A62.pdf',
   },
   {
     name: '火树医保结算清单管理系统',
@@ -337,8 +366,7 @@ export default [
     database: 'openGauss 5.0.3',
     os: 'openEuler 22.03 LTS SP3',
     server: 'Kunpeng 920(Taishan 200)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E7%81%AB%E6%A0%91%E7%A7%91%E6%8A%80/%E8%AF%81%E4%B9%A63.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E7%81%AB%E6%A0%91%E7%A7%91%E6%8A%80/%E8%AF%81%E4%B9%A63.pdf',
   },
   {
     name: '火树医疗数据中心',
@@ -348,8 +376,7 @@ export default [
     database: 'openGauss 5.0.3',
     os: 'openEuler 22.03 LTS SP3',
     server: 'Kunpeng 920(Taishan 200)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E7%81%AB%E6%A0%91%E7%A7%91%E6%8A%80/%E8%AF%81%E4%B9%A64.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E7%81%AB%E6%A0%91%E7%A7%91%E6%8A%80/%E8%AF%81%E4%B9%A64.pdf',
   },
   {
     name: '火树病案首页质询系统',
@@ -359,8 +386,7 @@ export default [
     database: 'openGauss 5.0.3',
     os: 'openEuler 22.03 LTS SP3',
     server: 'Kunpeng 920(Taishan 200)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E7%81%AB%E6%A0%91%E7%A7%91%E6%8A%80/%E8%AF%81%E4%B9%A65.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E7%81%AB%E6%A0%91%E7%A7%91%E6%8A%80/%E8%AF%81%E4%B9%A65.pdf',
   },
   {
     name: '火树DIP精细化运营管理系统',
@@ -370,8 +396,7 @@ export default [
     database: 'openGauss 5.0.3',
     os: 'openEuler 22.03 LTS SP3',
     server: 'Kunpeng 920(Taishan 200)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E7%81%AB%E6%A0%91%E7%A7%91%E6%8A%80/%E8%AF%81%E4%B9%A66.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E7%81%AB%E6%A0%91%E7%A7%91%E6%8A%80/%E8%AF%81%E4%B9%A66.pdf',
   },
   {
     name: 'CACTER邮件安全网关系统',
@@ -381,8 +406,7 @@ export default [
     database: 'openGauss 3.0.0',
     os: 'CentOS 7',
     server: 'Intel(其他)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E7%9B%88%E4%B8%96%E7%A7%91%E6%8A%80/V7.0/Certificate.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E7%9B%88%E4%B8%96%E7%A7%91%E6%8A%80/V7.0/Certificate.pdf',
   },
   {
     name: '数据中心智慧运营管理平台 WiseEMP-DCIM',
@@ -392,8 +416,7 @@ export default [
     database: 'openGauss 5.0.0',
     os: 'CentOS 7.9',
     server: 'Intel(其他)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E7%A7%91%E5%8D%8E%E6%95%B0%E6%8D%AE/V1.0/WiseEMP-DCIM.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E7%A7%91%E5%8D%8E%E6%95%B0%E6%8D%AE/V1.0/WiseEMP-DCIM.pdf',
   },
   {
     name: '跨境贸易金融服务平台',
@@ -403,8 +426,7 @@ export default [
     database: 'openGauss 6.0.0 RC1',
     os: 'openEuler 20.03 LTS、Kylin V10 SP3',
     server: 'Hygon 3280(H210-G30)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E8%87%B3%E6%81%92%E8%9E%8D%E5%85%B4/V3.0/6.0.0RC1.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E8%87%B3%E6%81%92%E8%9E%8D%E5%85%B4/V3.0/6.0.0RC1.pdf',
   },
   {
     name: '跨境贸易金融服务平台',
@@ -414,8 +436,7 @@ export default [
     database: 'openGauss 5.0.3',
     os: 'openEuler 20.03 LTS、Kylin V10 SP3',
     server: 'Hygon 3280(H210-G30)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E8%87%B3%E6%81%92%E8%9E%8D%E5%85%B4/V3.0/5.0.3LTS.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E8%87%B3%E6%81%92%E8%9E%8D%E5%85%B4/V3.0/5.0.3LTS.pdf',
   },
   {
     name: '联想自动恢复验证系统',
@@ -513,8 +534,7 @@ export default [
     database: 'openGauss 5.0.0',
     os: '凝思安全操作系统 V6.0',
     server: 'Kunpeng 920(Taishan 200)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%87%9D%E6%80%9D%E8%BD%AF%E4%BB%B6/V6.0/Certificate.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%87%9D%E6%80%9D%E8%BD%AF%E4%BB%B6/V6.0/Certificate.pdf',
   },
   {
     name: '南京慧目视光系统软件(V3.0)',
@@ -524,8 +544,7 @@ export default [
     database: 'openGauss 5.0.1',
     os: 'Kylin V10',
     server: 'Kunpeng 920(Taishan 200)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%85%A7%E7%9B%AE%E4%BF%A1%E6%81%AF/V3.0/Certificate.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%85%A7%E7%9B%AE%E4%BF%A1%E6%81%AF/V3.0/Certificate.pdf',
   },
   {
     name: 'FASS分布式全闪存储系统',
@@ -535,8 +554,7 @@ export default [
     database: 'openGauss 5.0.2',
     os: 'CentOS V7.6',
     server: 'Intel(其他)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%A4%A7%E9%81%93%E4%BA%91%E8%A1%8C/V2/Certificate.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%A4%A7%E9%81%93%E4%BA%91%E8%A1%8C/V2/Certificate.pdf',
   },
   {
     name: '合明监控分析中心软件HMCS',
@@ -546,8 +564,7 @@ export default [
     database: 'openGauss 3.0.0',
     os: 'Kylin V10 SP1',
     server: 'Kunpeng 920(Taishan 200)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%90%88%E6%98%8E%E8%BD%AF%E4%BB%B6/V10.0/Certificate.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%90%88%E6%98%8E%E8%BD%AF%E4%BB%B6/V10.0/Certificate.pdf',
   },
   {
     name: '能泊车停车稽查管理子系统',
@@ -656,8 +673,7 @@ export default [
     database: 'openGauss 5.0.0',
     os: 'Kylin V10 SP3',
     server: 'Kunpeng 920(Taishan 200)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E9%94%A1%E9%BC%8E%E6%99%BA%E8%83%BD/V1.0/Certificate.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E9%94%A1%E9%BC%8E%E6%99%BA%E8%83%BD/V1.0/Certificate.pdf',
   },
   {
     name: '龙控Centralink数据中心智能运营管理平台',
@@ -667,8 +683,7 @@ export default [
     database: 'openGauss 5.0.1',
     os: 'openEuler 22.03 LTS',
     server: 'Intel(其他)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E4%BE%9D%E7%B1%B3%E5%BA%B7%E8%BD%AF%E4%BB%B6/V1.0/Certificate.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E4%BE%9D%E7%B1%B3%E5%BA%B7%E8%BD%AF%E4%BB%B6/V1.0/Certificate.pdf',
   },
   {
     name: '智诚医保结算清单质控系统',
@@ -865,8 +880,7 @@ export default [
     database: 'openGauss 5.0.1',
     os: 'openEuler 20.03 LTS',
     server: 'Kunpeng 920(Taishan 200)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E7%9B%88%E8%B0%B7%E7%A7%91%E6%8A%80/V1.0/Certificate.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E7%9B%88%E8%B0%B7%E7%A7%91%E6%8A%80/V1.0/Certificate.pdf',
   },
   {
     name: '长擎安全操作系统 24',
@@ -876,8 +890,7 @@ export default [
     database: 'openGauss 5.0.1',
     os: '',
     server: 'Kunpeng 920(Taishan 200)、Intel(其他)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E9%95%BF%E6%93%8E%E8%BD%AF%E4%BB%B6/24/Certificate.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E9%95%BF%E6%93%8E%E8%BD%AF%E4%BB%B6/24/Certificate.pdf',
   },
   {
     name: '微众银行多方大数据隐私计算平台',
@@ -887,8 +900,7 @@ export default [
     database: 'openGauss 5.0.1',
     os: 'Kylin V10',
     server: 'Kunpeng 920(Taishan 200)、Intel(其他)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%BE%AE%E4%BC%97%E9%93%B6%E8%A1%8C/V2.1.0/Certificate.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%BE%AE%E4%BC%97%E9%93%B6%E8%A1%8C/V2.1.0/Certificate.pdf',
   },
   {
     name: '网络货运平台',
@@ -898,8 +910,7 @@ export default [
     database: 'openGauss 2.1.0',
     os: 'Kylin V10 SP3',
     server: 'Kunpeng 920(R2260)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%90%8C%E5%88%9B%E7%A9%BA%E9%97%B4/V1.0/Certificate.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%90%8C%E5%88%9B%E7%A9%BA%E9%97%B4/V1.0/Certificate.pdf',
   },
   {
     name: '奇安信网神威胁监测与分析系统V4.0产品',
@@ -909,8 +920,7 @@ export default [
     database: 'openGauss 5.0.1',
     os: 'Kylin V10',
     server: 'Kunpeng 920',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%A5%87%E5%AE%89%E4%BF%A1/V4.0/Certificate.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%A5%87%E5%AE%89%E4%BF%A1/V4.0/Certificate.pdf',
   },
   {
     name: '数学审计一体化管理平台',
@@ -920,8 +930,7 @@ export default [
     database: 'openGauss 5.0.0',
     os: 'openEuler 22.03 LTS',
     server: 'Kunpeng 920(Taishan 200)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E9%93%AD%E5%A4%AA%E7%A7%91%E6%8A%80/1.0/Certificate.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E9%93%AD%E5%A4%AA%E7%A7%91%E6%8A%80/1.0/Certificate.pdf',
   },
   {
     name: '瑞思捷仓储管理系统',
@@ -931,8 +940,7 @@ export default [
     database: 'openGauss 5.0.0',
     os: 'openEuler 22.03 LTS',
     server: 'Intel',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%B7%B1%E5%9C%B3%E7%91%9E%E6%B3%B0%E4%BF%A1/V4.0/Certificate.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%B7%B1%E5%9C%B3%E7%91%9E%E6%B3%B0%E4%BF%A1/V4.0/Certificate.pdf',
   },
   {
     name: '易元中间件平台',
@@ -942,8 +950,7 @@ export default [
     database: 'openGauss 5.0.0',
     os: 'openEuler 22.03 LTS',
     server: 'Kunpeng 920(Taishan 200)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%88%90%E9%83%BD%E6%96%87%E5%8F%8C/v1.0.0/Certificate.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%88%90%E9%83%BD%E6%96%87%E5%8F%8C/v1.0.0/Certificate.pdf',
   },
   {
     name: '柯诺药械SPD物资管理软件',
@@ -953,8 +960,7 @@ export default [
     database: 'openGauss 5.0.0',
     os: 'openEuler 22.03 LTS',
     server: 'Intel',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%9F%AF%E8%AF%BA%E5%8C%BB%E7%96%97/SPD%20V1.0/Certificate.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%9F%AF%E8%AF%BA%E5%8C%BB%E7%96%97/SPD%20V1.0/Certificate.pdf',
   },
   {
     name: '中资源Bossmail邮件系统',
@@ -964,8 +970,7 @@ export default [
     database: 'openGauss 5.0.1',
     os: 'Kylin V10 SP2、openEuler 22.03 LTS',
     server: 'Kunpeng 920(Taishan 200)、Hygon 5380(R5240H0)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E4%B8%AD%E8%B5%84%E6%BA%90/Bossmail%20V2.3/Certificate.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E4%B8%AD%E8%B5%84%E6%BA%90/Bossmail%20V2.3/Certificate.pdf',
   },
   {
     name: '数据治理平台',
@@ -1074,8 +1079,7 @@ export default [
     database: 'openGauss 5.0.0',
     os: 'CentOS 7.3',
     server: 'Intel(其他)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%82%B2%E5%8C%BB%E8%BD%AF%E4%BB%B6/V7/Certificate.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%82%B2%E5%8C%BB%E8%BD%AF%E4%BB%B6/V7/Certificate.pdf',
   },
   {
     name: '麒麟云平台系统',
@@ -1085,8 +1089,7 @@ export default [
     database: 'openGauss 5.0.0',
     os: null,
     server: 'Kunpeng 920(Taishan 200)、Intel(其他)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E9%BA%92%E9%BA%9F%E4%BF%A1%E5%AE%89/SKM_C55824020111151.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E9%BA%92%E9%BA%9F%E4%BF%A1%E5%AE%89/SKM_C55824020111151.pdf',
   },
   {
     name: '麒麟信安云虚拟化资源管理平台',
@@ -1096,8 +1099,7 @@ export default [
     database: 'openGauss 5.0.0',
     os: null,
     server: 'Kunpeng 920(Taishan 200)、Intel(其他)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E9%BA%92%E9%BA%9F%E4%BF%A1%E5%AE%89/SKM_C55824020111150.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E9%BA%92%E9%BA%9F%E4%BF%A1%E5%AE%89/SKM_C55824020111150.pdf',
   },
   {
     name: '麒麟信安操作系统',
@@ -1107,8 +1109,7 @@ export default [
     database: 'openGauss 5.0.0',
     os: null,
     server: 'Kunpeng 920(Taishan 200)、Intel(其他)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E9%BA%92%E9%BA%9F%E4%BF%A1%E5%AE%89/SKM_C55824020111170.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E9%BA%92%E9%BA%9F%E4%BF%A1%E5%AE%89/SKM_C55824020111170.pdf',
   },
   {
     name: '麒麟信安服务器操作系统',
@@ -1118,8 +1119,7 @@ export default [
     database: 'openGauss 5.0.0',
     os: null,
     server: 'Kunpeng 920(Taishan 200)、Intel(其他)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E9%BA%92%E9%BA%9F%E4%BF%A1%E5%AE%89/SKM_C55824020111160.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E9%BA%92%E9%BA%9F%E4%BF%A1%E5%AE%89/SKM_C55824020111160.pdf',
   },
   {
     name: '麒麟信安服务器虚拟化系统',
@@ -1129,8 +1129,7 @@ export default [
     database: 'openGauss 5.0.0',
     os: null,
     server: 'Kunpeng 920(Taishan 200)、Intel(其他)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E9%BA%92%E9%BA%9F%E4%BF%A1%E5%AE%89/SKM_C55824020111180.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E9%BA%92%E9%BA%9F%E4%BF%A1%E5%AE%89/SKM_C55824020111180.pdf',
   },
   {
     name: '麒麟服务器虚拟化系统',
@@ -1140,8 +1139,7 @@ export default [
     database: 'openGauss 5.0.0',
     os: null,
     server: 'Kunpeng 920(Taishan 200)、Intel(其他)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E9%BA%92%E9%BA%9F%E4%BF%A1%E5%AE%89/SKM_C55824020111110.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E9%BA%92%E9%BA%9F%E4%BF%A1%E5%AE%89/SKM_C55824020111110.pdf',
   },
   {
     name: '医疗资质统一授权管理系统',
@@ -1239,8 +1237,7 @@ export default [
     database: 'openGauss 5.0.1',
     os: 'openEuler 20.03 LTS SP1',
     server: 'Kunpeng 920(Taishan 200)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%97%8B%E6%9E%81%E5%8E%86%E9%80%9A/GIS%20V1.0.0/Certificate.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%97%8B%E6%9E%81%E5%8E%86%E9%80%9A/GIS%20V1.0.0/Certificate.pdf',
   },
   {
     name: '创建基于微服务架构的市民卡系统平台软件',
@@ -1305,8 +1302,7 @@ export default [
     database: 'openGauss 5.0.0',
     os: null,
     server: 'Kunpeng 920(Taishan 200)、Hygon 3185(H210-G30)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E7%BB%9F%E4%BF%A1%E8%BD%AF%E4%BB%B6/V20/Certificate.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E7%BB%9F%E4%BF%A1%E8%BD%AF%E4%BB%B6/V20/Certificate.pdf',
   },
   {
     name: '赢证基金过户登记软件',
@@ -1646,8 +1642,7 @@ export default [
     database: 'openGauss 5.0.0',
     os: 'openEuler 20.03',
     server: 'Kunpeng 920(Taishan 200)、Hygon 7280(H620-G30)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%A4%A9%E7%8E%91%E7%A7%91%E6%8A%80%20V3/Certificate.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%A4%A9%E7%8E%91%E7%A7%91%E6%8A%80%20V3/Certificate.pdf',
   },
   {
     name: '数据库统一安全管控平台SQLDEV',
@@ -1657,8 +1652,7 @@ export default [
     database: 'openGauss 5.0.0',
     os: 'CentOS 7.6',
     server: 'Intel（其他）',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%8D%97%E4%BA%AC%E6%A0%91%E5%AE%89%20V2.3.1.21/Certificate.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%8D%97%E4%BA%AC%E6%A0%91%E5%AE%89%20V2.3.1.21/Certificate.pdf',
   },
   {
     name: '智慧文旅大数据平台',
@@ -1745,8 +1739,7 @@ export default [
     database: 'openGauss 5.0.0',
     os: 'CentOS 7.6',
     server: 'Intel（其他）',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%8F%8B%E9%82%BB%E9%80%9A%E8%AE%AF%20V6.0/Certificate.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%8F%8B%E9%82%BB%E9%80%9A%E8%AE%AF%20V6.0/Certificate.pdf',
   },
   {
     name: '友邻通讯电话录音系统客/服软件',
@@ -1756,8 +1749,7 @@ export default [
     database: 'openGauss 5.0.0',
     os: 'CentOS 7.6',
     server: 'Intel（其他）',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%8F%8B%E9%82%BB%E9%80%9A%E8%AE%AF%20V5.0/Certificate.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%8F%8B%E9%82%BB%E9%80%9A%E8%AE%AF%20V5.0/Certificate.pdf',
   },
   {
     name: '高云·视频联网系统GoCloud-Video',
@@ -1767,8 +1759,7 @@ export default [
     database: 'openGauss 3.0.0',
     os: 'CentOS 7.6',
     server: 'Intel（其他）',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/GoCloud-Video%20V1.0/Certificate.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/GoCloud-Video%20V1.0/Certificate.pdf',
   },
   {
     name: '访问专家',
@@ -1778,8 +1769,7 @@ export default [
     database: 'openGauss 5.0.0',
     os: 'CentOS 7.9',
     server: 'Intel（其他）',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%BE%B7%E6%B4%BE%E8%BD%AF%E4%BB%B6%20V4.0/Certificate.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%BE%B7%E6%B4%BE%E8%BD%AF%E4%BB%B6%20V4.0/Certificate.pdf',
   },
   {
     name: '百度智能云曦灵-智能数字人平台产品',
@@ -1789,8 +1779,7 @@ export default [
     database: 'openGauss 5.0.0',
     os: 'CentOS 7.6',
     server: 'Intel(SA5212M5)',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E7%99%BE%E5%BA%A6%E7%BD%91%E8%AE%AF%20V2.0/Certificate.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E7%99%BE%E5%BA%A6%E7%BD%91%E8%AE%AF%20V2.0/Certificate.pdf',
   },
   {
     name: '富医睿影医用电子云胶片软件V2.0（云电子胶片及报告系统软件）',
@@ -1800,8 +1789,7 @@ export default [
     database: 'openGauss 3.0.0',
     os: 'Kylin V10 SP2',
     server: 'Intel（其他）',
-    download:
-      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%AF%8C%E5%A3%AB%E8%83%B6%E7%89%87%20V2.0/Certificate.pdf',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%AF%8C%E5%A3%AB%E8%83%B6%E7%89%87%20V2.0/Certificate.pdf',
   },
   {
     name: '金证业务后台结算系统',
