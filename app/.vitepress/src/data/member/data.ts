@@ -515,6 +515,7 @@ import liuchangfeng from '@/assets/category/member/avatar/liuchangfeng.png';
 import liming from '@/assets/category/member/avatar/liming.png';
 import pansiyan from '@/assets/category/member/avatar/pansiyan.png';
 import mengpengbo from '@/assets/category/member/avatar/mengpengbo.png';
+import zhangruo from '@/assets/category/member/avatar/zhangruo.png';
 
 import { GITEE_LINK } from '@/data/url-config';
 export default {
@@ -1426,7 +1427,7 @@ export default {
       {
         img: herui,
         name: `何睿`,
-        title: `Committer`,
+        title: `Member`,
         email: `he.rui@139.com`,
         gitee: `${GITEE_LINK}he_ray`,
       },
@@ -3755,6 +3756,13 @@ export default {
         email: 'zengseliang@ncti-gba.cn',
         gitee: `${GITEE_LINK}zengseliang`,
       },
+      {
+        img: zhangruo,
+        name: '张若',
+        title: 'Committer',
+        email: 'zhangruo@ncti-gba.cn',
+        gitee: `${GITEE_LINK}feihongtaxueni`,
+      },
     ],
     SHENZHEN: [
       {
@@ -6038,7 +6046,7 @@ export default {
       {
         img: herui,
         name: `Rui He`,
-        title: `Committer`,
+        title: `Member`,
         email: `he.rui@139.com`,
         gitee: `${GITEE_LINK}he_ray`,
       },
@@ -8366,6 +8374,13 @@ export default {
         title: 'Committer',
         email: 'zengseliang@ncti-gba.cn',
         gitee: `${GITEE_LINK}zengseliang`,
+      },
+      {
+        img: zhangruo,
+        name: 'Ruo Zhang',
+        title: 'Committer',
+        email: 'zhangruo@ncti-gba.cn',
+        gitee: `${GITEE_LINK}feihongtaxueni`,
       },
     ],
     SHENZHEN: [
