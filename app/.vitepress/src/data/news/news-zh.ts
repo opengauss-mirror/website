@@ -1,5 +1,45 @@
 export default [
   {
+    date: '2025-02-25',
+    summary: 'openGauss 首届委员会线下联合例会：融合用户视角，共话技术规划',
+    archives: '2025-02',
+    author: ['openGauss'],
+    banner: '/category/news/2025-02-25/banner.jpg',
+    title: 'openGauss 首届委员会线下联合例会：融合用户视角，共话技术规划',
+    tags: ['theme'],
+    path: 'zh/news/2025-02-25/index',
+  },
+  {
+    date: '2025-02-19',
+    summary: '2024 openGauss开源社区年度运营报告',
+    archives: '2025-02',
+    author: ['openGauss'],
+    banner: '/category/news/2025-02-19/banner.jpg',
+    title: '2024 openGauss开源社区年度运营报告',
+    tags: ['theme'],
+    path: 'zh/news/2025-02-19/index',
+  },
+  {
+    date: '2025-01-22',
+    summary: '汇聚数据库创新力量 | 2024年度openGauss领先商业实践案例出炉！',
+    archives: '2025-01',
+    author: ['openGauss'],
+    banner: '/category/news/2025-01-22/banner.jpg',
+    title: '汇聚数据库创新力量 | 2024年度openGauss领先商业实践案例出炉！',
+    tags: ['theme'],
+    path: 'zh/news/2025-01-22/index',
+  },
+  {
+    date: '2025-01-16',
+    summary: 'openGauss 与 ByConity 携手构建高效 HTAP 方案，数据处理的强大联盟',
+    archives: '2025-01',
+    author: ['openGauss'],
+    banner: '/category/news/2025-01-16/banner.png',
+    title: 'openGauss 与 ByConity 携手构建高效 HTAP 方案，数据处理的强大联盟',
+    tags: ['theme'],
+    path: 'zh/news/2025-01-16/index',
+  },
+  {
     date: '2024-09-30',
     summary: 'openGauss 6.0.0 LTS 版本正式发布',
     archives: '2024-09',
@@ -191,8 +231,7 @@ export default [
   },
   {
     date: '2023-12-20',
-    summary:
-      'openGauss 5.0.1 Update 版本是 openGauss 5.0.0 Release 的补丁版本。基于 5.0.0 版本基础上，回合主干分支的部分需求和缺陷，发布 5.0.1 补丁版本。',
+    summary: 'openGauss 5.0.1 Update 版本是 openGauss 5.0.0 Release 的补丁版本。基于 5.0.0 版本基础上，回合主干分支的部分需求和缺陷，发布 5.0.1 补丁版本。',
     archives: '2023-12',
     author: ['openGauss'],
     banner: '/category/news/2023-12-20/banner.png',
@@ -212,8 +251,7 @@ export default [
   },
   {
     date: '2023-11-17',
-    summary:
-      '深度解读：基于openGauss安全的差分隐私医疗诊断辅助查询系统斩获金奖背后的故事',
+    summary: '深度解读：基于openGauss安全的差分隐私医疗诊断辅助查询系统斩获金奖背后的故事',
     archives: '2023-11',
     author: ['openGauss'],
     banner: '/category/news/2023-11-17/banner.jpg',
@@ -263,8 +301,7 @@ export default [
   },
   {
     date: '2023-09-28',
-    summary:
-      'openGauss 5.1.0是社区最新发布的创新版本，版本生命周期为0.5年，相比openGauss 5.0.0，新增代码115.5万行，其中内核新增代码6.5万+。',
+    summary: 'openGauss 5.1.0是社区最新发布的创新版本，版本生命周期为0.5年，相比openGauss 5.0.0，新增代码115.5万行，其中内核新增代码6.5万+。',
     archives: '2023-09',
     author: ['openGauss'],
     banner: '/category/news/2023-09-28/banner.png',
@@ -324,8 +361,7 @@ export default [
   },
   {
     date: '2023-04-19',
-    summary:
-      'openGauss技术、社区代表、解决方案等获中国软协产业协会多个荣誉奖项。',
+    summary: 'openGauss技术、社区代表、解决方案等获中国软协产业协会多个荣誉奖项。',
     archives: '2023-04',
     author: ['openGauss'],
     banner: '/category/news/2023-04-19/banner.png',
@@ -531,8 +567,7 @@ export default [
     archives: '2022-11',
     author: ['openGauss'],
     banner: '/category/news/2022-11-09/banner.jpg',
-    title:
-      'openGauss企业级开源数据库荣获2022年度中国计算机学会（CCF）科技进步奖特等奖',
+    title: 'openGauss企业级开源数据库荣获2022年度中国计算机学会（CCF）科技进步奖特等奖',
     tags: ['theme'],
     path: 'zh/news/2022-11-09/index',
   },
@@ -568,13 +603,11 @@ export default [
   },
   {
     date: '2022-10-09',
-    summary:
-      'openGauss商业发行版——GBase 8c中标天津市市场监督管理委员会分布式交易型数据库集成项目',
+    summary: 'openGauss商业发行版——GBase 8c中标天津市市场监督管理委员会分布式交易型数据库集成项目',
     archives: '2022-10',
     author: ['openGauss'],
     banner: '/category/news/2022-10-09/banner.png',
-    title:
-      'openGauss商业发行版——GBase 8c中标天津市市场监督管理委员会分布式交易型数据库集成项目',
+    title: 'openGauss商业发行版——GBase 8c中标天津市市场监督管理委员会分布式交易型数据库集成项目',
     tags: ['theme'],
     path: 'zh/news/2022-10-09/20221009',
   },
@@ -590,8 +623,7 @@ export default [
   },
   {
     date: '2022-09-30',
-    summary:
-      'openGauss 3.1.0 版本是openGauss 2022年发布的Preview版本，版本维护生命周期为0.5年。此次发布包含两个数据库服务端安装包：企业版和轻量版。',
+    summary: 'openGauss 3.1.0 版本是openGauss 2022年发布的Preview版本，版本维护生命周期为0.5年。此次发布包含两个数据库服务端安装包：企业版和轻量版。',
     archives: '2022-09',
     author: ['openGauss'],
     banner: '/category/news/2022-09-30/banner.png',
@@ -791,13 +823,11 @@ export default [
   },
   {
     date: '2022-07-15',
-    summary:
-      'openGauss社区理事长江大勇：openGauss联合产业界创新，共建开源数据库根社区',
+    summary: 'openGauss社区理事长江大勇：openGauss联合产业界创新，共建开源数据库根社区',
     archives: '2022-07',
     author: ['openGauss'],
     banner: '/category/news/2022-07-15/picture1.jpg',
-    title:
-      'openGauss社区理事长江大勇：openGauss联合产业界创新，共建开源数据库根社区',
+    title: 'openGauss社区理事长江大勇：openGauss联合产业界创新，共建开源数据库根社区',
     tags: ['theme'],
     path: 'zh/news/2022-07-15/20220715',
   },
@@ -913,13 +943,11 @@ export default [
   },
   {
     date: '2022-04-26',
-    summary:
-      '携手鲲鹏+openGauss，邮储银行新一代个人业务分布式核心系统全面投产上线',
+    summary: '携手鲲鹏+openGauss，邮储银行新一代个人业务分布式核心系统全面投产上线',
     archives: '2022-04',
     author: ['openGauss'],
     banner: '/category/news/2022-04-26/banner.png',
-    title:
-      ' 携手鲲鹏+openGauss，邮储银行新一代个人业务分布式核心系统全面投产上线',
+    title: ' 携手鲲鹏+openGauss，邮储银行新一代个人业务分布式核心系统全面投产上线',
     tags: ['theme'],
     path: 'zh/news/2022-04-26/20220426',
   },
@@ -1115,13 +1143,11 @@ export default [
   },
   {
     date: '2021-11-28',
-    summary:
-      '邮储银行新一代个人业务核心系统国际汇款业务上线，openGauss核心应用再创新高度',
+    summary: '邮储银行新一代个人业务核心系统国际汇款业务上线，openGauss核心应用再创新高度',
     archives: '2021-11',
     author: ['openGauss'],
     banner: '/category/news/2021-11-28/banner.png',
-    title:
-      ' 邮储银行新一代个人业务核心系统国际汇款业务上线，openGauss核心应用再创新高度',
+    title: ' 邮储银行新一代个人业务核心系统国际汇款业务上线，openGauss核心应用再创新高度',
     tags: ['theme'],
     path: 'zh/news/2021-11-28/2021128',
   },
@@ -1241,8 +1267,7 @@ export default [
     archives: '2021-09',
     author: ['openGauss'],
     banner: '/category/news/2021-09-25/2.jpg',
-    title:
-      ' openGauss社区理事会正式成立！3大运营商、7大头部银行等18家理事单位加入',
+    title: ' openGauss社区理事会正式成立！3大运营商、7大头部银行等18家理事单位加入',
     tags: ['theme'],
     path: 'zh/news/2021-09-25/20210925',
   },
@@ -1708,8 +1733,7 @@ export default [
   },
   {
     date: '2021-04-07',
-    summary:
-      '中国电信股份有限公司云计算分公司签署CLA，正式加入openGauss 社区。',
+    summary: '中国电信股份有限公司云计算分公司签署CLA，正式加入openGauss 社区。',
     archives: '2021-04',
     author: ['openGauss'],
     banner: '/category/news/2021-04-07/detail.png',
@@ -1729,8 +1753,7 @@ export default [
   },
   {
     date: '2021-03-23',
-    summary:
-      '3月11日，北京超图签署CLA(Contribution License Agreement, 贡献许可协议），正式加入openGauss 社区。',
+    summary: '3月11日，北京超图签署CLA(Contribution License Agreement, 贡献许可协议），正式加入openGauss 社区。',
     archives: '2021-03',
     author: ['openGauss'],
     banner: '/category/news/2021-03-23/detail.png',
@@ -1770,8 +1793,7 @@ export default [
   },
   {
     date: '2021-01-07',
-    summary:
-      'Click2Cloud作为openGauss的合作者和贡献者，其产品CloudsBrain于上个月集成了openGauss，可以安全，快速地将数据从其他平台迁移到openGauss.',
+    summary: 'Click2Cloud作为openGauss的合作者和贡献者，其产品CloudsBrain于上个月集成了openGauss，可以安全，快速地将数据从其他平台迁移到openGauss.',
     archives: '2021-01',
     author: ['openGauss'],
     banner: '/category/news/2021-01-07/detail.png',
