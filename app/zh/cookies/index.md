@@ -8,7 +8,7 @@ title: '关于COOKIES'
 
 <div class='markdown markdown-statement'>
 
-# 关于 COOKIES
+# 关于COOKIES
 
 <hr/>
 

@@ -10,33 +10,40 @@ title: 'Privacy Policy'
 
 The openGauss Community understands the importance of your privacy and fully respects it. **<u>Please read this openGauss Community Privacy Policy ("this policy") carefully before you submit your personal data to us</u>**. If you have any questions about how we process your personal data, please feel free to contact us. Unless otherwise specified, "we" and "us" in this policy refers to the **openGauss** Community.
 
+**Version Change Notes**
+
+Please carefully review the following updates to this privacy policy:
+
+1. Updated the description of third-party login for account services in the "How We Collect and Process Your Personal Data" section.
+2. Optimized the bold formatting style for personal data.
+
 ## 1. How We Collect and Process Your Personal Data
 
 **We generally do not require your personal data if you only browse the general content of the openGauss Community ("Community"). We will collect your personal data accordingly in the following circumstances. You may also obtain a quick understanding of how we collect and use personal data by reviewing the [Personal Data Collection Overview](/en/personal-data-collection-overview/)**:
 
 **a) Account Service**
 
-  1. When you register for an openGauss community account, we will collect your user name, company, **email address**, **phone number**, password, and **email/phone verification code**. A unique account identifier will be automatically generated. Refusal to provide this information will prevent account creation.
+  1. When you register for an openGauss community account, we will collect your user name, company, **email address**, **phone number**, **password**, and **email/phone verification code**. A unique account identifier will be automatically generated. Refusal to provide this information will prevent account creation.
   2. When you log in to the openGauss community using your user name, **email address**, or **phone number**, we will collect user name, **email address**, **phone number**，**password** and **verification code** for authentication. Refusal to provide this information will prevent login.
-  3. When you log in using a third-party account (Gitee), we will collect your UUID, ID, nickname, and **email address** from that platform for authentication and code repository access management. When you log in using a third-party account that is not bound to any openGauss account, a new openGauss account with a unique identifier will be automatically generated, deriving its user name from your third-party account. Refusal to provide this information will prevent login via third-party accounts.
+  3. When you log in using a third-party account (Gitee), we will collect your **UUID**, **ID**, nickname, and **email address** from that platform for authentication and code repository access management. When you log in using a third-party account that is not bound to any openGauss account, a new openGauss account with a unique identifier will be automatically generated, deriving from **Gitee ID**. Refusal to provide this information will prevent login via third-party accounts.
   4. After logging in, you can optionally provide your avatar, nickname, and company. This information is not required for using openGauss community features.
-  5. After logging in, you can modify your **email address**, **phone number**, and password. We will collect **email address**, **phone number**, password and **verification code** for authentication.
-  6. After logging in, you can bind your openGauss account to a third-party account (Gitee). We will collect your UUID, ID, nickname, and **email address** from the bound platform. Refusal to provide this information will prevent third-party account binding for login purposes.
+  5. After logging in, you can modify your **email address**, **phone number**, and **password**. We will collect **email address**, **phone number**, **password** and **verification code** for authentication.
+  6. After logging in, you can bind your openGauss account to a third-party account (Gitee). We will collect your **UUID**, **ID**, nickname, and **email address** from the bound platform. Refusal to provide this information will prevent third-party account binding for login purposes.
 
-**b) Mail List Service**. When you use our mail list service, we will collect your **email address** and name (optional). We will provide you with the email subscription service to facilitate your participation in discussions in the community.
+**b) Mail List Service**. When you use our mail list service, we will collect your **email address** and **name (optional)**. We will provide you with the email subscription service to facilitate your participation in discussions in the community.
 
-**c) Service Optimization**. To ensure service quality and operations, we automatically collect and store necessary log data, including access timestamps, IP addresses, request details, access status, resource size, access origin, and user agent information. In addition, we will collect your device information (device name, device type, device vendor, operating system, operating system version, screen width, screen height), application information (application ID, SDK version , browser, browser version, browser viewport width, browser viewport height), application usage information (event name, event attributes, reporting time, client anonymous ID). This data is collected for the purposes of community operations and O&M security.
+**c) Service Optimization**. To ensure service quality and operations, we automatically collect and store necessary log data, including access timestamps, **IP address**, request details, access status, resource size, access origin, and user agent information. In addition, we will collect your device information (device name, device type, device vendor, operating system, operating system version, screen width, screen height), application information (application ID, SDK version , browser, browser version, browser viewport width, browser viewport height), application usage information (event name, event attributes, reporting time, client anonymous ID). This data is collected for the purposes of community operations and O&M security.
 
 **d) Contributor License Agreement(CLA) Signing**. When you participate in code contribution through the CLA
 signing system (click [here](https://clasign.osinfra.cn/sign/gitee_opengauss-1614047760000855378) to learn more), you need to submit your [relevant personal data](https://clasign.osinfra.cn/privacy/gitee_opengauss-1614047760000855378) to the CLA signing system. We will obtain such personal data to verify whether you have signed the CLA, and to conduct relevant statistical analysis to understand how the Community is operating.
 
-**e) Meeting Service**. When you use our meeting service, we will collect your Gitee ID for configuring related permissions. If you have meeting scheduling permission, we will collect your **email address** used when you edit the meeting details for the purpose of sending meeting invitations. If you enable automatically screen recording when you schedule a meeting, the recording will be uploaded to the third-party platform [Bilibili](https://www.bilibili.com/) after the meeting so that more interested individuals and organizations can review your meeting.
+**e) Meeting Service**. When you use our meeting service, we will collect your **Gitee ID** for configuring related permissions. If you have meeting scheduling permission, we will collect your **email address** used when you edit the meeting details for the purpose of sending meeting invitations. If you enable automatically screen recording when you schedule a meeting, the recording will be uploaded to the third-party platform [Bilibili](https://www.bilibili.com/) after the meeting so that more interested individuals and organizations can review your meeting.
 
-**f) Content Release**. When you participate in Community meetings, Community activities, contribution in the open source Community, blogs, newsgroups, or Community organization, you may submit your **photo**, name, **email address**, company name, position, school, profile and Gitee ID for posting on our website so that developers can better understand the community, quickly make contact, and participate in the community.
+**f) Content Release**. When you participate in Community meetings, Community activities, contribution in the open source Community, blogs, newsgroups, or Community organization, you may submit your **photo**, **name**, **email address**, **company name**, **position**, **school**, **profile** and **Gitee ID** for posting on our website so that developers can better understand the community, quickly make contact, and participate in the community.
 
-**g) Meetups**. When you apply organize an openGauss meetup, the community will collect your name, **phone number**, **email address**, company, and meetup details (including organization, agenda, date, duration, city, event scale, event form, event support, and topics) from the application form you fill in. The collected data will be used to contact you for the purpose of confirming your application and related matters, as well as arranging for relevant affairs, including sign-ins and nameplates.
+**g) Meetups**. When you apply organize an openGauss meetup, the community will collect your **name**, **phone number**, **email address**, **company**, and meetup details (including organization, agenda, date, duration, city, event scale, event form, event support, and topics) from the application form you fill in. The collected data will be used to contact you for the purpose of confirming your application and related matters, as well as arranging for relevant affairs, including sign-ins and nameplates.
 
-**h) Pairing Plan Application**. When you apply for participation in the openGauss pairing plan, the community will collect your name, company, **email address**, **phone number**, and openGauss usage information (including use cases, version details, number of nodes, hardware information, and issue description) from the application form you fill in. The collected data will be used to contact you for the purpose of confirming your application and related matters.
+**h) Pairing Plan Application**. When you apply for participation in the openGauss pairing plan, the community will collect your **name**, **organization**, **email address**, **phone number**, and openGauss usage information (including use cases, version details, number of nodes, hardware information, and issue description) from the application form you fill in. The collected data will be used to contact you for the purpose of confirming your application and related matters.
 
 <br/>
 
@@ -70,7 +77,7 @@ Generally, we will store or retain your personal data within the retention perio
 
 Upon your active request for the deletion of personal data, the retention period for the relevant data will be one month. We will respond to your request and delete all personal data within this period.
 
-For service optimization, the access timestamp, IP address, request details, access status, accessed resource size, access source, and request user agent information collected based on the access quantity statistics will be automatically deleted after 10 days.
+For service optimization, the access timestamp, **IP address**, request details, access status, accessed resource size, access source, and request user agent information collected based on the access quantity statistics will be automatically deleted after 10 days.
 
 ## 5. How We Protect Your Personal Data
 
@@ -96,7 +103,7 @@ In accordance with applicable laws and regulations, you may have the following r
 
 - Please note that these rights are not absolute and may be restricted in accordance with applicable laws. If you need our assistance in exercising the requests or rights above, please contact us as set out in the **"How to Contact Us"** section below.
 
-  - To provide you with the CLA Sign service, we will retain your personal data. The retention period of such data will depend on the specific purpose for which it is used, as well as the requirements of applicable laws and regulations. You acknowledge and understand that the CLA is a legally binding document signed by you or the corporation you represent, serving as evidence of the permanent rights granted over your contributions. Therefore, if you request the deletion of the data collected for the purpose of executing the CLA (including, but not limited to, your name and **email address**), we may not be able to comply with such a request, unless the deletion of such data does not affect the legal validity of the CLA you have signed.
+  - To provide you with the CLA Sign service, we will retain your personal data. The retention period of such data will depend on the specific purpose for which it is used, as well as the requirements of applicable laws and regulations. You acknowledge and understand that the CLA is a legally binding document signed by you or the corporation you represent, serving as evidence of the permanent rights granted over your contributions. Therefore, if you request the deletion of the data collected for the purpose of executing the CLA (including, but not limited to, your **name** and **email address**), we may not be able to comply with such a request, unless the deletion of such data does not affect the legal validity of the CLA you have signed.
   - Any personal data you publicly display on the community website will be stored in the relevant code repository, and historical records will persist even after deletion.
 
 **<u>Generally, we will respond to you within one month, unless otherwise required by applicable laws</u>**. Please note that under some circumstances, for example where we cannot verify your identity, or your claim exceeds your rights under applicable laws, we may refuse your request. In this case, we will inform you in written form that your request is refused together with the reasons for our refusal.
@@ -112,8 +119,8 @@ You can log in to the user center using an openGauss community account using the
 You can log in using an openGauss community account and perform the following operations in User Center:
 
 1. Change your avatar.
-2. Choose Info to view and correct your basic informatio(nickname, company name).
-3. Choose Identity to check and correct you **email address**, **phone number**, and Gitee account.
+2. Choose Info to view and correct your basic informatio(nickname, **company**).
+3. Choose Identity to check and correct you **email address**, **phone number**, and **Gitee account**.
 4. Choose Security to reset your login password.
 
 You have the right to update or modify your personal data processed by us when you need to or find any errors with it.
@@ -122,8 +129,8 @@ You have the right to update or modify your personal data processed by us when y
 
 You can log in using an openGauss community account and perform the following operations in User Center:
 
-1. Choose User Center -> Info to delete basic informatio(nickname, company name) about your openGauss community account,
-2. Choose User Center > Identity to unbind your Gitee account.
+1. Choose User Center -> Info to delete basic informatio(nickname, **company**) about your openGauss community account,
+2. Choose User Center > Identity to unbind your **Gitee account**.
 
 ### 6.4 Revocation of Consent
 
@@ -162,8 +169,8 @@ Email: **<common@public.opengauss.org>**
 
 Hotline: **+86 18628259905**
 
-Last updated: **February 28, 2025**
+Last updated: **March 11, 2025**
 
-Privacy policy version: **v20250228**
+Privacy policy version: **v20250311**
 
 </div>
