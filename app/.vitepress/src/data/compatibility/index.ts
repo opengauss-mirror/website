@@ -1,5 +1,37 @@
 export default [
   {
+    name: 'IPSec/SSL VPN综合安全网关 SecGW G1300',
+    version: '',
+    type: '通用',
+    company: '三未信安科技股份有限公司',
+    database: 'openGauss 6.0.0',
+    os: 'Kylin V10',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E4%B8%89%E6%9C%AA%E4%BF%A1%E5%AE%89/IPSec%20SSL%20VPN%E7%BB%BC%E5%90%88%E5%AE%89%E5%85%A8%E7%BD%91%E5%85%B3.pdf',
+  },
+  {
+    name: '中软华腾新一代银联前置软件(JSON版)',
+    version: '3.0',
+    type: '金融',
+    company: '上海中软华腾软件系统有限公司',
+    database: 'openGauss 5.0.3',
+    os: 'Kylin V10',
+    server: 'Yitian 710(其他)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E4%B8%8A%E6%B5%B7%E4%B8%AD%E8%BD%AF/%E4%B8%AD%E8%BD%AF%E5%8D%8E%E8%85%BE%E6%96%B0%E4%B8%80%E4%BB%A3%E9%93%B6%E8%81%94%E5%89%8D%E7%BD%AE%E8%BD%AF%E4%BB%B6%28JSON%E7%89%88%29%20V3.0.pdf',
+  },
+  {
+    name: '先锋数据库管理软件 SQL Forward',
+    version: '1.0',
+    type: '通用',
+    company: '北京永乐时代科技有限责任公司',
+    database: 'openGauss 5.0.2',
+    os: 'CentOS 7.6',
+    server: 'intel(其他)',
+    download: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%8C%97%E4%BA%AC%E6%B0%B8%E4%B9%90/Certificate.pdf',
+  },
+  {
     name: '大任人力资源管理系统软件',
     version: '5',
     type: '安平',
