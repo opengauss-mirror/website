@@ -41,6 +41,10 @@ const open = (info) => {
     <span class="label">{{ info.label }}：</span>
     <span :class="['value', info.isLink && 'link']" @click="open(info)">{{ data[info.key] || '-' }}</span>
   </div>
+  <div v-if="data.replay_url && data.upload_status === 10" ref="domRef" class="label-item">
+    <span class="label">回放链接：</span>
+    <a class="value link" :href="data.replay_url" target="_blank" rel="noopener noreferrer">{{ data.replay_url }}</a>
+  </div>
 </template>
 
 <style scoped lang="scss">
