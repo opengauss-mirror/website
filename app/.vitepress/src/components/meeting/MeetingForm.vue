@@ -258,7 +258,7 @@ onMounted(() => {
       <OInput v-model="form.agenda" type="textarea" :rows="2" />
     </ElFormItem>
     <ElFormItem :label="i18nMeeting.EMAIL">
-      <OInput v-model="form.emaillist" :disabled="!!data" :placeholder="i18nMeeting.EMAIL_TEXT" type="textarea" :rows="2" />
+      <OInput v-model="form.email_list" :disabled="!!data" :placeholder="i18nMeeting.EMAIL_TEXT" type="textarea" :rows="2" />
     </ElFormItem>
     <ElFormItem :label="i18nMeeting.ETHERPAD">
       <OInput v-model="form.etherpad" />
