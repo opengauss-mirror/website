@@ -1,12 +1,9 @@
 import { BAIDU_HM } from '@/data/url-config';
-import {
-  OpenAnalytics,
-  OpenEventKeys,
-  getClientInfo,
-} from '@opensig/open-analytics';
+import { OpenAnalytics, OpenEventKeys, getClientInfo } from '@opensig/open-analytics';
 import { reportAnalytics } from '@/api/api-analytics';
 import { Awaitable } from 'vitepress';
 import { COOKIE_AGREED_STATUS, useCookieStore } from '@/stores/common';
+import { removeCustomCookie } from '@/shared/utils';
 
 const REGEXP = /^\/(?:zh|en)\/(cve)\/?/;
 
@@ -17,9 +14,7 @@ const pathServiceMap = {
 export const oa = new OpenAnalytics({
   appKey: 'openGauss',
   request: (data) => {
-    if (
-      useCookieStore().getUserCookieStatus() !== COOKIE_AGREED_STATUS.ALL_AGREED
-    ) {
+    if (useCookieStore().getUserCookieStatus() !== COOKIE_AGREED_STATUS.ALL_AGREED) {
       removeSensor();
       return;
     }
@@ -49,9 +44,7 @@ export const oaReport = <T extends Record<string, any>>(
     event,
     async (...opt) => ({
       $service,
-      ...(typeof eventData === 'function'
-        ? await eventData(...opt)
-        : eventData),
+      ...(typeof eventData === 'function' ? await eventData(...opt) : eventData),
     }),
     options
   );
@@ -74,6 +67,13 @@ export const enableOA = () => {
   oa.enableReporting(true);
 };
 
+export const disableOA = () => {
+  oa.enableReporting(false);
+  ['oa-openGauss-client', 'oa-openGauss-events', 'oa-openGauss-session'].forEach((key) => {
+    localStorage.removeItem(key);
+  });
+};
+
 export const initSensor = () => {
   // 百度统计
   (function () {
@@ -91,16 +91,20 @@ export const initSensor = () => {
 };
 
 export const removeSensor = () => {
-  oa.enableReporting(false);
-  [
-    'oa-openGauss-client',
-    'oa-openGauss-events',
-    'oa-openGauss-session',
-  ].forEach((key) => {
-    localStorage.removeItem(key);
-  });
+  disableOA();
   const scripts = document.querySelectorAll('script.analytics-script');
   scripts.forEach((script) => {
     script.remove();
   });
+
+  const hm = /^hm/i;
+  document.cookie
+    .split(';')
+    .map((c) => c.trim())
+    .forEach((c) => {
+      const key = decodeURIComponent(c.split('=')[0]);
+      if (hm.test(key)) {
+        removeCustomCookie(key);
+      }
+    });
 };
