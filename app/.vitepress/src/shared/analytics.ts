@@ -107,4 +107,14 @@ export const removeSensor = () => {
         removeCustomCookie(key);
       }
     });
+  [sessionStorage, localStorage].forEach((storage) => {
+    const keys = [];
+    for (let i = 0; i < storage.length; i++) {
+      const key = storage.key(i)!;
+      if (hm.test(key)) {
+        keys.push(key);
+      }
+    }
+    keys.forEach((key) => storage.removeItem(key));
+  });
 };
