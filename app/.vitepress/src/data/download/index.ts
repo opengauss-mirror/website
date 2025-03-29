@@ -1,3 +1,4 @@
+import download7.0.0-RC1 from './download7.0.0-RC1';
 import download601 from './download6.0.1';
 import download600 from './download6.0.0';
 import download600RC1 from './download6.0.0-RC1';
@@ -23,6 +24,20 @@ import download100 from './download1.0.0';
 // 如果之后要修改历史版本页面的默认选中版本，可以修改(initPrevious:true)所在版本的位置
 // newLayout:true 代表使用新版下载页面结构布局，无此参数代表使用旧版
 const downloadData = [
+  {
+    name: '7.0.0-RC1',
+    newLayout: true,
+    data: download601,
+    plannedEOL: 'Planned EOL: 2025.09.30',
+    docs_list: [
+      {
+        name: '发行说明',
+        nameEn: 'Release Notes',
+        path: '/zh/news/2025-02-05-601/index.html',
+        pathEn: '/zh/news/2025-02-05-601/index.html',
+      },
+    ],
+  },
   {
     name: '6.0.1 (LTS)',
     newLayout: true,
