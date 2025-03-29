@@ -190,7 +190,7 @@ export default [
         ],
       },
       {
-        system: 'openEuler 20.03 LTS (aarch64)',
+        system: 'openEuler 20.03 LTS (AArch64)',
         docs: true,
         architecture: 'AArch64',
         os: 'openEuler 20.03 LTS',
