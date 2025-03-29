@@ -3,7 +3,6 @@ const OBS_Summit_PPT =
   'https://obs-for-opengauss-summit.obs.cn-north-4.myhuaweicloud.com/';
 const GAUSS_EMAIL = 'common@public.opengauss.org'; // gauss邮箱
 const GAUSS_CERTIFICATE_EMAIL = 'common@certificate.opengauss.org'; // gauss证书相关联系邮箱
-const HUAWEI_COMPUTE = 'https://huaweicompute.wjx.cn/'; // 华为在线问卷、调查投票平台
 const DOCS_LINK = 'https://docs-opengauss.osinfra.cn/'; // gauss文档
 const BILIBILI_LINK2 = 'https://www.bilibili.com/'; // bilibili官网
 const ENMOEDU_LINK = 'https://enmoedu.com/'; // 恩墨学院
@@ -66,7 +65,6 @@ export {
   GAUSS_EMAIL,
   GAUSS_CERTIFICATE_EMAIL,
   BAIDU_HM,
-  HUAWEI_COMPUTE,
   TRYME_LINK,
   SAGE_LINK,
   CLA_LINK,

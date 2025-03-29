@@ -572,20 +572,6 @@ const summitData = {
       },
     ],
   },
-  other: [
-    {
-      name: '填写社区满意度有奖问卷，丰富大礼等您来拿！',
-      cover: otherCover1,
-      btn_text: '立即参与',
-      path: '/zh/questionnaire/',
-    },
-    {
-      name: '考openGauss认证，领京东卡激励',
-      cover: otherCover2,
-      btn_text: '立即报名',
-      path: '/zh/events/2022-10-28/Meetup.html',
-    },
-  ],
 };
 
 export default summitData;
