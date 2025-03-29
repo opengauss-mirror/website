@@ -1,4 +1,4 @@
-import download7.0.0-RC1 from './download7.0.0-RC1';
+import download700RC1 from './download7.0.0-RC1';
 import download601 from './download6.0.1';
 import download600 from './download6.0.0';
 import download600RC1 from './download6.0.0-RC1';
@@ -27,7 +27,7 @@ const downloadData = [
   {
     name: '7.0.0-RC1',
     newLayout: true,
-    data: download601,
+    data: download700RC1,
     plannedEOL: 'Planned EOL: 2025.09.30',
     docs_list: [
       {
