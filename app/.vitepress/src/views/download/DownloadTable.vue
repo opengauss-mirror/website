@@ -309,18 +309,19 @@ const collectDownloadData = (name: string) => {
     <!-- pc  -->
     <div v-if="screenWidth > 1100" class="download-pc">
       <OTable :data="renderData.content" style="width: 100%">
-        <el-table-column width="320" :label="i18n.download.TABLE_HEAD[0]" prop="name">
+        <el-table-column width="360" :label="i18n.download.TABLE_HEAD[0]" prop="name">
           <template #default="scope">
             <div class="name-info">
-              {{ scope.row.name }}
-              <template v-if="scope.row.table === 'server' && hoverTips(scope.row.edition)">
-                <el-tooltip :effect="commonStore.theme" placement="right-start">
+              {{ scope.row.name }}     
+              <template v-if="tableData.name.includes('Server') && scope.row.name.includes('noLSE')">  
+                <el-tooltip :effect="commonStore.theme" placement="top">
                   <template #content>
-                    <p class="server-name">
-                      {{ hoverTips(scope.row.edition) }}
+                    <p class="lse-content">
+                      支持ARMv8.1以下芯片，适配飞腾2000和鲲鹏916平台（LSE即大型系统扩展指令集从ARMv8.1开始引入，ARMv8.1以下芯片不支持该特性）
                     </p>
                   </template>
-                  <IconTips class="server-tips" />
+               
+                  <IconTips class="server-tips" />  
                 </el-tooltip>
               </template>
             </div>
@@ -426,6 +427,11 @@ const collectDownloadData = (name: string) => {
   </div>
 </template>
 <style lang="scss" scoped>
+
+.lse-content{
+  max-width: 310px;
+  padding: 3px 5px;
+}
 .content-item {
   margin-top: var(--o-spacing-h2);
   @media (max-width: 1100px) {

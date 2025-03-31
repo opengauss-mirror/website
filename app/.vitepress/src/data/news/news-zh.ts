@@ -1,5 +1,15 @@
 export default [
   {
+    date: '2025-03-31',
+    summary: 'openGauss 7.0.0-RC1 版本正式发布',
+    archives: '2025-03',
+    author: ['openGauss'],
+    banner: '/category/news/2025-03-31/banner.jpg',
+    title: 'openGauss 7.0.0-RC1 版本正式发布',
+    tags: ['theme'],
+    path: 'zh/news/2025-03-31/index',
+  },
+  {
     date: '2025-02-25',
     summary: 'openGauss 首届委员会线下联合例会：融合用户视角，共话技术规划',
     archives: '2025-02',
