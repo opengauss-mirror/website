@@ -12,11 +12,11 @@ import bannerCallFor_mb from '@/assets/category/home/banner/banner-call-for_mb.p
 import bannerTeamUp from '@/assets/category/home/banner/banner-team-up.jpg';
 import bannerTeamUpMo from '@/assets/category/home/banner/banner-team-up_mo.jpg';
 
-import bannerOpenGaussV6 from '@/assets/category/home/banner/banner-opengaussv6.jpg';
-import bannerOpenGaussV6Mo from '@/assets/category/home/banner/banner-opengaussv6_mo.jpg';
+import bannerOpenGaussV6 from '@/assets/category/home/banner/banner20250301.jpg';
+import bannerOpenGaussV6Mo from '@/assets/category/home/banner/banner20250301_mo.jpg';
 
-import banner600Pc from '@/assets/category/home/banner/banner-opengauss-6.0.0-pc.jpg';
-import banner600Mo from '@/assets/category/home/banner/banner-opengauss-6.0.0-mo.jpg';
+import banner600Pc from '@/assets/category/home/banner/banner202503.jpg';
+import banner600Mo from '@/assets/category/home/banner/banner202503_mo.jpg';
 
 import banner20241211 from '@/assets/category/home/banner/banner_pc20241211.jpg';
 import banner20241211_mb from '@/assets/category/home/banner/banner_mo20211211.jpg';
@@ -28,6 +28,34 @@ import { LEARN_VIDEO_LINK, DOCS_LINK } from '@/data/url-config';
 // rightInset:banner右侧插图
 export default {
   zh: [
+    {
+      pcBanner: banner600Pc,
+      moBanner: banner600Mo,
+      link: '/zh/news/2025-03-31/',
+      target: '_blank',
+      title: 'openGauss 7.0.0-RC1 版本正式发布',
+      titleMb: ['openGauss 7.0.0 RC1 \n版本正式发布'],
+      subtitle: '',
+      desc: [''],
+      btn: '',
+      className: 'banner-version',
+      rightInset: '',
+      rightLink: '',
+    },
+    {
+      pcBanner: bannerOpenGaussV6,
+      moBanner: bannerOpenGaussV6Mo,
+      link: DOCS_LINK + 'zh/docs/latest/docs/DataVec/DataVec-Overview.html',
+      target: '_blank',
+      title: 'DataVec向量数据库能力增强',
+      titleMb: [],
+      subtitle: '',
+      desc: [''],
+      btn: '了解更多',
+      className: '',
+      rightInset: '',
+      rightLink: '',
+    },
     {
       pcBanner: banner20241211,
       moBanner: banner20241211_mb,
@@ -43,34 +71,6 @@ export default {
       rightLink: '',
       textImg: banner_text20241211,
       textImgMb: banner_text20241211_mb,
-    },
-    {
-      pcBanner: banner600Pc,
-      moBanner: banner600Mo,
-      link: '/zh/news/2024-09-30/',
-      target: '_blank',
-      title: 'openGauss 6.0.0 LTS 版本正式发布',
-      titleMb: ['openGauss 6.0.0 LTS \n版本正式发布'],
-      subtitle: '',
-      desc: [''],
-      btn: '',
-      className: 'banner-version',
-      rightInset: '',
-      rightLink: '',
-    },
-    {
-      pcBanner: bannerOpenGaussV6,
-      moBanner: bannerOpenGaussV6Mo,
-      link: '/zh/news/2024-08-14/',
-      target: '_blank',
-      title: 'openGauss6.0.0版本更改数据库发布包名公告',
-      titleMb: [],
-      subtitle: '',
-      desc: [''],
-      btn: '了解更多',
-      className: '',
-      rightInset: '',
-      rightLink: '',
     },
     {
       pcBanner: bannerTeamUp,
@@ -138,9 +138,7 @@ export default {
       title: 'Welcome to openGauss Community',
       titleMb: [],
       subtitle: '',
-      desc: [
-        'openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability',
-      ],
+      desc: ['openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability'],
       btn: 'Learn More',
       className: 'banner-video',
       rightInset: videoGif,
