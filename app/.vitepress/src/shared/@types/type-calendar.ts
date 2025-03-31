@@ -23,7 +23,7 @@ export interface DayDataT {
   video_url?: string;
   agenda?: string;
   detail?: string;
-  emaillist?: string;
+  email_list?: string;
   record?: string;
   start_date?: string;
   end_date?: string;

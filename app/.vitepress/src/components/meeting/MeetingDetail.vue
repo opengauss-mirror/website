@@ -20,8 +20,11 @@ const domRef = ref([]);
 // 复制会议内容
 const copyInfo = () => {
   try {
-    let text = `会议主题：${props.data.topic}\nSIG：${props.data.group_name}\n`;
+    let text = `会议主题：${props.data.topic}\n会议日期：${props.data.date}\nSIG：${props.data.group_name}\n`;
     text += [...domRef.value].reduce((pre, cur) => `${pre}${cur.textContent}\n`, '');
+    if (props.data.replay_url && props.data.upload_status === 10) {
+      text += `回放链接：${props.data.replay_url}`;
+    }
     navigator.clipboard.writeText(text);
     return Promise.resolve();
   } catch (e) {
@@ -40,6 +43,10 @@ const open = (info) => {
   <div ref="domRef" class="label-item" :class="`label-item_${data.id}`" v-for="(info, infoIdx) in infoList" :key="infoIdx">
     <span class="label">{{ info.label }}：</span>
     <span :class="['value', info.isLink && 'link']" @click="open(info)">{{ data[info.key] || '-' }}</span>
+  </div>
+  <div v-if="data.replay_url && data.upload_status === 10" class="label-item">
+    <span class="label">回放链接：</span>
+    <a class="value link" :href="data.replay_url" target="_blank" rel="noopener noreferrer">{{ data.replay_url }}</a>
   </div>
 </template>
 
