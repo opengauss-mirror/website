@@ -44,8 +44,8 @@ export default [
           },
           {
             name: 'openGauss_7.0.0-RC1 企业版(noLSE)',
-            size: '28.02MB',
-            edition: 'lite',
+            size: '143.39MB',
+            edition: 'enterprise',
             down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/noLSE/openEuler24.03/arm/openGauss-All-7.0.0-RC1-openEuler24.03-aarch64.tar.gz`,
             sha_code:
               'ac07a14c12f77fd671dda9e17a93d2b02eee9df17fb6c6688c9157016ab3a069',
@@ -926,55 +926,73 @@ export default [
         content: [
           {
             name: 'replicate-mysql2openGauss_7.0.0-RC1',
-            size: '10.44MB',
-            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/replicate-mysql2openGauss-7.0.0-RC1.tar.gz`,
+            size: '10.48MB',
+            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/replicate-mysql2openGauss-7.0.0rc1.tar.gz`,
             sha_code:
-              '2a4593af644265d01c0003367cadae5f52359fb9c57a67ded5ac7aaa588263d9',
+              '99df171b35c0ba849ca9d9beeb8099c8f8cdeccfab30d2fc9365e7f6652db334',
             docsName: '',
             docs_url: '',
           },
           {
             name: 'replicate-openGauss2mysql_7.0.0-RC1',
-            size: '15.41MB',
-            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/replicate-openGauss2mysql-7.0.0-RC1.tar.gz`,
+            size: '17.78MB',
+            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/replicate-openGauss2mysql-7.0.0rc1.tar.gz`,
             sha_code:
-              '92ab3c90b7e35a2c96bdb6b56deedda13daace4233f8e33064bcd1021cc09edf',
+              '84375d48577c1523d8173b57e6678a5e85b6436de5be14e029846d14c55a8dea',
+            docsName: '',
+            docs_url: '',
+          },
+          {
+            name: 'replicate-postgresql2openGauss_7.0.0-RC1',
+            size: '8.18MB',
+            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/replicate-postgresql2openGauss-7.0.0rc1.tar.gz`,
+            sha_code:
+              '57b3c4b1c53e2fae85d264f00595614a197418fee7c77901878e3a6b3c5b80fd',
+            docsName: '',
+            docs_url: '',
+          },
+          {
+            name: 'replicate-openGauss2postgresql_7.0.0-RC1',
+            size: '17.78MB',
+            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/replicate-openGauss2postgresql-7.0.0rc1.tar.gz`,
+            sha_code:
+              '84375d48577c1523d8173b57e6678a5e85b6436de5be14e029846d14c55a8dea',
             docsName: '',
             docs_url: '',
           },
           {
             name: 'gs_datacheck_7.0.0-RC1',
-            size: '83.71MB',
-            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/gs_datacheck-7.0.0-RC1.tar.gz`,
+            size: '83.85MB',
+            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/gs_datacheck-7.0.0rc1.tar.gz`,
             sha_code:
-              'dd8c053aa784096cd6bdeaf3472181e29b67dc38d0a8c78860ab3fee3b9857f1',
+              '9641a882dfe994eda569e6a2f1a5ef8b1807419c213d7d1f457f10533f755e1a',
             docsName: '',
             docs_url: '',
           },
           {
             name: 'Datakit_7.0.0-RC1',
-            size: '858.10MB',
+            size: '936.65MB',
             down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/Datakit/Datakit-7.0.0-RC1.tar.gz`,
             sha_code:
-              '7c972d987ca93a097a388d5ea6153debe430f6e8846b0906b575317038a1f543',
+              'a90cb9cf27709ef3b6c3d8bbb43b5bd0285de6eb25d704c70e991ef97ddd4773',
             docsName: '',
             docs_url: '',
           },
           {
             name: 'dbmind_7.0.0-RC1',
-            size: '281.28MB',
+            size: '301.88MB',
             down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/dbmind/arm/dbmind-installer-aarch64.tar.gz`,
             sha_code:
-              '91eadf1a47f29f153e4bcf8837a4d81929647b7eb8638f6285cebe7264ab2098',
+              '96e7415a5d206fcb3d50c2444b7b51627ba31a28072c42e916e39d1266cc5e3b',
             docsName: '',
             docs_url: '',
           },
           {
             name: 'transcribe_replay_tool_7.0.0-RC1',
-            size: '23.90MB',
+            size: '25.00MB',
             down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/transcribe-replay-tool-7.0.0-RC1.tar.gz`,
             sha_code:
-              'ca4f8acf5253cbee55cb31eb576da44a2bfcda9242a19cb4484d747534cb1ccc',
+              'd969acb2faec8c10b9f789a172fff644a097e7db65d7cce4c257428ab1751570',
             docsName: '',
             docs_url: '',
           },
@@ -987,55 +1005,73 @@ export default [
         content: [
           {
             name: 'replicate-mysql2openGauss_7.0.0-RC1',
-            size: '10.44MB',
-            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/replicate-mysql2openGauss-7.0.0-RC1.tar.gz`,
+            size: '10.48MB',
+            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/replicate-mysql2openGauss-7.0.0rc1.tar.gz`,
             sha_code:
-              '2a4593af644265d01c0003367cadae5f52359fb9c57a67ded5ac7aaa588263d9',
+              '99df171b35c0ba849ca9d9beeb8099c8f8cdeccfab30d2fc9365e7f6652db334',
             docsName: '',
             docs_url: '',
           },
           {
             name: 'replicate-openGauss2mysql_7.0.0-RC1',
-            size: '15.41MB',
-            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/replicate-openGauss2mysql-7.0.0-RC1.tar.gz`,
+            size: '17.78MB',
+            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/replicate-openGauss2mysql-7.0.0rc1.tar.gz`,
             sha_code:
-              '92ab3c90b7e35a2c96bdb6b56deedda13daace4233f8e33064bcd1021cc09edf',
+              '84375d48577c1523d8173b57e6678a5e85b6436de5be14e029846d14c55a8dea',
+            docsName: '',
+            docs_url: '',
+          },
+          {
+            name: 'replicate-postgresql2openGauss_7.0.0-RC1',
+            size: '8.18MB',
+            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/replicate-postgresql2openGauss-7.0.0rc1.tar.gz`,
+            sha_code:
+              '57b3c4b1c53e2fae85d264f00595614a197418fee7c77901878e3a6b3c5b80fd',
+            docsName: '',
+            docs_url: '',
+          },
+          {
+            name: 'replicate-openGauss2postgresql_7.0.0-RC1',
+            size: '17.78MB',
+            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/replicate-openGauss2postgresql-7.0.0rc1.tar.gz`,
+            sha_code:
+              '84375d48577c1523d8173b57e6678a5e85b6436de5be14e029846d14c55a8dea',
             docsName: '',
             docs_url: '',
           },
           {
             name: 'gs_datacheck_7.0.0-RC1',
-            size: '83.71MB',
-            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/gs_datacheck-7.0.0-RC1.tar.gz`,
+            size: '83.85MB',
+            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/gs_datacheck-7.0.0rc1.tar.gz`,
             sha_code:
-              'dd8c053aa784096cd6bdeaf3472181e29b67dc38d0a8c78860ab3fee3b9857f1',
+              '9641a882dfe994eda569e6a2f1a5ef8b1807419c213d7d1f457f10533f755e1a',
             docsName: '',
             docs_url: '',
           },
           {
             name: 'Datakit_7.0.0-RC1',
-            size: '858.10MB',
+            size: '936.65MB',
             down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/Datakit/Datakit-7.0.0-RC1.tar.gz`,
             sha_code:
-              '7c972d987ca93a097a388d5ea6153debe430f6e8846b0906b575317038a1f543',
+              'a90cb9cf27709ef3b6c3d8bbb43b5bd0285de6eb25d704c70e991ef97ddd4773',
             docsName: '',
             docs_url: '',
           },
           {
             name: 'dbmind_7.0.0-RC1',
-            size: '370.47MB',
+            size: '329.44MB',
             down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/dbmind/x86/dbmind-installer-x86_64.tar.gz`,
             sha_code:
-              '3dc41b6ffa64f25990ad644cff6a8b3da28f4f140dfacf5df704fc4a51f55ede',
+              '9d10aa4ddd3a53ad05658ae281b475632cb6f38752593229956c01a523e66dd0',
             docsName: '',
             docs_url: '',
           },
           {
             name: 'transcribe_replay_tool_7.0.0-RC1',
-            size: '23.90MB',
+            size: '25.00MB',
             down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/transcribe-replay-tool-7.0.0-RC1.tar.gz`,
             sha_code:
-             'ca4f8acf5253cbee55cb31eb576da44a2bfcda9242a19cb4484d747534cb1ccc',
+              'd969acb2faec8c10b9f789a172fff644a097e7db65d7cce4c257428ab1751570',
             docsName: '',
             docs_url: '',
           },
@@ -1049,25 +1085,75 @@ export default [
         content: [],
       },
       {
+        system: 'openEuler 24.03 LTS (aarch64)',
+        architecture: 'AArch64',
+        os: 'openEuler 24.03 LTS',
+        content: [
+          {
+            name: 'Chameleon_7.0.0-RC1',
+            size: '82.91MB',
+            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/openEuler24.03/chameleon-7.0.0rc1-aarch64.tar.gz`,
+            sha_code:
+              'd4821f711e0710ecac55bf5b70519cc3b300bc2628adeed64bfd48f1b264fdeb',
+            docsName: '',
+            docs_url: '',
+          },
+          {
+            name: 'PortalControl_7.0.0-RC1',
+            size: '649.32MB',
+            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/openEuler24.03/PortalControl-7.0.0rc1-aarch64.tar.gz`,
+            sha_code:
+              '39ddbeb589dadb84dceeefac02600922e48ce8c82465158acd17889a58be96f7',
+            docsName: '',
+            docs_url: '',
+          },
+        ],
+      },
+      {
+        system: 'openEuler 24.03 LTS (x86_64)',
+        architecture: 'x86_64',
+        os: 'openEuler 24.03 LTS',
+        content: [
+          {
+            name: 'Chameleon_7.0.0-RC1',
+            size: '82.72MB',
+            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/openEuler24.03/chameleon-7.0.0rc1-x86_64.tar.gz`,
+            sha_code:
+              '7b0a48602361693ca544c95dab712d6f813acc379cb400e372ac71c5f79eaafd',
+            docsName: '',
+            docs_url: '',
+          },
+          {
+            name: 'PortalControl_7.0.0-RC1',
+            size: '649.35MB',
+            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/openEuler24.03/PortalControl-7.0.0rc1-x86_64.tar.gz`,
+            sha_code:
+              '860b9ce5c55e0ef71b8405e56fadb3a96b7e1ed7dbae11a597e36131599951f7',
+            docsName: '',
+            docs_url: '',
+          },
+        ],
+      },
+      {
         system: 'openEuler 22.03 LTS (aarch64)',
         architecture: 'AArch64',
         os: 'openEuler 22.03 LTS',
         content: [
           {
             name: 'Chameleon_7.0.0-RC1',
-            size: '74.52MB',
-            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/openEuler22.03/chameleon-7.0.0-RC1-aarch64.tar.gz`,
+            size: '79.70MB',
+            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/openEuler22.03/chameleon-7.0.0rc1-aarch64.tar.gz`,
             sha_code:
-              'bf07d4a210e2e38cd513f78c2c925692363a0c1087f9289b18dba7c0f1c481cc',
+              '98c84825546ca63efa25a8bb118255dfbd3c1e0fd4fe90c74b01d8c400f33839',
             docsName: '',
             docs_url: '',
           },
           {
             name: 'PortalControl_7.0.0-RC1',
-            size: '589.86MB',
-            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/openEuler22.03/PortalControl-7.0.0-RC1-aarch64.tar.gz`,
+            size: '644.65MB',
+            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/openEuler22.03/PortalControl-7.0.0rc1-aarch64.tar.gz`,
             sha_code:
-              'c789e2a4acd8edd024b0a589423001cf3af05901194a1a51ae56ceace31ed0ba',
+              '064a2a8d9c33c5f65832c1e4abc1ea70f86f4a948acb4987d1e26cf611393933',
             docsName: '',
             docs_url: '',
           },
@@ -1080,19 +1166,19 @@ export default [
         content: [
           {
             name: 'Chameleon_7.0.0-RC1',
-            size: '74.77MB',
-            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/openEuler22.03/chameleon-7.0.0-RC1-x86_64.tar.gz`,
+            size: '79.88MB',
+            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/openEuler22.03/chameleon-7.0.0rc1-x86_64.tar.gz`,
             sha_code:
-              '8a20dae7c21fea8d7d793ba4bc16376b2426a8c9c37e2b2f6f030997531d0364',
+              'f963d7fa7ad5e01d3757425af56d0e8033713b6c06aa213a15c465d27d06a837',
             docsName: '',
             docs_url: '',
           },
           {
             name: 'PortalControl_7.0.0-RC1',
-            size: '590.10MB',
-            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/openEuler22.03/PortalControl-7.0.0-RC1-x86_64.tar.gz`,
+            size: '645.20MB',
+            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/openEuler22.03/PortalControl-7.0.0rc1-x86_64.tar.gz`,
             sha_code:
-              '68964b49bfdc9cb0af8822cde0bd7c452d0f7584fa31b28482234f5e86dcf83c',
+              '4c726df0b082108b0895a9778d5c7b72c52a583b069e3459d26523facca9dde6',
             docsName: '',
             docs_url: '',
           },
@@ -1105,19 +1191,19 @@ export default [
         content: [
           {
             name: 'Chameleon_7.0.0-RC1',
-            size: '71.99MB',
-            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/openEuler20.03/chameleon-7.0.0-RC1-aarch64.tar.gz`,
+            size: '75.60MB',
+            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/openEuler20.03/chameleon-7.0.0rc1-aarch64.tar.gz`,
             sha_code:
-              'e5d1f91d006e35f6261bf3b5dd5bca8de233937cddd2e774bfe2224aab84e44e',
+              '3c8879a69d43e5606ebe3a0459f012c34c5b7e6c69e42c5dd9ceed3be7708b74',
             docsName: '',
             docs_url: '',
           },
           {
             name: 'PortalControl_7.0.0-RC1',
-            size: '628.37MB',
-            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/openEuler20.03/PortalControl-7.0.0-RC1-aarch64.tar.gz`,
+            size: '649.35MB',
+            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/openEuler20.03/PortalControl-7.0.0rc1-aarch64.tar.gz`,
             sha_code:
-              '89418e1c4a071b71f00c6ba92568f34ccacab46718ae36d33f495dc7b904c0af',
+              '959e36d99173a4c74ece7975c303a6496bf2a7d36542c0aedab1828552e51dd7',
             docsName: '',
             docs_url: '',
           },
@@ -1130,19 +1216,19 @@ export default [
         content: [
           {
             name: 'Chameleon_7.0.0-RC1',
-            size: '71.20MB',
-            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/openEuler20.03/chameleon-7.0.0-RC1-x86_64.tar.gz`,
+            size: '74.96MB',
+            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/openEuler20.03/chameleon-7.0.0rc1-x86_64.tar.gz`,
             sha_code:
-              '860b140ce85855a5c1f8ed258ffb37a26c37a05b4d8d2126b1157d316533ef15',
+              'bd09be477905190ff0313cc05521c23b27846e3fe5ab21655ed1ea2e4db979b6',
             docsName: '',
             docs_url: '',
           },
           {
             name: 'PortalControl_7.0.0-RC1',
-            size: '643.22MB',
-            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/openEuler20.03/PortalControl-7.0.0-RC1-x86_64.tar.gz`,
+            size: '664.37MB',
+            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/openEuler20.03/PortalControl-7.0.0rc1-x86_64.tar.gz`,
             sha_code:
-              '367d3d30ba3f6f365b8c707959888af17456ee0b59fc3f9b7dfaa34a67370813',
+              'af765d89d0244e7efd3e4c39415d6ab35df94380c4d87f55a2c34ab8a17d605f',
             docsName: '',
             docs_url: '',
           },
@@ -1155,19 +1241,19 @@ export default [
         content: [
           {
             name: 'Chameleon_7.0.0-RC1',
-            size: '72.00MB',
-            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/centos7/chameleon-7.0.0-RC1-x86_64.tar.gz`,
+            size: '72.50MB',
+            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/centos7/chameleon-7.0.0rc1-x86_64.tar.gz`,
             sha_code:
-              'c602ef1680dbae88ed855c75a8263eb5fb3428395e7e2fe66ee76eef1c6ba020',
+              'f326cea876da97d3534fb1aa2a159877de195b45669fae21a00ec551b9335306',
             docsName: '',
             docs_url: '',
           },
           {
             name: 'PortalControl_7.0.0-RC1',
-            size: '621.23MB',
-            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/centos7/PortalControl-7.0.0-RC1-x86_64.tar.gz`,
+            size: '639.12MB',
+            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/tools/centos7/PortalControl-7.0.0rc1-x86_64.tar.gz`,
             sha_code:
-              'b7265c4e87660f7cbf4505c60c1d28bd25ba9f1905b1c7ae525b948c9e9eb908',
+              'a378affd20d091947b64b8d989753ec6974f42317545ae5d772328807477f6a8',
             docsName: '',
             docs_url: '',
           },
