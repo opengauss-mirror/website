@@ -11,7 +11,7 @@ export default [
         content: [
           {
             name: 'openGauss_7.0.0-RC1 企业版',            
-            size: '143.96MB',
+            size: '142.50MB',
             edition: 'enterprise',
             down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/openEuler24.03/arm/openGauss-All-7.0.0-RC1-openEuler24.03-aarch64.tar.gz`,
             sha_code:
@@ -22,7 +22,7 @@ export default [
           },
           {
             name: 'openGauss_7.0.0-RC1 极简版',
-            size: '100.82MB',
+            size: '109.49MB',
             edition: 'simple',
             down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/openEuler24.03/arm/openGauss-Server-7.0.0-RC1-openEuler24.03-aarch64.tar.bz2`,
             sha_code:
@@ -33,7 +33,7 @@ export default [
           },
           {
             name: 'openGauss_7.0.0-RC1 轻量版',
-            size: '28.02MB',
+            size: '29.19MB',
             edition: 'lite',
             down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/openEuler24.03/arm/openGauss-Lite-7.0.0-RC1-openEuler24.03-aarch64.tar.gz`,
             sha_code:
@@ -141,7 +141,7 @@ export default [
             edition: 'enterprise',
             down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/noLSE/openEuler22.03/arm/openGauss-All-7.0.0-RC1-openEuler22.03-aarch64.tar.gz`,
             sha_code:
-              '94f0a27f1ee6d354e83ecf08c4d2568f74aeb55fd16c665dadecc6e5be09a92e',
+              '8a902c0cb95180b110574159ef39ad36724bb3b59412ec35825837cf81f9ac1d',
             docsName: '企业版安装指南',
             docs_url:
               '/docs/7.0.0-RC1/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html',
@@ -351,7 +351,7 @@ export default [
         content: [
           {
             name: 'openGauss_7.0.0-RC1 极简版',
-            size: '103.55MB',
+            size: '1.60GB',
             edition: 'simple',
             down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/openEuler20.03/x86/openGauss-Docker-7.0.0-RC1-x86_64.tar`,
             sha_code:
@@ -362,7 +362,7 @@ export default [
           },
           {
             name: 'openGauss_7.0.0-RC1 轻量版',
-            size: '28.95MB',
+            size: '1.26GB',
             edition: 'enterprise',
             down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/openEuler20.03/x86/openGauss-Lite-Docker-7.0.0-RC1-x86_64.tar.gz`,
             sha_code:
@@ -381,18 +381,18 @@ export default [
         content: [
           {
             name: 'openGauss_7.0.0-RC1 极简版',
-            size: '103.55MB',
+            size: '1.70GB',
             edition: 'simple',
             down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/openEuler20.03/arm/openGauss-Server-7.0.0-RC1-CentOS7-x86_64.tar.bz2`,
             sha_code:
               '22c7653a8f479cf442f68833ed2e630611ac0b5104557957e460bd1883ac430a',
             docsName: '极简版安装指南',
             docs_url:
-              '/docs/7.0.0-RC1/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html',
+              '/docs/7.0.0-RC1/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E%85.html',
           },
           {
             name: 'openGauss_7.0.0-RC1 轻量版',
-            size: '28.95MB',
+            size: '1.37GB',
             edition: 'enterprise',
             down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/openEuler20.03/arm/openGauss-Lite-7.0.0-RC1-CentOS7-x86_64.tar.gz`,
             sha_code:
