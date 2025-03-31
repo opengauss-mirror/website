@@ -356,7 +356,7 @@ export default [
             down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/openEuler20.03/x86/openGauss-Docker-7.0.0-RC1-x86_64.tar`,
             sha_code:
               '7bb57619c409427a72798c354bbbfe56f5827d0599126d3a2ec7fd4de971e0b2',
-            docsName: '极简版安装指南',
+            docsName: '极简版容器安装指南',
             docs_url:
               '/docs/7.0.0-RC1/docs/InstallationGuide/%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E5%AE%89%E8%A3%85.html',
           },
@@ -367,7 +367,7 @@ export default [
             down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/openEuler20.03/x86/openGauss-Lite-Docker-7.0.0-RC1-x86_64.tar.gz`,
             sha_code:
               '9d912dc7b81e27d8a38604128fa8862400a20501daa95c3369efa05315c5f1b7',
-            docsName: '轻量版安装指南',
+            docsName: '轻量版容器安装指南',
             docs_url:
               '/docs/7.0.0-RC1-lite/docs/InstallationGuide/%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E5%AE%89%E8%A3%85.html',
           },
@@ -386,7 +386,7 @@ export default [
             down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/openEuler20.03/arm/openGauss-Server-7.0.0-RC1-CentOS7-x86_64.tar.bz2`,
             sha_code:
               '22c7653a8f479cf442f68833ed2e630611ac0b5104557957e460bd1883ac430a',
-            docsName: '极简版安装指南',
+            docsName: '极简版容器安装指南',
             docs_url:
               '/docs/7.0.0-RC1/docs/InstallationGuide/%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E5%AE%89%E8%A3%85.html',
           },
@@ -397,7 +397,7 @@ export default [
             down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/openEuler20.03/arm/openGauss-Lite-7.0.0-RC1-CentOS7-x86_64.tar.gz`,
             sha_code:
               '2f4286cbf6fdf6eb4b583812ac28824131d299ed8d2682fd75e934745471b194',
-            docsName: '轻量版安装指南',
+            docsName: '轻量版容器安装指南',
             docs_url:
               '/docs/7.0.0-RC1-lite/docs/InstallationGuide/%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E5%AE%89%E8%A3%85.html',
           },
