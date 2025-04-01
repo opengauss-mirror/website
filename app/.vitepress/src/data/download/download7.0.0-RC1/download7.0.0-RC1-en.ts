@@ -383,7 +383,7 @@ export default [
             name: 'openGauss_7.0.0-RC1 Simplified',
             size: '1.70GB',
             edition: 'simple',
-            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/openEuler20.03/arm/openGauss-Server-7.0.0-RC1-CentOS7-x86_64.tar.bz2`,
+            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/openEuler20.03/arm/openGauss-Docker-7.0.0-RC1-aarch64.tar`,
             sha_code:
               '22c7653a8f479cf442f68833ed2e630611ac0b5104557957e460bd1883ac430a',
             docsName: 'Simplified容器安装指南',
@@ -394,7 +394,7 @@ export default [
             name: 'openGauss_7.0.0-RC1 Lite',
             size: '1.37GB',
             edition: 'enterprise',
-            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/openEuler20.03/arm/openGauss-Lite-7.0.0-RC1-CentOS7-x86_64.tar.gz`,
+            down_url: `${OBS_DOWNLOAD_LINK}7.0.0-RC1/openEuler20.03/arm/openGauss-Lite-Docker-7.0.0-RC1-aarch64.tar`,
             sha_code:
               '2f4286cbf6fdf6eb4b583812ac28824131d299ed8d2682fd75e934745471b194',
             docsName: 'Lite容器安装指南',
