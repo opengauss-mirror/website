@@ -3,25 +3,17 @@ import liveImg_mb from '@/assets/category/home/banner/liveBanner_mo.png';
 
 import videoGif from '@/assets/category/home/video-player.gif';
 
-import banner20240321 from '@/assets/category/home/banner/banner20240321.jpg';
-import banner20240321_mb from '@/assets/category/home/banner/banner20240321_mb.png';
-
-import bannerCallFor from '@/assets/category/home/banner/banner-call-for.jpg';
-import bannerCallFor_mb from '@/assets/category/home/banner/banner-call-for_mb.png';
-
 import bannerTeamUp from '@/assets/category/home/banner/banner-team-up.jpg';
 import bannerTeamUpMo from '@/assets/category/home/banner/banner-team-up_mo.jpg';
 
-import bannerOpenGaussV6 from '@/assets/category/home/banner/banner20250301.jpg';
-import bannerOpenGaussV6Mo from '@/assets/category/home/banner/banner20250301_mo.jpg';
+import bannerOpenGaussV6 from '@/assets/category/home/banner/banner20250408.jpg';
+import bannerOpenGaussV6Mo from '@/assets/category/home/banner/banner20250408_mo.jpg';
+
+import bannerDift from '@/assets/category/home/banner/banner2025040801.jpg';
+import bannerDiftMo from '@/assets/category/home/banner/banner2025040801_mo.jpg';
 
 import banner600Pc from '@/assets/category/home/banner/banner202503.jpg';
 import banner600Mo from '@/assets/category/home/banner/banner202503_mo.jpg';
-
-import banner20241211 from '@/assets/category/home/banner/banner_pc20241211.jpg';
-import banner20241211_mb from '@/assets/category/home/banner/banner_mo20211211.jpg';
-import banner_text20241211 from '@/assets/category/home/banner/banner_text_pc20241211.png';
-import banner_text20241211_mb from '@/assets/category/home/banner/banner_text_mo20241211.png';
 
 import { LEARN_VIDEO_LINK, DOCS_LINK } from '@/data/url-config';
 
@@ -47,65 +39,36 @@ export default {
       moBanner: bannerOpenGaussV6Mo,
       link: DOCS_LINK + 'zh/docs/latest/docs/DataVec/DataVec-Overview.html',
       target: '_blank',
-      title: 'DataVec向量数据库能力增强',
+      title: 'openGauss 向量引擎',
       titleMb: [],
-      subtitle: '',
+      subtitle: 'openGauss向量数据库实战案例集',
       desc: [''],
-      btn: '了解更多',
+      btn: '立即查看',
       className: '',
       rightInset: '',
       rightLink: '',
     },
     {
-      pcBanner: banner20241211,
-      moBanner: banner20241211_mb,
-      link: '/zh/summit/summit2024/#live',
+      pcBanner: bannerDift,
+      moBanner: bannerDiftMo,
+      link: DOCS_LINK + 'zh/docs/latest/docs/DataVec/openGauss-RAG实践.html',
       target: '_blank',
-      title: '',
+      title: 'openGauss DataVec + Dift',
       titleMb: [],
       subtitle: '',
       desc: [''],
-      btn: '精彩回顾',
-      className: 'summit202412',
+      btn: '立即查看',
+      className: '',
       rightInset: '',
       rightLink: '',
-      textImg: banner_text20241211,
-      textImgMb: banner_text20241211_mb,
     },
+
     {
       pcBanner: bannerTeamUp,
       moBanner: bannerTeamUpMo,
       link: '/zh/team-up/',
       target: '_self',
       title: 'openGauss 结队计划 正式上线',
-      titleMb: [],
-      subtitle: '',
-      desc: [''],
-      btn: '',
-      className: '',
-      rightInset: '',
-      rightLink: '',
-    },
-    {
-      pcBanner: bannerCallFor,
-      moBanner: bannerCallFor_mb,
-      link: '/zh/call-for-meetup/',
-      target: '_self',
-      title: '',
-      titleMb: [],
-      subtitle: '',
-      desc: [''],
-      btn: '',
-      className: '',
-      rightInset: '',
-      rightLink: '',
-    },
-    {
-      pcBanner: banner20240321,
-      moBanner: banner20240321_mb,
-      link: '/zh/news/2024-03-21/',
-      target: '_self',
-      title: '',
       titleMb: [],
       subtitle: '',
       desc: [''],
