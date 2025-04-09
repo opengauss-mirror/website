@@ -278,7 +278,12 @@ export default {
     },
     {
       question: '3、openGauss证书上有国家相关部门协会的资质证明吗？',
-      answer: '证书上有软协的公章。',
+      answer: [
+        '2025年4月7日前：所有OGCA（初级），OGCP（中级），OGCE（高级）证书，均有中国软件行业协会与openGauss社区联合认证，并加盖中国软件协会资质证明公章。',
+        '2025年4月7日起：',
+        'OGCP（中级），OGCE（高级）：维持中国软件行业协会与openGauss社区联合认证，证书包含双方权威标识；',
+        'OGCA（初级）：调整为openGauss社区独立认证，证书保留社区理事长签名。',
+      ],
     },
     {
       question: '4、不参加培训是否可以直接参加OGCA与OGCP考试？',

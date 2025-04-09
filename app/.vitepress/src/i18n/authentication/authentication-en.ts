@@ -1,13 +1,8 @@
-import {
-  ENMOEDU_LINK,
-  DBOBS_LINK,
-  GAUSS_CERTIFICATE_EMAIL,
-} from '@/data/url-config';
+import { ENMOEDU_LINK, DBOBS_LINK, GAUSS_CERTIFICATE_EMAIL } from '@/data/url-config';
 export default {
   title: '培训认证',
   introtitle: '认证体系简介',
-  intro1:
-    '基于openGauss在中国良好的发展态势，由openGauss社区联合云和恩墨公司、中国软件行业协会培训中心共同打造openGauss培训认证体系。',
+  intro1: '基于openGauss在中国良好的发展态势，由openGauss社区联合云和恩墨公司、中国软件行业协会培训中心共同打造openGauss培训认证体系。',
   intro2:
     'openGauss培训认证体系旨在帮助企业快速培养专业DBA人才；推动相关从业人员高效获得权威资质认证；促使技术爱好者踊跃融入社区技术生态。该体系填补了openGauss系数据库培训认证领域的空白，对openGauss的技术推广和生态发展起到积极的推动和促进作用。',
   advantage: '认证体系优势',
@@ -76,8 +71,7 @@ export default {
       empty: 'true',
       module: '考试模块:敬请期待',
       contenttitle: '课程内容:',
-      content:
-        '涵盖openGauss的生态发展、深入解析体系架构、深度维护、数据管理、功能特性、安全管理、性能优化、高级SQL、备份恢复、高可用技术以及相关管理工具等。',
+      content: '涵盖openGauss的生态发展、深入解析体系架构、深度维护、数据管理、功能特性、安全管理、性能优化、高级SQL、备份恢复、高可用技术以及相关管理工具等。',
       trainDay: '课程天数:敬请期待',
       trainCosts: '培训费用:敬请期待',
       examCoste: '考试费用:敬请期待',
@@ -91,8 +85,7 @@ export default {
       empty: 'true',
       module: '考试模块:敬请期待',
       contenttitle: '课程内容:',
-      content:
-        '涵盖数据库高级安全管控、数据库深度诊断与优化、人工智能、负载均衡、分布式等。',
+      content: '涵盖数据库高级安全管控、数据库深度诊断与优化、人工智能、负载均衡、分布式等。',
       trainDay: '课程天数:敬请期待',
       trainCosts: '培训费用:敬请期待',
       examCoste: '考试费用:敬请期待',
@@ -133,24 +126,26 @@ export default {
   qatitle: '常见问题解答',
   qa: [
     {
-      question:
-        ' 1、社区颁发的openGauss认证证书是市面上唯一的openGauss认证证书吗？',
+      question: ' 1、社区颁发的openGauss认证证书是市面上唯一的openGauss认证证书吗？',
       answer:
         '是的，openGauss是开源数据库，由社区负责数据库的生态推广，社区希望通过规范的组织与专业的培训考试，让openGauss的爱好者能够系统的学习与掌握相关技能，成为企业可信的openGauss数据库技术人才。',
     },
     {
       question: '2、openGauss认证证书有纸质证书吗？',
-      answer:
-        '有，在通过认证考试后，3天内将会收到电子版证书，1个月内将会收到纸质证书。',
+      answer: '有，在通过认证考试后，3天内将会收到电子版证书，1个月内将会收到纸质证书。',
     },
     {
       question: '3、openGauss证书上有国家相关部门协会的资质证明吗？',
-      answer: '证书上有软协的公章。',
+      answer: [
+        '2025年4月7日前：所有OGCA（初级），OGCP（中级），OGCE（高级）证书，均有中国软件行业协会与openGauss社区联合认证，并加盖中国软件协会资质证明公章。',
+        '2025年4月7日起：',
+        'OGCP（中级），OGCE（高级）：维持中国软件行业协会与openGauss社区联合认证，证书包含双方权威标识；',
+        'OGCA（初级）：调整为openGauss社区独立认证，证书保留社区理事长签名。',
+      ],
     },
     {
       question: '4、不参加培训是否可以直接参加OGCA与OGCP考试？',
-      answer:
-        '可以，但为了确保学员能够体系的掌握openGauss的相关技能，成为真正的技术者而非应试者，建议系统的学习后再进行考试。',
+      answer: '可以，但为了确保学员能够体系的掌握openGauss的相关技能，成为真正的技术者而非应试者，建议系统的学习后再进行考试。',
     },
     {
       question: '5、认证证书有有效期么？',
@@ -266,14 +261,7 @@ export default {
       num: '05',
       cardtitle: 'openGauss基本管理与SQL',
       period: '3 课时',
-      desList: [
-        '·数据库启动、关闭与状态查看',
-        '·数据库监听管理与连接机制',
-        '·表空间管理',
-        '·数据库管理',
-        '·用户管理',
-        '·DQL语句/DDL语句/DML语/DCL语句',
-      ],
+      desList: ['·数据库启动、关闭与状态查看', '·数据库监听管理与连接机制', '·表空间管理', '·数据库管理', '·用户管理', '·DQL语句/DDL语句/DML语/DCL语句'],
     },
   ],
   more: '更多',
@@ -287,8 +275,7 @@ export default {
     certificateDownload2: 'Download Selected Certificates',
     email: 'Email',
     placeholderEmail: 'Your email address',
-    tipEmail:
-      'Enter the email address used for the certification exam to obtain the verification code and query your certificate.',
+    tipEmail: 'Enter the email address used for the certification exam to obtain the verification code and query your certificate.',
     emailErrorTip: 'Please enter a valid email address！',
     verificationCode: 'Code',
     placeholderCode: 'Enter the verification code.',
