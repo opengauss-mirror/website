@@ -234,7 +234,10 @@ function onTalentItemClick(index: number) {
                   <span>{{ item.question }}</span>
                 </template>
                 <p class="qa-answer lable-name">
-                  {{ item.answer }}
+                  <template v-if="Array.isArray(item.answer)">
+                    <p v-for="sub in item.answer" :key="sub">{{ sub }}</p>
+                  </template>
+                  <template v-else> {{ item.answer }} </template>
                 </p>
               </el-collapse-item>
             </el-collapse>
@@ -387,7 +390,10 @@ function onTalentItemClick(index: number) {
                   <span>{{ item.question }}</span>
                 </template>
                 <p class="qa-answer">
-                  {{ item.answer }}
+                  <template v-if="Array.isArray(item.answer)">
+                    <p v-for="sub in item.answer" :key="sub">{{ sub }}</p>
+                  </template>
+                  <template v-else> {{ item.answer }} </template>
                 </p>
               </el-collapse-item>
             </el-collapse>
