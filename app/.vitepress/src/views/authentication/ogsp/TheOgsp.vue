@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { ref, onMounted, computed } from 'vue';
 import { useI18n } from '@/i18n';
+import { GITEE_LINK } from '@/data/url-config';
 
 import BannerLevel2 from '@/components/BannerLevel2.vue';
 import AppContent from '@/components/AppContent.vue';
@@ -234,6 +235,14 @@ onMounted(() => {
         @jump-page="jumpPageMb"
       />
     </ClientOnly>
+    <p class="tips">
+      关于openGauss服务商认证，openGauss提供了完整的评估标准和流程，详见<a
+        :href="`${GITEE_LINK}/opengauss/service-partner-certification`"
+        target="_blank"
+        rel="noopener noreferrer"
+        >openGauss服务商认证整体介绍</a
+      >。
+    </p>
   </AppContent>
 </template>
 <style lang="scss" scoped>
@@ -243,7 +252,15 @@ onMounted(() => {
     height: 36px;
   }
 }
-
+.tips {
+  font-size: var(--o-font-size-text);
+  line-height: var(--o-line-height-text);
+  color: var(--o-color-text3);
+  margin-top: 24px;
+  @media screen and (max-width: 1100px) {
+    margin-top: 16px;
+  }
+}
 :deep(.is-center) {
   text-align: center !important;
 }

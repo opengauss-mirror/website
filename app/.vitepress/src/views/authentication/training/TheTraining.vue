@@ -2,7 +2,7 @@
 import { ref, onMounted, onUnmounted, computed } from 'vue';
 import { useI18n } from '@/i18n';
 import { useCommon } from '@/stores/common';
-
+import { GITEE_LINK } from '@/data/url-config';
 import { windowOpen } from '@/shared/utils';
 
 import BannerLevel2 from '@/components/BannerLevel2.vue';
@@ -246,6 +246,10 @@ function onTalentItemClick(index: number) {
       </div>
       <div class="train-contact lable-name">
         <p>
+          关于openGauss培训伙伴认证，openGauss提供了完整的评估标准和流程，详见
+          <a :href="`${GITEE_LINK}/opengauss/training-partner-certification`" target="_blank" rel="noopener noreferrer"> openGauss培训伙伴认证整体介绍</a>。
+        </p>
+        <p>
           <span>{{ i18n.authentication.contact }}</span>
           <a :href="'mailto:' + i18n.authentication.contactemail">{{ i18n.authentication.contactemail }}</a>
         </p>
@@ -401,6 +405,10 @@ function onTalentItemClick(index: number) {
         </div>
       </div>
       <div class="train-contact">
+        <p>
+          关于openGauss培训伙伴认证，openGauss提供了完整的评估标准和流程，详见
+          <a :href="`${GITEE_LINK}/opengauss/training-partner-certification`" target="_blank" rel="noopener noreferrer"> openGauss培训伙伴认证整体介绍</a>。
+        </p>
         <p>
           <span>{{ i18n.authentication.contact }}</span>
           <a :href="'mailto:' + i18n.authentication.contactemail">{{ i18n.authentication.contactemail }}</a>
@@ -1047,13 +1055,14 @@ function onTalentItemClick(index: number) {
     p {
       font-size: var(--o-font-size-text);
       line-height: var(--o-font-size-text);
+      color: var(--o-color-text3);
+      margin-top: 8px;
+
       @media screen and (max-width: 1100px) {
         font-size: var(--o-font-size-tip);
         line-height: var(--o-font-size-tip);
       }
-      span {
-        color: var(--o-color-text3);
-      }
+
       a {
         color: var(--o-color-brand1);
       }
