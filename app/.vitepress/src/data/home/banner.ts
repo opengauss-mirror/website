@@ -53,7 +53,7 @@ export default {
       moBanner: bannerDiftMo,
       link: DOCS_LINK + 'zh/docs/latest/docs/DataVec/openGauss-RAG实践.html',
       target: '_blank',
-      title: 'openGauss DataVec + Dift',
+      title: 'openGauss DataVec + Dify',
       titleMb: [],
       subtitle: '',
       desc: [''],
