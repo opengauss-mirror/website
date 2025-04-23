@@ -17,11 +17,7 @@ const windowWidth = ref(useWindowResize());
 
 <template>
   <ClientOnly>
-    <BannerLevel2
-      :background-image="banner"
-      :title="i18n.onlineCommunication.title"
-      :illustration="illustration"
-    />
+    <BannerLevel2 :background-image="banner" :title="i18n.onlineCommunication.title" :illustration="illustration" />
     <AppContent>
       <div class="online-communication">
         <p class="text">
@@ -29,65 +25,31 @@ const windowWidth = ref(useWindowResize());
         </p>
         <h3 class="title">{{ i18n.onlineCommunication.caption }}</h3>
         <div class="maillist-table">
-          <OTable
-            :data="i18n.onlineCommunication.mail_list"
-            header-cell-class-name="mirror-list-header"
-            cell-class-name="mirror-list-row"
-            style="width: 100%"
-          >
-            <el-table-column
-              :label="i18n.onlineCommunication.thead[0]"
-              prop="name"
-            >
+          <OTable :data="i18n.onlineCommunication.mail_list" header-cell-class-name="mirror-list-header" cell-class-name="mirror-list-row" style="width: 100%">
+            <el-table-column :label="i18n.onlineCommunication.thead[0]" prop="name">
               <template #default="scope">
-                <a
-                  class="link"
-                  :href="scope.row.giteeLink"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a class="link" :href="scope.row.gitLink" target="_blank" rel="noopener noreferrer">
                   {{ scope.row.name }}
                 </a>
               </template>
             </el-table-column>
-            <el-table-column
-              :label="i18n.onlineCommunication.thead[1]"
-              prop="emailAddress"
-            >
+            <el-table-column :label="i18n.onlineCommunication.thead[1]" prop="emailAddress">
               <template #default="scope">
-                <a
-                  class="link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  :href="scope.row.websiteLink"
-                >
+                <a class="link" target="_blank" rel="noopener noreferrer" :href="scope.row.websiteLink">
                   {{ scope.row.emailAddress }}
                 </a>
               </template>
             </el-table-column>
-            <el-table-column
-              v-if="windowWidth > 768"
-              :label="i18n.onlineCommunication.thead[2]"
-              prop="desc"
-            >
+            <el-table-column v-if="windowWidth > 768" :label="i18n.onlineCommunication.thead[2]" prop="desc">
               <template #default="scope">
                 <div class="ellipsis">
                   {{ scope.row.desc }}
                 </div>
               </template>
             </el-table-column>
-            <el-table-column
-              :width="windowWidth > 768 ? '220px' : '100px'"
-              :label="i18n.onlineCommunication.thead[3]"
-              prop="archive"
-            >
+            <el-table-column :width="windowWidth > 768 ? '220px' : '100px'" :label="i18n.onlineCommunication.thead[3]" prop="archive">
               <template #default="scope">
-                <a
-                  :href="scope.row.archiveLink"
-                  class="link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a :href="scope.row.archiveLink" class="link" target="_blank" rel="noopener noreferrer">
                   {{ scope.row.archive }}
                 </a>
               </template>
@@ -97,11 +59,7 @@ const windowWidth = ref(useWindowResize());
         <h4 class="sub-title">{{ i18n.onlineCommunication.caption1 }}</h4>
         <p class="text">{{ i18n.onlineCommunication.caption_List.title }}</p>
         <ul class="list">
-          <li
-            v-for="(item, index) in i18n.onlineCommunication.caption_List.list"
-            :key="index"
-            class="text"
-          >
+          <li v-for="(item, index) in i18n.onlineCommunication.caption_List.list" :key="index" class="text">
             {{ item }}
           </li>
         </ul>
@@ -109,11 +67,7 @@ const windowWidth = ref(useWindowResize());
           <p class="text">
             {{ i18n.onlineCommunication.tips }}
           </p>
-          <img
-            class="mail-img"
-            :src="i18n.onlineCommunication.mailimg"
-            style="width: 65%"
-          />
+          <img class="mail-img" :src="i18n.onlineCommunication.mailimg" style="width: 65%" />
         </template>
         <h4 class="sub-title">{{ i18n.onlineCommunication.caption2 }}</h4>
         <p class="text">

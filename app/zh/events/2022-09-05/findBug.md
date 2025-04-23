@@ -27,7 +27,7 @@ summary: '参与openGauss资料捉虫活动，发现或解决资料中的待改�
 即日起至 10 月 31 日
 
 **报名方式：**
-添加“Gauss 松鼠会小助手（ID：Gauss_Asst666）”为好友，发送“ **报名资料捉虫活动** ” 以及 Gitee 用户名，即完成报名。
+添加“Gauss 松鼠会小助手（ID：Gauss_Asst666）”为好友，发送“ **报名资料捉虫活动** ” 以及 GitCode 用户名，即完成报名。
 
 <img src="./pic1.png" style="margin-bottom: 0.2rem;" />
 
@@ -36,10 +36,10 @@ summary: '参与openGauss资料捉虫活动，发现或解决资料中的待改�
 ### 方式一：直接参与社区贡献
 
 - 1.提交有效问题（Issue）:
-  在 openGauss 社区资料中寻找待改进的点，在 docs 仓库提交 Issue 反馈资料改进意见并在标题前加 **【openGauss 资料捉虫活动】** 标签。操作指导请参见： <https://gitee.com/opengauss/docs/blob/master/contribute/OperationGuide/%E6%8F%90%E5%87%BA%E5%86%85%E5%AE%B9%E6%94%B9%E8%BF%9B%E6%84%8F%E8%A7%81.md>
+  在 openGauss 社区资料中寻找待改进的点，在 docs 仓库提交 Issue 反馈资料改进意见并在标题前加 **【openGauss 资料捉虫活动】** 标签。操作指导请参见： <https://gitcode.com/opengauss/docs/blob/master/contribute/OperationGuide/%E6%8F%90%E5%87%BA%E5%86%85%E5%AE%B9%E6%94%B9%E8%BF%9B%E6%84%8F%E8%A7%81.md>
 
 - 2.提交有效修改方法（PR,Pull Request）:
-  在 openGauss 社区资料中寻找待改进的点或对于已存在未解决的 Issue 问题，在 docs 仓库按照提交 PR 修改资料并在标题前加 **【openGauss 资料捉虫活动】** 标签。操作指导请参见：<https://gitee.com/opengauss/docs/blob/master/contribute/OperationGuide/%E8%B4%A1%E7%8C%AE%E6%96%87%E6%A1%A3.md>
+  在 openGauss 社区资料中寻找待改进的点或对于已存在未解决的 Issue 问题，在 docs 仓库按照提交 PR 修改资料并在标题前加 **【openGauss 资料捉虫活动】** 标签。操作指导请参见：<https://gitcode.com/opengauss/docs/blob/master/contribute/OperationGuide/%E8%B4%A1%E7%8C%AE%E6%96%87%E6%A1%A3.md>
 
 ### 方式二：推荐他人参与社区贡献
 

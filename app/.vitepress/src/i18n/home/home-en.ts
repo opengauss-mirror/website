@@ -126,7 +126,6 @@ export default {
   HOME_CALENDAR: {
     LOGIN: 'Login prompt',
     LOGIN_TEXT: 'Using openGauss meeting reservation feature requires the identity permission of SIG group Maintainer or Committer',
-    GITEE_BEN: 'Gitee authorized login',
     LOGIN_TIPS: 'I have read and agreed to',
     BACK_LOGIN: '返回重新预定会议',
     PRIVACY: 'Privacy Policy',

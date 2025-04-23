@@ -1,23 +1,23 @@
-import { GITEE_LINK, CLA_LINK, SAGE_LINK } from '@/data/url-config';
+import { GITCODE_LINK, CLA_LINK, SAGE_LINK } from '@/data/url-config';
 export default {
   zh: {
     LOOK_DESC: `查看文字版攻略`,
     LOOK_MAP: `贡献攻略地图`,
     LINK_LIST: [
       {
-        URL: `${GITEE_LINK}opengauss/community/blob/master/code-of-conduct.md`,
+        URL: `${GITCODE_LINK}opengauss/community/blob/master/code-of-conduct.md`,
         BLANK: true,
       },
       {
-        URL: `${GITEE_LINK}opengauss`,
+        URL: `${GITCODE_LINK}opengauss`,
         BLANK: true,
       },
       {
-        URL: `${GITEE_LINK}help/articles/4113`,
+        URL: `https://docs.gitcode.com/docs/start/quick`,
         BLANK: true,
       },
       {
-        URL: `${GITEE_LINK}profile/emails`,
+        URL: `${GITCODE_LINK}setting/email`,
         BLANK: true,
       },
       {
@@ -45,19 +45,19 @@ export default {
         BLANK: true,
       },
       {
-        URL: `${GITEE_LINK}opengauss/community/blob/master/community-membership.md`,
+        URL: `${GITCODE_LINK}opengauss/community/blob/master/community-membership.md`,
         BLANK: true,
       },
       {
-        URL: `${GITEE_LINK}organizations/opengauss/issues`,
+        URL: `${GITCODE_LINK}organizations/opengauss/issues`,
         BLANK: true,
       },
       {
-        URL: `${GITEE_LINK}opengauss/community`,
+        URL: `${GITCODE_LINK}opengauss/community`,
         BLANK: true,
       },
       {
-        URL: `${GITEE_LINK}opengauss/community/blob/master/contributors/issue-submit.md`,
+        URL: `${GITCODE_LINK}opengauss/community/blob/master/contributors/issue-submit.md`,
         BLANK: true,
       },
       {
@@ -72,19 +72,19 @@ export default {
     PRINT_MAP: `Download`,
     LINK_LIST: [
       {
-        URL: `${GITEE_LINK}opengauss/community/blob/master/code-of-conduct.md`,
+        URL: `${GITCODE_LINK}opengauss/community/blob/master/code-of-conduct.md`,
         BLANK: true,
       },
       {
-        URL: `${GITEE_LINK}opengauss`,
+        URL: `${GITCODE_LINK}opengauss`,
         BLANK: true,
       },
       {
-        URL: `${GITEE_LINK}help/articles/4113`,
+        URL: `https://docs.gitcode.com/docs/start/quick`,
         BLANK: true,
       },
       {
-        URL: `${GITEE_LINK}profile/emails`,
+        URL: `${GITCODE_LINK}setting/email`,
         BLANK: true,
       },
       {
@@ -112,19 +112,19 @@ export default {
         BLANK: true,
       },
       {
-        URL: `${GITEE_LINK}opengauss/community/blob/master/community-membership.md`,
+        URL: `${GITCODE_LINK}opengauss/community/blob/master/community-membership.md`,
         BLANK: true,
       },
       {
-        URL: `${GITEE_LINK}organizations/opengauss/issues`,
+        URL: `${GITCODE_LINK}organizations/opengauss/issues`,
         BLANK: true,
       },
       {
-        URL: `${GITEE_LINK}opengauss/community`,
+        URL: `${GITCODE_LINK}opengauss/community`,
         BLANK: true,
       },
       {
-        URL: `${GITEE_LINK}opengauss/community/blob/master/contributors/issue-submit.md`,
+        URL: `${GITCODE_LINK}opengauss/community/blob/master/contributors/issue-submit.md`,
         BLANK: true,
       },
       {

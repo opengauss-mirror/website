@@ -22,9 +22,7 @@ const i18n = useI18n();
 const commonStore = useCommon();
 const screenWidth = useWindowResize();
 
-const logo = computed(() =>
-  commonStore.theme === 'light' ? logo_light : logo_dark
-);
+const logo = computed(() => (commonStore.theme === 'light' ? logo_light : logo_dark));
 
 const searchValue = computed(() => i18n.value.common.SEARCH);
 // 显示/移除搜索框
@@ -41,16 +39,7 @@ const isShowDrawer = ref(true);
 
 // 暂时固定数据 等接口出来在换
 const hotList = {
-  zh: [
-    '数据类型',
-    '逻辑复制',
-    '索引',
-    '迁移',
-    '远程连接',
-    '表空间',
-    '日志',
-    '闪回',
-  ],
+  zh: ['数据类型', '逻辑复制', '索引', '迁移', '远程连接', '表空间', '日志', '闪回'],
   en: ['check_point', 'dcf', 'copy', 'create_schema'],
 };
 
@@ -185,7 +174,7 @@ const searchLink = `/${lang.value}/search/`;
   @media (max-width: 1100px) {
     display: block;
     font-size: 0;
-    svg{
+    svg {
       width: 20px;
       height: 20px;
     }
@@ -218,12 +207,13 @@ const searchLink = `/${lang.value}/search/`;
   .icon {
     font-size: var(--o-font-size-h6);
     color: var(--o-color-text1);
+    display: block;
   }
 }
 .header-content-mobile {
   display: flex;
-      height: 100%;
-    align-items: center;
+  height: 100%;
+  align-items: center;
 }
 
 @include in-dark {

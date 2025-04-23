@@ -9,7 +9,7 @@ import AppPaginationMo from '@/components/AppPaginationMo.vue';
 import Banner from '@/assets/illustrations/banner-secondary.png';
 import illustration from '@/assets/illustrations/certification.png';
 
-import { GITEE_LINK } from '@/data/url-config';
+import { GITCODE_LINK } from '@/data/url-config';
 
 interface CertificationDataT {
   pro: string;
@@ -33,10 +33,7 @@ const tableData = ref<CertificationDataT[]>([]);
 
 // 前端分页
 const randerData = computed(() => {
-  return tableData.value.slice(
-    pageSize.value * (currentPage.value - 1),
-    pageSize.value * currentPage.value
-  );
+  return tableData.value.slice(pageSize.value * (currentPage.value - 1), pageSize.value * currentPage.value);
 });
 // 分页size修改
 const handleSizeChange = (val: number) => {
@@ -66,25 +63,15 @@ function searchProductOrName(data: CertificationDataT[], query: string) {
   return data.filter((item) => {
     const lowercasePro = item.pro.toLowerCase();
     const lowercaseName = item.name.toLowerCase();
-    return (
-      lowercasePro.includes(lowercaseQuery) ||
-      lowercaseName.includes(lowercaseQuery)
-    );
+    return lowercasePro.includes(lowercaseQuery) || lowercaseName.includes(lowercaseQuery);
   });
 }
 // 搜索框change事件
 function changeSearchVal() {
-  tableData.value = searchProductOrName(
-    i18n.value.certification.tableData,
-    searchContent.value
-  );
+  tableData.value = searchProductOrName(i18n.value.certification.tableData, searchContent.value);
 }
-function sortByAwardDescending(
-  certs: CertificationDataT[]
-): CertificationDataT[] {
-  return certs.sort(
-    (a, b) => new Date(b.award).getTime() - new Date(a.award).getTime()
-  );
+function sortByAwardDescending(certs: CertificationDataT[]): CertificationDataT[] {
+  return certs.sort((a, b) => new Date(b.award).getTime() - new Date(a.award).getTime());
 }
 
 onMounted(() => {
@@ -95,56 +82,20 @@ onMounted(() => {
 });
 </script>
 <template>
-  <BannerLevel2
-    :background-image="Banner"
-    :title="i18n.certification.title"
-    :illustration="illustration"
-  />
+  <BannerLevel2 :background-image="Banner" :title="i18n.certification.title" :illustration="illustration" />
   <AppContent :mobile-top="16">
     <div class="o-search">
-      <OSearch
-        v-model="searchContent"
-        clearable
-        :placeholder="i18n.certification.search_placeholder"
-        @change="changeSearchVal"
-      ></OSearch>
+      <OSearch v-model="searchContent" clearable :placeholder="i18n.certification.search_placeholder" @change="changeSearchVal"></OSearch>
     </div>
     <OTable class="pc-list" :data="randerData" style="width: 100%">
-      <OTableColumn
-        width="300"
-        :label="i18n.certification.pro"
-        prop="pro"
-        show-overflow-tooltip
-      ></OTableColumn>
-      <OTableColumn
-        :label="i18n.certification.name"
-        prop="name"
-        show-overflow-tooltip
-      ></OTableColumn>
-      <OTableColumn
-        width="200"
-        :label="i18n.certification.version"
-        prop="version"
-      ></OTableColumn>
-      <OTableColumn
-        width="180"
-        :label="i18n.certification.award"
-        prop="award"
-      ></OTableColumn>
-      <OTableColumn
-        :label="i18n.certification.expiration"
-        prop="expiration"
-        width="180"
-      ></OTableColumn>
+      <OTableColumn width="300" :label="i18n.certification.pro" prop="pro" show-overflow-tooltip></OTableColumn>
+      <OTableColumn :label="i18n.certification.name" prop="name" show-overflow-tooltip></OTableColumn>
+      <OTableColumn width="200" :label="i18n.certification.version" prop="version"></OTableColumn>
+      <OTableColumn width="180" :label="i18n.certification.award" prop="award"></OTableColumn>
+      <OTableColumn :label="i18n.certification.expiration" prop="expiration" width="180"></OTableColumn>
       <el-table-column :label="i18n.certification.certificate" width="200">
         <template #default="scope">
-          <a
-            :href="scope.row.certificate"
-            download
-            target="_blank"
-            rel="noopener noreferrer"
-            >{{ i18n.certification.certify }}</a
-          >
+          <a :href="scope.row.certificate" download target="_blank" rel="noopener noreferrer">{{ i18n.certification.certify }}</a>
         </template>
       </el-table-column>
     </OTable>
@@ -152,30 +103,23 @@ onMounted(() => {
       <li v-for="(item, index) in tableData" :key="index" class="item">
         <ul>
           <li>
-            <span>{{ i18n.certification.pro }}:</span
-            ><span>{{ item.pro }}</span>
+            <span>{{ i18n.certification.pro }}:</span><span>{{ item.pro }}</span>
           </li>
           <li>
-            <span>{{ i18n.certification.name }}:</span
-            ><span>{{ item.name }}</span>
+            <span>{{ i18n.certification.name }}:</span><span>{{ item.name }}</span>
           </li>
           <li>
-            <span>{{ i18n.certification.version }}:</span
-            ><span>{{ item.version }}</span>
+            <span>{{ i18n.certification.version }}:</span><span>{{ item.version }}</span>
           </li>
           <li>
-            <span>{{ i18n.certification.award }}:</span
-            ><span>{{ item.award }}</span>
+            <span>{{ i18n.certification.award }}:</span><span>{{ item.award }}</span>
           </li>
           <li>
-            <span>{{ i18n.certification.expiration }}:</span
-            ><span>{{ item.expiration }}</span>
+            <span>{{ i18n.certification.expiration }}:</span><span>{{ item.expiration }}</span>
           </li>
           <li>
             <span>{{ i18n.certification.certificate }}:</span>
-            <a :href="item.certificate" rel="noopener noreferrer">{{
-              i18n.certification.certify
-            }}</a>
+            <a :href="item.certificate" rel="noopener noreferrer">{{ i18n.certification.certify }}</a>
           </li>
           <li></li>
         </ul>
@@ -196,21 +140,11 @@ onMounted(() => {
       >
         <span class="pagination-slot">{{ currentPage }}/{{ totalPage }}</span>
       </OPagination>
-      <AppPaginationMo
-        :current-page="currentPage"
-        :total-page="totalPage"
-        @turn-page="changeCurrentMb"
-        @jump-page="jumpPageMb"
-      />
+      <AppPaginationMo :current-page="currentPage" :total-page="totalPage" @turn-page="changeCurrentMb" @jump-page="jumpPageMb" />
     </ClientOnly>
     <p class="introduce">
       {{ i18n.certification.introduce1
-      }}<a
-        :href="GITEE_LINK + 'opengauss/distribution-certification'"
-        target="_blank"
-        rel="noopener noreferrer"
-        >{{ i18n.certification.introduce2 }}</a
-      >
+      }}<a :href="GITCODE_LINK + 'opengauss/distribution-certification'" target="_blank" rel="noopener noreferrer">{{ i18n.certification.introduce2 }}</a>
     </p>
   </AppContent>
 </template>

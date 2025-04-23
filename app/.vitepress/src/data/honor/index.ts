@@ -105,7 +105,7 @@ import songfei2024 from '@/assets/category/honor/2024/member/songfei.png';
 import yangzhizheng2024 from '@/assets/category/honor/2024/member/yangzhizheng.png';
 import zhaoliwei2024 from '@/assets/category/honor/2024/member/zhaoliwei.png';
 
-import { GITEE_LINK, CECN_LINK } from '@/data/url-config';
+import { GITCODE_LINK, CECN_LINK } from '@/data/url-config';
 
 export default {
   title: '社区荣誉',
@@ -124,7 +124,7 @@ export default {
           img: oscarImg,
         },
         {
-          name: '优秀Gitee组织',
+          name: '优秀GitCode组织',
           href: '',
           img: giteeImg,
         },
@@ -294,8 +294,7 @@ export default {
       devoloperRules: [
         {
           type: 'tip',
-          value:
-            '注：本次结果根据以下评奖规则，取2021年6月-2022年6月的贡献值进行评选，最终展示不分先后顺序。',
+          value: '注：本次结果根据以下评奖规则，取2021年6月-2022年6月的贡献值进行评选，最终展示不分先后顺序。',
         },
         {
           type: 'label',
@@ -307,42 +306,39 @@ export default {
         },
         {
           type: 'label',
-          value:
-            '社区活跃之星： 1、社区交流群积极解答问题，邮件列表回复问题 2.博客发布量',
+          value: '社区活跃之星： 1、社区交流群积极解答问题，邮件列表回复问题 2.博客发布量',
         },
       ],
       sigData: [
         {
           name: 'SIG SQLEngine',
-          href: `${GITEE_LINK}opengauss/tc/tree/master/sigs/SQLEngine`,
+          href: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/SQLEngine`,
         },
         {
           name: 'SIG StorageEngine',
-          href: `${GITEE_LINK}opengauss/tc/tree/master/sigs/StorageEngine`,
+          href: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/StorageEngine`,
         },
         {
           name: 'SIG Plugin',
-          href: `${GITEE_LINK}opengauss/tc/tree/master/sigs/Plugin`,
+          href: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/Plugin`,
         },
         {
           name: 'SIG ReleaseManagement',
-          href: `${GITEE_LINK}opengauss/tc/tree/master/sigs/ReleaseManagement`,
+          href: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/ReleaseManagement`,
         },
         {
           name: 'SIG GIS',
-          href: `${GITEE_LINK}opengauss/tc/tree/master/sigs/GIS`,
+          href: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/GIS`,
         },
       ],
       sigRules: [
         {
           type: 'tip',
-          value:
-            '注：本次结果根据以下评奖规则，取2021年6月-2022年6月的贡献值进行评选，最终展示不分先后顺序。',
+          value: '注：本次结果根据以下评奖规则，取2021年6月-2022年6月的贡献值进行评选，最终展示不分先后顺序。',
         },
         {
           type: 'label',
-          value:
-            '优秀SIG组：1. 发布技术竞争力特性数量最多 2.组织、开发者多样性 3.社区式开发运作规范包括不限于会议频次&纪要、社区CICD、社区公开讨论等',
+          value: '优秀SIG组：1. 发布技术竞争力特性数量最多 2.组织、开发者多样性 3.社区式开发运作规范包括不限于会议频次&纪要、社区CICD、社区公开讨论等',
         },
       ],
     },
@@ -467,8 +463,7 @@ export default {
       devoloperRules: [
         {
           type: 'tip',
-          value:
-            '注：本次结果根据以下评奖规则，取2022年6月-2023年6月的贡献值进行评选，最终展示不分先后顺序。',
+          value: '注：本次结果根据以下评奖规则，取2022年6月-2023年6月的贡献值进行评选，最终展示不分先后顺序。',
         },
         {
           type: 'label',
@@ -480,42 +475,39 @@ export default {
         },
         {
           type: 'label',
-          value:
-            '社区活跃之星： 1.社区交流群积极解答问题、邮件列表回复问题  2. 博客发布量',
+          value: '社区活跃之星： 1.社区交流群积极解答问题、邮件列表回复问题  2. 博客发布量',
         },
       ],
       sigData: [
         {
           name: 'SIG SQLEngine',
-          href: `${GITEE_LINK}opengauss/tc/tree/master/sigs/SQLEngine`,
+          href: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/SQLEngine`,
         },
         {
           name: 'SIG StorageEngine',
-          href: `${GITEE_LINK}opengauss/tc/tree/master/sigs/StorageEngine`,
+          href: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/StorageEngine`,
         },
         {
           name: 'SIG Plugin',
-          href: `${GITEE_LINK}opengauss/tc/tree/master/sigs/Plugin`,
+          href: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/Plugin`,
         },
         {
           name: 'SIG Docs',
-          href: `${GITEE_LINK}opengauss/tc/tree/master/sigs/Docs`,
+          href: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/Docs`,
         },
         {
           name: 'Tools',
-          href: `${GITEE_LINK}opengauss/tc/tree/master/sigs/Tools`,
+          href: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/Tools`,
         },
       ],
       sigRules: [
         {
           type: 'tip',
-          value:
-            '注：本次结果根据以下评奖规则，取2021年6月-2022年6月的贡献值进行评选，最终展示不分先后顺序。',
+          value: '注：本次结果根据以下评奖规则，取2021年6月-2022年6月的贡献值进行评选，最终展示不分先后顺序。',
         },
         {
           type: 'label',
-          value:
-            '优秀SIG组：1. 发布技术竞争力特性数量最多  2.组织、开发者多样性  3.社区式开发运作规范包括不限于会议频次&纪要、社区CICD、社区公开讨论等',
+          value: '优秀SIG组：1. 发布技术竞争力特性数量最多  2.组织、开发者多样性  3.社区式开发运作规范包括不限于会议频次&纪要、社区CICD、社区公开讨论等',
         },
       ],
       enterpriseData: [
@@ -563,23 +555,19 @@ export default {
       enterpriseRules: [
         {
           type: 'tip',
-          value:
-            '注：本次结果依据2023年1月-2023年12月在openGauss社区生态合作、技术创新、商业应用三个方面做出突出贡献的企事业单位',
+          value: '注：本次结果依据2023年1月-2023年12月在openGauss社区生态合作、技术创新、商业应用三个方面做出突出贡献的企事业单位',
         },
         {
           type: 'label',
-          value:
-            '商业成功：2023年度累计装机量排名，1-3名5分，3-6名3分，6-10名2分，10-15名各1分。',
+          value: '商业成功：2023年度累计装机量排名，1-3名5分，3-6名3分，6-10名2分，10-15名各1分。',
         },
         {
           type: 'label',
-          value:
-            '技术创新：2023年合入代码贡献排名，1-3名5分，3-6名3分，6-10名1分。',
+          value: '技术创新：2023年合入代码贡献排名，1-3名5分，3-6名3分，6-10名1分。',
         },
         {
           type: 'label',
-          value:
-            '生态建设：2023年联合营销排名（活动、直播、费用、宣传等维度支持）第一名3分，第二名2分，第3名-第5名1分。',
+          value: '生态建设：2023年联合营销排名（活动、直播、费用、宣传等维度支持）第一名3分，第二名2分，第3名-第5名1分。',
         },
       ],
       personData: [
@@ -599,7 +587,7 @@ export default {
             'Sig组例会记录：',
             'link: https://space.bilibili.com/543286270/search/video?keyword=SQL',
             '代码检视记录：',
-            'link: https://gitee.com/opengauss/openGauss-server/pulls?assignee_id=&author_id=&label_ids=207105028&label_text=&milestone_id=&priority=&project_type=&scope=&search=&single_label_id=&single_label_text=&sort=closed_at+desc&status=merged&target_project=&tester_id=',
+            'link: https://gitcode.com/opengauss/openGauss-server/pulls?assignee_id=&author_id=&label_ids=207105028&label_text=&milestone_id=&priority=&project_type=&scope=&search=&single_label_id=&single_label_text=&sort=closed_at+desc&status=merged&target_project=&tester_id=',
           ],
         },
         {
@@ -659,9 +647,7 @@ export default {
           name: '薛蒙恩',
           company: '华为',
           avatar: xuemengen2023,
-          comment: [
-            '积极参与社区om仓issue修复、代码提交等，主要参与升级、扩缩容、流式容灾等模块的issue修复和需求开发，共提PR 40+，修复issue20+。',
-          ],
+          comment: ['积极参与社区om仓issue修复、代码提交等，主要参与升级、扩缩容、流式容灾等模块的issue修复和需求开发，共提PR 40+，修复issue20+。'],
         },
         {
           name: '郭委',
@@ -718,17 +704,13 @@ export default {
           name: '陈炳达',
           company: '海量数据',
           avatar: chenbingda2023,
-          comment: [
-            '在Plugin仓库共提交特性开发PR 5个，修复issue 13个，对社区MySQL兼容性提升做出重大贡献。',
-          ],
+          comment: ['在Plugin仓库共提交特性开发PR 5个，修复issue 13个，对社区MySQL兼容性提升做出重大贡献。'],
         },
         {
           name: '周婧',
           company: '中国移动',
           avatar: zhoujing2023,
-          comment: [
-            '在Plugin仓库共提交特性开发PR 1个，修复issue 8个，提交issue 16个。从特性开发、解决issue、发现已有问题等多方便均对plugin sig做出了贡献。',
-          ],
+          comment: ['在Plugin仓库共提交特性开发PR 1个，修复issue 8个，提交issue 16个。从特性开发、解决issue、发现已有问题等多方便均对plugin sig做出了贡献。'],
         },
         {
           name: '刘博文',
@@ -1033,51 +1015,47 @@ export default {
       devoloperRules: [
         {
           type: 'tip',
-          value:
-            '注：本次结果根据以下评选规则，取2023年6月~2024年5月的贡献值进行评选，最终展示不分先后。',
+          value: '注：本次结果根据以下评选规则，取2023年6月~2024年5月的贡献值进行评选，最终展示不分先后。',
         },
         {
           type: 'label',
-          value:
-            '优秀开发者：由各个SIG组根据组内成员的贡献度进行推荐，包含但不限于PR、Issue、CVE、特性开发、会议组织、技术布道等事务等。',
+          value: '优秀开发者：由各个SIG组根据组内成员的贡献度进行推荐，包含但不限于PR、Issue、CVE、特性开发、会议组织、技术布道等事务等。',
         },
       ],
       sigData: [
         {
           name: 'SIG SQLEngine',
-          href: `${GITEE_LINK}opengauss/tc/tree/master/sigs/SQLEngine`,
+          href: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/SQLEngine`,
         },
         {
           name: 'SIG ReleaseManagement',
-          href: `${GITEE_LINK}opengauss/tc/tree/master/sigs/ReleaseManagement`,
+          href: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/ReleaseManagement`,
         },
         {
           name: 'SIG QA',
-          href: `${GITEE_LINK}opengauss/tc/tree/master/sigs/QA`,
+          href: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/QA`,
         },
         {
           name: 'SIG Plugin',
-          href: `${GITEE_LINK}opengauss/tc/tree/master/sigs/Plugin`,
+          href: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/Plugin`,
         },
         {
           name: 'SIG Docs',
-          href: `${GITEE_LINK}opengauss/tc/tree/master/sigs/Docs`,
+          href: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/Docs`,
         },
         {
           name: 'SIG Certification',
-          href: `${GITEE_LINK}opengauss/tc/tree/master/sigs/Certification`,
+          href: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/Certification`,
         },
       ],
       sigRules: [
         {
           type: 'tip',
-          value:
-            '注：本次结果根据以下评选规则，取2023年6月~2024年5月的贡献值进行评选，最终展示不分先后。',
+          value: '注：本次结果根据以下评选规则，取2023年6月~2024年5月的贡献值进行评选，最终展示不分先后。',
         },
         {
           type: 'label',
-          value:
-            '优秀SIG组：1、发布技术竞争力特性数量最多  2、组织、开发者多样性  3、社区式开发运作规范包括不限于会议频次&纪要、社区CICD、社区公开讨论等',
+          value: '优秀SIG组：1、发布技术竞争力特性数量最多  2、组织、开发者多样性  3、社区式开发运作规范包括不限于会议频次&纪要、社区CICD、社区公开讨论等',
         },
       ],
       enterpriseData: [
@@ -1125,23 +1103,19 @@ export default {
       enterpriseRules: [
         {
           type: 'tip',
-          value:
-            '注：本次结果依据2024年1月-2024年12月在openGauss社区生态合作、技术创新、商业应用三个方面做出突出贡献的企事业单位',
+          value: '注：本次结果依据2024年1月-2024年12月在openGauss社区生态合作、技术创新、商业应用三个方面做出突出贡献的企事业单位',
         },
         {
           type: 'label',
-          value:
-            '商业成功：2024年度累计装机量排名，1-3名5分，3-6名3分，6-10名2分，10-15名各1分。',
+          value: '商业成功：2024年度累计装机量排名，1-3名5分，3-6名3分，6-10名2分，10-15名各1分。',
         },
         {
           type: 'label',
-          value:
-            '技术创新：2024年合入代码贡献排名，1-3名5分，3-6名3分，6-10名1分。',
+          value: '技术创新：2024年合入代码贡献排名，1-3名5分，3-6名3分，6-10名1分。',
         },
         {
           type: 'label',
-          value:
-            '生态建设：2024年联合营销排名（活动、直播、费用、宣传等维度支持）第一名3分，第二名2分，第3名-第5名1分。',
+          value: '生态建设：2024年联合营销排名（活动、直播、费用、宣传等维度支持）第一名3分，第二名2分，第3名-第5名1分。',
         },
       ],
       personData: [
@@ -1149,9 +1123,7 @@ export default {
           name: '李童',
           company: '海量数据',
           avatar: litong2024,
-          comment: [
-            '参与docs SIG组双周例会，统计社区issue和pr情况，完成committer工作汇报；完成330和930版本海量合入需求的手册内容提交。',
-          ],
+          comment: ['参与docs SIG组双周例会，统计社区issue和pr情况，完成committer工作汇报；完成330和930版本海量合入需求的手册内容提交。'],
         },
         {
           name: '郭欢',
@@ -1246,7 +1218,7 @@ export default {
             '1.devcloud完成上传测试方案10个（其中7条由于没有账号，托同事代传）',
             '2.issues反馈3个+验收4个',
             '3.上传南大特性相关文本用例涉及10个特性，共439条文本用例（一小部分由于当时没有账号，由同事代传）',
-            '4.社区特性测试报告评审以及合入gitee，共5个特性相关+1个南大集成版本测试报告',
+            '4.社区特性测试报告评审以及合入gitcode，共5个特性相关+1个南大集成版本测试报告',
           ],
         },
         {
@@ -1299,9 +1271,7 @@ export default {
           name: '徐达标',
           company: '华为',
           avatar: xvdabiao2024,
-          comment: [
-            '在oGengine商用交付项目中，完成了多个关键需求的开发，主导和协助参与了多个疑难问题的解决。',
-          ],
+          comment: ['在oGengine商用交付项目中，完成了多个关键需求的开发，主导和协助参与了多个疑难问题的解决。'],
         },
         {
           name: '张仲良',
@@ -1316,9 +1286,7 @@ export default {
           name: '刘伟',
           company: '云和恩墨',
           avatar: liuwei2024,
-          comment: [
-            '支持了最新版本的orafce在openGauss上的兼容性编译与运行，支持了关键字作为别名可以不带as的特性',
-          ],
+          comment: ['支持了最新版本的orafce在openGauss上的兼容性编译与运行，支持了关键字作为别名可以不带as的特性'],
         },
         {
           name: '宁雅黎',
@@ -1332,19 +1300,13 @@ export default {
           name: '郭委',
           company: '华为',
           avatar: guowei2024,
-          comment: [
-            '1、dbmind社区提交并合入11个,解决索引推荐，web界面展示，索引推荐，慢SQL诊断等相关bug;',
-            '2、支撑DBMind在农行等客户侧应用。',
-          ],
+          comment: ['1、dbmind社区提交并合入11个,解决索引推荐，web界面展示，索引推荐，慢SQL诊断等相关bug;', '2、支撑DBMind在农行等客户侧应用。'],
         },
         {
           name: '刘遥',
           company: '海量数据',
           avatar: liuyao2024,
-          comment: [
-            '1.封装硬件密码模块接口库约3K行代码',
-            '2.逻辑备份回复支持加解密和hmac约1.7K行代码',
-          ],
+          comment: ['1.封装硬件密码模块接口库约3K行代码', '2.逻辑备份回复支持加解密和hmac约1.7K行代码'],
         },
         {
           name: '巫悦彬',
@@ -1367,19 +1329,14 @@ export default {
           name: '陈炳达',
           company: '海量数据',
           avatar: chenbingda2024,
-          comment: [
-            '1、RM 贡献跟踪',
-            '2、新需求承接及版本进度对齐',
-            '3、需求进度追踪。',
-            '4、Issue 进展跟进及解决。',
-          ],
+          comment: ['1、RM 贡献跟踪', '2、新需求承接及版本进度对齐', '3、需求进度追踪。', '4、Issue 进展跟进及解决。'],
         },
         {
           name: '谭小凡',
           company: '中科院软件研究所',
           avatar: tanxiaofan2024,
           comment: [
-            '目前 openGauss 5.1.0 和 openGauss 6.0.0 都成功移植到了RISC-V架构（参见：https://gitee.com/opengauss/riscv）, 这两大重要的成果都是谭小凡主导完成',
+            '目前 openGauss 5.1.0 和 openGauss 6.0.0 都成功移植到了RISC-V架构（参见：https://gitcode.com/opengauss/riscv）, 这两大重要的成果都是谭小凡主导完成',
           ],
         },
         {
@@ -1413,9 +1370,7 @@ export default {
           name: '杨志铮',
           company: '中国移动',
           avatar: yangzhizheng2024,
-          comment: [
-            '有导出同义词问题，提出issue3个， 目前正在做向量数据库融合查询，支持HNSW索引进行融合查询，并且使用独立的代价计算、执行计划、执行算子。',
-          ],
+          comment: ['有导出同义词问题，提出issue3个， 目前正在做向量数据库融合查询，支持HNSW索引进行融合查询，并且使用独立的代价计算、执行计划、执行算子。'],
         },
         {
           name: '赵立伟',

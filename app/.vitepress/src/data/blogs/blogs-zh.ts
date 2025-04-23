@@ -45,8 +45,7 @@ export default [
   },
   {
     date: '2024-06-19',
-    summary:
-      '如何使用dbe_perf.track_memory_context以及pv_session_memctx_detail追踪内存分配',
+    summary: '如何使用dbe_perf.track_memory_context以及pv_session_memctx_detail追踪内存分配',
     archives: '2024-06',
     img: '',
     author: ['xuchunyang'],
@@ -178,8 +177,7 @@ export default [
   },
   {
     date: '2024-05-13',
-    summary:
-      '【openGauss技术文章征集】openGauss-UniqueSQLMappingLock-异常等待导致CPU使用率百分百故障分析',
+    summary: '【openGauss技术文章征集】openGauss-UniqueSQLMappingLock-异常等待导致CPU使用率百分百故障分析',
     archives: '2024-05',
     img: '',
     author: ['毕思博'],
@@ -252,8 +250,7 @@ export default [
   },
   {
     date: '2024-04-19',
-    summary:
-      '【openGauss技术文章征集】openGauss 6.0.0-RC1新特性：一站式交互安装初体验',
+    summary: '【openGauss技术文章征集】openGauss 6.0.0-RC1新特性：一站式交互安装初体验',
     archives: '2024-04',
     img: '',
     author: ['宥谦'],
@@ -403,8 +400,7 @@ export default [
   },
   {
     date: '2023-07-27',
-    summary:
-      '本文将通过使用vm+openEuale环境安装一个openGuass,作为我在学习openGuass道路上的一个总结.',
+    summary: '本文将通过使用vm+openEuale环境安装一个openGuass,作为我在学习openGuass道路上的一个总结.',
     archives: '2023-07',
     img: '',
     author: ['zhangjie'],
@@ -568,8 +564,7 @@ export default [
   },
   {
     date: '2023-04-25',
-    summary:
-      '与 Mysql 的 Performance_schema 类似，openGauss 本身也提供类似的性能监控视图。但与 Mysql 也存在差异，本文就针对两者异同做个比较。',
+    summary: '与 Mysql 的 Performance_schema 类似，openGauss 本身也提供类似的性能监控视图。但与 Mysql 也存在差异，本文就针对两者异同做个比较。',
     archives: '2023-04',
     img: '',
     author: ['zhoujingbnu'],
@@ -778,8 +773,7 @@ export default [
   },
   {
     date: '2023-01-08',
-    summary:
-      '3.0.3版本具备的特性介绍，部分特性在3.0.0版本以及更早版本具备的特性不在此赘述',
+    summary: '3.0.3版本具备的特性介绍，部分特性在3.0.0版本以及更早版本具备的特性不在此赘述',
     archives: '2023-01',
     img: '/zh/blogs/zhangzhijing/title/img1.png',
     author: ['zhangzhijing'],
@@ -877,8 +871,7 @@ export default [
   },
   {
     date: '2022-11-15',
-    summary:
-      "Just about everything you'll need to style in the theme: headings, paragraphs, blockquotes, tables, code blocks, and more.",
+    summary: "Just about everything you'll need to style in the theme: headings, paragraphs, blockquotes, tables, code blocks, and more.",
     archives: '2022-11',
     img: '',
     author: ['Red_havk'],
@@ -888,8 +881,7 @@ export default [
   },
   {
     date: '2022-11-15',
-    summary:
-      "Just about everything you'll need to style in the theme: headings, paragraphs, blockquotes, tables, code blocks, and more.",
+    summary: "Just about everything you'll need to style in the theme: headings, paragraphs, blockquotes, tables, code blocks, and more.",
     archives: '2022-11',
     img: '',
     author: ['Red_havk'],
@@ -1041,13 +1033,11 @@ export default [
   },
   {
     date: '2022-11-02',
-    summary:
-      '创建表分区时提示ERROR:  inserted partition key does not map to any table partition怎么办',
+    summary: '创建表分区时提示ERROR:  inserted partition key does not map to any table partition怎么办',
     archives: '2022-11',
     img: '',
     author: ['张翠娉'],
-    title:
-      '创建表分区时提示ERROR:  inserted partition key does not map to any table partition怎么办',
+    title: '创建表分区时提示ERROR:  inserted partition key does not map to any table partition怎么办',
     tags: ['数据库入门'],
     path: 'zh/blogs/zhangcuiping/创建表分区时提示ERROR  inserted partition key does not map to any table partition怎么办',
     times: '14:20',
@@ -1302,13 +1292,11 @@ export default [
   },
   {
     date: '2022-10-08',
-    summary:
-      '开源Mall4j商城系统底层用的是MySQL5.7，现在我们要用openGauss3.0把它替换下来',
+    summary: '开源Mall4j商城系统底层用的是MySQL5.7，现在我们要用openGauss3.0把它替换下来',
     archives: '2022-10',
     img: '',
     author: ['大数据模型'],
-    title:
-      '【我与openGauss的故事】干货输出【开源Mall4j商城系统-MySQL5.7数据库底座替换探索实践】',
+    title: '【我与openGauss的故事】干货输出【开源Mall4j商城系统-MySQL5.7数据库底座替换探索实践】',
     tags: ['openGauss技术文章征集'],
     path: 'zh/blogs/angryart/【我与openGauss的故事】干货输出【开源Mall4j商城系统-MySQL5.7数据库底座替换探索实践】',
   },
@@ -1328,8 +1316,7 @@ export default [
     archives: '2022-10',
     img: '',
     author: ['大数据模型'],
-    title:
-      '【我与openGauss的故事】SSM+MySQL替换探索 opengauss3对比postgresql12',
+    title: '【我与openGauss的故事】SSM+MySQL替换探索 opengauss3对比postgresql12',
     tags: ['openGauss技术文章征集'],
     path: 'zh/blogs/angryart/【我与openGauss的故事】SSM-MySQL替换探索 opengauss3对比postgresql12',
   },
@@ -1497,8 +1484,7 @@ export default [
   },
   {
     date: '2022-09-28',
-    summary:
-      '本文从实际场景出发记录了openGauss，CM，OM整体编译流程，用户只需要选取干净的CentOS 7.6环境，配置好yum源，即可按照文中操作。',
+    summary: '本文从实际场景出发记录了openGauss，CM，OM整体编译流程，用户只需要选取干净的CentOS 7.6环境，配置好yum源，即可按照文中操作。',
     archives: '2022-09',
     img: '/zh/post/lihongda/title/title.png',
     author: ['李宏达'],
@@ -1595,8 +1581,7 @@ export default [
   },
   {
     date: '2022-09-19',
-    summary:
-      '本文将通过对比官方文档关于**“设置账本数据库”**中的几个章节，结合源码来说说文档中操作步骤背后的原理。',
+    summary: '本文将通过对比官方文档关于**“设置账本数据库”**中的几个章节，结合源码来说说文档中操作步骤背后的原理。',
     archives: '2022-09',
     img: '',
     author: ['夏克'],
@@ -2761,16 +2746,12 @@ export default [
   },
   {
     date: '2022-05-24',
-    summary:
-      'FATAL: Connection to database failed: SCRAM authentication requires libpq version 10 or above',
+    summary: 'FATAL: Connection to database failed: SCRAM authentication requires libpq version 10 or above',
     archives: '2022-05',
     img: '/zh/blogs/enmo/title/img.png',
     author: ['云和恩墨交付'],
-    title:
-      'FATAL: Connection to database failed: SCRAM authentication requires libpq version 10 or above',
-    tags: [
-      'FATAL: Connection to database failed: SCRAM authentication requires libpq version 10 or above',
-    ],
+    title: 'FATAL: Connection to database failed: SCRAM authentication requires libpq version 10 or above',
+    tags: ['FATAL: Connection to database failed: SCRAM authentication requires libpq version 10 or above'],
     path: 'zh/blogs/enmo/FATAL Connection to database failed SCRAM authentication requires libpq version 10 or above',
     times: '10:20',
   },
@@ -3106,13 +3087,13 @@ export default [
   },
   {
     date: '2022-05-18',
-    summary: '如何使用Gitee向openGauss社区提交博客',
+    summary: '如何使用GitCode向openGauss社区提交博客',
     archives: '2022-05',
     img: '/zh/blogs/shawnyan/title/title.png',
     author: ['ShawnYan'],
-    title: '如何使用Gitee向openGauss社区提交博客',
+    title: '如何使用GitCode向openGauss社区提交博客',
     tags: ['openGauss'],
-    path: 'zh/blogs/ShawnYan/如何使用Gitee向openGauss社区提交博客',
+    path: 'zh/blogs/ShawnYan/如何使用GitCode向openGauss社区提交博客',
     times: '22:00',
   },
   {
@@ -3557,16 +3538,12 @@ export default [
   },
   {
     date: '2022-04-25',
-    summary:
-      'openGauss每日一练（收集统计信息、打印执行计划、垃圾收集和checkpoint）',
+    summary: 'openGauss每日一练（收集统计信息、打印执行计划、垃圾收集和checkpoint）',
     archives: '2022-04',
     img: '/zh/blogs/enmo/title/img.png',
     author: ['云和恩墨'],
-    title:
-      'openGauss每日一练（收集统计信息、打印执行计划、垃圾收集和checkpoint）',
-    tags: [
-      'openGauss每日一练（收集统计信息、打印执行计划、垃圾收集和checkpoint）',
-    ],
+    title: 'openGauss每日一练（收集统计信息、打印执行计划、垃圾收集和checkpoint）',
+    tags: ['openGauss每日一练（收集统计信息、打印执行计划、垃圾收集和checkpoint）'],
     path: 'zh/blogs/enmo/openGauss每日一练（收集统计信息、打印执行计划、垃圾收集和checkpoint）',
     times: '10:20',
   },
@@ -3924,16 +3901,12 @@ export default [
   },
   {
     date: '2022-04-13',
-    summary:
-      'MogDB报错 - ERROR: role cannot be dropped because some objects depend on it DETAIL: 1 object in database处理',
+    summary: 'MogDB报错 - ERROR: role cannot be dropped because some objects depend on it DETAIL: 1 object in database处理',
     archives: '2022-04',
     img: '/zh/blogs/enmo/title/img6.png',
     author: ['云和恩墨'],
-    title:
-      'MogDB报错 - ERROR: role cannot be dropped because some objects depend on it DETAIL: 1 object in database处理',
-    tags: [
-      'MogDB报错 - ERROR: role cannot be dropped because some objects depend on it DETAIL: 1 object in database处理',
-    ],
+    title: 'MogDB报错 - ERROR: role cannot be dropped because some objects depend on it DETAIL: 1 object in database处理',
+    tags: ['MogDB报错 - ERROR: role cannot be dropped because some objects depend on it DETAIL: 1 object in database处理'],
     path: 'zh/blogs/enmo/MogDB报错 - ERROR role cannot be dropped because some objects depend on it DETAIL 1 object in database处理',
     times: '10:20',
   },
@@ -4896,16 +4869,12 @@ export default [
   },
   {
     date: '2021-12-10',
-    summary:
-      'openGauss2.1.0在openEuler 20.03 LTS SP2 安装后，yum无法使用的问题解决',
+    summary: 'openGauss2.1.0在openEuler 20.03 LTS SP2 安装后，yum无法使用的问题解决',
     archives: '2021-12',
     img: '/zh/blogs/July/title/img5.png',
     author: ['姜殿斌'],
-    title:
-      'openGauss2.1.0在openEuler 20.03 LTS SP2 安装后，yum无法使用的问题解决',
-    tags: [
-      'openGauss2.1.0在openEuler 20.03 LTS SP2 安装后，yum无法使用的问题解决',
-    ],
+    title: 'openGauss2.1.0在openEuler 20.03 LTS SP2 安装后，yum无法使用的问题解决',
+    tags: ['openGauss2.1.0在openEuler 20.03 LTS SP2 安装后，yum无法使用的问题解决'],
     path: 'zh/blogs/July/openGauss2-1-0在openEuler-20-03-LTS-SP2-安装后-yum无法使用的问题解决',
     times: '12:30',
   },
@@ -5332,8 +5301,7 @@ export default [
   },
   {
     date: '2021-11-27',
-    summary:
-      'VMware+CentOS7.6+OpenGauss2.0.1极简版安装过程记录，包括环境准备，安装以及JDBC连接使用',
+    summary: 'VMware+CentOS7.6+OpenGauss2.0.1极简版安装过程记录，包括环境准备，安装以及JDBC连接使用',
     archives: '2021-11',
     img: '/zh/blogs/luooofan/title/openGauss.png',
     author: ['luooofan'],
@@ -5343,8 +5311,7 @@ export default [
   },
   {
     date: '2021-11-27',
-    summary:
-      'VMware+CentOS7.6+OpenGauss2.0.1极简版安装过程记录，包括环境准备，安装以及JDBC连接使用',
+    summary: 'VMware+CentOS7.6+OpenGauss2.0.1极简版安装过程记录，包括环境准备，安装以及JDBC连接使用',
     archives: '2021-11',
     img: '',
     author: ['luooofan'],
@@ -5529,8 +5496,7 @@ export default [
   },
   {
     date: '2021-10-12',
-    summary:
-      'openGauss 2.1.0版本中新增了数据库任务创建，可以在数据库中设定和执行定时任务。',
+    summary: 'openGauss 2.1.0版本中新增了数据库任务创建，可以在数据库中设定和执行定时任务。',
     archives: '2021-10',
     img: '/zh/blogs/kamus/title/img-title.png',
     author: ['Kamus'],
@@ -7146,8 +7112,7 @@ export default [
   },
   {
     date: '2020-07-27',
-    summary:
-      '以技术连载的方式陆续介绍openGauss数据库的各项核心技术，包括SQL引擎、优化器、存储引擎、事务处理、数据库安全等。本期开始介绍openGauss SQL引擎技术',
+    summary: '以技术连载的方式陆续介绍openGauss数据库的各项核心技术，包括SQL引擎、优化器、存储引擎、事务处理、数据库安全等。本期开始介绍openGauss SQL引擎技术',
     archives: '2020-07',
     img: '/zh/blogs/kangyang/title/img5.png',
     author: ['kangyang'],
@@ -7202,8 +7167,7 @@ export default [
   },
   {
     date: '2020-07-22',
-    summary:
-      '以技术连载的方式陆续介绍openGauss数据库的各项核心技术，包括SQL引擎、优化器、存储引擎、事务处理、数据库安全等。本期开始介绍openGauss SQL引擎技术',
+    summary: '以技术连载的方式陆续介绍openGauss数据库的各项核心技术，包括SQL引擎、优化器、存储引擎、事务处理、数据库安全等。本期开始介绍openGauss SQL引擎技术',
     archives: '2020-07',
     img: '/zh/blogs/kangyang/title/img5.png',
     author: ['kangyang'],
