@@ -35,18 +35,8 @@ const handleChangeActiveMobile = (activeNames: number | '') => {
       ></span>
       <p class="current-page">{{ i18n.member.BOARD_TEXT }}</p>
     </div>
-    <OCollapse
-      v-model="activeMobileIndex"
-      class="member-mobile"
-      accordion
-      @change="handleChangeActiveMobile"
-    >
-      <OCollapseItem
-        v-for="(item, index) in i18n.member.MEMBER_LIST_OLD"
-        :key="item.ID"
-        :name="index"
-        class="member-panel"
-      >
+    <OCollapse v-model="activeMobileIndex" class="member-mobile" accordion @change="handleChangeActiveMobile">
+      <OCollapseItem v-for="(item, index) in i18n.member.MEMBER_LIST_OLD" :key="item.ID" :name="index" class="member-panel">
         <template #title>
           <div class="member-mobile-title">
             {{ item.name }}
@@ -56,12 +46,7 @@ const handleChangeActiveMobile = (activeNames: number | '') => {
           <ul class="member-info lable-name">
             <li>
               <IconHome />
-              <a
-                :href="item.GITEE_PATH"
-                target="_blank"
-                rel="noopener noreferrer"
-                >{{ i18n.member.GITEE_TEXT }}</a
-              >
+              <a :href="item.gitPath" target="_blank" rel="noopener noreferrer">{{ i18n.member.GIT_TEXT }}</a>
             </li>
             <li><IconUser />{{ item.nameText }}</li>
           </ul>
@@ -77,26 +62,13 @@ const handleChangeActiveMobile = (activeNames: number | '') => {
                 <a :href="'mailto:' + user.email" class="mail">
                   <img :src="emailImg" />
                 </a>
-                <a
-                  v-if="user.gitee"
-                  :href="user.gitee"
-                  class="gitee lable-name"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img :src="gitImg" />
-                </a>
               </p>
             </li>
           </ul>
         </div>
       </OCollapseItem>
     </OCollapse>
-    <div
-      v-for="item in i18n.member.MEMBER_LIST_OLD"
-      :key="item.ID"
-      class="member-panel member-pc"
-    >
+    <div v-for="item in i18n.member.MEMBER_LIST_OLD" :key="item.ID" class="member-panel member-pc">
       <h1 :id="item.id" class="member-title">
         {{ item.name }}
       </h1>
@@ -104,12 +76,7 @@ const handleChangeActiveMobile = (activeNames: number | '') => {
         <ul class="member-info">
           <li>
             <IconHome />
-            <a
-              :href="item.giteePath"
-              target="_blank"
-              rel="noopener noreferrer"
-              >{{ i18n.member.GITEE_TEXT }}</a
-            >
+            <a :href="item.gitPath" target="_blank" rel="noopener noreferrer">{{ i18n.member.GIT_TEXT }}</a>
           </li>
           <li><IconUser />{{ item.nameText }}</li>
         </ul>
@@ -118,25 +85,12 @@ const handleChangeActiveMobile = (activeNames: number | '') => {
             <img class="avatar" :src="user.img" :alt="user.name" />
             <p class="m-name" :title="user.name">{{ user.name }}</p>
             <p class="m-title">{{ user.title }}</p>
-            <p
-              class="m-company lable-name1"
-              :class="user.wider"
-              :title="user.company"
-            >
+            <p class="m-company lable-name1" :class="user.wider" :title="user.company">
               {{ user.company }}
             </p>
             <p class="links lable-name3">
               <a :href="'mailto:' + user.email" class="mail">
                 <img :src="emailImg" />
-              </a>
-              <a
-                v-if="user.gitee"
-                :href="user.gitee"
-                class="gitee lable-name3"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img :src="gitImg" />
               </a>
             </p>
           </li>

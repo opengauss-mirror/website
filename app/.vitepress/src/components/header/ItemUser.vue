@@ -2,12 +2,7 @@
 import { onMounted } from 'vue';
 import { useData } from 'vitepress';
 import { useI18n } from '@/i18n';
-import {
-  doLogin,
-  doLogout,
-  getUserAuth,
-  requestUserInfo,
-} from '@/shared/login';
+import { doLogin, doLogout, getUserAuth, requestUserInfo } from '@/shared/login';
 import { useUserInfoStore } from '@/stores/user';
 
 import IconLogin from '~icons/app/icon-login.svg';
@@ -33,11 +28,7 @@ onMounted(() => {
     <div class="header-user">
       <div v-if="csrfToken">
         <div class="user-info">
-          <img
-            v-if="userInfoStore.photo"
-            :src="userInfoStore.photo"
-            class="user-img"
-          />
+          <img v-if="userInfoStore.photo" :src="userInfoStore.photo" class="user-img" />
           <div v-else class="user-img"></div>
           <p class="user-name">{{ userInfoStore.username }}</p>
         </div>
@@ -135,6 +126,8 @@ onMounted(() => {
     cursor: pointer;
     font-size: var(--o-font-size-h6);
     color: var(--o-color-text1);
+    width: 20px;
+    height: 20px;
   }
 }
 </style>

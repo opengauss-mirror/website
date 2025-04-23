@@ -28,7 +28,7 @@ openGauss 社区每两年发布一个 LTS 版本，LTS 版本作为长期支持�
 3. openGauss 轻量版:精简功能,缩减安装包大小,内存占用更少；
 4. openGauss 分布式镜像:基于 ShardingSphere 和 k8s 的分布式容器化镜像。
 
-详情参考 openGauss 官网[“学习”->“文档”](https://docs-opengauss.osinfra.cn)区域。
+详情参考 openGauss 官网[“学习”->“文档”](https://docs.opengauss.org)区域。
 
 ## 4. openGauss 分布式部署方案是什么？
 
@@ -36,7 +36,7 @@ openGauss 社区每两年发布一个 LTS 版本，LTS 版本作为长期支持�
 2. 基于分布式中间件 shardingsphere 使 openGauss 具备分布式数据库能力；
 3. 使用 kubernetes 部署分布式数据库。
 
-更多分布式部署方案请参考 openGauss 官网[“学习”->“文档”](https://docs-opengauss.osinfra.cn)区域。
+更多分布式部署方案请参考 openGauss 官网[“学习”->“文档”](https://docs.opengauss.org)区域。
 
 ## 5. openGauss 支持的连接方式有哪些？
 

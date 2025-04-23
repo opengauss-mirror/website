@@ -1,10 +1,5 @@
 import { NavItemT } from '@/shared/@types/type-nav';
-import {
-  GITEE_LINK,
-  DATA_LINK,
-  GIYHUB_LINK,
-  DOCS_LINK,
-} from '@/data/url-config';
+import { GITCODE_LINK, DATA_LINK, GIYHUB_LINK, DOCS_LINK } from '@/data/url-config';
 const navData: Array<NavItemT> = [
   {
     label: { zh: '下载', en: 'Download' },
@@ -268,11 +263,11 @@ const navData: Array<NavItemT> = [
     id: 'code',
     children: [
       {
-        id: 'gitee',
-        label: { zh: 'Gitee', en: 'Gitee' },
+        id: 'GitCode',
+        label: { zh: 'GitCode', en: 'GitCode' },
         href: {
-          zh: GITEE_LINK + 'opengauss',
-          en: GITEE_LINK + 'opengauss',
+          zh: GITCODE_LINK + 'opengauss',
+          en: GITCODE_LINK + 'opengauss',
         },
         jumOut: true,
       },

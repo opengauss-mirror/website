@@ -2,7 +2,7 @@
 import { ref, onMounted, onUnmounted, computed } from 'vue';
 import { useI18n } from '@/i18n';
 import { useCommon } from '@/stores/common';
-import { GITEE_LINK } from '@/data/url-config';
+import { GITCODE_LINK } from '@/data/url-config';
 import { windowOpen } from '@/shared/utils';
 
 import BannerLevel2 from '@/components/BannerLevel2.vue';
@@ -247,7 +247,7 @@ function onTalentItemClick(index: number) {
       <div class="train-contact lable-name">
         <p>
           关于openGauss培训伙伴认证，openGauss提供了完整的评估标准和流程，详见
-          <a :href="`${GITEE_LINK}/opengauss/training-partner-certification`" target="_blank" rel="noopener noreferrer"> openGauss培训伙伴认证整体介绍</a>。
+          <a :href="`${GITCODE_LINK}/opengauss/training-partner-certification`" target="_blank" rel="noopener noreferrer"> openGauss培训伙伴认证整体介绍</a>。
         </p>
         <p>
           <span>{{ i18n.authentication.contact }}</span>
@@ -407,7 +407,7 @@ function onTalentItemClick(index: number) {
       <div class="train-contact">
         <p>
           关于openGauss培训伙伴认证，openGauss提供了完整的评估标准和流程，详见
-          <a :href="`${GITEE_LINK}/opengauss/training-partner-certification`" target="_blank" rel="noopener noreferrer"> openGauss培训伙伴认证整体介绍</a>。
+          <a :href="`${GITCODE_LINK}/opengauss/training-partner-certification`" target="_blank" rel="noopener noreferrer"> openGauss培训伙伴认证整体介绍</a>。
         </p>
         <p>
           <span>{{ i18n.authentication.contact }}</span>

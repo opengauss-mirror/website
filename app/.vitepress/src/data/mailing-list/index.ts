@@ -1,4 +1,4 @@
-import { GITEE_LINK, MAILWEB_LINK } from '@/data/url-config';
+import { GITCODE_LINK, MAILWEB_LINK } from '@/data/url-config';
 export default {
   zh: [
     {
@@ -9,7 +9,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/ai.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/ai@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/AI`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/AI`,
     },
     {
       name: `Blockchain`,
@@ -19,7 +19,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/blockchain.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/blockchain@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/Blockchain`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/Blockchain`,
     },
     {
       name: `Certification`,
@@ -29,7 +29,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/certification.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/certification@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/Certification`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/Certification`,
     },
     {
       name: `CloudNative`,
@@ -39,7 +39,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/cloudnative.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/cloudnative@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/CloudNative`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/CloudNative`,
     },
     {
       name: `CM`,
@@ -49,7 +49,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/cm.opengauss.org/`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/cm@opengauss.org/`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/CM`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/CM`,
     },
     {
       name: `Community`,
@@ -59,7 +59,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/community.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/community@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/community`,
+      gitLink: `${GITCODE_LINK}opengauss/community`,
     },
     {
       name: `Connectors`,
@@ -69,7 +69,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/connectors.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/connectors@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/Connectors`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/Connectors`,
     },
     {
       name: `CTMM`,
@@ -79,7 +79,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/ctmm.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/ctmm@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/CTMM`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/CTMM`,
     },
     {
       name: `DCF`,
@@ -89,7 +89,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/dcf.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/dcf@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/DCF`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/DCF`,
     },
     {
       name: `Docs`,
@@ -99,7 +99,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/docs.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/docs@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/Docs`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/Docs`,
     },
     {
       name: `Embedded`,
@@ -109,7 +109,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/embedded.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/embedded@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/Embedded`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/Embedded`,
     },
     {
       name: `GIS`,
@@ -119,7 +119,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/gis.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/gis@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/GIS`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/GIS`,
     },
     {
       name: `Graph`,
@@ -129,7 +129,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/graph.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/graph@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/Graph`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/Graph`,
     },
     {
       name: `Infra`,
@@ -139,7 +139,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/infra.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/infra@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/Infra`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/Infra`,
     },
     {
       name: `In-place Update`,
@@ -149,7 +149,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/inplaceupdate.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/inplaceupdate@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/In-place-Update`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/In-place-Update`,
     },
     {
       name: `IoT`,
@@ -159,7 +159,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/iot.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/iot@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/IoT`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/IoT`,
     },
     {
       name: `KnowledgeGraph`,
@@ -169,7 +169,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/knowledgegraph.opengauss.org/`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/knowledgegraph@opengauss.org/`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/KnowledgeGraph`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/KnowledgeGraph`,
     },
     {
       name: `OM`,
@@ -179,7 +179,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/om.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/om@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/OM`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/OM`,
     },
     {
       name: `OPS`,
@@ -189,7 +189,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/ops.opengauss.org/`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/ops@opengauss.org/`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/OPS`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/OPS`,
     },
     {
       name: `Plugin`,
@@ -199,7 +199,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/plugin.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/plugin@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/Plugin`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/Plugin`,
     },
     {
       name: `QA`,
@@ -209,7 +209,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/qa.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/qa@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/QA`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/QA`,
     },
     {
       name: `ReleaseManagement`,
@@ -219,7 +219,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/releasemanagement.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/releasemanagement@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/ReleaseManagement`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/ReleaseManagement`,
     },
     {
       name: `RISC-V`,
@@ -229,7 +229,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/riscv.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/riscv@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/RISC-V`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/RISC-V`,
     },
     {
       name: `SecurityAnnounce`,
@@ -239,7 +239,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/securityannounce.opengauss.org/`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/securityannounce@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/Security`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/Security`,
     },
     {
       name: `SecurityTechnology`,
@@ -249,7 +249,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/securitytechnology.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/securitytechnology@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/SecurityTechnology`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/SecurityTechnology`,
     },
     {
       name: `SQLEngine`,
@@ -259,7 +259,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/sqlengine.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/sqlengine@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/SQLEngine`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/SQLEngine`,
     },
     {
       name: `StorageEngine`,
@@ -269,7 +269,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/storageengine.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/storageengine@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/StorageEngine`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/StorageEngine`,
     },
     {
       name: `TC`,
@@ -279,7 +279,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/tc.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/tc@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc`,
+      gitLink: `${GITCODE_LINK}opengauss/tc`,
     },
     {
       name: `Tools`,
@@ -289,7 +289,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/tools.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/tools@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/Tools`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/Tools`,
     },
   ],
   en: [
@@ -301,7 +301,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/ai.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/ai@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/AI`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/AI`,
     },
     {
       name: `Blockchain`,
@@ -311,7 +311,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/blockchain.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/blockchain@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/Blockchain`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/Blockchain`,
     },
     {
       name: `Certification`,
@@ -321,7 +321,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/certification.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/certification@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/Certification`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/Certification`,
     },
     {
       name: `CloudNative`,
@@ -331,7 +331,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/cloudnative.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/cloudnative@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/CloudNative`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/CloudNative`,
     },
     {
       name: `CM`,
@@ -341,7 +341,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/cm.opengauss.org/`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/cm@opengauss.org/`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/CM`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/CM`,
     },
     {
       name: `Community`,
@@ -351,7 +351,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/community.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/community@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/community`,
+      gitLink: `${GITCODE_LINK}opengauss/community`,
     },
     {
       name: `Connectors`,
@@ -361,7 +361,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/connectors.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/connectors@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/Connectors`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/Connectors`,
     },
     {
       name: `CTMM`,
@@ -371,7 +371,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/ctmm.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/ctmm@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/CTMM`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/CTMM`,
     },
     {
       name: `DCF`,
@@ -381,7 +381,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/dcf.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/dcf@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/DCF`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/DCF`,
     },
     {
       name: `Docs`,
@@ -391,7 +391,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/docs.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/docs@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/Docs`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/Docs`,
     },
     {
       name: `Embedded`,
@@ -401,7 +401,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/embedded.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/embedded@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/Embedded`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/Embedded`,
     },
     {
       name: `GIS`,
@@ -411,7 +411,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/gis.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/gis@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/GIS`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/GIS`,
     },
     {
       name: `Graph`,
@@ -421,7 +421,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/graph.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/graph@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/Graph`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/Graph`,
     },
     {
       name: `Infra`,
@@ -431,7 +431,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/infra.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/infra@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/Infra`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/Infra`,
     },
     {
       name: `In-place Update`,
@@ -441,7 +441,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/inplaceupdate.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/inplaceupdate@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/In-place-Update`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/In-place-Update`,
     },
     {
       name: `IoT`,
@@ -451,7 +451,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/iot.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/iot@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/IoT`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/IoT`,
     },
     {
       name: `KnowledgeGraph`,
@@ -461,7 +461,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/knowledgegraph.opengauss.org/`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/knowledgegraph@opengauss.org/`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/KnowledgeGraph`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/KnowledgeGraph`,
     },
     {
       name: `OM`,
@@ -471,7 +471,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/om.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/om@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/OM`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/OM`,
     },
     {
       name: `OPS`,
@@ -481,7 +481,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/ops.opengauss.org/`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/ops@opengauss.org/`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/OPS`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/OPS`,
     },
     {
       name: `Plugin`,
@@ -491,7 +491,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/plugin.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/plugin@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/Plugin`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/Plugin`,
     },
     {
       name: `QA`,
@@ -501,7 +501,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/qa.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/qa@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/QA`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/QA`,
     },
     {
       name: `ReleaseManagement`,
@@ -511,7 +511,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/releasemanagement.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/releasemanagement@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/ReleaseManagement`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/ReleaseManagement`,
     },
     {
       name: `RISC-V`,
@@ -521,7 +521,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/riscv.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/riscv@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/RISC-V`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/RISC-V`,
     },
     {
       name: `SecurityAnnounce`,
@@ -531,7 +531,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/securityannounce.opengauss.org/`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/securityannounce@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/Security`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/Security`,
     },
     {
       name: `SecurityTechnology`,
@@ -541,7 +541,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/securitytechnology.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/securitytechnology@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/SecurityTechnology`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/SecurityTechnology`,
     },
     {
       name: `SQLEngine`,
@@ -551,7 +551,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/sqlengine.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/sqlengine@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/SQLEngine`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/SQLEngine`,
     },
     {
       name: `StorageEngine`,
@@ -561,7 +561,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/storageengine.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/storageengine@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/StorageEngine`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/StorageEngine`,
     },
     {
       name: `TC`,
@@ -571,7 +571,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/tc.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/tc@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc`,
+      gitLink: `${GITCODE_LINK}opengauss/tc`,
     },
     {
       name: `Tools`,
@@ -581,7 +581,7 @@ export default {
       archive: `Archive`,
       websiteLink: `${MAILWEB_LINK}postorius/lists/tools.opengauss.org`,
       archiveLink: `${MAILWEB_LINK}hyperkitty/list/tools@opengauss.org`,
-      giteeLink: `${GITEE_LINK}opengauss/tc/tree/master/sigs/Tools`,
+      gitLink: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/Tools`,
     },
   ],
 };

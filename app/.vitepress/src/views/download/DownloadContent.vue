@@ -4,7 +4,7 @@ import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';
 
 import DownloadTable from './DownloadTable.vue';
-import { GITEE_LINK, DOCS_LINK } from '@/data/url-config';
+import { GITCODE_LINK, DOCS_LINK } from '@/data/url-config';
 const props = defineProps({
   contentData: {
     required: true,
@@ -30,9 +30,7 @@ const i18n = useI18n();
 const { lang } = useData();
 const { contentData, versionShown, downloadVersionAuth } = toRefs(props);
 const explainLink = computed(() => {
-  return (contentData.value[0] as any).docs_list[0][
-    lang.value === 'zh' ? 'path' : 'pathEn'
-  ];
+  return (contentData.value[0] as any).docs_list[0][lang.value === 'zh' ? 'path' : 'pathEn'];
 });
 </script>
 
@@ -41,26 +39,10 @@ const explainLink = computed(() => {
     <h2 class="title">{{ 'openGauss ' + (contentData[0] as any).name }}</h2>
     <h4 class="subtitle">{{ (contentData[0] as any).plannedEOL }}</h4>
     <div class="other-link">
-      <a
-        :href="
-          explainLink.startsWith('/docs/')
-            ? DOCS_LINK + lang + explainLink
-            : explainLink
-        "
-        target="_blank"
-        rel="noopener noreferrer"
-        >{{
-          lang === 'zh'
-            ? (contentData[0] as any).docs_list[0].name
-            : (contentData[0] as any).docs_list[0].nameEn
-        }}
+      <a :href="explainLink.startsWith('/docs/') ? DOCS_LINK + lang + explainLink : explainLink" target="_blank" rel="noopener noreferrer"
+        >{{ lang === 'zh' ? (contentData[0] as any).docs_list[0].name : (contentData[0] as any).docs_list[0].nameEn }}
       </a>
-      <a
-        :href="GITEE_LINK + 'opengauss/community/issues'"
-        target="_blank"
-        rel="noopener noreferrer"
-        >{{ i18n.download.FEEDBACK_QUESTION }}
-      </a>
+      <a :href="GITCODE_LINK + 'opengauss/community/issues'" target="_blank" rel="noopener noreferrer">{{ i18n.download.FEEDBACK_QUESTION }} </a>
     </div>
     <DownloadTable
       v-for="item in (contentData[0] as any).data[lang]"

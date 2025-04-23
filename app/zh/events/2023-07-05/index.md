@@ -29,8 +29,7 @@ summary: '自 2020 年 6 月开源以来，openGauss 一直围绕高性能、高
 
 •[openGauss 社区](https://opengauss.org)：提交 PR 时需要添加“openGauss 技术文章征集”标签。
 
-
-提交链接参考：[https://gitee.com/opengauss/blog](https://gitee.com/opengauss/blog) ，readme 中有介绍如何提交博客的方法
+提交链接参考：[https://gitcode.com/opengauss/blog](https://gitcode.com/opengauss/blog) ，readme 中有介绍如何提交博客的方法
 
 （2）在墨天轮社区“我和 openGauss 的故事”活动页（点击文末“阅读原文”跳转至活动页面），将您发布的文章标题及链接复制粘贴到本宣传贴的评论区。
 
@@ -89,7 +88,8 @@ summary: '自 2020 年 6 月开源以来，openGauss 一直围绕高性能、高
 
 • 活动推广奖：
 
-每邀请2位好友投稿且通过初审，即可获得 “活动推广奖”，价值50元京东购物卡一张；好友同步文章至openGauss社区博客，可再获得50元京东购物卡。数量有限，先到先得。
+每邀请 2 位好友投稿且通过初审，即可获得 “活动推广奖”，价值 50 元京东购物卡一张；好友同步文章至 openGauss 社区博客，可再获得 50 元京东购物卡。数量有限，先到先得。
+
 <div class="award-box" style="text-align:left;margin:24px 0;">
     <img src="./pad.png">
     <img src="./watch1.png">
