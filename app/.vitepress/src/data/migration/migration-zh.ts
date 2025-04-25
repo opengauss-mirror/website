@@ -516,7 +516,7 @@ export default {
       {
         title: '中国移动',
         desc: '中移在线的工程师们将目光聚焦在openGauss数据库上。中移在线20个…',
-        caseHref: `${GITCODE_LINK}/opengauss/website/blob/feature_migration_new/app/zh/migration/user-cases/index.md`,
+        caseHref: `${GITCODE_LINK}opengauss/website/blob/feature_migration_new/app/zh/migration/user-cases/index.md`,
         officalHref: 'http://online.10086.cn/official/new/index/#/home/index',
       },
     ],
