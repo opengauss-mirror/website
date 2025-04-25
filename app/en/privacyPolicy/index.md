@@ -14,7 +14,8 @@ The openGauss Community understands the importance of your privacy and fully res
 
 Please carefully review the following updates to this privacy policy:
 
-1. Updated the description in the "How We Share Your Personal Data" section.
+1. Added the description about GitCode account login.
+2. Changed the code hosting platform to GitCode.
 
 ## 1. How We Collect and Process Your Personal Data
 
@@ -24,21 +25,21 @@ Please carefully review the following updates to this privacy policy:
 
   1. When you register for an openGauss community account, we will collect your user name, company, **email address**, **phone number**, **password**, and **email/phone verification code**. A unique account identifier will be automatically generated. Refusal to provide this information will prevent account creation.
   2. When you log in to the openGauss community using your user name, **email address**, or **phone number**, we will collect user name, **email address**, **phone number**，**password** and **verification code** for authentication. Refusal to provide this information will prevent login.
-  3. When you log in using a third-party account (Gitee), we will collect your **UUID**, **ID**, nickname, and **email address** from that platform for authentication and code repository access management. When you log in using a third-party account that is not bound to any openGauss account, a new openGauss account with a unique identifier will be automatically generated, deriving from **Gitee ID**. Refusal to provide this information will prevent login via third-party accounts.
-  4. After logging in, you can optionally provide your avatar, nickname, and company. This information is not required for using openGauss community features.
-  5. After logging in, you can modify your **email address**, **phone number**, and **password**. We will collect **email address**, **phone number**, **password** and **verification code** for authentication.
-  6. After logging in, you can bind your openGauss account to a third-party account (Gitee). We will collect your **UUID**, **ID**, nickname, and **email address** from the bound platform. Refusal to provide this information will prevent third-party account binding for login purposes.
+  3. When you log in using a third-party account (Gitee or GitCode), we will collect your **Gitee UUID**, **Gitee ID**, Gitee nickname, **Gitee email address**, **GitCode UUID**, **GitCode ID**, GitCode nickname, **GitCode email address** from that platform for authentication and code repository access management. When you log in using a third-party account that is not bound to any openGauss account, a new openGauss account with a unique identifier will be automatically generated, deriving from your **Gitee ID** or **GitCode ID**. Refusal to provide this information will prevent login via third-party accounts.
+  4. After logging in, you can optionally provide your avatar, nickname, and company in User Center. This information is not required for using openGauss community features.
+  5. After logging in, you can modify your **email address**, **phone number**, and **password** in User Center. We will collect **email address**, **phone number**, **password** and **verification code** for authentication.
+  6. After logging in, you can bind your openGauss account to a third-party account (Gitee or GitCode) in User Center. We will collect your **Gitee UUID**, **Gitee ID**, Gitee nickname, **Gitee email address**, **GitCode UUID**, **GitCode ID**, GitCode nickname, **GitCode email address** from the bound platform. Refusal to provide this information will prevent third-party account binding for login purposes.
 
 **b) Mail List Service**. When you use our mail list service, we will collect your **email address** and **name (optional)**. We will provide you with the email subscription service to facilitate your participation in discussions in the community.
 
 **c) Service Optimization**. To ensure service quality and operations, we automatically collect and store necessary log data, including access timestamps, **IP address**, request details, access status, resource size, access origin, and user agent information. In addition, we will collect your device information (device name, device type, device vendor, operating system, operating system version, screen width, screen height), application information (application ID, SDK version , browser, browser version, browser viewport width, browser viewport height), application usage information (event name, event attributes, reporting time, client anonymous ID). This data is collected for the purposes of community operations and O&M security.
 
 **d) Contributor License Agreement(CLA) Signing**. When you participate in code contribution through the CLA
-signing system (click [here](https://clasign.osinfra.cn/sign/gitee_opengauss-1614047760000855378) to learn more), you need to submit your [relevant personal data](https://clasign.osinfra.cn/privacy/gitee_opengauss-1614047760000855378) to the CLA signing system. We will obtain such personal data to verify whether you have signed the CLA, and to conduct relevant statistical analysis to understand how the Community is operating.
+signing system (click [here](https://clasign.osinfra.cn/sign/gitee_opengauss-1614047760000855378?lang=en) to learn more), you need to submit your [relevant personal data](https://clasign.osinfra.cn/privacy/corp/gitee_opengauss-1614047760000855378?lang=en) to the CLA signing system. We will obtain such personal data to verify whether you have signed the CLA, and to conduct relevant statistical analysis to understand how the Community is operating.
 
-**e) Meeting Service**. When you use our meeting service, we will collect your **Gitee ID** for configuring related permissions. If you have meeting scheduling permission, we will collect your **email address** used when you edit the meeting details for the purpose of sending meeting invitations. If you enable automatically screen recording when you schedule a meeting, the recording will be uploaded to the third-party platform [Bilibili](https://www.bilibili.com/) after the meeting so that more interested individuals and organizations can review your meeting.
+**e) Meeting Service**. When you use our meeting service, we will collect your **user name** for configuring related permissions. If you have meeting scheduling permission, we will collect your **email address** used when you edit the meeting details for the purpose of sending meeting invitations. If you enable automatically screen recording when you schedule a meeting, the recording will be uploaded to the third-party platform [Bilibili](https://www.bilibili.com/) after the meeting so that more interested individuals and organizations can review your meeting.
 
-**f) Content Release**. When you participate in Community meetings, Community activities, contribution in the open source Community, blogs, newsgroups, or Community organization, you may submit your **photo**, **name**, **email address**, **company name**, **position**, **school**, **profile** and **Gitee ID** for posting on our website so that developers can better understand the community, quickly make contact, and participate in the community.
+**f) Content Release**. When you participate in Community meetings, Community activities, contribution in the open source Community, blogs, newsgroups, or Community organization, you may submit your **photo**, **name**, **email address**, **company name**, **position**, **school**, **profile** and **GitCode ID** for posting on our website so that developers can better understand the community, quickly make contact, and participate in the community.
 
 **g) Meetups**. When you apply organize an openGauss meetup, the community will collect your **name**, **phone number**, **email address**, **company**, and meetup details (including organization, agenda, date, duration, city, event scale, event form, event support, and topics) from the application form you fill in. The collected data will be used to contact you for the purpose of confirming your application and related matters, as well as arranging for relevant affairs, including sign-ins and nameplates.
 
@@ -168,8 +169,8 @@ Email: **<common@public.opengauss.org>**
 
 Hotline: **+86 18628259905**
 
-Last updated: **March 29, 2025**
+Last updated: **April 25, 2025**
 
-Privacy policy version: **v20250329**
+Privacy policy version: **v20250425**
 
 </div>
