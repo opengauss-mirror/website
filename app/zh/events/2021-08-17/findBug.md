@@ -25,7 +25,7 @@ summary: '参与openGauss资料捉虫活动，发现或解决资料中的待改�
 
 **活动时间：**即日起至 10 月 31 日
 
-**报名方式**：添加“Gauss 松鼠会小助手（ID：Gauss_Asst666）”为好友，发送“**报名资料捉虫活动**”以及**码云社区用户名**，并关注“Gauss 松鼠会微信公众号”，即完成报名。
+**报名方式**：添加“Gauss 松鼠会小助手（ID：Gauss_Asst666）”为好友，发送“**报名资料捉虫活动**”以及**GitCode社区用户名**，并关注“Gauss 松鼠会微信公众号”，即完成报名。
 
 ### 2 提交 Issue
 
@@ -33,7 +33,7 @@ summary: '参与openGauss资料捉虫活动，发现或解决资料中的待改�
 
 - openGauss 社区资料：https://opengauss.org/zh/docs/latest/docs/BriefTutorial/BriefTutorial.html
 
-- openGauss docs 仓库：https://gitee.com/opengauss/docs
+- openGauss docs 仓库：https://gitcode.com/opengauss/docs
 
 ### 3 提交 PR
 
@@ -126,4 +126,4 @@ summary: '参与openGauss资料捉虫活动，发现或解决资料中的待改�
 
 ### **FAQ**
 
-更多关于活动的常见问题请参见[资料捉虫活动指导](https://gitee.com/opengauss/docs/wikis/%E8%B5%84%E6%96%99%E6%8D%89%E8%99%AB%E6%B4%BB%E5%8A%A8%E6%8C%87%E5%AF%BC?sort_id=4292622)。
+更多关于活动的常见问题请参见[资料捉虫活动指导](https://gitcode.com/opengauss/docs/wikis/%E8%B5%84%E6%96%99%E6%8D%89%E8%99%AB%E6%B4%BB%E5%8A%A8%E6%8C%87%E5%AF%BC?sort_id=4292622)。

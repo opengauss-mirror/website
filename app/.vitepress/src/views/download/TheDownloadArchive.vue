@@ -7,7 +7,7 @@ import { useClipboard } from '@/components/hooks/useClipboard';
 
 import { useCommon, useCookieStore } from '@/stores/common';
 import DownloadConfig from '@/data/download';
-import { GITEE_LINK, DOCS_LINK } from '@/data/url-config';
+import { GITCODE_LINK, DOCS_LINK } from '@/data/url-config';
 import { getCustomCookie } from '@/shared/utils';
 import { useUserInfoStore } from '@/stores/user';
 
@@ -80,9 +80,7 @@ async function handleUrlCopy(value: string | undefined, e: MouseEvent) {
 }
 
 // 根据语言切换数据
-const changeLangData = computed(
-  () => (item: any) => isZh.value ? item.zh : item.en
-);
+const changeLangData = computed(() => (item: any) => isZh.value ? item.zh : item.en);
 // tips
 const hoverTips = computed(() => (type: string) => {
   let tips = '';
@@ -109,9 +107,7 @@ const activeName = computed(() => {
   if (!getData.value[0].data[0]) {
     return '';
   }
-  return isZh.value && getData.value[0].data[0]
-    ? getData.value[0].data[0].zh[0].name
-    : getData.value[0].data[0].en[0].name;
+  return isZh.value && getData.value[0].data[0] ? getData.value[0].data[0].zh[0].name : getData.value[0].data[0].en[0].name;
 });
 const activeMobile = ref(activeName.value);
 
@@ -123,11 +119,7 @@ watch(
   { deep: true, immediate: true }
 );
 //控制需要登录后才能下载的版本,最新版的LTS和Preview都需要登录后才能下载的版本
-const downloadVersionAuth = [
-  DownloadConfig[0].name,
-  DownloadConfig[1].name,
-  DownloadConfig[2].name,
-];
+const downloadVersionAuth = [DownloadConfig[0].name, DownloadConfig[1].name, DownloadConfig[2].name];
 // 下载埋点
 const userInfoStore = useUserInfoStore();
 // 老版本下载判断
@@ -140,8 +132,7 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
     oaReport('download', {
       origin: href,
       softwareName: name,
-      softwareArchitecture:
-        startIndex === -1 ? '' : architectureAndOs.slice(startIndex + 1),
+      softwareArchitecture: startIndex === -1 ? '' : architectureAndOs.slice(startIndex + 1),
       softwareOs: architectureAndOs.slice(0, startIndex),
       downloadTime,
       _U_T_,
@@ -152,22 +143,13 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
 
 <template>
   <AppContent :mobile-top="16">
-    <BreadCrumbs
-      :bread1="i18n.download.PAGE_TITLE"
-      :bread2="i18n.download.DOWNLOAD_HISTORY"
-      :link1="`/${lang}/download/`"
-    />
+    <BreadCrumbs :bread1="i18n.download.PAGE_TITLE" :bread2="i18n.download.DOWNLOAD_HISTORY" :link1="`/${lang}/download/`" />
     <div class="download-filter">
       <div class="slect-box">
         <span class="label">{{ i18n.download.VERSION }}</span>
         <ClientOnly>
           <OSelect v-model="selectVersion" class="select-version">
-            <OOption
-              v-for="item in DownloadConfig"
-              :key="item.name"
-              :label="item.name"
-              :value="item.name"
-            />
+            <OOption v-for="item in DownloadConfig" :key="item.name" :label="item.name" :value="item.name" />
           </OSelect>
         </ClientOnly>
       </div>
@@ -177,37 +159,19 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
         <a
           v-for="item in getData[0].docs_list"
           :key="item.name"
-          :href="
-            item.path.startsWith('/docs/')
-              ? DOCS_LINK + lang + item.path
-              : item.path
-          "
+          :href="item.path.startsWith('/docs/') ? DOCS_LINK + lang + item.path : item.path"
           target="_blank"
           rel="noopener noreferrer"
           >{{ isZh ? item.name : item.nameEn }}</a
         >
-        <a
-          :href="GITEE_LINK + 'opengauss/community/issues'"
-          target="_blank"
-          rel="noopener noreferrer"
-          >{{ i18n.download.FEEDBACK_QUESTION }}</a
-        >
+        <a :href="GITCODE_LINK + 'opengauss/community/issues'" target="_blank" rel="noopener noreferrer">{{ i18n.download.FEEDBACK_QUESTION }}</a>
       </div>
       <!-- 表格 -->
-      <div
-        v-for="item in getData[0].data"
-        :key="item.name"
-        class="download-panel"
-      >
+      <div v-for="item in getData[0].data" :key="item.name" class="download-panel">
         <h2 class="title">{{ item.name }}</h2>
         <!-- 移动端 -->
         <OCollapse v-model="activeMobile" class="download-mobile" accordion>
-          <OCollapseItem
-            v-for="subitem in changeLangData(item)"
-            :key="subitem.TITLE"
-            :name="subitem.name"
-            class="carousel-mobile-card"
-          >
+          <OCollapseItem v-for="subitem in changeLangData(item)" :key="subitem.TITLE" :name="subitem.name" class="carousel-mobile-card">
             <template #title>
               <p class="caption">{{ subitem.name }}</p>
             </template>
@@ -218,11 +182,7 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
               <template v-if="subitem.centos_url !== ''">
                 <p class="text">{{ item.thead[1] }}</p>
                 <div class="down-action lable-name2">
-                  <a
-                    :href="subitem.centos_url"
-                    @click="collectDownloadData(subitem.name, item.thead[1])"
-                    rel="noopener noreferrer"
-                  >
+                  <a :href="subitem.centos_url" @click="collectDownloadData(subitem.name, item.thead[1])" rel="noopener noreferrer">
                     <OButton size="mini" animation type="primary">
                       {{ i18n.download.BTN_TEXT }}
                       <template #suffixIcon>
@@ -230,27 +190,15 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
                       </template>
                     </OButton>
                   </a>
-                  <OButton
-                    size="mini"
-                    type="text"
-                    animation
-                    class="down-copy"
-                    @click="handleUrlCopy(subitem.centos_sha, $event)"
-                  >
+                  <OButton size="mini" type="text" animation class="down-copy" @click="handleUrlCopy(subitem.centos_sha, $event)">
                     {{ SHATEXT }}
                     <template #suffixIcon>
                       <IconCopy />
                     </template>
                   </OButton>
                 </div>
-                <div
-                  v-if="subitem.download_guide_url"
-                  class="download-guide-btn"
-                >
-                  <a
-                    :href="subitem.download_guide_url"
-                    rel="noopener noreferrer"
-                  >
+                <div v-if="subitem.download_guide_url" class="download-guide-btn">
+                  <a :href="subitem.download_guide_url" rel="noopener noreferrer">
                     <OButton size="mini" animation>
                       {{ i18n.download.DOCS_TEXT }}
                       <template #suffixIcon>
@@ -262,24 +210,14 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
               <template v-if="subitem.aarch_url !== ''">
                 <p class="text">{{ item.thead[2] }}</p>
                 <div class="down-action lable-name3">
-                  <a
-                    :href="subitem.aarch_url"
-                    rel="noopener noreferrer"
-                    @click="collectDownloadData(subitem.name, item.thead[2])"
-                  >
+                  <a :href="subitem.aarch_url" rel="noopener noreferrer" @click="collectDownloadData(subitem.name, item.thead[2])">
                     <OButton animation size="mini" type="primary">
                       {{ i18n.download.BTN_TEXT }}
                       <template #suffixIcon>
                         <IconDownload />
                       </template> </OButton
                   ></a>
-                  <OButton
-                    class="down-copy lable-name3"
-                    size="mini"
-                    type="text"
-                    animation
-                    @click="handleUrlCopy(subitem.aarch_sha, $event)"
-                  >
+                  <OButton class="down-copy lable-name3" size="mini" type="text" animation @click="handleUrlCopy(subitem.aarch_sha, $event)">
                     {{ SHATEXT }}
                     <template #suffixIcon>
                       <IconCopy />
@@ -290,11 +228,7 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
               <template v-if="subitem.x86_url !== ''">
                 <p class="text">{{ item.thead[3] }}</p>
                 <div class="down-action">
-                  <a
-                    :href="subitem.x86_url"
-                    rel="noopener noreferrer"
-                    @click="collectDownloadData(subitem.name, item.thead[3])"
-                  >
+                  <a :href="subitem.x86_url" rel="noopener noreferrer" @click="collectDownloadData(subitem.name, item.thead[3])">
                     <OButton size="mini" type="primary" animation>
                       {{ i18n.download.BTN_TEXT }}
                       <template #suffixIcon>
@@ -302,13 +236,7 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
                       </template>
                     </OButton>
                   </a>
-                  <OButton
-                    class="down-copy lable-name6"
-                    size="mini"
-                    type="text"
-                    animation
-                    @click="handleUrlCopy(subitem.x86_sha, $event)"
-                  >
+                  <OButton class="down-copy lable-name6" size="mini" type="text" animation @click="handleUrlCopy(subitem.x86_sha, $event)">
                     {{ SHATEXT }}
                     <template #suffixIcon>
                       <IconCopy />
@@ -320,20 +248,13 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
           </OCollapseItem>
         </OCollapse>
         <!-- pc  -->
-        <OTable
-          :data="changeLangData(item)"
-          class="download-pc"
-          style="width: 100%"
-        >
+        <OTable :data="changeLangData(item)" class="download-pc" style="width: 100%">
           <el-table-column :label="item.thead[0]" prop="name">
             <template #default="scope">
               <div class="name-info">
                 {{ scope.row.name }}
                 <template v-if="scope.row.table === 'server'">
-                  <el-tooltip
-                    :effect="commonStore.theme"
-                    placement="right-start"
-                  >
+                  <el-tooltip :effect="commonStore.theme" placement="right-start">
                     <template #content>
                       <p class="server-name lable-name">
                         {{ hoverTips(scope.row.edition) }}
@@ -348,11 +269,7 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
           <el-table-column :label="item.thead[1]">
             <template #default="scope">
               <div v-if="scope.row.centos_url !== ''" class="down-action">
-                <a
-                  :href="scope.row.centos_url"
-                  @click="collectDownloadData(scope.row.name, item.thead[1])"
-                  rel="noopener noreferrer"
-                >
+                <a :href="scope.row.centos_url" @click="collectDownloadData(scope.row.name, item.thead[1])" rel="noopener noreferrer">
                   <OButton size="mini" animation type="primary">
                     {{ i18n.download.BTN_TEXT }}
                     <template #suffixIcon>
@@ -360,27 +277,15 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
                     </template>
                   </OButton>
                 </a>
-                <OButton
-                  class="down-copy"
-                  size="mini"
-                  type="text"
-                  animation
-                  @click="handleUrlCopy(scope.row.centos_sha, $event)"
-                >
+                <OButton class="down-copy" size="mini" type="text" animation @click="handleUrlCopy(scope.row.centos_sha, $event)">
                   {{ SHATEXT }}
                   <template #suffixIcon>
                     <IconCopy />
                   </template>
                 </OButton>
               </div>
-              <div
-                v-if="scope.row.download_guide_url"
-                class="download-guide-btn"
-              >
-                <a
-                  :href="scope.row.download_guide_url"
-                  rel="noopener noreferrer"
-                >
+              <div v-if="scope.row.download_guide_url" class="download-guide-btn">
+                <a :href="scope.row.download_guide_url" rel="noopener noreferrer">
                   <OButton size="mini" animation>
                     {{ i18n.download.DOCS_TEXT }}
                     <template #suffixIcon>
@@ -395,11 +300,7 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
           <el-table-column :label="item.thead[2]" prop="aarch_url">
             <template #default="scope">
               <div v-if="scope.row.aarch_url !== ''" class="down-action">
-                <a
-                  :href="scope.row.aarch_url"
-                  rel="noopener noreferrer"
-                  @click="collectDownloadData(scope.row.name, item.thead[2])"
-                >
+                <a :href="scope.row.aarch_url" rel="noopener noreferrer" @click="collectDownloadData(scope.row.name, item.thead[2])">
                   <OButton size="mini" type="primary" animation>
                     {{ i18n.download.BTN_TEXT }}
                     <template #suffixIcon>
@@ -407,13 +308,7 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
                     </template>
                   </OButton>
                 </a>
-                <OButton
-                  class="down-copy"
-                  size="mini"
-                  type="text"
-                  animation
-                  @click="handleUrlCopy(scope.row.aarch_sha, $event)"
-                >
+                <OButton class="down-copy" size="mini" type="text" animation @click="handleUrlCopy(scope.row.aarch_sha, $event)">
                   {{ SHATEXT }}
                   <template #suffixIcon>
                     <IconCopy />
@@ -425,11 +320,7 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
           <el-table-column :label="item.thead[3]" prop="x86_url">
             <template #default="scope">
               <div v-if="scope.row.x86_url !== ''" class="down-action">
-                <a
-                  :href="scope.row.x86_url"
-                  rel="noopener noreferrer"
-                  @click="collectDownloadData(scope.row.name, item.thead[3])"
-                >
+                <a :href="scope.row.x86_url" rel="noopener noreferrer" @click="collectDownloadData(scope.row.name, item.thead[3])">
                   <OButton size="mini" type="primary" animation>
                     {{ i18n.download.BTN_TEXT }}
                     <template #suffixIcon>
@@ -437,13 +328,7 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
                     </template>
                   </OButton>
                 </a>
-                <OButton
-                  class="down-copy"
-                  size="mini"
-                  type="text"
-                  animation
-                  @click="handleUrlCopy(scope.row.x86_sha, $event)"
-                >
+                <OButton class="down-copy" size="mini" type="text" animation @click="handleUrlCopy(scope.row.x86_sha, $event)">
                   {{ SHATEXT }}
                   <template #suffixIcon>
                     <IconCopy />
@@ -455,12 +340,7 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
         </OTable>
       </div>
     </template>
-    <DownloadContent
-      v-else
-      :content-data="getData"
-      :version-shown="selectVersion"
-      :download-version-auth="downloadVersionAuth"
-    />
+    <DownloadContent v-else :content-data="getData" :version-shown="selectVersion" :download-version-auth="downloadVersionAuth" />
   </AppContent>
 </template>
 

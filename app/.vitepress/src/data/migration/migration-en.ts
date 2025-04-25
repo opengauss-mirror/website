@@ -12,7 +12,7 @@ import imgProduceSelected from '~icons/migration/produce-selected.svg';
 import imgProduceUnselected from '~icons/migration/produce-unselected.svg';
 import imgStable from '~icons/migration/stable.svg';
 import imgSmoothMigration from '~icons/migration/smooth-migration.svg';
-import { GITEE_LINK, LEARN_VIDEO_LINK } from '@/data/url-config';
+import { GITCODE_LINK, LEARN_VIDEO_LINK } from '@/data/url-config';
 
 export default {
   requirementText: '要求',
@@ -55,8 +55,7 @@ export default {
   },
   step: {
     title: '迁移流程',
-    subTitle:
-      '接收到企业在线数据搬迁的诉求，openGauss快速成立搬迁保障组，包括管理、专家、研发和测试人员等，为企业在线业务高效平稳搬迁提供技术支持和人力保障',
+    subTitle: '接收到企业在线数据搬迁的诉求，openGauss快速成立搬迁保障组，包括管理、专家、研发和测试人员等，为企业在线业务高效平稳搬迁提供技术支持和人力保障',
     list: [
       {
         id: 'migration-evaluate',
@@ -137,8 +136,7 @@ export default {
               },
               {
                 icon: 'right',
-                title:
-                  'Attach到JAVA应用程序获取执行的SQL语句（包括调用栈，支持映射到应用程序源文件）',
+                title: 'Attach到JAVA应用程序获取执行的SQL语句（包括调用栈，支持映射到应用程序源文件）',
                 desc: '',
               },
             ],
@@ -206,14 +204,12 @@ export default {
               },
               {
                 icon: '2.',
-                title:
-                  '目标库兼容源库的数据类型、SQL语法、字符集，针对不支持的能自动完成转换',
+                title: '目标库兼容源库的数据类型、SQL语法、字符集，针对不支持的能自动完成转换',
                 desc: '',
               },
               {
                 icon: '3.',
-                title:
-                  '支持表、视图、用户、序列、索引、约束、触发器、函数、存储过程等',
+                title: '支持表、视图、用户、序列、索引、约束、触发器、函数、存储过程等',
                 desc: '',
               },
             ],
@@ -226,8 +222,7 @@ export default {
             features: [
               {
                 icon: '1.',
-                title:
-                  '支持对表、索引、约束（包括主外键）、存储过程、触发器等数据对象的校验',
+                title: '支持对表、索引、约束（包括主外键）、存储过程、触发器等数据对象的校验',
                 desc: '',
               },
               {
@@ -278,8 +273,7 @@ export default {
               },
               {
                 icon: '3.',
-                title:
-                  '支持与全量数据迁移配合：采用源端迁移时导出的数据校验、表迁移后即进行校验，以此加快迁移整体速度、减少对源库的影响',
+                title: '支持与全量数据迁移配合：采用源端迁移时导出的数据校验、表迁移后即进行校验，以此加快迁移整体速度、减少对源库的影响',
                 desc: '',
               },
               {
@@ -297,14 +291,12 @@ export default {
             features: [
               {
                 icon: '1.',
-                title:
-                  '同步源库发生变化的数据至目标端数据库对应的表中，支持同步DML和DDL',
+                title: '同步源库发生变化的数据至目标端数据库对应的表中，支持同步DML和DDL',
                 desc: '',
               },
               {
                 icon: '2.',
-                title:
-                  '支持按事务并行迁移（实时一致性）和按表并行迁移（最终一致性）',
+                title: '支持按事务并行迁移（实时一致性）和按表并行迁移（最终一致性）',
                 desc: '',
               },
               {
@@ -425,8 +417,7 @@ export default {
             features: [
               {
                 icon: '1.',
-                title:
-                  '切换预检查：同步延迟、源端迁移用户写权限、目标端增量日志',
+                title: '切换预检查：同步延迟、源端迁移用户写权限、目标端增量日志',
                 desc: '',
               },
               {
@@ -525,7 +516,7 @@ export default {
       {
         title: '中国移动',
         desc: '中移在线的工程师们将目光聚焦在openGauss数据库上。中移在线20个…',
-        caseHref: `${GITEE_LINK}/opengauss/website/blob/feature_migration_new/app/zh/migration/user-cases/index.md`,
+        caseHref: `${GITCODE_LINK}/opengauss/website/blob/feature_migration_new/app/zh/migration/user-cases/index.md`,
         officalHref: 'http://online.10086.cn/official/new/index/#/home/index',
       },
     ],
@@ -536,7 +527,7 @@ export default {
       {
         title: 'openGauss 迁移互动专区',
         desc: '前往迁移互动专区，参与lssue问答',
-        href: `${GITEE_LINK}opengauss/openGauss-workbench`,
+        href: `${GITCODE_LINK}opengauss/openGauss-workbench`,
       },
     ],
   },

@@ -127,7 +127,6 @@ export default {
   HOME_CALENDAR: {
     LOGIN: '登录提示',
     LOGIN_TEXT: '使用openGauss会议预定功能需要SIG组Maintainer或Committer身份权限',
-    GITEE_BEN: 'Gitee授权登录',
     LOGIN_TIPS: '我已阅读并同意',
     BACK_LOGIN: '返回重新预定会议',
     PRIVACY: '《隐私政策》',

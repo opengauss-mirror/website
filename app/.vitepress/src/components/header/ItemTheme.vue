@@ -16,29 +16,17 @@ const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
 const changeTheme = () => {
   const theme = commonStore.theme === 'dark' ? 'light' : 'dark';
   commonStore.theme = theme;
-  setCustomCookie(
-    APPEARANCE_KEY,
-    theme,
-    180,
-    import.meta.env.VITE_COOKIE_DOMAIN
-  );
+  setCustomCookie(APPEARANCE_KEY, theme, 180, import.meta.env.VITE_COOKIE_DOMAIN);
 };
 
 const changeThemeMobile = () => {
-  setCustomCookie(
-    APPEARANCE_KEY,
-    commonStore.theme,
-    180,
-    import.meta.env.VITE_COOKIE_DOMAIN
-  );
+  setCustomCookie(APPEARANCE_KEY, commonStore.theme, 180, import.meta.env.VITE_COOKIE_DOMAIN);
 };
 
 onMounted(() => {
   let theme;
   if (!getCustomCookie(APPEARANCE_KEY)) {
-    const prefereDark = window.matchMedia(
-      '(prefers-color-scheme: dark)'
-    ).matches;
+    const prefereDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     theme = prefereDark ? 'dark' : 'light';
   } else {
     theme = getCustomCookie(APPEARANCE_KEY);
@@ -89,6 +77,10 @@ watch(
 
 <style lang="scss" scoped>
 .theme-box {
+  div {
+    width: 20px;
+    height: 20px;
+  }
   .theme-box-pc {
     cursor: pointer;
     .icon {

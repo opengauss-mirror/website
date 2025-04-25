@@ -76,7 +76,7 @@ import gansukunpeng_dark from '../img/partners/dark/gansukunpeng.png';
 import henankunpeng_dark from '../img/partners/dark/henankunpeng.png';
 import xugu_dark from '../img/partners/dark/xugu.png';
 
-import { GITEE_LINK, ETHERPAD_LINK } from '@/data/url-config';
+import { GITCODE_LINK, ETHERPAD_LINK } from '@/data/url-config';
 
 const summitData = {
   page_name: '峰会',
@@ -123,11 +123,7 @@ const summitData = {
     list: [
       {
         time: '13:30 - 15:30',
-        option: [
-          '技术委员会工作会议',
-          '用户委员会工作会议',
-          '品牌宣传委员会工作会议',
-        ],
+        option: ['技术委员会工作会议', '用户委员会工作会议', '品牌宣传委员会工作会议'],
       },
       {
         time: '15:30 - 17:30',
@@ -170,10 +166,7 @@ const summitData = {
               },
               {
                 name: '黄凯耀',
-                post: [
-                  'openGauss社区技术委员会委员',
-                  'openGauss开源数据库首席架构师',
-                ],
+                post: ['openGauss社区技术委员会委员', 'openGauss开源数据库首席架构师'],
               },
             ],
           },
@@ -278,10 +271,7 @@ const summitData = {
                 option: [
                   {
                     name: '陈浩',
-                    post: [
-                      '华为高斯实验室SQL引擎技术专家',
-                      'openGauss Maintainer、Apache Doris PMC',
-                    ],
+                    post: ['华为高斯实验室SQL引擎技术专家', 'openGauss Maintainer、Apache Doris PMC'],
                   },
                 ],
               },
@@ -297,10 +287,7 @@ const summitData = {
                 option: [
                   {
                     name: '刘哲理',
-                    post: [
-                      '南开大学计算机学院副院长、网络空间安全学院副院长',
-                      '中国中文信息学会大数据安全与隐私计算专委会秘书长',
-                    ],
+                    post: ['南开大学计算机学院副院长、网络空间安全学院副院长', '中国中文信息学会大数据安全与隐私计算专委会秘书长'],
                   },
                 ],
               },
@@ -340,10 +327,7 @@ const summitData = {
                 option: [
                   {
                     name: '李利军',
-                    post: [
-                      '北京东方通科技股份有限公司集团执行副总裁 兼',
-                      '北京东方通软件有限公司总经理',
-                    ],
+                    post: ['北京东方通科技股份有限公司集团执行副总裁 兼', '北京东方通软件有限公司总经理'],
                   },
                 ],
               },
@@ -366,10 +350,7 @@ const summitData = {
                 option: [
                   {
                     name: '徐戟（白鳝）',
-                    post: [
-                      '南京基石数据技术有限责任公司',
-                      '深圳鲲鹏产业联盟高级顾问',
-                    ],
+                    post: ['南京基石数据技术有限责任公司', '深圳鲲鹏产业联盟高级顾问'],
                   },
                 ],
               },
@@ -385,10 +366,7 @@ const summitData = {
                 option: [
                   {
                     name: '吴伟杰',
-                    post: [
-                      'Apache ShardingSphere PMC',
-                      'SphereEx 基础设施研发工程师 ',
-                    ],
+                    post: ['Apache ShardingSphere PMC', 'SphereEx 基础设施研发工程师 '],
                   },
                 ],
               },
@@ -438,7 +416,7 @@ const summitData = {
         name: 'SIG组版本规划工作会议',
         desc: 'SIG组工作会议参会指南',
         time1: '16:00 - 18:00',
-        path: `${GITEE_LINK}opengauss/community/blob/master/contributors/sig-planning-meeting-guide.md`,
+        path: `${GITCODE_LINK}opengauss/community/blob/master/contributors/sig-planning-meeting-guide.md`,
         children: [
           {
             name: 'AI',
@@ -523,10 +501,7 @@ const summitData = {
     {
       img: huangkaiyao,
       name: '黄凯耀',
-      position: [
-        'openGauss社区技术委员会委员',
-        'openGauss开源数据库首席架构师',
-      ],
+      position: ['openGauss社区技术委员会委员', 'openGauss开源数据库首席架构师'],
     },
     {
       img: hejiajia,
@@ -586,10 +561,7 @@ const summitData = {
     {
       img: chenhao,
       name: '陈浩',
-      position: [
-        '华为高斯实验室SQL引擎技术专家',
-        'openGauss Maintainer Apache Doris PMC',
-      ],
+      position: ['华为高斯实验室SQL引擎技术专家', 'openGauss Maintainer Apache Doris PMC'],
     },
     {
       img: luolaquan,
@@ -599,10 +571,7 @@ const summitData = {
     {
       img: liuzheli,
       name: '刘哲理',
-      position: [
-        '南开大学计算机学院副院长 网络空间安全学院副院长',
-        '中国中文信息学会大数据安全与隐私计算专委会秘书长',
-      ],
+      position: ['南开大学计算机学院副院长 网络空间安全学院副院长', '中国中文信息学会大数据安全与隐私计算专委会秘书长'],
     },
     {
       img: wangchunlin,
@@ -622,10 +591,7 @@ const summitData = {
     {
       img: lilijun,
       name: '李利军',
-      position: [
-        '北京东方通科技股份有限公司集团执行副总裁',
-        '北京东方通软件有限公司总经理',
-      ],
+      position: ['北京东方通科技股份有限公司集团执行副总裁', '北京东方通软件有限公司总经理'],
     },
     {
       img: zengpengbing,
@@ -789,9 +755,7 @@ const summitData = {
       },
     ],
   },
-  previous: [
-    { title: 'openGauss Summit 2021', link: '/zh/summit/summit2021/' },
-  ],
+  previous: [{ title: 'openGauss Summit 2021', link: '/zh/summit/summit2021/' }],
 };
 
 export default summitData;

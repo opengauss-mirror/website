@@ -1,4 +1,4 @@
-import { GITEE_LINK } from '@/data/url-config';
+import { GITCODE_LINK } from '@/data/url-config';
 export default {
   zh: {
     PAGE_TITLE: `软件包`,
@@ -26,7 +26,7 @@ export default {
     ],
     MORE_DETAIL: `更多详细信息请`,
     VIEW_SPECIFICATION: `点此查看openGauss社区版本生命周期管理规范`,
-    SPECIFICATION_LINK: `${GITEE_LINK}opengauss/release-management/blob/master/openGauss%E7%89%88%E6%9C%AC%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%AE%A1%E7%90%86.md`,
+    SPECIFICATION_LINK: `${GITCODE_LINK}opengauss/release-management/blob/master/openGauss%E7%89%88%E6%9C%AC%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%AE%A1%E7%90%86.md`,
     PECULIARITY_DETAIL: `openGauss现已正式发行 7.0.0-RC1 版本，详细版本特性请参看`,
     WELCOME: `，欢迎下载体验！`,
     RELEASE_LINK: `zh/docs/7.0.0-RC1/docs/ReleaseNotes/Releasenotes.html`,
@@ -36,13 +36,7 @@ export default {
     SYSTEM: `选择操作系统与架构`,
     ARCHITECTURE: `架构`,
     OS: `操作系统`,
-    TABLE_HEAD: [
-      `软件包类型`,
-      `软件包大小`,
-      `软件包下载`,
-      `完整性校验`,
-      `说明文档`,
-    ],
+    TABLE_HEAD: [`软件包类型`, `软件包大小`, `软件包下载`, `完整性校验`, `说明文档`],
   },
   en: {
     PAGE_TITLE: `Software Packages`,
@@ -69,7 +63,7 @@ export default {
     ],
     MORE_DETAIL: `For more details,`,
     VIEW_SPECIFICATION: `click here to view the lifecycle management specifications of openGauss community releases`,
-    SPECIFICATION_LINK: `${GITEE_LINK}opengauss/release-management/blob/master/openGauss%E7%89%88%E6%9C%AC%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%AE%A1%E7%90%86.md`,
+    SPECIFICATION_LINK: `${GITCODE_LINK}opengauss/release-management/blob/master/openGauss%E7%89%88%E6%9C%AC%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%AE%A1%E7%90%86.md`,
     PECULIARITY_DETAIL: `openGauss 7.0.0-RC1 is now officially available. For details, see `,
     WELCOME: ``,
 
@@ -80,12 +74,6 @@ export default {
     SYSTEM: `OS and Architecture`,
     ARCHITECTURE: `Architecture`,
     OS: `OS`,
-    TABLE_HEAD: [
-      `Software Package`,
-      `Size`,
-      `Download`,
-      `Integrity Check`,
-      `Description Document`,
-    ],
+    TABLE_HEAD: [`Software Package`, `Size`, `Download`, `Integrity Check`, `Description Document`],
   },
 };
