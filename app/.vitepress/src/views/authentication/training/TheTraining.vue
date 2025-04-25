@@ -247,7 +247,7 @@ function onTalentItemClick(index: number) {
       <div class="train-contact lable-name">
         <p>
           关于openGauss培训伙伴认证，openGauss提供了完整的评估标准和流程，详见
-          <a :href="`${GITCODE_LINK}/opengauss/training-partner-certification`" target="_blank" rel="noopener noreferrer"> openGauss培训伙伴认证整体介绍</a>。
+          <a :href="`${GITCODE_LINK}opengauss/training-partner-certification`" target="_blank" rel="noopener noreferrer"> openGauss培训伙伴认证整体介绍</a>。
         </p>
         <p>
           <span>{{ i18n.authentication.contact }}</span>
@@ -407,7 +407,7 @@ function onTalentItemClick(index: number) {
       <div class="train-contact">
         <p>
           关于openGauss培训伙伴认证，openGauss提供了完整的评估标准和流程，详见
-          <a :href="`${GITCODE_LINK}/opengauss/training-partner-certification`" target="_blank" rel="noopener noreferrer"> openGauss培训伙伴认证整体介绍</a>。
+          <a :href="`${GITCODE_LINK}opengauss/training-partner-certification`" target="_blank" rel="noopener noreferrer"> openGauss培训伙伴认证整体介绍</a>。
         </p>
         <p>
           <span>{{ i18n.authentication.contact }}</span>

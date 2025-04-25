@@ -241,11 +241,11 @@ const closeVideo = () => {
           <div class="case-card-box-left">
             <h4 class="case-card-box-left-title">{{ item.title }}</h4>
             <p class="case-card-box-left-detail">{{ item.desc }}</p>
-            <a :href="item.caseHref" target="_blank" rel="noopener noreferrer">
+            <!-- <a :href="item.caseHref" target="_blank" rel="noopener noreferrer">
               <OButton animation size="mini" class="more-btn" type="primary">
                 {{ data.readCaseText }}
               </OButton>
-            </a>
+            </a> -->
             <a :href="item.officalHref" target="_blank" rel="noopener noreferrer"
               ><OButton animation size="mini" class="website-btn">
                 {{ data.visitOfficialSiteText }}

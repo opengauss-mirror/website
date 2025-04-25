@@ -77,7 +77,7 @@ Please send your application to: <tc@opengauss.org> , the email template is refe
 
 ### 4.1 Assigning an Issue to Yourself
 
-Firstly find the Issue list for the openGauss community: <https://gitcode.com/organizations/opengauss/issues>
+Firstly find the Issue list for the openGauss community: <https://gitcode.com/org/opengauss/issues>
 
 If you want to process one of the Issues, you can assign it to yourself. Enter `/assign` in the comment box, and then the robot will assign the issue to you.
 Participants communicate and discuss on each issue page. You can leave your opinions in the comment box.

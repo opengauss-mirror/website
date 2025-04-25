@@ -74,7 +74,7 @@ export default {
           list: [
             {
               name: '安装部署指南',
-              link: `${DOCS_LINK}/zh/docs/latest-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E5%87%86%E5%A4%87.html`,
+              link: `${DOCS_LINK}zh/docs/latest-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E5%87%86%E5%A4%87.html`,
             },
           ],
         },
