@@ -49,7 +49,7 @@ export default {
         BLANK: true,
       },
       {
-        URL: `${GITCODE_LINK}organizations/opengauss/issues`,
+        URL: `${GITCODE_LINK}org/opengauss/issues`,
         BLANK: true,
       },
       {
@@ -116,7 +116,7 @@ export default {
         BLANK: true,
       },
       {
-        URL: `${GITCODE_LINK}organizations/opengauss/issues`,
+        URL: `${GITCODE_LINK}org/opengauss/issues`,
         BLANK: true,
       },
       {
