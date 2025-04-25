@@ -17,7 +17,7 @@ This website involves the following personal data collection scenarios:
 - **Purpose**: Verify identity during login and registration on this website and maintain your personal data.
 - **Personal data type**: data you voluntarily submit
 - **Collection method**: user input or shared by third-party accounts
-- **Personal data fields**: **user name**, **company**, **email address**, **phone number**, **password**, **email or phone verification code**, avatar, nickname and Gitee account details (**UUID**, **ID**, nickname, and **email address**).
+- **Personal data fields**: **user name**, **company**, **email address**, **phone number**, **password**, **email or phone verification code**, avatar, nickname and **Gitee UUID**, **Gitee ID**, Gitee nickname, **Gitee email address**, **GitCode UUID**, **GitCode ID**, GitCode nickname, **GitCode email address**.
 
 ## 2. Mailing List Service
 
@@ -35,15 +35,7 @@ This website involves the following personal data collection scenarios:
 
 ## 4. Contributor License Agreement (CLA) Signing
 
-- **Purpose**: Verify your CLA signing status for code contributions and perform statistical analysis to assess community operations.
-- **Personal data type**: data you voluntarily submit
-- **Collection method**: user input
-- **Personal data fields**: We collect personal data based on the scenario:
-  - For corporate CLA signing: **name of the authorized representative**, **position**, **company name**, **email address**, **email verification code**, **phone number (optional)**, **address (optional)**, **fax number (optional)**, and the **signed CLA document**
-  - For corporate contributor registration: **name**, **email address**, corporation, and **email verification code**
-  - For individual CLA signing: **name**, **email address**, and **email verification code**
-  - For enterprise administrator login: **account**, **password**, and **email address**
-  - For community administrator login: **account**, **password**, **email address** and **email authorization code**
+Regarding the purpose of collecting personal data, the types of personal data, the methods of collection, and the specific personal data fields, refer to the [Personal Data Collection Overview](https://clasign.osinfra.cn/information-list/corp/gitee_opengauss-1614047760000855378?lang=en).
 
 <br/>
 
@@ -57,14 +49,14 @@ This website involves the following personal data collection scenarios:
 - **Purpose**: Configure meeting permissions and send meeting invitation emails.
 - **Personal data type**: data you voluntarily submit
 - **Collection method**: user input
-- **Personal data fields**: **Gitee ID** and **email address**
+- **Personal data fields**: **user name** and **email address**
 
 ## 6. Content Release
 
 - **Purpose**: Help developers better understand and connect with the community, enabling faster engagement.
 - **Personal data type**: data you voluntarily submit
 - **Collection method**: user input
-- **Personal data fields**: **photo**, **name**, **email address**, **company name**, **position**, **school**, **profile**, and **Gitee ID**
+- **Personal data fields**: **photo**, **name**, **email address**, **company name**, **position**, **school**, **profile**, and **GitCode ID**
 
 ## 7. Meetup Application
 
