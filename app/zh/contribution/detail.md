@@ -33,7 +33,7 @@ openGauss 源代码托管在GitCode：<https://gitcode.com/opengauss>
 
 ## 2. 签署 CLA
 
-在参与社区贡献前，您还需要签署[openGauss 社区贡献者许可协议（CLA）](https://clasign.osinfra.cn/sign/gitcode_opengauss-1614047760000855378)。
+在参与社区贡献前，您还需要签署[openGauss 社区贡献者许可协议（CLA）](https://clasign.osinfra.cn/sign/gitee_opengauss-1614047760000855378)。
 
 ## 3. 找到您感兴趣的 SIG
 

@@ -33,7 +33,7 @@ Please refer to <https://docs.gitcode.com/docs/start/quick> to register your Git
 
 ## 2. Signing the Contributor License Agreement (CLA)
 
-Please sign the [Contributor License Agreement (CLA)](https://clasign.osinfra.cn/sign/gitcode_opengauss-1614047760000855378) before participating in the community contribution.
+Please sign the [Contributor License Agreement (CLA)](https://clasign.osinfra.cn/sign/gitee_opengauss-1614047760000855378) before participating in the community contribution.
 
 ## 3. Finding Your Interests
 
