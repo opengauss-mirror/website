@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import { useData, useRoute } from 'vitepress';
+import { useData, useRoute, useRouter } from 'vitepress';
 
 import navData from '@/data/header';
 import { NavChildrenItemT, LocaleT } from '@/shared/@types/type-nav';
@@ -8,6 +8,7 @@ import { NavChildrenItemT, LocaleT } from '@/shared/@types/type-nav';
 const { lang } = useData();
 const activeIndex = ref(-1);
 const route = useRoute();
+const router = useRouter();
 
 // hover事件
 const onMouseEnter = (idx: number) => {
@@ -18,12 +19,19 @@ const onMouseLeave = () => {
   activeIndex.value = -1;
 };
 
+// 点击事件
+const jumpOut = (href: LocaleT, outside: boolean) => {
+  activeIndex.value = -1;
+  const path = href[lang.value as LocaleT];
+  if (outside) {
+    window.open(path, '_blank');
+  } else {
+    router.go(path);
+  }
+};
+
 // nav 默认选中
-const findIndexByPath = (
-  path: string,
-  lang: string,
-  data: NavChildrenItemT[]
-) => {
+const findIndexByPath = (path: string, lang: string, data: NavChildrenItemT[]) => {
   return data.findIndex((item) => {
     const tempPath = (item.href as Record<string, string>)[lang];
     return path.includes(tempPath);
@@ -51,9 +59,7 @@ const onEnter = (el: Element) => {
   (el as HTMLUListElement).style.opacity = '1';
 };
 const onBeforeLeave = (el: Element) => {
-  (el as HTMLUListElement).style.height = `${
-    (el as HTMLUListElement).offsetHeight
-  }px`;
+  (el as HTMLUListElement).style.height = `${(el as HTMLUListElement).offsetHeight}px`;
   (el as HTMLUListElement).style.opacity = '1';
 };
 const onLeave = (el: Element) => {
@@ -75,32 +81,16 @@ const onLeave = (el: Element) => {
         @mouseenter="onMouseEnter(idx)"
         @mouseleave="onMouseLeave()"
       >
-        <span class="text" v-if="item.label[lang as LocaleT ]"
-          >{{ item.label[lang as LocaleT] }}
-        </span>
-        <Transition
-          @before-enter="onBeforeEnter"
-          @enter="onEnter"
-          @before-leave="onBeforeLeave"
-          @leave="onLeave"
-        >
-          <ul
-            v-show="
-              item.children && item.children.length && activeIndex === idx
-            "
-            class="sub-menu"
-          >
-            <li
-              v-for="subItem in item.children"
-              :key="subItem.id"
-              class="sub-menu-item"
-            >
-              <template v-if="subItem.href&&subItem.href[lang as LocaleT]">
+        <span class="text" v-if="item.label[lang as LocaleT]">{{ item.label[lang as LocaleT] }} </span>
+        <Transition @before-enter="onBeforeEnter" @enter="onEnter" @before-leave="onBeforeLeave" @leave="onLeave">
+          <ul v-show="item.children && item.children.length && activeIndex === idx" class="sub-menu">
+            <li v-for="subItem in item.children" :key="subItem.id" class="sub-menu-item">
+              <template v-if="subItem.href && subItem.href[lang as LocaleT]">
                 <a
                   class="item-link"
                   :href="subItem.href[lang as LocaleT]"
-                  :target="subItem.jumOut ? '_blank' : 'self'"
-                  @click="activeIndex = -1"
+                  :target="subItem.jumpOut ? '_blank' : 'self'"
+                  @click.prevent="jumpOut(subItem.href, subItem.jumpOut)"
                   rel="noopener noreferrer"
                 >
                   {{ subItem.label[lang as LocaleT] }}
