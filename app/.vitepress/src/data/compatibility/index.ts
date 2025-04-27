@@ -1,5 +1,71 @@
 export default [
   {
+    name: '天云星魔方软件',
+    version: '2.0',
+    type: '通用',
+    company: '深圳市汉云科技有限公司',
+    database: 'openGauss 5.0.0',
+    os: 'openEuler 20.03、openEuler 22.03、CentOS 7.5',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%B7%B1%E5%9C%B3%E6%B1%89%E4%BA%91/V2.0/%E5%A4%A9%E4%BA%91%E6%98%9F%E9%AD%94%E6%96%B9%E8%BD%AF%E4%BB%B6openGauss%E6%8A%80%E6%9C%AF%E8%AE%A4%E8%AF%81%E4%B9%A6.pdf',
+  },
+  {
+    name: '数境·大数据开发运营平台',
+    version: '3',
+    type: '数字政府',
+    company: '中电信数字城市科技有限公司',
+    database: 'openGauss 5.0.0',
+    os: 'Kylin V10',
+    server: 'Kunpeng 920(Huanghe 5280 V2)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E4%B8%AD%E7%94%B5%E4%BF%A1/V3.0/%E6%95%B0%E5%A2%83%C2%B7%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%BC%80%E5%8F%91%E8%BF%90%E8%90%A5%E5%B9%B3%E5%8F%B0openGauss%E6%8A%80%E6%9C%AF%E8%AE%A4%E8%AF%81%E4%B9%A6.pdf',
+  },
+  {
+    name: 'HH-StreamCloud 浩瀚顺水云产品',
+    version: '3.0',
+    type: '通用',
+    company: '北京浩瀚深度信息技术股份有限公司',
+    database: 'openGauss 5.0.0',
+    os: 'openEuler 22.03',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%8C%97%E4%BA%AC%E6%B5%A9%E7%80%9A/V3.0/%E9%A1%BA%E6%B0%B4%E4%BA%91openGauss%E6%8A%80%E6%9C%AF%E8%AE%A4%E8%AF%81%E4%B9%A6.pdf',
+  },
+  {
+    name: '互联网医院系统',
+    version: '1.0',
+    type: '医疗',
+    company: '广州市曜辰科技有限公司',
+    database: 'openGauss 6.0.0',
+    os: 'openEuler 22.03',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%B9%BF%E5%B7%9E%E6%9B%9C%E8%BE%B0/V1.0/%E4%BA%92%E8%81%94%E7%BD%91%E5%8C%BB%E9%99%A2%E7%B3%BB%E7%BB%9F.pdf',
+  },
+  {
+    name: '医院统一支付对账平台',
+    version: '1.0',
+    type: '医疗',
+    company: '广州市曜辰科技有限公司',
+    database: 'openGauss 6.0.0',
+    os: 'openEuler 22.03',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%B9%BF%E5%B7%9E%E6%9B%9C%E8%BE%B0/V1.0/%E5%8C%BB%E9%99%A2%E7%BB%9F%E4%B8%80%E6%94%AF%E4%BB%98%E5%AF%B9%E8%B4%A6%E5%B9%B3%E5%8F%B0.pdf',
+  },
+  {
+    name: '患者服务平台',
+    version: '1.0',
+    type: '医疗',
+    company: '广州市曜辰科技有限公司',
+    database: 'openGauss 6.0.0',
+    os: 'openEuler 22.03',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%B9%BF%E5%B7%9E%E6%9B%9C%E8%BE%B0/V1.0/%E6%82%A3%E8%80%85%E6%9C%8D%E5%8A%A1%E5%B9%B3%E5%8F%B0.pdf',
+  },
+  {
     name: 'IPSec/SSL VPN综合安全网关 SecGW G1300',
     version: '',
     type: '通用',
