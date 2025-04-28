@@ -8,7 +8,7 @@ export interface NavChildrenItemT {
     zh: string;
     en?: string;
   }; // 跳转链接
-  jumOut?: boolean; // 是否新窗口打开，tags包含outlink时，默认为true
+  jumpOut?: boolean; // 是否新窗口打开，tags包含outlink时，默认为true
 }
 
 export interface NavItemT {
