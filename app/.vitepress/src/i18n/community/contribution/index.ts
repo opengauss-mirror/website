@@ -21,19 +21,19 @@ export default {
         BLANK: true,
       },
       {
-        URL: `${CLA_LINK}sign/gitee_opengauss-1614047760000855378`,
+        URL: `${CLA_LINK}sign/gitee_opengauss-1614047760000855378?lang=zh`,
         BLANK: true,
       },
       {
-        URL: `${CLA_LINK}sign/gitee_opengauss-1614047760000855378`,
+        URL: `${CLA_LINK}sign/gitee_opengauss-1614047760000855378?lang=zh`,
         BLANK: true,
       },
       {
-        URL: `${CLA_LINK}sign/gitee_opengauss-1614047760000855378`,
+        URL: `${CLA_LINK}sign/gitee_opengauss-1614047760000855378?lang=zh`,
         BLANK: true,
       },
       {
-        URL: `${CLA_LINK}sign/gitee_opengauss-1614047760000855378`,
+        URL: `${CLA_LINK}sign/gitee_opengauss-1614047760000855378?lang=zh`,
         BLANK: true,
       },
       {
@@ -88,19 +88,19 @@ export default {
         BLANK: true,
       },
       {
-        URL: `${CLA_LINK}sign/gitee_opengauss-1614047760000855378`,
+        URL: `${CLA_LINK}sign/gitee_opengauss-1614047760000855378?lang=en`,
         BLANK: true,
       },
       {
-        URL: `${CLA_LINK}sign/gitee_opengauss-1614047760000855378`,
+        URL: `${CLA_LINK}sign/gitee_opengauss-1614047760000855378?lang=en`,
         BLANK: true,
       },
       {
-        URL: `${CLA_LINK}sign/gitee_opengauss-1614047760000855378`,
+        URL: `${CLA_LINK}sign/gitee_opengauss-1614047760000855378?lang=en`,
         BLANK: true,
       },
       {
-        URL: `${CLA_LINK}sign/gitee_opengauss-1614047760000855378`,
+        URL: `${CLA_LINK}sign/gitee_opengauss-1614047760000855378?lang=en`,
         BLANK: true,
       },
       {
