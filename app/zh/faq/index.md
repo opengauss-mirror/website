@@ -60,7 +60,7 @@ openGauss 已经在包括金融、电信、政府、制造、能源、交通、�
 
 ## 9. 如何加入 openGauss 社区？
 
-参考 openGauss 官网[“社区”->“社区贡献”](https://opengauss.org/zh/contribution/)->[“签署 CLA”](https://clasign.osinfra.cn/sign/gitee_opengauss-1614047760000855378)
+参考 openGauss 官网[“社区”->“社区贡献”](https://opengauss.org/zh/contribution/)->[“签署 CLA”](https://clasign.osinfra.cn/sign/gitee_opengauss-1614047760000855378?lang=zh)
 
 个人和企业分别通过签署个人/企业 CLA（贡献者许可协议）加入 openGauss 社区
 
