@@ -1,5 +1,15 @@
 export default [
   {
+    date: '2025-05-06',
+    summary: 'openGauss 3.0 LTS生命周期截止公告',
+    archives: '2025-05',
+    author: ['openGauss'],
+    banner: '/category/news/2025-05-06/banner.png',
+    title: 'openGauss 3.0 LTS生命周期截止公告',
+    tags: ['theme'],
+    path: 'zh/news/2025-05-06/index',
+  },
+  {
     date: '2025-03-31',
     summary: 'openGauss 7.0.0-RC1 版本正式发布',
     archives: '2025-03',

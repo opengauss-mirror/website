@@ -15,11 +15,28 @@ import bannerDiftMo from '@/assets/category/home/banner/banner2025040801_mo.jpg'
 import banner600Pc from '@/assets/category/home/banner/banner202503.jpg';
 import banner600Mo from '@/assets/category/home/banner/banner202503_mo.jpg';
 
+import banner20250506Pc from '@/assets/category/home/banner/banner20250506Pc.png';
+import banner20250506Mo from '@/assets/category/home/banner/banner20250506Mo.png';
+
 import { LEARN_VIDEO_LINK, DOCS_LINK } from '@/data/url-config';
 
 // rightInset:banner右侧插图
 export default {
   zh: [
+    {
+      pcBanner: banner20250506Pc,
+      moBanner: banner20250506Mo,
+      link: '/zh/news/2025-05-06',
+      target: '_blank',
+      title: 'openGauss 3.0 LTS生命周期截止公告',
+      titleMb: ['openGauss\n3.0 LTS生命周期截止公告'],
+      subtitle: '',
+      desc: [''],
+      btn: '查看详情',
+      className: 'banner-video',
+      rightInset: '',
+      rightLink: '',
+    },
     {
       pcBanner: banner600Pc,
       moBanner: banner600Mo,
