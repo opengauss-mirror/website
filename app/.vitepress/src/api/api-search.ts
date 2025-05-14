@@ -1,13 +1,6 @@
 import { request } from '@/shared/axios';
 import type { AxiosResponse } from '@/shared/axios';
-import type {
-  TagsParamsT,
-  TagsDataT,
-  SearchParamsT,
-  SearchDataT,
-  SearchCountParamsT,
-  SearchCountT,
-} from '@/shared/@types/type-search';
+import type { TagsParamsT, TagsDataT, SearchParamsT, SearchDataT, SearchCountParamsT, SearchCountT } from '@/shared/@types/type-search';
 import type { ResponseSearchT } from '@/shared/@types/type-common';
 
 /**
@@ -18,11 +11,15 @@ import type { ResponseSearchT } from '@/shared/@types/type-common';
  * @param {string} params.want        - tag关键词
  * @return {Promise<ResponseSearchT<TagsDataT>>}     返回一个 Promise，解析为搜索关键词在不同版本文档中的数量
  */
-export function getTagsData(
-  params: TagsParamsT
-): Promise<ResponseSearchT<TagsDataT>> {
+export function getTagsData(params: TagsParamsT): Promise<ResponseSearchT<TagsDataT>> {
   const url = '/api-search/search/tags';
-  return request.post(url, params).then((res: AxiosResponse) => res.data);
+  return request
+    .post(url, params, {
+      headers: {
+        source: 'opengauss',
+      },
+    })
+    .then((res: AxiosResponse) => res.data);
 }
 
 /**
@@ -38,12 +35,15 @@ export function getTagsData(
  * @param {string} params.limit.version       - 版本号
  * @return {Promise<ResponseSearchT<SearchDataT>>}     返回一个 Promise，解析为搜索关键词搜索出来的内容
  */
-export function getSearchData(
-  params: SearchParamsT
-): Promise<ResponseSearchT<SearchDataT>> {
-  const url = '/api-search/search/docs';
+export function getSearchData(params: SearchParamsT): Promise<ResponseSearchT<SearchDataT>> {
+  const url = '/api-search/search/docsng';
   return request
-    .post(url, params, { showLoading: true })
+    .post(url, params, {
+      showLoading: true,
+      headers: {
+        source: 'opengauss',
+      },
+    })
     .then((res: AxiosResponse) => res.data);
 }
 
@@ -56,9 +56,13 @@ export function getSearchData(
  * @param {Array..<{ type: string, version: string }>}  params.limit           - 版本限制参数
  * @return {Promise<ResponseSearchT<SearchCountT>>}     返回一个 Promise，解析为搜索关键词搜索出来内容在不同分类中的数量
  */
-export function getSearchCount(
-  params: SearchCountParamsT
-): Promise<ResponseSearchT<SearchCountT>> {
+export function getSearchCount(params: SearchCountParamsT): Promise<ResponseSearchT<SearchCountT>> {
   const url = '/api-search/search/count';
-  return request.post(url, params).then((res: AxiosResponse) => res.data);
+  return request
+    .post(url, params, {
+      headers: {
+        source: 'opengauss',
+      },
+    })
+    .then((res: AxiosResponse) => res.data);
 }

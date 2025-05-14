@@ -23,6 +23,7 @@ export interface TagsDataT {
 export interface SearchParamsT {
   keyword: string;
   page: number;
+  hq?:string;
   pageSize: number;
   lang: string;
   type: string;
