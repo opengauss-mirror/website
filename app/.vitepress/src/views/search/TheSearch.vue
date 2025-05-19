@@ -53,6 +53,7 @@ const searchData = computed(() => {
     page: currentPage.value,
     pageSize: pageSize.value,
     lang: lang.value,
+    hq: 'opengauss',
     type: searchType.value,
     limit: [
       {
@@ -199,6 +200,9 @@ function goLink(data: any, index: number) {
     const url = DOCS_LINK + goPath + '.html';
     reportSelectSearchResult(data, index, url, searchData.value.keyword);
     windowOpen(url, '_blank');
+  } else if (path.startsWith('https')) {
+    reportSelectSearchResult(data, index, path, searchData.value.keyword);
+    windowOpen(path, '_blank');
   } else {
     reportSelectSearchResult(data, index, search_result_url, searchData.value.keyword);
     router.go(search_result_url);
