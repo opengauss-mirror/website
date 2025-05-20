@@ -27,7 +27,7 @@ const route = useRoute();
 watch(
   route,
   (newValue) => {
-    const pathList = ['security-advisories', 'security', 'cve'];
+    const pathList = ['security-advisories', 'vulnerability-management', 'cve'];
     isSafetyFloatShow.value = false;
     pathList.forEach((item) => {
       if (item === newValue.path.split('/')[2]) {
@@ -48,13 +48,13 @@ interface TitleItemT {
 const tipsObj: TitleItemT = {
   '/zh/': TITLES2[0],
   '/download/': TITLES2[1],
-  '/supporttools/': TITLES2[1],
-  '/knowledge/': TITLES2[2],
+  '/tools/': TITLES2[1],
+  '/quick-start/': TITLES2[2],
   '/advanced/': TITLES2[2],
   '/contribution/': TITLES2[3],
-  '/community/onlineCommunication/': TITLES2[3],
+  '/online-communication/': TITLES2[3],
   '/member/': TITLES2[3],
-  '/userPractice/': TITLES2[3],
+  '/user-practice/': TITLES2[3],
   '/finance/': TITLES2[3],
   '/certification/': TITLES2[4],
   '/compatibility/': TITLES2[4],
@@ -65,7 +65,7 @@ const tipsObj: TitleItemT = {
   '/events/': TITLES2[5],
   '/video/': TITLES2[5],
   '/summit/': TITLES2[5],
-  '/security/': TITLES2[6],
+  '/vulnerability-management/': TITLES2[6],
   '/security-advisories/': TITLES2[6],
   '/cve/': TITLES2[6],
 };

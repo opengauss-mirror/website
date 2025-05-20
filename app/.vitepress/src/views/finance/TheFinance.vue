@@ -44,7 +44,7 @@ const goInteractiveZone = () => {
 };
 // 查看更多案例
 const secarchMore = () => {
-  window.open(`/${lang.value}/userPractice/`, '_blank');
+  window.open(`/${lang.value}/user-practice/`, '_blank');
 };
 // 下载页
 const goDownloadPage = () => {
@@ -53,19 +53,12 @@ const goDownloadPage = () => {
 </script>
 <template>
   <div class="finaance">
-    <BannerLevel2
-      :background-image="isMobile ? bannerMb : banner"
-      :title="i18n.finance.FINANCIAL_ZONE"
-    />
+    <BannerLevel2 :background-image="isMobile ? bannerMb : banner" :title="i18n.finance.FINANCIAL_ZONE" />
 
     <template v-if="!isMobile">
       <div class="section">
         <h1 class="section-title">{{ financial.zh.version.title }}</h1>
-        <p
-          v-for="item in financial.zh.version.descs"
-          :key="item"
-          class="section-desc"
-        >
+        <p v-for="item in financial.zh.version.descs" :key="item" class="section-desc">
           {{ item }}
         </p>
       </div>
@@ -74,11 +67,7 @@ const goDownloadPage = () => {
         <h1 class="section-title">{{ financial.zh.advantages.title }}</h1>
 
         <div class="advantages">
-          <div
-            v-for="item in financial.zh.advantages.lists"
-            :key="item.feature"
-            class="advantage-item"
-          >
+          <div v-for="item in financial.zh.advantages.lists" :key="item.feature" class="advantage-item">
             <img :src="isLight ? item.img : item.img_dark" alt="" />
             <p class="feature">{{ item.feature }}</p>
             <p class="feature-desc">{{ item.desc }}</p>
@@ -91,54 +80,33 @@ const goDownloadPage = () => {
           <h1 class="section-title">{{ financial.zh.technologies.title }}</h1>
 
           <OTabs v-model="tabShow">
-            <OTabPane
-              v-for="(item, index) in financial.zh.technologies.tab_lists"
-              :key="item.title"
-              :label="item.title"
-              :name="index"
-            >
+            <OTabPane v-for="(item, index) in financial.zh.technologies.tab_lists" :key="item.title" :label="item.title" :name="index">
               <div v-if="tabShow === 0" class="tab-content">
                 <p v-for="child in item.desc_lists" :key="child">{{ child }}</p>
 
                 <div class="img-box">
-                  <img
-                    class="storage"
-                    :src="isLight ? item.img : item.img_dark"
-                    alt=""
-                  />
+                  <img class="storage" :src="isLight ? item.img : item.img_dark" alt="" />
                 </div>
               </div>
 
               <div v-if="tabShow === 1" class="tab-content">
                 <p v-for="child in item.desc_lists" :key="child">{{ child }}</p>
                 <div class="img-box">
-                  <img
-                    class="capability"
-                    :src="isLight ? item.img : item.img_dark"
-                    alt=""
-                  />
+                  <img class="capability" :src="isLight ? item.img : item.img_dark" alt="" />
                 </div>
               </div>
 
               <div v-if="tabShow === 2" class="tab-content">
                 <p v-for="child in item.desc_lists" :key="child">{{ child }}</p>
                 <div class="img-box">
-                  <img
-                    class="scale-out"
-                    :src="isLight ? item.img : item.img_dark"
-                    alt=""
-                  />
+                  <img class="scale-out" :src="isLight ? item.img : item.img_dark" alt="" />
                 </div>
               </div>
 
               <div v-if="tabShow === 3" class="tab-content">
                 <p v-for="child in item.desc_lists" :key="child">{{ child }}</p>
                 <div class="img-box">
-                  <img
-                    class="db-mind"
-                    :src="isLight ? item.img : item.img_dark"
-                    alt=""
-                  />
+                  <img class="db-mind" :src="isLight ? item.img : item.img_dark" alt="" />
                 </div>
               </div>
             </OTabPane>
@@ -158,24 +126,13 @@ const goDownloadPage = () => {
             </div>
 
             <div class="btn-box">
-              <OButton
-                type="primary"
-                size="mini"
-                class="more-btn"
-                animation
-                @click="goCaseDetail(card.detailLink)"
-              >
+              <OButton type="primary" size="mini" class="more-btn" animation @click="goCaseDetail(card.detailLink)">
                 {{ i18n.finance.CASE_DETAIL }}
                 <template #suffixIcon>
                   <IconArrowRight class="btn-icon" />
                 </template>
               </OButton>
-              <OButton
-                size="mini"
-                class="website-btn"
-                animation
-                @click="goOfficialWeb(card.officialLink)"
-              >
+              <OButton size="mini" class="website-btn" animation @click="goOfficialWeb(card.officialLink)">
                 {{ i18n.finance.OFFICIAL_WEBSITE }}
                 <template #suffixIcon>
                   <IconArrowRight class="btn-icon" />
@@ -215,13 +172,7 @@ const goDownloadPage = () => {
         <div class="version-download">
           <h1 class="experience">{{ i18n.finance.EXPERIENCE }}</h1>
 
-          <OButton
-            type="primary"
-            size="small"
-            animation
-            class="download-btn"
-            @click="goDownloadPage"
-          >
+          <OButton type="primary" size="small" animation class="download-btn" @click="goDownloadPage">
             {{ i18n.finance.DOWNLOAD }}
             <template #suffixIcon>
               <IconArrowRight />

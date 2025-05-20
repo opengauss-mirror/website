@@ -7,7 +7,7 @@ import hljs from 'highlight.js';
 
 const require = createRequire(import.meta.url);
 
-const isBlog = /.+\/(?:userPractice|events|news)\/.+$/;
+const isBlog = /.+\/(?:user-practice|events|news)\/.+$/;
 
 const config: UserConfig = {
   sitemap: {
@@ -90,10 +90,7 @@ const config: UserConfig = {
     }
     if (keywords) {
       pageData.frontmatter.head ??= [];
-      pageData.frontmatter.head.push([
-        'meta',
-        { name: 'keywords', content: keywords },
-      ]);
+      pageData.frontmatter.head.push(['meta', { name: 'keywords', content: keywords }]);
     }
   },
   locales: {
@@ -101,15 +98,13 @@ const config: UserConfig = {
       label: '中文',
       lang: 'zh',
       title: 'openGauss',
-      description:
-        'openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。',
+      description: 'openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。',
     },
     zh: {
       label: '中文',
       lang: 'zh',
       title: 'openGauss',
-      description:
-        'openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。',
+      description: 'openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。',
     },
     en: {
       label: 'English',

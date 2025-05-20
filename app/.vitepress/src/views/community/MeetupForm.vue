@@ -333,7 +333,7 @@ const submitMeetupForm = async (formEl: FormInstance | undefined) => {
               <OCheckboxGroup v-model="meetupPrivacy">
                 <OCheckbox value="1"
                   >您理解并同意，请填写并提交的内容，即视为您已充分阅读并理解openGauss的
-                  <a href="/zh/privacyPolicy/" target="_blank" rel="noopener noreferrer">《隐私政策》</a>
+                  <a href="/zh/privacy/" target="_blank" rel="noopener noreferrer">《隐私政策》</a>
                 </OCheckbox>
               </OCheckboxGroup>
               <p v-if="isPrivacy && meetupPrivacy.length === 0" class="privacy-error">请勾选隐私政策</p>

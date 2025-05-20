@@ -143,7 +143,7 @@ const rules: FormRules = {
   ],
 };
 
-const privacyPolicy = '/zh/privacyPolicy/';
+const privacyPolicy = '/zh/privacy/';
 const checkedPrivacyPolicy = ref(false);
 
 const formRef = ref<FormInstance>();

@@ -20,7 +20,7 @@ export default {
     VIDEO: `Videos`,
     EVENTS: `Events`,
     CERTIFICATION: `Certification`,
-    SECURITY: `Vulnerability Report`,
+    SECURITY: `Vulnerability Management`,
     ADVISORIES: `Security Advisories`,
     CVE: `CVE`,
     TAG: `Tag filter`,
@@ -51,7 +51,7 @@ export default {
       },
       {
         NAME: `Privacy Policy`,
-        URL: `/en/privacyPolicy/`,
+        URL: `/en/privacy/`,
         TARGET: `_blank`,
       },
       {
@@ -66,7 +66,7 @@ export default {
       },
       {
         NAME: `About Us`,
-        URL: `/en/aboutUs/`,
+        URL: `/en/about-us/`,
         TARGET: `_blank`,
       },
     ],
@@ -89,11 +89,8 @@ export default {
   TYPE: `Type`,
   VIEW_MORE: `View More`,
   COOKIE: {
-    TEXT: [
-      `This site uses cookies. By continuing to browse the site you are agreeing to our use of cookies.`,
-      `Read our privacy policy.`,
-    ],
-    PATH: `/en/privacyPolicy/`,
+    TEXT: [`This site uses cookies. By continuing to browse the site you are agreeing to our use of cookies.`, `Read our privacy policy.`],
+    PATH: `/en/privacy/`,
   },
   Not_Found: 'No Data',
   COPY_SUCCESS: `复制成功`,

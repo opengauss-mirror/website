@@ -35,7 +35,7 @@ const goInteractiveZone = () => {
 };
 // 查看更多案例
 const secarchMore = () => {
-  window.open(`/${lang.value}/userPractice/`, '_blank');
+  window.open(`/${lang.value}/user-practice/`, '_blank');
 };
 // 下载页
 const goDownloadPage = () => {

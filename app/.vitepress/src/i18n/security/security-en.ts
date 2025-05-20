@@ -60,7 +60,7 @@ export default {
   MODIFIED_TIME: 'Time of Modification',
   OPERATION: 'Operation',
   DETAIL: 'Details',
-  REPORTING: 'Vulnerability Report',
+  REPORTING: 'Vulnerability Management',
   INPUT_CVE_ID: 'Please input CVE ID',
   INPUT_STATUS: 'Please input Status',
   BRIEF_INTRODUCTION: 'BriefIntroduction',

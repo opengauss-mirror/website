@@ -54,7 +54,7 @@ openGauss 社区每两年发布一个 LTS 版本，LTS 版本作为长期支持�
 
 ## 8. openGauss 行业应用实践有哪些？
 
-详细案例参考官网[“社区”->“用户实践”](https://opengauss.org/zh/userPractice/)版块
+详细案例参考官网[“社区”->“用户实践”](https://opengauss.org/zh/user-practice/)版块
 
 openGauss 已经在包括金融、电信、政府、制造、能源、交通、医疗、教育等行业规模应用
 

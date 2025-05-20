@@ -53,7 +53,7 @@ export default {
       },
       {
         NAME: `隐私政策`,
-        URL: `/zh/privacyPolicy/`,
+        URL: `/zh/privacy/`,
         TARGET: `_blank`,
       },
       {
@@ -68,7 +68,7 @@ export default {
       },
       {
         NAME: `关于我们`,
-        URL: `/zh/aboutUs/`,
+        URL: `/zh/about-us/`,
         TARGET: `_blank`,
       },
     ],
@@ -91,11 +91,8 @@ export default {
   TYPE: `类型`,
   VIEW_MORE: `查看更多`,
   COOKIE: {
-    TEXT: [
-      `本站点使用Cookies，继续浏览表示您同意我们使用Cookies。`,
-      `Cookies和隐私政策。`,
-    ],
-    PATH: `/zh/privacyPolicy/`,
+    TEXT: [`本站点使用Cookies，继续浏览表示您同意我们使用Cookies。`, `Cookies和隐私政策。`],
+    PATH: `/zh/privacy/`,
   },
   Not_Found: '暂无数据',
   COPY_SUCCESS: `复制成功`,
