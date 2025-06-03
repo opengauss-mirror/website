@@ -1,5 +1,49 @@
 export default [
   {
+    name: '高精度智能定位管理系统',
+    version: '',
+    type: 'GIS',
+    company: '无锡真源科技有限公司',
+    database: 'openGauss 5.0.0',
+    os: 'Kylin V10',
+    server: 'Intel(其他)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%97%A0%E9%94%A1%E7%9C%9F%E6%BA%90/openGauss%E5%85%BC%E5%AE%B9%E6%80%A7%E8%AF%81%E4%B9%A6.pdf',
+  },
+  {
+    name: '华莱信实验室信息管理软件',
+    version: '5.0',
+    type: '医疗',
+    company: '武汉华莱信软件有限公司',
+    database: 'openGauss 5.0.1',
+    os: 'openEuler 22.03',
+    server: 'Intel(其他)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%AD%A6%E6%B1%89%E5%8D%8E%E8%8E%B1%E4%BF%A1/Lis%20V5.0/opengauss%E6%8A%80%E6%9C%AF%E8%AE%A4%E8%AF%81%E4%B9%A6.pdf',
+  },
+  {
+    name: '华莱信输血信息管理软件',
+    version: '5.0',
+    type: '医疗',
+    company: '武汉华莱信软件有限公司',
+    database: 'openGauss 5.0.1',
+    os: 'openEuler 22.03',
+    server: 'Intel(其他)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%AD%A6%E6%B1%89%E5%8D%8E%E8%8E%B1%E4%BF%A1/Bis%20V5.0/opengauss%E6%8A%80%E6%9C%AF%E8%AE%A4%E8%AF%81%E4%B9%A6.pdf',
+  },
+  {
+    name: '索真健康体检信息管理系统',
+    version: '3.0',
+    type: '医疗',
+    company: '北京中科索真云健康科技有限公司',
+    database: 'openGauss 6.0.1',
+    os: 'openEuler 22.03',
+    server: 'Intel(其他)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%8C%97%E4%BA%AC%E4%B8%AD%E7%A7%91/PEIS%20V3.0/openGauss%E6%8A%80%E6%9C%AF%E8%AE%A4%E8%AF%81%E4%B9%A6.pdf',
+  },
+  {
     name: '天云星魔方软件',
     version: '2.0',
     type: '通用',
