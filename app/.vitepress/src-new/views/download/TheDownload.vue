@@ -15,6 +15,9 @@ import { getUrlParam } from '~@/utils/common';
 import { useI18n } from '~@/i18n';
 
 import BannerImg from '~@/assets/category/download/banner.jpg';
+import DownloadAll from './DownloadAll.vue';
+import RelativeTools from './support-tools/RelativeTools.vue';
+import SupportServices from './support-tools/SupportServices.vue';
 
 const { isPhone, lePad, lePadV } = useScreen();
 const { t, isZh, $t } = useLocale();
@@ -85,7 +88,9 @@ provide('PERMISSION_LIST', getPermissionList);
     <OTab v-model="activeTab" variant="text" :line="false" @change="handleTabChange">
       <OTabPane v-for="item in tabLists" :key="item.id" :label="item.label" :value="item.id">
         <div class="download-panel">
-          <template v-if="activeTab === 'all'"> all </template>
+          <template v-if="activeTab === 'all'">
+            <DownloadAll /> 
+          </template>
           <template v-else>
             <DownloadContent :content-data="getData" />
           </template>
@@ -93,8 +98,12 @@ provide('PERMISSION_LIST', getPermissionList);
       </OTabPane>
     </OTab>
   </ContentWrapper>
-  <AppSection title="相关工具"> </AppSection>
-  <AppSection title="支持与服务"> </AppSection>
+  <AppSection title="相关工具">
+    <RelativeTools />
+  </AppSection>
+  <AppSection title="支持与服务">
+    <SupportServices />
+  </AppSection>
 </template>
 
 <style lang="scss" scoped>

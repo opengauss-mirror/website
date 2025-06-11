@@ -1,0 +1,262 @@
+<script setup lang="ts">
+import { ODialog, OIcon, OIconChevronRight, OLink, OOption, ORadio, ORadioGroup, OScroller, OSelect, OTag, OToggle } from '@opensig/opendesign';
+import SupportToolsConfig from '@/data/supporttools';
+import { useData } from 'vitepress';
+import { computed } from 'vue';
+import { ref } from 'vue';
+import { useCommon } from '@/stores/common';
+import { useScreen } from '~@/composables/useScreen';
+
+const { gtPadV } = useScreen();
+const { lang } = useData();
+
+const supporttoolsInfo = computed(() => {
+  return SupportToolsConfig[lang.value as 'zh' | 'en'];
+});
+
+const typeIdNameMap = computed(() => {
+  return [...supporttoolsInfo.value].reduce((map, item) => {
+    return map.set(item.id, item.name);
+  }, new Map<string, string>());
+});
+
+const toolTypes = computed(() => {
+  return [{ label: '全部', value: 'all' }].concat(...supporttoolsInfo.value.map((item) => ({ label: item.name, value: item.id })));
+});
+
+const selectedType = ref(toolTypes.value[0].value);
+
+const filteredTools = computed(() => {
+  if (selectedType.value === 'all') {
+    return supporttoolsInfo.value.flatMap((item) => item.children);
+  }
+  const selectedCategory = supporttoolsInfo.value.find((item) => item.id === selectedType.value);
+  return selectedCategory ? selectedCategory.children : [];
+});
+
+const commonStore = useCommon();
+const isDark = computed(() => commonStore.theme === 'dark');
+
+const showDialog = ref(false);
+const selectedItem = ref();
+const onClickTool = (item: any) => {
+  selectedItem.value = item;
+  showDialog.value = true;
+};
+</script>
+
+<template>
+  <section>
+    <h2>{{ $t('common.COMMON_CONFIG.SUPPORTTOOLS') }}</h2>
+    <div class="tools-type">
+      <p class="label">工具类型</p>
+      <OScroller v-if="gtPadV" show-type="hover" disabled-y>
+        <ORadioGroup v-model="selectedType" style="--radio-group-gap: 8px">
+          <ORadio v-for="item in toolTypes" :key="item.value" :value="item.value">
+            <template #radio="{ checked }">
+              <OToggle :checked="checked">{{ item.label }}</OToggle>
+            </template>
+          </ORadio>
+        </ORadioGroup>
+      </OScroller>
+      <OSelect v-else v-model="selectedType">
+        <OOption v-for="item in toolTypes" :key="item.value" :value="item.value" :label="item.label"></OOption>
+      </OSelect>
+    </div>
+    <div v-if="gtPadV" :class="{ container: true, dark: isDark }">
+      <div class="item" v-for="item in filteredTools" :key="item.name">
+        <h3>{{ item.name }}</h3>
+        <OTag variant="outline">{{ typeIdNameMap.get(item.iden) }}</OTag>
+        <p class="desc">{{ item.desc }}</p>
+        <div class="links">
+          <OLink :href="item.address" target="_blank" color="primary">源码地址</OLink>
+          <OLink :href="item.guide" target="_blank" color="primary">操作指导</OLink>
+        </div>
+      </div>
+    </div>
+    <template v-else>
+      <div class="mobile-tool-item" @click="onClickTool(item)" v-for="item in filteredTools" :key="item.name">
+        <p>{{ item.name }}</p>
+        <OIcon><OIconChevronRight /></OIcon>
+      </div>
+    </template>
+    <ODialog v-model:visible="showDialog" size="medium" style="--dlg-radius: 4px">
+      <div class="support-tools-dlg-content">
+        <p class="item-name">{{ selectedItem.name }}</p>
+        <OTag variant="outline">{{ typeIdNameMap.get(selectedItem.iden) }}</OTag>
+        <p class="desc">{{ selectedItem.desc }}</p>
+        <div class="links">
+          <OLink :href="selectedItem.address" target="_blank" color="primary">源码地址</OLink>
+          <OLink :href="selectedItem.guide" target="_blank" color="primary">操作指导</OLink>
+        </div>
+      </div>
+    </ODialog>
+  </section>
+</template>
+<style lang="scss">
+.support-tools-dlg-content {
+  width: 100vh;
+  .item-name {
+    @include h2;
+    margin-bottom: 8px;
+  }
+  .o-tag-label {
+    @include text2;
+  }
+  .desc {
+    @include text2;
+    color: var(--o-color-control2);
+    margin-top: 12px;
+    margin-bottom: 21px;
+  }
+  .links {
+    display: flex;
+    flex-direction: column;
+  }
+  .o-link {
+    @include h3;
+    &:last-child {
+      margin-top: 26px;
+    }
+  }
+}
+</style>
+<style lang="scss" scoped>
+section {
+  margin-top: 72px;
+
+  @include respond-to('<=pad_v') {
+    margin-top: 32px;
+  }
+}
+
+.o-scroller {
+  --scroller-padding: 28px 0;
+  width: 0;
+  flex-grow: 1;
+}
+
+.mobile-tool-item {
+  align-self: stretch;
+  border-radius: 4px;
+  padding: 13px;
+  background-color: var(--o-color-fill2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+  @include text2;
+
+  .o-icon {
+    font-size: 32px;
+  }
+}
+
+.tools-type {
+  display: flex;
+  align-items: center;
+  background: var(--o-color-fill2);
+  margin-top: 40px;
+  padding: 0 32px;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 100%;
+
+  @include respond-to('<=pad_v') {
+    display: block;
+    padding: 16px 12px;
+    margin-top: 16px;
+  }
+
+  .label {
+    margin-right: 40px;
+    white-space: nowrap;
+    @include respond-to('<=pad_v') {
+      margin-bottom: 8px;
+    }
+  }
+}
+
+.o-radio-group {
+  width: fit-content;
+  flex-wrap: nowrap;
+}
+
+.o-toggle {
+  --toggle-bg-color: rgb(var(--o-mixedgray-4));
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 32px;
+  row-gap: 32px;
+  margin-top: 32px;
+  width: 100%;
+
+  --item-bg-1: url('~@/assets/category/download/supporttools/tool-bg1.png');
+  --item-bg-2: url('~@/assets/category/download/supporttools/tool-bg2.png');
+  --item-bg-3: url('~@/assets/category/download/supporttools/tool-bg3.png');
+  --item-bg-4: url('~@/assets/category/download/supporttools/tool-bg4.png');
+
+  &.dark {
+    --item-bg-1: url('~@/assets/category/download/supporttools/tool-bg1-dark.png');
+    --item-bg-2: url('~@/assets/category/download/supporttools/tool-bg2-dark.png');
+    --item-bg-3: url('~@/assets/category/download/supporttools/tool-bg3-dark.png');
+    --item-bg-4: url('~@/assets/category/download/supporttools/tool-bg4-dark.png');
+  }
+
+  .item {
+    padding: 24px 32px;
+    background-color: var(--o-color-fill2);
+    height: 216px;
+    position: relative;
+
+    &:nth-child(4n + 1) {
+      background-image: var(--item-bg-1);
+    }
+    &:nth-child(4n + 2) {
+      background-image: var(--item-bg-2);
+    }
+    &:nth-child(4n + 3) {
+      background-image: var(--item-bg-3);
+    }
+    &:nth-child(4n + 4) {
+      background-image: var(--item-bg-4);
+    }
+
+    h3 {
+      @include h3;
+    }
+
+    .o-tag {
+      --o-tag-font-color_active: inherit;
+      &:active {
+        border: 1px solid var(--tag-bd-color);
+      }
+      margin-top: 8px;
+      @include tip2;
+    }
+
+    .desc {
+      margin-top: 24px;
+      @include tip1;
+    }
+
+    .links {
+      margin-top: 38px;
+      display: flex;
+      position: absolute;
+      bottom: 24px;
+      left: 32px;
+
+      .o-link {
+        @include tip1;
+        &:first-child {
+          margin-right: 32px;
+        }
+      }
+    }
+  }
+}
+</style>
