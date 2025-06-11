@@ -17,12 +17,12 @@ export default {
     title: '大会简介',
     titleBg: 'INTRODUCTION',
     desc: [
-      'openGauss Developer Day 2025是openGauss社区发起的开发者大会。旨在持续推动数据库领域的创新和突破。本次大会将全面展示openGauss 7.0.0-RC1 的技术特性、openGauss 在内核、AI和四高（高可用、高吞吐、高并发、高扩展）能力上的最新技术成果。',
+      'openGauss Developer Day 2025是openGauss社区发起的开发者大会，旨在持续推动数据库领域的创新和突破。本次大会将全面展示openGauss 7.0.0 创新版的技术特性、openGauss 在内核、AI和四高（高性能、高可用、高智能、高安全）能力上的最新技术成果。',
       '本次大会也是 openGauss 社区的年度大型工作会议，值此开源五周年之际，openGauss社区邀请开发者、用户齐聚一堂，共同讨论下一个版本的技术路线与为了演进方向，携手共建数智化的数据库新生态。',
     ],
   },
   topic: {
-    title: '申报议题',
+    title: '欢迎申报',
     titleBg: 'CALL FOR PROPOSALS',
     cardBg: cardBg,
     cardList: [
