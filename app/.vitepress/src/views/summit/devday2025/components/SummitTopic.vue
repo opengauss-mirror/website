@@ -103,6 +103,7 @@ const onButtonClick = (href: string) => {
     line-height: var(--o-line-height-h8);
     font-weight: 400;
     margin-top: var(--o-spacing-h5);
+    opacity: 0.8;
 
     @media (max-width: 1440px) {
       font-size: var(--o-font-size-text);
