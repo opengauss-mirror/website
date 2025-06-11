@@ -41,6 +41,9 @@ watch(
       if (val.includes(item.name)) {
         langShow.value = item.lang;
       }
+      if (val.includes('summit') && (val.includes('privacy') || val.includes('legal'))) {
+        langShow.value = ['zh'];
+      }
       if (val === `/${lang.value}/`) {
         langShow.value = ['zh', 'en'];
       }
@@ -83,9 +86,7 @@ const onEnter = (el: Element) => {
   (el as HTMLUListElement).style.opacity = '1';
 };
 const onBeforeLeave = (el: Element) => {
-  (el as HTMLUListElement).style.height = `${
-    (el as HTMLUListElement).offsetHeight
-  }px`;
+  (el as HTMLUListElement).style.height = `${(el as HTMLUListElement).offsetHeight}px`;
   (el as HTMLUListElement).style.opacity = '1';
 };
 const onLeave = (el: Element) => {
@@ -95,43 +96,21 @@ const onLeave = (el: Element) => {
 </script>
 
 <template>
-  <div
-    v-if="screenWidth > 1100"
-    class="lang-menu"
-    @mouseenter="onMouseEnter()"
-    @mouseleave="onMouseLeave()"
-  >
+  <div v-if="screenWidth > 1100" class="lang-menu" @mouseenter="onMouseEnter()" @mouseleave="onMouseLeave()">
     <span class="lang-menu-link" :class="{ 'no-state': langList.length < 2 }">
       {{ lang === 'zh' ? '中文' : 'English' }}
       <OIcon v-if="langList.length > 1"><icon-down></icon-down></OIcon>
     </span>
-    <Transition
-      @before-enter="onBeforeEnter"
-      @enter="onEnter"
-      @before-leave="onBeforeLeave"
-      @leave="onLeave"
-    >
+    <Transition @before-enter="onBeforeEnter" @enter="onEnter" @before-leave="onBeforeLeave" @leave="onLeave">
       <ul v-show="isMenu && langList.length > 1" class="lang-menu-list">
-        <li
-          v-for="item in langList"
-          :key="item.id"
-          class="lang-item"
-          :class="{ active: lang === item.id }"
-          @click="changeLanguage(item.id)"
-        >
+        <li v-for="item in langList" :key="item.id" class="lang-item" :class="{ active: lang === item.id }" @click="changeLanguage(item.id)">
           {{ item.label }}
         </li>
       </ul>
     </Transition>
   </div>
   <div v-else class="mobile-change-language">
-    <span
-      v-for="item in langList"
-      :key="item.id"
-      :class="{ active: lang === item.id }"
-      @click.stop="changeLanguage(item.id)"
-      >{{ item.label }}</span
-    >
+    <span v-for="item in langList" :key="item.id" :class="{ active: lang === item.id }" @click.stop="changeLanguage(item.id)">{{ item.label }}</span>
   </div>
 </template>
 

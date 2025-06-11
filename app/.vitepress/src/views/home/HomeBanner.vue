@@ -13,9 +13,7 @@ const { lang } = useData();
 const windowWidth = ref(useWindowResize());
 
 // 判断语言 banner
-const homeBanner = computed(() =>
-  lang.value === 'en' ? homeConfig.homeBanner.en : homeConfig.homeBanner.zh
-);
+const homeBanner = computed(() => (lang.value === 'en' ? homeConfig.homeBanner.en : homeConfig.homeBanner.zh));
 
 // banner跳转事件
 const jump = (item: any, flag: boolean) => {
@@ -49,11 +47,7 @@ const clickRightInset = (path: string) => {
 </script>
 <template>
   <div class="home-banner">
-    <el-carousel
-      :height="windowWidth > 767 ? '480px' : '300px'"
-      :interval="5000"
-      trigger="click"
-    >
+    <el-carousel :height="windowWidth > 767 ? '480px' : '300px'" :interval="5000" trigger="click">
       <el-carousel-item v-for="item in homeBanner" :key="item.link">
         <div
           class="banner-img"
@@ -61,52 +55,28 @@ const clickRightInset = (path: string) => {
             'no-btn': !item.btn && item.link,
             [item.className]: item.className,
           }"
-          :style="`background:url(${
-            windowWidth > 767 ? item.pcBanner : item.moBanner
-          }) no-repeat top center/cover;`"
+          :style="`background:url(${windowWidth > 767 ? item.pcBanner : item.moBanner}) no-repeat top center/cover;`"
           @click="jump(item, item.btn !== '')"
         >
           <div class="banner-content">
-            <div
-              class="content-left"
-              :class="{ 'teamup-content-left': item.link.includes('team-up') }"
-            >
+            <div class="content-left" :class="{ 'teamup-content-left': item.link.includes('team-up') }">
               <div class="content-text">
-                <div
-                  v-if="windowWidth < 767 && item.titleMb.length"
-                  class="title"
-                >
+                <div v-if="windowWidth < 767 && item.titleMb.length" class="title">
                   <p v-for="itemTitleMb in item.titleMb" :key="itemTitleMb">
                     {{ itemTitleMb }}
                   </p>
                 </div>
-                <p
-                  v-else
-                  class="title"
-                  :class="{ 'teamup-title': item.link.includes('team-up') }"
-                >
+                <p v-else class="title" :class="{ 'teamup-title': item.link.includes('team-up') }">
                   {{ item.title }}
                 </p>
                 <p v-if="item.subtitle" class="subtitle">{{ item.subtitle }}</p>
                 <p v-if="item.desc.length" class="desc">
-                  <span v-for="itemDesc in item.desc" :key="itemDesc">{{
-                    itemDesc
-                  }}</span>
+                  <span v-for="itemDesc in item.desc" :key="itemDesc">{{ itemDesc }}</span>
                 </p>
-                <img
-                  v-if="item.textImg"
-                  class="text-img"
-                  :src="windowWidth > 767 ? item.textImg : item.textImgMb"
-                  alt=""
-                />
+                <img v-if="item.textImg" class="text-img" :src="windowWidth > 767 ? item.textImg : item.textImgMb" alt="" />
               </div>
               <div v-if="item.btn" class="btn-box">
-                <OButton
-                  animation
-                  class="home-banner-btn"
-                  :size="windowWidth < 767 ? 'mini' : 'medium'"
-                  @click="jump(item, false)"
-                >
+                <OButton animation class="home-banner-btn" :size="windowWidth < 767 ? 'mini' : 'medium'" @click="jump(item, false)">
                   {{ item.btn }}
                   <template #suffixIcon
                     ><OIcon><IconArrowRight /></OIcon
@@ -114,16 +84,8 @@ const clickRightInset = (path: string) => {
                 </OButton>
               </div>
             </div>
-            <div
-              v-if="item.rightInset && windowWidth > 1100"
-              class="content-right"
-            >
-              <img
-                class="video-player-btn"
-                :src="item.rightInset"
-                :alt="item.title"
-                @click.stop="clickRightInset(item.rightLink)"
-              />
+            <div v-if="item.rightInset && windowWidth > 1100" class="content-right">
+              <img class="video-player-btn" :src="item.rightInset" :alt="item.title" @click.stop="clickRightInset(item.rightLink)" />
             </div>
           </div>
         </div>
@@ -141,13 +103,7 @@ const clickRightInset = (path: string) => {
         destroy-on-close
       >
         <div class="video-center">
-          <video
-            class="home-banner-video"
-            :src="videoLink"
-            width="100%"
-            controls
-            autoplay
-          ></video>
+          <video class="home-banner-video" :src="videoLink" width="100%" controls autoplay></video>
         </div>
       </ODialog>
     </div>
@@ -335,25 +291,24 @@ html[lang='zh'] {
       cursor: pointer;
     }
   }
-  .summit202412 {
+  .summit202506 {
     .banner-content {
       .content-left {
         .content-text {
           .text-img {
             object-fit: cover;
-            height: 201px;
+            height: 150px;
             display: block;
             @media (max-width: 767px) {
               width: inherit;
-              height: 92px;
+              height: 75px;
             }
           }
         }
         @media (max-width: 767px) {
           align-items: center;
-          justify-content: flex-end;
           .btn-box {
-            margin-bottom: var(--o-spacing-h3);
+            margin-bottom: var(--o-spacing-h5);
           }
         }
       }
@@ -410,8 +365,7 @@ html[lang='zh'] {
       justify-content: center;
       height: 100%;
       margin: 0 auto;
-      background: url(@/assets/category/home/banner/banner-summit-2024.jpg)
-        no-repeat center/cover;
+      background: url(@/assets/category/home/banner/banner-summit-2024.jpg) no-repeat center/cover;
       .img-wrap {
         width: 100%;
         max-width: 1504px;
