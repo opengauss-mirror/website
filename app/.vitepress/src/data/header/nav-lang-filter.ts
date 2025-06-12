@@ -6,11 +6,11 @@ export default [
     lang: ['zh', 'en'],
   },
   {
-    name: 'supporttools',
+    name: 'tools',
     lang: ['zh', 'en'],
   },
   {
-    name: 'knowledge',
+    name: 'quick-start',
     lang: ['zh'],
   },
   {
@@ -22,7 +22,7 @@ export default [
     lang: ['zh', 'en'],
   },
   {
-    name: 'onlineCommunication',
+    name: 'online-communication',
     lang: ['zh', 'en'],
   },
   {
@@ -30,7 +30,7 @@ export default [
     lang: ['zh', 'en'],
   },
   {
-    name: `userPractice`,
+    name: `user-practice`,
     lang: ['zh', 'en'],
   },
   {
@@ -66,7 +66,7 @@ export default [
     lang: ['zh'],
   },
   {
-    name: 'security',
+    name: 'vulnerability-management',
     lang: ['zh', 'en'],
   },
   {
@@ -94,7 +94,7 @@ export default [
     lang: ['zh', 'en'],
   },
   {
-    name: 'aboutUs',
+    name: 'about-us',
     lang: ['zh', 'en'],
   },
   {

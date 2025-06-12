@@ -17,8 +17,8 @@ const navData: Array<NavItemT> = [
         label: { zh: '支持工具', en: 'Support Tools' },
         id: 'supporttools',
         href: {
-          zh: '/zh/supporttools/',
-          en: '/en/supporttools/',
+          zh: '/zh/tools/',
+          en: '/en/tools/',
         },
       },
     ],
@@ -38,9 +38,9 @@ const navData: Array<NavItemT> = [
       },
       {
         label: { zh: '快速体验' },
-        id: 'knowledge',
+        id: 'quickStart',
         href: {
-          zh: '/zh/knowledge/',
+          zh: '/zh/quick-start/',
         },
       },
       {
@@ -75,8 +75,8 @@ const navData: Array<NavItemT> = [
         label: { zh: '线上交流', en: 'Communication' },
         id: 'onlineCommunication',
         href: {
-          zh: '/zh/community/onlineCommunication/',
-          en: '/en/community/onlineCommunication/',
+          zh: '/zh/online-communication/',
+          en: '/en/online-communication/',
         },
       },
       {
@@ -91,8 +91,8 @@ const navData: Array<NavItemT> = [
         label: { zh: '用户实践', en: 'User Practice' },
         id: 'userPractice',
         href: {
-          zh: '/zh/userPractice/',
-          en: '/en/userPractice/',
+          zh: '/zh/user-practice/',
+          en: '/en/user-practice/',
         },
       },
       {
@@ -234,10 +234,11 @@ const navData: Array<NavItemT> = [
     id: 'discovery',
     children: [
       {
-        label: { zh: '漏洞管理', en: 'Vulnerability Report' },
+        label: { zh: '漏洞管理', en: 'Vulnerability Management' },
         id: 'security',
         href: {
-          zh: '/zh/security/',
+          zh: '/zh/vulnerability-management/',
+          en: '/en/vulnerability-management/',
         },
       },
       {

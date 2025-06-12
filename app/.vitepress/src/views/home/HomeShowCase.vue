@@ -19,9 +19,7 @@ const active = ref(0);
 const activeMobile = ref(0);
 const caseCategory = showCaseData.category;
 const caseList = computed(() => {
-  return lang.value === 'zh'
-    ? showCaseData.constList.zh
-    : showCaseData.constList.en;
+  return lang.value === 'zh' ? showCaseData.constList.zh : showCaseData.constList.en;
 });
 const handleGo = (path: string) => {
   windowOpen(path.replace(/(index)$/g, ''), '_blank');
@@ -55,16 +53,12 @@ const imgUrl = computed(() => (item: { urlDark: string; url: string }) => {
   return commonStore.theme === 'dark' ? item.urlDark : item.url;
 });
 
-const imgUrlHover = computed(
-  () => (item: { activeDarkUrl: string; activeUrl: string }) => {
-    return commonStore.theme === 'dark' ? item.activeDarkUrl : item.activeUrl;
-  }
-);
+const imgUrlHover = computed(() => (item: { activeDarkUrl: string; activeUrl: string }) => {
+  return commonStore.theme === 'dark' ? item.activeDarkUrl : item.activeUrl;
+});
 
 const changeCase = () => {
-  active.value === caseCategory.length - 1
-    ? (active.value = 0)
-    : active.value++;
+  active.value === caseCategory.length - 1 ? (active.value = 0) : active.value++;
 };
 
 const setCaseInterval = () => {
@@ -99,18 +93,8 @@ onUnmounted(() => {
   <div class="case-main">
     <h3>{{ i18n.home.USER_TITLE }}</h3>
     <OContainer ref="userCase" :level-index="1" class="container">
-      <OCollapse
-        v-model="activeMobile"
-        accordion
-        class="case-mobile"
-        @change="changeActiveMobile"
-      >
-        <OCollapseItem
-          v-for="(item, index) in caseCategory"
-          :key="item.type"
-          class="case-mobile-list"
-          :name="index"
-        >
+      <OCollapse v-model="activeMobile" accordion class="case-mobile" @change="changeActiveMobile">
+        <OCollapseItem v-for="(item, index) in caseCategory" :key="item.type" class="case-mobile-list" :name="index">
           <template #title>
             <div class="case-mobile-card-content">
               <div class="case-mobile-title">
@@ -122,8 +106,8 @@ onUnmounted(() => {
                         ? item.activeDarkUrl
                         : item.urlDark
                       : index === activeMobile
-                      ? item.activeUrl
-                      : item.url
+                        ? item.activeUrl
+                        : item.url
                   "
                   :alt="lang === 'zh' ? item.type : item.typeEn"
                 />
@@ -138,9 +122,7 @@ onUnmounted(() => {
               v-for="user in caseData && caseData[item.typeEn]"
               :key="user.company"
               class="user-card"
-              @click="
-                handleGo(user.detail ? `/${user.path}` : user.officialpath)
-              "
+              @click="handleGo(user.detail ? `/${user.path}` : user.officialpath)"
             >
               <div class="user-title">{{ user.company }}</div>
               <div class="user-word">{{ user.summary }}</div>
@@ -151,26 +133,10 @@ onUnmounted(() => {
       <div ref="caseRef" class="case">
         <OCard class="case-card" shadow="never">
           <div class="case-tab">
-            <div
-              v-for="(item, index) in caseCategory"
-              :key="item.type"
-              class="case-tab-item"
-              @click="changeActive(index)"
-            >
-              <div
-                class="case-img-box"
-                :class="active === index ? 'active' : ''"
-              >
-                <img
-                  :src="imgUrl(item)"
-                  :alt="lang === 'zh' ? item.type : item.typeEn"
-                  class="nav-item-icon"
-                />
-                <img
-                  :src="imgUrlHover(item)"
-                  :alt="lang === 'zh' ? item.type : item.typeEn"
-                  class="nav-item-icon-hover"
-                />
+            <div v-for="(item, index) in caseCategory" :key="item.type" class="case-tab-item" @click="changeActive(index)">
+              <div class="case-img-box" :class="active === index ? 'active' : ''">
+                <img :src="imgUrl(item)" :alt="lang === 'zh' ? item.type : item.typeEn" class="nav-item-icon" />
+                <img :src="imgUrlHover(item)" :alt="lang === 'zh' ? item.type : item.typeEn" class="nav-item-icon-hover" />
               </div>
               <div :class="['case-word', active === index ? 'active' : '']">
                 {{ lang === 'zh' ? item.type : item.typeEn }}
@@ -182,9 +148,7 @@ onUnmounted(() => {
               v-for="item2 in caseData && caseData[caseCategory[active].typeEn]"
               :key="item2.company"
               class="user-card"
-              @click="
-                handleGo(item2.detail ? `/${item2.path}` : item2.officialpath)
-              "
+              @click="handleGo(item2.detail ? `/${item2.path}` : item2.officialpath)"
             >
               <div class="user-title">{{ item2.company }}</div>
               <div class="user-word">{{ item2.summary }}</div>
@@ -193,10 +157,7 @@ onUnmounted(() => {
         </OCard>
       </div>
       <div class="case-more">
-        <a
-          :href="`/${lang}/userPractice/?industry=${active + 1}`"
-          rel="noopener noreferrer"
-        >
+        <a :href="`/${lang}/user-practice/?industry=${active + 1}`" rel="noopener noreferrer">
           <OButton animation type="text" class="case-more-item">
             {{ i18n.common.VIEW_MORE }}
             <template #suffixIcon>

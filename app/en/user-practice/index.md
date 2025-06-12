@@ -1,5 +1,5 @@
 ---
-title: 'userPractice'
+title: 'User Practice'
 ---
 
 <script setup>
