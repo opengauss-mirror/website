@@ -19,7 +19,7 @@ const OBS_TRANSFER_LINK = 'https://obs-transfer.obs.cn-north-4.myhuaweicloud.com
 const OBS_TRANSFER_LINK1 = 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/'; // 服务商认证存储的obs地址
 const OBS_LEARN_LINK = 'https://learningvideo.obs.ap-southeast-1.myhuaweicloud.com:443/'; // 资讯视频存储的obs地址
 const OBS_JIACAN_LINK = 'https://jiacan.obs.ap-southeast-1.myhuaweicloud.com'; // 资讯视频存储的obs地址
-const EULER_LINK = 'https://www.openeuler.org/'; // openeuler官网
+const EULER_LINK = 'https://www.openeuler.openatom.cn'; // openeuler官网
 const MINDSPORE_LINK = 'https://mindspore.cn/'; // mindspore官网
 const LOOKENG_LINK = 'https://openlookeng.io/'; // openlookeng官网
 const KUNPENG_LINK = 'https://www.hikunpeng.com/'; // hikunpeng官网
@@ -48,6 +48,11 @@ const XINGYEBANK_LINK = 'https://www.cib.com.cn'; // 兴业银行
 const SHIMO_LINK = 'https://shimo.im'; // 石墨报名
 const SUMMIT2023_JOIN = 'https://e-campaign.huawei.com/t/BbuQr2'; // SUMMIT报名
 const CECN_LINK = 'http://www.ce.cn/'; // 中国经济网
+const EULER_EN_LINK = 'https://www.openeuler.org';
+// opengauss网站
+export const OPENUBMC_URL = 'https://www.openubmc.cn';
+// openfuyao网站
+export const OPENFUYAO_URL = 'https://www.openfuyao.cn';
 
 export {
   OBS_Summit_PPT,
@@ -85,6 +90,7 @@ export {
   OBS_TRANSFER_LINK1,
   OBS_LEARN_LINK,
   EULER_LINK,
+  EULER_EN_LINK,
   MINDSPORE_LINK,
   LOOKENG_LINK,
   KUNPENG_LINK,

@@ -4,8 +4,6 @@ import { useCommon } from '@/stores/common';
 
 import { useData } from 'vitepress';
 
-import { windowOpen } from '@/shared/utils';
-
 interface linkListItemT {
   img: string;
   imgDark: string;
@@ -28,25 +26,24 @@ const commonStore = useCommon();
 const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
 const { lang } = useData();
 const isZh = computed(() => (lang.value === 'zh' ? true : false));
-
-const handerClick = (item: linkListItemT) => {
-  if (props.islink) {
-    const path = isZh.value ? item.path : item.pathEn;
-    windowOpen(path, '_blank');
-  }
-};
 </script>
 
 <template>
   <div class="picture-panel">
-    <div
-      v-for="(item, index) in props.linkList"
-      :key="index"
-      :class="[props.islink ? 'link-item path' : 'link-item']"
-      @click="handerClick(item)"
-    >
-      <img :src="isLight ? item.img : item.imgDark" :alt="item.name" />
-    </div>
+    <template v-for="(item, index) in props.linkList" :key="index">
+      <a
+        v-if="props.islink"
+        :class="[props.islink ? 'link-item path' : 'link-item']"
+        :href="isZh ? item.path : item.pathEn"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img :src="isLight ? item.img : item.imgDark" :alt="item.name" />
+      </a>
+      <div v-else class="link-item">
+        <img :src="isLight ? item.img : item.imgDark" :alt="item.name" />
+      </div>
+    </template>
   </div>
 </template>
 
