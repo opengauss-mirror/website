@@ -297,11 +297,11 @@ html[lang='zh'] {
         .content-text {
           .text-img {
             object-fit: cover;
-            height: 150px;
+            height: 180px;
             display: block;
             @media (max-width: 767px) {
               width: inherit;
-              height: 75px;
+              height: 90px;
             }
           }
         }

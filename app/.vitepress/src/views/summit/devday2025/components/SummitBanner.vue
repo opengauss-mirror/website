@@ -83,7 +83,7 @@ const onButtonClick = (href: string) => {
   }
 
   .text-img {
-    height: 150px;
+    height: 180px;
     @media (max-width: 768px) {
       display: none;
     }
@@ -91,7 +91,7 @@ const onButtonClick = (href: string) => {
   .text-img-mb {
     display: none;
     @media (max-width: 767px) {
-      height: 75px;
+      height: 90px;
       display: block;
     }
   }
