@@ -297,7 +297,7 @@ html[lang='zh'] {
         .content-text {
           .text-img {
             object-fit: cover;
-            height: 180px;
+            height: 183px;
             display: block;
             @media (max-width: 767px) {
               width: inherit;
