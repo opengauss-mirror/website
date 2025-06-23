@@ -83,7 +83,7 @@ const onButtonClick = (href: string) => {
   }
 
   .text-img {
-    height: 180px;
+    height: 183px;
     @media (max-width: 768px) {
       display: none;
     }

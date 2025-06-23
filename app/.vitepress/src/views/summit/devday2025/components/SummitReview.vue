@@ -35,7 +35,7 @@ const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
 .summit-review {
   margin-top: 72px;
   @media (max-width: 767px) {
-    margin-top: var(--o-spacing-h2);
+    margin-top: var(--o-spacing-h3);
   }
 }
 .link-box {
