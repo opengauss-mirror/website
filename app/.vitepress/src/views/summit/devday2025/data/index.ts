@@ -97,7 +97,7 @@ export default {
           person: [
             {
               name: '张皖川',
-              post: '云和恩墨创始人数据库内核架构师',
+              post: '云和恩墨资深数据库内核架构师',
             },
           ],
         },
