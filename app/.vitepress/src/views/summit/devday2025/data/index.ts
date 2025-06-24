@@ -35,7 +35,7 @@ export default {
         },
         {
           time: '9:45-10:10',
-          desc: '主题演讲：开源五载聚产业，技术引领创未来\noGRAC 多写方案联合发布',
+          desc: '主题演讲：开源五载聚产业，技术引领创未来\n发布仪式：oGRAC 多写方案联合发布',
           person: [
             {
               name: '熊伟',
@@ -57,7 +57,7 @@ export default {
             },
             {
               name: '曹宇',
-              post: 'openGauss Maintainer',
+              post: 'openGauss 社区Maintainer',
             },
           ],
         },

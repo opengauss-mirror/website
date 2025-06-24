@@ -3,6 +3,8 @@ import { ref, computed, watch } from 'vue';
 import { useCommon } from '@/stores/common';
 import SummitSchedule from './SummitSchedule.vue';
 
+import floorImg from '../img/floor-img.png';
+
 defineProps({
   agendaData: {
     type: Object,
@@ -19,6 +21,7 @@ const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
     <div class="title-box" :class="{ 'title-box-dark': !isLight }">
       <p class="title-bg">{{ agendaData.titleBg }}</p>
       <p class="title">{{ agendaData.title }}</p>
+      <img class="floor-img" :src="floorImg" alt="" />
     </div>
     <div class="agenda">
       <div class="tab">
