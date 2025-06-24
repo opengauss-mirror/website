@@ -171,10 +171,16 @@ const onButtonClick = (href: string) => {
     > span {
       display: block;
     }
+    span + span {
+      margin-top: 12px;
+    }
     @media (max-width: 1100px) {
       margin-right: 0;
       font-size: var(--o-font-size-tip);
       line-height: var(--o-line-height-tip);
+      span + span {
+        margin-top: 4px;
+      }
     }
   }
 
