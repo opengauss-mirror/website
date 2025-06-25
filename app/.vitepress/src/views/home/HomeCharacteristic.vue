@@ -14,32 +14,15 @@ const i18n = useI18n();
     <p class="info">{{ i18n.home.CHARACTERR_INFO.TITLE }}</p>
     <div class="character-content">
       <div class="character-content-box">
-        <div
-          v-for="(item, index) in i18n.home.CHARACTERR_INFO.LIST"
-          :key="index"
-          class="character-item"
-        >
-          <img
-            class="cover gif"
-            :src="commonStore.theme === 'dark' ? item.GIF_DARK : item.GIF"
-            alt=""
-          />
-          <img
-            class="cover"
-            :src="commonStore.theme === 'dark' ? item.PNG_DARK : item.PNG"
-            alt=""
-          />
+        <div v-for="(item, index) in i18n.home.CHARACTERR_INFO.LIST" :key="index" class="character-item">
+          <img class="cover gif" :src="commonStore.theme === 'dark' ? item.GIF_DARK : item.GIF" alt="" />
+          <img class="cover" :src="commonStore.theme === 'dark' ? item.PNG_DARK : item.PNG" alt="" />
           <h3 class="title">{{ item.NAME }}</h3>
           <p class="text">{{ item.TEXT }}</p>
         </div>
       </div>
       <p class="down">
-        <a
-          :href="i18n.home.CHARACTERR_INFO.DOWN_link"
-          download
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a :href="i18n.home.CHARACTERR_INFO.DOWN_link" download target="_blank" rel="noopener noreferrer">
           <OButton animation size="small" type="text">
             {{ i18n.home.CHARACTERR_INFO.DOWN_NAME }}
             <template #suffixIcon>
@@ -61,34 +44,34 @@ html[lang='zh'] .home-character .info {
 }
 .home-character {
   .info {
-    font-size: var(--o-font-size-h7);
-    line-height: var(--o-line-height-h7);
-    color: var(--o-color-text1);
+    font-size: var(--e-font-size-h7);
+    line-height: var(--e-line-height-h7);
+    color: var(--e-color-text1);
     text-align: justify;
 
     @media (max-width: 1100px) {
-      font-size: var(--o-font-size-tip);
-      line-height: var(--o-line-height-tip);
-      margin-bottom: var(--o-spacing-h8);
+      font-size: var(--e-font-size-tip);
+      line-height: var(--e-line-height-tip);
+      margin-bottom: var(--e-spacing-h8);
     }
   }
 
   .icon-download {
-    color: var(--o-color-brand1);
-    width: var(--o-font-size-h8);
-    height: var(--o-font-size-h8);
+    color: var(--e-color-brand1);
+    width: var(--e-font-size-h8);
+    height: var(--e-font-size-h8);
   }
   .character-content {
-    margin: var(--o-spacing-h2) 0 0;
-    padding: 0 var(--o-spacing-h1);
-    box-shadow: var(--o-shadow-l1);
-    background: var(--o-color-bg2);
+    margin: var(--e-spacing-h2) 0 0;
+    padding: 0 var(--e-spacing-h1);
+    box-shadow: var(--e-shadow-l1);
+    background: var(--e-color-bg2);
     text-align: center;
     .character-content-box {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      padding: var(--o-spacing-h2) 0;
-      border-bottom: 1px solid var(--o-color-division1);
+      padding: var(--e-spacing-h2) 0;
+      border-bottom: 1px solid var(--e-color-division1);
       .character-item {
         &:hover {
           .cover {
@@ -107,29 +90,29 @@ html[lang='zh'] .home-character .info {
         }
       }
       .title {
-        font-size: var(--o-font-size-h7);
-        line-height: var(--o-line-height-h7);
-        color: var(--o-color-text1);
-        margin: var(--o-spacing-h8) 0;
+        font-size: var(--e-font-size-h7);
+        line-height: var(--e-line-height-h7);
+        color: var(--e-color-text1);
+        margin: var(--e-spacing-h8) 0;
         font-weight: 500;
         @media (max-width: 1100px) {
-          font-size: var(--o-font-size-text);
-          line-height: var(--o-line-height-text);
+          font-size: var(--e-font-size-text);
+          line-height: var(--e-line-height-text);
         }
       }
       .text {
-        font-size: var(--o-font-size-text);
-        line-height: var(--o-line-height-text);
-        color: var(--o-color-text4);
+        font-size: var(--e-font-size-text);
+        line-height: var(--e-line-height-text);
+        color: var(--e-color-text4);
         font-weight: 400;
         @media (max-width: 1100px) {
-          font-size: var(--o-font-size-tip);
-          line-height: var(--o-line-height-tip);
+          font-size: var(--e-font-size-tip);
+          line-height: var(--e-line-height-tip);
         }
       }
       @media (max-width: 1100px) {
         grid-template-columns: repeat(2, 1fr);
-        gap: var(--o-spacing-h2);
+        gap: var(--e-spacing-h2);
       }
     }
     .down {
@@ -139,8 +122,8 @@ html[lang='zh'] .home-character .info {
       }
     }
     @media (max-width: 1100px) {
-      padding: 0 var(--o-spacing-h4);
-      margin: var(--o-spacing-h5) 0 0;
+      padding: 0 var(--e-spacing-h4);
+      margin: var(--e-spacing-h5) 0 0;
     }
   }
 }

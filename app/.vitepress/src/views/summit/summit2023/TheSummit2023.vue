@@ -175,33 +175,33 @@ onMounted(() => {
 }
 
 @mixin floor-box {
-  margin-top: var(--o-spacing-h1);
+  margin-top: var(--e-spacing-h1);
   @media screen and (max-width: 768px) {
-    margin-top: var(--o-spacing-h2);
+    margin-top: var(--e-spacing-h2);
   }
 }
 @mixin floor-title {
   text-align: center;
-  font-size: var(--o-font-size-h3);
-  line-height: var(--o-line-height-h3);
-  color: var(--o-color-text1);
+  font-size: var(--e-font-size-h3);
+  line-height: var(--e-line-height-h3);
+  color: var(--e-color-text1);
   font-weight: 300;
   @media (max-width: 767px) {
-    font-size: var(--o-font-size-h8);
-    line-height: var(--o-line-height-h8);
+    font-size: var(--e-font-size-h8);
+    line-height: var(--e-line-height-h8);
   }
 }
 .summit-intro {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  font-size: var(--o-font-size-h6);
-  line-height: var(--o-line-height-h5);
-  color: var(--o-color-text1);
+  font-size: var(--e-font-size-h6);
+  line-height: var(--e-line-height-h5);
+  color: var(--e-color-text1);
   font-weight: 400;
   @media screen and (max-width: 768px) {
-    font-size: var(--o-font-size-tip);
-    line-height: var(--o-line-height-tip);
+    font-size: var(--e-font-size-tip);
+    line-height: var(--e-line-height-tip);
     gap: 4px;
   }
 }
@@ -239,7 +239,7 @@ onMounted(() => {
       }
       &.active {
         color: #fff;
-        background-color: var(--o-color-brand1);
+        background-color: var(--e-color-brand1);
         border: 1px solid #fff;
       }
       .date-day {
@@ -298,10 +298,10 @@ onMounted(() => {
       display: inline-block;
       margin: 0 0 24px;
       cursor: pointer;
-      border: 1px solid var(--o-color-border2);
-      color: var(--o-color-text1);
+      border: 1px solid var(--e-color-border2);
+      color: var(--e-color-text1);
       text-align: center;
-      background: var(--o-color-bg2);
+      background: var(--e-color-bg2);
       font-size: 14px;
       line-height: 38px;
       padding: 0 16px;
@@ -316,8 +316,8 @@ onMounted(() => {
 
     .is-active .time-tabs {
       color: #fff;
-      background: var(--o-color-brand1);
-      border-color: var(--o-color-brand1);
+      background: var(--e-color-brand1);
+      border-color: var(--e-color-brand1);
     }
   }
 }
@@ -328,21 +328,21 @@ onMounted(() => {
   }
   h4 {
     margin-top: 20px;
-    font-size: var(--o-font-size-h5);
-    line-height: var(--o-line-height-h5);
-    color: var(--o-color-text1);
+    font-size: var(--e-font-size-h5);
+    line-height: var(--e-line-height-h5);
+    color: var(--e-color-text1);
     font-weight: 400;
     text-align: center;
     @media screen and (max-width: 768px) {
-      font-size: var(--o-font-size-text);
-      line-height: var(--o-line-height-text);
-      margin-top: var(--o-spacing-h5);
+      font-size: var(--e-font-size-text);
+      line-height: var(--e-line-height-text);
+      margin-top: var(--e-spacing-h5);
     }
   }
   .live-box {
-    margin-top: var(--o-spacing-h2);
+    margin-top: var(--e-spacing-h2);
     @media (max-width: 767px) {
-      margin-top: var(--o-spacing-h4);
+      margin-top: var(--e-spacing-h4);
     }
   }
 }
@@ -352,9 +352,9 @@ onMounted(() => {
     @include floor-title();
   }
   .partner-content {
-    margin-top: var(--o-spacing-h2);
+    margin-top: var(--e-spacing-h2);
     @media (max-width: 767px) {
-      margin-top: var(--o-spacing-h4);
+      margin-top: var(--e-spacing-h4);
     }
   }
 }
@@ -365,12 +365,12 @@ onMounted(() => {
     h3 {
       font-size: 26px;
       line-height: 30px;
-      color: var(--o-color-text1);
-      margin-right: var(--o-spacing-h6);
+      color: var(--e-color-text1);
+      margin-right: var(--e-spacing-h6);
       @media screen and (max-width: 768px) {
-        font-size: var(--o-font-size-h5);
-        line-height: var(--o-line-height-text);
-        margin-right: var(--o-spacing-h7);
+        font-size: var(--e-font-size-h5);
+        line-height: var(--e-line-height-text);
+        margin-right: var(--e-spacing-h7);
       }
     }
     img {
@@ -385,23 +385,23 @@ onMounted(() => {
     width: 100%;
     @media screen and (max-width: 768px) {
       width: 100%;
-      margin-top: var(--o-spacing-h4);
+      margin-top: var(--e-spacing-h4);
     }
     p {
       & ~ p {
-        margin-top: var(--o-spacing-h4);
+        margin-top: var(--e-spacing-h4);
       }
       a {
-        font-size: var(--o-font-size-h6);
-        line-height: var(--o-line-height-h6);
+        font-size: var(--e-font-size-h6);
+        line-height: var(--e-line-height-h6);
         @media screen and (max-width: 768px) {
-          font-size: var(--o-font-size-tip);
-          line-height: var(--o-line-height-tip);
+          font-size: var(--e-font-size-tip);
+          line-height: var(--e-line-height-tip);
         }
         & + a {
-          margin-top: var(--o-spacing-h4);
+          margin-top: var(--e-spacing-h4);
           @media screen and (max-width: 768px) {
-            margin-top: var(--o-spacing-h8);
+            margin-top: var(--e-spacing-h8);
           }
         }
       }

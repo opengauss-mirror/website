@@ -37,7 +37,7 @@ const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
 .summit-agenda {
   margin-top: 72px;
   @media (max-width: 767px) {
-    margin-top: var(--o-spacing-h3);
+    margin-top: var(--e-spacing-h3);
   }
 }
 
@@ -47,35 +47,35 @@ const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
 .tab {
   padding: 13px 0 16px;
   border-bottom: 1px solid rgba(125, 50, 234, 0.25);
-  margin-top: var(--o-spacing-h2);
+  margin-top: var(--e-spacing-h2);
   @media (max-width: 767px) {
     padding: 0 0 3px;
-    margin-top: var(--o-spacing-h4);
+    margin-top: var(--e-spacing-h4);
   }
 }
 .tab-title {
   font-size: 22px;
   line-height: 30px;
   font-weight: 500;
-  color: var(--o-color-brand1);
+  color: var(--e-color-brand1);
   padding: 13px 0 17px;
-  border-bottom: 2px solid var(--o-color-brand1);
+  border-bottom: 2px solid var(--e-color-brand1);
   @media (max-width: 767px) {
-    font-size: var(--o-font-size-h8);
-    line-height: var(--o-line-height-h8);
+    font-size: var(--e-font-size-h8);
+    line-height: var(--e-line-height-h8);
     padding: 0 0 4px;
   }
 }
 .date-en {
   opacity: 0.25;
   font-size: 32px;
-  color: var(--o-color-brand1);
+  color: var(--e-color-brand1);
   font-weight: 900;
   position: absolute;
   top: 0;
   right: 0;
   @media (max-width: 767px) {
-    font-size: var(--o-font-size-h8);
+    font-size: var(--e-font-size-h8);
   }
 }
 </style>

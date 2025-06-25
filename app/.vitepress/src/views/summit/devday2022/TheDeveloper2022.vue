@@ -40,16 +40,10 @@ const otherTabType = ref(0);
     <div class="offline-panel">
       <h4 class="meeting-title">{{ summitData.offline.daytime }}</h4>
       <div class="agenda-list">
-        <div
-          v-for="item in summitData.offline.list"
-          :key="item.time"
-          class="agenda-item"
-        >
+        <div v-for="item in summitData.offline.list" :key="item.time" class="agenda-item">
           <span class="time"><IconTime />{{ item.time }}</span>
           <div class="info">
-            <span v-for="sub in item.option" :key="sub" class="inline">{{
-              sub
-            }}</span>
+            <span v-for="sub in item.option" :key="sub" class="inline">{{ sub }}</span>
           </div>
         </div>
       </div>
@@ -57,11 +51,7 @@ const otherTabType = ref(0);
     <div class="online-panel">
       <h4 class="meeting-title">{{ summitData.online.daytime }}</h4>
       <OTabs v-model="tabType" class="schedule-tabs">
-        <el-tab-pane
-          v-for="item in summitData.online.list"
-          :key="item.id"
-          :name="item.id"
-        >
+        <el-tab-pane v-for="item in summitData.online.list" :key="item.id" :name="item.id">
           <template #label>
             <div class="time-tabs">
               <span class="taber-top"> {{ item.type }}</span>
@@ -74,17 +64,9 @@ const otherTabType = ref(0);
         <div class="schedule-item" :class="{ isShow: tabType === 'main' }">
           <SummitSchedule :options="summitData.online.list[0].children" />
         </div>
-        <div
-          class="schedule-item other"
-          :class="{ isShow: tabType === 'other' }"
-        >
+        <div class="schedule-item other" :class="{ isShow: tabType === 'other' }">
           <OTabs v-model="otherTabType" class="other-tabs">
-            <OTabPane
-              v-for="item in summitData.online.list[1].children"
-              :key="item.id"
-              :label="item.name"
-              :name="item.id"
-            >
+            <OTabPane v-for="item in summitData.online.list[1].children" :key="item.id" :label="item.name" :name="item.id">
               <p class="other-text">联合主办：{{ item.desc }}</p>
               <SummitSchedule :options="item.children" />
             </OTabPane>
@@ -93,34 +75,18 @@ const otherTabType = ref(0);
         <div class="schedule-item" :class="{ isShow: tabType === 'sig' }">
           <div class="sig-box">
             <h3>{{ summitData.online.list[2].name }}</h3>
-            <a
-              class="link"
-              :href="summitData.online.list[2].path"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a class="link" :href="summitData.online.list[2].path" target="_blank" rel="noopener noreferrer">
               {{ summitData.online.list[2].desc }}
               <IconArrowRight />
             </a>
           </div>
           <div class="sig-list">
-            <span class="time"
-              ><IconTime />{{ summitData.online.list[2].time1 }}</span
-            >
+            <span class="time"><IconTime />{{ summitData.online.list[2].time1 }}</span>
             <ul>
-              <li
-                v-for="item in summitData.online.list[2].children"
-                :key="item.name"
-              >
+              <li v-for="item in summitData.online.list[2].children" :key="item.name">
                 <span class="name">{{ item.name }}</span>
                 <span class="desc">{{ item.desc }}</span>
-                <a
-                  :href="item.link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="link"
-                  >报名</a
-                >
+                <a :href="item.link" target="_blank" rel="noopener noreferrer" class="link">报名</a>
               </li>
             </ul>
           </div>
@@ -128,30 +94,17 @@ const otherTabType = ref(0);
       </OContainer>
     </div>
     <h3 class="title-bar">{{ summitData.titleBar[2] }}</h3>
-    <SummitGuests
-      :lecturer-list="summitData.guestsList"
-      shape="circle"
-      :web-columns-num="4"
-      :mobile-columns-num="2"
-    />
+    <SummitGuests :lecturer-list="summitData.guestsList" shape="circle" :web-columns-num="4" :mobile-columns-num="2" />
     <div class="summit-partners">
       <h3 class="title-bar">{{ summitData.titleBar[3] }}</h3>
       <h4 class="meeting-title">
         {{ summitData.partnersList.title[0] }}
       </h4>
-      <LinkPanel
-        :link-list="summitData.partnersList.p1"
-        :islink="false"
-        class="one"
-      />
+      <LinkPanel :link-list="summitData.partnersList.p1" :islink="false" class="one" />
       <h4 class="meeting-title">
         {{ summitData.partnersList.title[1] }}
       </h4>
-      <LinkPanel
-        :link-list="summitData.partnersList.p2"
-        :islink="false"
-        class="one"
-      />
+      <LinkPanel :link-list="summitData.partnersList.p2" :islink="false" class="one" />
       <h4 class="meeting-title">
         {{ summitData.partnersList.title[2] }}
       </h4>
@@ -163,14 +116,7 @@ const otherTabType = ref(0);
     </div>
     <div class="previous">
       <h4 class="meeting-title">{{ summitData.titleBar[4] }}</h4>
-      <a
-        v-for="item in summitData.previous"
-        :key="item.link"
-        :href="item.link"
-        target="_blank"
-        rel="noopener noreferrer"
-        >{{ item.title }}</a
-      >
+      <a v-for="item in summitData.previous" :key="item.link" :href="item.link" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
     </div>
   </AppContent>
 </template>
@@ -255,8 +201,8 @@ const otherTabType = ref(0);
 .summit-partners {
   .meeting-title {
     @media (max-width: 767px) {
-      font-size: var(--o-font-size-tip);
-      line-height: var(--o-line-height-tip);
+      font-size: var(--e-font-size-tip);
+      line-height: var(--e-line-height-tip);
     }
   }
   .picture-panel {
@@ -266,42 +212,42 @@ const otherTabType = ref(0);
 }
 .summit-info {
   .text {
-    font-size: var(--o-font-size-h7);
-    line-height: var(--o-line-height-h7);
-    color: var(--o-color-text1);
+    font-size: var(--e-font-size-h7);
+    line-height: var(--e-line-height-h7);
+    color: var(--e-color-text1);
     text-indent: 2em;
     text-align: justify;
     margin-bottom: 8px;
     @media (max-width: 767px) {
-      font-size: var(--o-font-size-text);
-      line-height: var(--o-line-height-text);
+      font-size: var(--e-font-size-text);
+      line-height: var(--e-line-height-text);
     }
   }
 }
 .title-bar {
   text-align: center;
-  font-size: var(--o-font-size-h3);
-  line-height: var(--o-line-height-h3);
-  color: var(--o-color-text1);
+  font-size: var(--e-font-size-h3);
+  line-height: var(--e-line-height-h3);
+  color: var(--e-color-text1);
   font-weight: 300;
   margin: 64px 0 40px;
   @media (max-width: 767px) {
-    font-size: var(--o-font-size-h8);
-    line-height: var(--o-line-height-h8);
+    font-size: var(--e-font-size-h8);
+    line-height: var(--e-line-height-h8);
     margin: 40px 0 24px;
   }
 }
 .meeting-title {
   font-weight: 400;
-  color: var(--o-color-text1);
-  font-size: var(--o-font-size-h5);
-  line-height: var(--o-line-height-h5);
+  color: var(--e-color-text1);
+  font-size: var(--e-font-size-h5);
+  line-height: var(--e-line-height-h5);
   text-align: center;
   margin-bottom: 24px;
   @media (max-width: 767px) {
     margin-bottom: 12px;
-    font-size: var(--o-font-size-text);
-    line-height: var(--o-line-height-text);
+    font-size: var(--e-font-size-text);
+    line-height: var(--e-line-height-text);
   }
 }
 .agenda-list {
@@ -316,16 +262,16 @@ const otherTabType = ref(0);
   margin-bottom: 16px;
   align-items: center;
   .time {
-    font-size: var(--o-font-size-h7);
-    line-height: var(--o-line-height-h7);
-    color: var(--o-color-text4);
+    font-size: var(--e-font-size-h7);
+    line-height: var(--e-line-height-h7);
+    color: var(--e-color-text4);
     width: 192px;
     display: flex;
     align-items: center;
     svg {
       width: 18px;
       height: 18px;
-      color: var(--o-color-text4);
+      color: var(--e-color-text4);
       margin-right: 6px;
       @media screen and (max-width: 1100px) {
         display: none;
@@ -345,13 +291,13 @@ const otherTabType = ref(0);
     justify-content: center;
     gap: 24px;
     span {
-      color: var(--o-color-text1);
+      color: var(--e-color-text1);
       line-height: 64px;
-      background-color: var(--o-color-bg1);
+      background-color: var(--e-color-bg1);
       border-radius: 2px;
       border: 1px solid #7d32ea;
       flex: 1;
-      font-size: var(--o-font-size-h7);
+      font-size: var(--e-font-size-h7);
       text-align: center;
       @media (max-width: 1100px) {
         line-height: 48px;
@@ -396,21 +342,21 @@ const otherTabType = ref(0);
     text-align: center;
     .el-tabs__item {
       @media (max-width: 1100px) {
-        font-size: var(--o-font-size-tip);
-        line-height: var(--o-line-height-tip);
+        font-size: var(--e-font-size-tip);
+        line-height: var(--e-line-height-tip);
       }
     }
   }
   .other-text {
     text-align: center;
     margin: 24px 0;
-    color: var(--o-color-text1);
-    font-size: var(--o-font-size-h7);
-    line-height: var(--o-line-height-h7);
+    color: var(--e-color-text1);
+    font-size: var(--e-font-size-h7);
+    line-height: var(--e-line-height-h7);
     text-align: center;
     @media (max-width: 1100px) {
-      font-size: var(--o-font-size-text);
-      line-height: var(--o-line-height-text);
+      font-size: var(--e-font-size-text);
+      line-height: var(--e-line-height-text);
       margin: 16px 0;
     }
   }
@@ -433,11 +379,11 @@ const otherTabType = ref(0);
     margin: 0 0 24px;
     cursor: pointer;
     border-radius: 8px;
-    border: 1px solid var(--o-color-border2);
-    color: var(--o-color-text1);
+    border: 1px solid var(--e-color-border2);
+    color: var(--e-color-text1);
     width: 120px;
     text-align: center;
-    background: var(--o-color-bg2);
+    background: var(--e-color-bg2);
     .taber-top {
       line-height: 64px;
       font-size: 24px;
@@ -447,7 +393,7 @@ const otherTabType = ref(0);
       }
     }
     .taber-bottom {
-      border-top: 1px solid var(--o-color-border2);
+      border-top: 1px solid var(--e-color-border2);
       font-size: 20px;
       line-height: 36px;
       display: block;
@@ -463,31 +409,31 @@ const otherTabType = ref(0);
 
   .is-active .time-tabs {
     color: #fff;
-    background: var(--o-color-brand1);
-    border-color: var(--o-color-brand2);
+    background: var(--e-color-brand1);
+    border-color: var(--e-color-brand2);
   }
 }
 .sig-box {
   text-align: center;
   margin: 12px 0 24px;
   h3 {
-    font-size: var(--o-font-size-h7);
-    line-height: var(--o-line-height-h7);
-    color: var(--o-color-text1);
+    font-size: var(--e-font-size-h7);
+    line-height: var(--e-line-height-h7);
+    color: var(--e-color-text1);
     @media screen and (max-width: 1100px) {
-      font-size: var(--o-font-size-text);
-      line-height: var(--o-line-height-text);
+      font-size: var(--e-font-size-text);
+      line-height: var(--e-line-height-text);
     }
   }
   .link {
-    font-size: var(--o-font-size-text);
-    line-height: var(--o-line-height-text);
+    font-size: var(--e-font-size-text);
+    line-height: var(--e-line-height-text);
     margin-top: 12px;
     display: inline-flex;
     align-items: center;
     @media screen and (max-width: 1100px) {
-      font-size: var(--o-font-size-tip);
-      line-height: var(--o-line-height-tip);
+      font-size: var(--e-font-size-tip);
+      line-height: var(--e-line-height-tip);
     }
     svg {
       width: 18px;
@@ -504,19 +450,19 @@ const otherTabType = ref(0);
   justify-content: space-between;
   .time {
     width: 192px;
-    color: var(--o-color-text4);
+    color: var(--e-color-text4);
     height: 20px;
     white-space: nowrap;
     font-size: 18px;
     @media screen and (max-width: 1100px) {
-      font-size: var(--o-font-size-tip);
-      line-height: var(--o-line-height-tip);
+      font-size: var(--e-font-size-tip);
+      line-height: var(--e-line-height-tip);
       width: 80px;
     }
     svg {
       width: 18px;
       height: 18px;
-      color: var(--o-color-text4);
+      color: var(--e-color-text4);
       margin-right: 6px;
       @media screen and (max-width: 1100px) {
         display: none;
@@ -526,24 +472,24 @@ const otherTabType = ref(0);
   ul {
     flex: 1;
     li {
-      background: var(--o-color-bg2);
+      background: var(--e-color-bg2);
       border-radius: 2px;
-      border: 1px solid var(--o-color-brand1);
+      border: 1px solid var(--e-color-brand1);
       font-size: 18px;
       padding: 16px 24px;
       position: relative;
       margin-bottom: 16px;
       .name {
-        font-size: var(--o-font-size-h7);
-        line-height: var(--o-line-height-h7);
-        color: var(--o-color-text1);
+        font-size: var(--e-font-size-h7);
+        line-height: var(--e-line-height-h7);
+        color: var(--e-color-text1);
         display: block;
         font-weight: 500;
       }
       .desc {
-        font-size: var(--o-font-size-text);
-        line-height: var(--o-line-height-text);
-        color: var(--o-color-text4);
+        font-size: var(--e-font-size-text);
+        line-height: var(--e-line-height-text);
+        color: var(--e-color-text4);
         margin-top: 10px;
         display: block;
       }
@@ -556,7 +502,7 @@ const otherTabType = ref(0);
         background: rgba(125, 50, 234, 0.1);
         border-radius: 0px 2px 0px 0px;
         font-size: 14px;
-        color: var(--o-color-brand1);
+        color: var(--e-color-brand1);
         display: block;
         text-align: center;
       }
@@ -568,8 +514,8 @@ const otherTabType = ref(0);
           line-height: 24px;
         }
         .desc {
-          font-size: var(--o-font-size-tip);
-          line-height: var(--o-line-height-tip);
+          font-size: var(--e-font-size-tip);
+          line-height: var(--e-line-height-tip);
           margin-top: 4px;
         }
         .link {
@@ -591,11 +537,11 @@ const otherTabType = ref(0);
     margin-bottom: 24px;
   }
   a {
-    font-size: var(--o-font-size-h6);
-    line-height: var(--o-line-height-h6);
+    font-size: var(--e-font-size-h6);
+    line-height: var(--e-line-height-h6);
     @media screen and (max-width: 767px) {
-      font-size: var(--o-font-size-text);
-      line-height: var(--o-line-height-text);
+      font-size: var(--e-font-size-text);
+      line-height: var(--e-line-height-text);
     }
   }
 }

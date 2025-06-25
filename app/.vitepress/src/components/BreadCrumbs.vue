@@ -30,12 +30,7 @@ const { bread1, bread2, link1, link2 } = toRefs(props);
       <IconChevronRight />
     </OIcon>
     <span
-      ><a
-        :href="link2"
-        :class="link2 === '#' ? 'no-click' : ''"
-        rel="noopener noreferrer"
-        >{{ bread2 }}</a
-      ></span
+      ><a :href="link2" :class="link2 === '#' ? 'no-click' : ''" rel="noopener noreferrer">{{ bread2 }}</a></span
     >
     <slot></slot>
   </div>
@@ -43,8 +38,8 @@ const { bread1, bread2, link1, link2 } = toRefs(props);
 <style lang="scss" scoped>
 .bread-crumbs {
   width: 100%;
-  font-size: var(--o-font-size-tip);
-  line-height: var(--o-line-height-tip);
+  font-size: var(--e-font-size-tip);
+  line-height: var(--e-line-height-tip);
   display: flex;
   align-items: center;
   span {
@@ -52,18 +47,18 @@ const { bread1, bread2, link1, link2 } = toRefs(props);
   }
   span:nth-of-type(1) {
     a {
-      color: var(--o-color-text4);
+      color: var(--e-color-text4);
     }
   }
   span:nth-of-type(2) {
     margin: 0 4px;
-    font-size: var(--o-font-size-h8);
+    font-size: var(--e-font-size-h8);
   }
   span:nth-of-type(2),
   span:nth-of-type(3) {
-    color: var(--o-color-text1);
+    color: var(--e-color-text1);
     a {
-      color: var(--o-color-text1);
+      color: var(--e-color-text1);
     }
     .no-click {
       cursor: default;

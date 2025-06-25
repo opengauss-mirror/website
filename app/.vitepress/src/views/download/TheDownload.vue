@@ -32,11 +32,7 @@ const getData: any = computed(() => {
 
 <template>
   <ClientOnly>
-    <BannerLevel2
-      :background-image="Banner"
-      :title="i18n.download.PAGE_TITLE"
-      :illustration="illustration"
-    />
+    <BannerLevel2 :background-image="Banner" :title="i18n.download.PAGE_TITLE" :illustration="illustration" />
     <AppContent>
       <div class="download-wrap">
         <div class="description-wrap">
@@ -46,60 +42,34 @@ const getData: any = computed(() => {
             </p>
             <p>
               {{ downloadData.MORE_DETAIL
-              }}<a
-                :href="downloadData.SPECIFICATION_LINK"
-                target="_blank"
-                rel="noopener noreferrer"
-                >{{ downloadData.VIEW_SPECIFICATION }}</a
+              }}<a :href="downloadData.SPECIFICATION_LINK" target="_blank" rel="noopener noreferrer">{{ downloadData.VIEW_SPECIFICATION }}</a
               ><span>{{ lang === 'zh' ? '。' : '.' }}</span>
             </p>
           </div>
           <div class="description-item">
             <p>
               {{ downloadData.PECULIARITY_DETAIL
-              }}<a
-                :href="DOCS_LINK + downloadData.RELEASE_LINK"
-                target="_blank"
-                rel="noopener noreferrer"
-                >{{
-                  lang === 'zh'
-                    ? getData[0].docs_list[0].name
-                    : getData[0].docs_list[0].nameEn
-                }}</a
+              }}<a :href="DOCS_LINK + downloadData.RELEASE_LINK" target="_blank" rel="noopener noreferrer">{{
+                lang === 'zh' ? getData[0].docs_list[0].name : getData[0].docs_list[0].nameEn
+              }}</a
               >{{ downloadData.WELCOME }}
             </p>
             <p>
-              {{ downloadData.MORE_HISTORY
-              }}<a
-                :href="'/' + lang + '/' + downloadData.HISTORY_LINK"
-                rel="noopener noreferrer"
-                >{{ downloadData.CLICK_VIEW }}</a
+              {{ downloadData.MORE_HISTORY }}<a :href="'/' + lang + '/' + downloadData.HISTORY_LINK" rel="noopener noreferrer">{{ downloadData.CLICK_VIEW }}</a
               ><span>{{ lang === 'zh' ? '。' : '.' }}</span>
             </p>
           </div>
         </div>
         <div class="download-content">
           <div class="content-selection">
-            <div
-              class="selection-item"
-              :class="{ active: versionShown === versionList[0] }"
-              @click="setVersionShown(versionList[0])"
-            >
+            <div class="selection-item" :class="{ active: versionShown === versionList[0] }" @click="setVersionShown(versionList[0])">
               {{ 'openGauss ' + DownloadConfig[0].name }}
             </div>
-            <div
-              class="selection-item"
-              :class="{ active: versionShown === versionList[1] }"
-              @click="setVersionShown(versionList[1])"
-            >
+            <div class="selection-item" :class="{ active: versionShown === versionList[1] }" @click="setVersionShown(versionList[1])">
               {{ 'openGauss ' + DownloadConfig[1].name }}
             </div>
           </div>
-          <DownloadContent
-            :content-data="getData"
-            :version-shown="versionShown"
-            :download-version-auth="versionList"
-          />
+          <DownloadContent :content-data="getData" :version-shown="versionShown" :download-version-auth="versionList" />
         </div>
       </div>
     </AppContent>
@@ -111,47 +81,47 @@ const getData: any = computed(() => {
   .description-wrap {
     .description-item {
       p {
-        font-size: var(--o-font-size-text);
-        line-height: var(--o-line-height-text);
-        color: var(--o-color-text1);
+        font-size: var(--e-font-size-text);
+        line-height: var(--e-line-height-text);
+        color: var(--e-color-text1);
         @media (max-width: 1100px) {
-          font-size: var(--o-font-size-tip);
-          line-height: var(--o-line-height-tip);
+          font-size: var(--e-font-size-tip);
+          line-height: var(--e-line-height-tip);
         }
       }
       & + .description-item {
-        margin-top: var(--o-spacing-h4);
+        margin-top: var(--e-spacing-h4);
         @media (max-width: 1100px) {
-          margin-top: var(--o-spacing-h5);
+          margin-top: var(--e-spacing-h5);
         }
       }
     }
   }
   .download-content {
-    margin-top: var(--o-spacing-h2);
+    margin-top: var(--e-spacing-h2);
     @media (max-width: 1100px) {
-      margin-top: var(--o-spacing-h4);
+      margin-top: var(--e-spacing-h4);
     }
     .content-selection {
       display: flex;
       .selection-item {
         flex-grow: 1;
         text-align: center;
-        background-color: var(--o-color-bg2);
-        border: 1px solid var(--o-color-border2);
-        color: var(--o-color-text1);
-        font-size: var(--o-font-size-h8);
+        background-color: var(--e-color-bg2);
+        border: 1px solid var(--e-color-border2);
+        color: var(--e-color-text1);
+        font-size: var(--e-font-size-h8);
         line-height: 40px;
         cursor: pointer;
         @media (max-width: 1100px) {
-          font-size: var(--o-font-size-text);
+          font-size: var(--e-font-size-text);
           line-height: 22px;
           padding: 10px 0;
         }
         &.active {
-          background-color: var(--o-color-brand1);
-          border: 1px solid var(--o-color-brand1);
-          color: var(--o-color-white);
+          background-color: var(--e-color-brand1);
+          border: 1px solid var(--e-color-brand1);
+          color: var(--e-color-white);
         }
       }
     }

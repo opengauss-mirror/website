@@ -121,7 +121,7 @@ html[lang='zh'] {
   .flex-start {
     @media screen and (max-width: 824px) {
       margin: 0;
-      padding-top: var(--o-spacing-h3);
+      padding-top: var(--e-spacing-h3);
       height: 100%;
     }
   }
@@ -166,31 +166,31 @@ html[lang='zh'] {
         justify-content: center;
         width: 100%;
         .content-text {
-          color: var(--o-color-white);
+          color: var(--e-color-white);
           .title {
-            font-size: var(--o-font-size-h1);
-            line-height: var(--o-line-height-h1);
+            font-size: var(--e-font-size-h1);
+            line-height: var(--e-line-height-h1);
             font-weight: 600;
             white-space: pre-wrap;
             @media screen and (max-width: 1439px) {
-              font-size: var(--o-font-size-h2);
-              line-height: var(--o-line-height-h2);
+              font-size: var(--e-font-size-h2);
+              line-height: var(--e-line-height-h2);
             }
             @media screen and (max-width: 767px) {
-              font-size: var(--o-font-size-h4);
-              line-height: var(--o-line-height-h4);
+              font-size: var(--e-font-size-h4);
+              line-height: var(--e-line-height-h4);
               text-align: center;
             }
           }
           .subtitle {
-            margin-top: var(--o-spacing-h8);
+            margin-top: var(--e-spacing-h8);
             font-size: 30px;
             line-height: 40px;
             font-weight: normal;
             @media (max-width: 767px) {
               margin-top: 8px;
-              font-size: var(--o-font-size-h7);
-              line-height: var(--o-line-height-h7);
+              font-size: var(--e-font-size-h7);
+              line-height: var(--e-line-height-h7);
               text-align: center;
             }
           }
@@ -201,10 +201,10 @@ html[lang='zh'] {
               margin-top: 8px;
             }
             span {
-              font-size: var(--o-font-size-h5);
+              font-size: var(--e-font-size-h5);
               line-height: 40px;
               @media screen and (max-width: 767px) {
-                font-size: var(--o-font-size-text);
+                font-size: var(--e-font-size-text);
                 line-height: 24px;
               }
             }
@@ -214,11 +214,11 @@ html[lang='zh'] {
             line-height: 84px;
             font-weight: 600;
             @media screen and (max-width: 1439px) {
-              font-size: var(--o-font-size-h3);
-              line-height: var(--o-line-height-h3);
+              font-size: var(--e-font-size-h3);
+              line-height: var(--e-line-height-h3);
             }
             @media screen and (max-width: 767px) {
-              padding-bottom: var(--o-spacing-h5);
+              padding-bottom: var(--e-spacing-h5);
               font-size: 20px;
               line-height: 30px;
               text-align: center;
@@ -226,16 +226,16 @@ html[lang='zh'] {
           }
         }
         .btn-box {
-          margin-top: var(--o-spacing-h3);
+          margin-top: var(--e-spacing-h3);
           @media screen and (max-width: 767px) {
-            margin-top: var(--o-spacing-h5);
+            margin-top: var(--e-spacing-h5);
             width: 100%;
             display: flex;
             justify-content: center;
           }
           .home-banner-btn {
-            color: var(--o-color-white);
-            border: 1px solid var(--o-color-white);
+            color: var(--e-color-white);
+            border: 1px solid var(--e-color-white);
           }
         }
       }
@@ -272,16 +272,16 @@ html[lang='zh'] {
           font-weight: 600;
 
           @media screen and (max-width: 1439px) {
-            font-size: var(--o-font-size-h2);
-            line-height: var(--o-line-height-h2);
+            font-size: var(--e-font-size-h2);
+            line-height: var(--e-line-height-h2);
           }
           @media screen and (max-width: 1100px) {
-            font-size: var(--o-font-size-h3);
-            line-height: var(--o-line-height-h3);
+            font-size: var(--e-font-size-h3);
+            line-height: var(--e-line-height-h3);
           }
           @media screen and (max-width: 767px) {
-            font-size: var(--o-font-size-h4);
-            line-height: var(--o-line-height-h3);
+            font-size: var(--e-font-size-h4);
+            line-height: var(--e-line-height-h3);
             text-align: center;
           }
         }
@@ -308,7 +308,7 @@ html[lang='zh'] {
         @media (max-width: 767px) {
           align-items: center;
           .btn-box {
-            margin-bottom: var(--o-spacing-h5);
+            margin-bottom: var(--e-spacing-h5);
           }
         }
       }
@@ -349,7 +349,7 @@ html[lang='zh'] {
       }
       &.is-active {
         .el-carousel__button {
-          background-color: var(--o-color-yellow5);
+          background-color: var(--e-color-yellow5);
         }
       }
     }

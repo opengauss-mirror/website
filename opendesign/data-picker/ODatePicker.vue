@@ -10,30 +10,30 @@ const attrs = useAttrs();
 
 <style lang="scss">
 .o-date-picker {
-  --o-date-picker-height: 38px;
-  --o-date-picker-border-color: var(--o-color-border1);
-  --o-date-picker-font-color: var(--o-color-text1);
-  --o-date-picker-font-size: var(--o-font-size-text);
-  --o-date-picker-line-height: var(--o-line-height-text);
-  --o-date-picker-color-bg: var(--o-color-bg2);
-  --o-date-picker-brand: var(--o-color-brand1);
+  --e-date-picker-height: 38px;
+  --e-date-picker-border-color: var(--e-color-border1);
+  --e-date-picker-font-color: var(--e-color-text1);
+  --e-date-picker-font-size: var(--e-font-size-text);
+  --e-date-picker-line-height: var(--e-line-height-text);
+  --e-date-picker-color-bg: var(--e-color-bg2);
+  --e-date-picker-brand: var(--e-color-brand1);
   &.el-input {
-    font-size: var(--o-date-picker-font-size);
-    line-height: var(--o-date-picker-font-size);
-    height: var(--o-date-picker-height);
+    font-size: var(--e-date-picker-font-size);
+    line-height: var(--e-date-picker-font-size);
+    height: var(--e-date-picker-height);
     .el-input__wrapper {
       border-radius: 0;
       padding: 1px 15px;
-      background-color: var(--o-date-picker-color-bg);
-      box-shadow: 0 0 0 1px var(--o-date-picker-border-color) inset;
+      background-color: var(--e-date-picker-color-bg);
+      box-shadow: 0 0 0 1px var(--e-date-picker-border-color) inset;
 
       .el-input__inner {
-        height: var(--o-date-picker-height);
-        line-height: var(--o-date-picker-font-size);
-        color: var(--o-date-picker-font-color);
+        height: var(--e-date-picker-height);
+        line-height: var(--e-date-picker-font-size);
+        color: var(--e-date-picker-font-color);
       }
       &.is-focus {
-        box-shadow: 0 0 0 1px var(--o-date-picker-brand) inset;
+        box-shadow: 0 0 0 1px var(--e-date-picker-brand) inset;
       }
     }
   }

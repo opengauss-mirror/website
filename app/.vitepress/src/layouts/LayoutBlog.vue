@@ -14,11 +14,7 @@ const blogInfo = {
 
 <template>
   <div class="bread">
-    <BreadCrumbs
-      :bread1="blogInfo.name"
-      :bread2="frontmatter.title"
-      :link1="blogInfo.link"
-    />
+    <BreadCrumbs :bread1="blogInfo.name" :bread2="frontmatter.title" :link1="blogInfo.link" />
   </div>
 
   <div class="markdown">
@@ -29,9 +25,9 @@ const blogInfo = {
 
 <style lang="scss" scoped>
 .markdown {
-  margin-bottom: var(--o-spacing-h1);
+  margin-bottom: var(--e-spacing-h1);
   @media (max-width: 1100px) {
-    margin-bottom: var(--o-spacing-h2);
+    margin-bottom: var(--e-spacing-h2);
   }
 }
 

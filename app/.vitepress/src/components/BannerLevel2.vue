@@ -71,7 +71,7 @@ const rootStyle = computed(() => {
   }
 
   .banner-level2 {
-    background-color: var(--o-color-trafficpurple4);
+    background-color: var(--e-color-trafficpurple4);
   }
 }
 .banner-level2 {
@@ -79,7 +79,7 @@ const rootStyle = computed(() => {
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: var(--o-color-trafficpurple6);
+  background-color: var(--e-color-trafficpurple6);
 
   .banner-bg {
     position: absolute;
@@ -125,64 +125,64 @@ const rootStyle = computed(() => {
       .banner-text-bg {
         position: absolute;
         top: 0;
-        color: var(--o-color-white);
+        color: var(--e-color-white);
         opacity: 0.14;
-        font-size: var(--o-font-size-h1);
-        line-height: var(--o-line-height-h1);
+        font-size: var(--e-font-size-h1);
+        line-height: var(--e-line-height-h1);
         font-weight: bold;
         user-select: none;
         pointer-events: none;
         @media screen and (max-width: 1080px) {
-          font-size: var(--o-font-size-h2);
-          line-height: var(--o-line-height-h2);
+          font-size: var(--e-font-size-h2);
+          line-height: var(--e-line-height-h2);
         }
 
         @media screen and (max-width: 768px) {
-          font-size: var(--o-font-size-h6);
-          line-height: var(--o-line-height-h6);
+          font-size: var(--e-font-size-h6);
+          line-height: var(--e-line-height-h6);
         }
       }
       .banner-title {
         position: relative;
         z-index: 1;
-        color: var(--o-color-white);
-        font-size: var(--o-font-size-h2);
-        line-height: var(--o-line-height-h2);
+        color: var(--e-color-white);
+        font-size: var(--e-font-size-h2);
+        line-height: var(--e-line-height-h2);
         font-weight: 500;
         @media screen and (max-width: 1080px) {
-          font-size: var(--o-font-size-h3);
-          line-height: var(--o-line-height-h3);
+          font-size: var(--e-font-size-h3);
+          line-height: var(--e-line-height-h3);
         }
 
         @media screen and (max-width: 768px) {
-          font-size: var(--o-font-size-h6);
-          line-height: var(--o-line-height-h6);
+          font-size: var(--e-font-size-h6);
+          line-height: var(--e-line-height-h6);
         }
       }
 
       .banner-subtitle {
         position: relative;
         z-index: 1;
-        color: var(--o-color-white);
-        font-size: var(--o-font-size-h6);
-        line-height: var(--o-line-height-h6);
-        margin-top: var(--o-spacing-h9);
+        color: var(--e-color-white);
+        font-size: var(--e-font-size-h6);
+        line-height: var(--e-line-height-h6);
+        margin-top: var(--e-spacing-h9);
 
         @media screen and (max-width: 1080px) {
-          font-size: var(--o-font-size-h7);
-          line-height: var(--o-line-height-h7);
+          font-size: var(--e-font-size-h7);
+          line-height: var(--e-line-height-h7);
         }
 
         @media screen and (max-width: 768px) {
-          font-size: var(--o-font-size-tip);
-          line-height: var(--o-line-height-tip);
+          font-size: var(--e-font-size-tip);
+          line-height: var(--e-line-height-tip);
         }
       }
 
       .banner-operation {
-        margin-top: var(--o-spacing-h4);
+        margin-top: var(--e-spacing-h4);
         @media screen and (max-width: 768px) {
-          margin-top: var(--o-spacing-h6);
+          margin-top: var(--e-spacing-h6);
         }
       }
     }

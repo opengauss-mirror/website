@@ -156,12 +156,12 @@ onMounted(() => {
   }
 }
 .pc-list {
-  margin-top: var(--o-spacing-h2);
+  margin-top: var(--e-spacing-h2);
   @media screen and (max-width: 1100px) {
     display: none;
   }
   :deep(.is-leaf) {
-    background-color: var(--o-color-bg4);
+    background-color: var(--e-color-bg4);
   }
   :deep(.cell) {
     word-break: break-word;
@@ -171,19 +171,19 @@ onMounted(() => {
   }
 }
 .mobile-list {
-  margin-top: var(--o-spacing-h5);
+  margin-top: var(--e-spacing-h5);
   display: none;
-  box-shadow: var(--o-shadow1);
+  box-shadow: var(--e-shadow1);
   @media screen and (max-width: 1100px) {
     display: block;
   }
   .item {
-    padding: var(--o-spacing-h5) var(--o-spacing-h5) var(--o-spacing-h8);
-    line-height: var(--o-line-height-tip);
-    font-size: var(--o-font-size-tip);
+    padding: var(--e-spacing-h5) var(--e-spacing-h5) var(--e-spacing-h8);
+    line-height: var(--e-line-height-tip);
+    font-size: var(--e-font-size-tip);
     font-weight: 300;
-    color: var(--o-color-neutral8);
-    background-color: var(--o-color-bg2);
+    color: var(--e-color-neutral8);
+    background-color: var(--e-color-bg2);
     li:nth-child(4) {
       display: flex;
       span {
@@ -191,17 +191,17 @@ onMounted(() => {
       }
     }
     &:nth-child(odd) {
-      background: var(--o-color-bg4);
+      background: var(--e-color-bg4);
     }
     & li {
-      margin-bottom: var(--o-spacing-h8);
+      margin-bottom: var(--e-spacing-h8);
     }
     span {
-      margin-right: var(--o-spacing-h8);
-      color: var(--o-color-text1);
+      margin-right: var(--e-spacing-h8);
+      color: var(--e-color-text1);
       text-align: justify;
       &:nth-of-type(2) {
-        color: var(--o-color-neutral8);
+        color: var(--e-color-neutral8);
       }
     }
   }
@@ -216,9 +216,9 @@ onMounted(() => {
   }
 }
 .introduce {
-  font-size: var(--o-font-siez-text);
-  color: var(--o-color-text-secondary);
-  line-height: var(--o-line-height-text);
+  font-size: var(--e-font-siez-text);
+  color: var(--e-color-text-secondary);
+  line-height: var(--e-line-height-text);
   margin-top: 40px;
 }
 </style>

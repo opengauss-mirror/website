@@ -3,12 +3,7 @@ import { ref, onMounted } from 'vue';
 import { useI18n } from '@/i18n';
 import { getCveDetail } from '@/api/api-security';
 import { useRouter, useData } from 'vitepress';
-import {
-  AffectProductT,
-  CveDetailT,
-  SaBodyItemT,
-  CvsItemT,
-} from '@/shared/@types/type-security';
+import { AffectProductT, CveDetailT, SaBodyItemT, CvsItemT } from '@/shared/@types/type-security';
 import { handleError } from '@/shared/utils';
 
 import AppContent from '@/components/AppContent.vue';
@@ -154,10 +149,7 @@ onMounted(() => {
       <!-- 概要 -->
       <div class="detail-item">
         <h2 class="detail-item-title">{{ i18n.security.SYNOPSIS }}</h2>
-        <p
-          v-dompurify-html="cveDetailData.description"
-          class="detail-item-content"
-        ></p>
+        <p v-dompurify-html="cveDetailData.description" class="detail-item-content"></p>
       </div>
       <!-- CVSS v3指标 -->
       <div class="detail-item">
@@ -176,49 +168,28 @@ onMounted(() => {
         <OTable class="affect-list" :data="advisories">
           <el-table-column :label="i18n.security.ADVISORY">
             <template #default="scope">
-              <span
-                class="detail-page"
-                @click="jumpBulletinDetail(scope.row.gaussSaNum)"
-              >
+              <span class="detail-page" @click="jumpBulletinDetail(scope.row.gaussSaNum)">
                 {{ scope.row.gaussSaNum }}
               </span>
             </template>
           </el-table-column>
-          <OTableColumn :label="i18n.security.SYNOPSIS" prop="summary">
-          </OTableColumn>
-          <OTableColumn :label="i18n.security.RELEASE_DATE" prop="releaseDate">
-          </OTableColumn>
+          <OTableColumn :label="i18n.security.SYNOPSIS" prop="summary"> </OTableColumn>
+          <OTableColumn :label="i18n.security.RELEASE_DATE" prop="releaseDate"> </OTableColumn>
         </OTable>
         <ul class="mobile-list">
           <li v-for="item in advisories" :key="item.saId" class="item">
             <ul>
               <li>
                 <span>{{ i18n.security.ADVISORY }}:</span
-                ><a
-                  class="detail-link"
-                  @click="jumpBulletinDetail(item.gaussSaNum)"
-                  >{{
-                    item.gaussSaNum
-                      ? item.gaussSaNum
-                      : i18n.security.EMPTY_SEARCH_RESULT
-                  }}</a
-                >
+                ><a class="detail-link" @click="jumpBulletinDetail(item.gaussSaNum)">{{
+                  item.gaussSaNum ? item.gaussSaNum : i18n.security.EMPTY_SEARCH_RESULT
+                }}</a>
               </li>
               <li>
-                <span>{{ i18n.security.SYNOPSIS }}:</span
-                >{{
-                  item.summary
-                    ? item.summary
-                    : i18n.security.EMPTY_SEARCH_RESULT
-                }}
+                <span>{{ i18n.security.SYNOPSIS }}:</span>{{ item.summary ? item.summary : i18n.security.EMPTY_SEARCH_RESULT }}
               </li>
               <li>
-                <span>{{ i18n.security.RELEASE_DATE }}:</span
-                >{{
-                  item.releaseDate
-                    ? item.releaseDate
-                    : i18n.security.EMPTY_SEARCH_RESULT
-                }}
+                <span>{{ i18n.security.RELEASE_DATE }}:</span>{{ item.releaseDate ? item.releaseDate : i18n.security.EMPTY_SEARCH_RESULT }}
               </li>
             </ul>
           </li>
@@ -231,23 +202,15 @@ onMounted(() => {
         </h2>
 
         <OTable class="affect-list" :data="affectedProductList">
-          <OTableColumn :label="i18n.security.PRODUCT" prop="affectProduct">
-          </OTableColumn>
-          <OTableColumn :label="i18n.security.PACKAGE" prop="packName">
-          </OTableColumn>
-          <OTableColumn :label="i18n.security.STATUS" prop="fixLabel">
-          </OTableColumn>
+          <OTableColumn :label="i18n.security.PRODUCT" prop="affectProduct"> </OTableColumn>
+          <OTableColumn :label="i18n.security.PACKAGE" prop="packName"> </OTableColumn>
+          <OTableColumn :label="i18n.security.STATUS" prop="fixLabel"> </OTableColumn>
         </OTable>
         <ul class="mobile-list">
-          <li
-            v-for="item in affectedProductList"
-            :key="item.affectProduct"
-            class="item"
-          >
+          <li v-for="item in affectedProductList" :key="item.affectProduct" class="item">
             <ul>
               <li>
-                <span>{{ i18n.security.PRODUCT }}:</span
-                >{{ item.affectProduct }}
+                <span>{{ i18n.security.PRODUCT }}:</span>{{ item.affectProduct }}
               </li>
               <li>
                 <span>{{ i18n.security.PACKAGE }}:</span>{{ item.packName }}
@@ -264,124 +227,124 @@ onMounted(() => {
 </template>
 <style lang="scss" scoped>
 .detail-link {
-  color: var(--o-color-link1);
+  color: var(--e-color-link1);
   cursor: pointer;
 }
 .breadcrumb {
   display: flex;
-  color: var(--o-color-text1);
-  background: var(--o-color-bg1);
+  color: var(--e-color-text1);
+  background: var(--e-color-bg1);
   @media screen and (max-width: 768px) {
-    margin-bottom: var(--o-spacing-h5);
+    margin-bottom: var(--e-spacing-h5);
   }
   .last-page {
     font-weight: 300;
-    font-size: var(--o-font-size-tip);
-    line-height: var(--o-line-height-tip);
-    color: var(--o-color-text4);
+    font-size: var(--e-font-size-tip);
+    line-height: var(--e-line-height-tip);
+    color: var(--e-color-text4);
     cursor: pointer;
   }
   .separtor {
-    margin: 0 var(--o-spacing-h10);
+    margin: 0 var(--e-spacing-h10);
     .o-icon {
-      color: var(--o-color-text1);
+      color: var(--e-color-text1);
     }
   }
   .current-page {
-    font-size: var(--o-font-size-tip);
+    font-size: var(--e-font-size-tip);
     font-weight: 600;
-    line-height: var(--o-line-height-tip);
-    color: var(--o-color-text1);
+    line-height: var(--e-line-height-tip);
+    color: var(--e-color-text1);
   }
 }
 .cve-head {
-  padding: var(--o-spacing-h2) var(--o-spacing-h2) var(--o-spacing-h2) 0;
-  background: var(--o-color-bg1);
+  padding: var(--e-spacing-h2) var(--e-spacing-h2) var(--e-spacing-h2) 0;
+  background: var(--e-color-bg1);
   @media screen and (max-width: 768px) {
-    padding: var(--o-spacing-h5);
-    margin-bottom: var(--o-spacing-h5);
-    background: var(--o-color-bg2);
-    box-shadow: var(--o-shadow-l1);
+    padding: var(--e-spacing-h5);
+    margin-bottom: var(--e-spacing-h5);
+    background: var(--e-color-bg2);
+    box-shadow: var(--e-shadow-l1);
   }
   .cve-name {
     font-weight: 300;
-    font-size: var(--o-font-size-h3);
-    line-height: var(--o-line-height-h3);
-    color: var(--o-color-text1);
+    font-size: var(--e-font-size-h3);
+    line-height: var(--e-line-height-h3);
+    color: var(--e-color-text1);
     @media screen and (max-width: 768px) {
-      margin-bottom: var(--o-spacing-h8);
-      font-size: var(--o-font-size-h8);
+      margin-bottom: var(--e-spacing-h8);
+      font-size: var(--e-font-size-h8);
       font-weight: 300;
-      line-height: var(--o-line-height-h8);
-      color: var(--o-color-text1);
+      line-height: var(--e-line-height-h8);
+      color: var(--e-color-text1);
     }
   }
   .cve-intro {
-    font-size: var(--o-font-size-text);
+    font-size: var(--e-font-size-text);
 
-    color: var(--o-color-text1);
-    line-height: var(--o-line-height-text);
-    margin-top: var(--o-spacing-h4);
+    color: var(--e-color-text1);
+    line-height: var(--e-line-height-text);
+    margin-top: var(--e-spacing-h4);
     div {
       display: flex;
     }
     span {
       display: inline-block;
-      margin-right: var(--o-spacing-h8);
+      margin-right: var(--e-spacing-h8);
     }
     @media screen and (max-width: 768px) {
       margin: 0;
-      font-size: var(--o-font-size-tip);
-      line-height: var(--o-line-height-tip);
+      font-size: var(--e-font-size-tip);
+      line-height: var(--e-line-height-tip);
     }
   }
 }
 .cve-detail-body {
-  background-color: var(--o-color-bg2);
-  padding: var(--o-spacing-h2);
+  background-color: var(--e-color-bg2);
+  padding: var(--e-spacing-h2);
   @media screen and (max-width: 768px) {
-    padding: var(--o-spacing-h5);
+    padding: var(--e-spacing-h5);
   }
   .detail-item {
-    margin-bottom: var(--o-spacing-h2);
+    margin-bottom: var(--e-spacing-h2);
     &:last-child {
       margin-bottom: 0;
     }
     @media screen and (max-width: 768px) {
-      background-color: var(--o-color-bg2);
+      background-color: var(--e-color-bg2);
     }
     &-title {
-      margin-bottom: var(--o-spacing-h4);
-      font-size: var(--o-font-size-h5);
+      margin-bottom: var(--e-spacing-h4);
+      font-size: var(--e-font-size-h5);
       font-weight: 300;
-      color: var(--o-color-text1);
+      color: var(--e-color-text1);
       @media screen and (max-width: 768px) {
-        font-size: var(--o-font-size-h8);
-        line-height: var(--o-line-height-h8);
-        margin-bottom: var(--o-spacing-h8);
+        font-size: var(--e-font-size-h8);
+        line-height: var(--e-line-height-h8);
+        margin-bottom: var(--e-spacing-h8);
       }
     }
     .pc-list {
       box-shadow: none;
     }
     &-content {
-      color: var(--o-color-text4);
-      font-size: var(--o-font-size-text);
-      line-height: var(--o-line-height-text);
-      margin-bottom: var(--o-spacing-h2);
+      color: var(--e-color-text4);
+      font-size: var(--e-font-size-text);
+      line-height: var(--e-line-height-text);
+      margin-bottom: var(--e-spacing-h2);
       word-break: break-word;
       text-align: justify;
       @media screen and (max-width: 768px) {
-        font-size: var(--o-font-size-tip);
-        line-height: var(--o-line-height-tip);
-        margin-bottom: var(--o-spacing-h4);
+        font-size: var(--e-font-size-tip);
+        line-height: var(--e-line-height-tip);
+        margin-bottom: var(--e-spacing-h4);
       }
     }
     .metrics-list,
     .affect-list {
-      margin-bottom: var(--o-spacing-h2);
+      margin-bottom: var(--e-spacing-h2);
       .detail-page {
-        color: var(--o-color-link1);
+        color: var(--e-color-link1);
         cursor: pointer;
       }
       @media screen and (max-width: 768px) {
@@ -395,17 +358,17 @@ onMounted(() => {
         display: block;
       }
       .item {
-        padding: var(--o-spacing-h5);
-        font-size: var(--o-font-size-tip);
+        padding: var(--e-spacing-h5);
+        font-size: var(--e-font-size-tip);
         font-weight: 300;
-        color: var(--o-color-neutral8);
-        line-height: var(--o-line-height-tip);
-        background-color: var(--o-color-bg4);
+        color: var(--e-color-neutral8);
+        line-height: var(--e-line-height-tip);
+        background-color: var(--e-color-bg4);
         &:nth-child(2n) {
-          background: var(--o-color-bg1);
+          background: var(--e-color-bg1);
         }
         & li {
-          margin-bottom: var(--o-spacing-h8);
+          margin-bottom: var(--e-spacing-h8);
         }
         li:nth-child(2) {
           display: flex;
@@ -413,12 +376,12 @@ onMounted(() => {
         li:last-child {
           margin-bottom: 0;
           a {
-            color: var(--o-color-link1);
+            color: var(--e-color-link1);
           }
         }
         span {
-          color: var(--o-color-text1);
-          margin-right: var(--o-spacing-h8);
+          color: var(--e-color-text1);
+          margin-right: var(--e-spacing-h8);
         }
       }
     }

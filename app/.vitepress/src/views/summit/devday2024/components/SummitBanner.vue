@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 defineProps({
   bannerData: {
     type: Object,
@@ -10,14 +9,8 @@ defineProps({
 </script>
 <template>
   <div class="banner">
-    <div
-      class="summit-banner-pc summit-banner"
-      :style="{ backgroundImage: `url(${bannerData.bg})` }"
-    ></div>
-    <div
-      class="summit-banner-mo summit-banner"
-      :style="{ backgroundImage: `url(${bannerData.bgMo})` }"
-    ></div>
+    <div class="summit-banner-pc summit-banner" :style="{ backgroundImage: `url(${bannerData.bg})` }"></div>
+    <div class="summit-banner-mo summit-banner" :style="{ backgroundImage: `url(${bannerData.bgMo})` }"></div>
     <div class="banner-main">
       <div class="banner-text">
         <h2>{{ bannerData.slogan }}</h2>
@@ -95,49 +88,49 @@ defineProps({
       }
     }
     h3 {
-      margin-top: var(--o-spacing-h8);
-      font-size: var(--o-font-size-h4);
-      line-height: var(--o-line-height-h4);
+      margin-top: var(--e-spacing-h8);
+      font-size: var(--e-font-size-h4);
+      line-height: var(--e-line-height-h4);
       font-weight: normal;
       @media (max-width: 767px) {
-        margin-top: var(--o-spacing-h10);
-        font-size: var(--o-font-size-tip);
-        line-height: var(--o-line-height-tip);
+        margin-top: var(--e-spacing-h10);
+        font-size: var(--e-font-size-tip);
+        line-height: var(--e-line-height-tip);
       }
     }
     h4 {
-      font-size: var(--o-font-size-h8);
-      line-height: var(--o-line-height-h8);
+      font-size: var(--e-font-size-h8);
+      line-height: var(--e-line-height-h8);
       font-weight: normal;
       margin-top: 20px;
       @media (max-width: 767px) {
-        font-size: var(--o-font-size-tip);
-        line-height: var(--o-line-height-tip);
-        margin-top: var(--o-spacing-h10);
+        font-size: var(--e-font-size-tip);
+        line-height: var(--e-line-height-tip);
+        margin-top: var(--e-spacing-h10);
       }
     }
   }
   a {
-    margin-top: var(--o-spacing-h4);
+    margin-top: var(--e-spacing-h4);
   }
   .home-banner-btnimport {
     --o-button-padding: 11px 19px 11px 27px;
-    --o-color-brand1: var(--o-color-text1);
-    --o-color-brand2: var(--o-color-text1);
+    --o-color-brand1: var(--e-color-text1);
+    --o-color-brand2: var(--e-color-text1);
   }
   @media (max-width: 767px) {
     .banner-text {
       justify-content: flex-end;
-      padding-bottom: var(--o-spacing-h5);
+      padding-bottom: var(--e-spacing-h5);
     }
     a {
-      margin-top: var(--o-spacing-h6);
+      margin-top: var(--e-spacing-h6);
     }
     .home-banner-btnimport {
       --o-button-padding: 6px 10px;
-      --o-button-font-size: var(--o-font-size-tip);
-      --o-button-line-height: var(--o-line-height-tip);
-      --o-button-icon-font-size: var(--o-font-size-h8);
+      --o-button-font-size: var(--e-font-size-tip);
+      --o-button-line-height: var(--e-line-height-tip);
+      --o-button-icon-font-size: var(--e-font-size-h8);
     }
   }
 }

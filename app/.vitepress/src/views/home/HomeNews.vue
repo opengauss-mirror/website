@@ -4,7 +4,7 @@ import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';
 import dayjs from 'dayjs';
 
-import { useCloned } from '@vueuse/core'
+import { useCloned } from '@vueuse/core';
 
 import type { BlogItemT } from '@/shared/@types/type-blogs';
 import type { NewsItemT } from '@/shared/@types/type-news';
@@ -34,9 +34,7 @@ const newsData = computed(() => {
   return lang.value === 'zh' ? useCloned(NewsAllData.zh) : useCloned(NewsAllData.en);
 });
 const eventsData = computed(() => {
-  return lang.value === 'zh'
-    ? homeConfig.homeEvents.zh
-    : homeConfig.homeEvents.en;
+  return lang.value === 'zh' ? homeConfig.homeEvents.zh : homeConfig.homeEvents.en;
 });
 
 const resolvePostDate = (date: any) => {
@@ -45,20 +43,7 @@ const resolvePostDate = (date: any) => {
 
 const filterSiteData = (datas: any[]) => {
   const newData = datas;
-  const englishMonth = [
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
-    'May',
-    'Jun',
-    'Jul',
-    'Aug',
-    'Spt',
-    'Oct',
-    'Nov',
-    'Dec',
-  ];
+  const englishMonth = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Spt', 'Oct', 'Nov', 'Dec'];
   newData.forEach((item) => {
     let date = item.date;
     date = resolvePostDate(date).split('-');
@@ -90,35 +75,18 @@ onMounted(async () => {
   <div class="home-news">
     <div class="title-list">
       <OTabs v-model="tabType">
-        <OTabPane
-          v-for="item in roomName"
-          :key="item.ID"
-          :label="item.NAME"
-          :name="item.ID"
-        ></OTabPane>
+        <OTabPane v-for="item in roomName" :key="item.ID" :label="item.NAME" :name="item.ID"></OTabPane>
       </OTabs>
     </div>
     <OContainer :level-index="1">
-      <div
-        v-if="eventsData"
-        class="room-contain-new events"
-        :class="{ isShow: tabType === 'events' }"
-      >
+      <div v-if="eventsData" class="room-contain-new events" :class="{ isShow: tabType === 'events' }">
         <div class="activity-content">
           <div class="activity-content-cover" data-aos="fade-right">
-            <a :href="eventsData.path" target="_blank" rel="noopener noreferrer"
-              ><img :src="eventsData.img" class="cover" alt=""
-            /></a>
+            <a :href="eventsData.path" target="_blank" rel="noopener noreferrer"><img :src="eventsData.img" class="cover" alt="" /></a>
           </div>
           <div class="activity-content-box">
             <div class="box">
-              <a
-                :href="eventsData.path"
-                class="activity-title"
-                target="_blank"
-                rel="noopener noreferrer"
-                >{{ eventsData.title }}</a
-              >
+              <a :href="eventsData.path" class="activity-title" target="_blank" rel="noopener noreferrer">{{ eventsData.title }}</a>
 
               <p class="desc">{{ eventsData.summary }}</p>
               <div class="info">
@@ -136,12 +104,7 @@ onMounted(async () => {
                 </p>
               </div>
             </div>
-            <a
-              v-if="eventsData.link"
-              :href="eventsData.link"
-              class="o-link-icon"
-              rel="noopener noreferrer"
-            >
+            <a v-if="eventsData.link" :href="eventsData.link" class="o-link-icon" rel="noopener noreferrer">
               <OButton animation type="text" class="activity-btn">
                 {{ i18n.common.VIEW_MORE }}
                 <template #suffixIcon>
@@ -157,11 +120,7 @@ onMounted(async () => {
           {{ i18n.home.HOME_ROOMS.BLOG_NAME }}
         </h4>
         <div class="room-box">
-          <div
-            v-for="(item, index) in blogList"
-            :key="index"
-            class="room-item lable-name"
-          >
+          <div v-for="(item, index) in blogList" :key="index" class="room-item lable-name">
             <div class="room-item-pc">
               <div class="room-item-left lable-name">
                 <span class="day">{{ item.date[2] }}</span>
@@ -172,29 +131,18 @@ onMounted(async () => {
               </div>
               <div class="room-item-right lable-name">
                 <div class="room-top">
-                  <a
-                    :href="'/' + item.path"
-                    :title="item.title"
-                    rel="noopener noreferrer"
-                  >
+                  <a :href="'/' + item.path" :title="item.title" rel="noopener noreferrer">
                     {{ item.title }}
                   </a>
                   <p class="lable-name">
-                    <span
-                      v-for="(authorName, index2) in item.author"
-                      :key="authorName"
+                    <span v-for="(authorName, index2) in item.author" :key="authorName"
                       >{{ authorName }}
                       <span v-show="item.author.length !== index2 + 1">, </span>
                     </span>
                   </p>
                 </div>
                 <div class="room-bottom lable-name">
-                  <a
-                    class="word-hover lable-name"
-                    :title="item.summary"
-                    :href="'/' + item.path"
-                    rel="noopener noreferrer"
-                  >
+                  <a class="word-hover lable-name" :title="item.summary" :href="'/' + item.path" rel="noopener noreferrer">
                     {{ item.summary }}
                   </a>
                 </div>
@@ -202,19 +150,12 @@ onMounted(async () => {
             </div>
             <div class="room-item-mo">
               <p class="author lable-name">
-                <span
-                  v-for="(authorName, index2) in item.author"
-                  :key="authorName"
+                <span v-for="(authorName, index2) in item.author" :key="authorName"
                   >{{ authorName }}
                   <span v-show="item.author.length !== index2 + 1">、</span>
                 </span>
               </p>
-              <a
-                class="word-hover lable-name"
-                :title="item.summary"
-                :href="'/' + item.path"
-                rel="noopener noreferrer"
-              >
+              <a class="word-hover lable-name" :title="item.summary" :href="'/' + item.path" rel="noopener noreferrer">
                 {{ item.summary }}
               </a>
             </div>
@@ -222,11 +163,7 @@ onMounted(async () => {
         </div>
 
         <div class="statistics">
-          <a
-            :href="`/${lang}/blogs/`"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a :href="`/${lang}/blogs/`" target="_blank" rel="noopener noreferrer">
             <OButton animation type="text" class="statistics-button">
               {{ i18n.common.VIEW_MORE }}
               <template #suffixIcon>
@@ -252,29 +189,18 @@ onMounted(async () => {
               </div>
               <div class="room-item-right">
                 <div class="room-top">
-                  <a
-                    :href="'/' + item.path"
-                    :title="item.title"
-                    rel="noopener noreferrer"
-                  >
+                  <a :href="'/' + item.path" :title="item.title" rel="noopener noreferrer">
                     {{ item.title }}
                   </a>
                   <p>
-                    <span
-                      v-for="(authorName, index2) in item.author"
-                      :key="authorName"
+                    <span v-for="(authorName, index2) in item.author" :key="authorName"
                       >{{ authorName }}
                       <span v-show="item.author.length !== index2 + 1">、</span>
                     </span>
                   </p>
                 </div>
                 <div class="room-bottom">
-                  <a
-                    class="word-hover"
-                    :title="item.summary"
-                    :href="'/' + item.path"
-                    rel="noopener noreferrer"
-                  >
+                  <a class="word-hover" :title="item.summary" :href="'/' + item.path" rel="noopener noreferrer">
                     {{ item.summary }}
                   </a>
                 </div>
@@ -282,19 +208,12 @@ onMounted(async () => {
             </div>
             <div class="room-item-mo">
               <p class="author">
-                <span
-                  v-for="(authorName, index2) in item.author"
-                  :key="authorName"
+                <span v-for="(authorName, index2) in item.author" :key="authorName"
                   >{{ authorName }}
                   <span v-show="item.author.length !== index2 + 1">、</span>
                 </span>
               </p>
-              <a
-                class="word-hover"
-                :title="item.summary"
-                :href="'/' + item.path"
-                rel="noopener noreferrer"
-              >
+              <a class="word-hover" :title="item.summary" :href="'/' + item.path" rel="noopener noreferrer">
                 {{ item.summary }}
               </a>
             </div>
@@ -325,31 +244,31 @@ onMounted(async () => {
 .word-hover {
   display: block;
   cursor: pointer;
-  color: var(--o-color-text1);
+  color: var(--e-color-text1);
   &:hover {
-    color: var(--o-color-brand1);
+    color: var(--e-color-brand1);
   }
 }
 .statistics {
   display: flex;
-  padding-top: var(--o-spacing-h2);
+  padding-top: var(--e-spacing-h2);
   justify-content: center;
   align-items: center;
   @media screen and (max-width: 1080px) {
-    padding-top: var(--o-spacing-h5);
+    padding-top: var(--e-spacing-h5);
   }
   @media screen and (max-width: 768px) {
-    padding: var(--o-spacing-h5) 0 var(--o-spacing-h10) 0;
+    padding: var(--e-spacing-h5) 0 var(--e-spacing-h10) 0;
     :deep(.o-button) {
-      font-size: var(--o-font-size-tip) !important;
-      line-height: var(--o-line-height-tip) !important;
+      font-size: var(--e-font-size-tip) !important;
+      line-height: var(--e-line-height-tip) !important;
     }
   }
 
   &-button:hover {
-    color: var(--o-color-brand1);
+    color: var(--e-color-brand1);
     @media screen and (max-width: 1416px) {
-      color: var(--o-color-text1);
+      color: var(--e-color-text1);
     }
   }
 
@@ -358,9 +277,9 @@ onMounted(async () => {
   }
 
   &-icon {
-    color: var(--o-color-brand1);
-    width: var(--o-font-size-h8);
-    height: var(--o-font-size-h8);
+    color: var(--e-color-brand1);
+    width: var(--e-font-size-h8);
+    height: var(--e-font-size-h8);
   }
 }
 
@@ -368,18 +287,18 @@ onMounted(async () => {
   display: none;
 }
 .home-news {
-  margin: var(--o-spacing-h2) auto 0;
+  margin: var(--e-spacing-h2) auto 0;
   .room-contain-new {
     display: none;
-    padding: var(--o-spacing-h2);
-    background-color: var(--o-color-bg2);
+    padding: var(--e-spacing-h2);
+    background-color: var(--e-color-bg2);
     &.events {
       padding: 0;
     }
     .type-title {
-      font-size: var(--o-font-size-h7);
-      line-height: var(--o-font-size-h7);
-      color: var(--o-color-text1);
+      font-size: var(--e-font-size-h7);
+      line-height: var(--e-font-size-h7);
+      color: var(--e-color-text1);
       display: block;
       @media screen and (max-width: 1080px) {
         display: none;
@@ -387,14 +306,14 @@ onMounted(async () => {
     }
     .room-box {
       display: grid;
-      margin-top: var(--o-spacing-h2);
+      margin-top: var(--e-spacing-h2);
       grid-template-columns: repeat(2, minmax(82px, 1fr));
-      column-gap: var(--o-spacing-h2);
-      row-gap: var(--o-spacing-h2);
+      column-gap: var(--e-spacing-h2);
+      row-gap: var(--e-spacing-h2);
       .room-item-pc {
         display: flex;
-        padding-bottom: var(--o-spacing-h2);
-        border-bottom: 1px solid var(--o-color-division1);
+        padding-bottom: var(--e-spacing-h2);
+        border-bottom: 1px solid var(--e-color-division1);
         p {
           text-align: left;
         }
@@ -404,27 +323,27 @@ onMounted(async () => {
           flex-shrink: 0;
           align-items: center;
           justify-content: center;
-          margin-right: var(--o-spacing-h4);
+          margin-right: var(--e-spacing-h4);
           width: 100px;
           height: 110px;
           background-color: rgba($color: #7d32ea, $alpha: 0.11);
-          color: var(--o-color-text1);
+          color: var(--e-color-text1);
           .day {
-            margin-bottom: var(--o-spacing-h8);
-            font-size: var(--o-font-size-h4);
+            margin-bottom: var(--e-spacing-h8);
+            font-size: var(--e-font-size-h4);
           }
           .year {
-            padding-left: var(--o-spacing-h10);
+            padding-left: var(--e-spacing-h10);
           }
           .left-bottom {
-            font-size: var(--o-font-size-tip);
+            font-size: var(--e-font-size-tip);
           }
         }
         .room-item-right {
           display: flex;
           flex: 1;
           min-width: 0;
-          font-size: var(--o-font-size-text);
+          font-size: var(--e-font-size-text);
           justify-content: space-between;
           flex-direction: column;
           .room-top {
@@ -435,21 +354,21 @@ onMounted(async () => {
               overflow: hidden;
               text-overflow: ellipsis;
               font-weight: 500;
-              font-size: var(--o-font-size-h7);
-              color: var(--o-color-text1);
+              font-size: var(--e-font-size-h7);
+              color: var(--e-color-text1);
               &:hover {
-                color: var(--o-color-brand1);
+                color: var(--e-color-brand1);
               }
             }
             p {
-              line-height: var(--o-line-height-text);
-              font-size: var(--o-font-size-text);
-              margin-top: var(--o-spacing-h9);
-              color: var(--o-color-text1);
+              line-height: var(--e-line-height-text);
+              font-size: var(--e-font-size-text);
+              margin-top: var(--e-spacing-h9);
+              color: var(--e-color-text1);
             }
             @media screen and (max-width: 768px) {
               a {
-                font-size: var(--o-font-size-text);
+                font-size: var(--e-font-size-text);
               }
             }
           }
@@ -459,7 +378,7 @@ onMounted(async () => {
             display: -webkit-box;
             -webkit-box-orient: vertical;
             -webkit-line-clamp: 1;
-            color: var(--o-color-text1);
+            color: var(--e-color-text1);
             a {
               text-decoration: none;
             }
@@ -474,28 +393,28 @@ onMounted(async () => {
       .room-box {
         margin: 0;
         grid-template-columns: repeat(1, minmax(300px, 1fr));
-        row-gap: var(--o-spacing-h5);
+        row-gap: var(--e-spacing-h5);
       }
     }
     @media screen and (max-width: 768px) {
-      padding: var(--o-spacing-h6);
-      padding-bottom: var(--o-spacing-h5);
+      padding: var(--e-spacing-h6);
+      padding-bottom: var(--e-spacing-h5);
       .room-box {
         margin: 0;
         grid-template-columns: repeat(1, minmax(300px, 1fr));
         .room-item {
-          border-bottom: 1px solid var(--o-color-division1);
+          border-bottom: 1px solid var(--e-color-division1);
 
           .room-item-pc {
             border-bottom: none;
-            padding-bottom: var(--o-spacing-h5);
+            padding-bottom: var(--e-spacing-h5);
             .room-item-left {
-              margin-right: var(--o-spacing-h6);
-              width: var(--o-line-height-h3);
-              height: var(--o-line-height-h3);
+              margin-right: var(--e-spacing-h6);
+              width: var(--e-line-height-h3);
+              height: var(--e-line-height-h3);
               .day {
                 margin: 0;
-                font-size: var(--o-font-size-text);
+                font-size: var(--e-font-size-text);
               }
               .left-bottom {
                 display: flex;
@@ -509,8 +428,8 @@ onMounted(async () => {
                   white-space: inherit;
                   -webkit-box-orient: vertical;
                   -webkit-line-clamp: 2;
-                  line-height: var(--o-line-height-text);
-                  font-size: var(--o-font-size-text);
+                  line-height: var(--e-line-height-text);
+                  font-size: var(--e-font-size-text);
                 }
                 p {
                   display: none;
@@ -521,10 +440,10 @@ onMounted(async () => {
           .room-item-mo {
             display: flex;
             flex-direction: column;
-            font-size: var(--o-font-size-tip);
-            color: var(--o-color-text4);
+            font-size: var(--e-font-size-tip);
+            color: var(--e-color-text4);
             .author {
-              padding-bottom: var(--o-spacing-h8);
+              padding-bottom: var(--e-spacing-h8);
             }
             a {
               overflow: hidden;
@@ -532,8 +451,8 @@ onMounted(async () => {
               display: -webkit-box;
               -webkit-box-orient: vertical;
               -webkit-line-clamp: 2;
-              line-height: var(--o-line-height-tip);
-              margin-bottom: var(--o-spacing-h5);
+              line-height: var(--e-line-height-tip);
+              margin-bottom: var(--e-spacing-h5);
               color: inherit;
               text-decoration: none;
             }
@@ -549,13 +468,13 @@ onMounted(async () => {
 
 :deep(.title-list) {
   display: flex;
-  padding-bottom: var(--o-spacing-h2);
+  padding-bottom: var(--e-spacing-h2);
   justify-content: flex-end;
   .el-tabs__header {
     margin: 0;
   }
   @media screen and (max-width: 1080px) {
-    padding-bottom: var(--o-spacing-h5);
+    padding-bottom: var(--e-spacing-h5);
     justify-content: center;
   }
   .el-tabs__nav-scroll {
@@ -569,14 +488,14 @@ onMounted(async () => {
   }
   .title-item {
     cursor: pointer;
-    padding: var(--o-spacing-h6);
+    padding: var(--e-spacing-h6);
     &:hover {
-      color: var(--o-color-brand1);
+      color: var(--e-color-brand1);
     }
   }
   .active {
-    background-color: var(--o-color-brand1);
-    color: var(--o-color-text2) !important;
+    background-color: var(--e-color-brand1);
+    color: var(--e-color-text2) !important;
   }
 }
 
@@ -614,18 +533,18 @@ onMounted(async () => {
     flex: 1;
     flex-direction: column;
     justify-content: space-between;
-    padding: var(--o-spacing-h2);
+    padding: var(--e-spacing-h2);
     position: relative;
     @media (max-width: 1100px) {
       padding: 12px;
     }
     .activity-title {
-      font-size: var(--o-font-size-h4);
+      font-size: var(--e-font-size-h4);
       font-weight: 500;
-      color: var(--o-color-text1);
-      line-height: var(--o-line-height-h4);
+      color: var(--e-color-text1);
+      line-height: var(--e-line-height-h4);
       &:hover {
-        color: var(--o-color-brand1);
+        color: var(--e-color-brand1);
       }
       @media (max-width: 1100px) {
         font-size: 14px;
@@ -633,10 +552,10 @@ onMounted(async () => {
       }
     }
     .desc {
-      font-size: var(--o-font-size-text);
+      font-size: var(--e-font-size-text);
       font-weight: 400;
-      color: var(--o-color-text4);
-      line-height: var(--o-line-height-text);
+      color: var(--e-color-text4);
+      line-height: var(--e-line-height-text);
       margin: 24px 0 40px;
       text-align: justify;
       overflow: hidden;
@@ -660,9 +579,9 @@ onMounted(async () => {
     }
     .info {
       p {
-        font-size: var(--o-font-size-text);
-        line-height: var(--o-line-height-text);
-        color: var(--o-color-text4);
+        font-size: var(--e-font-size-text);
+        line-height: var(--e-line-height-text);
+        color: var(--e-color-text4);
         margin-bottom: 16px;
         display: flex;
         align-items: center;
@@ -670,8 +589,8 @@ onMounted(async () => {
           margin: 0;
           display: inline-flex;
           margin-right: 16px;
-          font-size: var(--o-font-size-tip);
-          line-height: var(--o-line-height-tip);
+          font-size: var(--e-font-size-tip);
+          line-height: var(--e-line-height-tip);
         }
         .o-icon {
           margin-right: 8px;

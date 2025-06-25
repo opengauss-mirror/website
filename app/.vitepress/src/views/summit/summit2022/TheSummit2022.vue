@@ -18,9 +18,7 @@ import otherBg from './img/cover.png';
 import IconArrowRight from '~icons/app/icon-arrow-right.svg';
 
 const commonStore = useCommon();
-const liveImg = computed(() =>
-  commonStore.theme === 'light' ? liveLight : liveDark
-);
+const liveImg = computed(() => (commonStore.theme === 'light' ? liveLight : liveDark));
 const bannerInfo = {
   pc_banner: banner,
   mo_banner: bannerMo,
@@ -56,13 +54,7 @@ const videoClickBtn = (path: string) => {
         :poster="bannerInfo.pc_banner"
         preload=""
       >
-        <source
-          type="video/mp4"
-          :src="
-            OBS_VIDEO_LINK +
-            'openGauss%20Summit%202022/Banner/openGauss%20Banner%E5%8A%A8K_1920x380.mp4'
-          "
-        />
+        <source type="video/mp4" :src="OBS_VIDEO_LINK + 'openGauss%20Summit%202022/Banner/openGauss%20Banner%E5%8A%A8K_1920x380.mp4'" />
       </video>
     </div>
     <div class="summit-banner-mo">
@@ -77,20 +69,12 @@ const videoClickBtn = (path: string) => {
     </div>
     <div class="agenda">
       <h3>{{ summitData.agenda.title }}</h3>
-      <div
-        v-for="(item, index) in summitData.agenda.meetingList"
-        :key="item.daytime"
-        class="agenda-item"
-      >
+      <div v-for="(item, index) in summitData.agenda.meetingList" :key="item.daytime" class="agenda-item">
         <h4 class="meeting-title">
           {{ item.daytime }}
         </h4>
         <OTabs v-model="tabType[index]" class="schedule-tabs">
-          <el-tab-pane
-            v-for="itemList in summitData.agenda.meetingList[0].list"
-            :key="itemList.id"
-            :name="itemList.id"
-          >
+          <el-tab-pane v-for="itemList in summitData.agenda.meetingList[0].list" :key="itemList.id" :name="itemList.id">
             <template #label>
               <div class="time-tabs">
                 {{ itemList.type }}
@@ -99,26 +83,12 @@ const videoClickBtn = (path: string) => {
           </el-tab-pane>
         </OTabs>
         <OContainer :level-index="1">
-          <div
-            class="schedule-item"
-            :class="{ isShow: tabType[index] === 'main' }"
-          >
-            <SummitSchedule
-              :options="summitData.agenda.meetingList[index].list[0].children"
-            />
+          <div class="schedule-item" :class="{ isShow: tabType[index] === 'main' }">
+            <SummitSchedule :options="summitData.agenda.meetingList[index].list[0].children" />
           </div>
-          <div
-            class="schedule-item other"
-            :class="{ isShow: tabType[index] === 'other' }"
-          >
+          <div class="schedule-item other" :class="{ isShow: tabType[index] === 'other' }">
             <OTabs v-model="otherTabType[index]" class="other-tabs">
-              <OTabPane
-                v-for="itemList in summitData.agenda.meetingList[index].list[1]
-                  .children"
-                :key="itemList.id"
-                :label="itemList.name"
-                :name="itemList.id"
-              >
+              <OTabPane v-for="itemList in summitData.agenda.meetingList[index].list[1].children" :key="itemList.id" :label="itemList.name" :name="itemList.id">
                 <SummitSchedule :options="itemList.children" />
               </OTabPane>
             </OTabs>
@@ -129,13 +99,7 @@ const videoClickBtn = (path: string) => {
     <!-- 线上展厅 -->
     <h3 class="title-bar">线上展厅</h3>
     <div class="exhibition-online">
-      <span
-        v-for="item in summitData.videolist"
-        :key="item.name"
-        :title="item.name"
-        class="video-item"
-        @click="videoClickBtn(item.link)"
-      ></span>
+      <span v-for="item in summitData.videolist" :key="item.name" :title="item.name" class="video-item" @click="videoClickBtn(item.link)"></span>
       <div v-if="videoDialog" class="video-box">
         <ODialog
           v-model="videoDialog"
@@ -160,11 +124,7 @@ const videoClickBtn = (path: string) => {
       <h4 class="meeting-title">
         {{ summitData.partnersList.title[1] }}
       </h4>
-      <LinkPanel
-        :link-list="summitData.partnersList.p1"
-        :row="3"
-        class="there"
-      />
+      <LinkPanel :link-list="summitData.partnersList.p1" :row="3" class="there" />
       <h4 class="meeting-title">
         {{ summitData.partnersList.title[2] }}
       </h4>
@@ -176,12 +136,7 @@ const videoClickBtn = (path: string) => {
     </div>
 
     <div class="other-content">
-      <div
-        v-for="item in summitData.other"
-        :key="item.path"
-        class="other-content-item"
-        :style="`background-image:url(${otherBg}) ;`"
-      >
+      <div v-for="item in summitData.other" :key="item.path" class="other-content-item" :style="`background-image:url(${otherBg}) ;`">
         <div class="cover">
           <img :src="item.cover" :alt="item.name" />
         </div>
@@ -204,12 +159,7 @@ const videoClickBtn = (path: string) => {
       </div>
       <div class="link-box">
         <p v-for="item in summitData.previous.list" :key="item.link">
-          <a
-            :href="item.link"
-            :target="item.target"
-            :rel="item.target === '_blank' ? 'noopener noreferrer' : ''"
-            >{{ item.name }}</a
-          >
+          <a :href="item.link" :target="item.target" :rel="item.target === '_blank' ? 'noopener noreferrer' : ''">{{ item.name }}</a>
         </p>
       </div>
     </div>
@@ -218,36 +168,36 @@ const videoClickBtn = (path: string) => {
 <style scoped lang="scss">
 .title-bar {
   text-align: center;
-  font-size: var(--o-font-size-h3);
-  line-height: var(--o-line-height-h3);
-  color: var(--o-color-text1);
+  font-size: var(--e-font-size-h3);
+  line-height: var(--e-line-height-h3);
+  color: var(--e-color-text1);
   font-weight: 300;
   margin: 64px 0 40px;
   @media (max-width: 767px) {
-    font-size: var(--o-font-size-h8);
-    line-height: var(--o-line-height-h8);
+    font-size: var(--e-font-size-h8);
+    line-height: var(--e-line-height-h8);
     margin: 40px 0 24px;
   }
 }
 .meeting-title {
   font-weight: 400;
-  color: var(--o-color-text1);
-  font-size: var(--o-font-size-h5);
-  line-height: var(--o-line-height-h5);
+  color: var(--e-color-text1);
+  font-size: var(--e-font-size-h5);
+  line-height: var(--e-line-height-h5);
   text-align: center;
   margin-bottom: 24px;
   @media (max-width: 767px) {
     margin-bottom: 12px;
-    font-size: var(--o-font-size-text);
-    line-height: var(--o-line-height-text);
+    font-size: var(--e-font-size-text);
+    line-height: var(--e-line-height-text);
   }
 }
 
 .summit-partners {
   .meeting-title {
     @media (max-width: 767px) {
-      font-size: var(--o-font-size-tip);
-      line-height: var(--o-line-height-tip);
+      font-size: var(--e-font-size-tip);
+      line-height: var(--e-line-height-tip);
     }
   }
   .picture-panel {
@@ -304,23 +254,23 @@ const videoClickBtn = (path: string) => {
 }
 .summit-detail {
   p {
-    font-size: var(--o-font-size-h6);
-    line-height: var(--o-line-height-h6);
-    color: var(--o-color-text1);
+    font-size: var(--e-font-size-h6);
+    line-height: var(--e-line-height-h6);
+    color: var(--e-color-text1);
     font-weight: 300;
     text-align: justify;
     text-indent: 2em;
     &:not(:last-child) {
-      margin-bottom: var(--o-spacing-h6);
+      margin-bottom: var(--e-spacing-h6);
     }
     @media screen and (max-width: 768px) {
-      font-size: var(--o-font-size-text);
-      line-height: var(--o-line-height-text);
+      font-size: var(--e-font-size-text);
+      line-height: var(--e-line-height-text);
     }
   }
 }
 .content {
-  margin: var(--o-spacing-h1) auto;
+  margin: var(--e-spacing-h1) auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
@@ -332,7 +282,7 @@ const videoClickBtn = (path: string) => {
     grid-template-columns: repeat(1, 1fr);
     max-width: 474px;
     gap: 16px;
-    margin: var(--o-spacing-h2) auto;
+    margin: var(--e-spacing-h2) auto;
   }
 
   .content-item {
@@ -343,7 +293,7 @@ const videoClickBtn = (path: string) => {
       display: inline-block;
       width: 100%;
       position: relative;
-      box-shadow: var(--o-shadow-l1);
+      box-shadow: var(--e-shadow-l1);
       .text {
         width: 100%;
         position: absolute;
@@ -354,14 +304,14 @@ const videoClickBtn = (path: string) => {
         p {
           color: #fff;
           text-align: center;
-          font-size: var(--o-font-size-h4);
+          font-size: var(--e-font-size-h4);
           @media screen and (max-width: 768px) {
-            font-size: var(--o-font-size-h5);
+            font-size: var(--e-font-size-h5);
           }
           &:nth-of-type(3) {
-            margin-top: var(--o-spacing-h4);
+            margin-top: var(--e-spacing-h4);
             @media screen and (max-width: 768px) {
-              margin-top: var(--o-spacing-h5);
+              margin-top: var(--e-spacing-h5);
             }
           }
         }
@@ -379,12 +329,12 @@ const videoClickBtn = (path: string) => {
     h3 {
       font-size: 24px;
       line-height: 30px;
-      color: var(--o-color-text1);
-      margin-right: var(--o-spacing-h6);
+      color: var(--e-color-text1);
+      margin-right: var(--e-spacing-h6);
       @media screen and (max-width: 768px) {
-        font-size: var(--o-font-size-h8);
-        line-height: var(--o-line-height-h8);
-        margin-right: var(--o-spacing-h7);
+        font-size: var(--e-font-size-h8);
+        line-height: var(--e-line-height-h8);
+        margin-right: var(--e-spacing-h7);
       }
     }
     img {
@@ -395,43 +345,43 @@ const videoClickBtn = (path: string) => {
   }
 
   .link-box {
-    margin-top: var(--o-spacing-h2);
+    margin-top: var(--e-spacing-h2);
     @media screen and (max-width: 768px) {
-      margin-top: var(--o-spacing-h6);
+      margin-top: var(--e-spacing-h6);
     }
     p:not(:last-child) {
-      margin-bottom: var(--o-spacing-h4);
+      margin-bottom: var(--e-spacing-h4);
       @media screen and (max-width: 768px) {
-        margin-bottom: var(--o-spacing-h6);
+        margin-bottom: var(--e-spacing-h6);
       }
     }
     a {
-      font-size: var(--o-font-size-h6);
-      line-height: var(--o-line-height-h6);
+      font-size: var(--e-font-size-h6);
+      line-height: var(--e-line-height-h6);
       display: inline-block;
       @media screen and (max-width: 768px) {
-        font-size: var(--o-font-size-text);
-        line-height: var(--o-line-height-text);
+        font-size: var(--e-font-size-text);
+        line-height: var(--e-line-height-text);
       }
     }
   }
 }
 .live {
-  margin-top: var(--o-spacing-h1);
+  margin-top: var(--e-spacing-h1);
   @media (max-width: 767px) {
-    margin-top: var(--o-spacing-h2);
+    margin-top: var(--e-spacing-h2);
   }
   h3 {
     text-align: center;
-    font-size: var(--o-font-size-h3);
-    line-height: var(--o-line-height-h3);
-    color: var(--o-color-text1);
+    font-size: var(--e-font-size-h3);
+    line-height: var(--e-line-height-h3);
+    color: var(--e-color-text1);
     font-weight: 300;
-    margin-bottom: var(--o-spacing-h2);
+    margin-bottom: var(--e-spacing-h2);
     @media (max-width: 767px) {
-      margin-bottom: var(--o-spacing-h4);
-      font-size: var(--o-font-size-h8);
-      line-height: var(--o-line-height-h8);
+      margin-bottom: var(--e-spacing-h4);
+      font-size: var(--e-font-size-h8);
+      line-height: var(--e-line-height-h8);
     }
   }
   .summit2022-box {
@@ -443,9 +393,9 @@ const videoClickBtn = (path: string) => {
     }
   }
   .live-room {
-    margin-top: var(--o-spacing-h2);
+    margin-top: var(--e-spacing-h2);
     @media (max-width: 767px) {
-      margin-top: var(--o-spacing-h4);
+      margin-top: var(--e-spacing-h4);
     }
   }
   :deep(.o-container-level1) {
@@ -467,13 +417,13 @@ const videoClickBtn = (path: string) => {
     display: none;
   }
   .time-tabs {
-    padding: 0 var(--o-spacing-h5);
+    padding: 0 var(--e-spacing-h5);
     line-height: 38px;
   }
   .is-active .time-tabs {
     color: #fff;
-    background: var(--o-color-brand1);
-    border-color: var(--o-color-brand2);
+    background: var(--e-color-brand1);
+    border-color: var(--e-color-brand2);
   }
   .summit-kv-box {
     :deep(.live-room-web-itembox.odd2022) {
@@ -493,35 +443,35 @@ const videoClickBtn = (path: string) => {
   }
 }
 .agenda {
-  margin: var(--o-spacing-h1) 0;
+  margin: var(--e-spacing-h1) 0;
   @media (max-width: 767px) {
-    margin: var(--o-spacing-h2) 0;
+    margin: var(--e-spacing-h2) 0;
   }
   h3 {
     text-align: center;
-    font-size: var(--o-font-size-h3);
-    line-height: var(--o-line-height-h3);
-    color: var(--o-color-text1);
+    font-size: var(--e-font-size-h3);
+    line-height: var(--e-line-height-h3);
+    color: var(--e-color-text1);
     font-weight: 300;
     @media (max-width: 767px) {
-      font-size: var(--o-font-size-h8);
-      line-height: var(--o-line-height-h8);
+      font-size: var(--e-font-size-h8);
+      line-height: var(--e-line-height-h8);
     }
   }
   .agenda-item {
-    margin-top: var(--o-spacing-h2);
+    margin-top: var(--e-spacing-h2);
     @media (max-width: 767px) {
-      margin-top: var(--o-spacing-h4);
+      margin-top: var(--e-spacing-h4);
     }
     &:nth-of-type(1) {
       // 暂时取消第一天的分会选中状态
       .other {
         :deep(.o-tabs) {
           .is-active {
-            color: var(--o-color-brand1);
+            color: var(--e-color-brand1);
           }
           .el-tabs__item:hover {
-            color: var(--o-color-text1);
+            color: var(--e-color-text1);
           }
         }
       }
@@ -553,7 +503,7 @@ const videoClickBtn = (path: string) => {
             grid-template-columns: auto;
           }
           .show-more {
-            color: var(--o-color-brand1);
+            color: var(--e-color-brand1);
           }
           .time {
             display: none;
@@ -561,7 +511,7 @@ const videoClickBtn = (path: string) => {
           .desc {
             display: block;
             &:hover {
-              color: var(--o-color-brand1);
+              color: var(--e-color-brand1);
             }
           }
         }
@@ -570,15 +520,15 @@ const videoClickBtn = (path: string) => {
     // 暂时隐藏时间
     .meeting-title {
       font-weight: 400;
-      color: var(--o-color-text1);
-      font-size: var(--o-font-size-h6);
-      line-height: var(--o-line-height-h6);
+      color: var(--e-color-text1);
+      font-size: var(--e-font-size-h6);
+      line-height: var(--e-line-height-h6);
       text-align: center;
       margin-bottom: 24px;
       @media (max-width: 767px) {
         margin-bottom: 12px;
-        font-size: var(--o-font-size-text);
-        line-height: var(--o-line-height-text);
+        font-size: var(--e-font-size-text);
+        line-height: var(--e-line-height-text);
       }
     }
     .schedule-tabs {
@@ -597,24 +547,24 @@ const videoClickBtn = (path: string) => {
       .time-tabs {
         display: inline-block;
         cursor: pointer;
-        border: 1px solid var(--o-color-border2);
-        color: var(--o-color-text1);
+        border: 1px solid var(--e-color-border2);
+        color: var(--e-color-text1);
         width: 120px;
         text-align: center;
-        background: var(--o-color-bg2);
-        font-size: var(--o-font-size-text);
+        background: var(--e-color-bg2);
+        font-size: var(--e-font-size-text);
         line-height: 38px;
-        padding: 0 var(--o-spacing-h5);
+        padding: 0 var(--e-spacing-h5);
         @media (max-width: 1100px) {
-          font-size: var(--o-font-size-tip);
-          padding: 0 var(--o-spacing-h6);
+          font-size: var(--e-font-size-tip);
+          padding: 0 var(--e-spacing-h6);
         }
       }
 
       .is-active .time-tabs {
         color: #fff;
-        background: var(--o-color-brand1);
-        border-color: var(--o-color-brand2);
+        background: var(--e-color-brand1);
+        border-color: var(--e-color-brand2);
       }
       .other-tabs {
         margin-bottom: 24px;
@@ -629,8 +579,8 @@ const videoClickBtn = (path: string) => {
           text-align: center;
           .el-tabs__item {
             @media (max-width: 1100px) {
-              font-size: var(--o-font-size-tip);
-              line-height: var(--o-line-height-tip);
+              font-size: var(--e-font-size-tip);
+              line-height: var(--e-line-height-tip);
             }
           }
         }
@@ -661,20 +611,20 @@ const videoClickBtn = (path: string) => {
         }
         .other-text {
           margin: 24px auto 0 auto;
-          color: var(--o-color-text1);
-          font-size: var(--o-font-size-h7);
-          line-height: var(--o-line-height-h7);
+          color: var(--e-color-text1);
+          font-size: var(--e-font-size-h7);
+          line-height: var(--e-line-height-h7);
           text-align: center;
           display: flex;
           justify-content: center;
           align-items: center;
           @media (max-width: 1100px) {
-            font-size: var(--o-font-size-text);
-            line-height: var(--o-line-height-text);
+            font-size: var(--e-font-size-text);
+            line-height: var(--e-line-height-text);
             margin: 16px 0;
           }
           svg {
-            margin-right: var(--o-spacing-h8);
+            margin-right: var(--e-spacing-h8);
           }
         }
         :deep(.date-list) {
@@ -699,24 +649,24 @@ const videoClickBtn = (path: string) => {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
-  margin: var(--o-spacing-h1) 0;
+  margin: var(--e-spacing-h1) 0;
   justify-content: center;
   @media screen and (max-width: 767px) {
     grid-template-columns: repeat(1, 1fr);
     gap: 16px;
-    margin: var(--o-spacing-h2) 0;
+    margin: var(--e-spacing-h2) 0;
   }
   &-item {
     flex: 1;
     position: relative;
     height: auto;
     text-align: center;
-    padding: var(--o-spacing-h4);
+    padding: var(--e-spacing-h4);
     background: no-repeat center/cover;
     @media screen and (max-width: 1440px) {
       width: 100%;
       margin: 0 auto;
-      padding: var(--o-spacing-h5);
+      padding: var(--e-spacing-h5);
     }
     .cover {
       height: 220px;
@@ -733,13 +683,13 @@ const videoClickBtn = (path: string) => {
     }
 
     .name {
-      font-size: var(--o-font-size-h5);
-      line-height: var(--o-line-height-h5);
-      color: var(--o-color-text1);
-      margin-bottom: var(--o-spacing-h5);
+      font-size: var(--e-font-size-h5);
+      line-height: var(--e-line-height-h5);
+      color: var(--e-color-text1);
+      margin-bottom: var(--e-spacing-h5);
       @media screen and (max-width: 1100px) {
-        font-size: var(--o-font-size-h8);
-        line-height: var(--o-line-height-h8);
+        font-size: var(--e-font-size-h8);
+        line-height: var(--e-line-height-h8);
       }
     }
   }

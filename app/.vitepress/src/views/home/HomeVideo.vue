@@ -36,8 +36,7 @@ function getVideoList() {
 
 onMounted(() => {
   getVideoList();
-  perviewNum.value =
-    screenWidth.value > 1920 ? 6 : screenWidth.value < 994 ? 1 : 4;
+  perviewNum.value = screenWidth.value > 1920 ? 6 : screenWidth.value < 994 ? 1 : 4;
 });
 
 const goVideoDetail = (item: VideoItemT) => {
@@ -54,11 +53,7 @@ const windowWidth = useWindowResize();
     <div v-if="windowWidth > 1100" class="scroll-content">
       <div class="video-list">
         <div v-for="item in videoList" :key="item.id" class="home-video-item">
-          <div
-            class="home-video-link"
-            :style="`background:url(${item.cover}) no-repeat center/cover`"
-            @click="goVideoDetail(item)"
-          >
+          <div class="home-video-link" :style="`background:url(${item.cover}) no-repeat center/cover`" @click="goVideoDetail(item)">
             <img :src="videoBtn" class="video-btn" />
             <div class="box">
               <p class="title">{{ isZh ? item.name : item.nameEn }}</p>
@@ -67,24 +62,9 @@ const windowWidth = useWindowResize();
         </div>
       </div>
     </div>
-    <el-carousel
-      v-else
-      class="video-list-mb"
-      :interval="5000"
-      height="236px"
-      indicator-position="none"
-      arrow="never"
-    >
-      <el-carousel-item
-        v-for="item in videoList"
-        :key="item.id"
-        class="home-video-item"
-      >
-        <div
-          class="home-video-link"
-          :style="`background:url(${item.cover}) no-repeat center/cover`"
-          @click="goVideoDetail(item)"
-        >
+    <el-carousel v-else class="video-list-mb" :interval="5000" height="236px" indicator-position="none" arrow="never">
+      <el-carousel-item v-for="item in videoList" :key="item.id" class="home-video-item">
+        <div class="home-video-link" :style="`background:url(${item.cover}) no-repeat center/cover`" @click="goVideoDetail(item)">
           <img :src="videoBtn" class="video-btn" />
           <div class="box">
             <p class="title">{{ item.title }}</p>
@@ -111,18 +91,18 @@ const windowWidth = useWindowResize();
 <style lang="scss" scoped>
 .home-video {
   .caption {
-    font-size: var(--o-font-size-h3);
+    font-size: var(--e-font-size-h3);
     font-weight: 300;
-    color: var(--o-color-text1);
-    line-height: var(--o-line-height-h3);
+    color: var(--e-color-text1);
+    line-height: var(--e-line-height-h3);
     width: 100%;
     text-align: center;
-    margin-bottom: var(--o-spacing-h2);
+    margin-bottom: var(--e-spacing-h2);
     @media (max-width: 768px) {
-      font-size: var(--o-font-size-h8);
-      line-height: var(--o-line-height-h8);
+      font-size: var(--e-font-size-h8);
+      line-height: var(--e-line-height-h8);
       margin-top: 0;
-      margin-bottom: var(--o-spacing-h5);
+      margin-bottom: var(--e-spacing-h5);
     }
   }
   .scroll-content {
@@ -142,7 +122,7 @@ const windowWidth = useWindowResize();
             justify-content: center;
             text-align: center;
             height: 100%;
-            padding: var(--o-spacing-h4);
+            padding: var(--e-spacing-h4);
             box-sizing: border-box;
           }
           .video-btn {
@@ -156,14 +136,14 @@ const windowWidth = useWindowResize();
           }
           .title {
             color: #fff;
-            font-size: var(--o-font-size-h6);
-            line-height: var(--o-line-height-h6);
+            font-size: var(--e-font-size-h6);
+            line-height: var(--e-line-height-h6);
             font-weight: 500;
           }
           .type {
             color: #fff;
-            font-size: var(--o-font-size-h8);
-            line-height: var(--o-line-height-h8);
+            font-size: var(--e-font-size-h8);
+            line-height: var(--e-line-height-h8);
           }
         }
       }
@@ -181,7 +161,7 @@ const windowWidth = useWindowResize();
           justify-content: center;
           text-align: center;
           height: 100%;
-          padding: var(--o-spacing-h4);
+          padding: var(--e-spacing-h4);
           box-sizing: border-box;
         }
         .video-btn {
@@ -195,25 +175,25 @@ const windowWidth = useWindowResize();
         }
         .title {
           color: #fff;
-          font-size: var(--o-font-size-h6);
-          line-height: var(--o-line-height-h6);
+          font-size: var(--e-font-size-h6);
+          line-height: var(--e-line-height-h6);
           font-weight: 500;
         }
         .type {
           color: #fff;
-          font-size: var(--o-font-size-h8);
-          line-height: var(--o-line-height-h8);
+          font-size: var(--e-font-size-h8);
+          line-height: var(--e-line-height-h8);
         }
       }
     }
   }
   .video-more {
     display: flex;
-    padding-top: var(--o-spacing-h4);
+    padding-top: var(--e-spacing-h4);
     justify-content: center;
     align-items: center;
     @media screen and (max-width: 1000px) {
-      padding: var(--o-spacing-h5) 0 0;
+      padding: var(--e-spacing-h5) 0 0;
 
       .o-button {
         font-size: 14px;
@@ -225,9 +205,9 @@ const windowWidth = useWindowResize();
     }
 
     .video-more-icon {
-      width: var(--o-font-size-h8);
-      height: var(--o-font-size-h8);
-      color: var(--o-color-brand1);
+      width: var(--e-font-size-h8);
+      height: var(--e-font-size-h8);
+      color: var(--e-color-brand1);
     }
   }
 }

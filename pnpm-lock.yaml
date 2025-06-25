@@ -11,6 +11,9 @@ importers:
       '@opensig/open-analytics':
         specifier: ^0.0.9
         version: 0.0.9
+      '@opensig/opendesign':
+        specifier: 0.0.75
+        version: 0.0.75(vue@3.3.4)
       '@vueuse/core':
         specifier: 10.11.1
         version: 10.11.1(vue@3.3.4)
@@ -322,6 +325,10 @@ packages:
     peerDependencies:
       '@babel/core': ^7.0.0-0
 
+  '@babel/runtime@7.27.6':
+    resolution: {integrity: sha512-vbavdySgbTTrmFE+EsiqUTzlOr5bzlnJtUv9PynGCAKvfQqjIXbvFdumPM/GxMDfyuGMJaJAU6TO4zc1Jf1i8Q==}
+    engines: {node: '>=6.9.0'}
+
   '@babel/template@7.22.15':
     resolution: {integrity: sha512-QPErUVm4uyJa60rkI73qneDacvdvzxshT3kksGqlGWYdOTIUOwJ7RDUL8sGqslY1uXWSL6xMFKEXDS3ox2uF0w==}
     engines: {node: '>=6.9.0'}
@@ -589,6 +596,11 @@ packages:
 
   '@opensig/open-analytics@0.0.9':
     resolution: {integrity: sha512-D+4VWxgBc1ABsQjWEjWfBfoBQ4PQbc1lNZeEYpQXkTJLLFcj6nSa+LwcYZFXtZdGz9dzOhhbwRwXv66WFw2qJw==}
+
+  '@opensig/opendesign@0.0.75':
+    resolution: {integrity: sha512-/0pdeb/jnY4KA9Zlwo4EI2EWHlRCvDqrj06E1JzlbcKzhvz6fGT5LkwgLUmG7+VIeobpnS+JP1sK5a6M1EMzFQ==}
+    peerDependencies:
+      vue: ^3.3.0
 
   '@pkgr/core@0.1.1':
     resolution: {integrity: sha512-cq8o4cWH0ibXh9VGi5P20Tu9XF/0fFXl9EUinr9QfTM7a7p0oTA4iJRCQWppXR1Pg8dSM0UCItCkPwsk9qWWYA==}
@@ -1210,6 +1222,10 @@ packages:
   data-urls@5.0.0:
     resolution: {integrity: sha512-ZYP5VBHshaDAiVZxjbRVcFJpc+4xGgT0bK3vzy1HLN8jTO975HEbuYzZJcHoQEY5K1a0z8YayJkyVETa08eNTg==}
     engines: {node: '>=18'}
+
+  date-fns@2.30.0:
+    resolution: {integrity: sha512-fnULvOpxnC5/Vg3NCiWelDsLiUc9bRwAPs/+LfTLNvetFCtCTN+yQz15C/fs4AwX1R9K5GLtLfn8QW+dWisaAw==}
+    engines: {node: '>=0.11'}
 
   dayjs@1.11.13:
     resolution: {integrity: sha512-oaMBel6gjolK862uaPQOVTA7q3TZhuSvuMQAAglQDOWYO9A91IrAOUJEyKVlqJlHE0vq5p5UXxzdPfMH/x6xNg==}
@@ -2676,6 +2692,8 @@ snapshots:
       '@babel/helper-plugin-utils': 7.22.5
       '@babel/plugin-syntax-typescript': 7.23.3(@babel/core@7.23.7)
 
+  '@babel/runtime@7.27.6': {}
+
   '@babel/template@7.22.15':
     dependencies:
       '@babel/code-frame': 7.23.5
@@ -2902,6 +2920,11 @@ snapshots:
       ua-parser-js: 1.0.39
       uuid: 10.0.0
       web-vitals: 4.2.4
+
+  '@opensig/opendesign@0.0.75(vue@3.3.4)':
+    dependencies:
+      date-fns: 2.30.0
+      vue: 3.3.4
 
   '@pkgr/core@0.1.1': {}
 
@@ -3616,6 +3639,10 @@ snapshots:
     dependencies:
       whatwg-mimetype: 4.0.0
       whatwg-url: 14.0.0
+
+  date-fns@2.30.0:
+    dependencies:
+      '@babel/runtime': 7.27.6
 
   dayjs@1.11.13: {}
 

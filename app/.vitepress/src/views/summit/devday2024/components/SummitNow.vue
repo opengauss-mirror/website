@@ -16,12 +16,12 @@ const commonStore = useCommon();
 const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
 
 const jumpPage = (href: string) => {
-  window.open(href)
-}
+  window.open(href);
+};
 </script>
 <template>
   <div class="summit-now">
-    <div class="title-box" :class="{'title-box-dark': !isLight}">
+    <div class="title-box" :class="{ 'title-box-dark': !isLight }">
       <p class="title-bg">{{ nowData.titleBg }}</p>
       <p class="title">{{ nowData.title }}</p>
     </div>
@@ -45,35 +45,35 @@ const jumpPage = (href: string) => {
 }
 .list {
   display: flex;
-  margin-top: var(--o-spacing-h2);
+  margin-top: var(--e-spacing-h2);
   .item {
     width: 50%;
-    background: var(--o-color-bg2);
-    padding: var(--o-spacing-h4);
+    background: var(--e-color-bg2);
+    padding: var(--e-spacing-h4);
     cursor: pointer;
     .item-title {
       font-size: 22px;
-      color: var(--o-color-text1);
+      color: var(--e-color-text1);
       line-height: 30px;
       font-weight: 500;
     }
     .link {
       display: inline-flex;
       align-items: center;
-      margin-top: var(--o-spacing-h4);
-      font-size: var(--o-font-size-text);
-      color: var(--o-color-text1);
-      line-height: var(--o-line-height-text);
+      margin-top: var(--e-spacing-h4);
+      font-size: var(--e-font-size-text);
+      color: var(--e-color-text1);
+      line-height: var(--e-line-height-text);
       font-weight: 400;
       .o-icon {
-        font-size: var(--o-font-size-h8);
-        margin-left: var(--o-spacing-h8);
-        color: var(--o-color-link1);
+        font-size: var(--e-font-size-h8);
+        margin-left: var(--e-spacing-h8);
+        color: var(--e-color-link1);
         transition: all 0.15s linear;
       }
     }
     &:last-of-type {
-      margin-left: var(--o-spacing-h3);
+      margin-left: var(--e-spacing-h3);
     }
     &:hover {
       background-image: url(../img/now-hover.jpg);
@@ -81,38 +81,38 @@ const jumpPage = (href: string) => {
       background-repeat: no-repeat;
       background-size: cover;
       .item-title {
-        color: var(--o-color-white);
+        color: var(--e-color-white);
       }
       .link {
-        color: var(--o-color-white);
+        color: var(--e-color-white);
         .o-icon {
-          color: var(--o-color-white);
-          transform: translateX(var(--o-spacing-h10));
+          color: var(--e-color-white);
+          transform: translateX(var(--e-spacing-h10));
         }
       }
     }
   }
   @media (max-width: 767px) {
     flex-direction: column;
-    margin-top: var(--o-spacing-h5);
+    margin-top: var(--e-spacing-h5);
     .item {
       width: 100%;
-      padding: var(--o-spacing-h6);
+      padding: var(--e-spacing-h6);
       .item-title {
-        font-size: var(--o-font-size-tip);
-        line-height: var(--o-line-height-tip);
+        font-size: var(--e-font-size-tip);
+        line-height: var(--e-line-height-tip);
       }
       .link {
-        margin-top: var(--o-spacing-h8);
-        font-size: var(--o-font-size-tip);
-        line-height: var(--o-line-height-tip);
+        margin-top: var(--e-spacing-h8);
+        font-size: var(--e-font-size-tip);
+        line-height: var(--e-line-height-tip);
         .o-icon {
-          font-size: var(--o-font-size-text);
+          font-size: var(--e-font-size-text);
         }
       }
       &:last-of-type {
         margin-left: 0;
-        margin-top: var(--o-spacing-h6);
+        margin-top: var(--e-spacing-h6);
       }
     }
   }

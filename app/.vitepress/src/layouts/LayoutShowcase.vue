@@ -10,11 +10,7 @@ const { frontmatter } = useData();
 
 <template>
   <div class="layout-showcase">
-    <BannerLevel2
-      :background-image="banner"
-      :title="frontmatter.title"
-      :subtitle="frontmatter.summary"
-    />
+    <BannerLevel2 :background-image="banner" :title="frontmatter.title" :subtitle="frontmatter.summary" />
     <Content class="markdown" />
   </div>
 </template>
@@ -22,7 +18,7 @@ const { frontmatter } = useData();
 <style lang="scss" scoped>
 :deep(.case-img) {
   text-align: center;
-  margin-top: var(--o-spacing-h4);
+  margin-top: var(--e-spacing-h4);
   img {
     @media screen and (max-width: 768px) {
       width: 100%;
@@ -30,9 +26,9 @@ const { frontmatter } = useData();
   }
 }
 .markdown {
-  margin: var(--o-spacing-h2) auto var(--o-spacing-h1);
+  margin: var(--e-spacing-h2) auto var(--e-spacing-h1);
   @media (max-width: 768px) {
-    margin: var(--o-spacing-h2) auto;
+    margin: var(--e-spacing-h2) auto;
     box-shadow: none;
   }
   :deep(h2:nth-of-type(1)) {
@@ -53,10 +49,10 @@ const { frontmatter } = useData();
   }
   :deep(.cloud-table) {
     tr {
-      border: 1px solid var(--o-color-table);
+      border: 1px solid var(--e-color-table);
       td:nth-of-type(1) {
         width: 20%;
-        border-right: 1px solid var(--o-color-table);
+        border-right: 1px solid var(--e-color-table);
       }
     }
   }
@@ -72,11 +68,11 @@ const { frontmatter } = useData();
       height: 120px;
       background-color: #ffffff;
       &:nth-of-type(1) {
-        padding-right: var(--o-spacing-h8);
+        padding-right: var(--e-spacing-h8);
       }
       &:nth-of-type(2) {
         position: relative;
-        padding-left: var(--o-spacing-h8);
+        padding-left: var(--e-spacing-h8);
         border-left: 3px solid #1e1e1e;
         @media (max-width: 448px) {
           border-left: none;

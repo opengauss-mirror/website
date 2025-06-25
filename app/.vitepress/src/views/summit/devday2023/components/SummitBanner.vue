@@ -9,14 +9,8 @@ defineProps({
 </script>
 <template>
   <div class="banner">
-    <div
-      class="summit-banner-pc summit-banner"
-      :style="{ backgroundImage: `url(${bannerData.img_pc})` }"
-    ></div>
-    <div
-      class="summit-banner-mo summit-banner"
-      :style="{ backgroundImage: `url(${bannerData.img_mo})` }"
-    ></div>
+    <div class="summit-banner-pc summit-banner" :style="{ backgroundImage: `url(${bannerData.img_pc})` }"></div>
+    <div class="summit-banner-mo summit-banner" :style="{ backgroundImage: `url(${bannerData.img_mo})` }"></div>
     <div class="banner-text">
       <h2>{{ bannerData.slogan }}</h2>
       <h3>{{ bannerData.title }}</h3>
@@ -61,13 +55,13 @@ defineProps({
           @media (max-width: 768px) {
             padding: 6px 16px;
             margin-top: 21px;
-            font-size: var(--o-font-size-text);
-            line-height: var(--o-line-height-text);
+            font-size: var(--e-font-size-text);
+            line-height: var(--e-line-height-text);
             .o-icon {
               display: flex;
               align-items: center;
-              font-size: var(--o-font-size-tip);
-              line-height: var(--o-line-height-tip);
+              font-size: var(--e-font-size-tip);
+              line-height: var(--e-line-height-tip);
             }
           }
         }
@@ -109,11 +103,11 @@ defineProps({
           @media (max-width: 768px) {
             padding: 6px 16px;
             margin-top: 21px;
-            font-size: var(--o-font-size-text);
-            line-height: var(--o-line-height-text);
+            font-size: var(--e-font-size-text);
+            line-height: var(--e-line-height-text);
             .o-icon {
-              font-size: var(--o-font-size-tip);
-              line-height: var(--o-line-height-tip);
+              font-size: var(--e-font-size-tip);
+              line-height: var(--e-line-height-tip);
               display: flex;
               align-items: center;
             }
@@ -136,33 +130,33 @@ defineProps({
       padding: 0;
     }
     h2 {
-      font-size: var(--o-font-size-h2);
+      font-size: var(--e-font-size-h2);
       font-weight: 600;
-      line-height: var(--o-line-height-h2);
+      line-height: var(--e-line-height-h2);
       @media (max-width: 767px) {
         font-size: 32px;
         line-height: 32px;
       }
     }
     h3 {
-      margin-top: var(--o-spacing-h8);
+      margin-top: var(--e-spacing-h8);
       font-size: 30px;
       line-height: 40px;
       font-weight: normal;
       @media (max-width: 767px) {
         margin-top: 8px;
-        font-size: var(--o-font-size-h7);
-        line-height: var(--o-line-height-h7);
+        font-size: var(--e-font-size-h7);
+        line-height: var(--e-line-height-h7);
       }
     }
     h4 {
-      font-size: var(--o-font-size-h5);
+      font-size: var(--e-font-size-h5);
       line-height: 40px;
       font-weight: normal;
-      margin-top: var(--o-spacing-h5);
+      margin-top: var(--e-spacing-h5);
       @media (max-width: 767px) {
-        font-size: var(--o-font-size-text);
-        line-height: var(--o-line-height-h8);
+        font-size: var(--e-font-size-text);
+        line-height: var(--e-line-height-h8);
         margin-top: 6px;
       }
     }

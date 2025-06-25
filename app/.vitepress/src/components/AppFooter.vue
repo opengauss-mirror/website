@@ -67,7 +67,7 @@ const footBg = {
 <style lang="scss" scoped>
 $color: #fff;
 .footer {
-  background: var(--o-color-greyblack1);
+  background: var(--e-color-greyblack1);
   :deep(.app-content) {
     padding-bottom: 0;
   }
@@ -85,7 +85,7 @@ $color: #fff;
       position: relative;
       min-height: 200px;
       @media (max-width: 1100px) {
-        padding: var(--o-spacing-h4) 0;
+        padding: var(--e-spacing-h4) 0;
         flex-direction: column;
       }
     }
@@ -105,12 +105,12 @@ $color: #fff;
   }
 
   .copyright {
-    font-size: var(--o-font-size-tip);
-    line-height: var(--o-line-height-tip);
+    font-size: var(--e-font-size-tip);
+    line-height: var(--e-line-height-tip);
     color: $color;
-    margin-top: var(--o-spacing-h5);
+    margin-top: var(--e-spacing-h5);
     @media (max-width: 1100px) {
-      margin-top: var(--o-spacing-h8);
+      margin-top: var(--e-spacing-h8);
     }
   }
 
@@ -118,29 +118,29 @@ $color: #fff;
     text-align: center;
     .link {
       color: $color;
-      font-size: var(--o-font-size-text);
+      font-size: var(--e-font-size-text);
       display: inline-block;
-      padding: 0 var(--o-spacing-h6);
+      padding: 0 var(--e-spacing-h6);
       border-right: 1px solid $color;
       &:last-child {
         border-right: 0;
       }
       @media (max-width: 1100px) {
-        font-size: var(--o-font-size-tip);
-        line-height: var(--o-line-height-tip);
-        padding: 0 var(--o-spacing-h9);
+        font-size: var(--e-font-size-tip);
+        line-height: var(--e-line-height-tip);
+        padding: 0 var(--e-spacing-h9);
       }
     }
     .mo-emial {
       display: none;
       @media (max-width: 1100px) {
         display: block;
-        margin-top: var(--o-spacing-h10);
+        margin-top: var(--e-spacing-h10);
       }
     }
     @media (max-width: 1100px) {
-      margin-top: var(--o-spacing-h5);
-      padding-top: var(--o-spacing-h5);
+      margin-top: var(--e-spacing-h5);
+      padding-top: var(--e-spacing-h5);
       border-top: 1px solid #2d2d2d;
       width: 100%;
     }
@@ -192,8 +192,8 @@ $color: #fff;
 
     p {
       color: $color;
-      font-size: var(--o-font-size-tip);
-      margin-top: var(--o-spacing-h8);
+      font-size: var(--e-font-size-tip);
+      margin-top: var(--e-spacing-h8);
     }
     @media (max-width: 1100px) {
       flex-direction: column;
@@ -204,9 +204,9 @@ $color: #fff;
 
   .email {
     color: $color;
-    font-size: var(--o-font-size-text);
+    font-size: var(--e-font-size-text);
     @media (max-width: 1100px) {
-      font-size: var(--o-font-size-tip);
+      font-size: var(--e-font-size-tip);
     }
   }
 }

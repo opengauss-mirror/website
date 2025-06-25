@@ -74,66 +74,66 @@ const isDark = computed(() => commonStore.theme === 'dark');
 }
 
 .signup-page {
-  padding: var(--o-spacing-h2) var(--o-spacing-h3) 94px var(--o-spacing-h3);
-  background-color: var(--o-color-bg2);
+  padding: var(--e-spacing-h2) var(--e-spacing-h3) 94px var(--e-spacing-h3);
+  background-color: var(--e-color-bg2);
   @media screen and (max-width: 1439px) {
-    padding: var(--o-spacing-h4) var(--o-spacing-h5) 74px var(--o-spacing-h3);
+    padding: var(--e-spacing-h4) var(--e-spacing-h5) 74px var(--e-spacing-h3);
   }
   @media (max-width: 768px) {
-    padding: var(--o-spacing-h5) var(--o-spacing-h5);
+    padding: var(--e-spacing-h5) var(--e-spacing-h5);
   }
   .signup-title {
-    font-size: var(--o-font-size-h3);
-    line-height: var(--o-line-height-h3);
+    font-size: var(--e-font-size-h3);
+    line-height: var(--e-line-height-h3);
     font-weight: 300;
-    padding-bottom: var(--o-spacing-h2);
+    padding-bottom: var(--e-spacing-h2);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     @media screen and (max-width: 1439px) {
-      font-size: var(--o-font-size-h5);
-      line-height: var(--o-line-height-h5);
-      padding-bottom: var(--o-spacing-h4);
+      font-size: var(--e-font-size-h5);
+      line-height: var(--e-line-height-h5);
+      padding-bottom: var(--e-spacing-h4);
     }
     @media (max-width: 768px) {
-      font-size: var(--o-font-size-h7);
-      line-height: var(--o-line-height-h7);
-      padding-bottom: var(--o-spacing-h6);
+      font-size: var(--e-font-size-h7);
+      line-height: var(--e-line-height-h7);
+      padding-bottom: var(--e-spacing-h6);
     }
   }
   .signup-subtitle {
-    font-size: var(--o-font-size-h7);
-    line-height: var(--o-line-height-h7);
-    padding: var(--o-spacing-h2) 0 20px 0;
+    font-size: var(--e-font-size-h7);
+    line-height: var(--e-line-height-h7);
+    padding: var(--e-spacing-h2) 0 20px 0;
     font-weight: 500;
     @media screen and (max-width: 1439px) {
-      font-size: var(--o-font-size-h8);
-      line-height: var(--o-line-height-h8);
-      padding: var(--o-spacing-h4) 0 var(--o-spacing-h5) 0;
+      font-size: var(--e-font-size-h8);
+      line-height: var(--e-line-height-h8);
+      padding: var(--e-spacing-h4) 0 var(--e-spacing-h5) 0;
     }
     @media (max-width: 768px) {
-      font-size: var(--o-font-size-text);
-      line-height: var(--o-line-height-text);
-      padding: var(--o-spacing-h6) 0 var(--o-spacing-h7) 0;
+      font-size: var(--e-font-size-text);
+      line-height: var(--e-line-height-text);
+      padding: var(--e-spacing-h6) 0 var(--e-spacing-h7) 0;
     }
   }
   .signup-desc {
-    font-size: var(--o-font-size-text);
-    line-height: var(--o-line-height-text);
+    font-size: var(--e-font-size-text);
+    line-height: var(--e-line-height-text);
     @media screen and (max-width: 1439px) {
-      font-size: var(--o-font-size-tip);
-      line-height: var(--o-line-height-tip);
+      font-size: var(--e-font-size-tip);
+      line-height: var(--e-line-height-tip);
     }
   }
   .signup-entrance {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: var(--o-spacing-h8);
+    grid-gap: var(--e-spacing-h8);
     margin-top: 35px;
     @media screen and (max-width: 1439px) {
-      margin-top: var(--o-spacing-h4);
+      margin-top: var(--e-spacing-h4);
       grid-template-columns: repeat(3, 1fr);
     }
     @media (max-width: 768px) {
-      margin-top: var(--o-spacing-h5);
+      margin-top: var(--e-spacing-h5);
       grid-template-columns: 1fr;
     }
   }

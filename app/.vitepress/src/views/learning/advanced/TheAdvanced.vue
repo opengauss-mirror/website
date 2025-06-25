@@ -21,11 +21,7 @@ function changeShowIndex(index: number) {
 </script>
 
 <template>
-  <BannerLevel2
-    :background-image="banner"
-    :title="i18n.advanced.title"
-    :illustration="illustration"
-  />
+  <BannerLevel2 :background-image="banner" :title="i18n.advanced.title" :illustration="illustration" />
   <AppContent :mobile-top="24">
     <div class="advanced">
       <h2>{{ i18n.advanced.subhead }}</h2>
@@ -43,57 +39,34 @@ function changeShowIndex(index: number) {
           </div>
         </div>
         <div class="step-body">
-          <div
-            v-for="(item, index) in i18n.advanced.modules"
-            :key="index"
-            class="body-item"
-          >
+          <div v-for="(item, index) in i18n.advanced.modules" :key="index" class="body-item">
             <div v-if="showIndex === index">
-              <div
-                v-for="itemType in item.itemList"
-                :key="itemType.name"
-                class="item-list"
-              >
+              <div v-for="itemType in item.itemList" :key="itemType.name" class="item-list">
                 <h4>{{ itemType.name }}</h4>
                 <p>{{ itemType.desc }}</p>
                 <div class="material lable-name1">
                   <div v-if="itemType.docsList" class="material-item">
                     <h5>{{ i18n.advanced.type_docs_label }}</h5>
                     <div class="link-box lable-name1">
-                      <a
-                        v-for="itemLink in itemType.docsList"
-                        :key="itemLink.link"
-                        :href="itemLink.link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >{{ itemLink.name }}</a
-                      >
+                      <a v-for="itemLink in itemType.docsList" :key="itemLink.link" :href="itemLink.link" target="_blank" rel="noopener noreferrer">{{
+                        itemLink.name
+                      }}</a>
                     </div>
                   </div>
                   <div v-if="itemType.videoList" class="material-item">
                     <h5>{{ i18n.advanced.type_video_label }}</h5>
                     <div class="link-box lable-name2">
-                      <a
-                        v-for="itemLink in itemType.videoList"
-                        :key="itemLink.link"
-                        :href="itemLink.link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >{{ itemLink.name }}</a
-                      >
+                      <a v-for="itemLink in itemType.videoList" :key="itemLink.link" :href="itemLink.link" target="_blank" rel="noopener noreferrer">{{
+                        itemLink.name
+                      }}</a>
                     </div>
                   </div>
                   <div v-if="itemType.optionList" class="material-item">
                     <h5>{{ i18n.advanced.type_practice_label }}</h5>
                     <div class="link-box lable-name3">
-                      <a
-                        v-for="itemLink in itemType.optionList"
-                        :key="itemLink.link"
-                        :href="itemLink.link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >{{ itemLink.name }}</a
-                      >
+                      <a v-for="itemLink in itemType.optionList" :key="itemLink.link" :href="itemLink.link" target="_blank" rel="noopener noreferrer">{{
+                        itemLink.name
+                      }}</a>
                     </div>
                   </div>
                 </div>
@@ -103,62 +76,38 @@ function changeShowIndex(index: number) {
         </div>
       </div>
       <div class="step-content-mobile">
-        <div
-          v-for="(item, index) in i18n.advanced.modules"
-          :key="item.name"
-          class="step-item"
-        >
+        <div v-for="(item, index) in i18n.advanced.modules" :key="item.name" class="step-item">
           <div class="item-head">
             <img :src="order[index]" alt="" />
             <p>{{ item.name }}</p>
           </div>
           <div class="item-body">
             <el-collapse>
-              <el-collapse-item
-                v-for="(itemType, itemIndex) in item.itemList"
-                :key="itemType.desc"
-                :title="itemType.name"
-                :name="itemIndex"
-              >
+              <el-collapse-item v-for="(itemType, itemIndex) in item.itemList" :key="itemType.desc" :title="itemType.name" :name="itemIndex">
                 <p class="detail">{{ itemType.desc }}</p>
                 <div class="material">
                   <div v-if="itemType.docsList" class="material-item">
                     <h5>{{ i18n.advanced.type_docs_label }}</h5>
                     <div class="link-box">
-                      <a
-                        v-for="itemLink in itemType.docsList"
-                        :key="itemLink.link"
-                        :href="itemLink.link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >{{ itemLink.name }}</a
-                      >
+                      <a v-for="itemLink in itemType.docsList" :key="itemLink.link" :href="itemLink.link" target="_blank" rel="noopener noreferrer">{{
+                        itemLink.name
+                      }}</a>
                     </div>
                   </div>
                   <div v-if="itemType.videoList" class="material-item">
                     <h5>{{ i18n.advanced.type_video_label }}</h5>
                     <div class="link-box">
-                      <a
-                        v-for="itemLink in itemType.videoList"
-                        :key="itemLink.link"
-                        :href="itemLink.link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >{{ itemLink.name }}</a
-                      >
+                      <a v-for="itemLink in itemType.videoList" :key="itemLink.link" :href="itemLink.link" target="_blank" rel="noopener noreferrer">{{
+                        itemLink.name
+                      }}</a>
                     </div>
                   </div>
                   <div v-if="itemType.optionList" class="material-item">
                     <h5>{{ i18n.advanced.type_practice_label }}</h5>
                     <div class="link-box">
-                      <a
-                        v-for="itemLink in itemType.optionList"
-                        :key="itemLink.link"
-                        :href="itemLink.link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >{{ itemLink.name }}</a
-                      >
+                      <a v-for="itemLink in itemType.optionList" :key="itemLink.link" :href="itemLink.link" target="_blank" rel="noopener noreferrer">{{
+                        itemLink.name
+                      }}</a>
                     </div>
                   </div>
                 </div>
@@ -173,29 +122,36 @@ function changeShowIndex(index: number) {
 
 <style lang="scss" scoped>
 .advanced {
-  --color-text: 0,0,0;
+  --color-text: 0, 0, 0;
 
   h2 {
-    font-size: var(--o-font-size-h3);
-    line-height: var(--o-line-height-h3);
+    font-size: var(--e-font-size-h3);
+    line-height: var(--e-line-height-h3);
     font-weight: 300;
-    color: var(--o-color-text1);
+    color: var(--e-color-text1);
     margin: 0 auto;
     width: 184px;
     padding: 0 20px;
     text-align: center;
-    background-image: url(@/assets/category/advanced/circle.png),
-      url(@/assets/category/advanced/ellipse.png),
-      url(@/assets/category/advanced/semicircle.png);
+    background-image: url(@/assets/category/advanced/circle.png), url(@/assets/category/advanced/ellipse.png), url(@/assets/category/advanced/semicircle.png);
     background-repeat: no-repeat, no-repeat, no-repeat;
-    background-position: 0 10px, 70% 100%, 100% 0;
+    background-position:
+      0 10px,
+      70% 100%,
+      100% 0;
     @media screen and (max-width: 768px) {
       width: 92px;
       padding: 0 10px;
-      font-size: var(--o-font-size-h7);
-      line-height: var(--o-line-height-h7);
-      background-position: 0 4px, 70% 100%, 100% 0;
-      background-size: 19px 19px, 10px 5px, 31px 15px;
+      font-size: var(--e-font-size-h7);
+      line-height: var(--e-line-height-h7);
+      background-position:
+        0 4px,
+        70% 100%,
+        100% 0;
+      background-size:
+        19px 19px,
+        10px 5px,
+        31px 15px;
     }
   }
   .step-content-pc {
@@ -206,7 +162,7 @@ function changeShowIndex(index: number) {
     .step-nav {
       padding-bottom: 24px;
       display: flex;
-      background-color: var(--o-color-brand1);
+      background-color: var(--e-color-brand1);
       justify-content: space-between;
       .step-item {
         padding: 20px 0 16px 0;
@@ -223,54 +179,54 @@ function changeShowIndex(index: number) {
           width: 90px;
         }
         p {
-          font-size: var(--o-font-size-h4);
-          line-height: var(--o-line-height-h5);
-          margin-top: var(--o-spacing-h6);
-          color: var(--o-color-white);
+          font-size: var(--e-font-size-h4);
+          line-height: var(--e-line-height-h5);
+          margin-top: var(--e-spacing-h6);
+          color: var(--e-color-white);
         }
       }
     }
     .step-body {
-      padding: var(--o-spacing-h2);
-      border: 5px solid var(--o-color-brand3);
+      padding: var(--e-spacing-h2);
+      border: 5px solid var(--e-color-brand3);
       border-top: none;
       .body-item {
         .item-list {
           & ~ .item-list {
-            margin-top: var(--o-spacing-h4);
+            margin-top: var(--e-spacing-h4);
           }
           h4 {
-            font-size: var(--o-font-size-h7);
-            line-height: var(--o-line-height-h7);
-            color: var(--o-color-text1);
+            font-size: var(--e-font-size-h7);
+            line-height: var(--e-line-height-h7);
+            color: var(--e-color-text1);
             font-weight: 500;
           }
           p {
-            margin-top: var(--o-spacing-h6);
-            font-size: var(--o-font-size-text);
-            line-height: var(--o-line-height-text);
-            color: var(--o-color-text1);
+            margin-top: var(--e-spacing-h6);
+            font-size: var(--e-font-size-text);
+            line-height: var(--e-line-height-text);
+            color: var(--e-color-text1);
           }
           .material {
-            margin-top: var(--o-spacing-h6);
-            padding: var(--o-spacing-h4) var(--o-spacing-h2);
-            background-color: var(--o-color-bg4);
+            margin-top: var(--e-spacing-h6);
+            padding: var(--e-spacing-h4) var(--e-spacing-h2);
+            background-color: var(--e-color-bg4);
             .material-item {
               & ~ .material-item {
-                margin-top: var(--o-spacing-h4);
+                margin-top: var(--e-spacing-h4);
               }
               h5 {
-                font-size: var(--o-font-size-h7);
-                line-height: var(--o-line-height-h7);
-                color: var(--o-color-text1);
+                font-size: var(--e-font-size-h7);
+                line-height: var(--e-line-height-h7);
+                color: var(--e-color-text1);
                 font-weight: 500;
               }
               .link-box {
-                margin-top: var(--o-spacing-h6);
+                margin-top: var(--e-spacing-h6);
                 a {
-                  margin-right: var(--o-spacing-h4);
-                  font-size: var(--o-font-size-text);
-                  line-height: var(--o-line-height-text);
+                  margin-right: var(--e-spacing-h4);
+                  font-size: var(--e-font-size-text);
+                  line-height: var(--e-line-height-text);
                 }
               }
             }
@@ -283,16 +239,16 @@ function changeShowIndex(index: number) {
     display: none;
     @media screen and (max-width: 768px) {
       display: block;
-      margin-top: var(--o-spacing-h4);
+      margin-top: var(--e-spacing-h4);
     }
     .step-item {
-      border: 6px solid var(--o-color-brand1);
+      border: 6px solid var(--e-color-brand1);
       & ~ .step-item {
-        margin-top: var(--o-spacing-h4);
+        margin-top: var(--e-spacing-h4);
       }
       .item-head {
         height: 48px;
-        background-color: var(--o-color-brand1);
+        background-color: var(--e-color-brand1);
         position: relative;
         padding-left: 60px;
         img {
@@ -302,9 +258,9 @@ function changeShowIndex(index: number) {
           top: 2px;
         }
         p {
-          font-size: var(--o-font-size-h8);
+          font-size: var(--e-font-size-h8);
           line-height: 48px;
-          color: var(--o-color-white);
+          color: var(--e-color-white);
         }
       }
       .item-body {
@@ -314,10 +270,10 @@ function changeShowIndex(index: number) {
         }
         :deep(.el-collapse-item__header) {
           border-bottom: none;
-          background-color: var(--o-color-bg1);
+          background-color: var(--e-color-bg1);
           justify-content: space-between;
-          font-size: var(--o-font-size-text);
-          color: var(--o-color-text1);
+          font-size: var(--e-font-size-text);
+          color: var(--e-color-text1);
           font-weight: 500;
         }
         :deep(.el-collapse-item__arrow) {
@@ -331,34 +287,34 @@ function changeShowIndex(index: number) {
           background-color: transparent;
         }
         :deep(.el-collapse-item__content) {
-          padding-bottom: var(--o-spacing-h5);
+          padding-bottom: var(--e-spacing-h5);
         }
         .detail {
-          font-size: var(--o-font-size-tip);
-          line-height: var(--o-line-height-text);
-          color: rgba( var(--color-text), 0.6);
+          font-size: var(--e-font-size-tip);
+          line-height: var(--e-line-height-text);
+          color: rgba(var(--color-text), 0.6);
         }
         .material {
-          margin-top: var(--o-spacing-h8);
-          padding: var(--o-spacing-h8) var(--o-spacing-h6);
-          background-color: var(--o-color-bg4);
+          margin-top: var(--e-spacing-h8);
+          padding: var(--e-spacing-h8) var(--e-spacing-h6);
+          background-color: var(--e-color-bg4);
           .material-item {
             & ~ .material-item {
-              margin-top: var(--o-spacing-h8);
+              margin-top: var(--e-spacing-h8);
             }
             h5 {
-              font-size: var(--o-font-size-tip);
-              line-height: var(--o-line-height-tip);
-              color: var(--o-color-text-secondary);
+              font-size: var(--e-font-size-tip);
+              line-height: var(--e-line-height-tip);
+              color: var(--e-color-text-secondary);
             }
             .link-box {
-              font-size: var(--o-font-size-tip);
-              line-height: var(--o-line-height-tip);
-              margin-top: var(--o-spacing-h8);
+              font-size: var(--e-font-size-tip);
+              line-height: var(--e-line-height-tip);
+              margin-top: var(--e-spacing-h8);
               a {
                 display: block;
                 & ~ a {
-                  margin-top: var(--o-spacing-h8);
+                  margin-top: var(--e-spacing-h8);
                 }
               }
             }
@@ -370,12 +326,11 @@ function changeShowIndex(index: number) {
 }
 @include in-dark {
   h2 {
-    background-image: url(@/assets/category/advanced/circle-dark.png),
-      url(@/assets/category/advanced/ellipse-dark.png),
+    background-image: url(@/assets/category/advanced/circle-dark.png), url(@/assets/category/advanced/ellipse-dark.png),
       url(@/assets/category/advanced/semicircle-dark.png);
   }
   .advanced {
-    --color-text: 255,255,255;
+    --color-text: 255, 255, 255;
   }
   .advanced .step-content-pc .step-nav .step-item-active {
     background-image: url(/.vitepress/src/assets/category/advanced/active-dark.png);

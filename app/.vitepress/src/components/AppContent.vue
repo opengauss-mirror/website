@@ -29,7 +29,7 @@ const pcPaddingTop = computed(() => {
 .app-content {
   max-width: 1504px;
   padding-top: v-bind('pcPaddingTop');
-  padding-bottom: var(--o-spacing-h1);
+  padding-bottom: var(--e-spacing-h1);
   padding-left: 44px;
   padding-right: 44px;
   margin: 0 auto;
@@ -41,7 +41,7 @@ const pcPaddingTop = computed(() => {
     padding-left: 16px;
     padding-right: 16px;
     padding-top: v-bind('mobilePaddingTop');
-    padding-bottom: var(--o-spacing-h2);
+    padding-bottom: var(--e-spacing-h2);
   }
 }
 </style>

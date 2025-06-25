@@ -39,10 +39,7 @@ const hiddenSearchBox = () => {
 };
 // 搜索事件
 function handleSearchEvent() {
-  windowOpen(
-    `${props.link}?search=${encodeURIComponent(searchInput.value)}`,
-    '_self'
-  );
+  windowOpen(`${props.link}?search=${encodeURIComponent(searchInput.value)}`, '_self');
   hiddenSearchBox();
 }
 // 点击热搜标签
@@ -50,19 +47,12 @@ const onTopSearchItemClick = (val: string) => {
   searchInput.value = val;
   handleSearchEvent();
 };
-const topSearch = computed(() =>
-  lang.value === 'zh' ? '热门搜索' : 'Top search'
-);
+const topSearch = computed(() => (lang.value === 'zh' ? '热门搜索' : 'Top search'));
 </script>
 <template>
   <div class="header-search">
     <div class="header-search-box">
-      <OSearch
-        v-model="searchInput"
-        :placeholder="placeholder"
-        @change="handleSearchEvent"
-        @focus="showDrawer"
-      >
+      <OSearch v-model="searchInput" :placeholder="placeholder" @change="handleSearchEvent" @focus="showDrawer">
         <template #suffix>
           <OIcon class="close" @click="hiddenSearchBox"><IconCancel /></OIcon>
         </template>
@@ -74,14 +64,7 @@ const topSearch = computed(() =>
           <p class="hots-text">{{ topSearch }}</p>
         </div>
         <div class="hots-list">
-          <OTag
-            v-for="item in popList"
-            :key="item"
-            type="text"
-            class="hots-list-item"
-            @click="onTopSearchItemClick(item)"
-            >{{ item }}</OTag
-          >
+          <OTag v-for="item in popList" :key="item" type="text" class="hots-list-item" @click="onTopSearchItemClick(item)">{{ item }}</OTag>
         </div>
       </div>
     </div>
@@ -91,7 +74,7 @@ const topSearch = computed(() =>
 .header-search {
   position: relative;
   width: 900px;
-  margin-left: var(--o-spacing-h2);
+  margin-left: var(--e-spacing-h2);
   @media (max-width: 1100px) {
     :deep(.o-search) {
       --o-search-height: 28px;
@@ -107,7 +90,7 @@ const topSearch = computed(() =>
   .header-search-box {
     .close {
       cursor: pointer;
-      color: var(--o-color-text1);
+      color: var(--e-color-text1);
     }
   }
   .drawer {
@@ -115,10 +98,10 @@ const topSearch = computed(() =>
     height: auto;
     width: 100%;
     margin-top: 21px;
-    box-shadow: var(--o-shadow-l4);
+    box-shadow: var(--e-shadow-l4);
     background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(5px);
-    padding: var(--o-spacing-h3);
+    padding: var(--e-spacing-h3);
     @media (max-width: 1100px) {
       background: rgba(255, 255, 255, 1);
       backdrop-filter: blur(0px);
@@ -126,27 +109,27 @@ const topSearch = computed(() =>
       left: -16px;
       right: 0;
       width: 100vw;
-      padding: var(--o-spacing-h5);
+      padding: var(--e-spacing-h5);
     }
     .hots {
       .hots-title {
-        font-size: var(--o-font-size-tip);
-        line-height: var(--o-line-height-tip);
-        color: var(--o-color-text1);
+        font-size: var(--e-font-size-tip);
+        line-height: var(--e-line-height-tip);
+        color: var(--e-color-text1);
       }
       .hots-list {
         .hots-list-item {
-          margin-top: var(--o-spacing-h5);
-          margin-right: var(--o-spacing-h5);
-          background-color: var(--o-color-bg4);
-          color: var(--o-color-text-secondary);
+          margin-top: var(--e-spacing-h5);
+          margin-right: var(--e-spacing-h5);
+          background-color: var(--e-color-bg4);
+          color: var(--e-color-text-secondary);
           cursor: pointer;
           @media (max-width: 1100px) {
-            font-size: var(--o-font-size-tip);
-            line-height: var(--o-line-height-tip);
+            font-size: var(--e-font-size-tip);
+            line-height: var(--e-line-height-tip);
           }
           @media (max-width: 768px) {
-            margin-right: var(--o-spacing-h8);
+            margin-right: var(--e-spacing-h8);
           }
         }
       }

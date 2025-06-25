@@ -113,13 +113,13 @@ const pcContainer = ref<HTMLDivElement>();
   display: none;
   .o-collapse {
     :deep(.el-collapse-item__content) {
-      padding: var(--o-spacing-h5);
-      background-color: var(--o-color-bg1);
+      padding: var(--e-spacing-h5);
+      background-color: var(--e-color-bg1);
     }
     .caption {
-      padding-left: var(--o-spacing-h5);
-      font-size: var(--o-font-size-text);
-      line-height: var(--o-line-height-text);
+      padding-left: var(--e-spacing-h5);
+      font-size: var(--e-font-size-text);
+      line-height: var(--e-line-height-text);
       font-weight: 400;
     }
 
@@ -129,7 +129,7 @@ const pcContainer = ref<HTMLDivElement>();
     }
 
     :deep(.el-collapse-item__content) {
-      padding: var(--o-spacing-h4) var(--o-spacing-h5);
+      padding: var(--e-spacing-h4) var(--e-spacing-h5);
     }
 
     :deep(.el-collapse-item__arrow) {
@@ -149,7 +149,7 @@ const pcContainer = ref<HTMLDivElement>();
         display: none;
       }
       :deep(.el-collapse-item__content) {
-        padding: 0 var(--o-spacing-h5);
+        padding: 0 var(--e-spacing-h5);
       }
     }
   }

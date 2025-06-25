@@ -24,37 +24,17 @@ const props = defineProps({
 const summitStyle = computed(() => {
   return {
     '--shape': props.shape,
-    '--webColumnsNum':
-      props.webColumnsNum < 1
-        ? 4
-        : props.webColumnsNum > 8
-        ? 8
-        : props.webColumnsNum,
-    '--mobileColumnsNum':
-      props.mobileColumnsNum < 1
-        ? 1
-        : props.mobileColumnsNum > 2
-        ? 2
-        : props.mobileColumnsNum,
+    '--webColumnsNum': props.webColumnsNum < 1 ? 4 : props.webColumnsNum > 8 ? 8 : props.webColumnsNum,
+    '--mobileColumnsNum': props.mobileColumnsNum < 1 ? 1 : props.mobileColumnsNum > 2 ? 2 : props.mobileColumnsNum,
   };
 });
 </script>
 
 <template>
-  <div class="lecturer-list" :style="(summitStyle as any)">
-    <div
-      v-for="item in lecturerList"
-      :key="item.NAME"
-      class="lecturer-list-item"
-    >
+  <div class="lecturer-list" :style="summitStyle as any">
+    <div v-for="item in lecturerList" :key="item.NAME" class="lecturer-list-item">
       <slot name="img">
-        <div
-          :class="
-            summitStyle['--shape'] === 'square'
-              ? 'lecturer-list-item-square'
-              : 'lecturer-list-item-circle'
-          "
-        >
+        <div :class="summitStyle['--shape'] === 'square' ? 'lecturer-list-item-square' : 'lecturer-list-item-circle'">
           <img :src="item.IMG" />
         </div>
       </slot>
@@ -62,11 +42,7 @@ const summitStyle = computed(() => {
         <p>{{ item.NAME }}</p>
       </slot>
       <slot name="title">
-        <div
-          v-for="titleItem in item.POSITION"
-          :key="titleItem"
-          class="lecturer-list-item-title"
-        >
+        <div v-for="titleItem in item.POSITION" :key="titleItem" class="lecturer-list-item-title">
           <p>{{ titleItem }}</p>
         </div>
       </slot>
@@ -76,7 +52,7 @@ const summitStyle = computed(() => {
 
 <style scoped lang="scss">
 .lecturer-list {
-  margin: var(--o-spacing-h2) auto;
+  margin: var(--e-spacing-h2) auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-content: center;
@@ -118,8 +94,8 @@ const summitStyle = computed(() => {
       }
     }
     p {
-      font-size: var(--o-spacing-h5);
-      color: var(--o-color-brand1);
+      font-size: var(--e-spacing-h5);
+      color: var(--e-color-brand1);
       text-align: center;
       margin-top: 20px;
       @media (max-width: 780px) {
@@ -127,19 +103,19 @@ const summitStyle = computed(() => {
       }
     }
     &-title {
-      margin-bottom: var(--o-spacing-h4);
+      margin-bottom: var(--e-spacing-h4);
       p {
-        color: var(--o-color-text1);
-        font-size: var(--o-font-size-text);
+        color: var(--e-color-text1);
+        font-size: var(--e-font-size-text);
         font-weight: 400;
-        line-height: var(--o-line-height-text);
+        line-height: var(--e-line-height-text);
         @media (max-width: 780px) {
-          font-size: var(--o-font-size-tip);
-          line-height: var(--o-line-height-tip);
+          font-size: var(--e-font-size-tip);
+          line-height: var(--e-line-height-tip);
         }
       }
       @media (max-width: 780px) {
-        margin-bottom: var(--o-spacing-h7);
+        margin-bottom: var(--e-spacing-h7);
       }
     }
   }

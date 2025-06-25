@@ -126,7 +126,7 @@ watch(
     font-size: 20px;
     line-height: 24px;
     font-weight: 400;
-    color: var(--o-color-text1);
+    color: var(--e-color-text1);
     @media (max-width: 1100px) {
       margin-top: 24px;
       font-size: 14px;
@@ -138,16 +138,16 @@ watch(
     margin-top: 18px;
     justify-content: center;
     text-align: center;
-    color: var(--o-color-text1);
+    color: var(--e-color-text1);
     @media screen and (max-width: 768px) {
       margin-top: 4px;
-      font-size: var(--o-font-size-tip);
-      line-height: var(--o-line-height-tip);
+      font-size: var(--e-font-size-tip);
+      line-height: var(--e-line-height-tip);
     }
   }
   .meeting-title {
     font-weight: 400;
-    color: var(--o-color-text1);
+    color: var(--e-color-text1);
     font-size: 20px;
     line-height: 28px;
     text-align: center;
@@ -196,10 +196,10 @@ watch(
       display: inline-block;
       margin: 0 0 24px;
       cursor: pointer;
-      border: 1px solid var(--o-color-border2);
-      color: var(--o-color-text1);
+      border: 1px solid var(--e-color-border2);
+      color: var(--e-color-text1);
       text-align: center;
-      background: var(--o-color-bg2);
+      background: var(--e-color-bg2);
       font-size: 14px;
       line-height: 38px;
       padding: 0 16px;
@@ -212,15 +212,15 @@ watch(
 
     .is-active .time-tabs {
       color: #fff;
-      background: var(--o-color-brand1);
-      border-color: var(--o-color-brand1);
+      background: var(--e-color-brand1);
+      border-color: var(--e-color-brand1);
     }
   }
   .schedule-item {
     width: 100%;
     padding: 24px;
-    background-color: var(--o-color-bg2);
-    margin-top: var(--o-spacing-h4);
+    background-color: var(--e-color-bg2);
+    margin-top: var(--e-spacing-h4);
     @media (max-width: 1100px) {
       padding: 16px;
     }
@@ -255,7 +255,7 @@ watch(
       }
       :deep(.el-tabs__nav-scroll) {
         text-align: center;
-        color: var(--o-color-text1);
+        color: var(--e-color-text1);
       }
       :deep(.el-tabs__content) {
         overflow: visible;
@@ -272,7 +272,7 @@ watch(
       }
       .other-text {
         margin: 24px auto 0 auto;
-        color: var(--o-color-text1);
+        color: var(--e-color-text1);
         font-size: 18px;
         line-height: 26px;
         text-align: center;
@@ -290,7 +290,7 @@ watch(
       }
       .other-title {
         margin: 24px auto;
-        color: var(--o-color-text1);
+        color: var(--e-color-text1);
         font-size: 18px;
         line-height: 26px;
         text-align: center;
@@ -322,14 +322,14 @@ watch(
       display: none;
     }
     :deep(.time-tabs) {
-      color: var(--o-color-text1);
+      color: var(--e-color-text1);
       &:hover {
-        color: var(--o-color-brand1);
+        color: var(--e-color-brand1);
       }
     }
     :deep(.is-active) {
       .time-tabs {
-        color: var(--o-color-brand1);
+        color: var(--e-color-brand1);
       }
     }
   }
@@ -347,7 +347,7 @@ watch(
     min-height: 64px;
     position: relative;
     & + .content-item {
-      border-top: 1px solid var(--o-color-border2);
+      border-top: 1px solid var(--e-color-border2);
     }
     @media screen and (max-width: 1470px) {
       grid-template-columns: 192px 580px 500px;
@@ -386,7 +386,7 @@ watch(
     .desc {
       font-size: 18px;
       line-height: 30px;
-      color: var(--o-color-text1);
+      color: var(--e-color-text1);
       display: block;
       margin-right: 36px;
       cursor: default;
@@ -394,7 +394,7 @@ watch(
       > span {
         display: block;
         & ~ span {
-          margin-top: var(--o-spacing-h6);
+          margin-top: var(--e-spacing-h6);
         }
       }
       @media (max-width: 1100px) {
@@ -407,9 +407,9 @@ watch(
     .name {
       width: 200px;
       display: inline-block;
-      color: var(--o-color-text3);
+      color: var(--e-color-text3);
       font-size: 16px;
-      line-height: var(--o-line-height-h8);
+      line-height: var(--e-line-height-h8);
       @media (max-width: 1100px) {
         font-size: 12px;
         line-height: 18px;
@@ -419,7 +419,7 @@ watch(
     .post {
       width: 100%;
       display: inline-block;
-      color: var(--o-color-text3);
+      color: var(--e-color-text3);
       font-size: 16px;
       line-height: 24px;
       // word-break: keep-all;
@@ -439,7 +439,7 @@ watch(
       width: 192px;
       font-size: 18px;
       line-height: 26px;
-      color: var(--o-color-text3);
+      color: var(--e-color-text3);
       display: flex;
       align-items: center;
       @media screen and (max-width: 1100px) {
@@ -450,7 +450,7 @@ watch(
       svg {
         width: 18px;
         height: 18px;
-        color: var(--o-color-text3);
+        color: var(--e-color-text3);
         margin-right: 6px;
         @media screen and (max-width: 1100px) {
           display: none;
@@ -470,8 +470,8 @@ watch(
       left: 50%;
       transform: translateX(-50%);
       z-index: 9;
-      background-color: var(--o-color-bg2);
-      box-shadow: var(--o-shadow-l4);
+      background-color: var(--e-color-bg2);
+      box-shadow: var(--e-shadow-l4);
       max-height: 300px;
       overflow: auto;
       @media (max-width: 1100px) {
@@ -491,7 +491,7 @@ watch(
         > span {
           font-size: 14px;
           line-height: 22px;
-          color: var(--o-color-text1);
+          color: var(--e-color-text1);
           display: inline-block;
           @media (max-width: 1100px) {
             font-size: 12px;

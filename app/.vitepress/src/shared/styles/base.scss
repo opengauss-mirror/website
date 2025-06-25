@@ -13,7 +13,7 @@ body {
 }
 
 :root.dark {
-  --el-color-primary: var(--o-color-trafficpurple8);
+  --el-color-primary: var(--e-color-trafficpurple8);
 }
 
 *,
@@ -33,13 +33,13 @@ img {
 }
 
 a {
-  color: var(--o-color-link1);
+  color: var(--e-color-link1);
   text-decoration: none;
   &:hover {
-    color: var(--o-color-link2);
+    color: var(--e-color-link2);
   }
   &:active {
-    color: var(--o-color-link3);
+    color: var(--e-color-link3);
   }
 }
 
@@ -87,6 +87,6 @@ html {
 }
 
 ::target-text {
-  background-color: var(--o-color-brand1);
+  background-color: var(--e-color-brand1);
   color: #fff;
 }

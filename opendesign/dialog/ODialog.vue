@@ -12,21 +12,21 @@ const attrs = useAttrs();
 
 <style lang="scss">
 .o-dialog {
-  --o-dialog-font-color: var(--o-color-text1);
-  --o-dialog-bg-color: var(--o-color-fill2);
-  --o-dialog-division-color: var(--o-color-division1);
+  --e-dialog-font-color: var(--e-color-text1);
+  --e-dialog-bg-color: var(--e-color-fill2);
+  --e-dialog-division-color: var(--e-color-division1);
 
   &.el-dialog {
-    color: var(--o-dialog-font-color);
+    color: var(--e-dialog-font-color);
     border-radius: 0;
-    background-color: var(--o-dialog-bg-color);
+    background-color: var(--e-dialog-bg-color);
     transition: none;
     border: none;
     @media screen and (max-width: 768px) {
       width: 90%;
     }
     .el-dialog__title {
-      color: var(--o-color-text1);
+      color: var(--e-color-text1);
     }
   }
 }

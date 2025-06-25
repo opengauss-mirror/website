@@ -19,9 +19,7 @@ import liveLight from './img/live.png';
 import liveDark from './img/live-dark.png';
 
 const commonStore = useCommon();
-const liveImg = computed(() =>
-  commonStore.theme === 'light' ? liveLight : liveDark
-);
+const liveImg = computed(() => (commonStore.theme === 'light' ? liveLight : liveDark));
 
 // 会议时间
 const meetingTime = [
@@ -66,10 +64,7 @@ const getData: any = ref({
 });
 const agendaData2: any = ref([]);
 
-agendaData2.value = getData.value[meetingTime[1].name].content.content.slice(
-  0,
-  1
-);
+agendaData2.value = getData.value[meetingTime[1].name].content.content.slice(0, 1);
 
 const showIndex = ref(1);
 function setShowIndex(index: number) {
@@ -102,38 +97,20 @@ watch(
       <div id="live-box" class="live">
         <h3 class="titleBar">{{ summitData.live.title }}</h3>
         <div>
-          <SummitLive
-            :live-data="summitData.live.liveData"
-            class-name="odd-box"
-            class="summit-kv-box"
-          />
+          <SummitLive :live-data="summitData.live.liveData" class-name="odd-box" class="summit-kv-box" />
         </div>
       </div>
       <div class="agenda" :class="{ 'min-height': showIndex === 1 }">
         <h3>会议日程</h3>
         <div class="date">
-          <div
-            v-for="(item, index) in meetingTime"
-            :key="item.name"
-            class="date-item"
-            :class="{ active: showIndex === index }"
-            @click="setShowIndex(index)"
-          >
+          <div v-for="(item, index) in meetingTime" :key="item.name" class="date-item" :class="{ active: showIndex === index }" @click="setShowIndex(index)">
             <p class="date-day">{{ item.day }}</p>
             <p class="date-month">{{ item.label }}</p>
           </div>
         </div>
         <!-- 25 -->
-        <template
-          v-if="
-            getData[meetingTime[0].name] &&
-            getData[meetingTime[0].name].content.content
-          "
-        >
-          <template
-            v-for="item in getData[meetingTime[0].name].content.content"
-            :key="item.lable"
-          >
+        <template v-if="getData[meetingTime[0].name] && getData[meetingTime[0].name].content.content">
+          <template v-for="item in getData[meetingTime[0].name].content.content" :key="item.lable">
             <SummitSchedule v-show="showIndex === 0" :agenda-data="item" />
           </template>
         </template>
@@ -158,12 +135,7 @@ watch(
       </div>
       <div class="guests">
         <h3 class="title-bar">演讲嘉宾</h3>
-        <SummitGuests
-          :lecturer-list="guestsData"
-          shape="circle"
-          :web-columns-num="4"
-          :mobile-columns-num="2"
-        />
+        <SummitGuests :lecturer-list="guestsData" shape="circle" :web-columns-num="4" :mobile-columns-num="2" />
       </div>
       <div class="previous">
         <div class="previous-title">
@@ -172,9 +144,7 @@ watch(
         </div>
         <div class="link-box">
           <p v-for="item in summitData.previous.content" :key="item.link">
-            <a :href="item.link" target="_blank" rel="noopener noreferrer">{{
-              item.title
-            }}</a>
+            <a :href="item.link" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
           </p>
         </div>
       </div>
@@ -184,22 +154,22 @@ watch(
 <style scoped lang="scss">
 .title-bar {
   text-align: center;
-  font-size: var(--o-font-size-h3);
-  line-height: var(--o-line-height-h3);
-  color: var(--o-color-text1);
+  font-size: var(--e-font-size-h3);
+  line-height: var(--e-line-height-h3);
+  color: var(--e-color-text1);
   font-weight: 300;
   margin: 64px 0 40px;
   @media (max-width: 767px) {
-    font-size: var(--o-font-size-h8);
-    line-height: var(--o-line-height-h8);
+    font-size: var(--e-font-size-h8);
+    line-height: var(--e-line-height-h8);
     margin: 40px 0 24px;
   }
 }
 
 @mixin floor-box {
-  margin-top: var(--o-spacing-h1);
+  margin-top: var(--e-spacing-h1);
   @media screen and (max-width: 768px) {
-    margin-top: var(--o-spacing-h2);
+    margin-top: var(--e-spacing-h2);
   }
 }
 .banner {
@@ -222,31 +192,31 @@ watch(
 }
 .detail {
   p {
-    font-size: var(--o-font-size-h6);
-    line-height: var(--o-line-height-h5);
-    color: var(--o-color-text1);
+    font-size: var(--e-font-size-h6);
+    line-height: var(--e-line-height-h5);
+    color: var(--e-color-text1);
     font-weight: 400;
     @media screen and (max-width: 768px) {
-      font-size: var(--o-font-size-tip);
-      line-height: var(--o-line-height-tip);
+      font-size: var(--e-font-size-tip);
+      line-height: var(--e-line-height-tip);
     }
   }
 }
 .live,
 .agenda {
-  margin-top: var(--o-spacing-h1);
+  margin-top: var(--e-spacing-h1);
   @media (max-width: 767px) {
-    margin-top: var(--o-spacing-h2);
+    margin-top: var(--e-spacing-h2);
   }
   h3 {
     text-align: center;
-    font-size: var(--o-font-size-h3);
-    line-height: var(--o-line-height-h3);
-    color: var(--o-color-text1);
+    font-size: var(--e-font-size-h3);
+    line-height: var(--e-line-height-h3);
+    color: var(--e-color-text1);
     font-weight: 300;
     @media (max-width: 767px) {
-      font-size: var(--o-font-size-h8);
-      line-height: var(--o-line-height-h8);
+      font-size: var(--e-font-size-h8);
+      line-height: var(--e-line-height-h8);
     }
   }
   .date {
@@ -269,7 +239,7 @@ watch(
       }
       &.active {
         color: #fff;
-        background-color: var(--o-color-brand1);
+        background-color: var(--e-color-brand1);
         border: 1px solid #fff;
       }
       .date-day {
@@ -328,10 +298,10 @@ watch(
       display: inline-block;
       margin: 0 0 24px;
       cursor: pointer;
-      border: 1px solid var(--o-color-border2);
-      color: var(--o-color-text1);
+      border: 1px solid var(--e-color-border2);
+      color: var(--e-color-text1);
       text-align: center;
-      background: var(--o-color-bg2);
+      background: var(--e-color-bg2);
       font-size: 14px;
       line-height: 38px;
       padding: 0 16px;
@@ -346,8 +316,8 @@ watch(
 
     .is-active .time-tabs {
       color: #fff;
-      background: var(--o-color-brand1);
-      border-color: var(--o-color-brand1);
+      background: var(--e-color-brand1);
+      border-color: var(--e-color-brand1);
     }
   }
 }
@@ -364,12 +334,12 @@ watch(
     h3 {
       font-size: 26px;
       line-height: 30px;
-      color: var(--o-color-text1);
-      margin-right: var(--o-spacing-h6);
+      color: var(--e-color-text1);
+      margin-right: var(--e-spacing-h6);
       @media screen and (max-width: 768px) {
-        font-size: var(--o-font-size-h5);
-        line-height: var(--o-line-height-text);
-        margin-right: var(--o-spacing-h7);
+        font-size: var(--e-font-size-h5);
+        line-height: var(--e-line-height-text);
+        margin-right: var(--e-spacing-h7);
       }
     }
     img {
@@ -384,23 +354,23 @@ watch(
     width: 100%;
     @media screen and (max-width: 768px) {
       width: 100%;
-      margin-top: var(--o-spacing-h4);
+      margin-top: var(--e-spacing-h4);
     }
     p {
       & ~ p {
-        margin-top: var(--o-spacing-h4);
+        margin-top: var(--e-spacing-h4);
       }
       a {
-        font-size: var(--o-font-size-h6);
-        line-height: var(--o-line-height-h6);
+        font-size: var(--e-font-size-h6);
+        line-height: var(--e-line-height-h6);
         @media screen and (max-width: 768px) {
-          font-size: var(--o-font-size-tip);
-          line-height: var(--o-line-height-tip);
+          font-size: var(--e-font-size-tip);
+          line-height: var(--e-line-height-tip);
         }
         & + a {
-          margin-top: var(--o-spacing-h4);
+          margin-top: var(--e-spacing-h4);
           @media screen and (max-width: 768px) {
-            margin-top: var(--o-spacing-h8);
+            margin-top: var(--e-spacing-h8);
           }
         }
       }

@@ -51,12 +51,7 @@ const changeLive = (val: string): void => {
   <div class="live-room">
     <div class="select-room">
       <OSelect v-model="liveRoom" filterable @change="changeLive">
-        <OOption
-          v-for="item in renderData"
-          :key="item.id"
-          :label="item.name"
-          :value="item.videoLink"
-        />
+        <OOption v-for="item in renderData" :key="item.id" :label="item.name" :value="item.videoLink" />
       </OSelect>
     </div>
     <video :src="liveUrl" class="live-room-video" controls></video>
@@ -65,11 +60,7 @@ const changeLive = (val: string): void => {
         <div
           v-for="(item, index) in renderData"
           :key="item.id"
-          :class="[
-            'link',
-            roomId === index ? 'link-active' : '',
-            index === 0 ? 'link-main' : ' ',
-          ]"
+          :class="['link', roomId === index ? 'link-active' : '', index === 0 ? 'link-main' : ' ']"
           @click="setLiveRoom(item, index)"
         >
           <p class="name">{{ item.name }}</p>
@@ -93,17 +84,17 @@ const changeLive = (val: string): void => {
   }
 }
 .live-room {
-  margin-top: var(--o-spacing-h2);
+  margin-top: var(--e-spacing-h2);
   @media (max-width: 1100px) {
-    margin-top: var(--o-spacing-h4);
+    margin-top: var(--e-spacing-h4);
   }
   .live-room-video {
-    margin-bottom: var(--o-spacing-h4);
+    margin-bottom: var(--e-spacing-h4);
     width: 100%;
     display: block;
     border: none;
     @media (max-width: 1100px) {
-      margin-top: var(--o-spacing-h5);
+      margin-top: var(--e-spacing-h5);
     }
   }
   .live-room-web {
@@ -131,22 +122,22 @@ const changeLive = (val: string): void => {
       }
       .link {
         flex: 1;
-        padding: var(--o-spacing-h6) 0;
+        padding: var(--e-spacing-h6) 0;
         cursor: pointer;
-        background-color: var(--o-color-bg2);
+        background-color: var(--e-color-bg2);
         height: 88px;
         text-align: center;
         display: grid;
         align-items: center;
-        border: 1px solid var(--o-color-brand1);
+        border: 1px solid var(--e-color-brand1);
         p {
-          color: var(--o-color-text1);
-          font-size: var(--o-font-size-h7);
-          line-height: var(--o-line-height-h7);
+          color: var(--e-color-text1);
+          font-size: var(--e-font-size-h7);
+          line-height: var(--e-line-height-h7);
         }
 
         &:hover {
-          box-shadow: var(--o-shadow-l2_hover);
+          box-shadow: var(--e-shadow-l2_hover);
         }
       }
 

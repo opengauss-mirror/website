@@ -84,8 +84,8 @@ watch(
   .theme-box-pc {
     cursor: pointer;
     .icon {
-      font-size: var(--o-font-size-h6);
-      color: var(--o-color-text1);
+      font-size: var(--e-font-size-h6);
+      color: var(--e-color-text1);
     }
     @media screen and (max-width: 1100px) {
       display: none;
@@ -101,7 +101,7 @@ watch(
 }
 @include in-dark {
   .icon {
-    color: var(--o-color-text1);
+    color: var(--e-color-text1);
   }
 }
 

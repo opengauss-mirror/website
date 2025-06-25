@@ -19,11 +19,7 @@ const { currentIndex, dataList } = toRefs(props);
 
 <template>
   <ul class="title-nav">
-    <li
-      v-for="(item, index) in dataList"
-      :key="index"
-      :class="+index === currentIndex ? 'active' : ''"
-    >
+    <li v-for="(item, index) in dataList" :key="index" :class="+index === currentIndex ? 'active' : ''">
       <a :href="item.key" rel="noopener noreferrer">
         {{ item.name }}
       </a>
@@ -45,17 +41,17 @@ const { currentIndex, dataList } = toRefs(props);
   li {
     width: 100%;
     padding: 8px 16px;
-    border-left: 1px solid var(--o-color-border2);
+    border-left: 1px solid var(--e-color-border2);
     a {
-      color: var(--o-color-text4);
-      font-size: var(--o-font-size-text);
-      line-height: var(--o-line-height-text);
+      color: var(--e-color-text4);
+      font-size: var(--e-font-size-text);
+      line-height: var(--e-line-height-text);
     }
   }
   .active {
-    border-left: 1px solid var(--o-color-brand1);
+    border-left: 1px solid var(--e-color-brand1);
     a {
-      color: var(--o-color-brand1);
+      color: var(--e-color-brand1);
     }
   }
 }

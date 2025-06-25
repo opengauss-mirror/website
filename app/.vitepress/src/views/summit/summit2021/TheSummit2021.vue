@@ -51,11 +51,7 @@ const videoClickBtn = (path: string) => {
       <h3 class="title-bar">{{ summitData.titleBar[1] }}</h3>
       <div class="time">
         <OTabs v-model="tabType" class="schedule-tabs">
-          <el-tab-pane
-            v-for="item in summitData.list"
-            :key="item.id"
-            :name="item.id"
-          >
+          <el-tab-pane v-for="item in summitData.list" :key="item.id" :name="item.id">
             <template #label>
               <div class="time-tabs">
                 {{ item.time }}
@@ -70,18 +66,10 @@ const videoClickBtn = (path: string) => {
             <h4 class="meeting-title">{{ summitData.list[0].type }}</h4>
             <SummitSchedule :options="summitData.list[0].children" />
           </div>
-          <div
-            class="schedule-item other"
-            :class="{ isShow: tabType === 'other' }"
-          >
+          <div class="schedule-item other" :class="{ isShow: tabType === 'other' }">
             <h4 class="meeting-title">{{ summitData.list[1].type }}</h4>
             <OTabs v-model="otherTabType" class="other-tabs">
-              <OTabPane
-                v-for="item in summitData.list[1].children"
-                :key="item.id"
-                :label="item.name"
-                :name="item.id"
-              >
+              <OTabPane v-for="item in summitData.list[1].children" :key="item.id" :label="item.name" :name="item.id">
                 <SummitSchedule :options="item.children" />
               </OTabPane>
             </OTabs>
@@ -93,13 +81,7 @@ const videoClickBtn = (path: string) => {
     <div class="exhibition">
       <h3 class="title-bar">{{ summitData.titleBar[2] }}</h3>
       <div class="exhibition-online">
-        <a
-          v-for="item in summitData.videolist"
-          :key="item.name"
-          href=""
-          :name="item.name"
-          @click="videoClickBtn(item.link)"
-        ></a>
+        <a v-for="item in summitData.videolist" :key="item.name" href="" :name="item.name" @click="videoClickBtn(item.link)"></a>
         <div v-if="isVideoDialog" class="video-box">
           <ODialog
             v-model="isVideoDialog"
@@ -210,15 +192,15 @@ const videoClickBtn = (path: string) => {
 }
 .summit-info {
   .text {
-    font-size: var(--o-font-size-h7);
-    line-height: var(--o-line-height-h7);
-    color: var(--o-color-text1);
+    font-size: var(--e-font-size-h7);
+    line-height: var(--e-line-height-h7);
+    color: var(--e-color-text1);
     text-indent: 2em;
     margin-bottom: 8px;
     text-align: justify;
     @media (max-width: 767px) {
-      font-size: var(--o-font-size-text);
-      line-height: var(--o-line-height-text);
+      font-size: var(--e-font-size-text);
+      line-height: var(--e-line-height-text);
     }
   }
 }
@@ -242,11 +224,11 @@ const videoClickBtn = (path: string) => {
         margin: 0 0 24px;
         cursor: pointer;
         border-radius: 8px;
-        border: 1px solid var(--o-color-border2);
-        color: var(--o-color-text1);
+        border: 1px solid var(--e-color-border2);
+        color: var(--e-color-text1);
         width: 120px;
         text-align: center;
-        background: var(--o-color-bg2);
+        background: var(--e-color-bg2);
         .taber-top {
           line-height: 64px;
           font-size: 24px;
@@ -256,7 +238,7 @@ const videoClickBtn = (path: string) => {
           }
         }
         .taber-bottom {
-          border-top: 1px solid var(--o-color-border2);
+          border-top: 1px solid var(--e-color-border2);
           font-size: 20px;
           line-height: 36px;
           display: block;
@@ -272,8 +254,8 @@ const videoClickBtn = (path: string) => {
 
       .is-active .time-tabs {
         color: #fff;
-        background: var(--o-color-brand1);
-        border-color: var(--o-color-brand2);
+        background: var(--e-color-brand1);
+        border-color: var(--e-color-brand2);
       }
     }
     :deep(.schedule-tabs) {
@@ -282,9 +264,9 @@ const videoClickBtn = (path: string) => {
       }
       .time-tabs {
         width: auto;
-        font-size: var(--o-font-size-h5);
-        line-height: var(--o-line-height-h5);
-        color: var(--o-color-text1);
+        font-size: var(--e-font-size-h5);
+        line-height: var(--e-line-height-h5);
+        color: var(--e-color-text1);
         border: none;
         border-radius: 0;
         padding-bottom: 6px;
@@ -295,9 +277,9 @@ const videoClickBtn = (path: string) => {
       }
       .is-active {
         .time-tabs {
-          color: var(--o-color-brand1);
+          color: var(--e-color-brand1);
           background-color: transparent;
-          border-bottom: 1px solid var(--o-color-brand1);
+          border-bottom: 1px solid var(--e-color-brand1);
         }
       }
     }
@@ -323,21 +305,21 @@ const videoClickBtn = (path: string) => {
         text-align: center;
         .el-tabs__item {
           @media (max-width: 1100px) {
-            font-size: var(--o-font-size-tip);
-            line-height: var(--o-line-height-tip);
+            font-size: var(--e-font-size-tip);
+            line-height: var(--e-line-height-tip);
           }
         }
       }
       .other-text {
         text-align: center;
         margin: 24px 0;
-        color: var(--o-color-text1);
-        font-size: var(--o-font-size-h7);
-        line-height: var(--o-line-height-h7);
+        color: var(--e-color-text1);
+        font-size: var(--e-font-size-h7);
+        line-height: var(--e-line-height-h7);
         text-align: center;
         @media (max-width: 1100px) {
-          font-size: var(--o-font-size-text);
-          line-height: var(--o-line-height-text);
+          font-size: var(--e-font-size-text);
+          line-height: var(--e-line-height-text);
           margin: 16px 0;
         }
       }
@@ -350,13 +332,13 @@ const videoClickBtn = (path: string) => {
       gap: 16px;
       .el-tabs__item {
         flex: 1;
-        padding: var(--o-spacing-h6) 0;
+        padding: var(--e-spacing-h6) 0;
         cursor: pointer;
-        background-color: var(--o-color-bg2);
+        background-color: var(--e-color-bg2);
         text-align: center;
         display: grid;
         align-items: center;
-        border: 1px solid var(--o-color-brand1);
+        border: 1px solid var(--e-color-brand1);
         border-radius: 2px;
       }
       .el-tabs__active-bar {
@@ -859,8 +841,8 @@ const videoClickBtn = (path: string) => {
 .partners {
   .meeting-title {
     @media (max-width: 767px) {
-      font-size: var(--o-font-size-tip);
-      line-height: var(--o-line-height-tip);
+      font-size: var(--e-font-size-tip);
+      line-height: var(--e-line-height-tip);
     }
   }
   .picture-panel {
@@ -878,28 +860,28 @@ const videoClickBtn = (path: string) => {
 }
 .title-bar {
   text-align: center;
-  font-size: var(--o-font-size-h3);
-  line-height: var(--o-line-height-h3);
-  color: var(--o-color-text1);
+  font-size: var(--e-font-size-h3);
+  line-height: var(--e-line-height-h3);
+  color: var(--e-color-text1);
   font-weight: 300;
   margin: 64px 0 40px;
   @media (max-width: 767px) {
-    font-size: var(--o-font-size-h8);
-    line-height: var(--o-line-height-h8);
+    font-size: var(--e-font-size-h8);
+    line-height: var(--e-line-height-h8);
     margin: 40px 0 24px;
   }
 }
 .meeting-title {
   font-weight: 400;
-  color: var(--o-color-text1);
-  font-size: var(--o-font-size-h5);
-  line-height: var(--o-line-height-h5);
+  color: var(--e-color-text1);
+  font-size: var(--e-font-size-h5);
+  line-height: var(--e-line-height-h5);
   text-align: center;
   margin-bottom: 24px;
   @media (max-width: 767px) {
     margin-bottom: 12px;
-    font-size: var(--o-font-size-text);
-    line-height: var(--o-line-height-text);
+    font-size: var(--e-font-size-text);
+    line-height: var(--e-line-height-text);
   }
 }
 </style>

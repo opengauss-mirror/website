@@ -49,29 +49,29 @@ const i18n = useI18n();
 <style lang="scss" scoped>
 .home-title {
   text-align: center;
-  color: var(--o-color-text1);
-  font-size: var(--o-font-size-h3);
-  line-height: var(--o-line-height-h3);
+  color: var(--e-color-text1);
+  font-size: var(--e-font-size-h3);
+  line-height: var(--e-line-height-h3);
   font-weight: 300;
   @media screen and (max-width: 1100px) {
-    font-size: var(--o-font-size-h8);
-    line-height: var(--o-line-height-h8);
-    margin-bottom: var(--o-spacing-h5);
+    font-size: var(--e-font-size-h8);
+    line-height: var(--e-line-height-h8);
+    margin-bottom: var(--e-spacing-h5);
   }
 }
 .meeting-text {
-  color: var(--o-color-text4);
-  font-size: var(--o-font-size-text);
-  line-height: var(--o-line-height-text);
+  color: var(--e-color-text4);
+  font-size: var(--e-font-size-text);
+  line-height: var(--e-line-height-text);
   text-align: center;
   margin: 16px 0 24px;
 }
 .home-partner {
   h3 {
-    margin-top: var(--o-spacing-h1);
+    margin-top: var(--e-spacing-h1);
     font-weight: 300;
     @media screen and (max-width: 1100px) {
-      margin-top: var(--o-spacing-h2);
+      margin-top: var(--e-spacing-h2);
     }
   }
 }

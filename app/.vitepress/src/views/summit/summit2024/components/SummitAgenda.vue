@@ -96,7 +96,7 @@ const renderData = computed(() => {
     }
     &.active {
       color: #fff;
-      background-color: var(--o-color-brand1);
+      background-color: var(--e-color-brand1);
       border: 1px solid #fff;
     }
     .date-day {
@@ -155,10 +155,10 @@ const renderData = computed(() => {
     display: inline-block;
     margin: 0 0 24px;
     cursor: pointer;
-    border: 1px solid var(--o-color-border2);
-    color: var(--o-color-text1);
+    border: 1px solid var(--e-color-border2);
+    color: var(--e-color-text1);
     text-align: center;
-    background: var(--o-color-bg2);
+    background: var(--e-color-bg2);
     font-size: 14px;
     line-height: 38px;
     padding: 0 16px;
@@ -173,8 +173,8 @@ const renderData = computed(() => {
 
   .is-active .time-tabs {
     color: #fff;
-    background: var(--o-color-brand1);
-    border-color: var(--o-color-brand1);
+    background: var(--e-color-brand1);
+    border-color: var(--e-color-brand1);
   }
 }
 </style>

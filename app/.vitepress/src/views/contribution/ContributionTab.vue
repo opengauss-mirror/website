@@ -42,7 +42,7 @@ const handleClick = (tab: TabsPaneContext) => {
 
 <style lang="scss" scoped>
 .contribution-tab {
-  background-color: var(--o-color-bg2);
+  background-color: var(--e-color-bg2);
   display: flex;
   justify-content: center;
   :deep(.el-tabs__header) {

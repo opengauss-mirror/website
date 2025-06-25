@@ -90,48 +90,48 @@ const windowWidth = ref(useWindowResize());
 }
 .online-communication {
   .text {
-    font-size: var(--o-font-size-text);
-    line-height: var(--o-line-height-text);
-    color: var(--o-color-text4);
+    font-size: var(--e-font-size-text);
+    line-height: var(--e-line-height-text);
+    color: var(--e-color-text4);
   }
   .title {
-    font-size: var(--o-font-size-h5);
-    line-height: var(--o-line-height-h5);
-    color: var(--o-color-text1);
-    margin: var(--o-spacing-h2) 0 var(--o-spacing-h4);
+    font-size: var(--e-font-size-h5);
+    line-height: var(--e-line-height-h5);
+    color: var(--e-color-text1);
+    margin: var(--e-spacing-h2) 0 var(--e-spacing-h4);
     @media screen and (max-width: 1100px) {
-      margin: var(--o-spacing-h4) 0 var(--o-spacing-h6);
-      font-size: var(--o-font-size-h6);
-      line-height: var(--o-line-height-h6);
+      margin: var(--e-spacing-h4) 0 var(--e-spacing-h6);
+      font-size: var(--e-font-size-h6);
+      line-height: var(--e-line-height-h6);
     }
   }
   .sub-title {
-    font-size: var(--o-font-size-h7);
-    line-height: var(--o-line-height-h7);
-    color: var(--o-color-text1);
-    margin: var(--o-spacing-h2) 0 var(--o-spacing-h4);
+    font-size: var(--e-font-size-h7);
+    line-height: var(--e-line-height-h7);
+    color: var(--e-color-text1);
+    margin: var(--e-spacing-h2) 0 var(--e-spacing-h4);
     @media screen and (max-width: 1100px) {
-      font-size: var(--o-font-size-h8);
-      line-height: var(--o-line-height-h8);
-      margin: var(--o-spacing-h4) 0 var(--o-spacing-h6);
+      font-size: var(--e-font-size-h8);
+      line-height: var(--e-line-height-h8);
+      margin: var(--e-spacing-h4) 0 var(--e-spacing-h6);
     }
   }
   .list {
     li {
-      margin-left: var(--o-spacing-h4);
+      margin-left: var(--e-spacing-h4);
       list-style: circle;
     }
   }
   .mail-img {
-    margin-top: var(--o-spacing-h6);
+    margin-top: var(--e-spacing-h6);
   }
 }
 .link {
-  font-size: var(--o-font-size-h8);
-  line-height: var(--o-line-height-h8);
+  font-size: var(--e-font-size-h8);
+  line-height: var(--e-line-height-h8);
   @media screen and (max-width: 1100px) {
-    font-size: var(--o-font-size-text);
-    line-height: var(--o-line-height-text);
+    font-size: var(--e-font-size-text);
+    line-height: var(--e-line-height-text);
   }
 }
 </style>
