@@ -22,7 +22,6 @@ import { useCommon, useCookieStore } from '@/stores/common';
 import { useI18n } from '@/i18n';
 import { useClipboard } from '@/components/hooks/useClipboard';
 import { useScreen } from '~@/composables/useScreen';
-import showMd from 'markdown-it';
 
 import useWindowResize from '@/components/hooks/useWindowResize';
 import { DownloadItemT } from '@/shared/@types/type-download';
@@ -222,14 +221,6 @@ const changeLayer = (item) => {
   serverTab.value = item.edition;
   layerShow.value = !layerShow.value;
 };
-
-const command = '$ add-apt-repository ppa:opengauss/opengauss\n$ apt update\n$ apt install opengauss';
-
-// 转换md语法
-function convertMd(data: string) {
-  const content = '```bash\n' + data + '\n```';
-  return showMd().render(content);
-}
 </script>
 <template>
   <div :id="replaceSpace(tableData.name) + '-' + replaceSpace(versionShown)" class="content-item">

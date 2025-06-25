@@ -12,6 +12,7 @@ import ElementPlus from 'element-plus';
 import OpenDesign from 'opendesign';
 import VueDOMPurifyHTML from 'vue-dompurify-html';
 import 'element-plus/theme-chalk/dark/css-vars.css';
+import i18n from '~@/i18n';
 
 // src-new
 import '~@/assets/style/theme/default-light.token.css';
@@ -33,6 +34,7 @@ export default {
 
     app.use(ElementPlus);
     app.use(OpenDesign);
+    app.use(i18n);
     app.use(SeoBox as any);
   },
 };
