@@ -20,6 +20,17 @@ export default {
       '本次大会也是 openGauss 社区的年度大型工作会议，值此开源五周年之际，openGauss社区邀请开发者、用户齐聚一堂，共同讨论下一个版本的技术路线与演进方向，携手共建数智化的数据库新生态。',
     ],
   },
+  live: {
+    title: '会议直播',
+    titleBg: 'LIVE BROADCAST',
+    list: [
+      {
+        liveId: '15642',
+        liveTestId: '15666',
+        name: 'openGauss Developer Day 2025',
+      },
+    ],
+  },
   agenda: {
     title: '会议日程',
     titleBg: 'AGENDA',
@@ -49,7 +60,7 @@ export default {
           person: [
             {
               name: '王磊',
-              post: 'openGauss 技术委员会委员、openGauss 数据库高级架构师',
+              post: 'openGauss 技术委员会委员、2012实验室高斯部首席架构师',
             },
             {
               name: '阙鸣健',
@@ -76,8 +87,8 @@ export default {
           desc: 'CERDB助力国能集团数字化转型实践',
           person: [
             {
-              name: '平雷',
-              post: '国家能源网络安全中心副总经理',
+              name: '王志民',
+              post: '国家能源网络安全中心云平台运营部经理',
             },
           ],
         },
