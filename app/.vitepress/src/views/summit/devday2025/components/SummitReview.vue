@@ -35,33 +35,33 @@ const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
 .summit-review {
   margin-top: 72px;
   @media (max-width: 767px) {
-    margin-top: var(--o-spacing-h3);
+    margin-top: var(--e-spacing-h3);
   }
 }
 .link-box {
-  margin-top: var(--o-spacing-h2);
+  margin-top: var(--e-spacing-h2);
   width: 100%;
   text-align: center;
   @media screen and (max-width: 768px) {
     width: 100%;
-    margin-top: var(--o-spacing-h6);
+    margin-top: var(--e-spacing-h6);
   }
   p {
     font-weight: 500;
     & ~ p {
-      margin-top: var(--o-spacing-h6);
+      margin-top: var(--e-spacing-h6);
     }
     a {
-      font-size: var(--o-font-size-h6);
-      line-height: var(--o-line-height-h6);
+      font-size: var(--e-font-size-h6);
+      line-height: var(--e-line-height-h6);
       @media screen and (max-width: 768px) {
-        font-size: var(--o-font-size-tip);
-        line-height: var(--o-line-height-tip);
+        font-size: var(--e-font-size-tip);
+        line-height: var(--e-line-height-tip);
       }
       & + a {
-        margin-top: var(--o-spacing-h6);
+        margin-top: var(--e-spacing-h6);
         @media screen and (max-width: 768px) {
-          margin-top: var(--o-spacing-h8);
+          margin-top: var(--e-spacing-h8);
         }
       }
     }

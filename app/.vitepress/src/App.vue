@@ -63,14 +63,36 @@ const comp = computed(() => {
   <AppFooter />
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --layout-content-max-width: 1544px;
+  --layout-content-padding: 64px;
+  --layout-header-height: 80px;
+
+  --layout-new-content-max-width: 1616px;
+
+  @include respond-to('<=laptop') {
+    --layout-content-max-width: 100%;
+    --layout-new-content-max-width: 100%;
+    --layout-content-padding: 40px;
+  }
+
+  @include respond-to('<=pad') {
+    --layout-content-padding: 32px;
+  }
+
+  @include respond-to('phone') {
+    --layout-content-padding: 24px;
+  }
 }
+</style>
+<style lang="scss" scoped>
 main {
   min-height: calc(100vh - 280px);
-  background-color: var(--o-color-bg1);
+  background-color: var(--e-color-bg1);
   &::after {
     content: '';
     display: table;

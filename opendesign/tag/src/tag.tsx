@@ -11,11 +11,11 @@ export default defineComponent({
 
     const classNames = computed(() => {
       return {
-        'o-tag': true,
-        [`o-tag-size-${size.value}`]: true,
-        [`o-tag-type-${type.value}`]: true,
-        'o-tag-checked': checked.value,
-        'o-tag-checkable': checkable.value,
+        'e-tag': true,
+        [`e-tag-size-${size.value}`]: true,
+        [`e-tag-type-${type.value}`]: true,
+        'e-tag-checked': checked.value,
+        'e-tag-checkable': checkable.value,
       };
     });
 

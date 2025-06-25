@@ -3,7 +3,7 @@ import { useAttrs } from 'vue';
 const attrs = useAttrs();
 </script>
 <template>
-  <ElOption v-bind="attrs" class="o-option">
+  <ElOption v-bind="attrs" class="e-option">
     <slot> </slot>
   </ElOption>
 </template>
@@ -12,15 +12,15 @@ const attrs = useAttrs();
 .el-popper__arrow {
   display: none;
 }
-.el-popper.o-select-dropdown {
+.el-popper.e-select-dropdown {
   border: none;
   border-radius: 0 !important;
-  background-color: var(--o-color-bg2);
-  .o-select-dropdown {
+  background-color: var(--e-color-bg2);
+  .e-select-dropdown {
     max-width: 500px;
   }
-  .o-option.hover {
-    background-color: var(--o-color-bg4);
+  .e-option.hover {
+    background-color: var(--e-color-bg4);
   }
 }
 </style>

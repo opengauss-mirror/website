@@ -192,19 +192,19 @@ const handleChange = (val: any) => {
   margin-top: 40px;
 }
 .section-title {
-  font-size: var(--o-font-size-h8);
-  line-height: var(--o-line-height-h8);
+  font-size: var(--e-font-size-h8);
+  line-height: var(--e-line-height-h8);
   font-weight: 300;
-  color: var(--o-color-text1);
+  color: var(--e-color-text1);
   text-align: center;
 }
 .section-content {
   margin-top: 16px;
 }
 .section-desc {
-  font-size: var(--o-font-size-tip);
-  line-height: var(--o-line-height-tip);
-  color: var(--o-color-text1);
+  font-size: var(--e-font-size-tip);
+  line-height: var(--e-line-height-tip);
+  color: var(--e-color-text1);
   font-weight: 400;
 }
 .advantage-item {
@@ -217,17 +217,17 @@ const handleChange = (val: any) => {
     height: 56px;
   }
   .feature {
-    font-size: var(--o-font-size-text);
-    line-height: var(--o-line-height-text);
-    color: var(--o-color-text1);
+    font-size: var(--e-font-size-text);
+    line-height: var(--e-line-height-text);
+    color: var(--e-color-text1);
     font-weight: 400;
     margin-top: 12px;
   }
   .feature-desc {
-    font-size: var(--o-font-size-tip);
-    line-height: var(--o-line-height-tip);
+    font-size: var(--e-font-size-tip);
+    line-height: var(--e-line-height-tip);
     font-weight: 400;
-    color: var(--o-color-text-secondary);
+    color: var(--e-color-text-secondary);
     margin-top: 8px;
   }
 }
@@ -235,13 +235,13 @@ const handleChange = (val: any) => {
   margin: 12px 8px 0;
   --el-collapse-header-height: 56px;
   --el-collapse-border-color: none;
-  --el-collapse-header-bg-color: var(--o-color-bg2);
-  --el-collapse-content-bg-color: var(--o-color-bg2);
+  --el-collapse-header-bg-color: var(--e-color-bg2);
+  --el-collapse-content-bg-color: var(--e-color-bg2);
   .el-collapse-item__header {
     padding: 0 16px;
-    font-size: var(--o-font-size-text);
-    line-height: var(--o-line-height-text);
-    color: var(--o-color-text1);
+    font-size: var(--e-font-size-text);
+    line-height: var(--e-line-height-text);
+    color: var(--e-color-text1);
     position: relative;
   }
   .el-collapse-item__content {
@@ -252,7 +252,7 @@ const handleChange = (val: any) => {
       display: block;
       width: calc(100% - 32px);
       height: 1px;
-      background-color: var(--o-color-border2);
+      background-color: var(--e-color-border2);
       position: absolute;
       top: 0px;
     }
@@ -266,9 +266,9 @@ const handleChange = (val: any) => {
 }
 .tab-content {
   p {
-    font-size: var(--o-font-size-tip);
-    line-height: var(--o-line-height-tip);
-    color: var(--o-color-text1);
+    font-size: var(--e-font-size-tip);
+    line-height: var(--e-line-height-tip);
+    color: var(--e-color-text1);
     font-weight: 400;
     opacity: 0.8;
   }
@@ -290,8 +290,8 @@ const handleChange = (val: any) => {
       width: 80px;
     }
     p {
-      font-size: var(--o-font-size-tip);
-      line-height: var(--o-line-height-tip);
+      font-size: var(--e-font-size-tip);
+      line-height: var(--e-line-height-tip);
       font-weight: 500;
       color: #ad9cd3;
       text-align: center;
@@ -299,16 +299,16 @@ const handleChange = (val: any) => {
   }
 
   .card-title {
-    font-size: var(--o-font-size-text);
-    line-height: var(--o-line-height-text);
+    font-size: var(--e-font-size-text);
+    line-height: var(--e-line-height-text);
     font-weight: 500;
-    color: var(--o-color-white);
+    color: var(--e-color-white);
   }
   .card-desc {
-    font-size: var(--o-font-size-tip);
-    line-height: var(--o-line-height-tip);
+    font-size: var(--e-font-size-tip);
+    line-height: var(--e-line-height-tip);
     font-weight: 400;
-    color: var(--o-color-white);
+    color: var(--e-color-white);
     margin-top: 8px;
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -326,11 +326,11 @@ const handleChange = (val: any) => {
       height: 12px;
     }
     .website-btn {
-      border-color: var(--o-color-white);
-      color: var(--o-color-white);
+      border-color: var(--e-color-white);
+      color: var(--e-color-white);
     }
     .more-btn {
-      color: var(--o-color-white);
+      color: var(--e-color-white);
     }
   }
 }
@@ -338,37 +338,37 @@ const handleChange = (val: any) => {
   margin-top: 5px;
   margin-left: 50%;
   transform: translatex(-50%);
-  font-size: var(--o-font-size-text);
-  line-height: var(--o-line-height-text);
-  color: var(--o-color-text1);
+  font-size: var(--e-font-size-text);
+  line-height: var(--e-line-height-text);
+  color: var(--e-color-text1);
   font-weight: 400;
 }
 .icon-search {
-  color: var(--o-color-brand3);
+  color: var(--e-color-brand3);
   width: 14px;
   height: 14px;
 }
 .interaction-card {
   width: 100%;
-  background-color: var(--o-color-bg2);
+  background-color: var(--e-color-bg2);
   padding: 16px;
   display: flex;
   margin-top: 16px;
   .o-icon {
     margin-right: 12px;
-    font-size: var(--o-font-size-h5);
-    color: var(--o-color-text1);
+    font-size: var(--e-font-size-h5);
+    color: var(--e-color-text1);
   }
   h1 {
-    font-size: var(--o-font-size-text);
-    line-height: var(--o-line-height-text);
-    color: var(--o-color-text1);
+    font-size: var(--e-font-size-text);
+    line-height: var(--e-line-height-text);
+    color: var(--e-color-text1);
     font-weight: 500;
   }
   p {
-    font-size: var(--o-font-size-tip);
-    line-height: var(--o-line-height-tip);
-    color: var(--o-color-text-secondary);
+    font-size: var(--e-font-size-tip);
+    line-height: var(--e-line-height-tip);
+    color: var(--e-color-text-secondary);
     font-weight: 400;
     margin-top: 12px;
     display: flex;
@@ -387,11 +387,11 @@ const handleChange = (val: any) => {
 .experience {
   font-size: 14px;
   font-weight: 500;
-  color: var(--o-color-white);
+  color: var(--e-color-white);
   line-height: 22px;
 }
 .download-btn {
-  color: var(--o-color-white);
+  color: var(--e-color-white);
   margin-top: 12px;
 }
 </style>

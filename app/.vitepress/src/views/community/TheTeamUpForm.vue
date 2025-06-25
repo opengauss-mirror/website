@@ -285,7 +285,7 @@ const { csrfToken } = getUserAuth();
 }
 
 .team-up-form {
-  background-color: var(--o-color-bg2);
+  background-color: var(--e-color-bg2);
   padding: 40px 56px 40px 46px;
 
   @media screen and (max-width: 768px) {
@@ -298,8 +298,8 @@ const { csrfToken } = getUserAuth();
     text-align: center;
 
     @media screen and (max-width: 768px) {
-      font-size: var(--o-font-size-h8);
-      line-height: var(--o-line-height-h8);
+      font-size: var(--e-font-size-h8);
+      line-height: var(--e-line-height-h8);
     }
   }
 
@@ -324,13 +324,13 @@ const { csrfToken } = getUserAuth();
     }
 
     :deep(.el-checkbox__label) {
-      color: var(--o-color-text1);
+      color: var(--e-color-text1);
     }
 
     .o-button {
       padding: 9px 20px;
-      font-size: var(--o-font-size-text);
-      line-height: var(--o-line-height-text);
+      font-size: var(--e-font-size-text);
+      line-height: var(--e-line-height-text);
     }
   }
 

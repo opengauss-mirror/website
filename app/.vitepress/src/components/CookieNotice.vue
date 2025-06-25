@@ -3,11 +3,7 @@ import { ref, watch, onMounted, computed } from 'vue';
 import { useRoute, useData } from 'vitepress';
 import { ElDialog, ElSwitch } from 'element-plus';
 import { setCustomCookie, isBoolean, removeCustomCookie } from '@/shared/utils';
-import {
-  useCookieStore,
-  COOKIE_AGREED_STATUS,
-  COOKIE_KEY,
-} from '@/stores/common';
+import { useCookieStore, COOKIE_AGREED_STATUS, COOKIE_KEY } from '@/stores/common';
 import { useScreen } from '@/shared/useScreen';
 import { initSensor, removeSensor } from '@/shared/analytics';
 import { useI18n } from '@/i18n';
@@ -79,12 +75,7 @@ const acceptAll = () => {
   analysisAllowed.value = true;
   cookieStore.status = COOKIE_AGREED_STATUS.ALL_AGREED;
   removeCustomCookie(COOKIE_KEY);
-  setCustomCookie(
-    COOKIE_KEY,
-    COOKIE_AGREED_STATUS.ALL_AGREED,
-    180,
-    COOKIE_DOMAIN
-  );
+  setCustomCookie(COOKIE_KEY, COOKIE_AGREED_STATUS.ALL_AGREED, 180, COOKIE_DOMAIN);
   toggleNoticeVisible(false);
   initSensor();
 };
@@ -94,12 +85,7 @@ const rejectAll = () => {
   analysisAllowed.value = false;
   cookieStore.status = COOKIE_AGREED_STATUS.NECCESSARY_AGREED;
   removeCustomCookie(COOKIE_KEY);
-  setCustomCookie(
-    COOKIE_KEY,
-    COOKIE_AGREED_STATUS.NECCESSARY_AGREED,
-    180,
-    COOKIE_DOMAIN
-  );
+  setCustomCookie(COOKIE_KEY, COOKIE_AGREED_STATUS.NECCESSARY_AGREED, 180, COOKIE_DOMAIN);
   toggleNoticeVisible(false);
   removeSensor();
 };
@@ -147,27 +133,18 @@ watch(
           <p class="cookie-title">{{ i18n.cookie.title }}</p>
           <p class="cookie-desc">
             {{ i18n.cookie.desc }}
-            <a :href="isZh ? '/zh/cookies/' : '/en/cookies/'" target="_blank">
-              {{ i18n.cookie.link }} </a
-            >{{ isZh ? '。' : '.' }}
+            <a :href="isZh ? '/zh/cookies/' : '/en/cookies/'" target="_blank"> {{ i18n.cookie.link }} </a>{{ isZh ? '。' : '.' }}
           </p>
         </div>
         <div class="cookie-notice-right">
-          <OButton type="outline" size="mini" @click="acceptAll">{{
-            i18n.cookie.acceptAll
-          }}</OButton>
-          <OButton type="outline" size="mini" @click="rejectAll">{{
-            i18n.cookie.rejectAll
-          }}</OButton>
+          <OButton type="outline" size="mini" @click="acceptAll">{{ i18n.cookie.acceptAll }}</OButton>
+          <OButton type="outline" size="mini" @click="rejectAll">{{ i18n.cookie.rejectAll }}</OButton>
           <OButton type="outline" size="mini" @click="toggleDlgVisible(true)">
             {{ i18n.cookie.manage }}
           </OButton>
         </div>
 
-        <IconClose
-          class="cookie-notice-close"
-          @click="toggleNoticeVisible(false)"
-        />
+        <IconClose class="cookie-notice-close" @click="toggleNoticeVisible(false)" />
       </div>
     </div>
     <client-only>
@@ -183,9 +160,7 @@ watch(
           <div class="content-item">
             <div class="item-header">
               <span class="item-title">{{ i18n.cookie.necessaryCookie }}</span>
-              <span class="item-extra">{{
-                i18n.cookie.necessaryCookieTip
-              }}</span>
+              <span class="item-extra">{{ i18n.cookie.necessaryCookieTip }}</span>
             </div>
             <div class="item-detail">
               {{ i18n.cookie.necessaryCookieDetail }}
@@ -205,9 +180,7 @@ watch(
         </div>
         <template #footer>
           <span class="dialog-footer">
-            <OButton type="outline" size="mini" @click="handleSave">{{
-              i18n.cookie.saveSetting
-            }}</OButton>
+            <OButton type="outline" size="mini" @click="handleSave">{{ i18n.cookie.saveSetting }}</OButton>
             <OButton type="outline" size="mini" @click="handleAllowAll">
               {{ i18n.cookie.acceptAll }}
             </OButton>
@@ -238,9 +211,9 @@ watch(
 }
 
 .cookie-notice-content {
-  background-color: rgba(var(--o-color-fill6), 0.9);
+  background-color: rgba(var(--e-color-fill6), 0.9);
   backdrop-filter: blur(5px);
-  box-shadow: var(--o-shadow-l1);
+  box-shadow: var(--e-shadow-l1);
 }
 
 .cookie-notice-wrap {
@@ -272,7 +245,7 @@ watch(
   .cookie-title {
     font-size: 16px;
     line-height: 28px;
-    color: var(--o-color-text1);
+    color: var(--e-color-text1);
     font-weight: 500;
     @media (max-width: 840px) {
       font-size: 16px;
@@ -284,7 +257,7 @@ watch(
   .cookie-desc {
     font-size: 12px;
     line-height: 18px;
-    color: var(--o-color-text3);
+    color: var(--e-color-text3);
     margin-top: 8px;
   }
 }
@@ -317,9 +290,9 @@ watch(
   right: 24px;
   cursor: pointer;
   transform-origin: center;
-  color: var(--o-color-text1);
+  color: var(--e-color-text1);
   &:hover {
-    color: var(--o-color-brand1);
+    color: var(--e-color-brand1);
   }
 }
 
@@ -336,14 +309,14 @@ watch(
         .item-title {
           font-size: 18px;
           line-height: 32px;
-          color: var(--o-color-text1);
+          color: var(--e-color-text1);
           font-weight: 500;
         }
 
         .item-extra {
           font-size: 14px;
           line-height: 22px;
-          color: var(--o-color-text4);
+          color: var(--e-color-text4);
           margin-left: 24px;
         }
       }
@@ -351,7 +324,7 @@ watch(
       .item-detail {
         font-size: 16px;
         line-height: 28px;
-        color: var(--o-color-text3);
+        color: var(--e-color-text3);
         margin-top: 12px;
         @media (max-width: 840px) {
           font-size: 14px;

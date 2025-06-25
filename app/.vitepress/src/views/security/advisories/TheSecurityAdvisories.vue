@@ -123,18 +123,10 @@ watch(queryData, () => getSecurityLists(queryData));
 </script>
 
 <template>
-  <BannerLevel2
-    :background-image="Banner"
-    :title="i18n.security.SECURITY_ADVISORIES"
-    :illustration="illustration"
-  />
+  <BannerLevel2 :background-image="Banner" :title="i18n.security.SECURITY_ADVISORIES" :illustration="illustration" />
   <AppContent :mobile-top="16">
     <div class="bulletin-main">
-      <OSearch
-        v-model="inputName"
-        :placeholder="i18n.security.SEARCH"
-        @change="changeSearchVal"
-      >
+      <OSearch v-model="inputName" :placeholder="i18n.security.SEARCH" @change="changeSearchVal">
         <template #suffix>
           <OIcon class="close" @click="clearSearchInput"><IconCancel /></OIcon>
         </template>
@@ -189,9 +181,7 @@ watch(queryData, () => getSecurityLists(queryData));
           <el-collapse-item>
             <template #title>
               <o-icon><icon-calendar></icon-calendar></o-icon>
-              <span class="selected-year">{{
-                selectedYear === '' ? i18n.security.ALL : selectedYear
-              }}</span>
+              <span class="selected-year">{{ selectedYear === '' ? i18n.security.ALL : selectedYear }}</span>
             </template>
             <div class="years">
               <p
@@ -214,46 +204,23 @@ watch(queryData, () => getSecurityLists(queryData));
             <span>{{ i18n.security.ADVISORY }}</span>
           </template>
           <template #default="scope">
-            <span
-              class="detail-page"
-              @click="jumpAdvisoriesDetail(scope.row.gaussSaNum)"
-            >
+            <span class="detail-page" @click="jumpAdvisoriesDetail(scope.row.gaussSaNum)">
               {{ scope.row.gaussSaNum }}
             </span>
           </template>
         </el-table-column>
-        <OTableColumn
-          :label="i18n.security.SYNOPSIS"
-          prop="summary"
-        ></OTableColumn>
-        <OTableColumn
-          width="200"
-          :label="i18n.security.SEVERITY"
-          prop="cveLevel"
-        ></OTableColumn>
-        <OTableColumn
-          :label="i18n.security.AFFECTED_PRODUCTS"
-          prop="affectProduct"
-          width="200"
-        ></OTableColumn>
-        <OTableColumn
-          :label="i18n.security.AFFECTED_COMPONENTS"
-          width="260"
-          prop="influenceComponent"
-        ></OTableColumn>
-        <OTableColumn
-          :label="i18n.security.RELEASE_DATE"
-          width="200"
-          prop="releaseDate"
-        ></OTableColumn>
+        <OTableColumn :label="i18n.security.SYNOPSIS" prop="summary"></OTableColumn>
+        <OTableColumn width="200" :label="i18n.security.SEVERITY" prop="cveLevel"></OTableColumn>
+        <OTableColumn :label="i18n.security.AFFECTED_PRODUCTS" prop="affectProduct" width="200"></OTableColumn>
+        <OTableColumn :label="i18n.security.AFFECTED_COMPONENTS" width="260" prop="influenceComponent"></OTableColumn>
+        <OTableColumn :label="i18n.security.RELEASE_DATE" width="200" prop="releaseDate"></OTableColumn>
       </OTable>
 
       <ul class="mobile-list">
         <li v-for="item in tableData" :key="item.saId" class="item">
           <ul>
             <li @click="jumpAdvisoriesDetail(item.gaussSaNum)">
-              <span>{{ i18n.security.ADVISORY }}:</span
-              ><span class="notice">{{ item.gaussSaNum }}</span>
+              <span>{{ i18n.security.ADVISORY }}:</span><span class="notice">{{ item.gaussSaNum }}</span>
             </li>
             <li>
               <span>{{ i18n.security.OVERVIEW }}:</span>{{ item.summary }}
@@ -262,16 +229,13 @@ watch(queryData, () => getSecurityLists(queryData));
               <span>{{ i18n.security.SEVERITY }}:</span>{{ item.cveLevel }}
             </li>
             <li>
-              <span>{{ i18n.security.AFFECTED_PRODUCTS }}:</span
-              >{{ item.affectProduct }}
+              <span>{{ i18n.security.AFFECTED_PRODUCTS }}:</span>{{ item.affectProduct }}
             </li>
             <li>
-              <span>{{ i18n.security.AFFECTED_COMPONENTS }}:</span
-              >{{ item.influenceComponent }}
+              <span>{{ i18n.security.AFFECTED_COMPONENTS }}:</span>{{ item.influenceComponent }}
             </li>
             <li>
-              <span>{{ i18n.security.RELEASE_DATE }}:</span
-              >{{ item.releaseDate }}
+              <span>{{ i18n.security.RELEASE_DATE }}:</span>{{ item.releaseDate }}
             </li>
             <li></li>
           </ul>
@@ -292,9 +256,7 @@ watch(queryData, () => getSecurityLists(queryData));
           @size-change="handleSizeChange"
           @current-change="handleCurrentChange"
         >
-          <span class="slot-content"
-            >{{ queryData.pageNum }}/{{ totalPage }}</span
-          >
+          <span class="slot-content">{{ queryData.pageNum }}/{{ totalPage }}</span>
         </OPagination>
       </ClientOnly>
 
@@ -337,19 +299,19 @@ watch(queryData, () => getSecurityLists(queryData));
   }
   .calendar-mobile {
     display: none;
-    margin: var(--o-spacing-h5) 0;
+    margin: var(--e-spacing-h5) 0;
     width: 100%;
-    background-color: var(--o-color-bg2);
+    background-color: var(--e-color-bg2);
     .o-icon {
-      color: var(--o-color-text1);
+      color: var(--e-color-text1);
     }
     .selected-year {
-      color: var(--o-color-text1);
+      color: var(--e-color-text1);
     }
     :deep(.el-collapse) {
       border: none;
       .el-collapse-item__header {
-        background-color: var(--o-color-bg2);
+        background-color: var(--e-color-bg2);
         padding: 0 8px;
         border: none;
         height: 36px;
@@ -367,16 +329,16 @@ watch(queryData, () => getSecurityLists(queryData));
     }
     .years {
       padding: 0 8px 8px;
-      background-color: var(--o-color-bg2);
-      color: var(--o-color-text1);
+      background-color: var(--e-color-bg2);
+      color: var(--e-color-text1);
       &-item {
-        margin-top: var(--o-spacing-h8);
+        margin-top: var(--e-spacing-h8);
         &:first-child {
           margin-top: 0;
         }
       }
       .selected {
-        background-color: var(--o-color-bg4);
+        background-color: var(--e-color-bg4);
       }
     }
     @media screen and (max-width: 1100px) {
@@ -384,85 +346,85 @@ watch(queryData, () => getSecurityLists(queryData));
     }
   }
   .filter-card {
-    margin-top: var(--o-spacing-h2);
+    margin-top: var(--e-spacing-h2);
     @media screen and (max-width: 1100px) {
       display: none;
     }
     :deep(.el-card__body) {
-      padding: var(--o-spacing-h8) var(--o-spacing-h2);
+      padding: var(--e-spacing-h8) var(--e-spacing-h2);
     }
     .category {
       display: inline-block;
       width: 56px;
-      font-size: var(--o-font-size-text);
+      font-size: var(--e-font-size-text);
       font-weight: 300;
-      color: var(--o-color-text1);
-      line-height: var(--o-line-height-text);
-      margin-right: var(--o-spacing-h4);
+      color: var(--e-color-text1);
+      line-height: var(--e-line-height-text);
+      margin-right: var(--e-spacing-h4);
     }
     .category-item {
       display: inline-block;
       height: 28px;
       border: none;
-      margin-right: var(--o-spacing-h3);
-      font-size: var(--o-font-size-text);
+      margin-right: var(--e-spacing-h3);
+      font-size: var(--e-font-size-text);
       font-weight: 300;
-      color: var(--o-color-text4);
-      line-height: var(--o-line-height-text);
+      color: var(--e-color-text4);
+      line-height: var(--e-line-height-text);
 
       cursor: pointer;
     }
     .active {
       display: inline-block;
-      border: 1px solid var(--o-color-link1);
-      color: var(--o-color-link1);
-      padding: 0px var(--o-spacing-h6);
+      border: 1px solid var(--e-color-link1);
+      color: var(--e-color-link1);
+      padding: 0px var(--e-spacing-h6);
     }
     .card-header {
-      padding-bottom: var(--o-spacing-h8);
-      border-bottom: 1px solid var(--o-color-division1);
+      padding-bottom: var(--e-spacing-h8);
+      border-bottom: 1px solid var(--e-color-division1);
     }
     .card-body {
-      padding-top: var(--o-spacing-h8);
-      border-top: 1px solid var(--o-color-division1);
+      padding-top: var(--e-spacing-h8);
+      border-top: 1px solid var(--e-color-division1);
     }
   }
   .filter-mobile {
     display: none;
     @media screen and (max-width: 1100px) {
       display: block;
-      margin-top: var(--o-spacing-h5);
+      margin-top: var(--e-spacing-h5);
     }
     .filter {
       display: flex;
       align-items: center;
       width: 100%;
-      margin-bottom: var(--o-spacing-h8);
+      margin-bottom: var(--e-spacing-h8);
       .selected {
-        background-color: var(--o-color-brand1);
-        color: var(--o-color-text2);
+        background-color: var(--e-color-brand1);
+        color: var(--e-color-text2);
       }
       &-item {
         cursor: pointer;
         flex: 1;
         text-align: center;
-        padding: var(--o-spacing-h9);
-        font-size: var(--o-font-size-text);
+        padding: var(--e-spacing-h9);
+        font-size: var(--e-font-size-text);
         font-weight: 300;
-        color: var(--o-color-brand1);
-        line-height: var(--o-line-height-text);
-        border: 1px solid var(--o-color-brand1);
+        color: var(--e-color-brand1);
+        line-height: var(--e-line-height-text);
+        border: 1px solid var(--e-color-brand1);
         border-right: 0;
         &:last-child {
-          border: 1px solid var(--o-color-brand1);
+          border: 1px solid var(--e-color-brand1);
         }
       }
     }
   }
   .pc-list {
-    margin-top: var(--o-spacing-h2);
+    margin-top: var(--e-spacing-h2);
     .detail-page {
-      color: var(--o-color-link1);
+      color: var(--e-color-link1);
       cursor: pointer;
     }
     :deep(thead) {
@@ -475,7 +437,7 @@ watch(queryData, () => getSecurityLists(queryData));
       white-space: nowrap;
     }
     :deep(.is-leaf) {
-      background-color: var(--o-color-bg4);
+      background-color: var(--e-color-bg4);
     }
     @media screen and (max-width: 1100px) {
       display: none;
@@ -483,39 +445,39 @@ watch(queryData, () => getSecurityLists(queryData));
   }
   .empty-tip {
     text-align: center;
-    font-size: var(--o-font-size-tip);
-    color: var(--o-color-text4);
-    padding: var(--o-spacing-h2) 0;
+    font-size: var(--e-font-size-tip);
+    color: var(--e-color-text4);
+    padding: var(--e-spacing-h2) 0;
     display: none;
     @media screen and (max-width: 1100px) {
       display: block;
     }
   }
   .mobile-list {
-    margin-bottom: var(--o-spacing-h5);
+    margin-bottom: var(--e-spacing-h5);
     box-shadow: var(--e-shadow1);
     display: none;
     @media screen and (max-width: 1100px) {
       display: block;
     }
     .item {
-      padding: var(--o-spacing-h5) var(--o-spacing-h5) var(--o-spacing-h8);
-      font-size: var(--o-font-size-tip);
+      padding: var(--e-spacing-h5) var(--e-spacing-h5) var(--e-spacing-h8);
+      font-size: var(--e-font-size-tip);
       font-weight: 300;
-      line-height: var(--o-line-height-tip);
-      color: var(--o-color-neutral8);
-      background-color: var(--o-color-bg2);
+      line-height: var(--e-line-height-tip);
+      color: var(--e-color-neutral8);
+      background-color: var(--e-color-bg2);
       &:nth-child(odd) {
-        background: var(--o-color-bg4);
+        background: var(--e-color-bg4);
       }
       & li {
-        margin-bottom: var(--o-spacing-h8);
+        margin-bottom: var(--e-spacing-h8);
       }
       li {
         &:first-child {
           margin-bottom: 0;
           .notice {
-            color: var(--o-color-link1);
+            color: var(--e-color-link1);
           }
         }
         &:nth-child(4) {
@@ -526,18 +488,18 @@ watch(queryData, () => getSecurityLists(queryData));
         }
       }
       span {
-        margin-right: var(--o-spacing-h8);
-        color: var(--o-color-text1);
+        margin-right: var(--e-spacing-h8);
+        color: var(--e-color-text1);
       }
     }
   }
   .pagination {
-    margin-top: var(--o-spacing-h2);
+    margin-top: var(--e-spacing-h2);
     .slot-content {
-      font-size: var(--o-font-size-text);
+      font-size: var(--e-font-size-text);
       font-weight: 300;
-      color: var(--o-color-text1);
-      line-height: var(--o-spacing-h4);
+      color: var(--e-color-text1);
+      line-height: var(--e-spacing-h4);
     }
   }
   .pagination-mobile {

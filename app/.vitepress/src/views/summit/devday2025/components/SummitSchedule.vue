@@ -69,32 +69,32 @@ const onButtonClick = (href: string) => {
 
 <style lang="scss" scoped>
 .schedule {
-  margin-top: var(--o-spacing-h3);
+  margin-top: var(--e-spacing-h3);
   @media (max-width: 767px) {
-    margin-top: var(--o-spacing-h4);
+    margin-top: var(--e-spacing-h4);
   }
   .type {
     width: 160px;
-    font-size: var(--o-font-size-h6);
-    line-height: var(--o-line-height-h6);
+    font-size: var(--e-font-size-h6);
+    line-height: var(--e-line-height-h6);
     background-image: linear-gradient(90deg, rgba(125, 50, 234, 1) 0%, rgba(125, 50, 234, 0) 100%);
-    padding: var(--o-spacing-h10) var(--o-spacing-h4);
+    padding: var(--e-spacing-h10) var(--e-spacing-h4);
     color: #fff;
     font-weight: 500;
     border-radius: 4px;
     @media (max-width: 767px) {
       width: 128px;
-      font-size: var(--o-font-size-text);
-      line-height: var(--o-line-height-text);
-      padding: var(--o-spacing-h10) var(--o-spacing-h6);
+      font-size: var(--e-font-size-text);
+      line-height: var(--e-line-height-text);
+      padding: var(--e-spacing-h10) var(--e-spacing-h6);
     }
   }
 }
 .schedule-content {
   width: 100%;
   padding: 32px;
-  background-color: var(--o-color-bg2);
-  margin-top: var(--o-spacing-h4);
+  background-color: var(--e-color-bg2);
+  margin-top: var(--e-spacing-h4);
   border-radius: 4px;
   background-size: auto 329px;
   background-position: right bottom;
@@ -106,14 +106,14 @@ const onButtonClick = (href: string) => {
     padding: 16px;
   }
   @media (max-width: 767px) {
-    margin-top: var(--o-spacing-h5);
+    margin-top: var(--e-spacing-h5);
     background-size: auto 127px;
   }
 }
 .schedule-item {
   display: grid;
   grid-template-columns: 224px 539px 546px;
-  border-bottom: 1px solid var(--o-color-border2);
+  border-bottom: 1px solid var(--e-color-border2);
   padding: 24px 0px;
   transition: all 0.25s ease;
   align-items: center;
@@ -142,20 +142,20 @@ const onButtonClick = (href: string) => {
   }
   .time {
     width: 185px;
-    font-size: var(--o-font-size-h7);
-    line-height: var(--o-line-height-h7);
-    color: var(--o-color-text3);
+    font-size: var(--e-font-size-h7);
+    line-height: var(--e-line-height-h7);
+    color: var(--e-color-text3);
     display: flex;
     align-items: center;
     @media screen and (max-width: 1100px) {
-      font-size: var(--o-font-size-tip);
-      line-height: var(--o-line-height-tip);
+      font-size: var(--e-font-size-tip);
+      line-height: var(--e-line-height-tip);
       width: 80px;
     }
     img {
       width: 18px;
       height: 18px;
-      color: var(--o-color-text3);
+      color: var(--e-color-text3);
       margin-right: 8px;
       @media screen and (max-width: 1100px) {
         display: none;
@@ -163,9 +163,9 @@ const onButtonClick = (href: string) => {
     }
   }
   .desc {
-    font-size: var(--o-font-size-h7);
-    line-height: var(--o-line-height-h7);
-    color: var(--o-color-text1);
+    font-size: var(--e-font-size-h7);
+    line-height: var(--e-line-height-h7);
+    color: var(--e-color-text1);
     display: block;
     margin-right: 56px;
     > span {
@@ -176,8 +176,8 @@ const onButtonClick = (href: string) => {
     }
     @media (max-width: 1100px) {
       margin-right: 0;
-      font-size: var(--o-font-size-tip);
-      line-height: var(--o-line-height-tip);
+      font-size: var(--e-font-size-tip);
+      line-height: var(--e-line-height-tip);
       span + span {
         margin-top: 4px;
       }
@@ -208,25 +208,25 @@ const onButtonClick = (href: string) => {
   .name {
     min-width: 104px;
     display: inline-block;
-    color: var(--o-color-text3);
-    font-size: var(--o-font-size-h8);
-    line-height: var(--o-line-height-h8);
+    color: var(--e-color-text3);
+    font-size: var(--e-font-size-h8);
+    line-height: var(--e-line-height-h8);
     @media (max-width: 1100px) {
-      font-size: var(--o-font-size-tip);
-      line-height: var(--o-line-height-tip);
+      font-size: var(--e-font-size-tip);
+      line-height: var(--e-line-height-tip);
     }
   }
   .post {
     width: 100%;
     display: inline-block;
-    color: var(--o-color-text3);
-    font-size: var(--o-font-size-h8);
-    line-height: var(--o-line-height-h8);
+    color: var(--e-color-text3);
+    font-size: var(--e-font-size-h8);
+    line-height: var(--e-line-height-h8);
     flex: 1;
     div {
       @media (max-width: 1100px) {
-        font-size: var(--o-font-size-tip);
-        line-height: var(--o-line-height-tip);
+        font-size: var(--e-font-size-tip);
+        line-height: var(--e-line-height-tip);
       }
     }
   }
@@ -270,23 +270,23 @@ const onButtonClick = (href: string) => {
   }
 }
 .item-title {
-  font-size: var(--o-font-size-h7);
-  line-height: var(--o-line-height-h7);
+  font-size: var(--e-font-size-h7);
+  line-height: var(--e-line-height-h7);
   font-weight: 500;
   @media (max-width: 1100px) {
-    font-size: var(--o-font-size-tip);
-    line-height: var(--o-line-height-tip);
+    font-size: var(--e-font-size-tip);
+    line-height: var(--e-line-height-tip);
   }
 }
 .item-desc {
-  font-size: var(--o-font-size-h8);
-  line-height: var(--o-line-height-h8);
+  font-size: var(--e-font-size-h8);
+  line-height: var(--e-line-height-h8);
   margin-top: 12px;
-  color: var(--o-color-text1);
+  color: var(--e-color-text1);
   opacity: 0.8;
   @media (max-width: 1100px) {
-    font-size: var(--o-font-size-tip);
-    line-height: var(--o-line-height-tip);
+    font-size: var(--e-font-size-tip);
+    line-height: var(--e-line-height-tip);
   }
 }
 .item-btn {

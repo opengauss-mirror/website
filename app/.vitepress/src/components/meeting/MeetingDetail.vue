@@ -45,7 +45,7 @@ const open = (info) => {
 
 <style scoped lang="scss">
 .label-item {
-  color: var(--o-color-tex4);
+  color: var(--e-color-tex4);
   display: flex;
   align-items: flex-start;
   font-size: 14px;
@@ -63,7 +63,7 @@ const open = (info) => {
     overflow: hidden;
 
     &.link {
-      color: var(--o-color-brand1);
+      color: var(--e-color-brand1);
       cursor: pointer;
     }
   }

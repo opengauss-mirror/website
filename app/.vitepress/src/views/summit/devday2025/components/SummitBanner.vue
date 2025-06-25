@@ -99,13 +99,13 @@ const onButtonClick = (href: string) => {
   .banner-btn {
     --o-button-padding-small: 8px 27px;
     border-radius: 41px;
-    margin-top: var(--o-spacing-h4);
+    margin-top: var(--e-spacing-h4);
   }
   @media (max-width: 767px) {
     .banner-btn {
       --o-button-padding-small: 8px 24px;
       border-radius: 41px;
-      margin-top: var(--o-spacing-h6);
+      margin-top: var(--e-spacing-h6);
       margin-bottom: 38px;
     }
   }

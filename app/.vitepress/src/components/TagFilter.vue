@@ -38,28 +38,28 @@ const toggle = () => {
 <style lang="scss" scoped>
 .tag-filter {
   display: grid;
-  background: var(--o-color-bg2);
-  padding: var(--o-spacing-h5) 0;
+  background: var(--e-color-bg2);
+  padding: var(--e-spacing-h5) 0;
   grid-template-columns: 60px auto 60px;
-  gap: var(--o-spacing-h4);
+  gap: var(--e-spacing-h4);
   position: relative;
   align-items: baseline;
   .label {
-    font-size: var(--o-font-size-text);
-    color: var(--o-color-text4);
+    font-size: var(--e-font-size-text);
+    color: var(--e-color-text4);
     width: 60px;
     text-align: left;
-    line-height: var(--o-line-height-h6);
+    line-height: var(--e-line-height-h6);
   }
   .more {
     position: absolute;
-    top: var(--o-spacing-h6);
-    right: var(--o-spacing-h4);
+    top: var(--e-spacing-h6);
+    right: var(--e-spacing-h4);
     transition: all 0.3s;
     .icon {
-      font-size: var(--o-font-size-h5);
+      font-size: var(--e-font-size-h5);
       cursor: pointer;
-      color: var(--o-color-text1);
+      color: var(--e-color-text1);
     }
     &.active {
       transform: rotate(-180deg);

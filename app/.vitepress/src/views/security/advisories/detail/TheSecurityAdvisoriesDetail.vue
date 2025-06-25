@@ -125,12 +125,7 @@ onMounted(() => {
                   <h5 class="tab-content-item-title">
                     {{ i18n.security.CVE }}
                   </h5>
-                  <p
-                    v-for="(item, index) in cveIdList"
-                    :key="index"
-                    class="tab-content-item-link"
-                    @click="goCveDetail(item)"
-                  >
+                  <p v-for="(item, index) in cveIdList" :key="index" class="tab-content-item-link" @click="goCveDetail(item)">
                     {{ item }}
                   </p>
                 </div>
@@ -138,14 +133,8 @@ onMounted(() => {
                   <h5 class="tab-content-item-title">
                     {{ i18n.security.REFERENCE_DOCUMENTS }}
                   </h5>
-                  <div
-                    v-for="item in referenceLinkList"
-                    :key="item"
-                    class="tab-content-item-text"
-                  >
-                    <a :href="item" target="_blank" rel="noopener noreferrer">{{
-                      item
-                    }}</a>
+                  <div v-for="item in referenceLinkList" :key="item" class="tab-content-item-text">
+                    <a :href="item" target="_blank" rel="noopener noreferrer">{{ item }}</a>
                   </div>
                 </div>
               </div>
@@ -153,81 +142,40 @@ onMounted(() => {
 
             <OTabPane :label="i18n.security.UPDATED_PACKAGES">
               <div class="tab-content">
-                <div
-                  v-for="item in detailData.versionsBody"
-                  :key="item"
-                  class="packge-item"
-                >
-                  <h2 class="packge-item-title">
-                    openGauss-{{ item.versions }}
-                  </h2>
-                  <div
-                    v-for="it in item.packageBody"
-                    :key="it"
-                    class="packge-item-class"
-                  >
+                <div v-for="item in detailData.versionsBody" :key="item" class="packge-item">
+                  <h2 class="packge-item-title">openGauss-{{ item.versions }}</h2>
+                  <div v-for="it in item.packageBody" :key="it" class="packge-item-class">
                     <p class="packge-item-class-achitecture">
                       {{ it.groupName }}
                     </p>
 
-                    <div
-                      v-for="single in it.tagBody"
-                      :key="single.packageName"
-                      class="packge-list"
-                    >
+                    <div v-for="single in it.tagBody" :key="single.packageName" class="packge-list">
                       <ul class="list-head">
                         <li></li>
-                        <li
-                          v-for="platItemHead in i18n.security.PACK_LIST"
-                          :key="platItemHead"
-                        >
+                        <li v-for="platItemHead in i18n.security.PACK_LIST" :key="platItemHead">
                           {{ platItemHead }}
                         </li>
                       </ul>
                       <ul class="list-body">
                         <li>{{ single.packageName }}</li>
-                        <li
-                          v-for="(platItem, index) in single.affectedPlatform"
-                          :key="platItem"
-                        >
-                          {{
-                            platItem === i18n.security.PACK_LIST[index]
-                              ? '✓'
-                              : ''
-                          }}
+                        <li v-for="(platItem, index) in single.affectedPlatform" :key="platItem">
+                          {{ platItem === i18n.security.PACK_LIST[index] ? '✓' : '' }}
                         </li>
                       </ul>
                     </div>
                   </div>
                 </div>
-                <div
-                  v-for="item in detailData.versionsBody"
-                  :key="item"
-                  class="packge-item-mobile"
-                >
-                  <h2 class="packge-item-title">
-                    openGauss-{{ item.versions }}
-                  </h2>
-                  <div
-                    v-for="it in item.packageBody"
-                    :key="it"
-                    class="packge-item-class"
-                  >
+                <div v-for="item in detailData.versionsBody" :key="item" class="packge-item-mobile">
+                  <h2 class="packge-item-title">openGauss-{{ item.versions }}</h2>
+                  <div v-for="it in item.packageBody" :key="it" class="packge-item-class">
                     <p class="packge-item-class-achitecture">
                       {{ it.groupName }}
                     </p>
-                    <div
-                      v-for="single in it.tagBody"
-                      :key="single"
-                      class="packge-item-class-rpm"
-                    >
+                    <div v-for="single in it.tagBody" :key="single" class="packge-item-class-rpm">
                       <h5 class="first-title">{{ i18n.security.SOFT_PACK }}</h5>
                       <p>{{ single.packageName }}</p>
                       <h5>{{ i18n.security.PLAT }}</h5>
-                      <p
-                        v-for="platItem in single.affectedPlatform"
-                        :key="platItem"
-                      >
+                      <p v-for="platItem in single.affectedPlatform" :key="platItem">
                         {{ platItem }}
                       </p>
                     </div>
@@ -245,8 +193,8 @@ onMounted(() => {
 :deep(.el-tabs) {
   .el-tabs__header {
     margin-bottom: 0;
-    background-color: var(--o-color-bg2);
-    box-shadow: var(--o-shadow-l1);
+    background-color: var(--e-color-bg2);
+    box-shadow: var(--e-shadow-l1);
     z-index: 20;
     @media screen and (max-width: 768px) {
       box-shadow: none;
@@ -258,86 +206,86 @@ onMounted(() => {
     height: 48px;
     @media screen and (max-width: 768px) {
       height: 38px;
-      background-color: var(--o-color-bg2);
+      background-color: var(--e-color-bg2);
     }
   }
 }
 .detail-head {
-  background-color: var(--o-color-bg1);
+  background-color: var(--e-color-bg1);
   .breadcrumb {
-    color: var(--o-color-text1);
-    background: var(--o-color-bg1);
+    color: var(--e-color-text1);
+    background: var(--e-color-bg1);
     display: flex;
     @media screen and (max-width: 768px) {
-      margin-bottom: var(--o-spacing-h5);
+      margin-bottom: var(--e-spacing-h5);
     }
     .last-page {
-      color: var(--o-color-text4);
-      font-size: var(--o-font-size-tip);
+      color: var(--e-color-text4);
+      font-size: var(--e-font-size-tip);
       font-weight: 300;
-      line-height: var(--o-line-height-tip);
+      line-height: var(--e-line-height-tip);
       cursor: pointer;
     }
     .separtor {
-      margin: 0 var(--o-spacing-h10);
+      margin: 0 var(--e-spacing-h10);
       .o-icon {
-        color: var(--o-color-text1);
+        color: var(--e-color-text1);
       }
     }
     .current-page {
-      color: var(--o-color-text1);
-      font-size: var(--o-font-size-tip);
+      color: var(--e-color-text1);
+      font-size: var(--e-font-size-tip);
       font-weight: 600;
-      line-height: var(--o-line-height-tip);
+      line-height: var(--e-line-height-tip);
     }
   }
   .bulletin-head {
-    padding: var(--o-spacing-h2) var(--o-spacing-h2) var(--o-spacing-h2) 0;
-    background: var(--o-color-bg1);
+    padding: var(--e-spacing-h2) var(--e-spacing-h2) var(--e-spacing-h2) 0;
+    background: var(--e-color-bg1);
     @media screen and (max-width: 768px) {
-      padding: var(--o-spacing-h5);
-      margin: 0 0 var(--o-spacing-h5);
-      background: var(--o-color-bg2);
-      box-shadow: var(--o-shadow-l1);
+      padding: var(--e-spacing-h5);
+      margin: 0 0 var(--e-spacing-h5);
+      background: var(--e-color-bg2);
+      box-shadow: var(--e-shadow-l1);
     }
     .bulletin-name {
-      font-size: var(--o-font-size-h3);
+      font-size: var(--e-font-size-h3);
       font-weight: 300;
-      color: var(--o-color-text1);
-      line-height: var(--o-line-height-h3);
+      color: var(--e-color-text1);
+      line-height: var(--e-line-height-h3);
       @media screen and (max-width: 768px) {
-        line-height: var(--o-line-height-h8);
-        font-size: var(--o-font-size-h8);
+        line-height: var(--e-line-height-h8);
+        font-size: var(--e-font-size-h8);
         font-weight: 300;
-        color: var(--o-color-text1);
-        margin-bottom: var(--o-spacing-h8);
+        color: var(--e-color-text1);
+        margin-bottom: var(--e-spacing-h8);
       }
     }
     .bulletin-intro {
-      font-size: var(--o-font-size-text);
+      font-size: var(--e-font-size-text);
       font-weight: 300;
-      color: var(--o-color-text1);
-      line-height: var(--o-line-height-text);
-      margin-top: var(--o-spacing-h4);
+      color: var(--e-color-text1);
+      line-height: var(--e-line-height-text);
+      margin-top: var(--e-spacing-h4);
       & div {
         display: flex;
       }
       span {
         display: inline-block;
-        margin-right: var(--o-spacing-h8);
+        margin-right: var(--e-spacing-h8);
       }
       @media screen and (max-width: 768px) {
         margin: 0;
-        font-size: var(--o-font-size-tip);
+        font-size: var(--e-font-size-tip);
         font-weight: 300;
-        color: var(--o-color-text1);
-        line-height: var(--o-line-height-tip);
+        color: var(--e-color-text1);
+        line-height: var(--e-line-height-tip);
       }
     }
   }
 }
 .detail-body-pc {
-  background-color: var(--o-color-bg1);
+  background-color: var(--e-color-bg1);
   @media screen and (max-width: 768px) {
     width: 100%;
     padding: 0;
@@ -347,91 +295,91 @@ onMounted(() => {
       .wrapper1 {
         max-width: 1504px;
         margin: 0 auto;
-        background-color: var(--o-color-bg1);
+        background-color: var(--e-color-bg1);
         @media screen and (max-width: 768px) {
           margin: 16px 0 40px;
         }
         .tab-content {
-          padding: var(--o-spacing-h2);
-          background-color: var(--o-color-bg2);
+          padding: var(--e-spacing-h2);
+          background-color: var(--e-color-bg2);
           @media screen and (max-width: 768px) {
-            padding: var(--o-spacing-h5);
+            padding: var(--e-spacing-h5);
             &-item:last-child {
               margin-bottom: 0;
             }
             h5 {
-              font-size: var(--o-font-size-text);
-              line-height: var(--o-line-height-text);
-              color: var(--o-color-text1);
+              font-size: var(--e-font-size-text);
+              line-height: var(--e-line-height-text);
+              color: var(--e-color-text1);
               font-weight: 300;
             }
             .first-title {
               margin-top: 0;
             }
             .tab-content-item-text {
-              margin-top: var(--o-spacing-h7);
+              margin-top: var(--e-spacing-h7);
             }
             .tab-content-item-link {
-              color: var(--o-color-brand1);
+              color: var(--e-color-brand1);
             }
             .packge-item-class-rpm {
-              margin-top: var(--o-spacing-h8);
-              padding: var(--o-spacing-h8);
-              border: 1px solid var(--o-color-border2);
+              margin-top: var(--e-spacing-h8);
+              padding: var(--e-spacing-h8);
+              border: 1px solid var(--e-color-border2);
               &:nth-of-type(2n + 1) {
-                background-color: var(--o-color-bg3);
+                background-color: var(--e-color-bg3);
               }
               p {
-                color: var(--o-color-text4);
-                font-size: var(--o-font-size-tip);
-                line-height: var(--o-line-height-tip);
+                color: var(--e-color-text4);
+                font-size: var(--e-font-size-tip);
+                line-height: var(--e-line-height-tip);
               }
             }
           }
           &-item {
-            margin-bottom: var(--o-spacing-h2);
+            margin-bottom: var(--e-spacing-h2);
             @media screen and (max-width: 768px) {
-              margin-bottom: var(--o-spacing-h4);
+              margin-bottom: var(--e-spacing-h4);
             }
             &:last-child {
               margin-bottom: 0;
             }
             &-title {
-              font-size: var(--o-font-size-h5);
+              font-size: var(--e-font-size-h5);
               font-weight: 300;
-              color: var(--o-color-text1);
-              line-height: var(--o-line-height-h5);
-              margin-bottom: var(--o-spacing-h5);
+              color: var(--e-color-text1);
+              line-height: var(--e-line-height-h5);
+              margin-bottom: var(--e-spacing-h5);
               @media screen and (max-width: 768px) {
-                font-size: var(--o-font-size-text);
+                font-size: var(--e-font-size-text);
                 font-weight: 300;
-                line-height: var(--o-line-height-text);
+                line-height: var(--e-line-height-text);
               }
             }
             &-link {
-              color: var(--o-color-link1);
-              font-size: var(--o-font-size-text);
+              color: var(--e-color-link1);
+              font-size: var(--e-font-size-text);
               font-weight: 300;
-              line-height: var(--o-line-height-text);
+              line-height: var(--e-line-height-text);
               cursor: pointer;
               @media screen and (max-width: 768px) {
-                font-size: var(--o-font-size-tip);
+                font-size: var(--e-font-size-tip);
                 font-weight: 300;
-                line-height: var(--o-line-height-tip);
+                line-height: var(--e-line-height-tip);
               }
             }
             &-text {
-              font-size: var(--o-font-size-text);
+              font-size: var(--e-font-size-text);
               font-weight: 300;
-              color: var(--o-color-text1);
-              line-height: var(--o-line-height-text);
+              color: var(--e-color-text1);
+              line-height: var(--e-line-height-text);
               @media screen and (max-width: 768px) {
-                font-size: var(--o-font-size-tip);
+                font-size: var(--e-font-size-tip);
                 font-weight: 300;
-                line-height: var(--o-line-height-tip);
+                line-height: var(--e-line-height-tip);
               }
               a {
-                color: var(--o-color-link1);
+                color: var(--e-color-link1);
               }
             }
           }
@@ -440,44 +388,44 @@ onMounted(() => {
               display: none;
             }
             &-title {
-              font-size: var(--o-font-size-h5);
+              font-size: var(--e-font-size-h5);
               font-weight: 300;
-              line-height: var(--o-line-height-h8);
-              margin-bottom: var(--o-spacing-h6);
-              color: var(--o-color-text1);
+              line-height: var(--e-line-height-h8);
+              margin-bottom: var(--e-spacing-h6);
+              color: var(--e-color-text1);
               @media screen and (max-width: 768px) {
-                font-size: var(--o-font-size-text);
-                line-height: var(--o-line-height-text);
-                color: var(--o-color-text1);
+                font-size: var(--e-font-size-text);
+                line-height: var(--e-line-height-text);
+                color: var(--e-color-text1);
               }
             }
             &-class {
-              margin-bottom: var(--o-spacing-h4);
+              margin-bottom: var(--e-spacing-h4);
               &:last-child {
                 margin-bottom: 0;
               }
               &-achitecture {
-                color: var(--o-color-text1);
-                font-size: var(--o-font-size-h7);
+                color: var(--e-color-text1);
+                font-size: var(--e-font-size-h7);
                 line-height: 64px;
                 @media screen and (max-width: 768px) {
                   margin-top: 10px;
-                  font-size: var(--o-font-size-tip);
-                  line-height: var(--o-line-height-tip);
-                  color: var(--o-color-text1);
+                  font-size: var(--e-font-size-tip);
+                  line-height: var(--e-line-height-tip);
+                  color: var(--e-color-text1);
                 }
               }
               .packge-list {
                 .list-head {
                   display: flex;
-                  background-color: var(--o-color-bg4);
+                  background-color: var(--e-color-bg4);
                   li {
                     width: 280px;
                     height: 52px;
                     line-height: 52px;
                     text-align: center;
-                    font-size: var(--o-font-size-text);
-                    color: var(--o-color-text1);
+                    font-size: var(--e-font-size-text);
+                    color: var(--e-color-text1);
                   }
                 }
                 .list-body {
@@ -487,10 +435,10 @@ onMounted(() => {
                     height: 52px;
                     line-height: 52px;
                     text-align: center;
-                    font-size: var(--o-font-size-text);
-                    color: var(--o-color-text4);
+                    font-size: var(--e-font-size-text);
+                    color: var(--e-color-text4);
                     & + li {
-                      color: var(--o-color-brand1);
+                      color: var(--e-color-brand1);
                     }
                   }
                 }

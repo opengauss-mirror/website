@@ -14,11 +14,7 @@ const pageInfo = {
 
 <template>
   <div class="bread">
-    <BreadCrumbs
-      :bread1="pageInfo.name"
-      :bread2="frontmatter.title"
-      :link1="pageInfo.link"
-    />
+    <BreadCrumbs :bread1="pageInfo.name" :bread2="frontmatter.title" :link1="pageInfo.link" />
   </div>
   <div class="markdown">
     <AppMdHead :frontmatter="frontmatter" />
@@ -28,9 +24,9 @@ const pageInfo = {
 
 <style lang="scss" scoped>
 .markdown {
-  margin-bottom: var(--o-spacing-h1);
+  margin-bottom: var(--e-spacing-h1);
   @media (max-width: 1100px) {
-    margin-bottom: var(--o-spacing-h2);
+    margin-bottom: var(--e-spacing-h2);
   }
 }
 

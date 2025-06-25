@@ -461,28 +461,28 @@ function onTalentItemClick(index: number) {
 .app-content {
   :deep(.el-collapse-item__header) {
     height: auto;
-    padding: var(--o-spacing-h5);
-    font-size: var(--o-font-size-text);
+    padding: var(--e-spacing-h5);
+    font-size: var(--e-font-size-text);
   }
   :deep(.el-collapse-item__wrap) {
-    padding: 0 var(--o-spacing-h5);
-    background-color: var(--o-color-bg1);
+    padding: 0 var(--e-spacing-h5);
+    background-color: var(--e-color-bg1);
   }
   :deep(.el-collapse-item__content) {
-    padding: var(--o-spacing-h5) 0;
+    padding: var(--e-spacing-h5) 0;
   }
 }
 .signup-btn {
-  color: var(--o-color-white);
-  border-color: var(--o-color-white);
+  color: var(--e-color-white);
+  border-color: var(--e-color-white);
   @media (max-width: 767px) {
     padding: 3px 12px;
-    font-size: var(--o-font-size-text);
-    line-height: var(--o-line-height-text);
+    font-size: var(--e-font-size-text);
+    line-height: var(--e-line-height-text);
   }
   .banner-icon {
     @media (max-width: 767px) {
-      font-size: var(--o-font-size-text);
+      font-size: var(--e-font-size-text);
     }
   }
 }
@@ -493,48 +493,48 @@ function onTalentItemClick(index: number) {
   }
   .train-introduction {
     h2 {
-      font-size: var(--o-font-size-h3);
-      line-height: var(--o-line-height-h3);
-      color: var(--o-color-text1);
+      font-size: var(--e-font-size-h3);
+      line-height: var(--e-line-height-h3);
+      color: var(--e-color-text1);
       text-align: center;
       font-weight: 300;
     }
     .intro-info {
-      margin-top: var(--o-spacing-h2);
-      font-size: var(--o-font-size-text);
-      line-height: var(--o-line-height-text);
-      color: var(--o-color-text1);
+      margin-top: var(--e-spacing-h2);
+      font-size: var(--e-font-size-text);
+      line-height: var(--e-line-height-text);
+      color: var(--e-color-text1);
     }
   }
   .train-advantage {
     margin-top: 58px;
     h2 {
-      font-size: var(--o-font-size-h3);
-      line-height: var(--o-line-height-h3);
-      color: var(--o-color-text1);
+      font-size: var(--e-font-size-h3);
+      line-height: var(--e-line-height-h3);
+      color: var(--e-color-text1);
       text-align: center;
       font-weight: 300;
     }
     .adv-box {
-      margin-top: var(--o-spacing-h2);
+      margin-top: var(--e-spacing-h2);
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-rows: 160px 160px;
       .adv-item {
         padding: 25px 0 30px 0;
-        background-color: var(--o-color-bg2);
+        background-color: var(--e-color-bg2);
         h3 {
-          font-size: var(--o-font-size-h7);
-          line-height: var(--o-line-height-h8);
+          font-size: var(--e-font-size-h7);
+          line-height: var(--e-line-height-h8);
           font-weight: 300;
-          color: var(--o-color-text1);
+          color: var(--e-color-text1);
           text-align: center;
         }
         p {
           margin-top: 13px;
-          font-size: var(--o-font-size-text);
-          line-height: var(--o-line-height-h5);
-          color: var(--o-color-text3);
+          font-size: var(--e-font-size-text);
+          line-height: var(--e-line-height-h5);
+          color: var(--e-color-text3);
           text-align: center;
         }
       }
@@ -542,32 +542,32 @@ function onTalentItemClick(index: number) {
       .true-mobile {
         background-color: #7d32ea;
         h3 {
-          color: var(--o-color-white);
+          color: var(--e-color-white);
         }
         p {
-          color: var(--o-color-neutral11);
+          color: var(--e-color-neutral11);
         }
       }
     }
   }
   .train-system {
-    margin-top: var(--o-spacing-h1);
+    margin-top: var(--e-spacing-h1);
     h2 {
-      font-size: var(--o-font-size-h3);
-      line-height: var(--o-line-height-h3);
-      color: var(--o-color-text1);
+      font-size: var(--e-font-size-h3);
+      line-height: var(--e-line-height-h3);
+      color: var(--e-color-text1);
       text-align: center;
       font-weight: 300;
     }
     .system-box {
-      margin-top: var(--o-spacing-h2);
+      margin-top: var(--e-spacing-h2);
       .system-short {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: var(--o-spacing-h4);
+        grid-gap: var(--e-spacing-h4);
         .system-item {
           .item-head {
-            padding: var(--o-spacing-h2) 10px var(--o-spacing-h2) var(--o-spacing-h2);
+            padding: var(--e-spacing-h2) 10px var(--e-spacing-h2) var(--e-spacing-h2);
             display: flex;
             width: 100%;
             max-height: 160px;
@@ -576,27 +576,27 @@ function onTalentItemClick(index: number) {
             .head-left {
               width: 104px;
               height: 80px;
-              padding: 0 var(--o-spacing-h4);
-              font-size: var(--o-font-size-h5);
+              padding: 0 var(--e-spacing-h4);
+              font-size: var(--e-font-size-h5);
               text-align: center;
               line-height: 80px;
               white-space: nowrap;
               color: #d68bff;
               background-color: #fff;
-              margin-right: var(--o-spacing-h4);
+              margin-right: var(--e-spacing-h4);
             }
             .head-right {
               max-width: 272px;
               h3 {
-                font-size: var(--o-font-size-h5);
-                line-height: var(--o-line-height-h5);
+                font-size: var(--e-font-size-h5);
+                line-height: var(--e-line-height-h5);
                 font-weight: 300;
-                color: var(--o-color-white);
+                color: var(--e-color-white);
               }
               p {
-                font-size: var(--o-font-size-text);
-                line-height: var(--o-line-height-text);
-                color: var(--o-color-neutral11);
+                font-size: var(--e-font-size-text);
+                line-height: var(--e-line-height-text);
+                color: var(--e-color-neutral11);
               }
             }
           }
@@ -617,36 +617,36 @@ function onTalentItemClick(index: number) {
           }
           .item-body {
             height: 172px;
-            padding: var(--o-spacing-h4) var(--o-spacing-h2) var(--o-spacing-h2);
+            padding: var(--e-spacing-h4) var(--e-spacing-h2) var(--e-spacing-h2);
             display: flex;
             flex-wrap: wrap;
             align-content: space-between;
-            background-color: var(--o-color-bg2);
+            background-color: var(--e-color-bg2);
             p {
               width: 100%;
-              font-size: var(--o-font-size-text);
-              line-height: var(--o-line-height-text);
-              color: var(--o-color-text1);
+              font-size: var(--e-font-size-text);
+              line-height: var(--e-line-height-text);
+              color: var(--e-color-text1);
               text-align: justify;
             }
             .course-title {
-              margin-top: var(--o-spacing-h6);
+              margin-top: var(--e-spacing-h6);
             }
             .course-cost {
-              margin-top: var(--o-spacing-h6);
+              margin-top: var(--e-spacing-h6);
             }
             .exam-cost {
-              margin-top: var(--o-spacing-h6);
+              margin-top: var(--e-spacing-h6);
             }
           }
         }
       }
       .system-active {
         width: 100%;
-        box-shadow: var(--o-shadow-l2);
+        box-shadow: var(--e-shadow-l2);
         .item-head {
           background-color: #bd72ff;
-          padding: var(--o-spacing-h2) var(--o-spacing-h4) var(--o-spacing-h2) var(--o-spacing-h2);
+          padding: var(--e-spacing-h2) var(--e-spacing-h4) var(--e-spacing-h2) var(--e-spacing-h2);
           display: flex;
           align-items: center;
           position: relative;
@@ -654,35 +654,35 @@ function onTalentItemClick(index: number) {
           .leavel {
             width: 104px;
             height: 80px;
-            padding: 0 var(--o-spacing-h4);
-            font-size: var(--o-font-size-h5);
+            padding: 0 var(--e-spacing-h4);
+            font-size: var(--e-font-size-h5);
             text-align: center;
             line-height: 80px;
             white-space: nowrap;
             color: #d68bff;
             background-color: #fff;
-            margin-right: var(--o-spacing-h4);
+            margin-right: var(--e-spacing-h4);
           }
           .name {
             max-width: 272px;
-            margin-right: var(--o-spacing-h2);
+            margin-right: var(--e-spacing-h2);
             h3 {
-              font-size: var(--o-font-size-h5);
-              line-height: var(--o-line-height-h5);
-              color: var(--o-color-white);
+              font-size: var(--e-font-size-h5);
+              line-height: var(--e-line-height-h5);
+              color: var(--e-color-white);
               font-weight: 300;
             }
             p {
-              font-size: var(--o-font-size-text);
-              line-height: var(--o-line-height-text);
-              color: var(--o-color-neutral11);
+              font-size: var(--e-font-size-text);
+              line-height: var(--e-line-height-text);
+              color: var(--e-color-neutral11);
             }
           }
           .detail {
             max-width: 856px;
-            font-size: var(--o-font-size-text);
-            line-height: var(--o-line-height-text);
-            color: var(--o-color-neutral11);
+            font-size: var(--e-font-size-text);
+            line-height: var(--e-line-height-text);
+            color: var(--e-color-neutral11);
             margin-right: 46px;
           }
           .close {
@@ -694,21 +694,21 @@ function onTalentItemClick(index: number) {
           }
         }
         .item-body {
-          background-color: var(--o-color-bg2);
-          padding: var(--o-spacing-h4) var(--o-spacing-h2) var(--o-spacing-h2);
+          background-color: var(--e-color-bg2);
+          padding: var(--e-spacing-h4) var(--e-spacing-h2) var(--e-spacing-h2);
           .title {
-            font-size: var(--o-font-size-text);
-            line-height: var(--o-line-height-text);
-            color: var(--o-color-text1);
+            font-size: var(--e-font-size-text);
+            line-height: var(--e-line-height-text);
+            color: var(--e-color-text1);
           }
           ul {
             margin-top: 13px;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            grid-gap: var(--o-spacing-h4);
+            grid-gap: var(--e-spacing-h4);
             li {
-              border: 1px solid var(--o-color-border2);
-              padding: var(--o-spacing-h4);
+              border: 1px solid var(--e-color-border2);
+              padding: var(--e-spacing-h4);
               display: flex;
               justify-content: space-between;
               align-items: center;
@@ -723,23 +723,23 @@ function onTalentItemClick(index: number) {
                   height: 48px;
                   line-height: 48px;
                   text-align: center;
-                  font-size: var(--o-font-size-h5);
-                  border: 1px solid var(--o-color-brand1);
-                  margin-right: var(--o-spacing-h4);
-                  color: var(--o-color-brand1);
+                  font-size: var(--e-font-size-h5);
+                  border: 1px solid var(--e-color-brand1);
+                  margin-right: var(--e-spacing-h4);
+                  color: var(--e-color-brand1);
                 }
                 .course {
                   p {
-                    font-size: var(--o-font-size-h6);
-                    color: var(--o-color-text1);
-                    line-height: var(--o-line-height-h6);
+                    font-size: var(--e-font-size-h6);
+                    color: var(--e-color-text1);
+                    line-height: var(--e-line-height-h6);
                     &::after {
                       content: '';
                       display: block;
                       width: 20px;
                       height: 2px;
                       margin-top: 4px;
-                      background-color: var(--o-color-brand1);
+                      background-color: var(--e-color-brand1);
                     }
                   }
                   .time {
@@ -748,12 +748,12 @@ function onTalentItemClick(index: number) {
                     align-items: center;
                     .o-icon {
                       margin-right: 12px;
-                      color: var(--o-color-text1);
+                      color: var(--e-color-text1);
                     }
                     .time-text {
-                      font-size: var(--o-font-size-text);
-                      line-height: var(--o-line-height-text);
-                      color: var(--o-color-text4);
+                      font-size: var(--e-font-size-text);
+                      line-height: var(--e-line-height-text);
+                      color: var(--e-color-text4);
                     }
                   }
                 }
@@ -761,46 +761,46 @@ function onTalentItemClick(index: number) {
               .list-right {
                 .more {
                   margin-right: 8px;
-                  font-size: var(--o-font-size-text);
-                  line-height: var(--o-line-height-text);
-                  color: var(--o-color-text1);
+                  font-size: var(--e-font-size-text);
+                  line-height: var(--e-line-height-text);
+                  color: var(--e-color-text1);
                 }
                 .o-icon {
                   position: relative;
                   top: 2px;
-                  color: var(--o-color-brand1);
+                  color: var(--e-color-brand1);
                 }
               }
               .more-list {
                 width: calc(100% + 2px);
                 position: absolute;
-                padding: var(--o-spacing-h4) var(--o-spacing-h2);
-                background-color: var(--o-color-bg4);
+                padding: var(--e-spacing-h4) var(--e-spacing-h2);
+                background-color: var(--e-color-bg4);
                 left: -1px;
                 bottom: 0;
                 transform: translateY(100%);
                 z-index: 2;
                 overflow: hidden;
-                border: 1px solid var(--o-color-brand1);
+                border: 1px solid var(--e-color-brand1);
                 border-top: none;
-                box-shadow: var(--o-shadow-l2_hover);
+                box-shadow: var(--e-shadow-l2_hover);
                 p {
-                  font-size: var(--o-font-size-text);
-                  line-height: var(--o-line-height-text);
-                  color: var(--o-color-text1);
+                  font-size: var(--e-font-size-text);
+                  line-height: var(--e-line-height-text);
+                  color: var(--e-color-text1);
                 }
               }
             }
             .no-checked {
               &:hover {
-                border: 1px solid var(--o-color-brand1);
-                box-shadow: var(--o-shadow-l2_hover);
+                border: 1px solid var(--e-color-brand1);
+                box-shadow: var(--e-shadow-l2_hover);
               }
             }
             .checked {
-              border: 1px solid var(--o-color-brand1);
+              border: 1px solid var(--e-color-brand1);
               border-bottom: none;
-              box-shadow: var(--o-shadow-l2_hover);
+              box-shadow: var(--e-shadow-l2_hover);
             }
           }
           .no-data {
@@ -810,9 +810,9 @@ function onTalentItemClick(index: number) {
             }
             .tip {
               color: var(--empty-tip);
-              margin-top: var(--o-spacing-h5);
-              font-size: var(--o-font-size-h8);
-              line-height: var(--o-line-height-h6);
+              margin-top: var(--e-spacing-h5);
+              font-size: var(--e-font-size-h8);
+              line-height: var(--e-line-height-h6);
               font-weight: 500;
             }
           }
@@ -837,19 +837,19 @@ function onTalentItemClick(index: number) {
     }
   }
   .train-step {
-    margin-top: var(--o-spacing-h1);
+    margin-top: var(--e-spacing-h1);
     h2 {
-      font-size: var(--o-font-size-h3);
+      font-size: var(--e-font-size-h3);
       font-weight: 300;
-      line-height: var(--o-line-height-h3);
+      line-height: var(--e-line-height-h3);
       text-align: center;
-      color: var(--o-color-text1);
+      color: var(--e-color-text1);
     }
     .step-box {
-      margin: var(--o-spacing-h2) auto 0 auto;
+      margin: var(--e-spacing-h2) auto 0 auto;
       display: grid;
       padding: 0 86px;
-      grid-gap: var(--o-spacing-h1);
+      grid-gap: var(--e-spacing-h1);
       grid-template-columns: repeat(7, 116px);
       @media screen and (max-width: 1330px) {
         grid-template-columns: repeat(6, 116px);
@@ -868,7 +868,7 @@ function onTalentItemClick(index: number) {
           border-top: 16px solid transparent;
           border-right: 16px solid transparent;
           border-bottom: 16px solid transparent;
-          border-left: 16px solid var(--o-color-bg1);
+          border-left: 16px solid var(--e-color-bg1);
           position: absolute;
           top: 40%;
           left: -48px;
@@ -892,10 +892,10 @@ function onTalentItemClick(index: number) {
           width: 100%;
           bottom: 8px;
           text-align: center;
-          color: var(--o-color-text1);
-          font-size: var(--o-font-size-text);
+          color: var(--e-color-text1);
+          font-size: var(--e-font-size-text);
           @media screen and (max-width: 1100px) {
-            font-size: var(--o-font-size-tip);
+            font-size: var(--e-font-size-tip);
           }
         }
       }
@@ -905,7 +905,7 @@ function onTalentItemClick(index: number) {
         &:hover {
           background-image: url(@/assets/category/authentication/training/img/step/01-hover.png);
           p {
-            color: var(--o-color-white);
+            color: var(--e-color-white);
           }
         }
       }
@@ -931,33 +931,33 @@ function onTalentItemClick(index: number) {
     }
   }
   .train-talent {
-    margin-top: var(--o-spacing-h1);
+    margin-top: var(--e-spacing-h1);
     h2 {
-      font-size: var(--o-font-size-h3);
+      font-size: var(--e-font-size-h3);
       font-weight: 300;
-      line-height: var(--o-line-height-h3);
+      line-height: var(--e-line-height-h3);
       text-align: center;
-      color: var(--o-color-text1);
+      color: var(--e-color-text1);
     }
     .talent-desc {
-      margin-top: var(--o-spacing-h2);
-      font-size: var(--o-font-size-text);
-      line-height: var(--o-line-height-text);
-      color: var(--o-color-text1);
+      margin-top: var(--e-spacing-h2);
+      font-size: var(--e-font-size-text);
+      line-height: var(--e-line-height-text);
+      color: var(--e-color-text1);
     }
     .talent-card-container {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      grid-gap: var(--o-spacing-h4);
-      margin-top: var(--o-spacing-h2);
+      grid-gap: var(--e-spacing-h4);
+      margin-top: var(--e-spacing-h2);
       .talent-card {
         position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100px;
-        box-shadow: var(--o-shadow-l2);
-        background-color: var(--o-color-bg2);
+        box-shadow: var(--e-shadow-l2);
+        background-color: var(--e-color-bg2);
         cursor: pointer;
         .talent-icon {
           width: 150px;
@@ -969,66 +969,66 @@ function onTalentItemClick(index: number) {
           left: -1px;
           right: -1px;
           top: 99px;
-          padding: var(--o-spacing-h4);
-          background-color: var(--o-color-bg4);
-          font-size: var(--o-font-size-text);
-          line-height: var(--o-line-height-text);
-          border: 1px solid var(--o-color-brand1);
+          padding: var(--e-spacing-h4);
+          background-color: var(--e-color-bg4);
+          font-size: var(--e-font-size-text);
+          line-height: var(--e-line-height-text);
+          border: 1px solid var(--e-color-brand1);
           border-top: none;
-          box-shadow: var(--o-shadow-l2_hover);
+          box-shadow: var(--e-shadow-l2_hover);
           .o-button {
-            padding: var(--o-spacing-h4) 0 0 0;
-            font-size: var(--o-font-size-h8);
-            line-height: var(--o-line-height-h8);
+            padding: var(--e-spacing-h4) 0 0 0;
+            font-size: var(--e-font-size-h8);
+            line-height: var(--e-line-height-h8);
             .right-icon {
-              color: var(--o-color-brand1);
+              color: var(--e-color-brand1);
             }
           }
         }
       }
       .talent-card-unchecked:hover {
-        border: 1px solid var(--o-color-brand1);
-        box-shadow: var(--o-shadow-l2_hover);
+        border: 1px solid var(--e-color-brand1);
+        box-shadow: var(--e-shadow-l2_hover);
       }
       .talent-card-checked {
-        border: 1px solid var(--o-color-brand1);
-        border-bottom: 1px solid rgba(var(--o-color-bg2), 0);
-        box-shadow: var(--o-shadow-l2_hover);
+        border: 1px solid var(--e-color-brand1);
+        border-bottom: 1px solid rgba(var(--e-color-bg2), 0);
+        box-shadow: var(--e-shadow-l2_hover);
       }
     }
   }
   .certificate-query {
-    margin-top: var(--o-spacing-h1);
+    margin-top: var(--e-spacing-h1);
   }
   .train-qa {
-    margin-top: var(--o-spacing-h1);
+    margin-top: var(--e-spacing-h1);
     h2 {
-      font-size: var(--o-font-size-h3);
-      line-height: var(--o-line-height-h3);
-      color: var(--o-color-text1);
+      font-size: var(--e-font-size-h3);
+      line-height: var(--e-line-height-h3);
+      color: var(--e-color-text1);
       text-align: center;
       font-weight: 300;
     }
     .qa-box {
-      margin-top: var(--o-spacing-h2);
-      background-color: var(--o-color-bg2);
+      margin-top: var(--e-spacing-h2);
+      background-color: var(--e-color-bg2);
       .qa-item {
-        padding: var(--o-spacing-h4) var(--o-spacing-h2);
+        padding: var(--e-spacing-h4) var(--e-spacing-h2);
         & ~ .qa-item {
-          border-top: 1px solid var(--o-color-border2);
+          border-top: 1px solid var(--e-color-border2);
         }
         .el-collapse {
           border: none;
           :deep(.el-collapse-item__header) {
-            height: var(--o-spacing-h4);
-            line-height: var(--o-spacing-h4);
+            height: var(--e-spacing-h4);
+            line-height: var(--e-spacing-h4);
             border: none;
-            background-color: var(--o-color-bg2);
-            color: var(--o-color-text1);
+            background-color: var(--e-color-bg2);
+            color: var(--e-color-text1);
           }
           :deep(.el-collapse-item__wrap) {
             border: none;
-            background-color: var(--o-color-bg2);
+            background-color: var(--e-color-bg2);
           }
           :deep(.el-collapse-item__content) {
             padding-bottom: 0;
@@ -1036,42 +1036,42 @@ function onTalentItemClick(index: number) {
         }
         .qa-question {
           width: 100%;
-          font-size: var(--o-font-size-h7);
-          line-height: var(--o-line-height-h8);
-          color: var(--o-color-text1);
+          font-size: var(--e-font-size-h7);
+          line-height: var(--e-line-height-h8);
+          color: var(--e-color-text1);
         }
         .qa-answer {
-          margin-top: var(--o-spacing-h6);
-          font-size: var(--o-font-size-text);
-          line-height: var(--o-line-height-text);
-          color: var(--o-color-text3);
+          margin-top: var(--e-spacing-h6);
+          font-size: var(--e-font-size-text);
+          line-height: var(--e-line-height-text);
+          color: var(--e-color-text3);
           text-align: justify;
         }
       }
     }
   }
   .train-contact {
-    margin-top: var(--o-spacing-h4);
+    margin-top: var(--e-spacing-h4);
     p {
-      font-size: var(--o-font-size-text);
-      line-height: var(--o-font-size-text);
-      color: var(--o-color-text3);
+      font-size: var(--e-font-size-text);
+      line-height: var(--e-font-size-text);
+      color: var(--e-color-text3);
       margin-top: 8px;
 
       @media screen and (max-width: 1100px) {
-        font-size: var(--o-font-size-tip);
-        line-height: var(--o-font-size-tip);
+        font-size: var(--e-font-size-tip);
+        line-height: var(--e-font-size-tip);
       }
 
       a {
-        color: var(--o-color-brand1);
+        color: var(--e-color-brand1);
       }
     }
   }
 }
 @include in-dark {
   .training-pc {
-    --o-discount-bg: var(--o-color-greyblack4);
+    --o-discount-bg: var(--e-color-greyblack4);
   }
 }
 .training-mobile {
@@ -1080,41 +1080,41 @@ function onTalentItemClick(index: number) {
     display: block;
   }
   h2 {
-    font-size: var(--o-font-size-text);
-    line-height: var(--o-line-height-text);
-    color: var(--o-color-text1);
+    font-size: var(--e-font-size-text);
+    line-height: var(--e-line-height-text);
+    color: var(--e-color-text1);
     text-align: center;
     font-weight: 300;
   }
   .train-introduction {
     .intro-info {
       margin-top: 8px;
-      font-size: var(--o-font-size-tip);
-      line-height: var(--o-line-height-tip);
-      color: var(--o-color-text1);
+      font-size: var(--e-font-size-tip);
+      line-height: var(--e-line-height-tip);
+      color: var(--e-color-text1);
     }
   }
   .train-advantage {
-    margin-top: var(--o-spacing-h2);
+    margin-top: var(--e-spacing-h2);
     .adv-box {
-      margin-top: var(--o-spacing-h4);
+      margin-top: var(--e-spacing-h4);
       display: grid;
       grid-template-columns: 1fr 1fr;
       .adv-item {
-        padding: var(--o-spacing-h5) 0;
-        background-color: var(--o-color-bg2);
+        padding: var(--e-spacing-h5) 0;
+        background-color: var(--e-color-bg2);
         h3 {
-          font-size: var(--o-font-size-tip);
-          line-height: var(--o-line-height-tip);
+          font-size: var(--e-font-size-tip);
+          line-height: var(--e-line-height-tip);
           font-weight: 300;
-          color: var(--o-color-text1);
+          color: var(--e-color-text1);
           text-align: center;
         }
         p {
           margin-top: 8px;
-          font-size: var(--o-font-size-tip);
-          line-height: var(--o-line-height-tip);
-          color: var(--o-color-text3);
+          font-size: var(--e-font-size-tip);
+          line-height: var(--e-line-height-tip);
+          color: var(--e-color-text3);
           text-align: center;
           transform: scale(0.8);
           &:nth-of-type(2) {
@@ -1126,27 +1126,27 @@ function onTalentItemClick(index: number) {
       .true-mobile2 {
         background-color: #7d32ea;
         h3 {
-          color: var(--o-color-white);
+          color: var(--e-color-white);
         }
         p {
-          color: var(--o-color-neutral11);
+          color: var(--e-color-neutral11);
         }
       }
       .true-mobile {
-        background-color: var(--o-color-bg2);
+        background-color: var(--e-color-bg2);
       }
     }
   }
   .train-system {
-    margin-top: var(--o-spacing-h2);
+    margin-top: var(--e-spacing-h2);
     .system-box {
-      margin-top: var(--o-spacing-h5);
+      margin-top: var(--e-spacing-h5);
       .system-short {
         .system-item {
           .item-head {
             max-height: 160px;
             background-color: #bd72ff;
-            padding: var(--o-spacing-h5);
+            padding: var(--e-spacing-h5);
             .head-content {
               width: 100%;
               display: flex;
@@ -1154,27 +1154,27 @@ function onTalentItemClick(index: number) {
               .head-left {
                 width: 52px;
                 height: 28px;
-                font-size: var(--o-font-size-text);
+                font-size: var(--e-font-size-text);
                 text-align: center;
                 line-height: 28px;
                 white-space: nowrap;
                 color: #bd72ff;
-                background-color: var(--o-color-white);
-                margin-right: var(--o-spacing-h5);
+                background-color: var(--e-color-white);
+                margin-right: var(--e-spacing-h5);
               }
               .head-right {
                 max-width: 272px;
-                font-size: var(--o-font-size-text);
+                font-size: var(--e-font-size-text);
                 line-height: 28px;
-                color: var(--o-color-white);
+                color: var(--e-color-white);
                 font-weight: 300;
               }
             }
             p {
-              font-size: var(--o-font-size-tip);
-              line-height: var(--o-line-height-tip);
-              color: var(--o-color-white);
-              margin-top: var(--o-spacing-h8);
+              font-size: var(--e-font-size-tip);
+              line-height: var(--e-line-height-tip);
+              color: var(--e-color-white);
+              margin-top: var(--e-spacing-h8);
             }
           }
           .ogcp {
@@ -1197,45 +1197,45 @@ function onTalentItemClick(index: number) {
             margin-top: 8px;
             p {
               width: 100%;
-              font-size: var(--o-font-size-tip);
-              line-height: var(--o-line-height-tip);
-              color: var(--o-color-text1);
+              font-size: var(--e-font-size-tip);
+              line-height: var(--e-line-height-tip);
+              color: var(--e-color-text1);
             }
             .body-head {
-              margin-top: var(--o-spacing-h5);
+              margin-top: var(--e-spacing-h5);
               .course {
-                margin-top: var(--o-spacing-h8);
+                margin-top: var(--e-spacing-h8);
               }
             }
             .body-inner {
-              margin-top: var(--o-spacing-h5);
+              margin-top: var(--e-spacing-h5);
               .course-cost {
-                margin-top: var(--o-spacing-h8);
+                margin-top: var(--e-spacing-h8);
               }
               .exam-cost {
-                margin-top: var(--o-spacing-h8);
+                margin-top: var(--e-spacing-h8);
               }
             }
           }
           .course-list {
-            margin-top: var(--o-spacing-h5);
+            margin-top: var(--e-spacing-h5);
             overflow: hidden;
             .title {
-              font-size: var(--o-font-size-tip);
-              line-height: var(--o-line-height-tip);
-              color: var(--o-color-text1);
+              font-size: var(--e-font-size-tip);
+              line-height: var(--e-line-height-tip);
+              color: var(--e-color-text1);
             }
             ul {
-              margin-top: var(--o-spacing-h5);
+              margin-top: var(--e-spacing-h5);
               li {
-                border: 1px solid var(--o-color-brand1);
+                border: 1px solid var(--e-color-brand1);
                 box-sizing: border-box;
                 cursor: pointer;
                 & ~ li {
                   margin-top: 8px;
                 }
                 .course-head {
-                  padding: var(--o-spacing-h5);
+                  padding: var(--e-spacing-h5);
                   display: flex;
                   justify-content: space-between;
                   align-items: center;
@@ -1248,23 +1248,23 @@ function onTalentItemClick(index: number) {
                       height: 48px;
                       line-height: 48px;
                       text-align: center;
-                      font-size: var(--o-font-size-h6);
-                      border: 1px solid var(--o-color-brand1);
-                      margin-right: var(--o-spacing-h8);
-                      color: var(--o-color-brand1);
+                      font-size: var(--e-font-size-h6);
+                      border: 1px solid var(--e-color-brand1);
+                      margin-right: var(--e-spacing-h8);
+                      color: var(--e-color-brand1);
                     }
                     .course {
                       p {
-                        font-size: var(--o-font-size-text);
-                        color: var(--o-color-text1);
-                        line-height: var(--o-line-height-text);
+                        font-size: var(--e-font-size-text);
+                        color: var(--e-color-text1);
+                        line-height: var(--e-line-height-text);
                         &::after {
                           content: '';
                           display: block;
                           width: 20px;
                           height: 2px;
                           margin-top: 4px;
-                          background-color: var(--o-color-brand1);
+                          background-color: var(--e-color-brand1);
                         }
                       }
                       .time {
@@ -1273,13 +1273,13 @@ function onTalentItemClick(index: number) {
                         align-items: center;
                         .o-icon {
                           margin-right: 6px;
-                          color: var(--o-color-text1);
+                          color: var(--e-color-text1);
                           font-size: 16px;
                         }
                         .time-text {
-                          color: var(--o-color-text4);
-                          font-size: var(--o-font-size-tip);
-                          line-height: var(--o-line-height-tip);
+                          color: var(--e-color-text4);
+                          font-size: var(--e-font-size-tip);
+                          line-height: var(--e-line-height-tip);
                         }
                       }
                     }
@@ -1291,7 +1291,7 @@ function onTalentItemClick(index: number) {
                       position: relative;
                       top: 3px;
                       font-size: 16px;
-                      color: var(--o-color-brand1);
+                      color: var(--e-color-brand1);
                     }
                   }
                   .more-show {
@@ -1300,32 +1300,32 @@ function onTalentItemClick(index: number) {
                 }
 
                 .more-list {
-                  padding: var(--o-spacing-h5);
-                  background-color: var(--o-color-bg4);
+                  padding: var(--e-spacing-h5);
+                  background-color: var(--e-color-bg4);
                   overflow: hidden;
                   p {
-                    font-size: var(--o-font-size-tip);
-                    line-height: var(--o-line-height-tip);
-                    color: var(--o-color-text1);
+                    font-size: var(--e-font-size-tip);
+                    line-height: var(--e-line-height-tip);
+                    color: var(--e-color-text1);
                   }
                 }
               }
             }
             .down-box {
-              margin-top: var(--o-spacing-h5);
+              margin-top: var(--e-spacing-h5);
               a {
                 display: block;
-                font-size: var(--o-font-size-tip);
-                line-height: var(--o-line-height-tip);
+                font-size: var(--e-font-size-tip);
+                line-height: var(--e-line-height-tip);
                 & ~ a {
-                  margin-top: var(--o-spacing-h8);
+                  margin-top: var(--e-spacing-h8);
                 }
               }
             }
           }
 
           & ~ .system-item {
-            margin-top: var(--o-spacing-h5);
+            margin-top: var(--e-spacing-h5);
           }
           .no-data {
             text-align: center;
@@ -1334,9 +1334,9 @@ function onTalentItemClick(index: number) {
             }
             .tip {
               color: var(--empty-tip);
-              margin-top: var(--o-spacing-h7);
-              font-size: var(--o-font-size-tip);
-              line-height: var(--o-line-height-tip);
+              margin-top: var(--e-spacing-h7);
+              font-size: var(--e-font-size-tip);
+              line-height: var(--e-line-height-tip);
               font-weight: 500;
             }
           }
@@ -1344,10 +1344,10 @@ function onTalentItemClick(index: number) {
             width: 100%;
             text-align: center;
             .o-button {
-              font-size: var(--o-font-size-tip);
+              font-size: var(--e-font-size-tip);
             }
             :deep(.suffix-icon) {
-              color: var(--o-color-brand1);
+              color: var(--e-color-brand1);
             }
           }
         }
@@ -1355,12 +1355,12 @@ function onTalentItemClick(index: number) {
     }
   }
   .train-step {
-    margin-top: var(--o-spacing-h2);
+    margin-top: var(--e-spacing-h2);
     .step-box {
       display: grid;
       grid-gap: 8px;
       max-width: 798px;
-      margin: var(--o-spacing-h5) auto 0 auto;
+      margin: var(--e-spacing-h5) auto 0 auto;
       grid-template-columns: repeat(7, 1fr);
       @media screen and (max-width: 789px) {
         grid-template-columns: repeat(6, 1fr);
@@ -1392,7 +1392,7 @@ function onTalentItemClick(index: number) {
           border-top: 8px solid transparent;
           border-right: 8px solid transparent;
           border-bottom: 8px solid transparent;
-          border-left: 8px solid var(--o-color-bg1);
+          border-left: 8px solid var(--e-color-bg1);
           position: absolute;
           top: 40%;
           left: -20px;
@@ -1416,10 +1416,10 @@ function onTalentItemClick(index: number) {
           width: 100%;
           bottom: 0px;
           text-align: center;
-          color: var(--o-color-text1);
-          font-size: var(--o-font-size-text);
+          color: var(--e-color-text1);
+          font-size: var(--e-font-size-text);
           @media screen and (max-width: 1100px) {
-            font-size: var(--o-font-size-tip);
+            font-size: var(--e-font-size-tip);
           }
         }
       }
@@ -1454,15 +1454,15 @@ function onTalentItemClick(index: number) {
     }
   }
   .train-talent {
-    margin-top: var(--o-spacing-h2);
+    margin-top: var(--e-spacing-h2);
     .talent-desc {
       margin-top: 8px;
-      font-size: var(--o-font-size-tip);
-      line-height: var(--o-line-height-tip);
-      color: var(--o-color-text1);
+      font-size: var(--e-font-size-tip);
+      line-height: var(--e-line-height-tip);
+      color: var(--e-color-text1);
     }
     .talent-box {
-      margin-top: var(--o-spacing-h5);
+      margin-top: var(--e-spacing-h5);
       .talent-item {
         .talent-icon-wrap {
           display: flex;
@@ -1473,9 +1473,9 @@ function onTalentItemClick(index: number) {
           width: 80px;
         }
         .talent-info {
-          font-size: var(--o-font-size-tip);
-          line-height: var(--o-line-height-tip);
-          color: var(--o-color-text1);
+          font-size: var(--e-font-size-tip);
+          line-height: var(--e-line-height-tip);
+          color: var(--e-color-text1);
           text-align: justify;
         }
         :deep(.el-collapse) {
@@ -1483,38 +1483,38 @@ function onTalentItemClick(index: number) {
           border-bottom: none;
         }
         :deep(.el-collapse-item__header) {
-          font-size: var(--o-font-size-tip);
-          line-height: var(--o-line-height-tip);
+          font-size: var(--e-font-size-tip);
+          line-height: var(--e-line-height-tip);
         }
         :deep(.el-collapse-item__wrap) {
-          background-color: var(--o-color-bg4);
+          background-color: var(--e-color-bg4);
         }
         .o-button {
-          padding: var(--o-spacing-h5) 0 0 0;
-          font-size: var(--o-font-size-tip);
-          line-height: var(--o-font-size-tip);
+          padding: var(--e-spacing-h5) 0 0 0;
+          font-size: var(--e-font-size-tip);
+          line-height: var(--e-font-size-tip);
           .right-icon {
-            font-size: var(--o-font-size-tip);
-            color: var(--o-color-brand1);
+            font-size: var(--e-font-size-tip);
+            color: var(--e-color-brand1);
           }
         }
       }
     }
   }
   .train-qa {
-    margin-top: var(--o-spacing-h2);
+    margin-top: var(--e-spacing-h2);
     .qa-box {
-      margin-top: var(--o-spacing-h5);
+      margin-top: var(--e-spacing-h5);
       .qa-item {
         .qa-text {
-          font-size: var(--o-font-size-text);
-          line-height: var(--o-line-height-text);
-          color: var(--o-color-text1);
+          font-size: var(--e-font-size-text);
+          line-height: var(--e-line-height-text);
+          color: var(--e-color-text1);
         }
         .qa-answer {
-          font-size: var(--o-font-size-tip);
-          line-height: var(--o-line-height-tip);
-          color: var(--o-color-text1);
+          font-size: var(--e-font-size-tip);
+          line-height: var(--e-line-height-tip);
+          color: var(--e-color-text1);
           text-align: justify;
         }
         :deep(.el-collapse) {
@@ -1522,23 +1522,23 @@ function onTalentItemClick(index: number) {
           border-bottom: none;
         }
         :deep(.el-collapse-item__header) {
-          font-size: var(--o-font-size-tip);
-          line-height: var(--o-line-height-tip);
+          font-size: var(--e-font-size-tip);
+          line-height: var(--e-line-height-tip);
         }
         :deep(.el-collapse-item__wrap) {
-          background-color: var(--o-color-bg4);
+          background-color: var(--e-color-bg4);
         }
       }
     }
   }
   .train-contact {
-    margin-top: var(--o-spacing-h5);
+    margin-top: var(--e-spacing-h5);
     p {
-      font-size: var(--o-font-size-text);
-      line-height: var(--o-line-height-text);
-      color: var(--o-color-text1);
+      font-size: var(--e-font-size-text);
+      line-height: var(--e-line-height-text);
+      color: var(--e-color-text1);
       @media screen and (max-width: 1100px) {
-        font-size: var(--o-font-size-tip);
+        font-size: var(--e-font-size-tip);
       }
     }
   }
@@ -1547,10 +1547,10 @@ function onTalentItemClick(index: number) {
     border-bottom: none;
   }
   :deep(.el-collapse-item__header) {
-    background-color: var(--o-color-bg2);
-    color: var(--o-color-text1);
-    border-bottom: 1px solid var(--o-color-border2);
-    box-shadow: var(--o-shadow-l2);
+    background-color: var(--e-color-bg2);
+    color: var(--e-color-text1);
+    border-bottom: 1px solid var(--e-color-border2);
+    box-shadow: var(--e-shadow-l2);
   }
 }
 .fade-enter-from,

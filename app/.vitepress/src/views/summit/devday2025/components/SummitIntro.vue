@@ -31,21 +31,21 @@ const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
 </template>
 <style scoped lang="scss">
 .list {
-  margin-top: var(--o-spacing-h2);
+  margin-top: var(--e-spacing-h2);
   .item {
-    font-size: var(--o-font-size-h7);
-    color: var(--o-color-text1);
-    line-height: var(--o-line-height-h7);
+    font-size: var(--e-font-size-h7);
+    color: var(--e-color-text1);
+    line-height: var(--e-line-height-h7);
     font-weight: 400;
-    margin-top: var(--o-spacing-h4);
+    margin-top: var(--e-spacing-h4);
     @media (max-width: 767px) {
-      font-size: var(--o-font-size-tip);
-      line-height: var(--o-line-height-tip);
-      margin-top: var(--o-spacing-h6);
+      font-size: var(--e-font-size-tip);
+      line-height: var(--e-line-height-tip);
+      margin-top: var(--e-spacing-h6);
     }
   }
   @media (max-width: 767px) {
-    margin-top: var(--o-spacing-h5);
+    margin-top: var(--e-spacing-h5);
     margin-bottom: 31px;
   }
 }

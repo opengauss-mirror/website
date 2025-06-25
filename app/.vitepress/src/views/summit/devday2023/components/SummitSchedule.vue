@@ -29,28 +29,13 @@ const otherTabType = ref(0);
 <template>
   <div class="schedule">
     <h4>{{ agendaData.lable }}</h4>
-    <span
-      v-if="agendaData.lable.includes('SIG组版本规划工作会议')"
-      class="go-etherpad"
-    >
-      <a
-        :href="ETHERPAD_LINK + 'p/ODD2023-SIG-Meeting'"
-        target="_blank"
-        rel="noopener noreferrer"
-        >点击此处</a
+    <span v-if="agendaData.lable.includes('SIG组版本规划工作会议')" class="go-etherpad">
+      <a :href="ETHERPAD_LINK + 'p/ODD2023-SIG-Meeting'" target="_blank" rel="noopener noreferrer">点击此处</a
       >并选择感兴趣的SIG组-Etherpad文件，按要求填写议题和参会信息
     </span>
     <div class="schedule-item other">
-      <el-tabs
-        v-if="agendaData.content[1]"
-        v-model.number="otherTabType"
-        class="other-tabs"
-      >
-        <el-tab-pane
-          v-for="(itemList, scheduleIndex) in agendaData.content"
-          :key="itemList.id"
-          :name="scheduleIndex"
-        >
+      <el-tabs v-if="agendaData.content[1]" v-model.number="otherTabType" class="other-tabs">
+        <el-tab-pane v-for="(itemList, scheduleIndex) in agendaData.content" :key="itemList.id" :name="scheduleIndex">
           <template #label>
             <div class="time-tabs">
               {{ itemList.name }}
@@ -58,12 +43,7 @@ const otherTabType = ref(0);
           </template>
         </el-tab-pane>
       </el-tabs>
-      <div
-        v-for="(itemList, listIndex) in agendaData.content"
-        v-show="otherTabType == listIndex"
-        :key="itemList.id"
-        class="content"
-      >
+      <div v-for="(itemList, listIndex) in agendaData.content" v-show="otherTabType == listIndex" :key="itemList.id" class="content">
         <h4 v-if="itemList.title" class="other-title">
           {{ itemList.title }}
         </h4>
@@ -73,24 +53,15 @@ const otherTabType = ref(0);
             :key="subItem.id"
             class="content-item"
             :class="{
-              'show-detail':
-                idSubItemShow === subItem.id && idShow === itemList.id,
+              'show-detail': idSubItemShow === subItem.id && idShow === itemList.id,
             }"
           >
             <span class="time">
               <IconTime />
               {{ subItem.time }}
             </span>
-            <span
-              class="desc"
-              :class="{ 'exit-detail': subItem.detail }"
-              @click="changeIndexShow(itemList.id, subItem.id)"
-            >
-              <span
-                v-for="item in subItem.desc.split('\n')"
-                :key="item + '1'"
-                >{{ item }}</span
-              >
+            <span class="desc" :class="{ 'exit-detail': subItem.detail }" @click="changeIndexShow(itemList.id, subItem.id)">
+              <span v-for="item in subItem.desc.split('\n')" :key="item + '1'">{{ item }}</span>
             </span>
             <div v-if="subItem.person[0]" class="name-box">
               <div v-for="personItem in subItem.person" :key="personItem.id">
@@ -108,26 +79,19 @@ const otherTabType = ref(0);
               <p>
                 <span>议题名称：</span
                 ><span
-                  ><span v-for="item in subItem.desc.split('\n')" :key="item">{{
-                    item
-                  }}</span></span
+                  ><span v-for="item in subItem.desc.split('\n')" :key="item">{{ item }}</span></span
                 >
               </p>
               <p v-if="subItem.detail">
                 <span>议题简介：</span>
                 <span>
-                  <span v-for="item in subItem.detail.split('\n')" :key="item"
-                    >{{ item }}
-                  </span>
+                  <span v-for="item in subItem.detail.split('\n')" :key="item">{{ item }} </span>
                 </span>
               </p>
               <p v-if="subItem.person[0]">
                 <span>发言人：</span>
                 <span>
-                  <span
-                    v-for="personItem in subItem.person"
-                    :key="personItem.id"
-                    class="person-box"
+                  <span v-for="personItem in subItem.person" :key="personItem.id" class="person-box"
                     >{{ personItem.name }}
                     <span v-if="personItem.post">{{ personItem.post }}</span>
                   </span>
@@ -135,11 +99,7 @@ const otherTabType = ref(0);
               </p>
             </div>
           </div>
-          <div
-            v-show="idSubItemShow !== '' && idShow === itemList.id"
-            class="mask"
-            @click="changeIndexShow('', '')"
-          ></div>
+          <div v-show="idSubItemShow !== '' && idShow === itemList.id" class="mask" @click="changeIndexShow('', '')"></div>
         </div>
       </div>
     </div>
@@ -158,7 +118,7 @@ const otherTabType = ref(0);
     font-size: 20px;
     line-height: 24px;
     font-weight: 400;
-    color: var(--o-color-text1);
+    color: var(--e-color-text1);
     @media (max-width: 1100px) {
       margin-top: 24px;
       font-size: 14px;
@@ -170,16 +130,16 @@ const otherTabType = ref(0);
     margin-top: 18px;
     justify-content: center;
     text-align: center;
-    color: var(--o-color-text1);
+    color: var(--e-color-text1);
     @media screen and (max-width: 768px) {
       margin-top: 4px;
-      font-size: var(--o-font-size-tip);
-      line-height: var(--o-line-height-tip);
+      font-size: var(--e-font-size-tip);
+      line-height: var(--e-line-height-tip);
     }
   }
   .meeting-title {
     font-weight: 400;
-    color: var(--o-color-text1);
+    color: var(--e-color-text1);
     font-size: 20px;
     line-height: 28px;
     text-align: center;
@@ -228,10 +188,10 @@ const otherTabType = ref(0);
       display: inline-block;
       margin: 0 0 24px;
       cursor: pointer;
-      border: 1px solid var(--o-color-border2);
-      color: var(--o-color-text1);
+      border: 1px solid var(--e-color-border2);
+      color: var(--e-color-text1);
       text-align: center;
-      background: var(--o-color-bg2);
+      background: var(--e-color-bg2);
       font-size: 14px;
       line-height: 38px;
       padding: 0 16px;
@@ -244,15 +204,15 @@ const otherTabType = ref(0);
 
     .is-active .time-tabs {
       color: #fff;
-      background: var(--o-color-brand1);
-      border-color: var(--o-color-brand1);
+      background: var(--e-color-brand1);
+      border-color: var(--e-color-brand1);
     }
   }
   .schedule-item {
     width: 100%;
     padding: 24px;
-    background-color: var(--o-color-bg2);
-    margin-top: var(--o-spacing-h4);
+    background-color: var(--e-color-bg2);
+    margin-top: var(--e-spacing-h4);
     @media (max-width: 1100px) {
       padding: 16px;
     }
@@ -287,7 +247,7 @@ const otherTabType = ref(0);
       }
       :deep(.el-tabs__nav-scroll) {
         text-align: center;
-        color: var(--o-color-text1);
+        color: var(--e-color-text1);
       }
       :deep(.el-tabs__content) {
         overflow: visible;
@@ -304,7 +264,7 @@ const otherTabType = ref(0);
       }
       .other-text {
         margin: 24px auto 0 auto;
-        color: var(--o-color-text1);
+        color: var(--e-color-text1);
         font-size: 18px;
         line-height: 26px;
         text-align: center;
@@ -322,7 +282,7 @@ const otherTabType = ref(0);
       }
       .other-title {
         margin: 24px auto;
-        color: var(--o-color-text1);
+        color: var(--e-color-text1);
         font-size: 18px;
         line-height: 26px;
         text-align: center;
@@ -354,14 +314,14 @@ const otherTabType = ref(0);
       display: none;
     }
     :deep(.time-tabs) {
-      color: var(--o-color-text1);
+      color: var(--e-color-text1);
       &:hover {
-        color: var(--o-color-brand1);
+        color: var(--e-color-brand1);
       }
     }
     :deep(.is-active) {
       .time-tabs {
-        color: var(--o-color-brand1);
+        color: var(--e-color-brand1);
       }
     }
   }
@@ -373,7 +333,7 @@ const otherTabType = ref(0);
   .content-item {
     display: grid;
     grid-template-columns: 192px 580px 560px;
-    border-bottom: 1px solid var(--o-color-border2);
+    border-bottom: 1px solid var(--e-color-border2);
     padding: 20px 0px;
     transition: all 0.25s ease;
     align-items: center;
@@ -412,14 +372,14 @@ const otherTabType = ref(0);
     .desc {
       font-size: 18px;
       line-height: 30px;
-      color: var(--o-color-text1);
+      color: var(--e-color-text1);
       display: block;
       margin-right: 36px;
       cursor: default;
       > span {
         display: block;
         & ~ span {
-          margin-top: var(--o-spacing-h6);
+          margin-top: var(--e-spacing-h6);
         }
       }
       @media (max-width: 1100px) {
@@ -432,9 +392,9 @@ const otherTabType = ref(0);
     .name {
       min-width: 120px;
       display: inline-block;
-      color: var(--o-color-text3);
+      color: var(--e-color-text3);
       font-size: 16px;
-      line-height: var(--o-line-height-h8);
+      line-height: var(--e-line-height-h8);
       @media (max-width: 1100px) {
         font-size: 12px;
         line-height: 18px;
@@ -443,7 +403,7 @@ const otherTabType = ref(0);
     .post {
       width: 100%;
       display: inline-block;
-      color: var(--o-color-text3);
+      color: var(--e-color-text3);
       font-size: 16px;
       line-height: 24px;
       flex: 1;
@@ -465,7 +425,7 @@ const otherTabType = ref(0);
       width: 192px;
       font-size: 18px;
       line-height: 26px;
-      color: var(--o-color-text3);
+      color: var(--e-color-text3);
       display: flex;
       align-items: center;
       @media screen and (max-width: 1100px) {
@@ -476,7 +436,7 @@ const otherTabType = ref(0);
       svg {
         width: 18px;
         height: 18px;
-        color: var(--o-color-text3);
+        color: var(--e-color-text3);
         margin-right: 6px;
         @media screen and (max-width: 1100px) {
           display: none;
@@ -496,8 +456,8 @@ const otherTabType = ref(0);
       left: 50%;
       transform: translateX(-50%);
       z-index: 9;
-      background-color: var(--o-color-bg2);
-      box-shadow: var(--o-shadow-l4);
+      background-color: var(--e-color-bg2);
+      box-shadow: var(--e-shadow-l4);
       max-height: 300px;
       overflow: auto;
       @media (max-width: 1100px) {
@@ -516,7 +476,7 @@ const otherTabType = ref(0);
         > span {
           font-size: 14px;
           line-height: 22px;
-          color: var(--o-color-text1);
+          color: var(--e-color-text1);
           display: inline-block;
           @media (max-width: 1100px) {
             font-size: 12px;

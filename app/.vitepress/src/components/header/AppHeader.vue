@@ -111,26 +111,26 @@ const searchLink = `/${lang.value}/search/`;
 
 <style lang="scss" scoped>
 :deep(.el-input__wrapper) {
-  background-color: var(--o-color-bg-secondary) !important;
+  background-color: var(--e-color-bg-secondary) !important;
   box-shadow: none !important;
 }
 :deep(.el-input__suffix) {
-  font-size: var(--o-font-size-h7);
+  font-size: var(--e-font-size-h7);
 }
 :deep(.el-input__clear) {
-  font-size: var(--o-font-size-h7);
+  font-size: var(--e-font-size-h7);
 }
 :deep(.el-icon-circle-inner) {
-  font-size: var(--o-font-size-h1);
+  font-size: var(--e-font-size-h1);
 }
 .app-header {
-  background-color: var(--o-color-bg2);
+  background-color: var(--e-color-bg2);
   position: sticky;
   left: 0;
   right: 0;
   top: 0;
   z-index: 99;
-  box-shadow: var(--o-shadow-l1);
+  box-shadow: var(--e-shadow-l1);
   .app-header-body {
     display: flex;
     align-items: center;
@@ -152,7 +152,7 @@ const searchLink = `/${lang.value}/search/`;
 .logo {
   display: inline-block;
   cursor: pointer;
-  margin-right: var(--o-spacing-h4);
+  margin-right: var(--e-spacing-h4);
   @media (max-width: 1100px) {
     position: absolute;
     left: 50%;
@@ -168,9 +168,9 @@ const searchLink = `/${lang.value}/search/`;
   }
 }
 .mobile-search {
-  font-size: var(--o-font-size-h6);
+  font-size: var(--e-font-size-h6);
   display: none;
-  color: var(--o-color-text1);
+  color: var(--e-color-text1);
   @media (max-width: 1100px) {
     display: block;
     font-size: 0;
@@ -205,8 +205,8 @@ const searchLink = `/${lang.value}/search/`;
     }
   }
   .icon {
-    font-size: var(--o-font-size-h6);
-    color: var(--o-color-text1);
+    font-size: var(--e-font-size-h6);
+    color: var(--e-color-text1);
     display: block;
   }
 }

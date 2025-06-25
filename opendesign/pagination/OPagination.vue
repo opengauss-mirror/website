@@ -4,9 +4,7 @@ import { useAttrs, computed } from 'vue';
 const attrs = useAttrs();
 
 const classNames = computed(() => {
-  return `${attrs['poper-class']}`
-    ? `${attrs['poper-class']} o-pagination-popper`
-    : 'o-pagination-popper';
+  return `${attrs['poper-class']}` ? `${attrs['poper-class']} o-pagination-popper` : 'o-pagination-popper';
 });
 </script>
 
@@ -18,12 +16,12 @@ const classNames = computed(() => {
 
 <style lang="scss">
 .o-pagination {
-  --o-pagination-font-color: var(--o-color-text1);
-  --o-pagination-font-color_active: var(--o-color-white);
-  --o-pagination-bg-color: var(--o-color-text5);
-  --o-pagination-bg-color_hover: var(--o-color-brand1);
-  --o-pagination-bg-color_selected: var(--o-color-brand1);
-  --o-pagination-number-border-color_active: var(--o-color-brand1);
+  --e-pagination-font-color: var(--e-color-text1);
+  --e-pagination-font-color_active: var(--e-color-white);
+  --e-pagination-bg-color: var(--e-color-text5);
+  --e-pagination-bg-color_hover: var(--e-color-brand1);
+  --e-pagination-bg-color_selected: var(--e-color-brand1);
+  --e-pagination-number-border-color_active: var(--e-color-brand1);
 
   &.el-pagination {
     justify-content: center;
@@ -31,11 +29,11 @@ const classNames = computed(() => {
       display: none;
     }
     .el-pagination__sizes {
-      margin: 0 var(--o-spacing-h8) 0 0;
+      margin: 0 var(--e-spacing-h8) 0 0;
     }
     .el-input {
-      --el-input-bg-color: var(--o-pagination-bg-color);
-      --el-input-text-color: var(--o-pagination-font-color);
+      --el-input-bg-color: var(--e-pagination-bg-color);
+      --el-input-text-color: var(--e-pagination-font-color);
     }
     .el-input__wrapper {
       border-radius: 0px;
@@ -49,55 +47,55 @@ const classNames = computed(() => {
       --el-select-border-color-hover: none;
       --el-select-input-focus-border-color: none;
       & .el-input .el-select__caret {
-        color: var(--o-pagination-font-color);
+        color: var(--e-pagination-font-color);
       }
     }
     .el-select-dropdown__wrap {
       background-color: #000 !important;
     }
     .el-pager li {
-      color: var(--o-pagination-font-color);
-      background: var(--o-pagination-bg-color);
+      color: var(--e-pagination-font-color);
+      background: var(--e-pagination-bg-color);
       border-radius: 0px;
       line-height: 36px;
       height: 36px;
       width: 36px;
       &:hover {
-        color: var(--o-pagination-font-color_active) !important;
-        background-color: var(--o-pagination-bg-color_hover);
+        color: var(--e-pagination-font-color_active) !important;
+        background-color: var(--e-pagination-bg-color_hover);
       }
     }
     .el-pager li.is-active.number {
-      background: var(--o-pagination-bg-color_selected);
+      background: var(--e-pagination-bg-color_selected);
       font-weight: 300;
-      font-size: var(--o-font-size-text);
+      font-size: var(--e-font-size-text);
     }
     .btn-next,
     .btn-prev {
       width: 36px;
       height: 36px;
-      color: var(--o-pagination-font-color);
+      color: var(--e-pagination-font-color);
       border-radius: 0px;
-      background: var(--o-pagination-bg-color);
+      background: var(--e-pagination-bg-color);
     }
     .btn-prev:disabled {
-      background: var(--o-color-text5);
+      background: var(--e-color-text5);
     }
     .btn-next {
-      margin-right: var(--o-spacing-h5) !important;
+      margin-right: var(--e-spacing-h5) !important;
     }
     .btn-next:disabled {
-      background: var(--o-color-text5);
+      background: var(--e-color-text5);
     }
 
     .el-pagination__jump {
       height: 36px;
-      font-size: var(--o-font-size-text);
+      font-size: var(--e-font-size-text);
       font-weight: 300;
-      line-height: var(--o-line-height-text);
-      color: var(--o-color-neutral8);
+      line-height: var(--e-line-height-text);
+      color: var(--e-color-neutral8);
       border-radius: 0px;
-      margin-left: var(--o-spacing-h4);
+      margin-left: var(--e-spacing-h4);
       .el-input__wrapper {
         flex-grow: 0.273;
       }
@@ -105,7 +103,7 @@ const classNames = computed(() => {
   }
 }
 .o-pagination-popper {
-  box-shadow: var(--o-shadow-l3);
+  box-shadow: var(--e-shadow-l3);
   &.el-popper {
     box-shadow: none !important;
     --el-popper-border-radius: none;
@@ -115,29 +113,29 @@ const classNames = computed(() => {
     }
 
     .el-select-dropdown__item {
-      color: var(--o-color-text1);
+      color: var(--e-color-text1);
 
       &:hover {
-        color: var(--o-color-brand1);
-        background: var(--o-color-bg1);
+        color: var(--e-color-brand1);
+        background: var(--e-color-bg1);
       }
     }
     .hover {
-      color: var(--o-color-brand1);
-      background: var(--o-color-bg1);
+      color: var(--e-color-brand1);
+      background: var(--e-color-bg1);
     }
 
     .el-select-dropdown__item.selected {
-      background-color: var(--o-color-bg1);
+      background-color: var(--e-color-bg1);
     }
 
     .el-select-dropdown__item.selected {
       font-weight: 300;
-      color: var(--o-color-brand1);
+      color: var(--e-color-brand1);
     }
 
     .el-select-dropdown__wrap {
-      background-color: var(--o-color-bg2);
+      background-color: var(--e-color-bg2);
     }
   }
 }

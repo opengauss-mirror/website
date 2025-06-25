@@ -65,8 +65,7 @@ const onScrollTop = () => {
     return;
   }
 
-  const scrollTop =
-    document.body.scrollTop || document.documentElement.scrollTop;
+  const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
   const activeList: Array<number> = [];
   props.list.forEach((item: NavItemT, index: number) => {
     const el = document.body.querySelector(`#${item.key}`) as HTMLElement;
@@ -100,12 +99,7 @@ onUnmounted(() => {
 
 <template>
   <ul class="title-nav">
-    <li
-      v-for="(item, index) in list"
-      :key="index"
-      :class="index === currentIndex ? 'active' : ''"
-      @click="onClick(index, item.key)"
-    >
+    <li v-for="(item, index) in list" :key="index" :class="index === currentIndex ? 'active' : ''" @click="onClick(index, item.key)">
       <a rel="noopener noreferrer">
         {{ item.name }}
       </a>
@@ -127,17 +121,17 @@ onUnmounted(() => {
   li {
     width: 100%;
     padding: 8px 16px;
-    border-left: 1px solid var(--o-color-border2);
+    border-left: 1px solid var(--e-color-border2);
     a {
-      color: var(--o-color-text4);
-      font-size: var(--o-font-size-text);
-      line-height: var(--o-line-height-text);
+      color: var(--e-color-text4);
+      font-size: var(--e-font-size-text);
+      line-height: var(--e-line-height-text);
     }
   }
   .active {
-    border-left: 1px solid var(--o-color-brand1);
+    border-left: 1px solid var(--e-color-brand1);
     a {
-      color: var(--o-color-brand1);
+      color: var(--e-color-brand1);
     }
   }
 }

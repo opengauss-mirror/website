@@ -80,7 +80,7 @@ async function handleUrlCopy(value: string | undefined, e: MouseEvent) {
 }
 
 // 根据语言切换数据
-const changeLangData = computed(() => (item: any) => isZh.value ? item.zh : item.en);
+const changeLangData = computed(() => (item: any) => (isZh.value ? item.zh : item.en));
 // tips
 const hoverTips = computed(() => (type: string) => {
   let tips = '';
@@ -346,16 +346,16 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
 
 <style lang="scss" scoped>
 .download-filter {
-  margin-top: var(--o-spacing-h2);
-  margin-bottom: var(--o-spacing-h4);
+  margin-top: var(--e-spacing-h2);
+  margin-bottom: var(--e-spacing-h4);
   @media screen and (max-width: 1100px) {
-    margin-top: var(--o-spacing-h5);
-    margin-bottom: var(--o-spacing-h5);
+    margin-top: var(--e-spacing-h5);
+    margin-bottom: var(--e-spacing-h5);
   }
   .slect-box {
     display: flex;
     align-items: center;
-    gap: var(--o-spacing-h5);
+    gap: var(--e-spacing-h5);
     :deep(.el-input__prefix) {
       display: none;
     }
@@ -366,10 +366,10 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
       display: block;
     }
     .label {
-      color: var(--o-color-text4);
+      color: var(--e-color-text4);
       @media screen and (max-width: 1100px) {
-        font-size: var(--o-font-size-tip);
-        line-height: var(--o-line-height-tip);
+        font-size: var(--e-font-size-tip);
+        line-height: var(--e-line-height-tip);
       }
     }
     .select-version {
@@ -390,49 +390,49 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
 .link-box {
   display: flex;
   align-items: center;
-  gap: var(--o-spacing-h4);
-  margin-top: var(--o-spacing-h2);
-  margin-bottom: var(--o-spacing-h2);
+  gap: var(--e-spacing-h4);
+  margin-top: var(--e-spacing-h2);
+  margin-bottom: var(--e-spacing-h2);
   @media screen and (max-width: 1100px) {
     display: block;
-    margin-top: var(--o-spacing-h6);
-    margin-bottom: var(--o-spacing-h2);
+    margin-top: var(--e-spacing-h6);
+    margin-bottom: var(--e-spacing-h2);
   }
   a {
-    font-size: var(--o-font-size-text);
-    line-height: var(--o-line-height-text);
+    font-size: var(--e-font-size-text);
+    line-height: var(--e-line-height-text);
     cursor: pointer;
     @media screen and (max-width: 1100px) {
-      margin: var(--o-spacing-h8) var(--o-spacing-h4) 0 0;
+      margin: var(--e-spacing-h8) var(--e-spacing-h4) 0 0;
       display: inline-block;
-      font-size: var(--o-font-size-tip);
-      line-height: var(--o-line-height-tip);
+      font-size: var(--e-font-size-tip);
+      line-height: var(--e-line-height-tip);
     }
   }
 }
 .download-panel {
   &:not(:last-child) {
-    margin-bottom: var(--o-spacing-h1);
+    margin-bottom: var(--e-spacing-h1);
     @media screen and (max-width: 1100px) {
-      margin-bottom: var(--o-spacing-h2);
+      margin-bottom: var(--e-spacing-h2);
     }
   }
   > .title {
-    font-size: var(--o-font-size-h4);
-    line-height: var(--o-line-height-h4);
-    color: var(--o-color-text1);
-    margin-bottom: var(--o-spacing-h4);
+    font-size: var(--e-font-size-h4);
+    line-height: var(--e-line-height-h4);
+    color: var(--e-color-text1);
+    margin-bottom: var(--e-spacing-h4);
     font-weight: 300;
     @media screen and (max-width: 1100px) {
-      font-size: var(--o-font-size-h8);
-      line-height: var(--o-line-height-h8);
+      font-size: var(--e-font-size-h8);
+      line-height: var(--e-line-height-h8);
       text-align: center;
-      margin-bottom: var(--o-spacing-h5);
+      margin-bottom: var(--e-spacing-h5);
     }
   }
   .caption {
-    font-size: var(--o-font-size-text);
-    line-height: var(--o-line-height-text);
+    font-size: var(--e-font-size-text);
+    line-height: var(--e-line-height-text);
   }
   :deep(.o-table.el-table) {
     .cell {
@@ -442,19 +442,19 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
 
   .o-collapse {
     :deep(.el-collapse-item__content) {
-      padding: var(--o-spacing-h5);
+      padding: var(--e-spacing-h5);
     }
     .text {
-      font-size: var(--o-font-size-tip);
-      line-height: var(--o-line-height-tip);
-      color: var(--o-color-text4);
+      font-size: var(--e-font-size-tip);
+      line-height: var(--e-line-height-tip);
+      color: var(--e-color-text4);
       &.tips {
-        margin-bottom: var(--o-spacing-h8);
+        margin-bottom: var(--e-spacing-h8);
       }
     }
     .down-action {
       &:not(:last-child) {
-        margin: var(--o-spacing-h9) 0 var(--o-spacing-h5);
+        margin: var(--e-spacing-h9) 0 var(--e-spacing-h5);
       }
       @media screen and (max-width: 1100px) {
         justify-content: left;
@@ -465,13 +465,13 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
   .name-info {
     display: flex;
     align-items: center;
-    gap: var(--o-spacing-h8);
-    color: var(--o-color-text1);
+    gap: var(--e-spacing-h8);
+    color: var(--e-color-text1);
   }
   .server-tips {
-    width: var(--o-font-size-h6);
-    height: var(--o-font-size-h6);
-    color: var(--o-color-text4);
+    width: var(--e-font-size-h6);
+    height: var(--e-font-size-h6);
+    color: var(--e-color-text4);
   }
 }
 .download-mobile {
@@ -494,17 +494,17 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
 .down-action {
   display: flex;
   align-items: center;
-  font-size: var(--o-font-size-text);
-  gap: var(--o-spacing-h8);
+  font-size: var(--e-font-size-text);
+  gap: var(--e-spacing-h8);
   justify-content: center;
 
   .down-copy {
-    color: var(--o-color-brand1);
-    font-size: var(--o-font-size-text);
+    color: var(--e-color-brand1);
+    font-size: var(--e-font-size-text);
   }
 }
 .download-guide-btn {
-  margin: var(--o-spacing-h8) auto 0;
+  margin: var(--e-spacing-h8) auto 0;
   width: 210px;
   .o-button {
     width: 100%;
@@ -516,7 +516,7 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
 }
 
 .server-name {
-  font-size: var(--o-font-size-text);
-  line-height: var(--o-line-height-text);
+  font-size: var(--e-font-size-text);
+  line-height: var(--e-line-height-text);
 }
 </style>

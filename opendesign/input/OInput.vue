@@ -10,51 +10,51 @@ const attrs = useAttrs();
 
 <style lang="scss">
 .o-input {
-  --o-input-height: 36px;
-  --o-input-border-color: var(--o-color-border1);
-  --o-input-font-color: var(--o-color-text1);
-  --o-input-font-size: var(--o-font-size-text);
-  --o-input-line-height: var(--o-line-height-text);
-  --o-input-color-bg: var(--o-color-bg2);
-  --o-input-brand: var(--o-color-brand1);
-  --o-input-disabled-color: var(--o-color-bg3);
-  --o-input-disabled-border-color: var(--o-color-black);
+  --e-input-height: 36px;
+  --e-input-border-color: var(--e-color-border1);
+  --e-input-font-color: var(--e-color-text1);
+  --e-input-font-size: var(--e-font-size-text);
+  --e-input-line-height: var(--e-line-height-text);
+  --e-input-color-bg: var(--e-color-bg2);
+  --e-input-brand: var(--e-color-brand1);
+  --e-input-disabled-color: var(--e-color-bg3);
+  --e-input-disabled-border-color: var(--e-color-black);
   &.el-input {
-    font-size: var(--o-input-font-size);
-    line-height: var(--o-input-font-size);
+    font-size: var(--e-input-font-size);
+    line-height: var(--e-input-font-size);
 
     .el-input__wrapper {
       border-radius: 0;
       padding: 1px 15px;
-      background-color: var(--o-input-color-bg);
-      box-shadow: 0 0 0 1px var(--o-input-border-color) inset;
+      background-color: var(--e-input-color-bg);
+      box-shadow: 0 0 0 1px var(--e-input-border-color) inset;
 
       .el-input__inner {
-        height: var(--o-input-height);
-        line-height: var(--o-input-font-size);
-        color: var(--o-input-font-color);
+        height: var(--e-input-height);
+        line-height: var(--e-input-font-size);
+        color: var(--e-input-font-color);
       }
       &.is-focus {
-        box-shadow: 0 0 0 1px var(--o-input-brand) inset;
+        box-shadow: 0 0 0 1px var(--e-input-brand) inset;
       }
     }
   }
   &.el-textarea {
     .el-textarea__inner {
-      box-shadow: 0 0 0 1px var(--o-input-border-color) inset;
+      box-shadow: 0 0 0 1px var(--e-input-border-color) inset;
       border-radius: 0;
-      background-color: var(--o-input-color-bg);
-      color: var(--o-input-font-color);
+      background-color: var(--e-input-color-bg);
+      color: var(--e-input-font-color);
     }
   }
   &.is-disabled {
     .el-input__wrapper {
-      box-shadow: 0 0 0 1px var(--o-input-disabled-border-color) inset;
-      background: var(--o-input-disabled-color);
+      box-shadow: 0 0 0 1px var(--e-input-disabled-border-color) inset;
+      background: var(--e-input-disabled-color);
 
       .el-input__inner {
-        color: var(--o-input-font-color);
-        -webkit-text-fill-color: var(--o-input-font-color);
+        color: var(--e-input-font-color);
+        -webkit-text-fill-color: var(--e-input-font-color);
       }
     }
   }

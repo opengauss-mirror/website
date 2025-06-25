@@ -177,9 +177,9 @@ onMounted(() => {
   }
 }
 .tips {
-  font-size: var(--o-font-size-text);
-  line-height: var(--o-line-height-text);
-  color: var(--o-color-text3);
+  font-size: var(--e-font-size-text);
+  line-height: var(--e-line-height-text);
+  color: var(--e-color-text3);
   margin-top: 24px;
   @media screen and (max-width: 1100px) {
     margin-top: 16px;
@@ -189,38 +189,38 @@ onMounted(() => {
   text-align: center !important;
 }
 .list-pc {
-  margin-top: var(--o-spacing-h2);
+  margin-top: var(--e-spacing-h2);
   @media screen and (max-width: 1100px) {
     display: none;
   }
   :deep(.is-leaf) {
-    background-color: var(--o-color-bg4);
+    background-color: var(--e-color-bg4);
   }
 
   :deep(.cell) {
     word-break: break-word;
-    padding: 0 var(--o-spacing-h6);
+    padding: 0 var(--e-spacing-h6);
   }
 }
 .list-mb {
   display: none;
-  margin-top: var(--o-spacing-h5);
-  box-shadow: var(--o-shadow1);
+  margin-top: var(--e-spacing-h5);
+  box-shadow: var(--e-shadow1);
   @media screen and (max-width: 1100px) {
     display: block;
   }
   .item {
-    padding: var(--o-spacing-h5) var(--o-spacing-h5) var(--o-spacing-h8);
-    font-size: var(--o-font-size-tip);
+    padding: var(--e-spacing-h5) var(--e-spacing-h5) var(--e-spacing-h8);
+    font-size: var(--e-font-size-tip);
     font-weight: 300;
-    color: var(--o-color-neutral8);
-    line-height: var(--o-line-height-tip);
-    background-color: var(--o-color-bg2);
+    color: var(--e-color-neutral8);
+    line-height: var(--e-line-height-tip);
+    background-color: var(--e-color-bg2);
     &:nth-child(odd) {
-      background: var(--o-color-bg4);
+      background: var(--e-color-bg4);
     }
     & li {
-      margin-bottom: var(--o-spacing-h8);
+      margin-bottom: var(--e-spacing-h8);
     }
     li:nth-child(4) {
       display: flex;
@@ -229,11 +229,11 @@ onMounted(() => {
       }
     }
     span {
-      margin-right: var(--o-spacing-h8);
-      color: var(--o-color-text1);
+      margin-right: var(--e-spacing-h8);
+      color: var(--e-color-text1);
       text-align: justify;
       &:nth-of-type(2) {
-        color: var(--o-color-neutral8);
+        color: var(--e-color-neutral8);
       }
     }
   }
@@ -249,8 +249,8 @@ onMounted(() => {
 }
 .introduce {
   margin-top: 40px;
-  font-size: var(--o-font-siez-text);
-  color: var(--o-color-text-secondary);
-  line-height: var(--o-line-height-text);
+  font-size: var(--e-font-siez-text);
+  color: var(--e-color-text-secondary);
+  line-height: var(--e-line-height-text);
 }
 </style>

@@ -299,45 +299,45 @@ onMounted(() => {
     line-height: 38px;
   }
   .tips {
-    font-size: var(--o-font-size-tip);
-    line-height: var(--o-line-height-tip);
-    color: var(--o-color-text4);
+    font-size: var(--e-font-size-tip);
+    line-height: var(--e-line-height-tip);
+    color: var(--e-color-text4);
   }
 
   .meeting-action-box {
     display: flex;
-    gap: var(--o-spacing-h5);
+    gap: var(--e-spacing-h5);
   }
   :deep(.el-textarea) {
     &.is-disabled {
       .el-textarea__inner {
-        box-shadow: 0 0 0 1px var(--o-color-black) inset;
-        background: var(--o-color-bg3);
+        box-shadow: 0 0 0 1px var(--e-color-black) inset;
+        background: var(--e-color-bg3);
       }
     }
   }
 
   :deep(.el-radio-button) {
     &.is-disabled {
-      --el-radio-button-disabled-checked-fill: var(--o-color-bg3);
+      --el-radio-button-disabled-checked-fill: var(--e-color-bg3);
     }
   }
   :deep(.el-select) {
-    --o-select-border-color: var(--o-color-border1);
+    --o-select-border-color: var(--e-color-border1);
     .el-select__wrapper {
       min-height: 36px;
       border-radius: 0;
-      box-shadow: 0 0 0 1px var(--o-select-border-color) inset;
+      box-shadow: 0 0 0 1px var(--e-select-border-color) inset;
       min-width: auto;
       &.is-focused {
-        --o-select-border-color: var(--o-color-brand1);
+        --o-select-border-color: var(--e-color-brand1);
       }
       &.is-hovering {
-        box-shadow: 0 0 0 1px var(--o-select-border-color) inset;
+        box-shadow: 0 0 0 1px var(--e-select-border-color) inset;
       }
       &.is-disabled {
-        box-shadow: 0 0 0 1px var(--o-color-black) inset;
-        background: var(--o-color-bg3);
+        box-shadow: 0 0 0 1px var(--e-color-black) inset;
+        background: var(--e-color-bg3);
       }
     }
   }

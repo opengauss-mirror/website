@@ -43,10 +43,7 @@ const changeCurrentMoblie = (val: string) => {
 
 // 新闻列表数据
 const newsCardData = computed(() => {
-  return newsData.value.slice(
-    (currentPage.value - 1) * pagesize.value,
-    currentPage.value * pagesize.value
-  );
+  return newsData.value.slice((currentPage.value - 1) * pagesize.value, currentPage.value * pagesize.value);
 });
 
 const toNewsContent = (path: string) => {
@@ -65,21 +62,11 @@ watch(
 </script>
 
 <template>
-  <BannerLevel2
-    :background-image="banner"
-    :title="i18n.common.COMMON_CONFIG.NEWS"
-    :illustration="illustration"
-  />
+  <BannerLevel2 :background-image="banner" :title="i18n.common.COMMON_CONFIG.NEWS" :illustration="illustration" />
   <AppContent :mobile-top="16">
     <template v-if="newsCardData.length">
       <div class="news-list">
-        <OCard
-          v-for="item in newsCardData"
-          :key="item.path"
-          class="news-list-item"
-          shadow="hover"
-          @click="toNewsContent(item.path)"
-        >
+        <OCard v-for="item in newsCardData" :key="item.path" class="news-list-item" shadow="hover" @click="toNewsContent(item.path)">
           <div class="news-img">
             <img :src="item.banner" :alt="item.banner" />
           </div>
@@ -104,16 +91,9 @@ watch(
             layout="sizes, prev, pager, next, slot, jumper"
             @size-change="changePagesize"
           >
-            <span class="pagination-slot lable-name"
-              >{{ currentPage }}/{{ pageTotal }}</span
-            >
+            <span class="pagination-slot lable-name">{{ currentPage }}/{{ pageTotal }}</span>
           </OPagination>
-          <AppPaginationMo
-            v-else
-            :total-page="pageTotal"
-            :current-page="currentPage"
-            @turn-page="changeCurrentMoblie"
-          />
+          <AppPaginationMo v-else :total-page="pageTotal" :current-page="currentPage" @turn-page="changeCurrentMoblie" />
         </ClientOnly>
       </div>
     </template>
@@ -151,9 +131,9 @@ watch(
 .news-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: var(--o-spacing-h4);
+  grid-gap: var(--e-spacing-h4);
   @media (max-width: 1100px) {
-    margin-top: var(--o-spacing-h5);
+    margin-top: var(--e-spacing-h5);
     grid-template-columns: repeat(2, 1fr);
   }
   @media (max-width: 980px) {
@@ -161,7 +141,7 @@ watch(
     margin-top: 0;
   }
   @media (max-width: 768px) {
-    grid-gap: var(--o-spacing-h5);
+    grid-gap: var(--e-spacing-h5);
   }
   @media (max-width: 500px) {
     grid-template-columns: repeat(1, 1fr);
@@ -196,52 +176,52 @@ watch(
       }
     }
     .news-info {
-      padding: var(--o-spacing-h4);
-      color: var(--o-color-text1);
+      padding: var(--e-spacing-h4);
+      color: var(--e-color-text1);
       @media (max-width: 980px) {
         flex: 1;
       }
       @media (max-width: 500px) {
         width: 100%;
-        padding: var(--o-spacing-h6);
+        padding: var(--e-spacing-h6);
       }
       .news-title {
         font-weight: 500;
         height: 52px;
-        line-height: var(--o-line-height-h7);
-        font-size: var(--o-font-size-h7);
-        margin-bottom: var(--o-spacing-h10);
+        line-height: var(--e-line-height-h7);
+        font-size: var(--e-font-size-h7);
+        margin-bottom: var(--e-spacing-h10);
         @include showline();
         -webkit-line-clamp: 2;
         @media (max-width: 500px) {
           height: auto;
-          line-height: var(--o-line-height-text);
-          font-size: var(--o-font-size-text);
+          line-height: var(--e-line-height-text);
+          font-size: var(--e-font-size-text);
           font-weight: 500;
           -webkit-line-clamp: 1;
-          margin-bottom: var(--o-spacing-h8);
+          margin-bottom: var(--e-spacing-h8);
         }
       }
       .news-time {
-        font-size: var(--o-font-size-text);
-        line-height: var(--o-line-height-text);
+        font-size: var(--e-font-size-text);
+        line-height: var(--e-line-height-text);
         @media (max-width: 500px) {
-          line-height: var(--o-line-height-tip);
-          font-size: var(--o-font-size-tip);
-          color: var(--o-color-text1);
+          line-height: var(--e-line-height-tip);
+          font-size: var(--e-font-size-tip);
+          color: var(--e-color-text1);
         }
       }
       .news-content {
-        margin-top: var(--o-spacing-h5);
+        margin-top: var(--e-spacing-h5);
         @include showline();
         -webkit-line-clamp: 2;
-        color: var(--o-color-text4);
-        font-size: var(--o-font-size-text);
-        line-height: var(--o-line-height-text);
+        color: var(--e-color-text4);
+        font-size: var(--e-font-size-text);
+        line-height: var(--e-line-height-text);
         @media (max-width: 500px) {
-          line-height: var(--o-line-height-tip);
-          font-size: var(--o-font-size-tip);
-          color: var(--o-color-text4);
+          line-height: var(--e-line-height-tip);
+          font-size: var(--e-font-size-tip);
+          color: var(--e-color-text4);
         }
       }
     }
@@ -253,15 +233,15 @@ watch(
   }
 }
 .news-pagination {
-  margin-top: var(--o-spacing-h2);
+  margin-top: var(--e-spacing-h2);
   @media screen and (max-width: 768px) {
-    margin-top: var(--o-spacing-h5);
+    margin-top: var(--e-spacing-h5);
   }
   .pagination-slot {
-    font-size: var(--o-font-size-text);
+    font-size: var(--e-font-size-text);
     font-weight: 300;
-    color: var(--o-color-text1);
-    line-height: var(--o-spacing-h4);
+    color: var(--e-color-text1);
+    line-height: var(--e-spacing-h4);
   }
 }
 </style>

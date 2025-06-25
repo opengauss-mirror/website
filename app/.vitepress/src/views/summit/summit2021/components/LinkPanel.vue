@@ -27,7 +27,7 @@ const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
 <style scoped lang="scss">
 .picture-panel {
   display: grid;
-  padding-top: var(--o-spacing-h4);
+  padding-top: var(--e-spacing-h4);
   grid-template-columns: repeat(v-bind('props.row'), minmax(82px, 1fr));
   column-gap: 0;
   row-gap: 0;
@@ -36,8 +36,8 @@ const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
     margin: 0px -2px -2px 0px;
     justify-content: center;
     align-items: center;
-    border: 1px solid var(--o-color-division1);
-    background-color: var(--o-color-bg2);
+    border: 1px solid var(--e-color-division1);
+    background-color: var(--e-color-bg2);
     max-height: 120px;
     overflow: hidden;
     img {

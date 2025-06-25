@@ -36,7 +36,7 @@ const meetingTime = [
 const dataContent1 = computed(() => {
   let temp;
   try {
-    temp = JSON.parse(data1.content.replace(/\n/g,"\\n"));
+    temp = JSON.parse(data1.content.replace(/\n/g, '\\n'));
   } catch (error) {
     handleError();
   }
@@ -45,7 +45,7 @@ const dataContent1 = computed(() => {
 const dataContent2 = computed(() => {
   let temp;
   try {
-    temp = JSON.parse(data2.content.replace(/\n/g,"\\n"));
+    temp = JSON.parse(data2.content.replace(/\n/g, '\\n'));
   } catch (error) {
     handleError();
   }
@@ -90,32 +90,18 @@ watch(
 </script>
 <template>
   <div class="summit-agenda">
-    <div class="title-box" :class="{'title-box-dark': !isLight}">
+    <div class="title-box" :class="{ 'title-box-dark': !isLight }">
       <p class="title-bg">{{ agendaData.titleBg }}</p>
       <p class="title">{{ agendaData.title }}</p>
     </div>
     <div class="date">
-      <div
-        v-for="(item, index) in meetingTime"
-        :key="item.name"
-        class="date-item"
-        :class="{ active: showIndex === index }"
-        @click="setShowIndex(index)"
-      >
+      <div v-for="(item, index) in meetingTime" :key="item.name" class="date-item" :class="{ active: showIndex === index }" @click="setShowIndex(index)">
         <p class="date-day">{{ item.day }}</p>
         <p class="date-month">{{ item.label }}</p>
       </div>
     </div>
-    <template
-      v-if="
-        getData[meetingTime[0].name] &&
-        getData[meetingTime[0].name].content.content
-      "
-    >
-      <template
-        v-for="item in getData[meetingTime[0].name].content.content"
-        :key="item.lable"
-      >
+    <template v-if="getData[meetingTime[0].name] && getData[meetingTime[0].name].content.content">
+      <template v-for="item in getData[meetingTime[0].name].content.content" :key="item.lable">
         <SummitSchedule v-show="showIndex === 0" :agenda-data="item" />
       </template>
     </template>
@@ -172,7 +158,7 @@ watch(
     }
     &.active {
       color: #fff;
-      background-color: var(--o-color-brand1);
+      background-color: var(--e-color-brand1);
       border: 1px solid #fff;
     }
     .date-day {
@@ -231,10 +217,10 @@ watch(
     display: inline-block;
     margin: 0 0 24px;
     cursor: pointer;
-    border: 1px solid var(--o-color-border2);
-    color: var(--o-color-text1);
+    border: 1px solid var(--e-color-border2);
+    color: var(--e-color-text1);
     text-align: center;
-    background: var(--o-color-bg2);
+    background: var(--e-color-bg2);
     font-size: 14px;
     line-height: 38px;
     padding: 0 16px;
@@ -249,8 +235,8 @@ watch(
 
   .is-active .time-tabs {
     color: #fff;
-    background: var(--o-color-brand1);
-    border-color: var(--o-color-brand1);
+    background: var(--e-color-brand1);
+    border-color: var(--e-color-brand1);
   }
 }
 </style>
