@@ -14,7 +14,7 @@ import IconMenu from '~icons/app/icon-menu.svg';
 const router = useRouter();
 const { lang } = useData();
 
-const roterPath = computed(() => {
+const routerPath = computed(() => {
   return router.route.path;
 });
 
@@ -51,11 +51,7 @@ const changeChildMenuMb = () => {
     if (foundMatch || !parent.children) {
       return;
     }
-    const matchingChild = parent.children.find((child) =>
-      roterPath.value.includes(
-        (child.href as Record<string, string>)[lang.value]
-      )
-    );
+    const matchingChild = parent.children.find((child) => routerPath.value.includes((child.href as Record<string, string>)[lang.value]));
     if (matchingChild) {
       childMenuMb.value = parent.children;
       selectedIndex.value = index;
@@ -123,6 +119,7 @@ watch(
                   :target="item.jumOut ? '_blank' : '_self'"
                 >
                   {{ item.label[lang] }}
+                  <div v-if="item.tag" class="tag">{{ item.tag }}</div>
                 </a>
               </div>
             </div>
@@ -247,9 +244,21 @@ watch(
             font-weight: 300;
             color: var(--o-color-text1);
             cursor: pointer;
+            display: flex;
+            align-items: center;
             &:last-child {
               border-bottom: 1px solid var(--o-color-division1);
             }
+          }
+          .tag {
+            background: #e60012;
+            line-height: 12px;
+            font-size: 8px;
+            text-align: center;
+            border-radius: 100px;
+            color: var(--o-color-white);
+            padding: 0 2px;
+            margin-left: 4px;
           }
         }
         &.active {

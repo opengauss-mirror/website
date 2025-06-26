@@ -2,6 +2,10 @@ import bannerBg from '../img/banner-bg.jpg';
 import bannerSummitMb from '../img/banner-bg-mb.jpg';
 import textImg from '../img/banner-text.png';
 import textImgMb from '../img/banner-text-mb.png';
+import bracket from '../img/bracket.png';
+import keyboard from '../img/keyboard.png';
+
+import { FORUM_LINK } from '@/data/url-config';
 
 export default {
   banner: {
@@ -159,6 +163,26 @@ export default {
         },
       ],
     },
+  },
+  activity: {
+    title: '更多活动',
+    titleBg: 'MORE EVENTS',
+    list: [
+      {
+        title: '云端围观：openGauss Developer Day论文Poster！',
+        desc: '在openGauss社区论坛即可在线浏览论文Poster，与作者实时互动！参与互动即有机会获得电脑支架一个！',
+        img: bracket,
+        href: FORUM_LINK + '/t/topic/77',
+        text: '了解详情',
+      },
+      {
+        title: '投稿征集：你的创意，值得被看见！',
+        desc: '在openGauss社区论坛发布技术文稿！通过审核即可获得机械键盘一个！',
+        img: keyboard,
+        href: FORUM_LINK + '/t/topic/75/2',
+        text: '了解详情',
+      },
+    ],
   },
   review: {
     title: '精彩回顾',

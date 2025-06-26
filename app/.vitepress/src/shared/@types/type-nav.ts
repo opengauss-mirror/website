@@ -9,6 +9,7 @@ export interface NavChildrenItemT {
     en?: string;
   }; // 跳转链接
   jumpOut?: boolean; // 是否新窗口打开，tags包含outlink时，默认为true
+  tag?: string; // 标签
 }
 
 export interface NavItemT {

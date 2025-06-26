@@ -1,5 +1,5 @@
 import { NavItemT } from '@/shared/@types/type-nav';
-import { GITCODE_LINK, DATA_LINK, GIYHUB_LINK, DOCS_LINK } from '@/data/url-config';
+import { GITCODE_LINK, DATA_LINK, GIYHUB_LINK, DOCS_LINK, FORUM_LINK } from '@/data/url-config';
 const navData: Array<NavItemT> = [
   {
     label: { zh: '下载', en: 'Download' },
@@ -70,6 +70,15 @@ const navData: Array<NavItemT> = [
           zh: '/zh/contribution/',
           en: '/en/contribution/',
         },
+      },
+      {
+        label: { zh: '社区论坛' },
+        id: 'discuss',
+        tag: 'NEW',
+        href: {
+          zh: FORUM_LINK,
+        },
+        jumpOut: true,
       },
       {
         label: { zh: '线上交流', en: 'Communication' },
