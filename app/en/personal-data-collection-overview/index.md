@@ -72,4 +72,12 @@ Regarding the purpose of collecting personal data, the types of personal data, t
 - **Collection method**: user input
 - **Personal data fields**: **name**, **organization**, **email address**, **phone number**, openGauss usage (scenario, version, number of nodes, hardware details, issue description)
 
+## 9. Forum Service
+
+- **Purpose**: Verify account identity and permissions, provide more secure services, and verify reported contents.
+- **Personal data type**: data you voluntarily submit
+- **Collection method**: user input, shared by third-party accounts, or collected by the system
+- **Personal data fields**: **user name**, **email address**, **phone number**, **password**, display name, profile picture, **Gitee ID**, **GitCode ID**, **IP address**, **region**, device information, login time, **preference settings**, like information, follow information, favorite content, post count, reply count, follow count, fan count, personal profile, badge acquisition, sidebar settings, follow list, fan list, email summary, time zone, post and reply content, images, audio, video, documents, comments, report type, description, organization, and host name.
+
+
 </div>
