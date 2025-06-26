@@ -3,6 +3,7 @@ import { OIcon, OIconArrowRight, OLink, OOption, ORadio, ORadioGroup, OScroller,
 import { useData, useRouter } from 'vitepress';
 import { computed } from 'vue';
 import { ref } from 'vue';
+import TheTable from '~@/components/TheTable.vue';
 import { useScreen } from '~@/composables/useScreen';
 import downloadData from '~@/data/download';
 
@@ -20,7 +21,7 @@ const _downloadData = downloadData.map((item) => {
   }
   return {
     ...item,
-    isEol: isEol,
+    isEol,
   };
 });
 
@@ -33,27 +34,23 @@ const filterOptions = [
 
 const selectedFilter = ref('all');
 
-const ltsList = [] as (typeof downloadData)[number][];
-const rcList = [] as (typeof downloadData)[number][];
+const dataMap = {
+  all: _downloadData,
+  lts: [],
+  rc: [],
+} as Record<string, (typeof downloadData)[number][]>;
 
+const LTS = '(LTS)';
 _downloadData.forEach((item) => {
-  if (item.name.endsWith('(LTS)') || item.name.includes('LTS')) {
-    ltsList.push(item);
+  if (item.name.endsWith(LTS)) {
+    dataMap.lts.push(item);
   } else {
-    rcList.push(item);
+    dataMap.rc.push(item);
   }
 });
 
 const displayData = computed(() => {
-  if (selectedFilter.value === 'all') {
-    return _downloadData;
-  }
-  if (selectedFilter.value === 'lts') {
-    return ltsList;
-  }
-  if (selectedFilter.value === 'rc') {
-    return rcList;
-  }
+  return dataMap[selectedFilter.value];
 });
 
 const router = useRouter();
@@ -61,6 +58,13 @@ const { lang } = useData();
 const goToDownload = (name: string) => {
   router.go(`/${lang.value}/download/archive/?version=${encodeURIComponent(name)}`);
 };
+
+const tableColumns = [
+  { key: 'name', label: '软件包类型' },
+  { key: 'releaseDate', label: '发行时间' },
+  { key: 'plannedEOL', label: '维护截止时间' },
+  { key: 'action', label: '下载地址' },
+];
 </script>
 
 <template>
@@ -78,40 +82,32 @@ const goToDownload = (name: string) => {
         <OOption v-for="item in filterOptions" :key="item.value" :value="item.value" :label="item.label"></OOption>
       </OSelect>
     </div>
-    <el-table v-if="gtPadV" :data="displayData" style="width: 100%" height="550">
-      <el-table-column prop="name" label="软件包类型">
-        <template #default="{ row }">
-          <span>
-            openGauss {{ row.name }}
-            <OTag v-if="row.plannedEOL === 'End-of-Life' || row.isEol" size="small"> 停止维护 </OTag>
-          </span>
-        </template>
-      </el-table-column>
-      <el-table-column prop="releaseDate" label="发行时间">
-        <template #default="{ row }">
-          <span>
-            {{ timePattern.test(row.releaseDate ?? '') ? row.releaseDate.slice(0, 7).replace('.', '/') : '--' }}
-          </span>
-        </template>
-      </el-table-column>
-      <el-table-column prop="plannedEOL" label="维护截止时间">
-        <template #default="{ row }">
-          <span>
-            {{ timePattern.test(row.plannedEOL ?? '') ? row.plannedEOL.slice(0, 7).replace('.', '/') : '--' }}
-          </span>
-        </template>
-      </el-table-column>
-      <el-table-column label="下载地址">
-        <template #default="{ row }">
-          <OLink tag="button" color="primary" @click="goToDownload(row.name)">
-            前往下载
-            <template #suffix>
-              <OIcon><OIconArrowRight /></OIcon>
-            </template>
-          </OLink>
-        </template>
-      </el-table-column>
-    </el-table>
+    <TheTable v-if="gtPadV" :data="displayData" :columns="tableColumns" style="width: 100%" height="550">
+      <template #td_name="{ row }">
+        <span>
+          openGauss {{ row.name }}
+          <OTag v-if="row.plannedEOL === 'End-of-Life' || row.isEol" size="small"> 停止维护 </OTag>
+        </span>
+      </template>
+      <template #td_releaseDate="{ row }">
+        <span>
+          {{ timePattern.test(row.releaseDate ?? '') ? row.releaseDate.slice(0, 7).replace('.', '/') : '--' }}
+        </span>
+      </template>
+      <template #td_plannedEOL="{ row }">
+        <span>
+          {{ timePattern.test(row.plannedEOL ?? '') ? row.plannedEOL.slice(0, 7).replace('.', '/') : '--' }}
+        </span>
+      </template>
+      <template #td_action="{ row }">
+        <OLink tag="button" color="primary" @click="goToDownload(row.name)">
+          前往下载
+          <template #suffix>
+            <OIcon><OIconArrowRight /></OIcon>
+          </template>
+        </OLink>
+      </template>
+    </TheTable>
     <OScroller v-else style="margin-top: 12px; max-height: 400px; align-self: stretch">
       <div class="mobile-download-item-card" v-for="item in displayData">
         <p class="item-name">
@@ -180,35 +176,6 @@ const goToDownload = (name: string) => {
         margin-bottom: 8px;
       }
     }
-  }
-
-  .el-table {
-    --el-table-header-bg-color: rgb(var(--o-mixedgray-4));
-    --el-table-header-text-color: var(--o-color-info1);
-    --el-table-text-color: var(--o-color-info1);
-    :deep(.el-table__header-wrapper) {
-      border-radius: 4px 4px 0 0;
-    }
-    :deep(th) {
-      font-weight: normal;
-    }
-
-    :deep(.el-table__cell) {
-      .cell {
-        @include text1;
-      }
-      &:nth-of-type(1) {
-        .cell {
-          padding-left: 40px;
-        }
-      }
-      padding: 12px 0;
-    }
-  }
-
-  .o-table {
-    width: 100%;
-    --table-body-min-height: 0;
   }
 
   .o-link {

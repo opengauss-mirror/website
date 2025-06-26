@@ -14,22 +14,28 @@ const supporttoolsInfo = computed(() => {
   return SupportToolsConfig[lang.value as 'zh' | 'en'];
 });
 
+// 通过工具分类ID来查找工具分类名称的map，用来在页面上显示人类可读的工具名称
 const typeIdNameMap = computed(() => {
   return [...supporttoolsInfo.value].reduce((map, item) => {
     return map.set(item.id, item.name);
   }, new Map<string, string>());
 });
 
+// 所有工具的类型(id和名称)
 const toolTypes = computed(() => {
   return [{ label: '全部', value: 'all' }].concat(...supporttoolsInfo.value.map((item) => ({ label: item.name, value: item.id })));
 });
 
+// 当前选择的工具类型
 const selectedType = ref(toolTypes.value[0].value);
 
+// 筛选后的工具列表
 const filteredTools = computed(() => {
   if (selectedType.value === 'all') {
+    // 筛选全部工具类型，直接吧所有工具分类下的children取出来打平成一个array
     return supporttoolsInfo.value.flatMap((item) => item.children);
   }
+  // 只返回选定工具类型下的children
   const selectedCategory = supporttoolsInfo.value.find((item) => item.id === selectedType.value);
   return selectedCategory ? selectedCategory.children : [];
 });
@@ -194,16 +200,16 @@ section {
   margin-top: 32px;
   width: 100%;
 
-  --item-bg-1: url('~@/assets/category/download/supporttools/tool-bg1.png');
-  --item-bg-2: url('~@/assets/category/download/supporttools/tool-bg2.png');
-  --item-bg-3: url('~@/assets/category/download/supporttools/tool-bg3.png');
-  --item-bg-4: url('~@/assets/category/download/supporttools/tool-bg4.png');
+  --item-bg-1: url('~@/assets/category/download/supporttools/tool-bg1_light.png');
+  --item-bg-2: url('~@/assets/category/download/supporttools/tool-bg2_light.png');
+  --item-bg-3: url('~@/assets/category/download/supporttools/tool-bg3_light.png');
+  --item-bg-4: url('~@/assets/category/download/supporttools/tool-bg4_light.png');
 
   &.dark {
-    --item-bg-1: url('~@/assets/category/download/supporttools/tool-bg1-dark.png');
-    --item-bg-2: url('~@/assets/category/download/supporttools/tool-bg2-dark.png');
-    --item-bg-3: url('~@/assets/category/download/supporttools/tool-bg3-dark.png');
-    --item-bg-4: url('~@/assets/category/download/supporttools/tool-bg4-dark.png');
+    --item-bg-1: url('~@/assets/category/download/supporttools/tool-bg1_dark.png');
+    --item-bg-2: url('~@/assets/category/download/supporttools/tool-bg2_dark.png');
+    --item-bg-3: url('~@/assets/category/download/supporttools/tool-bg3_dark.png');
+    --item-bg-4: url('~@/assets/category/download/supporttools/tool-bg4_dark.png');
   }
 
   .item {

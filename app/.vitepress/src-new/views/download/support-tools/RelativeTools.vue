@@ -90,10 +90,10 @@ const isDark = computed(() => commonStore.theme === 'dark');
   }
 
   .title-desc {
-    background-image: url('~@/assets/category/download/relative-tools-bg.png');
+    background-image: url('~@/assets/category/download/relative-tools-bg_light.png');
     background-size: cover;
     &.dark {
-      background-image: url('~@/assets/category/download/relative-tools-bg-dark.png');
+      background-image: url('~@/assets/category/download/relative-tools-bg_dark.png');
     }
     @include respond-to('>pad') {
       flex-grow: 1;

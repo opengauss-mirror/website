@@ -3,6 +3,7 @@ import IconPage from '~icons/app/icon-page.svg';
 import IconChat from '~icons/app/icon-chat.svg';
 import { OIcon } from '@opensig/opendesign';
 import { useRouter } from 'vitepress';
+import { FORUM_LINK } from '@/data/url-config';
 
 const router = useRouter();
 
@@ -19,7 +20,7 @@ const goFaq = () => {
         <p class="desc">在使用时遇到问题？请浏览常见FAQ快速找到常见问题的答案</p>
       </div>
     </div>
-    <a class="item" href="https://discuss.opengauss.org" target="_blank" rel="noopener noreferrer">
+    <a class="item" :href="FORUM_LINK" target="_blank" rel="noopener noreferrer">
       <OIcon><IconChat /></OIcon>
       <div>
         <p class="title">社区论坛</p>
