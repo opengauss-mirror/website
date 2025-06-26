@@ -14,7 +14,7 @@ export default {
     textImg: textImg,
     textImgMb: textImgMb,
     signUpHref: 'https://e-campaign.huawei.com/events3/UniversalForm/register/773773941/register.html?site=cn&formId=11231&way=onsite',
-    signUpTitle: '立即报名',
+    signUpTitle: '立即观看',
   },
   intro: {
     title: '大会简介',
