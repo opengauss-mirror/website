@@ -67,7 +67,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="summit-live">
+  <div id="live" class="summit-live">
     <div class="title-box" :class="{ 'title-box-dark': !isLight }">
       <p class="title-bg">{{ liveData.titleBg }}</p>
       <p class="title">{{ liveData.title }}</p>
