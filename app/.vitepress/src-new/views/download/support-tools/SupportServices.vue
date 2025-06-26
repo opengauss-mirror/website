@@ -9,10 +9,6 @@ const router = useRouter();
 const goFaq = () => {
   router.go('/zh/faq');
 }
-
-const goForum = () => {
-  window.open('https://discuss.opengauss.org', '_blank')
-}
 </script>
 <template>
   <div class="support-services">
@@ -23,13 +19,13 @@ const goForum = () => {
         <p class="desc">在使用时遇到问题？请浏览常见FAQ快速找到常见问题的答案</p>
       </div>
     </div>
-    <div class="item" @click="goForum">
+    <a class="item" href="https://discuss.opengauss.org" target="_blank" rel="noopener noreferrer">
       <OIcon><IconChat /></OIcon>
       <div>
         <p class="title">社区论坛</p>
         <p class="desc">需要更多的支撑？欢迎使用社区论坛进行问题讨论和求助</p>
       </div>
-    </div>
+    </a>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -49,6 +45,7 @@ const goForum = () => {
     display: flex;
     font-size: 40px;
     align-items: start;
+    color: var(--o-color-info1);
     .o-icon {
       margin-right: 12px;
     }
