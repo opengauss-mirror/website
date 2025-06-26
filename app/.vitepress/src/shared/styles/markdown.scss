@@ -323,3 +323,34 @@
     padding-bottom: 0;
   }
 }
+
+.download-life-cycle {
+  max-width: var(--layout-new-content-max-width);
+  padding: 32px var(--layout-content-padding);
+  margin: 0 auto;
+  @media screen and (max-width: 1200px) {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  .life-cycle-content {
+    background-color: var(--o-color-fill2);
+    box-shadow: var(--o-shadow-1);
+    padding: 48px 72px;
+    margin-top: 32px;
+    @media screen and (max-width: 1600px) {
+      padding: 24px 48px;
+      margin-top: 16px;
+    }
+    h2 {
+      @include h2;
+      margin-bottom: 16px;
+    }
+    p {
+      @include text1;
+      color: var(--o-color-info2);
+    }
+    img {
+      margin: 16px 0;
+    }
+  }
+}

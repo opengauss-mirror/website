@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { toRefs, computed } from 'vue';
-import { useI18n } from '@/i18n';
+import { useI18n } from '~@/i18n';
 import { useData } from 'vitepress';
 import { OLink, ODivider } from '@opensig/opendesign';
 
@@ -35,6 +35,8 @@ const explainLink = computed(() => {
       <OLink color="primary" :href="`${GITCODE_LINK}opengauss/community/issues`" target="_blank" rel="noopener noreferrer"
         >{{ i18n.download.FEEDBACK_QUESTION }}
       </OLink>
+      <ODivider direction="v" />
+      <OLink color="primary" :href="`/${lang}/download/life-cycle/`" target="_blank" rel="noopener noreferrer">{{ i18n.download.lifeCycle }} </OLink>
     </div>
     <p v-if="contentData.desc" class="desc">{{ contentData.desc }}</p>
     <ODivider class="divider-line" />
