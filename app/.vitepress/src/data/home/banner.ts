@@ -23,7 +23,10 @@ import bannerOdd20250506Mb from '@/assets/category/home/banner/banner-odd202506-
 import bannerOdd20250506Text from '@/assets/category/home/banner/banner-odd202506-text.png';
 import bannerOdd20250506TextMb from '@/assets/category/home/banner/banner-odd202506-text-mb.png';
 
-import { LEARN_VIDEO_LINK, DOCS_LINK } from '@/data/url-config';
+import bannerForumPc from '@/assets/category/home/banner/banner-forum.png';
+import bannerForumMo from '@/assets/category/home/banner/banner-forum_mo.png';
+
+import { LEARN_VIDEO_LINK, DOCS_LINK, FORUM_LINK } from '@/data/url-config';
 
 // rightInset:banner右侧插图
 export default {
@@ -41,6 +44,20 @@ export default {
       desc: [],
       btn: '立即查看',
       className: 'summit202506',
+      rightInset: '',
+      rightLink: '',
+    },
+    {
+      pcBanner: bannerForumPc,
+      moBanner: bannerForumMo,
+      link: FORUM_LINK,
+      target: '_blank',
+      title: '【论坛上线】',
+      titleMb: ['【论坛上线】'],
+      subtitle: '提问·分享·成长，尽在社区openGauss社区论坛！',
+      desc: [''],
+      btn: '进入论坛',
+      className: '',
       rightInset: '',
       rightLink: '',
     },
