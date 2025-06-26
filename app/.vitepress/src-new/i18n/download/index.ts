@@ -45,6 +45,7 @@ export default {
     lite: '极致轻量化，低资源运行。更多版本间能力区别，请查看',
     distributed: '基于ShardingSphere和k8s的分布式容器化镜像。更多版本间能力区别，请查看',
     'enterprise-noLSE': '基于企业版去除LSE指令性，更多版本间能力区别，请查看',
+    lifeCycle: '生命周期',
   },
   en: {
     PAGE_TITLE: `Software Packages`,
@@ -92,5 +93,6 @@ export default {
     lite: '极致轻量化，低资源运行。更多版本间能力区别，请查看',
     distributed: '基于ShardingSphere和k8s的分布式容器化镜像。更多版本间能力区别，请查看',
     'enterprise-noLSE': '基于企业版去除LSE指令性，更多版本间能力区别，请查看',
+    lifeCycle: 'Life Cycle',
   },
 };

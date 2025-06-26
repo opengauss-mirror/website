@@ -257,7 +257,7 @@ const changeLayer = (item) => {
         <OTab v-if="gtPadV" v-model="serverTab" variant="text" :line="false">
           <OTabPane v-for="item in serverData" :key="item.edition" :label="mappingType[item.edition]" :value="item.edition">
             <div class="download-panel">
-              <p class="edition-text">{{ t('download.' + item.edition) }}</p>
+              <p class="edition-text">{{ t('download.' + item.edition) }}<OLink color="primary">版本能力矩阵图</OLink></p>
 
               <p class="caption">软件包下载</p>
               <DownloadContentItem :data="item" :version-shown="versionShown" @report="collectDownloadData" />
