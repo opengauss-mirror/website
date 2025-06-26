@@ -30,6 +30,7 @@ const downloadData = [
     newLayout: true,
     isLogin: true,
     data: download700RC1,
+    releaseDate: '2025.03.30',
     plannedEOL: '2025.09.30',
     desc: '作为LTS版本发布前的阶段性特性体验版本，仅供联创测试使用，提供6个月社区支持。',
     docs_list: [
@@ -62,6 +63,7 @@ const downloadData = [
     newLayout: true,
     isLogin: true,
     data: download600,
+    releaseDate: '2024.09.30',
     plannedEOL: '2027.09.30',
     docs_list: [
       {
@@ -90,6 +92,7 @@ const downloadData = [
     name: '6.0.0-RC1',
     newLayout: true,
     data: download600RC1,
+    releaseDate: '2024.03.30',
     plannedEOL: '2024.09.30',
     docs_list: [
       {
@@ -132,6 +135,7 @@ const downloadData = [
     name: '5.1.0 (Preview)',
     newLayout: true,
     data: download510,
+    releaseDate: '2023.06.30',
     plannedEOL: '2024.03.31',
     docs_list: [
       {
@@ -146,6 +150,7 @@ const downloadData = [
     name: '5.0.0 (LTS)',
     newLayout: true,
     data: download500,
+    releaseDate: '2023.03.30',
     plannedEOL: '2026.03.31',
     docs_list: [
       {
@@ -173,6 +178,8 @@ const downloadData = [
   {
     name: '3.1.0 (Preview)',
     data: download310,
+    releaseDate: '2022.09.30',
+    plannedEOL: '2023.03.30',
     docs_list: [
       {
         name: '发行说明',
@@ -278,6 +285,8 @@ const downloadData = [
   {
     name: '3.0.0 (LTS)',
     data: download300,
+    releaseDate: '2022.03.30',
+    plannedEOL: '2025.03.30',
     docs_list: [
       {
         name: '发行说明',
@@ -304,6 +313,8 @@ const downloadData = [
   {
     name: '2.1.0 (Preview)',
     data: download210,
+    releaseDate: '2021.06.30',
+    plannedEOL: '2022.03.30',
     docs_list: [
       {
         name: '发行说明',
@@ -346,6 +357,8 @@ const downloadData = [
   {
     name: '2.0.0 (LTS)',
     data: download200,
+    releaseDate: '2021.03.30',
+    plannedEOL: '2024.03.30',
     docs_list: [
       {
         name: '发行说明',

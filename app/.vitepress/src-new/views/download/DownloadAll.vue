@@ -6,6 +6,24 @@ import { ref } from 'vue';
 import { useScreen } from '~@/composables/useScreen';
 import downloadData from '~@/data/download';
 
+const timePattern = /^\d{4}\.\d{2}\.\d{2}$/;
+const now = new Date();
+const currentYear = now.getFullYear();
+const currentMonth = now.getMonth() + 1;
+const _downloadData = downloadData.map((item) => {
+  let isEol = false;
+  if (item.plannedEOL && timePattern.test(item.plannedEOL)) {
+    const [y, m] = item.plannedEOL.split('.').map((item) => Number(item));
+    if (currentYear > y && currentMonth > m) {
+      isEol = true;
+    }
+  }
+  return {
+    ...item,
+    isEol: isEol,
+  };
+});
+
 const { gtPadV } = useScreen();
 const filterOptions = [
   { label: '全部', value: 'all' },
@@ -18,7 +36,7 @@ const selectedFilter = ref('all');
 const ltsList = [] as (typeof downloadData)[number][];
 const rcList = [] as (typeof downloadData)[number][];
 
-downloadData.forEach((item) => {
+_downloadData.forEach((item) => {
   if (item.name.endsWith('(LTS)') || item.name.includes('LTS')) {
     ltsList.push(item);
   } else {
@@ -28,7 +46,7 @@ downloadData.forEach((item) => {
 
 const displayData = computed(() => {
   if (selectedFilter.value === 'all') {
-    return downloadData;
+    return _downloadData;
   }
   if (selectedFilter.value === 'lts') {
     return ltsList;
@@ -37,8 +55,6 @@ const displayData = computed(() => {
     return rcList;
   }
 });
-
-const timePattern = /^\d{4}\.\d{2}\.\d{2}$/;
 
 const router = useRouter();
 const { lang } = useData();
@@ -67,11 +83,17 @@ const goToDownload = (name: string) => {
         <template #default="{ row }">
           <span>
             openGauss {{ row.name }}
-            <OTag v-if="row.plannedEOL === 'End-of-Life'" size="small"> 停止维护 </OTag>
+            <OTag v-if="row.plannedEOL === 'End-of-Life' || row.isEol" size="small"> 停止维护 </OTag>
           </span>
         </template>
       </el-table-column>
-      <el-table-column prop="release" label="发行时间" />
+      <el-table-column prop="releaseDate" label="发行时间">
+        <template #default="{ row }">
+          <span>
+            {{ timePattern.test(row.releaseDate ?? '') ? row.releaseDate.slice(0, 7).replace('.', '/') : '--' }}
+          </span>
+        </template>
+      </el-table-column>
       <el-table-column prop="plannedEOL" label="维护截止时间">
         <template #default="{ row }">
           <span>
@@ -90,7 +112,7 @@ const goToDownload = (name: string) => {
         </template>
       </el-table-column>
     </el-table>
-    <OScroller v-else style="margin-top: 12px; max-height: 400px; align-self: stretch;">
+    <OScroller v-else style="margin-top: 12px; max-height: 400px; align-self: stretch">
       <div class="mobile-download-item-card" v-for="item in displayData">
         <p class="item-name">
           openGauss {{ item.name }}

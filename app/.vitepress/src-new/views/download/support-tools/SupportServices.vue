@@ -3,7 +3,6 @@ import IconPage from '~icons/app/icon-page.svg';
 import IconChat from '~icons/app/icon-chat.svg';
 import { OIcon } from '@opensig/opendesign';
 import { useRouter } from 'vitepress';
-import { FORUM_LINK } from '@/data/url-config';
 
 const router = useRouter();
 
@@ -12,7 +11,7 @@ const goFaq = () => {
 }
 
 const goForum = () => {
-  window.open(FORUM_LINK, '_blank')
+  window.open('https://discuss.opengauss.org', '_blank')
 }
 </script>
 <template>
