@@ -1,3 +1,4 @@
+import { DownloadItem } from '~@/@types/type-download';
 import download700RC1 from './download7.0.0-RC1';
 import download601 from './download6.0.1';
 import download600 from './download6.0.0';
@@ -24,7 +25,7 @@ import download100 from './download1.0.0';
 // 如果之后要修改历史版本页面的默认选中版本，可以修改(initPrevious:true)所在版本的位置
 // newLayout:true 代表使用新版下载页面结构布局，无此参数代表使用旧版
 // isLogin:true 代表该版本需要登录才能下载，无此参数代表不需要登录
-const downloadData = [
+const downloadData: DownloadItem[] = [
   {
     name: '7.0.0-RC1',
     newLayout: true,

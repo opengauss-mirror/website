@@ -1,37 +1,41 @@
 <script lang="ts" setup>
-import { toRefs, computed } from 'vue';
+import { toRefs, computed, PropType } from 'vue';
 import { useI18n } from '~@/i18n';
 import { useData } from 'vitepress';
-import { OLink, ODivider } from '@opensig/opendesign';
-
+import { OLink, ODivider, OTag } from '@opensig/opendesign';
+import { DownloadItem } from '~@/@types/type-download';
 import DownloadSection from './DownloadSection.vue';
+import { useLocale } from '~@/composables/useLocale';
 import { GITCODE_LINK, DOCS_LINK } from '~@/data/url-config';
 const props = defineProps({
   contentData: {
     required: true,
-    type: Array,
+    type: Object as PropType<DownloadItem>,
     default: () => {
-      return [];
+      return {};
     },
   },
 });
 const i18n = useI18n();
 const { lang } = useData();
+const { isZh } = useLocale();
 const { contentData } = toRefs(props);
 const explainLink = computed(() => {
-  return contentData.value.docs_list[0][lang.value === 'zh' ? 'path' : 'pathEn'];
+  return contentData.value?.docs_list[0][lang.value === 'zh' ? 'path' : 'pathEn'] || '';
 });
 </script>
 
 <template>
   <div class="download-content">
-    <h2 class="title">{{ 'openGauss ' + contentData.name }}</h2>
+    <h2 class="title">{{ 'openGauss ' + contentData.name }} <OTag v-if="contentData.plannedEOL === 'End-of-Life' || contentData.isEol"> 停止维护 </OTag></h2>
     <h4 class="subtitle">维护截止时间：{{ contentData.plannedEOL }}</h4>
     <div class="other-link">
-      <OLink color="primary" :href="explainLink.startsWith('/docs/') ? DOCS_LINK + lang + explainLink : explainLink" target="_blank" rel="noopener noreferrer"
-        >{{ lang === 'zh' ? contentData.docs_list[0].name : contentData.docs_list[0].nameEn }}
-      </OLink>
-      <ODivider direction="v" />
+      <template v-for="item in contentData.docs_list" :key="item.name">
+        <OLink color="primary" :href="explainLink.startsWith('/docs/') ? DOCS_LINK + lang + explainLink : explainLink" target="_blank" rel="noopener noreferrer"
+          >{{ isZh ? item.name : item.nameEn }}
+        </OLink>
+        <ODivider direction="v" />
+      </template>
       <OLink color="primary" :href="`${GITCODE_LINK}opengauss/community/issues`" target="_blank" rel="noopener noreferrer"
         >{{ i18n.download.FEEDBACK_QUESTION }}
       </OLink>
@@ -55,6 +59,16 @@ const explainLink = computed(() => {
   .title {
     @include h1;
     color: var(--o-color-info1);
+    display: flex;
+    align-items: center;
+    gap: 32px;
+
+    .o-tag {
+      --tag-height: 32px;
+      :deep(.o-tag-label) {
+        @include text1;
+      }
+    }
   }
   .subtitle {
     margin-top: 8px;

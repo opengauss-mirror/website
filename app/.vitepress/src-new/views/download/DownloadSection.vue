@@ -1,29 +1,11 @@
 <script lang="ts" setup>
-import { ref, computed, watch, toRefs, onMounted, inject, nextTick } from 'vue';
-import {
-  OLink,
-  ODivider,
-  OTag,
-  OButton,
-  ORadioGroup,
-  ORadio,
-  OToggle,
-  OTable,
-  OPopover,
-  OIcon,
-  OTab,
-  OTabPane,
-  OSelect,
-  OOption,
-  OLayer,
-} from '@opensig/opendesign';
+import { ref, computed, watch, toRefs, onMounted, inject } from 'vue';
+import { OLink, ORadioGroup, ORadio, OToggle, OIcon, OTab, OTabPane, OSelect, OOption, OLayer } from '@opensig/opendesign';
 import { useData } from 'vitepress';
-import { useCommon, useCookieStore } from '@/stores/common';
+import { useCookieStore } from '@/stores/common';
 import { useI18n } from '@/i18n';
-import { useClipboard } from '@/components/hooks/useClipboard';
 import { useScreen } from '~@/composables/useScreen';
 
-import useWindowResize from '@/components/hooks/useWindowResize';
 import { DownloadItemT } from '@/shared/@types/type-download';
 
 import { getCustomCookie } from '@/shared/utils';
@@ -55,14 +37,12 @@ const props = defineProps({
 const { tableData, versionShown } = toRefs(props);
 
 const { lang } = useData();
-const commonStore = useCommon();
-const { t, isZh, $t } = useLocale();
+const { t } = useLocale();
 const i18n = useI18n();
 const cookieStore = useCookieStore();
 const { gtPadV } = useScreen();
 
 const versionData = inject('VERSION_DATA');
-const downloadVersionAuth = inject('PERMISSION_LIST');
 
 // tag筛选
 const architectureList = computed(() => {
@@ -181,7 +161,7 @@ const collectDownloadData = (name: string) => {
 };
 
 // 类型转换
-const mappingType = {
+const mappingType: Record<string, string> = {
   enterprise: '企业版',
   simple: '极简版',
   lite: '轻量版',
@@ -257,7 +237,7 @@ const changeLayer = (item) => {
         <OTab v-if="gtPadV" v-model="serverTab" variant="text" :line="false">
           <OTabPane v-for="item in serverData" :key="item.edition" :label="mappingType[item.edition]" :value="item.edition">
             <div class="download-panel">
-              <p class="edition-text">{{ t('download.' + item.edition) }}<OLink color="primary">版本能力矩阵图</OLink></p>
+              <p class="edition-text">{{ t('download.' + item.edition) }}<a href="">版本能力矩阵图</a></p>
 
               <p class="caption">软件包下载</p>
               <DownloadContentItem :data="item" :version-shown="versionShown" @report="collectDownloadData" />
@@ -377,46 +357,10 @@ const changeLayer = (item) => {
         justify-content: center;
         line-height: var(--height);
         padding: 0;
-        --width: 24px;
-        .nav-label-prefix,
-        .nav-label-suffix {
-          position: absolute;
-          bottom: 0;
-          width: var(--width);
-          height: var(--width);
-          background: var(--o-color-control1-light);
-          opacity: 0;
-          visibility: hidden;
-          transition: all 0.3s;
-          &:after {
-            content: '';
-            display: block;
-            width: 100%;
-            height: 100%;
-            background-color: var(--o-color-fill1);
-          }
-        }
-        .nav-label-prefix {
-          left: calc(var(--width) * -1);
-          &:after {
-            border-bottom-right-radius: 24px;
-          }
-        }
-        .nav-label-suffix {
-          right: calc(var(--width) * -1);
-          &:after {
-            border-bottom-left-radius: 24px;
-          }
-        }
         &.o-tab-nav-active {
           color: var(--o-color-primary1);
           position: relative;
           z-index: 3;
-          .nav-label-prefix,
-          .nav-label-suffix {
-            visibility: visible;
-            opacity: 1;
-          }
         }
       }
     }
@@ -442,6 +386,8 @@ const changeLayer = (item) => {
         color: var(--o-color-info2);
         font-weight: 500;
         margin-bottom: 16px;
+        display: flex;
+        align-items: center;
       }
       .command-box {
         margin-bottom: 16px;

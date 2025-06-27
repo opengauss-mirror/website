@@ -5,7 +5,6 @@ import { ORadioGroup, ORadio, OBreadcrumb, OBreadcrumbItem, OSelect, OOption, OI
 import DownloadConfig from '~@/data/download';
 import ContentWrapper from '~@/components/ContentWrapper.vue';
 import DownloadContent from './DownloadContent.vue';
-import DownloadTable from './DownloadTable.vue';
 import ArchiveContent from './ArchiveContent.vue';
 import { useScreen } from '~@/composables/useScreen';
 import { useCommon } from '@/stores/common';
@@ -13,27 +12,44 @@ import { getUrlParams } from '@/shared/utils';
 
 import IconVersion from '~icons/app-new/icon-version.svg';
 
-const { isPhone, lePad, lePadV, size } = useScreen();
+const { size } = useScreen();
 const commonStore = useCommon();
 const { lang } = useData();
 const router = useRouter();
-const isDark = computed(() => (commonStore.theme === 'dark' ? true : false));
 
 const activeTab = ref('');
 
+const timePattern = /^\d{4}\.\d{2}\.\d{2}$/;
+const now = new Date();
+const currentYear = now.getFullYear();
+const currentMonth = now.getMonth() + 1;
+const _downloadData = DownloadConfig.map((item) => {
+  let isEol = false;
+  if (item.plannedEOL && timePattern.test(item.plannedEOL)) {
+    const [y, m] = item.plannedEOL.split('.').map((item: string) => Number(item));
+    if (currentYear > y && currentMonth > m) {
+      isEol = true;
+    }
+  }
+  return {
+    ...item,
+    isEol,
+  };
+});
+
 const getData = computed(() => {
-  return activeTab.value === 'all' ? DownloadConfig : DownloadConfig.find((el) => el.name.includes(activeTab.value));
+  return activeTab.value === 'all' ? _downloadData : _downloadData.find((el) => el.name.includes(activeTab.value));
 });
 
 // 下载权限列表
 const getPermissionList = computed(() => {
-  return DownloadConfig.filter((el) => el.isLogin).map((el) => el.name);
+  return _downloadData.filter((el) => el.isLogin).map((el) => el.name);
 });
 
 onMounted(() => {
   const { href } = window.location;
   const paramsArr = getUrlParams(href);
-  activeTab.value = decodeURIComponent(paramsArr?.version) || DownloadConfig[0].name;
+  activeTab.value = decodeURIComponent(paramsArr?.version) || _downloadData[0].name;
 });
 
 provide('VERSION_DATA', getData);

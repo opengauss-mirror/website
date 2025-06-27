@@ -1,12 +1,15 @@
 <script lang="ts" setup>
-import { toRefs, ref, computed, watch } from 'vue';
+import { toRefs, ref, computed, PropType } from 'vue';
 import { useUserInfoStore } from '@/stores/user';
-import { OLink, isString, ODivider, OButton, OPopover, OIcon, useMessage } from '@opensig/opendesign';
+import { OLink, ODivider, OButton, OPopover, OIcon, useMessage } from '@opensig/opendesign';
 import { useI18n } from '@/i18n';
-import { doLogin } from '@/shared/login';
+import { useData } from 'vitepress';
+import { oaReport } from '@/shared/analytics';
 import { useScreen } from '~@/composables/useScreen';
 import { useLocale } from '~@/composables/useLocale';
 import { useClipboard } from '@/components/hooks/useClipboard';
+import { DownloadItem } from '~@/@types/type-download';
+import { GITCODE_LINK, DOCS_LINK } from '~@/data/url-config';
 
 import IconDownload from '~icons/app/icon-download.svg';
 import IconCopy from '~icons/app/icon-copy.svg';
@@ -15,14 +18,15 @@ import IconTips from '~icons/app/icon-tips.svg';
 const props = defineProps({
   contentData: {
     required: true,
-    type: Array,
+    type: Object as PropType<DownloadItem>,
     default: () => {
-      return [];
+      return {};
     },
   },
 });
 
 const { contentData } = toRefs(props);
+const { lang } = useData();
 
 const i18n = useI18n();
 const message = useMessage();
@@ -62,32 +66,6 @@ const handleUrlCopy = (value: string | undefined, e: MouseEvent) => {
   }
 };
 
-// 下载权限
-const changeDownloadAuth = () => {
-  downloadDlg.value = true;
-};
-
-const downloadDlg = ref(false);
-const dlgAction: Ref<DialogActionT[]> = ref([
-  {
-    id: 'cancel',
-    label: i18n.value.download.DONNLOAD_CANCEL,
-    variant: 'outline',
-    onClick: () => {
-      downloadDlg.value = false;
-    },
-  },
-  {
-    id: 'ok',
-    label: i18n.value.download.DONNLOAD_COMFIRM,
-    color: 'primary',
-    variant: 'solid',
-    onClick: () => {
-      doLogin();
-    },
-  },
-]);
-
 // 根据语言切换数据
 const changeLangData = computed(() => (item: any) => (isZh.value ? item.zh : item.en));
 
@@ -118,20 +96,16 @@ const userInfoStore = useUserInfoStore();
 
 // 老版本下载判断 不用登录
 const collectDownloadData = (name: string, architectureAndOs: string) => {
-  if (cookieStore.isAllAgreed || userInfoStore.username) {
-    const { href } = window.location;
-    const downloadTime = new Date();
-    const _U_T_ = getCustomCookie('_U_T_') || 'notLog';
-    const startIndex = architectureAndOs.indexOf('_');
-    oaReport('download', {
-      origin: href,
-      softwareName: name,
-      softwareArchitecture: startIndex === -1 ? '' : architectureAndOs.slice(startIndex + 1),
-      softwareOs: architectureAndOs.slice(0, startIndex),
-      downloadTime,
-      _U_T_,
-    });
-  }
+  const { href } = window.location;
+  const downloadTime = new Date();
+  const startIndex = architectureAndOs.indexOf('_');
+  oaReport('download', {
+    origin: href,
+    softwareName: name,
+    softwareArchitecture: startIndex === -1 ? '' : architectureAndOs.slice(startIndex + 1),
+    softwareOs: architectureAndOs.slice(0, startIndex),
+    downloadTime,
+  });
 };
 </script>
 

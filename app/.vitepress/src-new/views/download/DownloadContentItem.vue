@@ -1,14 +1,14 @@
 <script lang="ts" setup>
 import { ref, onMounted, inject } from 'vue';
-import { useMessage, OButton, OLink, ODialog, OTag } from '@opensig/opendesign';
+import { type DialogActionT, useMessage, OButton, OLink, ODialog, OTag, OIcon } from '@opensig/opendesign';
 import { useClipboard } from '@/components/hooks/useClipboard';
-import { useI18n } from '@/i18n';
+import { useI18n } from '~@/i18n';
 import { doLogin } from '@/shared/login';
 import { useUserInfoStore } from '@/stores/user';
 import { useScreen } from '~@/composables/useScreen';
 
 import IconDownload from '~icons/app/icon-download.svg';
-import IconCopy from '~icons/app/icon-copy.svg';
+import IconCopy from '~icons/app/icon-copy2.svg';
 
 const props = defineProps({
   data: {
@@ -115,15 +115,15 @@ const collectDownloadData = (name: string) => {
     <div class="software-info">
       <div class="software-code">
         <span class="text">完整性校验：</span>
-        <OLink v-if="data.sha_code !== ''" class="sha-link" variant="text" @click="handleUrlCopy(data.sha_code, $event)">
+        <span v-if="data.sha_code !== ''" class="sha-link" @click="handleUrlCopy(data.sha_code, $event)">
           {{ shaText
-          }}<template #suffix>
+          }}<OIcon>
             <IconCopy />
-          </template>
-        </OLink>
+          </OIcon>
+        </span>
       </div>
       <!-- 软件包下载 -->
-      <div v-if="data.downUrl !== ''" class="down-action">
+      <div v-if="data.down_url !== ''" class="down-action">
         <span v-if="lePadV" class="text">软件包下载：</span>
         <template v-if="downloadVersionAuth.includes(versionShown) && !userInfoStore.username">
           <OButton :variant="lePadV ? 'text' : 'outline'" size="small" color="primary" @click="changeDownloadAuth">
@@ -134,7 +134,7 @@ const collectDownloadData = (name: string) => {
           </OButton>
         </template>
         <template v-else>
-          <OButton size="small" :href="data.downUrl" @click="collectDownloadData(data.name)" :variant="lePadV ? 'text' : 'outline'" color="primary">
+          <OButton size="small" :href="data.down_url" @click="collectDownloadData(data.name)" :variant="lePadV ? 'text' : 'outline'" color="primary">
             {{ i18n.download.BTN_TEXT }}
             <template #suffixIcon>
               <IconDownload />
@@ -144,7 +144,7 @@ const collectDownloadData = (name: string) => {
       </div>
     </div>
     <!-- 登录弹窗 -->
-    <ODialog v-if="downloadDlg" v-model="downloadDlg" :unmount-on-hide="false" @change="onDlgChane" size="small" :actions="dlgAction">
+    <ODialog v-if="downloadDlg" v-model:visible="downloadDlg" :unmount-on-hide="false" @change="onDlgChane" size="small" :actions="dlgAction">
       <template #header>{{ i18n.download.DONNLOAD_TIPS }}</template>
       <div>{{ i18n.download.DONNLOAD_TEXT }}</div>
     </ODialog>
@@ -206,12 +206,24 @@ const collectDownloadData = (name: string) => {
     }
     .sha-link {
       margin-left: 8px;
+      color: var(--o-color-info2);
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      @include tip1;
+      .o-icon {
+        margin-left: 4px;
+      }
+
+      &:hover {
+        color: var(--o-color-primary1);
+      }
     }
   }
   .sha-link {
     svg {
-      width: 16px;
-      height: 16px;
+      width: 20px;
+      height: 20px;
     }
   }
 }
