@@ -97,6 +97,7 @@ const onChange = (option: string) => {
 
 <style lang="scss" scoped>
 .archive-content {
+  border-radius: 4px;
   background: var(--o-color-fill2);
   padding: 32px;
   @include respond-to('<=pad') {

@@ -86,6 +86,8 @@ const isDark = computed(() => commonStore.theme === 'dark');
   display: flex;
   width: 100%;
   margin-top: 40px;
+  border-radius: 4px;
+  overflow: hidden;
 
   @include respond-to('<=pad') {
     display: block;
