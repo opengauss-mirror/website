@@ -49,6 +49,12 @@ openGauss社区有时会在计算机或移动设备上存储Cookie，我们启�
       <td>防止恶意攻击</td>
     </tr>
     <tr>
+      <td>_forum_session, _t</td>
+      <td>论坛网站</td>
+      <td>7天</td>
+      <td>维持用户会话</td>
+    </tr>
+    <tr>
       <td>express_sid</td>
       <td>etherpad网站</td>
       <td>1天</td>
