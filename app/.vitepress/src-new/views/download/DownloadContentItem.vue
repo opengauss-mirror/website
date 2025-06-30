@@ -126,7 +126,7 @@ const collectDownloadData = (name: string) => {
       <div v-if="data.down_url !== ''" class="down-action">
         <span v-if="lePadV" class="text">软件包下载：</span>
         <template v-if="downloadVersionAuth.includes(versionShown) && !userInfoStore.username">
-          <OButton :variant="lePadV ? 'text' : 'outline'" size="small" color="primary" @click="changeDownloadAuth">
+          <OButton :variant="lePadV ? 'text' : type === 'symbol' ? 'outline' : 'solid'" size="small" color="primary" @click="changeDownloadAuth">
             {{ i18n.download.BTN_TEXT }}
             <template #suffixIcon>
               <IconDownload />
@@ -160,6 +160,7 @@ const collectDownloadData = (name: string) => {
   background: var(--o-color-fill1);
   padding: 16px;
   @include tip1;
+  color: var(--o-color-info1);
   @include respond-to('<=pad_v') {
     --card-radius: 4px;
     padding: 12px 16px;

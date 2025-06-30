@@ -9,7 +9,7 @@ import { useUserInfoStore } from '@/stores/user';
 import { useLocale } from '~@/composables/useLocale';
 
 import IconDownload from '~icons/app/icon-download.svg';
-import IconCopy from '~icons/app/icon-copy.svg';
+import IconCopy from '~icons/app/icon-copy2.svg';
 import IconTips from '~icons/app/icon-tips.svg';
 
 const props = defineProps({
@@ -167,7 +167,7 @@ const hoverTips = computed(() => (type: string | undefined) => {
               </template>
             </OButton>
           </template>
-          <template>
+          <template v-else>
             <OButton size="small" :href="row.down_url" @click="collectDownloadData(row.name)" variant="outline" color="primary">
               {{ i18n.download.BTN_TEXT }}
               <template #suffixIcon>
@@ -238,11 +238,8 @@ const hoverTips = computed(() => (type: string | undefined) => {
 </template>
 
 <style lang="scss" scoped>
-.o-table {
-  --table-head-bg: var(--o-color-fill1);
-}
 .sha-link {
-  color: var(--o-color-info2);
+  color: var(--o-color-info1);
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -254,8 +251,8 @@ const hoverTips = computed(() => (type: string | undefined) => {
     margin-left: 4px;
   }
   svg {
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
   }
 }
 .lse-content {

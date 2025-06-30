@@ -14,7 +14,7 @@ import ImgLifeCycle from '~@/assets/category/download/life-cycle.jpg';
 <ClientOnly>
  <OBreadcrumb class="app-breadcrumb">
     <OBreadcrumbItem>
-      <a :href="`/zh/download/`"> 下载 </a>
+      <a :href="`/en/download/`"> 下载 </a>
     </OBreadcrumbItem> 
     <OBreadcrumbItem>生命周期 </OBreadcrumbItem>
   </OBreadcrumb>

@@ -1,4 +1,5 @@
 import { DownloadItem } from '~@/@types/type-download';
+import {GITCODE_LINK} from '~@/data/url-config';
 import download700RC1 from './download7.0.0-RC1';
 import download601 from './download6.0.1';
 import download600 from './download6.0.0';
@@ -34,6 +35,7 @@ const downloadData: DownloadItem[] = [
     releaseDate: '2025.03.30',
     plannedEOL: '2025.09.30',
     desc: '作为LTS版本发布前的阶段性特性体验版本，仅供联创测试使用，提供6个月社区支持。',
+    versionCapabilityPath: `${GITCODE_LINK}opengauss/docs/blob/7.0.0-RC1/content/zh/docs/VersionCapability/index.md`,
     docs_list: [
       {
         name: '发行说明',
@@ -50,6 +52,7 @@ const downloadData: DownloadItem[] = [
     data: download601,
     plannedEOL: '2027.09.30',
     desc: 'openGauss 6.0.0 LTS及后续LTS版本发布间隔周期为2年，社区提供3年支持，社区OGSP伙伴提供3年以后维护支持服务。',
+    versionCapabilityPath: `${GITCODE_LINK}opengauss/docs/blob/6.0.0/content/zh/docs/VersionCapability/index.md`,
     docs_list: [
       {
         name: '发行说明',
@@ -66,6 +69,8 @@ const downloadData: DownloadItem[] = [
     data: download600,
     releaseDate: '2024.09.30',
     plannedEOL: '2027.09.30',
+    desc: 'openGauss 6.0.0 LTS及后续LTS版本发布间隔周期为2年，社区提供3年支持，社区OGSP伙伴提供3年以后维护支持服务。',
+    versionCapabilityPath: `${GITCODE_LINK}opengauss/docs/blob/6.0.0/content/zh/docs/VersionCapability/index.md`,
     docs_list: [
       {
         name: '发行说明',
@@ -80,6 +85,7 @@ const downloadData: DownloadItem[] = [
     newLayout: true,
     data: download503,
     plannedEOL: '2026.03.31',
+    versionCapabilityPath: `${GITCODE_LINK}opengauss/docs/blob/5.0.0/content/zh/docs/VersionCapability/index.md`,
     docs_list: [
       {
         name: '发行说明',
@@ -95,6 +101,7 @@ const downloadData: DownloadItem[] = [
     data: download600RC1,
     releaseDate: '2024.03.30',
     plannedEOL: '2024.09.30',
+    versionCapabilityPath: `${GITCODE_LINK}opengauss/docs/blob/6.0.0/content/zh/docs/VersionCapability/index.md`,
     docs_list: [
       {
         name: '发行说明',
@@ -109,6 +116,7 @@ const downloadData: DownloadItem[] = [
     newLayout: true,
     data: download502,
     plannedEOL: '2026.03.31',
+    versionCapabilityPath: `${GITCODE_LINK}opengauss/docs/blob/5.0.0/content/zh/docs/VersionCapability/index.md`,
     docs_list: [
       {
         name: '发行说明',
@@ -123,6 +131,7 @@ const downloadData: DownloadItem[] = [
     newLayout: true,
     data: download501,
     plannedEOL: '2026.03.31',
+    versionCapabilityPath: `${GITCODE_LINK}opengauss/docs/blob/5.0.0/content/zh/docs/VersionCapability/index.md`,
     docs_list: [
       {
         name: '发行说明',
@@ -138,6 +147,7 @@ const downloadData: DownloadItem[] = [
     data: download510,
     releaseDate: '2023.06.30',
     plannedEOL: '2024.03.31',
+    versionCapabilityPath: `${GITCODE_LINK}opengauss/docs/blob/5.0.0/content/zh/docs/VersionCapability/index.md`,
     docs_list: [
       {
         name: '发行说明',
@@ -153,6 +163,7 @@ const downloadData: DownloadItem[] = [
     data: download500,
     releaseDate: '2023.03.30',
     plannedEOL: '2026.03.31',
+    versionCapabilityPath: `${GITCODE_LINK}opengauss/docs/blob/5.0.0/content/zh/docs/VersionCapability/index.md`,
     docs_list: [
       {
         name: '发行说明',

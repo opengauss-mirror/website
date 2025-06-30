@@ -62,6 +62,7 @@ const explainLink = computed(() => {
     display: flex;
     align-items: center;
     gap: 32px;
+    font-weight: 500;
 
     .o-tag {
       --tag-height: 32px;

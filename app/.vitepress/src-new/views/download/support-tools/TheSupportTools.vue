@@ -188,10 +188,6 @@ section {
   flex-wrap: nowrap;
 }
 
-.o-toggle {
-  --toggle-bg-color: rgb(var(--o-mixedgray-4));
-}
-
 .container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -217,6 +213,7 @@ section {
     background-color: var(--o-color-fill2);
     height: 216px;
     position: relative;
+    border-radius: 4px;
 
     &:nth-child(4n + 1) {
       background-image: var(--item-bg-1);
@@ -232,6 +229,7 @@ section {
     }
 
     h3 {
+      font-weight: 500;
       @include h3;
     }
 

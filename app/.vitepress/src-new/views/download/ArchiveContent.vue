@@ -10,6 +10,7 @@ import { useLocale } from '~@/composables/useLocale';
 import { useClipboard } from '@/components/hooks/useClipboard';
 import { DownloadItem } from '~@/@types/type-download';
 import { GITCODE_LINK, DOCS_LINK } from '~@/data/url-config';
+import { downloadName } from '~@/data/download/format';
 
 import IconDownload from '~icons/app/icon-download.svg';
 import IconCopy from '~icons/app/icon-copy.svg';
@@ -32,6 +33,8 @@ const i18n = useI18n();
 const message = useMessage();
 const { gtPadV } = useScreen();
 const { t, isZh, $t } = useLocale();
+
+const isCn = computed(() => lang.value === 'zh');
 
 // 复制sha值
 const SHATEXT = 'SHA256';
@@ -107,6 +110,8 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
     downloadTime,
   });
 };
+
+console.log('contentData.data :>> ', contentData.value.data);
 </script>
 
 <template>
@@ -128,7 +133,8 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
     <ODivider class="divider-line" />
   </div>
   <div v-for="item in contentData.data" :key="item.name" class="download-panel">
-    <h2 class="title">{{ item.name }}</h2>
+    <h2 class="title">{{ isCn ? downloadName[item.name.trim()] : item.name }}</h2>
+
 
     <!-- pc  -->
     <OTable v-if="gtPadV" :data="changeLangData(item)" class="download-pc" style="width: 100%">

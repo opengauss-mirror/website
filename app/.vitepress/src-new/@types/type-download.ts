@@ -17,8 +17,9 @@ export interface DownloadItem {
   isLogin?: boolean;
   data: any;
   releaseDate?: string;
-  plannedEOL?: string | 'End-of-Life';
+  plannedEOL?: string;
   desc?: string;
   docs_list: DocItem[];
   initPrevious?: boolean;
+  versionCapabilityPath?: string;
 }

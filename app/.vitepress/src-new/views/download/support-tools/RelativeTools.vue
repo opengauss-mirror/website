@@ -145,6 +145,7 @@ const isDark = computed(() => commonStore.theme === 'dark');
       }
 
       h3 {
+        font-weight: 500;
         @include h3;
       }
 

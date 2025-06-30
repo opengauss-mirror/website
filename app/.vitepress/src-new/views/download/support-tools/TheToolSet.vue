@@ -347,11 +347,6 @@ const collectDownloadData = (name: string) => {
 
 .o-table {
   --table-cell-padding: 16px 0 16px 20px;
-  --table-head-bg: rgb(var(--o-mixedgray-4));
-}
-
-.o-toggle {
-  --toggle-bg-color: rgb(var(--o-mixedgray-4));
 }
 
 .card {

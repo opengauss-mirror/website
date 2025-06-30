@@ -28,11 +28,7 @@ const props = withDefaults(defineProps<SectionPropsT>(), {
     <div class="section-wrapper">
       <slot name="main">
         <!-- header -->
-        <div
-          v-if="$slots.header || props.title || props.subtitle"
-          class="section-header"
-          :class="{ 'is-left': !props.headerJustifyCenter }"
-        >
+        <div v-if="$slots.header || props.title || props.subtitle" class="section-header" :class="{ 'is-left': !props.headerJustifyCenter }">
           <slot name="header">
             <template v-if="isArray(props.title)">
               <h2 v-for="item in props.title" :key="item" class="section-title">
@@ -44,10 +40,7 @@ const props = withDefaults(defineProps<SectionPropsT>(), {
                 {{ props.title }}
               </slot>
             </h2>
-            <p
-              v-if="$slots.subtitle || props.subtitle"
-              class="section-subtitle"
-            >
+            <p v-if="$slots.subtitle || props.subtitle" class="section-subtitle">
               <slot name="subtitle">
                 {{ props.subtitle }}
               </slot>
@@ -106,7 +99,7 @@ const props = withDefaults(defineProps<SectionPropsT>(), {
   }
 
   .section-title {
-    max-width: var(--layout-content-max-width);
+    max-width: var(--layout-new-content-max-width);
     padding: 0 var(--layout-content-padding);
     margin: 0 auto;
 
@@ -119,7 +112,7 @@ const props = withDefaults(defineProps<SectionPropsT>(), {
   }
 
   .section-subtitle {
-    max-width: var(--layout-content-max-width);
+    max-width: var(--layout-new-content-max-width);
     padding: 0 var(--layout-content-padding);
     margin: 0 auto;
 
@@ -140,7 +133,7 @@ const props = withDefaults(defineProps<SectionPropsT>(), {
   }
 
   .section-body {
-    max-width: var(--layout-content-max-width);
+    max-width: var(--layout-new-content-max-width);
     padding: 0 var(--layout-content-padding);
     margin: 0 auto;
 
