@@ -45,12 +45,21 @@ export default {
       content: [
         {
           time: '9:30-9:45',
-          desc: '致辞',
-          person: [],
+          desc: '开场致辞',
+          person: [
+            {
+              name: '辛晓华',
+              post: '国家工业信息安全发展研究中心软件所副所长',
+            },
+            {
+              name: '付海巍',
+              post: '开放原子开源基金会业务发展部部长',
+            },
+          ],
         },
         {
           time: '9:45-10:10',
-          desc: '主题演讲：开源五载聚产业，技术引领创未来\n发布仪式：oGRAC 多写方案联合发布',
+          desc: '主题演讲：开源五载聚产业，技术引领创未来\n发布仪式：openGauss oGRAC 多写方案联合发布',
           person: [
             {
               name: '熊伟',
@@ -102,7 +111,7 @@ export default {
           person: [
             {
               name: '白玥',
-              post: '海量数据 解决方案总监',
+              post: '海量数据解决方案总监',
             },
           ],
         },
@@ -122,7 +131,7 @@ export default {
           person: [
             {
               name: '杜冬军',
-              post: '中科通达 AI技术架构师',
+              post: '中科通达AI技术架构师',
             },
           ],
         },
