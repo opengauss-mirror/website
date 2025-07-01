@@ -1,5 +1,16 @@
 export default [
   {
+    name: '汇智TeligenOS 服务器操作系统',
+    version: '3',
+    type: '操作系统',
+    company: '广州汇智通信技术有限公司',
+    database: 'openGauss 6.0.1',
+    os: '',
+    server: 'Hygon C86 7285(H620-G30)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%B9%BF%E5%B7%9E%E6%B1%87%E6%99%BA/%E6%B1%87%E6%99%BATeligenOS%20%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%20V3/Certificate.pdf',
+  },
+  {
     name: '高精度智能定位管理系统',
     version: '',
     type: 'GIS',
