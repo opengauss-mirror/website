@@ -150,6 +150,7 @@ function searchDataAll() {
       }
     })
     .catch(() => {
+      isNotFound.value = true;
       handleError();
     });
 }
@@ -186,7 +187,7 @@ const reportSearch = (keyword: string) => {
 };
 
 function handleSelectChange(val: string) {
-  history.pushState(null, '', `?search=${encodeURIComponent(val)}`);
+  history.pushState(null, '', `?q=${encodeURIComponent(val)}`);
 }
 // 设置搜索结果的跳转路径
 function goLink(data: any, index: number) {
@@ -304,14 +305,16 @@ watch(
           </li>
         </ul>
         <ClientOnly>
-          <OSelect v-model="activeVersion" :placeholder="i18n.search.tagList.all">
-            <template #prefix>
-              <OIcon>
-                <IconSearch />
-              </OIcon>
-            </template>
-            <OOption v-for="item in versionList" :key="item.key" :label="item.key" :value="item.key" />
-          </OSelect>
+          <template v-if="versionList.length > 1">
+            <OSelect v-model="activeVersion" :placeholder="i18n.search.tagList.all">
+              <template #prefix>
+                <OIcon>
+                  <IconSearch />
+                </OIcon>
+              </template>
+              <OOption v-for="item in versionList" :key="item.key" :label="item.key" :value="item.key" />
+            </OSelect>
+          </template>
         </ClientOnly>
       </div>
       <div class="content-box">
