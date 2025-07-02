@@ -186,7 +186,7 @@ function jumpPageMb(page: number) {
   @media screen and (max-width: 1100px) {
     height: 36px;
   }
-  :deep(.o-select) {
+  :deep(.e-select) {
     width: 200px;
     .el-select__wrapper {
       height: 48px;

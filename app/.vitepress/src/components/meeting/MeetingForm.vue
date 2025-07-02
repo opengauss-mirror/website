@@ -323,14 +323,14 @@ onMounted(() => {
     }
   }
   :deep(.el-select) {
-    --o-select-border-color: var(--e-color-border1);
+    --e-select-border-color: var(--e-color-border1);
     .el-select__wrapper {
       min-height: 36px;
       border-radius: 0;
       box-shadow: 0 0 0 1px var(--e-select-border-color) inset;
       min-width: auto;
       &.is-focused {
-        --o-select-border-color: var(--e-color-brand1);
+        --e-select-border-color: var(--e-color-brand1);
       }
       &.is-hovering {
         box-shadow: 0 0 0 1px var(--e-select-border-color) inset;

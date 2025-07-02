@@ -26,7 +26,7 @@
   }
 }
 .el-select {
-  --o-select-border-color: transparent;
+  --e-select-border-color: transparent;
   &:hover {
     box-shadow: var(--e-shadow-l1);
   }
@@ -35,7 +35,7 @@
     border-radius: 0;
     box-shadow: var(--e-shadow-l1);
     &.is-focused {
-      --o-select-border-color: var(--e-color-brand1);
+      --e-select-border-color: var(--e-color-brand1);
     }
     &.is-hovering {
       box-shadow: 0 0 0 1px var(--e-select-border-color) inset;
