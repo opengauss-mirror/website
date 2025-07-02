@@ -144,7 +144,7 @@ const collectDownloadData = (name: string) => {
       </div>
     </div>
     <!-- 登录弹窗 -->
-    <ODialog v-if="downloadDlg" v-model:visible="downloadDlg" :unmount-on-hide="false" @change="onDlgChane" size="small" :actions="dlgAction">
+    <ODialog v-if="downloadDlg" v-model:visible="downloadDlg" :unmount-on-hide="false" size="small" :actions="dlgAction">
       <template #header>{{ i18n.download.DONNLOAD_TIPS }}</template>
       <div>{{ i18n.download.DONNLOAD_TEXT }}</div>
     </ODialog>

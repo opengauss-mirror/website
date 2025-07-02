@@ -28,6 +28,7 @@ import { computed, ref, watchEffect } from 'vue';
 import { useClipboard } from '~@/composables/useClipboard';
 import IconQuestion from '~icons/app/icon-question-mark.svg';
 import { useScreen } from '~@/composables/useScreen';
+import { Ref } from 'vue';
 
 const _downloadData = downloadData.slice(0, 10) as (typeof downloadData)[1][];
 
@@ -263,7 +264,7 @@ const collectDownloadData = (name: string) => {
             <p>软件包大小</p>
             <p>{{ item.size }}</p>
             <p>完整性校验</p>
-            <OLink tag="button" @click="handleUrlCopy(row.sha_code, $event)">
+            <OLink tag="button" @click="handleUrlCopy(item.sha_code, $event)">
               SHA256
               <template #suffix>
                 <OIcon><IconCopy /></OIcon>
@@ -281,7 +282,7 @@ const collectDownloadData = (name: string) => {
       </template>
     </div>
     <!-- 登录弹窗 -->
-    <ODialog v-if="downloadDlg" v-model:visible="downloadDlg" :unmount-on-hide="false" @change="onDlgChane" size="small" :actions="dlgAction">
+    <ODialog v-if="downloadDlg" v-model:visible="downloadDlg" :unmount-on-hide="false" size="small" :actions="dlgAction">
       <template #header>{{ i18n.download.DONNLOAD_TIPS }}</template>
       <div>{{ i18n.download.DONNLOAD_TEXT }}</div>
     </ODialog>
@@ -347,6 +348,12 @@ const collectDownloadData = (name: string) => {
 
 .o-table {
   --table-cell-padding: 16px 0 16px 20px;
+  --table-head-bg: rgb(var(--o-mixedgray-4));
+  --table-row-hover: var(--o-color-fill3);
+}
+
+.o-toggle {
+  --toggle-bg-color: rgb(var(--o-mixedgray-4));
 }
 
 .card {

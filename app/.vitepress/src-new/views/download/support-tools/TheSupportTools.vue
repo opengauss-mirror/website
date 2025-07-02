@@ -211,6 +211,7 @@ section {
   .item {
     padding: 24px 32px;
     background-color: var(--o-color-fill2);
+    background-size: cover;
     height: 216px;
     position: relative;
     border-radius: 4px;
@@ -226,6 +227,12 @@ section {
     }
     &:nth-child(4n + 4) {
       background-image: var(--item-bg-4);
+    }
+
+    transition: box-shadow 0.2s ease-in-out;
+
+    @include hover {
+      box-shadow: var(--o-shadow-2);
     }
 
     h3 {

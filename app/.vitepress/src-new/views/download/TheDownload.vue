@@ -131,7 +131,6 @@ provide('PERMISSION_LIST', getPermissionList);
   background: var(--o-color-fill2);
   padding: 32px;
   margin-top: 24px;
-  border-radius: 8px;
   @include respond-to('<=pad') {
     padding: 16px;
   }
