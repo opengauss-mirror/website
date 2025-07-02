@@ -524,7 +524,7 @@ watch(
   display: flex;
   gap: var(--e-spacing-h4);
 
-  :deep(.o-select) {
+  :deep(.e-select) {
     width: 240px;
   }
   .title-item {
