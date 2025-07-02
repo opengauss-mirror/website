@@ -14,8 +14,7 @@ The openGauss Community understands the importance of your privacy and fully res
 
 Please carefully review the following updates to this privacy policy:
 
-1. Added the description about GitCode account login.
-2. Changed the code hosting platform to GitCode.
+1. Added the description about the forum service.
 
 ## 1. How We Collect and Process Your Personal Data
 
@@ -44,6 +43,13 @@ signing system (click [here](https://clasign.osinfra.cn/sign/gitee_opengauss-161
 **g) Meetups**. When you apply organize an openGauss meetup, the community will collect your **name**, **phone number**, **email address**, **company**, and meetup details (including organization, agenda, date, duration, city, event scale, event form, event support, and topics) from the application form you fill in. The collected data will be used to contact you for the purpose of confirming your application and related matters, as well as arranging for relevant affairs, including sign-ins and nameplates.
 
 **h) Pairing Plan Application**. When you apply for participation in the openGauss pairing plan, the community will collect your **name**, **organization**, **email address**, **phone number**, and openGauss usage information (including use cases, version details, number of nodes, hardware information, and issue description) from the application form you fill in. The collected data will be used to contact you for the purpose of confirming your application and related matters.
+
+
+**i) Forum Service**.
+
+1) When you sign up or log in to the forum service, we will collect your **user name**, **email address**, **phone number**, **password**, display name, profile picture , Gitee ID, and GitCode ID from your unified account, and assign permissions and roles to your account. In addition, we will collect **IP address**, **region**, device information, login time, and **preference settings** to provide you with more secure services;
+2) When you use the forum service, we collect your like information, follow information, favorite content, post count, reply count, follow count, fan count, personal profile, badge acquisition, sidebar settings, follow list, fan list, email summary, time zone, post and reply content, images, audio, video, documents, and comments to understand your personal preferences and better serve you;
+3) When you report a concern about a forum post or reply, we will collect your report type, description, **user name**, **IP address**, **region**, organization, and host name to verify and confirm the content of the report.
 
 <br/>
 
@@ -169,8 +175,8 @@ Email: **<common@public.opengauss.org>**
 
 Hotline: **+86 18628259905**
 
-Last updated: **April 25, 2025**
+Last updated: **June 24, 2025**
 
-Privacy policy version: **v20250425**
+Privacy policy version: **v20250624**
 
 </div>

@@ -4,7 +4,9 @@ import { useCommon } from '@/stores/common';
 import AppContent from '@/components/AppContent.vue';
 import SummitBanner from './components/SummitBanner.vue';
 import SummitIntro from './components/SummitIntro.vue';
+import SummitLive from './components/SummitLive.vue';
 import SummitAgenda from './components/SummitAgenda.vue';
+import SummitActivity from './components/SummitActivity.vue';
 import SummitReview from './components/SummitReview.vue';
 
 import summitData from './data';
@@ -14,7 +16,9 @@ import summitData from './data';
   <SummitBanner :banner-data="summitData.banner" />
   <AppContent>
     <SummitIntro :intro-data="summitData.intro" />
+    <SummitLive :live-data="summitData.live" />
     <SummitAgenda :agenda-data="summitData.agenda" />
+    <SummitActivity :active-data="summitData.activity" />
     <SummitReview :review-data="summitData.review" />
   </AppContent>
 </template>

@@ -49,7 +49,8 @@ const SHIMO_LINK = 'https://shimo.im'; // 石墨报名
 const SUMMIT2023_JOIN = 'https://e-campaign.huawei.com/t/BbuQr2'; // SUMMIT报名
 const CECN_LINK = 'http://www.ce.cn/'; // 中国经济网
 const EULER_EN_LINK = 'https://www.openeuler.org';
-const FORUM_LINK = 'https://discuss.opengauss.org';
+const VHALLYUN_URL = 'https://hw.vhallyun.com'; // 直播
+const FORUM_LINK = 'https://discuss.opengauss.org'; // 论坛
 // opengauss网站
 export const OPENUBMC_URL = 'https://www.openubmc.cn';
 // openfuyao网站
@@ -106,5 +107,6 @@ export {
   SUMMIT2023_JOIN,
   OBS_JIACAN_LINK,
   CECN_LINK,
+  VHALLYUN_URL,
   FORUM_LINK,
 };

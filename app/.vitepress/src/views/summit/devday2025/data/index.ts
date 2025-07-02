@@ -2,6 +2,10 @@ import bannerBg from '../img/banner-bg.jpg';
 import bannerSummitMb from '../img/banner-bg-mb.jpg';
 import textImg from '../img/banner-text.png';
 import textImgMb from '../img/banner-text-mb.png';
+import bracket from '../img/bracket.png';
+import keyboard from '../img/keyboard.png';
+
+import { FORUM_LINK } from '@/data/url-config';
 
 export default {
   banner: {
@@ -10,7 +14,7 @@ export default {
     textImg: textImg,
     textImgMb: textImgMb,
     signUpHref: 'https://e-campaign.huawei.com/events3/UniversalForm/register/773773941/register.html?site=cn&formId=11231&way=onsite',
-    signUpTitle: '立即报名',
+    signUpTitle: '立即观看',
   },
   intro: {
     title: '大会简介',
@@ -18,6 +22,17 @@ export default {
     desc: [
       'openGauss Developer Day 2025是openGauss社区发起的开发者大会，旨在持续推动数据库领域的创新和突破。本次大会将全面展示openGauss 7.0.0 创新版的技术特性、openGauss 在内核、AI和四高（高性能、高可用、高智能、高安全）能力上的最新技术成果。',
       '本次大会也是 openGauss 社区的年度大型工作会议，值此开源五周年之际，openGauss社区邀请开发者、用户齐聚一堂，共同讨论下一个版本的技术路线与演进方向，携手共建数智化的数据库新生态。',
+    ],
+  },
+  live: {
+    title: '会议直播',
+    titleBg: 'LIVE BROADCAST',
+    list: [
+      {
+        liveId: '15642',
+        liveTestId: '15666',
+        name: 'openGauss Developer Day 2025',
+      },
     ],
   },
   agenda: {
@@ -30,12 +45,21 @@ export default {
       content: [
         {
           time: '9:30-9:45',
-          desc: '致辞',
-          person: [],
+          desc: '开场致辞',
+          person: [
+            {
+              name: '辛晓华',
+              post: '国家工业信息安全发展研究中心软件所副所长',
+            },
+            {
+              name: '付海巍',
+              post: '开放原子开源基金会业务发展部部长',
+            },
+          ],
         },
         {
           time: '9:45-10:10',
-          desc: '主题演讲：开源五载聚产业，技术引领创未来\n发布仪式：oGRAC 多写方案联合发布',
+          desc: '主题演讲：开源五载聚产业，技术引领创未来\n发布仪式：openGauss oGRAC 多写方案联合发布',
           person: [
             {
               name: '熊伟',
@@ -49,7 +73,7 @@ export default {
           person: [
             {
               name: '王磊',
-              post: 'openGauss 技术委员会委员、openGauss 数据库高级架构师',
+              post: 'openGauss 技术委员会委员、2012实验室高斯部首席架构师',
             },
             {
               name: '阙鸣健',
@@ -76,8 +100,8 @@ export default {
           desc: 'CERDB助力国能集团数字化转型实践',
           person: [
             {
-              name: '平雷',
-              post: '国家能源网络安全中心副总经理',
+              name: '王志民',
+              post: '国家能源网络安全中心云平台运营部经理',
             },
           ],
         },
@@ -87,7 +111,7 @@ export default {
           person: [
             {
               name: '白玥',
-              post: '海量数据 解决方案总监',
+              post: '海量数据解决方案总监',
             },
           ],
         },
@@ -107,7 +131,7 @@ export default {
           person: [
             {
               name: '杜冬军',
-              post: '中科通达 AI技术架构师',
+              post: '中科通达AI技术架构师',
             },
           ],
         },
@@ -148,6 +172,26 @@ export default {
         },
       ],
     },
+  },
+  activity: {
+    title: '更多活动',
+    titleBg: 'MORE EVENTS',
+    list: [
+      {
+        title: '云端围观：openGauss Developer Day论文Poster！',
+        desc: '在openGauss社区论坛即可在线浏览论文Poster，与作者实时互动！参与互动即有机会获得电脑支架一个！',
+        img: bracket,
+        href: FORUM_LINK + '/t/topic/77',
+        text: '了解详情',
+      },
+      {
+        title: '投稿征集：你的创意，值得被看见！',
+        desc: '在openGauss社区论坛发布技术文稿！通过审核即可获得机械键盘一个！',
+        img: keyboard,
+        href: FORUM_LINK + '/t/topic/75/2',
+        text: '了解详情',
+      },
+    ],
   },
   review: {
     title: '精彩回顾',

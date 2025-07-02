@@ -49,6 +49,12 @@ The openGauss community sometimes stores cookies on computers or mobile devices.
       <td>Prevent malicious attacks.</td>
     </tr>
     <tr>
+      <td>_forum_session, _t</td>
+      <td>forum website</td>
+      <td>7 days</td>
+      <td>Maintains user sessions.</td>
+    </tr>
+    <tr>
       <td>express_sid</td>
       <td>etherpad website</td>
       <td>1 day</td>

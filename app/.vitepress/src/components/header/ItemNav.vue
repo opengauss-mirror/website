@@ -96,6 +96,7 @@ const onLeave = (el: Element) => {
                   {{ subItem.label[lang as LocaleT] }}
                 </a>
               </template>
+              <div v-if="subItem.tag" class="tag">{{ subItem.tag }}</div>
             </li>
           </ul>
         </Transition>
@@ -173,6 +174,7 @@ const onLeave = (el: Element) => {
         overflow: hidden;
 
         .sub-menu-item {
+          position: relative;
           &:hover {
             background-color: var(--e-color-brand1);
             color: var(--e-color-white);
@@ -193,12 +195,25 @@ const onLeave = (el: Element) => {
             font-size: var(--e-font-size-text);
             color: var(--e-color-text1);
             display: block;
-            padding: 0 var(--e-spacing-h8);
+            padding: 0 var(--e-spacing-h5);
             min-width: 106px;
             white-space: nowrap;
             width: 100%;
             display: block;
             color: var(--e-color-text1);
+          }
+          .tag {
+            position: absolute;
+            top: 50%;
+            right: 11px;
+            transform: translateY(-50%);
+            padding: 0 2px;
+            background: #e60012;
+            line-height: 12px;
+            text-align: center;
+            font-size: 8px;
+            border-radius: 100px;
+            color: var(--o-color-white);
           }
         }
       }
