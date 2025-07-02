@@ -40,7 +40,7 @@ const hiddenSearchBox = () => {
 // 搜索事件
 function handleSearchEvent() {
   windowOpen(
-    `${props.link}?search=${encodeURIComponent(searchInput.value)}`,
+    `${props.link}?q=${encodeURIComponent(searchInput.value)}`,
     '_self'
   );
   hiddenSearchBox();
