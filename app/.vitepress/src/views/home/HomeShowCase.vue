@@ -172,21 +172,21 @@ onUnmounted(() => {
 
 <style lang="scss" scoped>
 .case-main {
-  margin-bottom: var(--o-spacing-h1);
+  margin-bottom: var(--e-spacing-h1);
   @media (max-width: 768px) {
-    margin-bottom: var(--o-spacing-h2);
+    margin-bottom: var(--e-spacing-h2);
   }
   h3 {
-    font-size: var(--o-font-size-h3);
+    font-size: var(--e-font-size-h3);
     font-weight: 300;
-    color: var(--o-color-text1);
-    line-height: var(--o-line-height-h3);
+    color: var(--e-color-text1);
+    line-height: var(--e-line-height-h3);
     width: 100%;
     text-align: center;
     @media (max-width: 768px) {
-      font-size: var(--o-font-size-h8);
-      line-height: var(--o-line-height-h8);
-      margin-bottom: var(--o-spacing-h5);
+      font-size: var(--e-font-size-h8);
+      line-height: var(--e-line-height-h8);
+      margin-bottom: var(--e-spacing-h5);
     }
   }
 }
@@ -196,13 +196,13 @@ onUnmounted(() => {
     box-shadow: none;
     background: none;
     .o-collapse-item {
-      box-shadow: var(--o-shadow-l1);
+      box-shadow: var(--e-shadow-l1);
     }
   }
 }
 .case-mobile {
   display: none;
-  background-color: var(--o-color-bg1);
+  background-color: var(--e-color-bg1);
   @media (max-width: 1100px) {
     border-top: none;
     display: block;
@@ -210,16 +210,16 @@ onUnmounted(() => {
   }
 
   &-list {
-    margin-top: var(--o-spacing-h4);
+    margin-top: var(--e-spacing-h4);
     @media (max-width: 768px) {
       margin-top: 0;
     }
 
     :deep(.el-collapse-item__header) {
       height: 100%;
-      padding: var(--o-spacing-h5);
+      padding: var(--e-spacing-h5);
       @media (max-width: 768px) {
-        padding: var(--o-spacing-h8);
+        padding: var(--e-spacing-h8);
       }
     }
   }
@@ -232,27 +232,27 @@ onUnmounted(() => {
   }
 
   &-word {
-    margin-left: var(--o-spacing-h8);
-    font-size: var(--o-font-size-h5);
-    line-height: var(--o-line-height-h5);
+    margin-left: var(--e-spacing-h8);
+    font-size: var(--e-font-size-h5);
+    line-height: var(--e-line-height-h5);
     font-weight: 400;
-    color: var(--o-color-text1);
+    color: var(--e-color-text1);
     @media (max-width: 768px) {
-      font-size: var(--o-font-size-text);
-      line-height: var(--o-line-height-text);
+      font-size: var(--e-font-size-text);
+      line-height: var(--e-line-height-text);
     }
   }
 
   &-img {
     width: 40px;
     height: 40px;
-    color: var(--o-color-text1);
+    color: var(--e-color-text1);
   }
 
   &-card {
-    margin-top: var(--o-spacing-h5);
+    margin-top: var(--e-spacing-h5);
     width: 100%;
-    border-left: 2px solid var(--o-color-brand1);
+    border-left: 2px solid var(--e-color-brand1);
     &-content {
       display: flex;
       flex-flow: row;
@@ -262,67 +262,67 @@ onUnmounted(() => {
   }
 
   &-icon {
-    font-size: var(--o-font-size-h8);
-    color: var(--o-color-text4);
+    font-size: var(--e-font-size-h8);
+    color: var(--e-color-text4);
   }
 }
 .user {
   &-mobile {
-    background-color: var(--o-color-bg4);
+    background-color: var(--e-color-bg4);
     > :nth-child(1) {
       margin-top: 0px;
     }
   }
   &-card {
     cursor: pointer;
-    padding: var(--o-spacing-h5);
+    padding: var(--e-spacing-h5);
     width: 100%;
     height: 100%;
-    background: var(--o-color-bg1);
+    background: var(--e-color-bg1);
     border: 1px solid rgba(0, 0, 0, 0);
 
     @media (max-width: 1100px) {
-      background: var(--o-color-bg2);
-      margin-top: var(--o-spacing-h8);
+      background: var(--e-color-bg2);
+      margin-top: var(--e-spacing-h8);
     }
 
     @media (max-width: 768px) {
-      padding: var(--o-spacing-h8);
+      padding: var(--e-spacing-h8);
     }
   }
 
   &-card:hover {
     @media (min-width: 1100px) {
-      background-color: var(--o-color-bg2);
-      border: 1px solid var(--o-color-brand1);
+      background-color: var(--e-color-bg2);
+      border: 1px solid var(--e-color-brand1);
       transition: 0.3s all;
     }
   }
 
   &-title {
-    font-size: var(--o-font-size-h7);
+    font-size: var(--e-font-size-h7);
     font-weight: 500;
-    line-height: var(--o-line-height-h7);
-    color: var(--o-color-text1);
+    line-height: var(--e-line-height-h7);
+    color: var(--e-color-text1);
     @media (max-width: 768px) {
-      font-size: var(--o-font-size-text);
-      line-height: var(--o-line-height-text);
+      font-size: var(--e-font-size-text);
+      line-height: var(--e-line-height-text);
     }
   }
 
   &-word {
-    font-size: var(--o-font-size-text);
-    line-height: var(--o-line-height-text);
+    font-size: var(--e-font-size-text);
+    line-height: var(--e-line-height-text);
     font-weight: 400;
-    color: var(--o-color-text4);
+    color: var(--e-color-text4);
     overflow: hidden;
     display: -webkit-box;
     text-overflow: ellipsis;
     -webkit-line-clamp: 1; // 设置两行文字溢出
     -webkit-box-orient: vertical;
     @media (max-width: 768px) {
-      font-size: var(--o-font-size-tip);
-      line-height: var(--o-line-height-tip);
+      font-size: var(--e-font-size-tip);
+      line-height: var(--e-line-height-tip);
     }
   }
 }
@@ -338,17 +338,17 @@ onUnmounted(() => {
     }
 
     :deep(.el-collapse-item__header) {
-      border-left: 2px solid var(--o-color-brand1);
+      border-left: 2px solid var(--e-color-brand1);
     }
   }
 
   &-more {
     display: flex;
-    padding: var(--o-spacing-h4) 0;
+    padding: var(--e-spacing-h4) 0;
     justify-content: center;
     align-items: center;
     @media screen and (max-width: 1000px) {
-      padding: var(--o-spacing-h5) 0 0;
+      padding: var(--e-spacing-h5) 0 0;
       font-size: 12px;
       .o-button {
         font-size: 14px;
@@ -360,40 +360,40 @@ onUnmounted(() => {
     }
 
     &-icon {
-      color: var(--o-color-brand1);
-      width: var(--o-font-size-h8);
-      height: var(--o-font-size-h8);
+      color: var(--e-color-brand1);
+      width: var(--e-font-size-h8);
+      height: var(--e-font-size-h8);
     }
   }
 
   &-user {
-    margin-top: var(--o-spacing-h2);
+    margin-top: var(--e-spacing-h2);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding-bottom: var(--o-spacing-h2);
-    grid-gap: var(--o-spacing-h4) var(--o-spacing-h2);
-    border-bottom: 1px solid var(--o-color-division1);
+    padding-bottom: var(--e-spacing-h2);
+    grid-gap: var(--e-spacing-h4) var(--e-spacing-h2);
+    border-bottom: 1px solid var(--e-color-division1);
   }
 
   &-card {
-    margin-top: var(--o-spacing-h2);
+    margin-top: var(--e-spacing-h2);
     width: 100%;
     padding: 20px 20px 0;
     box-shadow: none !important;
   }
 
   &-img {
-    margin-top: var(--o-spacing-h5);
+    margin-top: var(--e-spacing-h5);
     width: 80px;
     height: 80px;
     color: white;
   }
 
   &-word {
-    font-size: var(--o-font-size-h6);
+    font-size: var(--e-font-size-h6);
     font-weight: 500;
-    color: var(--o-color-text1);
-    line-height: var(--o-line-height-h6);
+    color: var(--e-color-text1);
+    line-height: var(--e-line-height-h6);
     margin-top: 2px;
   }
 
@@ -432,11 +432,11 @@ onUnmounted(() => {
           .nav-text {
             .nav-title,
             .nav-descriptive {
-              color: var(--o-color-brand1);
+              color: var(--e-color-brand1);
             }
           }
           .case-word {
-            color: var(--o-color-brand1);
+            color: var(--e-color-brand1);
           }
         }
       }
@@ -459,6 +459,6 @@ onUnmounted(() => {
 }
 
 .active {
-  color: var(--o-color-brand1);
+  color: var(--e-color-brand1);
 }
 </style>

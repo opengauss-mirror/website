@@ -4,25 +4,16 @@ import { computed, useAttrs } from 'vue';
 const attrs = useAttrs();
 
 const drawerClassNames = computed(() => {
-  return `${attrs['custom-class']}`
-    ? `${attrs['custom-class']} o-drawer`
-    : 'o-drawer';
+  return `${attrs['custom-class']}` ? `${attrs['custom-class']} o-drawer` : 'o-drawer';
 });
 
 const modalClassNames = computed(() => {
-  return attrs['modal-class']
-    ? `${attrs['modal-class']} o-drawer-modal`
-    : 'o-drawer-modal';
+  return attrs['modal-class'] ? `${attrs['modal-class']} o-drawer-modal` : 'o-drawer-modal';
 });
 </script>
 
 <template>
-  <ElDrawer
-    v-bind="attrs"
-    :custom-class="drawerClassNames"
-    append-to-body
-    :modal-class="modalClassNames"
-  >
+  <ElDrawer v-bind="attrs" :custom-class="drawerClassNames" append-to-body :modal-class="modalClassNames">
     <template #header>
       <slot name="header"></slot>
     </template>
@@ -37,18 +28,18 @@ const modalClassNames = computed(() => {
 
 <style lang="scss">
 .el-drawer {
-  background-color: var(--o-color-bg2);
+  background-color: var(--e-color-bg2);
 }
 .o-drawer {
-  --o-drawer-bg: var(--o-color-bg2);
+  --e-drawer-bg: var(--e-color-bg2);
   &.el-drawer {
-    background-color: var(--o-drawer-bg);
+    background-color: var(--e-drawer-bg);
   }
 }
 .o-drawer-modal {
-  --o-drawer-modal-bg: var(--o-color-bg6);
+  --e-drawer-modal-bg: var(--e-color-bg6);
   &.el-overlay {
-    background-color: var(--o-drawer-modal-bg);
+    background-color: var(--e-drawer-modal-bg);
   }
 }
 </style>

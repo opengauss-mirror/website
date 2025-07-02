@@ -34,31 +34,14 @@ const goLink = (url: string, isBlank: boolean) => {
 <template>
   <div class="contribution-map">
     <div class="contribution-map-img">
-      <img
-        v-show="!isDark"
-        :src="isZh ? contributionMap_light_zh : contributionMap_light_en"
-      />
-      <img
-        v-show="isDark"
-        :src="isZh ? contributionMap_dark_zh : contributionMap_dark_en"
-      />
+      <img v-show="!isDark" :src="isZh ? contributionMap_light_zh : contributionMap_light_en" />
+      <img v-show="isDark" :src="isZh ? contributionMap_dark_zh : contributionMap_dark_en" />
       <!-- 定位的空标签 -->
-      <div
-        v-for="(item, index) in i18n.contribution.LINK_LIST"
-        :key="index"
-        :class="isZh ? 'link' : 'link en'"
-        @click="goLink(item.URL, item.BLANK)"
-      ></div>
+      <div v-for="(item, index) in i18n.contribution.LINK_LIST" :key="index" :class="isZh ? 'link' : 'link en'" @click="goLink(item.URL, item.BLANK)"></div>
     </div>
     <div class="contribution-map-mobile-img">
-      <img
-        v-show="!isDark"
-        :src="isZh ? contributionMap_light_zh_mb : contributionMap_light_en_mb"
-      />
-      <img
-        v-show="isDark"
-        :src="isZh ? contributionMap_dark_zh_mb : contributionMap_dark_en_mb"
-      />
+      <img v-show="!isDark" :src="isZh ? contributionMap_light_zh_mb : contributionMap_light_en_mb" />
+      <img v-show="isDark" :src="isZh ? contributionMap_dark_zh_mb : contributionMap_dark_en_mb" />
       <div
         v-for="item in i18n.contribution.LINK_LIST"
         :key="item.URL"
@@ -71,12 +54,12 @@ const goLink = (url: string, isBlank: boolean) => {
 <style lang="scss" scoped>
 .contribution-map {
   width: 100%;
-  padding-bottom: var(--o-spacing-h1);
+  padding-bottom: var(--e-spacing-h1);
   @media screen and (max-width: 1439px) {
     padding-left: 24px;
     padding-right: 24px;
-    background-color: var(--o-color-bg2);
-    padding-bottom: var(--o-spacing-h2);
+    background-color: var(--e-color-bg2);
+    padding-bottom: var(--e-spacing-h2);
   }
   @media screen and (max-width: 767px) {
     padding-left: 16px;
@@ -87,10 +70,10 @@ const goLink = (url: string, isBlank: boolean) => {
     width: 1416px;
     position: relative;
     display: block;
-    margin: var(--o-spacing-h2) auto 0;
+    margin: var(--e-spacing-h2) auto 0;
 
-    background-color: var(--o-color-bg1);
-    box-shadow: var(--o-shadow-l1);
+    background-color: var(--e-color-bg1);
+    box-shadow: var(--e-shadow-l1);
     img {
       width: 1416px;
       display: block;
@@ -106,13 +89,13 @@ const goLink = (url: string, isBlank: boolean) => {
     }
     @media screen and (min-width: 1100px) and (max-width: 1439px) {
       width: 1000px;
-      margin: var(--o-spacing-h2) auto;
+      margin: var(--e-spacing-h2) auto;
       background-color: inherit;
       box-shadow: none;
     }
     @media screen and (min-width: 768px) and (max-width: 1100px) {
       width: 755px;
-      margin: var(--o-spacing-h2) auto;
+      margin: var(--e-spacing-h2) auto;
       background-color: inherit;
       box-shadow: none;
     }
@@ -584,7 +567,7 @@ const goLink = (url: string, isBlank: boolean) => {
     position: relative;
     display: block;
     margin: 0 auto;
-    margin-top: var(--o-spacing-h2);
+    margin-top: var(--e-spacing-h2);
     @media screen and (min-width: 768px) {
       display: none;
     }

@@ -89,18 +89,10 @@ onMounted(() => {
 watch(queryData, () => getCveLists(queryData));
 </script>
 <template>
-  <BannerLevel2
-    :background-image="Banner"
-    :title="i18n.security.CVE"
-    :illustration="illustration"
-  />
+  <BannerLevel2 :background-image="Banner" :title="i18n.security.CVE" :illustration="illustration" />
   <AppContent :mobile-top="16">
     <div class="o-search">
-      <OSearch
-        v-model="searchContent"
-        :placeholder="i18n.security.INPUT_CVE_ID"
-        @change="changeSearchVal"
-      >
+      <OSearch v-model="searchContent" :placeholder="i18n.security.INPUT_CVE_ID" @change="changeSearchVal">
         <template #suffix>
           <OIcon class="close" @click="clearSearchInput"><IconCancel /></OIcon>
         </template>
@@ -110,56 +102,32 @@ watch(queryData, () => getCveLists(queryData));
     <OTable class="pc-list" :data="tableData" style="width: 100%">
       <el-table-column :label="i18n.security.CVE" width="186">
         <template #default="scope">
-          <span class="detail-page" @click="goCveDetail(scope.row.cveNum)">{{
-            scope.row.cveNum
-          }}</span>
+          <span class="detail-page" @click="goCveDetail(scope.row.cveNum)">{{ scope.row.cveNum }}</span>
         </template>
       </el-table-column>
-      <OTableColumn
-        :label="i18n.security.SYNOPSIS"
-        prop="description"
-      ></OTableColumn>
-      <OTableColumn
-        :label="i18n.security.CVSS_SCORE"
-        prop="NVDScore"
-        width="150"
-      ></OTableColumn>
-      <OTableColumn
-        width="180"
-        :label="i18n.security.RELEASE_DATE"
-        prop="releaseDate"
-      ></OTableColumn>
-      <OTableColumn
-        width="180"
-        :label="i18n.security.MODIFIED_TIME"
-        prop="updateTime"
-      ></OTableColumn>
+      <OTableColumn :label="i18n.security.SYNOPSIS" prop="description"></OTableColumn>
+      <OTableColumn :label="i18n.security.CVSS_SCORE" prop="NVDScore" width="150"></OTableColumn>
+      <OTableColumn width="180" :label="i18n.security.RELEASE_DATE" prop="releaseDate"></OTableColumn>
+      <OTableColumn width="180" :label="i18n.security.MODIFIED_TIME" prop="updateTime"></OTableColumn>
     </OTable>
 
     <ul class="mobile-list">
       <li v-for="item in tableData" :key="item.cveId" class="item">
         <ul>
           <li>
-            <span class="label">{{ i18n.security.CVE }}:</span
-            ><span id="cve-name" @click="goCveDetail(item.cveNum)">{{
-              item.cveNum
-            }}</span>
+            <span class="label">{{ i18n.security.CVE }}:</span><span id="cve-name" @click="goCveDetail(item.cveNum)">{{ item.cveNum }}</span>
           </li>
           <li>
-            <span class="label">{{ i18n.security.SYNOPSIS }}:</span
-            ><span>{{ item.description }}</span>
+            <span class="label">{{ i18n.security.SYNOPSIS }}:</span><span>{{ item.description }}</span>
           </li>
           <li>
-            <span class="label">{{ i18n.security.CVSS_SCORE }}:</span
-            ><span>{{ item.NVDScore }}</span>
+            <span class="label">{{ i18n.security.CVSS_SCORE }}:</span><span>{{ item.NVDScore }}</span>
           </li>
           <li>
-            <span class="label">{{ i18n.security.RELEASE_DATE }}:</span
-            ><span>{{ item.releaseDate }}</span>
+            <span class="label">{{ i18n.security.RELEASE_DATE }}:</span><span>{{ item.releaseDate }}</span>
           </li>
           <li>
-            <span class="label">{{ i18n.security.MODIFIED_TIME }}:</span
-            ><span>{{ item.updateTime }}</span>
+            <span class="label">{{ i18n.security.MODIFIED_TIME }}:</span><span>{{ item.updateTime }}</span>
           </li>
         </ul>
       </li>
@@ -186,22 +154,17 @@ watch(queryData, () => getCveLists(queryData));
       </OPagination>
     </ClientOnly>
 
-    <AppPaginationMo
-      v-if="Math.ceil(total / 10) > 1"
-      :current-page="queryData.pageNum"
-      :total-page="Math.ceil(total / 10)"
-      @turn-page="turnPage"
-    />
+    <AppPaginationMo v-if="Math.ceil(total / 10) > 1" :current-page="queryData.pageNum" :total-page="Math.ceil(total / 10)" @turn-page="turnPage" />
   </AppContent>
 </template>
 <style lang="scss" scoped>
 @media screen and (max-width: 768px) {
   :deep(.el-input .el-input__wrapper) {
     .el-input__inner {
-      font-size: var(--o-font-size-tip);
+      font-size: var(--e-font-size-tip);
     }
     .el-input__prefix-inner {
-      font-size: var(--o-font-size-h8) !important;
+      font-size: var(--e-font-size-h8) !important;
     }
   }
 }
@@ -209,17 +172,17 @@ watch(queryData, () => getCveLists(queryData));
   height: 56px;
   @media screen and (max-width: 768px) {
     height: 36px;
-    margin-bottom: var(--o-spacing-h6);
+    margin-bottom: var(--e-spacing-h6);
   }
   .close {
     cursor: pointer;
   }
 }
 .pc-list {
-  margin-top: var(--o-spacing-h2);
+  margin-top: var(--e-spacing-h2);
   .detail-page {
     cursor: pointer;
-    color: var(--o-color-link1);
+    color: var(--e-color-link1);
   }
   :deep(thead) {
     tr th .cell {
@@ -232,7 +195,7 @@ watch(queryData, () => getCveLists(queryData));
     padding: 0 22px !important;
   }
   :deep(.is-leaf) {
-    background-color: var(--o-color-bg4);
+    background-color: var(--e-color-bg4);
   }
   @media screen and (max-width: 768px) {
     display: none;
@@ -240,33 +203,33 @@ watch(queryData, () => getCveLists(queryData));
 }
 .mobile-list {
   display: none;
-  margin-bottom: var(--o-spacing-h5);
-  box-shadow: var(--o-shadow1);
+  margin-bottom: var(--e-spacing-h5);
+  box-shadow: var(--e-shadow1);
   @media screen and (max-width: 768px) {
     display: block;
   }
   .item {
-    padding: var(--o-spacing-h5);
-    font-size: var(--o-font-size-tip);
+    padding: var(--e-spacing-h5);
+    font-size: var(--e-font-size-tip);
     font-weight: 300;
-    line-height: var(--o-line-height-tip);
-    background-color: var(--o-color-bg2);
+    line-height: var(--e-line-height-tip);
+    background-color: var(--e-color-bg2);
     &:nth-child(odd) {
-      background: var(--o-color-bg4);
+      background: var(--e-color-bg4);
     }
     li {
-      margin-bottom: var(--o-spacing-h8);
+      margin-bottom: var(--e-spacing-h8);
       span:nth-of-type(1) {
-        color: var(--o-color-text1);
+        color: var(--e-color-text1);
         text-align: justify;
       }
       span:nth-of-type(2) {
-        color: var(--o-color-text3);
+        color: var(--e-color-text3);
         text-align: justify;
         flex: 1;
       }
       #cve-name {
-        color: var(--o-color-brand1);
+        color: var(--e-color-brand1);
       }
       .label {
         display: inline-block;
@@ -276,7 +239,7 @@ watch(queryData, () => getCveLists(queryData));
     li:last-child {
       margin-bottom: 0;
       a {
-        color: var(--o-color-link1);
+        color: var(--e-color-link1);
       }
     }
     li:nth-child(2) {
@@ -286,18 +249,18 @@ watch(queryData, () => getCveLists(queryData));
 }
 .empty-status {
   text-align: center;
-  font-size: var(--o-font-size-tip);
-  color: var(--o-color-text4);
-  line-height: var(--o-spacing-tip);
-  padding: var(--o-spacing-h2) 0 var(--o-spacing-h5);
+  font-size: var(--e-font-size-tip);
+  color: var(--e-color-text4);
+  line-height: var(--e-spacing-tip);
+  padding: var(--e-spacing-h2) 0 var(--e-spacing-h5);
 }
 .pagination {
-  margin: var(--o-spacing-h2) 0 0 0;
+  margin: var(--e-spacing-h2) 0 0 0;
   .pagination-slot {
-    font-size: var(--o-font-size-text);
+    font-size: var(--e-font-size-text);
     font-weight: 300;
-    color: var(--o-color-text1);
-    line-height: var(--o-spacing-h4);
+    color: var(--e-color-text1);
+    line-height: var(--e-spacing-h4);
   }
 }
 </style>

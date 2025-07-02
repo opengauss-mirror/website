@@ -17,12 +17,12 @@ const onClick = () => {
 <style lang="scss" scoped>
 .reset-cookie {
   cursor: pointer;
-  color: var(--o-color-link1);
+  color: var(--e-color-link1);
   &:hover {
-    color: var(--o-color-link2);
+    color: var(--e-color-link2);
   }
   &:active {
-    color: var(--o-color-link3);
+    color: var(--e-color-link3);
   }
 }
 </style>

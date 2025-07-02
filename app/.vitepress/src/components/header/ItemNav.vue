@@ -108,10 +108,10 @@ const onLeave = (el: Element) => {
 <style lang="scss" scoped>
 @media (max-width: 1366px) {
   html[lang='en'] .o-nav .o-nav-list > li {
-    padding: 0 var(--o-spacing-h5);
+    padding: 0 var(--e-spacing-h5);
     &::after {
-      left: var(--o-spacing-h5);
-      width: calc(100% - var(--o-spacing-h5) * 2);
+      left: var(--e-spacing-h5);
+      width: calc(100% - var(--e-spacing-h5) * 2);
     }
   }
 }
@@ -127,34 +127,34 @@ const onLeave = (el: Element) => {
       display: inline-flex;
       align-items: center;
       height: 100%;
-      padding: 0 var(--o-spacing-h4);
-      font-size: var(--o-font-size-text);
-      line-height: var(--o-line-height-h8);
-      color: var(--o-color-text1);
+      padding: 0 var(--e-spacing-h4);
+      font-size: var(--e-font-size-text);
+      line-height: var(--e-line-height-h8);
+      color: var(--e-color-text1);
       cursor: pointer;
 
       &.active {
-        color: var(--o-color-brand1);
+        color: var(--e-color-brand1);
         &::after {
-          background: var(--o-color-brand1);
+          background: var(--e-color-brand1);
         }
       }
       &.hover {
-        color: var(--o-color-brand1);
+        color: var(--e-color-brand1);
         .sub-menu {
           transform: translate(-50%) scaleY(1);
         }
         &::after {
-          background: var(--o-color-brand1);
+          background: var(--e-color-brand1);
         }
       }
 
       &::after {
         content: '';
         position: absolute;
-        left: var(--o-spacing-h4);
+        left: var(--e-spacing-h4);
         bottom: 0;
-        width: calc(100% - var(--o-spacing-h4) * 2);
+        width: calc(100% - var(--e-spacing-h4) * 2);
         height: 2px;
         border-radius: 1px;
         transition: all 0.1s linear;
@@ -164,43 +164,43 @@ const onLeave = (el: Element) => {
         position: absolute;
         top: 100%;
         left: 50%;
-        background-color: var(--o-color-bg2);
+        background-color: var(--e-color-bg2);
         transform: translate(-50%);
         transition: all 0.3s ease-in-out;
         z-index: 99;
         height: 0;
         opacity: 0;
-        box-shadow: var(--o-shadow-l1);
+        box-shadow: var(--e-shadow-l1);
         overflow: hidden;
 
         .sub-menu-item {
           position: relative;
           &:hover {
-            background-color: var(--o-color-brand1);
-            color: var(--o-color-white);
+            background-color: var(--e-color-brand1);
+            color: var(--e-color-white);
             .item-link {
-              color: var(--o-color-white);
+              color: var(--e-color-white);
             }
           }
           &.active {
-            background-color: var(--o-color-brand1);
-            color: var(--o-color-white);
+            background-color: var(--e-color-brand1);
+            color: var(--e-color-white);
             .item-link {
-              color: var(--o-color-white);
+              color: var(--e-color-white);
             }
           }
           .item-link {
-            line-height: var(--o-line-height-h3);
+            line-height: var(--e-line-height-h3);
             text-align: center;
-            font-size: var(--o-font-size-text);
-            color: var(--o-color-text1);
+            font-size: var(--e-font-size-text);
+            color: var(--e-color-text1);
             display: block;
-            padding: 0 var(--o-spacing-h5);
+            padding: 0 var(--e-spacing-h5);
             min-width: 106px;
             white-space: nowrap;
             width: 100%;
             display: block;
-            color: var(--o-color-text1);
+            color: var(--e-color-text1);
           }
           .tag {
             position: absolute;
@@ -228,7 +228,7 @@ const onLeave = (el: Element) => {
     transition: all 0.3s ease-in-out;
     display: block;
     z-index: 9;
-    background: var(--o-color-brand1);
+    background: var(--e-color-brand1);
   }
 }
 </style>

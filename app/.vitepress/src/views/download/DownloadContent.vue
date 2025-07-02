@@ -56,54 +56,54 @@ const explainLink = computed(() => {
 
 <style lang="scss" scoped>
 .download-content {
-  margin-top: var(--o-spacing-h4);
-  background-color: var(--o-color-bg2);
-  padding: var(--o-spacing-h2) var(--o-spacing-h1);
-  box-shadow: var(--o-shadow-l2);
+  margin-top: var(--e-spacing-h4);
+  background-color: var(--e-color-bg2);
+  padding: var(--e-spacing-h2) var(--e-spacing-h1);
+  box-shadow: var(--e-shadow-l2);
   @media (max-width: 1100px) {
-    margin-top: var(--o-spacing-h5);
-    padding: var(--o-spacing-h4) var(--o-spacing-h8);
+    margin-top: var(--e-spacing-h5);
+    padding: var(--e-spacing-h4) var(--e-spacing-h8);
   }
   .title {
     text-align: center;
-    font-size: var(--o-font-size-h3);
-    line-height: var(--o-line-height-h3);
-    color: var(--o-color-text1);
+    font-size: var(--e-font-size-h3);
+    line-height: var(--e-line-height-h3);
+    color: var(--e-color-text1);
     @media (max-width: 1100px) {
-      font-size: var(--o-font-size-h8);
-      line-height: var(--o-line-height-h8);
+      font-size: var(--e-font-size-h8);
+      line-height: var(--e-line-height-h8);
     }
   }
   .subtitle {
-    margin-top: var(--o-spacing-h5);
+    margin-top: var(--e-spacing-h5);
     text-align: center;
-    font-size: var(--o-font-size-text);
-    line-height: var(--o-line-height-text);
-    color: var(--o-color-text3);
+    font-size: var(--e-font-size-text);
+    line-height: var(--e-line-height-text);
+    color: var(--e-color-text3);
     @media (max-width: 1100px) {
-      margin-top: var(--o-spacing-h8);
-      font-size: var(--o-font-size-tip);
-      line-height: var(--o-line-height-tip);
+      margin-top: var(--e-spacing-h8);
+      font-size: var(--e-font-size-tip);
+      line-height: var(--e-line-height-tip);
     }
   }
   .other-link {
-    margin-top: var(--o-spacing-h5);
+    margin-top: var(--e-spacing-h5);
     text-align: center;
-    font-size: var(--o-font-size-text);
-    line-height: var(--o-line-height-text);
+    font-size: var(--e-font-size-text);
+    line-height: var(--e-line-height-text);
     @media (max-width: 1100px) {
-      margin-top: var(--o-spacing-h8);
-      font-size: var(--o-font-size-tip);
-      line-height: var(--o-line-height-tip);
+      margin-top: var(--e-spacing-h8);
+      font-size: var(--e-font-size-tip);
+      line-height: var(--e-line-height-tip);
     }
     a {
       display: inline-block;
-      padding: 0 var(--o-spacing-h5);
+      padding: 0 var(--e-spacing-h5);
       @media (max-width: 1100px) {
-        padding: 0 var(--o-spacing-h8);
+        padding: 0 var(--e-spacing-h8);
       }
       &:nth-of-type(1) {
-        border-right: 1px solid var(--o-color-border2);
+        border-right: 1px solid var(--e-color-border2);
       }
     }
   }

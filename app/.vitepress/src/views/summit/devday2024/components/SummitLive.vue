@@ -122,20 +122,13 @@ const ActiveBgDark = `url(${liveActiveDarkBg})`;
           <div
             v-for="(item, index) in renderData"
             :key="item.liveTestId"
-            :class="[
-              'link',
-              roomId === index ? 'link-active' : '',
-              index === 0 ? 'link-main' : ' ',
-              !isLight ? 'link-dark' : 'link-light',
-            ]"
+            :class="['link', roomId === index ? 'link-active' : '', index === 0 ? 'link-main' : ' ', !isLight ? 'link-dark' : 'link-light']"
             @click="setLiveRoom(item, index)"
           >
             <p class="name">{{ item.name }}</p>
             <div class="bottom">
               <span class="date"
-                ><img :src="isLight ? time : timeDark" /><span>{{
-                  item.date
-                }}</span></span
+                ><img :src="isLight ? time : timeDark" /><span>{{ item.date }}</span></span
               >
               <span class="time">{{ item.time }}</span>
             </div>
@@ -153,7 +146,7 @@ const ActiveBgDark = `url(${liveActiveDarkBg})`;
     margin-bottom: 31px;
   }
   .live-video {
-    margin-top: var(--o-spacing-h2);
+    margin-top: var(--e-spacing-h2);
     width: 100%;
     display: block;
     border: none;
@@ -170,22 +163,22 @@ const ActiveBgDark = `url(${liveActiveDarkBg})`;
       }
       .link {
         flex: 1;
-        padding: var(--o-spacing-h5) var(--o-spacing-h4);
+        padding: var(--e-spacing-h5) var(--e-spacing-h4);
         cursor: pointer;
-        background-color: var(--o-color-bg2);
+        background-color: var(--e-color-bg2);
         display: grid;
         align-items: center;
         p {
-          color: var(--o-color-text1);
+          color: var(--e-color-text1);
           font-size: 22px;
           line-height: 30px;
         }
         .bottom {
           display: flex;
           align-items: center;
-          font-size: var(--o-font-size-h8);
-          color: var(--o-color-text1);
-          line-height: var(--o-line-height-h8);
+          font-size: var(--e-font-size-h8);
+          color: var(--e-color-text1);
+          line-height: var(--e-line-height-h8);
           font-weight: 400;
           margin-top: 6px;
           .date {
@@ -200,7 +193,7 @@ const ActiveBgDark = `url(${liveActiveDarkBg})`;
             }
           }
           .time {
-            margin-left: var(--o-spacing-h2);
+            margin-left: var(--e-spacing-h2);
           }
         }
 
@@ -211,19 +204,19 @@ const ActiveBgDark = `url(${liveActiveDarkBg})`;
 
       .link-active {
         p {
-          color: var(--o-color-brand1);
+          color: var(--e-color-brand1);
         }
       }
       .link-dark {
         &.link-active {
           background: v-bind('ActiveBgDark') no-repeat right/contain;
-          background-color: var(--o-color-bg2);
+          background-color: var(--e-color-bg2);
         }
       }
       .link-light {
         &.link-active {
           background: v-bind('ActiveBg') no-repeat right/contain;
-          background-color: var(--o-color-bg2);
+          background-color: var(--e-color-bg2);
         }
       }
     }
@@ -238,10 +231,10 @@ const ActiveBgDark = `url(${liveActiveDarkBg})`;
           grid-column: 1/1;
         }
         .link {
-          padding: var(--o-spacing-h6) var(--o-spacing-h6);
+          padding: var(--e-spacing-h6) var(--e-spacing-h6);
           p {
-            font-size: var(--o-font-size-tip);
-            line-height: var(--o-line-height-tip);
+            font-size: var(--e-font-size-tip);
+            line-height: var(--e-line-height-tip);
           }
           .bottom {
             font-size: 10px;
@@ -253,7 +246,7 @@ const ActiveBgDark = `url(${liveActiveDarkBg})`;
               }
             }
             .time {
-              margin-left: var(--o-spacing-h4);
+              margin-left: var(--e-spacing-h4);
             }
           }
         }

@@ -73,12 +73,7 @@ onMounted(() => {
         </div>
         <div class="right-text">
           <img :src="TryTitle" class="first-code" />
-          <a
-            class="lets-play"
-            :href="TRYME_LINK"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a class="lets-play" :href="TRYME_LINK" target="_blank" rel="noopener noreferrer">
             <img :src="letsPlay" alt="" />
           </a>
         </div>
@@ -90,23 +85,22 @@ onMounted(() => {
 <style lang="scss" scoped>
 .title-mo {
   text-align: center;
-  margin: var(--o-spacing-h2) 0 var(--o-spacing-h4);
+  margin: var(--e-spacing-h2) 0 var(--e-spacing-h4);
   img {
     max-height: 71px;
     object-fit: cover;
   }
   @media screen and (max-width: 760px) {
-    margin-bottom: var(--o-spacing-h5);
+    margin-bottom: var(--e-spacing-h5);
   }
 }
 .playground {
-  margin: var(--o-spacing-h2) auto 0;
+  margin: var(--e-spacing-h2) auto 0;
   max-width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url('@/assets/category/home/bg-code-pc.png') no-repeat
-    center/cover;
+  background: url('@/assets/category/home/bg-code-pc.png') no-repeat center/cover;
   height: 378px;
 
   .playground-content {
@@ -132,9 +126,9 @@ onMounted(() => {
     width: 390px;
     height: 227px;
     text-align: left;
-    font-size: var(--o-font-size-h8);
+    font-size: var(--e-font-size-h8);
     color: #d0f2ff;
-    line-height: var(--o-line-height-h8);
+    line-height: var(--e-line-height-h8);
 
     .first {
       display: flex;
@@ -142,7 +136,7 @@ onMounted(() => {
     }
     .first-span {
       position: relative;
-      margin-left: var(--o-spacing-h10);
+      margin-left: var(--e-spacing-h10);
     }
     .typing {
       position: relative;
@@ -213,7 +207,7 @@ onMounted(() => {
     flex-direction: column;
     justify-content: space-around;
     height: 227px;
-    margin-left: var(--o-spacing-h5);
+    margin-left: var(--e-spacing-h5);
     img {
       width: 100%;
     }
@@ -247,8 +241,8 @@ onMounted(() => {
       padding: 18px 10px 15px;
       width: 100%;
       height: 208px;
-      font-size: var(--o-font-size-text);
-      line-height: var(--o-line-height-text);
+      font-size: var(--e-font-size-text);
+      line-height: var(--e-line-height-text);
     }
     .right-text {
       margin: 0;

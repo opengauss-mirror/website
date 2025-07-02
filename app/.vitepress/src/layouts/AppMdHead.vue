@@ -19,18 +19,12 @@ const resolveDate = (date: any) => {
     <h2 class="page-title">{{ frontmatter.title }}</h2>
     <div v-if="frontmatter.author" class="info">
       <template v-if="Array.isArray(frontmatter.author)">
-        <span v-for="item in frontmatter.author" :key="item" class="author"
-          >{{ item }}
-        </span>
+        <span v-for="item in frontmatter.author" :key="item" class="author">{{ item }} </span>
       </template>
       <span v-else class="author">{{ frontmatter.author }} </span>
-      <span v-if="frontmatter.date" class="date"
-        >{{ resolveDate(frontmatter.date) }}
-      </span>
+      <span v-if="frontmatter.date" class="date">{{ resolveDate(frontmatter.date) }} </span>
       <template v-if="Array.isArray(frontmatter.tags)">
-        <OTag v-for="item in frontmatter.tags" :key="item" size="small">{{
-          item
-        }}</OTag>
+        <OTag v-for="item in frontmatter.tags" :key="item" size="small">{{ item }}</OTag>
       </template>
       <template v-else>
         <OTag size="small">{{ frontmatter.tags }}</OTag>
@@ -42,18 +36,18 @@ const resolveDate = (date: any) => {
 <style lang="scss" scoped>
 .markdown-body-title {
   margin-bottom: 40px;
-  border-bottom: 1px solid var(--o-color-border2);
+  border-bottom: 1px solid var(--e-color-border2);
   padding-bottom: 24px;
   .page-title {
-    font-size: var(--o-font-size-h3);
-    line-height: var(--o-line-height-h3);
+    font-size: var(--e-font-size-h3);
+    line-height: var(--e-line-height-h3);
     margin: 0;
     font-weight: 500;
   }
   .info {
-    color: var(--o-color-text4);
-    font-size: var(--o-font-size-tip);
-    line-height: var(--o-line-height-tip);
+    color: var(--e-color-text4);
+    font-size: var(--e-font-size-tip);
+    line-height: var(--e-line-height-tip);
     .line {
       margin: 0 16px;
     }
@@ -75,8 +69,8 @@ const resolveDate = (date: any) => {
       margin: 0 12px;
       padding: 0 12px;
       margin-top: 8px;
-      border-left: 1px solid var(--o-color-border1);
-      border-right: 1px solid var(--o-color-border1);
+      border-left: 1px solid var(--e-color-border1);
+      border-right: 1px solid var(--e-color-border1);
     }
     .o-tag {
       margin-top: 8px;
@@ -89,8 +83,8 @@ const resolveDate = (date: any) => {
     margin-bottom: 16px;
     padding-bottom: 16px;
     .page-title {
-      font-size: var(--o-font-size-h7);
-      line-height: var(--o-line-height-h7);
+      font-size: var(--e-font-size-h7);
+      line-height: var(--e-line-height-h7);
     }
   }
 }

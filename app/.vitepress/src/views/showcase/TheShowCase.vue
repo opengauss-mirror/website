@@ -42,9 +42,7 @@ const isZh = computed(() => (lang.value === 'zh' ? true : false));
 const caseCategory = showCaseData.category;
 // 接收所有案例
 const caseListAll = computed(() => {
-  return lang.value === 'zh'
-    ? showCaseData.constList.zh
-    : showCaseData.constList.en;
+  return lang.value === 'zh' ? showCaseData.constList.zh : showCaseData.constList.en;
 });
 // 接收当前分类的所有案例
 const currentCaseListAll: any = ref([]);
@@ -64,10 +62,7 @@ const setCurrentCaseListAll = () => {
 // 当前显示的案例
 const currentCaseList = computed(() => {
   if (currentCaseListAll.value.length > pageSize.value) {
-    return currentCaseListAll.value.slice(
-      (currentPage.value - 1) * pageSize.value,
-      currentPage.value * pageSize.value
-    );
+    return currentCaseListAll.value.slice((currentPage.value - 1) * pageSize.value, currentPage.value * pageSize.value);
   } else {
     return currentCaseListAll.value;
   }
@@ -85,11 +80,7 @@ function filterCase() {
   let temp: any = [];
   if (keyWord.value) {
     caseListAll.value.forEach((item: any) => {
-      if (
-        item.summary.includes(keyWord.value) ||
-        item.title.includes(keyWord.value) ||
-        item.industry.includes(keyWord.value)
-      ) {
+      if (item.summary.includes(keyWord.value) || item.title.includes(keyWord.value) || item.industry.includes(keyWord.value)) {
         temp.push(item);
       }
     });
@@ -165,9 +156,7 @@ const imgUrl = computed(() => (id: string) => {
 });
 // 跳案例官网或者详情（type:1跳官网，2跳详情）
 const jump = (url: string, type: number) => {
-  type === 1
-    ? windowOpen(url, '_blank')
-    : windowOpen(`/${url.replace('index', '')}`, '_blank');
+  type === 1 ? windowOpen(url, '_blank') : windowOpen(`/${url.replace('index', '')}`, '_blank');
 };
 // 搜索功能
 const keyWord = ref('');
@@ -176,11 +165,7 @@ const setSearchCaseList = () => {
   if (keyWord.value) {
     let temp: any = [];
     caseListAll.value.forEach((item: any) => {
-      if (
-        item.summary.includes(keyWord.value) ||
-        item.title.includes(keyWord.value) ||
-        item.industry.includes(keyWord.value)
-      ) {
+      if (item.summary.includes(keyWord.value) || item.title.includes(keyWord.value) || item.industry.includes(keyWord.value)) {
         temp.push(item);
       }
     });
@@ -214,9 +199,7 @@ function getUrlParam() {
   } else {
     const tempIndex = parseInt(industry);
     activeIndex.value = caseCategory[tempIndex - 1] ? tempIndex : 0;
-    currentTag.value = isZh.value
-      ? caseCategory[activeIndex.value - 1].type
-      : caseCategory[activeIndex.value - 1].typeEn;
+    currentTag.value = isZh.value ? caseCategory[activeIndex.value - 1].type : caseCategory[activeIndex.value - 1].typeEn;
   }
 }
 onMounted(() => {
@@ -259,25 +242,12 @@ watch(
 </script>
 
 <template>
-  <BannerLevel2
-    :background-image="Banner"
-    :title="userCaseData.bannerTitle"
-    :illustration="illustration"
-  />
+  <BannerLevel2 :background-image="Banner" :title="userCaseData.bannerTitle" :illustration="illustration" />
   <div class="user-case">
-    <OSearch
-      v-model="keyWord"
-      class="search"
-      :placeholder="userCaseData.placeHolder"
-      @change="searchCase"
-    ></OSearch>
+    <OSearch v-model="keyWord" class="search" :placeholder="userCaseData.placeHolder" @change="searchCase"></OSearch>
     <div class="tag-box" :class="isTopNavMo ? 'tag-top' : ''">
       <TagFilter :label="userCaseData.type" class="tag-pc">
-        <OTag
-          :type="activeIndex === 0 ? 'primary' : 'text'"
-          checkable
-          @click="selectTag(0, i18n.common.ALL)"
-        >
+        <OTag :type="activeIndex === 0 ? 'primary' : 'text'" checkable @click="selectTag(0, i18n.common.ALL)">
           {{ i18n.common.ALL }}
         </OTag>
         <OTag
@@ -291,10 +261,7 @@ watch(
         </OTag>
       </TagFilter>
       <TagFilter class="tag-h5">
-        <OTag
-          :type="activeIndex === 0 ? 'primary' : 'text'"
-          @click="selectTag(0, i18n.common.ALL)"
-        >
+        <OTag :type="activeIndex === 0 ? 'primary' : 'text'" @click="selectTag(0, i18n.common.ALL)">
           {{ i18n.common.ALL }}
         </OTag>
         <OTag
@@ -308,10 +275,7 @@ watch(
         </OTag>
       </TagFilter>
     </div>
-    <p class="case-number">
-      {{ userCaseData.find1 }}{{ currentCaseListAll.length
-      }}{{ userCaseData.find2 }}
-    </p>
+    <p class="case-number">{{ userCaseData.find1 }}{{ currentCaseListAll.length }}{{ userCaseData.find2 }}</p>
     <div class="case-list">
       <OCard
         v-for="(item, index) in currentCaseList"
@@ -324,34 +288,17 @@ watch(
           <h4>{{ item.company }}</h4>
           <div class="detail" :class="showIndex === index ? 'all' : ''">
             <p ref="descRefs" class="two-lines">{{ item.summary }}</p>
-            <OIcon
-              v-if="showList[index]"
-              :class="showIndex === index ? 'show' : ''"
-              @click="toggleAll(index)"
-            >
+            <OIcon v-if="showList[index]" :class="showIndex === index ? 'show' : ''" @click="toggleAll(index)">
               <IconChevronRight />
             </OIcon>
           </div>
-          <OButton
-            v-if="item.detail"
-            animation
-            size="mini"
-            class="more-btn"
-            type="primary"
-            @click="jump(item.path, 2)"
-          >
+          <OButton v-if="item.detail" animation size="mini" class="more-btn" type="primary" @click="jump(item.path, 2)">
             {{ userCaseData.buttonMore }}
             <template #suffixIcon>
               <IconArrowRight class="icon-arror" />
             </template>
           </OButton>
-          <OButton
-            v-if="item.officialpath"
-            animation
-            size="mini"
-            class="website-btn"
-            @click="jump(item.officialpath, 1)"
-          >
+          <OButton v-if="item.officialpath" animation size="mini" class="website-btn" @click="jump(item.officialpath, 1)">
             {{ userCaseData.button }}
             <template #suffixIcon>
               <IconArrowRight class="icon-arror" />
@@ -380,12 +327,7 @@ watch(
           <span class="pagination-slot">{{ currentPage }}/{{ totalPage }}</span>
         </OPagination>
       </ClientOnly>
-      <AppPaginationMo
-        :current-page="currentPage"
-        :total-page="totalPage"
-        @turn-page="turnPage"
-        @jump-page="jumpPage"
-      />
+      <AppPaginationMo :current-page="currentPage" :total-page="totalPage" @turn-page="turnPage" @jump-page="jumpPage" />
     </div>
   </div>
 </template>
@@ -403,7 +345,7 @@ $color: #fff;
   margin: 0 auto;
   @media (max-width: 768px) {
     padding: 0 0 40px 0;
-    background-color: var(--o-color-bg1);
+    background-color: var(--e-color-bg1);
   }
   :deep(.search) {
     height: 48px;
@@ -423,7 +365,7 @@ $color: #fff;
   }
 }
 .tag-box {
-  margin: var(--o-spacing-h4) 0 0;
+  margin: var(--e-spacing-h4) 0 0;
   :deep(.el-card__body) {
     padding-top: 0;
     padding-bottom: 0;
@@ -436,8 +378,8 @@ $color: #fff;
   }
   .tag-pc {
     width: 100%;
-    padding: var(--o-spacing-h5) var(--o-spacing-h2);
-    box-shadow: var(--o-shadow-l1);
+    padding: var(--e-spacing-h5) var(--e-spacing-h2);
+    box-shadow: var(--e-shadow-l1);
     @media (max-width: 768px) {
       display: none;
     }
@@ -445,7 +387,7 @@ $color: #fff;
   .tag-h5 {
     display: none;
     width: 100%;
-    box-shadow: var(--o-shadow-l1);
+    box-shadow: var(--e-shadow-l1);
     padding: 0 16px;
     @media (max-width: 768px) {
       display: block;
@@ -472,13 +414,13 @@ $color: #fff;
   }
 }
 .page-box {
-  margin: var(--o-spacing-h2) 0 0;
+  margin: var(--e-spacing-h2) 0 0;
 }
 .case-number {
-  margin: var(--o-spacing-h4) 0 0;
-  font-size: var(--o-font-size-tip);
-  line-height: var(--o-line-height-tip);
-  color: var(--o-color-text1);
+  margin: var(--e-spacing-h4) 0 0;
+  font-size: var(--e-font-size-tip);
+  line-height: var(--e-line-height-tip);
+  color: var(--e-color-text1);
   @media (max-width: 768px) {
     display: none;
   }
@@ -486,17 +428,16 @@ $color: #fff;
 .case-list {
   display: grid;
   width: 100%;
-  margin-top: var(--o-spacing-h2);
+  margin-top: var(--e-spacing-h2);
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: var(--o-spacing-h4);
+  grid-gap: var(--e-spacing-h4);
   :deep(.el-card__body) {
-    padding: var(--o-spacing-h2) var(--o-spacing-h4) var(--o-spacing-h2)
-      var(--o-spacing-h2);
+    padding: var(--e-spacing-h2) var(--e-spacing-h4) var(--e-spacing-h2) var(--e-spacing-h2);
     height: 198px;
     display: flex;
     align-items: center;
     @media (max-width: 768px) {
-      padding: var(--o-spacing-h5);
+      padding: var(--e-spacing-h5);
       height: auto;
     }
   }
@@ -505,32 +446,32 @@ $color: #fff;
   }
   .type {
     text-align: center;
-    font-size: var(--o-font-size-tip);
-    line-height: var(--o-line-height-tip);
+    font-size: var(--e-font-size-tip);
+    line-height: var(--e-line-height-tip);
     color: #ad9cd3;
   }
   h4 {
-    font-size: var(--o-font-size-h7);
-    line-height: var(--o-line-height-h7);
+    font-size: var(--e-font-size-h7);
+    line-height: var(--e-line-height-h7);
     color: $color;
     font-weight: 500;
     @media (max-width: 768px) {
-      font-size: var(--o-font-size-text);
-      line-height: var(--o-line-height-text);
+      font-size: var(--e-font-size-text);
+      line-height: var(--e-line-height-text);
     }
   }
   .detail {
     position: relative;
     max-height: 44px;
-    margin: var(--o-spacing-h10) 0 var(--o-spacing-h6);
-    font-size: var(--o-font-size-text);
-    line-height: var(--o-line-height-text);
+    margin: var(--e-spacing-h10) 0 var(--e-spacing-h6);
+    font-size: var(--e-font-size-text);
+    line-height: var(--e-line-height-text);
     color: $color;
     transition: all 0.3s;
 
     @media (max-width: 768px) {
-      font-size: var(--o-font-size-tip);
-      line-height: var(--o-line-height-tip);
+      font-size: var(--e-font-size-tip);
+      line-height: var(--e-line-height-tip);
       max-height: inherit;
       text-align: justify;
     }
@@ -593,8 +534,8 @@ $color: #fff;
     }
   }
   .more-btn {
-    margin-right: var(--o-spacing-h8);
-    margin-bottom: var(--o-spacing-h8);
+    margin-right: var(--e-spacing-h8);
+    margin-bottom: var(--e-spacing-h8);
     color: #fff;
   }
   .website-btn {
@@ -603,7 +544,7 @@ $color: #fff;
   }
   @media screen and (max-width: 1280px) {
     grid-template-columns: repeat(2, 1fr);
-    margin-top: var(--o-spacing-h2);
+    margin-top: var(--e-spacing-h2);
   }
   @media screen and (max-width: 760px) {
     grid-template-columns: repeat(1, 1fr);

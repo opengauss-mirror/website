@@ -369,8 +369,8 @@ const submitMeetupForm = async (formEl: FormInstance | undefined) => {
 }
 
 .meetup-form {
-  background: var(--o-color-bg2);
-  box-shadow: var(--o-shadow-l1);
+  background: var(--e-color-bg2);
+  box-shadow: var(--e-shadow-l1);
   padding: 40px;
   @media (max-width: 1100px) {
     padding: 16px;
@@ -381,7 +381,7 @@ const submitMeetupForm = async (formEl: FormInstance | undefined) => {
     font-weight: 500;
     margin: 0 0 40px;
     text-align: center;
-    color: var(--o-color-text1);
+    color: var(--e-color-text1);
     @media (max-width: 1100px) {
       font-size: 24px;
       margin: 24px 0;
@@ -430,10 +430,10 @@ const submitMeetupForm = async (formEl: FormInstance | undefined) => {
   }
   .el-input__wrapper {
     border-radius: 0;
-    box-shadow: 0 0 0 1px var(--o-color-border1) inset;
+    box-shadow: 0 0 0 1px var(--e-color-border1) inset;
     height: 36px;
     line-height: 36px;
-    background: var(--o-color-bg2);
+    background: var(--e-color-bg2);
   }
 }
 </style>

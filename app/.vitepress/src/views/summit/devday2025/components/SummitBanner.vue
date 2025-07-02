@@ -102,14 +102,14 @@ const onButtonClick = () => {
   .banner-btn {
     --o-button-padding-small: 8px 27px;
     border-radius: 41px;
-    margin-top: var(--o-spacing-h4);
+    margin-top: var(--e-spacing-h4);
     transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
   }
   @media (max-width: 767px) {
     .banner-btn {
       --o-button-padding-small: 8px 24px;
       border-radius: 41px;
-      margin-top: var(--o-spacing-h6);
+      margin-top: var(--e-spacing-h6);
       margin-bottom: 38px;
     }
   }

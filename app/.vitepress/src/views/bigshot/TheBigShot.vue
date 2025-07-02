@@ -107,20 +107,20 @@ const activeMobile = ref(activeName.value);
 .video-mobile {
   display: none;
   h2 {
-    font-size: var(--o-font-size-h4);
-    line-height: var(--o-line-height-h4);
+    font-size: var(--e-font-size-h4);
+    line-height: var(--e-line-height-h4);
     font-weight: 500;
-    color: var(--o-color-text1);
+    color: var(--e-color-text1);
     text-align: center;
-    margin: var(--o-spacing-h2) 0 var(--o-spacing-h4);
+    margin: var(--e-spacing-h2) 0 var(--e-spacing-h4);
   }
   .o-collapse {
     :deep(.el-collapse-item__content) {
-      padding: var(--o-spacing-h5);
+      padding: var(--e-spacing-h5);
     }
     .caption {
-      font-size: var(--o-font-size-text);
-      line-height: var(--o-line-height-text);
+      font-size: var(--e-font-size-text);
+      line-height: var(--e-line-height-text);
     }
   }
   @media screen and (max-width: 1100px) {
@@ -129,7 +129,7 @@ const activeMobile = ref(activeName.value);
 }
 .video-item {
   &:not(:last-child) {
-    margin-bottom: var(--o-spacing-h5);
+    margin-bottom: var(--e-spacing-h5);
   }
 
   :deep(.el-card__body) {
@@ -144,10 +144,10 @@ const activeMobile = ref(activeName.value);
       height: 98px;
       display: flex;
       align-items: center;
-      padding: var(--o-spacing-h5);
+      padding: var(--e-spacing-h5);
       .title {
-        font-size: var(--o-font-size-h8);
-        line-height: var(--o-line-height-h8);
+        font-size: var(--e-font-size-h8);
+        line-height: var(--e-line-height-h8);
         color: #fff;
         text-overflow: ellipsis;
         display: -webkit-box;
@@ -158,11 +158,11 @@ const activeMobile = ref(activeName.value);
     }
 
     .caption {
-      padding: var(--o-spacing-h5);
-      font-size: var(--o-font-size-text);
-      line-height: var(--o-line-height-text);
+      padding: var(--e-spacing-h5);
+      font-size: var(--e-font-size-text);
+      line-height: var(--e-line-height-text);
       font-weight: 300;
-      color: var(--o-color-text1);
+      color: var(--e-color-text1);
       box-sizing: content-box;
     }
   }

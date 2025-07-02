@@ -11,13 +11,18 @@ export default defineConfig({
   resolve: {
     alias: {
       '@/': `${path.resolve(__dirname, './.vitepress/src')}/`,
+      '~@/': `${path.resolve(__dirname, './.vitepress/src-new')}/`,
     },
   },
   css: {
     preprocessorOptions: {
       scss: {
         charset: false,
-        additionalData: `@use "@/shared/styles/mixin/common.scss" as *;`,
+        additionalData: `
+        @use "~@/assets/style/mixin/screen.scss" as *;
+        @use "~@/assets/style/mixin/font.scss" as *;
+        @use "~@/assets/style/mixin/common.scss" as *;
+      `,
       },
     },
   },
@@ -32,6 +37,7 @@ export default defineConfig({
         float: FileSystemIconLoader(path.resolve(__dirname, './.vitepress/src/assets/category/float')),
         migration: FileSystemIconLoader(path.resolve(__dirname, './.vitepress/src/assets/category/migration')),
         teamup: FileSystemIconLoader(path.resolve(__dirname, './.vitepress/src/assets/category/team-up')),
+        'app-new': FileSystemIconLoader(path.resolve(__dirname, './.vitepress/src-new/assets/svg-icons')),
       },
     }),
     viteStaticCopy({

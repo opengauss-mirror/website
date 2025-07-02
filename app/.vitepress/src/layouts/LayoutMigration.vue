@@ -12,11 +12,7 @@ const migrationInfo = {
 
 <template>
   <div class="bread">
-    <BreadCrumbs
-      :bread1="migrationInfo.name"
-      :bread2="frontmatter.title"
-      :link1="migrationInfo.link"
-    />
+    <BreadCrumbs :bread1="migrationInfo.name" :bread2="frontmatter.title" :link1="migrationInfo.link" />
   </div>
 
   <div class="markdown migration-markdown">
@@ -26,9 +22,9 @@ const migrationInfo = {
 
 <style lang="scss" scoped>
 .markdown {
-  margin-bottom: var(--o-spacing-h1);
+  margin-bottom: var(--e-spacing-h1);
   @media (max-width: 1100px) {
-    margin-bottom: var(--o-spacing-h2);
+    margin-bottom: var(--e-spacing-h2);
   }
 
   :deep(h1) {
@@ -55,17 +51,17 @@ const migrationInfo = {
 
 @include in-dark {
   .migration-markdown {
-    --migration-case-table-border-color: var(--o-color-table);
-    --migration-case-thead-color: var(--o-color-bg4);
+    --migration-case-table-border-color: var(--e-color-table);
+    --migration-case-thead-color: var(--e-color-bg4);
   }
 }
 
 .migration-markdown {
   --migration-case-table-border-color: rgba(0, 0, 0, 0.1);
   --migration-case-thead-color: #e8eaed;
-  margin-bottom: var(--o-spacing-h1);
+  margin-bottom: var(--e-spacing-h1);
   @media (max-width: 1100px) {
-    margin-bottom: var(--o-spacing-h2);
+    margin-bottom: var(--e-spacing-h2);
   }
 
   :deep(.copy-icon) {
@@ -85,17 +81,17 @@ const migrationInfo = {
 
   :deep(table) {
     font-size: 16px;
-    color: var(--o-color-text1);
+    color: var(--e-color-text1);
     line-height: 24px;
   }
 
   :deep(table th) {
     background: #e8eaed;
-    color: var(--o-color-text1);
+    color: var(--e-color-text1);
   }
 
   :deep(table td) {
-    color: var(--o-color-text1);
+    color: var(--e-color-text1);
   }
 
   :deep(table th:first-of-type) {
@@ -132,7 +128,7 @@ const migrationInfo = {
     }
 
     :deep(table tr td) {
-      padding: 0 var(--o-spacing-h8);
+      padding: 0 var(--e-spacing-h8);
     }
   }
 
@@ -163,41 +159,41 @@ const migrationInfo = {
   }
 
   :deep(h2) {
-    margin-top: var(--o-spacing-h2);
-    margin-bottom: var(--o-spacing-h3);
-    font-size: var(--o-font-size-h5);
-    color: var(--o-color-text1);
-    line-height: var(--o-line-height-h5);
+    margin-top: var(--e-spacing-h2);
+    margin-bottom: var(--e-spacing-h3);
+    font-size: var(--e-font-size-h5);
+    color: var(--e-color-text1);
+    line-height: var(--e-line-height-h5);
 
     @media screen and (max-width: 1100px) {
-      margin-top: var(--o-spacing-h5);
-      margin-bottom: var(--o-spacing-h6);
-      font-size: var(--o-font-size-h8);
-      line-height: var(--o-line-height-h8);
+      margin-top: var(--e-spacing-h5);
+      margin-bottom: var(--e-spacing-h6);
+      font-size: var(--e-font-size-h8);
+      line-height: var(--e-line-height-h8);
     }
   }
 
   :deep(p) {
-    font-size: var(--o-font-size-h8);
-    color: var(--o-color-text1);
-    line-height: var(--o-line-height-h8);
+    font-size: var(--e-font-size-h8);
+    color: var(--e-color-text1);
+    line-height: var(--e-line-height-h8);
 
     @media screen and (max-width: 1100px) {
-      font-size: var(--o-font-size-text);
-      line-height: var(--o-line-height-text);
+      font-size: var(--e-font-size-text);
+      line-height: var(--e-line-height-text);
     }
   }
 
   :deep(pre) {
     padding: 12px;
-    font-size: var(--o-font-size-h8);
+    font-size: var(--e-font-size-h8);
     color: #202329;
-    line-height: var(--o-line-height-h8);
+    line-height: var(--e-line-height-h8);
     box-shadow: none;
     border-radius: 4px;
 
     @media screen and (max-width: 1100px) {
-      font-size: var(--o-font-size-text);
+      font-size: var(--e-font-size-text);
     }
   }
 }

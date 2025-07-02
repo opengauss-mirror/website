@@ -349,11 +349,11 @@ const closeVideo = () => {
   padding-bottom: 0;
 
   .title {
-    padding: 80px 0 var(--o-spacing-h2) 0;
-    color: var(--o-color-text1);
+    padding: 80px 0 var(--e-spacing-h2) 0;
+    color: var(--e-color-text1);
     text-align: center;
-    font-size: var(--o-font-size-h3);
-    line-height: var(--o-line-height-h3);
+    font-size: var(--e-font-size-h3);
+    line-height: var(--e-line-height-h3);
     font-weight: 300;
 
     @media screen and (max-width: 1280px) {
@@ -371,23 +371,23 @@ const closeVideo = () => {
 
   .sub-title {
     max-width: 1080px;
-    margin-bottom: var(--o-spacing-h2);
-    font-size: var(--o-font-size-h7);
-    color: var(--o-color-text1);
-    line-height: var(--o-line-height-h7);
+    margin-bottom: var(--e-spacing-h2);
+    font-size: var(--e-font-size-h7);
+    color: var(--e-color-text1);
+    line-height: var(--e-line-height-h7);
     font-weight: 200;
     text-align: center;
 
     @media screen and (max-width: 1280px) {
-      margin-bottom: var(--o-spacing-h4);
-      font-size: var(--o-font-size-h7);
-      line-height: var(--o-line-height-h7);
+      margin-bottom: var(--e-spacing-h4);
+      font-size: var(--e-font-size-h7);
+      line-height: var(--e-line-height-h7);
     }
 
     @media screen and (max-width: 760px) {
-      margin-bottom: var(--o-spacing-h6);
-      font-size: var(--o-font-size-tip);
-      line-height: var(--o-line-height-h8);
+      margin-bottom: var(--e-spacing-h6);
+      font-size: var(--e-font-size-tip);
+      line-height: var(--e-line-height-h8);
     }
   }
 
@@ -395,75 +395,75 @@ const closeVideo = () => {
     .advantage-card-wrap {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: var(--o-spacing-h3);
+      gap: var(--e-spacing-h3);
 
       @media screen and (max-width: 1280px) {
         grid-template-columns: repeat(2, 1fr);
-        gap: var(--o-spacing-h5);
+        gap: var(--e-spacing-h5);
       }
 
       @media screen and (max-width: 760px) {
         grid-template-columns: 1fr;
-        gap: var(--o-spacing-h6);
+        gap: var(--e-spacing-h6);
       }
     }
 
     .advantage-card {
       display: flex;
-      padding: var(--o-spacing-h4) var(--o-spacing-h3);
-      background: var(--o-color-bg2);
+      padding: var(--e-spacing-h4) var(--e-spacing-h3);
+      background: var(--e-color-bg2);
 
       @media screen and (max-width: 1280px) {
-        padding: var(--o-spacing-h5) var(--o-spacing-h4);
+        padding: var(--e-spacing-h5) var(--e-spacing-h4);
       }
 
       .card-icon {
         font-size: 40px;
-        margin-right: var(--o-spacing-h5);
-        color: var(--o-color-text1);
+        margin-right: var(--e-spacing-h5);
+        color: var(--e-color-text1);
 
         @media screen and (max-width: 1280px) {
           font-size: 32px;
-          margin-right: var(--o-spacing-h6);
+          margin-right: var(--e-spacing-h6);
         }
 
         @media screen and (max-width: 760px) {
           font-size: 24px;
-          margin-right: var(--o-spacing-h7);
+          margin-right: var(--e-spacing-h7);
         }
       }
 
       .card-title {
-        font-size: var(--o-font-size-h5);
-        color: var(--o-color-text1);
-        line-height: var(--o-line-height-h5);
+        font-size: var(--e-font-size-h5);
+        color: var(--e-color-text1);
+        line-height: var(--e-line-height-h5);
         font-weight: 500;
 
         @media screen and (max-width: 1280px) {
-          font-size: var(--o-font-size-h6);
-          line-height: var(--o-line-height-h6);
+          font-size: var(--e-font-size-h6);
+          line-height: var(--e-line-height-h6);
         }
 
         @media screen and (max-width: 760px) {
-          font-size: var(--o-font-size-h8);
-          line-height: var(--o-line-height-h8);
+          font-size: var(--e-font-size-h8);
+          line-height: var(--e-line-height-h8);
         }
       }
 
       .card-desc {
-        margin-top: var(--o-spacing-h8);
-        font-size: var(--o-font-size-text);
+        margin-top: var(--e-spacing-h8);
+        font-size: var(--e-font-size-text);
         color: var(--migration-sub-text-color);
-        line-height: var(--o-line-height-text);
+        line-height: var(--e-line-height-text);
 
         @media screen and (max-width: 1280px) {
-          margin-top: var(--o-spacing-h9);
+          margin-top: var(--e-spacing-h9);
         }
 
         @media screen and (max-width: 760px) {
-          margin-top: var(--o-spacing-h10);
-          font-size: var(--o-font-size-tip);
-          line-height: var(--o-line-height-tip);
+          margin-top: var(--e-spacing-h10);
+          font-size: var(--e-font-size-tip);
+          line-height: var(--e-line-height-tip);
         }
       }
     }
@@ -476,11 +476,11 @@ const closeVideo = () => {
 
     .step-content-container {
       width: 100%;
-      padding: 0 var(--o-spacing-h3);
-      background: var(--o-color-bg2);
+      padding: 0 var(--e-spacing-h3);
+      background: var(--e-color-bg2);
 
       @media screen and (max-width: 1280px) {
-        padding: 0 var(--o-spacing-h5);
+        padding: 0 var(--e-spacing-h5);
       }
 
       @media screen and (max-width: 760px) {
@@ -488,13 +488,13 @@ const closeVideo = () => {
       }
 
       .step-list {
-        padding-top: var(--o-spacing-h2);
+        padding-top: var(--e-spacing-h2);
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         display: flex;
         justify-content: center;
 
         @media screen and (max-width: 1280px) {
-          padding-top: var(--o-spacing-h4);
+          padding-top: var(--e-spacing-h4);
         }
 
         li {
@@ -515,16 +515,16 @@ const closeVideo = () => {
 
           .o-icon {
             font-size: 64px;
-            color: var(--o-color-text1);
+            color: var(--e-color-text1);
           }
 
           .step-icon {
             font-size: 64px;
-            color: var(--o-color-text1);
+            color: var(--e-color-text1);
 
             @media screen and (max-width: 1280px) {
               font-size: 48px;
-              margin-bottom: var(--o-spacing-h9);
+              margin-bottom: var(--e-spacing-h9);
             }
           }
 
@@ -546,13 +546,13 @@ const closeVideo = () => {
           }
 
           .name {
-            font-size: var(--o-font-size-h6);
+            font-size: var(--e-font-size-h6);
             color: var(--migration-sub-text-color);
-            line-height: var(--o-line-height-h6);
+            line-height: var(--e-line-height-h6);
 
             @media screen and (max-width: 1280px) {
-              font-size: var(--o-font-size-h7);
-              line-height: var(--o-line-height-h7);
+              font-size: var(--e-font-size-h7);
+              line-height: var(--e-line-height-h7);
             }
           }
 
@@ -582,115 +582,115 @@ const closeVideo = () => {
 
       .step-content {
         .step-desc {
-          padding: var(--o-spacing-h4) 0;
-          font-size: var(--o-font-size-text);
-          color: var(--o-color-text1);
+          padding: var(--e-spacing-h4) 0;
+          font-size: var(--e-font-size-text);
+          color: var(--e-color-text1);
           text-align: center;
-          line-height: var(--o-line-height-text);
+          line-height: var(--e-line-height-text);
         }
 
         .step-card {
-          padding: var(--o-spacing-h4) var(--o-spacing-h3);
+          padding: var(--e-spacing-h4) var(--e-spacing-h3);
           background: var(--migration-step-card-bg-color);
 
           @media screen and (max-width: 1280px) {
-            padding: var(--o-spacing-h5) var(--o-spacing-h4);
+            padding: var(--e-spacing-h5) var(--e-spacing-h4);
           }
 
           &-title {
-            font-size: var(--o-font-size-h6);
-            color: var(--o-color-text1);
-            line-height: var(--o-line-height-h6);
+            font-size: var(--e-font-size-h6);
+            color: var(--e-color-text1);
+            line-height: var(--e-line-height-h6);
             font-weight: 500;
           }
 
           &-desc {
-            margin-top: var(--o-spacing-h6);
-            font-size: var(--o-font-size-text);
+            margin-top: var(--e-spacing-h6);
+            font-size: var(--e-font-size-text);
             color: var(--migration-sub-text-color);
-            line-height: var(--o-line-height-text);
+            line-height: var(--e-line-height-text);
           }
 
           &-line {
             height: 1px;
-            margin: var(--o-spacing-h4) 0;
+            margin: var(--e-spacing-h4) 0;
             background-color: #0000000a;
 
             @media screen and (max-width: 1280px) {
-              margin: var(--o-spacing-h5) 0;
+              margin: var(--e-spacing-h5) 0;
             }
           }
 
           &-feature-title {
-            padding-bottom: var(--o-spacing-h6);
-            font-size: var(--o-font-size-text);
-            color: var(--o-color-text1);
-            line-height: var(--o-line-height-text);
+            padding-bottom: var(--e-spacing-h6);
+            font-size: var(--e-font-size-text);
+            color: var(--e-color-text1);
+            line-height: var(--e-line-height-text);
           }
 
           &-feature-wrap {
             display: flex;
             align-items: first baseline;
-            padding: var(--o-spacing-h6) 0;
+            padding: var(--e-spacing-h6) 0;
 
             @media screen and (max-width: 1280px) {
-              padding: var(--o-spacing-h7) 0;
+              padding: var(--e-spacing-h7) 0;
             }
           }
 
           &-feature-img {
-            margin-right: var(--o-spacing-h8);
+            margin-right: var(--e-spacing-h8);
 
             @media screen and (max-width: 1280px) {
-              margin-right: var(--o-spacing-h9);
+              margin-right: var(--e-spacing-h9);
             }
           }
 
           &-feature-sub-title {
-            font-size: var(--o-font-size-text);
+            font-size: var(--e-font-size-text);
             color: var(--migration-sub-text-color);
-            line-height: var(--o-line-height-text);
+            line-height: var(--e-line-height-text);
           }
 
           &-feature-number {
             @extend .step-card-feature-sub-title;
-            margin-right: var(--o-spacing-h8);
+            margin-right: var(--e-spacing-h8);
 
             @media screen and (max-width: 1280px) {
-              margin-right: var(--o-spacing-h9);
+              margin-right: var(--e-spacing-h9);
             }
           }
 
           &-feature-desc {
-            margin-top: var(--o-spacing-h10);
-            font-size: var(--o-font-size-text);
+            margin-top: var(--e-spacing-h10);
+            font-size: var(--e-font-size-text);
             color: var(--migration-desc-text-color);
-            line-height: var(--o-line-height-text);
+            line-height: var(--e-line-height-text);
           }
         }
 
         .step-view-detail {
-          margin-top: var(--o-spacing-h3);
-          padding: var(--o-spacing-h3) 0;
+          margin-top: var(--e-spacing-h3);
+          padding: var(--e-spacing-h3) 0;
           border-top: 1px solid rgba(0, 0, 0, 0.1);
           text-align: center;
-          color: var(--o-color-text1);
+          color: var(--e-color-text1);
           line-height: 22px;
 
           .o-button {
             padding: 0;
-            font-size: var(--o-font-size-text);
-            line-height: var(--o-line-height-text);
+            font-size: var(--e-font-size-text);
+            line-height: var(--e-line-height-text);
 
             svg {
-              color: var(--o-color-brand1);
-              width: var(--o-font-size-h8);
-              height: var(--o-font-size-h8);
+              color: var(--e-color-brand1);
+              width: var(--e-font-size-h8);
+              height: var(--e-font-size-h8);
             }
           }
 
           @media screen and (max-width: 1280px) {
-            padding: var(--o-spacing-h4) 0;
+            padding: var(--e-spacing-h4) 0;
           }
         }
       }
@@ -698,11 +698,11 @@ const closeVideo = () => {
       .step-migration-evaluate {
         display: grid;
         grid-template-columns: 482px 1fr;
-        gap: var(--o-spacing-h3);
+        gap: var(--e-spacing-h3);
 
         @media screen and (max-width: 1280px) {
           grid-template-columns: 382px 1fr;
-          gap: var(--o-spacing-h4);
+          gap: var(--e-spacing-h4);
         }
 
         .step-card:first-child {
@@ -713,48 +713,48 @@ const closeVideo = () => {
       .step-app-adaptation {
         display: grid;
         grid-template-columns: 1fr;
-        gap: var(--o-spacing-h3);
+        gap: var(--e-spacing-h3);
 
         @media screen and (max-width: 1280px) {
-          gap: var(--o-spacing-h4);
+          gap: var(--e-spacing-h4);
         }
       }
 
       .step-migration-data {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: var(--o-spacing-h3);
+        gap: var(--e-spacing-h3);
 
         @media screen and (max-width: 1280px) {
-          gap: var(--o-spacing-h4);
+          gap: var(--e-spacing-h4);
         }
       }
 
       .step-migration-data-requirement-block {
-        margin: var(--o-spacing-h3) 0 var(--o-spacing-h5);
-        padding: var(--o-spacing-h6) 0;
+        margin: var(--e-spacing-h3) 0 var(--e-spacing-h5);
+        padding: var(--e-spacing-h6) 0;
         text-align: center;
         background: var(--migration-step-card-bg-color);
-        font-size: var(--o-font-size-h6);
-        color: var(--o-color-text1);
-        line-height: var(--o-line-height-h6);
+        font-size: var(--e-font-size-h6);
+        color: var(--e-color-text1);
+        line-height: var(--e-line-height-h6);
         font-weight: 500;
       }
 
       .step-migration-data-requirement {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        padding: 0 var(--o-spacing-h3);
-        column-gap: var(--o-spacing-h1);
+        padding: 0 var(--e-spacing-h3);
+        column-gap: var(--e-spacing-h1);
       }
 
       .step-test-running {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: var(--o-spacing-h3);
+        gap: var(--e-spacing-h3);
 
         @media screen and (max-width: 1280px) {
-          gap: var(--o-spacing-h4);
+          gap: var(--e-spacing-h4);
         }
 
         .step-card:first-child {
@@ -768,12 +768,12 @@ const closeVideo = () => {
 
       .step-produce {
         @media screen and (max-width: 1280px) {
-          gap: var(--o-spacing-h4);
+          gap: var(--e-spacing-h4);
         }
 
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: var(--o-spacing-h3);
+        gap: var(--e-spacing-h3);
       }
     }
   }
@@ -782,21 +782,21 @@ const closeVideo = () => {
     .video-card-wrap {
       display: grid;
       grid-template-columns: 1fr;
-      gap: var(--o-spacing-h2);
+      gap: var(--e-spacing-h2);
 
       .video-card {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: var(--o-spacing-h2);
-        background: var(--o-color-bg2);
+        padding: var(--e-spacing-h2);
+        background: var(--e-color-bg2);
 
         @media screen and (max-width: 1280px) {
-          padding: var(--o-spacing-h4);
+          padding: var(--e-spacing-h4);
         }
 
         @media screen and (max-width: 760px) {
-          padding: var(--o-spacing-h5);
+          padding: var(--e-spacing-h5);
         }
 
         &-icon {
@@ -814,47 +814,47 @@ const closeVideo = () => {
         &-left {
           display: flex;
           align-items: center;
-          font-size: var(--o-font-size-h5);
-          color: var(--o-color-text1);
-          line-height: var(--o-line-height-h5);
+          font-size: var(--e-font-size-h5);
+          color: var(--e-color-text1);
+          line-height: var(--e-line-height-h5);
           font-weight: 500;
 
           @media screen and (max-width: 1280px) {
-            font-size: var(--o-font-size-h7);
-            line-height: var(--o-line-height-h7);
+            font-size: var(--e-font-size-h7);
+            line-height: var(--e-line-height-h7);
           }
 
           @media screen and (max-width: 760px) {
-            font-size: var(--o-font-size-text);
-            line-height: var(--o-font-size-text);
+            font-size: var(--e-font-size-text);
+            line-height: var(--e-font-size-text);
           }
 
           &-title {
-            margin-left: var(--o-spacing-h5);
+            margin-left: var(--e-spacing-h5);
 
             @media screen and (max-width: 1280px) {
-              margin-left: var(--o-spacing-h7);
+              margin-left: var(--e-spacing-h7);
             }
 
             @media screen and (max-width: 760px) {
-              margin-left: var(--o-spacing-h9);
+              margin-left: var(--e-spacing-h9);
             }
           }
         }
 
         .play-video-btn {
-          padding: var(--o-spacing-h8) var(--o-spacing-h4);
+          padding: var(--e-spacing-h8) var(--e-spacing-h4);
 
           @media screen and (max-width: 1280px) {
-            padding: var(--o-spacing-h9) var(--o-spacing-h5);
+            padding: var(--e-spacing-h9) var(--e-spacing-h5);
           }
 
           @media screen and (max-width: 760px) {
-            padding: var(--o-spacing-h10) var(--o-spacing-h6);
+            padding: var(--e-spacing-h10) var(--e-spacing-h6);
           }
 
           &-text {
-            margin-right: var(--o-spacing-h8);
+            margin-right: var(--e-spacing-h8);
           }
         }
 
@@ -872,13 +872,13 @@ const closeVideo = () => {
       flex-wrap: wrap;
 
       :deep(.el-card__body) {
-        padding: var(--o-spacing-h2) var(--o-spacing-h4) var(--o-spacing-h2) var(--o-spacing-h2);
+        padding: var(--e-spacing-h2) var(--e-spacing-h4) var(--e-spacing-h2) var(--e-spacing-h2);
         height: 198px;
         display: flex;
         align-items: center;
 
         @media (max-width: 768px) {
-          padding: var(--o-spacing-h5);
+          padding: var(--e-spacing-h5);
           height: auto;
         }
       }
@@ -892,19 +892,19 @@ const closeVideo = () => {
         color: #fff;
 
         &-title {
-          font-size: var(--o-font-size-h7);
-          line-height: var(--o-line-height-h7);
+          font-size: var(--e-font-size-h7);
+          line-height: var(--e-line-height-h7);
           font-weight: 500;
           @media (max-width: 768px) {
-            font-size: var(--o-font-size-text);
-            line-height: var(--o-line-height-text);
+            font-size: var(--e-font-size-text);
+            line-height: var(--e-line-height-text);
           }
         }
 
         &-detail {
-          font-size: var(--o-font-size-text);
-          line-height: var(--o-line-height-text);
-          margin: var(--o-spacing-h10) 34px var(--o-spacing-h6) 0;
+          font-size: var(--e-font-size-text);
+          line-height: var(--e-line-height-text);
+          margin: var(--e-spacing-h10) 34px var(--e-spacing-h6) 0;
           text-overflow: ellipsis;
           display: -webkit-box;
           -webkit-box-orient: vertical;
@@ -914,8 +914,8 @@ const closeVideo = () => {
         }
 
         .more-btn {
-          margin-right: var(--o-spacing-h8);
-          margin-bottom: var(--o-spacing-h8);
+          margin-right: var(--e-spacing-h8);
+          margin-bottom: var(--e-spacing-h8);
         }
 
         .website-btn {
@@ -940,8 +940,8 @@ const closeVideo = () => {
 
         .case-type {
           margin-top: 3px;
-          font-size: var(--o-font-size-tip);
-          line-height: var(--o-line-height-tip);
+          font-size: var(--e-font-size-tip);
+          line-height: var(--e-line-height-tip);
           color: #ad9cd3;
         }
       }
@@ -952,30 +952,30 @@ const closeVideo = () => {
     .interactive-card-wrap {
       display: grid;
       grid-template-columns: 1fr;
-      gap: var(--o-spacing-h3);
+      gap: var(--e-spacing-h3);
 
       @media screen and (max-width: 1280px) {
-        gap: var(--o-spacing-h5);
+        gap: var(--e-spacing-h5);
       }
 
       @media screen and (max-width: 760px) {
-        gap: var(--o-spacing-h6);
+        gap: var(--e-spacing-h6);
       }
 
       .interactive-card {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: var(--o-spacing-h2);
-        background: var(--o-color-bg2);
-        color: var(--o-color-text1);
+        padding: var(--e-spacing-h2);
+        background: var(--e-color-bg2);
+        color: var(--e-color-text1);
 
         @media screen and (max-width: 1280px) {
-          padding: var(--o-spacing-h4);
+          padding: var(--e-spacing-h4);
         }
 
         @media screen and (max-width: 760px) {
-          padding: var(--o-spacing-h5);
+          padding: var(--e-spacing-h5);
         }
 
         &-icon {
@@ -994,29 +994,29 @@ const closeVideo = () => {
           flex: 1;
           display: flex;
           align-items: center;
-          font-size: var(--o-font-size-h5);
-          line-height: var(--o-line-height-h5);
+          font-size: var(--e-font-size-h5);
+          line-height: var(--e-line-height-h5);
           font-weight: 500;
 
           @media screen and (max-width: 1280px) {
-            font-size: var(--o-font-size-h7);
-            line-height: var(--o-line-height-h7);
+            font-size: var(--e-font-size-h7);
+            line-height: var(--e-line-height-h7);
           }
 
           @media screen and (max-width: 760px) {
-            font-size: var(--o-font-size-text);
-            line-height: var(--o-font-size-text);
+            font-size: var(--e-font-size-text);
+            line-height: var(--e-font-size-text);
           }
 
           &-title {
-            margin-left: var(--o-spacing-h5);
+            margin-left: var(--e-spacing-h5);
 
             @media screen and (max-width: 1280px) {
-              margin-left: var(--o-spacing-h7);
+              margin-left: var(--e-spacing-h7);
             }
 
             @media screen and (max-width: 760px) {
-              margin-left: var(--o-spacing-h9);
+              margin-left: var(--e-spacing-h9);
             }
           }
         }
@@ -1024,19 +1024,19 @@ const closeVideo = () => {
         &-right {
           display: flex;
           align-items: center;
-          font-size: var(--o-font-size-h8);
-          line-height: var(--o-line-height-h8);
+          font-size: var(--e-font-size-h8);
+          line-height: var(--e-line-height-h8);
           color: var(--migration-sub-text-color);
           cursor: pointer;
 
           @media screen and (max-width: 1280px) {
-            font-size: var(--o-font-size-text);
-            line-height: var(--o-font-size-text);
+            font-size: var(--e-font-size-text);
+            line-height: var(--e-font-size-text);
           }
 
           @media screen and (max-width: 760px) {
-            font-size: var(--o-font-size-tip);
-            line-height: var(--o-font-size-tip);
+            font-size: var(--e-font-size-tip);
+            line-height: var(--e-font-size-tip);
           }
 
           &-desc {
@@ -1046,14 +1046,14 @@ const closeVideo = () => {
 
           &-arrow {
             font-size: 20px;
-            margin-left: var(--o-spacing-h5);
+            margin-left: var(--e-spacing-h5);
 
             @media screen and (max-width: 1280px) {
-              margin-left: var(--o-spacing-h7);
+              margin-left: var(--e-spacing-h7);
             }
 
             @media screen and (max-width: 760px) {
-              margin-left: var(--o-spacing-h9);
+              margin-left: var(--e-spacing-h9);
             }
           }
         }
@@ -1067,18 +1067,18 @@ const closeVideo = () => {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 48px 0 var(--o-spacing-h1);
+  padding: 48px 0 var(--e-spacing-h1);
   margin-top: 80px;
   background: url('@/assets/category/migration//download-bg.png') no-repeat center;
   background-size: cover;
 
   @media screen and (max-width: 1280px) {
-    padding: var(--o-spacing-h3) 0 var(--o-spacing-h2);
-    margin-top: var(--o-spacing-h1);
+    padding: var(--e-spacing-h3) 0 var(--e-spacing-h2);
+    margin-top: var(--e-spacing-h1);
   }
   @media screen and (max-width: 760px) {
     padding: 24px;
-    margin-top: var(--o-spacing-h5);
+    margin-top: var(--e-spacing-h5);
   }
 
   &-title {
@@ -1092,27 +1092,27 @@ const closeVideo = () => {
       line-height: 48px;
     }
     @media screen and (max-width: 760px) {
-      font-size: var(--o-font-size-h8);
-      line-height: var(--o-line-height-h8);
+      font-size: var(--e-font-size-h8);
+      line-height: var(--e-line-height-h8);
     }
   }
 
   &-desc {
-    padding: var(--o-spacing-h3) 0 var(--o-spacing-h4);
+    padding: var(--e-spacing-h3) 0 var(--e-spacing-h4);
     font-size: 32px;
     color: #fff;
     line-height: 44px;
 
     @media screen and (max-width: 1280px) {
-      padding: var(--o-spacing-h5) 0 var(--o-spacing-h6);
-      font-size: var(--o-font-size-h5);
-      line-height: var(--o-line-height-h5);
+      padding: var(--e-spacing-h5) 0 var(--e-spacing-h6);
+      font-size: var(--e-font-size-h5);
+      line-height: var(--e-line-height-h5);
     }
 
     @media screen and (max-width: 760px) {
-      padding: var(--o-spacing-h6) 0 var(--o-spacing-h7);
-      font-size: var(--o-font-size-text);
-      line-height: var(--o-font-size-text);
+      padding: var(--e-spacing-h6) 0 var(--e-spacing-h7);
+      font-size: var(--e-font-size-text);
+      line-height: var(--e-font-size-text);
     }
   }
 }
@@ -1121,8 +1121,8 @@ const closeVideo = () => {
   width: 100%;
 
   .step-collapse-panel {
-    padding: var(--o-spacing-h9);
-    font-size: var(--o-font-size-text);
+    padding: var(--e-spacing-h9);
+    font-size: var(--e-font-size-text);
 
     .step-content {
       .step-desc {
@@ -1131,8 +1131,8 @@ const closeVideo = () => {
 
       .step-card {
         border-top: 1px solid #c5c5c5;
-        margin-top: var(--o-spacing-h6);
-        padding-top: var(--o-spacing-h6);
+        margin-top: var(--e-spacing-h6);
+        padding-top: var(--e-spacing-h6);
 
         &-title {
           font-weight: 700;
@@ -1149,7 +1149,7 @@ const closeVideo = () => {
 
         &-feature-img {
           font-size: 14px;
-          margin-right: var(--o-spacing-h9);
+          margin-right: var(--e-spacing-h9);
         }
 
         &-feature-desc {

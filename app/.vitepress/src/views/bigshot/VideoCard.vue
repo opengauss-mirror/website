@@ -106,7 +106,7 @@ const handleClick = (id: number, index: number) => {
   }
 }
 .video-list {
-  margin-top: var(--o-spacing-h1);
+  margin-top: var(--e-spacing-h1);
 }
 .tc {
   text-align: center;
@@ -115,10 +115,10 @@ const handleClick = (id: number, index: number) => {
 
 .video-title {
   text-align: center;
-  font-size: var(--o-font-size-h3);
-  line-height: var(--o-line-height-h3);
-  margin-bottom: var(--o-spacing-h2);
-  color: var(--o-color-text1);
+  font-size: var(--e-font-size-h3);
+  line-height: var(--e-line-height-h3);
+  margin-bottom: var(--e-spacing-h2);
+  color: var(--e-color-text1);
   font-weight: 300;
 }
 .video-item {
@@ -133,11 +133,11 @@ const handleClick = (id: number, index: number) => {
     .cover {
       height: 136px;
       align-items: center;
-      padding: var(--o-spacing-h5);
+      padding: var(--e-spacing-h5);
       display: flex;
       .title {
-        font-size: var(--o-font-size-h8);
-        line-height: var(--o-line-height-h8);
+        font-size: var(--e-font-size-h8);
+        line-height: var(--e-line-height-h8);
         color: #fff;
         display: -webkit-box;
         overflow: hidden;
@@ -148,11 +148,11 @@ const handleClick = (id: number, index: number) => {
     }
 
     .caption {
-      padding: var(--o-spacing-h4);
-      font-size: var(--o-font-size-h8);
-      line-height: var(--o-line-height-h8);
+      padding: var(--e-spacing-h4);
+      font-size: var(--e-font-size-h8);
+      line-height: var(--e-line-height-h8);
       font-weight: 300;
-      color: var(--o-color-text1);
+      color: var(--e-color-text1);
       box-sizing: content-box;
     }
   }

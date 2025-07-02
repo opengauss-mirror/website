@@ -132,7 +132,7 @@ watch(
 
 <style lang="scss" scoped>
 .header-menu {
-  background-color: var(--o-color-bg2);
+  background-color: var(--e-color-bg2);
   .header-menu-body {
     height: 48px;
     display: flex;
@@ -140,14 +140,14 @@ watch(
     position: relative;
     .menu-icon {
       display: none;
-      margin-right: var(--o-spacing-h5);
+      margin-right: var(--e-spacing-h5);
       @media (max-width: 1100px) {
         flex: 1;
         display: block;
       }
       .icon {
-        font-size: var(--o-font-size-h6);
-        color: var(--o-color-text1);
+        font-size: var(--e-font-size-h6);
+        color: var(--e-color-text1);
         cursor: pointer;
       }
     }
@@ -165,16 +165,16 @@ watch(
       left: 0;
       overflow: hidden;
       display: flex;
-      border-top: 1px solid var(--o-color-division);
+      border-top: 1px solid var(--e-color-division);
       top: 48px;
       height: calc(100% - 48px);
       z-index: 999;
       .menu-content-left {
-        background: var(--o-color-bg1);
+        background: var(--e-color-bg1);
         display: inline-flex;
         height: 100%;
         flex-direction: column;
-        color: var(--o-color-text1);
+        color: var(--e-color-text1);
         width: 45.5556vw;
         position: relative;
         overflow-y: auto;
@@ -195,10 +195,10 @@ watch(
         .menu-nav-list {
           .link {
             display: block;
-            font-size: var(--o-font-size-tip);
-            line-height: var(--o-line-height-h3);
-            color: var(--o-color-text1);
-            padding: 0 var(--o-spacing-h5);
+            font-size: var(--e-font-size-tip);
+            line-height: var(--e-line-height-h3);
+            color: var(--e-color-text1);
+            padding: 0 var(--e-spacing-h5);
             position: relative;
             cursor: pointer;
             &::after {
@@ -213,23 +213,23 @@ watch(
               bottom: 0;
             }
             &.active {
-              background: var(--o-color-bg2);
-              color: var(--o-color-brand1);
+              background: var(--e-color-bg2);
+              color: var(--e-color-brand1);
               &::after {
                 width: 24px;
-                background: var(--o-color-brand1);
+                background: var(--e-color-brand1);
               }
             }
           }
         }
         .mobile-tools {
-          padding: 0 var(--o-spacing-h5);
+          padding: 0 var(--e-spacing-h5);
           margin-bottom: 24px;
         }
       }
       .menu-content-right {
         flex: 1;
-        background: var(--o-color-bg2);
+        background: var(--e-color-bg2);
         position: relative;
         left: 0;
         opacity: 1;
@@ -239,15 +239,15 @@ watch(
           padding: 0 16px;
 
           .link {
-            line-height: var(--o-line-height-h3);
-            font-size: var(--o-font-size-tip);
+            line-height: var(--e-line-height-h3);
+            font-size: var(--e-font-size-tip);
             font-weight: 300;
-            color: var(--o-color-text1);
+            color: var(--e-color-text1);
             cursor: pointer;
             display: flex;
             align-items: center;
             &:last-child {
-              border-bottom: 1px solid var(--o-color-division1);
+              border-bottom: 1px solid var(--e-color-division1);
             }
           }
           .tag {

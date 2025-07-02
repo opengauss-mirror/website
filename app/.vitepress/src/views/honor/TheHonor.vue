@@ -246,33 +246,33 @@ const getCertificateBoxGridTemplateColumns = (length: number, isMobile: boolean)
       cursor: pointer;
 
       .o-timeline-day {
-        font-size: var(--o-font-size-h6);
-        color: var(--o-color-text4);
-        line-height: var(--o-line-height-h6);
-        margin-bottom: var(--o-spacing-h10);
+        font-size: var(--e-font-size-h6);
+        color: var(--e-color-text4);
+        line-height: var(--e-line-height-h6);
+        margin-bottom: var(--e-spacing-h10);
         transition: all 0.2s;
       }
 
       .o-timeline-icon {
         cursor: pointer;
-        width: var(--o-font-size-h5);
-        height: var(--o-font-size-h5);
-        color: var(--o-color-text4);
+        width: var(--e-font-size-h5);
+        height: var(--e-font-size-h5);
+        color: var(--e-color-text4);
         display: inline-block;
-        background-color: var(--o-color-bg1);
+        background-color: var(--e-color-bg1);
         transition: all 0.2s;
       }
 
       &.active .o-timeline-day,
       &.active .o-timeline-icon {
-        color: var(--o-color-brand1);
+        color: var(--e-color-brand1);
       }
     }
 
     &::after {
       width: 89%;
       height: 2px;
-      background-color: var(--o-color-neutral11);
+      background-color: var(--e-color-neutral11);
       content: '';
       display: block;
       position: absolute;
@@ -297,14 +297,14 @@ const getCertificateBoxGridTemplateColumns = (length: number, isMobile: boolean)
     display: flex;
     justify-content: center;
     width: 100%;
-    background-color: var(--o-color-bg2);
+    background-color: var(--e-color-bg2);
     height: 34px;
   }
 
   li {
-    font-size: var(--o-font-size-text);
+    font-size: var(--e-font-size-text);
     line-height: 34px;
-    color: var(--o-color-text1);
+    color: var(--e-color-text1);
     margin-right: 20px;
 
     &:last-child {
@@ -321,16 +321,16 @@ const getCertificateBoxGridTemplateColumns = (length: number, isMobile: boolean)
   }
 
   .active {
-    color: var(--o-color-brand1);
+    color: var(--e-color-brand1);
 
     &::after {
-      background-color: var(--o-color-brand1);
+      background-color: var(--e-color-brand1);
     }
   }
 }
 
 .content {
-  margin-top: var(--o-spacing-h3);
+  margin-top: var(--e-spacing-h3);
 
   @media (max-width: 768px) {
     margin-top: 0;
@@ -339,12 +339,12 @@ const getCertificateBoxGridTemplateColumns = (length: number, isMobile: boolean)
   .certificate-box {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--o-spacing-h4);
+    gap: var(--e-spacing-h4);
     justify-content: center;
 
     @media (max-width: 768px) {
       grid-template-columns: repeat(1, 1fr);
-      gap: var(--o-spacing-h5);
+      gap: var(--e-spacing-h5);
     }
 
     .certificate-item {
@@ -352,10 +352,10 @@ const getCertificateBoxGridTemplateColumns = (length: number, isMobile: boolean)
       background-repeat: no-repeat;
       background-size: cover;
       position: relative;
-      padding: var(--o-spacing-h2);
+      padding: var(--e-spacing-h2);
 
       @media (max-width: 768px) {
-        padding: var(--o-spacing-h5);
+        padding: var(--e-spacing-h5);
       }
 
       :deep(.el-card__body) {
@@ -368,15 +368,15 @@ const getCertificateBoxGridTemplateColumns = (length: number, isMobile: boolean)
 
       p {
         min-height: 64px;
-        font-size: var(--o-font-size-h5);
-        line-height: var(--o-line-height-h5);
-        color: var(--o-color-text1);
+        font-size: var(--e-font-size-h5);
+        line-height: var(--e-line-height-h5);
+        color: var(--e-color-text1);
         font-weight: 500;
         @media (max-width: 768px) {
           max-width: 100%;
           min-height: auto;
-          font-size: var(--o-font-size-h8);
-          line-height: var(--o-line-height-h8);
+          font-size: var(--e-font-size-h8);
+          line-height: var(--e-line-height-h8);
         }
       }
 
@@ -384,20 +384,20 @@ const getCertificateBoxGridTemplateColumns = (length: number, isMobile: boolean)
         margin-top: 26px;
         padding-left: 0;
         padding-bottom: 0;
-        color: var(--o-color-text3);
-        font-size: var(--o-font-size-text);
-        line-height: var(--o-line-height-text);
+        color: var(--e-color-text3);
+        font-size: var(--e-font-size-text);
+        line-height: var(--e-line-height-text);
 
         @media (max-width: 768px) {
           margin-top: 24px;
-          font-size: var(--o-font-size-tip);
-          line-height: var(--o-line-height-tip);
+          font-size: var(--e-font-size-tip);
+          line-height: var(--e-line-height-tip);
           padding-bottom: 0;
           padding-top: 0;
         }
 
         .detail-icon {
-          color: var(--o-color-brand1);
+          color: var(--e-color-brand1);
           font-size: 16px;
         }
       }
@@ -428,23 +428,23 @@ const getCertificateBoxGridTemplateColumns = (length: number, isMobile: boolean)
   }
 
   .excellent-panel {
-    padding: var(--o-spacing-h1) 0 0 0;
-    color: var(--o-color-text1);
+    padding: var(--e-spacing-h1) 0 0 0;
+    color: var(--e-color-text1);
 
     @media (max-width: 768px) {
-      padding: var(--o-spacing-h5) 0 0 0;
+      padding: var(--e-spacing-h5) 0 0 0;
     }
 
     .honor-title {
-      margin-bottom: var(--o-spacing-h2);
-      line-height: var(--o-line-height-h3);
+      margin-bottom: var(--e-spacing-h2);
+      line-height: var(--e-line-height-h3);
       text-align: center;
-      font-size: var(--o-font-size-h3);
+      font-size: var(--e-font-size-h3);
       font-weight: 200;
 
       @media (max-width: 768px) {
-        margin-bottom: var(--o-spacing-h5);
-        font-size: var(--o-font-size-h7);
+        margin-bottom: var(--e-spacing-h5);
+        font-size: var(--e-font-size-h7);
       }
     }
 
@@ -453,17 +453,17 @@ const getCertificateBoxGridTemplateColumns = (length: number, isMobile: boolean)
     }
 
     .common-title {
-      margin-top: var(--o-spacing-h1);
+      margin-top: var(--e-spacing-h1);
     }
 
     .rules {
-      margin-top: var(--o-spacing-h4);
+      margin-top: var(--e-spacing-h4);
       line-height: 16px;
-      font-size: var(--o-font-size-tip);
+      font-size: var(--e-font-size-tip);
       color: #4d4d4d;
 
       .tip {
-        margin-bottom: var(--o-spacing-h8);
+        margin-bottom: var(--e-spacing-h8);
       }
     }
 
@@ -476,7 +476,7 @@ const getCertificateBoxGridTemplateColumns = (length: number, isMobile: boolean)
     .developer-wrap {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: var(--o-spacing-h4);
+      gap: var(--e-spacing-h4);
 
       .developer-card:first-child {
         grid-column: 1 / span 2;
@@ -488,30 +488,30 @@ const getCertificateBoxGridTemplateColumns = (length: number, isMobile: boolean)
 
       @media (max-width: 768px) {
         grid-template-columns: repeat(1, 1fr);
-        gap: var(--o-spacing-h5);
+        gap: var(--e-spacing-h5);
       }
 
       .developer-card {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: var(--o-spacing-h2);
-        background: var(--o-color-bg2);
+        padding: var(--e-spacing-h2);
+        background: var(--e-color-bg2);
         box-shadow: 0 1px 5px 0 rgba(45, 47, 51, 0.1);
 
         @media (max-width: 768px) {
-          padding: var(--o-spacing-h4);
+          padding: var(--e-spacing-h4);
           grid-column: auto;
         }
 
         .developer-title {
-          margin-bottom: var(--o-spacing-h4);
+          margin-bottom: var(--e-spacing-h4);
           text-align: center;
           font-size: var(-o-font-size-h5);
           font-weight: 500;
 
           @media (max-width: 768px) {
-            font-size: var(--o-font-size-h7);
+            font-size: var(--e-font-size-h7);
           }
         }
 
@@ -531,17 +531,17 @@ const getCertificateBoxGridTemplateColumns = (length: number, isMobile: boolean)
             text-align: center;
 
             .m-name {
-              margin-top: var(--o-spacing-h8);
-              font-size: var(--o-font-size-h8);
-              line-height: var(--o-line-height-h8);
+              margin-top: var(--e-spacing-h8);
+              font-size: var(--e-font-size-h8);
+              line-height: var(--e-line-height-h8);
             }
 
             .m-company {
-              min-height: var(--o-line-height-h4);
-              margin-top: var(--o-spacing-h10);
+              min-height: var(--e-line-height-h4);
+              margin-top: var(--e-spacing-h10);
               color: #999999;
-              font-size: var(--o-font-size-tip);
-              line-height: var(--o-line-height-tip);
+              font-size: var(--e-font-size-tip);
+              line-height: var(--e-line-height-tip);
               text-align: center;
             }
 
@@ -557,7 +557,7 @@ const getCertificateBoxGridTemplateColumns = (length: number, isMobile: boolean)
 
             p {
               font-size: var(-o-font-size-h8);
-              line-height: var(--o-line-height-h8);
+              line-height: var(--e-line-height-h8);
               overflow: hidden;
               text-overflow: ellipsis;
               display: -webkit-box;
@@ -566,7 +566,7 @@ const getCertificateBoxGridTemplateColumns = (length: number, isMobile: boolean)
             }
 
             .links {
-              margin-top: var(--o-spacing-h8);
+              margin-top: var(--e-spacing-h8);
               padding: 4px 2px;
               text-align: center;
 
@@ -583,57 +583,57 @@ const getCertificateBoxGridTemplateColumns = (length: number, isMobile: boolean)
     .sig-wrap {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: var(--o-spacing-h4);
+      gap: var(--e-spacing-h4);
 
       @media (max-width: 768px) {
         grid-template-columns: repeat(1, 1fr);
-        gap: var(--o-spacing-h5);
+        gap: var(--e-spacing-h5);
       }
 
       .sig-card {
-        padding: var(--o-spacing-h4) var(--o-spacing-h3);
-        background-color: var(--o-color-bg2);
+        padding: var(--e-spacing-h4) var(--e-spacing-h3);
+        background-color: var(--e-color-bg2);
         background-image: url(@/assets/category/honor/sig-item-bg.png);
         background-repeat: no-repeat;
         background-size: 100% 100%;
         box-shadow: 0 1px 5px 0 rgba(45, 47, 51, 0.1);
 
         @media (max-width: 768px) {
-          padding: var(--o-spacing-h5) var(--o-spacing-h4);
-          gap: var(--o-spacing-h5);
+          padding: var(--e-spacing-h5) var(--e-spacing-h4);
+          gap: var(--e-spacing-h5);
         }
 
         .sig-title {
-          font-size: var(--o-font-size-h5);
+          font-size: var(--e-font-size-h5);
           letter-spacing: 0;
-          line-height: var(--o-line-height-h5);
+          line-height: var(--e-line-height-h5);
           font-weight: 500;
 
           @media (max-width: 768px) {
-            font-size: var(--o-font-size-h6);
-            line-height: var(--o-line-height-h6);
+            font-size: var(--e-font-size-h6);
+            line-height: var(--e-line-height-h6);
           }
         }
 
         .repo-detail-btn {
-          margin-top: var(--o-spacing-h6);
+          margin-top: var(--e-spacing-h6);
           padding-left: 0;
           padding-bottom: 0;
-          color: var(--o-color-text3);
-          font-size: var(--o-font-size-text);
-          line-height: var(--o-line-height-text);
+          color: var(--e-color-text3);
+          font-size: var(--e-font-size-text);
+          line-height: var(--e-line-height-text);
 
           @media (max-width: 768px) {
             margin-top: 24px;
-            font-size: var(--o-font-size-tip);
-            line-height: var(--o-line-height-tip);
+            font-size: var(--e-font-size-tip);
+            line-height: var(--e-line-height-tip);
             padding-bottom: 0;
             padding-top: 0;
           }
 
           .repo-detail-icon {
-            color: var(--o-color-brand1);
-            font-size: var(--o-font-size-h8);
+            color: var(--e-color-brand1);
+            font-size: var(--e-font-size-h8);
           }
         }
       }
@@ -642,7 +642,7 @@ const getCertificateBoxGridTemplateColumns = (length: number, isMobile: boolean)
     .enterprise-wrap {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      gap: var(--o-spacing-h4);
+      gap: var(--e-spacing-h4);
 
       @media (max-width: 1500px) {
         grid-template-columns: repeat(4, 1fr);
@@ -654,14 +654,14 @@ const getCertificateBoxGridTemplateColumns = (length: number, isMobile: boolean)
 
       @media (max-width: 900px) {
         grid-template-columns: repeat(2, 1fr);
-        gap: var(--o-spacing-h6);
+        gap: var(--e-spacing-h6);
       }
 
       .enterprise-card {
         padding: 25px 10px 16px;
-        background: var(--o-color-bg2);
+        background: var(--e-color-bg2);
         box-shadow: 0 1px 5px 0 rgba(45, 47, 51, 0.1);
-        background-color: var(--o-color-bg2);
+        background-color: var(--e-color-bg2);
         background-image: url(@/assets/category/honor/enterprise-item-bg.png);
         background-repeat: no-repeat;
         background-size: 100% 100%;
@@ -671,8 +671,8 @@ const getCertificateBoxGridTemplateColumns = (length: number, isMobile: boolean)
 
         @media (max-width: 768px) {
           padding: 16px 8px 8px;
-          line-height: var(--o-line-height-text);
-          font-size: var(--o-font-size-text);
+          line-height: var(--e-line-height-text);
+          font-size: var(--e-font-size-text);
         }
 
         .gauss-icon {
@@ -692,28 +692,28 @@ const getCertificateBoxGridTemplateColumns = (length: number, isMobile: boolean)
         }
 
         .enterprise-title {
-          line-height: var(--o-line-height-h7);
-          font-size: var(--o-font-size-h7);
+          line-height: var(--e-line-height-h7);
+          font-size: var(--e-font-size-h7);
           font-weight: 500;
 
           @media (max-width: 900px) {
-            line-height: var(--o-line-height-h8);
-            font-size: var(--o-font-size-h8);
+            line-height: var(--e-line-height-h8);
+            font-size: var(--e-font-size-h8);
           }
 
           @media (max-width: 768px) {
-            line-height: var(--o-line-height-text);
-            font-size: var(--o-font-size-text);
+            line-height: var(--e-line-height-text);
+            font-size: var(--e-font-size-text);
           }
         }
 
         .enterprise-prize-title {
-          line-height: var(--o-line-height-h8);
-          font-size: var(--o-font-size-h8);
+          line-height: var(--e-line-height-h8);
+          font-size: var(--e-font-size-h8);
 
           @media (max-width: 900px) {
-            line-height: var(--o-line-height-text);
-            font-size: var(--o-font-size-text);
+            line-height: var(--e-line-height-text);
+            font-size: var(--e-font-size-text);
           }
 
           @media (max-width: 768px) {
@@ -726,7 +726,7 @@ const getCertificateBoxGridTemplateColumns = (length: number, isMobile: boolean)
     .person-wrap {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: var(--o-spacing-h4);
+      gap: var(--e-spacing-h4);
 
       @media (max-width: 1500px) {
         grid-template-columns: repeat(3, 1fr);
@@ -738,27 +738,27 @@ const getCertificateBoxGridTemplateColumns = (length: number, isMobile: boolean)
 
       @media (max-width: 800px) {
         grid-template-columns: repeat(1, 1fr);
-        gap: var(--o-spacing-h5);
+        gap: var(--e-spacing-h5);
       }
 
       .person-card {
         position: relative;
         padding: 102px 118px;
-        background: var(--o-color-bg2);
+        background: var(--e-color-bg2);
         box-shadow: 0 1px 5px 0 rgba(45, 47, 51, 0.1);
         text-align: center;
         overflow: visible;
 
         .name {
-          margin-top: var(--o-spacing-h8);
-          font-size: var(--o-font-size-h8);
-          line-height: var(--o-line-height-h8);
+          margin-top: var(--e-spacing-h8);
+          font-size: var(--e-font-size-h8);
+          line-height: var(--e-line-height-h8);
         }
 
         .company {
-          margin-top: var(--o-spacing-h8);
-          font-size: var(--o-font-size-tip);
-          line-height: var(--o-line-height-tip);
+          margin-top: var(--e-spacing-h8);
+          font-size: var(--e-font-size-tip);
+          line-height: var(--e-line-height-tip);
           color: #999999;
         }
 
@@ -776,13 +776,13 @@ const getCertificateBoxGridTemplateColumns = (length: number, isMobile: boolean)
           padding: 16px;
           line-height: 20px;
           background: #2d0a60;
-          color: var(--o-color-white);
+          color: var(--e-color-white);
           opacity: 0.9;
-          font-size: var(--o-font-size-text);
+          font-size: var(--e-font-size-text);
           text-align: left;
 
           @media (max-width: 768px) {
-            font-size: var(--o-font-size-tip);
+            font-size: var(--e-font-size-tip);
           }
 
           .link {

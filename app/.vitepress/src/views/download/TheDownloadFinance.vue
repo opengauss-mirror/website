@@ -18,11 +18,7 @@ const TITLE = 'openGauss Finance 5.0.1 (LTS)';
       <div class="download-finance">
         <h2 class="download-finance-title">{{ TITLE }}</h2>
         <div class="download-finance-content">
-          <DownloadTable
-            v-for="item in DownloadFinanceData.zh"
-            :key="item.name"
-            :table-data="item"
-          />
+          <DownloadTable v-for="item in DownloadFinanceData.zh" :key="item.name" :table-data="item" />
         </div>
       </div>
     </AppContent>
@@ -31,26 +27,26 @@ const TITLE = 'openGauss Finance 5.0.1 (LTS)';
 
 <style lang="scss" scoped>
 .download-finance {
-  background-color: var(--o-color-bg2);
-  padding: var(--o-spacing-h2) var(--o-spacing-h1);
-  box-shadow: var(--o-shadow-l2);
+  background-color: var(--e-color-bg2);
+  padding: var(--e-spacing-h2) var(--e-spacing-h1);
+  box-shadow: var(--e-shadow-l2);
   @media (max-width: 1100px) {
-    padding: var(--o-spacing-h4) var(--o-spacing-h8);
+    padding: var(--e-spacing-h4) var(--e-spacing-h8);
   }
   .download-finance-title {
     text-align: center;
-    font-size: var(--o-font-size-h3);
-    line-height: var(--o-line-height-h3);
-    color: var(--o-color-text1);
+    font-size: var(--e-font-size-h3);
+    line-height: var(--e-line-height-h3);
+    color: var(--e-color-text1);
     @media (max-width: 1100px) {
-      font-size: var(--o-font-size-h8);
-      line-height: var(--o-line-height-h8);
+      font-size: var(--e-font-size-h8);
+      line-height: var(--e-line-height-h8);
     }
   }
   .download-finance-content {
-    margin-top: var(--o-spacing-h2);
+    margin-top: var(--e-spacing-h2);
     @media (max-width: 1100px) {
-      margin-top: var(--o-spacing-h4);
+      margin-top: var(--e-spacing-h4);
     }
   }
 }

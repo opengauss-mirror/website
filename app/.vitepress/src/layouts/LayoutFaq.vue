@@ -14,9 +14,9 @@
 }
 .markdown {
   border: 1px solid transparent;
-  margin-bottom: var(--o-spacing-h1);
+  margin-bottom: var(--e-spacing-h1);
   @media (max-width: 1100px) {
-    margin-bottom: var(--o-spacing-h2);
+    margin-bottom: var(--e-spacing-h2);
   }
 
   :deep(h1) {
@@ -24,7 +24,7 @@
   }
 
   :deep(h2) {
-    margin-bottom: var(--o-spacing-h6);
+    margin-bottom: var(--e-spacing-h6);
   }
 
   :deep(ol) {

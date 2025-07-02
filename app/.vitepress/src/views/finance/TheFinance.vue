@@ -192,15 +192,15 @@ const goDownloadPage = () => {
     justify-content: center;
   }
   &.el-tabs .el-tabs__nav-wrap .el-tabs__item.is-active {
-    color: var(--o-color-text1);
+    color: var(--e-color-text1);
     font-weight: 500;
   }
   &.el-tabs .el-tabs__nav-wrap .el-tabs__item:hover {
-    color: var(--o-color-text1);
+    color: var(--e-color-text1);
     font-weight: 500;
   }
   .el-tabs__active-bar {
-    background: var(--o-color-text1);
+    background: var(--e-color-text1);
   }
 }
 .section {
@@ -216,7 +216,7 @@ const goDownloadPage = () => {
 .section-1 {
   margin-top: 64px;
   padding: 64px 0 24px;
-  background-color: var(--o-color-bg2);
+  background-color: var(--e-color-bg2);
   .container {
     max-width: 1504px;
     padding-left: 44px;
@@ -235,18 +235,18 @@ const goDownloadPage = () => {
   }
 }
 .section-title {
-  font-size: var(--o-font-size-h3);
-  line-height: var(--o-line-height-h3);
+  font-size: var(--e-font-size-h3);
+  line-height: var(--e-line-height-h3);
   font-weight: 300;
-  color: var(--o-color-text1);
+  color: var(--e-color-text1);
   text-align: center;
   margin-bottom: 40px;
 }
 .section-desc {
-  font-size: var(--o-font-size-text);
-  line-height: var(--o-line-height-text);
+  font-size: var(--e-font-size-text);
+  line-height: var(--e-line-height-text);
   font-weight: 400;
-  color: var(--o-color-text1);
+  color: var(--e-color-text1);
   opacity: 0.8;
   padding: 0 126px;
   @media screen and (max-width: 1080px) {
@@ -268,26 +268,26 @@ const goDownloadPage = () => {
     height: 56px;
   }
   .feature {
-    font-size: var(--o-font-size-h5);
-    line-height: var(--o-line-height-h5);
-    color: var(--o-color-text1);
+    font-size: var(--e-font-size-h5);
+    line-height: var(--e-line-height-h5);
+    color: var(--e-color-text1);
     margin-top: 16px;
   }
   .feature-desc {
     margin-top: 12px;
-    font-size: var(--o-font-size-text);
-    line-height: var(--o-line-height-text);
-    color: var(--o-color-text1);
+    font-size: var(--e-font-size-text);
+    line-height: var(--e-line-height-text);
+    color: var(--e-color-text1);
     opacity: 0.8;
   }
 }
 .tab-content {
   padding-top: 24px;
   p {
-    font-size: var(--o-font-size-text);
-    line-height: var(--o-line-height-text);
+    font-size: var(--e-font-size-text);
+    line-height: var(--e-line-height-text);
     font-weight: 400;
-    color: var(--o-color-text1);
+    color: var(--e-color-text1);
     opacity: 0.8;
     text-align: center;
   }
@@ -315,7 +315,7 @@ const goDownloadPage = () => {
   }
 }
 
-:deep(.o-card) {
+:deep(.e-card) {
   --el-card-padding: 40px;
   .el-card__body {
     background-image: url('@/assets/category/finance/card-bg.png');
@@ -341,17 +341,17 @@ const goDownloadPage = () => {
     grid-template-columns: repeat(2, 1fr);
   }
   .card-title {
-    font-size: var(--o-font-size-h7);
-    line-height: var(--o-line-height-h7);
+    font-size: var(--e-font-size-h7);
+    line-height: var(--e-line-height-h7);
     font-weight: 500;
-    color: var(--o-color-white);
+    color: var(--e-color-white);
   }
   .card-desc {
     margin-top: 12px;
-    font-size: var(--o-font-size-text);
-    line-height: var(--o-line-height-text);
+    font-size: var(--e-font-size-text);
+    line-height: var(--e-line-height-text);
     font-weight: 400;
-    color: var(--o-color-white);
+    color: var(--e-color-white);
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
@@ -368,7 +368,7 @@ const goDownloadPage = () => {
   }
 }
 .icon-search {
-  color: var(--o-color-brand3);
+  color: var(--e-color-brand3);
   width: 16px;
   height: 16px;
 }
@@ -379,17 +379,17 @@ const goDownloadPage = () => {
 }
 .more-btn {
   margin-right: 16px;
-  color: var(--o-color-white);
+  color: var(--e-color-white);
 }
 .website-btn {
-  border-color: var(--o-color-white);
-  color: var(--o-color-white);
+  border-color: var(--e-color-white);
+  color: var(--e-color-white);
 }
 
 .interaction-card {
   width: 692px;
   height: 120px;
-  background-color: var(--o-color-bg2);
+  background-color: var(--e-color-bg2);
   padding: 24px 32px;
   margin: 0 auto;
   display: flex;
@@ -397,26 +397,26 @@ const goDownloadPage = () => {
   .o-icon {
     margin-right: 16px;
     font-size: 48px;
-    color: var(--o-color-text1);
+    color: var(--e-color-text1);
   }
   h1 {
-    font-size: var(--o-font-size-h5);
-    line-height: var(--o-line-height-h5);
+    font-size: var(--e-font-size-h5);
+    line-height: var(--e-line-height-h5);
     font-weight: 500;
-    color: var(--o-color-text1);
+    color: var(--e-color-text1);
   }
   p {
-    font-size: var(--o-font-size-h8);
-    line-height: var(--o-line-height-h8);
+    font-size: var(--e-font-size-h8);
+    line-height: var(--e-line-height-h8);
     font-weight: 400;
-    color: var(--o-color-text4);
+    color: var(--e-color-text4);
     margin-top: 12px;
     display: flex;
     align-items: center;
     cursor: pointer;
     .o-icon {
       font-size: 24px;
-      color: var(--o-color-text4);
+      color: var(--e-color-text4);
     }
   }
 }
@@ -430,13 +430,13 @@ const goDownloadPage = () => {
   align-items: center;
 }
 .experience {
-  font-size: var(--o-font-size-h3);
-  line-height: var(--o-line-height-h3);
+  font-size: var(--e-font-size-h3);
+  line-height: var(--e-line-height-h3);
   font-weight: 500;
-  color: var(--o-color-white);
+  color: var(--e-color-white);
   margin-bottom: 24px;
 }
 .download-btn {
-  color: var(--o-color-white);
+  color: var(--e-color-white);
 }
 </style>

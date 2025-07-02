@@ -130,19 +130,19 @@ const planImg = computed(() => (isLight.value ? (isMobile.value ? meetupImgMo : 
   }
 }
 .meetup-text {
-  font-size: var(--o-font-size-h8);
-  line-height: var(--o-line-height-h8);
-  color: var(--o-color-text1);
+  font-size: var(--e-font-size-h8);
+  line-height: var(--e-line-height-h8);
+  color: var(--e-color-text1);
   text-align: center;
   @media screen and (max-width: 768px) {
-    font-size: var(--o-font-size-text);
-    line-height: var(--o-line-height-text);
+    font-size: var(--e-font-size-text);
+    line-height: var(--e-line-height-text);
   }
 }
 .meetup-plan {
-  background: var(--o-color-bg2);
-  margin: var(--o-spacing-h2) 0;
-  padding: var(--o-spacing-h2);
+  background: var(--e-color-bg2);
+  margin: var(--e-spacing-h2) 0;
+  padding: var(--e-spacing-h2);
   text-align: center;
   @media screen and (max-width: 768px) {
     padding: 16px;
@@ -152,27 +152,27 @@ const planImg = computed(() => (isLight.value ? (isMobile.value ? meetupImgMo : 
     max-width: 100%;
   }
   h3 {
-    font-size: var(--o-font-size-h7);
-    line-height: var(--o-line-height-h7);
-    color: var(--o-color-text1);
+    font-size: var(--e-font-size-h7);
+    line-height: var(--e-line-height-h7);
+    color: var(--e-color-text1);
   }
   .desc {
-    font-size: var(--o-font-size-h8);
-    line-height: var(--o-line-height-h8);
-    color: var(--o-color-text1);
+    font-size: var(--e-font-size-h8);
+    line-height: var(--e-line-height-h8);
+    color: var(--e-color-text1);
     margin-top: 8px;
     @media screen and (max-width: 768px) {
-      font-size: var(--o-font-size-tip);
-      line-height: var(--o-line-height-tip);
+      font-size: var(--e-font-size-tip);
+      line-height: var(--e-line-height-tip);
     }
   }
   .apply {
-    border-top: 1px solid var(--o-color-border2);
+    border-top: 1px solid var(--e-color-border2);
     margin: 24px 0 0;
     h4 {
-      font-size: var(--o-font-size-h7);
-      line-height: var(--o-line-height-h7);
-      color: var(--o-color-text1);
+      font-size: var(--e-font-size-h7);
+      line-height: var(--e-line-height-h7);
+      color: var(--e-color-text1);
       margin: 24px 0;
     }
     .apply-box {
@@ -226,12 +226,12 @@ const planImg = computed(() => (isLight.value ? (isMobile.value ? meetupImgMo : 
           }
         }
         .name {
-          font-size: var(--o-font-size-h8);
-          line-height: var(--o-line-height-h8);
-          color: var(--o-color-text1);
+          font-size: var(--e-font-size-h8);
+          line-height: var(--e-line-height-h8);
+          color: var(--e-color-text1);
           @media screen and (max-width: 768px) {
-            font-size: var(--o-font-size-tip);
-            line-height: var(--o-line-height-tip);
+            font-size: var(--e-font-size-tip);
+            line-height: var(--e-line-height-tip);
           }
         }
       }

@@ -25,9 +25,7 @@ const isZh = computed(() => (lang.value === 'zh' ? true : false));
 const supporttoolsInfo = computed(() => {
   return {
     panoramaImg: isZh.value ? SupportPanoramaZh : SupportPanoramaEn,
-    panoramaImgDark: isZh.value
-      ? SupportPanoramaZh_dark
-      : SupportPanoramaEn_dark,
+    panoramaImgDark: isZh.value ? SupportPanoramaZh_dark : SupportPanoramaEn_dark,
     ToolsData: isZh.value ? SupportToolsConfig.zh : SupportToolsConfig.en,
     isDark: commonStore.theme === 'dark' ? true : false,
   };
@@ -35,64 +33,30 @@ const supporttoolsInfo = computed(() => {
 </script>
 
 <template>
-  <BannerLevel2
-    :background-image="Banner"
-    :title="i18n.supporttools.PAGE_TITLE"
-    :illustration="illustration"
-  />
+  <BannerLevel2 :background-image="Banner" :title="i18n.supporttools.PAGE_TITLE" :illustration="illustration" />
   <AppContent>
     <div class="support-tools">
       <p class="text">{{ i18n.supporttools.INFO }}</p>
 
-      <img
-        v-show="!supporttoolsInfo.isDark"
-        :src="supporttoolsInfo.panoramaImg"
-        class="cover"
-      />
-      <img
-        v-show="supporttoolsInfo.isDark"
-        :src="supporttoolsInfo.panoramaImgDark"
-        class="cover"
-      />
+      <img v-show="!supporttoolsInfo.isDark" :src="supporttoolsInfo.panoramaImg" class="cover" />
+      <img v-show="supporttoolsInfo.isDark" :src="supporttoolsInfo.panoramaImgDark" class="cover" />
     </div>
 
     <div class="tool-content">
-      <OCard
-        v-for="item in supporttoolsInfo.ToolsData"
-        :key="item.id"
-        class="tool-item"
-      >
+      <OCard v-for="item in supporttoolsInfo.ToolsData" :key="item.id" class="tool-item">
         <h3 class="title">{{ item.name }}</h3>
         <div :id="item.id" class="tool-item-detail">
-          <div
-            v-for="subitem in item.children"
-            :key="subitem.iden"
-            class="item-box"
-          >
+          <div v-for="subitem in item.children" :key="subitem.iden" class="item-box">
             <p class="item-name">{{ subitem.name }}</p>
             <p class="item-desc">
               {{ subitem.desc }}
             </p>
             <p class="item-link">
-              <a
-                :href="subitem.address"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {{
-                  subitem.site && subitem.site
-                    ? i18n.supporttools.SITE_TEXT
-                    : i18n.supporttools.CODE_TEXT
-                }}
+              <a :href="subitem.address" target="_blank" rel="noopener noreferrer">
+                {{ subitem.site && subitem.site ? i18n.supporttools.SITE_TEXT : i18n.supporttools.CODE_TEXT }}
               </a>
 
-              <a
-                v-if="subitem.guide"
-                :href="subitem.guide"
-                target="_blank"
-                rel="noopener noreferrer"
-                >{{ i18n.supporttools.GUIDE_TEXT }}</a
-              >
+              <a v-if="subitem.guide" :href="subitem.guide" target="_blank" rel="noopener noreferrer">{{ i18n.supporttools.GUIDE_TEXT }}</a>
             </p>
           </div>
         </div>
@@ -108,17 +72,17 @@ const supporttoolsInfo = computed(() => {
   }
 }
 .support-tools {
-  margin-bottom: var(--o-spacing-h4);
+  margin-bottom: var(--e-spacing-h4);
   .text {
-    margin-bottom: var(--o-spacing-h2);
-    font-size: var(--o-font-size-h7);
-    line-height: var(--o-line-height-h7);
-    color: var(--o-color-text1);
+    margin-bottom: var(--e-spacing-h2);
+    font-size: var(--e-font-size-h7);
+    line-height: var(--e-line-height-h7);
+    color: var(--e-color-text1);
     text-align: justify;
     @media screen and (max-width: 1100px) {
-      margin-bottom: var(--o-spacing-h4);
-      font-size: var(--o-font-size-text);
-      line-height: var(--o-line-height-text);
+      margin-bottom: var(--e-spacing-h4);
+      font-size: var(--e-font-size-text);
+      line-height: var(--e-line-height-text);
     }
   }
   .cover {
@@ -127,7 +91,7 @@ const supporttoolsInfo = computed(() => {
 }
 .tool-main {
   display: flex;
-  gap: var(--o-spacing-h4);
+  gap: var(--e-spacing-h4);
   .tool-side {
     width: 245px;
     position: relative;
@@ -136,65 +100,65 @@ const supporttoolsInfo = computed(() => {
 .tool-content {
   .tool-item {
     &:not(:last-child) {
-      margin-bottom: var(--o-spacing-h4);
+      margin-bottom: var(--e-spacing-h4);
     }
     :deep(.el-card__body) {
-      padding: 0 var(--o-spacing-h2);
+      padding: 0 var(--e-spacing-h2);
       @media screen and (max-width: 1100px) {
-        padding: 0 var(--o-spacing-h5);
+        padding: 0 var(--e-spacing-h5);
       }
     }
     .title {
-      font-size: var(--o-font-size-h5);
+      font-size: var(--e-font-size-h5);
       font-weight: 500;
       line-height: 80px;
-      color: var(--o-color-text1);
-      border-bottom: 1px solid var(--o-color-border2);
+      color: var(--e-color-text1);
+      border-bottom: 1px solid var(--e-color-border2);
       @media screen and (max-width: 1100px) {
         line-height: 48px;
-        font-size: var(--o-font-size-h8);
+        font-size: var(--e-font-size-h8);
       }
     }
     .tool-item-detail {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: var(--o-spacing-h4);
+      gap: var(--e-spacing-h4);
       .item-box {
-        padding: var(--o-spacing-h4) 0;
+        padding: var(--e-spacing-h4) 0;
         .item-name {
-          font-size: var(--o-font-size-h6);
-          line-height: var(--o-line-height-h6);
-          color: var(--o-color-text1);
+          font-size: var(--e-font-size-h6);
+          line-height: var(--e-line-height-h6);
+          color: var(--e-color-text1);
           @media screen and (max-width: 1100px) {
-            font-size: var(--o-font-size-text);
-            line-height: var(--o-line-height-text);
+            font-size: var(--e-font-size-text);
+            line-height: var(--e-line-height-text);
           }
         }
         .item-desc {
-          font-size: var(--o-font-size-text);
-          line-height: var(--o-line-height-text);
-          color: var(--o-color-text4);
-          margin: var(--o-spacing-h8) 0;
+          font-size: var(--e-font-size-text);
+          line-height: var(--e-line-height-text);
+          color: var(--e-color-text4);
+          margin: var(--e-spacing-h8) 0;
           @media screen and (max-width: 1100px) {
-            font-size: var(--o-font-size-tip);
-            line-height: var(--o-line-height-tip);
+            font-size: var(--e-font-size-tip);
+            line-height: var(--e-line-height-tip);
           }
         }
         .item-link {
           display: flex;
-          gap: var(--o-spacing-h4);
+          gap: var(--e-spacing-h4);
           a {
-            font-size: var(--o-font-size-text);
-            line-height: var(--o-line-height-text);
-            color: var(--o-color-brand1);
+            font-size: var(--e-font-size-text);
+            line-height: var(--e-line-height-text);
+            color: var(--e-color-brand1);
             @media screen and (max-width: 1100px) {
-              font-size: var(--o-font-size-tip);
-              line-height: var(--o-line-height-tip);
+              font-size: var(--e-font-size-tip);
+              line-height: var(--e-line-height-tip);
             }
           }
         }
         @media screen and (max-width: 1100px) {
-          padding: var(--o-spacing-h6) 0;
+          padding: var(--e-spacing-h6) 0;
         }
       }
       @media screen and (max-width: 1100px) {

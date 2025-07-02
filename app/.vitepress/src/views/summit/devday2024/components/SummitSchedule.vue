@@ -35,16 +35,8 @@ const otherTabType = ref(0);
   <div class="schedule">
     <h4>{{ agendaData.lable }}</h4>
     <div class="schedule-item other">
-      <el-tabs
-        v-if="agendaData.content[1]"
-        v-model.number="otherTabType"
-        class="other-tabs"
-      >
-        <el-tab-pane
-          v-for="(itemList, scheduleIndex) in agendaData.content"
-          :key="itemList.id"
-          :name="scheduleIndex"
-        >
+      <el-tabs v-if="agendaData.content[1]" v-model.number="otherTabType" class="other-tabs">
+        <el-tab-pane v-for="(itemList, scheduleIndex) in agendaData.content" :key="itemList.id" :name="scheduleIndex">
           <template #label>
             <div class="time-tabs">
               {{ itemList.name }}
@@ -52,12 +44,7 @@ const otherTabType = ref(0);
           </template>
         </el-tab-pane>
       </el-tabs>
-      <div
-        v-for="(itemList, listIndex) in agendaData.content"
-        v-show="otherTabType == listIndex"
-        :key="itemList.id"
-        class="content"
-      >
+      <div v-for="(itemList, listIndex) in agendaData.content" v-show="otherTabType == listIndex" :key="itemList.id" class="content">
         <h4 v-if="itemList.title" class="other-title">
           {{ itemList.title }}
         </h4>
@@ -66,25 +53,22 @@ const otherTabType = ref(0);
             v-for="subItem in itemList.content"
             :key="subItem.id"
             class="content-item"
-            :class="{'no-name': !subItem.person[0], 'sub-forum': agendaData.lable.includes('分论坛'), 'content-item-sig': agendaData.lable.includes('SIG组线下工作会议')}"
+            :class="{
+              'no-name': !subItem.person[0],
+              'sub-forum': agendaData.lable.includes('分论坛'),
+              'content-item-sig': agendaData.lable.includes('SIG组线下工作会议'),
+            }"
           >
             <span class="time">
               <img :src="isLight ? time : timeDark" />
               {{ subItem.time }}
             </span>
-            <span
-              class="desc"
-              @click="changeIndexShow(itemList.id, subItem.id)"
-            >
-              <span
-                v-for="item in subItem.desc.split('\n')"
-                :key="item + '1'"
-                >{{ item }}</span
-              >
+            <span class="desc" @click="changeIndexShow(itemList.id, subItem.id)">
+              <span v-for="item in subItem.desc.split('\n')" :key="item + '1'">{{ item }}</span>
             </span>
             <div v-if="subItem.person[0]" class="name-box">
               <div v-for="personItem in subItem.person" :key="personItem.id">
-                <span class="name" :class="{'name-no': personItem.id.includes('id21_1_8') || personItem.id.includes('id21_1_11')}">
+                <span class="name" :class="{ 'name-no': personItem.id.includes('id21_1_8') || personItem.id.includes('id21_1_11') }">
                   {{ personItem.name }}
                 </span>
                 <span v-if="personItem.post" class="post">
@@ -113,7 +97,7 @@ const otherTabType = ref(0);
     font-size: 20px;
     line-height: 28px;
     font-weight: 400;
-    color: var(--o-color-text1);
+    color: var(--e-color-text1);
     @media (max-width: 1100px) {
       margin-top: 24px;
       font-size: 14px;
@@ -159,10 +143,10 @@ const otherTabType = ref(0);
     .time-tabs {
       display: inline-block;
       margin: 0 0 24px;
-      border: 1px solid var(--o-color-border2);
-      color: var(--o-color-text1);
+      border: 1px solid var(--e-color-border2);
+      color: var(--e-color-text1);
       text-align: center;
-      background: var(--o-color-bg2);
+      background: var(--e-color-bg2);
       font-size: 14px;
       line-height: 38px;
       padding: 0 16px;
@@ -175,15 +159,15 @@ const otherTabType = ref(0);
 
     .is-active .time-tabs {
       color: #fff;
-      background: var(--o-color-brand1);
-      border-color: var(--o-color-brand1);
+      background: var(--e-color-brand1);
+      border-color: var(--e-color-brand1);
     }
   }
   .schedule-item {
     width: 100%;
     padding: 24px;
-    background-color: var(--o-color-bg2);
-    margin-top: var(--o-spacing-h4);
+    background-color: var(--e-color-bg2);
+    margin-top: var(--e-spacing-h4);
     @media (max-width: 1100px) {
       padding: 16px;
       margin-top: 20px;
@@ -219,7 +203,7 @@ const otherTabType = ref(0);
       }
       :deep(.el-tabs__nav-scroll) {
         text-align: center;
-        color: var(--o-color-text1);
+        color: var(--e-color-text1);
       }
       :deep(.el-tabs__content) {
         overflow: visible;
@@ -236,7 +220,7 @@ const otherTabType = ref(0);
       }
       .other-text {
         margin: 24px auto 0 auto;
-        color: var(--o-color-text1);
+        color: var(--e-color-text1);
         font-size: 18px;
         line-height: 26px;
         text-align: center;
@@ -254,7 +238,7 @@ const otherTabType = ref(0);
       }
       .other-title {
         margin: 24px auto;
-        color: var(--o-color-text1);
+        color: var(--e-color-text1);
         font-size: 18px;
         line-height: 26px;
         text-align: center;
@@ -270,14 +254,14 @@ const otherTabType = ref(0);
       }
     }
     :deep(.time-tabs) {
-      color: var(--o-color-text1);
+      color: var(--e-color-text1);
       &:hover {
-        color: var(--o-color-brand1);
+        color: var(--e-color-brand1);
       }
     }
     :deep(.is-active) {
       .time-tabs {
-        color: var(--o-color-brand1);
+        color: var(--e-color-brand1);
       }
     }
   }
@@ -289,7 +273,7 @@ const otherTabType = ref(0);
   .content-item {
     display: grid;
     grid-template-columns: 185px 564px 603px;
-    border-bottom: 1px solid var(--o-color-border2);
+    border-bottom: 1px solid var(--e-color-border2);
     padding: 20px 0px;
     transition: all 0.25s ease;
     align-items: center;
@@ -333,7 +317,7 @@ const otherTabType = ref(0);
     .desc {
       font-size: 18px;
       line-height: 26px;
-      color: var(--o-color-text1);
+      color: var(--e-color-text1);
       display: block;
       margin-right: 56px;
       > span {
@@ -349,7 +333,7 @@ const otherTabType = ref(0);
     .name {
       min-width: 144px;
       display: inline-block;
-      color: var(--o-color-text3);
+      color: var(--e-color-text3);
       font-size: 16px;
       line-height: 24px;
       @media screen and (max-width: 1328px) {
@@ -368,7 +352,7 @@ const otherTabType = ref(0);
     .post {
       width: 100%;
       display: inline-block;
-      color: var(--o-color-text3);
+      color: var(--e-color-text3);
       font-size: 16px;
       line-height: 24px;
       flex: 1;
@@ -389,7 +373,7 @@ const otherTabType = ref(0);
       width: 185px;
       font-size: 18px;
       line-height: 26px;
-      color: var(--o-color-text3);
+      color: var(--e-color-text3);
       display: flex;
       align-items: center;
       @media screen and (max-width: 1100px) {
@@ -400,7 +384,7 @@ const otherTabType = ref(0);
       img {
         width: 18px;
         height: 18px;
-        color: var(--o-color-text3);
+        color: var(--e-color-text3);
         margin-right: 8px;
         @media screen and (max-width: 1100px) {
           display: none;

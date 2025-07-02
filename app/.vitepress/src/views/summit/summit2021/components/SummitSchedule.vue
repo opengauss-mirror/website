@@ -36,7 +36,7 @@ defineProps({
 .dataItem {
   display: grid;
   grid-template-columns: 192px 580px 550px;
-  border-bottom: 1px solid var(--o-color-border2);
+  border-bottom: 1px solid var(--e-color-border2);
   padding: 20px 0;
   transition: all 0.25s ease;
   align-items: center;
@@ -49,7 +49,7 @@ defineProps({
   }
 
   &:hover {
-    background-color: var(--o-color-bg4);
+    background-color: var(--e-color-bg4);
   }
   .box {
     display: flex;
@@ -83,39 +83,39 @@ defineProps({
     }
   }
   .desc {
-    font-size: var(--o-font-size-h7);
-    line-height: var(--o-line-height-h7);
-    color: var(--o-color-text1);
+    font-size: var(--e-font-size-h7);
+    line-height: var(--e-line-height-h7);
+    color: var(--e-color-text1);
     display: inline-block;
     margin-right: 36px;
     @media (max-width: 1100px) {
       margin-right: 0;
-      font-size: var(--o-font-size-tip);
-      line-height: var(--o-line-height-tip);
+      font-size: var(--e-font-size-tip);
+      line-height: var(--e-line-height-tip);
     }
   }
   .name {
     width: 100px;
     display: inline-block;
-    color: var(--o-color-text4);
-    font-size: var(--o-font-size-h8);
-    line-height: var(--o-line-height-h8);
+    color: var(--e-color-text4);
+    font-size: var(--e-font-size-h8);
+    line-height: var(--e-line-height-h8);
     @media (max-width: 1100px) {
-      font-size: var(--o-font-size-tip);
-      line-height: var(--o-line-height-tip);
+      font-size: var(--e-font-size-tip);
+      line-height: var(--e-line-height-tip);
     }
   }
   .post {
     width: 100%;
     display: inline-block;
-    color: var(--o-color-text4);
-    font-size: var(--o-font-size-h8);
-    line-height: var(--o-line-height-h8);
+    color: var(--e-color-text4);
+    font-size: var(--e-font-size-h8);
+    line-height: var(--e-line-height-h8);
     word-break: keep-all;
     flex: 1;
     @media (max-width: 1100px) {
-      font-size: var(--o-font-size-tip);
-      line-height: var(--o-line-height-tip);
+      font-size: var(--e-font-size-tip);
+      line-height: var(--e-line-height-tip);
     }
   }
   .post-more {
@@ -126,20 +126,20 @@ defineProps({
   }
   .time {
     width: 192px;
-    font-size: var(--o-font-size-h7);
-    line-height: var(--o-line-height-h7);
-    color: var(--o-color-text4);
+    font-size: var(--e-font-size-h7);
+    line-height: var(--e-line-height-h7);
+    color: var(--e-color-text4);
     display: flex;
     align-items: center;
     @media screen and (max-width: 1100px) {
-      font-size: var(--o-font-size-tip);
-      line-height: var(--o-line-height-tip);
+      font-size: var(--e-font-size-tip);
+      line-height: var(--e-line-height-tip);
       width: 80px;
     }
     svg {
       width: 18px;
       height: 18px;
-      color: var(--o-color-text4);
+      color: var(--e-color-text4);
       margin-right: 6px;
       @media screen and (max-width: 1100px) {
         display: none;

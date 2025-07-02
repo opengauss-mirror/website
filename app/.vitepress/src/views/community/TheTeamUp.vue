@@ -96,7 +96,7 @@ const data = teamUpData.zh;
   .team-up {
     --team-up-sub-text-color: #ffffff;
     --team-up-card-bg-color: #131313;
-    --team-up-divider: var(--o-color-division1);
+    --team-up-divider: var(--e-color-division1);
   }
 }
 
@@ -104,7 +104,7 @@ const data = teamUpData.zh;
   --team-up-sub-text-color: rgba(0, 0, 0, 0.8);
   --team-up-card-bg-color: #f4f5f7;
   --team-up-divider: rgba(0, 0, 0, 0.1);
-  background-color: var(--o-color-bg2);
+  background-color: var(--e-color-bg2);
   padding: 40px;
 
   @media screen and (max-width: 1280px) {
@@ -116,18 +116,18 @@ const data = teamUpData.zh;
   }
 
   .desc {
-    font-size: var(--o-font-size-h7);
-    line-height: var(--o-line-height-h7);
+    font-size: var(--e-font-size-h7);
+    line-height: var(--e-line-height-h7);
     text-align: center;
 
     @media screen and (max-width: 1280px) {
-      font-size: var(--o-font-size-h8);
-      line-height: var(--o-line-height-h8);
+      font-size: var(--e-font-size-h8);
+      line-height: var(--e-line-height-h8);
     }
 
     @media screen and (max-width: 768px) {
-      font-size: var(--o-font-size-text);
-      line-height: var(--o-line-height-text);
+      font-size: var(--e-font-size-text);
+      line-height: var(--e-line-height-text);
     }
   }
 
@@ -145,22 +145,22 @@ const data = teamUpData.zh;
   }
 
   .section-title {
-    margin-bottom: var(--o-spacing-h4);
-    font-size: var(--o-font-size-h7);
-    line-height: var(--o-line-height-h7);
+    margin-bottom: var(--e-spacing-h4);
+    font-size: var(--e-font-size-h7);
+    line-height: var(--e-line-height-h7);
     text-align: center;
     font-weight: 500;
 
     @media screen and (max-width: 1280px) {
-      margin-bottom: var(--o-spacing-h6);
-      font-size: var(--o-font-size-h8);
-      line-height: var(--o-line-height-h8);
+      margin-bottom: var(--e-spacing-h6);
+      font-size: var(--e-font-size-h8);
+      line-height: var(--e-line-height-h8);
     }
 
     @media screen and (max-width: 768px) {
-      margin-bottom: var(--o-spacing-h8);
-      font-size: var(--o-font-size-text);
-      line-height: var(--o-line-height-text);
+      margin-bottom: var(--e-spacing-h8);
+      font-size: var(--e-font-size-text);
+      line-height: var(--e-line-height-text);
     }
   }
 
@@ -230,30 +230,30 @@ const data = teamUpData.zh;
     .process-title {
       margin-top: -20px;
       padding: 8px 0;
-      font-size: var(--o-font-size-h7);
-      line-height: var(--o-line-height-h7);
+      font-size: var(--e-font-size-h7);
+      line-height: var(--e-line-height-h7);
 
       @media screen and (max-width: 1280px) {
-        font-size: var(--o-font-size-h8);
-        line-height: var(--o-line-height-h8);
+        font-size: var(--e-font-size-h8);
+        line-height: var(--e-line-height-h8);
       }
 
       @media screen and (max-width: 768px) {
-        font-size: var(--o-font-size-text);
-        line-height: var(--o-line-height-text);
+        font-size: var(--e-font-size-text);
+        line-height: var(--e-line-height-text);
       }
     }
 
     .process-text-wrap {
       max-width: 148px;
-      font-size: var(--o-font-size-text);
+      font-size: var(--e-font-size-text);
       color: var(--team-up-sub-text-color);
-      line-height: var(--o-line-height-text);
+      line-height: var(--e-line-height-text);
       text-align: left;
 
       @media screen and (max-width: 1280px) {
-        font-size: var(--o-font-size-tip);
-        line-height: var(--o-line-height-tip);
+        font-size: var(--e-font-size-tip);
+        line-height: var(--e-line-height-tip);
       }
     }
 
@@ -292,17 +292,17 @@ const data = teamUpData.zh;
     }
 
     .detail-card-title {
-      font-size: var(--o-font-size-h7);
-      line-height: var(--o-line-height-h7);
+      font-size: var(--e-font-size-h7);
+      line-height: var(--e-line-height-h7);
 
       @media screen and (max-width: 1280px) {
-        font-size: var(--o-font-size-h8);
-        line-height: var(--o-line-height-h8);
+        font-size: var(--e-font-size-h8);
+        line-height: var(--e-line-height-h8);
       }
 
       @media screen and (max-width: 768px) {
-        font-size: var(--o-font-size-text);
-        line-height: var(--o-line-height-text);
+        font-size: var(--e-font-size-text);
+        line-height: var(--e-line-height-text);
       }
     }
 
@@ -310,14 +310,14 @@ const data = teamUpData.zh;
       display: flex;
       flex-wrap: wrap;
       margin-top: 12px;
-      font-size: var(--o-font-size-text);
-      line-height: var(--o-line-height-text);
+      font-size: var(--e-font-size-text);
+      line-height: var(--e-line-height-text);
       color: var(--team-up-sub-text-color);
 
       @media screen and (max-width: 1280px) {
         margin-top: 8px;
-        font-size: var(--o-font-size-tip);
-        line-height: var(--o-line-height-tip);
+        font-size: var(--e-font-size-tip);
+        line-height: var(--e-line-height-tip);
       }
 
       @media screen and (max-width: 768px) {
@@ -332,15 +332,15 @@ const data = teamUpData.zh;
       @media screen and (max-width: 1280px) {
         margin-top: 2px;
         margin-right: 2px;
-        font-size: var(--o-font-size-h8);
-        line-height: var(--o-line-height-h8);
+        font-size: var(--e-font-size-h8);
+        line-height: var(--e-line-height-h8);
       }
 
       @media screen and (max-width: 768px) {
         margin-top: 2px;
         margin-right: 2px;
-        font-size: var(--o-font-size-text);
-        line-height: var(--o-line-height-text);
+        font-size: var(--e-font-size-text);
+        line-height: var(--e-line-height-text);
       }
     }
 
@@ -352,20 +352,20 @@ const data = teamUpData.zh;
 
     .action-btn {
       min-width: 98px;
-      padding: var(--o-spacing-h10) var(--o-spacing-h5);
+      padding: var(--e-spacing-h10) var(--e-spacing-h5);
       margin-left: 10px;
-      font-size: var(--o-font-size-text);
-      line-height: var(--o-line-height-text);
+      font-size: var(--e-font-size-text);
+      line-height: var(--e-line-height-text);
 
       @media screen and (max-width: 800px) {
-        padding: var(--o-spacing-h10) var(--o-spacing-h6);
-        font-size: var(--o-font-size-tip);
-        line-height: var(--o-line-height-tip);
+        padding: var(--e-spacing-h10) var(--e-spacing-h6);
+        font-size: var(--e-font-size-tip);
+        line-height: var(--e-line-height-tip);
       }
     }
 
     .action-btn-icon {
-      font-size: var(--o-font-size-tip);
+      font-size: var(--e-font-size-tip);
     }
   }
 }

@@ -33,14 +33,8 @@ const eventsData = computed(() => {
 // 所需日期
 const nowDate = new Date();
 const nowYear: number = nowDate.getFullYear();
-const nowMonth: number | string =
-  nowDate.getMonth() < 9
-    ? '0' + (nowDate.getMonth() + 1)
-    : nowDate.getMonth() + 1;
-const nowDay =
-  nowDate.getDate().toString().length === 1
-    ? '0' + nowDate.getDate()
-    : nowDate.getDate();
+const nowMonth: number | string = nowDate.getMonth() < 9 ? '0' + (nowDate.getMonth() + 1) : nowDate.getMonth() + 1;
+const nowDay = nowDate.getDate().toString().length === 1 ? '0' + nowDate.getDate() : nowDate.getDate();
 const curDate = Number('' + nowYear + nowMonth + nowDay);
 
 // 本月及以后最新活动列表
@@ -102,11 +96,7 @@ const goDetail = (path: string) => {
 </script>
 
 <template>
-  <BannerLevel2
-    :background-image="banner"
-    :title="i18n.common.COMMON_CONFIG.EVENTS"
-    :illustration="illustration"
-  />
+  <BannerLevel2 :background-image="banner" :title="i18n.common.COMMON_CONFIG.EVENTS" :illustration="illustration" />
   <AppContent class="salon-content">
     <div class="latest-events">
       <h3 class="salon-title">{{ i18n.connect.EVENTS_NEW }}</h3>
@@ -143,13 +133,7 @@ const goDetail = (path: string) => {
         </OContainer>
       </template>
       <div v-else class="nofound">
-        <img
-          class="empty-img"
-          :src="
-            commonStore.theme === 'light' ? notFoundImg_light : notFoundImg_dark
-          "
-          alt="404"
-        />
+        <img class="empty-img" :src="commonStore.theme === 'light' ? notFoundImg_light : notFoundImg_dark" alt="404" />
         <p class="empty-text">
           {{ i18n.common.Not_Found }}
         </p>
@@ -159,32 +143,16 @@ const goDetail = (path: string) => {
       <h3 class="salon-title review-title">
         {{ i18n.connect.EVENTS_REVIEW }}
       </h3>
-      <OTimeline
-        v-model="timeLineDate"
-        class="salon-time"
-        :right-arrow="true"
-        :left-arrow="true"
-      ></OTimeline>
+      <OTimeline v-model="timeLineDate" class="salon-time" :right-arrow="true" :left-arrow="true"></OTimeline>
       <div v-if="newsList && newsList.length !== 0" class="salon-review">
-        <OCard
-          v-for="item in newsList"
-          :key="item.ID"
-          class="salon-review-card"
-          :style="{ padding: '0px' }"
-          shadow="hover"
-          @click="goDetail(item.path)"
-        >
+        <OCard v-for="item in newsList" :key="item.ID" class="salon-review-card" :style="{ padding: '0px' }" shadow="hover" @click="goDetail(item.path)">
           <div class="salon-review-card-title">
             {{ item.title }}
           </div>
           <div v-if="item.img" class="salon-review-card-img">
             <img :src="item.img" alt="" />
           </div>
-          <div
-            v-else
-            class="salon-review-card-desc"
-            :title="item.textContent ? item.textContent : ''"
-          >
+          <div v-else class="salon-review-card-desc" :title="item.textContent ? item.textContent : ''">
             {{ item.textContent ? item.textContent : '' }}
           </div>
           <div class="salon-review-card-bottom">
@@ -192,11 +160,7 @@ const goDetail = (path: string) => {
               <div class="salon-review-card-mobile-title">
                 {{ item.title }}
               </div>
-              <div
-                v-if="item.MEETUPS_DES"
-                class="salon-review-card-mobile-desc"
-                :title="item.MEETUPS_DES ? item.MEETUPS_DES : ''"
-              >
+              <div v-if="item.MEETUPS_DES" class="salon-review-card-mobile-desc" :title="item.MEETUPS_DES ? item.MEETUPS_DES : ''">
                 {{ item.MEETUPS_DES ? item.MEETUPS_DES : '' }}
               </div>
             </div>
@@ -207,9 +171,7 @@ const goDetail = (path: string) => {
               </span>
               <span class="inline online">
                 <IconMapPin class="salon-review-card-icon" />
-                <span class="address" :title="item.location">
-                  {{ item.location }}</span
-                >
+                <span class="address" :title="item.location"> {{ item.location }}</span>
               </span>
               <span class="inline review-tag">
                 <IconTag class="salon-review-card-icon" />
@@ -221,15 +183,7 @@ const goDetail = (path: string) => {
       </div>
       <div v-else>
         <div class="nofound">
-          <img
-            class="empty-img"
-            :src="
-              commonStore.theme === 'light'
-                ? notFoundImg_light
-                : notFoundImg_dark
-            "
-            alt="404"
-          />
+          <img class="empty-img" :src="commonStore.theme === 'light' ? notFoundImg_light : notFoundImg_dark" alt="404" />
           <p class="empty-text">
             {{ i18n.common.Not_Found }}
           </p>
@@ -245,9 +199,9 @@ const goDetail = (path: string) => {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-size: var(--o-font-size-h6);
-  color: var(--o-color-text1);
-  padding-top: var(--o-spacing-h2);
+  font-size: var(--e-font-size-h6);
+  color: var(--e-color-text1);
+  padding-top: var(--e-spacing-h2);
   height: 100%;
   .empty-img {
     height: 300px;
@@ -258,13 +212,13 @@ const goDetail = (path: string) => {
     }
   }
   .empty-text {
-    margin-top: var(--o-spacing-h5);
+    margin-top: var(--e-spacing-h5);
   }
 }
 .latest-events {
-  margin-bottom: var(--o-spacing-h1);
+  margin-bottom: var(--e-spacing-h1);
   @media (max-width: 1100px) {
-    margin-bottom: var(--o-spacing-h2);
+    margin-bottom: var(--e-spacing-h2);
   }
 }
 
@@ -327,19 +281,19 @@ const goDetail = (path: string) => {
     }
     .activity-title {
       font-weight: 500;
-      color: var(--o-color-text1);
-      font-size: var(--o-font-size-h4);
-      line-height: var(--o-line-height-h4);
+      color: var(--e-color-text1);
+      font-size: var(--e-font-size-h4);
+      line-height: var(--e-line-height-h4);
       @media (max-width: 1100px) {
-        font-size: var(--o-font-size-text);
-        line-height: var(--o-line-height-text);
+        font-size: var(--e-font-size-text);
+        line-height: var(--e-line-height-text);
       }
     }
     .desc {
       font-weight: normal;
-      color: var(--o-color-text4);
-      font-size: var(--o-font-size-text);
-      line-height: var(--o-line-height-text);
+      color: var(--e-color-text4);
+      font-size: var(--e-font-size-text);
+      line-height: var(--e-line-height-text);
       margin: 24px 0 40px;
       text-align: justify;
       word-break: break-all;
@@ -349,26 +303,26 @@ const goDetail = (path: string) => {
       -webkit-box-orient: vertical; //上下垂直
       -webkit-line-clamp: 3; //自定义行数
       @media (max-width: 1100px) {
-        margin: var(--o-spacing-h9) 0;
-        font-size: var(--o-font-size-tip);
-        line-height: var(--o-line-height-tip);
-        height: var(--o-line-height-tip);
+        margin: var(--e-spacing-h9) 0;
+        font-size: var(--e-font-size-tip);
+        line-height: var(--e-line-height-tip);
+        height: var(--e-line-height-tip);
         -webkit-line-clamp: 1;
       }
     }
     .info {
       p {
-        color: var(--o-color-text4);
+        color: var(--e-color-text4);
         margin-bottom: 12px;
-        font-size: var(--o-font-size-text);
-        line-height: var(--o-line-height-text);
+        font-size: var(--e-font-size-text);
+        line-height: var(--e-line-height-text);
         display: flex;
         align-items: center;
         @media (max-width: 1100px) {
           display: inline-flex;
-          margin: 0 var(--o-spacing-h5) 0 0;
-          font-size: var(--o-font-size-tip);
-          line-height: var(--o-line-height-tip);
+          margin: 0 var(--e-spacing-h5) 0 0;
+          font-size: var(--e-font-size-tip);
+          line-height: var(--e-line-height-tip);
         }
       }
       .info-tag {
@@ -393,7 +347,7 @@ const goDetail = (path: string) => {
       }
     }
     @media (max-width: 1100px) {
-      padding: var(--o-spacing-h5) var(--o-spacing-h6);
+      padding: var(--e-spacing-h5) var(--e-spacing-h6);
     }
   }
 }
@@ -401,17 +355,17 @@ const goDetail = (path: string) => {
   &-review {
     display: grid;
     width: 100%;
-    margin-top: var(--o-spacing-h2);
+    margin-top: var(--e-spacing-h2);
     justify-items: center;
     align-items: center;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: var(--o-spacing-h2) var(--o-spacing-h4);
+    grid-gap: var(--e-spacing-h2) var(--e-spacing-h4);
     @media (max-width: 1080px) {
       grid-template-columns: repeat(2, 1fr);
     }
     @media (max-width: 768px) {
       grid-template-columns: repeat(1, 1fr);
-      grid-gap: var(--o-spacing-h5);
+      grid-gap: var(--e-spacing-h5);
       margin-top: 0;
     }
 
@@ -419,7 +373,7 @@ const goDetail = (path: string) => {
       cursor: pointer;
       width: 100%;
       :deep(.el-card__body) {
-        padding: var(--o-spacing-h4);
+        padding: var(--e-spacing-h4);
         width: 100%;
         display: flex;
         flex-flow: column;
@@ -439,9 +393,9 @@ const goDetail = (path: string) => {
         }
 
         &-title {
-          font-size: var(--o-font-size-text);
-          line-height: var(--o-line-height-text);
-          color: var(--o-color-text1);
+          font-size: var(--e-font-size-text);
+          line-height: var(--e-line-height-text);
+          color: var(--e-color-text1);
           overflow: hidden;
           text-overflow: ellipsis;
           display: -webkit-box;
@@ -451,10 +405,10 @@ const goDetail = (path: string) => {
           font-weight: 500;
         }
         &-desc {
-          font-size: var(--o-font-size-tip);
-          line-height: var(--o-line-height-tip);
-          color: var(--o-color-text4);
-          margin-top: var(--o-spacing-h9);
+          font-size: var(--e-font-size-tip);
+          line-height: var(--e-line-height-tip);
+          color: var(--e-color-text4);
+          margin-top: var(--e-spacing-h9);
           overflow: hidden;
           text-overflow: ellipsis;
           display: -webkit-box;
@@ -467,20 +421,20 @@ const goDetail = (path: string) => {
       &-icon {
         height: 24px;
         width: 24px;
-        color: var(--o-color-text4);
-        margin-right: var(--o-spacing-h9);
+        color: var(--e-color-text4);
+        margin-right: var(--e-spacing-h9);
         @media (max-width: 768px) {
           height: 16px;
           width: 16px;
-          color: var(--o-color-neutral8);
-          margin-right: var(--o-spacing-h10);
+          color: var(--e-color-neutral8);
+          margin-right: var(--e-spacing-h10);
         }
       }
 
       &-title {
-        font-size: var(--o-font-size-h8);
-        line-height: var(--o-line-height-h8);
-        color: var(--o-color-text1);
+        font-size: var(--e-font-size-h8);
+        line-height: var(--e-line-height-h8);
+        color: var(--e-color-text1);
         overflow: hidden;
         text-overflow: ellipsis;
         height: 52px;
@@ -496,11 +450,11 @@ const goDetail = (path: string) => {
       &-desc {
         width: 100%;
         height: 172px;
-        font-size: var(--o-font-size-text);
-        line-height: var(--o-line-height-text);
-        color: var(--o-color-text1);
+        font-size: var(--e-font-size-text);
+        line-height: var(--e-line-height-text);
+        color: var(--e-color-text1);
         overflow: hidden;
-        margin-top: var(--o-spacing-h4);
+        margin-top: var(--e-spacing-h4);
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-box-orient: vertical;
@@ -517,7 +471,7 @@ const goDetail = (path: string) => {
         flex-flow: row;
         justify-content: center;
         align-items: center;
-        margin-top: var(--o-spacing-h4);
+        margin-top: var(--e-spacing-h4);
         @media (max-width: 768px) {
           margin-top: 0px;
         }
@@ -532,12 +486,12 @@ const goDetail = (path: string) => {
         span {
           position: absolute;
           text-align: center;
-          font-size: var(--o-font-size-h6);
-          line-height: var(--o-line-height-h6);
+          font-size: var(--e-font-size-h6);
+          line-height: var(--e-line-height-h6);
           color: #fff;
           @media (max-width: 768px) {
-            font-size: var(--o-font-size-text);
-            line-height: var(--o-line-height-text);
+            font-size: var(--e-font-size-text);
+            line-height: var(--e-line-height-text);
           }
         }
       }
@@ -547,17 +501,17 @@ const goDetail = (path: string) => {
         align-items: center;
         flex-wrap: wrap;
         width: 100%;
-        margin-top: var(--o-spacing-h4);
+        margin-top: var(--e-spacing-h4);
 
         @media (max-width: 768px) {
-          margin-top: var(--o-spacing-h6);
+          margin-top: var(--e-spacing-h6);
         }
         .inline {
           display: flex;
           align-items: center;
-          margin-right: var(--o-spacing-h2);
+          margin-right: var(--e-spacing-h2);
           @media (max-width: 768px) {
-            margin-right: var(--o-spacing-h5);
+            margin-right: var(--e-spacing-h5);
           }
         }
         .review-tag {
@@ -578,13 +532,13 @@ const goDetail = (path: string) => {
         padding: 0;
         width: 100%;
         @media (max-width: 768px) {
-          padding: var(--o-spacing-h5) var(--o-spacing-h6);
+          padding: var(--e-spacing-h5) var(--e-spacing-h6);
         }
 
         .home {
-          margin-left: var(--o-spacing-h2);
+          margin-left: var(--e-spacing-h2);
           @media (max-width: 768px) {
-            margin-left: var(--o-spacing-h5);
+            margin-left: var(--e-spacing-h5);
           }
         }
         .address {
@@ -597,12 +551,12 @@ const goDetail = (path: string) => {
         }
 
         span {
-          color: var(--o-color-text4);
-          font-size: var(--o-font-size-tip);
-          line-height: var(--o-line-height-tip);
+          color: var(--e-color-text4);
+          font-size: var(--e-font-size-tip);
+          line-height: var(--e-line-height-tip);
           white-space: nowrap;
           @media (max-width: 768px) {
-            color: var(--o-color-neutral8);
+            color: var(--e-color-neutral8);
           }
         }
       }
@@ -610,28 +564,28 @@ const goDetail = (path: string) => {
   }
 
   &-time {
-    margin-top: var(--o-spacing-h2);
+    margin-top: var(--e-spacing-h2);
     display: block;
     @media (max-width: 768px) {
       display: none;
     }
   }
   &-title {
-    font-size: var(--o-font-size-h3);
+    font-size: var(--e-font-size-h3);
     font-weight: 400;
-    color: var(--o-color-text1);
-    line-height: var(--o-line-height-h3);
+    color: var(--e-color-text1);
+    line-height: var(--e-line-height-h3);
     width: 100%;
     text-align: center;
-    margin-bottom: var(--o-spacing-h2);
+    margin-bottom: var(--e-spacing-h2);
     @media (max-width: 768px) {
-      font-size: var(--o-font-size-h8);
-      line-height: var(--o-line-height-h8);
-      margin-bottom: var(--o-spacing-h5);
+      font-size: var(--e-font-size-h8);
+      line-height: var(--e-line-height-h8);
+      margin-bottom: var(--e-spacing-h5);
     }
   }
   &-tabs {
-    background-color: var(--o-color-bg2);
+    background-color: var(--e-color-bg2);
     display: flex;
     align-items: flex-end;
     justify-content: center;

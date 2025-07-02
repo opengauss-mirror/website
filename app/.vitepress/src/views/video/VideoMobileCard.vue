@@ -52,11 +52,11 @@ defineProps({
       height: 98px;
       display: flex;
       align-items: center;
-      padding: var(--o-spacing-h5) var(--o-spacing-h5) var(--o-spacing-h5) var(--o-spacing-h6);
+      padding: var(--e-spacing-h5) var(--e-spacing-h5) var(--e-spacing-h5) var(--e-spacing-h6);
 
       .title {
-        font-size: var(--o-font-size-h8);
-        line-height: var(--o-line-height-h8);
+        font-size: var(--e-font-size-h8);
+        line-height: var(--e-line-height-h8);
         color: #fff;
         text-overflow: ellipsis;
         display: -webkit-box;
@@ -67,16 +67,16 @@ defineProps({
     }
 
     .caption {
-      padding: var(--o-spacing-h5) var(--o-spacing-h6);
-      font-size: var(--o-font-size-text);
-      line-height: var(--o-line-height-text);
-      color: var(--o-color-text1);
+      padding: var(--e-spacing-h5) var(--e-spacing-h6);
+      font-size: var(--e-font-size-text);
+      line-height: var(--e-line-height-text);
+      color: var(--e-color-text1);
       box-sizing: content-box;
     }
   }
 }
 
 .video-item:not(:last-child) {
-  margin-bottom: var(--o-spacing-h5);
+  margin-bottom: var(--e-spacing-h5);
 }
 </style>

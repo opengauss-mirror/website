@@ -15,6 +15,7 @@
     "baseUrl": "./",
     "paths": {
       "@/*": ["./app/.vitepress/src/*"],
+      "~@/*": ["./app/.vitepress/src-new/*"],
       "opendesign": ["./opendesign"]
     },
     "types": ["unplugin-icons/types/vue", "element-plus/global", "node", "vitepress/client"]

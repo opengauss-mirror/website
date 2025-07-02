@@ -358,14 +358,14 @@ watch(
 <style lang="scss" scoped>
 .search {
   max-width: 1504px;
-  padding: var(--o-spacing-h2) 44px var(--o-spacing-h1);
+  padding: var(--e-spacing-h2) 44px var(--e-spacing-h1);
   margin: 0 auto;
 
   .pagination-slot {
-    font-size: var(--o-font-size-text);
+    font-size: var(--e-font-size-text);
     font-weight: 300;
-    color: var(--o-color-text1);
-    line-height: var(--o-spacing-h4);
+    color: var(--e-color-text1);
+    line-height: var(--e-spacing-h4);
   }
   @media (max-width: 1439px) {
     padding-left: 24px;
@@ -374,13 +374,13 @@ watch(
     grid-gap: 12px;
   }
   @media (max-width: 1100px) {
-    padding: 0 16px var(--o-spacing-h2);
-    padding-top: var(--o-spacing-h2);
+    padding: 0 16px var(--e-spacing-h2);
+    padding-top: var(--e-spacing-h2);
     grid-template-columns: 1fr;
   }
   @media (max-width: 768px) {
-    padding: 0 0 var(--o-spacing-h2) 0;
-    padding-top: var(--o-spacing-h5);
+    padding: 0 0 var(--e-spacing-h2) 0;
+    padding-top: var(--e-spacing-h5);
   }
 
   @media (max-width: 768px) {
@@ -405,18 +405,18 @@ watch(
   }
   .search-content {
     width: 100%;
-    margin-top: var(--o-spacing-h2);
+    margin-top: var(--e-spacing-h2);
 
     @media (max-width: 768px) {
-      margin-top: var(--o-spacing-h5);
+      margin-top: var(--e-spacing-h5);
     }
     .select-options {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 0 40px;
-      background-color: var(--o-color-bg2);
-      border-bottom: 1px solid var(--o-color-division1);
+      background-color: var(--e-color-bg2);
+      border-bottom: 1px solid var(--e-color-division1);
       @media screen and (max-width: 1620px) {
         padding: 0 24px;
       }
@@ -426,18 +426,18 @@ watch(
         flex-direction: column;
         padding: 0;
         margin: 0 16px;
-        background-color: var(--o-color-bg1);
+        background-color: var(--e-color-bg1);
         border: none;
       }
       .type {
         display: flex;
         flex-shrink: 0;
-        background-color: var(--o-color-bg2);
+        background-color: var(--e-color-bg2);
         @media (max-width: 768px) {
           width: 100%;
           padding: 0 16px;
           margin-bottom: 16px;
-          box-shadow: var(--o-shadow-l1);
+          box-shadow: var(--e-shadow-l1);
         }
         li {
           position: relative;
@@ -445,9 +445,9 @@ watch(
           align-items: center;
           height: 63px;
           min-width: 56px;
-          margin-right: var(--o-spacing-h3);
-          color: var(--o-color-text1);
-          font-size: var(--o-font-size-h8);
+          margin-right: var(--e-spacing-h3);
+          color: var(--e-color-text1);
+          font-size: var(--e-font-size-h8);
           cursor: pointer;
           @media screen and (max-width: 1620px) {
             margin-right: 24px;
@@ -459,7 +459,7 @@ watch(
             height: 34px;
             line-height: 34px;
             min-width: auto;
-            font-size: var(--o-font-size-tip);
+            font-size: var(--e-font-size-tip);
             margin-right: 0;
             text-align: center;
             & + li {
@@ -482,9 +482,9 @@ watch(
           }
         }
         .active {
-          color: var(--o-color-brand1);
+          color: var(--e-color-brand1);
           &::after {
-            background-color: var(--o-color-brand1);
+            background-color: var(--e-color-brand1);
           }
         }
       }
@@ -498,37 +498,37 @@ watch(
         }
         .el-input__wrapper {
           padding: 0 8px;
-          box-shadow: 0 0 1px var(--o-color-border1);
+          box-shadow: 0 0 1px var(--e-color-border1);
         }
       }
     }
     .content-box {
-      box-shadow: var(--o-shadow-l1);
-      background-color: var(--o-color-bg2);
+      box-shadow: var(--e-shadow-l1);
+      background-color: var(--e-color-bg2);
       @media (max-width: 768px) {
         width: 100vw;
-        padding: var(--o-spacing-h5) var(--o-spacing-h5) 0 var(--o-spacing-h5);
+        padding: var(--e-spacing-h5) var(--e-spacing-h5) 0 var(--e-spacing-h5);
         min-height: 0;
-        background-color: var(--o-color-bg1);
+        background-color: var(--e-color-bg1);
         box-shadow: none;
       }
       .content-list {
-        padding: 0 var(--o-spacing-h2) var(--o-spacing-h2) var(--o-spacing-h2);
+        padding: 0 var(--e-spacing-h2) var(--e-spacing-h2) var(--e-spacing-h2);
         @media (max-width: 768px) {
           padding: 0;
-          background-color: var(--o-color-bg2);
+          background-color: var(--e-color-bg2);
         }
         li {
-          padding-top: var(--o-spacing-h2);
+          padding-top: var(--e-spacing-h2);
           @media (max-width: 768px) {
-            padding-top: var(--o-spacing-h5);
-            margin: 0 var(--o-spacing-h5);
+            padding-top: var(--e-spacing-h5);
+            margin: 0 var(--e-spacing-h5);
             &::after {
               display: block;
               content: '';
               width: 100%;
               height: 1px;
-              background-color: var(--o-color-division1);
+              background-color: var(--e-color-division1);
               margin-top: 16px;
             }
             &:nth-last-of-type(1)::after {
@@ -536,23 +536,23 @@ watch(
             }
           }
           h3 {
-            font-size: var(--o-font-size-h5);
-            color: var(--o-color-text1);
-            line-height: var(--o-line-height-h5);
+            font-size: var(--e-font-size-h5);
+            color: var(--e-color-text1);
+            line-height: var(--e-line-height-h5);
             cursor: pointer;
             :deep(span) {
-              color: var(--o-color-brand1);
+              color: var(--e-color-brand1);
             }
             @media (max-width: 768px) {
-              font-size: var(--o-font-size-text);
-              line-height: var(--o-line-height-text);
+              font-size: var(--e-font-size-text);
+              line-height: var(--e-line-height-text);
             }
           }
           .detail {
             margin-top: 17px;
-            font-size: var(--o-font-size-text);
-            line-height: var(--o-line-height-text);
-            color: var(--o-color-text1);
+            font-size: var(--e-font-size-text);
+            line-height: var(--e-line-height-text);
+            color: var(--e-color-text1);
 
             overflow: hidden;
             text-overflow: ellipsis;
@@ -563,29 +563,29 @@ watch(
             -webkit-box-orient: vertical;
 
             :deep(span) {
-              color: var(--o-color-brand1);
+              color: var(--e-color-brand1);
             }
             @media (max-width: 768px) {
               margin-top: 4px;
-              font-size: var(--o-font-size-tip);
-              line-height: var(--o-line-height-tip);
-              color: var(--o-color-text4);
+              font-size: var(--e-font-size-tip);
+              line-height: var(--e-line-height-tip);
+              color: var(--e-color-text4);
             }
           }
           .from {
             margin-top: 15px;
-            font-size: var(--o-font-size-text);
-            line-height: var(--o-line-height-text);
-            color: var(--o-color-text4);
+            font-size: var(--e-font-size-text);
+            line-height: var(--e-line-height-text);
+            color: var(--e-color-text4);
             @media (max-width: 768px) {
               margin-top: 8px;
-              font-size: var(--o-font-size-tip);
-              line-height: var(--o-line-height-tip);
-              color: var(--o-color-text4);
+              font-size: var(--e-font-size-tip);
+              line-height: var(--e-line-height-tip);
+              color: var(--e-color-text4);
             }
           }
           .version {
-            margin-left: var(--o-spacing-h4);
+            margin-left: var(--e-spacing-h4);
           }
         }
       }
@@ -595,7 +595,7 @@ watch(
       display: flex;
       justify-content: center;
       width: 100%;
-      margin-top: var(--o-spacing-h4);
+      margin-top: var(--e-spacing-h4);
       @media (max-width: 768px) {
         width: 100vw;
       }

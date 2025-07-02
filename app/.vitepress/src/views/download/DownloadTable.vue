@@ -312,16 +312,16 @@ const collectDownloadData = (name: string) => {
         <el-table-column width="360" :label="i18n.download.TABLE_HEAD[0]" prop="name">
           <template #default="scope">
             <div class="name-info">
-              {{ scope.row.name }}     
-              <template v-if="tableData.name.includes('Server') && scope.row.name.includes('noLSE')">  
+              {{ scope.row.name }}
+              <template v-if="tableData.name.includes('Server') && scope.row.name.includes('noLSE')">
                 <el-tooltip :effect="commonStore.theme" placement="top">
                   <template #content>
                     <p class="lse-content">
                       支持ARMv8.1以下芯片，适配飞腾2000和鲲鹏916平台（LSE即大型系统扩展指令集从ARMv8.1开始引入，ARMv8.1以下芯片不支持该特性）
                     </p>
                   </template>
-               
-                  <IconTips class="server-tips" />  
+
+                  <IconTips class="server-tips" />
                 </el-tooltip>
               </template>
             </div>
@@ -427,33 +427,32 @@ const collectDownloadData = (name: string) => {
   </div>
 </template>
 <style lang="scss" scoped>
-
-.lse-content{
+.lse-content {
   max-width: 310px;
   padding: 3px 5px;
 }
 .content-item {
-  margin-top: var(--o-spacing-h2);
+  margin-top: var(--e-spacing-h2);
   @media (max-width: 1100px) {
-    margin-top: var(--o-spacing-h4);
+    margin-top: var(--e-spacing-h4);
   }
   h3 {
     text-align: center;
-    font-size: var(--o-font-size-h5);
-    line-height: var(--o-line-height-h5);
-    color: var(--o-color-text1);
+    font-size: var(--e-font-size-h5);
+    line-height: var(--e-line-height-h5);
+    color: var(--e-color-text1);
     @media (max-width: 1100px) {
-      font-size: var(--o-font-size-text);
-      line-height: var(--o-line-height-text);
+      font-size: var(--e-font-size-text);
+      line-height: var(--e-line-height-text);
     }
   }
   .filter-card {
-    margin-top: var(--o-spacing-h2);
+    margin-top: var(--e-spacing-h2);
     @media (max-width: 1100px) {
-      margin-top: var(--o-spacing-h5);
+      margin-top: var(--e-spacing-h5);
     }
     :deep(.tag-filter) {
-      padding: 0 var(--o-spacing-h2);
+      padding: 0 var(--e-spacing-h2);
       display: flex;
       justify-content: start;
       @media (max-width: 1100px) {
@@ -465,28 +464,28 @@ const collectDownloadData = (name: string) => {
         }
       }
       &.os-box {
-        margin-top: var(--o-spacing-h5);
+        margin-top: var(--e-spacing-h5);
         @media (max-width: 1100px) {
           margin-top: 8px;
         }
         .disable {
-          color: var(--o-color-text5);
+          color: var(--e-color-text5);
           cursor: not-allowed;
         }
       }
       .label {
         white-space: nowrap;
-        color: var(--o-color-text1);
+        color: var(--e-color-text1);
         @media (max-width: 1100px) {
-          font-size: var(--o-font-size-tip);
+          font-size: var(--e-font-size-tip);
           min-width: 60px;
         }
       }
       .tag-filter-box {
         .o-tag {
           @media (max-width: 1100px) {
-            font-size: var(--o-font-size-tip);
-            line-height: var(--o-line-height-tip);
+            font-size: var(--e-font-size-tip);
+            line-height: var(--e-line-height-tip);
             padding: 3px 8px;
             margin-bottom: 2px;
           }
@@ -496,9 +495,9 @@ const collectDownloadData = (name: string) => {
   }
 
   .download-pc {
-    margin-top: var(--o-spacing-h3);
+    margin-top: var(--e-spacing-h3);
     @media (max-width: 1100px) {
-      margin-top: var(--o-spacing-h5);
+      margin-top: var(--e-spacing-h5);
     }
     :deep(.el-table) {
       box-shadow: none !important;
@@ -506,11 +505,11 @@ const collectDownloadData = (name: string) => {
         display: none;
       }
       .cell {
-        padding-left: var(--o-spacing-h2);
+        padding-left: var(--e-spacing-h2);
         a {
           word-break: normal;
           &:hover {
-            color: var(--o-color-brand2);
+            color: var(--e-color-brand2);
           }
         }
       }
@@ -525,43 +524,43 @@ const collectDownloadData = (name: string) => {
         }
       }
       .el-table__body-wrapper {
-        border-bottom: 1px solid var(--o-color-border2);
+        border-bottom: 1px solid var(--e-color-border2);
       }
     }
     .name-info {
       display: flex;
       align-items: center;
-      gap: var(--o-spacing-h8);
-      color: var(--o-color-text1);
+      gap: var(--e-spacing-h8);
+      color: var(--e-color-text1);
       .server-tips {
-        width: var(--o-font-size-h6);
-        height: var(--o-font-size-h6);
-        color: var(--o-color-text4);
+        width: var(--e-font-size-h6);
+        height: var(--e-font-size-h6);
+        color: var(--e-color-text4);
       }
     }
     .down-copy {
-      font-size: var(--o-font-size-text);
+      font-size: var(--e-font-size-text);
       padding-left: 0;
-      color: var(--o-color-brand1);
+      color: var(--e-color-brand1);
       &:hover {
-        color: var(--o-color-brand2);
+        color: var(--e-color-brand2);
       }
     }
   }
   .download-mobile {
-    margin-top: var(--o-spacing-h5);
+    margin-top: var(--e-spacing-h5);
     .download-item {
-      padding: var(--o-spacing-h5);
+      padding: var(--e-spacing-h5);
       &:nth-of-type(2n + 1) {
-        background-color: var(--o-color-bg4);
+        background-color: var(--e-color-bg4);
       }
       .item-text {
-        font-size: var(--o-font-size-tip);
-        line-height: var(--o-font-height-tip);
-        color: var(--o-color-text1);
+        font-size: var(--e-font-size-tip);
+        line-height: var(--e-font-height-tip);
+        color: var(--e-color-text1);
         display: flex;
         & ~ .item-text {
-          margin-top: var(--o-spacing-h8);
+          margin-top: var(--e-spacing-h8);
         }
         span {
           display: inline-block;
@@ -570,10 +569,10 @@ const collectDownloadData = (name: string) => {
           }
         }
         .text-size {
-          color: var(--o-color-text4);
+          color: var(--e-color-text4);
         }
         .down-copy {
-          color: var(--o-color-brand1);
+          color: var(--e-color-brand1);
           padding: 0;
           line-height: 0;
         }
@@ -585,14 +584,14 @@ const collectDownloadData = (name: string) => {
             position: absolute;
             left: 0;
             top: -46px;
-            background-color: var(--o-color-bg2);
-            padding: var(--o-spacing-h9);
+            background-color: var(--e-color-bg2);
+            padding: var(--e-spacing-h9);
           }
           .server-tips {
-            width: var(--o-font-size-tip);
-            height: var(--o-font-size-tip);
-            color: var(--o-color-text4);
-            margin-left: var(--o-spacing-h9);
+            width: var(--e-font-size-tip);
+            height: var(--e-font-size-tip);
+            color: var(--e-color-text4);
+            margin-left: var(--e-spacing-h9);
           }
           .mask-mobile {
             position: fixed;
