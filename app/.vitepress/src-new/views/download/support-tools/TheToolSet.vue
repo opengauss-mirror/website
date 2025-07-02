@@ -1,26 +1,40 @@
 <script setup lang="ts">
-import { OButton, OIcon, OLink, OOption, OPopover, ORadio, ORadioGroup, OSelect, OTable, OToggle } from '@opensig/opendesign';
+import {
+  OButton,
+  OIcon,
+  OLink,
+  OOption,
+  OPopover,
+  ORadio,
+  ORadioGroup,
+  OSelect,
+  OTable,
+  OToggle,
+  useMessage,
+  ODialog,
+  type DialogActionT,
+} from '@opensig/opendesign';
 import TagFilter from '~@/components/TagFilter.vue';
 import IconCopy from '~icons/app/icon-copy2.svg';
 import downloadData from '~@/data/download';
 import { useCookieStore } from '@/stores/common';
 import { getCustomCookie } from '@/shared/utils';
 import { oaReport } from '@/shared/analytics';
-import { ElMessage, ElMessageBox } from 'element-plus';
 import { doLogin } from '@/shared/login';
 import { useData } from 'vitepress';
-import { useI18n } from 'vue-i18n';
+import { useI18n } from '~@/i18n';
 import { useUserInfoStore } from '@/stores/user';
 import { computed, ref, watchEffect } from 'vue';
 import { useClipboard } from '~@/composables/useClipboard';
 import IconQuestion from '~icons/app/icon-question-mark.svg';
 import { useScreen } from '~@/composables/useScreen';
 
-const _downloadData = downloadData.slice(0, 10) as (typeof downloadData[1][]);
+const _downloadData = downloadData.slice(0, 10) as (typeof downloadData)[1][];
 
 const { gtPadV } = useScreen();
 const { lang } = useData();
-const { t } = useI18n();
+const i18n = useI18n();
+const message = useMessage();
 const userInfoStore = useUserInfoStore();
 
 const versions = _downloadData.map((item) => ({ label: 'openGauss ' + item.name, value: item.name }));
@@ -85,22 +99,16 @@ const initClipboard = (text: string, e: MouseEvent) => {
     text,
     target: e,
     success: () => {
-      ElMessage({
-        message: t('common.COPY_SUCCESS'),
-        type: 'success',
-        onClose: () => {
-          isClipboard.value = true;
-        },
+      message.success({
+        content: i18n.value.common.COPY_SUCCESS,
       });
+      isClipboard.value = true;
     },
     error: () => {
-      ElMessage({
-        message: t('common.COPY_FAILED'),
-        type: 'error',
-        onClose: () => {
-          isClipboard.value = true;
-        },
+      message.danger({
+        content: i18n.value.common.COPY_FAILED,
       });
+      isClipboard.value = true;
     },
   });
 };
@@ -116,18 +124,29 @@ function handleUrlCopy(value: string | undefined, e: MouseEvent) {
 }
 
 const changeDownloadAuth = () => {
-  ElMessageBox.confirm(t('download.DONNLOAD_TEXT'), t('download.DONNLOAD_TIPS'), {
-    confirmButtonText: t('download.DONNLOAD_COMFIRM'),
-    cancelButtonText: t('download.DONNLOAD_CANCEL'),
-    type: 'warning',
-  })
-    .then(() => {
-      doLogin();
-    })
-    .catch(() => {
-      return '';
-    });
+  downloadDlg.value = true;
 };
+
+const downloadDlg = ref(false);
+const dlgAction: Ref<DialogActionT[]> = ref([
+  {
+    id: 'cancel',
+    label: i18n.value.download.DONNLOAD_CANCEL,
+    variant: 'outline',
+    onClick: () => {
+      downloadDlg.value = false;
+    },
+  },
+  {
+    id: 'ok',
+    label: i18n.value.download.DONNLOAD_COMFIRM,
+    color: 'primary',
+    variant: 'solid',
+    onClick: () => {
+      doLogin();
+    },
+  },
+]);
 
 const cookieStore = useCookieStore();
 // 下载埋点  新版本判断
@@ -156,13 +175,13 @@ const collectDownloadData = (name: string) => {
       <!-- 版本选择 -->
       <TagFilter v-if="gtPadV" class="architecture-box" label="选择版本">
         <OSelect v-model="currentVersion">
-          <OOption v-for="ver in versions" :label="ver.label" :value="ver.value"></OOption>
+          <OOption v-for="ver in versions" :label="ver.label" :value="ver.value" :key="ver.value"></OOption>
         </OSelect>
       </TagFilter>
       <template v-else>
         <p class="mobile-filter-label">选择版本</p>
         <OSelect v-model="currentVersion">
-          <OOption v-for="ver in versions" :label="ver.label" :value="ver.value"></OOption>
+          <OOption v-for="ver in versions" :label="ver.label" :value="ver.value" :key="ver.value"></OOption>
         </OSelect>
       </template>
       <!-- 架构选择 -->
@@ -198,7 +217,7 @@ const collectDownloadData = (name: string) => {
       <template v-else>
         <p class="mobile-filter-label">{{ $t('download.OS') }}</p>
         <OSelect v-model="activeOs">
-          <OOption v-for="item in osList" :label="item" :value="item"></OOption>
+          <OOption v-for="item in osList" :label="item" :value="item" :key="item"></OOption>
         </OSelect>
       </template>
       <!-- 表格 -->
@@ -217,7 +236,7 @@ const collectDownloadData = (name: string) => {
         </template>
         <!-- 完整性校验 -->
         <template #td_sha_code="{ row }">
-          <OLink tag="button" href="">
+          <OLink tag="button" @click="handleUrlCopy(row.sha_code, $event)">
             SHA256
             <template #suffix>
               <OIcon><IconCopy /></OIcon>
@@ -226,16 +245,16 @@ const collectDownloadData = (name: string) => {
         </template>
         <!-- 软件包下载 -->
         <template #td_download="{ row }">
-          <OButton v-if="!userInfoStore.username" variant="outline" color="primary" @click="changeDownloadAuth">
+          <OButton v-if="!userInfoStore.username" variant="outline" color="primary" size="small" @click="changeDownloadAuth">
             {{ $t('download.BTN_TEXT') }}
           </OButton>
-          <OButton v-else size="small" :href="row.downUrl" @click="collectDownloadData(row.name)" variant="outline" color="primary">
+          <OButton v-else size="small" :href="row.down_url" @click="collectDownloadData(row.name)" variant="outline" color="primary">
             {{ $t('download.BTN_TEXT') }}
           </OButton>
         </template>
       </OTable>
       <template v-else>
-        <div class="mobile-download-item-card" v-for="item in displayTools">
+        <div class="mobile-download-item-card" v-for="item in displayTools" :key="item.name">
           <p class="item-name">{{ item.name }}</p>
           <p class="desc" v-if="item.name.includes('noLSE')">
             支持ARMv8.1以下芯片，适配飞腾2000和鲲鹏916平台（LSE即大型系统扩展指令集从ARMv8.1开始引入，ARMv8.1以下芯片不支持该特性）
@@ -244,23 +263,28 @@ const collectDownloadData = (name: string) => {
             <p>软件包大小</p>
             <p>{{ item.size }}</p>
             <p>完整性校验</p>
-            <OLink tag="button" href="">
+            <OLink tag="button" @click="handleUrlCopy(row.sha_code, $event)">
               SHA256
               <template #suffix>
                 <OIcon><IconCopy /></OIcon>
               </template>
             </OLink>
             <p>软件包下载</p>
-            <OLink v-if="!userInfoStore.username" tag="button" href="" color="primary" @click="changeDownloadAuth">
+            <OLink v-if="!userInfoStore.username" tag="button" color="primary" @click="changeDownloadAuth">
               {{ $t('download.BTN_TEXT') }}
             </OLink>
-            <OLink v-else :href="item.downUrl" tag="button" @click="collectDownloadData(item.name)" color="primary">
+            <OLink v-else :href="item.down_url" tag="button" @click="collectDownloadData(item.name)" color="primary">
               {{ $t('download.BTN_TEXT') }}
             </OLink>
           </div>
         </div>
       </template>
     </div>
+    <!-- 登录弹窗 -->
+    <ODialog v-if="downloadDlg" v-model:visible="downloadDlg" :unmount-on-hide="false" @change="onDlgChane" size="small" :actions="dlgAction">
+      <template #header>{{ i18n.download.DONNLOAD_TIPS }}</template>
+      <div>{{ i18n.download.DONNLOAD_TEXT }}</div>
+    </ODialog>
   </section>
 </template>
 
@@ -323,11 +347,6 @@ const collectDownloadData = (name: string) => {
 
 .o-table {
   --table-cell-padding: 16px 0 16px 20px;
-  --table-head-bg: rgb(var(--o-mixedgray-4));
-}
-
-.o-toggle {
-  --toggle-bg-color: rgb(var(--o-mixedgray-4));
 }
 
 .card {

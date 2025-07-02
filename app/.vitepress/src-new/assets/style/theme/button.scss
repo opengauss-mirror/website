@@ -44,3 +44,9 @@
     background-color: var(--btn-bg-color-active);
   }
 }
+
+.o-btn-small {
+  line-height: var(--o-line_height-text2);
+  --btn-padding: 0 16px;
+  --btn-height: 28px;
+}

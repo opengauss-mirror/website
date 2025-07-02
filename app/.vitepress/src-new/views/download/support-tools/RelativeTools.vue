@@ -50,7 +50,7 @@ const displayTools = [
 const router = useRouter();
 const { lang } = useData();
 const gotoTools = () => {
-  router.go(`/${lang.value}/supporttools`);
+  router.go(`/${lang.value}/tools/`);
 };
 
 const commonStore = useCommon();
@@ -59,9 +59,11 @@ const isDark = computed(() => commonStore.theme === 'dark');
 
 <template>
   <div class="container">
-    <div :class="{'title-desc': true, dark: isDark }">
+    <div :class="{ 'title-desc': true, dark: isDark }">
       <p class="title">支持工具</p>
-      <p class="desc">主要面向开发者和ISV，提供六大类开发工具客户端工具、数据导入导出工具、数据复制/同步工具、监控运维接口及工具集、备份恢复接口及工具集、数据访问中间件</p>
+      <p class="desc">
+        主要面向开发者和ISV，提供六大类开发工具客户端工具、数据导入导出工具、数据复制/同步工具、监控运维接口及工具集、备份恢复接口及工具集、数据访问中间件
+      </p>
       <OButton variant="solid" color="primary" @click="gotoTools">全部工具</OButton>
     </div>
     <div class="tools">
@@ -143,6 +145,7 @@ const isDark = computed(() => commonStore.theme === 'dark');
       }
 
       h3 {
+        font-weight: 500;
         @include h3;
       }
 

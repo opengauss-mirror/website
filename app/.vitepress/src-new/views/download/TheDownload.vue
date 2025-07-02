@@ -89,7 +89,7 @@ provide('PERMISSION_LIST', getPermissionList);
       <OTabPane v-for="item in tabLists" :key="item.id" :label="item.label" :value="item.id">
         <div class="download-panel">
           <template v-if="activeTab === 'all'">
-            <DownloadAll /> 
+            <DownloadAll />
           </template>
           <template v-else>
             <DownloadContent :content-data="getData" />

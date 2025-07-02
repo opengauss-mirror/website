@@ -9,7 +9,7 @@ import { useUserInfoStore } from '@/stores/user';
 import { useLocale } from '~@/composables/useLocale';
 
 import IconDownload from '~icons/app/icon-download.svg';
-import IconCopy from '~icons/app/icon-copy.svg';
+import IconCopy from '~icons/app/icon-copy2.svg';
 import IconTips from '~icons/app/icon-tips.svg';
 
 const props = defineProps({
@@ -43,7 +43,7 @@ const columns = [
   { label: t('download.TABLE_HEAD[0]'), key: 'name' },
   { label: t('download.TABLE_HEAD[1]'), key: 'size' },
   { label: t('download.TABLE_HEAD[3]'), key: 'sha_code' },
-  { label: t('download.TABLE_HEAD[2]'), key: 'downUrl' },
+  { label: t('download.TABLE_HEAD[2]'), key: 'down_url' },
   { label: props.options?.docs ? t('download.TABLE_HEAD[4]') : '', key: 'docsName' },
 ];
 
@@ -157,8 +157,8 @@ const hoverTips = computed(() => (type: string | undefined) => {
       <template #td_size="{ row }">
         {{ row.size }}
       </template>
-      <template #td_downUrl="{ row }">
-        <div v-if="row.downUrl !== ''" class="down-action">
+      <template #td_down_url="{ row }">
+        <div v-if="row.down_url !== ''" class="down-action">
           <template v-if="downloadVersionAuth.includes(versionShown) && !userInfoStore.username">
             <OButton variant="outline" size="small" color="primary" @click="changeDownloadAuth">
               {{ i18n.download.BTN_TEXT }}
@@ -168,7 +168,7 @@ const hoverTips = computed(() => (type: string | undefined) => {
             </OButton>
           </template>
           <template v-else>
-            <OButton size="small" :href="row.downUrl" @click="collectDownloadData(row.name)" variant="outline" color="primary">
+            <OButton size="small" :href="row.down_url" @click="collectDownloadData(row.name)" variant="outline" color="primary">
               {{ i18n.download.BTN_TEXT }}
               <template #suffixIcon>
                 <IconDownload />
@@ -179,12 +179,12 @@ const hoverTips = computed(() => (type: string | undefined) => {
       </template>
       <template #td_sha_code="{ row }">
         <div v-if="row.x86_url !== ''" class="down-action">
-          <OLink class="sha-link" variant="text" @click="handleUrlCopy(row.sha_code, $event)">
+          <span class="sha-link" @click="handleUrlCopy(row.sha_code, $event)">
             {{ shaText
-            }}<template #suffix>
+            }}<OIcon>
               <IconCopy />
-            </template>
-          </OLink>
+            </OIcon>
+          </span>
         </div>
       </template>
       <template #td_docsName="{ row }">
@@ -218,7 +218,7 @@ const hoverTips = computed(() => (type: string | undefined) => {
       <p class="item-text">
         <span>{{ i18n.download.TABLE_HEAD[2] }}</span>
         <a v-if="downloadVersionAuth.includes(versionShown) && !userInfoStore.username" @click="changeDownloadAuth"> {{ i18n.download.BTN_TEXT_MO }}</a>
-        <a v-else :href="item.downUrl" download @click="collectDownloadData(item.name)">
+        <a v-else :href="item.down_url" download @click="collectDownloadData(item.name)">
           {{ i18n.download.BTN_TEXT_MO }}
         </a>
       </p>
@@ -239,9 +239,20 @@ const hoverTips = computed(() => (type: string | undefined) => {
 
 <style lang="scss" scoped>
 .sha-link {
+  color: var(--o-color-info1);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  @include tip1;
+  &:hover {
+    color: var(--o-color-primary1);
+  }
+  .o-icon {
+    margin-left: 4px;
+  }
   svg {
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
   }
 }
 .lse-content {

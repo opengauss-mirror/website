@@ -46,7 +46,7 @@ const toggle = () => {
   .label {
     @include text1;
     color: var(--o-color-info1);
-    width: 60px;
+    width: 72px;
     text-align: left;
   }
   .more {

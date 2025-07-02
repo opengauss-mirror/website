@@ -19,9 +19,10 @@ defineProps<{
 
 <style lang="scss" scoped>
 .el-table {
-  --el-table-header-bg-color: rgb(var(--o-mixedgray-4));
+  --el-table-header-bg-color: var(--o-color-control3-light);
   --el-table-header-text-color: var(--o-color-info1);
   --el-table-text-color: var(--o-color-info1);
+  --el-table-row-hover-bg-color: var(--o-color-control2-light);
   :deep(.el-table__header-wrapper) {
     border-radius: 4px 4px 0 0;
   }

@@ -1,29 +1,13 @@
 <script lang="ts" setup>
-import { ref, computed, watch, toRefs, onMounted, inject, nextTick } from 'vue';
-import {
-  OLink,
-  ODivider,
-  OTag,
-  OButton,
-  ORadioGroup,
-  ORadio,
-  OToggle,
-  OTable,
-  OPopover,
-  OIcon,
-  OTab,
-  OTabPane,
-  OSelect,
-  OOption,
-  OLayer,
-} from '@opensig/opendesign';
+import { ref, computed, watch, toRefs, onMounted, inject } from 'vue';
+import { OLink, ORadioGroup, ORadio, OToggle, OIcon, OTab, OTabPane, OSelect, OOption, OLayer } from '@opensig/opendesign';
 import { useData } from 'vitepress';
-import { useCommon, useCookieStore } from '@/stores/common';
+import { useCookieStore } from '@/stores/common';
 import { useI18n } from '@/i18n';
-import { useClipboard } from '@/components/hooks/useClipboard';
 import { useScreen } from '~@/composables/useScreen';
+import { downloadName } from '~@/data/download/format';
+import { useCommon } from '@/stores/common';
 
-import useWindowResize from '@/components/hooks/useWindowResize';
 import { DownloadItemT } from '@/shared/@types/type-download';
 
 import { getCustomCookie } from '@/shared/utils';
@@ -55,14 +39,16 @@ const props = defineProps({
 const { tableData, versionShown } = toRefs(props);
 
 const { lang } = useData();
-const commonStore = useCommon();
-const { t, isZh, $t } = useLocale();
+const { t } = useLocale();
 const i18n = useI18n();
 const cookieStore = useCookieStore();
 const { gtPadV } = useScreen();
+const commonStore = useCommon();
+const isDark = computed(() => commonStore.theme === 'dark');
 
 const versionData = inject('VERSION_DATA');
-const downloadVersionAuth = inject('PERMISSION_LIST');
+
+const isCn = computed(() => lang.value === 'zh');
 
 // tag筛选
 const architectureList = computed(() => {
@@ -181,7 +167,7 @@ const collectDownloadData = (name: string) => {
 };
 
 // 类型转换
-const mappingType = {
+const mappingType: Record<string, string> = {
   enterprise: '企业版',
   simple: '极简版',
   lite: '轻量版',
@@ -224,7 +210,8 @@ const changeLayer = (item) => {
 </script>
 <template>
   <div :id="replaceSpace(tableData.name) + '-' + replaceSpace(versionShown)" class="content-item">
-    <h3>{{ tableData.name }}</h3>
+    <h3>{{ isCn ? downloadName[tableData.name] : tableData.name }}</h3>
+
     <div class="filter-card">
       <TagFilter class="architecture-box" :label="i18n.download.ARCHITECTURE">
         <ORadioGroup v-model="activeArchitecture">
@@ -254,17 +241,22 @@ const changeLayer = (item) => {
     <div class="download-pc">
       <template v-if="tableData.name === 'openGauss Server'">
         <!-- openGauss Server -->
-        <OTab v-if="gtPadV" v-model="serverTab" variant="text" :line="false">
-          <OTabPane v-for="item in serverData" :key="item.edition" :label="mappingType[item.edition]" :value="item.edition">
+        <OTab v-if="gtPadV" v-model="serverTab" variant="text" :line="false" :class="{ en: !isCn, dark: isDark }">
+          <OTabPane v-for="item in serverData" :key="item.edition" :label="isCn ? mappingType[item.edition] : item.edition" :value="item.edition">
             <div class="download-panel">
-              <p class="edition-text">{{ t('download.' + item.edition) }}<OLink color="primary">版本能力矩阵图</OLink></p>
-
+              <p class="edition-text">
+                {{ t('download.' + item.edition) }}
+                <template v-if="versionData.versionCapabilityPath"
+                  >{{ t('download.versionCapability')
+                  }}<a target="_blank" rel="noopener noreferrer" :href="versionData.versionCapabilityPath">版本能力矩阵图</a></template
+                >
+              </p>
               <p class="caption">软件包下载</p>
               <DownloadContentItem :data="item" :version-shown="versionShown" @report="collectDownloadData" />
 
               <!-- openGauss Symbol -->
               <div v-if="symbolData && serverTab === 'enterprise'" class="symbol-enterprise">
-                <p class="caption">openGauss Symbol</p>
+                <p class="caption">{{ isCn ? downloadName['openGauss Symbol'] : 'openGauss Symbol' }}</p>
                 <DownloadContentItem
                   v-for="subitem in symbolData"
                   :key="subitem.sha_code"
@@ -285,7 +277,7 @@ const changeLayer = (item) => {
             </div>
           </li>
         </ul>
-        <OLayer v-if="layerShow && !gtPadV" v-model="layerShow" :unmount-on-hide="false">
+        <OLayer v-if="layerShow && !gtPadV" v-model:visible="layerShow" :unmount-on-hide="false">
           <div class="edition-wrap">
             <div class="edition-head">
               <OIcon @click="layerShow = false"><IconLeft /></OIcon>
@@ -299,7 +291,7 @@ const changeLayer = (item) => {
 
                 <!-- openGauss Symbol -->
                 <div v-if="symbolData && serverTab === 'enterprise'" class="symbol-enterprise">
-                  <p class="caption">openGauss Symbol</p>
+                  <p class="caption">{{ isCn ? downloadName['openGauss Symbol'] : 'openGauss Symbol' }}</p>
                   <DownloadContentItem
                     v-for="subitem in symbolData"
                     :key="subitem.sha_code"
@@ -336,17 +328,33 @@ const changeLayer = (item) => {
   }
 }
 .o-tab {
-  background: var(--o-color-control4-light);
   --tab-radius: 8px;
-  border-radius: var(--tab-radius);
   --height: 64px;
+
+  --sectopn-color: #e7ecff;
+  --tab-color: #f0f4ff;
+  --border-color: #d3dcff;
+  &.dark {
+    --sectopn-color: #2b2b2f;
+    --tab-color: #353539;
+    --border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  border-radius: var(--tab-radius);
+  background: var(--sectopn-color);
+
+  &.en {
+    :deep(.o-tab-nav) {
+      text-transform: capitalize;
+    }
+  }
   @include respond-to('<=pad') {
     --height: 48px;
     --tab-radius: 4px;
   }
   :deep(.o-tab-head) {
-    background: var(--o-color-fill1);
-    border-radius: var(--tab-radius);
+    background: var(--tab-color);
+    border-radius: var(--tab-radius) var(--tab-radius) 0 0;
     .o-tab-navs-container {
       width: 100%;
     }
@@ -356,14 +364,14 @@ const changeLayer = (item) => {
     .o-tab-nav-anchor {
       top: 0;
       height: calc(var(--height) + 2px);
-      background: var(--o-color-control4-light);
+      background: var(--sectopn-color);
       border-radius: var(--tab-radius) var(--tab-radius) 0 0;
-      border: 2px solid var(--o-color-control1-light);
+      border: 2px solid var(--border-color);
       .o-tab-nav-anchor-line {
         position: absolute;
         bottom: -2px;
         left: 0;
-        background-color: var(--o-color-control4-light);
+        background-color: var(--sectopn-color);
         width: 100%;
       }
     }
@@ -377,52 +385,16 @@ const changeLayer = (item) => {
         justify-content: center;
         line-height: var(--height);
         padding: 0;
-        --width: 24px;
-        .nav-label-prefix,
-        .nav-label-suffix {
-          position: absolute;
-          bottom: 0;
-          width: var(--width);
-          height: var(--width);
-          background: var(--o-color-control1-light);
-          opacity: 0;
-          visibility: hidden;
-          transition: all 0.3s;
-          &:after {
-            content: '';
-            display: block;
-            width: 100%;
-            height: 100%;
-            background-color: var(--o-color-fill1);
-          }
-        }
-        .nav-label-prefix {
-          left: calc(var(--width) * -1);
-          &:after {
-            border-bottom-right-radius: 24px;
-          }
-        }
-        .nav-label-suffix {
-          right: calc(var(--width) * -1);
-          &:after {
-            border-bottom-left-radius: 24px;
-          }
-        }
         &.o-tab-nav-active {
           color: var(--o-color-primary1);
           position: relative;
           z-index: 3;
-          .nav-label-prefix,
-          .nav-label-suffix {
-            visibility: visible;
-            opacity: 1;
-          }
         }
       }
     }
   }
   :deep(.o-tab-body) {
-    border: 2px solid var(--o-color-control1-light);
+    border: 2px solid var(--border-color);
     border-radius: 0 0 var(--tab-radius) var(--tab-radius);
     .o-tab-pane {
       padding: 24px;
@@ -440,8 +412,9 @@ const changeLayer = (item) => {
       .edition-text {
         @include tip1;
         color: var(--o-color-info2);
-        font-weight: 500;
         margin-bottom: 16px;
+        display: flex;
+        align-items: center;
       }
       .command-box {
         margin-bottom: 16px;
@@ -537,6 +510,7 @@ const changeLayer = (item) => {
 
   h3 {
     @include h2;
+    font-weight: 500;
     color: var(--o-color-info1);
   }
   .filter-card {

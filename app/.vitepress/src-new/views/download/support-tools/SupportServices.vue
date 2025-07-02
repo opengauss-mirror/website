@@ -9,7 +9,7 @@ const router = useRouter();
 
 const goFaq = () => {
   router.go('/zh/faq');
-}
+};
 </script>
 <template>
   <div class="support-services">
@@ -47,22 +47,28 @@ const goFaq = () => {
     font-size: 40px;
     align-items: start;
     color: var(--o-color-info1);
+    border-radius: 4px;
     .o-icon {
       margin-right: 12px;
     }
 
     @include hover {
       cursor: pointer;
+      box-shadow: var(--o-shadow-2);
+      .title {
+        color: var(--o-color-primary1);
+      }
     }
 
     .title {
+      font-weight: 500;
       @include h2;
       margin-bottom: 12px;
     }
 
     .desc {
       @include text1;
-      color: var(--o-color-control3)
+      color: var(--o-color-control3);
     }
   }
 }
