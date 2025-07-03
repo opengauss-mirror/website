@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, computed, watch, toRefs, onMounted, inject } from 'vue';
+import { ref, computed, watch, toRefs, onMounted, inject, nextTick } from 'vue';
 import { OLink, ORadioGroup, ORadio, OToggle, OIcon, OTab, OTabPane, OSelect, OOption, OLayer } from '@opensig/opendesign';
 import { useData } from 'vitepress';
 import { useCookieStore } from '@/stores/common';
@@ -72,13 +72,18 @@ const renderData = ref<DownloadItemT>({
   os: '',
   system: '',
 });
+
+const isLoading = ref(false); //强制刷新tabs页签
 const setRenderData = () => {
+  isLoading.value = true;
   const matchedItem = props.tableData.content.find((item: DownloadItemT) => item.architecture === activeArchitecture.value && item.os === activeOs.value);
 
   if (matchedItem) {
     renderData.value = matchedItem;
   }
-  getTabsData();
+  nextTick(() => {
+    getTabsData();
+  });
 };
 
 // 替换空格
@@ -197,6 +202,8 @@ const getTabsData = () => {
   if (serverData.value.length > 0) {
     serverTab.value = serverData.value[0].edition;
   }
+
+  isLoading.value = false;
 };
 
 const isLayer = ref(false);
@@ -241,7 +248,7 @@ const changeLayer = (item) => {
     <div class="download-pc">
       <template v-if="tableData.name === 'openGauss Server'">
         <!-- openGauss Server -->
-        <OTab v-if="gtPadV" v-model="serverTab" variant="text" :line="false" :class="{ en: !isCn, dark: isDark }">
+        <OTab v-if="gtPadV && !isLoading" v-model="serverTab" variant="text" :line="false" :class="{ en: !isCn, dark: isDark }">
           <OTabPane v-for="item in serverData" :key="item.edition" :label="isCn ? mappingType[item.edition] : item.edition" :value="item.edition">
             <div class="download-panel">
               <p class="edition-text">
@@ -367,6 +374,7 @@ const changeLayer = (item) => {
       background: var(--sectopn-color);
       border-radius: var(--tab-radius) var(--tab-radius) 0 0;
       border: 2px solid var(--border-color);
+      transition: none;
       .o-tab-nav-anchor-line {
         position: absolute;
         bottom: -2px;
@@ -379,6 +387,8 @@ const changeLayer = (item) => {
       width: 100%;
       display: flex;
       justify-content: space-between;
+      position: relative;
+      z-index: 9;
       .o-tab-nav {
         flex: 1;
         margin-right: 0;

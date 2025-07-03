@@ -134,7 +134,13 @@ const collectDownloadData = (name: string) => {
           </OButton>
         </template>
         <template v-else>
-          <OButton size="small" :href="data.down_url" @click="collectDownloadData(data.name)" :variant="lePadV ? 'text' : 'outline'" color="primary">
+          <OButton
+            size="small"
+            :href="data.down_url"
+            @click="collectDownloadData(data.name)"
+            :variant="lePadV ? 'text' : type === 'symbol' ? 'outline' : 'solid'"
+            color="primary"
+          >
             {{ i18n.download.BTN_TEXT }}
             <template #suffixIcon>
               <IconDownload />

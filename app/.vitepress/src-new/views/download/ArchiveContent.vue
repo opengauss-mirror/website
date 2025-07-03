@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { toRefs, ref, computed, PropType } from 'vue';
 import { useUserInfoStore } from '@/stores/user';
-import { OLink, ODivider, OButton, OPopover, OIcon, useMessage } from '@opensig/opendesign';
+import { OLink, ODivider, OButton, OPopover, OIcon, useMessage, OTag } from '@opensig/opendesign';
 import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';
 import { oaReport } from '@/shared/analytics';
@@ -13,7 +13,7 @@ import { GITCODE_LINK, DOCS_LINK } from '~@/data/url-config';
 import { downloadName } from '~@/data/download/format';
 
 import IconDownload from '~icons/app/icon-download.svg';
-import IconCopy from '~icons/app/icon-copy.svg';
+import IconCopy from '~icons/app/icon-copy2.svg';
 import IconTips from '~icons/app/icon-tips.svg';
 
 const props = defineProps({
@@ -110,14 +110,12 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
     downloadTime,
   });
 };
-
-console.log('contentData.data :>> ', contentData.value.data);
 </script>
 
 <template>
   <div class="download-version">
-    <h2 class="title">{{ 'openGauss ' + contentData.name }}</h2>
-    <h4 class="subtitle">维护截止时间：{{ contentData.plannedEOL }}</h4>
+    <h2 class="title">{{ 'openGauss ' + contentData.name }} <OTag v-if="contentData.plannedEOL === 'End-of-Life' || contentData.isEol"> 停止维护 </OTag></h2>
+    <h4 v-if="contentData.plannedEOL" class="subtitle">维护截止时间：{{ contentData.plannedEOL }}</h4>
     <div class="other-link">
       <template v-for="item in contentData.docs_list" :key="item.name">
         <OLink :href="item.path.startsWith('/docs/') ? DOCS_LINK + lang + item.path : item.path" color="primary" target="_blank" rel="noopener noreferrer">{{
@@ -135,10 +133,9 @@ console.log('contentData.data :>> ', contentData.value.data);
   <div v-for="item in contentData.data" :key="item.name" class="download-panel">
     <h2 class="title">{{ isCn ? downloadName[item.name.trim()] : item.name }}</h2>
 
-
     <!-- pc  -->
     <OTable v-if="gtPadV" :data="changeLangData(item)" class="download-pc" style="width: 100%">
-      <el-table-column :label="item.thead[0]" prop="name">
+      <el-table-column :label="item.thead[0]" prop="name" width="286">
         <template #default="scope">
           <div class="name-info">
             {{ scope.row.name }}
@@ -155,24 +152,23 @@ console.log('contentData.data :>> ', contentData.value.data);
           </div>
         </template>
       </el-table-column>
-      <el-table-column :label="item.thead[1]">
+      <el-table-column :label="item.thead[1]" prop="centos_url">
         <template #default="scope">
           <div v-if="scope.row.centos_url !== ''" class="down-action">
             <OButton variant="outline" size="small" color="primary" :href="scope.row.centos_url" @click="collectDownloadData(scope.row.name, item.thead[1])">
               {{ i18n.download.BTN_TEXT }}
             </OButton>
 
-            <OButton class="down-copy" variant="text" size="small" color="primary" @click="handleUrlCopy(scope.row.centos_sha, $event)">
+            <OLink class="down-copy" size="small" @click="handleUrlCopy(scope.row.centos_sha, $event)">
               {{ SHATEXT }}
               <OIcon>
                 <IconCopy />
               </OIcon>
-            </OButton>
-          </div>
-          <div v-if="scope.row.download_guide_url" class="download-guide-btn">
-            <OButton variant="outline" size="small" :href="scope.row.download_guide_url" color="primary">
+            </OLink>
+
+            <OLink v-if="scope.row.download_guide_url" size="small" :href="scope.row.download_guide_url">
               {{ i18n.download.DOCS_TEXT }}
-            </OButton>
+            </OLink>
           </div>
         </template>
       </el-table-column>
@@ -184,12 +180,12 @@ console.log('contentData.data :>> ', contentData.value.data);
               {{ i18n.download.BTN_TEXT }}
             </OButton>
 
-            <OButton class="down-copy" variant="text" size="small" color="primary" animation @click="handleUrlCopy(scope.row.aarch_sha, $event)">
+            <OLink class="down-copy" size="small" animation @click="handleUrlCopy(scope.row.aarch_sha, $event)">
               {{ SHATEXT }}
               <OIcon>
                 <IconCopy />
               </OIcon>
-            </OButton>
+            </OLink>
           </div>
         </template>
       </el-table-column>
@@ -200,12 +196,12 @@ console.log('contentData.data :>> ', contentData.value.data);
               {{ i18n.download.BTN_TEXT }}
             </OButton>
 
-            <OButton class="down-copy" variant="text" size="small" color="primary" @click="handleUrlCopy(scope.row.x86_sha, $event)">
+            <OLink class="down-copy" size="small" @click="handleUrlCopy(scope.row.x86_sha, $event)">
               {{ SHATEXT }}
               <OIcon>
                 <IconCopy />
               </OIcon>
-            </OButton>
+            </OLink>
           </div>
         </template>
       </el-table-column>
@@ -227,17 +223,15 @@ console.log('contentData.data :>> ', contentData.value.data);
                   {{ i18n.download.BTN_TEXT }}
                 </OButton>
               </a>
-              <OButton variant="text" size="small" color="primary" class="down-copy" @click="handleUrlCopy(subitem.centos_sha, $event)">
+              <OLink variant="text" size="small" class="down-copy" @click="handleUrlCopy(subitem.centos_sha, $event)">
                 {{ SHATEXT }}
                 <OIcon>
                   <IconCopy />
                 </OIcon>
-              </OButton>
-            </div>
-            <div v-if="subitem.download_guide_url" class="download-guide-btn">
-              <OButton variant="outline" size="small" color="primary" :href="subitem.download_guide_url">
+              </OLink>
+              <OLink v-if="subitem.download_guide_url" size="small" :href="subitem.download_guide_url">
                 {{ i18n.download.DOCS_TEXT }}
-              </OButton>
+              </OLink>
             </div>
           </template>
           <template v-if="subitem.aarch_url !== ''">
@@ -246,12 +240,12 @@ console.log('contentData.data :>> ', contentData.value.data);
               <OButton :href="subitem.aarch_url" @click="collectDownloadData(subitem.name, item.thead[2])" variant="outline" size="small" color="primary">
                 {{ i18n.download.BTN_TEXT }}
               </OButton>
-              <OButton class="down-copy lable-name3" variant="text" size="small" color="primary" @click="handleUrlCopy(subitem.aarch_sha, $event)">
+              <OLink class="down-copy lable-name3" size="small" @click="handleUrlCopy(subitem.aarch_sha, $event)">
                 {{ SHATEXT }}
                 <OIcon>
                   <IconCopy />
                 </OIcon>
-              </OButton>
+              </OLink>
             </div>
           </template>
           <template v-if="subitem.x86_url !== ''">
@@ -271,12 +265,12 @@ console.log('contentData.data :>> ', contentData.value.data);
                 </template>
               </OButton>
 
-              <OButton class="down-copy lable-name6" variant="text" size="small" color="primary" @click="handleUrlCopy(subitem.x86_sha, $event)">
+              <OLink class="down-copy lable-name6" size="small" @click="handleUrlCopy(subitem.x86_sha, $event)">
                 {{ SHATEXT }}
                 <OIcon>
                   <IconCopy />
                 </OIcon>
-              </OButton>
+              </OLink>
             </div>
           </template>
         </div>
@@ -286,10 +280,26 @@ console.log('contentData.data :>> ', contentData.value.data);
 </template>
 
 <style lang="scss" scoped>
+.no-data {
+  color: var(--o-color-info4);
+}
 .download-version {
   .title {
     @include h1;
     color: var(--o-color-info1);
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    font-weight: 500;
+
+    .o-tag {
+      --tag-height: 32px;
+      --tag-bg-color: var(--o-color-control2-light);
+      --tag-bd-color: var(--o-color-control2-light);
+      :deep(.o-tag-label) {
+        @include text1;
+      }
+    }
   }
   .subtitle {
     margin-top: 8px;
@@ -350,9 +360,21 @@ console.log('contentData.data :>> ', contentData.value.data);
     align-items: center;
     gap: var(--e-spacing-h8);
 
+    @include respond-to('>laptop') {
+      white-space: nowrap;
+    }
+    @include respond-to('<=laptop') {
+      flex-wrap: wrap;
+    }
+
     .down-copy {
+      :deep(.o-link-main) {
+        display: flex;
+        align-items: center;
+      }
       .o-icon {
         margin-left: 4px;
+        font-size: 16px;
       }
     }
   }

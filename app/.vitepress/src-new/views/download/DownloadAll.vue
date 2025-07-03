@@ -90,14 +90,16 @@ const tableColumns = [
         </span>
       </template>
       <template #td_releaseDate="{ row }">
-        <span>
-          {{ timePattern.test(row.releaseDate ?? '') ? row.releaseDate.slice(0, 7).replace('.', '/') : '--' }}
+        <span v-if="timePattern.test(row.releaseDate ?? '')">
+          {{ row.releaseDate.slice(0, 7).replace('.', '/') }}
         </span>
+        <span v-else class="no-data">--</span>
       </template>
       <template #td_plannedEOL="{ row }">
-        <span>
-          {{ timePattern.test(row.plannedEOL ?? '') ? row.plannedEOL.slice(0, 7).replace('.', '/') : '--' }}
+        <span v-if="timePattern.test(row.plannedEOL ?? '')">
+          {{ row.plannedEOL.slice(0, 7).replace('.', '/') }}
         </span>
+        <span v-else class="no-data">--</span>
       </template>
       <template #td_action="{ row }">
         <OLink tag="button" color="primary" @click="goToDownload(row.name)">
@@ -109,16 +111,21 @@ const tableColumns = [
       </template>
     </TheTable>
     <OScroller v-else style="margin-top: 12px; max-height: 400px; align-self: stretch">
-      <div class="mobile-download-item-card" v-for="item in displayData">
+      <div class="mobile-download-item-card" v-for="item in displayData" :key="item.name">
         <p class="item-name">
           openGauss {{ item.name }}
           <OTag v-if="item.plannedEOL === 'End-of-Life'" size="small"> 停止维护 </OTag>
         </p>
         <div class="info">
           <p>发行时间</p>
-          <p>--</p>
+          <p><span class="no-data">--</span></p>
           <p>维护截止时间</p>
-          <p>{{ timePattern.test(item.plannedEOL ?? '') ? item.plannedEOL?.slice(0, 7).replace('.', '/') : '--' }}</p>
+          <p>
+            <span v-if="timePattern.test(item.plannedEOL ?? '')">
+              {{ item.plannedEOL.slice(0, 7).replace('.', '/') }}
+            </span>
+            <span v-else class="no-data">--</span>
+          </p>
           <p>下载地址</p>
           <OLink tag="button" color="primary" @click="goToDownload(item.name)">
             前往下载
@@ -133,6 +140,15 @@ const tableColumns = [
 </template>
 
 <style lang="scss" scoped>
+.no-data {
+  color: var(--o-color-info4);
+}
+
+.o-tag {
+  --tag-bg-color: var(--o-color-control2-light);
+  --tag-bd-color: var(--o-color-control2-light);
+}
+
 .mobile-download-item-card {
   border-radius: 4px;
   background-color: var(--o-color-fill1);

@@ -31,7 +31,7 @@ const tabLists = [
     label: t('download.VERSION_LTS'),
   },
   {
-    id: 'rc1',
+    id: 'rc',
     label: t('download.VERSION_RCX'),
   },
   {

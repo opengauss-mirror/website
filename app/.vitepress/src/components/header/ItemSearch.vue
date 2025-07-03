@@ -39,7 +39,7 @@ const hiddenSearchBox = () => {
 };
 // 搜索事件
 function handleSearchEvent() {
-  windowOpen(`${props.link}?search=${encodeURIComponent(searchInput.value)}`, '_self');
+  windowOpen(`${props.link}?q=${encodeURIComponent(searchInput.value)}`, '_self');
   hiddenSearchBox();
 }
 // 点击热搜标签
