@@ -66,6 +66,8 @@ const explainLink = computed(() => {
 
     .o-tag {
       --tag-height: 32px;
+      --tag-bg-color: var(--o-color-control2-light);
+      --tag-bd-color: var(--o-color-control2-light);
       :deep(.o-tag-label) {
         @include text1;
       }
