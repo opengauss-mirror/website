@@ -18,11 +18,6 @@ import banner600Mo from '@/assets/category/home/banner/banner202503_mo.jpg';
 import banner20250506Pc from '@/assets/category/home/banner/banner20250506Pc.png';
 import banner20250506Mo from '@/assets/category/home/banner/banner20250506Mo.png';
 
-import bannerOdd20250506 from '@/assets/category/home/banner/banner-odd202506.jpg';
-import bannerOdd20250506Mb from '@/assets/category/home/banner/banner-odd202506-mb.jpg';
-import bannerOdd20250506Text from '@/assets/category/home/banner/banner-odd202506-text.png';
-import bannerOdd20250506TextMb from '@/assets/category/home/banner/banner-odd202506-text-mb.png';
-
 import bannerForumPc from '@/assets/category/home/banner/banner-forum.png';
 import bannerForumMo from '@/assets/category/home/banner/banner-forum_mo.png';
 
@@ -31,22 +26,6 @@ import { LEARN_VIDEO_LINK, DOCS_LINK, FORUM_LINK } from '@/data/url-config';
 // rightInset:banner右侧插图
 export default {
   zh: [
-    {
-      pcBanner: bannerOdd20250506,
-      moBanner: bannerOdd20250506Mb,
-      textImg: bannerOdd20250506Text,
-      textImgMb: bannerOdd20250506TextMb,
-      link: '/zh/summit/devday2025/',
-      target: '_blank',
-      title: '',
-      titleMb: [],
-      subtitle: '',
-      desc: [],
-      btn: '立即查看',
-      className: 'summit202506',
-      rightInset: '',
-      rightLink: '',
-    },
     {
       pcBanner: bannerForumPc,
       moBanner: bannerForumMo,
