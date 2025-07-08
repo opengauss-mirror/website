@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { toRefs, computed, PropType } from 'vue';
+import { toRefs, computed, PropType, provide } from 'vue';
 import { useI18n } from '~@/i18n';
 import { useData } from 'vitepress';
 import { OLink, ODivider, OTag } from '@opensig/opendesign';
@@ -23,6 +23,24 @@ const { contentData } = toRefs(props);
 const explainLink = computed(() => {
   return contentData.value?.docs_list[0][lang.value === 'zh' ? 'path' : 'pathEn'] || '';
 });
+
+const newData = computed(() => {
+  const data = contentData.value?.data?.[lang.value];
+  const res = [...new Set(data.map((item) => item.category))].map((item) => {
+    return {
+      name: item,
+      content: [],
+    };
+  });
+
+  res.forEach((item) => {
+    item.content = data.filter((subItem) => subItem.category === item.name);
+  });
+
+  return res || [];
+});
+
+provide('DOWNLOAD_VERSION_DATA', newData);
 </script>
 
 <template>
@@ -45,9 +63,9 @@ const explainLink = computed(() => {
     <p v-if="contentData.desc" class="desc">{{ contentData.desc }}</p>
     <ODivider class="divider-line" />
 
-    <template v-for="item in contentData.data[lang]" :key="item.name">
+    <template v-for="item in newData" :key="item.name">
       <template v-if="item.name === 'openGauss Server' || item.name === 'openGauss Connectors'">
-        <DownloadSection :table-data="item" :version-shown="contentData.name" />
+        <DownloadSection :table-data="item" :version-shown="contentData.name" :version-capability="contentData.versionCapabilityPath" />
       </template>
     </template>
   </div>

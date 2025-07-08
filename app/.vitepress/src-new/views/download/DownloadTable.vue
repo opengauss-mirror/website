@@ -138,9 +138,9 @@ const hoverTips = computed(() => (type: string | undefined) => {
 </script>
 
 <template>
+  <!-- pc -->
   <template v-if="gtPadV">
-    <!-- pc -->
-    <OTable :columns="columns" :data="options.content" style="width: 100%">
+    <OTable :columns="columns" :data="options" style="width: 100%">
       <template #td_name="{ row }">
         {{ row.name }}
         <template v-if="row.name.includes('noLSE')">
@@ -176,6 +176,7 @@ const hoverTips = computed(() => (type: string | undefined) => {
             </OButton>
           </template>
         </div>
+        <div v-else class="no-data">--</div>
       </template>
       <template #td_sha_code="{ row }">
         <div v-if="row.x86_url !== ''" class="down-action">
@@ -186,21 +187,22 @@ const hoverTips = computed(() => (type: string | undefined) => {
             </OIcon>
           </span>
         </div>
+        <div v-else class="no-data">--</div>
       </template>
       <template #td_docsName="{ row }">
         <a
-          v-if="row.docsName !== ''"
-          :href="row.docs_url.includes('https') ? row.docs_url : DOCS_LINK + lang + row.docs_url"
+          v-if="row.docs.name !== ''"
+          :href="row.docs.url.includes('https') ? row.docs.url : DOCS_LINK + lang + row.docs.url"
           target="_blank"
           rel="noopener noreferrer"
-          >{{ row.docsName }}</a
+          >{{ row.docs.name }}</a
         >
       </template>
     </OTable>
   </template>
   <!-- 手机端 -->
   <ul v-else class="download-mobile">
-    <li v-for="item in options.content" :key="item.name" class="download-item">
+    <li v-for="item in options" :key="item.name" class="download-item">
       <p class="title">{{ item.name }}</p>
       <p class="item-text">
         <span>{{ i18n.download.TABLE_HEAD[1] }}</span
@@ -222,10 +224,10 @@ const hoverTips = computed(() => (type: string | undefined) => {
           {{ i18n.download.BTN_TEXT_MO }}
         </a>
       </p>
-      <p v-if="item.docsName" class="item-text">
+      <p v-if="item.docs.name" class="item-text">
         <span>{{ i18n.download.TABLE_HEAD[4] }}</span>
-        <a :href="item.docs_url.includes('https') ? item.docs_url : DOCS_LINK + lang + item.docs_url" target="_blank" rel="noopener noreferrer">{{
-          item.docsName
+        <a :href="item.docs_url.includes('https') ? item.docs.url : DOCS_LINK + lang + item.docs.url" target="_blank" rel="noopener noreferrer">{{
+          item.docs.name
         }}</a>
       </p>
     </li>
@@ -238,6 +240,9 @@ const hoverTips = computed(() => (type: string | undefined) => {
 </template>
 
 <style lang="scss" scoped>
+.no-data {
+  color: var(--o-color-info4);
+}
 .sha-link {
   color: var(--o-color-info1);
   display: flex;

@@ -134,78 +134,143 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
     <h2 class="title">{{ isCn ? downloadName[item.name.trim()] : item.name }}</h2>
 
     <!-- pc  -->
-    <OTable v-if="gtPadV" :data="changeLangData(item)" class="download-pc" style="width: 100%">
-      <el-table-column :label="item.thead[0]" prop="name" width="286">
-        <template #default="scope">
-          <div class="name-info">
-            {{ scope.row.name }}
-            <template v-if="scope.row.table === 'server'">
-              <OPopover position="top" trigger="hover">
-                <template #target>
-                  <OIcon> <IconTips ref="installRef" class="server-tips" /></OIcon>
-                </template>
-                <div class="lse-content">
-                  {{ hoverTips(scope.row.edition) }}
-                </div>
-              </OPopover>
+    <template v-if="gtPadV">
+      <OTable v-if="item.name.trim() !== 'openGauss Tools'" :data="changeLangData(item)" class="download-pc" style="width: 100%">
+        <el-table-column :label="item.thead[0]" prop="name" width="286">
+          <template #default="scope">
+            <div class="name-info">
+              {{ scope.row.name }}
+              <template v-if="scope.row.table === 'server'">
+                <OPopover position="top" trigger="hover">
+                  <template #target>
+                    <OIcon> <IconTips ref="installRef" class="server-tips" /></OIcon>
+                  </template>
+                  <div class="lse-content">
+                    {{ hoverTips(scope.row.edition) }}
+                  </div>
+                </OPopover>
+              </template>
+            </div>
+          </template>
+        </el-table-column>
+        <el-table-column :label="item.thead[1]" prop="centos_url">
+          <template #default="scope">
+            <div v-if="scope.row.centos_url !== ''" class="down-action">
+              <OButton variant="outline" size="small" color="primary" :href="scope.row.centos_url" @click="collectDownloadData(scope.row.name, item.thead[1])">
+                {{ i18n.download.BTN_TEXT }}
+              </OButton>
+
+              <OLink class="down-copy" size="small" @click="handleUrlCopy(scope.row.centos_sha, $event)">
+                {{ SHATEXT }}
+                <OIcon>
+                  <IconCopy />
+                </OIcon>
+              </OLink>
+
+              <OLink v-if="scope.row.download_guide_url" size="small" :href="scope.row.download_guide_url">
+                {{ i18n.download.DOCS_TEXT }}
+              </OLink>
+            </div>
+            <div v-else class="no-data">--</div>
+          </template>
+        </el-table-column>
+        <el-table-column :label="item.thead[2]" prop="aarch_url">
+          <template #default="scope">
+            <div v-if="scope.row.aarch_url !== ''" class="down-action">
+              <OButton variant="outline" size="small" color="primary" :href="scope.row.aarch_url" @click="collectDownloadData(scope.row.name, item.thead[2])">
+                {{ i18n.download.BTN_TEXT }}
+              </OButton>
+
+              <OLink class="down-copy" size="small" animation @click="handleUrlCopy(scope.row.aarch_sha, $event)">
+                {{ SHATEXT }}
+                <OIcon>
+                  <IconCopy />
+                </OIcon>
+              </OLink>
+            </div>
+            <div v-else class="no-data">--</div>
+          </template>
+        </el-table-column>
+        <el-table-column :label="item.thead[3]" prop="x86_url">
+          <template #default="scope">
+            <template v-if="item.thead[3]">
+              <div v-if="scope.row.x86_url !== ''" class="down-action">
+                <OButton variant="outline" size="small" color="primary" :href="scope.row.x86_url" @click="collectDownloadData(scope.row.name, item.thead[3])">
+                  {{ i18n.download.BTN_TEXT }}
+                </OButton>
+
+                <OLink class="down-copy" size="small" @click="handleUrlCopy(scope.row.x86_sha, $event)">
+                  {{ SHATEXT }}
+                  <OIcon>
+                    <IconCopy />
+                  </OIcon>
+                </OLink>
+              </div>
+              <div v-else class="no-data">--</div>
             </template>
-          </div>
-        </template>
-      </el-table-column>
-      <el-table-column :label="item.thead[1]" prop="centos_url">
-        <template #default="scope">
-          <div v-if="scope.row.centos_url !== ''" class="down-action">
-            <OButton variant="outline" size="small" color="primary" :href="scope.row.centos_url" @click="collectDownloadData(scope.row.name, item.thead[1])">
-              {{ i18n.download.BTN_TEXT }}
-            </OButton>
+          </template>
+        </el-table-column>
+      </OTable>
+      <OTable v-else :data="changeLangData(item)" class="download-pc" style="width: 100%">
+        <el-table-column :label="item.thead[0]" prop="name" width="286">
+          <template #default="scope">
+            <div class="name-info">
+              {{ scope.row.name }}
+              <template v-if="scope.row.table === 'server'">
+                <OPopover position="top" trigger="hover">
+                  <template #target>
+                    <OIcon> <IconTips ref="installRef" class="server-tips" /></OIcon>
+                  </template>
+                  <div class="lse-content">
+                    {{ hoverTips(scope.row.edition) }}
+                  </div>
+                </OPopover>
+              </template>
+            </div>
+          </template>
+        </el-table-column>
+        <el-table-column :label="item.thead[1]" prop="centos_url">
+          <template #default="scope">
+            <div v-if="scope.row.centos_url !== ''" class="down-action">
+              <OButton variant="outline" size="small" color="primary" :href="scope.row.centos_url" @click="collectDownloadData(scope.row.name, item.thead[1])">
+                {{ i18n.download.BTN_TEXT }}
+              </OButton>
 
-            <OLink class="down-copy" size="small" @click="handleUrlCopy(scope.row.centos_sha, $event)">
-              {{ SHATEXT }}
-              <OIcon>
-                <IconCopy />
-              </OIcon>
-            </OLink>
+              <OLink class="down-copy" size="small" @click="handleUrlCopy(scope.row.centos_sha, $event)">
+                {{ SHATEXT }}
+                <OIcon>
+                  <IconCopy />
+                </OIcon>
+              </OLink>
 
-            <OLink v-if="scope.row.download_guide_url" size="small" :href="scope.row.download_guide_url">
-              {{ i18n.download.DOCS_TEXT }}
-            </OLink>
-          </div>
-        </template>
-      </el-table-column>
+              <OLink v-if="scope.row.download_guide_url" size="small" :href="scope.row.download_guide_url">
+                {{ i18n.download.DOCS_TEXT }}
+              </OLink>
+            </div>
+            <div v-else class="no-data">--</div>
+          </template>
+        </el-table-column>
+        <el-table-column :label="item.thead[2]" prop="aarch_url">
+          <template #default="scope">
+            <template v-if="item.thead[2]">
+              <div v-if="scope.row.aarch_url !== ''" class="down-action">
+                <OButton variant="outline" size="small" color="primary" :href="scope.row.aarch_url" @click="collectDownloadData(scope.row.name, item.thead[2])">
+                  {{ i18n.download.BTN_TEXT }}
+                </OButton>
 
-      <el-table-column :label="item.thead[2]" prop="aarch_url">
-        <template #default="scope">
-          <div v-if="scope.row.aarch_url !== ''" class="down-action">
-            <OButton variant="outline" size="small" color="primary" :href="scope.row.aarch_url" @click="collectDownloadData(scope.row.name, item.thead[2])">
-              {{ i18n.download.BTN_TEXT }}
-            </OButton>
-
-            <OLink class="down-copy" size="small" animation @click="handleUrlCopy(scope.row.aarch_sha, $event)">
-              {{ SHATEXT }}
-              <OIcon>
-                <IconCopy />
-              </OIcon>
-            </OLink>
-          </div>
-        </template>
-      </el-table-column>
-      <el-table-column :label="item.thead[3]" prop="x86_url">
-        <template #default="scope">
-          <div v-if="scope.row.x86_url !== ''" class="down-action">
-            <OButton variant="outline" size="small" color="primary" :href="scope.row.x86_url" @click="collectDownloadData(scope.row.name, item.thead[3])">
-              {{ i18n.download.BTN_TEXT }}
-            </OButton>
-
-            <OLink class="down-copy" size="small" @click="handleUrlCopy(scope.row.x86_sha, $event)">
-              {{ SHATEXT }}
-              <OIcon>
-                <IconCopy />
-              </OIcon>
-            </OLink>
-          </div>
-        </template>
-      </el-table-column>
-    </OTable>
+                <OLink class="down-copy" size="small" animation @click="handleUrlCopy(scope.row.aarch_sha, $event)">
+                  {{ SHATEXT }}
+                  <OIcon>
+                    <IconCopy />
+                  </OIcon>
+                </OLink>
+              </div>
+              <div v-else class="no-data">--</div>
+            </template>
+          </template>
+        </el-table-column>
+      </OTable>
+    </template>
 
     <!-- 手机端 -->
     <ul v-else class="download-mobile">
@@ -374,7 +439,7 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
       }
       .o-icon {
         margin-left: 4px;
-        font-size: 16px;
+        font-size: 20px;
       }
     }
   }

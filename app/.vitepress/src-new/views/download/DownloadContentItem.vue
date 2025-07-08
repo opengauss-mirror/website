@@ -33,7 +33,6 @@ const message = useMessage();
 const i18n = useI18n();
 const { lePadV } = useScreen();
 
-const versionData = inject('VERSION_DATA');
 const downloadVersionAuth = inject('PERMISSION_LIST');
 
 // 复制sha值
@@ -218,6 +217,9 @@ const collectDownloadData = (name: string) => {
       align-items: center;
       cursor: pointer;
       @include tip1;
+      @include respond-to('phone') {
+        @include text2;
+      }
       .o-icon {
         margin-left: 4px;
       }
