@@ -1,5 +1,5 @@
-import data_zh from './600RC1-zh';
-import data_en from './600RC1-en';
+import data_zh from './zh';
+import data_en from './en';
 
 export default {
   zh: data_zh,

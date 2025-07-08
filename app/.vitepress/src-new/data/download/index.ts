@@ -1,5 +1,5 @@
 import { DownloadItem } from '~@/@types/type-download';
-import {GITCODE_LINK} from '~@/data/url-config';
+import { GITCODE_LINK } from '~@/data/url-config';
 import download700RC1 from './download7.0.0-RC1';
 import download601 from './download6.0.1';
 import download600 from './download6.0.0';
@@ -34,7 +34,7 @@ const downloadData: DownloadItem[] = [
     data: download700RC1,
     releaseDate: '2025.03.30',
     plannedEOL: '2025.09.30',
-    desc: '作为LTS版本发布前的阶段性特性体验版本，仅供联创测试使用，提供6个月社区支持。',
+    desc: '社区创新版本联创测试使用，发布间隔周期定为6个月，社区提供6个月维护支持。',
     versionCapabilityPath: `${GITCODE_LINK}opengauss/docs/blob/7.0.0-RC1/content/zh/docs/VersionCapability/index.md`,
     docs_list: [
       {
@@ -51,7 +51,7 @@ const downloadData: DownloadItem[] = [
     isLogin: true,
     data: download601,
     plannedEOL: '2027.09.30',
-    desc: 'openGauss 6.0.0 LTS及后续LTS版本发布间隔周期为2年，社区提供3年支持，社区OGSP伙伴提供3年以后维护支持服务。',
+    desc: 'openGauss 6.0.1 LTS 及后续LTS版本社区提供3年维护支持，社区OGSP伙伴提供3年以后维护支持服务。',
     versionCapabilityPath: `${GITCODE_LINK}opengauss/docs/blob/6.0.0/content/zh/docs/VersionCapability/index.md`,
     docs_list: [
       {
@@ -69,7 +69,7 @@ const downloadData: DownloadItem[] = [
     data: download600,
     releaseDate: '2024.09.30',
     plannedEOL: '2027.09.30',
-    desc: 'openGauss 6.0.0 LTS及后续LTS版本发布间隔周期为2年，社区提供3年支持，社区OGSP伙伴提供3年以后维护支持服务。',
+    desc: '规模上线使用，发布间隔周期为2年，社区提供3年维护支持，OGSP伙伴提供3年以上延长维护支持服务。',
     versionCapabilityPath: `${GITCODE_LINK}opengauss/docs/blob/6.0.0/content/zh/docs/VersionCapability/index.md`,
     docs_list: [
       {
