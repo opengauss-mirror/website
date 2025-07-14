@@ -124,10 +124,14 @@ onMounted(() => {
   }
   .login {
     cursor: pointer;
-    font-size: var(--e-font-size-h6);
+    font-size: 24px;
     color: var(--e-color-text1);
-    width: 20px;
-    height: 20px;
+    width: 1em;
+    height: 1em;
+
+    @media (max-width: 1100px) {
+      font-size: 20px;
+    }
   }
 }
 </style>

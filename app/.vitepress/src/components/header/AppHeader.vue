@@ -205,7 +205,7 @@ const searchLink = `/${lang.value}/search/`;
     }
   }
   .icon {
-    font-size: var(--e-font-size-h6);
+    font-size: 24px;
     color: var(--e-color-text1);
     display: block;
   }
