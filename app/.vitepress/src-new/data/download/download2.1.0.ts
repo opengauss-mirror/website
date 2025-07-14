@@ -203,7 +203,7 @@ export default [
   },
   {
     name: 'openGauss Tools ',
-    thead: ['', 'windows_x86_64', '', ''],
+    thead: ['', 'windows_x86_64'],
     zh: [
       {
         name: 'Data Studio_2.1.0',

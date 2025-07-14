@@ -52,7 +52,6 @@ onMounted(() => {
   activeTab.value = decodeURIComponent(paramsArr?.version) || _downloadData[0].name;
 });
 
-provide('VERSION_DATA', getData);
 provide('PERMISSION_LIST', getPermissionList);
 
 const onChange = (option: string) => {

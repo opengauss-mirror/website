@@ -35,6 +35,11 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  versionCapability: {
+    required: true,
+    type: String,
+    default: '',
+  },
 });
 const { tableData, versionShown } = toRefs(props);
 
@@ -46,44 +51,47 @@ const { gtPadV } = useScreen();
 const commonStore = useCommon();
 const isDark = computed(() => commonStore.theme === 'dark');
 
-const versionData = inject('VERSION_DATA');
+const versionData = inject('DOWNLOAD_VERSION_DATA');
 
 const isCn = computed(() => lang.value === 'zh');
 
 // tag筛选
 const architectureList = computed(() => {
-  return [...new Set(props.tableData.content.map((item) => item.architecture))];
+  return [...new Set(tableData.value.content.map((item) => item.architecture))];
 });
 
 const osList = computed(() => {
-  return [...new Set(props.tableData.content.map((item) => item.os))];
+  return [...new Set(tableData.value.content.map((item) => item.os))];
 });
 
 const activeArchitecture = ref('');
 const activeOs = ref('');
 const initActiveTag = function () {
-  activeArchitecture.value = props.tableData.content[0].architecture;
-  activeOs.value = props.tableData.content[0].os;
+  activeArchitecture.value = tableData.value.content[0].architecture;
+  activeOs.value = tableData.value.content[0].os;
 };
 
-const renderData = ref<DownloadItemT>({
-  architecture: '',
-  content: [],
-  os: '',
-  system: '',
-});
+const connectorsData = ref([]);
 
 const isLoading = ref(false); //强制刷新tabs页签
 const setRenderData = () => {
   isLoading.value = true;
-  const matchedItem = props.tableData.content.find((item: DownloadItemT) => item.architecture === activeArchitecture.value && item.os === activeOs.value);
 
-  if (matchedItem) {
-    renderData.value = matchedItem;
-  }
   nextTick(() => {
     getTabsData();
   });
+};
+
+const getTabsData = () => {
+  serverData.value = getFilterData('openGauss Server');
+  symbolData.value = getFilterData('openGauss Symbol');
+  connectorsData.value = getFilterData('openGauss Connectors');
+
+  if (serverData.value.length > 0) {
+    serverTab.value = serverData.value[0].edition;
+  }
+
+  isLoading.value = false;
 };
 
 // 替换空格
@@ -92,8 +100,6 @@ const replaceSpace = (v: string) => {
 };
 
 onMounted(() => {
-  initActiveTag();
-
   // 迁移专区跳转锚点显示
   if (window.location.hash) {
     setTimeout(() => {
@@ -105,30 +111,19 @@ onMounted(() => {
       });
     }, 300);
   }
-
-  watch(
-    () => props.tableData.content,
-    () => {
-      initActiveTag();
-      setTempTag();
-      setRenderData();
-    }
-  ),
-    {
-      immediate: true,
-    };
 });
+
 // 控制不能组合的tag的禁用
 const tempTag = ref('');
 const setTempTag = () => {
-  const matchedItem = props.tableData.content.find((item: DownloadItemT) => item.architecture === activeArchitecture.value);
+  const matchedItem = tableData.value.content.find((item: DownloadItemT) => item.architecture === activeArchitecture.value);
   if (matchedItem) {
     tempTag.value = matchedItem.os;
   }
 };
 
 const isDisable = (tag: string) => {
-  const isAvailable = props.tableData.content.some((item: DownloadItemT) => item.architecture === activeArchitecture.value && item.os === tag);
+  const isAvailable = tableData.value.content.some((item: DownloadItemT) => item.architecture === activeArchitecture.value && item.os === tag);
 
   if (!isAvailable && activeOs.value === tag) {
     activeOs.value = tempTag.value;
@@ -138,18 +133,27 @@ const isDisable = (tag: string) => {
 };
 
 watch(
-  () => activeArchitecture.value,
+  () => [activeOs.value, activeArchitecture.value],
   () => {
+    if (activeArchitecture.value) {
+      setTempTag();
+    }
+    setRenderData();
+  }
+);
+
+watch(
+  () => tableData.value.content,
+  () => {
+    initActiveTag();
     setTempTag();
     setRenderData();
+  },
+  {
+    immediate: true,
   }
 );
-watch(
-  () => activeOs.value,
-  () => {
-    setRenderData();
-  }
-);
+
 // 下载权限
 const userInfoStore = useUserInfoStore();
 
@@ -183,27 +187,14 @@ const mappingType: Record<string, string> = {
 const serverTab = ref();
 const serverData = ref([]);
 const symbolData = ref([]);
-const getTabsData = () => {
-  const data = versionData.value?.data?.[lang.value];
-  if (!data) return;
-
-  const serverItem = data.find((item: ContentItemT) => item.name === 'openGauss Server');
+// 获取筛选数据
+const getFilterData = (name) => {
+  let res = [];
+  const serverItem = versionData.value.find((item: ContentItemT) => item.name === name);
   if (serverItem) {
-    const matchedServer = serverItem.content.find((contentItem) => contentItem.architecture === activeArchitecture.value && contentItem.os === activeOs.value);
-    serverData.value = matchedServer?.content || [];
+    res = serverItem.content.filter((contentItem) => contentItem.architecture === activeArchitecture.value && contentItem.os === activeOs.value);
   }
-  // openGauss Symbol
-  const symbolItem = data.find((item: ContentItemT) => item.name === 'openGauss Symbol');
-  if (symbolItem) {
-    const matchedSymbol = symbolItem.content.find((contentItem) => contentItem.architecture === activeArchitecture.value && contentItem.os === activeOs.value);
-    symbolData.value = matchedSymbol?.content || [];
-  }
-
-  if (serverData.value.length > 0) {
-    serverTab.value = serverData.value[0].edition;
-  }
-
-  isLoading.value = false;
+  return res;
 };
 
 const isLayer = ref(false);
@@ -253,9 +244,8 @@ const changeLayer = (item) => {
             <div class="download-panel">
               <p class="edition-text">
                 {{ t('download.' + item.edition) }}
-                <template v-if="versionData.versionCapabilityPath"
-                  >{{ t('download.versionCapability')
-                  }}<a target="_blank" rel="noopener noreferrer" :href="versionData.versionCapabilityPath">版本能力矩阵图</a></template
+                <template v-if="versionCapability"
+                  >{{ t('download.versionCapability') }}<a target="_blank" rel="noopener noreferrer" :href="versionCapability">版本能力矩阵图</a></template
                 >
               </p>
               <p class="caption">软件包下载</p>
@@ -292,7 +282,12 @@ const changeLayer = (item) => {
             </div>
             <div class="edition-main">
               <div class="edition-panel">
-                <p class="text">{{ t('download.' + layerData.edition) }}</p>
+                <p class="text">
+                  {{ t('download.' + layerData.edition) }}
+                  <template v-if="versionCapability"
+                    >{{ t('download.versionCapability') }}<a target="_blank" rel="noopener noreferrer" :href="versionCapability">版本能力矩阵图</a></template
+                  >
+                </p>
                 <p class="caption">软件包下载</p>
                 <DownloadContentItem :data="layerData" :version-shown="versionShown" @report="collectDownloadData" />
 
@@ -313,11 +308,14 @@ const changeLayer = (item) => {
           </div>
         </OLayer>
       </template>
-      <!-- openGauss Connectors -->
-      <template v-if="tableData.name === 'openGauss Connectors'">
-        <DownloadTable :options="renderData" :versionShown="versionShown" @report="collectDownloadData" />
-      </template>
     </div>
+    <!-- openGauss Connectors -->
+    <DownloadTable
+      v-if="tableData.name === 'openGauss Connectors' && connectorsData.length > 0"
+      :options="connectorsData"
+      :versionShown="versionShown"
+      @report="collectDownloadData"
+    />
   </div>
 </template>
 <style lang="scss" scoped>

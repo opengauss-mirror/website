@@ -73,7 +73,6 @@ const getPermissionList = computed(() => {
   return DownloadConfig.filter((el) => el.isLogin).map((el) => el.name);
 });
 
-provide('VERSION_DATA', getData);
 provide('PERMISSION_LIST', getPermissionList);
 </script>
 
