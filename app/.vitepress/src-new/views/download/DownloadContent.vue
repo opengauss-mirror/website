@@ -46,7 +46,7 @@ provide('DOWNLOAD_VERSION_DATA', newData);
 <template>
   <div class="download-content">
     <h2 class="title">{{ 'openGauss ' + contentData.name }} <OTag v-if="contentData.plannedEOL === 'End-of-Life' || contentData.isEol"> 停止维护 </OTag></h2>
-    <h4 class="subtitle">维护截止时间：{{ contentData.plannedEOL }}</h4>
+    <h4 class="subtitle">{{ $t('download.EOM_DATE') }} ：{{ contentData.plannedEOL }}</h4>
     <div class="other-link">
       <template v-for="item in contentData.docs_list" :key="item.name">
         <OLink color="primary" :href="explainLink.startsWith('/docs/') ? DOCS_LINK + lang + explainLink : explainLink" target="_blank" rel="noopener noreferrer"
@@ -60,7 +60,7 @@ provide('DOWNLOAD_VERSION_DATA', newData);
       <ODivider direction="v" />
       <OLink color="primary" :href="`/${lang}/download/life-cycle/`" target="_blank" rel="noopener noreferrer">{{ i18n.download.lifeCycle }} </OLink>
     </div>
-    <p v-if="contentData.desc" class="desc">{{ contentData.desc }}</p>
+    <p v-if="contentData.desc" class="desc">{{ lang === 'zh' ? contentData.desc : (contentData.desc_en || contentData.desc) }}</p>
     <ODivider class="divider-line" />
 
     <template v-for="item in newData" :key="item.name">

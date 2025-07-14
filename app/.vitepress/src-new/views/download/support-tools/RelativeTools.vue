@@ -30,18 +30,22 @@ const displayTools = [
   {
     name: `DataKit`,
     desc: `基于Web的openGauss的可视化的平台系统，方便客户使用和管理openGauss可视化工具`,
+    desc_en: `A web-based platform system that helps customers use and manage openGauss visualization tools`,
     address: `${GITCODE_LINK}opengauss/openGauss-workbench`,
     guide: `${GITCODE_LINK}opengauss/openGauss-workbench/blob/master/plugins/alert-monitor/README.md`,
   },
   {
     name: `gs_probackup`,
     desc: `用于管理openGauss数据库备份和恢复，并对openGauss实例进行定期备份`,
+    desc_en: `Manages openGauss database backups and recovery, and performs regular backups of openGauss instances`,
     address: `${GITCODE_LINK}opengauss/openGauss-server`,
     guide: `/zh/docs/latest/docs/ToolandCommandReference/gs_probackup.html`,
   },
   {
     name: `数据访问中间件`,
+    name_en: `Data access middleware`,
     desc: `分布式数据库中间件`,
+    desc_en: `Distributed database middleware`,
     address: `${GIYHUB_LINK}apache/shardingsphere`,
     guide: `/zh/blogs/justbk/2021-08-31_shardingSphere_for_openGauss.html`,
   },
@@ -49,6 +53,7 @@ const displayTools = [
 
 const router = useRouter();
 const { lang } = useData();
+const isEn = computed(() => lang.value === 'en');
 const gotoTools = () => {
   router.go(`/${lang.value}/tools/`);
 };
@@ -60,20 +65,20 @@ const isDark = computed(() => commonStore.theme === 'dark');
 <template>
   <div class="container">
     <div :class="{ 'title-desc': true, dark: isDark }">
-      <p class="title">支持工具</p>
+      <p class="title">{{ $t('common.COMMON_CONFIG.SUPPORTTOOLS') }}</p>
       <p class="desc">
-        主要面向开发者和ISV，提供六大类开发工具客户端工具、数据导入导出工具、数据复制/同步工具、监控运维接口及工具集、备份恢复接口及工具集、数据访问中间件
+        {{ $t('tools.DESC') }}
       </p>
-      <OButton variant="solid" color="primary" @click="gotoTools">全部工具</OButton>
+      <OButton variant="solid" color="primary" @click="gotoTools">{{ $t('tools.ALL_TOOLS') }}</OButton>
     </div>
     <div class="tools">
       <div class="item" v-for="item in displayTools" :key="item.name">
-        <h3>{{ item.name }}</h3>
+        <h3>{{ isEn && item.name_en ? item.name_en : item.name }}</h3>
         <div class="desc">
-          <p>{{ item.desc }}</p>
+          <p>{{ isEn && item.desc_en ? item.desc_en : item.desc }}</p>
           <div class="links">
-            <OLink :href="item.address" target="_blank" color="primary">源码地址</OLink>
-            <OLink :href="item.guide" target="_blank" color="primary">操作指导</OLink>
+            <OLink :href="item.address" target="_blank" color="primary">{{ $t('tools.SOURCE_CODE_ADDR') }}</OLink>
+            <OLink :href="item.guide" target="_blank" color="primary">{{ $t('tools.OPERATION_GUIDE') }}</OLink>
           </div>
         </div>
       </div>
@@ -142,8 +147,9 @@ const isDark = computed(() => commonStore.theme === 'dark');
       padding: 24px;
       background-color: var(--o-color-fill2);
       position: relative;
+      align-self: stretch;
       @include respond-to('>pad') {
-        height: 168px;
+        min-height: 168px;
       }
 
       h3 {

@@ -19,6 +19,7 @@ export interface DownloadItem {
   releaseDate?: string;
   plannedEOL?: string;
   desc?: string;
+  desc_en?: string;
   docs_list: DocItem[];
   initPrevious?: boolean;
   versionCapabilityPath?: string;

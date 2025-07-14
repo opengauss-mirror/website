@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, computed, onMounted, provide } from 'vue';
+import { ref, computed, onMounted, provide, watchEffect } from 'vue';
 import { useData } from 'vitepress';
 import { OTab, OTabPane, ODivider, OTable } from '@opensig/opendesign';
 import DownloadConfig from '~@/data/download';
@@ -20,10 +20,13 @@ import RelativeTools from './support-tools/RelativeTools.vue';
 import SupportServices from './support-tools/SupportServices.vue';
 
 const { isPhone, lePad, lePadV } = useScreen();
-const { t, isZh, $t } = useLocale();
+const { t, isZh, $t, locale } = useLocale();
+const { lang } = useData();
 const i18n = useI18n();
 const commonStore = useCommon();
 const isDark = computed(() => (commonStore.theme === 'dark' ? true : false));
+
+watchEffect(() => locale.value = lang.value ?? 'zh');
 
 const tabLists = [
   {
@@ -97,10 +100,10 @@ provide('PERMISSION_LIST', getPermissionList);
       </OTabPane>
     </OTab>
   </ContentWrapper>
-  <AppSection title="相关工具">
+  <AppSection :title="$t('download.RELATED_TOOLS')">
     <RelativeTools />
   </AppSection>
-  <AppSection title="支持与服务">
+  <AppSection :title="$t('tools.SUPPORT_SERVICES')">
     <SupportServices />
   </AppSection>
 </template>
