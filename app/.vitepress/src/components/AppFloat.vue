@@ -5,8 +5,7 @@ import { postFeedback } from '@/api/api-feedback';
 import { ElMessage } from 'element-plus';
 
 import useWindowResize from '@/components/hooks/useWindowResize';
-import { VULBOX_LINK, GAUSS_EMAIL } from '@/data/url-config';
-import { handleError } from '@/shared/utils';
+import { VULBOX_LINK, GAUSS_EMAIL, QUESTIONNAIRE_SURVEY } from '@/data/url-config';
 
 import IconTop from '~icons/float/icon-top.svg';
 import IconSmile from '~icons/float/icon-smile.svg';
@@ -336,6 +335,9 @@ const setScore = (val: number) => {
             </div>
           </div>
           <div class="nav-box">
+            <a :href="QUESTIONNAIRE_SURVEY" target="_blank" rel="noopener noreferrer">
+              <div class="nav-box-question">满意度问卷</div>
+            </a>
             <div class="nav-box1">
               <div class="nav-item" @mouseenter="toggleIsShow(true)" @mouseleave="toggleIsShow(false)">
                 <OIcon class="icon-box" @mouseleave.stop="closefloat">

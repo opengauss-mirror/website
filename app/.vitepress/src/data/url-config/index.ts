@@ -55,6 +55,8 @@ const FORUM_LINK = 'https://discuss.opengauss.org'; // 论坛
 export const OPENUBMC_URL = 'https://www.openubmc.cn';
 // openfuyao网站
 export const OPENFUYAO_URL = 'https://www.openfuyao.cn';
+// 用户问卷调研
+export const QUESTIONNAIRE_SURVEY = 'https://snic.gtsdata.huawei.com/datalinkpro/web/#/openFormFill?hashcode=fpTH9ritP6IMPdjfPhFfQ6yrVqGhWnSoTPVqdcvLj7A=';
 
 export {
   OBS_Summit_PPT,
