@@ -1,8 +1,8 @@
 ---
-title: 北京海量数据股份有限公司
+title: 北京海量数据技术股份有限公司
 category: showcase
 industry: DBV
-company: 北京海量数据股份有限公司
+company: 北京海量数据技术股份有限公司
 summary: 使用openGauss做海量数据库Vastbase商业发行版，部署openGauss服务器节点数为50个以上。
 officialPath: http://www.vastdata.com.cn/
 detail: true
@@ -50,4 +50,3 @@ id: DBV
 
 • 人才资源：72 所高校开课，列入计算机等级考试，
 人才池丰富。
-
