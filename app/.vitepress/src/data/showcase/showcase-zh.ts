@@ -2,10 +2,10 @@ export default [
   {
     summary: '使用openGauss做海量数据库Vastbase商业发行版，部署openGauss服务器节点数为50个以上。',
     industry: 'DBV',
-    title: '北京海量数据股份有限公司',
+    title: '北京海量数据技术股份有限公司',
     path: 'zh/user-practice/dbv/vastdata/',
     officialpath: 'http://www.vastdata.com.cn/',
-    company: '北京海量数据股份有限公司',
+    company: '北京海量数据技术股份有限公司',
     detail: true,
     id: 'DBV',
   },
