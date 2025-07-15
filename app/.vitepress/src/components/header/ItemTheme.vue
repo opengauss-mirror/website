@@ -77,12 +77,12 @@ watch(
 
 <style lang="scss" scoped>
 .theme-box {
-  div {
-    width: 20px;
-    height: 20px;
-  }
   .theme-box-pc {
     cursor: pointer;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
     .icon {
       font-size: var(--e-font-size-h6);
       color: var(--e-color-text1);
@@ -93,9 +93,13 @@ watch(
   }
   .theme-box-mobile {
     display: none;
-
     @media screen and (max-width: 1100px) {
-      display: block;
+      display: flex;
+      :deep(.o-switch) {
+        background: none;
+        display: flex;
+        align-items: center;
+      }
     }
   }
 }
