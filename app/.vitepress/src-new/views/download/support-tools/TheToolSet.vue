@@ -40,23 +40,24 @@ const userInfoStore = useUserInfoStore();
 
 const versions = _downloadData.map((item) => ({ label: 'openGauss ' + item.name, value: item.name }));
 const currentVersion = ref(versions[0].value);
+
 const currentVersionTool = computed(() => {
-  return _downloadData.find((item) => item.name === currentVersion.value)?.data[lang.value].find((item) => item.name === 'openGauss Tools');
+  return _downloadData.find((item) => item.name === currentVersion.value)?.data[lang.value].filter((item) => item.category === 'openGauss Tools');
 });
 
 const architectureList = computed<string[]>(() => {
-  return Array.from(new Set(currentVersionTool.value?.content.map((item: { architecture: string; os: string }) => item.architecture).filter(Boolean)));
+  return Array.from(new Set(currentVersionTool.value.map((item: { architecture: string; os: string }) => item.architecture).filter(Boolean)));
 });
 const activeArchitecture = ref(architectureList.value?.[0] || '');
 
 const osList = computed<string[]>(() => {
-  return Array.from(new Set(currentVersionTool.value?.content.map((item: { architecture: string; os: string }) => item.os).filter(Boolean)));
+  return Array.from(new Set(currentVersionTool.value.map((item: { architecture: string; os: string }) => item.os).filter(Boolean)));
 });
 const activeOs = ref(osList.value?.[0] || '');
 
 const matrix = computed(() => {
   const map = new Map<string, Set<string>>();
-  currentVersionTool.value?.content.forEach((item: { architecture: string; os: string }) => {
+  currentVersionTool.value.forEach((item: { architecture: string; os: string }) => {
     if (!map.has(item.architecture)) {
       map.set(item.architecture, new Set());
     }
@@ -77,13 +78,9 @@ const columns = [
 ];
 
 const displayTools = computed(() => {
-  return (
-    currentVersionTool.value?.content
-      .filter((item: any) => {
-        return item.architecture === activeArchitecture.value && item.os === activeOs.value;
-      })
-      .flatMap((item: any) => item.content) || []
-  );
+  return currentVersionTool.value.filter((item: any) => {
+    return item.architecture === activeArchitecture.value && item.os === activeOs.value;
+  });
 });
 
 watchEffect(() => {
