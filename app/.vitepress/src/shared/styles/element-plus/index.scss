@@ -55,3 +55,23 @@
   --el-input-border-color: var(--e-color-border1);
   --el-input-border-radius: 0;
 }
+
+div.el-popper {
+  --el-color-primary: var(--o-color-primary1);
+  --el-border-radius-base: 16px;
+  --el-popper-border-radius: 16px;
+  --el-box-shadow-light: var(--o-shadow-2);
+  --el-datepicker-border-color: var(--o-color-control1-light);
+  --el-border-color-light: var(--o-color-control1-light);
+  --el-popover-border-radius: 0;
+  --el-popover-border-color: transparent;
+  --el-border-color-light: transparent;
+
+  .el-popper__arrow {
+    display: none;
+  }
+}
+[data-o-theme='dark'] .el-popper {
+  --el-popover-border-color: var(--o-color-control4);
+  --el-border-color-light: var(--o-color-control4);
+}

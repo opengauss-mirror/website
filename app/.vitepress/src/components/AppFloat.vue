@@ -3,20 +3,24 @@ import { computed, ref, Ref, CSSProperties, watch, onMounted } from 'vue';
 import { useRouter, useData, useRoute } from 'vitepress';
 import { postFeedback } from '@/api/api-feedback';
 import { ElMessage } from 'element-plus';
-
+import { windowOpen } from '@/shared/utils';
 import useWindowResize from '@/components/hooks/useWindowResize';
 import { VULBOX_LINK, GAUSS_EMAIL, QUESTIONNAIRE_SURVEY } from '@/data/url-config';
+import { useThrottleFn } from '@vueuse/core';
+import { OPopup } from '@opensig/opendesign';
 
 import IconTop from '~icons/float/icon-top.svg';
 import IconSmile from '~icons/float/icon-smile.svg';
-import IconHeadset from '~icons/float/icon-headset.svg';
 import IconCancel from '~icons/app/icon-cancel.svg';
-import IconSmileMobile from '~icons/float/icon-smile-mobile.svg';
+import IconAsk from '~icons/float/icon-ask.svg';
 import IconHeadsetBig from '~icons/float/icon-headset-big.svg';
+import IconScore from '~icons/float/icon-score.svg';
 
 const screenWidth = useWindowResize();
 const { lang } = useData();
 const router = useRouter();
+
+const isPc = computed(() => screenWidth.value > 1100);
 
 // 漏洞奖励计划浮窗
 const isSafetyFloatShow = ref(false);
@@ -110,41 +114,23 @@ const score = ref(0);
 const scoreTip = computed(() => {
   return score.value / 10;
 });
-const isShow = ref(true);
+const isShow = ref(false);
 const isReasonShow = ref(false);
-const isDynamic = ref(false);
 const inputText = ref('');
-let timer: NodeJS.Timeout;
-const toggleIsShow = (toggle: boolean) => {
-  if (!toggle && isReasonShow.value) {
-    return;
-  }
-  if (timer) {
-    clearTimeout(timer);
-  }
-  if (toggle) {
-    isShow.value = toggle;
-  } else {
-    timer = setTimeout(() => {
-      isShow.value = toggle;
-    }, 2000);
-  }
-  setTimeout(() => {
-    isDynamic.value = toggle;
-  });
+
+const nssRef = ref();
+const onMouseEnter = () => {
+  isShow.value = true;
 };
-const closefloat = () => {
-  score.value = 0;
-  isDynamic.value = false;
+const onMouseLeave = () => {
+  isShow.value = false;
 };
+
 function cancelPopup() {
   isReasonShow.value = false;
   inputText.value = '';
   score.value = 0;
-  isDynamic.value = false;
-  timer = setTimeout(() => {
-    isShow.value = false;
-  }, 2000);
+  isShow.value = false;
 }
 
 function handleInput() {
@@ -227,6 +213,24 @@ const floatData = [
     emile: GAUSS_EMAIL,
   },
 ];
+
+const floatServiceData = [
+  {
+    id: 'surver',
+    img: IconSmile,
+    text: '满意度问卷',
+  },
+  { id: 'nss', img: IconScore, text: '我要评分' },
+];
+
+const jumpTo = (id: string) => {
+  if (id === 'nss') {
+    dialogVisible.value = true;
+  } else if (id === 'surver') {
+    windowOpen(QUESTIONNAIRE_SURVEY, '_blank');
+  }
+};
+
 function handleClickTop() {
   window.scrollTo(0, 0);
 }
@@ -315,111 +319,142 @@ const setScore = (val: number) => {
   isReasonShow.value = true;
   score.value = val * 10;
 };
+
+const askRef = ref();
+const serverRef = ref();
 </script>
 
 <template>
   <div v-if="lang === 'zh'" class="float">
     <ClientOnly>
-      <template v-if="screenWidth > 1100">
-        <div v-if="!isFloatTipShow" :class="isSafetyFloatShow ? 'safety-tips' : ''">
-          <a :href="isSafetyFloatShow ? VULBOX_LINK : ''" :target="isSafetyFloatShow ? '_blank' : '_self'" rel="noopener noreferrer">
-            {{ isSafetyFloatShow ? FLOAT_BUG_TEXT : '' }}
+      <div v-if="!isFloatTipShow" :class="isSafetyFloatShow ? 'safety-tips' : ''">
+        <a :href="isSafetyFloatShow ? VULBOX_LINK : ''" :target="isSafetyFloatShow ? '_blank' : '_self'" rel="noopener noreferrer">
+          {{ isSafetyFloatShow ? FLOAT_BUG_TEXT : '' }}
+        </a>
+      </div>
+      <div class="float-wrap">
+        <div v-show="isFloatTipShow" class="float-tip">
+          <h4 class="tip-title">{{ infoData.feedbackTitle }}</h4>
+          <div class="tip-detail">{{ infoData.welcome }}</div>
+          <div class="btn-box">
+            <OButton size="mini" @click="closeFloatTip">{{ infoData.know }}</OButton>
+          </div>
+        </div>
+        <div class="nav-box">
+          <a v-if="isPc" :href="QUESTIONNAIRE_SURVEY" target="_blank" rel="noopener noreferrer">
+            <div class="nav-box-question">满意度问卷</div>
           </a>
-        </div>
-        <div class="float-wrap">
-          <div v-show="isFloatTipShow" class="float-tip">
-            <h4 class="tip-title">{{ infoData.feedbackTitle }}</h4>
-            <div class="tip-detail">{{ infoData.welcome }}</div>
-            <div class="btn-box">
-              <OButton size="mini" @click="closeFloatTip">{{ infoData.know }}</OButton>
-            </div>
-          </div>
-          <div class="nav-box">
-            <a :href="QUESTIONNAIRE_SURVEY" target="_blank" rel="noopener noreferrer">
-              <div class="nav-box-question">满意度问卷</div>
-            </a>
-            <div class="nav-box1">
-              <div class="nav-item" @mouseenter="toggleIsShow(true)" @mouseleave="toggleIsShow(false)">
-                <OIcon class="icon-box" @mouseleave.stop="closefloat">
-                  <component :is="IconSmile"> </component>
+          <div class="nav-box1">
+            <div v-if="isPc" id="nss" class="nav-item" @mouseenter="onMouseEnter" @mouseleave="useThrottleFn(onMouseLeave, 300)">
+              <OIcon ref="nssRef" class="icon-box">
+                <component :is="IconSmile" />
+              </OIcon>
+              <OPopup
+                :visible="isShow"
+                position="right"
+                :target="nssRef"
+                :auto-hide="isShow ? false : true"
+                wrapper="#nss"
+                body-class="popup-nss"
+                :offset="20"
+                trigger="hover"
+              >
+                <OIcon class="icon-cancel" @click="cancelPopup">
+                  <IconCancel />
                 </OIcon>
-                <div v-if="isShow" class="o-popup1" :class="{ show: isDynamic }">
-                  <OIcon class="icon-cancel" @click="cancelPopup">
-                    <IconCancel />
-                  </OIcon>
-                  <div class="slider">
-                    <p class="slider-title">
-                      {{ title1 }}
-                      <span class="title-name">{{ title2 }}</span>
-                      {{ title3 }}
+                <div class="slider">
+                  <p class="slider-title">
+                    {{ title1 }}
+                    <span class="title-name">{{ title2 }}</span>
+                    {{ title3 }}
+                  </p>
+                  <div class="slider-body">
+                    <div class="slider-tip">
+                      <div v-show="isReasonShow" class="slide-btn-tip">
+                        {{ scoreTip }}
+                      </div>
+                    </div>
+                    <el-slider v-model="score" show-stops :step="10" :marks="marks" :show-tooltip="false" @input="handleInput" />
+                    <div class="grade-info">
+                      <span>{{ title2 === TITLES2[0] ? infoData.grade1 : infoData.grade1_1 }}</span>
+                      <span>{{ title2 === TITLES2[0] ? infoData.grade2 : infoData.grade2_1 }}</span>
+                    </div>
+                  </div>
+                  <div v-show="isReasonShow" class="reason">
+                    <el-input
+                      v-model="inputText"
+                      :rows="3"
+                      type="textarea"
+                      :placeholder="placeholder"
+                      maxlength="500"
+                      resize="none"
+                      show-word-limit
+                      @focus="toggleIsFocuse(true)"
+                      @blur="toggleIsFocuse(false)"
+                    />
+                    <p class="more-info">
+                      {{ infoData.more }}
+                      <a :href="'mailto:' + infoData.emile">
+                        {{ infoData.emile }}
+                      </a>
                     </p>
-                    <div class="slider-body">
-                      <div class="slider-tip">
-                        <div v-show="isReasonShow" class="slide-btn-tip">
-                          {{ scoreTip }}
-                        </div>
-                      </div>
-                      <el-slider v-model="score" show-stops :step="10" :marks="marks" :show-tooltip="false" @input="handleInput" />
-                      <div class="grade-info">
-                        <span>{{ title2 === TITLES2[0] ? infoData.grade1 : infoData.grade1_1 }}</span>
-                        <span>{{ title2 === TITLES2[0] ? infoData.grade2 : infoData.grade2_1 }}</span>
-                      </div>
-                    </div>
-                    <div v-show="isReasonShow" class="reason">
-                      <el-input
-                        v-model="inputText"
-                        :rows="3"
-                        type="textarea"
-                        :placeholder="placeholder"
-                        maxlength="500"
-                        resize="none"
-                        show-word-limit
-                        @focus="toggleIsFocuse(true)"
-                        @blur="toggleIsFocuse(false)"
-                      />
-                      <p class="more-info">
-                        {{ infoData.more }}
-                        <a :href="'mailto:' + infoData.emile">
-                          {{ infoData.emile }}
-                        </a>
-                      </p>
-                      <div class="submit-btn">
-                        <OButton type="outline" size="mini" @click="handleClickSubmit">
-                          {{ infoData.submit }}
-                        </OButton>
-                      </div>
+                    <div class="submit-btn">
+                      <OButton type="outline" size="mini" @click="handleClickSubmit">
+                        {{ infoData.submit }}
+                      </OButton>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="nav-item">
-                <OIcon class="icon-box"><component :is="IconHeadset"></component> </OIcon>
-                <div class="o-popup2">
-                  <div v-for="item in floatData" :key="item.emile" class="pop-item" rel="noopener noreferrer">
-                    <OIcon><component :is="item.img"></component></OIcon>
-                    <div class="text">
-                      <p class="text-name">
-                        {{ item.text }}
-                      </p>
-                      <p class="text-tip">
-                        <a :href="'mailto:' + item.emile">{{ item.emile }}</a>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              </OPopup>
             </div>
-            <div class="nav-item nav-box2" @click="handleClickTop">
-              <OIcon><component :is="IconTop"></component> </OIcon>
+            <div v-else class="nav-item">
+              <OIcon ref="serverRef" class="icon-box"><component :is="IconSmile"></component> </OIcon>
+              <el-popover
+                placement="left-start"
+                :virtual-ref="serverRef"
+                popper-class="service-body"
+                :width="isPc ? 260 : 90"
+                :offset="20"
+                trigger="hover"
+                v-if="!dialogVisible"
+              >
+                <div v-for="item in floatServiceData" :key="item.id" class="pop-item" @click="jumpTo(item.id)">
+                  <OIcon><component :is="item.img"></component></OIcon>
+                  <div class="text">
+                    <p class="text-name">
+                      {{ item.text }}
+                    </p>
+                  </div>
+                </div>
+              </el-popover>
+            </div>
+            <div class="nav-item">
+              <OIcon ref="askRef" class="icon-box"><component :is="IconAsk"></component> </OIcon>
+              <el-popover placement="left-start" :virtual-ref="askRef" popper-class="service-body" :width="isPc ? 260 : 90" :offset="20" trigger="hover">
+                <a :href="'mailto:' + item.emile" v-for="item in floatData" :key="item.emile" class="pop-item" rel="noopener noreferrer">
+                  <OIcon><component :is="item.img"></component></OIcon>
+                  <div class="text">
+                    <p class="text-name">
+                      {{ item.text }}
+                    </p>
+                    <p class="text-tip">
+                      {{ item.emile }}
+                    </p>
+                  </div>
+                </a>
+              </el-popover>
             </div>
           </div>
+          <div class="nav-item nav-box2" @click="handleClickTop">
+            <OIcon><component :is="IconTop"></component> </OIcon>
+          </div>
         </div>
-      </template>
-      <template v-else>
+      </div>
+      <template v-if="screenWidth < 1100">
         <div v-if="isMobileFloatShow && !isSummit" class="float-mobile" :class="{ 'mobile-margin': isMargin }">
           <div class="float-head">
             <div class="head-title" @click="toggleDialogVisible">
-              <OIcon class="icon-box"><component :is="IconSmileMobile"></component> </OIcon>
+              <OIcon class="icon-box"><component :is="IconScore"></component> </OIcon>
               <p>
                 {{ title1 }}
                 <span class="title-name">{{ title2 }}</span>
@@ -486,6 +521,66 @@ const setScore = (val: number) => {
   </div>
 </template>
 <style lang="scss" scoped>
+.pop-item {
+  display: flex;
+  color: var(--e-color-text1);
+  & ~ .pop-item {
+    margin-top: 18px;
+    @media (max-width: 1100px) {
+      margin-top: 12px;
+    }
+  }
+  .o-icon {
+    font-size: 32px;
+    svg {
+      fill: currentColor;
+    }
+    @media (max-width: 1100px) {
+      font-size: 24px;
+    }
+  }
+  .text {
+    margin-left: 12px;
+    text-align: left;
+    font-size: var(--e-font-size-text);
+    @media (max-width: 1100px) {
+      margin-left: 8px;
+    }
+    .text-name {
+      line-height: 32px;
+      font-weight: 600;
+      @media (max-width: 1100px) {
+        line-height: 22px;
+        font-weight: normal;
+      }
+      a {
+        color: var(--e-color-text1);
+        &:hover {
+          color: var(--e-color-brand1);
+        }
+      }
+    }
+    .text-tip {
+      font-size: var(--e-font-size-tip);
+      line-height: 18px;
+      color: var(--e-color-text3);
+      @media (max-width: 1100px) {
+        display: none;
+      }
+    }
+  }
+  &:hover,
+  &:active {
+    cursor: pointer;
+    .o-icon,
+    a,
+    .text-tip,
+    .text-name {
+      color: var(--o-color-primary2);
+    }
+  }
+}
+
 .float {
   position: fixed;
   bottom: 190px;
@@ -504,9 +599,169 @@ const setScore = (val: number) => {
     right: 24px;
   }
   @media (max-width: 1100px) {
-    position: sticky;
     bottom: 16px;
+    right: 16px;
+    left: 16px;
     z-index: 9;
+  }
+  :deep(.o-popup) {
+    .popup-nss {
+      background-color: var(--o-color-fill2);
+      padding: 16px 24px;
+      box-shadow: var(--o-shadow-2);
+      --popup-min-width: 360px;
+
+      .icon-cancel {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        cursor: pointer;
+        font-size: 20px;
+        color: var(--o-color-info2);
+      }
+    }
+
+    .slider {
+      .slider-title {
+        font-size: var(--e-font-size-text);
+        line-height: 20px;
+        color: var(--e-color-text1);
+        text-align: center;
+        white-space: nowrap;
+        .title-name {
+          font-weight: 600;
+        }
+      }
+      .slider-body {
+        padding-top: 30px;
+        .slider-tip {
+          position: relative;
+          .slide-btn-tip {
+            width: 28px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            font-size: var(--e-font-size-tip);
+            color: var(--e-color-text1);
+            background-color: var(--e-color-bg2);
+            box-shadow: var(--e-shadow-l2);
+            position: absolute;
+            top: -30px;
+            transform: translateX(-50%);
+            left: v-bind(scorePosition);
+            &::after {
+              border-color: var(--e-color-bg2) transparent transparent;
+              border-style: solid;
+              border-width: 8px 8px 0;
+              bottom: -5px;
+              content: '';
+              display: block;
+              height: 0;
+              position: absolute;
+              right: 6px;
+              width: 0;
+            }
+          }
+        }
+      }
+      .grade-info {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        font-size: var(--e-font-size-tip);
+        color: var(--e-color-text4);
+        margin-top: 14px;
+      }
+    }
+    .reason {
+      margin-top: 16px;
+      :deep(.el-textarea) {
+        .el-textarea__inner {
+          background-color: var(--e-color-bg2);
+          border-radius: 0;
+          box-shadow: 0 0 0 1px var(--e-color-border2) inset;
+          color: var(--e-color-text1);
+          &:focus {
+            box-shadow: 0 0 0 1px var(--e-color-border1) inset;
+          }
+        }
+        .el-input__count {
+          background-color: var(--e-color-bg2);
+        }
+      }
+      .more-info {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 8px;
+        color: var(--e-color-text4);
+        font-size: var(--e-font-size-tip);
+        line-height: 18px;
+      }
+      .submit-btn {
+        margin-top: 16px;
+        text-align: center;
+        :deep(.o-button) {
+          border-color: var(--e-color-border1);
+          color: var(--e-color-text1);
+          &:hover {
+            background-color: var(--e-color-brand1);
+            border-color: var(--e-color-brand1);
+            color: var(--e-color-white);
+          }
+        }
+      }
+    }
+  }
+  :deep(.el-slider) {
+    height: auto;
+    height: 8px;
+    .el-slider__runway {
+      background-color: var(--e-color-bg-secondary);
+    }
+    .el-slider__bar {
+      background-image: linear-gradient(90deg, #b461f6 0%, #7d32ea 100%);
+    }
+    .el-slider__button-wrapper + div {
+      position: relative;
+      transform: translateY(2px);
+      z-index: 2;
+      & + div {
+        transform: translateY(2px);
+        & > .el-slider__stop:nth-of-type(1) {
+          transform: translatex(2px);
+        }
+      }
+    }
+    .el-slider__stop {
+      width: 2px;
+      height: 2px;
+      background-color: var(--e-color-bg6);
+    }
+
+    .el-slider__marks-stop {
+      background-color: var(--e-color-bg2);
+      &:nth-last-of-type(1) {
+        transform: translateX(-4px);
+        background-color: var(--e-color-bg6);
+      }
+    }
+    .el-slider__button {
+      position: relative;
+      border: none;
+      box-shadow: var(--e-shadow-l3);
+      &::after {
+        display: block;
+        content: '';
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: var(--e-color-brand1);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
   }
   .safety-tips {
     width: 48px;
@@ -567,7 +822,11 @@ const setScore = (val: number) => {
   .float-wrap {
     display: flex;
     flex-direction: column;
-
+    @media (max-width: 1100px) {
+      position: absolute;
+      right: 0;
+      bottom: 164px;
+    }
     .float-tip {
       position: absolute;
       width: 200px;
@@ -634,9 +893,6 @@ const setScore = (val: number) => {
         .icon-box {
           color: var(--e-color-brand1);
         }
-        .o-popup2 {
-          transform: scale(1);
-        }
       }
       &:nth-of-type(1) + .nav-item::before {
         display: block;
@@ -651,218 +907,6 @@ const setScore = (val: number) => {
       }
       .o-icon {
         font-size: 24px;
-      }
-      .o-popup1 {
-        position: absolute;
-        width: 360px;
-        top: 0;
-        right: 64px;
-        background-color: var(--e-color-bg2);
-        padding: 16px 30px;
-        transition: all 0.5s;
-        transform: scale(0);
-        transform-origin: 100% 50%;
-        box-shadow: var(--e-shadow-l2);
-        cursor: default;
-        &.show {
-          transform: scale(1);
-        }
-        .icon-cancel {
-          position: absolute;
-          top: 5px;
-          right: 10px;
-          cursor: pointer;
-          color: var(--e-color-text1);
-        }
-        .slider {
-          .slider-title {
-            font-size: var(--e-font-size-text);
-            line-height: 20px;
-            color: var(--e-color-text1);
-            text-align: center;
-            white-space: nowrap;
-            .title-name {
-              font-weight: 600;
-            }
-          }
-          .slider-body {
-            padding-top: 30px;
-            .slider-tip {
-              position: relative;
-              .slide-btn-tip {
-                width: 28px;
-                height: 20px;
-                line-height: 20px;
-                text-align: center;
-                font-size: var(--e-font-size-tip);
-                color: var(--e-color-text1);
-                background-color: var(--e-color-bg2);
-                box-shadow: var(--e-shadow-l2);
-                position: absolute;
-                top: -30px;
-                transform: translateX(-50%);
-                left: v-bind(scorePosition);
-                &::after {
-                  border-color: var(--e-color-bg2) transparent transparent;
-                  border-style: solid;
-                  border-width: 8px 8px 0;
-                  bottom: -5px;
-                  content: '';
-                  display: block;
-                  height: 0;
-                  position: absolute;
-                  right: 6px;
-                  width: 0;
-                }
-              }
-            }
-            :deep(.el-slider) {
-              height: auto;
-              height: 8px;
-              .el-slider__runway {
-                background-color: var(--e-color-bg-secondary);
-              }
-              .el-slider__bar {
-                background-image: linear-gradient(90deg, #b461f6 0%, #7d32ea 100%);
-              }
-              .el-slider__button-wrapper + div {
-                position: relative;
-                transform: translateY(2px);
-                z-index: 2;
-                & + div {
-                  transform: translateY(2px);
-                  & > .el-slider__stop:nth-of-type(1) {
-                    transform: translatex(2px);
-                  }
-                }
-              }
-              .el-slider__stop {
-                width: 2px;
-                height: 2px;
-                background-color: var(--e-color-bg6);
-              }
-
-              .el-slider__marks-stop {
-                background-color: var(--e-color-bg2);
-                &:nth-last-of-type(1) {
-                  transform: translateX(-4px);
-                  background-color: var(--e-color-bg6);
-                }
-              }
-              .el-slider__button {
-                position: relative;
-                border: none;
-                box-shadow: var(--e-shadow-l3);
-                &::after {
-                  display: block;
-                  content: '';
-                  width: 8px;
-                  height: 8px;
-                  border-radius: 50%;
-                  background-color: var(--e-color-brand1);
-                  position: absolute;
-                  left: 50%;
-                  top: 50%;
-                  transform: translate(-50%, -50%);
-                }
-              }
-            }
-          }
-          .grade-info {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            font-size: var(--e-font-size-tip);
-            color: var(--e-color-text4);
-            margin-top: 14px;
-          }
-        }
-        .reason {
-          margin-top: 16px;
-          :deep(.el-textarea) {
-            .el-textarea__inner {
-              background-color: var(--e-color-bg2);
-              border-radius: 0;
-              box-shadow: 0 0 0 1px var(--e-color-border2) inset;
-              color: var(--e-color-text1);
-              &:focus {
-                box-shadow: 0 0 0 1px var(--e-color-border1) inset;
-              }
-            }
-            .el-input__count {
-              background-color: var(--e-color-bg2);
-            }
-          }
-          .more-info {
-            display: flex;
-            flex-wrap: wrap;
-            margin-top: 8px;
-            color: var(--e-color-text4);
-            font-size: var(--e-font-size-tip);
-            line-height: 18px;
-          }
-          .submit-btn {
-            margin-top: 16px;
-            text-align: center;
-            :deep(.o-button) {
-              border-color: var(--e-color-border1);
-              color: var(--e-color-text1);
-              &:hover {
-                background-color: var(--e-color-brand1);
-                border-color: var(--e-color-brand1);
-                color: var(--e-color-white);
-              }
-            }
-          }
-        }
-      }
-      .o-popup2 {
-        position: absolute;
-        top: 0;
-        right: 64px;
-        min-width: 240px;
-        padding: 24px;
-        background-color: var(--e-color-bg2);
-        transition: all 0.5s;
-        transform: scale(0);
-        transform-origin: 100% 50%;
-        box-shadow: var(--e-shadow-l2);
-        cursor: default;
-        .pop-item {
-          display: flex;
-          color: var(--e-color-text1);
-          & ~ .pop-item {
-            margin-top: 18px;
-          }
-          .o-icon {
-            font-size: 32px;
-          }
-          .text {
-            margin-left: 12px;
-            text-align: left;
-            font-size: var(--e-font-size-text);
-            .text-name {
-              line-height: 32px;
-              font-weight: 600;
-              a {
-                color: var(--e-color-text1);
-                &:hover {
-                  color: var(--e-color-brand1);
-                }
-              }
-            }
-            .text-tip {
-              font-size: var(--e-font-size-tip);
-              line-height: 18px;
-              a {
-                color: var(--e-color-text3);
-                &:hover {
-                  color: var(--e-color-link1);
-                }
-              }
-            }
-          }
-        }
       }
     }
     .nav-box-question {
@@ -902,7 +946,7 @@ const setScore = (val: number) => {
   }
   .float-mobile {
     width: 100%;
-    padding: 0 16px;
+    padding: 0;
     margin-bottom: 16px;
     &.mobile-margin {
       margin-top: 16px;
@@ -916,10 +960,10 @@ const setScore = (val: number) => {
       border-radius: 8px;
       display: flex;
       align-items: center;
-      justify-content: center;
       position: relative;
       .o-icon {
-        font-size: 16px;
+        font-size: 20px;
+        color: #000;
       }
       .icon-close {
         position: absolute;
