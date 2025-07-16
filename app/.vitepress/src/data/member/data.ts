@@ -399,6 +399,7 @@ import yuanyuan from '@/assets/category/member/avatar/yuanyuan.png';
 import shengyongpan1 from '@/assets/category/member/avatar/shengyongpan1.png';
 
 import jianghongbo from '@/assets/category/member/avatar/jianghongbo.png';
+import chenqijun from '@/assets/category/member/avatar/chenqijun.png';
 import meixiangru from '@/assets/category/member/avatar/meixiangru.png';
 import liuhangyu from '@/assets/category/member/avatar/liuhangyu.png';
 import luohao from '@/assets/category/member/avatar/luohao.png';
@@ -1908,15 +1909,15 @@ export default {
     ],
     SECURITY: [
       {
-        img: zhujinwei,
-        name: `朱金伟`,
+        img: chenqijun,
+        name: `陈启军`,
         title: `Maintainer`,
-        email: `zhujinwei@huawei.com`,
+        email: `276437280@qq.com`,
       },
       {
         img: jianghongbo,
         name: `蒋宏博`,
-        title: `Committer`,
+        title: `Maintainer`,
         email: `xdhbj0022@163.com`,
       },
       {
@@ -6181,15 +6182,15 @@ export default {
     ],
     SECURITY: [
       {
-        img: zhujinwei,
-        name: `Jinwei Zhu`,
+        img: chenqijun,
+        name: `Qijun Chen`,
         title: `Maintainer`,
-        email: `zhujinwei@huawei.com`,
+        email: `276437280@qq.com`,
       },
       {
         img: jianghongbo,
         name: `Hongbo Jiang`,
-        title: `Committer`,
+        title: `Maintainer`,
         email: `xdhbj0022@163.com`,
       },
       {
