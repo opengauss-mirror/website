@@ -1,6 +1,6 @@
 ---
 title: 'openGauss 6.0.2版本正式发布！'
-date: '2025-07-12'
+date: '2025-07-15'
 tags: ['theme']
 author: 'openGauss'
 category: 'news'
@@ -39,11 +39,34 @@ openGauss 6.0.2 补丁版本回合的需求列表：
 | 6.0.1   |    6.0.2        |
 | 6.0.2    |    master\|7.0.0       |
 
-## CVE 漏洞
+## CVE 漏洞修复
 
-当前补丁版本没有 CVE 披露漏洞。
+| 漏洞编号       | 涉及组件   |
+| -------------- | ---------- |
+| CVE-2024-50379  | cm-restapi |
+| CVE-2024-52316  | cm-restapi |
+| CVE-2024-56337  | cm-restapi |
+| CVE-2023-44487  | cm-restapi |
+| CVE-2023-46589  | cm-restapi |
+| CVE-2024-24549  | cm-restapi |
+| CVE-2024-34750  | cm-restapi |
+| CVE-2024-38286  | cm-restapi |
+| CVE-2024-23672  | cm-restapi |
+| CVE-2023-41080  | cm-restapi |
+| CVE-2023-42794  | cm-restapi |
+| CVE-2025-24813  | cm-restapi |
+| CVE-2023-42795  | cm-restapi |
+| CVE-2023-45648  | cm-restapi |
+| CVE-2024-54677  | cm-restapi |
+
 
 ## 缺陷回合列表
+
+| 转测版本      | 修复issue                                                    |
+| --------- | ------------------------------------------------------------ |
+| 6.0.2B001 | 内核: 106 <br/>插件: 38  <br/>工具: 28  <br/>驱动: 2   <br/> |
+| 6.0.2B002 | 37                                                           |
+| 6.0.2B003 | 7                                                            |
 
 6.0.2B001回合转测列表：
 
