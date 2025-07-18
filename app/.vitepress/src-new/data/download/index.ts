@@ -49,7 +49,7 @@ const downloadData: DownloadItem[] = [
   {
     name: '6.0.2(LTS)',
     newLayout: true,
-    isLogin: false,
+    isLogin: true,
     data: download602,
     plannedEOL: '2027.09.30',
     desc: 'openGauss 6.0.0 LTS及后续LTS版本发布间隔周期为2年，社区提供3年支持，社区OGSP伙伴提供3年以后维护支持服务。',
