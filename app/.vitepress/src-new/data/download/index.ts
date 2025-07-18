@@ -1,6 +1,7 @@
 import { DownloadItem } from '~@/@types/type-download';
 import { GITCODE_LINK } from '~@/data/url-config';
 import download700RC1 from './download7.0.0-RC1';
+import download602 from './download6.0.2';
 import download601 from './download6.0.1';
 import download600 from './download6.0.0';
 import download600RC1 from './download6.0.0-RC1';
@@ -42,6 +43,23 @@ const downloadData: DownloadItem[] = [
         nameEn: 'Release Notes',
         path: '/zh/news/2025-03-31/',
         pathEn: '/zh/news/2025-03-31/',
+      },
+    ],
+  },
+  {
+    name: '6.0.2(LTS)',
+    newLayout: true,
+    isLogin: false,
+    data: download602,
+    plannedEOL: '2027.09.30',
+    desc: 'openGauss 6.0.0 LTS及后续LTS版本发布间隔周期为2年，社区提供3年支持，社区OGSP伙伴提供3年以后维护支持服务。',
+    versionCapabilityPath: `${GITCODE_LINK}opengauss/docs/blob/6.0.0/content/zh/docs/VersionCapability/index.md`,
+    docs_list: [
+      {
+        name: '发行说明',
+        nameEn: 'Release Notes',
+        path: '/zh/news/2025-07-15-602/index.html',
+        pathEn: '/zh/news/2025-07-15-602/index.html',
       },
     ],
   },

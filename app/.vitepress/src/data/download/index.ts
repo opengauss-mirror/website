@@ -1,4 +1,5 @@
 import download700RC1 from './download7.0.0-RC1';
+import download602 from './download6.0.2';
 import download601 from './download6.0.1';
 import download600 from './download6.0.0';
 import download600RC1 from './download6.0.0-RC1';
@@ -35,6 +36,20 @@ const downloadData = [
         nameEn: 'Release Notes',
         path: '/zh/news/2025-03-31/',
         pathEn: '/zh/news/2025-03-31/',
+      },
+    ],
+  },
+  {
+    name: '6.0.2 (LTS)',
+    newLayout: true,
+    data: download602,
+    plannedEOL: 'Planned EOL: 2027.09.30',
+    docs_list: [
+      {
+        name: '发行说明',
+        nameEn: 'Release Notes',
+        path: '/zh/news/2025-02-05-601/index.html',
+        pathEn: '/zh/news/2025-02-05-601/index.html',
       },
     ],
   },
