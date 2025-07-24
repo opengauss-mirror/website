@@ -5,7 +5,8 @@ import { useRouter, useData } from 'vitepress';
 import useWindowResize from '@/components/hooks/useWindowResize';
 import navLangFilter from '@/data/header/nav-lang-filter';
 
-import IconDown from '~icons/app/icon-chevron-down.svg';
+import IconLocale from '~icons/app/icon-locale.svg';
+import { OIcon } from '@opensig/opendesign';
 
 const screenWidth = useWindowResize();
 const router = useRouter();
@@ -15,7 +16,7 @@ const { lang } = useData();
 const langShow = ref(['zh']);
 const detailFilterList = ['events', 'news', 'blogs'];
 const langOptions = [
-  { id: 'zh', label: '中文' },
+  { id: 'zh', label: '简体中文' },
   { id: 'en', label: 'English' },
 ];
 interface LangType {
@@ -97,10 +98,10 @@ const onLeave = (el: Element) => {
 
 <template>
   <div v-if="screenWidth > 1100" class="lang-menu" @mouseenter="onMouseEnter()" @mouseleave="onMouseLeave()">
-    <span class="lang-menu-link" :class="{ 'no-state': langList.length < 2 }">
-      {{ lang === 'zh' ? '中文' : 'English' }}
-      <OIcon v-if="langList.length > 1"><icon-down></icon-down></OIcon>
-    </span>
+    <OIcon class="lang-menu-link" :class="{ 'no-state': langList.length < 2 }">
+      <IconLocale />
+      <div class="lang-tag">{{ lang === 'zh' ? '中' : 'EN' }}</div>
+    </OIcon>
     <Transition @before-enter="onBeforeEnter" @enter="onEnter" @before-leave="onBeforeLeave" @leave="onLeave">
       <ul v-show="isMenu && langList.length > 1" class="lang-menu-list">
         <li v-for="item in langList" :key="item.id" class="lang-item" :class="{ active: lang === item.id }" @click="changeLanguage(item.id)">
@@ -118,15 +119,25 @@ const onLeave = (el: Element) => {
 .lang-menu {
   position: relative;
   height: 100%;
+  display: flex;
+  align-items: center;
   .lang-menu-link {
-    display: flex;
-    align-items: center;
-    font-size: var(--e-font-size-text);
+    position: relative;
+    font-size: var(--o-icon_size-m);
     color: var(--e-color-text1);
     cursor: pointer;
-    height: 100%;
     &.no-state {
       cursor: default;
+    }
+
+    .lang-tag {
+      position: absolute;
+      right: 0%;
+      bottom: 0%;
+      font-size: 10px;
+      width: 12px;
+      height: 12px;
+      background-color: var(--e-color-bg2);
     }
   }
   .lang-menu-list {
@@ -149,6 +160,7 @@ const onLeave = (el: Element) => {
       color: var(--e-color-text1);
       border-bottom: 1px solid var(--e-color-division1);
       padding: 0 var(--e-spacing-h5);
+      white-space: nowrap;
       &:last-child {
         border-bottom: 0 none;
       }
