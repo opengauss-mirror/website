@@ -90,9 +90,8 @@ onMounted(() => {
     <OTable class="pc-list" :data="randerData" style="width: 100%">
       <OTableColumn width="300" :label="i18n.certification.pro" prop="pro" show-overflow-tooltip></OTableColumn>
       <OTableColumn :label="i18n.certification.name" prop="name" show-overflow-tooltip></OTableColumn>
-      <OTableColumn width="200" :label="i18n.certification.version" prop="version"></OTableColumn>
+      <OTableColumn width="300" :label="i18n.certification.version" prop="version"></OTableColumn>
       <OTableColumn width="180" :label="i18n.certification.award" prop="award"></OTableColumn>
-      <OTableColumn :label="i18n.certification.expiration" prop="expiration" width="180"></OTableColumn>
       <el-table-column :label="i18n.certification.certificate" width="200">
         <template #default="scope">
           <a :href="scope.row.certificate" download target="_blank" rel="noopener noreferrer">{{ i18n.certification.certify }}</a>
@@ -113,9 +112,6 @@ onMounted(() => {
           </li>
           <li>
             <span>{{ i18n.certification.award }}:</span><span>{{ item.award }}</span>
-          </li>
-          <li>
-            <span>{{ i18n.certification.expiration }}:</span><span>{{ item.expiration }}</span>
           </li>
           <li>
             <span>{{ i18n.certification.certificate }}:</span>
