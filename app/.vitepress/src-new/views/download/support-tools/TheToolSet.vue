@@ -22,13 +22,14 @@ import { getCustomCookie } from '@/shared/utils';
 import { oaReport } from '@/shared/analytics';
 import { doLogin } from '@/shared/login';
 import { useData } from 'vitepress';
-import { useI18n } from '~@/i18n';
+// import { useI18n } from '~@/i18n';
 import { useUserInfoStore } from '@/stores/user';
 import { computed, ref, watchEffect } from 'vue';
 import { useClipboard } from '~@/composables/useClipboard';
 import IconQuestion from '~icons/app/icon-question-mark.svg';
 import { useScreen } from '~@/composables/useScreen';
 import { Ref } from 'vue';
+import { useI18n } from 'vue-i18n';
 
 const _downloadData = downloadData.slice(0, 10) as (typeof downloadData)[1][];
 
@@ -39,8 +40,8 @@ interface FilterT {
 
 const { gtPadV } = useScreen();
 const { lang } = useData();
-const i18n = useI18n();
-const message = useMessage();
+const { t } = useI18n();
+const message = useMessage(null);
 const userInfoStore = useUserInfoStore();
 
 const versions = _downloadData.map((item) => ({ label: 'openGauss ' + item.name, value: item.name }));
@@ -53,7 +54,7 @@ const currentVersionTool = computed(() => {
 const architectureList = computed<string[]>(() => {
   return Array.from(new Set(currentVersionTool.value.map((item: FilterT) => item.architecture).filter(Boolean)));
 });
-const activeArchitecture = ref(architectureList.value?.[0] || '');
+const activeArchitecture = ref(architectureList.value[0] || '');
 
 const osList = computed<string[]>(() => {
   return Array.from(new Set(currentVersionTool.value.map((item: FilterT) => item.os).filter(Boolean)));
@@ -76,10 +77,10 @@ const matrix = computed(() => {
 const enabledOs = computed(() => matrix.value.get(activeArchitecture.value));
 
 const columns = [
-  { key: 'name', label: '软件包类型' },
-  { key: 'size', label: '软件包大小' },
-  { key: 'sha_code', label: '完整性校验' },
-  { key: 'download', label: '软件包下载' },
+  { key: 'name', label: t('download.TABLE_HEAD[0]') },
+  { key: 'size', label: t('download.TABLE_HEAD[1]') },
+  { key: 'sha_code', label: t('download.TABLE_HEAD[3]') },
+  { key: 'download', label: t('download.TABLE_HEAD[2]') },
 ];
 
 const displayTools = computed(() => {
@@ -103,13 +104,13 @@ const initClipboard = (text: string, e: MouseEvent) => {
     target: e,
     success: () => {
       message.success({
-        content: i18n.value.common.COPY_SUCCESS,
+        content: t('common.COPY_SUCCESS'),
       });
       isClipboard.value = true;
     },
     error: () => {
       message.danger({
-        content: i18n.value.common.COPY_FAILED,
+        content: t('common.COPY_FAILED'),
       });
       isClipboard.value = true;
     },
@@ -134,7 +135,7 @@ const downloadDlg = ref(false);
 const dlgAction: Ref<DialogActionT[]> = ref([
   {
     id: 'cancel',
-    label: i18n.value.download.DONNLOAD_CANCEL,
+    label: t('download.DONNLOAD_CANCEL'),
     variant: 'outline',
     onClick: () => {
       downloadDlg.value = false;
@@ -142,7 +143,7 @@ const dlgAction: Ref<DialogActionT[]> = ref([
   },
   {
     id: 'ok',
-    label: i18n.value.download.DONNLOAD_COMFIRM,
+    label: t('download.DONNLOAD_COMFIRM'),
     color: 'primary',
     variant: 'solid',
     onClick: () => {
@@ -173,16 +174,16 @@ const collectDownloadData = (name: string) => {
 
 <template>
   <section>
-    <h2>openGauss工具集</h2>
+    <h2>{{ $t('tools.TOOLSET') }}</h2>
     <div class="card">
       <!-- 版本选择 -->
-      <TagFilter v-if="gtPadV" class="architecture-box" label="选择版本">
+      <TagFilter v-if="gtPadV" class="architecture-box" :label="$t('download.VERSION')">
         <OSelect v-model="currentVersion">
           <OOption v-for="ver in versions" :label="ver.label" :value="ver.value" :key="ver.value"></OOption>
         </OSelect>
       </TagFilter>
       <template v-else>
-        <p class="mobile-filter-label">选择版本</p>
+        <p class="mobile-filter-label">{{ $t('download.VERSION') }}</p>
         <OSelect v-model="currentVersion">
           <OOption v-for="ver in versions" :label="ver.label" :value="ver.value" :key="ver.value"></OOption>
         </OSelect>
@@ -263,16 +264,16 @@ const collectDownloadData = (name: string) => {
             支持ARMv8.1以下芯片，适配飞腾2000和鲲鹏916平台（LSE即大型系统扩展指令集从ARMv8.1开始引入，ARMv8.1以下芯片不支持该特性）
           </p>
           <div class="info">
-            <p>软件包大小</p>
+            <p>{{ $t('download.TABLE_HEAD[1]') }}</p>
             <p>{{ item.size }}</p>
-            <p>完整性校验</p>
+            <p>{{ $t('download.TABLE_HEAD[3]') }}</p>
             <OLink tag="button" @click="handleUrlCopy(item.sha_code, $event)">
               SHA256
               <template #suffix>
                 <OIcon><IconCopy /></OIcon>
               </template>
             </OLink>
-            <p>软件包下载</p>
+            <p>{{ $t('download.TABLE_HEAD[2]') }}</p>
             <OLink v-if="!userInfoStore.username" tag="button" color="primary" @click="changeDownloadAuth">
               {{ $t('download.BTN_TEXT') }}
             </OLink>
@@ -285,8 +286,8 @@ const collectDownloadData = (name: string) => {
     </div>
     <!-- 登录弹窗 -->
     <ODialog v-if="downloadDlg" v-model:visible="downloadDlg" :unmount-on-hide="false" size="small" :actions="dlgAction">
-      <template #header>{{ i18n.download.DONNLOAD_TIPS }}</template>
-      <div>{{ i18n.download.DONNLOAD_TEXT }}</div>
+      <template #header>{{ $t('download.DONNLOAD_TIPS') }}</template>
+      <div>{{ $t('download.DONNLOAD_TEXT') }}</div>
     </ODialog>
   </section>
 </template>

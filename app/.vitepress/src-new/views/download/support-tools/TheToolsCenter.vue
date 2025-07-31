@@ -8,23 +8,31 @@ import TheSupportTools from './TheSupportTools.vue';
 import SupportServices from './SupportServices.vue';
 import AppSection from '~@/components/AppSection.vue';
 import { useScreen } from '~@/composables/useScreen';
+import { useData } from 'vitepress';
+import { watchEffect } from 'vue';
+import { useI18n } from 'vue-i18n';
 
 const { gtPadV } = useScreen();
+
+const { lang } = useData();
+const { locale } = useI18n();
+
+watchEffect(() => locale.value = lang.value ?? 'zh');
 </script>
 
 <template>
-  <BannerLevel2 v-if="gtPadV" :background-image="BannerImg" title="工具中心" subtitle="主要面向开发者和ISV，提供六大类开发工具客户端工具、数据导入导出工具、数据复制/同步工具、监控运维接口及工具集、备份恢复接口及工具集、通用数据框架。" />
+  <BannerLevel2 v-if="gtPadV" :background-image="BannerImg" :title="$t('tools.TOOL_CENTER')" :subtitle="$t('tools.DESC')" />
   <ContentWrapper v-else style="padding-top: 16px;">
     <div class="phone-banner">
-      <p class="title">工具中心</p>
-      <p class="desc">主要面向开发者和ISV，提供六大类开发工具客户端工具、数据导入导出工具、数据复制/同步工具、监控运维接口及工具集、备份恢复接口及工具集、通用数据框架</p>
+      <p class="title">{{ $t('tools.TOOL_CENTER') }}</p>
+      <p class="desc">{{ $t('tools.DESC') }}</p>
     </div>
   </ContentWrapper>
 
   <ContentWrapper :vertical-padding="['32px', '32px']">
     <TheToolSet />
     <TheSupportTools />
-    <AppSection title="支持与服务">
+    <AppSection :title="$t('tools.SUPPORT_SERVICES')">
       <SupportServices />
     </AppSection>
   </ContentWrapper>

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, computed, onMounted, provide } from 'vue';
+import { ref, computed, onMounted, provide, watchEffect } from 'vue';
 import { useData, useRouter } from 'vitepress';
 import { ORadioGroup, ORadio, OBreadcrumb, OBreadcrumbItem, OSelect, OOption, OIcon } from '@opensig/opendesign';
 import DownloadConfig from '~@/data/download';
@@ -11,6 +11,7 @@ import { useCommon } from '@/stores/common';
 import { getUrlParams } from '@/shared/utils';
 
 import IconVersion from '~icons/app-new/icon-version.svg';
+import { useI18n } from 'vue-i18n';
 
 const { size } = useScreen();
 const commonStore = useCommon();
@@ -18,6 +19,8 @@ const { lang } = useData();
 const router = useRouter();
 
 const activeTab = ref('');
+const { locale } = useI18n();
+watchEffect(() => locale.value = lang.value ?? 'zh');
 
 const timePattern = /^\d{4}\.\d{2}\.\d{2}$/;
 const now = new Date();
@@ -63,10 +66,10 @@ const onChange = (option: string) => {
   <ContentWrapper :vertical-padding="['32px', '32px']">
     <OBreadcrumb class="app-breadcrumb">
       <OBreadcrumbItem>
-        <a :href="`/${lang}/download/`"> 下载 </a>
+        <a :href="`/${lang}/download/`"> {{ $t('common.COMMON_CONFIG.DOWNLOAD') }} </a>
       </OBreadcrumbItem>
       <OBreadcrumbItem>
-        <a :href="`/${lang}/download/?version=all`"> 全部版本 </a>
+        <a :href="`/${lang}/download/?version=all`"> {{ $t('download.VERSION_ALL') }} </a>
       </OBreadcrumbItem>
       <OBreadcrumbItem>openGauss {{ activeTab }} </OBreadcrumbItem>
     </OBreadcrumb>
@@ -74,7 +77,7 @@ const onChange = (option: string) => {
       <div class="archive-side">
         <template v-if="size.width > 1600">
           <h3>
-            <OIcon><IconVersion /></OIcon>版本列表
+            <OIcon><IconVersion /></OIcon>{{ $t('download.VERSIONS') }}
           </h3>
           <ORadioGroup direction="v" v-model="activeTab" @change="onChange">
             <ORadio v-for="option in DownloadConfig" :key="option.name" :value="option.name"> openGauss {{ option.name }} </ORadio>

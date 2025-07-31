@@ -16,15 +16,15 @@ const goFaq = () => {
     <div class="item" @click="goFaq">
       <OIcon><IconPage /></OIcon>
       <div>
-        <p class="title">常见FAQ</p>
-        <p class="desc">在使用时遇到问题？请浏览常见FAQ快速找到常见问题的答案</p>
+        <p class="title">{{ $t('tools.FAQs') }}</p>
+        <p class="desc">{{ $t('tools.FAQ_DESC') }}</p>
       </div>
     </div>
     <a class="item" :href="FORUM_LINK" target="_blank" rel="noopener noreferrer">
       <OIcon><IconChat /></OIcon>
       <div>
-        <p class="title">社区论坛</p>
-        <p class="desc">需要更多的支撑？欢迎使用社区论坛进行问题讨论和求助</p>
+        <p class="title">{{ $t('tools.COMMUNITY_FORUM') }}</p>
+        <p class="desc">{{ $t('tools.COMMUNITY_FORUM_DESC') }}</p>
       </div>
     </a>
   </div>

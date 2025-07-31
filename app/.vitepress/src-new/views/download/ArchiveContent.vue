@@ -114,8 +114,8 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
 
 <template>
   <div class="download-version">
-    <h2 class="title">{{ 'openGauss ' + contentData.name }} <OTag v-if="contentData.plannedEOL === 'End-of-Life' || contentData.isEol"> 停止维护 </OTag></h2>
-    <h4 v-if="contentData.plannedEOL" class="subtitle">维护截止时间：{{ contentData.plannedEOL }}</h4>
+    <h2 class="title">{{ 'openGauss ' + contentData.name }} <OTag v-if="contentData.plannedEOL === 'End-of-Life' || contentData.isEol"> {{ $t('download.EOM') }} </OTag></h2>
+    <h4 v-if="contentData.plannedEOL" class="subtitle"> {{ $t('download.EOM_DATE') }} ：{{ contentData.plannedEOL }}</h4>
     <div class="other-link">
       <template v-for="item in contentData.docs_list" :key="item.name">
         <OLink :href="item.path.startsWith('/docs/') ? DOCS_LINK + lang + item.path : item.path" color="primary" target="_blank" rel="noopener noreferrer">{{

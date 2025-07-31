@@ -1,5 +1,49 @@
 export default [
   {
+    name: '身份认证系统',
+    version: '3.0',
+    type: '安全',
+    company: '北京芯盾时代科技有限公司',
+    database: 'openGauss 5.0.0',
+    os: 'CentOS 7.9',
+    server: 'Intel(其他)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%8C%97%E4%BA%AC%E8%8A%AF%E7%9B%BE/%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81%E7%B3%BB%E7%BB%9FV3.0/opengauss%E6%8A%80%E6%9C%AF%E8%AE%A4%E8%AF%81%E8%AF%81%E4%B9%A6.pdf',
+  },
+  {
+    name: '智瞰Insight AI平台',
+    version: '5.0',
+    type: '通用',
+    company: '北京数字一百信息技术有限公司',
+    database: 'openGauss 7.0.0',
+    os: 'Alibaba Cloud Linux 3、CentOS 7',
+    server: 'Intel(其他)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%8C%97%E4%BA%AC%E6%95%B0%E5%AD%97/%E6%99%BA%E7%9E%B0Insight%20AI%E5%B9%B3%E5%8F%B0%20V5.0/opengauss%E6%8A%80%E6%9C%AF%E8%AE%A4%E8%AF%81%E4%B9%A6.pdf',
+  },
+  {
+    name: '智慧病房',
+    version: '8.0',
+    type: '医疗',
+    company: '湖南尚医康医疗科技有限公司',
+    database: 'openGauss 6.0.1',
+    os: 'openEuler 22.03',
+    server: 'Intel(其他)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%B9%96%E5%8D%97%E5%B0%9A%E5%8C%BB%E5%BA%B7/%E6%99%BA%E6%85%A7%E7%97%85%E6%88%BF%20V8.0/openGauss%E6%8A%80%E6%9C%AF%E8%AE%A4%E8%AF%81%E4%B9%A6.pdf',
+  },
+  {
+    name: '数据安全一体化平台',
+    version: '1.0',
+    type: '医疗',
+    company: '易联众信息技术股份有限公司',
+    database: 'openGauss 5.0.0',
+    os: 'Kylin V10',
+    server: 'Intel(R5210 G11)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%98%93%E8%81%94%E4%BC%97/opengauss%E8%AE%A4%E8%AF%81%E4%B9%A6.pdf',
+  },
+  {
     name: '汇智TeligenOS 服务器操作系统',
     version: '3',
     type: '操作系统',

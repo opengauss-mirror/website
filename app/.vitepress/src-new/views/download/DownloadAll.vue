@@ -3,9 +3,12 @@ import { OIcon, OIconArrowRight, OLink, OOption, ORadio, ORadioGroup, OScroller,
 import { useData, useRouter } from 'vitepress';
 import { computed } from 'vue';
 import { ref } from 'vue';
+import { useI18n } from 'vue-i18n';
 import TheTable from '~@/components/TheTable.vue';
 import { useScreen } from '~@/composables/useScreen';
 import downloadData from '~@/data/download';
+
+const { t } = useI18n();
 
 const timePattern = /^\d{4}\.\d{2}\.\d{2}$/;
 const now = new Date();
@@ -27,9 +30,9 @@ const _downloadData = downloadData.map((item) => {
 
 const { gtPadV } = useScreen();
 const filterOptions = [
-  { label: '全部', value: 'all' },
-  { label: '长期支持版本', value: 'lts' },
-  { label: '创新版本', value: 'rc' },
+  { label: t('download.downloadAll.ALL'), value: 'all' },
+  { label: t('download.downloadAll.LTS'), value: 'lts' },
+  { label: t('download.downloadAll.RCX'), value: 'rc' },
 ];
 
 const selectedFilter = ref('all');
@@ -60,17 +63,17 @@ const goToDownload = (name: string) => {
 };
 
 const tableColumns = [
-  { key: 'name', label: '软件包类型' },
-  { key: 'releaseDate', label: '发行时间' },
-  { key: 'plannedEOL', label: '维护截止时间' },
-  { key: 'action', label: '下载地址' },
+  { key: 'name', label: t('download.PKG_TYPE') },
+  { key: 'releaseDate', label: t('download.RELEASE_DATE') },
+  { key: 'plannedEOL', label: t('download.EOM_DATE') },
+  { key: 'action', label: t('download.DOWNLOAD_URL') },
 ];
 </script>
 
 <template>
   <div class="all-versions">
     <div class="tag-filter">
-      <p class="label">版本类型</p>
+      <p class="label">{{ $t('download.VERSION_TYPE') }}</p>
       <ORadioGroup v-if="gtPadV" v-model="selectedFilter" style="--radio-group-gap: 8px">
         <ORadio v-for="item in filterOptions" :key="item.value" :value="item.value">
           <template #radio="{ checked }">
@@ -86,7 +89,7 @@ const tableColumns = [
       <template #td_name="{ row }">
         <span>
           openGauss {{ row.name }}
-          <OTag v-if="row.plannedEOL === 'End-of-Life' || row.isEol" size="small"> 停止维护 </OTag>
+          <OTag v-if="row.plannedEOL === 'End-of-Life' || row.isEol" size="small"> {{ $t('download.EOM') }} </OTag>
         </span>
       </template>
       <template #td_releaseDate="{ row }">
@@ -103,7 +106,7 @@ const tableColumns = [
       </template>
       <template #td_action="{ row }">
         <OLink tag="button" color="primary" @click="goToDownload(row.name)">
-          前往下载
+          {{ $t('download.GOTO_DOWNLOAD') }}
           <template #suffix>
             <OIcon><OIconArrowRight /></OIcon>
           </template>
@@ -114,21 +117,21 @@ const tableColumns = [
       <div class="mobile-download-item-card" v-for="item in displayData" :key="item.name">
         <p class="item-name">
           openGauss {{ item.name }}
-          <OTag v-if="item.plannedEOL === 'End-of-Life'" size="small"> 停止维护 </OTag>
+          <OTag v-if="item.plannedEOL === 'End-of-Life'" size="small"> {{ $t('download.EOM') }} </OTag>
         </p>
         <div class="info">
-          <p>发行时间</p>
+          <p>{{ $t('download.RELEASE_DATE') }}</p>
           <p><span class="no-data">--</span></p>
-          <p>维护截止时间</p>
+          <p>{{ $t('download.EOM_DATE') }}</p>
           <p>
-            <span v-if="timePattern.test(item.plannedEOL ?? '')">
+            <span v-if="item.plannedEOL && timePattern.test(item.plannedEOL ?? '')">
               {{ item.plannedEOL.slice(0, 7).replace('.', '/') }}
             </span>
             <span v-else class="no-data">--</span>
           </p>
-          <p>下载地址</p>
+          <p>{{ $t('download.DOWNLOAD_URL') }}</p>
           <OLink tag="button" color="primary" @click="goToDownload(item.name)">
-            前往下载
+            {{ $t('download.GOTO_DOWNLOAD') }}
             <template #suffix>
               <OIcon><OIconArrowRight /></OIcon>
             </template>

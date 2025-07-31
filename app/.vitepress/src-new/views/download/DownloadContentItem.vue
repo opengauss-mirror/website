@@ -108,12 +108,12 @@ const collectDownloadData = (name: string) => {
         {{ data.name }} <span class="tag">{{ data.size }}</span>
       </p>
       <p v-else>
-        <span class="text">软件包大小：</span><span class="size">{{ data.size }}</span>
+        <span class="text">{{ $t('download.TABLE_HEAD[1]') }}：</span><span class="size">{{ data.size }}</span>
       </p>
     </div>
     <div class="software-info">
       <div class="software-code">
-        <span class="text">完整性校验：</span>
+        <span class="text">{{ $t('download.TABLE_HEAD[3]') }}：</span>
         <span v-if="data.sha_code !== ''" class="sha-link" @click="handleUrlCopy(data.sha_code, $event)">
           {{ shaText
           }}<OIcon>
@@ -123,7 +123,7 @@ const collectDownloadData = (name: string) => {
       </div>
       <!-- 软件包下载 -->
       <div v-if="data.down_url !== ''" class="down-action">
-        <span v-if="lePadV" class="text">软件包下载：</span>
+        <span v-if="lePadV" class="text">{{ $t('download.TABLE_HEAD[1]') }}：</span>
         <template v-if="downloadVersionAuth.includes(versionShown) && !userInfoStore.username">
           <OButton :variant="lePadV ? 'text' : type === 'symbol' ? 'outline' : 'solid'" size="small" color="primary" @click="changeDownloadAuth">
             {{ i18n.download.BTN_TEXT }}

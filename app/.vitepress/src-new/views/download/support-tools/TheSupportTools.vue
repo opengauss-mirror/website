@@ -6,9 +6,11 @@ import { computed } from 'vue';
 import { ref } from 'vue';
 import { useCommon } from '@/stores/common';
 import { useScreen } from '~@/composables/useScreen';
+import { useI18n } from 'vue-i18n';
 
 const { gtPadV } = useScreen();
 const { lang } = useData();
+const { t } = useI18n();
 
 const supporttoolsInfo = computed(() => {
   return SupportToolsConfig[lang.value as 'zh' | 'en'];
@@ -23,7 +25,7 @@ const typeIdNameMap = computed(() => {
 
 // 所有工具的类型(id和名称)
 const toolTypes = computed(() => {
-  return [{ label: '全部', value: 'all' }].concat(...supporttoolsInfo.value.map((item) => ({ label: item.name, value: item.id })));
+  return [{ label: t('common.COMMON_CONFIG.ALL'), value: 'all' }].concat(...supporttoolsInfo.value.map((item) => ({ label: item.name, value: item.id })));
 });
 
 // 当前选择的工具类型
@@ -55,7 +57,7 @@ const onClickTool = (item: any) => {
   <section>
     <h2>{{ $t('common.COMMON_CONFIG.SUPPORTTOOLS') }}</h2>
     <div class="tools-type">
-      <p class="label">工具类型</p>
+      <p class="label">{{ $t('tools.TOOL_TYPE') }}</p>
       <OScroller v-if="gtPadV" show-type="hover" disabled-y>
         <ORadioGroup v-model="selectedType" style="--radio-group-gap: 8px">
           <ORadio v-for="item in toolTypes" :key="item.value" :value="item.value">
@@ -75,8 +77,8 @@ const onClickTool = (item: any) => {
         <OTag variant="outline">{{ typeIdNameMap.get(item.iden) }}</OTag>
         <p class="desc">{{ item.desc }}</p>
         <div class="links">
-          <OLink :href="item.address" target="_blank" color="primary">源码地址</OLink>
-          <OLink :href="item.guide" target="_blank" color="primary">操作指导</OLink>
+          <OLink :href="item.address" target="_blank" color="primary">{{ $t('tools.SOURCE_CODE_ADDR') }}</OLink>
+          <OLink :href="item.guide" target="_blank" color="primary">{{ $t('tools.OPERATION_GUIDE') }}</OLink>
         </div>
       </div>
     </div>
@@ -92,8 +94,8 @@ const onClickTool = (item: any) => {
         <OTag variant="outline">{{ typeIdNameMap.get(selectedItem.iden) }}</OTag>
         <p class="desc">{{ selectedItem.desc }}</p>
         <div class="links">
-          <OLink :href="selectedItem.address" target="_blank" color="primary">源码地址</OLink>
-          <OLink :href="selectedItem.guide" target="_blank" color="primary">操作指导</OLink>
+          <OLink :href="selectedItem.address" target="_blank" color="primary">{{ $t('tools.SOURCE_CODE_ADDR') }}</OLink>
+          <OLink :href="selectedItem.guide" target="_blank" color="primary">{{ $t('tools.OPERATION_GUIDE') }}</OLink>
         </div>
       </div>
     </ODialog>

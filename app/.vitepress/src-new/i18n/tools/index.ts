@@ -1,0 +1,30 @@
+export default {
+  zh: {
+    DESC: '主要面向开发者和ISV，提供六大类开发工具客户端工具、数据导入导出工具、数据复制/同步工具、监控运维接口及工具集、备份恢复接口及工具集、通用数据框架。',
+    TOOL_CENTER: '工具中心',
+    TOOL_TYPE: '工具类型',
+    SOURCE_CODE_ADDR: '源码地址',
+    OPERATION_GUIDE: '操作指导',
+    SUPPORT_SERVICES: '支持与服务',
+    FAQs: '常见FAQ',
+    FAQ_DESC: '在使用时遇到问题？请浏览常见FAQ快速找到常见问题的答案',
+    COMMUNITY_FORUM: '社区论坛',
+    COMMUNITY_FORUM_DESC: '需要更多的支撑？欢迎使用社区论坛进行问题讨论和求助',
+    ALL_TOOLS: '全部工具',
+    TOOLSET: 'openGauss工具集',
+  },
+  en: {
+    DESC: '6 categories of tools for developers and ISVs, including the client tool, data import/export tool, data replication/synchronization tool, monitoring and O&M interfaces and toolset, backup and recovery interfaces and toolset, and data access middleware',
+    TOOL_CENTER: 'Tool Center',
+    TOOL_TYPE: 'Tool type',
+    SOURCE_CODE_ADDR: 'Source code',
+    OPERATION_GUIDE: 'Operation guide',
+    SUPPORT_SERVICES: 'Support and Services',
+    FAQs: 'FAQs',
+    FAQ_DESC: 'This is where to get quick answers to your questions.',
+    COMMUNITY_FORUM: 'Community Forum',
+    COMMUNITY_FORUM_DESC: 'This is where to connect with the community for more support.',
+    ALL_TOOLS: 'All',
+    TOOLSET: 'openGauss Toolset',
+  }
+}

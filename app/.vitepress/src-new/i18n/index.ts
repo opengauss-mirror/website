@@ -5,6 +5,7 @@ import { getCurrentLocale } from '~@/utils/locale';
 
 import common from './common';
 import download from './download';
+import tools from './tools';
 
 const messages = {
   zh: {
@@ -13,6 +14,7 @@ const messages = {
 
     // 业务
     download: download.zh,
+    tools: tools.zh,
   },
   en: {
     // 公共模块
@@ -20,6 +22,7 @@ const messages = {
 
     // 业务
     download: download.en,
+    tools: tools.en,
   },
 };
 

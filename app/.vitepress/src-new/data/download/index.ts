@@ -36,6 +36,7 @@ const downloadData: DownloadItem[] = [
     releaseDate: '2025.03.30',
     plannedEOL: '2025.09.30',
     desc: '社区创新版本联创测试使用，发布间隔周期定为6个月，社区提供6个月维护支持。',
+    desc_en: 'RCx: a collaborative testing version released every 6 months, with 6 months of community support.',
     versionCapabilityPath: `${GITCODE_LINK}opengauss/docs/blob/7.0.0-RC1/content/zh/docs/VersionCapability/index.md`,
     docs_list: [
       {
@@ -53,6 +54,7 @@ const downloadData: DownloadItem[] = [
     data: download602,
     plannedEOL: '2027.09.30',
     desc: 'openGauss 6.0.0 LTS及后续LTS版本发布间隔周期为2年，社区提供3年支持，社区OGSP伙伴提供3年以后维护支持服务。',
+    desc_en: 'An LTS version for openGauss 6.0.0 and later is provided with 3 years of community support, followed by additional maintenance support by oGSPs.',
     versionCapabilityPath: `${GITCODE_LINK}opengauss/docs/blob/6.0.0/content/zh/docs/VersionCapability/index.md`,
     docs_list: [
       {

@@ -245,10 +245,10 @@ const changeLayer = (item) => {
               <p class="edition-text">
                 {{ t('download.' + item.edition) }}
                 <template v-if="versionCapability"
-                  >{{ t('download.versionCapability') }}<a target="_blank" rel="noopener noreferrer" :href="versionCapability">版本能力矩阵图</a></template
+                  >{{ t('download.versionCapability') }}<a target="_blank" rel="noopener noreferrer" :href="versionCapability">&ensp;{{ $t('download.capabilityMatrix') }} </a></template
                 >
               </p>
-              <p class="caption">软件包下载</p>
+              <p class="caption"> {{ $t('download.TABLE_HEAD[2]') }} </p>
               <DownloadContentItem :data="item" :version-shown="versionShown" @report="collectDownloadData" />
 
               <!-- openGauss Symbol -->
@@ -421,8 +421,8 @@ const changeLayer = (item) => {
         @include tip1;
         color: var(--o-color-info2);
         margin-bottom: 16px;
-        display: flex;
-        align-items: center;
+        // display: flex;
+        // align-items: center;
       }
       .command-box {
         margin-bottom: 16px;
