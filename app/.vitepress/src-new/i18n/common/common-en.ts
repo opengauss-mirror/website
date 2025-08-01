@@ -61,7 +61,7 @@ export default {
       },
       {
         NAME: `About Cookies`,
-        URL: `/zh/cookies/`,
+        URL: `/en/cookies/`,
         TARGET: `_blank`,
       },
       {
