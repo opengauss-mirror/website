@@ -12,7 +12,7 @@ export default {
       system: '良',
       commitment: '良',
       experience: '良',
-      certificate: `${OBS_TRANSFER_LINK1}oGSPCertificate/%E5%8C%97%E4%BA%AC%E7%A7%91%E8%93%9D%E8%BD%AF%E4%BB%B6%E7%B3%BB%E7%BB%9F%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.jpg`,
+      certificate: `${OBS_TRANSFER_LINK1}/oGSPCertificate/%E5%8C%97%E4%BA%AC%E7%A7%91%E8%93%9D%E8%BD%AF%E4%BB%B6%E7%B3%BB%E7%BB%9F%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.jpg`,
     },
     {
       name: '中国邮政储蓄银行股份有限公司',
@@ -24,7 +24,7 @@ export default {
       system: '优',
       commitment: '优',
       experience: '优',
-      certificate: `${OBS_TRANSFER_LINK1}oGSPCertificate/%E4%B8%AD%E5%9B%BD%E9%82%AE%E6%94%BF%E5%82%A8%E8%93%84%E9%93%B6%E8%A1%8C%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png`,
+      certificate: `${OBS_TRANSFER_LINK1}/oGSPCertificate/%E4%B8%AD%E5%9B%BD%E9%82%AE%E6%94%BF%E5%82%A8%E8%93%84%E9%93%B6%E8%A1%8C%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png`,
     },
     {
       name: '中移动信息技术有限公司',
@@ -36,7 +36,7 @@ export default {
       system: '良',
       commitment: '优',
       experience: '优',
-      certificate: `${OBS_TRANSFER_LINK1}oGSPCertificate/%E4%B8%AD%E7%A7%BB%E5%8A%A8%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png`,
+      certificate: `${OBS_TRANSFER_LINK1}/oGSPCertificate/%E4%B8%AD%E7%A7%BB%E5%8A%A8%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png`,
     },
     {
       name: '天津神舟通用数据技术有限公司',
@@ -48,7 +48,7 @@ export default {
       system: '优',
       commitment: '优',
       experience: '优',
-      certificate: `${OBS_TRANSFER_LINK1}oGSPCertificate/%E5%A4%A9%E6%B4%A5%E7%A5%9E%E8%88%9F%E9%80%9A%E7%94%A8%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png`,
+      certificate: `${OBS_TRANSFER_LINK1}/oGSPCertificate/%E5%A4%A9%E6%B4%A5%E7%A5%9E%E8%88%9F%E9%80%9A%E7%94%A8%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png`,
     },
     {
       name: '天津南大通用数据技术股份有限公司',
@@ -60,7 +60,7 @@ export default {
       system: '优',
       commitment: '优',
       experience: '优',
-      certificate: `${OBS_TRANSFER_LINK1}oGSPCertificate/%E5%A4%A9%E6%B4%A5%E5%8D%97%E5%A4%A7%E9%80%9A%E7%94%A8%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png`,
+      certificate: `${OBS_TRANSFER_LINK1}/oGSPCertificate/%E5%A4%A9%E6%B4%A5%E5%8D%97%E5%A4%A7%E9%80%9A%E7%94%A8%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png`,
     },
     {
       name: '北京海量数据技术股份有限公司',
@@ -72,7 +72,7 @@ export default {
       system: '优',
       commitment: '优',
       experience: '优',
-      certificate: `${OBS_TRANSFER_LINK1}oGSPCertificate/%E5%8C%97%E4%BA%AC%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png`,
+      certificate: `${OBS_TRANSFER_LINK1}/oGSPCertificate/%E5%8C%97%E4%BA%AC%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png`,
     },
     {
       name: '云和恩墨（北京）信息技术有限公司',
@@ -84,7 +84,7 @@ export default {
       system: '优',
       commitment: '优',
       experience: '优',
-      certificate: `${OBS_TRANSFER_LINK1}oGSPCertificate/%E4%BA%91%E5%92%8C%E6%81%A9%E5%A2%A8%EF%BC%88%E5%8C%97%E4%BA%AC%EF%BC%89%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png`,
+      certificate: `${OBS_TRANSFER_LINK1}/oGSPCertificate/%E4%BA%91%E5%92%8C%E6%81%A9%E5%A2%A8%EF%BC%88%E5%8C%97%E4%BA%AC%EF%BC%89%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png`,
     },
     {
       name: '中软国际科技服务有限公司',
@@ -96,7 +96,7 @@ export default {
       system: '良',
       commitment: '优',
       experience: '优',
-      certificate: `${OBS_TRANSFER_LINK1}oGSPCertificate/%E4%B8%AD%E8%BD%AF%E5%9B%BD%E9%99%85%E7%A7%91%E6%8A%80%E6%9C%8D%E5%8A%A1%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png`,
+      certificate: `${OBS_TRANSFER_LINK1}/oGSPCertificate/%E4%B8%AD%E8%BD%AF%E5%9B%BD%E9%99%85%E7%A7%91%E6%8A%80%E6%9C%8D%E5%8A%A1%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png`,
     },
     {
       name: '软通动力信息技术(集团)股份有限公司',
@@ -108,7 +108,7 @@ export default {
       system: '中',
       commitment: '良',
       experience: '优',
-      certificate: `${OBS_TRANSFER_LINK1}oGSPCertificate/%E8%BD%AF%E9%80%9A%E5%8A%A8%E5%8A%9B%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF%EF%BC%88%E9%9B%86%E5%9B%A2%EF%BC%89%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png`,
+      certificate: `${OBS_TRANSFER_LINK1}/oGSPCertificate/%E8%BD%AF%E9%80%9A%E5%8A%A8%E5%8A%9B%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF%EF%BC%88%E9%9B%86%E5%9B%A2%EF%BC%89%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png`,
     },
   ],
   en: [
@@ -122,7 +122,7 @@ export default {
       system: 'Good',
       commitment: 'Good',
       experience: 'Good',
-      certificate: `${OBS_TRANSFER_LINK1}oGSPCertificate/%E5%8C%97%E4%BA%AC%E7%A7%91%E8%93%9D%E8%BD%AF%E4%BB%B6%E7%B3%BB%E7%BB%9F%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.jpg`,
+      certificate: `${OBS_TRANSFER_LINK1}/oGSPCertificate/%E5%8C%97%E4%BA%AC%E7%A7%91%E8%93%9D%E8%BD%AF%E4%BB%B6%E7%B3%BB%E7%BB%9F%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.jpg`,
     },
     {
       name: '中国邮政储蓄银行股份有限公司',
@@ -134,7 +134,7 @@ export default {
       system: 'Excellent',
       commitment: 'Excellent',
       experience: 'Excellent',
-      certificate: `${OBS_TRANSFER_LINK1}oGSPCertificate/%E4%B8%AD%E5%9B%BD%E9%82%AE%E6%94%BF%E5%82%A8%E8%93%84%E9%93%B6%E8%A1%8C%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png`,
+      certificate: `${OBS_TRANSFER_LINK1}/oGSPCertificate/%E4%B8%AD%E5%9B%BD%E9%82%AE%E6%94%BF%E5%82%A8%E8%93%84%E9%93%B6%E8%A1%8C%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png`,
     },
     {
       name: '中移动信息技术有限公司',
@@ -146,7 +146,7 @@ export default {
       system: 'Good',
       commitment: 'Excellent',
       experience: 'Excellent',
-      certificate: `${OBS_TRANSFER_LINK1}oGSPCertificate/%E4%B8%AD%E7%A7%BB%E5%8A%A8%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png`,
+      certificate: `${OBS_TRANSFER_LINK1}/oGSPCertificate/%E4%B8%AD%E7%A7%BB%E5%8A%A8%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png`,
     },
     {
       name: '天津神舟通用数据技术有限公司',
@@ -158,7 +158,7 @@ export default {
       system: 'Excellent',
       commitment: 'Excellent',
       experience: 'Excellent',
-      certificate: `${OBS_TRANSFER_LINK1}oGSPCertificate/%E5%A4%A9%E6%B4%A5%E7%A5%9E%E8%88%9F%E9%80%9A%E7%94%A8%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png`,
+      certificate: `${OBS_TRANSFER_LINK1}/oGSPCertificate/%E5%A4%A9%E6%B4%A5%E7%A5%9E%E8%88%9F%E9%80%9A%E7%94%A8%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png`,
     },
     {
       name: '天津南大通用数据技术股份有限公司',
@@ -170,7 +170,7 @@ export default {
       system: 'Excellent',
       commitment: 'Excellent',
       experience: 'Excellent',
-      certificate: `${OBS_TRANSFER_LINK1}oGSPCertificate/%E5%A4%A9%E6%B4%A5%E5%8D%97%E5%A4%A7%E9%80%9A%E7%94%A8%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png`,
+      certificate: `${OBS_TRANSFER_LINK1}/oGSPCertificate/%E5%A4%A9%E6%B4%A5%E5%8D%97%E5%A4%A7%E9%80%9A%E7%94%A8%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png`,
     },
     {
       name: '北京海量数据技术股份有限公司',
@@ -182,7 +182,7 @@ export default {
       system: 'Excellent',
       commitment: 'Excellent',
       experience: 'Excellent',
-      certificate: `${OBS_TRANSFER_LINK1}oGSPCertificate/%E5%8C%97%E4%BA%AC%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png`,
+      certificate: `${OBS_TRANSFER_LINK1}/oGSPCertificate/%E5%8C%97%E4%BA%AC%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png`,
     },
     {
       name: '云和恩墨（北京）信息技术有限公司',
@@ -194,7 +194,7 @@ export default {
       system: 'Excellent',
       commitment: 'Excellent',
       experience: 'Excellent',
-      certificate: `${OBS_TRANSFER_LINK1}oGSPCertificate/%E4%BA%91%E5%92%8C%E6%81%A9%E5%A2%A8%EF%BC%88%E5%8C%97%E4%BA%AC%EF%BC%89%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png`,
+      certificate: `${OBS_TRANSFER_LINK1}/oGSPCertificate/%E4%BA%91%E5%92%8C%E6%81%A9%E5%A2%A8%EF%BC%88%E5%8C%97%E4%BA%AC%EF%BC%89%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png`,
     },
 
     {
@@ -207,7 +207,7 @@ export default {
       system: 'Good',
       commitment: 'Excellent',
       experience: 'Excellent',
-      certificate: `${OBS_TRANSFER_LINK1}oGSPCertificate/%E4%B8%AD%E8%BD%AF%E5%9B%BD%E9%99%85%E7%A7%91%E6%8A%80%E6%9C%8D%E5%8A%A1%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png`,
+      certificate: `${OBS_TRANSFER_LINK1}/oGSPCertificate/%E4%B8%AD%E8%BD%AF%E5%9B%BD%E9%99%85%E7%A7%91%E6%8A%80%E6%9C%8D%E5%8A%A1%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png`,
     },
     {
       name: '软通动力信息技术(集团)股份有限公司',
@@ -219,7 +219,7 @@ export default {
       system: 'Fair',
       commitment: 'Good',
       experience: 'Excellent',
-      certificate: `${OBS_TRANSFER_LINK1}oGSPCertificate/%E8%BD%AF%E9%80%9A%E5%8A%A8%E5%8A%9B%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF%EF%BC%88%E9%9B%86%E5%9B%A2%EF%BC%89%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png`,
+      certificate: `${OBS_TRANSFER_LINK1}/oGSPCertificate/%E8%BD%AF%E9%80%9A%E5%8A%A8%E5%8A%9B%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF%EF%BC%88%E9%9B%86%E5%9B%A2%EF%BC%89%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png`,
     },
   ],
 };

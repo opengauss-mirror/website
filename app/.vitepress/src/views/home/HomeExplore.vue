@@ -12,7 +12,8 @@ const i18n = useI18n();
 const { lang } = useData();
 
 const handleGo = (path: string) => {
-  return path.startsWith('/docs/') ? DOCS_LINK + lang.value + path : path;
+  const link = `${DOCS_LINK}/${lang.value}${path}`;
+  return path.startsWith('/docs/') ? link : path;
 };
 </script>
 

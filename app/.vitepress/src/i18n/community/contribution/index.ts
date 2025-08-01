@@ -5,11 +5,11 @@ export default {
     LOOK_MAP: `贡献攻略地图`,
     LINK_LIST: [
       {
-        URL: `${GITCODE_LINK}opengauss/community/blob/master/code-of-conduct.md`,
+        URL: `${GITCODE_LINK}/opengauss/community/blob/master/code-of-conduct.md`,
         BLANK: true,
       },
       {
-        URL: `${GITCODE_LINK}opengauss`,
+        URL: `${GITCODE_LINK}/opengauss`,
         BLANK: true,
       },
       {
@@ -21,19 +21,19 @@ export default {
         BLANK: true,
       },
       {
-        URL: `${CLA_LINK}sign/gitee_opengauss-1614047760000855378?lang=zh`,
+        URL: `${CLA_LINK}/sign/gitee_opengauss-1614047760000855378?lang=zh`,
         BLANK: true,
       },
       {
-        URL: `${CLA_LINK}sign/gitee_opengauss-1614047760000855378?lang=zh`,
+        URL: `${CLA_LINK}/sign/gitee_opengauss-1614047760000855378?lang=zh`,
         BLANK: true,
       },
       {
-        URL: `${CLA_LINK}sign/gitee_opengauss-1614047760000855378?lang=zh`,
+        URL: `${CLA_LINK}/sign/gitee_opengauss-1614047760000855378?lang=zh`,
         BLANK: true,
       },
       {
-        URL: `${CLA_LINK}sign/gitee_opengauss-1614047760000855378?lang=zh`,
+        URL: `${CLA_LINK}/sign/gitee_opengauss-1614047760000855378?lang=zh`,
         BLANK: true,
       },
       {
@@ -45,7 +45,7 @@ export default {
         BLANK: true,
       },
       {
-        URL: `${GITCODE_LINK}opengauss/community/blob/master/community-membership.md`,
+        URL: `${GITCODE_LINK}/opengauss/community/blob/master/community-membership.md`,
         BLANK: true,
       },
       {
@@ -53,15 +53,15 @@ export default {
         BLANK: true,
       },
       {
-        URL: `${GITCODE_LINK}opengauss/community`,
+        URL: `${GITCODE_LINK}/opengauss/community`,
         BLANK: true,
       },
       {
-        URL: `${GITCODE_LINK}opengauss/community/blob/master/contributors/issue-submit.md`,
+        URL: `${GITCODE_LINK}/opengauss/community/blob/master/contributors/issue-submit.md`,
         BLANK: true,
       },
       {
-        URL: `${SAGE_LINK}2014/09/01/the-gentle-art-of-patch-review/`,
+        URL: `${SAGE_LINK}/2014/09/01/the-gentle-art-of-patch-review/`,
         BLANK: true,
       },
     ],
@@ -72,11 +72,11 @@ export default {
     PRINT_MAP: `Download`,
     LINK_LIST: [
       {
-        URL: `${GITCODE_LINK}opengauss/community/blob/master/code-of-conduct.md`,
+        URL: `${GITCODE_LINK}/opengauss/community/blob/master/code-of-conduct.md`,
         BLANK: true,
       },
       {
-        URL: `${GITCODE_LINK}opengauss`,
+        URL: `${GITCODE_LINK}/opengauss`,
         BLANK: true,
       },
       {
@@ -88,19 +88,19 @@ export default {
         BLANK: true,
       },
       {
-        URL: `${CLA_LINK}sign/gitee_opengauss-1614047760000855378?lang=en`,
+        URL: `${CLA_LINK}/sign/gitee_opengauss-1614047760000855378?lang=en`,
         BLANK: true,
       },
       {
-        URL: `${CLA_LINK}sign/gitee_opengauss-1614047760000855378?lang=en`,
+        URL: `${CLA_LINK}/sign/gitee_opengauss-1614047760000855378?lang=en`,
         BLANK: true,
       },
       {
-        URL: `${CLA_LINK}sign/gitee_opengauss-1614047760000855378?lang=en`,
+        URL: `${CLA_LINK}/sign/gitee_opengauss-1614047760000855378?lang=en`,
         BLANK: true,
       },
       {
-        URL: `${CLA_LINK}sign/gitee_opengauss-1614047760000855378?lang=en`,
+        URL: `${CLA_LINK}/sign/gitee_opengauss-1614047760000855378?lang=en`,
         BLANK: true,
       },
       {
@@ -112,7 +112,7 @@ export default {
         BLANK: true,
       },
       {
-        URL: `${GITCODE_LINK}opengauss/community/blob/master/community-membership.md`,
+        URL: `${GITCODE_LINK}/opengauss/community/blob/master/community-membership.md`,
         BLANK: true,
       },
       {
@@ -120,15 +120,15 @@ export default {
         BLANK: true,
       },
       {
-        URL: `${GITCODE_LINK}opengauss/community`,
+        URL: `${GITCODE_LINK}/opengauss/community`,
         BLANK: true,
       },
       {
-        URL: `${GITCODE_LINK}opengauss/community/blob/master/contributors/issue-submit.md`,
+        URL: `${GITCODE_LINK}/opengauss/community/blob/master/contributors/issue-submit.md`,
         BLANK: true,
       },
       {
-        URL: `${SAGE_LINK}2014/09/01/the-gentle-art-of-patch-review/`,
+        URL: `${SAGE_LINK}/2014/09/01/the-gentle-art-of-patch-review/`,
         BLANK: true,
       },
     ],

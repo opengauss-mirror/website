@@ -32,6 +32,11 @@ const { contentData, versionShown, downloadVersionAuth } = toRefs(props);
 const explainLink = computed(() => {
   return (contentData.value[0] as any).docs_list[0][lang.value === 'zh' ? 'path' : 'pathEn'];
 });
+
+const getNewLink = (path: string) => {
+  const link = `${DOCS_LINK}/${lang.value}${path}`;
+  return path.startsWith('/docs/') ? link : path;
+};
 </script>
 
 <template>
@@ -39,10 +44,10 @@ const explainLink = computed(() => {
     <h2 class="title">{{ 'openGauss ' + (contentData[0] as any).name }}</h2>
     <h4 class="subtitle">{{ (contentData[0] as any).plannedEOL }}</h4>
     <div class="other-link">
-      <a :href="explainLink.startsWith('/docs/') ? DOCS_LINK + lang + explainLink : explainLink" target="_blank" rel="noopener noreferrer"
+      <a :href="getNewLink(explainLink)" target="_blank" rel="noopener noreferrer"
         >{{ lang === 'zh' ? (contentData[0] as any).docs_list[0].name : (contentData[0] as any).docs_list[0].nameEn }}
       </a>
-      <a :href="GITCODE_LINK + 'opengauss/community/issues'" target="_blank" rel="noopener noreferrer">{{ i18n.download.FEEDBACK_QUESTION }} </a>
+      <a :href="GITCODE_LINK + '/opengauss/community/issues'" target="_blank" rel="noopener noreferrer">{{ i18n.download.FEEDBACK_QUESTION }} </a>
     </div>
     <DownloadTable
       v-for="item in (contentData[0] as any).data[lang]"

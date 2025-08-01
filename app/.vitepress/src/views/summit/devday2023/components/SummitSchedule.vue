@@ -30,7 +30,7 @@ const otherTabType = ref(0);
   <div class="schedule">
     <h4>{{ agendaData.lable }}</h4>
     <span v-if="agendaData.lable.includes('SIG组版本规划工作会议')" class="go-etherpad">
-      <a :href="ETHERPAD_LINK + 'p/ODD2023-SIG-Meeting'" target="_blank" rel="noopener noreferrer">点击此处</a
+      <a :href="ETHERPAD_LINK + '/p/ODD2023-SIG-Meeting'" target="_blank" rel="noopener noreferrer">点击此处</a
       >并选择感兴趣的SIG组-Etherpad文件，按要求填写议题和参会信息
     </span>
     <div class="schedule-item other">

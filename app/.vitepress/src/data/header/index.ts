@@ -1,5 +1,5 @@
 import { NavItemT } from '@/shared/@types/type-nav';
-import { GITCODE_LINK, DATA_LINK, GIYHUB_LINK, DOCS_LINK, FORUM_LINK } from '@/data/url-config';
+import { GITCODE_LINK, DATA_LINK, GITHUB_LINK, DOCS_LINK, FORUM_LINK } from '@/data/url-config';
 const navData: Array<NavItemT> = [
   {
     label: { zh: '下载', en: 'Download' },
@@ -30,8 +30,8 @@ const navData: Array<NavItemT> = [
       {
         label: { zh: '文档', en: 'Documentation' },
         href: {
-          zh: DOCS_LINK + 'zh/',
-          en: DOCS_LINK + 'en/',
+          zh: DOCS_LINK + '/zh/',
+          en: DOCS_LINK + '/en/',
         },
         id: 'docs',
         jumpOut: true,
@@ -143,8 +143,8 @@ const navData: Array<NavItemT> = [
         label: { zh: '贡献看板', en: 'Statistics' },
         id: 'statistics',
         href: {
-          zh: DATA_LINK + 'zh/overview',
-          en: DATA_LINK + 'en/overview',
+          zh: DATA_LINK + '/zh/overview',
+          en: DATA_LINK + '/en/overview',
         },
         jumpOut: true,
       },
@@ -276,8 +276,8 @@ const navData: Array<NavItemT> = [
         id: 'GitCode',
         label: { zh: 'GitCode', en: 'GitCode' },
         href: {
-          zh: GITCODE_LINK + 'opengauss',
-          en: GITCODE_LINK + 'opengauss',
+          zh: GITCODE_LINK + '/opengauss',
+          en: GITCODE_LINK + '/opengauss',
         },
         jumpOut: true,
       },
@@ -285,8 +285,8 @@ const navData: Array<NavItemT> = [
         id: 'github',
         label: { zh: 'Github', en: 'Github' },
         href: {
-          zh: GIYHUB_LINK + 'opengauss-mirror',
-          en: GIYHUB_LINK + 'opengauss-mirror',
+          zh: GITHUB_LINK + '/opengauss-mirror',
+          en: GITHUB_LINK + '/opengauss-mirror',
         },
         jumpOut: true,
       },

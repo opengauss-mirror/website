@@ -110,20 +110,26 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
     downloadTime,
   });
 };
+
+// 老版本没有英文内容
+const getNewLink = (path: string, item?: any) => {
+  const link = `${DOCS_LINK}/zh${path}`;
+  return path.startsWith('/docs/') ? link : path;
+};
 </script>
 
 <template>
   <div class="download-version">
-    <h2 class="title">{{ 'openGauss ' + contentData.name }} <OTag v-if="contentData.plannedEOL === 'End-of-Life' || contentData.isEol"> {{ $t('download.EOM') }} </OTag></h2>
-    <h4 v-if="contentData.plannedEOL" class="subtitle"> {{ $t('download.EOM_DATE') }} ：{{ contentData.plannedEOL }}</h4>
+    <h2 class="title">
+      {{ 'openGauss ' + contentData.name }} <OTag v-if="contentData.plannedEOL === 'End-of-Life' || contentData.isEol"> {{ $t('download.EOM') }} </OTag>
+    </h2>
+    <h4 v-if="contentData.plannedEOL" class="subtitle">{{ $t('download.EOM_DATE') }} ：{{ contentData.plannedEOL }}</h4>
     <div class="other-link">
       <template v-for="item in contentData.docs_list" :key="item.name">
-        <OLink :href="item.path.startsWith('/docs/') ? DOCS_LINK + lang + item.path : item.path" color="primary" target="_blank" rel="noopener noreferrer">{{
-          isZh ? item.name : item.nameEn
-        }}</OLink>
+        <OLink :href="getNewLink(item.path, item)" color="primary" target="_blank" rel="noopener noreferrer">{{ isZh ? item.name : item.nameEn }}</OLink>
         <ODivider direction="v" />
       </template>
-      <OLink :href="GITCODE_LINK + 'opengauss/community/issues'" color="primary" target="_blank" rel="noopener noreferrer">{{
+      <OLink :href="GITCODE_LINK + '/opengauss/community/issues'" color="primary" target="_blank" rel="noopener noreferrer">{{
         i18n.download.FEEDBACK_QUESTION
       }}</OLink>
     </div>

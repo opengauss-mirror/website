@@ -3,42 +3,42 @@ import { useCommon } from '@/stores/common';
 import { OButton, OLink } from '@opensig/opendesign';
 import { useData, useRouter } from 'vitepress';
 import { computed } from 'vue';
-import { GITCODE_LINK, GIYHUB_LINK } from '~@/data/url-config';
+import { GITCODE_LINK, GITHUB_LINK } from '~@/data/url-config';
 
 const displayTools = [
   {
     name: `DBeaver`,
     desc: `开源多数据库客户端工具`,
     desc_en: `Open source multi database client tool`,
-    address: `${GIYHUB_LINK}dbeaver/dbeaver`,
+    address: `${GITHUB_LINK}/dbeaver/dbeaver`,
     guide: `/zh/blogs/justbk/2020-10-30_dbeaver_for_openGauss.html`,
   },
   {
     name: `pgloader`,
     desc: `一个数据导入工具，使用COPY命令将数据导入到openGauss`,
     desc_en: `A data import tool that uses the COPY command to import data into openGauss`,
-    address: `${GITCODE_LINK}opengauss/openGauss-tools-loader`,
-    guide: `${GITCODE_LINK}opengauss/openGauss-tools-loader/blob/master/pgloader%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.pdf`,
+    address: `${GITCODE_LINK}/opengauss/openGauss-tools-loader`,
+    guide: `${GITCODE_LINK}/opengauss/openGauss-tools-loader/blob/master/pgloader%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.pdf`,
   },
   {
     name: `Debezium`,
     desc: `为捕获数据更改（Change Data Capture, CDC）提供了一个低延迟的流式处理平台`,
     desc_en: `It provides a low latency streaming processing platform for change data capture (CDC)`,
-    address: `${GIYHUB_LINK}debezium/debezium`,
+    address: `${GITHUB_LINK}/debezium/debezium`,
     guide: `/zh/blogs/lihongda/Debezium-Adapt-openGauss.html`,
   },
   {
     name: `DataKit`,
     desc: `基于Web的openGauss的可视化的平台系统，方便客户使用和管理openGauss可视化工具`,
     desc_en: `A web-based platform system that helps customers use and manage openGauss visualization tools`,
-    address: `${GITCODE_LINK}opengauss/openGauss-workbench`,
-    guide: `${GITCODE_LINK}opengauss/openGauss-workbench/blob/master/plugins/alert-monitor/README.md`,
+    address: `${GITCODE_LINK}/opengauss/openGauss-workbench`,
+    guide: `${GITCODE_LINK}/opengauss/openGauss-workbench/blob/master/plugins/alert-monitor/README.md`,
   },
   {
     name: `gs_probackup`,
     desc: `用于管理openGauss数据库备份和恢复，并对openGauss实例进行定期备份`,
     desc_en: `Manages openGauss database backups and recovery, and performs regular backups of openGauss instances`,
-    address: `${GITCODE_LINK}opengauss/openGauss-server`,
+    address: `${GITCODE_LINK}/opengauss/openGauss-server`,
     guide: `/zh/docs/latest/docs/ToolandCommandReference/gs_probackup.html`,
   },
   {
@@ -46,7 +46,7 @@ const displayTools = [
     name_en: `Data access middleware`,
     desc: `分布式数据库中间件`,
     desc_en: `Distributed database middleware`,
-    address: `${GIYHUB_LINK}apache/shardingsphere`,
+    address: `${GITHUB_LINK}/apache/shardingsphere`,
     guide: `/zh/blogs/justbk/2021-08-31_shardingSphere_for_openGauss.html`,
   },
 ];

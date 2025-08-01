@@ -71,7 +71,7 @@ export default {
     {
       pcBanner: bannerOpenGaussV6,
       moBanner: bannerOpenGaussV6Mo,
-      link: DOCS_LINK + 'zh/docs/latest/docs/DataVec/DataVec-Overview.html',
+      link: DOCS_LINK + '/zh/docs/latest/docs/DataVec/DataVec-Overview.html',
       target: '_blank',
       title: 'openGauss 向量引擎',
       titleMb: [],
@@ -85,7 +85,7 @@ export default {
     {
       pcBanner: bannerDift,
       moBanner: bannerDiftMo,
-      link: DOCS_LINK + 'zh/docs/latest/docs/DataVec/openGauss-RAG实践.html',
+      link: DOCS_LINK + '/zh/docs/latest/docs/DataVec/openGauss-RAG实践.html',
       target: '_blank',
       title: 'openGauss DataVec + Dify',
       titleMb: [],
@@ -114,7 +114,7 @@ export default {
     {
       pcBanner: liveImg_pc,
       moBanner: liveImg_mb,
-      link: DOCS_LINK + 'zh/docs/3.1.1/docs/BriefTutorial/BriefTutorial.html',
+      link: DOCS_LINK + '/zh/docs/3.1.1/docs/BriefTutorial/BriefTutorial.html',
       target: '_blank',
       title: '欢迎加入openGauss社区',
       titleMb: [],
@@ -123,14 +123,14 @@ export default {
       btn: '了解更多',
       className: 'banner-video',
       rightInset: videoGif,
-      rightLink: `${LEARN_VIDEO_LINK}openGauss%E5%AE%A3%E4%BC%A0%E6%B4%BB%E5%8A%A8/openGauss%2BHC%E5%AE%A3%E4%BC%A0%E8%A7%86%E9%A2%91.mp4`,
+      rightLink: `${LEARN_VIDEO_LINK}/openGauss%E5%AE%A3%E4%BC%A0%E6%B4%BB%E5%8A%A8/openGauss%2BHC%E5%AE%A3%E4%BC%A0%E8%A7%86%E9%A2%91.mp4`,
     },
   ],
   en: [
     {
       pcBanner: liveImg_pc,
       moBanner: liveImg_mb,
-      link: DOCS_LINK + 'en/docs/3.1.0/docs/BriefTutorial/BriefTutorial.html',
+      link: DOCS_LINK + '/en/docs/3.1.0/docs/BriefTutorial/BriefTutorial.html',
       target: '_blank',
       title: 'Welcome to openGauss Community',
       titleMb: [],
@@ -139,7 +139,7 @@ export default {
       btn: 'Learn More',
       className: 'banner-video',
       rightInset: videoGif,
-      rightLink: `${LEARN_VIDEO_LINK}openGauss%E5%AE%A3%E4%BC%A0%E6%B4%BB%E5%8A%A8/openGauss%2BHC%E5%AE%A3%E4%BC%A0%E8%A7%86%E9%A2%91.mp4`,
+      rightLink: `${LEARN_VIDEO_LINK}/openGauss%E5%AE%A3%E4%BC%A0%E6%B4%BB%E5%8A%A8/openGauss%2BHC%E5%AE%A3%E4%BC%A0%E8%A7%86%E9%A2%91.mp4`,
     },
   ],
 };
