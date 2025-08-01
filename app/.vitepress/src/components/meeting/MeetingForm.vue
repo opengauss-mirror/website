@@ -17,7 +17,6 @@ const emits = defineEmits(['confirm', 'close']);
 const i18n = useI18n();
 const i18nMeeting = computed(() => i18n.value.home.HOME_CALENDAR);
 
-const meetingRecord = ref(false);
 const form = ref({
   platform: '',
   group_name: '',
@@ -25,7 +24,7 @@ const form = ref({
   date: '',
   etherpad: '',
   email_list: '',
-  is_record: meetingRecord.value,
+  is_record: false,
   topic: '',
   sponsor: meetingStore.giteeId,
   start: '',
@@ -92,7 +91,6 @@ const isModify = computed(() => props.data);
 // 编辑会议
 const updateMeeting = async () => {
   try {
-    form.value.is_record = meetingRecord.value;
     const { id, topic, etherpad, date, start, end, agenda, is_record } = {
       ...props.data,
       ...form.value,
@@ -126,7 +124,6 @@ const updateMeeting = async () => {
 // 创建会议
 const creatMeeting = async () => {
   try {
-    form.value.is_record = meetingRecord.value;
     const res = await creatMeetingApi({
       ...form.value,
       email_list: form.value.email_list.replaceAll(' ', ''),
@@ -150,7 +147,7 @@ const creatMeeting = async () => {
 };
 
 const close = () => {
-  form.value = {};
+  ruleFormRef.value?.resetFields();
   emits('close');
 };
 
@@ -165,7 +162,6 @@ const submitMeeting = async (formEl: FormInstance | undefined) => {
       } else {
         creatMeeting();
       }
-
       close();
       emits('confirm');
     }
@@ -260,13 +256,13 @@ onMounted(() => {
       <OInput v-model="form.agenda" type="textarea" :rows="2" />
     </ElFormItem>
     <ElFormItem :label="i18nMeeting.EMAIL">
-      <OInput v-model="form.emaillist" :disabled="!!data" :placeholder="i18nMeeting.EMAIL_TEXT" type="textarea" :rows="2" />
+      <OInput v-model="form.email_list" :disabled="!!data" :placeholder="i18nMeeting.EMAIL_TEXT" type="textarea" :rows="2" />
     </ElFormItem>
     <ElFormItem :label="i18nMeeting.ETHERPAD">
       <OInput v-model="form.etherpad" />
     </ElFormItem>
     <ElFormItem :label="i18nMeeting.RECORD">
-      <ElCheckbox v-model="meetingRecord" />
+      <ElCheckbox v-model="form.is_record" />
       <p class="tips">若开启会议录制功能，会议开始后会自动开始录屏，并在会议结束后自动将录屏上传至B站openGauss账号下。录制服务由{{ form.platform }}提供。</p>
     </ElFormItem>
     <ElFormItem>
