@@ -14,7 +14,7 @@ const navData: Array<NavItemT> = [
         },
       },
       {
-        label: { zh: '支持工具', en: 'Support Tools' },
+        label: { zh: '工具中心', en: 'Support Tools' },
         id: 'supporttools',
         href: {
           zh: '/zh/tools/',
