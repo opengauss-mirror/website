@@ -161,7 +161,7 @@ function searchAll(current?: string) {
       currentIndex.value = 0;
     }
     if (cookieStore.isAllAgreed) {
-      reportSearch(searchValue.value);
+      reportSearch(searchInput.value);
     }
     currentPage.value = 1;
     searchType.value = current || '';
