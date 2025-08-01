@@ -92,6 +92,7 @@ const isModify = computed(() => props.data);
 // 编辑会议
 const updateMeeting = async () => {
   try {
+    form.value.is_record = meetingRecord.value;
     const { id, topic, etherpad, date, start, end, agenda, is_record } = {
       ...props.data,
       ...form.value,
@@ -125,6 +126,7 @@ const updateMeeting = async () => {
 // 创建会议
 const creatMeeting = async () => {
   try {
+    form.value.is_record = meetingRecord.value;
     const res = await creatMeetingApi({
       ...form.value,
       email_list: form.value.email_list.replaceAll(' ', ''),
