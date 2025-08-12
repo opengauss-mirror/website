@@ -219,7 +219,7 @@ const reportSelectSearchResult = (data: any, index: number, path: string, keywor
       search_result_detail: data,
       search_tag: data.type,
       search_rank_num: pageSize.value * (currentPage.value - 1) + (index + 1),
-      search_result_total_num: searchNumber.value.find((item) => item.key === (searchType.value || 'all')),
+      search_result_total_num: searchNumber.value.find((item) => item.key === (searchType.value || 'all'))?.doc_count ?? 0,
       search_result_url: path,
     },
     'search_portal'
