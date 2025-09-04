@@ -1,4 +1,37 @@
+import { pa } from "element-plus/es/locale";
+import path from "path";
+
 export default [
+  {
+    title: 'openGauss向量驱动新智能，RAC多写破局，内核升级再启航',
+    date: '2025-06-30',
+    tags: ['theme'],
+    author: 'openGauss',
+    category: 'news',
+    banner: '/category/news/2025-06-30/banner.png',
+    summary: 'openGauss向量驱动新智能，RAC多写破局，内核升级再启航',
+    path: 'zh/news/2025-06-30/index',
+  },
+  {
+    title: 'openGauss 开源五载聚产业，技术引领创未来',
+    date: '2025-06-27',
+    tags: ['theme'],
+    author: 'openGauss',
+    category: 'news',
+    banner: '/category/news/2025-06-27/banner.png',
+    summary: 'openGauss 开源五载聚产业，技术引领创未来',
+    path: 'zh/news/2025-06-27/index',
+  },
+  {
+    title: '润和软件深度解读“基于鲲鹏RAG+openGauss智能体方案',
+    date: '2025-05-29',
+    tags: ['theme'],
+    author: 'openGauss',
+    category: 'news',
+    banner: '/category/news/2025-05-29/banner.png',
+    summary: '润和软件深度解读“基于鲲鹏RAG+openGauss智能体方案',
+    path: 'zh/news/2025-05-29/index',
+  },
   {
     date: '2025-05-06',
     summary: 'openGauss 3.0 LTS生命周期截止公告',
