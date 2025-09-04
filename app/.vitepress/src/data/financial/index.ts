@@ -153,7 +153,7 @@ export default {
       title: '专区互动',
       card_title: 'openGauss金融版本互动专区',
       card_desc: '前往金融版本互动专区，参与Issue问答',
-      jumpLink: `${GITCODE_LINK}opengauss/open-gauss-finance`,
+      jumpLink: `${GITCODE_LINK}/opengauss/open-gauss-finance`,
     },
     download: {
       title: '版本下载',

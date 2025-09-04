@@ -24,7 +24,7 @@ export default [
     img: mindspore,
     imgDark: mindspore_dark,
     path: MINDSPORE_LINK,
-    pathEn: `${MINDSPORE_LINK}en/`,
+    pathEn: `${MINDSPORE_LINK}/en`,
   },
   {
     img: openubmc,
@@ -36,18 +36,18 @@ export default [
     img: openfuyao,
     imgDark: openfuyao_dark,
     path: OPENFUYAO_URL,
-    pathEn: LOOKENG_LINK,
+    pathEn: OPENFUYAO_URL,
   },
   {
     img: kunpeng,
     imgDark: kunpeng_dark,
     path: KUNPENG_LINK,
-    pathEn: `${KUNPENG_LINK}en/`,
+    pathEn: `${KUNPENG_LINK}/en/`,
   },
   {
     img: songshuhui,
     imgDark: songshuhui_dark,
-    path: `${BBSCSDN_LINK}forums/gaussdb`,
-    pathEn: `${BBSCSDN_LINK}forums/gaussdb`,
+    path: `${BBSCSDN_LINK}/forums/gaussdb`,
+    pathEn: `${BBSCSDN_LINK}/forums/gaussdb`,
   },
 ];

@@ -66,7 +66,7 @@ export default {
       },
     ],
     DOWN_NAME: 'Click here to download openGauss Overview Slides',
-    DOWN_link: `${LEARN_VIDEO_LINK}openGauss%20%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84.pptx`,
+    DOWN_link: `${LEARN_VIDEO_LINK}/openGauss%20%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84.pptx`,
   },
   COMMUNITY_ACTIVITY: {
     TITLE: 'We Are Thriving',
@@ -74,7 +74,7 @@ export default {
       TITLE: 'Thriving openGauss Community',
       CONTENT: 'openGauss is an open source database platform that encourages community contribution and collaboration.',
       VIEW_DETAILS: 'Learn More',
-      LINK: `${DATA_LINK}en/overview`,
+      LINK: `${DATA_LINK}/en/overview`,
     },
   },
   HOME_EXPLORE: {

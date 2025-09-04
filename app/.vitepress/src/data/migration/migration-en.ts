@@ -502,11 +502,11 @@ export default {
     list: [
       {
         title: '迁移评估',
-        href: `${LEARN_VIDEO_LINK}迁移评估.mp4`,
+        href: `${LEARN_VIDEO_LINK}/迁移评估.mp4`,
       },
       {
         title: 'MySQL迁移',
-        href: `${LEARN_VIDEO_LINK}MySQL迁移.mp4`,
+        href: `${LEARN_VIDEO_LINK}/MySQL迁移.mp4`,
       },
     ],
   },
@@ -516,7 +516,7 @@ export default {
       {
         title: '中国移动',
         desc: '中移在线的工程师们将目光聚焦在openGauss数据库上。中移在线20个…',
-        caseHref: `${GITCODE_LINK}opengauss/website/blob/feature_migration_new/app/zh/migration/user-cases/index.md`,
+        caseHref: `${GITCODE_LINK}/opengauss/website/blob/feature_migration_new/app/zh/migration/user-cases/index.md`,
         officalHref: 'http://online.10086.cn/official/new/index/#/home/index',
       },
     ],
@@ -527,7 +527,7 @@ export default {
       {
         title: 'openGauss 迁移互动专区',
         desc: '前往迁移互动专区，参与lssue问答',
-        href: `${GITCODE_LINK}opengauss/openGauss-workbench`,
+        href: `${GITCODE_LINK}/opengauss/openGauss-workbench`,
       },
     ],
   },

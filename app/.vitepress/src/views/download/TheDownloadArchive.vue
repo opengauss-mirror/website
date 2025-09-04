@@ -139,6 +139,11 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
     });
   }
 };
+
+const getNewLink = (path: string) => {
+  const link = `${DOCS_LINK}/${lang.value}${path}`;
+  return path.startsWith('/docs/') ? link : path;
+};
 </script>
 
 <template>
@@ -156,15 +161,10 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
     </div>
     <template v-if="!getData[0].newLayout">
       <div class="link-box">
-        <a
-          v-for="item in getData[0].docs_list"
-          :key="item.name"
-          :href="item.path.startsWith('/docs/') ? DOCS_LINK + lang + item.path : item.path"
-          target="_blank"
-          rel="noopener noreferrer"
-          >{{ isZh ? item.name : item.nameEn }}</a
-        >
-        <a :href="GITCODE_LINK + 'opengauss/community/issues'" target="_blank" rel="noopener noreferrer">{{ i18n.download.FEEDBACK_QUESTION }}</a>
+        <a v-for="item in getData[0].docs_list" :key="item.name" :href="getNewLink(item.path)" target="_blank" rel="noopener noreferrer">{{
+          isZh ? item.name : item.nameEn
+        }}</a>
+        <a :href="GITCODE_LINK + '/opengauss/community/issues'" target="_blank" rel="noopener noreferrer">{{ i18n.download.FEEDBACK_QUESTION }}</a>
       </div>
       <!-- 表格 -->
       <div v-for="item in getData[0].data" :key="item.name" class="download-panel">

@@ -13,7 +13,7 @@ export default {
           list: [
             {
               name: '使用教程',
-              link: `${GITSCM_LINK}book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%91%BD%E4%BB%A4%E8%A1%8C`,
+              link: `${GITSCM_LINK}/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%91%BD%E4%BB%A4%E8%A1%8C`,
             },
             {
               name: 'openGauss社区入门-使用git提交代码',
@@ -31,7 +31,7 @@ export default {
             },
             {
               name: 'Linux基础命令介绍',
-              link: `${RUNOOB_LINK}linux/linux-command-manual.html`,
+              link: `${RUNOOB_LINK}/linux/linux-command-manual.html`,
             },
           ],
         },
@@ -46,7 +46,7 @@ export default {
           list: [
             {
               name: '安装部署指南',
-              link: `${DOCS_LINK}zh/docs/5.0.0/docs/InstallationGuide/%E5%AE%89%E8%A3%85openGauss.html`,
+              link: `${DOCS_LINK}/zh/docs/5.0.0/docs/InstallationGuide/%E5%AE%89%E8%A3%85openGauss.html`,
             },
           ],
         },
@@ -56,15 +56,15 @@ export default {
           list: [
             {
               name: '极简版服务器安装',
-              link: `${DOCS_LINK}zh/docs/5.0.0/docs/InstallationGuide/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85.html`,
+              link: `${DOCS_LINK}/zh/docs/5.0.0/docs/InstallationGuide/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85.html`,
             },
             {
               name: '极简版容器安装',
-              link: `${DOCS_LINK}zh/docs/5.0.0/docs/InstallationGuide/%E5%AE%B9%E5%99%A8%E5%AE%89%E8%A3%85.html`,
+              link: `${DOCS_LINK}/zh/docs/5.0.0/docs/InstallationGuide/%E5%AE%B9%E5%99%A8%E5%AE%89%E8%A3%85.html`,
             },
             {
               name: '极简版RPM安装',
-              link: `${DOCS_LINK}zh/docs/5.0.0/docs/InstallationGuide/RPM%E5%AE%89%E8%A3%85.html`,
+              link: `${DOCS_LINK}/zh/docs/5.0.0/docs/InstallationGuide/RPM%E5%AE%89%E8%A3%85.html`,
             },
           ],
         },
@@ -74,7 +74,7 @@ export default {
           list: [
             {
               name: '安装部署指南',
-              link: `${DOCS_LINK}zh/docs/latest-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E5%87%86%E5%A4%87.html`,
+              link: `${DOCS_LINK}/zh/docs/latest-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E5%87%86%E5%A4%87.html`,
             },
           ],
         },
@@ -84,7 +84,7 @@ export default {
           list: [
             {
               name: '安装部署指南',
-              link: `${DOCS_LINK}zh/docs/latest/docs/AboutopenGauss/%E4%BD%BF%E7%94%A8kubernetes%E9%83%A8%E7%BD%B2%E5%88%86%E5%B8%83%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%BA%93.html`,
+              link: `${DOCS_LINK}/zh/docs/latest/docs/AboutopenGauss/%E4%BD%BF%E7%94%A8kubernetes%E9%83%A8%E7%BD%B2%E5%88%86%E5%B8%83%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%BA%93.html`,
             },
           ],
         },
@@ -99,7 +99,7 @@ export default {
           list: [
             {
               name: '安装部署视频',
-              link: `${BILIBILI_LINK2}video/BV1M84y1x773/?share_source=copy_web&vd_source=de84f4418ff2dc525893a1b2441121c0`,
+              link: `${BILIBILI_LINK2}/video/BV1M84y1x773/?share_source=copy_web&vd_source=de84f4418ff2dc525893a1b2441121c0`,
             },
           ],
         },

@@ -276,6 +276,11 @@ const collectDownloadData = (name: string) => {
     });
   }
 };
+
+const getNewLink = (path: string) => {
+  const link = `${DOCS_LINK}/${lang.value}${path}`;
+  return path.includes('https') ? path : link;
+};
 </script>
 <template>
   <div :id="replaceSpace(tableData.name) + '-' + replaceSpace(versionShown)" class="content-item">
@@ -370,13 +375,7 @@ const collectDownloadData = (name: string) => {
         </el-table-column>
         <el-table-column :label="renderData.docs ? i18n.download.TABLE_HEAD[4] : ''" prop="docsName">
           <template #default="scope">
-            <a
-              v-if="scope.row.docsName !== ''"
-              :href="scope.row.docs_url.includes('https') ? scope.row.docs_url : DOCS_LINK + lang + scope.row.docs_url"
-              target="_blank"
-              rel="noopener noreferrer"
-              >{{ scope.row.docsName }}</a
-            >
+            <a v-if="scope.row.docsName !== ''" :href="getNewLink(scope.row.docs_url)" target="_blank" rel="noopener noreferrer">{{ scope.row.docsName }}</a>
           </template>
         </el-table-column>
       </OTable>
@@ -418,9 +417,7 @@ const collectDownloadData = (name: string) => {
         </p>
         <p v-if="item.docsName" class="item-text">
           <span>{{ i18n.download.TABLE_HEAD[4] + ':' }}</span
-          ><a :href="item.docs_url.includes('https') ? item.docs_url : DOCS_LINK + lang + item.docs_url" target="_blank" rel="noopener noreferrer">{{
-            item.docsName
-          }}</a>
+          ><a :href="getNewLink(item.docs_url)" target="_blank" rel="noopener noreferrer">{{ item.docsName }}</a>
         </p>
       </li>
     </ul>

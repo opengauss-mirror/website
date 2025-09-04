@@ -161,7 +161,7 @@ onMounted(() => {
     </ClientOnly>
     <p class="tips">
       关于openGauss服务商认证，openGauss提供了完整的评估标准和流程，详见<a
-        :href="`${GITCODE_LINK}opengauss/service-partner-certification`"
+        :href="`${GITCODE_LINK}/opengauss/service-partner-certification`"
         target="_blank"
         rel="noopener noreferrer"
         >openGauss服务商认证整体介绍</a

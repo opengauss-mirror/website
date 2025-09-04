@@ -319,95 +319,95 @@ const summitData = {
   videolist: [
     {
       name: 'openGauss 生态繁荣发展',
-      link: `${OBS_VIDEO_LINK}openGaussEcologyProsperityDevelopment/openGaussEcologyProsperityDevelopment/openGaussEcologyProsperityDevelopment.mp4`,
+      link: `${OBS_VIDEO_LINK}/openGaussEcologyProsperityDevelopment/openGaussEcologyProsperityDevelopment/openGaussEcologyProsperityDevelopment.mp4`,
     },
     {
       name: 'openGauss 开源社区',
-      link: `${OBS_VIDEO_LINK}CooperationCommunity/openGauss/openGauss.mp4`,
+      link: `${OBS_VIDEO_LINK}/CooperationCommunity/openGauss/openGauss.mp4`,
     },
     {
       name: 'ShardingSphere 开源社区',
-      link: `${OBS_VIDEO_LINK}CooperationCommunity/ShardingSphere/shardingSphere.mp4`,
+      link: `${OBS_VIDEO_LINK}/CooperationCommunity/ShardingSphere/shardingSphere.mp4`,
     },
     {
       name: 'openEuler 开源社区',
-      link: `${OBS_VIDEO_LINK}CooperationCommunity/openEuler/openEuler.mp4`,
+      link: `${OBS_VIDEO_LINK}/CooperationCommunity/openEuler/openEuler.mp4`,
     },
     {
       name: 'openLookeng 开源社区',
-      link: `${OBS_VIDEO_LINK}CooperationCommunity/openLooKeng/openLooKeng.mp4`,
+      link: `${OBS_VIDEO_LINK}/CooperationCommunity/openLooKeng/openLooKeng.mp4`,
     },
     {
       name: '海量数据',
-      link: `${OBS_VIDEO_LINK}DBV/vastdata/vastdata.mp4`,
+      link: `${OBS_VIDEO_LINK}/DBV/vastdata/vastdata.mp4`,
     },
     {
       name: '神舟通用',
-      link: `${OBS_VIDEO_LINK}DBV/shentongdata/shentongdata.mp4`,
+      link: `${OBS_VIDEO_LINK}/DBV/shentongdata/shentongdata.mp4`,
     },
     {
       name: '华为云',
-      link: `${OBS_VIDEO_LINK}DBV/huaweicloud/huaweicloud.mp4`,
+      link: `${OBS_VIDEO_LINK}/DBV/huaweicloud/huaweicloud.mp4`,
     },
     {
       name: '云和恩墨',
-      link: `${OBS_VIDEO_LINK}DBV/enmotech/enmotech.mp4`,
+      link: `${OBS_VIDEO_LINK}/DBV/enmotech/enmotech.mp4`,
     },
     {
       name: '虚谷伟业',
-      link: `${OBS_VIDEO_LINK}DBV/xugucn/xugucn.mp4`,
+      link: `${OBS_VIDEO_LINK}/DBV/xugucn/xugucn.mp4`,
     },
     {
       name: '深信服',
-      link: `${OBS_VIDEO_LINK}ISV/sangfor/sangfor.mp4`,
+      link: `${OBS_VIDEO_LINK}/ISV/sangfor/sangfor.mp4`,
     },
     {
       name: '北京超图',
-      link: `${OBS_VIDEO_LINK}ISV/supermap/supermap.mp4`,
+      link: `${OBS_VIDEO_LINK}/ISV/supermap/supermap.mp4`,
     },
     {
       name: '用户证言',
-      link: `${OBS_VIDEO_LINK}CustomerTestimony/CustomerTestimony/CustomerTestimony.mp4`,
+      link: `${OBS_VIDEO_LINK}/CustomerTestimony/CustomerTestimony/CustomerTestimony.mp4`,
     },
     {
       name: 'AI4DB - DBMind自治',
-      link: `${OBS_VIDEO_LINK}InnovationTechnology/AI4DB-DBMind-AutomonomyPlatform/AI4D-DBMind-AutomonomyPlatform.mp4`,
+      link: `${OBS_VIDEO_LINK}/InnovationTechnology/AI4DB-DBMind-AutomonomyPlatform/AI4D-DBMind-AutomonomyPlatform.mp4`,
     },
     {
       name: 'DB4AI - 库内AI引擎',
-      link: `${OBS_VIDEO_LINK}InnovationTechnology/DB4AI-InnerAIEngine/DB4AI-InnerAIEngine.mp4`,
+      link: `${OBS_VIDEO_LINK}/InnovationTechnology/DB4AI-InnerAIEngine/DB4AI-InnerAIEngine.mp4`,
     },
     {
       name: 'openLooKeng 跨源联合查询',
-      link: `${OBS_VIDEO_LINK}InnovationTechnology/openLooKengUnitedSearch/openLooKengUnitedSearch.mp4`,
+      link: `${OBS_VIDEO_LINK}/InnovationTechnology/openLooKengUnitedSearch/openLooKengUnitedSearch.mp4`,
     },
     {
       name: '4路鲲鹏230万tpmC(NUMA-aware)',
-      link: `${OBS_VIDEO_LINK}InnovationTechnology/fourEntrances-kunpeng-230m-tpmC/fourEntrances-kunpeng-230m-tpmC.mp4`,
+      link: `${OBS_VIDEO_LINK}/InnovationTechnology/fourEntrances-kunpeng-230m-tpmC/fourEntrances-kunpeng-230m-tpmC.mp4`,
     },
     {
       name: '数据库平滑迁移',
-      link: `${OBS_VIDEO_LINK}InnovationTechnology/DatabaseSmoothessImmigration/DatabaseSmoothessImmigration.mp4`,
+      link: `${OBS_VIDEO_LINK}/InnovationTechnology/DatabaseSmoothessImmigration/DatabaseSmoothessImmigration.mp4`,
     },
     {
       name: 'openGauss统一管理平台',
-      link: `${OBS_VIDEO_LINK}InnovationTechnology/openGaussUnifiedAdministrationPlatform/openGaussUnifiedAdministrationPlatform.mp4`,
+      link: `${OBS_VIDEO_LINK}/InnovationTechnology/openGaussUnifiedAdministrationPlatform/openGaussUnifiedAdministrationPlatform.mp4`,
     },
     {
       name: 'In-place Update 存储引擎',
-      link: `${OBS_VIDEO_LINK}InnovationTechnology/In-place-Update-StorageEngine/In-place-Update-StorageEngine.mp4`,
+      link: `${OBS_VIDEO_LINK}/InnovationTechnology/In-place-Update-StorageEngine/In-place-Update-StorageEngine.mp4`,
     },
     {
       name: 'DCF 分布式共识框架',
-      link: `${OBS_VIDEO_LINK}InnovationTechnology/DCF-distributed-consistency-architecture/DCF-distributed-consistency-architecture.mp4`,
+      link: `${OBS_VIDEO_LINK}/InnovationTechnology/DCF-distributed-consistency-architecture/DCF-distributed-consistency-architecture.mp4`,
     },
     {
       name: '全密态数据库',
-      link: `${OBS_VIDEO_LINK}InnovationTechnology/wholeEncryptedDatabase/wholeEncryptedDatabase.mp4`,
+      link: `${OBS_VIDEO_LINK}/InnovationTechnology/wholeEncryptedDatabase/wholeEncryptedDatabase.mp4`,
     },
     {
       name: '动态脱敏',
-      link: `${OBS_VIDEO_LINK}InnovationTechnology/dynamicDesensitization/dynamicDesensitization.mp4`,
+      link: `${OBS_VIDEO_LINK}/InnovationTechnology/dynamicDesensitization/dynamicDesensitization.mp4`,
     },
   ],
   partnersList: {

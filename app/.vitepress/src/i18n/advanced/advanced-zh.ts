@@ -51,7 +51,7 @@ export default {
           docsList: [
             {
               name: `gsql工具文档`,
-              link: `${DOCS_LINK}zh/docs/2.1.0/docs/Toolreference/%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%B7%A5%E5%85%B7.html`,
+              link: `${DOCS_LINK}/zh/docs/2.1.0/docs/Toolreference/%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%B7%A5%E5%85%B7.html`,
             },
             {
               name: `openGauss常用gsql命令集合`,
@@ -79,7 +79,7 @@ export default {
           docsList: [
             {
               name: `Data Studio用户手册`,
-              link: `${OBS_DOWNLOAD_LINK}2.1.0/Data%20Studio%20%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C.pdf`,
+              link: `${OBS_DOWNLOAD_LINK}/2.1.0/Data%20Studio%20%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C.pdf`,
             },
             {
               name: `安装单机版数据库并使用Data Studio工具连接`,
@@ -99,21 +99,21 @@ export default {
           docsList: [
             {
               name: `JDBC开发文档`,
-              link: `${DOCS_LINK}zh/docs/2.1.0/docs/Developerguide/%E5%9F%BA%E4%BA%8EJDBC%E5%BC%80%E5%8F%91.html`,
+              link: `${DOCS_LINK}/zh/docs/2.1.0/docs/Developerguide/%E5%9F%BA%E4%BA%8EJDBC%E5%BC%80%E5%8F%91.html`,
             },
             {
               name: `ODBC开发文档`,
-              link: `${DOCS_LINK}zh/docs/2.1.0/docs/Developerguide/%E5%9F%BA%E4%BA%8EODBC%E5%BC%80%E5%8F%91.html`,
+              link: `${DOCS_LINK}/zh/docs/2.1.0/docs/Developerguide/%E5%9F%BA%E4%BA%8EODBC%E5%BC%80%E5%8F%91.html`,
             },
             {
               name: `Psycopg开发文档`,
-              link: `${DOCS_LINK}zh/docs/2.1.0/docs/Developerguide/%E5%9F%BA%E4%BA%8EPsycopg%E5%BC%80%E5%8F%91.html`,
+              link: `${DOCS_LINK}/zh/docs/2.1.0/docs/Developerguide/%E5%9F%BA%E4%BA%8EPsycopg%E5%BC%80%E5%8F%91.html`,
             },
           ],
           optionList: [
             {
               name: `openGauss数据库模拟金融领域的开发使用实践`,
-              link: `${LAB_LINK}testdetail_508`,
+              link: `${LAB_LINK}/testdetail_508`,
             },
           ],
         },
@@ -128,7 +128,7 @@ export default {
           docsList: [
             {
               name: `openGauss编译指南`,
-              link: `${DOCS_LINK}zh/docs/latest/docs/CompilationGuide/Compilation.html`,
+              link: `${DOCS_LINK}/zh/docs/latest/docs/CompilationGuide/Compilation.html`,
             },
             {
               name: `openGauss数据库编译实践`,

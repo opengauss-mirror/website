@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { ref, computed, watch, toRefs, onMounted, inject, nextTick } from 'vue';
-import { OLink, ODivider, OTag, OButton, ODialog, OTable, OPopover, OIcon, useMessage } from '@opensig/opendesign';
+import { ref, computed, inject } from 'vue';
+import { OLink, OButton, ODialog, OTable, OPopover, OIcon, useMessage } from '@opensig/opendesign';
 import { useScreen } from '~@/composables/useScreen';
 import { useClipboard } from '@/components/hooks/useClipboard';
 import { doLogin } from '@/shared/login';
@@ -33,18 +33,16 @@ const props = defineProps({
 
 const i18n = useI18n();
 const message = useMessage();
-const { t, isZh, $t } = useLocale();
+const { t } = useLocale();
 const { gtPadV } = useScreen();
 const userInfoStore = useUserInfoStore();
 const emits = defineEmits(['report']);
 const downloadVersionAuth = inject('PERMISSION_LIST');
-
 const columns = [
   { label: t('download.TABLE_HEAD[0]'), key: 'name' },
   { label: t('download.TABLE_HEAD[1]'), key: 'size' },
   { label: t('download.TABLE_HEAD[3]'), key: 'sha_code' },
   { label: t('download.TABLE_HEAD[2]'), key: 'down_url' },
-  { label: props.options?.docs ? t('download.TABLE_HEAD[4]') : '', key: 'docsName' },
 ];
 
 // 复制sha值
@@ -189,15 +187,6 @@ const hoverTips = computed(() => (type: string | undefined) => {
         </div>
         <div v-else class="no-data">--</div>
       </template>
-      <template #td_docsName="{ row }">
-        <a
-          v-if="row.docs.name !== ''"
-          :href="row.docs.url.includes('https') ? row.docs.url : DOCS_LINK + lang + row.docs.url"
-          target="_blank"
-          rel="noopener noreferrer"
-          >{{ row.docs.name }}</a
-        >
-      </template>
     </OTable>
   </template>
   <!-- 手机端 -->
@@ -223,12 +212,6 @@ const hoverTips = computed(() => (type: string | undefined) => {
         <a v-else :href="item.down_url" download @click="collectDownloadData(item.name)">
           {{ i18n.download.BTN_TEXT_MO }}
         </a>
-      </p>
-      <p v-if="item.docs.name" class="item-text">
-        <span>{{ i18n.download.TABLE_HEAD[4] }}</span>
-        <a :href="item.docs_url.includes('https') ? item.docs.url : DOCS_LINK + lang + item.docs.url" target="_blank" rel="noopener noreferrer">{{
-          item.docs.name
-        }}</a>
       </p>
     </li>
   </ul>

@@ -140,7 +140,7 @@ onMounted(() => {
     </ClientOnly>
     <p class="introduce">
       {{ i18n.certification.introduce1
-      }}<a :href="GITCODE_LINK + 'opengauss/distribution-certification'" target="_blank" rel="noopener noreferrer">{{ i18n.certification.introduce2 }}</a>
+      }}<a :href="GITCODE_LINK + '/opengauss/distribution-certification'" target="_blank" rel="noopener noreferrer">{{ i18n.certification.introduce2 }}</a>
     </p>
   </AppContent>
 </template>

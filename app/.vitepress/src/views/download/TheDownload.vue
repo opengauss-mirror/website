@@ -49,7 +49,7 @@ const getData: any = computed(() => {
           <div class="description-item">
             <p>
               {{ downloadData.PECULIARITY_DETAIL
-              }}<a :href="DOCS_LINK + downloadData.RELEASE_LINK" target="_blank" rel="noopener noreferrer">{{
+              }}<a :href="`${DOCS_LINK}/${downloadData.RELEASE_LINK}`" target="_blank" rel="noopener noreferrer">{{
                 lang === 'zh' ? getData[0].docs_list[0].name : getData[0].docs_list[0].nameEn
               }}</a
               >{{ downloadData.WELCOME }}

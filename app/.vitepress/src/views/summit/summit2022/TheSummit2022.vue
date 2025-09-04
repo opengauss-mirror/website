@@ -54,7 +54,7 @@ const videoClickBtn = (path: string) => {
         :poster="bannerInfo.pc_banner"
         preload=""
       >
-        <source type="video/mp4" :src="OBS_VIDEO_LINK + 'openGauss%20Summit%202022/Banner/openGauss%20Banner%E5%8A%A8K_1920x380.mp4'" />
+        <source type="video/mp4" :src="OBS_VIDEO_LINK + '/openGauss%20Summit%202022/Banner/openGauss%20Banner%E5%8A%A8K_1920x380.mp4'" />
       </video>
     </div>
     <div class="summit-banner-mo">

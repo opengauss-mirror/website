@@ -312,23 +312,23 @@ export default {
       sigData: [
         {
           name: 'SIG SQLEngine',
-          href: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/SQLEngine`,
+          href: `${GITCODE_LINK}/opengauss/tc/tree/master/sigs/SQLEngine`,
         },
         {
           name: 'SIG StorageEngine',
-          href: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/StorageEngine`,
+          href: `${GITCODE_LINK}/opengauss/tc/tree/master/sigs/StorageEngine`,
         },
         {
           name: 'SIG Plugin',
-          href: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/Plugin`,
+          href: `${GITCODE_LINK}/opengauss/tc/tree/master/sigs/Plugin`,
         },
         {
           name: 'SIG ReleaseManagement',
-          href: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/ReleaseManagement`,
+          href: `${GITCODE_LINK}/opengauss/tc/tree/master/sigs/ReleaseManagement`,
         },
         {
           name: 'SIG GIS',
-          href: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/GIS`,
+          href: `${GITCODE_LINK}/opengauss/tc/tree/master/sigs/GIS`,
         },
       ],
       sigRules: [
@@ -369,7 +369,7 @@ export default {
         },
         {
           name: '2023年中国开源创新大赛一等奖',
-          href: `${CECN_LINK}cysc/tech/gd2012/202306/05/t20230605_38576356.shtml?share_token=7e2113fc-2e7a-4604-b369-b2b9a2ae38c7`,
+          href: `${CECN_LINK}/cysc/tech/gd2012/202306/05/t20230605_38576356.shtml?share_token=7e2113fc-2e7a-4604-b369-b2b9a2ae38c7`,
           img: '',
         },
       ],
@@ -481,23 +481,23 @@ export default {
       sigData: [
         {
           name: 'SIG SQLEngine',
-          href: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/SQLEngine`,
+          href: `${GITCODE_LINK}/opengauss/tc/tree/master/sigs/SQLEngine`,
         },
         {
           name: 'SIG StorageEngine',
-          href: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/StorageEngine`,
+          href: `${GITCODE_LINK}/opengauss/tc/tree/master/sigs/StorageEngine`,
         },
         {
           name: 'SIG Plugin',
-          href: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/Plugin`,
+          href: `${GITCODE_LINK}/opengauss/tc/tree/master/sigs/Plugin`,
         },
         {
           name: 'SIG Docs',
-          href: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/Docs`,
+          href: `${GITCODE_LINK}/opengauss/tc/tree/master/sigs/Docs`,
         },
         {
           name: 'Tools',
-          href: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/Tools`,
+          href: `${GITCODE_LINK}/opengauss/tc/tree/master/sigs/Tools`,
         },
       ],
       sigRules: [
@@ -1025,27 +1025,27 @@ export default {
       sigData: [
         {
           name: 'SIG SQLEngine',
-          href: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/SQLEngine`,
+          href: `${GITCODE_LINK}/opengauss/tc/tree/master/sigs/SQLEngine`,
         },
         {
           name: 'SIG ReleaseManagement',
-          href: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/ReleaseManagement`,
+          href: `${GITCODE_LINK}/opengauss/tc/tree/master/sigs/ReleaseManagement`,
         },
         {
           name: 'SIG QA',
-          href: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/QA`,
+          href: `${GITCODE_LINK}/opengauss/tc/tree/master/sigs/QA`,
         },
         {
           name: 'SIG Plugin',
-          href: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/Plugin`,
+          href: `${GITCODE_LINK}/opengauss/tc/tree/master/sigs/Plugin`,
         },
         {
           name: 'SIG Docs',
-          href: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/Docs`,
+          href: `${GITCODE_LINK}/opengauss/tc/tree/master/sigs/Docs`,
         },
         {
           name: 'SIG Certification',
-          href: `${GITCODE_LINK}opengauss/tc/tree/master/sigs/Certification`,
+          href: `${GITCODE_LINK}/opengauss/tc/tree/master/sigs/Certification`,
         },
       ],
       sigRules: [

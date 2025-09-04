@@ -67,7 +67,7 @@ export default {
       },
     ],
     DOWN_NAME: '下载openGauss整体概述PPT',
-    DOWN_link: `${LEARN_VIDEO_LINK}openGauss%20%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84.pptx`,
+    DOWN_link: `${LEARN_VIDEO_LINK}/openGauss%20%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84.pptx`,
   },
   COMMUNITY_ACTIVITY: {
     TITLE: '社区动态',
@@ -75,7 +75,7 @@ export default {
       TITLE: 'openGauss社区活力',
       CONTENT: 'openGauss也是一个开源的数据库平台，鼓励社区贡献、合作。',
       VIEW_DETAILS: '查看贡献详情',
-      LINK: `${DATA_LINK}zh/overview`,
+      LINK: `${DATA_LINK}/zh/overview`,
     },
   },
   HOME_EXPLORE: {

@@ -198,7 +198,7 @@ function goLink(data: any, index: number) {
     if (/^docs\/master/g.test(path)) {
       goPath = path.replace(/^docs\/master/g, 'docs/latest');
     }
-    const url = DOCS_LINK + goPath + '.html';
+    const url = `${DOCS_LINK}/${goPath}.html`;
     reportSelectSearchResult(data, index, url, searchData.value.keyword);
     windowOpen(url, '_blank');
   } else if (path.startsWith('https')) {

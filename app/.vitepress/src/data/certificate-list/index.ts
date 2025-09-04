@@ -1,7 +1,4 @@
-import {
-  OBS_CERTIFICATION_LINK,
-  OBS_CERTIFICATION_LINK1,
-} from '@/data/url-config';
+import { OBS_CERTIFICATION_LINK, OBS_CERTIFICATION_LINK1 } from '@/data/url-config';
 
 export default {
   zh: [
@@ -11,7 +8,7 @@ export default {
       version: 'openGauss 6.0.0',
       award: '2025-02-13',
       expiration: '2027-03-30',
-      certificate: `${OBS_CERTIFICATION_LINK}%E5%8C%97%E4%BA%AC%E6%B5%B7%E9%87%8F/Vastbase%20G100%20V3.0/%E5%8F%91%E8%A1%8C%E7%89%88%E8%AF%81%E4%B9%A6.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/%E5%8C%97%E4%BA%AC%E6%B5%B7%E9%87%8F/Vastbase%20G100%20V3.0/%E5%8F%91%E8%A1%8C%E7%89%88%E8%AF%81%E4%B9%A6.pdf`,
     },
     {
       pro: 'LNXDB-RDS V3.4.4 私有云数据库',
@@ -19,7 +16,7 @@ export default {
       version: 'openGauss 5.0.0',
       award: '2024-11-19',
       expiration: '2026-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}%E5%A4%AA%E9%98%B3%E5%A1%94/V3.4.4/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/%E5%A4%AA%E9%98%B3%E5%A1%94/V3.4.4/Certificate.pdf`,
     },
     {
       pro: '鼎桥数据库 TDDB V1.0.0',
@@ -27,7 +24,7 @@ export default {
       version: 'openGauss 5.0.0',
       award: '2024-10-17',
       expiration: '2026-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}%E9%BC%8E%E6%A1%A5/TDDB%20V1.0.0/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/%E9%BC%8E%E6%A1%A5/TDDB%20V1.0.0/Certificate.pdf`,
     },
     {
       pro: 'SUNBOXDB V3.0.0',
@@ -35,7 +32,7 @@ export default {
       version: 'openGauss 5.0.0',
       award: '2024-06-04',
       expiration: '2026-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}%E5%B0%9A%E5%8D%9A%E4%BF%A1/V3.0.0/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/%E5%B0%9A%E5%8D%9A%E4%BF%A1/V3.0.0/Certificate.pdf`,
     },
     {
       pro: '长虹数据库 CHDB V1.0.0',
@@ -43,7 +40,7 @@ export default {
       version: 'openGauss 5.0.0',
       award: '2024-07-11',
       expiration: '2026-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}%E9%95%BF%E8%99%B9/CHDB%20V1.0.0/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/%E9%95%BF%E8%99%B9/CHDB%20V1.0.0/Certificate.pdf`,
     },
     {
       pro: '大汉HanDB数据库软件V2.0',
@@ -51,7 +48,7 @@ export default {
       version: 'openGauss 5.0.0',
       award: '2024-06-04',
       expiration: '2026-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}%E5%A4%A7%E6%B1%89%E8%BD%AF%E4%BB%B6/HanDB%20V2.0/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/%E5%A4%A7%E6%B1%89%E8%BD%AF%E4%BB%B6/HanDB%20V2.0/Certificate.pdf`,
     },
     {
       pro: '海量数据库G100管理系统V2.2',
@@ -59,7 +56,7 @@ export default {
       version: 'openGauss 5.0.0',
       award: '2024-02-19',
       expiration: '2026-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}%E5%8C%97%E4%BA%AC%E6%B5%B7%E9%87%8F/Vastbase%20G100%20V2.2/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/%E5%8C%97%E4%BA%AC%E6%B5%B7%E9%87%8F/Vastbase%20G100%20V2.2/Certificate.pdf`,
     },
     {
       pro: '勤龙数据库系统 1.0',
@@ -67,7 +64,7 @@ export default {
       version: 'openGauss 5.0.0',
       award: '2024-02-19',
       expiration: '2026-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}%E4%B8%8A%E6%B5%B7%E8%88%9C%E6%BA%90/V1.0/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/%E4%B8%8A%E6%B5%B7%E8%88%9C%E6%BA%90/V1.0/Certificate.pdf`,
     },
     {
       pro: 'InDB V3.0',
@@ -75,7 +72,7 @@ export default {
       version: 'openGauss 5.0.0',
       award: '2024-01-17',
       expiration: '2026-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}Inspur/InDB%20V3.0/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/Inspur/InDB%20V3.0/Certificate.pdf`,
     },
     {
       pro: 'AScoDb数据库V1.0.0',
@@ -83,7 +80,7 @@ export default {
       version: 'openGauss 5.0.0',
       award: '2023-12-01',
       expiration: '2026-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}%E9%A6%96%E6%9D%AD%E6%95%B0%E5%AD%97/AScoDb%20V1.0.0/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/%E9%A6%96%E6%9D%AD%E6%95%B0%E5%AD%97/AScoDb%20V1.0.0/Certificate.pdf`,
     },
     {
       pro: 'FitRDB数据库 V1.0.0',
@@ -91,7 +88,7 @@ export default {
       version: 'openGauss 5.0.0',
       award: '2023-11-06',
       expiration: '2026-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}%E7%83%BD%E7%81%AB%E6%98%9F%E7%A9%BA/FitRDB%20V1.0.0/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/%E7%83%BD%E7%81%AB%E6%98%9F%E7%A9%BA/FitRDB%20V1.0.0/Certificate.pdf`,
     },
     {
       pro: 'StarDB 5.0.0',
@@ -99,7 +96,7 @@ export default {
       version: 'openGauss 5.0.0',
       award: '2023-11-01',
       expiration: '2026-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}%E4%BA%AC%E4%B8%9C%E7%A7%91%E6%8A%80/StarDB%205.0.0/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/%E4%BA%AC%E4%B8%9C%E7%A7%91%E6%8A%80/StarDB%205.0.0/Certificate.pdf`,
     },
     {
       pro: 'MogDB 5.0.0',
@@ -107,7 +104,7 @@ export default {
       version: 'openGauss 5.0.0',
       award: '2023-11-01',
       expiration: '2026-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}MogDB%205.0.0/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/MogDB%205.0.0/Certificate.pdf`,
     },
     {
       pro: '天鹤数据库 ISSEDB 5.0.0',
@@ -115,7 +112,7 @@ export default {
       version: 'openGauss 5.0.0',
       award: '2023-09-19',
       expiration: '2026-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}ISSEDB%205.0.0/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/ISSEDB%205.0.0/Certificate.pdf`,
     },
     {
       pro: 'MogDB 3.0.0',
@@ -123,7 +120,7 @@ export default {
       version: 'openGauss 3.0.0',
       award: '2023-09-01',
       expiration: '2025-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}MogDB%203.0.0/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/MogDB%203.0.0/Certificate.pdf`,
     },
     {
       pro: 'ArteryBase数据库管理系统 V3.6',
@@ -131,7 +128,7 @@ export default {
       version: 'openGauss 5.0.0',
       award: '2023-09-01',
       expiration: '2026-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}ArtertBase%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%20V3.6/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/ArtertBase%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%20V3.6/Certificate.pdf`,
     },
     {
       pro: '宏数通数据库系统 V5.0.0',
@@ -139,7 +136,7 @@ export default {
       version: 'openGauss 5.0.0',
       award: '2023-08-01',
       expiration: '2026-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}%E5%AE%8F%E6%95%B0%E9%80%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%20V5.0.0/Certificate.pdf `,
+      certificate: `${OBS_CERTIFICATION_LINK}/%E5%AE%8F%E6%95%B0%E9%80%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%20V5.0.0/Certificate.pdf `,
     },
     {
       pro: 'CSIDB V1.0.0',
@@ -147,7 +144,7 @@ export default {
       version: 'openGauss 5.0.0',
       award: '2023-06-30',
       expiration: '2026-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}CSIDB%20V1.0.0/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/CSIDB%20V1.0.0/Certificate.pdf`,
     },
     {
       pro: '【全真数据库平台】V5.0.0',
@@ -155,7 +152,7 @@ export default {
       version: 'openGauss 5.0.0',
       award: '2023-06-30',
       expiration: '2026-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}%E5%85%A8%E7%9C%9F%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B3%E5%8F%B0%20V5.0.0/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/%E5%85%A8%E7%9C%9F%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B3%E5%8F%B0%20V5.0.0/Certificate.pdf`,
     },
     {
       pro: '【Vastbase G100】V2.2.10',
@@ -163,7 +160,7 @@ export default {
       version: 'openGauss 3.0.0',
       award: '2023-06-01',
       expiration: '2025-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK1}Vastbase%20V2.2.10/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK1}/Vastbase%20V2.2.10/Certificate.pdf`,
     },
     {
       pro: 'MuDB 1.0.0',
@@ -171,7 +168,7 @@ export default {
       version: 'openGauss 2.0.0',
       award: '2021-06-15',
       expiration: '2024-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}MuDB%201.0.0/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/MuDB%201.0.0/Certificate.pdf`,
     },
     {
       pro: '【Vastbase G100】V2.2',
@@ -179,7 +176,7 @@ export default {
       version: 'openGauss 2.0.0',
       award: '2021-08-20',
       expiration: '2024-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK1}Vastbase%20V2.2/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK1}/Vastbase%20V2.2/Certificate.pdf`,
     },
 
     {
@@ -188,7 +185,7 @@ export default {
       version: 'openGauss 2.0.0',
       award: '2021-08-25',
       expiration: '2024-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK1}MogDB%202.0.1/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK1}/MogDB%202.0.1/Certificate.pdf`,
     },
 
     {
@@ -197,7 +194,7 @@ export default {
       version: 'openGauss 2.0.0',
       award: '2022-05-07',
       expiration: '2024-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}LNX-RDS%20V3.4/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/LNX-RDS%20V3.4/Certificate.pdf`,
     },
 
     {
@@ -206,7 +203,7 @@ export default {
       version: 'openGauss 2.0.0',
       award: '2022-07-15',
       expiration: '2024-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}%E6%9C%89%E8%93%89%E6%95%B0%E6%8D%AE%E5%BA%93%20V1.0/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/%E6%9C%89%E8%93%89%E6%95%B0%E6%8D%AE%E5%BA%93%20V1.0/Certificate.pdf`,
     },
     {
       pro: '神通数据库管理系统 V7.0.21',
@@ -214,7 +211,7 @@ export default {
       version: 'openGauss 3.0.0',
       award: '2022-07-20',
       expiration: '2025-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}%E7%A5%9E%E9%80%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%20V7.0.21/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/%E7%A5%9E%E9%80%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%20V7.0.21/Certificate.pdf`,
     },
     {
       pro: 'GBase 8c V5',
@@ -222,7 +219,7 @@ export default {
       version: 'openGauss 3.0.0',
       award: '2022-09-10',
       expiration: '2025-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}GBase%208c%20V5/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/GBase%208c%20V5/Certificate.pdf`,
     },
     {
       pro: 'FusionDB 22',
@@ -230,7 +227,7 @@ export default {
       version: 'openGauss 3.0.0',
       award: '2022-11-25',
       expiration: '2025-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}FusionDB%2022/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/FusionDB%2022/Certificate.pdf`,
     },
     {
       pro: 'GBase 8s V8.8.5',
@@ -238,7 +235,7 @@ export default {
       version: 'openGauss 3.0.0',
       award: '2023-03-20',
       expiration: '2025-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}GBase%208s%20V8.8.5/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/GBase%208s%20V8.8.5/Certificate.pdf`,
     },
   ],
   en: [
@@ -248,7 +245,7 @@ export default {
       version: 'openGauss 6.0.0',
       award: '2025-02-13',
       expiration: '2027-03-30',
-      certificate: `${OBS_CERTIFICATION_LINK}%E5%8C%97%E4%BA%AC%E6%B5%B7%E9%87%8F/Vastbase%20G100%20V3.0/%E5%8F%91%E8%A1%8C%E7%89%88%E8%AF%81%E4%B9%A6.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/%E5%8C%97%E4%BA%AC%E6%B5%B7%E9%87%8F/Vastbase%20G100%20V3.0/%E5%8F%91%E8%A1%8C%E7%89%88%E8%AF%81%E4%B9%A6.pdf`,
     },
     {
       pro: 'LNXDB-RDS V3.4.4 私有云数据库',
@@ -256,7 +253,7 @@ export default {
       version: 'openGauss 5.0.0',
       award: '2024-11-19',
       expiration: '2026-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}%E5%A4%AA%E9%98%B3%E5%A1%94/V3.4.4/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/%E5%A4%AA%E9%98%B3%E5%A1%94/V3.4.4/Certificate.pdf`,
     },
     {
       pro: '鼎桥数据库 TDDB V1.0.0',
@@ -264,7 +261,7 @@ export default {
       version: 'openGauss 5.0.0',
       award: '2024-10-17',
       expiration: '2026-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}%E9%BC%8E%E6%A1%A5/TDDB%20V1.0.0/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/%E9%BC%8E%E6%A1%A5/TDDB%20V1.0.0/Certificate.pdf`,
     },
     {
       pro: 'SUNBOXDB V3.0.0',
@@ -272,7 +269,7 @@ export default {
       version: 'openGauss 5.0.0',
       award: '2024-06-04',
       expiration: '2026-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}%E5%B0%9A%E5%8D%9A%E4%BF%A1/V3.0.0/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/%E5%B0%9A%E5%8D%9A%E4%BF%A1/V3.0.0/Certificate.pdf`,
     },
     {
       pro: '长虹数据库 CHDB V1.0.0',
@@ -280,7 +277,7 @@ export default {
       version: 'openGauss 5.0.0',
       award: '2024-07-11',
       expiration: '2026-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}%E9%95%BF%E8%99%B9/CHDB%20V1.0.0/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/%E9%95%BF%E8%99%B9/CHDB%20V1.0.0/Certificate.pdf`,
     },
     {
       pro: '大汉HanDB数据库软件V2.0',
@@ -288,7 +285,7 @@ export default {
       version: 'openGauss 5.0.0',
       award: '2024-06-04',
       expiration: '2026-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}%E5%A4%A7%E6%B1%89%E8%BD%AF%E4%BB%B6/HanDB%20V2.0/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/%E5%A4%A7%E6%B1%89%E8%BD%AF%E4%BB%B6/HanDB%20V2.0/Certificate.pdf`,
     },
     {
       pro: '海量数据库G100管理系统V2.2',
@@ -296,7 +293,7 @@ export default {
       version: 'openGauss 5.0.0',
       award: '2024-02-19',
       expiration: '2026-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}%E5%8C%97%E4%BA%AC%E6%B5%B7%E9%87%8F/Vastbase%20G100%20V2.2/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/%E5%8C%97%E4%BA%AC%E6%B5%B7%E9%87%8F/Vastbase%20G100%20V2.2/Certificate.pdf`,
     },
     {
       pro: '勤龙数据库系统 1.0',
@@ -304,7 +301,7 @@ export default {
       version: 'openGauss 5.0.0',
       award: '2024-02-19',
       expiration: '2026-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}%E4%B8%8A%E6%B5%B7%E8%88%9C%E6%BA%90/V1.0/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/%E4%B8%8A%E6%B5%B7%E8%88%9C%E6%BA%90/V1.0/Certificate.pdf`,
     },
     {
       pro: 'InDB V3.0',
@@ -312,7 +309,7 @@ export default {
       version: 'openGauss 5.0.0',
       award: '2024-01-17',
       expiration: '2026-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}Inspur/InDB%20V3.0/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/Inspur/InDB%20V3.0/Certificate.pdf`,
     },
     {
       pro: 'AScoDb数据库V1.0.0',
@@ -320,7 +317,7 @@ export default {
       version: 'openGauss 5.0.0',
       award: '2023-12-01',
       expiration: '2026-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}%E9%A6%96%E6%9D%AD%E6%95%B0%E5%AD%97/AScoDb%20V1.0.0/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/%E9%A6%96%E6%9D%AD%E6%95%B0%E5%AD%97/AScoDb%20V1.0.0/Certificate.pdf`,
     },
     {
       pro: 'FitRDB数据库 V1.0.0',
@@ -328,7 +325,7 @@ export default {
       version: 'openGauss 5.0.0',
       award: '2023-11-06',
       expiration: '2026-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}%E7%83%BD%E7%81%AB%E6%98%9F%E7%A9%BA/FitRDB%20V1.0.0/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/%E7%83%BD%E7%81%AB%E6%98%9F%E7%A9%BA/FitRDB%20V1.0.0/Certificate.pdf`,
     },
     {
       pro: 'StarDB 5.0.0',
@@ -336,7 +333,7 @@ export default {
       version: 'openGauss 5.0.0',
       award: '2023-11-01',
       expiration: '2026-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}%E4%BA%AC%E4%B8%9C%E7%A7%91%E6%8A%80/StarDB%205.0.0/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/%E4%BA%AC%E4%B8%9C%E7%A7%91%E6%8A%80/StarDB%205.0.0/Certificate.pdf`,
     },
     {
       pro: 'MogDB 5.0.0',
@@ -344,7 +341,7 @@ export default {
       version: 'openGauss 5.0.0',
       award: '2023-11-01',
       expiration: '2026-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}MogDB%205.0.0/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/MogDB%205.0.0/Certificate.pdf`,
     },
     {
       pro: '天鹤数据库 ISSEDB 5.0.0',
@@ -352,7 +349,7 @@ export default {
       version: 'openGauss 5.0.0',
       award: '2023-09-19',
       expiration: '2026-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}ISSEDB%205.0.0/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/ISSEDB%205.0.0/Certificate.pdf`,
     },
     {
       pro: 'MogDB 3.0.0',
@@ -360,7 +357,7 @@ export default {
       version: 'openGauss 3.0.0',
       award: '2023-09-01',
       expiration: '2025-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}MogDB%203.0.0/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/MogDB%203.0.0/Certificate.pdf`,
     },
     {
       pro: 'ArteryBase数据库管理系统 V3.6',
@@ -368,7 +365,7 @@ export default {
       version: 'openGauss 5.0.0',
       award: '2023-09-01',
       expiration: '2026-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}ArtertBase%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%20V3.6/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/ArtertBase%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%20V3.6/Certificate.pdf`,
     },
     {
       pro: '宏数通数据库系统 V5.0.0',
@@ -376,7 +373,7 @@ export default {
       version: 'openGauss 5.0.0',
       award: '2023-08-01',
       expiration: '2026-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}%E5%AE%8F%E6%95%B0%E9%80%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%20V5.0.0/Certificate.pdf `,
+      certificate: `${OBS_CERTIFICATION_LINK}/%E5%AE%8F%E6%95%B0%E9%80%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%20V5.0.0/Certificate.pdf `,
     },
     {
       pro: 'CSIDB V1.0.0',
@@ -384,7 +381,7 @@ export default {
       version: 'openGauss 5.0.0',
       award: '2023-06-30',
       expiration: '2026-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}CSIDB%20V1.0.0/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/CSIDB%20V1.0.0/Certificate.pdf`,
     },
     {
       pro: '【全真数据库平台】V5.0.0',
@@ -392,7 +389,7 @@ export default {
       version: 'openGauss 5.0.0',
       award: '2023-06-30',
       expiration: '2026-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}%E5%85%A8%E7%9C%9F%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B3%E5%8F%B0%20V5.0.0/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/%E5%85%A8%E7%9C%9F%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B3%E5%8F%B0%20V5.0.0/Certificate.pdf`,
     },
     {
       pro: '【Vastbase G100】V2.2.10',
@@ -400,7 +397,7 @@ export default {
       version: 'openGauss 3.0.0',
       award: '2023-06-01',
       expiration: '2025-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK1}Vastbase%20V2.2.10/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK1}/Vastbase%20V2.2.10/Certificate.pdf`,
     },
     {
       pro: 'MuDB 1.0.0',
@@ -408,7 +405,7 @@ export default {
       version: 'openGauss 2.0.0',
       award: '2021-06-15',
       expiration: '2024-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}MuDB%201.0.0/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/MuDB%201.0.0/Certificate.pdf`,
     },
     {
       pro: '【Vastbase G100】V2.2',
@@ -416,7 +413,7 @@ export default {
       version: 'openGauss 2.0.0',
       award: '2021-08-20',
       expiration: '2024-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK1}Vastbase%20V2.2/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK1}/Vastbase%20V2.2/Certificate.pdf`,
     },
 
     {
@@ -425,7 +422,7 @@ export default {
       version: 'openGauss 2.0.0',
       award: '2021-08-25',
       expiration: '2024-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK1}MogDB%202.0.1/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK1}/MogDB%202.0.1/Certificate.pdf`,
     },
 
     {
@@ -434,7 +431,7 @@ export default {
       version: 'openGauss 2.0.0',
       award: '2022-05-07',
       expiration: '2024-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}LNX-RDS%20V3.4/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/LNX-RDS%20V3.4/Certificate.pdf`,
     },
 
     {
@@ -443,7 +440,7 @@ export default {
       version: 'openGauss 2.0.0',
       award: '2022-07-15',
       expiration: '2024-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}%E6%9C%89%E8%93%89%E6%95%B0%E6%8D%AE%E5%BA%93%20V1.0/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/%E6%9C%89%E8%93%89%E6%95%B0%E6%8D%AE%E5%BA%93%20V1.0/Certificate.pdf`,
     },
     {
       pro: '神通数据库管理系统 V7.0.21',
@@ -451,7 +448,7 @@ export default {
       version: 'openGauss 3.0.0',
       award: '2022-07-20',
       expiration: '2025-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}%E7%A5%9E%E9%80%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%20V7.0.21/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/%E7%A5%9E%E9%80%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%20V7.0.21/Certificate.pdf`,
     },
     {
       pro: 'GBase 8c V5',
@@ -459,7 +456,7 @@ export default {
       version: 'openGauss 3.0.0',
       award: '2022-09-10',
       expiration: '2025-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}GBase%208c%20V5/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/GBase%208c%20V5/Certificate.pdf`,
     },
     {
       pro: 'FusionDB 22',
@@ -467,7 +464,7 @@ export default {
       version: 'openGauss 3.0.0',
       award: '2022-11-25',
       expiration: '2025-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}FusionDB%2022/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/FusionDB%2022/Certificate.pdf`,
     },
     {
       pro: 'GBase 8s V8.8.5',
@@ -475,7 +472,7 @@ export default {
       version: 'openGauss 3.0.0',
       award: '2023-03-20',
       expiration: '2025-03-31',
-      certificate: `${OBS_CERTIFICATION_LINK}GBase%208s%20V8.8.5/Certificate.pdf`,
+      certificate: `${OBS_CERTIFICATION_LINK}/GBase%208s%20V8.8.5/Certificate.pdf`,
     },
   ],
 };
