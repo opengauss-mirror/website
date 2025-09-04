@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, Ref, ref, computed } from 'vue';
+import { onMounted, Ref, ref, computed, unref } from 'vue';
 import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';
 import dayjs from 'dayjs';
@@ -28,10 +28,12 @@ const blogList: Ref<BlogItemT[]> = ref([]);
 const newsList: Ref<NewsItemT[]> = ref([]);
 
 const blogData = computed(() => {
-  return lang.value === 'zh' ? useCloned(blogsAllData.zh) : useCloned(blogsAllData.en);
+  const sourceData = lang.value === 'zh' ? blogsAllData.zh : blogsAllData.en;
+  return useCloned(sourceData.slice(0, 4)).cloned;
 });
 const newsData = computed(() => {
-  return lang.value === 'zh' ? useCloned(NewsAllData.zh) : useCloned(NewsAllData.en);
+  const sourceData = lang.value === 'zh' ? NewsAllData.zh : NewsAllData.en;
+  return useCloned(sourceData.slice(0, 4)).cloned;
 });
 const eventsData = computed(() => {
   return lang.value === 'zh' ? homeConfig.homeEvents.zh : homeConfig.homeEvents.en;
@@ -67,8 +69,8 @@ const initBlogData = (datas: any) => {
 };
 
 onMounted(async () => {
-  initBlogData(Array.prototype.slice.call(blogData.value, 0, 4));
-  initNewsData(Array.prototype.slice.call(newsData.value, 0, 4));
+  initBlogData(unref(blogData.value));
+  initNewsData(unref(newsData.value));
 });
 </script>
 <template>
