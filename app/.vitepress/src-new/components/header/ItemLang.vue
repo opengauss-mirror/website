@@ -1,28 +1,29 @@
 <script lang="ts" setup>
 import { ref, Ref, watch } from 'vue';
 import { useRouter, useData } from 'vitepress';
-
-import navLangFilter from '@/data/header/nav-lang-filter';
-
-import IconLocale from '~icons/app/icon-locale.svg';
-
+import { OIcon, ODropdown, ODropdownItem } from '@opensig/opendesign';
 import { useScreen } from '~@/composables/useScreen';
 
-const { gtPadV } = useScreen();
+import IconLocale from '~icons/app-new/icon-locale.svg';
+import navLangFilter from '@/data/header/nav-lang-filter';
+
 const router = useRouter();
 const { lang } = useData();
+const { lePadV } = useScreen();
 
-// 语言过滤
+// 语言过滤;
 const langShow = ref(['zh']);
 const detailFilterList = ['events', 'news', 'blogs'];
 const langOptions = [
-  { id: 'zh', label: '简体中文' },
+  { id: 'zh', label: '中文' },
   { id: 'en', label: 'English' },
 ];
+
 interface LangType {
   id: string;
   label: string;
 }
+
 const langList: Ref<LangType[]> = ref([]);
 
 const filterLang = () => {
@@ -60,6 +61,7 @@ watch(
 );
 
 // 选择语言
+const isMenu = ref(false);
 function changeLanguage(newlang: string) {
   if (lang.value === newlang) return;
   const { pathname, search } = window.location;
@@ -69,137 +71,139 @@ function changeLanguage(newlang: string) {
   router.go(newHref + search);
 }
 
-const isMenu = ref(false);
-const onMouseEnter = () => {
-  isMenu.value = true;
-};
-const onMouseLeave = () => {
-  isMenu.value = false;
-};
-
-// 过渡动画
-const onBeforeEnter = (el: Element) => {
-  (el as HTMLUListElement).style.height = '0px';
-  (el as HTMLUListElement).style.opacity = '0';
-};
-const onEnter = (el: Element) => {
-  (el as HTMLUListElement).style.height = `${el.scrollHeight}px`;
-  (el as HTMLUListElement).style.opacity = '1';
-};
-const onBeforeLeave = (el: Element) => {
-  (el as HTMLUListElement).style.height = `${(el as HTMLUListElement).offsetHeight}px`;
-  (el as HTMLUListElement).style.opacity = '1';
-};
-const onLeave = (el: Element) => {
-  (el as HTMLUListElement).style.height = '0px';
-  (el as HTMLUListElement).style.opacity = '0';
+const getLang = (lang: String, simple?: boolean) => {
+  return lePadV.value ? (lang === 'zh' ? '中文' : 'EN') : lang === 'zh' ? (simple ? '中' : '简体中文') : simple ? 'EN' : 'English';
 };
 </script>
 
 <template>
-  <div v-if="gtPadV" class="lang-menu" @mouseenter="onMouseEnter()" @mouseleave="onMouseLeave()">
-    <OIcon class="lang-menu-link" :class="{ 'no-state': langList.length < 2 }">
-      <IconLocale />
-      <div class="lang-tag">{{ lang === 'zh' ? '中' : 'EN' }}</div>
-    </OIcon>
+  <div v-if="!lePadV" :class="[langList.length <= 1 ? 'hide-lang' : 'header-lang', 'lang-box']">
+    <ODropdown trigger="hover" options-wrapper=".lang-box" optionPosition="top" option-wrap-class="dropdown">
+      <div class="info-wrap">
+        <OIcon class="icon">
+          <IconLocale />
+          <div :class="['locale-tag', { 'is-en': lang === 'en' }]">{{ getLang(lang, true) }}</div>
+        </OIcon>
+      </div>
 
-    <Transition @before-enter="onBeforeEnter" @enter="onEnter" @before-leave="onBeforeLeave" @leave="onLeave">
-      <ul v-show="isMenu && langList.length > 1" class="lang-menu-list">
-        <li v-for="item in langList" :key="item.id" class="lang-item" :class="{ active: lang === item.id }" @click="changeLanguage(item.id)">
-          {{ item.label }}
-        </li>
-      </ul>
-    </Transition>
+      <template #dropdown>
+        <ODropdownItem v-for="item in langList" @click="changeLanguage(item.id)" :key="item.id" :class="['list', { 'is-active': lang === item.id }]">
+          {{ getLang(item.id) }}
+        </ODropdownItem>
+      </template>
+    </ODropdown>
   </div>
 
-  <div v-else class="mobile-change-language">
-    <span v-for="item in langList" :key="item.id" :class="{ active: lang === item.id }" @click.stop="changeLanguage(item.id)">{{
-      item.id === 'zh' ? '中文' : 'EN'
-    }}</span>
+  <div v-else :class="langList.length <= 1 ? 'hide-lang' : 'mobile-change-language'">
+    <span v-for="item in langList" :key="item.id" :class="{ active: lang === item.id }" @click.stop="changeLanguage(item.id)">
+      {{ getLang(item.id) }}
+    </span>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.lang-menu {
-  position: relative;
-  height: 100%;
+.hide-lang {
+  display: none;
+}
+
+.header-lang {
+  height: calc(100% + 10px);
   display: flex;
   align-items: center;
-  .lang-menu-link {
-    position: relative;
-    font-size: var(--o-icon_size-m);
-    color: var(--e-color-text1);
+
+  .info-wrap {
+    height: 100%;
+    display: flex;
+    align-items: center;
     cursor: pointer;
-    &.no-state {
-      cursor: default;
+
+    .icon {
+      font-size: var(--o-icon_size_control-m);
+      position: relative;
+      color: var(--o-color-info1);
+
+      &:hover {
+        color: var(--o-color-primary1);
+      }
     }
 
-    .lang-tag {
+    .locale-tag {
       position: absolute;
-      right: 0%;
-      bottom: 0%;
       font-size: 10px;
-      width: 12px;
       height: 12px;
-      background-color: var(--e-color-bg2);
+      width: 12px;
+      background-color: var(--o-color-fill2);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      left: 12px;
+      top: 11px;
+
+      &.is-en {
+        width: 16px;
+      }
     }
   }
-  .lang-menu-list {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--e-color-bg2);
+  .list {
     cursor: pointer;
-    z-index: 999;
-    box-shadow: var(--e-shadow-l1);
-    min-width: 78px;
-    height: 0;
-    overflow: hidden;
-    transition: all 0.3s ease-in-out;
-    .lang-item {
-      line-height: var(--e-line-height-h3);
-      text-align: center;
-      font-size: var(--e-font-size-text);
-      color: var(--e-color-text1);
-      border-bottom: 1px solid var(--e-color-division1);
-      padding: 0 var(--e-spacing-h5);
-      white-space: nowrap;
-      &:last-child {
-        border-bottom: 0 none;
-      }
-      &:hover {
-        background: var(--e-color-brand1);
-        color: var(--e-color-text2);
-      }
-      &.active {
-        color: var(--e-color-brand1);
-        background: none;
-        cursor: default;
-      }
-    }
+    border-radius: var(--o-radius_control-xs);
+    padding: var(--o-gap-2) var(--o-gap-4);
+    width: 136px;
   }
 }
+
+:deep(.o-popup) {
+  --popup-shadow: var(--o-shadow2);
+  .o-popup-body {
+    border: none;
+  }
+}
+
+.o-dropdown {
+  height: 100%;
+}
+.o-dropdown-item {
+  background: var(--o-color-fill2);
+  cursor: pointer;
+  border-radius: var(--o-radius_control-xs);
+  padding: var(--o-gap-1);
+  min-width: 144px;
+  height: 40px;
+  color: var(--o-color-info1);
+
+  @include hover {
+    background: var(--o-color-control2-light);
+  }
+
+  &.is-active {
+    color: var(--o-color-primary1);
+    background: var(--o-color-control3-light);
+  }
+}
+:deep(.dropdown) {
+  --dropdown-list-radius: var(--o-radius-s);
+}
+
 .mobile-change-language {
-  line-height: var(--e-line-height-h3);
   display: flex;
+  align-items: center;
+  height: 36px;
   span {
-    font-size: var(--e-font-size-tip);
-    color: var(--e-color-text4);
-    margin-right: 12px;
+    color: var(--o-color-info1);
+    margin-right: var(--o-gap-3);
+    text-align: center;
+    @include text1;
     cursor: pointer;
-    @media screen and (max-width: 1100px) {
-      display: flex;
-    }
     &.active {
-      color: var(--e-color-brand1);
-      font-weight: 600;
+      color: var(--o-color-primary1);
+      font-weight: 500;
     }
     &:not(:last-child) {
       &:after {
         content: '|';
-        margin-left: 12px;
-        color: var(--e-color-text4);
+        margin-left: var(--o-gap-3);
+        color: var(--o-color-info1);
       }
     }
   }

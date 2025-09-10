@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import { useDebounceFn } from '@vueuse/core';
-import { useRouter, useData } from 'vitepress';
+import { useData } from 'vitepress';
 
 import { useI18n } from '~@/i18n';
 import { useCommon } from '@/stores/common';
@@ -48,31 +48,13 @@ const linkClick = () => {
   navActive.value = '';
   isShow.value = false;
 };
-
-// const onClickShortCutLink = (item: any) => {
-//   if (Array.isArray(item._PATH)) {
-//     return {
-//       ...(item._PATH as string[]).reduce(
-//         (levels, navName, index) => {
-//           levels[`level${index + 1}`] = navName;
-//           return levels;
-//         },
-//         {} as Record<string, string>
-//       ),
-//     };
-//   }
-// };
-
-const onHoverHeader = () => {
-  // console.log('hover header');
-};
 </script>
 
 <template>
   <div class="header-content">
     <div class="header-nav">
       <nav class="o-nav">
-        <ul class="o-nav-list" @mouseenter="onHoverHeader">
+        <ul class="o-nav-list">
           <li
             v-for="item in navData"
             :key="item.ID"
@@ -89,9 +71,6 @@ const onHoverHeader = () => {
             <transition name="transition">
               <div v-if="isShow" :class="['nav-dropdown', navActive, commonStore.theme, `${navActive}-${lang}`]">
                 <div class="nav-drop-content">
-                  <div class="nav-background-left"></div>
-                  <div class="nav-background-right"></div>
-
                   <OScroller class="nav-scroller" show-type="always" size="small" disabled-y>
                     <div class="nav-sub-content">
                       <div class="content-left">
@@ -114,7 +93,6 @@ const onHoverHeader = () => {
                           <div v-if="!isPicture">
                             <div v-for="shortcut in navShortcut" :key="shortcut.NAME" class="shortcut">
                               <NavLink :url="shortcut.URL" @link-click="linkClick" class="shortcut-link">
-                                <!-- v-analytics.bubble="() => onClickShortCutLink(shortcut)" -->
                                 <span>{{ shortcut.NAME }}</span>
                                 <OIcon v-if="shortcut.ICON">
                                   <component :is="shortcut.ICON" class="icon" />
@@ -124,7 +102,6 @@ const onHoverHeader = () => {
                           </div>
                           <div v-else>
                             <NavLink v-for="shortcut in navShortcut" :url="shortcut.URL" :key="shortcut.NAME" class="review" @link-click="linkClick">
-                              <!-- v-analytics.bubble="() => onClickShortCutLink(shortcut)" -->
                               <img :src="shortcut.PICTURE" class="review-picture" />
                               <div class="review-content">
                                 <p class="review-title">
@@ -313,36 +290,6 @@ const onHoverHeader = () => {
     display: flex;
   }
 
-  .nav-background-left {
-    position: absolute;
-    left: 0;
-    top: -87px;
-    width: 173px;
-    height: 249px;
-    background-image: url('~@/assets/category/header/nav_background_left.png');
-    background-size: cover;
-    z-index: -1;
-
-    @include respond-to('<=laptop') {
-      display: none;
-    }
-  }
-
-  .nav-background-right {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 173px;
-    height: 172px;
-    background-image: url('~@/assets/category/header/nav_background_right.png');
-    background-size: cover;
-    z-index: -1;
-
-    @include respond-to('<=laptop') {
-      display: none;
-    }
-  }
-
   .nav-sub-content {
     display: flex;
     flex: 1;
@@ -355,11 +302,11 @@ const onHoverHeader = () => {
       width: 100%;
 
       @include respond-to('laptop') {
-        padding: var(--o-gap-5) var(--o-gap-4) var(--o-gap-5) 0;
+        padding: var(--o-gap-5) var(--o-gap-5) var(--o-gap-5) 0;
       }
 
       @include respond-to('<=pad') {
-        padding: var(--o-gap-5) 0;
+        padding: var(--o-gap-4) 0;
       }
 
       .icon {
@@ -496,13 +443,13 @@ const onHoverHeader = () => {
           }
 
           .review-title {
-            word-break: normal;
             max-height: 48px;
             color: var(--o-color-info1);
             font-weight: 500;
             cursor: pointer;
             @include text1;
             @include text-truncate(2);
+            word-break: normal;
 
             @include hover {
               color: var(--o-color-primary1);

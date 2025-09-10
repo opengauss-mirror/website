@@ -131,9 +131,9 @@ onMounted(() => {
     width: 1em;
     height: 1em;
 
-    // @media (max-width: 1100px) {
-    //   font-size: 20px;
-    // }
+    @include hover {
+      color: var(--e-color-brand1);
+    }
   }
 }
 </style>

@@ -15,7 +15,7 @@ const itemChange = (data: any) => {
 
 <template>
   <div class="header-code">
-    <ODropdown trigger="hover" optionPosition="bottom" option-wrap-class="dropdown">
+    <ODropdown trigger="hover" options-wrapper=".header-code" option-position="top" option-wrap-class="lang-dropdown">
       <div class="info-wrap hover-icon-rotate">
         <span class="title">{{ $t('header.CODE') }}</span>
         <OIcon class="icon"><IconChevronDown /></OIcon>
@@ -63,13 +63,12 @@ const itemChange = (data: any) => {
       @include tip1;
     }
   }
+
   .list {
-    background: var(--o-color-fill2);
     cursor: pointer;
-    box-shadow: var(--o-shadow-1);
     border-radius: var(--o-radius_control-xs);
-    padding: var(--o-gap-1);
-    width: 144px;
+    padding: var(--o-gap-2) var(--o-gap-4);
+    width: 136px;
   }
 }
 
@@ -84,8 +83,17 @@ const itemChange = (data: any) => {
     }
   }
 }
+
+:deep(.o-popup) {
+  --popup-shadow: var(--o-shadow2);
+  .o-popup-body {
+    border: none;
+  }
+}
+
 .o-dropdown {
   height: 100%;
+  --dropdown-list-radius: var(--o-radius-s);
 }
 .o-dropdown-item {
   background: var(--o-color-fill2);
@@ -100,7 +108,7 @@ const itemChange = (data: any) => {
     background: var(--o-color-control2-light);
   }
 }
-.dropdown {
-  --dropdown-list-radius: var(--o-radius-xs);
+:deep(.lang-dropdown) {
+  --dropdown-list-radius: var(--o-radius-s);
 }
 </style>

@@ -87,6 +87,10 @@ watch(
     .icon {
       font-size: 24px;
       color: var(--e-color-text1);
+
+      @include hover {
+        color: var(--e-color-brand1);
+      }
     }
     @media screen and (max-width: 840px) {
       display: none;

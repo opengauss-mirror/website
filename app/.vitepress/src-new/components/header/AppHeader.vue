@@ -14,7 +14,6 @@ import IconMenu from '~icons/app-new/icon-header-menu.svg';
 import { useCommon } from '@/stores/common';
 import { useScreen } from '~@/composables/useScreen';
 
-const router = useRouter();
 const { lang } = useData();
 const { lePadV } = useScreen();
 const commonStore = useCommon();
@@ -37,7 +36,7 @@ const mobileClick = () => {
 </script>
 
 <template>
-  <header class="app-header">
+  <header class="app-header" :class="[{ dark: commonStore.theme === 'dark' }]">
     <ContentWrapper class="app-header-wrap">
       <div v-if="lePadV" class="menu-icon">
         <div class="icon" @click="menuPanel">
@@ -71,6 +70,32 @@ const mobileClick = () => {
   z-index: 98;
   box-shadow: var(--o-shadow-1);
   backdrop-filter: blur(5px);
+
+  @include respond-to('>pad_v') {
+    &.dark {
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 1px;
+        background-color: var(--o-color-control4);
+      }
+    }
+
+    &:before {
+      bottom: 0;
+      box-shadow: var(--o-shadow-1);
+      content: '';
+      left: 0;
+      pointer-events: none;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 100;
+    }
+  }
 
   .app-header-wrap {
     display: flex;
