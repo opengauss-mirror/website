@@ -22,13 +22,13 @@ export default {
           CHILDREN: [
             {
               NAME: 'openGauss 6.0.2(LTS)',
-              DESCRIPTION: 'openGauss 6.0.2 LTS及后续LTS版本发布间隔周期为2年，社区提供三年支持，社区...',
+              DESCRIPTION: 'openGauss 6.0.2 LTS及后续LTS版本发布间隔周期为2年，社区提供3年支持，社区OGSP...',
               TAG: null,
               URL: '/download/?version=lts',
             },
             {
               NAME: 'openGauss 7.0.0-RC1',
-              DESCRIPTION: '社区创新版本联创测试使用，发布间隔周期定位6个月，社区提供6个月维护支持',
+              DESCRIPTION: '社区创新版本联创测试使用，发布间隔周期定为6个月，社区提供6个月维护支持',
               TAG: TAG_TYPE.NEW,
               URL: '/download/?version=rc',
             },
@@ -39,7 +39,7 @@ export default {
           CHILDREN: [
             {
               NAME: '工具中心',
-              DESCRIPTION: '主要面向开发者和SV，提供六大类开发工具客户端工具、数据导入导出工具、数据...',
+              DESCRIPTION: '主要面向开发者和ISV，提供六大类开发工具、客户端工具、数据导入导出工具、数据复制/同...',
               URL: '/tools/',
             },
           ],
@@ -47,20 +47,21 @@ export default {
       ],
       SHORTCUT: [
         {
-          NAME: '查询所有版本',
-          URL: '/download?archive=true',
+          NAME: '查询全部版本',
+          URL: '/download/?version=all',
         },
         {
           NAME: '版本生命周期',
-          URL: '/other/lifecycle/',
+          URL: '/download/life-cycle/',
         },
         {
           NAME: 'openGauss 6.0.1版本安装指南',
-          URL: '/other/lifecycle/',
+          URL: 'https://docs.opengauss.org/zh/docs/6.0.0/docs/InstallationGuide/InstallationGuide.html',
         },
         {
+          // TODO: 404
           NAME: '技术白皮书',
-          URL: '/other/lifecycle/',
+          URL: 'https://docs.opengauss.org/zh/docs/latest/docs/TechnicalWhitePaper/TechnicalWhitePaper.html',
         },
       ],
     },
@@ -108,22 +109,22 @@ export default {
             {
               NAME: '新手入门',
               DESCRIPTION: '10分钟玩转社区，快速构建与成长',
-              URL: '/download/#',
+              URL: 'https://docs.opengauss.org/zh/docs/latest/docs/GettingStarted/GettingStarted.html',
             },
             {
               NAME: '安装指南',
               DESCRIPTION: '指导用户完成 openGauss 操作系统安装',
-              URL: '/download/#',
+              URL: 'https://docs.opengauss.org/zh/docs/latest/docs/InstallationGuide/InstallationGuide.html',
             },
             {
               NAME: '常见问题',
               DESCRIPTION: '常见问题解决方法',
-              URL: '/download/#',
+              URL: '/faq/',
             },
             {
               NAME: '应用开发指南',
               DESCRIPTION: '参与文档开发的方式',
-              URL: '/download/#',
+              URL: 'https://docs.opengauss.org/zh/docs/latest/docs/DeveloperGuide/%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97.html',
             },
           ],
         },
@@ -131,19 +132,19 @@ export default {
       SHORTCUT: [
         {
           NAME: '关于openGauss',
-          URL: '/',
+          URL: 'https://docs.opengauss.org/zh/docs/7.0.0-RC1/docs/TechnicalWhitePaper/%E4%BA%A7%E5%93%81%E5%AE%9A%E4%BD%8D.html',
         },
         {
           NAME: 'DataVec向量数据库',
-          URL: '/',
+          URL: 'https://docs.opengauss.org/zh/docs/latest/docs/DataVec/DataVec-Overview.html',
         },
         {
-          NAME: 'openGauss DataVec + Dify，快速搭建你的智能...',
-          URL: '/',
+          NAME: 'openGauss DataVec + Dify，快速搭建你的智能助手平台',
+          URL: 'https://docs.opengauss.org/zh/docs/latest/docs/DataVec/openGauss-Dify.html',
         },
         {
           NAME: '数据库管理指南',
-          URL: '/',
+          URL: 'https://docs.opengauss.org/zh/docs/latest/docs/DatabaseAdministrationGuide/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E6%8C%87%E5%8D%97.html',
         },
       ],
     },
@@ -152,27 +153,27 @@ export default {
       ID: 'learn',
       CHILDREN: [
         {
-          NAME: '课程中心',
+          NAME: '视频',
           CHILDREN: [
             {
               NAME: '专题直播',
               DESCRIPTION: '众多大咖精彩课程直播',
-              URL: '/download/#',
+              URL: '/video/?id=1',
             },
             {
               NAME: '轻松上手',
-              DESCRIPTION: '贯穿openGauss深度学习的基本流程，包括数据处理、模型加载与保存、图模式加速...',
-              URL: '/download/#',
+              DESCRIPTION: '贯穿openGauss深度学习的基本流程，包括数据处理、模型加载与保存、图模式加速等实践案例',
+              URL: '/video/?id=2',
             },
             {
               NAME: '数据库基础',
               DESCRIPTION: '提供数据处理相关增强、缓存、pipeline等功能案例',
-              URL: '/download/#',
+              URL: '/video/?id=3',
             },
             {
               NAME: '线下活动',
               DESCRIPTION: '参与线下交流、学习讨论',
-              URL: '/download/#',
+              URL: '/video/?id=4',
             },
           ],
         },
@@ -182,22 +183,22 @@ export default {
             {
               NAME: '快速体验',
               DESCRIPTION: 'openGauss官方出品的迷你视频课程',
-              URL: '/download/#',
+              URL: '/quick-start/',
             },
             {
               NAME: '学习进阶',
               DESCRIPTION: '开源基础软件学习培训',
-              URL: '/download/#',
+              URL: '/advanced/',
             },
             {
               NAME: '大咖之声',
               DESCRIPTION: '了解 openGauss 专家演讲',
-              URL: '/download/#',
+              URL: '/bigshot-voice/',
             },
             {
-              NAME: '人才培养',
+              NAME: '学习认证',
               DESCRIPTION: '欢迎学习HCIA-openGauss华为认证openGauss工程师在线课程',
-              URL: '/download/#',
+              URL: '/training/',
             },
           ],
         },
@@ -205,19 +206,19 @@ export default {
       SHORTCUT: [
         {
           NAME: '数据库介绍',
-          URL: '/',
+          URL: '/video/detail/?id=6-6',
         },
         {
           NAME: '数据库基础知识',
-          URL: '/',
+          URL: '/video/detail/?id=6-5',
         },
         {
           NAME: 'SQL语法入门、分类',
-          URL: '/',
+          URL: '/video/detail/?id=6-4',
         },
         {
-          NAME: 'openGauss联众创新：打造面向企业核心业务开...',
-          URL: '/',
+          NAME: 'openGauss联众创新：打造面向企业核心业务开源数据库',
+          URL: '/bigshot-voice/',
         },
       ],
     },
@@ -230,7 +231,7 @@ export default {
           CHILDREN: [
             {
               NAME: '发行版认证',
-              DESCRIPTION: '查看OBV发行版认证结果',
+              DESCRIPTION: '查看DBV发行版认证结果',
               URL: '/certification/',
             },
             {
@@ -248,6 +249,7 @@ export default {
               DESCRIPTION: '查看openGauss兼容性列表',
               URL: '/compatibility/',
             },
+            // TODO: url待确认
             {
               NAME: '兼容性技术测评',
               DESCRIPTION: '帮助企业快速申请兼容性测评',
@@ -261,17 +263,27 @@ export default {
           CHILDREN: [
             {
               NAME: '迁移专区',
-              DESCRIPTION: '了解 openGauss 迁移方案，获取迁移技术支持',
+              DESCRIPTION: '了解openGauss迁移方案，获取迁移技术支持',
               URL: '/migration/',
             },
           ],
         },
         {
-          NAME: '安全公告',
+          NAME: '安全中心',
           CHILDREN: [
             {
-              NAME: '安全中心',
-              DESCRIPTION: '查看社区 CVE，安全漏洞公示',
+              NAME: '漏洞管理',
+              DESCRIPTION: 'openGauss漏洞管理与处理流程',
+              URL: '/vulnerability-management/',
+            },
+            {
+              NAME: '安全公告',
+              DESCRIPTION: 'openGauss安全公告',
+              URL: '/security-advisories/',
+            },
+            {
+              NAME: 'CVE',
+              DESCRIPTION: 'openGauss CVE公告',
               URL: '/cve/',
             },
           ],
@@ -280,19 +292,19 @@ export default {
       SHORTCUT: [
         {
           NAME: '漏洞管理',
-          URL: '/',
+          URL: '/migration/case/index.html#migration-evalute',
         },
         {
           NAME: '迁移实践案例',
-          URL: '/',
+          URL: 'https://gitcode.com/opengauss/openGauss-workbench',
         },
         {
           NAME: '前往迁移互动专区',
-          URL: '/',
+          URL: '/migration/',
         },
         {
           NAME: 'MySQL迁移',
-          URL: '/',
+          URL: '/member/',
         },
       ],
     },
@@ -336,12 +348,12 @@ export default {
             {
               NAME: '社区论坛',
               DESCRIPTION: '参与开发者讨论openGauss',
-              URL: '/online-communication/',
+              URL: 'https://discuss.opengauss.org/',
             },
             {
-              NAME: '邮件列表',
+              NAME: '邮件交流',
               DESCRIPTION: '订阅邮件列表，与SIG成员讨论openGauss的技术与进展',
-              URL: '/download/#',
+              URL: '/online-communication/',
             },
           ],
         },
@@ -349,15 +361,15 @@ export default {
       SHORTCUT: [
         {
           NAME: '专项兴趣小组（SIG）',
-          URL: '/',
+          URL: '/member/',
         },
         {
           NAME: 'openGauss 社区突出贡献单位',
-          URL: '/',
+          URL: '/honor/',
         },
         {
           NAME: '单位会员贡献',
-          URL: '/',
+          URL: 'https://datastat.opengauss.org/zh/detail',
         },
       ],
     },
@@ -414,15 +426,15 @@ export default {
           DESCRIPTION: '',
           REMARK: '时间：2025/06/27 | 北京',
           TYPE: 'PICTURE',
-          URL: '/',
+          URL: '/summit/devday2025/',
         },
         {
           NAME: '汇聚数据库创新力量，引领智能时代新未来',
           PICTURE: report,
           DESCRIPTION: '',
-          REMARK: '时间：2025/12/27 | 北京',
+          REMARK: '时间：2024/12/27 | 北京',
           TYPE: 'PICTURE',
-          URL: '/',
+          URL: '/summit/devday2024/',
         },
       ],
     },
