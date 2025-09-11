@@ -1,10 +1,10 @@
 ---
-title: '1713.72 分！openGauss+鲲鹏，HyBench打榜第一航'
+title: '报名开启 | openGauss Meetup 成都站'
 date: '2025-07-23'
 tags: ['theme']
 author: 'openGauss'
 category: 'news'
-summary: '1713.72 分！openGauss+鲲鹏，HyBench打榜第一'
+summary: '报名开启 | openGauss Meetup 成都站'
 ---
 9月27日，openGauss社区Meetup即将登陆成都！本次活动携手多位行业专家与开发者共探开源数据库技术创新与生态发展，从企业级实践到前沿架构探索，从开源生态建设到AI原生优化，畅享真实的技术碰撞与最开放的创新对话，助力开发者把握数据库技术新趋势！
 
