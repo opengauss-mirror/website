@@ -62,7 +62,7 @@ const linkClick = () => {
               active: navActive === item.ID,
             }"
             @mouseenter="toggleDebounced(item)"
-            @mouseleave="toggleDebounced(item)"
+            @mouseleave="toggleDebounced(null)"
           >
             <span :id="'tour_headerNav_' + item.ID" class="nav-item">
               {{ item.NAME }}
