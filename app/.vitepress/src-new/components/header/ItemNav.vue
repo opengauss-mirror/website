@@ -69,11 +69,11 @@ const linkClick = () => {
             </span>
 
             <transition name="transition">
-              <div v-if="isShow" :class="['nav-dropdown', navActive, commonStore.theme, `${navActive}-${lang}`]">
+              <div v-show="isShow" :class="['nav-dropdown', navActive, commonStore.theme, `${navActive}-${lang}`]">
                 <div class="nav-drop-content">
                   <OScroller class="nav-scroller" show-type="always" size="small" disabled-y>
                     <div class="nav-sub-content">
-                      <div class="content-left">
+                      <div v-if="subNavContent?.length" class="content-left">
                         <div class="item-sub" v-for="(sub, s) in subNavContent" :key="s">
                           <span class="content-title">
                             {{ sub.NAME }}
