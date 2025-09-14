@@ -1,7 +1,27 @@
-import { pa } from "element-plus/es/locale";
-import path from "path";
+import { pa } from 'element-plus/es/locale';
+import path from 'path';
 
 export default [
+  {
+    title: '报名开启 | openGauss Meetup 成都站',
+    date: '2025-09-09',
+    tags: ['theme'],
+    author: 'openGauss',
+    category: 'news',
+    banner: '/category/news/2025-09-09/banner.png',
+    summary: '报名开启 | openGauss Meetup 成都站',
+    path: 'zh/news/2025-09-09/index',
+  },
+  {
+    title: '1713.72 分！openGauss+鲲鹏，HyBench打榜第一航',
+    date: '2025-07-23',
+    tags: ['theme'],
+    author: 'openGauss',
+    category: 'news',
+    banner: '/category/news/2025-07-23/banner.png',
+    summary: '1713.72 分！openGauss+鲲鹏，HyBench打榜第一',
+    path: 'zh/news/2025-07-23/index',
+  },
   {
     title: 'openGauss向量驱动新智能，RAC多写破局，内核升级再启航',
     date: '2025-06-30',
