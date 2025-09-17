@@ -101,8 +101,16 @@ const mobileClick = () => {
     display: flex;
     align-items: center;
 
-    @include respond-to('>pad_v') {
-      height: 78px;
+    @include respond-to('>laptop') {
+      height: 72px;
+    }
+
+    @include respond-to('laptop') {
+      height: 64px;
+    }
+
+    @include respond-to('pad_h') {
+      height: 56px;
     }
 
     @include respond-to('<=pad_v') {

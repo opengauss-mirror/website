@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, watch, computed, onMounted } from 'vue';
-import { useData } from 'vitepress';
+import { useData, useRouter, useRoute } from 'vitepress';
 import { useI18n } from '~@/i18n';
 import { OIcon } from '@opensig/opendesign';
 
@@ -12,16 +12,14 @@ import HeaderSearch from './ItemSearch.vue';
 import NavLink from './NavLink.vue';
 
 import IconOutLink from '~icons/app-new/icon-out-link.svg';
+import type { NavItemT, SourceCodeItemT } from '~@/@types/type-nav';
 
 const { lang } = useData();
+const router = useRouter();
+const route = useRoute();
 const i18n = useI18n();
 const headerData = computed(() => i18n.value.header.NAV_ROUTER);
 const codeData = computed(() => i18n.value.header.SOURCE_CODE);
-
-onMounted(() => {
-  navActive.value = 'download';
-  navInfo.value = headerData.value[0];
-});
 
 const props = defineProps({
   langOptions: {
@@ -39,30 +37,61 @@ const props = defineProps({
 });
 
 const navActive = ref('');
-const navInfo = ref({});
+const navInfo = ref({} as NavItemT);
+const sourceCode = ref({} as SourceCodeItemT[]);
 
-const handleNavClick = (item: any) => {
+const handleNavClick = (item: NavItemT) => {
   if (!item) {
     navActive.value = 'SOURCE_CODE';
-    navInfo.value = codeData.value;
+    sourceCode.value = codeData.value;
   } else {
-    navActive.value = item.ID;
-    navInfo.value = item;
+    if (item.ID === 'home') {
+      router.go(`/${lang.value}/`);
+      navInfo.value = {} as NavItemT;
+      navActive.value = item.ID;
+      emit('link-click');
+    } else {
+      navActive.value = item.ID;
+      navInfo.value = item;
+    }
   }
 };
 
 watch(
   () => props.menuShow,
   (val: boolean) => {
-    navActive.value = 'download';
-    navInfo.value = headerData.value[0];
+    if (val) {
+      if (route.path === `/${lang.value}/`) {
+        navActive.value = 'home';
+        navInfo.value = {} as NavItemT;
+        return;
+      }
+
+      navInfo.value =
+        headerData.value.find((item: NavItemT) => {
+          return item.CHILDREN?.some((subItem) => {
+            return subItem.CHILDREN?.some((child) => {
+              return child.URL && `/${lang.value}${child.URL}`.includes(route.path);
+            });
+          });
+        }) || headerData.value[0];
+
+      navActive.value = navInfo.value.ID;
+    }
   }
 );
 
 watch(
   () => headerData.value || codeData.value,
   () => {
-    navInfo.value = navActive.value === 'SOURCE_CODE' ? codeData.value : headerData.value.find((item) => item.ID === navActive.value);
+    if (navActive.value === 'SOURCE_CODE') {
+      navInfo.value = {} as NavItemT;
+      sourceCode.value = codeData.value;
+      return;
+    } else {
+      sourceCode.value = [];
+      navInfo.value = headerData.value.find((item: NavItemT) => item.ID === navActive.value);
+    }
   },
   {
     deep: true,
@@ -90,38 +119,17 @@ const linkClick = () => {
             <span @click="handleNavClick(item)">{{ item.NAME }}</span>
           </li>
         </ul>
-        <div class="nav-aside">
+
+        <div class="nav-aside" :class="{ 'nav-aside-home': navActive === 'home' }">
           <ul v-if="navActive !== 'SOURCE_CODE'" class="nav-aside-wrapper">
             <li v-for="item in navInfo.CHILDREN" :value="item.NAME" :title="item.NAME" :key="item.NAME" class="nav-aside-content">
               <p class="content-title">{{ item.NAME }}</p>
-              <NavLink v-if="item.MOBILE_LINK" class="content-title-url" style="margin-top: 0px" :url="item.URL" @link-click="linkClick">
-                {{ item.NAME }}
-                <OIcon>
-                  <component :is="item.ICON" class="icon" />
-                </OIcon>
-              </NavLink>
-              <div v-if="item.HASGROUP">
-                <div class="group" v-for="group in item.CHILDREN" :key="group.NAME">
-                  <span>{{ group.NAME }}</span>
-                  <NavContent :nav-content="group?.CHILDREN" @link-click="linkClick" :is-mobile="true" />
-                </div>
-              </div>
-              <NavContent v-else :nav-content="item?.CHILDREN" @link-click="linkClick" :is-mobile="true" />
-              <div v-if="item.EXTRAS" class="extra">
-                <div v-for="extra in item.EXTRAS" :key="extra.NAME">
-                  <NavLink class="content-title-url" :url="extra.URL" @link-click="linkClick">
-                    {{ extra.NAME }}
-                    <OIcon>
-                      <component :is="extra.ICON" class="icon" />
-                    </OIcon>
-                  </NavLink>
-                  <NavContent :nav-content="extra.CHILDREN" @link-click="linkClick" :is-mobile="true" />
-                </div>
-              </div>
+
+              <NavContent :nav-content="item?.CHILDREN" @link-click="linkClick" :is-mobile="true" />
             </li>
           </ul>
           <div v-else class="nav-aside-wrapper">
-            <NavLink v-for="item in navInfo" :url="item.PATH" :key="item.NAME" class="source-code-item">
+            <NavLink v-for="item in sourceCode" :url="item.PATH" :key="item.NAME" class="source-code-item">
               <span>{{ item.NAME }}</span>
               <OIcon v-if="item.ICON">
                 <IconOutLink class="icon" />
@@ -312,6 +320,10 @@ const linkClick = () => {
       background: var(--e-color-division1);
     }
   }
+}
+
+.nav-aside-home {
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .o-nav {

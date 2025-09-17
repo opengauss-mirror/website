@@ -14,6 +14,10 @@ const TAG_TYPE = {
 export default {
   NAV_ROUTER: [
     {
+      NAME: '首页',
+      ID: 'home',
+    },
+    {
       NAME: '下载',
       ID: 'download',
       CHILDREN: [

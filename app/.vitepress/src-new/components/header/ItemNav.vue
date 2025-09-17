@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import { useDebounceFn } from '@vueuse/core';
-import { useData } from 'vitepress';
+import { useData, useRouter } from 'vitepress';
 
 import { useI18n } from '~@/i18n';
 import { useCommon } from '@/stores/common';
@@ -17,6 +17,7 @@ import ItemCode from './ItemCode.vue';
 import NavLink from './NavLink.vue';
 
 const i18n = useI18n();
+const router = useRouter();
 const commonStore = useCommon();
 const { lang } = useData();
 
@@ -36,6 +37,13 @@ const toggleDebounced = useDebounceFn(function (item: any | null) {
     isShow.value = false;
     isPicture.value = false;
   } else {
+    if (item.ID === 'home') {
+      navActive.value = item.ID;
+      subNavContent.value = [];
+      navShortcut.value = [];
+      isShow.value = false;
+      return;
+    }
     navActive.value = item.ID;
     isShow.value = true;
     subNavContent.value = item.CHILDREN;
@@ -44,9 +52,18 @@ const toggleDebounced = useDebounceFn(function (item: any | null) {
   }
 }, 100);
 
+const clickNav = (item: string) => {
+  if (item === 'home') {
+    router.go(`/${lang.value}/`);
+  }
+};
+
 const linkClick = () => {
-  navActive.value = '';
   isShow.value = false;
+
+  setTimeout(() => {
+    navActive.value = '';
+  }, 150);
 };
 </script>
 
@@ -64,7 +81,7 @@ const linkClick = () => {
             @mouseenter="toggleDebounced(item)"
             @mouseleave="toggleDebounced(null)"
           >
-            <span :id="'tour_headerNav_' + item.ID" class="nav-item">
+            <span :id="'tour_headerNav_' + item.ID" class="nav-item" @click="clickNav(item.ID)">
               {{ item.NAME }}
             </span>
 
@@ -245,7 +262,7 @@ const linkClick = () => {
 
 .nav-dropdown {
   position: fixed;
-  top: 78px;
+  top: 72px;
   left: 0;
   right: 0;
   background: var(--o-color-fill2);
@@ -255,7 +272,7 @@ const linkClick = () => {
   font-weight: normal;
   cursor: default;
   overflow: hidden;
-  min-height: 320px;
+  min-height: 351px;
   justify-content: center;
   transform-origin: top;
 
@@ -264,10 +281,12 @@ const linkClick = () => {
   }
 
   @include respond-to('laptop') {
-    min-height: 300px;
+    min-height: 311px;
+    top: 64px;
   }
   @include respond-to('pad_h') {
-    min-height: 260px;
+    min-height: 287px;
+    top: 56px;
   }
 
   @include respond-to('>pad_v') {
@@ -291,13 +310,14 @@ const linkClick = () => {
   }
 
   .nav-sub-content {
+    height: 100%;
     display: flex;
     flex: 1;
     position: relative;
 
     .content-left {
       flex: 1;
-      padding: 32px 24px 40px 0;
+      padding: 32px 24px 24px 0;
       display: flex;
       width: 100%;
 
@@ -336,7 +356,7 @@ const linkClick = () => {
       }
 
       .content-title {
-        margin-bottom: var(--o-gap-6);
+        margin-bottom: var(--o-gap-4);
       }
 
       .shortcut {
@@ -498,6 +518,10 @@ const linkClick = () => {
 
     .o-divider {
       --o-divider-gap: var(--o-gap-4);
+
+      @include respond-to('laptop') {
+        --o-divider-gap: var(--o-gap-3);
+      }
     }
   }
 
@@ -524,6 +548,28 @@ const linkClick = () => {
       &:nth-of-type(1) {
         margin-left: 0;
       }
+
+      @include respond-to('laptop') {
+        margin-left: 24px;
+
+        .content-container {
+          :deep(.content-item) {
+            width: calc(50% - 8px);
+            margin-left: 16px;
+          }
+        }
+      }
+
+      @include respond-to('pad_h') {
+        margin-left: 16px;
+
+        .content-container {
+          :deep(.content-item) {
+            width: calc(50% - 6px);
+            margin-left: 12px;
+          }
+        }
+      }
     }
   }
 
@@ -539,6 +585,24 @@ const linkClick = () => {
 
           &:nth-of-type(1) {
             margin-left: 0;
+          }
+        }
+      }
+
+      @include respond-to('laptop') {
+        .content-container {
+          :deep(.content-item) {
+            width: calc((100% - 48px) / 4);
+            margin-left: 16px;
+          }
+        }
+      }
+
+      @include respond-to('pad_h') {
+        .content-container {
+          :deep(.content-item) {
+            width: calc((100% - 36px) / 4);
+            margin-left: 12px;
           }
         }
       }
@@ -560,6 +624,32 @@ const linkClick = () => {
 
           &:nth-of-type(n + 5) {
             margin-top: 24px;
+          }
+        }
+      }
+
+      @include respond-to('laptop') {
+        .content-container {
+          :deep(.content-item) {
+            width: calc((100% - 48px) / 4);
+            margin-left: 16px;
+
+            &:nth-of-type(n + 5) {
+              margin-top: 16px;
+            }
+          }
+        }
+      }
+
+      @include respond-to('pad_h') {
+        .content-container {
+          :deep(.content-item) {
+            width: calc((100% - 36px) / 4);
+            margin-left: 12px;
+
+            &:nth-of-type(n + 5) {
+              margin-top: 12px;
+            }
           }
         }
       }
@@ -589,6 +679,28 @@ const linkClick = () => {
       &:nth-of-type(1) {
         margin-left: 0;
       }
+
+      @include respond-to('laptop') {
+        margin-left: 24px;
+
+        .content-container {
+          :deep(.content-item) {
+            width: calc(50% - 8px);
+            margin-left: 16px;
+          }
+        }
+      }
+
+      @include respond-to('pad_h') {
+        margin-left: 16px;
+
+        .content-container {
+          :deep(.content-item) {
+            width: calc(50% - 6px);
+            margin-left: 12px;
+          }
+        }
+      }
     }
   }
 
@@ -601,6 +713,18 @@ const linkClick = () => {
         :deep(.content-item) {
           width: 100%;
         }
+      }
+
+      &:nth-of-type(1) {
+        margin-left: 0;
+      }
+
+      @include respond-to('laptop') {
+        margin-left: 24px;
+      }
+
+      @include respond-to('pad_h') {
+        margin-left: 16px;
       }
     }
   }
@@ -628,6 +752,28 @@ const linkClick = () => {
       &:nth-of-type(1) {
         margin-left: 0;
       }
+
+      @include respond-to('laptop') {
+        margin-left: 24px;
+
+        .content-container {
+          :deep(.content-item) {
+            width: calc(50% - 8px);
+            margin-left: 16px;
+          }
+        }
+      }
+
+      @include respond-to('pad_h') {
+        margin-left: 16px;
+
+        .content-container {
+          :deep(.content-item) {
+            width: calc(50% - 6px);
+            margin-left: 12px;
+          }
+        }
+      }
     }
   }
 
@@ -653,6 +799,28 @@ const linkClick = () => {
 
       &:nth-of-type(1) {
         margin-left: 0;
+      }
+
+      @include respond-to('laptop') {
+        margin-left: 24px;
+
+        .content-container {
+          :deep(.content-item) {
+            width: calc(50% - 8px);
+            margin-left: 16px;
+          }
+        }
+      }
+
+      @include respond-to('pad_h') {
+        margin-left: 16px;
+
+        .content-container {
+          :deep(.content-item) {
+            width: calc(50% - 6px);
+            margin-left: 12px;
+          }
+        }
       }
     }
   }

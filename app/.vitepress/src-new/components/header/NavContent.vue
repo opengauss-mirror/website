@@ -46,14 +46,6 @@ const descMouseenter = (e: MouseEvent) => {
       <div class="desc-container">
         <p class="item-desc">{{ subItem.DESCRIPTION }}</p>
       </div>
-      <div v-if="subItem.MOBILE_SHOW_CHILD" class="system-container">
-        <NavLink v-for="system in subItem.CHILDREN" :url="system.URL" class="system" @link-click="linkClick">
-          {{ system.NAME }}
-          <OIcon v-if="system.ICON">
-            <component :is="system.ICON" class="icon" />
-          </OIcon>
-        </NavLink>
-      </div>
     </div>
   </div>
 
@@ -107,22 +99,19 @@ const descMouseenter = (e: MouseEvent) => {
   flex-wrap: wrap;
 
   .content-item {
-    width: 249px;
-    // padding-right: 16px;
     margin-top: 24px;
+
     &:nth-of-type(1) {
       margin-top: 0;
     }
 
-    // @include respond-to('laptop') {
-    //   width: 170px;
-    //   margin-top: 16px;
-    // }
+    @include respond-to('laptop') {
+      margin-top: 16px;
+    }
 
-    // @include respond-to('pad_h') {
-    //   width: 132px;
-    //   margin-top: 16px;
-    // }
+    @include respond-to('pad_h') {
+      margin-top: 12px;
+    }
   }
 
   .item-title {
