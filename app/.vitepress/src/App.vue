@@ -7,7 +7,7 @@ import zhCn from 'element-plus/es/locale/lang/zh-cn';
 import en from 'element-plus/es/locale/lang/en';
 
 import AppHeader from '~@/components/header/AppHeader.vue';
-import AppFooter from '@/components/AppFooter.vue';
+import AppFooter from '~@/components/AppFooter.vue';
 import CookieNotice from '@/components/CookieNotice.vue';
 
 import LayoutSecurity from '@/layouts/LayoutSecurity.vue';

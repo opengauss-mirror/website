@@ -63,9 +63,8 @@ export default {
           URL: 'https://docs.opengauss.org/zh/docs/6.0.0/docs/InstallationGuide/InstallationGuide.html',
         },
         {
-          // TODO: 404
           NAME: '技术白皮书',
-          URL: 'https://docs.opengauss.org/zh/docs/latest/docs/TechnicalWhitePaper/TechnicalWhitePaper.html',
+          URL: 'https://docs.opengauss.org/zh/docs/6.0.0/docs/TechnicalWhitePaper/Technicalwhitepaper.html',
         },
       ],
     },
@@ -355,7 +354,7 @@ export default {
               URL: 'https://discuss.opengauss.org/',
             },
             {
-              NAME: '邮件交流',
+              NAME: '邮件列表',
               DESCRIPTION: '订阅邮件列表，与SIG成员讨论openGauss的技术与进展',
               URL: '/online-communication/',
             },

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { computed, ref } from 'vue';
-import { useRouter, useData } from 'vitepress';
+import { useData } from 'vitepress';
 
 import ContentWrapper from '~@/components/ContentWrapper.vue';
 import ItemNav from './ItemNav.vue';
