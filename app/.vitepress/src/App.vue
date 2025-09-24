@@ -19,6 +19,7 @@ import LayoutMigration from '@/layouts/LayoutMigration.vue';
 import LayoutFaq from '@/layouts/LayoutFaq.vue';
 
 import AppFloat from '@/components/AppFloat.vue';
+import AppTour from '~@/components/AppTour.vue';
 
 import categories from '@/shared/category';
 
@@ -61,6 +62,9 @@ const comp = computed(() => {
   </el-config-provider>
   <CookieNotice />
   <AppFooter />
+  <ClientOnly>
+    <AppTour />
+  </ClientOnly>
 </template>
 
 <style lang="scss">

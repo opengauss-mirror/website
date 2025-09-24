@@ -243,13 +243,13 @@ const linkClick = () => {
     }
     .nav-item {
       display: block;
-      padding: 22px var(--o-gap-4);
+      padding: 18px var(--o-gap-4);
 
       @include respond-to('laptop') {
-        padding: 22px 14px;
+        padding: 16px 14px;
       }
       @include respond-to('pad_h') {
-        padding: 22px 10px;
+        padding: 18px 10px;
       }
       &.en {
         @media (min-width: 841px) and (max-width: 1000px) {

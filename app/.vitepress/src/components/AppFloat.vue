@@ -4,6 +4,7 @@ import { useRouter, useData, useRoute } from 'vitepress';
 import { postFeedback } from '@/api/api-feedback';
 import { ElMessage } from 'element-plus';
 import { windowOpen } from '@/shared/utils';
+import { useGuideStore } from '@/stores/common';
 import useWindowResize from '@/components/hooks/useWindowResize';
 import { VULBOX_LINK, GAUSS_EMAIL, QUESTIONNAIRE_SURVEY } from '@/data/url-config';
 import { useThrottleFn } from '@vueuse/core';
@@ -16,6 +17,7 @@ import IconAsk from '~icons/float/icon-ask.svg';
 import IconHeadsetBig from '~icons/float/icon-headset-big.svg';
 import IconScore from '~icons/float/icon-score.svg';
 
+const guideStore = useGuideStore();
 const screenWidth = useWindowResize();
 const { lang } = useData();
 const router = useRouter();
@@ -325,7 +327,7 @@ const serverRef = ref();
 </script>
 
 <template>
-  <div v-if="lang === 'zh'" class="float">
+  <div v-if="lang === 'zh' && !guideStore.isOpen" class="float">
     <ClientOnly>
       <div v-if="!isFloatTipShow" :class="isSafetyFloatShow ? 'safety-tips' : ''">
         <a :href="isSafetyFloatShow ? VULBOX_LINK : ''" :target="isSafetyFloatShow ? '_blank' : '_self'" rel="noopener noreferrer">

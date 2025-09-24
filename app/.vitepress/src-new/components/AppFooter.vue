@@ -20,7 +20,7 @@ const optionsData = computed(() => i18n.value.footer.OPTIONS);
 </script>
 
 <template>
-  <footer class="footer">
+  <footer class="footer" id="tour_headerNav_footer">
     <ContentWrapper class="footer-wrap">
       <div class="footer-navs">
         <div v-for="item in footerNavs" :key="item.NAME" class="footer-navs-section">

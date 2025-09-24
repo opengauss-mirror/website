@@ -51,3 +51,10 @@ export const useCookieStore = defineStore('cookie', {
     },
   },
 });
+
+// 新手指导弹窗状态
+export const useGuideStore = defineStore('guide', {
+  state: () => ({
+    isOpen: false,
+  }),
+});
