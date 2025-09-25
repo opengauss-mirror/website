@@ -129,7 +129,7 @@ export const NEW_GUIDE_TOUR_STEPS = [
     bg: stepFooter,
     darkBg: stepFooterDark,
     target: '#tour_headerNav_footer',
-    color: '#FFF',
+    color: 'var(--o-color-fill2)',
     placement: 'top',
     href: '/',
     title: 'Footer',

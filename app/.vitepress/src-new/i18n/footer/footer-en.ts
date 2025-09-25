@@ -6,16 +6,16 @@ export default {
       NAME: '关于openGauss',
       LINKS: [
         {
-          NAME: '社区组织',
-          URL: '/en/member/',
+          NAME: 'Organization',
+          URL: '/zh/member/',
         },
         {
           NAME: '社区荣誉',
-          URL: '/en/honor/',
+          URL: '/zh/honor/',
         },
         {
-          NAME: '贡献看板',
-          URL: 'https://datastat.opengauss.org/en/overview',
+          NAME: 'Statistics',
+          URL: 'https://datastat.opengauss.org/zh/overview',
         },
       ],
     },
@@ -23,16 +23,16 @@ export default {
       NAME: '新闻与资讯',
       LINKS: [
         {
-          NAME: '新闻',
-          URL: '/en/news/',
+          NAME: 'News',
+          URL: '/zh/news/',
         },
         {
-          NAME: '博客',
-          URL: '/en/blogs/',
+          NAME: 'Blog',
+          URL: '/zh/blogs/',
         },
         {
           NAME: '技术白皮书',
-          URL: 'https://docs.opengauss.org/en/docs/6.0.0/docs/TechnicalWhitePaper/Technicalwhitepaper.html',
+          URL: 'https://docs.opengauss.org/zh/docs/6.0.0/docs/TechnicalWhitePaper/Technicalwhitepaper.html',
         },
       ],
     },
@@ -41,15 +41,15 @@ export default {
       LINKS: [
         {
           NAME: '获取软件包',
-          URL: '/en/download/',
+          URL: '/zh/download/',
         },
         {
           NAME: '工具中心',
-          URL: '/en/tools/',
+          URL: '/zh/tools/',
         },
         {
           NAME: '全部版本',
-          URL: '/en/download/?version=all',
+          URL: '/zh/download/?version=all',
         },
       ],
     },
@@ -58,15 +58,15 @@ export default {
       LINKS: [
         {
           NAME: '文档中心',
-          URL: 'https://docs.opengauss.org/en/',
+          URL: 'https://docs.opengauss.org/zh/',
         },
         {
           NAME: '常见问题',
-          URL: '/en/faq/',
+          URL: '/zh/faq/',
         },
         {
-          NAME: '安全公告',
-          URL: '/en/security-advisories/',
+          NAME: 'Security Advisories',
+          URL: '/zh/security-advisories/',
         },
       ],
     },
@@ -75,11 +75,11 @@ export default {
       LINKS: [
         {
           NAME: '线上交流',
-          URL: '/en/online-communication/',
+          URL: '/zh/online-communication/',
         },
         {
-          NAME: '活动',
-          URL: '/en/events/',
+          NAME: 'Events',
+          URL: '/zh/events/',
         },
         {
           NAME: '社区论坛',
@@ -92,11 +92,11 @@ export default {
       LINKS: [
         {
           NAME: '贡献攻略',
-          URL: '/en/contribution/',
+          URL: '/zh/contribution/',
         },
         {
-          NAME: '视频',
-          URL: '/en/video/',
+          NAME: 'Videos',
+          URL: '/zh/video/',
         },
       ],
     },
@@ -104,11 +104,11 @@ export default {
   FRIENDLY_LINKS: [
     {
       NAME: 'openEuler',
-      URL:  `${EULER_EN_LINK}/en/`,
+      URL: EULER_LINK,
     },
     {
       NAME: '昇思MindSpore',
-      URL: `${MINDSPORE_LINK}en/`,
+      URL: MINDSPORE_LINK,
     },
     {
       NAME: 'openUBMC',
@@ -120,7 +120,7 @@ export default {
     },
     {
       NAME: '鲲鹏社区',
-      URL: `${KUNPENG_LINK}en/`,
+      URL: KUNPENG_LINK,
     },
     {
       NAME: 'Gauss 松鼠会',
@@ -129,31 +129,31 @@ export default {
   ],
   OPTIONS: [
     {
-      NAME: `品牌`,
+      NAME: `Trademark`,
       URL: `/en/brand/`,
       TARGET: `_blank`,
     },
     {
-      NAME: `隐私政策`,
+      NAME: `Privacy Policy`,
       URL: `/en/privacy/`,
       TARGET: `_blank`,
     },
     {
-      NAME: `法律声明`,
+      NAME: `Legal Notice`,
       URL: `/en/legal/`,
       TARGET: `_blank`,
     },
     {
-      NAME: `关于cookies`,
+      NAME: `About Cookies`,
       URL: `/en/cookies/`,
       TARGET: `_blank`,
     },
     {
-      NAME: `关于我们`,
+      NAME: `About Us`,
       URL: `/en/about-us/`,
       TARGET: `_blank`,
     },
   ],
-  COPY_RIGHT: `版权所有 ©  openGauss {year} 保留一切权利`,
+  COPY_RIGHT: `Copyright © openGauss {year}. All rights reserved.`,
   OFFICIAL_ACCOUNT: 'openGauss公众号',
 };

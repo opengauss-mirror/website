@@ -246,7 +246,7 @@ const linkClick = () => {
       padding: 18px var(--o-gap-4);
 
       @include respond-to('laptop') {
-        padding: 16px 14px;
+        padding: 15px 14px;
       }
       @include respond-to('pad_h') {
         padding: 18px 10px;
@@ -836,8 +836,8 @@ const linkClick = () => {
   display: flex;
   align-items: center;
   gap: 20px;
-  height: calc(100% - 10px);
-  margin: 5px 0;
+  height: calc(100% - 12px);
+  margin: 6px 0;
   margin-left: 20px;
 
   @include respond-to('pad_v-laptop') {

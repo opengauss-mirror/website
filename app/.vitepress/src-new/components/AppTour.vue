@@ -87,11 +87,11 @@ watch(
     homeVisible.value = false;
     newGuideVisible.value = false;
 
-    // if (currentStep.value === 9) {
-    //   window.scrollTo({
-    //     top: document.body.scrollHeight,
-    //   });
-    // }
+    if (currentStep.value === 9) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
 
     if (val < FIRST_TOUR_STEPS.length) {
       homeVisible.value = true;
@@ -238,6 +238,10 @@ onUnmounted(() => {
       height: 192px;
       border-radius: var(--o-radius-xs) var(--o-radius-xs) 0 0;
     }
+  }
+
+  .el-tour__arrow {
+    z-index: -1;
   }
 
   .tour-text {
