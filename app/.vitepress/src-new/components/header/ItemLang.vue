@@ -188,7 +188,7 @@ const getLang = (lang: String, simple?: boolean) => {
 .mobile-change-language {
   display: flex;
   align-items: center;
-  height: 36px;
+  margin-top: 12px;
   span {
     color: var(--o-color-info1);
     margin-right: var(--o-gap-3);

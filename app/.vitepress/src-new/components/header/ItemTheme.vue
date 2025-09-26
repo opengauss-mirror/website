@@ -4,6 +4,7 @@ import { useCommon } from '@/stores/common';
 
 import IconSun from '~icons/app-new/icon-sun-outline.svg';
 import IconMoon from '~icons/app-new/icon-moon-outline.svg';
+import IconHeaderMoon from '~icons/app-new/icon-header-moon.svg';
 import { getCustomCookie, isBrowser, setCustomCookie } from '@/shared/utils';
 
 // 风格切换
@@ -57,7 +58,7 @@ watch(
   <div class="theme-box">
     <div class="theme-box-pc" @click="changeTheme">
       <OIcon class="icon">
-        <IconMoon v-if="isLight" />
+        <IconHeaderMoon v-if="isLight" />
         <IconSun v-else />
       </OIcon>
     </div>
@@ -97,6 +98,7 @@ watch(
     }
   }
   .theme-box-mobile {
+    margin-top: 24px;
     display: none;
     @media screen and (max-width: 840px) {
       display: flex;

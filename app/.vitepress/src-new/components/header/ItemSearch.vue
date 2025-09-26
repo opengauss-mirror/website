@@ -195,10 +195,6 @@ const closeSearch = () => {
   }
 }
 
-.search-icon {
-  color: var(--o-color-info1);
-}
-
 .search-wrapper {
   position: relative;
 
@@ -218,18 +214,23 @@ const closeSearch = () => {
 .header-search {
   position: relative;
   display: flex;
+
   .o-input {
     width: 160px;
     height: 32px;
     transition: width 0.3s;
     transform: translate(0);
+    --_box-radius: var(--o-radius-xs);
+
     @include respond-to('<=laptop') {
       width: 120px;
     }
+
     @include respond-to('<=pad_v') {
       display: none;
     }
   }
+
   @include respond-to('<=pad_v') {
     margin-left: 0;
     z-index: 2;
@@ -274,6 +275,7 @@ const closeSearch = () => {
     }
 
     .normal {
+      --_box-radius: 4px;
       display: flex !important;
     }
     .only-icon {
@@ -457,6 +459,7 @@ const closeSearch = () => {
 }
 
 .search-icon {
+  color: var(--o-color-info1);
   display: none;
   @include respond-to('<=pad_v') {
     display: block;

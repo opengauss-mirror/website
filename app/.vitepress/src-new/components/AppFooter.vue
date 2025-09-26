@@ -40,7 +40,7 @@ const optionsData = computed(() => i18n.value.footer.OPTIONS);
         </div>
       </div>
 
-      <ODivider class="divider-split" />
+      <ODivider class="divider-line" />
 
       <div class="footer-bottom">
         <div v-if="gtPadV" class="footer-left">
@@ -260,8 +260,8 @@ a {
   }
 }
 
-.divider-split {
-  --o-divider-bd-color: var(--e-color-white);
+.divider-line {
+  --o-divider-bd-color: rgba(255, 255, 255, 0.15);
 
   @include respond-to('<=pad_v') {
     --o-divider-gap: 16px;
