@@ -20,12 +20,28 @@ import banner20250506Mo from '@/assets/category/home/banner/banner20250506Mo.png
 
 import bannerForumPc from '@/assets/category/home/banner/banner-forum.png';
 import bannerForumMo from '@/assets/category/home/banner/banner-forum_mo.png';
+import banner700RC2 from '@/assets/category/home/banner/banner700_RC2.jpg';
+import banner700RC2Mo from '@/assets/category/home/banner/banner700_RC2_mo.jpg';
 
 import { LEARN_VIDEO_LINK, DOCS_LINK, FORUM_LINK } from '@/data/url-config';
 
 // rightInset:banner右侧插图
 export default {
   zh: [
+    {
+      pcBanner: banner700RC2,
+      moBanner: banner700RC2Mo,
+      link: '/zh/news/2025-09-30/',
+      target: '_blank',
+      title: 'openGauss 7.0.0-RC2 版本正式发布',
+      titleMb: ['openGauss 7.0.0 RC2 \n版本正式发布'],
+      subtitle: '',
+      desc: [''],
+      btn: '',
+      className: 'banner-version',
+      rightInset: '',
+      rightLink: '',
+    },
     {
       pcBanner: bannerForumPc,
       moBanner: bannerForumMo,
