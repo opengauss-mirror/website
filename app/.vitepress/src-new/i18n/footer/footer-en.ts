@@ -3,100 +3,96 @@ import { EULER_LINK, MINDSPORE_LINK, LOOKENG_LINK, KUNPENG_LINK, BBSCSDN_LINK, E
 export default {
   FOOTER_NAVS: [
     {
-      NAME: '关于openGauss',
+      NAME: 'About openGauss',
       LINKS: [
         {
           NAME: 'Organization',
-          URL: '/zh/member/',
-        },
-        {
-          NAME: '社区荣誉',
-          URL: '/zh/honor/',
+          URL: '/en/member/',
         },
         {
           NAME: 'Statistics',
-          URL: 'https://datastat.opengauss.org/zh/overview',
+          URL: 'https://datastat.opengauss.org/en/overview',
         },
       ],
     },
     {
-      NAME: '新闻与资讯',
+      NAME: 'News & Blogs',
       LINKS: [
         {
           NAME: 'News',
-          URL: '/zh/news/',
+          URL: '/en/news/',
         },
         {
           NAME: 'Blog',
-          URL: '/zh/blogs/',
+          URL: '/en/blogs/',
         },
         {
-          NAME: '技术白皮书',
-          URL: 'https://docs.opengauss.org/zh/docs/6.0.0/docs/TechnicalWhitePaper/Technicalwhitepaper.html',
-        },
-      ],
-    },
-    {
-      NAME: '获取与下载',
-      LINKS: [
-        {
-          NAME: '获取软件包',
-          URL: '/zh/download/',
-        },
-        {
-          NAME: '工具中心',
-          URL: '/zh/tools/',
-        },
-        {
-          NAME: '全部版本',
-          URL: '/zh/download/?version=all',
+          NAME: 'White Papers',
+          URL: 'https://docs.opengauss.org/en/docs/6.0.0/docs/TechnicalWhitePaper/Technicalwhitepaper.html',
         },
       ],
     },
     {
-      NAME: '支持与服务',
+      NAME: 'Access',
       LINKS: [
         {
-          NAME: '文档中心',
-          URL: 'https://docs.opengauss.org/zh/',
+          NAME: 'Get openGauss',
+          URL: '/en/download/',
         },
         {
-          NAME: '常见问题',
-          URL: '/zh/faq/',
+          NAME: 'Support Tools',
+          URL: '/en/tools/',
+        },
+        {
+          NAME: 'All versions',
+          URL: '/en/download/?version=all',
+        },
+      ],
+    },
+    {
+      NAME: 'Services & Resources',
+      LINKS: [
+        {
+          NAME: 'Document Center',
+          URL: 'https://docs.opengauss.org/en/',
+        },
+        {
+          NAME: 'Frequently Asked Questions',
+          URL: '/en/faq/',
         },
         {
           NAME: 'Security Advisories',
-          URL: '/zh/security-advisories/',
+          URL: '/en/security-advisories/',
         },
       ],
     },
     {
-      NAME: '互动与交流',
+      NAME: 'Communicate',
       LINKS: [
         {
-          NAME: '线上交流',
-          URL: '/zh/online-communication/',
+          NAME: 'Mailing Lists',
+          URL: '/en/online-communication/',
         },
         {
           NAME: 'Events',
-          URL: '/zh/events/',
+          URL: '/en/events/',
         },
         {
-          NAME: '社区论坛',
+          NAME: 'Forum',
           URL: 'https://discuss.opengauss.org/',
         },
       ],
     },
     {
-      NAME: '贡献与成长',
+      NAME: 'Contribute',
       LINKS: [
         {
-          NAME: '贡献攻略',
-          URL: '/zh/contribution/',
+          NAME: 'Contribution Guide',
+          URL: '/en/contribution/',
         },
         {
           NAME: 'Videos',
-          URL: '/zh/video/',
+          URL: '/en/video/',
         },
       ],
     },
@@ -107,7 +103,7 @@ export default {
       URL: EULER_LINK,
     },
     {
-      NAME: '昇思MindSpore',
+      NAME: 'MindSpore',
       URL: MINDSPORE_LINK,
     },
     {
@@ -119,8 +115,8 @@ export default {
       URL: OPENFUYAO_URL,
     },
     {
-      NAME: '鲲鹏社区',
-      URL: KUNPENG_LINK,
+      NAME: 'Kunpeng',
+      URL: `${KUNPENG_LINK}en/`,
     },
     {
       NAME: 'Gauss 松鼠会',
@@ -156,4 +152,5 @@ export default {
   ],
   COPY_RIGHT: `Copyright © openGauss {year}. All rights reserved.`,
   OFFICIAL_ACCOUNT: 'openGauss公众号',
+  LINK_TITLE: 'Related Links',
 };

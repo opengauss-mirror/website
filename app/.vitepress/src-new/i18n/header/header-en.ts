@@ -14,36 +14,38 @@ const TAG_TYPE = {
 export default {
   NAV_ROUTER: [
     {
-      NAME: '首页',
+      NAME: 'Homepage',
       ID: 'home',
     },
     {
-      NAME: '下载',
+      NAME: 'Download',
       ID: 'download',
       CHILDREN: [
         {
-          NAME: '获取openGauss',
+          NAME: 'Get openGauss',
           CHILDREN: [
             {
               NAME: 'openGauss 6.0.2(LTS)',
-              DESCRIPTION: 'openGauss 6.0.2 LTS及后续LTS版本发布间隔周期为2年，社区提供3年支持，社区OGSP...',
+              DESCRIPTION:
+                'An LTS version for openGauss 6.0.0 and later is provided with 3 years of community support, followed by additional maintenance support by oGSPs.',
               TAG: null,
               URL: '/download/?version=lts',
             },
             {
               NAME: 'openGauss 7.0.0-RC1',
-              DESCRIPTION: '社区创新版本联创测试使用，发布间隔周期定为6个月，社区提供6个月维护支持',
+              DESCRIPTION: 'RCx: a collaborative testing version released every 6 months, with 6 months of community support.',
               TAG: TAG_TYPE.NEW,
               URL: '/download/?version=rc',
             },
           ],
         },
         {
-          NAME: '获取其他资源',
+          NAME: 'Related Resources',
           CHILDREN: [
             {
-              NAME: '工具中心',
-              DESCRIPTION: '主要面向开发者和ISV，提供六大类开发工具、客户端工具、数据导入导出工具、数据复制/同...',
+              NAME: 'Support Tools',
+              DESCRIPTION:
+                '6 categories of tools for developers and ISVs, including the client tool, data import/export tool, data replication/synchronization tool, monitoring and O&M interfaces and toolset, backup and recovery interfaces and toolset, and data access middleware',
               URL: '/tools/',
             },
           ],
@@ -51,40 +53,39 @@ export default {
       ],
       SHORTCUT: [
         {
-          NAME: '查询全部版本',
+          NAME: 'Historical Releases',
           URL: '/download/?version=all',
         },
         {
-          NAME: '版本生命周期',
+          NAME: 'openGauss Lifecycle',
           URL: '/download/life-cycle/',
         },
         {
-          NAME: 'openGauss 6.0.1版本安装指南',
-          URL: 'https://docs.opengauss.org/zh/docs/6.0.0/docs/InstallationGuide/InstallationGuide.html',
+          NAME: 'openGauss 6.0.1 Installation Guide',
+          URL: 'https://docs.opengauss.org/en/docs/6.0.0/docs/GettingStarted/GettingStarted.html',
         },
         {
-          // TODO: 404
-          NAME: '技术白皮书',
-          URL: 'https://docs.opengauss.org/zh/docs/latest/docs/TechnicalWhitePaper/TechnicalWhitePaper.html',
+          NAME: 'Technical White Papers',
+          URL: 'https://docs.opengauss.org/en/docs/6.0.0/docs/TechnicalWhitePaper/Technicalwhitepaper.html',
         },
       ],
     },
     {
-      NAME: '开发',
+      NAME: 'Develop',
       ID: 'development',
       CHILDREN: [
         {
-          NAME: '贡献',
+          NAME: 'Contribute',
           CHILDREN: [
             {
-              NAME: 'CLA签署',
-              DESCRIPTION: '参与贡献前，需签署贡献者许可协议（CLA）',
+              NAME: 'CLA',
+              DESCRIPTION: 'Sign the CLA to protect your work—multiple options available!',
               URL: 'https://clasign.osinfra.cn/sign/gitee_opengauss-1614047760000855378',
               ICON: OutLink,
             },
             {
-              NAME: '贡献攻略',
-              DESCRIPTION: '参与社区贡献的方式',
+              NAME: 'Contribution Guide',
+              DESCRIPTION: 'See how to get involved and make an impact in our community.',
               URL: '/contribution/',
             },
           ],
@@ -92,271 +93,213 @@ export default {
       ],
       SHORTCUT: [
         {
-          NAME: '开发者日历',
+          NAME: 'Developer Calendar',
           URL: '/',
         },
       ],
     },
     {
-      NAME: '文档',
+      NAME: 'Document',
       ID: 'document',
       CHILDREN: [
         {
-          NAME: '文档中心',
+          NAME: 'Document Center',
           CHILDREN: [
             {
-              NAME: '文档中心',
-              DESCRIPTION: '提供各业务场景及工具使用所需的文档手册',
+              NAME: 'Document Center',
+              DESCRIPTION: 'Your go-to resource for different service scenarios and tool usage.',
               TAG: TAG_TYPE.NEW,
-              URL: 'https://docs.opengauss.org/zh/',
+              URL: 'https://docs.opengauss.org/en/',
             },
             {
-              NAME: '新手入门',
-              DESCRIPTION: '10分钟玩转社区，快速构建与成长',
-              URL: 'https://docs.opengauss.org/zh/docs/latest/docs/GettingStarted/GettingStarted.html',
+              NAME: 'Quick Start',
+              DESCRIPTION: 'Learn the community essentials in 10 minutes.',
+              URL: 'https://docs.opengauss.org/en/docs/latest/docs/GettingStarted/GettingStarted.html',
             },
             {
-              NAME: '安装指南',
-              DESCRIPTION: '指导用户完成 openGauss 操作系统安装',
-              URL: 'https://docs.opengauss.org/zh/docs/latest/docs/InstallationGuide/InstallationGuide.html',
+              NAME: 'Installation Guide',
+              DESCRIPTION: 'Step-by-step instructions for installing openGauss.',
+              URL: 'https://docs.opengauss.org/en/docs/latest/docs/InstallationGuide/InstallationGuide.html',
             },
             {
-              NAME: '常见问题',
-              DESCRIPTION: '常见问题解决方法',
+              NAME: 'Frequently Asked Questions',
+              DESCRIPTION: 'Get answers to common questions and troubleshooting tips.',
               URL: '/faq/',
             },
             {
-              NAME: '应用开发指南',
-              DESCRIPTION: '参与文档开发的方式',
-              URL: 'https://docs.opengauss.org/zh/docs/latest/docs/DeveloperGuide/%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97.html',
+              NAME: 'Application Development Guide',
+              DESCRIPTION: 'Discover how you can contribute to application development.',
+              URL: 'https://docs.opengauss.org/en/docs/latest/docs/DeveloperGuide/%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97.html',
             },
           ],
         },
       ],
       SHORTCUT: [
         {
-          NAME: '关于openGauss',
-          URL: 'https://docs.opengauss.org/zh/docs/7.0.0-RC1/docs/TechnicalWhitePaper/%E4%BA%A7%E5%93%81%E5%AE%9A%E4%BD%8D.html',
+          NAME: 'About openGauss',
+          URL: 'https://docs.opengauss.org/en/docs/7.0.0-RC1/docs/TechnicalWhitePaper/%E4%BA%A7%E5%93%81%E5%AE%9A%E4%BD%8D.html',
         },
         {
-          NAME: 'DataVec向量数据库',
-          URL: 'https://docs.opengauss.org/zh/docs/latest/docs/DataVec/DataVec-Overview.html',
+          NAME: 'DataVec Vector Database',
+          URL: 'https://docs.opengauss.org/en/docs/latest/docs/DataVec/DataVec-Overview.html',
         },
         {
-          NAME: 'openGauss DataVec + Dify，快速搭建你的智能助手平台',
-          URL: 'https://docs.opengauss.org/zh/docs/latest/docs/DataVec/openGauss-Dify.html',
+          NAME: 'openGauss DataVec + Dify',
+          URL: 'https://docs.opengauss.org/en/docs/latest/docs/DataVec/openGauss-Dify.html',
         },
         {
-          NAME: '数据库管理指南',
-          URL: 'https://docs.opengauss.org/zh/docs/latest/docs/DatabaseAdministrationGuide/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E6%8C%87%E5%8D%97.html',
+          NAME: 'Database Administration Guide',
+          URL: 'https://docs.opengauss.org/en/docs/latest/docs/DatabaseAdministrationGuide/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E6%8C%87%E5%8D%97.html',
         },
       ],
     },
     {
-      NAME: '学习',
+      NAME: 'Learn',
       ID: 'learn',
       CHILDREN: [
         {
-          NAME: '视频',
+          NAME: 'Videos',
           CHILDREN: [
             {
-              NAME: '专题直播',
-              DESCRIPTION: '众多大咖精彩课程直播',
+              NAME: 'Live',
+              DESCRIPTION: 'Dive into the minds of those shaping our future.',
               URL: '/video/?id=1',
             },
             {
-              NAME: '轻松上手',
-              DESCRIPTION: '贯穿openGauss深度学习的基本流程，包括数据处理、模型加载与保存、图模式加速等实践案例',
+              NAME: 'openGauss Crash Course',
+              DESCRIPTION: 'Dive into deep learning with our hands-on guide from data to deployment.',
               URL: '/video/?id=2',
             },
             {
-              NAME: '数据库基础',
-              DESCRIPTION: '提供数据处理相关增强、缓存、pipeline等功能案例',
+              NAME: 'Database Basics',
+              DESCRIPTION: 'Supercharge your workflow with our advanced data processing, caching, and pipeline features.',
               URL: '/video/?id=3',
             },
             {
-              NAME: '线下活动',
-              DESCRIPTION: '参与线下交流、学习讨论',
+              NAME: 'Offline Activities',
+              DESCRIPTION: 'Join us for in-person discussions and turn ideas into action.',
               URL: '/video/?id=4',
             },
           ],
         },
         {
-          NAME: '开发者成长',
+          NAME: 'Growth & Development',
           CHILDREN: [
             {
-              NAME: '快速体验',
-              DESCRIPTION: 'openGauss官方出品的迷你视频课程',
+              NAME: 'Getting Started',
+              DESCRIPTION: 'Series of openGauss video tutorials to help you get started.',
               URL: '/quick-start/',
             },
             {
-              NAME: '学习进阶',
-              DESCRIPTION: '开源基础软件学习培训',
+              NAME: 'Advanced Learning',
+              DESCRIPTION: 'Master open source software and build the skills that power the future.',
               URL: '/advanced/',
-            },
-            {
-              NAME: '大咖之声',
-              DESCRIPTION: '了解 openGauss 专家演讲',
-              URL: '/bigshot-voice/',
-            },
-            {
-              NAME: '学习认证',
-              DESCRIPTION: '欢迎学习HCIA-openGauss华为认证openGauss工程师在线课程',
-              URL: '/training/',
             },
           ],
         },
       ],
       SHORTCUT: [
         {
-          NAME: '数据库介绍',
+          NAME: 'Introduction to Databases',
           URL: '/video/detail/?id=6-6',
         },
         {
-          NAME: '数据库基础知识',
+          NAME: 'Database Basics',
           URL: '/video/detail/?id=6-5',
         },
         {
-          NAME: 'SQL语法入门、分类',
+          NAME: 'SQL Syntax Introduction and Classification',
           URL: '/video/detail/?id=6-4',
-        },
-        {
-          NAME: 'openGauss联众创新：打造面向企业核心业务开源数据库',
-          URL: '/bigshot-voice/',
         },
       ],
     },
     {
-      NAME: '支持',
+      NAME: 'Support',
       ID: 'approve',
       CHILDREN: [
         {
-          NAME: '认证',
+          NAME: 'Certification',
           CHILDREN: [
             {
-              NAME: '发行版认证',
-              DESCRIPTION: '查看DBV发行版认证结果',
+              NAME: 'Distribution Certification',
+              DESCRIPTION: 'Check the certification for your DBV release now.',
               URL: '/certification/',
             },
             {
-              NAME: '服务商认证',
-              DESCRIPTION: '查看oGSP服务商认证流程与结果',
+              NAME: 'oGSP Certification',
+              DESCRIPTION: 'Check your oGSP certification status instantly.',
               URL: '/ogsp/',
             },
           ],
         },
         {
-          NAME: '兼容性专区',
+          NAME: 'Compatibility',
           CHILDREN: [
             {
-              NAME: '兼容性列表',
-              DESCRIPTION: '查看openGauss兼容性列表',
+              NAME: 'Compatibility List',
+              DESCRIPTION: 'Check software compatibility with openGauss.',
               URL: '/compatibility/',
             },
-            // TODO: url待确认
-            {
-              NAME: '兼容性技术测评',
-              DESCRIPTION: '帮助企业快速申请兼容性测评',
-              ICON: OutLink,
-              URL: '/download/#',
-            },
           ],
         },
+
         {
-          NAME: '迁移',
+          NAME: 'Security',
           CHILDREN: [
             {
-              NAME: '迁移专区',
-              DESCRIPTION: '了解openGauss迁移方案，获取迁移技术支持',
-              URL: '/migration/',
-            },
-          ],
-        },
-        {
-          NAME: '安全中心',
-          CHILDREN: [
-            {
-              NAME: '漏洞管理',
-              DESCRIPTION: 'openGauss漏洞管理与处理流程',
+              NAME: 'Vulnerability Management',
+              DESCRIPTION: 'Take control of your security.',
               URL: '/vulnerability-management/',
             },
             {
-              NAME: '安全公告',
-              DESCRIPTION: 'openGauss安全公告',
+              NAME: 'Security Advisories',
+              DESCRIPTION: 'Stay protected and in the know.',
               URL: '/security-advisories/',
             },
             {
-              NAME: 'CVE',
-              DESCRIPTION: 'openGauss CVE公告',
+              NAME: 'CVEs',
+              DESCRIPTION: 'Get immediate updates on all openGauss CVEs.',
               URL: '/cve/',
             },
           ],
         },
       ],
-      SHORTCUT: [
-        {
-          NAME: '漏洞管理',
-          URL: '/migration/case/index.html#migration-evalute',
-        },
-        {
-          NAME: '迁移实践案例',
-          URL: 'https://gitcode.com/opengauss/openGauss-workbench',
-        },
-        {
-          NAME: '前往迁移互动专区',
-          URL: '/migration/',
-        },
-        {
-          NAME: 'MySQL迁移',
-          URL: '/member/',
-        },
-      ],
     },
     {
-      NAME: '社区',
+      NAME: 'Community',
       ID: 'community',
       CHILDREN: [
         {
-          NAME: '关于社区',
+          NAME: 'About',
           CHILDREN: [
             {
-              NAME: '贡献看板',
-              DESCRIPTION: '查看openGauss社区数据',
-              URL: 'https://datastat.opengauss.org/zh/overview',
+              NAME: 'Statistics',
+              DESCRIPTION: 'Find stats and see how the openGauss community thrives.',
+              URL: 'https://datastat.opengauss.org/en/overview',
             },
             {
-              NAME: '社区荣誉',
-              DESCRIPTION: '了解openGauss的荣誉奖项',
-              URL: '/honor/',
-            },
-            {
-              NAME: '社区组织',
-              DESCRIPTION: '了解openGauss的委员会成员',
+              NAME: 'Governance',
+              DESCRIPTION: 'Members of openEuler committees.',
               URL: '/member/',
             },
             {
-              NAME: '用户案例',
-              DESCRIPTION: '了解openGauss在各行业的最佳案例',
+              NAME: 'Success Stories',
+              DESCRIPTION: 'Discover how openGauss is transforming business across sectors.',
               URL: '/user-practice/',
-            },
-            {
-              NAME: '金融专区',
-              DESCRIPTION: '基于openGauss的金融解决方案',
-              URL: '/finance/',
             },
           ],
         },
         {
-          NAME: '社区交流',
+          NAME: 'Engage with Us',
           CHILDREN: [
             {
-              NAME: '社区论坛',
-              DESCRIPTION: '参与开发者讨论openGauss',
+              NAME: 'Forum',
+              DESCRIPTION: 'Share knowledge, ask anything, and solve together.',
               URL: 'https://discuss.opengauss.org/',
             },
             {
-              NAME: '邮件交流',
-              DESCRIPTION: '订阅邮件列表，与SIG成员讨论openGauss的技术与进展',
+              NAME: 'Mailing Lists',
+              DESCRIPTION: 'Discuss openGauss tech and progress on our mailing lists.',
               URL: '/online-communication/',
             },
           ],
@@ -364,60 +307,41 @@ export default {
       ],
       SHORTCUT: [
         {
-          NAME: '专项兴趣小组（SIG）',
+          NAME: 'SIGs',
           URL: '/member/',
         },
         {
-          NAME: 'openGauss 社区突出贡献单位',
-          URL: '/honor/',
-        },
-        {
-          NAME: '单位会员贡献',
-          URL: 'https://datastat.opengauss.org/zh/detail',
+          NAME: 'Contribution by Organizations',
+          URL: 'https://datastat.opengauss.org/en/detail',
         },
       ],
     },
     {
-      NAME: '动态',
+      NAME: 'Stay Updated',
       ID: 'update',
       WITH_PICTURE: true,
       CHILDREN: [
         {
-          NAME: '活动',
+          NAME: 'Community Calendar',
           CHILDREN: [
             {
-              NAME: '活动',
-              DESCRIPTION: '了解openGauss社区全年活动',
+              NAME: 'Community Calendar',
+              DESCRIPTION: 'Stay informed with key events, conferences, and releases.',
               URL: '/events/',
-            },
-            {
-              NAME: '峰会',
-              DESCRIPTION: '查看openGauss年度大会详情',
-              URL: '/summit/devday2025/',
-            },
-            {
-              NAME: '结队计划',
-              DESCRIPTION: '获取社区结队技术支持',
-              URL: '/team-up/',
-            },
-            {
-              NAME: 'Call for Meetup',
-              DESCRIPTION: '开发者活动共创',
-              URL: '/call-for-meetup/',
             },
           ],
         },
         {
-          NAME: '资讯',
+          NAME: 'News & Blogs',
           CHILDREN: [
             {
-              NAME: '新闻',
-              DESCRIPTION: '查看openGauss社区动态',
+              NAME: 'News',
+              DESCRIPTION: 'Follow the latest developments, releases, and community updates.',
               URL: '/news/',
             },
             {
-              NAME: '博客',
-              DESCRIPTION: '查看openGauss技术文章分享',
+              NAME: 'Blogs',
+              DESCRIPTION: 'Gain in-depth knowledge and fresh perspectives on openGauss.',
               URL: '/blogs/',
             },
           ],
@@ -428,31 +352,31 @@ export default {
           NAME: 'openGauss Developer Day 2025',
           PICTURE: odd,
           DESCRIPTION: '',
-          REMARK: '时间：2025/06/27 | 北京',
+          REMARK: 'June 02, 2025 | Beijing',
           TYPE: 'PICTURE',
           URL: '/summit/devday2025/',
         },
         {
-          NAME: '汇聚数据库创新力量，引领智能时代新未来',
+          NAME: 'Innovate Databases. Power Intelligence.',
           PICTURE: report,
           DESCRIPTION: '',
-          REMARK: '时间：2024/12/27 | 北京',
+          REMARK: 'December 27, 2024 | Beijing',
           TYPE: 'PICTURE',
           URL: '/summit/devday2024/',
         },
       ],
     },
   ],
-  QUICKLINK: '快捷链接',
-  CODE: '源码',
+  QUICKLINK: 'Quick Links',
+  CODE: 'Code',
   SEARCH: {
-    BROWSEHISTORY: '历史记录',
-    CLEAN: '清除',
-    TOPSEARCH: '热门搜索',
-    CHANGE: '换一批',
-    PLEACHOLDER: '搜索',
-    PLEACHOLDER_EXTEND: '请输入搜索内容',
-    TEXT: '搜索',
+    BROWSEHISTORY: 'History',
+    CLEAN: 'Clean up',
+    TOPSEARCH: 'Top search',
+    CHANGE: 'Change',
+    PLEACHOLDER: 'Please enter the content',
+    PLEACHOLDER_EXTEND: 'Please enter the content',
+    TEXT: 'Please enter the content',
   },
   SOURCE_CODE: [
     {

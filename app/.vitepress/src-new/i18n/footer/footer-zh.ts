@@ -1,5 +1,3 @@
-
-
 import { EULER_LINK, MINDSPORE_LINK, LOOKENG_LINK, KUNPENG_LINK, BBSCSDN_LINK, EULER_EN_LINK, OPENUBMC_URL, OPENFUYAO_URL } from '@/data/url-config';
 
 export default {
@@ -106,7 +104,7 @@ export default {
   FRIENDLY_LINKS: [
     {
       NAME: 'openEuler',
-      URL:  `${EULER_EN_LINK}/en/`,
+      URL: `${EULER_EN_LINK}/en/`,
     },
     {
       NAME: '昇思MindSpore',
@@ -158,4 +156,5 @@ export default {
   ],
   COPY_RIGHT: `版权所有 ©  openGauss {year} 保留一切权利`,
   OFFICIAL_ACCOUNT: 'openGauss公众号',
+  LINK_TITLE: '友情链接',
 };

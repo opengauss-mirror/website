@@ -26,7 +26,7 @@ export default {
           CHILDREN: [
             {
               NAME: 'openGauss 6.0.2(LTS)',
-              DESCRIPTION: 'openGauss 6.0.2 LTS及后续LTS版本发布间隔周期为2年，社区提供3年支持，社区OGSP...',
+              DESCRIPTION: 'openGauss 6.0.2 LTS及后续LTS版本发布间隔周期为2年，社区提供3年支持，社区OGSP伙伴提供3年以后维护支持服务。',
               TAG: null,
               URL: '/download/?version=lts',
             },
@@ -43,7 +43,8 @@ export default {
           CHILDREN: [
             {
               NAME: '工具中心',
-              DESCRIPTION: '主要面向开发者和ISV，提供六大类开发工具、客户端工具、数据导入导出工具、数据复制/同...',
+              DESCRIPTION:
+                '主要面向开发者和ISV，提供六大类开发工具、客户端工具、数据导入导出工具、数据复制/同步工具、监控运维接口及工具集、备份恢复接口及工具集、通用数据框架。',
               URL: '/tools/',
             },
           ],
@@ -116,7 +117,7 @@ export default {
             },
             {
               NAME: '安装指南',
-              DESCRIPTION: '指导用户完成 openGauss 操作系统安装',
+              DESCRIPTION: '指导用户顺利完成 openGauss 操作系统安装',
               URL: 'https://docs.opengauss.org/zh/docs/latest/docs/InstallationGuide/InstallationGuide.html',
             },
             {
@@ -199,7 +200,7 @@ export default {
               URL: '/bigshot-voice/',
             },
             {
-              NAME: '学习认证',
+              NAME: '培训认证',
               DESCRIPTION: '欢迎学习HCIA-openGauss华为认证openGauss工程师在线课程',
               URL: '/training/',
             },
@@ -252,12 +253,11 @@ export default {
               DESCRIPTION: '查看openGauss兼容性列表',
               URL: '/compatibility/',
             },
-            // TODO: url待确认
             {
               NAME: '兼容性技术测评',
               DESCRIPTION: '帮助企业快速申请兼容性测评',
               ICON: OutLink,
-              URL: '/download/#',
+              URL: 'https://gitcode.com/opengauss/compatible-certification',
             },
           ],
         },
@@ -294,16 +294,12 @@ export default {
       ],
       SHORTCUT: [
         {
-          NAME: '漏洞管理',
-          URL: '/migration/case/index.html#migration-evalute',
-        },
-        {
           NAME: '迁移实践案例',
-          URL: 'https://gitcode.com/opengauss/openGauss-workbench',
+          URL: '/migration/case/index.html#migration-evaluate',
         },
         {
           NAME: '前往迁移互动专区',
-          URL: '/migration/',
+          URL: 'https://gitcode.com/opengauss/openGauss-workbench',
         },
         {
           NAME: 'MySQL迁移',
@@ -354,7 +350,7 @@ export default {
               URL: 'https://discuss.opengauss.org/',
             },
             {
-              NAME: '邮件列表',
+              NAME: '线上交流',
               DESCRIPTION: '订阅邮件列表，与SIG成员讨论openGauss的技术与进展',
               URL: '/online-communication/',
             },

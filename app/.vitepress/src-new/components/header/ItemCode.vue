@@ -17,7 +17,7 @@ const itemChange = (data: any) => {
   <div class="header-code">
     <ODropdown trigger="hover" options-wrapper=".header-code" option-position="top" option-wrap-class="lang-dropdown">
       <div class="info-wrap hover-icon-rotate">
-        <span class="title">{{ $t('header.CODE') }}</span>
+        <span class="title">{{ i18n.header.CODE }}</span>
         <OIcon class="icon"><IconChevronDown /></OIcon>
       </div>
 

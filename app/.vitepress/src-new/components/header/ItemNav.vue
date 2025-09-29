@@ -106,7 +106,7 @@ const linkClick = () => {
 
                       <div class="content-right" v-if="navShortcut?.length">
                         <div v-if="navShortcut?.length">
-                          <span class="content-title">{{ $t('header.QUICKLINK') }}</span>
+                          <span class="content-title">{{ i18n.header.QUICKLINK }}</span>
                           <div v-if="!isPicture">
                             <div v-for="shortcut in navShortcut" :key="shortcut.NAME" class="shortcut">
                               <NavLink :url="shortcut.URL" @link-click="linkClick" class="shortcut-link">

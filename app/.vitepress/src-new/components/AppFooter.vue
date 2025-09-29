@@ -33,7 +33,7 @@ const optionsData = computed(() => i18n.value.footer.OPTIONS);
       </div>
 
       <div class="friendly-link">
-        <p class="friendly-link-title">友情链接</p>
+        <p class="friendly-link-title">{{ i18n.footer.LINK_TITLE }}</p>
 
         <div class="friendly-link-box">
           <a v-for="item in friendLinks" :key="item.NAME" :href="item.URL" class="friendly-link-item">{{ item.NAME }}</a>
@@ -299,6 +299,7 @@ a {
 }
 
 .footer-left {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -388,6 +389,7 @@ a {
 }
 
 .footer-right {
+  flex: 1;
   display: flex;
   align-items: center;
 
