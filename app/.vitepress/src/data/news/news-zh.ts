@@ -1,7 +1,44 @@
-import { pa } from 'element-plus/es/locale';
-import path from 'path';
-
 export default [
+  {
+    title: 'openGauss 7.0.0-RC2 正式发布',
+    date: '2025-09-30',
+    tags: ['theme'],
+    author: 'openGauss',
+    category: 'news',
+    banner: '/category/news/2025-09-30/banner.jpg',
+    summary: 'openGauss 7.0.0-RC2 正式发布',
+    path: 'zh/news/2025-09-30/index',
+  },
+  {
+    title: '教育行业新答卷，海量数据助力甘肃省教育厅全栈国产化实践',
+    date: '2025-09-19',
+    tags: ['theme'],
+    author: 'openGauss',
+    category: 'news',
+    banner: '/category/news/2025-09-19/banner.png',
+    summary: '教育行业新答卷，海量数据助力甘肃省教育厅全栈国产化实践',
+    path: 'zh/news/2025-09-19/index',
+  },
+  {
+    title: '活动报名 | openEuler & openGauss Meetup 西安站',
+    date: '2025-09-17',
+    tags: ['theme'],
+    author: 'openGauss',
+    category: 'news',
+    banner: '/category/news/2025-09-17/banner.png',
+    summary: '活动报名 | openEuler & openGauss Meetup 西安站',
+    path: 'zh/news/2025-09-17/index',
+  },
+  {
+    title: '亮点来袭 | openGauss Meetup 成都站',
+    date: '2025-09-16',
+    tags: ['theme'],
+    author: 'openGauss',
+    category: 'news',
+    banner: '/category/news/2025-09-16/banner.png',
+    summary: '亮点来袭 | openGauss Meetup 成都站',
+    path: 'zh/news/2025-09-16/index',
+  },
   {
     title: '报名开启 | openGauss Meetup 成都站',
     date: '2025-09-09',
