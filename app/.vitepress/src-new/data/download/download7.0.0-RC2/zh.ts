@@ -2,7 +2,7 @@ export default [
   {
     category: 'openGauss Server',
     name: 'openGauss_7.0.0-RC2 企业版',
-    size: '142.50MB',
+    size: '108.41MB',
     edition: 'enterprise',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler24.03/arm/openGauss-All-7.0.0-RC2-openEuler24.03-aarch64.tar.gz',
     sha_code: 'c0a968772e961f2c2d7f29ff287817ce00fb598725da6013259ae823516b3e4f',
@@ -17,7 +17,7 @@ export default [
   {
     category: 'openGauss Server',
     name: 'openGauss_7.0.0-RC2 极简版',
-    size: '109.49MB',
+    size: '76.55MB',
     edition: 'simple',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler24.03/arm/openGauss-Server-7.0.0-RC2-openEuler24.03-aarch64.tar.bz2',
     sha_code: '40d48954ca5f16a1c70e4d350d0820fb91365bc3bb1260063fd0df932ea986e6',
@@ -32,7 +32,7 @@ export default [
   {
     category: 'openGauss Server',
     name: 'openGauss_7.0.0-RC2 轻量版',
-    size: '29.19MB',
+    size: '37.42MB',
     edition: 'lite',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler24.03/arm/openGauss-Lite-7.0.0-RC2-openEuler24.03-aarch64.tar.gz',
     sha_code: 'a2371828b6fe5d62f3607d7fba7f27b764d10aa90fda45cf40309f3b0599a280',
@@ -47,7 +47,7 @@ export default [
   {
     category: 'openGauss Server',
     name: 'openGauss_7.0.0-RC2 企业版(noLSE)',
-    size: '143.39MB',
+    size: '109.39MB',
     edition: 'enterprise-noLSE',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/noLSE/openEuler24.03/arm/openGauss-All-7.0.0-RC2-openEuler24.03-aarch64.tar.gz',
     sha_code: '36755f5f460e8c6f25c9b5b2502227fc4e4d12ea0668588e432986adc6e6dec0',
@@ -62,7 +62,7 @@ export default [
   {
     category: 'openGauss Server',
     name: 'openGauss_7.0.0-RC2 企业版',
-    size: '147.62MB',
+    size: '114.81MB',
     edition: 'enterprise',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler24.03/x86/openGauss-All-7.0.0-RC2-openEuler24.03-x86_64.tar.gz',
     sha_code: '4ab8ede1ec8c8785cc93f383f6e89d99524f9255e4e2968038e789b8a83aaab6',
@@ -77,7 +77,7 @@ export default [
   {
     category: 'openGauss Server',
     name: 'openGauss_7.0.0-RC2 极简版',
-    size: '104.26MB',
+    size: '81.61MB',
     edition: 'simple',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler24.03/x86/openGauss-Server-7.0.0-RC2-openEuler24.03-x86_64.tar.bz2',
     sha_code: '7d83c1faefc2d36ceba36766b43d43609528a4bf8536426db34d716fc0aa7c87',
@@ -92,7 +92,7 @@ export default [
   {
     category: 'openGauss Server',
     name: 'openGauss_7.0.0-RC2 轻量版',
-    size: '29.02MB',
+    size: '39.19MB',
     edition: 'lite',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler24.03/x86/openGauss-Lite-7.0.0-RC2-openEuler24.03-x86_64.tar.gz',
     sha_code: 'da5d0723e5d68def9a446eae2b6dc3532ae6ca9813cbb0e250a2b2b3e0bbc288',
@@ -107,7 +107,7 @@ export default [
   {
     category: 'openGauss Server',
     name: 'openGauss_7.0.0-RC2 企业版',
-    size: '143.96MB',
+    size: '107.72MB',
     edition: 'enterprise',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler22.03/arm/openGauss-All-7.0.0-RC2-openEuler22.03-aarch64.tar.gz',
     sha_code: '232a8e84095892a4244528065a7e49169ff7da63c502ea536fe32f51a55dd10b',
@@ -122,7 +122,7 @@ export default [
   {
     category: 'openGauss Server',
     name: 'openGauss_7.0.0-RC2 极简版',
-    size: '100.82MB',
+    size: '76.10MB',
     edition: 'simple',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler22.03/arm/openGauss-Server-7.0.0-RC2-openEuler22.03-aarch64.tar.bz2',
     sha_code: '89c66c89c4e99edd7f6e0a5a333eb3fa1e4e42bc56731cf2ec099282486c7acf',
@@ -137,7 +137,7 @@ export default [
   {
     category: 'openGauss Server',
     name: 'openGauss_7.0.0-RC2 轻量版',
-    size: '28.02MB',
+    size: '37.00MB',
     edition: 'lite',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler22.03/arm/openGauss-Lite-7.0.0-RC2-openEuler22.03-aarch64.tar.gz',
     sha_code: 'd76dac093d47943b086fd397b1629e37e587b2ea82d82f01119b6de4cf46a7fb',
@@ -167,7 +167,7 @@ export default [
   {
     category: 'openGauss Server',
     name: 'openGauss_7.0.0-RC2 企业版',
-    size: '147.62MB',
+    size: '112.82MB',
     edition: 'enterprise',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler22.03/x86/openGauss-All-7.0.0-RC2-openEuler22.03-x86_64.tar.gz',
     sha_code: '232a8e84095892a4244528065a7e49169ff7da63c502ea536fe32f51a55dd10b',
@@ -182,7 +182,7 @@ export default [
   {
     category: 'openGauss Server',
     name: 'openGauss_7.0.0-RC2 极简版',
-    size: '104.26MB',
+    size: '80.76MB',
     edition: 'simple',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler22.03/x86/openGauss-Server-7.0.0-RC2-openEuler22.03-x86_64.tar.bz2',
     sha_code: '89c66c89c4e99edd7f6e0a5a333eb3fa1e4e42bc56731cf2ec099282486c7acf',
@@ -197,7 +197,7 @@ export default [
   {
     category: 'openGauss Server',
     name: 'openGauss_7.0.0-RC2 轻量版',
-    size: '29.02MB',
+    size: '38.65MB',
     edition: 'lite',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler22.03/x86/openGauss-Lite-7.0.0-RC2-openEuler22.03-x86_64.tar.gz',
     sha_code: 'd76dac093d47943b086fd397b1629e37e587b2ea82d82f01119b6de4cf46a7fb',
@@ -212,7 +212,7 @@ export default [
   {
     category: 'openGauss Server',
     name: 'openGauss_7.0.0-RC2 企业版',
-    size: '143.78MB',
+    size: '108.16MB',
     edition: 'enterprise',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler20.03/arm/openGauss-All-7.0.0-RC2-openEuler20.03-aarch64.tar.gz',
     sha_code: '770f2fc0584789aa8db9fa87f4c1d11219278b22b83cb10448bac2d9a00cd391',
@@ -227,7 +227,7 @@ export default [
   {
     category: 'openGauss Server',
     name: 'openGauss_7.0.0-RC2 极简版',
-    size: '100.83MB',
+    size: '76.45MB',
     edition: 'simple',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler20.03/arm/openGauss-Server-7.0.0-RC2-openEuler20.03-aarch64.tar.bz2',
     sha_code: '57e0d31eb19db8074d61f8b3807cb9da607ebb95fc8fcd3e8fff7f4e34c96233',
@@ -242,7 +242,7 @@ export default [
   {
     category: 'openGauss Server',
     name: 'openGauss_7.0.0-RC2 轻量版',
-    size: '28.03MB',
+    size: '37.39MB',
     edition: 'lite',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler20.03/arm/openGauss-Lite-7.0.0-RC2-openEuler20.03-aarch64.tar.gz',
     sha_code: 'adb25b698d67860aeb53855f88d1bb537b1c5ae86d006291bfac5a037a269d5e',
@@ -257,7 +257,7 @@ export default [
   {
     category: 'openGauss Server',
     name: 'openGauss_7.0.0-RC2 企业版(noLSE)',
-    size: '143.78MB',
+    size: '109.78MB',
     edition: 'enterprise-noLSE',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/noLSE/openEuler20.03/arm/openGauss-All-7.0.0-RC2-openEuler20.03-aarch64.tar.gz',
     sha_code: 'c4968df85bac0b4cb9adcfc9500ecdee91690845e0a2f81485fa7fba19ff2ad6',
@@ -272,7 +272,7 @@ export default [
   {
     category: 'openGauss Server',
     name: 'openGauss_7.0.0-RC2 企业版',
-    size: '148.18MB',
+    size: '113.23MB',
     edition: 'enterprise',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler20.03/x86/openGauss-All-7.0.0-RC2-openEuler20.03-x86_64.tar.gz',
     sha_code: 'ccd84e27318a8ad0f6e03c74fba3995bcb29c27e902dc2d1d7f89bd9c02f40e1',
@@ -287,7 +287,7 @@ export default [
   {
     category: 'openGauss Server',
     name: 'openGauss_7.0.0-RC2 极简版',
-    size: '104.48MB',
+    size: '81.02MB',
     edition: 'simple',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler20.03/x86/openGauss-Server-7.0.0-RC2-openEuler20.03-x86_64.tar.bz2',
     sha_code: '9d1d3b9806b1bcbc388efab861d79e5b91c440a1c3f8b0c6370ca94692b077a3',
@@ -302,7 +302,7 @@ export default [
   {
     category: 'openGauss Server',
     name: 'openGauss_7.0.0-RC2 轻量版',
-    size: '29.39MB',
+    size: '38.83MB',
     edition: 'lite',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler20.03/x86/openGauss-Lite-7.0.0-RC2-openEuler20.03-x86_64.tar.gz',
     sha_code: '1ca67717a222aeed5fa4d340b5b4bc2992765cf45fcfb5121aba2db459c78dbf',
@@ -362,7 +362,7 @@ export default [
   {
     category: 'openGauss Server',
     name: 'openGauss_7.0.0-RC2 极简版',
-    size: '1.60GB',
+    size: '1.25GB',
     edition: 'simple',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler22.03/x86/openGauss-Docker-7.0.0-RC2-x86_64.tar',
     sha_code: 'd67934d20def546ac079e2f666d58e78e7e57e8f7a73f0958f57f85fbacc326d',
@@ -377,7 +377,7 @@ export default [
   {
     category: 'openGauss Server',
     name: 'openGauss_7.0.0-RC2 轻量版',
-    size: '1.26GB',
+    size: '1.08GB',
     edition: 'lite',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler22.03/x86/openGauss-Lite-Docker-7.0.0-RC2-x86_64.tar.gz',
     sha_code: '9383cf2df1ea810bb40d8dea4c17cb176c3cbba706c68be91d8a9c17681ab814',
@@ -422,7 +422,7 @@ export default [
   {
     category: 'openGauss Connectors',
     name: 'JDBC_7.0.0-RC2',
-    size: '1.75MB',
+    size: '2.29MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler24.03/arm/openGauss-JDBC-7.0.0-RC2.tar.gz',
     sha_code: '9798c9e5437542013fe925f93df72100ca768cfab7ff911821268f5a87b3d7e0',
     docs: {
@@ -436,7 +436,7 @@ export default [
   {
     category: 'openGauss Connectors',
     name: 'ODBC_7.0.0-RC2',
-    size: '9.04MB',
+    size: '9.08MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler24.03/arm/openGauss-ODBC-7.0.0-RC2-openEuler24.03-aarch64.tar.gz',
     sha_code: '6a14b9ed8a96ffa9d8bf195e86871249babe30f0ecab80e8e7516205a7c892e4',
     docs: {
@@ -450,7 +450,7 @@ export default [
   {
     category: 'openGauss Connectors',
     name: 'Python-psycopg2_7.0.0-RC2',
-    size: '2.95MB',
+    size: '3.41MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler24.03/arm/openGauss-Python-7.0.0-RC2-openEuler24.03-aarch64.tar.gz',
     sha_code: '77731d6314a775177658960fbfa706305c6dc803c4565dfdc17229403b7997b7',
     docs: {
@@ -464,7 +464,7 @@ export default [
   {
     category: 'openGauss Connectors',
     name: 'libpq_7.0.0-RC2',
-    size: '5.04MB',
+    size: '4.07MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler24.03/arm/openGauss-Libpq-7.0.0-RC2-openEuler24.03-aarch64.tar.gz',
     sha_code: '980aefca63a17d3450f38743ca028305201354bdd9ecf957912113402d9bb22f',
     docs: {
@@ -478,7 +478,7 @@ export default [
   {
     category: 'openGauss Connectors',
     name: 'JDBC_7.0.0-RC2',
-    size: '1.75MB',
+    size: '2.29MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler24.03/x86/openGauss-JDBC-7.0.0-RC2.tar.gz',
     sha_code: '719770d8890ccd4f2e3290943ddc81d30218ec1e27b790aefe9a8cee258c5c13',
     docs: {
@@ -492,7 +492,7 @@ export default [
   {
     category: 'openGauss Connectors',
     name: 'ODBC_7.0.0-RC2',
-    size: '9.25MB',
+    size: '9.49MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler24.03/x86/openGauss-ODBC-7.0.0-RC2-openEuler24.03-x86_64.tar.gz',
     sha_code: 'adaa41586be574b9b3032e55ea35f204797cb4e76460949328a6794943db88bc',
     docs: {
@@ -506,7 +506,7 @@ export default [
   {
     category: 'openGauss Connectors',
     name: 'Python-psycopg2_7.0.0-RC2',
-    size: '3.09MB',
+    size: '3.57MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler24.03/x86/openGauss-Python-7.0.0-RC2-openEuler24.03-x86_64.tar.gz',
     sha_code: 'acd5e9c66c9d8f6dc95fce3868f5dbdecf14d6f0e299b7e8b23d0318e4cdcf21',
     docs: {
@@ -520,7 +520,7 @@ export default [
   {
     category: 'openGauss Connectors',
     name: 'libpq_7.0.0-RC2',
-    size: '5.27MB',
+    size: '4.24MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler24.03/x86/openGauss-Libpq-7.0.0-RC2-openEuler24.03-x86_64.tar.gz',
     sha_code: '7c1098f716214face93e414c5fb01ca91eb25b14cc12a13d704885c5eca0baa2',
     docs: {
@@ -534,7 +534,7 @@ export default [
   {
     category: 'openGauss Connectors',
     name: 'JDBC_7.0.0-RC2',
-    size: '1.75MB',
+    size: '2.29MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler22.03/arm/openGauss-JDBC-7.0.0-RC2.tar.gz',
     sha_code: '95c74d395818c226e79f9b2cedab3445417280abc833b0bac3a0972500e7ec4e',
     docs: {
@@ -548,7 +548,7 @@ export default [
   {
     category: 'openGauss Connectors',
     name: 'ODBC_7.0.0-RC2',
-    size: '9.04MB',
+    size: '9.78MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler22.03/arm/openGauss-ODBC-7.0.0-RC2-openEuler22.03-aarch64.tar.gz',
     sha_code: 'ed8d830832735eb1890ee5d399164a0e9814f3e032369634fdd4ff61837e52d4',
     docs: {
@@ -562,7 +562,7 @@ export default [
   {
     category: 'openGauss Connectors',
     name: 'Python-psycopg2_7.0.0-RC2',
-    size: '2.95MB',
+    size: '3.38MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler22.03/arm/openGauss-Python-7.0.0-RC2-openEuler22.03-aarch64.tar.gz',
     sha_code: '6f1ec10afcb64be1818b1656c51d75d0c52f6050e26e5c930e7d485577f479e8',
     docs: {
@@ -576,7 +576,7 @@ export default [
   {
     category: 'openGauss Connectors',
     name: 'libpq_7.0.0-RC2',
-    size: '5.04MB',
+    size: '5.94MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler22.03/arm/openGauss-Libpq-7.0.0-RC2-openEuler22.03-aarch64.tar.gz',
     sha_code: 'a29da09aeb13d6e76a48bb1e212484a1cbab5d64b3ce160ac26229c17f277f54',
     docs: {
@@ -590,7 +590,7 @@ export default [
   {
     category: 'openGauss Connectors',
     name: 'JDBC_7.0.0-RC2',
-    size: '1.75MB',
+    size: '2.29MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler22.03/x86/openGauss-JDBC-7.0.0-RC2.tar.gz',
     sha_code: '95c74d395818c226e79f9b2cedab3445417280abc833b0bac3a0972500e7ec4e',
     docs: {
@@ -604,7 +604,7 @@ export default [
   {
     category: 'openGauss Connectors',
     name: 'ODBC_7.0.0-RC2',
-    size: '9.25MB',
+    size: '10.15MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler22.03/x86/openGauss-ODBC-7.0.0-RC2-openEuler22.03-x86_64.tar.gz',
     sha_code: 'ed8d830832735eb1890ee5d399164a0e9814f3e032369634fdd4ff61837e52d4',
     docs: {
@@ -618,7 +618,7 @@ export default [
   {
     category: 'openGauss Connectors',
     name: 'Python-psycopg2_7.0.0-RC2',
-    size: '3.09MB',
+    size: '3.0954MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler22.03/x86/openGauss-Python-7.0.0-RC2-openEuler22.03-x86_64.tar.gz',
     sha_code: '6f1ec10afcb64be1818b1656c51d75d0c52f6050e26e5c930e7d485577f479e8',
     docs: {
@@ -632,7 +632,7 @@ export default [
   {
     category: 'openGauss Connectors',
     name: 'libpq_7.0.0-RC2',
-    size: '5.27MB',
+    size: '6.21MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler22.03/x86/openGauss-Libpq-7.0.0-RC2-openEuler22.03-x86_64.tar.gz',
     sha_code: 'a29da09aeb13d6e76a48bb1e212484a1cbab5d64b3ce160ac26229c17f277f54',
     docs: {
@@ -646,7 +646,7 @@ export default [
   {
     category: 'openGauss Connectors',
     name: 'JDBC_7.0.0-RC2',
-    size: '1.75MB',
+    size: '2.29MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler20.03/arm/openGauss-JDBC-7.0.0-RC2.tar.gz',
     sha_code: 'de29b721ec720192693f7e3f5cc60dc0a9eb3b2ce708f99c7e792a063579a6e0',
     docs: {
@@ -660,7 +660,7 @@ export default [
   {
     category: 'openGauss Connectors',
     name: 'ODBC_7.0.0-RC2',
-    size: '9.05MB',
+    size: '9.82MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler20.03/arm/openGauss-ODBC-7.0.0-RC2-openEuler20.03-aarch64.tar.gz',
     sha_code: '04f0d885a6f8978210c3d56ab721a48398a26095e9de73748abaddc022d164e1',
     docs: {
@@ -674,7 +674,7 @@ export default [
   {
     category: 'openGauss Connectors',
     name: 'Python-psycopg2_7.0.0-RC2',
-    size: '2.94MB',
+    size: '3.39MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler20.03/arm/openGauss-Python-7.0.0-RC2-openEuler20.03-aarch64.tar.gz',
     sha_code: 'efdf7243ca3cdf22ec22428b0d38fb635d951df2ad8c9c4570fde8fb41a91d07',
     docs: {
@@ -688,7 +688,7 @@ export default [
   {
     category: 'openGauss Connectors',
     name: 'libpq_7.0.0-RC2',
-    size: '5.04MB',
+    size: '5.98MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler20.03/arm/openGauss-Libpq-7.0.0-RC2-openEuler20.03-aarch64.tar.gz',
     sha_code: '9c1b382e87a619c759d204bfa04e196be6f91996cf2569e12df1eb17f6ca5e72',
     docs: {
@@ -702,7 +702,7 @@ export default [
   {
     category: 'openGauss Connectors',
     name: 'JDBC_7.0.0-RC2',
-    size: '1.75MB',
+    size: '2.29MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler20.03/x86/openGauss-JDBC-7.0.0-RC2.tar.gz',
     sha_code: '9a235d35858a02a8fab2ccadc329156a38d68276c74c22d4a52e6401efa6377d',
     docs: {
@@ -716,7 +716,7 @@ export default [
   {
     category: 'openGauss Connectors',
     name: 'ODBC_7.0.0-RC2',
-    size: '9.26MB',
+    size: '10.20MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler20.03/x86/openGauss-ODBC-7.0.0-RC2-openEuler20.03-x86_64.tar.gz',
     sha_code: 'c9f031e811df7a0580dbab3c161fcddee79048b64486fdd2d8bb0c382ad8e908',
     docs: {
@@ -730,7 +730,7 @@ export default [
   {
     category: 'openGauss Connectors',
     name: 'Python-psycopg2_7.0.0-RC2',
-    size: '3.09MB',
+    size: '3.57MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler20.03/x86/openGauss-Python-7.0.0-RC2-openEuler20.03-x86_64.tar.gz',
     sha_code: 'dc2a49a8df63cd13947a8b9c9dd08c4b39758188d83b672ed3b8c13aaed8fedc',
     docs: {
@@ -744,7 +744,7 @@ export default [
   {
     category: 'openGauss Connectors',
     name: 'libpq_7.0.0-RC2',
-    size: '5.27MB',
+    size: '6.26MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler20.03/x86/openGauss-Libpq-7.0.0-RC2-openEuler20.03-x86_64.tar.gz',
     sha_code: '694a1c6dd68e62abbc14272df2f2c05c32bfa6923ad6239a9a1b6e7c35e0e690',
     docs: {
@@ -786,7 +786,7 @@ export default [
   {
     category: 'openGauss Connectors',
     name: 'Python-psycopg2_7.0.0-RC2',
-    size: '3.29MB',
+    size: '3.49MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/CentOS7/x86/openGauss-Python-7.0.0-RC2-CentOS7-x86_64.tar.gz',
     sha_code: 'd4bf03547c3b1a9dc8b365d06c53e05660ceb06d506be6e611cb1000583b026e',
     docs: {
@@ -800,7 +800,7 @@ export default [
   {
     category: 'openGauss Connectors',
     name: 'libpq_7.0.0-RC2',
-    size: '5.15MB',
+    size: '6.13MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/CentOS7/x86/openGauss-Libpq-7.0.0-RC2-CentOS7-x86_64.tar.gz',
     sha_code: '81292ab96bcbd5dd56f67cd346b152751022420bad46b50c112ae4f1d71a886b',
     docs: {
@@ -814,7 +814,7 @@ export default [
   {
     category: 'openGauss Connectors',
     name: 'JDBC_7.0.0-RC2',
-    size: '1.75MB',
+    size: '2.29MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/CentOS7/x86/openGauss-JDBC-7.0.0-RC2.tar.gz',
     sha_code: 'e4d369d33e9261aa9dbe412e352144b1206f8274a8e9570a421d0707657dfb97',
     docs: {
@@ -842,7 +842,7 @@ export default [
   {
     category: 'openGauss Symbol',
     name: 'symbol_7.0.0-RC2',
-    size: '407.54MB',
+    size: '438.25MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler24.03/arm/openGauss-Symbol-7.0.0-RC2-openEuler24.03-aarch64.tar.gz',
     sha_code: '39a7a35a10e6b42fe6a19c9862549ceefb860415a34f4d4557482ca461a8abb9',
     docs: {
@@ -856,7 +856,7 @@ export default [
   {
     category: 'openGauss Symbol',
     name: 'cm-symbol_7.0.0-RC2',
-    size: '24.12MB',
+    size: '32.93MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler24.03/arm/openGauss-CM-7.0.0-RC2-openEuler24.03-aarch64.tar.gz',
     sha_code: '3b03eee1a9a3ceebe2a7583e7dc904920578e45057838310834c19ad105f8e9f',
     docs: {
@@ -870,7 +870,7 @@ export default [
   {
     category: 'openGauss Symbol',
     name: 'symbol_7.0.0-RC2',
-    size: '404.64MB',
+    size: '432.49MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler24.03/x86/openGauss-Symbol-7.0.0-RC2-openEuler24.03-x86_64.tar.gz',
     sha_code: '9329b9398131cdb2838afab6c6f16ae51e1a5938b0ef6609cfa0a3a2fecc025d',
     docs: {
@@ -884,7 +884,7 @@ export default [
   {
     category: 'openGauss Symbol',
     name: 'cm-symbol_7.0.0-RC2',
-    size: '22.22MB',
+    size: '30.83MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler24.03/x86/openGauss-CM-Symbol-7.0.0-RC2-openEuler24.03-x86_64.tar.gz',
     sha_code: '89e87e6b8132742ce48081ba4431911ad5321bf8aa32b18938cdd9cc619d1ed8',
     docs: {
@@ -898,7 +898,7 @@ export default [
   {
     category: 'openGauss Symbol',
     name: 'symbol_7.0.0-RC2',
-    size: '407.54MB',
+    size: '486.44MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler22.03/arm/openGauss-Symbol-7.0.0-RC2-openEuler22.03-aarch64.tar.gz',
     sha_code: '4db208b95e6c5ee05f4c059cb7083b50743085079b93a0c3636bfaf924de73c3',
     docs: {
@@ -912,7 +912,7 @@ export default [
   {
     category: 'openGauss Symbol',
     name: 'cm-symbol_7.0.0-RC2',
-    size: '24.12MB',
+    size: '32.87MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler22.03/arm/openGauss-CM-7.0.0-RC2-openEuler22.03-aarch64.tar.gz',
     sha_code: '7a545e565f81b64e8af21ec2071905357754372bc425439bd8717e2998f8602c',
     docs: {
@@ -926,7 +926,7 @@ export default [
   {
     category: 'openGauss Symbol',
     name: 'symbol_7.0.0-RC2',
-    size: '404.64MB',
+    size: '482.51MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler22.03/x86/openGauss-Symbol-7.0.0-RC2-openEuler22.03-x86_64.tar.gz',
     sha_code: '4db208b95e6c5ee05f4c059cb7083b50743085079b93a0c3636bfaf924de73c3',
     docs: {
@@ -940,7 +940,7 @@ export default [
   {
     category: 'openGauss Symbol',
     name: 'cm-symbol_7.0.0-RC2',
-    size: '22.22MB',
+    size: '30.81MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler22.03/x86/openGauss-CM-Symbol-7.0.0-RC2-openEuler22.03-x86_64.tar.gz',
     sha_code: '7a545e565f81b64e8af21ec2071905357754372bc425439bd8717e2998f8602c',
     docs: {
@@ -954,7 +954,7 @@ export default [
   {
     category: 'openGauss Symbol',
     name: 'symbol_7.0.0-RC2',
-    size: '406.21MB',
+    size: '484.96MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler20.03/arm/openGauss-Symbol-7.0.0-RC2-openEuler20.03-aarch64.tar.gz',
     sha_code: '130fa07a40d4a1c3980ea08e786089eed63b5b770a68bb13bae8f5fd99f1f6d1',
     docs: {
@@ -968,7 +968,7 @@ export default [
   {
     category: 'openGauss Symbol',
     name: 'cm-symbol_7.0.0-RC2',
-    size: '21.47MB',
+    size: '32.80MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler20.03/arm/openGauss-CM-Symbol-7.0.0-RC2-openEuler20.03-aarch64.tar.gz',
     sha_code: '7003737a5cbe2e4704bf19764fb49776ae5b70c47cd4c2cfdc1a2e9a4ee4b6e2',
     docs: {
@@ -982,7 +982,7 @@ export default [
   {
     category: 'openGauss Symbol',
     name: 'symbol_7.0.0-RC2',
-    size: '403.73MB',
+    size: '481.09MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler20.03/x86/openGauss-Symbol-7.0.0-RC2-openEuler20.03-x86_64.tar.gz',
     sha_code: 'e7d75deace0b3da77016233fb1783431c4a972fad01e7621d0c2de99c7379f89',
     docs: {
@@ -996,7 +996,7 @@ export default [
   {
     category: 'openGauss Symbol',
     name: 'cm-symbol_7.0.0-RC2',
-    size: '22.20MB',
+    size: '30.80MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler20.03/x86/openGauss-CM-Symbol-7.0.0-RC2-openEuler20.03-x86_64.tar.gz',
     sha_code: 'c5b6c74416636cf09af013730dd9df6b4d04c223ac73bd19bfcd220b6a96cc1a',
     docs: {
@@ -1010,7 +1010,7 @@ export default [
   {
     category: 'openGauss Symbol',
     name: 'symbol_7.0.0-RC2',
-    size: '390.49MB',
+    size: '466.60MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/CentOS7/x86/openGauss-Symbol-7.0.0-RC2-CentOS7-x86_64.tar.gz',
     sha_code: '8ceb8dc96af701db112754d8cbf4fe410d330e3441c6264bfa82da332319ed5d',
     docs: {
@@ -1024,7 +1024,7 @@ export default [
   {
     category: 'openGauss Symbol',
     name: 'cm-symbol_7.0.0-RC2',
-    size: '20.MB',
+    size: '28.97MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/CentOS7/x86/openGauss-CM-Symbol-7.0.0-RC2-CentOS7-x86_64.tar.gz',
     sha_code: '3aa211d1695d110e1c19ff6bf9196055681ba7d76e115caf15cba82faf769a74',
     docs: {
