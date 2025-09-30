@@ -1,5 +1,49 @@
 export default [
   {
+    name: '金融业务智慧风控系统',
+    version: '1.0',
+    type: '金融',
+    company: '浙江浙商未来科技有限公司',
+    database: 'openGauss 2.1.0',
+    os: 'Kylin V10 SP3',
+    server: 'Kunpeng 920 V200(TaiShan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%B5%99%E6%B1%9F%E6%B5%99%E5%95%86/V1.0/%E9%87%91%E8%9E%8D%E4%B8%9A%E5%8A%A1%E6%99%BA%E6%85%A7%E9%A3%8E%E6%8E%A7%E7%B3%BB%E7%BB%9F.pdf',
+  },
+  {
+    name: '产业供应链金融服务平台',
+    version: '1.0',
+    type: '金融',
+    company: '浙江浙商未来科技有限公司',
+    database: 'openGauss 2.1.0',
+    os: 'Kylin V10 SP3',
+    server: 'Kunpeng 920 V200(TaiShan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%B5%99%E6%B1%9F%E6%B5%99%E5%95%86/V1.0/%E4%BA%A7%E4%B8%9A%E4%BE%9B%E5%BA%94%E9%93%BE%E9%87%91%E8%9E%8D%E6%9C%8D%E5%8A%A1%E5%B9%B3%E5%8F%B0.pdf',
+  },
+  {
+    name: '经营分析平台',
+    version: '1.0',
+    type: '金融',
+    company: '浙江浙商未来科技有限公司',
+    database: 'openGauss 2.1.0',
+    os: 'Kylin V10 SP3',
+    server: 'Kunpeng 920 V200(TaiShan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%B5%99%E6%B1%9F%E6%B5%99%E5%95%86/V1.0/%E7%BB%8F%E8%90%A5%E5%88%86%E6%9E%90%E5%B9%B3%E5%8F%B0.pdf',
+  },
+  {
+    name: '广电五舟服务器 S627K2',
+    version: '',
+    type: '通用',
+    company: '广州广电五舟科技股份有限公司',
+    database: 'openGauss 5.0.0',
+    os: 'openEuler 20.03',
+    server: '',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%B9%BF%E5%B7%9E%E5%B9%BF%E7%94%B5/%E5%B9%BF%E7%94%B5%E4%BA%94%E8%88%9F%E6%9C%8D%E5%8A%A1%E5%99%A8%20S627K2/Certificate.pdf',
+  },
+  {
     name: '身份认证系统',
     version: '3.0',
     type: '安全',
@@ -35,7 +79,7 @@ export default [
   {
     name: '数据安全一体化平台',
     version: '1.0',
-    type: '医疗',
+    type: '通用',
     company: '易联众信息技术股份有限公司',
     database: 'openGauss 5.0.0',
     os: 'Kylin V10',
