@@ -1149,10 +1149,10 @@ export default [
   },
   {
     category: 'openGauss Tools',
-    name: 'Datakit-All_7.0.0-RC2',
-    size: '788.83MB',
-    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/tools/Datakit/Datakit-All-7.0.0-RC2.tar.gz',
-    sha_code: 'a09f4650a3f7744d8b8765a592ddb0e2185df776d699a5fe9bf88b08cd3f1470',
+    name: 'Datakit',
+    size: '',
+    down_url: '',
+    sha_code: '',
     docs: {
       name: '',
       url: '',
@@ -1160,20 +1160,30 @@ export default [
     architecture: 'AArch64',
     os: 'Linux',
     system: 'Linux (aarch64)',
-  },
-  {
-    category: 'openGauss Tools',
-    name: 'Datakit-Mini_7.0.0-RC2',
-    size: '310.24MB',
-    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/tools/Datakit/Datakit-Mini-7.0.0-RC2.tar.gz',
-    sha_code: '93d50e5ebb70e2b81b5c6d5e15a0d708e643507d9089376df7cefd3ebf3a7a39',
-    docs: {
-      name: '',
-      url: '',
-    },
-    architecture: 'AArch64',
-    os: 'Linux',
-    system: 'Linux (aarch64)',
+    children: [
+      {
+        category: 'openGauss Tools',
+        name: 'Datakit-All_7.0.0-RC2',
+        size: '788.83MB',
+        down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/tools/Datakit/Datakit-All-7.0.0-RC2.tar.gz',
+        sha_code: 'a09f4650a3f7744d8b8765a592ddb0e2185df776d699a5fe9bf88b08cd3f1470',
+        docs: {
+          name: '',
+          url: '',
+        },
+      },
+      {
+        category: 'openGauss Tools',
+        name: 'Datakit-Mini_7.0.0-RC2',
+        size: '310.24MB',
+        down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/tools/Datakit/Datakit-Mini-7.0.0-RC2.tar.gz',
+        sha_code: '93d50e5ebb70e2b81b5c6d5e15a0d708e643507d9089376df7cefd3ebf3a7a39',
+        docs: {
+          name: '',
+          url: '',
+        },
+      },
+    ]
   },
   {
     category: 'openGauss Tools',
@@ -1303,10 +1313,10 @@ export default [
   },
   {
     category: 'openGauss Tools',
-    name: 'Datakit-All_7.0.0-RC2',
-    size: '788.83MB',
-    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/tools/Datakit/Datakit-All-7.0.0-RC2.tar.gz',
-    sha_code: 'a09f4650a3f7744d8b8765a592ddb0e2185df776d699a5fe9bf88b08cd3f1470',
+    name: 'Datakit',
+    size: '',
+    down_url: '',
+    sha_code: '',
     docs: {
       name: '',
       url: '',
@@ -1314,20 +1324,30 @@ export default [
     architecture: 'x86_64',
     os: 'Linux',
     system: 'Linux (x86_64)',
-  },
-  {
-    category: 'openGauss Tools',
-    name: 'Datakit-Mini_7.0.0-RC2',
-    size: '310.24MB',
-    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/tools/Datakit/Datakit-Mini-7.0.0-RC2.tar.gz',
-    sha_code: '93d50e5ebb70e2b81b5c6d5e15a0d708e643507d9089376df7cefd3ebf3a7a39',
-    docs: {
-      name: '',
-      url: '',
-    },
-    architecture: 'x86_64',
-    os: 'Linux',
-    system: 'Linux (x86_64)',
+    children: [
+      {
+        category: 'openGauss Tools',
+        name: 'Datakit-All_7.0.0-RC2',
+        size: '788.83MB',
+        down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/tools/Datakit/Datakit-All-7.0.0-RC2.tar.gz',
+        sha_code: 'a09f4650a3f7744d8b8765a592ddb0e2185df776d699a5fe9bf88b08cd3f1470',
+        docs: {
+          name: '',
+          url: '',
+        },
+      },
+      {
+        category: 'openGauss Tools',
+        name: 'Datakit-Mini_7.0.0-RC2',
+        size: '310.24MB',
+        down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/tools/Datakit/Datakit-Mini-7.0.0-RC2.tar.gz',
+        sha_code: '93d50e5ebb70e2b81b5c6d5e15a0d708e643507d9089376df7cefd3ebf3a7a39',
+        docs: {
+          name: '',
+          url: '',
+        },
+      },
+    ]
   },
   {
     category: 'openGauss Tools',

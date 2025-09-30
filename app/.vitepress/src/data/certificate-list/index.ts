@@ -3,6 +3,14 @@ import { OBS_CERTIFICATION_LINK, OBS_CERTIFICATION_LINK1 } from '@/data/url-conf
 export default {
   zh: [
     {
+      pro: '神通数据库管理系统 V7.0.21',
+      name: '天津神舟通用数据技术有限公司',
+      version: 'openGauss 6.0.0',
+      award: '2025-07-29',
+      expiration: '',
+      certificate: `${OBS_CERTIFICATION_LINK}/%E5%A4%A9%E6%B4%A5%E7%A5%9E%E8%88%9F/%E7%A5%9E%E9%80%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9FV7.0.21/Certificate.pdf`,
+    },
+    {
       pro: '海量数据库管理系统G100 V3.0',
       name: '北京海量数据技术股份有限公司',
       version: 'openGauss 6.0.0',

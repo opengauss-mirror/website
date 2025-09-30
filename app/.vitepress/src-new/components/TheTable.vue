@@ -1,16 +1,30 @@
 <script setup lang="ts">
+import { ref } from 'vue';
+
 defineProps<{
   data: any[];
   columns?: { key: string; label: string; width?: number | string }[];
 }>();
+
+const tableRef = ref();
+
+const handleTableRef = (fn: (ref: any) => void) => {
+  if (tableRef.value) fn(tableRef.value);
+}
+
+defineExpose({
+  handleTableRef
+})
 </script>
 
 <template>
-  <el-table v-bind="$attrs" :data="data">
+  <el-table ref="tableRef" v-bind="$attrs" :data="data">
     <slot>
-      <el-table-column v-for="col in columns" :prop="col.key" :label="col.label" :key="col.key">
+      <el-table-column v-for="col in columns" :prop="col.key" :label="col.label" :key="col.key" :width="col.width ?? 'auto'">
         <template #default="{ row, column }">
-          <slot :row="row" :name="`td_${column.property}`"></slot>
+          <slot :row="row" :name="`td_${column.property}`">
+            {{ row[column.property] }}
+          </slot>
         </template>
       </el-table-column>
     </slot>

@@ -13,6 +13,7 @@ import {
   useMessage,
   ODialog,
   type DialogActionT,
+  OIconChevronRight,
 } from '@opensig/opendesign';
 import TagFilter from '~@/components/TagFilter.vue';
 import IconCopy from '~icons/app/icon-copy2.svg';
@@ -24,14 +25,15 @@ import { doLogin } from '@/shared/login';
 import { useData } from 'vitepress';
 // import { useI18n } from '~@/i18n';
 import { useUserInfoStore } from '@/stores/user';
-import { computed, ref, watchEffect } from 'vue';
+import { computed, nextTick, ref, shallowRef, watch, watchEffect } from 'vue';
 import { useClipboard } from '~@/composables/useClipboard';
 import IconQuestion from '~icons/app/icon-question-mark.svg';
 import { useScreen } from '~@/composables/useScreen';
 import { Ref } from 'vue';
 import { useI18n } from 'vue-i18n';
+import TheTable from '~@/components/TheTable.vue';
 
-const _downloadData = downloadData.slice(0, 10) as (typeof downloadData)[1][];
+const _downloadData = downloadData.filter((item) => item.newLayout) as (typeof downloadData)[1][];
 
 interface FilterT {
   architecture: string;
@@ -78,9 +80,9 @@ const enabledOs = computed(() => matrix.value.get(activeArchitecture.value));
 
 const columns = [
   { key: 'name', label: t('download.TABLE_HEAD[0]') },
-  { key: 'size', label: t('download.TABLE_HEAD[1]') },
-  { key: 'sha_code', label: t('download.TABLE_HEAD[3]') },
-  { key: 'download', label: t('download.TABLE_HEAD[2]') },
+  { key: 'size', label: t('download.TABLE_HEAD[1]'), width: 280 },
+  { key: 'sha_code', label: t('download.TABLE_HEAD[3]'), width: 280 },
+  { key: 'download', label: t('download.TABLE_HEAD[2]'), width: 280 },
 ];
 
 const displayTools = computed(() => {
@@ -94,6 +96,23 @@ watchEffect(() => {
     activeOs.value = osList.value?.[0] || '';
   }
 });
+
+const datakitRowExpanded = ref(false);
+const tableRef = ref();
+const lastExpandedRow = shallowRef();
+watch(displayTools, async () => {
+  if (datakitRowExpanded.value) {
+    await nextTick();
+    expandDatakitRow(lastExpandedRow.value);
+  }
+});
+const expandDatakitRow = (row: any) => {
+  if (!row) return;
+  lastExpandedRow.value = row;
+  tableRef.value.handleTableRef((elTable: any) => {
+    elTable.toggleRowExpansion(row, (datakitRowExpanded.value = !datakitRowExpanded.value));
+  });
+};
 
 // ----------------复制----------------
 const isClipboard = ref(true);
@@ -225,38 +244,51 @@ const collectDownloadData = (name: string) => {
         </OSelect>
       </template>
       <!-- 表格 -->
-      <OTable v-if="gtPadV" :columns="columns" :data="displayTools">
+      <TheTable ref="tableRef" v-if="gtPadV" :columns="columns" :data="displayTools" row-key="name">
         <!-- 软件包类型 -->
         <template #td_name="{ row }">
-          <span>{{ row.name }}</span>
-          <OPopover v-if="row.name.includes('noLSE')" position="top" trigger="hover">
-            <template #target>
-              <OIcon>
-                <IconQuestion />
-              </OIcon>
-            </template>
-            <p class="lse-content">支持ARMv8.1以下芯片，适配飞腾2000和鲲鹏916平台（LSE即大型系统扩展指令集从ARMv8.1开始引入，ARMv8.1以下芯片不支持该特性）</p>
-          </OPopover>
+          <p style="display: inline-flex; align-items: center">
+            <span>{{ row.name }}</span>
+            <OPopover v-if="row.name.includes('noLSE')" position="top" trigger="hover">
+              <template #target>
+                <OIcon>
+                  <IconQuestion />
+                </OIcon>
+              </template>
+              <p class="lse-content">支持ARMv8.1以下芯片，适配飞腾2000和鲲鹏916平台（LSE即大型系统扩展指令集从ARMv8.1开始引入，ARMv8.1以下芯片不支持该特性）</p>
+            </OPopover>
+            <OIcon
+              :class="{ 'row-expand-icon': true, expanded: datakitRowExpanded }"
+              v-if="row.children?.length"
+              @click="expandDatakitRow(row)"
+              style="font-size: 24px"
+              ><OIconChevronRight
+            /></OIcon>
+          </p>
         </template>
         <!-- 完整性校验 -->
         <template #td_sha_code="{ row }">
-          <OLink tag="button" @click="handleUrlCopy(row.sha_code, $event)">
+          <OLink v-if="row.sha_code" tag="button" @click="handleUrlCopy(row.sha_code, $event)">
             SHA256
             <template #suffix>
               <OIcon><IconCopy /></OIcon>
             </template>
           </OLink>
+          <div v-else></div>
         </template>
         <!-- 软件包下载 -->
         <template #td_download="{ row }">
-          <OButton v-if="!userInfoStore.username" variant="outline" color="primary" size="small" @click="changeDownloadAuth">
-            {{ $t('download.BTN_TEXT') }}
-          </OButton>
-          <OButton v-else size="small" :href="row.down_url" @click="collectDownloadData(row.name)" variant="outline" color="primary">
-            {{ $t('download.BTN_TEXT') }}
-          </OButton>
+          <div v-if="row.children?.length"></div>
+          <template v-else>
+            <OButton v-if="!userInfoStore.username" variant="outline" color="primary" size="small" @click="changeDownloadAuth">
+              {{ $t('download.BTN_TEXT') }}
+            </OButton>
+            <OButton v-else size="small" :disabled="row.children?.length" :href="row.down_url" @click="collectDownloadData(row.name)" variant="outline" color="primary">
+              {{ $t('download.BTN_TEXT') }}
+            </OButton>
+          </template>
         </template>
-      </OTable>
+      </TheTable>
       <template v-else>
         <div class="mobile-download-item-card" v-for="item in displayTools" :key="item.name">
           <p class="item-name">{{ item.name }}</p>
@@ -293,6 +325,22 @@ const collectDownloadData = (name: string) => {
 </template>
 
 <style lang="scss" scoped>
+.row-expand-icon {
+  margin-left: 8px;
+  cursor: pointer;
+  transform: rotate(0deg);
+  transition: transform 0.2s;
+  &.expanded {
+    transform: rotate(90deg);
+  }
+}
+:deep(.el-table__placeholder) {
+  display: none;
+}
+:deep(.el-table__expand-icon) {
+  visibility: hidden;
+  position: absolute;
+}
 .mobile-filter-label {
   @include text2;
   margin-bottom: 8px;

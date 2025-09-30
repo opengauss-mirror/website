@@ -68,10 +68,11 @@ const downloadData: DownloadItem[] = [
     ],
   },
   {
-    name: '6.0.2(LTS)',
+    name: '6.0.2 (LTS)',
     newLayout: true,
     isLogin: true,
     data: download602,
+    releaseDate: '2025.08',
     plannedEOL: '2027.09.30',
     desc: 'openGauss 6.0.0 LTS及后续LTS版本发布间隔周期为2年，社区提供3年支持，社区OGSP伙伴提供3年以后维护支持服务。',
     desc_en: 'An LTS version for openGauss 6.0.0 and later is provided with 3 years of community support, followed by additional maintenance support by oGSPs.',
@@ -90,6 +91,7 @@ const downloadData: DownloadItem[] = [
     newLayout: true,
     isLogin: true,
     data: download601,
+    releaseDate: '2025.01',
     plannedEOL: '2027.09.30',
     desc: 'openGauss 6.0.1 LTS 及后续LTS版本社区提供3年维护支持，社区OGSP伙伴提供3年以后维护支持服务。',
     versionCapabilityPath: `${GITCODE_LINK}/opengauss/docs/blob/6.0.0/content/zh/docs/VersionCapability/index.md`,
@@ -124,6 +126,7 @@ const downloadData: DownloadItem[] = [
     name: '5.0.3 (LTS)',
     newLayout: true,
     data: download503,
+    releaseDate: '2024.08',
     plannedEOL: '2026.03.31',
     versionCapabilityPath: `${GITCODE_LINK}/opengauss/docs/blob/5.0.0/content/zh/docs/VersionCapability/index.md`,
     docs_list: [
@@ -155,6 +158,7 @@ const downloadData: DownloadItem[] = [
     name: '5.0.2 (LTS)',
     newLayout: true,
     data: download502,
+    releaseDate: '2024.05',
     plannedEOL: '2026.03.31',
     versionCapabilityPath: `${GITCODE_LINK}/opengauss/docs/blob/5.0.0/content/zh/docs/VersionCapability/index.md`,
     docs_list: [
@@ -170,6 +174,7 @@ const downloadData: DownloadItem[] = [
     name: '5.0.1 (LTS)',
     newLayout: true,
     data: download501,
+    releaseDate: '2023.12',
     plannedEOL: '2026.03.31',
     versionCapabilityPath: `${GITCODE_LINK}/opengauss/docs/blob/5.0.0/content/zh/docs/VersionCapability/index.md`,
     docs_list: [
@@ -217,6 +222,7 @@ const downloadData: DownloadItem[] = [
     name: '3.1.1 (Preview)',
     newLayout: true,
     data: download311,
+    releaseDate: '2022.12',
     plannedEOL: 'End-of-Life',
     docs_list: [
       {
@@ -259,6 +265,8 @@ const downloadData: DownloadItem[] = [
     name: '3.0.6 (LTS)',
     data: download306,
     initPrevious: true,
+    releaseDate: '2024.12',
+    plannedEOL: '2025.03',
     docs_list: [
       {
         name: '发行说明',
@@ -285,6 +293,8 @@ const downloadData: DownloadItem[] = [
   {
     name: '3.0.5 (LTS)',
     data: download305,
+    releaseDate: '2024.01',
+    plannedEOL: '2025.03',
     docs_list: [
       {
         name: '发行说明',
@@ -311,6 +321,8 @@ const downloadData: DownloadItem[] = [
   {
     name: '3.0.3 (LTS)',
     data: download303,
+    releaseDate: '2023.03',
+    plannedEOL: '2024.03',
     docs_list: [
       {
         name: '发行说明',
@@ -388,6 +400,8 @@ const downloadData: DownloadItem[] = [
   {
     name: '2.0.1 (LTS)',
     data: download201,
+    releaseDate: '2021.06',
+    plannedEOL: '2024.03',
     docs_list: [
       {
         name: '发行说明',
@@ -432,6 +446,8 @@ const downloadData: DownloadItem[] = [
   {
     name: '1.1.0 (Preview)',
     data: download110,
+    releaseDate: '2020.12',
+    plannedEOL: '2023.12',
     docs_list: [
       {
         name: '发行说明',
@@ -448,6 +464,8 @@ const downloadData: DownloadItem[] = [
   {
     name: '1.0.1 (LTS)',
     data: download101,
+    releaseDate: '2020.09',
+    plannedEOL: '2023.06',
     docs_list: [
       {
         name: '发行说明',
@@ -464,6 +482,8 @@ const downloadData: DownloadItem[] = [
   {
     name: '1.0.0 (LTS)',
     data: download100,
+    releaseDate: '2020.06',
+    plannedEOL: '2023.06',
     docs_list: [
       {
         name: '发行说明',

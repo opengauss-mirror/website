@@ -12,20 +12,33 @@ import bannerOpenGaussV6Mo from '@/assets/category/home/banner/banner20250408_mo
 import bannerDift from '@/assets/category/home/banner/banner2025040801.jpg';
 import bannerDiftMo from '@/assets/category/home/banner/banner2025040801_mo.jpg';
 
-import banner600Pc from '@/assets/category/home/banner/banner202503.jpg';
-import banner600Mo from '@/assets/category/home/banner/banner202503_mo.jpg';
-
 import banner20250506Pc from '@/assets/category/home/banner/banner20250506Pc.png';
 import banner20250506Mo from '@/assets/category/home/banner/banner20250506Mo.png';
 
 import bannerForumPc from '@/assets/category/home/banner/banner-forum.png';
 import bannerForumMo from '@/assets/category/home/banner/banner-forum_mo.png';
+import banner700RC2 from '@/assets/category/home/banner/banner700_RC2.jpg';
+import banner700RC2Mo from '@/assets/category/home/banner/banner700_RC2_mo.jpg';
 
 import { LEARN_VIDEO_LINK, DOCS_LINK, FORUM_LINK } from '@/data/url-config';
 
 // rightInset:banner右侧插图
 export default {
   zh: [
+    {
+      pcBanner: banner700RC2,
+      moBanner: banner700RC2Mo,
+      link: '/zh/news/2025-09-30/',
+      target: '_blank',
+      title: 'openGauss 7.0.0-RC2 版本正式发布',
+      titleMb: ['openGauss 7.0.0 RC2 \n版本正式发布'],
+      subtitle: '',
+      desc: [''],
+      btn: '',
+      className: 'banner-version',
+      rightInset: '',
+      rightLink: '',
+    },
     {
       pcBanner: bannerForumPc,
       moBanner: bannerForumMo,
@@ -51,20 +64,6 @@ export default {
       desc: [''],
       btn: '查看详情',
       className: 'banner-video',
-      rightInset: '',
-      rightLink: '',
-    },
-    {
-      pcBanner: banner600Pc,
-      moBanner: banner600Mo,
-      link: '/zh/news/2025-03-31/',
-      target: '_blank',
-      title: 'openGauss 7.0.0-RC1 版本正式发布',
-      titleMb: ['openGauss 7.0.0 RC1 \n版本正式发布'],
-      subtitle: '',
-      desc: [''],
-      btn: '',
-      className: 'banner-version',
       rightInset: '',
       rightLink: '',
     },

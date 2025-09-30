@@ -10,15 +10,13 @@ import downloadData from '~@/data/download';
 
 const { t } = useI18n();
 
-const timePattern = /^\d{4}\.\d{2}\.\d{2}$/;
+const timePattern = /^\d{4}\.\d{2}(\.\d{2})?$/;
 const now = new Date();
-const currentYear = now.getFullYear();
-const currentMonth = now.getMonth() + 1;
 const _downloadData = downloadData.map((item) => {
   let isEol = false;
   if (item.plannedEOL && timePattern.test(item.plannedEOL)) {
-    const [y, m] = item.plannedEOL.split('.').map((item) => Number(item));
-    if (currentYear > y && currentMonth > m) {
+    const [y, m, d] = item.plannedEOL.split('.').map((item) => Number(item));
+    if (now > new Date(y, m, d ?? 0)) {
       isEol = true;
     }
   }
