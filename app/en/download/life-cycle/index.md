@@ -24,11 +24,11 @@ import ImgLifeCycle from '~@/assets/category/download/life-cycle.jpg';
 
 ## openGauss社区版本生命周期管理规范
 
-- 长期支持版本（LTS） ：规模上线使用，发布间隔周期为2年，社区提供3年维护支持，OGSP伙伴提供3年以上延长维护支持服务。
+- LTS version: a large-scale rollout version released every 2 years, with 3 years of community support, followed by additional maintenance support by oGSPs.
 
-- 社区创新版本（RCx） ：联创测试使用，发布间隔周期定为6个月，社区提供6个月维护支持。
+- RCx: a collaborative testing version released every 6 months, with 6 months of community support.
 
-创新版本规划及开发的功能特性，将被其对应的LTS大版本进行收编。
+The planned and developed features in RCx will be incorporated into the corresponding LTS version.
 
 <img :src="ImgLifeCycle" alt="life-cycle" />
 
