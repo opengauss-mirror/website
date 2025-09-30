@@ -1,10 +1,10 @@
 ---
 title: 'openGauss 7.0.0-RC2 正式发布'
-date: '2025-09-19'
+date: '2025-09-30'
 tags: ['theme']
 author: 'openGauss'
 category: 'news'
-summary: '教育行业新答卷，海量数据助力甘肃省教育厅全栈国产化实践'
+summary: 'openGauss 7.0.0-RC2 正式发布'
 ---
 
 
