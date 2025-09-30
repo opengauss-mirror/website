@@ -379,7 +379,7 @@ export default [
     name: 'openGauss_7.0.0-RC2 轻量版',
     size: '1.08GB',
     edition: 'lite',
-    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler22.03/x86/openGauss-Lite-Docker-7.0.0-RC2-x86_64.tar.gz',
+    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler22.03/x86/openGauss-Lite-Docker-7.0.0-RC2-x86_64.tar',
     sha_code: '9383cf2df1ea810bb40d8dea4c17cb176c3cbba706c68be91d8a9c17681ab814',
     docs: {
       name: '轻量版容器安装指南',
@@ -392,7 +392,7 @@ export default [
   {
     category: 'openGauss Server',
     name: 'openGauss_7.0.0-RC2 极简版',
-    size: '1.70GB',
+    size: '1.33GB',
     edition: 'simple',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler22.03/arm/openGauss-Docker-7.0.0-RC2-aarch64.tar',
     sha_code: '16a204e817263bce4b2c920da83ee509e3b54fbe274df1e081663a12804f1725',
@@ -407,7 +407,7 @@ export default [
   {
     category: 'openGauss Server',
     name: 'openGauss_7.0.0-RC2 轻量版',
-    size: '1.37GB',
+    size: '1.16GB',
     edition: 'lite',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/openEuler22.03/arm/openGauss-Lite-Docker-7.0.0-RC2-aarch64.tar',
     sha_code: 'c5545a083a77243eb0f0fbaea3b1c608456a6a38a14c70e081c500139cf85c2c',
@@ -1345,7 +1345,7 @@ export default [
   },
   {
     category: 'openGauss Tools',
-    name: 'oGRecorder',
+    name: 'oGRecorder-7.0.0-RC2',
     size: '38.91MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/tools/openGauss-oGRecorder-7.0.0-RC2-openEuler24.03-aarch64.tar.gz',
     sha_code: '28176eb5e71dd911cb5bb91436382dcab9a06ace7876394eedb1c38c742f11d4',
