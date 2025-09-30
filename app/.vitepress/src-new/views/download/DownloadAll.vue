@@ -16,8 +16,10 @@ const _downloadData = downloadData.map((item) => {
   let isEol = false;
   if (item.plannedEOL && timePattern.test(item.plannedEOL)) {
     const [y, m, d] = item.plannedEOL.split('.').map((item) => Number(item));
-    if (now > new Date(y, m, d ?? 0)) {
-      isEol = true;
+    if (!d) {
+      isEol = now > new Date(y, m, 0);
+    } else {
+      isEol = now > new Date(y, m - 1, d);
     }
   }
   return {
@@ -119,7 +121,10 @@ const tableColumns = [
         </p>
         <div class="info">
           <p>{{ $t('download.RELEASE_DATE') }}</p>
-          <p><span class="no-data">--</span></p>
+          <p>
+            <span v-if="item.releaseDate">{{ item.releaseDate }}</span>
+            <span v-else class="no-data">--</span>
+          </p>
           <p>{{ $t('download.EOM_DATE') }}</p>
           <p>
             <span v-if="item.plannedEOL && timePattern.test(item.plannedEOL ?? '')">

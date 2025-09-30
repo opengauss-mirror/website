@@ -35,7 +35,7 @@ const downloadData: DownloadItem[] = [
     isLogin: true,
     data: download700RC2,
     releaseDate: '2025.09.30',
-    plannedEOL: '2026.12.30',
+    plannedEOL: '2026.03.30',
     desc: '社区创新版本联创测试使用，发布间隔周期定为6个月，社区提供6个月维护支持。',
     desc_en: 'RCx: a collaborative testing version released every 6 months, with 6 months of community support.',
     versionCapabilityPath: `${GITCODE_LINK}/opengauss/docs/blob/7.0.0-RC2/content/zh/docs/VersionCapability/index.md`,
@@ -223,7 +223,7 @@ const downloadData: DownloadItem[] = [
     newLayout: true,
     data: download311,
     releaseDate: '2022.12',
-    plannedEOL: 'End-of-Life',
+    plannedEOL: '2023.03',
     docs_list: [
       {
         name: '发行说明',
