@@ -6,8 +6,8 @@ import { useData } from 'vitepress';
 import zhCn from 'element-plus/es/locale/lang/zh-cn';
 import en from 'element-plus/es/locale/lang/en';
 
-import AppHeader from '@/components/header/AppHeader.vue';
-import AppFooter from '@/components/AppFooter.vue';
+import AppHeader from '~@/components/header/AppHeader.vue';
+import AppFooter from '~@/components/AppFooter.vue';
 import CookieNotice from '@/components/CookieNotice.vue';
 
 import LayoutSecurity from '@/layouts/LayoutSecurity.vue';
@@ -19,6 +19,7 @@ import LayoutMigration from '@/layouts/LayoutMigration.vue';
 import LayoutFaq from '@/layouts/LayoutFaq.vue';
 
 import AppFloat from '@/components/AppFloat.vue';
+import AppTour from '~@/components/AppTour.vue';
 
 import categories from '@/shared/category';
 
@@ -61,6 +62,9 @@ const comp = computed(() => {
   </el-config-provider>
   <CookieNotice />
   <AppFooter />
+  <ClientOnly>
+    <AppTour />
+  </ClientOnly>
 </template>
 
 <style lang="scss">
