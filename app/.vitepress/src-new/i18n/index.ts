@@ -2,6 +2,7 @@ import { computed } from 'vue';
 import { createI18n, type I18nOptions } from 'vue-i18n';
 import { useData } from 'vitepress';
 import { getCurrentLocale } from '~@/utils/locale';
+import home from './home';
 
 import common from './common';
 import download from './download';
@@ -15,6 +16,7 @@ const messages = {
     // 业务
     download: download.zh,
     tools: tools.zh,
+    home: home.zh,
   },
   en: {
     // 公共模块
@@ -23,6 +25,7 @@ const messages = {
     // 业务
     download: download.en,
     tools: tools.en,
+    home: home.en,
   },
 };
 

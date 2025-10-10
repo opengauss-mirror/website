@@ -1,31 +1,3 @@
-import feature_png1 from '@/assets/category/home/features/feature_static1.png';
-import feature_png2 from '@/assets/category/home/features/feature_static2.png';
-import feature_png3 from '@/assets/category/home/features/feature_static3.png';
-import feature_png4 from '@/assets/category/home/features/feature_static4.png';
-
-import feature_png1_dark from '@/assets/category/home/features/feature_static1_dark.png';
-import feature_png2_dark from '@/assets/category/home/features/feature_static2_dark.png';
-import feature_png3_dark from '@/assets/category/home/features/feature_static3_dark.png';
-import feature_png4_dark from '@/assets/category/home/features/feature_static4_dark.png';
-
-import feature_static1 from '@/assets/category/home/features/feature_static1.gif';
-import feature_static2 from '@/assets/category/home/features/feature_static2.gif';
-import feature_static3 from '@/assets/category/home/features/feature_static3.gif';
-import feature_static4 from '@/assets/category/home/features/feature_static4.gif';
-
-import feature_static1_dark from '@/assets/category/home/features/feature_static1_dark.gif';
-import feature_static2_dark from '@/assets/category/home/features/feature_static2_dark.gif';
-import feature_static3_dark from '@/assets/category/home/features/feature_static3_dark.gif';
-import feature_static4_dark from '@/assets/category/home/features/feature_static4_dark.gif';
-
-import user from '@/assets/category/home/community/user.svg';
-import userDark from '@/assets/category/home/community/user-dark.svg';
-import osv from '@/assets/category/home/community/osv.svg';
-import osvDark from '@/assets/category/home/community/osv-dark.svg';
-import contributer from '@/assets/category/home/community/contributors.svg';
-import contributerDark from '@/assets/category/home/community/contributors-dark.svg';
-
-import { LEARN_VIDEO_LINK, DATA_LINK } from '@/data/url-config';
 export default {
   HOME_MEETING: '社区会议',
   CHARACTERR_INFO: {
@@ -35,38 +7,21 @@ export default {
       {
         NAME: '高可靠',
         TEXT: '故障切换时间RTO<10s',
-        PNG: feature_png1,
-        PNG_DARK: feature_png1_dark,
-        GIF: feature_static1,
-        GIF_DARK: feature_static1_dark,
       },
       {
         NAME: '高性能',
         TEXT: '两路鲲鹏性能150万tpmC',
-        PNG: feature_png3,
-        PNG_DARK: feature_png3_dark,
-        GIF: feature_static3,
-        GIF_DARK: feature_static3_dark,
       },
       {
         NAME: '高安全',
         TEXT: '端到端全方位安全防护',
-        PNG: feature_png4,
-        PNG_DARK: feature_png4_dark,
-        GIF: feature_static4,
-        GIF_DARK: feature_static4_dark,
       },
       {
         NAME: '易运维',
         TEXT: '基于AI的智能参数调优',
-        PNG: feature_png2,
-        PNG_DARK: feature_png2_dark,
-        GIF: feature_static2,
-        GIF_DARK: feature_static2_dark,
       },
     ],
     DOWN_NAME: '下载openGauss整体概述PPT',
-    DOWN_link: `${LEARN_VIDEO_LINK}/openGauss%20%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84.pptx`,
   },
   COMMUNITY_ACTIVITY: {
     TITLE: '社区动态',
@@ -74,7 +29,6 @@ export default {
       TITLE: 'openGauss社区活力',
       CONTENT: 'openGauss也是一个开源的数据库平台，鼓励社区贡献、合作。',
       VIEW_DETAILS: '查看贡献详情',
-      LINK: `${DATA_LINK}/zh/overview`,
     },
   },
   HOME_EXPLORE: {
@@ -82,14 +36,17 @@ export default {
     LIST: [
       {
         NAME: 'openGauss是什么 ',
+        DESC: 'openGauss是一款全面友好开放，携手伙伴共同打造的企业级开源关系型数据库。',
         PATH: '/docs/5.0.0/docs/GettingStarted/%E4%BA%86%E8%A7%A3openGauss.html',
       },
       {
         NAME: '如何安装部署openGauss ',
+        DESC: 'openGauss支持单机部署和单机HA部署两种部署方式。单机部署时，可在一个主机部署多个数据库实例，但为了数据安全，不建议用户这样部署。单机HA部署支持一台主机和最少一台备机，备机一共最多8台的配置方式。',
         PATH: '/docs/5.0.0/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html',
       },
       {
         NAME: '如何参与openGauss社区贡献',
+        DESC: 'openGauss 是一个开源社区，完全依赖于社区提供友好的开发和协作环境。',
         PATH: '/zh/contribution/',
       },
     ],
@@ -100,22 +57,16 @@ export default {
       {
         ROUND_VALUE: 0,
         ROUND_KEY: 'users',
-        ROUND_IMG: user,
-        ROUND_IMG_DARK: userDark,
         ROUND_TEXT: '用户',
       },
       {
         ROUND_VALUE: 0,
         ROUND_KEY: 'businessosv',
-        ROUND_IMG: osv,
-        ROUND_IMG_DARK: osvDark,
         ROUND_TEXT: '商用版',
       },
       {
         ROUND_VALUE: 0,
         ROUND_KEY: 'contributors',
-        ROUND_IMG: contributer,
-        ROUND_IMG_DARK: contributerDark,
         ROUND_TEXT: '贡献者',
       },
     ],
