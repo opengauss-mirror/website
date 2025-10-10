@@ -2,16 +2,19 @@
 import { computed } from 'vue';
 
 import { useI18n } from '~@/i18n';
-import { ODivider, OPopover } from '@opensig/opendesign';
+import { ODivider } from '@opensig/opendesign';
 import { getYearByOffset } from '@/shared/utils';
 
 import ContentWrapper from '~@/components/ContentWrapper.vue';
 import footerLogo from '~@/assets/category/footer/footer-logo.svg';
 import wechat from '~@/assets/category/footer/wechat.svg';
 import qrCode from '~@/assets/category/footer/wechat.png';
+
 import { useScreen } from '@/shared/useScreen';
+import { useData } from 'vitepress';
 
 const i18n = useI18n();
+const { lang } = useData();
 const { gtPadV, lePadV } = useScreen();
 
 const footerNavs = computed(() => i18n.value.footer.FOOTER_NAVS);
@@ -23,7 +26,7 @@ const optionsData = computed(() => i18n.value.footer.OPTIONS);
   <footer class="footer" id="tour_headerNav_footer">
     <ContentWrapper class="footer-wrap">
       <div class="footer-navs">
-        <div v-for="item in footerNavs" :key="item.NAME" class="footer-navs-section">
+        <div v-for="item in footerNavs" :key="item.NAME" class="footer-navs-section" :class="`footer-navs-section-${lang}`">
           <p class="section-title">{{ item.NAME }}</p>
 
           <div class="section-links">
@@ -176,6 +179,13 @@ a {
         line-height: var(--e-line-height-h7);
       }
     }
+
+    .footer-navs-section-en {
+      & + .footer-navs-section-en {
+        margin-left: 60px;
+      }
+
+    }
   }
 
   @include respond-to('pad_h') {
@@ -219,6 +229,12 @@ a {
     margin-right: 24px;
   }
 
+  .friendly-link-box {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+
   .friendly-link-item {
     color: rgba(255, 255, 255, 0.6);
     margin-right: 24px;
@@ -254,7 +270,13 @@ a {
       margin-bottom: 12px;
     }
 
+    .friendly-link-box {
+      margin-top: -4px;
+      margin-right: -8px;
+    }
+
     .friendly-link-item {
+      margin-top: 4px;
       margin-right: 8px;
     }
   }
@@ -392,6 +414,7 @@ a {
   flex: 1;
   display: flex;
   align-items: center;
+  justify-content: right;
 
   .code-box {
     display: flex;
@@ -413,14 +436,14 @@ a {
       padding: 4px;
       border-radius: 4px;
       background-color: var(--o-color-fill2);
-      display: none;
+      display: block;
 
       &::after {
         border: 10px solid transparent;
         content: '';
         border-top-color: #fff;
         position: absolute;
-        bottom: -19px;
+        bottom: -15px;
         left: 50%;
         transform: translateX(-50%);
         display: block;
