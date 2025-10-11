@@ -1345,8 +1345,8 @@ export default [
   },
   {
     category: 'openGauss Tools',
-    name: 'oGRecorder-7.0.0-RC2',
-    size: '38.91MB',
+    name: 'oGRecorder_7.0.0-RC2',
+    size: '37.03MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC2/tools/openGauss-oGRecorder-7.0.0-RC2-openEuler24.03-aarch64.tar.gz',
     sha_code: '28176eb5e71dd911cb5bb91436382dcab9a06ace7876394eedb1c38c742f11d4',
     docs: {
