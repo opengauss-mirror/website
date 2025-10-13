@@ -57,7 +57,7 @@ const comp = computed(() => {
       <SeoBox :seo-data="seoConfig[lang]?.home" />
       <component :is="comp" v-if="isCustomLayout"></component>
       <Content v-else />
-      <AppFloat />
+      <!-- <AppFloat /> -->
     </main>
   </el-config-provider>
   <CookieNotice />
@@ -72,7 +72,8 @@ const comp = computed(() => {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --layout-content-max-width: 1544px;
+  // --layout-content-max-width: 1544px;
+  --layout-content-max-width: 1488px;
   --layout-content-padding: 64px;
   --layout-header-height: 80px;
 

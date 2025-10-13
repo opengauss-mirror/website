@@ -1,0 +1,872 @@
+<script setup lang="ts">
+import { ref, onMounted, watch, computed, watchEffect, shallowRef } from 'vue';
+
+import { useCommon } from '@/stores/common';
+
+import { OIcon, OCollapse, OCollapseItem, OTab, OLink, OTabPane, ODivider, OScroller, OIconChevronLeft, OIconChevronRight, debounce } from '@opensig/opendesign';
+
+import IconAll from '~icons/app-new/icon-all.svg';
+import IconEvent from '~icons/app-new/icon-event.svg';
+import IconSummit from '~icons/app-new/icon-summit.svg';
+import IconMeet from '~icons/app-new/icon-meet.svg';
+
+import notFoundImg_light from '~@/assets/illustrations/404.png';
+import notFoundImg_dark from '~@/assets/illustrations/404_dark.png';
+
+import AppSection from '~@/components/AppSection.vue';
+import { useData } from 'vitepress';
+import eventsAllData from '@/data/events';
+import { request } from '~@/shared/axios';
+import dayjs from 'dayjs';
+
+const TODAY = new Date();
+const TODAY_FORMATTED = dayjs(TODAY).format('YYYY/MM/DD');
+
+const commonStore = useCommon();
+const { lang } = useData();
+
+const recentMeetingDates = ref([] as string[]);
+type EventType = (typeof eventsAllData)['zh' | 'en'][number] & { type: 'event'; id: number };
+
+const eventsData = computed(() => {
+  return (lang.value === 'zh' ? eventsAllData.zh : eventsAllData.en)
+    .filter((item) => Boolean(item.date))
+    .reduce((map, item, index) => {
+      const cache = map.get(item.date!);
+      if (!cache) {
+        return map.set(item.date!, [{ ...item, type: 'event', id: index }]);
+      }
+      cache.push({ ...item, type: 'event', id: index });
+      return map;
+    }, new Map<string, EventType[]>());
+});
+
+// 当前选择日期的会议事件
+const currentCalendarData = shallowRef<Record<string, any>[]>([]);
+const selectedDate = ref(TODAY);
+// 当前选择日期字符串
+const selectedDateStr = computed(() => dayjs(selectedDate.value).format('YYYY-MM-DD'));
+
+const updateCurrentDayMeetings = (date: string) => {
+  currentCalendarData.value = [];
+  if (eventsData.value.has(selectedDateStr.value)) {
+    currentCalendarData.value.push(...eventsData.value.get(selectedDateStr.value)!);
+  }
+  if (recentMeetingDates.value.includes(date)) {
+    request
+      .get(`/api-meeting/api/v1/meeting/meeting/?date=${date}`)
+      .then((res) => res.data?.data ?? [])
+      .then((res) => {
+        if (Array.isArray(res)) currentCalendarData.value = [...res, ...currentCalendarData.value];
+      });
+  }
+}
+
+watch(selectedDateStr, updateCurrentDayMeetings);
+
+const activeName = ref<number[]>([]);
+const i18n = {
+  SIG_GROUP: 'SIG组:',
+  NEW_DATE: '最新日程：',
+  EMPTY_TEXT: '当日没有活动，敬请期待',
+  LEARN_MORE: '查看详情',
+};
+// 日历展示时间限制
+const limitTime = '2021 年 1 月';
+const tabList = [
+  {
+    label: '全部',
+    value: 'all',
+    icon: IconAll,
+  },
+  {
+    label: '会议',
+    value: 'meetings',
+    icon: IconMeet,
+  },
+  {
+    label: '活动',
+    value: 'event',
+    icon: IconEvent,
+  },
+  {
+    label: '峰会',
+    value: 'summit',
+    icon: IconSummit,
+  },
+];
+const meetingFields = [
+  { label: '会议详情', key: 'agenda' },
+  { label: '发起人', key: 'sponsor' },
+  { label: '会议时间', key: 'time' },
+  { label: '会议平台', key: 'platform' },
+  { label: '会议ID', key: 'mid' },
+  { label: '会议ID', key: 'mid' },
+  { label: '会议链接', key: 'join_url', isLink: true },
+  { label: 'Etherpad链接', key: 'etherpad', isLink: true },
+  { label: '起始日期', key: 'date' }, // event
+  { label: '活动地点', key: 'location' }, // event
+];
+const tabType = ref(tabList[0].value);
+const calendarRef = ref();
+const calendarHeight = ref<string>('407px');
+const isLimit = ref(false);
+
+const displayCalendarData = computed(() => {
+  if (tabType.value === 'all') return currentCalendarData.value;
+  return currentCalendarData.value.filter((item) => tabType.value === item.type);
+});
+
+const selectDate = (val: string, date: string) => {
+  if (date === limitTime && val === 'prev-month') {
+    isLimit.value = true;
+    return;
+  }
+  isLimit.value = false;
+  calendarRef.value.selectDate(val);
+};
+
+const getMeetingPlatformName = (key: string) => {
+  switch (key) {
+    case 'welink':
+      return 'WeLink';
+    case 'zoom':
+      return 'Zoom';
+    case 'tencent':
+      return '腾讯会议';
+    default:
+      return key;
+  }
+};
+
+const removeLeadingZero = (str: string) => {
+  // 使用正则表达式匹配以 0 开头的字符串，然后去除开头的 0
+  return str.replace(/^0+(?=\d)/, '');
+};
+
+const watchChange = (element: HTMLElement) => {
+  const observe = new MutationObserver(function () {
+    calendarHeight.value = `${element.offsetHeight - 2}px`;
+  });
+  observe.observe(element, {
+    childList: true,
+    subtree: true,
+    characterData: true,
+  });
+};
+
+const getRecentMeetingDates = async () => {
+  recentMeetingDates.value = await request
+    .get(`/api-meeting/api/v1/meeting/meeting_date/?date=${selectedDateStr.value}`)
+    .then((res) => {
+      if (Array.isArray(res.data?.data)) {
+        return res.data.data;
+      }
+      return [];
+    })
+    .catch(() => []);
+};
+
+onMounted(async () => {
+  // 设置右侧 日程列表高度
+  const tbody = document.querySelector('.calendar-body .el-calendar__body') as HTMLElement;
+  if (tbody) {
+    watchChange(tbody);
+    calendarHeight.value = `${tbody.offsetHeight - 2}px`;
+  }
+
+  if (eventsData.value.has(selectedDateStr.value)) {
+    currentCalendarData.value.push(...eventsData.value.get(selectedDateStr.value)!);
+  }
+
+  // 获取近期有会议的日期
+  await getRecentMeetingDates();
+
+  if (recentMeetingDates.value.includes(selectedDateStr.value)) {
+    const meetingData = await request
+      .get(`/api-meeting/api/v1/meeting/meeting/?date=${selectedDateStr.value}`)
+      .then((res) => {
+        if (Array.isArray(res.data?.data)) {
+          return res.data.data;
+        }
+        return [];
+      })
+      .catch(() => []);
+    currentCalendarData.value = [...meetingData, ...currentCalendarData.value];
+  }
+});
+</script>
+<template>
+  <AppSection title="openEuler开发者日历" class="home-calendar" ref="container">
+    <div class="calendar-body">
+      <el-calendar ref="calendarRef" class="calender" v-model="selectedDate">
+        <template #header="{ date }">
+          <div class="left-title">
+            <OIcon @click="selectDate('prev-month', date)">
+              <OIconChevronLeft :class="{ disable: isLimit }"></OIconChevronLeft>
+            </OIcon>
+            <span class="month-date">{{ date }}</span>
+            <OIcon @click="selectDate('next-month', date)">
+              <OIconChevronRight></OIconChevronRight>
+            </OIcon>
+          </div>
+          <div class="right-title">
+            {{ i18n.NEW_DATE }}
+            <span>{{ TODAY_FORMATTED }}</span>
+          </div>
+        </template>
+        <template #date-cell="{ data }">
+          <div class="out-box" :class="{ 'has-calender': recentMeetingDates.includes(data.day) }">
+            <div class="day-box">
+              <p class="date-calender">
+                {{ removeLeadingZero(data.day.split('-').at(-1) || '') }}
+              </p>
+              <div class="icon-box">
+                <OIcon class="calendar-icon" type="meeting" v-if="(tabType === 'all' || tabType === 'meetings') && recentMeetingDates.includes(data.day)">
+                  <IconMeet></IconMeet>
+                </OIcon>
+                <!-- <OIcon class="summit" v-if="tabType === 'all' || tabType === 'summit' /* && getSummitHighlight(data.day, summitData) */">
+                  <IconSummit></IconSummit>
+                </OIcon> -->
+                <OIcon class="calendar-icon" type="event" v-if="(tabType === 'all' || tabType === 'activity') && eventsData.has(data.day)">
+                  <IconEvent></IconEvent>
+                </OIcon>
+              </div>
+            </div>
+          </div>
+        </template>
+      </el-calendar>
+      <div class="detail-list">
+        <div class="current-day">
+          {{ i18n.NEW_DATE }}
+          <span>{{ selectedDateStr }}</span>
+        </div>
+        <div class="right-title">
+          <OTab v-model="tabType" :line="false">
+            <OTabPane v-for="item in tabList" :key="item.value" :value="item.value">
+              <template #nav>
+                <OIcon>
+                  <component :is="item.icon"></component>
+                </OIcon>
+                {{ item.label }}
+              </template>
+            </OTabPane>
+          </OTab>
+        </div>
+
+        <OScroller class="meeting-list" show-type="hover" size="small">
+          <OCollapse v-if="displayCalendarData.length" v-model="activeName" accordion :style="{ '--collapse-padding': '0' }">
+            <OCollapseItem v-for="calendarData in displayCalendarData" :key="calendarData.id" :value="calendarData.id">
+              <template #title>
+                <div class="meet-title" :title="calendarData.topic || calendarData.title">
+                  <OIcon class="calendar-icon" :type="calendarData.type || 'meeting'">
+                    <IconSummit v-if="calendarData.type === 'summit'"></IconSummit>
+                    <IconEvent v-else-if="calendarData.type === 'event'"></IconEvent>
+                    <IconMeet v-else></IconMeet>
+                  </OIcon>
+                  <div class="text">{{ calendarData.topic || calendarData.title }}</div>
+                </div>
+                <div class="meet-info">
+                  <span v-if="calendarData.start">{{ calendarData.start }} - {{ calendarData.end }}</span>
+                  <span v-else>{{ calendarData.date }}</span>
+                  <ODivider direction="v" />
+                  <span v-if="calendarData.location">{{ calendarData.location }}</span>
+                  <div v-if="calendarData.group_name">{{ i18n.SIG_GROUP }} {{ calendarData.group_name }}</div>
+                  <div v-if="calendarData.activity_type">{{ calendarData.activity_type }}</div>
+                </div>
+                <OLink v-if="calendarData.type" :href="calendarData.link" target="_blank">
+                  {{ i18n.LEARN_MORE }}
+                  <template #suffix>
+                    <OIcon><OIconChevronRight /> </OIcon>
+                  </template>
+                </OLink>
+              </template>
+              <div class="calendar-info">
+                <template v-for="field in meetingFields" :key="field.key">
+                  <div class="info-item" v-if="calendarData[field.key]">
+                    <div class="item-title">{{ field.label }}:</div>
+                    <a v-if="field.isLink" :href="calendarData[field.key]" target="_blank">
+                      {{ calendarData[field.key] }}
+                    </a>
+                    <p v-else-if="field.key === 'time' && calendarData.start">{{ calendarData.start }} - {{ calendarData.end }}</p>
+                    <p v-else>
+                      {{ field.key === 'platform' ? getMeetingPlatformName(calendarData[field.key]) : calendarData[field.key] }}
+                    </p>
+                  </div>
+                </template>
+              </div>
+            </OCollapseItem>
+          </OCollapse>
+          <div v-else class="empty">
+            <img v-if="commonStore.theme === 'light'" :src="notFoundImg_light" alt="" />
+            <img v-else :src="notFoundImg_dark" alt="" />
+            <p>{{ i18n.EMPTY_TEXT }}</p>
+          </div>
+        </OScroller>
+      </div>
+    </div>
+  </AppSection>
+</template>
+<style lang="scss" scoped>
+.calendar-icon {
+  color: inherit;
+  &[type="meeting"] {
+    background-color: var(--o-color-primary1);
+    color: #fff;
+    z-index: 3;
+  }
+  &[type="summit"] {
+    background-color: #3422ff;
+    color: #fff;
+    z-index: 2;
+  }
+  &[type="event"] {
+    background-color: #ffa122;
+    color: #fff;
+    z-index: 1;
+  }
+}
+.o-link {
+  --link-icon-size: 16px;
+}
+
+.home-calendar {
+  :deep(.section-body) {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+  }
+  .calendar-body {
+    display: flex;
+    margin-top: var(--o-gap-t2c);
+    border-radius: var(--o-radius-xs);
+    background-color: var(--o-color-fill2);
+    overflow: hidden;
+    @include respond-to('<=pad_v') {
+      margin-top: 12px;
+      background-color: transparent;
+      flex-direction: column;
+    }
+    :deep(.calender) {
+      width: 56%;
+      --el-calendar-borde: none;
+      --el-calendar-selected-bg-color: none;
+      @include respond-to('<=pad_v') {
+        width: 100%;
+        flex-direction: column;
+        background-color: var(--o-color-fill2);
+        border-radius: var(--o-radius-xs);
+      }
+      .el-calendar__header {
+        height: 60px;
+        padding: 14px 24px;
+        border-bottom: 1px solid var(--o-color-control4);
+        @include respond-to('<=pad_v') {
+          justify-content: center;
+          padding: 16px 16px 12px;
+          height: auto;
+          border-bottom: none;
+        }
+        td {
+          border: none;
+        }
+        .left-title {
+          display: flex;
+          align-items: center;
+          @include text2;
+          .o-icon {
+            cursor: pointer;
+            font-size: 24px;
+          }
+          .month-date {
+            font-weight: 500;
+            margin: 0 4px;
+          }
+          .date {
+            color: var(--o-color-primary1);
+          }
+          .o-icon {
+            font-size: 24px;
+            margin-right: 8px;
+          }
+        }
+        .right-title {
+          display: flex;
+          align-items: center;
+          @include text2;
+          color: var(--o-color-info2);
+          @include respond-to('<=pad_v') {
+            display: none;
+          }
+        }
+      }
+      .el-calendar__body {
+        padding: 12px 24px 32px;
+        border-right: 1px solid var(--o-color-control4);
+        thead {
+          th {
+            padding: 12px 0 16px 20px;
+            text-align: left;
+            color: var(--o-color-info3);
+            @include text1;
+            @include respond-to('<=pad_v') {
+              padding: 0;
+              text-align: center;
+            }
+          }
+        }
+        td:first-child {
+          .el-calendar-day {
+            margin-left: 0 !important;
+          }
+        }
+        tr:last-child {
+          .el-calendar-day {
+            margin-bottom: 0 !important;
+          }
+        }
+        @include respond-to('<=pad_v') {
+          border: none;
+          padding: 0 16px 16px;
+          thead {
+            background-color: var(--o-color-control4-light);
+            overflow: hidden;
+            th {
+              padding: 9px 0;
+            }
+            th:first-child {
+              border-top-left-radius: var(--o-radius-xs);
+              border-bottom-left-radius: var(--o-radius-xs);
+            }
+            th:last-child {
+              border-top-right-radius: var(--o-radius-xs);
+              border-bottom-right-radius: var(--o-radius-xs);
+            }
+          }
+          tr:last-child {
+            .out-box {
+              margin-bottom: 0 !important;
+            }
+          }
+        }
+      }
+      td {
+        border: none;
+      }
+      .el-calendar-day {
+        padding: 0;
+        margin-left: 8px;
+        margin-bottom: 8px;
+        max-width: 100px;
+        height: 64px;
+        color: var(--o-color-info1);
+        @include respond-to('<=pad') {
+          height: fit-content;
+        }
+        @include respond-to('<=pad_v') {
+          display: flex;
+          justify-content: center;
+          padding: 0;
+          height: fit-content;
+        }
+
+        .out-box {
+          position: relative;
+          border-radius: var(--o-radius-xs);
+          padding: 6px 12px;
+          width: 100%;
+          height: 100%;
+          background-color: var(--o-color-control2-light);
+          border: 1px solid transparent;
+          @include tip1;
+          @include hover {
+            background-color: var(--o-color-control3-light);
+            @include respond-to('<=pad_v') {
+              @include hover {
+                background-color: inherit;
+                border: 1px solid transparent;
+              }
+            }
+          }
+          .day-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+          }
+          .icon-box {
+            display: flex;
+            margin-top: 4px;
+            color: var(--o-color-white);
+            height: 20px;
+            .o-icon {
+              flex-shrink: 0;
+              position: relative;
+              border-radius: 50%;
+              padding: 2px;
+              width: 20px;
+              height: 20px;
+              font-size: 20px;
+              margin-left: -6px;
+              @include respond-to('<=pad_v') {
+                height: 6px;
+                width: 6px;
+                margin-left: -2px;
+              }
+              &:first-child {
+                margin: 0;
+              }
+            }
+          }
+          @include respond-to('<=pad_v') {
+            background-color: transparent;
+            padding: 0;
+            margin: 6px 8px;
+            text-align: center;
+            width: 24px;
+            height: 24px;
+            .day-box {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              font-size: 14px;
+              line-height: 22px;
+            }
+            .icon-box {
+              display: flex;
+              justify-content: center;
+              margin-top: 0;
+              position: absolute;
+              left: 50%;
+              bottom: -2px;
+              height: 6px;
+              transform: translate(-50%, 100%);
+            }
+            .o-icon {
+              width: 6px;
+              height: 6px;
+              svg {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+      .is-selected {
+        .out-box {
+          background-color: var(--o-color-control3-light);
+          border: 1px solid var(--o-color-primary1);
+          @include respond-to('<=pad_v') {
+            background-color: transparent;
+            border: 1px solid transparent;
+            .date-calender {
+              position: relative;
+              color: var(--o-color-white);
+              z-index: 1;
+              &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                height: 24px;
+                width: 40px;
+                background-color: var(--o-color-primary1);
+                border-radius: var(--o-radius-l);
+                z-index: -1;
+              }
+            }
+          }
+        }
+      }
+      .is-today {
+        .date-calender {
+          $size: 32px;
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: fit-content;
+          height: 24px;
+          line-height: 24px;
+          z-index: 1;
+          &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: $size;
+            height: $size;
+            background-color: var(--o-color-control3-light);
+            border-radius: 50%;
+            z-index: -1;
+          }
+          @include respond-to('<=pad_v') {
+            height: auto;
+            width: auto;
+            &::after {
+              content: '';
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              height: 24px;
+              width: 40px;
+              background-color: var(--o-color-control1-light);
+              border-radius: var(--o-radius-l);
+              z-index: -1;
+            }
+          }
+        }
+      }
+    }
+    .detail-list {
+      width: 44%;
+      @include respond-to('<=pad_v') {
+        margin-top: 12px;
+        background-color: var(--o-color-fill2);
+        width: 100%;
+        border-radius: var(--o-radius-xs);
+      }
+      @include respond-to('>pad_v') {
+        .current-day {
+          display: none;
+        }
+      }
+      @include respond-to('<=pad_v') {
+        .current-day {
+          @include text2;
+          display: flex;
+          margin: 16px 16px 12px;
+          padding: 7px 12px;
+          justify-content: center;
+          border-radius: var(--o-radius-s);
+          background-color: var(--o-color-control4-light);
+        }
+      }
+      .o-tab {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        height: 60px;
+        border-bottom: 1px solid var(--o-color-control4);
+        @include respond-to('pad_v-laptop') {
+          --tab-nav-padding: 0 0 14px;
+        }
+        @include respond-to('<=pad_v') {
+          height: auto;
+          .o-icon {
+            display: none;
+          }
+        }
+      }
+      $icon-size: 24px;
+
+      .meet-title {
+        display: flex;
+        align-items: center;
+        color: var(--o-color-info1);
+        @include text2;
+        .o-icon {
+          flex-shrink: 0;
+          padding: 2px;
+          border-radius: 50%;
+          overflow: hidden;
+          // color: var(--o-color-white);
+          margin-right: 12px;
+          width: 24px;
+          height: 24px;
+          font-size: 24px;
+          @include respond-to('<=pad_v') {
+            font-size: 20px;
+            width: 20px;
+            height: 20px;
+          }
+        }
+        .text {
+          @include text-truncate(1);
+          display: block;
+          width: 100%;
+        }
+      }
+      .meet-info {
+        margin-left: calc($icon-size + 12px);
+        margin-top: 8px;
+        display: flex;
+        align-items: center;
+        @include tip1;
+        color: var(--o-color-info3);
+        text-decoration: none;
+        @include respond-to('<=pad_v') {
+          margin-left: 32px;
+        }
+        .o-divider {
+          @include tip1;
+        }
+      }
+      .o-link {
+        font-weight: 400;
+        font-size: var(--o-font_size-tip1);
+        line-height: var(--o-line_height-tip1);
+        margin-left: calc($icon-size + 12px);
+        @include respond-to('<=pad_v') {
+          margin-left: 32px;
+          padding: 0;
+        }
+      }
+    }
+    .meeting-list {
+      height: v-bind('calendarHeight');
+      @include respond-to('<=pad_v') {
+        height: auto;
+      }
+      .empty {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        padding: 32px;
+        img {
+          max-width: 165px;
+        }
+        p {
+          @include text1;
+          color: var(--o-color-info3);
+          margin-top: 16px;
+        }
+      }
+    }
+    :deep(.o-collapse) {
+      .o-collapse-item {
+        position: relative;
+        border-top: none;
+        &::after {
+          position: absolute;
+          content: '';
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: calc(100% - 2 * 24px);
+          height: 1px;
+          background-color: var(--collapse-division-color);
+        }
+        @include hover {
+          .text {
+            color: var(--o-color-primary1);
+          }
+        }
+        @include respond-to('<=pad_v') {
+          &::after {
+            width: calc(100% - 2 * 16px);
+          }
+          &:last-child {
+            &::after {
+              display: none;
+            }
+          }
+        }
+      }
+      .o-collapse-item-icon {
+        height: min-content;
+      }
+      .o-collapse-item-header {
+        align-items: center;
+        padding: 16px 24px;
+        @include respond-to('<=pad_v') {
+          padding: 12px 16px;
+        }
+      }
+      .o-collapse-item-body {
+        background-color: var(--o-color-fill3);
+        margin-bottom: 0;
+        a {
+          word-break: break-all;
+        }
+      }
+    }
+
+    .calendar-info {
+      display: flex;
+      @include tip1;
+      color: var(--o-color-info3);
+      flex-direction: column;
+      padding: 16px 60px;
+      @include respond-to('<=pad_v') {
+        padding: 12px 16px;
+      }
+      .info-item {
+        display: flex;
+        margin-top: 8px;
+        .item-title {
+          min-width: 110px;
+        }
+      }
+      .info-item:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+@include in-dark {
+  .home-calendar {
+    .calendar-body {
+      :deep(.o-collapse) {
+        .o-collapse-item-body {
+          background-color: #2b2b2f;
+        }
+      }
+    }
+  }
+}
+
+.cube-1,
+.cube-2 {
+  position: absolute;
+  top: -104px;
+  left: -110px;
+  width: 320px;
+  z-index: -1;
+  @include respond-to('laptop') {
+    width: 327px;
+    top: -180px;
+    left: -210px;
+  }
+  @include respond-to('pad_h') {
+  }
+  @include respond-to('<=pad_v') {
+    width: 84px;
+    top: -50px;
+    left: -4px;
+  }
+  @include respond-to('phone') {
+    width: 54px;
+    top: -32px;
+    left: 3px;
+  }
+}
+.cube-2 {
+  left: inherit;
+  top: inherit;
+  width: 380px;
+  bottom: -181px;
+  right: -220px;
+  @include respond-to('laptop') {
+    width: 400px;
+    bottom: -200px;
+    right: -240px;
+  }
+  @include respond-to('pad_h') {
+    right: -140px;
+    bottom: -150px;
+  }
+  @include respond-to('<=pad_v') {
+    width: 71px;
+    bottom: -40px;
+    right: -8px;
+  }
+}
+</style>
