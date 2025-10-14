@@ -180,9 +180,6 @@ const linkClick = () => {
   align-items: center;
   flex: 1;
   height: 100%;
-  &.ru {
-    display: none;
-  }
 
   .header-nav {
     flex: 1;
@@ -191,14 +188,17 @@ const linkClick = () => {
     position: fixed;
     left: 0;
     overflow: hidden;
-    top: 48px;
+    top: 56px;
     height: calc(100vh - 48px);
     transform: translateX(-130%);
-
     transition-duration: 0.333s;
     transition-property: all;
     transition-timing-function: cubic-bezier(0.5, 0, 0.84, 0.25);
     display: block;
+
+    @include respond-to('<=pad_v') {
+      top: 48px;
+    }
 
     &.active {
       opacity: 1;
@@ -211,7 +211,7 @@ const linkClick = () => {
   position: absolute;
   bottom: 36px;
   left: 0;
-  width: 99px;
+  width: 160px;
 
   display: flex;
   height: auto;
@@ -225,7 +225,7 @@ const linkClick = () => {
   }
 
   .header-tool-code {
-    width: 99px;
+    width: 160px;
     @include nav-item;
     @include h4;
   }
@@ -236,8 +236,8 @@ const linkClick = () => {
   background-color: var(--o-color-fill2);
   top: 0;
   left: 0;
-  width: calc(100% - 99px);
-  transform: translateX(99px);
+  width: calc(100% - 160px);
+  transform: translateX(160px);
   height: 100%;
   z-index: 190;
 
@@ -329,7 +329,7 @@ const linkClick = () => {
 .o-nav {
   height: 100%;
   position: relative;
-  width: 99px;
+  width: 160px;
   background: var(--o-color-fill1);
   display: flex;
   flex-direction: column;

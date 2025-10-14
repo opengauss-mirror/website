@@ -15,7 +15,7 @@ import { useCommon } from '@/stores/common';
 import { useScreen } from '~@/composables/useScreen';
 
 const { lang } = useData();
-const { lePadV } = useScreen();
+const { lePadV, lePad } = useScreen();
 const commonStore = useCommon();
 const langShow = ref(['zh', 'en']);
 
@@ -38,7 +38,7 @@ const mobileClick = () => {
 <template>
   <header class="app-header" :class="[{ dark: commonStore.theme === 'dark' }]">
     <ContentWrapper class="app-header-wrap">
-      <div v-if="lePadV" class="menu-icon">
+      <div v-if="lePad" class="menu-icon">
         <div class="icon" @click="menuPanel">
           <OIcon>
             <IconMenu v-if="!menuShow" />
@@ -52,7 +52,7 @@ const mobileClick = () => {
       </a>
 
       <ClientOnly>
-        <ItemNavMobile v-if="lePadV" :lang-options="langShow" :menuShow="menuShow" @link-click="mobileClick" />
+        <ItemNavMobile v-if="lePad" :lang-options="langShow" :menuShow="menuShow" @link-click="mobileClick" />
 
         <ItemNav v-else />
       </ClientOnly>
