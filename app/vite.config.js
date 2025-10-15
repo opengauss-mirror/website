@@ -76,6 +76,9 @@ export default defineConfig({
       '/api-meeting/': {
         target: 'https://opengauss-meeting-center.test.osinfra.cn/',
         changeOrigin: true,
+        headers: {
+          Referer: 'https://opengauss.test.osinfra.cn/',
+        },
         rewrite: (path) => path.replace(/^\/api-meeting/, ''),
       },
       '/api-search/': {

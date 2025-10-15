@@ -1,0 +1,20 @@
+@use './date-picker' as *;
+@use './form.scss' as *;
+@use './select.scss' as *;
+@use './input.scss' as *;
+@use './popper.scss' as *;
+
+[data-o-theme='dark'] div.is-dark {
+  --el-bg-color-overlay: #1d1e1f;
+  --el-border-color-light: #414243;
+  --el-border-color-lighter: #363637;
+  --el-disabled-border-color: #414243;
+  --el-text-color-regular: #cfd3dc;
+  --el-text-color-primary: #1d1e1f;
+  --el-fill-color-light: #262727;
+  --el-fill-color-lighter: #1d1d1d;
+
+  .el-date-picker {
+    --el-datepicker-icon-color: #e5eaf3;
+  }
+}

@@ -1,9 +1,22 @@
 <script setup lang="ts">
 import { ref, onMounted, watch, computed, watchEffect, shallowRef } from 'vue';
 
-import { useCommon } from '@/stores/common';
+import { useCommon, useMeeting } from '@/stores/common';
 
-import { OIcon, OCollapse, OCollapseItem, OTab, OLink, OTabPane, ODivider, OScroller, OIconChevronLeft, OIconChevronRight, debounce } from '@opensig/opendesign';
+import {
+  OIcon,
+  OCollapse,
+  OCollapseItem,
+  OTab,
+  OLink,
+  OTabPane,
+  ODivider,
+  OScroller,
+  OIconChevronLeft,
+  OIconChevronRight,
+  OButton,
+  useMessage,
+} from '@opensig/opendesign';
 
 import IconAll from '~icons/app-new/icon-all.svg';
 import IconEvent from '~icons/app-new/icon-event.svg';
@@ -13,17 +26,21 @@ import IconMeet from '~icons/app-new/icon-meet.svg';
 import notFoundImg_light from '~@/assets/illustrations/404.png';
 import notFoundImg_dark from '~@/assets/illustrations/404_dark.png';
 
+import MeetingForm from './components/MeetingForm.vue';
 import AppSection from '~@/components/AppSection.vue';
 import { useData } from 'vitepress';
 import eventsAllData from '@/data/events';
-import { request } from '~@/shared/axios';
 import dayjs from 'dayjs';
+
+import { getMeetingDateListApi, getMeetingListApi, getGroupInfosApi, deleteMeetingApi } from '@/api/api-meeting';
 
 const TODAY = new Date();
 const TODAY_FORMATTED = dayjs(TODAY).format('YYYY/MM/DD');
 
 const commonStore = useCommon();
 const { lang } = useData();
+const meetingStore = useMeeting();
+const message = useMessage(null);
 
 const recentMeetingDates = ref([] as string[]);
 type EventType = (typeof eventsAllData)['zh' | 'en'][number] & { type: 'event'; id: number };
@@ -53,14 +70,16 @@ const updateCurrentDayMeetings = (date: string) => {
     currentCalendarData.value.push(...eventsData.value.get(selectedDateStr.value)!);
   }
   if (recentMeetingDates.value.includes(date)) {
-    request
-      .get(`/api-meeting/api/v1/meeting/meeting/?date=${date}`)
-      .then((res) => res.data?.data ?? [])
-      .then((res) => {
-        if (Array.isArray(res)) currentCalendarData.value = [...res, ...currentCalendarData.value];
-      });
+    queryMeetingDates(date, '');
   }
-}
+};
+
+const queryMeetingDates = async (date: string, group_name: string) => {
+  const res = await getMeetingListApi(date, group_name);
+  if (Array.isArray(res)) {
+    currentCalendarData.value = [...res, ...currentCalendarData.value];
+  }
+};
 
 watch(selectedDateStr, updateCurrentDayMeetings);
 
@@ -126,17 +145,14 @@ const selectDate = (val: string, date: string) => {
   calendarRef.value.selectDate(val);
 };
 
+// --------------------获取会议平台名称-----------------------------
 const getMeetingPlatformName = (key: string) => {
-  switch (key) {
-    case 'welink':
-      return 'WeLink';
-    case 'zoom':
-      return 'Zoom';
-    case 'tencent':
-      return '腾讯会议';
-    default:
-      return key;
-  }
+  const platformMap: Record<string, string> = {
+    welink: 'WeLink',
+    zoom: 'Zoom',
+    tencent: '腾讯会议',
+  };
+  return platformMap[key] || key;
 };
 
 const removeLeadingZero = (str: string) => {
@@ -144,6 +160,7 @@ const removeLeadingZero = (str: string) => {
   return str.replace(/^0+(?=\d)/, '');
 };
 
+// --------------------监听日历高度变化-----------------------------
 const watchChange = (element: HTMLElement) => {
   const observe = new MutationObserver(function () {
     calendarHeight.value = `${element.offsetHeight - 2}px`;
@@ -156,15 +173,7 @@ const watchChange = (element: HTMLElement) => {
 };
 
 const getRecentMeetingDates = async () => {
-  recentMeetingDates.value = await request
-    .get(`/api-meeting/api/v1/meeting/meeting_date/?date=${selectedDateStr.value}`)
-    .then((res) => {
-      if (Array.isArray(res.data?.data)) {
-        return res.data.data;
-      }
-      return [];
-    })
-    .catch(() => []);
+  recentMeetingDates.value = await getMeetingDateListApi(selectedDateStr.value);
 };
 
 onMounted(async () => {
@@ -175,6 +184,8 @@ onMounted(async () => {
     calendarHeight.value = `${tbody.offsetHeight - 2}px`;
   }
 
+  getSigData();
+
   if (eventsData.value.has(selectedDateStr.value)) {
     currentCalendarData.value.push(...eventsData.value.get(selectedDateStr.value)!);
   }
@@ -183,21 +194,26 @@ onMounted(async () => {
   await getRecentMeetingDates();
 
   if (recentMeetingDates.value.includes(selectedDateStr.value)) {
-    const meetingData = await request
-      .get(`/api-meeting/api/v1/meeting/meeting/?date=${selectedDateStr.value}`)
-      .then((res) => {
-        if (Array.isArray(res.data?.data)) {
-          return res.data.data;
-        }
-        return [];
-      })
-      .catch(() => []);
-    currentCalendarData.value = [...meetingData, ...currentCalendarData.value];
+    queryMeetingDates(selectedDateStr.value, '');
   }
 });
+
+// --------------------会议预定弹窗-----------------------------
+const isFormDlgVisible = ref(false);
+
+const currentRow = ref({});
+const addMeeting = () => {
+  isFormDlgVisible.value = true;
+};
 </script>
 <template>
-  <AppSection title="openEuler开发者日历" class="home-calendar" ref="container">
+  <AppSection title="openGuass开发者日历" class="home-calendar" ref="container">
+    <div class="meeting-oper">
+      <p class="text">使用openGauss会议预定功能需要SIG组Maintainer或Committer身份权限</p>
+      <div class="oper-action">
+        <OButton variant="solid" round="pill" color="primary" @click="addMeeting"> 预定会议 </OButton>
+      </div>
+    </div>
     <div class="calendar-body">
       <el-calendar ref="calendarRef" class="calender" v-model="selectedDate">
         <template #header="{ date }">
@@ -305,22 +321,25 @@ onMounted(async () => {
         </OScroller>
       </div>
     </div>
+
+    <!-- 会议预约弹窗 -->
+    <MeetingForm v-model:visible="isFormDlgVisible" :data="currentRow" />
   </AppSection>
 </template>
 <style lang="scss" scoped>
 .calendar-icon {
   color: inherit;
-  &[type="meeting"] {
+  &[type='meeting'] {
     background-color: var(--o-color-primary1);
     color: #fff;
     z-index: 3;
   }
-  &[type="summit"] {
+  &[type='summit'] {
     background-color: #3422ff;
     color: #fff;
     z-index: 2;
   }
-  &[type="event"] {
+  &[type='event'] {
     background-color: #ffa122;
     color: #fff;
     z-index: 1;
@@ -336,9 +355,21 @@ onMounted(async () => {
     width: 100%;
     z-index: 1;
   }
+  .meeting-oper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    .text {
+      color: var(--o-color-info2);
+      @include tip2;
+    }
+    .oper-action {
+      margin-left: 24px;
+    }
+  }
   .calendar-body {
     display: flex;
-    margin-top: var(--o-gap-t2c);
+    margin-top: 24px;
     border-radius: var(--o-radius-xs);
     background-color: var(--o-color-fill2);
     overflow: hidden;
@@ -648,10 +679,11 @@ onMounted(async () => {
       }
       .o-tab {
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         align-items: flex-end;
         height: 60px;
         border-bottom: 1px solid var(--o-color-control4);
+        padding-right: 16px;
         @include respond-to('pad_v-laptop') {
           --tab-nav-padding: 0 0 14px;
         }
