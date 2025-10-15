@@ -93,14 +93,15 @@ watch(
         color: var(--e-color-brand1);
       }
     }
-    @media screen and (max-width: 840px) {
+
+    @include respond-to('<=pad') {
       display: none;
     }
   }
   .theme-box-mobile {
     margin-top: 24px;
     display: none;
-    @media screen and (max-width: 840px) {
+    @include respond-to('<=pad') {
       display: flex;
       :deep(.o-switch) {
         background: none;

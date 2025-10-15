@@ -177,10 +177,10 @@ const linkClick = () => {
   position: relative;
 
   @include respond-to('>laptop') {
-    width: calc(100% - 184px);
+    width: calc(100% - 120px);
   }
   @media (min-width: 1001px) and (max-width: 1440px) {
-    width: calc(100% - 144px);
+    width: calc(100% - 52px);
   }
   @media (max-width: 1000px) {
     width: calc(100% - 48px);
@@ -202,7 +202,6 @@ const linkClick = () => {
     height: 100%;
     right: 0;
     top: 0;
-    background-image: linear-gradient(90deg, rgba(var(--o-mixedgray-1), 0) 0%, rgba(var(--o-mixedgray-1), 1) 100%);
     z-index: 0;
   }
   > li {
@@ -861,16 +860,6 @@ html[lang='en'] {
 .transition-enter-from,
 .transition-leave-to {
   opacity: 0;
-}
-
-@include in-dark {
-  .o-nav {
-    .o-nav-list {
-      &::after {
-        background-image: linear-gradient(90deg, rgba(var(--o-mixedgray-4), 0) 0%, rgba(var(--o-mixedgray-4), 1) 100%);
-      }
-    }
-  }
 }
 
 .nav-scroller {

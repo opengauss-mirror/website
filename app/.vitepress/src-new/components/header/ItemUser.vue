@@ -51,7 +51,7 @@ onMounted(() => {
   display: flex;
   align-items: center;
   position: relative;
-  @media (max-width: 1100px) {
+  @include respond-to('<=pad') {
     margin-left: var(--o-gap-2);
   }
 
