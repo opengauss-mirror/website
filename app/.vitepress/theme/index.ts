@@ -15,9 +15,12 @@ import 'element-plus/theme-chalk/dark/css-vars.css';
 import i18n from '~@/i18n';
 
 // src-new
+
 import '~@/assets/style/theme/default-light.token.css';
 import '~@/assets/style/theme/dark.token.css';
 import '~@/assets/style/theme/media.token.scss';
+import '~@/assets/style/element-plus/index.scss';
+import '~@/assets/style/element-plus/theme/index.scss';
 import '@opensig/opendesign/es/index.css';
 import '~@/assets/style/theme/index.scss';
 

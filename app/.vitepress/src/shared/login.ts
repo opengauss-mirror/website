@@ -15,11 +15,7 @@ export enum LOGIN_STATUS {
   DONE = 2,
 }
 
-export type LoginStatusT =
-  | typeof LOGIN_STATUS.FAILED
-  | LOGIN_STATUS.NOT
-  | LOGIN_STATUS.DOING
-  | LOGIN_STATUS.DONE;
+export type LoginStatusT = typeof LOGIN_STATUS.FAILED | LOGIN_STATUS.NOT | LOGIN_STATUS.DOING | LOGIN_STATUS.DONE;
 
 // 登录存储字段
 export const LOGIN_KEYS = {
@@ -101,9 +97,7 @@ export async function requestUserInfo() {
 export async function doLogin() {
   const { lang } = getLanguage();
   try {
-    window.location.href = `${LOGIN_URL}/login?redirect_uri=${decodeURIComponent(
-      window.location.href
-    )}&lang=${lang}`;
+    window.location.href = `${LOGIN_URL}/login?redirect_uri=${encodeURIComponent(location.href)}&lang=${lang}`;
   } catch (error) {
     setStatus(LOGIN_STATUS.FAILED);
   }

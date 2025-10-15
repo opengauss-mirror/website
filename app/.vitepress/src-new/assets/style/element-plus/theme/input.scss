@@ -1,0 +1,24 @@
+.el-input {
+  .el-input__wrapper {
+    &:hover {
+      border-color: var(--o-color-control2);
+    }
+
+    &.is-focus {
+      border-color: var(--o-color-primary3) !important;
+    }
+
+    .el-input__inner {
+      color: var(--o-color-info2);
+      &::placeholder {
+        color: var(--o-color-info4);
+      }
+    }
+    .el-input__prefix {
+      color: var(--o-color-info2);
+      svg {
+        fill: currentColor;
+      }
+    }
+  }
+}
