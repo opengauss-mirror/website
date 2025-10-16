@@ -7,7 +7,7 @@ import { useData } from 'vitepress';
 interface linkListItemT {
   img: string;
   imgDark: string;
-  name: string;
+  name?: string;
   path?: string;
   pathEn?: string;
 }
