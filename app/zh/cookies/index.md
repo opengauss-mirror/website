@@ -108,7 +108,7 @@ openGauss社区有时会在计算机或移动设备上存储Cookie，我们启�
   </tbody>
 </table>
 
-openGauss社区不会将Cookie用于本声明所述目的之外的任何用途。您可根据自己的偏好管理或删除Cookie。有关详情，请参见 [AboutCookies.org](https://www.aboutcookies.org/)。您可以清除计算机上保存的所有Cookie，大部分网络浏览器都设有阻止Cookie的功能。但如果您这么做，则需要在每一次访问我们的网站时亲自更改用户设置。如需详细了解如何更改浏览器设置，请访问以下链接：[internet Explorer](https://support.microsoft.com/zh-cn/help/17442/windows-internet-explorer-delete-manage-cookies)、[google Chrome](https://support.google.com/chrome/answer/95647)、[mozilla Firefox](https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer?redirectlocale=en-US&redirectslug=Cookies)、[safari](https://support.apple.com/kb/PH19214?locale=zh_CN)和[opera](https://help.opera.com/en/latest/security-and-privacy/)。
+openGauss社区不会将Cookie用于本声明所述目的之外的任何用途。您可根据自己的偏好管理或删除Cookie。有关详情，请参见 [AboutCookies.org](https://www.aboutcookies.org/)。您可以清除计算机上保存的所有Cookie，大部分网络浏览器都设有阻止Cookie的功能。但如果您这么做，则需要在每一次访问我们的网站时亲自更改用户设置。如需详细了解如何更改浏览器设置，请访问以下链接：[Internet Explorer](https://support.microsoft.com/zh-cn/help/17442/windows-internet-explorer-delete-manage-cookies)、[Google Chrome](https://support.google.com/chrome/answer/95647)、[Mozilla Firefox](https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer?redirectlocale=en-US&redirectslug=Cookies)、[Safari](https://support.apple.com/kb/PH19214?locale=zh_CN)和[Opera](https://help.opera.com/en/latest/security-and-privacy/)。
 
 如果您清除Cookie，则需要在每一次访问openGauss社区的网站时亲自更改用户设置。同时也请注意，openGauss社区的某些服务可能必须使用Cookie，禁用Cookie可能会影响您使用这些服务的全部或部分功能。
 
