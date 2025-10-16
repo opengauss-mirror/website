@@ -15,40 +15,47 @@ import {
   OPopover,
   ODivider,
   ODialog,
+  OSelect,
+  OOption,
   type DialogActionT,
 } from '@opensig/opendesign';
 import { useMeeting } from '@/stores/common';
 import { useScreen } from '@/shared/useScreen';
 import { useCommon } from '@/stores/common';
 import { editMeetingApi, creatMeetingApi, getPlatformsApi } from '@/api/api-meeting';
-import type { MeetingItemT } from '/@types/type-meeting';
+
+import { ElDatePicker, ElTimeSelect } from 'element-plus';
+import type { MeetingSigT, MeetingPostT, MeetingItemT } from '@/shared/@types/type-meeting';
+import { useI18n } from '~@/i18n';
 
 import IconTime from '~icons/app/icon-time.svg';
 import IconHelp from '~icons/app/icon-tips.svg';
 
-const props = defineProps<{ sigOtpion: MeetingItemT; data?: MeetingParms }>();
+const props = defineProps<{ sigOptions: Array<MeetingSigT>; data?: MeetingItemT; title: string; visible: Boolean }>();
 
 const meetingStore = useMeeting();
-const msg = useMessage();
+const message = useMessage(null);
 const commonStore = useCommon();
 const isDark = computed(() => (commonStore.theme === 'dark' ? true : false));
 const { isPhone } = useScreen();
+const i18n = useI18n();
+const i18nMeeting = computed(() => i18n.value.home.HOME_CALENDAR);
 
 const formRef = ref<InstanceType<typeof OForm>>();
 const formData = reactive({
   topic: '',
-  sponsor: meetingStore.giteeId,
-  mplatform: 'tencent',
+  sponsor: meetingStore.username,
   group_name: '',
   duration_time: '',
   date: '',
   platform: '',
   etherpad: '',
-  emaillist: '',
-  record: false,
+  email_list: '',
+  is_record: false,
   start: '',
   end: '',
   agenda: '',
+  join_url: '',
 });
 
 // -------------------- 会议名称验证 --------------------
@@ -86,6 +93,7 @@ const selectPickerRules = [
   },
 ];
 
+// -------------------- 会议时间验证 --------------------
 const selectTimeRules = [
   {
     triggers: ['blur', 'change'],
@@ -124,7 +132,7 @@ const etherpadRules = [
   },
 ];
 
-// 邮箱验证
+// -------------------- 邮箱验证 --------------------
 const validateEmails = (emailStr: string): boolean => {
   // 单个电子邮件地址的正则表达式
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -140,8 +148,6 @@ const validateEmails = (emailStr: string): boolean => {
     return trimmedEmail === '' || emailRegex.test(trimmedEmail);
   });
 };
-
-// 邮箱验证
 const emailRules = [
   {
     message: '请输入电子邮件地址，多个邮件地址之间以“;”间隔',
@@ -177,19 +183,25 @@ const platformRules = [
 ];
 
 // 过滤提交参数
-function filterParams(obj: MeetingParms, propName: string) {
-  const filteredKeys = Object.keys(obj).filter((key) => key !== propName || obj[key as keyof MeetingParms] === '');
-  const newObj = Object.fromEntries(filteredKeys.map((key) => [key, obj[key as keyof MeetingParms]]));
-  return newObj;
+function filterParams(obj: MeetingPostT, propName: string): MeetingPostT {
+  return Object.entries(obj).reduce((acc, [key, value]) => {
+    if (key !== propName || value === '') {
+      acc[key as keyof MeetingPostT] = value;
+    }
+    return acc;
+  }, {} as MeetingPostT);
 }
-// 过滤时间参数
-const onMeetingReserve = (results: FieldResultT[]) => {
-  if (results.find((item) => item?.type === 'danger')) {
-    return;
-  } else {
-    const newData = filterParams(formData, 'duration_time');
-    requestMeetingReserve(newData);
-  }
+
+// 过滤时间参数  results: FieldResultT[]
+const onMeetingReserve = () => {
+  // if (results.find((item) => item?.type === 'danger')) {
+  //   return;
+  // } else {
+  //   const newData = filterParams(formData, 'duration_time');
+  //   requestMeetingReserve(newData);
+  // }
+  const newData = filterParams(formData, 'duration_time');
+  requestMeetingReserve(newData);
 };
 
 // 监听会议时间是否有值 如果有值取消验证
@@ -223,26 +235,24 @@ const reset = () => {
   formRef.value?.resetFields();
 };
 
-const emits = defineEmits<{
-  (e: 'update', value: string[]): void;
-}>();
+const emits = defineEmits(['update:visible']);
 
 //新增会议请求
-const requestMeetingReserve = async (data: MeetingParms) => {
+const requestMeetingReserve = async (data: MeetingPostT) => {
   try {
     const res = await creatMeetingApi(data);
     if (res.code === 200) {
-      msg.success({
+      message.success({
         content: '会议预定成功！',
       });
-      emits('update', ['success', formData.date]);
+      dialogVisible.value = false;
     } else {
-      msg.warning({
+      message.warning({
         content: '会议预定失败！',
       });
     }
   } catch (err: any) {
-    msg.danger({
+    message.danger({
       content: err?.response?.data?.msg || err?.message,
     });
   }
@@ -267,27 +277,35 @@ const getPlatforms = async () => {
     formData.platform = platformOptions.value[0];
   }
 };
+getPlatforms();
 
 const getSigInfo = (v: string) => {
   formData.etherpad = '';
-  props.sigOtpion.forEach((item: SigT) => {
-    if (item.name === v) {
-      formData.etherpad = item.etherpad;
-    }
-  });
+  const matchingOption = props.sigOptions.find((item: MeetingSigT) => item.group_name === v);
+  if (matchingOption) {
+    formData.etherpad = matchingOption.etherpad;
+  }
 };
 
-const dialogVisible = ref(false);
+// 编辑会议
+const isModify = computed(() => props.data);
+
+const dialogVisible = ref(props.visible);
 const dlgActions: Array<DialogActionT> = [
   {
     id: 'save',
     color: 'primary',
-    label: '预定',
+    label: isModify.value ? i18nMeeting.value.MODIFY_SUBMIT : i18nMeeting.value.SUBMIT,
     variant: 'solid',
     size: 'large',
     round: 'pill',
     onClick: () => {
-      onMeetingReserve(formRef.value?.validate());
+      formRef.value?.validate();
+      if (isModify.value) {
+        updateMeeting();
+      } else {
+        onMeetingReserve();
+      }
     },
   },
   {
@@ -298,15 +316,84 @@ const dlgActions: Array<DialogActionT> = [
     size: 'large',
     round: 'pill',
     onClick: () => {
+      dialogVisible.value = false;
       reset();
     },
   },
 ];
+
+// 编辑会议
+const updateMeeting = async () => {
+  try {
+    const { id, topic, etherpad, date, start, end, agenda, is_record } = {
+      ...props.data,
+      ...formData,
+    };
+    const res = await editMeetingApi(id, {
+      topic,
+      etherpad,
+      date: date.split(' ')[0],
+      start,
+      end,
+      agenda,
+      is_record,
+    });
+    if (res.code === 200) {
+      message.success({
+        content: i18nMeeting.value.MODIFY_SUCCESS,
+      });
+      dialogVisible.value = false;
+    }
+  } catch (err: any) {
+    let failed = i18nMeeting.value.failed;
+    if (err && err.response && err.response.data) {
+      failed = err.response.data.msg;
+    }
+    message.danger({
+      content: failed,
+    });
+  }
+};
+watch(
+  () => props.data,
+  (data) => {
+    if (data) {
+      formData.topic = data.topic;
+      formData.group_name = data.group_name;
+      formData.etherpad = data.etherpad;
+      formData.is_record = data.is_record;
+      formData.platform = data.platform;
+      formData.date = data.date;
+      formData.start = data.start;
+      formData.end = data.end;
+      formData.agenda = data.agenda;
+      formData.email_list = data.email_list;
+    }
+  },
+  { immediate: true }
+);
+
+// 监听外部visible变化，同步到内部状态
+watch(
+  () => props.visible,
+  (newVal) => {
+    dialogVisible.value = newVal;
+  },
+  { immediate: true }
+);
+
+// 监听内部状态变化，同步到外部
+watch(
+  () => dialogVisible.value,
+  (newVal) => {
+    emits('update:visible', newVal);
+  }
+);
 </script>
 
 <template>
   <ODialog v-model:visible="dialogVisible" size="large" :unmount-on-hide="true" :actions="dlgActions">
-    <template #header>预定会议</template>
+    <template #header>{{ title }}</template>
     <OForm ref="formRef" has-required :layout="isPhone ? 'v' : 'h'" :model="formData" label-width="132px" label-align="top" size="large" class="calendar-form">
       <OFormItem label="发起人" required field="sponsor" :rules="topicRules">
         <OInput v-model="formData.sponsor" disabled="true" size="large" />
@@ -316,19 +403,9 @@ const dlgActions: Array<DialogActionT> = [
       </OFormItem>
 
       <OFormItem label="所属SIG" required field="group_name" :rules="selectSigRules" class="sig-item">
-        <client-only>
-          <el-select
-            v-model="formData.group_name"
-            placeholder="请选择SIG"
-            clearable
-            filterable
-            style="width: 100%"
-            size="large"
-            :effect="isDark ? 'dark' : 'light'"
-            @change="getSigInfo"
-          >
-            <el-option v-for="item in sigOtpion" :key="item.name" :label="item.name" :value="item.name" /> </el-select
-        ></client-only>
+        <OSelect v-model="formData.group_name" clearable filterable size="large" @change="getSigInfo">
+          <OOption v-for="item in sigOptions" :key="item.group_name" :label="item.group_name" :value="item.group_name" />
+        </OSelect>
       </OFormItem>
       <OFormItem label="Etherpad" required field="etherpad" :rules="etherpadRules">
         <OInput v-model="formData.etherpad" size="large" :max-length="255" placeholder="请输入Etherpad链接" />
@@ -389,7 +466,7 @@ const dlgActions: Array<DialogActionT> = [
         <OTextarea v-model="formData.agenda" placeholder="请输入会议内容" resize="none" :rows="4" size="large" :max-length="1000" :input-on-outlimit="false" />
       </OFormItem>
 
-      <OFormItem field="record" class="record">
+      <OFormItem field="is_record" class="record">
         <template #label>
           <div class="record-label">
             <span>录制会议</span>
@@ -403,11 +480,11 @@ const dlgActions: Array<DialogActionT> = [
             </OPopover>
           </div>
         </template>
-        <OSwitch v-model="formData.record" />
+        <OSwitch v-model="formData.is_record" />
       </OFormItem>
-      <OFormItem label="邮件地址" field="emaillist" :rules="emailRules">
+      <OFormItem label="邮件地址" field="email_list" :rules="emailRules">
         <OTextarea
-          v-model="formData.emaillist"
+          v-model="formData.email_list"
           placeholder="请输入电子邮件地址，多个邮件地址之间以“;”间隔"
           resize="none"
           size="large"
