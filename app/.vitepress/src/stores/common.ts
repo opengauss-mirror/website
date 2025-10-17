@@ -10,7 +10,7 @@ export const useCommon = defineStore('common', {
 
 export const useMeeting = defineStore('meeting', {
   state: () => ({
-    giteeId: '',
+    username: '',
     userSigs: [],
     platformOptions: [],
   }),

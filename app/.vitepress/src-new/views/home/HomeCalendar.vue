@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { ref, onMounted, watch, computed, watchEffect, shallowRef } from 'vue';
+import { ref, onMounted, watch, computed, shallowRef } from 'vue';
 
 import { useCommon, useMeeting } from '@/stores/common';
+import { getUserAllInfo } from '@/api/api-user';
 
 import {
   OIcon,
@@ -16,6 +17,8 @@ import {
   OIconChevronRight,
   OButton,
   useMessage,
+  ODialog,
+  type DialogActionT,
 } from '@opensig/opendesign';
 
 import IconAll from '~icons/app-new/icon-all.svg';
@@ -23,8 +26,8 @@ import IconEvent from '~icons/app-new/icon-event.svg';
 import IconSummit from '~icons/app-new/icon-summit.svg';
 import IconMeet from '~icons/app-new/icon-meet.svg';
 
-import notFoundImg_light from '~@/assets/illustrations/404.png';
-import notFoundImg_dark from '~@/assets/illustrations/404_dark.png';
+import notFoundImg_light from '@/assets/illustrations/404.png';
+import notFoundImg_dark from '@/assets/illustrations/404-dark.png';
 
 import MeetingForm from './components/MeetingForm.vue';
 import AppSection from '~@/components/AppSection.vue';
@@ -33,6 +36,9 @@ import eventsAllData from '@/data/events';
 import dayjs from 'dayjs';
 
 import { getMeetingDateListApi, getMeetingListApi, getGroupInfosApi, deleteMeetingApi } from '@/api/api-meeting';
+import { doLogin, getUserAuth } from '@/shared/login';
+import type { MeetingSigT, MeetingPostT, MeetingItemT } from '@/shared/@types/type-meeting';
+import { useI18n } from '~@/i18n';
 
 const TODAY = new Date();
 const TODAY_FORMATTED = dayjs(TODAY).format('YYYY/MM/DD');
@@ -41,6 +47,8 @@ const commonStore = useCommon();
 const { lang } = useData();
 const meetingStore = useMeeting();
 const message = useMessage(null);
+const i18n = useI18n();
+const i18nMeeting = computed(() => i18n.value.home.HOME_CALENDAR);
 
 const recentMeetingDates = ref([] as string[]);
 type EventType = (typeof eventsAllData)['zh' | 'en'][number] & { type: 'event'; id: number };
@@ -84,7 +92,7 @@ const queryMeetingDates = async (date: string, group_name: string) => {
 watch(selectedDateStr, updateCurrentDayMeetings);
 
 const activeName = ref<number[]>([]);
-const i18n = {
+const meetingI18n = {
   SIG_GROUP: 'SIG组:',
   NEW_DATE: '最新日程：',
   EMPTY_TEXT: '当日没有活动，敬请期待',
@@ -119,7 +127,6 @@ const meetingFields = [
   { label: '发起人', key: 'sponsor' },
   { label: '会议时间', key: 'time' },
   { label: '会议平台', key: 'platform' },
-  { label: '会议ID', key: 'mid' },
   { label: '会议ID', key: 'mid' },
   { label: '会议链接', key: 'join_url', isLink: true },
   { label: 'Etherpad链接', key: 'etherpad', isLink: true },
@@ -184,7 +191,10 @@ onMounted(async () => {
     calendarHeight.value = `${tbody.offsetHeight - 2}px`;
   }
 
-  getSigData();
+  if (csrfToken) {
+    getPersonalInfo();
+    getSigData();
+  }
 
   if (eventsData.value.has(selectedDateStr.value)) {
     currentCalendarData.value.push(...eventsData.value.get(selectedDateStr.value)!);
@@ -198,12 +208,128 @@ onMounted(async () => {
   }
 });
 
+const { csrfToken } = getUserAuth();
+
+// --------------------获取SIG组-----------------------------
+const sigGroup = ref<MeetingSigT[]>([]);
+const getSigData = () => {
+  if (meetingStore.userSigs.length > 0) {
+    return;
+  }
+  getGroupInfosApi()
+    .then((res) => {
+      sigGroup.value = res;
+      meetingStore.userSigs = res;
+    })
+    .catch(() => {
+      sigGroup.value = [];
+    });
+};
+
 // --------------------会议预定弹窗-----------------------------
 const isFormDlgVisible = ref(false);
 
-const currentRow = ref({});
-const addMeeting = () => {
+const currentMeetingData = ref<MeetingItemT | null>(null);
+const formDlgTitle = ref('');
+const createMeetingDlg = () => {
+  if (csrfToken) {
+    if (sigGroup.value.length > 0) {
+      currentMeetingData.value = null;
+      isFormDlgVisible.value = true;
+      formDlgTitle.value = '创建会议';
+    } else {
+      message.warning({
+        content: i18nMeeting.value.LOGIN_TEXT,
+      });
+    }
+  } else {
+    doLogin();
+  }
+};
+
+// 获取用户信息
+const getPersonalInfo = async () => {
+  if (meetingStore.username !== '') {
+    return;
+  }
+  try {
+    const res = await getUserAllInfo();
+
+    if (res && res.data) {
+      const { identities, username } = res.data;
+      const userData = identities.find((e) => e.username === username);
+
+      meetingStore.username = userData.username;
+    }
+  } catch (error: any) {
+    console.error(error);
+  }
+};
+// 删除修改会议判断是否是本人
+const isSelf = (name: string) => {
+  return meetingStore.username === name;
+};
+
+// 打开编辑会议弹窗
+const meetingModify = (row: MeetingItemT) => {
   isFormDlgVisible.value = true;
+  currentMeetingData.value = row;
+
+  formDlgTitle.value = i18nMeeting.value.MODIFY;
+};
+// --------------------会议取消弹窗-----------------------------
+const isCancelDlgVisible = ref(false);
+const meetingCancel = (row: MeetingItemT) => {
+  currentMeetingData.value = row;
+  isCancelDlgVisible.value = true;
+};
+const cancelDlgActions: Array<DialogActionT> = [
+  {
+    id: 'save',
+    color: 'primary',
+    label: '删除会议',
+    variant: 'solid',
+    size: 'large',
+    round: 'pill',
+    onClick: () => {
+      meetingCancelConfirm();
+    },
+  },
+  {
+    id: 'cancel',
+    color: 'primary',
+    label: '取消',
+    variant: 'outline',
+    size: 'large',
+    round: 'pill',
+    onClick: () => {
+      isCancelDlgVisible.value = false;
+    },
+  },
+];
+
+// 确定取消会议
+const meetingCancelConfirm = async () => {
+  try {
+    const res = await deleteMeetingApi(currentMeetingData.value?.id);
+
+    isCancelDlgVisible.value = false;
+
+    message.success({
+      content: '删除成功！',
+    });
+
+    // confirmForm();
+  } catch (err: any) {
+    let failed = '删除失败！';
+    if (err && err.response && err.response.data) {
+      failed = err.response.data.msg;
+    }
+    message.danger({
+      content: failed,
+    });
+    isCancelDlgVisible.value = false;
+  }
 };
 </script>
 <template>
@@ -211,7 +337,7 @@ const addMeeting = () => {
     <div class="meeting-oper">
       <p class="text">使用openGauss会议预定功能需要SIG组Maintainer或Committer身份权限</p>
       <div class="oper-action">
-        <OButton variant="solid" round="pill" color="primary" @click="addMeeting"> 预定会议 </OButton>
+        <OButton variant="solid" round="pill" color="primary" @click="createMeetingDlg"> 预定会议 </OButton>
       </div>
     </div>
     <div class="calendar-body">
@@ -227,7 +353,7 @@ const addMeeting = () => {
             </OIcon>
           </div>
           <div class="right-title">
-            {{ i18n.NEW_DATE }}
+            {{ meetingI18n.NEW_DATE }}
             <span>{{ TODAY_FORMATTED }}</span>
           </div>
         </template>
@@ -254,7 +380,7 @@ const addMeeting = () => {
       </el-calendar>
       <div class="detail-list">
         <div class="current-day">
-          {{ i18n.NEW_DATE }}
+          {{ meetingI18n.NEW_DATE }}
           <span>{{ selectedDateStr }}</span>
         </div>
         <div class="right-title">
@@ -287,17 +413,21 @@ const addMeeting = () => {
                   <span v-else>{{ calendarData.date }}</span>
                   <ODivider direction="v" />
                   <span v-if="calendarData.location">{{ calendarData.location }}</span>
-                  <div v-if="calendarData.group_name">{{ i18n.SIG_GROUP }} {{ calendarData.group_name }}</div>
+                  <div v-if="calendarData.group_name">{{ meetingI18n.SIG_GROUP }} {{ calendarData.group_name }}</div>
                   <div v-if="calendarData.activity_type">{{ calendarData.activity_type }}</div>
                 </div>
                 <OLink v-if="calendarData.type" :href="calendarData.link" target="_blank">
-                  {{ i18n.LEARN_MORE }}
+                  {{ meetingI18n.LEARN_MORE }}
                   <template #suffix>
                     <OIcon><OIconChevronRight /> </OIcon>
                   </template>
                 </OLink>
               </template>
               <div class="calendar-info">
+                <div v-if="isSelf(calendarData.sponsor)" class="meeting-action">
+                  <OButton type="primary" variant="text" size="small" @click="meetingCancel(calendarData)"> 删除会议 </OButton>
+                  <OButton type="primary" variant="text" size="small" @click="meetingModify(calendarData)"> 编辑会议 </OButton>
+                </div>
                 <template v-for="field in meetingFields" :key="field.key">
                   <div class="info-item" v-if="calendarData[field.key]">
                     <div class="item-title">{{ field.label }}:</div>
@@ -316,14 +446,18 @@ const addMeeting = () => {
           <div v-else class="empty">
             <img v-if="commonStore.theme === 'light'" :src="notFoundImg_light" alt="" />
             <img v-else :src="notFoundImg_dark" alt="" />
-            <p>{{ i18n.EMPTY_TEXT }}</p>
+            <p>{{ meetingI18n.EMPTY_TEXT }}</p>
           </div>
         </OScroller>
       </div>
     </div>
+    <!-- 取消会议弹窗 -->
+    <ODialog v-model:visible="isCancelDlgVisible" :unmount-on-hide="true" :actions="cancelDlgActions">
+      <template #header>是否确定要删除当前会议？</template>
+    </ODialog>
 
-    <!-- 会议预约弹窗 -->
-    <MeetingForm v-model:visible="isFormDlgVisible" :data="currentRow" />
+    <!-- 会议预约、编辑 弹窗 -->
+    <MeetingForm v-if="isFormDlgVisible" v-model:visible="isFormDlgVisible" :sig-options="sigGroup" :data="currentMeetingData" :title="formDlgTitle" />
   </AppSection>
 </template>
 <style lang="scss" scoped>
@@ -762,7 +896,7 @@ const addMeeting = () => {
         height: 100%;
         padding: 32px;
         img {
-          max-width: 165px;
+          max-width: 250px;
         }
         p {
           @include text1;
@@ -822,12 +956,21 @@ const addMeeting = () => {
 
     .calendar-info {
       display: flex;
-      @include tip1;
+
       color: var(--o-color-info3);
       flex-direction: column;
       padding: 16px 60px;
+      position: relative;
+      @include tip1;
       @include respond-to('<=pad_v') {
         padding: 12px 16px;
+      }
+      .meeting-action {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        display: flex;
+        gap: 8px;
       }
       .info-item {
         display: flex;
