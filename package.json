@@ -4,15 +4,16 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "dev": "vitepress dev app",
-    "build": "vitepress build app",
+    "dev": "pnpm gen:blogs && pnpm gen:news && vitepress dev app",
+    "build": "pnpm gen:blogs && pnpm gen:news && vitepress build app",
     "test:e2e": "playwright test && playwright show-report",
     "test:unit": "vitest",
     "lint": "eslint \"app/.vitepress/src/**/*.{js,ts,vue,jsx,tsx}\"",
     "fix": "eslint --fix \"app/.vitepress/src/**/*.{js,ts,vue,jsx,tsx}\"",
     "lint:components": "eslint \"opendesign/**/*.{js,ts,vue,jsx,tsx}\"",
     "prepare": "husky install",
-    "generate:blog-data": "node scripts/generate-blog-data.js"
+    "gen:blogs": "node scripts/index.js blogs",
+    "gen:news": "node scripts/index.js news"
   },
   "keywords": [],
   "author": "",

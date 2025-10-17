@@ -4,16 +4,8 @@ RUN mkdir -p /home/opengauss/web
 WORKDIR /home/opengauss/web
 COPY . /home/opengauss/web
 
-ARG BLOG_REPOSITORY
-RUN git clone -b v2 ${BLOG_REPOSITORY} /home/opengauss/blog
-
-RUN cp -r /home/opengauss/blog/app/zh/blogs/* /home/opengauss/web/app/zh/blogs && \
-    cp -r /home/opengauss/blog/app/en/blogs/* /home/opengauss/web/app/en/blogs && \
-    rm -rf /home/opengauss/blog
-
 RUN npm install pnpm -g
 RUN pnpm install
-RUN pnpm generate:blog-data
 RUN pnpm build
 
 FROM swr.cn-north-4.myhuaweicloud.com/opensourceway/openeuler/nginx:latest as NginxBuilder
