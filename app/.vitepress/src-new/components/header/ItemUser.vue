@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
 import { useData } from 'vitepress';
+import { OIcon, ODropdown, ODropdownItem } from '@opensig/opendesign';
 import { useI18n } from '@/i18n';
 import { doLogin, doLogout, getUserAuth, requestUserInfo } from '@/shared/login';
 import { useUserInfoStore } from '@/stores/user';
-
 import IconLogin from '~icons/app-new/icon-header-person.svg';
+
 const { lang } = useData();
 const i18n = useI18n();
 
@@ -17,6 +18,7 @@ const jumpToUserZone = () => {
   const origin = import.meta.env.VITE_LOGIN_URL;
   window.open(`${origin}/${language}/profile`, '_blank');
 };
+
 onMounted(() => {
   requestUserInfo();
 });
@@ -25,17 +27,22 @@ onMounted(() => {
 <template>
   <ClientOnly>
     <div class="header-user">
-      <div v-if="csrfToken">
+      <ODropdown v-if="csrfToken" trigger="hover" options-wrapper=".app-header" optionPosition="top" option-wrap-class="user-dropdown">
         <div class="user-info">
           <img v-if="userInfoStore.photo" :src="userInfoStore.photo" class="user-img" />
           <div v-else class="user-img"></div>
           <p class="user-name">{{ userInfoStore.username }}</p>
         </div>
-        <ul class="menu-list">
-          <li @click="jumpToUserZone()">{{ i18n.common.USER_CENTER }}</li>
-          <li @click="doLogout()">{{ i18n.common.LOGOUT }}</li>
-        </ul>
-      </div>
+        <template #dropdown>
+          <ODropdownItem @click="jumpToUserZone()">
+            {{ i18n.common.USER_CENTER }}
+          </ODropdownItem>
+          <ODropdownItem @click="doLogout()">
+            {{ i18n.common.LOGOUT }}
+          </ODropdownItem>
+        </template>
+      </ODropdown>
+
       <div v-else class="login" @click="doLogin()">
         <OIcon class="icon">
           <IconLogin />
@@ -48,6 +55,7 @@ onMounted(() => {
 <style lang="scss" scoped>
 .header-user {
   height: 100%;
+  height: calc(100% + 10px);
   display: flex;
   align-items: center;
   position: relative;
@@ -56,6 +64,7 @@ onMounted(() => {
   }
 
   .user-info {
+    height: 100%;
     display: flex;
     align-items: center;
     .user-img {
@@ -64,7 +73,7 @@ onMounted(() => {
       border-radius: 50%;
       cursor: pointer;
       vertical-align: middle;
-      @media (max-width: 1100px) {
+      @include respond-to('<=pad') {
         width: 28px;
         height: 28px;
       }
@@ -82,48 +91,7 @@ onMounted(() => {
       }
     }
   }
-  &:hover {
-    .menu-list {
-      display: block;
-    }
-  }
-  .menu-list {
-    display: none;
-    position: absolute;
-    top: 80px;
-    left: 0;
-    @media (max-width: 1100px) {
-      top: 48px;
-      left: -60px;
-    }
-    background: var(--e-color-bg2);
-    cursor: pointer;
-    z-index: 999;
-    box-shadow: var(--e-shadow-l1);
-    min-width: 78px;
-    li {
-      line-height: var(--e-line-height-h3);
-      text-align: center;
-      font-size: var(--e-font-size-text);
-      color: var(--e-color-text1);
-      border-bottom: 1px solid var(--e-color-division1);
-      padding: 0 var(--e-spacing-h5);
-      white-space: nowrap;
-      &:last-child {
-        border-bottom: 0 none;
-      }
 
-      &:hover {
-        background: var(--e-color-brand1);
-        color: var(--e-color-text2);
-      }
-      &.active {
-        color: var(--e-color-brand1);
-        background: none;
-        cursor: default;
-      }
-    }
-  }
   .login {
     cursor: pointer;
     font-size: 24px;
@@ -134,6 +102,24 @@ onMounted(() => {
     @include hover {
       color: var(--e-color-brand1);
     }
+  }
+}
+
+.o-dropdown {
+  height: 100%;
+}
+
+.o-dropdown-item {
+  background: var(--o-color-fill2);
+  cursor: pointer;
+  border-radius: var(--o-radius_control-xs);
+  padding: var(--o-gap-1);
+  min-width: 144px;
+  height: 40px;
+
+  @include hover {
+    color: var(--o-color-primary1);
+    background: var(--o-color-control2-light);
   }
 }
 </style>
