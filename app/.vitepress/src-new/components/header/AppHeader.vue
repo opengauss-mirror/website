@@ -153,4 +153,15 @@ const mobileClick = () => {
     cursor: pointer;
   }
 }
+
+:deep(.user-dropdown) {
+  --dropdown-list-radius: var(--o-radius-s);
+}
+
+:deep(.o-popup) {
+  --popup-shadow: var(--o-shadow2);
+  .o-popup-body {
+    border: none;
+  }
+}
 </style>

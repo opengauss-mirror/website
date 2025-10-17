@@ -84,13 +84,6 @@ const itemChange = (data: any) => {
   }
 }
 
-:deep(.o-popup) {
-  --popup-shadow: var(--o-shadow2);
-  .o-popup-body {
-    border: none;
-  }
-}
-
 .o-dropdown {
   height: 100%;
   --dropdown-list-radius: var(--o-radius-s);

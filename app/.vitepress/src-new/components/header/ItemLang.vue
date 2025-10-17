@@ -153,13 +153,6 @@ const getLang = (lang: String, simple?: boolean) => {
   }
 }
 
-:deep(.o-popup) {
-  --popup-shadow: var(--o-shadow2);
-  .o-popup-body {
-    border: none;
-  }
-}
-
 .o-dropdown {
   height: 100%;
 }

@@ -436,7 +436,7 @@ a {
       padding: 4px;
       border-radius: 4px;
       background-color: var(--o-color-fill2);
-      display: block;
+      display: none;
 
       &::after {
         border: 10px solid transparent;
