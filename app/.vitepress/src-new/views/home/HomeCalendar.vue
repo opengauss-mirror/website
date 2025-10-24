@@ -53,6 +53,7 @@ const i18nMeeting = computed(() => i18n.value.home.HOME_CALENDAR);
 const recentMeetingDates = ref([] as string[]);
 type EventType = (typeof eventsAllData)['zh' | 'en'][number] & { type: 'event'; id: number };
 
+// 活动数据
 const eventsData = computed(() => {
   return (lang.value === 'zh' ? eventsAllData.zh : eventsAllData.en)
     .filter((item) => Boolean(item.date))
@@ -73,8 +74,8 @@ const selectedDate = ref(TODAY);
 const selectedDateStr = computed(() => dayjs(selectedDate.value).format('YYYY-MM-DD'));
 
 const updateCurrentDayMeetings = (date: string) => {
-  currentCalendarData.value = [];
   if (eventsData.value.has(selectedDateStr.value)) {
+    currentCalendarData.value = [];
     currentCalendarData.value.push(...eventsData.value.get(selectedDateStr.value)!);
   }
   if (recentMeetingDates.value.includes(date)) {
@@ -82,11 +83,17 @@ const updateCurrentDayMeetings = (date: string) => {
   }
 };
 
+// 查询指定日期的会议事件
 const queryMeetingDates = async (date: string, group_name: string) => {
   const res = await getMeetingListApi(date, group_name);
+
+  currentCalendarData.value = [];
+
   if (Array.isArray(res)) {
     currentCalendarData.value = [...res, ...currentCalendarData.value];
   }
+
+  activeName.value = currentCalendarData.value.length === 1 ? [currentCalendarData.value[0].id] : [];
 };
 
 watch(selectedDateStr, updateCurrentDayMeetings);
@@ -122,6 +129,8 @@ const tabList = [
     icon: IconSummit,
   },
 ];
+
+// 会议字段
 const meetingFields = [
   { label: '会议详情', key: 'agenda' },
   { label: '发起人', key: 'sponsor' },
@@ -143,6 +152,7 @@ const displayCalendarData = computed(() => {
   return currentCalendarData.value.filter((item) => tabType.value === item.type);
 });
 
+// 选择日期
 const selectDate = (val: string, date: string) => {
   if (date === limitTime && val === 'prev-month') {
     isLimit.value = true;
@@ -179,6 +189,7 @@ const watchChange = (element: HTMLElement) => {
   });
 };
 
+// --------------------获取近期有会议的日期-----------------------------
 const getRecentMeetingDates = async () => {
   recentMeetingDates.value = await getMeetingDateListApi(selectedDateStr.value);
 };
@@ -367,9 +378,7 @@ const meetingCancelConfirm = async () => {
                 <OIcon class="calendar-icon" type="meeting" v-if="(tabType === 'all' || tabType === 'meetings') && recentMeetingDates.includes(data.day)">
                   <IconMeet></IconMeet>
                 </OIcon>
-                <!-- <OIcon class="summit" v-if="tabType === 'all' || tabType === 'summit' /* && getSummitHighlight(data.day, summitData) */">
-                  <IconSummit></IconSummit>
-                </OIcon> -->
+
                 <OIcon class="calendar-icon" type="event" v-if="(tabType === 'all' || tabType === 'activity') && eventsData.has(data.day)">
                   <IconEvent></IconEvent>
                 </OIcon>
@@ -817,7 +826,7 @@ const meetingCancelConfirm = async () => {
         align-items: flex-end;
         height: 60px;
         border-bottom: 1px solid var(--o-color-control4);
-        padding-right: 16px;
+        padding-right: 24px;
         @include respond-to('pad_v-laptop') {
           --tab-nav-padding: 0 0 14px;
         }
