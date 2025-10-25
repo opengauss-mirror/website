@@ -1,80 +1,101 @@
 <script setup lang="ts">
-import { /* OButton, */ OCarousel, OCarouselItem, OIcon, OIconArrowRight } from '@opensig/opendesign';
-import { useData } from 'vitepress';
-import { computed, ref } from 'vue';
+import { OCarousel, OCarouselItem, OIcon, OIconArrowRight } from '@opensig/opendesign';
+import { computed } from 'vue';
 import homeConfig from '@/data/home/';
-import useWindowResize from '@/components/hooks/useWindowResize';
+import { windowOpen } from '@/shared/utils';
+import { useScreen } from '~@/composables/useScreen';
+import { useLocale } from '~@/composables/useLocale';
 
-const windowWidth = useWindowResize()
-const { lang } = useData();
-const homeBanner = computed(() => (lang.value === 'en' ? homeConfig.homeBanner.en : homeConfig.homeBanner.zh));
+const { lePadV, gtPadV } = useScreen();
+const { isEn } = useLocale();
+const homeBanner = computed(() => (isEn.value ? homeConfig.homeBanner.en : homeConfig.homeBanner.zh));
 
-const jump = (...args: any[]) => {}
+const jump = (item: any, flag: boolean) => {
+  if (flag) {
+    return;
+  }
+  if (item.link) {
+    windowOpen(item.link, item.target);
+  }
+};
 </script>
 
 <template>
-  <OCarousel
-    ref="slidesRef"
-    indicator-click
-    loop
-    class="home-banner"
-    auto-play
-    click-to-switch
-    pause-on-hover
-    style="--carousel-indicator-bg-color-selected: #fff"
-  >
-    <OCarouselItem v-for="item in homeBanner" :key="item.title" class="home-banner-item">
-      <div
-        class="banner-img"
-        :class="{
-          'no-btn': !item.btn && item.link,
-          [item.className]: item.className,
-        }"
-        :style="`background:url(${windowWidth > 767 ? item.pcBanner : item.moBanner}) no-repeat top center/cover;`"
-        @click="jump(item, item.btn !== '')"
-      >
-        <div class="banner-content">
-          <div class="content-left" :class="{ 'teamup-content-left': item.link.includes('team-up') }">
-            <div class="content-text">
-              <div v-if="windowWidth < 767 && item.titleMb.length" class="title">
-                <p v-for="itemTitleMb in item.titleMb" :key="itemTitleMb">
-                  {{ itemTitleMb }}
+  <div class="home-banner-wrap">
+    <OCarousel
+      ref="slidesRef"
+      indicator-click
+      loop
+      class="home-banner"
+      click-to-switch
+      pause-on-hover
+      style="--carousel-indicator-bg-color-selected: #fff"
+    >
+      <OCarouselItem v-for="item in homeBanner" :key="item.title" class="home-banner-item">
+        <div
+          class="banner-img"
+          :class="{
+            'no-btn': !item.btn && item.link,
+            [item.className]: item.className,
+          }"
+          :style="`background:url(${gtPadV ? item.pcBanner : item.moBanner}) no-repeat top center/cover;`"
+          @click="jump(item, item.btn !== '')"
+        >
+          <div class="banner-content">
+            <div class="content-left" :class="{ 'teamup-content-left': item.link.includes('team-up') }">
+              <div class="content-text">
+                <div v-if="lePadV && item.titleMb.length" class="title">
+                  <p v-for="itemTitleMb in item.titleMb" :key="itemTitleMb">
+                    {{ itemTitleMb }}
+                  </p>
+                </div>
+                <p v-else class="title" :class="{ 'teamup-title': item.link.includes('team-up') }">
+                  {{ item.title }}
                 </p>
+                <p v-if="item.subtitle" class="subtitle">{{ item.subtitle }}</p>
+                <p v-if="item.desc.length" class="desc">
+                  <span v-for="itemDesc in item.desc" :key="itemDesc">{{ itemDesc }}</span>
+                </p>
+                <img v-if="item.textImg" class="text-img" :src="gtPadV ? item.textImg : item.textImgMb" alt="" />
               </div>
-              <p v-else class="title" :class="{ 'teamup-title': item.link.includes('team-up') }">
-                {{ item.title }}
-              </p>
-              <p v-if="item.subtitle" class="subtitle">{{ item.subtitle }}</p>
-              <p v-if="item.desc.length" class="desc">
-                <span v-for="itemDesc in item.desc" :key="itemDesc">{{ itemDesc }}</span>
-              </p>
-              <img v-if="item.textImg" class="text-img" :src="windowWidth > 767 ? item.textImg : item.textImgMb" alt="" />
+              <div v-if="item.btn" class="btn-box">
+                <OButton class="home-banner-btn" :size="lePadV ? 'mini' : 'medium'" @click="jump(item, false)">
+                  {{ item.btn }}
+                  <template #suffixIcon><OIcon><OIconArrowRight /></OIcon></template>
+                </OButton>
+              </div>
             </div>
-            <div v-if="item.btn" class="btn-box">
-              <OButton variant="outline" round="0px" class="home-banner-btn" :size="windowWidth < 767 ? 'mini' : 'medium'" @click="jump(item, false)">
-                {{ item.btn }}
-                <template #suffixIcon><OIcon><OIconArrowRight /></OIcon></template>
-              </OButton>
+            <div v-if="item.rightInset && gtPadV" class="content-right">
+              <img class="video-player-btn" :src="item.rightInset" :alt="item.title" @click.stop="clickRightInset(item.rightLink)" />
             </div>
-          </div>
-          <div v-if="item.rightInset && windowWidth > 1100" class="content-right">
-            <img class="video-player-btn" :src="item.rightInset" :alt="item.title" @click.stop="clickRightInset(item.rightLink)" />
           </div>
         </div>
-      </div>
-    </OCarouselItem>
-  </OCarousel>
+      </OCarouselItem>
+    </OCarousel>
+  </div>
 </template>
 
 
 <style lang="scss" scoped>
+.home-banner-wrap {
+  @include respond-to('phone') {
+    padding: 16px 20px 0;
+  }
+
+  --banner-height: 478px;
+  @include respond-to('phone') {
+    --banner-height: 184px;
+  }
+}
+
 .home-banner-item {
-  height: 478px;
+  height: var(--banner-height);
   width: 100vw;
 }
 
 .home-banner {
-  height: 478px;
+  border-radius: 4px;
+  height: var(--banner-height);
   max-width: 100vw;
   overflow: hidden;
   .banner-img {
@@ -89,26 +110,11 @@ const jump = (...args: any[]) => {}
       height: 100%;
       color: #fff;
       position: relative;
-      @media screen and (max-width: 1440px) {
+      @include respond-to('<=laptop') {
         padding: 0 24px;
       }
-      @media screen and (max-width: 1100px) {
+      @include respond-to('<=pad') {
         padding: 0 16px;
-      }
-      .summit-title {
-        position: absolute;
-        right: 44px;
-        bottom: 50%;
-        transform: translateY(50%);
-        width: 536px;
-        height: 208px;
-        @media screen and (max-width: 767px) {
-          width: 247px;
-          height: 96px;
-          right: 50%;
-          bottom: 28px;
-          transform: translateX(50%);
-        }
       }
       .content-left {
         display: flex;
@@ -118,16 +124,9 @@ const jump = (...args: any[]) => {}
         .content-text {
           color: var(--e-color-white);
           .title {
-            font-size: var(--e-font-size-h1);
-            line-height: var(--e-line-height-h1);
-            font-weight: 600;
             white-space: pre-wrap;
-            @media screen and (max-width: 1439px) {
-              font-size: var(--e-font-size-h2);
-              line-height: var(--e-line-height-h2);
-            }
-            @media screen and (max-width: 767px) {
-              font-size: var(--e-font-size-h4);
+            @include display1;
+            @include respond-to('<=pad_v') {
               line-height: var(--e-line-height-h4);
               text-align: center;
             }
@@ -137,7 +136,7 @@ const jump = (...args: any[]) => {}
             font-size: 30px;
             line-height: 40px;
             font-weight: normal;
-            @media (max-width: 767px) {
+            @include respond-to('<=pad_v') {
               margin-top: 8px;
               font-size: var(--e-font-size-h7);
               line-height: var(--e-line-height-h7);
@@ -146,14 +145,14 @@ const jump = (...args: any[]) => {}
           }
           .desc {
             margin-top: 16px;
-            @media screen and (max-width: 767px) {
+            @include respond-to('<=pad_v') {
               text-align: center;
               margin-top: 8px;
             }
             span {
               font-size: var(--e-font-size-h5);
               line-height: 40px;
-              @media screen and (max-width: 767px) {
+              @include respond-to('<=pad_v') {
                 font-size: var(--e-font-size-text);
                 line-height: 24px;
               }
@@ -163,11 +162,11 @@ const jump = (...args: any[]) => {}
             font-size: 56px;
             line-height: 84px;
             font-weight: 600;
-            @media screen and (max-width: 1439px) {
+            @include respond-to('<=laptop') {
               font-size: var(--e-font-size-h3);
               line-height: var(--e-line-height-h3);
             }
-            @media screen and (max-width: 767px) {
+            @include respond-to('<=pad_v') {
               padding-bottom: var(--e-spacing-h5);
               font-size: 20px;
               line-height: 30px;
@@ -177,7 +176,7 @@ const jump = (...args: any[]) => {}
         }
         .btn-box {
           margin-top: var(--e-spacing-h3);
-          @media screen and (max-width: 767px) {
+          @include respond-to('<=pad_v') {
             margin-top: var(--e-spacing-h5);
             width: 100%;
             display: flex;
@@ -190,7 +189,7 @@ const jump = (...args: any[]) => {}
         }
       }
       .teamup-content-left {
-        @media screen and (max-width: 767px) {
+        @include respond-to('<=pad_v') {
           justify-content: flex-end;
         }
       }
@@ -221,15 +220,15 @@ const jump = (...args: any[]) => {}
           font-size: 56px;
           font-weight: 600;
 
-          @media screen and (max-width: 1439px) {
+          @include respond-to('<=laptop') {
             font-size: var(--e-font-size-h2);
             line-height: var(--e-line-height-h2);
           }
-          @media screen and (max-width: 1100px) {
+          @include respond-to('<=pad') {
             font-size: var(--e-font-size-h3);
             line-height: var(--e-line-height-h3);
           }
-          @media screen and (max-width: 767px) {
+          @include respond-to('<=pad_v') {
             font-size: var(--e-font-size-h4);
             line-height: var(--e-line-height-h3);
             text-align: center;
@@ -249,13 +248,13 @@ const jump = (...args: any[]) => {}
             object-fit: cover;
             height: 183px;
             display: block;
-            @media (max-width: 767px) {
+            @include respond-to('<=pad_v') {
               width: inherit;
               height: 90px;
             }
           }
         }
-        @media (max-width: 767px) {
+        @include respond-to('<=pad_v') {
           align-items: center;
           .btn-box {
             margin-bottom: var(--e-spacing-h5);
@@ -281,19 +280,19 @@ const jump = (...args: any[]) => {}
     width: 100%;
     max-width: 1504px;
     padding: 0 44px;
-    @media screen and (max-width: 1440px) {
+    @include respond-to('laptop') {
       padding: 0 24px;
     }
-    @media screen and (max-width: 1100px) {
+    @include respond-to('pad_h') {
       padding: 0 16px;
     }
-    @media screen and (max-width: 767px) {
+    @include respond-to('<=pad_v') {
       text-align: center;
     }
     .el-carousel__indicator {
       .el-carousel__button {
         width: 40px;
-        @media screen and (max-width: 767px) {
+        @include respond-to('<=pad_v') {
           width: 20px;
         }
       }
@@ -320,23 +319,23 @@ const jump = (...args: any[]) => {}
         width: 100%;
         max-width: 1504px;
         padding: 0 44px;
-        @media screen and (max-width: 1440px) {
+        @include respond-to('laptop') {
           padding: 0 24px;
         }
-        @media screen and (max-width: 1100px) {
+        @include respond-to('<=pad') {
           padding: 0 16px;
           img {
             width: 660px;
           }
         }
       }
-      @media screen and (max-width: 768px) {
+      @include respond-to('<=pad') {
         display: none;
       }
     }
     .summit-banner-mo {
       display: none;
-      @media screen and (max-width: 768px) {
+      @include respond-to('<=pad') {
         width: 100%;
         height: 100%;
         display: block;
