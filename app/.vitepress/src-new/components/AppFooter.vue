@@ -165,6 +165,10 @@ a {
         font-size: var(--e-font-size-text);
         line-height: var(--e-line-height-text);
 
+        @include hover {
+          color: var(--e-color-white);
+        }
+
         & + .link {
           margin-top: 8px;
         }

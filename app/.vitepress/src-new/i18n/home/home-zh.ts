@@ -1,4 +1,5 @@
 export default {
+  openGaussFeatures: '数据库特性',
   HOME_MEETING: '社区会议',
   CHARACTERR_INFO: {
     TITLE:
@@ -21,7 +22,7 @@ export default {
         TEXT: '基于AI的智能参数调优',
       },
     ],
-    DOWN_NAME: '下载openGauss整体概述PPT',
+    DOWN_NAME: 'openGauss整体概述PPT',
   },
   COMMUNITY_ACTIVITY: {
     TITLE: '社区动态',
@@ -32,7 +33,8 @@ export default {
     },
   },
   HOME_EXPLORE: {
-    EXPLORE_TITLE: 'openGauss新手？快来开启你的openGauss探索之旅吧！',
+    EXPLORE_TITLE: '快来开启你的openGauss探索之旅吧！',
+    EXPLORE_TITLE_MO: '快来开启你的openGauss探索之旅吧',
     LIST: [
       {
         NAME: 'openGauss是什么 ',
@@ -127,6 +129,18 @@ export default {
     COPY_INFO: '复制会议信息',
     COPY_INFO_MB: '复制信息',
     failed: '操作失败！',
+    developerCalendar: 'openGauss开发者日历',
+    latestSchedule: '最新日程',
+    all: '全部',
+    meeting: '会议',
+    activity: '活动',
+    summit: '峰会',
+    meetingDetail: '会议详情',
+    host: '发起人',
+    meetingTime: '会议时间',
+    meetingId: '会议ID',
+    meetingPlatform: '会议平台',
+    meetingLink: '会议链接',
   },
   HOME_ROOMS: {
     ROOM_NAME: [
@@ -138,8 +152,14 @@ export default {
     BLOG_NAME: 'openGauss 博客',
     NEWS_NAME: 'openGauss 新闻',
   },
-
+  partners: {
+    title: '社区伙伴',
+    orderDesc: '注: 排名不分先后'
+  },
   MORE: '更多',
   EXPAND: '展开全部',
   RETRACT: '收起全部',
+  viewMore: '查看更多',
+  blog: '博客',
+  news: '新闻',
 };

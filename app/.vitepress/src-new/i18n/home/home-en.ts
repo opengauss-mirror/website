@@ -1,4 +1,5 @@
 export default {
+  openGaussFeatures: 'openGauss features',
   HOME_MEETING: 'Community Meeting',
   CHARACTERR_INFO: {
     TITLE:
@@ -32,7 +33,8 @@ export default {
     },
   },
   HOME_EXPLORE: {
-    EXPLORE_TITLE: 'New to openGauss? Come and start your openGauss exploration journey!',
+    EXPLORE_TITLE: 'Come and start your openGauss exploration journey!',
+    EXPLORE_TITLE_MO: 'Come and start your openGauss exploration journey',
     LIST: [
       {
         NAME: 'What is openGauss',
@@ -119,6 +121,18 @@ export default {
     COPY_INFO: '复制会议信息',
     COPY_INFO_MB: '复制信息',
     failed: 'Operation failed!',
+    developerCalendar: 'Developer Calendar',
+    latestSchedule: 'Latest Schedule',
+    all: 'All',
+    meeting: 'Meetings',
+    activity: 'Activities',
+    summit: 'Events',
+    meetingDetail: 'Meeting Info',
+    host: 'Host',
+    meetingTime: 'Time & Date',
+    meetingId: 'Meeting ID',
+    meetingPlatform: 'Platform',
+    meetingLink: 'Join Link',
   },
   HOME_ROOMS: {
     ROOM_NAME: [
@@ -130,7 +144,14 @@ export default {
     BLOG_NAME: 'openGauss Blog',
     NEWS_NAME: 'openGauss News',
   },
+  partners: {
+    title: 'Community Partners',
+    orderDesc: 'Listed alphabetically'
+  },
   MORE: 'Read More',
   EXPAND: 'Expand All',
   RETRACT: 'Collapse All',
+  viewMore: 'View More',
+  blog: 'Blog',
+  news: 'News',
 };
