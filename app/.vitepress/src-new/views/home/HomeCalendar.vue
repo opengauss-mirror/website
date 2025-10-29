@@ -39,6 +39,7 @@ import { getMeetingDateListApi, getMeetingListApi, getGroupInfosApi, deleteMeeti
 import { doLogin, getUserAuth } from '@/shared/login';
 import type { MeetingSigT, MeetingPostT, MeetingItemT } from '@/shared/@types/type-meeting';
 import { useI18n } from '~@/i18n';
+import { useLocale } from '~@/composables/useLocale';
 
 const TODAY = new Date();
 const TODAY_FORMATTED = dayjs(TODAY).format('YYYY/MM/DD');
@@ -48,6 +49,7 @@ const { lang } = useData();
 const meetingStore = useMeeting();
 const message = useMessage(null);
 const i18n = useI18n();
+const { t } = useLocale();
 const i18nMeeting = computed(() => i18n.value.home.HOME_CALENDAR);
 
 const recentMeetingDates = ref([] as string[]);
@@ -107,42 +109,42 @@ const meetingI18n = {
 };
 // 日历展示时间限制
 const limitTime = '2021 年 1 月';
-const tabList = [
-  {
-    label: '全部',
-    value: 'all',
-    icon: IconAll,
-  },
-  {
-    label: '会议',
-    value: 'meetings',
-    icon: IconMeet,
-  },
-  {
-    label: '活动',
-    value: 'event',
-    icon: IconEvent,
-  },
-  {
-    label: '峰会',
-    value: 'summit',
-    icon: IconSummit,
-  },
-];
-
-// 会议字段
-const meetingFields = [
-  { label: '会议详情', key: 'agenda' },
-  { label: '发起人', key: 'sponsor' },
-  { label: '会议时间', key: 'time' },
-  { label: '会议平台', key: 'platform' },
-  { label: '会议ID', key: 'mid' },
-  { label: '会议链接', key: 'join_url', isLink: true },
-  { label: 'Etherpad链接', key: 'etherpad', isLink: true },
-  { label: '起始日期', key: 'date' }, // event
-  { label: '活动地点', key: 'location' }, // event
-];
-const tabType = ref(tabList[0].value);
+const tabList = computed(() => {
+  return [
+    {
+      label: t('home.HOME_CALENDAR.all'),
+      value: 'all',
+      icon: IconAll,
+    },
+    {
+      label: t('home.HOME_CALENDAR.meeting'),
+      value: 'meetings',
+      icon: IconMeet,
+    },
+    {
+      label: t('home.HOME_CALENDAR.activity'),
+      value: 'event',
+      icon: IconEvent,
+    },
+    {
+      label: t('home.HOME_CALENDAR.summit'),
+      value: 'summit',
+      icon: IconSummit,
+    },
+  ];
+})
+const meetingFields = computed(() => {
+  return [
+    { label: t('home.HOME_CALENDAR.meetingDetail'), key: 'agenda' },
+    { label: t('home.HOME_CALENDAR.host'), key: 'sponsor' },
+    { label: t('home.HOME_CALENDAR.meetingTime'), key: 'time' },
+    { label: t('home.HOME_CALENDAR.meetingPlatform'), key: 'platform' },
+    { label: t('home.HOME_CALENDAR.meetingId'), key: 'mid' },
+    { label: t('home.HOME_CALENDAR.meetingLink'), key: 'join_url', isLink: true },
+    { label: t('home.HOME_CALENDAR.ETHERPAD'), key: 'etherpad', isLink: true },
+  ]
+});
+const tabType = ref(tabList.value[0].value);
 const calendarRef = ref();
 const calendarHeight = ref<string>('407px');
 const isLimit = ref(false);
@@ -152,7 +154,18 @@ const displayCalendarData = computed(() => {
   return currentCalendarData.value.filter((item) => tabType.value === item.type);
 });
 
-// 选择日期
+watch(
+  () => displayCalendarData.value.length,
+  (length) => {
+    if (length === 1) {
+      activeName.value = [displayCalendarData.value[0].id];
+      return;
+    }
+    activeName.value = [];
+  },
+  { immediate: true, flush: 'post' }
+);
+
 const selectDate = (val: string, date: string) => {
   if (date === limitTime && val === 'prev-month') {
     isLimit.value = true;
@@ -344,11 +357,11 @@ const meetingCancelConfirm = async () => {
 };
 </script>
 <template>
-  <AppSection title="openGuass开发者日历" class="home-calendar" ref="container">
+  <AppSection :title="t('home.HOME_CALENDAR.developerCalendar')" class="home-calendar" ref="container">
     <div class="meeting-oper">
-      <p class="text">使用openGauss会议预定功能需要SIG组Maintainer或Committer身份权限</p>
+      <p class="text">{{ t('home.HOME_CALENDAR.LOGIN_TEXT') }}</p>
       <div class="oper-action">
-        <OButton variant="solid" round="pill" color="primary" @click="createMeetingDlg"> 预定会议 </OButton>
+        <OButton variant="solid" round="pill" color="primary" @click="createMeetingDlg"> {{ t('home.HOME_CALENDAR.RESERVE_MEETING') }} </OButton>
       </div>
     </div>
     <div class="calendar-body">
@@ -364,7 +377,7 @@ const meetingCancelConfirm = async () => {
             </OIcon>
           </div>
           <div class="right-title">
-            {{ meetingI18n.NEW_DATE }}
+            {{ t('home.HOME_CALENDAR.latestSchedule') }}:&ensp;
             <span>{{ TODAY_FORMATTED }}</span>
           </div>
         </template>

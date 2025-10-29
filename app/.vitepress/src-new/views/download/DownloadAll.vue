@@ -122,7 +122,7 @@ const tableColumns = [
         <div class="info">
           <p>{{ $t('download.RELEASE_DATE') }}</p>
           <p>
-            <span v-if="item.releaseDate">{{ item.releaseDate }}</span>
+            <span v-if="item.releaseDate">{{ item.releaseDate.slice(0, 7).replace('.', '/') }}</span>
             <span v-else class="no-data">--</span>
           </p>
           <p>{{ $t('download.EOM_DATE') }}</p>

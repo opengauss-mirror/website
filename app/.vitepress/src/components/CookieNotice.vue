@@ -8,9 +8,9 @@ import { useScreen } from '@/shared/useScreen';
 import { initSensor, removeSensor } from '@/shared/analytics';
 import { useI18n } from '@/i18n';
 
-import IconClose from '~icons/app/icon-cancel.svg';
 import { reportPV } from '@/shared/analytics';
 import { nextTick } from 'vue';
+import { OButton, OIcon, OIconClose } from '@opensig/opendesign';
 
 const { lePadV } = useScreen();
 const i18n = useI18n();
@@ -137,14 +137,16 @@ watch(
           </p>
         </div>
         <div class="cookie-notice-right">
-          <OButton type="outline" size="mini" @click="acceptAll">{{ i18n.cookie.acceptAll }}</OButton>
-          <OButton type="outline" size="mini" @click="rejectAll">{{ i18n.cookie.rejectAll }}</OButton>
-          <OButton type="outline" size="mini" @click="toggleDlgVisible(true)">
+          <OButton round="pill" variant="outline" color="primary" @click="acceptAll">{{ i18n.cookie.acceptAll }}</OButton>
+          <OButton round="pill" variant="outline" color="primary" @click="rejectAll">{{ i18n.cookie.rejectAll }}</OButton>
+          <OButton round="pill" variant="outline" color="primary" @click="toggleDlgVisible(true)">
             {{ i18n.cookie.manage }}
           </OButton>
         </div>
 
-        <IconClose class="cookie-notice-close" @click="toggleNoticeVisible(false)" />
+        <OIcon class="cookie-notice-close" @click="toggleNoticeVisible(false)">
+          <OIconClose />
+        </OIcon>
       </div>
     </div>
     <client-only>
@@ -180,8 +182,8 @@ watch(
         </div>
         <template #footer>
           <span class="dialog-footer">
-            <OButton type="outline" size="mini" @click="handleSave">{{ i18n.cookie.saveSetting }}</OButton>
-            <OButton type="outline" size="mini" @click="handleAllowAll">
+            <OButton round="pill" variant="outline" color="primary" @click="handleSave" style="margin-right: 16px;">{{ i18n.cookie.saveSetting }}</OButton>
+            <OButton round="pill" variant="outline" color="primary" @click="handleAllowAll">
               {{ i18n.cookie.acceptAll }}
             </OButton>
           </span>
@@ -276,10 +278,17 @@ watch(
     align-items: center;
   }
 
-  .o-button {
-    @media (max-width: 840px) {
-      width: 100%;
-      justify-content: center;
+  .o-btn:not(:first-child) {
+    margin-left: 16px;
+  }
+  
+  @media (max-width: 840px) {
+    .o-btn {
+      align-self: stretch;
+      &:not(:first-child) {
+        margin-top: 12px;
+        margin-left: 0;
+      }
     }
   }
 }
@@ -287,13 +296,15 @@ watch(
 .cookie-notice-close {
   position: absolute;
   top: 12px;
-  right: 24px;
+  right: 44px;
   cursor: pointer;
   transform-origin: center;
   color: var(--e-color-text1);
+  font-size: 20px;
   &:hover {
     color: var(--e-color-brand1);
   }
+  @include x-svg-hover;
 }
 
 .cookie-dlg {
