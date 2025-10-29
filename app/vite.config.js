@@ -38,6 +38,7 @@ export default defineConfig({
         migration: FileSystemIconLoader(path.resolve(__dirname, './.vitepress/src/assets/category/migration')),
         teamup: FileSystemIconLoader(path.resolve(__dirname, './.vitepress/src/assets/category/team-up')),
         'app-new': FileSystemIconLoader(path.resolve(__dirname, './.vitepress/src-new/assets/svg-icons')),
+        'app-new-showcase': FileSystemIconLoader(path.resolve(__dirname, './.vitepress/src-new/assets/svg-icons/category/showcase')),
       },
     }),
     viteStaticCopy({

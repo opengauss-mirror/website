@@ -9,6 +9,7 @@ import HomeCalendar from './HomeCalendar.vue';
 import HomeDynamic from './HomeDynamic.vue';
 import HomeVideo from './HomeVideo.vue';
 import HomePartners from './HomePartners.vue';
+import HomeShowCase from './HomeShowCase.vue';
 
 const { lang } = useData();
 const { locale } = useI18n();
@@ -23,6 +24,7 @@ watchEffect(() => (locale.value = lang.value));
   <HomeCalendar />
   <HomeDynamic />
   <HomeVideo />
+  <HomeShowCase />
   <HomePartners />
 </template>
 
