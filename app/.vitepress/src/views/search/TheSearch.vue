@@ -14,7 +14,6 @@ import useWindowResize from '@/components/hooks/useWindowResize';
 import { windowOpen, handleError } from '@/shared/utils';
 
 import { DOCS_LINK } from '@/data/url-config';
-import { useCookieStore } from '@/stores/common';
 import { v4 as uniqueId } from 'uuid';
 import { oaReport } from '@/shared/analytics';
 
@@ -25,7 +24,6 @@ const screenWidth = useWindowResize();
 const isMobile = computed(() => (screenWidth.value <= 768 ? true : false));
 
 const { lang } = useData();
-const cookieStore = useCookieStore();
 const router = useRouter();
 const i18n = useI18n();
 const activeVersion = ref('');
@@ -164,9 +162,7 @@ function searchAll(current?: string) {
     if (!current) {
       currentIndex.value = 0;
     }
-    if (cookieStore.isAllAgreed) {
-      reportSearch(searchInput.value);
-    }
+    reportSearch(searchInput.value);
     currentPage.value = 1;
     searchType.value = current || '';
     searchCountAll();

@@ -5,7 +5,7 @@ import { useData } from 'vitepress';
 import { ElMessage } from 'element-plus';
 import { useClipboard } from '@/components/hooks/useClipboard';
 
-import { useCommon, useCookieStore } from '@/stores/common';
+import { useCommon } from '@/stores/common';
 import DownloadConfig from '@/data/download';
 import { GITCODE_LINK, DOCS_LINK } from '@/data/url-config';
 import { getCustomCookie } from '@/shared/utils';
@@ -26,7 +26,6 @@ const i18n = useI18n();
 const { lang } = useData();
 const commonStore = useCommon();
 const isZh = computed(() => (lang.value === 'zh' ? true : false));
-const cookieStore = useCookieStore();
 
 const SHATEXT = 'SHA256';
 const selectVersion = ref(DownloadConfig[2].name);
@@ -124,7 +123,7 @@ const downloadVersionAuth = [DownloadConfig[0].name, DownloadConfig[1].name, Dow
 const userInfoStore = useUserInfoStore();
 // 老版本下载判断
 const collectDownloadData = (name: string, architectureAndOs: string) => {
-  if (cookieStore.isAllAgreed || userInfoStore.username) {
+  if (userInfoStore.username) {
     const { href } = window.location;
     const downloadTime = new Date();
     const _U_T_ = getCustomCookie('_U_T_') || 'notLog';
