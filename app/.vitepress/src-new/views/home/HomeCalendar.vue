@@ -85,6 +85,23 @@ const updateCurrentDayMeetings = (date: string) => {
   }
 };
 
+// 计算最新日程
+const latestSchedule = computed(() => {
+  const today = dayjs().format('YYYY-MM-DD');
+  // 检查今天是否有活动
+  let latest = recentMeetingDates.value.find((v) => v === today);
+
+  //如果今天没有活动，查找即将发生的最近活动
+  if (!latest) {
+    const upcomingDates = recentMeetingDates.value.filter((v) => dayjs(v).unix() >= dayjs().unix());
+
+    if (upcomingDates.length > 0) {
+      latest = [...upcomingDates].sort((a, b) => dayjs(a).unix() - dayjs(b).unix())[0];
+    }
+  }
+  return latest;
+});
+
 // 查询指定日期的会议事件
 const queryMeetingDates = async (date: string, group_name: string) => {
   const res = await getMeetingListApi(date, group_name);
@@ -92,7 +109,7 @@ const queryMeetingDates = async (date: string, group_name: string) => {
   currentCalendarData.value = [];
 
   if (Array.isArray(res)) {
-    currentCalendarData.value = [...res, ...currentCalendarData.value];
+    currentCalendarData.value = res.map((item) => ({ ...item, type: 'meetings', d: item.mid }));
   }
 
   activeName.value = currentCalendarData.value.length === 1 ? [currentCalendarData.value[0].id] : [];
@@ -132,7 +149,7 @@ const tabList = computed(() => {
       icon: IconSummit,
     },
   ];
-})
+});
 const meetingFields = computed(() => {
   return [
     { label: t('home.HOME_CALENDAR.meetingDetail'), key: 'agenda' },
@@ -142,7 +159,7 @@ const meetingFields = computed(() => {
     { label: t('home.HOME_CALENDAR.meetingId'), key: 'mid' },
     { label: t('home.HOME_CALENDAR.meetingLink'), key: 'join_url', isLink: true },
     { label: t('home.HOME_CALENDAR.ETHERPAD'), key: 'etherpad', isLink: true },
-  ]
+  ];
 });
 const tabType = ref(tabList.value[0].value);
 const calendarRef = ref();
@@ -378,7 +395,7 @@ const meetingCancelConfirm = async () => {
           </div>
           <div class="right-title">
             {{ t('home.HOME_CALENDAR.latestSchedule') }}:&ensp;
-            <span>{{ TODAY_FORMATTED }}</span>
+            <span>{{ latestSchedule }}</span>
           </div>
         </template>
         <template #date-cell="{ data }">
@@ -403,7 +420,7 @@ const meetingCancelConfirm = async () => {
       <div class="detail-list">
         <div class="current-day">
           {{ meetingI18n.NEW_DATE }}
-          <span>{{ selectedDateStr }}</span>
+          <span>{{ latestSchedule }}</span>
         </div>
         <div class="right-title">
           <OTab v-model="tabType" :line="false">
@@ -438,7 +455,7 @@ const meetingCancelConfirm = async () => {
                   <div v-if="calendarData.group_name">{{ meetingI18n.SIG_GROUP }} {{ calendarData.group_name }}</div>
                   <div v-if="calendarData.activity_type">{{ calendarData.activity_type }}</div>
                 </div>
-                <OLink v-if="calendarData.type" :href="calendarData.link" target="_blank">
+                <OLink v-if="calendarData.type !== 'meetings'" :href="calendarData.link" target="_blank">
                   {{ meetingI18n.LEARN_MORE }}
                   <template #suffix>
                     <OIcon><OIconChevronRight /> </OIcon>
@@ -592,12 +609,15 @@ const meetingCancelConfirm = async () => {
         border-right: 1px solid var(--o-color-control4);
         thead {
           th {
+            &:first-child {
+              padding-left: 12px;
+            }
             padding: 12px 0 16px 20px;
             text-align: left;
             color: var(--o-color-info3);
             @include text1;
             @include respond-to('<=pad_v') {
-              padding: 0;
+              padding: 0 !important;
               text-align: center;
             }
           }
