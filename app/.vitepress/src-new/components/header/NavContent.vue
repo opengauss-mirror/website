@@ -181,7 +181,7 @@ const descMouseenter = (e: MouseEvent) => {
   .content-subtitle {
     @include text2;
     font-weight: 500;
-    color: var(--o-color-primary1);
+    color: var(--o-color-info1);
   }
 
   .content-tag {
@@ -196,7 +196,7 @@ const descMouseenter = (e: MouseEvent) => {
       color: var(--o-color-info2);
       margin-top: var(--o-gap-1);
       text-align: justify;
-      @include text1;
+      @include tip1;
       @include text-truncate(2);
       word-break: normal;
     }

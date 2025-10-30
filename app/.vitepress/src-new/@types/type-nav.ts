@@ -19,6 +19,7 @@ export interface ShortCutItemT {
 export interface NavItemT {
   NAME: string;
   ID: string;
+  WITH_PICTURE?: boolean;
   CHILDREN?: NavSubItemT[];
   SHORTCUT?: ShortCutItemT[];
 }

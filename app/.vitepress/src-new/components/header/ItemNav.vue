@@ -1,20 +1,16 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
-import { useDebounceFn } from '@vueuse/core';
+import { ref, computed, shallowRef, watch } from 'vue';
+import { useDebounceFn, useElementSize } from '@vueuse/core';
 import { useData, useRouter } from 'vitepress';
 
 import { useI18n } from '~@/i18n';
 import { useCommon } from '@/stores/common';
 
-import { OScroller, ODivider } from '@opensig/opendesign';
+import { OScroller, ODropdownItem, ODropdown } from '@opensig/opendesign';
 import NavContent from './NavContent.vue';
-
-import ItemLang from './ItemLang.vue';
-import ItemTheme from './ItemTheme.vue';
-import ItemUser from './ItemUser.vue';
-import ItemSearch from './ItemSearch.vue';
-import ItemCode from './ItemCode.vue';
 import NavLink from './NavLink.vue';
+
+import { NavItemT } from '~@/@types/type-nav';
 
 const i18n = useI18n();
 const router = useRouter();
@@ -26,16 +22,23 @@ const navData = computed(() => i18n.value.header.NAV_ROUTER);
 
 // nav 鼠标滑过事件
 const isShow = ref(false);
-const navActive = ref();
+const navActive = ref('');
 const subNavContent = ref<any>([]);
 const navShortcut = ref<any>([]);
 const isPicture = ref(false);
+const isClickDropdown = ref(false);
 
-const toggleDebounced = useDebounceFn(function (item: any | null) {
+const toggleDebounced = useDebounceFn(function (item: NavItemT | null) {
   if (item === null) {
     navActive.value = '';
     isShow.value = false;
     isPicture.value = false;
+  } else if (item.ID === 'more') {
+    if (navActive.value) {
+      isShow.value = false;
+    }
+
+    navActive.value = 'more';
   } else {
     if (item.ID === 'home') {
       navActive.value = item.ID;
@@ -44,13 +47,22 @@ const toggleDebounced = useDebounceFn(function (item: any | null) {
       isShow.value = false;
       return;
     }
+
     navActive.value = item.ID;
     isShow.value = true;
     subNavContent.value = item.CHILDREN;
     navShortcut.value = item.SHORTCUT;
-    isPicture.value = item.WITH_PICTURE;
+    isPicture.value = item.WITH_PICTURE ?? false;
   }
 }, 100);
+
+const handleDropdownClick = (item: NavItemT) => {
+  isClickDropdown.value = true;
+  isShow.value = true;
+  subNavContent.value = item.CHILDREN;
+  navShortcut.value = item.SHORTCUT;
+  isPicture.value = item.WITH_PICTURE ?? false;
+};
 
 const clickNav = (item: string) => {
   if (item === 'home') {
@@ -65,167 +77,223 @@ const linkClick = () => {
     navActive.value = '';
   }, 150);
 };
+
+// ------------------------ 计算 nav 宽度 ------------------------
+const visiableNavs = shallowRef<NavItemT[]>([]);
+const hiddenNavs = shallowRef<any>([]);
+const navHiddenRef = ref<HTMLElement>();
+const navContainerHiddenRef = ref<HTMLElement>();
+
+const { width: navContainerWidth } = useElementSize(navContainerHiddenRef);
+
+watch(
+  navContainerWidth,
+  () => {
+    if (!navHiddenRef.value?.children?.length) {
+      return;
+    }
+
+    let i = 0;
+    let width = 0;
+    for (; i < navHiddenRef.value.children.length; i++) {
+      width += navHiddenRef.value.children[i].clientWidth;
+
+      if (width >= navContainerWidth.value) {
+        break;
+      }
+    }
+
+    visiableNavs.value = navData.value.slice(0, i);
+    hiddenNavs.value = navData.value.slice(i);
+
+    if (hiddenNavs.value.length > 0) {
+      visiableNavs.value.push({ ID: 'more', NAME: i18n.value.header.MORE });
+    }
+  },
+  {
+    immediate: true,
+  }
+);
 </script>
 
 <template>
-  <div class="header-content">
-    <div class="header-nav">
-      <nav class="o-nav">
-        <ul class="o-nav-list">
-          <li
-            v-for="item in navData"
-            :key="item.ID"
-            :class="{
-              active: navActive === item.ID,
-            }"
-            @mouseenter="toggleDebounced(item)"
-            @mouseleave="toggleDebounced(null)"
-          >
-            <span :id="'tour_headerNav_' + item.ID" class="nav-item" @click="clickNav(item.ID)">
+  <div class="header-content" ref="navContainerHiddenRef">
+    <nav class="o-nav">
+      <ul class="o-nav-list">
+        <li
+          v-for="item in visiableNavs"
+          :key="item.ID"
+          :id="'tour_headerNav_' + item.ID"
+          class="o-nav-list-item"
+          :class="{
+            active: navActive === item.ID,
+          }"
+          @mouseenter="toggleDebounced(item)"
+          @mouseleave="toggleDebounced(null)"
+        >
+          <template v-if="item.ID !== 'more'">
+            <span class="nav-item" @click="clickNav(item.ID)">
               {{ item.NAME }}
             </span>
+          </template>
 
-            <transition name="transition">
-              <div v-show="isShow" :class="['nav-dropdown', navActive, commonStore.theme, `${navActive}-${lang}`]">
-                <div class="nav-drop-content">
-                  <OScroller class="nav-scroller" show-type="always" size="small" disabled-y>
-                    <div class="nav-sub-content">
-                      <div v-if="subNavContent?.length" class="content-left">
-                        <div class="item-sub" v-for="(sub, s) in subNavContent" :key="s">
-                          <span class="content-title">
-                            {{ sub.NAME }}
-                          </span>
+          <ODropdown
+            v-if="hiddenNavs.length && item.ID === 'more'"
+            trigger="hover"
+            options-wrapper=".header-content"
+            optionPosition="top"
+            option-wrap-class="dropdown"
+            @mouseenter="toggleDebounced(item)"
+          >
+            <span id="tour_headerNav_more" class="nav-item">
+              {{ i18n.header.MORE }}
+            </span>
 
-                          <ODivider />
+            <template #dropdown>
+              <ODropdownItem v-for="item in hiddenNavs" @click="handleDropdownClick(item)">
+                {{ item.NAME }}
+              </ODropdownItem>
+            </template>
+          </ODropdown>
 
-                          <NavContent :nav-content="sub?.CHILDREN" @link-click="linkClick" />
-                        </div>
+          <transition name="transition">
+            <div v-if="isShow" :class="['nav-dropdown', navActive, commonStore.theme, `${navActive}-${lang}`]">
+              <div class="nav-drop-content">
+                <OScroller class="nav-scroller" show-type="always" size="small" disabled-y>
+                  <div class="nav-sub-content">
+                    <div v-if="subNavContent?.length" class="content-left">
+                      <div class="item-sub" v-for="(sub, s) in subNavContent" :key="s">
+                        <span class="content-title">
+                          {{ sub.NAME }}
+                        </span>
+
+                        <NavContent :nav-content="sub?.CHILDREN" @link-click="linkClick" />
                       </div>
+                    </div>
 
-                      <div class="split-line" v-if="navShortcut?.length"></div>
+                    <div class="split-line" v-if="navShortcut?.length"></div>
 
-                      <div class="content-right" v-if="navShortcut?.length">
-                        <div v-if="navShortcut?.length">
-                          <span class="content-title">{{ i18n.header.QUICKLINK }}</span>
-                          <div v-if="!isPicture">
-                            <div v-for="shortcut in navShortcut" :key="shortcut.NAME" class="shortcut">
-                              <NavLink :url="shortcut.URL" @link-click="linkClick" class="shortcut-link">
-                                <span>{{ shortcut.NAME }}</span>
-                                <OIcon v-if="shortcut.ICON">
-                                  <component :is="shortcut.ICON" class="icon" />
-                                </OIcon>
-                              </NavLink>
-                            </div>
-                          </div>
-                          <div v-else>
-                            <NavLink v-for="shortcut in navShortcut" :url="shortcut.URL" :key="shortcut.NAME" class="review" @link-click="linkClick">
-                              <img :src="shortcut.PICTURE" class="review-picture" />
-                              <div class="review-content">
-                                <p class="review-title">
-                                  {{ shortcut.NAME }}
-                                </p>
-                                <div class="review-property">
-                                  <span>{{ shortcut.REMARK }}</span>
-                                </div>
-                              </div>
+                    <div class="content-right" v-if="navShortcut?.length">
+                      <div v-if="navShortcut?.length">
+                        <span class="content-title">{{ i18n.header.QUICKLINK }}</span>
+                        <div v-if="!isPicture">
+                          <div v-for="shortcut in navShortcut" :key="shortcut.NAME" class="shortcut">
+                            <NavLink :url="shortcut.URL" @link-click="linkClick" class="shortcut-link">
+                              <span>{{ shortcut.NAME }}</span>
+                              <OIcon v-if="shortcut.ICON">
+                                <component :is="shortcut.ICON" class="icon" />
+                              </OIcon>
                             </NavLink>
                           </div>
                         </div>
+                        <div v-else>
+                          <NavLink v-for="shortcut in navShortcut" :url="shortcut.URL" :key="shortcut.NAME" class="review" @link-click="linkClick">
+                            <img :src="shortcut.PICTURE" class="review-picture" />
+                            <div class="review-content">
+                              <p class="review-title">
+                                {{ shortcut.NAME }}
+                              </p>
+                              <div class="review-property">
+                                <span>{{ shortcut.REMARK }}</span>
+                              </div>
+                            </div>
+                          </NavLink>
+                        </div>
                       </div>
                     </div>
-                  </OScroller>
-                </div>
+                  </div>
+                </OScroller>
               </div>
-            </transition>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
+            </div>
+          </transition>
+        </li>
+      </ul>
+    </nav>
 
-  <div class="header-tool">
-    <ItemSearch />
-
-    <div id="tour_headerNav_tool" class="header-right">
-      <ItemCode />
-      <ItemLang />
-      <ItemTheme />
-      <ItemUser />
-    </div>
+    <nav v-if="navData.length" class="o-nav o-nav-hidden">
+      <ul class="o-nav-list" ref="navHiddenRef">
+        <li v-for="item in navData" :key="item.ID" class="o-nav-list-item">
+          <span class="nav-item">
+            {{ item.NAME }}
+          </span>
+        </li>
+      </ul>
+    </nav>
   </div>
 </template>
 
 <style lang="scss" scoped>
+.o-nav-list-item {
+  position: relative;
+}
+
 .header-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   flex: 1;
   height: 100%;
-  overflow: hidden;
-
-  .header-nav {
-    height: 100%;
-    display: flex;
-    flex: 1;
-    justify-content: space-between;
-  }
+  margin-right: 64px;
+  position: relative;
 }
 
 .o-nav {
+  width: 100%;
   height: 100%;
   position: relative;
+  overflow: hidden;
+}
 
-  @include respond-to('>laptop') {
-    width: calc(100% - 120px);
-  }
-  @media (min-width: 1001px) and (max-width: 1440px) {
-    width: calc(100% - 52px);
-  }
-  @media (max-width: 1000px) {
-    width: calc(100% - 48px);
-  }
+.o-nav-hidden {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  visibility: hidden;
 }
 
 .o-nav-list {
+  width: 100%;
   height: 100%;
   padding: 0;
   margin: 0;
-  width: 100%;
-  overflow: hidden;
   white-space: nowrap;
-  position: relative;
-  &::after {
-    content: '';
-    position: absolute;
-    width: 50px;
-    height: 100%;
-    right: 0;
-    top: 0;
-    z-index: 0;
-  }
+
   > li {
     position: relative;
     display: inline-flex;
     align-items: center;
     height: 100%;
     color: var(--o-color-info1);
+    transition: all var(--o-duration-s) var(--o-easing-standard);
+    padding-left: 16px;
+    padding-right: 16px;
+    flex-shrink: 0;
     cursor: pointer;
     @include text1;
-    transition: all var(--o-duration-s) var(--o-easing-standard);
 
-    @include hover {
-      z-index: 99;
+    @include respond-to('laptop') {
+      padding-left: 12px;
+      padding-right: 12px;
     }
 
-    &::after {
+    @include respond-to('pad_h') {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+
+    .nav-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+
+    & .nav-item::after {
       content: '';
       position: absolute;
-      left: var(--o-gap-4);
       opacity: 0;
       bottom: 0;
-      width: calc(100% - var(--o-gap-4) * 2);
-      height: 2px;
+      width: 100%;
+      height: 1px;
       border-radius: 1px;
       background: var(--o-color-primary1);
       transition: all var(--o-duration-s) var(--o-easing-standard);
@@ -235,25 +303,14 @@ const linkClick = () => {
       color: var(--o-color-primary1);
       z-index: 99;
       font-weight: 500;
-      &::after {
+
+      & .nav-item::after {
         content: '';
         opacity: 1;
       }
-    }
-    .nav-item {
-      display: block;
-      padding: 18px var(--o-gap-4);
 
-      @include respond-to('laptop') {
-        padding: 15px 14px;
-      }
-      @include respond-to('pad_h') {
-        padding: 18px 10px;
-      }
-      &.en {
-        @media (min-width: 841px) and (max-width: 1000px) {
-          padding: var(--o-gap-2);
-        }
+      @include respond-to('<=pad') {
+        bottom: 1px;
       }
     }
   }
@@ -440,6 +497,7 @@ const linkClick = () => {
           height: auto;
           display: block;
           object-fit: contain;
+          border-radius: var(--o-radius-xs);
 
           @include respond-to('<=laptop') {
             display: none;
@@ -508,10 +566,15 @@ const linkClick = () => {
     .content-title {
       display: block;
       color: var(--o-color-info3);
+      margin-bottom: var(--o-gap-3);
       @include tip1;
 
       @include respond-to('laptop') {
         @include text1;
+      }
+
+      @include respond-to('<=pad') {
+        margin-bottom: var(--o-gap-2);
       }
     }
 
@@ -526,7 +589,7 @@ const linkClick = () => {
 
   &.download {
     .item-sub {
-      margin-left: 32px;
+      margin-left: 24px;
       flex: 1;
 
       .content-container {
@@ -549,7 +612,7 @@ const linkClick = () => {
       }
 
       @include respond-to('laptop') {
-        margin-left: 24px;
+        margin-left: 16px;
 
         .content-container {
           :deep(.content-item) {
@@ -560,7 +623,7 @@ const linkClick = () => {
       }
 
       @include respond-to('pad_h') {
-        margin-left: 16px;
+        margin-left: 12px;
 
         .content-container {
           :deep(.content-item) {
@@ -657,7 +720,7 @@ const linkClick = () => {
 
   &.learn {
     .item-sub {
-      margin-left: 32px;
+      margin-left: 24px;
       flex: 1;
 
       .content-container {
@@ -705,7 +768,7 @@ const linkClick = () => {
 
   &.approve {
     .item-sub {
-      margin-left: 32px;
+      margin-left: 24px;
       flex: 1;
 
       .content-container {
@@ -719,18 +782,18 @@ const linkClick = () => {
       }
 
       @include respond-to('laptop') {
-        margin-left: 24px;
+        margin-left: 16px;
       }
 
       @include respond-to('pad_h') {
-        margin-left: 16px;
+        margin-left: 12px;
       }
     }
   }
 
   &.community {
     .item-sub {
-      margin-left: 32px;
+      margin-left: 24px;
       flex: 1;
 
       .content-container {
@@ -753,7 +816,7 @@ const linkClick = () => {
       }
 
       @include respond-to('laptop') {
-        margin-left: 24px;
+        margin-left: 16px;
 
         .content-container {
           :deep(.content-item) {
@@ -764,7 +827,7 @@ const linkClick = () => {
       }
 
       @include respond-to('pad_h') {
-        margin-left: 16px;
+        margin-left: 12px;
 
         .content-container {
           :deep(.content-item) {
@@ -778,7 +841,7 @@ const linkClick = () => {
 
   &.update {
     .item-sub {
-      margin-left: 32px;
+      margin-left: 24px;
       flex: 1;
 
       .content-container {
@@ -801,7 +864,7 @@ const linkClick = () => {
       }
 
       @include respond-to('laptop') {
-        margin-left: 24px;
+        margin-left: 16px;
 
         .content-container {
           :deep(.content-item) {
@@ -812,7 +875,7 @@ const linkClick = () => {
       }
 
       @include respond-to('pad_h') {
-        margin-left: 16px;
+        margin-left: 12px;
 
         .content-container {
           :deep(.content-item) {
@@ -825,23 +888,31 @@ const linkClick = () => {
   }
 }
 
-.header-tool {
-  display: flex;
-  align-items: center;
+.o-dropdown {
   height: 100%;
 }
 
-.header-right {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  height: calc(100% - 12px);
-  margin: 6px 0;
-  margin-left: 20px;
+.o-dropdown-item {
+  background: var(--o-color-fill2);
+  cursor: pointer;
+  border-radius: var(--o-radius_control-xs);
+  padding: var(--o-gap-1);
+  min-width: 144px;
+  height: 40px;
+  color: var(--o-color-info1);
 
-  @include respond-to('pad_v-laptop') {
-    gap: var(--o-gap-4);
+  @include hover {
+    background: var(--o-color-control2-light);
   }
+
+  &.active {
+    color: var(--o-color-primary1);
+    background: var(--o-color-control3-light);
+  }
+}
+
+:deep(.dropdown) {
+  --dropdown-list-radius: var(--o-radius-s);
 }
 
 html[lang='en'] {

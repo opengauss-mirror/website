@@ -438,6 +438,7 @@ export default {
       ],
     },
   ],
+  MORE: '更多',
   QUICKLINK: '快捷链接',
   CODE: '源码',
   SEARCH: {

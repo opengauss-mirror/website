@@ -40,7 +40,7 @@ const itemChange = (data: any) => {
 }
 
 .header-code {
-  height: calc(100% + 10px);
+  height: 100%;
   display: flex;
   align-items: center;
 
@@ -86,8 +86,8 @@ const itemChange = (data: any) => {
 
 .o-dropdown {
   height: 100%;
-  --dropdown-list-radius: var(--o-radius-s);
 }
+
 .o-dropdown-item {
   background: var(--o-color-fill2);
   cursor: pointer;

@@ -367,6 +367,7 @@ export default {
       ],
     },
   ],
+  MORE:"More",
   QUICKLINK: 'Quick Links',
   CODE: 'Code',
   SEARCH: {

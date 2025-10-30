@@ -107,7 +107,7 @@ const linkClick = () => {
 <template>
   <div class="header-content" :class="lang">
     <div class="header-nav" :class="{ active: menuShow }">
-      <nav class="o-nav">
+      <nav class="o-nav" :class="`o-nav-${lang}`">
         <ul class="o-nav-list">
           <li
             v-for="(item, index) in headerData"
@@ -139,7 +139,7 @@ const linkClick = () => {
         </div>
       </nav>
 
-      <div class="header-tool">
+      <div class="header-tool" :class="`header-tool-${lang}`">
         <div
           class="header-tool-code"
           @click="handleNavClick(null)"
@@ -188,17 +188,13 @@ const linkClick = () => {
     position: fixed;
     left: 0;
     overflow: hidden;
-    top: 56px;
+    top: 48px;
     height: calc(100vh - 48px);
     transform: translateX(-130%);
     transition-duration: 0.333s;
     transition-property: all;
     transition-timing-function: cubic-bezier(0.5, 0, 0.84, 0.25);
     display: block;
-
-    @include respond-to('<=pad_v') {
-      top: 48px;
-    }
 
     &.active {
       opacity: 1;
@@ -211,13 +207,19 @@ const linkClick = () => {
   position: absolute;
   bottom: 36px;
   left: 0;
-  width: 160px;
-
+  width: 96px;
   display: flex;
   height: auto;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  @include respond-to('phone') {
+    width: 76px;
+    .header-tool-code {
+      width: 76px;
+    }
+  }
+
   .lang {
     color: var(--o-color-text1);
     letter-spacing: 0.08em;
@@ -225,7 +227,7 @@ const linkClick = () => {
   }
 
   .header-tool-code {
-    width: 160px;
+    width: 96px;
     @include nav-item;
     @include h4;
   }
@@ -236,10 +238,14 @@ const linkClick = () => {
   background-color: var(--o-color-fill2);
   top: 0;
   left: 0;
-  width: calc(100% - 160px);
-  transform: translateX(160px);
+  width: calc(100% - 96px);
+  transform: translateX(96px);
   height: 100%;
   z-index: 190;
+  @include respond-to('phone') {
+    width: calc(100% - 76px);
+    transform: translateX(76px);
+  }
 
   .nav-aside-wrapper {
     overflow-y: auto;
@@ -329,11 +335,15 @@ const linkClick = () => {
 .o-nav {
   height: 100%;
   position: relative;
-  width: 160px;
+  width: 96px;
   background: var(--o-color-fill1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @include respond-to('phone') {
+    width: 76px;
+  }
 
   .o-nav-list {
     padding: 0;
@@ -342,10 +352,46 @@ const linkClick = () => {
     @include h4;
 
     > li {
-      position: relative;
       @include nav-item;
+      position: relative;
       text-align: center;
     }
+  }
+}
+
+.o-nav-en {
+  width: fit-content;
+
+  .nav-aside {
+    width: calc(100% - 167px);
+    transform: translateX(167px);
+  }
+
+  .o-nav-list > li {
+    padding: 0 32px;
+  }
+
+  @include respond-to('phone') {
+    .nav-aside {
+      width: calc(100% - 138px);
+      transform: translateX(138px);
+    }
+
+    .o-nav-list > li {
+      padding: 0 24px;
+    }
+  }
+}
+
+.header-tool-en {
+  width: 167px;
+
+  .header-tool-code {
+    width: 100%;
+  }
+
+  @include respond-to('phone') {
+    width: 138px;
   }
 }
 </style>
