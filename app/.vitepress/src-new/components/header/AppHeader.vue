@@ -1,9 +1,16 @@
-<script lang="ts" setup>
+<script setup lang="ts">
 import { computed, ref } from 'vue';
 import { useData } from 'vitepress';
 
+import { OLink } from '@opensig/opendesign';
 import ContentWrapper from '~@/components/ContentWrapper.vue';
-import ItemNav from './ItemNav.vue';
+import ItemNav from '~@/components/header/ItemNav.vue';
+
+import ItemLang from './ItemLang.vue';
+import ItemTheme from './ItemTheme.vue';
+import ItemUser from './ItemUser.vue';
+import ItemSearch from './ItemSearch.vue';
+import ItemCode from './ItemCode.vue';
 import ItemNavMobile from './ItemNavMobile.vue';
 
 import logo_light from '~@/assets/logo.svg';
@@ -15,14 +22,16 @@ import { useCommon } from '@/stores/common';
 import { useScreen } from '~@/composables/useScreen';
 
 const { lang } = useData();
-const { lePadV, lePad } = useScreen();
+const { lePadV } = useScreen();
 const commonStore = useCommon();
-const langShow = ref(['zh', 'en']);
 
 // Logo主题判断
 const logo = computed(() => (commonStore.theme === 'light' ? logo_light : logo_dark));
 
+const langShow = ref(['zh', 'en']);
+
 const menuShow = ref(false);
+
 const menuPanel = () => {
   setTimeout(() => {
     menuShow.value = !menuShow.value;
@@ -36,9 +45,13 @@ const mobileClick = () => {
 </script>
 
 <template>
-  <header class="app-header" :class="[{ dark: commonStore.theme === 'dark' }]">
+  <div class="app-header" :class="[{ dark: commonStore.theme === 'dark' }]">
     <ContentWrapper class="app-header-wrap">
-      <div v-if="lePad" class="menu-icon">
+      <OLink :href="`/${lang}/`" class="logo">
+        <img alt="openGauss logo" :src="logo" />
+      </OLink>
+
+      <div v-if="lePadV" class="menu-icon">
         <div class="icon" @click="menuPanel">
           <OIcon>
             <IconMenu v-if="!menuShow" />
@@ -47,17 +60,19 @@ const mobileClick = () => {
         </div>
       </div>
 
-      <a class="logo" :href="`/${lang}/`">
-        <img alt="openGauss logo" :src="logo" />
-      </a>
+      <ItemNavMobile v-if="lePadV" :lang-options="langShow" :menuShow="menuShow" @link-click="mobileClick" />
 
-      <ClientOnly>
-        <ItemNavMobile v-if="lePad" :lang-options="langShow" :menuShow="menuShow" @link-click="mobileClick" />
+      <ItemNav v-else />
 
-        <ItemNav v-else />
-      </ClientOnly>
+      <div v-if="!lePadV" id="tour_headerNav_tool" class="header-tool">
+        <ItemSearch />
+        <ItemCode class="item-gap" />
+        <ItemLang class="item-gap" />
+        <ItemTheme class="item-gap" />
+        <ItemUser class="item-gap" />
+      </div>
     </ContentWrapper>
-  </header>
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -70,6 +85,19 @@ const mobileClick = () => {
   z-index: 98;
   box-shadow: var(--o-shadow-1);
   backdrop-filter: blur(5px);
+  height: 72px;
+
+  @include respond-to('laptop') {
+    height: 64px;
+  }
+
+  @include respond-to('pad_h') {
+    height: 56px;
+  }
+
+  @include respond-to('<=pad_v') {
+    height: 48px;
+  }
 
   @include respond-to('>pad_v') {
     &.dark {
@@ -96,56 +124,66 @@ const mobileClick = () => {
       z-index: 100;
     }
   }
+}
 
-  .app-header-wrap {
+.app-header-wrap {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+
+  .logo {
+    height: 100%;
     display: flex;
     align-items: center;
-
-    @include respond-to('>laptop') {
-      height: 72px;
-    }
+    margin-right: 40px;
 
     @include respond-to('laptop') {
-      height: 64px;
+      margin-right: 24px;
     }
 
     @include respond-to('pad_h') {
-      height: 56px;
+      margin-right: 16px;
     }
-
-    @include respond-to('<=pad_v') {
-      height: 48px;
-      justify-content: space-between;
-      position: relative;
-    }
-  }
-
-  .logo {
-    display: inline-block;
-    margin-right: var(--e-spacing-h4);
-    cursor: pointer;
 
     @include respond-to('<=pad_v') {
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
-      top: 12px;
+      top: 0;
       margin-right: 0;
+      height: 48px;
     }
 
     img {
       height: 32px;
 
       @include respond-to('<=pad_v') {
-        height: 24px;
+        height: 20px;
       }
+    }
+  }
+
+  .item-gap {
+    margin-left: 24px;
+    @include respond-to('laptop') {
+      margin-left: 16px;
+    }
+    @include respond-to('pad_h') {
+      margin-left: 12px;
     }
   }
 }
 
+.header-tool {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
 .menu-icon {
-  flex: 1;
   display: block;
+
   .icon {
     font-size: var(--o-icon_size-m);
     color: var(--o-color-info1);

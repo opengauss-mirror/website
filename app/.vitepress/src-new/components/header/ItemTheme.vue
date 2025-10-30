@@ -2,7 +2,7 @@
 import { computed, onMounted, watch } from 'vue';
 import { useCommon } from '@/stores/common';
 
-import IconSun from '~icons/app-new/icon-sun-outline.svg';
+import IconSun from '~icons/app-new/icon-sun.svg';
 import IconMoon from '~icons/app-new/icon-moon-outline.svg';
 import IconHeaderMoon from '~icons/app-new/icon-header-moon.svg';
 import { getCustomCookie, isBrowser, setCustomCookie } from '@/shared/utils';
@@ -85,6 +85,7 @@ watch(
     height: 20px;
     display: flex;
     align-items: center;
+
     .icon {
       font-size: 24px;
       color: var(--e-color-text1);
@@ -94,14 +95,15 @@ watch(
       }
     }
 
-    @include respond-to('<=pad') {
+    @include respond-to('<=pad_v') {
       display: none;
     }
   }
+
   .theme-box-mobile {
     margin-top: 24px;
     display: none;
-    @include respond-to('<=pad') {
+    @include respond-to('<=pad_v') {
       display: flex;
       :deep(.o-switch) {
         background: none;
@@ -111,15 +113,16 @@ watch(
     }
   }
 }
+
 @include in-dark {
   .icon {
     color: var(--e-color-text1);
   }
 }
 
-:deep(.el-switch__label) {
-  span {
-    font-size: 12px;
+:deep(.el-switch) {
+  .el-icon {
+    font-size: 20px;
   }
 }
 </style>

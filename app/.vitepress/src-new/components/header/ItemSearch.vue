@@ -17,7 +17,7 @@ import IconBack from '~icons/app-new/icon-header-back.svg';
 const { lang } = useData();
 const searchRef = ref();
 const isClickOutside = useClickOutside(searchRef) || false;
-const { lePad } = useScreen();
+const { lePadV } = useScreen();
 
 const emits = defineEmits(['focus-input', 'search-click']);
 const isShowDrawer = ref(false);
@@ -67,7 +67,7 @@ const showDrawer = () => {
 const closeSearchBox = () => {
   searchInput.value = '';
   emits('search-click', isShowBox.value);
-  if (!lePad.value) {
+  if (!lePadV.value) {
     isShowBox.value = false;
     commonStore.iconMenuShow = true;
     isShowDrawer.value = false;
@@ -76,7 +76,7 @@ const closeSearchBox = () => {
 
 onMounted(() => {
   window.addEventListener('click', () => {
-    if (isClickOutside.value && !lePad.value) {
+    if (isClickOutside.value && !lePadV.value) {
       closeSearchBox();
     }
   });
@@ -129,10 +129,13 @@ const closeSearch = () => {
 </script>
 <template>
   <div class="search-wrapper">
-    <div :class="{ search: !lePad, focus: isShowDrawer && !lePad }">
+    <div :class="{ search: !lePadV, focus: isShowDrawer && !lePadV }">
       <div ref="searchRef" class="header-search">
         <div :class="{ 'input-focus': isShowDrawer }">
-          <OIcon v-if="lePad && isShowDrawer" @click.stop="closeSearch"><IconBack></IconBack></OIcon>
+          <OIcon v-if="lePadV && isShowDrawer" @click.stop="closeSearch">
+            <IconBack></IconBack>
+          </OIcon>
+
           <OInput
             v-model="searchInput"
             :placeholder="isShowDrawer ? searchValue.PLEACHOLDER_EXTEND : searchValue.PLEACHOLDER"
@@ -143,12 +146,19 @@ const closeSearch = () => {
             <template #prefix>
               <OIcon class="icon"><IconSearch></IconSearch></OIcon>
             </template>
-            <template v-if="(!lePad && isShowDrawer) || (lePad && searchInput)" #suffix>
+
+            <template v-if="(!lePadV && isShowDrawer) || (lePadV && searchInput)" #suffix>
               <OIcon class="close icon" @click="closeSearchBox"><IconClose /></OIcon>
             </template>
           </OInput>
-          <OIcon class="only-icon" @click="showDrawer"><IconSearch></IconSearch></OIcon>
-          <span v-if="lePad && isShowDrawer" class="search-text" @click="handleSearchEvent(true)">{{ searchValue.TEXT }}</span>
+
+          <OIcon class="only-icon" @click="showDrawer">
+            <IconSearch></IconSearch>
+          </OIcon>
+
+          <span v-if="lePadV && isShowDrawer" class="search-text" @click="handleSearchEvent(true)">
+            {{ searchValue.TEXT }}
+          </span>
         </div>
 
         <div v-show="isShowDrawer" class="drawer">
@@ -180,7 +190,9 @@ const closeSearch = () => {
         </div>
       </div>
 
-      <OIcon @click="showDrawer" class="icon search-icon"><IconSearch></IconSearch></OIcon>
+      <OIcon @click="showDrawer" class="icon search-icon">
+        <IconSearch></IconSearch>
+      </OIcon>
     </div>
   </div>
 </template>
@@ -197,16 +209,26 @@ const closeSearch = () => {
 
 .search-wrapper {
   position: relative;
+  width: 160px;
+
+  @include respond-to('<=laptop') {
+    width: 120px;
+  }
+
+  @media screen and (max-width: 1080px) {
+    width: 20px;
+  }
 
   .search {
     position: absolute;
     right: 0;
-    top: -16px;
+    top: -50%;
+    transform: translateY(-50%);
     background-color: var(--o-color-fill2);
     z-index: 100;
 
     &.focus {
-      top: -32px;
+      top: 8px;
     }
   }
 }
@@ -226,12 +248,12 @@ const closeSearch = () => {
       width: 120px;
     }
 
-    @include respond-to('<=pad') {
+    @include respond-to('<=pad_v') {
       display: none;
     }
   }
 
-  @include respond-to('<=pad') {
+  @include respond-to('<=pad_v') {
     margin-left: 0;
     z-index: 2;
     position: fixed;
@@ -255,7 +277,7 @@ const closeSearch = () => {
       background-color: var(--o-color-fill2);
       z-index: 200;
 
-      @include respond-to('<=pad') {
+      @include respond-to('<=pad_v') {
         display: none;
       }
     }
@@ -265,7 +287,7 @@ const closeSearch = () => {
       @include h3;
     }
 
-    @include respond-to('<=pad') {
+    @include respond-to('<=pad_v') {
       padding: 0;
       z-index: 200;
       background-color: var(--o-color-fill2);
@@ -278,6 +300,7 @@ const closeSearch = () => {
       --_box-radius: 4px;
       display: flex !important;
     }
+
     .only-icon {
       display: none !important;
     }
@@ -298,7 +321,7 @@ const closeSearch = () => {
     background: var(--o-color-fill2);
     border-radius: 0 0 4px 4px;
 
-    @include respond-to('<=pad') {
+    @include respond-to('<=pad_v') {
       backdrop-filter: blur(0px);
       left: -16px;
       right: 0;
@@ -314,7 +337,7 @@ const closeSearch = () => {
         @include tip2;
         color: var(--o-color-info3);
 
-        @include respond-to('<=pad') {
+        @include respond-to('<=pad_v') {
           @include text2;
           color: var(--o-color-info1);
           margin-bottom: var(--o-gap-3);
@@ -334,32 +357,33 @@ const closeSearch = () => {
           }
         }
 
-        @include respond-to('<=pad') {
+        @include respond-to('<=pad_v') {
           @include text1;
           display: block;
         }
       }
     }
 
-    @include respond-to('<=pad') {
+    @include respond-to('<=pad_v') {
       box-shadow: unset;
       padding-left: var(--o-gap-5);
       padding-right: var(--o-gap-5);
     }
   }
+
   .normal {
-    @media (max-width: 1680px) {
+    @media (max-width: 1080px) {
       display: none;
     }
   }
-  
+
   .only-icon {
+    cursor: pointer;
     display: none;
 
-    @media (min-width: 1201px) and (max-width: 1680px) {
+    @media (min-width: 841px) and (max-width: 1080px) {
       display: block;
       font-size: var(--o-icon_size-s);
-      padding-top: var(--o-gap-1);
     }
   }
 }
@@ -369,7 +393,7 @@ const closeSearch = () => {
     @include tip2;
     color: var(--o-color-info3);
 
-    @include respond-to('<=pad') {
+    @include respond-to('<=pad_v') {
       @include text2;
       color: var(--o-color-info1);
     }
@@ -434,12 +458,12 @@ const closeSearch = () => {
         white-space: nowrap;
         @include tip2;
 
-        @include respond-to('<=pad') {
+        @include respond-to('<=pad_v') {
           @include text1;
         }
       }
 
-      @include respond-to('<=pad') {
+      @include respond-to('<=pad_v') {
         height: 28px;
       }
     }
@@ -450,11 +474,11 @@ const closeSearch = () => {
     height: 1px;
     margin: var(--o-gap-4) 0;
 
-    @include respond-to('<=pad') {
+    @include respond-to('<=pad_v') {
       display: none;
     }
   }
-  @include respond-to('<=pad') {
+  @include respond-to('<=pad_v') {
     margin-bottom: var(--o-gap-5);
   }
 }
@@ -462,7 +486,7 @@ const closeSearch = () => {
 .search-icon {
   color: var(--o-color-info1);
   display: none;
-  @include respond-to('<=pad') {
+  @include respond-to('<=pad_v') {
     display: block;
   }
 
@@ -480,14 +504,14 @@ const closeSearch = () => {
       width: 240px;
     }
 
-    @include respond-to('<=pad') {
+    @include respond-to('<=pad_v') {
       width: 100%;
       :deep(.el-input__wrapper) {
         width: 100%;
       }
     }
   }
-  @include respond-to('<=pad') {
+  @include respond-to('<=pad_v') {
     box-shadow: unset;
   }
 }

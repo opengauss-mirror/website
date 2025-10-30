@@ -110,6 +110,7 @@ watch(
     });
 
     const length = promptVisible.value.length;
+
     if (length) {
       if (!val && lang.value === 'zh' && size.width > 1200) {
         localStorage.setItem('tour_guide', 'guided');
@@ -157,7 +158,7 @@ onUnmounted(() => {
     :show-close="false"
     :close-on-press-escape="false"
     :mask="true"
-    :gap="{ offset: currentStep === 9 ? 0 : undefined }"
+    :gap="{ offset: 0 }"
     :scroll-into-view-options="{ behavior: 'auto', block: 'end' }"
     :content-style="{ '--el-tour-bg-color': arrowColor }"
     :class="{

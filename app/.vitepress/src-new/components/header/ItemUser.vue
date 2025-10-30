@@ -25,41 +25,39 @@ onMounted(() => {
 </script>
 
 <template>
-  <ClientOnly>
-    <div class="header-user">
-      <ODropdown v-if="csrfToken" trigger="hover" options-wrapper=".app-header" optionPosition="top" option-wrap-class="user-dropdown">
-        <div class="user-info">
-          <img v-if="userInfoStore.photo" :src="userInfoStore.photo" class="user-img" />
-          <div v-else class="user-img"></div>
-          <p class="user-name">{{ userInfoStore.username }}</p>
-        </div>
-        <template #dropdown>
-          <ODropdownItem @click="jumpToUserZone()">
-            {{ i18n.common.USER_CENTER }}
-          </ODropdownItem>
-          <ODropdownItem @click="doLogout()">
-            {{ i18n.common.LOGOUT }}
-          </ODropdownItem>
-        </template>
-      </ODropdown>
-
-      <div v-else class="login" @click="doLogin()">
-        <OIcon class="icon">
-          <IconLogin />
-        </OIcon>
+  <div class="header-user">
+    <ODropdown v-if="csrfToken" trigger="hover" options-wrapper=".app-header" optionPosition="top" option-wrap-class="user-dropdown">
+      <div class="user-info">
+        <img v-if="userInfoStore.photo" :src="userInfoStore.photo" class="user-img" />
+        <div v-else class="user-img"></div>
+        <p class="user-name">{{ userInfoStore.username }}</p>
       </div>
+      <template #dropdown>
+        <ODropdownItem @click="jumpToUserZone()">
+          {{ i18n.common.USER_CENTER }}
+        </ODropdownItem>
+        <ODropdownItem @click="doLogout()">
+          {{ i18n.common.LOGOUT }}
+        </ODropdownItem>
+      </template>
+    </ODropdown>
+
+    <div v-else class="login" @click="doLogin()">
+      <OIcon class="icon">
+        <IconLogin />
+      </OIcon>
     </div>
-  </ClientOnly>
+  </div>
 </template>
 
 <style lang="scss" scoped>
 .header-user {
   height: 100%;
-  height: calc(100% + 10px);
+  height: 100%;
   display: flex;
   align-items: center;
   position: relative;
-  @include respond-to('<=pad') {
+  @include respond-to('<=pad_v') {
     margin-left: var(--o-gap-2);
   }
 
@@ -73,7 +71,7 @@ onMounted(() => {
       border-radius: 50%;
       cursor: pointer;
       vertical-align: middle;
-      @include respond-to('<=pad') {
+      @include respond-to('<=pad_v') {
         width: 28px;
         height: 28px;
       }
@@ -86,7 +84,7 @@ onMounted(() => {
       overflow: hidden;
       width: 72px;
       line-height: var(--e-line-height-h8);
-      @media (max-width: 1100px) {
+      @include respond-to('<=pad_v') {
         display: none;
       }
     }

@@ -9,7 +9,7 @@ import navLangFilter from '@/data/header/nav-lang-filter';
 
 const router = useRouter();
 const { lang } = useData();
-const { lePad } = useScreen();
+const { lePadV } = useScreen();
 
 // 语言过滤;
 const langShow = ref(['zh']);
@@ -72,12 +72,12 @@ function changeLanguage(newlang: string) {
 }
 
 const getLang = (lang: String, simple?: boolean) => {
-  return lePad.value ? (lang === 'zh' ? '中文' : 'EN') : lang === 'zh' ? (simple ? '中' : '简体中文') : simple ? 'EN' : 'English';
+  return lePadV.value ? (lang === 'zh' ? '中文' : 'EN') : lang === 'zh' ? (simple ? '中' : '简体中文') : simple ? 'EN' : 'English';
 };
 </script>
 
 <template>
-  <div v-if="!lePad" :class="[langList.length <= 1 ? 'hide-lang' : 'header-lang', 'lang-box']">
+  <div v-if="!lePadV" :class="[langList.length <= 1 ? 'hide-lang' : 'header-lang', 'lang-box']">
     <ODropdown trigger="hover" options-wrapper=".lang-box" optionPosition="top" option-wrap-class="dropdown">
       <div class="info-wrap">
         <OIcon class="icon">
@@ -107,7 +107,7 @@ const getLang = (lang: String, simple?: boolean) => {
 }
 
 .header-lang {
-  height: calc(100% + 10px);
+  height: 100%;
   display: flex;
   align-items: center;
 
@@ -184,7 +184,6 @@ const getLang = (lang: String, simple?: boolean) => {
   margin-top: 12px;
   span {
     color: var(--o-color-info1);
-    margin-right: var(--o-gap-3);
     text-align: center;
     @include text1;
     cursor: pointer;
@@ -193,10 +192,19 @@ const getLang = (lang: String, simple?: boolean) => {
       font-weight: 500;
     }
     &:not(:last-child) {
+      margin-right: var(--o-gap-3);
+      @include respond-to('phone') {
+        margin-right: var(--o-gap-2);
+      }
+
       &:after {
         content: '|';
         margin-left: var(--o-gap-3);
         color: var(--o-color-info1);
+
+        @include respond-to('phone') {
+          margin-left: var(--o-gap-2);
+        }
       }
     }
   }
