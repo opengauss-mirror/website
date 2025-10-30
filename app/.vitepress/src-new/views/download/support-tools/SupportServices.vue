@@ -13,14 +13,14 @@ const goFaq = () => {
 </script>
 <template>
   <div class="support-services">
-    <div class="item" @click="goFaq">
+    <div class="item" @click="goFaq" v-analytics.bubble="{ target: $t('tools.FAQs') }">
       <OIcon><IconPage /></OIcon>
       <div>
         <p class="title">{{ $t('tools.FAQs') }}</p>
         <p class="desc">{{ $t('tools.FAQ_DESC') }}</p>
       </div>
     </div>
-    <a class="item" :href="FORUM_LINK" target="_blank" rel="noopener noreferrer">
+    <a class="item" :href="FORUM_LINK" target="_blank" rel="noopener noreferrer" v-analytics.bubble="{ target: $t('tools.COMMUNITY_FORUM') }">
       <OIcon><IconChat /></OIcon>
       <div>
         <p class="title">{{ $t('tools.COMMUNITY_FORUM') }}</p>

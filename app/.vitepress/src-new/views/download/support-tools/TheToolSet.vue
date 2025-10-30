@@ -189,6 +189,16 @@ const collectDownloadData = (name: string) => {
     });
   }
 };
+
+const reportVersionSelect = () => {
+  oaReport('click', {
+    module: 'download',
+    level1: t('tools.TOOL_CENTER'),
+    level2: t('tools.TOOLSET'),
+    level3: t('download.VERSION'),
+    target: currentVersion.value,
+  });
+};
 </script>
 
 <template>
@@ -197,7 +207,7 @@ const collectDownloadData = (name: string) => {
     <div class="card">
       <!-- 版本选择 -->
       <TagFilter v-if="gtPadV" class="architecture-box" :label="$t('download.VERSION')">
-        <OSelect v-model="currentVersion">
+        <OSelect v-model="currentVersion" @change="reportVersionSelect">
           <OOption v-for="ver in versions" :label="ver.label" :value="ver.value" :key="ver.value"></OOption>
         </OSelect>
       </TagFilter>
@@ -210,7 +220,14 @@ const collectDownloadData = (name: string) => {
       <!-- 架构选择 -->
       <TagFilter v-if="gtPadV" :label="$t('download.ARCHITECTURE')">
         <ORadioGroup v-model="activeArchitecture" style="--radio-group-gap: 8px">
-          <ORadio v-for="item in architectureList" :key="item" :value="item">
+          <ORadio
+            v-for="item in architectureList"
+            :key="item"
+            :value="item"
+            v-analytics="{
+              properties: { module: 'download', level1: t('tools.TOOL_CENTER'), level2: t('tools.TOOLSET'), level3: t('download.ARCHITECTURE'), target: item },
+            }"
+          >
             <template #radio="{ checked }">
               <OToggle :checked="checked">{{ item }}</OToggle>
             </template>
@@ -229,8 +246,16 @@ const collectDownloadData = (name: string) => {
       </template>
       <!-- os选择 -->
       <TagFilter v-if="gtPadV" class="os-box" :label="$t('download.OS')">
-        <ORadioGroup v-model="activeOs" style="--radio-group-gap: 8px">
-          <ORadio v-for="item in osList" :key="item" :value="item" :disabled="!enabledOs?.has(item)">
+        <ORadioGroup v-model="activeOs" style="--radio-group-gap: 8px" @change="">
+          <ORadio
+            v-for="item in osList"
+            :key="item"
+            :value="item"
+            :disabled="!enabledOs?.has(item)"
+            v-analytics="{
+              properties: { module: 'download', level1: t('tools.TOOL_CENTER'), level2: t('tools.TOOLSET'), level3: t('download.OS'), target: item },
+            }"
+          >
             <template #radio="{ checked, disabled }">
               <OToggle :checked="checked" :disabled="disabled">{{ item }}</OToggle>
             </template>
@@ -268,7 +293,20 @@ const collectDownloadData = (name: string) => {
         </template>
         <!-- 完整性校验 -->
         <template #td_sha_code="{ row }">
-          <OLink v-if="row.sha_code" tag="button" @click="handleUrlCopy(row.sha_code, $event)">
+          <OLink
+            v-if="row.sha_code"
+            tag="button"
+            @click="handleUrlCopy(row.sha_code, $event)"
+            v-analytics="{
+              properties: {
+                module: 'download',
+                level1: t('tools.TOOL_CENTER'),
+                level2: t('tools.TOOLSET'),
+                level3: row.name,
+                target: 'SHA256',
+              },
+            }"
+          >
             SHA256
             <template #suffix>
               <OIcon><IconCopy /></OIcon>
@@ -280,10 +318,42 @@ const collectDownloadData = (name: string) => {
         <template #td_download="{ row }">
           <div v-if="row.children?.length"></div>
           <template v-else>
-            <OButton v-if="!userInfoStore.username" variant="outline" color="primary" size="small" @click="changeDownloadAuth">
+            <OButton
+              v-if="!userInfoStore.username"
+              variant="outline"
+              color="primary"
+              size="small"
+              @click="changeDownloadAuth"
+              v-analytics="{
+                properties: {
+                  module: 'download',
+                  level1: t('tools.TOOL_CENTER'),
+                  level2: t('tools.TOOLSET'),
+                  level3: row.name,
+                  target: $t('download.BTN_TEXT'),
+                },
+              }"
+            >
               {{ $t('download.BTN_TEXT') }}
             </OButton>
-            <OButton v-else size="small" :disabled="row.children?.length" :href="row.down_url" @click="collectDownloadData(row.name)" variant="outline" color="primary">
+            <OButton
+              v-else
+              size="small"
+              :disabled="row.children?.length"
+              :href="row.down_url"
+              @click="collectDownloadData(row.name)"
+              variant="outline"
+              color="primary"
+              v-analytics="{
+                properties: {
+                  module: 'download',
+                  level1: t('tools.TOOL_CENTER'),
+                  level2: t('tools.TOOLSET'),
+                  level3: row.name,
+                  target: $t('download.BTN_TEXT'),
+                },
+              }"
+            >
               {{ $t('download.BTN_TEXT') }}
             </OButton>
           </template>
