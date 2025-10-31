@@ -30,9 +30,9 @@ const isClickDropdown = ref(false);
 
 const toggleDebounced = useDebounceFn(function (item: NavItemT | null) {
   if (item === null) {
-    navActive.value = '';
-    isShow.value = false;
-    isPicture.value = false;
+    // navActive.value = '';
+    // isShow.value = false;
+    // isPicture.value = false;
   } else if (item.ID === 'more') {
     if (navActive.value) {
       isShow.value = false;
@@ -418,7 +418,7 @@ watch(
       .shortcut {
         width: 100%;
         min-height: 42px;
-        background: var(--o-color-fill3);
+        background: var(--o-color-fill1);
         border-radius: var(--o-radius_control-xs);
         padding: 10px 24px;
         display: flex;

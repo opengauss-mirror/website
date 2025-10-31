@@ -40,7 +40,7 @@ const navActive = ref('');
 const navInfo = ref({} as NavItemT);
 const sourceCode = ref({} as SourceCodeItemT[]);
 
-const handleNavClick = (item: NavItemT) => {
+const handleNavClick = (item: NavItemT | null) => {
   if (!item) {
     navActive.value = 'SOURCE_CODE';
     sourceCode.value = codeData.value;
@@ -120,37 +120,40 @@ const linkClick = () => {
           </li>
         </ul>
 
-        <div class="nav-aside" :class="{ 'nav-aside-home': navActive === 'home' }">
-          <ul v-if="navActive !== 'SOURCE_CODE'" class="nav-aside-wrapper">
-            <li v-for="item in navInfo.CHILDREN" :value="item.NAME" :title="item.NAME" :key="item.NAME" class="nav-aside-content">
-              <p class="content-title">{{ item.NAME }}</p>
+        <div class="header-tool">
+          <div
+            class="header-tool-code"
+            @click="handleNavClick(null)"
+            :class="{
+              active: navActive === 'SOURCE_CODE',
+            }"
+          >
+            {{ $t('header.CODE') }}
+          </div>
 
-              <NavContent :nav-content="item?.CHILDREN" @link-click="linkClick" :is-mobile="true" />
-            </li>
-          </ul>
-          <div v-else class="nav-aside-wrapper">
-            <NavLink v-for="item in sourceCode" :url="item.PATH" :key="item.NAME" class="source-code-item">
-              <span>{{ item.NAME }}</span>
-              <OIcon v-if="item.ICON">
-                <IconOutLink class="icon" />
-              </OIcon>
-            </NavLink>
+          <div class="header-tool-bottom">
+            <HeaderLanguage :show="langOptions" />
+            <HeaderTheme />
           </div>
         </div>
       </nav>
 
-      <div class="header-tool" :class="`header-tool-${lang}`">
-        <div
-          class="header-tool-code"
-          @click="handleNavClick(null)"
-          :class="{
-            active: navActive === 'SOURCE_CODE',
-          }"
-        >
-          {{ $t('header.CODE') }}
+      <div class="nav-aside" :class="{ 'nav-aside-home': navActive === 'home' }">
+        <ul v-if="navActive !== 'SOURCE_CODE'" class="nav-aside-wrapper">
+          <li v-for="item in navInfo.CHILDREN" :value="item.NAME" :title="item.NAME" :key="item.NAME" class="nav-aside-content">
+            <p class="content-title">{{ item.NAME }}</p>
+
+            <NavContent :nav-content="item?.CHILDREN" @link-click="linkClick" :is-mobile="true" />
+          </li>
+        </ul>
+        <div v-else class="nav-aside-wrapper">
+          <NavLink v-for="item in sourceCode" :url="item.PATH" :key="item.NAME" class="source-code-item">
+            <span>{{ item.NAME }}</span>
+            <OIcon v-if="item.ICON">
+              <IconOutLink class="icon" />
+            </OIcon>
+          </NavLink>
         </div>
-        <HeaderLanguage :show="langOptions" />
-        <HeaderTheme />
       </div>
     </div>
   </div>
@@ -163,10 +166,14 @@ const linkClick = () => {
 @mixin nav-item {
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: 48px;
+  justify-content: left;
   color: var(--o-color-info1);
   font-weight: 500;
+  padding: 12px 32px;
+
+  @include respond-to('phone') {
+    padding: 12px 24px;
+  }
 
   &.active {
     color: var(--o-color-primary1);
@@ -180,85 +187,75 @@ const linkClick = () => {
   align-items: center;
   flex: 1;
   height: 100%;
+}
 
-  .header-nav {
-    flex: 1;
-    justify-content: space-between;
-    width: 100%;
-    position: fixed;
-    left: 0;
-    overflow: hidden;
-    top: 48px;
-    height: calc(100vh - 48px);
-    transform: translateX(-130%);
-    transition-duration: 0.333s;
-    transition-property: all;
-    transition-timing-function: cubic-bezier(0.5, 0, 0.84, 0.25);
-    display: block;
+.header-nav {
+  width: 100vw;
+  display: flex;
+  position: fixed;
+  left: 0;
+  overflow: hidden;
+  top: 48px;
+  height: calc(100vh - 48px);
+  transform: translateX(-130%);
+  transition-duration: 0.333s;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.5, 0, 0.84, 0.25);
 
-    &.active {
-      opacity: 1;
-      visibility: visible;
-      transform: translateX(0);
-    }
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
   }
 }
-.header-tool {
-  position: absolute;
-  bottom: 36px;
-  left: 0;
-  width: 96px;
+
+.o-nav {
+  height: 100%;
+  width: fit-content;
+  max-width: 144px;
+  position: relative;
+  background: var(--o-color-fill1);
   display: flex;
-  height: auto;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  @include respond-to('phone') {
-    width: 76px;
-    .header-tool-code {
-      width: 76px;
-    }
-  }
+  justify-content: space-between;
 
-  .lang {
-    color: var(--o-color-text1);
-    letter-spacing: 0.08em;
-    font-size: 16px;
-  }
-
-  .header-tool-code {
-    width: 96px;
-    @include nav-item;
+  .o-nav-list {
+    padding: 0;
+    margin: 0;
+    height: auto;
     @include h4;
+
+    > li {
+      @include nav-item;
+      position: relative;
+      text-align: left;
+      width: 100%;
+
+      span {
+        white-space: break-spaces;
+      }
+    }
   }
 }
 
 .nav-aside {
-  position: fixed;
+  flex: 1;
+  min-width: 0;
+  width: 0;
   background-color: var(--o-color-fill2);
-  top: 0;
-  left: 0;
-  width: calc(100% - 96px);
-  transform: translateX(96px);
-  height: 100%;
-  z-index: 190;
-  @include respond-to('phone') {
-    width: calc(100% - 76px);
-    transform: translateX(76px);
-  }
+  padding: 16px 32px 16px 12px;
 
   .nav-aside-wrapper {
     overflow-y: auto;
-    padding: 12px 12px 32px;
+    width: 100%;
+    max-width: 100%;
     height: 100%;
 
     .nav-aside-content {
-      display: block;
-      flex: 0 1 auto;
-
       & + .nav-aside-content {
         position: relative;
         padding-top: var(--o-gap-3);
+
         &::before {
           content: '';
           position: absolute;
@@ -332,66 +329,29 @@ const linkClick = () => {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-.o-nav {
-  height: 100%;
-  position: relative;
-  width: 96px;
-  background: var(--o-color-fill1);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  @include respond-to('phone') {
-    width: 76px;
-  }
-
-  .o-nav-list {
-    padding: 0;
-    margin: 0;
-    height: auto;
-    @include h4;
-
-    > li {
-      @include nav-item;
-      position: relative;
-      text-align: center;
-    }
-  }
-}
-
-.o-nav-en {
-  width: fit-content;
-
-  .nav-aside {
-    width: calc(100% - 167px);
-    transform: translateX(167px);
-  }
-
-  .o-nav-list > li {
+.header-tool {
+  .header-tool-code {
+    height: 48px;
+    width: 100%;
+    display: flex;
+    align-items: center;
     padding: 0 32px;
-  }
-
-  @include respond-to('phone') {
-    .nav-aside {
-      width: calc(100% - 138px);
-      transform: translateX(138px);
-    }
-
-    .o-nav-list > li {
+    @include h4;
+    @include respond-to('phone') {
       padding: 0 24px;
     }
-  }
-}
-
-.header-tool-en {
-  width: 167px;
-
-  .header-tool-code {
-    width: 100%;
+    &.active {
+      color: var(--o-color-primary1);
+      background: var(--o-color-fill2);
+    }
   }
 
-  @include respond-to('phone') {
-    width: 138px;
+  .header-tool-bottom {
+    padding: 0 32px 32px;
+
+    @include respond-to('phone') {
+      padding: 0 24px 32px;
+    }
   }
 }
 </style>

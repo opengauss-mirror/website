@@ -95,7 +95,7 @@ const loadSearchHistory = () => {
 
 onMounted(() => {
   loadSearchHistory();
-})
+});
 
 const handleSearch = (searchValue: string) => {
   if (searchValue && Array.isArray(searchHistory.value)) {
@@ -220,7 +220,7 @@ const closeSearch = () => {
   }
 
   @media screen and (max-width: 1080px) {
-    width: 20px;
+    width: 24px;
   }
 
   .search {
@@ -387,7 +387,7 @@ const closeSearch = () => {
 
     @media (min-width: 841px) and (max-width: 1080px) {
       display: block;
-      font-size: var(--o-icon_size-s);
+      font-size: var(--o-icon_size-m);
     }
   }
 }
@@ -490,14 +490,17 @@ const closeSearch = () => {
 .search-icon {
   color: var(--o-color-info1);
   display: none;
+
   @include respond-to('<=pad_v') {
     display: block;
   }
 
   &.icon {
     font-size: var(--o-icon_size-m);
+    line-height: 28px;
   }
 }
+
 .input-focus {
   box-shadow: var(--o-shadow-2);
   .o-input {

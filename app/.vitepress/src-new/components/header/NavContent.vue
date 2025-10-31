@@ -19,6 +19,7 @@ const props = defineProps({
     },
   },
 });
+console.log(props.navContent);
 
 const emits = defineEmits(['link-click']);
 
@@ -29,7 +30,8 @@ const linkClick = () => {
 const showDesc = ref(false);
 const descMouseenter = (e: MouseEvent) => {
   if (!e || !e.target) return;
-  showDesc.value = e.target.clientHeight < e.target.scrollHeight;
+  const target = e.target as HTMLElement;
+  showDesc.value = target.clientHeight < target.scrollHeight;
 };
 </script>
 
@@ -41,7 +43,7 @@ const descMouseenter = (e: MouseEvent) => {
         <OIcon v-if="subItem.ICON">
           <component :is="subItem.ICON" class="icon" />
         </OIcon>
-        <OTag v-if="subItem.TAG" round="pill" color="danger" class="content-tag">{{ subItem.TAG }}</OTag>
+        <OTag v-if="subItem.TAG" color="danger" class="content-tag">{{ subItem.TAG }}</OTag>
       </NavLink>
       <div class="desc-container">
         <p class="item-desc">{{ subItem.DESCRIPTION }}</p>
@@ -57,7 +59,7 @@ const descMouseenter = (e: MouseEvent) => {
           <OIcon v-if="subItem.ICON">
             <component :is="subItem.ICON" class="icon" />
           </OIcon>
-          <OTag v-if="subItem.TAG" round="pill" color="danger" size="small" class="content-tag">{{ subItem.TAG }}</OTag>
+          <OTag v-if="subItem.TAG" color="danger" size="small" class="content-tag">{{ subItem.TAG }}</OTag>
         </NavLink>
       </div>
       <div class="desc-container">
@@ -126,9 +128,6 @@ const descMouseenter = (e: MouseEvent) => {
     }
     .content-tag {
       margin-left: var(--o-gap-2);
-      @include respond-to('<=laptop') {
-        display: none;
-      }
     }
   }
   .desc-container {
@@ -142,7 +141,6 @@ const descMouseenter = (e: MouseEvent) => {
       margin: 0;
       @include tip2;
       @include text-truncate(2);
-      word-break: normal;
     }
   }
 
@@ -196,7 +194,7 @@ const descMouseenter = (e: MouseEvent) => {
       color: var(--o-color-info2);
       margin-top: var(--o-gap-1);
       text-align: justify;
-      @include tip1;
+      @include text1;
       @include text-truncate(2);
       word-break: normal;
     }
