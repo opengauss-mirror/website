@@ -92,7 +92,11 @@ const loadSearchHistory = () => {
     searchHistory.value = JSON.parse(history);
   }
 };
-loadSearchHistory();
+
+onMounted(() => {
+  loadSearchHistory();
+})
+
 const handleSearch = (searchValue: string) => {
   if (searchValue && Array.isArray(searchHistory.value)) {
     // 添加到历史记录并更新 localStorage

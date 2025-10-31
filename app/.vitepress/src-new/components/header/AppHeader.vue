@@ -4,8 +4,7 @@ import { useData } from 'vitepress';
 
 import { OLink } from '@opensig/opendesign';
 import ContentWrapper from '~@/components/ContentWrapper.vue';
-import ItemNav from '~@/components/header/ItemNav.vue';
-
+import ItemNav from './ItemNav.vue';
 import ItemLang from './ItemLang.vue';
 import ItemTheme from './ItemTheme.vue';
 import ItemUser from './ItemUser.vue';
@@ -13,8 +12,8 @@ import ItemSearch from './ItemSearch.vue';
 import ItemCode from './ItemCode.vue';
 import ItemNavMobile from './ItemNavMobile.vue';
 
-import logo_light from '~@/assets/logo.svg';
-import logo_dark from '~@/assets/logo_dark.svg';
+import logoLight from '~@/assets/logo.svg';
+import logoDark from '~@/assets/logo_dark.svg';
 import IconClose from '~icons/app-new/icon-close.svg';
 import IconMenu from '~icons/app-new/icon-header-menu.svg';
 
@@ -26,7 +25,7 @@ const { lePadV } = useScreen();
 const commonStore = useCommon();
 
 // Logo主题判断
-const logo = computed(() => (commonStore.theme === 'light' ? logo_light : logo_dark));
+const logo = computed(() => (commonStore.theme === 'light' ? logoLight : logoDark));
 
 const langShow = ref(['zh', 'en']);
 
@@ -66,10 +65,10 @@ const mobileClick = () => {
 
       <div v-if="!lePadV" id="tour_headerNav_tool" class="header-tool">
         <ItemSearch />
-        <ItemCode class="item-gap" />
-        <ItemLang class="item-gap" />
-        <ItemTheme class="item-gap" />
-        <ItemUser class="item-gap" />
+        <ItemCode class="gap" />
+        <ItemLang class="gap" />
+        <ItemTheme class="gap" />
+        <ItemUser class="gap" />
       </div>
     </ContentWrapper>
   </div>
@@ -164,7 +163,7 @@ const mobileClick = () => {
     }
   }
 
-  .item-gap {
+  .gap {
     margin-left: 24px;
     @include respond-to('laptop') {
       margin-left: 16px;
