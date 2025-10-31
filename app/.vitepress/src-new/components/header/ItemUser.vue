@@ -65,25 +65,26 @@ onMounted(() => {
     height: 100%;
     display: flex;
     align-items: center;
+
     .user-img {
       width: 32px;
       height: 32px;
       border-radius: 50%;
       cursor: pointer;
       vertical-align: middle;
+
       @include respond-to('<=pad_v') {
         width: 28px;
         height: 28px;
       }
     }
     .user-name {
-      color: var(--e-color-text1);
       margin-left: 8px;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
       width: 72px;
-      line-height: var(--e-line-height-h8);
+      color: var(--o-color-info1);
+      @include text1;
+      @include text-truncate(1);
+
       @include respond-to('<=pad_v') {
         display: none;
       }
@@ -92,10 +93,11 @@ onMounted(() => {
 
   .login {
     cursor: pointer;
-    font-size: 24px;
-    color: var(--e-color-text1);
-    width: 1em;
-    height: 1em;
+    color: var(--o-color-info1);
+
+    .icon {
+      font-size: 24px;
+    }
 
     @include hover {
       color: var(--e-color-brand1);

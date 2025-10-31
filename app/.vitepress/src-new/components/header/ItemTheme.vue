@@ -3,7 +3,6 @@ import { computed, onMounted, watch } from 'vue';
 import { useCommon } from '@/stores/common';
 
 import IconSun from '~icons/app-new/icon-sun.svg';
-import IconMoon from '~icons/app-new/icon-moon-outline.svg';
 import IconHeaderMoon from '~icons/app-new/icon-header-moon.svg';
 import { getCustomCookie, isBrowser, setCustomCookie } from '@/shared/utils';
 
@@ -70,7 +69,7 @@ watch(
         inline-prompt
         active-color="#7d32ea"
         :active-icon="IconSun"
-        :inactive-icon="IconMoon"
+        :inactive-icon="IconHeaderMoon"
         @click="changeThemeMobile"
       />
     </div>
@@ -123,6 +122,7 @@ watch(
 :deep(.el-switch) {
   .el-icon {
     font-size: 20px;
+    color: var(--o-color-info1);
   }
 }
 </style>

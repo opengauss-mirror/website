@@ -166,7 +166,7 @@ a {
         line-height: var(--e-line-height-text);
 
         @include hover {
-          color: var(--e-color-white);
+          color: var(--o-color-white);
         }
 
         & + .link {
@@ -188,7 +188,6 @@ a {
       & + .footer-navs-section-en {
         margin-left: 60px;
       }
-
     }
   }
 
@@ -243,6 +242,10 @@ a {
     color: rgba(255, 255, 255, 0.6);
     margin-right: 24px;
     white-space: nowrap;
+
+    @include hover {
+      color: var(--o-color-white);
+    }
 
     &:last-child {
       margin-right: 0;
