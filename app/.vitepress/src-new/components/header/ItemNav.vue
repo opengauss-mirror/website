@@ -98,7 +98,7 @@ watch(
     for (; i < navHiddenRef.value.children.length; i++) {
       width += navHiddenRef.value.children[i].clientWidth;
 
-      if (width >= navContainerWidth.value) {
+      if (width >= navContainerWidth.value || width + 72 >= navContainerWidth.value) {
         break;
       }
     }
