@@ -11,11 +11,13 @@ import { OCard, OScroller } from '@opensig/opendesign';
 import { storeToRefs } from 'pinia';
 import { useCommon } from '@/stores/common';
 import { useLocale } from '~@/composables/useLocale';
+import { useScreen } from '~@/composables/useScreen';
 
 const coverList = [cover1, cover2, cover3, cover4];
 
 const { t, isZh, locale } = useLocale();
 const { theme } = storeToRefs(useCommon());
+const { lePadV } = useScreen();
 
 const videoList = computed(() => {
   return VideoConfig.map((item) => {
@@ -29,18 +31,17 @@ const videoList = computed(() => {
     };
   });
 });
-
 </script>
 
 <template>
   <AppSection :title="t('home.VIDEO_TITLE')">
-    <OScroller>
+    <OScroller style="white-space: nowrap;">
       <div class="home-videos">
         <a v-for="(item, index) in videoList" class="home-videos-item" :key="item.id" :href="item.videoUrl" target="_blank" rel="noopener noreferrer">
           <OCard>
             <div class="item-img">
               <div class="mask" v-if="theme === 'dark'"></div>
-              <img :src="coverList[index]" />
+              <img style="height: 100%" :src="coverList[index]" />
             </div>
             <p class="home-videos-item-desc">{{ item.title }}</p>
           </OCard>
@@ -52,7 +53,7 @@ const videoList = computed(() => {
 
 <style lang="scss" scoped>
 :deep(.section-body) {
-  @include respond-to('phone') {
+  @include respond-to('<=pad_v') {
     padding-right: 0 !important;
   }
 }
@@ -60,32 +61,43 @@ const videoList = computed(() => {
 .o-card {
   border-radius: 4px;
   --card-main-padding: 0;
-  @include hover {
-    box-shadow: var(--o-shadow-2);
-  }
 }
 
 .home-videos {
   display: flex;
   --item-gap: 32px;
-  width: fit-content;
+  padding-bottom: 24px;
+  @include respond-to('<=pad') {
+    width: fit-content;
+    --ltpad-content-width: calc(100vw - var(--layout-content-padding) * 2);
+  }
 
+  @include respond-to('laptop') {
+    --item-gap: 24px;
+  }
+  @include respond-to('pad') {
+    --item-gap: 16px;
+  }
   @include respond-to('phone') {
     --item-gap: 12px;
   }
-  @include respond-to('phone') {
+  @include respond-to('<=pad_v') {
     padding-right: var(--layout-content-padding);
   }
 }
 
 .home-videos-item {
+  width: calc((100vw - var(--layout-content-padding) * 2 - var(--item-gap) * 3) / 4);
   cursor: pointer;
-  flex-shrink: 0;
+  @include hover {
+    box-shadow: var(--o-shadow-2);
+  }
 
+  @include respond-to('pad_v') {
+    width: calc((var(--ltpad-content-width) + var(--item-gap)) / 3.5 - var(--item-gap));
+  }
   @include respond-to('phone') {
-    --size: calc((100vw - 48px - 12px) / 2);
-    width: var(--size);
-    height: var(--size);
+    width: calc((var(--ltpad-content-width) + var(--item-gap)) / 2 - var(--item-gap));
   }
   .el-card {
     --el-card-padding: 0;
@@ -99,7 +111,6 @@ const videoList = computed(() => {
 
   .item-img {
     width: 100%;
-    height: auto;
     position: relative;
 
     .mask {
@@ -115,24 +126,28 @@ const videoList = computed(() => {
     img {
       width: 100%;
       height: auto;
-      @include respond-to('phone') {
-        width: 100%;
-        height: 60%;
-        object-fit: cover;
-      }
     }
   }
 }
 
 .home-videos-item-desc {
-  padding: 24px;
-  @include respond-to('phone') {
-    padding: 8px;
-    min-height: 2em;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; /* 设置你想要显示的行数 */
+  overflow: hidden;
+  font-weight: bold;
+  padding: 16px;
+  @include respond-to('laptop') {
+    padding: 12px;
   }
+  @include respond-to('pad_h') {
+    padding: 12px;
+  }
+  @include respond-to('<=pad_v') {
+    padding: 8px;
+  }
+  white-space: normal;
   @include h4;
   margin-bottom: var(--e-spacing-h10);
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
 }
 </style>

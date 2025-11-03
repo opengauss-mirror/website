@@ -71,6 +71,24 @@ const props = withDefaults(defineProps<SectionPropsT>(), {
 
 <style lang="scss" scoped>
 .app-section {
+  --raster-gap: 32px;
+  --raster-count: 24;
+  --raster-width: calc((100% + var(--raster-gap)) / var(--raster-count) - var(--raster-gap));
+  @include respond-to('laptop') {
+    --raster-gap: 24px;
+  }
+  @include respond-to('pad_h') {
+    --raster-gap: 16px;
+    --raster-count: 12;
+  }
+  @include respond-to('pad_v') {
+    --raster-gap: 16px;
+    --raster-count: 8;
+  }
+  @include respond-to('phone') {
+    --raster-gap: 12px;
+    --raster-count: 4;
+  }
   .section-wrapper {
     margin: var(--o-gap-section) auto 0;
   }

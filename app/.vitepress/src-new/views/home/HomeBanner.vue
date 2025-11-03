@@ -11,11 +11,11 @@ const { isEn } = useLocale();
 const homeBanner = computed(() => (isEn.value ? homeConfig.homeBanner.en : homeConfig.homeBanner.zh));
 
 const jump = (item: any, flag: boolean) => {
-  if (flag) {
+  if (!lePadV && flag) {
     return;
   }
   if (item.link) {
-    windowOpen(item.link, item.target);
+    windowOpen(item.link, item.target ?? '_blank');
   }
 };
 </script>
@@ -27,7 +27,6 @@ const jump = (item: any, flag: boolean) => {
       indicator-click
       loop
       class="home-banner"
-      click-to-switch
       pause-on-hover
       style="--carousel-indicator-bg-color-selected: #fff"
     >
@@ -49,7 +48,7 @@ const jump = (item: any, flag: boolean) => {
                     {{ itemTitleMb }}
                   </p>
                 </div>
-                <p v-else class="title" :class="{ 'teamup-title': item.link.includes('team-up') }">
+                <p v-else class="title" :class="{ 'teamup-title': item.link.includes('team-up'), 'dark-title': item.darkTitle }">
                   {{ item.title }}
                 </p>
                 <p v-if="item.subtitle" class="subtitle">{{ item.subtitle }}</p>
@@ -78,12 +77,20 @@ const jump = (item: any, flag: boolean) => {
 
 <style lang="scss" scoped>
 .home-banner-wrap {
+  --banner-height: 478px;
+
+  @include respond-to('laptop') {
+    --banner-height: 400px
+  }
+  @include respond-to('pad_h') {
+    --banner-height: 320px
+  }
+  @include respond-to('pad_v') {
+    --banner-height: 182px;
+    padding: 2px 32px 0;
+  }
   @include respond-to('phone') {
     padding: 16px 20px 0;
-  }
-
-  --banner-height: 478px;
-  @include respond-to('phone') {
     --banner-height: 184px;
   }
 }
@@ -93,18 +100,29 @@ const jump = (item: any, flag: boolean) => {
   width: 100vw;
 }
 
+.content-text {
+  .dark-title {
+    color: var(--o-color-black);
+  }
+  @include respond-to('phone') {
+    padding: 0 24px;
+  }
+}
+
 .home-banner {
-  border-radius: 4px;
   height: var(--banner-height);
   max-width: 100vw;
   overflow: hidden;
+  @include respond-to('<=pad_v') {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
   .banner-img {
     height: 100%;
     .banner-content {
       box-sizing: border-box;
       max-width: 1504px;
       margin: 0 auto;
-      padding: 0 44px;
       display: flex;
       justify-content: space-between;
       height: 100%;
@@ -124,9 +142,12 @@ const jump = (item: any, flag: boolean) => {
         .content-text {
           color: var(--e-color-white);
           .title {
-            white-space: pre-wrap;
             @include display1;
+            font-weight: bold;
+            white-space: pre-wrap;
             @include respond-to('<=pad_v') {
+              font-size: 22px;
+              line-height: 30px;
               line-height: var(--e-line-height-h4);
               text-align: center;
             }
@@ -156,6 +177,10 @@ const jump = (item: any, flag: boolean) => {
                 font-size: var(--e-font-size-text);
                 line-height: 24px;
               }
+              @include respond-to('phone') {
+                font-size: 12px;
+                line-height: 18px;
+              }
             }
           }
           .teamup-title {
@@ -181,6 +206,9 @@ const jump = (item: any, flag: boolean) => {
             width: 100%;
             display: flex;
             justify-content: center;
+          }
+          @include respond-to('phone') {
+            display: none;
           }
           .home-banner-btn {
             color: var(--e-color-white);
@@ -213,7 +241,7 @@ const jump = (item: any, flag: boolean) => {
         }
       }
     }
-    &.banner-version {
+    /* &.banner-version {
       text-align: center;
       .banner-content .content-left .content-text {
         :deep(.title) {
@@ -235,7 +263,7 @@ const jump = (item: any, flag: boolean) => {
           }
         }
       }
-    }
+    } */
     &.no-btn {
       cursor: pointer;
     }

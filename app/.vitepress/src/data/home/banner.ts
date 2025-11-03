@@ -31,6 +31,7 @@ export default {
       link: '/zh/news/2025-09-30/',
       target: '_blank',
       title: 'openGauss 7.0.0-RC2 版本正式发布',
+      darkTitle: true,
       titleMb: ['openGauss 7.0.0 RC2 \n版本正式发布'],
       subtitle: '',
       desc: [''],
