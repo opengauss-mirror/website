@@ -30,9 +30,9 @@ const isClickDropdown = ref(false);
 
 const toggleDebounced = useDebounceFn(function (item: NavItemT | null) {
   if (item === null) {
-    // navActive.value = '';
-    // isShow.value = false;
-    // isPicture.value = false;
+    navActive.value = '';
+    isShow.value = false;
+    isPicture.value = false;
   } else if (item.ID === 'more') {
     if (navActive.value) {
       isShow.value = false;
