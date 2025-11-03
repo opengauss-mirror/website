@@ -19,7 +19,6 @@ const props = defineProps({
     },
   },
 });
-console.log(props.navContent);
 
 const emits = defineEmits(['link-click']);
 
@@ -39,7 +38,7 @@ const descMouseenter = (e: MouseEvent) => {
   <div v-if="isMobile" class="container-mobile">
     <div v-for="subItem in navContent" :key="subItem.NAME" class="content-container-mobile">
       <NavLink :url="subItem.URL" class="content-subtitle" @link-click="linkClick">
-        {{ subItem.NAME }}
+        <span class="content-subtitle-text">{{ subItem.NAME }}</span>
         <OIcon v-if="subItem.ICON">
           <component :is="subItem.ICON" class="icon" />
         </OIcon>
@@ -125,6 +124,7 @@ const descMouseenter = (e: MouseEvent) => {
       font-weight: 500;
       white-space: nowrap;
       @include text1;
+      @include text-truncate(1);
     }
     .content-tag {
       margin-left: var(--o-gap-2);
@@ -133,14 +133,15 @@ const descMouseenter = (e: MouseEvent) => {
   .desc-container {
     overflow: hidden;
     position: relative;
-    height: 36px;
     white-space: normal;
 
     .item-desc {
       color: var(--o-color-info2);
       margin: 0;
+      white-space: normal;
       @include tip2;
-      @include text-truncate(2);
+      @include text-truncate(6);
+      word-break: normal;
     }
   }
 
@@ -177,9 +178,15 @@ const descMouseenter = (e: MouseEvent) => {
   margin-top: var(--o-gap-3);
 
   .content-subtitle {
-    @include text2;
+    display: flex;
     font-weight: 500;
     color: var(--o-color-info1);
+    @include text2;
+
+    .content-subtitle-text {
+      flex: 1;
+      @include text-truncate(1);
+    }
   }
 
   .content-tag {
@@ -193,10 +200,11 @@ const descMouseenter = (e: MouseEvent) => {
     .item-desc {
       color: var(--o-color-info2);
       margin-top: var(--o-gap-1);
-      text-align: justify;
+      text-align: left;
+      white-space: normal;
       @include text1;
-      @include text-truncate(2);
-      word-break: normal;
+      @include text-truncate(6);
+      word-break: break-word;
     }
   }
 

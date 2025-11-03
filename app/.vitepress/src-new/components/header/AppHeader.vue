@@ -59,17 +59,19 @@ const mobileClick = () => {
         </div>
       </div>
 
-      <ItemNavMobile v-if="lePadV" :lang-options="langShow" :menuShow="menuShow" @link-click="mobileClick" />
+      <ItemNavMobile v-if="lePadV" :lang-options="langShow" :menuShow="menuShow" @link-click="mobileClick" @close-menu="mobileClick" />
 
       <ItemNav v-else />
 
-      <div v-if="!lePadV" id="tour_headerNav_tool" class="header-tool">
-        <ItemSearch />
-        <ItemCode class="gap" />
-        <ItemLang class="gap" />
-        <ItemTheme class="gap" />
-        <ItemUser class="gap" />
-      </div>
+      <ClientOnly>
+        <div v-if="!lePadV" id="tour_headerNav_tool" class="header-tool">
+          <ItemSearch />
+          <ItemCode class="gap" />
+          <ItemLang class="gap" />
+          <ItemTheme class="gap" />
+          <ItemUser class="gap" />
+        </div>
+      </ClientOnly>
     </ContentWrapper>
   </div>
 </template>
