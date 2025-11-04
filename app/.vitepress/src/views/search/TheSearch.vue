@@ -19,6 +19,7 @@ import { v4 as uniqueId } from 'uuid';
 import { oaReport } from '@/shared/analytics';
 
 import { SearchCountItemT } from '@/shared/@types/type-search';
+import { getUrlParam } from '~@/utils/common';
 
 const screenWidth = useWindowResize();
 const isMobile = computed(() => (screenWidth.value <= 768 ? true : false));
@@ -115,7 +116,10 @@ function searchCountAll() {
     .then((res) => {
       if (res.status === 200 && res.obj.total[0]) {
         searchNumber.value = res.obj.total;
-        // 埋点数据
+        const index = searchNumber.value.findIndex((item: SearchCountItemT) => item.key === searchType.value);
+        if (index > -1) {
+          currentIndex.value = index;
+        }
       } else {
         searchNumber.value = [];
       }
@@ -270,10 +274,16 @@ async function getVersionTag() {
 
 onMounted(async () => {
   await getVersionTag();
-  if (location.href.split('=')[1] !== 'undefined') {
-    searchInput.value = decodeURIComponent(location.href.split('=')[1]) + '';
+  if (getUrlParam('q')) {
+    searchInput.value = decodeURIComponent(getUrlParam('q'));
   }
-  searchAll();
+
+  const type = getUrlParam('type');
+  if (type === 'docs') {
+    searchType.value = 'docs';
+  }
+
+  searchAll(searchType.value);
 });
 
 watch(
