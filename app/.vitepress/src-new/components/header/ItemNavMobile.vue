@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, watch, computed, onMounted } from 'vue';
+import { ref, watch, computed } from 'vue';
 import { useData, useRouter, useRoute } from 'vitepress';
 import { useI18n } from '~@/i18n';
 import { OIcon } from '@opensig/opendesign';
@@ -98,9 +98,15 @@ watch(
   }
 );
 
-const emit = defineEmits(['link-click']);
+const emit = defineEmits(['link-click', 'close-menu']);
 const linkClick = () => {
   emit('link-click');
+};
+
+const closeMenu = () => {
+  if (navActive.value !== 'home') return;
+
+  emit('close-menu');
 };
 </script>
 
@@ -138,7 +144,7 @@ const linkClick = () => {
         </div>
       </nav>
 
-      <div class="nav-aside" :class="{ 'nav-aside-home': navActive === 'home' }">
+      <div class="nav-aside" :class="{ 'nav-aside-home': navActive === 'home' }" @click="closeMenu">
         <ul v-if="navActive !== 'SOURCE_CODE'" class="nav-aside-wrapper">
           <li v-for="item in navInfo.CHILDREN" :value="item.NAME" :title="item.NAME" :key="item.NAME" class="nav-aside-content">
             <p class="content-title">{{ item.NAME }}</p>
@@ -212,7 +218,7 @@ const linkClick = () => {
 .o-nav {
   height: 100%;
   width: fit-content;
-  max-width: 144px;
+  max-width: 40%;
   position: relative;
   background: var(--o-color-fill1);
   display: flex;
@@ -223,7 +229,7 @@ const linkClick = () => {
     padding: 0;
     margin: 0;
     height: auto;
-    @include h4;
+    @include text2;
 
     > li {
       @include nav-item;
@@ -243,7 +249,7 @@ const linkClick = () => {
   min-width: 0;
   width: 0;
   background-color: var(--o-color-fill2);
-  padding: 16px 32px 16px 12px;
+  padding: 16px 12px;
 
   .nav-aside-wrapper {
     overflow-y: auto;

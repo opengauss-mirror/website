@@ -119,7 +119,7 @@ watch(
   }
 }
 
-:deep(.el-switch) {
+:deep(.el-switch .el-switch__core .el-switch__inner) {
   .el-icon {
     font-size: 20px;
     color: var(--o-color-info1);
