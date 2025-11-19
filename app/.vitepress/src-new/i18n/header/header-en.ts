@@ -1,8 +1,6 @@
 import { markRaw } from 'vue';
 
 import IconOutLink from '~icons/app-new/icon-out-link.svg';
-import odd from '~@/assets/category/header/odd.png';
-import report from '~@/assets/category/header/report.png';
 
 const OutLink = markRaw(IconOutLink);
 
@@ -116,40 +114,7 @@ export default {
               DESCRIPTION: 'Learn the community essentials in 10 minutes.',
               URL: 'https://docs.opengauss.org/en/docs/latest/docs/GettingStarted/GettingStarted.html',
             },
-            {
-              NAME: 'Installation Guide',
-              DESCRIPTION: 'Step-by-step instructions for installing openGauss.',
-              URL: 'https://docs.opengauss.org/en/docs/latest/docs/InstallationGuide/InstallationGuide.html',
-            },
-            {
-              NAME: 'Frequently Asked Questions',
-              DESCRIPTION: 'Get answers to common questions and troubleshooting tips.',
-              URL: '/faq/',
-            },
-            {
-              NAME: 'Application Development Guide',
-              DESCRIPTION: 'Discover how you can contribute to application development.',
-              URL: 'https://docs.opengauss.org/en/docs/latest/docs/DeveloperGuide/%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97.html',
-            },
           ],
-        },
-      ],
-      SHORTCUT: [
-        {
-          NAME: 'About openGauss',
-          URL: 'https://docs.opengauss.org/en/docs/7.0.0-RC1/docs/TechnicalWhitePaper/%E4%BA%A7%E5%93%81%E5%AE%9A%E4%BD%8D.html',
-        },
-        {
-          NAME: 'DataVec Vector Database',
-          URL: 'https://docs.opengauss.org/en/docs/latest/docs/DataVec/DataVec-Overview.html',
-        },
-        {
-          NAME: 'openGauss DataVec + Dify',
-          URL: 'https://docs.opengauss.org/en/docs/latest/docs/DataVec/openGauss-Dify.html',
-        },
-        {
-          NAME: 'Database Administration Guide',
-          URL: 'https://docs.opengauss.org/en/docs/latest/docs/DatabaseAdministrationGuide/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E6%8C%87%E5%8D%97.html',
         },
       ],
     },
@@ -179,21 +144,6 @@ export default {
               NAME: 'Offline Activities',
               DESCRIPTION: 'Join us for in-person discussions and turn ideas into action.',
               URL: '/video/?id=4',
-            },
-          ],
-        },
-        {
-          NAME: 'Growth & Development',
-          CHILDREN: [
-            {
-              NAME: 'Getting Started',
-              DESCRIPTION: 'Series of openGauss video tutorials to help you get started.',
-              URL: '/quick-start/',
-            },
-            {
-              NAME: 'Advanced Learning',
-              DESCRIPTION: 'Master open source software and build the skills that power the future.',
-              URL: '/advanced/',
             },
           ],
         },
@@ -232,17 +182,6 @@ export default {
             },
           ],
         },
-        {
-          NAME: 'Compatibility',
-          CHILDREN: [
-            {
-              NAME: 'Compatibility List',
-              DESCRIPTION: 'Check software compatibility with openGauss.',
-              URL: '/compatibility/',
-            },
-          ],
-        },
-
         {
           NAME: 'Security',
           CHILDREN: [
@@ -347,27 +286,9 @@ export default {
           ],
         },
       ],
-      SHORTCUT: [
-        {
-          NAME: 'openGauss Developer Day 2025',
-          PICTURE: odd,
-          DESCRIPTION: '',
-          REMARK: 'June 02, 2025 | Beijing',
-          TYPE: 'PICTURE',
-          URL: '/summit/devday2025/',
-        },
-        {
-          NAME: 'Innovate Databases. Power Intelligence.',
-          PICTURE: report,
-          DESCRIPTION: '',
-          REMARK: 'December 27, 2024 | Beijing',
-          TYPE: 'PICTURE',
-          URL: '/summit/devday2024/',
-        },
-      ],
     },
   ],
-  MORE:"More",
+  MORE: 'More',
   QUICKLINK: 'Quick Links',
   CODE: 'Code',
   SEARCH: {

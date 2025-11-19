@@ -26,7 +26,6 @@ const navActive = ref('');
 const subNavContent = ref<any>([]);
 const navShortcut = ref<any>([]);
 const isPicture = ref(false);
-const isClickDropdown = ref(false);
 
 const toggleDebounced = useDebounceFn(function (item: NavItemT | null) {
   if (item === null) {
@@ -34,11 +33,18 @@ const toggleDebounced = useDebounceFn(function (item: NavItemT | null) {
     isShow.value = false;
     isPicture.value = false;
   } else if (item.ID === 'more') {
+    // 如果已经通过点击选择了某个隐藏项，保持显示状态
+    if (mroeSelectId.value) {
+      navActive.value = item.ID;
+      // 保持当前的显示状态和内容
+      return;
+    }
+
     if (navActive.value) {
       isShow.value = false;
     }
 
-    navActive.value = 'more';
+    navActive.value = item.ID;
   } else {
     if (item.ID === 'home') {
       navActive.value = item.ID;
@@ -56,8 +62,10 @@ const toggleDebounced = useDebounceFn(function (item: NavItemT | null) {
   }
 }, 100);
 
+const mroeSelectId = ref('');
 const handleDropdownClick = (item: NavItemT) => {
-  isClickDropdown.value = true;
+  navActive.value = 'more';
+  mroeSelectId.value = item.ID;
   isShow.value = true;
   subNavContent.value = item.CHILDREN;
   navShortcut.value = item.SHORTCUT;
@@ -75,6 +83,7 @@ const linkClick = () => {
 
   setTimeout(() => {
     navActive.value = '';
+    mroeSelectId.value = '';
   }, 150);
 };
 
@@ -157,7 +166,12 @@ watch(
           </ODropdown>
 
           <transition name="transition">
-            <div v-if="isShow" :class="['nav-dropdown', navActive, commonStore.theme, `${navActive}-${lang}`]">
+            <div
+              v-if="isShow && navActive === item.ID"
+              :class="['nav-dropdown', navActive === 'more' ? mroeSelectId : navActive, commonStore.theme, `${navActive}-${lang}`]"
+              @mouseenter="toggleDebounced(item)"
+              @mouseleave="toggleDebounced(null)"
+            >
               <div class="nav-drop-content">
                 <OScroller class="nav-scroller" show-type="always" size="small" disabled-y>
                   <div class="nav-sub-content">
