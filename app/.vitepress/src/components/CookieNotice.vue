@@ -228,6 +228,8 @@ watch(
   @media (max-width: 840px) {
     padding-top: 16px;
     padding-bottom: 16px;
+    padding-left: 24px;
+    padding-right: 24px;
     flex-direction: column;
     align-items: center;
   }
@@ -303,6 +305,10 @@ watch(
   font-size: 20px;
   &:hover {
     color: var(--e-color-brand1);
+  }
+  @media (max-width: 840px) {
+    right: var(--layout-content-padding);
+    font-size: 14px;
   }
   @include x-svg-hover;
 }

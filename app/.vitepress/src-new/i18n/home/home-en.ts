@@ -22,7 +22,7 @@ export default {
         TEXT: 'AI-based parameter tuning',
       },
     ],
-    DOWN_NAME: 'Click here to download openGauss Overview Slides',
+    DOWN_NAME: 'Download openGauss Overview Slides',
   },
   COMMUNITY_ACTIVITY: {
     TITLE: 'We Are Thriving',

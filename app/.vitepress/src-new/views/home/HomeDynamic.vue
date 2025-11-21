@@ -18,7 +18,7 @@ const { t, isZh, locale } = useLocale();
 const coverList = [blogCover1, blogCover2, blogCover3];
 
 const { theme } = storeToRefs(useCommon());
-const { isPhone } = useScreen();
+const { isPhone, lePadV } = useScreen();
 const blogsData = computed(() => {
   return isZh.value ? blogsAllData.zh.slice(0, 6) : blogsAllData.en.slice(0, 6);
 });
@@ -48,7 +48,7 @@ const activeTab = ref('blogs');
     </template>
     <OTab v-model="activeTab" variant="text" :line="false">
       <OTabPane value="blogs" :label="t('home.blog')">
-        <OScroller :show-type="isPhone ? 'never' : 'always'">
+        <OScroller disabled-y :show-type="isPhone ? 'never' : 'always'">
           <OCard v-for="(item, index) in blogsData" :key="item.path" class="news-list-item" @click="toNewsContent(item.path)">
             <div class="news-img">
               <div class="cover" v-if="theme === 'dark'"></div>
@@ -56,20 +56,20 @@ const activeTab = ref('blogs');
             </div>
             <div class="news-info">
               <p class="news-title">{{ item.title }}</p>
-              <p v-if="!isPhone" class="news-content">{{ item.summary }}</p>
+              <p v-if="!lePadV" class="news-content">{{ item.summary }}</p>
             </div>
           </OCard>
         </OScroller>
       </OTabPane>
       <OTabPane value="news" :label="t('home.news')">
-        <OScroller :show-type="isPhone ? 'never' : 'always'">
+        <OScroller disabled-y :show-type="isPhone ? 'never' : 'always'">
           <OCard v-for="item in newsData" :key="item.path" class="news-list-item" @click="toNewsContent(item.path)">
             <div class="news-img">
               <img :src="item.banner" :alt="item.banner" />
             </div>
             <div class="news-info">
               <p class="news-title">{{ item.title }}</p>
-              <p v-if="!isPhone" class="news-content">{{ item.summary }}</p>
+              <p v-if="!lePadV" class="news-content">{{ item.summary }}</p>
             </div>
           </OCard>
         </OScroller>
@@ -79,6 +79,32 @@ const activeTab = ref('blogs');
 </template>
 
 <style lang="scss" scoped>
+:deep(.section-footer) {
+  margin-top: 32px;
+  @include respond-to('laptop') {
+    margin-top: 24px !important;
+  }
+  @include respond-to('pad_h') {
+    margin-top: 20px !important;
+  }
+  @include respond-to('<=pad_v') {
+    margin-top: 12px !important;
+  }
+}
+:deep(.o-scrollbar-wrapper) {
+  padding-top: 32px !important;
+  padding-bottom: 24px !important;
+  @include respond-to('laptop') {
+    padding-top: 24px !important;
+  }
+  @include respond-to('pad_h') {
+    padding-top: 16px !important;
+  }
+  @include respond-to('<=pad_v') {
+    padding-bottom: 12px !important;
+    padding-top: 12px !important;
+  }
+}
 :deep(.section-body) {
   @include respond-to('phone') {
     padding-right: 0 !important;
@@ -88,6 +114,13 @@ const activeTab = ref('blogs');
 :deep(.o-tab-navs) {
   @include respond-to('phone') {
     transform: translateX(calc(-1 * var(--layout-content-padding) / 2));
+  }
+}
+
+:deep(.o-scroller-container) {
+  padding-bottom: 24px;
+  @include respond-to('<=pad_v') {
+    padding-bottom: 0;
   }
 }
 
@@ -106,27 +139,6 @@ const activeTab = ref('blogs');
 
 :deep(.el-card__body) {
   width: 100%;
-}
-
-@mixin trend-card {
-  height: 100%;
-  display: inline-flex;
-  white-space: normal;
-  --trend-card-gap: 32px;
-  width: calc((100% - var(--trend-card-gap) * 2) / 3);
-
-  &:not(:first-child) {
-    margin-left: var(--trend-card-gap);
-  }
-  @include respond-to('<=laptop') {
-    --trend-card-gap: 24px;
-  }
-  @include respond-to('<=pad') {
-    --trend-card-gap: 18px;
-  }
-  @include respond-to('phone') {
-    --trend-card-gap: 12px;
-  }
 }
 
 .o-scroller {
@@ -150,42 +162,41 @@ const activeTab = ref('blogs');
   }
 }
 
+@mixin item-card {
+  height: 100%;
+  display: inline-flex;
+  white-space: normal;
+  --card-gap: 32px;
+  width: calc((100% + var(--card-gap)) / 3 - var(--card-gap));
+
+  &:not(:first-child) {
+    margin-left: var(--card-gap);
+  }
+  @include respond-to('laptop') {
+    --card-gap: 24px;
+  }
+  @include respond-to('pad') {
+    --card-gap: 16px;
+  }
+  @include respond-to('phone') {
+    --card-gap: 12px;
+    width: calc((100% + var(--card-gap)) / 2 - var(--card-gap));
+  }
+}
+
 .news-list-item {
-  @include trend-card();
+  @include item-card();
+  border-radius: 4px;
   --card-main-padding: 0;
+  --title-color: var(--e-color-text1);
   @include hover {
+    --title-color: var(--o-color-primary1);
     box-shadow: var(--o-shadow-2);
   }
   cursor: pointer;
-  @include respond-to('>laptop') {
-    min-height: 450px;
-    max-height: 450px;
-  }
-  @include respond-to('laptop') {
-    min-height: 347px;
-    max-height: 347px;
-  }
-  @include respond-to('<=pad') {
-    min-height: 272px;
-    max-height: 272px;
-  }
-  @media (max-width: 620px) {
-    height: auto;
-  }
-
-  @include respond-to('phone') {
-    --size: calc((100vw - 48px - 12px) / 2);
-    width: var(--size);
-    height: var(--size);
-
-    border-radius: 4px;
-  }
   .news-img {
     position: relative;
     width: 100%;
-    @include respond-to('phone') {
-      height: 60%;
-    }
     overflow: hidden;
     .cover {
       position: absolute;
@@ -198,32 +209,40 @@ const activeTab = ref('blogs');
     }
     img {
       width: 100%;
-      @include respond-to('>laptop') {
-        min-height: 254px;
-        max-height: 254px;
-      }
-      @include respond-to('laptop') {
-        min-height: 207px;
-        max-height: 207px;
-      }
-      @include respond-to('<=pad') {
-        min-height: 140px;
-        max-height: 140px;
-      }
+      height: 254px;
       object-fit: cover;
       transition: transform 0.3s ease;
+      @include respond-to('laptop') {
+        height: 225px;
+      }
+      @include respond-to('pad_h') {
+        height: 207px;
+      }
+      @include respond-to('pad_v') {
+        height: 140px;
+      }
+      @include respond-to('phone') {
+        height: 84px;
+      }
     }
   }
   .news-info {
-    padding: 24px;
+    padding: 32px;
     @include respond-to('laptop') {
+      padding: 24px;
+    }
+    @include respond-to('pad_h') {
       padding: 16px;
     }
-    @include respond-to('<=pad') {
+    @include respond-to('pad_v') {
       padding: 12px;
+    }
+    @include respond-to('phone') {
+      padding: 8px;
     }
     color: var(--e-color-text1);
     .news-title {
+      color: var(--title-color);
       font-weight: 500;
       @include h4;
       margin-bottom: var(--e-spacing-h10);
@@ -235,6 +254,7 @@ const activeTab = ref('blogs');
       margin-top: var(--e-spacing-h5);
       @include showline();
       -webkit-line-clamp: 2;
+      line-clamp: 2;
       color: var(--e-color-text4);
       font-size: var(--e-font-size-text);
       line-height: var(--e-line-height-text);

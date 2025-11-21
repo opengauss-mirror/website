@@ -250,6 +250,10 @@ a {
     &:last-child {
       margin-right: 0;
     }
+
+    @include hover {
+      color: var(--e-color-white);
+    }
   }
 
   @include respond-to('laptop') {

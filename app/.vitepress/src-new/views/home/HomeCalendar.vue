@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, watch, computed, shallowRef } from 'vue';
+import { ref, onMounted, watch, computed, shallowRef, Directive } from 'vue';
 
 import { useCommon, useMeeting } from '@/stores/common';
 import { getUserAllInfo } from '@/api/api-user';
@@ -40,6 +40,9 @@ import { doLogin, getUserAuth } from '@/shared/login';
 import type { MeetingSigT, MeetingPostT, MeetingItemT } from '@/shared/@types/type-meeting';
 import { useI18n } from '~@/i18n';
 import { useLocale } from '~@/composables/useLocale';
+
+import svg1 from '~icons/app/icon-copy2.svg';
+import { useClipboard } from '~@/composables/useClipboard';
 
 const TODAY = new Date();
 const TODAY_FORMATTED = dayjs(TODAY).format('YYYY/MM/DD');
@@ -109,7 +112,7 @@ const queryMeetingDates = async (date: string, group_name: string) => {
   currentCalendarData.value = [];
 
   if (Array.isArray(res)) {
-    currentCalendarData.value = res.map((item) => ({ ...item, type: 'meetings', d: item.mid }));
+    currentCalendarData.value = res.map((item) => ({ ...item, type: 'meeting', d: item.mid }));
   }
 
   activeName.value = currentCalendarData.value.length === 1 ? [currentCalendarData.value[0].id] : [];
@@ -372,6 +375,35 @@ const meetingCancelConfirm = async () => {
     isCancelDlgVisible.value = false;
   }
 };
+
+const copyMeetingInfo = (event: MouseEvent, calendarData: any) => {
+  const text = Object.entries(calendarData)
+    .map(([k, v]) => {
+      const fieldItem = meetingFields.value.find((f) => f.key === k);
+      if (fieldItem) {
+        let label = fieldItem.label;
+        label = label.endsWith(':') ? label.slice(0, -1) : label;
+        return `${label}: ${v}`;
+      }
+      return '';
+    })
+    .filter(Boolean)
+    .join('\n');
+  useClipboard({
+    text,
+    target: event,
+    success: () => {
+      message.success({
+        content: i18n.value.common.COPY_SUCCESS,
+      });
+    },
+    error: () => {
+      message.danger({
+        content: i18n.value.common.COPY_FAILED,
+      });
+    },
+  });
+};
 </script>
 <template>
   <AppSection :title="t('home.HOME_CALENDAR.developerCalendar')" class="home-calendar" ref="container">
@@ -461,6 +493,7 @@ const meetingCancelConfirm = async () => {
                     <OIcon><OIconChevronRight /> </OIcon>
                   </template>
                 </OLink>
+                <OIcon class="icon-copy" @click.capture.stop="copyMeetingInfo($event, calendarData)"><svg1 /> </OIcon>
               </template>
               <div class="calendar-info">
                 <div v-if="isSelf(calendarData.sponsor)" class="meeting-action">
@@ -470,9 +503,9 @@ const meetingCancelConfirm = async () => {
                 <template v-for="field in meetingFields" :key="field.key">
                   <div class="info-item" v-if="calendarData[field.key]">
                     <div class="item-title">{{ field.label }}:</div>
-                    <a v-if="field.isLink" :href="calendarData[field.key]" target="_blank">
+                    <OLink :hover-underline="true" color="primary" v-if="field.isLink" :href="calendarData[field.key]" target="_blank">
                       {{ calendarData[field.key] }}
-                    </a>
+                    </OLink>
                     <p v-else-if="field.key === 'time' && calendarData.start">{{ calendarData.start }} - {{ calendarData.end }}</p>
                     <p v-else>
                       {{ field.key === 'platform' ? getMeetingPlatformName(calendarData[field.key]) : calendarData[field.key] }}
@@ -522,6 +555,23 @@ const meetingCancelConfirm = async () => {
   --link-icon-size: 16px;
 }
 
+:deep(.o-collapse-item-header .o-collapse-item-title) {
+  position: relative;
+  flex: 1;
+}
+
+.icon-copy {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+
+  @include hover {
+    color: var(--o-color-primary2);
+  }
+}
+
 .home-calendar {
   :deep(.section-body) {
     position: relative;
@@ -532,12 +582,22 @@ const meetingCancelConfirm = async () => {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    @include respond-to('<=pad_v') {
+      flex-direction: column-reverse;
+    }
     .text {
       color: var(--o-color-info2);
       @include tip2;
+      @include respond-to('<=pad_v') {
+        text-align: center;
+        margin-top: 8px;
+      }
     }
     .oper-action {
       margin-left: 24px;
+      @include respond-to('<=pad_v') {
+        margin: 0;
+      }
     }
   }
   .calendar-body {
@@ -1026,6 +1086,10 @@ const meetingCancelConfirm = async () => {
       }
     }
   }
+}
+
+.calendar-info .info-item .o-link {
+  margin-left: 0 !important;
 }
 
 @include in-dark {

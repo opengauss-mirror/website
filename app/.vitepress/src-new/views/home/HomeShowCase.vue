@@ -129,6 +129,7 @@ const vSvgColor: Directive<HTMLElement> = {
     class="user-case"
     :footer="t('common.VIEW_MORE')"
     :footer-href="`/${locale}/user-practice/?industry=${activeTab + 1}`"
+    v-show="isZh"
   >
     <template #footer>
       <OLink :href="`/${locale}/${activeTab}`" target="_blank" style="display: flex; align-items: center">
@@ -174,6 +175,9 @@ const vSvgColor: Directive<HTMLElement> = {
 </template>
 
 <style scoped lang="scss">
+:deep(.section-wrapper) {
+  margin: calc(var(--o-gap-section) - 24px) auto 0;
+}
 .tab {
   text-align: center;
 }
@@ -425,7 +429,7 @@ const vSvgColor: Directive<HTMLElement> = {
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 840px) {
   .tab {
     height: 26px;
   }

@@ -27,12 +27,12 @@ const { isPhone } = useScreen();
     <div class="home-feature-content">
       <div class="home-feature-content-main">
         <template v-for="(item, index) in i18n.home.CHARACTERR_INFO.LIST">
-          <div :class="{ 'home-feature-content-main-item': true, 'right-border': !isPhone }">
+          <div class="home-feature-content-main-item">
             <OIcon class="feature-item-icon"><component :is="icons[index]" /></OIcon>
             <p class="feature-item-title">{{ item.NAME }}</p>
             <p v-if="!isPhone" class="feature-item-desc">{{ item.TEXT }}</p>
           </div>
-          <ODivider v-if="!isPhone && index < i18n.home.CHARACTERR_INFO.LIST.length - 1" direction="v" />
+          <ODivider style="height: unset; align-self: stretch" v-if="index < i18n.home.CHARACTERR_INFO.LIST.length - 1" direction="v" />
         </template>
       </div>
       <div class="home-feature-content-footer">
@@ -48,14 +48,8 @@ const { isPhone } = useScreen();
 </template>
 
 <style lang="scss" scoped>
-.home-feature-title {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  .home-feature-sub-title {
-    margin-top: 12px;
-    @include tip1;
-  }
+:deep(.section-subtitle) {
+  text-align: center;
 }
 
 .home-feature-content {
@@ -65,8 +59,17 @@ const { isPhone } = useScreen();
   backdrop-filter: blur(32px);
   background: linear-gradient(180deg, rgb(255, 255, 255, 0.45) 0%, rgb(254.74, 254.83, 255, 0.9) 100%);
   padding: 32px;
+  @include respond-to('laptop') {
+    padding: 24px;
+  }
+  @include respond-to('pad_h') {
+    padding: 16px;
+  }
+  @include respond-to('pad_v') {
+    padding: 16px 8px;
+  }
   @include respond-to('phone') {
-    padding: 16px 8px 12px 8px;
+    padding: 16px 8px 12px;
   }
 }
 
@@ -76,14 +79,28 @@ const { isPhone } = useScreen();
 
 .home-feature-content-main {
   display: flex;
-  align-items: center;
+  align-items: start;
+
+  @include respond-to('phone') {
+    flex-wrap: wrap;
+  }
 
   .o-divider {
     height: 100%;
     @include respond-to('phone') {
-      height: 30px;
+      display: none;
     }
   }
+}
+
+@mixin mobile-item-divider-line {
+  height: 2em;
+  width: 1px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--o-color-control4);
 }
 
 .home-feature-content-main-item {
@@ -91,29 +108,49 @@ const { isPhone } = useScreen();
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  @include respond-to('phone') {
+    &:nth-child(1)::after {
+      content: '';
+      @include mobile-item-divider-line();
+    }
+    &:nth-child(5) {
+      margin-top: 12px;
+      &::after {
+        content: '';
+        @include mobile-item-divider-line();
+      }
+    }
+    &:nth-child(7) {
+      margin-top: 12px;
+    }
+    flex-basis: 50%;
+    flex-shrink: 0;
+  }
 
   .feature-item-icon {
     font-size: 40px;
+    @include respond-to('phone') {
+      font-size: 24px;
+    }
     color: inherit;
   }
 
   .feature-item-title {
     margin-top: 16px;
+    @include h4;
     @include respond-to('phone') {
       margin-top: 4px;
+      @include text1;
     }
-    @include h4;
   }
 
   .feature-item-desc {
+    text-align: center;
     color: var(--o-color-info3);
     margin-top: 8px;
     @include text1;
   }
-}
-
-.right-border:not(:last-child) {
-  border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .home-feature-content-footer {
@@ -122,11 +159,26 @@ const { isPhone } = useScreen();
   @include text1;
   margin-top: 40px;
 
-  @include respond-to('phone') {
+  @include respond-to('laptop') {
+    margin-top: 33px;
+  }
+  @include respond-to('pad_h') {
+    margin-top: 25px;
+  }
+  @include respond-to('<=pad_v') {
+    margin-top: 19px;
+  }
+
+  @include respond-to('<=pad_v') {
+    font-size: 14px;
+    line-height: 22px;
     margin-top: 20px;
   }
   .o-icon {
     font-size: 24px;
+    @include respond-to('<=pad_v') {
+      font-size: 16px;
+    }
   }
 }
 </style>
