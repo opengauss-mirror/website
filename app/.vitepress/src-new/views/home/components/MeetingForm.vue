@@ -403,7 +403,7 @@ watch(
       </OFormItem>
 
       <OFormItem label="所属SIG" required field="group_name" :rules="selectSigRules" class="sig-item">
-        <OSelect v-model="formData.group_name" clearable filterable size="large" @change="getSigInfo">
+        <OSelect v-model="formData.group_name" clearable filterable size="large" @change="getSigInfo" placeholder="请选择SIG">
           <OOption v-for="item in sigOptions" :key="item.group_name" :label="item.group_name" :value="item.group_name" />
         </OSelect>
       </OFormItem>
