@@ -1,4 +1,4 @@
-import { EULER_LINK, MINDSPORE_LINK, LOOKENG_LINK, KUNPENG_LINK, BBSCSDN_LINK, EULER_EN_LINK, OPENUBMC_URL, OPENFUYAO_URL } from '@/data/url-config';
+import { EULER_LINK, MINDSPORE_LINK, KUNPENG_LINK, BBSCSDN_LINK, OPENUBMC_URL, OPENFUYAO_URL } from '@/data/url-config';
 
 export default {
   FOOTER_NAVS: [
@@ -57,10 +57,6 @@ export default {
           URL: 'https://docs.opengauss.org/en/',
         },
         {
-          NAME: 'Frequently Asked Questions',
-          URL: '/en/faq/',
-        },
-        {
           NAME: 'Security Advisories',
           URL: '/en/security-advisories/',
         },
@@ -100,11 +96,11 @@ export default {
   FRIENDLY_LINKS: [
     {
       NAME: 'openEuler',
-      URL: EULER_LINK,
+      URL: `${EULER_LINK}/en/`,
     },
     {
       NAME: 'MindSpore',
-      URL: MINDSPORE_LINK,
+      URL: `${MINDSPORE_LINK}/en`,
     },
     {
       NAME: 'openUBMC',
@@ -112,15 +108,15 @@ export default {
     },
     {
       NAME: 'openFuyao',
-      URL: OPENFUYAO_URL,
+      URL: `${OPENFUYAO_URL}/en`,
     },
     {
       NAME: 'Kunpeng',
-      URL: `${KUNPENG_LINK}en/`,
+      URL: `${KUNPENG_LINK}/en/`,
     },
     {
       NAME: 'Gauss 松鼠会',
-      URL: `${BBSCSDN_LINK}forums/gaussdb`,
+      URL: `${BBSCSDN_LINK}/forums/gaussdb`,
     },
   ],
   OPTIONS: [

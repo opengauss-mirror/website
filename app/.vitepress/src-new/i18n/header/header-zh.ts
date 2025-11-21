@@ -303,7 +303,7 @@ export default {
         },
         {
           NAME: 'MySQL迁移',
-          URL: '/member/',
+          URL: '/migration/',
         },
       ],
     },
