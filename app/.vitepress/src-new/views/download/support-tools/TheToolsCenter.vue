@@ -33,7 +33,15 @@ watchEffect(() => locale.value = lang.value ?? 'zh');
     <TheToolSet />
     <TheSupportTools />
     <AppSection :title="$t('tools.SUPPORT_SERVICES')">
-      <SupportServices />
+      <SupportServices
+        v-analytics.catchBubble="{
+          properties: {
+            module: 'download',
+            level1: $t('tools.TOOL_CENTER'),
+            level2: $t('tools.SUPPORT_SERVICES'),
+          },
+        }"
+      />
     </AppSection>
   </ContentWrapper>
 </template>

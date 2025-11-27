@@ -75,7 +75,15 @@ const tableColumns = [
     <div class="tag-filter">
       <p class="label">{{ $t('download.VERSION_TYPE') }}</p>
       <ORadioGroup v-if="gtPadV" v-model="selectedFilter" style="--radio-group-gap: 8px">
-        <ORadio v-for="item in filterOptions" :key="item.value" :value="item.value">
+        <ORadio
+          v-for="item in filterOptions"
+          :key="item.value"
+          :value="item.value"
+          v-analytics.bubble="{
+            level3: $t('download.VERSION_TYPE'),
+            target: item.label,
+          }"
+        >
           <template #radio="{ checked }">
             <OToggle :checked="checked">{{ item.label }}</OToggle>
           </template>
@@ -105,7 +113,15 @@ const tableColumns = [
         <span v-else class="no-data">--</span>
       </template>
       <template #td_action="{ row }">
-        <OLink tag="button" color="primary" @click="goToDownload(row.name)">
+        <OLink
+          tag="button"
+          color="primary"
+          @click="goToDownload(row.name)"
+          v-analytics.bubble="{
+            level3: row.name,
+            target: $t('download.GOTO_DOWNLOAD'),
+          }"
+        >
           {{ $t('download.GOTO_DOWNLOAD') }}
           <template #suffix>
             <OIcon><OIconArrowRight /></OIcon>

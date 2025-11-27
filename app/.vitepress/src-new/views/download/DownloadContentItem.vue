@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, onMounted, inject } from 'vue';
+import { ref, onMounted, inject, Ref } from 'vue';
 import { type DialogActionT, useMessage, OButton, OLink, ODialog, OTag, OIcon } from '@opensig/opendesign';
 import { useClipboard } from '@/components/hooks/useClipboard';
 import { useI18n } from '~@/i18n';
@@ -114,7 +114,15 @@ const collectDownloadData = (name: string) => {
     <div class="software-info">
       <div class="software-code">
         <span class="text">{{ $t('download.TABLE_HEAD[3]') }}：</span>
-        <span v-if="data.sha_code !== ''" class="sha-link" @click="handleUrlCopy(data.sha_code, $event)">
+        <span
+          v-if="data.sha_code !== ''"
+          class="sha-link"
+          @click="handleUrlCopy(data.sha_code, $event)"
+          v-analytics.bubble="{
+            target: shaText,
+            ...(type === 'symbol' ? { level7: data.name } : {}),
+          }"
+        >
           {{ shaText
           }}<OIcon>
             <IconCopy />
@@ -125,7 +133,16 @@ const collectDownloadData = (name: string) => {
       <div v-if="data.down_url !== ''" class="down-action">
         <span v-if="lePadV" class="text">{{ $t('download.TABLE_HEAD[1]') }}：</span>
         <template v-if="downloadVersionAuth.includes(versionShown) && !userInfoStore.username">
-          <OButton :variant="lePadV ? 'text' : type === 'symbol' ? 'outline' : 'solid'" size="small" color="primary" @click="changeDownloadAuth">
+          <OButton
+            :variant="lePadV ? 'text' : type === 'symbol' ? 'outline' : 'solid'"
+            size="small"
+            color="primary"
+            @click="changeDownloadAuth"
+            v-analytics.bubble="{
+              ...(type === 'symbol' ? { level7: data.name } : {}),
+              target: i18n.download.BTN_TEXT,
+            }"
+          >
             {{ i18n.download.BTN_TEXT }}
             <template #suffixIcon>
               <IconDownload />
@@ -139,6 +156,10 @@ const collectDownloadData = (name: string) => {
             @click="collectDownloadData(data.name)"
             :variant="lePadV ? 'text' : type === 'symbol' ? 'outline' : 'solid'"
             color="primary"
+            v-analytics.bubble="{
+              ...(type === 'symbol' ? { level7: data.name } : {}),
+              target: i18n.download.BTN_TEXT,
+            }"
           >
             {{ i18n.download.BTN_TEXT }}
             <template #suffixIcon>
