@@ -69,6 +69,11 @@ export default {
         URL: `/en/about-us/`,
         TARGET: `_blank`,
       },
+      {
+        NAME: 'Complaints and Reports',
+        URL: '',
+        TARGET: '',
+      },
     ],
     QR_CODE: `WeChat Subscription`,
   },

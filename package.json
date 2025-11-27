@@ -21,6 +21,7 @@
   "dependencies": {
     "@opensig/open-analytics": "^0.0.9",
     "@opensig/opendesign": "0.0.75",
+    "@opendesign-plus/utils": "0.0.1-rc.6",
     "@vueuse/core": "10.11.1",
     "axios": "1.12.0",
     "clipboard": "2.0.11",

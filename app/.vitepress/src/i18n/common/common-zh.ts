@@ -71,6 +71,11 @@ export default {
         URL: `/zh/about-us/`,
         TARGET: `_blank`,
       },
+      {
+        NAME: '投诉与举报',
+        URL: '',
+        TARGET: '',
+      },
     ],
     QR_CODE: `扫码关注公众号`,
   },
