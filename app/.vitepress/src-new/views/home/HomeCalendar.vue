@@ -301,9 +301,14 @@ const getPersonalInfo = async () => {
 
     if (res && res.data) {
       const { identities, username } = res.data;
-      const userData = identities.find((e) => e.username === username);
 
-      meetingStore.username = userData.username;
+      // 先找gitcode，再找gitee
+      let userData = identities.find((e) => e.provider === 'gitcode');
+      if (userData === undefined) {
+        userData = identities.find((e) => e.provider === 'gitee');
+      }
+
+      meetingStore.username = userData.username || username;
     }
   } catch (error: any) {
     console.error(error);
