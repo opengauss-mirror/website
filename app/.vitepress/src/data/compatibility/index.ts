@@ -1,5 +1,71 @@
 export default [
   {
+    name: '迪科智能知识库',
+    version: '1.0.0',
+    type: '通用',
+    company: '深圳天源迪科信息技术股份有限公司',
+    database: 'openGauss 6.0.0',
+    os: 'CTyunOS 2.0.1',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%B7%B1%E5%9C%B3%E5%A4%A9%E6%BA%90/SKM_C45825110616200.pdf',
+  },
+  {
+    name: '迪科智能知识库',
+    version: '1.0.0',
+    type: '通用',
+    company: '深圳天源迪科信息技术股份有限公司',
+    database: 'openGauss 7.0.0',
+    os: 'CTyunOS 2.0.1',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%B7%B1%E5%9C%B3%E5%A4%A9%E6%BA%90/SKM_C45825110616210.pdf',
+  },
+  {
+    name: 'Kingweb数据中心基础设施运维管理平台软件',
+    version: '3.0',
+    type: '通用',
+    company: '上海金榜智能科技有限公司',
+    database: 'openGauss 6.0.1',
+    os: 'openEuler 22.03、Kylin V10',
+    server: 'Intel(其他)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E9%87%91%E6%A6%9C%E6%99%BA%E8%83%BD/%E5%9B%BD%E4%BA%A7%E5%8C%96%E8%AE%A4%E8%AF%81%E8%AF%81%E4%B9%A6.pdf',
+  },
+  {
+    name: '润和企业级服务器操作系统HopeOS',
+    version: '22',
+    type: '操作系统',
+    company: '江苏润和软件股份有限公司',
+    database: 'openGauss 6.0.1',
+    os: '',
+    server: 'Kunpeng 920(PR210K)、Hygon C86 7285(H620-G30)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%B6%A6%E5%92%8C/%E4%BA%A7%E5%93%81%E5%85%BC%E5%AE%B9%E4%BA%92%E8%AE%A4%E8%AF%81%E4%B9%A6-HopeOS%20V22%E4%B8%8EopenGauss.pdf',
+  },
+  {
+    name: '高性能服务器/客户端自适应渲染3D/BIM/GIS轻量化引擎',
+    version: '1.0',
+    type: 'GIS',
+    company: '西安葛兰创智信息科技有限公司',
+    database: 'openGauss 6.0.2',
+    os: '',
+    server: 'Kunpeng 920 V200(TaiShan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E8%91%9B%E5%85%B0%E5%88%9B%E6%99%BA/%E8%A5%BF%E5%AE%89%E8%91%9B%E5%85%B0%E5%88%9B%E6%99%BA%E4%BF%A1%E6%81%AF%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.pdf',
+  },
+  {
+    name: '医务管理系统',
+    version: '1.0',
+    type: '医疗',
+    company: '重庆道华科技有限公司',
+    database: 'openGauss 7.0.0',
+    os: 'Kylin V10',
+    server: 'Intel(R740)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E9%81%93%E5%8D%8E/%E9%87%8D%E5%BA%86%E9%81%93%E5%8D%8E%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.pdf',
+  },
+  {
     name: '金融业务智慧风控系统',
     version: '1.0',
     type: '金融',
