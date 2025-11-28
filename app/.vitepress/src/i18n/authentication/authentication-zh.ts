@@ -172,12 +172,12 @@ export default {
     {
       name: 'ogce',
       level: '高级',
-      des: '为深度契合openGauss技术发展路线与高端人才市场需求，openGauss社区正式推出《openGauss认证专家（OGCE）课程》。本课程专注于数据库内核原理与高级运维实战，以深度剖析内部机制和解决复杂场景问题为核心，坚持高阶理论与实践相结合。',
-      description: '',
+      des: '面向致力于成为openGauss数据库专家的自身数据库管理员、系统架构师和高级工程师',
+      description: '为深度契合openGauss技术发展路线与高端人才市场需求，openGauss社区正式推出《openGauss认证专家（OGCE）课程》。本课程专注于数据库内核原理与高级运维实战，以深度剖析内部机制和解决复杂场景问题为核心，坚持高阶理论与实践相结合。',
       empty: 'true',
       module: '考试模块:敬请期待',
       contenttitle: '课程内容:',
-      content: '涵盖数据库高级安全管控、数据库深度诊断与优化、人工智能、负载均衡、分布式等。',
+      content: '全面涵盖openGauss数据库内核原理、高级特性、备份恢复、数据库性能优化、高可用方案及运维与故障处理等核心技术领域，旨在系统培养学员具备专家级的数据库架构、性能调优与高可用保障能力。',
       outline: 'OGCE课程大纲:',
       courseOutline: [
         {
@@ -253,7 +253,7 @@ export default {
       iconSignup: yshlSignup,
       iconSignupDark: yshlSignupDark,
       desc: '云数互联旗下“墨天轮”是专注于数据库的技术社区，月活用户超过150万并覆盖40万专业数据库人才。社区以排行榜、知识库、问答、视频课程、AI 助手、培训认证等方式，促进数据库领域的知识传播和技术创新。',
-      url: 'https://www.modb.pro/job',
+      url: 'https://www.modb.pro/course?type=edu&tag=openGauss',
       signupUrl: 'https://www.modb.pro/course/144',
     },
     {
@@ -289,8 +289,8 @@ export default {
       iconSignup: ChinaMobile,
       iconSignupDark: ChinaMobile,
       desc: '中移动信息技术有限公司，面向全网IT领域，行使职能管理职责，统筹管理全网IT系统规划、投资、大数据统筹等工作；面向内部业务需求，进行智慧中台、业务支撑、管理支撑、大数据系统、IT云建设及运营，以及研发创新等工作；面向外部能力输出，具备独立的法人实体资质，可对外输出解决方案',
-      url: 'https://www.10086.cn',
-      signupUrl: 'https://www.10086.cn',
+      url: 'https://job.10086.cn/',
+      signupUrl: 'https://bigdata.10086.cn/honghu/hhweb/#/certify',
     },
   ],
   talentDetail: '查看岗位详情',

@@ -30,7 +30,7 @@ export default {
   HOME_MEETING: 'Community Meeting',
   CHARACTERR_INFO: {
     TITLE:
-      "openGauss is an open source relational database management system that is released with the Mulan PSL v2. with the kernel built on Huawei's years of experience in the database field and continuously provides competitive features tailored to enterprise-grade scenarios.",
+      "openGauss is a multi-modal database management system released under the Mulan PSL v2. Its kernel incorporates Huawei's extensive database experience, and it is continuously enhanced with competitive, enterprise-grade features to meet real-world demands.",
     LIST: [
       {
         NAME: 'High Reliability',
