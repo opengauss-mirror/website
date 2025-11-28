@@ -30,7 +30,7 @@ export default {
   HOME_MEETING: '社区会议',
   CHARACTERR_INFO: {
     TITLE:
-      'openGauss是一款开源关系型数据库管理系统，采用木兰宽松许可证v2发行。openGauss内核深度融合华为在数据库领域多年的经验，结合企业级场景需求，持续构建竞争力特性。',
+      'openGauss是一款多模数据库管理系统，采用木兰宽松许可证v2发行。openGauss内核深度融合华为在数据库领域多年的经验，结合企业级场景需求，持续构建竞争力特性。',
     LIST: [
       {
         NAME: '高可靠',
