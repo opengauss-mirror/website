@@ -288,7 +288,7 @@ export default {
       iconDark: ChinaMobile,
       iconSignup: ChinaMobile,
       iconSignupDark: ChinaMobile,
-      desc: '中移动信息技术有限公司，面向全网IT领域，行使职能管理职责，统筹管理全网IT系统规划、投资、大数据统筹等工作；面向内部业务需求，进行智慧中台、业务支撑、管理支撑、大数据系统、IT云建设及运营，以及研发创新等工作；面向外部能力输出，具备独立的法人实体资质，可对外输出解决方案',
+      desc: '中国移动信息技术有限公司，面向全网IT领域，行使职能管理职责，统筹管理全网IT系统规划、投资、大数据统筹等工作；面向内部业务需求，进行智慧中台、业务支撑、管理支撑、大数据系统、IT云建设及运营，以及研发创新等工作；面向外部能力输出，具备独立的法人实体资质，可对外输出解决方案',
       url: 'https://job.10086.cn/',
       signupUrl: 'https://bigdata.10086.cn/honghu/hhweb/#/certify',
     },
