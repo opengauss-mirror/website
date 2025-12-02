@@ -5,7 +5,6 @@ import { ElDialog, ElSwitch } from 'element-plus';
 import { setCustomCookie, isBoolean, removeCustomCookie } from '@/shared/utils';
 import { useCookieStore, COOKIE_AGREED_STATUS, COOKIE_KEY } from '@/stores/common';
 import { useScreen } from '@/shared/useScreen';
-import { initSensor, removeSensor } from '@/shared/analytics';
 import { useI18n } from '@/i18n';
 
 import { reportPV } from '@/shared/analytics';
@@ -77,7 +76,6 @@ const acceptAll = () => {
   removeCustomCookie(COOKIE_KEY);
   setCustomCookie(COOKIE_KEY, COOKIE_AGREED_STATUS.ALL_AGREED, 180, COOKIE_DOMAIN);
   toggleNoticeVisible(false);
-  initSensor();
 };
 
 // 用户拒绝所有cookie，即仅同意必要cookie
@@ -87,7 +85,6 @@ const rejectAll = () => {
   removeCustomCookie(COOKIE_KEY);
   setCustomCookie(COOKIE_KEY, COOKIE_AGREED_STATUS.NECCESSARY_AGREED, 180, COOKIE_DOMAIN);
   toggleNoticeVisible(false);
-  removeSensor();
 };
 
 const handleSave = () => {
@@ -120,7 +117,6 @@ watch(
     if (isNotSigned()) {
       toggleNoticeVisible(true);
     }
-    nextTick(reportPV);
   }
 );
 </script>
