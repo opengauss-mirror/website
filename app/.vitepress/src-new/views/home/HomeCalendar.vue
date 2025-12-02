@@ -41,9 +41,6 @@ import type { MeetingSigT, MeetingPostT, MeetingItemT } from '@/shared/@types/ty
 import { useI18n } from '~@/i18n';
 import { useLocale } from '~@/composables/useLocale';
 
-import svg1 from '~icons/app/icon-copy2.svg';
-import { useClipboard } from '~@/composables/useClipboard';
-
 const TODAY = new Date();
 const TODAY_FORMATTED = dayjs(TODAY).format('YYYY/MM/DD');
 
@@ -78,7 +75,15 @@ const selectedDate = ref(TODAY);
 // 当前选择日期字符串
 const selectedDateStr = computed(() => dayjs(selectedDate.value).format('YYYY-MM-DD'));
 
-const updateCurrentDayMeetings = (date: string) => {
+const updateCurrentDayMeetings = async (date: string) => {
+  const currentDate = dayjs(date);
+  if (
+    !recentMeetingDates.value.length ||
+    dayjs(recentMeetingDates.value[0]).isAfter(currentDate) ||
+    dayjs(recentMeetingDates.value[recentMeetingDates.value.length - 1]).isBefore(currentDate)
+  ) {
+    await getRecentMeetingDates();
+  }
   if (eventsData.value.has(selectedDateStr.value)) {
     currentCalendarData.value = [];
     currentCalendarData.value.push(...eventsData.value.get(selectedDateStr.value)!);
@@ -162,7 +167,12 @@ const meetingFields = computed(() => {
     { label: t('home.HOME_CALENDAR.meetingId'), key: 'mid' },
     { label: t('home.HOME_CALENDAR.meetingLink'), key: 'join_url', isLink: true },
     { label: t('home.HOME_CALENDAR.ETHERPAD'), key: 'etherpad', isLink: true },
-  ];
+  ].map((item) => {
+    return {
+      ...item,
+      label: item.label.endsWith(':') || item.label.endsWith('：') ? item.label : `${item.label}:`,
+    };
+  });
 });
 const tabType = ref(tabList.value[0].value);
 const calendarRef = ref();
@@ -380,35 +390,6 @@ const meetingCancelConfirm = async () => {
     isCancelDlgVisible.value = false;
   }
 };
-
-const copyMeetingInfo = (event: MouseEvent, calendarData: any) => {
-  const text = Object.entries(calendarData)
-    .map(([k, v]) => {
-      const fieldItem = meetingFields.value.find((f) => f.key === k);
-      if (fieldItem) {
-        let label = fieldItem.label;
-        label = label.endsWith(':') ? label.slice(0, -1) : label;
-        return `${label}: ${v}`;
-      }
-      return '';
-    })
-    .filter(Boolean)
-    .join('\n');
-  useClipboard({
-    text,
-    target: event,
-    success: () => {
-      message.success({
-        content: i18n.value.common.COPY_SUCCESS,
-      });
-    },
-    error: () => {
-      message.danger({
-        content: i18n.value.common.COPY_FAILED,
-      });
-    },
-  });
-};
 </script>
 <template>
   <AppSection :title="t('home.HOME_CALENDAR.developerCalendar')" class="home-calendar" ref="container">
@@ -492,13 +473,12 @@ const copyMeetingInfo = (event: MouseEvent, calendarData: any) => {
                   <div v-if="calendarData.group_name">{{ meetingI18n.SIG_GROUP }} {{ calendarData.group_name }}</div>
                   <div v-if="calendarData.activity_type">{{ calendarData.activity_type }}</div>
                 </div>
-                <OLink v-if="calendarData.type !== 'meetings'" :href="calendarData.link" target="_blank">
+                <OLink v-if="calendarData.type !== 'meeting'" :href="calendarData.link" target="_blank">
                   {{ meetingI18n.LEARN_MORE }}
                   <template #suffix>
                     <OIcon><OIconChevronRight /> </OIcon>
                   </template>
                 </OLink>
-                <OIcon class="icon-copy" @click.capture.stop="copyMeetingInfo($event, calendarData)"><svg1 /> </OIcon>
               </template>
               <div class="calendar-info">
                 <div v-if="isSelf(calendarData.sponsor)" class="meeting-action">
@@ -507,7 +487,7 @@ const copyMeetingInfo = (event: MouseEvent, calendarData: any) => {
                 </div>
                 <template v-for="field in meetingFields" :key="field.key">
                   <div class="info-item" v-if="calendarData[field.key]">
-                    <div class="item-title">{{ field.label }}:</div>
+                    <div class="item-title">{{ field.label }}</div>
                     <OLink :hover-underline="true" color="primary" v-if="field.isLink" :href="calendarData[field.key]" target="_blank">
                       {{ calendarData[field.key] }}
                     </OLink>
@@ -521,9 +501,11 @@ const copyMeetingInfo = (event: MouseEvent, calendarData: any) => {
             </OCollapseItem>
           </OCollapse>
           <div v-else class="empty">
-            <img v-if="commonStore.theme === 'light'" :src="notFoundImg_light" alt="" />
-            <img v-else :src="notFoundImg_dark" alt="" />
-            <p>{{ meetingI18n.EMPTY_TEXT }}</p>
+            <template v-if="commonStore.theme">
+              <img v-if="commonStore.theme === 'light'" :src="notFoundImg_light" alt="" />
+              <img v-else :src="notFoundImg_dark" alt="" />
+              <p>{{ meetingI18n.EMPTY_TEXT }}</p>
+            </template>
           </div>
         </OScroller>
       </div>
@@ -580,7 +562,6 @@ const copyMeetingInfo = (event: MouseEvent, calendarData: any) => {
 .home-calendar {
   :deep(.section-body) {
     position: relative;
-    width: 100%;
     z-index: 1;
   }
   .meeting-oper {

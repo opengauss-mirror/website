@@ -24,8 +24,7 @@ const activeWidth = ref();
 const activeLeft = ref();
 
 const pathResolving = (path: string) => {
-  path = path.endsWith('index') ? '/' + path.replace(/(index)$/g, '') : '/' + path + '.html';
-  return path;
+  return path.replace(/(index)$/g, '');
 };
 
 // -------------------- 获取案例数据 --------------------
@@ -128,11 +127,10 @@ const vSvgColor: Directive<HTMLElement> = {
     :title="t('home.USER_TITLE')"
     class="user-case"
     :footer="t('common.VIEW_MORE')"
-    :footer-href="`/${locale}/user-practice/?industry=${activeTab + 1}`"
     v-show="isZh"
   >
     <template #footer>
-      <OLink :href="`/${locale}/${activeTab}`" target="_blank" style="display: flex; align-items: center">
+      <OLink :href="`/${locale}/user-practice/?industry=${activeTab + 1}`" target="_blank" style="display: flex; align-items: center">
         {{ t('common.VIEW_MORE') }}
         <template #suffix>
           <OIcon style="font-size: 1.5rem"><OIconChevronRight /></OIcon>
@@ -140,7 +138,7 @@ const vSvgColor: Directive<HTMLElement> = {
       </OLink>
     </template>
     <div ref="userCase">
-      <OScroller id="scrollTab" show-type="hover">
+      <OScroller :disabled-y="true" id="scrollTab" show-type="hover">
         <div class="tab">
           <ul class="tab-list" ref="tabs">
             <li v-for="(tab, i) in caseCategories" :key="i" class="item-tab" :class="{ 'item-tab-active-mb': activeTab === i }" @click="changeTab(i)">
@@ -157,7 +155,7 @@ const vSvgColor: Directive<HTMLElement> = {
         <li class="case-list">
           <div flex="0 0 100%" v-for="(item, i) in caseData[caseCategories[activeTab].typeEn].slice(0, 4)" :key="i" class="item-case">
             <ODivider v-if="i !== 0" />
-            <OLink :href="pathResolving(item.path)" target="_blank" class="item-link">
+            <OLink :href="`/${item.path}`" target="_blank" class="item-link">
               <div class="item-title">
                 <p class="company">{{ item.company }}</p>
                 <OIcon class="company-icon" v-svg-color><IconChevronRight /></OIcon>
@@ -176,7 +174,7 @@ const vSvgColor: Directive<HTMLElement> = {
 
 <style scoped lang="scss">
 :deep(.section-wrapper) {
-  margin: calc(var(--o-gap-section) - 24px) auto 0;
+  margin: calc(var(--o-gap-section) - 24px) auto 0 !important;
 }
 .tab {
   text-align: center;
@@ -187,7 +185,7 @@ const vSvgColor: Directive<HTMLElement> = {
   align-items: center;
   background-color: rgb(var(--o-mixedgray-3));
   padding: 6px;
-  border-radius: var(--o-radius-s);
+  border-radius: 4px;
   white-space: nowrap;
   position: relative;
 }
@@ -228,7 +226,7 @@ const vSvgColor: Directive<HTMLElement> = {
   color: var(--o-color-primary1);
   background-color: var(--o-color-fill2);
   box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.08);
-  border-radius: var(--o-radius-xs);
+  border-radius: 4px;
   z-index: 1;
   transition: left 0.2s cubic-bezier(0.2, 0, 0, 1);
 }
@@ -311,7 +309,7 @@ const vSvgColor: Directive<HTMLElement> = {
   text-align: center;
 }
 .right-img {
-  width: 550px;
+  width: 520px;
 }
 
 .o-col {

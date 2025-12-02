@@ -54,13 +54,20 @@ const videoList = computed(() => {
 <style lang="scss" scoped>
 :deep(.section-body) {
   @include respond-to('<=pad_v') {
+    width: 100% !important;
     padding-right: 0 !important;
+    padding-left: 0 !important;
   }
 }
 
 .o-card {
   border-radius: 4px;
   --card-main-padding: 0;
+
+  --title-color: var(--o-color-info2);
+  @include hover {
+    --title-color: var(--o-color-primary1);
+  }
 }
 
 .home-videos {
@@ -82,7 +89,7 @@ const videoList = computed(() => {
     --item-gap: 12px;
   }
   @include respond-to('<=pad_v') {
-    padding-right: var(--layout-content-padding);
+    padding: var(--layout-content-padding);
   }
 }
 
@@ -126,11 +133,17 @@ const videoList = computed(() => {
     img {
       width: 100%;
       height: auto;
+      transform-origin: center;
+      transition: transform 0.3s ease;
+      @include hover {
+        transform: scale(1.05);
+      }
     }
   }
 }
 
 .home-videos-item-desc {
+  color: var(--title-color);
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2; /* 设置你想要显示的行数 */
