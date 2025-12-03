@@ -60,7 +60,7 @@ export default {
         },
         {
           NAME: 'openGauss 6.0.1 Installation Guide',
-          URL: 'https://docs.opengauss.org/en/docs/6.0.0/docs/GettingStarted/GettingStarted.html',
+          URL: 'https://docs.opengauss.org/en/docs/latest/installation_guide/installation_overview.html',
         },
         {
           NAME: 'Technical White Papers',
@@ -105,16 +105,36 @@ export default {
           CHILDREN: [
             {
               NAME: 'Document Center',
-              DESCRIPTION: 'Your go-to resource for different service scenarios and tool usage.',
+              DESCRIPTION: 'Your go-to resource for different usage scenarios.',
               TAG: TAG_TYPE.NEW,
               URL: 'https://docs.opengauss.org/en/',
             },
             {
               NAME: 'Quick Start',
               DESCRIPTION: 'Learn the community essentials in 10 minutes.',
-              URL: 'https://docs.opengauss.org/en/docs/latest/docs/GettingStarted/GettingStarted.html',
+              URL: 'https://docs.opengauss.org/en/docs/latest/getting_started/getting_started.html',
+            },
+            {
+              NAME: 'Installation Guide',
+              DESCRIPTION: 'Step-by-step instructions for installing openGauss.',
+              URL: `https://docs.opengauss.org/en/docs/latest/installation_guide/installation_overview.html`,
+            },
+            {
+              NAME: 'Documentation Development Guide',
+              DESCRIPTION: 'Discover how you can contribute to document development.',
+              URL: `https://docs.opengauss.org/en/docs/common/contribute/directory_structure_introductory.html`,
             },
           ],
+        },
+      ],
+      SHORTCUT: [
+        {
+          NAME: 'About openGauss',
+          URL: `https://docs.opengauss.org/en/docs/latest/about_opengauss/about_opengauss.html`,
+        },
+        {
+          NAME: 'Database Administration Guide',
+          URL: `https://docs.opengauss.org/en/docs/latest/database_administration_guide/database_concepts.html`,
         },
       ],
     },

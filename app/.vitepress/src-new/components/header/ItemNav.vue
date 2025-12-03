@@ -611,6 +611,11 @@ watch(
           width: calc(50% - 12px);
           margin-left: 24px;
 
+          .item-desc {
+            height: auto;
+            @include text-truncate(6);
+          }
+
           &:nth-child(2n + 1) {
             margin-left: 0;
           }
