@@ -77,7 +77,7 @@ const jump = (item: any, flag: boolean) => {
 
 <style lang="scss" scoped>
 .home-banner-wrap {
-  --banner-height: 478px;
+  --banner-height: 460px;
 
   @include respond-to('laptop') {
     --banner-height: 400px
@@ -86,11 +86,13 @@ const jump = (item: any, flag: boolean) => {
     --banner-height: 320px
   }
   @include respond-to('pad_v') {
-    --banner-height: 182px;
+    --banner-height: 184px;
     padding: 2px 32px 0;
   }
   @include respond-to('phone') {
-    padding: 16px 20px 0;
+    width: var(--grid-content-width);
+    margin: 0 auto;
+    padding: 16px 0;
     --banner-height: 184px;
   }
 }
@@ -114,14 +116,13 @@ const jump = (item: any, flag: boolean) => {
   max-width: 100vw;
   overflow: hidden;
   @include respond-to('<=pad_v') {
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
+    border-radius: 4px;
   }
   .banner-img {
     height: 100%;
     .banner-content {
       box-sizing: border-box;
-      max-width: 1504px;
+      width: var(--grid-content-width);
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
@@ -133,6 +134,9 @@ const jump = (item: any, flag: boolean) => {
       }
       @include respond-to('<=pad') {
         padding: 0 16px;
+      }
+      @include respond-to('phone') {
+        width: auto;
       }
       .content-left {
         display: flex;

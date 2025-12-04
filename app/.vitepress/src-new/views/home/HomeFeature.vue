@@ -130,7 +130,13 @@ const { isPhone } = useScreen();
 
   .feature-item-icon {
     font-size: 40px;
-    @include respond-to('phone') {
+    @include respond-to('laptop') {
+      font-size: 32px;
+    }
+    @include respond-to('pad_h') {
+      font-size: 32px;
+    }
+    @include respond-to('<=pad_v') {
       font-size: 24px;
     }
     color: inherit;
@@ -150,6 +156,9 @@ const { isPhone } = useScreen();
     color: var(--o-color-info3);
     margin-top: 8px;
     @include text1;
+    @include respond-to('<=pad_v') {
+      display: none;
+    }
   }
 }
 

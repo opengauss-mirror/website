@@ -18,9 +18,21 @@ const { t, isZh, locale } = useLocale();
 const coverList = [blogCover1, blogCover2, blogCover3];
 
 const { theme } = storeToRefs(useCommon());
-const { isPhone, lePadV } = useScreen();
+const { lePadV } = useScreen();
 const blogsData = computed(() => {
-  return isZh.value ? blogsAllData.zh.slice(0, 6) : blogsAllData.en.slice(0, 6);
+  const res = new Array(6);
+  let i = 0;
+  const data = isZh.value ? blogsAllData.zh : blogsAllData.en;
+  for (const item of data) {
+    if (i >= 6) {
+      break;
+    }
+    if (item.summary) {
+      res[i] = item;
+      i++;
+    }
+  }
+  return res;
 });
 
 const newsData = computed(() => {
@@ -48,7 +60,7 @@ const activeTab = ref('blogs');
     </template>
     <OTab v-model="activeTab" variant="text" :line="false">
       <OTabPane value="blogs" :label="t('home.blog')">
-        <OScroller disabled-y :show-type="isPhone ? 'never' : 'always'">
+        <OScroller size="small" disabled-y :show-type="lePadV ? 'never' : 'always'">
           <OCard v-for="(item, index) in blogsData" :key="item.path" class="news-list-item" @click="toNewsContent(item.path)">
             <div class="news-img">
               <div class="cover" v-if="theme === 'dark'"></div>
@@ -62,7 +74,7 @@ const activeTab = ref('blogs');
         </OScroller>
       </OTabPane>
       <OTabPane value="news" :label="t('home.news')">
-        <OScroller disabled-y :show-type="isPhone ? 'never' : 'always'">
+        <OScroller size="small" disabled-y :show-type="lePadV ? 'never' : 'always'">
           <OCard v-for="item in newsData" :key="item.path" class="news-list-item" @click="toNewsContent(item.path)">
             <div class="news-img">
               <img :src="item.banner" :alt="item.banner" />
@@ -85,7 +97,7 @@ const activeTab = ref('blogs');
     margin-top: 24px !important;
   }
   @include respond-to('pad_h') {
-    margin-top: 20px !important;
+    margin-top: 16px !important;
   }
   @include respond-to('<=pad_v') {
     margin-top: 12px !important;
@@ -93,7 +105,7 @@ const activeTab = ref('blogs');
 }
 :deep(.o-scrollbar-wrapper) {
   padding-top: 32px !important;
-  padding-bottom: 24px !important;
+  padding-bottom: 16px !important;
   @include respond-to('laptop') {
     padding-top: 24px !important;
   }
@@ -107,7 +119,9 @@ const activeTab = ref('blogs');
 }
 :deep(.section-body) {
   @include respond-to('phone') {
+    width: 100% !important;
     padding-right: 0 !important;
+    padding-left: 0 !important;
   }
 }
 
@@ -122,11 +136,6 @@ const activeTab = ref('blogs');
   @include respond-to('<=pad_v') {
     padding-bottom: 0;
   }
-}
-
-.news-content {
-  display: flex;
-  overflow: auto;
 }
 
 @mixin showline {
@@ -148,7 +157,7 @@ const activeTab = ref('blogs');
 
   :deep(.o-scroller-container) {
     @include respond-to('phone') {
-      padding-right: var(--layout-content-padding);
+      padding: 0 var(--layout-content-padding);
     }
   }
 
@@ -180,7 +189,8 @@ const activeTab = ref('blogs');
   }
   @include respond-to('phone') {
     --card-gap: 12px;
-    width: calc((100% + var(--card-gap)) / 2 - var(--card-gap));
+    --ltpad-content-width: calc(100vw - var(--layout-content-padding) * 2);
+    width: calc((var(--ltpad-content-width) + var(--card-gap)) / 2 - var(--card-gap));
   }
 }
 
@@ -208,22 +218,11 @@ const activeTab = ref('blogs');
       opacity: 0.2;
     }
     img {
+      aspect-ratio: 16 / 9;
       width: 100%;
-      height: 254px;
+      height: auto;
       object-fit: cover;
       transition: transform 0.3s ease;
-      @include respond-to('laptop') {
-        height: 225px;
-      }
-      @include respond-to('pad_h') {
-        height: 207px;
-      }
-      @include respond-to('pad_v') {
-        height: 140px;
-      }
-      @include respond-to('phone') {
-        height: 84px;
-      }
     }
   }
   .news-info {
@@ -251,18 +250,21 @@ const activeTab = ref('blogs');
       line-clamp: 2;
     }
     .news-content {
-      margin-top: var(--e-spacing-h5);
+      font-size: 16px;
+      line-height: 24px;
+      @media (min-width: 1201px) and (max-width: 1440px) {
+        font-size: 14px;
+        line-height: 22px;
+      }
+      @media (max-width: 1200px) {
+        font-size: 12px;
+        line-height: 18px;
+      }
       @include showline();
+      margin-top: var(--e-spacing-h5);
       -webkit-line-clamp: 2;
       line-clamp: 2;
-      color: var(--e-color-text4);
-      font-size: var(--e-font-size-text);
-      line-height: var(--e-line-height-text);
-      @media (max-width: 500px) {
-        line-height: var(--e-line-height-tip);
-        font-size: var(--e-font-size-tip);
-        color: var(--e-color-text4);
-      }
+      color: var(--o-color-control3);
     }
   }
 }
