@@ -14,17 +14,16 @@ import useWindowResize from '@/components/hooks/useWindowResize';
 import { windowOpen, handleError } from '@/shared/utils';
 
 import { DOCS_LINK } from '@/data/url-config';
-import { useCookieStore } from '@/stores/common';
 import { v4 as uniqueId } from 'uuid';
 import { oaReport } from '@/shared/analytics';
 
 import { SearchCountItemT } from '@/shared/@types/type-search';
+import { getUrlParam } from '~@/utils/common';
 
 const screenWidth = useWindowResize();
 const isMobile = computed(() => (screenWidth.value <= 768 ? true : false));
 
 const { lang } = useData();
-const cookieStore = useCookieStore();
 const router = useRouter();
 const i18n = useI18n();
 const activeVersion = ref('');
@@ -115,7 +114,10 @@ function searchCountAll() {
     .then((res) => {
       if (res.status === 200 && res.obj.total[0]) {
         searchNumber.value = res.obj.total;
-        // 埋点数据
+        const index = searchNumber.value.findIndex((item: SearchCountItemT) => item.key === searchType.value);
+        if (index > -1) {
+          currentIndex.value = index;
+        }
       } else {
         searchNumber.value = [];
       }
@@ -160,9 +162,7 @@ function searchAll(current?: string) {
     if (!current) {
       currentIndex.value = 0;
     }
-    if (cookieStore.isAllAgreed) {
-      reportSearch(searchInput.value);
-    }
+    reportSearch(searchInput.value);
     currentPage.value = 1;
     searchType.value = current || '';
     searchCountAll();
@@ -270,10 +270,16 @@ async function getVersionTag() {
 
 onMounted(async () => {
   await getVersionTag();
-  if (location.href.split('=')[1] !== 'undefined') {
-    searchInput.value = decodeURIComponent(location.href.split('=')[1]) + '';
+  if (getUrlParam('q')) {
+    searchInput.value = decodeURIComponent(getUrlParam('q'));
   }
-  searchAll();
+
+  const type = getUrlParam('type');
+  if (type === 'docs') {
+    searchType.value = 'docs';
+  }
+
+  searchAll(searchType.value);
 });
 
 watch(

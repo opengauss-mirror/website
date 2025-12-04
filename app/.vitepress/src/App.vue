@@ -6,8 +6,8 @@ import { useData } from 'vitepress';
 import zhCn from 'element-plus/es/locale/lang/zh-cn';
 import en from 'element-plus/es/locale/lang/en';
 
-import AppHeader from '@/components/header/AppHeader.vue';
-import AppFooter from '@/components/AppFooter.vue';
+import AppHeader from '~@/components/header/AppHeader.vue';
+import AppFooter from '~@/components/AppFooter.vue';
 import CookieNotice from '@/components/CookieNotice.vue';
 
 import LayoutSecurity from '@/layouts/LayoutSecurity.vue';
@@ -19,6 +19,7 @@ import LayoutMigration from '@/layouts/LayoutMigration.vue';
 import LayoutFaq from '@/layouts/LayoutFaq.vue';
 
 import AppFloat from '@/components/AppFloat.vue';
+import AppTour from '~@/components/AppTour.vue';
 
 import categories from '@/shared/category';
 
@@ -56,11 +57,14 @@ const comp = computed(() => {
       <SeoBox :seo-data="seoConfig[lang]?.home" />
       <component :is="comp" v-if="isCustomLayout"></component>
       <Content v-else />
-      <AppFloat />
+      <!-- <AppFloat /> -->
     </main>
   </el-config-provider>
   <CookieNotice />
   <AppFooter />
+  <ClientOnly>
+    <AppTour />
+  </ClientOnly>
 </template>
 
 <style lang="scss">
@@ -68,7 +72,8 @@ const comp = computed(() => {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --layout-content-max-width: 1544px;
+  // --layout-content-max-width: 1544px;
+  --layout-content-max-width: 1488px;
   --layout-content-padding: 64px;
   --layout-header-height: 80px;
 

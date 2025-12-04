@@ -59,7 +59,6 @@ export default {
       {
         NAME: '易运维',
         TEXT: '基于AI的智能参数调优',
-
         PNG: feature_png2,
         PNG_DARK: feature_png2_dark,
         GIF: feature_static2,

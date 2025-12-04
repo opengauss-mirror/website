@@ -112,8 +112,7 @@ const props = withDefaults(defineProps<SectionPropsT>(), {
   }
 
   .section-subtitle {
-    max-width: var(--layout-new-content-max-width);
-    padding: 0 var(--layout-content-padding);
+    width: var(--grid-content-width);
     margin: 0 auto;
 
     display: flex;
@@ -133,8 +132,7 @@ const props = withDefaults(defineProps<SectionPropsT>(), {
   }
 
   .section-body {
-    max-width: var(--layout-new-content-max-width);
-    padding: 0 var(--layout-content-padding);
+    width: var(--grid-content-width);
     margin: 0 auto;
 
     margin-top: var(--o-gap-t2c);

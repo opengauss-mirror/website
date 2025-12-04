@@ -15,16 +15,19 @@ import 'element-plus/theme-chalk/dark/css-vars.css';
 import i18n from '~@/i18n';
 
 // src-new
+
 import '~@/assets/style/theme/default-light.token.css';
 import '~@/assets/style/theme/dark.token.css';
 import '~@/assets/style/theme/media.token.scss';
+import '~@/assets/style/element-plus/index.scss';
+import '~@/assets/style/element-plus/theme/index.scss';
 import '@opensig/opendesign/es/index.css';
 import '~@/assets/style/theme/index.scss';
 import { installer } from '@/shared/analytics';
-import { reportAnalytics } from '@/api/api-analytics';
-import { getCustomCookie, removeCustomCookie } from '@/shared/utils';
-import { COOKIE_KEY } from '@/stores/common';
 import { BAIDU_HM } from '@/data/url-config';
+import { getCustomCookie, removeCustomCookie } from '@/shared/utils';
+import { COOKIE_KEY_EN } from '@/stores/common';
+import { reportAnalytics } from '@/api/api-analytics';
 
 export default {
   Layout,
@@ -48,7 +51,7 @@ export default {
       },
       isCookieAgreed() {
         if (location.pathname.startsWith('/zh')) return true;
-        return getCustomCookie(COOKIE_KEY) === '1';
+        return getCustomCookie(COOKIE_KEY_EN) === '1';
       },
       onPageView(from, to) {
         if (to.startsWith('/zh/cve') || to.startsWith('/en/cve')) {

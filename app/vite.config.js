@@ -22,6 +22,7 @@ export default defineConfig({
         @use "~@/assets/style/mixin/screen.scss" as *;
         @use "~@/assets/style/mixin/font.scss" as *;
         @use "~@/assets/style/mixin/common.scss" as *;
+        @use "~@/assets/style/mixin/grid.scss" as *;
       `,
       },
     },
@@ -38,6 +39,7 @@ export default defineConfig({
         migration: FileSystemIconLoader(path.resolve(__dirname, './.vitepress/src/assets/category/migration')),
         teamup: FileSystemIconLoader(path.resolve(__dirname, './.vitepress/src/assets/category/team-up')),
         'app-new': FileSystemIconLoader(path.resolve(__dirname, './.vitepress/src-new/assets/svg-icons')),
+        'app-new-showcase': FileSystemIconLoader(path.resolve(__dirname, './.vitepress/src-new/assets/svg-icons/category/showcase')),
       },
     }),
     viteStaticCopy({
@@ -76,6 +78,9 @@ export default defineConfig({
       '/api-meeting/': {
         target: 'https://opengauss-meeting-center.test.osinfra.cn/',
         changeOrigin: true,
+        headers: {
+          Referer: 'https://opengauss.test.osinfra.cn/',
+        },
         rewrite: (path) => path.replace(/^\/api-meeting/, ''),
       },
       '/api-search/': {

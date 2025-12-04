@@ -2,12 +2,13 @@
 import { ref, watch, onMounted, computed } from 'vue';
 import { useRoute, useData } from 'vitepress';
 import { ElDialog, ElSwitch } from 'element-plus';
-import { setCustomCookie, isBoolean, removeCustomCookie } from '@/shared/utils';
-import { useCookieStore, COOKIE_AGREED_STATUS, COOKIE_KEY } from '@/stores/common';
+import { setCustomCookie, isBoolean, removeCustomCookie, getCustomCookie } from '@/shared/utils';
+import { useCookieStore, COOKIE_AGREED_STATUS, COOKIE_KEY, COOKIE_KEY_ZH, COOKIE_KEY_EN } from '@/stores/common';
 import { useScreen } from '@/shared/useScreen';
 import { useI18n } from '@/i18n';
 
 import IconClose from '~icons/app/icon-cancel.svg';
+import { OButton, OIcon } from '@opensig/opendesign';
 
 const { lePadV } = useScreen();
 const i18n = useI18n();
@@ -17,6 +18,7 @@ const isZh = computed(() => (lang.value === 'zh' ? true : false));
 const cookieStore = useCookieStore();
 const COOKIE_DOMAIN = import.meta.env.VITE_COOKIE_DOMAIN;
 
+const cookieKey = computed(() => isZh.value ? COOKIE_KEY_ZH : COOKIE_KEY_EN);
 const route = useRoute();
 
 // 是否允许分析cookie
@@ -28,6 +30,10 @@ const toggleNoticeVisible = (val: boolean) => {
     cookieStore.isNoticeVisible = val;
   } else {
     cookieStore.isNoticeVisible = !cookieStore.isNoticeVisible;
+  }
+  if (!cookieStore.isNoticeVisible && isZh.value && getCustomCookie(cookieKey.value) !== COOKIE_AGREED_STATUS.NOT_SHOW_BUT_AGREED) {
+    cookieStore.status = COOKIE_AGREED_STATUS.NOT_SHOW_BUT_AGREED;
+    setCustomCookie(cookieKey.value, COOKIE_AGREED_STATUS.NOT_SHOW_BUT_AGREED, 180, COOKIE_DOMAIN);
   }
 };
 
@@ -45,22 +51,28 @@ const toggleDlgVisible = (val: boolean) => {
 
 // 是否未签署
 const isNotSigned = () => {
-  return cookieStore.getUserCookieStatus() === COOKIE_AGREED_STATUS.NOT_SIGNED;
+  if (isZh.value) {
+    return getCustomCookie(cookieKey.value) !== COOKIE_AGREED_STATUS.NOT_SHOW_BUT_AGREED;
+  }
+  return (getCustomCookie(cookieKey.value) ?? '0') === COOKIE_AGREED_STATUS.NOT_SIGNED;
 };
 
 // 是否全部同意
 const isAllAgreed = () => {
-  return cookieStore.getUserCookieStatus() === COOKIE_AGREED_STATUS.ALL_AGREED;
+  if (isZh.value) {
+    return getCustomCookie(cookieKey.value) === COOKIE_AGREED_STATUS.NOT_SHOW_BUT_AGREED;
+  }
+  return getCustomCookie(cookieKey.value) === COOKIE_AGREED_STATUS.ALL_AGREED;
 };
 
 onMounted(() => {
   // 未签署，展示cookie notice
   if (isNotSigned()) {
     toggleNoticeVisible(true);
-  }
-
-  if (cookieStore.isAllAgreed) {
-    analysisAllowed.value = true;
+    if (isZh.value && getCustomCookie(cookieKey.value) !== COOKIE_AGREED_STATUS.ALL_AGREED) {
+      cookieStore.status = COOKIE_AGREED_STATUS.ALL_AGREED;
+      setCustomCookie(cookieKey.value, COOKIE_AGREED_STATUS.ALL_AGREED, 180, COOKIE_DOMAIN);
+    }
   }
 });
 
@@ -68,8 +80,8 @@ onMounted(() => {
 const acceptAll = () => {
   analysisAllowed.value = true;
   cookieStore.status = COOKIE_AGREED_STATUS.ALL_AGREED;
-  removeCustomCookie(COOKIE_KEY);
-  setCustomCookie(COOKIE_KEY, COOKIE_AGREED_STATUS.ALL_AGREED, 180, COOKIE_DOMAIN);
+  removeCustomCookie(cookieKey.value);
+  setCustomCookie(cookieKey.value, COOKIE_AGREED_STATUS.ALL_AGREED, 180, COOKIE_DOMAIN);
   toggleNoticeVisible(false);
 };
 
@@ -77,8 +89,8 @@ const acceptAll = () => {
 const rejectAll = () => {
   analysisAllowed.value = false;
   cookieStore.status = COOKIE_AGREED_STATUS.NECCESSARY_AGREED;
-  removeCustomCookie(COOKIE_KEY);
-  setCustomCookie(COOKIE_KEY, COOKIE_AGREED_STATUS.NECCESSARY_AGREED, 180, COOKIE_DOMAIN);
+  removeCustomCookie(cookieKey.value);
+  setCustomCookie(cookieKey.value, COOKIE_AGREED_STATUS.NECCESSARY_AGREED, 180, COOKIE_DOMAIN);
   toggleNoticeVisible(false);
 };
 
@@ -119,23 +131,33 @@ watch(
 <template>
   <div v-if="cookieStore.isNoticeVisible" class="cookie-notice">
     <div class="cookie-notice-content">
-      <div class="cookie-notice-wrap">
+      <div class="cookie-notice-wrap" :type="isZh ? 'zh' : ''">
         <div class="cookie-notice-left">
-          <p class="cookie-title">{{ i18n.cookie.title }}</p>
-          <p class="cookie-desc">
+          <p v-if="isZh" class="cookie-desc" style="margin-top: 0;">
             {{ i18n.cookie.desc }}
-            <a :href="isZh ? '/zh/cookies/' : '/en/cookies/'" target="_blank"> {{ i18n.cookie.link }} </a>{{ isZh ? '。' : '.' }}
+            <a href="/zh/cookies" target="_blank" rel="noopener noreferrer">
+              {{ i18n.cookie.link }}
+            </a>
           </p>
+          <template v-else>
+            <p class="cookie-title">{{ i18n.cookie.title }}</p>
+            <p class="cookie-desc">
+              {{ i18n.cookie.desc }}
+              <a :href="isZh ? '/zh/cookies/' : '/en/cookies/'" target="_blank"> {{ i18n.cookie.link }} </a>{{ isZh ? '。' : '.' }}
+            </p>
+          </template>
         </div>
-        <div class="cookie-notice-right">
-          <OButton type="outline" size="mini" @click="acceptAll">{{ i18n.cookie.acceptAll }}</OButton>
-          <OButton type="outline" size="mini" @click="rejectAll">{{ i18n.cookie.rejectAll }}</OButton>
-          <OButton type="outline" size="mini" @click="toggleDlgVisible(true)">
+        <div v-if="!isZh" class="cookie-notice-right">
+          <OButton round="pill" variant="outline" color="primary" @click="acceptAll">{{ i18n.cookie.acceptAll }}</OButton>
+          <OButton round="pill" variant="outline" color="primary" @click="rejectAll">{{ i18n.cookie.rejectAll }}</OButton>
+          <OButton round="pill" variant="outline" color="primary" @click="toggleDlgVisible(true)">
             {{ i18n.cookie.manage }}
           </OButton>
         </div>
 
-        <IconClose class="cookie-notice-close" @click="toggleNoticeVisible(false)" />
+        <OIcon class="cookie-notice-close" :type="!isZh ? 'en' : ''" @click="toggleNoticeVisible(false)">
+          <IconClose />
+        </OIcon>
       </div>
     </div>
     <client-only>
@@ -171,8 +193,8 @@ watch(
         </div>
         <template #footer>
           <span class="dialog-footer">
-            <OButton type="outline" size="mini" @click="handleSave">{{ i18n.cookie.saveSetting }}</OButton>
-            <OButton type="outline" size="mini" @click="handleAllowAll">
+            <OButton round="pill" variant="outline" color="primary" @click="handleSave" style="margin-right: 16px;">{{ i18n.cookie.saveSetting }}</OButton>
+            <OButton round="pill" variant="outline" color="primary" @click="handleAllowAll">
               {{ i18n.cookie.acceptAll }}
             </OButton>
           </span>
@@ -214,11 +236,15 @@ watch(
   justify-content: space-between;
   position: relative;
   margin: 0 auto;
-  @media (max-width: 840px) {
-    padding-top: 16px;
-    padding-bottom: 16px;
-    flex-direction: column;
-    align-items: center;
+  &:not([type="zh"]) {
+    @media (max-width: 840px) {
+      padding-top: 16px;
+      padding-bottom: 16px;
+      padding-left: 24px;
+      padding-right: 24px;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 }
 
@@ -267,24 +293,39 @@ watch(
     align-items: center;
   }
 
-  .o-button {
-    @media (max-width: 840px) {
-      width: 100%;
-      justify-content: center;
+  .o-btn:not(:first-child) {
+    margin-left: 16px;
+  }
+  
+  @media (max-width: 840px) {
+    .o-btn {
+      align-self: stretch;
+      &:not(:first-child) {
+        margin-top: 12px;
+        margin-left: 0;
+      }
     }
   }
 }
 
 .cookie-notice-close {
-  position: absolute;
-  top: 12px;
-  right: 24px;
+  &[type="en"] {
+    position: absolute;
+    top: 12px;
+    right: 24px;
+    transform-origin: center;
+  }
   cursor: pointer;
-  transform-origin: center;
   color: var(--e-color-text1);
+  font-size: 20px;
   &:hover {
     color: var(--e-color-brand1);
   }
+  @media (max-width: 840px) {
+    right: var(--layout-content-padding);
+    font-size: 14px;
+  }
+  @include x-svg-hover;
 }
 
 .cookie-dlg {

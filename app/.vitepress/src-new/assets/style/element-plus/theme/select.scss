@@ -1,0 +1,51 @@
+@use '~@/assets/style/mixin/font.scss' as *;
+
+.el-select {
+  &.el-select--large {
+    .el-select__wrapper {
+      box-shadow: none !important;
+      border: 1px solid var(--o-color-control1);
+      border-radius: 4px;
+      @include text1;
+      &.is-hovering {
+        border-color: var(--o-color-primary2);
+      }
+      &.is-focused {
+        border-color: var(--o-color-primary3);
+      }
+    }
+  }
+  .elselect__-wrapper {
+    box-shadow: none;
+    border: 1px solid var(--o-color-control1);
+    border-radius: 36px;
+    min-height: 36px;
+    background-color: var(--o-color-control-light);
+    transition: none;
+
+    &.is-hovering:not(.is-focused) {
+      box-shadow: none;
+    }
+
+    &:hover {
+      box-shadow: none;
+      border-color: var(--o-color-control2);
+    }
+
+    &.is-focused {
+      box-shadow: none;
+      border-color: var(--o-color-primary3);
+    }
+
+    .el-select__placeholder.is-transparent {
+      color: var(--o-color-info4);
+    }
+  }
+  &:hover {
+    box-shadow: none !important;
+  }
+}
+
+.el-select-dropdown {
+  border-radius: 4px;
+}

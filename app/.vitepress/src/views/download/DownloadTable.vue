@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { ref, computed, watch, toRefs, onMounted } from 'vue';
 import { useData } from 'vitepress';
-import { useCommon, useCookieStore } from '@/stores/common';
+import { useCommon } from '@/stores/common';
 import { useI18n } from '@/i18n';
 import { ElMessage, ElMessageBox } from 'element-plus';
 import { useClipboard } from '@/components/hooks/useClipboard';
@@ -49,7 +49,6 @@ const { lang } = useData();
 const commonStore = useCommon();
 const i18n = useI18n();
 const shaText = 'SHA256';
-const cookieStore = useCookieStore();
 // tips
 const hoverTips = computed(() => (type: string | undefined) => {
   let tips = '';
@@ -261,7 +260,7 @@ const changeDownloadAuth = () => {
 
 // 下载埋点  新版本判断
 const collectDownloadData = (name: string) => {
-  if (cookieStore.isAllAgreed || userInfoStore.username) {
+  if (userInfoStore.username) {
     const { href } = window.location;
     const downloadTime = new Date();
     const _U_T_ = getCustomCookie('_U_T_') || 'notLog';

@@ -1,4 +1,3 @@
-import { getCustomCookie } from '@/shared/utils';
 import { defineStore } from 'pinia';
 
 export const useCommon = defineStore('common', {
@@ -10,7 +9,7 @@ export const useCommon = defineStore('common', {
 
 export const useMeeting = defineStore('meeting', {
   state: () => ({
-    giteeId: '',
+    username: '',
     userSigs: [],
     platformOptions: [],
   }),
@@ -20,8 +19,11 @@ export const COOKIE_AGREED_STATUS = {
   NOT_SIGNED: '0', // 未签署
   ALL_AGREED: '1', // 同意所有cookie
   NECCESSARY_AGREED: '2', // 仅同意必要cookie
+  NOT_SHOW_BUT_AGREED: '3', // 不再显示但已同意
 };
 
+export const COOKIE_KEY_ZH = 'agreed-cookiepolicy-zh';
+export const COOKIE_KEY_EN = 'agreed-cookiepolicy-en';
 export const COOKIE_KEY = 'agreed-cookiepolicy';
 
 // cookie状态
@@ -30,24 +32,11 @@ export const useCookieStore = defineStore('cookie', {
     status: '0',
     isNoticeVisible: false,
   }),
-  getters: {
-    isAllAgreed: (state) => state.status === '1',
-  },
-  actions: {
-    getUserCookieStatus() {
-      const cookieVal = getCustomCookie(COOKIE_KEY) ?? '0';
+});
 
-      const cookieStatusVal = cookieVal[0];
-      if (cookieStatusVal === COOKIE_AGREED_STATUS.ALL_AGREED) {
-        this.status = COOKIE_AGREED_STATUS.ALL_AGREED;
-        return COOKIE_AGREED_STATUS.ALL_AGREED;
-      } else if (cookieStatusVal === COOKIE_AGREED_STATUS.NECCESSARY_AGREED) {
-        this.status = COOKIE_AGREED_STATUS.NECCESSARY_AGREED;
-        return COOKIE_AGREED_STATUS.NECCESSARY_AGREED;
-      } else {
-        this.status = COOKIE_AGREED_STATUS.NOT_SIGNED;
-        return COOKIE_AGREED_STATUS.NOT_SIGNED;
-      }
-    },
-  },
+// 新手指导弹窗状态
+export const useGuideStore = defineStore('guide', {
+  state: () => ({
+    isOpen: false,
+  }),
 });

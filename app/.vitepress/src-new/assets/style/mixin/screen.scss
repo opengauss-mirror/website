@@ -18,7 +18,11 @@ $breakpoints: (
   '<=laptop': (0, 1440px),
   '>laptop': 1441px,
   'pad-laptop': (601px, 1440px),
-  'pad_v-laptop': (841px, 1440px)
+  'pad_v-laptop': (841px, 1440px),
+  // pc
+  'pc': (1441px, 1680px),
+  'pc_l': (1681px, 1920px),
+  '>pc_l': 1921px,
 );
 
 @mixin respond-to($breakname) {
