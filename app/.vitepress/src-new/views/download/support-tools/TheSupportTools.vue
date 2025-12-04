@@ -60,7 +60,20 @@ const onClickTool = (item: any) => {
       <p class="label">{{ $t('tools.TOOL_TYPE') }}</p>
       <OScroller v-if="gtPadV" show-type="hover" disabled-y>
         <ORadioGroup v-model="selectedType" style="--radio-group-gap: 8px">
-          <ORadio v-for="item in toolTypes" :key="item.value" :value="item.value">
+          <ORadio
+            v-for="item in toolTypes"
+            :key="item.value"
+            :value="item.value"
+            v-analytics="{
+              properties: {
+                module: 'download',
+                level1: t('tools.TOOL_CENTER'),
+                level2: t('common.COMMON_CONFIG.SUPPORTTOOLS'),
+                level3: $t('tools.TOOL_TYPE'),
+                target: item.label,
+              },
+            }"
+          >
             <template #radio="{ checked }">
               <OToggle :checked="checked">{{ item.label }}</OToggle>
             </template>
@@ -72,13 +85,44 @@ const onClickTool = (item: any) => {
       </OSelect>
     </div>
     <div v-if="gtPadV" :class="{ container: true, dark: isDark }">
-      <div class="item" v-for="item in filteredTools" :key="item.name">
+      <div
+        class="item"
+        v-for="item in filteredTools"
+        :key="item.name"
+        v-analytics.catchBubble="{
+          properties: {
+            module: 'download',
+            level1: t('tools.TOOL_CENTER'),
+            level2: t('common.COMMON_CONFIG.SUPPORTTOOLS'),
+          },
+        }"
+      >
         <h3>{{ item.name }}</h3>
         <OTag variant="outline">{{ typeIdNameMap.get(item.iden) }}</OTag>
         <p class="desc">{{ item.desc }}</p>
         <div class="links">
-          <OLink :href="item.address" target="_blank" color="primary">{{ $t('tools.SOURCE_CODE_ADDR') }}</OLink>
-          <OLink :href="item.guide" target="_blank" color="primary">{{ $t('tools.OPERATION_GUIDE') }}</OLink>
+          <OLink
+            :href="item.address"
+            target="_blank"
+            color="primary"
+            v-analytics.bubble.addUrl="(ev: any) => ({
+              to: ev.currentTarget.href,
+              level3: item.name,
+              target: $t('tools.SOURCE_CODE_ADDR'),
+            })"
+            >{{ $t('tools.SOURCE_CODE_ADDR') }}</OLink
+          >
+          <OLink
+            :href="item.guide"
+            target="_blank"
+            color="primary"
+            v-analytics.bubble.addUrl="(ev: any) => ({
+              to: ev.currentTarget.href,
+              level3: item.name,
+              target: $t('tools.OPERATION_GUIDE'),
+            })"
+            >{{ $t('tools.OPERATION_GUIDE') }}</OLink
+          >
         </div>
       </div>
     </div>

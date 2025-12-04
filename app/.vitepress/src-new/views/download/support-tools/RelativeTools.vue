@@ -69,7 +69,14 @@ const isDark = computed(() => commonStore.theme === 'dark');
       <p class="desc">
         {{ $t('tools.DESC') }}
       </p>
-      <OButton variant="solid" color="primary" @click="gotoTools">{{ $t('tools.ALL_TOOLS') }}</OButton>
+      <OButton
+        variant="solid"
+        color="primary"
+        @click="gotoTools"
+        v-analytics.bubble="{ level3: $t('common.COMMON_CONFIG.SUPPORTTOOLS'), level4: $t('tools.ALL_TOOLS') }"
+      >
+        {{ $t('tools.ALL_TOOLS') }}
+      </OButton>
     </div>
     <div class="tools">
       <div class="item" v-for="item in displayTools" :key="item.name">
@@ -77,8 +84,20 @@ const isDark = computed(() => commonStore.theme === 'dark');
         <div class="desc">
           <p>{{ isEn && item.desc_en ? item.desc_en : item.desc }}</p>
           <div class="links">
-            <OLink :href="item.address" target="_blank" color="primary">{{ $t('tools.SOURCE_CODE_ADDR') }}</OLink>
-            <OLink :href="item.guide" target="_blank" color="primary">{{ $t('tools.OPERATION_GUIDE') }}</OLink>
+            <OLink
+              :href="item.address"
+              target="_blank"
+              color="primary"
+              v-analytics.bubble="{ level3: isEn && item.name_en ? item.name_en : item.name, level4: $t('tools.SOURCE_CODE_ADDR') }"
+              >{{ $t('tools.SOURCE_CODE_ADDR') }}</OLink
+            >
+            <OLink
+              :href="item.guide"
+              target="_blank"
+              color="primary"
+              v-analytics.bubble="{ level3: isEn && item.name_en ? item.name_en : item.name, level4: $t('tools.OPERATION_GUIDE') }"
+              >{{ $t('tools.OPERATION_GUIDE') }}</OLink
+            >
           </div>
         </div>
       </div>

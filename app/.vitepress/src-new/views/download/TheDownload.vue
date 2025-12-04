@@ -18,6 +18,7 @@ import BannerImg from '~@/assets/category/download/banner.jpg';
 import DownloadAll from './DownloadAll.vue';
 import RelativeTools from './support-tools/RelativeTools.vue';
 import SupportServices from './support-tools/SupportServices.vue';
+import { oaReport } from '@/shared/analytics';
 
 const { isPhone, lePad, lePadV } = useScreen();
 const { t, isZh, $t, locale } = useLocale();
@@ -26,7 +27,7 @@ const i18n = useI18n();
 const commonStore = useCommon();
 const isDark = computed(() => (commonStore.theme === 'dark' ? true : false));
 
-watchEffect(() => locale.value = lang.value ?? 'zh');
+watchEffect(() => (locale.value = lang.value ?? 'zh'));
 
 const tabLists = [
   {
@@ -45,8 +46,21 @@ const tabLists = [
 
 const tabsIds = tabLists.map((item) => item.id);
 
+const reportTabChange = (val: string) => {
+  const tab = tabLists.find((item) => item.id === val);
+  if (tab) {
+    oaReport('click', {
+      module: 'download',
+      level1: $t('download.PAGE_TITLE'),
+      target: tab.label,
+      type: 'tab',
+    });
+  }
+};
+
 // tab切换
 const handleTabChange = (val: string) => {
+  reportTabChange(val);
   const { pathname } = window.location;
   if (val && tabsIds.includes(val)) {
     activeTab.value = val;
@@ -87,9 +101,18 @@ provide('PERMISSION_LIST', getPermissionList);
   </BannerLevel2>
 
   <ContentWrapper :vertical-padding="['32px', '32px']">
-    <OTab v-model="activeTab" variant="text" :line="false" @change="handleTabChange">
-      <OTabPane v-for="item in tabLists" :key="item.id" :label="item.label" :value="item.id">
-        <div class="download-panel">
+    <OTab v-model="activeTab" variant="text" :line="false" @change="handleTabChange" :lazy="true">
+      <OTabPane v-for="item in tabLists" :key="item.id" :label="item.label" :value="item.id" >
+        <div
+          class="download-panel"
+          v-analytics.catchBubble="{
+            properties: {
+              module: 'download',
+              level1: $t('download.PAGE_TITLE'),
+              level2: item.label,
+            },
+          }"
+        >
           <template v-if="activeTab === 'all'">
             <DownloadAll />
           </template>
@@ -100,11 +123,28 @@ provide('PERMISSION_LIST', getPermissionList);
       </OTabPane>
     </OTab>
   </ContentWrapper>
-  <AppSection :title="$t('download.RELATED_TOOLS')">
+  <AppSection
+    :title="$t('download.RELATED_TOOLS')"
+    v-analytics.catchBubble="{
+      properties: {
+        module: 'download',
+        level1: $t('download.PAGE_TITLE'),
+        level2: $t('download.RELATED_TOOLS'),
+      },
+    }"
+  >
     <RelativeTools />
   </AppSection>
   <AppSection :title="$t('tools.SUPPORT_SERVICES')">
-    <SupportServices />
+    <SupportServices
+      v-analytics.catchBubble="{
+        properties: {
+          module: 'download',
+          level1: $t('download.PAGE_TITLE'),
+          level2: $t('tools.SUPPORT_SERVICES'),
+        },
+      }"
+    />
   </AppSection>
 </template>
 

@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import yaml from 'js-yaml';
-import process from 'process';
+import process from 'node:process';
 
 /**
  * 获取 md 的 yaml 头
@@ -46,20 +46,23 @@ function sort(arr) {
 
 /**
  * 获取 blog 数据
- * @param {string} blogPath blog路径
+ * @param {string} mdDirPath blog路径
+ * @param {string} type 新闻/博客
+ * @param {string[]} blackList 排除的文件
  * @param {object[]} result 返回结果
+ * @param {((yamlObj: object) => boolean) | null} filterYaml 根据文章的yaml元数据判断是否写入最终生成结果
  */
-function getBlogData(blogPath, blackList = [], result = []) {
-  const all = fs.readdirSync(blogPath);
+function getBlogData(mdDirPath, type, blackList = [], filterYaml, result = []) {
+  const all = fs.readdirSync(mdDirPath);
   for (const fileName of all) {
-    const completedPath = path.join(blogPath, fileName);
+    const completedPath = path.join(mdDirPath, fileName);
 
     if (fs.statSync(completedPath).isDirectory()) {
-      getBlogData(completedPath, blackList, result);
+      getBlogData(completedPath, type, blackList, filterYaml, result);
       continue;
     }
 
-    if (fileName.endsWith('.md') && blackList.every(black => black !== completedPath)) {
+    if (fileName.endsWith('.md') && blackList.every((black) => black !== completedPath)) {
       try {
         const yamlObj = getYamlHeader(completedPath);
         if (!yamlObj) {
@@ -67,7 +70,7 @@ function getBlogData(blogPath, blackList = [], result = []) {
           continue;
         }
 
-        if (yamlObj.category !== 'blog') {
+        if (yamlObj.category !== type) {
           console.log(`未设置category为blog，会导致页面显示异常，跳过~ 路径：${completedPath}`);
           continue;
         }
@@ -79,7 +82,7 @@ function getBlogData(blogPath, blackList = [], result = []) {
         } else if (typeof yamlObj.date !== 'string') {
           console.log(`缺少 date 信息，跳过~ 路径：${completedPath}`);
           continue;
-        } 
+        }
 
         const dateSplit = yamlObj.date.split('-');
         dateSplit[1] = `0${dateSplit[1] || '1'}`.slice(-2);
@@ -101,9 +104,9 @@ function getBlogData(blogPath, blackList = [], result = []) {
         yamlObj.title = yamlObj.title || '';
         yamlObj.tags = Array.isArray(yamlObj.author) ? yamlObj.tags : [yamlObj.tags];
         yamlObj.path = completedPath.replace(path.join(process.cwd(), './app/'), '').replace('.md', '').replace(/\\/g, '/');
-
+        if (filterYaml && !filterYaml(yamlObj)) continue;
         result.push(yamlObj);
-      } catch(e) {
+      } catch (e) {
         console.log(`格式化 yaml 数据异常，跳过~ 路径：${completedPath}，错误原因：${e?.message}`);
       }
     }
@@ -112,41 +115,44 @@ function getBlogData(blogPath, blackList = [], result = []) {
   return result;
 }
 
+/**
+ * @typedef {Object} Option
+ * @property {string} type 新闻/博客
+ * @property {string} [pathName] 文件夹名称
+ * @property {string[]} blackList 排除的文件
+ * @property {(zhData: any[]) => void} [onZhDone] 中文处理完成的回调
+ * @property {(enData: any[]) => void} [onEnDone] 英文处理完成的回调
+ * @property {(frontmatter: object) => boolean} [filterYaml] 根据文章的yaml元数据判断是否写入最终生成结果
+ */
 
-function main() {
-  console.log('-------------- generate blog data --------------');
-  const BLACK_LIST = [
-    path.join(process.cwd(), './app/en/blogs/index.md'),
-    path.join(process.cwd(), './app/zh/blogs/index.md'),
-    path.join(process.cwd(), './app/zh/blogs/guidance/index.md'),
-    path.join(process.cwd(), './app/zh/blogs/desgin/content_posts.md'),
-  ];
+/**
+ *
+ * @param {Option} option
+ */
+export function generate(option) {
+  console.log(`-------------- generate ${option.type} data --------------`);
 
-  const BLOG_ZH_PATH = path.join(process.cwd(), './app/zh/blogs');
-  const DATA_OUTPUT_ZH_PATH = path.join(process.cwd(), './app/.vitepress/src/data/blogs/blogs-zh.ts');
-  const BLOG_EN_PATH = path.join(process.cwd(), './app/en/blogs');
-  const DATA_OUTPUT_EN_PATH = path.join(process.cwd(), './app/.vitepress/src/data/blogs/blogs-en.ts');
-  console.log('blog-zh 目标路径: ', BLOG_ZH_PATH);
-  console.log('blog-zh 数据输出路径: ', DATA_OUTPUT_ZH_PATH);
-  console.log('blog-en 目标路径: ', BLOG_EN_PATH);
-  console.log('blog-en 数据输出路径: ', DATA_OUTPUT_EN_PATH);
+  const ZH_PATH = path.join(process.cwd(), `./app/zh/${option.pathName || option.type}`);
+  const DATA_OUTPUT_ZH_PATH = path.join(process.cwd(), `./app/.vitepress/src/data/${option.pathName || option.type}/${option.pathName || option.type}-zh.ts`);
+  const EN_PATH = path.join(process.cwd(), `./app/en/${option.pathName || option.type}`);
+  const DATA_OUTPUT_EN_PATH = path.join(process.cwd(), `./app/.vitepress/src/data/${option.pathName || option.type}/${option.pathName || option.type}-en.ts`);
+  console.log(`${option.type}-zh 目标路径: `, ZH_PATH);
+  console.log(`${option.type}-zh 数据输出路径: `, DATA_OUTPUT_ZH_PATH);
+  console.log(`${option.type}-en 目标路径: `, EN_PATH);
+  console.log(`${option.type}-en 数据输出路径: `, DATA_OUTPUT_EN_PATH);
   console.log(`生成中...`);
 
-  const blogZhData = getBlogData(BLOG_ZH_PATH, BLACK_LIST);
-  sort(blogZhData);
-  blogZhData.push({
-    title: 'Guidance to Post a Blog',
-    path: 'zh/blogs/guidance/index',
-  });
-  fs.writeFileSync(DATA_OUTPUT_ZH_PATH, `export default ${JSON.stringify(blogZhData, null, 2)};`);
+  const zhData = getBlogData(ZH_PATH, option.type, option.blackList ?? [], option.filterYaml ?? null);
+  sort(zhData);
+  option?.onZhDone?.(zhData);
+  fs.writeFileSync(DATA_OUTPUT_ZH_PATH, `export default ${JSON.stringify(zhData, null, 2)};`);
 
-  const blogEnData = getBlogData(BLOG_EN_PATH, BLACK_LIST);
-  sort(blogEnData);
-  fs.writeFileSync(DATA_OUTPUT_EN_PATH, `export default ${JSON.stringify(blogEnData, null, 2)};`);
+  const enData = getBlogData(EN_PATH, option.type, option.blackList ?? [], option.filterYaml ?? null);
+  sort(enData);
+  option?.onEnDone?.(enData);
+  fs.writeFileSync(DATA_OUTPUT_EN_PATH, `export default ${JSON.stringify(enData, null, 2)};`);
 
   console.log(`生成完成！`);
   console.log('-------------------- end --------------------');
 }
-
-main();
 

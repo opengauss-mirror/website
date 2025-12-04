@@ -194,11 +194,14 @@ onMounted(async () => {
                   <a :href="'/' + item.path" :title="item.title" rel="noopener noreferrer">
                     {{ item.title }}
                   </a>
-                  <p>
-                    <span v-for="(authorName, index2) in item.author" :key="authorName"
-                      >{{ authorName }}
-                      <span v-show="item.author.length !== index2 + 1">、</span>
-                    </span>
+                  <p v-if="item.author">
+                    <template v-if="Array.isArray(item.author)">
+                      <span v-for="(authorName, index2) in item.author" :key="authorName"
+                        >{{ authorName }}
+                        <span v-show="item.author.length !== index2 + 1">、</span>
+                      </span>
+                    </template>
+                    <span v-else>{{ item.author }}</span>
                   </p>
                 </div>
                 <div class="room-bottom">
@@ -471,7 +474,7 @@ onMounted(async () => {
 :deep(.title-list) {
   display: flex;
   padding-bottom: var(--e-spacing-h2);
-  justify-content: flex-end;
+  justify-content: center;
   .el-tabs__header {
     margin: 0;
   }

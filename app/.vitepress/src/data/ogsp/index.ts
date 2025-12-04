@@ -3,18 +3,6 @@ import { OBS_TRANSFER_LINK1 } from '@/data/url-config';
 export default {
   zh: [
     {
-      name: '北京科蓝软件系统股份有限公司',
-      version: '20241106001',
-      award: '2024-11-06',
-      expiration: '2025-11-06',
-      patch: '',
-      content: '中',
-      system: '良',
-      commitment: '良',
-      experience: '良',
-      certificate: `${OBS_TRANSFER_LINK1}/oGSPCertificate/%E5%8C%97%E4%BA%AC%E7%A7%91%E8%93%9D%E8%BD%AF%E4%BB%B6%E7%B3%BB%E7%BB%9F%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.jpg`,
-    },
-    {
       name: '中国邮政储蓄银行股份有限公司',
       version: '20250616001',
       award: '2025-06-16',
@@ -112,18 +100,6 @@ export default {
     },
   ],
   en: [
-    {
-      name: '北京科蓝软件系统股份有限公司',
-      version: '20241106001',
-      award: '2024-11-06',
-      expiration: '2025-11-06',
-      patch: '',
-      content: 'Fair',
-      system: 'Good',
-      commitment: 'Good',
-      experience: 'Good',
-      certificate: `${OBS_TRANSFER_LINK1}/oGSPCertificate/%E5%8C%97%E4%BA%AC%E7%A7%91%E8%93%9D%E8%BD%AF%E4%BB%B6%E7%B3%BB%E7%BB%9F%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.jpg`,
-    },
     {
       name: '中国邮政储蓄银行股份有限公司',
       version: '20250616001',

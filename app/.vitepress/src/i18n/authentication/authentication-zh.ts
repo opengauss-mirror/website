@@ -8,10 +8,6 @@ import vastdata from '@/assets/category/authentication/training/img/talent/vastd
 import vastdataDark from '@/assets/category/authentication/training/img/talent/vastdata_dark.svg';
 import vastdataSignup from '@/assets/category/authentication/training/img/talent/vastdata_signup.svg';
 import vastdataSignupDark from '@/assets/category/authentication/training/img/talent/vastdata_signup_dark.svg';
-import gbase from '@/assets/category/authentication/training/img/talent/gbase.svg';
-import gbaseDark from '@/assets/category/authentication/training/img/talent/gbase_dark.svg';
-import gbaseSignup from '@/assets/category/authentication/training/img/talent/gbase_signup.svg';
-import gbaseSignupDark from '@/assets/category/authentication/training/img/talent/gbase_signup_dark.svg';
 import sz from '@/assets/category/authentication/training/img/talent/sz.svg';
 import szDark from '@/assets/category/authentication/training/img/talent/sz_dark.png';
 import szSignup from '@/assets/category/authentication/training/img/talent/sz_signup.svg';
@@ -20,6 +16,7 @@ import qst from '@/assets/category/authentication/training/img/talent/qst.svg';
 import qstDark from '@/assets/category/authentication/training/img/talent/qst_dark.png';
 import qstSignup from '@/assets/category/authentication/training/img/talent/qst_signup.svg';
 import qstSignupDark from '@/assets/category/authentication/training/img/talent/qst_signup_dark.png';
+import ChinaMobile from '@/assets/category/authentication/training/img/talent/china_mobile_2.png';
 
 export default {
   title: '培训认证',
@@ -133,7 +130,7 @@ export default {
       level: '中级',
       des: '面向openGauss数据库的中级管理员、架构设计与优化人员',
       description:
-        '社区根据openGauss技术发展路线与市场需求,规划设计了《openGauss OGCA认证课程》,本课程以深入探索openGauss的内部运作机制与实践应用为核心，融合了理论教学与实战演练。课程内容涵盖openGauss产品架构、数据库对象管理、安全管理、迁移管理、SQL进阶等。整个学习过程循序渐进，确保每位学员都能从基础学起，逐步掌握openGauss数据库的高级技能知识。',
+        '为顺应openGauss技术发展路线与市场需求，openGauss社区官方规划设计并推出《openGauss认证专家（OGCP）课程》。本课程以深入理解内部原理和强化实践实战为核心，坚持理论与实践紧密结合，内容全面涵盖openGauss产品架构、SQL进阶、数据库安全管理、数据库对象管理、数据库迁移管理及数据库系统管理等关键领域。课程设计由浅入深、循序渐进，旨在系统性地培养和提升学员的openGauss数据库专业运维与管理技能，助力您从容应对企业级应用挑战。',
       empty: 'true',
       module: '考试模块:敬请期待',
       contenttitle: '课程内容:',
@@ -175,13 +172,45 @@ export default {
     {
       name: 'ogce',
       level: '高级',
-      des: '面向openGauss数据库的高级管理员、架构师、安全专家以及AI方向的数据库使用者',
-      description: '',
+      des: '面向致力于成为openGauss数据库专家的自身数据库管理员、系统架构师和高级工程师',
+      description: '为深度契合openGauss技术发展路线与高端人才市场需求，openGauss社区正式推出《openGauss认证专家（OGCE）课程》。本课程专注于数据库内核原理与高级运维实战，以深度剖析内部机制和解决复杂场景问题为核心，坚持高阶理论与实践相结合。',
       empty: 'true',
       module: '考试模块:敬请期待',
       contenttitle: '课程内容:',
-      content: '涵盖数据库高级安全管控、数据库深度诊断与优化、人工智能、负载均衡、分布式等。',
+      content: '全面涵盖openGauss数据库内核原理、高级特性、备份恢复、数据库性能优化、高可用方案及运维与故障处理等核心技术领域，旨在系统培养学员具备专家级的数据库架构、性能调优与高可用保障能力。',
       outline: 'OGCE课程大纲:',
+      courseOutline: [
+        {
+          num: '01',
+          cardtitle: 'openGauss数据库内核原理',
+          desList: ['·SQL引擎', '·存储引擎', '·事务管理与锁机制', '·日志管理'],
+        },
+        {
+          num: '02',
+          cardtitle: 'openGauss高级特性',
+          desList: ['·安全增强特性', '·AI特性', '·NUMA架构优化与资源池化架构', '·其他特性'],
+        },
+        {
+          num: '03',
+          cardtitle: '备份恢复',
+          desList: ['·逻辑备份与恢复', '·物理备份与恢复', '·闪回恢复'],
+        },
+        {
+          num: '04',
+          cardtitle: '数据库性能优化',
+          desList: ['·性能调优策略', '·慢SQL与锁分析、定位及优化', '·WDR报告解读'],
+        },
+        {
+          num: '05',
+          cardtitle: '高可用方案',
+          desList: ['·高可用架构及集群管理组件', '·数据同步及故障恢复原理', '·高可用容灾方案'],
+        },
+        {
+          num: '06',
+          cardtitle: '运维与故障处理',
+          desList: ['·日常运维', '·故障定位处理流程', '·常见故障及处理方法'],
+        },
+      ]
     },
   ],
   steptitle: '认证流程介绍',
@@ -224,7 +253,7 @@ export default {
       iconSignup: yshlSignup,
       iconSignupDark: yshlSignupDark,
       desc: '云数互联旗下“墨天轮”是专注于数据库的技术社区，月活用户超过150万并覆盖40万专业数据库人才。社区以排行榜、知识库、问答、视频课程、AI 助手、培训认证等方式，促进数据库领域的知识传播和技术创新。',
-      url: 'https://www.modb.pro/job',
+      url: 'https://www.modb.pro/course?type=edu&tag=openGauss',
       signupUrl: 'https://www.modb.pro/course/144',
     },
     {
@@ -235,15 +264,6 @@ export default {
       desc: '北京海量数据技术股份有限公司(股票代码:603138.SH)成立于2007年，是国内首家以数据库为主营业务的主板上市企业。公司十余年来秉承“专注做好数据库”的初心，始终致力于数据库产品的研发、销售和服务。',
       url: 'http://education.vastdata.com.cn',
       signupUrl: 'https://education.vastdata.com.cn/pc/#/',
-    },
-    {
-      icon: gbase,
-      iconDark: gbaseDark,
-      iconSignup: gbaseSignup,
-      iconSignupDark: gbaseSignupDark,
-      desc: 'GBASE南大通用创立于2004年，二十年来始终致力于国产数据库核心技术的研发与市场开拓。自主研发的GBase数据库系列产品已为金融、电信、政务、能源、交通等关键领域提供服务，部署节点超过96000个，管理数据总量超过500PB。',
-      url: 'https://www.gbase.cn/about-us/jobs',
-      signupUrl: 'https://www.gbase.cn/learn/training-activities',
     },
     {
       icon: sz,
@@ -262,6 +282,15 @@ export default {
       desc: '青软集团创立于2006年，是国内领先的高等教育数字化解决方案、产教融合及人力资源服务提供商，致力于推动教育与产业无缝衔接，把产业的技术、需求和资源转化成支撑高校人才培养的能力，助力新兴产业的人才支撑及服务。',
       url: 'https://www.eduplus.net/jiuye/company/details?id=c57c107755d44159a3f9bc1c2fb54867',
       signupUrl: 'https://www.eduplus.net/training/openGauss',
+    },
+    {
+      icon: ChinaMobile,
+      iconDark: ChinaMobile,
+      iconSignup: ChinaMobile,
+      iconSignupDark: ChinaMobile,
+      desc: '中国移动信息技术有限公司，面向全网IT领域，行使职能管理职责，统筹管理全网IT系统规划、投资、大数据统筹等工作；面向内部业务需求，进行智慧中台、业务支撑、管理支撑、大数据系统、IT云建设及运营，以及研发创新等工作；面向外部能力输出，具备独立的法人实体资质，可对外输出解决方案',
+      url: 'https://job.10086.cn/',
+      signupUrl: 'https://bigdata.10086.cn/honghu/hhweb/#/certify',
     },
   ],
   talentDetail: '查看岗位详情',

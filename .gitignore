@@ -128,3 +128,8 @@ app/.env.*
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+app/zh/blogs
+app/en/blogs
+app/.vitepress/src/data/blogs/
+app/.vitepress/src/data/news/
+_temp

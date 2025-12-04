@@ -158,7 +158,13 @@ const hoverTips = computed(() => (type: string | undefined) => {
       <template #td_down_url="{ row }">
         <div v-if="row.down_url !== ''" class="down-action">
           <template v-if="downloadVersionAuth.includes(versionShown) && !userInfoStore.username">
-            <OButton variant="outline" size="small" color="primary" @click="changeDownloadAuth">
+            <OButton
+              variant="outline"
+              size="small"
+              color="primary"
+              @click="changeDownloadAuth"
+              v-analytics.bubble="{ level5: row.name, target: i18n.download.BTN_TEXT }"
+            >
               {{ i18n.download.BTN_TEXT }}
               <template #suffixIcon>
                 <IconDownload />
@@ -166,7 +172,14 @@ const hoverTips = computed(() => (type: string | undefined) => {
             </OButton>
           </template>
           <template v-else>
-            <OButton size="small" :href="row.down_url" @click="collectDownloadData(row.name)" variant="outline" color="primary">
+            <OButton
+              size="small"
+              :href="row.down_url"
+              @click="collectDownloadData(row.name)"
+              variant="outline"
+              color="primary"
+              v-analytics.bubble="{ level5: row.name, target: i18n.download.BTN_TEXT }"
+            >
               {{ i18n.download.BTN_TEXT }}
               <template #suffixIcon>
                 <IconDownload />
@@ -178,7 +191,7 @@ const hoverTips = computed(() => (type: string | undefined) => {
       </template>
       <template #td_sha_code="{ row }">
         <div v-if="row.x86_url !== ''" class="down-action">
-          <span class="sha-link" @click="handleUrlCopy(row.sha_code, $event)">
+          <span class="sha-link" @click="handleUrlCopy(row.sha_code, $event)" v-analytics.bubble="{ level5: row.name, target: shaText }">
             {{ shaText
             }}<OIcon>
               <IconCopy />

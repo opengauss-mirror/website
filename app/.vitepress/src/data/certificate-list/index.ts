@@ -3,6 +3,22 @@ import { OBS_CERTIFICATION_LINK, OBS_CERTIFICATION_LINK1 } from '@/data/url-conf
 export default {
   zh: [
     {
+      pro: '宝兰德数据库管理系统 V3.0',
+      name: '北京宝兰德软件股份有限公司',
+      version: 'openGauss 6.0.1',
+      award: '2025-10-23',
+      expiration: '',
+      certificate: `${OBS_CERTIFICATION_LINK}/%E5%AE%9D%E5%85%B0%E5%BE%B7/openGauss%E5%95%86%E4%B8%9A%E5%8F%91%E8%A1%8C%E7%89%88%E8%AF%81%E4%B9%A6-%E5%8C%97%E4%BA%AC%E5%AE%9D%E5%85%B0%E5%BE%B7.pdf`,
+    },
+    {
+      pro: '中威国产数据库平台 V2.0',
+      name: '江苏中威科技软件系统有限公司',
+      version: 'openGauss 6.0.1',
+      award: '2025-10-23',
+      expiration: '',
+      certificate: `${OBS_CERTIFICATION_LINK}/%E4%B8%AD%E5%A8%81%E7%A7%91%E6%8A%80/openGauss%E5%95%86%E4%B8%9A%E5%8F%91%E8%A1%8C%E7%89%88%E8%AF%81%E4%B9%A6-%E6%B1%9F%E8%8B%8F%E4%B8%AD%E5%A8%81.pdf`,
+    },
+    {
       pro: '神通数据库管理系统 V7.0.21',
       name: '天津神舟通用数据技术有限公司',
       version: 'openGauss 6.0.0',
@@ -247,6 +263,22 @@ export default {
     },
   ],
   en: [
+    {
+      pro: '宝兰德数据库管理系统 V3.0',
+      name: '北京宝兰德软件股份有限公司',
+      version: 'openGauss 6.0.1',
+      award: '2025-10-23',
+      expiration: '',
+      certificate: `${OBS_CERTIFICATION_LINK}/%E5%AE%9D%E5%85%B0%E5%BE%B7/openGauss%E5%95%86%E4%B8%9A%E5%8F%91%E8%A1%8C%E7%89%88%E8%AF%81%E4%B9%A6-%E5%8C%97%E4%BA%AC%E5%AE%9D%E5%85%B0%E5%BE%B7.pdf`,
+    },
+    {
+      pro: '中威国产数据库平台 V2.0',
+      name: '江苏中威科技软件系统有限公司',
+      version: 'openGauss 6.0.1',
+      award: '2025-10-23',
+      expiration: '',
+      certificate: `${OBS_CERTIFICATION_LINK}/%E4%B8%AD%E5%A8%81%E7%A7%91%E6%8A%80/openGauss%E5%95%86%E4%B8%9A%E5%8F%91%E8%A1%8C%E7%89%88%E8%AF%81%E4%B9%A6-%E6%B1%9F%E8%8B%8F%E4%B8%AD%E5%A8%81.pdf`,
+    },
     {
       pro: '海量数据库管理系统G100 V3.0',
       name: '北京海量数据技术股份有限公司',

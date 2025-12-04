@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useData } from 'vitepress';
 import { useI18n } from '@/i18n';
 import AppContent from '@/components/AppContent.vue';
 import { getYearByOffset } from '@/shared/utils';
@@ -8,13 +9,38 @@ import footerBg from '@/assets/footer/footer-bg.png';
 import footerBgMo from '@/assets/footer/footer-bg-mo.png';
 
 import CodeGzh from '@/assets/footer/wechat.png';
+import { openReportDialog } from '@opendesign-plus/utils';
+import { useCommon } from '@/stores/common';
 
+const COMPLAINTS_REPORTURL = import.meta.env.VITE_COMPLAINTS_REPORTS_URL;
+const COMPLAINTS_REPORTS_ID = import.meta.env.VITE_COMPLAINTS_REPORTS_ID;
 const i18n = useI18n();
+const { lang } = useData();
+const commonStore = useCommon();
 
 // 背景
 const footBg = {
   pc: `url(${footerBg})`,
   mo: `url(${footerBgMo})`,
+};
+
+// 投诉与举报
+const submitComplaintsReports = () => {
+  openReportDialog({
+    reportUrl: COMPLAINTS_REPORTURL,
+    lang: lang.value === 'zh' ? 'zh-cn' : 'en-us',
+    theme: commonStore.theme,
+    params: {
+      appId: COMPLAINTS_REPORTS_ID,
+      jwtToken: '',
+      sceneId: 6,
+      subSceneId: 19,
+      deviceId: 'h5',
+      additionalContext: {
+        other: window.location.href,
+      },
+    },
+  });
 };
 </script>
 
@@ -33,15 +59,15 @@ const footBg = {
           </div>
           <div class="footer-option">
             <div class="footer-option-item">
-              <a
-                v-for="link in i18n.common.FOOTER.RIGHT_LIST"
-                :key="link.URL"
-                :href="link.URL"
-                class="link"
-                :target="link.TARGET"
-                :rel="link.TARGET === '_blank' ? 'noopener noreferrer' : ''"
-                >{{ link.NAME }}</a
-              >
+              <template v-for="link in i18n.common.FOOTER.RIGHT_LIST" :key="link.NAME">
+                <a v-if="link.URL" :href="link.URL" target="link.TARGET" :rel="link.TARGET === '_blank' ? 'noopener noreferrer' : ''" class="link">
+                  {{ link.NAME }}
+                </a>
+
+                <span v-else class="link cursor" @click="submitComplaintsReports">
+                  {{ link.NAME }}
+                </span>
+              </template>
             </div>
             <p class="copyright">
               {{ i18n.common.FOOTER.COPY_RIGHT.replace('{year}', getYearByOffset()) }}
@@ -131,6 +157,11 @@ $color: #fff;
         padding: 0 var(--e-spacing-h9);
       }
     }
+
+    .cursor {
+      cursor: pointer;
+    }
+
     .mo-emial {
       display: none;
       @media (max-width: 1100px) {

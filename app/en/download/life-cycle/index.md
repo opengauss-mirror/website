@@ -6,7 +6,7 @@ title: '下载 - 生命周期'
 import {  OBreadcrumb, OBreadcrumbItem } from '@opensig/opendesign';
 
 
-import ImgLifeCycle from '~@/assets/category/download/life-cycle.jpg';
+import ImgLifeCycle from '~@/assets/category/download/life-cycle_en.jpg';
 
 </script>
 

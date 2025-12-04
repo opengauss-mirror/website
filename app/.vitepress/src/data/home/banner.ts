@@ -19,12 +19,28 @@ import bannerForumPc from '@/assets/category/home/banner/banner-forum.png';
 import bannerForumMo from '@/assets/category/home/banner/banner-forum_mo.png';
 import banner700RC2 from '@/assets/category/home/banner/banner700_RC2.jpg';
 import banner700RC2Mo from '@/assets/category/home/banner/banner700_RC2_mo.jpg';
+import ogce from '@/assets/category/home/banner/ogce.jpg';
+import ogceMo from '@/assets/category/home/banner/ogce_mo.png';
 
 import { LEARN_VIDEO_LINK, DOCS_LINK, FORUM_LINK } from '@/data/url-config';
 
 // rightInset:banner右侧插图
 export default {
   zh: [
+    {
+      pcBanner: ogce,
+      moBanner: ogceMo,
+      link: '/zh/training/',
+      target: '_blank',
+      title: 'openGauss OGCE专家认证正式发布',
+      titleMb: ['openGauss OGCE专家认证正式发布'],
+      subtitle: '',
+      desc: [''],
+      btn: '了解更多',
+      className: '',
+      rightInset: '',
+      rightLink: '',
+    },
     {
       pcBanner: banner700RC2,
       moBanner: banner700RC2Mo,

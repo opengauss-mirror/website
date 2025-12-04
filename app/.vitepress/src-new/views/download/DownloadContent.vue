@@ -54,14 +54,45 @@ const getNewLink = (path: string) => {
     <h4 class="subtitle">{{ $t('download.EOM_DATE') }} ：{{ contentData.plannedEOL }}</h4>
     <div class="other-link">
       <template v-for="item in contentData.docs_list" :key="item.name">
-        <OLink color="primary" :href="getNewLink(explainLink)" target="_blank" rel="noopener noreferrer">{{ isZh ? item.name : item.nameEn }} </OLink>
+        <OLink
+          color="primary"
+          :href="getNewLink(explainLink)"
+          target="_blank"
+          rel="noopener noreferrer"
+          v-analytics.bubble.addUrl="(ev: any) => ({
+            to: ev.currentTarget.href,
+            target: isZh ? item.name : item.nameEn,
+            level3: 'openGauss ' + contentData.name,
+          })"
+          >{{ isZh ? item.name : item.nameEn }}
+        </OLink>
         <ODivider direction="v" />
       </template>
-      <OLink color="primary" :href="`${GITCODE_LINK}/opengauss/community/issues`" target="_blank" rel="noopener noreferrer"
+      <OLink
+        color="primary"
+        :href="`${GITCODE_LINK}/opengauss/community/issues`"
+        target="_blank"
+        rel="noopener noreferrer"
+        v-analytics.bubble.addUrl="(ev: any) => ({
+          to: ev.currentTarget.href,
+          target: i18n.download.FEEDBACK_QUESTION,
+          level3: 'openGauss ' + contentData.name,
+        })"
         >{{ i18n.download.FEEDBACK_QUESTION }}
       </OLink>
       <ODivider direction="v" />
-      <OLink color="primary" :href="`/${lang}/download/life-cycle/`" target="_blank" rel="noopener noreferrer">{{ i18n.download.lifeCycle }} </OLink>
+      <OLink
+        color="primary"
+        :href="`/${lang}/download/life-cycle/`"
+        target="_blank"
+        rel="noopener noreferrer"
+        v-analytics.bubble.addUrl="(ev: any) => ({
+          to: ev.currentTarget.href,
+          target: i18n.download.lifeCycle,
+          level3: 'openGauss ' + contentData.name,
+        })"
+        >{{ i18n.download.lifeCycle }}
+      </OLink>
     </div>
     <p v-if="contentData.desc" class="desc">{{ lang === 'zh' ? contentData.desc : contentData.desc_en || contentData.desc }}</p>
     <ODivider class="divider-line" />
