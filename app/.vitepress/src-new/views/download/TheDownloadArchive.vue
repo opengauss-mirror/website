@@ -20,7 +20,7 @@ const router = useRouter();
 
 const activeTab = ref('');
 const { locale } = useI18n();
-watchEffect(() => locale.value = lang.value ?? 'zh');
+watchEffect(() => (locale.value = lang.value ?? 'zh'));
 
 const timePattern = /^\d{4}\.\d{2}\.\d{2}$/;
 const now = new Date();
@@ -80,16 +80,57 @@ const onChange = (option: string) => {
             <OIcon><IconVersion /></OIcon>{{ $t('download.VERSIONS') }}
           </h3>
           <ORadioGroup direction="v" v-model="activeTab" @change="onChange">
-            <ORadio v-for="option in DownloadConfig" :key="option.name" :value="option.name"> openGauss {{ option.name }} </ORadio>
+            <ORadio
+              v-for="option in DownloadConfig"
+              :key="option.name"
+              :value="option.name"
+              v-analytics="{
+                properties: {
+                  module: 'download',
+                  level1: $t('common.COMMON_CONFIG.DOWNLOAD'),
+                  level2: $t('download.VERSION_ALL'),
+                  level3: $t('download.VERSIONS'),
+                  target: 'openGauss' + option.name,
+                },
+              }"
+            >
+              openGauss {{ option.name }}
+            </ORadio>
           </ORadioGroup>
         </template>
         <OSelect v-else size="large" v-model="activeTab" @change="onChange">
-          <OOption v-for="item in DownloadConfig" :key="item.name" :value="item.name" :label="item.name"> openGauss {{ item.name }} </OOption>
+          <OOption
+            v-for="item in DownloadConfig"
+            :key="item.name"
+            :value="item.name"
+            :label="item.name"
+            v-analytics="{
+              properties: {
+                module: 'download',
+                level1: $t('common.COMMON_CONFIG.DOWNLOAD'),
+                level2: $t('download.VERSION_ALL'),
+                level3: $t('download.VERSIONS'),
+                target: 'openGauss' + option.name,
+              },
+            }"
+          >
+            openGauss {{ item.name }}
+          </OOption>
         </OSelect>
       </div>
       <div class="archive-main">
         <div class="archive-content">
-          <DownloadContent v-if="getData?.newLayout" :content-data="getData" />
+          <DownloadContent
+            v-if="getData?.newLayout"
+            :content-data="getData"
+            v-analytics.catchBubble="{
+              properties: {
+                module: 'download',
+                level1: $t('common.COMMON_CONFIG.DOWNLOAD'),
+                level2: $t('download.VERSION_ALL'),
+              },
+            }"
+          />
           <ArchiveContent v-else :content-data="getData" />
         </div>
       </div>

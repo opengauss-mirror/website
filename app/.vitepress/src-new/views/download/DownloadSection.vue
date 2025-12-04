@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { ref, computed, watch, toRefs, onMounted, inject, nextTick } from 'vue';
+import { ref, computed, watch, toRefs, onMounted, inject, nextTick, Directive } from 'vue';
 import { OLink, ORadioGroup, ORadio, OToggle, OIcon, OTab, OTabPane, OSelect, OOption, OLayer } from '@opensig/opendesign';
-import { useData } from 'vitepress';
+import { useData, useRoute } from 'vitepress';
 import { useCookieStore } from '@/stores/common';
 import { useI18n } from '@/i18n';
 import { useScreen } from '~@/composables/useScreen';
@@ -205,9 +205,36 @@ const changeLayer = (item) => {
   serverTab.value = item.edition;
   layerShow.value = !layerShow.value;
 };
+
+const tabLists = {
+  lts: t('download.VERSION_LTS'),
+  rc: t('download.VERSION_RCX'),
+  all: t('download.VERSION_ALL'),
+} as Record<string, string>;
+
+const reportTabChange = (val: string) => {
+  const tabLabel = mappingType[val] || val;
+  oaReport('click', {
+    module: 'download',
+    level1: t('download.PAGE_TITLE'),
+    level2: tabLists[location.search.match(/version=(.+)/)![1]],
+    level3: 'openGauss ' + props.versionShown,
+    level4: isCn.value ? downloadName[props.tableData.name] : props.tableData.name,
+    target: tabLabel,
+    type: 'tab',
+  });
+};
 </script>
 <template>
-  <div :id="replaceSpace(tableData.name) + '-' + replaceSpace(versionShown)" class="content-item">
+  <div
+    :id="replaceSpace(tableData.name) + '-' + replaceSpace(versionShown)"
+    class="content-item"
+    v-analytics.bubble.noTrigger="{
+      level3: 'openGauss ' + props.versionShown,
+      level4: isCn ? downloadName[tableData.name] : tableData.name,
+      architecture: activeArchitecture, os: activeOs, 
+    }"
+  >
     <h3>{{ isCn ? downloadName[tableData.name] : tableData.name }}</h3>
 
     <div class="filter-card">
@@ -216,7 +243,16 @@ const changeLayer = (item) => {
           <template v-for="item in architectureList">
             <ORadio v-if="item" :value="item" :key="item" class="radio">
               <template #radio="{ checked }">
-                <OToggle :checked="checked">{{ item }}</OToggle>
+                <OToggle
+                  :checked="checked"
+                  v-analytics.bubble="{
+                    level4: isCn ? downloadName[tableData.name] : tableData.name,
+                    level5: i18n.download.ARCHITECTURE,
+                    target: item,
+                    type: 'architecture',
+                  }"
+                  >{{ item }}</OToggle
+                >
               </template>
             </ORadio>
           </template>
@@ -226,7 +262,17 @@ const changeLayer = (item) => {
         <ORadioGroup v-if="gtPadV" v-model="activeOs">
           <ORadio v-for="item in osList" :key="item" :value="item" :disabled="isDisable(item)" class="radio">
             <template #radio="{ checked, disabled }">
-              <OToggle :checked="checked" :disabled="disabled">{{ item }}</OToggle>
+              <OToggle
+                :checked="checked"
+                :disabled="disabled"
+                v-analytics.bubble="{
+                  level4: isCn ? downloadName[tableData.name] : tableData.name,
+                  level5: i18n.download.OS,
+                  target: item,
+                  type: 'os',
+                }"
+                >{{ item }}</OToggle
+              >
             </template>
           </ORadio>
         </ORadioGroup>
@@ -239,17 +285,35 @@ const changeLayer = (item) => {
     <div class="download-pc">
       <template v-if="tableData.name === 'openGauss Server'">
         <!-- openGauss Server -->
-        <OTab v-if="gtPadV && !isLoading" v-model="serverTab" variant="text" :line="false" :class="{ en: !isCn, dark: isDark }">
+        <OTab v-if="gtPadV && !isLoading" v-model="serverTab" variant="text" :line="false" :class="{ en: !isCn, dark: isDark }" @change="reportTabChange">
           <OTabPane v-for="item in serverData" :key="item.edition" :label="isCn ? mappingType[item.edition] : item.edition" :value="item.edition">
             <div class="download-panel">
               <p class="edition-text">
                 {{ t('download.' + item.edition) }}
                 <template v-if="versionCapability"
-                  >{{ t('download.versionCapability') }}<a target="_blank" rel="noopener noreferrer" :href="versionCapability">&ensp;{{ $t('download.capabilityMatrix') }} </a></template
+                  >{{ t('download.versionCapability')
+                  }}<a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    :href="versionCapability"
+                    v-analytics.bubble.addUrl="(ev: MouseEvent) => ({
+                      to: ev.target.href,
+                      level3: 'openGauss ' + props.versionShown,
+                      level4: isCn ? downloadName[tableData.name] : tableData.name,
+                      level5: mappingType[item.edition],
+                      target: $t('download.capabilityMatrix'),
+                    })"
+                    >&ensp;{{ $t('download.capabilityMatrix') }}
+                  </a></template
                 >
               </p>
-              <p class="caption"> {{ $t('download.TABLE_HEAD[2]') }} </p>
-              <DownloadContentItem :data="item" :version-shown="versionShown" @report="collectDownloadData" />
+              <p class="caption">{{ $t('download.TABLE_HEAD[2]') }}</p>
+              <DownloadContentItem
+                :data="item"
+                :version-shown="versionShown"
+                @report="collectDownloadData"
+                v-analytics.bubble.noTrigger="{ level5: mappingType[item.edition], level6: $t('download.TABLE_HEAD[2]') }"
+              />
 
               <!-- openGauss Symbol -->
               <div v-if="symbolData && serverTab === 'enterprise'" class="symbol-enterprise">
@@ -261,6 +325,7 @@ const changeLayer = (item) => {
                   :version-shown="versionShown"
                   type="symbol"
                   @download="collectDownloadData"
+                  v-analytics.bubble.noTrigger="{ level5: mappingType[item.edition], level6: isCn ? downloadName['openGauss Symbol'] : 'openGauss Symbol' }"
                 />
               </div>
             </div>

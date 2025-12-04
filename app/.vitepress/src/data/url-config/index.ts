@@ -1,7 +1,7 @@
 // 涉及的公网路径及邮箱地址的配置文件
 const OBS_Summit_PPT = 'https://obs-for-opengauss-summit.obs.cn-north-4.myhuaweicloud.com';
 const GAUSS_EMAIL = 'common@public.opengauss.org'; // gauss邮箱
-const GAUSS_CERTIFICATE_EMAIL = 'common@certificate.opengauss.org'; // gauss证书相关联系邮箱
+const GAUSS_CERTIFICATE_EMAIL = 'certificate@public.opengauss.org'; // gauss证书相关联系邮箱
 const DOCS_LINK = 'https://docs.opengauss.org'; // gauss文档
 const BILIBILI_LINK2 = 'https://www.bilibili.com'; // bilibili官网
 const ENMOEDU_LINK = 'https://enmoedu.com'; // 恩墨学院
