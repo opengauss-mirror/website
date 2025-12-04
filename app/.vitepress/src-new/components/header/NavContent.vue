@@ -139,8 +139,9 @@ const descMouseenter = (e: MouseEvent) => {
       color: var(--o-color-info2);
       margin: 0;
       white-space: normal;
+      height: 36px;
       @include tip2;
-      @include text-truncate(6);
+      @include text-truncate(2);
       word-break: normal;
     }
   }
