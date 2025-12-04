@@ -23,6 +23,11 @@ import '~@/assets/style/element-plus/index.scss';
 import '~@/assets/style/element-plus/theme/index.scss';
 import '@opensig/opendesign/es/index.css';
 import '~@/assets/style/theme/index.scss';
+import { installer } from '@/shared/analytics';
+import { BAIDU_HM } from '@/data/url-config';
+import { getCustomCookie, removeCustomCookie } from '@/shared/utils';
+import { COOKIE_KEY_EN } from '@/stores/common';
+import { reportAnalytics } from '@/api/api-analytics';
 
 export default {
   Layout,
@@ -39,5 +44,55 @@ export default {
     app.use(OpenDesign);
     app.use(i18n);
     app.use(SeoBox as any);
+    app.use(installer, {
+      appKey: 'openGauss',
+      request(data) {
+        reportAnalytics(data);
+      },
+      isCookieAgreed() {
+        if (location.pathname.startsWith('/zh')) return true;
+        return getCustomCookie(COOKIE_KEY_EN) === '1';
+      },
+      onPageView(from, to) {
+        if (to.startsWith('/zh/cve') || to.startsWith('/en/cve')) {
+          return { $service: 'cvemanager' };
+        }
+      },
+      onEnable() {
+        // 百度埋点
+        const s = document.createElement('script');
+        s.src = BAIDU_HM;
+        s.classList.add('analytics-script');
+        const head = document.getElementsByTagName('HEAD')[0];
+        head.appendChild(s);
+      },
+      onDisable() {
+        const scripts = document.querySelectorAll('script.analytics-script');
+        scripts.forEach((script) => {
+          script.remove();
+        });
+
+        const hm = /^hm/i;
+        document.cookie
+          .split(';')
+          .map((c) => c.trim())
+          .forEach((c) => {
+            const key = decodeURIComponent(c.split('=')[0]);
+            if (hm.test(key)) {
+              removeCustomCookie(key, { domain: location.hostname });
+            }
+          });
+        [sessionStorage, localStorage].forEach((storage) => {
+          const keys = [];
+          for (let i = 0; i < storage.length; i++) {
+            const key = storage.key(i)!;
+            if (hm.test(key)) {
+              keys.push(key);
+            }
+          }
+          keys.forEach((key) => storage.removeItem(key));
+        });
+      },
+    });
   },
 };
