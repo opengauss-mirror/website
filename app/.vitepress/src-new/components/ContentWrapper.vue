@@ -55,9 +55,7 @@ const paddingBottom = computed(() => {
 
 <style lang="scss" scoped>
 .content-wrapper {
-  max-width: var(--layout-new-content-max-width);
-  padding-left: var(--layout-content-padding);
-  padding-right: var(--layout-content-padding);
+  width: var(--grid-content-width);
   margin: 0 auto;
 
   --content-wrapper-vertical-paddingTop: 72px;
