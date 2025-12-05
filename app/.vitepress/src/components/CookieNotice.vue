@@ -230,8 +230,8 @@ watch(
 }
 
 .cookie-notice-wrap {
-  padding: 24px 44px;
-  max-width: 1504px;
+  padding: 12px 0;
+  width: var(--grid-content-width);
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -240,8 +240,6 @@ watch(
     @media (max-width: 840px) {
       padding-top: 16px;
       padding-bottom: 16px;
-      padding-left: 24px;
-      padding-right: 24px;
       flex-direction: column;
       align-items: center;
     }
@@ -311,8 +309,8 @@ watch(
 .cookie-notice-close {
   &[type="en"] {
     position: absolute;
+    right: 0;
     top: 12px;
-    right: 24px;
     transform-origin: center;
   }
   cursor: pointer;
