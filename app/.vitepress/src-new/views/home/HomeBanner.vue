@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { OCarousel, OCarouselItem, OIcon, OIconArrowRight } from '@opensig/opendesign';
-import { computed } from 'vue';
+import { OButton, OCarousel, OCarouselItem, OIcon, OIconArrowRight } from '@opensig/opendesign';
+import { computed, ref } from 'vue';
 import homeConfig from '@/data/home/';
 import { windowOpen } from '@/shared/utils';
 import { useScreen } from '~@/composables/useScreen';
@@ -18,16 +18,29 @@ const jump = (item: any, flag: boolean) => {
     windowOpen(item.link, item.target ?? '_blank');
   }
 };
+
+const index = ref(0);
+const currentItem = computed(() => homeBanner.value[index.value]);
+const currentBgTheme = computed(() => {
+  if (currentItem.value.isLightBg) {
+    return 'light';
+  }
+  return 'dark';
+});
 </script>
 
 <template>
   <div class="home-banner-wrap">
     <OCarousel
+      v-model:active-index="index"
       ref="slidesRef"
+      effect="toggle"
       indicator-click
       loop
+      active-class="current-slide"
       class="home-banner"
       pause-on-hover
+      :data-o-theme="currentBgTheme"
       style="--carousel-indicator-bg-color-selected: #fff"
     >
       <OCarouselItem v-for="item in homeBanner" :key="item.title" class="home-banner-item">
@@ -48,7 +61,7 @@ const jump = (item: any, flag: boolean) => {
                     {{ itemTitleMb }}
                   </p>
                 </div>
-                <p v-else class="title" :class="{ 'teamup-title': item.link.includes('team-up'), 'dark-title': item.darkTitle }">
+                <p v-else class="title" :class="{ 'teamup-title': item.link.includes('team-up') }">
                   {{ item.title }}
                 </p>
                 <p v-if="item.subtitle" class="subtitle">{{ item.subtitle }}</p>
@@ -58,7 +71,7 @@ const jump = (item: any, flag: boolean) => {
                 <img v-if="item.textImg" class="text-img" :src="gtPadV ? item.textImg : item.textImgMb" alt="" />
               </div>
               <div v-if="item.btn" class="btn-box">
-                <OButton class="home-banner-btn" :size="lePadV ? 'mini' : 'medium'" @click="jump(item, false)">
+                <OButton class="home-banner-btn" round="pill" variant="solid" color="primary" :size="lePadV ? 'medium' : 'large'" @click="jump(item, false)">
                   {{ item.btn }}
                   <template #suffixIcon><OIcon><OIconArrowRight /></OIcon></template>
                 </OButton>
@@ -99,15 +112,30 @@ const jump = (item: any, flag: boolean) => {
 
 .home-banner-item {
   height: var(--banner-height);
-  width: 100vw;
 }
 
 .content-text {
-  .dark-title {
-    color: var(--o-color-black);
+  --d: 10px;
+  color: var(--o-color-info1);
+}
+
+@keyframes fade-up {
+  from {
+    transform: translateY(var(--d));
+    opacity: 0;
   }
-  @include respond-to('phone') {
-    padding: 0 24px;
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.current-slide {
+  .content-text {
+    animation: fade-up 400ms ease-in;
+  }
+  .btn-box {
+    animation: fade-up 400ms ease-in;
   }
 }
 
@@ -127,7 +155,6 @@ const jump = (item: any, flag: boolean) => {
       display: flex;
       justify-content: space-between;
       height: 100%;
-      color: #fff;
       position: relative;
       @include respond-to('<=laptop') {
         padding: 0 24px;
@@ -144,7 +171,6 @@ const jump = (item: any, flag: boolean) => {
         justify-content: center;
         width: 100%;
         .content-text {
-          color: var(--e-color-white);
           .title {
             @include display1;
             font-weight: bold;
@@ -205,6 +231,7 @@ const jump = (item: any, flag: boolean) => {
         }
         .btn-box {
           margin-top: var(--e-spacing-h3);
+          --d: 20px;
           @include respond-to('<=pad_v') {
             margin-top: var(--e-spacing-h5);
             width: 100%;
@@ -216,7 +243,6 @@ const jump = (item: any, flag: boolean) => {
           }
           .home-banner-btn {
             color: var(--e-color-white);
-            border: 1px solid var(--e-color-white);
           }
         }
       }

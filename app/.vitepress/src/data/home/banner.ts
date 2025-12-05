@@ -34,6 +34,7 @@ export default {
       target: '_blank',
       title: 'openGauss OGCE专家认证正式发布',
       titleMb: ['openGauss OGCE专家认证正式发布'],
+      isLightBg: true,
       subtitle: '',
       desc: [''],
       btn: '了解更多',
@@ -47,7 +48,7 @@ export default {
       link: '/zh/news/2025-09-30/',
       target: '_blank',
       title: 'openGauss 7.0.0-RC2 版本正式发布',
-      darkTitle: true,
+      isLightBg: true,
       titleMb: ['openGauss 7.0.0 RC2 \n版本正式发布'],
       subtitle: '',
       desc: [''],
@@ -158,4 +159,21 @@ export default {
       rightLink: `${LEARN_VIDEO_LINK}/openGauss%E5%AE%A3%E4%BC%A0%E6%B4%BB%E5%8A%A8/openGauss%2BHC%E5%AE%A3%E4%BC%A0%E8%A7%86%E9%A2%91.mp4`,
     },
   ],
-};
+} as Record<
+  'zh' | 'en',
+  {
+    pcBanner: string;
+    moBanner: string;
+    link: string;
+    target: string;
+    title: string;
+    titleMb: string[];
+    isLightBg?: string;
+    subtitle: string;
+    desc: string[];
+    btn: string;
+    className: string;
+    rightInset: string;
+    rightLink: string;
+  }[]
+>;
