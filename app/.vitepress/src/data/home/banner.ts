@@ -21,6 +21,8 @@ import banner700RC2 from '@/assets/category/home/banner/banner700_RC2.jpg';
 import banner700RC2Mo from '@/assets/category/home/banner/banner700_RC2_mo.jpg';
 import ogce from '@/assets/category/home/banner/ogce.jpg';
 import ogceMo from '@/assets/category/home/banner/ogce_mo.png';
+import ogceDark from '@/assets/category/home/banner/ogce_dark.png';
+import ogceMoDark from '@/assets/category/home/banner/ogce_mo_dark.png';
 
 import { LEARN_VIDEO_LINK, DOCS_LINK, FORUM_LINK } from '@/data/url-config';
 
@@ -30,6 +32,8 @@ export default {
     {
       pcBanner: ogce,
       moBanner: ogceMo,
+      pcBannerDark: ogceDark,
+      moBannerDark: ogceMoDark,
       link: '/zh/training/',
       target: '_blank',
       title: 'openGauss OGCE专家认证正式发布',
@@ -164,6 +168,8 @@ export default {
   {
     pcBanner: string;
     moBanner: string;
+    pcBannerDark?: string;
+    moBannerDark?: string;
     link: string;
     target: string;
     title: string;

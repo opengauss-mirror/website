@@ -5,7 +5,10 @@ import homeConfig from '@/data/home/';
 import { windowOpen } from '@/shared/utils';
 import { useScreen } from '~@/composables/useScreen';
 import { useLocale } from '~@/composables/useLocale';
+import { useCommon } from '@/stores/common';
+import { storeToRefs } from 'pinia';
 
+const { theme } = storeToRefs(useCommon());
 const { lePadV, gtPadV } = useScreen();
 const { isEn } = useLocale();
 const homeBanner = computed(() => (isEn.value ? homeConfig.homeBanner.en : homeConfig.homeBanner.zh));
@@ -50,7 +53,7 @@ const currentBgTheme = computed(() => {
             'no-btn': !item.btn && item.link,
             [item.className]: item.className,
           }"
-          :style="`background:url(${gtPadV ? item.pcBanner : item.moBanner}) no-repeat top center/cover;`"
+          :style="`background:url(${gtPadV ? (theme === 'dark' && item.pcBannerDark || item.pcBanner) : theme === 'dark' && item.moBannerDark || item.moBanner}) no-repeat top center/cover;`"
           @click="jump(item, item.btn !== '')"
         >
           <div class="banner-content">
@@ -73,7 +76,9 @@ const currentBgTheme = computed(() => {
               <div v-if="item.btn" class="btn-box">
                 <OButton class="home-banner-btn" round="pill" variant="solid" color="primary" :size="lePadV ? 'medium' : 'large'" @click="jump(item, false)">
                   {{ item.btn }}
-                  <template #suffixIcon><OIcon><OIconArrowRight /></OIcon></template>
+                  <template #suffixIcon
+                    ><OIcon><OIconArrowRight /></OIcon
+                  ></template>
                 </OButton>
               </div>
             </div>
@@ -87,16 +92,15 @@ const currentBgTheme = computed(() => {
   </div>
 </template>
 
-
 <style lang="scss" scoped>
 .home-banner-wrap {
   --banner-height: 460px;
 
   @include respond-to('laptop') {
-    --banner-height: 400px
+    --banner-height: 400px;
   }
   @include respond-to('pad_h') {
-    --banner-height: 320px
+    --banner-height: 320px;
   }
   @include respond-to('pad_v') {
     --banner-height: 184px;

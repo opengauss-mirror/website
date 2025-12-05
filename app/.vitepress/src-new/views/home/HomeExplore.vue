@@ -2,15 +2,13 @@
 import { DOCS_LINK } from '@/data/url-config';
 import { useData } from 'vitepress';
 import AppSection from '~@/components/AppSection.vue';
-import { useI18n } from '~@/i18n';
 import { useScreen } from '~@/composables/useScreen';
 import { storeToRefs } from 'pinia';
 import { useCommon } from '@/stores/common';
 
 const { lang } = useData();
-const { isPhone, lePadV } = useScreen();
+const { isPhone } = useScreen();
 const { theme } = storeToRefs(useCommon());
-const i18n = useI18n();
 
 const handleGo = (path: string) => {
   const link = `${DOCS_LINK}/${lang.value}${path}`;
@@ -21,7 +19,7 @@ const handleGo = (path: string) => {
 <template>
   <AppSection :title="isPhone ? $t('home.HOME_EXPLORE.EXPLORE_TITLE_MO') : $t('home.HOME_EXPLORE.EXPLORE_TITLE')">
     <div class="home-explore-content">
-      <a class="home-explore-content-left" :href="handleGo($t('home.HOME_EXPLORE.LIST[0].PATH'))">
+      <a class="home-explore-content-left" :data-o-theme="theme" :href="handleGo($t('home.HOME_EXPLORE.LIST[0].PATH'))">
         <div class="item-content">
           <p class="home-explore-item-title">{{ $t('home.HOME_EXPLORE.LIST[0].NAME') }}</p>
           <p class="home-explore-item-desc">{{ $t('home.HOME_EXPLORE.LIST[0].DESC') }}</p>
@@ -124,6 +122,9 @@ const handleGo = (path: string) => {
     min-height: 114px;
     margin-right: 0;
     background-image: url('~@/assets/category/home/intro_mo.png');
+    &[data-o-theme='dark'] {
+      background-image: url("~@/assets/category/home/intro_mo_dark.png");
+    }
     background-repeat: no-repeat;
     background-size: cover;
   }
