@@ -41,8 +41,7 @@ import type { MeetingSigT, MeetingPostT, MeetingItemT } from '@/shared/@types/ty
 import { useI18n } from '~@/i18n';
 import { useLocale } from '~@/composables/useLocale';
 
-const TODAY = new Date();
-const TODAY_FORMATTED = dayjs(TODAY).format('YYYY/MM/DD');
+const TODAY = dayjs(new Date()).format('YYYY-MM-DD');
 
 const commonStore = useCommon();
 const { lang } = useData();
@@ -95,18 +94,29 @@ const updateCurrentDayMeetings = async (date: string) => {
 
 // 计算最新日程
 const latestSchedule = computed(() => {
-  const today = dayjs().format('YYYY-MM-DD');
+  const now = dayjs();
+  const todayStr = now.format('YYYY-MM-DD');
+  const nowTimestamp = now.unix();
+
   // 检查今天是否有活动
-  let latest = recentMeetingDates.value.find((v) => v === today);
+  let latest = recentMeetingDates.value.find((v) => v === todayStr);
 
-  //如果今天没有活动，查找即将发生的最近活动
   if (!latest) {
-    const upcomingDates = recentMeetingDates.value.filter((v) => dayjs(v).unix() >= dayjs().unix());
+    let minUpcomingDate = null;
+    let minTimestamp = Infinity;
 
-    if (upcomingDates.length > 0) {
-      latest = [...upcomingDates].sort((a, b) => dayjs(a).unix() - dayjs(b).unix())[0];
+    for (const date of recentMeetingDates.value) {
+      const timestamp = dayjs(date).unix();
+      if (timestamp >= nowTimestamp && timestamp < minTimestamp) {
+        minUpcomingDate = date;
+        minTimestamp = timestamp;
+      }
     }
+
+    // 如果有即将发生的活动就返回，否则返回第一个日期
+    latest = minUpcomingDate || recentMeetingDates.value[0] || TODAY;
   }
+
   return latest;
 });
 
@@ -234,7 +244,8 @@ const watchChange = (element: HTMLElement) => {
 
 // --------------------获取近期有会议的日期-----------------------------
 const getRecentMeetingDates = async () => {
-  recentMeetingDates.value = await getMeetingDateListApi(selectedDateStr.value);
+  const res = await getMeetingDateListApi(selectedDateStr.value);
+  recentMeetingDates.value = (res || []).sort((a, b) => dayjs(b).unix() - dayjs(a).unix());
 };
 
 onMounted(async () => {
@@ -256,9 +267,10 @@ onMounted(async () => {
 
   // 获取近期有会议的日期
   await getRecentMeetingDates();
-
   if (recentMeetingDates.value.includes(selectedDateStr.value)) {
     queryMeetingDates(selectedDateStr.value, '');
+  } else {
+    selectedDate.value = dayjs(recentMeetingDates.value.length > 0 ? recentMeetingDates.value[0] : TODAY).format('YYYY-MM-DD');
   }
 });
 
