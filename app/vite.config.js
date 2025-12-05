@@ -93,6 +93,11 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api-oneid/, ''),
       },
+      '/api-message/': {
+        target: 'https://message-center-openubmc.test.osinfra.cn/',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api-message/, ''),
+      },
     },
   },
 });

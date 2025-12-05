@@ -9,6 +9,7 @@ import download from './download';
 import tools from './tools';
 import header from './header';
 import footer from './footer';
+import notifications from './notifications';
 
 const messages = {
   zh: {
@@ -21,6 +22,7 @@ const messages = {
     download: download.zh,
     tools: tools.zh,
     home: home.zh,
+    notifications: notifications.zh,
   },
   en: {
     // 公共模块
@@ -32,6 +34,7 @@ const messages = {
     download: download.en,
     tools: tools.en,
     home: home.en,
+    notifications: notifications.en,
   },
 };
 
@@ -42,6 +45,7 @@ const i18n = createI18n({
   legacy: false,
   fallbackLocale: 'zh',
   messages,
+  global: true,
 });
 
 export function useI18n() {
