@@ -374,8 +374,7 @@ watch(
   }
 
   .nav-drop-content {
-    max-width: 1488px;
-    width: calc(100vw - 2 * var(--layout-content-padding));
+    width: var(--grid-content-width);
     display: flex;
   }
 
