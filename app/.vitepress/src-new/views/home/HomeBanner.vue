@@ -156,15 +156,6 @@ const currentBgTheme = computed(() => {
       justify-content: space-between;
       height: 100%;
       position: relative;
-      @include respond-to('<=laptop') {
-        padding: 0 24px;
-      }
-      @include respond-to('<=pad') {
-        padding: 0 16px;
-      }
-      @include respond-to('phone') {
-        width: auto;
-      }
       .content-left {
         display: flex;
         flex-direction: column;
@@ -173,7 +164,7 @@ const currentBgTheme = computed(() => {
         .content-text {
           .title {
             @include display1;
-            font-weight: bold;
+            font-weight: 500;
             white-space: pre-wrap;
             @include respond-to('<=pad_v') {
               font-size: 22px;
