@@ -20,12 +20,11 @@ import {
 } from '@opensig/opendesign';
 import { computed, ref, watch } from 'vue';
 import { useRouter } from 'vitepress';
+import { storeToRefs } from 'pinia';
 
 import ContentWrapper from '~@/components/ContentWrapper.vue';
 import IconMarkRead from '~icons/app/icon-mark-read.svg';
 import NotificationItem from './components/NotificationItem.vue';
-import emptyImage from '~@/assets/category/common/404.png';
-import emptyImageDark from '~@/assets/category/common/404-dark.png';
 
 import { useScreen } from '~@/composables/useScreen';
 import { useLocale } from '~@/composables/useLocale';
@@ -39,32 +38,30 @@ import {
   MARK_READ_MULTIPLE_FAILED_MESSAGE,
   MARK_READ_SUCCESS_MESSAGE,
   MARK_READ_FAILED_MESSAGE,
+  NOTIFICATION_TYPE_TODO,
 } from '~@/data/notifications';
 import { geAllInfo, getMeetingInfo, setReadInfo, deleteInfo, getSystemInfo } from '~@/api/api-notification';
 
-import { getUserAuth, doLogin } from '~@/shared/login';
+import { getUserAuth, doLogin } from '@/shared/login';
 import { NotificationItemT } from '~@/@types/type-notifications';
 import { useNoticeData } from '~@/composables/useNoticeData';
-import { storeToRefs } from 'pinia';
-import { useCommon } from '@/stores/common';
+import TodoList from '~@/views/notifications/components/TodoList.vue';
+import AppEmpty from '~@/components/AppEmpty.vue';
 
 const { t } = useLocale();
 const message = useMessage();
 const noticeData = useNoticeData();
 const token = getUserAuth();
 const router = useRouter();
-const commonStore = useCommon();
-const isDark = computed(() => commonStore.theme === 'dark');
-const selectedMenuItem = ref(NOTIFICATION_TYPE.get('')!!.value);
+const selectedMenuItem = ref(NOTIFICATION_TYPE.get(NOTIFICATION_TYPE_TODO)!!.value);
 
-const { noticeTotal, systemTotal, meetingTotal } = storeToRefs(noticeData)
+const { noticeTotal, systemTotal, meetingTotal } = storeToRefs(noticeData);
 
 const totalList = computed(() => {
   return [noticeTotal.value, systemTotal.value, meetingTotal.value];
 });
 
 const { isPhone } = useScreen();
-
 
 // -------------------- 获取所有消息 --------------------
 const notificationLists = ref<NotificationItemT[]>([]);
@@ -185,6 +182,8 @@ const onSelectAllChange = (val: (string | number)[]) => {
   }
 };
 
+// -------------------- 待办消息 --------------------
+const todoRef = ref(null);
 // -------------------- 获取消息列表数据 --------------------
 const total = ref(0);
 const queryData = ref({
@@ -207,6 +206,8 @@ const getList = () => {
     getMeeting();
   } else if (selectedMenuItem.value === 'system') {
     getSystem();
+  } else if (selectedMenuItem.value === NOTIFICATION_TYPE_TODO) {
+    todoRef.value?.getList()
   } else if (!selectedMenuItem.value) {
     getAll();
   }
@@ -215,12 +216,13 @@ const getList = () => {
 watch(
   () => token.csrfToken,
   (val) => {
-    if (val) {
+    if (!val) {
       getList();
     } else {
-      doLogin()
+      doLogin();
     }
-  },{
+  },
+  {
     immediate: true,
   }
 );
@@ -248,6 +250,7 @@ const clickItem = (id: string, isRead = true) => {
     router.go(row.source_url);
   }
 };
+
 // -------------------- 分页变化 --------------------
 const reloadData = (val: { page: number; pageSize: number }) => {
   if (val.pageSize !== queryData.value.count_per_page) {
@@ -257,6 +260,10 @@ const reloadData = (val: { page: number; pageSize: number }) => {
   }
   queryData.value.count_per_page = val.pageSize;
   getList();
+};
+
+const changeTotal = (val: number) => {
+  total.value = val;
 };
 
 // ------------------------ 设置消息已读 --------------------
@@ -363,75 +370,82 @@ const changeTab = (val: string, flag = true) => {
           </OMenu>
         </div>
         <div class="notification-right">
-          <div class="header" v-if="total > 0">
-            <div class="all-notification">
-              <OCheckbox v-model="selectAll" :indeterminate="indeterminate" :value="1" @change="onSelectAllChange">{{
-                  seletedNotificationIds.size ? t('notifications.selectedNItem', [seletedNotificationIds.size]) : t('common.selectAll')
-                }}</OCheckbox>
+          <template v-if="selectedMenuItem === NOTIFICATION_TYPE_TODO">
+            <TodoList ref="todoRef" :page="queryData.pageNum" :pageSize="queryData.pageSize" @changeTotal="changeTotal"></TodoList>
+          </template>
+          <template v-else>
+            <div class="header" v-if="total > 0">
+              <div class="all-notification">
+                <OCheckbox v-model="selectAll" :indeterminate="indeterminate" :value="1" @change="onSelectAllChange">
+                  {{ seletedNotificationIds.size ? t('notifications.selectedNItem', [seletedNotificationIds.size]) : t('common.selectAll') }}
+                </OCheckbox>
+              </div>
+              <div class="action">
+                <template v-if="seletedNotificationIds.size > 0">
+                  <OLink class="delete-link" @click="showDeleteConfirm = true">
+                    <template #icon>
+                      <OIcon><OIconDelete /></OIcon>
+                    </template>
+                    {{ t('notifications.delete') }}
+                  </OLink>
+                  <OLink @click="updateSelectedReadStatus([...seletedNotificationIds], true)">
+                    <template #icon>
+                      <OIcon><IconMarkRead /></OIcon>
+                    </template>
+                    {{ t('notifications.markRead') }}
+                  </OLink>
+                </template>
+                <template v-else>
+                  <OLink
+                    @click="
+                      updateSelectedReadStatus(
+                        notificationLists.map((v) => v.event_id),
+                        true
+                      )
+                    "
+                  >
+                    <template #icon>
+                      <OIcon><IconMarkRead /></OIcon>
+                    </template>
+                    {{ t('notifications.allRead') }}
+                  </OLink>
+                </template>
+
+                <ODivider direction="v"></ODivider>
+                <OCheckbox v-model="onlyUnread" :value="1" @change="changeOnlyUnread">{{ t('notifications.onlyUnread') }}</OCheckbox>
+              </div>
             </div>
-            <div class="action">
-              <template v-if="seletedNotificationIds.size > 0">
-                <OLink class="delete-link" @click="showDeleteConfirm = true">
-                  <template #icon>
-                    <OIcon><OIconDelete /></OIcon>
-                  </template>
-                  {{ t('notifications.delete') }}
-                </OLink>
-                <OLink @click="updateSelectedReadStatus([...seletedNotificationIds], true)">
-                  <template #icon>
-                    <OIcon><IconMarkRead /></OIcon>
-                  </template>
-                  {{ t('notifications.markRead') }}
-                </OLink>
-              </template>
-              <template v-else>
-                <OLink @click="updateSelectedReadStatus(notificationLists.map((v) => v.event_id), true)">
-                  <template #icon>
-                    <OIcon><IconMarkRead /></OIcon>
-                  </template>
-                  {{ t('notifications.allRead') }}
-                </OLink>
+            <ODivider direction="h"></ODivider>
+            <!-- list -->
+            <OSkeleton :animation="true" :loading="loading">
+              <template #template>
+                <OSkeletonText :rows="3" :style="{ width: '100%', '--skeleton-line-gap': '24px' }" />
+                <OSkeletonText :rows="3" :style="{ width: '100%', '--skeleton-line-gap': '24px' }" />
+                <OSkeletonText :rows="2" :style="{ width: '100%', '--skeleton-line-gap': '24px' }" />
               </template>
 
-              <ODivider direction="v"></ODivider>
-              <OCheckbox v-model="onlyUnread" :value="1" @change="changeOnlyUnread">{{ t('notifications.onlyUnread') }}</OCheckbox>
-            </div>
-          </div>
-          <ODivider direction="h"></ODivider>
-          <!-- list -->
-          <OSkeleton :animation="true" :loading="loading">
-            <template #template>
-              <OSkeletonText :rows="3" :style="{ width: '100%', '--skeleton-line-gap': '24px' }" />
-              <OSkeletonText :rows="3" :style="{ width: '100%', '--skeleton-line-gap': '24px' }" />
-              <OSkeletonText :rows="2" :style="{ width: '100%', '--skeleton-line-gap': '24px' }" />
-            </template>
+              <div v-if="total > 0" class="list">
+                <NotificationItem
+                  v-for="item in notificationLists"
+                  v-model:checked="item.checked"
+                  :key="item.event_id"
+                  :event-id="item.event_id"
+                  :type="item.type"
+                  :title="item.title"
+                  :summary="item.summary"
+                  :is-read="item.is_read"
+                  :created-time="item.created_at"
+                  :tab="selectedMenuItem"
+                  @read="clickItem"
+                  @update:checked="onItemCheckedChange(item)"
+                />
+              </div>
 
-            <div v-if="total > 0" class="list">
-              <NotificationItem
-                v-for="item in notificationLists"
-                v-model:checked="item.checked"
-                :key="item.event_id"
-                :event-id="item.event_id"
-                :type="item.type"
-                :title="item.title"
-                :summary="item.summary"
-                :is-read="item.is_read"
-                :created-time="item.created_at"
-                :tab="selectedMenuItem"
-                @read="clickItem"
-                @update:checked="onItemCheckedChange(item)"
-              />
-            </div>
-
-            <OResult v-else class="notification-empty">
-              <template #image>
-                <img alt="empty" :src="isDark ? emptyImageDark : emptyImage" />
-              </template>
-              <template #description>
+              <AppEmpty v-else>
                 {{ t('notifications.noMsg') }}
-              </template>
-            </OResult>
-          </OSkeleton>
+              </AppEmpty>
+            </OSkeleton>
+          </template>
         </div>
       </div>
       <div v-if="total > 0" class="notification-page-pagination">
@@ -445,7 +459,6 @@ const changeTab = (val: string, flag = true) => {
           :simple="isPhone"
         />
       </div>
-
     </div>
     <!-- 翻页 -->
 
@@ -476,16 +489,15 @@ const changeTab = (val: string, flag = true) => {
 .notification-page {
   padding-top: var(--grid-column-gutter);
   padding-bottom: var(--o-gap-section);
-  min-height: calc(100vh - 280px);
-  @media (max-width: 1100px) {
-    min-height: calc(100vh - 329px);
-  }
   .notification-page-content {
     display: flex;
     align-items: stretch;
     justify-content: space-between;
+    min-height: calc(100vh - 280px);
+    @media (max-width: 1100px) {
+      min-height: calc(100vh - 329px);
+    }
   }
-
 
   :deep(.o-tab) {
     margin-bottom: 16px;
@@ -541,7 +553,6 @@ const changeTab = (val: string, flag = true) => {
       align-items: center;
       margin-left: 8px;
     }
-
   }
   .notification-right {
     flex-grow: 1;
@@ -575,7 +586,6 @@ const changeTab = (val: string, flag = true) => {
           .o-link-main {
             @include text1;
           }
-
         }
         :deep(.o-checkbox) {
           //position: relative;
@@ -585,7 +595,6 @@ const changeTab = (val: string, flag = true) => {
               //position: relative;
               //top: 2px;
             }
-
           }
         }
         :deep(.o-link-prefix) {
@@ -606,16 +615,6 @@ const changeTab = (val: string, flag = true) => {
         }
       }
     }
-    .notification-empty {
-      width: 100%;
-      height: calc(100% - 64px);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      --result-image-width: 312px;
-      --result-image-height: 200px;
-      --result-image-gap: 8px;
-    }
   }
   .notification-page-pagination {
     display: flex;
@@ -626,14 +625,8 @@ const changeTab = (val: string, flag = true) => {
 }
 </style>
 
-<style scoped lang="scss">
-
-
-
-</style>
+<style scoped lang="scss"></style>
 <style lang="scss">
-
-
 .dlg-delete-body {
   text-align: center;
   .btn-form {

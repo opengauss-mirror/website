@@ -1,4 +1,4 @@
-import { useI18n } from 'vue-i18n';
+import { ElMessage } from 'element-plus';
 import { OptionItemT } from '~@/@types/type-common';
 import i18n from '~@/i18n';
 
@@ -50,3 +50,13 @@ export const findLabelFromOptions = (value: string | number, options: OptionItem
   const find = options.find((o) => o[valueKey] === value);
   return find?.[labelKey] || value;
 };
+
+/**
+ * 错误处理
+ */
+export function handleError(error = 'Error!') {
+  ElMessage({
+    message: error,
+    type: 'error',
+  });
+}

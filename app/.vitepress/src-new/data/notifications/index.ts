@@ -13,14 +13,26 @@ export const NOTIFICATION_TYPE_FEEDBACK = ['feedback'];
 // 漏洞预警消息
 export const NOTIFICATION_TYPE_LOOPHOLE = ['feedback'];
 
+
+export const NOTIFICATION_TYPE_TODO = 'todo';
+
 // 消息类型
 export const NOTIFICATION_TYPE = new Map([
   // 全部消息
+  // [
+  //   '',
+  //   {
+  //     value: '',
+  //     label: t('notifications.allMessage'),
+  //     types: [],
+  //   },
+  // ],
+  // 代办消息
   [
-    '',
+    NOTIFICATION_TYPE_TODO,
     {
-      value: '',
-      label: t('notifications.allMessage'),
+      value: NOTIFICATION_TYPE_TODO,
+      label: t('notifications.todoMessage'),
       types: [],
     },
   ],

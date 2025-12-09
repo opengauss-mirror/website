@@ -1,5 +1,7 @@
-import { defineStore } from 'pinia';
-import { LOGIN_STATUS, LoginStatusT } from '~@/shared/login';
+import { defineStore, storeToRefs } from 'pinia';
+import { getUserAuth, LOGIN_STATUS, LoginStatusT } from '@/shared/login';
+import { geAllCount } from '~@/api/api-notification';
+import { onMounted, ref } from 'vue';
 
 /**
  * 登录状态
@@ -46,3 +48,50 @@ export const useUserInfoStore = defineStore('userInfo', {
     };
   },
 });
+
+export const useCountStore = defineStore('count', () => {
+  const todoCount = ref();
+  const meetingCount = ref();
+  const submitCount = ref();
+  const customCount = ref();
+  const updateTime = ref();
+  const queryAllCount = () => {
+    geAllCount().then((res) => {
+      const { apply_count, meeting_count, todo_count, specific_count } = res.count;
+      todoCount.value = todo_count;
+      submitCount.value = apply_count;
+      meetingCount.value = meeting_count;
+      customCount.value = specific_count;
+      updateTime.value = Date.now();
+    }).catch(() => {
+      todoCount.value = null;
+      submitCount.value = null;
+      meetingCount.value = null;
+      customCount.value = null;
+    });
+  }
+
+  onMounted(() => {
+    const { csrfToken } = getUserAuth();
+    if (csrfToken) {
+      queryAllCount()
+    }
+  })
+
+  return {
+    todoCount,
+    meetingCount,
+    submitCount,
+    customCount,
+    queryAllCount,
+    updateTime,
+  }
+})
+
+/**
+ * @callback store 将store返回，使用解构赋值接受
+ */
+export function useCountData() {
+  const counter = useCountStore();
+  return storeToRefs(counter);
+}

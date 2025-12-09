@@ -97,7 +97,8 @@ export async function requestUserInfo() {
 export async function doLogin() {
   const { lang } = getLanguage();
   try {
-    window.location.href = `${LOGIN_URL}/login?redirect_uri=${encodeURIComponent(location.href)}&lang=${lang}`;
+    console.log(123);
+    // window.location.href = `${LOGIN_URL}/login?redirect_uri=${encodeURIComponent(location.href)}&lang=${lang}`;
   } catch (error) {
     setStatus(LOGIN_STATUS.FAILED);
   }

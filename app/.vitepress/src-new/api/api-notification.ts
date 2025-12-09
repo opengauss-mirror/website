@@ -1,7 +1,7 @@
 
 import { request } from '~@/shared/axios';
 import { QueryMeetingT } from '~@/@types/type-notifications';
-import { getUserAuth } from '~@/shared/login';
+import { getUserAuth } from '@/shared/login';
 
 /**
  * 同步个人信息
@@ -31,7 +31,7 @@ export function syncInfo() {
  * @returns {Promise<ResponseT> }
  */
 export function geAllCount() {
-  const token = getUserAuth();
+  const { csrfToken: token } = getUserAuth();
   const url = '/api-message/message_center/inner/count';
   return request
     .get(url, {
@@ -50,7 +50,7 @@ export function geAllCount() {
  * @returns {Promise<ResponseT> }
  */
 export function geAllInfo(params: QueryMeetingT) {
-  const token = getUserAuth();
+  const { csrfToken: token } = getUserAuth();
   const url = '/api-message/message_center/all';
   return request
     .get(url, {
@@ -70,7 +70,7 @@ export function geAllInfo(params: QueryMeetingT) {
  * @returns {Promise<ResponseT> }
  */
 export function getSystemInfo(params: QueryMeetingT) {
-  const token = getUserAuth();
+  const { csrfToken: token } = getUserAuth();
   const url = '/api-message/message_center/inner/system';
   return request
     .get(url, {
@@ -90,7 +90,7 @@ export function getSystemInfo(params: QueryMeetingT) {
  * @returns {Promise<ResponseT> }
  */
 export function getMeetingInfo(params: QueryMeetingT) {
-  const token = getUserAuth();
+  const { csrfToken: token } = getUserAuth();
   const url = '/api-message/message_center/inner/meeting/all';
   return request
     .get(url, {
@@ -110,7 +110,7 @@ export function getMeetingInfo(params: QueryMeetingT) {
  * @returns {Promise<ResponseT> }
  */
 export function setReadInfo(params: string[]) {
-  const token = getUserAuth();
+  const { csrfToken: token } = getUserAuth();
   const url = '/api-message/message_center/inner';
   return request
     .put(url, params, {
@@ -129,7 +129,7 @@ export function setReadInfo(params: string[]) {
  * @returns {Promise<ResponseT> }
  */
 export function deleteInfo(params: string[]) {
-  const token = getUserAuth();
+  const { csrfToken: token } = getUserAuth();
   const url = '/api-message/message_center/inner';
   return request
     .delete(url, {
@@ -141,4 +141,20 @@ export function deleteInfo(params: string[]) {
     .then((res) => {
       return res.data;
     });
+}
+
+/**
+ * 获取待办消息
+ */
+export function getTodo(params: any) {
+  const { csrfToken: token } = getUserAuth();
+  const url = '/api-message/inner/todo';
+  return request
+    .get(url, {
+      params,
+      headers: {
+        token,
+      },
+    })
+    .then((res) => res.data);
 }

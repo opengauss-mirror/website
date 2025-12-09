@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import { onMounted } from 'vue';
+import { onMounted, watch } from 'vue';
 import { useData } from 'vitepress';
 import { OIcon, ODropdown, ODropdownItem } from '@opensig/opendesign';
 import { useI18n } from '@/i18n';
 import { doLogin, doLogout, getUserAuth, requestUserInfo } from '@/shared/login';
 import { useUserInfoStore } from '@/stores/user';
 import IconLogin from '~icons/app-new/icon-header-person.svg';
+import { useCountStore } from '~@/stores/user';
+import { syncInfo } from '~@/api/api-notification';
 
 const { lang } = useData();
 const i18n = useI18n();
@@ -18,6 +20,17 @@ const jumpToUserZone = () => {
   const origin = import.meta.env.VITE_LOGIN_URL;
   window.open(`${origin}/${language}/profile`, '_blank');
 };
+
+const countStore = useCountStore();
+
+watch(() => csrfToken, async (token) => {
+  if (token) {
+    await syncInfo()
+    countStore.queryAllCount();
+  }
+}, {
+  immediate: true,
+});
 
 onMounted(() => {
   requestUserInfo();
