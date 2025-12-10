@@ -153,6 +153,11 @@ export default {
       URL: `/zh/about-us/`,
       TARGET: `_blank`,
     },
+    {
+      NAME: '投诉与举报',
+      URL: '',
+      TARGET: '',
+    },
   ],
   COPY_RIGHT: `版权所有 ©  openGauss {year} 保留一切权利`,
   OFFICIAL_ACCOUNT: 'openGauss公众号',

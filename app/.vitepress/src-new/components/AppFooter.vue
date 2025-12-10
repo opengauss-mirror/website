@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue';
+import { openReportDialog } from '@opendesign-plus/utils';
 
 import { useI18n } from '~@/i18n';
 import { ODivider } from '@opensig/opendesign';
@@ -12,14 +13,38 @@ import qrCode from '~@/assets/category/footer/wechat.png';
 
 import { useScreen } from '@/shared/useScreen';
 import { useData } from 'vitepress';
+import { useCommon } from '@/stores/common';
+
+const COMPLAINTS_REPORTURL = import.meta.env.VITE_COMPLAINTS_REPORTS_URL;
+const COMPLAINTS_REPORTS_ID = import.meta.env.VITE_COMPLAINTS_REPORTS_ID;
 
 const i18n = useI18n();
+const commonStore = useCommon();
 const { lang } = useData();
 const { gtPadV, lePadV } = useScreen();
 
 const footerNavs = computed(() => i18n.value.footer.FOOTER_NAVS);
 const friendLinks = computed(() => i18n.value.footer.FRIENDLY_LINKS);
 const optionsData = computed(() => i18n.value.footer.OPTIONS);
+
+// 投诉与举报
+const submitComplaintsReports = () => {
+  openReportDialog({
+    reportUrl: COMPLAINTS_REPORTURL,
+    lang: lang.value === 'zh' ? 'zh-cn' : 'en-us',
+    theme: commonStore.theme,
+    params: {
+      appId: COMPLAINTS_REPORTS_ID,
+      jwtToken: '',
+      sceneId: 6,
+      subSceneId: 19,
+      deviceId: 'h5',
+      additionalContext: {
+        other: window.location.href,
+      },
+    },
+  });
+};
 </script>
 
 <template>
@@ -57,9 +82,19 @@ const optionsData = computed(() => i18n.value.footer.OPTIONS);
         <div class="footer-middle">
           <div class="options-container">
             <div v-for="(option, index) in optionsData" :key="option.NAME" class="options-item">
-              <a :href="option.URL" class="option-link" :target="option.TARGET" :rel="option.TARGET === '_blank' ? 'noopener noreferrer' : ''">
+              <a
+                v-if="option.URL"
+                :href="option.URL"
+                :target="option.TARGET"
+                :rel="option.TARGET === '_blank' ? 'noopener noreferrer' : ''"
+                class="option-link"
+              >
                 {{ option.NAME }}
               </a>
+
+              <span v-else class="option-link cursor" @click="submitComplaintsReports">
+                {{ option.NAME }}
+              </span>
 
               <ODivider v-if="index !== optionsData.length - 1" direction="v" class="divider-v" />
             </div>
@@ -400,6 +435,10 @@ a {
       font-size: 10px;
       line-height: 16px;
     }
+  }
+
+  .cursor {
+    cursor: pointer;
   }
 }
 
