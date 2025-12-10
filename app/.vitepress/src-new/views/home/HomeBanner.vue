@@ -44,7 +44,6 @@ const currentBgTheme = computed(() => {
       class="home-banner"
       pause-on-hover
       :data-o-theme="currentBgTheme"
-      style="--carousel-indicator-bg-color-selected: #fff"
     >
       <OCarouselItem v-for="item in homeBanner" :key="item.title" class="home-banner-item">
         <div
@@ -150,6 +149,7 @@ const currentBgTheme = computed(() => {
   @include respond-to('<=pad_v') {
     border-radius: 4px;
   }
+  --carousel-indicator-bg-color-selected: var(--o-color-info1);
   .banner-img {
     height: 100%;
     .banner-content {

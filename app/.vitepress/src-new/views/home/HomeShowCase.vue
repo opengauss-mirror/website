@@ -1,13 +1,15 @@
 <script lang="ts" setup>
-import { ref, onMounted, onUnmounted, watch, computed, Directive } from 'vue';
-import { OIcon, OFigure, ODivider, OLink, OScroller, OIconChevronRight } from '@opensig/opendesign';
+import { ref, onMounted, onUnmounted, watch, computed, Directive, watchEffect } from 'vue';
+import { ODropdown, ODropdownItem, OIcon, OFigure, ODivider, OLink, OScroller, OIconChevronRight } from '@opensig/opendesign';
 import { useLocale } from '~@/composables/useLocale';
 import { useScreen } from '~@/composables/useScreen';
 import AppSection from '~@/components/AppSection.vue';
 import IconChevronRight from '~icons/app-new/icon-chevron-right.svg';
+import IconEllipsis from '~icons/app-new/icon-ellipsis.svg';
 import showCaseData from '~@/data/showcase';
 import { storeToRefs } from 'pinia';
 import { useCommon } from '@/stores/common';
+import { useOverflowChildren } from '~@/composables/useOverflowChildren';
 
 const emit = defineEmits(['result']);
 
@@ -120,15 +122,33 @@ const vSvgColor: Directive<HTMLElement> = {
     }
   },
 };
+
+const tabsRef = ref<HTMLDivElement>();
+const scrollerContainerRef = computed(() => tabsRef.value?.parentElement);
+
+const { overflowChildren } = useOverflowChildren(scrollerContainerRef, (el) => el.querySelectorAll('li.item-tab') as NodeListOf<HTMLElement>, 0.9);
+const rightOverflowTabs = computed(() =>
+  overflowChildren.value
+    .filter((item) => item.types.includes('right'))
+    .map((item, index) => {
+      return {
+        index: caseCategories.length - overflowChildren.value.length + index,
+        label: item.target.textContent!.trim(),
+      };
+    })
+);
+const selectedOverflowTabIndex = computed<number>({
+  set(index) {
+    activeTab.value = index as number;
+    init();
+  },
+  get() {
+    return activeTab.value;
+  },
+});
 </script>
 <template>
-  <AppSection
-    ref="container"
-    :title="t('home.USER_TITLE')"
-    class="user-case"
-    :footer="t('common.VIEW_MORE')"
-    v-show="isZh"
-  >
+  <AppSection ref="containerRef" :title="t('home.USER_TITLE')" class="user-case" :footer="t('common.VIEW_MORE')" v-show="isZh">
     <template #footer>
       <OLink :href="`/${locale}/user-practice/?industry=${activeTab + 1}`" target="_blank" style="display: flex; align-items: center">
         {{ t('common.VIEW_MORE') }}
@@ -139,7 +159,7 @@ const vSvgColor: Directive<HTMLElement> = {
     </template>
     <div ref="userCase">
       <OScroller :disabled-y="true" id="scrollTab" show-type="hover">
-        <div class="tab">
+        <div class="tab" ref="tabsRef">
           <ul class="tab-list" ref="tabs">
             <li v-for="(tab, i) in caseCategories" :key="i" class="item-tab" :class="{ 'item-tab-active-mb': activeTab === i }" @click="changeTab(i)">
               <OIcon class="nav-item-icon" v-svg-color="'path'">
@@ -150,6 +170,20 @@ const vSvgColor: Directive<HTMLElement> = {
             <div class="item-tab-active" :style="{ width: activeWidth, left: activeLeft }"></div>
           </ul>
         </div>
+        <ODropdown class="show-more-tabs" option-wrap-class="home-showcase-tab-dropdown" v-show="rightOverflowTabs?.length" option-position="br">
+          <OIcon><IconEllipsis /></OIcon>
+          <template #dropdown>
+            <ODropdownItem
+              v-for="item in rightOverflowTabs"
+              :key="item.label"
+              :label="item.label"
+              :value="item.index"
+              @click="selectedOverflowTabIndex = item.index"
+            >
+              <p style="box-sizing: border-box; min-width: 136px; padding: 0 12px; font-size: 14px;">{{ item.label }}</p>
+            </ODropdownItem>
+          </template>
+        </ODropdown>
       </OScroller>
       <ul class="content">
         <li class="case-list">
@@ -172,9 +206,48 @@ const vSvgColor: Directive<HTMLElement> = {
   </AppSection>
 </template>
 
+<style>
+.home-showcase-tab-dropdown .o-dropdown-item {
+  --dropdown-item-radius: 4px;
+}
+</style>
+
 <style scoped lang="scss">
 :deep(.section-wrapper) {
   margin: calc(var(--o-gap-section) - 24px) auto 0 !important;
+}
+.o-scroller {
+  position: relative;
+}
+.show-more-tabs {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  background-color: rgb(var(--o-mixedgray-3));
+  @include respond-to('<=pad_v') {
+    background-color: var(--e-color-bg1);
+    width: 32px;
+  }
+  @include hover {
+    color: var(--o-color-primary1);
+  }
+  z-index: 100;
+  width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 0;
+    width: 8px;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(var(--o-mixedgray-9), 0) 0%, rgb(var(--o-mixedgray-9)) 100%);
+    opacity: 0.1;
+  }
 }
 .tab {
   text-align: center;
@@ -188,10 +261,14 @@ const vSvgColor: Directive<HTMLElement> = {
   border-radius: 4px;
   white-space: nowrap;
   position: relative;
+  @include respond-to('<=laptop') {
+    padding: 4px 6px;
+  }
 }
 .item-tab {
+  --item-gap: 8px;
   &:not(:last-child) {
-    margin-right: 8px;
+    margin-right: var(--item-gap);
   }
   display: flex;
   align-items: center;
@@ -203,12 +280,19 @@ const vSvgColor: Directive<HTMLElement> = {
   @include hover {
     color: var(--o-color-primary1);
   }
-  padding: 6px 24px;
+  padding: 8px 16px;
   @include respond-to('laptop') {
-    padding: 6px 16px;
+    padding: 4px 12px;
   }
   @include respond-to('pad_h') {
-    padding: 6px 12px;
+    padding: 4px 8px;
+  }
+  @include respond-to('<=pad_v') {
+    --item-gap: 16px;
+    @include text2;
+    color: var(--o-color-info2);
+    padding: 0;
+    cursor: pointer;
   }
 }
 
@@ -221,7 +305,7 @@ const vSvgColor: Directive<HTMLElement> = {
 }
 .item-tab-active {
   position: absolute;
-  height: 38px;
+  height: 40px;
   left: 6px;
   color: var(--o-color-primary1);
   background-color: var(--o-color-fill2);
@@ -229,6 +313,12 @@ const vSvgColor: Directive<HTMLElement> = {
   border-radius: 4px;
   z-index: 1;
   transition: left 0.2s cubic-bezier(0.2, 0, 0, 1);
+  @include respond-to('laptop') {
+    height: 30px;
+  }
+  @include respond-to('pad_h') {
+    height: 30px;
+  }
 }
 .item-tab-active-mb {
   color: var(--o-color-primary1);
@@ -317,12 +407,6 @@ const vSvgColor: Directive<HTMLElement> = {
 }
 
 @include respond-to('laptop') {
-  // .item-tab {
-  //   padding: 6px 16px;
-  // }
-  .item-tab-active {
-    height: 36px;
-  }
   .content {
     height: 387px;
     margin-top: 24px;
@@ -357,9 +441,6 @@ const vSvgColor: Directive<HTMLElement> = {
   // .item-tab {
   //   padding: 4px 20px;
   // }
-  .item-tab-active {
-    height: 32px;
-  }
   .case-list {
     width: 48%;
     margin-left: 36px;
@@ -388,9 +469,6 @@ const vSvgColor: Directive<HTMLElement> = {
 }
 
 @include respond-to('<=pad_v') {
-  .item-tab-active {
-    height: 30px;
-  }
   .nav-item-icon {
     width: 16px;
     margin-right: 4px;
@@ -435,16 +513,6 @@ const vSvgColor: Directive<HTMLElement> = {
     background-color: transparent;
     padding: 0;
     white-space: nowrap;
-  }
-  .item-tab {
-    @include text2;
-    color: var(--o-color-info2);
-    padding: 0;
-    cursor: pointer;
-    margin-left: 16px;
-    &:first-of-type {
-      margin-left: 0;
-    }
   }
   .nav-item-icon {
     display: none;
