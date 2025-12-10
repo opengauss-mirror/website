@@ -145,6 +145,11 @@ export default {
       URL: `/en/about-us/`,
       TARGET: `_blank`,
     },
+    {
+      NAME: 'Complaints and Reports',
+      URL: '',
+      TARGET: '',
+    },
   ],
   COPY_RIGHT: `Copyright © openGauss {year}. All rights reserved.`,
   OFFICIAL_ACCOUNT: 'openGauss公众号',
