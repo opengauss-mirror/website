@@ -87,7 +87,7 @@ const downloadDlg = ref(false);
 const dlgAction: Ref<DialogActionT[]> = ref([
   {
     id: 'cancel',
-    label: i18n.value.download.DONNLOAD_CANCEL,
+    label: i18n.value.download.DOWNLOAD_CANCEL,
     variant: 'outline',
     onClick: () => {
       downloadDlg.value = false;
@@ -95,7 +95,7 @@ const dlgAction: Ref<DialogActionT[]> = ref([
   },
   {
     id: 'ok',
-    label: i18n.value.download.DONNLOAD_COMFIRM,
+    label: i18n.value.download.DOWNLOAD_COMFIRM,
     color: 'primary',
     variant: 'solid',
     onClick: () => {
@@ -230,8 +230,8 @@ const hoverTips = computed(() => (type: string | undefined) => {
   </ul>
   <!-- 登录弹窗 -->
   <ODialog v-if="downloadDlg" v-model:visible="downloadDlg" :unmount-on-hide="false" size="small" :actions="dlgAction">
-    <template #header>{{ i18n.download.DONNLOAD_TIPS }}</template>
-    <div>{{ i18n.download.DONNLOAD_TEXT }}</div>
+    <template #header>{{ i18n.download.DOWNLOAD_TIPS }}</template>
+    <div>{{ i18n.download.DOWNLOAD_TEXT }}</div>
   </ODialog>
 </template>
 

@@ -86,7 +86,7 @@ export default {
     CLEAN: `Clean up`,
     TOPSEARCH: `Top search`,
     CHANGE: `Change`,
-    PLEACHOLDER: `Please enter the content`,
+    PLACEHOLDER: `Please enter the content`,
   },
   PREV: `Prev`,
   NEXT: `Next`,

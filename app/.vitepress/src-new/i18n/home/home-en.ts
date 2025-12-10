@@ -54,7 +54,7 @@ export default {
     ],
   },
   USER_TITLE: 'User Practice',
-  VIDEO_TITLE: 'Lastest Videos',
+  VIDEO_TITLE: 'Latest Videos',
   ORGANIZATION_TITLE: 'Community Organizations',
   LINK_TITLE: 'Friendly Communities',
   HOME_ROUND: {

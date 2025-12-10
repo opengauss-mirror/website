@@ -291,7 +291,7 @@ watch(
 </script>
 <template>
   <div class="search">
-    <OSearch v-model="searchInput" :placeholder="searchValue.PLEACHOLDER" @change="() => searchAll()">
+    <OSearch v-model="searchInput" :placeholder="searchValue.PLACEHOLDER" @change="() => searchAll()">
       <template #suffix>
         <OIcon class="close" @click="clearSearchInput"><IconCancel /></OIcon>
       </template>

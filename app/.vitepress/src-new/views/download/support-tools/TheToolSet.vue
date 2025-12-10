@@ -154,7 +154,7 @@ const downloadDlg = ref(false);
 const dlgAction: Ref<DialogActionT[]> = ref([
   {
     id: 'cancel',
-    label: t('download.DONNLOAD_CANCEL'),
+    label: t('download.DOWNLOAD_CANCEL'),
     variant: 'outline',
     onClick: () => {
       downloadDlg.value = false;
@@ -162,7 +162,7 @@ const dlgAction: Ref<DialogActionT[]> = ref([
   },
   {
     id: 'ok',
-    label: t('download.DONNLOAD_COMFIRM'),
+    label: t('download.DOWNLOAD_COMFIRM'),
     color: 'primary',
     variant: 'solid',
     onClick: () => {
@@ -388,8 +388,8 @@ const reportVersionSelect = () => {
     </div>
     <!-- 登录弹窗 -->
     <ODialog v-if="downloadDlg" v-model:visible="downloadDlg" :unmount-on-hide="false" size="small" :actions="dlgAction">
-      <template #header>{{ $t('download.DONNLOAD_TIPS') }}</template>
-      <div>{{ $t('download.DONNLOAD_TEXT') }}</div>
+      <template #header>{{ $t('download.DOWNLOAD_TIPS') }}</template>
+      <div>{{ $t('download.DOWNLOAD_TEXT') }}</div>
     </ODialog>
   </section>
 </template>

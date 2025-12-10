@@ -205,10 +205,10 @@ openGauss 5.0.2 补丁版本回合的需求列表如下，主要针对兼容性�
 |	修复str_to_date入参为非法时表现和mysql不一致的问题。	|	https://gitee.com/opengauss/Plugin/pulls/1113	|	https://e.gitee.com/opengaussorg/dashboard?issue=I8D400	|	次要	|
 |	修复select timestamp'xxxx'场景，对于非法值，OG显示为0，Mysql为异常，两者行为不一致的问题	|	https://gitee.com/opengauss/Plugin/pulls/1116	|	https://e.gitee.com/opengaussorg/dashboard?issue=I8ED23	|	未设置	|
 |	修复show create view结果错误的bug	|	https://gitee.com/opengauss/Plugin/pulls/1108	|	https://e.gitee.com/opengaussorg/dashboard?issue=I8DG4D	|	主要	|
-|	修复openguass的select time('xxxx')场景下在非法入参的时候表现和mysql不一致	|	https://gitee.com/opengauss/Plugin/pulls/1118	|	https://e.gitee.com/opengaussorg/dashboard?issue=I8ETZ8	|	未设置	|
+|	修复opengauss的select time('xxxx')场景下在非法入参的时候表现和mysql不一致	|	https://gitee.com/opengauss/Plugin/pulls/1118	|	https://e.gitee.com/opengaussorg/dashboard?issue=I8ETZ8	|	未设置	|
 |	支持sql_mode控制将b''、x''类型当作bit类型或binary类型处理。	|	https://gitee.com/opengauss/Plugin/pulls/1109	|	https://e.gitee.com/opengaussorg/dashboard?issue=I7YE0C	|	不重要	|
 |	fix issue I8FCYL 'timestampdiff函数部分返回结果与mysql侧不一致'	|	https://gitee.com/opengauss/Plugin/pulls/1122	|	https://e.gitee.com/opengaussorg/dashboard?issue=I8FCYL	|	次要	|
-|	修复openguass的time_to_sec函数部分返回与mysql侧不一致问题	|	https://gitee.com/opengauss/Plugin/pulls/1120	|	https://e.gitee.com/opengaussorg/dashboard?issue=I8EI9U	|	次要	|
+|	修复opengauss的time_to_sec函数部分返回与mysql侧不一致问题	|	https://gitee.com/opengauss/Plugin/pulls/1120	|	https://e.gitee.com/opengaussorg/dashboard?issue=I8EI9U	|	次要	|
 |	修复 date入参异常，dayofmonth结果不符合预期	|	https://gitee.com/opengauss/Plugin/pulls/1125	|	https://e.gitee.com/opengaussorg/dashboard?issue=I8BHKU	|	未设置	|
 |	修复兼容B库使用cast类型转换返回结果与mysql不一致的问题	|	https://gitee.com/opengauss/Plugin/pulls/1131	|	https://e.gitee.com/opengaussorg/dashboard?issue=I8FD9N	|	未设置	|
 |	修复subtime(8385959,'-1:00:00')和非严格模式下insert(subtime('839:59:59', '837:59:59'))场景下和mysql表现不一致的问题。	|	https://gitee.com/opengauss/Plugin/pulls/1142	|	https://e.gitee.com/opengaussorg/dashboard?issue=I8H76T	|	次要	|
@@ -320,7 +320,7 @@ openGauss 5.0.2 补丁版本回合的需求列表如下，主要针对兼容性�
 |	issue修改: 修复convert后order by结果不正确的问题	|	https://gitee.com/opengauss/Plugin/pulls/1363	|	https://e.gitee.com/opengaussorg/dashboard?issue=I8KGWW	|	未设置	|
 |	同步pr https://gitee.com/opengauss/openGauss-server/pulls/4854	|	https://gitee.com/opengauss/Plugin/pulls/1362	|	https://e.gitee.com/opengaussorg/dashboard?issue=I91HUU	|	未设置	|
 |	【兼容性质量加固】修复log函数不支持year和json类型	|	https://gitee.com/opengauss/Plugin/pulls/1374	|	https://e.gitee.com/opengaussorg/dashboard?issue=I92ZE8	|	未设置	|
-|	修改I91D1C所示的year函数mysql返回值为long，openGuass为double以及year函数发现的其他问题。	|	https://gitee.com/opengauss/Plugin/pulls/1372	|	https://e.gitee.com/opengaussorg/dashboard?issue=I91D1C	|	不重要	|
+|	修改I91D1C所示的year函数mysql返回值为long，openGauss为double以及year函数发现的其他问题。	|	https://gitee.com/opengauss/Plugin/pulls/1372	|	https://e.gitee.com/opengaussorg/dashboard?issue=I91D1C	|	不重要	|
 |	MYSQL质量加固，CONAT与CONCAT_WS函数兼容	|	https://gitee.com/opengauss/Plugin/pulls/1352	|	https://e.gitee.com/opengaussorg/dashboard?issue=I91536	|	未设置	|
 |	issue修改:补全B库部分未添加的操作符	|	https://gitee.com/opengauss/Plugin/pulls/1373	|	https://e.gitee.com/opengaussorg/dashboard?issue=I92DYO	|	未设置	|
 |	修复不同数据类型间不能做natural join的问题	|	https://gitee.com/opengauss/Plugin/pulls/1368	|	https://e.gitee.com/opengaussorg/dashboard?issue=I924QU	|	未设置	|

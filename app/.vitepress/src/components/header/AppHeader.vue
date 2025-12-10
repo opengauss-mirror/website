@@ -72,7 +72,7 @@ const searchLink = `/${lang.value}/search/`;
       <ClientOnly>
         <ItemSearch
           v-if="isShowBox"
-          :placeholder="searchValue.PLEACHOLDER"
+          :placeholder="searchValue.PLACEHOLDER"
           :pop-list="popList"
           :link="searchLink"
           :is-show-drawer="isShowDrawer"

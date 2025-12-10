@@ -47,7 +47,7 @@ summary: '亮点来袭 | openGauss Meetup 成都站'
 
 - 讲师：谭小凡
 - 职位：中国科学院软件研究所研发工程师
-- 议题简介：随着  RISC-V 架构的兴起，越来越多开发者和企业开始关注和尝试在架构上运行主流数据库系统的可能性。  openGuass RISCV-SIG 在 RISC-V 架构上成功移植了  openGauss 数据库，为了更好地支持开发者在 RISC-V 平台上使用 openGauss 数据库，提升部署效率，本议题探讨如何在  RISC-V 架构上实现 openGauss 数据库的容器化，涵盖基础系统镜像构建、 openGauss 容器镜像制作、以及应用部署等内容。
+- 议题简介：随着  RISC-V 架构的兴起，越来越多开发者和企业开始关注和尝试在架构上运行主流数据库系统的可能性。  openGauss RISCV-SIG 在 RISC-V 架构上成功移植了  openGauss 数据库，为了更好地支持开发者在 RISC-V 平台上使用 openGauss 数据库，提升部署效率，本议题探讨如何在  RISC-V 架构上实现 openGauss 数据库的容器化，涵盖基础系统镜像构建、 openGauss 容器镜像制作、以及应用部署等内容。
 
 
 ### 04 主题：从轻量到全量：开源协作助力 openGauss RISC-V 生态

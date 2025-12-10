@@ -475,7 +475,7 @@ watch(
                 <OIcon class="tips"><IconHelp /></OIcon>
               </template>
               <div class="feedback-btn">
-                若开启会议录制功能，会议开始后会自动开始录屏，并在会议结束后自动将录屏上传至B站openGuass账号下。录制服务由ZOOM提供。
+                若开启会议录制功能，会议开始后会自动开始录屏，并在会议结束后自动将录屏上传至B站openGauss账号下。录制服务由ZOOM提供。
               </div>
             </OPopover>
           </div>

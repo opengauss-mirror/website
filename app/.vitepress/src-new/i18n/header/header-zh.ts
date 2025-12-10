@@ -446,8 +446,8 @@ export default {
     CLEAN: '清除',
     TOPSEARCH: '热门搜索',
     CHANGE: '换一批',
-    PLEACHOLDER: '搜索',
-    PLEACHOLDER_EXTEND: '请输入搜索内容',
+    PLACEHOLDER: '搜索',
+    PLACEHOLDER_EXTEND: '请输入搜索内容',
     TEXT: '搜索',
   },
   SOURCE_CODE: [

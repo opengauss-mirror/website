@@ -316,8 +316,8 @@ export default {
     CLEAN: 'Clean up',
     TOPSEARCH: 'Top search',
     CHANGE: 'Change',
-    PLEACHOLDER: 'Please enter the content',
-    PLEACHOLDER_EXTEND: 'Please enter the content',
+    PLACEHOLDER: 'Please enter the content',
+    PLACEHOLDER_EXTEND: 'Please enter the content',
     TEXT: 'Search',
   },
   SOURCE_CODE: [
