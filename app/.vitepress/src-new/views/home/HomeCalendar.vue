@@ -87,8 +87,11 @@ const updateCurrentDayMeetings = async (date: string) => {
     currentCalendarData.value = [];
     currentCalendarData.value.push(...eventsData.value.get(selectedDateStr.value)!);
   }
+
   if (recentMeetingDates.value.includes(date)) {
     queryMeetingDates(date, '');
+  } else {
+    currentCalendarData.value = [];
   }
 };
 
