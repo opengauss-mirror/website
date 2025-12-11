@@ -1,5 +1,27 @@
 export default [
   {
+    name: '智能数据分析平台',
+    version: '2.0',
+    type: '医疗',
+    company: '西安几何数字信息技术有限公司',
+    database: 'openGauss 6.0.2',
+    os: 'openEuler 24.03 LTS SP1',
+    server: 'Kunpeng 920 V200(Taishan 200)、Hygon 7380(X7340H0)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E8%A5%BF%E5%AE%89%E5%87%A0%E4%BD%95/openGauss%E6%8A%80%E6%9C%AF%E8%AE%A4%E8%AF%81%E8%AF%81%E4%B9%A6%E2%80%94%E6%99%BA%E8%83%BD%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B9%B3%E5%8F%B0V2.0.pdf',
+  },
+  {
+    name: '实验室信息管理系统',
+    version: '2.0',
+    type: '能源',
+    company: '北京中智软创信息技术有限公司',
+    database: 'openGauss 6.0.2',
+    os: 'Kylin V10 SP3',
+    server: 'Kunpeng 920(Taishan 200)、Intel（其他）',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%8C%97%E4%BA%AC%E4%B8%AD%E6%99%BA/openGauss%E5%85%BC%E5%AE%B9%E8%AE%A4%E8%AF%81%E8%AF%81%E4%B9%A6.pdf',
+  },
+  {
     name: '迪科智能知识库',
     version: '1.0.0',
     type: '通用',

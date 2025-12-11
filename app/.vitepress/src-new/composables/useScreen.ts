@@ -51,11 +51,11 @@ export const useScreen = () => {
     if (typeof width === 'undefined') {
       width = screenSize.width;
     }
-    if (width < ScreenConfig[Size.Phone]) {
+    if (width <= ScreenConfig[Size.Phone]) {
       return Size.Phone;
-    } else if (width < ScreenConfig[Size.PadV]) {
+    } else if (width <= ScreenConfig[Size.PadV]) {
       return Size.PadV;
-    } else if (width < ScreenConfig[Size.PadH]) {
+    } else if (width <= ScreenConfig[Size.PadH]) {
       return Size.PadH;
     } else {
       return Size.Laptop;

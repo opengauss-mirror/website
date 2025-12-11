@@ -23,12 +23,33 @@ import ogce from '@/assets/category/home/banner/ogce.jpg';
 import ogceMo from '@/assets/category/home/banner/ogce_mo.png';
 import ogceDark from '@/assets/category/home/banner/ogce_dark.png';
 import ogceMoDark from '@/assets/category/home/banner/ogce_mo_dark.png';
+import summit2025 from '@/assets/category/home/banner/banner-summit2025.png';
+import summit2025Mo from '@/assets/category/home/banner/banner-summit2025_mo.png';
+import summit2025Pad from '@/assets/category/home/banner/banner-summit2025_pad.png';
+import summit2025Text from '@/assets/category/home/banner/banner-summit2025_text_pc.png'
 
 import { LEARN_VIDEO_LINK, DOCS_LINK, FORUM_LINK } from '@/data/url-config';
+import { ScreenSizeT } from '~@/composables/useScreen';
 
 // rightInset:banner右侧插图
 export default {
   zh: [
+    {
+      pcBanner: summit2025,
+      moBanner: summit2025Mo,
+      banners: { phone: summit2025Mo, pad_v: summit2025Mo, pad_h: summit2025Pad, 'laptop': summit2025 },
+      link: '/zh/summit/summit2025/',
+      target: '_blank',
+      title: '',
+      textImg: summit2025Text,
+      titleMb: [],
+      subtitle: '',
+      desc: [''],
+      btn: '前往查看',
+      className: 'summit202506',
+      rightInset: '',
+      rightLink: '',
+    },
     {
       pcBanner: ogce,
       moBanner: ogceMo,
@@ -168,11 +189,14 @@ export default {
   {
     pcBanner: string;
     moBanner: string;
+    banners?: Record<ScreenSizeT, string>,
     pcBannerDark?: string;
     moBannerDark?: string;
     link: string;
     target: string;
     title: string;
+    textImg?: string;
+    textImgMb?: string;
     titleMb: string[];
     isLightBg?: string;
     subtitle: string;
