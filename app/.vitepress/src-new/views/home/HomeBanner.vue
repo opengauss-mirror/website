@@ -9,7 +9,7 @@ import { useCommon } from '@/stores/common';
 import { storeToRefs } from 'pinia';
 
 const { theme } = storeToRefs(useCommon());
-const { lePadV, gtPadV } = useScreen();
+const { lePadV, gtPadV, current } = useScreen();
 const { isEn } = useLocale();
 const homeBanner = computed(() => (isEn.value ? homeConfig.homeBanner.en : homeConfig.homeBanner.zh));
 
@@ -52,7 +52,7 @@ const currentBgTheme = computed(() => {
             'no-btn': !item.btn && item.link,
             [item.className]: item.className,
           }"
-          :style="`background:url(${gtPadV ? (theme === 'dark' && item.pcBannerDark || item.pcBanner) : theme === 'dark' && item.moBannerDark || item.moBanner}) no-repeat top center/cover;`"
+          :style="`background:url(${item.banners?.[current] ?? (gtPadV ? (theme === 'dark' && item.pcBannerDark) || item.pcBanner : (theme === 'dark' && item.moBannerDark) || item.moBanner)}) no-repeat top center/cover;`"
           @click="jump(item, item.btn !== '')"
         >
           <div class="banner-content">
@@ -228,12 +228,6 @@ const currentBgTheme = computed(() => {
           margin-top: var(--e-spacing-h3);
           --d: 20px;
           @include respond-to('<=pad_v') {
-            margin-top: var(--e-spacing-h5);
-            width: 100%;
-            display: flex;
-            justify-content: center;
-          }
-          @include respond-to('phone') {
             display: none;
           }
           .home-banner-btn {
@@ -266,54 +260,17 @@ const currentBgTheme = computed(() => {
         }
       }
     }
-    /* &.banner-version {
-      text-align: center;
-      .banner-content .content-left .content-text {
-        :deep(.title) {
-          font-size: 56px;
-          font-weight: 600;
-
-          @include respond-to('<=laptop') {
-            font-size: var(--e-font-size-h2);
-            line-height: var(--e-line-height-h2);
-          }
-          @include respond-to('<=pad') {
-            font-size: var(--e-font-size-h3);
-            line-height: var(--e-line-height-h3);
-          }
-          @include respond-to('<=pad_v') {
-            font-size: var(--e-font-size-h4);
-            line-height: var(--e-line-height-h3);
-            text-align: center;
-          }
-        }
-      }
-    } */
     &.no-btn {
       cursor: pointer;
     }
   }
-  .summit202506 {
-    .banner-content {
-      .content-left {
-        .content-text {
-          .text-img {
-            object-fit: cover;
-            height: 183px;
-            display: block;
-            @include respond-to('<=pad_v') {
-              width: inherit;
-              height: 90px;
-            }
-          }
-        }
-        @include respond-to('<=pad_v') {
-          align-items: center;
-          .btn-box {
-            margin-bottom: var(--e-spacing-h5);
-          }
-        }
-      }
+  .text-img {
+    object-fit: cover;
+    height: 183px;
+    display: block;
+    @include respond-to('<=pad_v') {
+      width: inherit;
+      height: 90px;
     }
   }
   .video-box {
@@ -352,57 +309,6 @@ const currentBgTheme = computed(() => {
       &.is-active {
         .el-carousel__button {
           background-color: var(--e-color-yellow5);
-        }
-      }
-    }
-  }
-  .banner-summit {
-    height: 100%;
-    width: 100%;
-    position: relative;
-    cursor: pointer;
-    .summit-banner-pc {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-      margin: 0 auto;
-      background: url(@/assets/category/home/banner/banner-summit-2024.jpg) no-repeat center/cover;
-      .img-wrap {
-        width: 100%;
-        max-width: 1504px;
-        padding: 0 44px;
-        @include respond-to('laptop') {
-          padding: 0 24px;
-        }
-        @include respond-to('<=pad') {
-          padding: 0 16px;
-          img {
-            width: 660px;
-          }
-        }
-      }
-      @include respond-to('<=pad') {
-        display: none;
-      }
-    }
-    .summit-banner-mo {
-      display: none;
-      @include respond-to('<=pad') {
-        width: 100%;
-        height: 100%;
-        display: block;
-        background-image: url(@/assets/category/home/banner/banner-summit_mo-2024.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        position: relative;
-        img {
-          width: 300px;
-          position: absolute;
-          bottom: 9%;
-          left: 50%;
-          transform: translateX(-50%);
         }
       }
     }
