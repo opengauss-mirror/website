@@ -76,9 +76,6 @@ const goRegister = () => {
       object-fit: cover;
       height: 201px;
       display: block;
-      @include respond-to('<=pad_v') {
-        display: none;
-      }
       // @media (max-width: 767px) {
       //   width: inherit;
       //   height: 92px;
