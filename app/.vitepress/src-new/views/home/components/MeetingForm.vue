@@ -281,9 +281,11 @@ getPlatforms();
 
 const getSigInfo = (v: string) => {
   formData.etherpad = '';
+  formData.email_list = '';
   const matchingOption = props.sigOptions.find((item: MeetingSigT) => item.group_name === v);
   if (matchingOption) {
     formData.etherpad = matchingOption.etherpad;
+    formData.email_list = matchingOption.email_list;
   }
 };
 
@@ -392,7 +394,15 @@ watch(
 </script>
 
 <template>
-  <ODialog v-model:visible="dialogVisible" size="large" :unmount-on-hide="true" :actions="dlgActions">
+  <ODialog
+    v-model:visible="dialogVisible"
+    size="large"
+    :unmount-on-hide="true"
+    :actions="dlgActions"
+    :scrollbar="{
+      showType: 'always',
+    }"
+  >
     <template #header>{{ title }}</template>
     <OForm ref="formRef" has-required :layout="isPhone ? 'v' : 'h'" :model="formData" label-width="132px" label-align="top" size="large" class="calendar-form">
       <OFormItem label="发起人" required field="sponsor" :rules="topicRules">
