@@ -112,7 +112,7 @@ function searchCountAll() {
   }
   getSearchCount(searchCount.value)
     .then((res) => {
-      if (res.status === 200 && res.obj.total[0]) {
+      if (res.status === 200 && Array.isArray(res.obj?.total)) {
         searchNumber.value = res.obj.total;
         const index = searchNumber.value.findIndex((item: SearchCountItemT) => item.key === searchType.value);
         if (index > -1) {
@@ -137,7 +137,7 @@ function searchDataAll() {
   }
   getSearchData(searchData.value)
     .then((res) => {
-      if (res.status === 200 && res.obj.records[0]) {
+      if (res.status === 200 && Array.isArray(res.obj?.records)) {
         searchResultList.value = res.obj.records;
         pageShow.value = true;
         isNotFound.value = false;
