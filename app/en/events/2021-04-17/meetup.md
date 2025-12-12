@@ -41,13 +41,13 @@ Venue: Lecture Hall of Nanjing University of Integrated Circuits, Human Resource
 
 15：30 - 15：50 Play Open Gauge to realize trouble-free and high-performance operation of Open Gauge database | Huang Kaiyao, Solution Architect of Open Gauge
 
-15：50 - 16：10 Principle and Application of OpenGauss Database Cluster Tool | Li Zhenfeng, Senior Engineer of ChinaSoft International
+15：50 - 16：10 Principle and Application of openGauss Database Cluster Tool | Li Zhenfeng, Senior Engineer of ChinaSoft International
 
 16：10 - 16：30 Gather industrial talents and empower industrial development | Shi Longxing, President of Nanjing Integrated Circuit University
 
 16：30 - 17：00 Roundtable Forum
 
-17：00 - 17：10 OpenGauss Nanjing User Group Founding Ceremony
+17：00 - 17：10 openGauss Nanjing User Group Founding Ceremony
 
 17：10 - 17：20 Lucky draw & group photo
 
