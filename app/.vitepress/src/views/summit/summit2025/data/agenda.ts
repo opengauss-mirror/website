@@ -59,7 +59,7 @@ export default [
               content: [
                 {
                   id: 'agenda27_1_1_1',
-                  time: '09:30-09:50',
+                  time: '09:30-09:45',
                   desc: '开场致辞',
                   person: [
                     {
@@ -72,7 +72,7 @@ export default [
                 },
                 {
                   id: 'agenda27_1_1_2',
-                  time: '09:50-10:10',
+                  time: '09:45-10:05',
                   desc: '	汇聚数据库创新力量，发掘数据要素智慧潜能',
                   person: [
                     {
@@ -85,7 +85,7 @@ export default [
                 },
                 {
                   id: 'agenda27_1_1_3',
-                  time: '10:10-10:35',
+                  time: '10:05-10:25',
                   desc: 'openGauss技术发展与展望',
                   person: [
                     {
@@ -103,20 +103,20 @@ export default [
                 },
                 {
                   id: 'agenda27_1_1_4',
-                  time: '10:35-10:40',
-                  desc: '中国关系型数据库产业发展和应用洞察',
+                  time: '10:25-10:30',
+                  desc: '2025年度中国关系型数据库产业发展和行业应用报告解读',
                   person: [
                     {
                       id: 'agenda27_1_1_4_1',
-                      name: '杨晓骋',
-                      post: '沙利文大中华区合伙人兼董事总经理',
+                      name: '沙利文',
+                      post: '',
                     },
                   ],
                   detail: '',
                 },
                 {
                   id: 'agenda27_1_1_5',
-                  time: '10:40-10:45',
+                  time: '10:30-10:35',
                   desc: '2025年度openGauss标杆应用实践案例颁奖',
                   person: [
                     {
@@ -130,12 +130,12 @@ export default [
                 },
                 {
                   id: 'agenda27_1_1_8',
-                  time: '10:45-11:35',
-                  desc: '行业客户优秀实践',
+                  time: '10:35-11:05',
+                  desc: '行业优秀实践案例分享',
                   person: [
                     {
                       id: 'agenda27_1_1_8_1',
-                      name: '特邀嘉宾',
+                      name: '重点行业客户',
                       post: '',
                     },
                   ],
@@ -144,11 +144,25 @@ export default [
                 },
                 {
                   id: 'agenda27_1_1_9',
-                  time: '11:35-11:45',
-                  desc: '2025年度openGauss社区优秀贡献单位\n2025年度openGauss社区优秀开发者',
+                  time: '11:05-11:25',
+                  desc: '生态伙伴优秀合作案例分享',
                   person: [
                     {
                       id: 'agenda27_1_1_9_1',
+                      name: '生态合作伙伴',
+                      post: '',
+                    },
+                  ],
+                  detail: '',
+                  pptLink: [],
+                },
+                {
+                  id: 'agenda27_1_1_10',
+                  time: '11:25-11:35',
+                  desc: '2025年度openGauss社区优秀贡献单位\n2025年度openGauss社区优秀开发者',
+                  person: [
+                    {
+                      id: 'agenda27_1_1_10_1',
                       name: '获奖代表',
                       post: '',
                     },

@@ -413,14 +413,10 @@ watch(
     & + .content-item {
       border-top: 1px solid var(--e-color-border2);
     }
-    @media screen and (max-width: 1470px) {
-      grid-template-columns: 192px 580px 500px;
-    }
-    @media screen and (max-width: 1342px) {
-      grid-template-columns: 192px 450px 400px;
-    }
+    grid-template-columns: 1fr 2fr 2fr;
     @media screen and (max-width: 1100px) {
-      grid-template-columns: 80px auto;
+      grid-template-columns: max-content auto;
+      column-gap: 16px;
       padding: 6px 0;
       min-height: 36px;
       position: static;
@@ -529,7 +525,7 @@ watch(
       @media screen and (max-width: 1100px) {
         font-size: 12px;
         line-height: 18px;
-        width: 80px;
+        width: max-content;
       }
       .o-icon {
         font-size: 18px;
