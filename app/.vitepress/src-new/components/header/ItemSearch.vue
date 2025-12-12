@@ -142,7 +142,7 @@ const closeSearch = () => {
 
           <OInput
             v-model="searchInput"
-            :placeholder="isShowDrawer ? searchValue.PLEACHOLDER_EXTEND : searchValue.PLEACHOLDER"
+            :placeholder="isShowDrawer ? searchValue.PLACEHOLDER_EXTEND : searchValue.PLACEHOLDER"
             @keyup.enter="handleSearchEvent(true)"
             @focus="showDrawer"
             class="normal"

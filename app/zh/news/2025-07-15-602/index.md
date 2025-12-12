@@ -219,7 +219,7 @@ openGauss 6.0.2 补丁版本回合的需求列表：
 | 修复json中->>中转义处理和mysql不一致的问题                   | https://gitcode.com/opengauss/Plugin/merge_requests/2124 | https://gitcode.com/opengauss/Plugin/issues/1420             |
 | 修复tpcc-mysql对接og时的问题                                 | https://gitcode.com/opengauss/Plugin/merge_requests/2124 | https://gitcode.com/opengauss/Plugin/pull/2079               |
 | 增加mysql兼容的UNIQUE_CHECKS参数                             | https://gitcode.com/opengauss/Plugin/merge_requests/2124 | https://gitcode.com/opengauss/Plugin/issues/1470             |
-| 修复tpcc-mysql对接openGuass Q14执行失败的问题-修复MYSQL协议+SELECT，prepare场景返回的协议报文中结果集列数错误的问题 | https://gitcode.com/opengauss/Plugin/merge_requests/2124 | https://gitcode.com/opengauss/Plugin/issues/1467             |
+| 修复tpcc-mysql对接openGauss Q14执行失败的问题-修复MYSQL协议+SELECT，prepare场景返回的协议报文中结果集列数错误的问题 | https://gitcode.com/opengauss/Plugin/merge_requests/2124 | https://gitcode.com/opengauss/Plugin/issues/1467             |
 | 修复unknow 参数无法匹配索引的问题                            | https://gitcode.com/opengauss/Plugin/merge_requests/2124 | https://e.gitee.com/opengaussorg/dashboard?issue=IC1WBI      |
 | 修复json_unquote在转义场景下与mysql不一致的问题              | https://gitcode.com/opengauss/Plugin/merge_requests/2124 | https://gitcode.com/opengauss/Plugin/issues/1483             |
 | 修复mysql协议连接场景的内存泄漏问题                          | https://gitcode.com/opengauss/Plugin/merge_requests/2124 | https://gitee.com/opengauss/Plugin/issues/IC2L7L             |

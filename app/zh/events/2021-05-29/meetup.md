@@ -79,11 +79,11 @@ summary: '随着开源开放的理念兴起，openGauss 在众多领域商业应
 
 <img src="./章明星.png" style="width: 250px; margin-bottom: 0.2rem;" />
 
-<strong>ShardingSphere 与 OpenGauss 的化学反应 | SphereEx CEO 张亮</strong>
+<strong>ShardingSphere 与 openGauss 的化学反应 | SphereEx CEO 张亮</strong>
 
 讲师简介：SphereEx 公司创始人，曾任京东科技架构专家，当当架构部总监。Apache ShardingSphere，ElasticJob 创始人 & 项目管理委员会主席，热爱开源。擅长以 Java 为主分布式架构，推崇优雅代码，热爱技术分享，曾多次在技术大会中担任出品人和分享嘉宾。曾出版书籍《未来架构——从服务化到云原生》。
 
-议题简介：Apache ShardingSphere 作为 Database Plus 产品，可以适配多种数据库并为其带来增量价值。本次分享将介绍联合使用 Apache ShardingSphere 与 OpenGauss 所产生的化学反应，打开数据库领域合作的大门。
+议题简介：Apache ShardingSphere 作为 Database Plus 产品，可以适配多种数据库并为其带来增量价值。本次分享将介绍联合使用 Apache ShardingSphere 与 openGauss 所产生的化学反应，打开数据库领域合作的大门。
 
 <img src="./张亮圆图.jpg" style="width: 250px; margin-bottom: 0.2rem;" />
 

@@ -245,9 +245,9 @@ watch(
 // 下载权限
 const userInfoStore = useUserInfoStore();
 const changeDownloadAuth = () => {
-  ElMessageBox.confirm(i18n.value.download.DONNLOAD_TEXT, i18n.value.download.DONNLOAD_TIPS, {
-    confirmButtonText: i18n.value.download.DONNLOAD_COMFIRM,
-    cancelButtonText: i18n.value.download.DONNLOAD_CANCEL,
+  ElMessageBox.confirm(i18n.value.download.DOWNLOAD_TEXT, i18n.value.download.DOWNLOAD_TIPS, {
+    confirmButtonText: i18n.value.download.DOWNLOAD_COMFIRM,
+    cancelButtonText: i18n.value.download.DOWNLOAD_CANCEL,
     type: 'warning',
   })
     .then(() => {
