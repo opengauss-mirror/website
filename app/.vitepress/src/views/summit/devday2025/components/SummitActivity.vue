@@ -43,12 +43,12 @@ const onButtonClick = (href: string) => {
 .summit-active {
   margin-top: 72px;
   @media (max-width: 767px) {
-    margin-top: var(--o-spacing-h3);
+    margin-top: var(--e-spacing-h3);
   }
 }
 
 .list {
-  margin-top: var(--o-spacing-h2);
+  margin-top: var(--e-spacing-h2);
   display: flex;
   @media (max-width: 767px) {
     flex-direction: column;
@@ -65,7 +65,7 @@ const onButtonClick = (href: string) => {
     right 28px top 32px,
     right top;
   background-repeat: no-repeat, no-repeat;
-  background-color: var(--o-color-bg2);
+  background-color: var(--e-color-bg2);
 
   &:last-of-type {
     margin-left: 36px;
@@ -100,7 +100,7 @@ const onButtonClick = (href: string) => {
   }
 
   @media (max-width: 767px) {
-    margin-top: var(--o-spacing-h5);
+    margin-top: var(--e-spacing-h5);
     width: 100%;
     background-size:
       0,
@@ -109,7 +109,7 @@ const onButtonClick = (href: string) => {
 }
 .card-title {
   font-size: var(--o-font-size-h5);
-  color: var(--o-color-text1);
+  color: var(--e-color-text1);
   line-height: var(--o-line-height-h5);
   font-weight: 500;
   width: 427px;
@@ -132,10 +132,10 @@ const onButtonClick = (href: string) => {
 }
 .card-desc {
   font-size: var(--o-font-size-h8);
-  color: var(--o-color-text1);
+  color: var(--e-color-text1);
   line-height: var(--o-line-height-h8);
   font-weight: 400;
-  margin-top: var(--o-spacing-h5);
+  margin-top: var(--e-spacing-h5);
   width: 427px;
   opacity: 0.8;
   @media (max-width: 1440px) {
@@ -152,7 +152,7 @@ const onButtonClick = (href: string) => {
     height: auto;
     font-size: var(--o-font-size-tip);
     line-height: var(--o-line-height-tip);
-    margin-top: var(--o-spacing-h6);
+    margin-top: var(--e-spacing-h6);
   }
 }
 .card-img {
@@ -160,12 +160,12 @@ const onButtonClick = (href: string) => {
   @media (max-width: 767px) {
     display: block;
     width: 150px;
-    margin-top: var(--o-spacing-h5);
+    margin-top: var(--e-spacing-h5);
   }
 }
 .card-btn {
   --o-button-padding-small: 8px 27px;
-  margin-top: var(--o-spacing-h5);
+  margin-top: var(--e-spacing-h5);
   border-radius: 41px;
 }
 </style>

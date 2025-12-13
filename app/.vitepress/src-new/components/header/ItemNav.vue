@@ -34,7 +34,7 @@ const toggleDebounced = useDebounceFn(function (item: NavItemT | null) {
     isPicture.value = false;
   } else if (item.ID === 'more') {
     // 如果已经通过点击选择了某个隐藏项，保持显示状态
-    if (mroeSelectId.value) {
+    if (moreSelectId.value) {
       navActive.value = item.ID;
       // 保持当前的显示状态和内容
       return;
@@ -62,10 +62,10 @@ const toggleDebounced = useDebounceFn(function (item: NavItemT | null) {
   }
 }, 100);
 
-const mroeSelectId = ref('');
+const moreSelectId = ref('');
 const handleDropdownClick = (item: NavItemT) => {
   navActive.value = 'more';
-  mroeSelectId.value = item.ID;
+  moreSelectId.value = item.ID;
   isShow.value = true;
   subNavContent.value = item.CHILDREN;
   navShortcut.value = item.SHORTCUT;
@@ -83,7 +83,7 @@ const linkClick = () => {
 
   setTimeout(() => {
     navActive.value = '';
-    mroeSelectId.value = '';
+    moreSelectId.value = '';
   }, 150);
 };
 
@@ -167,13 +167,13 @@ watch(
 
           <transition name="transition">
             <div
-              v-if="isShow && navActive === item.ID"
+              v-if="isShow"
               :class="[
                 'nav-dropdown',
-                navActive === 'more' ? mroeSelectId : navActive,
+                navActive === 'more' ? moreSelectId : navActive,
                 commonStore.theme,
                 `${navActive}-${lang}`,
-                mroeSelectId ? `${mroeSelectId}-${lang}` : '',
+                moreSelectId ? `${moreSelectId}-${lang}` : '',
               ]"
               @mouseenter="toggleDebounced(item)"
               @mouseleave="toggleDebounced(null)"
