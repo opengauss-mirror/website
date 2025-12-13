@@ -94,15 +94,15 @@ onMounted(async () => {
 .summit-live {
   margin-top: 72px;
   @media (max-width: 767px) {
-    margin-top: var(--o-spacing-h3);
+    margin-top: var(--e-spacing-h3);
   }
   .live-video {
-    margin-top: var(--o-spacing-h2);
+    margin-top: var(--e-spacing-h2);
     width: 100%;
     display: block;
     border: none;
     @media (max-width: 767px) {
-      margin-top: var(--o-spacing-h4);
+      margin-top: var(--e-spacing-h4);
     }
   }
 }
