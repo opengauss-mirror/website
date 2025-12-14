@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "pnpm gen:blogs && pnpm gen:news && vitepress dev app",
     "build": "pnpm gen:blogs && pnpm gen:news && vitepress build app",
+    "preview": "vitepress preview app",
     "test:e2e": "playwright test && playwright show-report",
     "test:unit": "vitest",
     "lint": "eslint \"app/.vitepress/src/**/*.{js,ts,vue,jsx,tsx}\"",
