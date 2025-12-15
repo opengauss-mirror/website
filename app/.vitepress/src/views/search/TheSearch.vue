@@ -105,29 +105,29 @@ function setCurrentType(index: number, type: string) {
 }
 
 // 获取搜索结果各类型的数量
-function searchCountAll() {
+async function searchCountAll() {
   // 全部时 limit 不传
   if (activeVersion.value === i18n.value.search.tagList.all) {
     searchCount.value.limit = [];
   }
-  getSearchCount(searchCount.value)
-    .then((res) => {
-      if (res.status === 200 && Array.isArray(res.obj?.total)) {
-        searchNumber.value = res.obj.total;
-        const index = searchNumber.value.findIndex((item: SearchCountItemT) => item.key === searchType.value);
-        if (index > -1) {
-          currentIndex.value = index;
-        }
-      } else {
-        searchNumber.value = [];
+
+  try {
+    const res = await getSearchCount(searchCount.value);
+    if (res.status === 200 && Array.isArray(res.obj?.total)) {
+      searchNumber.value = res.obj.total;
+      const index = searchNumber.value.findIndex((item: SearchCountItemT) => item.key === searchType.value);
+      if (index > -1) {
+        currentIndex.value = index;
       }
-    })
-    .catch(() => {
-      handleError();
-    });
+    } else {
+      searchNumber.value = [];
+    }
+  } catch {
+    handleError();
+  }
 }
 // 获取搜索结果的数据
-function searchDataAll() {
+async function searchDataAll() {
   searchResultList.value = [];
   pageShow.value = false;
   isNotFound.value = false;
@@ -135,41 +135,45 @@ function searchDataAll() {
   if (activeVersion.value === i18n.value.search.tagList.all) {
     searchData.value.limit = [];
   }
-  getSearchData(searchData.value)
-    .then((res) => {
-      if (res.status === 200 && Array.isArray(res.obj?.records)) {
-        searchResultList.value = res.obj.records;
-        pageShow.value = true;
-        isNotFound.value = false;
-      } else {
-        if (searchType.value === 'docs') {
-          searchType.value = '';
-          searchAll();
-        }
-        searchResultList.value = [];
-        isNotFound.value = true;
-        pageShow.value = false;
-      }
-    })
-    .catch(() => {
-      handleError();
+
+  try {
+    const res = await getSearchData(searchData.value);
+    if (res.status === 200 && Array.isArray(res.obj?.records)) {
+      searchResultList.value = res.obj.records;
+      pageShow.value = true;
+      isNotFound.value = false;
+    } else {
+      searchResultList.value = [];
       isNotFound.value = true;
-    });
+      pageShow.value = false;
+      if (searchType.value === 'docs') {
+        return 'no-docs-data';
+      }
+    }
+  } catch {
+    handleError();
+    isNotFound.value = true;
+  }
 }
 // 获取搜索结果的所有内容
-function searchAll(current?: string) {
-  if (searchInput.value) {
-    if (!current) {
-      currentIndex.value = 0;
-    }
-    reportSearch(searchInput.value);
-    currentPage.value = 1;
-    searchType.value = current || '';
-    searchCountAll();
-    searchDataAll();
-    handleSelectChange(searchInput.value);
-  } else {
+async function searchAll(current?: string) {
+  if (!searchInput.value) {
     clearSearchInput();
+    return;
+  }
+
+  if (!current) {
+    currentIndex.value = 0;
+  }
+  reportSearch(searchInput.value);
+  currentPage.value = 1;
+  searchType.value = current || '';
+  handleSelectChange(searchInput.value);
+
+  const [_, result] = await Promise.all([searchCountAll(), searchDataAll()]);
+  if (result === 'no-docs-data') {
+    searchType.value = '';
+    searchAll();
   }
 }
 
