@@ -14,6 +14,7 @@ export default {
   },
   intro: {
     title: '大会简介',
+    titleBg: 'INTRODUCTION',
     desc: [
       'openGauss作为植根于国内的开源数据库根社区，开源5年以来，基于社区，依靠伙伴，服务客户，产业共建、生态繁荣；openGauss系市场份额屡攀新高；技术不断创新，服务全场景，使能AI，加速行业智能化。剑指未来5年，openGauss定义AI时代数据库新范式！凭借三大核心利器——划时代的超节点DB、颠覆性的AI RAG向量引擎、以及极致弹性的Serverless云服务架构，我们正掀起一场数据库领域的全新变革，重塑产业格局。',
       '本次大会以“汇聚数据库创新力量，发掘数据要素智慧潜能”为主题，召唤思想引领者、商业掌舵人、技术颠覆者与全球开源先锋力量，共同见证openGauss在AI领域的历史性突破。发布openGauss重要技术版本及重磅产品，以技术创新与全球化实践为矛，锐意进取，强力开启属于openGauss的下一个辉煌五年。',
@@ -21,6 +22,7 @@ export default {
   },
   live: {
     title: '会议直播',
+    titleBg: 'LIVE BROADCAST',
     list: [
       {
         liveId: '15104',
@@ -55,6 +57,7 @@ export default {
   },
   agenda: {
     title: '会议日程',
+    titleBg: 'AGENDA',
     list: agenda,
   },
   partner: {
@@ -76,6 +79,7 @@ export default {
   },
   review: {
     title: '精彩回顾',
+    titleBg: 'HIGHLIGHTS REVIEW',
     list: [
       {
         title: 'openGauss Summit 2024',
