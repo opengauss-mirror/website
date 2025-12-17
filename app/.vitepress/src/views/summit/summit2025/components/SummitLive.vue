@@ -6,6 +6,7 @@ import { useScreen } from '@/shared/useScreen';
 
 import liveActiveBg from '../img/live-active.jpg';
 import liveActiveBgLong from '../img/live-active-long.png';
+import floorImg from '../img/floor-img.png';
 
 const { lang } = useData();
 
@@ -109,7 +110,9 @@ const changeLive = (val: string): void => {
 <template>
   <div class="summit-live">
     <div class="title-box">
+      <p class="title-bg">{{ liveData.titleBg }}</p>
       <p class="title">{{ liveData.title }}</p>
+      <img class="floor-img" :src="floorImg" alt="" />
     </div>
     <ClientOnly>
       <div class="select-room">

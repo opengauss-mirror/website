@@ -38,6 +38,25 @@ provide('isLight', isLight);
 }
 :deep(.title-box) {
   text-align: center;
+  .title-bg {
+    position: relative;
+    font-size: 40px;
+    --the-line-height: 56px;
+    top: calc(var(--the-line-height) / 1.5);
+    line-height: var(--the-line-height);
+    font-weight: 600;
+    background-image: linear-gradient(to bottom, rgba(#b461f6, 0.24) 0, rgba(#7d32ea, 0) 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+    @media screen and (max-width: 1440px) {
+      font-size: var(--e-font-size-h3);
+      --the-line-height: var(--e-line-height-h3);
+    }
+    @media (max-width: 767px) {
+      font-size: var(--e-font-size-h7);
+      --the-line-height: var(--e-line-height-h7);
+    }
+  }
   .title {
     font-size: 40px;
     color: var(--e-color-text1);
@@ -50,6 +69,18 @@ provide('isLight', isLight);
     @media (max-width: 767px) {
       font-size: var(--e-font-size-h7);
       line-height: var(--e-line-height-h7);
+    }
+  }
+  .floor-img {
+    width: 228px;
+    margin-top: -44px;
+    @media screen and (max-width: 1440px) {
+      width: 182px;
+      margin-top: -32px;
+    }
+    @media (max-width: 767px) {
+      width: 110px;
+      margin-top: -20px;
     }
   }
 }

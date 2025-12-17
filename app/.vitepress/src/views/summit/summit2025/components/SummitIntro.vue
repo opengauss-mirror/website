@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { useCommon } from '@/stores/common';
+import floorImg from '../img/floor-img.png';
 
 defineProps({
   introData: {
@@ -16,7 +17,9 @@ const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
 <template>
   <div class="summit-intro">
     <div class="title-box" :class="{ 'title-box-dark': !isLight }">
+      <p class="title-bg">{{ introData.titleBg }}</p>
       <p class="title">{{ introData.title }}</p>
+      <img class="floor-img" :src="floorImg" alt="" />
     </div>
     <ul class="list">
       <li v-for="(item, i) in introData.desc" :key="i" class="item">

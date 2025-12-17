@@ -4,6 +4,7 @@ import { useCommon } from '@/stores/common';
 
 import SummitSchedule from './SummitSchedule.vue';
 import { OIcon, OIconTime } from '@opensig/opendesign';
+import floorImg from '../img/floor-img.png';
 
 const props = defineProps({
   liveList: {
@@ -46,7 +47,9 @@ const renderData = computed(() => {
 <template>
   <div class="summit-agenda">
     <div class="title-box" :class="{ 'title-box-dark': !isLight }">
+      <p class="title-bg">{{ agendaData.titleBg }}</p>
       <p class="title">{{ agendaData.title }}</p>
+      <img class="floor-img" :src="floorImg" alt="" />
     </div>
     <div class="date">
       <div v-for="(item, index) in dateList" :key="item.day" class="date-item" :class="{ active: showIndex === index }" @click="setShowIndex(index)">
