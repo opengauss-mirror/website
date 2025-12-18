@@ -4,16 +4,40 @@ import SummitBanner from './components/SummitBanner.vue';
 import SummitIntro from './components/SummitIntro.vue';
 import SummitAgenda from './components/SummitAgenda.vue';
 import SummitReview from './components/SummitReview.vue';
-// import SummitLive from './components/SummitLive.vue';
+import SummitLive from './components/SummitLive.vue';
 
 import summitData from './data';
 import { useCommon } from '@/stores/common';
-import { computed, provide } from 'vue';
+import { computed, provide, onMounted } from 'vue';
+
+import { getUrlParams } from '@/shared/utils';
+import { oaReport } from '@/shared/analytics';
 
 const commonStore = useCommon();
 const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
 
 provide('isLight', isLight);
+
+// 埋点统计投放流量
+function collectAdvertisedData() {
+  const { href } = window.location;
+  const regex = /[\\?&]utm_source=/;
+  const containsUtmSource = regex.test(href);
+  if (!containsUtmSource) {
+    return;
+  }
+  const paramsArr = getUrlParams(href);
+  oaReport('fromAdvertised', {
+    origin: href,
+    ...paramsArr,
+  });
+  history.pushState(null, '', location.origin + location.pathname);
+}
+onMounted(() => {
+  setTimeout(() => {
+    collectAdvertisedData();
+  }, 300);
+});
 </script>
 
 <template>
@@ -21,8 +45,8 @@ provide('isLight', isLight);
     <SummitBanner :banner-data="summitData.banner" />
     <AppContent>
       <SummitIntro :intro-data="summitData.intro" />
-      <!-- <SummitLive id="live" :live-data="summitData.live" /> -->
-      <SummitAgenda :agenda-data="summitData.agenda" :live-list="summitData.live.list" />
+      <SummitLive id="live" :live-data="summitData.live" />
+      <SummitAgenda :agenda-data="summitData.agenda" />
       <SummitReview :review-data="summitData.review" />
     </AppContent>
   </div>
