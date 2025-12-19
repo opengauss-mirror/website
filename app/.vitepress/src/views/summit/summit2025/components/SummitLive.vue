@@ -4,8 +4,6 @@ import { useData } from 'vitepress';
 import useWindowResize from '@/components/hooks/useWindowResize';
 import { useScreen } from '@/shared/useScreen';
 
-import liveActiveBg from '../img/live-active.jpg';
-import liveActiveBgLong from '../img/live-active-long.png';
 import floorImg from '../img/floor-img.png';
 
 const { lang } = useData();
@@ -32,7 +30,6 @@ const props = defineProps({
 const { lePad } = useScreen();
 
 const screenWidth = useWindowResize();
-const isTest = ref(false);
 const liveUrl = ref('');
 const renderData = props.liveData.list;
 const roomId = ref(0);
@@ -82,14 +79,9 @@ const messageEvent = () => {
 };
 
 onMounted(async () => {
-  isTest.value = window.location.host.includes('test.osinfra') || window.location.host.includes('localhost');
-  createLiveUrl(isTest.value ? renderData[0].liveTestId : renderData[0].liveId);
+  createLiveUrl(renderData[0].liveId);
   messageEvent();
 });
-
-// 背景
-const ActiveBg = `url(${liveActiveBg})`;
-const ActiveBgLong = `url(${liveActiveBgLong})`;
 
 const liveRoom = ref(renderData[0].name);
 watch(
@@ -117,7 +109,7 @@ const changeLive = (val: string): void => {
     <ClientOnly>
       <div class="select-room">
         <OSelect v-model="liveRoom" clearable filterable @change="changeLive">
-          <OOption v-for="item in renderData" :key="item.liveTestId" :label="item.name" :value="isTest ? item.liveTestId : item.liveId" />
+          <OOption v-for="item in renderData" :key="item.liveTestId" :label="item.name" :value="item.liveId" />
         </OSelect>
       </div>
       <iframe
@@ -190,11 +182,11 @@ const changeLive = (val: string): void => {
       justify-content: space-between;
       &.live-btn {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 24px 32px;
         width: 100%;
         .link-main {
-          grid-column: 1 / 5;
+          grid-column: 1 / 4;
         }
       }
       .link {
@@ -219,21 +211,26 @@ const changeLive = (val: string): void => {
       }
 
       .link-active {
-        background: v-bind('ActiveBg') no-repeat center/cover;
+        background-image: url('../img/live-active.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
         border: none;
-        p {
-          color: #fff;
-        }
       }
       .link-active.link-main {
-        background: v-bind('ActiveBgLong') no-repeat center/cover;
+        background-image: url('../img/live-active-long.png');
       }
     }
   }
 }
 @include in-dark {
-  .link-active {
-    @include img-in-dark;
+  .summit-live .live-room-web .live-room-web-itembox {
+    .link-active {
+      background-image: url('../img/live-active-dark.jpg');
+    }
+    .link-active.link-main {
+      background-image: url('../img/live-active-long-dark.jpg');
+    }
   }
 }
 </style>

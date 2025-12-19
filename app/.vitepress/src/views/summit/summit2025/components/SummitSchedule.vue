@@ -3,7 +3,7 @@ import { OIconTime } from '@opensig/opendesign';
 import OIcon from 'opendesign/icon/OIcon.vue';
 import { ref, watch } from 'vue';
 
-import IconTime from '~icons/app/icon-time.svg';
+import IconAddress from '~icons/app/icon-address.svg';
 
 const props = defineProps({
   agendaData: {
@@ -42,13 +42,13 @@ watch(
         <div v-if="item.desc" class="item">
           <p>{{ item.desc }}</p>
           <p class="time">
-            <OIcon style="margin-right: 8px; font-size: 1.5em;"><OIconTime /></OIcon>
+            <OIcon style="margin-right: 8px; font-size: 1.5em"><OIconTime /></OIcon>
             {{ item.time }}
           </p>
         </div>
       </template>
     </div>
-    <div v-else class="schedule-item other">
+    <div v-else class="schedule-item other" :class="{ 'schedule-internet': otherTabType === 3 }">
       <el-tabs v-if="agendaData.content[1]" v-model.number="otherTabType" class="other-tabs">
         <el-tab-pane v-for="(itemList, scheduleIndex) in agendaData.content" :key="itemList.id" :name="scheduleIndex">
           <template #label>
@@ -58,6 +58,10 @@ watch(
           </template>
         </el-tab-pane>
       </el-tabs>
+      <div v-if="agendaData.content[otherTabType].address" class="address">
+        <OIcon><IconAddress /></OIcon>
+        <span>{{ agendaData.content[otherTabType].address }}</span>
+      </div>
       <div v-for="(itemList, listIndex) in agendaData.content" v-show="otherTabType === listIndex" :key="itemList.id" class="content">
         <h4 v-if="itemList.title" class="other-title">
           {{ itemList.title }}
@@ -155,8 +159,13 @@ watch(
     background-color: var(--e-color-bg2);
     border-radius: 4px;
     padding: 32px;
+    background-image: url('../img/card-bg-pc.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     @include h2;
     @include respond-to('<=pad_v') {
+      background-image: url('../img/card-bg-mb.png');
       font-size: 14px;
       height: 96px;
       padding: 16px;
@@ -221,9 +230,6 @@ watch(
     }
   }
   :deep(.el-tabs) {
-    .el-tabs__header.is-top .el-tabs__item.is-top {
-      padding: 0;
-    }
     .el-tabs__nav-wrap::after {
       display: none;
     }
@@ -233,86 +239,51 @@ watch(
     margin: 0;
   }
 
-  .schedule-tabs {
-    position: relative;
-    text-align: center;
-    margin-top: 24px;
-    :deep(.el-tabs__content) {
-      overflow: visible;
-      .el-button {
-        position: absolute;
-        left: 0;
-        top: -75px;
-        z-index: 1;
-      }
-    }
-    :deep(.el-tabs__nav) {
-      float: none;
-      display: inline-block;
-      .el-tabs__active-bar {
-        display: none;
-      }
-      .el-tabs__item {
-        padding: 0;
-      }
-    }
-    .time-tabs {
-      display: inline-block;
-      margin: 0 0 24px;
-      cursor: pointer;
-      border: 1px solid var(--e-color-border2);
-      color: var(--e-color-text1);
-      text-align: center;
-      background: var(--e-color-bg2);
-      font-size: 14px;
-      line-height: 38px;
-      padding: 0 16px;
-      @media (max-width: 1100px) {
-        line-height: 28px;
-        font-size: 12px;
-        padding: 0 12px;
-      }
-    }
-
-    .is-active .time-tabs {
-      color: #fff;
-      background: var(--e-color-brand1);
-      border-color: var(--e-color-brand1);
-    }
-  }
   .schedule-item {
     width: 100%;
-    padding: 24px;
+    padding: 40px 32px 16px;
     background-color: var(--e-color-bg2);
     margin-top: var(--e-spacing-h4);
+    background-image: url('../img/agenda-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     @media (max-width: 1100px) {
       padding: 16px;
     }
     &.other {
       :deep(.el-tabs) {
-        margin-bottom: 24px;
-        .el-tabs__header.is-top .el-tabs__item.is-top {
-          padding: 0px 20px 0px 0;
+        margin-bottom: 16px;
+        .el-tabs__item.is-top {
+          padding: 0 0 16px 0;
           @media (max-width: 1100px) {
             height: auto;
-            padding: 0px 18px 0px 0;
             line-height: 22px;
+          }
+        }
+        .el-tabs__item.is-top + .el-tabs__item.is-top {
+          padding-left: 32px;
+          @media (max-width: 840px) {
+            padding-left: 16px;
           }
         }
         .el-tabs__nav {
           float: none;
-          display: inline-block;
+          justify-content: center;
           @media (max-width: 1100px) {
             line-height: 44px;
+            justify-content: flex-start;
           }
         }
         .el-tabs__header {
           text-align: center;
           margin: 0;
           .el-tabs__item {
+            font-size: 22px;
+            line-height: 30px;
             @media (max-width: 1100px) {
-              font-size: 12px;
-              line-height: 18px;
+              font-size: 16px;
+              line-height: 24px;
             }
           }
         }
@@ -320,19 +291,16 @@ watch(
       :deep(.el-tabs__nav-scroll) {
         text-align: center;
         color: var(--e-color-text1);
+        overflow: auto;
+        @media (max-width: 1100px) {
+          border-bottom: 1px solid rgba(125, 50, 234, 0.25);
+        }
+        &::-webkit-scrollbar {
+          height: 0;
+        }
       }
       :deep(.el-tabs__content) {
         overflow: visible;
-        @media (max-width: 1100px) {
-          margin-top: 16px;
-        }
-      }
-      :deep(.el-tabs__nav) {
-        float: none;
-        display: inline-block;
-        @media (max-width: 1100px) {
-          line-height: 44px;
-        }
       }
       .other-text {
         margin: 24px auto 0 auto;
@@ -397,6 +365,31 @@ watch(
       }
     }
   }
+  .schedule-internet {
+    background-size: 105% 100%;
+  }
+}
+.address {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  line-height: 30px;
+  color: var(--e-color-text3);
+  .o-icon {
+    --icon-size: 24px;
+    margin-right: 8px;
+  }
+  @media (max-width: 1100px) {
+    justify-content: flex-start;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 24px;
+  }
+  @include respond-to('phone') {
+    font-size: 14px;
+    line-height: 22px;
+  }
 }
 .content-list {
   @media screen and (max-width: 1100px) {
@@ -404,8 +397,8 @@ watch(
   }
   .content-item {
     display: grid;
-    grid-template-columns: 192px 580px 560px;
-    padding: 20px 0px;
+    grid-template-columns: 192px 580px auto;
+    padding: 24px 0px;
     transition: all 0.25s ease;
     align-items: center;
     min-height: 64px;
@@ -413,8 +406,13 @@ watch(
     & + .content-item {
       border-top: 1px solid var(--e-color-border2);
     }
-    grid-template-columns: 1fr 2fr 2fr;
-    @media screen and (max-width: 1100px) {
+    @include respond-to('<=laptop') {
+      grid-template-columns: 180px 480px auto;
+    }
+    @include respond-to('<=pad') {
+      grid-template-columns: 180px 360px auto;
+    }
+    @include respond-to('<=pad_v') {
       grid-template-columns: max-content auto;
       column-gap: 16px;
       padding: 6px 0;
@@ -430,20 +428,14 @@ watch(
     .name-box {
       @media screen and (max-width: 1100px) {
         grid-column-end: 3;
+        margin-top: 8px;
       }
       @include respond-to('phone') {
         font-size: 14px;
       }
       div {
         display: flex;
-        align-items: center;
-        @media screen and (max-width: 1100px) {
-          grid-column-start: 2;
-          grid-column-end: 3;
-          display: block;
-        }
         @include respond-to('phone') {
-          display: flex;
           &:not(:last-child) {
             margin-bottom: 8px;
           }
@@ -481,9 +473,8 @@ watch(
     }
 
     .name {
-      width: 200px;
       display: inline-block;
-      color: var(--e-color-text3);
+      color: var(--e-color-text1);
       font-size: 16px;
       line-height: var(--e-line-height-h8);
       @media (max-width: 1100px) {
@@ -496,10 +487,10 @@ watch(
     .post {
       width: 100%;
       display: inline-block;
-      color: var(--e-color-text3);
+      color: var(--o-color-info3);
       font-size: 16px;
       line-height: 24px;
-      // word-break: keep-all;
+      margin-left: 16px;
       flex: 1;
       @media (max-width: 1100px) {
         font-size: 12px;
@@ -618,9 +609,6 @@ watch(
       display: grid;
       grid-template-columns: 580px auto;
       padding: 20px 0;
-      @media screen and (max-width: 1342px) {
-        grid-template-columns: 450px auto;
-      }
       @media screen and (max-width: 1100px) {
         display: block;
         grid-template-columns: auto auto;
@@ -634,6 +622,21 @@ watch(
     .children-item + .children-item {
       border-top: 1px solid var(--e-color-border2);
     }
+    @include respond-to('<=laptop') {
+      grid-template-columns: 180px auto;
+      .children-item {
+        grid-template-columns: 480px auto;
+      }
+    }
+    @include respond-to('<=pad') {
+      grid-template-columns: 180px auto;
+      .children-item {
+        grid-template-columns: 360px auto;
+      }
+    }
+    @include respond-to('<=pad_v') {
+      grid-template-columns: max-content auto;
+    }
   }
   .mask {
     position: fixed;
@@ -646,6 +649,19 @@ watch(
   .sub-container {
     .content-item {
       grid-template-columns: 192px auto 96px 410px;
+    }
+  }
+}
+
+@include in-dark {
+  .agenda-cards {
+    .item {
+      background-image: url('../img/card-bg-dark.jpg');
+    }
+  }
+  .schedule {
+    .schedule-item {
+      background-image: url('../img/agenda-bg-dark.jpg');
     }
   }
 }

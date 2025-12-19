@@ -388,7 +388,7 @@ export default {
             {
               NAME: '峰会',
               DESCRIPTION: '查看openGauss年度大会详情',
-              URL: '/summit/devday2025/',
+              URL: '/summit/summit2025/',
             },
             {
               NAME: '结队计划',
@@ -420,12 +420,12 @@ export default {
       ],
       SHORTCUT: [
         {
-          NAME: 'openGauss Developer Day 2025',
+          NAME: 'openGauss Summit 2025',
           PICTURE: odd,
           DESCRIPTION: '',
-          REMARK: '时间：2025/06/27 | 北京',
+          REMARK: '时间：2025/12/26 | 北京',
           TYPE: 'PICTURE',
-          URL: '/summit/devday2025/',
+          URL: '/summit/summit2025/',
         },
         {
           NAME: '汇聚数据库创新力量，引领智能时代新未来',

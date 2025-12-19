@@ -25,33 +25,27 @@ export default {
     titleBg: 'LIVE BROADCAST',
     list: [
       {
-        liveId: '15104',
-        liveTestId: '15099',
-        name: '',
+        liveId: '16011',
+        liveTestId: '16007',
+        name: 'openGauss Summit 2025 主题演讲',
       },
       {
-        liveId: '15105',
-        liveTestId: '15100',
+        liveId: '16012',
+        liveTestId: '16008',
         name: 'AI分论坛',
-        time: '13:30-15:30'
+        time: '13:30-15:30',
       },
       {
-        liveId: '15108',
-        liveTestId: '15103',
+        liveId: '16013',
+        liveTestId: '16009',
         name: '伙伴分论坛',
-        time: '13:30-15:30'
+        time: '13:30-15:30',
       },
       {
-        liveId: '15109',
-        liveTestId: '15104',
+        liveId: '16014',
+        liveTestId: '16010',
         name: '行业分论坛',
-        time: '13:30-15:30'
-      },
-      {
-        liveId: '15110',
-        liveTestId: '15105',
-        name: '互联网圆桌会议',
-        time: '13:30-15:30'
+        time: '13:30-15:30',
       },
     ],
   },

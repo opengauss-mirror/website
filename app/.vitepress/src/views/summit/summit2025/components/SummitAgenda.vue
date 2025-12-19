@@ -1,16 +1,11 @@
 <script setup lang="ts">
-import { computed, PropType, ref } from 'vue';
+import { computed, ref } from 'vue';
 import { useCommon } from '@/stores/common';
 
 import SummitSchedule from './SummitSchedule.vue';
-import { OIcon, OIconTime } from '@opensig/opendesign';
 import floorImg from '../img/floor-img.png';
 
 const props = defineProps({
-  liveList: {
-    type: Array as PropType<{ name: string; time: string; }[]>,
-    default: () => []
-  },
   agendaData: {
     type: Object,
     required: true,
@@ -37,7 +32,7 @@ const getData = computed<any>(() => props.agendaData.list[showIndex.value]);
 const tabType = ref(0);
 const renderData = computed(() => {
   if (tabType.value === 1) {
-    return getData.value.content.content;
+    return getData.value.content.content.slice(1);
   } else if (getData.value) {
     return getData.value.content.content.slice(0, 1);
   }
@@ -61,76 +56,30 @@ const renderData = computed(() => {
       <el-tabs v-if="showIndex === 1" v-model.number="tabType" class="schedule-tabs">
         <el-tab-pane :name="0">
           <template #label>
-            <div class="time-tabs"><span class="time">上午：</span> 主论坛</div>
+            <div class="time-tabs">主论坛</div>
           </template>
         </el-tab-pane>
         <el-tab-pane :name="1">
           <template #label>
-            <div class="time-tabs"><span class="time">下午：</span> 分论坛</div>
+            <div class="time-tabs">分论坛</div>
           </template>
         </el-tab-pane>
       </el-tabs>
+      <div class="time-schedule">
+        <div class="time">
+          <span class="time-title">12月{{ dateList[showIndex].day }}</span>
+        </div>
+        <span class="time-en">{{ dateList[showIndex].month }} {{ dateList[showIndex].day }}</span>
+      </div>
+      <div v-if="showIndex === 1" class="type">{{ tabType === 1 ? '下午' : '上午' }}</div>
       <template v-for="item in renderData" :key="item.lable">
         <SummitSchedule :agenda-data="item" />
-      </template>
-    </div>
-    <div class="agenda-cards" v-if="showIndex === 1">
-      <template v-for="item in liveList" :key="item.name">
-        <div v-if="item.name" class="item">
-          <p>{{ item.name }}</p>
-          <p class="time">
-            <OIcon style="margin-right: 8px; font-size: 1.5em;"><OIconTime /></OIcon>
-            {{ item.time }}
-          </p>
-        </div>
       </template>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.agenda-cards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  column-gap: 32px;
-  margin-top: 32px;
-  @include respond-to('<=pad_v') {
-    margin-top: 18px;
-    display: block;
-  }
-  .item {
-    box-sizing: border-box;
-    background-color: var(--e-color-bg2);
-    border-radius: 4px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 32px;
-    @include h2;
-    @include respond-to('<=pad_v') {
-      font-size: 14px;
-      height: 96px;
-      padding: 16px;
-      align-items: start;
-      &:not(:first-child) {
-        margin-top: 16px;
-      }
-    }
-
-    .time {
-      display: flex;
-      @include respond-to('<=pad_v') {
-        margin-top: 4px;
-      }
-      margin-top: 16px;
-
-      align-items: center;
-      display: flex;
-      align-items: center;
-      @include text1;
-    }
-  }
-}
 .summit-agenda {
   margin-top: 44px;
   @media (max-width: 767px) {
@@ -157,7 +106,7 @@ const renderData = computed(() => {
     }
     &.active {
       color: #fff;
-      background-color: var(--e-color-brand1);
+      background-color: var(--o-color-primary1);
       border: 1px solid #fff;
     }
     .date-day {
@@ -207,6 +156,9 @@ const renderData = computed(() => {
       padding: 0;
     }
   }
+  :deep(.el-tabs__header) {
+    margin: 0;
+  }
   :deep(.el-tabs__nav-wrap) {
     &::after {
       display: none;
@@ -229,17 +181,68 @@ const renderData = computed(() => {
       padding: 0 12px;
       min-width: 100px;
     }
-    @include respond-to('<=pad_v') {
-      .time {
-        display: none;
-      }
-    }
   }
 
   .is-active .time-tabs {
     color: #fff;
-    background: var(--e-color-brand1);
-    border-color: var(--e-color-brand1);
+    background: var(--o-color-primary1);
+    border-color: var(--o-color-primary1);
+  }
+}
+
+.time-schedule {
+  position: relative;
+  margin-top: 16px;
+  .time {
+    padding: 11px 0 16px;
+    border-bottom: 1px solid rgba(125, 50, 234, 0.25);
+    @media (max-width: 767px) {
+      padding: 0 0 3px;
+      margin-top: var(--e-spacing-h4);
+    }
+  }
+  .time-title {
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: 500;
+    color: var(--e-color-brand1);
+    padding: 13px 0 17px;
+    border-bottom: 2px solid var(--e-color-brand1);
+    @media (max-width: 767px) {
+      font-size: var(--e-font-size-h8);
+      line-height: var(--e-line-height-h8);
+      padding: 0 0 4px;
+    }
+  }
+  .time-en {
+    opacity: 0.25;
+    font-size: 32px;
+    color: var(--e-color-brand1);
+    font-weight: 500;
+    position: absolute;
+    top: 0;
+    right: 0;
+    @media (max-width: 767px) {
+      font-size: var(--e-font-size-h8);
+    }
+  }
+}
+.type {
+  width: 160px;
+  font-size: var(--e-font-size-h6);
+  line-height: var(--e-line-height-h6);
+  background-image: linear-gradient(90deg, rgba(125, 50, 234, 1) 0%, rgba(125, 50, 234, 0) 100%);
+  padding: var(--e-spacing-h10) var(--e-spacing-h4);
+  color: #fff;
+  font-weight: 500;
+  border-radius: 4px;
+  margin-top: 40px;
+  @media (max-width: 767px) {
+    width: 128px;
+    font-size: var(--e-font-size-text);
+    line-height: var(--e-line-height-text);
+    padding: var(--e-spacing-h10) var(--e-spacing-h6);
+    margin-top: 16px;
   }
 }
 </style>
