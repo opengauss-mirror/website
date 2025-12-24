@@ -90,8 +90,13 @@ export default [
                   person: [
                     {
                       id: 'agenda27_1_1_3_1',
-                      name: '特邀嘉宾',
-                      post: '',
+                      name: '阙鸣健',
+                      post: 'openGauss社区技术委员会委员，openGauss技术架构师',
+                    },
+                    {
+                      id: 'agenda27_1_1_3_12',
+                      name: '蔡亚杰',
+                      post: 'openGauss 社区秘书长',
                     },
                   ],
                   detail: '',
@@ -141,7 +146,7 @@ export default [
                       person: [
                         {
                           id: 'agenda27_2_4_4_2',
-                          name: '郭保平',
+                          name: '郭宝平',
                           post: '东华医为解决方案技术总监',
                         },
                       ],
@@ -151,8 +156,8 @@ export default [
                       person: [
                         {
                           id: 'agenda27_2_4_4_2',
-                          name: '毕可骏',
-                          post: '四川长虹电子控股集团云计算与大数据研究中心总经理',
+                          name: '杨震泉',
+                          post: '四川长虹云计算与大数据研究中心研发总监',
                         },
                       ],
                     },
@@ -162,17 +167,17 @@ export default [
                         {
                           id: 'agenda27_2_4_4_2',
                           name: '曾逸',
-                          post: '拓斯达具身智能机器人研发负责人',
+                          post: '拓斯达具身智能机器人应用研发负责人',
                         },
                       ],
                     },
                     {
-                      desc: '行业客户实践分享',
+                      desc: '渤海证券携手海量数据在关键业务的改造实践',
                       person: [
                         {
                           id: 'agenda27_2_4_4_2',
-                          name: '特邀嘉宾',
-                          post: '',
+                          name: '熊宇量',
+                          post: '渤海证券数据库架构师',
                         },
                       ],
                     },
@@ -181,7 +186,7 @@ export default [
                 {
                   id: 'agenda27_1_1_10',
                   time: '11:40 - 11:50',
-                  desc: '2025年度openGauss社区突出贡献单位\n2025年度openGauss社区优秀个人贡献奖',
+                  desc: '2025年度openGauss社区优秀贡献单位颁奖\n2025年度openGauss社区优秀开发者颁奖',
                   person: [
                     {
                       id: 'agenda27_1_1_10_1',

@@ -4,6 +4,8 @@ import { useData } from 'vitepress';
 import useWindowResize from '@/components/hooks/useWindowResize';
 import { useScreen } from '@/shared/useScreen';
 
+import { v4 as uniqueId } from 'uuid';
+
 import floorImg from '../img/floor-img.png';
 
 const { lang } = useData();
@@ -38,8 +40,17 @@ const setLiveRoom = (item: RenderData, index: number): void => {
   createLiveUrl(item.liveId as string);
 };
 
+const createUserId = () => {
+  let userId = uniqueId();
+  if (typeof window !== 'undefined' && localStorage.getItem('oa-openGauss-client')) {
+    userId = JSON.parse(localStorage.getItem('oa-openGauss-client') || '')?.value?.id;
+  }
+
+  return userId;
+};
+
 const createLiveUrl = (liveId: string) => {
-  liveUrl.value = `https://hw.vhallyun.com/v2/watch/${liveId}?lang=zh&landScape=true`;
+  liveUrl.value = `https://hw.vhallyun.com/v2/watch/${liveId}?lang=zh&landScape=true&thirdId=${createUserId()}`;
 };
 
 const height = ref(800);
