@@ -40,6 +40,7 @@ export default defineConfig({
         teamup: FileSystemIconLoader(path.resolve(__dirname, './.vitepress/src/assets/category/team-up')),
         'app-new': FileSystemIconLoader(path.resolve(__dirname, './.vitepress/src-new/assets/svg-icons')),
         'app-new-showcase': FileSystemIconLoader(path.resolve(__dirname, './.vitepress/src-new/assets/svg-icons/category/showcase')),
+        'my': FileSystemIconLoader(path.resolve(__dirname, './.vitepress/src-new/assets/svg-icons/category/my')),
       },
     }),
     viteStaticCopy({
@@ -92,6 +93,11 @@ export default defineConfig({
         target: 'https://id-opengauss.test.osinfra.cn/',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api-oneid/, ''),
+      },
+      '/api-message/': {
+        target: 'https://message-center-plus.test.osinfra.cn/opengauss/',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api-message/, ''),
       },
     },
   },

@@ -39,6 +39,7 @@ export default {
   LANG: `中文`,
   LANG_LIST: [`中文`, `English`],
   USER_CENTER: `个人中心`,
+  NOTIFICATIONS: '消息中心',
   LOGOUT: `退出登录`,
   GITTE: `源码`,
   CODE: `代码`,
@@ -100,4 +101,5 @@ export default {
   Not_Found: '暂无数据',
   COPY_SUCCESS: `复制成功`,
   COPY_FAILED: `复制失败，请刷新重试`,
+  selectAll: '全选',
 };
