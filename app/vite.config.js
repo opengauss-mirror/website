@@ -5,6 +5,37 @@ import { viteStaticCopy } from 'vite-plugin-static-copy';
 import Icons from 'unplugin-icons/vite';
 import { FileSystemIconLoader } from 'unplugin-icons/loaders';
 
+const proxyConfig = (proxy) => {
+  proxy.on('proxyRes', (proxyRes) => {
+    const cookies = proxyRes.headers['set-cookie'];
+    if (cookies) {
+      const modifiedCookies = cookies.map((cookie) => {
+        if (cookie.startsWith('_U_T_=') || cookie.startsWith('_Y_G_')) {
+          // Example 1: Remove the 'Secure' flag because localhost is not HTTPS
+          cookie = cookie
+            .replace(/Path=\/[^;]+;/, 'Path=/;')
+            .replace(/Domain=[^;]+;/, 'Domain=localhost;');
+
+          if (!cookie.includes('Path=/')) {
+            cookie += '; Path=/'
+          }
+        }
+        
+        // Example 2: Adjust 'SameSite' attribute for cross-origin local dev
+        // Note: You may need to also set Secure=True if the target is HTTPS
+        // cookie = cookie.replace(/; SameSite=Lax/gi, '; SameSite=None; Secure');
+
+        // Example 3: You can also use the cookieDomainRewrite and cookiePathRewrite options
+        // when defining the proxy, but 'configure' is more flexible for custom logic.
+        
+        return cookie;
+      });
+      // Overwrite the original Set-Cookie header with the modified array
+      proxyRes.headers['set-cookie'] = modifiedCookies;
+    }
+  });
+}
+
 export default defineConfig({
   build: {},
   publicDir: path.resolve(__dirname, './.vitepress/public'),
@@ -40,6 +71,7 @@ export default defineConfig({
         teamup: FileSystemIconLoader(path.resolve(__dirname, './.vitepress/src/assets/category/team-up')),
         'app-new': FileSystemIconLoader(path.resolve(__dirname, './.vitepress/src-new/assets/svg-icons')),
         'app-new-showcase': FileSystemIconLoader(path.resolve(__dirname, './.vitepress/src-new/assets/svg-icons/category/showcase')),
+        'my': FileSystemIconLoader(path.resolve(__dirname, './.vitepress/src-new/assets/svg-icons/category/my')),
       },
     }),
     viteStaticCopy({
@@ -69,11 +101,13 @@ export default defineConfig({
         target: 'https://cvemanager.test.osinfra.cn/cve-manager/',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api-cve/, ''),
+        configure: proxyConfig,
       },
       '/api-dsapi/': {
         target: 'https://dsapi.test.osinfra.cn/',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api-dsapi/, ''),
+        configure: proxyConfig,
       },
       '/api-meeting/': {
         target: 'https://opengauss-meeting-center.test.osinfra.cn/',
@@ -82,16 +116,25 @@ export default defineConfig({
           Referer: 'https://opengauss.test.osinfra.cn/',
         },
         rewrite: (path) => path.replace(/^\/api-meeting/, ''),
+        configure: proxyConfig,
       },
       '/api-search/': {
         target: 'https://doc-search-common.test.osinfra.cn/',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api-search/, ''),
+        configure: proxyConfig,
       },
       '/api-oneid/': {
         target: 'https://id-opengauss.test.osinfra.cn/',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api-oneid/, ''),
+        configure: proxyConfig,
+      },
+      '/api-message/': {
+        target: 'https://message-center-plus.test.osinfra.cn/opengauss/',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api-message/, ''),
+        configure: proxyConfig,
       },
     },
   },

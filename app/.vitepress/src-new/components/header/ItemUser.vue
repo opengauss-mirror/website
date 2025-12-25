@@ -1,23 +1,45 @@
 <script setup lang="ts">
-import { onMounted } from 'vue';
-import { useData } from 'vitepress';
+import { onMounted, watch } from 'vue';
+import { useData, useRouter } from 'vitepress';
 import { OIcon, ODropdown, ODropdownItem } from '@opensig/opendesign';
 import { useI18n } from '@/i18n';
-import { doLogin, doLogout, getUserAuth, requestUserInfo } from '@/shared/login';
-import { useUserInfoStore } from '@/stores/user';
+import { doLogin, doLogout, requestUserInfo } from '@/shared/login';
+import { useLoginStore, useUserInfoStore } from '@/stores/user';
 import IconLogin from '~icons/app-new/icon-header-person.svg';
+import { useCountStore } from '~@/stores/notification';
+import { useI18n as useI18nNew } from '~@/i18n';
 
 const { lang } = useData();
 const i18n = useI18n();
-
+const i18nNew = useI18nNew();
+const router = useRouter();
+const loginStore = useLoginStore();
 // 账号登录
-const { csrfToken } = getUserAuth();
 const userInfoStore = useUserInfoStore();
 const jumpToUserZone = () => {
   const language = lang.value === 'zh' ? 'zh' : 'en';
   const origin = import.meta.env.VITE_LOGIN_URL;
   window.open(`${origin}/${language}/profile`, '_blank');
 };
+
+const jumpToPersonal = (name) => {
+  const language = lang.value === 'zh' ? 'zh' : 'en';
+  router.go(`/${language}/${name}/`);
+};
+
+const countStore = useCountStore();
+
+watch(
+  () => loginStore.isLogined,
+  async (val) => {
+    if (val) {
+      countStore.updateNoticeTotal();
+    }
+  },
+  {
+    immediate: true,
+  }
+);
 
 onMounted(() => {
   requestUserInfo();
@@ -26,7 +48,7 @@ onMounted(() => {
 
 <template>
   <div class="header-user">
-    <ODropdown v-if="csrfToken" trigger="hover" options-wrapper=".app-header" optionPosition="top" option-wrap-class="user-dropdown">
+    <ODropdown v-if="loginStore.isLogined" trigger="hover" options-wrapper=".app-header" optionPosition="top" option-wrap-class="user-dropdown">
       <div class="user-info">
         <img v-if="userInfoStore.photo" :src="userInfoStore.photo" class="user-img" />
         <div v-else class="user-img"></div>
@@ -35,6 +57,9 @@ onMounted(() => {
       <template #dropdown>
         <ODropdownItem @click="jumpToUserZone()">
           {{ i18n.common.USER_CENTER }}
+        </ODropdownItem>
+        <ODropdownItem @click="jumpToPersonal('notifications')">
+          {{ i18nNew.common.NOTIFICATIONS }}
         </ODropdownItem>
         <ODropdownItem @click="doLogout()">
           {{ i18n.common.LOGOUT }}

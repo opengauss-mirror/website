@@ -37,6 +37,7 @@ export default {
   LANG: `English`,
   LANG_LIST: [`中文`, `English`],
   USER_CENTER: `User Center`,
+  NOTIFICATIONS: 'Notifications',
   LOGOUT: `Logout`,
   GITTE: `Source code`,
   CODE: `CODE`,
@@ -98,4 +99,5 @@ export default {
   Not_Found: 'No Data',
   COPY_SUCCESS: `复制成功`,
   COPY_FAILED: `复制失败，请刷新重试`,
+  selectAll: 'Select All',
 };

@@ -8,7 +8,7 @@ import type { LoginStatusT } from '@/shared/login';
 export const useLoginStore = defineStore('login2', {
   state: () => {
     return {
-      loginStatus: LOGIN_STATUS.NOT,
+      loginStatus: LOGIN_STATUS.DOING,
     };
   },
   actions: {
@@ -44,6 +44,9 @@ export const useUserInfoStore = defineStore('userInfo', {
     return {
       photo: '', // 头像
       username: '', // 昵称
+      identities: [], // 授权账号
+      phone: '',
+      email: '',
     };
   },
 });
