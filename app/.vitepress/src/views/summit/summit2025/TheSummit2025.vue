@@ -5,6 +5,7 @@ import SummitIntro from './components/SummitIntro.vue';
 import SummitAgenda from './components/SummitAgenda.vue';
 import SummitReview from './components/SummitReview.vue';
 import SummitLive from './components/SummitLive.vue';
+import SummitPartner from './components/SummitPartner.vue';
 
 import summitData from './data';
 import { useCommon } from '@/stores/common';
@@ -47,6 +48,7 @@ onMounted(() => {
       <SummitIntro :intro-data="summitData.intro" />
       <SummitLive id="live" :live-data="summitData.live" />
       <SummitAgenda :agenda-data="summitData.agenda" />
+      <SummitPartner :partner-data="summitData.partner" />
       <SummitReview :review-data="summitData.review" />
     </AppContent>
   </div>
