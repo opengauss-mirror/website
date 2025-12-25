@@ -6,19 +6,16 @@ import {
   OLink,
   OIconDelete,
   OPagination,
-  ODialog,
   ODivider,
   OIcon,
   OSkeleton,
   OSkeletonText,
-  OResult,
   useMessage,
   OBadge,
-  OButton,
   OTabPane,
   OTab,
 } from '@opensig/opendesign';
-import { computed, ref, watch } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import { useRouter } from 'vitepress';
 import { storeToRefs } from 'pinia';
 
@@ -42,23 +39,22 @@ import {
 } from '~@/data/notifications';
 import { geAllInfo, getMeetingInfo, setReadInfo, deleteInfo, getSystemInfo } from '~@/api/api-notification';
 
-import { getUserAuth, doLogin } from '@/shared/login';
 import { NotificationItemT } from '~@/@types/type-notifications';
-import { useNoticeData } from '~@/composables/useNoticeData';
+import { useCountStore } from '~@/stores/notification';
 import TodoList from '~@/views/notifications/components/TodoList.vue';
 import AppEmpty from '~@/components/AppEmpty.vue';
+import DeleteConfirmModal from '~@/views/notifications/components/DeleteConfirmModal.vue';
 
 const { t } = useLocale();
 const message = useMessage();
-const noticeData = useNoticeData();
-const token = getUserAuth();
+const countStore = useCountStore();
 const router = useRouter();
 const selectedMenuItem = ref(NOTIFICATION_TYPE.get(NOTIFICATION_TYPE_TODO)!!.value);
 
-const { noticeTotal, systemTotal, meetingTotal } = storeToRefs(noticeData);
+const { todo, meeting } = storeToRefs(countStore);
 
 const totalList = computed(() => {
-  return [noticeTotal.value, systemTotal.value, meetingTotal.value];
+  return [todo.value, meeting.value];
 });
 
 const { isPhone } = useScreen();
@@ -112,7 +108,7 @@ const getMeeting = () => {
         item.checked = [];
       });
       total.value = res.count;
-      noticeData.updateNoticeTotal();
+      countStore.updateNoticeTotal();
     })
     .finally(() => {
       loading.value = false;
@@ -140,7 +136,7 @@ const getSystem = () => {
         item.checked = [];
       });
       total.value = res.count;
-      noticeData.updateNoticeTotal();
+      countStore.updateNoticeTotal();
     })
     .finally(() => {
       loading.value = false;
@@ -207,25 +203,17 @@ const getList = () => {
   } else if (selectedMenuItem.value === 'system') {
     getSystem();
   } else if (selectedMenuItem.value === NOTIFICATION_TYPE_TODO) {
-    todoRef.value?.getList()
+    todoRef.value?.getList();
   } else if (!selectedMenuItem.value) {
     getAll();
   }
 };
 
-watch(
-  () => token.csrfToken,
-  (val) => {
-    if (!val) {
-      getList();
-    } else {
-      doLogin();
-    }
-  },
-  {
-    immediate: true,
-  }
-);
+
+onMounted(() => {
+  getList()
+  countStore.updateNoticeTotal();
+})
 
 // -------------------- 全部/未读消息切换 --------------------
 const notificationStatus = ref(0);
@@ -243,15 +231,18 @@ const clickItem = (id: string, isRead = true) => {
   if (isRead && row) {
     setReadInfo([id]).then(() => {
       row.is_read = true;
-      noticeData.updateNoticeTotal();
+      countStore.updateNoticeTotal();
     });
   }
   if (canJump && row) {
-    router.go(row.source_url);
+    window.open(row.source_url, '_blank', 'noopener noreferrer');
   }
 };
 
 // -------------------- 分页变化 --------------------
+const changeTodoPage = ({page}) => {
+  reloadData({ page, pageSize: queryData.value.count_per_page })
+}
 const reloadData = (val: { page: number; pageSize: number }) => {
   if (val.pageSize !== queryData.value.count_per_page) {
     queryData.value.page_num = 1;
@@ -288,7 +279,7 @@ const updateSelectedReadStatus = (ids: string[], tip?: boolean, single?: boolean
         onSelectAllChange(selectAll.value);
       }
 
-      noticeData.updateNoticeTotal();
+      countStore.updateNoticeTotal();
     })
     .catch((err) => {
       if (tip) {
@@ -301,20 +292,21 @@ const updateSelectedReadStatus = (ids: string[], tip?: boolean, single?: boolean
 
 // ------------------------ 批量删除 --------------------
 const showDeleteConfirm = ref(false);
-
+const deleteLoading = ref(false)
 const deleteConfirm = () => {
   showDeleteConfirm.value = false;
   deleteSelectedNotifications([...seletedNotificationIds.value]);
 };
 
 const deleteSelectedNotifications = (ids: string[], single?: boolean) => {
+  deleteLoading.value = true
   deleteInfo(ids)
     .then(() => {
       message.success({
         content: single ? DELETE_SUCCESS_MESSAGE : DELETE_MULTIPLE_SUCCESS_MESSAGE,
       });
 
-      noticeData.updateNoticeTotal();
+      countStore.updateNoticeTotal();
 
       reloadData({
         page: ids.length < notificationLists.value.length ? queryData.value.page_num : 1,
@@ -325,6 +317,9 @@ const deleteSelectedNotifications = (ids: string[], single?: boolean) => {
       message.danger({
         content: `${single ? DELETE_FAILED_MESSAGE : DELETE_MULTIPLE_FAILED_MESSAGE}: ${err.message}`,
       });
+    })
+    .finally(() => {
+      deleteLoading.value = false
     });
 };
 
@@ -355,7 +350,7 @@ const changeTab = (val: string, flag = true) => {
             <template #nav>
               <div class="tab-item">
                 <span>{{ item.label }}</span>
-                <OBadge v-if="totalList[i]" :value="totalList[i]" color="danger" class="message"></OBadge>
+                <OBadge v-if="totalList[i]" :value="totalList[i] > 99 ? '99+' : totalList[i]" color="danger" class="message"></OBadge>
               </div>
             </template>
           </OTabPane>
@@ -371,10 +366,10 @@ const changeTab = (val: string, flag = true) => {
         </div>
         <div class="notification-right">
           <template v-if="selectedMenuItem === NOTIFICATION_TYPE_TODO">
-            <TodoList ref="todoRef" :page="queryData.pageNum" :pageSize="queryData.pageSize" @changeTotal="changeTotal"></TodoList>
+            <TodoList ref="todoRef" :page="queryData.page_num" :pageSize="queryData.count_per_page" @changeTotal="changeTotal" @changePage="changeTodoPage"></TodoList>
           </template>
           <template v-else>
-            <div class="header" v-if="total > 0">
+            <div class="header">
               <div class="all-notification">
                 <OCheckbox v-model="selectAll" :indeterminate="indeterminate" :value="1" @change="onSelectAllChange">
                   {{ seletedNotificationIds.size ? t('notifications.selectedNItem', [seletedNotificationIds.size]) : t('common.selectAll') }}
@@ -461,27 +456,12 @@ const changeTab = (val: string, flag = true) => {
       </div>
     </div>
     <!-- 翻页 -->
-
-    <ODialog
-      v-model:visible="showDeleteConfirm"
-      :style="{
-        '--dlg-width': '450px',
-        '--dlg-padding-body-top': '32px',
-        '--dlg-head-padding': '26px var(--dlg-padding) 0',
-        '--dlg-padding-body-bottom': '36px',
-      }"
-    >
-      <template #header>
-        <span class="dlg-delete-header">{{ t('my.deleteTitle') }}</span>
-      </template>
-      <div class="dlg-delete-body">
-        <p>{{ t('my.deleteMultiple', [seletedNotificationIds.size]) }}</p>
-        <div class="btn-form">
-          <OButton size="large" color="primary" class="confirm-btn" variant="solid" @click="deleteConfirm">{{ t('my.confirm') }}</OButton>
-          <OButton size="large" class="cancel-btn" @click="showDeleteConfirm = false">{{ t('my.cancel') }}</OButton>
-        </div>
-      </div>
-    </ODialog>
+    <DeleteConfirmModal
+      :num="seletedNotificationIds.size"
+      v-model="showDeleteConfirm"
+      @confirm="deleteConfirm"
+      :loading="deleteLoading"
+    ></DeleteConfirmModal>
   </ContentWrapper>
 </template>
 
@@ -518,8 +498,8 @@ const changeTab = (val: string, flag = true) => {
   }
 
   .notification-left {
-    flex-grow: 1;
-    max-width: 348px;
+    flex-shrink: 0;
+    width: 348px;
     border-radius: var(--o-radius-xs);
     background: var(--o-color-fill2);
     padding: var(--grid-column-gutter);
@@ -555,7 +535,8 @@ const changeTab = (val: string, flag = true) => {
     }
   }
   .notification-right {
-    flex-grow: 1;
+    flex: 1;
+    min-width: 0;
     margin-left: var(--grid-column-gutter);
     border-radius: var(--o-radius-xs);
     background: var(--o-color-fill2);
@@ -587,14 +568,9 @@ const changeTab = (val: string, flag = true) => {
             @include text1;
           }
         }
-        :deep(.o-checkbox) {
-          //position: relative;
-          //top: 2px;
-          .o-checkbox-wrap {
-            .o-checkbox-label {
-              //position: relative;
-              //top: 2px;
-            }
+        :deep(.o-icon) {
+          path {
+            fill: currentColor;
           }
         }
         :deep(.o-link-prefix) {
@@ -625,21 +601,3 @@ const changeTab = (val: string, flag = true) => {
 }
 </style>
 
-<style scoped lang="scss"></style>
-<style lang="scss">
-.dlg-delete-body {
-  text-align: center;
-  .btn-form {
-    margin-top: 36px;
-  }
-  .cancel-btn {
-    margin-left: 16px;
-  }
-  & > p {
-    color: var(--o-color-info1);
-  }
-}
-.dlg-delete-header {
-  color: var(--o-color-info1);
-}
-</style>

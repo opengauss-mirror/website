@@ -1,8 +1,9 @@
-import { getUserInfo, getUserIdToken } from '@/api/api-user';
+import { getUserIdToken, getUserAllInfo } from '@/api/api-user';
 import { useLoginStore, useUserInfoStore } from '@/stores/user';
 import type { UserInfoT } from '@/shared/@types/type-user';
 import Cookies from 'js-cookie';
 import { handleError } from '@/shared/utils';
+import { syncInfo } from '~@/api/api-notification';
 
 const LOGIN_URL = import.meta.env.VITE_LOGIN_URL;
 const DOMAIN = import.meta.env.VITE_COOKIE_DOMAIN;
@@ -20,6 +21,7 @@ export type LoginStatusT = typeof LOGIN_STATUS.FAILED | LOGIN_STATUS.NOT | LOGIN
 // 登录存储字段
 export const LOGIN_KEYS = {
   CSRF_TOKEN: '_U_T_',
+  Y_G: '_Y_G_'
 };
 
 // 修改pinia登录状态
@@ -42,6 +44,7 @@ export function clearUserAuth() {
   userInfoStore.$reset();
   // 清除cookie
   Cookies.remove(LOGIN_KEYS.CSRF_TOKEN, { path: '/', domain: DOMAIN });
+  Cookies.remove(LOGIN_KEYS.Y_G, { path: '/', domain: DOMAIN });
 }
 
 // 登录之后的回调
@@ -51,10 +54,9 @@ const afterLogined = (userInfo: UserInfoT) => {
     setStatus(LOGIN_STATUS.FAILED);
     clearUserAuth();
   }
-  setStatus(LOGIN_STATUS.DONE);
-
   const userInfoStore = useUserInfoStore();
   userInfoStore.$patch(userInfo);
+  setStatus(LOGIN_STATUS.DONE);
 };
 
 // 退出
@@ -79,7 +81,7 @@ export async function requestUserInfo() {
   if (csrfToken) {
     try {
       setStatus(LOGIN_STATUS.DOING);
-      const res = await getUserInfo();
+      const res = await getUserAllInfo();
       if (res && res.data) {
         afterLogined(res.data);
       } else {
@@ -90,6 +92,8 @@ export async function requestUserInfo() {
       doLogout();
       setStatus(LOGIN_STATUS.FAILED);
     }
+  } else {
+    setStatus(LOGIN_STATUS.NOT);
   }
 }
 
@@ -97,8 +101,7 @@ export async function requestUserInfo() {
 export async function doLogin() {
   const { lang } = getLanguage();
   try {
-    console.log(123);
-    // window.location.href = `${LOGIN_URL}/login?redirect_uri=${encodeURIComponent(location.href)}&lang=${lang}`;
+    window.location.href = `${LOGIN_URL}/login?redirect_uri=${encodeURIComponent(location.href)}&lang=${lang}`;
   } catch (error) {
     setStatus(LOGIN_STATUS.FAILED);
   }

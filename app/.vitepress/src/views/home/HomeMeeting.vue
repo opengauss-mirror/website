@@ -22,6 +22,8 @@ import notFoundImg_dark from '@/assets/illustrations/404-dark.png';
 import IconCopy from '~icons/app/icon-copy.svg';
 
 import useWindowResize from '@/components/hooks/useWindowResize';
+import { useUserInfoStore } from '@/stores/user';
+import { storeToRefs } from 'pinia';
 
 // 账号信息
 const { csrfToken } = getUserAuth();
@@ -145,25 +147,27 @@ const getSigData = () => {
       sigGroup.value = [];
     });
 };
+const userInfoStore = useUserInfoStore();
+const { identities } = storeToRefs(userInfoStore);
 
+watch(
+  () => identities.value,
+  () => {
+    getPersonalInfo()
+  },
+  {
+    deep: true,
+  }
+);
 // 获取用户信息
 const getPersonalInfo = async () => {
   if (userName.value.length > 0) {
     return;
   }
-  try {
-    const res = await getUserAllInfo();
+  const giteeData = identities.value.find((e) => e.provider?.includes('gitee'));
+  userName.value = giteeData?.username;
 
-    if (res && res.data) {
-      const { identities } = res.data;
-      const giteeData = identities.find((e) => e.provider?.includes('gitee'));
-      userName.value = giteeData.username;
-
-      meetingStore.giteeId = giteeData.username;
-    }
-  } catch (error: any) {
-    console.error(error);
-  }
+  meetingStore.giteeId = giteeData?.username;
 };
 // 删除修改会议判断是否是本人
 const isSelf = (name: string) => {
@@ -178,7 +182,6 @@ onMounted(() => {
   }
 
   if (csrfToken) {
-    getPersonalInfo();
     getSigData();
   }
 

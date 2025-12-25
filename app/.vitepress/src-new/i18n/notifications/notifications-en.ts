@@ -76,4 +76,8 @@ export default {
   closed: '已关闭',
   lastMonth: '近一月',
   lastWeek: '近一周',
+  confirm_delete: '确认删除',
+  confirm_delete_tip: '确认删除选中的{num}条消息？删除后将不可恢复',
+  cancel: '取消',
+  confirm: '确认',
 };

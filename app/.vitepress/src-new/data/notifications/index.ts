@@ -7,12 +7,6 @@ export const NOTIFICATION_TYPE_SYSTEM = ['publish'];
 // 会议通知消息
 export const NOTIFICATION_TYPE_MEETING = ['meeting'];
 
-// 反馈进度消息
-export const NOTIFICATION_TYPE_FEEDBACK = ['feedback'];
-
-// 漏洞预警消息
-export const NOTIFICATION_TYPE_LOOPHOLE = ['feedback'];
-
 
 export const NOTIFICATION_TYPE_TODO = 'todo';
 
@@ -37,14 +31,14 @@ export const NOTIFICATION_TYPE = new Map([
     },
   ],
   // 系统消息
-  [
-    'system',
-    {
-      value: 'system',
-      label: t('notifications.systemMessage'),
-      types: NOTIFICATION_TYPE_SYSTEM,
-    },
-  ],
+  // [
+  //   'system',
+  //   {
+  //     value: 'system',
+  //     label: t('notifications.systemMessage'),
+  //     types: NOTIFICATION_TYPE_SYSTEM,
+  //   },
+  // ],
   // 会议通知消息
   [
     'meeting',
@@ -111,3 +105,10 @@ export const CYCLE_TYPE_OPTIONS = [
     max: 1,
   },
 ];
+
+export const NOTIFICATION_SOURCE_MAP = {
+  CVE: 'cve',
+  ISSUE: 'issue',
+  PR: 'pr'
+}
+

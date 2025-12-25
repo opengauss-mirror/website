@@ -95,7 +95,7 @@ const computedSummary = computed(() => {
       if (Action === 'delete_meeting') {
         result += '【取消】';
       }
-      if (IsCycyle === 'false') {
+      if (IsCycyle !== 'true') {
         result += `${dayjs(Date).format('YYYY/MM/DD')} ${Start}-${End} 的会议`;
       } else {
         if (CheckSingleMeeting === 'false') {

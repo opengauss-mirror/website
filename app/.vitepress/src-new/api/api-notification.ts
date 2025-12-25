@@ -8,13 +8,13 @@ import { getUserAuth } from '@/shared/login';
  * @param {Object} params
  * @returns {Promise<ResponseT> }
  */
-export function syncInfo() {
+export function syncInfo(params: any) {
   const url = '/api-message/message_center/config/recipient/sync';
   const { csrfToken: token } = getUserAuth();
   return request
     .post(
       url,
-      {},
+      params,
       {
         headers: {
           token,
@@ -33,6 +33,24 @@ export function syncInfo() {
 export function geAllCount() {
   const { csrfToken: token } = getUserAuth();
   const url = '/api-message/message_center/inner/count';
+  return request
+    .get(url, {
+      headers: {
+        token,
+      },
+    })
+    .then((res) => {
+      return res.data;
+    });
+}
+
+/**
+ * 获取所有消息的未读数量
+ * @returns {Promise<ResponseT> }
+ */
+export function getPersonalCount() {
+  const { csrfToken: token } = getUserAuth();
+  const url = '/api-message/message_center/inner/count_personal';
   return request
     .get(url, {
       headers: {
@@ -148,10 +166,25 @@ export function deleteInfo(params: string[]) {
  */
 export function getTodo(params: any) {
   const { csrfToken: token } = getUserAuth();
-  const url = '/api-message/inner/todo';
+  const url = '/api-message/message_center/inner/todo';
   return request
     .get(url, {
       params,
+      headers: {
+        token,
+      },
+    })
+    .then((res) => res.data);
+}
+/**
+ * 删除
+ */
+export function deleteMessageRecord(params: any) {
+  const url = '/api-message/inner';
+  const { csrfToken: token } = getUserAuth();
+  return request
+    .delete(url, {
+      data: params,
       headers: {
         token,
       },

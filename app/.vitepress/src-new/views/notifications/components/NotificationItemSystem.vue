@@ -65,9 +65,12 @@ const iconList = {
   color: var(--o-color-info1);
   @include text1;
 
-  .o-icon {
+  :deep(.o-icon) {
     position: relative;
     margin-right: var(--o-gap-2);
+    path {
+      fill: currentColor;
+    }
     @include h2;
 
     .red-point {

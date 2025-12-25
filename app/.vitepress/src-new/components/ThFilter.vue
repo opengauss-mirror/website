@@ -23,6 +23,9 @@ watch(
 );
 
 const change = (val) => {
+  if (val === props.modelValue) {
+    val = ''
+  }
   emits('update:modelValue', val);
   emits('change', val);
 };
@@ -30,20 +33,13 @@ const change = (val) => {
 
 <template>
   <div class="th-filter-container">
-    <div class="th-filter-content" :class="checked && 'has-checked'" v-if="options.length === 0">
-      <div class="slot">
-        <slot></slot>
-      </div>
+    <div class="slot">
+      <slot></slot>
     </div>
-    <ODropdown v-else optionWrapClass="th-filter-dropdown" v-model="checked" placeholder="bottom">
-      <div class="th-filter-content" :class="checked && 'has-checked'">
-        <div class="slot">
-          <slot></slot>
-        </div>
-        <OIcon class="filter-icon">
-          <IconFilter></IconFilter>
-        </OIcon>
-      </div>
+    <ODropdown v-if="options.length > 0" optionWrapClass="th-filter-dropdown" v-model="checked" placeholder="bottom">
+      <OIcon class="filter-icon" :class="checked && 'has-checked'">
+        <IconFilter></IconFilter>
+      </OIcon>
       <template #dropdown>
         <OScroller disabled-x style="max-height: 300px" show-type="always">
           <ODropdownItem
@@ -61,25 +57,22 @@ const change = (val) => {
 
 <style scoped lang="scss">
 .th-filter-container {
-  .th-filter-content {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  .slot {
+    font-weight: 500;
+    color: var(--o-color-info1);
+    font-size: 14px;
+    line-height: 22px;
+    word-break: keep-all;
+  }
+  .filter-icon {
+    margin-left: 8px;
+    font-size: 16px;
     cursor: pointer;
-    .slot {
-      font-weight: 500;
-      color: var(--o-color-info1);
-      font-size: 14px;
-      line-height: 22px;
-    }
-    .filter-icon {
-      margin-left: 8px;
-      font-size: 16px;
-    }
     &.has-checked {
-      .filter-icon {
-        color: var(--o-color-primary1);
-      }
+      color: var(--o-color-primary1);
       :deep(.o-icon) {
         path {
           fill: currentColor;
@@ -99,6 +92,10 @@ const change = (val) => {
     padding-left: 16px;
     padding-right: 16px;
     border-radius: var(--o-radius_control-xs);
+    &.is-active {
+      background-color: var(--dropdown-item-bg-color-hover);
+      color: var(--dropdown-item-color-hover);
+    }
   }
 }
 </style>

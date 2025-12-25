@@ -30,6 +30,8 @@ export interface NotificationItemT {
 export interface NotificationCountT {
   count: number; // 消息数量
   source: string; // 消息类型
+  type: string; // 消息类型
+  message_type: string; // 待办还是提交
 }
 
 // 同步个人信息

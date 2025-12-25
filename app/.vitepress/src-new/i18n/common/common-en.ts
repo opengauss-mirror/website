@@ -37,6 +37,7 @@ export default {
   LANG: `English`,
   LANG_LIST: [`中文`, `English`],
   USER_CENTER: `User Center`,
+  NOTIFICATIONS: 'Notifications',
   LOGOUT: `Logout`,
   GITTE: `Source code`,
   CODE: `CODE`,

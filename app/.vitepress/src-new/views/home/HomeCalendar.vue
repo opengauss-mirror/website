@@ -40,6 +40,8 @@ import { doLogin, getUserAuth } from '@/shared/login';
 import type { MeetingSigT, MeetingPostT, MeetingItemT } from '@/shared/@types/type-meeting';
 import { useI18n } from '~@/i18n';
 import { useLocale } from '~@/composables/useLocale';
+import { useUserInfoStore } from '@/stores/user';
+import { storeToRefs } from 'pinia';
 
 const TODAY = new Date();
 const TODAY_FORMATTED = dayjs(TODAY).format('YYYY/MM/DD');
@@ -246,7 +248,6 @@ onMounted(async () => {
   }
 
   if (csrfToken) {
-    getPersonalInfo();
     getSigData();
   }
 
@@ -300,29 +301,29 @@ const createMeetingDlg = () => {
     doLogin();
   }
 };
+const userInfoStore = useUserInfoStore();
+const { identities, username } = storeToRefs(userInfoStore);
 
+watch(
+  [() => identities.value, () => username.value],
+  () => {
+    getPersonalInfo()
+  },
+  {
+    deep: true,
+  }
+);
 // 获取用户信息
 const getPersonalInfo = async () => {
   if (meetingStore.username !== '') {
     return;
   }
-  try {
-    const res = await getUserAllInfo();
-
-    if (res && res.data) {
-      const { identities, username } = res.data;
-
-      // 先找gitcode，再找gitee
-      let userData = identities.find((e) => e.provider === 'gitcode');
-      if (userData === undefined) {
-        userData = identities.find((e) => e.provider === 'gitee');
-      }
-
-      meetingStore.username = userData.username || username;
-    }
-  } catch (error: any) {
-    console.error(error);
+  // 先找gitcode，再找gitee
+  let userData = identities.value.find((e) => e.provider === 'gitcode');
+  if (userData === undefined) {
+    userData = identities.value.find((e) => e.provider === 'gitee');
   }
+  meetingStore.username = userData?.username || username;
 };
 // 删除修改会议判断是否是本人
 const isSelf = (name: string) => {

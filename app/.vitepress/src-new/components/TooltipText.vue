@@ -56,10 +56,14 @@ const wrapperStyle = computed(() => {
 });
 
 const wrapperRef = ref(null);
+const emits = defineEmits(['click'])
+const click = () => {
+  emits('click');
+}
 </script>
 
 <template>
-  <div v-if="ellipsis" class="tooltip-text-wrapper" :style="wrapperStyle" ref="wrapperRef">
+  <div v-if="ellipsis" class="tooltip-text-wrapper" :style="wrapperStyle" ref="wrapperRef" @click="click">
     <OPopover anchor position="top">
       <div :class="['popup-box2', `fz${size}`]">{{ contentText }}</div>
       <template #target>
@@ -69,7 +73,7 @@ const wrapperRef = ref(null);
       </template>
     </OPopover>
   </div>
-  <div v-else :style="wrapperStyle" ref="contentRef" class="tooltip-text-wrapper">
+  <div v-else :style="wrapperStyle" ref="contentRef" class="tooltip-text-wrapper" @click="click">
     <span :class="type"><slot></slot></span>
   </div>
 </template>

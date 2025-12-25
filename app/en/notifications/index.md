@@ -3,7 +3,7 @@ title: 'Notifications'
 ---
 
 <script setup>
-  import TheNotifications from "~@/views/notifications/TheNotifications.vue"
+  import TheNotificationsPage from "~@/views/notifications/TheNotificationsPage.vue"
 </script>
 
-<TheNotifications />
+<TheNotificationsPage />

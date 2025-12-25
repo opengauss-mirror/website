@@ -95,7 +95,7 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/api-oneid/, ''),
       },
       '/api-message/': {
-        target: 'https://message-center-plus.test.osinfra.cn/openguass/',
+        target: 'https://message-center-plus.test.osinfra.cn/opengauss/',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api-message/, ''),
       },
