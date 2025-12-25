@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { OTab, OTabPane, OTable, OLink, OIcon, useMessage, OIconDelete, OCheckbox } from '@opensig/opendesign';
-import { computed, defineExpose, nextTick, onMounted, ref, watch } from 'vue';
+import { computed, nextTick, onMounted, ref, watch } from 'vue';
 import dayjs from 'dayjs';
 import { useLocale } from '~@/composables/useLocale';
 import { useCountStore } from '~@/stores/notification';
@@ -133,7 +133,6 @@ watch(
     status.value = '';
     time.value = '';
     checkedItems.value = []
-    isIndeterminate.value = false
     selectAll.value = []
     emits('changePage', {
       page: 1,
@@ -245,19 +244,18 @@ const goToSourcePage = (url: string) => {
   window.open(url, '_blank', 'noopener noreferrer');
 };
 // -------------------- 多选 --------------------
-const isIndeterminate = ref(false);
-const selectAll = ref<any[]>([]);
 const checkedItems = ref<any[]>([]);
-// 处理全选check点击
-const handleCheckAllChange = (val: number[]) => {
-  checkedItems.value = val?.length === 1 ? list.value.map((item: any) => item.event_id) : [];
-  isIndeterminate.value = false;
-};
+const isIndeterminate = computed(() => checkedItems.value.length > 0 && checkedItems.value.length < list.value.length);
+const selectAll = computed({
+  set(val: number[]) {
+    checkedItems.value = val?.length === 1 ? list.value.map((item: any) => item.event_id) : [];
+  },
+  get() {
+    if (!list.value.length) return [];
+    return checkedItems.value.length >= list.value.length ? [1] : [];
+  }
+});
 
-const clickCheckBox = () => {
-  isIndeterminate.value = checkedItems.value.length > 0 && checkedItems.value.length < list.value.length;
-  selectAll.value = checkedItems.value.length === list.value.length;
-};
 const deleteLoading = ref(false);
 const deleteModalVisible = ref(false);
 const deleteItems = () => {
@@ -297,7 +295,6 @@ const updateSelectedReadStatus = (ids: string[]) => {
         content: MARK_READ_MULTIPLE_SUCCESS_MESSAGE,
       });
       selectAll.value = [];
-      handleCheckAllChange(selectAll.value);
 
       countStore.updateNoticeTotal();
     })
@@ -357,17 +354,17 @@ const updateSelectedReadStatus = (ids: string[]) => {
       <template #header="{ columns }">
         <tr>
           <th v-for="item in columns" :key="item.key">
-            <div v-if="item.key === 'source_group'" class="td_source_group">
-              <OCheckbox v-model="selectAll" :value="1" :indeterminate="isIndeterminate" @change="handleCheckAllChange">
+            <div v-if="item.key === 'source_group'" class="o-tab-head td_source_group">
+              <OCheckbox v-model="selectAll" :value="1" :indeterminate="isIndeterminate">
               </OCheckbox>
               <ThFilter v-model="selectedRepo" :options="repoList" @change="changeFilter">{{ item.label }}</ThFilter>
             </div>
-            <div v-if="item.key === 'summary'" class="td_summary">{{ item.label }}</div>
-            <div v-if="item.key === 'user'" class="td_user">{{ item.label }}</div>
-            <div v-if="item.key === 'state'" class="td_state">
+            <div v-if="item.key === 'summary'" class="o-tab-head td_summary">{{ item.label }}</div>
+            <div v-if="item.key === 'user'" class="o-tab-head td_user">{{ item.label }}</div>
+            <div v-if="item.key === 'state'" class="o-tab-head td_state">
               <ThFilter v-model="status" :options="statusOptions" @change="changeFilter">{{ item.label }}</ThFilter>
             </div>
-            <div v-if="item.key === 'time'" class="td_time">
+            <div v-if="item.key === 'time'" class="o-tab-head td_time">
               <ThFilter v-model="time" :options="timeOptions" @change="changeFilter">{{ item.label }}</ThFilter>
             </div>
           </th>
@@ -375,7 +372,7 @@ const updateSelectedReadStatus = (ids: string[]) => {
       </template>
       <template #td_source_group="{ row }">
         <div class="td_source_group">
-          <OCheckbox v-model="checkedItems" :value="row.event_id" @click="clickCheckBox"></OCheckbox>
+          <OCheckbox v-model="checkedItems" :value="row.event_id"></OCheckbox>
           <TooltipText :width="168">
             {{ row.source_group }}
           </TooltipText>
@@ -420,23 +417,41 @@ const updateSelectedReadStatus = (ids: string[]) => {
 </template>
 
 <style scoped lang="scss">
+.delete-link {
+  color: var(--o-color-info1);
+  .o-icon {
+    font-size: 24px;
+  }
+}
+:deep(.o-table-wrap) {
+  display: flex;
+  overflow: auto;
+  flex-direction: column;
+  .o-table-tip-wrap {
+    flex-grow: 1;
+  }
+}
 .todo-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   .todo-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .action {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-  
-      .action {
-        display: flex;
-        align-items: center;
-        gap: 24px;
-  
-        .o-divider {
-          margin: 0;
-        }
+      gap: 24px;
+
+      .o-divider {
+        margin: 0;
       }
     }
+  }
   :deep(.nav-tabs) {
+    --tab-icon-color: var(--o-color-info1);
     --tab-nav-text-size: var(--o-font_size-text1);
     --tab-nav-color-active: var(--o-color-primary1);
     --tab-solid-nav-gap: 0;
@@ -453,6 +468,14 @@ const updateSelectedReadStatus = (ids: string[]) => {
     }
   }
   :deep(.o-table) {
+    flex: 1 0 auto;
+    --table-text-size: 14px;
+    display: flex;
+    align-items: stretch;
+    .o-tab-head {
+      font-size: 14px;
+      font-weight: 500;
+    }
     .summary {
       display: flex;
       align-items: center;

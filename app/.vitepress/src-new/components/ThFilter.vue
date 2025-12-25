@@ -56,6 +56,13 @@ const change = (val) => {
 </template>
 
 <style scoped lang="scss">
+.o-dropdown {
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+  width: 16px;
+  height: 22px;
+}
 .th-filter-container {
   display: flex;
   flex-wrap: nowrap;
@@ -68,7 +75,6 @@ const change = (val) => {
     word-break: keep-all;
   }
   .filter-icon {
-    margin-left: 8px;
     font-size: 16px;
     cursor: pointer;
     &.has-checked {

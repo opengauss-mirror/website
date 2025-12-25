@@ -34,6 +34,9 @@ export const useCountStore = defineStore('notification-count',() => {
       })
       const res = await getPersonalCount()
       meeting.value = res.count?.meeting_count || 0;
+      issue.value = 0;
+      cve.value = 0;
+      pr.value = 0;
       res?.count?.specific_count?.forEach((item: NotificationCountT) => {
         if (item.message_type === TODO_MESSAGE) {
           if (item.type === NOTIFICATION_SOURCE_MAP.ISSUE) {
@@ -54,7 +57,7 @@ export const useCountStore = defineStore('notification-count',() => {
         system.value = 0;
       }
     } finally {
-      meeting.value = 0;
+      // meeting.value = 0;
       system.value = 0;
     }
   }
