@@ -13,7 +13,7 @@ const props = defineProps({
     required: true,
   },
   loading: {
-    type: Number,
+    type: Boolean,
     required: false,
   }
 });
