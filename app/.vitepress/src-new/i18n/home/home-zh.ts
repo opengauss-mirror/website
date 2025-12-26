@@ -141,6 +141,9 @@ export default {
     meetingId: '会议ID',
     meetingPlatform: '会议平台',
     meetingLink: '会议链接',
+    startDate: '起始日期',
+    endDate: '结束日期',
+    address: '活动地点',
   },
   HOME_ROOMS: {
     ROOM_NAME: [
@@ -154,7 +157,7 @@ export default {
   },
   partners: {
     title: '社区伙伴',
-    orderDesc: '注: 排名不分先后'
+    orderDesc: '注: 排名不分先后',
   },
   MORE: '更多',
   EXPAND: '展开全部',
