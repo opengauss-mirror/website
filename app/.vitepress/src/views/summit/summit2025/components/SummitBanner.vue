@@ -9,8 +9,11 @@ defineProps<{
   };
 }>();
 
-const goRegister = () => {
-  window.open('https://e-campaign.huawei.com/t/fe2aIr', '_blank', 'noopener');
+const reviewLive = () => {
+  (document.getElementById('live') as HTMLElement).scrollIntoView({
+    behavior: 'smooth',
+    block: 'start',
+  });
 };
 </script>
 <template>
@@ -20,7 +23,7 @@ const goRegister = () => {
     <div class="inner" data-o-theme="dark">
       <div>
         <img v-if="bannerData.textImg" class="cover" :src="bannerData.textImg" alt="" />
-        <OButton size="large" round="pill" color="primary" variant="solid" @click="goRegister">立即报名</OButton>
+        <OButton size="large" round="pill" color="primary" variant="solid" @click="reviewLive">精彩回顾</OButton>
       </div>
     </div>
   </div>

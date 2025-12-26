@@ -33,6 +33,7 @@ import MeetingForm from './components/MeetingForm.vue';
 import AppSection from '~@/components/AppSection.vue';
 import { useData } from 'vitepress';
 import eventsAllData from '@/data/events';
+import summitData from '~@/data/summit';
 import dayjs from 'dayjs';
 
 import { getMeetingDateListApi, getMeetingListApi, getGroupInfosApi, deleteMeetingApi } from '@/api/api-meeting';
@@ -70,6 +71,12 @@ const eventsData = computed(() => {
     }, new Map<string, EventType[]>());
 });
 
+const getSummitHighlight = (date: string, data: any[]) => {
+  return data.find((item) => {
+    return item.dates?.includes(date);
+  });
+};
+
 // 当前选择日期的会议事件
 const currentCalendarData = shallowRef<Record<string, any>[]>([]);
 const selectedDate = ref(TODAY);
@@ -85,12 +92,8 @@ const updateCurrentDayMeetings = async (date: string) => {
   ) {
     await getRecentMeetingDates();
   }
-  if (eventsData.value.has(selectedDateStr.value)) {
-    currentCalendarData.value = [];
-    currentCalendarData.value.push(...eventsData.value.get(selectedDateStr.value)!);
-  }
 
-  if (recentMeetingDates.value.includes(date)) {
+  if (recentMeetingDates.value.includes(date) || eventsData.value.has(date) || getSummitHighlight(date, summitData)) {
     queryMeetingDates(date, '');
   } else {
     currentCalendarData.value = [];
@@ -135,10 +138,22 @@ const queryMeetingDates = async (date: string, group_name: string) => {
     currentCalendarData.value = res.map((item) => ({ ...item, type: 'meeting', d: item.mid }));
   }
 
+  if (eventsData.value.has(selectedDateStr.value)) {
+    currentCalendarData.value.push(...eventsData.value.get(selectedDateStr.value)!);
+  }
+
+  if (getSummitHighlight(selectedDateStr.value, summitData)) {
+    currentCalendarData.value.push(getSummitHighlight(selectedDateStr.value, summitData));
+  }
+
   activeName.value = currentCalendarData.value.length === 1 ? [currentCalendarData.value[0].id] : [];
 };
 
 watch(selectedDateStr, updateCurrentDayMeetings);
+
+const resolveDate = (date: string) => {
+  return date.replaceAll('-', '/');
+};
 
 const activeName = ref<number[]>([]);
 const meetingI18n = {
@@ -180,6 +195,9 @@ const meetingFields = computed(() => {
     { label: t('home.HOME_CALENDAR.meetingTime'), key: 'time' },
     { label: t('home.HOME_CALENDAR.meetingPlatform'), key: 'platform' },
     { label: t('home.HOME_CALENDAR.meetingId'), key: 'mid' },
+    { label: t('home.HOME_CALENDAR.startDate'), key: 'start_date' },
+    { label: t('home.HOME_CALENDAR.endDate'), key: 'end_date' },
+    { label: t('home.HOME_CALENDAR.address'), key: 'address' },
     { label: t('home.HOME_CALENDAR.meetingLink'), key: 'join_url', isLink: true },
     { label: t('home.HOME_CALENDAR.ETHERPAD'), key: 'etherpad', isLink: true },
   ].map((item) => {
@@ -265,13 +283,13 @@ onMounted(async () => {
     getSigData();
   }
 
-  if (eventsData.value.has(selectedDateStr.value)) {
-    currentCalendarData.value.push(...eventsData.value.get(selectedDateStr.value)!);
-  }
-
   // 获取近期有会议的日期
   await getRecentMeetingDates();
-  if (recentMeetingDates.value.includes(selectedDateStr.value)) {
+  if (
+    recentMeetingDates.value.includes(selectedDateStr.value) ||
+    eventsData.value.has(selectedDateStr.value) ||
+    getSummitHighlight(selectedDateStr.value, summitData)
+  ) {
     queryMeetingDates(selectedDateStr.value, '');
   } else {
     selectedDate.value = dayjs(recentMeetingDates.value.length > 0 ? recentMeetingDates.value[0] : TODAY).format('YYYY-MM-DD');
@@ -322,7 +340,7 @@ const { identities, username } = storeToRefs(userInfoStore);
 watch(
   [() => identities.value, () => username.value],
   () => {
-    getPersonalInfo()
+    getPersonalInfo();
   },
   {
     deep: true,
@@ -446,6 +464,10 @@ const meetingCancelConfirm = async () => {
                 <OIcon class="calendar-icon" type="event" v-if="(tabType === 'all' || tabType === 'activity') && eventsData.has(data.day)">
                   <IconEvent></IconEvent>
                 </OIcon>
+
+                <OIcon class="calendar-icon" type="summit" v-if="(tabType === 'all' || tabType === 'summit') && getSummitHighlight(data.day, summitData)">
+                  <IconSummit></IconSummit>
+                </OIcon>
               </div>
             </div>
           </div>
@@ -479,10 +501,15 @@ const meetingCancelConfirm = async () => {
                     <IconEvent v-else-if="calendarData.type === 'event'"></IconEvent>
                     <IconMeet v-else></IconMeet>
                   </OIcon>
-                  <div class="text">{{ calendarData.topic || calendarData.title }}</div>
+                  <div class="text">
+                    <span v-if="calendarData.type === 'summit'">{{ calendarData.name }}</span>
+                    <span v-else-if="calendarData.type === 'event'">{{ calendarData.title }}</span>
+                    <span v-else>{{ calendarData.topic }}</span>
+                  </div>
                 </div>
                 <div class="meet-info">
                   <span v-if="calendarData.start">{{ calendarData.start }} - {{ calendarData.end }}</span>
+                  <span v-else-if="calendarData.start_date">{{ resolveDate(calendarData.start_date) }}-{{ resolveDate(calendarData.end_date || '') }}</span>
                   <span v-else>{{ calendarData.date }}</span>
                   <ODivider direction="v" />
                   <span v-if="calendarData.location">{{ calendarData.location }}</span>

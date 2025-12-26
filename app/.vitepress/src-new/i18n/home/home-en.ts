@@ -133,6 +133,9 @@ export default {
     meetingId: 'Meeting ID',
     meetingPlatform: 'Platform',
     meetingLink: 'Join Link',
+    startDate: '起始日期',
+    endDate: '结束日期',
+    address: '活动地点',
   },
   HOME_ROOMS: {
     ROOM_NAME: [
@@ -146,7 +149,7 @@ export default {
   },
   partners: {
     title: 'Community Partners',
-    orderDesc: 'Listed alphabetically'
+    orderDesc: 'Listed alphabetically',
   },
   MORE: 'Read More',
   EXPAND: 'Expand All',
