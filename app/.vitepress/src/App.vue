@@ -24,6 +24,7 @@ import AppTour from '~@/components/AppTour.vue';
 import categories from '@/shared/category';
 
 import seoConfig from '@/data/common/seo';
+import AppYear from '~@/components/AppYear.vue';
 
 const { frontmatter, lang } = useData();
 
@@ -63,6 +64,7 @@ const comp = computed(() => {
   <CookieNotice />
   <AppFooter />
   <ClientOnly>
+    <AppYear />
     <AppTour />
   </ClientOnly>
 </template>
