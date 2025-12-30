@@ -51,6 +51,7 @@ const CECN_LINK = 'http://www.ce.cn'; // 中国经济网
 const EULER_EN_LINK = 'https://www.openeuler.org';
 const VHALLYUN_URL = 'https://hw.vhallyun.com'; // 直播
 const FORUM_LINK = 'https://discuss.opengauss.org'; // 论坛
+const YEAR_2025 = 'https://summary.opengauss.org'; // 2025年报入口
 // opengauss网站
 export const OPENUBMC_URL = 'https://www.openubmc.cn';
 // openfuyao网站
@@ -59,6 +60,7 @@ export const OPENFUYAO_URL = 'https://www.openfuyao.cn';
 export const QUESTIONNAIRE_SURVEY = 'https://snic.gtsdata.huawei.com/datalinkpro/web/#/openFormFill?hashcode=fpTH9ritP6IMPdjfPhFfQ6yrVqGhWnSoTPVqdcvLj7A=';
 
 export {
+  YEAR_2025,
   OBS_Summit_PPT,
   GAUSS_EMAIL,
   GAUSS_CERTIFICATE_EMAIL,
