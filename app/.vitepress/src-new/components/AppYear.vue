@@ -8,13 +8,15 @@ import gaussYearMbEN from '~@/assets/category/year/gauss-MB-en.png';
 import { YEAR_2025 } from '@/data/url-config';
 
 import useWindowResize from '@/components/hooks/useWindowResize';
-import { useData } from 'vitepress';
+import { inBrowser, useData } from 'vitepress';
 
 const screenWidth = useWindowResize();
+const CLOSED_FLAG = 'summary_close';
 
-const isShow = ref(true);
+const isShow = ref(inBrowser ? sessionStorage.getItem(CLOSED_FLAG) !== '1' : true);
 function closeYear() {
   isShow.value = false;
+  sessionStorage.setItem(CLOSED_FLAG, '1');
 }
 
 const { lang } = useData();
@@ -24,7 +26,7 @@ const { lang } = useData();
     <div v-show="isShow" class="gauss-year">
       <div class="close-year" @click="closeYear"></div>
       <a class="year-link" :href="`${YEAR_2025}/${lang ?? 'zh'}`" rel="noopener noreferrer" target="_blank"></a>
-      <img :src="screenWidth > 1200 ? (lang === 'en' ? gaussYearEN : gaussYear) : (lang === 'en' ? gaussYearMbEN : gaussYearMb)" alt="" />
+      <img :src="screenWidth > 840 ? (lang === 'en' ? gaussYearEN : gaussYear) : (lang === 'en' ? gaussYearMbEN : gaussYearMb)" alt="" />
     </div>
   </Teleport>
 </template>
@@ -34,11 +36,14 @@ const { lang } = useData();
   left: 64px;
   bottom: 160px;
   z-index: 12;
-  @media (max-width: 1439px) {
-    left: 24px;
+  @include respond-to('laptop') {
+    bottom: 120px;
   }
   @media (max-width: 1200px) {
     left: 16px;
+  }
+  @include respond-to('phone') {
+    left: 12px;
   }
 
   .year-link {
@@ -65,9 +70,12 @@ const { lang } = useData();
     }
   }
   img {
-    width: 180px;
-    @media screen and (max-width: 1200px) {
-      width: 120px;
+    width: 125px;
+    @include respond-to('pad-laptop') {
+      width: 94px;
+    }
+    @include respond-to('<=pad_v') {
+      width: 83px;
     }
   }
 }
