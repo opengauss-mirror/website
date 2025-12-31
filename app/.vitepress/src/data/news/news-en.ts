@@ -1,74 +1,66 @@
 export default [
   {
-    date: '2021-09-30',
-    summary: 'openGauss Officially Releases Version 2.1.0',
-    archives: '2021-09',
-    author: ['openGauss'],
-    banner: '/category/news/en/2021-09-30/release-mo.png',
-    title: 'openGauss Officially Releases Version 2.1.0',
-    tags: ['theme'],
-    path: 'en/news/2021-09-30/20210930',
+    "title": "openGauss Officially Releases Version 2.1.0",
+    "date": "2021-09-30",
+    "tags": [
+      "theme"
+    ],
+    "banner": "/category/news/en/2021-09-30/release-mo.png",
+    "category": "news",
+    "author": [
+      "openGauss"
+    ],
+    "summary": "openGauss Officially Releases Version 2.1.0",
+    "archives": "2021-09",
+    "img": "",
+    "path": "en/news/2021-09-30/20210930"
   },
   {
-    date: '2021-03-31',
-    summary: 'On March 31, openGauss 2.0.0 was officially launched!',
-    archives: '2021-03',
-    author: ['openGauss'],
-    banner: '/category/news/en/2021-04-01/release-mo.jpg',
-    title: 'openGauss Officially Release Version 2.0.0',
-    tags: ['theme'],
-    path: 'en/news/2021-04-01/20210401',
+    "title": "Migrate your Database to openGauss through CloudsBrain",
+    "date": "2021-01-07",
+    "tags": [
+      "theme"
+    ],
+    "banner": "/category/news/en/2021-01-07/detail.png",
+    "category": "news",
+    "author": [
+      "openGauss"
+    ],
+    "summary": "Click2Cloud, as a collaborator and contributor of openGauss, its product CloudsBrain integrated openGauss last month, which can safely and quickly migrate data from other platforms to openGauss.",
+    "archives": "2021-01",
+    "img": "",
+    "path": "en/news/2021-01-07/cloudsbrain"
   },
   {
-    date: '2021-01-07',
-    summary:
-      'Click2Cloud, as a collaborator and contributor of openGauss, its product CloudsBrain integrated openGauss last month, which can safely and quickly migrate data from other platforms to openGauss.',
-    archives: '2021-01',
-    author: ['openGauss'],
-    banner: '/category/news/en/2021-01-07/detail.png',
-    title: 'Migrate your Database to openGauss through CloudsBrain',
-    tags: ['theme'],
-    path: 'en/news/2021-01-07/cloudsbrain',
+    "title": "openGauss Officially Releases Version 1.1.0",
+    "date": "2020-12-31",
+    "tags": [
+      "theme"
+    ],
+    "banner": "/category/news/en/2020-12-31/banner.png",
+    "category": "news",
+    "author": [
+      "openGauss"
+    ],
+    "summary": "openGauss Officially Releases Version 1.1.0",
+    "archives": "2020-12",
+    "img": "",
+    "path": "en/news/2020-12-31/20201231"
   },
   {
-    date: '2020-12-31',
-    summary: 'openGauss Officially Releases Version 1.1.0',
-    archives: '2020-12',
-    author: ['openGauss'],
-    banner: '/category/news/en/2020-12-31/banner.png',
-    title: 'openGauss Officially Releases Version 1.1.0',
-    tags: ['theme'],
-    path: 'en/news/2020-12-31/20201231',
-  },
-  {
-    date: '2020-10-12',
-    summary: 'openGauss Officially Releases Version 1.0.1',
-    archives: '2020-10',
-    author: ['openGauss'],
-    banner: '/category/news/en/2020-10-12/banner.png',
-    title: 'openGauss Officially Releases Version 1.0.1',
-    tags: ['theme'],
-    path: 'en/news/2020-10-12/20201012',
-  },
-  {
-    date: '2020-07-01',
-    summary: 'openGauss source code is officially open, welcome to visit.',
-    archives: '2020-07',
-    author: ['openGauss'],
-    banner: '/category/news/en/2020-07-01/banner.png',
-    title: 'openGauss Community is officially launched',
-    tags: ['theme'],
-    path: 'en/news/2020-07-01/20200701',
-  },
-  {
-    date: '2020-06-15',
-    summary:
-      'After several months of preparation, the official website of the openGauss community is online and welcome to visit.',
-    archives: '2020-06',
-    author: ['openGauss'],
-    banner: '/category/news/en/2020-06-15/banner.png',
-    title: 'openGauss official website is online',
-    tags: ['theme'],
-    path: 'en/news/2020-06-15/20200615',
-  },
+    "title": "openGauss Community is officially launched",
+    "date": "2020-07-01",
+    "tags": [
+      "theme"
+    ],
+    "banner": "/category/news/en/2020-07-01/banner.png",
+    "category": "news",
+    "author": [
+      "openGauss"
+    ],
+    "summary": "openGauss source code is officially open, welcome to visit.",
+    "archives": "2020-07",
+    "img": "",
+    "path": "en/news/2020-07-01/20200701"
+  }
 ];
