@@ -1,5 +1,21 @@
 export default [
   {
+    "title": "openGauss 5.0.0 LTS版本即将停止维护公告",
+    "date": "2025-12-31",
+    "tags": [
+      "theme"
+    ],
+    "category": "news",
+    "author": [
+      "openGauss"
+    ],
+    "summary": "openGauss 5.0.0 LTS版本即将停止维护公告",
+    "archives": "2025-12",
+    "img": "",
+    "path": "zh/news/2025-12-31/index",
+    "banner": "/category/news/2025-12-31/banner.png"
+  },
+  {
     "title": "openGauss 7.0.0-RC2 正式发布",
     "date": "2025-09-30",
     "tags": [
