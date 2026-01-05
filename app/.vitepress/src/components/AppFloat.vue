@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, Ref, CSSProperties, watch, onMounted } from 'vue';
+import { computed, ref, Ref, CSSProperties, watch, onMounted, nextTick } from 'vue';
 import { useRouter, useData, useRoute } from 'vitepress';
 import { postFeedback } from '@/api/api-feedback';
 import { ElMessage } from 'element-plus';
@@ -324,10 +324,20 @@ const setScore = (val: number) => {
 
 const askRef = ref();
 const serverRef = ref();
+
+const showFloat = ref(false);
+watch(
+  () => guideStore.isOpen,
+  async (val) => {
+    await nextTick();
+    showFloat.value = !val;
+  },
+  { immediate: true }
+);
 </script>
 
 <template>
-  <div v-if="lang === 'zh' && !guideStore.isOpen" class="float">
+  <div v-if="lang === 'zh' && showFloat" class="float">
     <ClientOnly>
       <div v-if="!isFloatTipShow" :class="isSafetyFloatShow ? 'safety-tips' : ''">
         <a :href="isSafetyFloatShow ? VULBOX_LINK : ''" :target="isSafetyFloatShow ? '_blank' : '_self'" rel="noopener noreferrer">
@@ -624,6 +634,7 @@ const serverRef = ref();
     }
 
     .slider {
+      min-width: var(--popup-min-width);
       .slider-title {
         font-size: var(--e-font-size-text);
         line-height: 20px;
