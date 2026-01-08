@@ -1,5 +1,27 @@
 export default [
   {
+    name: '“风铃”横向威胁感知系统',
+    version: '1.0',
+    type: '通用',
+    company: '杭州漠坦尼科技有限公司',
+    database: 'openGauss 7.0.0 RC2',
+    os: 'Debian 12',
+    server: 'Kunpeng 920 (Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%9D%AD%E5%B7%9E%E6%BC%A0%E5%9D%A6%E5%B0%BC/%E2%80%9C%E9%A3%8E%E9%93%83%E2%80%9D%E6%A8%AA%E5%90%91%E5%A8%81%E8%83%81%E6%84%9F%E7%9F%A5%E7%B3%BB%E7%BB%9F.pdf',
+  },
+  {
+    name: 'SMTX OS系统',
+    version: '6.0',
+    type: '通用',
+    company: '北京志凌海纳科技股份有限公司',
+    database: 'openGauss 6.0.2',
+    os: 'openEuler 20.03 LTS SP3',
+    server: 'Kunpeng 920 V200(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%8C%97%E4%BA%AC%E5%BF%97%E5%87%8C%E6%B5%B7%E7%BA%B3/SMTX%20OS%E7%B3%BB%E7%BB%9F%20V6.0.pdf',
+  },
+  {
     name: '智能数据分析平台',
     version: '2.0',
     type: '医疗',

@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { ref, onMounted, watch, computed, shallowRef, Directive } from 'vue';
+import { ref, onMounted, watch, computed, shallowRef } from 'vue';
 
 import { useCommon, useMeeting } from '@/stores/common';
-import { getUserAllInfo } from '@/api/api-user';
 
 import {
   OIcon,
@@ -79,7 +78,7 @@ const getSummitHighlight = (date: string, data: any[]) => {
 
 // 当前选择日期的会议事件
 const currentCalendarData = shallowRef<Record<string, any>[]>([]);
-const selectedDate = ref(TODAY);
+const selectedDate = ref(new Date());
 // 当前选择日期字符串
 const selectedDateStr = computed(() => dayjs(selectedDate.value).format('YYYY-MM-DD'));
 
@@ -94,7 +93,7 @@ const updateCurrentDayMeetings = async (date: string) => {
   }
 
   if (recentMeetingDates.value.includes(date) || eventsData.value.has(date) || getSummitHighlight(date, summitData)) {
-    queryMeetingDates(date, '');
+    queryMeetingInfos(date);
   } else {
     currentCalendarData.value = [];
   }
@@ -129,7 +128,7 @@ const latestSchedule = computed(() => {
 });
 
 // 查询指定日期的会议事件
-const queryMeetingDates = async (date: string, group_name: string) => {
+const queryMeetingInfos = async (date: string, group_name = '') => {
   const res = await getMeetingListApi(date, group_name);
 
   currentCalendarData.value = [];
@@ -290,9 +289,7 @@ onMounted(async () => {
     eventsData.value.has(selectedDateStr.value) ||
     getSummitHighlight(selectedDateStr.value, summitData)
   ) {
-    queryMeetingDates(selectedDateStr.value, '');
-  } else {
-    selectedDate.value = dayjs(recentMeetingDates.value.length > 0 ? recentMeetingDates.value[0] : TODAY).format('YYYY-MM-DD');
+    queryMeetingInfos(selectedDateStr.value);
   }
 });
 
@@ -370,6 +367,21 @@ const meetingModify = (row: MeetingItemT) => {
 
   formDlgTitle.value = i18nMeeting.value.MODIFY;
 };
+
+const onMeetingBookedOrModified = (date: string) => {
+  if (selectedDateStr.value === date) {
+    queryMeetingInfos(selectedDateStr.value);
+    return;
+  }
+  if (!recentMeetingDates.value.length || (!recentMeetingDates.value.includes(date) && new Date().getMonth() === new Date(date).getMonth())) {
+    getRecentMeetingDates();
+  }
+};
+
+const onMeetingDeleted = () => {
+  getRecentMeetingDates();
+  queryMeetingInfos(selectedDateStr.value);
+}
 // --------------------会议取消弹窗-----------------------------
 const isCancelDlgVisible = ref(false);
 const meetingCancel = (row: MeetingItemT) => {
@@ -404,15 +416,15 @@ const cancelDlgActions: Array<DialogActionT> = [
 // 确定取消会议
 const meetingCancelConfirm = async () => {
   try {
-    const res = await deleteMeetingApi(currentMeetingData.value?.id);
+    await deleteMeetingApi(currentMeetingData.value!.id);
 
     isCancelDlgVisible.value = false;
 
     message.success({
       content: '删除成功！',
     });
+    onMeetingDeleted();
 
-    // confirmForm();
   } catch (err: any) {
     let failed = '删除失败！';
     if (err && err.response && err.response.data) {
@@ -531,11 +543,11 @@ const meetingCancelConfirm = async () => {
                 <template v-for="field in meetingFields" :key="field.key">
                   <div class="info-item" v-if="calendarData[field.key]">
                     <div class="item-title">{{ field.label }}</div>
-                    <OLink :hover-underline="true" color="primary" v-if="field.isLink" :href="calendarData[field.key]" target="_blank">
+                    <OLink :hover-underline="true" color="primary" v-if="field.isLink" class="item-content" :href="calendarData[field.key]" target="_blank">
                       {{ calendarData[field.key] }}
                     </OLink>
-                    <p v-else-if="field.key === 'time' && calendarData.start">{{ calendarData.start }} - {{ calendarData.end }}</p>
-                    <p v-else>
+                    <p v-else-if="field.key === 'time' && calendarData.start" class="item-content">{{ calendarData.start }} - {{ calendarData.end }}</p>
+                    <p v-else class="item-content">
                       {{ field.key === 'platform' ? getMeetingPlatformName(calendarData[field.key]) : calendarData[field.key] }}
                     </p>
                   </div>
@@ -559,7 +571,7 @@ const meetingCancelConfirm = async () => {
     </ODialog>
 
     <!-- 会议预约、编辑 弹窗 -->
-    <MeetingForm v-if="isFormDlgVisible" v-model:visible="isFormDlgVisible" :sig-options="sigGroup" :data="currentMeetingData" :title="formDlgTitle" />
+    <MeetingForm v-if="isFormDlgVisible" v-model:visible="isFormDlgVisible" :sig-options="sigGroup" :data="currentMeetingData" :title="formDlgTitle" @update="onMeetingBookedOrModified" />
   </AppSection>
 </template>
 <style lang="scss" scoped>
@@ -1100,6 +1112,7 @@ const meetingCancelConfirm = async () => {
         position: absolute;
         top: 16px;
         right: 16px;
+        // align-self: end;
         display: flex;
         gap: 8px;
       }
@@ -1108,6 +1121,10 @@ const meetingCancelConfirm = async () => {
         margin-top: 8px;
         .item-title {
           min-width: 110px;
+        }
+        .item-content {
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
       }
       .info-item:first-child {
