@@ -24,7 +24,7 @@ async function pullFromGit() {
     const timeout = setTimeout(() => {
       cp.kill();
       reject('timeout');
-    }, 30000);
+    }, 30 * 60 * 1000); // 30 minutes
     cp.stderr.on('data', (data) => {
       console.log(data.toString());
     });
@@ -47,7 +47,7 @@ export default async function main() {
     await copyBlogFiles();
   } catch (error) {
     console.error('拉取blogs失败：', error)
-    return;
+    process.exit(1);
   }
   if (fs.existsSync(PULL_TARGET_PATH)) {
     fs.rmSync(PULL_TARGET_PATH, { recursive: true, force: true });

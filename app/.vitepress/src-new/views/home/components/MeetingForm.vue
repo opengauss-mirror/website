@@ -235,7 +235,7 @@ const reset = () => {
   formRef.value?.resetFields();
 };
 
-const emits = defineEmits(['update:visible']);
+const emits = defineEmits(['update:visible', 'update']);
 
 //新增会议请求
 const requestMeetingReserve = async (data: MeetingPostT) => {
@@ -246,6 +246,7 @@ const requestMeetingReserve = async (data: MeetingPostT) => {
         content: '会议预定成功！',
       });
       dialogVisible.value = false;
+      emits('update', data.date);
     } else {
       message.warning({
         content: '会议预定失败！',
@@ -345,6 +346,7 @@ const updateMeeting = async () => {
         content: i18nMeeting.value.MODIFY_SUCCESS,
       });
       dialogVisible.value = false;
+      emits('update', date);
     }
   } catch (err: any) {
     let failed = i18nMeeting.value.failed;
