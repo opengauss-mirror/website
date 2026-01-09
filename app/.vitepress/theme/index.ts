@@ -25,8 +25,7 @@ import '@opensig/opendesign/es/index.css';
 import '~@/assets/style/theme/index.scss';
 import { installer } from '@/shared/analytics';
 import { BAIDU_HM } from '@/data/url-config';
-import { getCustomCookie, removeCustomCookie } from '@/shared/utils';
-import { COOKIE_KEY_EN } from '@/stores/common';
+import { removeCustomCookie } from '@/shared/utils';
 import { reportAnalytics } from '@/api/api-analytics';
 
 export default {
@@ -48,10 +47,6 @@ export default {
       appKey: 'openGauss',
       request(data) {
         reportAnalytics(data);
-      },
-      isCookieAgreed() {
-        if (location.pathname.startsWith('/zh')) return true;
-        return getCustomCookie(COOKIE_KEY_EN) === '1';
       },
       onPageView(from, to) {
         if (to.startsWith('/zh/cve') || to.startsWith('/en/cve')) {
