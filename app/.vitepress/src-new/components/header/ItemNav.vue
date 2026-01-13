@@ -80,11 +80,6 @@ const clickNav = (item: string) => {
 
 const linkClick = () => {
   isShow.value = false;
-
-  setTimeout(() => {
-    navActive.value = '';
-    moreSelectId.value = '';
-  }, 150);
 };
 
 // ------------------------ 计算 nav 宽度 ------------------------
