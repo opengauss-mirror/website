@@ -113,7 +113,7 @@ export default {
     {
       pcBanner: bannerOpenGaussV6,
       moBanner: bannerOpenGaussV6Mo,
-      link: DOCS_LINK + '/zh/docs/latest/docs/DataVec/DataVec-Overview.html',
+      link: DOCS_LINK + '/zh/docs/latest/datavec/datavec_overview.html',
       target: '_blank',
       title: 'openGauss 向量引擎',
       titleMb: [],
