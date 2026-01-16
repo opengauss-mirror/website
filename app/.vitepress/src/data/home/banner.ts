@@ -27,6 +27,8 @@ import summit2025 from '@/assets/category/home/banner/banner-summit2025.png';
 import summit2025Mo from '@/assets/category/home/banner/banner-summit2025_mo.png';
 import summit2025Pad from '@/assets/category/home/banner/banner-summit2025_pad.png';
 import summit2025Text from '@/assets/category/home/banner/banner-summit2025_text_pc.png'
+import annual2025 from '@/assets/category/home/banner/annual2025.png';
+import annual2025Mo from '@/assets/category/home/banner/annual2025_mo.png';
 
 import { LEARN_VIDEO_LINK, DOCS_LINK, FORUM_LINK } from '@/data/url-config';
 import { ScreenSizeT } from '~@/composables/useScreen';
@@ -34,6 +36,20 @@ import { ScreenSizeT } from '~@/composables/useScreen';
 // rightInset:banner右侧插图
 export default {
   zh: [
+    {
+      pcBanner: annual2025,
+      moBanner: annual2025Mo,
+      link: '/zh/news/2026-01-16/',
+      target: '_blank',
+      title: 'openGauss 开源社区2025年度报告',
+      titleMb: [],
+      subtitle: '',
+      desc: [''],
+      btn: '前往查看',
+      className: '',
+      rightInset: '',
+      rightLink: '',
+    },
     {
       pcBanner: summit2025,
       moBanner: summit2025Mo,
