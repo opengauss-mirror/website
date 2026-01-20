@@ -38,7 +38,7 @@ export default {
       link: '/zh/news/2026-01-16/',
       target: '_blank',
       title: 'openGauss 开源社区2025年度报告',
-      titleMb: [],
+      titleMb: [''],
       subtitle: '',
       desc: [''],
       btn: '前往查看',
