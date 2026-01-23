@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed, nextTick, ref, watch } from 'vue';
 import type { Component } from 'vue';
-import { useData } from 'vitepress';
+import { useData, useRoute } from 'vitepress';
 
 import zhCn from 'element-plus/es/locale/lang/zh-cn';
 import en from 'element-plus/es/locale/lang/en';
 
 import AppHeader from '~@/components/header/AppHeader.vue';
 import AppFooter from '~@/components/AppFooter.vue';
-import CookieNotice from '@/components/CookieNotice.vue';
+import { OCookieNotice, OPlusConfigProvider } from '@opendesign-plus/components';
 
 import LayoutSecurity from '@/layouts/LayoutSecurity.vue';
 import LayoutBlog from '@/layouts/LayoutBlog.vue';
@@ -25,6 +25,7 @@ import categories from '@/shared/category';
 
 import seoConfig from '@/data/common/seo';
 import AppYear from '~@/components/AppYear.vue';
+import { useCookieStore } from '@/stores/common';
 
 const { frontmatter, lang } = useData();
 
@@ -49,6 +50,17 @@ const isCustomLayout = computed(() => {
 const comp = computed(() => {
   return compMapping[frontmatter.value.category];
 });
+
+const route = useRoute();
+const cookieNoticeRef = ref();
+const cookieStore = useCookieStore();
+watch(
+  () => route.path,
+  async () => {
+    await nextTick();
+    cookieNoticeRef.value?.check();
+  }
+);
 </script>
 
 <template>
@@ -61,7 +73,15 @@ const comp = computed(() => {
       <AppFloat />
     </main>
   </el-config-provider>
-  <CookieNotice />
+  <OPlusConfigProvider :locale="lang">
+    <OCookieNotice
+      ref="cookieNoticeRef"
+      :enable-grid="true"
+      v-model:visible="cookieStore.isNoticeVisible"
+      community="openGauss"
+      :detail-url="`/${lang}/cookies/`"
+    />
+  </OPlusConfigProvider>
   <AppFooter />
   <ClientOnly>
     <AppYear />

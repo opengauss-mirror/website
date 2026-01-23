@@ -14,6 +14,7 @@ import VueDOMPurifyHTML from 'vue-dompurify-html';
 import 'element-plus/theme-chalk/dark/css-vars.css';
 import i18n from '~@/i18n';
 
+import '@opendesign-plus/components/styles';
 // src-new
 
 import '~@/assets/style/theme/default-light.token.css';
@@ -47,6 +48,9 @@ export default {
       appKey: 'openGauss',
       request(data) {
         reportAnalytics(data);
+      },
+      isCookieAgreed() {
+        return location.pathname.startsWith('/zh') ? true : document.cookie.includes('agreed-cookiepolicy-en=1');
       },
       onPageView(from, to) {
         if (to.startsWith('/zh/cve') || to.startsWith('/en/cve')) {
