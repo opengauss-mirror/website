@@ -353,9 +353,6 @@ watch(
           </div>
         </div>
         <div class="nav-box">
-          <a v-if="isPc" :href="QUESTIONNAIRE_SURVEY" target="_blank" rel="noopener noreferrer">
-            <div class="nav-box-question">满意度问卷</div>
-          </a>
           <div class="nav-box1">
             <div v-if="isPc" id="nss" class="nav-item" @mouseenter="onMouseEnter" @mouseleave="useThrottleFn(onMouseLeave, 300)">
               <OIcon ref="nssRef" class="icon-box">
