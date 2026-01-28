@@ -78,7 +78,7 @@ const getSummitHighlight = (date: string, data: any[]) => {
 
 // 当前选择日期的会议事件
 const currentCalendarData = shallowRef<Record<string, any>[]>([]);
-const selectedDate = ref(new Date());
+const selectedDate = ref();
 // 当前选择日期字符串
 const selectedDateStr = computed(() => dayjs(selectedDate.value).format('YYYY-MM-DD'));
 
@@ -271,6 +271,7 @@ const getRecentMeetingDates = async () => {
 };
 
 onMounted(async () => {
+  selectedDate.value = new Date();
   // 设置右侧 日程列表高度
   const tbody = document.querySelector('.calendar-body .el-calendar__body') as HTMLElement;
   if (tbody) {
@@ -446,7 +447,7 @@ const meetingCancelConfirm = async () => {
       </div>
     </div>
     <div class="calendar-body">
-      <el-calendar ref="calendarRef" class="calender" v-model="selectedDate">
+      <el-calendar v-if="selectedDate" ref="calendarRef" class="calender" v-model="selectedDate">
         <template #header="{ date }">
           <div class="left-title">
             <OIcon @click="selectDate('prev-month', date)">
