@@ -21,9 +21,7 @@ watchEffect(() => (locale.value = lang.value));
   <HomeBanner />
   <HomeFeature />
   <HomeExplore />
-  <client-only>
-    <HomeCalendar />
-  </client-only>
+  <HomeCalendar />
   <HomeDynamic />
   <HomeVideo />
   <HomeShowCase />
