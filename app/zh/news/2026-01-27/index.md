@@ -7,7 +7,7 @@ banner: ''
 author: 'openGauss'
 summary: 'openGauss Tools 7.0.0-RC3 版本更改工具发布包名公告'
 ---
-致openGauss社区用户： 
+### 致openGauss社区用户： 
 
 <p style="text-indent: 2em;">为提升openGauss工具生态的标准化程度和用户体验，openGauss社区对Tools工具包的命名规范进行了重要优化。在7.0.0-RC3版本中，社区将正式实施统一的发布包命名规则。</p>
 
@@ -20,7 +20,8 @@ mysql全量迁移 ：chameleon_7.0.0-RC2
 
 pg全量迁移：oG_datasync_full_migration_7.0.0-RC2
 
-增量迁移：replicate-mysql2openGauss_7.0.0-RC2
+增量迁移：replicate-mysql2openGauss_7.0.0-RC2 
+
 
 这种命名不一致的情况给用户在识别、下载和使用工具时带来了不便。为解决这一问题，社区经过深入调研和讨论，制定了全新的标准化命名规范。
 
@@ -32,6 +33,7 @@ pg全量迁移：oG_datasync_full_migration_7.0.0-RC2
 **openGauss-[工具名称]-[工具版本].tar.gz**
 
 备注：工具名称采用小驼峰格式命名
+
 
 **openGauss 7.0.0-RC3版本工具包名称更改如下：**
 
@@ -52,10 +54,11 @@ pg全量迁移：oG_datasync_full_migration_7.0.0-RC2
 
 **新包名方案自openGauss 7.0.0-RC3版本起正式生效，之后的版本都使用新包名，历史的版本仍然沿用旧名称。**
 
+
 openGauss社区将持续优化产品体验，感谢各位用户一直以来的支持与贡献。相信这次包名规范化将为用户带来更清晰、更便捷的工具使用体验。
 
-<div style="text-align: right;">
-openGauss 社区
+<div style="text-align: right;">openGausss社区</div>
+<div style="text-align: right;">2026年1月27日</div>
 
-2026年1月27日
-</div>
+
+
