@@ -90,9 +90,9 @@ export default {
     keywords: 'openGauss, search, resources, documentation',
   },
   'en/privacy': {
-    title: 'openGauss Privacy Policy | Privacy Policy',
-    description: 'Review the privacy policy of openGauss to understand how your data is handled.',
-    keywords: 'openGauss, privacy policy, data handling',
+    title: 'openGauss Privacy Statement | Privacy Statement',
+    description: 'Review the privacy statement of openGauss to understand how your data is handled.',
+    keywords: 'openGauss, privacy statement, data handling',
   },
   'en/tools': {
     title: 'Support Tools for openGauss | Support Tools',

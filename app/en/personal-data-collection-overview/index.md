@@ -56,7 +56,7 @@ Regarding the purpose of collecting personal data, the types of personal data, t
 - **Purpose**: Help developers better understand and connect with the community, enabling faster engagement.
 - **Personal data type**: data you voluntarily submit
 - **Collection method**: user input
-- **Personal data fields**: **photo**, **name**, **email address**, **company name**, **position**, **school**, **profile**, and **GitCode ID**
+- **Personal data fields**: **photo**, **name**, **email address**, **company name**, **position**, **school**, **profile**, and **code hosting platform user ID**
 
 ## 7. Meetup Application
 

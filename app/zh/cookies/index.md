@@ -2,10 +2,6 @@
 title: '关于COOKIES'
 ---
 
-<script setup>
-  import CookieReset from '@/components/CookieReset.vue';
-</script>
-
 <div class='markdown markdown-statement'>
 
 # 关于COOKIES
@@ -14,15 +10,19 @@ title: '关于COOKIES'
 
 ## （一）Cookie
 
-Cookie是一种网络服务器存储在计算机或移动设备上的纯文本文件。Cookie的内容只能由创建它的服务器检索或读取。每个Cookie对您的网络浏览器或移动应用程序都是唯一的。Cookie通常包含标识符、站点名称以及一些号码和字符。
+Cookie 是一种网络服务器存储在计算机或移动设备上的纯文本文件。Cookie 的内容只能由创建它的服务器检索或读取。每个 Cookie 对您的网络浏览器或移动应用程序都是唯一的。Cookie 通常包含标识符、站点名称以及一些号码和字符。
 
-openGauss社区有时会在计算机或移动设备上存储Cookie，我们启用Cookie的目的在于改善用户体验，包括：
+openGauss社区有时会在计算机或移动设备上存储 Cookie，我们启用 Cookie 的目的在于改善用户体验，包括：
 
-1. 严格必要的Cookie：当您使用网站时，Cookie将确保您对该网站的访问尽可能顺利、安全；
-2. 个性化Cookie：用于存储您的偏好和设置。我们借助 Cookie来保存设置，如计算机或移动设备的语言和其他浏览偏好等；
-3. 统计分析：用于收集用户如何访问网页, 以便帮助我们了解本服务是如何运行、使用的；
+1. 登录和验证。当您使用社区账号登录网站时，借助 Cookie，您可以直接从网站的一个页面跳转到另一个页面，而不必在每个页面上重新登录；
 
-openGauss社区不会将Cookie用于本声明所述目的之外的任何用途。您可根据自己的偏好管理或删除Cookie。有关详情，请参见 [AboutCookies.org](https://www.aboutcookies.org/)。您可以清除计算机上保存的所有Cookie，大部分网络浏览器都设有阻止Cookie的功能。但如果您这么做，则需要在每一次访问我们的网站时亲自更改用户设置。如需详细了解如何更改浏览器设置，请访问以下链接：[Internet Explorer](https://support.microsoft.com/zh-cn/help/17442/windows-internet-explorer-delete-manage-cookies)、[Google Chrome](https://support.google.com/chrome/answer/95647)、[Mozilla Firefox](https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer?redirectlocale=en-US&redirectslug=Cookies)、[Safari](https://support.apple.com/kb/PH19214?locale=zh_CN)和[Opera](https://help.opera.com/en/latest/security-and-privacy/)。
+2. 存储您的偏好和设置。网站能够借助 Cookie 来保存设置，如计算机或移动设备的语言、字体大小、购物车和其他浏览偏好等；
+
+3. 统计分析。借助于 Cookie，openGauss社区可以收集您使用我们网站和其他应用程序的信息，如记录用户的单次访问（使用会话 Cookie）或多次访问（使用永久 Cookie）。
+
+openGauss社区不会将 Cookie 用于本声明所述目的之外的任何用途。您可根据自己的偏好管理或删除 Cookie。您可以清除计算机上保存的所有 Cookie，大部分网络浏览器都设有阻止 Cookie 的功能。但如果您这么做，则需要在每一次访问我们的网站时亲自更改用户设置。
+
+如果您清除 Cookie，则需要在每一次访问openGauss社区的网站时亲自更改用户设置。同时也请注意，openGauss社区的某些服务可能必须使用 Cookie，禁用 Cookie 可能会影响您使用这些服务的全部或部分功能。
 
 如果您清除Cookie，则需要在每一次访问openGauss社区的网站时亲自更改用户设置。同时也请注意，openGauss社区的某些服务可能必须使用Cookie，禁用Cookie可能会影响您使用这些服务的全部或部分功能。
 
