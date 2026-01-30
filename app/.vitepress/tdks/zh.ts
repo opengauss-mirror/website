@@ -203,9 +203,9 @@ export default {
     keywords: 'openGauss, 迁移案例, 成功, 最佳实践',
   },
   'zh/privacy': {
-    title: 'openGauss隐私政策 | 隐私政策',
-    description: '查看openGauss的隐私政策，以了解您的数据如何处理。',
-    keywords: 'openGauss, 隐私政策, 数据处理',
+    title: 'openGauss隐私声明 | 隐私声明',
+    description: '查看openGauss的隐私声明，以了解您的数据如何处理。',
+    keywords: 'openGauss, 隐私声明, 数据处理',
   },
   'zh/security-advisories/detail': {
     title: 'openGauss安全警告详情 | 安全警告',
