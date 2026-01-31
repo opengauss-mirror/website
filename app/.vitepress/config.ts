@@ -136,10 +136,5 @@ const config: UserConfig = {
     },
   },
   ignoreDeadLinks: true,
-  vite: {
-    ssr: {
-      noExternal: ['@opendesign-plus/components', 'element-plus']
-    }
-  }
 };
 export default config;

@@ -20,7 +20,7 @@
   "author": "",
   "license": "",
   "dependencies": {
-    "@opendesign-plus/components": "0.0.1-rc.5",
+    "@opendesign-plus/components": "0.0.1-rc.6",
     "@opendesign-plus/utils": "0.0.1-rc.6",
     "@opensig/open-analytics": "^0.0.9",
     "@opensig/opendesign": "0.0.75",

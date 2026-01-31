@@ -51,6 +51,7 @@ const comp = computed(() => {
   return compMapping[frontmatter.value.category];
 });
 
+const COOKIE_DOMAIN = import.meta.env.VITE_COOKIE_DOMAIN;
 const route = useRoute();
 const cookieNoticeRef = ref();
 const cookieStore = useCookieStore();
@@ -80,6 +81,7 @@ watch(
       v-model:visible="cookieStore.isNoticeVisible"
       community="openGauss"
       :detail-url="`/${lang}/cookies/`"
+      :cookie-domain="COOKIE_DOMAIN"
     />
   </OPlusConfigProvider>
   <AppFooter />
