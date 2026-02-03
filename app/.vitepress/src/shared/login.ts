@@ -61,18 +61,7 @@ const afterLogined = (userInfo: UserInfoT) => {
 
 // 退出
 export async function doLogout() {
-  try {
-    const idTokenRes = await getUserIdToken();
-    if (idTokenRes.code === 200) {
-      setStatus(LOGIN_STATUS.NOT);
-      clearUserAuth();
-      window.location.href = location.href;
-    } else {
-      handleError();
-    }
-  } catch (error) {
-    /* empty */
-  }
+  location.href = `${import.meta.env.VITE_LOGIN_URL}/logout?redirect_uri=${encodeURI(location.href)}`;
 }
 
 // 获取用户信息
