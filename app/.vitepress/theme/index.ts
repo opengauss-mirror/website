@@ -2,7 +2,12 @@ import type { App } from 'vue';
 import { createPinia } from 'pinia';
 
 import '@/shared/styles/element-plus/index.scss';
-import '@/shared/styles/index.scss';
+// import '@/shared/styles/index.scss';
+import '@/shared/styles/base.scss';
+import '@/shared/styles/markdown.scss';
+import '@/shared/styles/theme-dark.scss';
+import '@/shared/styles/highlight/index.scss';
+import '~@/assets/style/mixin/grid.scss';
 
 import Layout from '@/App.vue';
 import NotFound from '@/NotFound.vue';

@@ -53,7 +53,7 @@ export default defineConfig({
         @use "~@/assets/style/mixin/screen.scss" as *;
         @use "~@/assets/style/mixin/font.scss" as *;
         @use "~@/assets/style/mixin/common.scss" as *;
-        @use "~@/assets/style/mixin/grid.scss" as *;
+        
       `,
       },
     },
