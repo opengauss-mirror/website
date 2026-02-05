@@ -1,4 +1,3 @@
-import wenqi from '@/assets/category/member/avatar/wenqi.png';
 import jiangdayong from '@/assets/category/member/avatar/jiangdayong.png';
 import huzhengce from '@/assets/category/member/avatar/huzhengce.png';
 import gaiguoqiang from '@/assets/category/member/avatar/gaiguoqiang.png';
@@ -157,18 +156,18 @@ import yangqian from '@/assets/category/member/avatar/yangqian.png';
 import liaochunliang from '@/assets/category/member/avatar/liaochunliang.png';
 import xuezhongbin from '@/assets/category/member/avatar/xuezhongbin.png';
 import zhangchangjun from '@/assets/category/member/avatar/zhangchangjun.png';
-import fuxiongdao from '@/assets/category/member/avatar/fuxiongdao.png';
 import chendong from '@/assets/category/member/avatar/chendong.png';
-import zhangzhijing from '@/assets/category/member/avatar/zhangzhijing.png';
 import songfei from '@/assets/category/member/avatar/songfei.png';
-import sunjingyuan from '@/assets/category/member/avatar/sunjingyuan.png';
 import liangyan from '@/assets/category/member/avatar/liangyan.png';
 import liaoshitin from '@/assets/category/member/avatar/liaoshitin.png';
 import sunmin from '@/assets/category/member/avatar/sunmin.png';
-import zhangao from '@/assets/category/member/avatar/zhangao.png';
 import mingpei from '@/assets/category/member/avatar/mingpei.png';
-import wangmo from '@/assets/category/member/avatar/wangmo.png';
 import fanshujuan from '@/assets/category/member/avatar/fanshujuan.png';
+import humengyao from '@/assets/category/member/avatar/humengyao.png';
+import lijiangui from '@/assets/category/member/avatar/lijiangui.png';
+import luoyuming from '@/assets/category/member/avatar/luoyuming.png';
+import wangjianda from '@/assets/category/member/avatar/wangjianda.png';
+
 import wanghuanzhuo from '@/assets/category/member/avatar/wanghuanzhuo.png';
 import huxilin from '@/assets/category/member/avatar/huxilin.png';
 import yuanyilun from '@/assets/category/member/avatar/yuanyilun.png';
@@ -400,7 +399,6 @@ import shengyongpan1 from '@/assets/category/member/avatar/shengyongpan1.png';
 
 import jianghongbo from '@/assets/category/member/avatar/jianghongbo.png';
 import chenqijun from '@/assets/category/member/avatar/chenqijun.png';
-import meixiangru from '@/assets/category/member/avatar/meixiangru.png';
 import liuhangyu from '@/assets/category/member/avatar/liuhangyu.png';
 import luohao from '@/assets/category/member/avatar/luohao.png';
 import zhaojun from '@/assets/category/member/avatar/zhaojun.png';
@@ -517,8 +515,12 @@ import liming from '@/assets/category/member/avatar/liming.png';
 import pansiyan from '@/assets/category/member/avatar/pansiyan.png';
 import mengpengbo from '@/assets/category/member/avatar/mengpengbo.png';
 import zhangruo from '@/assets/category/member/avatar/zhangruo.png';
+import zhoucong from '@/assets/category/member/avatar/zhoucong.png';
+import jiwenke from '@/assets/category/member/avatar/jiwenke.png';
+import libiao from '@/assets/category/member/avatar/libiao.png';
+import songshixuan from '@/assets/category/member/avatar/songshixuan.png';
+import zhengxue from '@/assets/category/member/avatar/zhengxue.png';
 
-import { GITCODE_LINK } from '@/data/url-config';
 export default {
   zh: {
     COUNSELOR: [
@@ -1557,10 +1559,16 @@ export default {
         email: `Jinyu_gaussdb@163.com`,
       },
       {
-        img: Vinoth,
-        name: `Vinoth`,
-        title: `Committer`,
-        email: `vinoth.veeraraghavan@hotmail.com`,
+        img: chenchen,
+        name: `陈琛`,
+        title: `Maintainer`,
+        email: `arcoalien@qq.com`,
+      },
+      {
+        img: zhoucong,
+        name: `周聪`,
+        title: `Maintainer`,
+        email: `943464315@qq.com`,
       },
       {
         img: lishuaituan,
@@ -1573,6 +1581,36 @@ export default {
         name: `熊小军`,
         title: `Committer`,
         email: `xiong_xiaojun@yeah.net`,
+      },
+      {
+        img: libiao,
+        name: '李标',
+        title: 'Committer',
+        email: '1102510224@qq.com',
+      },
+      {
+        img: jiwenke,
+        name: '吉文克',
+        title: 'Committer',
+        email: 'jwkchn@163.com',
+      },
+      {
+        img: zhengxue,
+        name: '郑雪',
+        title: 'Committer',
+        email: 'zhengxue6@huawei.com',
+      },
+      {
+        img: songshixuan,
+        name: '宋世轩',
+        title: 'Committer',
+        email: 'songshixuan@huawei.com',
+      },
+      {
+        img: liuchangfeng,
+        name: '柳长沣',
+        title: 'Committer',
+        email: 'superlchf@qq.com',
       },
       {
         img: xuchunyang,
@@ -1609,12 +1647,6 @@ export default {
         name: `吴岳川`,
         title: `Committer`,
         email: `wuych9@mail2.sysu.edu.cn`,
-      },
-      {
-        img: chenchen,
-        name: `陈琛`,
-        title: `Committer`,
-        email: `arcoalien@qq.com`,
       },
       {
         img: xuexingrong,
@@ -2511,34 +2543,16 @@ export default {
     ],
     QA: [
       {
-        img: zhangchangjun,
-        name: `张长军`,
-        title: `Maintainer`,
-        email: `zhangchangjun2@huawei.com`,
-      },
-      {
         img: sungang,
         name: '孙刚',
-        title: 'Committer',
+        title: 'Maintainer',
         email: 'sungang14@huawei.com',
       },
       {
-        img: fuxiongdao,
-        name: `附雄道`,
+        img: zhangchangjun,
+        name: `张长军`,
         title: `Committer`,
-        email: `fuxiongdao@huawei.com`,
-      },
-      {
-        img: chendong,
-        name: `陈栋`,
-        title: `Committer`,
-        email: `1209756284@qq.com`,
-      },
-      {
-        img: zhangzhijing,
-        name: `张志靖`,
-        title: `Committer`,
-        email: `2235036288@qq.com`,
+        email: `zhangchangjun2@huawei.com`,
       },
       {
         img: songfei,
@@ -2547,10 +2561,34 @@ export default {
         email: `songfei@shentongdata.com`,
       },
       {
-        img: sunjingyuan,
-        name: `孙静元`,
+        img: lijiangui,
+        name: `李建桂`,
         title: `Committer`,
-        email: `sunjingyuan@shentongdata.com`,
+        email: `lijg@vastdata.com.cn`,
+      },
+      {
+        img: wangjianda,
+        name: `王建达`,
+        title: `Committer`,
+        email: `rjyf_wjd@163.com`,
+      },
+      {
+        img: humengyao,
+        name: `胡梦遥`,
+        title: `Committer`,
+        email: `humengyao@gbase.cn`,
+      },
+      {
+        img: luoyuming,
+        name: `罗宇明`,
+        title: `Committer`,
+        email: `luoyuming@ncti-gba.cn`,
+      },
+      {
+        img: chendong,
+        name: `陈栋`,
+        title: `Committer`,
+        email: `1209756284@qq.com`,
       },
       {
         img: liangyan,
@@ -2571,22 +2609,10 @@ export default {
         email: `2235036288@qq.com`,
       },
       {
-        img: zhangao,
-        name: `张翱`,
-        title: `Committer`,
-        email: `zhangao23@huawei.com`,
-      },
-      {
         img: mingpei,
         name: `明沛`,
         title: `Committer`,
         email: `mingpei@huawei.com.com`,
-      },
-      {
-        img: wangmo,
-        name: `王默`,
-        title: `Committer`,
-        email: `wangmo@xfusion.com`,
       },
       {
         img: fanshujuan,
@@ -5830,10 +5856,16 @@ export default {
         email: `Jinyu_gaussdb@163.com`,
       },
       {
-        img: Vinoth,
-        name: `Vinoth`,
-        title: `Committer`,
-        email: `vinoth.veeraraghavan@hotmail.com`,
+        img: chenchen,
+        name: `Chen Chen`,
+        title: `Maintainer`,
+        email: `arcoalien@qq.com`,
+      },
+      {
+        img: zhoucong,
+        name: `Cong Zhou`,
+        title: `Maintainer`,
+        email: `943464315@qq.com`,
       },
       {
         img: lishuaituan,
@@ -5846,6 +5878,36 @@ export default {
         name: `Xiaojun Xiong`,
         title: `Committer`,
         email: `xiong_xiaojun@yeah.net`,
+      },
+      {
+        img: libiao,
+        name: 'Biao Li',
+        title: 'Committer',
+        email: 'zhangzhongliangit@chinamobile.com',
+      },
+      {
+        img: jiwenke,
+        name: 'Wenke Ji',
+        title: 'Committer',
+        email: 'jwkchn@163.com',
+      },
+      {
+        img: zhengxue,
+        name: 'Xue Zheng',
+        title: 'Committer',
+        email: 'zhengxue6@huawei.com',
+      },
+      {
+        img: songshixuan,
+        name: 'Shixuan Song',
+        title: 'Committer',
+        email: 'songshixuan@huawei.com',
+      },
+      {
+        img: liuchangfeng,
+        name: '柳长沣',
+        title: 'Committer',
+        email: 'superlchf@qq.com',
       },
       {
         img: xuchunyang,
@@ -5882,12 +5944,6 @@ export default {
         name: `Yuechuan Wu`,
         title: `Committer`,
         email: `wuych9@mail2.sysu.edu.cn`,
-      },
-      {
-        img: chenchen,
-        name: `Chen Chen`,
-        title: `Committer`,
-        email: `arcoalien@qq.com`,
       },
       {
         img: xuexingrong,
@@ -6784,34 +6840,16 @@ export default {
     ],
     QA: [
       {
-        img: zhangchangjun,
-        name: `Changjun Zhang`,
-        title: `Maintainer`,
-        email: `zhangchangjun2@huawei.com`,
-      },
-      {
         img: sungang,
         name: 'Gang sun',
         title: 'Committer',
         email: 'sungang14@huawei.com',
       },
       {
-        img: fuxiongdao,
-        name: `Xiongdao Fu`,
+        img: zhangchangjun,
+        name: `Changjun Zhang`,
         title: `Committer`,
-        email: `fuxiongdao@huawei.com`,
-      },
-      {
-        img: chendong,
-        name: `Dong Chen`,
-        title: `Committer`,
-        email: `1209756284@qq.com`,
-      },
-      {
-        img: zhangzhijing,
-        name: `Zhijing Zhang`,
-        title: `Committer`,
-        email: `2235036288@qq.com`,
+        email: `zhangchangjun2@huawei.com`,
       },
       {
         img: songfei,
@@ -6820,10 +6858,34 @@ export default {
         email: `songfei@shentongdata.com`,
       },
       {
-        img: sunjingyuan,
-        name: `Jingyuan Sun`,
+        img: lijiangui,
+        name: `Jiangui Li`,
         title: `Committer`,
-        email: `sunjingyuan@shentongdata.com`,
+        email: `lijg@vastdata.com.cn`,
+      },
+      {
+        img: wangjianda,
+        name: `Jianda Wang`,
+        title: `Committer`,
+        email: `rjyf_wjd@163.com`,
+      },
+      {
+        img: humengyao,
+        name: `Mengyao Hu`,
+        title: `Committer`,
+        email: `humengyao@gbase.cn`,
+      },
+      {
+        img: luoyuming,
+        name: `Yuming Luo`,
+        title: `Committer`,
+        email: `luoyuming@ncti-gba.cn`,
+      },
+      {
+        img: chendong,
+        name: `Dong Chen`,
+        title: `Committer`,
+        email: `1209756284@qq.com`,
       },
       {
         img: liangyan,
@@ -6844,22 +6906,10 @@ export default {
         email: `2235036288@qq.com`,
       },
       {
-        img: zhangao,
-        name: `Ao Zhang`,
-        title: `Committer`,
-        email: `zhangao23@huawei.com`,
-      },
-      {
         img: mingpei,
         name: `Pei Ming`,
         title: `Committer`,
         email: `mingpei@huawei.com.com`,
-      },
-      {
-        img: wangmo,
-        name: `Mo Wang`,
-        title: `Committer`,
-        email: `wangmo@xfusion.com`,
       },
       {
         img: fanshujuan,
