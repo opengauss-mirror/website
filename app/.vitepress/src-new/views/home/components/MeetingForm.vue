@@ -51,7 +51,7 @@ const formData = reactive({
   platform: '',
   etherpad: '',
   email_list: '',
-  is_record: false,
+  is_record: true,
   start: '',
   end: '',
   agenda: '',
