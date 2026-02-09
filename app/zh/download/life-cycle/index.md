@@ -32,7 +32,7 @@ import ImgLifeCycle from '~@/assets/category/download/life-cycle_zh.jpg';
 
 <img :src="ImgLifeCycle" alt="life-cycle" />
 
-Maintenance Support: CVE、Bigfix和少量新特性
+Maintenance Support: CVE、Bugfix和少量新特性
 
 Extend Support: 修复“主要”以上CVE和Bug
 
