@@ -25,6 +25,9 @@ import ogceDark from '@/assets/category/home/banner/ogce_dark.png';
 import ogceMoDark from '@/assets/category/home/banner/ogce_mo_dark.png';
 import annual2025 from '@/assets/category/home/banner/annual2025.png';
 import annual2025Mo from '@/assets/category/home/banner/annual2025_mo.png';
+import newYear2026 from '@/assets/category/home/banner/newYear2026.jpg';
+import newYear2026Pad from '@/assets/category/home/banner/newYear2026_pad.jpg';
+import newYear2026Mo from '@/assets/category/home/banner/newYear2026_mo.jpg';
 
 import { LEARN_VIDEO_LINK, DOCS_LINK, FORUM_LINK } from '@/data/url-config';
 import { ScreenSizeT } from '~@/composables/useScreen';
@@ -32,6 +35,24 @@ import { ScreenSizeT } from '~@/composables/useScreen';
 // rightInset:banner右侧插图
 export default {
   zh: [
+    {
+      banners: {
+        laptop: newYear2026,
+        pad_v: newYear2026Pad,
+        pad_h: newYear2026Pad,
+        phone: newYear2026Mo,
+      },
+      link: '',
+      target: '',
+      title: '',
+      titleMb: [''],
+      subtitle: '',
+      desc: [''],
+      btn: '',
+      className: '',
+      rightInset: '',
+      rightLink: '',
+    },
     {
       pcBanner: annual2025,
       moBanner: annual2025Mo,
