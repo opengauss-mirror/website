@@ -9,7 +9,6 @@ import {
   OTextarea,
   OFormItem,
   useMessage,
-  type FieldResultT,
   ORadioGroup,
   ORadio,
   OPopover,
@@ -27,18 +26,22 @@ import { editMeetingApi, creatMeetingApi, getPlatformsApi } from '@/api/api-meet
 import { ElDatePicker, ElTimeSelect } from 'element-plus';
 import type { MeetingSigT, MeetingPostT, MeetingItemT } from '@/shared/@types/type-meeting';
 import { useI18n } from '~@/i18n';
+import { useI18n as _useI18n } from 'vue-i18n';
 
 import IconTime from '~icons/app/icon-time.svg';
 import IconHelp from '~icons/app/icon-tips.svg';
+import { useData } from 'vitepress';
 
 const props = defineProps<{ sigOptions: Array<MeetingSigT>; data?: MeetingItemT; title: string; visible: Boolean }>();
 
+const { lang } = useData();
 const meetingStore = useMeeting();
 const message = useMessage(null);
 const commonStore = useCommon();
 const isDark = computed(() => (commonStore.theme === 'dark' ? true : false));
 const { isPhone } = useScreen();
 const i18n = useI18n();
+const { t } = _useI18n();
 const i18nMeeting = computed(() => i18n.value.home.HOME_CALENDAR);
 
 const formRef = ref<InstanceType<typeof OForm>>();
@@ -59,10 +62,10 @@ const formData = reactive({
 });
 
 // -------------------- 会议名称验证 --------------------
-const topicRules = [
+const topicRules = computed(() => [
   {
     required: true,
-    message: '长度为1-128个字符',
+    message: t('home.validate.lengthBetween', [1, 128]),
     triggers: ['blur'],
   },
   {
@@ -70,28 +73,28 @@ const topicRules = [
       if (value.length < 1 || value.length > 128) {
         return {
           type: 'danger',
-          message: '长度为1-128个字符',
+          message: t('home.validate.lengthBetween', [1, 128]),
         };
       }
     },
   },
-];
+]);
 // -------------------- 所属SIG验证 --------------------
-const selectSigRules = [
+const selectSigRules = (() => [
   {
     required: true,
-    message: '请选择SIG',
+    message: t('home.HOME_CALENDAR.selectSig'),
     triggers: ['change'],
   },
-];
+]);
 // -------------------- 会议时间验证 --------------------
-const selectPickerRules = [
+const selectPickerRules = computed(() => [
   {
     required: true,
-    message: '请选择日期',
+    message: t('home.HOME_CALENDAR.enterDate'),
     triggers: ['blur', 'change'],
   },
-];
+]);
 
 // -------------------- 会议时间验证 --------------------
 const selectTimeRules = [
@@ -114,10 +117,10 @@ const selectTimeRules = [
 ];
 
 // -------------------- etherpad验证 --------------------
-const etherpadRules = [
+const etherpadRules = (() => [
   {
     required: true,
-    message: '长度为1-255个字符',
+    message: t('home.validate.lengthBetween', [1, 255]),
     triggers: ['blur'],
   },
   {
@@ -125,12 +128,12 @@ const etherpadRules = [
       if (value.length < 1 || value.length > 255) {
         return {
           type: 'danger',
-          message: '长度为1-255个字符',
+          message: t('home.validate.lengthBetween', [1, 255]),
         };
       }
     },
   },
-];
+]);
 
 // -------------------- 邮箱验证 --------------------
 const validateEmails = (emailStr: string): boolean => {
@@ -148,9 +151,9 @@ const validateEmails = (emailStr: string): boolean => {
     return trimmedEmail === '' || emailRegex.test(trimmedEmail);
   });
 };
-const emailRules = [
+const emailRules = computed(() => [
   {
-    message: '请输入电子邮件地址，多个邮件地址之间以“;”间隔',
+    message: t('home.HOME_CALENDAR.emailText'),
     triggers: ['blur'],
   },
   {
@@ -161,26 +164,26 @@ const emailRules = [
       } else if (value.length > 1000) {
         return {
           type: 'danger',
-          message: '长度不能大于1000个字符',
+          message: t('home.validate.lengthMax', [1000]),
         };
       } else if (!validateEmails(value)) {
         return {
           type: 'danger',
-          message: '请输入正确的邮箱格式',
+          message: t('home.validate.emailRegexp'),
         };
       }
     },
   },
-];
+]);
 
 // -------------------- platform验证 --------------------
-const platformRules = [
+const platformRules = computed(() => [
   {
     required: true,
-    message: '请选择会议平台',
+    message: t('home.HOME_CALENDAR.selectPlatform'),
     triggers: ['blur'],
   },
-];
+]);
 
 // 过滤提交参数
 function filterParams(obj: MeetingPostT, propName: string): MeetingPostT {
@@ -243,7 +246,7 @@ const requestMeetingReserve = async (data: MeetingPostT) => {
     const res = await creatMeetingApi(data);
     if (res.code === 200) {
       message.success({
-        content: '会议预定成功！',
+        content: t('home.HOME_CALENDAR.bookSuccess'),
       });
       dialogVisible.value = false;
       emits('update', data.date);
@@ -294,36 +297,38 @@ const getSigInfo = (v: string) => {
 const isModify = computed(() => props.data);
 
 const dialogVisible = ref(props.visible);
-const dlgActions: Array<DialogActionT> = [
-  {
-    id: 'save',
-    color: 'primary',
-    label: isModify.value ? i18nMeeting.value.MODIFY_SUBMIT : i18nMeeting.value.SUBMIT,
-    variant: 'solid',
-    size: 'large',
-    round: 'pill',
-    onClick: () => {
-      formRef.value?.validate();
-      if (isModify.value) {
-        updateMeeting();
-      } else {
-        onMeetingReserve();
-      }
+const dlgActions = computed<DialogActionT[]>(() => {
+  return [
+    {
+      id: 'save',
+      color: isPhone.value ? 'normal' : 'primary',
+      label: i18nMeeting.value.confirmBook,
+      variant: isPhone.value ? 'text' : 'solid',
+      size: 'large',
+      round: 'pill',
+      onClick: () => {
+        formRef.value?.validate();
+        if (isModify.value) {
+          updateMeeting();
+        } else {
+          onMeetingReserve();
+        }
+      },
     },
-  },
-  {
-    id: 'cancel',
-    color: 'primary',
-    label: '取消',
-    variant: 'outline',
-    size: 'large',
-    round: 'pill',
-    onClick: () => {
-      dialogVisible.value = false;
-      reset();
+    {
+      id: 'cancel',
+      color: isPhone.value ? 'normal' : 'primary',
+      label: i18nMeeting.value.cancelBook,
+      variant: isPhone.value ? 'text' : 'outline',
+      size: 'large',
+      round: 'pill',
+      onClick: () => {
+        dialogVisible.value = false;
+        reset();
+      },
     },
-  },
-];
+  ];
+});
 
 // 编辑会议
 const updateMeeting = async () => {
@@ -397,6 +402,7 @@ watch(
 
 <template>
   <ODialog
+    class="meeting-booking-dlg"
     v-model:visible="dialogVisible"
     size="large"
     :unmount-on-hide="true"
@@ -406,67 +412,65 @@ watch(
     }"
   >
     <template #header>{{ title }}</template>
-    <OForm ref="formRef" has-required :layout="isPhone ? 'v' : 'h'" :model="formData" label-width="132px" label-align="top" size="large" class="calendar-form">
-      <OFormItem label="发起人" required field="sponsor" :rules="topicRules">
+    <OForm ref="formRef" has-required layout="h" :model="formData" :label-width="isPhone ? '88px' : '120px'" label-align="top" size="large" class="calendar-form">
+      <OFormItem :label="i18nMeeting.host" required field="sponsor" :rules="topicRules">
         <OInput v-model="formData.sponsor" disabled="true" size="large" />
       </OFormItem>
-      <OFormItem label="会议名称" required field="topic" :rules="topicRules">
-        <OInput v-model="formData.topic" :min-length="1" :max-length="128" size="large" placeholder="请输入会议名称" />
+      <OFormItem :label="i18nMeeting.meetingName" required field="topic" :rules="topicRules">
+        <OInput v-model="formData.topic" :min-length="1" :max-length="128" size="large" :placeholder="i18nMeeting.enterMeetingTitle" />
       </OFormItem>
 
-      <OFormItem label="所属SIG" required field="group_name" :rules="selectSigRules" class="sig-item">
-        <OSelect v-model="formData.group_name" clearable filterable size="large" @change="getSigInfo" placeholder="请选择SIG">
+      <OFormItem :label="i18nMeeting.SIG" required field="group_name" :rules="selectSigRules" class="sig-item">
+        <OSelect v-model="formData.group_name" clearable filterable size="large" @change="getSigInfo" :placeholder="i18nMeeting.selectSig">
           <OOption v-for="item in sigOptions" :key="item.group_name" :label="item.group_name" :value="item.group_name" />
         </OSelect>
       </OFormItem>
       <OFormItem label="Etherpad" required field="etherpad" :rules="etherpadRules">
-        <OInput v-model="formData.etherpad" size="large" :max-length="255" placeholder="请输入Etherpad链接" />
+        <OInput v-model="formData.etherpad" size="large" :max-length="255" :placeholder="i18nMeeting.enterEtherpad" />
       </OFormItem>
 
-      <OFormItem label="会议日期" required field="date" :rules="selectPickerRules">
+      <OFormItem :label="i18nMeeting.meetingDate" required field="date" :rules="selectPickerRules">
         <client-only>
           <el-date-picker
             v-model="formData.date"
             type="date"
             size="large"
-            placeholder="请选择日期"
+            :placeholder="i18nMeeting.enterDate"
             :effect="isDark ? 'dark' : 'light'"
             value-format="YYYY-MM-DD"
-            :style="{ width: '100%' }"
+            style="max-width: 480px; width: 100%"
           />
         </client-only>
       </OFormItem>
-      <OFormItem label="会议时间" required field="duration_time" :rules="selectTimeRules">
+      <OFormItem :label="i18nMeeting.meetingTime" required field="duration_time" :rules="selectTimeRules">
         <client-only>
           <div class="time-select">
             <el-time-select
               v-model="formData.start"
               :max-time="formData.end"
-              placeholder="开始时间"
+              :placeholder="i18nMeeting.startTime"
               start="08:00"
               end="23:30"
               step="00:15"
-              size="large"
+              :size="isPhone ? 'small' : 'large'"
               :effect="isDark ? 'dark' : 'light'"
-              :style="{ width: '120px' }"
             />
             <ODivider class="line" />
             <el-time-select
               v-model="formData.end"
               :min-time="formData.start"
-              placeholder="结束时间"
+              :placeholder="i18nMeeting.endTime"
               start="08:00"
               end="23:30"
               step="00:15"
-              size="large"
+              :size="isPhone ? 'small' : 'large'"
               :effect="isDark ? 'dark' : 'light'"
-              :style="{ width: '120px' }"
             />
             <OIcon class="time-icon"> <IconTime /> </OIcon>
           </div>
         </client-only>
       </OFormItem>
-      <OFormItem label="会议平台" required field="platform" :rules="platformRules">
+      <OFormItem :label="i18nMeeting.meetingPlatform" required field="platform" :rules="platformRules">
         <ORadioGroup v-model="formData.platform" :style="{ '--radio-group-gap': '8px' }">
           <ORadio v-for="item in platformOptions" :key="item" :value="item">
             {{ item }}
@@ -474,15 +478,15 @@ watch(
         </ORadioGroup>
       </OFormItem>
 
-      <OFormItem label="会议内容" field="agenda">
-        <OTextarea v-model="formData.agenda" placeholder="请输入会议内容" resize="none" :rows="4" size="large" :max-length="1000" :input-on-outlimit="false" />
+      <OFormItem :label="i18nMeeting.meetingContent" field="agenda">
+        <OTextarea v-model="formData.agenda" :placeholder="i18nMeeting.enterMeetingContent" resize="none" :rows="4" size="large" :max-length="1000" :input-on-outlimit="false" />
       </OFormItem>
 
       <OFormItem field="is_record" class="record">
         <template #label>
           <div class="record-label">
-            <span>录制会议</span>
-            <OPopover position="top" style="max-width: 250px">
+            <span>{{ i18nMeeting.meetingRecording }}</span>
+            <OPopover v-if="lang === 'zh'" position="top" style="max-width: 250px">
               <template #target>
                 <OIcon class="tips"><IconHelp /></OIcon>
               </template>
@@ -494,10 +498,10 @@ watch(
         </template>
         <OSwitch v-model="formData.is_record" />
       </OFormItem>
-      <OFormItem label="邮件地址" field="email_list" :rules="emailRules">
+      <OFormItem :label="i18nMeeting.meetingEmail" field="email_list" :rules="emailRules">
         <OTextarea
           v-model="formData.email_list"
-          placeholder="请输入电子邮件地址，多个邮件地址之间以“;”间隔"
+          :placeholder="i18nMeeting.emailText"
           resize="none"
           size="large"
           :rows="4"
@@ -510,20 +514,44 @@ watch(
 </template>
 
 <style lang="scss" scoped>
+:global(.meeting-booking-dlg) {
+  --dlg-width: var(--grid-10);
+  --dlg-max-height: 480px;
+  @include respond-to('laptop') {
+    --dlg-max-height: 60vh;
+  }
+  @include respond-to('pad') {
+    --dlg-max-height: 60vh;
+    --dlg-width: var(--grid-6);
+  }
+  @include respond-to('phone') {
+    --dlg-edge-gap: 16px;
+  }
+}
+
+:global(.meeting-booking-dlg .o-dlg-main) {
+  @include respond-to('phone') {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
 .calendar-form {
   color: var(--o-color-info1);
   --form-label-main-gap: 0;
-  width: 610px;
+  // width: 610px;
   margin: 0 auto;
   .o-input,
   .o-select,
   .o-textarea {
     width: 100%;
+    max-width: 480px;
     @include text1;
   }
 
   :deep(.o-form-item) {
-    margin-bottom: 24px;
+    justify-content: center;
+    margin-bottom: 16px;
     &.record {
       position: relative;
       .o-switch {
@@ -536,6 +564,9 @@ watch(
     }
     .o-form-item-main-wrap {
       min-height: 40px;
+    }
+    .o-form-item-main {
+      max-width: 480px;
     }
     .record-label {
       display: flex;
@@ -552,8 +583,6 @@ watch(
       margin: 0;
       color: var(--o-color-info2);
       @include respond-to('phone') {
-        margin-bottom: 8px;
-        height: auto;
         @include text2;
       }
     }
@@ -574,6 +603,7 @@ watch(
   .time-select {
     height: 40px;
     width: 100%;
+    max-width: 480px;
     margin: 0;
     :deep(.o-divider) {
       width: 16px;
@@ -597,38 +627,6 @@ watch(
     .el-form-item {
       margin-bottom: 0;
     }
-  }
-  .time-box {
-    :deep(.o-form-require-symbol) {
-      display: none;
-    }
-    :deep(.o-form-item-main-wrap) {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    @include respond-to('phone') {
-      :deep(.o-form-item-label) {
-        display: none;
-      }
-    }
-  }
-  .record-tips {
-    margin-left: 12px;
-    display: flex;
-    align-items: center;
-    @include text1;
-    color: var(--o-color-info4);
-    gap: 8px;
-    @include respond-to('phone') {
-      margin-left: 0;
-    }
-    .tips {
-      color: var(--o-color-info4);
-    }
-  }
-  :deep(.o-textarea) {
-    --textarea-text-size: 16px;
-    --textarea-text-height: 24px;
   }
 }
 </style>

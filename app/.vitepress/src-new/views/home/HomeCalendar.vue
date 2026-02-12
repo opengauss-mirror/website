@@ -37,7 +37,7 @@ import dayjs from 'dayjs';
 
 import { getMeetingDateListApi, getMeetingListApi, getGroupInfosApi, deleteMeetingApi } from '@/api/api-meeting';
 import { doLogin, getUserAuth } from '@/shared/login';
-import type { MeetingSigT, MeetingPostT, MeetingItemT } from '@/shared/@types/type-meeting';
+import type { MeetingSigT, MeetingItemT } from '@/shared/@types/type-meeting';
 import { useI18n } from '~@/i18n';
 import { useLocale } from '~@/composables/useLocale';
 import { useUserInfoStore } from '@/stores/user';
@@ -322,7 +322,7 @@ const createMeetingDlg = () => {
     if (sigGroup.value.length > 0) {
       currentMeetingData.value = null;
       isFormDlgVisible.value = true;
-      formDlgTitle.value = '创建会议';
+      formDlgTitle.value = i18nMeeting.value.bookMeeting;
     } else {
       message.warning({
         content: i18nMeeting.value.LOGIN_TEXT,
