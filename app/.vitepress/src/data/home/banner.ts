@@ -32,6 +32,52 @@ import newYear2026Mo from '@/assets/category/home/banner/newYear2026_mo.jpg';
 import { LEARN_VIDEO_LINK, DOCS_LINK, FORUM_LINK } from '@/data/url-config';
 import { ScreenSizeT } from '~@/composables/useScreen';
 
+interface BannerItem {
+  banners: Partial<Record<ScreenSizeT, string>>;
+  bannersDark?: Partial<Record<ScreenSizeT, string>>;
+  link: string;
+  target: string;
+  title: string;
+  textImg?: string;
+  textImgMb?: string;
+  titleMb: string[];
+  isLightBg?: boolean;
+  subtitle: string;
+  desc: string[];
+  btn: string;
+  className: string;
+  rightInset: string;
+  rightLink: string;
+}
+
+const setBannersDefaultValueProxy = (item: BannerItem) => {
+  item.banners = new Proxy(item.banners, {
+    get(target, p, receiver) {
+      if (Reflect.has(target, p)) {
+        return Reflect.get(target, p, receiver);
+      }
+      return target.laptop;
+    },
+    set(...args) {
+      return Reflect.set(...args);
+    },
+  });
+  if (item.bannersDark) {
+    item.bannersDark = new Proxy(item.bannersDark, {
+      get(target, p, receiver) {
+        if (Reflect.has(target, p)) {
+          return Reflect.get(target, p, receiver);
+        }
+        return target.laptop;
+      },
+      set(...args) {
+        return Reflect.set(...args);
+      },
+    });
+  }
+  return item;
+};
+
 // rightInset:banner右侧插图
 export default {
   zh: [
@@ -54,8 +100,11 @@ export default {
       rightLink: '',
     },
     {
-      pcBanner: annual2025,
-      moBanner: annual2025Mo,
+      banners: {
+        laptop: annual2025,
+        pad_v: annual2025Mo,
+        phone: annual2025Mo,
+      },
       link: '/zh/news/2026-01-16/',
       target: '_blank',
       title: 'openGauss 开源社区2025年度报告',
@@ -68,8 +117,10 @@ export default {
       rightLink: '',
     },
     {
-      pcBanner: banner20250506Pc,
-      moBanner: banner20250506Mo,
+      banners: {
+        laptop: banner20250506Pc,
+        phone: banner20250506Mo,
+      },
       link: '/zh/news/2025-12-31',
       target: '_blank',
       title: 'openGauss 5.0.0 LTS版本即将停止维护公告',
@@ -82,10 +133,14 @@ export default {
       rightLink: '',
     },
     {
-      pcBanner: ogce,
-      moBanner: ogceMo,
-      pcBannerDark: ogceDark,
-      moBannerDark: ogceMoDark,
+      banners: {
+        laptop: ogce,
+        phone: ogceMo,
+      },
+      bannersDark: {
+        laptop: ogceDark,
+        phone: ogceMoDark,
+      },
       link: '/zh/training/',
       target: '_blank',
       title: 'openGauss OGCE专家认证正式发布',
@@ -99,8 +154,10 @@ export default {
       rightLink: '',
     },
     {
-      pcBanner: banner700RC2,
-      moBanner: banner700RC2Mo,
+      banners: {
+        laptop: banner700RC2,
+        phone: banner700RC2Mo,
+      },
       link: '/zh/news/2025-09-30/',
       target: '_blank',
       title: 'openGauss 7.0.0-RC2 版本正式发布',
@@ -114,8 +171,10 @@ export default {
       rightLink: '',
     },
     {
-      pcBanner: bannerForumPc,
-      moBanner: bannerForumMo,
+      banners: {
+        laptop: bannerForumPc,
+        phone: bannerForumMo,
+      },
       link: FORUM_LINK,
       target: '_blank',
       title: '【论坛上线】',
@@ -128,8 +187,10 @@ export default {
       rightLink: '',
     },
     {
-      pcBanner: bannerOpenGaussV6,
-      moBanner: bannerOpenGaussV6Mo,
+      banners: {
+        laptop: bannerOpenGaussV6,
+        phone: bannerOpenGaussV6Mo,
+      },
       link: DOCS_LINK + '/zh/docs/latest/datavec/datavec_overview.html',
       target: '_blank',
       title: 'openGauss 向量引擎',
@@ -142,8 +203,10 @@ export default {
       rightLink: '',
     },
     {
-      pcBanner: bannerDift,
-      moBanner: bannerDiftMo,
+      banners: {
+        laptop: bannerDift,
+        phone: bannerDiftMo,
+      },
       link: DOCS_LINK + '/zh/docs/latest/docs/DataVec/openGauss-RAG实践.html',
       target: '_blank',
       title: 'openGauss DataVec + Dify',
@@ -157,8 +220,10 @@ export default {
     },
 
     {
-      pcBanner: bannerTeamUp,
-      moBanner: bannerTeamUpMo,
+      banners: {
+        laptop: bannerTeamUp,
+        phone: bannerTeamUpMo,
+      },
       link: '/zh/team-up/',
       target: '_self',
       title: 'openGauss 结队计划 正式上线',
@@ -171,8 +236,10 @@ export default {
       rightLink: '',
     },
     {
-      pcBanner: liveImg_pc,
-      moBanner: liveImg_mb,
+      banners: {
+        laptop: liveImg_pc,
+        phone: liveImg_mb,
+      },
       link: DOCS_LINK + '/zh/docs/3.1.1/docs/BriefTutorial/BriefTutorial.html',
       target: '_blank',
       title: '欢迎加入openGauss社区',
@@ -184,11 +251,13 @@ export default {
       rightInset: videoGif,
       rightLink: `${LEARN_VIDEO_LINK}/openGauss%E5%AE%A3%E4%BC%A0%E6%B4%BB%E5%8A%A8/openGauss%2BHC%E5%AE%A3%E4%BC%A0%E8%A7%86%E9%A2%91.mp4`,
     },
-  ],
+  ].map(setBannersDefaultValueProxy),
   en: [
     {
-      pcBanner: liveImg_pc,
-      moBanner: liveImg_mb,
+      banners: {
+        laptop: liveImg_pc,
+        phone: liveImg_mb,
+      },
       link: DOCS_LINK + '/en/docs/3.1.0/docs/BriefTutorial/BriefTutorial.html',
       target: '_blank',
       title: 'Welcome to openGauss Community',
@@ -200,27 +269,5 @@ export default {
       rightInset: videoGif,
       rightLink: `${LEARN_VIDEO_LINK}/openGauss%E5%AE%A3%E4%BC%A0%E6%B4%BB%E5%8A%A8/openGauss%2BHC%E5%AE%A3%E4%BC%A0%E8%A7%86%E9%A2%91.mp4`,
     },
-  ],
-} as Record<
-  'zh' | 'en',
-  {
-    pcBanner: string;
-    moBanner: string;
-    banners?: Record<ScreenSizeT, string>,
-    pcBannerDark?: string;
-    moBannerDark?: string;
-    link: string;
-    target: string;
-    title: string;
-    textImg?: string;
-    textImgMb?: string;
-    titleMb: string[];
-    isLightBg?: string;
-    subtitle: string;
-    desc: string[];
-    btn: string;
-    className: string;
-    rightInset: string;
-    rightLink: string;
-  }[]
->;
+  ].map(setBannersDefaultValueProxy),
+} as Record<'zh' | 'en', BannerItem[]>;
