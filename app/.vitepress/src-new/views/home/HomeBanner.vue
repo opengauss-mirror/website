@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { OButton, OCarousel, OCarouselItem, OIcon, OIconArrowRight } from '@opensig/opendesign';
+import { OButton, OCarousel, OCarouselItem, OFigure, OIcon, OIconArrowRight } from '@opensig/opendesign';
 import { computed, ref } from 'vue';
 import homeConfig from '@/data/home/';
 import { windowOpen } from '@/shared/utils';
@@ -46,13 +46,9 @@ const currentBgTheme = computed(() => {
       :data-o-theme="currentBgTheme"
     >
       <OCarouselItem v-for="item in homeBanner" :key="item.title" class="home-banner-item">
-        <div
-          class="banner-img"
-          :class="{
-            'no-btn': !item.btn && item.link,
-            [item.className]: item.className,
-          }"
-          :style="`background:url(${item.banners?.[current] ?? (gtPadV ? (theme === 'dark' && item.pcBannerDark) || item.pcBanner : (theme === 'dark' && item.moBannerDark) || item.moBanner)}) no-repeat top center/cover;`"
+        <OFigure
+          :class="{ 'banner-bg': true, 'use-dark-style': !item.bannersDark?.[current] }"
+          :src="(theme === 'dark' && item.bannersDark?.[current]) || item.banners[current]"
           @click="jump(item, item.btn !== '')"
         >
           <div class="banner-content">
@@ -85,13 +81,21 @@ const currentBgTheme = computed(() => {
               <img class="video-player-btn" :src="item.rightInset" :alt="item.title" @click.stop="clickRightInset(item.rightLink)" />
             </div>
           </div>
-        </div>
+        </OFigure>
       </OCarouselItem>
     </OCarousel>
   </div>
 </template>
 
 <style lang="scss" scoped>
+:root.dark {
+  .banner-bg.use-dark-style {
+    :deep(.o-figure-img) {
+      filter: brightness(80%) grayscale(20%) contrast(1.2);
+    }
+  }
+}
+
 .home-banner-wrap {
   --banner-height: 460px;
 
@@ -150,8 +154,9 @@ const currentBgTheme = computed(() => {
     border-radius: 4px;
   }
   --carousel-indicator-bg-color-selected: var(--o-color-info1);
-  .banner-img {
+  .banner-bg {
     height: 100%;
+    width: 100%;
     .banner-content {
       box-sizing: border-box;
       width: var(--grid-content-width);
