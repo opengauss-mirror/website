@@ -53,7 +53,15 @@ export default {
       gitPath: `${GITCODE_LINK}/opengauss/tc`,
       emial: `tc@opengauss.org`,
       nameText: `TC Members`,
-      list: data.en.TC,
+      list: [...data.en.TC].sort((a, b) => {
+        if (a.title === 'Chair') {
+          return -1;
+        }
+        if (b.title === 'Chair') {
+          return 1;
+        }
+        return a.name.localeCompare(b.name, 'en');
+      }),
     },
     {
       name: `Secretariat`,

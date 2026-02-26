@@ -58,7 +58,6 @@ import haoqingyun from '@/assets/category/member/avatar/haoqingyun.png';
 import wanglei from '@/assets/category/member/avatar/wanglei.png';
 import liheng from '@/assets/category/member/avatar/liheng.png';
 import zhangjinyu from '@/assets/category/member/avatar/zhangjinyu.png';
-import Vinoth from '@/assets/category/member/avatar/Vinoth.png';
 import lishuaituan from '@/assets/category/member/avatar/lishuaituan.png';
 import xiongxiaojun from '@/assets/category/member/avatar/xiongxiaojun.png';
 import xuchunyang from '@/assets/category/member/avatar/xuchunyang.png';
@@ -120,6 +119,7 @@ import songqingyi from '@/assets/category/member/avatar/songqingyi.png';
 import yangrao from '@/assets/category/member/avatar/yangrao.png';
 import wusong from '@/assets/category/member/avatar/wusong.png';
 import herui from '@/assets/category/member/avatar/herui.png';
+import xiongqin from '@/assets/category/member/avatar/xiongqin.png';
 import weikaizhi from '@/assets/category/member/avatar/weikaizhi.png';
 import songrongrong from '@/assets/category/member/avatar/songrongrong.png';
 import yanshichao from '@/assets/category/member/avatar/yanshichao.png';
@@ -1259,18 +1259,6 @@ export default {
         email: `andyli1@huawei.com`,
       },
       {
-        img: hechenghan,
-        name: `贺承汉`,
-        title: `Member`,
-        email: `hechenghan@huawei.com`,
-      },
-      {
-        img: zhubin,
-        name: `朱彬`,
-        title: `Member`,
-        email: `zhubin6@huawei.com`,
-      },
-      {
         img: guangang,
         name: `关刚`,
         title: `Member`,
@@ -1289,24 +1277,6 @@ export default {
         email: `Liuyongsheng@shentongdata.com`,
       },
       {
-        img: renyang,
-        name: `任阳`,
-        title: `Member`,
-        email: `stanleyren_china@outlook.com`,
-      },
-      {
-        img: tianwengang,
-        name: `田文罡`,
-        title: `Member`,
-        email: `tianwengang@huawei.com`,
-      },
-      {
-        img: wangjiang,
-        name: `王江`,
-        title: `Member`,
-        email: `wangjiang16@huawei.com`,
-      },
-      {
         img: wangwei,
         name: `王炜`,
         title: `Member`,
@@ -1323,18 +1293,6 @@ export default {
         name: `张程伟`,
         title: `Member`,
         email: `flashspy@hotmail.com`,
-      },
-      {
-        img: sunji,
-        name: `孙佶`,
-        title: `Member`,
-        email: `sunji@greatji.com`,
-      },
-      {
-        img: zhoupinggao,
-        name: `周平高`,
-        title: `Member`,
-        email: `zhoupinggao@huawei.com`,
       },
       {
         img: zhouqin,
@@ -1407,6 +1365,12 @@ export default {
         name: `何睿`,
         title: `Member`,
         email: `he.rui@139.com`,
+      },
+      {
+        img: xiongqin,
+        name: `熊钦`,
+        title: `Member`,
+        email: `xiongqin3@huawei.com`,
       },
     ],
     SECRETARIAT: [
@@ -5556,18 +5520,6 @@ export default {
         email: `andyli1@huawei.com`,
       },
       {
-        img: hechenghan,
-        name: `Chenghan He`,
-        title: `Member`,
-        email: `hechenghan@huawei.com`,
-      },
-      {
-        img: zhubin,
-        name: `Bin Zhu`,
-        title: `Member`,
-        email: `zhubin6@huawei.com`,
-      },
-      {
         img: guangang,
         name: `Gang Guan`,
         title: `Member`,
@@ -5586,24 +5538,6 @@ export default {
         email: `Liuyongsheng@shentongdata.com`,
       },
       {
-        img: renyang,
-        name: `Yang Ren`,
-        title: `Member`,
-        email: `stanleyren_china@outlook.com`,
-      },
-      {
-        img: tianwengang,
-        name: `Wengang Tian`,
-        title: `Member`,
-        email: `tianwengang@huawei.com`,
-      },
-      {
-        img: wangjiang,
-        name: `Jiang Wang`,
-        title: `Member`,
-        email: `wangjiang16@huawei.com`,
-      },
-      {
         img: wangwei,
         name: `Wei Wang`,
         title: `Member`,
@@ -5620,18 +5554,6 @@ export default {
         name: `Chengwei Zhang`,
         title: `Member`,
         email: `flashspy@hotmail.com`,
-      },
-      {
-        img: sunji,
-        name: `Ji Sun`,
-        title: `Member`,
-        email: `sunji@greatji.com`,
-      },
-      {
-        img: zhoupinggao,
-        name: `Pinggao Zhou`,
-        title: `Member`,
-        email: `zhoupinggao@huawei.com`,
       },
       {
         img: zhouqin,
@@ -5704,6 +5626,12 @@ export default {
         name: `Rui He`,
         title: `Member`,
         email: `he.rui@139.com`,
+      },
+      {
+        img: xiongqin,
+        name: `Qin Xiong`,
+        title: `Member`,
+        email: `xiongqin3@huawei.com`,
       },
     ],
     SECRETARIAT: [
