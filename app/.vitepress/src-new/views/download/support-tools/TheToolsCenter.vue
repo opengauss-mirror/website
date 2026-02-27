@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import BannerLevel2 from '~@/components/BannerLevel2.vue';
+import BannerLevel2 from '@/components/BannerLevel2.vue';
 import ContentWrapper from '~@/components/ContentWrapper.vue';
 
 import BannerImg from '~@/assets/category/download/tools-center-banner.png';

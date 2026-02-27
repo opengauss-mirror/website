@@ -86,9 +86,10 @@ const rootStyle = computed(() => {
   }
 
   .wrap {
+    padding-left: 0;
+    padding-right: 0;
+    width: var(--grid-content-width);
     position: relative;
-    max-width: var(--layout-new-content-max-width);
-    padding: 0 var(--layout-content-padding);
     margin: 0 auto;
     display: flex;
     align-items: center;
