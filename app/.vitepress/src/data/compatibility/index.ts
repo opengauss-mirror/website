@@ -1,5 +1,38 @@
 export default [
   {
+    name: '尤普智慧水务用户管理系统',
+    version: '1.0',
+    type: '数字政府',
+    company: '杭州尤普软件有限公司',
+    database: 'openGauss 6.0.2',
+    os: 'Kylin V10',
+    server: 'Intel',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E6%9D%AD%E5%B7%9E%E5%B0%A4%E6%99%AE/%E6%8A%80%E6%9C%AF%E8%AE%A4%E8%AF%81%E4%B9%A6.pdf',
+  },
+  {
+    name: 'ShuangzhaoDB数据库系统',
+    version: '13.6.1',
+    type: '通用',
+    company: '广州市双照电子科技有限公司',
+    database: 'openGauss 6.0.2',
+    os: 'Kylin V10',
+    server: 'Kunpeng 920 (Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%B9%BF%E5%B7%9E%E5%8F%8C%E7%85%A7/openGauss%E5%85%BC%E5%AE%B9%E6%80%A7%E8%AF%81%E4%B9%A6%EF%BC%88%E7%9B%96%E7%AB%A0%E7%89%88%EF%BC%89.pdf',
+  },
+  {
+    name: 'SMTX OS系统',
+    version: '6.0',
+    type: '通用',
+    company: '北京志凌海纳科技股份有限公司',
+    database: 'openGauss 6.0.2',
+    os: 'openEuler 20.03 LTS SP3',
+    server: 'Kunpeng 920 V200 (Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%8C%97%E4%BA%AC%E5%BF%97%E5%87%8C%E6%B5%B7%E7%BA%B3/opengauss-%E7%9B%96%E7%AB%A0%E4%BB%B6.pdf',
+  },
+  {
     name: '“风铃”横向威胁感知系统',
     version: '1.0',
     type: '通用',
