@@ -249,11 +249,18 @@ export default {
           list: data.zh.RISCV,
         },
         {
-          name: `CTMM`,
+          name: `oGRAC`,
           id: `CTMM`,
           gitPath: `${GITCODE_LINK}/opengauss/tc/tree/master/sigs/CTMM`,
           emial: `ctmm@opengauss.org`,
-          list: data.zh.CTMM,
+          list: [...data.zh.CTMM].sort((a, b) => {
+            if (a.title === 'Maintainer' && b.title !== 'Maintainer') {
+              return -1;
+            } else if (b.title === 'Maintainer' && a.title !== 'Maintainer') {
+              return 1;
+            }
+            return a.name.localeCompare(b.name, 'zh-Hans-CN');
+          }),
         },
         {
           name: `Embedded`,
