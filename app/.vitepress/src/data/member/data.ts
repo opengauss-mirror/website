@@ -520,6 +520,9 @@ import jiwenke from '@/assets/category/member/avatar/jiwenke.png';
 import libiao from '@/assets/category/member/avatar/libiao.png';
 import songshixuan from '@/assets/category/member/avatar/songshixuan.png';
 import zhengxue from '@/assets/category/member/avatar/zhengxue.png';
+import qinyudongfang from '@/assets/category/member/avatar/qinyudongfang.png';
+import shiyingzhe from '@/assets/category/member/avatar/shiyingzhe.png';
+import wangbowen from '@/assets/category/member/avatar/wangbowen.png';
 
 export default {
   zh: {
@@ -3333,6 +3336,24 @@ export default {
         name: '阳灿',
         title: 'Committer',
         email: 'volcano.yangcan@huawei.com',
+      },
+      {
+        img: qinyudongfang,
+        name: '秦昱东方',
+        title: 'Committer',
+        email: 'qinyudongfang@h-partners.com',
+      },
+      {
+        img: shiyingzhe,
+        name: '史英哲',
+        title: 'Committer',
+        email: 'shiyingzhe1@h-partners.com',
+      },
+      {
+        img: wangbowen,
+        name: '王博文',
+        title: 'Committer',
+        email: 'wangbowen69@h-partners.com',
       },
     ],
     Embedded: [
@@ -7594,6 +7615,24 @@ export default {
         name: 'Can Yang',
         title: 'Committer',
         email: 'volcano.yangcan@huawei.com',
+      },
+      {
+        img: qinyudongfang,
+        name: 'Yudongfang Qin',
+        title: 'Committer',
+        email: 'qinyudongfang@h-partners.com',
+      },
+      {
+        img: shiyingzhe,
+        name: 'Yingzhe Shi',
+        title: 'Committer',
+        email: 'shiyingzhe1@h-partners.com',
+      },
+      {
+        img: wangbowen,
+        name: 'Bowen Wang',
+        title: 'Committer',
+        email: 'wangbowen69@huawei.com',
       },
     ],
     Embedded: [

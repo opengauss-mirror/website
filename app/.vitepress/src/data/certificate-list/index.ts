@@ -54,7 +54,7 @@ export default {
       pro: 'SUNBOXDB V3.0.0',
       name: '北京尚博信科技有限公司',
       version: 'openGauss 5.0.0',
-      award: '2024-06-04',
+      award: '2024-08-15',
       expiration: '2026-03-31',
       certificate: `${OBS_CERTIFICATION_LINK}/%E5%B0%9A%E5%8D%9A%E4%BF%A1/V3.0.0/Certificate.pdf`,
     },

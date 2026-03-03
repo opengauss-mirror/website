@@ -153,20 +153,21 @@ const changeDownloadAuth = () => {
 const downloadDlg = ref(false);
 const dlgAction: Ref<DialogActionT[]> = ref([
   {
-    id: 'cancel',
-    label: t('download.DOWNLOAD_CANCEL'),
-    variant: 'outline',
-    onClick: () => {
-      downloadDlg.value = false;
-    },
-  },
-  {
     id: 'ok',
     label: t('download.DOWNLOAD_COMFIRM'),
     color: 'primary',
     variant: 'solid',
     onClick: () => {
       doLogin();
+    },
+  },
+  {
+    id: 'cancel',
+    label: t('download.DOWNLOAD_CANCEL'),
+    color: 'primary',
+    variant: 'outline',
+    onClick: () => {
+      downloadDlg.value = false;
     },
   },
 ]);

@@ -249,11 +249,18 @@ export default {
           list: data.en.RISCV,
         },
         {
-          name: `CTMM`,
+          name: `oGRAC`,
           id: `CTMM`,
           gitPath: `${GITCODE_LINK}/opengauss/tc/tree/master/sigs/CTMM`,
           emial: `ctmm@opengauss.org`,
-          list: data.en.CTMM,
+          list: [...data.en.CTMM].sort((a, b) => {
+            if (a.title === 'Maintainer' && b.title !== 'Maintainer') {
+              return -1;
+            } else if (b.title === 'Maintainer' && a.title !== 'Maintainer') {
+              return 1;
+            }
+            return a.name.localeCompare(b.name, 'en');
+          }),
         },
         {
           name: `Embedded`,
