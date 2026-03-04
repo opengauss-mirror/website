@@ -1,4 +1,5 @@
 import type { UserConfig } from 'vitepress';
+import vueI18n from '@intlify/unplugin-vue-i18n/vite';
 import tdks from './tdks';
 import { createRequire } from 'node:module';
 import fs from 'node:fs';
@@ -136,5 +137,13 @@ const config: UserConfig = {
     },
   },
   ignoreDeadLinks: true,
+  vite: {
+    plugins: [
+      // https://github.com/intlify/vue-i18n/issues/1569
+      vueI18n({
+        ssr: true,
+      }),
+    ],
+  },
 };
 export default config;
