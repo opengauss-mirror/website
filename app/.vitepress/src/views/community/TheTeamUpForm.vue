@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, reactive, onMounted, computed } from 'vue';
+import { ref, reactive, computed } from 'vue';
 import { useRouter } from 'vitepress';
 import AppContent from '@/components/AppContent.vue';
 import { ElMessage, FormInstance, FormRules } from 'element-plus';

@@ -5,7 +5,6 @@ import { useData } from 'vitepress';
 import AppContent from '@/components/AppContent.vue';
 
 import emailImg from '@/assets/category/member/toemail.svg';
-import gitImg from '@/assets/category/member/git.svg';
 
 import IconHome from '~icons/app/icon-home.svg';
 import IconUser from '~icons/app/icon-user.svg';

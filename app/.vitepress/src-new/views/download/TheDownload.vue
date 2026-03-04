@@ -1,16 +1,14 @@
 <script lang="ts" setup>
 import { ref, computed, onMounted, provide, watchEffect } from 'vue';
 import { useData } from 'vitepress';
-import { OTab, OTabPane, ODivider, OTable } from '@opensig/opendesign';
+import { OTab, OTabPane } from '@opensig/opendesign';
 import DownloadConfig from '~@/data/download';
 import BannerLevel2 from '~@/components/BannerLevel2.vue';
 import ContentWrapper from '~@/components/ContentWrapper.vue';
 import AppSection from '~@/components/AppSection.vue';
 import DownloadContent from './DownloadContent.vue';
 
-import { useScreen } from '~@/composables/useScreen';
 import { useLocale } from '~@/composables/useLocale';
-import { useCommon } from '@/stores/common';
 import { getUrlParam } from '~@/utils/common';
 import { useI18n } from '~@/i18n';
 
@@ -20,12 +18,9 @@ import RelativeTools from './support-tools/RelativeTools.vue';
 import SupportServices from './support-tools/SupportServices.vue';
 import { oaReport } from '@/shared/analytics';
 
-const { isPhone, lePad, lePadV } = useScreen();
-const { t, isZh, $t, locale } = useLocale();
+const { t, $t, locale } = useLocale();
 const { lang } = useData();
 const i18n = useI18n();
-const commonStore = useCommon();
-const isDark = computed(() => (commonStore.theme === 'dark' ? true : false));
 
 watchEffect(() => (locale.value = lang.value ?? 'zh'));
 

@@ -168,7 +168,7 @@ onUnmounted(() => {
       'guide-tour': newGuideVisible,
     }"
   >
-    <el-tour-step v-for="item in steps" :key="currentStep" :target="item.target || undefined" :placement="item.placement || undefined">
+    <el-tour-step v-for="item in steps" :key="item.target" :target="item.target || undefined" :placement="item.placement || undefined">
       <template #header>
         <div class="header-img">
           <OFigure :src="isLight ? item.bg : item.darkBg" />

@@ -1,14 +1,14 @@
 <script lang="ts" setup>
-import { ref, computed, watch, toRefs, onMounted, inject, nextTick, Directive } from 'vue';
-import { OLink, ORadioGroup, ORadio, OToggle, OIcon, OTab, OTabPane, OSelect, OOption, OLayer } from '@opensig/opendesign';
-import { useData, useRoute } from 'vitepress';
+import { ref, computed, watch, toRefs, onMounted, inject, nextTick } from 'vue';
+import { ORadioGroup, ORadio, OToggle, OIcon, OTab, OTabPane, OSelect, OOption, OLayer } from '@opensig/opendesign';
+import { useData } from 'vitepress';
 import { useCookieStore } from '@/stores/common';
 import { useI18n } from '@/i18n';
 import { useScreen } from '~@/composables/useScreen';
 import { downloadName } from '~@/data/download/format';
 import { useCommon } from '@/stores/common';
 
-import { DownloadItemT } from '@/shared/@types/type-download';
+import { ContentItemT, DownloadItemT } from '@/shared/@types/type-download';
 
 import { getCustomCookie } from '@/shared/utils';
 import { useUserInfoStore } from '@/stores/user';
@@ -197,7 +197,6 @@ const getFilterData = (name) => {
   return res;
 };
 
-const isLayer = ref(false);
 const layerShow = ref(false);
 const layerData = ref();
 const changeLayer = (item) => {

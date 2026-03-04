@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { useCommon } from '@/stores/common';
-
 import AppContent from '@/components/AppContent.vue';
 import SummitBanner from './components/SummitBanner.vue';
 import SummitIntro from './components/SummitIntro.vue';

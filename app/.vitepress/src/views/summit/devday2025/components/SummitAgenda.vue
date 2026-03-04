@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, watch } from 'vue';
+import { computed } from 'vue';
 import { useCommon } from '@/stores/common';
 import SummitSchedule from './SummitSchedule.vue';
 

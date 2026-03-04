@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { computed, ref } from 'vue';
+import { computed } from 'vue';
 import { useCommon } from '@/stores/common';
 
 import time from '../img/time.svg';

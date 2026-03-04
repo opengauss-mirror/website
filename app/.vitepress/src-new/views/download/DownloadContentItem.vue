@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { ref, onMounted, inject, Ref } from 'vue';
-import { type DialogActionT, useMessage, OButton, OLink, ODialog, OTag, OIcon } from '@opensig/opendesign';
+import { ref, inject, Ref } from 'vue';
+import { type DialogActionT, useMessage, OButton, ODialog, OIcon } from '@opensig/opendesign';
 import { useClipboard } from '@/components/hooks/useClipboard';
 import { useI18n } from '~@/i18n';
 import { doLogin } from '@/shared/login';
@@ -10,7 +10,7 @@ import { useScreen } from '~@/composables/useScreen';
 import IconDownload from '~icons/app/icon-download.svg';
 import IconCopy from '~icons/app/icon-copy2.svg';
 
-const props = defineProps({
+defineProps({
   data: {
     required: true,
     type: Object,

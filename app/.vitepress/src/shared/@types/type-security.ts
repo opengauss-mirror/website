@@ -69,12 +69,6 @@ export interface AffectProductT {
   fixLabel: string;
 }
 
-export interface SaBodyItemT {
-  gaussSaNum: string;
-  releaseDate: string;
-  summary: string;
-  saId: number;
-}
 export interface CvsItemT {
   NVD: number | string;
   cate: string;

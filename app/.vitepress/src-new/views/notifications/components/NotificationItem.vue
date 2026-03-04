@@ -114,7 +114,7 @@ const computedSummary = computed(() => {
         result += ' 的周期会议';
       }
       return result;
-    } catch (error) {
+    } catch {
       return props.summary;
     }
   } else {

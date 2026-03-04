@@ -1,5 +1,5 @@
 import { computed } from 'vue';
-import { createI18n, type I18nOptions } from 'vue-i18n';
+import { createI18n } from 'vue-i18n';
 import { useData } from 'vitepress';
 import { getCurrentLocale } from '~@/utils/locale';
 import home from './home';

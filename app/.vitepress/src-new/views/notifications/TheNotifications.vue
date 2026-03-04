@@ -16,7 +16,6 @@ import {
   OTab,
 } from '@opensig/opendesign';
 import { computed, onMounted, ref } from 'vue';
-import { useRouter } from 'vitepress';
 import { storeToRefs } from 'pinia';
 
 import ContentWrapper from '~@/components/ContentWrapper.vue';
@@ -48,7 +47,6 @@ import DeleteConfirmModal from '~@/views/notifications/components/DeleteConfirmM
 const { t } = useLocale();
 const message = useMessage();
 const countStore = useCountStore();
-const router = useRouter();
 const selectedMenuItem = ref(NOTIFICATION_TYPE.get(NOTIFICATION_TYPE_TODO)!!.value);
 
 const { todo, meeting } = storeToRefs(countStore);

@@ -8,7 +8,6 @@ import BannerLevel2 from '@/components/BannerLevel2.vue';
 import banner from '@/assets/illustrations/banner-secondary.png';
 import illustration from '@/assets/illustrations/member.png';
 import emailImg from '@/assets/category/member/toemail.svg';
-import gitImg from '@/assets/category/member/git.svg';
 
 import IconHome from '~icons/app/icon-home.svg';
 import IconMail from '~icons/app/icon-mail.svg';

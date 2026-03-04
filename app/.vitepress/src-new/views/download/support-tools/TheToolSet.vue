@@ -8,7 +8,6 @@ import {
   ORadio,
   ORadioGroup,
   OSelect,
-  OTable,
   OToggle,
   useMessage,
   ODialog,
@@ -247,7 +246,7 @@ const reportVersionSelect = () => {
       </template>
       <!-- os选择 -->
       <TagFilter v-if="gtPadV" class="os-box" :label="$t('download.OS')">
-        <ORadioGroup v-model="activeOs" style="--radio-group-gap: 8px" @change="">
+        <ORadioGroup v-model="activeOs" style="--radio-group-gap: 8px">
           <ORadio
             v-for="item in osList"
             :key="item"

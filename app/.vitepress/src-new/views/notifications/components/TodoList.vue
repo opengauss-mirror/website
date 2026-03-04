@@ -1,36 +1,24 @@
 <script setup lang="ts">
 import { OTab, OTabPane, OTable, OLink, OIcon, useMessage, OIconDelete, OCheckbox } from '@opensig/opendesign';
-import { computed, nextTick, onMounted, ref, watch } from 'vue';
+import { computed, onMounted, ref, watch } from 'vue';
 import dayjs from 'dayjs';
 import { useLocale } from '~@/composables/useLocale';
 import { useCountStore } from '~@/stores/notification';
-import { deleteInfo, getTodo, setReadInfo } from '~@/api/api-notification';
+import { deleteInfo, getTodo } from '~@/api/api-notification';
 import AppEmpty from '~@/components/AppEmpty.vue';
 import ThFilter from '~@/components/ThFilter.vue';
 import { GITCODE_LINK } from '~@/data/url-config';
 import TooltipText from '~@/components/TooltipText.vue';
 import IconOpen from '~icons/my/state-open.svg';
 import IconProgress from '~icons/my/state-in-progress.svg';
-import IconCompleted from '~icons/my/state-completed.svg';
 import IconReject from '~icons/my/state-reject.svg';
 import IconMerged from '~icons/my/state-merged.svg';
 import IconClosed from '~icons/my/state-reject.svg';
-import IconMarkRead from '~icons/app/icon-mark-read.svg';
-import IconBuilding from '~icons/my/state-in-progress.svg';
-import IconSuccess from '~icons/my/state-completed.svg';
-import IconFailed from '~icons/my/state-reject.svg';
-import { storeToRefs } from 'pinia';
-import { findLabelFromOptions, resolveDate } from '~@/shared/utils';
+import { resolveDate } from '~@/shared/utils';
 import DeleteConfirmModal from '~@/views/notifications/components/DeleteConfirmModal.vue';
 import {
-  DELETE_FAILED_MESSAGE,
   DELETE_MULTIPLE_FAILED_MESSAGE,
   DELETE_MULTIPLE_SUCCESS_MESSAGE,
-  DELETE_SUCCESS_MESSAGE,
-  MARK_READ_FAILED_MESSAGE,
-  MARK_READ_MULTIPLE_FAILED_MESSAGE,
-  MARK_READ_MULTIPLE_SUCCESS_MESSAGE,
-  MARK_READ_SUCCESS_MESSAGE,
 } from '~@/data/notifications';
 
 const emits = defineEmits(['changeTotal', 'changePage']);
@@ -278,30 +266,6 @@ const doDeleteInfo = () => {
     })
     .finally(() => {
       deleteLoading.value = false;
-    });
-};
-
-const changeOnlyUnread = () => {
-  nextTick(() => {
-    getList();
-  });
-};
-
-// ------------------------ 设置消息已读 --------------------
-const updateSelectedReadStatus = (ids: string[]) => {
-  setReadInfo(ids)
-    .then(() => {
-      message.success({
-        content: MARK_READ_MULTIPLE_SUCCESS_MESSAGE,
-      });
-      selectAll.value = [];
-
-      countStore.updateNoticeTotal();
-    })
-    .catch((err) => {
-      message.danger({
-        content: `${MARK_READ_MULTIPLE_FAILED_MESSAGE}: ${err.message}`,
-      });
     });
 };
 </script>

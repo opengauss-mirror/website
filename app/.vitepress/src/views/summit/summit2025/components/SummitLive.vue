@@ -79,7 +79,7 @@ const messageEvent = () => {
         };
         try {
           data = JSON.parse(event.data);
-        } catch (e) {
+        } catch {
           data = event.data;
         }
         setHeight(data);

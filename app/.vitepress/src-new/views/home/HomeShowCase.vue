@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, onMounted, onUnmounted, watch, computed, Directive, watchEffect } from 'vue';
+import { ref, onMounted, onUnmounted, watch, computed, Directive } from 'vue';
 import { ODropdown, ODropdownItem, OIcon, OFigure, ODivider, OLink, OScroller, OIconChevronRight } from '@opensig/opendesign';
 import { useLocale } from '~@/composables/useLocale';
 import { useScreen } from '~@/composables/useScreen';
@@ -11,7 +11,7 @@ import { storeToRefs } from 'pinia';
 import { useCommon } from '@/stores/common';
 import { useOverflowChildren } from '~@/composables/useOverflowChildren';
 
-const emit = defineEmits(['result']);
+defineEmits(['result']);
 
 const { t, isZh, locale } = useLocale();
 const { isPhone, size } = useScreen();
@@ -24,10 +24,6 @@ const caseCategories = showCaseData.category;
 const tabs = ref();
 const activeWidth = ref();
 const activeLeft = ref();
-
-const pathResolving = (path: string) => {
-  return path.replace(/(index)$/g, '');
-};
 
 // -------------------- 获取案例数据 --------------------
 const caseData = computed(() => {
