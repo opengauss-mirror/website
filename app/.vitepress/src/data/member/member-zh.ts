@@ -54,10 +54,10 @@ export default {
       emial: `tc@opengauss.org`,
       nameText: `TC成员：`,
       list: [...data.zh.TC].sort((a, b) => {
-        if (a.title === 'Chair') {
+        if (a.title === 'Chair' && b.title !== 'Chair') {
           return -1;
         }
-        if (b.title === 'Chair') {
+        if (b.title === 'Chair' && a.title !== 'Chair') {
           return 1;
         }
         return a.name.localeCompare(b.name, 'zh-Hans-CN');
@@ -251,8 +251,8 @@ export default {
         {
           name: `oGRAC`,
           id: `CTMM`,
-          gitPath: `${GITCODE_LINK}/opengauss/tc/tree/master/sigs/CTMM`,
-          emial: `ctmm@opengauss.org`,
+          gitPath: `${GITCODE_LINK}/opengauss/tc/tree/master/sigs/oGRAC`,
+          emial: `ograc@opengauss.org`,
           list: [...data.zh.CTMM].sort((a, b) => {
             if (a.title === 'Maintainer' && b.title !== 'Maintainer') {
               return -1;

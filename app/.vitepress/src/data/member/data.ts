@@ -3234,12 +3234,12 @@ export default {
       },
     ],
     CTMM: [
-      {
+      /* {
         img: caoyu,
         name: '曹宇',
         title: 'Maintainer',
         email: 'caoyu09@huawei.com',
-      },
+      }, */
       {
         img: wangwei4,
         name: '王伟',
@@ -3259,6 +3259,54 @@ export default {
         email: 'xichutian@huawei.com',
       },
       {
+        img: xiongxiaojun2,
+        name: '熊小军',
+        title: 'Maintainer',
+        email: 'xiongxiaojun2@huawei.com',
+      },
+      {
+        img: songshixuan,
+        name: '宋世轩',
+        title: 'Maintainer',
+        email: 'songshixuan@huawei.com',
+      },
+      {
+        img: pengjiong,
+        name: `彭炯`,
+        title: `Committer`,
+        email: `pengjiong1@huawei.com`,
+      },
+      {
+        img: chenchen,
+        name: `陈琛`,
+        title: `Committer`,
+        email: `joshua.chen@huawei.com`,
+      },
+      {
+        img: chenxiaobin,
+        name: `陈晓滨`,
+        title: `Committer`,
+        email: `chenxiaobin19@huawei.com`,
+      },
+      {
+        img: zhengxue,
+        name: '郑雪',
+        title: 'Committer',
+        email: 'zhengxue6@huawei.com',
+      },
+      {
+        img: zhoucong,
+        name: `周聪`,
+        title: `Maintainer`,
+        email: `943464315@qq.com`,
+      },
+      {
+        img: hechenghan,
+        name: '贺承汉',
+        title: 'Committer',
+        email: 'hechenghan@huawei.com',
+      },
+      /* {
         img: zhangjinyu2,
         name: '张金玉',
         title: 'Committer',
@@ -3269,12 +3317,6 @@ export default {
         name: '王炜',
         title: 'Committer',
         email: 'wangwei5@huawei.com',
-      },
-      {
-        img: xiongxiaojun2,
-        name: '熊小军',
-        title: 'Committer',
-        email: 'xiongxiaojun2@huawei.com',
       },
       {
         img: quemingjian,
@@ -3335,7 +3377,7 @@ export default {
         name: '阳灿',
         title: 'Committer',
         email: 'volcano.yangcan@huawei.com',
-      },
+      }, */
       {
         img: qinyudongfang,
         name: '秦昱东方',
