@@ -29,13 +29,7 @@ export function getNowFormatDate() {
   const year = date.getFullYear();
   let month = date.getMonth() + 1;
   let strDate = date.getDate();
-  if (month >= 1 && month <= 9) {
-    month = Number('0' + month);
-  }
-  if (strDate >= 0 && strDate <= 9) {
-    strDate = Number('0' + strDate);
-  }
-  const currentDate = year + seperator1 + month + seperator1 + strDate;
+  const currentDate = year + seperator1 + month.toString().padStart(2, '0') + seperator1 + strDate.toString().padStart(2, '0');
   return currentDate;
 }
 
