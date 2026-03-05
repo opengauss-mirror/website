@@ -1,6 +1,3 @@
-import otherCover1 from '../img/cover1.png';
-import otherCover2 from '../img/cover2.png';
-
 import csia from '../img/partners/light/csia.png';
 import ccf from '../img/partners/light/ccf.png';
 import cjb from '../img/partners/light/cjb.png';

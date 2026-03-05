@@ -28,7 +28,7 @@ const commonStore = useCommon();
 const isDark = computed(() => (commonStore.theme === 'dark' ? true : false));
 
 // 搜索事件
-function handleSearchEvent(report?: boolean) {
+function handleSearchEvent() {
   const input = searchInput.value.trim();
   if (!input) return;
 
@@ -37,10 +37,8 @@ function handleSearchEvent(report?: boolean) {
   window.open(`/${lang.value}/search/?q=${encodeURIComponent(input)}`, '_self');
 }
 
-type SearchItemClickType = 'history' | 'popular' | 'suggest';
-
 // 点击热搜标签
-const onTopSearchItemClick = (val: string, type: SearchItemClickType = 'history') => {
+const onTopSearchItemClick = (val: string) => {
   searchInput.value = val;
   handleSearchEvent();
 };
@@ -143,7 +141,7 @@ const closeSearch = () => {
           <OInput
             v-model="searchInput"
             :placeholder="isShowDrawer ? searchValue.PLACEHOLDER_EXTEND : searchValue.PLACEHOLDER"
-            @keyup.enter="handleSearchEvent(true)"
+            @keyup.enter="handleSearchEvent"
             @focus="showDrawer"
             class="normal"
           >
@@ -160,7 +158,7 @@ const closeSearch = () => {
             <IconSearch></IconSearch>
           </OIcon>
 
-          <span v-if="lePadV && isShowDrawer" class="search-text" @click="handleSearchEvent(true)">
+          <span v-if="lePadV && isShowDrawer" class="search-text" @click="handleSearchEvent">
             {{ searchValue.TEXT }}
           </span>
         </div>
@@ -186,7 +184,7 @@ const closeSearch = () => {
               <p>{{ searchValue.TOPSEARCH }}</p>
             </div>
             <div class="hots-list">
-              <div v-for="item in popList" :key="item" type="text" class="hots-list-item" @click="onTopSearchItemClick(item, 'popular')">
+              <div v-for="item in popList" :key="item" type="text" class="hots-list-item" @click="onTopSearchItemClick(item)">
                 {{ item }}
               </div>
             </div>

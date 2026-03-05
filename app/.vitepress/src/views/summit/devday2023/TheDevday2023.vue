@@ -38,7 +38,7 @@ const dataContent1 = computed(() => {
   let temp;
   try {
     temp = JSON.parse(data1.content);
-  } catch (error) {
+  } catch {
     handleError();
   }
   return temp;
@@ -47,7 +47,7 @@ const dataContent2 = computed(() => {
   let temp;
   try {
     temp = JSON.parse(data2.content);
-  } catch (error) {
+  } catch {
     handleError();
   }
   return temp;

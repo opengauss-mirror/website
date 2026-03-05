@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { toRefs, ref, computed, PropType } from 'vue';
-import { useUserInfoStore } from '@/stores/user';
 import { OLink, ODivider, OButton, OPopover, OIcon, useMessage, OTag } from '@opensig/opendesign';
 import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';
@@ -32,7 +31,7 @@ const { lang } = useData();
 const i18n = useI18n();
 const message = useMessage();
 const { gtPadV } = useScreen();
-const { t, isZh, $t } = useLocale();
+const { isZh, $t } = useLocale();
 
 const isCn = computed(() => lang.value === 'zh');
 
@@ -95,7 +94,6 @@ const hoverTips = computed(() => (type: string) => {
 });
 
 // 下载埋点
-const userInfoStore = useUserInfoStore();
 
 // 老版本下载判断 不用登录
 const collectDownloadData = (name: string, architectureAndOs: string) => {
@@ -112,7 +110,7 @@ const collectDownloadData = (name: string, architectureAndOs: string) => {
 };
 
 // 老版本没有英文内容
-const getNewLink = (path: string, item?: any) => {
+const getNewLink = (path: string) => {
   const link = `${DOCS_LINK}/zh${path}`;
   return path.startsWith('/docs/') ? link : path;
 };
@@ -126,7 +124,7 @@ const getNewLink = (path: string, item?: any) => {
     <h4 v-if="contentData.plannedEOL" class="subtitle">{{ $t('download.EOM_DATE') }} ：{{ contentData.plannedEOL }}</h4>
     <div class="other-link">
       <template v-for="item in contentData.docs_list" :key="item.name">
-        <OLink :href="getNewLink(item.path, item)" color="primary" target="_blank" rel="noopener noreferrer">{{ isZh ? item.name : item.nameEn }}</OLink>
+        <OLink :href="getNewLink(item.path)" color="primary" target="_blank" rel="noopener noreferrer">{{ isZh ? item.name : item.nameEn }}</OLink>
         <ODivider direction="v" />
       </template>
       <OLink :href="GITCODE_LINK + '/opengauss/community/issues'" color="primary" target="_blank" rel="noopener noreferrer">{{

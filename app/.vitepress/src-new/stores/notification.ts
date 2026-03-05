@@ -1,4 +1,4 @@
-import { computed, nextTick, onMounted, ref } from 'vue';
+import { computed, ref } from 'vue';
 import { defineStore, storeToRefs } from 'pinia';
 import { getPersonalCount, syncInfo } from '~@/api/api-notification';
 import { NotificationCountT } from '~@/@types/type-notifications';

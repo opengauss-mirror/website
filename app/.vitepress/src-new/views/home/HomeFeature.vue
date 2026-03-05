@@ -26,7 +26,7 @@ const { isPhone } = useScreen();
   <AppSection :title="t('home.openGaussFeatures')" :subtitle="i18n.home.CHARACTERR_INFO.TITLE">
     <div class="home-feature-content">
       <div class="home-feature-content-main">
-        <template v-for="(item, index) in i18n.home.CHARACTERR_INFO.LIST">
+        <template v-for="(item, index) in i18n.home.CHARACTERR_INFO.LIST" :key="item.NAME">
           <div class="home-feature-content-main-item">
             <OIcon class="feature-item-icon"><component :is="icons[index]" /></OIcon>
             <p class="feature-item-title">{{ item.NAME }}</p>

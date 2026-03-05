@@ -11,13 +11,11 @@ import { OCard, OScroller } from '@opensig/opendesign';
 import { storeToRefs } from 'pinia';
 import { useCommon } from '@/stores/common';
 import { useLocale } from '~@/composables/useLocale';
-import { useScreen } from '~@/composables/useScreen';
 
 const coverList = [cover1, cover2, cover3, cover4];
 
 const { t, isZh, locale } = useLocale();
 const { theme } = storeToRefs(useCommon());
-const { lePadV } = useScreen();
 
 const videoList = computed(() => {
   return VideoConfig.map((item) => {

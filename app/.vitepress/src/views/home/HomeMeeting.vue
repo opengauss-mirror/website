@@ -2,7 +2,6 @@
 import { ref, onMounted, computed, nextTick, watch } from 'vue';
 import { ElMessage, ElTooltip } from 'element-plus';
 import dayjs from 'dayjs';
-import { getUserAllInfo } from '@/api/api-user';
 import { useI18n } from '@/i18n';
 import MeetingForm from '@/components/meeting/MeetingForm.vue';
 import MeetingDetail from '@/components/meeting/MeetingDetail.vue';
@@ -48,7 +47,6 @@ const changeCollapse = () => {
   isCollapse.value = !isCollapse.value;
 };
 
-const calendar = ref();
 const windowWidth = ref(useWindowResize());
 
 // 根据日期互殴前后存在会议的日期

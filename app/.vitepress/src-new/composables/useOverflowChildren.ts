@@ -1,4 +1,4 @@
-import { onMounted, onUnmounted, MaybeRef, unref, computed, reactive, watch } from 'vue';
+import { onMounted, onUnmounted, MaybeRef, unref, computed, reactive } from 'vue';
 import { useElementBounding } from '@vueuse/core';
 
 export function useOverflowChildren(

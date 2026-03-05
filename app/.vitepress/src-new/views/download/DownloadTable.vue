@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { ref, computed, inject } from 'vue';
-import { OLink, OButton, ODialog, OTable, OPopover, OIcon, useMessage } from '@opensig/opendesign';
+import { ref, inject, Ref } from 'vue';
+import { OLink, OButton, ODialog, OTable, OPopover, OIcon, useMessage, DialogActionT } from '@opensig/opendesign';
 import { useScreen } from '~@/composables/useScreen';
 import { useClipboard } from '@/components/hooks/useClipboard';
 import { doLogin } from '@/shared/login';
@@ -12,7 +12,7 @@ import IconDownload from '~icons/app/icon-download.svg';
 import IconCopy from '~icons/app/icon-copy2.svg';
 import IconTips from '~icons/app/icon-tips.svg';
 
-const props = defineProps({
+defineProps({
   options: {
     required: true,
     type: Array,
@@ -107,32 +107,6 @@ const dlgAction: Ref<DialogActionT[]> = ref([
 const collectDownloadData = (name: string) => {
   emits('report', name);
 };
-
-// tips
-const hoverTips = computed(() => (type: string | undefined) => {
-  let tips = '';
-  switch (type) {
-    case 'simple':
-      tips = i18n.value.download.SIMPLE;
-      break;
-    case 'enterprise':
-      tips = i18n.value.download.ENTERPRISE;
-      break;
-    case 'distributed':
-      tips = i18n.value.download.DISTRIBUTED;
-      break;
-    case 'lite':
-      tips = i18n.value.download.LITE;
-      break;
-    case 'finance':
-      tips = i18n.value.download.FINANCE;
-      break;
-    default:
-      tips = '';
-      break;
-  }
-  return tips;
-});
 </script>
 
 <template>

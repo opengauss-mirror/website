@@ -1,9 +1,7 @@
-import { getUserIdToken, getUserAllInfo } from '@/api/api-user';
+import { getUserAllInfo } from '@/api/api-user';
 import { useLoginStore, useUserInfoStore } from '@/stores/user';
 import type { UserInfoT } from '@/shared/@types/type-user';
 import Cookies from 'js-cookie';
-import { handleError } from '@/shared/utils';
-import { syncInfo } from '~@/api/api-notification';
 
 const LOGIN_URL = import.meta.env.VITE_LOGIN_URL;
 const DOMAIN = import.meta.env.VITE_COOKIE_DOMAIN;
@@ -77,7 +75,7 @@ export async function requestUserInfo() {
         doLogout();
         setStatus(LOGIN_STATUS.FAILED);
       }
-    } catch (err) {
+    } catch {
       doLogout();
       setStatus(LOGIN_STATUS.FAILED);
     }
@@ -91,7 +89,7 @@ export async function doLogin() {
   const { lang } = getLanguage();
   try {
     window.location.href = `${LOGIN_URL}/login?redirect_uri=${encodeURIComponent(location.href)}&lang=${lang}`;
-  } catch (error) {
+  } catch {
     setStatus(LOGIN_STATUS.FAILED);
   }
 }

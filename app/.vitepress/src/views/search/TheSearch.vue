@@ -267,7 +267,7 @@ async function getVersionTag() {
       activeVersion.value = res.obj.totalNum[1]?.key; // 这里仍然可以使用可选链
       versionList.value.push(...res.obj.totalNum);
     }
-  } catch (error) {
+  } catch {
     handleError();
   }
 }

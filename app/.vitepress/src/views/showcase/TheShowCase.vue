@@ -218,7 +218,7 @@ watch(
 );
 
 // 控制更多icon的显示
-let timeoutHandler: string | number | NodeJS.Timeout | undefined;
+let timeoutHandler: ReturnType<typeof setTimeout>;
 const descRefs = ref();
 const showList = ref(Array(currentCaseList.value?.length || 0).fill(false));
 watch(

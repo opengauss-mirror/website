@@ -36,7 +36,6 @@ import caiyajie from '@/assets/category/member/avatar/caiyajie.png';
 import huangkaiyao from '@/assets/category/member/avatar/huangkaiyao.png';
 import lishifu from '@/assets/category/member/avatar/lishifu.png';
 import liuyongsheng from '@/assets/category/member/avatar/liuyongsheng.png';
-import renyang from '@/assets/category/member/avatar/renyang.png';
 import tianwengang from '@/assets/category/member/avatar/tianwengang.png';
 import wangjiang from '@/assets/category/member/avatar/wangjiang.png';
 

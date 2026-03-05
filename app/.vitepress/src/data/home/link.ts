@@ -12,7 +12,7 @@ import mindspore_dark from '@/assets/category/home/link/dark/mindspore.png';
 import openubmc from '@/assets/category/home/link/light/openubmc.png';
 import openubmc_dark from '@/assets/category/home/link/dark/openubmc.png';
 
-import { EULER_LINK, MINDSPORE_LINK, LOOKENG_LINK, KUNPENG_LINK, BBSCSDN_LINK, EULER_EN_LINK, OPENUBMC_URL, OPENFUYAO_URL } from '@/data/url-config';
+import { EULER_LINK, MINDSPORE_LINK, KUNPENG_LINK, BBSCSDN_LINK, EULER_EN_LINK, OPENUBMC_URL, OPENFUYAO_URL } from '@/data/url-config';
 export default [
   {
     img: openeuler,

@@ -7,14 +7,12 @@ import ContentWrapper from '~@/components/ContentWrapper.vue';
 import DownloadContent from './DownloadContent.vue';
 import ArchiveContent from './ArchiveContent.vue';
 import { useScreen } from '~@/composables/useScreen';
-import { useCommon } from '@/stores/common';
 import { getUrlParams } from '@/shared/utils';
 
 import IconVersion from '~icons/app-new/icon-version.svg';
 import { useI18n } from 'vue-i18n';
 
 const { size } = useScreen();
-const commonStore = useCommon();
 const { lang } = useData();
 const router = useRouter();
 

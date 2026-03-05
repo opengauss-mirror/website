@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, CSSProperties, onMounted, useSlots } from 'vue';
+import { computed, CSSProperties, useSlots } from 'vue';
 
 const slots = useSlots();
 

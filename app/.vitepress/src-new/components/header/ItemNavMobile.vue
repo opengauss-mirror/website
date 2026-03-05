@@ -116,7 +116,7 @@ const closeMenu = () => {
       <nav class="o-nav" :class="`o-nav-${lang}`">
         <ul class="o-nav-list">
           <li
-            v-for="(item, index) in headerData"
+            v-for="item in headerData"
             :key="item.ID"
             :class="{
               active: navActive === item.ID,
