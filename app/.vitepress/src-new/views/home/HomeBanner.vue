@@ -43,6 +43,7 @@ const currentBgTheme = computed(() => {
       active-class="current-slide"
       class="home-banner"
       pause-on-hover
+      :auto-play="true"
       :data-o-theme="currentBgTheme"
     >
       <OCarouselItem v-for="item in homeBanner" :key="item.title" class="home-banner-item">
