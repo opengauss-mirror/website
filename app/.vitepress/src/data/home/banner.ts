@@ -83,24 +83,6 @@ export default {
   zh: [
     {
       banners: {
-        laptop: newYear2026,
-        pad_v: newYear2026Pad,
-        pad_h: newYear2026Pad,
-        phone: newYear2026Mo,
-      },
-      link: '',
-      target: '',
-      title: '',
-      titleMb: [''],
-      subtitle: '',
-      desc: [''],
-      btn: '',
-      className: '',
-      rightInset: '',
-      rightLink: '',
-    },
-    {
-      banners: {
         laptop: annual2025,
         pad_v: annual2025Mo,
         phone: annual2025Mo,
