@@ -5594,6 +5594,18 @@ export default {
         email: `andyli1@huawei.com`,
       },
       {
+        img: pengjiong,
+        name: `Jiong Peng`,
+        title: `Committer`,
+        email: `pengjiong1@huawei.com`,
+      },
+      {
+        img: chendong,
+        name: `Dong Chen`,
+        title: `Committer`,
+        email: `1209756284@qq.com`,
+      },
+      {
         img: guangang,
         name: `Gang Guan`,
         title: `Member`,
