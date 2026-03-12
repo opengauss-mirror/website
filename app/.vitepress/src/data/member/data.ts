@@ -1263,13 +1263,13 @@ export default {
       {
         img: pengjiong,
         name: `彭炯`,
-        title: `Committer`,
+        title: `Member`,
         email: `pengjiong1@huawei.com`,
       },
       {
         img: chendong,
         name: `陈栋`,
-        title: `Committer`,
+        title: `Member`,
         email: `1209756284@qq.com`,
       },
       {
@@ -5596,13 +5596,13 @@ export default {
       {
         img: pengjiong,
         name: `Jiong Peng`,
-        title: `Committer`,
+        title: `Member`,
         email: `pengjiong1@huawei.com`,
       },
       {
         img: chendong,
         name: `Dong Chen`,
-        title: `Committer`,
+        title: `Member`,
         email: `1209756284@qq.com`,
       },
       {
