@@ -3,7 +3,7 @@ import { ref, computed, onMounted, provide, watchEffect } from 'vue';
 import { useData } from 'vitepress';
 import { OTab, OTabPane } from '@opensig/opendesign';
 import DownloadConfig from '~@/data/download';
-import BannerLevel2 from '@/components/BannerLevel2.vue';
+import BannerLevel2 from '~@/components/BannerLevel2.vue';
 import ContentWrapper from '~@/components/ContentWrapper.vue';
 import AppSection from '~@/components/AppSection.vue';
 import DownloadContent from './DownloadContent.vue';

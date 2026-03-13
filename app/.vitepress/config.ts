@@ -3,6 +3,7 @@ import vueI18n from '@intlify/unplugin-vue-i18n/vite';
 import tdks from './tdks';
 import { createRequire } from 'node:module';
 import fs from 'node:fs';
+import process from 'node:process';
 import path from 'node:path';
 import hljs from 'highlight.js';
 
@@ -141,7 +142,8 @@ const config: UserConfig = {
     plugins: [
       // https://github.com/intlify/vue-i18n/issues/1569
       vueI18n({
-        ssr: true,
+        ssr: process.env.NODE_ENV === 'production',
+        runtimeOnly: false
       }),
     ],
   },
