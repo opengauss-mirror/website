@@ -9,12 +9,6 @@ import bannerTeamUpMo from '@/assets/category/home/banner/banner-team-up_mo.jpg'
 import bannerOpenGaussV6 from '@/assets/category/home/banner/banner20250408.jpg';
 import bannerOpenGaussV6Mo from '@/assets/category/home/banner/banner20250408_mo.jpg';
 
-import bannerDift from '@/assets/category/home/banner/banner2025040801.jpg';
-import bannerDiftMo from '@/assets/category/home/banner/banner2025040801_mo.jpg';
-
-import banner20250506Pc from '@/assets/category/home/banner/banner20250506Pc.png';
-import banner20250506Mo from '@/assets/category/home/banner/banner20250506Mo.png';
-
 import bannerForumPc from '@/assets/category/home/banner/banner-forum.png';
 import bannerForumMo from '@/assets/category/home/banner/banner-forum_mo.png';
 import banner700RC2 from '@/assets/category/home/banner/banner700_RC2.jpg';
@@ -25,9 +19,6 @@ import ogceDark from '@/assets/category/home/banner/ogce_dark.png';
 import ogceMoDark from '@/assets/category/home/banner/ogce_mo_dark.png';
 import annual2025 from '@/assets/category/home/banner/annual2025.png';
 import annual2025Mo from '@/assets/category/home/banner/annual2025_mo.png';
-import newYear2026 from '@/assets/category/home/banner/newYear2026.jpg';
-import newYear2026Pad from '@/assets/category/home/banner/newYear2026_pad.jpg';
-import newYear2026Mo from '@/assets/category/home/banner/newYear2026_mo.jpg';
 
 import { LEARN_VIDEO_LINK, DOCS_LINK, FORUM_LINK } from '@/data/url-config';
 import { ScreenSizeT } from '~@/composables/useScreen';
@@ -95,22 +86,6 @@ export default {
       desc: [''],
       btn: '前往查看',
       className: '',
-      rightInset: '',
-      rightLink: '',
-    },
-    {
-      banners: {
-        laptop: banner20250506Pc,
-        phone: banner20250506Mo,
-      },
-      link: '/zh/news/2025-12-31',
-      target: '_blank',
-      title: 'openGauss 5.0.0 LTS版本即将停止维护公告',
-      titleMb: ['openGauss 5.0.0\nLTS版本即将停止维护公告'],
-      subtitle: '',
-      desc: [''],
-      btn: '查看详情',
-      className: 'banner-video',
       rightInset: '',
       rightLink: '',
     },
@@ -184,23 +159,6 @@ export default {
       rightInset: '',
       rightLink: '',
     },
-    {
-      banners: {
-        laptop: bannerDift,
-        phone: bannerDiftMo,
-      },
-      link: DOCS_LINK + '/zh/docs/latest/docs/DataVec/openGauss-RAG实践.html',
-      target: '_blank',
-      title: 'openGauss DataVec + Dify',
-      titleMb: [],
-      subtitle: '',
-      desc: [''],
-      btn: '立即查看',
-      className: '',
-      rightInset: '',
-      rightLink: '',
-    },
-
     {
       banners: {
         laptop: bannerTeamUp,
