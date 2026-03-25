@@ -8,12 +8,12 @@ import en from 'element-plus/es/locale/lang/en';
 
 import AppHeader from '~@/components/header/AppHeader.vue';
 import AppFooter from '~@/components/AppFooter.vue';
-import { OCookieNotice, OPlusConfigProvider } from '@opendesign-plus/components';
+import { OCookieNotice, OPlusConfigProvider } from '@opendesign-plus-test/components';
 
 import LayoutSecurity from '@/layouts/LayoutSecurity.vue';
 import LayoutBlog from '@/layouts/LayoutBlog.vue';
 import LayoutNews from '@/layouts/LayoutNews.vue';
-import LayoutEvents from '@/layouts/LayoutEvents.vue';
+import LayoutEvents from '~@/layouts/LayoutEvents.vue';
 import LayoutShowcase from '@/layouts/LayoutShowcase.vue';
 import LayoutMigration from '@/layouts/LayoutMigration.vue';
 import LayoutFaq from '@/layouts/LayoutFaq.vue';
@@ -25,6 +25,7 @@ import categories from '@/shared/category';
 
 import seoConfig from '@/data/common/seo';
 import { useCookieStore } from '@/stores/common';
+import EventDetail from '~@/layouts/LayoutEventDetail.vue';
 
 const { frontmatter, lang } = useData();
 
@@ -37,7 +38,8 @@ const compMapping: {
   security: LayoutSecurity,
   blog: LayoutBlog,
   news: LayoutNews,
-  events: LayoutEvents,
+  events: EventDetail,
+  'events-overview': LayoutEvents,
   showcase: LayoutShowcase,
   migration: LayoutMigration,
   faq: LayoutFaq,

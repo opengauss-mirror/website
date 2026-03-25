@@ -4,7 +4,9 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "dev": "pnpm gen:blogs && pnpm gen:news && vitepress dev app",
+    "predev": "node scripts/readEventsFrontmatter.js",
+    "dev": "vitepress dev app",
+    "prebuild": "node scripts/readEventsFrontmatter.js",
     "build": "pnpm gen:blogs && pnpm gen:news && vitepress build app",
     "preview": "vitepress preview app",
     "test:e2e": "playwright test && playwright show-report",
@@ -21,7 +23,7 @@
   "author": "",
   "license": "",
   "dependencies": {
-    "@opendesign-plus/components": "0.0.1-rc.6",
+    "@opendesign-plus-test/components": "0.0.1-rc.15",
     "@opendesign-plus/utils": "0.0.1-rc.6",
     "@opensig/open-analytics": "^0.0.9",
     "@opensig/opendesign": "0.0.75",
@@ -51,6 +53,8 @@
     "@vue/eslint-config-typescript": "14.2.0",
     "eslint": "9.39.2",
     "eslint-plugin-vue": "9.31.0",
+    "glob": "^13.0.6",
+    "gray-matter": "^4.0.3",
     "husky": "8.0.3",
     "js-yaml": "4.1.0",
     "jsdom": "25.0.1",

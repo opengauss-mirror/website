@@ -145,7 +145,7 @@ const closeMenu = () => {
       </nav>
 
       <div class="nav-aside" :class="{ 'nav-aside-home': navActive === 'home' }" @click="closeMenu">
-        <ul v-if="navActive !== 'SOURCE_CODE'" class="nav-aside-wrapper">
+        <ul v-if="navInfo && navActive !== 'SOURCE_CODE'" class="nav-aside-wrapper">
           <li v-for="item in navInfo.CHILDREN" :value="item.NAME" :title="item.NAME" :key="item.NAME" class="nav-aside-content">
             <p class="content-title">{{ item.NAME }}</p>
 
