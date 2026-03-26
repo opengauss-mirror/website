@@ -13,18 +13,19 @@ import {
   ODialog,
   type DialogActionT,
   OIconChevronRight,
+  OCollapse,
+  OCollapseItem,
 } from '@opensig/opendesign';
 import TagFilter from '~@/components/TagFilter.vue';
 import IconCopy from '~icons/app/icon-copy2.svg';
 import downloadData from '~@/data/download';
-import { useCookieStore } from '@/stores/common';
 import { getCustomCookie } from '@/shared/utils';
 import { oaReport } from '@/shared/analytics';
 import { doLogin } from '@/shared/login';
 import { useData } from 'vitepress';
 // import { useI18n } from '~@/i18n';
 import { useUserInfoStore } from '@/stores/user';
-import { computed, nextTick, ref, shallowRef, watch, watchEffect } from 'vue';
+import { computed, CSSProperties, nextTick, ref, shallowRef, watch, watchEffect } from 'vue';
 import { useClipboard } from '~@/composables/useClipboard';
 import IconQuestion from '~icons/app/icon-question-mark.svg';
 import { useScreen } from '~@/composables/useScreen';
@@ -32,7 +33,7 @@ import { Ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import TheTable from '~@/components/TheTable.vue';
 
-const _downloadData = downloadData.filter((item) => item.newLayout) as (typeof downloadData)[1][];
+const DOWNLOAD_DATA = downloadData.filter((item) => item.newLayout) as (typeof downloadData)[1][];
 
 interface FilterT {
   architecture: string;
@@ -45,26 +46,35 @@ const { t } = useI18n();
 const message = useMessage(null);
 const userInfoStore = useUserInfoStore();
 
-const versions = _downloadData.map((item) => ({ label: 'openGauss ' + item.name, value: item.name }));
+// 版本筛选
+const versions = DOWNLOAD_DATA.map((item) => ({ label: 'openGauss ' + item.name, value: item.name }));
 const currentVersion = ref(versions[0].value);
+const isLatestVersion = computed(() => currentVersion.value === versions[0].value);
 
-const currentVersionTool = computed(() => {
-  return _downloadData.find((item) => item.name === currentVersion.value)?.data[lang.value].filter((item) => item.category === 'openGauss Tools') || [];
+const currentVersionTools = computed(() => {
+  return DOWNLOAD_DATA.find((item) => item.name === currentVersion.value)?.data[lang.value].filter((item) => item.category === 'openGauss Tools') || [];
 });
 
+const onVersionChanged = () => {
+  activeArchitecture.value = architectureList.value[0] || '';
+  activeOs.value = osList.value?.[0] || '';
+  reportVersionSelect();
+}
+
+// 架构筛选
 const architectureList = computed<string[]>(() => {
-  return Array.from(new Set(currentVersionTool.value.map((item: FilterT) => item.architecture).filter(Boolean)));
+  return Array.from(new Set(currentVersionTools.value.map((item: FilterT) => item.architecture).filter(Boolean)));
 });
 const activeArchitecture = ref(architectureList.value[0] || '');
 
+// OS筛选
 const osList = computed<string[]>(() => {
-  return Array.from(new Set(currentVersionTool.value.map((item: FilterT) => item.os).filter(Boolean)));
+  return Array.from(new Set(currentVersionTools.value.map((item: FilterT) => item.os).filter(Boolean)));
 });
 const activeOs = ref(osList.value?.[0] || '');
-
 const matrix = computed(() => {
   const map = new Map<string, Set<string>>();
-  currentVersionTool.value.forEach((item: FilterT) => {
+  currentVersionTools.value.forEach((item: FilterT) => {
     if (!map.has(item.architecture)) {
       map.set(item.architecture, new Set());
     }
@@ -74,18 +84,57 @@ const matrix = computed(() => {
   });
   return map;
 });
-
 const enabledOs = computed(() => matrix.value.get(activeArchitecture.value));
 
-const columns = [
-  { key: 'name', label: t('download.TABLE_HEAD[0]') },
-  { key: 'size', label: t('download.TABLE_HEAD[1]'), width: 280 },
-  { key: 'sha_code', label: t('download.TABLE_HEAD[3]'), width: 280 },
-  { key: 'download', label: t('download.TABLE_HEAD[2]'), width: 280 },
-];
+const tableColumns = computed(() => {
+  if (isLatestVersion.value) {
+    return [
+      {
+        key: 'type',
+        label: t('download.TABLE_HEAD[0]'),
+        width: 200,
+        filter: {
+          checkboxOptions: [
+            { label: 'DataKit', value: 'DataKit' },
+            { label: 'MySQL全量迁移', value: 'MySQL全量迁移' },
+            { label: 'PG/OG/SQLServer全量迁移', value: 'PG/OG/SQLServer全量迁移' },
+            { label: '增量迁移', value: '增量迁移' },
+            { label: '数据校验', value: '数据校验' },
+            { label: '录制回放', value: '录制回放' },
+          ],
+        },
+      },
+      { key: 'name', label: t('download.TABLE_HEAD[5]'), width: 360 },
+      { key: 'description', label: t('download.TABLE_HEAD[6]'), width: 360 },
+      { key: 'size', label: t('download.TABLE_HEAD[1]'), width: 150 },
+      { key: 'sha_code', label: t('download.TABLE_HEAD[3]'), width: 150 },
+      { key: 'download', label: t('download.TABLE_HEAD[2]'), width: 150 },
+    ];
+  }
+  return [
+    { key: 'name', label: t('download.TABLE_HEAD[0]') },
+    { key: 'size', label: t('download.TABLE_HEAD[1]'), width: 280 },
+    { key: 'sha_code', label: t('download.TABLE_HEAD[3]'), width: 280 },
+    { key: 'download', label: t('download.TABLE_HEAD[2]'), width: 280 },
+  ];
+});
+
+const cellStyle = computed(() => {
+  if (isLatestVersion.value) {
+    return ({ columnIndex }: { columnIndex: number }) => {
+      if (columnIndex === 0) {
+        return {
+          borderRight: 'var(--el-table-border)',
+        } as CSSProperties;
+      }
+      return {} as CSSProperties;
+    };
+  }
+  return {} as CSSProperties;
+});
 
 const displayTools = computed(() => {
-  return currentVersionTool.value.filter((item: any) => {
+  return currentVersionTools.value.filter((item: any) => {
     return item.architecture === activeArchitecture.value && item.os === activeOs.value;
   });
 });
@@ -171,10 +220,9 @@ const dlgAction: Ref<DialogActionT[]> = ref([
   },
 ]);
 
-const cookieStore = useCookieStore();
 // 下载埋点  新版本判断
 const collectDownloadData = (name: string) => {
-  if (cookieStore.isAllAgreed || userInfoStore.username) {
+  if (userInfoStore.username) {
     const { href } = window.location;
     const downloadTime = new Date();
     const _U_T_ = getCustomCookie('_U_T_') || 'notLog';
@@ -207,13 +255,13 @@ const reportVersionSelect = () => {
     <div class="card">
       <!-- 版本选择 -->
       <TagFilter v-if="gtPadV" class="architecture-box" :label="$t('download.VERSION')">
-        <OSelect v-model="currentVersion" @change="reportVersionSelect">
+        <OSelect v-model="currentVersion" @change="onVersionChanged">
           <OOption v-for="ver in versions" :label="ver.label" :value="ver.value" :key="ver.value"></OOption>
         </OSelect>
       </TagFilter>
       <template v-else>
         <p class="mobile-filter-label">{{ $t('download.VERSION') }}</p>
-        <OSelect v-model="currentVersion">
+        <OSelect v-model="currentVersion" @change="onVersionChanged">
           <OOption v-for="ver in versions" :label="ver.label" :value="ver.value" :key="ver.value"></OOption>
         </OSelect>
       </template>
@@ -269,12 +317,20 @@ const reportVersionSelect = () => {
         </OSelect>
       </template>
       <!-- 表格 -->
-      <TheTable ref="tableRef" v-if="gtPadV" :columns="columns" :data="displayTools" row-key="name">
+      <TheTable
+        ref="tableRef"
+        :cell-style="cellStyle"
+        v-if="gtPadV"
+        :children-type="isLatestVersion ? 'span' : 'collapse'"
+        :columns="tableColumns"
+        :data="displayTools"
+        row-key="name"
+      >
         <!-- 软件包类型 -->
         <template #td_name="{ row }">
           <p style="display: inline-flex; align-items: center">
             <span>{{ row.name }}</span>
-            <OPopover v-if="row.name.includes('noLSE')" position="top" trigger="hover">
+            <OPopover v-if="row.name?.includes('noLSE')" position="top" trigger="hover">
               <template #target>
                 <OIcon>
                   <IconQuestion />
@@ -359,10 +415,11 @@ const reportVersionSelect = () => {
           </template>
         </template>
       </TheTable>
-      <template v-else>
+      <template v-else-if="!isLatestVersion">
+        <!-- 移动端布局 -->
         <div class="mobile-download-item-card" v-for="item in displayTools" :key="item.name">
           <p class="item-name">{{ item.name }}</p>
-          <p class="desc" v-if="item.name.includes('noLSE')">
+          <p class="desc" v-if="item.name?.includes('noLSE')">
             支持ARMv8.1以下芯片，适配飞腾2000和鲲鹏916平台（LSE即大型系统扩展指令集从ARMv8.1开始引入，ARMv8.1以下芯片不支持该特性）
           </p>
           <div class="info">
@@ -386,6 +443,62 @@ const reportVersionSelect = () => {
         </div>
       </template>
     </div>
+
+    <!-- 新版移动端布局 -->
+    <template v-if="!gtPadV && isLatestVersion">
+      <div v-for="tool in displayTools" :key="tool.type" class="card" style="padding: 0;">
+        <OCollapse>
+          <OCollapseItem :title="tool.type" :value="tool.type">
+            <template v-if="tool.children?.length">
+              <div v-for="item in tool.children" :key="item.name" class="mobile-download-item-card">
+                <p class="item-name">{{ item.name }}</p>
+                <p class="tool-type-description">{{ item.description }}</p>
+                <div class="info" style="padding-top: 12px;">
+                  <p>{{ $t('download.TABLE_HEAD[1]') }}</p>
+                  <p>{{ item.size }}</p>
+                  <p>{{ $t('download.TABLE_HEAD[3]') }}</p>
+                  <OLink tag="button" @click="handleUrlCopy(item.sha_code, $event)">
+                    SHA256
+                    <template #suffix>
+                      <OIcon><IconCopy /></OIcon>
+                    </template>
+                  </OLink>
+                  <p>{{ $t('download.TABLE_HEAD[2]') }}</p>
+                  <OLink v-if="!userInfoStore.username" tag="button" color="primary" @click="changeDownloadAuth">
+                    {{ $t('download.BTN_TEXT') }}
+                  </OLink>
+                  <OLink v-else :href="item.down_url" tag="button" @click="collectDownloadData(item.name)" color="primary">
+                    {{ $t('download.BTN_TEXT') }}
+                  </OLink>
+                </div>
+              </div>
+            </template>
+            <div v-else class="mobile-download-item-card">
+              <p class="item-name">{{ tool.name }}</p>
+              <p class="tool-type-description">{{ tool.description }}</p>
+              <div class="info" style="margin-top: 12px;">
+                <p>{{ $t('download.TABLE_HEAD[1]') }}</p>
+                <p>{{ tool.size }}</p>
+                <p>{{ $t('download.TABLE_HEAD[3]') }}</p>
+                <OLink tag="button" @click="handleUrlCopy(tool.sha_code, $event)">
+                  SHA256
+                  <template #suffix>
+                    <OIcon><IconCopy /></OIcon>
+                  </template>
+                </OLink>
+                <p>{{ $t('download.TABLE_HEAD[2]') }}</p>
+                <OLink v-if="!userInfoStore.username" tag="button" color="primary" @click="changeDownloadAuth">
+                  {{ $t('download.BTN_TEXT') }}
+                </OLink>
+                <OLink v-else :href="tool.down_url" tag="button" @click="collectDownloadData(tool.name)" color="primary">
+                  {{ $t('download.BTN_TEXT') }}
+                </OLink>
+              </div>
+            </div>
+          </OCollapseItem>
+        </OCollapse>
+      </div>
+    </template>
     <!-- 登录弹窗 -->
     <ODialog v-if="downloadDlg" v-model:visible="downloadDlg" :unmount-on-hide="false" size="small" :actions="dlgAction">
       <template #header>{{ $t('download.DOWNLOAD_TIPS') }}</template>
@@ -422,7 +535,9 @@ const reportVersionSelect = () => {
 .mobile-download-item-card {
   border-radius: 4px;
   background-color: var(--o-color-fill1);
-  margin-top: 12px;
+  &:not(:first-child) {
+    margin-top: 12px;
+  }
   padding: 16px;
   @include text2;
   .item-name {
@@ -440,6 +555,15 @@ const reportVersionSelect = () => {
       text-align: start;
     }
   }
+}
+
+.tool-type-description {
+  @include text1;
+  opacity: 0.8;
+}
+
+:deep(.o-collapse-item-header) {
+  align-items: center;
 }
 
 .o-link {
@@ -484,6 +608,7 @@ const reportVersionSelect = () => {
   background: var(--o-color-fill2);
   margin-top: 40px;
   @include respond-to('<=pad_v') {
+    padding: 16px 12px;
     margin-top: 12px;
   }
   .architecture-box {
