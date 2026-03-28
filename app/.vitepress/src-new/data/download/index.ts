@@ -1,5 +1,6 @@
 import { DownloadItem } from '~@/@types/type-download';
 import { GITCODE_LINK } from '~@/data/url-config';
+import download700RC3 from './download7.0.0-RC3';
 import download700RC2 from './download7.0.0-RC2';
 import download700RC1 from './download7.0.0-RC1';
 import download603 from './download6.0.3';
@@ -31,6 +32,25 @@ import download100 from './download1.0.0';
 // newLayout:true 代表使用新版下载页面结构布局，无此参数代表使用旧版
 // isLogin:true 代表该版本需要登录才能下载，无此参数代表不需要登录
 const downloadData: DownloadItem[] = [
+  {
+    name: '7.0.0-RC3',
+    newLayout: true,
+    isLogin: true,
+    data: download700RC3,
+    releaseDate: '2026.03.30',
+    plannedEOL: '2026.09.30',
+    desc: '社区创新版本联创测试使用，发布间隔周期定为6个月，社区提供6个月维护支持。',
+    desc_en: 'RCx: a collaborative testing version released every 6 months, with 6 months of community support.',
+    versionCapabilityPath: `${GITCODE_LINK}/opengauss/docs/blob/7.0.0-RC3/content/zh/docs/VersionCapability/index.md`,
+    docs_list: [
+      {
+        name: '发行说明',
+        nameEn: 'Release Notes',
+        path: '/zh/news/2026-03-30/',
+        pathEn: '/zh/news/2026-09-30/',
+      },
+    ],
+  },
   {
     name: '7.0.0-RC2',
     newLayout: true,
