@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onBeforeMount, onMounted, ref } from 'vue';
 import { useLocale } from '~@/composables/useLocale';
-import { OEventsCalendar, OPlusConfigProvider } from '@opendesign-plus-test/components';
+import { OEventsCalendar, OPlusConfigProvider } from '@opendesign-plus/components';
 
 import AppSection from '~@/components/AppSection.vue';
 import EventsApply from './EventsApply.vue';
@@ -34,7 +34,7 @@ const eventList = [
   {
     name: '国际开源会议',
     type: 'summit',
-    desc: '对开源顶会有任何疑问或建议，请联系<a href="mailto:marketing@opengauss.org">marketing@opengauss.org</a>',
+    desc: '对开源顶会有任何疑问或建议，请联系<a class="o-link o-link-hover-underline o-link-primary o-link-auto" href="mailto:marketing@opengauss.org"><span class="o-link-main"><span class="o-link-label">marketing@opengauss.org</span></span></a>',
     data: [
       {
         name: 'FOSSASIA Summit 2026',
@@ -102,7 +102,7 @@ const eventList = [
   {
     name: '开发者活动',
     type: 'events',
-    desc: '如果您想组织社区活动，参与议题分享，请联系<a href="mailto:events@opengauss.sh">events@opengauss.sh</a>',
+    desc: '如果您想组织社区活动，参与议题分享，请联系<a class="o-link o-link-hover-underline o-link-primary o-link-auto" href="mailto:events@opengauss.sh"><span class="o-link-main"><span class="o-link-label">events@opengauss.sh</span></span></a>',
     data: [
       {
         name: 'openGauss oGRAC技术直播',
@@ -148,3 +148,13 @@ const eventList = [
     <EventsApply />
   </AppSection>
 </template>
+<style lang="scss" scoped>
+:deep(.o-events-calendar .month-list) {
+  background-color: var(--o-color-primary4-light);
+  border-radius: 4px 4px 0 0;
+}
+
+:deep(.o-events-calendar .o-collapse) {
+  border-radius: 0 0 4px 4px;
+}
+</style>

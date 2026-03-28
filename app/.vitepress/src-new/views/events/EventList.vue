@@ -94,7 +94,7 @@ const getExpirationType = (dateStr: string) => {
   } catch {
     return 0;
   }
-}
+};
 
 const pipe =
   (...fns: ((...args: any[]) => any)[]) =>
@@ -108,7 +108,13 @@ const updateList = () => {
   const fnList = [];
   // 活动状态
   if (params.state) {
-    fnList.push((list: any) => list.filter((item: any) => item.activity_type === params.state));
+    let now: Date | number = new Date();
+    now = new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime();
+    fnList.push((list: any) =>
+      params.state === 1
+        ? list.filter((item) => now > new Date(item.date.replace(/\//g, '-')).getTime())
+        : list.filter((item) => now <= new Date(item.date.replace(/\//g, '-')).getTime())
+    );
   }
   // 搜索
   if (params.keyword) {
@@ -174,7 +180,7 @@ const handleConfirm = () => {
         <ORadioGroup v-model="params.state" :style="{ gap: lePadV ? '4px 4px' : '16px 8px' }">
           <ORadio v-for="option in stateOptions" :key="option.value" :value="option.value">
             <template #radio="{ checked }">
-              <OToggle @click="clearCheckedState(checked)" :class="{ active: checked }" :checked="checked">
+              <OToggle @click="clearCheckedState(checked)" :checked="checked">
                 {{ isZh ? option.label.zh : option.label.en }}
               </OToggle>
             </template>
@@ -190,19 +196,23 @@ const handleConfirm = () => {
       </div>
     </div>
     <div v-else class="filter-card-mb">
+      <div class="filter">
+        <p class="filter-title">{{ t('events.list.state') }}</p>
+        <ORadioGroup v-model="params.state" :style="{ gap: lePadV ? '4px 4px' : '16px 8px' }">
+          <ORadio v-for="option in stateOptions" :key="option.value" :value="option.value">
+            <template #radio="{ checked }">
+              <OToggle @click="clearCheckedState(checked)" :checked="checked">
+                {{ isZh ? option.label.zh : option.label.en }}
+              </OToggle>
+            </template>
+          </ORadio>
+        </ORadioGroup>
+      </div>
       <OInput v-model="debounceSearch" :placeholder="t('events.list.search')" size="large" class="input-search">
         <template #prefix>
           <OIcon><IconSearch /></OIcon>
         </template>
       </OInput>
-      <div class="filter-btn-mb">
-        <OButton variant="text" color="normal" class="filter-btn" @click="filterVisible = true">
-          <span>{{ t('events.list.filter') }}</span>
-          <template #suffix>
-            <OIcon><IconFilter /></OIcon>
-          </template>
-        </OButton>
-      </div>
     </div>
     <ORow v-if="pagedList.length" :gap="lePadV ? '0 12px' : '32px 32px'" wrap="wrap">
       <OCol :flex="lePadV ? ' 0 0 100%' : '0 0 25%'" v-for="(item, i) in pagedList" :key="i">
@@ -233,11 +243,14 @@ const handleConfirm = () => {
         </OCard>
       </OCol>
     </ORow>
-    <AppEmpty v-else class="nofound" />
+    <AppEmpty v-else class="nofound">
+      <p style="color: var(--o-color-info4);">未找到相关活动</p>
+    </AppEmpty>
 
     <!-- 分页 -->
     <div v-if="total > COUNT_PER_PAGE[0]" class="pagination">
       <OPagination
+        style="--pagination-radius: 4px"
         :simple="lePadV"
         :total="currentList.length"
         :page="currentPage"
@@ -258,7 +271,7 @@ const handleConfirm = () => {
           <ORadioGroup v-model="stateValue" :style="{ gap: lePadV ? '8px 8px' : '16px 8px' }">
             <ORadio v-for="option in stateOptions" :key="option.value" :value="option.value">
               <template #radio="{ checked }">
-                <OToggle @click="clearCheckedState(checked)" :class="{ active: checked }" :checked="checked">
+                <OToggle @click="clearCheckedState(checked)" :checked="checked">
                   {{ isZh ? option.label.zh : option.label.en }}
                 </OToggle>
               </template>
@@ -318,19 +331,22 @@ const handleConfirm = () => {
   --toggle-radius: 4px;
   max-height: 32px;
   color: var(--o-color-info1);
-  border: 1px solid var(--o-color-control2-light);
-  --toggle-bg-color: var(--o-color-control2-light);
-  --toggle-bg-color-hover: var(--o-color-control3-light);
+  --toggle-bg-color: var(--o-color-fill1);
+  --toggle-bg-color-hover: var(--o-color-control2-light);
   @include text1;
-}
-.o-radio + .o-radio {
-  margin-left: 0;
+
+  &.active {
+    background-color: transparent;
+    border: 1px solid var(--o-color-primary1);
+  }
 }
 
-.active {
-  background-color: transparent;
+:deep(.o-toggle-checked) {
   color: var(--o-color-primary1);
-  border: 1px solid var(--o-color-primary1);
+}
+
+.o-radio + .o-radio {
+  margin-left: 0;
 }
 
 .search-box {
@@ -477,15 +493,10 @@ const handleConfirm = () => {
 
 @include respond-to('<=pad_v') {
   .item-cover {
-    aspect-ratio: 1/.4;
+    aspect-ratio: 1/0.4;
   }
   .event-latest {
     min-height: calc(100vh - 250px);
-  }
-  .filter-btn-mb {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 12px;
   }
   .o-row {
     margin-top: 12px;
@@ -514,11 +525,25 @@ const handleConfirm = () => {
       --o-divider-bd-color: var(--o-color-info1-inverse);
     }
   }
+  .filter-card-mb {
+    background-color: var(--o-color-fill2);
+    padding: var(--o-gap-3) var(--o-gap-4);
+    border-radius: 4px;
+  }
   .filter {
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
   .filter-title {
-    margin: 0 0 8px 0;
+    margin: 0;
+  }
+  .o-input {
+    margin-top: 8px;
+  }
+  :deep(.o-input.o_box-large) {
+    --_box-padding: 0 15px;
+    --_box-height: var(--o-control_size-l);
   }
   .o-toggle {
     --toggle-size: auto;
@@ -539,6 +564,11 @@ const handleConfirm = () => {
 }
 
 @include respond-to('phone') {
+  .filter-card-mb {
+    --o-control_size-m: 24px;
+    --o-control_size-l: 32px;
+    --o-control_size-xl: 32px;
+  }
   .card-content {
     padding: 16px 16px 0;
   }

@@ -19,7 +19,7 @@ import VueDOMPurifyHTML from 'vue-dompurify-html';
 import 'element-plus/theme-chalk/dark/css-vars.css';
 import i18n from '~@/i18n';
 
-import '@opendesign-plus-test/components/styles';
+import '@opendesign-plus/components/styles';
 // src-new
 
 import '~@/assets/style/theme/default-light.token.css';

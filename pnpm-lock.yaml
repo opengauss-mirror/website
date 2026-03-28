@@ -8,9 +8,9 @@ importers:
 
   .:
     dependencies:
-      '@opendesign-plus-test/components':
-        specifier: 0.0.1-rc.15
-        version: 0.0.1-rc.15(@types/markdown-it@14.1.2)(markdown-it@14.1.0)(vue@3.3.4)
+      '@opendesign-plus/components':
+        specifier: 0.0.1-rc.9
+        version: 0.0.1-rc.9(@types/markdown-it@14.1.2)(markdown-it@14.1.0)(vue@3.3.4)
       '@opendesign-plus/utils':
         specifier: 0.0.1-rc.6
         version: 0.0.1-rc.6
@@ -77,7 +77,7 @@ importers:
         version: 20.5.9
       '@vitejs/plugin-vue-jsx':
         specifier: 2.1.1
-        version: 2.1.1(vite@7.3.1(@types/node@20.5.9)(sass@1.62.0)(yaml@2.8.2))(vue@3.3.4)
+        version: 2.1.1(vite@5.4.11(@types/node@20.5.9)(sass@1.62.0))(vue@3.3.4)
       '@vitest/coverage-v8':
         specifier: ^4.0.18
         version: 4.0.18(vitest@4.0.18(@types/node@20.5.9)(jsdom@25.0.1)(sass@1.62.0)(yaml@2.8.2))
@@ -125,7 +125,7 @@ importers:
         version: 0.17.1(@vue/compiler-sfc@3.5.12)
       vite-plugin-static-copy:
         specifier: ^2.2.0
-        version: 2.2.0(vite@7.3.1(@types/node@20.5.9)(sass@1.62.0)(yaml@2.8.2))
+        version: 2.2.0(vite@5.4.11(@types/node@20.5.9)(sass@1.62.0))
       vitepress:
         specifier: 1.2.3
         version: 1.2.3(@algolia/client-search@5.13.0)(@types/node@20.5.9)(async-validator@4.2.5)(axios@1.13.5)(postcss@8.5.8)(sass@1.62.0)(search-insights@2.13.0)(typescript@4.9.4)
@@ -1051,8 +1051,8 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@opendesign-plus-test/components@0.0.1-rc.15':
-    resolution: {integrity: sha512-OtO/LR3I5Jpa00V6t40pOCkU5ztCPHQNHFDaOtYcdHnCpNy3GOFsxcukT9l0ivShNybCejtY0AATflhmlk9EyQ==}
+  '@opendesign-plus/components@0.0.1-rc.9':
+    resolution: {integrity: sha512-itij3gvj8R3LSOdQqH0uZlgLCF+vi67xR3AMng2OiuOWJ1bUBffg+E9w9rWzWVNSver1R+PtfyzZijD27SHfGQ==}
 
   '@opendesign-plus/composables@0.0.1-rc.6':
     resolution: {integrity: sha512-Uvbcl6Omtu6FwaMWLUQJDbyPUuFyx3zgGJ2qwj3WkcKUUWQ8AuBFMw7Vs3lLDQCg37roBmqvrwnBJE4ST4xPNw==}
@@ -4201,7 +4201,7 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.19.0
 
-  '@opendesign-plus-test/components@0.0.1-rc.15(@types/markdown-it@14.1.2)(markdown-it@14.1.0)(vue@3.3.4)':
+  '@opendesign-plus/components@0.0.1-rc.9(@types/markdown-it@14.1.2)(markdown-it@14.1.0)(vue@3.3.4)':
     dependencies:
       '@opendesign-plus/composables': 0.0.1-rc.6(@types/markdown-it@14.1.2)(markdown-it@14.1.0)(vue@3.3.4)
       '@opendesign-plus/styles': 0.0.1-rc.2
@@ -4643,12 +4643,12 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@vitejs/plugin-vue-jsx@2.1.1(vite@7.3.1(@types/node@20.5.9)(sass@1.62.0)(yaml@2.8.2))(vue@3.3.4)':
+  '@vitejs/plugin-vue-jsx@2.1.1(vite@5.4.11(@types/node@20.5.9)(sass@1.62.0))(vue@3.3.4)':
     dependencies:
       '@babel/core': 7.23.7
       '@babel/plugin-transform-typescript': 7.23.6(@babel/core@7.23.7)
       '@vue/babel-plugin-jsx': 1.1.5(@babel/core@7.23.7)
-      vite: 7.3.1(@types/node@20.5.9)(sass@1.62.0)(yaml@2.8.2)
+      vite: 5.4.11(@types/node@20.5.9)(sass@1.62.0)
       vue: 3.3.4
     transitivePeerDependencies:
       - supports-color
@@ -6479,13 +6479,13 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.2
 
-  vite-plugin-static-copy@2.2.0(vite@7.3.1(@types/node@20.5.9)(sass@1.62.0)(yaml@2.8.2)):
+  vite-plugin-static-copy@2.2.0(vite@5.4.11(@types/node@20.5.9)(sass@1.62.0)):
     dependencies:
       chokidar: 3.5.3
       fast-glob: 3.3.3
       fs-extra: 11.3.0
       picocolors: 1.1.1
-      vite: 7.3.1(@types/node@20.5.9)(sass@1.62.0)(yaml@2.8.2)
+      vite: 5.4.11(@types/node@20.5.9)(sass@1.62.0)
 
   vite@5.4.11(@types/node@20.5.9)(sass@1.62.0):
     dependencies:

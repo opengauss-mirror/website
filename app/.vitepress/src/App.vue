@@ -8,7 +8,7 @@ import en from 'element-plus/es/locale/lang/en';
 
 import AppHeader from '~@/components/header/AppHeader.vue';
 import AppFooter from '~@/components/AppFooter.vue';
-import { OCookieNotice, OPlusConfigProvider } from '@opendesign-plus-test/components';
+import { OCookieNotice, OPlusConfigProvider } from '@opendesign-plus/components';
 
 import LayoutSecurity from '@/layouts/LayoutSecurity.vue';
 import LayoutBlog from '@/layouts/LayoutBlog.vue';
@@ -26,8 +26,11 @@ import categories from '@/shared/category';
 import seoConfig from '@/data/common/seo';
 import { useCookieStore } from '@/stores/common';
 import EventDetail from '~@/layouts/LayoutEventDetail.vue';
+import LayoutEventDetailHeader from '~@/layouts/LayoutEventDetailHeader.vue';
+import { useScreen } from '~@/composables/useScreen';
 
 const { frontmatter, lang } = useData();
+const { lePadV } = useScreen();
 
 const locale = computed(() => {
   return lang.value === 'zh' ? zhCn : en;
@@ -66,7 +69,9 @@ watch(
 </script>
 
 <template>
-  <AppHeader />
+  <AppHeader>
+    <LayoutEventDetailHeader v-if="lePadV && frontmatter?.category === 'events'" />
+  </AppHeader>
   <el-config-provider :locale="locale">
     <main>
       <SeoBox :seo-data="seoConfig[lang]?.home" />

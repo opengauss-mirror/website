@@ -1534,6 +1534,7 @@
    * @description 悬浮-浅，常用于背景
    */
   --o-color-control2-light: rgba(var(--o-mixedgray-3), 1);
+  --o-color-control2-light-new: rgba(246, 238, 253, 1);
   /**
    * @name 
    * @type color

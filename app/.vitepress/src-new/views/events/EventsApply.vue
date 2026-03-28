@@ -6,9 +6,10 @@ import { useLocale } from '~@/composables/useLocale';
 import { applyData } from '~@/data/events';
 import { useCommon } from '~@/stores/common';
 import { useScreen } from '~@/composables/useScreen';
+import { storeToRefs } from 'pinia';
 
 const { t, locale } = useLocale();
-const { theme } = useCommon();
+const { theme } = storeToRefs(useCommon());
 const { gtPadV } = useScreen();
 
 const applySep1 = computed(() => {
@@ -30,14 +31,7 @@ const applyMb = computed(() => {
   <ORow v-if="gtPadV" gap="32px 0" wrap="nowrap">
     <OCol flex="0 0 66%">
       <div class="top-card">
-        <OCard
-          v-for="(item, i) in applySep1"
-          :key="i"
-          :style="{
-            backgroundImage: `url(${/* isDark ? item.imgDark :  */ item.img})`,
-          }"
-          class="apply-card"
-        >
+        <OCard v-for="(item, i) in applySep1" :key="i" :style="{ '--bg-img-src': `url(${item.img})`, '--bg-opacity': theme === 'dark' ? '0.8' : '1' }" class="apply-card">
           <div class="title-box">
             <p class="step">{{ i + 1 }}</p>
             <p class="title">{{ item.title }}</p>
@@ -71,7 +65,7 @@ const applyMb = computed(() => {
               {{ item.emailtext2 }}
             </div>
           </div>
-          <img :src="item.img" alt="" style="height: 124px" />
+          <img :src="item.img" alt="" :style="{ height: '124px', opacity: theme === 'dark' ? '0.8' : '1' }" />
         </div>
       </OCard>
     </OCol>
@@ -134,8 +128,8 @@ const applyMb = computed(() => {
                 <p class="tips">{{ val.text }}</p>
               </div>
             </div>
-            <div v-if="item.materialMb" style="margin-top: 12px; padding: 0 12px;">
-              <img :src="item.materialMb" alt="" style="width: 100%;" />
+            <div v-if="item.materialMb" style="margin-top: 12px; padding: 0 12px">
+              <img :src="item.materialMb" alt="" style="width: 100%" />
             </div>
           </OCard>
         </div>
@@ -144,22 +138,41 @@ const applyMb = computed(() => {
   </div>
 </template>
 <style lang="scss" scoped>
+.o-card {
+  position: relative;
+  --card-main-padding: 24px 32px;
+}
 .top-card {
   display: flex;
   align-items: center;
 }
-.o-card {
-  --card-main-padding: 24px 32px;
-}
 .apply-card {
   width: calc(50% - 16px);
   height: 320px;
-  background-position: right bottom;
-  background-repeat: no-repeat;
-  background-size: 474px auto;
+  .title-box, .desc, .o-btn {
+    position: relative;
+    z-index: 2;
+  }
 }
 .apply-card + .apply-card {
   margin-left: 32px;
+}
+:deep(.apply-card .o-card-content) {
+  &::after {
+    content: '';
+    background-image: var(--bg-img-src);
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: var(--bg-opacity);
+    z-index: 1;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: 474px auto;
+  }
 }
 .hold-card {
   margin-top: 32px;
@@ -244,9 +257,6 @@ const applyMb = computed(() => {
 }
 
 @include respond-to('<=pad_v') {
-  .section-mb {
-    padding: 0 24px 32px;
-  }
   .section-title-mb {
     color: var(--o-color-info1);
     text-align: center;
@@ -295,6 +305,7 @@ const applyMb = computed(() => {
     width: 100%;
   }
   .card-title {
+    font-weight: 600;
     color: var(--o-color-info2);
     padding: 13px 16px 0;
     @include text2;

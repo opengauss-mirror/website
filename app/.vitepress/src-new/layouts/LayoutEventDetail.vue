@@ -129,6 +129,9 @@ const expirationState = computed(() => {
 </template>
 
 <style lang="scss" scoped>
+:deep(.markdown p, .markdown ul, .markdown ol) {
+  color: var(--o-color-info2);
+}
 .o-breadcrumb {
   --breadcrumb-color-hover: var(--o-color-primary1);
   --breadcrumb-color-active: var(--o-color-primary1);
@@ -195,11 +198,20 @@ const expirationState = computed(() => {
 
 .content {
   width: var(--grid-content-width);
-  box-sizing: content-box;
+  max-width: var(--grid-content-width);
   background-color: var(--o-color-fill2);
-  padding: 32px;
   border-radius: var(--o-radius-xs);
   margin-top: 32px;
+  margin-left: 0;
+  margin-right: 0;
+  box-shadow: none;
+}
+
+:deep(.content h2) {
+  font-weight: 600;
+  &:first-child {
+    margin-top: 0 !important;
+  }
 }
 
 :deep(.content.markdown img) {
@@ -266,9 +278,11 @@ const expirationState = computed(() => {
     --btn-min-width: 80px;
   }
   .content {
-    background-color: transparent;
-    padding: 0;
+    background-color: var(--o-color-fill2);
+    box-sizing: border-box;
+    padding: 16px;
     margin-top: 16px;
+    box-shadow: none;
   }
   .o-figure {
     margin-top: 12px;
