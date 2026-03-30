@@ -90,7 +90,7 @@ const tableData = computed(() => {
   });
 });
 
-const tableSpan = ({ row, columnIndex }: { row: any, columnIndex: number }) => {
+const tableSpan = ({ row, columnIndex }: { row: any; columnIndex: number }) => {
   if (columnIndex === 0) {
     return row.span ?? [1, 1];
   }
@@ -122,7 +122,11 @@ defineExpose({
                 <o-icon class="header-filter-icon"><o-icon-filter /></o-icon>
               </template>
 
-              <o-checkbox v-model="checkboxOptions[col.key].checkAll.value" :indeterminate="checkboxOptions[col.key].indeterminate.value" :value="1"
+              <o-checkbox
+                v-model="checkboxOptions[col.key].checkAll.value"
+                :indeterminate="checkboxOptions[col.key].indeterminate.value"
+                :value="1"
+                @change="() => onFilterChange(col.key)"
                 >全选</o-checkbox
               >
               <o-checkbox-group v-model="checkboxOptions[col.key].checkboxValues.value" direction="v" @change="() => onFilterChange(col.key)">

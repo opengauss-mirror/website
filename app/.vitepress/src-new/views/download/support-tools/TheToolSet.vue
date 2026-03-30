@@ -50,16 +50,39 @@ const userInfoStore = useUserInfoStore();
 const versions = DOWNLOAD_DATA.map((item) => ({ label: 'openGauss ' + item.name, value: item.name }));
 const currentVersion = ref(versions[0].value);
 const isLatestVersion = computed(() => currentVersion.value === versions[0].value);
+const tableFilter = ref<{ prop: string; value: any }>()
 
-const currentVersionTools = computed(() => {
+const onTableFilterChange = (val: any) => {
+  console.log(val)
+  tableFilter.value = val;
+}
+
+const currentVersionTools = computed<any[]>(() => {
   return DOWNLOAD_DATA.find((item) => item.name === currentVersion.value)?.data[lang.value].filter((item) => item.category === 'openGauss Tools') || [];
 });
+
+const displayTools = computed(() => {
+  return currentVersionTools.value.filter((item: any) => {
+    return item.architecture === activeArchitecture.value && item.os === activeOs.value;
+  });
+});
+
+const filteredTools = computed(() => {
+  const filter = tableFilter.value;
+  if (filter) {
+    const _value = Array.isArray(filter.value) ? new Set(filter.value) : new Set([filter.value]);
+    return displayTools.value.filter((item: any) => _value.has(item[filter.prop]));
+  }
+  return displayTools.value;
+});
+
+const toolTypes = computed<any[]>(() => displayTools.value.map((item: any) => item.type));
 
 const onVersionChanged = () => {
   activeArchitecture.value = architectureList.value[0] || '';
   activeOs.value = osList.value?.[0] || '';
   reportVersionSelect();
-}
+};
 
 // 架构筛选
 const architectureList = computed<string[]>(() => {
@@ -93,16 +116,7 @@ const tableColumns = computed(() => {
         key: 'type',
         label: t('download.TABLE_HEAD[0]'),
         width: 200,
-        filter: {
-          checkboxOptions: [
-            { label: 'DataKit', value: 'DataKit' },
-            { label: 'MySQL全量迁移', value: 'MySQL全量迁移' },
-            { label: 'PG/OG/SQLServer全量迁移', value: 'PG/OG/SQLServer全量迁移' },
-            { label: '增量迁移', value: '增量迁移' },
-            { label: '数据校验', value: '数据校验' },
-            { label: '录制回放', value: '录制回放' },
-          ],
-        },
+        filter: { checkboxOptions: toolTypes.value.map(item => ({ label: item, value: item })) },
       },
       { key: 'name', label: t('download.TABLE_HEAD[5]'), width: 360 },
       { key: 'description', label: t('download.TABLE_HEAD[6]'), width: 360 },
@@ -131,12 +145,6 @@ const cellStyle = computed(() => {
     };
   }
   return {} as CSSProperties;
-});
-
-const displayTools = computed(() => {
-  return currentVersionTools.value.filter((item: any) => {
-    return item.architecture === activeArchitecture.value && item.os === activeOs.value;
-  });
 });
 
 watchEffect(() => {
@@ -323,8 +331,9 @@ const reportVersionSelect = () => {
         v-if="gtPadV"
         :children-type="isLatestVersion ? 'span' : 'collapse'"
         :columns="tableColumns"
-        :data="displayTools"
+        :data="filteredTools"
         row-key="name"
+        @filter-change="onTableFilterChange"
       >
         <!-- 软件包类型 -->
         <template #td_name="{ row }">
@@ -446,14 +455,14 @@ const reportVersionSelect = () => {
 
     <!-- 新版移动端布局 -->
     <template v-if="!gtPadV && isLatestVersion">
-      <div v-for="tool in displayTools" :key="tool.type" class="card" style="padding: 0;">
+      <div v-for="tool in displayTools" :key="tool.type" class="card" style="padding: 0">
         <OCollapse>
           <OCollapseItem :title="tool.type" :value="tool.type">
             <template v-if="tool.children?.length">
               <div v-for="item in tool.children" :key="item.name" class="mobile-download-item-card">
                 <p class="item-name">{{ item.name }}</p>
                 <p class="tool-type-description">{{ item.description }}</p>
-                <div class="info" style="padding-top: 12px;">
+                <div class="info" style="padding-top: 12px">
                   <p>{{ $t('download.TABLE_HEAD[1]') }}</p>
                   <p>{{ item.size }}</p>
                   <p>{{ $t('download.TABLE_HEAD[3]') }}</p>
@@ -476,7 +485,7 @@ const reportVersionSelect = () => {
             <div v-else class="mobile-download-item-card">
               <p class="item-name">{{ tool.name }}</p>
               <p class="tool-type-description">{{ tool.description }}</p>
-              <div class="info" style="margin-top: 12px;">
+              <div class="info" style="margin-top: 12px">
                 <p>{{ $t('download.TABLE_HEAD[1]') }}</p>
                 <p>{{ tool.size }}</p>
                 <p>{{ $t('download.TABLE_HEAD[3]') }}</p>
