@@ -210,6 +210,10 @@ const collectDownloadData = (name: string) => {
 </template>
 
 <style lang="scss" scoped>
+.o-table {
+  --table-head-bg: var(--o-color-control3-light-new);
+  --table-row-hover: var(--o-color-control2-light-new);
+}
 .no-data {
   color: var(--o-color-info4);
 }

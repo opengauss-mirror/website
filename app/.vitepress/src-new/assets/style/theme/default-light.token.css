@@ -1546,6 +1546,13 @@
    * @name 
    * @type color
    * @group control
+   * @description 激活-浅，常用于背景
+   */
+  --o-color-control3-light-new: rgba(233, 211, 251, 1);
+  /**
+   * @name 
+   * @type color
+   * @group control
    * @description 禁用-浅，常用于背景
    */
   --o-color-control4-light: rgb(var(--o-mixedgray-3), 1);

@@ -50,12 +50,12 @@ const userInfoStore = useUserInfoStore();
 const versions = DOWNLOAD_DATA.map((item) => ({ label: 'openGauss ' + item.name, value: item.name }));
 const currentVersion = ref(versions[0].value);
 const isLatestVersion = computed(() => currentVersion.value === versions[0].value);
-const tableFilter = ref<{ prop: string; value: any }>()
+const tableFilter = ref<{ prop: string; value: any }>();
 
 const onTableFilterChange = (val: any) => {
-  console.log(val)
+  console.log(val);
   tableFilter.value = val;
-}
+};
 
 const currentVersionTools = computed<any[]>(() => {
   return DOWNLOAD_DATA.find((item) => item.name === currentVersion.value)?.data[lang.value].filter((item) => item.category === 'openGauss Tools') || [];
@@ -116,7 +116,7 @@ const tableColumns = computed(() => {
         key: 'type',
         label: t('download.TABLE_HEAD[0]'),
         width: 200,
-        filter: { checkboxOptions: toolTypes.value.map(item => ({ label: item, value: item })) },
+        filter: { checkboxOptions: toolTypes.value.map((item) => ({ label: item, value: item })) },
       },
       { key: 'name', label: t('download.TABLE_HEAD[5]'), width: 360 },
       { key: 'description', label: t('download.TABLE_HEAD[6]'), width: 360 },
@@ -326,6 +326,7 @@ const reportVersionSelect = () => {
       </template>
       <!-- 表格 -->
       <TheTable
+        :header-cell-style="{ backgroundColor: 'var(--o-color-control3-light-new)' }"
         ref="tableRef"
         :cell-style="cellStyle"
         v-if="gtPadV"
@@ -423,6 +424,10 @@ const reportVersionSelect = () => {
             </OButton>
           </template>
         </template>
+        <!-- 软件包下载 -->
+        <template #td_description="{ row }">
+          <p class="table-description-cell">{{ row.description }}</p>
+        </template>
       </TheTable>
       <template v-else-if="!isLatestVersion">
         <!-- 移动端布局 -->
@@ -517,6 +522,17 @@ const reportVersionSelect = () => {
 </template>
 
 <style lang="scss" scoped>
+.el-table {
+  --el-table-row-hover-bg-color: var(--o-color-control2-light-new);
+}
+.table-description-cell {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
 .row-expand-icon {
   margin-left: 8px;
   cursor: pointer;

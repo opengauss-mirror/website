@@ -244,7 +244,7 @@ const reportTabChange = (val: string) => {
     }"
   >
 
-    <h3 v-if="!tableData.name.startsWith('oGRAC') && !noConnectorName">{{ isCn ? downloadName[connectorName || tableData.name] : connectorName || tableData.name }}</h3>
+    <h3 v-if="!tableData.name.startsWith('oGRAC')">{{ isCn ? downloadName[connectorName || tableData.name] : connectorName || tableData.name }}</h3>
 
     <div class="filter-card">
       <TagFilter class="architecture-box" :label="i18n.download.ARCHITECTURE">
@@ -581,6 +581,31 @@ const reportTabChange = (val: string) => {
     }
   }
 }
+
+.o-toggle:not(.o-toggle-disabled):not(.o-toggle-checked) {
+  --toggle-size: 32px;
+  --toggle-padding: 3px 15px;
+  --toggle-radius: 4px;
+  max-height: 32px;
+  color: var(--o-color-info1);
+  --toggle-bg-color: var(--o-color-fill1);
+  --toggle-bg-color-hover: var(--o-color-control2-light-new);
+  @include text1;
+
+  &.active {
+    background-color: transparent;
+    border: 1px solid var(--o-color-primary1);
+  }
+}
+
+:deep(.o-toggle-checked) {
+  color: var(--o-color-primary1);
+}
+
+.o-radio-group {
+  --radio-group-gap: 8px
+}
+
 .content-item {
   margin-top: 24px;
   + .content-item {

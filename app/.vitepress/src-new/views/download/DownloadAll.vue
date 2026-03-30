@@ -93,7 +93,14 @@ const tableColumns = [
         <OOption v-for="item in filterOptions" :key="item.value" :value="item.value" :label="item.label"></OOption>
       </OSelect>
     </div>
-    <TheTable v-if="gtPadV" :data="displayData" :columns="tableColumns" style="width: 100%" height="550">
+    <TheTable
+      v-if="gtPadV"
+      :data="displayData"
+      :columns="tableColumns"
+      :header-cell-style="{ backgroundColor: 'var(--o-color-control3-light-new)' }"
+      style="width: 100%"
+      height="550"
+    >
       <template #td_name="{ row }">
         <span>
           openGauss {{ row.name }}
@@ -162,6 +169,9 @@ const tableColumns = [
 </template>
 
 <style lang="scss" scoped>
+.el-table {
+  --el-table-row-hover-bg-color: var(--o-color-control2-light-new);
+}
 .no-data {
   color: var(--o-color-info4);
 }
