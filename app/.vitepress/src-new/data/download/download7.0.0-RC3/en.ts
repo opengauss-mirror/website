@@ -432,7 +432,7 @@ export default [
       url: '',
     },
     architecture: 'AArch64',
-    os: 'openEuler24.03',
+    os: 'openEuler 24.03 LTS',
     system: 'Docker (AArch64)',
   },
   {
@@ -447,7 +447,7 @@ export default [
       url: '',
     },
     architecture: 'AArch64',
-    os: 'openEuler22.03',
+    os: 'openEuler 22.03 LTS',
     system: 'Docker (AArch64)',
   },
   {
@@ -462,7 +462,7 @@ export default [
       url: '',
     },
     architecture: 'AArch64',
-    os: 'openEuler20.03',
+    os: 'openEuler 20.03 LTS',
     system: 'Docker (AArch64)',
   },
   {

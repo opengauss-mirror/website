@@ -81,7 +81,6 @@ const initActiveTag = function () {
 };
 
 const connectorsData = ref([]);
-const ogracConnectorsData = ref([]);
 
 const isLoading = ref(false); //强制刷新tabs页签
 const setRenderData = () => {
@@ -93,11 +92,9 @@ const setRenderData = () => {
 };
 
 const getTabsData = () => {
-  serverData.value = getFilterData('openGauss Server');
-  ogracServerData.value = getFilterData('oGRAC Server');
-  symbolData.value = getFilterData('openGauss Symbol');
-  connectorsData.value = getFilterData('openGauss Connectors');
-  ogracConnectorsData.value = getFilterData('oGRAC Connectors');
+  serverData.value = getFilterData(props.isOgrac ? 'oGRAC Server' : 'openGauss Server');
+  symbolData.value = props.isOgrac ? [] : getFilterData('openGauss Symbol');
+  connectorsData.value = getFilterData(props.isOgrac ? 'oGRAC Connectors' : 'openGauss Connectors');
 
   if (serverData.value.length > 0) {
     serverTab.value = serverData.value[0].edition;
@@ -198,7 +195,6 @@ const mappingType: Record<string, string> = {
 
 const serverTab = ref();
 const serverData = ref<any[]>([]);
-const ogracServerData = ref<any[]>([]);
 const symbolData = ref<any[]>([]);
 // 获取筛选数据
 const getFilterData = (name: string) => {
@@ -301,18 +297,13 @@ const reportTabChange = (val: string) => {
       <template v-if="tableData.name?.endsWith('Server')">
         <!-- openGauss Server -->
         <OTab class="software-type-tab" v-if="gtPadV && !isLoading" v-model="serverTab" variant="text" :line="false" :class="{ en: !isCn, dark: isDark }" @change="reportTabChange">
-          <OTabPane v-for="item in serverData.length ? serverData : ogracServerData" :key="item.edition" :label="isCn ? mappingType[item.edition] : item.edition" :value="item.edition">
+          <OTabPane v-for="item in serverData" :key="item.edition" :label="isCn ? mappingType[item.edition] : item.edition" :value="item.edition">
             <div class="download-panel">
-              <p class="edition-text">
-                <template v-if="isOgrac">
-                  {{ t('download.' + item.edition).replace('OM/', '') }}
-                </template>
-                <template v-else>
-                  {{ t('download.' + item.edition) }}
-                </template>
-                <template v-if="versionCapability"
-                  >{{ t('download.versionCapability')
-                  }}<a
+              <p v-if="!isOgrac" class="edition-text">
+                {{ t('download.' + item.edition) }}
+                <template v-if="versionCapability">
+                  {{ t('download.versionCapability')}}
+                  <a
                     target="_blank"
                     rel="noopener noreferrer"
                     :href="versionCapability"
@@ -397,7 +388,7 @@ const reportTabChange = (val: string) => {
     <!-- openGauss Connectors -->
     <DownloadTable
       v-if="tableData.name.endsWith(' Connectors') && connectorsData.length > 0"
-      :options="isOgrac ? ogracConnectorsData : connectorsData"
+      :options="connectorsData"
       :versionShown="versionShown"
       @report="collectDownloadData"
     />
