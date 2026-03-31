@@ -423,21 +423,6 @@ export default [
   {
     category: 'oGRAC Server',
     name: 'openGauss_7.0.0-RC3 企业版',
-    size: '270MB',
-    edition: 'enterprise',
-    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/oGRAC/oGRAC-openEuler22.03-aarch64-RELEASE.tar.gz',
-    sha_code: '4a63dd81cbf434a5c2207a8253853d3e3cf4726ad1e7c743f813d00a920e4274',
-    docs: {
-      name: '',
-      url: '',
-    },
-    architecture: 'AArch64',
-    os: 'openEuler22.03',
-    system: 'Docker (AArch64)',
-  },
-  {
-    category: 'oGRAC Server',
-    name: 'openGauss_7.0.0-RC3 企业版',
     size: '258MB',
     edition: 'enterprise',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/oGRAC/oGRAC-openEuler24.03-aarch64-RELEASE.tar.gz',
@@ -448,6 +433,21 @@ export default [
     },
     architecture: 'AArch64',
     os: 'openEuler24.03',
+    system: 'Docker (AArch64)',
+  },
+  {
+    category: 'oGRAC Server',
+    name: 'openGauss_7.0.0-RC3 企业版',
+    size: '270MB',
+    edition: 'enterprise',
+    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/oGRAC/oGRAC-openEuler22.03-aarch64-RELEASE.tar.gz',
+    sha_code: '4a63dd81cbf434a5c2207a8253853d3e3cf4726ad1e7c743f813d00a920e4274',
+    docs: {
+      name: '',
+      url: '',
+    },
+    architecture: 'AArch64',
+    os: 'openEuler22.03',
     system: 'Docker (AArch64)',
   },
   {
