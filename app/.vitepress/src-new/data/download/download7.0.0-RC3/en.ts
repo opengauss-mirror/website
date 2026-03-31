@@ -1547,13 +1547,13 @@ export default [
   },
   {
     category: 'openGauss Tools',
-    type: '数据库保险柜',
+    type: 'Database vault',
     architecture: 'AArch64',
     os: 'openEuler 24.03 LTS',
     system: 'openEuler 24.03 LTS (aarch64)',
     children: [
       {
-        type: '数据库保险柜',
+        type: 'Database vault',
         name: 'oGRecorder_7.0.0-RC3',
         size: '37.03MB',
         down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/tools/openGauss-oGRecorder-7.0.0-RC3-openEuler24.03-aarch64.tar.gz',

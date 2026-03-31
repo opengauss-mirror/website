@@ -101,7 +101,7 @@ export default {
     SYSTEM: `OS and Architecture`,
     ARCHITECTURE: `Architecture`,
     OS: `OS`,
-    TABLE_HEAD: [`Software Package`, `Size`, `Download`, `Integrity Check`, `Description Document`],
+    TABLE_HEAD: [`Category`, `Size`, `Download`, `Integrity Check`, `Description Document`, 'Software Package', 'Description'],
     VERSION_LTS: `LTS release`,
     VERSION_RCX: `Preview release`,
     VERSION_ALL: `All versions`,
