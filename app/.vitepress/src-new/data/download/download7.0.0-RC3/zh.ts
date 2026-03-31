@@ -20,7 +20,7 @@ export default [
     size: '89.37MB',
     edition: 'simple',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/openEuler24.03/arm/openGauss-Server-7.0.0-RC3-openEuler24.03-aarch64.tar.bz2',
-    sha_code: '',
+    sha_code: '704db405e30eac436eac69ac30733c0d9b616087e005f79a9c326d5b875e8cd4',
     docs: {
       name: '极简版安装指南',
       url: '/docs/7.0.0-RC3/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html',
@@ -80,7 +80,7 @@ export default [
     size: '89.03MB',
     edition: 'simple',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/openEuler24.03/x86/openGauss-Server-7.0.0-RC3-openEuler24.03-x86_64.tar.bz2',
-    sha_code: '',
+    sha_code: 'b54ed53ee133e1e256c56dc34eea9fdb7da72a72e0530e89a08b9782c88cf8dc',
     docs: {
       name: '极简版安装指南',
       url: '/docs/7.0.0-RC3/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html',
@@ -125,7 +125,7 @@ export default [
     size: '83.55MB',
     edition: 'simple',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/openEuler22.03/arm/openGauss-Server-7.0.0-RC3-openEuler22.03-aarch64.tar.bz2',
-    sha_code: '',
+    sha_code: 'a0fd283106580a4a753fc9650f5ce482e97319f570ec631b95a65cb38c6240bc',
     docs: {
       name: '极简版安装指南',
       url: '/docs/7.0.0-RC3/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html',
@@ -185,7 +185,7 @@ export default [
     size: '89.10MB',
     edition: 'simple',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/openEuler22.03/x86/openGauss-Server-7.0.0-RC3-openEuler22.03-x86_64.tar.bz2',
-    sha_code: '',
+    sha_code: 'bc2662cdaa5b96b74e1097a5af09d9a035c6d5603706d0c445268c0b15effd42',
     docs: {
       name: '极简版安装指南',
       url: '/docs/7.0.0-RC3/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html',
@@ -230,7 +230,7 @@ export default [
     size: '82.77MB',
     edition: 'simple',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/openEuler20.03/arm/openGauss-Server-7.0.0-RC3-openEuler20.03-aarch64.tar.bz2',
-    sha_code: '',
+    sha_code: '2e7ae385056bd39b123c54faa5915b30fc776df6bb6986e984f898c84032174f',
     docs: {
       name: '极简版安装指南',
       url: '/docs/7.0.0-RC3/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html',
@@ -290,7 +290,7 @@ export default [
     size: '88.58MB',
     edition: 'simple',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/openEuler20.03/x86/openGauss-Server-7.0.0-RC3-openEuler20.03-x86_64.tar.bz2',
-    sha_code: '',
+    sha_code: '6d2958f6d1f778ea05c0d48264d8517d6cdea712332a3014f028a264015783b5',
     docs: {
       name: '极简版安装指南',
       url: '/docs/7.0.0-RC3/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html',
@@ -335,7 +335,7 @@ export default [
     size: '87.76MB',
     edition: 'simple',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/CentOS7/x86/openGauss-Server-7.0.0-RC3-CentOS7-x86_64.tar.bz2',
-    sha_code: '',
+    sha_code: 'e8a378b3bab90c8e19c73432f9a2b57aba96a3d40e7307bb9ceee62f94fc4f69',
     docs: {
       name: '极简版安装指南',
       url: '/docs/7.0.0-RC3/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html',
@@ -1138,7 +1138,7 @@ export default [
     name: 'transcribe_replay_tool_7.0.0-RC3',
     size: '19.96MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/tools/transcribe-replay-tool-7.0.0-RC3.tar.gz',
-    sha_code: '',
+    sha_code: 'f75ec13c8651b3b0c8ef096cafae774945c06d3dae327bbf99dcab5ff63d8cef',
     docs: {
       name: '',
       url: '',
@@ -1302,7 +1302,7 @@ export default [
     name: 'transcribe_replay_tool_7.0.0-RC3',
     size: '19.96MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/tools/transcribe-replay-tool-7.0.0-RC3.tar.gz',
-    sha_code: '',
+    sha_code: 'f75ec13c8651b3b0c8ef096cafae774945c06d3dae327bbf99dcab5ff63d8cef',
     docs: {
       name: '',
       url: '',
