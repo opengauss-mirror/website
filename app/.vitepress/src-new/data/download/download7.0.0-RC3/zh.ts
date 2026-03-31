@@ -410,7 +410,7 @@ export default [
     name: 'openGauss_7.0.0-RC3 企业版',
     size: '270MB',
     edition: 'enterprise',
-    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/oGRAC/openGauss-oGRAC-openEuler22.03-aarch64-RELEASE.tgz',
+    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/oGRAC/oGRAC-openEuler22.03-aarch64-RELEASE.tar.gz',
     sha_code: '4a63dd81cbf434a5c2207a8253853d3e3cf4726ad1e7c743f813d00a920e4274',
     docs: {
       name: '',
@@ -425,7 +425,7 @@ export default [
     name: 'openGauss_7.0.0-RC3 企业版',
     size: '258MB',
     edition: 'enterprise',
-    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/oGRAC/openGauss-oGRAC-openEuler24.03-aarch64-RELEASE.tgz',
+    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/oGRAC/oGRAC-openEuler24.03-aarch64-RELEASE.tar.gz',
     sha_code: 'e9f7044567e7525ee09db370a463294dcbe8ff8fa40fe4421cd7ac341946f1d8',
     docs: {
       name: '',
@@ -440,7 +440,7 @@ export default [
     name: 'openGauss_7.0.0-RC3 企业版',
     size: '282MB',
     edition: 'enterprise',
-    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/oGRAC/openGauss-oGRAC-openEuler20.03-aarch64-RELEASE.tgz',
+    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/oGRAC/oGRAC-openEuler20.03-aarch64-RELEASE.tar.gz',
     sha_code: '97fd3ea6759dd32b132f604535de7de44a6be3c784ec91032b43812af19270a5',
     docs: {
       name: '',
@@ -791,7 +791,7 @@ export default [
     category: 'oGRAC Connectors',
     name: 'JDBC_7.0.0-RC3',
     size: '2.04MB',
-    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/CentOS7/x86/openGauss-JDBC-7.0.0-RC3.tar.gz',
+    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/oGRAC/oGRAC-JDBC-7.0.0-RC3.tar.gz',
     sha_code: '4130d961dd2342d5495e12b7912ffe4df32cdc91a8ad3bffb37cc48712d49878',
     docs: {
       name: '',
@@ -805,7 +805,7 @@ export default [
     category: 'oGRAC Connectors',
     name: 'JDBC_7.0.0-RC3',
     size: '2.04MB',
-    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/CentOS7/x86/openGauss-JDBC-7.0.0-RC3.tar.gz',
+    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/oGRAC/oGRAC-JDBC-7.0.0-RC3.tar.gz',
     sha_code: '4130d961dd2342d5495e12b7912ffe4df32cdc91a8ad3bffb37cc48712d49878',
     docs: {
       name: '',
@@ -819,7 +819,7 @@ export default [
     category: 'oGRAC Connectors',
     name: 'JDBC_7.0.0-RC3',
     size: '2.04MB',
-    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/openEuler24.03/arm/openGauss-JDBC-7.0.0-RC3.tar.gz',
+    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/oGRAC/oGRAC-JDBC-7.0.0-RC3.tar.gz',
     sha_code: '2ec1524937198c8b2e8a69952b9572eb590c24a67b02038f1f82e466a696d32e',
     docs: {
       name: '',
@@ -833,7 +833,7 @@ export default [
     category: 'oGRAC Connectors',
     name: 'ODBC_7.0.0-RC3',
     size: '9.09MB',
-    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/openEuler24.03/arm/openGauss-ODBC-7.0.0-RC3-openEuler24.03-aarch64.tar.gz',
+    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/oGRAC/oGRAC-ODBC-7.0.0-RC3-openEuler24.03-aarch64-RELEASE.tgz',
     sha_code: '63ab772f6c5ad9fadc32c2a1f9469829e7c6c23e0266a9dd7322e16c270e3493',
     docs: {
       name: '',
@@ -847,7 +847,7 @@ export default [
     category: 'oGRAC Connectors',
     name: 'JDBC_7.0.0-RC3',
     size: '2.04MB',
-    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/openEuler24.03/x86/openGauss-JDBC-7.0.0-RC3.tar.gz',
+    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/oGRAC/oGRAC-JDBC-7.0.0-RC3.tar.gz',
     sha_code: '86b29dbf658c02779af6561040d51b23fccb93b1984f0dd78d61842984a4448c',
     docs: {
       name: '',
@@ -861,7 +861,7 @@ export default [
     category: 'oGRAC Connectors',
     name: 'JDBC_7.0.0-RC3',
     size: '2.04MB',
-    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/openEuler22.03/arm/openGauss-JDBC-7.0.0-RC3.tar.gz',
+    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/oGRAC/oGRAC-JDBC-7.0.0-RC3.tar.gz',
     sha_code: '147c485f66afce19cfecc0c32676da1d4051332a9e2959e7228799fa79345237',
     docs: {
       name: '',
@@ -875,7 +875,7 @@ export default [
     category: 'oGRAC Connectors',
     name: 'ODBC_7.0.0-RC3',
     size: '9.86MB',
-    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/oRAC/oGRAC-ODBC-7.0.0-RC3-openEuler22.03-aarch64-RELEASE.tgz',
+    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/oGRAC/oGRAC-ODBC-7.0.0-RC3-openEuler22.03-aarch64-RELEASE.tgz',
     sha_code: '9cf71db6391ef569ea81f16110feeaba21f1515d8e18d97248885f0db9ad19ac',
     docs: {
       name: '',
@@ -889,7 +889,7 @@ export default [
     category: 'oGRAC Connectors',
     name: 'JDBC_7.0.0-RC3',
     size: '2.04MB',
-    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/openEuler22.03/x86/openGauss-JDBC-7.0.0-RC3.tar.gz',
+    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/oGRAC/oGRAC-JDBC-7.0.0-RC3.tar.gz',
     sha_code: '314a33894ad321cde6482f91603cbfaeb6a0dc76eba4cea17eacc8a8ab59f05a',
     docs: {
       name: '',
@@ -903,7 +903,7 @@ export default [
     category: 'oGRAC Connectors',
     name: 'JDBC_7.0.0-RC3',
     size: '2.04MB',
-    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/openEuler20.03/arm/openGauss-JDBC-7.0.0-RC3.tar.gz',
+    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/oGRAC/oGRAC-JDBC-7.0.0-RC3.tar.gz',
     sha_code: '25feaab7b74d58f00925e38280fd09e3f8d347e24a543407be7e3a972c96f4c0',
     docs: {
       name: '',
@@ -917,7 +917,7 @@ export default [
     category: 'oGRAC Connectors',
     name: 'ODBC_7.0.0-RC3',
     size: '9.84MB',
-    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/oRAC/oGRAC-ODBC-7.0.0-RC3-openEuler20.03-aarch64-RELEASE.tgz',
+    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/oGRAC/oGRAC-ODBC-7.0.0-RC3-openEuler20.03-aarch64-RELEASE.tgz',
     sha_code: '4bd33f1e9c3309919a009f9ace03d376c2a7342cec5076930412c918fca4c98e',
     docs: {
       name: '',
@@ -931,7 +931,7 @@ export default [
     category: 'oGRAC Connectors',
     name: 'JDBC_7.0.0-RC3',
     size: '2.04MB',
-    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/openEuler20.03/x86/openGauss-JDBC-7.0.0-RC3.tar.gz',
+    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/oGRAC/oGRAC-JDBC-7.0.0-RC3.tar.gz',
     sha_code: '9104d2ef840fe91e221f76bf0a8312311079fc5feca80db7084b486c08283223',
     docs: {
       name: '',
