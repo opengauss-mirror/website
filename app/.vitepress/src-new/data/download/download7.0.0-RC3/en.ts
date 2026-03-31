@@ -423,21 +423,6 @@ export default [
   {
     category: 'oGRAC Server',
     name: 'openGauss_7.0.0-RC3 企业版',
-    size: '270MB',
-    edition: 'enterprise',
-    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/oGRAC/oGRAC-openEuler22.03-aarch64-RELEASE.tar.gz',
-    sha_code: '4a63dd81cbf434a5c2207a8253853d3e3cf4726ad1e7c743f813d00a920e4274',
-    docs: {
-      name: '',
-      url: '',
-    },
-    architecture: 'AArch64',
-    os: 'openEuler22.03',
-    system: 'Docker (AArch64)',
-  },
-  {
-    category: 'oGRAC Server',
-    name: 'openGauss_7.0.0-RC3 企业版',
     size: '258MB',
     edition: 'enterprise',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/oGRAC/oGRAC-openEuler24.03-aarch64-RELEASE.tar.gz',
@@ -447,7 +432,22 @@ export default [
       url: '',
     },
     architecture: 'AArch64',
-    os: 'openEuler24.03',
+    os: 'openEuler 24.03 LTS',
+    system: 'Docker (AArch64)',
+  },
+  {
+    category: 'oGRAC Server',
+    name: 'openGauss_7.0.0-RC3 企业版',
+    size: '270MB',
+    edition: 'enterprise',
+    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/oGRAC/oGRAC-openEuler22.03-aarch64-RELEASE.tar.gz',
+    sha_code: '4a63dd81cbf434a5c2207a8253853d3e3cf4726ad1e7c743f813d00a920e4274',
+    docs: {
+      name: '',
+      url: '',
+    },
+    architecture: 'AArch64',
+    os: 'openEuler 22.03 LTS',
     system: 'Docker (AArch64)',
   },
   {
@@ -462,7 +462,7 @@ export default [
       url: '',
     },
     architecture: 'AArch64',
-    os: 'openEuler20.03',
+    os: 'openEuler 20.03 LTS',
     system: 'Docker (AArch64)',
   },
   {
@@ -931,7 +931,7 @@ export default [
     category: 'oGRAC Connectors',
     name: 'ODBC_7.0.0-RC3',
     size: '9.09MB',
-    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/oGRAC/oGRAC-ODBC-7.0.0-RC3-openEuler24.03-aarch64-RELEASE.tgz',
+    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/oGRAC/oGRAC-ODBC-7.0.0-RC3-openEuler24.03-aarch64-RELEASE.tar.gz',
     sha_code: '63ab772f6c5ad9fadc32c2a1f9469829e7c6c23e0266a9dd7322e16c270e3493',
     docs: {
       name: '',
@@ -973,7 +973,7 @@ export default [
     category: 'oGRAC Connectors',
     name: 'ODBC_7.0.0-RC3',
     size: '9.86MB',
-    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/oGRAC/oGRAC-ODBC-7.0.0-RC3-openEuler22.03-aarch64-RELEASE.tgz',
+    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/oGRAC/oGRAC-ODBC-7.0.0-RC3-openEuler22.03-aarch64-RELEASE.tar.gz',
     sha_code: '9cf71db6391ef569ea81f16110feeaba21f1515d8e18d97248885f0db9ad19ac',
     docs: {
       name: '',
@@ -1015,7 +1015,7 @@ export default [
     category: 'oGRAC Connectors',
     name: 'ODBC_7.0.0-RC3',
     size: '9.84MB',
-    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/oGRAC/oGRAC-ODBC-7.0.0-RC3-openEuler20.03-aarch64-RELEASE.tgz',
+    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/oGRAC/oGRAC-ODBC-7.0.0-RC3-openEuler20.03-aarch64-RELEASE.tar.gz',
     sha_code: '4bd33f1e9c3309919a009f9ace03d376c2a7342cec5076930412c918fca4c98e',
     docs: {
       name: '',
@@ -1397,7 +1397,7 @@ export default [
     children: [
       {
         type: 'MySQL full migration',
-        name: 'chameleon_7.0.0-RC3',
+        name: 'FullReplicate-MySQL2openGauss',
         size: '6.50MB',
         down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/tools/openGauss-FullReplicate-MySQL2openGauss-7.0.0-RC3.tar.gz',
         sha_code: 'cd7319a49fa88d56b1a3b2565dfbabfccda7b25b7b26198006baa4b947b912ad',
@@ -1414,7 +1414,7 @@ export default [
     children: [
       {
         type: 'PostgreSQL, openGauss, and SQL Server full migration',
-        name: 'openGauss-FullReplicate-7.0.0-RC3',
+        name: 'FullReplicate',
         size: '20.48MB',
         down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/tools/openGauss-FullReplicate-7.0.0-RC3.tar.gz',
         sha_code: '4a8f82381c2b944926e8881d731cd106e02a4568d15630d331f8d4ed4b35631c',

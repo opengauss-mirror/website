@@ -118,7 +118,7 @@ const tableColumns = computed(() => {
         width: 200,
         filter: { checkboxOptions: toolTypes.value.map((item) => ({ label: item, value: item })) },
       },
-      { key: 'name', label: t('download.TABLE_HEAD[5]'), width: 360 },
+      { key: 'name', label: t('download.TABLE_HEAD[5]'), width: 300 },
       { key: 'description', label: t('download.TABLE_HEAD[6]'), width: 360 },
       { key: 'size', label: t('download.TABLE_HEAD[1]'), width: 150 },
       { key: 'sha_code', label: t('download.TABLE_HEAD[3]'), width: 150 },
