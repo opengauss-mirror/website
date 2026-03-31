@@ -40,8 +40,13 @@ const props = defineProps({
     type: String,
     default: '',
   },
-  connectorName: {
-    type: String,
+  hideTitle: {
+    type: Boolean,
+    required: false,
+    default: false,
+  },
+  isOgrac: {
+    type: Boolean,
     required: false,
   }
 });
@@ -76,6 +81,7 @@ const initActiveTag = function () {
 };
 
 const connectorsData = ref([]);
+const ogracConnectorsData = ref([]);
 
 const isLoading = ref(false); //强制刷新tabs页签
 const setRenderData = () => {
@@ -91,6 +97,7 @@ const getTabsData = () => {
   ogracServerData.value = getFilterData('oGRAC Server');
   symbolData.value = getFilterData('openGauss Symbol');
   connectorsData.value = getFilterData('openGauss Connectors');
+  ogracConnectorsData.value = getFilterData('oGRAC Connectors');
 
   if (serverData.value.length > 0) {
     serverTab.value = serverData.value[0].edition;
@@ -197,7 +204,6 @@ const symbolData = ref<any[]>([]);
 const getFilterData = (name: string) => {
   let res = [];
   const serverItem = versionData.value.find((item: ContentItemT) => item.name === name);
-  console.log(serverItem)
   if (serverItem) {
     res = serverItem.content.filter((contentItem) => contentItem.architecture === activeArchitecture.value && contentItem.os === activeOs.value);
   }
@@ -244,7 +250,7 @@ const reportTabChange = (val: string) => {
     }"
   >
 
-    <h3 v-if="!tableData.name.startsWith('oGRAC')">{{ isCn ? downloadName[connectorName || tableData.name] : connectorName || tableData.name }}</h3>
+    <h3 v-if="!hideTitle">{{ isCn ? downloadName[tableData.name] : tableData.name }}</h3>
 
     <div class="filter-card">
       <TagFilter class="architecture-box" :label="i18n.download.ARCHITECTURE">
@@ -298,7 +304,12 @@ const reportTabChange = (val: string) => {
           <OTabPane v-for="item in serverData.length ? serverData : ogracServerData" :key="item.edition" :label="isCn ? mappingType[item.edition] : item.edition" :value="item.edition">
             <div class="download-panel">
               <p class="edition-text">
-                {{ t('download.' + item.edition) }}
+                <template v-if="isOgrac">
+                  {{ t('download.' + item.edition).replace('OM/', '') }}
+                </template>
+                <template v-else>
+                  {{ t('download.' + item.edition) }}
+                </template>
                 <template v-if="versionCapability"
                   >{{ t('download.versionCapability')
                   }}<a
@@ -385,8 +396,8 @@ const reportTabChange = (val: string) => {
     </div>
     <!-- openGauss Connectors -->
     <DownloadTable
-      v-if="tableData.name === 'openGauss Connectors' && connectorsData.length > 0"
-      :options="connectorsData"
+      v-if="tableData.name.endsWith(' Connectors') && connectorsData.length > 0"
+      :options="isOgrac ? ogracConnectorsData : connectorsData"
       :versionShown="versionShown"
       @report="collectDownloadData"
     />

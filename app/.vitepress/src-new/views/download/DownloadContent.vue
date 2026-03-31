@@ -48,7 +48,7 @@ const getNewLink = (path: string) => {
   return path.startsWith('/docs/') ? link : path;
 };
 
-const ogracServers = computed(() => newData.value.filter((i) => i.name === 'oGRAC Server'));
+const hasOgracData = computed(() => newData.value.some((i) => (i.name as string)?.startsWith('oGRAC')));
 </script>
 
 <template>
@@ -104,30 +104,64 @@ const ogracServers = computed(() => newData.value.filter((i) => i.name === 'oGRA
       </OLink>
     </div>
     <p v-if="contentData.desc" class="desc">{{ lang === 'zh' ? contentData.desc : contentData.desc_en || contentData.desc }}</p>
-    <ODivider v-if="!ogracServers?.length" class="divider-line" />
+    <ODivider v-if="!hasOgracData" class="divider-line" />
 
-    <OTab v-if="ogracServers?.length" variant="text" size="medium" round="pill" line style="margin-top: 32px;">
-      <OTabPane :label="lang === 'zh' ? downloadName['openGauss Server'] : 'openGauss Server'">
-        <template v-for="item in newData" :key="item.name">
-          <template v-if="item.name === 'openGauss Server' || item.name === 'openGauss Connectors'">
-            <DownloadSection :table-data="item" :version-shown="contentData.name" :version-capability="contentData.versionCapabilityPath" />
+    <template v-if="hasOgracData">
+      <OTab variant="text" size="medium" round="pill" line style="margin-top: 32px">
+        <OTabPane :label="lang === 'zh' ? downloadName['openGauss Server'] : 'openGauss Server'">
+          <template v-for="item in newData" :key="item.name">
+            <template v-if="item.name === 'openGauss Server'">
+              <DownloadSection
+                :hide-title="true"
+                :table-data="item"
+                :version-shown="contentData.name"
+                :version-capability="contentData.versionCapabilityPath"
+              />
+            </template>
           </template>
-        </template>
-      </OTabPane>
-      <OTabPane :label="lang === 'en' ? 'oGRAC Server': 'oGRAC数据库'">
-        <template v-for="item in newData" :key="item.name">
-          <template v-if="item.name === 'oGRAC Server' || item.name === 'openGauss Connectors'">
-            <DownloadSection
-              :table-data="item"
-              :version-shown="contentData.name"
-              :version-capability="contentData.versionCapabilityPath"
-              :no-connector-name="true"
-              connector-name="oGRAC Connectors"
-            />
+        </OTabPane>
+        <OTabPane :label="lang === 'en' ? 'oGRAC Server' : 'oGRAC数据库'">
+          <template v-for="item in newData" :key="item.name">
+            <template v-if="item.name === 'oGRAC Server'">
+              <DownloadSection
+                :hide-title="true"
+                :table-data="item"
+                :version-shown="contentData.name"
+                :version-capability="contentData.versionCapabilityPath"
+                :is-ograc="true"
+              />
+            </template>
           </template>
-        </template>
-      </OTabPane>
-    </OTab>
+        </OTabPane>
+      </OTab>
+      <OTab variant="text" size="medium" round="pill" line style="margin-top: 32px">
+        <OTabPane :label="lang === 'zh' ? downloadName['openGauss Connectors'] : 'openGauss Connectors'">
+          <template v-for="item in newData" :key="item.name">
+            <template v-if="item.name === 'openGauss Connectors'">
+              <DownloadSection
+                :hide-title="true"
+                :table-data="item"
+                :version-shown="contentData.name"
+                :version-capability="contentData.versionCapabilityPath"
+              />
+            </template>
+          </template>
+        </OTabPane>
+        <OTabPane :label="lang === 'en' ? 'oGRAC Connectors' : 'oGRAC驱动'">
+          <template v-for="item in newData" :key="item.name">
+            <template v-if="item.name === 'oGRAC Connectors'">
+              <DownloadSection
+                :hide-title="true"
+                :table-data="item"
+                :version-shown="contentData.name"
+                :version-capability="contentData.versionCapabilityPath"
+                :is-ograc="true"
+              />
+            </template>
+          </template>
+        </OTabPane>
+      </OTab>
+    </template>
     <template v-else>
       <template v-for="item in newData" :key="item.name">
         <template v-if="item.name === 'openGauss Server' || item.name === 'openGauss Connectors'">
