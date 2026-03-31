@@ -3,6 +3,7 @@ const categories: string[] = [
   'news',
   'blog',
   'events',
+  'events-overview',
   'showcase',
   'migration',
   'faq',

@@ -1533,6 +1533,7 @@
    * @description 悬浮-浅，常用于背景
    */
   --o-color-control2-light: rgb(var(--o-mixedgray-5), 1);
+  --o-color-control2-light-new: rgb(43, 43, 47, 1);
   /**
    * @name 
    * @type color
@@ -1540,6 +1541,13 @@
    * @description 激活-浅，常用于背景
    */
   --o-color-control3-light: rgb(var(--o-mixedgray-6), 1);
+  /**
+   * @name 
+   * @type color
+   * @group control
+   * @description 激活-浅，常用于背景
+   */
+  --o-color-control3-light-new: rgba(53, 53, 57, 1);
   /**
    * @name 
    * @type color

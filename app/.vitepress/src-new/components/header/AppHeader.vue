@@ -46,32 +46,34 @@ const mobileClick = () => {
 <template>
   <div class="app-header" :class="[{ dark: commonStore.theme === 'dark' }]">
     <ContentWrapper class="app-header-wrap">
-      <OLink :href="`/${lang}/`" class="logo">
-        <img alt="openGauss logo" :src="logo" />
-      </OLink>
-
-      <div v-if="lePadV" class="menu-icon">
-        <div class="icon" @click="menuPanel">
-          <OIcon>
-            <IconMenu v-if="!menuShow" />
-            <IconClose v-else />
-          </OIcon>
+      <slot>
+        <OLink :href="`/${lang}/`" class="logo">
+          <img alt="openGauss logo" :src="logo" />
+        </OLink>
+  
+        <div v-if="lePadV" class="menu-icon">
+          <div class="icon" @click="menuPanel">
+            <OIcon>
+              <IconMenu v-if="!menuShow" />
+              <IconClose v-else />
+            </OIcon>
+          </div>
         </div>
-      </div>
-
-      <ItemNavMobile v-if="lePadV" :lang-options="langShow" :menuShow="menuShow" @link-click="mobileClick" @close-menu="mobileClick" />
-
-      <ItemNav v-else />
-
-      <ClientOnly>
-        <div v-if="!lePadV" id="tour_headerNav_tool" class="header-tool">
-          <ItemSearch />
-          <ItemCode class="gap" />
-          <ItemLang class="gap" />
-          <ItemTheme class="gap" />
-          <ItemUser class="gap" />
-        </div>
-      </ClientOnly>
+  
+        <ItemNavMobile v-if="lePadV" :lang-options="langShow" :menuShow="menuShow" @link-click="mobileClick" @close-menu="mobileClick" />
+  
+        <ItemNav v-else />
+  
+        <ClientOnly>
+          <div v-if="!lePadV" id="tour_headerNav_tool" class="header-tool">
+            <ItemSearch />
+            <ItemCode class="gap" />
+            <ItemLang class="gap" />
+            <ItemTheme class="gap" />
+            <ItemUser class="gap" />
+          </div>
+        </ClientOnly>
+      </slot>
     </ContentWrapper>
   </div>
 </template>

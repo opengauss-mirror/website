@@ -41,7 +41,7 @@ const downloadData: DownloadItem[] = [
     plannedEOL: '2026.09.30',
     desc: '社区创新版本联创测试使用，发布间隔周期定为6个月，社区提供6个月维护支持。',
     desc_en: 'RCx: a collaborative testing version released every 6 months, with 6 months of community support.',
-    versionCapabilityPath: `${GITCODE_LINK}/opengauss/docs/blob/7.0.0-RC3/content/zh/docs/VersionCapability/index.md`,
+    versionCapabilityPath: `${import.meta.env.VITE_DOCS_ORIGIN}/zh/docs/7.0.0-RC3/about_opengauss/version_capability.html`,
     docs_list: [
       {
         name: '发行说明',

@@ -10,6 +10,7 @@ import tools from './tools';
 import header from './header';
 import footer from './footer';
 import notifications from './notifications';
+import events from './events';
 
 const messages = {
   zh: {
@@ -23,6 +24,7 @@ const messages = {
     tools: tools.zh,
     home: home.zh,
     notifications: notifications.zh,
+    events: events.zh,
   },
   en: {
     // 公共模块
@@ -35,6 +37,7 @@ const messages = {
     tools: tools.en,
     home: home.en,
     notifications: notifications.en,
+    events: events.en,
   },
 };
 

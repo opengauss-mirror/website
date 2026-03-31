@@ -31,5 +31,4 @@ summary: '由openGauss社区、云和恩墨和鼎捷软件主办的“ openGauss
 
 ## 会议议程：
 
-<div style="text-align:center;margin:24px 0;"><img src="/zh/events/2024-11-15/poster.png" style="width: 60%"></div>
-
+![](/zh/events/2024-11-15/poster.png)
