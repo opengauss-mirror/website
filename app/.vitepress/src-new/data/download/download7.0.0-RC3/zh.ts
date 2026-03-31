@@ -1037,9 +1037,9 @@ export default [
   },
   {
     category: 'openGauss Tools',
-    name: 'chameleon_7.0.0-RC3',
+    name: 'FullReplicate-MySQL2openGauss',
     size: '6.50MB',
-    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/tools/chameleon-7.0.0rc3-py3-none-any.whl',
+    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/tools/openGauss-FullReplicate-MySQL2openGauss-7.0.0-RC3.tar.gz',
     sha_code: 'cd7319a49fa88d56b1a3b2565dfbabfccda7b25b7b26198006baa4b947b912ad',
     docs: {
       name: '',
@@ -1051,7 +1051,7 @@ export default [
   },
   {
     category: 'openGauss Tools',
-    name: 'openGauss-FullReplicate-7.0.0-RC3',
+    name: 'FullReplicate',
     size: '20.48MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/tools/openGauss-FullReplicate-7.0.0-RC3.tar.gz',
     sha_code: '4a8f82381c2b944926e8881d731cd106e02a4568d15630d331f8d4ed4b35631c',
@@ -1107,7 +1107,7 @@ export default [
   },
   {
     category: 'openGauss Tools',
-    name: 'IncReplicateOpenGauss2Postgresql-7.0.0-RC3',
+    name: 'IncReplicateOpenGauss2Postgresql',
     size: '20.14MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/tools/openGauss-IncReplicateOpenGauss2Postgresql-7.0.0-RC3.tar.gz',
     sha_code: 'b303da2c6a7cc11e5e8dc8edf92c76dd33e1f8e301630c31fd8a84942e3497d1',
@@ -1121,7 +1121,7 @@ export default [
   },
   {
     category: 'openGauss Tools',
-    name: 'openGauss-DataCheck',
+    name: 'DataCheck',
     size: '82.8MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/tools/openGauss-DataCheck-7.0.0-RC3.tar.gz',
     sha_code: '126167dd6a6a8e4f884e3d9e054fc80d4a6a9d7c4d24e957cb777b0a438b8644',
@@ -1135,9 +1135,9 @@ export default [
   },
   {
     category: 'openGauss Tools',
-    name: 'transcribe_replay_tool_7.0.0-RC3',
+    name: 'TranscribeReplay',
     size: '19.96MB',
-    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/tools/transcribe-replay-tool-7.0.0-RC3.tar.gz',
+    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/tools/openGauss-TranscribeReplay-7.0.0-RC3.tar.gz',
     sha_code: 'f75ec13c8651b3b0c8ef096cafae774945c06d3dae327bbf99dcab5ff63d8cef',
     docs: {
       name: '',
@@ -1163,7 +1163,7 @@ export default [
     children: [
       {
         category: 'openGauss Tools',
-        name: 'Datakit-All_7.0.0-RC3',
+        name: 'Datakit-All',
         size: '821.37MB',
         down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/tools/openGauss-Datakit/openGauss-Datakit-All-7.0.0-RC3.tar.gz',
         sha_code: '920653b127cf78b3a9a44754db99e7fafe9ef1e2902b377ead9402f7be7d08c7',
@@ -1174,7 +1174,7 @@ export default [
       },
       {
         category: 'openGauss Tools',
-        name: 'Datakit-Mini_7.0.0-RC3',
+        name: 'Datakit-Mini',
         size: '349.12MB',
         down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/tools/openGauss-Datakit/openGauss-Datakit-Mini-7.0.0-RC3.tar.gz',
         sha_code: '432efc546a47254b38e88f693b9796056e1fcd1780aa4880b8da7d149e0ba4fe',
@@ -1187,7 +1187,7 @@ export default [
   },
   {
     category: 'openGauss Tools',
-    name: 'dbmind_7.0.0-RC3',
+    name: 'dbmind',
     size: '290.12MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/dbmind/arm/dbmind-installer-aarch64.tar.gz',
     sha_code: '76d899ca3f208958e3f30d725d3e2e98196a356b51fe1879c2db85b3af3f2cae',
@@ -1203,7 +1203,7 @@ export default [
     category: 'openGauss Tools',
     name: 'chameleon_7.0.0-RC3',
     size: '6.50MB',
-    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/tools/chameleon-7.0.0rc3-py3-none-any.whl',
+    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/tools/openGauss-FullReplicate-MySQL2openGauss-7.0.0-RC3.tar.gz',
     sha_code: 'cd7319a49fa88d56b1a3b2565dfbabfccda7b25b7b26198006baa4b947b912ad',
     docs: {
       name: '',
@@ -1271,7 +1271,7 @@ export default [
   },
   {
     category: 'openGauss Tools',
-    name: 'IncReplicateOpenGauss2Postgresql-7.0.0-RC3',
+    name: 'IncReplicateOpenGauss2Postgresql',
     size: '20.14MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/tools/openGauss-IncReplicateOpenGauss2Postgresql-7.0.0-RC3.tar.gz',
     sha_code: 'b303da2c6a7cc11e5e8dc8edf92c76dd33e1f8e301630c31fd8a84942e3497d1',
@@ -1285,7 +1285,7 @@ export default [
   },
   {
     category: 'openGauss Tools',
-    name: 'openGauss-DataCheck',
+    name: 'DataCheck',
     size: '82.8MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/tools/openGauss-DataCheck-7.0.0-RC3.tar.gz',
     sha_code: '126167dd6a6a8e4f884e3d9e054fc80d4a6a9d7c4d24e957cb777b0a438b8644',
@@ -1299,9 +1299,9 @@ export default [
   },
   {
     category: 'openGauss Tools',
-    name: 'transcribe_replay_tool_7.0.0-RC3',
+    name: 'TranscribeReplay',
     size: '19.96MB',
-    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/tools/transcribe-replay-tool-7.0.0-RC3.tar.gz',
+    down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/tools/openGauss-TranscribeReplay-7.0.0-RC3.tar.gz',
     sha_code: 'f75ec13c8651b3b0c8ef096cafae774945c06d3dae327bbf99dcab5ff63d8cef',
     docs: {
       name: '',
@@ -1327,7 +1327,7 @@ export default [
     children: [
       {
         category: 'openGauss Tools',
-        name: 'Datakit-All_7.0.0-RC3',
+        name: 'Datakit-All',
         size: '821.37MB',
         down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/tools/openGauss-Datakit/openGauss-Datakit-All-7.0.0-RC3.tar.gz',
         sha_code: '920653b127cf78b3a9a44754db99e7fafe9ef1e2902b377ead9402f7be7d08c7',
@@ -1338,7 +1338,7 @@ export default [
       },
       {
         category: 'openGauss Tools',
-        name: 'Datakit-Mini_7.0.0-RC3',
+        name: 'Datakit-Mini',
         size: '349.12MB',
         down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/tools/openGauss-Datakit/openGauss-Datakit-Mini-7.0.0-RC3.tar.gz',
         sha_code: '432efc546a47254b38e88f693b9796056e1fcd1780aa4880b8da7d149e0ba4fe',
@@ -1351,7 +1351,7 @@ export default [
   },
   {
     category: 'openGauss Tools',
-    name: 'dbmind_7.0.0-RC3',
+    name: 'dbmind',
     size: '310.36MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/dbmind/x86/dbmind-installer-x86_64.tar.gz',
     sha_code: 'cc57e92495dd5b43036b800ece6608779d5353da9bd9b48aacb635e657484b00',
@@ -1365,7 +1365,7 @@ export default [
   },
   {
     category: 'openGauss Tools',
-    name: 'oGRecorder_7.0.0-RC3',
+    name: 'oGRecorder',
     size: '37.03MB',
     down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/tools/openGauss-oGRecorder-7.0.0-RC3-openEuler24.03-aarch64.tar.gz',
     sha_code: '28176eb5e71dd911cb5bb91436382dcab9a06ace7876394eedb1c38c742f11d4',
