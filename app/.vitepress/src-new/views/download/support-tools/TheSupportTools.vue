@@ -146,6 +146,22 @@ const onClickTool = (item: any) => {
   </section>
 </template>
 <style lang="scss">
+.o-toggle:not(.o-toggle-disabled):not(.o-toggle-checked) {
+  --toggle-size: 32px;
+  --toggle-padding: 3px 15px;
+  --toggle-radius: 4px;
+  max-height: 32px;
+  color: var(--o-color-info1);
+  --toggle-bg-color: var(--o-color-fill1);
+  --toggle-bg-color-hover: var(--o-color-control2-light-new);
+  @include text1;
+
+  &.active {
+    background-color: transparent;
+    border: 1px solid var(--o-color-primary1);
+  }
+}
+
 .support-tools-dlg-content {
   width: 100vh;
   .item-name {

@@ -11,8 +11,8 @@ import bannerOpenGaussV6Mo from '@/assets/category/home/banner/banner20250408_mo
 
 import bannerForumPc from '@/assets/category/home/banner/banner-forum.png';
 import bannerForumMo from '@/assets/category/home/banner/banner-forum_mo.png';
-import banner700RC2 from '@/assets/category/home/banner/banner700_RC2.jpg';
-import banner700RC2Mo from '@/assets/category/home/banner/banner700_RC2_mo.jpg';
+import banner700RC3 from '@/assets/category/home/banner/banner700_RC3.png';
+import banner700RC3Mo from '@/assets/category/home/banner/banner700_RC3_mo.png';
 import ogce from '@/assets/category/home/banner/ogce.jpg';
 import ogceMo from '@/assets/category/home/banner/ogce_mo.png';
 import ogceDark from '@/assets/category/home/banner/ogce_dark.png';
@@ -74,6 +74,23 @@ export default {
   zh: [
     {
       banners: {
+        laptop: banner700RC3,
+        phone: banner700RC3Mo,
+      },
+      link: '/zh/download/?version=rc',
+      target: '_blank',
+      title: 'openGauss 7.0.0-RC3 版本正式发布',
+      isLightBg: true,
+      titleMb: ['openGauss 7.0.0 RC3 \n版本正式发布'],
+      subtitle: '',
+      desc: [''],
+      btn: '立即查看',
+      className: 'banner-version',
+      rightInset: '',
+      rightLink: '',
+    },
+    {
+      banners: {
         laptop: annual2025,
         pad_v: annual2025Mo,
         phone: annual2025Mo,
@@ -107,23 +124,6 @@ export default {
       desc: [''],
       btn: '了解更多',
       className: '',
-      rightInset: '',
-      rightLink: '',
-    },
-    {
-      banners: {
-        laptop: banner700RC2,
-        phone: banner700RC2Mo,
-      },
-      link: '/zh/news/2025-09-30/',
-      target: '_blank',
-      title: 'openGauss 7.0.0-RC2 版本正式发布',
-      isLightBg: true,
-      titleMb: ['openGauss 7.0.0 RC2 \n版本正式发布'],
-      subtitle: '',
-      desc: [''],
-      btn: '',
-      className: 'banner-version',
       rightInset: '',
       rightLink: '',
     },

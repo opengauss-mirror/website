@@ -13,7 +13,7 @@ import { OCookieNotice, OPlusConfigProvider } from '@opendesign-plus/components'
 import LayoutSecurity from '@/layouts/LayoutSecurity.vue';
 import LayoutBlog from '@/layouts/LayoutBlog.vue';
 import LayoutNews from '@/layouts/LayoutNews.vue';
-import LayoutEvents from '@/layouts/LayoutEvents.vue';
+import LayoutEvents from '~@/layouts/LayoutEvents.vue';
 import LayoutShowcase from '@/layouts/LayoutShowcase.vue';
 import LayoutMigration from '@/layouts/LayoutMigration.vue';
 import LayoutFaq from '@/layouts/LayoutFaq.vue';
@@ -25,8 +25,12 @@ import categories from '@/shared/category';
 
 import seoConfig from '@/data/common/seo';
 import { useCookieStore } from '@/stores/common';
+import EventDetail from '~@/layouts/LayoutEventDetail.vue';
+import LayoutEventDetailHeader from '~@/layouts/LayoutEventDetailHeader.vue';
+import { useScreen } from '~@/composables/useScreen';
 
 const { frontmatter, lang } = useData();
+const { lePadV } = useScreen();
 
 const locale = computed(() => {
   return lang.value === 'zh' ? zhCn : en;
@@ -37,7 +41,8 @@ const compMapping: {
   security: LayoutSecurity,
   blog: LayoutBlog,
   news: LayoutNews,
-  events: LayoutEvents,
+  events: EventDetail,
+  'events-overview': LayoutEvents,
   showcase: LayoutShowcase,
   migration: LayoutMigration,
   faq: LayoutFaq,
@@ -64,7 +69,9 @@ watch(
 </script>
 
 <template>
-  <AppHeader />
+  <AppHeader>
+    <LayoutEventDetailHeader v-if="lePadV && frontmatter?.category === 'events'" />
+  </AppHeader>
   <el-config-provider :locale="locale">
     <main>
       <SeoBox :seo-data="seoConfig[lang]?.home" />

@@ -3,11 +3,11 @@ import { useI18n } from 'vue-i18n';
 import i18n from '~@/i18n';
 import { isClient, isUndefined } from '@opensig/opendesign';
 
-import type { LocaleT } from '~@/@types/type-locale';
+type LocaleT = 'zh' | 'en';
 
 export const useLocale = () => {
   const { t } = useI18n();
-  const locale = useI18n().locale as WritableComputedRef<LocaleT, LocaleT>;
+  const locale = useI18n().locale as WritableComputedRef<LocaleT>;
   const $t = t;
 
   const isZh = computed(() => locale.value === 'zh');

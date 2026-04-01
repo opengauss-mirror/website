@@ -2,11 +2,12 @@
 import { toRefs, computed, PropType, provide } from 'vue';
 import { useI18n } from '~@/i18n';
 import { useData } from 'vitepress';
-import { OLink, ODivider, OTag } from '@opensig/opendesign';
+import { OLink, ODivider, OTag, OTab, OTabPane } from '@opensig/opendesign';
 import { DownloadItem } from '~@/@types/type-download';
 import DownloadSection from './DownloadSection.vue';
 import { useLocale } from '~@/composables/useLocale';
 import { GITCODE_LINK, DOCS_LINK } from '~@/data/url-config';
+import { downloadName } from '~@/data/download/format';
 const props = defineProps({
   contentData: {
     required: true,
@@ -46,6 +47,8 @@ const getNewLink = (path: string) => {
   const link = `${DOCS_LINK}/${lang.value}${path}`;
   return path.startsWith('/docs/') ? link : path;
 };
+
+const hasOgracData = computed(() => newData.value.some((i) => (i.name as string)?.startsWith('oGRAC')));
 </script>
 
 <template>
@@ -59,11 +62,13 @@ const getNewLink = (path: string) => {
           :href="getNewLink(explainLink)"
           target="_blank"
           rel="noopener noreferrer"
-          v-analytics.bubble.addUrl="(ev: any) => ({
-            to: ev.currentTarget.href,
-            target: isZh ? item.name : item.nameEn,
-            level3: 'openGauss ' + contentData.name,
-          })"
+          v-analytics.bubble.addUrl="
+            (ev: any) => ({
+              to: ev.currentTarget.href,
+              target: isZh ? item.name : item.nameEn,
+              level3: 'openGauss ' + contentData.name,
+            })
+          "
           >{{ isZh ? item.name : item.nameEn }}
         </OLink>
         <ODivider direction="v" />
@@ -73,11 +78,13 @@ const getNewLink = (path: string) => {
         :href="`${GITCODE_LINK}/opengauss/community/issues`"
         target="_blank"
         rel="noopener noreferrer"
-        v-analytics.bubble.addUrl="(ev: any) => ({
-          to: ev.currentTarget.href,
-          target: i18n.download.FEEDBACK_QUESTION,
-          level3: 'openGauss ' + contentData.name,
-        })"
+        v-analytics.bubble.addUrl="
+          (ev: any) => ({
+            to: ev.currentTarget.href,
+            target: i18n.download.FEEDBACK_QUESTION,
+            level3: 'openGauss ' + contentData.name,
+          })
+        "
         >{{ i18n.download.FEEDBACK_QUESTION }}
       </OLink>
       <ODivider direction="v" />
@@ -86,26 +93,89 @@ const getNewLink = (path: string) => {
         :href="`/${lang}/download/life-cycle/`"
         target="_blank"
         rel="noopener noreferrer"
-        v-analytics.bubble.addUrl="(ev: any) => ({
-          to: ev.currentTarget.href,
-          target: i18n.download.lifeCycle,
-          level3: 'openGauss ' + contentData.name,
-        })"
+        v-analytics.bubble.addUrl="
+          (ev: any) => ({
+            to: ev.currentTarget.href,
+            target: i18n.download.lifeCycle,
+            level3: 'openGauss ' + contentData.name,
+          })
+        "
         >{{ i18n.download.lifeCycle }}
       </OLink>
     </div>
     <p v-if="contentData.desc" class="desc">{{ lang === 'zh' ? contentData.desc : contentData.desc_en || contentData.desc }}</p>
-    <ODivider class="divider-line" />
+    <ODivider v-if="!hasOgracData" class="divider-line" />
 
-    <template v-for="item in newData" :key="item.name">
-      <template v-if="item.name === 'openGauss Server' || item.name === 'openGauss Connectors'">
-        <DownloadSection :table-data="item" :version-shown="contentData.name" :version-capability="contentData.versionCapabilityPath" />
+    <template v-if="hasOgracData">
+      <OTab variant="text" size="medium" round="pill" line style="margin-top: 32px">
+        <OTabPane :label="lang === 'zh' ? downloadName['openGauss Server'] : 'openGauss Server'">
+          <template v-for="item in newData" :key="item.name">
+            <template v-if="item.name === 'openGauss Server'">
+              <DownloadSection
+                :hide-title="true"
+                :table-data="item"
+                :version-shown="contentData.name"
+                :version-capability="contentData.versionCapabilityPath"
+              />
+            </template>
+          </template>
+        </OTabPane>
+        <OTabPane :label="lang === 'en' ? 'oGRAC Server' : 'oGRAC数据库'">
+          <template v-for="item in newData" :key="item.name">
+            <template v-if="item.name === 'oGRAC Server'">
+              <DownloadSection
+                :hide-title="true"
+                :table-data="item"
+                :version-shown="contentData.name"
+                :version-capability="contentData.versionCapabilityPath"
+                :is-ograc="true"
+              />
+            </template>
+          </template>
+        </OTabPane>
+      </OTab>
+      <OTab variant="text" size="medium" round="pill" line style="margin-top: 32px">
+        <OTabPane :label="lang === 'zh' ? downloadName['openGauss Connectors'] : 'openGauss Connectors'">
+          <template v-for="item in newData" :key="item.name">
+            <template v-if="item.name === 'openGauss Connectors'">
+              <DownloadSection
+                :hide-title="true"
+                :table-data="item"
+                :version-shown="contentData.name"
+                :version-capability="contentData.versionCapabilityPath"
+              />
+            </template>
+          </template>
+        </OTabPane>
+        <OTabPane :label="lang === 'en' ? 'oGRAC Connectors' : 'oGRAC驱动'">
+          <template v-for="item in newData" :key="item.name">
+            <template v-if="item.name === 'oGRAC Connectors'">
+              <DownloadSection
+                :hide-title="true"
+                :table-data="item"
+                :version-shown="contentData.name"
+                :version-capability="contentData.versionCapabilityPath"
+                :is-ograc="true"
+              />
+            </template>
+          </template>
+        </OTabPane>
+      </OTab>
+    </template>
+    <template v-else>
+      <template v-for="item in newData" :key="item.name">
+        <template v-if="item.name === 'openGauss Server' || item.name === 'openGauss Connectors'">
+          <DownloadSection :table-data="item" :version-shown="contentData.name" :version-capability="contentData.versionCapabilityPath" />
+        </template>
       </template>
     </template>
   </div>
 </template>
 
 <style lang="scss" scoped>
+:deep(.o-tab-navs) {
+  justify-content: start;
+}
 .download-content {
   color: var(--o-color-info2);
   .title {

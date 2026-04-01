@@ -69,6 +69,7 @@ export default defineConfig({
         float: FileSystemIconLoader(path.resolve(__dirname, './.vitepress/src/assets/category/float')),
         migration: FileSystemIconLoader(path.resolve(__dirname, './.vitepress/src/assets/category/migration')),
         teamup: FileSystemIconLoader(path.resolve(__dirname, './.vitepress/src/assets/category/team-up')),
+        events: FileSystemIconLoader(path.resolve(__dirname, './.vitepress/src-new/assets/category/events/svg-icons')),
         'app-new': FileSystemIconLoader(path.resolve(__dirname, './.vitepress/src-new/assets/svg-icons')),
         'app-new-showcase': FileSystemIconLoader(path.resolve(__dirname, './.vitepress/src-new/assets/svg-icons/category/showcase')),
         'my': FileSystemIconLoader(path.resolve(__dirname, './.vitepress/src-new/assets/svg-icons/category/my')),
