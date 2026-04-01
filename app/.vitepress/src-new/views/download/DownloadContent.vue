@@ -26,11 +26,11 @@ const explainLink = computed(() => {
 });
 
 const newData = computed(() => {
-  const data = contentData.value?.data?.[lang.value];
+  const data = (contentData.value?.data as { zh: any[]; en: any[] })?.[lang.value as 'zh' | 'en'];
   const res = [...new Set(data.map((item) => item.category))].map((item) => {
     return {
-      name: item,
-      content: [],
+      name: item as string,
+      content: [] as any[],
     };
   });
 
@@ -56,22 +56,24 @@ const hasOgracData = computed(() => newData.value.some((i) => (i.name as string)
     <h2 class="title">{{ 'openGauss ' + contentData.name }} <OTag v-if="contentData.plannedEOL === 'End-of-Life' || contentData.isEol"> 停止维护 </OTag></h2>
     <h4 class="subtitle">{{ $t('download.EOM_DATE') }} ：{{ contentData.plannedEOL }}</h4>
     <div class="other-link">
-      <template v-for="item in contentData.docs_list" :key="item.name">
-        <OLink
-          color="primary"
-          :href="getNewLink(explainLink)"
-          target="_blank"
-          rel="noopener noreferrer"
-          v-analytics.bubble.addUrl="
-            (ev: any) => ({
-              to: ev.currentTarget.href,
-              target: isZh ? item.name : item.nameEn,
-              level3: 'openGauss ' + contentData.name,
-            })
-          "
-          >{{ isZh ? item.name : item.nameEn }}
-        </OLink>
-        <ODivider direction="v" />
+      <template v-if="!hasOgracData">
+        <template v-for="item in contentData.docs_list" :key="item.name">
+          <OLink
+            color="primary"
+            :href="getNewLink(explainLink)"
+            target="_blank"
+            rel="noopener noreferrer"
+            v-analytics.bubble.addUrl="
+              (ev: any) => ({
+                to: ev.currentTarget.href,
+                target: isZh ? item.name : item.nameEn,
+                level3: 'openGauss ' + contentData.name,
+              })
+            "
+            >{{ isZh ? item.name : item.nameEn }}
+          </OLink>
+          <ODivider direction="v" />
+        </template>
       </template>
       <OLink
         color="primary"
@@ -107,6 +109,7 @@ const hasOgracData = computed(() => newData.value.some((i) => (i.name as string)
     <ODivider v-if="!hasOgracData" class="divider-line" />
 
     <template v-if="hasOgracData">
+      <!-- opengauss/ograc数据库 -->
       <OTab variant="text" size="medium" round="pill" line style="margin-top: 32px">
         <OTabPane :label="lang === 'zh' ? downloadName['openGauss Server'] : 'openGauss Server'">
           <template v-for="item in newData" :key="item.name">
@@ -116,6 +119,7 @@ const hasOgracData = computed(() => newData.value.some((i) => (i.name as string)
                 :table-data="item"
                 :version-shown="contentData.name"
                 :version-capability="contentData.versionCapabilityPath"
+                :release-notes="contentData.releaseNotesDocs"
               />
             </template>
           </template>
@@ -128,12 +132,15 @@ const hasOgracData = computed(() => newData.value.some((i) => (i.name as string)
                 :table-data="item"
                 :version-shown="contentData.name"
                 :version-capability="contentData.versionCapabilityPath"
+                :release-notes="contentData.releaseNotesDocs"
                 :is-ograc="true"
               />
             </template>
           </template>
         </OTabPane>
       </OTab>
+
+      <!-- opengauss/ograc驱动 -->
       <OTab variant="text" size="medium" round="pill" line style="margin-top: 32px">
         <OTabPane :label="lang === 'zh' ? downloadName['openGauss Connectors'] : 'openGauss Connectors'">
           <template v-for="item in newData" :key="item.name">
@@ -162,6 +169,8 @@ const hasOgracData = computed(() => newData.value.some((i) => (i.name as string)
         </OTabPane>
       </OTab>
     </template>
+
+    <!-- opengauss数据库/驱动 -->
     <template v-else>
       <template v-for="item in newData" :key="item.name">
         <template v-if="item.name === 'openGauss Server' || item.name === 'openGauss Connectors'">

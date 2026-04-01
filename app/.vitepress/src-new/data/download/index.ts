@@ -42,6 +42,12 @@ const downloadData: DownloadItem[] = [
     desc: '社区创新版本联创测试使用，发布间隔周期定为6个月，社区提供6个月维护支持。',
     desc_en: 'RCx: a collaborative testing version released every 6 months, with 6 months of community support.',
     versionCapabilityPath: `${import.meta.env.VITE_DOCS_ORIGIN}/zh/docs/7.0.0-RC3/about_opengauss/version_capability.html`,
+    releaseNotesDocs: {
+      openGauss: `${import.meta.env.VITE_DOCS_ORIGIN}/zh/docs/7.0.0-RC3/release_notes/release_notes.html`,
+      openGaussEn: `${import.meta.env.VITE_DOCS_ORIGIN}/en/docs/7.0.0-RC3/release_notes/release_notes.html`,
+      ograc: `${import.meta.env.VITE_DOCS_ORIGIN}/zh/docs/7.0.0-RC3/ograc/release_notes/release_notes.html`,
+      ogracEn: `${import.meta.env.VITE_DOCS_ORIGIN}/zh/docs/7.0.0-RC3/ograc/release_notes/release_notes.html`,
+    },
     docs_list: [
       {
         name: '发行说明',
