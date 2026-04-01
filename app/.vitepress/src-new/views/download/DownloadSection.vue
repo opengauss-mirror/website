@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref, computed, watch, toRefs, onMounted, inject, nextTick, PropType, Ref } from 'vue';
-import { ORadioGroup, ORadio, OToggle, OIcon, OTab, OTabPane, OSelect, OOption, OLayer } from '@opensig/opendesign';
+import { ORadioGroup, ORadio, OToggle, OIcon, OTab, OTabPane, OSelect, OOption, OLayer, OLink } from '@opensig/opendesign';
 import { useData } from 'vitepress';
 import { useCookieStore } from '@/stores/common';
 import { useI18n } from '@/i18n';
@@ -25,10 +25,8 @@ import IconLeft from '~icons/app-new/icon-arrow-left.svg';
 const props = defineProps({
   tableData: {
     required: true,
-    type: Object as PropType<any | any[]>,
-    default: () => {
-      return {};
-    },
+    type: Object as PropType<{ name: string; content: any[] }>,
+    default: () => ({}),
   },
   versionShown: {
     required: true,
@@ -48,19 +46,31 @@ const props = defineProps({
   isOgrac: {
     type: Boolean,
     required: false,
-  }
+  },
+  releaseNotes: {
+    type: Object as PropType<{ openGauss: string; openGaussEn?: string; ograc?: string; ogracEn?: string }>,
+    required: false,
+  },
 });
 const { tableData, versionShown } = toRefs(props);
 
 const { lang } = useData();
 const { t } = useLocale();
 const i18n = useI18n();
-const cookieStore = useCookieStore();
 const { gtPadV } = useScreen();
 const commonStore = useCommon();
 const isDark = computed(() => commonStore.theme === 'dark');
 
-const versionData = inject<Ref<any[]>>('DOWNLOAD_VERSION_DATA');
+const currentVersionServersAndConnectors = inject<Ref<{ name: string; content: any }[]>>('DOWNLOAD_VERSION_DATA', ref([]));
+// 获取筛选数据
+const getFilterData = (name: string) => {
+  let res = [];
+  const serverItem = currentVersionServersAndConnectors.value.find((item) => item.name === name);
+  if (serverItem) {
+    res = serverItem.content.filter((contentItem: any) => contentItem.architecture === activeArchitecture.value && contentItem.os === activeOs.value);
+  }
+  return res;
+};
 
 const isCn = computed(() => lang.value === 'zh');
 
@@ -80,26 +90,17 @@ const initActiveTag = function () {
   activeOs.value = tableData.value.content[0].os;
 };
 
-const connectorsData = ref([]);
-
 const isLoading = ref(false); //强制刷新tabs页签
 const setRenderData = () => {
   isLoading.value = true;
 
   nextTick(() => {
-    getTabsData();
+    updateSymbolData();
   });
 };
 
-const getTabsData = () => {
-  serverData.value = getFilterData(props.isOgrac ? 'oGRAC Server' : 'openGauss Server');
-  symbolData.value = props.isOgrac ? [] : getFilterData('openGauss Symbol');
-  connectorsData.value = getFilterData(props.isOgrac ? 'oGRAC Connectors' : 'openGauss Connectors');
-
-  if (serverData.value.length > 0) {
-    serverTab.value = serverData.value[0].edition;
-  }
-
+const updateSymbolData = () => {
+  symbolData.value = getFilterData(`${props.isOgrac ? 'oGRAC' : 'openGauss'} Symbol`);
   isLoading.value = false;
 };
 
@@ -168,7 +169,7 @@ const userInfoStore = useUserInfoStore();
 
 // 下载埋点  新版本判断
 const collectDownloadData = (name: string) => {
-  if (cookieStore.isAllAgreed || userInfoStore.username) {
+  if (userInfoStore.username) {
     const { href } = window.location;
     const downloadTime = new Date();
     const _U_T_ = getCustomCookie('_U_T_') || 'notLog';
@@ -194,17 +195,11 @@ const mappingType: Record<string, string> = {
 };
 
 const serverTab = ref();
-const serverData = ref<any[]>([]);
 const symbolData = ref<any[]>([]);
-// 获取筛选数据
-const getFilterData = (name: string) => {
-  let res = [];
-  const serverItem = versionData.value.find((item: ContentItemT) => item.name === name);
-  if (serverItem) {
-    res = serverItem.content.filter((contentItem) => contentItem.architecture === activeArchitecture.value && contentItem.os === activeOs.value);
-  }
-  return res;
-};
+
+const filteredData = computed(() => {
+  return props.tableData.content.filter((item: any) => item.architecture === activeArchitecture.value && item.os === activeOs.value);
+});
 
 const layerShow = ref(false);
 const layerData = ref();
@@ -232,8 +227,6 @@ const reportTabChange = (val: string) => {
     type: 'tab',
   });
 };
-
-// const isLatestVersion
 </script>
 <template>
   <div
@@ -242,11 +235,26 @@ const reportTabChange = (val: string) => {
     v-analytics.bubble.noTrigger="{
       level3: 'openGauss ' + props.versionShown,
       level4: isCn ? downloadName[tableData.name] : tableData.name,
-      architecture: activeArchitecture, os: activeOs, 
+      architecture: activeArchitecture,
+      os: activeOs,
     }"
   >
-
     <h3 v-if="!hideTitle">{{ isCn ? downloadName[tableData.name] : tableData.name }}</h3>
+
+    <template v-if="releaseNotes">
+      <p class="release-notes-url" v-if="lang === 'zh'">
+        请前往文档中心，直接查看<OLink color="primary" :href="isOgrac ? releaseNotes.ograc : releaseNotes.openGauss" hover-underline
+          >{{ isOgrac ? 'oGRAC' : 'openGauss' }}数据库发行说明</OLink
+        >。
+      </p>
+      <p class="release-notes-url" v-else>
+        View the
+        <OLink color="primary" :href="isOgrac ? releaseNotes.ogracEn || releaseNotes.ograc : releaseNotes.openGaussEn || releaseNotes.openGauss" hover-underline
+          >{{ isOgrac ? 'oGRAC' : 'openGauss' }} release notes</OLink
+        >
+        in the Document Center.
+      </p>
+    </template>
 
     <div class="filter-card">
       <TagFilter class="architecture-box" :label="i18n.download.ARCHITECTURE">
@@ -296,24 +304,34 @@ const reportTabChange = (val: string) => {
     <div class="download-pc">
       <template v-if="tableData.name?.endsWith('Server')">
         <!-- openGauss Server -->
-        <OTab class="software-type-tab" v-if="gtPadV && !isLoading" v-model="serverTab" variant="text" :line="false" :class="{ en: !isCn, dark: isDark }" @change="reportTabChange">
-          <OTabPane v-for="item in serverData" :key="item.edition" :label="isCn ? mappingType[item.edition] : item.edition" :value="item.edition">
+        <OTab
+          class="software-type-tab"
+          v-if="gtPadV && !isLoading"
+          v-model="serverTab"
+          variant="text"
+          :line="false"
+          :class="{ en: !isCn, dark: isDark }"
+          @change="reportTabChange"
+        >
+          <OTabPane v-for="item in filteredData" :key="item.edition" :label="isCn ? mappingType[item.edition] : item.edition" :value="item.edition">
             <div class="download-panel">
               <p v-if="!isOgrac" class="edition-text">
                 {{ t('download.' + item.edition) }}
                 <template v-if="versionCapability">
-                  {{ t('download.versionCapability')}}
+                  {{ t('download.versionCapability') }}
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
                     :href="versionCapability"
-                    v-analytics.bubble.addUrl="(ev: MouseEvent) => ({
-                      to: ev.target.href,
-                      level3: 'openGauss ' + props.versionShown,
-                      level4: isCn ? downloadName[tableData.name] : tableData.name,
-                      level5: mappingType[item.edition],
-                      target: $t('download.capabilityMatrix'),
-                    })"
+                    v-analytics.bubble.addUrl="
+                      (ev: MouseEvent) => ({
+                        to: ev.target.href,
+                        level3: 'openGauss ' + props.versionShown,
+                        level4: isCn ? downloadName[tableData.name] : tableData.name,
+                        level5: mappingType[item.edition],
+                        target: $t('download.capabilityMatrix'),
+                      })
+                    "
                     >&ensp;{{ $t('download.capabilityMatrix') }}
                   </a></template
                 >
@@ -343,7 +361,7 @@ const reportTabChange = (val: string) => {
           </OTabPane>
         </OTab>
         <ul v-else class="server-list">
-          <li v-for="item in serverData" :key="item.sha_code">
+          <li v-for="item in filteredData" :key="item.sha_code">
             <div @click="changeLayer(item)" class="server-item">
               <p class="title">{{ mappingType[item.edition] }}</p>
               <OIcon><IconRight /></OIcon>
@@ -386,15 +404,13 @@ const reportTabChange = (val: string) => {
       </template>
     </div>
     <!-- openGauss Connectors -->
-    <DownloadTable
-      v-if="tableData.name.endsWith(' Connectors') && connectorsData.length > 0"
-      :options="connectorsData"
-      :versionShown="versionShown"
-      @report="collectDownloadData"
-    />
+    <DownloadTable v-if="tableData.name.endsWith(' Connectors')" :options="filteredData" :versionShown="versionShown" @report="collectDownloadData" />
   </div>
 </template>
 <style lang="scss" scoped>
+.release-notes-url {
+  @include text1;
+}
 :deep(.markdown) {
   margin: 0;
   width: 100%;
@@ -605,7 +621,7 @@ const reportTabChange = (val: string) => {
 }
 
 .o-radio-group {
-  --radio-group-gap: 8px
+  --radio-group-gap: 8px;
 }
 
 .content-item {

@@ -15,7 +15,23 @@ export interface DownloadItem {
   name: string;
   newLayout?: boolean;
   isLogin?: boolean;
-  data: any;
+  data:
+    | {
+        zh: any[];
+        en: any[];
+      }
+    | {
+        name: string;
+        thead: string[];
+        zh: any[];
+        en: any[];
+      }[];
+  releaseNotesDocs?: {
+    openGauss: string;
+    openGaussEn?: string;
+    ograc?: string;
+    ogracEn?: string;
+  };
   releaseDate?: string;
   plannedEOL?: string;
   desc?: string;
