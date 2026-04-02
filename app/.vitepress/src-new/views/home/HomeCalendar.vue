@@ -172,7 +172,7 @@ const tabList = computed(() => {
     },
     {
       label: t('home.HOME_CALENDAR.meeting'),
-      value: 'meetings',
+      value: 'meeting',
       icon: IconMeet,
     },
     {
@@ -470,7 +470,7 @@ const meetingCancelConfirm = async () => {
                 {{ removeLeadingZero(data.day.split('-').at(-1) || '') }}
               </p>
               <div class="icon-box">
-                <OIcon class="calendar-icon" type="meeting" v-if="(tabType === 'all' || tabType === 'meetings') && recentMeetingDates.includes(data.day)">
+                <OIcon class="calendar-icon" type="meeting" v-if="(tabType === 'all' || tabType === 'meeting') && recentMeetingDates.includes(data.day)">
                   <IconMeet></IconMeet>
                 </OIcon>
 
