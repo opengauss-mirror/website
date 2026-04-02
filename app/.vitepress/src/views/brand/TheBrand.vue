@@ -9,6 +9,8 @@ import AppContent from '@/components/AppContent.vue';
 
 import banner from '@/assets/illustrations/banner-secondary.png';
 import illustration from '@/assets/illustrations/brand.png';
+import { OButton } from '@opensig/opendesign';
+import '@/shared/styles/gap.scss';
 
 const i18n = useI18n();
 const { lang } = useData();
@@ -48,10 +50,11 @@ const pptList = computed(() => (isZh.value ? BrandConfig.pptList.zh : BrandConfi
         <OCard v-for="ppt in pptList" :key="ppt.url" shadow="hover" class="ppt-item" :style="{ padding: '0px' }">
           <a :href="ppt.file" target="_blank" rel="noopener noreferrer" download>
             <img :src="ppt.url" alt="" />
-            <div class="ppt-word">
-              {{ ppt.text }}
-            </div>
           </a>
+          <div class="ppt-word">
+            <p>{{ ppt.text }}</p>
+            <OButton variant="outline" color="primary">{{ i18n.common.COMMON_CONFIG.DOWNLOAD }}</OButton>
+          </div>
         </OCard>
       </div>
     </div>
@@ -237,6 +240,10 @@ const pptList = computed(() => (isZh.value ? BrandConfig.pptList.zh : BrandConfi
       font-size: var(--e-font-size-text);
       line-height: var(--e-line-height-text);
       font-weight: 300;
+    }
+
+    .o-btn {
+      margin-top: var(--o-gap-section-5);
     }
   }
 }

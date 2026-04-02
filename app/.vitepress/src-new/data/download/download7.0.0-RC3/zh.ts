@@ -1556,7 +1556,7 @@ export default [
         down_url: 'https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/tools/openGauss-oGRecorder-7.0.0-RC3-openEuler24.03-aarch64.tar.gz',
         sha_code: '28176eb5e71dd911cb5bb91436382dcab9a06ace7876394eedb1c38c742f11d4',
         description:
-          'GR（oGRecorder）是一款数据库日志保护软件。',
+          '数据库日志保护软件',
       },
     ],
   },

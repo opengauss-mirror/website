@@ -10,7 +10,7 @@ export const applyData = {
       img: apply,
       title: '如何申请',
       desc: '如果您有兴趣在所在城市举办 openGauss Meetup，为了保证活动顺利进行，在举办社区开发者活动前，您需要在此处申请',
-      href: '/zh/interaction/event-list/meetup-form/',
+      href: '/zh/community/meetup-form/',
       btn: '申请活动',
     },
     {
@@ -28,10 +28,6 @@ export const applyData = {
       title: '我们可以获得哪些赋能支持？',
       desc: '审核通过后，您将获得：',
       list: [
-        {
-          title: '《openGauss社区介绍》',
-          href: '/whitepaper/openGauss%20开源社区介绍.pdf',
-        },
         {
           title: '活动物料模板',
           text: '（易拉宝/宣传海报/主KV横幅/拍照异形牌/直播背景框等源文件）',
