@@ -36,11 +36,6 @@ const eventList = [
     type: 'summit',
     data: [
       {
-        name: 'FOSSASIA Summit 2026',
-        date: '2026/03/01',
-        location: '泰国，曼谷',
-      },
-      {
         name: '开放院子开源生态大会2026',
         date: '2026/06/01',
         location: 'TBD',
@@ -58,7 +53,7 @@ const eventList = [
       {
         name: 'KubeCON + CloudNativeC on China',
         date: '2026/09/01',
-        location: 'TBD',
+        location: '中国，上海',
       },
       {
         name: 'open Source Summit Europe 2026',
@@ -83,8 +78,8 @@ const eventList = [
     data: [
       {
         name: '鲲鹏昇腾开发者大会 KADC 2026',
-        date: '2026/04/01',
-        location: 'TBD',
+        date: '2026/05/01',
+        location: '北京',
       },
       {
         name: 'openGauss Developer Day 2026',
