@@ -148,46 +148,16 @@ export default {
   pptList: {
     zh: [
       {
-        url: '/category/brand/download/2023/PPT_Dark_cn.png',
-        file: '/category/brand/download/2023/PPT_Dark_cn.pptx',
-        text: '深色背景-2023',
-      },
-      {
-        url: '/category/brand/download/2023/PPT_Light_cn.png',
-        file: '/category/brand/download/2023/PPT_Light_cn.pptx',
-        text: '浅色背景-2023',
-      },
-      {
-        url: '/category/brand/download/2022/openGauss_PPT_Dark_cn.png',
-        file: '/category/brand/download/2022/openGauss_PPT_Dark_cn.pptx',
-        text: '深色背景-2022',
-      },
-      {
-        url: '/category/brand/download/2022/openGauss_PPT_Light_cn.png',
-        file: '/category/brand/download/2022/openGauss_PPT_Light_cn.pptx',
-        text: '浅色背景-2022',
+        url: '/category/brand/download/2026/ppt-bg.png',
+        file: '/category/brand/download/2026/ppt_cn.pptx',
+        text: '中文模板',
       },
     ],
     en: [
       {
-        url: '/category/brand/download/2023/PPT_Dark_en.png',
-        file: '/category/brand/download/2023/PPT_Dark_en.pptx',
-        text: 'Dark Theme-2023',
-      },
-      {
-        url: '/category/brand/download/2023/PPT_Light_en.png',
-        file: '/category/brand/download/2023/PPT_Light_en.pptx',
-        text: 'Light Theme-2023',
-      },
-      {
-        url: '/category/brand/download/2022/openGauss_PPT_Dark_en.png',
-        file: '/category/brand/download/2022/openGauss_PPT_Dark_en.pptx',
-        text: 'Dark Theme-2022',
-      },
-      {
-        url: '/category/brand/download/2022/openGauss_PPT_Light_en.png',
-        file: '/category/brand/download/2022/openGauss_PPT_Light_en.pptx',
-        text: 'Light Theme-2022',
+        url: '/category/brand/download/2026/ppt-bg.png',
+        file: '/category/brand/download/2026/ppt_cn.pptx',
+        text: 'Template',
       },
     ],
   },
