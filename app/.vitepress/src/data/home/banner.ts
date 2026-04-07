@@ -20,6 +20,11 @@ import ogceMoDark from '@/assets/category/home/banner/ogce_mo_dark.png';
 import annual2025 from '@/assets/category/home/banner/annual2025.png';
 import annual2025Mo from '@/assets/category/home/banner/annual2025_mo.png';
 
+import ccfBanner from '@/assets/category/home/banner/ccf-20260407/banner.png'
+import ccfBannerMo from '@/assets/category/home/banner/ccf-20260407/banner_mo.png'
+import ccfBannerText from '@/assets/category/home/banner/ccf-20260407/content.png'
+import ccfBannerTextMo from '@/assets/category/home/banner/ccf-20260407/content_mo.png'
+
 import { LEARN_VIDEO_LINK, DOCS_LINK, FORUM_LINK } from '@/data/url-config';
 import { ScreenSizeT } from '~@/composables/useScreen';
 
@@ -72,6 +77,25 @@ const setBannersDefaultValueProxy = (item: BannerItem) => {
 // rightInset:banner右侧插图
 export default {
   zh: [
+    {
+      banners: {
+        laptop: ccfBanner,
+        phone: ccfBannerMo,
+      },
+      link: 'https://www.gitlink.org.cn/competitions/track1_2026openGauss',
+      target: '_blank',
+      // title: '',
+      isLightBg: false,
+      textImg: ccfBannerText,
+      textImgMb: ccfBannerTextMo,
+      titleMb: [],
+      subtitle: '',
+      desc: [],
+      btn: '立即查看',
+      className: 'banner-version',
+      rightInset: '',
+      rightLink: '',
+    },
     {
       banners: {
         laptop: banner700RC3,
