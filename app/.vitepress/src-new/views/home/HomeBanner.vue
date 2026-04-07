@@ -53,8 +53,8 @@ const currentBgTheme = computed(() => {
           @click="jump(item, item.btn !== '')"
         >
           <div class="banner-content">
-            <div class="content-left" :class="{ 'teamup-content-left': item.link.includes('team-up') }">
-              <div class="content-text">
+            <div class="content-left" :class="{ 'content-left-img': item.textImg && item.textImgMb, 'teamup-content-left': item.link.includes('team-up') }">
+              <div class="content-text" :class="{ 'content-text-img': item.textImg && item.textImgMb }">
                 <div v-if="lePadV && item.titleMb.length" class="title">
                   <p v-for="itemTitleMb in item.titleMb" :key="itemTitleMb">
                     {{ itemTitleMb }}
@@ -230,6 +230,12 @@ const currentBgTheme = computed(() => {
             }
           }
         }
+        .content-text-img {
+          @include respond-to('<=pad_v') {
+            display: flex;
+            justify-content: center;
+          }
+        }
         .btn-box {
           margin-top: var(--e-spacing-h3);
           --d: 20px;
@@ -239,6 +245,12 @@ const currentBgTheme = computed(() => {
           .home-banner-btn {
             color: var(--e-color-white);
           }
+        }
+      }
+      .content-left-img {
+        @include respond-to('<=pad_v') {
+          justify-content: start;
+          padding-top: 10px;
         }
       }
       .teamup-content-left {
@@ -272,11 +284,19 @@ const currentBgTheme = computed(() => {
   }
   .text-img {
     object-fit: cover;
-    height: 183px;
+    height: 180px;
     display: block;
+    @include respond-to('laptop') {
+      width: inherit;
+      height: 160px;
+    }
+    @include respond-to('pad_h') {
+      width: inherit;
+      height: 120px;
+    }
     @include respond-to('<=pad_v') {
       width: inherit;
-      height: 90px;
+      height: 110px;
     }
   }
   .video-box {
