@@ -21,6 +21,7 @@ import yangziqi from '@/assets/category/member/avatar/yangziqi.png';
 import xiongwei from '@/assets/category/member/avatar/xiongwei.png';
 
 import gengqiang from '@/assets/category/member/avatar/gengqiang.png';
+import yangzhenquan from '@/assets/category/member/avatar/yangzhenquan.png';
 import sunpeiyuan from '@/assets/category/member/avatar/sunpeiyuan.png';
 import wangxiaotao from '@/assets/category/member/avatar/wangxiaotao.png';
 import yanht from '@/assets/category/member/avatar/yanht.png';
@@ -1053,6 +1054,13 @@ export default {
         title: `主席`,
         email: `xiaofeng@vastdata.com.cn`,
         company: `北京海量数据技术股份有限公司`,
+      },
+      {
+        img: yangzhenquan,
+        name: `杨震泉`,
+        title: `委员`,
+        company: `四川长虹电子控股集团`,
+        email: `zhenquan1.yang@changhong.com`,
       },
       {
         img: gengqiang,
@@ -5386,6 +5394,13 @@ export default {
         title: `Chair`,
         email: `xiaofeng@vastdata.com.cn`,
         company: `Vastbase`,
+      },
+      {
+        img: yangzhenquan,
+        name: `Zhenquan Yang`,
+        title: `Member`,
+        company: `Sichuan Changhong Electronic Holding Group Co., Ltd.`,
+        email: `zhenquan1.yang@changhong.com`,
       },
       {
         img: gengqiang,
