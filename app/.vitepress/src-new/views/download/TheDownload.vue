@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, computed, onMounted, provide, watchEffect } from 'vue';
+import { ref, computed, onMounted, provide, watchEffect, nextTick, onUnmounted } from 'vue';
 import { useData } from 'vitepress';
 import { OTab, OTabPane } from '@opensig/opendesign';
 import DownloadConfig from '~@/data/download';
@@ -68,10 +68,29 @@ const activeTab = ref(tabLists[0].id);
 // banner描述
 const bannerDes = computed(() => i18n.value.download.DESCRIPTION);
 
+let pushState: typeof History.prototype.pushState;
 onMounted(() => {
+  pushState = History.prototype.pushState;
+  History.prototype.pushState = function (...args) {
+    pushState.apply(this, args);
+    nextTick(() => {
+      if (location.pathname.startsWith('/zh/download') || location.pathname.startsWith('/en/download')) {
+        const version = new URLSearchParams(location.search).get('version');
+        if (version && activeTab.value !== version) {
+          activeTab.value = version;
+        }
+      }
+    });
+  }
   const version = getUrlParam('version');
   if (decodeURIComponent(version) && tabsIds.includes(version)) {
     activeTab.value = version;
+  }
+});
+
+onUnmounted(() => {
+  if (pushState) {
+    History.prototype.pushState = pushState;
   }
 });
 

@@ -1,0 +1,30 @@
+name: "任务"
+description: "提交新任务"
+labels: ["task"]
+title: "[任务]: "
+type: "任务"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢您为项目贡献新任务！请按照以下提示提供详细信息，以便我们更好地理解并跟进。
+
+  - type: textarea
+    id: task_description
+    attributes:
+      label: "任务描述"
+      description: "请详细描述任务的内容、目标和预期成果。"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "优先级"
+      description: "请选择任务的优先级。"
+      options:
+        - 高
+        - 中
+        - 低
+    validations:
+      required: false

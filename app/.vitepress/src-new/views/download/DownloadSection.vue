@@ -2,13 +2,12 @@
 import { ref, computed, watch, toRefs, onMounted, inject, nextTick, PropType, Ref } from 'vue';
 import { ORadioGroup, ORadio, OToggle, OIcon, OTab, OTabPane, OSelect, OOption, OLayer, OLink } from '@opensig/opendesign';
 import { useData } from 'vitepress';
-import { useCookieStore } from '@/stores/common';
 import { useI18n } from '@/i18n';
 import { useScreen } from '~@/composables/useScreen';
 import { downloadName } from '~@/data/download/format';
 import { useCommon } from '@/stores/common';
 
-import { ContentItemT, DownloadItemT } from '@/shared/@types/type-download';
+import { DownloadItemT } from '@/shared/@types/type-download';
 
 import { getCustomCookie } from '@/shared/utils';
 import { useUserInfoStore } from '@/stores/user';
@@ -201,9 +200,13 @@ const filteredData = computed(() => {
   return props.tableData.content.filter((item: any) => item.architecture === activeArchitecture.value && item.os === activeOs.value);
 });
 
+watch(filteredData, () => {
+  serverTab.value = filteredData.value[0].edition
+});
+
 const layerShow = ref(false);
 const layerData = ref();
-const changeLayer = (item) => {
+const changeLayer = (item: any) => {
   layerData.value = item;
   serverTab.value = item.edition;
   layerShow.value = !layerShow.value;
