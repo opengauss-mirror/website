@@ -672,11 +672,11 @@ export default {
         company: `中国联合网络通信集团有限公司`,
       },
       {
-        img: yuanchunguang,
-        name: `袁春光`,
+        img: haoqingyun,
+        name: `郝庆运`,
         title: `理事`,
-        email: `yuanchunguang@cmbc.com.cn`,
-        company: `中国民生银行股份有限公司`,
+        email: `haoqingyun@cmbc.com.cn`,
+        company: `中国民生银行`,
       },
       {
         img: zhangchun,
@@ -5012,11 +5012,11 @@ export default {
         company: `China United Network Communications Limited`,
       },
       {
-        img: yuanchunguang,
-        name: `Chunguang Yuan`,
+        img: haoqingyun,
+        name: `Qingyun Hao`,
         title: `Director`,
-        email: `yuanchunguang@cmbc.com.cn`,
-        company: `China Minsheng Bank Corp., Ltd.`,
+        email: `haoqingyun@cmbc.com.cn`,
+        company: `China Minsheng Banking Corp., Ltd.`,
       },
       {
         img: zhangchun,
