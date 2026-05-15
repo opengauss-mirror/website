@@ -1,6 +1,6 @@
 ---
 title: '喜讯！openGauss 获评中国软件行业协会“明星开源社区”，oGRAC 多写数据库技术荣获“先进性科技成果奖”！'
-date: '2026-05-11'
+date: '2026-04-30'
 tags: ['theme']
 category: 'news'
 author: 'openGauss'
