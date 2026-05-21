@@ -3,6 +3,30 @@ import { OBS_CERTIFICATION_LINK, OBS_CERTIFICATION_LINK1 } from '@/data/url-conf
 export default {
   zh: [
     {
+      pro: 'GBase 8c V5',
+      name: '天津南大通用数据技术股份有限公司',
+      version: 'openGauss 5.0.0',
+      award: '2026-01-12',
+      expiration: '',
+      certificate: `${OBS_CERTIFICATION_LINK}/20260129/openGauss%E5%95%86%E4%B8%9A%E5%8F%91%E8%A1%8C%E7%89%88%E8%AF%81%E4%B9%A6-%E5%A4%A9%E6%B4%A5%E5%8D%97%E5%A4%A7%E9%80%9A%E7%94%A88c.pdf`,
+    },
+    {
+      pro: 'GBase 8s V8.8.5',
+      name: '天津南大通用数据技术股份有限公司',
+      version: 'openGauss 5.0.0',
+      award: '2025-12-29',
+      expiration: '',
+      certificate: `${OBS_CERTIFICATION_LINK}/20260129/openGauss%E5%95%86%E4%B8%9A%E5%8F%91%E8%A1%8C%E7%89%88%E8%AF%81%E4%B9%A6-%E5%A4%A9%E6%B4%A5%E5%8D%97%E5%A4%A7%E9%80%9A%E7%94%A88s.pdf`,
+    },
+    {
+      pro: '云脉数据库 CloudVeinDB V1.0.0',
+      name: '云脉感知（济南）科技服务有限公司',
+      version: 'openGauss 6.0.0',
+      award: '2026-04-01',
+      expiration: '',
+      certificate: `${OBS_CERTIFICATION_LINK}/20260408/%E4%BA%91%E8%84%89%E6%84%9F%E7%9F%A5%EF%BC%88%E6%B5%8E%E5%8D%97%EF%BC%89%E7%A7%91%E6%8A%80%E6%9C%8D%E5%8A%A1%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.pdf`,
+    },
+    {
       pro: '宝兰德数据库管理系统 V3.0',
       name: '北京宝兰德软件股份有限公司',
       version: 'openGauss 6.0.1',
