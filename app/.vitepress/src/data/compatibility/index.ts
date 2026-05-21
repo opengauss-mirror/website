@@ -1,5 +1,137 @@
 export default [
   {
+    name: '江天智能监控运维平台软件 iSentry',
+    version: '1.0',
+    type: '通用',
+    company: '天津江天数据科技有限公司',
+    database: 'openGauss 6.0.2',
+    os: 'debian 12',
+    server: 'Intel 6230R (FusionServer 2288X V5)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/20260129/%E5%A4%A9%E6%B4%A5%E6%B1%9F%E5%A4%A9%E6%95%B0%E6%8D%AE%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.pdf',
+  },
+  {
+    name: '在线考试系统',
+    version: '2.0',
+    type: '医疗',
+    company: '南京庞培软件科技有限公司',
+    database: 'openGauss 6.0.2',
+    os: 'openEuler 22.03 LTS SP4',
+    server: 'Kunpeng 920 V200(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/20260129/%E5%BA%9E%E5%9F%B9%E8%BD%AF%E4%BB%B6%E5%9C%A8%E7%BA%BF%E8%80%83%E8%AF%95%E7%B3%BB%E7%BB%9F%E8%BD%AF%E4%BB%B6%20V3.0%281%29.pdf',
+  },
+  {
+    name: '庞培软件在线考试系统软件',
+    version: '3.0',
+    type: '医疗',
+    company: '南京庞培软件科技有限公司',
+    database: 'openGauss 6.0.2',
+    os: 'openEuler 22.03 LTS SP4',
+    server: 'Kunpeng 920 V200(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/20260129/%E5%BA%9E%E5%9F%B9%E8%BD%AF%E4%BB%B6%E5%9C%A8%E7%BA%BF%E8%80%83%E8%AF%95%E7%B3%BB%E7%BB%9F%E8%BD%AF%E4%BB%B6%20V3.0%281%29.pdf',
+  },
+  {
+    name: '庞培临床技能中心管理系统软件',
+    version: '1.0',
+    type: '医疗',
+    company: '南京庞培软件科技有限公司',
+    database: 'openGauss 6.0.2',
+    os: 'openEuler 22.03 LTS SP4',
+    server: 'Kunpeng 920 V200(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/20260129/%E5%BA%9E%E5%9F%B9%E4%B8%B4%E5%BA%8A%E6%8A%80%E8%83%BD%E4%B8%AD%E5%BF%83%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E8%BD%AF%E4%BB%B6%20V1.0%281%29.pdf',
+  },
+  {
+    name: '庞培智慧科教管理平台',
+    version: '2.0',
+    type: '医疗',
+    company: '南京庞培软件科技有限公司',
+    database: 'openGauss 6.0.2',
+    os: 'openEuler 22.03 LTS SP4',
+    server: 'Kunpeng 920 V200(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/20260129/%E5%BA%9E%E5%9F%B9%E6%99%BA%E6%85%A7%E7%A7%91%E6%95%99%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%20V2.0.pdf',
+  },
+  {
+    name: '尤普智慧水务用户管理系统',
+    version: '1.0',
+    type: '数字政府',
+    company: '杭州尤普软件有限公司',
+    database: 'openGauss 6.0.2',
+    os: 'Kylin V10',
+    server: 'Intel',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/20260225/%E6%9D%AD%E5%B7%9E%E5%B0%A4%E6%99%AE%E8%BD%AF%E4%BB%B6-%E6%8A%80%E6%9C%AF%E8%AE%A4%E8%AF%81%E4%B9%A6.pdf',
+  },
+  {
+    name: 'ShuangzhaoDB数据库系统',
+    version: '13.6.1',
+    type: '通用',
+    company: '广州市双照电子科技有限公司',
+    database: 'openGauss 6.0.2',
+    os: 'Kylin V10',
+    server: 'Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/20260225/%E5%B9%BF%E5%B7%9E%E5%B8%82%E5%8F%8C%E7%85%A7%E7%94%B5%E5%AD%90%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.pdf',
+  },
+  {
+    name: 'Colloa 科研管理及创新服务平台',
+    version: '3.5',
+    type: '教育',
+    company: '南京二进制软件有限公司',
+    database: 'openGauss 6.0.0',
+    os: 'openEuler 24.03 LTS',
+    server: 'Kunpeng 920 V200(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/20260408/%E5%8D%97%E4%BA%AC%E4%BA%8C%E8%BF%9B%E5%88%B6-%E9%AB%98%E6%96%AF%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF%E8%AE%A4%E8%AF%81%E4%B9%A6.pdf',
+  },
+  {
+    name: '雨诺云',
+    version: '3.0',
+    type: '通用',
+    company: '青岛雨诺网络信息股份有限公司',
+    database: 'openGauss 6.0.0',
+    os: 'Kylin V10',
+    server: 'Kunpeng 920',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/20260408/%E9%9B%A8%E8%AF%BA-%E4%BA%A7%E5%93%81%E5%85%BC%E5%AE%B9%E6%80%A7%E4%BA%92%E8%AE%A4%E8%AF%81%E6%98%8E.pdf',
+  },
+  {
+    name: '医疗设备管理系统',
+    version: '1.0',
+    type: '医疗',
+    company: '河南良露信息技术有限公司',
+    database: 'openGauss 6.0.1',
+    os: 'UOS V20',
+    server: 'Intel、Kunpeng 920(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/20260408/%E9%AB%98%E6%96%AF%E8%AE%A4%E8%AF%81-%E6%B2%B3%E5%8D%97%E8%89%AF%E9%9C%B2%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.pdf',
+  },
+  {
+    name: '中菁智能健康体检管理系统',
+    version: '8.0',
+    type: '医疗',
+    company: '四川中菁智慧软件技术有限公司',
+    database: 'openGauss 6.0.3',
+    os: 'openEuler 22.03 LTS SP3',
+    server: 'Kunpeng 920 V200(Taishan 200)',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/20260408/%E4%B8%AD%E8%8F%81%E6%99%BA%E6%85%A7%E5%92%8CopenGauss%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7%E8%AF%81%E4%B9%A6.pdf',
+  },
+  {
+    name: '医保个人信息授权管理功能系统',
+    version: '1.0.2',
+    type: '医疗',
+    company: '哈尔滨联德信息技术有限公司',
+    database: 'openGauss 6.0.0',
+    os: 'UOS V20',
+    server: 'Intel',
+    download:
+      'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/20260408/%E5%93%88%E5%B0%94%E6%BB%A8%E8%81%94%E5%BE%B7%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.pdf',
+  },
+  {
     name: '尤普智慧水务用户管理系统',
     version: '1.0',
     type: '数字政府',

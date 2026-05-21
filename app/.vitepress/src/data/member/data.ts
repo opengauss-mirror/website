@@ -1933,10 +1933,10 @@ export default {
         email: `276437280@qq.com`,
       },
       {
-        img: jianghongbo,
-        name: `蒋宏博`,
+        img: zhoucong,
+        name: `周聪`,
         title: `Maintainer`,
-        email: `xdhbj0022@163.com`,
+        email: `943464315@qq.com`,
       },
       {
         img: lijianfeng,
@@ -1949,6 +1949,18 @@ export default {
         name: `郭亮`,
         title: `Committer`,
         email: `liang4358@163.com`,
+      },
+      {
+        img: zhengxue,
+        name: '郑雪',
+        title: 'Committer',
+        email: 'zhengxue6@huawei.com',
+      },
+      {
+        img: songshixuan,
+        name: '宋世轩',
+        title: 'Committer',
+        email: 'songshixuan@huawei.com',
       },
       {
         img: liuzheli,
@@ -6273,10 +6285,10 @@ export default {
         email: `276437280@qq.com`,
       },
       {
-        img: jianghongbo,
-        name: `Hongbo Jiang`,
+        img: zhoucong,
+        name: `Cong Zhou`,
         title: `Maintainer`,
-        email: `xdhbj0022@163.com`,
+        email: `943464315@qq.com`,
       },
       {
         img: lijianfeng,
@@ -6289,6 +6301,18 @@ export default {
         name: `Liang Guo`,
         title: `Committer`,
         email: `liang4358@163.com`,
+      },
+      {
+        img: zhengxue,
+        name: 'Xue Zheng',
+        title: 'Committer',
+        email: 'zhengxue6@huawei.com',
+      },
+      {
+        img: songshixuan,
+        name: 'Shixuan Song',
+        title: 'Committer',
+        email: 'songshixuan@huawei.com',
       },
       {
         img: liuzheli,
