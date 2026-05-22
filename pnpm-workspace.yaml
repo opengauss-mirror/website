@@ -1,0 +1,7 @@
+allowBuilds:
+  '@parcel/watcher': true
+  esbuild: true
+  vue-demi: true
+
+overrides:
+  "uuid": "14.0.0"
