@@ -25,6 +25,9 @@ import ccfBannerMo from '@/assets/category/home/banner/ccf-20260407/banner_mo.pn
 import ccfBannerText from '@/assets/category/home/banner/ccf-20260407/content.png'
 import ccfBannerTextMo from '@/assets/category/home/banner/ccf-20260407/content_mo.png'
 
+import banner605 from '@/assets/category/home/banner/banner-605.png'
+import banner605Mo from '@/assets/category/home/banner/banner-605_mo.png'
+
 import { LEARN_VIDEO_LINK, DOCS_LINK, FORUM_LINK } from '@/data/url-config';
 import { ScreenSizeT } from '~@/composables/useScreen';
 
@@ -77,6 +80,25 @@ const setBannersDefaultValueProxy = (item: BannerItem) => {
 // rightInset:banner右侧插图
 export default {
   zh: [
+    {
+      banners: {
+        laptop: banner605,
+        phone: banner605Mo,
+      },
+      link: 'https://opengauss.org/zh/news/2026-05-15-605/',
+      target: '_blank',
+      title: 'openGauss 6.0.5 版本正式发布',
+      isLightBg: false,
+      textImg: '',
+      textImgMb: '',
+      titleMb: [],
+      subtitle: '',
+      desc: [],
+      btn: '',
+      className: 'banner-version',
+      rightInset: '',
+      rightLink: '',
+    },
     {
       banners: {
         laptop: ccfBanner,
