@@ -108,7 +108,7 @@ const onChange = (option: string) => {
                 level1: $t('common.COMMON_CONFIG.DOWNLOAD'),
                 level2: $t('download.VERSION_ALL'),
                 level3: $t('download.VERSIONS'),
-                target: 'openGauss' + option.name,
+                target: 'openGauss' + item.name,
               },
             }"
           >
