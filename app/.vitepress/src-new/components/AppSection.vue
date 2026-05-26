@@ -2,6 +2,7 @@
 import { isArray, OLink } from '@opensig/opendesign';
 
 import OIcon from 'opendesign/icon/OIcon.vue';
+import { onMounted, ref, useSlots, watch } from 'vue';
 import IconChevronRight from '~icons/app-new/icon-chevron-right.svg';
 
 interface SectionPropsT {
@@ -20,6 +21,14 @@ const props = withDefaults(defineProps<SectionPropsT>(), {
   headerJustifyCenter: true,
   footer: undefined,
   footerHref: undefined,
+});
+
+const footerIconRef = ref<InstanceType<typeof OIcon>>();
+
+watch(footerIconRef, (iconRef) => {
+  if (iconRef) {
+    (iconRef.$el as HTMLElement).querySelector('svg')?.setAttribute('fill', 'currentColor');
+  }
 });
 </script>
 
@@ -59,7 +68,7 @@ const props = withDefaults(defineProps<SectionPropsT>(), {
             <OLink :href="props.footerHref" target="_blank">
               {{ props.footer }}
               <template #suffix>
-                <OIcon class="footer-icon"><IconChevronRight /> </OIcon>
+                <OIcon ref="footerIconRef" class="footer-icon"><IconChevronRight /> </OIcon>
               </template>
             </OLink>
           </slot>
