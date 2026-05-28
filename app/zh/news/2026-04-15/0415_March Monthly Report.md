@@ -11,7 +11,7 @@ summary: 'openGauss 社区 2026 年 3 月运作报告'
 
 ## 一、概述
 
-2026年3月，openGauss社区在技术创新、生态建设与社区运营等多个维度持续稳步推进，整体发展态势良好。在AI与数据库深度融合的趋势下，社区围绕“AI原生数据库”持续演进，推动oG-Memory向量记忆引擎、AI Pipeline、MCP Server等关键能力落地，加速数据库向智能化、服务化方向升级。同时，openGauss 7.0.0-RC3版本正式发布，在内核能力、多模数据处理及架构创新方面实现进一步增强。
+2026年3月，openGauss社区在技术创新、生态建设与社区运营等多个维度持续稳步推进，整体发展态势良好。在AI与数据库深度融合的趋势下，社区围绕“AI原生数据库”持续演进，推动oGMemory向量记忆引擎、AI Pipeline、MCP Server等关键能力落地，加速数据库向智能化、服务化方向升级。同时，openGauss 7.0.0-RC3版本正式发布，在内核能力、多模数据处理及架构创新方面实现进一步增强。
 
 生态层面，社区携手产业伙伴深化合作，典型实践不断涌现，以磐维数据库为代表的行业应用持续验证openGauss在关键业务场景中的高性能与高可靠能力。社区规模方面保持稳健增长，开发者活跃度持续提升，软硬件兼容性测评不断完善。此外，社区持续强化安全治理与用户反馈机制，通过漏洞修复与满意度调研双轮驱动，进一步提升社区质量与用户体验。
 
@@ -40,6 +40,7 @@ summary: 'openGauss 社区 2026 年 3 月运作报告'
 第一财经：<https://m.toutiao.com/is/BWAwXi3-FTg/>
 
 **➣openGauss携生态伙伴亮相华为中国合作伙伴大会2026**
+
 3月19日至20日，以“因聚而升，融智有为”为主题的华为中国合作伙伴大会2026于深圳盛大启幕。openGauss携手海量数据、南大通用、神舟通用、国创中心万里开源共同参会，与各界合作伙伴面对面交流，共话技术与生态的深度融合，携手推动产业智能化高质量发展。
 ![alt text](0415-03.png)
 
@@ -57,13 +58,13 @@ summary: 'openGauss 社区 2026 年 3 月运作报告'
 
 ## 四、技术进展
 
-**➣oG-Memory原生向量记忆引擎，已成功适配Claude Code与OpenClaw主流框架，完成深度集成**
+**➣oGMemory原生向量记忆引擎，已成功适配Claude Code与OpenClaw主流框架，完成深度集成**
 
 在AI智能体记忆能力构建方向，自研的oG-Memory原生向量记忆引擎，已成功适配Claude Code与OpenClaw主流框架，完成深度集成。作为基于openGauss构建的外部独立组件，oG-Memory填补了主流AI Agent框架原生记忆系统的短板，以国产化、自主可控的优势，为AI智能体提供稳定、高效、低延迟的记忆存储与检索能力，助力Agentic AI实现认知持续进化，推动复杂任务自动化落地。
 
 原文阅读：
 
-[告别“健忘”AI！oG-Memory 为 Claude Code 与 OpenClaw 打造“第二大脑”](https://mp.weixin.qq.com/s/rYi4tnNhmFJnrSpFaypuxw)
+[告别“健忘”AI！oGMemory 为 Claude Code 与 OpenClaw 打造“第二大脑”](https://mp.weixin.qq.com/s/rYi4tnNhmFJnrSpFaypuxw)
 
 **➣AI pipeline 特性将于3月底发布**
 
