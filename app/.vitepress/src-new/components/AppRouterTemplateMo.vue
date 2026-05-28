@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, computed, watchEffect } from 'vue';
+import { ref, computed } from 'vue';
 import { useRouter } from 'vitepress';
 
 import { OIcon, OTag, ODivider } from '@opensig/opendesign';

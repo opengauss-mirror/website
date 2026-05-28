@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { defineComponent, ref, Ref, toRefs, onMounted } from 'vue';
 import { timelineProps, TimelineProps } from './timeline-types';
 import IconLeft from '~icons/app/icon-chevron-left.svg';

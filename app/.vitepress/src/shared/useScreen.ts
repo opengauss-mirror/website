@@ -7,7 +7,6 @@ export enum Size {
 }
 
 // Now, we enable the no-unused-vars rule again
-/* eslint-enable no-unused-vars */
 export type ScreenSizeT =
   | typeof Size.Phone
   | Size.PadV

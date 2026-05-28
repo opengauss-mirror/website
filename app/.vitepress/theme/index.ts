@@ -38,10 +38,6 @@ export default {
   Layout,
   NotFound,
   enhanceApp({ app }: { app: App }) {
-    if (typeof global !== 'undefined') {
-      // @ts-ignore
-      global.window = {};
-    }
     app.use(VueDOMPurifyHTML);
     app.use(createPinia());
 

@@ -397,7 +397,6 @@ import lijun2 from '@/assets/category/member/avatar/lijun2.png';
 import yuanyuan from '@/assets/category/member/avatar/yuanyuan.png';
 import shengyongpan1 from '@/assets/category/member/avatar/shengyongpan1.png';
 
-import jianghongbo from '@/assets/category/member/avatar/jianghongbo.png';
 import chenqijun from '@/assets/category/member/avatar/chenqijun.png';
 import liuhangyu from '@/assets/category/member/avatar/liuhangyu.png';
 import luohao from '@/assets/category/member/avatar/luohao.png';

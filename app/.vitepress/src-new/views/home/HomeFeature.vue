@@ -143,6 +143,7 @@ const { isPhone } = useScreen();
   }
 
   .feature-item-title {
+    font-weight: 600;
     margin-top: 16px;
     @include h4;
     @include respond-to('phone') {

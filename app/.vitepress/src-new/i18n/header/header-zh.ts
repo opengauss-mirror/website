@@ -292,12 +292,17 @@ export default {
           ],
         },
         {
-          NAME: 'RAG',
+          NAME: '专区',
           CHILDREN: [
             {
               NAME: 'RAG专区',
               DESCRIPTION: '了解openGauss在RAG场景的击数生态和适配情况',
               URL: '/ai/',
+            },
+            {
+              NAME: 'oGMemory 专区',
+              DESCRIPTION: '面向AI Agent的长期记忆系统，以AGFS文件为数据源头，openGauss向量索引为加速层，让Agent拥有跨会话的持久记忆能力。',
+              URL: '/ogmemory/',
             }
           ],
         },
