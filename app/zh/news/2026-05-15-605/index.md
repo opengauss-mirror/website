@@ -1,5 +1,7 @@
 ---
 title: 'openGauss 6.0.5版本正式发布！'
+date: '2026-05-15'
+banner: '605.png'
 tags: ['theme']
 author: 'openGauss'
 category: 'news'

@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'node:path';
 import process from 'node:process';
 import { generate } from "./generate-data.js";
+import { existsSync } from 'node:fs';
 
 const CWD = process.cwd();
 
@@ -21,8 +22,14 @@ export default function main() {
     },
     onZhDone(data) {
       data.forEach((item) => {
-        const files = fs.readdirSync(path.join(newsBannerRootDir, item.date));
-        item.banner = `/category/news/${item.date}/${files[0]}`;
+        if (item.banner) {
+          item.banner = `/category/news/${item.date}/${item.banner}`;
+        } else if (existsSync(path.join(newsBannerRootDir, item.date, 'banner.png'))) {
+          item.banner = `/category/news/${item.date}/banner.png`;
+        } else {
+          const files = fs.readdirSync(path.join(newsBannerRootDir, item.date));
+          item.banner = `/category/news/${item.date}/${files[0]}`;
+        }
       });
     },
   });
