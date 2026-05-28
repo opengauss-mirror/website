@@ -38,7 +38,7 @@ const eventList = [
       {
         name: '开放院子开源生态大会2026',
         date: '2026/06/01',
-        location: 'TBD',
+        location: '中国，北京',
       },
       {
         name: '中国数据库技术大会DTCC 2026',
@@ -68,7 +68,7 @@ const eventList = [
       {
         name: '开放原子开源开发者大会',
         date: '2026/12/01',
-        location: 'TBD',
+        location: '中国，北京',
       },
     ],
   },
@@ -79,17 +79,12 @@ const eventList = [
       {
         name: '鲲鹏昇腾开发者大会 KADC 2026',
         date: '2026/05/01',
-        location: '北京',
-      },
-      {
-        name: 'openGauss Developer Day 2026',
-        date: '2026/06/01',
-        location: 'TBD',
+        location: '中国，北京',
       },
       {
         name: 'GOSIM China 2026',
         date: '2026/10/01',
-        location: '中国深圳',
+        location: '中国，深圳',
       },
     ],
   },
@@ -104,6 +99,11 @@ const eventList = [
         location: 'Online',
         // link: 'https://baidu.com',
       },
+      {
+        name: 'openGauss × 国创 Workshop',
+        date: '2026/02/01',
+        location: '中国，广州',
+      },
     ],
   },
   {
@@ -112,7 +112,7 @@ const eventList = [
     isSpanMonth: true,
     data: [
       {
-        name: '4月-11月 第六届开源之夏',
+        name: '8月-12月 第六届开源之夏',
         date: ['2026/04/01', '2026/11/30'],
         align: 'center',
       },

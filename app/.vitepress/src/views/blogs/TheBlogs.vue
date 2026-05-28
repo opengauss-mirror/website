@@ -326,7 +326,6 @@ watch(
   .blog-list-item {
     background-image: url(@/assets/category/blogs/blog-bg.png);
     min-height: 248px;
-    max-height: 248px;
     background-position: right bottom;
     background-repeat: no-repeat;
     background-size: cover;
