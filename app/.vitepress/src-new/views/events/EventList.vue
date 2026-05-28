@@ -7,7 +7,6 @@ import { useDebounceFn } from '@vueuse/core';
 import { changeTimeStamp } from '~@/utils/common';
 
 import IconSearch from '~icons/app-new/icon-header-search.svg';
-import IconFilter from '~icons/app-new/icon-filter.svg';
 
 import { useLocale } from '~@/composables/useLocale';
 import { useScreen } from '~@/composables/useScreen';

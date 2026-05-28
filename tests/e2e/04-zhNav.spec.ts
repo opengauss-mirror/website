@@ -6,7 +6,7 @@ test('中文导航栏', async ({ page }) => {
   await page.getByRole('link', { name: '支持工具' }).click();
   const page1Promise = page.waitForEvent('popup');
   await page.getByRole('link', { name: '文档' }).click();
-  const page1 = await page1Promise;
+  await page1Promise;
   await page.getByRole('link', { name: '知识图谱' }).click();
   await page.getByRole('link', { name: '学习进阶' }).click();
   await page.getByRole('link', { name: 'FAQ' }).click();
@@ -21,7 +21,7 @@ test('中文导航栏', async ({ page }) => {
   await page.getByRole('link', { name: '社区荣誉' }).click();
   const page2Promise = page.waitForEvent('popup');
   await page.getByRole('link', { name: '贡献看板' }).click();
-  const page2 = await page2Promise;
+  await page2Promise;
   await page.getByRole('link', { name: '新闻' }).click();
   await page.getByRole('link', { name: '博客' }).click();
   await page.getByRole('link', { name: '活动' }).click();
@@ -37,8 +37,8 @@ test('中文导航栏', async ({ page }) => {
   await page.getByRole('link', { name: 'CVE' }).click();
   const page3Promise = page.waitForEvent('popup');
   await page.getByRole('link', { name: 'Gitee' }).click();
-  const page3 = await page3Promise;
+  await page3Promise;
   const page4Promise = page.waitForEvent('popup');
   await page.getByRole('link', { name: 'Github' }).click();
-  const page4 = await page4Promise;
+  await page4Promise;
 });

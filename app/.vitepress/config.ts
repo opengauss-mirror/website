@@ -4,11 +4,12 @@ import tdks from './tdks';
 import { createRequire } from 'node:module';
 import fs from 'node:fs';
 import process from 'node:process';
-import path from 'node:path';
+import path, { dirname } from 'node:path';
 import hljs from 'highlight.js';
+import { fileURLToPath } from 'node:url';
 
+const __dirname = dirname(fileURLToPath(import.meta.url));
 const require = createRequire(import.meta.url);
-
 const isBlog = /.+\/(?:user-practice|events|news)\/.+$/;
 
 const config: UserConfig = {

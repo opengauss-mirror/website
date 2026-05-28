@@ -2,7 +2,7 @@
 import { isArray, OLink } from '@opensig/opendesign';
 
 import OIcon from 'opendesign/icon/OIcon.vue';
-import { onMounted, ref, useSlots, watch } from 'vue';
+import { ref, watch } from 'vue';
 import IconChevronRight from '~icons/app-new/icon-chevron-right.svg';
 
 interface SectionPropsT {

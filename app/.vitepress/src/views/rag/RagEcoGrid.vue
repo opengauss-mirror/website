@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useCommon } from '@/stores/common';
-import { OIconChevronRight, OLink } from '@opensig/opendesign';
+import { OIconChevronRight } from '@opensig/opendesign';
 import OIcon from 'opendesign/icon/OIcon.vue';
 import { storeToRefs } from 'pinia';
 import { computed } from 'vue';
