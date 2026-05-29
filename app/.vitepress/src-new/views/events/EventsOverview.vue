@@ -36,7 +36,7 @@ const eventList = [
     type: 'summit',
     data: [
       {
-        name: '开放院子开源生态大会2026',
+        name: '开放原子开源生态大会2026',
         date: '2026/06/01',
         location: '中国，北京',
       },
@@ -101,7 +101,7 @@ const eventList = [
       },
       {
         name: 'openGauss × 国创 Workshop',
-        date: '2026/02/01',
+        date: '2026/07/01',
         location: '中国，广州',
       },
     ],
@@ -113,7 +113,7 @@ const eventList = [
     data: [
       {
         name: '8月-12月 第六届开源之夏',
-        date: ['2026/08/01', '2026/11/30'],
+        date: ['2026/08/01', '2026/12/30'],
         align: 'center',
       },
       {
