@@ -62,6 +62,10 @@ const requestInterceptorId = request.interceptors.request.use(
       });
     }
 
+    if (config.url?.includes('api-search')) {
+      config.headers.set('Source', 'opengauss');
+    }
+
     // 存储请求信息
     // 定义取消请求
     config.cancelToken = new axios.CancelToken((cancelFn) => {

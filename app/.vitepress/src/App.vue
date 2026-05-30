@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, nextTick, ref, watch } from 'vue';
+import { computed, nextTick, onMounted, ref, watch } from 'vue';
 import type { Component } from 'vue';
 import { useData, useRoute } from 'vitepress';
 
@@ -97,6 +97,19 @@ watch(
 </template>
 
 <style lang="scss">
+.o-link-normal {
+  --link-color: var(--o-color-info2) !important;
+
+}
+
+.o-dropdown-list {
+  --dropdown-list-bg-color: var(--o-color-control-light) !important;
+}
+
+.o-dropdown-item {
+  --dropdown-item-justify: center !important;
+}
+
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
