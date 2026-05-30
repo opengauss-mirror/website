@@ -15,6 +15,9 @@ importers:
       '@opendesign-plus/components':
         specifier: 0.0.1-rc.9
         version: 0.0.1-rc.9(@types/markdown-it@14.1.2)(markdown-it@14.1.0)(vue@3.3.4)
+      '@opendesign-plus/plugins':
+        specifier: 0.0.1-rc.7
+        version: 0.0.1-rc.7
       '@opendesign-plus/utils':
         specifier: 0.0.1-rc.6
         version: 0.0.1-rc.6
@@ -81,7 +84,7 @@ importers:
         version: 20.5.9
       '@vitejs/plugin-vue-jsx':
         specifier: 2.1.1
-        version: 2.1.1(vite@7.3.1(@types/node@20.5.9)(sass@1.85.0)(yaml@2.8.2))(vue@3.3.4)
+        version: 2.1.1(vite@5.4.21(@types/node@20.5.9)(sass@1.85.0))(vue@3.3.4)
       '@vitest/coverage-v8':
         specifier: ^4.0.18
         version: 4.0.18(vitest@4.0.18(@types/node@20.5.9)(jsdom@25.0.1)(sass@1.85.0)(yaml@2.8.2))
@@ -129,7 +132,7 @@ importers:
         version: 23.0.1(@vue/compiler-sfc@3.5.34)
       vite-plugin-static-copy:
         specifier: 2.3.0
-        version: 2.3.0(vite@7.3.1(@types/node@20.5.9)(sass@1.85.0)(yaml@2.8.2))
+        version: 2.3.0(vite@5.4.21(@types/node@20.5.9)(sass@1.85.0))
       vitepress:
         specifier: 1.6.4
         version: 1.6.4(@algolia/client-search@5.52.1)(@types/node@20.5.9)(async-validator@4.2.5)(axios@1.15.2)(postcss@8.5.14)(sass@1.85.0)(search-insights@2.13.0)(typescript@5.5.4)
@@ -1062,6 +1065,9 @@ packages:
   '@opendesign-plus/composables@0.0.1-rc.6':
     resolution: {integrity: sha512-Uvbcl6Omtu6FwaMWLUQJDbyPUuFyx3zgGJ2qwj3WkcKUUWQ8AuBFMw7Vs3lLDQCg37roBmqvrwnBJE4ST4xPNw==}
 
+  '@opendesign-plus/plugins@0.0.1-rc.7':
+    resolution: {integrity: sha512-W4MY8x2GMNYC2bpWVqKSQ/0g9L/wSYHS7H85HPwh0Ig51ewbNRxnB+yjDzBKQUbHTEX5nGhn1/ESCVDQmPhEXw==}
+
   '@opendesign-plus/styles@0.0.1-rc.2':
     resolution: {integrity: sha512-mgjqcsMUDJjo+kMSjumll9MM+r5rOkFZu1W00FwIW2tu3GNbdo3VZTdb3Ax596rnT9e1+7fr7ksxmBdcAq254A==}
 
@@ -1070,6 +1076,9 @@ packages:
 
   '@opensig/open-analytics@0.0.9':
     resolution: {integrity: sha512-D+4VWxgBc1ABsQjWEjWfBfoBQ4PQbc1lNZeEYpQXkTJLLFcj6nSa+LwcYZFXtZdGz9dzOhhbwRwXv66WFw2qJw==}
+
+  '@opensig/open-analytics@1.0.1':
+    resolution: {integrity: sha512-MH+RsgfoPdckVm+Q3kOOunHpiFMHtBwjoGgAoDytxoms6P/HXiyPDEL8GdGAO/K7xaTYfOknk08c21dTq+panA==}
 
   '@opensig/opendesign@0.0.75':
     resolution: {integrity: sha512-/0pdeb/jnY4KA9Zlwo4EI2EWHlRCvDqrj06E1JzlbcKzhvz6fGT5LkwgLUmG7+VIeobpnS+JP1sK5a6M1EMzFQ==}
@@ -1830,11 +1839,18 @@ packages:
   brace-expansion@1.1.11:
     resolution: {integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==}
 
-  brace-expansion@2.0.2:
-    resolution: {integrity: sha512-Jt0vHyM+jmUBqojB7E1NIYadt0vI0Qxjxd2TErW94wDz+E2LAm5vKMXXwg6ZZBTHPuUlDgQHKXvjGBdfcF1ZDQ==}
+  brace-expansion@1.1.15:
+    resolution: {integrity: sha512-EwOCDEex4quD37XhqM3omwtMoJjr//isUZz1JopUNWms+4Z2ViyM/k1YIRePpoVNnQhENnxtFjLaxNHrT7xIUg==}
+
+  brace-expansion@2.1.1:
+    resolution: {integrity: sha512-WR1cURNjuvBLMZBMbqM0UoE+WAfdUcEV1ccD8PVBVOI+Z3ND4+SZbN8RsfT2bMuG1qwz5RFvPukSZm5fF2D5eA==}
 
   brace-expansion@5.0.4:
     resolution: {integrity: sha512-h+DEnpVvxmfVefa4jFbCf5HdH5YMDXRsmKflpf1pILZWRFlTbJpxeU55nJl4Smt5HQaGzg1o6RHFPJaOqnmBDg==}
+    engines: {node: 18 || 20 || >=22}
+
+  brace-expansion@5.0.6:
+    resolution: {integrity: sha512-kLpxurY4Z4r9sgMsyG0Z9uzsBlgiU/EFKhj/h91/8yHu0edo7XuixOIH3VcJ8kkxs6/jPzoI6U9Vj3WqbMQ94g==}
     engines: {node: 18 || 20 || >=22}
 
   braces@3.0.3:
@@ -2641,6 +2657,10 @@ packages:
     resolution: {integrity: sha512-oRjTw/97aTBN0RHbYCdtF1MQfvusSIBQM0IZEgzl6426+8jSC0nF1a/GmnVLpfB9yyr6g6FTqWqiZVbxrtaCIg==}
     engines: {node: 18 || 20 || >=22}
 
+  minimatch@10.2.5:
+    resolution: {integrity: sha512-MULkVLfKGYDFYejP07QOurDLLQpcjk7Fw+7jXS2R2czRQzR56yHRveU5NDJEOviH+hETZKSkIk5c+T23GjFUMg==}
+    engines: {node: 18 || 20 || >=22}
+
   minimatch@3.1.2:
     resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}
 
@@ -2716,6 +2736,10 @@ packages:
   p-limit@3.1.0:
     resolution: {integrity: sha512-TYOanM3wGwNGsZN2cVTYPArw454xnXj5qmWF1bEoAc4+cU/ol7GVh7odevjp1FNHduHc3KZMcFduxU5Xc6uJRQ==}
     engines: {node: '>=10'}
+
+  p-limit@7.3.0:
+    resolution: {integrity: sha512-7cIXg/Z0M5WZRblrsOla88S4wAK+zOQQWeBYfV3qJuJXMr+LnbYjaadrFaS0JILfEDPVqHyKnZ1Z/1d6J9VVUw==}
+    engines: {node: '>=20'}
 
   p-locate@5.0.0:
     resolution: {integrity: sha512-LaNjtRWUBY++zB5nE/NwcaoMylSPk+S+ZHNB1TzdbMJMny6dynpAGt7X/tl/QYq3TIeE6nxHppbo2LGymrG5Pw==}
@@ -3062,6 +3086,9 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
+  ua-parser-js@1.0.37:
+    resolution: {integrity: sha512-bhTyI94tZofjo+Dn8SN6Zv8nBDvyXTymAdM3LDI/0IboIUwTu1rEhW7v2TfiVsoYWgkQ4kOVqnI8APUFbIQIFQ==}
+
   ua-parser-js@1.0.39:
     resolution: {integrity: sha512-k24RCVWlEcjkdOxYmVJgeD/0a1TiSpqLg+ZalVGV9lsnr4yqu0w7tX/x2xX6G4zpkgQnRf89lxuZ1wsbjXM8lw==}
     hasBin: true
@@ -3316,6 +3343,9 @@ packages:
     resolution: {integrity: sha512-o8qghlI8NZHU1lLPrpi2+Uq7abh4GGPpYANlalzWxyWteJOCsr/P+oPBA49TOLu5FTZO4d3F9MnWJfiMo4BkmA==}
     engines: {node: '>=18'}
 
+  web-vitals@3.5.2:
+    resolution: {integrity: sha512-c0rhqNcHXRkY/ogGDJQxZ9Im9D19hDihbzSQJrsioex+KnFgmMzBiy57Z1EjkhX/+OjyBpclDCzz2ITtjokFmg==}
+
   web-vitals@4.2.4:
     resolution: {integrity: sha512-r4DIlprAGwJ7YM11VZp4R884m0Vmgr6EAKe3P+kO0PPj3Unqyvv59rczf6UiGcb9Z8QxZVcqKNwv/g0WNdWwsw==}
 
@@ -3390,6 +3420,10 @@ packages:
   yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
+
+  yocto-queue@1.2.2:
+    resolution: {integrity: sha512-4LCcse/U2MHZ63HAJVE+v71o7yOdIe4cZ70Wpf8D/IyjDKYQLV5GD46B+hSTjJsvV5PztjvHoU580EftxjDZFQ==}
+    engines: {node: '>=12.20'}
 
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
@@ -4201,6 +4235,12 @@ snapshots:
       - markdown-it
       - vue
 
+  '@opendesign-plus/plugins@0.0.1-rc.7':
+    dependencies:
+      '@opensig/open-analytics': 1.0.1
+      minimatch: 10.2.5
+      p-limit: 7.3.0
+
   '@opendesign-plus/styles@0.0.1-rc.2': {}
 
   '@opendesign-plus/utils@0.0.1-rc.6':
@@ -4214,6 +4254,12 @@ snapshots:
       ua-parser-js: 1.0.39
       uuid: 14.0.0
       web-vitals: 4.2.4
+
+  '@opensig/open-analytics@1.0.1':
+    dependencies:
+      ua-parser-js: 1.0.37
+      uuid: 14.0.0
+      web-vitals: 3.5.2
 
   '@opensig/opendesign@0.0.75(vue@3.3.4)':
     dependencies:
@@ -4631,12 +4677,12 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@vitejs/plugin-vue-jsx@2.1.1(vite@7.3.1(@types/node@20.5.9)(sass@1.85.0)(yaml@2.8.2))(vue@3.3.4)':
+  '@vitejs/plugin-vue-jsx@2.1.1(vite@5.4.21(@types/node@20.5.9)(sass@1.85.0))(vue@3.3.4)':
     dependencies:
       '@babel/core': 7.23.7
       '@babel/plugin-transform-typescript': 7.23.6(@babel/core@7.23.7)
       '@vue/babel-plugin-jsx': 1.1.5(@babel/core@7.23.7)
-      vite: 7.3.1(@types/node@20.5.9)(sass@1.85.0)(yaml@2.8.2)
+      vite: 5.4.21(@types/node@20.5.9)(sass@1.85.0)
       vue: 3.3.4
     transitivePeerDependencies:
       - supports-color
@@ -5040,11 +5086,20 @@ snapshots:
       balanced-match: 1.0.2
       concat-map: 0.0.1
 
-  brace-expansion@2.0.2:
+  brace-expansion@1.1.15:
+    dependencies:
+      balanced-match: 1.0.2
+      concat-map: 0.0.1
+
+  brace-expansion@2.1.1:
     dependencies:
       balanced-match: 1.0.2
 
   brace-expansion@5.0.4:
+    dependencies:
+      balanced-match: 4.0.4
+
+  brace-expansion@5.0.6:
     dependencies:
       balanced-match: 4.0.4
 
@@ -5931,17 +5986,21 @@ snapshots:
     dependencies:
       brace-expansion: 5.0.4
 
+  minimatch@10.2.5:
+    dependencies:
+      brace-expansion: 5.0.6
+
   minimatch@3.1.2:
     dependencies:
       brace-expansion: 1.1.11
 
   minimatch@3.1.5:
     dependencies:
-      brace-expansion: 1.1.11
+      brace-expansion: 1.1.15
 
   minimatch@9.0.9:
     dependencies:
-      brace-expansion: 2.0.2
+      brace-expansion: 2.1.1
 
   minipass@7.1.3: {}
 
@@ -6007,6 +6066,10 @@ snapshots:
   p-limit@3.1.0:
     dependencies:
       yocto-queue: 0.1.0
+
+  p-limit@7.3.0:
+    dependencies:
+      yocto-queue: 1.2.2
 
   p-locate@5.0.0:
     dependencies:
@@ -6341,6 +6404,8 @@ snapshots:
 
   typescript@5.5.4: {}
 
+  ua-parser-js@1.0.37: {}
+
   ua-parser-js@1.0.39: {}
 
   uc.micro@2.1.0: {}
@@ -6413,14 +6478,14 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.2
 
-  vite-plugin-static-copy@2.3.0(vite@7.3.1(@types/node@20.5.9)(sass@1.85.0)(yaml@2.8.2)):
+  vite-plugin-static-copy@2.3.0(vite@5.4.21(@types/node@20.5.9)(sass@1.85.0)):
     dependencies:
       chokidar: 3.5.3
       fast-glob: 3.3.3
       fs-extra: 11.3.0
       p-map: 7.0.4
       picocolors: 1.1.1
-      vite: 7.3.1(@types/node@20.5.9)(sass@1.85.0)(yaml@2.8.2)
+      vite: 5.4.21(@types/node@20.5.9)(sass@1.85.0)
 
   vite@5.4.21(@types/node@20.5.9)(sass@1.85.0):
     dependencies:
@@ -6596,6 +6661,8 @@ snapshots:
     dependencies:
       xml-name-validator: 5.0.0
 
+  web-vitals@3.5.2: {}
+
   web-vitals@4.2.4: {}
 
   webidl-conversions@7.0.0: {}
@@ -6642,5 +6709,7 @@ snapshots:
   yaml@2.8.2: {}
 
   yocto-queue@0.1.0: {}
+
+  yocto-queue@1.2.2: {}
 
   zwitch@2.0.4: {}

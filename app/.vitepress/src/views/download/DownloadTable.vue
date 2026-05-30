@@ -20,7 +20,7 @@ import IconTips from '~icons/app/icon-tips.svg';
 import TagFilter from '@/components/TagFilter.vue';
 
 import { DOCS_LINK } from '@/data/url-config';
-import { oaReport } from '@/shared/analytics';
+import { oaReport } from '@opendesign-plus/plugins/analytics';
 
 const props = defineProps({
   tableData: {

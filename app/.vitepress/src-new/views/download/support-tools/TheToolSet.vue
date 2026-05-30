@@ -20,7 +20,7 @@ import TagFilter from '~@/components/TagFilter.vue';
 import IconCopy from '~icons/app/icon-copy2.svg';
 import downloadData from '~@/data/download';
 import { getCustomCookie } from '@/shared/utils';
-import { oaReport } from '@/shared/analytics';
+import { oaReport } from '@opendesign-plus/plugins/analytics';
 import { doLogin } from '@/shared/login';
 import { useData } from 'vitepress';
 // import { useI18n } from '~@/i18n';

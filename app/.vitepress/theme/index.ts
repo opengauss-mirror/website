@@ -29,10 +29,10 @@ import '~@/assets/style/element-plus/index.scss';
 import '~@/assets/style/element-plus/theme/index.scss';
 import '@opensig/opendesign/es/index.css';
 import '~@/assets/style/theme/index.scss';
-import { installer } from '@/shared/analytics';
 import { BAIDU_HM } from '@/data/url-config';
 import { removeCustomCookie } from '@/shared/utils';
 import { reportAnalytics } from '@/api/api-analytics';
+import { initOpenDesignAnalytics } from '@opendesign-plus/plugins/analytics'
 
 export default {
   Layout,
@@ -45,7 +45,7 @@ export default {
     app.use(OpenDesign);
     app.use(i18n);
     app.use(SeoBox as any);
-    app.use(installer, {
+    app.use(initOpenDesignAnalytics, {
       appKey: 'openGauss',
       request(data) {
         reportAnalytics(data);

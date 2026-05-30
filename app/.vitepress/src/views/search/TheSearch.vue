@@ -15,7 +15,7 @@ import { windowOpen, handleError } from '@/shared/utils';
 
 import { DOCS_LINK } from '@/data/url-config';
 import { v4 as uniqueId } from 'uuid';
-import { oaReport } from '@/shared/analytics';
+import { oaReport } from '@opendesign-plus/plugins/analytics';
 
 import { SearchCountItemT } from '@/shared/@types/type-search';
 import { getUrlParam } from '~@/utils/common';

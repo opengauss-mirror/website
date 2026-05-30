@@ -12,7 +12,7 @@ import { useCommon } from '@/stores/common';
 import { computed, provide, onMounted } from 'vue';
 
 import { getUrlParams } from '@/shared/utils';
-import { oaReport } from '@/shared/analytics';
+import { oaReport } from '@opendesign-plus/plugins/analytics';
 
 const commonStore = useCommon();
 const isLight = computed(() => (commonStore.theme === 'light' ? true : false));

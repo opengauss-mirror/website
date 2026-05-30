@@ -20,7 +20,7 @@ import IconCopy from '~icons/app/icon-copy.svg';
 import IconTips from '~icons/app/icon-tips.svg';
 
 import BreadCrumbs from '@/components/BreadCrumbs.vue';
-import { oaReport } from '@/shared/analytics';
+import { oaReport } from '@opendesign-plus/plugins/analytics';
 
 const i18n = useI18n();
 const { lang } = useData();
