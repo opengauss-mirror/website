@@ -16,7 +16,7 @@ import BannerImg from '~@/assets/category/download/banner.jpg';
 import DownloadAll from './DownloadAll.vue';
 import RelativeTools from './support-tools/RelativeTools.vue';
 import SupportServices from './support-tools/SupportServices.vue';
-import { oaReport } from '@/shared/analytics';
+import { oaReport } from '@opendesign-plus/plugins/analytics';
 
 const { t, $t, locale } = useLocale();
 const { lang } = useData();

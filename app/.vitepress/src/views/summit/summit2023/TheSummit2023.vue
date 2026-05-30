@@ -14,7 +14,7 @@ import liveDark from './img/live-dark.png';
 import summitData from './data';
 import { useCommon } from '@/stores/common';
 import { getUrlParams } from '@/shared/utils';
-import { oaReport } from '@/shared/analytics';
+import { oaReport } from '@opendesign-plus/plugins/analytics';
 
 const commonStore = useCommon();
 const liveImg = computed(() => (commonStore.theme === 'light' ? liveLight : liveDark));

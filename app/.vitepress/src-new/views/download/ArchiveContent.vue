@@ -3,7 +3,7 @@ import { toRefs, ref, computed, PropType } from 'vue';
 import { OLink, ODivider, OButton, OPopover, OIcon, useMessage, OTag } from '@opensig/opendesign';
 import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';
-import { oaReport } from '@/shared/analytics';
+import { oaReport } from '@opendesign-plus/plugins/analytics';
 import { useScreen } from '~@/composables/useScreen';
 import { useLocale } from '~@/composables/useLocale';
 import { useClipboard } from '@/components/hooks/useClipboard';

@@ -17,7 +17,7 @@ import TagFilter from '~@/components/TagFilter.vue';
 import DownloadContentItem from './DownloadContentItem.vue';
 import DownloadTable from './DownloadTable.vue';
 
-import { oaReport } from '@/shared/analytics';
+import { oaReport } from '@opendesign-plus/plugins/analytics';
 import IconRight from '~icons/app/icon-chevron-right.svg';
 import IconLeft from '~icons/app-new/icon-arrow-left.svg';
 
