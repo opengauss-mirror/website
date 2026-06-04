@@ -4,10 +4,10 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "predev": "node scripts/readEventsFrontmatter.js",
+    "predev": "node scripts/readEventsFrontmatter.js && node scripts/clone-blogs.js",
     "dev": "vitepress dev app",
-    "prebuild": "node scripts/readEventsFrontmatter.js",
-    "build": "pnpm gen:blogs && pnpm gen:news && vitepress build app",
+    "prebuild": "node scripts/readEventsFrontmatter.js && node scripts/clone-blogs.js",
+    "build": "node scripts/clone-blogs.js && vitepress build app",
     "preview": "vitepress preview app",
     "test:e2e": "playwright test && playwright show-report",
     "test:unit": "vitest",
@@ -15,9 +15,7 @@
     "lint": "eslint \"app/.vitepress/src*/**/*.{js,ts,vue,jsx,tsx}\"",
     "fix": "eslint --fix \"app/.vitepress/src/**/*.{js,ts,vue,jsx,tsx}\"",
     "lint:components": "eslint \"opendesign/**/*.{js,ts,vue,jsx,tsx}\"",
-    "prepare": "husky install",
-    "gen:blogs": "node scripts/index.js blogs",
-    "gen:news": "node scripts/index.js news"
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
