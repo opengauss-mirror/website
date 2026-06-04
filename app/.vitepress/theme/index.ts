@@ -35,7 +35,6 @@ import { removeCustomCookie } from '@/shared/utils';
 import { reportAnalytics } from '@/api/api-analytics';
 import { initOpenDesignAnalytics } from '@opendesign-plus/plugins/analytics'
 
-const whitelistDomain = import.meta.env.VITE_WHITELIST_DOMAIN;
 
 export default {
   Layout,
@@ -43,13 +42,6 @@ export default {
   enhanceApp({ app }: { app: App }) {
     app.use(VueDOMPurifyHTML);
     app.use(createPinia());
-    app.use(
-      createExternalLinkGuard({
-        whitelist: whitelistDomain.split(','),
-        showCustomConfirm: true,
-        community: 'openGauss',
-      })
-    );
 
     app.use(ElementPlus);
     app.use(OpenDesign);
