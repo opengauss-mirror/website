@@ -43,7 +43,7 @@ import { useLocale } from '~@/composables/useLocale';
 import { useUserInfoStore } from '@/stores/user';
 import { storeToRefs } from 'pinia';
 
-const TODAY = dayjs(new Date()).format('YYYY-MM-DD');
+const TODAY = ref('');
 
 const commonStore = useCommon();
 const { lang } = useData();
@@ -121,7 +121,7 @@ const latestSchedule = computed(() => {
     }
 
     // 如果有即将发生的活动就返回，否则返回第一个日期
-    latest = minUpcomingDate || recentMeetingDates.value[0] || TODAY;
+    latest = minUpcomingDate || recentMeetingDates.value[0] || TODAY.value;
   }
 
   return latest;
@@ -271,6 +271,7 @@ const getRecentMeetingDates = async () => {
 };
 
 onMounted(async () => {
+  TODAY.value = dayjs(new Date()).format('YYYY-MM-DD');
   selectedDate.value = new Date();
   // 设置右侧 日程列表高度
   const tbody = document.querySelector('.calendar-body .el-calendar__body') as HTMLElement;
@@ -460,7 +461,7 @@ const meetingCancelConfirm = async () => {
           </div>
           <div class="right-title">
             {{ t('home.HOME_CALENDAR.latestSchedule') }}:&ensp;
-            <span>{{ latestSchedule }}</span>
+            <span>{{ TODAY ? latestSchedule : '' }}</span>
           </div>
         </template>
         <template #date-cell="{ data }">
@@ -489,7 +490,7 @@ const meetingCancelConfirm = async () => {
       <div class="detail-list">
         <div class="current-day">
           {{ meetingI18n.NEW_DATE }}
-          <span>{{ latestSchedule }}</span>
+          <span>{{ TODAY ? latestSchedule : '' }}</span>
         </div>
         <div class="right-title">
           <OTab v-model="tabType" :line="false">
