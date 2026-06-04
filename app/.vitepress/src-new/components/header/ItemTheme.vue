@@ -47,9 +47,7 @@ watch(
       val === 'dark' && documentElement.classList.add('dark');
     }
   },
-  {
-    immediate: true,
-  }
+  {}
 );
 </script>
 
