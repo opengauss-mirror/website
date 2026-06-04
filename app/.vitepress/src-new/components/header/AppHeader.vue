@@ -47,7 +47,7 @@ const mobileClick = () => {
   <div class="app-header" :class="[{ dark: commonStore.theme === 'dark' }]">
     <ContentWrapper class="app-header-wrap">
       <slot>
-        <OLink :href="`/${lang}/`" class="logo">
+        <OLink :href="`/${lang}/`" class="logo" :hover-underline="false">
           <img alt="openGauss logo" :src="logo" />
         </OLink>
   

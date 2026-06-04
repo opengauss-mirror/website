@@ -98,7 +98,6 @@ const uploadImage = async (file: File) => {
 
 const onSearch = (payload: { keyword: string; imageUrl?: string }) => {
   const { keyword, imageUrl } = payload;
-  console.trace(`keyword: ${keyword}, imageUrl: ${imageUrl}`);
   const query = { q: '', imageUrl: '' };
   if (keyword) query.q = keyword;
   if (imageUrl) query.imageUrl = imageUrl;
@@ -106,7 +105,7 @@ const onSearch = (payload: { keyword: string; imageUrl?: string }) => {
     .filter(([_, v]) => !!v)
     .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`)
     .join('&');
-  router.go(`${route.path}?${queryString}`);
+  window.open(`${route.path}?${queryString}`, '_self');
 };
 
 const searchCountParams = computed(() => {
@@ -237,7 +236,6 @@ const doImageSearch = () => {
       const records = Array.isArray(obj) ? obj : (obj.records ?? []);
       searchResultList.value = records;
       total.value = obj.total ?? records.length;
-      console.log(`????? ${total.value}`);
       isNotFound.value = false;
       pageShow.value = true;
 
@@ -494,6 +492,15 @@ onUnmounted(() => unwatchActiveVersion?.());
   </div>
 </template>
 <style lang="scss" scoped>
+.search :deep(.o-search-panel-common-header)  {
+  margin-bottom: var(--o-gap-3);
+}
+
+.search :deep(.o-search-panel-history-row) {
+  padding: 5px var(--o-gap-3);
+  margin: 0 calc(-1 * var(--o-gap-3));
+}
+
 .search {
   max-width: 1504px;
   padding: var(--e-spacing-h2) 44px var(--e-spacing-h1);
