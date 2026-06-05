@@ -456,6 +456,7 @@ const reportTabChange = (val: string) => {
     background: var(--tab-color);
     border-radius: var(--tab-radius) var(--tab-radius) 0 0;
     .o-tab-navs-container {
+      overflow-x: visible;
       width: 100%;
     }
     .o-tab-navs-wrap {
@@ -467,6 +468,7 @@ const reportTabChange = (val: string) => {
       background: var(--sectopn-color);
       border-radius: var(--tab-radius) var(--tab-radius) 0 0;
       border: 2px solid var(--border-color);
+      border-bottom: 2px solid var(--sectopn-color);
       transition: none;
       .o-tab-nav-anchor-line {
         position: absolute;

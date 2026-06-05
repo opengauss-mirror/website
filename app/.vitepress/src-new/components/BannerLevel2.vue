@@ -129,7 +129,7 @@ const rootStyle = computed(() => {
       .banner-subtitle {
         position: relative;
         margin-top: 8px;
-        @include h4;
+        @include text2;
         color: var(--o-color-info2);
         z-index: 1;
       }

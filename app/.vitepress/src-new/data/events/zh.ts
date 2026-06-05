@@ -276,6 +276,23 @@ export default [
   "path": "/zh/events/2023-11-04/meetup.html"
 },
 {
+  "title": "openGauss Meetup（合肥站）精彩回顾 | openGauss合肥用户组正式成立",
+  "time": "2023/11/06",
+  "date": "2023/11/06",
+  "tags": "会议",
+  "label": "线下",
+  "category": "events",
+  "location": "合肥",
+  "img": "/category/events/2023-11-06/banner.jpg",
+  "img_mobile": "/category/events/2023-11-06/banner.jpg",
+  "link": "/zh/events/2023-11-06/meetup.html",
+  "author": "openGauss",
+  "summary": "由openGauss社区、天津南大通用数据技术股份有限公司联合主办的“openGauss Meetup • 合肥站”已于11月4日落下帷幕，此次活动邀请到数据库行业专家与行业同仁共同探讨数据库技术发展",
+  "name": "openGauss Meetup（合肥站）精彩回顾 | openGauss合肥用户组正式成立",
+  "city": "合肥",
+  "path": "/zh/events/2023-11-06/meetup.html"
+},
+{
   "title": "openGauss Meetup（天津站）精彩回顾 | openGauss天津用户组正式成立",
   "time": "2023/10/17",
   "date": "2023/10/17",
@@ -361,21 +378,21 @@ export default [
   "path": "/zh/events/2023-09-21/meetup.html"
 },
 {
-  "title": "海量数据 x 黑龙江鲲鹏 x openGauss Meetup（哈尔滨站）精彩回顾！",
-  "time": "2023/08/26",
-  "date": "2023/08/26",
+  "title": "openGauss Meetup（杭州站）全程精彩回顾！",
+  "time": "2023/09/18",
+  "date": "2023/09/18",
   "tags": "会议",
   "label": "线下",
   "category": "events",
-  "location": "哈尔滨",
-  "img": "/category/events/2023-08-26/banner.jpg",
-  "img_mobile": "/category/events/2023-08-26/banner.jpg",
-  "link": "/zh/events/2023-08-26/meetup.html",
+  "location": "杭州",
+  "img": "/category/events/2023-09-18/banner.png",
+  "img_mobile": "/category/events/2023-09-18/banner.png",
+  "link": "/zh/events/2023-09-18/meetup.html",
   "author": "openGauss",
-  "summary": "昨日，由海量数据、黑龙江鲲鹏生态创新中心、openGauss社区联合主办的“海量数据 x 黑龙江鲲鹏 x openGauss Meetup（哈尔滨站）”活动在黑龙江鲲鹏生态创新中心成功举办！ 此次活",
-  "name": "海量数据 x 黑龙江鲲鹏 x openGauss Meetup（哈尔滨站）精彩回顾！",
-  "city": "哈尔滨",
-  "path": "/zh/events/2023-08-26/meetup.html"
+  "summary": "9月16日，由云和恩墨、图尔兹、浙江鲲鹏、openGauss社区联合主办的“openGauss Meetup （杭州站）”活动在杭州市拱墅区中国智慧信息产业园成功举办，此次活动邀请到众多业内技术专家，",
+  "name": "openGauss Meetup（杭州站）全程精彩回顾！",
+  "city": "杭州",
+  "path": "/zh/events/2023-09-18/meetup.html"
 },
 {
   "title": "报名开启 | openGauss Meetup（杭州站）",
@@ -616,6 +633,23 @@ export default [
   "path": "/zh/events/2022-08-26/meetup.html"
 },
 {
+  "title": "【成都】openGauss Meetup（8月25日）| 活动预告",
+  "time": "2022/08/25",
+  "date": "2022/08/25",
+  "category": "events",
+  "tags": "会议",
+  "label": "线下",
+  "location": "成都",
+  "img": "/category/events/2022-08-25/banner2.png",
+  "img_mobile": "/category/events/2022-08-25/banner2.png",
+  "link": "/zh/events/2022-08-25/Meetup.html",
+  "author": "openGauss",
+  "summary": "主题：把企业级的数据库能力带给用户，共筑计算新生态共赢数字新时代",
+  "name": "【成都】openGauss Meetup（8月25日）| 活动预告",
+  "city": "成都",
+  "path": "/zh/events/2022-08-25/Meetup.html"
+},
+{
   "title": "释放开源数据库创新力量 | 【甘肃】openGauss Meetup圆满结束",
   "time": "2022/06/16",
   "date": "2022/06/16",
@@ -731,23 +765,6 @@ export default [
   "summary": "由华为数据库高级讲师贾军锋老师为大家带来“轻松上手 openGauss[DBA 篇]之 openGauss 概述”。",
   "name": "轻松上手openGauss[DBA篇]之openGauss概述",
   "path": "/zh/events/2021-08-16/meetup.html"
-},
-{
-  "title": "木兰技术开放日 | openGauss: 把企业级数据库能力带给用户",
-  "time": "2021/08/01",
-  "date": "2021/08/01",
-  "category": "events",
-  "tags": "会议",
-  "label": "线上",
-  "location": "成都",
-  "img": "/category/events/2021-08-01/banner.jpg",
-  "img_mobile": "/category/events/2021-08-01/banner.jpg",
-  "link": "events/2021-08-01/meetup.html",
-  "author": "openGauss",
-  "summary": "2021 年是“十四五”开局之年，在《中华人民共和国国民经济和社会发展第十四个五年规划和 2035 年远景目标纲要》中提到“支持数字技术开源社区等创新联合体发展，完善开源知识产权和法律体系，鼓励企业开放软件源代码、硬件设计和应用服务”。",
-  "name": "木兰技术开放日 | openGauss: 把企业级数据库能力带给用户",
-  "city": "成都",
-  "path": "events/2021-08-01/meetup.html"
 },
 {
   "title": "共建数据库可信开源社区 | openGauss Meetup（长沙站）圆满结束",

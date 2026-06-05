@@ -11,6 +11,7 @@ import header from './header';
 import footer from './footer';
 import notifications from './notifications';
 import events from './events';
+import search from './search';
 
 const messages = {
   zh: {
@@ -25,6 +26,7 @@ const messages = {
     home: home.zh,
     notifications: notifications.zh,
     events: events.zh,
+    search: search.zh,
   },
   en: {
     // 公共模块
@@ -38,6 +40,7 @@ const messages = {
     home: home.en,
     notifications: notifications.en,
     events: events.en,
+    search: search.en,
   },
 };
 

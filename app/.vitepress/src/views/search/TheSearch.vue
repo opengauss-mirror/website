@@ -1,13 +1,14 @@
 <script setup lang="ts">
-import { computed, ref, onMounted, watch, reactive } from 'vue';
-import { useData, useRouter } from 'vitepress';
+import { computed, ref, onMounted, watch, reactive, onUnmounted } from 'vue';
+import { useData, useRoute, useRouter } from 'vitepress';
 import { useI18n } from '@/i18n';
 import { getSearchData, getSearchCount, getTagsData } from '@/api/api-search';
+
+import { OSearchInput } from '@opendesign-plus/components';
 
 import NotFound from '@/NotFound.vue';
 import AppPaginationMo from '@/components/AppPaginationMo.vue';
 
-import IconCancel from '~icons/app/icon-cancel.svg';
 import IconSearch from '~icons/app/icon-search.svg';
 
 import useWindowResize from '@/components/hooks/useWindowResize';
@@ -19,12 +20,15 @@ import { oaReport } from '@opendesign-plus/plugins/analytics';
 
 import { SearchCountItemT } from '@/shared/@types/type-search';
 import { getUrlParam } from '~@/utils/common';
+import { useDebounceFn } from '@vueuse/core';
+import { getSearchWord, imageSearch, imageUpload } from '~@/api/api-search';
 
 const screenWidth = useWindowResize();
 const isMobile = computed(() => (screenWidth.value <= 768 ? true : false));
 
 const { lang } = useData();
 const router = useRouter();
+const route = useRoute();
 const i18n = useI18n();
 const activeVersion = ref('');
 // 当前选择类型
@@ -39,14 +43,11 @@ const pageShow = ref(false);
 const isNotFound = ref(false);
 // 搜索内容
 const searchInput = ref<string>('');
-const searchValue = computed(() => {
-  return i18n.value.common.SEARCH;
-});
 // 接收搜索数量的数据
 const searchNumber = ref<SearchCountItemT[]>([]);
 // 显示的数据类型
 const searchType = ref('');
-const searchData = computed(() => {
+const searchDataParams = computed(() => {
   return {
     keyword: searchInput.value || decodeURIComponent(location.href.split('=')[1]),
     page: currentPage.value,
@@ -63,7 +64,51 @@ const searchData = computed(() => {
   };
 });
 
-const searchCount = computed(() => {
+const imageUrl = ref('');
+const suggestItems = ref<{ key: string; count?: number }[]>([]);
+const hasImage = computed(() => !!imageUrl.value);
+
+const debouncedLoadSuggest = useDebounceFn(async (keyword: string) => {
+  if (!keyword) {
+    suggestItems.value = [];
+    return;
+  }
+  try {
+    const res = await getSearchWord({ query: keyword, lang: lang.value });
+    suggestItems.value = res.obj?.word ?? [];
+  } catch {
+    suggestItems.value = [];
+  }
+}, 300);
+
+const onInput = (val: string) => {
+  debouncedLoadSuggest(val);
+};
+
+const uploadImage = async (file: File) => {
+  try {
+    const res = await imageUpload(file);
+    if (!res.obj) throw new Error('Upload returned empty URL');
+    return res.obj as string;
+  } catch (error) {
+    console.log('upload failed');
+    throw error;
+  }
+};
+
+const onSearch = (payload: { keyword: string; imageUrl?: string }) => {
+  const { keyword, imageUrl } = payload;
+  const query = { q: '', imageUrl: '' };
+  if (keyword) query.q = keyword;
+  if (imageUrl) query.imageUrl = imageUrl;
+  const queryString = Object.entries(query)
+    .filter(([_, v]) => !!v)
+    .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`)
+    .join('&');
+  window.open(`${route.path}?${queryString}`, '_self');
+};
+
+const searchCountParams = computed(() => {
   return {
     keyword: searchInput.value.trim(),
     lang: lang.value,
@@ -78,20 +123,24 @@ const searchCount = computed(() => {
 });
 
 // 接收获取的搜索数据
-const searchResultList: any = ref([]);
+const searchResultList = ref<any[]>([]);
 // 总数据数量
-const total = computed(() => {
-  return searchNumber.value[currentIndex.value] ? searchNumber.value[currentIndex.value].doc_count : 0;
-});
+const total = ref(0);
+
+watch(
+  [searchNumber, currentIndex],
+  ([searchNumber, currentIndex]) => {
+    if (searchNumber?.length) {
+      total.value = searchNumber[currentIndex] ? searchNumber[currentIndex].doc_count : 0;
+    }
+  }
+);
+
 // 分页器总页数
 const totalPage = computed(() => {
   return Math.ceil(total.value / pageSize.value);
 });
 
-// 点击搜索框的删除图标
-function clearSearchInput() {
-  searchInput.value = '';
-}
 // 点击数据的类型导航
 function setCurrentType(index: number, type: string) {
   currentIndex.value = index;
@@ -101,18 +150,22 @@ function setCurrentType(index: number, type: string) {
     searchType.value = type;
   }
   currentPage.value = 1;
-  searchDataAll();
+  if (imageUrl.value) {
+    doImageSearch();
+  } else {
+    searchDataAll();
+  }
 }
 
 // 获取搜索结果各类型的数量
-async function searchCountAll() {
+async function searchCountAll(keyword?: string) {
   // 全部时 limit 不传
   if (activeVersion.value === i18n.value.search.tagList.all) {
-    searchCount.value.limit = [];
+    searchCountParams.value.limit = [];
   }
 
   try {
-    const res = await getSearchCount(searchCount.value);
+    const res = await getSearchCount({ ...searchCountParams.value, ...(keyword && { keyword }) });
     if (res.status === 200 && Array.isArray(res.obj?.total)) {
       searchNumber.value = res.obj.total;
       const index = searchNumber.value.findIndex((item: SearchCountItemT) => item.key === searchType.value);
@@ -126,6 +179,7 @@ async function searchCountAll() {
     handleError();
   }
 }
+
 // 获取搜索结果的数据
 async function searchDataAll() {
   searchResultList.value = [];
@@ -133,11 +187,11 @@ async function searchDataAll() {
   isNotFound.value = false;
   // 全部时 limit 不传
   if (activeVersion.value === i18n.value.search.tagList.all) {
-    searchData.value.limit = [];
+    searchDataParams.value.limit = [];
   }
 
   try {
-    const res = await getSearchData(searchData.value);
+    const res = await getSearchData(searchDataParams.value);
     if (res.status === 200 && Array.isArray(res.obj?.records)) {
       searchResultList.value = res.obj.records;
       pageShow.value = true;
@@ -150,15 +204,57 @@ async function searchDataAll() {
         return 'no-docs-data';
       }
     }
-  } catch {
+  } catch (err) {
+    console.log(err);
     handleError();
     isNotFound.value = true;
   }
 }
+
+const doImageSearch = () => {
+  searchResultList.value = [];
+  pageShow.value = false;
+  isNotFound.value = false;
+  const imageSearchParams: Parameters<typeof imageSearch>[0] = {
+    lang: lang.value,
+    imageUrl: imageUrl.value,
+    keyword: searchInput.value || undefined,
+    page: currentPage.value,
+    pageSize: pageSize.value,
+    hq: 'opengauss',
+    type: searchType.value,
+  };
+
+  imageSearch(imageSearchParams)
+    .then((res) => {
+      if (res.status === 201) {
+        isNotFound.value = true;
+        pageShow.value = false;
+        return;
+      }
+      const obj = res.obj;
+      const records = Array.isArray(obj) ? obj : (obj.records ?? []);
+      searchResultList.value = records;
+      total.value = obj.total ?? records.length;
+      isNotFound.value = false;
+      pageShow.value = true;
+
+      // 用后端综合后的关键词调辅助接口，不影响用户输入的 searchInput
+      const imageKeyword = obj.keyword;
+      if (imageKeyword) {
+        searchCountAll(imageKeyword);
+      }
+    })
+    .catch(() => {
+      searchResultList.value = [];
+      isNotFound.value = true;
+      pageShow.value = false;
+    });
+};
+
 // 获取搜索结果的所有内容
 async function searchAll(current?: string) {
-  if (!searchInput.value) {
-    clearSearchInput();
+  if (!searchInput.value && !imageUrl.value) {
     return;
   }
 
@@ -168,12 +264,16 @@ async function searchAll(current?: string) {
   reportSearch(searchInput.value);
   currentPage.value = 1;
   searchType.value = current || '';
-  handleSelectChange(searchInput.value);
+  // handleSelectChange(searchInput.value);
 
-  const [_, result] = await Promise.all([searchCountAll(), searchDataAll()]);
-  if (result === 'no-docs-data') {
-    searchType.value = '';
-    searchAll();
+  if (imageUrl.value) {
+    doImageSearch();
+  } else {
+    const [_, result] = await Promise.all([searchCountAll(), searchDataAll()]);
+    if (result === 'no-docs-data') {
+      searchType.value = '';
+      searchAll();
+    }
   }
 }
 
@@ -203,13 +303,13 @@ function goLink(data: any, index: number) {
       goPath = path.replace(/^docs\/master/g, 'docs/latest');
     }
     const url = `${DOCS_LINK}/${goPath}.html`;
-    reportSelectSearchResult(data, index, url, searchData.value.keyword);
+    reportSelectSearchResult(data, index, url, searchDataParams.value.keyword);
     windowOpen(url, '_blank');
   } else if (path.startsWith('https')) {
-    reportSelectSearchResult(data, index, path, searchData.value.keyword);
+    reportSelectSearchResult(data, index, path, searchDataParams.value.keyword);
     windowOpen(path, '_blank');
   } else {
-    reportSelectSearchResult(data, index, search_result_url, searchData.value.keyword);
+    reportSelectSearchResult(data, index, search_result_url, searchDataParams.value.keyword);
     router.go(search_result_url);
   }
 }
@@ -272,11 +372,19 @@ async function getVersionTag() {
   }
 }
 
+let unwatchActiveVersion: ReturnType<typeof watch>;
+
 onMounted(async () => {
-  await getVersionTag();
-  if (getUrlParam('q')) {
-    searchInput.value = decodeURIComponent(getUrlParam('q'));
+  if (location.search) {
+    const params = new URLSearchParams(location.search);
+    if (params.get('imageUrl')) {
+      imageUrl.value = decodeURIComponent(params.get('imageUrl')!);
+    }
+    if (params.get('q')) {
+      searchInput.value = decodeURIComponent(params.get('q')!);
+    }
   }
+  await getVersionTag();
 
   const type = getUrlParam('type');
   if (type === 'docs') {
@@ -284,28 +392,43 @@ onMounted(async () => {
   }
 
   searchAll(searchType.value);
+
+  unwatchActiveVersion = watch(
+    () => activeVersion.value,
+    () => {
+      searchAll(searchType.value);
+    }
+  );
 });
 
-watch(
-  () => activeVersion.value,
-  () => {
-    searchAll(searchType.value);
-  }
-);
+onUnmounted(() => unwatchActiveVersion?.());
 </script>
 <template>
   <div class="search">
-    <OSearch v-model="searchInput" :placeholder="searchValue.PLACEHOLDER" @change="() => searchAll()">
-      <template #suffix>
-        <OIcon class="close" @click="clearSearchInput"><IconCancel /></OIcon>
-      </template>
-    </OSearch>
+    <OSearchInput
+      v-model="searchInput"
+      v-model:image-url="imageUrl"
+      :placeholder="'search'"
+      size="large"
+      :suggest-items="hasImage ? [] : suggestItems"
+      :enable-history="!hasImage"
+      :show-suggest-empty="!hasImage"
+      :open-on-focus="!hasImage"
+      store-history
+      storage-key="search-history"
+      enable-image-search
+      :upload-image="uploadImage"
+      @search="onSearch"
+      @input="onInput"
+      @image-upload-start="hasImage = true"
+      @image-clear="hasImage = false"
+    />
     <div class="search-content">
       <div class="select-options">
         <ul class="type">
           <li
             v-for="(item, index) in searchNumber"
-            :key="item"
+            :key="item.key"
             :title="item.key"
             :class="currentIndex === index ? 'active' : ''"
             @click="setCurrentType(index, item.key)"
@@ -369,6 +492,15 @@ watch(
   </div>
 </template>
 <style lang="scss" scoped>
+.search :deep(.o-search-panel-common-header)  {
+  margin-bottom: var(--o-gap-3);
+}
+
+.search :deep(.o-search-panel-history-row) {
+  padding: 5px var(--o-gap-3);
+  margin: 0 calc(-1 * var(--o-gap-3));
+}
+
 .search {
   max-width: 1504px;
   padding: var(--e-spacing-h2) 44px var(--e-spacing-h1);

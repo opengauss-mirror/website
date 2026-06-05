@@ -99,43 +99,27 @@ export default defineConfig({
   ],
   server: {
     proxy: {
-      '/api-cve/': {
-        target: 'https://cvemanager.test.osinfra.cn/cve-manager/',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api-cve/, ''),
-        configure: proxyConfig,
-      },
       '/api-dsapi/': {
         target: 'https://dsapi.test.osinfra.cn/',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api-dsapi/, ''),
         configure: proxyConfig,
       },
-      '/api-meeting/': {
-        target: 'https://opengauss-meeting-center.test.osinfra.cn/',
+      '/api-search/': {
+        target: 'https://doc-search-common.osinfra.cn/',
         changeOrigin: true,
         headers: {
-          Referer: 'https://opengauss.test.osinfra.cn/',
+          Referer: 'https://openauss.org/',
         },
-        rewrite: (path) => path.replace(/^\/api-meeting/, ''),
-        configure: proxyConfig,
-      },
-      '/api-search/': {
-        target: 'https://doc-search-common.test.osinfra.cn/',
-        changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api-search/, ''),
-        configure: proxyConfig,
       },
-      '/api-oneid/': {
-        target: 'https://id-opengauss.test.osinfra.cn/',
+      '^/api-.*/': {
+        target: 'https://opengauss.org/',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api-oneid/, ''),
-        configure: proxyConfig,
-      },
-      '/api-message/': {
-        target: 'https://message-center-plus.test.osinfra.cn/opengauss/',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api-message/, ''),
+        headers: {
+          Origin: 'https://opengauss.org',
+          Referer: 'https://opengauss.org/zh/',
+        },
         configure: proxyConfig,
       },
     },
