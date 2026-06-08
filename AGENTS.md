@@ -87,6 +87,7 @@ TDK（title / description / keywords）由 `app/.vitepress/config.ts` 的 `trans
 | TypeScript 规范 | [rules/typescript.md](rules/typescript.md) |
 | API 与状态 | [rules/api-and-state.md](rules/api-and-state.md) |
 | 样式规范 | [rules/styling.md](rules/styling.md) |
+| 国际化规范 | [rules/i18n.md](rules/i18n.md) |
 | Git 工作流 | [rules/git.md](rules/git.md) |
 
 ### 红线（最高频踩坑）
@@ -97,7 +98,7 @@ TDK（title / description / keywords）由 `app/.vitepress/config.ts` 的 `trans
 4. **API 调用必须 `try/catch` + `loading`**；接口方法集中在 `api/api-*.ts` 并带 JSDoc。
 5. **样式用 CSS 变量**（`var(--o-*)`），禁止硬编码颜色 / 断点；禁止 `!important`、禁止 SCSS 嵌套 > 3 层。
 6. **SSR 安全**：`window` / `document` 只能在 `onMounted` 内访问。
-7. **i18n 双语同步**：改文案必须同时改 zh / en（涉及 ru 时一并）。
+7. **i18n 双语同步**：改文案必须同时改 zh / en（涉及 ru 时一并）；但**若新增条目的 link 目标页面仅在一种语言存在、无对应语言版页面，则另一语言应省略该条目**，禁止创建指向异语言页面的条目（详见 [rules/i18n.md](rules/i18n.md)）。
 8. **类型命名约定**：`XxxItemT` / `XxxListT` / `XxxDetailT` / `XxxQueryT`。
 
 ---
