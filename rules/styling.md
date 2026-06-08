@@ -203,3 +203,19 @@ const { toggleTheme } = useTheme();
 - 禁止超过 3 层的 SCSS 嵌套
 - 禁止在组件 `<style>` 中手动 `@use` / `@import` 已全局注入的 mixin 文件
 - 全局 `<style>`（无 `scoped`）必须添加注释说明原因
+
+---
+
+## 外部资源 URL 处理
+
+硬编码外部资源 URL（如下载附件）时，优先直接使用完整 URL 而非拼接基址常量；替换后须移除不再使用的 import / 常量引用。踩过的坑：`PPT_LINK` 从 `${LEARN_VIDEO_LINK}/…` 拼接改为硬编码 AtomGit URL 时，遗漏移除 `LEARN_VIDEO_LINK` import，导致无用依赖残留。
+
+```typescript
+// ✅ 替换后直接使用完整 URL，移除无用 import
+const PPT_LINK = 'https://atomgit.com/user-attachments/files/5089315/xxx.pptx';
+// import { LEARN_VIDEO_LINK } from '~@/data/url-config'  ← 已移除
+
+// ❌ 仅替换拼接结果，但保留不再使用的基址 import
+const PPT_LINK = 'https://atomgit.com/user-attachments/files/5089315/xxx.pptx';
+import { LEARN_VIDEO_LINK } from '~@/data/url-config';  // ← 组件内不再使用，应移除
+```

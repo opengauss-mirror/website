@@ -97,8 +97,11 @@ TDK（title / description / keywords）由 `app/.vitepress/config.ts` 的 `trans
 4. **API 调用必须 `try/catch` + `loading`**；接口方法集中在 `api/api-*.ts` 并带 JSDoc。
 5. **样式用 CSS 变量**（`var(--o-*)`），禁止硬编码颜色 / 断点；禁止 `!important`、禁止 SCSS 嵌套 > 3 层。
 6. **SSR 安全**：`window` / `document` 只能在 `onMounted` 内访问。
-7. **i18n 双语同步**：改文案必须同时改 zh / en（涉及 ru 时一并）。
+7. **i18n 双语同步**：改文案必须同时审查 zh / en（涉及 ru 时一并），但仅当对应语言文案确实包含需变更的关键词时才改，否则注明不改原因（例：英文 `DOWN_NAME` 不含 PPT/PPTX 字样则无需同步替换）。
 8. **类型命名约定**：`XxxItemT` / `XxxListT` / `XxxDetailT` / `XxxQueryT`。
+9. **禁止改动 `.github` 目录**——流水线 / CI 配置由维护者独管，agent 不碰。
+10. **禁止引入新外部依赖**未经维护者确认——`package.json` 任何新增 dependency 必先提 issue 讨论。
+11. **下载链接替换须验证新 URL 公网可达且不鉴权**——浏览器直接访问可下载才算通过。
 
 ---
 

@@ -89,14 +89,28 @@ export const useLocale = () => {
 
 ## i18n Key 命名
 
-- 格式：`模块名.camelCase`
-- 模块名与 i18n 目录下的子目录对应
+- 翻译键格式：`模块名.camelCase`，模块名与 i18n 目录下的子目录对应
 
 ```typescript
 t('common.confirm')      // ✅
 t('footer.qrCode')       // ✅
 t('download.versionTip') // ✅
 t('Confirm')             // ❌ 缺少模块前缀
+```
+
+- i18n 数据对象内的属性键名遵循 `UPPER_CASE`（如 `DOWN_NAME`、`CHARACTERR_INFO`），新增键须与相邻键风格一致。踩过的坑：混用 camelCase / UPPER_CASE 导致同一对象内风格断裂，后续 agent 难以判断该用哪种。
+
+```typescript
+// ✅ 属性键名统一 UPPER_CASE
+CHARACTERR_INFO: {
+  DOWN_NAME: 'openGauss整体概述PPTX',
+  DOWN_URL: 'https://atomgit.com/...',
+}
+
+// ❌ 混用风格
+CHARACTERR_INFO: {
+  downName: 'openGauss整体概述PPTX',  // 与 DOWN_NAME 风格不一致
+}
 ```
 
 ---
