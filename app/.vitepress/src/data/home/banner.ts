@@ -28,6 +28,8 @@ import ccfBannerTextMo from '@/assets/category/home/banner/ccf-20260407/content_
 import banner605 from '@/assets/category/home/banner/banner-605.png'
 import banner605Mo from '@/assets/category/home/banner/banner-605_mo.png'
 
+import ogmemoryBanner from '~@/assets/category/ogmemory/banner.png';
+
 import { LEARN_VIDEO_LINK, DOCS_LINK, FORUM_LINK } from '@/data/url-config';
 import { ScreenSizeT } from '~@/composables/useScreen';
 
@@ -80,6 +82,23 @@ const setBannersDefaultValueProxy = (item: BannerItem) => {
 // rightInset:banner右侧插图
 export default {
   zh: [
+    {
+      banners: {
+        laptop: ogmemoryBanner,
+        phone: ogmemoryBanner,
+      },
+      link: '/zh/ogmemory/',
+      target: '_self',
+      title: 'oGMemory 专区',
+      isLightBg: false,
+      titleMb: [],
+      subtitle: '面向AI Agent的长期记忆系统，以AGFS文件为数据源头，openGauss向量索引为加速层，让Agent拥有跨会话的持久记忆能力。',
+      desc: [],
+      btn: '了解更多',
+      className: '',
+      rightInset: '',
+      rightLink: '',
+    },
     {
       banners: {
         laptop: banner605,
