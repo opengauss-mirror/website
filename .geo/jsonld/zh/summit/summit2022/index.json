@@ -1,0 +1,291 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "openGauss Summit 2022",
+  "description": "openGauss Summit 2022是由openGauss开源数据库社区联合行业组织,伙伴及客户共同举办的年度数据库产业界交流与分享峰会。openGauss作为面向企业核心应用场景的开源数据库,开源两年来,与产业界聚力创新,携手前行。在技术、商业、生态、社区和人才方面取得了令人瞩目的成绩。从数据出发为企业数字化转型提供了强大的动能。本次峰会将邀请学术专家、行业组织、企业客户、生态伙伴和社区贡献者齐聚openGauss峰会,探讨数据库创新发展新路径、交流数据生态建设的新思维、分享企业数字化转型的新成果,共同加速推动开源数据库产业向前发展。",
+  "startDate": "2022-12-29",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+  "organizer": {
+    "@type": "Organization",
+    "name": "openGauss社区",
+    "url": "https://opengauss.org"
+  },
+  "sponsors": [
+    {
+      "@type": "Organization",
+      "name": "中国软件行业协会"
+    },
+    {
+      "@type": "Organization",
+      "name": "数据库专业委员会"
+    },
+    {
+      "@type": "Organization",
+      "name": "中国赛宝实验室"
+    },
+    {
+      "@type": "Organization",
+      "name": "海量数据"
+    },
+    {
+      "@type": "Organization",
+      "name": "云和恩墨"
+    },
+    {
+      "@type": "Organization",
+      "name": "神舟通用"
+    },
+    {
+      "@type": "Organization",
+      "name": "GBASE南大通用"
+    },
+    {
+      "@type": "Organization",
+      "name": "中国交通信息科技集团有限公司"
+    },
+    {
+      "@type": "Organization",
+      "name": "中国移动"
+    },
+    {
+      "@type": "Organization",
+      "name": "中海油"
+    },
+    {
+      "@type": "Organization",
+      "name": "招商银行"
+    },
+    {
+      "@type": "Organization",
+      "name": "SuperMap"
+    },
+    {
+      "@type": "Organization",
+      "name": "天津大学"
+    }
+  ],
+  "performers": [
+    {
+      "@type": "Person",
+      "name": "郑纬民",
+      "jobTitle": "中国工程院院士 清华大学计算机科学与技术系教授、博士生导师"
+    },
+    {
+      "@type": "Person",
+      "name": "江大勇",
+      "jobTitle": "openGauss社区理事长"
+    },
+    {
+      "@type": "Person",
+      "name": "李国良",
+      "jobTitle": "清华大学计算机系长聘教授、副主任 openGauss社区技术委员会主席 中国计算机学会数据库专委会副主任"
+    },
+    {
+      "@type": "Person",
+      "name": "陈国",
+      "jobTitle": "中国移动信息技术中心副总经理"
+    },
+    {
+      "@type": "Person",
+      "name": "王鑫",
+      "jobTitle": "天津大学智能与计算学部教授 天津泰凡科技有限公司首席科学家"
+    },
+    {
+      "@type": "Person",
+      "name": "陈平",
+      "jobTitle": "南京市卫生信息中心副主任"
+    },
+    {
+      "@type": "Person",
+      "name": "肖枫",
+      "jobTitle": "北京海量数据技术股份有限公司总裁"
+    },
+    {
+      "@type": "Person",
+      "name": "王嘉懿",
+      "jobTitle": "桂林银行信息技术部副总经理"
+    },
+    {
+      "@type": "Person",
+      "name": "张乐奕",
+      "jobTitle": "云和恩墨联合创始人兼副总经理 资深数据库架构师"
+    },
+    {
+      "@type": "Person",
+      "name": "董立国",
+      "jobTitle": "哈尔滨银行运维专家条线主管"
+    },
+    {
+      "@type": "Person",
+      "name": "张御博",
+      "jobTitle": "神舟通用售前总监"
+    },
+    {
+      "@type": "Person",
+      "name": "唐天宇",
+      "jobTitle": "陕西电信 电信智慧中台DataT团队负责人"
+    },
+    {
+      "@type": "Person",
+      "name": "张志强",
+      "jobTitle": "工信部电子五所信创团队质量测评部部长"
+    },
+    {
+      "@type": "Person",
+      "name": "盖国强",
+      "jobTitle": "云和恩墨创始人兼总经理 中国DBA联盟理事长,鲲鹏MVP"
+    },
+    {
+      "@type": "Person",
+      "name": "张皖川",
+      "jobTitle": "云和恩墨数据库产品事业部总经理"
+    },
+    {
+      "@type": "Person",
+      "name": "毛绵长",
+      "jobTitle": "华宝基金管理有限公司资深架构师"
+    },
+    {
+      "@type": "Person",
+      "name": "左叶锋",
+      "jobTitle": "上海雷昶研发二部总监"
+    },
+    {
+      "@type": "Person",
+      "name": "曾鹏冰",
+      "jobTitle": "东方通技术咨询部总监"
+    },
+    {
+      "@type": "Person",
+      "name": "张程伟",
+      "jobTitle": "云和恩墨数据库产品CTO"
+    },
+    {
+      "@type": "Person",
+      "name": "陈超",
+      "jobTitle": "鲲鹏计算业务副总裁 鲲鹏生态发展部部长"
+    },
+    {
+      "@type": "Person",
+      "name": "高丹",
+      "jobTitle": "赛迪顾问股份有限公司业务总监"
+    },
+    {
+      "@type": "Person",
+      "name": "邓锦波",
+      "jobTitle": "广东粤海资本集团有限公司信息技术部负责人"
+    },
+    {
+      "@type": "Person",
+      "name": "白玥",
+      "jobTitle": "北京海量数据技术股份有限公司解决方案总监"
+    },
+    {
+      "@type": "Person",
+      "name": "纪录",
+      "jobTitle": "用友网络科技股份有限公司助理总裁 U8cloud事业部总经理"
+    },
+    {
+      "@type": "Person",
+      "name": "王谏",
+      "jobTitle": "上海泛微网络科技股份有限公司 北京信创事业部总经理"
+    },
+    {
+      "@type": "Person",
+      "name": "朱敏健",
+      "jobTitle": "云宏信息科技股份有限公司总裁助理"
+    },
+    {
+      "@type": "Person",
+      "name": "胡正策",
+      "jobTitle": "openGauss社区秘书长"
+    },
+    {
+      "@type": "Person",
+      "name": "王薇",
+      "jobTitle": "南大通用GBase 8c产品部长"
+    },
+    {
+      "@type": "Person",
+      "name": "王飞鹏",
+      "jobTitle": "渤海银行信息科技部生产运行中心副主任 首席数据库专家"
+    },
+    {
+      "@type": "Person",
+      "name": "荣玉鹏",
+      "jobTitle": "同方软银平台研发部经理"
+    },
+    {
+      "@type": "Person",
+      "name": "李凯",
+      "jobTitle": "南大通用GBase 8c产品总监"
+    },
+    {
+      "@type": "Person",
+      "name": "王斑",
+      "jobTitle": "信雅达科技有限公司产品总监"
+    },
+    {
+      "@type": "Person",
+      "name": "沙勇",
+      "jobTitle": "时代亿信方案中心总经理"
+    }
+  ],
+  "eventSchedule": {
+    "@type": "Schedule",
+    "name": "会议日程",
+    "eventDates": [
+      {
+        "@type": "EventDate",
+        "date": "2022-12-29",
+        "name": "12月29日 openGauss Summit 2022",
+        "subEvent": [
+          {
+            "@type": "Event",
+            "name": "上午:主论坛",
+            "description": "openGauss Summit 2022主论坛",
+            "startDate": "2022-12-29T09:30",
+            "endDate": "2022-12-29T11:25",
+            "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode"
+          },
+          {
+            "@type": "Event",
+            "name": "下午:分论坛",
+            "description": "云和恩墨、海量数据、GBASE南大通用分论坛",
+            "startDate": "2022-12-29T14:00",
+            "endDate": "2022-12-29T17:00",
+            "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+            "subEvent": [
+              {
+                "@type": "Event",
+                "name": "云和恩墨分论坛",
+                "startDate": "2022-12-29T14:00",
+                "endDate": "2022-12-29T16:30"
+              },
+              {
+                "@type": "Event",
+                "name": "海量数据分论坛",
+                "startDate": "2022-12-29T14:00",
+                "endDate": "2022-12-29T16:30"
+              },
+              {
+                "@type": "Event",
+                "name": "GBASE南大通用分论坛",
+                "startDate": "2022-12-29T14:00",
+                "endDate": "2022-12-29T16:10"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "线上展厅",
+      "description": "openGauss开源数据库整体介绍、openGauss开源社区、openGauss DataKit在线调试存储过程、openGauss DataKit智能运维、openGauss分布式一键式部署、openGauss迁移工具链一键式部署、openGauss应用无缝切换使用、Vastbase G100全生命周期的数据安全保障、Vastbase G100基于空间技术的企业级特性增强、Vastbase G100便捷、高效的异构数据库一键式迁移平台、Vastbase G100创新补丁机制、MogDB数据库查询性能优化增强、Trace工具增强MogDB不停库诊断与调优、MogDB中CM支持低成本两节点部署、GBase 8c在线升级功能、GBase 8c在线弹性伸缩功能、DockQuery新一代数据库客户端、CloudQuery智能化运维之安全管控"
+    }
+  ]
+}

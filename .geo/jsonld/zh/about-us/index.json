@@ -1,0 +1,33 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "openGauss",
+  "description": "openGauss 是一款融合了高性能、高可靠、高安全与高智能特性的开源数据库，以技术创新为核心，通过资源池化架构，软硬协同优化等领先技术，全面提升集群性能，同时支持金融级高可用和大容量数据处理，内置 AI 能力，打造大模型数据基座，并与伙伴携手共同推动 openGauss 生态繁荣。",
+  "applicationCategory": "DatabaseApplication",
+  "operatingSystem": "Linux",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "CNY"
+  },
+  "softwareVersion": {
+    "@type": "SoftwareVersion",
+    "releaseNotes": "LTS 版本发布间隔周期 2 年，社区提供 3 年维护支持；创新版本发布间隔周期 0.5 年，社区提供 0.5 年维护支持"
+  },
+  "codeRepository": [
+    "https://gitcode.com/opengauss",
+    "https://github.com/opengauss-mirror"
+  ],
+  "dateCreated": "2019-09-19",
+  "datePublished": "2020-06-30",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss社区",
+    "url": "https://opengauss.org"
+  },
+  "maintainer": {
+    "@type": "Organization",
+    "name": "openGauss社区",
+    "url": "https://opengauss.org"
+  }
+}

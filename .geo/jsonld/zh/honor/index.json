@@ -1,0 +1,261 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://opengauss.org/zh/honor/#webpage",
+      "url": "https://opengauss.org/zh/honor/",
+      "name": "社区荣誉 | openGauss社区官网",
+      "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。",
+      "inLanguage": "zh-CN",
+      "isPartOf": {
+        "@id": "https://opengauss.org/#website"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://opengauss.org/#organization",
+      "name": "openGauss",
+      "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。",
+      "url": "https://opengauss.org",
+      "award": [
+        "OSCAR尖峰开源项目及社区奖",
+        "优秀GitCode组织",
+        "中国优秀开源项目",
+        "首批通过《 可信开源社区评估体系 》认证",
+        "科创中国开源创新榜单",
+        "2021年软件行业典型示范案例",
+        "年度开源项目",
+        "首批通过可信开源社区分级评估",
+        "第十届中国电子信息博览会金奖",
+        "中国首个国际CC EAL4+级别认证",
+        "CCF科技进步特等奖",
+        "年度创新产品奖",
+        "2022年"科创中国"开源创新榜",
+        "全国计算机等级二级考试新科目",
+        "2022年软件行业突破性技术成果",
+        "加入 CNCF Landscape",
+        "2023年度技术卓越奖",
+        "金融科技产业联盟2023年十佳课题",
+        "最具影响力数据库",
+        "2023年中国开源创新大赛一等奖",
+        "最具影响力数据库",
+        "北京金融科技产业联盟发布《openGauss金融应用关键能力研究报告》"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://opengauss.org/#website",
+      "url": "https://opengauss.org",
+      "name": "openGauss社区官网",
+      "inLanguage": "zh-CN"
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://opengauss.org/zh/honor/#awards-list",
+      "name": "openGauss社区荣誉列表",
+      "description": "openGauss社区历年获得的荣誉奖项",
+      "numberOfItems": 22,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Award",
+            "name": "OSCAR尖峰开源项目及社区奖",
+            "dateReceived": "2020"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Award",
+            "name": "优秀GitCode组织",
+            "dateReceived": "2020"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Award",
+            "name": "中国优秀开源项目",
+            "dateReceived": "2020"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Award",
+            "name": "首批通过《 可信开源社区评估体系 》认证",
+            "dateReceived": "2021"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "Award",
+            "name": "科创中国开源创新榜单",
+            "dateReceived": "2021"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "Award",
+            "name": "2021年软件行业典型示范案例",
+            "dateReceived": "2021"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@type": "Award",
+            "name": "年度开源项目",
+            "dateReceived": "2022"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "item": {
+            "@type": "Award",
+            "name": "首批通过可信开源社区分级评估",
+            "dateReceived": "2022"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "item": {
+            "@type": "Award",
+            "name": "第十届中国电子信息博览会金奖",
+            "dateReceived": "2022"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "item": {
+            "@type": "Award",
+            "name": "中国首个国际CC EAL4+级别认证",
+            "dateReceived": "2022"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "item": {
+            "@type": "Award",
+            "name": "CCF科技进步特等奖",
+            "dateReceived": "2022"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "item": {
+            "@type": "Award",
+            "name": "年度创新产品奖",
+            "dateReceived": "2022"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 13,
+          "item": {
+            "@type": "Award",
+            "name": "2022年"科创中国"开源创新榜",
+            "dateReceived": "2022"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 14,
+          "item": {
+            "@type": "Award",
+            "name": "全国计算机等级二级考试新科目",
+            "dateReceived": "2022"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 15,
+          "item": {
+            "@type": "Award",
+            "name": "2022年软件行业突破性技术成果",
+            "dateReceived": "2022"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 16,
+          "item": {
+            "@type": "Award",
+            "name": "加入 CNCF Landscape",
+            "dateReceived": "2023"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 17,
+          "item": {
+            "@type": "Award",
+            "name": "2023年度技术卓越奖",
+            "dateReceived": "2023"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 18,
+          "item": {
+            "@type": "Award",
+            "name": "金融科技产业联盟2023年十佳课题",
+            "dateReceived": "2023"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 19,
+          "item": {
+            "@type": "Award",
+            "name": "最具影响力数据库",
+            "dateReceived": "2023"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 20,
+          "item": {
+            "@type": "Award",
+            "name": "2023年中国开源创新大赛一等奖",
+            "dateReceived": "2023"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 21,
+          "item": {
+            "@type": "Award",
+            "name": "最具影响力数据库",
+            "dateReceived": "2024"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 22,
+          "item": {
+            "@type": "Award",
+            "name": "北京金融科技产业联盟发布《openGauss金融应用关键能力研究报告》",
+            "dateReceived": "2024"
+          }
+        }
+      ]
+    }
+  ]
+}

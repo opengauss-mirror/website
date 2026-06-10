@@ -1,0 +1,239 @@
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "视频",
+  "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。",
+  "url": "https://opengauss.org/zh/video/",
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "openGauss视频列表",
+    "numberOfItems": 22,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "VideoObject",
+          "name": "openGauss的干货第1期——openGauss的过去、现在和未来",
+          "url": "https://www.bilibili.com/video/BV1HT4y1j7x8/",
+          "thumbnailUrl": "https://opengauss.org/assets/img1.B0Hfm9Bo.png"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "VideoObject",
+          "name": "openGauss的干货第2期——openGauss的关键技术",
+          "url": "https://www.bilibili.com/video/BV1SZ4y1u78g/",
+          "thumbnailUrl": "https://opengauss.org/assets/img1.B0Hfm9Bo.png"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "VideoObject",
+          "name": "openGauss的干货第3期——开源社区基础设施的实践与应用",
+          "url": "https://www.bilibili.com/video/BV1SZ4y1u78g/",
+          "thumbnailUrl": "https://opengauss.org/assets/img1.B0Hfm9Bo.png"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "VideoObject",
+          "name": "【西安DevOps Meetup | 线上录播回顾】openGauss：把企业级数据库能力带给用户",
+          "url": "https://www.bilibili.com/video/BV1F54y1i7F3/",
+          "thumbnailUrl": "https://opengauss.org/assets/img1.B0Hfm9Bo.png"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": {
+          "@type": "VideoObject",
+          "name": "openGauss的干货第4期——openGauss高吞吐低时延存储模式",
+          "url": "https://www.bilibili.com/video/BV1sp4y1v7D9/",
+          "thumbnailUrl": "https://opengauss.org/assets/img1.B0Hfm9Bo.png"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "item": {
+          "@type": "VideoObject",
+          "name": "绿盟杯直播（1）—openGauss数据库技术与应用",
+          "url": "https://www.bilibili.com/video/BV1QK4y1v7Aw/",
+          "thumbnailUrl": "https://opengauss.org/assets/img1.B0Hfm9Bo.png"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 7,
+        "item": {
+          "@type": "VideoObject",
+          "name": "openGauss的干货第5期——鲲鹏性能优化之数据分区",
+          "url": "https://www.bilibili.com/video/BV1FK411M7EJ/",
+          "thumbnailUrl": "https://opengauss.org/assets/img1.B0Hfm9Bo.png"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 8,
+        "item": {
+          "@type": "VideoObject",
+          "name": "绿盟杯直播（2）—openGauss深度解读",
+          "url": "https://www.bilibili.com/video/BV1sz4y1f7FX/",
+          "thumbnailUrl": "https://opengauss.org/assets/img1.B0Hfm9Bo.png"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 9,
+        "item": {
+          "@type": "VideoObject",
+          "name": "2020 中国DBA联盟（ACDU）首场活动—中国DBA面临的新挑战和新机遇",
+          "url": "https://www.bilibili.com/video/BV1Ha4y177dt/",
+          "thumbnailUrl": "https://opengauss.org/assets/img1.B0Hfm9Bo.png"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 10,
+        "item": {
+          "@type": "VideoObject",
+          "name": "openGauss的干货第6期——鲲鹏性能优化之二 数据结构NUMA优化",
+          "url": "https://www.bilibili.com/video/BV1sD4y127bh/",
+          "thumbnailUrl": "https://opengauss.org/assets/img1.B0Hfm9Bo.png"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 11,
+        "item": {
+          "@type": "VideoObject",
+          "name": "openGauss的干货第7期——鲲鹏性能优化之三 线程绑核",
+          "url": "https://www.bilibili.com/video/BV1gD4y1o7qB/",
+          "thumbnailUrl": "https://opengauss.org/assets/img1.B0Hfm9Bo.png"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 12,
+        "item": {
+          "@type": "VideoObject",
+          "name": "openGauss的干货第8期——openGauss AI能力与规划",
+          "url": "https://www.bilibili.com/video/BV1PZ4y1N7X6/",
+          "thumbnailUrl": "https://opengauss.org/assets/img1.B0Hfm9Bo.png"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 13,
+        "item": {
+          "@type": "VideoObject",
+          "name": "OSC源创会：openGauss不只是开源数据库",
+          "url": "https://www.bilibili.com/video/BV1ND4y1o7xp/",
+          "thumbnailUrl": "https://opengauss.org/assets/img1.B0Hfm9Bo.png"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 14,
+        "item": {
+          "@type": "VideoObject",
+          "name": "openGauss的干货第9期——openGauss数据库智能调优的过去和未来",
+          "url": "https://www.bilibili.com/video/BV13V411y7aJ/",
+          "thumbnailUrl": "https://opengauss.org/assets/img1.B0Hfm9Bo.png"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 15,
+        "item": {
+          "@type": "VideoObject",
+          "name": "openGauss的干货第10期——openGauss智能SQL时间预测的应用和展望",
+          "url": "https://www.bilibili.com/video/BV1ZK411A7Tr/",
+          "thumbnailUrl": "https://opengauss.org/assets/img1.B0Hfm9Bo.png"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 16,
+        "item": {
+          "@type": "VideoObject",
+          "name": "openGauss的干货第11期——openGauss客户端工具Data Studio介绍",
+          "url": "https://www.bilibili.com/video/BV1By4y1z7yu/",
+          "thumbnailUrl": "https://opengauss.org/assets/img1.B0Hfm9Bo.png"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 17,
+        "item": {
+          "@type": "VideoObject",
+          "name": "openGauss的干货第12期——玩转存储过程调试工具pldebugger",
+          "url": "https://www.bilibili.com/video/BV1Jv411b7ia/",
+          "thumbnailUrl": "https://opengauss.org/assets/img1.B0Hfm9Bo.png"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 18,
+        "item": {
+          "@type": "VideoObject",
+          "name": "openGauss的干货第13期——openGauss HA 简介",
+          "url": "https://www.bilibili.com/video/BV1yt4y1Y7qY/",
+          "thumbnailUrl": "https://opengauss.org/assets/img1.B0Hfm9Bo.png"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 19,
+        "item": {
+          "@type": "VideoObject",
+          "name": "openGauss的干货第14期——openGauss针对交易性能优化方面的代码解读",
+          "url": "https://www.bilibili.com/video/BV16Z4y1A7fo/",
+          "thumbnailUrl": "https://opengauss.org/assets/img1.B0Hfm9Bo.png"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 20,
+        "item": {
+          "@type": "VideoObject",
+          "name": "openGauss的干货第15期——openGauss与PostgreSQL差异对比",
+          "url": "https://www.bilibili.com/video/BV1Ei4y1K7WT/",
+          "thumbnailUrl": "https://opengauss.org/assets/img1.B0Hfm9Bo.png"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 21,
+        "item": {
+          "@type": "VideoObject",
+          "name": "openGauss的干货第16期——openGauss SQL调优介绍",
+          "url": "https://www.bilibili.com/video/BV1S84y1F7wU/",
+          "thumbnailUrl": "https://opengauss.org/assets/img1.B0Hfm9Bo.png"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 22,
+        "item": {
+          "@type": "VideoObject",
+          "name": "openGauss的干货第17期——openGauss检查点、双写及缓存原理介绍",
+          "url": "https://www.bilibili.com/video/BV1BF411p72n/",
+          "thumbnailUrl": "https://opengauss.org/assets/img1.B0Hfm9Bo.png"
+        }
+      }
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss社区",
+    "url": "https://opengauss.org/"
+  }
+}

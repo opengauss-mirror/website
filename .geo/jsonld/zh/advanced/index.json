@@ -1,0 +1,18 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "知识进阶 | openGauss社区官网",
+  "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。",
+  "inLanguage": "zh-CN",
+  "keywords": [
+    "openGauss",
+    "开源数据库",
+    "openGauss社区官网",
+    "开源社区"
+  ],
+  "mainEntity": {
+    "@type": "SoftwareSourceCode",
+    "name": "openGauss",
+    "description": "高性能、高安全、高可用、高智能的企业级开源关系数据库"
+  }
+}

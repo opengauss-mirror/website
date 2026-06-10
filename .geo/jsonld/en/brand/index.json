@@ -1,0 +1,148 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://opengauss.org/en/brand/#webpage",
+      "url": "https://opengauss.org/en/brand/",
+      "name": "Trademark",
+      "description": "Notice: All logos and trademarks used on this website are the properties of openGauss community or other third parties as stated if applicable. No content provided on the openGauss community website shall be deemed as granting approval or the right to use any trademark or logo aforesaid by implication, lack of objection, or other means without the prior written consent of openGauss community or any third party which may own the mark.",
+      "isPartOf": {
+        "@id": "https://opengauss.org/#website"
+      },
+      "about": {
+        "@id": "https://opengauss.org/#organization"
+      },
+      "inLanguage": "en",
+      "mainEntity": {
+        "@id": "https://opengauss.org/en/brand/#brand-resources"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://opengauss.org/#organization",
+      "name": "openGauss community",
+      "url": "https://opengauss.org/",
+      "description": "openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability. openGauss is also an open source database platform that encourages community contribution and collaboration.",
+      "logo": {
+        "@id": "https://opengauss.org/en/brand/#logo-1"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://opengauss.org/#website",
+      "url": "https://opengauss.org/",
+      "name": "openGauss",
+      "description": "openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability. openGauss is also an open source database platform that encourages community contribution and collaboration.",
+      "inLanguage": ["en", "zh"],
+      "publisher": {
+        "@id": "https://opengauss.org/#organization"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://opengauss.org/en/brand/#brand-resources",
+      "name": "Brand Resources",
+      "description": "Downloadable brand resources including logos and templates",
+      "numberOfItems": 8,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "ImageObject",
+            "@id": "https://opengauss.org/en/brand/#logo-1",
+            "name": "openGauss Logo 1",
+            "contentUrl": "https://opengauss.org/category/brand/view/logo1.png",
+            "encodingFormat": "image/png",
+            "isAccessibleForFree": true
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "ImageObject",
+            "@id": "https://opengauss.org/en/brand/#logo-2",
+            "name": "openGauss Logo 2",
+            "contentUrl": "https://opengauss.org/category/brand/view/logo2.png",
+            "encodingFormat": "image/png",
+            "isAccessibleForFree": true
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "ImageObject",
+            "@id": "https://opengauss.org/en/brand/#logo-3",
+            "name": "openGauss Logo 3",
+            "contentUrl": "https://opengauss.org/category/brand/view/logo3.png",
+            "encodingFormat": "image/png",
+            "isAccessibleForFree": true
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "ImageObject",
+            "@id": "https://opengauss.org/en/brand/#logo-4",
+            "name": "openGauss Logo 4",
+            "contentUrl": "https://opengauss.org/category/brand/view/logo4.png",
+            "encodingFormat": "image/png",
+            "isAccessibleForFree": true
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "ImageObject",
+            "@id": "https://opengauss.org/en/brand/#logo-5",
+            "name": "openGauss Logo 5",
+            "contentUrl": "https://opengauss.org/category/brand/view/logo5.png",
+            "encodingFormat": "image/png",
+            "isAccessibleForFree": true
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "ImageObject",
+            "@id": "https://opengauss.org/en/brand/#logo-6",
+            "name": "openGauss Logo 6",
+            "contentUrl": "https://opengauss.org/category/brand/view/logo6.png",
+            "encodingFormat": "image/png",
+            "isAccessibleForFree": true
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@type": "ImageObject",
+            "@id": "https://opengauss.org/en/brand/#logo-7",
+            "name": "openGauss Logo 7",
+            "contentUrl": "https://opengauss.org/category/brand/view/logo7.png",
+            "encodingFormat": "image/png",
+            "isAccessibleForFree": true
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "item": {
+            "@type": "ImageObject",
+            "@id": "https://opengauss.org/en/brand/#logo-8",
+            "name": "openGauss Logo 8",
+            "contentUrl": "https://opengauss.org/category/brand/view/logo8.png",
+            "encodingFormat": "image/png",
+            "isAccessibleForFree": true
+          }
+        }
+      ]
+    }
+  ]
+}

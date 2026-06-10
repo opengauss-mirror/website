@@ -1,0 +1,73 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Notifications | openEuler",
+  "description": "openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability. openGauss is also an open source database platform that encourages community contribution and collaboration.",
+  "url": "https://opengauss.org/en/notifications/",
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "openGauss",
+    "url": "https://opengauss.org/"
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://opengauss.org/en/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Notifications",
+        "item": "https://opengauss.org/en/notifications/"
+      }
+    ]
+  },
+  "potentialAction": {
+    "@type": "ViewAction",
+    "name": "View Notifications",
+    "description": "View and manage notification messages including system notifications, meeting notifications, and todo items."
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "Notification Center",
+    "description": "A centralized hub for managing user notifications, system messages, meeting notifications, and todo items.",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "All Messages",
+        "description": "View all notification messages"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Todo Items",
+        "description": "View pending todo items including issues, pull requests, and CVEs"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "System Notifications",
+        "description": "View system notifications and updates"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Meeting Notifications",
+        "description": "View meeting notifications and invitations"
+      }
+    ]
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "name": "openGauss",
+    "applicationCategory": "DatabaseApplication",
+    "operatingSystem": "Linux",
+    "description": "openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability."
+  }
+}

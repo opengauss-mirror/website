@@ -1,0 +1,60 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "oGMemory",
+    "description": "面向AI Agent的长期记忆系统，以AGFS文件为数据源头，openGauss向量索引为加速层，让Agent拥有跨会话的持久记忆能力。",
+    "applicationCategory": "ArtificialIntelligence",
+    "operatingSystem": "Any",
+    "featureList": [
+      "上下文有生命周期 - 上下文会经历抽取、结构化、存储、索引、召回、压缩和归档的完整生命周期",
+      "六个拦截点 - oGMemory在消息到达、推理准备、工具调用、轮次结束、压缩管理和会话关闭这六个边界处理上下文",
+      "上下文类型不平等 - 上下文语义不同，写入策略各异，比如用户画像可变，事件追加，偏好、实体、模式按主题归并"
+    ],
+    "installUrl": "https://docs.opengauss.org/zh/docs/latest/datavec/ogmem_install.html",
+    "documentation": "https://docs.opengauss.org/zh/docs/latest/datavec/ogmem_introduction.html",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "CNY"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "支持哪些Agent框架？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "原生支持OpenClaw 即插即用集成，同时提供标准HTTP API，可对接任意Agent系统"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "记忆是怎么写入的？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "每轮对话结束后，LLM自动从对话中抽取结构化记忆候选，经过置信度过滤和去重后，按策略写入AGFS文件，并异步建立向量索引。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "检索是怎么工作的？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "查询到达后，系统先再向量索引中混合召回 L0/L1/L2 三层命中，再通过层级展开将所有结果递归到 L2 完整内容，最终注入 System Prompt 供 Agent 使用。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "数据安全吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "所有记忆以文件形式持久化在 AGFS 上，向量索引仅为派生加速层。索引损坏不影响数据，可随时全量重建。"
+        }
+      }
+    ]
+  }
+]

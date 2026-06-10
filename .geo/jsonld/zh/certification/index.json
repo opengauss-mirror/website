@@ -1,0 +1,884 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "发行版认证",
+  "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。",
+  "inLanguage": "zh-CN",
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "openGauss商业发行版认证列表",
+    "description": "openGauss商业发行版测评认证结果，包含产品名称、厂商信息、认证版本及颁发日期",
+    "numberOfItems": 31,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Product",
+          "name": "GBase 8c V5",
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "天津南大通用数据技术股份有限公司"
+          },
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "openGauss社区版本",
+              "value": "openGauss 5.0.0"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书颁发日期",
+              "value": "2026-01-12"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Product",
+          "name": "GBase 8s V8.8.5",
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "天津南大通用数据技术股份有限公司"
+          },
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "openGauss社区版本",
+              "value": "openGauss 5.0.0"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书颁发日期",
+              "value": "2025-12-29"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Product",
+          "name": "云脉数据库 CloudVeinDB V1.0.0",
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "云脉感知（济南）科技服务有限公司"
+          },
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "openGauss社区版本",
+              "value": "openGauss 6.0.0"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书颁发日期",
+              "value": "2026-04-01"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "Product",
+          "name": "宝兰德数据库管理系统 V3.0",
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "北京宝兰德软件股份有限公司"
+          },
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "openGauss社区版本",
+              "value": "openGauss 6.0.1"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书颁发日期",
+              "value": "2025-10-23"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": {
+          "@type": "Product",
+          "name": "中威国产数据库平台 V2.0",
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "江苏中威科技软件系统有限公司"
+          },
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "openGauss社区版本",
+              "value": "openGauss 6.0.1"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书颁发日期",
+              "value": "2025-10-23"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "item": {
+          "@type": "Product",
+          "name": "神通数据库管理系统 V7.0.21",
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "天津神舟通用数据技术有限公司"
+          },
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "openGauss社区版本",
+              "value": "openGauss 6.0.0"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书颁发日期",
+              "value": "2025-07-29"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 7,
+        "item": {
+          "@type": "Product",
+          "name": "海量数据库管理系统G100 V3.0",
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "北京海量数据技术股份有限公司"
+          },
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "openGauss社区版本",
+              "value": "openGauss 6.0.0"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书颁发日期",
+              "value": "2025-02-13"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书有效截止日期",
+              "value": "2027-03-30"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 8,
+        "item": {
+          "@type": "Product",
+          "name": "LNXDB-RDS V3.4.4 私有云数据库",
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "北京太阳塔信息科技有限责任公司"
+          },
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "openGauss社区版本",
+              "value": "openGauss 5.0.0"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书颁发日期",
+              "value": "2024-11-19"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书有效截止日期",
+              "value": "2026-03-31"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 9,
+        "item": {
+          "@type": "Product",
+          "name": "鼎桥数据库 TDDB V1.0.0",
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "鼎桥通信技术有限公司"
+          },
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "openGauss社区版本",
+              "value": "openGauss 5.0.0"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书颁发日期",
+              "value": "2024-10-17"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书有效截止日期",
+              "value": "2026-03-31"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 10,
+        "item": {
+          "@type": "Product",
+          "name": "SUNBOXDB V3.0.0",
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "北京尚博信科技有限公司"
+          },
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "openGauss社区版本",
+              "value": "openGauss 5.0.0"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书颁发日期",
+              "value": "2024-08-15"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书有效截止日期",
+              "value": "2026-03-31"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 11,
+        "item": {
+          "@type": "Product",
+          "name": "长虹数据库 CHDB V1.0.0",
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "四川虹微技术有限公司"
+          },
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "openGauss社区版本",
+              "value": "openGauss 5.0.0"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书颁发日期",
+              "value": "2024-07-11"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书有效截止日期",
+              "value": "2026-03-31"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 12,
+        "item": {
+          "@type": "Product",
+          "name": "大汉HanDB数据库软件V2.0",
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "大汉软件股份有限公司"
+          },
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "openGauss社区版本",
+              "value": "openGauss 5.0.0"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书颁发日期",
+              "value": "2024-06-04"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书有效截止日期",
+              "value": "2026-03-31"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 13,
+        "item": {
+          "@type": "Product",
+          "name": "海量数据库G100管理系统V2.2",
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "北京海量数据技术股份有限公司"
+          },
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "openGauss社区版本",
+              "value": "openGauss 5.0.0"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书颁发日期",
+              "value": "2024-02-19"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书有效截止日期",
+              "value": "2026-03-31"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 14,
+        "item": {
+          "@type": "Product",
+          "name": "勤龙数据库系统 1.0",
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "上海舜源计算机科技股份有限公司"
+          },
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "openGauss社区版本",
+              "value": "openGauss 5.0.0"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书颁发日期",
+              "value": "2024-02-19"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书有效截止日期",
+              "value": "2026-03-31"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 15,
+        "item": {
+          "@type": "Product",
+          "name": "InDB V3.0",
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "浪潮云信息技术股份公司"
+          },
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "openGauss社区版本",
+              "value": "openGauss 5.0.0"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书颁发日期",
+              "value": "2024-01-17"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书有效截止日期",
+              "value": "2026-03-31"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 16,
+        "item": {
+          "@type": "Product",
+          "name": "AScoDb数据库V1.0.0",
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "首杭数字科技(山东)有限公司"
+          },
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "openGauss社区版本",
+              "value": "openGauss 5.0.0"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书颁发日期",
+              "value": "2023-12-01"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书有效截止日期",
+              "value": "2026-03-31"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 17,
+        "item": {
+          "@type": "Product",
+          "name": "FitRDB数据库 V1.0.0",
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "南京烽火星空通信发展有限公司"
+          },
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "openGauss社区版本",
+              "value": "openGauss 5.0.0"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书颁发日期",
+              "value": "2023-11-06"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书有效截止日期",
+              "value": "2026-03-31"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 18,
+        "item": {
+          "@type": "Product",
+          "name": "StarDB 5.0.0",
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "京东科技信息技术有限公司"
+          },
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "openGauss社区版本",
+              "value": "openGauss 5.0.0"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书颁发日期",
+              "value": "2023-11-01"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书有效截止日期",
+              "value": "2026-03-31"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 19,
+        "item": {
+          "@type": "Product",
+          "name": "MogDB 5.0.0",
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "云和恩墨（北京）信息技术有限公司"
+          },
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "openGauss社区版本",
+              "value": "openGauss 5.0.0"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书颁发日期",
+              "value": "2023-11-01"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书有效截止日期",
+              "value": "2026-03-31"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 20,
+        "item": {
+          "@type": "Product",
+          "name": "天鹤数据库 ISSEDB 5.0.0",
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "软通动力信息技术（集团）股份有限公司"
+          },
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "openGauss社区版本",
+              "value": "openGauss 5.0.0"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书颁发日期",
+              "value": "2023-09-19"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书有效截止日期",
+              "value": "2026-03-31"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 21,
+        "item": {
+          "@type": "Product",
+          "name": "MogDB 3.0.0",
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "云和恩墨（北京）信息技术有限公司"
+          },
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "openGauss社区版本",
+              "value": "openGauss 3.0.0"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书颁发日期",
+              "value": "2023-09-01"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书有效截止日期",
+              "value": "2025-03-31"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 22,
+        "item": {
+          "@type": "Product",
+          "name": "ArteryBase数据库管理系统 V3.6",
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "北京华宇信息技术有限公司"
+          },
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "openGauss社区版本",
+              "value": "openGauss 5.0.0"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书颁发日期",
+              "value": "2023-09-01"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书有效截止日期",
+              "value": "2026-03-31"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 23,
+        "item": {
+          "@type": "Product",
+          "name": "宏数通数据库系统 V5.0.0",
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "宏数通信息科技（苏州）有限公司"
+          },
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "openGauss社区版本",
+              "value": "openGauss 5.0.0"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书颁发日期",
+              "value": "2023-08-01"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书有效截止日期",
+              "value": "2026-03-31"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 24,
+        "item": {
+          "@type": "Product",
+          "name": "CSIDB V1.0.0",
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "中软国际科技服务有限公司"
+          },
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "openGauss社区版本",
+              "value": "openGauss 5.0.0"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书颁发日期",
+              "value": "2023-06-30"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书有效截止日期",
+              "value": "2026-03-31"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 25,
+        "item": {
+          "@type": "Product",
+          "name": "【全真数据库平台】V5.0.0",
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "苏大信创（青岛）信息科技有限公司"
+          },
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "openGauss社区版本",
+              "value": "openGauss 5.0.0"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书颁发日期",
+              "value": "2023-06-30"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书有效截止日期",
+              "value": "2026-03-31"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 26,
+        "item": {
+          "@type": "Product",
+          "name": "【Vastbase G100】V2.2.10",
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "北京海量数据技术股份有限公司"
+          },
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "openGauss社区版本",
+              "value": "openGauss 3.0.0"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书颁发日期",
+              "value": "2023-06-01"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书有效截止日期",
+              "value": "2025-03-31"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 27,
+        "item": {
+          "@type": "Product",
+          "name": "MuDB 1.0.0",
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "北京沐融信息科技股份有限公司"
+          },
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "openGauss社区版本",
+              "value": "openGauss 2.0.0"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书颁发日期",
+              "value": "2021-06-15"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书有效截止日期",
+              "value": "2024-03-31"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 28,
+        "item": {
+          "@type": "Product",
+          "name": "【Vastbase G100】V2.2",
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "北京海量数据技术股份有限公司"
+          },
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "openGauss社区版本",
+              "value": "openGauss 2.0.0"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书颁发日期",
+              "value": "2021-08-20"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书有效截止日期",
+              "value": "2024-03-31"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 29,
+        "item": {
+          "@type": "Product",
+          "name": "MogDB 2.0.1",
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "云和恩墨（北京）信息技术有限公司"
+          },
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "openGauss社区版本",
+              "value": "openGauss 2.0.0"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书颁发日期",
+              "value": "2021-08-25"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书有效截止日期",
+              "value": "2024-03-31"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 30,
+        "item": {
+          "@type": "Product",
+          "name": "LNXDB-RDS V3.4",
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "北京太阳塔信息科技有限责任公司"
+          },
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "openGauss社区版本",
+              "value": "openGauss 2.0.0"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书颁发日期",
+              "value": "2022-05-07"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书有效截止日期",
+              "value": "2024-03-31"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 31,
+        "item": {
+          "@type": "Product",
+          "name": "有蓉数据库 V1.0",
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "成都虚谷伟业科技有限公司"
+          },
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "openGauss社区版本",
+              "value": "openGauss 2.0.0"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书颁发日期",
+              "value": "2022-07-15"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书有效截止日期",
+              "value": "2024-03-31"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

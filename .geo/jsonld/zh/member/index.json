@@ -1,0 +1,270 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "openGauss",
+  "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。",
+  "url": "https://opengauss.org/zh/member/",
+  "sameAs": [
+    "https://opengauss.org"
+  ],
+  "subOrganization": [
+    {
+      "@type": "Organization",
+      "name": "顾问委员会",
+      "identifier": "counselor"
+    },
+    {
+      "@type": "Organization",
+      "name": "理事会",
+      "identifier": "board",
+      "email": "board@opengauss.org"
+    },
+    {
+      "@type": "Organization",
+      "name": "用户委员会",
+      "identifier": "uc",
+      "email": "uc@opengauss.org"
+    },
+    {
+      "@type": "Organization",
+      "name": "品牌宣传委员会",
+      "identifier": "bc",
+      "email": "bc@opengauss.org"
+    },
+    {
+      "@type": "Organization",
+      "name": "技术委员会 (TC)",
+      "identifier": "tc",
+      "email": "tc@opengauss.org"
+    },
+    {
+      "@type": "Organization",
+      "name": "秘书处",
+      "identifier": "secretariat"
+    },
+    {
+      "@type": "Organization",
+      "name": "专项兴趣小组 (SIG)",
+      "identifier": "sig",
+      "subOrganization": [
+        {
+          "@type": "Organization",
+          "name": "SQLEngine",
+          "email": "sqlengine@opengauss.org"
+        },
+        {
+          "@type": "Organization",
+          "name": "StorageEngine",
+          "email": "storageengine@opengauss.org"
+        },
+        {
+          "@type": "Organization",
+          "name": "Connectors",
+          "email": "connectors@opengauss.org"
+        },
+        {
+          "@type": "Organization",
+          "name": "Tools",
+          "email": "tools@opengauss.org"
+        },
+        {
+          "@type": "Organization",
+          "name": "Docs",
+          "email": "docs@opengauss.org"
+        },
+        {
+          "@type": "Organization",
+          "name": "Infra",
+          "email": "infra@opengauss.org"
+        },
+        {
+          "@type": "Organization",
+          "name": "Security",
+          "email": "security@opengauss.org"
+        },
+        {
+          "@type": "Organization",
+          "name": "IoT",
+          "email": "iot@opengauss.org"
+        },
+        {
+          "@type": "Organization",
+          "name": "OM",
+          "email": "om@opengauss.org"
+        },
+        {
+          "@type": "Organization",
+          "name": "In-place Update",
+          "email": "inplaceupdate@opengauss.org"
+        },
+        {
+          "@type": "Organization",
+          "name": "AI",
+          "email": "ai@opengauss.org"
+        },
+        {
+          "@type": "Organization",
+          "name": "GIS",
+          "email": "gis@opengauss.org"
+        },
+        {
+          "@type": "Organization",
+          "name": "Security Technology",
+          "email": "securitytechnology@opengauss.org"
+        },
+        {
+          "@type": "Organization",
+          "name": "CloudNative",
+          "email": "cloudnative@opengauss.org"
+        },
+        {
+          "@type": "Organization",
+          "name": "Graph",
+          "email": "graph@opengauss.org"
+        },
+        {
+          "@type": "Organization",
+          "name": "Blockchain",
+          "email": "blockchain@opengauss.org"
+        },
+        {
+          "@type": "Organization",
+          "name": "QA",
+          "email": "qa@opengauss.org"
+        },
+        {
+          "@type": "Organization",
+          "name": "DCF",
+          "email": "dcf@opengauss.org"
+        },
+        {
+          "@type": "Organization",
+          "name": "Certification",
+          "email": "certification@opengauss.org"
+        },
+        {
+          "@type": "Organization",
+          "name": "Plugin",
+          "email": "plugin@opengauss.org"
+        },
+        {
+          "@type": "Organization",
+          "name": "CM",
+          "email": "cm@opengauss.org"
+        },
+        {
+          "@type": "Organization",
+          "name": "ReleaseManagement",
+          "email": "releaseManagement@opengauss.org"
+        },
+        {
+          "@type": "Organization",
+          "name": "OPS",
+          "email": "ops@opengauss.org"
+        },
+        {
+          "@type": "Organization",
+          "name": "KnowledgeGraph",
+          "email": "knowledgegraph@opengauss.org"
+        },
+        {
+          "@type": "Organization",
+          "name": "RISC-V",
+          "email": "riscv@opengauss.org"
+        },
+        {
+          "@type": "Organization",
+          "name": "oGRAC",
+          "email": "ograc@opengauss.org"
+        },
+        {
+          "@type": "Organization",
+          "name": "Embedded",
+          "email": "embedded@opengauss.org"
+        }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "name": "用户组（oGUG）",
+      "identifier": "ogug",
+      "subOrganization": [
+        {
+          "@type": "Organization",
+          "name": "深圳用户组",
+          "email": "usergroup@opengauss.org"
+        },
+        {
+          "@type": "Organization",
+          "name": "北京用户组",
+          "email": "usergroup@opengauss.org"
+        },
+        {
+          "@type": "Organization",
+          "name": "南京用户组",
+          "email": "usergroup@opengauss.org"
+        },
+        {
+          "@type": "Organization",
+          "name": "西安用户组",
+          "email": "usergroup@opengauss.org"
+        },
+        {
+          "@type": "Organization",
+          "name": "长沙用户组",
+          "email": "usergroup@opengauss.org"
+        },
+        {
+          "@type": "Organization",
+          "name": "杭州用户组",
+          "email": "usergroup@opengauss.org"
+        },
+        {
+          "@type": "Organization",
+          "name": "兰州用户组",
+          "email": "usergroup@opengauss.org"
+        },
+        {
+          "@type": "Organization",
+          "name": "重庆用户组",
+          "email": "usergroup@opengauss.org"
+        },
+        {
+          "@type": "Organization",
+          "name": "上海用户组",
+          "email": "usergroup@opengauss.org"
+        },
+        {
+          "@type": "Organization",
+          "name": "成都用户组",
+          "email": "usergroup@opengauss.org"
+        },
+        {
+          "@type": "Organization",
+          "name": "广州用户组",
+          "email": "usergroup@opengauss.org"
+        },
+        {
+          "@type": "Organization",
+          "name": "贵阳用户组",
+          "email": "usergroup@opengauss.org"
+        },
+        {
+          "@type": "Organization",
+          "name": "合肥用户组",
+          "email": "usergroup@opengauss.org"
+        },
+        {
+          "@type": "Organization",
+          "name": "武汉用户组",
+          "email": "usergroup@opengauss.org"
+        },
+        {
+          "@type": "Organization",
+          "name": "沈阳用户组",
+          "email": "usergroup@opengauss.org"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://opengauss.org/zh/migration/#webpage",
+      "url": "https://opengauss.org/zh/migration/",
+      "name": "迁移专区",
+      "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。",
+      "inLanguage": "zh-CN",
+      "isPartOf": {
+        "@id": "https://opengauss.org/#website"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://opengauss.org/#website",
+      "url": "https://opengauss.org/",
+      "name": "openGauss社区官网",
+      "inLanguage": "zh-CN"
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://opengauss.org/zh/migration/#howto",
+      "name": "数据库迁移流程",
+      "description": "接收到企业在线数据搬迁的诉求，openGauss快速成立搬迁保障组，包括管理、专家、研发和测试人员等，为企业在线业务高效平稳搬迁提供技术支持和人力保障",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "迁移评估",
+          "text": "通过对源库现状的分析和评估，给出目标库选型和部署建议；通过评估目标库兼容性，确定改造工作量及迁移时长",
+          "item": {
+            "@type": "HowToSection",
+            "name": "迁移评估详细内容",
+            "itemListElement": [
+              {
+                "@type": "HowToItem",
+                "name": "源库画像",
+                "text": "数据库画像是评估数据库的基础数据，用于了解源库，指导目标库选型迁移"
+              },
+              {
+                "@type": "HowToItem",
+                "name": "目标库选型和部署建议",
+                "text": "根据数据库画像，确定目标库选型和部署建议，包括：硬件资源、部署方式、运行参数等"
+              },
+              {
+                "@type": "HowToItem",
+                "name": "兼容性评估",
+                "text": "评估目标库兼容性，包括对象兼容性、SQL兼容性，给出修复意见及改造工作量"
+              },
+              {
+                "@type": "HowToItem",
+                "name": "迁移时长评估",
+                "text": "根据数据库画像和目标库兼容能力，给出迁移时长评估"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "HowToStep",
+          "name": "应用适配",
+          "text": "基于迁移评估结果，适配修改和验证不兼容SQL，支持修改应用程序源文件",
+          "item": {
+            "@type": "HowToSection",
+            "name": "应用适配详细内容",
+            "itemListElement": [
+              {
+                "@type": "HowToItem",
+                "name": "测试数据预置",
+                "text": "基于数据库画像中的对象信息，模拟生成测试对象和数据，或从源库导入测试数据"
+              },
+              {
+                "@type": "HowToItem",
+                "name": "修改/验证SQL",
+                "text": "根据兼容性评估结果，修改验证不兼容SQL"
+              },
+              {
+                "@type": "HowToItem",
+                "name": "应用修改",
+                "text": "根据兼容性评估和SQL修改情况，修改应用程序源文件"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "HowToStep",
+          "name": "数据迁移",
+          "text": "确定组网，实施对象和数据迁移",
+          "item": {
+            "@type": "HowToSection",
+            "name": "数据迁移详细内容",
+            "itemListElement": [
+              {
+                "@type": "HowToItem",
+                "name": "组网部署",
+                "text": "基于迁移评估中的硬件资源、部署方式、运行参数等完成数据库组网和部署"
+              },
+              {
+                "@type": "HowToItem",
+                "name": "预检查",
+                "text": "检查数据库用户的读写权限、数据库的网络连接等"
+              },
+              {
+                "@type": "HowToItem",
+                "name": "对象迁移",
+                "text": "迁移源库中的数据对象定义至目标库中"
+              },
+              {
+                "@type": "HowToItem",
+                "name": "对象校验",
+                "text": "支持对表、索引、约束（包括主外键）、存储过程、触发器等数据对象的校验"
+              },
+              {
+                "@type": "HowToItem",
+                "name": "全量数据迁移",
+                "text": "迁移源库表的全量数据至目标库对应的表中"
+              },
+              {
+                "@type": "HowToItem",
+                "name": "全量数据校验",
+                "text": "校验源库和目标库中的全量数据"
+              },
+              {
+                "@type": "HowToItem",
+                "name": "增量数据迁移",
+                "text": "同步源库发生变化的数据至目标端数据库对应的表中，支持同步DML和DDL"
+              },
+              {
+                "@type": "HowToItem",
+                "name": "增量数据校验",
+                "text": "周期校验增量数据"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "HowToStep",
+          "name": "试运行",
+          "text": "迁移流量到目标库，对目标库进行实际业务测试，修复故障、调优性能",
+          "item": {
+            "@type": "HowToSection",
+            "name": "试运行详细内容",
+            "itemListElement": [
+              {
+                "@type": "HowToItem",
+                "name": "试运行前检查",
+                "text": "同步延迟检查、目标端增量日志检查"
+              },
+              {
+                "@type": "HowToItem",
+                "name": "流量镜像",
+                "text": "Attach到业务进程，镜像业务流量到目标库"
+              },
+              {
+                "@type": "HowToItem",
+                "name": "故障修复",
+                "text": "监控目标库运行，修复故障"
+              },
+              {
+                "@type": "HowToItem",
+                "name": "性能调优",
+                "text": "监控目标库运行，调优性能，慢SQL优化"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "HowToStep",
+          "name": "生产割接",
+          "text": "启动反向迁移，业务割接到目标数据库",
+          "item": {
+            "@type": "HowToSection",
+            "name": "生产割接详细内容",
+            "itemListElement": [
+              {
+                "@type": "HowToItem",
+                "name": "切换前检查",
+                "text": "切换预检查：同步延迟、源端迁移用户写权限、目标端增量日志"
+              },
+              {
+                "@type": "HowToItem",
+                "name": "反向迁移",
+                "text": "从目标库到源库的实时增量同步，保障业务数据回流至原源库"
+              },
+              {
+                "@type": "HowToItem",
+                "name": "数据校验",
+                "text": "周期校验增量数据"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://opengauss.org/zh/migration/#service",
+      "name": "数据库迁移服务",
+      "description": "openGauss数据库迁移服务，提供MySQL兼容性评估和迁移，支持一键式迁移",
+      "provider": {
+        "@id": "https://opengauss.org/#organization"
+      },
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "中国"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://opengauss.org/#organization",
+      "name": "openGauss社区",
+      "url": "https://opengauss.org/"
+    }
+  ]
+}

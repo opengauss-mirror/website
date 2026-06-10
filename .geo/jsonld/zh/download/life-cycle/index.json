@@ -1,0 +1,24 @@
+﻿{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "openGauss社区版本生命周期管理规范",
+  "name": "下载 - 生命周期",
+  "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。",
+  "inLanguage": "zh-CN",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "openGauss社区官网",
+    "url": "https://opengauss.org/zh/"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "name": "openGauss",
+    "applicationCategory": "DatabaseApplication",
+    "operatingSystem": "Linux"
+  },
+  "mainEntity": {
+    "@type": "TechArticle",
+    "headline": "openGauss社区版本生命周期管理规范",
+    "articleBody": "长期支持版本（LTS）：规模上线使用，发布间隔周期为2年，社区提供3年维护支持，OGSP伙伴提供3年以上延长维护支持服务。社区创新版本（RCx）：联创测试使用，发布间隔周期定为6个月，社区提供6个月维护支持。创新版本规划及开发的功能特性，将被其对应的LTS大版本进行收编。Maintenance Support: CVE、Bugfix和少量新特性。Extend Support: 修复"主要"以上CVE和Bug。单个版本生命周期结束前，以邮件和公告的方式提前3个月知会。"
+  }
+}

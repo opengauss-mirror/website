@@ -1,0 +1,59 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://opengauss.org/en/cve/detail/",
+      "url": "https://opengauss.org/en/cve/detail/",
+      "name": "openGauss CVE Detail | CVE",
+      "description": "Get detailed information about specific CVEs related to openGauss for better understanding and mitigation.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://opengauss.org/#website"
+      },
+      "about": {
+        "@type": "Thing",
+        "name": "CVE",
+        "description": "Common Vulnerabilities and Exposures related to openGauss"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://opengauss.org/#website",
+      "url": "https://opengauss.org/",
+      "name": "openGauss",
+      "description": "openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability. openGauss is also an open source database platform that encourages community contribution and collaboration.",
+      "inLanguage": "en"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "name": "Breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@id": "https://opengauss.org/en/",
+            "name": "Home"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@id": "https://opengauss.org/en/cve/",
+            "name": "CVE"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@id": "https://opengauss.org/en/cve/detail/",
+            "name": "CVE Detail"
+          }
+        }
+      ]
+    }
+  ]
+}

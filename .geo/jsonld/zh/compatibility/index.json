@@ -1,0 +1,36 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://opengauss.org/zh/compatibility/",
+  "name": "兼容性列表",
+  "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。",
+  "inLanguage": "zh-CN",
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": "https://opengauss.org/#website",
+    "name": "openGauss社区官网",
+    "url": "https://opengauss.org/"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "name": "openGauss",
+    "applicationCategory": "DatabaseApplication",
+    "description": "企业级开源关系数据库"
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "首页",
+        "item": "https://opengauss.org/zh/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "兼容性列表"
+      }
+    ]
+  }
+}

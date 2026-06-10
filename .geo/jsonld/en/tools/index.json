@@ -1,0 +1,211 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Support Tools",
+    "description": "6 categories of tools for developers and ISVs, including the client tool, data import/export tool, data replication/synchronization tool, monitoring and O&M interfaces and toolset, backup and recovery interfaces and toolset, and data access middleware",
+    "numberOfItems": 20,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "psycopg2",
+          "applicationCategory": "Connectors",
+          "description": "The openGauss Python Driver (Linux only)"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "py-og",
+          "applicationCategory": "Connectors",
+          "description": "The openGauss pure Python Driver (Multi-OS Support)"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "go-pq",
+          "applicationCategory": "Connectors",
+          "description": "The openGauss Go Driver"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "ShardingSphere",
+          "applicationCategory": "Middleware",
+          "description": "Distributed database middleware"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "HAProxy",
+          "applicationCategory": "Middleware",
+          "description": "Database read/write load balancing"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "vip-manager",
+          "applicationCategory": "Middleware",
+          "description": "Automatic IP failover"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 7,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "Kubernetes",
+          "applicationCategory": "Cluster Management",
+          "description": "An open source container management platform"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 8,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "Patroni",
+          "applicationCategory": "Cluster Management",
+          "description": "Automatic primary/standby switching to improve database availability"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 9,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "Ora2Pg",
+          "applicationCategory": "Migration Tools",
+          "description": "Database migration tool from Oracle to openGauss"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 10,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "pg_chameleon",
+          "applicationCategory": "Migration Tools",
+          "description": "Database migration tool from MySQL to openGauss"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 11,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "pgloader",
+          "applicationCategory": "Migration Tools",
+          "description": "A data import tool that uses the COPY command to import data into openGauss"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 12,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "JdbcPgBackup",
+          "applicationCategory": "Data Synchronization Tools",
+          "description": "Java based multi-platform data import and export tool, similar to pg_dump/pg_restore"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 13,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "Database-Sync",
+          "applicationCategory": "Data Synchronization Tools",
+          "description": "A powerful and flexible database synchronization tool developed based on Java"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 14,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "Debezium",
+          "applicationCategory": "Data Synchronization Tools",
+          "description": "It provides a low latency streaming processing platform for change data capture (CDC)"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 15,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "PowerDesigner",
+          "applicationCategory": "Data Model",
+          "description": "Flexible analysis and design features allow you to effectively create a database or data warehouse using a structured approach"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 16,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "DBeaver",
+          "applicationCategory": "Client Tools",
+          "description": "Open source multi database client tool"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 17,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "Data Studio",
+          "applicationCategory": "Client Tools",
+          "description": "openGauss official client tool"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 18,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "Zabbix",
+          "applicationCategory": "Monitor & DevOps System",
+          "description": "It components and services for real-time monitoring, and the monitoring database needs additional adaptation"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 19,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "Prometheus",
+          "applicationCategory": "Monitor & DevOps System",
+          "description": "The open source monitoring system performs very well in recording pure digital time series"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 20,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "Yukon",
+          "applicationCategory": "Kernel Extension",
+          "description": "Provide professional GIS (Geographic Information System) ability"
+        }
+      }
+    ]
+  }
+]

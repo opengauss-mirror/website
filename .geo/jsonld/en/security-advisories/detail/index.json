@@ -1,0 +1,54 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://opengauss.org/en/#website",
+      "url": "https://opengauss.org/en/",
+      "name": "openGauss",
+      "description": "openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability.",
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://opengauss.org/en/#organization",
+      "name": "openGauss Community",
+      "url": "https://opengauss.org/en/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://opengauss.org/en/security-advisories/detail/#webpage",
+      "url": "https://opengauss.org/en/security-advisories/detail/",
+      "isPartOf": {
+        "@id": "https://opengauss.org/en/#website"
+      },
+      "inLanguage": "en",
+      "potentialAction": {
+        "@type": "ReadAction",
+        "target": "https://opengauss.org/en/security-advisories/detail/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://opengauss.org/en/security-advisories/detail/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@id": "https://opengauss.org/en/security-advisories/",
+            "name": "Security Advisories"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@id": "https://opengauss.org/en/security-advisories/detail/",
+            "name": "Security Advisory Detail"
+          }
+        }
+      ]
+    }
+  ]
+}

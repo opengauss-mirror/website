@@ -1,0 +1,76 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/en/security-advisories/#webpage",
+    "url": "https://opengauss.org/en/security-advisories/",
+    "name": "Security Advisories",
+    "description": "您可以在此处查询安全公告的相关信息。",
+    "inLanguage": "en",
+    "isPartOf": {
+      "@id": "https://opengauss.org/#website"
+    },
+    "about": {
+      "@type": "Thing",
+      "name": "Security Advisories",
+      "description": "openGauss安全公告信息查询页面"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": "https://opengauss.org/en/security-advisories/#collectionpage",
+    "url": "https://opengauss.org/en/security-advisories/",
+    "name": "Security Advisories",
+    "description": "您可以在此处查询安全公告的相关信息。",
+    "inLanguage": "en",
+    "isPartOf": {
+      "@id": "https://opengauss.org/#website"
+    },
+    "mainEntity": {
+      "@type": "ItemList",
+      "name": "Security Advisories List",
+      "description": "openGauss安全公告列表",
+      "itemListElement": []
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://opengauss.org/en/security-advisories/#breadcrumb",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Homepage",
+        "item": "https://opengauss.org/en/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Security Advisories",
+        "item": "https://opengauss.org/en/security-advisories/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://opengauss.org/#website",
+    "url": "https://opengauss.org/",
+    "name": "openGauss",
+    "description": "openGauss开源数据库社区官网",
+    "inLanguage": [
+      "en",
+      "zh"
+    ],
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://opengauss.org/en/search/?keyword={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  }
+]

@@ -1,0 +1,407 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "openGauss Community",
+  "alternateName": "openGauss",
+  "description": "openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability. openGauss is also an open source database platform that encourages community contribution and collaboration.",
+  "url": "https://opengauss.org/en/member/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://opengauss.org/assets/logo_dark.CElWqwW0.svg"
+  },
+  "sameAs": [
+    "https://gitcode.com/opengauss"
+  ],
+  "subOrganization": [
+    {
+      "@type": "Organization",
+      "name": "Advisory Committee",
+      "alternateName": "Counselor"
+    },
+    {
+      "@type": "Organization",
+      "name": "Board of Directors",
+      "alternateName": "Board",
+      "url": "https://gitcode.com/opengauss/board",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "board@opengauss.org",
+        "contactType": "Board contact"
+      }
+    },
+    {
+      "@type": "Organization",
+      "name": "User Committee",
+      "alternateName": "UC",
+      "url": "https://gitcode.com/opengauss/uc",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "uc@opengauss.org",
+        "contactType": "User Committee contact"
+      }
+    },
+    {
+      "@type": "Organization",
+      "name": "Brand Committee",
+      "alternateName": "BC",
+      "url": "https://gitcode.com/opengauss/bc",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "bc@opengauss.org",
+        "contactType": "Brand Committee contact"
+      }
+    },
+    {
+      "@type": "Organization",
+      "name": "Technical Committee",
+      "alternateName": "TC",
+      "url": "https://gitcode.com/opengauss/tc",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "tc@opengauss.org",
+        "contactType": "Technical Committee contact"
+      }
+    },
+    {
+      "@type": "Organization",
+      "name": "Secretariat"
+    },
+    {
+      "@type": "Organization",
+      "name": "Special Interest Groups",
+      "alternateName": "SIGs",
+      "subOrganization": [
+        {
+          "@type": "Organization",
+          "name": "SQLEngine SIG",
+          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/SQLEngine",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "sqlengine@opengauss.org"
+          }
+        },
+        {
+          "@type": "Organization",
+          "name": "StorageEngine SIG",
+          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/StorageEngine",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "storageengine@opengauss.org"
+          }
+        },
+        {
+          "@type": "Organization",
+          "name": "Connectors SIG",
+          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/Connectors",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "connectors@opengauss.org"
+          }
+        },
+        {
+          "@type": "Organization",
+          "name": "Tools SIG",
+          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/Tools",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "tools@opengauss.org"
+          }
+        },
+        {
+          "@type": "Organization",
+          "name": "Docs SIG",
+          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/Docs",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "docs@opengauss.org"
+          }
+        },
+        {
+          "@type": "Organization",
+          "name": "Infra SIG",
+          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/Infra",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "infra@opengauss.org"
+          }
+        },
+        {
+          "@type": "Organization",
+          "name": "Security SIG",
+          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/Security",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "security@opengauss.org"
+          }
+        },
+        {
+          "@type": "Organization",
+          "name": "IoT SIG",
+          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/IoT",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "iot@opengauss.org"
+          }
+        },
+        {
+          "@type": "Organization",
+          "name": "OM SIG",
+          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/OM",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "om@opengauss.org"
+          }
+        },
+        {
+          "@type": "Organization",
+          "name": "In-place Update SIG",
+          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/In-place-Update",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "inplaceupdate@opengauss.org"
+          }
+        },
+        {
+          "@type": "Organization",
+          "name": "AI SIG",
+          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/AI",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "ai@opengauss.org"
+          }
+        },
+        {
+          "@type": "Organization",
+          "name": "GIS SIG",
+          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/GIS",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "gis@opengauss.org"
+          }
+        },
+        {
+          "@type": "Organization",
+          "name": "Security Technology SIG",
+          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/SecurityTechnology",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "securitytechnology@opengauss.org"
+          }
+        },
+        {
+          "@type": "Organization",
+          "name": "CloudNative SIG",
+          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/CloudNative",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "cloudnative@opengauss.org"
+          }
+        },
+        {
+          "@type": "Organization",
+          "name": "Graph SIG",
+          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/Graph",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "graph@opengauss.org"
+          }
+        },
+        {
+          "@type": "Organization",
+          "name": "Blockchain SIG",
+          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/Blockchain",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "blockchain@opengauss.org"
+          }
+        },
+        {
+          "@type": "Organization",
+          "name": "QA SIG",
+          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/QA",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "qa@opengauss.org"
+          }
+        },
+        {
+          "@type": "Organization",
+          "name": "DCF SIG",
+          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/DCF",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "dcf@opengauss.org"
+          }
+        },
+        {
+          "@type": "Organization",
+          "name": "Certification SIG",
+          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/Certification",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "certification@opengauss.org"
+          }
+        },
+        {
+          "@type": "Organization",
+          "name": "Plugin SIG",
+          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/Plugin",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "plugin@opengauss.org"
+          }
+        },
+        {
+          "@type": "Organization",
+          "name": "CM SIG",
+          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/CM",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "cm@opengauss.org"
+          }
+        },
+        {
+          "@type": "Organization",
+          "name": "ReleaseManagement SIG",
+          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/ReleaseManagement",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "releaseManagement@opengauss.org"
+          }
+        },
+        {
+          "@type": "Organization",
+          "name": "OPS SIG",
+          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/OPS",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "ops@opengauss.org"
+          }
+        },
+        {
+          "@type": "Organization",
+          "name": "KnowledgeGraph SIG",
+          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/KnowledgeGraph",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "knowledgegraph@opengauss.org"
+          }
+        },
+        {
+          "@type": "Organization",
+          "name": "RISC-V SIG",
+          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/RISC-V",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "riscv@opengauss.org"
+          }
+        },
+        {
+          "@type": "Organization",
+          "name": "oGRAC SIG",
+          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/CTMM",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "ctmm@opengauss.org"
+          }
+        },
+        {
+          "@type": "Organization",
+          "name": "Embedded SIG",
+          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/Embedded",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "embedded@opengauss.org"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "name": "openGauss User Group",
+      "alternateName": "oGUG",
+      "subOrganization": [
+        {
+          "@type": "Organization",
+          "name": "Shenzhen User Group",
+          "url": "https://gitcode.com/opengauss/openGauss-User-Group/tree/master/ShenZhen"
+        },
+        {
+          "@type": "Organization",
+          "name": "Beijing User Group",
+          "url": "https://gitcode.com/opengauss/openGauss-User-Group/tree/master/BeiJing"
+        },
+        {
+          "@type": "Organization",
+          "name": "Nanjing User Group",
+          "url": "https://gitcode.com/opengauss/openGauss-User-Group/tree/master/NanJing"
+        },
+        {
+          "@type": "Organization",
+          "name": "Xi'an User Group",
+          "url": "https://gitcode.com/opengauss/openGauss-User-Group/tree/master/XiAn"
+        },
+        {
+          "@type": "Organization",
+          "name": "Changsha User Group",
+          "url": "https://gitcode.com/opengauss/openGauss-User-Group/tree/master/ChangSha"
+        },
+        {
+          "@type": "Organization",
+          "name": "Hangzhou User Group",
+          "url": "https://gitcode.com/opengauss/openGauss-User-Group/tree/master/HangZhou"
+        },
+        {
+          "@type": "Organization",
+          "name": "Lanzhou User Group",
+          "url": "https://gitcode.com/opengauss/openGauss-User-Group/tree/master/LanZhou"
+        },
+        {
+          "@type": "Organization",
+          "name": "Chongqing User Group",
+          "url": "https://gitcode.com/opengauss/openGauss-User-Group/tree/master/ChongQing"
+        },
+        {
+          "@type": "Organization",
+          "name": "Shanghai User Group",
+          "url": "https://gitcode.com/opengauss/openGauss-User-Group/tree/master/ShangHai"
+        },
+        {
+          "@type": "Organization",
+          "name": "Chengdu User Group",
+          "url": "https://gitcode.com/opengauss/openGauss-User-Group/tree/master/ChengDu"
+        },
+        {
+          "@type": "Organization",
+          "name": "Guangzhou User Group",
+          "url": "https://gitcode.com/opengauss/openGauss-User-Group/tree/master/GuangZhou"
+        },
+        {
+          "@type": "Organization",
+          "name": "Guiyang User Group",
+          "url": "https://gitcode.com/opengauss/openGauss-User-Group/tree/master/GuiYang"
+        },
+        {
+          "@type": "Organization",
+          "name": "Hefei User Group",
+          "url": "https://gitcode.com/opengauss/openGauss-User-Group/tree/master/HeFei"
+        },
+        {
+          "@type": "Organization",
+          "name": "Wuhan User Group",
+          "url": "https://gitcode.com/opengauss/openGauss-User-Group/tree/master/WuHan"
+        },
+        {
+          "@type": "Organization",
+          "name": "Shenyang User Group",
+          "url": "https://gitcode.com/opengauss/openGauss-User-Group/tree/master/ShenYang"
+        }
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "usergroup@opengauss.org",
+        "contactType": "User Group contact"
+      }
+    }
+  ]
+}

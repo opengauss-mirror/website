@@ -1,0 +1,81 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://opengauss.org/en/cve/#webpage",
+      "url": "https://opengauss.org/en/cve/",
+      "name": "CVE",
+      "description": "openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability. openGauss is also an open source database platform that encourages community contribution and collaboration.",
+      "isPartOf": {
+        "@id": "https://opengauss.org/#website"
+      },
+      "inLanguage": "en",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": "https://opengauss.org/en/cve/"
+        }
+      ]
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://opengauss.org/en/cve/#collectionpage",
+      "url": "https://opengauss.org/en/cve/",
+      "name": "CVE - openGauss Security Advisories",
+      "description": "A collection of Common Vulnerabilities and Exposures (CVE) security advisories for openGauss database software.",
+      "isPartOf": {
+        "@id": "https://opengauss.org/#website"
+      },
+      "inLanguage": "en",
+      "about": {
+        "@type": "Thing",
+        "name": "CVE",
+        "description": "Common Vulnerabilities and Exposures - security vulnerability identifiers and advisories"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://opengauss.org/#website",
+      "url": "https://opengauss.org/",
+      "name": "openGauss",
+      "description": "openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability. openGauss is also an open source database platform that encourages community contribution and collaboration.",
+      "publisher": {
+        "@id": "https://opengauss.org/#organization"
+      },
+      "inLanguage": [
+        "en",
+        "zh"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://opengauss.org/#organization",
+      "name": "openGauss",
+      "url": "https://opengauss.org/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://opengauss.org/assets/logo_dark.CElWqwW0.svg"
+      },
+      "description": "openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability. openGauss is also an open source database platform that encourages community contribution and collaboration."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://opengauss.org/en/cve/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://opengauss.org/en/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "CVE",
+          "item": "https://opengauss.org/en/cve/"
+        }
+      ]
+    }
+  ]
+}

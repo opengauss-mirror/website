@@ -1,0 +1,15 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "结队计划申请表",
+  "inLanguage": "zh-CN",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "openGauss社区官网"
+  },
+  "mainEntity": {
+    "@type": "WebPageElement",
+    "name": "结队计划申请表单",
+    "description": "申请表单包含以下字段：openGauss使用场景、使用openGauss版本信息、部署openGauss节点数、部署openGauss硬件信息、目前遇到的问题描述、申请人姓名、申请人单位、申请人邮箱、申请人手机号"
+  }
+}
