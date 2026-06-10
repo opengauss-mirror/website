@@ -530,6 +530,7 @@ watch(
 }
 
 :global(.meeting-booking-dlg .o-dlg-main) {
+  --dlg-bg-color: var(--o-color-control-light);
   @include respond-to('phone') {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
