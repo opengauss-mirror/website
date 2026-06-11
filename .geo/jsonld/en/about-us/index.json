@@ -1,0 +1,43 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://opengauss.org/#organization",
+      "name": "openGauss",
+      "description": "openGauss is an open source database that combines high performance, reliability, security, and intelligence. Driven by technological innovation, it significantly boosts cluster performance through advanced techniques like resource pooling architecture and hardware-software collaboration. It also supports financial-grade high availability and large-scale data processing. With integrated AI capabilities, openGauss serves as a data foundation for large models and collaborates with partners to accelerate the evolution of the openGauss ecosystem.",
+      "foundingDate": "2020-06-30",
+      "sameAs": [
+        "https://gitcode.com/opengauss",
+        "https://github.com/opengauss-mirror"
+      ],
+      "url": "https://opengauss.org/en/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://opengauss.org/#software",
+      "name": "openGauss",
+      "description": "openGauss is an open source database that combines high performance, reliability, security, and intelligence. Driven by technological innovation, it significantly boosts cluster performance through advanced techniques like resource pooling architecture and hardware-software collaboration. It also supports financial-grade high availability and large-scale data processing. With integrated AI capabilities, openGauss serves as a data foundation for large models and collaborates with partners to accelerate the evolution of the openGauss ecosystem.",
+      "applicationCategory": "DatabaseApplication",
+      "operatingSystem": "Linux",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://opengauss.org/en/about-us/#webpage",
+      "name": "About Us",
+      "description": "openGauss is an open source database that combines high performance, reliability, security, and intelligence. Driven by technological innovation, it significantly boosts cluster performance through advanced techniques like resource pooling architecture and hardware-software collaboration. It also supports financial-grade high availability and large-scale data processing. With integrated AI capabilities, openGauss serves as a data foundation for large models and collaborates with partners to accelerate the evolution of the openGauss ecosystem.",
+      "url": "https://opengauss.org/en/about-us/",
+      "about": {
+        "@id": "https://opengauss.org/#organization"
+      },
+      "mainEntity": {
+        "@id": "https://opengauss.org/#software"
+      }
+    }
+  ]
+}

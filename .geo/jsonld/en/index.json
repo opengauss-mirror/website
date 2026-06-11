@@ -1,0 +1,66 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://opengauss.org/en/#website",
+    "url": "https://opengauss.org/en/",
+    "name": "openGauss Community",
+    "description": "openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability. openGauss is also an open source database platform that encourages community contribution and collaboration.",
+    "inLanguage": "en",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://opengauss.org/en/search/?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "@id": "https://opengauss.org/en/#software",
+    "name": "openGauss",
+    "description": "openGauss is a multi-model database management system released under the Mulan PSL v2. Its kernel incorporates Huawei's extensive database experience, and it is continuously enhanced with competitive, enterprise-grade features to meet real-world demands.",
+    "applicationCategory": "DatabaseApplication",
+    "operatingSystem": "Linux",
+    "url": "https://opengauss.org/en/",
+    "featureList": [
+      "High Reliability - RTO < 10s",
+      "High Performance - 2-socket Kunpeng for 1.5 million tpmC",
+      "High Security - Comprehensive end-to-end security protection",
+      "Easy O&M - AI-based parameter tuning"
+    ],
+    "license": "https://license.coscl.org.cn/MulanPSL2/",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "softwareVersion": "7.0.0-RC3"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://opengauss.org/en/#organization",
+    "name": "openGauss Community",
+    "url": "https://opengauss.org/en/",
+    "description": "openGauss is an open source database platform that encourages community contribution and collaboration.",
+    "sameAs": [
+      "https://github.com/opengauss"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://opengauss.org/en/#breadcrumb",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Homepage",
+        "item": "https://opengauss.org/en/"
+      }
+    ]
+  }
+]

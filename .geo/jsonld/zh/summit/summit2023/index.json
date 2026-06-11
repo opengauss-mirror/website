@@ -1,0 +1,314 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "openGauss Summit 2023",
+  "alternateName": "openGauss Summit 2023（openGauss社区年度盛会）",
+  "description": "openGauss Summit 2023是openGauss社区的年度盛会。本次峰会将汇聚学术专家、行业组织、企业客户、生态伙伴和社区贡献者，探讨数据库行业新趋势，交流生态共建新思路，分享企业联合创新成果，共同构建数据库新生态。数据库作为千行万业数据的基石，也是推动数字经济发展的核心。随着数字经济的蓬勃发展，数据库将迎来更加广阔的应用场景和更加迫切的需求。openGauss社区旨在汇聚产、学、研、用多方力量，聚焦基础软件核心能力的构建，引领国内数据库行业技术、生态、商业的繁荣发展，共建最具创新力的开源数据库根社区，共同打造数据经济的未来。",
+  "startDate": "2023-12-27T09:30",
+  "endDate": "2023-12-28T18:00",
+  "eventStatus": "https://schema.org/EventEnded",
+  "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+  "location": {
+    "@type": "Place",
+    "name": "[待补充：活动地点未在原始页面中明确显示]"
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": "openGauss社区",
+    "url": "https://opengauss.org/zh/"
+  },
+  "sponsor": [
+    {
+      "@type": "Organization",
+      "name": "国家工业信息安全发展研究中心软件所",
+      "role": "指导单位"
+    },
+    {
+      "@type": "Organization",
+      "name": "中国软件行业协会",
+      "role": "指导单位"
+    },
+    {
+      "@type": "Organization",
+      "name": "中国计算机学会数据库专业委员会",
+      "role": "指导单位"
+    },
+    {
+      "@type": "Organization",
+      "name": "openGauss社区",
+      "role": "主办单位"
+    },
+    {
+      "@type": "Organization",
+      "name": "北京海量数据技术股份有限公司",
+      "role": "战略合作单位"
+    },
+    {
+      "@type": "Organization",
+      "name": "云和恩墨（北京）信息技术有限公司",
+      "role": "战略合作单位"
+    },
+    {
+      "@type": "Organization",
+      "name": "天津神舟通用数据技术有限公司",
+      "role": "联合主办单位"
+    },
+    {
+      "@type": "Organization",
+      "name": "天津南大通用数据技术股份有限公司",
+      "role": "联合主办单位"
+    },
+    {
+      "@type": "Organization",
+      "name": "中软国际科技服务有限公司",
+      "role": "协办单位"
+    },
+    {
+      "@type": "Organization",
+      "name": "河南昆仑技术有限公司",
+      "role": "协办单位"
+    }
+  ],
+  "performer": [
+    {
+      "@type": "Person",
+      "name": "郑纬民",
+      "jobTitle": "院士",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "中国工程院"
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "王小云",
+      "jobTitle": "院士",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "中国科学院"
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "潘妍",
+      "jobTitle": "所长",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "国家工业信息安全发展研究中心软件所"
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "周傲英",
+      "jobTitle": "教授",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "华东师范大学数据学院"
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "李义",
+      "jobTitle": "鲲鹏计算业务总裁",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "华为"
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "胡正策",
+      "jobTitle": "理事长",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "openGauss社区理事会"
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "江大勇",
+      "jobTitle": "理事长助理",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "开放原子开源基金会"
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "周伟然",
+      "jobTitle": "基础研究处处长",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "兴业银行金融科技研究院"
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "钟忻",
+      "jobTitle": "基础技术研发总经理",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "联通云"
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "陈国",
+      "jobTitle": "副总经理",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "中移信息技术中心"
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "林华",
+      "jobTitle": "CTIO组织云中心中心长",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "京东方"
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "姜岩",
+      "jobTitle": "数据中心总经理",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "哈尔滨银行"
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "李国良",
+      "jobTitle": "教授",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "清华大学计算机系"
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "宋贺鹏",
+      "jobTitle": "产业研究部主任",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "中国软件行业协会"
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "熊伟",
+      "jobTitle": "TOC副主席",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "开放原子开源基金会"
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "蔡亚杰",
+      "jobTitle": "秘书",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "openGauss社区"
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "肖枫",
+      "jobTitle": "总裁",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "海量数据"
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "杨晓成",
+      "jobTitle": "合伙人兼董事总经理",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "沙利文咨询"
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "盖国强",
+      "jobTitle": "创始人兼总经理",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "云和恩墨"
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "张益",
+      "jobTitle": "产品总经理",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "南大通用"
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "王天芳",
+      "jobTitle": "售前咨询总监",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "神舟通用"
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "李玉章",
+      "jobTitle": "2012实验室高斯部部长",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "华为"
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "李永乐",
+      "jobTitle": "计算开源业务总经理",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "华为"
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "孙刚",
+      "jobTitle": "ICT人才伙伴发展部部长",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "华为"
+      }
+    }
+  ],
+  "subjectOf": {
+    "@type": "WebPage",
+    "name": "openGauss Summit 2023",
+    "url": "https://opengauss.org/zh/summit/summit2023/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "openGauss社区",
+      "url": "https://opengauss.org"
+    }
+  },
+  "keywords": [
+    "openGauss",
+    "开源数据库",
+    "数据库峰会",
+    "技术大会",
+    "开源社区"
+  ],
+  "inLanguage": "zh-CN",
+  "sameAs": [
+    "https://opengauss.org/zh/summit/devday2023/",
+    "https://opengauss.org/zh/summit/summit2022/",
+    "https://opengauss.org/zh/summit/devday2022/",
+    "https://opengauss.org/zh/summit/summit2021/"
+  ]
+}

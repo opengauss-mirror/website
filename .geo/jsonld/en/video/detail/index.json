@@ -1,0 +1,10 @@
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Videos Detail | openGauss",
+  "description": "openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability. openGauss is also an open source database platform that encourages community contribution and collaboration.",
+  "thumbnailUrl": "PLACEHOLDER: Video thumbnail not available in static HTML",
+  "uploadDate": "PLACEHOLDER: Upload date not available in static HTML",
+  "contentUrl": "PLACEHOLDER: Video URL dynamically loaded via JavaScript",
+  "duration": "PLACEHOLDER: Duration not available in static HTML"
+}

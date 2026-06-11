@@ -1,0 +1,238 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://opengauss.org/#organization",
+      "name": "openGauss",
+      "url": "https://opengauss.org",
+      "description": "openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability. openGauss is also an open source database platform that encourages community contribution and collaboration.",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "Mailing List",
+          "name": "AI",
+          "email": "ai@opengauss.org",
+          "description": "Mailing list for SIG AI discussion group in openGauss community."
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "Mailing List",
+          "name": "Blockchain",
+          "email": "blockchain@opengauss.org",
+          "description": "Mailing list for SIG Blockchain discussion group in openGauss community."
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "Mailing List",
+          "name": "Certification",
+          "email": "certification@opengauss.org",
+          "description": "Mailing list for SIG Certification discussion group in openGauss community."
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "Mailing List",
+          "name": "CloudNative",
+          "email": "cloudnative@opengauss.org",
+          "description": "Mailing list for SIG CloudNative discussion group in openGauss community."
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "Mailing List",
+          "name": "CM",
+          "email": "cm@opengauss.org",
+          "description": "Mailing list for SIG CM discussion group in openGauss community."
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "Mailing List",
+          "name": "Community",
+          "email": "community@opengauss.org",
+          "description": "Mailing list for public discussions in openGauss community. Any community issues can be discussed here."
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "Mailing List",
+          "name": "Connectors",
+          "email": "connectors@opengauss.org",
+          "description": "Mailing list for SIG Connectors discussion group in openGauss community."
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "Mailing List",
+          "name": "CTMM",
+          "email": "ctmm@opengauss.org",
+          "description": "Mailing list for SIG CTMM discussion group in openGauss community."
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "Mailing List",
+          "name": "DCF",
+          "email": "dcf@opengauss.org",
+          "description": "Mailing list for SIG DCF discussion group in openGauss community."
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "Mailing List",
+          "name": "Docs",
+          "email": "docs@opengauss.org",
+          "description": "Mailing list for SIG Docs discussion group in openGauss community."
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "Mailing List",
+          "name": "Embedded",
+          "email": "embedded@opengauss.org",
+          "description": "Mailing list for SIG Embedded discussion group in openGauss community."
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "Mailing List",
+          "name": "GIS",
+          "email": "gis@opengauss.org",
+          "description": "Mailing list for SIG GIS discussion group in openGauss community."
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "Mailing List",
+          "name": "Graph",
+          "email": "graph@opengauss.org",
+          "description": "Mailing list for SIG Graph discussion group in openGauss community."
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "Mailing List",
+          "name": "Infra",
+          "email": "infra@opengauss.org",
+          "description": "Mailing list for SIG Infra discussion group in openGauss community."
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "Mailing List",
+          "name": "In-place Update",
+          "email": "inplaceupdate@opengauss.org",
+          "description": "Mailing list for SIG in-place update discussion group in openGauss community."
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "Mailing List",
+          "name": "IoT",
+          "email": "iot@opengauss.org",
+          "description": "Mailing list for SIG IoT discussion group in openGauss community."
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "Mailing List",
+          "name": "KnowledgeGraph",
+          "email": "knowledgegraph@opengauss.org",
+          "description": "Mailing list for SIG KnowledgeGraph discussion group in openGauss community."
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "Mailing List",
+          "name": "OM",
+          "email": "om@opengauss.org",
+          "description": "Mailing list for SIG OM discussion group in openGauss community."
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "Mailing List",
+          "name": "OPS",
+          "email": "ops@opengauss.org",
+          "description": "Mailing list for SIG OPS discussion group in openGauss community."
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "Mailing List",
+          "name": "Plugin",
+          "email": "plugin@opengauss.org",
+          "description": "Mailing list for SIG Plugin discussion group in openGauss community."
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "Mailing List",
+          "name": "QA",
+          "email": "qa@opengauss.org",
+          "description": "Mailing list for SIG QA discussion group in openGauss community."
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "Mailing List",
+          "name": "ReleaseManagement",
+          "email": "releasemanagement@opengauss.org",
+          "description": "Mailing list for SIG releasemanagement discussion group in openGauss community."
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "Mailing List",
+          "name": "RISC-V",
+          "email": "riscv@opengauss.org",
+          "description": "Mailing list for SIG RISC-V discussion group in openGauss community."
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "Mailing List",
+          "name": "SecurityAnnounce",
+          "email": "securityannounce@opengauss.org",
+          "description": "Mailing list for SIG Security Announce discussion group in openGauss community."
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "Mailing List",
+          "name": "SecurityTechnology",
+          "email": "securitytechnology@opengauss.org",
+          "description": "Mailing list for SIG SecurityTechnology discussion group in openGauss community."
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "Mailing List",
+          "name": "SQLEngine",
+          "email": "sqlengine@opengauss.org",
+          "description": "Mailing list for SIG SQLEngine discussion group in openGauss community."
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "Mailing List",
+          "name": "StorageEngine",
+          "email": "storageengine@opengauss.org",
+          "description": "Mailing list for SIG StorageEngine discussion group in openGauss community."
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "Mailing List",
+          "name": "TC",
+          "email": "tc@opengauss.org",
+          "description": "Mailing list for SIG TC discussion group in openGauss community."
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "Mailing List",
+          "name": "Tools",
+          "email": "tools@opengauss.org",
+          "description": "Mailing list for SIG Tools discussion group in openGauss community."
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://opengauss.org/en/online-communication/#webpage",
+      "url": "https://opengauss.org/en/online-communication/",
+      "name": "Communication",
+      "description": "openGauss community uses Mailing List for communication. We sincerely invite you to join the openGauss Mailing List for discussion.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://opengauss.org/#website"
+      },
+      "about": {
+        "@id": "https://opengauss.org/#organization"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://opengauss.org/#website",
+      "url": "https://opengauss.org",
+      "name": "openGauss",
+      "inLanguage": "en"
+    }
+  ]
+}

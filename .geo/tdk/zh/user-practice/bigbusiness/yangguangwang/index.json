@@ -1,0 +1,5 @@
+{
+  "title": "央广网MySQL平滑迁移实践 | 综合性能提升30% | openGauss",
+  "description": "央广网采用openGauss发行版Vastbase替代MySQL，实现快速平滑迁移。解决方案高度兼容MySQL，适配PHP与Nginx，综合性能提升30%，金融级可靠性为全球华语广播平台提供更强支撑。",
+  "keywords": "央广网,openGauss,Vastbase,MySQL迁移,数据库迁移,性能提升,海量数据"
+}

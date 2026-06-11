@@ -1,0 +1,89 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://opengauss.org/en/contribution/detail/#webpage",
+      "url": "https://opengauss.org/en/contribution/detail/",
+      "name": "Contribution",
+      "description": "openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability. openGauss is also an open source database platform that encourages community contribution and collaboration.",
+      "isPartOf": {
+        "@id": "https://opengauss.org/#website"
+      },
+      "about": {
+        "@id": "https://opengauss.org/#organization"
+      },
+      "mainEntity": {
+        "@id": "https://opengauss.org/en/contribution/detail/#howto"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://opengauss.org/#website",
+      "url": "https://opengauss.org/",
+      "name": "openGauss"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://opengauss.org/#organization",
+      "name": "openGauss",
+      "description": "openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability.",
+      "url": "https://opengauss.org/"
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://opengauss.org/en/contribution/detail/#howto",
+      "name": "How to Contribute to openGauss",
+      "description": "A step-by-step guide on how to contribute to the openGauss open source community.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Sign up for GitCode Account",
+          "text": "The source code of openGauss source code is hosted on GitCode. Register your GitCode account and set up your primary email.",
+          "url": "https://opengauss.org/en/contribution/detail/#1-sign-up-for-gitcode-account"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Signing the Contributor License Agreement (CLA)",
+          "text": "Sign the Contributor License Agreement (CLA) before participating in the community contribution.",
+          "url": "https://opengauss.org/en/contribution/detail/#2-signing-the-contributor-license-agreement-cla"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Finding Your Interests",
+          "text": "The openGauss community is organized based on different SIGs (Special Interest Groups), facilitating the management and improvement of working processes. Find the SIGs you are interested in from the SIG list.",
+          "url": "https://opengauss.org/en/contribution/detail/#3-finding-your-interests"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Starting Your Contribution",
+          "itemListElement": [
+            {
+              "@type": "HowToDirection",
+              "text": "Assigning an Issue to Yourself - Find the Issue list for the openGauss community and assign issues to yourself."
+            },
+            {
+              "@type": "HowToDirection",
+              "text": "Submitting Issue - Report bugs or submit requirements to the community."
+            },
+            {
+              "@type": "HowToDirection",
+              "text": "Submitting Pull Request - Contribute code to the community."
+            },
+            {
+              "@type": "HowToDirection",
+              "text": "Reviewing Code - Participate as an active reviewer in the community."
+            }
+          ],
+          "url": "https://opengauss.org/en/contribution/detail/#4-starting-your-contribution"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Community Membership",
+          "text": "Encouraging all contributors to become members. Learn about community membership including Maintainer and Committer roles.",
+          "url": "https://opengauss.org/en/contribution/detail/#5-community-membership"
+        }
+      ]
+    }
+  ]
+}

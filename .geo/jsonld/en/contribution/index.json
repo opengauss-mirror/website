@@ -1,0 +1,49 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://opengauss.org/en/contribution/#webpage",
+      "url": "https://opengauss.org/en/contribution/",
+      "name": "Contribution",
+      "description": "openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability. openGauss is also an open source database platform that encourages community contribution and collaboration.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://opengauss.org/#website"
+      },
+      "about": {
+        "@id": "https://opengauss.org/#organization"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "caption": "openGauss Contribution Guide Map"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://opengauss.org/#website",
+      "url": "https://opengauss.org/",
+      "name": "openGauss",
+      "description": "openGauss Community Official Website",
+      "inLanguage": ["en", "zh"],
+      "publisher": {
+        "@id": "https://opengauss.org/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://opengauss.org/#organization",
+      "name": "openGauss",
+      "url": "https://opengauss.org/",
+      "description": "openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability. openGauss is also an open source database platform that encourages community contribution and collaboration.",
+      "sameAs": [
+        "https://gitcode.com/opengauss"
+      ],
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://opengauss.org/assets/logo_dark.CElWqwW0.svg",
+        "caption": "openGauss Logo"
+      }
+    }
+  ]
+}

@@ -1,0 +1,297 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://opengauss.org/zh/training/#webpage",
+      "url": "https://opengauss.org/zh/training/",
+      "name": "培训认证",
+      "description": "基于openGauss在中国良好的发展态势，由openGauss社区联合培训认证伙伴、中国软件行业协会培训中心共同打造openGauss培训认证体系。openGauss培训认证体系旨在帮助企业快速培养专业DBA人才，推动相关从业人员高效获得权威资质认证，促使技术爱好者踊跃融入社区技术生态。",
+      "inLanguage": "zh-CN",
+      "isPartOf": {
+        "@id": "https://opengauss.org/#website"
+      },
+      "about": {
+        "@id": "https://opengauss.org/zh/training/#service"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://opengauss.org/#website",
+      "url": "https://opengauss.org",
+      "name": "openGauss社区官网",
+      "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。",
+      "inLanguage": ["zh-CN", "en-US"],
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://opengauss.org/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://opengauss.org/zh/training/#service",
+      "name": "openGauss培训认证体系",
+      "description": "openGauss培训认证体系旨在帮助企业快速培养专业DBA人才，推动相关从业人员高效获得权威资质认证，促使技术爱好者踊跃融入社区技术生态。该体系填补了openGauss系数据库培训认证领域的空白，对openGauss的技术推广和生态发展起到积极的推动和促进作用。",
+      "serviceType": "数据库培训认证",
+      "provider": {
+        "@id": "https://opengauss.org/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "中国"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "openGauss认证体系",
+        "description": "CA、CP、CE三级认证，层次清晰，构建完善体系",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "Service",
+              "name": "OGCA认证（初级）",
+              "description": "面向openGauss数据库的初级管理员、应用开发人员。课程内容涵盖数据库系统概论、国产数据库发展业态、openGauss数据库简介、新特性、安装、客户端使用、openGauss体系概述、运维管理基础、数据库逻辑结构、SQL语言初探等。",
+              "serviceType": "认证培训"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "Service",
+              "name": "OGCP认证（中级）",
+              "description": "面向openGauss数据库的中级管理员、架构设计与优化人员。课程内容涵盖openGauss的生态发展、深入解析体系架构、深度维护、数据管理、功能特性、安全管理、性能优化、高级SQL、备份恢复、高可用技术以及相关管理工具等。",
+              "serviceType": "认证培训"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "Service",
+              "name": "OGCE认证（高级）",
+              "description": "面向致力于成为openGauss数据库专家的资深数据库管理员、系统架构师和高级工程师。课程内容全面涵盖openGauss数据库内核原理、高级特性、备份恢复、数据库性能优化、高可用方案及运维与故障处理等核心技术领域。",
+              "serviceType": "认证培训"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://opengauss.org/#organization",
+      "name": "openGauss社区",
+      "url": "https://opengauss.org",
+      "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": "certificate@public.opengauss.org",
+        "availableLanguage": ["zh-CN", "en-US"]
+      },
+      "sameAs": [
+        "https://github.com/opengauss"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://opengauss.org/zh/training/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "社区颁发的openGauss认证证书是市面上唯一的openGauss认证证书吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "是的，openGauss是开源数据库，由社区负责数据库的生态推广，社区希望通过规范的组织与专业的培训考试，让openGauss的爱好者能够系统的学习与掌握相关技能，成为企业可信的openGauss数据库技术人才。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "openGauss认证证书有纸质证书吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "有，在通过认证考试后，3天内将会收到电子版证书，1个月内将会收到纸质证书。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "openGauss证书上有国家相关部门协会的资质证明吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "2025年4月7日前：所有OGCA（初级），OGCP（中级），OGCE（高级）证书，由中国软件行业协会与openGauss社区联合认证，并加盖中国软件协会资质证明公章。2025年4月7日起：OGCP（中级），OGCE（高级）维持中国软件行业协会与openGauss社区联合认证，证书包含中国软件行业协会资质证明公章与社区理事长签名。OGCA（初级）调整为openGauss社区独立认证，证书保留社区理事长签名。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "不参加培训是否可以直接参加OGCA与OGCP考试？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以，但为了确保学员能够体系的掌握openGauss的相关技能，成为真正的技术者而非应试者，建议系统的学习后再进行考试。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "认证证书有有效期么？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "认证证书终身有效。但openGauss认证是跟随 openGauss 软件版本发布的，随着openGauss不断更新发布新的软件版本，社区也将每隔一段时期，同步发布新的openGauss版本的认证，已通过认证的学员可以选择重认证模式快速获取新版本的认证，新版本证书获取可基于旧版本的基础证书，即如果已获得旧版OGCA，可直接参加新版OGCP培训/考试。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "如何参加培训？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "openGauss社区优选了业界资深的数据库培训机构，为了保证培训效果，建议学员联系openGauss授权的培训机构参加培训。"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://opengauss.org/zh/training/#training-partners",
+      "name": "openGauss认证培训合作伙伴",
+      "description": "openGauss培训认证体系致力于为企业、在校大学生和IT从业者提供全方位的支持和帮助，共同推动数据库技术的发展和人才培养。",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Organization",
+            "name": "云数互联（墨天轮）",
+            "description": "云数互联旗下"墨天轮"是专注于数据库的技术社区，月活用户超过150万并覆盖40万专业数据库人才。社区以排行榜、知识库、问答、视频课程、AI 助手、培训认证等方式，促进数据库领域的知识传播和技术创新。",
+            "url": "https://www.modb.pro"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Organization",
+            "name": "北京海量数据技术股份有限公司",
+            "description": "北京海量数据技术股份有限公司成立于2007年，是国内首家以数据库为主营业务的主板上市企业。公司十余年来秉承"专注做好数据库"的初心，始终致力于数据库产品的研发、销售和服务。",
+            "url": "http://education.vastdata.com.cn"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Organization",
+            "name": "神舟通用公司",
+            "description": "神舟通用公司是中国航天科技集团有限公司下属的一家专业的数据库公司，研发和销售神通数据库产品。公司的主要客户群体为党、政、军、航天、金融、审计、能源、医疗、电信等单位。",
+            "url": "http://www.shentongdata.com"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Organization",
+            "name": "青软集团",
+            "description": "青软集团创立于2006年，是国内领先的高等教育数字化解决方案、产教融合及人力资源服务提供商，致力于推动教育与产业无缝衔接，把产业的技术、需求和资源转化成支撑高校人才培养的能力，助力新兴产业的人才支撑及服务。",
+            "url": "https://www.eduplus.net"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "Organization",
+            "name": "中国移动信息技术有限公司",
+            "description": "中国移动信息技术有限公司，面向全网IT领域，行使职能管理职责，统筹管理全网IT系统规划、投资、大数据统筹等工作；面向内部业务需求，进行智慧中台、业务支撑、管理支撑、大数据系统、IT云建设及运营，以及研发创新等工作；面向外部能力输出，具备独立的法人实体资质，可对外输出解决方案。",
+            "url": "https://job.10086.cn/"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://opengauss.org/zh/training/#certification-process",
+      "name": "openGauss认证流程",
+      "description": "认证流程介绍",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "培训报名"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "参加培训"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "考场查询"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "预约考试"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "参加考试"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "获取证书"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "证书查询"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://opengauss.org/zh/training/#advantages",
+      "name": "openGauss认证体系优势",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "权威的认证",
+          "description": "社区、软协、合作伙伴三方联手打造权威认证"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "完善的体系",
+          "description": "CA、CP、CE三级认证，层次清晰，构建完善体系"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "系统的课程",
+          "description": "课程内容由浅入深、循序渐进，紧跟版本变化"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "专业的讲师",
+          "description": "权威专家结合多年教学实践经验，提供专业培训"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "灵活的参训",
+          "description": "线上线下相结合，打破空间约束，灵活参与培训"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "可观的前景",
+          "description": "生态运营成熟，产业覆盖全面，市场未来可期"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "openGauss Community Version Lifecycle Management Specification",
+  "description": "Specification for managing the lifecycle of openGauss community versions, including LTS and RCx versions.",
+  "author": {
+    "@type": "Organization",
+    "name": "openGauss Community"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss Community"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "name": "openGauss",
+    "applicationCategory": "DatabaseApplication"
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "Version Types",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "LTS Version",
+        "description": "A large-scale rollout version released every 2 years, with 3 years of community support, followed by additional maintenance support by oGSPs."
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "RCx Version",
+        "description": "A collaborative testing version released every 6 months, with 6 months of community support. The planned and developed features in RCx will be incorporated into the corresponding LTS version."
+      }
+    ]
+  },
+  "articleBody": [
+    {
+      "@type": "TechArticle",
+      "name": "Maintenance Support",
+      "description": "CVE, Bugfix, and a small number of new features."
+    },
+    {
+      "@type": "TechArticle",
+      "name": "Extended Support",
+      "description": "Fix 'major' and above CVEs and Bugs."
+    },
+    {
+      "@type": "TechArticle",
+      "name": "Lifecycle End Notification",
+      "description": "Notification via email and announcement 3 months before the end of a single version lifecycle."
+    }
+  ],
+  "inLanguage": "en",
+  "url": "https://opengauss.org/en/download/life-cycle/"
+}

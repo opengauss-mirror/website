@@ -1,0 +1,484 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "openGauss社区",
+  "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。",
+  "url": "https://opengauss.org/zh/member/detail/",
+  "member": [
+    {
+      "@type": "OrganizationRole",
+      "name": "第一届理事会",
+      "startDate": "2020",
+      "endDate": "2021",
+      "member": [
+        {
+          "@type": "Person",
+          "name": "江大勇",
+          "jobTitle": "理事长",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "华为技术有限公司"
+          },
+          "email": "jiangdayong@huawei.com"
+        },
+        {
+          "@type": "Person",
+          "name": "胡正策",
+          "jobTitle": "秘书长",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "华为技术有限公司"
+          },
+          "email": "huzhengce@huawei.com"
+        },
+        {
+          "@type": "Person",
+          "name": "盖国强",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "云和恩墨(北京)信息技术有限公司"
+          },
+          "email": "eygle@enmotech.com"
+        },
+        {
+          "@type": "Person",
+          "name": "高波",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "超聚变数字技术有限公司"
+          },
+          "email": "gaobo@xfusion.com"
+        },
+        {
+          "@type": "Person",
+          "name": "顾云苏",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "天津神舟通用数据技术有限公司"
+          },
+          "email": "guyunsu@shentongdata.com"
+        },
+        {
+          "@type": "Person",
+          "name": "郭志军",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "交通银行股份有限公司"
+          },
+          "email": "guo.zj@bankcomm.com"
+        },
+        {
+          "@type": "Person",
+          "name": "韩锋",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "建信金融科技有限责任公司"
+          },
+          "email": "hanfeng7766@126.com"
+        },
+        {
+          "@type": "Person",
+          "name": "何佳佳",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "中国邮政储蓄银行股份有限公司"
+          },
+          "email": "hejiajia@psbcoa.com.cn"
+        },
+        {
+          "@type": "Person",
+          "name": "李国良",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "清华大学"
+          },
+          "email": "andyli1@huawei.com"
+        },
+        {
+          "@type": "Person",
+          "name": "李培源",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "天翼云科技有限公司"
+          },
+          "email": "lipeiyuan@chinatelecom.cn"
+        },
+        {
+          "@type": "Person",
+          "name": "刘劲",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "中国海洋石油集团有限公司"
+          },
+          "email": "liujing6@cnooc.com.cn"
+        },
+        {
+          "@type": "Person",
+          "name": "明玉琢",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "成都虚谷伟业科技有限公司"
+          },
+          "email": "mingyz@xugudb.com"
+        },
+        {
+          "@type": "Person",
+          "name": "田永江",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "招商银行股份有限公司"
+          },
+          "email": "tianyongjiang@cmbchina.com"
+        },
+        {
+          "@type": "Person",
+          "name": "王海涛",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "北京超图软件股份有限公司"
+          },
+          "email": "wanghaitao@supermap.com"
+        },
+        {
+          "@type": "Person",
+          "name": "肖枫",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "北京海量数据技术股份有限公司"
+          },
+          "email": "xiaofeng@vastdata.com.cn"
+        },
+        {
+          "@type": "Person",
+          "name": "谢继刚",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "中国联合网络通信集团有限公司"
+          },
+          "email": "xiejg@chinaunicom.cn"
+        },
+        {
+          "@type": "Person",
+          "name": "袁春光",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "中国民生银行股份有限公司"
+          },
+          "email": "yuanchunguang@cmbc.com.cn"
+        },
+        {
+          "@type": "Person",
+          "name": "张春",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "中国移动通信集团有限公司"
+          },
+          "email": "zhangchun@chinamobile.com"
+        },
+        {
+          "@type": "Person",
+          "name": "钟承诚",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "深信服科技股份有限公司"
+          },
+          "email": "zhongchengcheng@sangfor.com.cn"
+        },
+        {
+          "@type": "Person",
+          "name": "徐兵",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "中国交通信息科技集团有限公司"
+          },
+          "email": "xubing@ccccltd.cn"
+        },
+        {
+          "@type": "Person",
+          "name": "刘辰",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "京东科技集团"
+          },
+          "email": "liuchen12@jd.com"
+        },
+        {
+          "@type": "Person",
+          "name": "张益",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "天津南大通用数据技术股份有限公司"
+          },
+          "email": "zhangyi@gbase.cn"
+        },
+        {
+          "@type": "Person",
+          "name": "周伟然",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "兴业银行股份有限公司"
+          },
+          "email": "zhouwr@cib.com.cn"
+        }
+      ]
+    },
+    {
+      "@type": "OrganizationRole",
+      "name": "第二届理事会",
+      "startDate": "2021",
+      "member": [
+        {
+          "@type": "Person",
+          "name": "胡正策",
+          "jobTitle": "理事长",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "华为技术有限公司"
+          },
+          "email": "huzhengce@huawei.com"
+        },
+        {
+          "@type": "Person",
+          "name": "蔡亚杰",
+          "jobTitle": "秘书长",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "华为技术有限公司"
+          },
+          "email": "jikey.cai@huawei.com"
+        },
+        {
+          "@type": "Person",
+          "name": "盖国强",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "云和恩墨(北京)信息技术有限公司"
+          },
+          "email": "eygle@enmotech.com"
+        },
+        {
+          "@type": "Person",
+          "name": "何振岩",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "超聚变数字技术有限公司"
+          },
+          "email": "hezhenyan@xfusion.com"
+        },
+        {
+          "@type": "Person",
+          "name": "顾云苏",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "天津神舟通用数据技术有限公司"
+          },
+          "email": "guyunsu@shentongdata.com"
+        },
+        {
+          "@type": "Person",
+          "name": "郭志军",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "交通银行股份有限公司"
+          },
+          "email": "guo.zj@bankcomm.com"
+        },
+        {
+          "@type": "Person",
+          "name": "孙国荣",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "建信金融科技有限责任公司"
+          },
+          "email": "informixer@163.com"
+        },
+        {
+          "@type": "Person",
+          "name": "何佳佳",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "中国邮政储蓄银行股份有限公司"
+          },
+          "email": "hejiajia@psbcoa.com.cn"
+        },
+        {
+          "@type": "Person",
+          "name": "李国良",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "清华大学"
+          },
+          "email": "andyli1@huawei.com"
+        },
+        {
+          "@type": "Person",
+          "name": "李培源",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "天翼云科技有限公司"
+          },
+          "email": "lipeiyuan@chinatelecom.cn"
+        },
+        {
+          "@type": "Person",
+          "name": "刘劲",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "中国海洋石油集团有限公司"
+          },
+          "email": "liujing6@cnooc.com.cn"
+        },
+        {
+          "@type": "Person",
+          "name": "明玉琢",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "成都虚谷伟业科技有限公司"
+          },
+          "email": "mingyz@xugudb.com"
+        },
+        {
+          "@type": "Person",
+          "name": "田永江",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "招商银行股份有限公司"
+          },
+          "email": "tianyongjiang@cmbchina.com"
+        },
+        {
+          "@type": "Person",
+          "name": "王海涛",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "北京超图软件股份有限公司"
+          },
+          "email": "wanghaitao@supermap.com"
+        },
+        {
+          "@type": "Person",
+          "name": "肖枫",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "北京海量数据技术股份有限公司"
+          },
+          "email": "xiaofeng@vastdata.com.cn"
+        },
+        {
+          "@type": "Person",
+          "name": "钟忻",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "中国联合网络通信集团有限公司"
+          },
+          "email": "zhongx59@chinaunicom.cn"
+        },
+        {
+          "@type": "Person",
+          "name": "袁春光",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "中国民生银行股份有限公司"
+          },
+          "email": "yuanchunguang@cmbc.com.cn"
+        },
+        {
+          "@type": "Person",
+          "name": "张春",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "中国移动通信集团有限公司"
+          },
+          "email": "zhangchun@chinamobile.com"
+        },
+        {
+          "@type": "Person",
+          "name": "周正德",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "深信服科技股份有限公司"
+          },
+          "email": "zhouzhengde@sangfor.com"
+        },
+        {
+          "@type": "Person",
+          "name": "徐兵",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "中国交通信息科技集团有限公司"
+          },
+          "email": "xubing@ccccltd.cn"
+        },
+        {
+          "@type": "Person",
+          "name": "刘辰",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "京东科技集团"
+          },
+          "email": "liuchen12@jd.com"
+        },
+        {
+          "@type": "Person",
+          "name": "张益",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "天津南大通用数据技术股份有限公司"
+          },
+          "email": "zhangyi@gbase.cn"
+        },
+        {
+          "@type": "Person",
+          "name": "周伟然",
+          "jobTitle": "理事",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "兴业银行股份有限公司"
+          },
+          "email": "zhouwr@cib.com.cn"
+        }
+      ]
+    }
+  ]
+}

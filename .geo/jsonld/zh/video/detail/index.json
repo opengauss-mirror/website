@@ -1,0 +1,20 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "视频详情",
+  "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。",
+  "url": "https://opengauss.org/zh/video/detail/",
+  "inLanguage": "zh-CN",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss社区",
+    "url": "https://opengauss.org/zh/"
+  },
+  "keywords": ["openGauss", "开源数据库", "openGauss社区官网", "开源社区"],
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "openGauss社区官网",
+    "url": "https://opengauss.org/"
+  },
+  "note": "此页面为动态视频详情页，静态 HTML 中不包含具体视频信息（标题、日期、视频 URL、时长、封面图等）。页面通过 JavaScript 根据 URL 参数 ?id=X-Y 从 VideoConfig 数据动态加载视频内容。无法从静态 HTML 生成 VideoObject schema。"
+}

@@ -1,0 +1,470 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "openGauss",
+  "description": "openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability. openGauss is also an open source database platform that encourages community contribution and collaboration.",
+  "url": "https://opengauss.org/en/member/detail/",
+  "identifier": "Former Board of Directors",
+  "member": [
+    {
+      "@type": "Person",
+      "name": "Dayong Jiang",
+      "jobTitle": "Chair",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Huawei"
+      },
+      "email": "jiangdayong@huawei.com"
+    },
+    {
+      "@type": "Person",
+      "name": "Zhengce Hu",
+      "jobTitle": "Secretary General",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Huawei"
+      },
+      "email": "huzhengce@huawei.com"
+    },
+    {
+      "@type": "Person",
+      "name": "Guoqiang Gai",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "enmotech"
+      },
+      "email": "eygle@enmotech.com"
+    },
+    {
+      "@type": "Person",
+      "name": "Bo Gao",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "xFusion"
+      },
+      "email": "gaobo@xfusion.com"
+    },
+    {
+      "@type": "Person",
+      "name": "Yunsu Gu",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "shentongdata"
+      },
+      "email": "guyunsu@shentongdata.com"
+    },
+    {
+      "@type": "Person",
+      "name": "Zhijun Guo",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Bank of Communications Co., Ltd."
+      },
+      "email": "guo.zj@bankcomm.com"
+    },
+    {
+      "@type": "Person",
+      "name": "Feng Han",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "CCB Fintech"
+      },
+      "email": "hanfeng7766@126.com"
+    },
+    {
+      "@type": "Person",
+      "name": "Jiajia He",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Postal Savings Bank of China Co., Ltd."
+      },
+      "email": "hejiajia@psbcoa.com.cn"
+    },
+    {
+      "@type": "Person",
+      "name": "Guoliang Li",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Tsinghua University"
+      },
+      "email": "andyli1@huawei.com"
+    },
+    {
+      "@type": "Person",
+      "name": "Peiyuan Li",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "e Cloud"
+      },
+      "email": "lipeiyuan@chinatelecom.cn"
+    },
+    {
+      "@type": "Person",
+      "name": "Jin Liu",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "China National Offshore Oil Corporation"
+      },
+      "email": "liujing6@cnooc.com.cn"
+    },
+    {
+      "@type": "Person",
+      "name": "Yuzhuo Ming",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "xugu"
+      },
+      "email": "mingyz@xugudb.com"
+    },
+    {
+      "@type": "Person",
+      "name": "Yongjiang Tian",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "China Merchants Bank"
+      },
+      "email": "tianyongjiang@cmbchina.com"
+    },
+    {
+      "@type": "Person",
+      "name": "Haitao Wang",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "SuperMap Software Co., Ltd."
+      },
+      "email": "wanghaitao@supermap.com"
+    },
+    {
+      "@type": "Person",
+      "name": "Feng Xiao",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Vastbase"
+      },
+      "email": "xiaofeng@vastdata.com.cn"
+    },
+    {
+      "@type": "Person",
+      "name": "Jigang Xie",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "China United Network Communications Limited"
+      },
+      "email": "xiejg@chinaunicom.cn"
+    },
+    {
+      "@type": "Person",
+      "name": "Chunguang Yuan",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "China Minsheng Bank Corp., Ltd."
+      },
+      "email": "yuanchunguang@cmbc.com.cn"
+    },
+    {
+      "@type": "Person",
+      "name": "Chun Zhang",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "China Mobile Communications Group Co.,Ltd"
+      },
+      "email": "zhangchun@chinamobile.com"
+    },
+    {
+      "@type": "Person",
+      "name": "Chengcheng Zhong",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Sangfor Technologies Inc"
+      },
+      "email": "zhongchengcheng@sangfor.com.cn"
+    },
+    {
+      "@type": "Person",
+      "name": "Bing Xu",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "CHINA COMMUNICATIONS CONSTRUCTION"
+      },
+      "email": "xubing@ccccltd.cn"
+    },
+    {
+      "@type": "Person",
+      "name": "Chen Liu",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Jd.Com, Inc"
+      },
+      "email": "liuchen12@jd.com"
+    },
+    {
+      "@type": "Person",
+      "name": "Yi Zhang",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "General Data Technology Co.,LTD"
+      },
+      "email": "zhangyi@gbase.cn"
+    },
+    {
+      "@type": "Person",
+      "name": "Weiran Zhou",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Industrial Bank CO.,LTD"
+      },
+      "email": "zhouwr@cib.com.cn"
+    },
+    {
+      "@type": "Person",
+      "name": "Zhengce Hu",
+      "jobTitle": "Chair",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Huawei"
+      },
+      "email": "huzhengce@huawei.com"
+    },
+    {
+      "@type": "Person",
+      "name": "jikey.cai",
+      "jobTitle": "Secretary General",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Huawei"
+      },
+      "email": "jikey.cai@huawei.com"
+    },
+    {
+      "@type": "Person",
+      "name": "Guoqiang Gai",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "enmotech"
+      },
+      "email": "eygle@enmotech.com"
+    },
+    {
+      "@type": "Person",
+      "name": "Zhenyan He",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "xFusion"
+      },
+      "email": "hezhenyan@xfusion.com"
+    },
+    {
+      "@type": "Person",
+      "name": "Yunsu Gu",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "shentongdata"
+      },
+      "email": "guyunsu@shentongdata.com"
+    },
+    {
+      "@type": "Person",
+      "name": "Zhijun Guo",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Bank of Communications Co., Ltd."
+      },
+      "email": "guo.zj@bankcomm.com"
+    },
+    {
+      "@type": "Person",
+      "name": "Guorong Sun",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "CCB Fintech"
+      },
+      "email": "informixer@163.com"
+    },
+    {
+      "@type": "Person",
+      "name": "Jiajia He",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Postal Savings Bank of China Co., Ltd."
+      },
+      "email": "hejiajia@psbcoa.com.cn"
+    },
+    {
+      "@type": "Person",
+      "name": "Guoliang Li",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Tsinghua University"
+      },
+      "email": "andyli1@huawei.com"
+    },
+    {
+      "@type": "Person",
+      "name": "Peiyuan Li",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "e Cloud"
+      },
+      "email": "lipeiyuan@chinatelecom.cn"
+    },
+    {
+      "@type": "Person",
+      "name": "Jin Liu",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "China National Offshore Oil Corporation"
+      },
+      "email": "liujing6@cnooc.com.cn"
+    },
+    {
+      "@type": "Person",
+      "name": "Yuzhuo Ming",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "xugu"
+      },
+      "email": "mingyz@xugudb.com"
+    },
+    {
+      "@type": "Person",
+      "name": "Yongjiang Tian",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "China Merchants Bank"
+      },
+      "email": "tianyongjiang@cmbchina.com"
+    },
+    {
+      "@type": "Person",
+      "name": "Haitao Wang",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "SuperMap Software Co., Ltd."
+      },
+      "email": "wanghaitao@supermap.com"
+    },
+    {
+      "@type": "Person",
+      "name": "Feng Xiao",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Vastbase"
+      },
+      "email": "xiaofeng@vastdata.com.cn"
+    },
+    {
+      "@type": "Person",
+      "name": "Xin Zhong",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "China United Network Communications Limited"
+      },
+      "email": "zhongx59@chinaunicom.cn"
+    },
+    {
+      "@type": "Person",
+      "name": "Chunguang Yuan",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "China Minsheng Bank Corp., Ltd."
+      },
+      "email": "yuanchunguang@cmbc.com.cn"
+    },
+    {
+      "@type": "Person",
+      "name": "Chun Zhang",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "China Mobile Communications Group Co.,Ltd"
+      },
+      "email": "zhangchun@chinamobile.com"
+    },
+    {
+      "@type": "Person",
+      "name": "Zhengde Zhou",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Sangfor Technologies Inc"
+      },
+      "email": "zhouzhengde@sangfor.com.cn"
+    },
+    {
+      "@type": "Person",
+      "name": "Bing Xu",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "CHINA COMMUNICATIONS CONSTRUCTION"
+      },
+      "email": "xubing@ccccltd.cn"
+    },
+    {
+      "@type": "Person",
+      "name": "Chen Liu",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Jd.Com, Inc"
+      },
+      "email": "liuchen12@jd.com"
+    },
+    {
+      "@type": "Person",
+      "name": "Yi Zhang",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "General Data Technology Co.,LTD"
+      },
+      "email": "zhangyi@gbase.cn"
+    },
+    {
+      "@type": "Person",
+      "name": "Weiran Zhou",
+      "jobTitle": "Director",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Industrial Bank CO.,LTD"
+      },
+      "email": "zhouwr@cib.com.cn"
+    }
+  ]
+}

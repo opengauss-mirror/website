@@ -1,0 +1,610 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "openGauss Software Packages Archive",
+  "description": "Archive of openGauss database software packages across multiple versions including LTS, Preview, and RC releases",
+  "url": "https://opengauss.org/en/download/archive/",
+  "numberOfItems": 35,
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "openGauss 7.0.0-RC3",
+        "applicationCategory": "DatabaseApplication",
+        "operatingSystem": "Linux",
+        "releaseDate": "2026-03-30",
+        "description": "RCx: a collaborative testing version released every 6 months, with 6 months of community support.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/OnlineOnly"
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "openGauss Community",
+          "url": "https://opengauss.org"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "openGauss 7.0.0-RC2",
+        "applicationCategory": "DatabaseApplication",
+        "operatingSystem": "Linux",
+        "releaseDate": "2025-09-30",
+        "description": "RCx: a collaborative testing version released every 6 months, with 6 months of community support.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/OnlineOnly"
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "openGauss Community",
+          "url": "https://opengauss.org"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "openGauss 7.0.0-RC1",
+        "applicationCategory": "DatabaseApplication",
+        "operatingSystem": "Linux",
+        "releaseDate": "2025-03-30",
+        "description": "RCx: a collaborative testing version released every 6 months, with 6 months of community support.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/OnlineOnly"
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "openGauss Community",
+          "url": "https://opengauss.org"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "openGauss 6.0.5 (LTS)",
+        "applicationCategory": "DatabaseApplication",
+        "operatingSystem": "Linux",
+        "releaseDate": "2026-05",
+        "description": "An LTS version for openGauss 6.0.0 and later is provided with 3 years of community support, followed by additional maintenance support by oGSPs.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/OnlineOnly"
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "openGauss Community",
+          "url": "https://opengauss.org"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "openGauss 6.0.3 (LTS)",
+        "applicationCategory": "DatabaseApplication",
+        "operatingSystem": "Linux",
+        "releaseDate": "2025-12",
+        "description": "An LTS version for openGauss 6.0.0 and later is provided with 3 years of community support, followed by additional maintenance support by oGSPs.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/OnlineOnly"
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "openGauss Community",
+          "url": "https://opengauss.org"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "openGauss 6.0.2 (LTS)",
+        "applicationCategory": "DatabaseApplication",
+        "operatingSystem": "Linux",
+        "releaseDate": "2025-08",
+        "description": "An LTS version for openGauss 6.0.0 and later is provided with 3 years of community support, followed by additional maintenance support by oGSPs.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/OnlineOnly"
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "openGauss Community",
+          "url": "https://opengauss.org"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "openGauss 6.0.1 (LTS)",
+        "applicationCategory": "DatabaseApplication",
+        "operatingSystem": "Linux",
+        "releaseDate": "2025-01",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/OnlineOnly"
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "openGauss Community",
+          "url": "https://opengauss.org"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 8,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "openGauss 6.0.0 (LTS)",
+        "applicationCategory": "DatabaseApplication",
+        "operatingSystem": "Linux",
+        "releaseDate": "2024-09-30",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/OnlineOnly"
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "openGauss Community",
+          "url": "https://opengauss.org"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 9,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "openGauss 5.0.5 (LTS)",
+        "applicationCategory": "DatabaseApplication",
+        "operatingSystem": "Linux",
+        "releaseDate": "2025-12",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/OnlineOnly"
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "openGauss Community",
+          "url": "https://opengauss.org"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 10,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "openGauss 5.0.3 (LTS)",
+        "applicationCategory": "DatabaseApplication",
+        "operatingSystem": "Linux",
+        "releaseDate": "2024-08",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/OnlineOnly"
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "openGauss Community",
+          "url": "https://opengauss.org"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 11,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "openGauss 6.0.0-RC1",
+        "applicationCategory": "DatabaseApplication",
+        "operatingSystem": "Linux",
+        "releaseDate": "2024-03-30",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/OnlineOnly"
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "openGauss Community",
+          "url": "https://opengauss.org"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 12,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "openGauss 5.0.2 (LTS)",
+        "applicationCategory": "DatabaseApplication",
+        "operatingSystem": "Linux",
+        "releaseDate": "2024-05",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/OnlineOnly"
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "openGauss Community",
+          "url": "https://opengauss.org"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 13,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "openGauss 5.0.1 (LTS)",
+        "applicationCategory": "DatabaseApplication",
+        "operatingSystem": "Linux",
+        "releaseDate": "2023-12",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/OnlineOnly"
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "openGauss Community",
+          "url": "https://opengauss.org"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 14,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "openGauss 5.1.0 (Preview)",
+        "applicationCategory": "DatabaseApplication",
+        "operatingSystem": "Linux",
+        "releaseDate": "2023-06-30",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/OnlineOnly"
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "openGauss Community",
+          "url": "https://opengauss.org"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 15,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "openGauss 5.0.0 (LTS)",
+        "applicationCategory": "DatabaseApplication",
+        "operatingSystem": "Linux",
+        "releaseDate": "2023-03-30",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/OnlineOnly"
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "openGauss Community",
+          "url": "https://opengauss.org"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 16,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "openGauss 3.1.1 (Preview)",
+        "applicationCategory": "DatabaseApplication",
+        "operatingSystem": "Linux",
+        "releaseDate": "2022-12",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/OnlineOnly"
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "openGauss Community",
+          "url": "https://opengauss.org"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 17,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "openGauss 3.1.0 (Preview)",
+        "applicationCategory": "DatabaseApplication",
+        "operatingSystem": "Linux",
+        "releaseDate": "2022-09-30",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/OnlineOnly"
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "openGauss Community",
+          "url": "https://opengauss.org"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 18,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "openGauss 3.0.6 (LTS)",
+        "applicationCategory": "DatabaseApplication",
+        "operatingSystem": "Linux",
+        "releaseDate": "2024-12",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/OnlineOnly"
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "openGauss Community",
+          "url": "https://opengauss.org"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 19,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "openGauss 3.0.5 (LTS)",
+        "applicationCategory": "DatabaseApplication",
+        "operatingSystem": "Linux",
+        "releaseDate": "2024-01",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/OnlineOnly"
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "openGauss Community",
+          "url": "https://opengauss.org"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 20,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "openGauss 3.0.3 (LTS)",
+        "applicationCategory": "DatabaseApplication",
+        "operatingSystem": "Linux",
+        "releaseDate": "2023-03",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/OnlineOnly"
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "openGauss Community",
+          "url": "https://opengauss.org"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 21,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "openGauss 3.0.0 (LTS)",
+        "applicationCategory": "DatabaseApplication",
+        "operatingSystem": "Linux",
+        "releaseDate": "2022-03-30",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/OnlineOnly"
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "openGauss Community",
+          "url": "https://opengauss.org"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 22,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "openGauss 2.1.0 (Preview)",
+        "applicationCategory": "DatabaseApplication",
+        "operatingSystem": "Linux",
+        "releaseDate": "2021-06-30",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/OnlineOnly"
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "openGauss Community",
+          "url": "https://opengauss.org"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 23,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "openGauss 2.0.1 (LTS)",
+        "applicationCategory": "DatabaseApplication",
+        "operatingSystem": "Linux",
+        "releaseDate": "2021-06",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/OnlineOnly"
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "openGauss Community",
+          "url": "https://opengauss.org"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 24,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "openGauss 2.0.0 (LTS)",
+        "applicationCategory": "DatabaseApplication",
+        "operatingSystem": "Linux",
+        "releaseDate": "2021-03-30",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/OnlineOnly"
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "openGauss Community",
+          "url": "https://opengauss.org"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 25,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "openGauss 1.1.0 (Preview)",
+        "applicationCategory": "DatabaseApplication",
+        "operatingSystem": "Linux",
+        "releaseDate": "2020-12",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/OnlineOnly"
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "openGauss Community",
+          "url": "https://opengauss.org"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 26,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "openGauss 1.0.1 (LTS)",
+        "applicationCategory": "DatabaseApplication",
+        "operatingSystem": "Linux",
+        "releaseDate": "2020-09",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/OnlineOnly"
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "openGauss Community",
+          "url": "https://opengauss.org"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 27,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "openGauss 1.0.0 (LTS)",
+        "applicationCategory": "DatabaseApplication",
+        "operatingSystem": "Linux",
+        "releaseDate": "2020-06",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/OnlineOnly"
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "openGauss Community",
+          "url": "https://opengauss.org"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "title": "陕西省财政厅 | 预算管理系统 | openGauss",
+  "description": "陕西省财政厅采用GaussDB(for openGauss)分布式数据库，为预算管理一体化核心业务系统打造企业级数据库平台，支撑全省3万家单位资金支付电子化，支付数据直接记账，效率提升80%。",
+  "keywords": "陕西省财政厅,预算管理系统,分布式数据库,GaussDB,openGauss,企业级数据库"
+}

@@ -1,0 +1,64 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "",
+      "name": "结队计划",
+      "description": "openGauss社区\"结队计划\"是一个开放的社区项目，鼓励社区用户积极使用openGauss数据库，社区提供完备的支撑",
+      "inLanguage": "zh-CN",
+      "about": {
+        "@type": "Organization",
+        "name": "openGauss",
+        "description": "高性能、高安全、高可用、高智能的企业级开源关系数据库"
+      }
+    },
+    {
+      "@type": "HowTo",
+      "name": "结队计划申请流程",
+      "description": "openGauss社区\"结队计划\"申请流程，包含提交申请、信息审核、形成结队、维护结队四个步骤",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "提交申请",
+          "text": "提交申请，包括用户使用场景和用户部署规模",
+          "itemListElement": [
+            {
+              "@type": "HowToDirection",
+              "text": "用户使用场景"
+            },
+            {
+              "@type": "HowToDirection",
+              "text": "用户部署规模"
+            }
+          ]
+        },
+        {
+          "@type": "HowToStep",
+          "name": "信息审核",
+          "text": "用户提交的申请进入业务支撑资源池，业务支撑团队审核用户申请",
+          "itemListElement": [
+            {
+              "@type": "HowToDirection",
+              "text": "用户提交的申请进入业务支撑资源池"
+            },
+            {
+              "@type": "HowToDirection",
+              "text": "业务支撑团队审核用户申请"
+            }
+          ]
+        },
+        {
+          "@type": "HowToStep",
+          "name": "形成\"结队\"",
+          "text": "按照业务支撑团队答复先后顺序，和用户形成\"结队\"，专项支撑"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "维护\"结队\"",
+          "text": "与用户形成结队的支撑团队，持续提供支撑解决用户的问题"
+        }
+      ]
+    }
+  ]
+}

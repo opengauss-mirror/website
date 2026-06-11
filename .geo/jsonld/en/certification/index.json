@@ -1,0 +1,56 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://opengauss.org/en/certification/#webpage",
+      "url": "https://opengauss.org/en/certification/",
+      "name": "Distribution Certification",
+      "description": "openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability. openGauss is also an open source database platform that encourages community contribution and collaboration.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://opengauss.org/#website"
+      },
+      "about": {
+        "@id": "https://opengauss.org/en/certification/#service"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://opengauss.org/en/certification/#service",
+      "name": "Distribution Certification Service",
+      "description": "openGauss provides a complete test process for commercial release certification.",
+      "provider": {
+        "@id": "https://opengauss.org/#organization"
+      },
+      "serviceType": "Commercial Release Certification",
+      "url": "https://opengauss.org/en/certification/",
+      "sameAs": "https://gitcode.com/opengauss/distribution-certification"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://opengauss.org/#organization",
+      "name": "openGauss",
+      "url": "https://opengauss.org/",
+      "description": "openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability. openGauss is also an open source database platform that encourages community contribution and collaboration.",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://opengauss.org/assets/logo_dark.CElWqwW0.svg"
+      },
+      "sameAs": [
+        "https://gitcode.com/opengauss/distribution-certification"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://opengauss.org/#website",
+      "url": "https://opengauss.org/",
+      "name": "openGauss",
+      "description": "openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability. openGauss is also an open source database platform that encourages community contribution and collaboration.",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://opengauss.org/#organization"
+      }
+    }
+  ]
+}

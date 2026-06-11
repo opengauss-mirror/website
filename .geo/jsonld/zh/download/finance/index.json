@@ -1,0 +1,55 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "openGauss Finance 5.0.1",
+  "alternateName": "openGauss金融版",
+  "version": "5.0.1",
+  "applicationCategory": "DatabaseApplication",
+  "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。",
+  "operatingSystem": [
+    "openEuler 22.03 LTS",
+    "openEuler 20.03 LTS",
+    "CentOS 7.6",
+    "Windows",
+    "Linux"
+  ],
+  "softwareVersion": "5.0.1",
+  "releaseNotes": "LTS版本",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "CNY",
+    "availability": "https://schema.org/InStock"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "openGauss社区",
+    "url": "https://opengauss.org"
+  },
+  "softwareHelp": {
+    "@type": "TechArticle",
+    "name": "金融版安装指南",
+    "url": "https://docs.opengauss.org/zh/docs/5.0.0/docs/InstallationGuide/企业版安装.html"
+  },
+  "downloadUrl": [
+    "https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.1/finance/arm_2203/openGauss-Finance-5.0.1-openEuler-64bit-all.tar.gz",
+    "https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.1/finance/x86_openEuler_2203/openGauss-Finance-5.0.1-openEuler-64bit-all.tar.gz",
+    "https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.1/finance/arm/openGauss-Finance-5.0.1-openEuler-64bit-all.tar.gz",
+    "https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.1/finance/x86_openEuler/openGauss-Finance-5.0.1-openEuler-64bit-all.tar.gz",
+    "https://opengauss.obs.cn-south-1.myhuaweicloud.com/5.0.1/finance/x86/openGauss-Finance-5.0.1-CentOS-64bit-all.tar.gz"
+  ],
+  "fileSize": [
+    "120.9MB",
+    "126.78MB",
+    "120.95MB",
+    "126.80MB",
+    "126.91MB"
+  ],
+  "license": "https://opengauss.org/zh/legal/",
+  "copyrightHolder": {
+    "@type": "Organization",
+    "name": "openGauss"
+  },
+  "url": "https://opengauss.org/zh/download/finance/",
+  "inLanguage": "zh-CN"
+}

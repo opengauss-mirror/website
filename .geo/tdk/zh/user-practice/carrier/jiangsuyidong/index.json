@@ -1,0 +1,5 @@
+{
+  "title": "江苏移动案例 | 运营商实践 | openGauss",
+  "description": "江苏移动零售系统采用PanWeiDB数据库，基于openGauss内核完成MySQL迁移改造，实现全栈自主创新。PanWeiDB提供高可用性、分布式能力和MySQL兼容性，系统开发适配效率提升50%，运行效率提升45%。",
+  "keywords": "江苏移动,PanWeiDB,openGauss,数据库迁移,MySQL兼容,运营商实践,零售系统,高可用"
+}

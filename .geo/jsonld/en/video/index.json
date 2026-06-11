@@ -1,0 +1,219 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Videos",
+  "description": "openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability. openGauss is also an open source database platform that encourages community contribution and collaboration.",
+  "numberOfItems": 42,
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "openGauss资源池化系列"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "openGauss资源池化内核开发适配指导"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "openGauss 3.1.0 发布订阅能力增强详解"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "openGauss 3.0.0 重点特性总览"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "如何使用Kubernetes一键式部署openGauss分布式数据库"
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "name": "DataStudio开发与使用"
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "name": "openGauss分布式存储组件DSS的用法与实现"
+    },
+    {
+      "@type": "ListItem",
+      "position": 8,
+      "name": "openGauss数据库备份与恢复"
+    },
+    {
+      "@type": "ListItem",
+      "position": 9,
+      "name": "openGauss内存问题定位方法分享"
+    },
+    {
+      "@type": "ListItem",
+      "position": 10,
+      "name": "openGauss资源池化安装部署"
+    },
+    {
+      "@type": "ListItem",
+      "position": 11,
+      "name": "MySQL->openGauss数据迁移校验工具"
+    },
+    {
+      "@type": "ListItem",
+      "position": 12,
+      "name": "Datakit数据迁移能力详解"
+    },
+    {
+      "@type": "ListItem",
+      "position": 13,
+      "name": "openGauss 3.1.0 statement_history 视图诊断能力增强"
+    },
+    {
+      "@type": "ListItem",
+      "position": 14,
+      "name": "openGauss指定节点升级功能"
+    },
+    {
+      "@type": "ListItem",
+      "position": 15,
+      "name": "openGauss 3.0.0单实例和集群安装部署介绍"
+    },
+    {
+      "@type": "ListItem",
+      "position": 16,
+      "name": "禹贡（Yukon）空间数据库技术特色及应用范围介绍"
+    },
+    {
+      "@type": "ListItem",
+      "position": 17,
+      "name": "MySQL到openGauss 3.1.0全量数据迁移性能提升了多少？"
+    },
+    {
+      "@type": "ListItem",
+      "position": 18,
+      "name": "openGauss 3.1.0如何实现行存表压缩能力增强？"
+    },
+    {
+      "@type": "ListItem",
+      "position": 19,
+      "name": "openGauss 3.1.0 智能优化器做了哪些优化？"
+    },
+    {
+      "@type": "ListItem",
+      "position": 20,
+      "name": "如何实现从MySQL到openGauss 3.1.0的增量迁移？"
+    },
+    {
+      "@type": "ListItem",
+      "position": 21,
+      "name": "openGauss的自治运维平台DBMind实践分享"
+    },
+    {
+      "@type": "ListItem",
+      "position": 22,
+      "name": "openGauss的并行逻辑解码"
+    },
+    {
+      "@type": "ListItem",
+      "position": 23,
+      "name": "如何在软硬件资源受限场景使用openGauss"
+    },
+    {
+      "@type": "ListItem",
+      "position": 24,
+      "name": "openGauss驱动 psycopg2 批量操作方案及性能对比"
+    },
+    {
+      "@type": "ListItem",
+      "position": 25,
+      "name": "openGauss审计实战"
+    },
+    {
+      "@type": "ListItem",
+      "position": 26,
+      "name": "openGauss与新型硬件NVM"
+    },
+    {
+      "@type": "ListItem",
+      "position": 27,
+      "name": "基于openGauss的开源分布式解决方案"
+    },
+    {
+      "@type": "ListItem",
+      "position": 28,
+      "name": "openGauss的干货第1期——openGauss的过去、现在和未来"
+    },
+    {
+      "@type": "ListItem",
+      "position": 29,
+      "name": "openGauss的干货第3期——开源社区基础设施的实践与应用"
+    },
+    {
+      "@type": "ListItem",
+      "position": 30,
+      "name": "【西安DevOps Meetup | 线上录播回顾】openGauss：把企业级数据库能力带给用户"
+    },
+    {
+      "@type": "ListItem",
+      "position": 31,
+      "name": "openGauss的干货第4期——openGauss高吞吐低时延存储模式"
+    },
+    {
+      "@type": "ListItem",
+      "position": 32,
+      "name": "绿盟杯直播（1）—openGauss数据库技术与应用"
+    },
+    {
+      "@type": "ListItem",
+      "position": 33,
+      "name": "绿盟杯直播（2）—openGauss深度解读"
+    },
+    {
+      "@type": "ListItem",
+      "position": 34,
+      "name": "2020 中国DBA联盟（ACdu ）首场活动—中国DBA面临的新挑战和新机遇"
+    },
+    {
+      "@type": "ListItem",
+      "position": 35,
+      "name": "openGauss的干货第7期——鲲鹏性能优化之三 线程绑核"
+    },
+    {
+      "@type": "ListItem",
+      "position": 36,
+      "name": "OSC源创会：openGauss不只是开源数据库"
+    },
+    {
+      "@type": "ListItem",
+      "position": 37,
+      "name": "openGauss的干货第10期——openGauss智能SQL时间预测的应用和展望"
+    },
+    {
+      "@type": "ListItem",
+      "position": 38,
+      "name": "openGauss的干货第11期——openGauss客户端工具Data Studio介绍"
+    },
+    {
+      "@type": "ListItem",
+      "position": 39,
+      "name": "openGauss的干货第12期——玩转存储过程调试工具pldebugger"
+    },
+    {
+      "@type": "ListItem",
+      "position": 40,
+      "name": "openGauss的干货第15期——openGauss与PostgreSQL差异对比"
+    },
+    {
+      "@type": "ListItem",
+      "position": 41,
+      "name": "openGauss的干货第16期——openGauss SQL调优介绍"
+    },
+    {
+      "@type": "ListItem",
+      "position": 42,
+      "name": "openGauss的干货第17期——openGauss检查点、双写及缓存原理介绍"
+    }
+  ]
+}

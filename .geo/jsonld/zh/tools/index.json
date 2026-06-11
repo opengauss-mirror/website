@@ -1,0 +1,235 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "工具中心",
+  "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。",
+  "keywords": "openGauss,开源数据库,openGauss社区官网,开源社区",
+  "url": "https://opengauss.org/zh/tools/",
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "openGauss工具集",
+    "description": "主要面向开发者和ISV，提供六大类开发工具：客户端工具、数据导入导出工具、数据复制/同步工具、监控运维接口及工具集、备份恢复接口及工具集、通用数据框架",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "psycopg2",
+          "description": "openGauss Python驱动（仅限Linux）",
+          "applicationCategory": "标准SQL及驱动",
+          "url": "https://gitcode.com/opengauss/openGauss-connector-python-psycopg2/"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "py-og",
+          "description": "openGauss Python驱动（纯Python，可跨平台）",
+          "applicationCategory": "标准SQL及驱动",
+          "url": "https://gitcode.com/opengauss/openGauss-connector-python-pyog"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "go-pq",
+          "description": "openGauss Go语言驱动",
+          "applicationCategory": "标准SQL及驱动",
+          "url": "https://gitcode.com/opengauss/openGauss-connector-go-pq"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "ShardingSphere",
+          "description": "分布式数据库中间件",
+          "applicationCategory": "数据访问中间件",
+          "url": "https://github.com/apache/shardingsphere"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "HAProxy",
+          "description": "数据库读写负载均衡",
+          "applicationCategory": "数据访问中间件",
+          "url": "https://github.com/haproxy/haproxy"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "vip-manager",
+          "description": "自动IP故障转移",
+          "applicationCategory": "数据访问中间件",
+          "url": "https://github.com/cybertec-postgresql/vip-manager"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 7,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "Kubernetes",
+          "description": "一个开源的容器集群管理平台",
+          "applicationCategory": "集群管理软件",
+          "url": "https://github.com/kubernetes/kubernetes"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 8,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "Patroni",
+          "description": "自动主备切换，提升数据库可用性",
+          "applicationCategory": "集群管理软件",
+          "url": "https://github.com/zalando/patroni"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 9,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "Ora2Pg",
+          "description": "Oracle到openGauss数据迁移工具",
+          "applicationCategory": "数据导入导出工具",
+          "url": "https://gitcode.com/opengauss/openGauss-tools-ora2og"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 10,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "pg_chameleon",
+          "description": "MySQL到openGauss数据迁移工具",
+          "applicationCategory": "数据导入导出工具",
+          "url": "https://gitcode.com/opengauss/openGauss-tools-chameleon"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 11,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "pgloader",
+          "description": "一个数据导入工具，使用COPY命令将数据导入到openGauss",
+          "applicationCategory": "数据导入导出工具",
+          "url": "https://gitcode.com/opengauss/openGauss-tools-loader"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 12,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "JdbcPgBackup",
+          "description": "基于Java的跨平台数据导入导出工具，类似于pg_dump/pg_restore",
+          "applicationCategory": "数据复制/同步工具",
+          "url": "https://github.com/tig100/JdbcPgBackup"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 13,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "Database-Sync",
+          "description": "基于Java开发，功能强大、配置灵活的数据库之间同步工具",
+          "applicationCategory": "数据复制/同步工具",
+          "url": "https://github.com/GongDexing/database-sync"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 14,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "Debezium",
+          "description": "为捕获数据更改（Change Data Capture, CDC）提供了一个低延迟的流式处理平台",
+          "applicationCategory": "数据复制/同步工具",
+          "url": "https://github.com/debezium/debezium"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 15,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "PowerDesigner",
+          "description": "灵活的分析和设计特性允许使用一种结构化的方法有效地创建数据库或数据仓库",
+          "applicationCategory": "运行视图",
+          "url": "https://www.sap.com/products/database-data-management.html"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 16,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "DBeaver",
+          "description": "开源多数据库客户端工具",
+          "applicationCategory": "客户端工具",
+          "url": "https://github.com/dbeaver/dbeaver"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 17,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "Data Studio",
+          "description": "openGauss官方客户端工具",
+          "applicationCategory": "客户端工具",
+          "url": "https://gitcode.com/opengauss/DataStudio"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 18,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "Zabbix",
+          "description": "实时监控的IT组件和服务",
+          "applicationCategory": "监控运维系统",
+          "url": "https://github.com/zabbix/zabbix"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 19,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "Prometheus",
+          "description": "开源监控系统，在记录纯数字时间序列方面表现非常出色",
+          "applicationCategory": "监控运维系统",
+          "url": "https://github.com/prometheus/prometheus"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 20,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "禹贡",
+          "description": "提供专业的GIS（Geographic Information System）能力",
+          "applicationCategory": "内核扩展",
+          "url": "https://gitcode.com/opengauss/Yukon"
+        }
+      }
+    ]
+  }
+}

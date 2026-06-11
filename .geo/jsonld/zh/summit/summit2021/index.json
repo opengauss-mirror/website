@@ -1,0 +1,192 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "openGauss Summit 2021",
+  "description": "openGauss Summit 2021 是由openGauss开源社区发起并举办的年度开源数据库技术盛会。openGauss作为面向企业核心应用场景的开源数据库，开源以来快速发展。本次大会旨在与产业界通过技术创新、生态构建、商业推广、开源建设和人才发展等方面的合作，共同驱动数据库无界创新，合力创造行业用户数据新价值。学术专家、行业用户、合作伙伴和社区贡献者齐聚openGauss峰会，共同探讨数据库技术与行业数字化转型过程的融合创新，展现开源数据库最新的创新技术和多元化开放生态。",
+  "startDate": "2021-12-28T09:28",
+  "endDate": "2021-12-28T17:30",
+  "eventStatus": "https://schema.org/EventEnded",
+  "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+  "location": {
+    "@type": "VirtualLocation",
+    "url": "https://opengauss.org/zh/summit/summit2021/"
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": "openGauss社区",
+    "url": "https://opengauss.org"
+  },
+  "subEvent": [
+    {
+      "@type": "Event",
+      "name": "openGauss Summit 2021主论坛",
+      "startDate": "2021-12-28T09:28",
+      "endDate": "2021-12-28T11:50",
+      "eventStatus": "https://schema.org/EventEnded",
+      "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+      "location": {
+        "@type": "VirtualLocation",
+        "name": "openGauss Summit 2021主会场"
+      }
+    },
+    {
+      "@type": "Event",
+      "name": "openGauss Summit 2021分论坛",
+      "startDate": "2021-12-28T14:00",
+      "endDate": "2021-12-28T17:30",
+      "eventStatus": "https://schema.org/EventEnded",
+      "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode"
+    }
+  ],
+  "performer": [
+    {
+      "@type": "Person",
+      "name": "廖湘科",
+      "jobTitle": "中国工程院院士"
+    },
+    {
+      "@type": "Person",
+      "name": "高宏",
+      "jobTitle": "哈尔滨工业大学教授，数据库专业委员会副主任"
+    },
+    {
+      "@type": "Person",
+      "name": "江大勇",
+      "jobTitle": "openGauss社区理事长"
+    },
+    {
+      "@type": "Person",
+      "name": "李国良",
+      "jobTitle": "openGauss社区技术委员会主席，清华大学计算机学院副主任"
+    },
+    {
+      "@type": "Person",
+      "name": "何佳佳",
+      "jobTitle": "中国邮政储蓄银行金融科技创新部主任工程师"
+    },
+    {
+      "@type": "Person",
+      "name": "童咏昕",
+      "jobTitle": "北航计算机学院教授"
+    }
+  ],
+  "sponsor": [
+    {
+      "@type": "Organization",
+      "name": "中国软件行业协会",
+      "category": "指导单位"
+    },
+    {
+      "@type": "Organization",
+      "name": "数据库专业委员会",
+      "category": "指导单位"
+    },
+    {
+      "@type": "Organization",
+      "name": "opengauss",
+      "category": "主办单位"
+    },
+    {
+      "@type": "Organization",
+      "name": "华为",
+      "category": "联合主办"
+    },
+    {
+      "@type": "Organization",
+      "name": "中国移动",
+      "category": "联合主办"
+    },
+    {
+      "@type": "Organization",
+      "name": "中国电信",
+      "category": "联合主办"
+    },
+    {
+      "@type": "Organization",
+      "name": "中国联通",
+      "category": "联合主办"
+    },
+    {
+      "@type": "Organization",
+      "name": "招商银行",
+      "category": "联合主办"
+    },
+    {
+      "@type": "Organization",
+      "name": "华夏银行",
+      "category": "联合主办"
+    },
+    {
+      "@type": "Organization",
+      "name": "建信金科",
+      "category": "联合主办"
+    },
+    {
+      "@type": "Organization",
+      "name": "海量数据",
+      "category": "联合主办"
+    },
+    {
+      "@type": "Organization",
+      "name": "云和恩墨",
+      "category": "联合主办"
+    },
+    {
+      "@type": "Organization",
+      "name": "神舟通用",
+      "category": "联合主办"
+    },
+    {
+      "@type": "Organization",
+      "name": "深信服科技",
+      "category": "联合主办"
+    },
+    {
+      "@type": "Organization",
+      "name": "SuperMap",
+      "category": "联合主办"
+    },
+    {
+      "@type": "Organization",
+      "name": "虚谷伟业",
+      "category": "联合主办"
+    },
+    {
+      "@type": "Organization",
+      "name": "天津南大通用数据技术股份有限公司",
+      "category": "联合主办"
+    },
+    {
+      "@type": "Organization",
+      "name": "柏睿数据",
+      "category": "联合主办"
+    },
+    {
+      "@type": "Organization",
+      "name": "优炫软件",
+      "category": "联合主办"
+    },
+    {
+      "@type": "Organization",
+      "name": "亚信科技",
+      "category": "联合主办"
+    },
+    {
+      "@type": "Organization",
+      "name": "星瑞格软件",
+      "category": "联合主办"
+    },
+    {
+      "@type": "Organization",
+      "name": "快立方",
+      "category": "联合主办"
+    },
+    {
+      "@type": "Organization",
+      "name": "北京太阳塔信息科技有限责任公司",
+      "category": "联合主办"
+    }
+  ],
+  "inLanguage": "zh-CN",
+  "url": "https://opengauss.org/zh/summit/summit2021/"
+}

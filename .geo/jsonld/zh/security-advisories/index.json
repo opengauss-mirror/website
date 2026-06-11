@@ -1,0 +1,23 @@
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "安全公告",
+  "description": "您可以在此处查询安全公告的相关信息。",
+  "keywords": [
+    "openGauss",
+    "开源数据库",
+    "openGauss社区官网",
+    "开源社区"
+  ],
+  "inLanguage": "zh-CN",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "openGauss社区官网",
+    "url": "https://opengauss.org/zh/"
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "安全公告列表",
+    "description": "openGauss社区安全公告集合"
+  }
+}

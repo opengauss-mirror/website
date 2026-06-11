@@ -1,0 +1,372 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "openGauss Developer Day 2022",
+  "description": "openGauss Developer Day 2022是openGauss社区发起并举办的数据库开发者年度盛会。openGauss社区开源2年来，已在技术、生态、商业和社区治理等方面发展显著。为践行openGauss社区共建、共享、共治的理念，打造中国最具创新力的开源数据库根社区，大会诚邀学术专家，行业用户，合作伙伴，开发者共同探讨数据库面向多场景的技术创新，分享基于openGauss的行业联合创新成果及商业实践，献计社区治理完善，讨论社区版本规划。openGauss诚邀开发者齐参与，同贡献，释放开源数据库创新力量。",
+  "startDate": "2022-07-14T13:30",
+  "endDate": "2022-07-15T18:00",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+  "organizer": {
+    "@type": "Organization",
+    "name": "openGauss社区",
+    "url": "https://opengauss.org"
+  },
+  "sponsors": [
+    {
+      "@type": "Organization",
+      "name": "数据库专业委员会",
+      "role": "指导单位"
+    },
+    {
+      "@type": "Organization",
+      "name": "openGauss",
+      "role": "主办单位"
+    },
+    {
+      "@type": "Organization",
+      "name": "海量数据",
+      "role": "联合主办"
+    },
+    {
+      "@type": "Organization",
+      "name": "云和恩墨",
+      "role": "联合主办"
+    },
+    {
+      "@type": "Organization",
+      "name": "东方通",
+      "role": "联合主办"
+    },
+    {
+      "@type": "Organization",
+      "name": "清华大学",
+      "role": "联合主办"
+    },
+    {
+      "@type": "Organization",
+      "name": "中国移动",
+      "role": "协办单位"
+    },
+    {
+      "@type": "Organization",
+      "name": "中国联通",
+      "role": "协办单位"
+    },
+    {
+      "@type": "Organization",
+      "name": "SuperMap",
+      "role": "协办单位"
+    },
+    {
+      "@type": "Organization",
+      "name": "神舟通用",
+      "role": "协办单位"
+    },
+    {
+      "@type": "Organization",
+      "name": "天津南大通用数据技术股份有限公司",
+      "role": "协办单位"
+    },
+    {
+      "@type": "Organization",
+      "name": "超聚变",
+      "role": "协办单位"
+    },
+    {
+      "@type": "Organization",
+      "name": "虚谷伟业",
+      "role": "协办单位"
+    },
+    {
+      "@type": "Organization",
+      "name": "北京太阳塔信息科技有限责任公司",
+      "role": "协办单位"
+    },
+    {
+      "@type": "Organization",
+      "name": "SphereEx",
+      "role": "协办单位"
+    },
+    {
+      "@type": "Organization",
+      "name": "宝兰德",
+      "role": "协办单位"
+    },
+    {
+      "@type": "Organization",
+      "name": "普元信息技术股份有限公司",
+      "role": "协办单位"
+    },
+    {
+      "@type": "Organization",
+      "name": "深圳市金蝶天燕云计算股份有限公司",
+      "role": "协办单位"
+    },
+    {
+      "@type": "Organization",
+      "name": "北京鲲鹏",
+      "role": "协办单位"
+    },
+    {
+      "@type": "Organization",
+      "name": "甘肃鲲鹏",
+      "role": "协办单位"
+    },
+    {
+      "@type": "Organization",
+      "name": "河南鲲鹏",
+      "role": "协办单位"
+    }
+  ],
+  "performers": [
+    {
+      "@type": "Person",
+      "name": "李战怀",
+      "jobTitle": "中国计算机学会数据库专委会主任"
+    },
+    {
+      "@type": "Person",
+      "name": "江大勇",
+      "jobTitle": "openGauss社区理事会理事长"
+    },
+    {
+      "@type": "Person",
+      "name": "胡正策",
+      "jobTitle": "openGauss社区秘书长"
+    },
+    {
+      "@type": "Person",
+      "name": "李国良",
+      "jobTitle": "openGauss社区技术委员会主席、清华大学教授"
+    },
+    {
+      "@type": "Person",
+      "name": "黄凯耀",
+      "jobTitle": "openGauss社区技术委员会委员、openGauss开源数据库首席架构师"
+    },
+    {
+      "@type": "Person",
+      "name": "何佳佳",
+      "jobTitle": "中国邮政储蓄银行金融科技创新部主任工程师"
+    },
+    {
+      "@type": "Person",
+      "name": "张建荣",
+      "jobTitle": "联通数字科技有限公司高级副总裁"
+    },
+    {
+      "@type": "Person",
+      "name": "袁春光",
+      "jobTitle": "民生银行信息科技部系统管理中心处长"
+    },
+    {
+      "@type": "Person",
+      "name": "张亮",
+      "jobTitle": "SphereEx CEO、Apache ShardingSphere PMC Chair"
+    },
+    {
+      "@type": "Person",
+      "name": "周芹",
+      "jobTitle": "超图研究院内核研发中心产品总监"
+    },
+    {
+      "@type": "Person",
+      "name": "王振伟",
+      "jobTitle": "海量数据联席总裁"
+    },
+    {
+      "@type": "Person",
+      "name": "黄晓涛",
+      "jobTitle": "海量数据研究院副院长"
+    },
+    {
+      "@type": "Person",
+      "name": "窦志彤",
+      "jobTitle": "海量数据北京研究所所长"
+    },
+    {
+      "@type": "Person",
+      "name": "万丹",
+      "jobTitle": "北京大学城市规划与设计学院博士"
+    },
+    {
+      "@type": "Person",
+      "name": "吴兴雄",
+      "jobTitle": "海量数据高级工程师"
+    },
+    {
+      "@type": "Person",
+      "name": "张皖川",
+      "jobTitle": "云和恩墨数据库内核研发团队负责人"
+    },
+    {
+      "@type": "Person",
+      "name": "陈浩",
+      "jobTitle": "华为高斯实验室SQL引擎技术专家、openGauss Maintainer、Apache Doris PMC"
+    },
+    {
+      "@type": "Person",
+      "name": "罗拉全",
+      "jobTitle": "云和恩墨数据库内核研发工程师"
+    },
+    {
+      "@type": "Person",
+      "name": "刘哲理",
+      "jobTitle": "南开大学计算机学院副院长、网络空间安全学院副院长、中国中文信息学会大数据安全与隐私计算专委会秘书长"
+    },
+    {
+      "@type": "Person",
+      "name": "王春玲",
+      "jobTitle": "云和恩墨数据库内核研发工程师"
+    },
+    {
+      "@type": "Person",
+      "name": "杨浩",
+      "jobTitle": "云和恩墨数据库内核研发工程师"
+    },
+    {
+      "@type": "Person",
+      "name": "张荃",
+      "jobTitle": "北京东方通软件有限公司生态发展部总经理"
+    },
+    {
+      "@type": "Person",
+      "name": "李利军",
+      "jobTitle": "北京东方通科技股份有限公司集团执行副总裁、北京东方通软件有限公司总经理"
+    },
+    {
+      "@type": "Person",
+      "name": "曾鹏冰",
+      "jobTitle": "北京东方通软件有限公司资深技术咨询总监"
+    },
+    {
+      "@type": "Person",
+      "name": "顾云苏",
+      "jobTitle": "神舟通用总裁"
+    },
+    {
+      "@type": "Person",
+      "name": "徐戟（白鳝）",
+      "jobTitle": "南京基石数据技术有限责任公司、深圳鲲鹏产业联盟高级顾问"
+    },
+    {
+      "@type": "Person",
+      "name": "李聪",
+      "jobTitle": "云和恩墨战略客户架构部总经理"
+    },
+    {
+      "@type": "Person",
+      "name": "吴伟杰",
+      "jobTitle": "Apache ShardingSphere PMC、SphereEx 基础设施研发工程师"
+    },
+    {
+      "@type": "Person",
+      "name": "张勇",
+      "jobTitle": "清华大学副研究员、可信软件与大数据研究部"
+    },
+    {
+      "@type": "Person",
+      "name": "李文杰",
+      "jobTitle": "北京大学博士后"
+    },
+    {
+      "@type": "Person",
+      "name": "李超",
+      "jobTitle": "清华大学信息国家研究中心副研究员"
+    },
+    {
+      "@type": "Person",
+      "name": "罗海雄",
+      "jobTitle": "云和恩墨数据库资深技术专家"
+    }
+  ],
+  "subEvent": [
+    {
+      "@type": "Event",
+      "name": "技术委员会工作会议",
+      "startDate": "2022-07-14T13:30",
+      "endDate": "2022-07-14T15:30",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
+    },
+    {
+      "@type": "Event",
+      "name": "用户委员会工作会议",
+      "startDate": "2022-07-14T13:30",
+      "endDate": "2022-07-14T15:30",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
+    },
+    {
+      "@type": "Event",
+      "name": "品牌宣传委员会工作会议",
+      "startDate": "2022-07-14T13:30",
+      "endDate": "2022-07-14T15:30",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
+    },
+    {
+      "@type": "Event",
+      "name": "理事会闭门会议",
+      "startDate": "2022-07-14T15:30",
+      "endDate": "2022-07-14T17:30",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
+    },
+    {
+      "@type": "Event",
+      "name": "主论坛",
+      "startDate": "2022-07-15T09:30",
+      "endDate": "2022-07-15T11:45",
+      "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode"
+    },
+    {
+      "@type": "Event",
+      "name": "数据库内核优化探秘",
+      "description": "联合主办：北京海量数据技术股份有限公司",
+      "startDate": "2022-07-15T13:30",
+      "endDate": "2022-07-15T15:10",
+      "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode"
+    },
+    {
+      "@type": "Event",
+      "name": "数据库内核SQL Engine",
+      "description": "联合主办：云和恩墨（北京）信息技术有限公司",
+      "startDate": "2022-07-15T13:30",
+      "endDate": "2022-07-15T15:25",
+      "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode"
+    },
+    {
+      "@type": "Event",
+      "name": "生态工具",
+      "description": "联合主办：北京东方通科技股份有限公司",
+      "startDate": "2022-07-15T13:30",
+      "endDate": "2022-07-15T15:20",
+      "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode"
+    },
+    {
+      "@type": "Event",
+      "name": "多模态",
+      "description": "联合主办：清华大学",
+      "startDate": "2022-07-15T13:30",
+      "endDate": "2022-07-15T14:40",
+      "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode"
+    },
+    {
+      "@type": "Event",
+      "name": "SIG组版本规划工作会议",
+      "startDate": "2022-07-15T16:00",
+      "endDate": "2022-07-15T18:00",
+      "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode"
+    }
+  ],
+  "about": {
+    "@type": "Thing",
+    "name": "openGauss",
+    "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。"
+  },
+  "keywords": [
+    "openGauss",
+    "开源数据库",
+    "开发者大会",
+    "数据库",
+    "技术峰会"
+  ]
+}

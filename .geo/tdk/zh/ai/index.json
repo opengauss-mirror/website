@@ -1,0 +1,5 @@
+{
+  "title": "RAG专区 | openGauss",
+  "description": "RAG专区介绍检索增强生成(RAG)技术,结合openGauss与大语言模型实现高效AI问答。提供openGauss DataVec、GraphRAG、Dify、Ragflow等工具部署集成典型案例与实战方案。",
+  "keywords": "RAG,检索增强生成,openGauss,大语言模型,AI问答,知识库,GraphRAG,DataVec,智能助手,DeepSeek,Qwen3"
+}

@@ -1,0 +1,64 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "openGauss Summit 2025",
+  "description": "openGauss Summit 2025以"汇聚数据库创新力量，发掘数据要素智慧潜能"为主题。openGauss作为植根于国内的开源数据库根社区，开源以来，基于社区，依靠伙伴，服务客户，产业共建、生态繁荣。发布openGauss重要技术版本及重磅产品，以技术创新与全球化实践为矛，锐意进取，强力开启属于openGauss的下一个辉煌五年。",
+  "startDate": "2025-12-25",
+  "endDate": "2025-12-26",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "organizer": {
+    "@type": "Organization",
+    "name": "openGauss开源社区",
+    "url": "https://opengauss.org"
+  },
+  "sponsor": [
+    {
+      "@type": "Organization",
+      "name": "中国科学院软件研究所",
+      "sponsorType": "CoSponsor"
+    },
+    {
+      "@type": "Organization",
+      "name": "清华大学",
+      "sponsorType": "CoSponsor"
+    },
+    {
+      "@type": "Organization",
+      "name": "北京海量数据技术股份有限公司",
+      "sponsorType": "CoSponsor"
+    },
+    {
+      "@type": "Organization",
+      "name": "粤港澳大湾区国家技术创新中心",
+      "sponsorType": "CoSponsor"
+    },
+    {
+      "@type": "Organization",
+      "name": "云和恩墨(北京)信息技术有限公司",
+      "sponsorType": "SupportingSponsor"
+    },
+    {
+      "@type": "Organization",
+      "name": "天津神舟通用数据技术有限公司",
+      "sponsorType": "SupportingSponsor"
+    },
+    {
+      "@type": "Organization",
+      "name": "中国移动信息技术中心",
+      "sponsorType": "SupportingSponsor"
+    },
+    {
+      "@type": "Organization",
+      "name": "四川长虹电子控股集团有限公司",
+      "sponsorType": "SupportingSponsor"
+    },
+    {
+      "@type": "Organization",
+      "name": "北京宝兰德软件股份有限公司",
+      "sponsorType": "SupportingSponsor"
+    }
+  ],
+  "url": "https://opengauss.org/zh/summit/summit2025/",
+  "inLanguage": "zh-CN",
+  "isAccessibleForFree": true
+}

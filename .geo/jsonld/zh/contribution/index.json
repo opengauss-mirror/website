@@ -1,0 +1,70 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://opengauss.org/zh/contribution/",
+  "url": "https://opengauss.org/zh/contribution/",
+  "name": "社区贡献",
+  "title": "社区贡献 | openGauss社区官网",
+  "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。",
+  "inLanguage": "zh",
+  "keywords": [
+    "openGauss",
+    "开源数据库",
+    "openGauss社区官网",
+    "开源社区"
+  ],
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": "https://opengauss.org/#website",
+    "name": "openGauss社区官网",
+    "url": "https://opengauss.org/",
+    "inLanguage": "zh"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://opengauss.org/#software",
+    "name": "openGauss",
+    "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库",
+    "applicationCategory": "DatabaseApplication",
+    "operatingSystem": "Linux"
+  },
+  "mainEntity": {
+    "@type": "WebPageElement",
+    "name": "社区贡献攻略地图",
+    "description": "展示openGauss社区贡献流程的可视化地图,包含贡献步骤和资源链接"
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "首页",
+        "item": "https://opengauss.org/zh/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "社区贡献",
+        "item": "https://opengauss.org/zh/contribution/"
+      }
+    ]
+  },
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      ".for-seo",
+      ".contribution-tab"
+    ]
+  },
+  "potentialAction": {
+    "@type": "ReadAction",
+    "target": "https://opengauss.org/zh/contribution/",
+    "actionAccessibilityRequirement": {
+      "@type": "ActionAccessSpecification",
+      "category": "opensource",
+      "availability": "Online",
+      "requiresSubscription": false
+    }
+  }
+}

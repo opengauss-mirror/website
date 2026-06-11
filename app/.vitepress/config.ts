@@ -1,30 +1,74 @@
-import type { UserConfig } from 'vitepress';
+import type { PageData, UserConfig } from 'vitepress';
 import vueI18n from '@intlify/unplugin-vue-i18n/vite';
-import tdks from './tdks';
-import { createRequire } from 'node:module';
-import fs from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import process from 'node:process';
-import path, { dirname } from 'node:path';
+import { dirname, join } from 'node:path';
 import hljs from 'highlight.js';
 import { fileURLToPath } from 'node:url';
+import generateLastmodAndChangefreq from '@opendesign-plus/plugins/vite/generate-lastmod-changefreq';
+import generateLLMsFull from '@opendesign-plus/geo-scripts/generate-llms-full';
+import llmstxt from 'vitepress-plugin-llms';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const require = createRequire(import.meta.url);
+const geoDir = join(__dirname, '../../.geo')
 const isBlog = /.+\/(?:user-practice|events|news)\/.+$/;
+
+/**
+ * 设置JSON-LD
+ */
+const setJSONLD = async (pageData: PageData, pagePath: string) => {
+  const jsonFile = join(geoDir, 'jsonld', pagePath, 'index.json');
+  if (!existsSync(jsonFile)) {
+    return;
+  }
+  let content = readFileSync(jsonFile, 'utf-8');
+  if (content) {
+    (pageData.frontmatter.head ??= []).push([
+      'script',
+      { type: 'application/ld+json' },
+      content
+    ]);
+  }
+};
+
+const setTdk = (pageData: PageData, pagePath: string) => {
+  const jsonFile = join(geoDir, 'tdks', pagePath, 'index.json');
+  const tdkInfo = existsSync(jsonFile) ? JSON.parse(readFileSync(jsonFile, 'utf-8')) : null;
+
+  pageData.titleTemplate = `:title | ${pagePath.startsWith('zh') ? 'openEuler社区官网' : 'openEuler'}`;
+  if (!tdkInfo || isBlog.test(pagePath)) {
+    const frontmatter = pageData.frontmatter;
+    const description = frontmatter?.summary || frontmatter?.Summary;
+    if (!pageData.description && description) {
+      pageData.description = description;
+    }
+    return;
+  }
+  const { title, description, keywords } = tdkInfo;
+  description && (pageData.description = description);
+  if (title) {
+    pageData.title = title;
+  }
+  if (keywords) {
+    pageData.frontmatter.head ??= [];
+    pageData.frontmatter.head.push(['meta', { name: 'keywords', content: keywords }]);
+  }
+}
 
 const config: UserConfig = {
   sitemap: {
     hostname: 'https://opengauss.org',
     transformItems(items) {
-      if (fs.existsSync(path.join(__dirname, 'records.json'))) {
-        const records = require('./records.json');
-        items.forEach((item) => {
-          const timestamp = records[item.url];
-          if (timestamp) {
-            item.lastmod = new Date(timestamp);
+      try {
+        const lastmodeTimeStamp = JSON.parse(readFileSync(join(geoDir, 'sitemap-records.json'), 'utf-8')) as Record<string, number>;
+        for (const item of items) {
+          const key = item.url.endsWith('.html') ? item.url.replace('.html', '.md') : (item.url.endsWith('/') ? `${item.url}index.md` : `${item.url}/index.md`);
+          const generatedItem = lastmodeTimeStamp[key];
+          if (generatedItem) {
+            Object.assign(item, generatedItem);
           }
-        });
-      }
+        }
+      } catch {}
       return items;
     },
   },
@@ -62,39 +106,15 @@ const config: UserConfig = {
   appearance: false, // enable dynamic scripts for dark mode
   titleTemplate: false, //  vitepress supports pageTitileTemplate since 1.0.0
   async transformPageData(pageData) {
-    const filePath = pageData.filePath;
-    let lookupKey: string;
-    if (filePath.endsWith('index.md')) {
-      lookupKey = filePath.slice(0, -9);
+    let pagePath: string;
+    if (pageData.filePath.endsWith('index.md')) {
+      pagePath = encodeURI(pageData.filePath.slice(0, -9));
     } else {
-      lookupKey = filePath.slice(0, -2).concat('html');
+      pagePath = encodeURI(pageData.filePath.slice(0, -3));
     }
-    const locale = filePath.slice(0, 2) as 'zh' | 'en';
-    const tdkInfo = tdks[locale]?.[lookupKey];
-    if (lookupKey === 'zh') {
-      pageData.titleTemplate = 'openGauss社区官网';
-    } else if (lookupKey === 'en') {
-      pageData.titleTemplate = 'openGauss Official Website';
-    } else {
-      pageData.titleTemplate = `:title | ${tdks.titleSuffix[locale]}`;
-    }
-    if (!tdkInfo || isBlog.test(lookupKey)) {
-      const frontmatter = pageData.frontmatter;
-      const description = frontmatter?.summary || frontmatter?.Summary;
-      if (!pageData.description && description) {
-        pageData.description = description;
-      }
-      return;
-    }
-    const { title, description, keywords } = tdkInfo;
-    description && (pageData.description = description);
-    if (title) {
-      pageData.title = title;
-    }
-    if (keywords) {
-      pageData.frontmatter.head ??= [];
-      pageData.frontmatter.head.push(['meta', { name: 'keywords', content: keywords }]);
-    }
+
+    setTdk(pageData, pagePath);
+    setJSONLD(pageData, pagePath);
   },
   locales: {
     root: {
@@ -141,12 +161,35 @@ const config: UserConfig = {
   ignoreDeadLinks: true,
   vite: {
     plugins: [
+      generateLastmodAndChangefreq({
+        rootDir: join(__dirname, '../'),
+        pageEntryPattern: ['zh/**/*.md', 'en/**/*.md'],
+        outputFile: join(__dirname, '../../.geo/sitemap-records.json'),
+      }),
       // https://github.com/intlify/vue-i18n/issues/1569
       vueI18n({
         ssr: process.env.NODE_ENV === 'production',
         runtimeOnly: false
       }),
+      llmstxt({
+        ignoreFiles: ['**/blogs/**/*', '**/news/**/*', '**/user-practice/**/*', '**/legal/*', '**/search/*', '**/privacy/*', '**/events/**/*', '**/cookies/*', '**/data-sharing-with-third-parties/*', '**/personal-data-collection-overview/*'],
+        generateLLMFriendlyDocsForEachPage: false,
+        injectLLMHint: false,
+      })
     ],
+  },
+  async buildEnd() {
+    await generateLLMsFull({
+      prefix: `# openGauss官方网站 | openGauss主页 | openGauss社区官网
+
+> openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。
+ `,
+      site: 'https://opengauss.org',
+      exclude: [/(zh|en)\/(blogs|news|cookies|legal|events|user-practice|cookies|search|privacy|data-sharing-with-third-parties|personal-data-collection-overview)/],
+      removeClass: ['feedback', 'feedback-md'],
+      htmlDir: join(__dirname, 'dist'),
+      output: join(__dirname, 'dist/llms-full.txt')
+    });
   },
 };
 export default config;

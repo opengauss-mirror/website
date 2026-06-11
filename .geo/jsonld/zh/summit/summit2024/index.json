@@ -1,0 +1,305 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "openGauss Summit 2024",
+  "description": "openGauss作为植根于国内的开源数据库根社区，开源4年来，基于社区，依靠伙伴，服务客户，产业共建、生态繁荣；openGauss系市场份额屡攀新高；技术不断创新，服务全场景，使能AI，加速DB智能化。openGauss社区遵循共建、共治、共享原则，致力于推动中国数据库行业发展，搭建国际化开源社区，提升行业协作效率，赋能千行百业。目前社区有超过350万的下载量，超过7500名贡献者，820家单位会员愿意加入社区，贡献社区，是中国最活跃的开源数据库根社区之一。由openGauss社区主办，政产学研用等机构协办的openGaussSummit2024，将于2024年12月27日在北京东方君悦酒店举办。本次大会以"汇聚数据库创新力量，引领智能时代新未来"为主题，旨在汇聚全国乃至全球产业发展力量，邀请思想引领者、商业精英、技术专家、合作伙伴以及全球开源基金会等业界同仁，共同探讨数据库产业发展方向和未来机遇，联合伙伴展示最新合作成果，分享数字化转型实践，以技术驱动创新，不断激发新质生产力。",
+  "startDate": "2024-12-26T13:00+08:00",
+  "endDate": "2024-12-27T17:20+08:00",
+  "eventStatus": "https://schema.org/EventEnded",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "location": {
+    "@type": "Place",
+    "name": "北京东方君悦酒店",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "CN",
+      "addressLocality": "北京"
+    }
+  },
+  "organizer": [
+    {
+      "@type": "Organization",
+      "name": "openGauss开源社区",
+      "url": "https://opengauss.org"
+    },
+    {
+      "@type": "Organization",
+      "name": "全球计算联盟"
+    }
+  ],
+  "sponsor": [
+    {
+      "@type": "Organization",
+      "name": "中移动信息技术有限公司"
+    },
+    {
+      "@type": "Organization",
+      "name": "北京海量数据技术股份有限公司"
+    },
+    {
+      "@type": "Organization",
+      "name": "天津神舟通用数据技术有限公司"
+    },
+    {
+      "@type": "Organization",
+      "name": "国家能源集团信息技术公司（数据中心）"
+    },
+    {
+      "@type": "Organization",
+      "name": "云和恩墨（北京）信息技术有限公司"
+    },
+    {
+      "@type": "Organization",
+      "name": "中软国际科技服务有限公司"
+    }
+  ],
+  "performer": [
+    {
+      "@type": "Person",
+      "name": "钱德沛",
+      "jobTitle": "中国科学院院士，北京航空航天大学教授、博士生导师，中国计算机学会会士"
+    },
+    {
+      "@type": "Person",
+      "name": "姜涛",
+      "jobTitle": "华为计算产品线副总裁"
+    },
+    {
+      "@type": "Person",
+      "name": "Thierry Carrez",
+      "jobTitle": "OpenInfra Foundation General Manager"
+    },
+    {
+      "@type": "Person",
+      "name": "熊伟",
+      "jobTitle": "openGauss社区理事长"
+    },
+    {
+      "@type": "Person",
+      "name": "陈国",
+      "jobTitle": "中国移动信息技术公司 副总经理"
+    },
+    {
+      "@type": "Person",
+      "name": "迟学斌",
+      "jobTitle": "全球计算联盟副理事长、中国科学院特聘核心骨干研究员"
+    },
+    {
+      "@type": "Person",
+      "name": "孙虎",
+      "jobTitle": "华为公司服务Fellow、2012服务实验室主任"
+    },
+    {
+      "@type": "Person",
+      "name": "李国良",
+      "jobTitle": "openGauss社区技术委员会主席，清华大学计算机系教授、CCF数据库专委会副主任"
+    },
+    {
+      "@type": "Person",
+      "name": "蔡亚杰",
+      "jobTitle": "openGauss社区秘书长"
+    },
+    {
+      "@type": "Person",
+      "name": "杨晓骋",
+      "jobTitle": "弗若斯特沙利文大中华区合伙人兼董事总经理"
+    },
+    {
+      "@type": "Person",
+      "name": "魏可伟",
+      "jobTitle": "中国移动信息技术公司数据研发首席架构师"
+    },
+    {
+      "@type": "Person",
+      "name": "平雷",
+      "jobTitle": "国家能源集团信息技术公司 网络安全中心副总经理"
+    },
+    {
+      "@type": "Person",
+      "name": "杨俊华",
+      "jobTitle": "钉钉（中国）有限公司 商业技术总监"
+    },
+    {
+      "@type": "Person",
+      "name": "肖微",
+      "jobTitle": "中国联通软件研究院 公共平台与架构研发事业部副总架构师"
+    },
+    {
+      "@type": "Person",
+      "name": "肖枫",
+      "jobTitle": "北京海量数据技术股份有限公司 总裁"
+    },
+    {
+      "@type": "Person",
+      "name": "张御博",
+      "jobTitle": "天津神舟通用数据技术有限公司 售前总监"
+    },
+    {
+      "@type": "Person",
+      "name": "李浩然",
+      "jobTitle": "赛迪顾问软件与信息服务业研究中心副总经理"
+    },
+    {
+      "@type": "Person",
+      "name": "吉祥",
+      "jobTitle": "海量数据解决方案 高级经理"
+    },
+    {
+      "@type": "Person",
+      "name": "孙昊",
+      "jobTitle": "首发集团信息化管理部副部长，博士"
+    },
+    {
+      "@type": "Person",
+      "name": "张海龙",
+      "jobTitle": "承德银行交易级总账项目负责人"
+    },
+    {
+      "@type": "Person",
+      "name": "李文滔",
+      "jobTitle": "深信服副总裁"
+    },
+    {
+      "@type": "Person",
+      "name": "祝强锋",
+      "jobTitle": "金蝶软件战略合作联盟总监"
+    },
+    {
+      "@type": "Person",
+      "name": "王佳玮",
+      "jobTitle": "恒生电子Light云事业部总经理"
+    },
+    {
+      "@type": "Person",
+      "name": "顾云苏",
+      "jobTitle": "神舟通用公司 总经理"
+    },
+    {
+      "@type": "Person",
+      "name": "刘勇生",
+      "jobTitle": "神舟通用公司 重庆研发中心总经理"
+    },
+    {
+      "@type": "Person",
+      "name": "李志虎",
+      "jobTitle": "北京星航智造科技有限公司 董事长"
+    },
+    {
+      "@type": "Person",
+      "name": "张文治",
+      "jobTitle": "中创股份 副总工程师"
+    },
+    {
+      "@type": "Person",
+      "name": "薛丽萍",
+      "jobTitle": "融安特公司 副总经理"
+    },
+    {
+      "@type": "Person",
+      "name": "邓昌义",
+      "jobTitle": "国家工业信息安全发展研究中心软件所副所长"
+    },
+    {
+      "@type": "Person",
+      "name": "赵淳",
+      "jobTitle": "中国移动信息技术公司 数据库研发中心副总经理"
+    },
+    {
+      "@type": "Person",
+      "name": "陈辉",
+      "jobTitle": "广东移动信息系统部副总经理"
+    },
+    {
+      "@type": "Person",
+      "name": "郭岳",
+      "jobTitle": "浙江移动信息技术与数据管理部副总经理兼智慧中台运营中心主任"
+    },
+    {
+      "@type": "Person",
+      "name": "吴杰",
+      "jobTitle": "北京移动信息技术中心副总经理"
+    },
+    {
+      "@type": "Person",
+      "name": "周鸣",
+      "jobTitle": "上海移动信息技术管理部副总经理"
+    },
+    {
+      "@type": "Person",
+      "name": "张永涛",
+      "jobTitle": "内蒙古移动信息技术部副总经理"
+    },
+    {
+      "@type": "Person",
+      "name": "盖国强",
+      "jobTitle": "云和恩墨公司总经理"
+    },
+    {
+      "@type": "Person",
+      "name": "黄柳生",
+      "jobTitle": "亚信科技移动支撑事业部 副总经理"
+    },
+    {
+      "@type": "Person",
+      "name": "盛凌志",
+      "jobTitle": "北京移动重要行业客户中心 副总经理"
+    },
+    {
+      "@type": "Person",
+      "name": "李侠",
+      "jobTitle": "南昌惠联网络技术有限公司 副总经理"
+    },
+    {
+      "@type": "Person",
+      "name": "程顺川",
+      "jobTitle": "启明星辰天榕产线副总经理"
+    },
+    {
+      "@type": "Person",
+      "name": "程浩",
+      "jobTitle": "兴业银行 技术架构师"
+    },
+    {
+      "@type": "Person",
+      "name": "陈伟",
+      "jobTitle": "创维集团智能装备有限公司 装备经理"
+    },
+    {
+      "@type": "Person",
+      "name": "尹中骥",
+      "jobTitle": "远景智能 技术总监"
+    },
+    {
+      "@type": "Person",
+      "name": "詹年科",
+      "jobTitle": "宝兰德 技术总监"
+    },
+    {
+      "@type": "Person",
+      "name": "韩西杰",
+      "jobTitle": "中软国际 数据库工具产品经理"
+    },
+    {
+      "@type": "Person",
+      "name": "孙瑞",
+      "jobTitle": "四川虹微技术有限公司 数据库产品总监"
+    },
+    {
+      "@type": "Person",
+      "name": "李文京",
+      "jobTitle": "英方软件 软件产品经理"
+    },
+    {
+      "@type": "Person",
+      "name": "李聪",
+      "jobTitle": "云和恩墨 客户成功部总经理"
+    }
+  ],
+  "url": "https://opengauss.org/zh/summit/summit2024/",
+  "inLanguage": "zh-CN",
+  "about": {
+    "@type": "Thing",
+    "name": "openGauss",
+    "sameAs": "https://opengauss.org"
+  }
+}
