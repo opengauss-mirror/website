@@ -7,7 +7,7 @@
     "predev": "node scripts/readEventsFrontmatter.js",
     "dev": "vitepress dev app",
     "prebuild": "node scripts/readEventsFrontmatter.js",
-    "build": "vitepress build app",
+    "build": "pnpm gen:blogs && pnpm gen:news && vitepress build app",
     "preview": "vitepress preview app",
     "test:e2e": "playwright test && playwright show-report",
     "test:unit": "vitest",
