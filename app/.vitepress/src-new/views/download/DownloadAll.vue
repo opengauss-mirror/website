@@ -6,7 +6,7 @@ import { ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import TheTable from '~@/components/TheTable.vue';
 import { useScreen } from '~@/composables/useScreen';
-import downloadData from '~@/data/download';
+import downloadData from '~@/data/download/content-bridge';
 
 const { t } = useI18n();
 

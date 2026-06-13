@@ -18,7 +18,7 @@ import {
 } from '@opensig/opendesign';
 import TagFilter from '~@/components/TagFilter.vue';
 import IconCopy from '~icons/app/icon-copy2.svg';
-import downloadData from '~@/data/download';
+import downloadData from '~@/data/download/content-bridge';
 import { getCustomCookie } from '@/shared/utils';
 import { oaReport } from '@opendesign-plus/plugins/analytics';
 import { doLogin } from '@/shared/login';

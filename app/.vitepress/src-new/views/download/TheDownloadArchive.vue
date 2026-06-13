@@ -2,7 +2,7 @@
 import { ref, computed, onMounted, provide, watchEffect } from 'vue';
 import { useData, useRouter } from 'vitepress';
 import { ORadioGroup, ORadio, OBreadcrumb, OBreadcrumbItem, OSelect, OOption, OIcon } from '@opensig/opendesign';
-import DownloadConfig from '~@/data/download';
+import DownloadConfig from '~@/data/download/content-bridge';
 import ContentWrapper from '~@/components/ContentWrapper.vue';
 import DownloadContent from './DownloadContent.vue';
 import ArchiveContent from './ArchiveContent.vue';

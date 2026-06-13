@@ -4,7 +4,7 @@ import { ORadioGroup, ORadio, OToggle, OIcon, OTab, OTabPane, OSelect, OOption, 
 import { useData } from 'vitepress';
 import { useI18n } from '@/i18n';
 import { useScreen } from '~@/composables/useScreen';
-import { downloadName } from '~@/data/download/format';
+import { downloadName } from '~@/data/download/content-bridge';
 import { useCommon } from '@/stores/common';
 
 import { DownloadItemT } from '@/shared/@types/type-download';
@@ -85,8 +85,10 @@ const osList = computed(() => {
 const activeArchitecture = ref('');
 const activeOs = ref('');
 const initActiveTag = function () {
-  activeArchitecture.value = tableData.value.content[0].architecture;
-  activeOs.value = tableData.value.content[0].os;
+  if (tableData.value.content && tableData.value.content.length > 0) {
+    activeArchitecture.value = tableData.value.content[0].architecture;
+    activeOs.value = tableData.value.content[0].os;
+  }
 };
 
 const isLoading = ref(false); //强制刷新tabs页签
@@ -201,7 +203,9 @@ const filteredData = computed(() => {
 });
 
 watch(filteredData, () => {
-  serverTab.value = filteredData.value[0].edition
+  if (filteredData.value && filteredData.value.length > 0) {
+    serverTab.value = filteredData.value[0].edition;
+  }
 });
 
 const layerShow = ref(false);
@@ -220,10 +224,12 @@ const tabLists = {
 
 const reportTabChange = (val: string) => {
   const tabLabel = mappingType[val] || val;
+  const versionMatch = location.search.match(/version=(.+)/);
+  const versionKey = versionMatch ? versionMatch[1] : 'lts';
   oaReport('click', {
     module: 'download',
     level1: t('download.PAGE_TITLE'),
-    level2: tabLists[location.search.match(/version=(.+)/)![1]],
+    level2: tabLists[versionKey] || tabLists.lts,
     level3: 'openGauss ' + props.versionShown,
     level4: isCn.value ? downloadName[props.tableData.name] : props.tableData.name,
     target: tabLabel,

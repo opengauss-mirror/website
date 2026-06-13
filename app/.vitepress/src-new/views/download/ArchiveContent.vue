@@ -9,7 +9,7 @@ import { useLocale } from '~@/composables/useLocale';
 import { useClipboard } from '@/components/hooks/useClipboard';
 import { DownloadItem } from '~@/@types/type-download';
 import { GITCODE_LINK, DOCS_LINK } from '~@/data/url-config';
-import { downloadName } from '~@/data/download/format';
+import { downloadName } from '~@/data/download/content-bridge';
 
 import IconDownload from '~icons/app/icon-download.svg';
 import IconCopy from '~icons/app/icon-copy2.svg';

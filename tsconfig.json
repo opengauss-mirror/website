@@ -16,7 +16,8 @@
     "paths": {
       "@/*": ["./app/.vitepress/src/*"],
       "~@/*": ["./app/.vitepress/src-new/*"],
-      "opendesign": ["./opendesign"]
+      "opendesign": ["./opendesign"],
+      "#content/*": ["./.content/*"]
     },
     "types": ["unplugin-icons/types/vue", "element-plus/global", "node", "vitepress/client"]
   },
@@ -27,6 +28,7 @@
     "app/.vitepress/**/*.tsx",
     "app/.vitepress/**/*.vue",
     "app/.vitepress/config.ts",
-    "app/.vitepress/theme/index.ts"
+    "app/.vitepress/theme/index.ts",
+    ".content/**/*.ts"
   ]
 }

@@ -1,0 +1,130 @@
+# 首页轮播图 / Home Banner
+#
+# 字段说明：
+#   bg_pc             PC 端背景图（中英文共用）
+#   bg_pad            平板端背景图（可选）
+#   bg_mb             移动端背景图（中英文共用）
+#   bg_pc_dark        PC 端暗色背景（可选）
+#   bg_mb_dark        移动端暗色背景（可选）
+#   bg_theme          light | dark
+#   text_image_zh     PC 端文字图（可选）
+#   text_image_mb_zh  移动端文字图（可选）
+#   title_zh/en       中英文标题
+#   title_mb_zh       移动端标题数组（可选）
+#   subtitle_zh/en    中英文副标题（可选）
+#   desc_zh/en        中英文描述数组（可选）
+#   btn_zh/en         中英文按钮文案（可选）
+#   href_zh/en        中英文跳转链接
+#   is_blank          是否新窗口打开（可选）
+#   class_name        CSS 类名（可选）
+#   attach            右侧装饰图（可选）
+#   attach_href       装饰图链接（可选）
+#   locale            可见语言 zh / en / zh,en（可选，默认 zh,en）
+
+- locale: zh
+  bg_pc: ./images/banner/banner-605.png
+  bg_mb: ./images/banner/banner-605_mo.png
+  bg_theme: dark
+  title_zh: openGauss 6.0.5 版本正式发布
+  href_zh: https://opengauss.org/zh/news/2026-05-15-605/
+  is_blank: true
+  class_name: banner-version
+
+- locale: zh
+  bg_pc: ./images/banner/ccf-20260407/banner.png
+  bg_mb: ./images/banner/ccf-20260407/banner_mo.png
+  bg_theme: dark
+  text_image_zh: ./images/banner/ccf-20260407/content.png
+  text_image_mb_zh: ./images/banner/ccf-20260407/content_mo.png
+  btn_zh: 立即查看
+  href_zh: https://www.gitlink.org.cn/competitions/track1_2026openGauss
+  is_blank: true
+  class_name: banner-version
+
+- locale: zh
+  bg_pc: ./images/banner/banner700_RC3.png
+  bg_mb: ./images/banner/banner700_RC3_mo.png
+  bg_theme: light
+  title_zh: openGauss 7.0.0-RC3 版本正式发布
+  title_mb_zh:
+    - "openGauss 7.0.0 RC3 \n版本正式发布"
+  btn_zh: 立即查看
+  href_zh: /zh/download/?version=rc
+  is_blank: true
+  class_name: banner-version
+
+- locale: zh
+  bg_pc: ./images/banner/annual2025.png
+  bg_pad: ./images/banner/annual2025_mo.png
+  bg_mb: ./images/banner/annual2025_mo.png
+  bg_theme: light
+  title_zh: openGauss 开源社区2025年度报告
+  btn_zh: 前往查看
+  href_zh: /zh/news/2026-01-16/
+  is_blank: true
+
+- locale: zh
+  bg_pc: ./images/banner/ogce.jpg
+  bg_mb: ./images/banner/ogce_mo.png
+  bg_pc_dark: ./images/banner/ogce_dark.png
+  bg_mb_dark: ./images/banner/ogce_mo_dark.png
+  bg_theme: light
+  title_zh: openGauss OGCE专家认证正式发布
+  title_mb_zh:
+    - openGauss OGCE专家认证正式发布
+  btn_zh: 了解更多
+  href_zh: /zh/training/
+  is_blank: true
+
+- locale: zh
+  bg_pc: ./images/banner/banner-forum.png
+  bg_mb: ./images/banner/banner-forum_mo.png
+  title_zh: 【论坛上线】
+  title_mb_zh:
+    - 【论坛上线】
+  subtitle_zh: 提问·分享·成长，尽在社区openGauss社区论坛！
+  btn_zh: 进入论坛
+  href_zh: https://discuss.opengauss.org
+  is_blank: true
+
+- locale: zh
+  bg_pc: ./images/banner/banner20250408.jpg
+  bg_mb: ./images/banner/banner20250408_mo.jpg
+  title_zh: openGauss 向量引擎
+  subtitle_zh: openGauss向量数据库实战案例集
+  btn_zh: 立即查看
+  href_zh: https://docs.opengauss.org/zh/docs/latest/datavec/datavec_overview.html
+  is_blank: true
+
+- locale: zh
+  bg_pc: ./images/banner/banner-team-up.jpg
+  bg_mb: ./images/banner/banner-team-up_mo.jpg
+  title_zh: openGauss 结队计划 正式上线
+  href_zh: /zh/team-up/
+  is_blank: false
+
+- locale: zh
+  bg_pc: ./images/banner/liveBanner_pc.png
+  bg_mb: ./images/banner/liveBanner_mo.png
+  title_zh: 欢迎加入openGauss社区
+  desc_zh:
+    - openGauss是一款高性能、高安全、高可靠的企业级开源关系型数据库
+  btn_zh: 了解更多
+  href_zh: https://docs.opengauss.org/zh/docs/3.1.1/docs/BriefTutorial/BriefTutorial.html
+  is_blank: true
+  class_name: banner-video
+  attach: ./images/banner/video-player.gif
+  attach_href: https://learningvideo.obs.ap-southeast-1.myhuaweicloud.com/openGauss%E5%AE%A3%E4%BC%A0%E6%B4%BB%E5%8A%A8/openGauss%2BHC%E5%AE%A3%E4%BC%A0%E8%A7%86%E9%A2%91.mp4
+
+- locale: en
+  bg_pc: ./images/banner/liveBanner_pc.png
+  bg_mb: ./images/banner/liveBanner_mo.png
+  title_en: Welcome to openGauss Community
+  desc_en:
+    - openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability
+  btn_en: Learn More
+  href_en: https://docs.opengauss.org/en/docs/3.1.0/docs/BriefTutorial/BriefTutorial.html
+  is_blank: true
+  class_name: banner-video
+  attach: ./images/banner/video-player.gif
+  attach_href: https://learningvideo.obs.ap-southeast-1.myhuaweicloud.com/openGauss%E5%AE%A3%E4%BC%A0%E6%B4%BB%E5%8A%A8/openGauss%2BHC%E5%AE%A3%E4%BC%A0%E8%A7%86%E9%A2%91.mp4

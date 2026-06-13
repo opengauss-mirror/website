@@ -4,6 +4,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 import Icons from 'unplugin-icons/vite';
 import { FileSystemIconLoader } from 'unplugin-icons/loaders';
+import contentYamlPlugin from './.vitepress/plugins/vite-plugin-content-yaml';
 
 const proxyConfig = (proxy) => {
   proxy.on('proxyRes', (proxyRes) => {
@@ -43,6 +44,7 @@ export default defineConfig({
     alias: {
       '@/': `${path.resolve(__dirname, './.vitepress/src')}/`,
       '~@/': `${path.resolve(__dirname, './.vitepress/src-new')}/`,
+      '#content': path.resolve(__dirname, '../.content'),
     },
   },
   css: {
@@ -59,6 +61,7 @@ export default defineConfig({
     },
   },
   plugins: [
+    contentYamlPlugin(),
     vueJsx({}),
     Icons({
       compiler: 'vue3',

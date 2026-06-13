@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { OButton, OCarousel, OCarouselItem, OFigure, OIcon, OIconArrowRight } from '@opensig/opendesign';
-import { computed, ref } from 'vue';
-import homeConfig from '@/data/home/';
+import { computed, ref, watchEffect } from 'vue';
+import { useData } from 'vitepress';
+import homeContent from '#content/home';
 import { windowOpen } from '@/shared/utils';
 import { useScreen } from '~@/composables/useScreen';
 import { useLocale } from '~@/composables/useLocale';
@@ -10,8 +11,49 @@ import { storeToRefs } from 'pinia';
 
 const { theme } = storeToRefs(useCommon());
 const { lePadV, gtPadV, current } = useScreen();
-const { isEn } = useLocale();
-const homeBanner = computed(() => (isEn.value ? homeConfig.homeBanner.en : homeConfig.homeBanner.zh));
+const { locale } = useLocale();
+const { lang } = useData();
+watchEffect(() => (locale.value = lang.value ?? 'zh'));
+
+function foldBanner(raw: any, langCode: string) {
+  const s = (field: string) => raw[`${field}_${langCode}`] ?? raw[field];
+  const banners: Record<string, string> = { laptop: raw.bg_pc };
+  if (raw.bg_pad) banners.pad_v = raw.bg_pad;
+  if (raw.bg_mb) banners.phone = raw.bg_mb;
+  const bannersDark: Record<string, string> | undefined =
+    raw.bg_pc_dark || raw.bg_mb_dark
+      ? { laptop: raw.bg_pc_dark, ...(raw.bg_mb_dark ? { phone: raw.bg_mb_dark } : {}) }
+      : undefined;
+  return {
+    banners: new Proxy(banners, { get: (t, p: string) => t[p] ?? t.laptop }),
+    bannersDark: bannersDark
+      ? new Proxy(bannersDark, { get: (t, p: string) => t[p] ?? t.laptop })
+      : undefined,
+    isLightBg: raw.bg_theme === 'light',
+    title: s('title') ?? '',
+    titleMb: raw[`title_mb_${langCode}`] ?? [],
+    subtitle: s('subtitle') ?? '',
+    desc: s('desc') ?? [],
+    btn: s('btn') ?? '',
+    link: s('href') ?? '',
+    target: raw.is_blank ? '_blank' : '_self',
+    textImg: raw[`text_image_${langCode}`] ?? '',
+    textImgMb: raw[`text_image_mb_${langCode}`] ?? '',
+    className: raw.class_name ?? '',
+    rightInset: raw.attach ?? '',
+    rightLink: raw.attach_href ?? '',
+  };
+}
+
+const homeBanner = computed(() => {
+  const currentLang = lang.value ?? 'zh';
+  return (homeContent.banner as any[])
+    .filter((item) => {
+      if (!item.locale) return true;
+      return item.locale.split(',').map((s: string) => s.trim()).includes(currentLang);
+    })
+    .map((item) => foldBanner(item, currentLang));
+});
 
 const jump = (item: any, flag: boolean) => {
   if (!lePadV && flag) {
