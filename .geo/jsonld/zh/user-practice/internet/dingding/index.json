@@ -1,0 +1,20 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "钉钉（中国）有限公司",
+    "description": "钉钉专属AI助理，openGauss+DataVec一体化，简化部署运维。",
+    "articleBody": "钉钉采用openGauss数据库+DataVec向量数据库一体化解决方案，同一个数据库即可解决TP数据存取场景又可以使用实现训推场景，简化了应用部署和运维措施。一体机采用全栈GCH底座，无论是鲲鹏通算CPU还是昇腾智算GPU与openGauss原生亲合，实现亿级数据库10毫秒召回能力，响应时间和吞吐率比其他竞品性能高10%以上。向量数据库技术联合调优与应用，混合PQ精度量化提升20%搜索速度。钉钉AI一体机包含通用计算和智能计算两种服务器：通用计算采用openGauss数据库单机版用于存储配置、管理上下文功能；智能计算充分发挥DataVec向量数据库能力；一体机为企业应用提供大模型、文本向量等多种服务，同时也可以与钉钉集成。openGauss在鲲鹏算力底座上原生亲合，采用NUMA绑核、casal原子指定大幅提升数据库性能；DataVec向量数据库上采用NEON和SVE指令对热点函数进行SIMD加速，对向量数据并行处理，充分发挥鲲鹏多核算力，提升20%性能。openGauss是久经考验的开源企业级数据库，项目采用openGauss+DataVec方案，一套数据库即实现数据存取和向量数据库能力，只需要监视数据库无异常即可。另外社区的支撑力度超过竞品，在降低AI一体机开发成本的同时，能保证高质量交付且简单运维；采用原地更新、PQ量化压缩技术，保证在高并发下IOPS平稳。支撑钉钉AI一体机在客户侧联合测试。",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://opengauss.org/zh/user-practice/internet/dingding/"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "钉钉（中国）有限公司",
+    "url": "https://www.dingtalk.com/",
+    "description": "钉钉专属AI助理，openGauss+DataVec一体化解决方案用户实践案例。"
+  }
+]

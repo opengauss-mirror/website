@@ -1,0 +1,33 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "郑州盛见网络科技有限公司",
+    "url": "https://www.shengjian.net/",
+    "description": "盛见专注于区块链技术研发及数字资产服务；聚焦于数字城市MetaCity、科技金融、数字政务领域；服务并落地大型数据共享交换及监管平台、海关及跨境贸易金融、供应链金融、自动化交易、数字娱乐IP衍生品等行业用户。其中MakerONE数字资产交易平台使用和对接openGauss数据库。"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "首页",
+        "item": "https://opengauss.org/zh/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "用户实践",
+        "item": "https://opengauss.org/zh/user-practice/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "郑州盛见网络科技有限公司",
+        "item": "https://opengauss.org/zh/user-practice/finance/shengjianwangluo/"
+      }
+    ]
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://opengauss.org/zh/user-practice/dbv/shouhangshuzitech/#organization",
+      "name": "首杭数字科技(山东)有限公司",
+      "url": "https://opengauss.org/zh/user-practice/dbv/shouhangshuzitech/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://opengauss.org/zh/user-practice/dbv/shouhangshuzitech/#product",
+      "name": "AScoDb数据库",
+      "version": "V1.0.0",
+      "description": "AScoDb是首杭数字科技基于openGauss 5.0.0研发的商业发行版数据库。",
+      "applicationCategory": "DatabaseApplication",
+      "manufacturer": {
+        "@id": "https://opengauss.org/zh/user-practice/dbv/shouhangshuzitech/#organization"
+      },
+      "sameAs": "https://www.modb.pro/wiki/7365"
+    }
+  ]
+}

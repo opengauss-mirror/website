@@ -1,0 +1,52 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "天鹤数据库",
+    "alternateName": "ISSEDB",
+    "description": "天鹤数据库（iSoftStone Enterprise Database，简称ISSEDB）是软通动力基于 openGauss内核自主研发、安全可控的数据库，支持intel、鲲鹏等多种处理器，具备高性能，高可用，高兼容、自动化运维等特点，可为各行业的客户提供高效、稳定、专业的数据库服务。",
+    "applicationCategory": "DatabaseApplication",
+    "author": {
+      "@type": "Organization",
+      "name": "软通动力信息技术（集团）股份有限公司",
+      "url": "https://www.isoftstone.com/zh-cn/htmls/tianHeDataBase/index.html"
+    },
+    "url": "https://www.isoftstone.com/zh-cn/htmls/tianHeDataBase/index.html"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "软通动力信息技术（集团）股份有限公司",
+    "url": "https://www.isoftstone.com/zh-cn/htmls/tianHeDataBase/index.html"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "首页",
+        "item": "https://opengauss.org/zh/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "用户实践",
+        "item": "https://opengauss.org/zh/user-practice/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "数据库厂商",
+        "item": "https://opengauss.org/zh/user-practice/dbv/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "天鹤数据库",
+        "item": "https://opengauss.org/zh/user-practice/dbv/tianhedb/"
+      }
+    ]
+  }
+]

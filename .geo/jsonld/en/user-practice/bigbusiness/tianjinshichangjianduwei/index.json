@@ -1,0 +1,94 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://opengauss.org/zh/user-practice/bigbusiness/tianjinshichangjianduwei/#article",
+      "headline": "天津市场监督管理",
+      "description": "天津市场监督管理业务系统国产化改造",
+      "inLanguage": "zh-CN",
+      "isPartOf": {
+        "@id": "https://opengauss.org/#website"
+      },
+      "about": {
+        "@type": "Organization",
+        "name": "天津市场监督管理",
+        "url": "https://scjg.tj.gov.cn/"
+      },
+      "publisher": {
+        "@id": "https://opengauss.org/#organization"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://opengauss.org/zh/user-practice/bigbusiness/tianjinshichangjianduwei/#webpage"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://opengauss.org/zh/user-practice/bigbusiness/tianjinshichangjianduwei/#webpage",
+      "url": "https://opengauss.org/zh/user-practice/bigbusiness/tianjinshichangjianduwei/",
+      "name": "天津市场监督管理 | openGauss",
+      "description": "天津市场监督管理业务系统国产化改造",
+      "inLanguage": "zh-CN",
+      "isPartOf": {
+        "@id": "https://opengauss.org/#website"
+      },
+      "about": {
+        "@type": "Organization",
+        "name": "天津市场监督管理",
+        "url": "https://scjg.tj.gov.cn/"
+      },
+      "breadcrumb": {
+        "@id": "https://opengauss.org/zh/user-practice/bigbusiness/tianjinshichangjianduwei/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://opengauss.org/zh/user-practice/bigbusiness/tianjinshichangjianduwei/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首页",
+          "item": "https://opengauss.org/zh/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "用户实践",
+          "item": "https://opengauss.org/zh/user-practice/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "大企业",
+          "item": "https://opengauss.org/zh/user-practice/bigbusiness/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "天津市场监督管理"
+        }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://opengauss.org/#organization",
+      "name": "openGauss",
+      "url": "https://opengauss.org/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://opengauss.org/assets/logo_dark.CElWqwW0.svg"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://opengauss.org/#website",
+      "url": "https://opengauss.org/",
+      "name": "openGauss",
+      "publisher": {
+        "@id": "https://opengauss.org/#organization"
+      },
+      "inLanguage": "zh-CN"
+    }
+  ]
+}

@@ -5,8 +5,8 @@
       "@type": "WebPage",
       "@id": "https://opengauss.org/en/contribution/detail/#webpage",
       "url": "https://opengauss.org/en/contribution/detail/",
-      "name": "Contribution",
-      "description": "openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability. openGauss is also an open source database platform that encourages community contribution and collaboration.",
+      "name": "How to Contribute to openGauss | Community Contribution Guide",
+      "description": "Complete guide on how to contribute to openGauss open source community, including GitCode setup, CLA signing, SIG participation, and community membership.",
       "isPartOf": {
         "@id": "https://opengauss.org/#website"
       },

@@ -1,0 +1,5 @@
+{
+  "title": "openGauss数据库迁移流程 | openGauss社区",
+  "description": "openGauss数据库迁移完整流程指南，包括迁移评估、应用适配、数据迁移、试运行和生产割接五个阶段，使用DataKit一站式迁移平台实现高效迁移。",
+  "keywords": "openGauss, 数据库迁移, 迁移流程, DataKit, 迁移评估, 应用适配, 生产割接"
+}

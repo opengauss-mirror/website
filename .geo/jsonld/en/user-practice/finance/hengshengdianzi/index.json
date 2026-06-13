@@ -1,0 +1,8 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "恒生电子股份有限公司",
+  "url": "https://www.hundsun.com/",
+  "description": "恒生聚焦金融行业，致力于为证券、期货、基金、信托、保险、银行、交易所、私募等机构提供整体解决方案和服务。其中，JRES技术平台V3.0使用和兼容openGauss。",
+  "industry": "金融"
+}

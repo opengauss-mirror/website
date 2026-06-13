@@ -1,0 +1,22 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "openGauss培训认证报名",
+  "description": "openGauss培训认证报名入口，选择授权合作伙伴进行培训认证报名。",
+  "url": "https://opengauss.org/zh/training/signup/",
+  "inLanguage": "zh-CN",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "openGauss社区官网",
+    "url": "https://opengauss.org/"
+  },
+  "mainEntity": {
+    "@type": "Service",
+    "name": "openGauss培训认证报名服务",
+    "serviceType": "培训认证报名",
+    "provider": {
+      "@type": "Organization",
+      "name": "openGauss开源社区"
+    }
+  }
+}

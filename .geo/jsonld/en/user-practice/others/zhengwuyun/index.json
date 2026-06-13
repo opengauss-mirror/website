@@ -1,0 +1,29 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "某市政务云",
+  "description": "数据高效处理，安全可信，打造领先的数字化政务云平台",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/user-practice/others/zhengwuyun/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org/"
+  },
+  "articleSection": "用户案例",
+  "keywords": ["政务云", "数据库", "Vastbase", "异构计算架构", "x86", "鲲鹏", "高兼容度"],
+  "about": {
+    "@type": "Thing",
+    "name": "某市政务云",
+    "description": "数据高效处理，安全可信，打造领先的数字化政务云平台"
+  },
+  "mentions": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Vastbase",
+      "applicationCategory": "DatabaseApplication"
+    }
+  ]
+}

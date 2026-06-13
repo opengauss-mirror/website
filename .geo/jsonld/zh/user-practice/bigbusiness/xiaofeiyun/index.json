@@ -1,0 +1,25 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "华为消费者云",
+  "description": "支撑消费者云数据库分布式云化改造",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/zh/user-practice/bigbusiness/xiaofeiyun/"
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "GaussDB(for openGauss)"
+  },
+  "mentions": [
+    {
+      "@type": "Thing",
+      "name": "华为消费者云"
+    },
+    {
+      "@type": "Thing",
+      "name": "分布式云化改造"
+    }
+  ],
+  "articleSection": "用户案例"
+}

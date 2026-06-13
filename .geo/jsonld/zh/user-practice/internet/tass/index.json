@@ -1,0 +1,39 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "北京江南天安科技有限公司",
+    "url": "https://www.tass.com.cn/",
+    "description": "将openGauss应用在公司相关产品中，作为数据存储数据库使用，部署openGauss服务器节点数为11~20个。"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "首页",
+        "item": "https://opengauss.org/zh/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "案例实践",
+        "item": "https://opengauss.org/zh/user-practice/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "互联网",
+        "item": "https://opengauss.org/zh/user-practice/internet/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "北京江南天安科技有限公司",
+        "item": "https://opengauss.org/zh/user-practice/internet/tass/"
+      }
+    ]
+  }
+]

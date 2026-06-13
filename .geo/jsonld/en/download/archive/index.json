@@ -4,7 +4,7 @@
   "name": "openGauss Software Packages Archive",
   "description": "Archive of openGauss database software packages across multiple versions including LTS, Preview, and RC releases",
   "url": "https://opengauss.org/en/download/archive/",
-  "numberOfItems": 35,
+  "numberOfItems": 27,
   "itemListElement": [
     {
       "@type": "ListItem",
@@ -153,6 +153,7 @@
         "applicationCategory": "DatabaseApplication",
         "operatingSystem": "Linux",
         "releaseDate": "2025-01",
+        "description": "An LTS version providing 3 years of community support, followed by additional maintenance support by oGSPs.",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -175,6 +176,7 @@
         "applicationCategory": "DatabaseApplication",
         "operatingSystem": "Linux",
         "releaseDate": "2024-09-30",
+        "description": "An LTS version providing 3 years of community support, followed by additional maintenance support by oGSPs.",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -197,6 +199,7 @@
         "applicationCategory": "DatabaseApplication",
         "operatingSystem": "Linux",
         "releaseDate": "2025-12",
+        "description": "An LTS version providing 3 years of community support until March 2026.",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -219,6 +222,7 @@
         "applicationCategory": "DatabaseApplication",
         "operatingSystem": "Linux",
         "releaseDate": "2024-08",
+        "description": "An LTS version providing 3 years of community support until March 2026.",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -241,6 +245,7 @@
         "applicationCategory": "DatabaseApplication",
         "operatingSystem": "Linux",
         "releaseDate": "2024-03-30",
+        "description": "RCx: a collaborative testing version released every 6 months, with 6 months of community support.",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -263,6 +268,7 @@
         "applicationCategory": "DatabaseApplication",
         "operatingSystem": "Linux",
         "releaseDate": "2024-05",
+        "description": "An LTS version providing 3 years of community support until March 2026.",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -285,6 +291,7 @@
         "applicationCategory": "DatabaseApplication",
         "operatingSystem": "Linux",
         "releaseDate": "2023-12",
+        "description": "An LTS version providing 3 years of community support until March 2026.",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -307,6 +314,7 @@
         "applicationCategory": "DatabaseApplication",
         "operatingSystem": "Linux",
         "releaseDate": "2023-06-30",
+        "description": "A preview version for early feature testing with limited support period.",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -329,6 +337,7 @@
         "applicationCategory": "DatabaseApplication",
         "operatingSystem": "Linux",
         "releaseDate": "2023-03-30",
+        "description": "An LTS version providing 3 years of community support until March 2026.",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -351,6 +360,7 @@
         "applicationCategory": "DatabaseApplication",
         "operatingSystem": "Linux",
         "releaseDate": "2022-12",
+        "description": "A preview version for early feature testing with limited support period.",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -373,6 +383,7 @@
         "applicationCategory": "DatabaseApplication",
         "operatingSystem": "Linux",
         "releaseDate": "2022-09-30",
+        "description": "A preview version for early feature testing with limited support period.",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -395,6 +406,7 @@
         "applicationCategory": "DatabaseApplication",
         "operatingSystem": "Linux",
         "releaseDate": "2024-12",
+        "description": "An LTS version providing community support until March 2025.",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -417,6 +429,7 @@
         "applicationCategory": "DatabaseApplication",
         "operatingSystem": "Linux",
         "releaseDate": "2024-01",
+        "description": "An LTS version providing community support until March 2025.",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -439,6 +452,7 @@
         "applicationCategory": "DatabaseApplication",
         "operatingSystem": "Linux",
         "releaseDate": "2023-03",
+        "description": "An LTS version providing community support until March 2024.",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -461,6 +475,7 @@
         "applicationCategory": "DatabaseApplication",
         "operatingSystem": "Linux",
         "releaseDate": "2022-03-30",
+        "description": "An LTS version providing 3 years of community support until March 2025.",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -483,6 +498,7 @@
         "applicationCategory": "DatabaseApplication",
         "operatingSystem": "Linux",
         "releaseDate": "2021-06-30",
+        "description": "A preview version for early feature testing with limited support period.",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -505,6 +521,7 @@
         "applicationCategory": "DatabaseApplication",
         "operatingSystem": "Linux",
         "releaseDate": "2021-06",
+        "description": "An LTS version providing community support until March 2024.",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -527,6 +544,7 @@
         "applicationCategory": "DatabaseApplication",
         "operatingSystem": "Linux",
         "releaseDate": "2021-03-30",
+        "description": "An LTS version providing 3 years of community support until March 2024.",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -549,6 +567,7 @@
         "applicationCategory": "DatabaseApplication",
         "operatingSystem": "Linux",
         "releaseDate": "2020-12",
+        "description": "A preview version for early feature testing with limited support period.",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -571,6 +590,7 @@
         "applicationCategory": "DatabaseApplication",
         "operatingSystem": "Linux",
         "releaseDate": "2020-09",
+        "description": "An LTS version providing community support until June 2023.",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -593,6 +613,7 @@
         "applicationCategory": "DatabaseApplication",
         "operatingSystem": "Linux",
         "releaseDate": "2020-06",
+        "description": "The first LTS release of openGauss providing community support until June 2023.",
         "offers": {
           "@type": "Offer",
           "price": "0",

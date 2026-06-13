@@ -1,0 +1,49 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://opengauss.org/zh/user-practice/dbv/enmotech#organization",
+      "name": "云和恩墨（北京）信息技术有限公司",
+      "url": "https://enmotech.com/",
+      "description": "云和恩墨基于openGauss内核进行增强提升，推出的商业发行版MogDB，MogDB是一款安稳易用的企业级关系型数据库，广泛应用于银行、保险、政府、能源和电信领域生产场景中。",
+      "brand": {
+        "@type": "Brand",
+        "name": "MogDB"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://opengauss.org/zh/user-practice/dbv/enmotech#product",
+      "name": "MogDB",
+      "description": "MogDB是云和恩墨基于openGauss开源数据库的内核进行研发，推出的一款极致易用的企业级关系型数据库。MogDB具备金融级高可用和全密态计算的极致安全、面向多核处理器的极致性能、AI自诊断调优的极致智能能力，能够满足从核心交易到复杂计算的企业级业务需求。",
+      "applicationCategory": "DatabaseApplication",
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock"
+      },
+      "producer": {
+        "@id": "https://opengauss.org/zh/user-practice/dbv/enmotech#organization"
+      },
+      "featureList": [
+        "金融级高可用",
+        "全密态计算",
+        "面向多核处理器的极致性能",
+        "AI自诊断调优",
+        "故障切换时间RTO<10s",
+        "细粒度访问控制",
+        "多维度审计",
+        "存储&传输&导出加密",
+        "主备同步、异步以及级联备机多种部署模式",
+        "数据页CRC校验",
+        "备机并行修复",
+        "性能可达150万tpmC/256万tpmC",
+        "NUMA-Aware存储引擎",
+        "SQL-Bypass智能选路执行技术",
+        "智能参数调优",
+        "慢SQL诊断",
+        "在线自学习SQL时间预测"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://opengauss.org/zh/user-practice/carrier/zhejiangyidong/#article",
+      "headline": "浙江移动",
+      "description": "openGauss助力浙江移动CRM系统升级",
+      "about": {
+        "@type": "Organization",
+        "name": "浙江移动",
+        "url": "https://service.zj.10086.cn/"
+      },
+      "articleSection": "用户案例",
+      "keywords": ["openGauss", "磐维数据库", "浙江移动", "运营商", "CRM系统", "营销中心"],
+      "isPartOf": {
+        "@id": "https://opengauss.org/#website"
+      },
+      "inLanguage": "zh-CN"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://opengauss.org/zh/user-practice/carrier/zhejiangyidong/#webpage",
+      "url": "https://opengauss.org/zh/user-practice/carrier/zhejiangyidong/",
+      "name": "浙江移动",
+      "description": "openGauss助力浙江移动CRM系统升级",
+      "isPartOf": {
+        "@id": "https://opengauss.org/#website"
+      },
+      "about": {
+        "@id": "https://opengauss.org/zh/user-practice/carrier/zhejiangyidong/#article"
+      },
+      "inLanguage": "zh-CN"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://opengauss.org/#website",
+      "url": "https://opengauss.org/",
+      "name": "openGauss",
+      "inLanguage": ["zh-CN", "en"]
+    }
+  ]
+}

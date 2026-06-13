@@ -1,14 +1,14 @@
 {
   "@context": "https://schema.org",
-  "@type": "ContactPage",
-  "name": "openGauss Meetup申请表",
-  "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。",
+  "@type": "WebPage",
+  "name": "openGauss Meetup申请表 | 社区",
+  "description": "openGauss社区Meetup活动申请表，用于申请举办线下或线上Meetup活动。表单包含活动主题、日期、城市、规模、形式等信息，社区将根据申请提供相应支持。",
   "url": "https://opengauss.org/zh/community/meetup-form/",
-  "keywords": ["openGauss", "开源数据库", "openGauss社区官网", "开源社区"],
+  "keywords": ["openGauss", "Meetup", "活动申请", "社区活动", "开源数据库"],
   "inLanguage": "zh",
   "mainEntity": {
-    "@type": "Organization",
-    "name": "openGauss",
-    "description": "高性能、高安全、高可用、高智能的企业级开源关系数据库"
+    "@type": "WebPage",
+    "name": "openGauss Meetup申请表",
+    "description": "Meetup活动申请表单"
   }
 }

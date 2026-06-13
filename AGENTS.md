@@ -39,11 +39,13 @@
 
 ```
 openGauss-website/
+├── .geo/
+│   ├── tdks/                         # SEO：按路径查找的TDK配置项（/{zh,en}/path/to/page/index.json）
+│   └── jsonld/                       # SEO：按路径查找的JSON-LD配置项（/{zh,en}/path/to/page/index.json）
 ├── app/
 │   ├── zh/ , en/                    # md 页面（双语镜像）
 │   └── .vitepress/
 │       ├── config.ts                # 入口配置 + transformPageData（SEO/TDK 注入钩子）
-│       ├── tdks/                    # SEO：zh.ts / en.ts / index.ts（按路由聚合的 TDK 字典）
 │       ├── src/                     # 旧版源码（兼容，禁止新增引用）
 │       │   ├── api/ assets/ components/ i18n/ layouts/ shared/ stores/ views/
 │       │   └── ...
@@ -68,11 +70,12 @@ openGauss-website/
 ## 3. SEO / GEO 机制
 
 TDK（title / description / keywords）由 `app/.vitepress/config.ts` 的 `transformPageData` 钩子，
-按页面路由从 `app/.vitepress/tdks/{zh,en}.ts` 字典查表注入；blog 类页面回退到 frontmatter 的 `summary`。
+按页面路由从 `.geo/tdks/{page path}.ts` 查找注入；blog 类页面回退到 frontmatter 的 `summary`。
 
-- 加 / 改某页 TDK → 改 `tdks/zh.ts` 与 `tdks/en.ts` 对应路由键（**双语同步**）
+- 加 / 改某页 TDK → 改 `.geo/tdks/path/to/page/index.json` 对应JSON配置文件（**双语同步**）
+- 页面路由与JSON配置文件映射关系：1. `/zh/about` 或 `/zh/about.html` 或 `/zh/about/index.html` -> `.geo/{tdk,jsonld}/zh/about/index.json`
 - 不要在 Vue 组件里手动写 `<title>` / `<meta description>` 与之重复
-- GEO/SEO 可发现性优化由 portal-workflow 的 geo-fix 链路负责，日常需求**默认不动** `tdks/` 与 sitemap 配置
+- GEO/SEO 可发现性优化由 portal-workflow 的 geo-fix 链路负责，日常需求**默认不动** `.geo/tdks/` 与 sitemap 配置
 
 ---
 

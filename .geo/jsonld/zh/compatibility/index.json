@@ -3,7 +3,7 @@
   "@type": "WebPage",
   "@id": "https://opengauss.org/zh/compatibility/",
   "name": "兼容性列表",
-  "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。",
+  "description": "openGauss兼容性认证列表页面，提供通过兼容性认证的产品、公司及数据库类型的查询服务，帮助用户查找经过认证的兼容产品。",
   "inLanguage": "zh-CN",
   "isPartOf": {
     "@type": "WebSite",

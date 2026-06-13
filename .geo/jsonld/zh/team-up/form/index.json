@@ -1,7 +1,7 @@
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "结队计划申请表",
+  "name": "openGauss结队计划申请表",
   "inLanguage": "zh-CN",
   "isPartOf": {
     "@type": "WebSite",

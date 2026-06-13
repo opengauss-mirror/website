@@ -23,7 +23,7 @@
       "@type": "WebPage",
       "@id": "https://opengauss.org/zh/home1/#webpage",
       "url": "https://opengauss.org/zh/home1/",
-      "name": "openGauss | openEuler社区官网",
+      "name": "开源数据库 | 企业级关系数据库 | openGauss",
       "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。",
       "isPartOf": {
         "@id": "https://opengauss.org/#website"

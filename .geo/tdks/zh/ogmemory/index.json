@@ -1,0 +1,5 @@
+{
+  "title": "oGMemory",
+  "description": "oGMemory是面向AI Agent的长期记忆系统，以AGFS文件为数据源头，openGauss向量索引为加速层，让Agent拥有跨会话的持久记忆能力。支持OpenClaw即插即用集成，提供标准HTTP API。",
+  "keywords": "oGMemory,AI Agent长期记忆,向量索引,AGFS,Agent记忆系统,openGauss,上下文管理"
+}

@@ -1,8 +1,8 @@
 {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "openGauss",
-  "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。",
+  "name": "openGauss社区",
+  "description": "openGauss社区的组织架构，包括顾问委员会、理事会、用户委员会、品牌宣传委员会、技术委员会(TC)、秘书处、专项兴趣小组(SIG)和用户组(oGUG)，以及各SIG小组和城市用户组的详细信息。",
   "url": "https://opengauss.org/zh/member/",
   "sameAs": [
     "https://opengauss.org"

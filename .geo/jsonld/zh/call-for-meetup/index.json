@@ -2,8 +2,8 @@
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "Call for Meetup",
-  "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。",
-  "keywords": ["openGauss", "开源数据库", "openGauss社区官网", "开源社区"],
+  "description": "openGauss Call for Meetup 计划：资源面向openGauss社区所有成员开放，欢迎与openGauss社区共同组织开发者活动，繁荣openGauss生态。",
+  "keywords": ["openGauss", "Call for Meetup", "开源数据库", "openGauss社区官网", "开发者活动", "活动申请", "开源社区"],
   "url": "https://opengauss.org/zh/call-for-meetup/",
   "inLanguage": "zh-CN",
   "isPartOf": {
@@ -19,7 +19,7 @@
   },
   "potentialAction": {
     "@type": "Action",
-    "name": "提交聚会提案",
+    "name": "提交活动申请",
     "target": {
       "@type": "EntryPoint",
       "urlTemplate": "https://opengauss.org/zh/call-for-meetup/",

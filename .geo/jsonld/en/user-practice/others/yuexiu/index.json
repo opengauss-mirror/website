@@ -1,0 +1,39 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "越秀集团",
+    "url": "https://www.yuexiu.com/",
+    "description": "越秀集团已形成以金融、房地产、交通基建、现代农业为核心产业，部署openGauss服务器节点数1~10个。"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "首页",
+        "item": "https://opengauss.org/zh/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "用户实践",
+        "item": "https://opengauss.org/zh/user-practice/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "其他",
+        "item": "https://opengauss.org/zh/user-practice/others/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "越秀集团",
+        "item": "https://opengauss.org/zh/user-practice/others/yuexiu/"
+      }
+    ]
+  }
+]

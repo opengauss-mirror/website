@@ -3,7 +3,7 @@
     "@context": "https://schema.org",
     "@type": "ItemList",
     "name": "Support Tools",
-    "description": "6 categories of tools for developers and ISVs, including the client tool, data import/export tool, data replication/synchronization tool, monitoring and O&M interfaces and toolset, backup and recovery interfaces and toolset, and data access middleware",
+    "description": "9 categories of tools for developers and ISVs, including connectors, middleware, cluster management, migration tools, data synchronization tools, data model, client tools, monitor & DevOps system, and kernel extension",
     "numberOfItems": 20,
     "itemListElement": [
       {
@@ -13,7 +13,8 @@
           "@type": "SoftwareApplication",
           "name": "psycopg2",
           "applicationCategory": "Connectors",
-          "description": "The openGauss Python Driver (Linux only)"
+          "description": "The openGauss Python Driver (Linux only)",
+          "url": "https://gitcode.com/opengauss/openGauss-connector-python-psycopg2/"
         }
       },
       {
@@ -23,7 +24,8 @@
           "@type": "SoftwareApplication",
           "name": "py-og",
           "applicationCategory": "Connectors",
-          "description": "The openGauss pure Python Driver (Multi-OS Support)"
+          "description": "The openGauss pure Python Driver (Multi-OS Support)",
+          "url": "https://gitcode.com/opengauss/openGauss-connector-python-pyog"
         }
       },
       {
@@ -33,7 +35,8 @@
           "@type": "SoftwareApplication",
           "name": "go-pq",
           "applicationCategory": "Connectors",
-          "description": "The openGauss Go Driver"
+          "description": "The openGauss Go Driver",
+          "url": "https://gitcode.com/opengauss/openGauss-connector-go-pq"
         }
       },
       {
@@ -43,7 +46,8 @@
           "@type": "SoftwareApplication",
           "name": "ShardingSphere",
           "applicationCategory": "Middleware",
-          "description": "Distributed database middleware"
+          "description": "Distributed database middleware",
+          "url": "https://github.com/apache/shardingsphere"
         }
       },
       {
@@ -53,7 +57,8 @@
           "@type": "SoftwareApplication",
           "name": "HAProxy",
           "applicationCategory": "Middleware",
-          "description": "Database read/write load balancing"
+          "description": "Database read/write load balancing",
+          "url": "https://github.com/haproxy/haproxy"
         }
       },
       {
@@ -63,7 +68,8 @@
           "@type": "SoftwareApplication",
           "name": "vip-manager",
           "applicationCategory": "Middleware",
-          "description": "Automatic IP failover"
+          "description": "Automatic IP failover",
+          "url": "https://github.com/cybertec-postgresql/vip-manager"
         }
       },
       {
@@ -73,7 +79,8 @@
           "@type": "SoftwareApplication",
           "name": "Kubernetes",
           "applicationCategory": "Cluster Management",
-          "description": "An open source container management platform"
+          "description": "An open source container management platform",
+          "url": "https://github.com/kubernetes/kubernetes"
         }
       },
       {
@@ -83,7 +90,8 @@
           "@type": "SoftwareApplication",
           "name": "Patroni",
           "applicationCategory": "Cluster Management",
-          "description": "Automatic primary/standby switching to improve database availability"
+          "description": "Automatic primary/standby switching to improve database availability",
+          "url": "https://github.com/zalando/patroni"
         }
       },
       {
@@ -93,7 +101,8 @@
           "@type": "SoftwareApplication",
           "name": "Ora2Pg",
           "applicationCategory": "Migration Tools",
-          "description": "Database migration tool from Oracle to openGauss"
+          "description": "Database migration tool from Oracle to openGauss",
+          "url": "https://gitcode.com/opengauss/openGauss-tools-ora2og"
         }
       },
       {
@@ -103,7 +112,8 @@
           "@type": "SoftwareApplication",
           "name": "pg_chameleon",
           "applicationCategory": "Migration Tools",
-          "description": "Database migration tool from MySQL to openGauss"
+          "description": "Database migration tool from MySQL to openGauss",
+          "url": "https://gitcode.com/opengauss/openGauss-tools-chameleon"
         }
       },
       {
@@ -113,7 +123,8 @@
           "@type": "SoftwareApplication",
           "name": "pgloader",
           "applicationCategory": "Migration Tools",
-          "description": "A data import tool that uses the COPY command to import data into openGauss"
+          "description": "A data import tool that uses the COPY command to import data into openGauss",
+          "url": "https://gitcode.com/opengauss/openGauss-tools-loader"
         }
       },
       {
@@ -123,7 +134,8 @@
           "@type": "SoftwareApplication",
           "name": "JdbcPgBackup",
           "applicationCategory": "Data Synchronization Tools",
-          "description": "Java based multi-platform data import and export tool, similar to pg_dump/pg_restore"
+          "description": "Java based multi-platform data import and export tool, similar to pg_dump/pg_restore",
+          "url": "https://github.com/tig100/JdbcPgBackup"
         }
       },
       {
@@ -133,7 +145,8 @@
           "@type": "SoftwareApplication",
           "name": "Database-Sync",
           "applicationCategory": "Data Synchronization Tools",
-          "description": "A powerful and flexible database synchronization tool developed based on Java"
+          "description": "A powerful and flexible database synchronization tool developed based on Java",
+          "url": "https://github.com/GongDexing/database-sync"
         }
       },
       {
@@ -143,7 +156,8 @@
           "@type": "SoftwareApplication",
           "name": "Debezium",
           "applicationCategory": "Data Synchronization Tools",
-          "description": "It provides a low latency streaming processing platform for change data capture (CDC)"
+          "description": "It provides a low latency streaming processing platform for change data capture (CDC)",
+          "url": "https://github.com/debezium/debezium"
         }
       },
       {
@@ -153,7 +167,8 @@
           "@type": "SoftwareApplication",
           "name": "PowerDesigner",
           "applicationCategory": "Data Model",
-          "description": "Flexible analysis and design features allow you to effectively create a database or data warehouse using a structured approach"
+          "description": "Flexible analysis and design features allow you to effectively create a database or data warehouse using a structured approach",
+          "url": "https://www.sap.com/products/database-data-management.html"
         }
       },
       {
@@ -163,7 +178,8 @@
           "@type": "SoftwareApplication",
           "name": "DBeaver",
           "applicationCategory": "Client Tools",
-          "description": "Open source multi database client tool"
+          "description": "Open source multi database client tool",
+          "url": "https://github.com/dbeaver/dbeaver"
         }
       },
       {
@@ -173,7 +189,8 @@
           "@type": "SoftwareApplication",
           "name": "Data Studio",
           "applicationCategory": "Client Tools",
-          "description": "openGauss official client tool"
+          "description": "openGauss official client tool",
+          "url": "https://gitcode.com/opengauss/DataStudio"
         }
       },
       {
@@ -183,7 +200,8 @@
           "@type": "SoftwareApplication",
           "name": "Zabbix",
           "applicationCategory": "Monitor & DevOps System",
-          "description": "It components and services for real-time monitoring, and the monitoring database needs additional adaptation"
+          "description": "It components and services for real-time monitoring, and the monitoring database needs additional adaptation",
+          "url": "https://github.com/zabbix/zabbix"
         }
       },
       {
@@ -193,7 +211,8 @@
           "@type": "SoftwareApplication",
           "name": "Prometheus",
           "applicationCategory": "Monitor & DevOps System",
-          "description": "The open source monitoring system performs very well in recording pure digital time series"
+          "description": "The open source monitoring system performs very well in recording pure digital time series",
+          "url": "https://github.com/prometheus/prometheus"
         }
       },
       {
@@ -203,7 +222,8 @@
           "@type": "SoftwareApplication",
           "name": "Yukon",
           "applicationCategory": "Kernel Extension",
-          "description": "Provide professional GIS (Geographic Information System) ability"
+          "description": "Provide professional GIS (Geographic Information System) ability",
+          "url": "https://gitcode.com/opengauss/Yukon"
         }
       }
     ]

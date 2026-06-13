@@ -5,7 +5,7 @@
     "@id": "https://opengauss.org/en/security-advisories/#webpage",
     "url": "https://opengauss.org/en/security-advisories/",
     "name": "Security Advisories",
-    "description": "您可以在此处查询安全公告的相关信息。",
+    "description": "View the latest security advisories for openGauss database. Stay informed about vulnerabilities, patches, and security updates.",
     "inLanguage": "en",
     "isPartOf": {
       "@id": "https://opengauss.org/#website"
@@ -13,7 +13,7 @@
     "about": {
       "@type": "Thing",
       "name": "Security Advisories",
-      "description": "openGauss安全公告信息查询页面"
+      "description": "Security advisories and vulnerability information for openGauss database"
     }
   },
   {
@@ -22,7 +22,7 @@
     "@id": "https://opengauss.org/en/security-advisories/#collectionpage",
     "url": "https://opengauss.org/en/security-advisories/",
     "name": "Security Advisories",
-    "description": "您可以在此处查询安全公告的相关信息。",
+    "description": "View the latest security advisories for openGauss database. Stay informed about vulnerabilities, patches, and security updates.",
     "inLanguage": "en",
     "isPartOf": {
       "@id": "https://opengauss.org/#website"
@@ -30,7 +30,7 @@
     "mainEntity": {
       "@type": "ItemList",
       "name": "Security Advisories List",
-      "description": "openGauss安全公告列表",
+      "description": "Collection of security advisories for openGauss database",
       "itemListElement": []
     }
   },
@@ -59,11 +59,8 @@
     "@id": "https://opengauss.org/#website",
     "url": "https://opengauss.org/",
     "name": "openGauss",
-    "description": "openGauss开源数据库社区官网",
-    "inLanguage": [
-      "en",
-      "zh"
-    ],
+    "description": "openGauss is an enterprise-grade open source relational database with high-performance, high-security, and high-reliability.",
+    "inLanguage": ["en", "zh"],
     "potentialAction": {
       "@type": "SearchAction",
       "target": {

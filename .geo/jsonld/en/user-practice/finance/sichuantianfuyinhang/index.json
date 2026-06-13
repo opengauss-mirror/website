@@ -1,0 +1,35 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "四川天府银行",
+  "description": "MogDB容器化创新应用，实现数据库集群持久化全栈部署管理新模式",
+  "articleSection": "用户案例",
+  "about": {
+    "@type": "Organization",
+    "name": "四川天府银行",
+    "url": "https://www.tf.cn/tfyh/index.html",
+    "industry": "金融"
+  },
+  "mentions": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "MogDB Container"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "MogDB Stack"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "MogDB Operator"
+    },
+    {
+      "@type": "Organization",
+      "name": "云和恩墨"
+    }
+  ],
+  "mainEntity": {
+    "@type": "Thing",
+    "name": "容器化数据库解决方案"
+  }
+}

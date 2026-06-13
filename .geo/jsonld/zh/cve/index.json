@@ -1,8 +1,8 @@
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "CVE",
-  "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。",
+  "name": "CVE漏洞查询",
+  "description": "openGauss CVE安全漏洞查询页面，提供CVE漏洞列表检索、漏洞详情查看功能，包含CVSS评分、漏洞摘要、发布日期等信息。",
   "url": "https://opengauss.org/zh/cve/",
   "inLanguage": "zh",
   "isPartOf": {
@@ -23,6 +23,6 @@
   },
   "mainContentOfPage": {
     "@type": "WebPageElement",
-    "name": "CVE列表"
+    "name": "CVE漏洞列表"
   }
 }

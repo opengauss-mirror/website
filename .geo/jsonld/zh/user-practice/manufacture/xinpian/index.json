@@ -1,0 +1,30 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "某芯片制造企业",
+  "description": "核心数据库应用，助力国产芯片稳健智造",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org/zh/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/user-practice/manufacture/xinpian/"
+  },
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "芯片制造"
+    },
+    {
+      "@type": "Thing",
+      "name": "openGauss"
+    },
+    {
+      "@type": "Thing",
+      "name": "Vastbase"
+    }
+  ],
+  "articleSection": "用户案例"
+}

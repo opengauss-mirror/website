@@ -1,0 +1,16 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "江苏移动",
+  "description": "为满足全栈自主创新的建设需求，PanWeiDB 数据库助力适配应用开发商进行业务系统架构适配及应用兼容性改造，从传统国外开源数据库 MySQL 转型适配自主创新数据库 PanWeiDB 。 PanWeiDB 在 openGauss 开源软件强大内核基础上增强了高可用性、分布式能力、MySQL 兼容性、配套工具等功能，满足了零售系统系统快速完成适配改造，实现业务快速上线运行。",
+  "about": {
+    "@type": "Organization",
+    "name": "江苏移动",
+    "url": "https://www.10086.cn/index/js/index_250_250.html"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/user-practice/carrier/jiangsuyidong/"
+  },
+  "articleSection": "运营商"
+}

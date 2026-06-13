@@ -1,8 +1,8 @@
 {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "迁移实践案例",
-  "description": "openGauss数据库迁移实践案例，包括迁移评估、应用适配、数据迁移、试运行和生产割接等完整流程。",
+  "name": "openGauss数据库迁移流程",
+  "description": "openGauss数据库迁移完整流程指南，包括迁移评估、应用适配、数据迁移、试运行和生产割接五个阶段。",
   "step": [
     {
       "@type": "HowToStep",

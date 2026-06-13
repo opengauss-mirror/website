@@ -1,0 +1,51 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "DataPipeline",
+    "description": "与openGauss形成联合解决方案，服务金融、电信、能源等行业客户。",
+    "url": "https://opengauss.org/zh/user-practice/internet/datapipeline/",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "openGauss",
+      "url": "https://opengauss.org/"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "DataPipeline",
+    "url": "https://www.datapipeline.com/",
+    "description": "与openGauss形成联合解决方案，服务金融、电信、能源等行业客户。"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "首页",
+        "item": "https://opengauss.org/zh/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "用户案例",
+        "item": "https://opengauss.org/zh/user-practice/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "互联网",
+        "item": "https://opengauss.org/zh/user-practice/internet/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "DataPipeline",
+        "item": "https://opengauss.org/zh/user-practice/internet/datapipeline/"
+      }
+    ]
+  }
+]

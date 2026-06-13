@@ -2,13 +2,13 @@
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "工具中心",
-  "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。",
+  "description": "openGauss工具中心，为开发者和ISV提供九大类开发工具支持，包括标准SQL及驱动、数据访问中间件、集群管理软件、数据导入导出工具、数据复制/同步工具、运行视图、客户端工具、监控运维系统及内核扩展。",
   "keywords": "openGauss,开源数据库,openGauss社区官网,开源社区",
   "url": "https://opengauss.org/zh/tools/",
   "mainEntity": {
     "@type": "ItemList",
     "name": "openGauss工具集",
-    "description": "主要面向开发者和ISV，提供六大类开发工具：客户端工具、数据导入导出工具、数据复制/同步工具、监控运维接口及工具集、备份恢复接口及工具集、通用数据框架",
+    "description": "主要面向开发者和ISV，提供九大类开发工具：标准SQL及驱动、数据访问中间件、集群管理软件、数据导入导出工具、数据复制/同步工具、运行视图、客户端工具、监控运维系统、内核扩展",
     "itemListElement": [
       {
         "@type": "ListItem",

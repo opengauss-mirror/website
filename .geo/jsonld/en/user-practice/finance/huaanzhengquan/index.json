@@ -1,0 +1,106 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://opengauss.org/zh/user-practice/finance/huaanzhengquan/#article",
+      "headline": "华安证券",
+      "description": "华安证券以安徽为总部业务网络辐射全国二十多个省份，拥有151家证券分支机构，13家期货分支机构。华安证券具有统一的数据中心基础设施管理平台。伴随业务发展，平台原有系统逐渐浮现并发瓶颈，系统响应也有所延迟。2023年底，采用openGauss商业发行版—GBase 8c分布式数据库解决方案替换原有数据库，来提升系统的并发能力和及时响应能力。",
+      "inLanguage": "zh-CN",
+      "isPartOf": {
+        "@id": "https://opengauss.org/#website"
+      },
+      "about": {
+        "@type": "Organization",
+        "name": "华安证券",
+        "url": "http://www.hazq.com/main/index/index.shtml",
+        "industry": "金融"
+      },
+      "publisher": {
+        "@id": "https://opengauss.org/#organization"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://opengauss.org/zh/user-practice/finance/huaanzhengquan/#webpage"
+      },
+      "mentions": [
+        {
+          "@type": "Product",
+          "name": "GBase 8c",
+          "description": "openGauss商业发行版分布式数据库解决方案"
+        },
+        {
+          "@type": "Organization",
+          "name": "南大通用"
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://opengauss.org/zh/user-practice/finance/huaanzhengquan/#webpage",
+      "url": "https://opengauss.org/zh/user-practice/finance/huaanzhengquan/",
+      "name": "华安证券 | openGauss",
+      "description": "华安证券以安徽为总部业务网络辐射全国二十多个省份，拥有151家证券分支机构，13家期货分支机构。华安证券具有统一的数据中心基础设施管理平台。伴随业务发展，平台原有系统逐渐浮现并发瓶颈，系统响应也有所延迟。2023年底，采用openGauss商业发行版—GBase 8c分布式数据库解决方案替换原有数据库，来提升系统的并发能力和及时响应能力。",
+      "inLanguage": "zh-CN",
+      "isPartOf": {
+        "@id": "https://opengauss.org/#website"
+      },
+      "about": {
+        "@type": "Organization",
+        "name": "华安证券",
+        "url": "http://www.hazq.com/main/index/index.shtml"
+      },
+      "breadcrumb": {
+        "@id": "https://opengauss.org/zh/user-practice/finance/huaanzhengquan/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://opengauss.org/zh/user-practice/finance/huaanzhengquan/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首页",
+          "item": "https://opengauss.org/zh/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "用户实践",
+          "item": "https://opengauss.org/zh/user-practice/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "金融",
+          "item": "https://opengauss.org/zh/user-practice/finance/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "华安证券"
+        }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://opengauss.org/#organization",
+      "name": "openGauss",
+      "url": "https://opengauss.org/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://opengauss.org/assets/logo_dark.CElWqwW0.svg"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://opengauss.org/#website",
+      "url": "https://opengauss.org/",
+      "name": "openGauss",
+      "publisher": {
+        "@id": "https://opengauss.org/#organization"
+      },
+      "inLanguage": "zh-CN"
+    }
+  ]
+}

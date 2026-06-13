@@ -2,13 +2,13 @@
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "发行版认证",
-  "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。",
+  "description": "openGauss商业发行版认证列表，包含通过openGauss社区认证的商业数据库发行版产品信息。",
   "inLanguage": "zh-CN",
   "mainEntity": {
     "@type": "ItemList",
     "name": "openGauss商业发行版认证列表",
     "description": "openGauss商业发行版测评认证结果，包含产品名称、厂商信息、认证版本及颁发日期",
-    "numberOfItems": 31,
+    "numberOfItems": 33,
     "itemListElement": [
       {
         "@type": "ListItem",
@@ -875,6 +875,64 @@
               "@type": "PropertyValue",
               "name": "证书有效截止日期",
               "value": "2024-03-31"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 32,
+        "item": {
+          "@type": "Product",
+          "name": "神通数据库管理系统 V7.0.21",
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "天津神舟通用数据技术有限公司"
+          },
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "openGauss社区版本",
+              "value": "openGauss 3.0.0"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书颁发日期",
+              "value": "2022-07-20"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书有效截止日期",
+              "value": "2025-03-31"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 33,
+        "item": {
+          "@type": "Product",
+          "name": "GBase 8c V5",
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "天津南大通用数据技术股份有限公司"
+          },
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "openGauss社区版本",
+              "value": "openGauss 3.0.0"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书颁发日期",
+              "value": "2022-09-10"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "证书有效截止日期",
+              "value": "2025-03-31"
             }
           ]
         }

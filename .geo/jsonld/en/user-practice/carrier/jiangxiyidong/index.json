@@ -1,0 +1,22 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "中国移动通信集团江西有限公司",
+  "description": "江西移动省公司智慧网格数据库自主创新迁移项目，在运营商领域的核心业务系统中发挥关键作用。",
+  "articleSection": [
+    "核心应用",
+    "标杆价值",
+    "架构设计",
+    "技术创新",
+    "融合创新"
+  ],
+  "about": {
+    "@type": "Organization",
+    "name": "中国移动通信集团江西有限公司",
+    "url": "https://www.10086.cn/aboutus/culture/intro/province_culture_intro_detail/jx/index.html?id=1"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/zh/user-practice/carrier/jiangxiyidong/"
+  }
+}

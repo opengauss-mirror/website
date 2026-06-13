@@ -1,7 +1,7 @@
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "Notifications | openEuler社区官网",
+  "name": "通知公告 | openGauss社区官网",
   "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。",
   "url": "https://opengauss.org/zh/notifications/",
   "inLanguage": "zh-CN",

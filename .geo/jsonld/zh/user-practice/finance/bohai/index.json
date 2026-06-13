@@ -1,0 +1,22 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "渤海财险",
+  "description": "数据合规，为企业持续经营保驾护航",
+  "articleSection": "用户案例",
+  "about": {
+    "@type": "Organization",
+    "name": "渤海财险",
+    "url": "http://www.bpic.com.cn/"
+  },
+  "mentions": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "openGauss"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "MogDB"
+    }
+  ]
+}

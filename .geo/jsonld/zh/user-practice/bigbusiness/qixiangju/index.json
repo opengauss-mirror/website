@@ -1,0 +1,106 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://opengauss.org/zh/user-practice/bigbusiness/qixiangju/#article",
+      "headline": "四川省气象局",
+      "description": "为四川气象提供稳定气象服务保障，提升气象精度",
+      "inLanguage": "zh-CN",
+      "isPartOf": {
+        "@id": "https://opengauss.org/#website"
+      },
+      "about": {
+        "@type": "Organization",
+        "name": "四川省气象局",
+        "url": "http://sc.cma.gov.cn/",
+        "industry": "大企业"
+      },
+      "publisher": {
+        "@id": "https://opengauss.org/#organization"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://opengauss.org/zh/user-practice/bigbusiness/qixiangju/#webpage"
+      },
+      "mentions": [
+        {
+          "@type": "Product",
+          "name": "虚谷数据库（for openGauss）",
+          "description": "openGauss商业发行版，业界领先的2路150万tpmC性能，金融级稳定性"
+        },
+        {
+          "@type": "Organization",
+          "name": "虚谷"
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://opengauss.org/zh/user-practice/bigbusiness/qixiangju/#webpage",
+      "url": "https://opengauss.org/zh/user-practice/bigbusiness/qixiangju/",
+      "name": "四川省气象局 | openGauss",
+      "description": "为四川气象提供稳定气象服务保障，提升气象精度",
+      "inLanguage": "zh-CN",
+      "isPartOf": {
+        "@id": "https://opengauss.org/#website"
+      },
+      "about": {
+        "@type": "Organization",
+        "name": "四川省气象局",
+        "url": "http://sc.cma.gov.cn/"
+      },
+      "breadcrumb": {
+        "@id": "https://opengauss.org/zh/user-practice/bigbusiness/qixiangju/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://opengauss.org/zh/user-practice/bigbusiness/qixiangju/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首页",
+          "item": "https://opengauss.org/zh/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "用户实践",
+          "item": "https://opengauss.org/zh/user-practice/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "大企业",
+          "item": "https://opengauss.org/zh/user-practice/bigbusiness/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "四川省气象局"
+        }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://opengauss.org/#organization",
+      "name": "openGauss",
+      "url": "https://opengauss.org/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://opengauss.org/assets/logo_dark.CElWqwW0.svg"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://opengauss.org/#website",
+      "url": "https://opengauss.org/",
+      "name": "openGauss",
+      "publisher": {
+        "@id": "https://opengauss.org/#organization"
+      },
+      "inLanguage": "zh-CN"
+    }
+  ]
+}

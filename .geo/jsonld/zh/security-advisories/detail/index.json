@@ -1,11 +1,11 @@
 [
   {
     "@context": "https://schema.org",
-    "@type": "WebPage",
+    "@type": "ItemPage",
     "@id": "https://opengauss.org/zh/security-advisories/detail/#webpage",
     "url": "https://opengauss.org/zh/security-advisories/detail/",
-    "name": "openGauss",
-    "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。",
+    "name": "openGauss安全公告详情",
+    "description": "openGauss安全公告详情页，提供安全漏洞信息、CVE编号、影响范围及修复方案。",
     "inLanguage": "zh-CN",
     "isPartOf": {
       "@id": "https://opengauss.org/#website"
@@ -15,7 +15,7 @@
       "name": "openGauss",
       "applicationCategory": "DatabaseApplication",
       "operatingSystem": "Linux",
-      "keywords": ["openGauss", "开源数据库", "openGauss社区官网", "开源社区"]
+      "keywords": ["openGauss", "安全公告", "安全漏洞", "CVE"]
     },
     "primaryImageOfPage": {
       "@type": "ImageObject",

@@ -1,0 +1,81 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://opengauss.org/zh/user-practice/finance/jshbank/#article",
+      "headline": "晋商银行",
+      "description": "晋商银行根据上线业务系统的重要程度，采用一主一备或一主多备等架构部署 openGauss 商业发行版 — MogDB 数据库，并采用两地双中心的高可用方案，实现异地数据异步传输、异地级联复制、异地演练和异地切换等功能，确保数据库系统具备高可用性和业务连续性，避免业务非计划中断的风险，提高系统的可靠性。",
+      "articleSection": ["案例背景", "解决方案", "客户收益"],
+      "inLanguage": "zh-CN",
+      "isPartOf": {
+        "@id": "https://opengauss.org/zh/user-practice/finance/jshbank/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://opengauss.org/zh/user-practice/finance/jshbank/#webpage"
+      },
+      "about": [
+        {
+          "@type": "Organization",
+          "@id": "https://opengauss.org/zh/user-practice/finance/jshbank/#organization-jshbank",
+          "name": "晋商银行",
+          "url": "https://www.jshbank.com/",
+          "industry": "金融"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://opengauss.org/zh/user-practice/finance/jshbank/#software-mogdb",
+          "name": "MogDB",
+          "applicationCategory": "DatabaseApplication",
+          "description": "基于 openGauss 内核的商业版数据库"
+        }
+      ],
+      "mentions": [
+        {
+          "@type": "Organization",
+          "name": "云和恩墨"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "openGauss"
+        }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://opengauss.org/zh/user-practice/finance/jshbank/#organization-jshbank",
+      "name": "晋商银行",
+      "url": "https://www.jshbank.com/",
+      "industry": "金融"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://opengauss.org/zh/user-practice/finance/jshbank/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首页",
+          "item": "https://opengauss.org/zh/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "用户实践",
+          "item": "https://opengauss.org/zh/user-practice/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "金融",
+          "item": "https://opengauss.org/zh/user-practice/finance/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "晋商银行"
+        }
+      ]
+    }
+  ]
+}

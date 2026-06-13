@@ -19,6 +19,8 @@
       "@type": "WebPage",
       "@id": "https://opengauss.org/en/security-advisories/detail/#webpage",
       "url": "https://opengauss.org/en/security-advisories/detail/",
+      "name": "openGauss Security Advisory Detail",
+      "description": "Detailed information about openGauss security advisories, including CVE numbers, severity levels, affected components, and security patches.",
       "isPartOf": {
         "@id": "https://opengauss.org/en/#website"
       },
