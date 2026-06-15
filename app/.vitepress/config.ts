@@ -172,6 +172,7 @@ const config: UserConfig = {
         runtimeOnly: false
       }),
       llmstxt({
+        title: 'openGauss | openGauss社区官网',
         ignoreFiles: ['**/blogs/**/*', '**/news/**/*', '**/user-practice/**/*', '**/legal/*', '**/search/*', '**/privacy/*', '**/events/**/*', '**/cookies/*', '**/data-sharing-with-third-parties/*', '**/personal-data-collection-overview/*'],
         generateLLMFriendlyDocsForEachPage: false,
         injectLLMHint: false,
@@ -185,7 +186,7 @@ const config: UserConfig = {
 > openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。
  `,
       site: 'https://opengauss.org',
-      exclude: [/(zh|en)\/(blogs|news|cookies|legal|events|user-practice|cookies|search|privacy|data-sharing-with-third-parties|personal-data-collection-overview)/],
+      exclude: [/(zh|en)\/(blogs|news|cookies|legal|events|cookies|search|privacy|data-sharing-with-third-parties|personal-data-collection-overview)/],
       removeClass: ['feedback', 'feedback-md'],
       htmlDir: join(__dirname, 'dist'),
       output: join(__dirname, 'dist/llms-full.txt')
