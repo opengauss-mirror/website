@@ -6,7 +6,7 @@
       "@id": "https://opengauss.org/en/certification/#webpage",
       "url": "https://opengauss.org/en/certification/",
       "name": "Distribution Certification",
-      "description": "openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability. openGauss is also an open source database platform that encourages community contribution and collaboration.",
+      "description": "openGauss provides a complete test process for commercial release certification. View the list of certified commercial distributions and download certificates.",
       "inLanguage": "en",
       "isPartOf": {
         "@id": "https://opengauss.org/#website"
@@ -18,7 +18,7 @@
     {
       "@type": "Service",
       "@id": "https://opengauss.org/en/certification/#service",
-      "name": "Distribution Certification Service",
+      "name": "Distribution Certification Program",
       "description": "openGauss provides a complete test process for commercial release certification.",
       "provider": {
         "@id": "https://opengauss.org/#organization"
@@ -36,10 +36,7 @@
       "logo": {
         "@type": "ImageObject",
         "url": "https://opengauss.org/assets/logo_dark.CElWqwW0.svg"
-      },
-      "sameAs": [
-        "https://gitcode.com/opengauss/distribution-certification"
-      ]
+      }
     },
     {
       "@type": "WebSite",

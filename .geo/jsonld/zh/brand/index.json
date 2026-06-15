@@ -3,29 +3,30 @@
   "@graph": [
     {
       "@type": "WebPage",
-      "@id": "https://opengauss.org/zh/brand/",
+      "@id": "https://opengauss.org/zh/brand/#webpage",
+      "url": "https://opengauss.org/zh/brand/",
       "name": "openGauss品牌",
-      "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。",
-      "inLanguage": "zh-CN",
+      "description": "openGauss品牌商标使用规范及PPT模板下载，包含商标使用注意事项和法律声明。",
       "isPartOf": {
         "@id": "https://opengauss.org/#website"
       },
       "about": {
-        "@id": "https://opengauss.org/#software"
-      }
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://opengauss.org/#software",
-      "name": "openGauss",
-      "description": "高性能、高安全、高可用、高智能的企业级开源关系数据库。鼓励社区贡献和协作的开源数据库平台。"
+        "@id": "https://opengauss.org/#organization"
+      },
+      "inLanguage": "zh-CN"
     },
     {
       "@type": "WebSite",
       "@id": "https://opengauss.org/#website",
-      "name": "openGauss社区官网",
       "url": "https://opengauss.org/",
-      "inLanguage": ["zh-CN", "en-US"]
+      "name": "openGauss",
+      "inLanguage": ["zh-CN", "en"]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://opengauss.org/#organization",
+      "name": "openGauss社区",
+      "url": "https://opengauss.org/"
     }
   ]
 }

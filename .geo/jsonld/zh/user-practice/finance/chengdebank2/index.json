@@ -1,0 +1,12 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "承德银行股份有限公司",
+  "description": "交易级总账系统创新升级实践，2023年至今首批部署30套，解决交易级总账系统等核心系统GCH转型中的数据库迁移问题。",
+  "about": {
+    "@type": "Organization",
+    "name": "承德银行股份有限公司",
+    "url": "https://www.chengdebank.com/"
+  },
+  "keywords": ["承德银行", "交易级总账系统", "数据库迁移", "GCH转型", "Vastbase"]
+}

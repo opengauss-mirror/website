@@ -1,0 +1,45 @@
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "社区贡献",
+  "description": "openGauss是一个开源社区,完全依赖于社区提供友好的开发和协作环境。",
+  "keywords": "openGauss,开源社区,社区贡献,SIG兴趣组,GitCode,CLA",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "注册 GitCode 账号",
+      "text": "openGauss 源代码托管在GitCode。请注册您的GitCode账户,并设置您的主邮箱。",
+      "url": "https://opengauss.org/zh/contribution/detail.html#注册-gitcode-账号"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "签署 CLA",
+      "text": "在参与社区贡献前,您还需要签署openGauss 社区贡献者许可协议(CLA)。",
+      "url": "https://opengauss.org/zh/contribution/detail.html#签署-cla"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "找到您感兴趣的 SIG",
+      "text": "openGauss 社区按照不同的 SIGs(Special Interest Groups)来组织,以便于更好的管理和改善工作流程。SIG 是开放的,欢迎任何人加入并参与贡献。",
+      "url": "https://opengauss.org/zh/contribution/detail.html#找到您感兴趣的-sig"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "开始您的贡献",
+      "text": "包括给自己分配 Issue、提交 Issue、提交 Pull Request 和检视代码。",
+      "url": "https://opengauss.org/zh/contribution/detail.html#开始您的贡献"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "社区角色",
+      "text": "我们欢迎所有人参与 openGauss 社区贡献,我们的目标是发展一个由贡献者组成的活跃、健康的社区。",
+      "url": "https://opengauss.org/zh/contribution/detail.html#社区角色"
+    }
+  ],
+  "tool": [
+    {
+      "@type": "HowToTool",
+      "name": "GitCode账号"
+    }
+  ]
+}

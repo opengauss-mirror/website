@@ -1,0 +1,25 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "广西电网有限责任公司",
+  "abstract": "使用openGauss替换部分老旧数据库，部署openGauss服务器节点数为50个以上。",
+  "about": {
+    "@type": "Thing",
+    "name": "openGauss"
+  },
+  "mentions": [
+    {
+      "@type": "Organization",
+      "name": "广西电网有限责任公司",
+      "url": "http://www.gx.csg.cn/"
+    },
+    {
+      "@type": "Thing",
+      "name": "能源"
+    }
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/user-practice/energy/guangxidianwang/"
+  }
+}

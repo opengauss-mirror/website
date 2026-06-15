@@ -6,7 +6,7 @@
       "@id": "https://opengauss.org/en/cve/#webpage",
       "url": "https://opengauss.org/en/cve/",
       "name": "CVE",
-      "description": "openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability. openGauss is also an open source database platform that encourages community contribution and collaboration.",
+      "description": "Browse and search Common Vulnerabilities and Exposures (CVE) for openGauss database software. View CVE details including severity scores, descriptions, and release dates.",
       "isPartOf": {
         "@id": "https://opengauss.org/#website"
       },

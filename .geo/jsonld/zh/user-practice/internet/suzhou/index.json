@@ -1,0 +1,22 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "苏州公共信用信息中心",
+  "description": "非核心业务使用 MogDB 数据库并部署在x86环境下，部署openGauss服务器节点数为1~10个。",
+  "about": {
+    "@type": "Organization",
+    "name": "苏州公共信用信息中心",
+    "url": "https://credit.suzhou.gov.cn/",
+    "industry": "互联网"
+  },
+  "mentions": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "MogDB"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "openGauss"
+    }
+  ]
+}

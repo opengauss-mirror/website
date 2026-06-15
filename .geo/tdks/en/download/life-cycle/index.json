@@ -1,0 +1,5 @@
+{
+  "title": "Version Lifecycle",
+  "description": "Learn about openGauss community version lifecycle management, including LTS versions with 3 years support and RCx testing versions with 6 months support. Understand maintenance phases, extended support, and end-of-life notifications.",
+  "keywords": "openGauss version lifecycle, LTS version, RCx version, database lifecycle management, openGauss release cycle, maintenance support, extended support"
+}

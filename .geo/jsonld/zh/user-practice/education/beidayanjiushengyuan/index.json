@@ -1,0 +1,56 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "北大研究生院",
+  "description": "Vastbase提供良好的地理信息数据处理能力支持",
+  "author": {
+    "@type": "Organization",
+    "name": "openGauss社区"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss社区",
+    "url": "https://opengauss.org"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/user-practice/education/beidayanjiushengyuan/"
+  },
+  "about": {
+    "@type": "Organization",
+    "name": "北大研究生院",
+    "url": "https://grs.pku.edu.cn/"
+  },
+  "mentions": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Vastbase",
+      "applicationCategory": "Database"
+    },
+    {
+      "@type": "Organization",
+      "name": "海量数据"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "CitySPS"
+    }
+  ],
+  "articleSection": [
+    {
+      "@type": "WebPageElement",
+      "name": "客户挑战",
+      "text": "海量数据携手北京大学，为 博雅智城-城市智慧决策平台"
+    },
+    {
+      "@type": "WebPageElement",
+      "name": "解决方案",
+      "text": "CitySPS提供多模混合负载的数据库平台。城市规划-建设-监测评估-治理一体化决策支持基于数据库技术的大数据治理与挖掘，成为智慧平台建设的基础关键环节。"
+    },
+    {
+      "@type": "WebPageElement",
+      "name": "客户收益",
+      "text": "空间分析能力：城市、地理时空大数据分析，空间多尺度、高时空颗粒度、二维&三维时空分析。高计算性能：时空大数据+城市全系统计量模型，功能模块100+项，计算变量1000+个。信息安全：智慧城市数据资源关乎国家安全、城市安全、社会稳定。高可用性：城市治理、城市运营生产环境，对可用性提出了较高要求。事务/分析并重：OLTP-快速写入新数据；OLAP-快速分析数据。"
+    }
+  ]
+}

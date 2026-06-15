@@ -1,0 +1,99 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://opengauss.org/zh/user-practice/medical/fushijiaopian/#article",
+      "headline": "富士胶片（中国）投资有限公司",
+      "description": "富士胶片通过利用人工智能及其他技术的医疗系统、服务和解决方案为医疗专业人员提供支持。其中富医睿影医用电子云胶片软件V2.0（云电子胶片及报告系统软件）使用和适配openGauss",
+      "inLanguage": "zh-CN",
+      "isPartOf": {
+        "@id": "https://opengauss.org/#website"
+      },
+      "about": {
+        "@type": "Organization",
+        "name": "富士胶片（中国）投资有限公司",
+        "url": "https://www.fujifilm.com.cn/cn/zh-hans",
+        "industry": "医疗"
+      },
+      "publisher": {
+        "@id": "https://opengauss.org/#organization"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://opengauss.org/zh/user-practice/medical/fushijiaopian/#webpage"
+      },
+      "mentions": {
+        "@type": "SoftwareApplication",
+        "name": "openGauss"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://opengauss.org/zh/user-practice/medical/fushijiaopian/#webpage",
+      "url": "https://opengauss.org/zh/user-practice/medical/fushijiaopian/",
+      "name": "富士胶片（中国）投资有限公司 | openGauss",
+      "description": "富士胶片通过利用人工智能及其他技术的医疗系统、服务和解决方案为医疗专业人员提供支持。其中富医睿影医用电子云胶片软件V2.0（云电子胶片及报告系统软件）使用和适配openGauss",
+      "inLanguage": "zh-CN",
+      "isPartOf": {
+        "@id": "https://opengauss.org/#website"
+      },
+      "about": {
+        "@type": "Organization",
+        "name": "富士胶片（中国）投资有限公司",
+        "url": "https://www.fujifilm.com.cn/cn/zh-hans"
+      },
+      "breadcrumb": {
+        "@id": "https://opengauss.org/zh/user-practice/medical/fushijiaopian/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://opengauss.org/zh/user-practice/medical/fushijiaopian/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首页",
+          "item": "https://opengauss.org/zh/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "用户实践",
+          "item": "https://opengauss.org/zh/user-practice/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "医疗",
+          "item": "https://opengauss.org/zh/user-practice/medical/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "富士胶片（中国）投资有限公司"
+        }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://opengauss.org/#organization",
+      "name": "openGauss",
+      "url": "https://opengauss.org/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://opengauss.org/assets/logo_dark.CElWqwW0.svg"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://opengauss.org/#website",
+      "url": "https://opengauss.org/",
+      "name": "openGauss",
+      "publisher": {
+        "@id": "https://opengauss.org/#organization"
+      },
+      "inLanguage": "zh-CN"
+    }
+  ]
+}

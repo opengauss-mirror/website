@@ -1,0 +1,7 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "兰州西云图信息技术有限公司",
+  "url": "http://www.xiyuntu.com/",
+  "description": "使用openGauss使能工业互联网平台业务，部署openGauss服务器节点数为1~10个。"
+}

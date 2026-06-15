@@ -1,0 +1,36 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "深圳市金蝶天燕云计算股份有限公司",
+    "url": "https://www.apusic.com/",
+    "description": "金蝶天燕凭借自主创新的技术服务能力，为政府以及军工、金融、能源、通信等关键行业提供软件基础云平台服务与行业数字化解决方案。"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "首页",
+        "item": "https://opengauss.org/zh/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "用户案例"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "其他"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "深圳市金蝶天燕云计算股份有限公司"
+      }
+    ]
+  }
+]

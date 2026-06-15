@@ -1,0 +1,17 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "央广网",
+  "description": "国产数据库快速平滑迁移，综合性能提升30%",
+  "about": {
+    "@type": "Organization",
+    "name": "央广网",
+    "url": "http://www.cnr.cn/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/user-practice/bigbusiness/yangguangwang/"
+  },
+  "articleSection": "大企业",
+  "keywords": ["openGauss", "Vastbase", "MySQL迁移", "数据库", "性能提升"]
+}

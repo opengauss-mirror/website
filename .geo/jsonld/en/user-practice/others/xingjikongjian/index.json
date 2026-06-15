@@ -1,0 +1,17 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "星际空间（天津）科技发展有限公司",
+    "url": "https://stargis.tigis.com.cn/main.htm",
+    "description": "星际空间（天津）科技发展有限公司运用现代化信息技术和新型测绘手段为政府管理部门和企业，提供全方位服务。"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "星际三维地理信息基础平台（STARGIS EARTH） V3.0",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "openGauss",
+    "description": "星际三维地理信息基础平台（STARGIS EARTH） V3.0适配和使用openGauss"
+  }
+]

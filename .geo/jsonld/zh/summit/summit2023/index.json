@@ -8,10 +8,7 @@
   "endDate": "2023-12-28T18:00",
   "eventStatus": "https://schema.org/EventEnded",
   "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
-  "location": {
-    "@type": "Place",
-    "name": "[待补充：活动地点未在原始页面中明确显示]"
-  },
+  
   "organizer": {
     "@type": "Organization",
     "name": "openGauss社区",
@@ -100,7 +97,7 @@
     {
       "@type": "Person",
       "name": "周傲英",
-      "jobTitle": "教授",
+      "jobTitle": "中国计算机学会常务理事、教授",
       "worksFor": {
         "@type": "Organization",
         "name": "华东师范大学数据学院"
@@ -181,7 +178,7 @@
     {
       "@type": "Person",
       "name": "李国良",
-      "jobTitle": "教授",
+      "jobTitle": "openGauss社区技术委员会主席、教授",
       "worksFor": {
         "@type": "Organization",
         "name": "清华大学计算机系"
@@ -208,7 +205,7 @@
     {
       "@type": "Person",
       "name": "蔡亚杰",
-      "jobTitle": "秘书",
+      "jobTitle": "秘书长",
       "worksFor": {
         "@type": "Organization",
         "name": "openGauss社区"
@@ -225,7 +222,7 @@
     },
     {
       "@type": "Person",
-      "name": "杨晓成",
+      "name": "杨晓骋",
       "jobTitle": "合伙人兼董事总经理",
       "worksFor": {
         "@type": "Organization",
@@ -252,7 +249,7 @@
     },
     {
       "@type": "Person",
-      "name": "王天芳",
+      "name": "王天访",
       "jobTitle": "售前咨询总监",
       "worksFor": {
         "@type": "Organization",
@@ -299,10 +296,10 @@
   },
   "keywords": [
     "openGauss",
-    "开源数据库",
-    "数据库峰会",
-    "技术大会",
-    "开源社区"
+    "openGauss社区",
+    "数据库",
+    "峰会",
+    "年度盛会"
   ],
   "inLanguage": "zh-CN",
   "sameAs": [

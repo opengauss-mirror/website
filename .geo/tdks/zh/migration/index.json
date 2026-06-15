@@ -1,0 +1,5 @@
+{
+  "title": "openGauss迁移专区",
+  "description": "openGauss迁移专区提供数据库迁移全流程解决方案，包括迁移评估、应用适配、数据迁移、试运行和生产割接等环节，支持MySQL兼容性评估和一键式迁移",
+  "keywords": "openGauss,openGauss迁移,数据库迁移,迁移评估,DataKit,MySQL迁移,稳定可靠,高效平滑迁移"
+}

@@ -3,7 +3,7 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "openGauss",
-    "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。",
+    "description": "openGauss是一款高性能、高安全、高可靠的企业级开源关系型数据库。采用木兰宽松许可证v2发行，鼓励社区贡献与协作，深度融合华为数据库领域经验，持续构建企业级竞争力特性。",
     "url": "https://opengauss.org/zh/"
   },
   {
@@ -22,6 +22,6 @@
     "@type": "SoftwareApplication",
     "name": "openGauss",
     "applicationCategory": "DatabaseApplication",
-    "description": "高性能、高安全、高可用、高智能的企业级开源关系数据库"
+    "description": "高性能、高安全、高可靠的企业级开源关系型数据库"
   }
 ]

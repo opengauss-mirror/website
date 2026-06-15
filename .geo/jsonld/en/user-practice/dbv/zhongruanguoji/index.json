@@ -1,0 +1,30 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "中软国际科技服务有限公司",
+      "@id": "https://opengauss.org/zh/user-practice/dbv/zhongruanguoji/#organization"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "磐石数据库CSIDB",
+      "applicationCategory": "DatabaseApplication",
+      "description": "基于openGauss 5.0.0内核打造的企业级关系型数据库",
+      "version": "V1.0.0",
+      "provider": {
+        "@id": "https://opengauss.org/zh/user-practice/dbv/zhongruanguoji/#organization"
+      },
+      "softwareVersion": "V1.0.0"
+    },
+    {
+      "@type": "WebPage",
+      "name": "中软国际科技服务有限公司",
+      "description": "磐石数据库CSIDB是基于openGauss 5.0.0内核打造了企业级关系型数据库--磐石数据库。最新版本为CSIDB V1.0.0",
+      "url": "https://opengauss.org/zh/user-practice/dbv/zhongruanguoji/",
+      "about": {
+        "@id": "https://opengauss.org/zh/user-practice/dbv/zhongruanguoji/#organization"
+      }
+    }
+  ]
+}

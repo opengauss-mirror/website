@@ -1,8 +1,8 @@
 {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "openGauss社区",
-  "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。",
+  "name": "openGauss社区理事会",
+  "description": "openGauss社区理事会成员名单，包含第一届理事会(2020-2021)与第二届理事会(2021-)的理事长、秘书长及理事单位代表。",
   "url": "https://opengauss.org/zh/member/detail/",
   "member": [
     {

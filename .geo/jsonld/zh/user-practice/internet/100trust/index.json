@@ -1,0 +1,7 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "百信信息技术有限公司",
+  "url": "https://www.100trust.cn/",
+  "description": "将openGauss部署在arm上，做云平台适配业务，部署openGauss服务器节点数为20~50个。"
+}

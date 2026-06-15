@@ -1,0 +1,21 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "谐云",
+  "description": "谐云基于openGauss提供容器版本服务。",
+  "about": {
+    "@type": "Thing",
+    "name": "互联网"
+  },
+  "mentions": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "openGauss"
+    }
+  ],
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "谐云",
+    "url": "https://www.harmonycloud.cn/"
+  }
+}

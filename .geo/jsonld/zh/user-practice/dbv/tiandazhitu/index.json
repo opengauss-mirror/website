@@ -1,0 +1,32 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "天大智图（天津）科技有限公司",
+      "url": "https://oggdb.com/#/home"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "OggDB",
+      "alternateName": "openGauss Graph DataBase",
+      "applicationCategory": "DatabaseApplication",
+      "description": "基于openGauss(3.0.0)关系型存储的图引擎，提供海量图数据的存储和分析能力，支持千亿边数据存储与毫秒级点边查询能力，支持Cypher和SPARQL语言查询，同时处理RDF图和属性图，兼容关系型数据库。",
+      "operatingSystem": "openGauss 3.0.0",
+      "offers": {
+        "@type": "Offer",
+        "category": "开源软件"
+      },
+      "featureList": [
+        "海量图数据存储",
+        "千亿边数据存储",
+        "毫秒级点边查询",
+        "Cypher语言查询",
+        "SPARQL语言查询",
+        "RDF图处理",
+        "属性图处理",
+        "关系型数据库兼容"
+      ]
+    }
+  ]
+}

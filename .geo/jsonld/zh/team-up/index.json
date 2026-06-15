@@ -16,7 +16,7 @@
     {
       "@type": "HowTo",
       "name": "结队计划申请流程",
-      "description": "openGauss社区\"结队计划\"申请流程，包含提交申请、信息审核、形成结队、维护结队四个步骤",
+      "description": "openGauss社区\"结队计划\"申请流程，包含提交申请、信息审核、形成\"结队\"、维护\"结队\"四个步骤",
       "step": [
         {
           "@type": "HowToStep",

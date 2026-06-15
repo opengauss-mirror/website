@@ -6,7 +6,7 @@
       "@id": "https://opengauss.org/zh/migration/#webpage",
       "url": "https://opengauss.org/zh/migration/",
       "name": "迁移专区",
-      "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。",
+      "description": "openGauss迁移专区为用户提供数据库迁移全流程解决方案，涵盖迁移评估、应用适配、数据迁移、试运行和生产割接五大环节，并提供迁移视频演示、最佳实践案例和DataKit工具下载",
       "inLanguage": "zh-CN",
       "isPartOf": {
         "@id": "https://opengauss.org/#website"
@@ -195,8 +195,8 @@
     {
       "@type": "Service",
       "@id": "https://opengauss.org/zh/migration/#service",
-      "name": "数据库迁移服务",
-      "description": "openGauss数据库迁移服务，提供MySQL兼容性评估和迁移，支持一键式迁移",
+      "name": "openGauss数据库迁移",
+      "description": "openGauss提供MySQL到openGauss的数据库迁移解决方案，包括一键式兼容性评估和迁移工具，支持迁移评估、应用适配、数据迁移、试运行和生产割接全流程",
       "provider": {
         "@id": "https://opengauss.org/#organization"
       },

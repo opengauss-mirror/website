@@ -2,17 +2,27 @@
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "活动征集",
-  "description": "如果您有兴趣在所在城市举办 openGauss，为了保证活动顺利进行，在举办社区开发者活动前，您需要申请。",
+  "description": "如果您有兴趣在所在城市举办 openGauss Meetup活动，为了保证活动顺利进行，在举办社区开发者活动前，您需要申请。",
   "step": [
     {
       "@type": "HowToStep",
       "name": "提交申请",
-      "text": "如果您有兴趣在所在城市举办 openGauss，为了保证活动顺利进行，在举办社区开发者活动前，您需要在此处申请。"
+      "text": "如果您有兴趣在所在城市举办 openGauss Meetup活动，为了保证活动顺利进行，在举办社区开发者活动前，您需要在此处申请。"
     },
     {
       "@type": "HowToStep",
       "name": "申办审核",
       "text": "如果您的申请符合申办要求，我们会在 5 个工作日内审核并通过电子邮件 common@public.opengauss.org 与您联系，以便提供 openGauss Meetup 赋能支持并与 openGauss 社区冠名联合主办单位；即便申请不合适，我们仍会通过电子邮件通知您，请确保申办表信息无误。"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "申办单位收获",
+      "text": "申办单位可获得社区物料、资金支持、给区域客户做赋能、发掘新的客户线索、提升产品区域影响力。"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "赋能支持",
+      "text": "可获得活动物料模板、宣传资源支持、openGauss B站直播间资源、社区纪念品等赋能支持。"
     },
     {
       "@type": "HowToStep",

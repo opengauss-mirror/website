@@ -1,0 +1,33 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "openGauss金融版本",
+    "applicationCategory": "DatabaseApplication",
+    "operatingSystem": "Linux",
+    "description": "专为金融行业打造的企业级开源数据库，满足金融行业标准，提供高安全、高性能、高可用、高智能等核心能力",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "CNY"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "首页",
+        "item": "https://opengauss.org/zh/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "金融专区",
+        "item": "https://opengauss.org/zh/finance/"
+      }
+    ]
+  }
+]

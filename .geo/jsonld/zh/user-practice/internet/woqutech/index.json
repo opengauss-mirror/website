@@ -1,0 +1,42 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "沃趣科技",
+  "description": "沃趣科技联合openGauss推出Squids openGauss. Squids openGauss是沃趣科技Squids.cn基于openGauss社区版，打造的云上免费openGauss数据库服务。支持在主流公有云上将云主机秒变数据库，并提供多云优选，跨云克隆，故障自愈，性能自治等企业级功能特性。",
+  "articleSection": "用户案例",
+  "about": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "openGauss",
+      "applicationCategory": "Database"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Squids openGauss",
+      "applicationCategory": "Database",
+      "description": "沃趣科技Squids.cn基于openGauss社区版，打造的云上免费openGauss数据库服务"
+    }
+  ],
+  "mentions": [
+    {
+      "@type": "Organization",
+      "name": "沃趣科技"
+    },
+    {
+      "@type": "Thing",
+      "name": "多云优选"
+    },
+    {
+      "@type": "Thing",
+      "name": "跨云克隆"
+    },
+    {
+      "@type": "Thing",
+      "name": "故障自愈"
+    },
+    {
+      "@type": "Thing",
+      "name": "性能自治"
+    }
+  ]
+}

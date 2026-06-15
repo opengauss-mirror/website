@@ -1,0 +1,16 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "普元信息技术股份有限公司",
+  "description": "使用openGauss共建科技普惠生态，部署openGauss服务器节点数为50个以上。",
+  "about": {
+    "@type": "Organization",
+    "name": "普元信息技术股份有限公司",
+    "url": "http://www.primeton.com/"
+  },
+  "mainEntity": {
+    "@type": "Thing",
+    "name": "openGauss"
+  },
+  "articleSection": "金融"
+}

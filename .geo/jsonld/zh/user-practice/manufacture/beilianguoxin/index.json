@@ -1,0 +1,25 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "江苏北联国芯技术有限公司",
+  "description": "使用openGauss承载OA系统，部署openGauss服务器节点数为1~10个。",
+  "about": {
+    "@type": "Organization",
+    "name": "江苏北联国芯技术有限公司",
+    "url": "http://www.beilianguoxin.com/"
+  },
+  "mentions": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "openGauss"
+    },
+    {
+      "@type": "Thing",
+      "name": "OA系统"
+    },
+    {
+      "@type": "Thing",
+      "name": "制造"
+    }
+  ]
+}

@@ -2,7 +2,7 @@
   "@context": "https://schema.org",
   "@type": "ItemList",
   "name": "Videos",
-  "description": "openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability. openGauss is also an open source database platform that encourages community contribution and collaboration.",
+  "description": "Explore openGauss video tutorials covering database basics, crash courses, themed livestreaming series, and offline activities. Learn openGauss features, deployment, migration, and best practices through comprehensive video guides.",
   "numberOfItems": 42,
   "itemListElement": [
     {

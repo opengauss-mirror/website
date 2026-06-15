@@ -1,0 +1,23 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "京东方",
+  "description": "Vastbase助力用户夯实制造产业数据库新基座。秉持"由易到难"的数字化转型理念，从简单的办公业务场景入手试点。海量数据库Vastbase已上线京东方内HR电子档案、绿色积分、内部竞聘等办公类业务系统",
+  "about": {
+    "@type": "Organization",
+    "name": "京东方",
+    "url": "https://www.boe.com/"
+  },
+  "mentions": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Vastbase",
+      "applicationCategory": "Database"
+    },
+    {
+      "@type": "Thing",
+      "name": "制造"
+    }
+  ],
+  "inLanguage": "zh-CN"
+}

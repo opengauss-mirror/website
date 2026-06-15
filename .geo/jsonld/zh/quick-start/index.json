@@ -6,7 +6,7 @@
       "@id": "https://opengauss.org/zh/quick-start/",
       "url": "https://opengauss.org/zh/quick-start/",
       "name": "快速体验",
-      "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。",
+      "description": "openGauss快速体验页面，提供git使用教程、Linux基础操作、企业版和极简版安装部署指南、学习视频等入门资源，帮助开发者快速上手openGauss数据库。",
       "inLanguage": "zh-CN",
       "isPartOf": {
         "@id": "https://opengauss.org/#website"

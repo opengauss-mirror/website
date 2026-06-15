@@ -5,8 +5,8 @@
       "@type": "WebPage",
       "@id": "https://opengauss.org/zh/ogsp/#webpage",
       "url": "https://opengauss.org/zh/ogsp/",
-      "name": "服务商认证",
-      "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。",
+      "name": "服务商认证公司查询",
+      "description": "查询已通过openGauss服务商认证的公司名单，包括公司名称、证书编号、颁发日期、有效期及服务能力评级。",
       "inLanguage": "zh-CN",
       "isPartOf": {
         "@id": "https://opengauss.org/#website"
@@ -15,7 +15,7 @@
         "@id": "https://opengauss.org/#organization"
       },
       "mainEntity": {
-        "@id": "https://opengauss.org/zh/ogsp/#service"
+        "@id": "https://opengauss.org/zh/ogsp/#certification-list"
       }
     },
     {
@@ -23,7 +23,7 @@
       "@id": "https://opengauss.org/#website",
       "url": "https://opengauss.org/",
       "name": "openGauss",
-      "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。",
+      "description": "openGauss开源数据库社区官网",
       "inLanguage": "zh-CN",
       "publisher": {
         "@id": "https://opengauss.org/#organization"
@@ -44,18 +44,13 @@
       ]
     },
     {
-      "@type": "Service",
-      "@id": "https://opengauss.org/zh/ogsp/#service",
-      "name": "openGauss服务商认证",
-      "description": "openGauss服务商认证服务，提供完整的评估标准和流程。",
-      "url": "https://opengauss.org/zh/ogsp/",
+      "@type": "ItemList",
+      "@id": "https://opengauss.org/zh/ogsp/#certification-list",
+      "name": "openGauss服务商认证公司名录",
+      "description": "已通过openGauss服务商认证的公司列表，包含认证证书、颁发日期、服务能力评级等信息。",
+      "numberOfItems": 20,
       "provider": {
         "@id": "https://opengauss.org/#organization"
-      },
-      "serviceType": "认证服务",
-      "areaServed": {
-        "@type": "Country",
-        "name": "China"
       }
     },
     {

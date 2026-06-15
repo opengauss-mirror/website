@@ -1,0 +1,18 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "国家能源集团信息技术公司（数据中心）",
+  "description": "基于国能磐石关系型数据库创新实践，承载用户规模30万人，业务满意度高。",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/user-practice/energy/guojianengyuan/"
+  },
+  "about": {
+    "@type": "Organization",
+    "name": "国家能源集团信息技术公司（数据中心）",
+    "url": "https://www.ceic.com/",
+    "description": "在电力技术监督、工程招标、国能e商、国能企业云底座和煤机设备数字孪生等业务场景广泛应用数据库技术。"
+  },
+  "articleSection": "案例展示",
+  "keywords": ["openGauss", "国能磐石关系型数据库", "CERDB", "数据库迁移", "MySQL", "PostgreSQL", "CEOS", "DataKit", "AI4DB"]
+}

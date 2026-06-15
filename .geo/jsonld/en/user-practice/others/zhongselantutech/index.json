@@ -1,0 +1,22 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "中色蓝图科技股份有限公司",
+  "description": "中色蓝图科技主营有色金属勘查、有色金属矿山开发、地理测绘和环境治理业务，是中国有色地勘行业改革发展的先行者和引领者。其中，中色地理信息系统基础平台 V3.0适配和使用openGauss",
+  "articleSection": "showcase",
+  "about": {
+    "@type": "Organization",
+    "name": "中色蓝图科技股份有限公司",
+    "url": "http://www.sinotech-zsdk.com/"
+  },
+  "mentions": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "openGauss"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "中色地理信息系统基础平台 V3.0"
+    }
+  ]
+}

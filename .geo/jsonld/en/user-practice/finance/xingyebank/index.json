@@ -1,0 +1,36 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "兴业银行股份有限公司",
+  "description": "支撑跨境支付清算和统一积分项目的openGauss数据库管理平台，成功支持行内百余套业务系统，系统客户基数超过5000万。",
+  "articleSection": [
+    "核心应用",
+    "标杆价值",
+    "架构设计",
+    "技术创新",
+    "融合创新"
+  ],
+  "about": {
+    "@type": "Organization",
+    "name": "兴业银行股份有限公司",
+    "url": "https://www.cib.com.cn/cn/index.html"
+  },
+  "mentions": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "openGauss",
+      "applicationCategory": "Database Management System"
+    },
+    {
+      "@type": "Thing",
+      "name": "鲲鹏",
+      "description": "国产CPU平台"
+    },
+    {
+      "@type": "Thing",
+      "name": "麒麟V10",
+      "description": "国产操作系统"
+    }
+  ],
+  "inLanguage": "zh-CN"
+}
