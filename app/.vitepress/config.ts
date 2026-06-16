@@ -13,6 +13,17 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const geoDir = join(__dirname, '../../.geo')
 const isBlog = /.+\/(?:user-practice|events|news)\/.+$/;
 
+// eslint-disable-next-line
+const excludes = process.argv
+  .filter(arg => arg.startsWith('--exclude='))
+  .flatMap(arg => {
+    const val = arg.split('=')[1];
+    if (val.includes(',')) {
+      return val.split(',').map(v => v.trim());
+    }
+    return val;
+  });
+
 /**
  * 设置JSON-LD
  */
@@ -73,6 +84,7 @@ const config: UserConfig = {
     },
   },
   lastUpdated: true,
+  srcExclude: excludes,
   base: '/',
   head: [
     [

@@ -8,6 +8,7 @@
     "dev": "vitepress dev app",
     "prebuild": "node scripts/readEventsFrontmatter.js",
     "build": "pnpm gen:blogs && pnpm gen:news && vitepress build app",
+    "build:geo": "vitepress build app --exclude=**/blogs/**/*,**/events/**/*,**/news/**/*",
     "preview": "vitepress preview app",
     "test:e2e": "playwright test && playwright show-report",
     "test:unit": "vitest",
