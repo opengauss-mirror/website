@@ -53,7 +53,7 @@ const pptList = computed(() => (isZh.value ? BrandConfig.pptList.zh : BrandConfi
           </a>
           <div class="ppt-word">
             <p>{{ ppt.text }}</p>
-            <OButton variant="outline" color="primary">{{ i18n.common.COMMON_CONFIG.DOWNLOAD }}</OButton>
+            <OButton download :href="ppt.file" variant="outline" color="primary">{{ i18n.common.COMMON_CONFIG.DOWNLOAD }}</OButton>
           </div>
         </OCard>
       </div>
@@ -220,7 +220,6 @@ const pptList = computed(() => (isZh.value ? BrandConfig.pptList.zh : BrandConfi
     width: 100%;
 
     a {
-      width: 100%;
       img {
         width: 100%;
       }
