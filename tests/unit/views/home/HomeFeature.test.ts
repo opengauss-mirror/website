@@ -9,7 +9,7 @@ import { LEARN_VIDEO_LINK as LEARN_VIDEO_LINK_OLD } from '../../../../app/.vitep
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = resolve(__dirname, '../../../../');
 
-const PPT_FILENAME = '1c4fe6a519b64b80b4bf71f6cddcbf55.pptx';
+const PPT_FILENAME = 'openGauss%E9%9D%A2%E5%90%91%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD%E7%9A%84%E5%BC%80%E6%BA%90%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%B9%E7%A4%BE%E5%8C%BA.pptx';
 const OLD_PPT_PATTERN = 'openGauss%20%E6%8A%9C%E6%9C%AF%E6%9E%B6%E6%9E%84.pptx';
 const OBS_BASE = 'https://learningvideo.obs.ap-southeast-1.myhuaweicloud.com';
 
