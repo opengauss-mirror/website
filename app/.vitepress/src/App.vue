@@ -59,6 +59,18 @@ const COOKIE_DOMAIN = import.meta.env.VITE_COOKIE_DOMAIN;
 const route = useRoute();
 const cookieNoticeRef = ref();
 const cookieStore = useCookieStore();
+
+watch(
+  () => cookieStore.isNoticeVisible,
+  async (visible) => {
+    if (visible && typeof document !== 'undefined') {
+      await nextTick();
+      const pathElement = document.querySelector('.cookie-notice path');
+      pathElement?.setAttribute('fill', 'var(--o-color-primary1)');
+    }
+  }
+);
+
 watch(
   () => route.path,
   async () => {
@@ -135,8 +147,16 @@ watch(
     --layout-content-padding: 24px;
   }
 }
+
+
 </style>
 <style lang="scss" scoped>
+:global(.cookie-notice) {
+  --o-grey-1: var(--o-mixedgray-1);
+}
+:global(.o-dlg-main) {
+  --dlg-bg-color: var(--o-color-control-light);
+}
 main {
   min-height: calc(100vh - 280px);
   background-color: var(--e-color-bg1);
