@@ -1322,12 +1322,6 @@ export default {
         email: `zhouqin@supermap.com`,
       },
       {
-        img: zhubin3,
-        name: `朱彬`,
-        title: `Member`,
-        email: `zzzzzdb_zb@163.com`,
-      },
-      {
         img: zhujinwei,
         name: `朱金伟`,
         title: `Member`,
@@ -5672,12 +5666,6 @@ export default {
         name: `Qin Zhou`,
         title: `Member`,
         email: `zhouqin@supermap.com`,
-      },
-      {
-        img: zhubin3,
-        name: `Bin Zhu`,
-        title: `Member`,
-        email: `zzzzzdb_zb@163.com`,
       },
       {
         img: zhujinwei,
