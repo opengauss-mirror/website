@@ -137,6 +137,9 @@ watch(
 }
 </style>
 <style lang="scss" scoped>
+:global(.o-dlg-main) {
+  --dlg-bg-color: var(--o-color-control-light);
+}
 main {
   min-height: calc(100vh - 280px);
   background-color: var(--e-color-bg1);
