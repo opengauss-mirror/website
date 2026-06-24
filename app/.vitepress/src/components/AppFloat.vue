@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { computed, ref, Ref, CSSProperties, watch, onMounted, nextTick } from 'vue';
-import { useRouter, useData, useRoute } from 'vitepress';
+import { useRouter, useData } from 'vitepress';
 import { postFeedback } from '@/api/api-feedback';
 import { ElMessage } from 'element-plus';
 import { windowOpen } from '@/shared/utils';
 import { useGuideStore } from '@/stores/common';
 import useWindowResize from '@/components/hooks/useWindowResize';
-import { VULBOX_LINK, GAUSS_EMAIL, QUESTIONNAIRE_SURVEY } from '@/data/url-config';
+import { GAUSS_EMAIL, QUESTIONNAIRE_SURVEY } from '@/data/url-config';
 import { useThrottleFn } from '@vueuse/core';
 import { OPopup } from '@opensig/opendesign';
 
@@ -23,25 +23,6 @@ const { lang } = useData();
 const router = useRouter();
 
 const isPc = computed(() => screenWidth.value > 1100);
-
-// 漏洞奖励计划浮窗
-const isSafetyFloatShow = ref(false);
-const FLOAT_BUG_TEXT = '漏洞奖励';
-const route = useRoute();
-
-watch(
-  route,
-  (newValue) => {
-    const pathList = ['security-advisories', 'vulnerability-management', 'cve'];
-    isSafetyFloatShow.value = false;
-    pathList.forEach((item) => {
-      if (item === newValue.path.split('/')[2]) {
-        isSafetyFloatShow.value = true;
-      }
-    });
-  },
-  { immediate: true }
-);
 
 const TITLES1 = ['您向他人推荐 ', '您对 '];
 const TITLES2 = ['openGauss社区', 'openGauss下载版块', 'openGauss学习版块', 'openGauss社区版块', 'openGauss认证版块', 'openGauss互动版块', 'openGauss安全版块'];
@@ -339,11 +320,6 @@ watch(
 <template>
   <div v-if="lang === 'zh' && showFloat" class="float">
     <ClientOnly>
-      <div v-if="!isFloatTipShow" :class="isSafetyFloatShow ? 'safety-tips' : ''">
-        <a :href="isSafetyFloatShow ? VULBOX_LINK : ''" :target="isSafetyFloatShow ? '_blank' : '_self'" rel="noopener noreferrer">
-          {{ isSafetyFloatShow ? FLOAT_BUG_TEXT : '' }}
-        </a>
-      </div>
       <div class="float-wrap">
         <div v-show="isFloatTipShow" class="float-tip">
           <h4 class="tip-title">{{ infoData.feedbackTitle }}</h4>
@@ -773,34 +749,7 @@ watch(
       }
     }
   }
-  .safety-tips {
-    width: 48px;
-    height: 112px;
-    background-image: url('@/assets/category/float/float-safety.png');
-    background-size: 100%;
-    margin-bottom: 12px;
-    position: relative;
-    &:hover {
-      background-image: url('@/assets/category/float/float-safety-hover.png');
-      .close-img {
-        display: inline-block;
-      }
-    }
-    a {
-      display: inline-block;
-      color: var(--e-color-white);
-      font-size: var(--e-font-size-text);
-      padding: 20px 17px;
-    }
-    .close-img {
-      display: none;
-      position: absolute;
-      cursor: pointer;
-      right: 0;
-      top: 0;
-      transform: translate(50%, -50%);
-    }
-  }
+
   .questionnaire-tips {
     width: 48px;
     height: 112px;
@@ -1217,7 +1166,6 @@ watch(
   }
 }
 @include in-dark {
-  .safety-tips,
   .questionnaire-tips,
   .float-head {
     @include img-in-dark;
