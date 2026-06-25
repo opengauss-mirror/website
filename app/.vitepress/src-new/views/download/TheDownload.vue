@@ -2,7 +2,7 @@
 import { ref, computed, onMounted, provide, watchEffect, nextTick, onUnmounted } from 'vue';
 import { useData } from 'vitepress';
 import { OTab, OTabPane } from '@opensig/opendesign';
-import DownloadConfig from '~@/data/download';
+import DownloadConfig from '~@/data/download/content-bridge';
 import BannerLevel2 from '~@/components/BannerLevel2.vue';
 import ContentWrapper from '~@/components/ContentWrapper.vue';
 import AppSection from '~@/components/AppSection.vue';
@@ -96,7 +96,11 @@ onUnmounted(() => {
 
 // 获取版版本数据
 const getData = computed(() => {
-  return activeTab.value === 'all' ? DownloadConfig : DownloadConfig.find((el) => el.name.includes(activeTab.value.toLocaleUpperCase()));
+  if (activeTab.value === 'all') {
+    return DownloadConfig;
+  }
+  const found = DownloadConfig.find((el) => el.name?.includes(activeTab.value.toLocaleUpperCase()));
+  return found || DownloadConfig[0];
 });
 
 // 下载权限列表

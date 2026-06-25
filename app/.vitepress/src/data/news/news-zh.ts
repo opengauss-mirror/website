@@ -1,5 +1,245 @@
 export default [
   {
+    "title": "天翼云联合鲲鹏、openGauss打造智能体长期记忆方案，准确率提升37%，Token消耗降低68%",
+    "date": "2026-06-01",
+    "tags": [
+      "theme"
+    ],
+    "category": "news",
+    "author": [
+      "openGauss"
+    ],
+    "summary": "面对长序列业务场景的交互痛点，天翼云依托自研AgentDesk智能体应用平台，携手华为鲲鹏与openGauss数据库，共同探索智能体长期记忆能力。",
+    "archives": "2026-06",
+    "img": "",
+    "path": "zh/news/2026-06-01/new",
+    "banner": "/category/news/2026-06-01/banner.png"
+  },
+  {
+    "title": "openGauss又添两家社区伙伴数据库产品通过国家安全可靠测评",
+    "date": "2026-05-27",
+    "tags": [
+      "社区动态"
+    ],
+    "category": "news",
+    "author": [
+      "openGauss"
+    ],
+    "summary": "生态伙伴接连斩获权威认证，持续彰显 openGauss 社区强劲的技术实力与产业影响力。",
+    "archives": "2026-05",
+    "img": "",
+    "path": "zh/news/2026-05-27/new",
+    "banner": "/category/news/2026-05-27/banner.png"
+  },
+  {
+    "title": "openGauss全方位亮相 KADC 2026，引领数据库AI原生演进新范式",
+    "date": "2026-05-23",
+    "tags": [
+      "KADC"
+    ],
+    "category": "news",
+    "author": [
+      "openGauss"
+    ],
+    "summary": "openGauss在本次大会中深度参与，从鲲鹏峰会到技术分论坛，从创新展区到动手实操，全面展示了其在AI原生时代的技术突破与生态成果。",
+    "archives": "2026-05",
+    "img": "",
+    "path": "zh/news/2026-05-23/new",
+    "banner": "/category/news/2026-05-23/banner.jpg"
+  },
+  {
+    "title": "KADC 码上报名 | 数据库下一代演进：openGauss AI原生实践论坛",
+    "date": "2026-05-15",
+    "tags": [
+      "KADC"
+    ],
+    "category": "news",
+    "author": [
+      "openGauss"
+    ],
+    "summary": "openGauss 分论坛议程",
+    "archives": "2026-05",
+    "img": "",
+    "path": "zh/news/2026-05-15/new",
+    "banner": "/category/news/2026-05-15/banner.png"
+  },
+  {
+    "title": "openGauss 6.0.5版本正式发布！",
+    "date": "2026-05-15",
+    "banner": "/category/news/2026-05-15/605.png",
+    "tags": [
+      "theme"
+    ],
+    "author": [
+      "openGauss"
+    ],
+    "category": "news",
+    "summary": "openGauss 6.0.5 版本是 openGauss 6.0.0 Release 的补丁版本。在 6.0.3 版本基础上，回合主干分支的部分需求和缺陷，发布 6.0.5 补丁版本。",
+    "archives": "2026-05",
+    "img": "",
+    "path": "zh/news/2026-05-15-605/index"
+  },
+  {
+    "title": "openGauss 社区 2026 年 4 月运作报告",
+    "date": "2026-05-14",
+    "tags": [
+      "运作报告"
+    ],
+    "category": "news",
+    "author": [
+      "openGauss"
+    ],
+    "summary": "openGauss 社区 2026 年 4 月运作报告",
+    "archives": "2026-05",
+    "img": "",
+    "path": "zh/news/2026-05-14/new",
+    "banner": "/category/news/2026-05-14/bannr.png"
+  },
+  {
+    "title": "直播预告｜手把手教你如何瓜分10万奖金！CCF开源创新大赛-openGauss赛道解读直播来袭！",
+    "date": "2026-05-12",
+    "tags": [
+      "theme"
+    ],
+    "category": "news",
+    "author": [
+      "openGauss"
+    ],
+    "summary": "CCF开源创新大赛-openGauss赛道解读直播",
+    "archives": "2026-05",
+    "img": "",
+    "path": "zh/news/2026-05-12/new",
+    "banner": "/category/news/2026-05-12/banner.png"
+  },
+  {
+    "title": "获奖公示 | openGauss 社区满意度调查获奖名单出炉！",
+    "date": "2026-05-11",
+    "tags": [
+      "theme"
+    ],
+    "category": "news",
+    "author": [
+      "openGauss"
+    ],
+    "summary": "获奖名单公示",
+    "archives": "2026-05",
+    "img": "",
+    "path": "zh/news/2026-05-11/new",
+    "banner": "/category/news/2026-05-11/0511banner.png"
+  },
+  {
+    "title": "喜讯！openGauss 获评中国软件行业协会“明星开源社区”，oGRAC 多写数据库技术荣获“先进性科技成果奖”！",
+    "date": "2026-04-30",
+    "tags": [
+      "theme"
+    ],
+    "category": "news",
+    "author": [
+      "openGauss"
+    ],
+    "summary": "openGauss 获评中国软件行业协会“明星开源社区”，oGRAC 多写数据库技术荣获“先进性科技成果奖”！",
+    "archives": "2026-04",
+    "img": "",
+    "path": "zh/news/2026-04-30/new",
+    "banner": "/category/news/2026-04-30/banner.png"
+  },
+  {
+    "title": "openGauss 社区 2026 年 3 月运作报告",
+    "date": "2026-04-09",
+    "tags": [
+      "社区运作报告"
+    ],
+    "category": "news",
+    "author": [
+      "openGauss"
+    ],
+    "summary": "openGauss 社区 2026 年 3 月运作报告",
+    "archives": "2026-04",
+    "img": "",
+    "path": "zh/news/2026-04-15/0415_March Monthly Report",
+    "banner": "/category/news/2026-04-09/banner.png"
+  },
+  {
+    "title": "CCF大赛-openGauss开源项目贡献赛道正式亮相，十万奖金等你来拿！",
+    "date": "2026-04-02",
+    "tags": [
+      "theme"
+    ],
+    "category": "news",
+    "author": [
+      "openGauss"
+    ],
+    "summary": "CCF大赛-openGauss开源项目贡献赛道正式亮相",
+    "archives": "2026-04",
+    "img": "",
+    "path": "zh/news/2026-04-14/20260414_CCF",
+    "banner": "/category/news/2026-04-02/banner.png"
+  },
+  {
+    "title": "重磅！openGauss 7.0.0-RC3 正式发布，这几大特性不容错过",
+    "date": "2026-03-31",
+    "tags": [
+      "theme"
+    ],
+    "category": "news",
+    "author": [
+      "openGauss"
+    ],
+    "summary": "openGauss 7.0.0-RC3 正式发布",
+    "archives": "2026-03",
+    "img": "",
+    "path": "zh/news/2026-04-01/openGauss 7.0.0-RC3",
+    "banner": "/category/news/2026-03-31/banner.png"
+  },
+  {
+    "title": "成为openGauss Meetup联合主办方，获得社区资源+曝光双扶持！",
+    "date": "2026-02-28",
+    "tags": [
+      "theme"
+    ],
+    "category": "news",
+    "author": [
+      "openGauss"
+    ],
+    "summary": "成为openGauss Meetup联合主办方，获得社区资源+曝光双扶持",
+    "archives": "2026-02",
+    "img": "",
+    "path": "zh/news/2026-03-18/20260318_Call for Meetup",
+    "banner": "/category/news/2026-02-28/banner.png"
+  },
+  {
+    "title": "openGauss Tools 7.0.0-RC3 版本更改工具发布包名公告",
+    "date": "2026-01-27",
+    "tags": [
+      "theme"
+    ],
+    "category": "news",
+    "banner": "/category/news/2026-01-27/0127_7.0.0-RC3.png",
+    "author": [
+      "openGauss"
+    ],
+    "summary": "openGauss Tools 7.0.0-RC3 版本更改工具发布包名公告",
+    "archives": "2026-01",
+    "img": "",
+    "path": "zh/news/2026-01-27/index"
+  },
+  {
+    "title": "openGauss 开源社区2025年度报告",
+    "date": "2026-01-16",
+    "tags": [
+      "theme"
+    ],
+    "category": "news",
+    "author": [
+      "openGauss"
+    ],
+    "summary": "openGauss 开源社区2025年度报告",
+    "archives": "2026-01",
+    "img": "",
+    "path": "zh/news/2026-01-16/index",
+    "banner": "/category/news/2026-01-16/banner.png"
+  },
+  {
     "title": "openGauss 5.0.0 LTS版本即将停止维护公告",
     "date": "2025-12-31",
     "tags": [
@@ -182,7 +422,7 @@ export default [
       "theme"
     ],
     "category": "news",
-    "banner": "/category/news/2025-03-31/banner.jpg",
+    "banner": "/category/news/2025-03-31//category/news/2024-03-31/banner.jpg",
     "author": [
       "openGauss"
     ],
@@ -262,7 +502,7 @@ export default [
       "theme"
     ],
     "category": "news",
-    "banner": "/category/news/2024-09-30/banner.jpg",
+    "banner": "/category/news/2024-09-30//category/news/2024-09-30/banner.jpg",
     "author": [
       "openGauss"
     ],
@@ -294,7 +534,7 @@ export default [
       "theme"
     ],
     "category": "news",
-    "banner": "/category/news/2024-07-02/banner.png",
+    "banner": "/category/news/2024-07-02//category/news/2024-07-02/banner.png",
     "author": [
       "openGauss"
     ],
@@ -310,7 +550,7 @@ export default [
       "theme"
     ],
     "category": "news",
-    "banner": "/category/news/2024-06-28/banner.png",
+    "banner": "/category/news/2024-06-28//category/news/2024-06-28/banner.png",
     "author": [
       "openGauss"
     ],
@@ -326,7 +566,7 @@ export default [
       "theme"
     ],
     "category": "news",
-    "banner": "/category/news/2024-06-24/banner.png",
+    "banner": "/category/news/2024-06-24//category/news/2024-06-24/banner.png",
     "author": [
       "openGauss"
     ],
@@ -342,7 +582,7 @@ export default [
       "theme"
     ],
     "category": "news",
-    "banner": "/category/news/2024-06-21/banner.png",
+    "banner": "/category/news/2024-06-21//category/news/2024-06-21/banner.png",
     "author": [
       "openGauss"
     ],
@@ -358,7 +598,7 @@ export default [
       "theme"
     ],
     "category": "news",
-    "banner": "/category/news/2024-05-29/banner.png",
+    "banner": "/category/news/2024-05-29//category/news/2024-05-29/banner.png",
     "author": [
       "openGauss"
     ],
@@ -374,7 +614,7 @@ export default [
       "theme"
     ],
     "category": "news",
-    "banner": "/category/news/2024-05-14/banner.png",
+    "banner": "/category/news/2024-05-14//category/news/2024-05-14/banner.png",
     "author": [
       "openGauss"
     ],
@@ -390,7 +630,7 @@ export default [
       "theme"
     ],
     "category": "news",
-    "banner": "/category/news/2024-05-09/banner.png",
+    "banner": "/category/news/2024-05-09//category/news/2024-05-09/banner.png",
     "author": [
       "openGauss"
     ],
@@ -406,7 +646,7 @@ export default [
       "theme"
     ],
     "category": "news",
-    "banner": "/category/news/2024-04-25/banner.png",
+    "banner": "/category/news/2024-04-25//category/news/2024-04-25/banner.png",
     "author": [
       "openGauss"
     ],
@@ -422,7 +662,7 @@ export default [
       "theme"
     ],
     "category": "news",
-    "banner": "/category/news/2024-03-30/banner.jpg",
+    "banner": "/category/news/2024-03-30//category/news/2024-03-30/banner.jpg",
     "author": [
       "openGauss"
     ],
@@ -438,7 +678,7 @@ export default [
       "theme"
     ],
     "category": "news",
-    "banner": "/category/news/2024-03-21/banner.jpg",
+    "banner": "/category/news/2024-03-21//category/news/2024-03-21/banner.jpg",
     "author": [
       "openGauss"
     ],
@@ -454,7 +694,7 @@ export default [
       "theme"
     ],
     "category": "news",
-    "banner": "/category/news/2024-02-02/banner.png",
+    "banner": "/category/news/2024-02-02//category/news/2024-02-02/banner.png",
     "author": [
       "openGauss"
     ],
@@ -470,7 +710,7 @@ export default [
       "theme"
     ],
     "category": "news",
-    "banner": "/category/news/2024-02-01/banner.jpg",
+    "banner": "/category/news/2024-02-01//category/news/2024-02-01/banner.jpg",
     "author": [
       "openGauss"
     ],
@@ -486,7 +726,7 @@ export default [
       "theme"
     ],
     "category": "news",
-    "banner": "/category/news/2024-01-19/banner.png",
+    "banner": "/category/news/2024-01-19//category/news/2024-01-19/banner.png",
     "author": [
       "openGauss"
     ],
@@ -502,7 +742,7 @@ export default [
       "theme"
     ],
     "category": "news",
-    "banner": "/category/news/2024-01-11/banner.jpg",
+    "banner": "/category/news/2024-01-11//category/news/2024-01-11/banner.jpg",
     "author": [
       "openGauss"
     ],
@@ -518,7 +758,7 @@ export default [
       "theme"
     ],
     "category": "news",
-    "banner": "/category/news/2024-01-02/banner.jpg",
+    "banner": "/category/news/2024-01-02//category/news/2024-01-02/banner.jpg",
     "author": [
       "openGauss"
     ],
@@ -534,7 +774,7 @@ export default [
       "theme"
     ],
     "category": "news",
-    "banner": "/category/news/2023-12-30/banner.png",
+    "banner": "/category/news/2023-12-30//category/news/2023-12-30/banner.png",
     "author": [
       "openGauss"
     ],
@@ -550,7 +790,7 @@ export default [
       "theme"
     ],
     "category": "news",
-    "banner": "/category/news/2023-12-29/banner.jpg",
+    "banner": "/category/news/2023-12-29//category/news/2023-12-29/banner.jpg",
     "author": [
       "openGauss"
     ],
@@ -565,7 +805,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2023-12-20/banner.png",
+    "banner": "/category/news/2023-12-20//category/news/2023-12-20/banner.png",
     "author": [
       "openGauss"
     ],
@@ -582,7 +822,7 @@ export default [
       "theme"
     ],
     "category": "news",
-    "banner": "/category/news/2023-11-21/banner.jpg",
+    "banner": "/category/news/2023-11-21//category/news/2023-11-21/banner.jpg",
     "author": [
       "openGauss"
     ],
@@ -598,7 +838,7 @@ export default [
       "theme"
     ],
     "category": "news",
-    "banner": "/category/news/2023-11-17/banner.jpg",
+    "banner": "/category/news/2023-11-17//category/news/2023-11-17/banner.jpg",
     "author": [
       "openGauss"
     ],
@@ -614,7 +854,7 @@ export default [
       "theme"
     ],
     "category": "news",
-    "banner": "/category/news/2023-11-15/banner.jpg",
+    "banner": "/category/news/2023-11-15//category/news/2023-11-15/banner.jpg",
     "author": [
       "openGauss"
     ],
@@ -630,7 +870,7 @@ export default [
       "theme"
     ],
     "category": "news",
-    "banner": "/category/news/2023-11-10/banner.png",
+    "banner": "/category/news/2023-11-10//category/news/2023-11-10/banner.png",
     "author": [
       "openGauss"
     ],
@@ -646,7 +886,7 @@ export default [
       "theme"
     ],
     "category": "news",
-    "banner": "/category/news/2023-11-03/banner.jpg",
+    "banner": "/category/news/2023-11-03//category/news/2023-11-03/banner.jpg",
     "author": [
       "openGauss"
     ],
@@ -662,7 +902,7 @@ export default [
       "theme"
     ],
     "category": "news",
-    "banner": "/category/news/2023-10-20/banner.png",
+    "banner": "/category/news/2023-10-20//category/news/2023-10-20/banner.png",
     "author": [
       "openGauss"
     ],
@@ -677,7 +917,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2023-09-28/banner.png",
+    "banner": "/category/news/2023-09-28//category/news/2023-09-28/banner.png",
     "author": [
       "openGauss"
     ],
@@ -694,7 +934,7 @@ export default [
       "theme"
     ],
     "category": "news",
-    "banner": "/category/news/2023-09-25/pic1.png",
+    "banner": "/category/news/2023-09-25//category/news/2023-09-25/pic1.png",
     "author": [
       "openGauss"
     ],
@@ -710,7 +950,7 @@ export default [
       "theme"
     ],
     "category": "news",
-    "banner": "/category/news/2023-08-18/pic1.png",
+    "banner": "/category/news/2023-08-18//category/news/2023-08-18/pic1.png",
     "author": [
       "openGauss"
     ],
@@ -726,7 +966,7 @@ export default [
       "theme"
     ],
     "category": "news",
-    "banner": "/category/news/2023-06-30/banner.png",
+    "banner": "/category/news/2023-06-30//category/news/2023-06-30/banner.png",
     "author": [
       "openGauss"
     ],
@@ -742,7 +982,7 @@ export default [
       "theme"
     ],
     "category": "news",
-    "banner": "/category/news/2023-06-06/banner.png",
+    "banner": "/category/news/2023-06-06//category/news/2023-06-06/banner.png",
     "author": [
       "openGauss"
     ],
@@ -757,7 +997,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2023-05-26/banner.png",
+    "banner": "/category/news/2023-05-26//category/news/2023-05-26/banner.png",
     "author": [
       "openGauss"
     ],
@@ -773,7 +1013,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2023-04-19/banner.png",
+    "banner": "/category/news/2023-04-19//category/news/2023-04-19/banner.png",
     "author": [
       "openGauss"
     ],
@@ -790,7 +1030,7 @@ export default [
       "theme"
     ],
     "category": "news",
-    "banner": "/category/news/2023-04-10/banner.png",
+    "banner": "/category/news/2023-04-10//category/news/2023-04-10/banner.png",
     "author": [
       "openGauss"
     ],
@@ -805,7 +1045,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2023-03-31/banner.jpg",
+    "banner": "/category/news/2023-03-31//category/news/2023-03-31/banner.jpg",
     "author": [
       "openGauss"
     ],
@@ -822,7 +1062,7 @@ export default [
       "theme"
     ],
     "category": "news",
-    "banner": "/category/news/2023-03-14/banner.jpg",
+    "banner": "/category/news/2023-03-14//category/news/2023-03-14/banner.jpg",
     "author": [
       "openGauss"
     ],
@@ -838,7 +1078,7 @@ export default [
       "theme"
     ],
     "category": "news",
-    "banner": "/category/news/2023-03-10/banner.png",
+    "banner": "/category/news/2023-03-10//category/news/2023-03-10/banner.png",
     "author": [
       "openGauss"
     ],
@@ -853,7 +1093,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2023-03-08/banner.png",
+    "banner": "/category/news/2023-03-08//category/news/2023-03-08/banner.png",
     "author": [
       "openGauss"
     ],
@@ -869,7 +1109,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2023-03-07/banner.png",
+    "banner": "/category/news/2023-03-07//category/news/2023-03-07/banner.png",
     "author": [
       "openGauss"
     ],
@@ -885,7 +1125,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2023-02-25/banner.jpg",
+    "banner": "/category/news/2023-02-25//category/news/2023-02-25/banner.jpg",
     "author": [
       "openGauss"
     ],
@@ -901,7 +1141,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2023-02-24/banner.png",
+    "banner": "/category/news/2023-02-24//category/news/2023-02-24/banner.png",
     "author": [
       "openGauss"
     ],
@@ -917,7 +1157,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2023-02-22/banner.jpg",
+    "banner": "/category/news/2023-02-22//category/news/2023-02-22/banner.jpg",
     "author": [
       "openGauss"
     ],
@@ -933,7 +1173,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2023-02-21/banner.jpg",
+    "banner": "/category/news/2023-02-21//category/news/2023-02-21/banner.jpg",
     "author": [
       "openGauss"
     ],
@@ -949,7 +1189,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2023-01-20/banner.jpg",
+    "banner": "/category/news/2023-01-20//category/news/2023-01-20/banner.jpg",
     "author": [
       "openGauss"
     ],
@@ -965,7 +1205,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2023-01-18/banner.jpg",
+    "banner": "/category/news/2023-01-18//category/news/2023-01-18/banner.jpg",
     "author": [
       "openGauss"
     ],
@@ -981,7 +1221,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2023-01-16/banner.jpg",
+    "banner": "/category/news/2023-01-16//category/news/2023-01-16/banner.jpg",
     "author": [
       "openGauss"
     ],
@@ -997,7 +1237,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2023-01-12/banner.jpg",
+    "banner": "/category/news/2023-01-12//category/news/2023-01-12/banner.jpg",
     "author": [
       "openGauss"
     ],
@@ -1013,7 +1253,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2023-01-10/banner.jpg",
+    "banner": "/category/news/2023-01-10//category/news/2023-01-10/banner.jpg",
     "author": [
       "openGauss"
     ],
@@ -1029,7 +1269,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2023-01-04/banner.png",
+    "banner": "/category/news/2023-01-04//category/news/2023-01-04/banner.png",
     "author": [
       "openGauss"
     ],
@@ -1045,7 +1285,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-12-05/banner.png",
+    "banner": "/category/news/2022-12-05//category/news/2022-12-05/banner.png",
     "author": [
       "openGauss"
     ],
@@ -1061,7 +1301,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-11-29/banner.png",
+    "banner": "/category/news/2022-11-29//category/news/2022-11-29/banner.png",
     "author": [
       "openGauss"
     ],
@@ -1077,7 +1317,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-11-16/banner.png",
+    "banner": "/category/news/2022-11-16//category/news/2022-11-16/banner.png",
     "author": [
       "openGauss"
     ],
@@ -1093,7 +1333,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-11-09/banner.jpg",
+    "banner": "/category/news/2022-11-09//category/news/2022-11-09/banner.jpg",
     "author": [
       "openGauss"
     ],
@@ -1109,7 +1349,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-11-02/banner.png",
+    "banner": "/category/news/2022-11-02//category/news/2022-11-02/banner.png",
     "author": [
       "openGauss"
     ],
@@ -1125,7 +1365,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-10-31/banner.png",
+    "banner": "/category/news/2022-10-31//category/news/2022-10-31/banner.png",
     "author": [
       "openGauss"
     ],
@@ -1141,7 +1381,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-10-26/banner.png",
+    "banner": "/category/news/2022-10-26//category/news/2022-10-26/banner.png",
     "author": [
       "openGauss"
     ],
@@ -1157,7 +1397,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-10-09/banner.png",
+    "banner": "/category/news/2022-10-09//category/news/2022-10-09/banner.png",
     "author": [
       "openGauss"
     ],
@@ -1174,7 +1414,7 @@ export default [
       "theme"
     ],
     "category": "news",
-    "banner": "/category/news/2022-10-08/banner.png",
+    "banner": "/category/news/2022-10-08//category/news/2022-10-08/banner.png",
     "author": [
       "openGauss"
     ],
@@ -1189,7 +1429,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-09-30/banner.png",
+    "banner": "/category/news/2022-09-30//category/news/2022-09-30/banner.png",
     "author": [
       "openGauss"
     ],
@@ -1206,7 +1446,7 @@ export default [
       "theme"
     ],
     "category": "news",
-    "banner": "/category/news/2022-09-28/banner.png",
+    "banner": "/category/news/2022-09-28//category/news/2022-09-28/banner.png",
     "author": [
       "openGauss"
     ],
@@ -1222,7 +1462,7 @@ export default [
       "theme"
     ],
     "category": "news",
-    "banner": "/category/news/2022-09-27/banner.png",
+    "banner": "/category/news/2022-09-27//category/news/2022-09-27/banner.png",
     "author": [
       "openGauss"
     ],
@@ -1238,7 +1478,7 @@ export default [
       "theme"
     ],
     "category": "news",
-    "banner": "/category/news/2022-09-21/banner.png",
+    "banner": "/category/news/2022-09-21//category/news/2022-09-21/banner.png",
     "author": [
       "openGauss"
     ],
@@ -1254,7 +1494,7 @@ export default [
       "theme"
     ],
     "category": "news",
-    "banner": "/category/news/2022-09-16/banner.png",
+    "banner": "/category/news/2022-09-16//category/news/2022-09-16/banner.png",
     "author": [
       "openGauss"
     ],
@@ -1270,7 +1510,7 @@ export default [
       "theme"
     ],
     "category": "news",
-    "banner": "/category/news/2022-09-15/banner.png",
+    "banner": "/category/news/2022-09-15//category/news/2022-09-15/banner.png",
     "author": [
       "openGauss"
     ],
@@ -1285,7 +1525,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-09-07/banner.png",
+    "banner": "/category/news/2022-09-07//category/news/2022-09-07/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -1301,7 +1541,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-09-02/banner.png",
+    "banner": "/category/news/2022-09-02//category/news/2022-09-02/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -1317,7 +1557,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-09-01/banner.png",
+    "banner": "/category/news/2022-09-01//category/news/2022-09-01/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -1333,7 +1573,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-08-29/banner.png",
+    "banner": "/category/news/2022-08-29//category/news/2022-08-29/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -1349,7 +1589,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-08-24/banner.png",
+    "banner": "/category/news/2022-08-24//category/news/2022-08-24/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -1365,7 +1605,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-08-23/banner.png",
+    "banner": "/category/news/2022-08-23//category/news/2022-08-23/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -1381,7 +1621,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-08-19/banner.png",
+    "banner": "/category/news/2022-08-19//category/news/2022-08-19/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -1397,7 +1637,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-08-17/banner.png",
+    "banner": "/category/news/2022-08-17//category/news/2022-08-17/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -1413,7 +1653,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-08-16/banner.png",
+    "banner": "/category/news/2022-08-16//category/news/2022-08-16/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -1429,7 +1669,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-08-08/banner.png",
+    "banner": "/category/news/2022-08-08//category/news/2022-08-08/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -1445,7 +1685,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-08-05/banner.png",
+    "banner": "/category/news/2022-08-05//category/news/2022-08-05/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -1461,7 +1701,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-08-04/banner.png",
+    "banner": "/category/news/2022-08-04//category/news/2022-08-04/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -1477,7 +1717,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-07-27/banner.png",
+    "banner": "/category/news/2022-07-27//category/news/2022-07-27/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -1493,7 +1733,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-07-18/banner.jpg",
+    "banner": "/category/news/2022-07-18//category/news/2022-07-18/banner.jpg",
     "category": "news",
     "author": [
       "openGauss"
@@ -1509,7 +1749,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-07-15/picture1.jpg",
+    "banner": "/category/news/2022-07-15//category/news/2022-07-15/picture1.jpg",
     "category": "news",
     "author": [
       "openGauss"
@@ -1525,7 +1765,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-07-01/banner.png",
+    "banner": "/category/news/2022-07-01//category/news/2022-07-01/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -1541,7 +1781,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-06-27/banner.png",
+    "banner": "/category/news/2022-06-27//category/news/2022-06-27/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -1557,7 +1797,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-06-15/banner.png",
+    "banner": "/category/news/2022-06-15//category/news/2022-06-15/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -1573,7 +1813,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-06-02/banner.png",
+    "banner": "/category/news/2022-06-02//category/news/2022-06-02/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -1589,7 +1829,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-05-30/banner.png",
+    "banner": "/category/news/2022-05-30//category/news/2022-05-30/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -1605,7 +1845,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-05-25/banner.png",
+    "banner": "/category/news/2022-05-25//category/news/2022-05-25/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -1621,7 +1861,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-05-23/banner.jpg",
+    "banner": "/category/news/2022-05-23//category/news/2022-05-23/banner.jpg",
     "category": "news",
     "author": [
       "openGauss"
@@ -1637,7 +1877,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-05-18/banner.png",
+    "banner": "/category/news/2022-05-18//category/news/2022-05-18/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -1653,7 +1893,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-05-11/banner.png",
+    "banner": "/category/news/2022-05-11//category/news/2022-05-11/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -1669,7 +1909,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-04-29/banner.png",
+    "banner": "/category/news/2022-04-29//category/news/2022-04-29/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -1685,7 +1925,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-04-26/banner.png",
+    "banner": "/category/news/2022-04-26//category/news/2022-04-26/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -1701,7 +1941,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-04-13/banner.png",
+    "banner": "/category/news/2022-04-13//category/news/2022-04-13/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -1717,7 +1957,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-04-02/banner.png",
+    "banner": "/category/news/2022-04-02//category/news/2022-04-02/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -1733,7 +1973,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-04-01/release-mo.png",
+    "banner": "/category/news/2022-04-01//category/news/2022-04-01/release-mo.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -1749,7 +1989,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-03-17/banner.png",
+    "banner": "/category/news/2022-03-17//category/news/2022-03-17/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -1765,7 +2005,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-03-15/banner.png",
+    "banner": "/category/news/2022-03-15//category/news/2022-03-15/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -1781,7 +2021,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-03-01/1.png",
+    "banner": "/category/news/2022-03-01//category/news/2022-03-01/1.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -1797,7 +2037,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-02-10/banner.png",
+    "banner": "/category/news/2022-02-10//category/news/2022-02-10/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -1813,7 +2053,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-01-24/banner.png",
+    "banner": "/category/news/2022-01-24//category/news/2022-01-24/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -1829,7 +2069,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-01-10/banner.png",
+    "banner": "/category/news/2022-01-10//category/news/2022-01-10/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -1845,7 +2085,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2022-01-07/banner.jpg",
+    "banner": "/category/news/2022-01-07//category/news/2022-01-07/banner.jpg",
     "category": "news",
     "author": [
       "openGauss"
@@ -1861,7 +2101,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-12-30/banner.jpg",
+    "banner": "/category/news/2021-12-30//category/news/2021-12-30/banner.jpg",
     "category": "news",
     "author": [
       "openGauss"
@@ -1877,7 +2117,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-12-29/banner.jpg",
+    "banner": "/category/news/2021-12-29//category/news/2021-12-29/banner.jpg",
     "category": "news",
     "author": [
       "openGauss"
@@ -1893,7 +2133,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-12-28/banner.jpg",
+    "banner": "/category/news/2021-12-28//category/news/2021-12-28-1/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -1909,7 +2149,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-12-28/banner.jpg",
+    "banner": "/category/news/2021-12-28//category/news/2021-12-28/banner.jpg",
     "category": "news",
     "author": [
       "openGauss"
@@ -1925,7 +2165,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-12-23/banner.png",
+    "banner": "/category/news/2021-12-23//category/news/2021-12-23/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -1941,7 +2181,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-12-17/banner.png",
+    "banner": "/category/news/2021-12-17//category/news/2021-12-17/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -1957,7 +2197,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-12-06/banner.png",
+    "banner": "/category/news/2021-12-06//category/news/2021-12-06/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -1973,7 +2213,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-12-03/banner.png",
+    "banner": "/category/news/2021-12-03//category/news/2021-12-03/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -1989,7 +2229,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-11-29/banner.jpg",
+    "banner": "/category/news/2021-11-29//category/news/2021-11-29/banner.jpg",
     "category": "news",
     "author": [
       "openGauss"
@@ -2005,7 +2245,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-11-28/banner.png",
+    "banner": "/category/news/2021-11-28//category/news/2021-11-28/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2021,7 +2261,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-11-22/banner.png",
+    "banner": "/category/news/2021-11-22//category/news/2021-11-22/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2037,7 +2277,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-11-17/banner.png",
+    "banner": "/category/news/2021-11-17//category/news/2021-11-17/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2053,7 +2293,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-11-11/banner.png",
+    "banner": "/category/news/2021-11-11//category/news/2021-11-11/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2069,7 +2309,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-11-05/banner.png",
+    "banner": "/category/news/2021-11-05//category/news/2021-11-05/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2085,7 +2325,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-11-02/banner.png",
+    "banner": "/category/news/2021-11-02//category/news/2021-11-02/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2101,7 +2341,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-10-28/banner.png",
+    "banner": "/category/news/2021-10-28//category/news/2021-10-28/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2117,7 +2357,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-10-27/banner.png",
+    "banner": "/category/news/2021-10-27//category/news/2021-10-27/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2133,7 +2373,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-10-21/banner.png",
+    "banner": "/category/news/2021-10-21//category/news/2021-10-21/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2149,7 +2389,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-10-08/banner.png",
+    "banner": "/category/news/2021-10-08//category/news/2021-10-08/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2165,7 +2405,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-09-30/release-mo.png",
+    "banner": "/category/news/2021-09-30//category/news/2021-09-30/release-mo.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2181,7 +2421,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-09-28/banner.png",
+    "banner": "/category/news/2021-09-28//category/news/2021-09-28/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2197,7 +2437,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-09-25/2.jpg",
+    "banner": "/category/news/2021-09-25//category/news/2021-09-25/2.jpg",
     "category": "news",
     "author": [
       "openGauss"
@@ -2213,7 +2453,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-09-10/banner.png",
+    "banner": "/category/news/2021-09-10//category/news/2021-09-10/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2229,7 +2469,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-09-09/banner.png",
+    "banner": "/category/news/2021-09-09//category/news/2021-09-09/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2245,7 +2485,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-09-08/banner.png",
+    "banner": "/category/news/2021-09-08//category/news/2021-09-08/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2261,7 +2501,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-09-06/banner.png",
+    "banner": "/category/news/2021-09-06//category/news/2021-09-06/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2277,7 +2517,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-09-04/banner.png",
+    "banner": "/category/news/2021-09-04//category/news/2021-09-04/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2293,7 +2533,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-08-25/banner.png",
+    "banner": "/category/news/2021-08-25//category/news/2021-08-25/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2309,7 +2549,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-08-23/banner.png",
+    "banner": "/category/news/2021-08-23//category/news/2021-08-23/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2325,7 +2565,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-08-20/banner.png",
+    "banner": "/category/news/2021-08-20//category/news/2021-08-20/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2341,7 +2581,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-08-13/banner.png",
+    "banner": "/category/news/2021-08-13//category/news/2021-08-13/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2357,7 +2597,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-08-12/banner.png",
+    "banner": "/category/news/2021-08-12//category/news/2021-08-12/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2373,7 +2613,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-08-11/banner.png",
+    "banner": "/category/news/2021-08-11//category/news/2021-08-11/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2389,7 +2629,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-08-10/banner.png",
+    "banner": "/category/news/2021-08-10//category/news/2021-08-10/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2405,7 +2645,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-08-06/banner.jpg",
+    "banner": "/category/news/2021-08-06//category/news/2021-08-06/banner.jpg",
     "category": "news",
     "author": [
       "openGauss"
@@ -2421,7 +2661,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-08-05/banner.jpg",
+    "banner": "/category/news/2021-08-05//category/news/2021-08-05/banner.jpg",
     "category": "news",
     "author": [
       "openGauss"
@@ -2437,7 +2677,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-07-30/banner.jpg",
+    "banner": "/category/news/2021-07-30//category/news/2021-07-30/banner.jpg",
     "category": "news",
     "author": [
       "openGauss"
@@ -2453,7 +2693,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-07-28/banner.jpg",
+    "banner": "/category/news/2021-07-28//category/news/2021-07-28/banner.jpg",
     "category": "news",
     "author": [
       "openGauss"
@@ -2469,7 +2709,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-07-23/banner.png",
+    "banner": "/category/news/2021-07-23//category/news/2021-07-23/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2485,7 +2725,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-07-22/banner.png",
+    "banner": "/category/news/2021-07-22//category/news/2021-07-22/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2501,7 +2741,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-07-20/banner.png",
+    "banner": "/category/news/2021-07-20//category/news/2021-07-20/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2517,7 +2757,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-07-15/banner.jpg",
+    "banner": "/category/news/2021-07-15//category/news/2021-07-15/banner.jpg",
     "category": "news",
     "author": [
       "openGauss"
@@ -2533,7 +2773,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-07-12/banner.jpg",
+    "banner": "/category/news/2021-07-12//category/news/2021-07-12/banner.jpg",
     "category": "news",
     "author": [
       "openGauss"
@@ -2549,7 +2789,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-07-09/banner.jpg",
+    "banner": "/category/news/2021-07-09//category/news/2021-07-09/banner.jpg",
     "category": "news",
     "author": [
       "openGauss"
@@ -2565,7 +2805,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-07-06/banner.jpg",
+    "banner": "/category/news/2021-07-06//category/news/2021-07-06/banner.jpg",
     "category": "news",
     "author": [
       "openGauss"
@@ -2581,7 +2821,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-06-29/banner.png",
+    "banner": "/category/news/2021-06-29//category/news/2021-06-29/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2597,7 +2837,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-06-24/banner.jpg",
+    "banner": "/category/news/2021-06-24//category/news/2021-06-24/banner.jpg",
     "category": "news",
     "author": [
       "openGauss"
@@ -2613,7 +2853,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-06-23/星辰天合banner.png",
+    "banner": "/category/news/2021-06-23//category/news/2021-06-23/星辰天合banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2629,7 +2869,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-06-16/banner.jpg",
+    "banner": "/category/news/2021-06-16//category/news/2021-06-16/民生银行banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2645,7 +2885,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-06-10/banner.jpg",
+    "banner": "/category/news/2021-06-10//category/news/2021-06-10/banner.jpg",
     "category": "news",
     "author": [
       "openGauss"
@@ -2661,7 +2901,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-06-08/banner.png",
+    "banner": "/category/news/2021-06-08//category/news/2021-06-08/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2677,7 +2917,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-06-03/banner.jpg",
+    "banner": "/category/news/2021-06-03//category/news/2021-06-03/banner.jpg",
     "category": "news",
     "author": [
       "openGauss"
@@ -2693,7 +2933,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-05-28/banner.png",
+    "banner": "/category/news/2021-05-28//category/news/2021-05-28/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2709,7 +2949,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-05-25/banner.png",
+    "banner": "/category/news/2021-05-25//category/news/2021-05-25/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2725,7 +2965,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-05-21/banner.png",
+    "banner": "/category/news/2021-05-21//category/news/2021-05-21/星火加入社区banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2741,7 +2981,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-05-20/banner.png",
+    "banner": "/category/news/2021-05-20//category/news/2021-05-20/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2757,7 +2997,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-05-10/banner.jpg",
+    "banner": "/category/news/2021-05-10//category/news/2021-05-10/banner.jpg",
     "category": "news",
     "author": [
       "openGauss"
@@ -2773,7 +3013,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-05-08/banner.jpg",
+    "banner": "/category/news/2021-05-08//category/news/2021-05-08/banner.jpg",
     "category": "news",
     "author": [
       "openGauss"
@@ -2789,7 +3029,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-04-30/banner.jpg",
+    "banner": "/category/news/2021-04-30//category/news/2021-04-30/头图.jpg",
     "category": "news",
     "author": [
       "openGauss"
@@ -2805,7 +3045,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-04-29/banner.jpg",
+    "banner": "/category/news/2021-04-29//category/news/2021-04-29/头图.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2821,7 +3061,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-04-28/banner.jpg",
+    "banner": "/category/news/2021-04-28//category/news/2021-04-28/banner.jpg",
     "category": "news",
     "author": [
       "openGauss"
@@ -2837,7 +3077,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-04-27/banner.jpg",
+    "banner": "/category/news/2021-04-27//category/news/2021-04-27/banner.jpg",
     "category": "news",
     "author": [
       "openGauss"
@@ -2853,7 +3093,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-04-24/banner.jpg",
+    "banner": "/category/news/2021-04-24//category/news/2021-04-24/banner.jpg",
     "category": "news",
     "author": [
       "openGauss"
@@ -2869,7 +3109,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-04-22/banner.jpg",
+    "banner": "/category/news/2021-04-22//category/news/2021-04-22/banner.jpg",
     "category": "news",
     "author": [
       "openGauss"
@@ -2885,7 +3125,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-04-16/detail.jpg",
+    "banner": "/category/news/2021-04-16//category/news/2021-04-16/detail.jpg",
     "category": "news",
     "author": [
       "openGauss"
@@ -2901,7 +3141,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-04-14/detail.png",
+    "banner": "/category/news/2021-04-14//category/news/2021-04-14/detail.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2917,7 +3157,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-04-12/detail.png",
+    "banner": "/category/news/2021-04-12//category/news/2021-04-12/detail.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2933,7 +3173,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-04-09/detail.png",
+    "banner": "/category/news/2021-04-09//category/news/2021-04-09/detail.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2949,7 +3189,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-04-07/detail.png",
+    "banner": "/category/news/2021-04-07//category/news/2021-04-07/detail.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2965,7 +3205,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-03-23/detail.png",
+    "banner": "/category/news/2021-03-23//category/news/2021-03-23/detail.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2981,7 +3221,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-03-11/banner.png",
+    "banner": "/category/news/2021-03-11//category/news/2021-03-11/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -2997,7 +3237,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-03-06/banner.png",
+    "banner": "/category/news/2021-03-06//category/news/2021-03-06/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -3013,7 +3253,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-03-01/社区动态banner.png",
+    "banner": "/category/news/2021-03-01//category/news/2021-03-01/社区动态banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -3029,7 +3269,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2021-01-07/detail.png",
+    "banner": "/category/news/2021-01-07//category/news/2021-01-07/detail.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -3045,7 +3285,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2020-12-31/banner.png",
+    "banner": "/category/news/2020-12-31//category/news/2020-12-31/banner.png",
     "category": "news",
     "author": [
       "openGauss"
@@ -3061,7 +3301,7 @@ export default [
     "tags": [
       "theme"
     ],
-    "banner": "/category/news/2020-07-01/banner.png",
+    "banner": "/category/news/2020-07-01//category/news/2020-07-01/banner.png",
     "category": "news",
     "author": [
       "openGauss"

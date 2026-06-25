@@ -1,0 +1,110 @@
+# download3.0.6 下载数据（旧格式）
+# items 内 name_zh/name_en 为多语言字段
+
+- name: openGauss Server
+  thead:
+    - ""
+    - centos_x86_64
+    - openeuler_aarch64
+    - openeuler_x86_64
+  items:
+    - name_zh: openGauss_3.0.6 企业版
+      name_en: openGauss_3.0.6 Enterprise-Edition
+      table: server
+      edition: enterprise
+      centos_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.0.6/x86/openGauss-3.0.6-CentOS-64bit-all.tar.gz
+      centos_sha: 6baacbf46d7c9731751e48f10ae2bc770fe6d5e02d9a950a89049ea89b6b8478
+      aarch_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.0.6/arm/openGauss-3.0.6-openEuler-64bit-all.tar.gz
+      aarch_sha: 7ee56a24c949389fd8f0ea83fe9f43be7e4c1f5275d42f28a6ed7f08dfd1cd0d
+      x86_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.0.6/x86_openEuler/openGauss-3.0.6-openEuler-64bit-all.tar.gz
+      x86_sha: 394e9ed86b72ffdf8081d1f7a29113574091099b01bb6c3d9b8bcbe61fbef545
+    - name_zh: openGauss_3.0.6 极简版
+      name_en: openGauss_3.0.6 Simplified
+      table: server
+      edition: simple
+      centos_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.0.6/x86/openGauss-3.0.6-CentOS-64bit.tar.bz2
+      centos_sha: 8ecbc17e05e38da489744dbdfe3b1b00b9cd6346e0412b6576c45b72955a7b4f
+      aarch_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.0.6/arm/openGauss-3.0.6-openEuler-64bit.tar.bz2
+      aarch_sha: 2f24ac7fdc96667ab499904b772c1fe56adbaf5ac387db2e5810cd30c737d56f
+      x86_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.0.6/x86_openEuler/openGauss-3.0.6-openEuler-64bit.tar.bz2
+      x86_sha: 308361f3657b7c1a1a0259c79ed904554999712fadb3061b0a8ce58c85b5bf3a
+    - name_zh: openGauss_3.0.6 轻量版
+      name_en: openGauss_3.0.6 Lite
+      table: server
+      edition: lite
+      centos_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.0.6/x86/openGauss-Lite-3.0.6-CentOS-x86_64.tar.gz
+      centos_sha: c84f11df74302355a5c316d2abcda11a544cbd622949b42d1503f206c96c2372
+      aarch_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.0.6/arm/openGauss-Lite-3.0.6-openEuler-aarch64.tar.gz
+      aarch_sha: a23f0f92f468d8e3d62a0cb6e6424efdf6e083a770c490fb6c70ffaff4e79499
+      x86_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.0.6/x86_openEuler/openGauss-Lite-3.0.6-openEuler-x86_64.tar.gz
+      x86_sha: 9861946126078cd6445ada8c29a9b2fe85c290b0141479eaf6f7407b7c7d6912
+- name: "openGauss Connectors "
+  thead:
+    - ""
+    - centos_x86_64
+    - openeuler_aarch64
+    - openeuler_x86_64
+  items:
+    - name: JDBC_3.0.6
+      centos_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.0.6/x86/openGauss-3.0.6-JDBC.tar.gz
+      centos_sha: dc02c46a8976832bda90e4ca61bcf45245ef87b42d8560e6ea06b41f9d575780
+      aarch_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.0.6/arm/openGauss-3.0.6-JDBC.tar.gz
+      aarch_sha: 44c51db40b70afa886d9dcbf7e77e012c4a3232d31ff97698c15786fb9441d77
+      x86_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.0.6/x86_openEuler/openGauss-3.0.6-JDBC.tar.gz
+      x86_sha: 94352328faea9fc7a3685f0b37e59af74180f0e39b586e61bf9ee0155a52f2c3
+    - name: ODBC_3.0.6
+      centos_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.0.6/x86/openGauss-3.0.6-ODBC.tar.gz
+      centos_sha: 2011fbd233a1aa266bc906c289f2ac4b0821f1e2434e7d5e8185769bb3841ecd
+      aarch_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.0.6/arm/openGauss-3.0.6-ODBC.tar.gz
+      aarch_sha: a4d19f516290958956a887a0706dcfdbe25cdf98a2f9feaed2d10fa7cf942eae
+      x86_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.0.6/x86_openEuler/openGauss-3.0.6-ODBC.tar.gz
+      x86_sha: bbf6b9c67780fe76d4b59b663821086c0f9b3df20d4e1cfa58f8ea14e60feaf3
+    - name: Python-psycopg2_3.0.6
+      centos_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.0.6/x86/openGauss-3.0.1-CentOS-x86_64-Python.tar.gz
+      centos_sha: 38ceeb66d81a595fe002f2d0cc0a82c5aafb2f24517d570e666b0c0810ce076b
+      aarch_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.0.6/arm/openGauss-3.0.1-openEuler-aarch64-Python.tar.gz
+      aarch_sha: cf8514a1faf9672f5bc1b1805c0a109955b0be8971688ded32f43ad1030d5f26
+      x86_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.0.6/x86_openEuler/openGauss-3.0.1-openEuler-x86_64-Python.tar.gz
+      x86_sha: 762a80545cf9ff03a1c4c8228d54c723f8635fa5e14614c36b9f35575bc5bae2
+    - name: libpq_3.0.6
+      centos_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.0.6/x86/openGauss-3.0.6-CentOS-64bit-Libpq.tar.gz
+      centos_sha: ca646a1bc8eabec2dab8376cbd38147c027388031531910cc4139e0e0ba242b1
+      aarch_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.0.6/arm/openGauss-3.0.6-openEuler-64bit-Libpq.tar.gz
+      aarch_sha: 220d3b4dbf667d39962b667178d71aee5d6c56334ee863023addc68c94ec6d39
+      x86_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.0.6/x86_openEuler/openGauss-3.0.6-openEuler-64bit-Libpq.tar.gz
+      x86_sha: f879749702803fae234d9be7f96188374f66fe96b46c45de1f8995cd60201b77
+- name: "openGauss Symbol "
+  thead:
+    - ""
+    - centos_x86_64
+    - openeuler_aarch64
+    - openeuler_x86_64
+  items:
+    - name: symbol_3.0.6
+      centos_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.0.6/x86/openGauss-3.0.6-CentOS-64bit-symbol.tar.gz
+      centos_sha: acde6e1fdb558de25307de4e760aace9c266288427027e976221ef513b553907
+      aarch_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.0.6/arm/openGauss-3.0.6-openEuler-64bit-symbol.tar.gz
+      aarch_sha: 83d25635e9ab92424e38e3313ce401594ea5270f1c68b80d97263c8a25386c60
+      x86_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.0.6/x86_openEuler/openGauss-3.0.6-openEuler-64bit-symbol.tar.gz
+      x86_sha: ac8b24af8576a4d805715aa45e41b47a8abb4e9ed94b09e4b6988514b6c991a7
+- name: "openGauss Tools "
+  thead:
+    - ""
+    - windows_x86_64
+    - Linux
+  items:
+    - name: Data Studio_3.0.0
+      centos_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.0.0/DataStudio_win_64.zip
+      centos_sha: 651ab1a8ac5ade613837b2728620bdf48947a1736433e5e1ff24d5e8c75a4e6e
+      download_guide_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.0.0/Data%20Studio%20%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C.pdf
+      aarch_url: ""
+      aarch_sha: ""
+      x86_url: ""
+      x86_sha: ""
+    - name: Chameleon_3.0.0
+      centos_url: ""
+      centos_sha: ""
+      aarch_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/3.0.0/chameleon/chameleon-3.0.0-py3-none-any.whl
+      aarch_sha: ad53b951459fc01af337c386e358cc314ce344818591dc7e93694aac6fd46c3a
+      x86_url: ""
+      x86_sha: ""

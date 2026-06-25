@@ -1,0 +1,1131 @@
+# download7.0.0-RC1 下载数据
+# 由 zh/en 合并而来，name_zh/name_en 为多语言字段，公共字段无后缀
+
+- category: openGauss Server
+  name_zh: openGauss_7.0.0-RC1 企业版
+  name_en: openGauss_7.0.0-RC1 Enterprise-Edition
+  size: 142.50MB
+  edition: enterprise
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler24.03/arm/openGauss-All-7.0.0-RC1-openEuler24.03-aarch64.tar.gz
+  sha_code: 8b670a2a62ca5ea87585258bdc06b8a6c565cad5af388071a1c702fbde56cf68
+  docs_name_zh: 企业版安装指南
+  docs_name_en: Enterprise-Edition安装指南
+  docs_url: /docs/7.0.0-RC1/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html
+  architecture: AArch64
+  os: openEuler 24.03 LTS
+  system: openEuler 24.03 LTS (aarch64)
+- category: openGauss Server
+  name_zh: openGauss_7.0.0-RC1 极简版
+  name_en: openGauss_7.0.0-RC1 Simplified
+  size: 109.49MB
+  edition: simple
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler24.03/arm/openGauss-Server-7.0.0-RC1-openEuler24.03-aarch64.tar.bz2
+  sha_code: e574e520a16c4ec4d7bfc757dd247334814b5b16400d1b58b67a15a79815f451
+  docs_name_zh: 极简版安装指南
+  docs_name_en: Simplified安装指南
+  docs_url: /docs/7.0.0-RC1/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html
+  architecture: AArch64
+  os: openEuler 24.03 LTS
+  system: openEuler 24.03 LTS (aarch64)
+- category: openGauss Server
+  name_zh: openGauss_7.0.0-RC1 轻量版
+  name_en: openGauss_7.0.0-RC1 Lite
+  size: 29.19MB
+  edition: lite
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler24.03/arm/openGauss-Lite-7.0.0-RC1-openEuler24.03-aarch64.tar.gz
+  sha_code: 85b372173307f7d3a24441c1abb8aed6fbfeaf6460e765b8d576fc50d2052702
+  docs_name_zh: 轻量版安装指南
+  docs_name_en: Lite安装指南
+  docs_url: /docs/7.0.0-RC1-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html
+  architecture: AArch64
+  os: openEuler 24.03 LTS
+  system: openEuler 24.03 LTS (aarch64)
+- category: openGauss Server
+  name_zh: openGauss_7.0.0-RC1 企业版(noLSE)
+  name_en: openGauss_7.0.0-RC1 Enterprise-Edition(noLSE)
+  size: 143.39MB
+  edition: enterprise-noLSE
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/noLSE/openEuler24.03/arm/openGauss-All-7.0.0-RC1-openEuler24.03-aarch64.tar.gz
+  sha_code: ac07a14c12f77fd671dda9e17a93d2b02eee9df17fb6c6688c9157016ab3a069
+  docs_name_zh: 企业版安装指南
+  docs_name_en: Enterprise-Edition安装指南
+  docs_url: /docs/7.0.0-RC1/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html
+  architecture: AArch64
+  os: openEuler 24.03 LTS
+  system: openEuler 24.03 LTS (aarch64)
+- category: openGauss Server
+  name_zh: openGauss_7.0.0-RC1 企业版
+  name_en: openGauss_7.0.0-RC1 Enterprise-Edition
+  size: 147.62MB
+  edition: enterprise
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler24.03/x86/openGauss-All-7.0.0-RC1-openEuler24.03-x86_64.tar.gz
+  sha_code: 884449f7767ac6f454973c384e5f4d584fba5f52040e6d4ee62847358e70ab80
+  docs_name_zh: 企业版安装指南
+  docs_name_en: Enterprise-Edition安装指南
+  docs_url: /docs/7.0.0-RC1/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html
+  architecture: x86_64
+  os: openEuler 24.03 LTS
+  system: openEuler 24.03 LTS (x86_64)
+- category: openGauss Server
+  name_zh: openGauss_7.0.0-RC1 极简版
+  name_en: openGauss_7.0.0-RC1 Simplified
+  size: 104.26MB
+  edition: simple
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler24.03/x86/openGauss-Server-7.0.0-RC1-openEuler24.03-x86_64.tar.bz2
+  sha_code: d102a3fdb0cf6bb14c1b36d0fa11c9d3eaa86be8bd10792ee45a5e2ed391f8c9
+  docs_name_zh: 极简版安装指南
+  docs_name_en: Simplified安装指南
+  docs_url: /docs/7.0.0-RC1/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html
+  architecture: x86_64
+  os: openEuler 24.03 LTS
+  system: openEuler 24.03 LTS (x86_64)
+- category: openGauss Server
+  name_zh: openGauss_7.0.0-RC1 轻量版
+  name_en: openGauss_7.0.0-RC1 Lite
+  size: 29.02MB
+  edition: lite
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler24.03/x86/openGauss-Lite-7.0.0-RC1-openEuler24.03-x86_64.tar.gz
+  sha_code: 85c52af26335326e5b4f664b4c3e5a8bf84c24d9d052e26a77a742beb98afb6d
+  docs_name_zh: 轻量版安装指南
+  docs_name_en: Lite安装指南
+  docs_url: /docs/7.0.0-RC1-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html
+  architecture: x86_64
+  os: openEuler 24.03 LTS
+  system: openEuler 24.03 LTS (x86_64)
+- category: openGauss Server
+  name_zh: openGauss_7.0.0-RC1 企业版
+  name_en: openGauss_7.0.0-RC1 Enterprise-Edition
+  size: 143.96MB
+  edition: enterprise
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler22.03/arm/openGauss-All-7.0.0-RC1-openEuler22.03-aarch64.tar.gz
+  sha_code: 94f0a27f1ee6d354e83ecf08c4d2568f74aeb55fd16c665dadecc6e5be09a92e
+  docs_name_zh: 企业版安装指南
+  docs_name_en: Enterprise-Edition安装指南
+  docs_url: /docs/7.0.0-RC1/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html
+  architecture: AArch64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (aarch64)
+- category: openGauss Server
+  name_zh: openGauss_7.0.0-RC1 极简版
+  name_en: openGauss_7.0.0-RC1 Simplified
+  size: 100.82MB
+  edition: simple
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler22.03/arm/openGauss-Server-7.0.0-RC1-openEuler22.03-aarch64.tar.bz2
+  sha_code: ed16781ae44a33b4f319c2464165ea7f10a215c0588d2935d3d6bb594402e311
+  docs_name_zh: 极简版安装指南
+  docs_name_en: Simplified安装指南
+  docs_url: /docs/7.0.0-RC1/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html
+  architecture: AArch64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (aarch64)
+- category: openGauss Server
+  name_zh: openGauss_7.0.0-RC1 轻量版
+  name_en: openGauss_7.0.0-RC1 Lite
+  size: 28.02MB
+  edition: lite
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler22.03/arm/openGauss-Lite-7.0.0-RC1-openEuler22.03-aarch64.tar.gz
+  sha_code: 01cf74c19d269af3e3a11e5a9bb1949c0e2d90fd6f3f9ba6f2da4fbcc9b078b1
+  docs_name_zh: 轻量版安装指南
+  docs_name_en: Lite安装指南
+  docs_url: /docs/7.0.0-RC1-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html
+  architecture: AArch64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (aarch64)
+- category: openGauss Server
+  name_zh: openGauss_7.0.0-RC1 企业版(noLSE)
+  name_en: openGauss_7.0.0-RC1 Enterprise-Edition(noLSE)
+  size: 143.96MB
+  edition: enterprise-noLSE
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/noLSE/openEuler22.03/arm/openGauss-All-7.0.0-RC1-openEuler22.03-aarch64.tar.gz
+  sha_code: 8a902c0cb95180b110574159ef39ad36724bb3b59412ec35825837cf81f9ac1d
+  docs_name_zh: 企业版安装指南
+  docs_name_en: Enterprise-Edition安装指南
+  docs_url: /docs/7.0.0-RC1/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html
+  architecture: AArch64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (aarch64)
+- category: openGauss Server
+  name_zh: openGauss_7.0.0-RC1 企业版
+  name_en: openGauss_7.0.0-RC1 Enterprise-Edition
+  size: 147.62MB
+  edition: enterprise
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler22.03/x86/openGauss-All-7.0.0-RC1-openEuler22.03-x86_64.tar.gz
+  sha_code: e0ba2f3b2a54c89d8645d80982b6101d80dee5b18abcbdb0a2d4ef8d34a6f29e
+  docs_name_zh: 企业版安装指南
+  docs_name_en: Enterprise-Edition安装指南
+  docs_url: /docs/7.0.0-RC1/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html
+  architecture: x86_64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (x86_64)
+- category: openGauss Server
+  name_zh: openGauss_7.0.0-RC1 极简版
+  name_en: openGauss_7.0.0-RC1 Simplified
+  size: 104.26MB
+  edition: simple
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler22.03/x86/openGauss-Server-7.0.0-RC1-openEuler22.03-x86_64.tar.bz2
+  sha_code: e8d7afd2ed1d33abd6faa09b684c6e2ded15b5f446864d5601fb43a033f0f763
+  docs_name_zh: 极简版安装指南
+  docs_name_en: Simplified安装指南
+  docs_url: /docs/7.0.0-RC1/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html
+  architecture: x86_64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (x86_64)
+- category: openGauss Server
+  name_zh: openGauss_7.0.0-RC1 轻量版
+  name_en: openGauss_7.0.0-RC1 Lite
+  size: 29.02MB
+  edition: lite
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler22.03/x86/openGauss-Lite-7.0.0-RC1-openEuler22.03-x86_64.tar.gz
+  sha_code: 18f3c71d8f61a3d1e9eb1e5280188bd8ce0e1c1e49b437b6c25c17f3941e8827
+  docs_name_zh: 轻量版安装指南
+  docs_name_en: Lite安装指南
+  docs_url: /docs/7.0.0-RC1-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html
+  architecture: x86_64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (x86_64)
+- category: openGauss Server
+  name_zh: openGauss_7.0.0-RC1 企业版
+  name_en: openGauss_7.0.0-RC1 Enterprise-Edition
+  size: 143.78MB
+  edition: enterprise
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler20.03/arm/openGauss-All-7.0.0-RC1-openEuler20.03-aarch64.tar.gz
+  sha_code: e05eb0e9268bd8f51edeb7129d841560ebd0af63e319506aa7fa0a8396aeea58
+  docs_name_zh: 企业版安装指南
+  docs_name_en: Enterprise-Edition安装指南
+  docs_url: /docs/7.0.0-RC1/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html
+  architecture: AArch64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (aarch64)
+- category: openGauss Server
+  name_zh: openGauss_7.0.0-RC1 极简版
+  name_en: openGauss_7.0.0-RC1 Simplified
+  size: 100.83MB
+  edition: simple
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler20.03/arm/openGauss-Server-7.0.0-RC1-openEuler20.03-aarch64.tar.bz2
+  sha_code: 200bb5b0bffbe37bf9ebc98e1c47966cbbe1b503dfd06029ff662e4d02c3b655
+  docs_name_zh: 极简版安装指南
+  docs_name_en: Simplified安装指南
+  docs_url: /docs/7.0.0-RC1/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html
+  architecture: AArch64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (aarch64)
+- category: openGauss Server
+  name_zh: openGauss_7.0.0-RC1 轻量版
+  name_en: openGauss_7.0.0-RC1 Lite
+  size: 28.03MB
+  edition: lite
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler20.03/arm/openGauss-Lite-7.0.0-RC1-openEuler20.03-aarch64.tar.gz
+  sha_code: ed616d1d6548f1f680a75b645b55c451a81415b375de3abc8f68681e24c7c90b
+  docs_name_zh: 轻量版安装指南
+  docs_name_en: Lite安装指南
+  docs_url: /docs/7.0.0-RC1-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html
+  architecture: AArch64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (aarch64)
+- category: openGauss Server
+  name_zh: openGauss_7.0.0-RC1 企业版(noLSE)
+  name_en: openGauss_7.0.0-RC1 Enterprise-Edition(noLSE)
+  size: 143.78MB
+  edition: enterprise-noLSE
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/noLSE/openEuler20.03/arm/openGauss-All-7.0.0-RC1-openEuler20.03-aarch64.tar.gz
+  sha_code: b20f1cf4baa8ec79787988fe48353ddde0dce8ffa09fc363690572142c732927
+  docs_name_zh: 企业版安装指南
+  docs_name_en: Enterprise-Edition安装指南
+  docs_url: /docs/7.0.0-RC1/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html
+  architecture: AArch64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (aarch64)
+- category: openGauss Server
+  name_zh: openGauss_7.0.0-RC1 分布式镜像
+  name_en: openGauss_7.0.0-RC1 Distributed
+  size: 3.41GB
+  edition: distributed
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/distributed/openGauss-distributed-aarch64-image.tar.gz
+  sha_code: 18cc52e1cfa960386dea60c7b06410a28b4b2d673d9cc9128603bc0c6ce77fca
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (aarch64)
+- category: openGauss Server
+  name_zh: openGauss_7.0.0-RC1 企业版
+  name_en: openGauss_7.0.0-RC1 Enterprise-Edition
+  size: 148.18MB
+  edition: enterprise
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler20.03/x86/openGauss-All-7.0.0-RC1-openEuler20.03-x86_64.tar.gz
+  sha_code: fca58c40edec7efb56c5ac0a3c775311e4d8cfab90dcf62cbb9300f1c262fb07
+  docs_name_zh: 企业版安装指南
+  docs_name_en: Enterprise-Edition安装指南
+  docs_url: /docs/7.0.0-RC1/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html
+  architecture: x86_64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (x86_64)
+- category: openGauss Server
+  name_zh: openGauss_7.0.0-RC1 极简版
+  name_en: openGauss_7.0.0-RC1 Simplified
+  size: 104.48MB
+  edition: simple
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler20.03/x86/openGauss-Server-7.0.0-RC1-openEuler20.03-x86_64.tar.bz2
+  sha_code: 86a5ce3be7a7a368c2ab4587d5ec54fcec54656acafd9433ec7f6676b5fa6cda
+  docs_name_zh: 极简版安装指南
+  docs_name_en: Simplified安装指南
+  docs_url: /docs/7.0.0-RC1/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html
+  architecture: x86_64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (x86_64)
+- category: openGauss Server
+  name_zh: openGauss_7.0.0-RC1 轻量版
+  name_en: openGauss_7.0.0-RC1 Lite
+  size: 29.39MB
+  edition: lite
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler20.03/x86/openGauss-Lite-7.0.0-RC1-openEuler20.03-x86_64.tar.gz
+  sha_code: 9c53a4d1a3f1c3fcd51117b0f803c729b91864201ff26a830a09226ef25cc2f6
+  docs_name_zh: 轻量版安装指南
+  docs_name_en: Lite安装指南
+  docs_url: /docs/7.0.0-RC1-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html
+  architecture: x86_64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (x86_64)
+- category: openGauss Server
+  name_zh: openGauss_7.0.0-RC1 企业版
+  name_en: openGauss_7.0.0-RC1 Enterprise-Edition
+  size: 146.25MB
+  edition: enterprise
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/CentOS7/x86/openGauss-All-7.0.0-RC1-CentOS7-x86_64.tar.gz
+  sha_code: 80aa3c8d0b9574b8f4fd350cce95799894d788dfd97d5e5facc4e2285b5c1dac
+  docs_name_zh: 企业版安装指南
+  docs_name_en: Enterprise-Edition安装指南
+  docs_url: /docs/7.0.0-RC1/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html
+  architecture: x86_64
+  os: Centos 7.6
+  system: Centos 7.6 (x86_64)
+- category: openGauss Server
+  name_zh: openGauss_7.0.0-RC1 极简版
+  name_en: openGauss_7.0.0-RC1 Simplified
+  size: 103.55MB
+  edition: simple
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/CentOS7/x86/openGauss-Server-7.0.0-RC1-CentOS7-x86_64.tar.bz2
+  sha_code: 4c84dd922daebaf3cb1e20cd8c389fc0195d080d3583b3b0f355c1db841b4f49
+  docs_name_zh: 极简版安装指南
+  docs_name_en: Simplified安装指南
+  docs_url: /docs/7.0.0-RC1/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html
+  architecture: x86_64
+  os: Centos 7.6
+  system: Centos 7.6 (x86_64)
+- category: openGauss Server
+  name_zh: openGauss_7.0.0-RC1 轻量版
+  name_en: openGauss_7.0.0-RC1 Lite
+  size: 28.95MB
+  edition: lite
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/CentOS7/x86/openGauss-Lite-7.0.0-RC1-CentOS7-x86_64.tar.gz
+  sha_code: a92618cb35eeced7a98b0bd90df52099704299820934514555c7f0ce3374827e
+  docs_name_zh: 轻量版安装指南
+  docs_name_en: Lite安装指南
+  docs_url: /docs/7.0.0-RC1-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html
+  architecture: x86_64
+  os: Centos 7.6
+  system: Centos 7.6 (x86_64)
+- category: openGauss Server
+  name_zh: openGauss_7.0.0-RC1 分布式镜像
+  name_en: openGauss_7.0.0-RC1 Distributed
+  size: 3.29GB
+  edition: distributed
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/distributed/openGauss-distributed-x86_64-image.tar.gz
+  sha_code: e962eb67ea38df62fc352cb39f5ab8449027da7907c131a82176648757202be2
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: Centos 7.6
+  system: Centos 7.6 (x86_64)
+- category: openGauss Server
+  name_zh: openGauss_7.0.0-RC1 极简版
+  name_en: openGauss_7.0.0-RC1 Simplified
+  size: 1.60GB
+  edition: simple
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler20.03/x86/openGauss-Docker-7.0.0-RC1-x86_64.tar
+  sha_code: 7bb57619c409427a72798c354bbbfe56f5827d0599126d3a2ec7fd4de971e0b2
+  docs_name_zh: 极简版容器安装指南
+  docs_name_en: Simplified容器安装指南
+  docs_url: /docs/7.0.0-RC1/docs/InstallationGuide/%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E5%AE%89%E8%A3%85.html
+  architecture: x86_64
+  os: Docker
+  system: Docker (x86_64)
+- category: openGauss Server
+  name_zh: openGauss_7.0.0-RC1 轻量版
+  name_en: openGauss_7.0.0-RC1 Lite
+  size: 1.26GB
+  edition: lite
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler20.03/x86/openGauss-Lite-Docker-7.0.0-RC1-x86_64.tar.gz
+  sha_code: 9d912dc7b81e27d8a38604128fa8862400a20501daa95c3369efa05315c5f1b7
+  docs_name_zh: 轻量版容器安装指南
+  docs_name_en: Lite容器安装指南
+  docs_url: /docs/7.0.0-RC1-lite/docs/InstallationGuide/%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E5%AE%89%E8%A3%85.html
+  architecture: x86_64
+  os: Docker
+  system: Docker (x86_64)
+- category: openGauss Server
+  name_zh: openGauss_7.0.0-RC1 极简版
+  name_en: openGauss_7.0.0-RC1 Simplified
+  size: 1.70GB
+  edition: simple
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler20.03/arm/openGauss-Docker-7.0.0-RC1-aarch64.tar
+  sha_code: 22c7653a8f479cf442f68833ed2e630611ac0b5104557957e460bd1883ac430a
+  docs_name_zh: 极简版容器安装指南
+  docs_name_en: Simplified容器安装指南
+  docs_url: /docs/7.0.0-RC1/docs/InstallationGuide/%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E5%AE%89%E8%A3%85.html
+  architecture: AArch64
+  os: Docker
+  system: Docker (AArch64)
+- category: openGauss Server
+  name_zh: openGauss_7.0.0-RC1 轻量版
+  name_en: openGauss_7.0.0-RC1 Lite
+  size: 1.37GB
+  edition: lite
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler20.03/arm/openGauss-Lite-Docker-7.0.0-RC1-aarch64.tar
+  sha_code: 2f4286cbf6fdf6eb4b583812ac28824131d299ed8d2682fd75e934745471b194
+  docs_name_zh: 轻量版容器安装指南
+  docs_name_en: Lite容器安装指南
+  docs_url: /docs/7.0.0-RC1-lite/docs/InstallationGuide/%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E5%AE%89%E8%A3%85.html
+  architecture: AArch64
+  os: Docker
+  system: Docker (AArch64)
+- category: openGauss Connectors
+  name: JDBC_7.0.0-RC1
+  size: 1.75MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler24.03/arm/openGauss-JDBC-7.0.0-RC1.tar.gz
+  sha_code: 97a29b1661b8e6991aa3aa87bace9286a92e294a973930792b9473c1beddedf5
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 24.03 LTS
+  system: openEuler 24.03 LTS (aarch64)
+- category: openGauss Connectors
+  name: ODBC_7.0.0-RC1
+  size: 9.04MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler24.03/arm/openGauss-ODBC-7.0.0-RC1-openEuler24.03-aarch64.tar.gz
+  sha_code: 6d114a9f6ccf65fa5dad7f6d1a53e1ec11ec261393d1d303ec19a6c49b60e94b
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 24.03 LTS
+  system: openEuler 24.03 LTS (aarch64)
+- category: openGauss Connectors
+  name: Python-psycopg2_7.0.0-RC1
+  size: 2.95MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler24.03/arm/openGauss-Python-7.0.0-RC1-openEuler24.03-aarch64.tar.gz
+  sha_code: e8f915c0ed423b51fc65a856c19c45870cddab3d0a1128af3f2cff8f1f21d062
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 24.03 LTS
+  system: openEuler 24.03 LTS (aarch64)
+- category: openGauss Connectors
+  name: libpq_7.0.0-RC1
+  size: 5.04MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler24.03/arm/openGauss-Libpq-7.0.0-RC1-openEuler24.03-aarch64.tar.gz
+  sha_code: 9e5e1e3d111b5ad068b5f758514d9b3f69b3b6d3fa2dd1545f69bd7774633bc8
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 24.03 LTS
+  system: openEuler 24.03 LTS (aarch64)
+- category: openGauss Connectors
+  name: JDBC_7.0.0-RC1
+  size: 1.75MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler24.03/x86/openGauss-JDBC-7.0.0-RC1.tar.gz
+  sha_code: 5d1f0ba9897a647b900371c1bd7eef4f49558c04c8735d4b216431924d25e8d9
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 24.03 LTS
+  system: openEuler 24.03 LTS (x86_64)
+- category: openGauss Connectors
+  name: ODBC_7.0.0-RC1
+  size: 9.25MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler24.03/x86/openGauss-ODBC-7.0.0-RC1-openEuler24.03-x86_64.tar.gz
+  sha_code: 61f4e96cc3339dc2da74e01b96d202adfa7501f13b36d723de44ebfa0400071c
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 24.03 LTS
+  system: openEuler 24.03 LTS (x86_64)
+- category: openGauss Connectors
+  name: Python-psycopg2_7.0.0-RC1
+  size: 3.09MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler24.03/x86/openGauss-Python-7.0.0-RC1-openEuler24.03-x86_64.tar.gz
+  sha_code: 22840cbd131cbaf9f45adc491c9ff307c442bd34f344c19b967d41288eaceda6
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 24.03 LTS
+  system: openEuler 24.03 LTS (x86_64)
+- category: openGauss Connectors
+  name: libpq_7.0.0-RC1
+  size: 5.27MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler24.03/x86/openGauss-Libpq-7.0.0-RC1-openEuler24.03-x86_64.tar.gz
+  sha_code: 6e18996836422118dc831a402ee26c81289eb0995174848317cf45e9e50180e2
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 24.03 LTS
+  system: openEuler 24.03 LTS (x86_64)
+- category: openGauss Connectors
+  name: JDBC_7.0.0-RC1
+  size: 1.75MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler22.03/arm/openGauss-JDBC-7.0.0-RC1.tar.gz
+  sha_code: 86f70924d039201de9d5751697a366544220ff7ff6373cf7a7d248166e73544c
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (aarch64)
+- category: openGauss Connectors
+  name: ODBC_7.0.0-RC1
+  size: 9.04MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler22.03/arm/openGauss-ODBC-7.0.0-RC1-openEuler22.03-aarch64.tar.gz
+  sha_code: e9184770d26e30b34a4bc03911e08c52f2ff14b001e8f921c9c14ee6d9925d58
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (aarch64)
+- category: openGauss Connectors
+  name: Python-psycopg2_7.0.0-RC1
+  size: 2.95MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler22.03/arm/openGauss-Python-7.0.0-RC1-openEuler22.03-aarch64.tar.gz
+  sha_code: 689f5cafa6c3e1180f9de035cb6299282746ad13e3d70d6206d38d60e7842816
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (aarch64)
+- category: openGauss Connectors
+  name: libpq_7.0.0-RC1
+  size: 5.04MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler22.03/arm/openGauss-Libpq-7.0.0-RC1-openEuler22.03-aarch64.tar.gz
+  sha_code: 972dafe9d98ef3a860b11373c970e72f0eeed11e7cb6632f1d349f6efe0cf351
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (aarch64)
+- category: openGauss Connectors
+  name: JDBC_7.0.0-RC1
+  size: 1.75MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler22.03/x86/openGauss-JDBC-7.0.0-RC1.tar.gz
+  sha_code: 9d7e27ceb2febb61e9ac7d5bf211a3454bd11f2e97a44fcb5cfb64df45762806
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (x86_64)
+- category: openGauss Connectors
+  name: ODBC_7.0.0-RC1
+  size: 9.25MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler22.03/x86/openGauss-ODBC-7.0.0-RC1-openEuler22.03-x86_64.tar.gz
+  sha_code: 477ccc01ac71b182c3b72f233c8efd9c875e01c03795dd0f35d9e84797792be2
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (x86_64)
+- category: openGauss Connectors
+  name: Python-psycopg2_7.0.0-RC1
+  size: 3.09MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler22.03/x86/openGauss-Python-7.0.0-RC1-openEuler22.03-x86_64.tar.gz
+  sha_code: b8f164f8cb38859ea82c185a68b4f8977a298148af24d7660c643380c90ce124
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (x86_64)
+- category: openGauss Connectors
+  name: libpq_7.0.0-RC1
+  size: 5.27MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler22.03/x86/openGauss-Libpq-7.0.0-RC1-openEuler22.03-x86_64.tar.gz
+  sha_code: a1a22ad89b09b09b34ba66c2878964e4d30af1a64394672646eeb760204d7d42
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (x86_64)
+- category: openGauss Connectors
+  name: JDBC_7.0.0-RC1
+  size: 1.75MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler20.03/arm/openGauss-JDBC-7.0.0-RC1.tar.gz
+  sha_code: 4816a9c23e9171d8f5d3e4af2d3c73d309e284d399f6ff84ee5afe108386d56c
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (aarch64)
+- category: openGauss Connectors
+  name: ODBC_7.0.0-RC1
+  size: 9.05MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler20.03/arm/openGauss-ODBC-7.0.0-RC1-openEuler20.03-aarch64.tar.gz
+  sha_code: 041298666f6ec9a1ff008edc841b36c92d7085b73d31618ffa6d944a28750cc4
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (aarch64)
+- category: openGauss Connectors
+  name: Python-psycopg2_7.0.0-RC1
+  size: 2.94MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler20.03/arm/openGauss-Python-7.0.0-RC1-openEuler20.03-aarch64.tar.gz
+  sha_code: 5686d532512b75acd356f6fd4f541cc7812f092a233426a446642d759cb29cb4
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (aarch64)
+- category: openGauss Connectors
+  name: libpq_7.0.0-RC1
+  size: 5.04MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler20.03/arm/openGauss-Libpq-7.0.0-RC1-openEuler20.03-aarch64.tar.gz
+  sha_code: 854aa3c8fe19c8327e4c1f185fa3becdcd78b2bf6a5695d7044da183cc038309
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (aarch64)
+- category: openGauss Connectors
+  name: JDBC_7.0.0-RC1
+  size: 1.75MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler20.03/x86/openGauss-JDBC-7.0.0-RC1.tar.gz
+  sha_code: 9d7e27ceb2febb61e9ac7d5bf211a3454bd11f2e97a44fcb5cfb64df45762806
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (x86_64)
+- category: openGauss Connectors
+  name: ODBC_7.0.0-RC1
+  size: 9.26MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler20.03/x86/openGauss-ODBC-7.0.0-RC1-openEuler20.03-x86_64.tar.gz
+  sha_code: faff2097c3b29d95c10de7693ad257abf0cadcbeb0042c4d96feead12fdaefb9
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (x86_64)
+- category: openGauss Connectors
+  name: Python-psycopg2_7.0.0-RC1
+  size: 3.09MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler20.03/x86/openGauss-Python-7.0.0-RC1-openEuler20.03-x86_64.tar.gz
+  sha_code: 332b61f615e4c616a9556093396004a471f8cc2eab226ebed22518e1577d3ca0
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (x86_64)
+- category: openGauss Connectors
+  name: libpq_7.0.0-RC1
+  size: 5.27MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler20.03/x86/openGauss-Libpq-7.0.0-RC1-openEuler20.03-x86_64.tar.gz
+  sha_code: 9c53a4d1a3f1c3fcd51117b0f803c729b91864201ff26a830a09226ef25cc2f6
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (x86_64)
+- category: openGauss Connectors
+  name: JDBC_7.0.0-RC1
+  size: 1.75MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/CentOS7/x86/openGauss-JDBC-7.0.0-RC1.tar.gz
+  sha_code: 481edc1edd79e49dcf3b01a018afe683448ad42fd081b17fcaeaadb067555d9d
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: Centos 7.6
+  system: Centos 7.6 (x86_64)
+- category: openGauss Connectors
+  name: ODBC_7.0.0-RC1
+  size: 9.12MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/CentOS7/x86/openGauss-ODBC-7.0.0-RC1-CentOS7-x86_64.tar.gz
+  sha_code: 97a4b46aa93fd0bf9f8008ca0e1bdfea0801116c59e4fcb1e680225a546836dc
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: Centos 7.6
+  system: Centos 7.6 (x86_64)
+- category: openGauss Connectors
+  name: Python-psycopg2_7.0.0-RC1
+  size: 3.29MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/CentOS7/x86/openGauss-Python-7.0.0-RC1-CentOS7-x86_64.tar.gz
+  sha_code: 3f09cf51fe596ab93daeae9c0b1f4859452372c711de70c905324f19b24061cf
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: Centos 7.6
+  system: Centos 7.6 (x86_64)
+- category: openGauss Connectors
+  name: libpq_7.0.0-RC1
+  size: 5.15MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/CentOS7/x86/openGauss-Libpq-7.0.0-RC1-CentOS7-x86_64.tar.gz
+  sha_code: 1a8395885084f0067b97e2826e1438d6e4808351343c9a7cfa4e366d3dbdd557
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: Centos 7.6
+  system: Centos 7.6 (x86_64)
+- category: openGauss Connectors
+  name: JDBC_7.0.0-RC1
+  size: 1.75MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/CentOS7/x86/openGauss-JDBC-7.0.0-RC1.tar.gz
+  sha_code: e4d369d33e9261aa9dbe412e352144b1206f8274a8e9570a421d0707657dfb97
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: Windows
+  system: Windows
+- category: openGauss Connectors
+  name: ODBC_7.0.0-RC1
+  size: 5.24MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/windows/openGauss-ODBC-7.0.0-RC1-windows.tar.gz
+  sha_code: c8118e11f6a5be259f3704783591b9d3e833a97c8a924964ae00d973cd9c83f5
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: Windows
+  system: Windows
+- category: openGauss Symbol
+  name: symbol_7.0.0-RC1
+  size: 407.54MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler24.03/arm/openGauss-Symbol-7.0.0-RC1-openEuler24.03-aarch64.tar.gz
+  sha_code: 7b6fa6a66ce98bddc05956bd15807306ee77bca01523f69007320a3e542c2faf
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 24.03 LTS
+  system: openEuler 24.03 LTS (aarch64)
+- category: openGauss Symbol
+  name: cm-symbol_7.0.0-RC1
+  size: 24.12MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler24.03/arm/openGauss-CM-7.0.0-RC1-openEuler24.03-aarch64.tar.gz
+  sha_code: ac20e008458b355b5cbfc91ba2a0174969ef9caf484761ffd2cace233b56ba98
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 24.03 LTS
+  system: openEuler 24.03 LTS (aarch64)
+- category: openGauss Symbol
+  name: symbol_7.0.0-RC1
+  size: 404.64MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler24.03/x86/openGauss-Symbol-7.0.0-RC1-openEuler24.03-x86_64.tar.gz
+  sha_code: 64e616409822aaa605ae34578a4e619fa7d6a7311d2661d8440079c01053e46d
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 24.03 LTS
+  system: openEuler 24.03 LTS (x86_64)
+- category: openGauss Symbol
+  name: cm-symbol_7.0.0-RC1
+  size: 22.22MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler24.03/x86/openGauss-CM-Symbol-7.0.0-RC1-openEuler24.03-x86_64.tar.gz
+  sha_code: 23a9f26b2fd930c40efb4bcac48b602a683ba0b70f270cd13ab604fa08511312
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 24.03 LTS
+  system: openEuler 24.03 LTS (x86_64)
+- category: openGauss Symbol
+  name: symbol_7.0.0-RC1
+  size: 407.54MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler22.03/arm/openGauss-Symbol-7.0.0-RC1-openEuler22.03-aarch64.tar.gz
+  sha_code: 03b638b15513011caa03ca623558e6e467acb8ef7b10c02f8b16eea8f9a61817
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (aarch64)
+- category: openGauss Symbol
+  name: cm-symbol_7.0.0-RC1
+  size: 24.12MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler22.03/arm/openGauss-CM-7.0.0-RC1-openEuler22.03-aarch64.tar.gz
+  sha_code: 2ba057d833af8ef6b87e120b96c28fe599cf6deb9cb588935f170e6a9967c28a
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (aarch64)
+- category: openGauss Symbol
+  name: symbol_7.0.0-RC1
+  size: 404.64MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler22.03/x86/openGauss-Symbol-7.0.0-RC1-openEuler22.03-x86_64.tar.gz
+  sha_code: 61db3e59d17de77ec70981e7e528fc7774986bfc21f30da75da29c07a3455dfb
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (x86_64)
+- category: openGauss Symbol
+  name: cm-symbol_7.0.0-RC1
+  size: 22.22MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler22.03/x86/openGauss-CM-Symbol-7.0.0-RC1-openEuler22.03-x86_64.tar.gz
+  sha_code: 422ba527e81de618898f99a38d0185edd25dee01e7aa63de39c9972eab2b7ef5
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (x86_64)
+- category: openGauss Symbol
+  name: symbol_7.0.0-RC1
+  size: 406.21MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler20.03/arm/openGauss-Symbol-7.0.0-RC1-openEuler20.03-aarch64.tar.gz
+  sha_code: fe825409b31ba2d269dc91c9efbf04a0eb5e0b58e7c7a17310f70cf9eede9ccb
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (aarch64)
+- category: openGauss Symbol
+  name: cm-symbol_7.0.0-RC1
+  size: 21.47MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler20.03/arm/openGauss-CM-Symbol-7.0.0-RC1-openEuler20.03-aarch64.tar.gz
+  sha_code: 8bd79eb95c996a55b9c5c3432fca48db02138c925da3ca7f9119abb0648e61ce
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (aarch64)
+- category: openGauss Symbol
+  name: symbol_7.0.0-RC1
+  size: 403.73MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler20.03/x86/openGauss-Symbol-7.0.0-RC1-openEuler20.03-x86_64.tar.gz
+  sha_code: 36d820035169705bc5487963110b0bf82b6a75391248b8b6d3858ab306481d9e
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (x86_64)
+- category: openGauss Symbol
+  name: cm-symbol_7.0.0-RC1
+  size: 22.20MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/openEuler20.03/x86/openGauss-CM-Symbol-7.0.0-RC1-openEuler20.03-x86_64.tar.gz
+  sha_code: 422ba527e81de618898f99a38d0185edd25dee01e7aa63de39c9972eab2b7ef5
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (x86_64)
+- category: openGauss Symbol
+  name: symbol_7.0.0-RC1
+  size: 390.49MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/CentOS7/x86/openGauss-Symbol-7.0.0-RC1-CentOS7-x86_64.tar.gz
+  sha_code: 98a2389103cbb88f80baaa136450f67e1aef695e9844706f679c7ed114a02dac
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: Centos 7.6
+  system: Centos 7.6 (x86_64)
+- category: openGauss Symbol
+  name: cm-symbol_7.0.0-RC1
+  size: 20.MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/CentOS7/x86/openGauss-CM-Symbol-7.0.0-RC1-CentOS7-x86_64.tar.gz
+  sha_code: e0dd76617f10a135d7f65ae3ab41f1ec149e2a478a5d6d9dd6a1c87d0b4d16d1
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: Centos 7.6
+  system: Centos 7.6 (x86_64)
+- category: openGauss Tools
+  name: replicate-mysql2openGauss_7.0.0-RC1
+  size: 10.48MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/tools/replicate-mysql2openGauss-7.0.0rc1.tar.gz
+  sha_code: 99df171b35c0ba849ca9d9beeb8099c8f8cdeccfab30d2fc9365e7f6652db334
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: Linux
+  system: Linux (aarch64)
+- category: openGauss Tools
+  name: replicate-openGauss2mysql_7.0.0-RC1
+  size: 17.78MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/tools/replicate-openGauss2mysql-7.0.0rc1.tar.gz
+  sha_code: 84375d48577c1523d8173b57e6678a5e85b6436de5be14e029846d14c55a8dea
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: Linux
+  system: Linux (aarch64)
+- category: openGauss Tools
+  name: replicate-postgresql2openGauss_7.0.0-RC1
+  size: 8.18MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/tools/replicate-postgresql2openGauss-7.0.0rc1.tar.gz
+  sha_code: 57b3c4b1c53e2fae85d264f00595614a197418fee7c77901878e3a6b3c5b80fd
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: Linux
+  system: Linux (aarch64)
+- category: openGauss Tools
+  name: replicate-openGauss2postgresql_7.0.0-RC1
+  size: 17.78MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/tools/replicate-openGauss2postgresql-7.0.0rc1.tar.gz
+  sha_code: 84375d48577c1523d8173b57e6678a5e85b6436de5be14e029846d14c55a8dea
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: Linux
+  system: Linux (aarch64)
+- category: openGauss Tools
+  name: gs_datacheck_7.0.0-RC1
+  size: 83.85MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/tools/gs_datacheck-7.0.0rc1.tar.gz
+  sha_code: 9641a882dfe994eda569e6a2f1a5ef8b1807419c213d7d1f457f10533f755e1a
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: Linux
+  system: Linux (aarch64)
+- category: openGauss Tools
+  name: Datakit_7.0.0-RC1
+  size: 936.65MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/tools/Datakit/Datakit-7.0.0-RC1.tar.gz
+  sha_code: a90cb9cf27709ef3b6c3d8bbb43b5bd0285de6eb25d704c70e991ef97ddd4773
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: Linux
+  system: Linux (aarch64)
+- category: openGauss Tools
+  name: dbmind_7.0.0-RC1
+  size: 301.88MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/dbmind/arm/dbmind-installer-aarch64.tar.gz
+  sha_code: 96e7415a5d206fcb3d50c2444b7b51627ba31a28072c42e916e39d1266cc5e3b
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: Linux
+  system: Linux (aarch64)
+- category: openGauss Tools
+  name: transcribe_replay_tool_7.0.0-RC1
+  size: 25.00MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/tools/transcribe-replay-tool-7.0.0-RC1.tar.gz
+  sha_code: d969acb2faec8c10b9f789a172fff644a097e7db65d7cce4c257428ab1751570
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: Linux
+  system: Linux (aarch64)
+- category: openGauss Tools
+  name: replicate-mysql2openGauss_7.0.0-RC1
+  size: 10.48MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/tools/replicate-mysql2openGauss-7.0.0rc1.tar.gz
+  sha_code: 99df171b35c0ba849ca9d9beeb8099c8f8cdeccfab30d2fc9365e7f6652db334
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: Linux
+  system: Linux (x86_64)
+- category: openGauss Tools
+  name: replicate-openGauss2mysql_7.0.0-RC1
+  size: 17.78MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/tools/replicate-openGauss2mysql-7.0.0rc1.tar.gz
+  sha_code: 84375d48577c1523d8173b57e6678a5e85b6436de5be14e029846d14c55a8dea
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: Linux
+  system: Linux (x86_64)
+- category: openGauss Tools
+  name: replicate-postgresql2openGauss_7.0.0-RC1
+  size: 8.18MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/tools/replicate-postgresql2openGauss-7.0.0rc1.tar.gz
+  sha_code: 57b3c4b1c53e2fae85d264f00595614a197418fee7c77901878e3a6b3c5b80fd
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: Linux
+  system: Linux (x86_64)
+- category: openGauss Tools
+  name: replicate-openGauss2postgresql_7.0.0-RC1
+  size: 17.78MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/tools/replicate-openGauss2postgresql-7.0.0rc1.tar.gz
+  sha_code: 84375d48577c1523d8173b57e6678a5e85b6436de5be14e029846d14c55a8dea
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: Linux
+  system: Linux (x86_64)
+- category: openGauss Tools
+  name: gs_datacheck_7.0.0-RC1
+  size: 83.85MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/tools/gs_datacheck-7.0.0rc1.tar.gz
+  sha_code: 9641a882dfe994eda569e6a2f1a5ef8b1807419c213d7d1f457f10533f755e1a
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: Linux
+  system: Linux (x86_64)
+- category: openGauss Tools
+  name: Datakit_7.0.0-RC1
+  size: 936.65MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/tools/Datakit/Datakit-7.0.0-RC1.tar.gz
+  sha_code: a90cb9cf27709ef3b6c3d8bbb43b5bd0285de6eb25d704c70e991ef97ddd4773
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: Linux
+  system: Linux (x86_64)
+- category: openGauss Tools
+  name: dbmind_7.0.0-RC1
+  size: 329.44MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/dbmind/x86/dbmind-installer-x86_64.tar.gz
+  sha_code: 9d10aa4ddd3a53ad05658ae281b475632cb6f38752593229956c01a523e66dd0
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: Linux
+  system: Linux (x86_64)
+- category: openGauss Tools
+  name: transcribe_replay_tool_7.0.0-RC1
+  size: 25.00MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/tools/transcribe-replay-tool-7.0.0-RC1.tar.gz
+  sha_code: d969acb2faec8c10b9f789a172fff644a097e7db65d7cce4c257428ab1751570
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: Linux
+  system: Linux (x86_64)
+- category: openGauss Tools
+  name: Chameleon_7.0.0-RC1
+  size: 82.91MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/tools/openEuler24.03/chameleon-7.0.0rc1-aarch64.tar.gz
+  sha_code: d4821f711e0710ecac55bf5b70519cc3b300bc2628adeed64bfd48f1b264fdeb
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 24.03 LTS
+  system: openEuler 24.03 LTS (aarch64)
+- category: openGauss Tools
+  name: PortalControl_7.0.0-RC1
+  size: 649.32MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/tools/openEuler24.03/PortalControl-7.0.0rc1-aarch64.tar.gz
+  sha_code: 39ddbeb589dadb84dceeefac02600922e48ce8c82465158acd17889a58be96f7
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 24.03 LTS
+  system: openEuler 24.03 LTS (aarch64)
+- category: openGauss Tools
+  name: Chameleon_7.0.0-RC1
+  size: 82.72MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/tools/openEuler24.03/chameleon-7.0.0rc1-x86_64.tar.gz
+  sha_code: 7b0a48602361693ca544c95dab712d6f813acc379cb400e372ac71c5f79eaafd
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 24.03 LTS
+  system: openEuler 24.03 LTS (x86_64)
+- category: openGauss Tools
+  name: PortalControl_7.0.0-RC1
+  size: 649.35MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/tools/openEuler24.03/PortalControl-7.0.0rc1-x86_64.tar.gz
+  sha_code: 860b9ce5c55e0ef71b8405e56fadb3a96b7e1ed7dbae11a597e36131599951f7
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 24.03 LTS
+  system: openEuler 24.03 LTS (x86_64)
+- category: openGauss Tools
+  name: Chameleon_7.0.0-RC1
+  size: 79.70MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/tools/openEuler22.03/chameleon-7.0.0rc1-aarch64.tar.gz
+  sha_code: 98c84825546ca63efa25a8bb118255dfbd3c1e0fd4fe90c74b01d8c400f33839
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (aarch64)
+- category: openGauss Tools
+  name: PortalControl_7.0.0-RC1
+  size: 644.65MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/tools/openEuler22.03/PortalControl-7.0.0rc1-aarch64.tar.gz
+  sha_code: 064a2a8d9c33c5f65832c1e4abc1ea70f86f4a948acb4987d1e26cf611393933
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (aarch64)
+- category: openGauss Tools
+  name: Chameleon_7.0.0-RC1
+  size: 79.88MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/tools/openEuler22.03/chameleon-7.0.0rc1-x86_64.tar.gz
+  sha_code: f963d7fa7ad5e01d3757425af56d0e8033713b6c06aa213a15c465d27d06a837
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (x86_64)
+- category: openGauss Tools
+  name: PortalControl_7.0.0-RC1
+  size: 645.20MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/tools/openEuler22.03/PortalControl-7.0.0rc1-x86_64.tar.gz
+  sha_code: 4c726df0b082108b0895a9778d5c7b72c52a583b069e3459d26523facca9dde6
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (x86_64)
+- category: openGauss Tools
+  name: Chameleon_7.0.0-RC1
+  size: 75.60MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/tools/openEuler20.03/chameleon-7.0.0rc1-aarch64.tar.gz
+  sha_code: 3c8879a69d43e5606ebe3a0459f012c34c5b7e6c69e42c5dd9ceed3be7708b74
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (aarch64)
+- category: openGauss Tools
+  name: PortalControl_7.0.0-RC1
+  size: 649.35MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/tools/openEuler20.03/PortalControl-7.0.0rc1-aarch64.tar.gz
+  sha_code: 959e36d99173a4c74ece7975c303a6496bf2a7d36542c0aedab1828552e51dd7
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (aarch64)
+- category: openGauss Tools
+  name: Chameleon_7.0.0-RC1
+  size: 74.96MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/tools/openEuler20.03/chameleon-7.0.0rc1-x86_64.tar.gz
+  sha_code: bd09be477905190ff0313cc05521c23b27846e3fe5ab21655ed1ea2e4db979b6
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (x86_64)
+- category: openGauss Tools
+  name: PortalControl_7.0.0-RC1
+  size: 664.37MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/tools/openEuler20.03/PortalControl-7.0.0rc1-x86_64.tar.gz
+  sha_code: af765d89d0244e7efd3e4c39415d6ab35df94380c4d87f55a2c34ab8a17d605f
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (x86_64)
+- category: openGauss Tools
+  name: Chameleon_7.0.0-RC1
+  size: 72.50MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/tools/centos7/chameleon-7.0.0rc1-x86_64.tar.gz
+  sha_code: f326cea876da97d3534fb1aa2a159877de195b45669fae21a00ec551b9335306
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: Centos 7.6
+  system: Centos 7.6 (x86_64)
+- category: openGauss Tools
+  name: PortalControl_7.0.0-RC1
+  size: 639.12MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC1/tools/centos7/PortalControl-7.0.0rc1-x86_64.tar.gz
+  sha_code: a378affd20d091947b64b8d989753ec6974f42317545ae5d772328807477f6a8
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: Centos 7.6
+  system: Centos 7.6 (x86_64)

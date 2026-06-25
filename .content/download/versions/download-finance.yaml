@@ -1,0 +1,7 @@
+# download-finance 下载数据
+# 由 zh/en 合并而来，name_zh/name_en 为多语言字段，公共字段无后缀
+
+- name: openGauss Server
+- name: openGauss Connectors
+- name: openGauss Symbol
+- name: openGauss Tools

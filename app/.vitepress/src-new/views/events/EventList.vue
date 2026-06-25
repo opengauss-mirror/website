@@ -10,7 +10,7 @@ import IconSearch from '~icons/app-new/icon-header-search.svg';
 
 import { useLocale } from '~@/composables/useLocale';
 import { useScreen } from '~@/composables/useScreen';
-import { EventState, listData } from '~@/data/events/list';
+import { EventState, listData } from '~@/data/events/content-bridge';
 import AppEmpty from '~@/components/AppEmpty.vue';
 
 interface LabelT {

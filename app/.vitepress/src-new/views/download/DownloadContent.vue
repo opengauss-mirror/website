@@ -7,7 +7,7 @@ import { DownloadItem } from '~@/@types/type-download';
 import DownloadSection from './DownloadSection.vue';
 import { useLocale } from '~@/composables/useLocale';
 import { GITCODE_LINK, DOCS_LINK } from '~@/data/url-config';
-import { downloadName } from '~@/data/download/format';
+import { downloadName } from '~@/data/download/content-bridge';
 const props = defineProps({
   contentData: {
     required: true,
@@ -22,11 +22,27 @@ const { lang } = useData();
 const { isZh } = useLocale();
 const { contentData } = toRefs(props);
 const explainLink = computed(() => {
-  return contentData.value?.docs_list[0][lang.value === 'zh' ? 'path' : 'pathEn'] || '';
+  const docsList = contentData.value?.docs_list;
+  if (!docsList || docsList.length === 0) return '';
+  return docsList[0][lang.value === 'zh' ? 'path' : 'pathEn'] || '';
 });
 
 const newData = computed(() => {
-  const data = (contentData.value?.data as { zh: any[]; en: any[] })?.[lang.value as 'zh' | 'en'];
+  const rawData = contentData.value?.data;
+  if (!rawData) return [];
+  
+  // 兼容新旧两种数据格式
+  let data: any[];
+  if (Array.isArray(rawData)) {
+    // 旧格式：数组，每个元素有 zh/en 字段
+    data = rawData.flatMap((item: any) => item[lang.value as 'zh' | 'en'] || []);
+  } else {
+    // 新格式：对象，有 zh/en 字段
+    data = rawData[lang.value as 'zh' | 'en'] || [];
+  }
+  
+  if (!data || data.length === 0) return [];
+  
   const res = [...new Set(data.map((item) => item.category))].map((item) => {
     return {
       name: item as string,
@@ -38,7 +54,7 @@ const newData = computed(() => {
     item.content = data.filter((subItem) => subItem.category === item.name);
   });
 
-  return res || [];
+  return res;
 });
 
 provide('DOWNLOAD_VERSION_DATA', newData);

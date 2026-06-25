@@ -13,7 +13,7 @@ import IconAddress from '~icons/app-new/icon-address.svg';
 import { useCommon } from '@/stores/common';
 import { useLocale } from '~@/composables/useLocale';
 import { useScreen } from '~@/composables/useScreen';
-import { EventState } from '~@/data/events/list';
+import { EventState } from '~@/data/events/content-bridge';
 import { useData } from 'vitepress';
 
 const { t, locale } = useLocale();
