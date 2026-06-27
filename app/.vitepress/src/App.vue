@@ -114,6 +114,10 @@ watch(
 
 }
 
+:root {
+  --o-color-control5-light: var(--o-color-control-light);
+}
+
 .o-dropdown-list {
   --dropdown-list-bg-color: var(--o-color-control-light) !important;
 }
