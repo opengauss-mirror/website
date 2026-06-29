@@ -136,6 +136,7 @@ watch(footerIconRef, (iconRef) => {
 
     @include respond-to('phone') {
       margin-top: 12px;
+      font-size: 14px;
       text-align: center;
     }
   }
@@ -144,7 +145,9 @@ watch(footerIconRef, (iconRef) => {
     width: var(--grid-content-width);
     margin: 0 auto;
 
-    margin-top: var(--o-gap-t2c);
+    &:not(:first-child) {
+      margin-top: var(--o-gap-t2c);
+    }
   }
 
   .section-footer {

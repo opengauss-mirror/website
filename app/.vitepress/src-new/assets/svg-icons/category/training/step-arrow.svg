@@ -1,0 +1,10 @@
+<svg viewBox="0 0 46.7686 7.69141" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="46.768555" height="7.691406" fill="none" customFrame="#000000">
+	<defs>
+		<linearGradient id="paint_linear_1" x1="2.30951786" x2="38.5932655" y1="7.69187927" y2="7.69187927" gradientUnits="userSpaceOnUse">
+			<stop stop-color="rgb(200,200,200)" offset="0" stop-opacity="0" />
+			<stop stop-color="rgb(151,151,151)" offset="1" stop-opacity="1" />
+		</linearGradient>
+	</defs>
+	<rect id="箭头" width="46.768555" height="7.691406" x="0.000000" y="0.000000" />
+	<path id="路径 15(边框)" d="M41.6151 5.69188L0 5.69188L0 7.69188L46.7685 7.69188L38.3512 0L37.002 1.4764L41.6151 5.69188Z" fill="url(#paint_linear_1)" fill-rule="evenodd" />
+</svg>

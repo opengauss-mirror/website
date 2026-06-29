@@ -4,19 +4,20 @@ import yshl from '@/assets/category/authentication/training/img/talent/yshl.png'
 import yshlDark from '@/assets/category/authentication/training/img/talent/yshl_dark.png';
 import yshlSignup from '@/assets/category/authentication/training/img/talent/yshl_signup.png';
 import yshlSignupDark from '@/assets/category/authentication/training/img/talent/yshl_signup_dark.png';
-import vastdata from '@/assets/category/authentication/training/img/talent/vastdata.svg';
-import vastdataDark from '@/assets/category/authentication/training/img/talent/vastdata_dark.svg';
+import vastdata from '@/assets/category/authentication/training/img/talent/vastdata.png';
+import vastdataDark from '@/assets/category/authentication/training/img/talent/vastdata_dark.png';
 import vastdataSignup from '@/assets/category/authentication/training/img/talent/vastdata_signup.svg';
 import vastdataSignupDark from '@/assets/category/authentication/training/img/talent/vastdata_signup_dark.svg';
-import sz from '@/assets/category/authentication/training/img/talent/sz.svg';
+import sz from '@/assets/category/authentication/training/img/talent/sz.png';
 import szDark from '@/assets/category/authentication/training/img/talent/sz_dark.png';
 import szSignup from '@/assets/category/authentication/training/img/talent/sz_signup.svg';
 import szSignupDark from '@/assets/category/authentication/training/img/talent/sz_signup_dark.png';
-import qst from '@/assets/category/authentication/training/img/talent/qst.svg';
+import qst from '@/assets/category/authentication/training/img/talent/qst.png';
 import qstDark from '@/assets/category/authentication/training/img/talent/qst_dark.png';
 import qstSignup from '@/assets/category/authentication/training/img/talent/qst_signup.svg';
 import qstSignupDark from '@/assets/category/authentication/training/img/talent/qst_signup_dark.png';
 import ChinaMobile from '@/assets/category/authentication/training/img/talent/china_mobile_2.png';
+import ChinaMobileDark from '@/assets/category/authentication/training/img/talent/china_mobile_2_dark.png';
 
 export default {
   title: '培训认证',
@@ -253,7 +254,7 @@ export default {
       iconSignup: yshlSignup,
       iconSignupDark: yshlSignupDark,
       desc: '云数互联旗下“墨天轮”是专注于数据库的技术社区，月活用户超过150万并覆盖40万专业数据库人才。社区以排行榜、知识库、问答、视频课程、AI 助手、培训认证等方式，促进数据库领域的知识传播和技术创新。',
-      url: 'https://www.modb.pro/course?type=edu&tag=openGauss',
+      url: 'https://www.modb.pro/job',
       signupUrl: 'https://www.modb.pro/course/144',
     },
     {
@@ -262,7 +263,7 @@ export default {
       iconSignup: vastdataSignup,
       iconSignupDark: vastdataSignupDark,
       desc: '北京海量数据技术股份有限公司(股票代码:603138.SH)成立于2007年，是国内首家以数据库为主营业务的主板上市企业。公司十余年来秉承“专注做好数据库”的初心，始终致力于数据库产品的研发、销售和服务。',
-      url: 'http://education.vastdata.com.cn',
+      url: 'http://www.vastdata.com.cn/us/jrwm',
       signupUrl: 'https://education.vastdata.com.cn/pc/#/',
     },
     {
@@ -271,7 +272,7 @@ export default {
       iconSignup: szSignup,
       iconSignupDark: szSignupDark,
       desc: '神舟通用公司是中国航天科技集团有限公司（CASC）下属的一家专业的数据库公司，研发和销售神通数据库产品。公司的主要客户群体为党、政、军、航天、金融、审计、能源、医疗、电信等单位。',
-      url: 'http://www.shentongdata.com/index.php/about/join-8',
+      url: 'http://www.shentongdata.com/index.php/about/company-8',
       signupUrl: 'http://shentongdata.com/index.php/course/exam-58',
     },
     {
@@ -285,7 +286,7 @@ export default {
     },
     {
       icon: ChinaMobile,
-      iconDark: ChinaMobile,
+      iconDark: ChinaMobileDark,
       iconSignup: ChinaMobile,
       iconSignupDark: ChinaMobile,
       desc: '中国移动信息技术有限公司，面向全网IT领域，行使职能管理职责，统筹管理全网IT系统规划、投资、大数据统筹等工作；面向内部业务需求，进行智慧中台、业务支撑、管理支撑、大数据系统、IT云建设及运营，以及研发创新等工作；面向外部能力输出，具备独立的法人实体资质，可对外输出解决方案',
