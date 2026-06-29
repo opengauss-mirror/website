@@ -130,8 +130,9 @@ app/.env.*
 /playwright/.cache/
 app/zh/blogs
 app/en/blogs
-app/.vitepress/src/data/blogs/
-app/.vitepress/src/data/news/
+app/.vitepress/src/data/blogs/blogs-*.ts
+app/.vitepress/src/data/news/news-*.ts
+app/.vitepress/src-new/data/events/zh.ts
 _temp
 
 npmcachae
