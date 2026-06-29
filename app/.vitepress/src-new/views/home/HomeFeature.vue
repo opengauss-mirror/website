@@ -11,11 +11,14 @@ import AppSection from '~@/components/AppSection.vue';
 import { LEARN_VIDEO_LINK } from '~@/data/url-config';
 import { useScreen } from '~@/composables/useScreen';
 import { useLocale } from '~@/composables/useLocale';
+import { useData } from 'vitepress';
 
 const i18n = useI18n();
 const { t } = useLocale();
+const { lang } = useData();
 
-const PPT_LINK = `${LEARN_VIDEO_LINK}/openGauss%E9%9D%A2%E5%90%91%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD%E7%9A%84%E5%BC%80%E6%BA%90%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%B9%E7%A4%BE%E5%8C%BA.pptx`;
+const ZH_PPT_LINK = `${LEARN_VIDEO_LINK}/openGauss%E9%9D%A2%E5%90%91%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD%E7%9A%84%E5%BC%80%E6%BA%90%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%B9%E7%A4%BE%E5%8C%BA.pdf`;
+const EN_PPT_LINK = `${LEARN_VIDEO_LINK}/openGauss%20-%20An%20Open-Source%20Database%20for%20Data%20Infrastructure.pdf`;
 
 const icons = [feature1, feature2, feature3, feature4];
 
@@ -36,7 +39,7 @@ const { isPhone } = useScreen();
         </template>
       </div>
       <div class="home-feature-content-footer">
-        <OLink class="download-link" target="_blank" rel="noopener noreferrer" :href="PPT_LINK">
+        <OLink class="download-link" target="_blank" rel="noopener noreferrer" :href="lang === 'zh' ? ZH_PPT_LINK : EN_PPT_LINK">
           <template #icon>
             <OIcon><IconDownload /></OIcon>
           </template>
