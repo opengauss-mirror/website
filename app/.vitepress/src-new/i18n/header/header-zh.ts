@@ -302,6 +302,7 @@ export default {
             {
               NAME: 'oGMemory 专区',
               DESCRIPTION: '面向AI Agent的长期记忆系统，以AGFS文件为数据源头，openGauss向量索引为加速层，让Agent拥有跨会话的持久记忆能力。',
+              TAG: TAG_TYPE.NEW,
               URL: '/ogmemory/',
             }
           ],
