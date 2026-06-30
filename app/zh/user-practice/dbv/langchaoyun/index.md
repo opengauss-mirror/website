@@ -1,5 +1,5 @@
 ---
-title: 浪潮云
+title: 浪潮云岳数据库InDB V3.0
 category: showcase
 industry: DBV
 company: 浪潮云
@@ -7,4 +7,8 @@ summary: 浪潮云岳数据库InDB V3.0是基于openGauss内核增强提升，�
 officialPath: https://cloud.inspur.com/
 detail: false
 id: DBV
+head:
+  - - meta
+    - name: keywords
+      content: 浪潮云,InDB,岳数据库,openGauss
 ---
