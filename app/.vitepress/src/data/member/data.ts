@@ -56,8 +56,6 @@ import lihongda from '@/assets/category/member/avatar/lihongda.png';
 import pengjiong from '@/assets/category/member/avatar/pengjiong.png';
 import haoqingyun from '@/assets/category/member/avatar/haoqingyun.png';
 import wanglei from '@/assets/category/member/avatar/wanglei.png';
-import liheng from '@/assets/category/member/avatar/liheng.png';
-import zhangjinyu from '@/assets/category/member/avatar/zhangjinyu.png';
 import lishuaituan from '@/assets/category/member/avatar/lishuaituan.png';
 import xiongxiaojun from '@/assets/category/member/avatar/xiongxiaojun.png';
 import xuchunyang from '@/assets/category/member/avatar/xuchunyang.png';
@@ -107,10 +105,6 @@ import ShermanLau from '@/assets/category/member/avatar/ShermanLau.png';
 import RonenGrosman from '@/assets/category/member/avatar/RonenGrosman.png';
 import hewenyu from '@/assets/category/member/avatar/hewenyu.png';
 import zhangce from '@/assets/category/member/avatar/zhangce.png';
-import wangtianqing from '@/assets/category/member/avatar/wangtianqing.png';
-import sunji from '@/assets/category/member/avatar/sunji.png';
-import zhouxuanhe from '@/assets/category/member/avatar/zhouxuanhe.png';
-import yuxiang from '@/assets/category/member/avatar/yuxiang.png';
 import xiakang from '@/assets/category/member/avatar/xiakang.png';
 import xulijie from '@/assets/category/member/avatar/xulijie.png';
 import liwenlong from '@/assets/category/member/avatar/liwenlong.png';
@@ -443,7 +437,6 @@ import wangshanshan from '@/assets/category/member/avatar/wangshanshan.png';
 import litong from '@/assets/category/member/avatar/litong.png';
 import lanchunyi from '@/assets/category/member/avatar/lanchunyi.png';
 import wangtianyuan from '@/assets/category/member/avatar/wangtianyuan.png';
-import likun2 from '@/assets/category/member/avatar/likun2.png';
 import jiayongzhe from '@/assets/category/member/avatar/jiayongzhe.png';
 import xvdawei from '@/assets/category/member/avatar/xvdawei.png';
 import tanyujie from '@/assets/category/member/avatar/tanyujie.png';
@@ -522,6 +515,10 @@ import zhengxue from '@/assets/category/member/avatar/zhengxue.png';
 import qinyudongfang from '@/assets/category/member/avatar/qinyudongfang.png';
 import shiyingzhe from '@/assets/category/member/avatar/shiyingzhe.png';
 import wangbowen from '@/assets/category/member/avatar/wangbowen.png';
+import zhufangfang from '@/assets/category/member/avatar/zhufangfang.jpg';
+import wulongfei from '@/assets/category/member/avatar/wulongfei.jpg';
+import jichenpeng from '@/assets/category/member/avatar/jichenpeng.jpg';
+import pengyalun from '@/assets/category/member/avatar/pengyalun.png';
 
 export default {
   zh: {
@@ -1525,18 +1522,7 @@ export default {
         title: `Maintainer`,
         email: `wanglei110@huawei.com`,
       },
-      {
-        img: liheng,
-        name: `李恒`,
-        title: `Maintainer`,
-        email: `liheng37@huawei.com`,
-      },
-      {
-        img: zhangjinyu,
-        name: `张金玉`,
-        title: `Maintainer`,
-        email: `Jinyu_gaussdb@163.com`,
-      },
+
       {
         img: chenchen,
         name: `陈琛`,
@@ -1645,12 +1631,7 @@ export default {
         title: 'Committer',
         email: 'qinxuedi@huawei.com',
       },
-      {
-        img: chenxiaobin,
-        name: '陈晓滨',
-        title: 'Committer',
-        email: 'chenxiaobin19@huawei.com',
-      },
+
       {
         img: chenxiaoyu,
         name: '陈晓雨',
@@ -1722,6 +1703,12 @@ export default {
         email: `xiong_xiaojun@yeah.net`,
       },
       {
+        img: shenzheng,
+        name: `申正`,
+        title: `Maintainer`,
+        email: `shenzheng4@huawei.com`,
+      },
+      {
         img: zhoubin,
         name: `周斌`,
         title: `Committer`,
@@ -1762,12 +1749,6 @@ export default {
         name: `王钰辉`,
         title: `Committer`,
         email: `270791784@qq.com`,
-      },
-      {
-        img: shenzheng,
-        name: `申正`,
-        title: `Committer`,
-        email: `shenzheng4@huawei.com`,
       },
       {
         img: wangxiaofei,
@@ -2114,40 +2095,16 @@ export default {
     ],
     AI: [
       {
-        img: lishifu,
-        name: `李士福`,
-        title: `Maintainer`,
-        email: `lishifu@huawei.com`,
-      },
-      {
         img: zhangce,
-        name: `Zhang Ce`,
+        name: `Ce Zhang`,
         title: `Maintainer`,
-        email: ` ce.zhang@inf.ethz.ch`,
+        email: `ce.zhang@inf.ethz.ch`,
       },
       {
-        img: wangtianqing,
-        name: `王天庆`,
-        title: `Committer`,
-        email: `wangtianqing2@huawei.com`,
-      },
-      {
-        img: sunji,
-        name: `孙佶`,
-        title: `Committer`,
-        email: `sun-j16@mails.tsinghua.edu.cn`,
-      },
-      {
-        img: zhouxuanhe,
-        name: `周煊赫`,
-        title: `Committer`,
-        email: `zhouxuan19@mails.tsinghua.edu.cn`,
-      },
-      {
-        img: yuxiang,
-        name: `余翔`,
-        title: `Committer`,
-        email: `yxfish13@mails.tsinghua.edu.cn`,
+        img: libiao,
+        name: `李标`,
+        title: `Maintainer`,
+        email: `1102510224@qq.com`,
       },
       {
         img: xiakang,
@@ -2168,10 +2125,28 @@ export default {
         email: `wangtianyuan5@huawei.com`,
       },
       {
-        img: likun2,
-        name: `李坤`,
+        img: wulongfei,
+        name: `吴龙飞`,
         title: `Committer`,
-        email: `likun_dlut@163.com`,
+        email: `wulf234@163.com`,
+      },
+      {
+        img: jiwenke,
+        name: `吉文克`,
+        title: `Committer`,
+        email: `jwkchn@163.com`,
+      },
+      {
+        img: jichenpeng,
+        name: `季晨鹏`,
+        title: `Committer`,
+        email: `jcp0578@gmail.com`,
+      },
+      {
+        img: pengyalun,
+        name: `彭雅伦`,
+        title: `Committer`,
+        email: `akushonkamen@163.com`,
       },
     ],
     GIS: [
@@ -3048,6 +3023,12 @@ export default {
         name: `孔再华`,
         title: `Maintainer`,
         email: `kongzaihua@hotmail.com`,
+      },
+      {
+        img: zhufangfang,
+        name: `朱芳芳`,
+        title: `Maintainer`,
+        email: `zhufangfang3@huawei.com`,
       },
       {
         img: gaobo,
@@ -5871,18 +5852,7 @@ export default {
         title: `Maintainer`,
         email: `wanglei110@huawei.com`,
       },
-      {
-        img: liheng,
-        name: `Heng Li`,
-        title: `Maintainer`,
-        email: `liheng37@huawei.com`,
-      },
-      {
-        img: zhangjinyu,
-        name: `Jinyu Zhang`,
-        title: `Maintainer`,
-        email: `Jinyu_gaussdb@163.com`,
-      },
+
       {
         img: chenchen,
         name: `Chen Chen`,
@@ -5991,12 +5961,7 @@ export default {
         title: 'Committer',
         email: 'qinxuedi@huawei.com',
       },
-      {
-        img: chenxiaobin,
-        name: 'Xiaobin Chen',
-        title: 'Committer',
-        email: 'chenxiaobin19@huawei.com',
-      },
+
       {
         img: chenxiaoyu,
         name: 'Xiaoyu Chen',
@@ -6068,6 +6033,12 @@ export default {
         email: `xiong_xiaojun@yeah.net`,
       },
       {
+        img: shenzheng,
+        name: `Zheng Shen`,
+        title: `Maintainer`,
+        email: `shenzheng4@huawei.com`,
+      },
+      {
         img: zhoubin,
         name: `Bin Zhou`,
         title: `Committer`,
@@ -6108,12 +6079,6 @@ export default {
         name: `Yuhui Wang`,
         title: `Committer`,
         email: `270791784@qq.com`,
-      },
-      {
-        img: shenzheng,
-        name: `Zheng Shen`,
-        title: `Committer`,
-        email: `shenzheng4@huawei.com`,
       },
       {
         img: wangxiaofei,
@@ -6460,40 +6425,16 @@ export default {
     ],
     AI: [
       {
-        img: lishifu,
-        name: `Shifu Li`,
-        title: `Maintainer`,
-        email: `lishifu@huawei.com`,
-      },
-      {
         img: zhangce,
-        name: `Zhang Ce`,
+        name: `Ce Zhang`,
         title: `Maintainer`,
-        email: ` ce.zhang@inf.ethz.ch`,
+        email: `ce.zhang@inf.ethz.ch`,
       },
       {
-        img: wangtianqing,
-        name: `Tianqing Wang`,
-        title: `Committer`,
-        email: `wangtianqing2@huawei.com`,
-      },
-      {
-        img: sunji,
-        name: `Ji Sun`,
-        title: `Committer`,
-        email: `sun-j16@mails.tsinghua.edu.cn`,
-      },
-      {
-        img: zhouxuanhe,
-        name: `Xuanhe Zhou`,
-        title: `Committer`,
-        email: `zhouxuan19@mails.tsinghua.edu.cn`,
-      },
-      {
-        img: yuxiang,
-        name: `Xiang Yu`,
-        title: `Committer`,
-        email: `yxfish13@mails.tsinghua.edu.cn`,
+        img: libiao,
+        name: `Biao Li`,
+        title: `Maintainer`,
+        email: `1102510224@qq.com`,
       },
       {
         img: xiakang,
@@ -6514,10 +6455,28 @@ export default {
         email: `wangtianyuan5@huawei.com`,
       },
       {
-        img: likun2,
-        name: `Kun Li`,
+        img: wulongfei,
+        name: `Longfei Wu`,
         title: `Committer`,
-        email: `likun_dlut@163.com`,
+        email: `wulf234@163.com`,
+      },
+      {
+        img: jiwenke,
+        name: `Wenke Ji`,
+        title: `Committer`,
+        email: `jwkchn@163.com`,
+      },
+      {
+        img: jichenpeng,
+        name: `Chenpeng Ji`,
+        title: `Committer`,
+        email: `jcp0578@gmail.com`,
+      },
+      {
+        img: pengyalun,
+        name: `Yalun Peng`,
+        title: `Committer`,
+        email: `akushonkamen@163.com`,
       },
     ],
     GIS: [
@@ -7394,6 +7353,12 @@ export default {
         name: `Zaihua Kong`,
         title: `Maintainer`,
         email: `kongzaihua@hotmail.com`,
+      },
+      {
+        img: zhufangfang,
+        name: `Fangfang Zhu`,
+        title: `Maintainer`,
+        email: `zhufangfang3@huawei.com`,
       },
       {
         img: gaobo,

@@ -119,7 +119,7 @@ export default {
           name: `Security`,
           id: `security`,
           gitPath: `${GITCODE_LINK}/opengauss/tc/tree/master/sigs/Security`,
-          emial: `security@opengauss.org`,
+          emial: `securties@opengauss.org`,
           list: data.en.SECURITY,
         },
         {

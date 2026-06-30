@@ -317,7 +317,9 @@ const handleChangeActiveMobile = (activeNames: number | '') => {
       }
       .avatar {
         border-radius: 50%;
-        max-width: 100px;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
       }
     }
   }
