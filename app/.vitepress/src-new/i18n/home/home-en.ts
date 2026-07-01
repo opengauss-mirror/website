@@ -22,7 +22,7 @@ export default {
         TEXT: 'AI-based parameter tuning',
       },
     ],
-    DOWN_NAME: 'Download openGauss Overview Slides',
+    DOWN_NAME: 'openGauss - An Open-Source Database for Data Infrastructure',
   },
   COMMUNITY_ACTIVITY: {
     TITLE: 'We Are Thriving',
