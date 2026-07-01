@@ -44,7 +44,7 @@ const setJSONLD = async (pageData: PageData, pagePath: string) => {
 };
 
 const setTdk = (pageData: PageData, pagePath: string) => {
-  const jsonFile = join(geoDir, 'tdk', pagePath, 'index.json');
+  const jsonFile = join(geoDir, 'tdks', pagePath, 'index.json');
   const tdkInfo = existsSync(jsonFile) ? JSON.parse(readFileSync(jsonFile, 'utf-8')) : null;
 
   pageData.titleTemplate = `:title | ${pagePath.startsWith('zh') ? 'openGauss社区官网' : 'openGauss Official Website'}`;
