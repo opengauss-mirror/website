@@ -144,7 +144,7 @@ const courseGuides = [
               <div class="img-container">
                 <img :src="isDark ? szDark : sz" alt="" />
               </div>
-              <p class="entry-list-item-desc">oppenGauss中级认证</p>
+              <p class="entry-list-item-desc">openGauss中级认证</p>
               <OButton
                 class="signup-btn"
                 color="primary"
