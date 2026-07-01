@@ -1,0 +1,149 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "openGauss OGCP认证课程",
+    "description": "面向openGauss数据库的中级管理员、架构设计与优化人员的认证课程。课程深入原理与实战，涵盖产品架构、SQL进阶、安全管理、对象与迁移管理等内容，系统提升学员的专业运维能力。",
+    "provider": {
+      "@type": "Organization",
+      "name": "openGauss社区",
+      "sameAs": "https://opengauss.org"
+    },
+    "educationalCredentialOffered": {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Certification",
+      "name": "OGCP (openGauss Certified Professional)",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "中国软件行业协会"
+      }
+    },
+    "audience": {
+      "@type": "Audience",
+      "audienceType": ["中级数据库管理员", "架构设计师", "数据库优化人员"]
+    },
+    "syllabus": {
+      "@type": "Syllabus",
+      "name": "OGCP课程大纲",
+      "hasPart": [
+        {
+          "@type": "SyllabusModule",
+          "name": "openGauss产品架构",
+          "learningResourceType": ["系统架构", "软件架构", "逻辑架构", "线程架构"]
+        },
+        {
+          "@type": "SyllabusModule",
+          "name": "数据库对象管理",
+          "learningResourceType": ["系统表和系统视图", "物化视图", "对象权限管理", "定时任务"]
+        },
+        {
+          "@type": "SyllabusModule",
+          "name": "数据库安全管理",
+          "learningResourceType": ["客户端接入认证", "用户及角色", "数据库审计", "密态等值查询", "账本数据库", "透明数据加密"]
+        },
+        {
+          "@type": "SyllabusModule",
+          "name": "SQL进阶",
+          "learningResourceType": ["存储过程与触发器", "多表连接", "约束", "表清理"]
+        },
+        {
+          "@type": "SyllabusModule",
+          "name": "数据库系统管理",
+          "learningResourceType": ["日程检查", "操作系统及openGauss健康检查", "备份恢复管理", "容灾管理"]
+        },
+        {
+          "@type": "SyllabusModule",
+          "name": "数据库迁移管理",
+          "learningResourceType": ["数据迁移概述", "openGauss迁移工具", "异构数据库语法差异", "MySQL数据库迁移实践"]
+        }
+      ]
+    },
+    "url": "https://opengauss.org/zh/training/signup/ogcp"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "OGCP认证报名入口",
+    "description": "openGauss社区授权的OGCP认证培训机构报名入口列表",
+    "numberOfItems": 6,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "墨天轮 - openGauss中级OGCP认证课程",
+        "description": "墨天轮是专注于数据库的技术社区，提供openGauss中级OGCP认证课程培训",
+        "url": "https://www.modb.pro/course/190"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "海量数据 - openGauss中级认证（线上）",
+        "description": "海量数据提供线上openGauss中级OGCP认证培训",
+        "url": "https://education.vastdata.com.cn/pc/#/index/examDetails?id=d390ee1681bee5db4377244753ae35a4&type=1"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "海量数据 - openGauss中级认证（线下）",
+        "description": "海量数据提供线下openGauss中级OGCP认证培训",
+        "url": "https://education.vastdata.com.cn/pc/#/index/examDetails?id=481091b9b846d5c506d0f0695215f184&type=1"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "神舟通用 - openGauss中级认证",
+        "description": "神舟通用公司提供openGauss中级OGCP认证培训",
+        "url": "http://shentongdata.com/index.php/course/exam-58"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "青软集团 - 中级OGCP认证",
+        "description": "青软集团提供openGauss中级OGCP认证培训",
+        "url": "https://www.eduplus.net/training/openGauss"
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "name": "中国移动 - 中级OGCP认证",
+        "description": "中国移动信息技术有限公司提供openGauss中级OGCP认证培训报名",
+        "url": "https://bigdata.10086.cn/honghu/hhweb/#/certify"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "墨天轮",
+    "description": "云数互联旗下墨天轮是专注于数据库的技术社区，月活用户超过150万并覆盖40万专业数据库人才",
+    "url": "https://www.modb.pro"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "海量数据",
+    "description": "北京海量数据技术股份有限公司是国内首家以数据库为主营业务的主板上市企业（股票代码:603138.SH）",
+    "url": "http://www.vastdata.com.cn"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "神舟通用",
+    "description": "神舟通用公司是中国航天科技集团有限公司下属的专业数据库公司",
+    "url": "http://www.shentongdata.com"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "青软集团",
+    "description": "青软集团是国内领先的高等教育数字化解决方案、产教融合及人力资源服务提供商",
+    "url": "https://www.eduplus.net"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "中国移动信息技术有限公司",
+    "description": "中国移动信息技术有限公司面向全网IT领域，行使职能管理职责",
+    "url": "https://job.10086.cn"
+  }
+]

@@ -1,0 +1,142 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "openGauss OGCE认证课程",
+    "description": "面向致力于成为openGauss数据库专家的高级数据库管理员、系统架构师和高级工程师的认证课程。课程聚焦内核原理与高阶实战，深入剖析内部机制,涵盖内核原理、高级特性、备份恢复、性能优化、高可用方案及运维与故障处理等内容.",
+    "provider": {
+      "@type": "Organization",
+      "name": "openGauss社区",
+      "sameAs": "https://opengauss.org"
+    },
+    "educationalCredentialOffered": {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Certification",
+      "name": "OGCE (openGauss Certified Expert)",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "中国软件行业协会"
+      }
+    },
+    "audience": {
+      "@type": "Audience",
+      "audienceType": ["高级数据库管理员", "系统架构师", "高级工程师"]
+    },
+    "syllabus": {
+      "@type": "Syllabus",
+      "name": "OGCE课程大纲",
+      "hasPart": [
+        {
+          "@type": "SyllabusModule",
+          "name": "openGauss数据库内核原理",
+          "learningResourceType": ["SQL引擎", "存储引擎", "事务管理与锁机制", "日志管理"]
+        },
+        {
+          "@type": "SyllabusModule",
+          "name": "openGauss高级特性",
+          "learningResourceType": ["安全增强特性", "AI特性", "NUMA架构优化与资源池化架构", "其他特性"]
+        },
+        {
+          "@type": "SyllabusModule",
+          "name": "备份恢复",
+          "learningResourceType": ["逻辑备份与恢复", "物理备份与恢复", "闪回恢复"]
+        },
+        {
+          "@type": "SyllabusModule",
+          "name": "数据库性能优化",
+          "learningResourceType": ["性能调优策略", "慢SQL与锁分析、定位及优化", "WDR报告解读"]
+        },
+        {
+          "@type": "SyllabusModule",
+          "name": "高可用方案",
+          "learningResourceType": ["高可用架构及集群管理组件", "数据同步及故障恢复原理", "高可用容灾方案"]
+        },
+        {
+          "@type": "SyllabusModule",
+          "name": "运维与故障处理",
+          "learningResourceType": ["日常运维", "故障定位处理流程", "常见故障及处理方法"]
+        }
+      ]
+    },
+    "url": "https://opengauss.org/zh/training/signup/ogce"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "OGCE认证报名入口",
+    "description": "openGauss社区授权的OGCE认证培训机构报名入口列表",
+    "numberOfItems": 6,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "墨天轮 - openGauss高级OGCE认证课程",
+        "description": "墨天轮是专注于数据库的技术社区,提供openGauss高级OGCE认证课程培训",
+        "url": "https://www.modb.pro/course/144"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "海量数据 - 高级OGCE认证",
+        "description": "海量数据是国内首家以数据库为主营业务的主板上市企业,提供OGCE认证培训",
+        "url": "https://education.vastdata.com.cn/pc/#/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "神舟通用 - 高级OGCE认证",
+        "description": "神舟通用公司是中国航天科技集团有限公司下属的专业数据库公司,提供OGCE认证培训",
+        "url": "http://shentongdata.com/index.php/course/exam-58"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "青软集团 - 高级OGCE认证",
+        "description": "青软集团是国内领先的高等教育数字化解决方案提供商,提供OGCE认证培训",
+        "url": "https://www.eduplus.net/training/openGauss"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "中国移动 - 高级OGCE认证",
+        "description": "中国移动信息技术有限公司提供OGCE认证培训报名",
+        "url": "https://bigdata.10086.cn/honghu/hhweb/#/certify"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "墨天轮",
+    "description": "云数互联旗下墨天轮是专注于数据库的技术社区,月活用户超过150万并覆盖40万专业数据库人才",
+    "url": "https://www.modb.pro"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "海量数据",
+    "description": "北京海量数据技术股份有限公司是国内首家以数据库为主营业务的主板上市企业（股票代码:603138.SH）",
+    "url": "http://www.vastdata.com.cn"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "神舟通用",
+    "description": "神舟通用公司是中国航天科技集团有限公司下属的专业数据库公司",
+    "url": "http://www.shentongdata.com"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "青软集团",
+    "description": "青软集团是国内领先的高等教育数字化解决方案、产教融合及人力资源服务提供商",
+    "url": "https://www.eduplus.net"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "中国移动信息技术有限公司",
+    "description": "中国移动信息技术有限公司面向全网IT领域，行使职能管理职责",
+    "url": "https://job.10086.cn"
+  }
+]

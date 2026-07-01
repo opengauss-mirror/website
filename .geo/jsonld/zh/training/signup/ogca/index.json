@@ -1,0 +1,137 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "openGauss OGCA认证课程",
+    "description": "面向openGauss数据库的初级管理员、应用开发人员的认证课程。课程以原理与实践相结合，涵盖数据库概论、openGauss简介、体系结构、运维基础、SQL等内容，由浅入深系统讲解基础技能。",
+    "provider": {
+      "@type": "Organization",
+      "name": "openGauss社区",
+      "sameAs": "https://opengauss.org"
+    },
+    "educationalCredentialOffered": {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Certification",
+      "name": "OGCA (openGauss Certified Associate)",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "openGauss社区"
+      }
+    },
+    "audience": {
+      "@type": "Audience",
+      "audienceType": ["数据库管理员", "应用开发人员", "IT从业者", "在校学生"]
+    },
+    "syllabus": {
+      "@type": "Syllabus",
+      "name": "OGCA课程大纲",
+      "hasPart": [
+        {
+          "@type": "SyllabusModule",
+          "name": "数据库技术发展概述",
+          "learningResourceType": ["数据库系统概述", "数据库技术发展的三个阶段", "数据模型介绍:层次、网状、关系模型", "非关系型数据库:NoSQL、NewSQL、图、时序、文档数据库", "国产数据库的发展概况", "华为云数据库的发展历程与组成", "华为云数据库与openGauss的关系"]
+        },
+        {
+          "@type": "SyllabusModule",
+          "name": "openGauss数据库与新特性",
+          "learningResourceType": ["PostgreSQL的发展历程与概述", "openGauss应用场景、运行环境和技术指标", "openGauss的基本功能和企业级增强特性", "开源产品的未来", "openGauss 2.0.0新特性"]
+        },
+        {
+          "@type": "SyllabusModule",
+          "name": "安装、卸载与客户端工具",
+          "learningResourceType": ["openGauss2.0.0标准安装的环境规划、准备、安装以及验证与参数优化", "openGauss2.0.0极简安装的环境准备、配置和安装、验证", "openGauss2.0.0容器版安装和安装后验证", "openGauss2.0.0的卸载", "掌握数据库连接工具GSQL的使用和常用语法", "图形工具DataStudio安装、使用"]
+        },
+        {
+          "@type": "SyllabusModule",
+          "name": "数据库体系概述",
+          "learningResourceType": ["内存结构", "线程结构", "存储结构"]
+        },
+        {
+          "@type": "SyllabusModule",
+          "name": "openGauss基本管理与SQL",
+          "learningResourceType": ["数据库启动、关闭与状态查看", "数据库监听管理与连接机制", "表空间管理", "数据库管理", "用户管理", "DQL语句/DDL语句/DML语/DCL语句"]
+        }
+      ]
+    },
+    "url": "https://opengauss.org/zh/training/signup/ogca"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "OGCA认证报名入口",
+    "description": "openGauss社区授权的OGCA认证培训机构报名入口列表",
+    "numberOfItems": 5,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "墨天轮 - openGauss初级OGCA认证课程",
+        "description": "墨天轮是专注于数据库的技术社区，提供openGauss初级OGCA认证课程培训",
+        "url": "https://www.modb.pro/course/144"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "海量数据 - 初级OGCA考试",
+        "description": "北京海量数据技术股份有限公司是国内首家以数据库为主营业务的主板上市企业，提供OGCA认证考试",
+        "url": "https://education.vastdata.com.cn/pc/#/index/examDetails?id=35dcb340785ab1b3546521ef6407b9c8&type=1"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "神舟通用 - 初级OGCA认证",
+        "description": "神舟通用公司是中国航天科技集团有限公司下属的专业数据库公司，提供OGCA认证培训",
+        "url": "http://shentongdata.com/index.php/course/exam-58"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "青软集团 - 初级OGCA认证",
+        "description": "青软集团是国内领先的高等教育数字化解决方案提供商，提供OGCA认证培训",
+        "url": "https://www.eduplus.net/training/openGauss"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "中国移动 - 初级OGCA认证",
+        "description": "中国移动信息技术有限公司提供OGCA认证培训报名",
+        "url": "https://bigdata.10086.cn/honghu/hhweb/#/certify"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "墨天轮",
+    "description": "云数互联旗下墨天轮是专注于数据库的技术社区，月活用户超过150万并覆盖40万专业数据库人才",
+    "url": "https://www.modb.pro"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "海量数据",
+    "description": "北京海量数据技术股份有限公司是国内首家以数据库为主营业务的主板上市企业（股票代码:603138.SH）",
+    "url": "http://www.vastdata.com.cn"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "神舟通用",
+    "description": "神舟通用公司是中国航天科技集团有限公司下属的专业数据库公司",
+    "url": "http://www.shentongdata.com"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "青软集团",
+    "description": "青软集团是国内领先的高等教育数字化解决方案、产教融合及人力资源服务提供商",
+    "url": "https://www.eduplus.net"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "中国移动信息技术有限公司",
+    "description": "中国移动信息技术有限公司面向全网IT领域，行使职能管理职责",
+    "url": "https://job.10086.cn"
+  }
+]

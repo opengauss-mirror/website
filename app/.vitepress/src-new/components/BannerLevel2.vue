@@ -122,6 +122,10 @@ const rootStyle = computed(() => {
         z-index: 1;
         color: var(--o-color-info1);
         @include display2;
+        @include respond-to('<=pad_v') {
+          font-size: 22px;
+          line-height: 30px;
+        }
         margin-bottom: 0;
         font-weight: 500;
       }
