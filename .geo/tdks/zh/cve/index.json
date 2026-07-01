@@ -1,5 +1,5 @@
 {
-  "title": "CVE漏洞查询 | openGauss社区",
+  "title": "CVE漏洞查询",
   "description": "openGauss CVE安全漏洞查询平台，提供openGauss社区官方CVE漏洞列表检索，包含漏洞等级、CVSS评分、发布时间等详细信息。",
   "keywords": "openGauss CVE,openGauss漏洞,CVE查询,安全漏洞,CVSS评分,漏洞公告,CVE列表"
 }
