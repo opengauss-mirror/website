@@ -22,7 +22,7 @@ export default {
         TEXT: '基于AI的智能参数调优',
       },
     ],
-    DOWN_NAME: 'openGauss面向基础设施的开源数据库社区',
+    DOWN_NAME: 'openGauss面向基础设施的开源数据库根社区',
   },
   COMMUNITY_ACTIVITY: {
     TITLE: '社区动态',
