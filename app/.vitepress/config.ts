@@ -9,6 +9,7 @@ import generateLastmodAndChangefreq from '@opendesign-plus/plugins/vite/generate
 import generateLLMsFull from '@opendesign-plus/geo-scripts/generate-llms-full';
 import contentYamlPlugin from './plugins/vite-plugin-content-yaml';
 import generateSEOManifest from './scripts/generate-tdk-schema-for-articles';
+import { PRIORITY_MAP, DEFAULT_PRIORITY, normalizeSitemapUrl } from './sitemap-priority';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const geoDir = join(__dirname, '../../.geo')
@@ -79,6 +80,20 @@ const config: UserConfig = {
           }
         }
       } catch {}
+      for (const item of items) {
+        const normalizedUrl = normalizeSitemapUrl(item.url);
+        let matched = false;
+        for (const [pattern, prio] of PRIORITY_MAP) {
+          if (pattern.test(normalizedUrl)) {
+            item.priority = prio;
+            matched = true;
+            break;
+          }
+        }
+        if (!matched) {
+          item.priority = DEFAULT_PRIORITY;
+        }
+      }
       return items;
     },
   },
