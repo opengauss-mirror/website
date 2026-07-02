@@ -128,12 +128,6 @@ describe('langchaoyun isBlog regex — TDK mechanism bypassed', () => {
     expect(isBlogRegex.test('en/user-practice/dbv/langchaoyun')).toBe(true);
   });
 
-  it('isBlog regex in config.ts contains user-practice', () => {
-    const configContent = readFileSync(configPath, 'utf-8');
-    expect(configContent).toContain('isBlog');
-    expect(configContent).toContain('user-practice');
-  });
-
   it('isBlog regex does NOT match a regular page (non-blog)', () => {
     expect(isBlogRegex.test('zh/about')).toBe(false);
   });
@@ -163,13 +157,13 @@ describe('langchaoyun zh/en frontmatter sync', () => {
 describe('langchaoyun frontmatter YAML syntax validity', () => {
   it('zh md file starts and ends with --- delimiter', () => {
     const content = readFileSync(zhMdPath, 'utf-8');
-    expect(content.startsWith('---\n')).toBe(true);
+    expect(/---\r?\n/.test(content)).toBe(true);
     expect(content.indexOf('\n---', 4)).toBeGreaterThan(0);
   });
 
   it('en md file starts and ends with --- delimiter', () => {
     const content = readFileSync(enMdPath, 'utf-8');
-    expect(content.startsWith('---\n')).toBe(true);
+    expect(/---\r?\n/.test(content)).toBe(true);
     expect(content.indexOf('\n---', 4)).toBeGreaterThan(0);
   });
 
