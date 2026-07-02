@@ -1,0 +1,23 @@
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "openGauss 7.0.0-RC2 正式发布",
+  "description": "openGauss 7.0.0-RC2 正式发布",
+  "author": {
+    "@type": "Organization",
+    "name": "openGauss"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "datePublished": "2025-09-30",
+  "dateModified": "2025-09-30",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/news/2025-09-30/"
+  },
+  "url": "https://opengauss.org/zh/news/2025-09-30/",
+  "inLanguage": "zh-CN"
+}
