@@ -1,0 +1,10 @@
+[
+  {
+    "path": "/app/zh/events/hdc.2021.developer.md",
+    "error": "Missing or invalid time/date field"
+  },
+  {
+    "path": "/app/zh/events/summer2021.md",
+    "error": "Missing or invalid time/date field"
+  }
+]
