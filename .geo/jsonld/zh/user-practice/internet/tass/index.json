@@ -1,39 +1,31 @@
-[
-  {
-    "@context": "https://schema.org",
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "北京江南天安科技有限公司",
+  "description": "将openGauss应用在公司相关产品中，作为数据存储数据库使用，部署openGauss服务器节点数为11~20个。",
+  "url": "https://opengauss.org/zh/user-practice/internet/tass/",
+  "inLanguage": "zh-CN",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/user-practice/internet/tass/"
+  },
+  "author": {
     "@type": "Organization",
     "name": "北京江南天安科技有限公司",
-    "url": "https://www.tass.com.cn/",
-    "description": "将openGauss应用在公司相关产品中，作为数据存储数据库使用，部署openGauss服务器节点数为11~20个。"
+    "sameAs": "https://www.tass.com.cn/"
   },
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "首页",
-        "item": "https://opengauss.org/zh/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "案例实践",
-        "item": "https://opengauss.org/zh/user-practice/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "互联网",
-        "item": "https://opengauss.org/zh/user-practice/internet/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 4,
-        "name": "北京江南天安科技有限公司",
-        "item": "https://opengauss.org/zh/user-practice/internet/tass/"
-      }
-    ]
-  }
-]
+  "articleSection": "Internet",
+  "about": {
+    "@type": "Thing",
+    "name": "Internet",
+    "description": "北京江南天安科技有限公司在Internet领域的openGauss数据库实践案例"
+  },
+  "sameAs": "https://www.tass.com.cn/",
+  "keywords": "openGauss, database, case study, user practice, 北京江南天安科技有限公司, Internet",
+  "genre": "Internet"
+}

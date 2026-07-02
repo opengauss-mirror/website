@@ -1,46 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://opengauss.org/zh/user-practice/dbv/vastdata#organization",
-      "name": "北京海量数据技术股份有限公司",
-      "url": "http://www.vastdata.com.cn/",
-      "description": "使用openGauss做海量数据库Vastbase商业发行版，部署openGauss服务器节点数为50个以上。北京、广州、南京、天津、西安、成都6大研发基地，科研技术团队超过65%，7大售后服务中心覆盖全国，业务遍布全国30个省和直辖市，2000多家大中型客户。",
-      "brand": {
-        "@type": "Brand",
-        "name": "Vastbase"
-      }
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://opengauss.org/zh/user-practice/dbv/vastdata#product",
-      "name": "Vastbase G100",
-      "description": "海量数据库Vastbase G100——投身体系化演进，服务众多头部客户。基于openGauss内核开发的企业级关系型数据库，是国产体系化演进的最佳选择。鲲鹏全栈替代，软硬协同，充分发挥CPU的优势，给用户极致的性能体验。兼具极致性能与高兼容、高可用、高安全、多模态、高并发等多种特性，给用户提供更高级别的产品质量保障和运行支撑。兼容Oracle、MySQL、PostgreSQL，集成业内领先的数据库迁移能力，能够大幅降低业务系统的迁移、改造成本。",
-      "applicationCategory": "DatabaseApplication",
-      "offers": {
-        "@type": "Offer",
-        "availability": "https://schema.org/InStock"
-      },
-      "producer": {
-        "@id": "https://opengauss.org/zh/user-practice/dbv/vastdata#organization"
-      },
-      "featureList": [
-        "基于openGauss内核开发的企业级关系型数据库",
-        "鲲鹏全栈替代，软硬协同",
-        "极致性能",
-        "高兼容",
-        "高可用",
-        "高安全",
-        "多模态",
-        "高并发",
-        "兼容Oracle、MySQL、PostgreSQL",
-        "业内领先的数据库迁移能力",
-        "有自主知识产权",
-        "高兼容，安全平滑迁移",
-        "源代码在手，保证100%故障修复",
-        "主备快速自动切换，保障业务连续性"
-      ]
-    }
-  ]
+  "@type": "TechArticle",
+  "headline": "北京海量数据技术股份有限公司",
+  "description": "使用openGauss做海量数据库Vastbase商业发行版，部署openGauss服务器节点数为50个以上。",
+  "url": "https://opengauss.org/en/user-practice/dbv/vastdata/",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/en/user-practice/dbv/vastdata/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "北京海量数据技术股份有限公司",
+    "sameAs": "http://www.vastdata.com.cn/"
+  },
+  "articleSection": "Database Vendor",
+  "about": {
+    "@type": "Thing",
+    "name": "Database Vendor",
+    "description": "openGauss database case study by 北京海量数据技术股份有限公司 in Database Vendor industry"
+  },
+  "sameAs": "http://www.vastdata.com.cn/",
+  "keywords": "openGauss, database, case study, user practice, 北京海量数据技术股份有限公司, Database Vendor",
+  "genre": "DBV"
 }

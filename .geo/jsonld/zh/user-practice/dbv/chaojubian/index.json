@@ -1,12 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "FusionDB 22",
-  "applicationCategory": "DatabaseApplication",
+  "@type": "TechArticle",
+  "headline": "超聚变数字技术有限公司",
   "description": "超聚变 FusionDB 22是一款基于openGauss的商业发行版。提供面向多核的极致性能、全链路的业务和数据安全、基于 AI 的调优和高效运维的能力，全面友好开放，携手伙伴共同打造全球领先的企业级开源关系型数据库。",
-  "url": "https://www.xfusion.com/cn/product/database-solution/fusiondb",
+  "url": "https://opengauss.org/zh/user-practice/dbv/chaojubian/",
+  "inLanguage": "zh-CN",
   "publisher": {
     "@type": "Organization",
-    "name": "超聚变数字技术有限公司"
-  }
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/user-practice/dbv/chaojubian/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "超聚变数字技术有限公司",
+    "sameAs": "https://www.xfusion.com/cn/product/database-solution/fusiondb"
+  },
+  "articleSection": "Database Vendor",
+  "about": {
+    "@type": "Thing",
+    "name": "Database Vendor",
+    "description": "超聚变数字技术有限公司在Database Vendor领域的openGauss数据库实践案例"
+  },
+  "sameAs": "https://www.xfusion.com/cn/product/database-solution/fusiondb",
+  "keywords": "openGauss, database, case study, user practice, 超聚变数字技术有限公司, Database Vendor",
+  "genre": "DBV"
 }

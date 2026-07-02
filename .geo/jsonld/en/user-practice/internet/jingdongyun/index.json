@@ -1,95 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Article",
-      "@id": "https://opengauss.org/zh/user-practice/internet/jingdongyun/#article",
-      "headline": "京东云",
-      "description": "基于StarDB for openGauss实现了混合多云操作系统元数据存储安全可控的目标。该方案已应用于集团自主创新专区，以及政企、能源等多家企业客户；随着自主创新进程的不断推进，将逐步扩大使用规模应用于更多内部业务和客户业务场景。",
-      "inLanguage": "zh-CN",
-      "isPartOf": {
-        "@id": "https://opengauss.org/#website"
-      },
-      "about": {
-        "@type": "Organization",
-        "name": "京东云",
-        "url": "https://www.jdcloud.com/cn/products/stardb",
-        "industry": "互联网"
-      },
-      "publisher": {
-        "@id": "https://opengauss.org/#organization"
-      },
-      "mainEntityOfPage": {
-        "@id": "https://opengauss.org/zh/user-practice/internet/jingdongyun/#webpage"
-      }
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://opengauss.org/zh/user-practice/internet/jingdongyun/#webpage",
-      "url": "https://opengauss.org/zh/user-practice/internet/jingdongyun/",
-      "name": "京东云 | openGauss",
-      "description": "基于StarDB for openGauss实现了混合多云操作系统元数据存储安全可控的目标。该方案已应用于集团自主创新专区，以及政企、能源等多家企业客户；随着自主创新进程的不断推进，将逐步扩大使用规模应用于更多内部业务和客户业务场景。",
-      "inLanguage": "zh-CN",
-      "isPartOf": {
-        "@id": "https://opengauss.org/#website"
-      },
-      "about": {
-        "@type": "Organization",
-        "name": "京东云",
-        "url": "https://www.jdcloud.com/cn/products/stardb"
-      },
-      "breadcrumb": {
-        "@id": "https://opengauss.org/zh/user-practice/internet/jingdongyun/#breadcrumb"
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://opengauss.org/zh/user-practice/internet/jingdongyun/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "首页",
-          "item": "https://opengauss.org/zh/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "用户实践",
-          "item": "https://opengauss.org/zh/user-practice/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "互联网",
-          "item": "https://opengauss.org/zh/user-practice/internet/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "京东云"
-        }
-      ]
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://opengauss.org/#organization",
-      "name": "openGauss",
-      "url": "https://opengauss.org/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://opengauss.org/assets/logo_dark.CElWqwW0.svg"
-      }
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://opengauss.org/#website",
-      "url": "https://opengauss.org/",
-      "name": "openGauss",
-      "publisher": {
-        "@id": "https://opengauss.org/#organization"
-      },
-      "inLanguage": "zh-CN"
-    }
-  ]
+  "@type": "TechArticle",
+  "headline": "京东云",
+  "description": "基于StarDB for openGauss实现了混合多云操作系统元数据存储安全可控的目标。该方案已应用于集团自主创新专区，以及政企、能源等多家企业客户；随着自主创新进程的不断推进，将逐步扩大使用规模应用于更多内部业务和客户业务场景。",
+  "url": "https://opengauss.org/en/user-practice/internet/jingdongyun/",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/en/user-practice/internet/jingdongyun/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "京东云",
+    "sameAs": "https://www.jdcloud.com/cn/products/stardb"
+  },
+  "articleSection": "Internet",
+  "about": {
+    "@type": "Thing",
+    "name": "Internet",
+    "description": "openGauss database case study by 京东云 in Internet industry"
+  },
+  "sameAs": "https://www.jdcloud.com/cn/products/stardb",
+  "keywords": "openGauss, database, case study, user practice, 京东云, Internet",
+  "genre": "Internet"
 }

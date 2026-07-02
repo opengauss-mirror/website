@@ -1,0 +1,24 @@
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "openGauss社区成立Security Technology SIG",
+  "description": "5月10日，openGauss社区成立Security Technology SIG",
+  "author": {
+    "@type": "Organization",
+    "name": "openGauss"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "datePublished": "2021-05-10",
+  "dateModified": "2021-05-10",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/news/2021-05-10/20210510.html"
+  },
+  "url": "https://opengauss.org/zh/news/2021-05-10/20210510.html",
+  "inLanguage": "zh-CN",
+  "image": "https://opengauss.org/category/news/2021-05-10/banner.jpg"
+}

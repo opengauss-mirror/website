@@ -1,18 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "TechArticle",
   "headline": "深圳中海油能源发展销售服务有限公司",
   "description": "智能一体化管理系统升级实践，覆盖多个核心业务系统（非常规业务支持系统SuperModel企业绩效管理系统、油化事业部实验数据采集应用系统、油化EPS作业管理系统、气电城燃系统、终端外输智能一体化平台）。",
+  "url": "https://opengauss.org/zh/user-practice/energy/szzhonghaiyou/",
+  "inLanguage": "zh-CN",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://opengauss.org/zh/user-practice/energy/szzhonghaiyou/"
   },
-  "about": {
+  "author": {
     "@type": "Organization",
     "name": "深圳中海油能源发展销售服务有限公司",
-    "url": "https://cenertech.cnooc.com.cn/",
-    "description": "能源行业企业，实现智能一体化管理系统升级，覆盖非常规业务支持系统SuperModel企业绩效管理系统、油化事业部实验数据采集应用系统、油化EPS作业管理系统、气电城燃系统、终端外输智能一体化平台等核心业务系统。"
+    "sameAs": "https://cenertech.cnooc.com.cn/"
   },
-  "articleSection": "案例展示",
-  "keywords": ["openGauss", "深圳中海油能源发展销售服务有限公司", "能源", "智能一体化管理系统", "Vastbase", "统信UOS", "数据安全", "AI", "机器学习"]
+  "articleSection": "能源",
+  "about": {
+    "@type": "Thing",
+    "name": "能源",
+    "description": "深圳中海油能源发展销售服务有限公司在能源领域的openGauss数据库实践案例"
+  },
+  "sameAs": "https://cenertech.cnooc.com.cn/",
+  "keywords": "openGauss, database, case study, user practice, 深圳中海油能源发展销售服务有限公司, 能源",
+  "genre": "Energy"
 }

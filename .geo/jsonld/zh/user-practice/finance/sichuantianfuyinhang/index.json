@@ -1,35 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "TechArticle",
   "headline": "四川天府银行",
   "description": "MogDB容器化创新应用，实现数据库集群持久化全栈部署管理新模式",
-  "articleSection": "用户案例",
-  "about": {
+  "url": "https://opengauss.org/zh/user-practice/finance/sichuantianfuyinhang/",
+  "inLanguage": "zh-CN",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/user-practice/finance/sichuantianfuyinhang/"
+  },
+  "author": {
     "@type": "Organization",
     "name": "四川天府银行",
-    "url": "https://www.tf.cn/tfyh/index.html",
-    "industry": "金融"
+    "sameAs": "https://www.tf.cn/tfyh/index.html"
   },
-  "mentions": [
-    {
-      "@type": "SoftwareApplication",
-      "name": "MogDB Container"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "name": "MogDB Stack"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "name": "MogDB Operator"
-    },
-    {
-      "@type": "Organization",
-      "name": "云和恩墨"
-    }
-  ],
-  "mainEntity": {
+  "articleSection": "Finance",
+  "about": {
     "@type": "Thing",
-    "name": "容器化数据库解决方案"
-  }
+    "name": "Finance",
+    "description": "四川天府银行在Finance领域的openGauss数据库实践案例"
+  },
+  "sameAs": "https://www.tf.cn/tfyh/index.html",
+  "keywords": "openGauss, database, case study, user practice, 四川天府银行, Finance",
+  "genre": "Finance"
 }

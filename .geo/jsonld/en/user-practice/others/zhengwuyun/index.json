@@ -1,29 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "TechArticle",
   "headline": "某市政务云",
   "description": "数据高效处理，安全可信，打造领先的数字化政务云平台",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://opengauss.org/zh/user-practice/others/zhengwuyun/"
-  },
+  "url": "https://opengauss.org/en/user-practice/others/zhengwuyun/",
+  "inLanguage": "en",
   "publisher": {
     "@type": "Organization",
     "name": "openGauss",
-    "url": "https://opengauss.org/"
+    "url": "https://opengauss.org"
   },
-  "articleSection": "用户案例",
-  "keywords": ["政务云", "数据库", "Vastbase", "异构计算架构", "x86", "鲲鹏", "高兼容度"],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/en/user-practice/others/zhengwuyun/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "某市政务云",
+    "sameAs": "https://opengauss.org/zh/"
+  },
+  "articleSection": "Other",
   "about": {
     "@type": "Thing",
-    "name": "某市政务云",
-    "description": "数据高效处理，安全可信，打造领先的数字化政务云平台"
+    "name": "Other",
+    "description": "openGauss database case study by 某市政务云 in Other industry"
   },
-  "mentions": [
-    {
-      "@type": "SoftwareApplication",
-      "name": "Vastbase",
-      "applicationCategory": "DatabaseApplication"
-    }
-  ]
+  "sameAs": "https://opengauss.org/zh/",
+  "keywords": "openGauss, database, case study, user practice, 某市政务云, Other",
+  "genre": "Others"
 }

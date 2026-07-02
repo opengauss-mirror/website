@@ -1,15 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "TechArticle",
   "headline": "粤港澳大湾区国家技术创新中心",
   "description": "国创中心是中国在新型显示领域唯一的国家级技术创新中心，是集产业链企业、高校、科研院所等多方力量共同构建的专业化创新平台，部署openGauss服务器节点数1~10个。",
+  "url": "https://opengauss.org/zh/user-practice/bigbusiness/nctid/",
+  "inLanguage": "zh-CN",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://opengauss.org/zh/user-practice/bigbusiness/nctid/"
   },
-  "about": {
+  "author": {
     "@type": "Organization",
     "name": "粤港澳大湾区国家技术创新中心",
-    "url": "https://www.nctid.com/"
-  }
+    "sameAs": "https://www.nctid.com/"
+  },
+  "articleSection": "Large Enterprise",
+  "about": {
+    "@type": "Thing",
+    "name": "Large Enterprise",
+    "description": "粤港澳大湾区国家技术创新中心在Large Enterprise领域的openGauss数据库实践案例"
+  },
+  "sameAs": "https://www.nctid.com/",
+  "keywords": "openGauss, database, case study, user practice, 粤港澳大湾区国家技术创新中心, Large Enterprise",
+  "genre": "Bigbusiness"
 }

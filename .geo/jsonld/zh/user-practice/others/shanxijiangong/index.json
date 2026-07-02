@@ -1,17 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "TechArticle",
   "headline": "陕西建工控股集团",
   "description": "陕西建工集团BIM系统使用和适配openGauss",
-  "about": {
+  "url": "https://opengauss.org/zh/user-practice/others/shanxijiangong/",
+  "inLanguage": "zh-CN",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/user-practice/others/shanxijiangong/"
+  },
+  "author": {
     "@type": "Organization",
     "name": "陕西建工控股集团",
-    "url": "https://www.sxjgkg.com/"
+    "sameAs": "https://www.sxjgkg.com/"
   },
-  "mentions": [
-    {
-      "@type": "SoftwareApplication",
-      "name": "openGauss"
-    }
-  ]
+  "articleSection": "Other",
+  "about": {
+    "@type": "Thing",
+    "name": "Other",
+    "description": "陕西建工控股集团在Other领域的openGauss数据库实践案例"
+  },
+  "sameAs": "https://www.sxjgkg.com/",
+  "keywords": "openGauss, database, case study, user practice, 陕西建工控股集团, Other",
+  "genre": "Others"
 }

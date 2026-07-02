@@ -1,7 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "上海擎创信息技术有限公司",
-  "url": "https://www.eoitek.com/index.html",
-  "description": "擎创科技，是被Gartner连续推荐的国内智能运维AIOps领域标杆供应商。公司专注于将人工智能赋能运维管理，激活运维数据智慧，助力客户数字化转型。其中擎创夏洛克智能运维日志精析中心软件 V1.0使用和适配openGauss"
+  "@type": "TechArticle",
+  "headline": "上海擎创信息技术有限公司",
+  "description": "擎创科技，是被Gartner连续推荐的国内智能运维AIOps领域标杆供应商。公司专注于将人工智能赋能运维管理，激活运维数据智慧，助力客户数字化转型。其中擎创夏洛克智能运维日志精析中心软件 V1.0使用和适配openGauss",
+  "url": "https://opengauss.org/en/user-practice/bigbusiness/shanghaiqingchuanginfo/",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/en/user-practice/bigbusiness/shanghaiqingchuanginfo/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "上海擎创信息技术有限公司",
+    "sameAs": "https://www.eoitek.com/index.html"
+  },
+  "articleSection": "Large Enterprise",
+  "about": {
+    "@type": "Thing",
+    "name": "Large Enterprise",
+    "description": "openGauss database case study by 上海擎创信息技术有限公司 in Large Enterprise industry"
+  },
+  "sameAs": "https://www.eoitek.com/index.html",
+  "keywords": "openGauss, database, case study, user practice, 上海擎创信息技术有限公司, Large Enterprise",
+  "genre": "Bigbusiness"
 }

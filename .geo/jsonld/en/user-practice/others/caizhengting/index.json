@@ -1,0 +1,31 @@
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "陕西省财政厅",
+  "description": "为预算管理一体化核心业务系统打造企业级分布式数据库平台",
+  "url": "https://opengauss.org/en/user-practice/others/caizhengting/",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/en/user-practice/others/caizhengting/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "陕西省财政厅",
+    "sameAs": "http://pub.cnwest.com/data/html/headwords/26.html"
+  },
+  "articleSection": "Other",
+  "about": {
+    "@type": "Thing",
+    "name": "Other",
+    "description": "openGauss database case study by 陕西省财政厅 in Other industry"
+  },
+  "sameAs": "http://pub.cnwest.com/data/html/headwords/26.html",
+  "keywords": "openGauss, database, case study, user practice, 陕西省财政厅, Other",
+  "genre": "Others"
+}

@@ -1,7 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "广州天维信息技术股份有限公司",
-  "url": "http://www.tiancom.com/#/index",
-  "description": "专注银行绩效管理，帮助以银行为主的企业建立、运营绩效管理体系，部署openGauss服务器节点数1~10个"
+  "@type": "TechArticle",
+  "headline": "广州天维信息技术股份有限公司",
+  "description": "专注银行绩效管理，帮助以银行为主的企业建立、运营绩效管理体系，部署openGauss服务器节点数1~10个。",
+  "url": "https://opengauss.org/en/user-practice/others/tiancom/",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/en/user-practice/others/tiancom/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "广州天维信息技术股份有限公司",
+    "sameAs": "http://www.tiancom.com/#/index"
+  },
+  "articleSection": "Other",
+  "about": {
+    "@type": "Thing",
+    "name": "Other",
+    "description": "openGauss database case study by 广州天维信息技术股份有限公司 in Other industry"
+  },
+  "sameAs": "http://www.tiancom.com/#/index",
+  "keywords": "openGauss, database, case study, user practice, 广州天维信息技术股份有限公司, Other",
+  "genre": "Others"
 }

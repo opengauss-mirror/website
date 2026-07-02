@@ -1,31 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "TechArticle",
   "headline": "承德银行",
-  "description": "数据库采用基于用 openGauss 的发行版海量数据 Vastbase，在基础环境方面全面采用国内标准构建，摒弃了以美国科技公司为代表的的 IBM 小型机、AIX 操作系统、WebSphere 中间件、等软硬件，形成了以海光超融合服务器、中标麒麟操作系统、海量数据库、东方通中间件为基础的软硬件环境，实现自主可控。",
-  "articleSection": "金融行业案例",
-  "about": {
+  "description": "数据库采用基于用 openGauss 的发行版海量数据 Vastbase，在基础环境方面全面采用国内标准构建，摒弃了以美国科技公司为代表的的 IBM 小型机、AIX 操作系统、WebSphere 中间件、等软硬件，形成了以海光超融合服务器、中标麒麟操作系统、海量数据库、东方通中间件为基础的软硬件环境，实现自主创新。",
+  "url": "https://opengauss.org/zh/user-practice/finance/chengdebank/",
+  "inLanguage": "zh-CN",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/user-practice/finance/chengdebank/"
+  },
+  "author": {
     "@type": "Organization",
     "name": "承德银行",
-    "description": "承德银行于 2002 年成立，是河北省乃至环渤海地区具有重要市场影响力的商业银行之一。"
+    "sameAs": "https://www.chengdebank.com/"
   },
-  "mentions": [
-    {
-      "@type": "SoftwareApplication",
-      "name": "openGauss"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "name": "Vastbase"
-    },
-    {
-      "@type": "Organization",
-      "name": "海量数据"
-    }
-  ],
-  "mainEntity": {
+  "articleSection": "Finance",
+  "about": {
     "@type": "Thing",
-    "name": "数据库迁移案例",
-    "description": "承德银行交易级总账系统从 Oracle 迁移至海量数据库 Vastbase（基于 openGauss 发行版）的实践案例。"
-  }
+    "name": "Finance",
+    "description": "承德银行在Finance领域的openGauss数据库实践案例"
+  },
+  "sameAs": "https://www.chengdebank.com/",
+  "keywords": "openGauss, database, case study, user practice, 承德银行, Finance",
+  "genre": "Finance"
 }

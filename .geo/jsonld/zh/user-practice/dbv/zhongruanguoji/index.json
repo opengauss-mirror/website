@@ -1,30 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "name": "中软国际科技服务有限公司",
-      "@id": "https://opengauss.org/zh/user-practice/dbv/zhongruanguoji/#organization"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "name": "磐石数据库CSIDB",
-      "applicationCategory": "DatabaseApplication",
-      "description": "基于openGauss 5.0.0内核打造的企业级关系型数据库",
-      "version": "V1.0.0",
-      "provider": {
-        "@id": "https://opengauss.org/zh/user-practice/dbv/zhongruanguoji/#organization"
-      },
-      "softwareVersion": "V1.0.0"
-    },
-    {
-      "@type": "WebPage",
-      "name": "中软国际科技服务有限公司",
-      "description": "磐石数据库CSIDB是基于openGauss 5.0.0内核打造了企业级关系型数据库--磐石数据库。最新版本为CSIDB V1.0.0",
-      "url": "https://opengauss.org/zh/user-practice/dbv/zhongruanguoji/",
-      "about": {
-        "@id": "https://opengauss.org/zh/user-practice/dbv/zhongruanguoji/#organization"
-      }
-    }
-  ]
+  "@type": "TechArticle",
+  "headline": "中软国际科技服务有限公司",
+  "description": "磐石数据库CSIDB是基于openGauss 5.0.0内核打造了企业级关系型数据库--磐石数据库。最新版本为CSIDB V1.0.0",
+  "url": "https://opengauss.org/zh/user-practice/dbv/zhongruanguoji/",
+  "inLanguage": "zh-CN",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/user-practice/dbv/zhongruanguoji/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "中软国际科技服务有限公司",
+    "sameAs": "https://www.bilibili.com/read/cv26762491/?jump_opus=1"
+  },
+  "articleSection": "Database Vendor",
+  "about": {
+    "@type": "Thing",
+    "name": "Database Vendor",
+    "description": "中软国际科技服务有限公司在Database Vendor领域的openGauss数据库实践案例"
+  },
+  "sameAs": "https://www.bilibili.com/read/cv26762491/?jump_opus=1",
+  "keywords": "openGauss, database, case study, user practice, 中软国际科技服务有限公司, Database Vendor",
+  "genre": "DBV"
 }

@@ -1,16 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "TechArticle",
   "headline": "北京移动",
   "description": "北京移动全面启动数字化转型和基础软硬件自主创新，探索自研数据库和自研数据交换工具在业务系统的解决方案，推出基于磐维分布式数据库创新实践。解决了北京公司核心业务系统数据库严重依赖国外商用软件的问题，实现了数据库的国产自主知识产权，提升技术创新能力，同时大大提高北京移动核心数据安全性。新建超大规模分布式磐维数据库集群，迁移超大容量核心数据，部署生产业务系统实践磐维数据库分布式能力，并完成磐维数据库的替换上线。",
-  "about": {
+  "url": "https://opengauss.org/zh/user-practice/carrier/beijingyidong/",
+  "inLanguage": "zh-CN",
+  "publisher": {
     "@type": "Organization",
-    "name": "北京移动",
-    "url": "https://www.bj.10086.cn/m/index.html"
+    "name": "openGauss",
+    "url": "https://opengauss.org"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://opengauss.org/zh/user-practice/carrier/beijingyidong/"
   },
-  "articleSection": "运营商"
+  "author": {
+    "@type": "Organization",
+    "name": "北京移动",
+    "sameAs": "https://www.bj.10086.cn/m/index.html"
+  },
+  "articleSection": "Telecommunications",
+  "about": {
+    "@type": "Thing",
+    "name": "Telecommunications",
+    "description": "北京移动在Telecommunications领域的openGauss数据库实践案例"
+  },
+  "sameAs": "https://www.bj.10086.cn/m/index.html",
+  "keywords": "openGauss, database, case study, user practice, 北京移动, Telecommunications",
+  "genre": "Carrier"
 }

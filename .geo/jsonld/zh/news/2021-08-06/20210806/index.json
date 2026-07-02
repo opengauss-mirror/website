@@ -1,0 +1,24 @@
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": " 北明软件正式加入openGauss社区",
+  "description": "北明软件签署CLA，正式加入openGauss社区",
+  "author": {
+    "@type": "Organization",
+    "name": "openGauss"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "datePublished": "2021-08-06",
+  "dateModified": "2021-08-06",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/news/2021-08-06/20210806.html"
+  },
+  "url": "https://opengauss.org/zh/news/2021-08-06/20210806.html",
+  "inLanguage": "zh-CN",
+  "image": "https://opengauss.org/category/news/2021-08-06/banner.jpg"
+}

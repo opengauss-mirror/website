@@ -1,49 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "TechArticle",
   "headline": "复旦大学",
-  "description": "基于openGauss的智能开发平台，承载用户规模超7万",
+  "description": "基于openGauss的智能开发平台，承载用户规模超7万。",
+  "url": "https://opengauss.org/en/user-practice/education/fudan/",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://opengauss.org/zh/user-practice/education/fudan/"
+    "@id": "https://opengauss.org/en/user-practice/education/fudan/"
   },
-  "about": {
+  "author": {
     "@type": "Organization",
     "name": "复旦大学",
-    "url": "https://www.fudan.edu.cn/"
+    "sameAs": "https://www.fudan.edu.cn/"
   },
-  "mentions": [
-    {
-      "@type": "SoftwareApplication",
-      "name": "openGauss",
-      "applicationCategory": "Database"
-    }
-  ],
-  "articleSection": [
-    {
-      "@type": "WebPageElement",
-      "name": "核心应用",
-      "text": "替换 MySQL 和 Oracle；满足全栈 GCH 的发展需要；应用基础开发平台后端（PaaS+BaaS）；自建业务系统后端。"
-    },
-    {
-      "@type": "WebPageElement",
-      "name": "标杆价值",
-      "text": "实现教育行业首个应用全栈统筹考虑的数据库替换方案，并发和稳定性得到了实际验证，对于 openGauss 系数据库在教育行业的推广和应用而言，具有较强的示范带动效应。"
-    },
-    {
-      "@type": "WebPageElement",
-      "name": "架构设计",
-      "text": "基于 openGauss 构建的智能开发平台所开发的应用，默认支持 openGauss 及上层 GCH 组件。"
-    },
-    {
-      "@type": "WebPageElement",
-      "name": "技术创新",
-      "text": "通过数据库日志物理同步实现 openGauss 数据库高可用；通过 om 工具部署和管理主备集群节点；配置备机只读操作实现读写分离；客户端连接支持自动主库发现、负载均衡、只读备库；使用 gs_basebackup 工具做物理备份；使用 gs_probackup 定期备份和恢复；支持 SQL92/SQL99/SQL2003/SQL2011 规范，支持 GBK 和 UTF-8 字符集，支持 SQL 标准函数与分析函数，支持存储过程。"
-    },
-    {
-      "@type": "WebPageElement",
-      "name": "融合创新",
-      "text": "开发平台支持复杂代码 AI 提示，提升开发效率；提供低代码快速开发部署能力和错误故障提示定位，降低编程开发的技术门槛。"
-    }
-  ]
+  "articleSection": "Education",
+  "about": {
+    "@type": "Thing",
+    "name": "Education",
+    "description": "openGauss database case study by 复旦大学 in Education industry"
+  },
+  "sameAs": "https://www.fudan.edu.cn/",
+  "keywords": "openGauss, database, case study, user practice, 复旦大学, Education",
+  "genre": "Education"
 }

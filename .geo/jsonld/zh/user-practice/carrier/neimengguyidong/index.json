@@ -1,16 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "TechArticle",
   "headline": "中国移动通信集团内蒙古有限公司",
   "description": "内蒙古移动BOSS数据库升级改造项目，磐维数据库助力BOSS系统计费帐处，实现全生命周期智化支撑。",
-  "articleSection": "运营商",
-  "about": {
+  "url": "https://opengauss.org/zh/user-practice/carrier/neimengguyidong/",
+  "inLanguage": "zh-CN",
+  "publisher": {
     "@type": "Organization",
-    "name": "中国移动通信集团内蒙古有限公司",
-    "url": "https://www.10086.cn/index/nm/index_471_471.html"
+    "name": "openGauss",
+    "url": "https://opengauss.org"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://opengauss.org/zh/user-practice/carrier/neimengguyidong/"
-  }
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "中国移动通信集团内蒙古有限公司",
+    "sameAs": "https://www.10086.cn/index/nm/index_471_471.html"
+  },
+  "articleSection": "Telecommunications",
+  "about": {
+    "@type": "Thing",
+    "name": "Telecommunications",
+    "description": "中国移动通信集团内蒙古有限公司在Telecommunications领域的openGauss数据库实践案例"
+  },
+  "sameAs": "https://www.10086.cn/index/nm/index_471_471.html",
+  "keywords": "openGauss, database, case study, user practice, 中国移动通信集团内蒙古有限公司, Telecommunications",
+  "genre": "Carrier"
 }

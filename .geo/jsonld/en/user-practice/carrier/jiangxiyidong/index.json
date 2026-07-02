@@ -1,22 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "TechArticle",
   "headline": "中国移动通信集团江西有限公司",
   "description": "江西移动省公司智慧网格数据库自主创新迁移项目，在运营商领域的核心业务系统中发挥关键作用。",
-  "articleSection": [
-    "核心应用",
-    "标杆价值",
-    "架构设计",
-    "技术创新",
-    "融合创新"
-  ],
-  "about": {
+  "url": "https://opengauss.org/en/user-practice/carrier/jiangxiyidong/",
+  "inLanguage": "en",
+  "publisher": {
     "@type": "Organization",
-    "name": "中国移动通信集团江西有限公司",
-    "url": "https://www.10086.cn/aboutus/culture/intro/province_culture_intro_detail/jx/index.html?id=1"
+    "name": "openGauss",
+    "url": "https://opengauss.org"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "/zh/user-practice/carrier/jiangxiyidong/"
-  }
+    "@id": "https://opengauss.org/en/user-practice/carrier/jiangxiyidong/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "中国移动通信集团江西有限公司",
+    "sameAs": "https://www.10086.cn/aboutus/culture/intro/province_culture_intro_detail/jx/index.html?id=1"
+  },
+  "articleSection": "Telecommunications",
+  "about": {
+    "@type": "Thing",
+    "name": "Telecommunications",
+    "description": "openGauss database case study by 中国移动通信集团江西有限公司 in Telecommunications industry"
+  },
+  "sameAs": "https://www.10086.cn/aboutus/culture/intro/province_culture_intro_detail/jx/index.html?id=1",
+  "keywords": "openGauss, database, case study, user practice, 中国移动通信集团江西有限公司, Telecommunications",
+  "genre": "Carrier"
 }

@@ -1,18 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "TechArticle",
   "headline": "中国交通信息科技集团有限公司",
   "description": "承载除核心外的其他交易类非交易类业务，部署openGauss服务器节点数为50个以上。",
-  "articleSection": "用户案例",
-  "about": {
+  "url": "https://opengauss.org/zh/user-practice/others/007swz/",
+  "inLanguage": "zh-CN",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/user-practice/others/007swz/"
+  },
+  "author": {
     "@type": "Organization",
     "name": "中国交通信息科技集团有限公司",
-    "url": "http://97467211.007swz.com/"
+    "sameAs": "http://97467211.007swz.com/"
   },
-  "mentions": [
-    {
-      "@type": "SoftwareApplication",
-      "name": "openGauss"
-    }
-  ]
+  "articleSection": "Other",
+  "about": {
+    "@type": "Thing",
+    "name": "Other",
+    "description": "中国交通信息科技集团有限公司在Other领域的openGauss数据库实践案例"
+  },
+  "sameAs": "http://97467211.007swz.com/",
+  "keywords": "openGauss, database, case study, user practice, 中国交通信息科技集团有限公司, Other",
+  "genre": "Others"
 }

@@ -1,40 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "TechArticle",
   "headline": "兴业银行冠字号管理系统",
   "description": "冠字号码管理系统根据《中国人民银行货币金银局关于进一步做好冠字号码查询工作的通知》（银货金[2015]10 号）的文件要求，实现冠字号码信息上报、区分现金收入和付出业务类型、关联客户业务信息、与现钞实物同步流转等功能。同时，基于业务管理的需要，优化清分业务量统计功能，将机具管理纳入系统管理。",
-  "articleSection": [
-    "应用场景",
-    "解决方案",
-    "客户收益"
-  ],
-  "about": [
-    {
-      "@type": "Thing",
-      "name": "金融"
-    },
-    {
-      "@type": "Thing",
-      "name": "冠字号管理"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "name": "openGauss数据库",
-      "applicationCategory": "DatabaseApplication"
-    }
-  ],
-  "mentions": [
-    {
-      "@type": "Organization",
-      "name": "兴业银行"
-    },
-    {
-      "@type": "Thing",
-      "name": "冠字号码管理系统"
-    },
-    {
-      "@type": "Thing",
-      "name": "中国人民银行货币金银局"
-    }
-  ]
+  "url": "https://opengauss.org/zh/user-practice/finance/xingyemanagesystem/",
+  "inLanguage": "zh-CN",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/user-practice/finance/xingyemanagesystem/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "兴业银行冠字号管理系统",
+    "sameAs": "https://www.cib.com.cn/cn/index.html"
+  },
+  "articleSection": "Finance",
+  "about": {
+    "@type": "Thing",
+    "name": "Finance",
+    "description": "兴业银行冠字号管理系统在Finance领域的openGauss数据库实践案例"
+  },
+  "sameAs": "https://www.cib.com.cn/cn/index.html",
+  "keywords": "openGauss, database, case study, user practice, 兴业银行冠字号管理系统, Finance",
+  "genre": "Finance"
 }

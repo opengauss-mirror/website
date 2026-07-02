@@ -1,16 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "TechArticle",
   "headline": "北京沐融信息科技股份有限公司",
   "description": "银行核心系统支付系统收单系统，部署openGauss服务器节点数为11~20个。",
-  "about": {
+  "url": "https://opengauss.org/zh/user-practice/finance/murongtech/",
+  "inLanguage": "zh-CN",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/user-practice/finance/murongtech/"
+  },
+  "author": {
     "@type": "Organization",
     "name": "北京沐融信息科技股份有限公司",
-    "url": "http://www.murongtech.com/"
+    "sameAs": "http://www.murongtech.com/"
   },
-  "mainEntity": {
+  "articleSection": "Finance",
+  "about": {
     "@type": "Thing",
-    "name": "openGauss"
+    "name": "Finance",
+    "description": "北京沐融信息科技股份有限公司在Finance领域的openGauss数据库实践案例"
   },
-  "articleSection": "金融"
+  "sameAs": "http://www.murongtech.com/",
+  "keywords": "openGauss, database, case study, user practice, 北京沐融信息科技股份有限公司, Finance",
+  "genre": "Finance"
 }

@@ -1,8 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "深圳市金证科技股份有限公司",
-  "url": "https://www.szkingdom.com",
+  "@type": "TechArticle",
+  "headline": "深圳市金证科技股份有限公司",
   "description": "金证股份作为行业领先的证券交易结算系统提供商，其中金证证通征信软件，金证融券通业务管理系统，金证交易实时风控系统有使用和对接openGauss数据库。",
-  "industry": "金融"
+  "url": "https://opengauss.org/zh/user-practice/finance/shenzhenjinzhengtech/",
+  "inLanguage": "zh-CN",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/user-practice/finance/shenzhenjinzhengtech/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "深圳市金证科技股份有限公司",
+    "sameAs": "https://www.szkingdom.com"
+  },
+  "articleSection": "Finance",
+  "about": {
+    "@type": "Thing",
+    "name": "Finance",
+    "description": "深圳市金证科技股份有限公司在Finance领域的openGauss数据库实践案例"
+  },
+  "sameAs": "https://www.szkingdom.com",
+  "keywords": "openGauss, database, case study, user practice, 深圳市金证科技股份有限公司, Finance",
+  "genre": "Finance"
 }

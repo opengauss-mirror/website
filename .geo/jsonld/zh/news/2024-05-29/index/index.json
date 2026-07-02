@@ -1,0 +1,24 @@
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Chat2DB签署CLA，携手openGauss为用户打造更高效、安全、可靠的数据库方案",
+  "description": "Chat2DB携手openGauss为用户打造更高效、安全、可靠的数据库方案",
+  "author": {
+    "@type": "Organization",
+    "name": "openGauss"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "datePublished": "2024-05-29",
+  "dateModified": "2024-05-29",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/news/2024-05-29.html"
+  },
+  "url": "https://opengauss.org/zh/news/2024-05-29.html",
+  "inLanguage": "zh-CN",
+  "image": "https://opengauss.org/category/news/2024-05-29/banner.png"
+}

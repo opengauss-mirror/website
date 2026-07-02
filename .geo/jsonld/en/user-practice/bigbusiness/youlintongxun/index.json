@@ -1,28 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "TechArticle",
   "headline": "深圳市友邻通讯设备有限公司",
   "description": "友邻通讯，国内领先的呼叫中心质量管理解决方案提供商。其中友邻通讯电话录音系统客/服软件 V5.0使用和适配openGauss",
+  "url": "https://opengauss.org/en/user-practice/bigbusiness/youlintongxun/",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://opengauss.org/zh/user-practice/bigbusiness/youlintongxun/"
+    "@id": "https://opengauss.org/en/user-practice/bigbusiness/youlintongxun/"
   },
-  "about": {
+  "author": {
     "@type": "Organization",
     "name": "深圳市友邻通讯设备有限公司",
-    "url": "https://www.callray.com.cn/sy",
-    "description": "国内领先的呼叫中心质量管理解决方案提供商"
+    "sameAs": "https://www.callray.com.cn/sy"
   },
-  "mentions": [
-    {
-      "@type": "SoftwareApplication",
-      "name": "友邻通讯电话录音系统客/服软件 V5.0",
-      "applicationCategory": "BusinessApplication"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "name": "openGauss",
-      "applicationCategory": "DatabaseApplication"
-    }
-  ]
+  "articleSection": "Large Enterprise",
+  "about": {
+    "@type": "Thing",
+    "name": "Large Enterprise",
+    "description": "openGauss database case study by 深圳市友邻通讯设备有限公司 in Large Enterprise industry"
+  },
+  "sameAs": "https://www.callray.com.cn/sy",
+  "keywords": "openGauss, database, case study, user practice, 深圳市友邻通讯设备有限公司, Large Enterprise",
+  "genre": "Bigbusiness"
 }

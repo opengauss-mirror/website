@@ -1,0 +1,24 @@
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "openGauss 3.1.1版本正式发布",
+  "description": "openGauss 3.1.1是openGauss 5.0.0 Release版本的Preview版本，希望广大社区伙伴和开发者基于此版本进行场景化验证，提前发现问题并反馈社区，社区将在Release版本发布前进行问题修复。",
+  "author": {
+    "@type": "Organization",
+    "name": "openGauss"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "datePublished": "2023-01-04",
+  "dateModified": "2023-01-04",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/news/2023-01-04/20230104.html"
+  },
+  "url": "https://opengauss.org/zh/news/2023-01-04/20230104.html",
+  "inLanguage": "zh-CN",
+  "image": "https://opengauss.org/category/news/2023-01-04/banner.png"
+}

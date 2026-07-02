@@ -1,36 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "TechArticle",
   "headline": "兴业银行股份有限公司",
   "description": "支撑跨境支付清算和统一积分项目的openGauss数据库管理平台，成功支持行内百余套业务系统，系统客户基数超过5000万。",
-  "articleSection": [
-    "核心应用",
-    "标杆价值",
-    "架构设计",
-    "技术创新",
-    "融合创新"
-  ],
-  "about": {
+  "url": "https://opengauss.org/zh/user-practice/finance/xingyebank/",
+  "inLanguage": "zh-CN",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/user-practice/finance/xingyebank/"
+  },
+  "author": {
     "@type": "Organization",
     "name": "兴业银行股份有限公司",
-    "url": "https://www.cib.com.cn/cn/index.html"
+    "sameAs": "https://www.cib.com.cn/cn/index.html"
   },
-  "mentions": [
-    {
-      "@type": "SoftwareApplication",
-      "name": "openGauss",
-      "applicationCategory": "Database Management System"
-    },
-    {
-      "@type": "Thing",
-      "name": "鲲鹏",
-      "description": "国产CPU平台"
-    },
-    {
-      "@type": "Thing",
-      "name": "麒麟V10",
-      "description": "国产操作系统"
-    }
-  ],
-  "inLanguage": "zh-CN"
+  "articleSection": "Finance",
+  "about": {
+    "@type": "Thing",
+    "name": "Finance",
+    "description": "兴业银行股份有限公司在Finance领域的openGauss数据库实践案例"
+  },
+  "sameAs": "https://www.cib.com.cn/cn/index.html",
+  "keywords": "openGauss, database, case study, user practice, 兴业银行股份有限公司, Finance",
+  "genre": "Finance"
 }

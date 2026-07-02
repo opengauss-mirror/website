@@ -1,51 +1,31 @@
-[
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "江苏润和软件股份有限公司",
-    "description": "江苏润和软件股份有限公司应用在部分电力行业的系统开发中，为高并发的数据访问提供支撑。部署openGauss服务器节点数为11~20个。",
-    "url": "https://opengauss.org/zh/user-practice/internet/hoperun/",
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "openGauss",
-      "url": "https://opengauss.org/"
-    }
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "江苏润和软件股份有限公司",
+  "description": "江苏润和软件股份有限公司应用在部分电力行业的系统开发中，为高并发的数据访问提供支撑。部署openGauss服务器节点数为11~20个。",
+  "url": "https://opengauss.org/zh/user-practice/internet/hoperun/",
+  "inLanguage": "zh-CN",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
   },
-  {
-    "@context": "https://schema.org",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/user-practice/internet/hoperun/"
+  },
+  "author": {
     "@type": "Organization",
     "name": "江苏润和软件股份有限公司",
-    "url": "http://www.hoperun.com/",
-    "description": "应用在部分电力行业的系统开发中，为高并发的数据访问提供支撑。部署openGauss服务器节点数为11~20个。"
+    "sameAs": "http://www.hoperun.com/"
   },
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "首页",
-        "item": "https://opengauss.org/zh/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "用户案例",
-        "item": "https://opengauss.org/zh/user-practice/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "互联网",
-        "item": "https://opengauss.org/zh/user-practice/internet/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 4,
-        "name": "江苏润和软件股份有限公司",
-        "item": "https://opengauss.org/zh/user-practice/internet/hoperun/"
-      }
-    ]
-  }
-]
+  "articleSection": "Internet",
+  "about": {
+    "@type": "Thing",
+    "name": "Internet",
+    "description": "江苏润和软件股份有限公司在Internet领域的openGauss数据库实践案例"
+  },
+  "sameAs": "http://www.hoperun.com/",
+  "keywords": "openGauss, database, case study, user practice, 江苏润和软件股份有限公司, Internet",
+  "genre": "Internet"
+}

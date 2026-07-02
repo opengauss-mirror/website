@@ -1,0 +1,23 @@
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "openGauss 5.0.5版本正式发布！",
+  "description": "openGauss 5.0.5 Update版本是openGauss 5.0.0 Release的第四个补丁版本。基于5.0.3补丁版本基础上，回合和修复了一些影响功能的缺陷，发布5.0.5补丁版本。",
+  "author": {
+    "@type": "Organization",
+    "name": "openGauss"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "datePublished": "2025-12-30",
+  "dateModified": "2025-12-30",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/news/2025-12-30-505.html"
+  },
+  "url": "https://opengauss.org/zh/news/2025-12-30-505.html",
+  "inLanguage": "zh-CN"
+}

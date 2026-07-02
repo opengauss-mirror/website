@@ -1,0 +1,27 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "四高内核底座+两大架构创新，看openGauss 如何创数据库新未来",
+  "description": "3 月 16 日，北京站 · 第101期 OSC 源创会在北京圆满举办。本期源创会以“数据库，2024 开炫”为主题，汇聚 openGauss、TDengine、Apache Doris、MatrixOne、Apache IoTDB 五大数据库。",
+  "startDate": "2024-03-22",
+  "eventStatus": "https://schema.org/EventEnded",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "url": "https://opengauss.org/zh/events/2024-03-22/meetup.html",
+  "inLanguage": "zh-CN",
+  "location": {
+    "@type": "Place",
+    "name": "北京",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "北京",
+      "addressCountry": "CN"
+    }
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "image": "https://opengauss.org/category/events/2024-03-22/banner.png",
+  "eventType": "会议"
+}

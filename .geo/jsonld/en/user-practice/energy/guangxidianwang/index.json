@@ -1,25 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "TechArticle",
   "headline": "广西电网有限责任公司",
-  "abstract": "使用openGauss替换部分老旧数据库，部署openGauss服务器节点数为50个以上。",
-  "about": {
-    "@type": "Thing",
-    "name": "openGauss"
+  "description": "使用openGauss替换部分老旧数据库，部署openGauss服务器节点数为50个以上。",
+  "url": "https://opengauss.org/en/user-practice/energy/guangxidianwang/",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
   },
-  "mentions": [
-    {
-      "@type": "Organization",
-      "name": "广西电网有限责任公司",
-      "url": "http://www.gx.csg.cn/"
-    },
-    {
-      "@type": "Thing",
-      "name": "能源"
-    }
-  ],
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://opengauss.org/zh/user-practice/energy/guangxidianwang/"
-  }
+    "@id": "https://opengauss.org/en/user-practice/energy/guangxidianwang/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "广西电网有限责任公司",
+    "sameAs": "http://www.gx.csg.cn/"
+  },
+  "articleSection": "Energy",
+  "about": {
+    "@type": "Thing",
+    "name": "Energy",
+    "description": "openGauss database case study by 广西电网有限责任公司 in Energy industry"
+  },
+  "sameAs": "http://www.gx.csg.cn/",
+  "keywords": "openGauss, database, case study, user practice, 广西电网有限责任公司, Energy",
+  "genre": "Energy"
 }

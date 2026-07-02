@@ -1,102 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Article",
-      "@id": "https://opengauss.org/zh/user-practice/others/gzsubzero/#article",
-      "headline": "信泽科技",
-      "description": "信泽科技提供信息安全产品覆盖了工控安全、物联网安全、大数据安全运维等产品方案，为用户提供满足等保2.0合规要求的信息安全产品及方案，部署openGauss服务器节点数1~10个。",
-      "inLanguage": "zh-CN",
-      "isPartOf": {
-        "@id": "https://opengauss.org/#website"
-      },
-      "about": {
-        "@type": "Organization",
-        "name": "信泽科技",
-        "url": "http://www.gzsubzero.cn/index.html",
-        "industry": "其他"
-      },
-      "publisher": {
-        "@id": "https://opengauss.org/#organization"
-      },
-      "mainEntityOfPage": {
-        "@id": "https://opengauss.org/zh/user-practice/others/gzsubzero/#webpage"
-      },
-      "mentions": [
-        {
-          "@type": "SoftwareApplication",
-          "name": "openGauss",
-          "applicationCategory": "DatabaseApplication"
-        }
-      ]
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://opengauss.org/zh/user-practice/others/gzsubzero/#webpage",
-      "url": "https://opengauss.org/zh/user-practice/others/gzsubzero/",
-      "name": "信泽科技 | openGauss",
-      "description": "信泽科技提供信息安全产品覆盖了工控安全、物联网安全、大数据安全运维等产品方案，为用户提供满足等保2.0合规要求的信息安全产品及方案，部署openGauss服务器节点数1~10个。",
-      "inLanguage": "zh-CN",
-      "isPartOf": {
-        "@id": "https://opengauss.org/#website"
-      },
-      "about": {
-        "@type": "Organization",
-        "name": "信泽科技",
-        "url": "http://www.gzsubzero.cn/index.html"
-      },
-      "breadcrumb": {
-        "@id": "https://opengauss.org/zh/user-practice/others/gzsubzero/#breadcrumb"
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://opengauss.org/zh/user-practice/others/gzsubzero/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "首页",
-          "item": "https://opengauss.org/zh/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "用户实践",
-          "item": "https://opengauss.org/zh/user-practice/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "其他",
-          "item": "https://opengauss.org/zh/user-practice/others/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "信泽科技"
-        }
-      ]
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://opengauss.org/#organization",
-      "name": "openGauss",
-      "url": "https://opengauss.org/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://opengauss.org/assets/logo_dark.CElWqwW0.svg"
-      }
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://opengauss.org/#website",
-      "url": "https://opengauss.org/",
-      "name": "openGauss",
-      "publisher": {
-        "@id": "https://opengauss.org/#organization"
-      },
-      "inLanguage": "zh-CN"
-    }
-  ]
+  "@type": "TechArticle",
+  "headline": "信泽科技",
+  "description": "信泽科技提供信息安全产品覆盖了工控安全、物联网安全、大数据安全运维等产品方案，为用户提供满足等保2.0合规要求的信息安全产品及方案，部署openGauss服务器节点数1~10个。'",
+  "url": "https://opengauss.org/en/user-practice/others/gzsubzero/",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/en/user-practice/others/gzsubzero/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "信泽科技",
+    "sameAs": "http://www.gzsubzero.cn/index.html"
+  },
+  "articleSection": "Other",
+  "about": {
+    "@type": "Thing",
+    "name": "Other",
+    "description": "openGauss database case study by 信泽科技 in Other industry"
+  },
+  "sameAs": "http://www.gzsubzero.cn/index.html",
+  "keywords": "openGauss, database, case study, user practice, 信泽科技, Other",
+  "genre": "Others"
 }

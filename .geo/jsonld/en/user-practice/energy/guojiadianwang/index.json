@@ -1,95 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Article",
-      "@id": "https://opengauss.org/zh/user-practice/energy/guojiadianwang/#article",
-      "headline": "国家电网",
-      "description": "满足生产系统数据库高可用要求，降低监控成本和投入",
-      "inLanguage": "zh-CN",
-      "isPartOf": {
-        "@id": "https://opengauss.org/#website"
-      },
-      "about": {
-        "@type": "Organization",
-        "name": "国家电网",
-        "url": "http://www.sx.sgcc.com.cn/sgcc/index.html",
-        "industry": "能源"
-      },
-      "publisher": {
-        "@id": "https://opengauss.org/#organization"
-      },
-      "mainEntityOfPage": {
-        "@id": "https://opengauss.org/zh/user-practice/energy/guojiadianwang/#webpage"
-      }
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://opengauss.org/zh/user-practice/energy/guojiadianwang/#webpage",
-      "url": "https://opengauss.org/zh/user-practice/energy/guojiadianwang/",
-      "name": "国家电网 | openGauss",
-      "description": "满足生产系统数据库高可用要求，降低监控成本和投入",
-      "inLanguage": "zh-CN",
-      "isPartOf": {
-        "@id": "https://opengauss.org/#website"
-      },
-      "about": {
-        "@type": "Organization",
-        "name": "国家电网",
-        "url": "http://www.sx.sgcc.com.cn/sgcc/index.html"
-      },
-      "breadcrumb": {
-        "@id": "https://opengauss.org/zh/user-practice/energy/guojiadianwang/#breadcrumb"
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://opengauss.org/zh/user-practice/energy/guojiadianwang/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "首页",
-          "item": "https://opengauss.org/zh/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "用户实践",
-          "item": "https://opengauss.org/zh/user-practice/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "能源",
-          "item": "https://opengauss.org/zh/user-practice/energy/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "国家电网"
-        }
-      ]
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://opengauss.org/#organization",
-      "name": "openGauss",
-      "url": "https://opengauss.org/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://opengauss.org/assets/logo_dark.CElWqwW0.svg"
-      }
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://opengauss.org/#website",
-      "url": "https://opengauss.org/",
-      "name": "openGauss",
-      "publisher": {
-        "@id": "https://opengauss.org/#organization"
-      },
-      "inLanguage": "zh-CN"
-    }
-  ]
+  "@type": "TechArticle",
+  "headline": "国家电网",
+  "description": "满足生产系统数据库高可用要求，降低监控成本和投入",
+  "url": "https://opengauss.org/en/user-practice/energy/guojiadianwang/",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/en/user-practice/energy/guojiadianwang/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "国家电网",
+    "sameAs": "http://www.sx.sgcc.com.cn/sgcc/index.html"
+  },
+  "articleSection": "Energy",
+  "about": {
+    "@type": "Thing",
+    "name": "Energy",
+    "description": "openGauss database case study by 国家电网 in Energy industry"
+  },
+  "sameAs": "http://www.sx.sgcc.com.cn/sgcc/index.html",
+  "keywords": "openGauss, database, case study, user practice, 国家电网, Energy",
+  "genre": "Energy"
 }

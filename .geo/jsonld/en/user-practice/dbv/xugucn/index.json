@@ -1,51 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "name": "成都虚谷伟业科技有限公司",
-      "url": "http://www.xugucn.com/",
-      "description": "在openGauss 多线程绑核技术基础上进行数据库开发，部署openGauss服务器节点数为1~10个。"
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://opengauss.org/zh/user-practice/dbv/xugucn/",
-      "url": "https://opengauss.org/zh/user-practice/dbv/xugucn/",
-      "name": "成都虚谷伟业科技有限公司",
-      "description": "在openGauss 多线程绑核技术基础上进行数据库开发，部署openGauss服务器节点数为1~10个。",
-      "isPartOf": {
-        "@type": "WebSite",
-        "name": "openGauss",
-        "url": "https://opengauss.org/"
-      },
-      "about": {
-        "@type": "Organization",
-        "name": "成都虚谷伟业科技有限公司",
-        "url": "http://www.xugucn.com/"
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "首页",
-          "item": "https://opengauss.org/zh/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "用户实践",
-          "item": "https://opengauss.org/zh/user-practice/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "成都虚谷伟业科技有限公司",
-          "item": "https://opengauss.org/zh/user-practice/dbv/xugucn/"
-        }
-      ]
-    }
-  ]
+  "@type": "TechArticle",
+  "headline": "成都虚谷伟业科技有限公司",
+  "description": "在openGauss 多线程绑核技术基础上进行数据库开发，部署openGauss服务器节点数为1~10个。",
+  "url": "https://opengauss.org/en/user-practice/dbv/xugucn/",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/en/user-practice/dbv/xugucn/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "成都虚谷伟业科技有限公司",
+    "sameAs": "http://www.xugucn.com/"
+  },
+  "articleSection": "Database Vendor",
+  "about": {
+    "@type": "Thing",
+    "name": "Database Vendor",
+    "description": "openGauss database case study by 成都虚谷伟业科技有限公司 in Database Vendor industry"
+  },
+  "sameAs": "http://www.xugucn.com/",
+  "keywords": "openGauss, database, case study, user practice, 成都虚谷伟业科技有限公司, Database Vendor",
+  "genre": "DBV"
 }

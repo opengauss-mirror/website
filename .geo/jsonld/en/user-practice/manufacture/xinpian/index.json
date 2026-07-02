@@ -1,30 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "TechArticle",
   "headline": "某芯片制造企业",
   "description": "核心数据库应用，助力国产芯片稳健智造",
+  "url": "https://opengauss.org/en/user-practice/manufacture/xinpian/",
+  "inLanguage": "en",
   "publisher": {
     "@type": "Organization",
     "name": "openGauss",
-    "url": "https://opengauss.org/zh/"
+    "url": "https://opengauss.org"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://opengauss.org/zh/user-practice/manufacture/xinpian/"
+    "@id": "https://opengauss.org/en/user-practice/manufacture/xinpian/"
   },
-  "about": [
-    {
-      "@type": "Thing",
-      "name": "芯片制造"
-    },
-    {
-      "@type": "Thing",
-      "name": "openGauss"
-    },
-    {
-      "@type": "Thing",
-      "name": "Vastbase"
-    }
-  ],
-  "articleSection": "用户案例"
+  "author": {
+    "@type": "Organization",
+    "name": "某芯片制造企业",
+    "sameAs": "https://opengauss.org/zh/"
+  },
+  "articleSection": "Manufacturing",
+  "about": {
+    "@type": "Thing",
+    "name": "Manufacturing",
+    "description": "openGauss database case study by 某芯片制造企业 in Manufacturing industry"
+  },
+  "sameAs": "https://opengauss.org/zh/",
+  "keywords": "openGauss, database, case study, user practice, 某芯片制造企业, Manufacturing",
+  "genre": "Manufacture"
 }

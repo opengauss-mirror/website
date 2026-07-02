@@ -1,68 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "首页",
-          "item": "https://opengauss.org/zh/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "用户实践",
-          "item": "https://opengauss.org/zh/user-practice/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "制造行业",
-          "item": "https://opengauss.org/zh/user-practice/manufacture/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "东风汽车集团有限公司",
-          "item": "https://opengauss.org/zh/user-practice/manufacture/dfmc/"
-        }
-      ]
-    },
-    {
-      "@type": "Article",
-      "headline": "东风汽车集团有限公司",
-      "description": "数智化管理创新实践，承载30万用户规模。",
-      "articleSection": "用户实践",
-      "about": {
-        "@type": "Organization",
-        "name": "东风汽车集团有限公司",
-        "url": "https://www.dfmc.com.cn/"
-      },
-      "mentions": [
-        {
-          "@type": "Thing",
-          "name": "Vastbase",
-          "description": "数据库高可用性架构，支持资源池化架构，提升存储效率，缓解主节点负载压力，降低系统恢复时间（RTO）"
-        },
-        {
-          "@type": "Thing",
-          "name": "鲲鹏服务器"
-        },
-        {
-          "@type": "Thing",
-          "name": "欧拉操作系统"
-        },
-        {
-          "@type": "Thing",
-          "name": "华为云"
-        }
-      ],
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://opengauss.org/zh/user-practice/manufacture/dfmc/"
-      }
-    }
-  ]
+  "@type": "TechArticle",
+  "headline": "东风汽车集团有限公司",
+  "description": "数智化管理创新实践，承载30万用户规模。",
+  "url": "https://opengauss.org/en/user-practice/manufacture/dfmc/",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/en/user-practice/manufacture/dfmc/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "东风汽车集团有限公司",
+    "sameAs": "https://www.dfmc.com.cn/"
+  },
+  "articleSection": "Manufacturing",
+  "about": {
+    "@type": "Thing",
+    "name": "Manufacturing",
+    "description": "openGauss database case study by 东风汽车集团有限公司 in Manufacturing industry"
+  },
+  "sameAs": "https://www.dfmc.com.cn/",
+  "keywords": "openGauss, database, case study, user practice, 东风汽车集团有限公司, Manufacturing",
+  "genre": "Manufacture"
 }

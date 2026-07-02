@@ -1,0 +1,24 @@
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "openGauss 2.1.0 版本正式发布",
+  "description": "openGauss 2.1.0 版本正式上线！持续构建企业级四大特性",
+  "author": {
+    "@type": "Organization",
+    "name": "openGauss"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "datePublished": "2021-09-30",
+  "dateModified": "2021-09-30",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/news/2021-09-30/20210930.html"
+  },
+  "url": "https://opengauss.org/zh/news/2021-09-30/20210930.html",
+  "inLanguage": "zh-CN",
+  "image": "https://opengauss.org/category/news/2021-09-30/release-mo.png"
+}

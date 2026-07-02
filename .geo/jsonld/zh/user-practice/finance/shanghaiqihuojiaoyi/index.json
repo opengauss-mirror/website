@@ -1,52 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "TechArticle",
   "headline": "上海期货交易所",
   "description": "MogDB数据库助力上期所业务系统信创改造，项目采用一主多备多级联，跨中心跨区域（超过1000公里）的同步高可用方案，实现了数据零丢失（RPO=0）。MogDB+zCloud，以及异构迁移整体工具链，为上期所多个业务系统的成功迁移提供了保障，为金融行业重要基础IT系统的信创提供信心，为openGauss大家庭打造更完备的生态链，更为为期货行业的信创树立了标杆。",
-  "articleSection": "案例展示",
-  "about": {
+  "url": "https://opengauss.org/zh/user-practice/finance/shanghaiqihuojiaoyi/",
+  "inLanguage": "zh-CN",
+  "publisher": {
     "@type": "Organization",
-    "name": "上海期货交易所",
-    "url": "https://www.shfe.com.cn/",
-    "description": "受中国证券监督管理委员会集中统一监管的期货交易所"
+    "name": "openGauss",
+    "url": "https://opengauss.org"
   },
-  "mentions": [
-    {
-      "@type": "SoftwareApplication",
-      "name": "MogDB"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "name": "zCloud"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "name": "MogHA"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "name": "MTK"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "name": "MVD"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "name": "PTK"
-    },
-    {
-      "@type": "Organization",
-      "name": "云和恩墨"
-    },
-    {
-      "@type": "Thing",
-      "name": "openGauss"
-    }
-  ],
-  "articleBody": "上海期货交易所（以下简称上期所）是受中国证券监督管理委员会（以下简称证监会）集中统一监管的期货交易所。为推进IT全面升级，深化自主可控替代，上期所开始进行数据库改造。本次改造主要涉及套期保值、投资者教育、利率竞价等十多套业务系统。MogDB数据库助力上期所业务系统信创改造，项目采用一主多备多级联、跨中心跨区域（超过1000公里）的同步高可用方案，实现了数据零丢失（RPO=0）。云和恩墨与上期所齐心协力攻克难关，客户最终满怀信心地交出了信创阶段性答卷，云和恩墨提供MogDB数据库、一整套工具链、专业的迁移改造服务等，助力上期所平滑、高质量、低代价地完成阶段性替代，让IT系统关键核心技术牢牢掌控在自己手中。",
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://opengauss.org/zh/user-practice/finance/shanghaiqihuojiaoyi/"
-  }
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "上海期货交易所",
+    "sameAs": "https://www.shfe.com.cn/"
+  },
+  "articleSection": "Finance",
+  "about": {
+    "@type": "Thing",
+    "name": "Finance",
+    "description": "上海期货交易所在Finance领域的openGauss数据库实践案例"
+  },
+  "sameAs": "https://www.shfe.com.cn/",
+  "keywords": "openGauss, database, case study, user practice, 上海期货交易所, Finance",
+  "genre": "Finance"
 }

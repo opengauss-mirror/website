@@ -1,11 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "京东云StarDB for openGauss",
+  "@type": "TechArticle",
+  "headline": "京东云",
   "description": "京东云StarDB for openGauss是一款基于云原生架构进行自主研发的拥有自治运维生态的分布式数据库，在自研分布式引擎、精细化运维自治、多云生态等多个领域实现商业发行版特性。",
-  "url": "https://www.jdcloud.com/cn/products/stardb",
-  "provider": {
+  "url": "https://opengauss.org/en/user-practice/dbv/jingdongyun/",
+  "inLanguage": "en",
+  "publisher": {
     "@type": "Organization",
-    "name": "京东云"
-  }
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/en/user-practice/dbv/jingdongyun/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "京东云",
+    "sameAs": "https://www.jdcloud.com/cn/products/stardb"
+  },
+  "articleSection": "Database Vendor",
+  "about": {
+    "@type": "Thing",
+    "name": "Database Vendor",
+    "description": "openGauss database case study by 京东云 in Database Vendor industry"
+  },
+  "sameAs": "https://www.jdcloud.com/cn/products/stardb",
+  "keywords": "openGauss, database, case study, user practice, 京东云, Database Vendor",
+  "genre": "DBV"
 }

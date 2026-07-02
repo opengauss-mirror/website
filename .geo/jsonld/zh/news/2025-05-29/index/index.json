@@ -1,0 +1,23 @@
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "润和软件深度解读“基于鲲鹏RAG+openGauss智能体方案",
+  "description": "润和软件深度解读“基于鲲鹏RAG+openGauss智能体方案",
+  "author": {
+    "@type": "Organization",
+    "name": "openGauss"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "datePublished": "2025-05-29",
+  "dateModified": "2025-05-29",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/news/2025-05-29.html"
+  },
+  "url": "https://opengauss.org/zh/news/2025-05-29.html",
+  "inLanguage": "zh-CN"
+}

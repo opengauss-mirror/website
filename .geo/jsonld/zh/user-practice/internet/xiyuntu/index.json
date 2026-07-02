@@ -1,7 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "兰州西云图信息技术有限公司",
-  "url": "http://www.xiyuntu.com/",
-  "description": "使用openGauss使能工业互联网平台业务，部署openGauss服务器节点数为1~10个。"
+  "@type": "TechArticle",
+  "headline": "兰州西云图信息技术有限公司",
+  "description": "使用openGauss使能工业互联网平台业务，部署openGauss服务器节点数为1~10个。",
+  "url": "https://opengauss.org/zh/user-practice/internet/xiyuntu/",
+  "inLanguage": "zh-CN",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/user-practice/internet/xiyuntu/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "兰州西云图信息技术有限公司",
+    "sameAs": "http://www.xiyuntu.com/"
+  },
+  "articleSection": "Internet",
+  "about": {
+    "@type": "Thing",
+    "name": "Internet",
+    "description": "兰州西云图信息技术有限公司在Internet领域的openGauss数据库实践案例"
+  },
+  "sameAs": "http://www.xiyuntu.com/",
+  "keywords": "openGauss, database, case study, user practice, 兰州西云图信息技术有限公司, Internet",
+  "genre": "Internet"
 }

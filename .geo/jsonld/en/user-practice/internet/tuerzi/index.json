@@ -1,7 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "图尔兹",
-  "description": "图尔兹提供满足现代化云上云下数据流通、处理的一系列工具和解决方案，帮助企业打破"数据孤岛"，保障数据安全流动转化，使得数据变得更加智能。图尔兹Dockquery和openGauss有做适配和对接。",
-  "url": "https://bintools.cn/"
+  "@type": "TechArticle",
+  "headline": "图尔兹",
+  "description": "图尔兹提供满足现代化云上云下数据流通、处理的一系列工具和解决方案，帮助企业打破“数据孤岛”，保障数据安全流动转化，使得数据变得更加智能。图尔兹Dockquery和openGauss做有适配和对接。",
+  "url": "https://opengauss.org/en/user-practice/internet/tuerzi/",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/en/user-practice/internet/tuerzi/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "图尔兹",
+    "sameAs": "https://bintools.cn/"
+  },
+  "articleSection": "Internet",
+  "about": {
+    "@type": "Thing",
+    "name": "Internet",
+    "description": "openGauss database case study by 图尔兹 in Internet industry"
+  },
+  "sameAs": "https://bintools.cn/",
+  "keywords": "openGauss, database, case study, user practice, 图尔兹, Internet",
+  "genre": "Internet"
 }
