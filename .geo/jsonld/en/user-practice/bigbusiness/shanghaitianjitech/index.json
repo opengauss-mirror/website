@@ -1,95 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Article",
-      "@id": "https://opengauss.org/zh/user-practice/bigbusiness/shanghaitianjitech/#article",
-      "headline": "上海天玑科技股份有限公司",
-      "description": "上海天玑科技是领先的IT服务、基础架构国产化和智慧行业应用解决方案提供商。其中PBData-D信创数据库私有云平台 V3使用和适配openGauss",
-      "inLanguage": "zh-CN",
-      "isPartOf": {
-        "@id": "https://opengauss.org/#website"
-      },
-      "about": {
-        "@type": "Organization",
-        "name": "上海天玑科技股份有限公司",
-        "url": "https://dnt.com.cn/",
-        "industry": "大企业"
-      },
-      "publisher": {
-        "@id": "https://opengauss.org/#organization"
-      },
-      "mainEntityOfPage": {
-        "@id": "https://opengauss.org/zh/user-practice/bigbusiness/shanghaitianjitech/#webpage"
-      }
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://opengauss.org/zh/user-practice/bigbusiness/shanghaitianjitech/#webpage",
-      "url": "https://opengauss.org/zh/user-practice/bigbusiness/shanghaitianjitech/",
-      "name": "上海天玑科技股份有限公司 | openGauss",
-      "description": "上海天玑科技是领先的IT服务、基础架构国产化和智慧行业应用解决方案提供商。其中PBData-D信创数据库私有云平台 V3使用和适配openGauss",
-      "inLanguage": "zh-CN",
-      "isPartOf": {
-        "@id": "https://opengauss.org/#website"
-      },
-      "about": {
-        "@type": "Organization",
-        "name": "上海天玑科技股份有限公司",
-        "url": "https://dnt.com.cn/"
-      },
-      "breadcrumb": {
-        "@id": "https://opengauss.org/zh/user-practice/bigbusiness/shanghaitianjitech/#breadcrumb"
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://opengauss.org/zh/user-practice/bigbusiness/shanghaitianjitech/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "首页",
-          "item": "https://opengauss.org/zh/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "用户实践",
-          "item": "https://opengauss.org/zh/user-practice/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "大企业",
-          "item": "https://opengauss.org/zh/user-practice/bigbusiness/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "上海天玑科技股份有限公司"
-        }
-      ]
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://opengauss.org/#organization",
-      "name": "openGauss",
-      "url": "https://opengauss.org/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://opengauss.org/assets/logo_dark.CElWqwW0.svg"
-      }
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://opengauss.org/#website",
-      "url": "https://opengauss.org/",
-      "name": "openGauss",
-      "publisher": {
-        "@id": "https://opengauss.org/#organization"
-      },
-      "inLanguage": "zh-CN"
-    }
-  ]
+  "@type": "TechArticle",
+  "headline": "上海天玑科技股份有限公司",
+  "description": "上海天玑科技是领先的IT服务、基础架构国产化和智慧行业应用解决方案提供商。其中PBData-D信创数据库私有云平台 V3使用和适配openGauss",
+  "url": "https://opengauss.org/en/user-practice/bigbusiness/shanghaitianjitech/",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/en/user-practice/bigbusiness/shanghaitianjitech/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "上海天玑科技股份有限公司",
+    "sameAs": "https://dnt.com.cn/"
+  },
+  "articleSection": "Large Enterprise",
+  "about": {
+    "@type": "Thing",
+    "name": "Large Enterprise",
+    "description": "openGauss database case study by 上海天玑科技股份有限公司 in Large Enterprise industry"
+  },
+  "sameAs": "https://dnt.com.cn/",
+  "keywords": "openGauss, database, case study, user practice, 上海天玑科技股份有限公司, Large Enterprise",
+  "genre": "Bigbusiness"
 }

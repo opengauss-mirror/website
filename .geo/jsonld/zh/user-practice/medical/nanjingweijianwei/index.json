@@ -1,105 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Article",
-      "@id": "https://opengauss.org/zh/user-practice/medical/nanjingweijianwei/#article",
-      "headline": "南京卫健委",
-      "description": "Vastbase助力医疗行业信息化升级",
-      "inLanguage": "zh-CN",
-      "isPartOf": {
-        "@id": "https://opengauss.org/#website"
-      },
-      "about": {
-        "@type": "Organization",
-        "name": "南京卫健委",
-        "url": "http://wjw.nanjing.gov.cn/",
-        "industry": "医疗"
-      },
-      "mentions": [
-        {
-          "@type": "SoftwareApplication",
-          "name": "Vastbase"
-        },
-        {
-          "@type": "SoftwareApplication",
-          "name": "openGauss"
-        }
-      ],
-      "publisher": {
-        "@id": "https://opengauss.org/#organization"
-      },
-      "mainEntityOfPage": {
-        "@id": "https://opengauss.org/zh/user-practice/medical/nanjingweijianwei/#webpage"
-      }
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://opengauss.org/zh/user-practice/medical/nanjingweijianwei/#webpage",
-      "url": "https://opengauss.org/zh/user-practice/medical/nanjingweijianwei/",
-      "name": "南京卫健委 | openGauss",
-      "description": "Vastbase助力医疗行业信息化升级",
-      "inLanguage": "zh-CN",
-      "isPartOf": {
-        "@id": "https://opengauss.org/#website"
-      },
-      "about": {
-        "@type": "Organization",
-        "name": "南京卫健委",
-        "url": "http://wjw.nanjing.gov.cn/"
-      },
-      "breadcrumb": {
-        "@id": "https://opengauss.org/zh/user-practice/medical/nanjingweijianwei/#breadcrumb"
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://opengauss.org/zh/user-practice/medical/nanjingweijianwei/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "首页",
-          "item": "https://opengauss.org/zh/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "用户实践",
-          "item": "https://opengauss.org/zh/user-practice/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "医疗",
-          "item": "https://opengauss.org/zh/user-practice/medical/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "南京卫健委"
-        }
-      ]
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://opengauss.org/#organization",
-      "name": "openGauss",
-      "url": "https://opengauss.org/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://opengauss.org/assets/logo_dark.CElWqwW0.svg"
-      }
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://opengauss.org/#website",
-      "url": "https://opengauss.org/",
-      "name": "openGauss",
-      "publisher": {
-        "@id": "https://opengauss.org/#organization"
-      },
-      "inLanguage": "zh-CN"
-    }
-  ]
+  "@type": "TechArticle",
+  "headline": "南京卫健委",
+  "description": "Vastbase助力医疗行业信息化升级",
+  "url": "https://opengauss.org/zh/user-practice/medical/nanjingweijianwei/",
+  "inLanguage": "zh-CN",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/user-practice/medical/nanjingweijianwei/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "南京卫健委",
+    "sameAs": "http://wjw.nanjing.gov.cn/"
+  },
+  "articleSection": "Healthcare",
+  "about": {
+    "@type": "Thing",
+    "name": "Healthcare",
+    "description": "南京卫健委在Healthcare领域的openGauss数据库实践案例"
+  },
+  "sameAs": "http://wjw.nanjing.gov.cn/",
+  "keywords": "openGauss, database, case study, user practice, 南京卫健委, Healthcare",
+  "genre": "Medical"
 }

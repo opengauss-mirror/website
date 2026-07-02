@@ -1,0 +1,24 @@
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "聚数成峰，共赢未来，openGauss Developer Day 2023在京举行",
+  "description": "聚数成峰，共赢未来，openGauss Developer Day 2023在京举行",
+  "author": {
+    "@type": "Organization",
+    "name": "openGauss"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "datePublished": "2023-05-26",
+  "dateModified": "2023-05-26",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/news/2023-05-26.html"
+  },
+  "url": "https://opengauss.org/zh/news/2023-05-26.html",
+  "inLanguage": "zh-CN",
+  "image": "https://opengauss.org/category/news/2023-05-26/banner.png"
+}

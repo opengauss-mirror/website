@@ -1,0 +1,27 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "木兰技术开放日 | openGauss: 把企业级数据库能力带给用户",
+  "description": "2021 年是“十四五”开局之年，在《中华人民共和国国民经济和社会发展第十四个五年规划和 2035 年远景目标纲要》中提到“支持数字技术开源社区等创新联合体发展，完善开源知识产权和法律体系，鼓励企业开放软件源代码、硬件设计和应用服务”。",
+  "startDate": "2021-08-01",
+  "eventStatus": "https://schema.org/EventEnded",
+  "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+  "url": "https://opengauss.org/zh/events/2021-08-01/meetup.html",
+  "inLanguage": "zh-CN",
+  "location": {
+    "@type": "Place",
+    "name": "成都",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "成都",
+      "addressCountry": "CN"
+    }
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "image": "https://opengauss.org/category/events/2021-08-01/banner.jpg",
+  "eventType": "会议"
+}

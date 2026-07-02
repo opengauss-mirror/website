@@ -1,0 +1,5 @@
+{
+  "title": "广西电网有限责任公司",
+  "description": "使用openGauss替换部分老旧数据库，部署openGauss服务器节点数为50个以上。",
+  "keywords": "openGauss, open source database, user practice, case study, 广西电网有限责任公司"
+}

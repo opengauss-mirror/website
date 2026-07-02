@@ -1,0 +1,27 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "打造最具创新力的开源数据库社区 | 【重庆】openGauss Meetup圆满结束",
+  "description": "4 月 23 日，由 openGauss 社区主办，重庆鲲鹏创新中心、云和恩墨承办的 openGauss Meetup 活动在重庆西永微电产业园成功举办。此次活动是“openGauss 生态全国行",
+  "startDate": "2022-04-24",
+  "eventStatus": "https://schema.org/EventEnded",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "url": "https://opengauss.org/zh/events/2022-04-24/meetup.html",
+  "inLanguage": "zh-CN",
+  "location": {
+    "@type": "Place",
+    "name": "重庆",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "重庆",
+      "addressCountry": "CN"
+    }
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "image": "https://opengauss.org/category/events/2022-04-24/picture1.jpg",
+  "eventType": "会议"
+}

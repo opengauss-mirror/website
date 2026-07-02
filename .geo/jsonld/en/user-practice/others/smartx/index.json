@@ -1,62 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "TechArticle",
   "headline": "SmartX",
   "description": "SmartX 携手 openGauss 社区发布联合方案评测与性能最佳实践",
-  "author": {
-    "@type": "Organization",
-    "name": "SmartX"
-  },
+  "url": "https://opengauss.org/en/user-practice/others/smartx/",
+  "inLanguage": "en",
   "publisher": {
     "@type": "Organization",
-    "name": "openGauss 社区"
+    "name": "openGauss",
+    "url": "https://opengauss.org"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://opengauss.org/zh/user-practice/others/smartx/"
+    "@id": "https://opengauss.org/en/user-practice/others/smartx/"
   },
-  "articleSection": "用户实践",
-  "about": [
-    {
-      "@type": "SoftwareApplication",
-      "name": "openGauss",
-      "applicationCategory": "Database"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "name": "SMTX OS",
-      "applicationCategory": "Infrastructure"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "name": "SMTX ZBS",
-      "applicationCategory": "Infrastructure"
-    }
-  ],
-  "mentions": [
-    {
-      "@type": "Thing",
-      "name": "TPC-C"
-    },
-    {
-      "@type": "Thing",
-      "name": "BenchmarkSQL"
-    },
-    {
-      "@type": "Thing",
-      "name": "NVMe-oF"
-    },
-    {
-      "@type": "Thing",
-      "name": "iSCSI"
-    },
-    {
-      "@type": "Thing",
-      "name": "超融合"
-    },
-    {
-      "@type": "Thing",
-      "name": "分布式存储"
-    }
-  ]
+  "author": {
+    "@type": "Organization",
+    "name": "SmartX",
+    "sameAs": "https://www.smartx.com/"
+  },
+  "articleSection": "Other",
+  "about": {
+    "@type": "Thing",
+    "name": "Other",
+    "description": "openGauss database case study by SmartX in Other industry"
+  },
+  "sameAs": "https://www.smartx.com/",
+  "keywords": "openGauss, database, case study, user practice, SmartX, Other",
+  "genre": "Others"
 }

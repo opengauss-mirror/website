@@ -1,0 +1,23 @@
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "openGauss又添两家社区伙伴数据库产品通过国家安全可靠测评",
+  "description": "生态伙伴接连斩获权威认证，持续彰显 openGauss 社区强劲的技术实力与产业影响力。",
+  "author": {
+    "@type": "Organization",
+    "name": "openGauss"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "datePublished": "2026-05-27",
+  "dateModified": "2026-05-27",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/news/2026-05-27/new.html"
+  },
+  "url": "https://opengauss.org/zh/news/2026-05-27/new.html",
+  "inLanguage": "zh-CN"
+}

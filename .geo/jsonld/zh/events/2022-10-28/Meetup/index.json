@@ -1,0 +1,23 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "【限时激励】考openGauss认证，领京东卡",
+  "description": "Huawei Certified ICT Associate-openGauss培训和认证具备华为 openGauss 数据库开发和管理能力的工程师",
+  "startDate": "2022-11-01",
+  "eventStatus": "https://schema.org/EventEnded",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "url": "https://opengauss.org/zh/events/2022-10-28/Meetup.html",
+  "inLanguage": "zh-CN",
+  "endDate": "2022-12-31",
+  "location": {
+    "@type": "VirtualLocation",
+    "url": "https://opengauss.org/zh/events/2022-10-28/Meetup.html"
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "image": "https://opengauss.org/category/events/2022-10-28/banner.png",
+  "eventType": "会议"
+}

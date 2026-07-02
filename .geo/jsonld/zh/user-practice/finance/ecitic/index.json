@@ -1,22 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "TechArticle",
   "headline": "中信证券",
   "description": "使用openGauss商业发行版Vastbase G100，针对用户自有资金管理、外汇交易核算、API网关等业务系统，实现全栈国产化技术路线的演进，部署openGauss服务器节点数20~30个。",
-  "mainEntity": {
+  "url": "https://opengauss.org/zh/user-practice/finance/ecitic/",
+  "inLanguage": "zh-CN",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/user-practice/finance/ecitic/"
+  },
+  "author": {
     "@type": "Organization",
     "name": "中信证券",
-    "url": "http://www.cs.ecitic.com/newsite/"
+    "sameAs": "http://www.cs.ecitic.com/newsite/"
   },
-  "mentions": [
-    {
-      "@type": "Product",
-      "name": "openGauss"
-    },
-    {
-      "@type": "Product",
-      "name": "Vastbase G100",
-      "description": "openGauss商业发行版"
-    }
-  ]
+  "articleSection": "Finance",
+  "about": {
+    "@type": "Thing",
+    "name": "Finance",
+    "description": "中信证券在Finance领域的openGauss数据库实践案例"
+  },
+  "sameAs": "http://www.cs.ecitic.com/newsite/",
+  "keywords": "openGauss, database, case study, user practice, 中信证券, Finance",
+  "genre": "Finance"
 }

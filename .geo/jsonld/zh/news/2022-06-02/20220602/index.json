@@ -1,0 +1,24 @@
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "openGauss社区五月运作报告",
+  "description": "社区运作报告",
+  "author": {
+    "@type": "Organization",
+    "name": "openGauss"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "datePublished": "2022-06-02",
+  "dateModified": "2022-06-02",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/news/2022-06-02/20220602.html"
+  },
+  "url": "https://opengauss.org/zh/news/2022-06-02/20220602.html",
+  "inLanguage": "zh-CN",
+  "image": "https://opengauss.org/category/news/2022-06-02/banner.png"
+}

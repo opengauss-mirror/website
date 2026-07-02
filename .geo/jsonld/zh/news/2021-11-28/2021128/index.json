@@ -1,0 +1,24 @@
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": " 邮储银行新一代个人业务核心系统国际汇款业务上线，openGauss核心应用再创新高度",
+  "description": "邮储银行新一代个人业务核心系统国际汇款业务上线，openGauss核心应用再创新高度",
+  "author": {
+    "@type": "Organization",
+    "name": "openGauss"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "datePublished": "2021-11-28",
+  "dateModified": "2021-11-28",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/news/2021-11-28/2021128.html"
+  },
+  "url": "https://opengauss.org/zh/news/2021-11-28/2021128.html",
+  "inLanguage": "zh-CN",
+  "image": "https://opengauss.org/category/news/2021-11-28/banner.png"
+}

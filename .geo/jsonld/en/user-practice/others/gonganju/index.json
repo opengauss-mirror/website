@@ -1,99 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Article",
-      "@id": "https://opengauss.org/zh/user-practice/others/gonganju/#article",
-      "headline": "重庆市公安局江北分局",
-      "description": "使用openGauss商业发行版Vastbase G100，为社区警务网格平台提供有力的数据支撑，保障社区警务网络平台高效、稳定的运行，部署openGauss服务器节点数为1~10个。",
-      "inLanguage": "zh-CN",
-      "isPartOf": {
-        "@id": "https://opengauss.org/#website"
-      },
-      "about": {
-        "@type": "Organization",
-        "name": "重庆市公安局江北分局",
-        "industry": "其他"
-      },
-      "mentions": {
-        "@type": "SoftwareApplication",
-        "name": "Vastbase G100",
-        "description": "openGauss商业发行版"
-      },
-      "publisher": {
-        "@id": "https://opengauss.org/#organization"
-      },
-      "mainEntityOfPage": {
-        "@id": "https://opengauss.org/zh/user-practice/others/gonganju/#webpage"
-      }
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://opengauss.org/zh/user-practice/others/gonganju/#webpage",
-      "url": "https://opengauss.org/zh/user-practice/others/gonganju/",
-      "name": "重庆市公安局江北分局 | openGauss",
-      "description": "使用openGauss商业发行版Vastbase G100，为社区警务网格平台提供有力的数据支撑，保障社区警务网络平台高效、稳定的运行，部署openGauss服务器节点数为1~10个。",
-      "inLanguage": "zh-CN",
-      "isPartOf": {
-        "@id": "https://opengauss.org/#website"
-      },
-      "about": {
-        "@type": "Organization",
-        "name": "重庆市公安局江北分局",
-        "industry": "其他"
-      },
-      "breadcrumb": {
-        "@id": "https://opengauss.org/zh/user-practice/others/gonganju/#breadcrumb"
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://opengauss.org/zh/user-practice/others/gonganju/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "首页",
-          "item": "https://opengauss.org/zh/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "用户实践",
-          "item": "https://opengauss.org/zh/user-practice/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "其他",
-          "item": "https://opengauss.org/zh/user-practice/others/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "重庆市公安局江北分局"
-        }
-      ]
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://opengauss.org/#organization",
-      "name": "openGauss",
-      "url": "https://opengauss.org/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://opengauss.org/assets/logo_dark.CElWqwW0.svg"
-      }
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://opengauss.org/#website",
-      "url": "https://opengauss.org/",
-      "name": "openGauss",
-      "publisher": {
-        "@id": "https://opengauss.org/#organization"
-      },
-      "inLanguage": "zh-CN"
-    }
-  ]
+  "@type": "TechArticle",
+  "headline": "重庆市公安局江北分局",
+  "description": "使用openGauss商业发行版Vastbase G100，为社区警务网格平台提供有力的数据支撑，保障社区警务网络平台高效、稳定的运行，部署openGauss服务器节点数为1~10个。",
+  "url": "https://opengauss.org/en/user-practice/others/gonganju/",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/en/user-practice/others/gonganju/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "重庆市公安局江北分局",
+    "sameAs": "https://opengauss.org/zh/"
+  },
+  "articleSection": "Other",
+  "about": {
+    "@type": "Thing",
+    "name": "Other",
+    "description": "openGauss database case study by 重庆市公安局江北分局 in Other industry"
+  },
+  "sameAs": "https://opengauss.org/zh/",
+  "keywords": "openGauss, database, case study, user practice, 重庆市公安局江北分局, Other",
+  "genre": "Others"
 }

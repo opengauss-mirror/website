@@ -1,21 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "TechArticle",
   "headline": "谐云",
   "description": "谐云基于openGauss提供容器版本服务。",
-  "about": {
-    "@type": "Thing",
-    "name": "互联网"
+  "url": "https://opengauss.org/en/user-practice/internet/xieyun/",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
   },
-  "mentions": [
-    {
-      "@type": "SoftwareApplication",
-      "name": "openGauss"
-    }
-  ],
-  "mainEntity": {
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/en/user-practice/internet/xieyun/"
+  },
+  "author": {
     "@type": "Organization",
     "name": "谐云",
-    "url": "https://www.harmonycloud.cn/"
-  }
+    "sameAs": "https://www.harmonycloud.cn/"
+  },
+  "articleSection": "Internet",
+  "about": {
+    "@type": "Thing",
+    "name": "Internet",
+    "description": "openGauss database case study by 谐云 in Internet industry"
+  },
+  "sameAs": "https://www.harmonycloud.cn/",
+  "keywords": "openGauss, database, case study, user practice, 谐云, Internet",
+  "genre": "Internet"
 }

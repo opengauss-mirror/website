@@ -1,0 +1,27 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "openGauss 专家团即将亮相 2024数据技术嘉年华，诚邀参会！",
+  "description": "由中国DBA联盟和墨天轮社区共同主办的第十三届数据技术嘉年华（DTC 2024）将于4月11-12日在北京新云南皇冠假日酒店举办。openGauss深度参与其中，三位重量级技术专家和中国移动用户代表，",
+  "startDate": "2024-04-12",
+  "eventStatus": "https://schema.org/EventEnded",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "url": "https://opengauss.org/zh/events/2024-04-10/meetup.html",
+  "inLanguage": "zh-CN",
+  "location": {
+    "@type": "Place",
+    "name": "北京",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "北京",
+      "addressCountry": "CN"
+    }
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "image": "https://opengauss.org/category/events/2024-04-10/banner.png",
+  "eventType": "会议"
+}

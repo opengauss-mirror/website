@@ -1,98 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Article",
-      "@id": "https://opengauss.org/zh/user-practice/others/dongfangyunwei/#article",
-      "headline": "东方云微科技有限公司",
-      "description": "使用openGauss承载自己的业务。",
-      "inLanguage": "zh-CN",
-      "isPartOf": {
-        "@id": "https://opengauss.org/#website"
-      },
-      "about": {
-        "@type": "Organization",
-        "name": "东方云微科技有限公司",
-        "industry": "其他"
-      },
-      "mentions": {
-        "@type": "SoftwareApplication",
-        "name": "openGauss"
-      },
-      "publisher": {
-        "@id": "https://opengauss.org/#organization"
-      },
-      "mainEntityOfPage": {
-        "@id": "https://opengauss.org/zh/user-practice/others/dongfangyunwei/#webpage"
-      }
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://opengauss.org/zh/user-practice/others/dongfangyunwei/#webpage",
-      "url": "https://opengauss.org/zh/user-practice/others/dongfangyunwei/",
-      "name": "东方云微科技有限公司 | openGauss",
-      "description": "使用openGauss承载自己的业务。",
-      "inLanguage": "zh-CN",
-      "isPartOf": {
-        "@id": "https://opengauss.org/#website"
-      },
-      "about": {
-        "@type": "Organization",
-        "name": "东方云微科技有限公司",
-        "industry": "其他"
-      },
-      "breadcrumb": {
-        "@id": "https://opengauss.org/zh/user-practice/others/dongfangyunwei/#breadcrumb"
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://opengauss.org/zh/user-practice/others/dongfangyunwei/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "首页",
-          "item": "https://opengauss.org/zh/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "用户实践",
-          "item": "https://opengauss.org/zh/user-practice/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "其他",
-          "item": "https://opengauss.org/zh/user-practice/others/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "东方云微科技有限公司"
-        }
-      ]
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://opengauss.org/#organization",
-      "name": "openGauss",
-      "url": "https://opengauss.org/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://opengauss.org/assets/logo_dark.CElWqwW0.svg"
-      }
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://opengauss.org/#website",
-      "url": "https://opengauss.org/",
-      "name": "openGauss",
-      "publisher": {
-        "@id": "https://opengauss.org/#organization"
-      },
-      "inLanguage": "zh-CN"
-    }
-  ]
+  "@type": "TechArticle",
+  "headline": "东方云微科技有限公司",
+  "description": "使用openGauss承载自己的业务。",
+  "url": "https://opengauss.org/en/user-practice/others/dongfangyunwei/",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/en/user-practice/others/dongfangyunwei/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "东方云微科技有限公司",
+    "sameAs": "https://opengauss.org/"
+  },
+  "articleSection": "Other",
+  "about": {
+    "@type": "Thing",
+    "name": "Other",
+    "description": "openGauss database case study by 东方云微科技有限公司 in Other industry"
+  },
+  "sameAs": "https://opengauss.org/",
+  "keywords": "openGauss, database, case study, user practice, 东方云微科技有限公司, Other",
+  "genre": "Others"
 }

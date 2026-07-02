@@ -1,41 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "TechArticle",
   "headline": "中华保险",
   "description": "核心系统向鲲鹏全栈迁移，性能300%提升",
-  "articleSection": [
-    "客户挑战",
-    "解决方案",
-    "客户收益",
-    "合作伙伴"
-  ],
-  "about": {
+  "url": "https://opengauss.org/en/user-practice/finance/zhonghua/",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/en/user-practice/finance/zhonghua/"
+  },
+  "author": {
     "@type": "Organization",
     "name": "中华保险",
-    "url": "http://www.cic.cn/"
+    "sameAs": "http://www.cic.cn/"
   },
-  "mentions": [
-    {
-      "@type": "SoftwareApplication",
-      "name": "openGauss",
-      "applicationCategory": "Database Management System"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "name": "Vastbase",
-      "applicationCategory": "Database Management System",
-      "description": "基于openGauss的商业发行版"
-    },
-    {
-      "@type": "Thing",
-      "name": "鲲鹏计算平台",
-      "description": "国产计算平台"
-    },
-    {
-      "@type": "Thing",
-      "name": "openEuler",
-      "description": "开源操作系统"
-    }
-  ],
-  "inLanguage": "zh-CN"
+  "articleSection": "Finance",
+  "about": {
+    "@type": "Thing",
+    "name": "Finance",
+    "description": "openGauss database case study by 中华保险 in Finance industry"
+  },
+  "sameAs": "http://www.cic.cn/",
+  "keywords": "openGauss, database, case study, user practice, 中华保险, Finance",
+  "genre": "Finance"
 }

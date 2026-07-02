@@ -1,22 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "TechArticle",
   "headline": "邮政储蓄银行",
   "description": "基于鲲鹏全栈构筑新核心系统率先上线，加速数字银行建设",
-  "articleBody": "在数字化时代，邮政储蓄银行积极利用科技进行金融服务探索，坚持以开源开放的技术路线构筑自主可演进的金融核心系统，对银行现有的业务进行变革，以支持业务创新及未来可持续发展。通过鲲鹏+国产操作系统+openGauss软硬全栈作为IT基础设施，以高性能、高安全、高可靠的出色综合表现为邮政储蓄银行分布式金融核心提供了底层IT能力，支持存款、汇款等核心业务处理。支持邮政储蓄银行全国数亿用户，数万个网点，日均数十亿的交易。平均查询效率提升50%，业务体验提升，客户满意度提高。新核心系统有效地支持起邮政储蓄银行未来业务创新和发展。",
-  "mentions": [
-    {
-      "@type": "Organization",
-      "name": "邮政储蓄银行",
-      "url": "https://www.psbc.com/cn/"
-    },
-    {
-      "@type": "Thing",
-      "name": "鲲鹏"
-    },
-    {
-      "@type": "Thing",
-      "name": "openGauss"
-    }
-  ]
+  "url": "https://opengauss.org/en/user-practice/finance/youzheng/",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/en/user-practice/finance/youzheng/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "邮政储蓄银行",
+    "sameAs": "https://www.psbc.com/cn/"
+  },
+  "articleSection": "Finance",
+  "about": {
+    "@type": "Thing",
+    "name": "Finance",
+    "description": "openGauss database case study by 邮政储蓄银行 in Finance industry"
+  },
+  "sameAs": "https://www.psbc.com/cn/",
+  "keywords": "openGauss, database, case study, user practice, 邮政储蓄银行, Finance",
+  "genre": "Finance"
 }

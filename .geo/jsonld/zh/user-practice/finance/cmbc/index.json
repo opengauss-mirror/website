@@ -1,95 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Article",
-      "@id": "https://opengauss.org/zh/user-practice/finance/cmbc/#article",
-      "headline": "民生银行",
-      "description": "承载除核心外的其他交易类非交易类业务，部署openGauss服务器节点数为50个以上。",
-      "inLanguage": "zh-CN",
-      "isPartOf": {
-        "@id": "https://opengauss.org/#website"
-      },
-      "about": {
-        "@type": "Organization",
-        "name": "民生银行",
-        "url": "http://www.cmbc.com.cn/",
-        "industry": "金融"
-      },
-      "publisher": {
-        "@id": "https://opengauss.org/#organization"
-      },
-      "mainEntityOfPage": {
-        "@id": "https://opengauss.org/zh/user-practice/finance/cmbc/#webpage"
-      }
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://opengauss.org/zh/user-practice/finance/cmbc/#webpage",
-      "url": "https://opengauss.org/zh/user-practice/finance/cmbc/",
-      "name": "民生银行 | openGauss",
-      "description": "承载除核心外的其他交易类非交易类业务，部署openGauss服务器节点数为50个以上。",
-      "inLanguage": "zh-CN",
-      "isPartOf": {
-        "@id": "https://opengauss.org/#website"
-      },
-      "about": {
-        "@type": "Organization",
-        "name": "民生银行",
-        "url": "http://www.cmbc.com.cn/"
-      },
-      "breadcrumb": {
-        "@id": "https://opengauss.org/zh/user-practice/finance/cmbc/#breadcrumb"
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://opengauss.org/zh/user-practice/finance/cmbc/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "首页",
-          "item": "https://opengauss.org/zh/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "用户实践",
-          "item": "https://opengauss.org/zh/user-practice/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "金融",
-          "item": "https://opengauss.org/zh/user-practice/finance/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "民生银行"
-        }
-      ]
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://opengauss.org/#organization",
-      "name": "openGauss",
-      "url": "https://opengauss.org/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://opengauss.org/assets/logo_dark.CElWqwW0.svg"
-      }
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://opengauss.org/#website",
-      "url": "https://opengauss.org/",
-      "name": "openGauss",
-      "publisher": {
-        "@id": "https://opengauss.org/#organization"
-      },
-      "inLanguage": "zh-CN"
-    }
-  ]
+  "@type": "TechArticle",
+  "headline": "民生银行",
+  "description": "承载除核心外的其他交易类非交易类业务，部署openGauss服务器节点数为50个以上。",
+  "url": "https://opengauss.org/zh/user-practice/finance/cmbc/",
+  "inLanguage": "zh-CN",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/user-practice/finance/cmbc/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "民生银行",
+    "sameAs": "http://www.cmbc.com.cn/"
+  },
+  "articleSection": "Finance",
+  "about": {
+    "@type": "Thing",
+    "name": "Finance",
+    "description": "民生银行在Finance领域的openGauss数据库实践案例"
+  },
+  "sameAs": "http://www.cmbc.com.cn/",
+  "keywords": "openGauss, database, case study, user practice, 民生银行, Finance",
+  "genre": "Finance"
 }

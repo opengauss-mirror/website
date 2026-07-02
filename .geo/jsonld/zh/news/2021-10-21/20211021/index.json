@@ -1,0 +1,24 @@
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": " 信创“大比武”openGauss赛道总决赛入围名单公布",
+  "description": "信创“大比武”openGauss赛道总决赛入围名单公布",
+  "author": {
+    "@type": "Organization",
+    "name": "openGauss"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "datePublished": "2021-10-21",
+  "dateModified": "2021-10-21",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/news/2021-10-21/20211021.html"
+  },
+  "url": "https://opengauss.org/zh/news/2021-10-21/20211021.html",
+  "inLanguage": "zh-CN",
+  "image": "https://opengauss.org/category/news/2021-10-21/banner.png"
+}

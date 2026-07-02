@@ -1,63 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "TechArticle",
   "headline": "openGauss与浙江邮政结队计划案例",
-  "description": "浙江邮政已经成功上线干线运输系统、全流程分环节损益系统、采购评审专家及代理机构管理系统、邮件理赔集中管控系统等4个系统。它们均采用了openGauss的主备集群部署方式，并使用了读写分离特性。这种方式既有效应对了高并发访问，降低了维护成本，可靠性提升100%，又充分发挥了主备双机硬件资源处理能力，使资源利用率提升了50%以上。",
-  "author": {
-    "@type": "Organization",
-    "name": "openGauss社区"
-  },
+  "description": "",
+  "url": "https://opengauss.org/en/user-practice/others/zjpost/",
+  "inLanguage": "en",
   "publisher": {
     "@type": "Organization",
-    "name": "openGauss社区",
+    "name": "openGauss",
     "url": "https://opengauss.org"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://opengauss.org/zh/user-practice/others/zjpost/"
+    "@id": "https://opengauss.org/en/user-practice/others/zjpost/"
   },
-  "about": [
-    {
-      "@type": "Organization",
-      "name": "中国邮政集团有限公司浙江省分公司",
-      "alternateName": "浙江邮政",
-      "url": "http://zj.chinapost.com.cn/"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "name": "openGauss",
-      "applicationCategory": "Database",
-      "operatingSystem": "Linux"
-    }
-  ],
-  "mentions": [
-    {
-      "@type": "Thing",
-      "name": "主备集群"
-    },
-    {
-      "@type": "Thing",
-      "name": "读写分离"
-    },
-    {
-      "@type": "Thing",
-      "name": "干线运输系统"
-    },
-    {
-      "@type": "Thing",
-      "name": "全流程分环节损益系统"
-    },
-    {
-      "@type": "Thing",
-      "name": "采购评审专家及代理机构管理系统"
-    },
-    {
-      "@type": "Thing",
-      "name": "邮件理赔集中管控系统"
-    },
-    {
-      "@type": "Thing",
-      "name": "结队计划"
-    }
-  ]
+  "author": {
+    "@type": "Organization",
+    "name": "中国邮政集团有限公司浙江省分公司",
+    "sameAs": "http://zj.chinapost.com.cn/"
+  },
+  "articleSection": "Other",
+  "about": {
+    "@type": "Thing",
+    "name": "Other",
+    "description": "openGauss database case study by 中国邮政集团有限公司浙江省分公司 in Other industry"
+  },
+  "sameAs": "http://zj.chinapost.com.cn/",
+  "keywords": "openGauss, database, case study, user practice, 中国邮政集团有限公司浙江省分公司, Other",
+  "genre": "Others"
 }

@@ -1,0 +1,24 @@
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "上海锡鼎正式加入openGauss社区",
+  "description": "上海锡鼎正式加入openGauss社区",
+  "author": {
+    "@type": "Organization",
+    "name": "openGauss"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "datePublished": "2022-09-07",
+  "dateModified": "2022-09-07",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/news/2022-09-07/20220907.html"
+  },
+  "url": "https://opengauss.org/zh/news/2022-09-07/20220907.html",
+  "inLanguage": "zh-CN",
+  "image": "https://opengauss.org/category/news/2022-09-07/banner.png"
+}

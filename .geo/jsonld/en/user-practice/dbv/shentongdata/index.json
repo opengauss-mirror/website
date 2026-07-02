@@ -1,75 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Article",
-      "@id": "https://opengauss.org/zh/user-practice/dbv/shentongdata/#article",
-      "headline": "天津神舟通用数据技术有限公司",
-      "description": "神通公司基于openGauss发行商业版神通数据库V7.0.21版本，广泛应用在了信息创新领域的系统中！部署openGauss服务器节点数为50个以上。",
-      "articleSection": "用户实践案例",
-      "about": [
-        {
-          "@type": "SoftwareApplication",
-          "name": "神通数据库（openGauss版）",
-          "applicationCategory": "DatabaseApplication",
-          "operatingSystem": "Linux",
-          "offers": {
-            "@type": "Offer",
-            "category": "商业版"
-          }
-        },
-        {
-          "@type": "Organization",
-          "name": "天津神舟通用数据技术有限公司",
-          "url": "http://www.shentongdata.com/"
-        }
-      ],
-      "mainEntity": {
-        "@type": "SoftwareApplication",
-        "name": "神通数据库（openGauss版）",
-        "applicationCategory": "DatabaseApplication",
-        "operatingSystem": "Linux",
-        "featureList": [
-          "高性能：两路鲲鹏性能150万tpmC",
-          "高安全：故障切换时间低于10s",
-          "易运维：智能参数调优、慢SQL诊断"
-        ]
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "openGauss社区",
-        "url": "https://opengauss.org/"
-      },
-      "inLanguage": "zh-CN"
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://opengauss.org/zh/user-practice/dbv/shentongdata/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "首页",
-          "item": "https://opengauss.org/zh/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "用户实践",
-          "item": "https://opengauss.org/zh/user-practice/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "数据库厂商",
-          "item": "https://opengauss.org/zh/user-practice/dbv/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "天津神舟通用数据技术有限公司"
-        }
-      ]
-    }
-  ]
+  "@type": "TechArticle",
+  "headline": "天津神舟通用数据技术有限公司",
+  "description": "神通公司基于openGauss发行商业版神通数据库V7.0.21版本，广泛应用在了信息创新领域的系统中！部署openGauss服务器节点数为50个以上。",
+  "url": "https://opengauss.org/en/user-practice/dbv/shentongdata/",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/en/user-practice/dbv/shentongdata/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "天津神舟通用数据技术有限公司",
+    "sameAs": "http://www.shentongdata.com/"
+  },
+  "articleSection": "Database Vendor",
+  "about": {
+    "@type": "Thing",
+    "name": "Database Vendor",
+    "description": "openGauss database case study by 天津神舟通用数据技术有限公司 in Database Vendor industry"
+  },
+  "sameAs": "http://www.shentongdata.com/",
+  "keywords": "openGauss, database, case study, user practice, 天津神舟通用数据技术有限公司, Database Vendor",
+  "genre": "DBV"
 }

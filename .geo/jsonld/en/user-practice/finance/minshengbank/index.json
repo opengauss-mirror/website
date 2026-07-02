@@ -1,96 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Article",
-      "@id": "https://opengauss.org/en/user-practice/finance/minshengbank/#article",
-      "headline": "中国民生银行",
-      "description": "中国民生银行数据库规模化自主创新实践，支持全行各类系统模块200+，系统客户基数超过7000万。",
-      "inLanguage": "zh-CN",
-      "isPartOf": {
-        "@id": "https://opengauss.org/#website"
-      },
-      "about": {
-        "@type": "Organization",
-        "name": "中国民生银行",
-        "alternateName": "China Minsheng Bank",
-        "url": "https://www.cmbc.com.cn/",
-        "industry": "Finance"
-      },
-      "publisher": {
-        "@id": "https://opengauss.org/#organization"
-      },
-      "mainEntityOfPage": {
-        "@id": "https://opengauss.org/en/user-practice/finance/minshengbank/#webpage"
-      }
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://opengauss.org/en/user-practice/finance/minshengbank/#webpage",
-      "url": "https://opengauss.org/en/user-practice/finance/minshengbank/",
-      "name": "中国民生银行 | openGauss",
-      "description": "中国民生银行数据库规模化自主创新实践，支持全行各类系统模块200+，系统客户基数超过7000万。",
-      "inLanguage": "zh-CN",
-      "isPartOf": {
-        "@id": "https://opengauss.org/#website"
-      },
-      "about": {
-        "@type": "Organization",
-        "name": "中国民生银行",
-        "url": "https://www.cmbc.com.cn/"
-      },
-      "breadcrumb": {
-        "@id": "https://opengauss.org/en/user-practice/finance/minshengbank/#breadcrumb"
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://opengauss.org/en/user-practice/finance/minshengbank/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://opengauss.org/en/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "User Practice",
-          "item": "https://opengauss.org/en/user-practice/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Finance",
-          "item": "https://opengauss.org/en/user-practice/finance/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "中国民生银行"
-        }
-      ]
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://opengauss.org/#organization",
-      "name": "openGauss",
-      "url": "https://opengauss.org/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://opengauss.org/assets/logo_dark.CElWqwW0.svg"
-      }
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://opengauss.org/#website",
-      "url": "https://opengauss.org/",
-      "name": "openGauss",
-      "publisher": {
-        "@id": "https://opengauss.org/#organization"
-      },
-      "inLanguage": "zh-CN"
-    }
-  ]
+  "@type": "TechArticle",
+  "headline": "中国民生银行",
+  "description": "中国民生银行数据库规模化自主创新实践，支持全行各类系统模块200+，系统客户基数超过7000万。",
+  "url": "https://opengauss.org/en/user-practice/finance/minshengbank/",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/en/user-practice/finance/minshengbank/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "中国民生银行",
+    "sameAs": "https://www.cmbc.com.cn/"
+  },
+  "articleSection": "Finance",
+  "about": {
+    "@type": "Thing",
+    "name": "Finance",
+    "description": "openGauss database case study by 中国民生银行 in Finance industry"
+  },
+  "sameAs": "https://www.cmbc.com.cn/",
+  "keywords": "openGauss, database, case study, user practice, 中国民生银行, Finance",
+  "genre": "Finance"
 }

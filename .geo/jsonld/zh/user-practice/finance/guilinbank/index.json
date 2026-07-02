@@ -1,109 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Article",
-      "@id": "https://opengauss.org/zh/user-practice/finance/guilinbank/#article",
-      "headline": "桂林银行股份有限公司",
-      "description": "加速金融行业系统升级改造进程，使用openGauss商业发行版Vastbase G100，赋能金融信创试点工作，构筑全栈国产智慧办公平台，部署openGauss服务器节点数20~30个。",
-      "inLanguage": "zh-CN",
-      "isPartOf": {
-        "@id": "https://opengauss.org/#website"
-      },
-      "about": {
-        "@type": "Organization",
-        "name": "桂林银行股份有限公司",
-        "url": "https://www.guilinbank.com.cn/",
-        "industry": "金融"
-      },
-      "publisher": {
-        "@id": "https://opengauss.org/#organization"
-      },
-      "mainEntityOfPage": {
-        "@id": "https://opengauss.org/zh/user-practice/finance/guilinbank/#webpage"
-      },
-      "mentions": [
-        {
-          "@type": "SoftwareApplication",
-          "name": "openGauss"
-        },
-        {
-          "@type": "SoftwareApplication",
-          "name": "Vastbase G100"
-        },
-        {
-          "@type": "Organization",
-          "name": "海量数据"
-        }
-      ]
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://opengauss.org/zh/user-practice/finance/guilinbank/#webpage",
-      "url": "https://opengauss.org/zh/user-practice/finance/guilinbank/",
-      "name": "桂林银行股份有限公司 | openGauss",
-      "description": "加速金融行业系统升级改造进程，使用openGauss商业发行版Vastbase G100，赋能金融信创试点工作，构筑全栈国产智慧办公平台，部署openGauss服务器节点数20~30个。",
-      "inLanguage": "zh-CN",
-      "isPartOf": {
-        "@id": "https://opengauss.org/#website"
-      },
-      "about": {
-        "@type": "Organization",
-        "name": "桂林银行股份有限公司",
-        "url": "https://www.guilinbank.com.cn/"
-      },
-      "breadcrumb": {
-        "@id": "https://opengauss.org/zh/user-practice/finance/guilinbank/#breadcrumb"
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://opengauss.org/zh/user-practice/finance/guilinbank/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "首页",
-          "item": "https://opengauss.org/zh/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "用户实践",
-          "item": "https://opengauss.org/zh/user-practice/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "金融",
-          "item": "https://opengauss.org/zh/user-practice/finance/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "桂林银行股份有限公司"
-        }
-      ]
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://opengauss.org/#organization",
-      "name": "openGauss",
-      "url": "https://opengauss.org/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://opengauss.org/assets/logo_dark.CElWqwW0.svg"
-      }
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://opengauss.org/#website",
-      "url": "https://opengauss.org/",
-      "name": "openGauss",
-      "publisher": {
-        "@id": "https://opengauss.org/#organization"
-      },
-      "inLanguage": "zh-CN"
-    }
-  ]
+  "@type": "TechArticle",
+  "headline": "桂林银行股份有限公司",
+  "description": "加速金融行业系统升级改造进程，使用openGauss商业发行版Vastbase G100，赋能金融信创试点工作，构筑全栈国产智慧办公平台，部署openGauss服务器节点数20~30个。",
+  "url": "https://opengauss.org/zh/user-practice/finance/guilinbank/",
+  "inLanguage": "zh-CN",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/user-practice/finance/guilinbank/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "桂林银行股份有限公司",
+    "sameAs": "https://www.guilinbank.com.cn/"
+  },
+  "articleSection": "Finance",
+  "about": {
+    "@type": "Thing",
+    "name": "Finance",
+    "description": "桂林银行股份有限公司在Finance领域的openGauss数据库实践案例"
+  },
+  "sameAs": "https://www.guilinbank.com.cn/",
+  "keywords": "openGauss, database, case study, user practice, 桂林银行股份有限公司, Finance",
+  "genre": "Finance"
 }

@@ -1,61 +1,31 @@
-[
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "中移动信息技术有限公司",
-    "description": "基于磐维数据库的生态研发和创新实践，为行业应用提供高兼容、高可靠、高性能、无开源传染风险的OLTP数据库及配套工具。",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://opengauss.org/zh/user-practice/carrier/yidong/"
-    },
-    "author": {
-      "@type": "Organization",
-      "name": "openGauss社区"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "openGauss社区",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://opengauss.org/images/logo.png"
-      }
-    },
-    "about": {
-      "@type": "Organization",
-      "name": "中移动信息技术有限公司",
-      "url": "https://it.10086.cn/indexc.html"
-    },
-    "articleSection": "用户实践",
-    "keywords": ["用户实践", "运营商", "磐维数据库", "OLTP数据库"]
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "中移动信息技术有限公司",
+  "description": "基于磐维数据库的生态研发和创新实践，为行业应用提供高兼容、高可靠、高性能、无开源传染风险的OLTP数据库及配套工具。",
+  "url": "https://opengauss.org/en/user-practice/carrier/yidong/",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
   },
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "首页",
-        "item": "https://opengauss.org/zh/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "用户实践",
-        "item": "https://opengauss.org/zh/user-practice/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "运营商",
-        "item": "https://opengauss.org/zh/user-practice/carrier/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 4,
-        "name": "中移动信息技术有限公司",
-        "item": "https://opengauss.org/zh/user-practice/carrier/yidong/"
-      }
-    ]
-  }
-]
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/en/user-practice/carrier/yidong/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "中移动信息技术有限公司",
+    "sameAs": "https://it.10086.cn/indexc.html"
+  },
+  "articleSection": "Telecommunications",
+  "about": {
+    "@type": "Thing",
+    "name": "Telecommunications",
+    "description": "openGauss database case study by 中移动信息技术有限公司 in Telecommunications industry"
+  },
+  "sameAs": "https://it.10086.cn/indexc.html",
+  "keywords": "openGauss, database, case study, user practice, 中移动信息技术有限公司, Telecommunications",
+  "genre": "Carrier"
+}

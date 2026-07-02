@@ -1,0 +1,23 @@
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "openGauss Tools 7.0.0-RC3 版本更改工具发布包名公告",
+  "description": "openGauss Tools 7.0.0-RC3 版本更改工具发布包名公告",
+  "author": {
+    "@type": "Organization",
+    "name": "openGauss"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "datePublished": "2026-01-27",
+  "dateModified": "2026-01-27",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/news/2026-01-27.html"
+  },
+  "url": "https://opengauss.org/zh/news/2026-01-27.html",
+  "inLanguage": "zh-CN"
+}

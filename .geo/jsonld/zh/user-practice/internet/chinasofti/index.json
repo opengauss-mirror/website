@@ -1,51 +1,31 @@
-[
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "中软国际科技与服务有限公司",
-    "description": "openGauss生态合作伙伴，提供配套开发与管理、运维工具。",
-    "url": "https://opengauss.org/zh/user-practice/internet/chinasofti/",
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "openGauss",
-      "url": "https://opengauss.org/"
-    }
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "中软国际科技与服务有限公司",
+  "description": "openGauss生态合作伙伴，提供配套开发与管理、运维工具。",
+  "url": "https://opengauss.org/zh/user-practice/internet/chinasofti/",
+  "inLanguage": "zh-CN",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
   },
-  {
-    "@context": "https://schema.org",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/user-practice/internet/chinasofti/"
+  },
+  "author": {
     "@type": "Organization",
     "name": "中软国际科技与服务有限公司",
-    "url": "https://www.chinasofti.com/",
-    "description": "openGauss生态合作伙伴，提供配套开发与管理、运维工具。"
+    "sameAs": "https://www.chinasofti.com/"
   },
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "首页",
-        "item": "https://opengauss.org/zh/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "用户案例",
-        "item": "https://opengauss.org/zh/user-practice/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "互联网",
-        "item": "https://opengauss.org/zh/user-practice/internet/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 4,
-        "name": "中软国际科技与服务有限公司",
-        "item": "https://opengauss.org/zh/user-practice/internet/chinasofti/"
-      }
-    ]
-  }
-]
+  "articleSection": "Internet",
+  "about": {
+    "@type": "Thing",
+    "name": "Internet",
+    "description": "中软国际科技与服务有限公司在Internet领域的openGauss数据库实践案例"
+  },
+  "sameAs": "https://www.chinasofti.com/",
+  "keywords": "openGauss, database, case study, user practice, 中软国际科技与服务有限公司, Internet",
+  "genre": "Internet"
+}

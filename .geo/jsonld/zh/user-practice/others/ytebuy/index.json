@@ -1,13 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "亚太飞鸿科技集团有限公司",
+  "@type": "TechArticle",
+  "headline": "亚太飞鸿科技集团有限公司",
   "description": "使用openGauss承载公司的边缘业务。",
-  "industry": "其他",
-  "mentions": [
-    {
-      "@type": "SoftwareApplication",
-      "name": "openGauss"
-    }
-  ]
+  "url": "https://opengauss.org/zh/user-practice/others/ytebuy/",
+  "inLanguage": "zh-CN",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/user-practice/others/ytebuy/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "亚太飞鸿科技集团有限公司",
+    "sameAs": "https://opengauss.org/"
+  },
+  "articleSection": "Other",
+  "about": {
+    "@type": "Thing",
+    "name": "Other",
+    "description": "亚太飞鸿科技集团有限公司在Other领域的openGauss数据库实践案例"
+  },
+  "sameAs": "https://opengauss.org/",
+  "keywords": "openGauss, database, case study, user practice, 亚太飞鸿科技集团有限公司, Other",
+  "genre": "Others"
 }

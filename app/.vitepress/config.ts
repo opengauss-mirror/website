@@ -12,7 +12,6 @@ import contentYamlPlugin from './plugins/vite-plugin-content-yaml';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const geoDir = join(__dirname, '../../.geo')
-const isBlog = /.+\/(?:user-practice|events|news)\/.+$/;
 
 // eslint-disable-next-line
 const excludes = process.argv
@@ -48,7 +47,7 @@ const setTdk = (pageData: PageData, pagePath: string) => {
   const tdkInfo = existsSync(jsonFile) ? JSON.parse(readFileSync(jsonFile, 'utf-8')) : null;
 
   pageData.titleTemplate = `:title | ${pagePath.startsWith('zh') ? 'openGauss社区官网' : 'openGauss Official Website'}`;
-  if (!tdkInfo || isBlog.test(pagePath)) {
+  if (!tdkInfo) {
     const frontmatter = pageData.frontmatter;
     const description = frontmatter?.summary || frontmatter?.Summary;
     if (!pageData.description && description) {

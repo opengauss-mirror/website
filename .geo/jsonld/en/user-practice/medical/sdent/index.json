@@ -1,76 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Article",
-      "@id": "https://opengauss.org/zh/user-practice/medical/sdent/#article",
-      "headline": "山东省第二人民医院",
-      "description": "数据库自主创新实践，电子病历系统项目，实现了住院管理业务应用在高可靠、高性能、高安全的国产自主数据库平台上的平稳运行。",
-      "articleSection": [
-        "核心应用",
-        "标杆价值",
-        "架构设计",
-        "技术创新",
-        "融合创新"
-      ],
-      "articleBody": "实现了住院管理业务应用在高可靠、高性能、高安全的国产自主数据库平台上的平稳运行。Vastbase 在性能上超越了原有 Oracle 数据库，故障自动切换时间缩短至 5 秒，且数据零丢失，展现了高可用性。医院的这一实践被视为医疗行业数字化转型的成功案例。Vastbase 采用一主两备集群部署，已完成与鲲鹏 CPU、飞腾 CPU 等主流国产芯片的兼容适配，并能在统信操作系统、麒麟操作系统等主流操作系统中平稳运行。在性能方面，相较于原有 Oracle 数据库，平均响应时间缩短了 26.9%，有效解决了数据库查询延迟和处理速度减缓的问题，提高了医疗服务的效率。故障自动切换测试，实现快速故障恢复，RTO 最快达到 5 秒，且数据零丢失，在高可用性方面达到了业内领先水平。安全性方面，提供了全密态机制、数据加密、安全审计等一系列安全功能，显著提升了医疗数据的安全性。成本效益方面，通过采用国产数据库，医院降低了长期依赖进口软件的许可和维护成本，提高了经济效益。整合了向量、时序等数据模型，为引入人工智能、大数据分析等技术提供了基础，推动了医疗服务模式的创新。",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://opengauss.org/zh/user-practice/medical/sdent/"
-      },
-      "about": {
-        "@type": "Organization",
-        "@id": "https://opengauss.org/zh/user-practice/medical/sdent/#organization"
-      },
-      "mentions": [
-        {
-          "@type": "SoftwareApplication",
-          "name": "Vastbase",
-          "applicationCategory": "DatabaseApplication"
-        },
-        {
-          "@type": "SoftwareApplication",
-          "name": "Oracle",
-          "applicationCategory": "DatabaseApplication"
-        }
-      ]
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://opengauss.org/zh/user-practice/medical/sdent/#organization",
-      "name": "山东省第二人民医院",
-      "url": "https://www.sdent.com.cn/",
-      "description": "医疗行业数字化转型案例，采用国产数据库实现电子病历系统与住院管理业务的平稳运行。"
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://opengauss.org/zh/user-practice/medical/sdent/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "首页",
-          "item": "https://opengauss.org/zh/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "用户实践",
-          "item": "https://opengauss.org/zh/user-practice/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "医疗",
-          "item": "https://opengauss.org/zh/user-practice/medical/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "山东省第二人民医院",
-          "item": "https://opengauss.org/zh/user-practice/medical/sdent/"
-        }
-      ]
-    }
-  ]
+  "@type": "TechArticle",
+  "headline": "山东省第二人民医院",
+  "description": "数据库自主创新实践，电子病历系统项目，实现了住院管理业务应用在高可靠、高性能、高安全的国产自主数据库平台上的平稳运行。",
+  "url": "https://opengauss.org/en/user-practice/medical/sdent/",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/en/user-practice/medical/sdent/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "山东省第二人民医院",
+    "sameAs": "https://www.sdent.com.cn/"
+  },
+  "articleSection": "Healthcare",
+  "about": {
+    "@type": "Thing",
+    "name": "Healthcare",
+    "description": "openGauss database case study by 山东省第二人民医院 in Healthcare industry"
+  },
+  "sameAs": "https://www.sdent.com.cn/",
+  "keywords": "openGauss, database, case study, user practice, 山东省第二人民医院, Healthcare",
+  "genre": "Medical"
 }

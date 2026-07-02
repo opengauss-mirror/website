@@ -3,37 +3,29 @@
   "@type": "TechArticle",
   "headline": "Zabbix与openGauss的深度融合",
   "description": "Zabbix与openGauss的深度融合",
-  "articleSection": [
-    "openGauss可观测架构介绍",
-    "openGauss WDR 功能介绍",
-    "openGauss ASP 功能介绍",
-    "基于openGauss适配Zabbix",
-    "使用Zabbix监控openGauss的运行状态"
-  ],
-  "about": [
-    {
-      "@type": "SoftwareApplication",
-      "name": "openGauss",
-      "applicationCategory": "DatabaseApplication",
-      "description": "企业级开源关系性数据库"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "name": "Zabbix",
-      "applicationCategory": "MonitoringApplication",
-      "description": "监控平台"
-    }
-  ],
-  "mentions": [
-    {
-      "@type": "Thing",
-      "name": "WDR",
-      "description": "Workload Diagnosis Report，基于两次不同时间点系统的性能快照数据，生成这两个时间点之间的性能表现报表，用于诊断数据库内核的性能故障"
-    },
-    {
-      "@type": "Thing",
-      "name": "ASP",
-      "description": "Active Session Profile，活跃会话概要信息，主要用于诊断秒级性能抖动场景，可记录某时刻SQL语句、等待事件、锁信息、事务语句开始时间等"
-    }
-  ]
+  "url": "https://opengauss.org/zh/user-practice/others/zabbix/",
+  "inLanguage": "zh-CN",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/user-practice/others/zabbix/"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "zabbix",
+    "sameAs": "https://jtt.ln.gov.cn/"
+  },
+  "articleSection": "Others",
+  "about": {
+    "@type": "Thing",
+    "name": "Others",
+    "description": "zabbix在Others领域的openGauss数据库实践案例"
+  },
+  "sameAs": "https://jtt.ln.gov.cn/",
+  "keywords": "openGauss, database, case study, user practice, zabbix, Others",
+  "genre": "Others"
 }

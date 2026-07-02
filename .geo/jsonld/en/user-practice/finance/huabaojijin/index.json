@@ -1,42 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "TechArticle",
   "headline": "华宝基金",
   "description": "华宝基金选择了云和恩墨MogDB开启自研系统的数据库替换工作。MogDB配套的自动部署工具PTK、兼容性分析工具SCA、数据库迁移工具MTK确保了数据库从Oracle、PostgreSQL、MySQL向MogDB的平稳迁移。主、备、级联同步备库、异步备库的结合部署，辅以MogHA高可用管理组件，满足了华宝基金数据库容灾要求，搭建起坚固的数据承载平台。",
-  "articleSection": "金融",
-  "about": {
-    "@type": "Thing",
-    "name": "数据库迁移案例"
+  "url": "https://opengauss.org/en/user-practice/finance/huabaojijin/",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
   },
-  "mentions": [
-    {
-      "@type": "SoftwareApplication",
-      "name": "MogDB"
-    },
-    {
-      "@type": "Organization",
-      "name": "云和恩墨"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "name": "PTK"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "name": "SCA"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "name": "MTK"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "name": "MogHA"
-    }
-  ],
-  "mainEntity": {
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/en/user-practice/finance/huabaojijin/"
+  },
+  "author": {
     "@type": "Organization",
     "name": "华宝基金",
-    "url": "https://www.fsfund.com/"
-  }
+    "sameAs": "https://www.fsfund.com/"
+  },
+  "articleSection": "Finance",
+  "about": {
+    "@type": "Thing",
+    "name": "Finance",
+    "description": "openGauss database case study by 华宝基金 in Finance industry"
+  },
+  "sameAs": "https://www.fsfund.com/",
+  "keywords": "openGauss, database, case study, user practice, 华宝基金, Finance",
+  "genre": "Finance"
 }

@@ -1,16 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "TechArticle",
   "headline": "中国铁塔股份有限公司",
   "description": "IT系统数据库自主创新实践，高性能高并发处理应对多样化场景。",
+  "url": "https://opengauss.org/zh/user-practice/carrier/chinatower/",
+  "inLanguage": "zh-CN",
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://opengauss.org/zh/user-practice/carrier/chinatower/"
   },
-  "about": {
+  "author": {
     "@type": "Organization",
     "name": "中国铁塔股份有限公司",
-    "url": "https://www.china-tower.com/"
+    "sameAs": "https://www.china-tower.com/"
   },
-  "articleBody": "中国铁塔股份有限公司IT系统数据库自主创新实践。核心应用：高性能与高并发处理，解决场景多样化挑战；在迁移成本控制上，显著降低了应用系统的改造难度与成本；在工程交付环节，实时跟踪业务系统对接、实施进度及需求变更情况。标杆价值：提供的高可用集群方案（HAS+DCS）确保了RPO=0和RTO≤10秒；异构数据库一键迁移工具exBase使得Vastbase与Oracle高度兼容，自动迁移成功率高达99.98%；全程保持高效在线状态，提供共享文档管理，以及周全的安全保障方案、科学的培训课程与认证体系。架构设计：与铁塔数科、海通安恒、普德施、华苏、神州泰岳、新大陆等多家ISV厂商实现了深度适配与对接；基础环境方面，采用了海关c86服务器与麒麟sp3操作系统的组合。技术创新：具有强大的性能支撑和卓越的并发处理能力；采用了海量自研的迁移工具exBase，校验能力强大，在全量条数校验中，校验通过率高达99%。融合创新：目前集团内使用基于浪潮云、联通云、天翼云等多个云平台搭建的私有云；海量数据库上线的系统中，70%是物理机部署，30%运行在集团私有云上。"
+  "articleSection": "Telecommunications",
+  "about": {
+    "@type": "Thing",
+    "name": "Telecommunications",
+    "description": "中国铁塔股份有限公司在Telecommunications领域的openGauss数据库实践案例"
+  },
+  "sameAs": "https://www.china-tower.com/",
+  "keywords": "openGauss, database, case study, user practice, 中国铁塔股份有限公司, Telecommunications",
+  "genre": "Carrier"
 }

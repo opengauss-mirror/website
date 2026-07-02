@@ -1,0 +1,24 @@
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": " 长亮科技正式加入openGauss社区",
+  "description": "长亮科技签署CLA ，正式加入openGauss社区。",
+  "author": {
+    "@type": "Organization",
+    "name": "openGauss"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "openGauss",
+    "url": "https://opengauss.org"
+  },
+  "datePublished": "2021-07-28",
+  "dateModified": "2021-07-28",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/zh/news/2021-07-28/20210728.html"
+  },
+  "url": "https://opengauss.org/zh/news/2021-07-28/20210728.html",
+  "inLanguage": "zh-CN",
+  "image": "https://opengauss.org/category/news/2021-07-28/banner.jpg"
+}

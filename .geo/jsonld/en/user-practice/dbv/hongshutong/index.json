@@ -1,17 +1,31 @@
 {
   "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "宏数通数据库 DataSafeKitDB",
-  "description": "基于openGauss研发的openGauss商业发行版。最新版本为宏数通数据库系统 V5.0.0",
-  "brand": {
+  "@type": "TechArticle",
+  "headline": "宏数通信息科技（苏州）有限公司",
+  "description": "宏数通数据库 DataSafeKitDB 是基于openGauss研发的openGauss商业发行版。最新版本为宏数通数据库系统 V5.0.0",
+  "url": "https://opengauss.org/en/user-practice/dbv/hongshutong/",
+  "inLanguage": "en",
+  "publisher": {
     "@type": "Organization",
-    "name": "宏数通信息科技（苏州）有限公司"
+    "name": "openGauss",
+    "url": "https://opengauss.org"
   },
-  "manufacturer": {
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://opengauss.org/en/user-practice/dbv/hongshutong/"
+  },
+  "author": {
     "@type": "Organization",
     "name": "宏数通信息科技（苏州）有限公司",
-    "url": "https://www.modb.pro/wiki/7261"
+    "sameAs": "https://www.modb.pro/wiki/7261"
   },
-  "version": "V5.0.0",
-  "category": "数据库管理系统"
+  "articleSection": "Database Vendor",
+  "about": {
+    "@type": "Thing",
+    "name": "Database Vendor",
+    "description": "openGauss database case study by 宏数通信息科技（苏州）有限公司 in Database Vendor industry"
+  },
+  "sameAs": "https://www.modb.pro/wiki/7261",
+  "keywords": "openGauss, database, case study, user practice, 宏数通信息科技（苏州）有限公司, Database Vendor",
+  "genre": "DBV"
 }
