@@ -9,11 +9,11 @@ import generateLastmodAndChangefreq from '@opendesign-plus/plugins/vite/generate
 import generateLLMsFull from '@opendesign-plus/geo-scripts/generate-llms-full';
 import llmstxt from 'vitepress-plugin-llms';
 import contentYamlPlugin from './plugins/vite-plugin-content-yaml';
+import generateSEOManifest from './scripts/generate-tdk-schema-for-articles';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const geoDir = join(__dirname, '../../.geo')
 
-// eslint-disable-next-line
 const excludes = process.argv
   .filter(arg => arg.startsWith('--exclude='))
   .flatMap(arg => {
@@ -125,8 +125,11 @@ const config: UserConfig = {
       pagePath = encodeURI(pageData.filePath.slice(0, -3));
     }
 
-    setTdk(pageData, pagePath);
-    setJSONLD(pageData, pagePath);
+    const isArticle = generateSEOManifest(pageData);
+    if (!isArticle) {
+      setTdk(pageData, pagePath);
+      setJSONLD(pageData, pagePath);
+    }
   },
   locales: {
     root: {

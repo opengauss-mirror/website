@@ -1,5 +1,0 @@
-{
-  "title": "晋商银行",
-  "description": "晋商银行根据上线业务系统的重要程度，采用一主一备或一主多备等架构部署 openGauss 商业发行版 — MogDB 数据库，并采用两地双中心的高可用方案，实现异地数据异步传输、异地级联复制、异地演练和异地切换等功能，确保数据库系统具备高可用性和业务连续性，避免业务非计划中断的风险，提高系统的可靠性。",
-  "keywords": "openGauss, open source database, user practice, case study, 晋商银行"
-}

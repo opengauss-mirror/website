@@ -1,5 +1,0 @@
-{
-  "title": "中信证券",
-  "description": "使用openGauss商业发行版Vastbase G100，针对用户自有资金管理、外汇交易核算、API网关等业务系统，实现全栈国产化技术路线的演进，部署openGauss服务器节点数20~30个。",
-  "keywords": "openGauss, open source database, user practice, case study, 中信证券"
-}

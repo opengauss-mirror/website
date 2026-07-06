@@ -1,5 +1,0 @@
-{
-  "title": "兴业银行支付系统",
-  "description": "兴业银行支付系统属于存量系统，迁移到openGauss数据库涉及数据库结构和数据迁移、应用适配。兴业银行借助第三方数据库迁移工具，实现自动化、流程化迁移，解决了迁移前后数据库的字符集、存储过程语法兼容等问题。",
-  "keywords": "openGauss, open source database, user practice, case study, 兴业银行支付系统"
-}
