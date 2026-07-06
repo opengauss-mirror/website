@@ -1,5 +1,5 @@
 import { expect, describe, it, beforeAll, afterAll } from 'vitest';
-import { readFileSync } from 'fs';
+import { mkdirSync, readFileSync, rmSync, writeFileSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
@@ -41,11 +41,12 @@ describe('.gitignore git status verification', () => {
   const testFile = resolve(testDir, 'vitest-test-marker');
 
   beforeAll(() => {
-    execSync(`mkdir -p ${testDir} && touch ${testFile}`, { cwd: rootDir });
+    mkdirSync(testDir, { recursive: true });
+    writeFileSync(testFile, '');
   });
 
   afterAll(() => {
-    execSync(`rm -rf ${testDir}`, { cwd: rootDir });
+    rmSync(testFile, { force: true });
   });
 
   it('git status does not show files under .codegraph/', () => {
@@ -54,7 +55,7 @@ describe('.gitignore git status verification', () => {
   });
 
   it('.codegraph/test file exists but is ignored', () => {
-    const status = execSync('git status --porcelain -u', { cwd: rootDir }).toString();
-    expect(status).not.toContain('vitest-test-marker');
+    const out = execSync(`git check-ignore ${testFile}`, { cwd: rootDir }).toString();
+    expect(out).toContain('vitest-test-marker');
   });
 });
