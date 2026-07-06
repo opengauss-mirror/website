@@ -120,3 +120,46 @@ describe('zh/en STORAGEENGINE i18n consistency', () => {
     expect(zhCount).toBe(enCount);
   });
 });
+
+const zhGuangzhouStart = dataContent.indexOf('GUANGZHOU: [', dataContent.indexOf('zh: {'));
+const enGuangzhouStart = dataContent.indexOf('GUANGZHOU: [', dataContent.indexOf('en: {'));
+
+const zhGuangzhouBlock = extractBlock(dataContent, zhGuangzhouStart);
+const enGuangzhouBlock = extractBlock(dataContent, enGuangzhouStart);
+
+describe('GUANGZHOU member removal — zh', () => {
+  it('zh GUANGZHOU does not contain "王杰"', () => {
+    expect(zhGuangzhouBlock).not.toContain('王杰');
+  });
+
+  it('zh GUANGZHOU is not empty after removal', () => {
+    const count = zhGuangzhouBlock.split('name:').length - 1;
+    expect(count).toBeGreaterThanOrEqual(6);
+  });
+});
+
+describe('GUANGZHOU member removal — en', () => {
+  it('en GUANGZHOU does not contain "Jie Wang"', () => {
+    expect(enGuangzhouBlock).not.toContain('Jie Wang');
+  });
+
+  it('en GUANGZHOU is not empty after removal', () => {
+    const count = enGuangzhouBlock.split('name:').length - 1;
+    expect(count).toBeGreaterThanOrEqual(6);
+  });
+});
+
+describe('GUANGZHOU import cleanup in data.ts', () => {
+  it('wangjie import has been removed', () => {
+    const importRegex = /import\s+wangjie\s+from/;
+    expect(importRegex.test(dataContent)).toBe(false);
+  });
+});
+
+describe('zh/en GUANGZHOU i18n consistency', () => {
+  it('zh and en GUANGZHOU have the same number of members', () => {
+    const zhCount = zhGuangzhouBlock.split('name:').length - 1;
+    const enCount = enGuangzhouBlock.split('name:').length - 1;
+    expect(zhCount).toBe(enCount);
+  });
+});

@@ -299,7 +299,6 @@ import chenruirong from '@/assets/category/member/avatar/chenruirong.png';
 import huangzhigang from '@/assets/category/member/avatar/huangzhigang.png';
 import menglingbin from '@/assets/category/member/avatar/menglingbin.png';
 import sunkai from '@/assets/category/member/avatar/sunkai.png';
-import wangjie from '@/assets/category/member/avatar/wangjie.png';
 import wangmingyue2 from '@/assets/category/member/avatar/wangmingyue2.png';
 import xiaoshaocong from '@/assets/category/member/avatar/xiaoshaocong.png';
 import xiepingran from '@/assets/category/member/avatar/xiepingran.png';
@@ -4274,13 +4273,7 @@ export default {
         company: `海量数据`,
         email: `m_lingbin@126.com`,
       },
-      {
-        img: wangjie,
-        name: `王杰`,
-        title: `Ambassador`,
-        company: `广东开放大学`,
-        email: `m_lingbin@126.com`,
-      },
+
       {
         img: xiaoshaocong,
         name: ` 萧少聪`,
@@ -8576,13 +8569,7 @@ export default {
         company: `VASTDATA`,
         email: `m_lingbin@126.com`,
       },
-      {
-        img: wangjie,
-        name: `Jie Wang`,
-        title: `Ambassador`,
-        company: `Guangdong Open University`,
-        email: `m_lingbin@126.com`,
-      },
+
       {
         img: xiaoshaocong,
         name: ` Shaocong Xiao`,
