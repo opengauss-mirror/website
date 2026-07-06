@@ -8,7 +8,9 @@
     "dev": "vitepress dev app",
     "prebuild": "node scripts/readEventsFrontmatter.js",
     "build": "pnpm gen:blogs && pnpm gen:news && vitepress build app",
+    "postbuild": "node scripts/generate-llms-txt.js",
     "build:geo": "vitepress build app --exclude=**/blogs/**/*,**/events/**/*,**/news/**/*",
+    "postbuild:geo": "node scripts/generate-llms-txt.js",
     "preview": "vitepress preview app",
     "test:e2e": "playwright test && playwright show-report",
     "test:unit": "vitest",
@@ -40,7 +42,6 @@
     "opendesign": "./opendesign",
     "pinia": "2.3.1",
     "uuid": "14.0.0",
-    "vitepress-plugin-llms": "^1.13.1",
     "vue": "3.5.35",
     "vue-dompurify-html": "5.2.0",
     "vue-i18n": "11.1.11"

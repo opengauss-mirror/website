@@ -7,7 +7,6 @@ import hljs from 'highlight.js';
 import { fileURLToPath } from 'node:url';
 import generateLastmodAndChangefreq from '@opendesign-plus/plugins/vite/generate-lastmod-changefreq';
 import generateLLMsFull from '@opendesign-plus/geo-scripts/generate-llms-full';
-import llmstxt from 'vitepress-plugin-llms';
 import contentYamlPlugin from './plugins/vite-plugin-content-yaml';
 import generateSEOManifest from './scripts/generate-tdk-schema-for-articles';
 
@@ -191,12 +190,6 @@ const config: UserConfig = {
       vueI18n({
         ssr: process.env.NODE_ENV === 'production',
         runtimeOnly: false
-      }),
-      llmstxt({
-        title: 'openGauss | openGauss社区官网',
-        ignoreFiles: ['**/blogs/**/*', '**/news/**/*', '**/user-practice/**/*', '**/legal/*', '**/search/*', '**/privacy/*', '**/events/**/*', '**/cookies/*', '**/data-sharing-with-third-parties/*', '**/personal-data-collection-overview/*'],
-        generateLLMFriendlyDocsForEachPage: false,
-        injectLLMHint: false,
       })
     ],
   },
