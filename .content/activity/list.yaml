@@ -832,3 +832,14 @@
   review_url: /zh/events/2020-09-25/bootcamp.html
   synopsis_zh: 面向开发者的一次盛会，欢迎大家参加。
   status: ended
+
+- id: 64
+  title_zh: 【7月10日】openGauss x 大湾区国创中心 Workshop 广州站，欢迎报名！
+  display_date_zh: "2026/07/10"
+  start_date: "2026-07-10"
+  series: meetup
+  format: offline
+  city_zh: 广州
+  review_url: /zh/events/2026-07-10/meetup.html
+  synopsis_zh: openGauss 社区与大湾区国创中心联合主办，采用「理论精讲 + 现场实操」双轨模式，围绕 oGRAC 架构实战、RTO 容灾演练、IntarkDB+RAG 落地三大核心方向展开
+  status: ongoing
