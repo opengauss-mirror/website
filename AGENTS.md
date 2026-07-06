@@ -69,13 +69,46 @@ openGauss-website/
 
 ## 3. SEO / GEO 机制
 
-TDK（title / description / keywords）由 `app/.vitepress/config.ts` 的 `transformPageData` 钩子，
-按页面路由从 `.geo/tdks/{page path}.ts` 查找注入；blog 类页面回退到 frontmatter 的 `summary`。
+### 3.1 TDK / JSON-LD
+
+TDK（title / description / keywords）由 `app/.vitepress/config.ts` 的 `transformPageData` 钩子，按页面路由从 `.geo/tdks/{page path}/index.json` 查找注入；
+
+JSON-LD 由 `app/.vitepress/config.ts` 的 `transformPageData` 钩子，按页面路由从 `.geo/jsonld/{page path}/index.json` 查找注入；
+
+文章类页面（news / blogs / events / user-practice）的TDK / JSON-LD不在 `.geo` 目录中归档，构建时由 `app/.vitepress/scripts/generate-tdk-schema-for-articles.ts` 脚本从frontmatter中提取属性数据生成，由 `app/.vitepress/config.ts` 的 `transformPageData` 调用。
+
+**注意**
 
 - 加 / 改某页 TDK → 改 `.geo/tdks/path/to/page/index.json` 对应JSON配置文件（**双语同步**）
-- 页面路由与JSON配置文件映射关系：1. `/zh/about` 或 `/zh/about.html` 或 `/zh/about/index.html` -> `.geo/{tdk,jsonld}/zh/about/index.json`
+- TDK / JSON-LD 的内容需分析具体页面内容后生成，禁止出现页面中不存在的描述、概念和数据
+- JSON-LD 中若有数据包含当前站点页面的url，需注意文件路径与对应url路径的结尾规则映射：`/zh/page/a.md` -> `/zh/page/a.html`， `/zh/page/b/index.md` -> `/zh/page/b/`
+- 页面路由与JSON配置文件映射关系：1. `/zh/about/` 或 `/zh/about.html` 或 `/zh/about/index.html` -> `.geo/{tdk,jsonld}/zh/about/index.json`
 - 不要在 Vue 组件里手动写 `<title>` / `<meta description>` 与之重复
-- GEO/SEO 可发现性优化由 portal-workflow 的 geo-fix 链路负责，日常需求**默认不动** `.geo/tdks/` 与 sitemap 配置
+
+### 3.2 Sitemap
+
+由 `app/.vitepress/config.ts` 的 `sitemap` 配置，构建时框架自动生成，使用了 `generateLastmodAndChangefreq` 插件分析页面的文件依赖关系，计算出每个页面真实的 `lastmod` 和 `changefreq` 值，记录到 `.geo/sitemap-records.json` ，在 `sitemap.transformItems` 钩子中读取后为每个sitemap项设置
+
+`sitemap-records.json` 内容示例：
+
+```json
+{
+  "/zh/about.md": {
+    "lastmod": 1783330323830,
+    "changefreq": "weekly"
+  }
+}
+```
+
+**注意**
+
+- 修改 sitemap 条目的属性数据：在`app/.vitepress/config.ts` 的 `sitemap.transformItems` 函数中修改
+
+### 3.3 llms.txt / llms-full.txt
+
+llms.txt由脚本 `scripts/generate-llms-txt.js` 生成，由 `packages.json` 的 `scripts.postbuild` 调用
+
+llms-full.txt由脚本 `app/.vitepress/config.ts` 的 `buildEnd` 钩子调用 `generateLLMsFull` 在构建结束自动生成
 
 ---
 
