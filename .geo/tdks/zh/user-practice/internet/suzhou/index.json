@@ -1,5 +1,0 @@
-{
-  "title": "苏州公共信用信息中心",
-  "description": "非核心业务使用 MogDB 数据库并部署在x86环境下，部署openGauss服务器节点数为1~10个。",
-  "keywords": "openGauss, 开源数据库, 用户实践, 案例分享, 苏州公共信用信息中心"
-}
