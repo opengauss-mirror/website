@@ -1,0 +1,62 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://opengauss.org/en/data-sharing-with-third-parties/#webpage",
+      "url": "https://opengauss.org/en/data-sharing-with-third-parties/",
+      "name": "Data Sharing with Third Parties",
+      "description": "View openGauss's third-party data sharing list: Baidu Statistics SDK, shared device and usage data, purposes, scenarios, and third-party data processing rules.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://opengauss.org/#website"
+      },
+      "about": {
+        "@id": "https://opengauss.org/#organization"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://opengauss.org/#website",
+      "url": "https://opengauss.org/",
+      "name": "openGauss",
+      "description": "openGauss Official Website",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://opengauss.org/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://opengauss.org/#organization",
+      "name": "openGauss",
+      "alternateName": "openGauss Community",
+      "url": "https://opengauss.org/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://opengauss.org/category/brand/view/logo1.svg"
+      },
+      "sameAs": [
+        "https://opengauss.org/"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://opengauss.org/en/data-sharing-with-third-parties/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://opengauss.org/en/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Data Sharing with Third Parties",
+          "item": "https://opengauss.org/en/data-sharing-with-third-parties/"
+        }
+      ]
+    }
+  ]
+}

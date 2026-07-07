@@ -1,0 +1,62 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://opengauss.org/zh/legal/#webpage",
+      "url": "https://opengauss.org/zh/legal/",
+      "name": "法律声明",
+      "description": "openGauss社区法律声明，涵盖网站访问规则、个人信息保护、不承诺责任、著作权与商标说明、第三方链接、网站更新变更及AI服务使用规范等内容。",
+      "inLanguage": "zh-CN",
+      "isPartOf": {
+        "@id": "https://opengauss.org/#website"
+      },
+      "about": {
+        "@id": "https://opengauss.org/#organization"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://opengauss.org/#website",
+      "url": "https://opengauss.org/",
+      "name": "openGauss",
+      "description": "openGauss开源数据库社区官网",
+      "inLanguage": "zh-CN",
+      "publisher": {
+        "@id": "https://opengauss.org/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://opengauss.org/#organization",
+      "name": "openGauss",
+      "alternateName": "openGauss社区",
+      "url": "https://opengauss.org/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://opengauss.org/category/brand/view/logo1.svg"
+      },
+      "sameAs": [
+        "https://opengauss.org/"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://opengauss.org/zh/legal/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首页",
+          "item": "https://opengauss.org/zh/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "法律声明",
+          "item": "https://opengauss.org/zh/legal/"
+        }
+      ]
+    }
+  ]
+}

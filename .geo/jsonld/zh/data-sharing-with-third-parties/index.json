@@ -1,0 +1,62 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://opengauss.org/zh/data-sharing-with-third-parties/#webpage",
+      "url": "https://opengauss.org/zh/data-sharing-with-third-parties/",
+      "name": "第三方共享信息清单",
+      "description": "查看openGauss社区第三方共享信息清单，了解网站接入百度统计SDK共享的设备信息与使用信息（IP地址、地域、浏览器类型等）、共享目的、使用场景及第三方个人信息处理规则。",
+      "inLanguage": "zh-CN",
+      "isPartOf": {
+        "@id": "https://opengauss.org/#website"
+      },
+      "about": {
+        "@id": "https://opengauss.org/#organization"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://opengauss.org/#website",
+      "url": "https://opengauss.org/",
+      "name": "openGauss",
+      "description": "openGauss开源数据库社区官网",
+      "inLanguage": "zh-CN",
+      "publisher": {
+        "@id": "https://opengauss.org/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://opengauss.org/#organization",
+      "name": "openGauss",
+      "alternateName": "openGauss社区",
+      "url": "https://opengauss.org/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://opengauss.org/category/brand/view/logo1.svg"
+      },
+      "sameAs": [
+        "https://opengauss.org/"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://opengauss.org/zh/data-sharing-with-third-parties/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首页",
+          "item": "https://opengauss.org/zh/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "第三方共享信息清单",
+          "item": "https://opengauss.org/zh/data-sharing-with-third-parties/"
+        }
+      ]
+    }
+  ]
+}

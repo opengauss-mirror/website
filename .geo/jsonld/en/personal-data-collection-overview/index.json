@@ -1,0 +1,62 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://opengauss.org/en/personal-data-collection-overview/#webpage",
+      "url": "https://opengauss.org/en/personal-data-collection-overview/",
+      "name": "Personal Data Collection Overview",
+      "description": "View openGauss's personal data collection overview: 9 scenarios—account, mailing list, forum, meetup—covering data types, collection methods, and purposes.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://opengauss.org/#website"
+      },
+      "about": {
+        "@id": "https://opengauss.org/#organization"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://opengauss.org/#website",
+      "url": "https://opengauss.org/",
+      "name": "openGauss",
+      "description": "openGauss Official Website",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://opengauss.org/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://opengauss.org/#organization",
+      "name": "openGauss",
+      "alternateName": "openGauss Community",
+      "url": "https://opengauss.org/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://opengauss.org/category/brand/view/logo1.svg"
+      },
+      "sameAs": [
+        "https://opengauss.org/"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://opengauss.org/en/personal-data-collection-overview/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://opengauss.org/en/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Personal Data Collection Overview",
+          "item": "https://opengauss.org/en/personal-data-collection-overview/"
+        }
+      ]
+    }
+  ]
+}

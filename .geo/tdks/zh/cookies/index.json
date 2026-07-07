@@ -1,0 +1,5 @@
+{
+  "title": "Cookie使用声明",
+  "description": "了解openGauss社区Cookie及浏览器本地存储等类似技术的使用场景，包括登录验证、偏好设置与统计分析，以及如何管理、删除Cookie和请勿追踪（Do Not Track）说明。",
+  "keywords": "openGauss Cookie, Cookie使用声明, 登录验证, 偏好设置, 统计分析, 浏览器网络存储, 本地存储, 请勿追踪, Do Not Track"
+}
