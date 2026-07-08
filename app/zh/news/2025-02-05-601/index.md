@@ -17,9 +17,9 @@ openGauss 6.0.1 补丁版本回合的需求列表：
 
 | 描述                                               | PR 链接                                                   | ISSUE 链接                                                                                                                                                                                |
 | -------------------------------------------------- | --------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 延迟备机优化需求                                   | https://gitcode.com/opengauss/openGauss-server/pulls/6082 | https://e.gitee.com/opengaussorg/dashboard?issue=IA7M2X<br/>https://gitcode.com/opengauss/openGauss-server/issues/I9521L<br/>https://gitcode.com/opengauss/openGauss-server/issues/I8FVVU |
-| 添加 gs_lwlock_status 视图                         | https://gitcode.com/opengauss/openGauss-server/pulls/6220 | https://e.gitee.com/opengaussorg/dashboard?issue=I9FH3U                                                                                                                                   |
-| #I9HZ82 备库日志回放能力增强，新增一种日志分发算法 | https://gitcode.com/opengauss/openGauss-server/pulls/5136 | https://e.gitee.com/opengaussorg/dashboard?issue=I9HZ82                                                                                                                                   |
+| 延迟备机优化需求                                   | https://gitcode.com/opengauss/openGauss-server/pull/6959 | https://gitcode.com/opengauss/openGauss-server/issues/840<br/>https://gitcode.com/opengauss/openGauss-server/issues/1397<br/>https://gitcode.com/opengauss/openGauss-server/issues/1932 |
+| 添加 gs_lwlock_status 视图                         | https://gitcode.com/opengauss/openGauss-server/pull/6959 | https://e.gitee.com/opengaussorg/dashboard?issue=I9FH3U                                                                                                                                   |
+| #I9HZ82 备库日志回放能力增强，新增一种日志分发算法 | https://gitcode.com/opengauss/openGauss-server/pull/6959 | https://gitcode.com/opengauss/openGauss-server/issues/6332                                                                                                                                   |
 
 ## 升级路径支持
 
