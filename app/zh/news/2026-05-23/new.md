@@ -1,6 +1,7 @@
 ---
 title: 'openGauss全方位亮相 KADC 2026，引领数据库AI原生演进新范式'
 date: '2026-05-23'
+banner: '/category/news/2026-05-23/banner.jpg'
 tags: ['KADC']
 category: 'news'
 author: 'openGauss'

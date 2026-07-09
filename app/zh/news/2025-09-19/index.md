@@ -1,6 +1,7 @@
 ---
 title: '教育行业新答卷，海量数据助力甘肃省教育厅全栈国产化实践'
 date: '2025-09-19'
+banner: '/category/news/2025-09-19/banner.png'
 tags: ['theme']
 author: 'openGauss'
 category: 'news'

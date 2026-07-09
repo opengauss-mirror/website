@@ -1,6 +1,7 @@
 ---
 title: '活动报名 | openEuler & openGauss Meetup 西安站'
 date: '2025-09-17'
+banner: '/category/news/2025-09-17/banner.png'
 tags: ['theme']
 author: 'openGauss'
 category: 'news'

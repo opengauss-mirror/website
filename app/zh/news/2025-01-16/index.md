@@ -1,6 +1,7 @@
 ---
 title: 'openGauss 与 ByConity 携手构建高效 HTAP 方案，数据处理的强大联盟'
 date: '2025-01-16'
+banner: '/category/news/2025-01-16/banner.png'
 tags: ['theme']
 author: 'openGauss'
 category: 'news'

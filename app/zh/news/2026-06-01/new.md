@@ -1,6 +1,7 @@
 ---
 title: '天翼云联合鲲鹏、openGauss打造智能体长期记忆方案，准确率提升37%，Token消耗降低68%'
 date: '2026-06-01'
+banner: '/category/news/2026-06-01/banner.png'
 tags: ['theme']
 category: 'news'
 author: 'openGauss'

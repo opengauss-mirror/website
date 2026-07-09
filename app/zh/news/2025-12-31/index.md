@@ -1,6 +1,7 @@
 ---
 title: 'openGauss 5.0.0 LTS版本即将停止维护公告'
 date: '2025-12-31'
+banner: '/category/news/2025-12-31/banner.png'
 tags: ['theme']
 category: 'news'
 author: 'openGauss'

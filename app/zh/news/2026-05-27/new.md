@@ -1,6 +1,7 @@
 ---
 title: 'openGauss又添两家社区伙伴数据库产品通过国家安全可靠测评'
 date: '2026-05-27'
+banner: '/category/news/2026-05-27/banner.png'
 tags: ['社区动态']
 category: 'news'
 author: 'openGauss'

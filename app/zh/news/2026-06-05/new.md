@@ -1,6 +1,7 @@
 ---
 title: '赛题解读｜openGauss x CCF开源创新大赛:10w激励金，开启数据库核心能力挑战！'
 date: '2026-06-05'
+banner: '/category/news/2026-06-05/banner.jpg'
 tags: ['theme']
 category: 'news'
 author: 'openGauss'

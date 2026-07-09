@@ -3,7 +3,7 @@ title: 'openGauss Tools 7.0.0-RC3 版本更改工具发布包名公告'
 date: '2026-01-27'
 tags: ['theme']
 category: 'news'
-banner: ''
+banner: '/category/news/2026-01-27/0127_7.0.0-RC3.png'
 author: 'openGauss'
 summary: 'openGauss Tools 7.0.0-RC3 版本更改工具发布包名公告'
 ---

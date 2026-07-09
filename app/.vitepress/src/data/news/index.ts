@@ -1,6 +1,4 @@
-import newsEn from './news-en';
-import newsZh from './news-zh';
-export default {
-  zh: newsZh,
-  en: newsEn,
-};
+import { reactive } from 'vue'
+import { data as newsZh } from '~@/data/news/news-zh.data'
+import { data as newsEn } from '~@/data/news/news-en.data'
+export default reactive({ zh: newsZh, en: newsEn })

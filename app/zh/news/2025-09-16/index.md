@@ -1,6 +1,7 @@
 ---
 title: '亮点来袭 | openGauss Meetup 成都站'
 date: '2025-09-16'
+banner: '/category/news/2025-09-16/banner.png'
 tags: ['theme']
 author: 'openGauss'
 category: 'news'
