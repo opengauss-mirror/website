@@ -1,0 +1,62 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://opengauss.org/zh/cookies/#webpage",
+      "url": "https://opengauss.org/zh/cookies/",
+      "name": "Cookie使用声明",
+      "description": "了解openGauss社区Cookie及浏览器本地存储等类似技术的使用场景，包括登录验证、偏好设置与统计分析，以及如何管理、删除Cookie和请勿追踪（Do Not Track）说明。",
+      "inLanguage": "zh-CN",
+      "isPartOf": {
+        "@id": "https://opengauss.org/#website"
+      },
+      "about": {
+        "@id": "https://opengauss.org/#organization"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://opengauss.org/#website",
+      "url": "https://opengauss.org/",
+      "name": "openGauss",
+      "description": "openGauss开源数据库社区官网",
+      "inLanguage": "zh-CN",
+      "publisher": {
+        "@id": "https://opengauss.org/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://opengauss.org/#organization",
+      "name": "openGauss",
+      "alternateName": "openGauss社区",
+      "url": "https://opengauss.org/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://opengauss.org/category/brand/view/logo1.svg"
+      },
+      "sameAs": [
+        "https://opengauss.org/"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://opengauss.org/zh/cookies/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首页",
+          "item": "https://opengauss.org/zh/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Cookie使用声明",
+          "item": "https://opengauss.org/zh/cookies/"
+        }
+      ]
+    }
+  ]
+}
