@@ -1,6 +1,7 @@
 ---
 title: '2024 openGauss开源社区年度运营报告'
 date: '2025-02-19'
+banner: '/category/news/2025-02-19/banner.jpg'
 tags: ['theme']
 author: 'openGauss'
 category: 'news'

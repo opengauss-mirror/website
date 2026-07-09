@@ -1,6 +1,7 @@
 ---
 title: '汇聚数据库创新力量 | 2024年度openGauss领先商业实践案例出炉！'
 date: '2025-01-22'
+banner: '/category/news/2025-01-22/banner.jpg'
 tags: ['theme']
 author: 'openGauss'
 category: 'news'

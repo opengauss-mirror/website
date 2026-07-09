@@ -1,6 +1,7 @@
 ---
 title: 'openGauss 首届委员会线下联合例会：融合用户视角，共话技术规划'
 date: '2025-02-25'
+banner: '/category/news/2025-02-25/banner.jpg'
 tags: ['theme']
 author: 'openGauss'
 category: 'news'

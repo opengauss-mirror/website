@@ -3,7 +3,7 @@ title: 'openGauss6.0.0版本更改数据库发布包名公告'
 date: '2024-08-14'
 tags: ['theme']
 category: 'news'
-banner: ''
+banner: '/category/news/2024-08-14/banner.jpg'
 author: 'openGauss'
 summary: 'openGauss6.0.0版本更改数据库发布包名公告'
 ---

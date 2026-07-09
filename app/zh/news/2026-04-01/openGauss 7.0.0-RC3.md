@@ -1,6 +1,7 @@
 ---
 title: '重磅！openGauss 7.0.0-RC3 正式发布，这几大特性不容错过'
 date: '2026-03-31'
+banner: '/category/news/2026-03-31/banner.png'
 tags: ['theme']
 category: 'news'
 author: 'openGauss'

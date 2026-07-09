@@ -1,6 +1,7 @@
 ---
 title: 'KADC 码上报名 | 数据库下一代演进：openGauss AI原生实践论坛'
 date: '2026-05-15'
+banner: '/category/news/2026-05-15/banner.png'
 tags: ['KADC']
 category: 'news'
 author: 'openGauss'

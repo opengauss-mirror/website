@@ -1,6 +1,7 @@
 ---
 title: 'openGauss出席南大通用技术云享会，共话开源数据库开放共赢生态'
 date: '2026-06-27'
+banner: '/category/news/2026-06-27/banner.png'
 tags: ['theme']
 category: 'news'
 author: 'openGauss'

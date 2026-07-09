@@ -1,6 +1,7 @@
 ---
 title: '成为openGauss Meetup联合主办方，获得社区资源+曝光双扶持！'
 date: '2026-02-28'
+banner: '/category/news/2026-02-28/banner.png'
 tags: ['theme']
 category: 'news'
 author: 'openGauss'

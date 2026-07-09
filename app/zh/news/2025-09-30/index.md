@@ -1,6 +1,7 @@
 ---
 title: 'openGauss 7.0.0-RC2 正式发布'
 date: '2025-09-30'
+banner: '/category/news/2025-09-30/banner.jpg'
 tags: ['theme']
 author: 'openGauss'
 category: 'news'

@@ -1,6 +1,7 @@
 ---
 title: 'openGauss 3.0 LTS生命周期截止公告'
 date: '2025-05-06'
+banner: '/category/news/2025-05-06/banner.png'
 tags: ['theme']
 category: 'news'
 author: 'openGauss'

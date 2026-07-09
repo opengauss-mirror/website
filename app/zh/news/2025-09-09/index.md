@@ -1,6 +1,7 @@
 ---
 title: '报名开启 | openGauss Meetup 成都站'
 date: '2025-09-09'
+banner: '/category/news/2025-09-09/banner.png'
 tags: ['theme']
 author: 'openGauss'
 category: 'news'

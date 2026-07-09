@@ -1,6 +1,7 @@
 ---
 title: '1713.72 分！openGauss+鲲鹏，HyBench打榜第一航'
 date: '2025-07-23'
+banner: '/category/news/2025-07-23/banner.png'
 tags: ['theme']
 author: 'openGauss'
 category: 'news'

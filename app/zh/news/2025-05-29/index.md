@@ -1,6 +1,7 @@
 ---
 title: '润和软件深度解读“基于鲲鹏RAG+openGauss智能体方案'
 date: '2025-05-29'
+banner: '/category/news/2025-05-29/banner.png'
 tags: ['theme']
 author: 'openGauss'
 category: 'news'

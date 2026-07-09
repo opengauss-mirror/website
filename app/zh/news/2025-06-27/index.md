@@ -1,6 +1,7 @@
 ---
 title: 'openGauss 开源五载聚产业，技术引领创未来'
 date: '2025-06-27'
+banner: '/category/news/2025-06-27/banner.png'
 tags: ['theme']
 author: 'openGauss'
 category: 'news'

@@ -1,6 +1,7 @@
 ---
 title: 'openGauss向量驱动新智能，RAC多写破局，内核升级再启航'
 date: '2025-06-30'
+banner: '/category/news/2025-06-30/banner.png'
 tags: ['theme']
 author: 'openGauss'
 category: 'news'

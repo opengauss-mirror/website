@@ -1,6 +1,7 @@
 ---
 title: 'openGauss 社区 2026 年 3 月运作报告'
 date: '2026-04-09'
+banner: '/category/news/2026-04-09/banner.png'
 tags: ['社区运作报告']
 category: 'news'
 author: 'openGauss'
