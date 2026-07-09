@@ -4,9 +4,7 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "predev": "node scripts/readEventsFrontmatter.js",
     "dev": "vitepress dev app",
-    "prebuild": "node scripts/readEventsFrontmatter.js",
     "build": "pnpm gen:blogs && pnpm gen:news && vitepress build app",
     "postbuild": "node scripts/generate-llms-txt.js",
     "build:geo": "vitepress build app --exclude=**/blogs/**/*,**/events/**/*,**/news/**/*",
