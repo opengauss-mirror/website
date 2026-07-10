@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, nextTick, onMounted, ref, watch } from 'vue';
+import { computed, nextTick, onMounted, provide, ref, useTemplateRef, watch } from 'vue';
 import type { Component } from 'vue';
 import { useData, useRoute } from 'vitepress';
 
@@ -31,6 +31,10 @@ import { useScreen } from '~@/composables/useScreen';
 
 const { frontmatter, lang } = useData();
 const { lePadV } = useScreen();
+
+const scrollContainerRef = useTemplateRef('scrollContainerRef');
+
+provide('scrollContainerRef', scrollContainerRef);
 
 const locale = computed(() => {
   return lang.value === 'zh' ? zhCn : en;
@@ -81,28 +85,30 @@ watch(
 </script>
 
 <template>
-  <AppHeader>
-    <LayoutEventDetailHeader v-if="lePadV && frontmatter?.category === 'events'" />
-  </AppHeader>
-  <el-config-provider :locale="locale">
-    <main>
-      <SeoBox :seo-data="seoConfig[lang]?.home" />
-      <component :is="comp" v-if="isCustomLayout"></component>
-      <Content v-else />
-      <AppFloat />
-    </main>
-  </el-config-provider>
-  <OPlusConfigProvider :locale="lang">
-    <OCookieNotice
-      ref="cookieNoticeRef"
-      :enable-grid="true"
-      v-model:visible="cookieStore.isNoticeVisible"
-      community="openGauss"
-      :detail-url="`/${lang}/cookies/`"
-      :cookie-domain="COOKIE_DOMAIN"
-    />
-  </OPlusConfigProvider>
-  <AppFooter />
+  <div id="anchor-sticky-demo" ref="scrollContainerRef" style="position: relative; height: 100vh; overflow-y: auto;">
+    <AppHeader>
+      <LayoutEventDetailHeader v-if="lePadV && frontmatter?.category === 'events'" />
+    </AppHeader>
+    <el-config-provider :locale="locale">
+      <main>
+        <SeoBox :seo-data="seoConfig[lang]?.home" />
+        <component :is="comp" v-if="isCustomLayout"></component>
+        <Content v-else />
+        <AppFloat />
+      </main>
+    </el-config-provider>
+    <OPlusConfigProvider :locale="lang">
+      <OCookieNotice
+        ref="cookieNoticeRef"
+        :enable-grid="true"
+        v-model:visible="cookieStore.isNoticeVisible"
+        community="openGauss"
+        :detail-url="`/${lang}/cookies/`"
+        :cookie-domain="COOKIE_DOMAIN"
+      />
+    </OPlusConfigProvider>
+    <AppFooter />
+  </div>
   <ClientOnly>
     <AppTour />
   </ClientOnly>
@@ -136,6 +142,20 @@ watch(
   --layout-header-height: 80px;
 
   --layout-new-content-max-width: 1616px;
+
+  --app-header-height: 72px;
+
+  @include respond-to('laptop') {
+    --app-header-height: 64px;
+  }
+
+  @include respond-to('pad_h') {
+    --app-header-height: 56px;
+  }
+
+  @include respond-to('<=pad_v') {
+    --app-header-height: 48px;
+  }
 
   @include respond-to('<=laptop') {
     --layout-content-max-width: 100%;

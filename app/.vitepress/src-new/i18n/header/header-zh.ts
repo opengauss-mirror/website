@@ -356,6 +356,12 @@ export default {
               DESCRIPTION: '基于openGauss的金融解决方案',
               URL: '/finance/',
             },
+            {
+              NAME: '政策规则',
+              DESCRIPTION: '了解openGauss社区的行为准则、AI贡献策略等相关内容',
+              TAG: TAG_TYPE.NEW,
+              URL: '/charter/',
+            },
           ],
         },
         {

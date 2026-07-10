@@ -102,6 +102,9 @@ const rootStyle = computed(() => {
     @media screen and (max-width: 840px) {
       height: 120px;
     }
+    @media screen and (max-width: 600px) {
+      height: auto;
+    }
     .banner-text {
       display: flex;
       flex-direction: column;

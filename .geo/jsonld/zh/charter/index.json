@@ -1,0 +1,63 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://opengauss.org/zh/charter/#webpage",
+      "url": "https://opengauss.org/zh/charter/",
+      "name": "政策规则",
+      "description": "了解openGauss社区行为准则与生成式AI工具使用及开源贡献策略，涵盖社区参与者行为规范、维护者职责、AI辅助贡献的透明披露、CLA合规、关键元数据记录及审查合入规则。",
+      "inLanguage": "zh-CN",
+      "dateModified": "2026-07-15",
+      "isPartOf": {
+        "@id": "https://opengauss.org/#website"
+      },
+      "about": {
+        "@id": "https://opengauss.org/#organization"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://opengauss.org/#website",
+      "url": "https://opengauss.org/",
+      "name": "openGauss",
+      "description": "openGauss开源数据库社区官网",
+      "inLanguage": "zh-CN",
+      "publisher": {
+        "@id": "https://opengauss.org/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://opengauss.org/#organization",
+      "name": "openGauss",
+      "alternateName": "openGauss社区",
+      "url": "https://opengauss.org/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://opengauss.org/assets/logo_dark.CElWqwW0.svg"
+      },
+      "sameAs": [
+        "https://opengauss.org/"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://opengauss.org/zh/charter/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首页",
+          "item": "https://opengauss.org/zh/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "政策规则",
+          "item": "https://opengauss.org/zh/charter/"
+        }
+      ]
+    }
+  ]
+}
