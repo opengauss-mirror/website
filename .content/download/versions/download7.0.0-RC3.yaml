@@ -315,7 +315,7 @@
   system: Centos 7.6 (x86_64)
 - category: openGauss Server
   name_zh: openGauss_7.0.0-RC3 极简版
-  size: 1.25GB
+  size: 2.04GB
   edition: simple
   down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/openEuler22.03/x86/openGauss-Docker-7.0.0-RC3-x86_64.tar
   sha_code: c2bea388b9ef0e9c8b9198ed5689f1bcb4fda081e2e9976fbe7727f3a351bb8a
@@ -326,7 +326,7 @@
   system: Docker (x86_64)
 - category: openGauss Server
   name_zh: openGauss_7.0.0-RC3 轻量版
-  size: 1.08GB
+  size: 1.11GB
   edition: lite
   down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/openEuler22.03/x86/openGauss-Lite-Docker-7.0.0-RC3-x86_64.tar
   sha_code: 350ef634e7c9133ce2d530c51d4037d6aa97c00bda352444cd65264bfb2860e9
@@ -337,7 +337,7 @@
   system: Docker (x86_64)
 - category: openGauss Server
   name_zh: openGauss_7.0.0-RC3 极简版
-  size: 1.33GB
+  size: 1.66GB
   edition: simple
   down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/openEuler22.03/arm/openGauss-Docker-7.0.0-RC3-aarch64.tar
   sha_code: ff6d836aae1876533ada9c724a411e708d63defe62620c7af31c4e68aca0dfe2
@@ -381,7 +381,7 @@
   system: Docker (AArch64)
 - category: openGauss Server
   name_zh: openGauss_7.0.0-RC3 轻量版
-  size: 1.16GB
+  size: 1.20GB
   edition: lite
   down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0-RC3/openEuler22.03/arm/openGauss-Lite-Docker-7.0.0-RC3-aarch64.tar
   sha_code: 0e13c13edb7a294c17bdcfe3cc3932ed32c3a03bdee057898b8ad4b0872517e8
