@@ -52,6 +52,9 @@ openGauss-website/
 │       └── src-new/                 # 新版源码（所有新功能必须用此路径）
 │           ├── api/ @types/ components/ composables/ i18n/ stores/ utils/ views/
 │           └── tokens/
+├── .agents/                         # AI 技能（Skills，按需 Read）
+│   └── skills/
+│       └── frontmatter-data-extractor/  # 将硬编码静态配置数据提取为 .content/ 下的 yaml
 ├── scripts/                         # gen:blogs / gen:news / 事件 frontmatter 预处理
 ├── rules/                           # 代码规范（工具无关，本文件索引）
 └── AGENTS.md                        # 本文件
@@ -124,6 +127,12 @@ llms-full.txt由脚本 `app/.vitepress/config.ts` 的 `buildEnd` 钩子调用 `g
 | API 与状态 | [rules/api-and-state.md](rules/api-and-state.md) |
 | 样式规范 | [rules/styling.md](rules/styling.md) |
 | Git 工作流 | [rules/git.md](rules/git.md) |
+
+### Skills（AI 技能，按需 Read）
+
+| 技能 | 文件 | 触发场景 |
+|------|------|---------|
+| frontmatter-data-extractor | [.agents/skills/frontmatter-data-extractor/SKILL.md](.agents/skills/frontmatter-data-extractor/SKILL.md) | 将 Vue 组件 / TS 数据文件中硬编码的静态配置型数据（文案、链接、图片路径、轮播实体等）提取为 `.content/` 下的 yaml；触发词："提取数据到 yaml"、"把数据转到 .content"、"数据外置"、"yaml 数据化"、"把页面数据提取到 yaml 里" |
 
 ### 红线（最高频踩坑）
 
