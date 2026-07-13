@@ -1,0 +1,148 @@
+# 支持工具配置（中文） / Support Tools Configuration (Chinese)
+#
+# 字段说明：
+#   id       工具分类标识
+#   name     分类名称
+#   children 分类下的工具列表
+#     iden    工具所属分类标识（用于页面 tag 显示）
+#     name    工具名称
+#     desc    工具描述
+#     address 源码/官网地址
+#     guide   操作指南链接（可选）
+#     site    是否为官网链接（可选，true 表示 address 指向官网而非源码）
+
+- id: connectors
+  name: 标准SQL及驱动
+  children:
+    - iden: connectors
+      name: psycopg2
+      desc: openGauss Python驱动（仅限Linux）
+      address: https://gitcode.com/opengauss/openGauss-connector-python-psycopg2/
+      guide: https://www.psycopg.org/docs/
+    - iden: connectors
+      name: py-og
+      desc: openGauss Python驱动（纯Python，可跨平台）
+      address: https://gitcode.com/opengauss/openGauss-connector-python-pyog
+      guide: https://magicstack.github.io/asyncpg/current/
+    - iden: connectors
+      name: go-pq
+      desc: openGauss Go语言驱动
+      address: https://gitcode.com/opengauss/openGauss-connector-go-pq
+      guide: https://gitcode.com/opengauss/openGauss-connector-go-pq/blob/master/README.cn.md
+
+- id: middleware
+  name: 数据访问中间件
+  children:
+    - iden: middleware
+      name: ShardingSphere
+      desc: 分布式数据库中间件
+      address: https://github.com/apache/shardingsphere
+      guide: https://shardingsphere.apache.org/document/current/en/overview/
+    - iden: middleware
+      name: HAProxy
+      desc: 数据库读写负载均衡
+      address: https://github.com/haproxy/haproxy
+      guide: https://www.haproxy.com/blog/webinar-introduction-to-haproxy/
+    - iden: middleware
+      name: vip-manager
+      desc: 自动IP故障转移
+      address: https://github.com/cybertec-postgresql/vip-manager
+      guide: https://github.com/cybertec-postgresql/vip-manager#Configuration
+
+- id: management
+  name: 集群管理软件
+  children:
+    - iden: management
+      name: Kubernetes
+      desc: 一个开源的容器集群管理平台
+      address: https://github.com/kubernetes/kubernetes
+      guide: https://kubernetes.io/docs/home/
+    - iden: management
+      name: Patroni
+      desc: 自动主备切换，提升数据库可用性
+      address: https://github.com/zalando/patroni
+      guide: https://patroni.readthedocs.io/en/latest/
+
+- id: migrationTools
+  name: 数据导入导出工具
+  children:
+    - iden: migrationTools
+      name: Ora2Pg
+      desc: Oracle到openGauss数据迁移工具
+      address: https://gitcode.com/opengauss/openGauss-tools-ora2og
+      guide: https://gitcode.com/opengauss/openGauss-tools-ora2og/blob/master/README.md
+    - iden: migrationTools
+      name: pg_chameleon
+      desc: MySQL到openGauss数据迁移工具
+      address: https://gitcode.com/opengauss/openGauss-tools-chameleon
+      guide: https://gitcode.com/opengauss/openGauss-tools-chameleon/blob/master/chameleon%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.md
+    - iden: migrationTools
+      name: pgloader
+      desc: 一个数据导入工具，使用COPY命令将数据导入到openGauss
+      address: https://gitcode.com/opengauss/openGauss-tools-loader
+      guide: https://gitcode.com/opengauss/openGauss-tools-loader/blob/master/pgloader%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.pdf
+
+- id: dataTools
+  name: 数据复制/同步工具
+  children:
+    - iden: dataTools
+      name: JdbcPgBackup
+      desc: 基于Java的跨平台数据导入导出工具，类似于pg_dump/pg_restore
+      address: https://github.com/tig100/JdbcPgBackup
+    - iden: dataTools
+      name: Database-Sync
+      desc: 基于Java开发，功能强大、配置灵活的数据库之间同步工具
+      address: https://github.com/GongDexing/database-sync
+    - iden: dataTools
+      name: Debezium
+      desc: 为捕获数据更改（Change Data Capture, CDC）提供了一个低延迟的流式处理平台
+      address: https://github.com/debezium/debezium
+      guide: /zh/blogs/lihongda/Debezium-Adapt-openGauss.html
+
+- id: dataModel
+  name: 运行视图
+  children:
+    - iden: dataModel
+      name: PowerDesigner
+      desc: 灵活的分析和设计特性允许使用一种结构化的方法有效地创建数据库或数据仓库
+      address: https://www.sap.com/products/database-data-management.html
+      guide: /zh/blogs/wangrui/PowerDesigner_for_openGauss.html
+      site: true
+
+- id: clientTools
+  name: 客户端工具
+  children:
+    - iden: clientTools
+      name: DBeaver
+      desc: 开源多数据库客户端工具
+      address: https://github.com/dbeaver/dbeaver
+      guide: /zh/blogs/justbk/2020-10-30_dbeaver_for_openGauss.html
+    - iden: clientTools
+      name: Data Studio
+      desc: openGauss官方客户端工具
+      address: https://gitcode.com/opengauss/DataStudio
+      guide: https://docs.opengauss.org/zh/docs/5.0.0/docs/AboutopenGauss/openGauss客户端工具DataStudio.html
+      site: true
+
+- id: devOpsTools
+  name: 监控运维系统
+  children:
+    - iden: devOpsTools
+      name: Zabbix
+      desc: 实时监控的IT组件和服务,监控数据库需要额外适配
+      address: https://github.com/zabbix/zabbix
+      guide: /zh/blogs/justbk/2021-03-03_zabbix_for_openGauss.html
+    - iden: devOpsTools
+      name: Prometheus
+      desc: 开源监控系统，在记录纯数字时间序列方面表现非常好
+      address: https://github.com/prometheus/prometheus
+      guide: https://prometheus.io/docs/introduction/overview/
+
+- id: kernelExtensions
+  name: 内核扩展
+  children:
+    - iden: kernelExtensions
+      name: 禹贡
+      desc: 提供专业的GIS（Geographic Information System）能力
+      address: https://gitcode.com/opengauss/Yukon
+      guide: https://yukon.supermap.io/

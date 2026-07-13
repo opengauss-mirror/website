@@ -5,7 +5,7 @@ import { useData } from 'vitepress';
 import { useCommon } from '@/stores/common';
 
 import AppContent from '@/components/AppContent.vue';
-import SupportToolsConfig from '@/data/supporttools';
+import supportToolsContent from '#content/tools';
 
 import BannerLevel2 from '@/components/BannerLevel2.vue';
 import Banner from '@/assets/illustrations/banner-secondary.png';
@@ -26,7 +26,7 @@ const supporttoolsInfo = computed(() => {
   return {
     panoramaImg: isZh.value ? SupportPanoramaZh : SupportPanoramaEn,
     panoramaImgDark: isZh.value ? SupportPanoramaZh_dark : SupportPanoramaEn_dark,
-    ToolsData: isZh.value ? SupportToolsConfig.zh : SupportToolsConfig.en,
+    toolsData: isZh.value ? supportToolsContent.zh : supportToolsContent.en,
     isDark: commonStore.theme === 'dark' ? true : false,
   };
 });
@@ -43,7 +43,7 @@ const supporttoolsInfo = computed(() => {
     </div>
 
     <div class="tool-content">
-      <OCard v-for="item in supporttoolsInfo.ToolsData" :key="item.id" class="tool-item">
+      <OCard v-for="item in supporttoolsInfo.toolsData" :key="item.id" class="tool-item">
         <h3 class="title">{{ item.name }}</h3>
         <div :id="item.id" class="tool-item-detail">
           <div v-for="subitem in item.children" :key="subitem.iden" class="item-box">
