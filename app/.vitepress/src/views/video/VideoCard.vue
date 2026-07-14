@@ -10,11 +10,11 @@ interface DataSource {
   id: string;
   name: string;
   poster: string;
-  displayCount: number;
-  data: Array<{
+  display_count: number;
+  videos: Array<{
     title: string;
     author: string;
-    videoUrl: string;
+    video_url: string;
   }>;
 }
 
@@ -34,7 +34,7 @@ const props = defineProps({
 const i18n = useI18n();
 const viewAll = ref(props.isToggle);
 const displayData = computed(() => {
-  return viewAll.value ? props.dataSource.data : props.dataSource.data.slice(0, props.dataSource.displayCount);
+  return viewAll.value ? props.dataSource.videos : props.dataSource.videos.slice(0, props.dataSource.display_count);
 });
 </script>
 
@@ -46,8 +46,8 @@ const displayData = computed(() => {
     </h2>
     <!-- card -->
     <div class="news-panel-content">
-      <OCard v-for="item in displayData" :key="item.title" class="video-item shadow" shadow="hover">
-        <a :href="item.videoUrl" target="_blank" rel="noopener noreferrer">
+        <OCard v-for="item in displayData" :key="item.title" class="video-item shadow" shadow="hover">
+          <a :href="item.video_url" target="_blank" rel="noopener noreferrer">
           <div class="video-item-link">
             <div class="cover" :style="`background:url(${dataSource.poster}) no-repeat center/cover`">
               <p class="title">{{ item.title }}</p>
@@ -58,7 +58,7 @@ const displayData = computed(() => {
       </OCard>
     </div>
     <!-- view all -->
-    <p v-if="dataSource.data.length > dataSource.displayCount" class="tc">
+    <p v-if="dataSource.videos.length > dataSource.display_count" class="tc">
       <OButton type="text" size="small" animation @click="viewAll = !viewAll">
         {{ viewAll ? i18n.connect.COLLAPSE : i18n.connect.VIEW_MORE }}
         <template #suffixIcon> <IconChevronUp v-if="viewAll" /><IconChevronDown v-else /> </template>
