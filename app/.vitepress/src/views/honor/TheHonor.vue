@@ -3,7 +3,7 @@ import { computed, ref } from 'vue';
 
 import BannerLevel2 from '@/components/BannerLevel2.vue';
 import AppContent from '@/components/AppContent.vue';
-import honorData from '@/data/honor';
+import honorContent from '#content/honor';
 import { windowOpen } from '@/shared/utils';
 import useWindowResize from '@/components/hooks/useWindowResize';
 
@@ -15,6 +15,8 @@ import opengaussIcon from '@/assets/category/honor/opengauss-icon.png';
 import IconChecked from '~icons/app/icon-checked.svg';
 import IconUnchecked from '~icons/app/icon-unchecked.svg';
 import IconRight from '~icons/app/icon-arrow-right.svg';
+
+const honorData = honorContent.zh;
 
 const activeYear = ref('2024');
 const showNumber = ref(-1);
@@ -46,7 +48,7 @@ const getCertificateBoxGridTemplateColumns = (length: number, isMobile: boolean)
 <template>
   <BannerLevel2 :background-image="banner" :title="honorData.title" :illustration="illustration" />
   <ul class="h5-time">
-    <li v-for="item in honorData.honorList" :key="item.id" :class="activeYear === item.id ? 'active' : ''" @click="useClickTab(item.id)">
+    <li v-for="item in honorData.honor_list" :key="item.id" :class="activeYear === item.id ? 'active' : ''" @click="useClickTab(item.id)">
       {{ item.id }}
     </li>
   </ul>
@@ -54,7 +56,7 @@ const getCertificateBoxGridTemplateColumns = (length: number, isMobile: boolean)
     <div class="honor-time">
       <ul class="o-timeline-list pc-time">
         <li
-          v-for="item in honorData.honorList"
+          v-for="item in honorData.honor_list"
           :key="item.id"
           class="o-timeline-item"
           :class="activeYear === item.id ? 'active' : ''"
@@ -67,7 +69,7 @@ const getCertificateBoxGridTemplateColumns = (length: number, isMobile: boolean)
       </ul>
     </div>
     <div class="content">
-      <template v-for="item in honorData.honorList" :key="item.id">
+        <template v-for="item in honorData.honor_list" :key="item.id">
         <div
           v-show="activeYear === item.id"
           class="certificate-box"
@@ -76,7 +78,7 @@ const getCertificateBoxGridTemplateColumns = (length: number, isMobile: boolean)
           <OCard v-for="(subItem, index) in item.data" :key="subItem.name" class="certificate-item">
             <p>{{ subItem.name }}</p>
             <OButton v-if="subItem.href" class="detail-btn" type="text" animation size="nomral" @click="clickBtn(subItem.href)">
-              {{ honorData.readNews }}
+              {{ honorData.read_news }}
               <template #suffixIcon>
                 <OIcon class="detail-icon">
                   <IconRight />
@@ -84,7 +86,7 @@ const getCertificateBoxGridTemplateColumns = (length: number, isMobile: boolean)
               </template>
             </OButton>
             <OButton v-if="subItem.img" class="detail-btn" type="text" animation size="nomral" @click="clickDetail(index)">
-              {{ honorData.viewCertificate }}
+              {{ honorData.view_certificate }}
               <template #suffixIcon>
                 <OIcon class="detail-icon">
                   <IconRight />
@@ -97,26 +99,26 @@ const getCertificateBoxGridTemplateColumns = (length: number, isMobile: boolean)
       </template>
 
       <div class="excellent-panel">
-        <template v-for="item in honorData.honorList" :key="item.id">
+      <template v-for="item in honorData.honor_list" :key="item.id">
           <template v-if="activeYear === item.id">
             <!-- openGauss 年度优秀开发者 -->
-            <div v-if="item.developerData">
+            <div v-if="item.developer_data">
               <h1 class="honor-title">
-                {{ honorData.excellentDeveloperTitle }}
+                {{ honorData.excellent_developer_title }}
               </h1>
               <div class="developer-wrap">
-                <div class="developer-card" v-for="(devItem, idx) in item.developerData" :key="idx">
+                <div class="developer-card" v-for="(devItem, idx) in item.developer_data" :key="idx">
                   <h2 v-if="devItem.name" class="developer-title">
                     {{ devItem.name }}
                   </h2>
                   <ul class="member-list">
-                    <li v-for="(user, i) in devItem.mebmers" :key="i">
+                    <li v-for="(user, i) in devItem.members" :key="i">
                       <img class="avatar" :src="user.avatar" :alt="user.name" />
                       <p class="m-name" :title="user.name">{{ user.name }}</p>
                       <p class="m-company m-company-multi-line" :title="user.company">
                         {{ user.company }}
                       </p>
-                      <p class="links" v-if="user.showEmail">
+                      <p class="links" v-if="user.show_email">
                         <a :href="`mailto:${user.email}`"><img class="img-email" :src="emailImg" /></a>
                       </p>
                     </li>
@@ -125,19 +127,19 @@ const getCertificateBoxGridTemplateColumns = (length: number, isMobile: boolean)
               </div>
 
               <div class="rules">
-                <div v-for="(rule, i) in item.devoloperRules" :key="i" :class="rule.type === 'tip' ? 'tip' : ''">
+                <div v-for="(rule, i) in item.devoloper_rules" :key="i" :class="rule.type === 'tip' ? 'tip' : ''">
                   {{ rule.value }}
                 </div>
               </div>
             </div>
 
             <!-- openGauss 年度优秀SIG -->
-            <div v-if="item.sigData">
+            <div v-if="item.sig_data">
               <h1 class="honor-title" :class="item.id === '2022' ? 'common-title-2022' : 'common-title'">
-                {{ honorData.excellentSigTitle }}
+                {{ honorData.excellent_sig_title }}
               </h1>
               <div class="sig-wrap">
-                <div v-for="sig in item.sigData" :key="sig.name" class="sig-card">
+                <div v-for="sig in item.sig_data" :key="sig.name" class="sig-card">
                   <h1 class="sig-title" :title="sig.name">{{ sig.name }}</h1>
                   <OButton class="repo-detail-btn" type="text" animation size="nomral" @click="clickBtn(sig.href)">
                     项目地址
@@ -151,54 +153,54 @@ const getCertificateBoxGridTemplateColumns = (length: number, isMobile: boolean)
               </div>
 
               <div class="rules">
-                <div v-for="(rule, i) in item.sigRules" :key="i" :class="rule.type === 'tip' ? 'tip' : ''">
+                <div v-for="(rule, i) in item.sig_rules" :key="i" :class="rule.type === 'tip' ? 'tip' : ''">
                   {{ rule.value }}
                 </div>
               </div>
             </div>
 
             <!-- openGauss 优秀企业贡献奖 -->
-            <div v-if="item.enterpriseData">
+            <div v-if="item.enterprise_data">
               <h1 class="honor-title common-title">
-                {{ item.excellentEnterpriseTitle }}
+                {{ item.excellent_enterprise_title }}
               </h1>
               <div class="enterprise-wrap">
-                <div v-for="enterprise in item.enterpriseData" :key="enterprise.firstName + enterprise.secondName" class="enterprise-card">
+                <div v-for="enterprise in item.enterprise_data" :key="enterprise.first_name + enterprise.second_name" class="enterprise-card">
                   <img class="gauss-icon" :src="opengaussIcon" />
                   <p class="enterprise-title">荣誉证书</p>
-                  <div class="enterprise-title-wrap" :title="enterprise.firstName + enterprise.secondName">
+                  <div class="enterprise-title-wrap" :title="enterprise.first_name + enterprise.second_name">
                     <template v-if="isMobile">
-                      <p class="enterprise-title">{{ enterprise.firstName }}{{ enterprise.secondName }}</p>
+                      <p class="enterprise-title">{{ enterprise.first_name }}{{ enterprise.second_name }}</p>
                     </template>
                     <template v-else>
                       <p class="enterprise-title">
-                        {{ enterprise.firstName }}
+                        {{ enterprise.first_name }}
                       </p>
                       <p class="enterprise-title">
-                        {{ enterprise.secondName }}
+                        {{ enterprise.second_name }}
                       </p>
                     </template>
                   </div>
                   <p class="enterprise-prize-title">
-                    {{ item.excellentEnterpriseTitle }}
+                    {{ item.excellent_enterprise_title }}
                   </p>
                 </div>
               </div>
 
               <div class="rules">
-                <div v-for="(rule, i) in item.enterpriseRules" :key="i" :class="rule.type === 'tip' ? 'tip' : ''">
+                <div v-for="(rule, i) in item.enterprise_rules" :key="i" :class="rule.type === 'tip' ? 'tip' : ''">
                   {{ rule.value }}
                 </div>
               </div>
             </div>
 
             <!-- openGauss 优秀个人贡献奖 -->
-            <div v-if="item.personData">
+            <div v-if="item.person_data">
               <h1 class="honor-title common-title">
-                {{ item.excellentPersonTitle }}
+                {{ item.excellent_person_title }}
               </h1>
               <div class="person-wrap">
-                <div v-for="(person, i) in item.personData" :key="i" class="person-card" @mouseenter="showPersonCard(i)" @mouseleave="showPersonCard(-1)">
+                <div v-for="(person, i) in item.person_data" :key="i" class="person-card" @mouseenter="showPersonCard(i)" @mouseleave="showPersonCard(-1)">
                   <div>
                     <img class="avatar" :src="person.avatar" :alt="person.name" />
                   </div>
@@ -218,7 +220,7 @@ const getCertificateBoxGridTemplateColumns = (length: number, isMobile: boolean)
               </div>
 
               <div class="rules">
-                <div v-for="(rule, i) in item.personRules" :key="i" :class="rule.type === 'tip' ? 'tip' : ''">
+                <div v-for="(rule, i) in item.person_rules" :key="i" :class="rule.type === 'tip' ? 'tip' : ''">
                   {{ rule.value }}
                 </div>
               </div>
