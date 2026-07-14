@@ -1,4 +1,3 @@
-import OGSP from '@/data/ogsp';
 export default {
   zh: {
     title: '服务商认证',
@@ -15,7 +14,6 @@ export default {
     commitment: '服务承诺',
     experience: '项目经验',
     certificate: '认证证书',
-    tableData: OGSP.zh,
   },
   en: {
     title: 'oGSP Certification',
@@ -32,6 +30,5 @@ export default {
     commitment: 'Service Commitment',
     experience: 'Project Experience',
     certificate: 'Product Certificate',
-    tableData: OGSP.en,
   },
 };
