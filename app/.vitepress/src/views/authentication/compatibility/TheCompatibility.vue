@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { ref, onMounted, computed } from 'vue';
 import { useI18n } from '@/i18n';
+import { useData } from 'vitepress';
 
 import BannerLevel2 from '@/components/BannerLevel2.vue';
 import AppContent from '@/components/AppContent.vue';
@@ -11,6 +12,10 @@ import illustration from '@/assets/illustrations/compatibility.png';
 
 import { GITCODE_LINK } from '@/data/url-config';
 import compatibilityData from '@/data/compatibility';
+import certificationContent from '#content/certification';
+
+const { lang } = useData();
+const certifyLabel = computed(() => (lang.value === 'zh' ? certificationContent.zh.certify : certificationContent.en.certify));
 
 const allData = ref(compatibilityData);
 const total = computed(() => allData.value.length);
@@ -117,7 +122,7 @@ function jumpPageMb(page: number) {
         <OTableColumn :label="i18n.compatibility.database" width="200" prop="database"></OTableColumn>
         <el-table-column :label="i18n.compatibility.certificate" width="150">
           <template #default="scope">
-            <a v-if="scope.row.download" :href="scope.row.download" download target="_blank" rel="noopener noreferrer">{{ i18n.certification.certify }}</a>
+            <a v-if="scope.row.download" :href="scope.row.download" download target="_blank" rel="noopener noreferrer">{{ certifyLabel }}</a>
           </template>
         </el-table-column>
       </OTable>
@@ -146,7 +151,7 @@ function jumpPageMb(page: number) {
             </li>
             <li v-if="item.download">
               <span>{{ i18n.compatibility.certificate }}:</span>
-              <a :href="item.download" download target="_blank" rel="noopener noreferrer">{{ i18n.certification.certify }}</a>
+              <a :href="item.download" download target="_blank" rel="noopener noreferrer">{{ certifyLabel }}</a>
             </li>
           </ul>
         </li>

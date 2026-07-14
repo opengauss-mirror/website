@@ -1,24 +1,17 @@
 <script lang="ts" setup>
 import { ref, onMounted, computed } from 'vue';
-import { useI18n } from '@/i18n';
+import { useData } from 'vitepress';
 
 import BannerLevel2 from '@/components/BannerLevel2.vue';
 import AppContent from '@/components/AppContent.vue';
 import AppPaginationMo from '@/components/AppPaginationMo.vue';
 
-import Banner from '@/assets/illustrations/banner-secondary.png';
-import illustration from '@/assets/illustrations/certification.png';
+import certificationContent from '#content/certification';
 
-import { GITCODE_LINK } from '@/data/url-config';
+type CertificationItemT = typeof certData.value.certifications[0];
 
-interface CertificationDataT {
-  pro: string;
-  name: string;
-  version: string;
-  award: string;
-  expiration: string;
-  certificate: string;
-}
+const { lang } = useData();
+const certData = computed(() => (lang.value === 'zh' ? certificationContent.zh : certificationContent.en));
 
 const searchContent = ref('');
 
@@ -28,8 +21,7 @@ const currentPage = ref(1);
 const totalPage = computed(() => Math.ceil(total.value / pageSize.value));
 const layout = ref('sizes, prev, pager, next, slot, jumper');
 
-const i18n = useI18n();
-const tableData = ref<CertificationDataT[]>([]);
+const tableData = ref<CertificationItemT[]>([]);
 
 // 前端分页
 const randerData = computed(() => {
@@ -55,9 +47,9 @@ function jumpPageMb(page: number) {
   currentPage.value = page;
 }
 // 前端搜索
-function searchProductOrName(data: CertificationDataT[], query: string) {
+function searchProductOrName(data: CertificationItemT[], query: string) {
   if (!query) {
-    return i18n.value.certification.tableData;
+    return certData.value.certifications;
   }
   const lowercaseQuery = query.toLowerCase();
   return data.filter((item) => {
@@ -68,33 +60,33 @@ function searchProductOrName(data: CertificationDataT[], query: string) {
 }
 // 搜索框change事件
 function changeSearchVal() {
-  tableData.value = searchProductOrName(i18n.value.certification.tableData, searchContent.value);
+  tableData.value = searchProductOrName(certData.value.certifications, searchContent.value);
 }
-function sortByAwardDescending(certs: CertificationDataT[]): CertificationDataT[] {
+function sortByAwardDescending(certs: CertificationItemT[]): CertificationItemT[] {
   return certs.sort((a, b) => new Date(b.award).getTime() - new Date(a.award).getTime());
 }
 
 onMounted(() => {
-  tableData.value = i18n.value.certification.tableData;
+  tableData.value = certData.value.certifications;
   sortByAwardDescending(tableData.value);
-  total.value = i18n.value.certification.tableData.length;
+  total.value = certData.value.certifications.length;
   handleSizeChange(10);
 });
 </script>
 <template>
-  <BannerLevel2 :background-image="Banner" :title="i18n.certification.title" :illustration="illustration" />
+  <BannerLevel2 :background-image="certData.banner.background" :title="certData.banner.title" :illustration="certData.banner.illustration" />
   <AppContent :mobile-top="16">
     <div class="o-search">
-      <OSearch v-model="searchContent" clearable :placeholder="i18n.certification.search_placeholder" @change="changeSearchVal"></OSearch>
+      <OSearch v-model="searchContent" clearable :placeholder="certData.search_placeholder" @change="changeSearchVal"></OSearch>
     </div>
     <OTable class="pc-list" :data="randerData" style="width: 100%">
-      <OTableColumn width="300" :label="i18n.certification.pro" prop="pro" show-overflow-tooltip></OTableColumn>
-      <OTableColumn :label="i18n.certification.name" prop="name" show-overflow-tooltip></OTableColumn>
-      <OTableColumn width="300" :label="i18n.certification.version" prop="version"></OTableColumn>
-      <OTableColumn width="180" :label="i18n.certification.award" prop="award"></OTableColumn>
-      <el-table-column :label="i18n.certification.certificate" width="200">
+      <OTableColumn width="300" :label="certData.table_headers.pro" prop="pro" show-overflow-tooltip></OTableColumn>
+      <OTableColumn :label="certData.table_headers.name" prop="name" show-overflow-tooltip></OTableColumn>
+      <OTableColumn width="300" :label="certData.table_headers.version" prop="version"></OTableColumn>
+      <OTableColumn width="180" :label="certData.table_headers.award" prop="award"></OTableColumn>
+      <el-table-column :label="certData.table_headers.certificate" width="200">
         <template #default="scope">
-          <a :href="scope.row.certificate" download target="_blank" rel="noopener noreferrer">{{ i18n.certification.certify }}</a>
+          <a :href="scope.row.certificate" download target="_blank" rel="noopener noreferrer">{{ certData.certify }}</a>
         </template>
       </el-table-column>
     </OTable>
@@ -102,20 +94,20 @@ onMounted(() => {
       <li v-for="(item, index) in tableData" :key="index" class="item">
         <ul>
           <li>
-            <span>{{ i18n.certification.pro }}:</span><span>{{ item.pro }}</span>
+            <span>{{ certData.table_headers.pro }}:</span><span>{{ item.pro }}</span>
           </li>
           <li>
-            <span>{{ i18n.certification.name }}:</span><span>{{ item.name }}</span>
+            <span>{{ certData.table_headers.name }}:</span><span>{{ item.name }}</span>
           </li>
           <li>
-            <span>{{ i18n.certification.version }}:</span><span>{{ item.version }}</span>
+            <span>{{ certData.table_headers.version }}:</span><span>{{ item.version }}</span>
           </li>
           <li>
-            <span>{{ i18n.certification.award }}:</span><span>{{ item.award }}</span>
+            <span>{{ certData.table_headers.award }}:</span><span>{{ item.award }}</span>
           </li>
           <li>
-            <span>{{ i18n.certification.certificate }}:</span>
-            <a :href="item.certificate" rel="noopener noreferrer">{{ i18n.certification.certify }}</a>
+            <span>{{ certData.table_headers.certificate }}:</span>
+            <a :href="item.certificate" rel="noopener noreferrer">{{ certData.certify }}</a>
           </li>
           <li></li>
         </ul>
@@ -139,8 +131,8 @@ onMounted(() => {
       <AppPaginationMo :current-page="currentPage" :total-page="totalPage" @turn-page="changeCurrentMb" @jump-page="jumpPageMb" />
     </ClientOnly>
     <p class="introduce">
-      {{ i18n.certification.introduce1
-      }}<a :href="GITCODE_LINK + '/opengauss/distribution-certification'" target="_blank" rel="noopener noreferrer">{{ i18n.certification.introduce2 }}</a>
+      {{ certData.introduce.text
+      }}<a :href="certData.introduce.link_href" target="_blank" rel="noopener noreferrer">{{ certData.introduce.link_text }}</a>
     </p>
   </AppContent>
 </template>

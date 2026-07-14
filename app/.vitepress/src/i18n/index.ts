@@ -4,7 +4,6 @@ import { useData } from 'vitepress';
 import common from './common';
 import security from './security';
 import authentication from './authentication';
-import certification from './certification';
 import ogsp from './ogsp';
 import knowledge from './knowledge';
 import advanced from './advanced';
@@ -33,7 +32,6 @@ const i18n: { [key: string]: any } = {
     onlineCommunication: onlineCommunication.zh,
     contribution: contribution.zh,
     authentication: authentication.zh,
-    certification: certification.zh,
     ogsp: ogsp.zh,
     member: member.zh,
     download: download.zh,
@@ -57,7 +55,6 @@ const i18n: { [key: string]: any } = {
     onlineCommunication: onlineCommunication.en,
     contribution: contribution.en,
     authentication: authentication.en,
-    certification: certification.en,
     ogsp: ogsp.en,
     member: member.en,
     download: download.en,
