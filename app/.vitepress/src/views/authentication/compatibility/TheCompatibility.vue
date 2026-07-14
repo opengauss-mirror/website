@@ -1,30 +1,24 @@
 <script lang="ts" setup>
 import { ref, onMounted, computed } from 'vue';
-import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';
 
 import BannerLevel2 from '@/components/BannerLevel2.vue';
 import AppContent from '@/components/AppContent.vue';
 import AppPaginationMo from '@/components/AppPaginationMo.vue';
 
-import Banner from '@/assets/illustrations/banner-secondary.png';
-import illustration from '@/assets/illustrations/compatibility.png';
-
-import { GITCODE_LINK } from '@/data/url-config';
-import compatibilityData from '@/data/compatibility';
+import compatibilityContent from '#content/compatibility';
 import certificationContent from '#content/certification';
 
 const { lang } = useData();
+const compatData = computed(() => (lang.value === 'zh' ? compatibilityContent.zh : compatibilityContent.en));
 const certifyLabel = computed(() => (lang.value === 'zh' ? certificationContent.zh.certify : certificationContent.en.certify));
 
-const allData = ref(compatibilityData);
+const allData = ref(compatData.value.compatibilities);
 const total = computed(() => allData.value.length);
 const pageSize = ref(10);
 const currentPage = ref(1);
 const totalPage = computed(() => Math.ceil(total.value / pageSize.value));
 const layout = ref('sizes, prev, pager, next, slot, jumper');
-
-const i18n = useI18n();
 
 const randerData = computed(() => {
   return allData.value.slice(pageSize.value * (currentPage.value - 1), pageSize.value * currentPage.value);
@@ -32,13 +26,13 @@ const randerData = computed(() => {
 
 // 获取类型下拉选项
 const set = new Set<string>();
-compatibilityData.forEach((item) => {
+compatData.value.compatibilities.forEach((item) => {
   set.add(item.type);
 });
 
 const typeOptionData = [
   {
-    label: '全部产品类型',
+    label: compatData.value.type_search_placeholder,
     value: '',
   },
 ];
@@ -65,7 +59,7 @@ const searchType = ref('');
 const queryCompatibilityData = () => {
   const regex = new RegExp(searchInput.value.trim(), 'i');
   allData.value = [];
-  compatibilityData.forEach((item) => {
+  compatData.value.compatibilities.forEach((item) => {
     if (regex.test(item.name) || regex.test(item.type) || regex.test(item.company) || regex.test(`${item.name} V${item.version}`)) {
       if (searchType.value === '' || searchType.value === item.type) {
         allData.value.push(item);
@@ -93,7 +87,7 @@ function jumpPageMb(page: number) {
 </script>
 <template>
   <div class="compatibility">
-    <BannerLevel2 :background-image="Banner" :title="i18n.compatibility.title" :illustration="illustration" class="compatibility-banner" />
+    <BannerLevel2 :background-image="compatData.banner.background" :title="compatData.banner.title" :illustration="compatData.banner.illustration" class="compatibility-banner" />
     <AppContent :mobile-top="16" class="compatibility-content">
       <div class="o-search">
         <OSelect
@@ -101,15 +95,15 @@ function jumpPageMb(page: number) {
           class="type-select"
           clearable
           filterable
-          :placeholder="i18n.compatibility.type_search_placeholder"
+          :placeholder="compatData.type_search_placeholder"
           @change="queryCompatibilityData"
         >
           <OOption v-for="item in typeOptionData" :key="item.value" :label="item.label" :value="item.value" />
         </OSelect>
-        <OSearch v-model="searchInput" clearable :placeholder="i18n.compatibility.search_placeholder" @change="queryCompatibilityData"></OSearch>
+        <OSearch v-model="searchInput" clearable :placeholder="compatData.search_placeholder" @change="queryCompatibilityData"></OSearch>
       </div>
       <OTable class="pc-list" :data="randerData" style="width: 100%">
-        <el-table-column :label="i18n.compatibility.name">
+        <el-table-column :label="compatData.table_headers.name">
           <template #default="scope">
             <span>
               {{ scope.row.name }}
@@ -117,10 +111,10 @@ function jumpPageMb(page: number) {
             </span>
           </template>
         </el-table-column>
-        <OTableColumn width="150" :label="i18n.compatibility.type" prop="type" show-overflow-tooltip></OTableColumn>
-        <OTableColumn width="400" :label="i18n.compatibility.company" prop="company"></OTableColumn>
-        <OTableColumn :label="i18n.compatibility.database" width="200" prop="database"></OTableColumn>
-        <el-table-column :label="i18n.compatibility.certificate" width="150">
+        <OTableColumn width="150" :label="compatData.table_headers.type" prop="type" show-overflow-tooltip></OTableColumn>
+        <OTableColumn width="400" :label="compatData.table_headers.company" prop="company"></OTableColumn>
+        <OTableColumn :label="compatData.table_headers.database" width="200" prop="database"></OTableColumn>
+        <el-table-column :label="compatData.table_headers.certificate" width="150">
           <template #default="scope">
             <a v-if="scope.row.download" :href="scope.row.download" download target="_blank" rel="noopener noreferrer">{{ certifyLabel }}</a>
           </template>
@@ -131,26 +125,26 @@ function jumpPageMb(page: number) {
         <li v-for="item in randerData" :key="item.name" class="item">
           <ul>
             <li>
-              <span>{{ i18n.compatibility.name }}:</span>
+              <span>{{ compatData.table_headers.name }}:</span>
               <span>
                 {{ item.name }}
                 <template v-if="item.version">V{{ item.version }}</template>
               </span>
             </li>
             <li>
-              <span>{{ i18n.compatibility.type }}:</span>
+              <span>{{ compatData.table_headers.type }}:</span>
               <span>{{ item.type }}</span>
             </li>
             <li>
-              <span>{{ i18n.compatibility.company }}:</span>
+              <span>{{ compatData.table_headers.company }}:</span>
               <span>{{ item.company }}</span>
             </li>
             <li>
-              <span>{{ i18n.compatibility.database }}:</span>
+              <span>{{ compatData.table_headers.database }}:</span>
               <span>{{ item.database }}</span>
             </li>
             <li v-if="item.download">
-              <span>{{ i18n.compatibility.certificate }}:</span>
+              <span>{{ compatData.table_headers.certificate }}:</span>
               <a :href="item.download" download target="_blank" rel="noopener noreferrer">{{ certifyLabel }}</a>
             </li>
           </ul>
@@ -174,11 +168,11 @@ function jumpPageMb(page: number) {
         <AppPaginationMo :current-page="currentPage" :total-page="totalPage" @turn-page="changeCurrentMb" @jump-page="jumpPageMb" />
       </ClientOnly>
       <p class="introduce">
-        关于商业软件兼容性技术测评，openGauss提供了完整的测试流程和工具，详见<a
-          :href="GITCODE_LINK + '/opengauss/compatible-certification'"
+        {{ compatData.tips.text }}<a
+          :href="compatData.tips.link_href"
           target="_blank"
           rel="noopener noreferrer"
-          >openGauss兼容性技术测评整体介绍</a
+          >{{ compatData.tips.link_text }}</a
         >。
       </p>
     </AppContent>
