@@ -246,6 +246,12 @@ export default {
               DESCRIPTION: 'Discover how openGauss is transforming business across sectors.',
               URL: '/user-practice/',
             },
+            {
+              NAME: 'Policies & Rules',
+              DESCRIPTION: 'Learn about the code of conduct and AI contribution policies of the openGauss community.',
+              TAG: TAG_TYPE.NEW,
+              URL: '/charter/',
+            },
           ],
         },
         {

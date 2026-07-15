@@ -83,7 +83,10 @@ describe('HomeCalendar latestSchedule computed 逻辑', () => {
 
   it('当天不在 recentMeetingDates 中时，latestSchedule 返回最近的未来日期', () => {
     const TODAY = ref('');
-    const recentMeetingDates = ref(['2025-12-01', '2026-07-15', '2026-08-20']);
+    const pastDate = dayjs().subtract(1, 'month').format('YYYY-MM-DD');
+    const futureDate1 = dayjs().add(1, 'month').format('YYYY-MM-DD');
+    const futureDate2 = dayjs().add(2, 'month').format('YYYY-MM-DD');
+    const recentMeetingDates = ref([pastDate, futureDate1, futureDate2]);
     const latestSchedule = createLatestSchedule(TODAY, recentMeetingDates);
     const nowTs = dayjs().unix();
     const upcoming = recentMeetingDates.value

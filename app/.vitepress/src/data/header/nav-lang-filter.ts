@@ -94,6 +94,10 @@ export default [
     lang: ['zh', 'en'],
   },
   {
+    name: 'charter',
+    lang: ['zh', 'en'],
+  },
+  {
     name: 'about-us',
     lang: ['zh', 'en'],
   },
