@@ -49,9 +49,9 @@ onMounted(() => {
         }}</span>
       </template>
     </OAnchorItem>
-    <OAnchorItem href="#policy">
+    <OAnchorItem href="#ai-coding-assistants">
       <template #title>
-        <span :class="{'custom-anchor-title': true, 'active': activeAnchor === '#policy'}">{{
+        <span :class="{'custom-anchor-title': true, 'active': activeAnchor === '#ai-coding-assistants'}">{{
           lang === 'zh' ? 'AI贡献策略' : 'AI Contribution Policy'
         }}</span>
       </template>
@@ -148,7 +148,7 @@ onMounted(() => {
     </div>
   </AppSection>
 
-  <AppSection id="policy" :title="lang === 'zh' ? 'openGauss社区生成式AI工具使用与开源贡献策略' : 'openGauss Community Generative AI Use and Open Source Contribution Policy'">
+  <AppSection id="ai-coding-assistants" :title="lang === 'zh' ? 'openGauss社区生成式AI工具使用与开源贡献策略' : 'openGauss Community Generative AI Use and Open Source Contribution Policy'">
     <div v-if="lang === 'zh'" class="content-card policy">
       <h3>1. 开放策略 (Openness Strategy)</h3>
 
