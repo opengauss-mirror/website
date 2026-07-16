@@ -1,20 +1,16 @@
 <script setup lang="ts">
 import { ODialog, OIcon, OIconChevronRight, OLink, OOption, ORadio, ORadioGroup, OScroller, OSelect, OTag, OToggle } from '@opensig/opendesign';
-import SupportToolsConfig from '@/data/supporttools';
-import { useData } from 'vitepress';
+import supportToolsContent from '#content/tools';
+import { useLocale } from '~@/composables/useLocale';
 import { computed } from 'vue';
 import { ref } from 'vue';
 import { useCommon } from '@/stores/common';
 import { useScreen } from '~@/composables/useScreen';
-import { useI18n } from 'vue-i18n';
 
 const { gtPadV } = useScreen();
-const { lang } = useData();
-const { t } = useI18n();
+const { isZh, t } = useLocale();
 
-const supporttoolsInfo = computed(() => {
-  return SupportToolsConfig[lang.value as 'zh' | 'en'];
-});
+const supporttoolsInfo = computed(() => isZh.value ? supportToolsContent.zh : supportToolsContent.en);
 
 // 通过工具分类ID来查找工具分类名称的map，用来在页面上显示人类可读的工具名称
 const typeIdNameMap = computed(() => {

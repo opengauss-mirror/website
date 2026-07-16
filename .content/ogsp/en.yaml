@@ -1,0 +1,142 @@
+# Service Partner Certification page data
+#
+# banner: page top banner
+#   title: title
+#   background: background image
+#   illustration: illustration image
+# search_placeholder: search box placeholder text
+# table_headers: table column headers
+#   name: vendor name
+#   version: certification number
+#   award: issued date
+#   expiration: expired date
+#   patch: bug fixing and patch release
+#   content: service contents
+#   system: service system
+#   commitment: service commitment
+#   experience: project experience
+#   certificate: product certificate
+# certify: download certificate button text
+# tips: footer tips
+#   text: tips text (first part)
+#   link_text: link text
+#   link_href: link URL
+# certifications: certification list data
+#   - name: company name
+#     version: certification number
+#     award: issued date
+#     expiration: expired date
+#     patch: patch mark
+#     content: service content rating
+#     system: service system rating
+#     commitment: service commitment rating
+#     experience: project experience rating
+#     certificate: certificate download link
+
+banner:
+  title: oGSP Certification
+  background: ./images/banner-secondary.png
+  illustration: ./images/ogsp.png
+
+search_placeholder: Company name
+
+table_headers:
+  name: Vendor
+  version: Certification Number
+  award: Issued Date
+  expiration: Expired Date
+  patch: Bug Fixing and Patch Release
+  content: Service Contents
+  system: Service System
+  commitment: Service Commitment
+  experience: Project Experience
+  certificate: Product Certificate
+
+certify: Download
+
+tips:
+  text: For openGauss service partner certification, openGauss provides complete evaluation standards and processes, see
+  link_text: openGauss Service Partner Certification Overview
+  link_href: https://gitcode.com/opengauss/service-partner-certification
+
+certifications:
+  - name: 中国邮政储蓄银行股份有限公司
+    version: '20250616001'
+    award: '2025-06-16'
+    expiration: '2026-06-15'
+    patch: ✓
+    content: Good
+    system: Excellent
+    commitment: Excellent
+    experience: Excellent
+    certificate: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/oGSPCertificate/%E4%B8%AD%E5%9B%BD%E9%82%AE%E6%94%BF%E5%82%A8%E8%93%84%E9%93%B6%E8%A1%8C%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png'
+  - name: 中移动信息技术有限公司
+    version: '20250604001'
+    award: '2025-06-04'
+    expiration: '2026-06-03'
+    patch: ✓
+    content: Excellent
+    system: Good
+    commitment: Excellent
+    experience: Excellent
+    certificate: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/oGSPCertificate/%E4%B8%AD%E7%A7%BB%E5%8A%A8%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png'
+  - name: 天津神舟通用数据技术有限公司
+    version: '20250408001'
+    award: '2025-04-08'
+    expiration: '2026-04-07'
+    patch: ✓
+    content: Excellent
+    system: Excellent
+    commitment: Excellent
+    experience: Excellent
+    certificate: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/oGSPCertificate/%E5%A4%A9%E6%B4%A5%E7%A5%9E%E8%88%9F%E9%80%9A%E7%94%A8%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png'
+  - name: 天津南大通用数据技术股份有限公司
+    version: '20250407001'
+    award: '2025-04-07'
+    expiration: '2026-04-06'
+    patch: ✓
+    content: Excellent
+    system: Excellent
+    commitment: Excellent
+    experience: Excellent
+    certificate: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/oGSPCertificate/%E5%A4%A9%E6%B4%A5%E5%8D%97%E5%A4%A7%E9%80%9A%E7%94%A8%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png'
+  - name: 北京海量数据技术股份有限公司
+    version: '20250325001'
+    award: '2025-03-25'
+    expiration: '2026-03-24'
+    patch: ✓
+    content: Excellent
+    system: Excellent
+    commitment: Excellent
+    experience: Excellent
+    certificate: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/oGSPCertificate/%E5%8C%97%E4%BA%AC%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png'
+  - name: 云和恩墨（北京）信息技术有限公司
+    version: '20250415001'
+    award: '2025-04-15'
+    expiration: '2026-04-14'
+    patch: ✓
+    content: Excellent
+    system: Excellent
+    commitment: Excellent
+    experience: Excellent
+    certificate: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/oGSPCertificate/%E4%BA%91%E5%92%8C%E6%81%A9%E5%A2%A8%EF%BC%88%E5%8C%97%E4%BA%AC%EF%BC%89%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png'
+  - name: 中软国际科技服务有限公司
+    version: '20250507001'
+    award: '2025-05-07'
+    expiration: '2026-05-06'
+    patch: ✓
+    content: Good
+    system: Good
+    commitment: Excellent
+    experience: Excellent
+    certificate: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/oGSPCertificate/%E4%B8%AD%E8%BD%AF%E5%9B%BD%E9%99%85%E7%A7%91%E6%8A%80%E6%9C%8D%E5%8A%A1%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png'
+  - name: 软通动力信息技术(集团)股份有限公司
+    version: '20250616002'
+    award: '2025-06-16'
+    expiration: '2026-06-15'
+    patch: ✓
+    content: Good
+    system: Fair
+    commitment: Good
+    experience: Excellent
+    certificate: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/oGSPCertificate/%E8%BD%AF%E9%80%9A%E5%8A%A8%E5%8A%9B%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF%EF%BC%88%E9%9B%86%E5%9B%A2%EF%BC%89%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png'

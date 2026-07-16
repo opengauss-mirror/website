@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import yaml from 'js-yaml';
 
-const ASSET_EXT = /\.(png|jpe?g|webp|svg|gif)$/i;
+const ASSET_EXT = /\.(png|jpe?g|webp|svg|gif)(\?.*)?$/i;
 const SENTINEL = '__VITE_CONTENT_ASSET_';
 const VIRTUAL_PREFIX = '\0content-dir:';
 const VERSION_DATA_ID = 'virtual:content-versions';

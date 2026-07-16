@@ -1,9 +1,10 @@
 <script lang="ts" setup>
 import { ref, computed, watch } from 'vue';
 import { useI18n } from '@/i18n';
+import { useData } from 'vitepress';
 import { isBrowser } from '@/shared/utils';
 
-import VideoConfig from '@/data/video/new';
+import videoContent from '#content/video';
 import AppContent from '@/components/AppContent.vue';
 import VideoCard from './VideoCard.vue';
 import VideoMobileCard from './VideoMobileCard.vue';
@@ -15,16 +16,20 @@ import Banner from '@/assets/illustrations/banner-secondary.png';
 import illustration from '@/assets/illustrations/blog.png';
 
 const i18n = useI18n();
+const { lang } = useData();
+const isZh = computed(() => lang.value === 'zh');
 
 // ------------------------------ tab ------------------------------
 const activeMobile = ref(0);
 const activeTab = ref(1);
 
+const videoConfig = computed(() => isZh.value ? videoContent.zh : videoContent.en);
+
 const initActiveTab = () => {
   if (isBrowser()) {
     const url = new URL(location.href);
     const id = Number(url.searchParams.get('id'));
-    if (VideoConfig.find((e) => e.id === id)) {
+    if (videoConfig.value.find((e) => e.id === id)) {
       activeTab.value = id;
     }
   }
@@ -41,10 +46,10 @@ watch(activeTab, () => {
 
 // ------------------------------ 当前数据 ------------------------------
 const videoItem = computed(() => {
-  return VideoConfig.find((item) => item.id === activeTab.value);
+  return videoConfig.value.find((item) => item.id === activeTab.value);
 });
 const videoData = computed(() => {
-  return videoItem.value?.data.zh || [];
+  return videoItem.value?.groups || [];
 });
 
 // ------------------------------锚点 ------------------------------
@@ -55,13 +60,13 @@ const pcContainer = ref<HTMLDivElement>();
 <template>
   <BannerLevel2 :background-image="Banner" :title="i18n.connect.VIDEO_TITLE" :illustration="illustration" />
   <!-- Tab -->
-  <VideoTab v-model="activeTab" :tab-data="VideoConfig" />
+  <VideoTab v-model="activeTab" :tab-data="videoConfig" />
   <!-- Content -->
   <AppContent :pcTop="0">
     <!-- PC端 -->
     <div class="video-pc">
       <div ref="pcContainer" class="pc">
-        <VideoNav v-if="Array.isArray(videoItem?.data?.navList)" v-model:current-index="activeIndex" :target="pcContainer" :list="videoItem?.data?.navList" />
+        <VideoNav v-if="Array.isArray(videoItem?.nav_list)" v-model:current-index="activeIndex" :target="pcContainer" :list="videoItem?.nav_list" />
         <VideoCard v-for="item in videoData" :key="item.id" :data-source="item" />
       </div>
     </div>
@@ -73,12 +78,12 @@ const pcContainer = ref<HTMLDivElement>();
             <p class="caption">{{ item.name }}</p>
           </template>
           <VideoMobileCard
-            v-for="(subitem, i) in item.data"
+            v-for="(subitem, i) in item.videos"
             :key="i"
             :cover="item.poster"
             :cover-title="subitem.title"
             :title="subitem.title"
-            :href="subitem.videoUrl"
+            :href="subitem.video_url"
           />
         </OCollapseItem>
       </OCollapse>

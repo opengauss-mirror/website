@@ -1,0 +1,148 @@
+# Support Tools Configuration (English)
+#
+# Field descriptions:
+#   id       Category identifier
+#   name     Category name
+#   children Tools under this category
+#     iden    Category identifier the tool belongs to (for tag display)
+#     name    Tool name
+#     desc    Tool description
+#     address Source code / official site URL
+#     guide   Operation guide link (optional)
+#     site    Whether address is an official site (optional, true = official site, not source code)
+
+- id: connectors
+  name: Connectors
+  children:
+    - iden: connectors
+      name: psycopg2
+      desc: The openGauss Python Driver (Linux only)
+      address: https://gitcode.com/opengauss/openGauss-connector-python-psycopg2/
+      guide: https://www.psycopg.org/docs/
+    - iden: connectors
+      name: py-og
+      desc: The openGauss pure Python Driver (Multi-OS Support)
+      address: https://gitcode.com/opengauss/openGauss-connector-python-pyog
+      guide: https://magicstack.github.io/asyncpg/current/
+    - iden: connectors
+      name: go-pq
+      desc: The openGauss Go Driver
+      address: https://gitcode.com/opengauss/openGauss-connector-go-pq
+      guide: https://gitcode.com/opengauss/openGauss-connector-go-pq/blob/master/README.cn.md
+
+- id: middleware
+  name: Middleware
+  children:
+    - iden: middleware
+      name: ShardingSphere
+      desc: Distributed database middleware
+      address: https://github.com/apache/shardingsphere
+      guide: https://shardingsphere.apache.org/document/current/en/overview/
+    - iden: middleware
+      name: HAProxy
+      desc: Database read/write load balancing
+      address: https://github.com/haproxy/haproxy
+      guide: https://www.haproxy.com/blog/webinar-introduction-to-haproxy/
+    - iden: middleware
+      name: vip-manager
+      desc: Automatic IP failover
+      address: https://github.com/cybertec-postgresql/vip-manager
+      guide: https://github.com/cybertec-postgresql/vip-manager#Configuration
+
+- id: management
+  name: Cluster Management
+  children:
+    - iden: management
+      name: Kubernetes
+      desc: An open source container management platform
+      address: https://github.com/kubernetes/kubernetes
+      guide: https://kubernetes.io/docs/home/
+    - iden: management
+      name: Patroni
+      desc: Automatic primary/standby switching to improve database availability
+      address: https://github.com/zalando/patroni
+      guide: https://patroni.readthedocs.io/en/latest/
+
+- id: migrationTools
+  name: Migration Tools
+  children:
+    - iden: migrationTools
+      name: Ora2Pg
+      desc: Database migration tool from Oracle to openGauss
+      address: https://gitcode.com/opengauss/openGauss-tools-ora2og
+      guide: https://gitcode.com/opengauss/openGauss-tools-ora2og/blob/master/README.md
+    - iden: migrationTools
+      name: pg_chameleon
+      desc: Database migration tool from MySQL to openGauss
+      address: https://gitcode.com/opengauss/openGauss-tools-chameleon
+      guide: https://gitcode.com/opengauss/openGauss-tools-chameleon/blob/master/chameleon%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.md
+    - iden: migrationTools
+      name: pgloader
+      desc: A data import tool that uses the COPY command to import data into openGauss
+      address: https://gitcode.com/opengauss/openGauss-tools-loader
+      guide: https://gitcode.com/opengauss/openGauss-tools-loader/blob/master/pgloader%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.pdf
+
+- id: dataTools
+  name: Data Synchronization Tools
+  children:
+    - iden: dataTools
+      name: JdbcPgBackup
+      desc: Java based multi-platform data import and export tool, similar to pg_dump/pg_restore
+      address: https://github.com/tig100/JdbcPgBackup
+    - iden: dataTools
+      name: Database-Sync
+      desc: A powerful and flexible database synchronization tool developed based on Java
+      address: https://github.com/GongDexing/database-sync
+    - iden: dataTools
+      name: Debezium
+      desc: It provides a low latency streaming processing platform for change data capture (CDC)
+      address: https://github.com/debezium/debezium
+      guide: /zh/blogs/lihongda/Debezium-Adapt-openGauss.html
+
+- id: dataModel
+  name: Data Model
+  children:
+    - iden: dataModel
+      name: PowerDesigner
+      desc: Flexible analysis and design features allow you to effectively create a database or data warehouse using a structured approach
+      address: https://www.sap.com/products/database-data-management.html
+      guide: /zh/blogs/wangrui/PowerDesigner_for_openGauss.html
+      site: true
+
+- id: clientTools
+  name: Client Tools
+  children:
+    - iden: clientTools
+      name: DBeaver
+      desc: Open source multi database client tool
+      address: https://github.com/dbeaver/dbeaver
+      guide: /zh/blogs/justbk/2020-10-30_dbeaver_for_openGauss.html
+    - iden: clientTools
+      name: Data Studio
+      desc: openGauss official client tool
+      address: https://gitcode.com/opengauss/DataStudio
+      guide: https://docs.opengauss.org/en/docs/5.0.0/docs/AboutopenGauss/opengauss-client-tool-datastudio.html
+      site: true
+
+- id: devOpsTools
+  name: Monitor & DevOps System
+  children:
+    - iden: devOpsTools
+      name: Zabbix
+      desc: It components and services for real-time monitoring, and the monitoring database needs additional adaptation
+      address: https://github.com/zabbix/zabbix
+      guide: /zh/blogs/justbk/2021-03-03_zabbix_for_openGauss.html
+    - iden: devOpsTools
+      name: Prometheus
+      desc: The open source monitoring system performs very well in recording pure digital time series
+      address: https://github.com/prometheus/prometheus
+      guide: https://prometheus.io/docs/introduction/overview/
+
+- id: kernelExtensions
+  name: Kernel Extension
+  children:
+    - iden: kernelExtensions
+      name: Yukon
+      desc: Provide professional GIS (Geographic Information System) ability
+      address: https://gitcode.com/opengauss/Yukon
+      guide: https://yukon.supermap.io/

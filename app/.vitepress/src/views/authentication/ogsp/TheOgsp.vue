@@ -1,36 +1,24 @@
 <script lang="ts" setup>
 import { ref, onMounted, computed } from 'vue';
-import { useI18n } from '@/i18n';
-import { GITCODE_LINK } from '@/data/url-config';
+import { useData } from 'vitepress';
 
 import BannerLevel2 from '@/components/BannerLevel2.vue';
 import AppContent from '@/components/AppContent.vue';
 import AppPaginationMo from '@/components/AppPaginationMo.vue';
 
-import Banner from '@/assets/illustrations/banner-secondary.png';
-import illustration from '@/assets/illustrations/ogsp.png';
+import ogspContent from '#content/ogsp';
 
-interface CertificationDataT {
-  pro: string;
-  name: string;
-  version: string;
-  award: string;
-  expiration: string;
-  patch: string;
-  content: string;
-  system: string;
-  certificate: string;
-  experience: string;
-  commitment: string;
-}
+type OgspItemT = typeof ogspData.value.certifications[0];
 
-const i18n = useI18n();
+const { lang } = useData();
+const ogspData = computed(() => (lang.value === 'zh' ? ogspContent.zh : ogspContent.en));
+
 const total = ref(0);
 const pageSize = ref(10);
 const layout = ref('sizes, prev, pager, next, slot, jumper');
 const currentPage = ref(1);
 const totalPage = ref(0);
-const tableData = ref<CertificationDataT[]>([]);
+const tableData = ref<OgspItemT[]>([]);
 const searchContent = ref('');
 // 前端分页
 const randerTableData = computed(() => {
@@ -58,9 +46,9 @@ function jumpPageMb(page: number) {
 }
 
 // 前端搜索
-function searchProductOrName(data: CertificationDataT[], query: string) {
+function searchProductOrName(data: OgspItemT[], query: string) {
   if (!query) {
-    return i18n.value.ogsp.tableData;
+    return ogspData.value.certifications;
   }
   const lowercaseQuery = query.toLowerCase();
   return data.filter((item) => {
@@ -69,39 +57,39 @@ function searchProductOrName(data: CertificationDataT[], query: string) {
   });
 }
 // 搜索框change事件
-function sortByAwardDescending(certs: CertificationDataT[]): CertificationDataT[] {
+function sortByAwardDescending(certs: OgspItemT[]): OgspItemT[] {
   return certs.sort((a, b) => new Date(b.award).getTime() - new Date(a.award).getTime());
 }
 function queryTableData() {
-  tableData.value = searchProductOrName(i18n.value.ogsp.tableData, searchContent.value);
+  tableData.value = searchProductOrName(ogspData.value.certifications, searchContent.value);
 }
 
 onMounted(() => {
-  tableData.value = i18n.value.ogsp.tableData;
+  tableData.value = ogspData.value.certifications;
   sortByAwardDescending(tableData.value);
-  total.value = i18n.value.ogsp.tableData.length;
+  total.value = ogspData.value.certifications.length;
   handlePageSizeChange(10);
 });
 </script>
 <template>
-  <BannerLevel2 :background-image="Banner" :title="i18n.ogsp.title" :illustration="illustration" />
+  <BannerLevel2 :background-image="ogspData.banner.background" :title="ogspData.banner.title" :illustration="ogspData.banner.illustration" />
   <AppContent :mobile-top="16">
     <div class="o-search">
-      <OSearch v-model="searchContent" clearable :placeholder="i18n.ogsp.search_placeholder" @change="queryTableData"></OSearch>
+      <OSearch v-model="searchContent" clearable :placeholder="ogspData.search_placeholder" @change="queryTableData"></OSearch>
     </div>
     <OTable class="list-pc" :data="randerTableData" style="width: 100%">
-      <OTableColumn :label="i18n.ogsp.name" show-overflow-tooltip prop="name" min-width="200"></OTableColumn>
-      <OTableColumn :label="i18n.ogsp.version" show-overflow-tooltip prop="version" min-width="115"></OTableColumn>
-      <OTableColumn :label="i18n.ogsp.award" show-overflow-tooltip prop="award" min-width="115"></OTableColumn>
-      <OTableColumn :label="i18n.ogsp.expiration" show-overflow-tooltip prop="expiration" min-width="115"></OTableColumn>
-      <OTableColumn :label="i18n.ogsp.patch" show-overflow-tooltip prop="patch" align="center"></OTableColumn>
-      <OTableColumn :label="i18n.ogsp.content" prop="content" align="center"></OTableColumn>
-      <OTableColumn :label="i18n.ogsp.system" prop="system" align="center"></OTableColumn>
-      <OTableColumn :label="i18n.ogsp.commitment" prop="commitment" align="center"></OTableColumn>
-      <OTableColumn :label="i18n.ogsp.experience" prop="experience" align="center"></OTableColumn>
-      <el-table-column :label="i18n.ogsp.certificate" align="center">
+      <OTableColumn :label="ogspData.table_headers.name" show-overflow-tooltip prop="name" min-width="200"></OTableColumn>
+      <OTableColumn :label="ogspData.table_headers.version" show-overflow-tooltip prop="version" min-width="115"></OTableColumn>
+      <OTableColumn :label="ogspData.table_headers.award" show-overflow-tooltip prop="award" min-width="115"></OTableColumn>
+      <OTableColumn :label="ogspData.table_headers.expiration" show-overflow-tooltip prop="expiration" min-width="115"></OTableColumn>
+      <OTableColumn :label="ogspData.table_headers.patch" show-overflow-tooltip prop="patch" align="center"></OTableColumn>
+      <OTableColumn :label="ogspData.table_headers.content" prop="content" align="center"></OTableColumn>
+      <OTableColumn :label="ogspData.table_headers.system" prop="system" align="center"></OTableColumn>
+      <OTableColumn :label="ogspData.table_headers.commitment" prop="commitment" align="center"></OTableColumn>
+      <OTableColumn :label="ogspData.table_headers.experience" prop="experience" align="center"></OTableColumn>
+      <el-table-column :label="ogspData.table_headers.certificate" align="center">
         <template #default="scope">
-          <a :href="scope.row.certificate" download target="_blank" rel="noopener noreferrer">{{ i18n.ogsp.certify }}</a>
+          <a :href="scope.row.certificate" download target="_blank" rel="noopener noreferrer">{{ ogspData.certify }}</a>
         </template>
       </el-table-column>
     </OTable>
@@ -109,35 +97,35 @@ onMounted(() => {
       <li v-for="(item, index) in tableData" :key="index" class="item">
         <ul>
           <li>
-            <span>{{ i18n.ogsp.name }}:</span><span>{{ item.name }}</span>
+            <span>{{ ogspData.table_headers.name }}:</span><span>{{ item.name }}</span>
           </li>
           <li>
-            <span>{{ i18n.ogsp.version }}:</span><span>{{ item.version }}</span>
+            <span>{{ ogspData.table_headers.version }}:</span><span>{{ item.version }}</span>
           </li>
           <li>
-            <span>{{ i18n.ogsp.award }}:</span><span>{{ item.award }}</span>
+            <span>{{ ogspData.table_headers.award }}:</span><span>{{ item.award }}</span>
           </li>
           <li>
-            <span>{{ i18n.ogsp.expiration }}:</span><span>{{ item.expiration }}</span>
+            <span>{{ ogspData.table_headers.expiration }}:</span><span>{{ item.expiration }}</span>
           </li>
           <li>
-            <span>{{ i18n.ogsp.patch }}:</span><span>{{ item.patch }}</span>
+            <span>{{ ogspData.table_headers.patch }}:</span><span>{{ item.patch }}</span>
           </li>
           <li>
-            <span>{{ i18n.ogsp.content }}:</span><span>{{ item.content }}</span>
+            <span>{{ ogspData.table_headers.content }}:</span><span>{{ item.content }}</span>
           </li>
           <li>
-            <span>{{ i18n.ogsp.system }}:</span><span>{{ item.system }}</span>
+            <span>{{ ogspData.table_headers.system }}:</span><span>{{ item.system }}</span>
           </li>
           <li>
-            <span>{{ i18n.ogsp.commitment }}:</span><span>{{ item.commitment }}</span>
+            <span>{{ ogspData.table_headers.commitment }}:</span><span>{{ item.commitment }}</span>
           </li>
           <li>
-            <span>{{ i18n.ogsp.experience }}:</span><span>{{ item.experience }}</span>
+            <span>{{ ogspData.table_headers.experience }}:</span><span>{{ item.experience }}</span>
           </li>
           <li>
-            <span>{{ i18n.ogsp.certificate }}:</span>
-            <a :href="item.certificate" rel="noopener noreferrer">{{ i18n.ogsp.certify }}</a>
+            <span>{{ ogspData.table_headers.certificate }}:</span>
+            <a :href="item.certificate" rel="noopener noreferrer">{{ ogspData.certify }}</a>
           </li>
         </ul>
       </li>
@@ -160,11 +148,11 @@ onMounted(() => {
       <AppPaginationMo :total-page="totalPage" :current-page="currentPage" @turn-page="changeCurrentMb" @jump-page="jumpPageMb" />
     </ClientOnly>
     <p class="tips">
-      关于openGauss服务商认证，openGauss提供了完整的评估标准和流程，详见<a
-        :href="`${GITCODE_LINK}/opengauss/service-partner-certification`"
+      {{ ogspData.tips.text }}<a
+        :href="ogspData.tips.link_href"
         target="_blank"
         rel="noopener noreferrer"
-        >openGauss服务商认证整体介绍</a
+        >{{ ogspData.tips.link_text }}</a
       >。
     </p>
   </AppContent>

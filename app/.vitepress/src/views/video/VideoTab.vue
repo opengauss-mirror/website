@@ -1,12 +1,10 @@
 <script lang="ts" setup>
-import { useData } from 'vitepress';
 import { onMounted } from 'vue';
 import { PropType, watch, nextTick } from 'vue';
 
 interface TabItem {
   id: number;
   name: string;
-  nameEn: string;
 }
 
 const props = defineProps({
@@ -21,8 +19,6 @@ const props = defineProps({
     },
   },
 });
-
-const { lang } = useData();
 
 const emits = defineEmits(['update:modelValue']);
 
@@ -61,7 +57,7 @@ onMounted(() => {
         }"
         @click="emits('update:modelValue', item.id)"
       >
-        {{ lang === 'zh' ? item.name : item.nameEn }}
+        {{ item.name }}
       </div>
     </div>
     <div class="mask-right"></div>

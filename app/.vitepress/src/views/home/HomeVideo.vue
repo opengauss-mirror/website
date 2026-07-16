@@ -4,7 +4,7 @@ import { useData, useRouter } from 'vitepress';
 import { useI18n } from '@/i18n';
 import useWindowResize from '@/components/hooks/useWindowResize';
 
-import VideoConfig from '@/data/video/new';
+import videoContent from '#content/video';
 
 import type { VideoItemT } from '@/shared/@types/type-video';
 
@@ -21,13 +21,13 @@ const i18n = useI18n();
 const isZh = computed(() => (lang.value === 'zh' ? true : false));
 
 function getVideoList() {
-  videoList.value = VideoConfig.map((item) => {
+  const data = isZh.value ? videoContent.zh : videoContent.en;
+  videoList.value = data.map((item) => {
     return {
       id: item.id,
       cover: item.poster,
       name: item.name,
-      nameEn: item.nameEn,
-      title: isZh.value ? item.name : item.nameEn,
+      title: item.name,
       videoUrl: `/${lang.value}/video/?id=${item.id}`,
       date: '',
     };
@@ -56,7 +56,7 @@ const windowWidth = useWindowResize();
           <div class="home-video-link" :style="`background:url(${item.cover}) no-repeat center/cover`" @click="goVideoDetail(item)">
             <img :src="videoBtn" class="video-btn" />
             <div class="box">
-              <p class="title">{{ isZh ? item.name : item.nameEn }}</p>
+              <p class="title">{{ item.name }}</p>
             </div>
           </div>
         </div>
@@ -69,7 +69,7 @@ const windowWidth = useWindowResize();
           <div class="box">
             <p class="title">{{ item.title }}</p>
             <p class="type" :title="item.title">
-              {{ isZh ? item.name : item.nameEn }}
+              {{ item.name }}
             </p>
           </div>
         </div>

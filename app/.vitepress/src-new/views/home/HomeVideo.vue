@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import AppSection from '~@/components/AppSection.vue';
-import VideoConfig from '@/data/video/new';
+import videoContent from '#content/video';
 import { computed } from 'vue';
 
 import cover1 from '~@/assets/category/home/videos/cover1.png';
@@ -18,13 +18,13 @@ const { t, isZh, locale } = useLocale();
 const { theme } = storeToRefs(useCommon());
 
 const videoList = computed(() => {
-  return VideoConfig.map((item) => {
+  const data = isZh.value ? videoContent.zh : videoContent.en;
+  return data.map((item) => {
     return {
       id: item.id,
       cover: item.poster,
       name: item.name,
-      nameEn: item.nameEn,
-      title: isZh.value ? item.name : item.nameEn,
+      title: item.name,
       videoUrl: `/${locale.value}/video/?id=${item.id}`,
     };
   });
