@@ -215,7 +215,7 @@ const jumpTo = (id: string) => {
 };
 
 function handleClickTop() {
-  window.scrollTo(0, 0);
+  (document.getElementById('anchor-sticky-demo') ?? window).scrollTo(0, 0);
 }
 function postScore() {
   if (!isReasonShow.value) {
