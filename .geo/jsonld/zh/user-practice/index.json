@@ -1,0 +1,48 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://opengauss.org/zh/user-practice/#collectionpage",
+      "url": "https://opengauss.org/zh/user-practice/",
+      "name": "openGauss用户实践",
+      "description": "探索openGauss用户实践案例，涵盖金融、运营商、制造等行业。",
+      "inLanguage": "zh-CN",
+      "isPartOf": {
+        "@id": "https://opengauss.org/#website"
+      },
+      "mainEntity": {
+        "@id": "https://opengauss.org/zh/user-practice/#itemlist"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://opengauss.org/zh/user-practice/#itemlist",
+      "name": "openGauss用户实践案例",
+      "description": "openGauss用户实践案例集合，涵盖金融、运营商、制造等行业。",
+      "numberOfItems": 11,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "北京海量数据技术股份有限公司",
+          "url": "https://opengauss.org/en/user-practice/dbv/vastdata/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "云和恩墨（北京）信息技术有限公司",
+          "url": "https://opengauss.org/en/user-practice/dbv/enmotech/"
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://opengauss.org/#website",
+      "url": "https://opengauss.org/",
+      "name": "openGauss",
+      "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。",
+      "inLanguage": "zh-CN"
+    }
+  ]
+}

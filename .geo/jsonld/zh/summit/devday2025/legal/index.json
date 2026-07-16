@@ -1,0 +1,12 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://opengauss.org/zh/summit/devday2025/legal/",
+  "url": "https://opengauss.org/zh/summit/devday2025/legal/",
+  "name": "openGauss Developer Day 2025法律声明",
+  "description": "openGauss Developer Day 2025法律声明，包含服务条款、知识产权、责任限制和免责声明等内容。",
+  "inLanguage": "zh-CN",
+  "isPartOf": {
+    "@id": "https://opengauss.org/zh/summit/devday2025/#event"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://opengauss.org/en/user-practice/#collectionpage",
+      "url": "https://opengauss.org/en/user-practice/",
+      "name": "openGauss User Practice",
+      "description": "Explore openGauss user practice case studies across finance, telecom, manufacturing, and other industries.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://opengauss.org/#website"
+      },
+      "mainEntity": {
+        "@id": "https://opengauss.org/en/user-practice/#itemlist"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://opengauss.org/en/user-practice/#itemlist",
+      "name": "openGauss User Practice Case Studies",
+      "description": "A collection of openGauss user practice case studies across finance, telecom, manufacturing, and other industries.",
+      "numberOfItems": 11,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "北京海量数据技术股份有限公司",
+          "url": "https://opengauss.org/en/user-practice/dbv/vastdata/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "云和恩墨（北京）信息技术有限公司",
+          "url": "https://opengauss.org/en/user-practice/dbv/enmotech/"
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://opengauss.org/#website",
+      "url": "https://opengauss.org/",
+      "name": "openGauss",
+      "description": "openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability. openGauss is also an open source database platform that encourages community contribution and collaboration.",
+      "inLanguage": "en"
+    }
+  ]
+}

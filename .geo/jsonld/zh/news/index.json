@@ -1,0 +1,33 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://opengauss.org/zh/news/#collectionpage",
+      "url": "https://opengauss.org/zh/news/",
+      "name": "openGauss社区动态",
+      "description": "获取openGauss最新新闻动态，包括版本发布公告、社区更新和技术洞察。",
+      "inLanguage": "zh-CN",
+      "isPartOf": {
+        "@id": "https://opengauss.org/#website"
+      },
+      "mainEntity": {
+        "@id": "https://opengauss.org/zh/news/#itemlist"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://opengauss.org/zh/news/#itemlist",
+      "name": "openGauss新闻文章",
+      "description": "openGauss新闻动态集合，包括版本发布公告、社区更新和技术洞察。"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://opengauss.org/#website",
+      "url": "https://opengauss.org/",
+      "name": "openGauss",
+      "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。",
+      "inLanguage": "zh-CN"
+    }
+  ]
+}

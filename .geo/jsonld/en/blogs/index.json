@@ -1,0 +1,33 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://opengauss.org/en/blogs/#collectionpage",
+      "url": "https://opengauss.org/en/blogs/",
+      "name": "openGauss Blogs",
+      "description": "Read the latest blogs related to openGauss, featuring insights, announcements, and updates from the community.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://opengauss.org/#website"
+      },
+      "mainEntity": {
+        "@id": "https://opengauss.org/en/blogs/#itemlist"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://opengauss.org/en/blogs/#itemlist",
+      "name": "openGauss Blog Posts",
+      "description": "A collection of openGauss blog posts featuring insights, announcements, and updates from the community."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://opengauss.org/#website",
+      "url": "https://opengauss.org/",
+      "name": "openGauss",
+      "description": "openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability. openGauss is also an open source database platform that encourages community contribution and collaboration.",
+      "inLanguage": "en"
+    }
+  ]
+}
