@@ -4,25 +4,27 @@ import { isBrowser } from '@/shared/utils';
 const useWindowSroll = () => {
   let top = NaN;
 
+  const pageScrollTop = () => document.getElementById('anchor-sticky-demo')?.scrollTop || document.documentElement.scrollTop || document.body.scrollTop;
+
   if (isBrowser()) {
-    top = document.documentElement.scrollTop || document.body.scrollTop;
+    top = pageScrollTop();
   }
 
   const scrollTop = ref(top);
   const onScroll = () => {
     scrollTop.value =
-      document.documentElement.scrollTop || document.body.scrollTop;
+      pageScrollTop();
   };
 
   onMounted(() => {
     scrollTop.value =
-      document.documentElement.scrollTop || document.body.scrollTop;
+      pageScrollTop();
 
-    window.addEventListener('scroll', onScroll);
+    (document.getElementById('anchor-sticky-demo') ?? window).addEventListener('scroll', onScroll);
   });
 
   onUnmounted(() => {
-    window.removeEventListener('resize', onScroll);
+    (document.getElementById('anchor-sticky-demo') ?? window).removeEventListener('resize', onScroll);
   });
 
   return scrollTop;

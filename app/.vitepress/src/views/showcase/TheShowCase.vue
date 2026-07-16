@@ -210,7 +210,7 @@ onMounted(() => {
 watch(
   () => currentPage.value,
   () => {
-    window.scrollTo({
+    (document.getElementById('anchor-sticky-demo') ?? window).scrollTo({
       top: 0,
       behavior: 'smooth',
     });

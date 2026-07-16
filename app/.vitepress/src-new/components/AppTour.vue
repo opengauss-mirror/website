@@ -77,7 +77,7 @@ const nextStep = (current: number, total: number) => {
   if (current === total - 1) {
     localStorage.setItem('tour_guide', 'guided');
     open.value = false;
-    window.scrollTo(0, 0);
+    (document.getElementById('anchor-sticky-demo') ?? window).scrollTo(0, 0);
   } else {
     currentStep.value += 1;
   }
