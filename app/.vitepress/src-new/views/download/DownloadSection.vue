@@ -116,7 +116,7 @@ onMounted(() => {
     setTimeout(() => {
       const toolId = window.location.hash?.split('#')[1] as string;
       const top = document.getElementById(toolId)?.offsetTop;
-      window.scrollTo({
+      (document.getElementById('anchor-sticky-demo') ?? window).scrollTo({
         top,
         behavior: 'smooth',
       });
