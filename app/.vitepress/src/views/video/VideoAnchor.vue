@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { PropType, onMounted, onUnmounted, ref, nextTick } from 'vue';
+import { PropType, inject, onMounted, onUnmounted, ref, nextTick, type Ref } from 'vue';
 
 interface NavItemT {
   key: string;
@@ -23,6 +23,8 @@ const props = defineProps({
 
 const emits = defineEmits(['update:currentIndex']);
 
+const scrollContainerRef = inject<Ref<HTMLElement | undefined>>('scrollContainerRef');
+const getScrollContainer = () => scrollContainerRef?.value || document.documentElement;
 const left = ref('0');
 const top = ref('0');
 
@@ -38,11 +40,12 @@ const updatePosition = () => {
 let scrolling = false;
 const scrollToTarget = (id: string) => {
   const el = document.body.querySelector(id) as HTMLElement;
-  const { top } = el.getBoundingClientRect();
-  const offsetTop = top - document.documentElement.clientTop;
-  const scrollTop = window.scrollY;
-  const y = scrollTop + offsetTop - 100;
-  window.scrollTo({
+  if (!el) return;
+  const container = getScrollContainer();
+  const elTop = el.getBoundingClientRect().top;
+  const containerTop = container.getBoundingClientRect().top;
+  const y = container.scrollTop + (elTop - containerTop) - 100;
+  container.scrollTo({
     top: y,
     behavior: 'smooth',
   });
@@ -65,11 +68,12 @@ const onScrollTop = () => {
     return;
   }
 
-  const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+  const container = getScrollContainer();
+  const containerTop = container.getBoundingClientRect().top;
   const activeList: Array<number> = [];
   props.list.forEach((item: NavItemT, index: number) => {
     const el = document.body.querySelector(`#${item.key}`) as HTMLElement;
-    if (el && scrollTop + 200 > el.offsetTop) {
+    if (el && el.getBoundingClientRect().top - containerTop < 200) {
       activeList.push(index);
     }
   });
@@ -83,16 +87,20 @@ const onResize = () => {
 };
 
 // 监听/移除事件
+let scrollEl: HTMLElement | Document | null = null;
 onMounted(() => {
-  window.addEventListener('scroll', onScrollTop);
   window.addEventListener('resize', onResize);
   nextTick(() => {
+    scrollEl = getScrollContainer();
+    scrollEl.addEventListener('scroll', onScrollTop, { passive: true });
     updatePosition();
   });
 });
 
 onUnmounted(() => {
-  window.removeEventListener('scroll', onScrollTop);
+  if (scrollEl) {
+    scrollEl.removeEventListener('scroll', onScrollTop);
+  }
   window.removeEventListener('resize', onResize);
 });
 </script>
