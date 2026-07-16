@@ -61,7 +61,7 @@ const queryCompatibilityData = () => {
   allData.value = [];
   compatData.value.compatibilities.forEach((item) => {
     if (regex.test(item.name) || regex.test(item.type) || regex.test(item.company) || regex.test(`${item.name} V${item.version}`)) {
-      if (searchType.value === '' || searchType.value === item.type) {
+      if (!searchType.value || searchType.value === item.type) {
         allData.value.push(item);
       }
     }
