@@ -1,5 +1,5 @@
 import { expect, describe, it } from 'vitest'
-import { readFileSync, existsSync } from 'fs'
+import { readFileSync, existsSync, statSync } from 'fs'
 import { resolve, dirname } from 'path'
 import { fileURLToPath } from 'url'
 import { reactive, isReactive, shallowRef, ref } from 'vue'
@@ -9,6 +9,18 @@ const rootDir = resolve(__dirname, '../../../../')
 
 const indexPath = resolve(rootDir, 'app/.vitepress/src/data/news/index.ts')
 const indexContent = readFileSync(indexPath, 'utf-8')
+
+function readJson(filePath: string) {
+  // 1. 防御：先检查文件大小，超过 5MB 拒绝执行，防止大文件攻击
+  const stats = statSync(filePath);
+  if (stats.size > 5 * 1024 * 1024) {
+    throw new Error('File too large, potential DoS risk.');
+  }
+
+  // 2. 读取并解析
+  const content = readFileSync(filePath, 'utf-8');
+  return JSON.parse(content);
+}
 
 describe('news index.ts — reactive bridging file structure', () => {
   it('imports reactive from vue', () => {
@@ -80,7 +92,7 @@ describe('deleted files — gen-news and static data', () => {
 })
 
 describe('package.json — build script change', () => {
-  const pkgJson = JSON.parse(readFileSync(resolve(rootDir, 'package.json'), 'utf-8'))
+  const pkgJson = readJson(resolve(rootDir, 'package.json'));
 
   it('build script does not include gen:news', () => {
     expect(pkgJson.scripts.build).not.toContain('gen:news')

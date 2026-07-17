@@ -3,6 +3,7 @@ import { readdir, readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { Readable } from "node:stream";
 import { pipeline } from "node:stream/promises";
+import { readFileAsJson } from './utils.js';
 
 const distDir = join(import.meta.dirname, '../app/.vitepress/dist');
 const geoManifestDir = join(import.meta.dirname, '../.geo');
@@ -27,7 +28,7 @@ async function* itrHtml(dir) {
       try {
         const tdkConfigPath = join(geoManifestDir, 'tdks', pagePath, 'index.json');
         if (existsSync(tdkConfigPath)) {
-          const tdk = JSON.parse(await readFile(tdkConfigPath));
+          const tdk = await readFileAsJson(tdkConfigPath);
           if (tdk) {
             title = tdk.title;
             description = tdk.description;
