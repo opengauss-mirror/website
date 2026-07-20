@@ -674,13 +674,6 @@ export default {
         company: `中国民生银行`,
       },
       {
-        img: zhangchun,
-        name: `张春`,
-        title: `理事`,
-        email: `zhangchun@chinamobile.com`,
-        company: `中国移动通信集团有限公司`,
-      },
-      {
         img: zhouzhengde,
         name: `周正德`,
         title: `理事`,
@@ -4996,13 +4989,6 @@ export default {
         title: `Director`,
         email: `haoqingyun@cmbc.com.cn`,
         company: `China Minsheng Banking Corp., Ltd.`,
-      },
-      {
-        img: zhangchun,
-        name: `Chun Zhang`,
-        title: `Director`,
-        email: `zhangchun@chinamobile.com`,
-        company: `China Mobile Communications Group Co.,Ltd`,
       },
       {
         img: zhouzhengde,
