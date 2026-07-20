@@ -1,0 +1,33 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://opengauss.org/en/events/#collectionpage",
+      "url": "https://opengauss.org/en/events/",
+      "name": "openGauss Events",
+      "description": "Discover openGauss community events including developer days, meetups, webinars, and conferences.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://opengauss.org/#website"
+      },
+      "mainEntity": {
+        "@id": "https://opengauss.org/en/events/#itemlist"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://opengauss.org/en/events/#itemlist",
+      "name": "openGauss Community Events",
+      "description": "A collection of openGauss community events including developer days, meetups, webinars, and conferences."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://opengauss.org/#website",
+      "url": "https://opengauss.org/",
+      "name": "openGauss",
+      "description": "openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability. openGauss is also an open source database platform that encourages community contribution and collaboration.",
+      "inLanguage": "en"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://opengauss.org/zh/blogs/#collectionpage",
+      "url": "https://opengauss.org/zh/blogs/",
+      "name": "openGauss技术博客",
+      "description": "openGauss开发者博客是面向开发者的知识分享平台，涵盖服务器操作系统安装、迁移、创新项目实践、开发者贡献经验等内容，便于开发者之间的知识交流。",
+      "inLanguage": "zh-CN",
+      "isPartOf": {
+        "@id": "https://opengauss.org/#website"
+      },
+      "mainEntity": {
+        "@id": "https://opengauss.org/zh/blogs/#itemlist"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://opengauss.org/zh/blogs/#itemlist",
+      "name": "openGauss博客文章",
+      "description": "openGauss技术博客文章集合，涵盖开发、迁移、实践等内容。"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://opengauss.org/#website",
+      "url": "https://opengauss.org/",
+      "name": "openGauss",
+      "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。",
+      "inLanguage": "zh-CN"
+    }
+  ]
+}

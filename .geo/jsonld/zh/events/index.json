@@ -1,0 +1,33 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://opengauss.org/zh/events/#collectionpage",
+      "url": "https://opengauss.org/zh/events/",
+      "name": "openGauss社区活动",
+      "description": "发现openGauss社区活动，包括开发者大会、见面会、线上研讨会和峰会。",
+      "inLanguage": "zh-CN",
+      "isPartOf": {
+        "@id": "https://opengauss.org/#website"
+      },
+      "mainEntity": {
+        "@id": "https://opengauss.org/zh/events/#itemlist"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://opengauss.org/zh/events/#itemlist",
+      "name": "openGauss社区活动列表",
+      "description": "openGauss社区活动集合，包括开发者大会、见面会、线上研讨会和峰会等。"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://opengauss.org/#website",
+      "url": "https://opengauss.org/",
+      "name": "openGauss",
+      "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。",
+      "inLanguage": "zh-CN"
+    }
+  ]
+}

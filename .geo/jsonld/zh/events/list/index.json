@@ -1,0 +1,25 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://opengauss.org/zh/events/list/#collectionpage",
+      "url": "https://opengauss.org/zh/events/list/",
+      "name": "openGauss活动列表",
+      "description": "浏览openGauss社区全部活动列表，包括开发者大会、见面会、线上研讨会和峰会等。",
+      "inLanguage": "zh-CN",
+      "isPartOf": {
+        "@id": "https://opengauss.org/zh/events/#collectionpage"
+      },
+      "mainEntity": {
+        "@id": "https://opengauss.org/zh/events/list/#itemlist"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://opengauss.org/zh/events/list/#itemlist",
+      "name": "openGauss社区活动列表",
+      "description": "openGauss社区全部活动列表，包括开发者大会、见面会、线上研讨会和峰会等。"
+    }
+  ]
+}

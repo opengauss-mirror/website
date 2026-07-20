@@ -1,0 +1,59 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://opengauss.org/zh/cve/detail/",
+      "url": "https://opengauss.org/zh/cve/detail/",
+      "name": "openGauss CVE详情 | CVE",
+      "description": "获取与openGauss相关的具体CVE信息，以确保数据库安全。",
+      "inLanguage": "zh-CN",
+      "isPartOf": {
+        "@id": "https://opengauss.org/#website"
+      },
+      "about": {
+        "@type": "Thing",
+        "name": "CVE",
+        "description": "与openGauss相关的通用漏洞披露信息"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://opengauss.org/#website",
+      "url": "https://opengauss.org/",
+      "name": "openGauss",
+      "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库。openGauss也是一个鼓励社区贡献和协作的开源数据库平台。",
+      "inLanguage": "zh-CN"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "name": "Breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@id": "https://opengauss.org/zh/",
+            "name": "首页"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@id": "https://opengauss.org/zh/cve/",
+            "name": "CVE"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@id": "https://opengauss.org/zh/cve/detail/",
+            "name": "CVE详情"
+          }
+        }
+      ]
+    }
+  ]
+}
