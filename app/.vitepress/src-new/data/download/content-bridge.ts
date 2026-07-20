@@ -71,7 +71,10 @@ function foldOldFormat(groups: any[]) {
     items.map((item) => {
       const result: any = {};
       for (const [key, val] of Object.entries(item)) {
-        if (key.endsWith('_zh') || key.endsWith('_en')) continue;
+        if (key.endsWith(`_${lang}`)) {
+          result[key.slice(0, -3)] = val;
+          continue;
+        }
         const localized = item[`${key}_${lang}`];
         result[key] = localized !== undefined ? localized : val;
       }
