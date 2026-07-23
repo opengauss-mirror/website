@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vitepress dev app",
-    "build": "pnpm gen:blogs && vitepress build app",
+    "build": "pnpm sync:blogs && vitepress build app",
     "postbuild": "node scripts/generate-llms-txt.js",
     "build:geo": "vitepress build app --exclude=**/blogs/**/*,**/events/**/*,**/news/**/*",
     "postbuild:geo": "node scripts/generate-llms-txt.js",
@@ -17,7 +17,7 @@
     "fix": "eslint --fix \"app/.vitepress/src/**/*.{js,ts,vue,jsx,tsx}\"",
     "lint:components": "eslint \"opendesign/**/*.{js,ts,vue,jsx,tsx}\"",
     "prepare": "husky install",
-    "gen:blogs": "node scripts/index.js blogs"
+    "sync:blogs": "node scripts/index.js blogs"
   },
   "keywords": [],
   "author": "",

@@ -86,8 +86,8 @@ describe('package.json — build script change', () => {
     expect(pkgJson.scripts.build).not.toContain('gen:news')
   })
 
-  it('build script includes gen:blogs and vitepress build', () => {
-    expect(pkgJson.scripts.build).toContain('gen:blogs')
+  it('build script includes sync:blogs and vitepress build', () => {
+    expect(pkgJson.scripts.build).toContain('sync:blogs')
     expect(pkgJson.scripts.build).toContain('vitepress build app')
   })
 
@@ -95,7 +95,7 @@ describe('package.json — build script change', () => {
     expect(pkgJson.scripts['gen:news']).toBeUndefined()
   })
 
-  it('gen:blogs script is still present', () => {
-    expect(pkgJson.scripts['gen:blogs']).toBeDefined()
+  it('sync:blogs script is present in package.json', () => {
+    expect(pkgJson.scripts['sync:blogs']).toBeDefined()
   })
 })

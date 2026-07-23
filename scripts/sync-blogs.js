@@ -3,7 +3,6 @@ import fs from 'fs';
 import fsPromise from 'fs/promises';
 import path from 'node:path';
 import process from 'node:process';
-import { generate } from './generate-data.js';
 
 const CWD = process.cwd();
 const BLOGS_GIT_REPO = 'https://gitcode.com/opengauss/blog.git';
@@ -24,7 +23,7 @@ async function pullFromGit() {
     const timeout = setTimeout(() => {
       cp.kill();
       reject('timeout');
-    }, 30 * 60 * 1000); // 30 minutes
+    }, 30 * 60 * 1000);
     cp.stderr.on('data', (data) => {
       console.log(data.toString());
     });
@@ -41,7 +40,7 @@ async function pullFromGit() {
 }
 
 export default async function main() {
-  console.log('gen blogs')
+  console.log('sync blogs')
   try {
     await pullFromGit();
     await copyBlogFiles();
@@ -52,20 +51,4 @@ export default async function main() {
   if (fs.existsSync(PULL_TARGET_PATH)) {
     fs.rmSync(PULL_TARGET_PATH, { recursive: true, force: true });
   }
-  generate({
-    type: 'blog',
-    pathName: 'blogs',
-    blackList: [
-      path.join(CWD, './app/en/blogs/index.md'),
-      path.join(CWD, './app/zh/blogs/index.md'),
-      path.join(CWD, './app/zh/blogs/guidance/index.md'),
-      path.join(CWD, './app/zh/blogs/desgin/content_posts.md'),
-    ],
-    onZhDone: (data) => {
-      data.push({
-        title: 'Guidance to Post a Blog',
-        path: 'zh/blogs/guidance/index',
-      });
-    },
-  });
 }
