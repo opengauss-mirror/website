@@ -6,6 +6,7 @@ import { useScreen } from '@/shared/useScreen';
 
 import liveActiveBg from '../img/live-active.jpg';
 import liveActiveBgLong from '../img/live-active-long.jpg';
+import { VHALLYUN_URL } from '@/data/url-config';
 
 const { lang } = useData();
 
@@ -41,7 +42,7 @@ const setLiveRoom = (item: RenderData, index: number): void => {
 };
 
 const createLiveUrl = (liveId: string) => {
-  liveUrl.value = `https://hw.vhallyun.com/v2/watch/${liveId}?lang=zh&landScape=true`;
+  liveUrl.value = `${VHALLYUN_URL}/v2/watch/${liveId}?lang=zh&landScape=true`;
 };
 
 const height = ref(800);
@@ -64,7 +65,7 @@ const messageEvent = () => {
   window.addEventListener(
     'message',
     function (event) {
-      if (event.origin === 'https://hw.vhallyun.com') {
+      if (event.origin === VHALLYUN_URL) {
         let data = {
           state: '',
         };

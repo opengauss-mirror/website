@@ -16,6 +16,7 @@ import vastdataDark from '@/assets/category/authentication/training/img/talent/v
 import szDark from '@/assets/category/authentication/training/img/talent/sz_dark.png';
 import qstDark from '@/assets/category/authentication/training/img/talent/qst_dark.png';
 import { computed } from 'vue';
+import { BIGDATA_10086_LINK, EDUPLUS_LINK, MODB_LINK, SHENTONG_DATA_LINK, VASTDATA_LINK } from '~@/data/url-config';
 
 const commonStore = useCommon();
 const { gtPhone } = useScreen();
@@ -97,7 +98,7 @@ const courseGuides = [
                 <img :src="isDark ? yshlDark : yshl" alt="" />
               </div>
               <p class="entry-list-item-desc">openGauss初级OGCA认证课程</p>
-              <OButton class="signup-btn" color="primary" round="pill" variant="solid" href="https://www.modb.pro/course/144" target="_blank" rel="noopener noreferrer">
+              <OButton class="signup-btn" color="primary" round="pill" variant="solid" :href="`${MODB_LINK}/course/144`" target="_blank" rel="noopener noreferrer">
                 立即报名
                 <template #suffix
                   ><OIcon><IconOutlink /></OIcon>
@@ -111,7 +112,7 @@ const courseGuides = [
                 <img :src="isDark ? vastdataDark : vastdata" alt="" />
               </div>
               <p class="entry-list-item-desc">初级OGCA考试</p>
-              <OButton class="signup-btn" color="primary" round="pill" variant="solid" href="https://education.vastdata.com.cn/pc/#/index/examDetails?id=35dcb340785ab1b3546521ef6407b9c8&type=1" target="_blank" rel="noopener noreferrer">
+              <OButton class="signup-btn" color="primary" round="pill" variant="solid" :href="`${VASTDATA_LINK}/pc/#/index/examDetails?id=35dcb340785ab1b3546521ef6407b9c8&type=1`" target="_blank" rel="noopener noreferrer">
                 立即报名
                 <template #suffix
                   ><OIcon><IconOutlink /></OIcon>
@@ -125,7 +126,7 @@ const courseGuides = [
                 <img :src="isDark ? szDark : sz" alt="" />
               </div>
               <p class="entry-list-item-desc">初级OGCA认证</p>
-              <OButton class="signup-btn" color="primary" round="pill" variant="solid" href="http://shentongdata.com/index.php/course/exam-58" target="_blank" rel="noopener noreferrer">
+              <OButton class="signup-btn" color="primary" round="pill" variant="solid" :href="`${SHENTONG_DATA_LINK}/index.php/course/exam-58`" target="_blank" rel="noopener noreferrer">
                 立即报名
                 <template #suffix
                   ><OIcon><IconOutlink /></OIcon>
@@ -139,7 +140,7 @@ const courseGuides = [
                 <img :src="isDark ? qstDark : qst" alt="" />
               </div>
               <p class="entry-list-item-desc">初级OGCA认证</p>
-              <OButton class="signup-btn" color="primary" round="pill" variant="solid" href="https://www.eduplus.net/training/openGauss" target="_blank" rel="noopener noreferrer">
+              <OButton class="signup-btn" color="primary" round="pill" variant="solid" :href="`${EDUPLUS_LINK}/training/openGauss`" target="_blank" rel="noopener noreferrer">
                 立即报名
                 <template #suffix
                   ><OIcon><IconOutlink /></OIcon>
@@ -153,7 +154,7 @@ const courseGuides = [
                 <img :src="isDark ? ChinaMobileDark : ChinaMobile" alt="" />
               </div>
               <p class="entry-list-item-desc">初级OGCA认证</p>
-              <OButton class="signup-btn" color="primary" round="pill" variant="solid" href="https://bigdata.10086.cn/honghu/hhweb/#/certify" target="_blank" rel="noopener noreferrer">
+              <OButton class="signup-btn" color="primary" round="pill" variant="solid" :href="`${BIGDATA_10086_LINK}/honghu/hhweb/#/certify`" target="_blank" rel="noopener noreferrer">
                 立即报名
                 <template #suffix
                   ><OIcon><IconOutlink /></OIcon>

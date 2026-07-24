@@ -1,3 +1,4 @@
+import { E_COMPAIGN_LINK, SHIMO_LINK } from '@/data/url-config';
 import bannerBg from '../img/bg.jpg';
 import bannerSummitMo from '../img/bgMo.jpg';
 import nowHoverImg from '../img/now-hover.jpg';
@@ -11,7 +12,7 @@ export default {
     slogan: '万数汇海 同创共赢',
     title: 'openGauss Developer Day 2024',
     subtitle: '2024年6月21日 | 中国 北京',
-    signUpHref: 'https://e-campaign.huawei.com/t/V7zuQb',
+    signUpHref: `${E_COMPAIGN_LINK}/t/V7zuQb`,
     signUpTitle: '立即报名',
   },
   intro: {
@@ -58,12 +59,12 @@ export default {
       {
         title: 'Call For Sponsor',
         text: '提交演示议题',
-        href: 'https://shimo.im/forms/9030Jd4z85TWEgkw/fill',
+        href: `${SHIMO_LINK}/forms/9030Jd4z85TWEgkw/fill`,
       },
       {
         title: 'Call for SIG',
         text: '申报现场会议',
-        href: 'https://shimo.im/forms/m8AZMlraoQHKnjkb/fill',
+        href: `${SHIMO_LINK}/forms/m8AZMlraoQHKnjkb/fill`,
       },
     ],
   },

@@ -97,7 +97,6 @@ const eventList = [
         name: 'openGauss oGRAC技术直播',
         date: '2026/02/01',
         location: 'Online',
-        // link: 'https://baidu.com',
       },
       {
         name: 'openGauss × 国创 Workshop',

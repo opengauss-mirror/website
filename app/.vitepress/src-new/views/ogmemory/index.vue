@@ -7,6 +7,8 @@ import contextLifecycleIcon from '~icons/ogmemory/context-lifecycle';
 import contextTypeIcon from '~icons/ogmemory/context-type';
 import { OButton, ODivider, OIcon, OIconChevronRight, OLink } from '@opensig/opendesign';
 
+const DOCS_URL = import.meta.env.VITE_DOCS_ORIGIN;
+
 const designs = [
   {
     title: '上下文有生命周期',
@@ -39,7 +41,7 @@ const designs = [
       <div class="quickstart-item">
         <div class="quickstart-header">
           <h3 class="quickstart-title">安装配置</h3>
-          <OButton color="primary" round="pill" variant="outline" href="https://docs.opengauss.org/zh/docs/latest/datavec/ogmem_install.html" target="_blank"
+          <OButton color="primary" round="pill" variant="outline" :href="`${DOCS_URL}/zh/docs/latest/datavec/ogmem_install.html`" target="_blank"
             >查看文档</OButton
           >
         </div>
@@ -60,7 +62,7 @@ const designs = [
             color="primary"
             round="pill"
             variant="outline"
-            href="https://docs.opengauss.org/zh/docs/latest/datavec/ogmem_architecture.html"
+            :href="`${DOCS_URL}/zh/docs/latest/datavec/ogmem_architecture.html`"
             target="_blank"
             rel="noopener noreferrer"
             >查看文档</OButton
@@ -83,7 +85,7 @@ const designs = [
             color="primary"
             round="pill"
             variant="outline"
-            href="https://docs.opengauss.org/zh/docs/latest/datavec/ogmem_api.html#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%8E%A5%E5%8F%A3"
+            :href="`${DOCS_URL}/zh/docs/latest/datavec/ogmem_api.html#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%8E%A5%E5%8F%A3`"
             target="_blank"
             rel="noopener noreferrer"
             >查看文档</OButton
@@ -121,7 +123,7 @@ const designs = [
   <AppSection
     title="设计哲学"
     footer="查看完整文档"
-    footer-href="https://docs.opengauss.org/zh/docs/latest/datavec/ogmem_introduction.html#%E8%AE%BE%E8%AE%A1%E5%93%B2%E5%AD%A6"
+    :footer-href="`${DOCS_URL}/zh/docs/latest/datavec/ogmem_introduction.html#%E8%AE%BE%E8%AE%A1%E5%93%B2%E5%AD%A6`"
   >
     <div class="design-content">
       <div class="design-content-main">
@@ -141,7 +143,7 @@ const designs = [
     <div class="typical-case">
       <p class="typical-case-title">让学习助手真正记住你：OpenClaw与OGMemory的长期陪伴是学习案例</p>
       <p class="typical-case-desc">查看OpenClaw 与 OGMemory 的长期陪伴式学习案例</p>
-      <OLink class="typical-case-link" href="https://docs.opengauss.org/zh/docs/latest/datavec/ogmem_case01.html" target="_blank">
+      <OLink class="typical-case-link" :href="`${DOCS_URL}/zh/docs/latest/datavec/ogmem_case01.html`" target="_blank">
         查看案例
         <template #suffix>
           <OIcon><OIconChevronRight /> </OIcon>

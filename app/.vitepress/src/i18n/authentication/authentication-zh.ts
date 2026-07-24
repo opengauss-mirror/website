@@ -1,4 +1,4 @@
-import { GAUSS_CERTIFICATE_EMAIL } from '@/data/url-config';
+import { BIGDATA_10086_LINK, EDUPLUS_LINK, GAUSS_CERTIFICATE_EMAIL, JOB_10086_LINK, MODB_LINK, SHENTONG_DATA_LINK, VASTDATA_LINK } from '@/data/url-config';
 
 import yshl from '@/assets/category/authentication/training/img/talent/yshl.png';
 import yshlDark from '@/assets/category/authentication/training/img/talent/yshl_dark.png';
@@ -254,8 +254,8 @@ export default {
       iconSignup: yshlSignup,
       iconSignupDark: yshlSignupDark,
       desc: '云数互联旗下“墨天轮”是专注于数据库的技术社区，月活用户超过150万并覆盖40万专业数据库人才。社区以排行榜、知识库、问答、视频课程、AI 助手、培训认证等方式，促进数据库领域的知识传播和技术创新。',
-      url: 'https://www.modb.pro/job',
-      signupUrl: 'https://www.modb.pro/course/144',
+      url: `${MODB_LINK}/job`,
+      signupUrl: `${MODB_LINK}/course/144`,
     },
     {
       icon: vastdata,
@@ -263,8 +263,8 @@ export default {
       iconSignup: vastdataSignup,
       iconSignupDark: vastdataSignupDark,
       desc: '北京海量数据技术股份有限公司(股票代码:603138.SH)成立于2007年，是国内首家以数据库为主营业务的主板上市企业。公司十余年来秉承“专注做好数据库”的初心，始终致力于数据库产品的研发、销售和服务。',
-      url: 'http://www.vastdata.com.cn/us/jrwm',
-      signupUrl: 'https://education.vastdata.com.cn/pc/#/',
+      url: `${VASTDATA_LINK}/us/jrwm`,
+      signupUrl: `${VASTDATA_LINK}/pc/#/`,
     },
     {
       icon: sz,
@@ -272,8 +272,8 @@ export default {
       iconSignup: szSignup,
       iconSignupDark: szSignupDark,
       desc: '神舟通用公司是中国航天科技集团有限公司（CASC）下属的一家专业的数据库公司，研发和销售神通数据库产品。公司的主要客户群体为党、政、军、航天、金融、审计、能源、医疗、电信等单位。',
-      url: 'http://www.shentongdata.com/index.php/about/company-8',
-      signupUrl: 'http://shentongdata.com/index.php/course/exam-58',
+      url: `${SHENTONG_DATA_LINK}/index.php/about/company-8`,
+      signupUrl: `${SHENTONG_DATA_LINK}/index.php/course/exam-58`,
     },
     {
       icon: qst,
@@ -281,8 +281,8 @@ export default {
       iconSignup: qstSignup,
       iconSignupDark: qstSignupDark,
       desc: '青软集团创立于2006年，是国内领先的高等教育数字化解决方案、产教融合及人力资源服务提供商，致力于推动教育与产业无缝衔接，把产业的技术、需求和资源转化成支撑高校人才培养的能力，助力新兴产业的人才支撑及服务。',
-      url: 'https://www.eduplus.net/jiuye/company/details?id=c57c107755d44159a3f9bc1c2fb54867',
-      signupUrl: 'https://www.eduplus.net/training/openGauss',
+      url: `${EDUPLUS_LINK}/jiuye/company/details?id=c57c107755d44159a3f9bc1c2fb54867`,
+      signupUrl: `${EDUPLUS_LINK}/training/openGauss`,
     },
     {
       icon: ChinaMobile,
@@ -290,8 +290,8 @@ export default {
       iconSignup: ChinaMobile,
       iconSignupDark: ChinaMobile,
       desc: '中国移动信息技术有限公司，面向全网IT领域，行使职能管理职责，统筹管理全网IT系统规划、投资、大数据统筹等工作；面向内部业务需求，进行智慧中台、业务支撑、管理支撑、大数据系统、IT云建设及运营，以及研发创新等工作；面向外部能力输出，具备独立的法人实体资质，可对外输出解决方案',
-      url: 'https://job.10086.cn/',
-      signupUrl: 'https://bigdata.10086.cn/honghu/hhweb/#/certify',
+      url: JOB_10086_LINK,
+      signupUrl: `${BIGDATA_10086_LINK}/honghu/hhweb/#/certify`,
     },
   ],
   talentDetail: '查看岗位详情',
