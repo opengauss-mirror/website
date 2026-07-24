@@ -502,9 +502,8 @@ import yangzihao2 from '@/assets/category/member/avatar/yangzihao2.png';
 import zengseliang2 from '@/assets/category/member/avatar/zengseliang2.png';
 import weikewei from '@/assets/category/member/avatar/weikewei.png';
 import liuchangfeng from '@/assets/category/member/avatar/liuchangfeng.png';
-import liming from '@/assets/category/member/avatar/liming.png';
-import pansiyan from '@/assets/category/member/avatar/pansiyan.png';
-import mengpengbo from '@/assets/category/member/avatar/mengpengbo.png';
+import wangkaihui from '@/assets/category/member/avatar/wangkaihui.png';
+import sunshuang from '@/assets/category/member/avatar/sunshuang.png';
 import zhangruo from '@/assets/category/member/avatar/zhangruo.png';
 import zhoucong from '@/assets/category/member/avatar/zhoucong.png';
 import jiwenke from '@/assets/category/member/avatar/jiwenke.png';
@@ -1235,17 +1234,10 @@ export default {
         company: `天津南大通用数据技术股份有限公司`,
       },
       {
-        img: liming,
-        name: `李明`,
+        img: wangkaihui,
+        name: `王凯慧`,
         title: `委员`,
-        email: `liming107@huawei.com`,
-        company: `华为技术有限公司`,
-      },
-      {
-        img: pansiyan,
-        name: `潘思言`,
-        title: `委员`,
-        email: `pansiyan@huawei.com`,
+        email: `wangkaihui4@huawei.com`,
         company: `华为技术有限公司`,
       },
     ],
@@ -1397,22 +1389,16 @@ export default {
         email: `huangxianru@huawei.com`,
       },
       {
-        img: liming,
-        name: `李明`,
+        img: sunshuang,
+        name: `孙爽`,
         title: `执行秘书`,
-        email: `liming107@huawei.com`,
+        email: `sunshuang18@huawei.com`,
       },
       {
-        img: pansiyan,
-        name: `潘思言`,
+        img: wangkaihui,
+        name: `王凯慧`,
         title: `执行秘书`,
-        email: `pansiyan@huawei.com`,
-      },
-      {
-        img: mengpengbo,
-        name: `孟鹏博`,
-        title: `执行秘书`,
-        email: `mengpengbo@huawei.com`,
+        email: `wangkaihui4@huawei.com`,
       },
     ],
     SQLENGINE: [
@@ -5552,17 +5538,10 @@ export default {
         company: `General Data Technology Co.,LTD`,
       },
       {
-        img: liming,
-        name: `Ming Li`,
+        img: wangkaihui,
+        name: `Kaihui Wang`,
         title: `Member`,
-        email: `liming107@huawei.com`,
-        company: `Huawei`,
-      },
-      {
-        img: pansiyan,
-        name: `Siyan Pan`,
-        title: `Member`,
-        email: `pansiyan@huawei.com`,
+        email: `wangkaihui4@huawei.com`,
         company: `Huawei`,
       },
     ],
@@ -5714,22 +5693,16 @@ export default {
         email: `huangxianru@huawei.com`,
       },
       {
-        img: liming,
-        name: `Ming Li`,
+        img: sunshuang,
+        name: `Shuang Sun`,
         title: `Executive Secretary`,
-        email: `liming107@huawei.com`,
+        email: `sunshuang18@huawei.com`,
       },
       {
-        img: pansiyan,
-        name: `Siyan Pan`,
+        img: wangkaihui,
+        name: `Kaihui Wang`,
         title: `Executive Secretary`,
-        email: `pansiyan@huawei.com`,
-      },
-      {
-        img: mengpengbo,
-        name: `Pengbo Meng`,
-        title: `Executive Secretary`,
-        email: `mengpengbo@huawei.com`,
+        email: `wangkaihui4@huawei.com`,
       },
     ],
     SQLENGINE: [
