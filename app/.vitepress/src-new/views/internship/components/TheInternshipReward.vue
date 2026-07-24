@@ -14,7 +14,6 @@ import { EMAIL_ADDRESS } from './types';
 import { useI18n } from '~@/i18n';
 import { useCommon } from '@/stores/common';
 import { computed } from 'vue';
-import ItemCode from '~@/components/header/ItemCode.vue';
 
 const i18n = useI18n();
 const commonStore = useCommon();

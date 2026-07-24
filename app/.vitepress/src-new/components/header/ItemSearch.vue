@@ -9,6 +9,7 @@ import { getSearchWord, imageUpload } from '~@/api/api-search';
 import { useMessage } from '@opensig/opendesign';
 import { useDebounceFn } from '@vueuse/core';
 import { useI18n } from '~@/i18n';
+import { windowOpen } from '@/shared/utils';
 
 const i18n = useI18n();
 const { lang } = useData();
@@ -55,7 +56,7 @@ function handleSearchEvent(query: { q: string; imageUrl?: string } = { q: search
     .filter(([_, v]) => !!v)
     .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`)
     .join('&');
-  window.open(`/${lang.value}/search/?${queryString}`, '_self');
+  windowOpen(`/${lang.value}/search/?${queryString}`, '_self');
 }
 
 const debouncedLoadSuggest = useDebounceFn(async (keyword: string) => {

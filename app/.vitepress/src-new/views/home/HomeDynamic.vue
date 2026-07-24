@@ -44,7 +44,7 @@ const activeTab = ref('blogs');
 <template>
   <AppSection :title="t('home.COMMUNITY_ACTIVITY.TITLE')">
     <template #footer>
-      <OLink :href="`/${locale}/${activeTab}`" target="_blank" style="display: flex; align-items: center;">
+      <OLink :href="`/${locale}/${activeTab}`" target="_blank" style="display: flex; align-items: center;" rel="noopener noreferrer">
         {{ t('common.VIEW_MORE') }}
         <template #suffix>
           <OIcon style="font-size: 1.5rem;"><OIconChevronRight /> </OIcon>

@@ -209,7 +209,7 @@ const getCertificateBoxGridTemplateColumns = (length: number, isMobile: boolean)
                   <Transition name="bounce">
                     <div v-if="showedCommentKey === i" class="comment">
                       <template v-for="(c, index) in person.comment" :key="index">
-                        <a v-if="typeof c === 'string' && c.startsWith('link: ')" :href="c.replace('link: ', '')" class="link" target="_blank" @click.stop>
+                        <a v-if="typeof c === 'string' && c.startsWith('link: ')" :href="c.replace('link: ', '')" class="link" target="_blank" rel="noopener noreferrer" @click.stop>
                           {{ c.replace('link: ', '') }}
                         </a>
                         <p v-else @click.stop>{{ c }}</p>

@@ -1,5 +1,4 @@
 import { defineStore } from 'pinia';
-import { inBrowser, useRouter } from 'vitepress';
 
 export const useCommon = defineStore('common', {
   state: () => ({

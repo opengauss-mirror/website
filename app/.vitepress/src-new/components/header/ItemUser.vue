@@ -8,6 +8,7 @@ import { useLoginStore, useUserInfoStore } from '@/stores/user';
 import IconLogin from '~icons/app-new/icon-header-person.svg';
 import { useCountStore } from '~@/stores/notification';
 import { useI18n as useI18nNew } from '~@/i18n';
+import { windowOpen } from '@/shared/utils';
 
 const { lang } = useData();
 const i18n = useI18n();
@@ -19,7 +20,7 @@ const userInfoStore = useUserInfoStore();
 const jumpToUserZone = () => {
   const language = lang.value === 'zh' ? 'zh' : 'en';
   const origin = import.meta.env.VITE_LOGIN_URL;
-  window.open(`${origin}/${language}/profile`, '_blank');
+  windowOpen(`${origin}/${language}/profile`, '_blank');
 };
 
 const jumpToPersonal = (name) => {

@@ -146,7 +146,7 @@ const selectedOverflowTabIndex = computed<number>({
 <template>
   <AppSection ref="containerRef" :title="t('home.USER_TITLE')" class="user-case" :footer="t('common.VIEW_MORE')" v-show="isZh">
     <template #footer>
-      <OLink :href="`/${locale}/user-practice/?industry=${activeTab + 1}`" target="_blank" style="display: flex; align-items: center">
+      <OLink :href="`/${locale}/user-practice/?industry=${activeTab + 1}`" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center">
         {{ t('common.VIEW_MORE') }}
         <template #suffix>
           <OIcon style="font-size: 1.5rem"><OIconChevronRight /></OIcon>
@@ -185,7 +185,7 @@ const selectedOverflowTabIndex = computed<number>({
         <li class="case-list">
           <div flex="0 0 100%" v-for="(item, i) in caseData[caseCategories[activeTab].typeEn].slice(0, 4)" :key="i" class="item-case">
             <ODivider v-if="i !== 0" />
-            <OLink :href="`/${item.path}`" target="_blank" class="item-link">
+            <OLink :href="`/${item.path}`" target="_blank" rel="noopener noreferrer" class="item-link">
               <div class="item-title">
                 <p class="company">{{ item.company }}</p>
                 <OIcon class="company-icon" v-svg-color><IconChevronRight /></OIcon>

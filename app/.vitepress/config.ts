@@ -240,7 +240,6 @@ const config: UserConfig = {
     },
     config(md) {
       md.set({
-        html: true,
         linkify: false,
       });
     },

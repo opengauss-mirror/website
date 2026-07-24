@@ -264,7 +264,6 @@ async function searchAll(current?: string) {
   reportSearch(searchInput.value);
   currentPage.value = 1;
   searchType.value = current || '';
-  // handleSelectChange(searchInput.value);
 
   if (imageUrl.value) {
     doImageSearch();
@@ -290,9 +289,6 @@ const reportSearch = (keyword: string) => {
   );
 };
 
-function handleSelectChange(val: string) {
-  history.pushState(null, '', `?q=${encodeURIComponent(val)}`);
-}
 // 设置搜索结果的跳转路径
 function goLink(data: any, index: number) {
   const { type, path } = data;

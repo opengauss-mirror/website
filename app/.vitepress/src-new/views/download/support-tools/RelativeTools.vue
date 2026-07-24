@@ -84,6 +84,7 @@ const isDark = computed(() => commonStore.theme === 'dark');
             <OLink
               :href="item.address"
               target="_blank"
+              rel="noopener noreferrer"
               color="primary"
               v-analytics.bubble="{ level3: isEn && item.name_en ? item.name_en : item.name, level4: $t('tools.SOURCE_CODE_ADDR') }"
               >{{ $t('tools.SOURCE_CODE_ADDR') }}</OLink
@@ -91,6 +92,7 @@ const isDark = computed(() => commonStore.theme === 'dark');
             <OLink
               :href="item.guide"
               target="_blank"
+              rel="noopener noreferrer"
               color="primary"
               v-analytics.bubble="{ level3: isEn && item.name_en ? item.name_en : item.name, level4: $t('tools.OPERATION_GUIDE') }"
               >{{ $t('tools.OPERATION_GUIDE') }}</OLink

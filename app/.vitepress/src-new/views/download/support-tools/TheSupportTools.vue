@@ -100,6 +100,7 @@ const onClickTool = (item: any) => {
           <OLink
             :href="item.address"
             target="_blank"
+            rel="noopener noreferrer"
             color="primary"
             v-analytics.bubble.addUrl="(ev: any) => ({
               to: ev.currentTarget.href,
@@ -111,6 +112,7 @@ const onClickTool = (item: any) => {
           <OLink
             :href="item.guide"
             target="_blank"
+            rel="noopener noreferrer"
             color="primary"
             v-analytics.bubble.addUrl="(ev: any) => ({
               to: ev.currentTarget.href,
@@ -134,8 +136,8 @@ const onClickTool = (item: any) => {
         <OTag variant="outline">{{ typeIdNameMap.get(selectedItem.iden) }}</OTag>
         <p class="desc">{{ selectedItem.desc }}</p>
         <div class="links">
-          <OLink :href="selectedItem.address" target="_blank" color="primary">{{ $t('tools.SOURCE_CODE_ADDR') }}</OLink>
-          <OLink :href="selectedItem.guide" target="_blank" color="primary">{{ $t('tools.OPERATION_GUIDE') }}</OLink>
+          <OLink :href="selectedItem.address" target="_blank" rel="noopener noreferrer" color="primary">{{ $t('tools.SOURCE_CODE_ADDR') }}</OLink>
+          <OLink :href="selectedItem.guide" target="_blank" rel="noopener noreferrer" color="primary">{{ $t('tools.OPERATION_GUIDE') }}</OLink>
         </div>
       </div>
     </ODialog>

@@ -62,6 +62,7 @@ const designs = [
             variant="outline"
             href="https://docs.opengauss.org/zh/docs/latest/datavec/ogmem_architecture.html"
             target="_blank"
+            rel="noopener noreferrer"
             >查看文档</OButton
           >
         </div>
@@ -84,6 +85,7 @@ const designs = [
             variant="outline"
             href="https://docs.opengauss.org/zh/docs/latest/datavec/ogmem_api.html#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%8E%A5%E5%8F%A3"
             target="_blank"
+            rel="noopener noreferrer"
             >查看文档</OButton
           >
         </div>

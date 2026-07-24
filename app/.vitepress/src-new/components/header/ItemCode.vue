@@ -4,12 +4,13 @@ import { useI18n } from '~@/i18n';
 import { OIcon, ODropdown, ODropdownItem } from '@opensig/opendesign';
 
 import IconChevronDown from '~icons/app-new/icon-chevron-down.svg';
+import { windowOpen } from '@/shared/utils';
 
 const i18n = useI18n();
 const sourceCode = computed(() => i18n.value.header.SOURCE_CODE);
 
 const itemChange = (data: any) => {
-  window.open(data.PATH, '_blank');
+  windowOpen(data.PATH, '_blank');
 };
 </script>
 

@@ -100,7 +100,7 @@ const detailPageUrls = {
           <img class="talent-icon" :src="isDark ? item.iconDark : item.icon" />
         </div>
         <p class="talent-item-desc" :title="item.desc">{{ item.desc }}</p>
-        <OLink :href="item.url" hover-underline color="primary" target="_blank"
+        <OLink :href="item.url" hover-underline color="primary" target="_blank" rel="noopener noreferrer"
           >查看岗位详情
           <template #suffix
             ><OIcon><IconOutlink /></OIcon>
