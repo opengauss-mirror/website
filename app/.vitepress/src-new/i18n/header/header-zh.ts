@@ -202,8 +202,13 @@ export default {
             {
               NAME: '培训认证',
               DESCRIPTION: '欢迎学习HCIA-openGauss华为认证openGauss工程师在线课程',
-              TAG: TAG_TYPE.NEW,
               URL: '/training/',
+            },
+            {
+              NAME: '开源实习',
+              DESCRIPTION: '帮助在校学生在项目实践中提升能力，成为优秀的开源人才',
+              TAG: TAG_TYPE.NEW,
+              URL: '/internship/',
             },
           ],
         },

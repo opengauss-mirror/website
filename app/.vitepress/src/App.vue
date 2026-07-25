@@ -28,6 +28,7 @@ import { useCookieStore } from '@/stores/common';
 import EventDetail from '~@/layouts/LayoutEventDetail.vue';
 import LayoutEventDetailHeader from '~@/layouts/LayoutEventDetailHeader.vue';
 import { useScreen } from '~@/composables/useScreen';
+import LayoutWithBanner from './layouts/LayoutWithBanner.vue';
 
 const { frontmatter, lang } = useData();
 const { lePadV } = useScreen();
@@ -50,6 +51,7 @@ const compMapping: {
   showcase: LayoutShowcase,
   migration: LayoutMigration,
   faq: LayoutFaq,
+  'banner-layout': LayoutWithBanner,
 };
 
 const isCustomLayout = computed(() => {

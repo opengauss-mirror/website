@@ -7,6 +7,7 @@ const categories: string[] = [
   'showcase',
   'migration',
   'faq',
+  'banner-layout'
 ];
 
 export default categories;
