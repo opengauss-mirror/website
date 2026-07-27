@@ -40,14 +40,6 @@ export default {
       list: data.en.UC,
     },
     {
-      name: `Brand Committee`,
-      id: `bc`,
-      gitPath: `${GITCODE_LINK}/opengauss/bc`,
-      emial: `bc@opengauss.org`,
-      nameText: `BC Members`,
-      list: data.en.BC,
-    },
-    {
       name: `Technical Committee (TC)`,
       id: `tc`,
       gitPath: `${GITCODE_LINK}/opengauss/tc`,
@@ -62,6 +54,14 @@ export default {
         }
         return a.name.localeCompare(b.name, 'en');
       }),
+    },
+    {
+      name: `Brand Committee`,
+      id: `bc`,
+      gitPath: `${GITCODE_LINK}/opengauss/bc`,
+      emial: `bc@opengauss.org`,
+      nameText: `BC Members`,
+      list: data.en.BC,
     },
     {
       name: `Secretariat`,
