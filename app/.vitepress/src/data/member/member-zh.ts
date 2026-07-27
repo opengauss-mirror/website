@@ -40,14 +40,6 @@ export default {
       list: data.zh.UC,
     },
     {
-      name: `品牌宣传委员会`,
-      id: `bc`,
-      gitPath: `${GITCODE_LINK}/opengauss/bc`,
-      emial: `bc@opengauss.org`,
-      nameText: `品牌宣传委员会成员：`,
-      list: data.zh.BC,
-    },
-    {
       name: `技术委员会 (TC)`,
       id: `tc`,
       gitPath: `${GITCODE_LINK}/opengauss/tc`,
@@ -62,6 +54,14 @@ export default {
         }
         return a.name.localeCompare(b.name, 'zh-Hans-CN');
       }),
+    },
+    {
+      name: `品牌宣传委员会`,
+      id: `bc`,
+      gitPath: `${GITCODE_LINK}/opengauss/bc`,
+      emial: `bc@opengauss.org`,
+      nameText: `品牌宣传委员会成员：`,
+      list: data.zh.BC,
     },
     {
       name: `秘书处`,
