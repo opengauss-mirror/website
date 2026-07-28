@@ -1,0 +1,63 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://opengauss.org/zh/conduct/#webpage",
+      "url": "https://opengauss.org/zh/conduct/",
+      "name": "openGauss社区行为准则",
+      "description": "了解openGauss社区行为准则，明确社区参与者应遵循的友好包容行为规范、禁止的骚扰与不当行为、维护者纠正违规的职责与权限，以及准则在社区及代表社区场景的适用范围。",
+      "inLanguage": "zh-CN",
+      "dateModified": "2026-07-28",
+      "isPartOf": {
+        "@id": "https://opengauss.org/#website"
+      },
+      "about": {
+        "@id": "https://opengauss.org/#organization"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://opengauss.org/#website",
+      "url": "https://opengauss.org/",
+      "name": "openGauss",
+      "description": "openGauss开源数据库社区官网",
+      "inLanguage": "zh-CN",
+      "publisher": {
+        "@id": "https://opengauss.org/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://opengauss.org/#organization",
+      "name": "openGauss",
+      "alternateName": "openGauss社区",
+      "url": "https://opengauss.org/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://opengauss.org/assets/logo_dark.CElWqwW0.svg"
+      },
+      "sameAs": [
+        "https://opengauss.org/"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://opengauss.org/zh/conduct/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首页",
+          "item": "https://opengauss.org/zh/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "行为准则",
+          "item": "https://opengauss.org/zh/conduct/"
+        }
+      ]
+    }
+  ]
+}

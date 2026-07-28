@@ -81,6 +81,10 @@ watch(footerIconRef, (iconRef) => {
 <style lang="scss" scoped>
 .app-section {
   .section-wrapper {
+    margin: var(--o-gap-t2c) auto 0;
+  }
+  
+  & ~ & .section-wrapper {
     margin: var(--o-gap-section) auto 0;
   }
 

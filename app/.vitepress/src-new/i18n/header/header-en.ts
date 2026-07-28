@@ -250,7 +250,7 @@ export default {
               NAME: 'Policies & Rules',
               DESCRIPTION: 'Learn about the code of conduct and AI contribution policies of the openGauss community.',
               TAG: TAG_TYPE.NEW,
-              URL: '/charter/',
+              URL: '/conduct/',
             },
           ],
         },
