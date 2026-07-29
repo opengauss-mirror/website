@@ -1,0 +1,177 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "openGauss开源实习申请流程与任务说明",
+    "description": "openGauss开源实习面向全国年满18周岁的在校大学生开放，提供真实开源项目任务、导师辅导、积分实习工资与实习证明，介绍实习申请、任务认领提交、工资证书发放及实习规则常见问题。",
+    "url": "https://opengauss.org/zh/internship/",
+    "inLanguage": "zh-CN"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "申请openGauss开源实习",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "阅读并签署活动声明",
+        "text": "阅读并签署《实习申请材料模板》中的活动声明。"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "完成实习测试任务",
+        "text": "完成实习测试任务，并将截图填入报名资料表内。"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "填写报名资料表并等待审核",
+        "text": "在《实习申请材料模板》里仔细阅读实习报名流程，在线填写报名资料表，填写完毕后等待审核，组织方将以邮件反馈审核结果，并根据所提交资料对报名学生进行审核筛选。审核通过后将分配账号开始实习。注意：openGauss开源实习offer发放时间为实习积分满10分后。"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "认领openGauss社区实习任务",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "查看任务",
+        "text": "在AtomGit查看任务，找到你想做的任务issue。每个任务只能有一个人认领，每人一次最多只能有2个认领中的任务。"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "认领任务并发送邮件",
+        "text": "在任务issue下方评论区输入/intern-assign命令认领该任务，然后发送邮件给任务导师请求审核。邮件需包括你的简历和该任务的开发方案。注意：输入/intern-assign命令后两周内没有发简历和方案给导师的，认领自动失效，任务被释放。"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "等待导师评审",
+        "text": "导师收到邮件后对申请人进行评审，在该任务issue评论下通过输入命令反馈结果：/intern-approve代表审核通过，学生成功领取任务，可以开始进行任务处理；/intern-unapprove代表领取失败，该学生可再去领取其他任务。"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "放弃任务（如需）",
+        "text": "如果领取后无法完成，可通过在issue下输入/intern-unassign放弃任务。放弃超过3次，账号被限制一个月不能领取任务。"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "提交openGauss实习任务成果",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "提交PR",
+        "text": "任务处理完成后，提交PR，在PR描述里添加#issue编号。"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "输入完成命令",
+        "text": "提交PR后在任务issue评论区输入/intern-completed命令，表示当前任务已提交，然后等待审核。"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "跟进导师审核PR",
+        "text": "跟进导师审核PR，PR被合入后，导师确认任务完成即在issue下输入/intern-done命令，issue关闭，学生获得积分。注意：导师有不通过任务成果的权利，如学生提交的PR离实际所需太远，或未按时提交PR，可选择输入命令/intern-fail，不通过该任务，则无积分。"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "开具openGauss实习证明",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "积分满60分",
+        "text": "在实习有效期6个月内积分累计满60分。"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "邀请导师撰写实习评语",
+        "text": "至少找一位导师为你撰写实习评语。"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "提交实习报告",
+        "text": "提交实习报告，实习评语与实习报告经评审合格后发放实习证明。"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "发邮件申请开具",
+        "text": "如需开具实习证明，发送邮件给实习官方邮箱common@public.opengauss.org提出申请。"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "申请openGauss优秀实习生证书",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "积分达到150分",
+        "text": "申请本年度内积分累计达到150分。"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "邀请导师撰写优秀推荐评语",
+        "text": "至少找一位导师为你撰写优秀推荐评语。"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "发邮件申请",
+        "text": "满足以上条件，可向社区发邮件申请发放优秀实习生证书，联系邮箱：common@public.opengauss.org。"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "哪些人可以报名openGauss开源实习？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "开源实习面向全国范围内年满18周岁的在校大学生招募，无专业年级限制，欢迎感兴趣的同学踊跃报名。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "实习有效期6个月是如何计算的？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "在申请实习时需签署实习劳务合同，实习有效期即劳务合同上填写的实习有效期，为6个月期限，6个月期限内未满60积分则不能获得实习证明。线上实习时间管理相对自由，可根据自身情况安排时间，可提前结束实习。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "超过了6个月或者完成了100积分还能继续在社区做任务吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "可以，但积分将不再用于申领证明与奖金，欢迎大家持续参与openGauss社区贡献，共同助力开源项目建设。"
+        }
+      }
+    ]
+  }
+]

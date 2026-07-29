@@ -12,6 +12,7 @@ import footer from './footer';
 import notifications from './notifications';
 import events from './events';
 import search from './search';
+import internship from './internship';
 
 const messages = {
   zh: {
@@ -27,6 +28,7 @@ const messages = {
     notifications: notifications.zh,
     events: events.zh,
     search: search.zh,
+    internship: internship.zh,
   },
   en: {
     // 公共模块

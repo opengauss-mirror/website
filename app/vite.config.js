@@ -78,6 +78,7 @@ export default defineConfig({
         'my': FileSystemIconLoader(path.resolve(__dirname, './.vitepress/src-new/assets/svg-icons/category/my')),
         'ogmemory': FileSystemIconLoader(path.resolve(__dirname, './.vitepress/src-new/assets/svg-icons/category/ogmemory')),
         'training': FileSystemIconLoader(path.resolve(__dirname, './.vitepress/src-new/assets/svg-icons/category/training')),
+        'internship': FileSystemIconLoader(path.resolve(__dirname, './.vitepress/src-new/assets/svg-icons/category/internship')),
       },
     }),
     viteStaticCopy({
