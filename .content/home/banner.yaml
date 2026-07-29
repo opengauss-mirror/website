@@ -31,17 +31,6 @@
   class_name: banner-version
 
 - locale: zh
-  bg_pc: ./images/banner/ccf-20260407/banner.png
-  bg_mb: ./images/banner/ccf-20260407/banner_mo.png
-  bg_theme: dark
-  text_image_zh: ./images/banner/ccf-20260407/content.png
-  text_image_mb_zh: ./images/banner/ccf-20260407/content_mo.png
-  btn_zh: 立即查看
-  href_zh: https://www.gitlink.org.cn/competitions/track1_2026openGauss
-  is_blank: true
-  class_name: banner-version
-
-- locale: zh
   bg_pc: ./images/banner/banner700_RC3.png
   bg_mb: ./images/banner/banner700_RC3_mo.png
   bg_theme: light

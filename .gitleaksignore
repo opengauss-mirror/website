@@ -74,3 +74,4 @@ df3b7139315ab786a85b10cf867f8eec94948a8f:themes/project/static/js/calender.js:ge
 99c631b4a6953b00c1ea6c11bd40f335445cb014:config.toml:gcp-api-key:162
 99c631b4a6953b00c1ea6c11bd40f335445cb014:themes/project/exampleSite/config.toml:gcp-api-key:81
 4976e85d35cf80237b64639b7ce1121bf68616e7:.content/honor/zh.yaml:generic-api-key:200
+88d3272f7ad962c4aed954f58906de2a471bfdc1:app/.vitepress/src-new/views/internship/components/types.ts:generic-api-key:13
