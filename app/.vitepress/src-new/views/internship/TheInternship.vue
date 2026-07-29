@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import AppSection from '~@/components/AppSection.vue';
 import qrCode from '~@/assets/category/internship/qrCode.png';
+import qrCodeDark from '~@/assets/category/internship/qrCode-dark.png';
 import TheInternshipIntro from './components/intro/TheInternshipIntro.vue';
 import TheInternshipFaq from './components/TheInternshipFaq.vue';
 import TheInternshipReward from './components/TheInternshipReward.vue';
@@ -9,7 +10,10 @@ import { OIcon, OLink } from '@opensig/opendesign';
 import IconOutlink from '~icons/app-new/icon-out-link.svg';
 import { GITCODE_LINK } from '~@/data/url-config/index.js';
 import { EMAIL_ADDRESS } from './components/types.js';
+import { useCommon } from '~@/stores/common.js';
+import { storeToRefs } from 'pinia';
 
+const { theme } = storeToRefs(useCommon());
 </script>
 
 <template>
@@ -33,7 +37,7 @@ import { EMAIL_ADDRESS } from './components/types.js';
   </AppSection>
   <AppSection title="帮助咨询">
     <div class="internship-consult">
-      <img :src="qrCode" alt="qrcode" class="qrcode">
+      <img :src="theme === 'dark' ? qrCodeDark : qrCode" alt="qrcode" class="qrcode">
       <div>
         <p>扫描二维码关注 openGauss 公众号，回复「开源实习」即可加入开源实习交流群。</p>
         <p>联系邮箱： <OLink :href="`mailto:${EMAIL_ADDRESS}`" color="primary">{{ EMAIL_ADDRESS }}</OLink></p>
