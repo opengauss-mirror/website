@@ -121,4 +121,12 @@ export default [
     name: 'bigshot',
     lang: ['zh'],
   },
+  {
+    name: 'conduct',
+    lang: ['zh', 'en'],
+  },
+  {
+    name: 'ai-coding-assistants',
+    lang: ['zh', 'en'],
+  },
 ];

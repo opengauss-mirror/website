@@ -1,0 +1,63 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://opengauss.org/en/conduct/#webpage",
+      "url": "https://opengauss.org/en/conduct/",
+      "name": "openGauss Code of Conduct",
+      "description": "Learn the openGauss Code of Conduct: friendly and inclusive behaviors, unacceptable behaviors, maintainer duties to enforce standards, and scope of the code within the community.",
+      "inLanguage": "en",
+      "dateModified": "2026-07-28",
+      "isPartOf": {
+        "@id": "https://opengauss.org/#website"
+      },
+      "about": {
+        "@id": "https://opengauss.org/#organization"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://opengauss.org/#website",
+      "url": "https://opengauss.org/",
+      "name": "openGauss",
+      "description": "openGauss Official Website",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://opengauss.org/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://opengauss.org/#organization",
+      "name": "openGauss",
+      "alternateName": "openGauss Community",
+      "url": "https://opengauss.org/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://opengauss.org/assets/logo_dark.CElWqwW0.svg"
+      },
+      "sameAs": [
+        "https://opengauss.org/"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://opengauss.org/en/conduct/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://opengauss.org/en/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Code of Conduct",
+          "item": "https://opengauss.org/en/conduct/"
+        }
+      ]
+    }
+  ]
+}

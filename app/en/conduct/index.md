@@ -1,5 +1,5 @@
 ---
-title: 'Policies & Rules'
+title: '政策规则'
 ---
 
 <script setup>
