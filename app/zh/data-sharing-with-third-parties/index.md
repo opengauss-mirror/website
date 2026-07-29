@@ -8,7 +8,7 @@ title: '第三方共享信息清单'
 
 <hr/>
 
-openGauss社区（以下简称我们）为保障网站安全稳定的运行，我们会接入有三方提供的软件开发包（SDK）或通过其他合作方式，以实现相关目的，目前本应用涉及共享信息合作伙伴列表如下:
+openGauss社区（以下简称我们）为保障网站安全稳定的运行，我们会接入由三方提供的软件开发包（SDK）或通过其他合作方式，以实现相关目的，目前本应用涉及共享信息合作伙伴列表如下：
 
 ## 第三方合作商名单
 
@@ -19,5 +19,15 @@ openGauss社区（以下简称我们）为保障网站安全稳定的运行，�
 - **使用场景**：访问社区网站时
 - **共享方式**：后台接口传输
 - **第三方个人信息处理规则**：[https://tongji.baidu.com/web/help/article?id=330&type=0](https://tongji.baidu.com/web/help/article?id=330&type=0)
+
+<hr/>
+
+- **第三方公司名称**：北京蒸汽记忆有限公司
+- **产品/类型**：Authing账号
+- **共享信息名称**：**用户名**、**公司**、**邮箱**、**手机号**、**密码**、**邮箱或手机验证码**、头像、昵称、第三方**Gitee UUID**、**Gitee ID**、Gitee昵称、**Gitee邮箱**、Gitee头像、第三方**GitCode UUID**、**GitCode ID**、GitCode昵称、**GitCode邮箱**、GitCode头像
+- **使用目的**：支撑网站的鉴权和个人信息管理
+- **使用场景**：登录服务时
+- **共享方式**：后台接口传输
+- **第三方个人信息处理规则**：[https://www.authing.cn/privacy-policy.html](https://www.authing.cn/privacy-policy.html)
 
 </div>
