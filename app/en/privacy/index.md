@@ -14,9 +14,7 @@ The openGauss community is operated by Huawei Technologies Co., Ltd. (hereinafte
 
 Please carefully review the following updates to this Privacy Statement:
 
-1. Deleted the section "Third-Party SDK Privacy and Security Policy".
-
-2. Optimized some description.
+1. Optimized some description.
 
 ## 1. How We Collect and Process Your Personal Data
 
@@ -45,7 +43,7 @@ Please carefully review the following updates to this Privacy Statement:
 
   - **GitCode UUID**, **GitCode ID**, GitCode nickname, and **GitCode email address**.
 
-  Refusal to provide this information will prevent third-party account binding for login purposes.  
+  Refusal to provide this information will prevent third-party account binding for login purposes.
 
 **(b) Mailing List Service**. When you use our mailing list service, we will collect your **email address** and **name (optional)** to enable email subscriptions that facilitate your participation in community discussions.
 
@@ -102,11 +100,11 @@ From the date of acquisition of your personal data within the community, we will
 
 Upon your active request for the deletion of your personal data, the retention period for the relevant data will be one month. We will respond to your request and delete your personal data within this period.
 
-The access timestamp, **IP address**, request details, access status, resource size, access source, and user agent information collected for service optimization purposes will be automatically deleted upon the expiration of a ten-day retention period.
+The access timestamp, **IP address**, request details, access status, resource size, access source, and user agent information collected for service optimization purposes will be automatically deleted upon the expiration of a 180-day retention period.
 
 ### 4.1 Deletion
 
-You may log in to the openGauss community and choose "User Center" > "Security" > "Delete" to delete your openGauss community account. This action will also delete your personal data in the openGauss community. Exercise caution when performing this operation.
+You may log in to the openGauss community and choose "User Center" > "Security" > "Delete Account" to delete your openGauss community account. This action will also delete your personal data in the openGauss community. Exercise caution when performing this operation.
 
 ## 5. How We Protect Your Personal Data
 
@@ -160,8 +158,5 @@ We have no control over the privacy and data protection policies of third partie
 
 Email: **common@public.opengauss.org**
 
-Last updated: January 30, 2026
-
-Privacy Statement version: v20260130
-
+Last updated: July 29, 2026
 </div>

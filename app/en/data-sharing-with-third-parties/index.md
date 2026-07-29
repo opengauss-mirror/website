@@ -20,4 +20,14 @@ To ensure the secure and stable running of the website of the openGauss communit
 - **Data sharing method**: transmission through background interfaces
 - **Third-party personal data processing rules**: [https://tongji.baidu.com/web/help/article?id=330&type=0](https://tongji.baidu.com/web/help/article?id=330&type=0)
 
+<hr/>
+
+- **Third-party company name**: Beijing Steamory Technology Co., Ltd.
+- **Product/Type**: Authing account
+- **Shared data**: **user name**, **company**, **email address**, **phone number**, **password**, **email or phone verification code** and **Gitee UUID**、**Gitee ID**、Gitee nickname、**Gitee email address**、Gitee avatar、**GitCode UUID**、**GitCode ID**、GitCode nickname、**GitCode email address**、GitCode avatar
+- **Data sharing purpose**: authentication and personal data management of the community website
+- **Application scenario**: login service
+- **Data sharing method**: transmission through background interfaces
+- **Third-party personal data processing rules**: [https://www.authing.cn/privacy-policy.html](https://www.authing.cn/privacy-policy.html)
+
 </div>

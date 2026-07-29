@@ -45,13 +45,13 @@ The openGauss community sometimes stores cookies on computers or mobile devices.
     <tr>
       <td>agreed-cookiepolicy-zh, agreed-cookiepolicy-en</td>
       <td>openGauss website</td>
-      <td>6 months</td>
+      <td>180 days</td>
       <td>Record whether the user agrees to accept cookies.</td>
     </tr>
     <tr>
       <td>openGauss-theme-appearance</td>
       <td>openGauss website</td>
-      <td>6 months</td>
+      <td>180 days</td>
       <td>Record the user's preference for the website theme.</td>
     </tr>
     <tr>
@@ -131,7 +131,7 @@ Browser web storage: We may use browser web storage (including HTML5), also know
   </thead>
   <tbody>
     <tr>
-      <td>oa-openGauss-client, oa-openGauss-events，oa-openGauss-session</td>
+      <td>oa-openGauss-client, oa-openGauss-events, oa-openGauss-session</td>
       <td>openGauss website</td>
       <td>Permanent</td>
       <td>Record your application ID, events, and sessions.</td>
