@@ -124,6 +124,7 @@ onUnmounted(() => {
   top: var(--app-header-height);
   background-color: var(--o-color-fill2);
   padding-top: 16px;
+  z-index: 1;
 
   @include respond-to('<=laptop') {
     padding-top: 10px;
