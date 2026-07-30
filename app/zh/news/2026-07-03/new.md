@@ -3,6 +3,7 @@ title: '集结开发者！openGauss 2026 众测开启，oGRAC + oGMemory 等你�
 date: '2026-07-03'
 tags: ['众测邀请']
 category: 'news'
+banner: '/category/news/2026-07-03/banner.jpg'
 author: 'openGauss'
 summary: 'openGauss 2026年众测邀请'
 ---
