@@ -5,7 +5,6 @@ tags: ['众测邀请']
 category: 'news'
 banner: '/category/news/2026-07-03/banner.jpg'
 author: 'openGauss'
-banner: 'category/news/2026-07-03/banner.jpg'
 summary: 'openGauss 2026年众测邀请'
 ---
 

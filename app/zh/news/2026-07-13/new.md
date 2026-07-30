@@ -5,7 +5,6 @@ tags: ['openGauss']
 category: 'news'
 banner: '/category/news/2026-07-13/banner.jpg'
 author: 'openGauss'
-banner: 'category/news/2026-07-13/banner.jpg'
 summary: '活动以「技术分享 + 动手实操」的形式，聚焦国产数据库云侧与端侧前沿技术，吸引众多企业开发者、产业伙伴到场参与交流。'
 ---
 

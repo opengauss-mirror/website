@@ -1,5 +1,6 @@
 ---
 title: '智算松湖・协同未来—软硬协同专场｜openGauss 开源数据库：软硬深度协同，释放极致算力'
+banner: '/category/news/2026-07-27/banner.jpg'
 date: '2026-07-27'
 tags: ['openGauss']
 category: 'news'

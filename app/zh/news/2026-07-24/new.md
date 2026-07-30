@@ -1,6 +1,7 @@
 ---
 title: 'openGauss x 磐维数据库 Meetup 北京站圆满举办！'
 date: '2026-07-24'
+banner: '/category/news/2026-07-24/banner.jpg'
 tags: ['openGauss']
 category: 'news'
 author: 'openGauss'
