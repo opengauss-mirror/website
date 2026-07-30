@@ -4,7 +4,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 import Icons from 'unplugin-icons/vite';
 import { FileSystemIconLoader } from 'unplugin-icons/loaders';
-import contentYamlPlugin from './.vitepress/plugins/vite-plugin-content-yaml';
+import { OPlusYamlContentVitePlugin } from '@opendesign-plus/vite-plugins';
 
 const proxyConfig = (proxy) => {
   proxy.on('proxyRes', (proxyRes) => {
@@ -61,7 +61,7 @@ export default defineConfig({
     },
   },
   plugins: [
-    contentYamlPlugin(),
+    OPlusYamlContentVitePlugin(),
     vueJsx({}),
     Icons({
       compiler: 'vue3',

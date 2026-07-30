@@ -22,7 +22,7 @@
 
 - 按文件拆分 locale：`zh.yaml` / `en.yaml` 字段名相同（基线名），无 `_zh` / `_en` 后缀
 - 图片就近存放到 `images/`，zh/en 共用同一张图，文件名不加后缀
-- 图片路径以 `./images/xxx.png` 书写（带 `./` 前缀），由 vite-plugin-content-yaml 重写为带 hash 的真实 URL
+- 图片路径以 `./images/xxx.png` 书写（带 `./` 前缀），由 OPlusYamlContentVitePlugin 重写为带 hash 的真实 URL
 - 不存布局参数（间距、断点等），只存内容数据
 
 ## 消费方式

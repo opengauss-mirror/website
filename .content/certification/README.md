@@ -1,6 +1,6 @@
 # 发行版认证 / Distribution Certification
 
-本目录存放 `/zh/certification/` 和 `/en/certification/` 页面的数据源，由 `vite-plugin-content-yaml` 自动接入 Vite 资源管线。
+本目录存放 `/zh/certification/` 和 `/en/certification/` 页面的数据源，由 `OPlusYamlContentVitePlugin` 自动接入 Vite 资源管线。
 
 ## 文件说明
 

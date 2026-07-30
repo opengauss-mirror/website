@@ -1,6 +1,6 @@
 # 服务商认证 / oGSP Certification
 
-本目录存放 `/zh/ogsp/` 和 `/en/ogsp/` 页面的数据源，由 `vite-plugin-content-yaml` 自动接入 Vite 资源管线。
+本目录存放 `/zh/ogsp/` 和 `/en/ogsp/` 页面的数据源，由 `OPlusYamlContentVitePlugin` 自动接入 Vite 资源管线。
 
 ## 文件说明
 

@@ -1,5 +1,5 @@
 import downloadContent from '#content/download';
-import versionDataMap from 'virtual:content-versions';
+import versionDataMap from '#content/download/versions';
 import { GITCODE_LINK } from '@/data/url-config';
 
 const DOCS_ORIGIN = import.meta.env.VITE_DOCS_ORIGIN || 'https://docs.opengauss.org';
