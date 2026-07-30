@@ -4,6 +4,7 @@ import imgDark from '~@/assets/category/internship/submit-task-dark.png';
 import { useScreen } from '~@/composables/useScreen';
 import { useI18n } from '~@/i18n';
 import { computed } from 'vue';
+import { OLink } from '@opensig/opendesign';
 import { useCommon } from '@/stores/common';
 
 const i18n = useI18n();
@@ -36,7 +37,15 @@ const flowImg = computed(() => (isDark.value ? imgDark : imgLight));
       <span>{{ i18n.internship.reviewPr3 }}</span>
     </div>
     <div class="attention">
-      <span class="attention-text">{{ i18n.internship.attention }}</span>
+      <span class="attention-text">{{ i18n.internship.attention1 }}</span>
+      <div>
+        <span>{{ i18n.internship.attention1Desc }}</span>
+        <OLink color="primary" href="https://opengauss.org/zh/ai-coding-assistants/" target="_blank" rel="noopener noreferrer">{{ i18n.internship.attention1Link }}</OLink>
+        <span>{{ i18n.internship.attention1Desc2 }}</span>
+      </div>
+    </div>
+    <div class="attention">
+      <span class="attention-text">{{ i18n.internship.attention2 }}</span>
       <div>
         <span>{{ i18n.internship.noPoints1 }}</span>
         <code class="code">{{ i18n.internship.noPoints2 }}</code>
