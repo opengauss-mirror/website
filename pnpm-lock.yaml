@@ -14,8 +14,8 @@ importers:
   .:
     dependencies:
       '@opendesign-plus/components':
-        specifier: 0.0.1-rc.27
-        version: 0.0.1-rc.27(@types/markdown-it@14.1.2)(markdown-it@14.2.0)(pinia@2.3.1(typescript@5.5.4)(vue@3.5.35(typescript@5.5.4)))(vue@3.5.35(typescript@5.5.4))
+        specifier: 0.0.1-rc.60
+        version: 0.0.1-rc.60(@opendesign-plus/composables@0.0.1-rc.8(@types/markdown-it@14.1.2)(markdown-it@14.2.0)(pinia@2.3.1(typescript@5.5.4)(vue@3.5.35(typescript@5.5.4)))(vue@3.5.35(typescript@5.5.4)))(@opendesign-plus/styles@0.0.1-rc.2)(@opensig/opendesign@1.2.3-sp2(@vueuse/core@14.3.0(vue@3.5.35(typescript@5.5.4)))(vue@3.5.35(typescript@5.5.4)))(@vueuse/core@14.3.0(vue@3.5.35(typescript@5.5.4)))(@vueuse/shared@14.3.0(vue@3.5.35(typescript@5.5.4)))(aos@2.3.4)(dayjs@1.11.13)(element-plus@2.13.1(vue@3.5.35(typescript@5.5.4)))(video.js@8.23.7)(vue-dompurify-html@5.2.0(vue@3.5.35(typescript@5.5.4)))(vue@3.5.35(typescript@5.5.4))
       '@opendesign-plus/geo-scripts':
         specifier: 0.0.1-rc.1
         version: 0.0.1-rc.1
@@ -77,6 +77,9 @@ importers:
       '@intlify/unplugin-vue-i18n':
         specifier: ^11.0.7
         version: 11.0.7(@vue/compiler-dom@3.5.35)(eslint@9.39.2)(rollup@4.59.0)(typescript@5.5.4)(vue-i18n@11.1.11(vue@3.5.35(typescript@5.5.4)))(vue@3.5.35(typescript@5.5.4))
+      '@opendesign-plus/vite-plugins':
+        specifier: 0.0.1-rc.1
+        version: 0.0.1-rc.1(js-yaml@4.3.0)(vite@7.3.1(@types/node@20.5.9)(sass@1.85.0)(yaml@2.8.2))
       '@playwright/test':
         specifier: ^1.47.0
         version: 1.48.2
@@ -114,8 +117,8 @@ importers:
         specifier: 9.1.7
         version: 9.1.7
       js-yaml:
-        specifier: 4.1.1
-        version: 4.1.1
+        specifier: 4.3.0
+        version: 4.3.0
       jsdom:
         specifier: 25.0.1
         version: 25.0.1
@@ -1066,8 +1069,20 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@opendesign-plus/components@0.0.1-rc.27':
-    resolution: {integrity: sha512-Ki2bj8/wsZdY9UuQqxMbJhjid0dd7VQv5wnJwxyfJJWnFY97XJTVKMy0pnXRj97+uB9qSjlqLCn6D8/wGvpNUw==}
+  '@opendesign-plus/components@0.0.1-rc.60':
+    resolution: {integrity: sha512-0255whPcey6sFOp874FbbDOAPsMFtBqqBUSSXh7S6W3Wwm02ngBDkKWcAtKNt+jEy/ohoDY/sim0QpYuAY5RlQ==}
+    peerDependencies:
+      '@opendesign-plus/composables': 0.0.1-rc.10
+      '@opendesign-plus/styles': 0.0.1-rc.2
+      '@opensig/opendesign': 1.2.5
+      '@vueuse/core': ^14.0.0
+      '@vueuse/shared': ^14.0.0
+      aos: ^2.3.4
+      dayjs: ^1.11.13
+      element-plus: 2.13.1
+      video.js: ^8.23.7
+      vue: ^3.5.13
+      vue-dompurify-html: ^3.1.2
 
   '@opendesign-plus/composables@0.0.1-rc.8':
     resolution: {integrity: sha512-PSk3PA2ZQu/ozlD7D5DUeYejy/SaLvgbTrHhB/Tkzeofq8oBWlL8QV+PqH1TU1VGNb/+Z1txbkWKzHjhVuPPMA==}
@@ -1086,6 +1101,12 @@ packages:
   '@opendesign-plus/utils@0.0.1-rc.6':
     resolution: {integrity: sha512-RojKB7KoVh4yjOVj0XQ6MgDuL8KACRS7R8tlHlLagYrc3xYIWf4yniEPywBbDvpMuge5dZjM3xNH6KUhnWkwPw==}
 
+  '@opendesign-plus/vite-plugins@0.0.1-rc.1':
+    resolution: {integrity: sha512-CZ30JDFB1hOJ1s5dpFA5OzduZ5xZdG+BDyZwWtH555YvGKnQwzxhQrnwR2xZ9IdSbvT3d/Orbb+GcRwoeunJow==}
+    peerDependencies:
+      js-yaml: 4.3.0
+      vite: 6.4.3
+
   '@opensig/open-analytics@0.0.9':
     resolution: {integrity: sha512-D+4VWxgBc1ABsQjWEjWfBfoBQ4PQbc1lNZeEYpQXkTJLLFcj6nSa+LwcYZFXtZdGz9dzOhhbwRwXv66WFw2qJw==}
 
@@ -1095,12 +1116,6 @@ packages:
   '@opensig/opendesign@1.0.2':
     resolution: {integrity: sha512-orCBF4uO+hjRRcdihzdTtDCYTnZkcYUqLsFuBTyhrr7kb4uwxk9rZ94jOyMACuaNjTjenVMqF50+C6sMGO2Ghw==}
     peerDependencies:
-      vue: ^3.3.0
-
-  '@opensig/opendesign@1.2.3-sp1':
-    resolution: {integrity: sha512-nPrgbpTH/WimwBQr0r9uzdK6l/lab9GNcaPxAtcjE3jdYhoVVCJOdkz7iUKu2crsb1RgMRCJ8yu0tUAwgl0klA==}
-    peerDependencies:
-      '@vueuse/core': 10.11.1
       vue: ^3.3.0
 
   '@opensig/opendesign@1.2.3-sp2':
@@ -1804,8 +1819,8 @@ packages:
   aes-decrypter@4.0.2:
     resolution: {integrity: sha512-lc+/9s6iJvuaRe5qDlMTpCFjnwpkeOXp8qP3oiZ5jsj1MRg+SBVUmmICrhxHvc8OELSmc+fEyyxAuppY6hrWzw==}
 
-  agent-base@6.0.0:
-    resolution: {integrity: sha512-j1Q7cSCqN+AwrmDd+pzgqc0/NpC655x2bUf5ZjRIO77DcNBFmh+OgRNzF6OKdCC9RSCb19fGd99+bhXFdkRNqw==}
+  agent-base@6.0.2:
+    resolution: {integrity: sha512-RZNwNclF7+MS/8bDg70amg32dyeZGZxiDuQmZxKLAlQjr3jGyLx+4Kkk58UO7D2QdgFIQCovuSuZESne6RG6XQ==}
     engines: {node: '>= 6.0.0'}
 
   agent-base@7.1.1:
@@ -2071,9 +2086,6 @@ packages:
 
   dom-walk@0.1.2:
     resolution: {integrity: sha512-6QvTW9mrGeIegrFXdtQi9pk7O/nSK6lSdXW2eqUspN5LWD7UTji2Fqw5V2YLjBpHEoU9Xl/eUWNpDeZvoyOv2w==}
-
-  dompurify@2.5.9:
-    resolution: {integrity: sha512-i6mvVmWN4xo9LrhCOZrDgSs9noW6nOahbrmzjRbPF36YPyj5Ue5lgok0MHDWkG7xzpWFO2OYttXdzM7rJxHvNA==}
 
   dompurify@3.4.2:
     resolution: {integrity: sha512-lHeS9SA/IKeIFFyYciHBr2n0v1VMPlSj843HdLOwjb2OxNwdq9Xykxqhk+FE42MzAdHvInbAolSE4mhahPpjXA==}
@@ -2540,8 +2552,8 @@ packages:
     resolution: {integrity: sha512-PMSmkqxr106Xa156c2M265Z+FTrPl+oxd/rgOQy2tijQeK5TxQ43psO1ZCwhVOSdnn+RzkzlRz/eY4BgJBYVpg==}
     hasBin: true
 
-  js-yaml@4.1.1:
-    resolution: {integrity: sha512-qQKT4zQxXl8lLwBtHMWwaTcGfFOZviOJet3Oy/xmGk2gZH677CJM9EvtfdSkgWcATZhj/55JZ0rmy3myCT5lsA==}
+  js-yaml@4.3.0:
+    resolution: {integrity: sha512-1td788aAnnZ5qs7V2QIRl1owjtYpbKt749Y3xauqQgwIIGF/xXWz1wMTEBx5O3LK3lXLVuqXPdPxj2BoFHaW9Q==}
     hasBin: true
 
   jsdom@24.0.0:
@@ -2891,9 +2903,9 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
-  playwright-core@1.61.1:
-    resolution: {integrity: sha512-h7Qlt6m4REp25qvIdvbDtVmD4LqVXfpRxhORv9L0jzETM05p4fuPJ3dKyuSXQxDSbXnmS79HAgi9589lGSpLkg==}
-    engines: {node: '>=18'}
+  playwright-core@1.62.0:
+    resolution: {integrity: sha512-nsNRyq0r2zsG8AcRHWknc9QRA5XCueC7gWMrs+Gx2tlZn9hcl8zudfh00lhJPY1DE7NmZ6bDsT9g2yey8mXljA==}
+    engines: {node: '>=20'}
     hasBin: true
 
   playwright@1.48.2:
@@ -3418,17 +3430,6 @@ packages:
       jsdom:
         optional: true
 
-  vue-demi@0.13.11:
-    resolution: {integrity: sha512-IR8HoEEGM65YY3ZJYAjMlKygDQn25D5ajNFNoKh9RSDMQtlzCxtfQjdQgv9jjK+m3377SsJXY8ysq8kLCZL25A==}
-    engines: {node: '>=12'}
-    hasBin: true
-    peerDependencies:
-      '@vue/composition-api': ^1.0.0-rc.1
-      vue: ^3.0.0-0 || ^2.6.0
-    peerDependenciesMeta:
-      '@vue/composition-api':
-        optional: true
-
   vue-demi@0.14.10:
     resolution: {integrity: sha512-nMZBOwuzabUO0nLgIcc6rycZEebF6eeUfaiQx9+WSk8e29IbLvPU9feI6tqW4kTo3hvoYAJkMh8n8D0fuISphg==}
     engines: {node: '>=12'}
@@ -3439,11 +3440,6 @@ packages:
     peerDependenciesMeta:
       '@vue/composition-api':
         optional: true
-
-  vue-dompurify-html@3.1.2:
-    resolution: {integrity: sha512-2xCnSuog5+OPUtmeAwPZY/6oV9YKuLhjgcl5EUw3jKbmhnyPo8YyCczCeRNGBorVcz1fCGm6PEOIUSXNS8I0ZA==}
-    peerDependencies:
-      vue: ^2.7.0 || ^3.0.0
 
   vue-dompurify-html@5.2.0:
     resolution: {integrity: sha512-GX+BStkKEJ8wu/+hU1EK2nu/gzXWhb4XzBu6aowpsuU/3nkvXvZ2jx4nZ9M3jtS/Vu7J7MtFXjc7x3cWQ+zbVQ==}
@@ -4203,7 +4199,7 @@ snapshots:
       globals: 14.0.0
       ignore: 5.3.2
       import-fresh: 3.3.1
-      js-yaml: 4.1.1
+      js-yaml: 4.3.0
       minimatch: 3.1.5
       strip-json-comments: 3.1.1
     transitivePeerDependencies:
@@ -4361,22 +4357,19 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.19.0
 
-  '@opendesign-plus/components@0.0.1-rc.27(@types/markdown-it@14.1.2)(markdown-it@14.2.0)(pinia@2.3.1(typescript@5.5.4)(vue@3.5.35(typescript@5.5.4)))(vue@3.5.35(typescript@5.5.4))':
+  '@opendesign-plus/components@0.0.1-rc.60(@opendesign-plus/composables@0.0.1-rc.8(@types/markdown-it@14.1.2)(markdown-it@14.2.0)(pinia@2.3.1(typescript@5.5.4)(vue@3.5.35(typescript@5.5.4)))(vue@3.5.35(typescript@5.5.4)))(@opendesign-plus/styles@0.0.1-rc.2)(@opensig/opendesign@1.2.3-sp2(@vueuse/core@14.3.0(vue@3.5.35(typescript@5.5.4)))(vue@3.5.35(typescript@5.5.4)))(@vueuse/core@14.3.0(vue@3.5.35(typescript@5.5.4)))(@vueuse/shared@14.3.0(vue@3.5.35(typescript@5.5.4)))(aos@2.3.4)(dayjs@1.11.13)(element-plus@2.13.1(vue@3.5.35(typescript@5.5.4)))(video.js@8.23.7)(vue-dompurify-html@5.2.0(vue@3.5.35(typescript@5.5.4)))(vue@3.5.35(typescript@5.5.4))':
     dependencies:
       '@opendesign-plus/composables': 0.0.1-rc.8(@types/markdown-it@14.1.2)(markdown-it@14.2.0)(pinia@2.3.1(typescript@5.5.4)(vue@3.5.35(typescript@5.5.4)))(vue@3.5.35(typescript@5.5.4))
       '@opendesign-plus/styles': 0.0.1-rc.2
-      '@opensig/opendesign': 1.2.3-sp1(@vueuse/core@10.11.1(vue@3.5.35(typescript@5.5.4)))(vue@3.5.35(typescript@5.5.4))
-      '@vueuse/core': 10.11.1(vue@3.5.35(typescript@5.5.4))
+      '@opensig/opendesign': 1.2.3-sp2(@vueuse/core@14.3.0(vue@3.5.35(typescript@5.5.4)))(vue@3.5.35(typescript@5.5.4))
+      '@vueuse/core': 14.3.0(vue@3.5.35(typescript@5.5.4))
+      '@vueuse/shared': 14.3.0(vue@3.5.35(typescript@5.5.4))
       aos: 2.3.4
-      dayjs: 1.11.20
+      dayjs: 1.11.13
+      element-plus: 2.13.1(vue@3.5.35(typescript@5.5.4))
       video.js: 8.23.7
-      vue-dompurify-html: 3.1.2(vue@3.5.35(typescript@5.5.4))
-    transitivePeerDependencies:
-      - '@types/markdown-it'
-      - '@vue/composition-api'
-      - markdown-it
-      - pinia
-      - vue
+      vue: 3.5.35(typescript@5.5.4)
+      vue-dompurify-html: 5.2.0(vue@3.5.35(typescript@5.5.4))
 
   '@opendesign-plus/composables@0.0.1-rc.8(@types/markdown-it@14.1.2)(markdown-it@14.2.0)(pinia@2.3.1(typescript@5.5.4)(vue@3.5.35(typescript@5.5.4)))(vue@3.5.35(typescript@5.5.4))':
     dependencies:
@@ -4397,7 +4390,7 @@ snapshots:
       commander: 13.1.0
       jsdom: 24.0.0
       p-limit: 7.3.0
-      playwright-core: 1.61.1
+      playwright-core: 1.62.0
       turndown: 7.2.4
     transitivePeerDependencies:
       - bufferutil
@@ -4420,6 +4413,11 @@ snapshots:
       - debug
       - supports-color
 
+  '@opendesign-plus/vite-plugins@0.0.1-rc.1(js-yaml@4.3.0)(vite@7.3.1(@types/node@20.5.9)(sass@1.85.0)(yaml@2.8.2))':
+    dependencies:
+      js-yaml: 4.3.0
+      vite: 7.3.1(@types/node@20.5.9)(sass@1.85.0)(yaml@2.8.2)
+
   '@opensig/open-analytics@0.0.9':
     dependencies:
       ua-parser-js: 1.0.39
@@ -4434,11 +4432,6 @@ snapshots:
 
   '@opensig/opendesign@1.0.2(vue@3.5.35(typescript@5.5.4))':
     dependencies:
-      vue: 3.5.35(typescript@5.5.4)
-
-  '@opensig/opendesign@1.2.3-sp1(@vueuse/core@10.11.1(vue@3.5.35(typescript@5.5.4)))(vue@3.5.35(typescript@5.5.4))':
-    dependencies:
-      '@vueuse/core': 10.11.1(vue@3.5.35(typescript@5.5.4))
       vue: 3.5.35(typescript@5.5.4)
 
   '@opensig/opendesign@1.2.3-sp2(@vueuse/core@14.3.0(vue@3.5.35(typescript@5.5.4)))(vue@3.5.35(typescript@5.5.4))':
@@ -5189,7 +5182,7 @@ snapshots:
       global: 4.4.0
       pkcs7: 1.0.4
 
-  agent-base@6.0.0:
+  agent-base@6.0.2:
     dependencies:
       debug: 4.4.3
     transitivePeerDependencies:
@@ -5461,8 +5454,6 @@ snapshots:
       dequal: 2.0.3
 
   dom-walk@0.1.2: {}
-
-  dompurify@2.5.9: {}
 
   dompurify@3.4.2:
     optionalDependencies:
@@ -5928,13 +5919,13 @@ snapshots:
   http-proxy-agent@7.0.2:
     dependencies:
       agent-base: 7.1.1
-      debug: 4.3.4
+      debug: 4.4.3
     transitivePeerDependencies:
       - supports-color
 
   https-proxy-agent@5.0.1:
     dependencies:
-      agent-base: 6.0.0
+      agent-base: 6.0.2
       debug: 4.4.3
     transitivePeerDependencies:
       - supports-color
@@ -5942,7 +5933,7 @@ snapshots:
   https-proxy-agent@7.0.5:
     dependencies:
       agent-base: 7.1.1
-      debug: 4.3.4
+      debug: 4.4.3
     transitivePeerDependencies:
       - supports-color
 
@@ -6013,7 +6004,7 @@ snapshots:
       argparse: 1.0.10
       esprima: 4.0.1
 
-  js-yaml@4.1.1:
+  js-yaml@4.3.0:
     dependencies:
       argparse: 2.0.1
 
@@ -6404,7 +6395,7 @@ snapshots:
 
   playwright-core@1.48.2: {}
 
-  playwright-core@1.61.1: {}
+  playwright-core@1.62.0: {}
 
   playwright@1.48.2:
     dependencies:
@@ -6930,21 +6921,9 @@ snapshots:
       - tsx
       - yaml
 
-  vue-demi@0.13.11(vue@3.5.35(typescript@5.5.4)):
-    dependencies:
-      vue: 3.5.35(typescript@5.5.4)
-
   vue-demi@0.14.10(vue@3.5.35(typescript@5.5.4)):
     dependencies:
       vue: 3.5.35(typescript@5.5.4)
-
-  vue-dompurify-html@3.1.2(vue@3.5.35(typescript@5.5.4)):
-    dependencies:
-      dompurify: 2.5.9
-      vue: 3.5.35(typescript@5.5.4)
-      vue-demi: 0.13.11(vue@3.5.35(typescript@5.5.4))
-    transitivePeerDependencies:
-      - '@vue/composition-api'
 
   vue-dompurify-html@5.2.0(vue@3.5.35(typescript@5.5.4)):
     dependencies:

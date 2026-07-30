@@ -1,6 +1,6 @@
 # 兼容性列表 / Compatibility List
 
-本目录存放 `/zh/compatibility/` 和 `/en/compatibility/` 页面的数据源，由 `vite-plugin-content-yaml` 自动接入 Vite 资源管线。
+本目录存放 `/zh/compatibility/` 和 `/en/compatibility/` 页面的数据源，由 `OPlusYamlContentVitePlugin` 自动接入 Vite 资源管线。
 
 ## 文件说明
 

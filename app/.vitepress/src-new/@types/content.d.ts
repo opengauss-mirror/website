@@ -99,7 +99,7 @@ declare module '#content/download/*.yaml' {
   export default data;
 }
 
-declare module 'virtual:content-versions' {
+declare module '#content/download/versions' {
   const data: Record<string, any[]>;
   export default data;
 }

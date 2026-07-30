@@ -7,7 +7,6 @@ import hljs from 'highlight.js';
 import { fileURLToPath } from 'node:url';
 import generateLastmodAndChangefreq from '@opendesign-plus/plugins/vite/generate-lastmod-changefreq';
 import generateLLMsFull from '@opendesign-plus/geo-scripts/generate-llms-full';
-import contentYamlPlugin from './plugins/vite-plugin-content-yaml';
 import generateSEOManifest from './scripts/generate-tdk-schema-for-articles';
 import { PRIORITY_MAP, DEFAULT_PRIORITY, normalizeSitemapUrl } from './sitemap-priority';
 
@@ -200,7 +199,6 @@ const config: UserConfig = {
         pageEntryPattern: ['zh/**/*.md', 'en/**/*.md'],
         outputFile: join(__dirname, '../../.geo/sitemap-records.json'),
       }),
-      contentYamlPlugin(),
       // https://github.com/intlify/vue-i18n/issues/1569
       vueI18n({
         ssr: process.env.NODE_ENV === 'production',

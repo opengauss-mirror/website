@@ -25,7 +25,7 @@
 - 按文件拆分 locale：本页仅有 `zh.yaml`（en 页面不存在）
 - 图片就近存放到 `images/`，文件名保留原名
 - 同名图片跨年份冲突时加年份前缀（如 `2022_pengjiong.png`、`2023_pengjiong.png`）
-- 图片路径以 `./images/xxx.png` 书写（带 `./` 前缀），由 vite-plugin-content-yaml 重写为带 hash 的真实 URL
+- 图片路径以 `./images/xxx.png` 书写（带 `./` 前缀），由 OPlusYamlContentVitePlugin 重写为带 hash 的真实 URL
 - 不存布局参数（间距、断点等），只存内容数据
 
 ## 消费方式
