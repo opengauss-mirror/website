@@ -3,6 +3,7 @@ title: 'openGauss x 大湾区国创中心 Workshop 广州站圆满举办'
 date: '2026-07-13'
 tags: ['openGauss']
 category: 'news'
+banner: '/category/news/2026-07-13/banner.jpg'
 author: 'openGauss'
 summary: '活动以「技术分享 + 动手实操」的形式，聚焦国产数据库云侧与端侧前沿技术，吸引众多企业开发者、产业伙伴到场参与交流。'
 ---
