@@ -4,6 +4,7 @@ date: '2026-07-15'
 tags: ['openGauss']
 category: 'news'
 author: 'openGauss'
+banner: 'category/news/2026-07-15/banner.jpg'
 summary: '参与问卷调查有机会获得精美礼品'
 ---
 
