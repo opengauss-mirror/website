@@ -1,5 +1,6 @@
 ---
 title: '隐私声明'
+hideNss: true
 ---
 
 <div class='markdown markdown-statement'>

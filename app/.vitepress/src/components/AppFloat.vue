@@ -19,7 +19,7 @@ import IconScore from '~icons/float/icon-score.svg';
 
 const guideStore = useGuideStore();
 const screenWidth = useWindowResize();
-const { lang } = useData();
+const { frontmatter, lang } = useData();
 const router = useRouter();
 
 const isPc = computed(() => screenWidth.value > 1100);
@@ -330,89 +330,91 @@ watch(
         </div>
         <div class="nav-box">
           <div class="nav-box1">
-            <div v-if="isPc" id="nss" class="nav-item" @mouseenter="onMouseEnter" @mouseleave="useThrottleFn(onMouseLeave, 300)">
-              <OIcon ref="nssRef" class="icon-box">
-                <component :is="IconSmile" />
-              </OIcon>
-              <OPopup
-                :visible="isShow"
-                position="right"
-                :target="nssRef"
-                :auto-hide="isShow ? false : true"
-                wrapper="#nss"
-                body-class="popup-nss"
-                :offset="20"
-                trigger="hover"
-              >
-                <OIcon class="icon-cancel" @click="cancelPopup">
-                  <IconCancel />
+            <template v-if="!frontmatter.hideNss">
+              <div v-if="isPc" id="nss" class="nav-item" @mouseenter="onMouseEnter" @mouseleave="useThrottleFn(onMouseLeave, 300)">
+                <OIcon ref="nssRef" class="icon-box">
+                  <component :is="IconSmile" />
                 </OIcon>
-                <div class="slider">
-                  <p class="slider-title">
-                    {{ title1 }}
-                    <span class="title-name">{{ title2 }}</span>
-                    {{ title3 }}
-                  </p>
-                  <div class="slider-body">
-                    <div class="slider-tip">
-                      <div v-show="isReasonShow" class="slide-btn-tip">
-                        {{ scoreTip }}
+                <OPopup
+                  :visible="isShow"
+                  position="right"
+                  :target="nssRef"
+                  :auto-hide="isShow ? false : true"
+                  wrapper="#nss"
+                  body-class="popup-nss"
+                  :offset="20"
+                  trigger="hover"
+                >
+                  <OIcon class="icon-cancel" @click="cancelPopup">
+                    <IconCancel />
+                  </OIcon>
+                  <div class="slider">
+                    <p class="slider-title">
+                      {{ title1 }}
+                      <span class="title-name">{{ title2 }}</span>
+                      {{ title3 }}
+                    </p>
+                    <div class="slider-body">
+                      <div class="slider-tip">
+                        <div v-show="isReasonShow" class="slide-btn-tip">
+                          {{ scoreTip }}
+                        </div>
+                      </div>
+                      <el-slider v-model="score" show-stops :step="10" :marks="marks" :show-tooltip="false" @input="handleInput" />
+                      <div class="grade-info">
+                        <span>{{ title2 === TITLES2[0] ? infoData.grade1 : infoData.grade1_1 }}</span>
+                        <span>{{ title2 === TITLES2[0] ? infoData.grade2 : infoData.grade2_1 }}</span>
                       </div>
                     </div>
-                    <el-slider v-model="score" show-stops :step="10" :marks="marks" :show-tooltip="false" @input="handleInput" />
-                    <div class="grade-info">
-                      <span>{{ title2 === TITLES2[0] ? infoData.grade1 : infoData.grade1_1 }}</span>
-                      <span>{{ title2 === TITLES2[0] ? infoData.grade2 : infoData.grade2_1 }}</span>
+                    <div v-show="isReasonShow" class="reason">
+                      <el-input
+                        v-model="inputText"
+                        :rows="3"
+                        type="textarea"
+                        :placeholder="placeholder"
+                        maxlength="500"
+                        resize="none"
+                        show-word-limit
+                        @focus="toggleIsFocuse(true)"
+                        @blur="toggleIsFocuse(false)"
+                      />
+                      <p class="more-info">
+                        {{ infoData.more }}
+                        <a :href="'mailto:' + infoData.emile">
+                          {{ infoData.emile }}
+                        </a>
+                      </p>
+                      <div class="submit-btn">
+                        <OButton type="outline" size="mini" @click="handleClickSubmit">
+                          {{ infoData.submit }}
+                        </OButton>
+                      </div>
                     </div>
                   </div>
-                  <div v-show="isReasonShow" class="reason">
-                    <el-input
-                      v-model="inputText"
-                      :rows="3"
-                      type="textarea"
-                      :placeholder="placeholder"
-                      maxlength="500"
-                      resize="none"
-                      show-word-limit
-                      @focus="toggleIsFocuse(true)"
-                      @blur="toggleIsFocuse(false)"
-                    />
-                    <p class="more-info">
-                      {{ infoData.more }}
-                      <a :href="'mailto:' + infoData.emile">
-                        {{ infoData.emile }}
-                      </a>
-                    </p>
-                    <div class="submit-btn">
-                      <OButton type="outline" size="mini" @click="handleClickSubmit">
-                        {{ infoData.submit }}
-                      </OButton>
+                </OPopup>
+              </div>
+              <div v-else class="nav-item">
+                <OIcon ref="serverRef" class="icon-box"><component :is="IconSmile"></component> </OIcon>
+                <el-popover
+                  placement="left-start"
+                  :virtual-ref="serverRef"
+                  popper-class="service-body"
+                  :width="isPc ? 260 : 90"
+                  :offset="20"
+                  trigger="hover"
+                  v-if="!dialogVisible"
+                >
+                  <div v-for="item in floatServiceData" :key="item.id" class="pop-item" @click="jumpTo(item.id)">
+                    <OIcon><component :is="item.img"></component></OIcon>
+                    <div class="text">
+                      <p class="text-name">
+                        {{ item.text }}
+                      </p>
                     </div>
                   </div>
-                </div>
-              </OPopup>
-            </div>
-            <div v-else class="nav-item">
-              <OIcon ref="serverRef" class="icon-box"><component :is="IconSmile"></component> </OIcon>
-              <el-popover
-                placement="left-start"
-                :virtual-ref="serverRef"
-                popper-class="service-body"
-                :width="isPc ? 260 : 90"
-                :offset="20"
-                trigger="hover"
-                v-if="!dialogVisible"
-              >
-                <div v-for="item in floatServiceData" :key="item.id" class="pop-item" @click="jumpTo(item.id)">
-                  <OIcon><component :is="item.img"></component></OIcon>
-                  <div class="text">
-                    <p class="text-name">
-                      {{ item.text }}
-                    </p>
-                  </div>
-                </div>
-              </el-popover>
-            </div>
+                </el-popover>
+              </div>
+            </template>
             <div class="nav-item">
               <OIcon ref="askRef" class="icon-box"><component :is="IconAsk"></component> </OIcon>
               <el-popover placement="left-start" :virtual-ref="askRef" popper-class="service-body" :width="isPc ? 260 : 90" :offset="20" trigger="hover">

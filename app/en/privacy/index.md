@@ -1,5 +1,6 @@
 ---
 title: 'Privacy Statement'
+hideNss: true
 ---
 
 <div class='markdown markdown-statement'>
