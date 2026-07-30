@@ -110,7 +110,9 @@ const onCopyClick = (e: MouseEvent) => {
       </ul>
 
       <p><strong>规范示例（Pull Request格式）：</strong></p>
-      <pre><OButton class="copy-btn" :icon="IconCopy" @click="onCopyClick" /><code>### 当前PR是否有AI参与:
+      <div class="code-block">
+        <OButton class="copy-btn" :icon="IconCopy" @click="onCopyClick" />
+        <pre><code>### 当前PR是否有AI参与:
 []  否
 [x]  是
 __1. Agent平台信息: Claude Code 2.1.156
@@ -119,6 +121,7 @@ __3. Prompt摘要: 基于现有代码逻辑，完成代码编写、逻辑优化�
 
 ### 希望检视人员了解:
 1. 代码由AI辅助开发者编写，且开发者已人工逐行核对逻辑、校验功能正确性，且与开发者预期一致；</code></pre>
+      </div>
 
       <h3>4. Agents规范Prompt（Standard Prompt for Agents）</h3>
 
@@ -128,7 +131,9 @@ __3. Prompt摘要: 基于现有代码逻辑，完成代码编写、逻辑优化�
         >：
       </p>
 
-      <pre><OButton class="copy-btn" :icon="IconCopy" @click="onCopyClick" /><code># 角色与目标
+      <div class="code-block">
+        <OButton class="copy-btn" :icon="IconCopy" @click="onCopyClick" />
+        <pre><code># 角色与目标
 你是一个专为openGauss开源社区服务的AI编程与合规助手（AI Agent）。你的目标是协助人类开发者高效参与社区贡献，同时必须坚守合规底线，确保所有输出符合openGauss社区的合规与质量要求。
 
 # 核心行为准则
@@ -150,6 +155,7 @@ __3. Prompt摘要: 基于现有代码逻辑，完成代码编写、逻辑优化�
 ## 4. openGauss技术栈适配
 - 代码风格：在向openGauss社区提交代码前，应分析对应代码仓库的代码风格，提交修改代码时必须严格遵守对应代码仓库的代码风格指南。
 - 优先安全性：不得引入内存泄漏、缓冲区溢出等常见安全漏洞，优先推荐使用已经过openGauss社区验证的安全函数。</code></pre>
+      </div>
 
       <h3>5. 禁止或高风险行为</h3>
 
@@ -278,7 +284,10 @@ __3. Prompt摘要: 基于现有代码逻辑，完成代码编写、逻辑优化�
       </ul>
 
       <p><strong>Example (pull request):</strong></p>
-      <pre><OButton :icon="IconCopy" class="copy-btn" @click="onCopyClick" /><code>### AI involvement in this PR:
+
+      <div class="code-block">
+        <OButton :icon="IconCopy" class="copy-btn" @click="onCopyClick" />
+        <pre><code>### AI involvement in this PR:
 []  No
 [x]  Yes
 __1. Agent platform: Claude Code 2.1.156
@@ -287,6 +296,7 @@ __3. Prompt summary: Based on the existing code logic, complete the code, optimi
 
 ### Notes for reviewers:
 1. The code was developed with AI assistance. The developer has manually reviewed the logic line-by-line and verified its functionality to ensure it behaves exactly as expected.</code></pre>
+      </div>
 
       <h3>4. Standard Prompt for Agents</h3>
 
@@ -295,7 +305,9 @@ __3. Prompt summary: Based on the existing code logic, complete the code, optimi
         preceding policies when serving the openGauss community, the following <strong>system prompt</strong> is formulated:
       </p>
 
-      <pre><OButton :icon="IconCopy" class="copy-btn" @click="onCopyClick" /><code># Role and objective:
+      <div class="code-block">
+        <OButton :icon="IconCopy" class="copy-btn" @click="onCopyClick" />
+        <pre><code># Role and objective:
 You are an AI agent dedicated to serving the openGauss community. Your goal is to assist human developers in contributing efficiently while strictly adhering to the compliance baseline, ensuring all outputs meet the openGauss community's compliance and quality standards.
 
 # Core Code of Conduct
@@ -317,6 +329,7 @@ You are an AI agent dedicated to serving the openGauss community. Your goal is t
 ## 4. openGauss technology stack adaptation
 - Code style: Before submitting any code to the openGauss community, analyze the coding style of the target repository. Your modifications must strictly conform to that repository's code style guide.
 - Security first: Do not introduce security vulnerabilities such as memory leaks and buffer overflows. Always prefer secure functions verified by the openGauss community.</code></pre>
+      </div>
 
       <h3>5. Prohibited or Risky Behaviors</h3>
 
@@ -426,11 +439,7 @@ You are an AI agent dedicated to serving the openGauss community. Your goal is t
     }
   }
 
-  pre {
-    white-space: pre-wrap;
-    background-color: rgba(246, 238, 253, 0.5);
-    border-radius: 4px;
-    padding: 12px;
+  .code-block {
     position: relative;
 
     @include hover {
@@ -440,10 +449,30 @@ You are an AI agent dedicated to serving the openGauss community. Your goal is t
     }
 
     .copy-btn {
+      --btn-bg-color-hover: transparent;
+      --btn-bg-color-active: transparent;
       display: none;
       position: absolute;
       right: 0;
       top: 0;
+
+      @include respond-to('<=pad_v') {
+        display: block !important;
+      }
+    }
+  }
+
+  pre {
+    overflow: auto;
+    background-color: var(--o-color-fill1);
+    border-radius: 4px;
+    padding: 12px;
+
+    code {
+      font-family: 'Consolas', 'Microsoft YaHei';
+      white-space: no-wrap;
+      font-size: 14px;
+      line-height: 22px;
     }
   }
 

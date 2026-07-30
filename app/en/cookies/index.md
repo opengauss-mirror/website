@@ -1,5 +1,6 @@
 ---
 title: 'About Cookies'
+hideNss: true
 ---
 
 <script setup>

@@ -1,5 +1,6 @@
 ---
 title: 'Legal Notice'
+hideNss: true
 ---
 
 <div class='markdown markdown-statement' >

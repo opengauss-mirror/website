@@ -1,5 +1,6 @@
 ---
 title: '政策规则'
+hideNss: true
 ---
 
 <script setup>
