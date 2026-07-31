@@ -10,8 +10,6 @@ import {
   OSelect,
   OToggle,
   useMessage,
-  ODialog,
-  type DialogActionT,
   OIconChevronRight,
   OCollapse,
   OCollapseItem,
@@ -21,15 +19,11 @@ import IconCopy from '~icons/app/icon-copy2.svg';
 import downloadData from '~@/data/download/content-bridge';
 import { getCustomCookie } from '@/shared/utils';
 import { oaReport } from '@opendesign-plus/plugins/analytics';
-import { doLogin } from '@/shared/login';
 import { useData } from 'vitepress';
-// import { useI18n } from '~@/i18n';
-import { useUserInfoStore } from '@/stores/user';
 import { computed, CSSProperties, nextTick, ref, shallowRef, watch, watchEffect } from 'vue';
 import { useClipboard } from '~@/composables/useClipboard';
 import IconQuestion from '~icons/app/icon-question-mark.svg';
 import { useScreen } from '~@/composables/useScreen';
-import { Ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import TheTable from '~@/components/TheTable.vue';
 
@@ -44,7 +38,6 @@ const { gtPadV } = useScreen();
 const { lang } = useData();
 const { t } = useI18n();
 const message = useMessage(null);
-const userInfoStore = useUserInfoStore();
 
 // 版本筛选
 const versions = DOWNLOAD_DATA.map((item) => ({ label: 'openGauss ' + item.name, value: item.name }));
@@ -202,48 +195,19 @@ function handleUrlCopy(value: string | undefined, e: MouseEvent) {
   }
 }
 
-const changeDownloadAuth = () => {
-  downloadDlg.value = true;
-};
-
-const downloadDlg = ref(false);
-const dlgAction: Ref<DialogActionT[]> = ref([
-  {
-    id: 'ok',
-    label: t('download.DOWNLOAD_COMFIRM'),
-    color: 'primary',
-    variant: 'solid',
-    onClick: () => {
-      doLogin();
-    },
-  },
-  {
-    id: 'cancel',
-    label: t('download.DOWNLOAD_CANCEL'),
-    color: 'primary',
-    variant: 'outline',
-    onClick: () => {
-      downloadDlg.value = false;
-    },
-  },
-]);
-
-// 下载埋点  新版本判断
 const collectDownloadData = (name: string) => {
-  if (userInfoStore.username) {
-    const { href } = window.location;
-    const downloadTime = new Date();
-    const _U_T_ = getCustomCookie('_U_T_') || 'notLog';
-    oaReport('download', {
-      profileType: 'download',
-      origin: href,
-      softwareName: name,
-      softwareArchitecture: activeArchitecture.value,
-      softwareOs: activeOs.value,
-      downloadTime,
-      _U_T_,
-    });
-  }
+  const { href } = window.location;
+  const downloadTime = new Date();
+  const _U_T_ = getCustomCookie('_U_T_') || 'notLog';
+  oaReport('download', {
+    profileType: 'download',
+    origin: href,
+    softwareName: name,
+    softwareArchitecture: activeArchitecture.value,
+    softwareOs: activeOs.value,
+    downloadTime,
+    _U_T_,
+  });
 };
 
 const reportVersionSelect = () => {
@@ -385,25 +349,6 @@ const reportVersionSelect = () => {
           <div v-if="row.children?.length"></div>
           <template v-else>
             <OButton
-              v-if="!userInfoStore.username"
-              variant="outline"
-              color="primary"
-              size="small"
-              @click="changeDownloadAuth"
-              v-analytics="{
-                properties: {
-                  module: 'download',
-                  level1: t('tools.TOOL_CENTER'),
-                  level2: t('tools.TOOLSET'),
-                  level3: row.name,
-                  target: $t('download.BTN_TEXT'),
-                },
-              }"
-            >
-              {{ $t('download.BTN_TEXT') }}
-            </OButton>
-            <OButton
-              v-else
               size="small"
               :disabled="row.children?.length"
               :href="row.down_url"
@@ -447,10 +392,7 @@ const reportVersionSelect = () => {
               </template>
             </OLink>
             <p>{{ $t('download.TABLE_HEAD[2]') }}</p>
-            <OLink v-if="!userInfoStore.username" tag="button" color="primary" @click="changeDownloadAuth">
-              {{ $t('download.BTN_TEXT') }}
-            </OLink>
-            <OLink v-else :href="item.down_url" tag="button" @click="collectDownloadData(item.name)" color="primary">
+            <OLink :href="item.down_url" tag="button" @click="collectDownloadData(item.name)" color="primary">
               {{ $t('download.BTN_TEXT') }}
             </OLink>
           </div>
@@ -478,10 +420,7 @@ const reportVersionSelect = () => {
                     </template>
                   </OLink>
                   <p>{{ $t('download.TABLE_HEAD[2]') }}</p>
-                  <OLink v-if="!userInfoStore.username" tag="button" color="primary" @click="changeDownloadAuth">
-                    {{ $t('download.BTN_TEXT') }}
-                  </OLink>
-                  <OLink v-else :href="item.down_url" tag="button" @click="collectDownloadData(item.name)" color="primary">
+                  <OLink :href="item.down_url" tag="button" @click="collectDownloadData(item.name)" color="primary">
                     {{ $t('download.BTN_TEXT') }}
                   </OLink>
                 </div>
@@ -501,10 +440,7 @@ const reportVersionSelect = () => {
                   </template>
                 </OLink>
                 <p>{{ $t('download.TABLE_HEAD[2]') }}</p>
-                <OLink v-if="!userInfoStore.username" tag="button" color="primary" @click="changeDownloadAuth">
-                  {{ $t('download.BTN_TEXT') }}
-                </OLink>
-                <OLink v-else :href="tool.down_url" tag="button" @click="collectDownloadData(tool.name)" color="primary">
+                <OLink :href="tool.down_url" tag="button" @click="collectDownloadData(tool.name)" color="primary">
                   {{ $t('download.BTN_TEXT') }}
                 </OLink>
               </div>
@@ -513,11 +449,6 @@ const reportVersionSelect = () => {
         </OCollapse>
       </div>
     </template>
-    <!-- 登录弹窗 -->
-    <ODialog v-if="downloadDlg" v-model:visible="downloadDlg" :unmount-on-hide="false" size="small" :actions="dlgAction">
-      <template #header>{{ $t('download.DOWNLOAD_TIPS') }}</template>
-      <div>{{ $t('download.DOWNLOAD_TEXT') }}</div>
-    </ODialog>
   </section>
 </template>
 

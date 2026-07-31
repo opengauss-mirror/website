@@ -1,10 +1,8 @@
 <script lang="ts" setup>
-import { ref, inject, Ref } from 'vue';
-import { type DialogActionT, useMessage, OButton, ODialog, OIcon } from '@opensig/opendesign';
+import { ref } from 'vue';
+import { useMessage, OButton, OIcon } from '@opensig/opendesign';
 import { useClipboard } from '@/components/hooks/useClipboard';
 import { useI18n } from '~@/i18n';
-import { doLogin } from '@/shared/login';
-import { useUserInfoStore } from '@/stores/user';
 import { useScreen } from '~@/composables/useScreen';
 
 import IconDownload from '~icons/app/icon-download.svg';
@@ -33,9 +31,6 @@ const message = useMessage();
 const i18n = useI18n();
 const { lePadV } = useScreen();
 
-const downloadVersionAuth = inject('PERMISSION_LIST');
-
-// 复制sha值
 const shaText = 'SHA256';
 const isClipboard = ref(true);
 const initClipboard = (text: string, e: MouseEvent) => {
@@ -67,33 +62,6 @@ const handleUrlCopy = (value: string | undefined, e: MouseEvent) => {
     initClipboard(value, e);
   }
 };
-
-// 下载权限
-const userInfoStore = useUserInfoStore();
-const changeDownloadAuth = () => {
-  downloadDlg.value = true;
-};
-
-const downloadDlg = ref(false);
-const dlgAction: Ref<DialogActionT[]> = ref([
-  {
-    id: 'cancel',
-    label: i18n.value.download.DOWNLOAD_CANCEL,
-    variant: 'outline',
-    onClick: () => {
-      downloadDlg.value = false;
-    },
-  },
-  {
-    id: 'ok',
-    label: i18n.value.download.DOWNLOAD_COMFIRM,
-    color: 'primary',
-    variant: 'solid',
-    onClick: () => {
-      doLogin();
-    },
-  },
-]);
 
 const emits = defineEmits(['report']);
 const collectDownloadData = (name: string) => {
@@ -129,51 +97,26 @@ const collectDownloadData = (name: string) => {
           </OIcon>
         </span>
       </div>
-      <!-- 软件包下载 -->
       <div v-if="data.down_url !== ''" class="down-action">
         <span v-if="lePadV" class="text">{{ $t('download.TABLE_HEAD[1]') }}：</span>
-        <template v-if="downloadVersionAuth.includes(versionShown) && !userInfoStore.username">
-          <OButton
-            :variant="lePadV ? 'text' : type === 'symbol' ? 'outline' : 'solid'"
-            size="small"
-            color="primary"
-            @click="changeDownloadAuth"
-            v-analytics.bubble="{
-              ...(type === 'symbol' ? { level7: data.name } : {}),
-              target: i18n.download.BTN_TEXT,
-            }"
-          >
-            {{ i18n.download.BTN_TEXT }}
-            <template #suffixIcon>
-              <IconDownload />
-            </template>
-          </OButton>
-        </template>
-        <template v-else>
-          <OButton
-            size="small"
-            :href="data.down_url"
-            @click="collectDownloadData(data.name)"
-            :variant="lePadV ? 'text' : type === 'symbol' ? 'outline' : 'solid'"
-            color="primary"
-            v-analytics.bubble="{
-              ...(type === 'symbol' ? { level7: data.name } : {}),
-              target: i18n.download.BTN_TEXT,
-            }"
-          >
-            {{ i18n.download.BTN_TEXT }}
-            <template #suffixIcon>
-              <IconDownload />
-            </template>
-          </OButton>
-        </template>
+        <OButton
+          size="small"
+          :href="data.down_url"
+          @click="collectDownloadData(data.name)"
+          :variant="lePadV ? 'text' : type === 'symbol' ? 'outline' : 'solid'"
+          color="primary"
+          v-analytics.bubble="{
+            ...(type === 'symbol' ? { level7: data.name } : {}),
+            target: i18n.download.BTN_TEXT,
+          }"
+        >
+          {{ i18n.download.BTN_TEXT }}
+          <template #suffixIcon>
+            <IconDownload />
+          </template>
+        </OButton>
       </div>
     </div>
-    <!-- 登录弹窗 -->
-    <ODialog v-if="downloadDlg" v-model:visible="downloadDlg" :unmount-on-hide="false" size="small" :actions="dlgAction">
-      <template #header>{{ i18n.download.DOWNLOAD_TIPS }}</template>
-      <div>{{ i18n.download.DOWNLOAD_TEXT }}</div>
-    </ODialog>
   </div>
 </template>
 

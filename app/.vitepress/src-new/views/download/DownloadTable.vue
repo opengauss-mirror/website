@@ -1,11 +1,9 @@
 <script lang="ts" setup>
-import { ref, inject, Ref } from 'vue';
-import { OLink, OButton, ODialog, OTable, OPopover, OIcon, useMessage, DialogActionT } from '@opensig/opendesign';
+import { ref } from 'vue';
+import { OLink, OButton, OTable, OPopover, OIcon, useMessage } from '@opensig/opendesign';
 import { useScreen } from '~@/composables/useScreen';
 import { useClipboard } from '@/components/hooks/useClipboard';
-import { doLogin } from '@/shared/login';
 import { useI18n } from '@/i18n';
-import { useUserInfoStore } from '@/stores/user';
 import { useLocale } from '~@/composables/useLocale';
 
 import IconDownload from '~icons/app/icon-download.svg';
@@ -35,9 +33,7 @@ const i18n = useI18n();
 const message = useMessage();
 const { t } = useLocale();
 const { gtPadV } = useScreen();
-const userInfoStore = useUserInfoStore();
 const emits = defineEmits(['report']);
-const downloadVersionAuth = inject('PERMISSION_LIST');
 const columns = [
   { label: t('download.TABLE_HEAD[0]'), key: 'name' },
   { label: t('download.TABLE_HEAD[1]'), key: 'size' },
@@ -45,7 +41,6 @@ const columns = [
   { label: t('download.TABLE_HEAD[2]'), key: 'down_url' },
 ];
 
-// 复制sha值
 const shaText = 'SHA256';
 const isClipboard = ref(true);
 const initClipboard = (text: string, e: MouseEvent) => {
@@ -78,32 +73,6 @@ const handleUrlCopy = (value: string | undefined, e: MouseEvent) => {
   }
 };
 
-// 下载权限
-const changeDownloadAuth = () => {
-  downloadDlg.value = true;
-};
-
-const downloadDlg = ref(false);
-const dlgAction: Ref<DialogActionT[]> = ref([
-  {
-    id: 'cancel',
-    label: i18n.value.download.DOWNLOAD_CANCEL,
-    variant: 'outline',
-    onClick: () => {
-      downloadDlg.value = false;
-    },
-  },
-  {
-    id: 'ok',
-    label: i18n.value.download.DOWNLOAD_COMFIRM,
-    color: 'primary',
-    variant: 'solid',
-    onClick: () => {
-      doLogin();
-    },
-  },
-]);
-
 const collectDownloadData = (name: string) => {
   emits('report', name);
 };
@@ -131,35 +100,19 @@ const collectDownloadData = (name: string) => {
       </template>
       <template #td_down_url="{ row }">
         <div v-if="row.down_url !== ''" class="down-action">
-          <template v-if="downloadVersionAuth.includes(versionShown) && !userInfoStore.username">
-            <OButton
-              variant="outline"
-              size="small"
-              color="primary"
-              @click="changeDownloadAuth"
-              v-analytics.bubble="{ level5: row.name, target: i18n.download.BTN_TEXT }"
-            >
-              {{ i18n.download.BTN_TEXT }}
-              <template #suffixIcon>
-                <IconDownload />
-              </template>
-            </OButton>
-          </template>
-          <template v-else>
-            <OButton
-              size="small"
-              :href="row.down_url"
-              @click="collectDownloadData(row.name)"
-              variant="outline"
-              color="primary"
-              v-analytics.bubble="{ level5: row.name, target: i18n.download.BTN_TEXT }"
-            >
-              {{ i18n.download.BTN_TEXT }}
-              <template #suffixIcon>
-                <IconDownload />
-              </template>
-            </OButton>
-          </template>
+          <OButton
+            size="small"
+            :href="row.down_url"
+            @click="collectDownloadData(row.name)"
+            variant="outline"
+            color="primary"
+            v-analytics.bubble="{ level5: row.name, target: i18n.download.BTN_TEXT }"
+          >
+            {{ i18n.download.BTN_TEXT }}
+            <template #suffixIcon>
+              <IconDownload />
+            </template>
+          </OButton>
         </div>
         <div v-else class="no-data">--</div>
       </template>
@@ -195,18 +148,12 @@ const collectDownloadData = (name: string) => {
       </p>
       <p class="item-text">
         <span>{{ i18n.download.TABLE_HEAD[2] }}</span>
-        <a v-if="downloadVersionAuth.includes(versionShown) && !userInfoStore.username" @click="changeDownloadAuth"> {{ i18n.download.BTN_TEXT_MO }}</a>
-        <a v-else :href="item.down_url" download @click="collectDownloadData(item.name)">
+        <a :href="item.down_url" download @click="collectDownloadData(item.name)">
           {{ i18n.download.BTN_TEXT_MO }}
         </a>
       </p>
     </li>
   </ul>
-  <!-- 登录弹窗 -->
-  <ODialog v-if="downloadDlg" v-model:visible="downloadDlg" :unmount-on-hide="false" size="small" :actions="dlgAction">
-    <template #header>{{ i18n.download.DOWNLOAD_TIPS }}</template>
-    <div>{{ i18n.download.DOWNLOAD_TEXT }}</div>
-  </ODialog>
 </template>
 
 <style lang="scss" scoped>
