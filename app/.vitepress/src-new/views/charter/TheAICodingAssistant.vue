@@ -37,7 +37,7 @@ const onCopyClick = (e: MouseEvent) => {
     :title="lang === 'zh' ? 'openGauss社区生成式AI工具使用与开源贡献策略' : 'openGauss Community Generative AI Use and Open Source Contribution Policy'"
   >
     <div v-if="lang === 'zh'" class="content-card policy">
-      <h3>1. 开放策略 (Openness Strategy)</h3>
+      <h2>1. 开放策略 (Openness Strategy)</h2>
 
       <p>
         openGauss社区秉持开放、协同、创新的开源精神，将生成式AI与智能化Agent视为推动社区技术演进的重要生产力。社区允许贡献者在合理、透明、可审查的前提下使用生成式人工智能工具辅助贡献，但坚持以下原则：
@@ -68,7 +68,7 @@ const onCopyClick = (e: MouseEvent) => {
         </li>
       </ul>
 
-      <h3>2. 适用范围 (Scope of Application)</h3>
+      <h2>2. 适用范围 (Scope of Application)</h2>
 
       <p>本策略适用于贡献者向openGauss社区（包括但不限于openGauss组织下的所有代码仓库、文档库等）提交的各种形式的所有贡献：</p>
 
@@ -78,7 +78,7 @@ const onCopyClick = (e: MouseEvent) => {
         <li><strong>配置与元数据</strong>：包括Containerfile/Dockerfile、CI/CD配置文件等。</li>
       </ul>
 
-      <h3>3. 法律与合规 (Legal & Compliance)</h3>
+      <h2>3. 法律与合规 (Legal & Compliance)</h2>
 
       <p>贡献者向openGauss社区提交包含AI生成内容的贡献，必须在以下法律与合规框架内：</p>
 
@@ -123,7 +123,7 @@ __3. Prompt摘要: 基于现有代码逻辑，完成代码编写、逻辑优化�
 1. 代码由AI辅助开发者编写，且开发者已人工逐行核对逻辑、校验功能正确性，且与开发者预期一致；</code></pre>
       </div>
 
-      <h3>4. Agents规范Prompt（Standard Prompt for Agents）</h3>
+      <h2>4. Agents规范Prompt（Standard Prompt for Agents）</h2>
 
       <p>
         为了让各种AI编程助手、自动化Agent（如PR自动化审查、代码自动修复Agent）在为openGauss社区提供服务时能够严格遵循上述策略，特制定以下<strong
@@ -157,7 +157,7 @@ __3. Prompt摘要: 基于现有代码逻辑，完成代码编写、逻辑优化�
 - 优先安全性：不得引入内存泄漏、缓冲区溢出等常见安全漏洞，优先推荐使用已经过openGauss社区验证的安全函数。</code></pre>
       </div>
 
-      <h3>5. 禁止或高风险行为</h3>
+      <h2>5. 禁止或高风险行为</h2>
 
       <ul>
         <li>未经人工审查的AI输出</li>
@@ -169,7 +169,7 @@ __3. Prompt摘要: 基于现有代码逻辑，完成代码编写、逻辑优化�
         <li>由AI Agent自动批量提交的贡献或提交人类贡献者未实质参与的贡献</li>
       </ul>
 
-      <h3>6. 贡献者责任</h3>
+      <h2>6. 贡献者责任</h2>
 
       <p>贡献者向社区提交AI辅助贡献时，应确认并承诺：</p>
 
@@ -183,7 +183,7 @@ __3. Prompt摘要: 基于现有代码逻辑，完成代码编写、逻辑优化�
         <li>对所提交AI辅助贡献承担与非AI辅助贡献相同的责任</li>
       </ul>
 
-      <h3>7. 审查与合入规则</h3>
+      <h2>7. 审查与合入规则</h2>
 
       <p>社区维护者可以基于以下原因要求贡献者修改、补充说明、重新提交AI辅助贡献或拒绝合入AI辅助贡献：</p>
 
@@ -198,7 +198,7 @@ __3. Prompt摘要: 基于现有代码逻辑，完成代码编写、逻辑优化�
       </ul>
     </div>
     <div v-else class="content-card policy">
-      <h3>1. Openness Strategy</h3>
+      <h2>1. Openness Strategy</h2>
 
       <p>
         Guided by the spirit of openness, collaboration, and innovation, the openGauss community recognizes generative AI and intelligent agents as essential
@@ -235,7 +235,7 @@ __3. Prompt摘要: 基于现有代码逻辑，完成代码编写、逻辑优化�
         </li>
       </ul>
 
-      <h3>2. Scope of Application</h3>
+      <h2>2. Scope of Application</h2>
 
       <p>
         This policy applies to all forms of contributions submitted to the openGauss community (including but not limited to all code and documentation
@@ -248,7 +248,7 @@ __3. Prompt摘要: 基于现有代码逻辑，完成代码编写、逻辑优化�
         <li><strong>Configurations and metadata</strong>：including Containerfiles/Dockerfiles, and CI/CD configuration files.</li>
       </ul>
 
-      <h3>3. Legal & Compliance</h3>
+      <h2>3. Legal & Compliance</h2>
 
       <p>Any submissions incorporating AI-generated content to the openGauss community shall be governed by the following legal and compliance frameworks:</p>
 
@@ -298,7 +298,7 @@ __3. Prompt summary: Based on the existing code logic, complete the code, optimi
 1. The code was developed with AI assistance. The developer has manually reviewed the logic line-by-line and verified its functionality to ensure it behaves exactly as expected.</code></pre>
       </div>
 
-      <h3>4. Standard Prompt for Agents</h3>
+      <h2>4. Standard Prompt for Agents</h2>
 
       <p>
         To ensure that various AI programming assistants and automated agents (such as automated PR reviewers and auto-fixing agents) strictly comply with the
@@ -331,7 +331,7 @@ You are an AI agent dedicated to serving the openGauss community. Your goal is t
 - Security first: Do not introduce security vulnerabilities such as memory leaks and buffer overflows. Always prefer secure functions verified by the openGauss community.</code></pre>
       </div>
 
-      <h3>5. Prohibited or Risky Behaviors</h3>
+      <h2>5. Prohibited or Risky Behaviors</h2>
 
       <ul>
         <li>Unreviewed AI outputs;</li>
@@ -352,7 +352,7 @@ You are an AI agent dedicated to serving the openGauss community. Your goal is t
         <li>Contributions submitted in batch by AI agents or lacking substantial participation by human contributors.</li>
       </ul>
 
-      <h3>6. Contributor Responsibilities</h3>
+      <h2>6. Contributor Responsibilities</h2>
 
       <p>When submitting AI-assisted contributions to the community, contributors shall acknowledge and agree that they:</p>
 
@@ -372,7 +372,7 @@ You are an AI agent dedicated to serving the openGauss community. Your goal is t
         <li>Take the same responsibility for AI-assisted contributions as for non-AI-assisted contributions.</li>
       </ul>
 
-      <h3>7. Review and Merging Rules</h3>
+      <h2>7. Review and Merging Rules</h2>
 
       <p>
         Community maintainers may request modifications, additional explanations, resubmissions of AI-assisted contributions by the contributors, or reject
@@ -488,7 +488,7 @@ You are an AI agent dedicated to serving the openGauss community. Your goal is t
     margin-bottom: 16px;
   }
 
-  h3 {
+  h2,h3 {
     font-weight: 600;
     &:not(:first-child) {
       margin-top: 40px;
