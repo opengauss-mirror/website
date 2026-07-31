@@ -126,6 +126,7 @@ llms-full.txt由脚本 `app/.vitepress/config.ts` 的 `buildEnd` 钩子调用 `g
 | TypeScript 规范 | [rules/typescript.md](rules/typescript.md) |
 | API 与状态 | [rules/api-and-state.md](rules/api-and-state.md) |
 | 样式规范 | [rules/styling.md](rules/styling.md) |
+| 架构规范 | [rules/architecture.md](rules/architecture.md) |
 | Git 工作流 | [rules/git.md](rules/git.md) |
 
 ### Skills（AI 技能，按需 Read）
@@ -144,6 +145,7 @@ llms-full.txt由脚本 `app/.vitepress/config.ts` 的 `buildEnd` 钩子调用 `g
 6. **SSR 安全**：`window` / `document` 只能在 `onMounted` 内访问。
 7. **i18n 双语同步**：改文案必须同时改 zh / en（涉及 ru 时一并）。
 8. **类型命名约定**：`XxxItemT` / `XxxListT` / `XxxDetailT` / `XxxQueryT`。
+9. **数据源定位**：页面静态数据源位于 `.content/` 目录下的 YAML 文件，经 `src-new/data/<模块>/content-bridge.ts` 映射到组件；修改数据字段须先改 YAML 源，再同步改 bridge 映射，不要将 bridge 或组件内硬编码误认为数据源头（详见 [rules/architecture.md](rules/architecture.md)）。
 
 ---
 
