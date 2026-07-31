@@ -437,7 +437,7 @@ watch(
           </div>
         </div>
       </div>
-      <template v-if="screenWidth < 1100">
+      <template v-if="screenWidth < 1100 && !frontmatter.hideNss">
         <div v-if="isMobileFloatShow && !isSummit" class="float-mobile" :class="{ 'mobile-margin': isMargin }">
           <div class="float-head">
             <div class="head-title" @click="toggleDialogVisible">
