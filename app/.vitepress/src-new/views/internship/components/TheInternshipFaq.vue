@@ -74,6 +74,6 @@ const faqList = computed(() => [
 }
 
 .faq-answer-tip {
-  color: var(--o-color-control3);
+  color: var(--o-color-info2);
 }
 </style>

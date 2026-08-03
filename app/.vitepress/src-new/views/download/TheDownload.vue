@@ -161,6 +161,9 @@ const getData = computed(() => {
 </template>
 
 <style lang="scss" scoped>
+:deep(.o-table thead::after) {
+  display: none;
+}
 .banner-level2 {
   @include respond-to('<=pad_v') {
     background: none;

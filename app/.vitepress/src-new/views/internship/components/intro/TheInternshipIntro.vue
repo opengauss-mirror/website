@@ -268,7 +268,7 @@ const isExpanded = (step: InternshipStep) => expandedSteps.value.has(step);
     height: 32px;
 
     path {
-      fill: var(--o-color-control3) !important;
+      fill: var(--o-color-info2) !important;
     }
   }
 
@@ -306,7 +306,7 @@ const isExpanded = (step: InternshipStep) => expandedSteps.value.has(step);
 
 .step-title-arrow {
   height: 16px;
-  color: rgba(var(--o-trafficpurple-1), 0.6);
+  color: rgba(var(--o-brand-1), 0.6);
   margin-top: 8px;
   overflow: hidden;
   &:deep(svg) {
@@ -317,16 +317,16 @@ const isExpanded = (step: InternshipStep) => expandedSteps.value.has(step);
 }
 
 .step-content {
-  --content-bg: rgba(var(--o-trafficpurple-1), 0.6);
+  --content-bg: rgba(var(--o-brand-1), 0.6);
 }
 
 @include in-dark {
   .step-title-arrow {
-    color: rgba(var(--o-mixedgray-7), 0.6);
+    color: rgba(var(--o-grey-7), 0.6);
   }
   
   .step-content {
-    --content-bg: rgba(var(--o-mixedgray-7), 0.6);
+    --content-bg: rgba(var(--o-grey-7), 0.6);
   }
 }
 
@@ -384,7 +384,7 @@ const isExpanded = (step: InternshipStep) => expandedSteps.value.has(step);
       height: 20px;
       margin-right: 8px;
       path {
-        fill: var(--o-color-control3) !important;
+        fill: var(--o-color-info2) !important;
       }
     }
   }

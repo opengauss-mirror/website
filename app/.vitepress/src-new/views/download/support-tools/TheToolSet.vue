@@ -115,14 +115,14 @@ const tableColumns = computed(() => {
       { key: 'description', label: t('download.TABLE_HEAD[6]'), width: 360 },
       { key: 'size', label: t('download.TABLE_HEAD[1]'), width: 150 },
       { key: 'sha_code', label: t('download.TABLE_HEAD[3]'), width: 150 },
-      { key: 'download', label: t('download.TABLE_HEAD[2]'), width: 150 },
+      { key: 'download', label: t('download.TABLE_HEAD[2]'), minWidth: 150 },
     ];
   }
   return [
     { key: 'name', label: t('download.TABLE_HEAD[0]') },
     { key: 'size', label: t('download.TABLE_HEAD[1]'), width: 280 },
     { key: 'sha_code', label: t('download.TABLE_HEAD[3]'), width: 280 },
-    { key: 'download', label: t('download.TABLE_HEAD[2]'), width: 280 },
+    { key: 'download', label: t('download.TABLE_HEAD[2]'), minWidth: 150 },
   ];
 });
 
@@ -290,7 +290,7 @@ const reportVersionSelect = () => {
       </template>
       <!-- 表格 -->
       <TheTable
-        :header-cell-style="{ backgroundColor: 'var(--o-color-control3-light-new)' }"
+        :header-cell-style="{ backgroundColor: 'var(--o-color-control3-light)' }"
         ref="tableRef"
         :cell-style="cellStyle"
         v-if="gtPadV"
@@ -349,6 +349,7 @@ const reportVersionSelect = () => {
           <div v-if="row.children?.length"></div>
           <template v-else>
             <OButton
+              round="pill"
               size="small"
               :disabled="row.children?.length"
               :href="row.down_url"
@@ -453,8 +454,14 @@ const reportVersionSelect = () => {
 </template>
 
 <style lang="scss" scoped>
+h2 {
+  font-weight: 600;
+}
+.o-link-normal {
+  --link-color: var(--o-color-info1);
+}
 .el-table {
-  --el-table-row-hover-bg-color: var(--o-color-control2-light-new);
+  --el-table-row-hover-bg-color: var(--o-color-control2-light);
 }
 .table-description-cell {
   overflow: hidden;

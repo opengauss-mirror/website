@@ -15,9 +15,9 @@ const activeColor = computed(() => {
 
 const nonActiveColor = computed(() => {
   if (theme.value === 'dark') {
-    return 'rgb(var(--o-mixedgray-5))';
+    return 'rgb(var(--o-grey-5))';
   }
-  return 'rgb(var(--o-mixedgray-2))';
+  return 'rgb(var(--o-grey-2))';
 });
 
 interface EcoItem {

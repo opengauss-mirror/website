@@ -209,6 +209,9 @@ const selectedOverflowTabIndex = computed<number>({
 </style>
 
 <style scoped lang="scss">
+.o-link-normal {
+  --link-color: var(--o-color-info1);
+}
 :deep(.section-wrapper) {
   margin: calc(var(--o-gap-section) - 24px) auto 0 !important;
 }
@@ -221,7 +224,7 @@ const selectedOverflowTabIndex = computed<number>({
   right: 0;
   top: 0;
   height: 100%;
-  background-color: rgb(var(--o-mixedgray-3));
+  background-color: rgb(var(--o-grey-3));
   @include respond-to('<=pad_v') {
     background-color: var(--e-color-bg1);
     width: 32px;
@@ -252,7 +255,7 @@ const selectedOverflowTabIndex = computed<number>({
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(var(--o-mixedgray-3));
+  background-color: rgb(var(--o-grey-3));
   padding: 6px;
   border-radius: 4px;
   white-space: nowrap;

@@ -160,7 +160,7 @@ const getNewLink = (path: string) => {
         <el-table-column :label="item.thead[1]" prop="centos_url">
           <template #default="scope">
             <div v-if="scope.row.centos_url !== ''" class="down-action">
-              <OButton variant="outline" size="small" color="primary" :href="scope.row.centos_url" @click="collectDownloadData(scope.row.name, item.thead[1])">
+              <OButton round="pill" variant="outline" size="small" color="primary" :href="scope.row.centos_url" @click="collectDownloadData(scope.row.name, item.thead[1])">
                 {{ i18n.download.BTN_TEXT }}
               </OButton>
 
@@ -181,7 +181,7 @@ const getNewLink = (path: string) => {
         <el-table-column :label="item.thead[2]" prop="aarch_url">
           <template #default="scope">
             <div v-if="scope.row.aarch_url !== ''" class="down-action">
-              <OButton variant="outline" size="small" color="primary" :href="scope.row.aarch_url" @click="collectDownloadData(scope.row.name, item.thead[2])">
+              <OButton round="pill" variant="outline" size="small" color="primary" :href="scope.row.aarch_url" @click="collectDownloadData(scope.row.name, item.thead[2])">
                 {{ i18n.download.BTN_TEXT }}
               </OButton>
 
@@ -199,7 +199,7 @@ const getNewLink = (path: string) => {
           <template #default="scope">
             <template v-if="item.thead[3]">
               <div v-if="scope.row.x86_url !== ''" class="down-action">
-                <OButton variant="outline" size="small" color="primary" :href="scope.row.x86_url" @click="collectDownloadData(scope.row.name, item.thead[3])">
+                <OButton round="pill" variant="outline" size="small" color="primary" :href="scope.row.x86_url" @click="collectDownloadData(scope.row.name, item.thead[3])">
                   {{ i18n.download.BTN_TEXT }}
                 </OButton>
 
@@ -236,7 +236,7 @@ const getNewLink = (path: string) => {
         <el-table-column :label="item.thead[1]" prop="centos_url">
           <template #default="scope">
             <div v-if="scope.row.centos_url !== ''" class="down-action">
-              <OButton variant="outline" size="small" color="primary" :href="scope.row.centos_url" @click="collectDownloadData(scope.row.name, item.thead[1])">
+              <OButton round="pill" variant="outline" size="small" color="primary" :href="scope.row.centos_url" @click="collectDownloadData(scope.row.name, item.thead[1])">
                 {{ i18n.download.BTN_TEXT }}
               </OButton>
 
@@ -258,7 +258,7 @@ const getNewLink = (path: string) => {
           <template #default="scope">
             <template v-if="item.thead[2]">
               <div v-if="scope.row.aarch_url !== ''" class="down-action">
-                <OButton variant="outline" size="small" color="primary" :href="scope.row.aarch_url" @click="collectDownloadData(scope.row.name, item.thead[2])">
+                <OButton round="pill" variant="outline" size="small" color="primary" :href="scope.row.aarch_url" @click="collectDownloadData(scope.row.name, item.thead[2])">
                   {{ i18n.download.BTN_TEXT }}
                 </OButton>
 
@@ -288,7 +288,7 @@ const getNewLink = (path: string) => {
             <p class="text">{{ item.thead[1] }}</p>
             <div class="down-action lable-name2">
               <a :href="subitem.centos_url" @click="collectDownloadData(subitem.name, item.thead[1])" rel="noopener noreferrer">
-                <OButton variant="outline" size="small" color="primary">
+                <OButton round="pill" variant="outline" size="small" color="primary">
                   {{ i18n.download.BTN_TEXT }}
                 </OButton>
               </a>
@@ -306,7 +306,7 @@ const getNewLink = (path: string) => {
           <template v-if="subitem.aarch_url !== ''">
             <p class="text">{{ item.thead[2] }}</p>
             <div class="down-action lable-name3">
-              <OButton :href="subitem.aarch_url" @click="collectDownloadData(subitem.name, item.thead[2])" variant="outline" size="small" color="primary">
+              <OButton round="pill" :href="subitem.aarch_url" @click="collectDownloadData(subitem.name, item.thead[2])" variant="outline" size="small" color="primary">
                 {{ i18n.download.BTN_TEXT }}
               </OButton>
               <OLink class="down-copy lable-name3" size="small" @click="handleUrlCopy(subitem.aarch_sha, $event)">
@@ -321,6 +321,7 @@ const getNewLink = (path: string) => {
             <p class="text">{{ item.thead[3] }}</p>
             <div class="down-action">
               <OButton
+                round="pill"
                 :href="subitem.x86_url"
                 @click="collectDownloadData(subitem.name, item.thead[3])"
                 variant="outline"

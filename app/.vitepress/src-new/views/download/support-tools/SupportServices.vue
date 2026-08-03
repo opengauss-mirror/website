@@ -68,7 +68,7 @@ const goFaq = () => {
 
     .desc {
       @include text1;
-      color: var(--o-color-control3);
+      color: var(--o-color-info2);
     }
   }
 }

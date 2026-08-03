@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import { computed, onMounted, watch } from 'vue';
+import { computed } from 'vue';
 import { useCommon } from '@/stores/common';
 
 import IconSun from '~icons/app-new/icon-sun.svg';
 import IconHeaderMoon from '~icons/app-new/icon-header-moon.svg';
-import { getCustomCookie, isBrowser, setCustomCookie } from '@/shared/utils';
+import { setCustomCookie } from '@/shared/utils';
 
 // 风格切换
 const APPEARANCE_KEY = 'openGauss-theme-appearance';
@@ -23,34 +23,6 @@ const changeThemeMobile = () => {
   setCustomCookie(APPEARANCE_KEY, commonStore.theme, 180, import.meta.env.VITE_COOKIE_DOMAIN);
 };
 
-onMounted(() => {
-  let theme;
-  if (!getCustomCookie(APPEARANCE_KEY)) {
-    const prefereDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    theme = prefereDark ? 'dark' : 'light';
-  } else {
-    theme = getCustomCookie(APPEARANCE_KEY);
-  }
-  commonStore.theme = theme === 'dark' ? 'dark' : 'light';
-});
-
-watch(
-  () => {
-    return commonStore.theme;
-  },
-  (val) => {
-    if (isBrowser()) {
-      const documentElement = document.documentElement;
-      val === 'light' && documentElement.removeAttribute('data-o-theme');
-      val === 'dark' && documentElement.setAttribute('data-o-theme', 'dark');
-      val === 'light' && documentElement.classList.remove('dark');
-      val === 'dark' && documentElement.classList.add('dark');
-    }
-  },
-  {
-    immediate: true,
-  }
-);
 </script>
 
 <template>

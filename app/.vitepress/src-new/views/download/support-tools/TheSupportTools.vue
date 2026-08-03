@@ -142,6 +142,9 @@ const onClickTool = (item: any) => {
   </section>
 </template>
 <style lang="scss">
+h2 {
+  font-weight: 600;
+}
 .o-toggle:not(.o-toggle-disabled):not(.o-toggle-checked) {
   --toggle-size: 32px;
   --toggle-padding: 3px 15px;
@@ -149,7 +152,7 @@ const onClickTool = (item: any) => {
   max-height: 32px;
   color: var(--o-color-info1);
   --toggle-bg-color: var(--o-color-fill1);
-  --toggle-bg-color-hover: var(--o-color-control2-light-new);
+  --toggle-bg-color-hover: var(--o-color-control2-light);
   @include text1;
 
   &.active {
@@ -169,7 +172,7 @@ const onClickTool = (item: any) => {
   }
   .desc {
     @include text2;
-    color: var(--o-color-control2);
+    color: var(--o-color-info3);
     margin-top: 12px;
     margin-bottom: 21px;
   }

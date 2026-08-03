@@ -32,6 +32,7 @@ const { lePadV } = useScreen();
     </div>
     <div class="download-file">
       <OButton
+        round="pill"
         variant="outline"
         size="small"
         class="icon-download"

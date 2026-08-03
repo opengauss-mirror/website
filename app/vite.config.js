@@ -80,6 +80,8 @@ export default defineConfig({
         'ogmemory': FileSystemIconLoader(path.resolve(__dirname, './.vitepress/src-new/assets/svg-icons/category/ogmemory')),
         'training': FileSystemIconLoader(path.resolve(__dirname, './.vitepress/src-new/assets/svg-icons/category/training')),
         'internship': FileSystemIconLoader(path.resolve(__dirname, './.vitepress/src-new/assets/svg-icons/category/internship')),
+        'sig': FileSystemIconLoader(path.resolve(__dirname, './.vitepress/src-new/assets/svg-icons/category/sig')),
+        'home': FileSystemIconLoader(path.resolve(__dirname, './.vitepress/src-new/assets/svg-icons/category/home')),
       },
     }),
     viteStaticCopy({
@@ -110,6 +112,11 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api-dsapi/, ''),
         configure: proxyConfig,
+      },
+      '/api-magic/': {
+        target: 'https://magicapi.test.osinfra.cn/',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api-magic/, ''),
       },
       '/api-search/': {
         target: 'https://doc-search-common.osinfra.cn/',

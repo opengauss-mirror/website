@@ -411,6 +411,9 @@ const reportTabChange = (val: string) => {
   </div>
 </template>
 <style lang="scss" scoped>
+.o-table {
+  --table-radius: 4px;
+}
 .release-notes-url {
   @include text1;
 }
@@ -612,7 +615,7 @@ const reportTabChange = (val: string) => {
   max-height: 32px;
   color: var(--o-color-info1);
   --toggle-bg-color: var(--o-color-fill1);
-  --toggle-bg-color-hover: var(--o-color-control2-light-new);
+  --toggle-bg-color-hover: var(--o-color-control2-light);
   @include text1;
 
   &.active {

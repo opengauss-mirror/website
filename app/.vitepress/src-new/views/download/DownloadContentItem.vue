@@ -100,6 +100,7 @@ const collectDownloadData = (name: string) => {
       <div v-if="data.down_url !== ''" class="down-action">
         <span v-if="lePadV" class="text">{{ $t('download.TABLE_HEAD[1]') }}：</span>
         <OButton
+          round="pill"
           size="small"
           :href="data.down_url"
           @click="collectDownloadData(data.name)"

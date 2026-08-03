@@ -51,7 +51,19 @@ export default {
         DESC: 'openGauss 是一个开源社区，完全依赖于社区提供友好的开发和协作环境。',
         PATH: '/zh/contribution/',
       },
+      {
+        NAME: '如何参与SIG兴趣小组',
+        DESC: 'openGauss 社区按照不同的 SIGs（Special Interest Groups）来组织，以便于更好的管理和改善工作流程。 SIG 是开放的，欢迎任何人加入并参与贡献。',
+        PATH: '/zh/contribution/',
+      },
     ],
+    momentnum: 'openGauss社区活力',
+    contributors: '贡献者',
+    downloads: '社区用户',
+    organizations: '单位会员',
+    sigs: 'sig组',
+    issues: '需求&问题',
+    learnMore: '查看贡献详情'
   },
   USER_TITLE: '用户实践',
   HOME_ROUND: {

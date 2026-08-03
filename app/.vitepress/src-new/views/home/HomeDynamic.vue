@@ -264,7 +264,7 @@ const activeTab = ref('blogs');
       margin-top: var(--e-spacing-h5);
       -webkit-line-clamp: 2;
       line-clamp: 2;
-      color: var(--o-color-control3);
+      color: var(--o-color-info2);
     }
   }
 }

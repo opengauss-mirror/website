@@ -77,6 +77,12 @@ export default {
           NAME: '贡献',
           CHILDREN: [
             {
+              NAME: 'SIG中心',
+              DESCRIPTION: '了解openGauss社区贡献者的角色及其职责。',
+              URL: '/sig/sig-list/',
+              TAG: TAG_TYPE.NEW,
+            },
+            {
               NAME: 'CLA签署',
               DESCRIPTION: '参与贡献前，需签署贡献者许可协议（CLA）',
               URL: 'https://clasign.osinfra.cn/sign/gitee_opengauss-1614047760000855378',
@@ -378,7 +384,7 @@ export default {
               URL: 'https://discuss.opengauss.org/',
             },
             {
-              NAME: '线上交流',
+              NAME: '邮件列表',
               DESCRIPTION: '订阅邮件列表，与SIG成员讨论openGauss的技术与进展',
               URL: '/online-communication/',
             },

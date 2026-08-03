@@ -9,6 +9,7 @@ const categories: string[] = [
   'faq',
   'banner-layout',
   'charter',
+  'sig-apply'
 ];
 
 export default categories;
