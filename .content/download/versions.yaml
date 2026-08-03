@@ -17,7 +17,7 @@
 
 - version_name: 7.0.0-RC3
   new_layout: true
-  is_login: true
+  is_login: false
   data_file: download7.0.0-RC3
   release_date: "2026.03.30"
   planned_eol: "2026.09.30"
@@ -37,7 +37,7 @@
 
 - version_name: 7.0.0-RC2
   new_layout: true
-  is_login: true
+  is_login: false
   data_file: download7.0.0-RC2
   release_date: "2025.09.30"
   planned_eol: "2026.03.30"
@@ -52,7 +52,7 @@
 
 - version_name: 7.0.0-RC1
   new_layout: true
-  is_login: true
+  is_login: false
   data_file: download7.0.0-RC1
   release_date: "2025.03.30"
   planned_eol: "2025.09.30"
@@ -67,7 +67,7 @@
 
 - version_name: "6.0.5 (LTS)"
   new_layout: true
-  is_login: true
+  is_login: false
   data_file: download6.0.5
   release_date: "2026.05"
   planned_eol: "2027.09.30"
@@ -82,7 +82,7 @@
 
 - version_name: "6.0.3 (LTS)"
   new_layout: true
-  is_login: true
+  is_login: false
   data_file: download6.0.3
   release_date: "2025.12"
   planned_eol: "2027.09.30"
@@ -97,7 +97,7 @@
 
 - version_name: "6.0.2 (LTS)"
   new_layout: true
-  is_login: true
+  is_login: false
   data_file: download6.0.2
   release_date: "2025.08"
   planned_eol: "2027.09.30"
@@ -112,7 +112,7 @@
 
 - version_name: "6.0.1 (LTS)"
   new_layout: true
-  is_login: true
+  is_login: false
   data_file: download6.0.1
   release_date: "2025.01"
   planned_eol: "2027.09.30"
@@ -127,7 +127,7 @@
 
 - version_name: "6.0.0 (LTS)"
   new_layout: true
-  is_login: true
+  is_login: false
   data_file: download6.0.0
   release_date: "2024.09.30"
   planned_eol: "2027.09.30"

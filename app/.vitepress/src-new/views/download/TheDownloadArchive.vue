@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, computed, onMounted, provide, watchEffect } from 'vue';
+import { ref, computed, onMounted, watchEffect } from 'vue';
 import { useData, useRouter } from 'vitepress';
 import { ORadioGroup, ORadio, OBreadcrumb, OBreadcrumbItem, OSelect, OOption, OIcon } from '@opensig/opendesign';
 import DownloadConfig from '~@/data/download/content-bridge';
@@ -42,18 +42,11 @@ const getData = computed(() => {
   return activeTab.value === 'all' ? _downloadData : _downloadData.find((el) => el.name.includes(activeTab.value));
 });
 
-// 下载权限列表
-const getPermissionList = computed(() => {
-  return _downloadData.filter((el) => el.isLogin).map((el) => el.name);
-});
-
 onMounted(() => {
   const { href } = window.location;
   const paramsArr = getUrlParams(href);
   activeTab.value = decodeURIComponent(paramsArr?.version) || _downloadData[0].name;
 });
-
-provide('PERMISSION_LIST', getPermissionList);
 
 const onChange = (option: string) => {
   router.go(`/${lang.value}/download/archive/?version=${option}`);

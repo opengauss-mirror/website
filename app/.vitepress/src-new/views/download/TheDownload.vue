@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, computed, onMounted, provide, watchEffect, nextTick, onUnmounted } from 'vue';
+import { ref, computed, onMounted, watchEffect, nextTick, onUnmounted } from 'vue';
 import { useData } from 'vitepress';
 import { OTab, OTabPane } from '@opensig/opendesign';
 import DownloadConfig from '~@/data/download/content-bridge';
@@ -103,12 +103,6 @@ const getData = computed(() => {
   return found || DownloadConfig[0];
 });
 
-// 下载权限列表
-const getPermissionList = computed(() => {
-  return DownloadConfig.filter((el) => el.isLogin).map((el) => el.name);
-});
-
-provide('PERMISSION_LIST', getPermissionList);
 </script>
 
 <template>
