@@ -1,11 +1,11 @@
 declare module '#content/ogsp' {
-  interface OgspBannerT {
+  export interface OgspBannerT {
     title: string;
     background: string;
     illustration: string;
   }
 
-  interface OgspTableHeadersT {
+  export interface OgspTableHeadersT {
     name: string;
     version: string;
     award: string;
@@ -18,13 +18,13 @@ declare module '#content/ogsp' {
     certificate: string;
   }
 
-  interface OgspTipsT {
+  export interface OgspTipsT {
     text: string;
     link_text: string;
     link_href: string;
   }
 
-  interface OgspItemT {
+  export interface OgspItemT {
     name: string;
     version: string;
     award: string;
@@ -37,7 +37,7 @@ declare module '#content/ogsp' {
     certificate: string;
   }
 
-  interface OgspDataT {
+  export interface OgspDataT {
     banner: OgspBannerT;
     search_placeholder: string;
     table_headers: OgspTableHeadersT;
@@ -50,6 +50,7 @@ declare module '#content/ogsp' {
     zh: OgspDataT;
     en: OgspDataT;
   };
+  
   export default data;
 }
 

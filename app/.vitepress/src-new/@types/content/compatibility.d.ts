@@ -1,11 +1,11 @@
 declare module '#content/compatibility' {
-  interface CompatibilityBannerT {
+  export interface CompatibilityBannerT {
     title: string;
     background: string;
     illustration: string;
   }
 
-  interface CompatibilityTableHeadersT {
+  export interface CompatibilityTableHeadersT {
     name: string;
     type: string;
     company: string;
@@ -13,13 +13,13 @@ declare module '#content/compatibility' {
     certificate: string;
   }
 
-  interface CompatibilityTipsT {
+  export interface CompatibilityTipsT {
     text: string;
     link_text: string;
     link_href: string;
   }
 
-  interface CompatibilityItemT {
+  export interface CompatibilityItemT {
     name: string;
     version: string | null;
     type: string;
@@ -30,7 +30,7 @@ declare module '#content/compatibility' {
     download: string | null;
   }
 
-  interface CompatibilityDataT {
+  export interface CompatibilityDataT {
     banner: CompatibilityBannerT;
     search_placeholder: string;
     type_search_placeholder: string;
@@ -44,6 +44,7 @@ declare module '#content/compatibility' {
     zh: CompatibilityDataT;
     en: CompatibilityDataT;
   };
+  
   export default data;
 }
 

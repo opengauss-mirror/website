@@ -1,5 +1,5 @@
 declare module '#content/tools' {
-  interface SupportToolItemT {
+  export interface SupportToolItemT {
     iden: string;
     name: string;
     desc: string;
@@ -8,7 +8,7 @@ declare module '#content/tools' {
     site?: boolean;
   }
 
-  interface SupportToolCategoryT {
+  export interface SupportToolCategoryT {
     id: string;
     name: string;
     children: SupportToolItemT[];
@@ -18,6 +18,7 @@ declare module '#content/tools' {
     zh: SupportToolCategoryT[];
     en: SupportToolCategoryT[];
   };
+  
   export default data;
 }
 

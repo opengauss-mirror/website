@@ -46,7 +46,7 @@
   "devDependencies": {
     "@eslint/js": "9.39.2",
     "@intlify/unplugin-vue-i18n": "^11.0.7",
-    "@opendesign-plus/vite-plugins": "0.0.1-rc.1",
+    "@opendesign-plus/vite-plugins": "0.0.1-rc.2",
     "@playwright/test": "^1.47.0",
     "@rushstack/eslint-patch": "^1.10.5",
     "@types/node": "20.5.9",
