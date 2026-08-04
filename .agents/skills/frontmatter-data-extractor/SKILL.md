@@ -310,7 +310,7 @@ mindspore `.d.ts` 命名示例：
 
 ```ts
 declare module '#content/home' {
-  interface HomeBannerItemT {
+  export interface HomeBannerItemT {
     id: string;
     banner: string;
     banner_mb: string;
@@ -326,7 +326,7 @@ declare module '#content/home' {
     jump_out?: boolean;
   }
 
-  interface HomeZoneItemT {
+  export interface HomeZoneItemT {
     title: string;
     desc: string;
     href: string;
@@ -338,6 +338,7 @@ declare module '#content/home' {
     zh: { banner: HomeBannerItemT[]; zone: HomeZoneItemT[] };
     en: { banner: HomeBannerItemT[]; zone: HomeZoneItemT[] };
   };
+  
   export default data;
 }
 ```

@@ -1,11 +1,11 @@
 declare module '#content/honor' {
-  interface HonorCertificateItemT {
+  export interface HonorCertificateItemT {
     name: string;
     href: string;
     img: string;
   }
 
-  interface HonorMemberItemT {
+  export interface HonorMemberItemT {
     name: string;
     company: string;
     show_email: boolean;
@@ -13,34 +13,34 @@ declare module '#content/honor' {
     avatar: string;
   }
 
-  interface HonorDeveloperItemT {
+  export interface HonorDeveloperItemT {
     name: string;
     members: HonorMemberItemT[];
   }
 
-  interface HonorRuleItemT {
+  export interface HonorRuleItemT {
     type: string;
     value: string;
   }
 
-  interface HonorSigItemT {
+  export interface HonorSigItemT {
     name: string;
     href: string;
   }
 
-  interface HonorEnterpriseItemT {
+  export interface HonorEnterpriseItemT {
     first_name: string;
     second_name: string;
   }
 
-  interface HonorPersonItemT {
+  export interface HonorPersonItemT {
     name: string;
     company: string;
     avatar: string;
     comment: string[];
   }
 
-  interface HonorYearItemT {
+  export interface HonorYearItemT {
     id: string;
     data: HonorCertificateItemT[];
     developer_data?: HonorDeveloperItemT[];
@@ -55,7 +55,7 @@ declare module '#content/honor' {
     excellent_person_title?: string;
   }
 
-  interface HonorDataT {
+  export interface HonorDataT {
     title: string;
     read_news: string;
     view_certificate: string;
@@ -67,6 +67,7 @@ declare module '#content/honor' {
   const data: {
     zh: HonorDataT;
   };
+  
   export default data;
 }
 

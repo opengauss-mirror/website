@@ -44,7 +44,6 @@ export default defineConfig({
     alias: {
       '@/': `${path.resolve(__dirname, './.vitepress/src')}/`,
       '~@/': `${path.resolve(__dirname, './.vitepress/src-new')}/`,
-      '#content': path.resolve(__dirname, '../.content'),
     },
   },
   css: {
@@ -61,7 +60,9 @@ export default defineConfig({
     },
   },
   plugins: [
-    OPlusYamlContentVitePlugin(),
+    OPlusYamlContentVitePlugin({
+      root: path.resolve(__dirname, '../.content'),
+    }),
     vueJsx({}),
     Icons({
       compiler: 'vue3',

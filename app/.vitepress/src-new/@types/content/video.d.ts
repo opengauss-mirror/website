@@ -1,11 +1,11 @@
 declare module '#content/video' {
-  interface VideoItemT {
+  export interface VideoItemT {
     title: string;
     author: string;
     video_url: string;
   }
 
-  interface VideoGroupT {
+  export interface VideoGroupT {
     id: string;
     name: string;
     poster: string;
@@ -13,12 +13,12 @@ declare module '#content/video' {
     videos: VideoItemT[];
   }
 
-  interface VideoNavItemT {
+  export interface VideoNavItemT {
     key: string;
     name: string;
   }
 
-  interface VideoTabT {
+  export interface VideoTabT {
     id: number;
     name: string;
     tag: string;
@@ -31,6 +31,7 @@ declare module '#content/video' {
     zh: VideoTabT[];
     en: VideoTabT[];
   };
+  
   export default data;
 }
 

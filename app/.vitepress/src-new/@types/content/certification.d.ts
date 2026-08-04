@@ -1,11 +1,11 @@
 declare module '#content/certification' {
-  interface CertificationBannerT {
+  export interface CertificationBannerT {
     title: string;
     background: string;
     illustration: string;
   }
 
-  interface CertificationTableHeadersT {
+  export interface CertificationTableHeadersT {
     pro: string;
     name: string;
     version: string;
@@ -13,13 +13,13 @@ declare module '#content/certification' {
     certificate: string;
   }
 
-  interface CertificationIntroduceT {
+  export interface CertificationIntroduceT {
     text: string;
     link_text: string;
     link_href: string;
   }
 
-  interface CertificationItemT {
+  export interface CertificationItemT {
     pro: string;
     name: string;
     version: string;
@@ -28,7 +28,7 @@ declare module '#content/certification' {
     certificate: string;
   }
 
-  interface CertificationDataT {
+  export interface CertificationDataT {
     banner: CertificationBannerT;
     search_placeholder: string;
     table_headers: CertificationTableHeadersT;
@@ -41,6 +41,7 @@ declare module '#content/certification' {
     zh: CertificationDataT;
     en: CertificationDataT;
   };
+  
   export default data;
 }
 
