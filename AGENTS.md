@@ -28,7 +28,7 @@
 | 命令 | 用途 |
 |------|------|
 | `pnpm dev` | 启动开发服务器（VitePress） |
-| `pnpm build` | 生产构建（先 `gen:blogs` / `gen:news`） |
+| `pnpm build` | 生产构建（先 `sync:blogs` / `gen:news`） |
 | `pnpm lint` / `pnpm fix` | ESLint 检查 / 修复 |
 | `pnpm test:unit` / `pnpm test:cov` | 单元测试 / 覆盖率 |
 | `pnpm test:e2e` | Playwright e2e |
