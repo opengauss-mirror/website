@@ -218,7 +218,9 @@ const currentBgTheme = computed(() => {
             @include display1;
             font-weight: 500;
             white-space: pre-wrap;
+            max-width: 60%;
             @include respond-to('<=pad_v') {
+              max-width: 100%;
               font-size: 22px;
               line-height: 30px;
               line-height: var(--e-line-height-h4);
