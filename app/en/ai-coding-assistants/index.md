@@ -26,9 +26,9 @@ Upon submission, contributors should disclose the use of AI tools, sources of th
 
 This policy applies to all forms of contributions submitted to the openGauss community (including but not limited to all code and documentation repositories under the openGauss organization):
 
-- **Source code and scripts**：including various core code, test cases, and build scripts.
-- **Technical documents and community content**：including API references, deployment guides, release logs, and Wiki pages.
-- **Configurations and metadata**：including Containerfiles/Dockerfiles, and CI/CD configuration files.
+- **Source code and scripts**: including various core code, test cases, and build scripts.
+- **Technical documents and community content**: including API references, deployment guides, release logs, and Wiki pages.
+- **Configurations and metadata**: including Containerfiles/Dockerfiles, and CI/CD configuration files.
 
 ## **3. Legal & Compliance**
 
@@ -43,9 +43,19 @@ The openGauss community implements a **Contributor License Agreement (CLA)**.
 
 ### **3.2 Traceability: Full Logging of Key Metadata**
 
-For contributions that contain code or documents **fundamentally generated or automatically processed by AI**, contributors shall fully record and attach the following **key metadata** when submitting a pull request. This metadata can be recorded in the pull request template.
+For contributions that contain code or documents **fundamentally generated or automatically processed by AI**, contributors shall fully record and attach the following **key metadata** in both the pull request (PR) and commit message.
 
-Pull request template:
+Commit message:
+
+**Co-Authored-By:**  Specify the name and version of the generative AI model used (e.g., `GPT-4o`, `DeepSeek-V3`, etc.).
+
+PR:
+
+- **Agent Platform:** Specify the name and version of the agent platform used (e.g., `Claude Code 2.1.156`, `Qwen Code 0.16.1`, etc.).
+- **Model:** Specify the name and version of the generative AI model used (e.g., `GPT-4o`, `DeepSeek-V3`, etc.).
+- **Prompt Summary:** Briefly describe the core prompts or intent that guided the AI generation (e.g., `"Optimize memory allocation for Spec file"`). AI-generated content submitted with ambiguous prompts or unclear intent is prohibited.
+
+**Example (PR):**
 
 - **Agent Platform:** Specify the name and version of the agent platform used (e.g., Claude Code 2.1.156, Qwen Code 0.16.1, etc.).
 - **Model:** Specify the name and version of the generative AI model used (e.g., GPT-4o, DeepSeek-V3, etc.).
@@ -66,8 +76,18 @@ __3. Prompt summary: Based on the existing code logic, complete the code, optimi
 ### Notes for reviewers:
 1. The code was developed with AI assistance. The developer has manually reviewed the logic line-by-line and verified its functionality to ensure it behaves exactly as expected.
 ```
-
 </div>
+
+**Example (commit message):**
+
+<div class="code-block">
+
+```
+Co-Authored-By: DeepSeek-V3
+```
+</div>
+
+*Note: The openEuler CI gate checks whether the AI model name in the Co-authored-by commit trailer matches the model declared in the PR. Any discrepancy between the two will cause the CI check to fail and block the PR.*
 
 ## **4. Standard Prompt for Agents**
 

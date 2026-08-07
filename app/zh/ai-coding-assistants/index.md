@@ -43,13 +43,19 @@ openGauss社区采用**CLA（Contributor License Agreement，贡献者许可协�
 
 ### **3.2 追溯机制：关键元数据完整记录**
 
-若贡献者向社区提交的贡献包含主要**由AI生成或经AI自动化处理**的代码与文档，则其在提交Pull Request时应当完整记录并携带以下**关键元数据**。这些元数据可记录在Pull Request的固定模板中：
+若贡献者向社区提交的贡献包含主要**由AI生成或经AI自动化处理**的代码与文档，则其在提交Pull Request时应当在Pull Request和Commit Message中完整记录并携带以下**关键元数据**：
+
+Commit Message：
+
+- **Co-Authored-By:** 明确指明生成该内容所使用的生成式AI模型名称及版本（如 `GPT-4o`，`DeepSeek-V3` 等）。
+
+Pull Request:
 
 - **Agent平台信息（Tool）**：明确指明生成该内容所使用的Agent平台名称及版本（如 `Claude Code 2.1.156`、`Qwen Code 0.16.1` 等）。
 - **模型信息 (Model)**：明确指明生成该内容所使用的生成式AI模型名称及版本（如 `GPT-4o`、`DeepSeek-V3` 等）。
 - **Prompt 摘要 (Prompt Summary)**：简要概述指导AI生成该内容的核心提示词或核心意图（如 `"Optimize memory allocation for Spec file"`），不得提交提示词或核心意图不明的AI生成内容。
 
-**规范示例（Pull Request格式）：**
+**规范示例（Pull Request）：**
 
 <div class="code-block">
 
@@ -66,6 +72,17 @@ __3. Prompt摘要: 基于现有代码逻辑，完成代码编写、逻辑优化�
 ```
 
 </div>
+
+**规范示例（Commit Message）：**
+<div class="code-block">
+
+```
+Co-Authored-By: DeepSeek-V3
+```
+
+</div>
+
+*注意：openEuler社区门禁会检查 Commit Message 中 Co-Authored-By 填写的AI模型名称是否与 Pull Request 中披露的模型信息一致。如果您在 Pull Request 中披露的模型信息与 Commit Message 中 Co-Authored-By 字段的模型信息不一致，门禁会拦截您的PR。*
 
 ## **4. Agents规范Prompt（Standard Prompt for Agents）**
 
@@ -88,10 +105,13 @@ __3. Prompt摘要: 基于现有代码逻辑，完成代码编写、逻辑优化�
 - 如果你生成的代码直接引用了特定的开源组件或公开算法实现，则该等代码必须保留其原有著作权声明（包括但不限于保留原组件或算法的著作权声明）及许可证声明，而不得删除或修改该等声明。
 
 ## 3. 关键元数据显式披露
-- 当你协助人类生成代码，或者作为自动化Agent独立向openGauss仓库提交PR时，必须按照PR固定模板进行提交。元数据必须包含：
-- Agent平台信息: [Agent平台名称及版本]
-- 模型信息: [AI模型名称及版本]
-- Prompt摘要: [核心提示词或核心意图]
+- 当你协助人类生成代码，或者作为自动化Agent独立向openGauss仓库提交PR时，必须按照固定PR模板与Commit Message进行提交。
+- 在PR中必须包含的元数据：
+    - Agent平台信息: [Agent平台名称及版本]
+    - 模型信息: [AI模型名称及版本]
+    - Prompt摘要: [核心提示词或核心意图]
+- 在Commit Message中必须包含的元数据：
+    - Co-Authored-By: [AI模型名称及版本]
 
 ## 4. openGauss技术栈适配
 - 代码风格：在向openGauss社区提交代码前，应分析对应代码仓库的代码风格，提交修改代码时必须严格遵守对应代码仓库的代码风格指南。
