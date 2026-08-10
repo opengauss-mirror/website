@@ -1,18 +1,50 @@
 <script setup lang="ts">
 import bannerImg from '~@/assets/category/charter/banner.png';
 import BannerLevel2 from '~@/components/BannerLevel2.vue';
-import { OTab, OTabPane, throttleRAF } from '@opensig/opendesign';
-import { inject, onMounted, onUnmounted, Ref, ref, useTemplateRef, watch } from 'vue';
+import { OTab, OTabPane, throttleRAF, useMessage } from '@opensig/opendesign';
+import { inject, nextTick, onMounted, onUnmounted, Ref, ref, useTemplateRef, watch } from 'vue';
 import { useData, useRoute, useRouter } from 'vitepress';
 import { useElementSize } from '@vueuse/core';
 import AppSection from '~@/components/AppSection.vue';
 import AppRouterTemplate from '~@/components/AppRouterTemplate.vue';
+import { useClipboard } from '~@/composables/useClipboard';
+import { useI18n } from '~@/i18n';
 
 const { lang } = useData();
 
 const { hash, frontmatter } = useData();
 const route = useRoute();
 const router = useRouter();
+const i18n = useI18n();
+
+const message = useMessage();
+
+const onCopyClick = (e: MouseEvent) => {
+  const text = (e.currentTarget as HTMLElement).parentElement?.textContent ?? '';
+  useClipboard({
+    text,
+    target: e,
+    success: () => {
+      message.success({
+        content: i18n.value.common.COPY_SUCCESS,
+      });
+    },
+    error: () => {
+      message.danger({
+        content: i18n.value.common.COPY_FAILED,
+      });
+    },
+  });
+};
+
+const setupCopyButtons = () => {
+  const card = document.querySelector('.charter-content-card');
+  if (!card) return;
+  const btns = card.querySelectorAll('button.copy') as NodeListOf<HTMLButtonElement>;
+  btns?.forEach((btn) => {
+    btn.addEventListener('click', onCopyClick);
+  });
+};
 
 const stickying = ref(false);
 const scrollContainerRef = inject<Ref<HTMLElement>>('scrollContainerRef');
@@ -64,11 +96,17 @@ watch(stickying, () => tabKey.value++);
 
 onMounted(() => {
   scrollContainerRef?.value?.addEventListener('scroll', onScroll);
+  setupCopyButtons();
 });
 
 onUnmounted(() => {
   scrollContainerRef?.value?.removeEventListener('scroll', onScroll);
 });
+
+watch(
+  () => route.path,
+  () => nextTick(setupCopyButtons)
+);
 </script>
 
 <template>
