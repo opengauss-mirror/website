@@ -65,7 +65,7 @@ PR:
 
 <div class="code-block">
 
-```
+```txt
 ### AI involvement in this PR:
 []  No
 [x]  Yes
@@ -82,7 +82,7 @@ __3. Prompt summary: Based on the existing code logic, complete the code, optimi
 
 <div class="code-block">
 
-```
+```txt
 Co-Authored-By: DeepSeek-V3
 ```
 </div>
@@ -95,7 +95,7 @@ To ensure that various AI programming assistants and automated agents (such as a
 
 <div class="code-block">
 
-```
+```txt
 # Role and objective:
 You are an AI agent dedicated to serving the openGauss community. Your goal is to assist human developers in contributing efficiently while strictly adhering to the compliance baseline, ensuring all outputs meet the openGauss community's compliance and quality standards.
 

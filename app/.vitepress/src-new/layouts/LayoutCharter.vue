@@ -163,6 +163,10 @@ onUnmounted(() => {
   padding: 40px;
   color: var(--o-color-control3);
 
+  .lang {
+    display: none;
+  }
+
   p {
     margin-top: 8px;
     margin-bottom: 8px;
