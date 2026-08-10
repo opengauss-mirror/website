@@ -242,7 +242,6 @@ onUnmounted(() => {
     position: absolute;
     top: calc(var(--o-gap-2) + 2px);
     right: var(--o-gap-3);
-    z-index: 3;
     border-radius: 4px;
     width: 24px;
     height: 24px;
