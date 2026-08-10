@@ -87,6 +87,7 @@ JSON-LD 由 `app/.vitepress/config.ts` 的 `transformPageData` 钩子，按页�
 - JSON-LD 中若有数据包含当前站点页面的url，需注意文件路径与对应url路径的结尾规则映射：`/zh/page/a.md` -> `/zh/page/a.html`， `/zh/page/b/index.md` -> `/zh/page/b/`
 - 页面路由与JSON配置文件映射关系：1. `/zh/about/` 或 `/zh/about.html` 或 `/zh/about/index.html` -> `.geo/{tdk,jsonld}/zh/about/index.json`
 - 不要在 Vue 组件里手动写 `<title>` / `<meta description>` 与之重复
+- user-practice 类页面的 markdown 文件的 frontmatter 中的 title、description 等属性的值，不要直接修改，除非用户明确要求要改
 
 ### 3.2 Sitemap
 
