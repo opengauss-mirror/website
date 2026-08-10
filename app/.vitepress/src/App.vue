@@ -29,6 +29,7 @@ import EventDetail from '~@/layouts/LayoutEventDetail.vue';
 import LayoutEventDetailHeader from '~@/layouts/LayoutEventDetailHeader.vue';
 import { useScreen } from '~@/composables/useScreen';
 import LayoutWithBanner from './layouts/LayoutWithBanner.vue';
+import LayoutCharter from '~@/layouts/LayoutCharter.vue';
 
 const { frontmatter, lang } = useData();
 const { lePadV } = useScreen();
@@ -52,6 +53,7 @@ const compMapping: {
   migration: LayoutMigration,
   faq: LayoutFaq,
   'banner-layout': LayoutWithBanner,
+  charter: LayoutCharter
 };
 
 const isCustomLayout = computed(() => {
