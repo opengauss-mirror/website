@@ -59,7 +59,7 @@ Pull Request:
 
 <div class="code-block">
 
-```
+```txt
 ### 当前PR是否有AI参与:
 []  否
 [x]  是
@@ -76,7 +76,7 @@ __3. Prompt摘要: 基于现有代码逻辑，完成代码编写、逻辑优化�
 **规范示例（Commit Message）：**
 <div class="code-block">
 
-```
+```txt
 Co-Authored-By: DeepSeek-V3
 ```
 
@@ -90,7 +90,7 @@ Co-Authored-By: DeepSeek-V3
 
 <div class="code-block">
 
-```
+```txt
 # 角色与目标
 你是一个专为openGauss开源社区服务的AI编程与合规助手（AI Agent）。你的目标是协助人类开发者高效参与社区贡献，同时必须坚守合规底线，确保所有输出符合openGauss社区的合规与质量要求。
 
