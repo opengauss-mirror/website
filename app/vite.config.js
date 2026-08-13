@@ -5,6 +5,7 @@ import { viteStaticCopy } from 'vite-plugin-static-copy';
 import Icons from 'unplugin-icons/vite';
 import { FileSystemIconLoader } from 'unplugin-icons/loaders';
 import { OPlusYamlContentVitePlugin } from '@opendesign-plus/vite-plugins';
+import fs from 'node:fs';
 
 const proxyConfig = (proxy) => {
   proxy.on('proxyRes', (proxyRes) => {
@@ -37,6 +38,53 @@ const proxyConfig = (proxy) => {
   });
 }
 
+function fixVueJsxStrippedImports() {
+  return {
+    name: 'fix-vue-jsx-stripped-imports',
+    enforce: 'post',
+    transform(code, id) {
+      if (!id.endsWith('.tsx') && !id.endsWith('.jsx')) return;
+
+      let originalCode;
+      try {
+        originalCode = fs.readFileSync(id, 'utf-8');
+      } catch {
+        return;
+      }
+
+      const originalVueImport = originalCode.match(/import\s*\{([^}]*)\}\s*from\s*['"]vue['"]/);
+      if (!originalVueImport) return;
+
+      const originalNames = originalVueImport[1]
+        .split(',')
+        .map(s => s.trim().split(/\s+as\s+/)[0])
+        .filter(Boolean);
+      if (originalNames.length === 0) return;
+
+      const currentVueImport = code.match(/import\s*\{([^}]*)\}\s*from\s*["']vue["']/);
+      if (!currentVueImport) return;
+
+      const currentNames = currentVueImport[1]
+        .split(',')
+        .map(s => s.trim().split(/\s+as\s+/)[0])
+        .filter(Boolean);
+
+      const missing = originalNames.filter(name => !currentNames.includes(name));
+      if (missing.length === 0) return;
+
+      const allNames = [
+        ...currentVueImport[1]
+          .split(',')
+          .map(s => s.trim())
+          .filter(Boolean),
+        ...missing,
+      ];
+      const newImport = `import { ${allNames.join(', ')} } from "vue"`;
+      return { code: code.replace(currentVueImport[0], newImport) };
+    },
+  };
+}
+
 export default defineConfig({
   build: {},
   publicDir: path.resolve(__dirname, './.vitepress/public'),
@@ -45,6 +93,10 @@ export default defineConfig({
       '@/': `${path.resolve(__dirname, './.vitepress/src')}/`,
       '~@/': `${path.resolve(__dirname, './.vitepress/src-new')}/`,
     },
+    dedupe: ['vue'],
+  },
+  ssr: {
+    noExternal: ['opendesign'],
   },
   css: {
     preprocessorOptions: {
@@ -64,6 +116,7 @@ export default defineConfig({
       root: path.resolve(__dirname, '../.content'),
     }),
     vueJsx({}),
+    fixVueJsxStrippedImports(),
     Icons({
       compiler: 'vue3',
       customCollections: {
