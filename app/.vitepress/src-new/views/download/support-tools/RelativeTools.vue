@@ -70,6 +70,7 @@ const isDark = computed(() => commonStore.theme === 'dark');
         {{ $t('tools.DESC') }}
       </p>
       <OButton
+        round="pill"
         variant="solid"
         color="primary"
         @click="gotoTools"
@@ -178,7 +179,7 @@ const isDark = computed(() => commonStore.theme === 'dark');
 
       .desc {
         margin-top: 8px;
-        color: var(--o-color-control2);
+        color: var(--o-color-info3);
         @include tip1;
         @include respond-to('<=pad') {
           display: flex;

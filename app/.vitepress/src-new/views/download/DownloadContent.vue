@@ -201,6 +201,9 @@ const hasOgracData = computed(() => newData.value.some((i) => (i.name as string)
 :deep(.o-tab-navs) {
   justify-content: start;
 }
+.o-tab {
+  --tab-nav-justify: start;
+}
 .download-content {
   color: var(--o-color-info2);
   .title {

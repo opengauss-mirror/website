@@ -918,7 +918,7 @@ watch(
       margin: 0 auto;
       text-align: center;
       background: linear-gradient(90deg, #e8d8f7 0%, #ddcff5 100%);
-      border-radius: 8px;
+      border-radius: 4px;
       display: flex;
       align-items: center;
       position: relative;

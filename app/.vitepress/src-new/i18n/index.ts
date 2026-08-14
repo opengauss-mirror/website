@@ -13,6 +13,8 @@ import notifications from './notifications';
 import events from './events';
 import search from './search';
 import internship from './internship';
+import sig from './sig';
+import maillist from './maillist';
 
 const messages = {
   zh: {
@@ -29,6 +31,8 @@ const messages = {
     events: events.zh,
     search: search.zh,
     internship: internship.zh,
+    sig: sig.zh,
+    maillist: maillist.zh,
   },
   en: {
     // 公共模块
@@ -43,6 +47,8 @@ const messages = {
     notifications: notifications.en,
     events: events.en,
     search: search.en,
+    sig: sig.en,
+    maillist: maillist.en,
   },
 };
 
@@ -58,7 +64,7 @@ const i18n = createI18n({
 
 export function useI18n() {
   const { lang } = useData();
-  return computed(() => messages[lang.value]);
+  return computed(() => messages[lang.value as 'zh' | 'en']);
 }
 
 export default i18n;

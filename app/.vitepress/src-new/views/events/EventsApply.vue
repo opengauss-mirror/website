@@ -44,7 +44,7 @@ const applyMb = computed(() => {
             </OLink>
             {{ item.emailtext2 }}
           </div>
-          <OButton v-if="item.href" variant="solid" color="primary" size="large" :href="item.href">
+          <OButton round="pill" v-if="item.href" variant="solid" color="primary" size="large" :href="item.href">
             {{ item.btn }}
           </OButton>
         </OCard>
@@ -115,7 +115,7 @@ const applyMb = computed(() => {
               </OLink>
               {{ item.emailtext2 }}
             </div>
-            <OButton v-if="item.href" variant="solid" color="primary" size="medium" :href="item.href">
+            <OButton v-if="item.href" round="pill" variant="solid" color="primary" size="medium" :href="item.href">
               {{ item.btn }}
             </OButton>
             <div v-for="(val, j) in item.list" :key="j" class="item-text">

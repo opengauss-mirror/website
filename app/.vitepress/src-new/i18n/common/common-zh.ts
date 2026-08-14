@@ -102,4 +102,5 @@ export default {
   COPY_SUCCESS: `复制成功`,
   COPY_FAILED: `复制失败，请刷新重试`,
   selectAll: '全选',
+  viewDetails: '查看详情',
 };

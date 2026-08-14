@@ -68,9 +68,9 @@ const index = ref(0);
 const currentItem = computed(() => homeBanner.value[index.value]);
 const currentBgTheme = computed(() => {
   if (currentItem.value.isLightBg) {
-    return 'light';
+    return 'g.light';
   }
-  return 'dark';
+  return 'g.dark';
 });
 </script>
 

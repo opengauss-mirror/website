@@ -24,12 +24,14 @@ import AppTour from '~@/components/AppTour.vue';
 import categories from '@/shared/category';
 
 import seoConfig from '@/data/common/seo';
-import { useCookieStore } from '@/stores/common';
+import { useCommon, useCookieStore } from '@/stores/common';
 import EventDetail from '~@/layouts/LayoutEventDetail.vue';
 import LayoutEventDetailHeader from '~@/layouts/LayoutEventDetailHeader.vue';
 import { useScreen } from '~@/composables/useScreen';
 import LayoutWithBanner from './layouts/LayoutWithBanner.vue';
 import LayoutCharter from '~@/layouts/LayoutCharter.vue';
+import LayoutSigApply from '~@/layouts/LayoutSigApply.vue';
+import { getCustomCookie, isBrowser } from './shared/utils.js';
 
 const { frontmatter, lang } = useData();
 const { lePadV } = useScreen();
@@ -53,7 +55,8 @@ const compMapping: {
   migration: LayoutMigration,
   faq: LayoutFaq,
   'banner-layout': LayoutWithBanner,
-  charter: LayoutCharter
+  charter: LayoutCharter,
+  'sig-apply': LayoutSigApply,
 };
 
 const isCustomLayout = computed(() => {
@@ -84,6 +87,44 @@ watch(
   async () => {
     await nextTick();
     cookieNoticeRef.value?.check();
+  }
+);
+
+// 风格切换
+const APPEARANCE_KEY = 'openGauss-theme-appearance';
+const commonStore = useCommon();
+
+const setThemeToRoot = (theme: 'dark' | 'light') => {
+  if (theme === 'light') {
+    document.documentElement.setAttribute('data-o-theme', 'g.light');
+    document.documentElement.classList.remove('dark');
+  } else if (theme === 'dark') {
+    document.documentElement.setAttribute('data-o-theme', 'g.dark');
+    document.documentElement.classList.add('dark');
+    document.documentElement.classList.remove('light');
+  }
+}
+
+onMounted(() => {
+  let theme;
+  if (!getCustomCookie(APPEARANCE_KEY)) {
+    const prefereDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    theme = prefereDark ? 'dark' : 'light';
+  } else {
+    theme = getCustomCookie(APPEARANCE_KEY);
+  }
+  commonStore.theme = theme === 'dark' ? 'dark' : 'light';
+  setThemeToRoot(commonStore.theme);
+});
+
+watch(
+  () => {
+    return commonStore.theme;
+  },
+  (val) => {
+    if (isBrowser()) {
+      setThemeToRoot(val);
+    }
   }
 );
 </script>
@@ -119,17 +160,18 @@ watch(
 </template>
 
 <style lang="scss">
-.o-link-normal {
-  --link-color: var(--o-color-info2) !important;
+// .o-link-normal {
+//   --link-color: var(--o-color-info2) !important;
+// }
 
-}
+// :root {
+//   --o-color-control5-light: var(--o-color-control-light);
+// }
 
-:root {
-  --o-color-control5-light: var(--o-color-control-light);
-}
-
-.o-dropdown-list {
-  --dropdown-list-bg-color: var(--o-color-control-light) !important;
+@include in-dark {
+  .o-dropdown-list {
+    --dropdown-list-bg-color: rgb(var(--o-grey-4)) !important;
+  }
 }
 
 .o-dropdown-item {
@@ -179,12 +221,6 @@ watch(
 
 </style>
 <style lang="scss" scoped>
-:global(.cookie-notice) {
-  --o-grey-1: var(--o-mixedgray-1);
-}
-:global(.o-dlg-main) {
-  --dlg-bg-color: var(--o-color-control-light);
-}
 main {
   min-height: calc(100vh - 280px);
   background-color: var(--e-color-bg1);

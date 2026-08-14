@@ -101,6 +101,7 @@ const collectDownloadData = (name: string) => {
       <template #td_down_url="{ row }">
         <div v-if="row.down_url !== ''" class="down-action">
           <OButton
+            round="pill"
             size="small"
             :href="row.down_url"
             @click="collectDownloadData(row.name)"
@@ -158,8 +159,8 @@ const collectDownloadData = (name: string) => {
 
 <style lang="scss" scoped>
 .o-table {
-  --table-head-bg: var(--o-color-control3-light-new);
-  --table-row-hover: var(--o-color-control2-light-new);
+  --table-head-bg: var(--o-color-control3-light);
+  --table-row-hover: var(--o-color-control2-light);
 }
 .no-data {
   color: var(--o-color-info4);

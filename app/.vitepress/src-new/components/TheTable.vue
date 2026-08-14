@@ -9,7 +9,7 @@ import useCheckbox from '~@/composables/useCheckbox';
 const props = withDefaults(
   defineProps<{
     data: any[];
-    columns?: { key: string; label: string; width?: number | string; filter?: { checkboxOptions: { label: string; value: string }[] } }[];
+    columns?: { key: string; label: string; minWidth?: string | number; width?: number | string; filter?: { checkboxOptions: { label: string; value: string }[] } }[];
     childrenType?: 'collapse' | 'span';
     cellStyle?: (<T>(data: { row: any; column: TableColumnCtx<T>; rowIndex: number; columnIndex: number }) => CSSProperties) | CSSProperties;
     headerCellStyle?: (<T>(data: { row: any; column: TableColumnCtx<T>; rowIndex: number; columnIndex: number }) => CSSProperties) | CSSProperties;
@@ -113,7 +113,7 @@ defineExpose({
 <template>
   <el-table ref="tableRef" v-bind="$attrs" :cell-style="_cellStyle" :header-cell-style="_headerCellStyle" :data="tableData" :span-method="tableSpan">
     <slot>
-      <el-table-column v-for="col in columns" :prop="col.key" :label="col.label" :key="col.key" :width="col.width ?? 'auto'">
+      <el-table-column v-for="col in columns" :prop="col.key" :label="col.label" :key="col.key" :width="col.width ?? 'auto'" :min-width="col.minWidth ?? ''">
         <template #header="{ column }">
           <div style="display: flex; align-items: center">
             {{ column.label }}

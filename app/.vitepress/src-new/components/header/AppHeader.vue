@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
-import { useData } from 'vitepress';
+import { useData, useRouter } from 'vitepress';
 
-import { OLink } from '@opensig/opendesign';
+import { OIcon, OIconArrowLeft, OLink } from '@opensig/opendesign';
 import ContentWrapper from '~@/components/ContentWrapper.vue';
 import ItemNav from './ItemNav.vue';
 import ItemLang from './ItemLang.vue';
@@ -20,15 +20,16 @@ import IconMenu from '~icons/app-new/icon-header-menu.svg';
 import { useCommon } from '@/stores/common';
 import { useScreen } from '~@/composables/useScreen';
 
-const { lang } = useData();
+const { lang, frontmatter } = useData();
 const { lePadV } = useScreen();
 const commonStore = useCommon();
+
+const showBackBtnLePadV = computed(() => (!!frontmatter.value?.goBackUrl));
 
 // Logo主题判断
 const logo = computed(() => (commonStore.theme === 'light' ? logoLight : logoDark));
 
 const langShow = ref(['zh', 'en']);
-
 const menuShow = ref(false);
 
 const menuPanel = () => {
@@ -41,22 +42,30 @@ const menuPanel = () => {
 const mobileClick = () => {
   menuPanel();
 };
+
+const router = useRouter();
+const goBack = () => {
+  router.go(frontmatter.value!.goBackUrl);
+};
 </script>
 
 <template>
   <div class="app-header" :class="[{ dark: commonStore.theme === 'dark' }]">
     <ContentWrapper class="app-header-wrap">
       <slot>
-        <OLink :href="`/${lang}/`" class="logo" :hover-underline="false">
+        <OLink v-if="!lePadV || !frontmatter.showTitleLePadV" :href="`/${lang}/`" class="logo" :hover-underline="false">
           <img alt="openGauss logo" :src="logo" />
         </OLink>
   
         <div v-if="lePadV" class="menu-icon">
-          <div class="icon" @click="menuPanel">
+          <div v-if="!showBackBtnLePadV" class="icon" @click="menuPanel">
             <OIcon>
               <IconMenu v-if="!menuShow" />
               <IconClose v-else />
             </OIcon>
+          </div>
+          <div v-else class="icon" @click="goBack">
+            <OIcon><OIconArrowLeft /></OIcon>
           </div>
         </div>
   

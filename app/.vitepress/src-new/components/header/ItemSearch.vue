@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import { computed, nextTick, onMounted, ref, useTemplateRef } from 'vue';
+import { computed, ref, useTemplateRef } from 'vue';
 import { useData } from 'vitepress';
 
 import { useScreen } from '~@/composables/useScreen';
 
 import { OHeaderSearch } from '@opendesign-plus/components';
 import { getSearchWord, imageUpload } from '~@/api/api-search';
-import { useI18n } from 'vue-i18n';
 import { useMessage } from '@opensig/opendesign';
 import { useDebounceFn } from '@vueuse/core';
+import { useI18n } from '~@/i18n';
 
-const { t } = useI18n();
+const i18n = useI18n();
 const { lang } = useData();
 const { lePadV } = useScreen();
 
@@ -40,7 +40,7 @@ const uploadImage = async (file: File) => {
     if (!res.obj) throw new Error('Upload returned empty URL');
     return res.obj as string;
   } catch (error) {
-    danger(t('search.imageUploadFailed'));
+    danger(i18n.value.search.imageUploadFailed);
     throw error;
   }
 };
@@ -95,7 +95,7 @@ const onHistoryClick = (val: string) => {
     class="header-search"
     v-model="searchValue"
     :mobile="lePadV"
-    :placeholder="t('search.search')"
+    :placeholder="i18n.search.search"
     :hot-items="hotItems"
     :suggest-items="suggestItems"
     store-history

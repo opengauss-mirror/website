@@ -5,6 +5,7 @@ import { createExternalLinkGuard } from '@opendesign-plus/plugins';
 import '@/shared/styles/element-plus/index.scss';
 // import '@/shared/styles/index.scss';
 import '@/shared/styles/base.scss';
+import '@/shared/styles/gap.scss';
 import '@/shared/styles/markdown.scss';
 import '@/shared/styles/theme-dark.scss';
 import '@/shared/styles/highlight/index.scss';
@@ -21,10 +22,12 @@ import 'element-plus/theme-chalk/dark/css-vars.css';
 import i18n from '~@/i18n';
 
 import '@opendesign-plus/components/styles';
-// src-new
+import '@opensig/opendesign-token/themes/g.light.token.css';
+import '@opensig/opendesign-token/themes/g.dark.token.css';
 
-import '~@/assets/style/theme/default-light.token.css';
-import '~@/assets/style/theme/dark.token.css';
+// import '~@/assets/style/theme/default-light.token.css';
+// import '~@/assets/style/theme/dark.token.css';
+
 import '~@/assets/style/theme/media.token.scss';
 import '~@/assets/style/element-plus/index.scss';
 import '~@/assets/style/element-plus/theme/index.scss';

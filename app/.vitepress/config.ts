@@ -42,6 +42,10 @@ const setJSONLD = async (pageData: PageData, pagePath: string) => {
 };
 
 const setTdk = (pageData: PageData, pagePath: string) => {
+  if (pageData.relativePath.includes('/sig/') && pageData.params?.sig) {
+    pageData.title = pageData.params.sig;
+    pageData.frontmatter.titleContent = pageData.params.sig;
+  }
   const jsonFile = join(geoDir, 'tdks', pagePath, 'index.json');
   const tdkInfo = existsSync(jsonFile) ? JSON.parse(readFileSync(jsonFile, 'utf-8')) : null;
 

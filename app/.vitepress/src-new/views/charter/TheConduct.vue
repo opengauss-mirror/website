@@ -102,7 +102,7 @@ defineProps<{
   border-radius: 4px;
   background-color: var(--o-color-fill2);
   padding: 40px;
-  color: var(--o-color-control3);
+  color: var(--o-color-info2);
 
   p {
     @include text1;

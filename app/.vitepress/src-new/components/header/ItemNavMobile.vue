@@ -14,7 +14,7 @@ import NavLink from './NavLink.vue';
 import IconOutLink from '~icons/app-new/icon-out-link.svg';
 import type { NavItemT, SourceCodeItemT } from '~@/@types/type-nav';
 
-const { lang } = useData();
+const { lang, frontmatter, title } = useData();
 const router = useRouter();
 const route = useRoute();
 const i18n = useI18n();
@@ -111,8 +111,8 @@ const closeMenu = () => {
 </script>
 
 <template>
-  <div class="header-content" :class="lang">
-    <div class="header-nav" :class="{ active: menuShow }">
+  <div :class="{ 'header-content': true, 'show-title-text': frontmatter.showTitleLePadV, zh: lang === 'zh', en: lang === 'en' }">
+    <div v-if="!frontmatter.showTitleLePadV" class="header-nav" :class="{ active: menuShow }">
       <nav class="o-nav" :class="`o-nav-${lang}`">
         <ul class="o-nav-list">
           <li
@@ -162,10 +162,13 @@ const closeMenu = () => {
         </div>
       </div>
     </div>
+    <p class="title-text" v-else>{{ frontmatter.titleContent || title }}</p>
   </div>
-  <!-- 搜索 -->
-  <HeaderSearch />
-  <HeaderLogin />
+  <template v-if="!frontmatter.showTitleLePadV">
+    <!-- 搜索 -->
+    <HeaderSearch />
+    <HeaderLogin />
+  </template>
 </template>
 
 <style lang="scss" scoped>
@@ -193,6 +196,18 @@ const closeMenu = () => {
   align-items: center;
   flex: 1;
   height: 100%;
+
+  &.show-title-text {
+    justify-content: start;
+    margin-left: 16px;
+  }
+
+  .title-text {
+    font-size: 18px;
+    line-height: 26px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 }
 
 .header-nav {

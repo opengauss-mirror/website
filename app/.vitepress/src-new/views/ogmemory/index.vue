@@ -194,7 +194,7 @@ const designs = [
 }
 
 :root.dark .code-example {
-  background-color: rgba(var(--o-mixedgray-5), 0.4);
+  background-color: rgba(var(--o-grey-5), 0.4);
 }
 
 .quickstart-grid {
@@ -269,7 +269,7 @@ const designs = [
   @include respond-to('phone') {
     padding: 12px;
   }
-  color: var(--o-color-control3);
+  color: var(--o-color-info2);
   line-height: 1.6;
   code {
     font-family:
@@ -437,7 +437,7 @@ const designs = [
   }
 
   .typical-case-desc {
-    color: var(--o-color-control2);
+    color: var(--o-color-info3);
     @include text1;
   }
 
@@ -490,7 +490,7 @@ const designs = [
   }
   .faq-answer {
     @include text1;
-    color: var(--o-color-control2);
+    color: var(--o-color-info3);
   }
 }
 </style>

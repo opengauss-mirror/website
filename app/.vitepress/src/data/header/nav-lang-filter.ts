@@ -129,4 +129,8 @@ export default [
     name: 'ai-coding-assistants',
     lang: ['zh', 'en'],
   },
+  {
+    name: 'sig',
+    lang: ['zh', 'en'],
+  },
 ];

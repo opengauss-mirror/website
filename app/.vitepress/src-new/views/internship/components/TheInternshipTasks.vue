@@ -116,7 +116,7 @@ const internshipTasks = [
 
 .internship-task-item-desc {
   margin-top: 8px;
-  color: var(--o-color-control2);
+  color: var(--o-color-info3);
   @include text1;
   @include respond-to('phone') {
     font-size: 14px;

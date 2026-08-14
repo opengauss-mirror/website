@@ -76,6 +76,12 @@ export default {
           NAME: 'Contribute',
           CHILDREN: [
             {
+              NAME: 'SIG Center',
+              DESCRIPTION: 'Explore openGauss community SIGs.',
+              URL: '/sig/sig-list/',
+              TAG: TAG_TYPE.NEW,
+            },
+            {
               NAME: 'CLA',
               DESCRIPTION: 'Sign the CLA to protect your work—multiple options available!',
               URL: 'https://clasign.osinfra.cn/sign/gitee_opengauss-1614047760000855378',

@@ -7,3 +7,8 @@ overrides:
   "uuid": "14.0.0"
   "js-cookie": "3.0.7"
   "axios": "1.18.0"
+
+minimumReleaseAgeExclude:
+  - "@opendesign-plus/*"
+  - "@opendesign-plus-test/*"
+  - '@opensig/*'

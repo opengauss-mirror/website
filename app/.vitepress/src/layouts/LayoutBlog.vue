@@ -1,15 +1,25 @@
 <script setup lang="ts">
 import { useData } from 'vitepress';
 import { useI18n } from '@/i18n';
+import { useI18n as useI18nNew } from '~@/i18n';
 import AppMdHead from './AppMdHead.vue';
 import BreadCrumbs from '@/components/BreadCrumbs.vue';
+import { onMounted, reactive } from 'vue';
 
 const { frontmatter, lang } = useData();
 const i18n = useI18n();
-const blogInfo = {
+const i18nNew = useI18nNew();
+const blogInfo = reactive({
   link: `/${lang.value}/blogs/`,
   name: i18n.value.common.COMMON_CONFIG.BLOG,
-};
+});
+
+onMounted(() => {
+  if (new URLSearchParams(location.search).get('from') === 'sig') {
+    blogInfo.link = `/${lang.value}/sig/sig-list`;
+    blogInfo.name = i18nNew.value.sig.sigCenter;
+  }
+});
 </script>
 
 <template>

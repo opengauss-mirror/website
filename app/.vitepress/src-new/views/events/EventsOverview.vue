@@ -144,7 +144,7 @@ const eventList = [
 </template>
 <style lang="scss" scoped>
 :deep(.o-events-calendar .month-list) {
-  background-color: var(--o-color-control2-light-new);
+  background-color: var(--o-color-control2-light);
   border-radius: 4px 4px 0 0;
 }
 

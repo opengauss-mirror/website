@@ -199,7 +199,7 @@ watch(
   border-radius: 4px;
   background-color: var(--o-color-fill2);
   padding: 40px;
-  color: var(--o-color-control3);
+  color: var(--o-color-info2);
 
   .lang {
     display: none;
@@ -267,7 +267,7 @@ watch(
   pre {
     overflow: auto;
     background-color: var(--o-color-fill1) !important;
-    color: var(--o-color-control3) !important;
+    color: var(--o-color-info2) !important;
     border-radius: 4px;
     padding: 12px;
 

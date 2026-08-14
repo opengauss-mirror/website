@@ -319,19 +319,19 @@ const isFormDlgVisible = ref(false);
 const currentMeetingData = ref<MeetingItemT | null>(null);
 const formDlgTitle = ref('');
 const createMeetingDlg = () => {
-  if (csrfToken) {
-    if (sigGroup.value.length > 0) {
-      currentMeetingData.value = null;
-      isFormDlgVisible.value = true;
-      formDlgTitle.value = i18nMeeting.value.bookMeeting;
-    } else {
-      message.warning({
-        content: i18nMeeting.value.LOGIN_TEXT,
-      });
-    }
-  } else {
-    doLogin();
-  }
+  currentMeetingData.value = null;
+  isFormDlgVisible.value = true;
+  formDlgTitle.value = i18nMeeting.value.bookMeeting;
+  // if (csrfToken) {
+  //   if (sigGroup.value.length > 0) {
+  //   } else {
+  //     message.warning({
+  //       content: i18nMeeting.value.LOGIN_TEXT,
+  //     });
+  //   }
+  // } else {
+  //   doLogin();
+  // }
 };
 const userInfoStore = useUserInfoStore();
 const { identities, username } = storeToRefs(userInfoStore);
@@ -580,17 +580,17 @@ const meetingCancelConfirm = async () => {
 .calendar-icon {
   color: inherit;
   &[type='meeting'] {
-    background-color: var(--o-color-primary1);
+    background-color: rgba(var(--o-deepblue-6));
     color: #fff;
     z-index: 3;
   }
   &[type='summit'] {
-    background-color: #3422ff;
+    background-color: rgba(var(--o-orange-6));
     color: #fff;
     z-index: 2;
   }
   &[type='event'] {
-    background-color: #ffa122;
+    background-color: rgba(var(--o-cyan-6));
     color: #fff;
     z-index: 1;
   }
@@ -630,7 +630,9 @@ const meetingCancelConfirm = async () => {
     }
     .text {
       color: var(--o-color-info2);
-      @include tip2;
+      // @include tip2;
+      font-size: var(--o-r-font_size-text1);
+      line-height: var(--o-r-line_height-text1);
       @include respond-to('<=pad_v') {
         text-align: center;
         margin-top: 8px;

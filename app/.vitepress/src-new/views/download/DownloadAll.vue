@@ -97,7 +97,7 @@ const tableColumns = [
       v-if="gtPadV"
       :data="displayData"
       :columns="tableColumns"
-      :header-cell-style="{ backgroundColor: 'var(--o-color-control3-light-new)' }"
+      :header-cell-style="{ backgroundColor: 'var(--o-color-control3-light)' }"
       style="width: 100%"
       height="550"
     >
@@ -170,7 +170,7 @@ const tableColumns = [
 
 <style lang="scss" scoped>
 .el-table {
-  --el-table-row-hover-bg-color: var(--o-color-control2-light-new);
+  --el-table-row-hover-bg-color: var(--o-color-control2-light);
 }
 .no-data {
   color: var(--o-color-info4);

@@ -4,7 +4,7 @@
 @use './input.scss' as *;
 @use './popper.scss' as *;
 
-[data-o-theme='dark'] div.is-dark {
+[data-o-theme='g.dark'] div.is-dark {
   --el-bg-color-overlay: #1d1e1f;
   --el-border-color-light: #414243;
   --el-border-color-lighter: #363637;

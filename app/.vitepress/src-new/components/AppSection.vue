@@ -127,6 +127,7 @@ watch(footerIconRef, (iconRef) => {
   .section-subtitle {
     width: var(--grid-content-width);
     margin: 0 auto;
+    text-align: center;
 
     display: flex;
     justify-content: center;

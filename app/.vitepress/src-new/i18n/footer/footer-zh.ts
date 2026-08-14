@@ -74,7 +74,7 @@ export default {
       NAME: '互动与交流',
       LINKS: [
         {
-          NAME: '线上交流',
+          NAME: '邮件列表',
           URL: '/zh/online-communication/',
         },
         {
