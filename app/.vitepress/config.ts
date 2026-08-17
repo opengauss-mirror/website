@@ -27,6 +27,13 @@ const excludes = process.argv
  * 设置JSON-LD
  */
 const setJSONLD = async (pageData: PageData, pagePath: string) => {
+  if (pageData.params?.sig) {
+    const sigName = pageData.params.sig;
+    pageData.title = sigName;
+    pageData.description = pageData.params.description;
+    pageData.frontmatter.titleContent = sigName;
+    return;
+  }
   const jsonFile = join(geoDir, 'jsonld', pagePath, 'index.json');
   if (!existsSync(jsonFile)) {
     return;
@@ -42,10 +49,6 @@ const setJSONLD = async (pageData: PageData, pagePath: string) => {
 };
 
 const setTdk = (pageData: PageData, pagePath: string) => {
-  if (pageData.relativePath.includes('/sig/') && pageData.params?.sig) {
-    pageData.title = pageData.params.sig;
-    pageData.frontmatter.titleContent = pageData.params.sig;
-  }
   const jsonFile = join(geoDir, 'tdks', pagePath, 'index.json');
   const tdkInfo = existsSync(jsonFile) ? JSON.parse(readFileSync(jsonFile, 'utf-8')) : null;
 
@@ -146,6 +149,46 @@ const config: UserConfig = {
     if (!isArticle) {
       setTdk(pageData, pagePath);
       setJSONLD(pageData, pagePath);
+    }
+  },
+  async transformHead({ pageData }) {
+    if (pageData.params?.sig) {
+      const sigName = pageData.params.sig;
+      return [
+        [
+        'script',
+        { type: 'application/ld+json' },
+        `{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://opengauss.org",
+      "name": "${pageData.params.lang === 'zh' ? 'openGauss社区官网 - 企业级开源关系型数据库' : 'openGauss Community'}",
+      "url": "https://opengauss.org",
+      "logo": "https://opengauss.org/category/brand/view/logo1.svg",
+      "sameAs": ["https://atomgit.com/opengauss"]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://atomgit.com/opengauss/tc/tree/master/sigs/${sigName}",
+      "name": "${sigName}",
+      "url": "https://atomgit.com/opengauss/tc/tree/master/sigs/${sigName}",
+      "parentOrganization": {"@id": "https://opengauss.org"},
+      "description": "${pageData.params.description}",
+      "member": ${pageData.params.memberJsonLd}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://opengauss.org/${pageData.params.lang}/" },
+        { "@type": "ListItem", "position": 2, "name": "SIG Center", "item": "https://opengauss.org/${pageData.params.lang}/sig/sig-list/" },
+        { "@type": "ListItem", "position": 3, "name": "${sigName}", "item": "https://opengauss.org/${pageData.params.lang}/sig/${sigName}" }
+      ]
+    }
+  ]
+}`]
+      ];
     }
   },
   locales: {

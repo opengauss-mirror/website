@@ -1,0 +1,113 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://opengauss.org/en/sig/role-description/#webpage",
+      "url": "https://opengauss.org/en/sig/role-description/",
+      "name": "Roles",
+      "title": "Roles | openGauss Official Website",
+      "description": "Developers contribute to the openGauss community by joining Special Interest Groups (SIGs). Whether you are a Contributor, Committer, or Maintainer, every role is essential to the community. They differ in the scope of their SIG governance.",
+      "inLanguage": "en",
+      "keywords": [
+        "openGauss",
+        "SIG",
+        "roles",
+        "Contributor",
+        "Committer",
+        "Maintainer",
+        "openGauss community"
+      ],
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://opengauss.org/#website",
+        "name": "openGauss Official Website",
+        "url": "https://opengauss.org/",
+        "inLanguage": "en"
+      },
+      "about": {
+        "@type": "SoftwareApplication",
+        "@id": "https://opengauss.org/#software",
+        "name": "openGauss",
+        "description": "openGauss is a high-performance, highly secure, highly available, and intelligent enterprise-grade open-source relational database",
+        "applicationCategory": "DatabaseApplication",
+        "operatingSystem": "Linux"
+      },
+      "mainEntity": {
+        "@id": "https://opengauss.org/en/sig/role-description/#roles"
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://opengauss.org/en/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "SIG Center",
+            "item": "https://opengauss.org/en/sig/sig-list/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Roles",
+            "item": "https://opengauss.org/en/sig/role-description/"
+          }
+        ]
+      },
+      "potentialAction": {
+        "@type": "ReadAction",
+        "target": "https://opengauss.org/en/sig/role-description/",
+        "actionAccessibilityRequirement": {
+          "@type": "ActionAccessSpecification",
+          "category": "opensource",
+          "availability": "Online",
+          "requiresSubscription": false
+        }
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://opengauss.org/en/sig/role-description/#roles",
+      "name": "openGauss SIG Roles",
+      "description": "The three contributor roles in openGauss SIGs: Contributor, Committer, and Maintainer, along with their requirements and responsibilities.",
+      "numberOfItems": 3,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Thing",
+            "name": "Contributor",
+            "description": "Contributors are the backbone of the openGauss community. They collectively fuel the project's innovation and evolution through active engagement in coding, documentation, bug fixing, and community operations.",
+            "url": "https://opengauss.org/en/sig/role-description/#contributor"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Thing",
+            "name": "Committer",
+            "description": "Committers serve as the core maintainers of repositories with authority to merge code. Drawing on their extensive technical expertise, they safeguard code quality through code reviews, developer testing, and compliance checks, actively steering the database's technical roadmap and long-term sustainability.",
+            "url": "https://opengauss.org/en/sig/role-description/#committer"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Thing",
+            "name": "Maintainer",
+            "description": "Maintainers are the core leaders of a SIG, responsible for technical roadmap planning, community collaboration, and long-term development. They assume all committer responsibilities while leading architectural evolution, quality assurance, and ecosystem adaptation for components. They propel the fulfillment of SIG goals by coordinating resources both within and outside the community.",
+            "url": "https://opengauss.org/en/sig/role-description/#maintainer"
+          }
+        }
+      ]
+    }
+  ]
+}

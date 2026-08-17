@@ -15,7 +15,7 @@ import { getMeetingDateListApi, getSigContributeData, getSigInfo, getSigRepos } 
 import dayjs from 'dayjs';
 import { getMeetingListApi } from '@/api/api-meeting';
 import { useI18n } from '~@/i18n';
-import { sigInfo } from '~@/data/sig';
+import sigContent from '#content/sig';
 import { MeetingItemT } from '@/shared/@types/type-meeting';
 import { ETHERPAD_LINK } from '~@/data/url-config';
 
@@ -34,7 +34,7 @@ const getSigDetailInfo = async () => {
   const [info, repos] = await Promise.all([getSigInfo(sigName.value), getSigRepos(sigName.value)]);
   const detailData = info?.data ?? {};
   if (!detailData.description) {
-    for (const sig of sigInfo[lang.value as 'zh' | 'en']) {
+    for (const sig of sigContent[lang.value as 'zh' | 'en']) {
       if (detailData.name === sig.sig_name) {
         detailData.description = sig.description;
         detailData.subscribe_url = sig.mailweb_link;

@@ -1,0 +1,352 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://opengauss.org/en/sig/sig-list/#webpage",
+      "url": "https://opengauss.org/en/sig/sig-list/",
+      "name": "SIG Center",
+      "title": "SIG Center | openGauss Official Website",
+      "description": "openGauss SIG Center lists all Special Interest Groups (SIGs) with their research directions, mailing lists, and subscription links, along with SIG role descriptions, meeting guides, and the application process for developers to participate and contribute.",
+      "inLanguage": "en",
+      "keywords": [
+        "openGauss",
+        "SIG",
+        "Special Interest Group",
+        "openGauss community",
+        "open source",
+        "SIG list",
+        "mailing list"
+      ],
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://opengauss.org/#website",
+        "name": "openGauss Official Website",
+        "url": "https://opengauss.org/",
+        "inLanguage": "en"
+      },
+      "about": {
+        "@type": "SoftwareApplication",
+        "@id": "https://opengauss.org/#software",
+        "name": "openGauss",
+        "description": "openGauss is a high-performance, highly secure, highly available, and intelligent enterprise-grade open-source relational database",
+        "applicationCategory": "DatabaseApplication",
+        "operatingSystem": "Linux"
+      },
+      "mainEntity": {
+        "@id": "https://opengauss.org/en/sig/sig-list/#sig-list"
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://opengauss.org/en/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "SIG Center",
+            "item": "https://opengauss.org/en/sig/sig-list/"
+          }
+        ]
+      },
+      "potentialAction": {
+        "@type": "ReadAction",
+        "target": "https://opengauss.org/en/sig/sig-list/",
+        "actionAccessibilityRequirement": {
+          "@type": "ActionAccessSpecification",
+          "category": "opensource",
+          "availability": "Online",
+          "requiresSubscription": false
+        }
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://opengauss.org/en/sig/sig-list/#sig-list",
+      "name": "openGauss SIG List",
+      "description": "The complete list of openGauss Special Interest Groups (SIGs), covering 25 SIGs including AI, Blockchain, CloudNative, SQLEngine, StorageEngine, and more.",
+      "numberOfItems": 25,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Organization",
+            "name": "AI",
+            "url": "https://opengauss.org/en/sig/AI",
+            "email": "ai@opengauss.org",
+            "description": "Dedicated to empowering openGauss with AI4DB (autonomous management & self-learning kernel) and DB4AI (in-database algorithms & full-lifecycle AI pipelines)."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Organization",
+            "name": "Blockchain",
+            "url": "https://opengauss.org/en/sig/Blockchain",
+            "email": "blockchain@opengauss.org",
+            "description": "Explores blockchain use cases and technical challenges, including consensus protocols, query processing, privacy protection, and regulatory frameworks."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Organization",
+            "name": "Certification",
+            "url": "https://opengauss.org/en/sig/Certification",
+            "email": "certification@opengauss.org",
+            "description": "Evaluates and certifies the capabilities and maturity of openGauss releases."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Organization",
+            "name": "CloudNative",
+            "url": "https://opengauss.org/en/sig/CloudNative",
+            "email": "cloudnative@opengauss.org",
+            "description": "Develops and maintains cloud-native features for openGauss. Mailing list for SIG CloudNative discussion group in openGauss community."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "Organization",
+            "name": "CM",
+            "url": "https://opengauss.org/en/sig/CM",
+            "email": "cm@opengauss.org",
+            "description": "Develops and maintains common components such as O&M management, aiming to deliver a universally compatible and easily extensible set of common capabilities."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "Organization",
+            "name": "Connectors",
+            "url": "https://opengauss.org/en/sig/Connectors",
+            "email": "connectors@opengauss.org",
+            "description": "Plans, develops, and maintains database drivers, providing efficient drivers tailored to business demands."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@type": "Organization",
+            "name": "DCF",
+            "url": "https://opengauss.org/en/sig/DCF",
+            "email": "dcf@opengauss.org",
+            "description": "Provides a distributed consistency framework for openGauss DN data replication and arbitration, ensuring high availability."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "item": {
+            "@type": "Organization",
+            "name": "Docs",
+            "url": "https://opengauss.org/en/sig/Docs",
+            "email": "docs@opengauss.org",
+            "description": "Dedicated to delivering a comprehensive content system, from technical documentation to tutorials, to provide full support for openGauss users and developers."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "item": {
+            "@type": "Organization",
+            "name": "Embedded",
+            "url": "https://opengauss.org/en/sig/Embedded",
+            "email": "embedded@opengauss.org",
+            "description": "Drives the development, environmental tuning, O&M, and release of industrial multi-model embedded databases. We aim to create a lightweight, multi-model (relational, time-series, KV), and high-performance industrial database widely compatible with global OSs."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "item": {
+            "@type": "Organization",
+            "name": "GIS",
+            "url": "https://opengauss.org/en/sig/GIS",
+            "email": "gis@opengauss.org",
+            "description": "Geographic Information System (GIS) SIG drives the development and maintenance of the GIS in the openGauss community."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "item": {
+            "@type": "Organization",
+            "name": "Graph",
+            "url": "https://opengauss.org/en/sig/Graph",
+            "email": "graph@opengauss.org",
+            "description": "Dedicated to building unified storage and query capabilities for knowledge graph data management. Built on openGauss, we enable shared storage and query interoperability between RDF and property graph models, as well as semantic alignment and syntactic translation between Cypher and SPARQL."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "item": {
+            "@type": "Organization",
+            "name": "IoT",
+            "url": "https://opengauss.org/en/sig/IoT",
+            "email": "iot@opengauss.org",
+            "description": "Advances IoT capabilities for openGauss, driving the integration, development, and maintenance of relevant technologies."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 13,
+          "item": {
+            "@type": "Organization",
+            "name": "KnowledgeGraph",
+            "url": "https://opengauss.org/en/sig/KnowledgeGraph",
+            "email": "knowledgegraph@opengauss.org",
+            "description": "Covers the entire knowledge graph lifecycle, from creation and storage management to application."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 14,
+          "item": {
+            "@type": "Organization",
+            "name": "oGRAC",
+            "url": "https://opengauss.org/en/sig/oGRAC",
+            "email": "ograc@opengauss.org",
+            "description": "Develops and maintains the oGRAC database, striving to craft a premier open-source, multi-write database solution."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 15,
+          "item": {
+            "@type": "Organization",
+            "name": "OM",
+            "url": "https://opengauss.org/en/sig/OM",
+            "email": "om@opengauss.org",
+            "description": "Dedicated to the installation and maintenance of openGauss."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 16,
+          "item": {
+            "@type": "Organization",
+            "name": "OPS",
+            "url": "https://opengauss.org/en/sig/OPS",
+            "email": "ops@opengauss.org",
+            "description": "Focuses on building robust O&M capabilities for openGauss, improving product maintainability, and transferring operational expertise."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 17,
+          "item": {
+            "@type": "Organization",
+            "name": "Plugin",
+            "url": "https://opengauss.org/en/sig/Plugin",
+            "email": "plugin@opengauss.org",
+            "description": "Builds a multi-layer, multi-method plugin architecture, empowering developers to extend openGauss kernel functionalities across different layers via plugins."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 18,
+          "item": {
+            "@type": "Organization",
+            "name": "QA",
+            "url": "https://opengauss.org/en/sig/QA",
+            "email": "qa@opengauss.org",
+            "description": "Oversees openGauss release quality and enhances the community's testing capabilities."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 19,
+          "item": {
+            "@type": "Organization",
+            "name": "ReleaseManagement",
+            "url": "https://opengauss.org/en/sig/ReleaseManagement",
+            "email": "releasemanagement@opengauss.org",
+            "description": "Orchestrates openGauss community releases by collaborating with SIG maintainers to drive the ultimate competitiveness of the project. Key responsibilities: · Define overall testing timelines, release schedules, and milestone targets for openGauss. · Tracks feature delivery status to ensure key features are delivered as planned. · Coordinate product releases across QA, release engineers, and the Technical Committee, and attend related meetings. · Streamline the delivery process for openGauss projects."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 20,
+          "item": {
+            "@type": "Organization",
+            "name": "RISC-V",
+            "url": "https://opengauss.org/en/sig/RISC-V",
+            "email": "riscv@opengauss.org",
+            "description": "Implements openGauss and enhances its competitiveness on the RISC-V platform."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 21,
+          "item": {
+            "@type": "Organization",
+            "name": "Security",
+            "url": "https://opengauss.org/en/sig/Security",
+            "email": "securityannounce@opengauss.org",
+            "description": "Addresses and resolves openGauss security issues, offers security guidance to the community, and drives security governance initiatives."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 22,
+          "item": {
+            "@type": "Organization",
+            "name": "SecurityTechnology",
+            "url": "https://opengauss.org/en/sig/SecurityTechnology",
+            "email": "securitytechnology@opengauss.org",
+            "description": "Develops and maintains database security features for openGauss to protect database systems from unauthorized access, theft, tampering, and corruption by malicious users."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 23,
+          "item": {
+            "@type": "Organization",
+            "name": "SQLEngine",
+            "url": "https://opengauss.org/en/sig/SQLEngine",
+            "email": "sqlengine@opengauss.org",
+            "description": "Aims to deliver a high-performance, highly reliable, and future-proof database storage foundation with openGauss."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 24,
+          "item": {
+            "@type": "Organization",
+            "name": "StorageEngine",
+            "url": "https://opengauss.org/en/sig/StorageEngine",
+            "email": "storageengine@opengauss.org",
+            "description": "Aims to deliver a high-performance, highly reliable, and future-proof database storage foundation with openGauss."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 25,
+          "item": {
+            "@type": "Organization",
+            "name": "Tools",
+            "url": "https://opengauss.org/en/sig/Tools",
+            "email": "tools@opengauss.org",
+            "description": "Manages the long-term planning, development, and evolution of the openGauss tool ecosystem."
+          }
+        }
+      ]
+    }
+  ]
+}

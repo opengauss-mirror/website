@@ -1,0 +1,352 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://opengauss.org/zh/sig/sig-list/#webpage",
+      "url": "https://opengauss.org/zh/sig/sig-list/",
+      "name": "SIG中心",
+      "title": "SIG中心 | openGauss社区官网",
+      "description": "openGauss社区SIG中心，汇总全部专项兴趣小组（SIG）及其研究方向、邮件列表与订阅方式，并提供SIG角色说明、会议指南与申请流程，便于开发者参与社区协作与贡献。",
+      "inLanguage": "zh",
+      "keywords": [
+        "openGauss",
+        "SIG",
+        "专项兴趣小组",
+        "openGauss社区",
+        "开源社区",
+        "SIG列表",
+        "邮件列表"
+      ],
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://opengauss.org/#website",
+        "name": "openGauss社区官网",
+        "url": "https://opengauss.org/",
+        "inLanguage": "zh"
+      },
+      "about": {
+        "@type": "SoftwareApplication",
+        "@id": "https://opengauss.org/#software",
+        "name": "openGauss",
+        "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库",
+        "applicationCategory": "DatabaseApplication",
+        "operatingSystem": "Linux"
+      },
+      "mainEntity": {
+        "@id": "https://opengauss.org/zh/sig/sig-list/#sig-list"
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "首页",
+            "item": "https://opengauss.org/zh/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "SIG中心",
+            "item": "https://opengauss.org/zh/sig/sig-list/"
+          }
+        ]
+      },
+      "potentialAction": {
+        "@type": "ReadAction",
+        "target": "https://opengauss.org/zh/sig/sig-list/",
+        "actionAccessibilityRequirement": {
+          "@type": "ActionAccessSpecification",
+          "category": "opensource",
+          "availability": "Online",
+          "requiresSubscription": false
+        }
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://opengauss.org/zh/sig/sig-list/#sig-list",
+      "name": "openGauss SIG列表",
+      "description": "openGauss社区全部专项兴趣小组（SIG）列表，涵盖AI、区块链、云原生、SQL引擎、存储引擎等25个SIG。",
+      "numberOfItems": 25,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Organization",
+            "name": "AI",
+            "url": "https://opengauss.org/zh/sig/AI",
+            "email": "ai@opengauss.org",
+            "description": "致力于打造openGauss AI4DB数据库智能自治管理和数据库自学习内核，以及DB4AI数据库内AI算法和全流程AI。"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Organization",
+            "name": "Blockchain",
+            "url": "https://opengauss.org/zh/sig/Blockchain",
+            "email": "blockchain@opengauss.org",
+            "description": "探讨区块链的业务场景，研究区块链的核心技术问题，包括共识协议、查询处理、隐私保护、以及区块链监管等。"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Organization",
+            "name": "Certification",
+            "url": "https://opengauss.org/zh/sig/Certification",
+            "email": "certification@opengauss.org",
+            "description": "致力于对社区openGauss发行版本进行发行版本能力、成熟度的评估和认证。"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Organization",
+            "name": "CloudNative",
+            "url": "https://opengauss.org/zh/sig/CloudNative",
+            "email": "cloudnative@opengauss.org",
+            "description": "CloudNative SIG致力于openGauss社区云原生方向的开发和维护。"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "Organization",
+            "name": "CM",
+            "url": "https://opengauss.org/zh/sig/CM",
+            "email": "cm@opengauss.org",
+            "description": "负责运维管理等公共组件的开发和维护，致力于打造一套通用兼容、弹性易扩展的公共能力集合。"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "Organization",
+            "name": "Connectors",
+            "url": "https://opengauss.org/zh/sig/Connectors",
+            "email": "connectors@opengauss.org",
+            "description": "负责数据库驱动的规划，开发和维护，根据业务需求为用户提供高效的驱动。"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@type": "Organization",
+            "name": "DCF",
+            "url": "https://opengauss.org/zh/sig/DCF",
+            "email": "dcf@opengauss.org",
+            "description": "DCF提供分布式一致性框架，使能openGauss DN数据复制和仲裁，实现高可用；"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "item": {
+            "@type": "Organization",
+            "name": "Docs",
+            "url": "https://opengauss.org/zh/sig/Docs",
+            "email": "docs@opengauss.org",
+            "description": "SIG DOCS致力于提供openGauss各类技术文档、教程等形式的完整内容体系，为用户使用或开发openGauss数据库提供完整的支撑。"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "item": {
+            "@type": "Organization",
+            "name": "Embedded",
+            "url": "https://opengauss.org/zh/sig/Embedded",
+            "email": "embedded@opengauss.org",
+            "description": "Embedded SIG 聚焦于工业多模嵌入式数据库的开发，环境适配，运维和版本发行。致力于打造一个轻量化，多模态（含关系型，时序型，KV型），高性能，广泛兼容国内外各种OS的嵌入式工业数据库。"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "item": {
+            "@type": "Organization",
+            "name": "GIS",
+            "url": "https://opengauss.org/zh/sig/GIS",
+            "email": "gis@opengauss.org",
+            "description": "GIS英文全称Geographic Information System，表示地理信息系统。 GIS SIG 致力于openGauss社区地理信息系统的开发和维护。"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "item": {
+            "@type": "Organization",
+            "name": "Graph",
+            "url": "https://opengauss.org/zh/sig/Graph",
+            "email": "graph@opengauss.org",
+            "description": "Graph SIG 致力于构建统一存储和查询的知识图谱数据管理功能，包括基于openGauss平台实现RDF图和属性图两大知识图谱数据模型的存储方案共享和查询互操作，Cypher和SPARQL两大知识图谱查询语言的语义对齐和语法等价转化。"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "item": {
+            "@type": "Organization",
+            "name": "IoT",
+            "url": "https://opengauss.org/zh/sig/IoT",
+            "email": "iot@opengauss.org",
+            "description": "IoT SIG 致力于openGauss IoT能力拓展，及相关技术的引入、开发和维护。"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 13,
+          "item": {
+            "@type": "Organization",
+            "name": "KnowledgeGraph",
+            "url": "https://opengauss.org/zh/sig/KnowledgeGraph",
+            "email": "knowledgegraph@opengauss.org",
+            "description": "围绕知识图谱全生命周期：构建、存储管理与应用环节开展研究。"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 14,
+          "item": {
+            "@type": "Organization",
+            "name": "oGRAC",
+            "url": "https://opengauss.org/zh/sig/oGRAC",
+            "email": "ograc@opengauss.org",
+            "description": "负责oGRAC数据库的开发和维护，致力于打造开源领先多写数据库产品。"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 15,
+          "item": {
+            "@type": "Organization",
+            "name": "OM",
+            "url": "https://opengauss.org/zh/sig/OM",
+            "email": "om@opengauss.org",
+            "description": "OM SIG 致力于openGauss的安装、维护。"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 16,
+          "item": {
+            "@type": "Organization",
+            "name": "OPS",
+            "url": "https://opengauss.org/zh/sig/OPS",
+            "email": "ops@opengauss.org",
+            "description": "聚焦openGauss维护能力建设，提升产品运维能力，总结和传递运维经验。"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 17,
+          "item": {
+            "@type": "Organization",
+            "name": "Plugin",
+            "url": "https://opengauss.org/zh/sig/Plugin",
+            "email": "plugin@opengauss.org",
+            "description": "致力于打造多层级、多方法的插件化架构，使能社区开发者通过插件扩展openGauss内核不同层的功能。"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 18,
+          "item": {
+            "@type": "Organization",
+            "name": "QA",
+            "url": "https://opengauss.org/zh/sig/QA",
+            "email": "qa@opengauss.org",
+            "description": "致力于看护openGauss版本质量和提升社区测试能力。"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 19,
+          "item": {
+            "@type": "Organization",
+            "name": "ReleaseManagement",
+            "url": "https://opengauss.org/zh/sig/ReleaseManagement",
+            "email": "releasemanagement@opengauss.org",
+            "description": "ReleaseManagement的主要工作是通过社区协同各SIG maintainer，规划openGauss社区版本的发布工作，为最终的竞争力目标达成负责，其主要职责如下： · 规划openGauss版本总体的转测试、发布时间和阶段性交付目标 · 细粒度跟踪 特性的交付状态，支撑关键特性按规划交付 · 发布协调（在QA，发布工程师，技术委员会等范围内），参与相关组和发布相关等会议 · 负责openGauss项目的交付过程协调"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 20,
+          "item": {
+            "@type": "Organization",
+            "name": "RISC-V",
+            "url": "https://opengauss.org/zh/sig/RISC-V",
+            "email": "riscv@opengauss.org",
+            "description": "致力于openGauss在RISC-V平台的使用与竞争力构筑"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 21,
+          "item": {
+            "@type": "Organization",
+            "name": "Security",
+            "url": "https://opengauss.org/zh/sig/Security",
+            "email": "securityannounce@opengauss.org",
+            "description": "负责接受和响应openGauss相关安全问题，提供社区安全指导，开展安全治理的组织。"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 22,
+          "item": {
+            "@type": "Organization",
+            "name": "SecurityTechnology",
+            "url": "https://opengauss.org/zh/sig/SecurityTechnology",
+            "email": "securitytechnology@opengauss.org",
+            "description": "SecurityTechnology SIG 致力于openGauss社区数据库安全技术的能力的开发和维护，包括保护数据库系统以防止恶意用户窃取、篡改和破坏数据库中数据信息的技术。"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 23,
+          "item": {
+            "@type": "Organization",
+            "name": "SQLEngine",
+            "url": "https://opengauss.org/zh/sig/SQLEngine",
+            "email": "sqlengine@opengauss.org",
+            "description": "致力于随openGauss一起，打造高性能、高可靠、面向未来的数据库存储底座。"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 24,
+          "item": {
+            "@type": "Organization",
+            "name": "StorageEngine",
+            "url": "https://opengauss.org/zh/sig/StorageEngine",
+            "email": "storageengine@opengauss.org",
+            "description": "致力于随openGauss一起，打造高性能、高可靠、面向未来的数据库存储底座。"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 25,
+          "item": {
+            "@type": "Organization",
+            "name": "Tools",
+            "url": "https://opengauss.org/zh/sig/Tools",
+            "email": "tools@opengauss.org",
+            "description": "负责openGauss工具生态的长期规划，发展和演进。"
+          }
+        }
+      ]
+    }
+  ]
+}

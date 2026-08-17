@@ -5,7 +5,7 @@ import { computed, ref } from 'vue';
 import AppSection from '~@/components/AppSection.vue';
 import { useScreen } from '~@/composables/useScreen';
 import { GUIDES } from '~@/data/maillist/data';
-import { sigInfo } from '~@/data/sig';
+import sigContent from '#content/sig';
 
 import { useI18n } from '~@/i18n';
 
@@ -16,7 +16,7 @@ const { lePadV, isPhone } = useScreen();
 const page = ref(1);
 const pageSize = ref(10);
 
-const tableData = computed(() => sigInfo[lang.value as 'zh' | 'en']);
+const tableData = computed(() => sigContent[lang.value as 'zh' | 'en']);
 const columns = computed(() => [
   { key: 'sig_name', label: i18n.value.maillist.sigName, style: { width: lePadV.value ? '100px' : '180px' } },
   { key: 'description', label: i18n.value.maillist.desc, style: { 'max-width': '640px' } },
