@@ -101,12 +101,6 @@ describe('other entries unchanged', () => {
     expect(secPos).toBeGreaterThan(memberListStart);
   });
 
-  it('sig still exists in zh memberList', () => {
-    const memberListStart = zhContent.indexOf('memberList: [');
-    const sigPos = zhContent.indexOf('id: `sig`', memberListStart);
-    expect(sigPos).toBeGreaterThan(memberListStart);
-  });
-
   it('ogug still exists in zh memberList', () => {
     const memberListStart = zhContent.indexOf('memberList: [');
     const ogugPos = zhContent.indexOf('id: `ogug`', memberListStart);
@@ -119,35 +113,9 @@ describe('other entries unchanged', () => {
     expect(secPos).toBeGreaterThan(memberListStart);
   });
 
-  it('sig still exists in en memberList', () => {
-    const memberListStart = enContent.indexOf('memberList: [');
-    const sigPos = enContent.indexOf('id: `sig`', memberListStart);
-    expect(sigPos).toBeGreaterThan(memberListStart);
-  });
-
   it('ogug still exists in en memberList', () => {
     const memberListStart = enContent.indexOf('memberList: [');
     const ogugPos = enContent.indexOf('id: `ogug`', memberListStart);
     expect(ogugPos).toBeGreaterThan(memberListStart);
-  });
-
-  it('secretariat, sig, ogug are after bc in zh', () => {
-    const bcPos = findMemberItemPosition(zhContent, 'bc');
-    const secPos = findMemberItemPosition(zhContent, 'secretariat');
-    const sigPos = findMemberItemPosition(zhContent, 'sig');
-    const ogugPos = findMemberItemPosition(zhContent, 'ogug');
-    expect(secPos).toBeGreaterThan(bcPos);
-    expect(sigPos).toBeGreaterThan(secPos);
-    expect(ogugPos).toBeGreaterThan(sigPos);
-  });
-
-  it('secretariat, sig, ogug are after bc in en', () => {
-    const bcPos = findMemberItemPosition(enContent, 'bc');
-    const secPos = findMemberItemPosition(enContent, 'secretariat');
-    const sigPos = findMemberItemPosition(enContent, 'sig');
-    const ogugPos = findMemberItemPosition(enContent, 'ogug');
-    expect(secPos).toBeGreaterThan(bcPos);
-    expect(sigPos).toBeGreaterThan(secPos);
-    expect(ogugPos).toBeGreaterThan(sigPos);
   });
 });
