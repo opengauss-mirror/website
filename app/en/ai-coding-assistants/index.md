@@ -39,7 +39,7 @@ Any submissions incorporating AI-generated content to the openGauss community sh
 The openGauss community implements a **Contributor License Agreement (CLA)**.
 
 - Contributors must sign the CLA before submitting any contributions.
-- According to the CLA, by submitting a contribution that contains AI-generated content to the community, the contributor is deemed to have lawful  to dispose of that submission (e.g., having obtained sufficient authorization). The AI-generated nature of the content shall not serve as a  to exempt the contributors from their obligations and legal liabilities pledged in the CLA.
+- According to the CLA, by submitting a contribution that contains AI-generated content to the community, the contributor is deemed to have lawful rights to dispose of that submission (e.g., having obtained sufficient authorization). The AI-generated nature of the content shall not serve as a ground to exempt the contributors from their obligations and legal liabilities pledged in the CLA.
 
 ### **3.2 Traceability: Full Logging of Key Metadata**
 
@@ -56,12 +56,6 @@ PR:
 - **Prompt Summary:** Briefly describe the core prompts or intent that guided the AI generation (e.g., `"Optimize memory allocation for Spec file"`). AI-generated content submitted with ambiguous prompts or unclear intent is prohibited.
 
 **Example (PR):**
-
-- **Agent Platform:** Specify the name and version of the agent platform used (e.g., Claude Code 2.1.156, Qwen Code 0.16.1, etc.).
-- **Model:** Specify the name and version of the generative AI model used (e.g., GPT-4o, DeepSeek-V3, etc.).
--  **Prompt Summary:** Briefly describe the core prompts or intent that guided the AI generation (e.g., "Optimize memory allocation for Specfile"). AI-generated content submitted with ambiguous prompts or unclear intent is prohibited.
-
-**Example (pull request):**
 
 <div class="code-block">
 
@@ -87,7 +81,7 @@ Co-Authored-By: DeepSeek-V3
 ```
 </div>
 
-*Note: The openEuler CI gate checks whether the AI model name in the Co-authored-by commit trailer matches the model declared in the PR. Any discrepancy between the two will cause the CI check to fail and block the PR.*
+*Note: The openGauss CI gate checks whether the AI model name in the Co-authored-by commit trailer matches the model declared in the PR. Any discrepancy between the two will cause the CI check to fail and block the PR.*
 
 ## **4. Standard Prompt for Agents**
 
@@ -110,10 +104,15 @@ You are an AI agent dedicated to serving the openGauss community. Your goal is t
 - If your generated code directly references specific open-source components or public algorithmic implementations, such code must retain its original copyright notices (including but not limited to preserving the copyright notices of the original components or algorithms) and license notices, which shall not be deleted or modified.
 
 ## 3. Explicit exposure of key metadata
-- When assisting humans in code generation or when independently submitting PRs to openGauss repositories as an automated agent, you must use the designated PR template. The metadata must include:
-- Agent platform: [Agent platform name and version]
-- Model: [AI model name and version]
-- Prompt summary: [core prompts or intent]
+- When assisting humans in code generation or when independently submitting PRs to openGauss repositories as an automated agent, compliance with the designated PR and commit message templates is mandatory.
+
+- Required metadata in a PR:
+  - Agent platform: [Agent platform name and version]
+  - Model: [AI model name and version]
+  - Prompt summary: [core prompts or intent]
+
+- Required metadata in the commit message:
+  - Co-authored-by: [AI model name and version]
 
 ## 4. openGauss technology stack adaptation
 - Code style: Before submitting any code to the openGauss community, analyze the coding style of the target repository. Your modifications must strictly conform to that repository's code style guide.

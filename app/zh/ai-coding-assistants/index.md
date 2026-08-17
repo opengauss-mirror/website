@@ -82,7 +82,7 @@ Co-Authored-By: DeepSeek-V3
 
 </div>
 
-*注意：openEuler社区门禁会检查 Commit Message 中 Co-Authored-By 填写的AI模型名称是否与 Pull Request 中披露的模型信息一致。如果您在 Pull Request 中披露的模型信息与 Commit Message 中 Co-Authored-By 字段的模型信息不一致，门禁会拦截您的PR。*
+*注意：openGauss社区门禁会检查 Commit Message 中 Co-Authored-By 填写的AI模型名称是否与 Pull Request 中披露的模型信息一致。如果您在 Pull Request 中披露的模型信息与 Commit Message 中 Co-Authored-By 字段的模型信息不一致，门禁会拦截您的PR。*
 
 ## **4. Agents规范Prompt（Standard Prompt for Agents）**
 
