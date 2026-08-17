@@ -1,0 +1,120 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://opengauss.org/en/sig/apply/#webpage",
+      "url": "https://opengauss.org/en/sig/apply/",
+      "name": "How to Set Up a SIG",
+      "title": "How to Set Up a SIG | openGauss Official Website",
+      "description": "A guide to setting up a Special Interest Group (SIG) in the openGauss community, covering the six-step application process from reviewing existing SIGs and forking the tc repository to submitting a pull request and TC review, plus the Contributor, Committer, and Maintainer roles.",
+      "inLanguage": "en",
+      "keywords": [
+        "openGauss",
+        "SIG",
+        "set up SIG",
+        "SIG application",
+        "Special Interest Group",
+        "Technical Committee",
+        "tc repository",
+        "Pull Request",
+        "openGauss community"
+      ],
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://opengauss.org/#website",
+        "name": "openGauss Official Website",
+        "url": "https://opengauss.org/",
+        "inLanguage": "en"
+      },
+      "about": {
+        "@type": "SoftwareApplication",
+        "@id": "https://opengauss.org/#software",
+        "name": "openGauss",
+        "description": "openGauss is a high-performance, highly secure, highly available, and intelligent enterprise-grade open-source relational database",
+        "applicationCategory": "DatabaseApplication",
+        "operatingSystem": "Linux"
+      },
+      "mainEntity": {
+        "@id": "https://opengauss.org/en/sig/apply/#howto"
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://opengauss.org/en/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "SIG Center",
+            "item": "https://opengauss.org/en/sig/sig-list/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "How to Set Up a SIG",
+            "item": "https://opengauss.org/en/sig/apply/"
+          }
+        ]
+      },
+      "potentialAction": {
+        "@type": "ReadAction",
+        "target": "https://opengauss.org/en/sig/apply/",
+        "actionAccessibilityRequirement": {
+          "@type": "ActionAccessSpecification",
+          "category": "opensource",
+          "availability": "Online",
+          "requiresSubscription": false
+        }
+      }
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://opengauss.org/en/sig/apply/#howto",
+      "name": "How to Set Up a SIG in the openGauss Community",
+      "description": "The openGauss community SIG setup process, covering six steps from reviewing existing SIGs and forking the tc repository to submitting a pull request and Technical Committee review.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Fork the tc repository and create your SIG directory using the template",
+          "text": "Fork the opengauss/tc repository, navigate to the sigs/ directory, and copy the Template directory as your new SIG subdirectory. The sigs/Template directory offers standard templates (README.md and OWNERS). Copy and customize them as needed."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Complete README for the new SIG",
+          "text": "Open README.md in the new SIG directory and fill in the required content as recommended, including SIG name and responsibilities, meeting schedule, meeting minutes archive method, members, contact information (mailing list address), and repositories."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Compile the sig-info.yaml file to configure member and repository information",
+          "text": "Specify SIG members and repository information in the sig-info.yaml file."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Submit a pull request",
+          "text": "Commit the changes to GitCode and initiate a pull request to the opengauss/tc repository."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "Email the Technical Committee (TC)",
+          "text": "Email the TC at tc@opengauss.org with the subject \"New SIG Proposal + SIG Name\". Include the PR link from Step 4 in the email for TC members' review."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 6,
+          "name": "The TC conducts reviews and makes decisions",
+          "text": "Once the proposal is approved, the TC merges the pull request to officially set up the SIG. The community infrastructure then automatically configures the code repository and roles."
+        }
+      ]
+    }
+  ]
+}

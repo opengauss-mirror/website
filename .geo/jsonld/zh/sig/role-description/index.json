@@ -1,0 +1,116 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://opengauss.org/zh/sig/role-description/#webpage",
+      "url": "https://opengauss.org/zh/sig/role-description/",
+      "name": "角色说明",
+      "title": "角色说明 | openGauss社区官网",
+      "description": "在openGauss社区，开发者主要通过参与SIG（Special Interest Group）来贡献自己的力量。无论Contributor、Committer、Maintainer，都是社区重要的贡献者角色，他们的主要区别在于参与的SIG治理范围不同。",
+      "inLanguage": "zh",
+      "keywords": [
+        "openGauss",
+        "SIG",
+        "角色说明",
+        "Contributor",
+        "Committer",
+        "Maintainer",
+        "贡献者",
+        "审核者",
+        "维护者",
+        "openGauss社区"
+      ],
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://opengauss.org/#website",
+        "name": "openGauss社区官网",
+        "url": "https://opengauss.org/",
+        "inLanguage": "zh"
+      },
+      "about": {
+        "@type": "SoftwareApplication",
+        "@id": "https://opengauss.org/#software",
+        "name": "openGauss",
+        "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库",
+        "applicationCategory": "DatabaseApplication",
+        "operatingSystem": "Linux"
+      },
+      "mainEntity": {
+        "@id": "https://opengauss.org/zh/sig/role-description/#roles"
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "首页",
+            "item": "https://opengauss.org/zh/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "SIG中心",
+            "item": "https://opengauss.org/zh/sig/sig-list/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "角色说明",
+            "item": "https://opengauss.org/zh/sig/role-description/"
+          }
+        ]
+      },
+      "potentialAction": {
+        "@type": "ReadAction",
+        "target": "https://opengauss.org/zh/sig/role-description/",
+        "actionAccessibilityRequirement": {
+          "@type": "ActionAccessSpecification",
+          "category": "opensource",
+          "availability": "Online",
+          "requiresSubscription": false
+        }
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://opengauss.org/zh/sig/role-description/#roles",
+      "name": "openGauss SIG角色说明",
+      "description": "openGauss社区SIG的三类贡献者角色：Contributor贡献者、Committer审核者、Maintainer维护者，及其加入要求与责任权益。",
+      "numberOfItems": 3,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Thing",
+            "name": "贡献者 Contributor",
+            "description": "贡献者是openGauss社区的核心力量，他们通过代码开发、文档完善、问题修复、社区运营等多种方式积极参与，共同推动项目的创新与发展。",
+            "url": "https://opengauss.org/zh/sig/role-description/#contributor"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Thing",
+            "name": "审核者 Committer",
+            "description": "审核者是代码仓库的核心维护者，拥有代码合入权限。他们凭借丰富的技术经验，通过代码评审、开发者测试和规范检查等方式保障代码质量，并推动数据库的技术演进与长期健康发展。",
+            "url": "https://opengauss.org/zh/sig/role-description/#committer"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Thing",
+            "name": "维护者 Maintainer",
+            "description": "维护者是SIG组的核心领导者，负责技术方向规划、社区协作和长期发展。他们不仅具备审核者的所有职责，还主导组件的架构演进、质量保障和生态适配，并通过协调社区内外资源推动SIG目标的实现。",
+            "url": "https://opengauss.org/zh/sig/role-description/#maintainer"
+          }
+        }
+      ]
+    }
+  ]
+}

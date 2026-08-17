@@ -1,0 +1,120 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://opengauss.org/zh/sig/apply/#webpage",
+      "url": "https://opengauss.org/zh/sig/apply/",
+      "name": "如何在 openGauss 社区成立一个 SIG",
+      "title": "如何在 openGauss 社区成立一个 SIG | openGauss社区官网",
+      "description": "openGauss社区SIG成立指南，介绍专项兴趣小组（SIG）的申请流程，包括查阅现有SIG、公开讨论、Fork tc仓库、填写README与sig-info.yaml、提交Pull Request、向技术委员会发送邮件申请及TC评审六个步骤，以及Contributor、Committer、Maintainer三类角色说明。",
+      "inLanguage": "zh",
+      "keywords": [
+        "openGauss",
+        "SIG",
+        "成立SIG",
+        "SIG申请",
+        "专项兴趣小组",
+        "技术委员会",
+        "tc仓库",
+        "Pull Request",
+        "openGauss社区"
+      ],
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://opengauss.org/#website",
+        "name": "openGauss社区官网",
+        "url": "https://opengauss.org/",
+        "inLanguage": "zh"
+      },
+      "about": {
+        "@type": "SoftwareApplication",
+        "@id": "https://opengauss.org/#software",
+        "name": "openGauss",
+        "description": "openGauss是一个高性能、高安全、高可用、高智能的企业级开源关系数据库",
+        "applicationCategory": "DatabaseApplication",
+        "operatingSystem": "Linux"
+      },
+      "mainEntity": {
+        "@id": "https://opengauss.org/zh/sig/apply/#howto"
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "首页",
+            "item": "https://opengauss.org/zh/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "SIG中心",
+            "item": "https://opengauss.org/zh/sig/sig-list/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "如何在 openGauss 社区成立一个 SIG",
+            "item": "https://opengauss.org/zh/sig/apply/"
+          }
+        ]
+      },
+      "potentialAction": {
+        "@type": "ReadAction",
+        "target": "https://opengauss.org/zh/sig/apply/",
+        "actionAccessibilityRequirement": {
+          "@type": "ActionAccessSpecification",
+          "category": "opensource",
+          "availability": "Online",
+          "requiresSubscription": false
+        }
+      }
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://opengauss.org/zh/sig/apply/#howto",
+      "name": "如何在 openGauss 社区成立一个 SIG",
+      "description": "openGauss社区SIG成立流程，包括查阅现有SIG、公开讨论、Fork tc仓库创建SIG目录、填写README、编写sig-info.yaml、提交Pull Request、向技术委员会发送邮件申请及TC评审六个步骤。",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Fork tc 仓库，基于模板创建你的 SIG 目录",
+          "text": "Fork opengauss/tc 仓库，进入 sigs/ 目录，复制 Template 模板目录为新 SIG 子目录。sigs/Template 目录已经提供了标准模板（README.md、OWNERS），直接复制后按需修改即可。"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "完成新SIG README内容的填写",
+          "text": "打开新创建sig目录下的README.md文件，按照推荐完成必选内容的填写，包括SIG名称与职责范围、例会安排、会议纪要归档方式、成员列表、联系方式（邮件列表地址）、仓库清单。"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "编写 sig-info.yaml，声明成员与仓库信息",
+          "text": "在sig-info.yaml文件中完成对SIG成员的配置，声明成员与仓库信息。"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "提交 Pull Request",
+          "text": "将以上修改提交到 GitCode，向 opengauss/tc 仓库发起 Pull Request。"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "向技术委员会发送邮件申请",
+          "text": "给 TC 邮件列表 tc@opengauss.org 发送邮件，标题建议注明“新 SIG 提案 + SIG 名称”，正文附上步骤四提交的 PR 链接，方便 TC 委员快速定位评审内容。"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 6,
+          "name": "TC 评审与决策",
+          "text": "评审通过后，TC 通过合并 Pull Request 的方式正式批准 SIG 成立，随后社区基础设施完成相关代码仓、相关角色权限的自动化配置。"
+        }
+      ]
+    }
+  ]
+}
