@@ -7,7 +7,7 @@ import AppSection from '~@/components/AppSection.vue';
 import TheSigIntro from './TheSigIntro.vue';
 import TheSigDesc from './TheSigDesc.vue';
 import { windowOpen } from '@/shared/utils';
-import { sigInfo } from '~@/data/sig/index';
+import sigContent from '#content/sig';
 
 const { lang } = useData();
 const sigDetailInfoData = ref<any[]>([]);
@@ -31,7 +31,7 @@ const toSigDetail = (sigName: string) => {
 
 const list = computed(() => {
   const map = detailInfoMap.value;
-  return sigInfo[lang.value as 'zh' | 'en'].map((sig) => {
+  return sigContent[lang.value as 'zh' | 'en'].map((sig) => {
     const landscapeData = map.get(sig.sig_name);
     return {
       ...sig,
