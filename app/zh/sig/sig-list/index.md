@@ -1,5 +1,5 @@
 ---
-title: 'sig中心'
+title: 'SIG中心'
 description: '了解openGauss社区贡献者的角色及其职责。'
 category: banner-layout
 bannerImg: /category/sig/banner.png
