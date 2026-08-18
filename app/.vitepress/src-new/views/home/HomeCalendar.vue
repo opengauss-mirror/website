@@ -319,19 +319,19 @@ const isFormDlgVisible = ref(false);
 const currentMeetingData = ref<MeetingItemT | null>(null);
 const formDlgTitle = ref('');
 const createMeetingDlg = () => {
-  currentMeetingData.value = null;
-  isFormDlgVisible.value = true;
-  formDlgTitle.value = i18nMeeting.value.bookMeeting;
-  // if (csrfToken) {
-  //   if (sigGroup.value.length > 0) {
-  //   } else {
-  //     message.warning({
-  //       content: i18nMeeting.value.LOGIN_TEXT,
-  //     });
-  //   }
-  // } else {
-  //   doLogin();
-  // }
+  if (csrfToken) {
+    if (sigGroup.value.length > 0) {
+      currentMeetingData.value = null;
+      isFormDlgVisible.value = true;
+      formDlgTitle.value = i18nMeeting.value.bookMeeting;
+    } else {
+      message.warning({
+        content: i18nMeeting.value.LOGIN_TEXT,
+      });
+    }
+  } else {
+    doLogin();
+  }
 };
 const userInfoStore = useUserInfoStore();
 const { identities, username } = storeToRefs(userInfoStore);
@@ -351,11 +351,14 @@ const getPersonalInfo = async () => {
     return;
   }
   // 先找gitcode，再找gitee
-  let userData = identities.value.find((e) => e.provider === 'gitcode');
+  let userData = identities.value.find((e) => {
+    const lowerCase = e.identity.toLowerCase();
+    return lowerCase === 'gitcode' || lowerCase === 'atomgit';
+  });
   if (userData === undefined) {
-    userData = identities.value.find((e) => e.provider === 'gitee');
+    userData = identities.value.find((e) => e.identity.toLowerCase() === 'gitee');
   }
-  meetingStore.username = userData?.username || username;
+  meetingStore.username = userData?.user_name || username.value;
 };
 // 删除修改会议判断是否是本人
 const isSelf = (name: string) => {
