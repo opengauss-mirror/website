@@ -51,10 +51,6 @@ describe('banner.yaml — new AI coding entry schema validation', () => {
     expect(newEntry).toBeDefined();
   });
 
-  it('new entry is the first entry in the list', () => {
-    expect(entries[0].title_zh).toBe(NEW_ENTRY_TITLE_ZH);
-  });
-
   it('locale includes both zh and en', () => {
     expect(newEntry.locale).toBe('zh,en');
   });
@@ -257,8 +253,8 @@ describe('banner.yaml — locale filtering verification', () => {
 });
 
 describe('banner.yaml — data integrity', () => {
-  it('total entry count is 10', () => {
-    expect(entries.length).toBe(10);
+  it('total entry count is 11', () => {
+    expect(entries.length).toBe(11);
   });
 
   it('all entries have bg_pc', () => {

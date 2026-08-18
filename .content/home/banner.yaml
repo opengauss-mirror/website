@@ -21,6 +21,16 @@
 #   attach_href       装饰图链接（可选）
 #   locale            可见语言 zh / en / zh,en（可选，默认 zh,en）
 
+- locale: zh
+  bg_pc: ./images/banner/banner-internship_pc.png
+  bg_mb: ./images/banner/banner-internship_mo.png
+  bg_theme: light
+  title_zh: 欢迎参加 openGauss 开源实习
+  subtitle_zh: 项目实战 | 远程参与 | 导师带教 | 实习薪资 | 实习证明
+  btn_zh: 了解更多
+  href_zh: /zh/internship/
+  is_blank: false
+
 - locale: zh,en
   bg_pc: ./images/banner/banner-ai-coding.png
   bg_pad: ./images/banner/banner-ai-coding_pad.png
