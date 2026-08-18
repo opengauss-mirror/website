@@ -53,7 +53,7 @@ onMounted(async () => {
           {{ i18n.home.HOME_EXPLORE.LIST[0].DESC }}
           <OLink
             color="primary"
-            :href="`${DOCS_LINK}/zh/docs/5.0.0/docs/GettingStarted/%E4%BA%86%E8%A7%A3openGauss.html`"
+            :href="`${DOCS_LINK}/zh/docs/latest/getting_started/understanding_opengauss.html`"
             target="_blank"
             rel="noopener noreferrer"
             >{{ i18n.home.viewMore }}</OLink
@@ -66,7 +66,7 @@ onMounted(async () => {
               <p class="item-title">{{ i18n.home.HOME_EXPLORE.LIST[1].NAME }}</p>
               <p class="item-desc">{{ i18n.home.HOME_EXPLORE.LIST[1].DESC }}</p>
               <OLink
-                :href="`${DOCS_LINK}/zh/docs/5.0.0/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html`"
+                :href="`${DOCS_LINK}/zh/docs/latest/installation_guide/installation_overview.html`"
                 :hover-underline="false"
                 target="_blank"
                 rel="noopener noreferrer"
