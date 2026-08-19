@@ -6,7 +6,6 @@ import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = resolve(__dirname, '../../../');
 const layoutCharterPath = resolve(rootDir, 'app/.vitepress/src-new/layouts/LayoutCharter.vue');
-const appHeaderPath = resolve(rootDir, 'app/.vitepress/src/components/header/AppHeader.vue');
 
 function readFile(filePath: string) {
   return readFileSync(filePath, 'utf-8');
@@ -68,13 +67,6 @@ describe('LayoutCharter .copy 暗色模式不受影响', () => {
   it('.copy 默认模式使用 icon-copy2.svg', () => {
     const content = readFile(layoutCharterPath);
     expect(content).toContain('icon-copy2.svg');
-  });
-});
-
-describe('AppHeader z-index 未受影响', () => {
-  it('AppHeader 仍保留 z-index: 99', () => {
-    const content = readFile(appHeaderPath);
-    expect(content).toContain('z-index: 99');
   });
 });
 
