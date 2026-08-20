@@ -23,7 +23,6 @@ import AppTour from '~@/components/AppTour.vue';
 
 import categories from '@/shared/category';
 
-import seoConfig from '@/data/common/seo';
 import { useCommon, useCookieStore } from '@/stores/common';
 import EventDetail from '~@/layouts/LayoutEventDetail.vue';
 import LayoutEventDetailHeader from '~@/layouts/LayoutEventDetailHeader.vue';
@@ -136,7 +135,6 @@ watch(
     </AppHeader>
     <el-config-provider :locale="locale">
       <main>
-        <SeoBox :seo-data="seoConfig[lang]?.home" />
         <component :is="comp" v-if="isCustomLayout"></component>
         <Content v-else />
         <AppFloat />
