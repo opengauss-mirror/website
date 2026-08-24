@@ -62,6 +62,11 @@
   description: Graph SIG 致力于构建统一存储和查询的知识图谱数据管理功能，包括基于openGauss平台实现RDF图和属性图两大知识图谱数据模型的存储方案共享和查询互操作，Cypher和SPARQL两大知识图谱查询语言的语义对齐和语法等价转化。
   mailweb_link: https://mailweb.opengauss.org/postorius/lists/graph.opengauss.org
   archive_link: https://mailweb.opengauss.org/hyperkitty/list/graph@opengauss.org
+- sig_name: Infra
+  mailing_list: infra@opengauss.org
+  description: 基础设施组主要负责openGauss社区的系统功能开发、维护。包括但不限于：门户、论坛、邮箱列表
+  mailweb_link: https://mailweb.opengauss.org/postorius/lists/infra.opengauss.org
+  archive_link: https://mailweb.opengauss.org/hyperkitty/list/infra@opengauss.org
 - sig_name: IoT
   mailing_list: iot@opengauss.org
   description: IoT SIG 致力于openGauss IoT能力拓展，及相关技术的引入、开发和维护。
