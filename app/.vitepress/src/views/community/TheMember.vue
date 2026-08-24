@@ -351,16 +351,13 @@ const handleChangeActiveMobile = (activeNames: any) => {
 .tab-box {
   background-color: var(--e-color-bg2);
   display: flex;
-  top: 80px;
+  top: var(--app-header-height);
   width: 100%;
   z-index: 9;
   position: sticky;
   align-items: flex-end;
   justify-content: center;
   border-bottom: 1px solid var(--e-color-division1);
-  @media (max-width: 1100px) {
-    top: 48px;
-  }
   @media (max-width: 768px) {
     display: none;
   }
