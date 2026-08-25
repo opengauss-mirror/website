@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { OIcon, OIconArrowRight, OLink, OOption, ORadio, ORadioGroup, OScroller, OSelect, OTag, OToggle } from '@opensig/opendesign';
-import { useData, useRouter } from 'vitepress';
+import { useData } from 'vitepress';
 import { computed } from 'vue';
 import { ref } from 'vue';
 import { useI18n } from 'vue-i18n';
@@ -56,11 +56,8 @@ const displayData = computed(() => {
   return dataMap[selectedFilter.value];
 });
 
-const router = useRouter();
 const { lang } = useData();
-const goToDownload = (name: string) => {
-  router.go(`/${lang.value}/download/archive/?version=${encodeURIComponent(name)}`);
-};
+const goToDownloadHref = (name: string) => `/${lang.value}/download/archive/?version=${encodeURIComponent(name)}`;
 
 const tableColumns = [
   { key: 'name', label: t('download.PKG_TYPE') },
@@ -121,9 +118,9 @@ const tableColumns = [
       </template>
       <template #td_action="{ row }">
         <OLink
-          tag="button"
+          tag="a"
           color="primary"
-          @click="goToDownload(row.name)"
+          :href="goToDownloadHref(row.name)"
           v-analytics.bubble="{
             level3: row.name,
             target: $t('download.GOTO_DOWNLOAD'),
@@ -156,7 +153,7 @@ const tableColumns = [
             <span v-else class="no-data">--</span>
           </p>
           <p>{{ $t('download.DOWNLOAD_URL') }}</p>
-          <OLink tag="button" color="primary" @click="goToDownload(item.name)">
+          <OLink tag="a" color="primary" :href="goToDownloadHref(item.name)">
             {{ $t('download.GOTO_DOWNLOAD') }}
             <template #suffix>
               <OIcon><OIconArrowRight /></OIcon>

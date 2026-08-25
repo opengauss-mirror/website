@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useData, useRouter } from 'vitepress';
+import { useData } from 'vitepress';
 import { ref, computed } from 'vue';
 import { useCommon } from '@/stores/common';
 
@@ -17,10 +17,10 @@ import IconMessage from '~icons/app/icon-message.svg';
 import financial from '@/data/financial';
 
 import { useI18n } from '@/i18n';
+import { OButton } from '@opensig/opendesign';
 const { lang } = useData();
 const i18n = useI18n();
 const commonStore = useCommon();
-const router = useRouter();
 
 const screenWidth = useWindowResize();
 const isMobile = computed(() => (screenWidth.value <= 768 ? true : false));
@@ -30,26 +30,6 @@ const isLight = computed(() => {
 });
 
 const tabShow = ref(0);
-// 案例详情
-const goCaseDetail = (link: string) => {
-  window.open(`/${lang.value}${link}`, '_blank');
-};
-// 案例官网
-const goOfficialWeb = (link: string) => {
-  window.open(link, '_blank');
-};
-// 互动专区
-const goInteractiveZone = () => {
-  window.open(financial.zh.interaction.jumpLink, '_blank');
-};
-// 查看更多案例
-const secarchMore = () => {
-  window.open(`/${lang.value}/user-practice/`, '_blank');
-};
-// 下载页
-const goDownloadPage = () => {
-  router.go(`/${lang.value}/download/finance/`);
-};
 </script>
 <template>
   <div class="finaance">
@@ -126,15 +106,15 @@ const goDownloadPage = () => {
             </div>
 
             <div class="btn-box">
-              <OButton type="primary" size="mini" class="more-btn" animation @click="goCaseDetail(card.detailLink)">
+              <OButton color="primary" variant="solid" round="0px" size="small" class="more-btn" animation :href="`/${lang}${card.detailLink}`" target="_blank">
                 {{ i18n.finance.CASE_DETAIL }}
-                <template #suffixIcon>
+                <template #suffix>
                   <IconArrowRight class="btn-icon" />
                 </template>
               </OButton>
-              <OButton size="mini" class="website-btn" animation @click="goOfficialWeb(card.officialLink)">
+              <OButton size="small" round="0px" class="website-btn" animation :href="card.officialLink" target="_blank" rel="noopener noreferrer">
                 {{ i18n.finance.OFFICIAL_WEBSITE }}
-                <template #suffixIcon>
+                <template #suffix>
                   <IconArrowRight class="btn-icon" />
                 </template>
               </OButton>
@@ -142,9 +122,9 @@ const goDownloadPage = () => {
           </OCard>
         </div>
 
-        <OButton type="text" animation class="search-more" @click="secarchMore">
+        <OButton variant="text" size="large" animation class="search-more" :href="`/${lang}/user-practice/`" target="_blank">
           {{ i18n.finance.SEARCH_MORE }}
-          <template #suffixIcon>
+          <template #suffix>
             <IconArrowRight class="icon-search" />
           </template>
         </OButton>
@@ -158,10 +138,10 @@ const goDownloadPage = () => {
 
           <div class="card-content">
             <h1>{{ financial.zh.interaction.card_title }}</h1>
-            <p @click="goInteractiveZone">
+            <a :href="financial.zh.interaction.jumpLink" target="_blank" rel="noopener noreferrer">
               <span>{{ financial.zh.interaction.card_desc }}</span>
               <OIcon><IconArrow /></OIcon>
-            </p>
+            </a>
           </div>
         </div>
       </div>
@@ -172,10 +152,10 @@ const goDownloadPage = () => {
         <div class="version-download">
           <h1 class="experience">{{ i18n.finance.EXPERIENCE }}</h1>
 
-          <OButton type="primary" size="small" animation class="download-btn" @click="goDownloadPage">
+          <OButton color="primary" variant="solid" round="0px" size="medium" animation class="download-btn" :href="`/${lang}/download/finance/`">
             {{ i18n.finance.DOWNLOAD }}
-            <template #suffixIcon>
-              <IconArrowRight />
+            <template #suffix>
+              <IconArrowRight class="btn-icon" />
             </template>
           </OButton>
         </div>
@@ -186,6 +166,19 @@ const goDownloadPage = () => {
   </div>
 </template>
 <style lang="scss" scoped>
+:deep(.o-btn-suffix) {
+  transition: all .2s linear;
+}
+.o-btn {
+  @media screen and (min-width: 1100px) {
+    &:hover {
+      :deep(.o-btn-suffix) {
+        transform: translate(4px);
+      }
+    }
+  }
+}
+
 :deep(.o-tabs) {
   .el-tabs__nav-scroll {
     display: flex;
@@ -373,6 +366,7 @@ const goDownloadPage = () => {
   height: 16px;
 }
 .search-more {
+  color: var(--o-color-info2);
   margin-top: 28px;
   margin-left: 50%;
   transform: translatex(-50%);
@@ -405,7 +399,7 @@ const goDownloadPage = () => {
     font-weight: 500;
     color: var(--e-color-text1);
   }
-  p {
+  a {
     font-size: var(--e-font-size-h8);
     line-height: var(--e-line-height-h8);
     font-weight: 400;
@@ -414,6 +408,7 @@ const goDownloadPage = () => {
     display: flex;
     align-items: center;
     cursor: pointer;
+    text-decoration: none;
     .o-icon {
       font-size: 24px;
       color: var(--e-color-text4);
@@ -438,5 +433,9 @@ const goDownloadPage = () => {
 }
 .download-btn {
   color: var(--e-color-white);
+  .btn-icon {
+    width: 12px;
+    height: 12px;
+  }
 }
 </style>

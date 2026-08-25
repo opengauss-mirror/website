@@ -2,24 +2,17 @@
 import IconPage from '~icons/app/icon-page.svg';
 import IconChat from '~icons/app/icon-chat.svg';
 import { OIcon } from '@opensig/opendesign';
-import { useRouter } from 'vitepress';
 import { FORUM_LINK } from '@/data/url-config';
-
-const router = useRouter();
-
-const goFaq = () => {
-  router.go('/zh/faq');
-};
 </script>
 <template>
   <div class="support-services">
-    <div class="item" @click="goFaq" v-analytics.bubble="{ target: $t('tools.FAQs') }">
+    <a class="item" href="/zh/faq" v-analytics.bubble="{ target: $t('tools.FAQs') }">
       <OIcon><IconPage /></OIcon>
       <div>
         <p class="title">{{ $t('tools.FAQs') }}</p>
         <p class="desc">{{ $t('tools.FAQ_DESC') }}</p>
       </div>
-    </div>
+    </a>
     <a class="item" :href="FORUM_LINK" target="_blank" rel="noopener noreferrer" v-analytics.bubble="{ target: $t('tools.COMMUNITY_FORUM') }">
       <OIcon><IconChat /></OIcon>
       <div>

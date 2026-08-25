@@ -228,9 +228,6 @@ const getStateStatement = (state: string) => {
   }
 };
 
-const goToSourcePage = (url: string) => {
-  window.open(url, '_blank', 'noopener noreferrer');
-};
 // -------------------- 多选 --------------------
 const checkedItems = ref<any[]>([]);
 const isIndeterminate = computed(() => checkedItems.value.length > 0 && checkedItems.value.length < list.value.length);
@@ -345,7 +342,7 @@ const doDeleteInfo = () => {
       <template #td_summary="{ row }">
         <div class="summary">
           <div class="td_summary">
-            <TooltipText @click="goToSourcePage(row.source_url)" type="link">
+            <TooltipText :href="row.source_url" target="_blank" type="link">
               {{ row.summary }}
             </TooltipText>
           </div>

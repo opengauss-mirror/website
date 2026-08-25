@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useCommon } from '@/stores/common';
 import { OButton, OLink } from '@opensig/opendesign';
-import { useData, useRouter } from 'vitepress';
+import { useData } from 'vitepress';
 import { computed } from 'vue';
 import { GITCODE_LINK, GITHUB_LINK } from '~@/data/url-config';
 
@@ -51,12 +51,8 @@ const displayTools = [
   },
 ];
 
-const router = useRouter();
 const { lang } = useData();
 const isEn = computed(() => lang.value === 'en');
-const gotoTools = () => {
-  router.go(`/${lang.value}/tools/`);
-};
 
 const commonStore = useCommon();
 const isDark = computed(() => commonStore.theme === 'dark');
@@ -73,7 +69,7 @@ const isDark = computed(() => commonStore.theme === 'dark');
         round="pill"
         variant="solid"
         color="primary"
-        @click="gotoTools"
+        :href="`/${lang}/tools/`"
         v-analytics.bubble="{ level3: $t('common.COMMON_CONFIG.SUPPORTTOOLS'), level4: $t('tools.ALL_TOOLS') }"
       >
         {{ $t('tools.ALL_TOOLS') }}

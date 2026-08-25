@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed, watch } from 'vue';
-import { useRouter, useData } from 'vitepress';
+import { useData } from 'vitepress';
 
 import { useI18n } from '@/i18n';
 import useWindowResize from '@/components/hooks/useWindowResize';
@@ -20,8 +20,8 @@ import IconSearch from '~icons/app/icon-search.svg';
 
 import blogsAllData from '@/data/blogs';
 import type { BlogItemT } from '@/shared/@types/type-blogs';
+import { OButton, OCard } from '@opensig/opendesign';
 
-const router = useRouter();
 const { lang } = useData();
 const i18n = useI18n();
 const userCaseData = computed(() => i18n.value.common.COMMON_CONFIG);
@@ -122,15 +122,8 @@ const blogCardData = computed(() => {
   return blogCardAllData.value.slice((currentPage.value - 1) * pagesize.value, currentPage.value * pagesize.value);
 });
 
-const toBlogContent = (path: string) => {
-  router.go(`/${path}`);
-};
 const resetCurrentPage = () => {
   currentPage.value = 1;
-};
-
-const postBlog = () => {
-  router.go(`/${lang.value}/blogs/guidance/`);
 };
 
 const changeCurrentMoblie = (val: string) => {
@@ -155,9 +148,9 @@ watch(
 <template>
   <BannerLevel2 :background-image="banner" :title="userCaseData.BLOG" :illustration="illustration">
     <template #default>
-      <OButton class="post-btn" type="outline" animation size="nomral" @click="postBlog">
+      <OButton class="post-btn" type="outline" round="0px" animation size="large" :href="`/${lang}/blogs/guidance/`">
         {{ userCaseData.STRATEGY }}
-        <template #suffixIcon>
+        <template #suffix>
           <OIcon class="banner-icon"><IconRight /></OIcon>
         </template>
       </OButton>
@@ -207,7 +200,7 @@ watch(
     </div>
     <template v-if="blogCardData.length">
       <div class="blog-list">
-        <OCard v-for="item in blogCardData" :key="item" class="blog-list-item" shadow="hover" @click="toBlogContent(item.path)">
+        <OCard v-for="item in blogCardData" :key="item" class="blog-list-item" shadow="hover" :href="`/${item.path}`">
           <p class="blog-list-item-title">{{ item.title }}</p>
           <div class="blog-list-item-info">
             <div class="infodetail">
@@ -257,7 +250,7 @@ watch(
   display: -webkit-box;
   -webkit-box-orient: vertical;
 }
-:deep(.el-card__body) {
+:deep(.o-card-content) {
   padding: var(--e-spacing-h2);
   @media (max-width: 1100px) {
     padding: var(--e-spacing-h4);
@@ -272,14 +265,25 @@ watch(
 .post-btn {
   color: var(--e-color-white);
   border-color: var(--e-color-white);
+  --btn-padding: 11px 28px;
   @media (max-width: 767px) {
-    padding: 3px 12px;
+    --btn-padding: 3px 12px;
     font-size: var(--e-font-size-text);
     line-height: var(--e-line-height-text);
   }
   .banner-icon {
     @media (max-width: 767px) {
       font-size: var(--e-font-size-text);
+    }
+  }
+  :deep(.o-btn-suffix) {
+    transition: all .2s linear;
+  }
+  @media screen and (min-width: 1100px) {
+    &:hover {
+      :deep(.o-btn-suffix) {
+        transform: translate(4px);
+      }
     }
   }
 }
@@ -324,6 +328,8 @@ watch(
     grid-gap: var(--e-spacing-h5);
   }
   .blog-list-item {
+    box-shadow: var(--e-shadow-l2);
+    --card-main-padding: 0 0;
     background-image: url(@/assets/category/blogs/blog-bg.png);
     min-height: 248px;
     background-position: right bottom;

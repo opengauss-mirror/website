@@ -1,10 +1,9 @@
 <script lang="ts" setup>
 import { computed } from 'vue';
-import { useRouter, useData } from 'vitepress';
+import { useData } from 'vitepress';
 
 import { useI18n } from '@/i18n';
 import { useCommon } from '@/stores/common';
-import { windowOpen } from '@/shared/utils';
 
 import contributionMap_light_zh from '@/assets/category/contribution/contribution-map_light_zh.png';
 import contributionMap_light_en from '@/assets/category/contribution/contribution-map_light_en.png';
@@ -18,18 +17,9 @@ import contributionMap_dark_en_mb from '@/assets/category/contribution/contribut
 const i18n = useI18n();
 const { lang } = useData();
 const commonStore = useCommon();
-const router = useRouter();
 
 const isDark = computed(() => (commonStore.theme === 'dark' ? true : false));
 const isZh = computed(() => (lang.value === 'zh' ? true : false));
-
-const goLink = (url: string, isBlank: boolean) => {
-  if (isBlank) {
-    windowOpen(url, '_blank');
-    return;
-  }
-  router.go(url);
-};
 </script>
 <template>
   <div class="contribution-map">
@@ -37,17 +27,28 @@ const goLink = (url: string, isBlank: boolean) => {
       <img v-show="!isDark" :src="isZh ? contributionMap_light_zh : contributionMap_light_en" />
       <img v-show="isDark" :src="isZh ? contributionMap_dark_zh : contributionMap_dark_en" />
       <!-- 定位的空标签 -->
-      <div v-for="(item, index) in i18n.contribution.LINK_LIST" :key="index" :class="isZh ? 'link' : 'link en'" @click="goLink(item.URL, item.BLANK)"></div>
+      <a
+        v-for="(item, index) in i18n.contribution.LINK_LIST"
+        :key="index"
+        :class="isZh ? 'link' : 'link en'"
+        :title="item.ALT"
+        :href="item.URL"
+        :target="item.BLANK ? '_blank' : undefined"
+        :rel="item.BLANK ? 'noopener noreferrer' : undefined"
+      ></a>
     </div>
     <div class="contribution-map-mobile-img">
       <img v-show="!isDark" :src="isZh ? contributionMap_light_zh_mb : contributionMap_light_en_mb" />
       <img v-show="isDark" :src="isZh ? contributionMap_dark_zh_mb : contributionMap_dark_en_mb" />
-      <div
+      <a
         v-for="item in i18n.contribution.LINK_LIST"
         :key="item.URL"
         :class="isZh ? 'mobile-link' : 'mobile-link en'"
-        @click="goLink(item.URL, item.BLANK)"
-      ></div>
+        :title="item.ALT"
+        :href="item.URL"
+        :target="item.BLANK ? '_blank' : undefined"
+        :rel="item.BLANK ? 'noopener noreferrer' : undefined"
+      ></a>
     </div>
   </div>
 </template>
@@ -86,6 +87,7 @@ const goLink = (url: string, isBlank: boolean) => {
       position: absolute;
       display: block;
       cursor: pointer;
+      text-decoration: none;
     }
     @media screen and (min-width: 1100px) and (max-width: 1439px) {
       width: 1000px;
@@ -580,6 +582,7 @@ const goLink = (url: string, isBlank: boolean) => {
     display: block;
     cursor: pointer;
     height: 1%;
+    text-decoration: none;
   }
   .mobile-link:nth-of-type(1) {
     width: 40%;

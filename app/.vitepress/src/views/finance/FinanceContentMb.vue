@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useData, useRouter } from 'vitepress';
+import { useData } from 'vitepress';
 import { ref, computed } from 'vue';
 import { useCommon } from '@/stores/common';
 
@@ -11,36 +11,15 @@ import cardIllustration from '@/assets/illustrations/financial.png';
 import financial from '@/data/financial';
 
 import { useI18n } from '@/i18n';
+import { OButton } from '@opensig/opendesign';
 
 const { lang } = useData();
 const i18n = useI18n();
 const commonStore = useCommon();
-const router = useRouter();
 
 const isLight = computed(() => {
   return commonStore.theme === 'light' ? true : false;
 });
-
-// 案例详情
-const goCaseDetail = (link: string) => {
-  window.open(`/${lang.value}${link}`, '_blank');
-};
-// 案例官网
-const goOfficialWeb = (link: string) => {
-  window.open(link, '_blank');
-};
-// 互动专区
-const goInteractiveZone = () => {
-  window.open(financial.zh.interaction.jumpLink, '_blank');
-};
-// 查看更多案例
-const secarchMore = () => {
-  window.open(`/${lang.value}/user-practice/`, '_blank');
-};
-// 下载页
-const goDownloadPage = () => {
-  router.go(`/${lang.value}/download/finance/`);
-};
 
 const activeNames = ref(['0']);
 const handleChange = (val: any) => {
@@ -121,15 +100,15 @@ const handleChange = (val: any) => {
             <p class="card-desc">{{ card.desc }}</p>
 
             <div class="btn-box">
-              <OButton type="primary" size="mini" class="more-btn" animation @click="goCaseDetail(card.detailLink)">
+              <OButton color="primary" round="0px" variant="solid" size="medium" :href="`/${lang}${card.detailLink}`" target="_blank" class="more-btn">
                 {{ i18n.finance.CASE_DETAIL }}
-                <template #suffixIcon>
+                <template #suffix>
                   <IconArrowRight class="btn-icon" />
                 </template>
               </OButton>
-              <OButton size="mini" class="website-btn" animation @click="goOfficialWeb(card.officialLink)">
+              <OButton :href="card.officialLink" round="0px" size="medium" class="website-btn" target="_blank" rel="noopener noreferrer">
                 {{ i18n.finance.OFFICIAL_WEBSITE }}
-                <template #suffixIcon>
+                <template #suffix>
                   <IconArrowRight class="btn-icon" />
                 </template>
               </OButton>
@@ -144,9 +123,9 @@ const handleChange = (val: any) => {
         </OCard>
       </div>
 
-      <OButton type="text" animation class="search-more" @click="secarchMore">
+      <OButton :href="`/${lang}/user-practice/`" target="_blank" variant="text" class="search-more">
         {{ i18n.finance.SEARCH_MORE_MB }}
-        <template #suffixIcon>
+        <template #suffix>
           <IconArrowRight class="icon-search" />
         </template>
       </OButton>
@@ -160,9 +139,9 @@ const handleChange = (val: any) => {
 
         <div class="card-content">
           <h1>{{ financial.zh.interaction.card_title }}</h1>
-          <p @click="goInteractiveZone">
+          <a :href="financial.zh.interaction.jumpLink" target="_blank" rel="noopener noreferrer">
             <span>{{ financial.zh.interaction.card_desc }}</span>
-          </p>
+          </a>
         </div>
       </div>
     </div>
@@ -173,12 +152,14 @@ const handleChange = (val: any) => {
       <div class="version-download">
         <h1 class="experience">{{ i18n.finance.EXPERIENCE }}</h1>
 
-        <OButton type="primary" size="mini" animation class="download-btn" @click="goDownloadPage">
+        <OButton :href="`/${lang}/download/finance/`" color="primary" size="medium" class="download-btn">
           {{ i18n.finance.DOWNLOAD }}
           <template #suffixIcon>
             <IconArrowRight />
           </template>
         </OButton>
+        <a>
+        </a>
       </div>
     </div>
   </div>
@@ -365,13 +346,14 @@ const handleChange = (val: any) => {
     color: var(--e-color-text1);
     font-weight: 500;
   }
-  p {
+  a {
     font-size: var(--e-font-size-tip);
     line-height: var(--e-line-height-tip);
     color: var(--e-color-text-secondary);
     font-weight: 400;
     margin-top: 12px;
     display: flex;
+    text-decoration: none;
   }
 }
 .version-download {
@@ -393,5 +375,9 @@ const handleChange = (val: any) => {
 .download-btn {
   color: var(--e-color-white);
   margin-top: 12px;
+  .btn-icon {
+    width: 12px;
+    height: 12px;
+  }
 }
 </style>
