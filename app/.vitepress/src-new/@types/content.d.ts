@@ -51,8 +51,15 @@ declare module '#content/home' {
     locale?: string;
   }
 
+  interface OrganizationItemT {
+    name: string;
+    img_light: string;
+    img_dark: string;
+  }
+
   const data: {
     banner: BannerItemT[];
+    organization: OrganizationItemT[];
   };
   export default data;
 }
