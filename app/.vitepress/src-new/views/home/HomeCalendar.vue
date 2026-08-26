@@ -358,7 +358,7 @@ const getPersonalInfo = async () => {
   if (userData === undefined) {
     userData = identities.value.find((e) => e.identity.toLowerCase() === 'gitee');
   }
-  meetingStore.username = userData?.user_name || username.value;
+  meetingStore.username = userData?.login_name || username.value;
 };
 // 删除修改会议判断是否是本人
 const isSelf = (name: string) => {
