@@ -1,16 +1,21 @@
 <script setup lang="ts">
-import { OIcon, OIconArrowLeft } from '@opensig/opendesign';
-import { useRouter } from 'vitepress';
+import { OIcon, OIconArrowLeft, OLink } from '@opensig/opendesign';
 import { useLocale } from '~@/composables/useLocale';
 
-const router = useRouter();
 const { locale } = useLocale();
-const back = () => {
-  router.go(`/${locale.value}/events/list/`);
-};
 </script>
 
 <template>
-  <OIcon style="font-size: 24px" @click="back"><OIconArrowLeft /></OIcon>
-  <p style="margin-left: 16px">活动列表</p>
+  <OLink :href="`/${locale}/events/list/`" :hover-underline="false">
+    <template #icon>
+      <OIcon style="font-size: 24px"><OIconArrowLeft /></OIcon>
+    </template>
+    活动列表
+  </OLink>
 </template>
+
+<style lang="scss" scoped>
+.o-link {
+  --link-color: var(--o-color-info1);
+}
+</style>

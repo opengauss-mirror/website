@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue';
-import { useRouter, useData } from 'vitepress';
+import { useData } from 'vitepress';
 
 import { useI18n } from '@/i18n';
 import useWindowResize from '@/components/hooks/useWindowResize';
@@ -14,9 +14,9 @@ import banner from '@/assets/illustrations/banner-secondary.png';
 import illustration from '@/assets/illustrations/news.png';
 
 import newsAllData from '@/data/news';
+import { OCard } from '@opensig/opendesign';
 
 const i18n = useI18n();
-const router = useRouter();
 const { lang } = useData();
 const screenWidth = useWindowResize();
 const isPad = computed(() => (screenWidth.value <= 768 ? true : false));
@@ -46,10 +46,6 @@ const newsCardData = computed(() => {
   return newsData.value.slice((currentPage.value - 1) * pagesize.value, currentPage.value * pagesize.value);
 });
 
-const toNewsContent = (path: string) => {
-  router.go(`/${path}`);
-};
-// 翻页滚动到顶部
 watch(
   () => currentPage.value,
   () => {
@@ -66,7 +62,7 @@ watch(
   <AppContent :mobile-top="16">
     <template v-if="newsCardData.length">
       <div class="news-list">
-        <OCard v-for="item in newsCardData" :key="item.path" class="news-list-item" shadow="hover" @click="toNewsContent(item.path)">
+        <OCard v-for="item in newsCardData" :key="item.path" class="news-list-item" :href="`/${item.path}`">
           <div class="news-img">
             <img :src="item.banner" :alt="item.banner" />
           </div>
@@ -109,7 +105,7 @@ watch(
   display: -webkit-box;
   -webkit-box-orient: vertical;
 }
-:deep(.el-card__body) {
+:deep(.o-card-content) {
   padding: 0;
   @media (max-width: 980px) {
     display: flex;
@@ -147,6 +143,7 @@ watch(
     grid-template-columns: repeat(1, 1fr);
   }
   .news-list-item {
+    --card-main-padding: 0 0;
     justify-self: center;
     align-self: center;
     flex: 1;

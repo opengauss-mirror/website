@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { onMounted, ref, computed } from 'vue';
-import { useData, useRouter } from 'vitepress';
+import { onMounted, ref, computed, watch } from 'vue';
+import { useData, useRoute } from 'vitepress';
 import { useI18n } from '@/i18n';
 import AppMdHead from './AppMdHead.vue';
 import BreadCrumbs from '@/components/BreadCrumbs.vue';
@@ -18,22 +18,12 @@ const newsInfo = {
   name: i18n.value.common.COMMON_CONFIG.NEWS,
 };
 
-const router = useRouter();
-
 const newsTitle = ref<any>([]);
 const newsLint = ref<any>([]);
 const prev = ref('');
 const prevLint = ref('');
 const nextLint = ref('');
 const next = ref('');
-const goPrve = () => {
-  router.go(`${prevLint.value}`);
-  getNewsData();
-};
-const goNext = () => {
-  router.go(`${nextLint.value}`);
-  getNewsData();
-};
 const getNewsData = () => {
   newsList.value.forEach((item: any) => {
     newsTitle.value.push(item.title);
@@ -50,6 +40,16 @@ const getNewsData = () => {
     }
   });
 };
+
+const route = useRoute();
+
+watch(
+  () => route.path,
+  () => {
+    getNewsData();
+  }
+);
+
 onMounted(() => {
   getNewsData();
 });
@@ -66,14 +66,14 @@ onMounted(() => {
     </div>
     <hr />
     <div class="news-markdown-detail">
-      <div v-if="prev !== ''" class="skip" @click="goPrve">
+      <a v-if="prev !== ''" class="skip" :href="`/${prevLint}`">
         <span>{{ userCaseData.PREV }}</span>
         <p>{{ prev }}</p>
-      </div>
-      <div v-if="next !== ''" class="skip" @click="goNext">
+      </a>
+      <a v-if="next !== ''" class="skip" :href="`/${nextLint}`">
         <span>{{ userCaseData.NEXT }}</span>
         <p>{{ next }}</p>
-      </div>
+      </a>
     </div>
   </div>
 </template>
@@ -107,6 +107,8 @@ onMounted(() => {
 .skip {
   margin-top: var(--e-spacing-h5);
   cursor: pointer;
+  text-decoration: none;
+  display: block;
   span {
     font-size: var(--e-font-size-text);
     line-height: var(--e-line-height-text);

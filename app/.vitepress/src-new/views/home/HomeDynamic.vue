@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { OIcon, OCard, OIconChevronRight, OLink, OScroller, OTab, OTabPane } from '@opensig/opendesign';
-import { useRouter } from 'vitepress';
 import { computed, ref } from 'vue';
 import AppSection from '~@/components/AppSection.vue';
 import blogsAllData from '@/data/blogs';
@@ -39,12 +38,6 @@ const newsData = computed(() => {
   return isZh.value ? newsAllData.zh.slice(0, 6) : newsAllData.en.slice(0, 6);
 });
 
-const router = useRouter();
-
-const toNewsContent = (path: string) => {
-  router.go(`/${path}`);
-};
-
 const activeTab = ref('blogs');
 </script>
 
@@ -61,7 +54,7 @@ const activeTab = ref('blogs');
     <OTab v-model="activeTab" variant="text" :line="false">
       <OTabPane value="blogs" :label="t('home.blog')">
         <OScroller size="small" disabled-y :show-type="lePadV ? 'never' : 'always'">
-          <OCard v-for="(item, index) in blogsData" :key="item.path" class="news-list-item" @click="toNewsContent(item.path)">
+          <OCard v-for="(item, index) in blogsData" :key="item.path" class="news-list-item" :href="`/${item.path}`">
             <div class="news-img">
               <div class="cover" v-if="theme === 'dark'"></div>
               <img :src="coverList[index % 3]" alt="" />
@@ -75,7 +68,7 @@ const activeTab = ref('blogs');
       </OTabPane>
       <OTabPane value="news" :label="t('home.news')">
         <OScroller size="small" disabled-y :show-type="lePadV ? 'never' : 'always'">
-          <OCard v-for="item in newsData" :key="item.path" class="news-list-item" @click="toNewsContent(item.path)">
+          <OCard v-for="item in newsData" :key="item.path" class="news-list-item" :href="`/${item.path}`">
             <div class="news-img">
               <img :src="item.banner" :alt="item.banner" />
             </div>

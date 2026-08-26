@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref, watch, reactive, computed, shallowRef } from 'vue';
 import { ORadioGroup, ORadio, OToggle, OInput, OIcon, ORow, OCol, OCard, OPagination, OFigure, OTag, OButton, ODivider, ODialog } from '@opensig/opendesign';
-import { useRouter } from 'vitepress';
 import AppSection from '~@/components/AppSection.vue';
 import { useDebounceFn } from '@vueuse/core';
 import { changeTimeStamp } from '~@/utils/common';
@@ -24,7 +23,6 @@ interface OptionT {
 
 const { lePadV } = useScreen();
 const { t, isZh, locale } = useLocale();
-const router = useRouter();
 
 // -------------------- 活动状态 --------------------
 const stateOptions = ref<OptionT[]>([]);
@@ -152,11 +150,6 @@ const onPaginationChange = (val: { page: number; pageSize: number }) => {
   pageSize.value = val.pageSize;
 };
 
-// 精彩回顾下展示列表
-const goDetail = (item: any) => {
-  router.go(item.path);
-};
-
 // -------------------- 移动端 --------------------
 const filterVisible = ref(false);
 const stateValue = ref(0);
@@ -215,7 +208,7 @@ const handleConfirm = () => {
     </div>
     <ORow v-if="pagedList.length" :gap="lePadV ? '0 12px' : '32px 32px'" wrap="wrap">
       <OCol :flex="lePadV ? ' 0 0 100%' : '0 0 25%'" v-for="(item, i) in pagedList" :key="i">
-        <OCard class="event-item" @click="goDetail(item)">
+        <OCard class="event-item" :href="item.path">
           <template #cover>
             <OFigure class="item-cover" hoverable :src="item.pic">
               <div class="tags">

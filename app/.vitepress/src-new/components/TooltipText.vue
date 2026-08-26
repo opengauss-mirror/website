@@ -11,6 +11,8 @@ const props = withDefaults(defineProps<{
   width?: number | string;
   type?: 'link';
   size?: string | number;
+  href?: string;
+  target?: string;
 }>(), {
   lines: 1,
   size: 14
@@ -60,10 +62,21 @@ const emits = defineEmits(['click'])
 const click = () => {
   emits('click');
 }
+
+const isLink = computed(() => !!props.href);
+const wrapperTag = computed(() => (isLink.value ? 'a' : 'div'));
+const linkProps = computed(() => {
+  if (!isLink.value) return {};
+  return {
+    href: props.href,
+    target: props.target,
+    rel: props.target === '_blank' ? 'noopener noreferrer' : undefined,
+  };
+});
 </script>
 
 <template>
-  <div v-if="ellipsis" class="tooltip-text-wrapper" :style="wrapperStyle" ref="wrapperRef" @click="click">
+  <component :is="wrapperTag" v-if="ellipsis" class="tooltip-text-wrapper" :style="wrapperStyle" ref="wrapperRef" v-bind="linkProps" @click="click">
     <OPopover anchor position="top">
       <div :class="['popup-box2', `fz${size}`]">{{ contentText }}</div>
       <template #target>
@@ -72,14 +85,16 @@ const click = () => {
         </div>
       </template>
     </OPopover>
-  </div>
-  <div v-else :style="wrapperStyle" ref="contentRef" class="tooltip-text-wrapper" @click="click">
+  </component>
+  <component :is="wrapperTag" v-else :style="wrapperStyle" ref="contentRef" class="tooltip-text-wrapper" v-bind="linkProps" @click="click">
     <span :class="type"><slot></slot></span>
-  </div>
+  </component>
 </template>
 
 <style scoped lang="scss">
 .tooltip-text-wrapper {
+  text-decoration: none;
+  color: inherit;
   * {
     white-space: nowrap;
     overflow: hidden;
