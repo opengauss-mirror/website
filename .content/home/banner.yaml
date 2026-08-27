@@ -1,25 +1,42 @@
 # 首页轮播图 / Home Banner
 #
 # 字段说明：
-#   bg_pc             PC 端背景图（中英文共用）
-#   bg_pad            平板端背景图（可选）
-#   bg_mb             移动端背景图（中英文共用）
-#   bg_pc_dark        PC 端暗色背景（可选）
-#   bg_mb_dark        移动端暗色背景（可选）
-#   bg_theme          light | dark
-#   text_image_zh     PC 端文字图（可选）
-#   text_image_mb_zh  移动端文字图（可选）
-#   title_zh/en       中英文标题
-#   title_mb_zh       移动端标题数组（可选）
-#   subtitle_zh/en    中英文副标题（可选）
-#   desc_zh/en        中英文描述数组（可选）
-#   btn_zh/en         中英文按钮文案（可选）
-#   href_zh/en        中英文跳转链接
-#   is_blank          是否新窗口打开（可选）
-#   class_name        CSS 类名（可选）
-#   attach            右侧装饰图（可选）
-#   attach_href       装饰图链接（可选）
-#   locale            可见语言 zh / en / zh,en（可选，默认 zh,en）
+#   bg_pc                 PC 端背景图（中英文共用）
+#   bg_pad                平板端背景图（可选）
+#   bg_mb                 移动端背景图（中英文共用）
+#   bg_pc_dark            PC 端暗色背景（可选）
+#   bg_mb_dark            移动端暗色背景（可选）
+#   bg_theme              light | dark
+#   text_image_zh         PC 端文字图（可选）
+#   text_image_mb_zh      移动端文字图（可选）
+#   banner_img_position   banner背景图的object-position样式（可选）
+#   hide_subtitle_le_pad  小于padV宽度时是否展示subtitle
+#   title_zh/en           中英文标题
+#   title_mb_zh           移动端标题数组（可选）
+#   subtitle_zh/en        中英文副标题（可选）
+#   desc_zh/en            中英文描述数组（可选）
+#   btn_zh/en             中英文按钮文案（可选）
+#   href_zh/en            中英文跳转链接
+#   is_blank              是否新窗口打开（可选）
+#   class_name            CSS 类名（可选）
+#   attach                右侧装饰图（可选）
+#   attach_href           装饰图链接（可选）
+#   locale                可见语言 zh / en / zh,en（可选，默认 zh,en）
+
+- locale: zh
+  bg_pc: ./images/banner/banner-sig_pc.png
+  bg_pad: ./images/banner/banner-sig_mo.png
+  bg_mb: ./images/banner/banner-sig_mo.png
+  bg_theme: light
+  title_zh: SIG中心
+  title_mb_zh:
+    - ""
+  banner_img_position: 55% 50%
+  subtitle_zh: 了解openGauss社区贡献者的角色及其职责
+  hide_subtitle_le_pad: true
+  btn_zh: 
+  href_zh: /zh/sig/sig-list/
+  is_blank: false
 
 - locale: zh
   bg_pc: ./images/banner/banner-internship_pc.png
