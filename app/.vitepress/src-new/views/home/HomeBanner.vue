@@ -42,6 +42,8 @@ function foldBanner(raw: any, langCode: string) {
     className: raw.class_name ?? '',
     rightInset: raw.attach ?? '',
     rightLink: raw.attach_href ?? '',
+    ...(raw.banner_img_position && { bannerImgPosition: raw.banner_img_position }),
+    ...(raw.hide_subtitle_le_pad && { hideSubTitleLePad: raw.hide_subtitle_le_pad }),
   };
 }
 
@@ -92,6 +94,7 @@ const currentBgTheme = computed(() => {
         <OFigure
           :class="{ 'banner-bg': true, 'use-dark-style': !item.bannersDark?.[current] }"
           :src="(theme === 'dark' && item.bannersDark?.[current]) || item.banners[current]"
+          :style="item.bannerImgPosition ? { '--figure-position': item.bannerImgPosition } : {}"
           @click="jump(item, item.btn !== '')"
         >
           <div class="banner-content">
@@ -105,7 +108,7 @@ const currentBgTheme = computed(() => {
                 <p v-else class="title" :class="{ 'teamup-title': item.link.includes('team-up') }">
                   {{ item.title }}
                 </p>
-                <p v-if="item.subtitle" class="subtitle">{{ item.subtitle }}</p>
+                <p v-if="item.subtitle && (!lePadV || !item.hideSubTitleLePad)" class="subtitle">{{ item.subtitle }}</p>
                 <p v-if="item.desc.length" class="desc">
                   <span v-for="itemDesc in item.desc" :key="itemDesc">{{ itemDesc }}</span>
                 </p>

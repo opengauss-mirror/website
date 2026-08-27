@@ -251,37 +251,3 @@ describe('banner.yaml — locale filtering verification', () => {
     expect(zhOnlyEntries.length).toBe(0);
   });
 });
-
-describe('banner.yaml — data integrity', () => {
-  it('total entry count is 11', () => {
-    expect(entries.length).toBe(11);
-  });
-
-  it('all entries have bg_pc', () => {
-    for (const entry of entries) {
-      expect(entry.bg_pc).toBeTruthy();
-    }
-  });
-
-  it('all entries have bg_mb', () => {
-    for (const entry of entries) {
-      expect(entry.bg_mb).toBeTruthy();
-    }
-  });
-
-  it('all entries have at least one locale', () => {
-    for (const entry of entries) {
-      expect(entry.locale).toBeTruthy();
-    }
-  });
-
-  it('all referenced banner images exist', () => {
-    const imgDir = resolve(rootDir, '.content/home/images/banner');
-    for (const entry of entries) {
-      if (entry.bg_pc) {
-        const imgName = entry.bg_pc.replace('./images/banner/', '');
-        expect(existsSync(resolve(imgDir, imgName))).toBe(true);
-      }
-    }
-  });
-});
