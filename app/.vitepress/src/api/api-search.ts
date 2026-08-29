@@ -1,7 +1,7 @@
 import { request } from '@/shared/axios';
 import type { AxiosResponse } from '@/shared/axios';
 import type { TagsParamsT, TagsDataT, SearchParamsT, SearchDataT, SearchCountParamsT, SearchCountT } from '@/shared/@types/type-search';
-import type { ResponseSearchT } from '@/shared/@types/type-common';
+import type { RelevantQueryT, ResponseSearchT } from '@/shared/@types/type-common';
 
 /**
  * 获取搜索关键词出现的文档版本及每个版本的数据量
@@ -23,17 +23,22 @@ export function getTagsData(params: TagsParamsT): Promise<ResponseSearchT<TagsDa
 }
 
 /**
+ * 搜索页-联想搜索
+ * @param {RelevantQueryT} params
+ * @return  {Object}
+ */
+export function getRelevant(params: RelevantQueryT): Promise<{
+  msg: string;
+  obj: { suggestList: string[] };
+  status: number;
+}> {
+  const url = `/api-search/search/sugg`;
+  return request.post(url, params).then((res: AxiosResponse) => res.data);
+}
+
+/**
  * 获取搜索关键词在本站点搜索的结果
- * @param {Object} params
- * @param {string} params.keyword     - 搜索关键词
- * @param {string} params.page        - 当前页码
- * @param {string} params.pageSize    - 每页数据条数
- * @param {string} params.lang        - 当前语言
- * @param {string} params.type        - 搜索分类
- * @param {Object} params.limit       - 版本限制参数
- * @param {string} params.limit.type       - 限制类型
- * @param {string} params.limit.version       - 版本号
- * @return {Promise<ResponseSearchT<SearchDataT>>}     返回一个 Promise，解析为搜索关键词搜索出来的内容
+ * @return 返回一个 Promise，解析为搜索关键词搜索出来的内容
  */
 export function getSearchData(params: SearchParamsT): Promise<ResponseSearchT<SearchDataT>> {
   const url = '/api-search/search/docsng';

@@ -21,12 +21,17 @@ export interface TagsDataT {
 }
 
 export interface SearchParamsT {
-  keyword: string;
-  page: number;
+  keyword: string; // 搜索关键词
+  page: number; // 当前页码
+  pageSize: number; // 每页数据条数
   hq?:string;
-  pageSize: number;
-  lang: string;
-  type: string;
+  lang: string; // 当前语言
+  type: string; // 搜索分类
+  correctEnable?: boolean;
+  limit: {
+    type: string; // 限制类型
+    version: string; // 版本号
+  }[]
 }
 
 interface SearchDataItemT {
@@ -42,6 +47,11 @@ export interface SearchDataT {
   keyword: string;
   page: number;
   pageSize: number;
+  correction?: {
+    keyword: string;
+    /** 纠错值 */
+    corrected?: string;
+  };
   records: SearchDataItemT[];
 }
 

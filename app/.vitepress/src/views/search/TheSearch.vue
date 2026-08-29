@@ -2,7 +2,7 @@
 import { computed, ref, onMounted, watch, reactive, onUnmounted } from 'vue';
 import { useData, useRoute, useRouter } from 'vitepress';
 import { useI18n } from '@/i18n';
-import { getSearchData, getSearchCount, getTagsData } from '@/api/api-search';
+import { getSearchData, getSearchCount, getTagsData, getRelevant } from '@/api/api-search';
 
 import { OSearchInput } from '@opendesign-plus/components';
 
@@ -20,15 +20,19 @@ import { oaReport } from '@opendesign-plus/plugins/analytics';
 
 import { SearchCountItemT } from '@/shared/@types/type-search';
 import { getUrlParam } from '~@/utils/common';
-import { useDebounceFn } from '@vueuse/core';
+import { useDebounceFn, useUrlSearchParams } from '@vueuse/core';
 import { getSearchWord, imageSearch, imageUpload } from '~@/api/api-search';
+import TheSearchCorrection from './components/TheSearchCorrection.vue';
+import { useScreen } from '~@/composables/useScreen';
+import { ODivider } from '@opensig/opendesign';
+import TheSearchRelated from './components/TheSearchRelated.vue';
 
 const screenWidth = useWindowResize();
 const isMobile = computed(() => (screenWidth.value <= 768 ? true : false));
 
 const { lang } = useData();
+const { lePadV } = useScreen();
 const router = useRouter();
-const route = useRoute();
 const i18n = useI18n();
 const activeVersion = ref('');
 // 当前选择类型
@@ -47,6 +51,11 @@ const searchInput = ref<string>('');
 const searchNumber = ref<SearchCountItemT[]>([]);
 // 显示的数据类型
 const searchType = ref('');
+
+const sanitizeSearchInput = (val: string) => val.replace(/[,.;'"<>?!/\\，。、；’”——《》【】（）？！]/g, '').trim();
+
+const urlParams = useUrlSearchParams('history');
+
 const searchDataParams = computed(() => {
   return {
     keyword: searchInput.value || decodeURIComponent(location.href.split('=')[1]),
@@ -64,7 +73,7 @@ const searchDataParams = computed(() => {
   };
 });
 
-const imageUrl = ref('');
+const imageUrl = computed(() => urlParams.imageUrl as string ?? '');
 const suggestItems = ref<{ key: string; count?: number }[]>([]);
 const hasImage = computed(() => !!imageUrl.value);
 
@@ -98,14 +107,18 @@ const uploadImage = async (file: File) => {
 
 const onSearch = (payload: { keyword: string; imageUrl?: string }) => {
   const { keyword, imageUrl } = payload;
-  const query = { q: '', imageUrl: '' };
-  if (keyword) query.q = keyword;
-  if (imageUrl) query.imageUrl = imageUrl;
-  const queryString = Object.entries(query)
+  if (keyword) {
+    searchInput.value = sanitizeSearchInput(keyword);
+  }
+  if (imageUrl) urlParams.imageUrl = imageUrl;
+  // 清空旧数据
+  correctedList.value = [];
+  relatedList.value = [];
+  const queryString = Object.entries({ q: searchInput.value, imageUrl })
     .filter(([_, v]) => !!v)
-    .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`)
+    .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v as string)}`)
     .join('&');
-  window.open(`${route.path}?${queryString}`, '_self');
+  router.go(`/${lang.value}/search/?${queryString}`);
 };
 
 const searchCountParams = computed(() => {
@@ -167,6 +180,7 @@ async function searchCountAll(keyword?: string) {
   try {
     const res = await getSearchCount({ ...searchCountParams.value, ...(keyword && { keyword }) });
     if (res.status === 200 && Array.isArray(res.obj?.total)) {
+      getRelatedData();
       searchNumber.value = res.obj.total;
       const index = searchNumber.value.findIndex((item: SearchCountItemT) => item.key === searchType.value);
       if (index > -1) {
@@ -181,7 +195,7 @@ async function searchCountAll(keyword?: string) {
 }
 
 // 获取搜索结果的数据
-async function searchDataAll() {
+async function searchDataAll(disableCorrect?: boolean) {
   searchResultList.value = [];
   pageShow.value = false;
   isNotFound.value = false;
@@ -191,8 +205,12 @@ async function searchDataAll() {
   }
 
   try {
-    const res = await getSearchData(searchDataParams.value);
+    const res = await getSearchData(disableCorrect === false ? { ...searchDataParams.value, correctEnable: disableCorrect } : searchDataParams.value);
     if (res.status === 200 && Array.isArray(res.obj?.records)) {
+      // 搜索纠错
+      const correctedRaw = res.obj.correction?.corrected;
+      correctedList.value = correctedRaw ? (Array.isArray(correctedRaw) ? correctedRaw : [correctedRaw]) : [];
+
       searchResultList.value = res.obj.records;
       pageShow.value = true;
       isNotFound.value = false;
@@ -211,7 +229,7 @@ async function searchDataAll() {
   }
 }
 
-const doImageSearch = () => {
+const doImageSearch = async () => {
   searchResultList.value = [];
   pageShow.value = false;
   isNotFound.value = false;
@@ -225,35 +243,34 @@ const doImageSearch = () => {
     type: searchType.value,
   };
 
-  imageSearch(imageSearchParams)
-    .then((res) => {
-      if (res.status === 201) {
-        isNotFound.value = true;
-        pageShow.value = false;
-        return;
-      }
-      const obj = res.obj;
-      const records = Array.isArray(obj) ? obj : (obj.records ?? []);
-      searchResultList.value = records;
-      total.value = obj.total ?? records.length;
-      isNotFound.value = false;
-      pageShow.value = true;
-
-      // 用后端综合后的关键词调辅助接口，不影响用户输入的 searchInput
-      const imageKeyword = obj.keyword;
-      if (imageKeyword) {
-        searchCountAll(imageKeyword);
-      }
-    })
-    .catch(() => {
-      searchResultList.value = [];
+  try {
+    const res = await imageSearch(imageSearchParams)
+    if (res.status === 201) {
       isNotFound.value = true;
       pageShow.value = false;
-    });
+      return;
+    }
+    const obj = res.obj;
+    const records = Array.isArray(obj) ? obj : (obj.records ?? []);
+    searchResultList.value = records;
+    total.value = obj.total ?? records.length;
+    isNotFound.value = false;
+    pageShow.value = true;
+  
+    // 用后端综合后的关键词调辅助接口，不影响用户输入的 searchInput
+    const imageKeyword = obj.keyword;
+    if (imageKeyword) {
+      searchCountAll(imageKeyword);
+    }
+  } catch {
+    searchResultList.value = [];
+    isNotFound.value = true;
+    pageShow.value = false;
+  }
 };
 
 // 获取搜索结果的所有内容
-async function searchAll(current?: string) {
+async function searchAll(current?: string, disableCorrect?: boolean) {
   if (!searchInput.value && !imageUrl.value) {
     return;
   }
@@ -266,9 +283,10 @@ async function searchAll(current?: string) {
   searchType.value = current || '';
 
   if (imageUrl.value) {
-    doImageSearch();
+    await doImageSearch();
   } else {
-    const [_, result] = await Promise.all([searchCountAll(), searchDataAll()]);
+    searchCountAll();
+    const result = await searchDataAll(disableCorrect)
     if (result === 'no-docs-data') {
       searchType.value = '';
       searchAll();
@@ -370,15 +388,25 @@ async function getVersionTag() {
 
 let unwatchActiveVersion: ReturnType<typeof watch>;
 
+// ================ 搜索纠错 ================
+const correctedList = ref([] as string[]);
+const correctedTerm = computed(() => correctedList.value[0] || '');
+
+const handleCorrectionSearch = () => searchAll('', false);
+
+// ================ 联想搜索 ================
+const relatedList = ref<string[]>([]);
+const getRelatedData = async () => {
+  const res = await getRelevant(searchDataParams.value);
+  relatedList.value = res?.obj?.suggestList || [];
+};
+const relatedSearch = (val: string) => {
+  onSearch({ keyword: val });
+};
+
 onMounted(async () => {
-  if (location.search) {
-    const params = new URLSearchParams(location.search);
-    if (params.get('imageUrl')) {
-      imageUrl.value = decodeURIComponent(params.get('imageUrl')!);
-    }
-    if (params.get('q')) {
-      searchInput.value = decodeURIComponent(params.get('q')!);
-    }
+  if (urlParams.q) {
+    searchInput.value = sanitizeSearchInput(decodeURIComponent(urlParams.q as string));
   }
   await getVersionTag();
 
@@ -395,6 +423,7 @@ onMounted(async () => {
       searchAll(searchType.value);
     }
   );
+
 });
 
 onUnmounted(() => unwatchActiveVersion?.());
@@ -419,6 +448,22 @@ onUnmounted(() => unwatchActiveVersion?.());
       @image-upload-start="hasImage = true"
       @image-clear="hasImage = false"
     />
+
+    <!-- 搜索纠错 -->
+    <i18n-t
+      v-show="correctedTerm && correctedTerm !== searchInput"
+      keypath="search.correctionTip"
+      tag="div"
+      class="correct-list-box"
+    >
+      <template #corrected>
+        <span>{{ correctedTerm }}</span>
+      </template>
+      <template #original>
+        <span class="correction-link" @click="handleCorrectionSearch">{{ searchInput }}</span>
+      </template>
+    </i18n-t>
+
     <div class="search-content">
       <div class="select-options">
         <ul class="type">
@@ -447,22 +492,50 @@ onUnmounted(() => unwatchActiveVersion?.());
         </ClientOnly>
       </div>
       <div class="content-box">
-        <ul v-if="searchResultList.length" class="content-list">
-          <li v-for="(item, index) in searchResultList" :key="item.id">
-            <!-- eslint-disable-next-line -->
-            <h3 @click="goLink(item, index)" v-dompurify-html="item.title"></h3>
-            <!-- eslint-disable-next-line -->
-            <p class="detail" v-dompurify-html="item.textContent"></p>
-            <p class="from">
-              <span>{{ i18n.search.form }}</span>
-              <span>{{ i18n.search.tagList[item.type] }}</span>
-              <template v-if="item.version">
-                <span class="version">{{ i18n.search.version }}</span>
-                <span>{{ item.version }}</span>
+        <template v-if="searchResultList.length">
+          <!-- 搜索结果列表 -->
+          <ul class="content-list">
+            <template v-for="(item, index) in searchResultList" :key="item.id">
+              <!-- 手机端搜索纠错 & 相关搜索 -->
+              <template v-if="index === 11 && lePadV">
+                <li>
+                  <TheSearchRelated
+                    :related-list="relatedList"
+                    :keyword="searchInput"
+                    @search="relatedSearch"
+                  />
+                </li>
+                <li v-if="correctedTerm && correctedTerm !== searchInput">
+                  <TheSearchCorrection :original="searchInput" :corrected="correctedTerm" />
+                </li>
               </template>
-            </p>
-          </li>
-        </ul>
+              <li v-else>
+                <!-- eslint-disable-next-line -->
+                <h3 @click="goLink(item, index)" v-dompurify-html="item.title"></h3>
+                <!-- eslint-disable-next-line -->
+                <p class="detail" v-dompurify-html="item.textContent"></p>
+                <p class="from">
+                  <span>{{ i18n.search.form }}</span>
+                  <span>{{ i18n.search.tagList[item.type] }}</span>
+                  <template v-if="item.version">
+                    <span class="version">{{ i18n.search.version }}</span>
+                    <span>{{ item.version }}</span>
+                  </template>
+                </p>
+              </li>
+            </template>
+          </ul>
+            <!-- 桌面端相关搜索 -->
+          <template v-if="relatedList.length && !lePadV">
+            <ODivider direction="v" />
+            <TheSearchRelated
+              :related-list="relatedList"
+              :keyword="searchInput"
+              size="small"
+              @search="relatedSearch"
+            />
+          </template>
+        </template>
         <NotFound v-if="isNotFound" :no-data-tip="i18n.common.Not_Found" />
       </div>
       <div v-if="totalPage > 1 && pageShow" class="page-box">
@@ -488,6 +561,17 @@ onUnmounted(() => unwatchActiveVersion?.());
   </div>
 </template>
 <style lang="scss" scoped>
+.correct-list-box {
+  margin: 8px 0 0;
+  @include tip1;
+  @include respond-to('<=pad_v') {
+    display: none;
+  }
+  .correction-link {
+    cursor: pointer;
+  }
+}
+
 .search :deep(.o-search-panel-common-header)  {
   margin-bottom: var(--o-gap-3);
 }
@@ -501,7 +585,6 @@ onUnmounted(() => unwatchActiveVersion?.());
   max-width: 1504px;
   padding: var(--e-spacing-h2) 44px var(--e-spacing-h1);
   margin: 0 auto;
-
   .pagination-slot {
     font-size: var(--e-font-size-text);
     font-weight: 300;
@@ -522,6 +605,10 @@ onUnmounted(() => unwatchActiveVersion?.());
   @media (max-width: 768px) {
     padding: 0 0 var(--e-spacing-h2) 0;
     padding-top: var(--e-spacing-h5);
+    .o-search-input {
+      width: auto;
+      margin: 0 16px;
+    }
   }
 
   @media (max-width: 768px) {
@@ -644,8 +731,11 @@ onUnmounted(() => unwatchActiveVersion?.());
       }
     }
     .content-box {
+      display: flex;
       box-shadow: var(--e-shadow-l1);
       background-color: var(--e-color-bg2);
+      padding: 0 var(--e-spacing-h2) var(--e-spacing-h2) var(--e-spacing-h2);
+      --feed-back-width: 25%;
       @media (max-width: 768px) {
         width: 100vw;
         padding: var(--e-spacing-h5) var(--e-spacing-h5) 0 var(--e-spacing-h5);
@@ -653,8 +743,12 @@ onUnmounted(() => unwatchActiveVersion?.());
         background-color: var(--e-color-bg1);
         box-shadow: none;
       }
+      @include respond-to('<=pad_v') {
+        --feed-back-width: 100%;
+      }
       .content-list {
-        padding: 0 var(--e-spacing-h2) var(--e-spacing-h2) var(--e-spacing-h2);
+        width: 100%;
+        // max-width: calc(100% - 2 * var(--o-r-gap-6) - 1px - var(--feed-back-width));
         @media (max-width: 768px) {
           padding: 0;
           background-color: var(--e-color-bg2);
@@ -729,6 +823,14 @@ onUnmounted(() => unwatchActiveVersion?.());
             margin-left: var(--e-spacing-h4);
           }
         }
+      }
+      .o-divider {
+        height: auto;
+        margin-top: var(--e-spacing-h2);
+        --o-divider-label-gap: var(--o-r-gap-6);
+      }
+      .search-related {
+        width: var(--feed-back-width);
       }
     }
 
