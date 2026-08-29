@@ -16,6 +16,7 @@ import vastdataDark from '@/assets/category/authentication/training/img/talent/v
 import szDark from '@/assets/category/authentication/training/img/talent/sz_dark.png';
 import qstDark from '@/assets/category/authentication/training/img/talent/qst_dark.png';
 import { computed } from 'vue';
+import { BIGDATA_10086_LINK, EDUPLUS_LINK, MODB_LINK, SHENTONG_DATA_LINK, VASTDATA_LINK } from '~@/data/url-config';
 
 const commonStore = useCommon();
 const { gtPhone } = useScreen();
@@ -84,7 +85,7 @@ const courseGuides = [
                 color="primary"
                 round="pill"
                 variant="solid"
-                href="https://www.modb.pro/course/217"
+                :href="`${MODB_LINK}/course/217`"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -106,7 +107,7 @@ const courseGuides = [
                 color="primary"
                 round="pill"
                 variant="solid"
-                href="https://education.vastdata.com.cn/pc/#/index/examDetails?id=2aa4e38e74e63edb784a9b60b5cd1d2e&type=1"
+                :href="`${VASTDATA_LINK}/pc/#/index/examDetails?id=2aa4e38e74e63edb784a9b60b5cd1d2e&type=1`"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -128,7 +129,7 @@ const courseGuides = [
                 color="primary"
                 round="pill"
                 variant="solid"
-                href="https://education.vastdata.com.cn/pc/#/index/examDetails?id=574097fb8c5b92090c33f96c06347a16&type=1"
+                :href="`${VASTDATA_LINK}/pc/#/index/examDetails?id=574097fb8c5b92090c33f96c06347a16&type=1`"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -150,7 +151,7 @@ const courseGuides = [
                 color="primary"
                 round="pill"
                 variant="solid"
-                href="http://shentongdata.com/index.php/course/exam-58"
+                :href="`${SHENTONG_DATA_LINK}/index.php/course/exam-58`"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -172,7 +173,7 @@ const courseGuides = [
                 color="primary"
                 round="pill"
                 variant="solid"
-                href="https://www.eduplus.net/training/openGauss"
+                :href="`${EDUPLUS_LINK}/training/openGauss`"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -194,7 +195,7 @@ const courseGuides = [
                 color="primary"
                 round="pill"
                 variant="solid"
-                href="https://bigdata.10086.cn/honghu/hhweb/#/certify"
+                :href="`${BIGDATA_10086_LINK}/honghu/hhweb/#/certify`"
                 target="_blank"
                 rel="noopener noreferrer"
               >

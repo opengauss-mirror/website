@@ -5,7 +5,7 @@ import textImgMb from '../img/banner-text-mb.png';
 import bracket from '../img/bracket.png';
 import keyboard from '../img/keyboard.png';
 
-import { FORUM_LINK } from '@/data/url-config';
+import { E_COMPAIGN_LINK, ETHERPAD_LINK, FORUM_LINK } from '@/data/url-config';
 
 export default {
   banner: {
@@ -13,7 +13,7 @@ export default {
     bgMo: bannerSummitMb,
     textImg: textImg,
     textImgMb: textImgMb,
-    signUpHref: 'https://e-campaign.huawei.com/events3/UniversalForm/register/773773941/register.html?site=cn&formId=11231&way=onsite',
+    signUpHref: `${E_COMPAIGN_LINK}/events3/UniversalForm/register/773773941/register.html?site=cn&formId=11231&way=onsite`,
     signUpTitle: '立即观看',
   },
   intro: {
@@ -148,19 +148,19 @@ export default {
             {
               title: 'SIG Gathering：openGauss内核',
               desc: '聚焦数据库"架构-性能-生态"核心突破，本专题将深度解析openGauss内核新特性与创新实践，包括 7.0.0版本核心技术解读与演进路线、RAC架构创新方案揭秘深度揭秘、SQL引擎技术体系技术拆解等。诚邀提交架构设计、性能调优、工程实践等深度议题。',
-              href: 'https://etherpad.opengauss.org/p/openGauss%E5%86%85%E6%A0%B8',
+              href: `${ETHERPAD_LINK}/p/openGauss%E5%86%85%E6%A0%B8`,
               text: '查看议题',
             },
             {
               title: 'SIG Gathering：智能数据融合',
               desc: '围绕 openGauss 向量存储能力，探讨数据库在 AI 时代面临的挑战和机遇。从向量索引的更新和压缩、到基于 openGauss 在 RAG 场景的实践，其他上层应用的支持接入等，帮助开发者了解 openGauss 向量数据库的优势和使用方法。',
-              href: 'https://etherpad.opengauss.org/p/%E6%99%BA%E8%83%BD%E6%95%B0%E6%8D%AE%E8%9E%8D%E5%90%88',
+              href: `${ETHERPAD_LINK}/p/%E6%99%BA%E8%83%BD%E6%95%B0%E6%8D%AE%E8%9E%8D%E5%90%88`,
               text: '查看议题',
             },
             {
               title: 'SIG Gathering：用户体验/工具',
               desc: '聚焦数据库"安装-迁移-运维"全链体验升级，本专题将展示openGauss在下载优化、DataKit慢SQL全周期诊断、SQLite兼容测试等工具链的创新实践，同步规划后续体验优化方向。现开放议题征集通道，欢迎工具链痛点分析、交互体验优化方案、生态兼容性实践、智能运维新思路等方向议题。',
-              href: 'https://etherpad.opengauss.org/p/%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C%E5%B7%A5%E5%85%B7',
+              href: `${ETHERPAD_LINK}/p/%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C%E5%B7%A5%E5%85%B7`,
               text: '查看议题',
             },
           ],

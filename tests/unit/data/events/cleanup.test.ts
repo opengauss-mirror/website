@@ -1,5 +1,5 @@
 import { expect, describe, it } from 'vitest';
-import { existsSync, readFileSync } from 'fs';
+import { existsSync, readFileSync, statSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -11,6 +11,18 @@ const scriptPath = resolve(rootDir, 'scripts/readEventsFrontmatter.js');
 const packageJsonPath = resolve(rootDir, 'package.json');
 const contentBridgePath = resolve(rootDir, 'app/.vitepress/src-new/data/events/content-bridge.ts');
 const oldSourceIndexPath = resolve(rootDir, 'app/.vitepress/src/data/events/index.ts');
+
+function readJson(filePath: string) {
+  // 1. 防御：先检查文件大小，超过 5MB 拒绝执行，防止大文件攻击
+  const stats = statSync(filePath);
+  if (stats.size > 5 * 1024 * 1024) {
+    throw new Error('File too large, potential DoS risk.');
+  }
+
+  // 2. 读取并解析
+  const content = readFileSync(filePath, 'utf-8');
+  return JSON.parse(content);
+}
 
 describe('zh.ts 文件删除验证', () => {
   it('zh.ts 文件不存在', () => {
@@ -25,7 +37,7 @@ describe('readEventsFrontmatter.js 脚本删除验证', () => {
 });
 
 describe('package.json predev/prebuild 移除验证', () => {
-  const packageJson = JSON.parse(readFileSync(packageJsonPath, 'utf-8'));
+  const packageJson = readJson(packageJsonPath);
 
   it('package.json 中无 predev 脚本', () => {
     expect(packageJson.scripts).not.toHaveProperty('predev');

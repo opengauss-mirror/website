@@ -1,6 +1,6 @@
 import type { PageData, UserConfig } from 'vitepress';
 import vueI18n from '@intlify/unplugin-vue-i18n/vite';
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, readFileSync, statSync } from 'node:fs';
 import process from 'node:process';
 import { dirname, join } from 'node:path';
 import hljs from 'highlight.js';
@@ -12,6 +12,18 @@ import { PRIORITY_MAP, DEFAULT_PRIORITY, normalizeSitemapUrl } from './sitemap-p
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const geoDir = join(__dirname, '../../.geo')
+
+function readJson(filePath: string) {
+  // 1. 防御：先检查文件大小，超过 5MB 拒绝执行，防止大文件攻击
+  const stats = statSync(filePath);
+  if (stats.size > 5 * 1024 * 1024) {
+    throw new Error('File too large, potential DoS risk.');
+  }
+
+  // 2. 读取并解析
+  const content = readFileSync(filePath, 'utf-8');
+  return JSON.parse(content);
+}
 
 const excludes = process.argv
   .filter(arg => arg.startsWith('--exclude='))
@@ -50,7 +62,7 @@ const setJSONLD = async (pageData: PageData, pagePath: string) => {
 
 const setTdk = (pageData: PageData, pagePath: string) => {
   const jsonFile = join(geoDir, 'tdks', pagePath, 'index.json');
-  const tdkInfo = existsSync(jsonFile) ? JSON.parse(readFileSync(jsonFile, 'utf-8')) : null;
+  const tdkInfo = existsSync(jsonFile) ? readJson(jsonFile) : null;
 
   pageData.titleTemplate = `:title | ${pagePath.startsWith('zh') ? 'openGauss社区官网' : 'openGauss Official Website'}`;
   if (!tdkInfo) {
@@ -77,7 +89,7 @@ const config: UserConfig = {
     hostname: 'https://opengauss.org',
     transformItems(items) {
       try {
-        const lastmodeTimeStamp = JSON.parse(readFileSync(join(geoDir, 'sitemap-records.json'), 'utf-8')) as Record<string, number>;
+        const lastmodeTimeStamp = readJson(join(geoDir, 'sitemap-records.json')) as Record<string, number>;
         for (const item of items) {
           const key = item.url.endsWith('.html') ? item.url.replace('.html', '.md') : (item.url.endsWith('/') ? `${item.url}index.md` : `${item.url}/index.md`);
           const generatedItem = lastmodeTimeStamp[key];
@@ -228,7 +240,6 @@ const config: UserConfig = {
     },
     config(md) {
       md.set({
-        html: true,
         linkify: false,
       });
     },

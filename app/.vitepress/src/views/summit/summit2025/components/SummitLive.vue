@@ -7,6 +7,7 @@ import { useScreen } from '@/shared/useScreen';
 import { v4 as uniqueId } from 'uuid';
 
 import floorImg from '../img/floor-img.png';
+import { VHALLYUN_URL } from '@/data/url-config';
 
 const { lang } = useData();
 
@@ -50,7 +51,7 @@ const createUserId = () => {
 };
 
 const createLiveUrl = (liveId: string) => {
-  liveUrl.value = `https://hw.vhallyun.com/v2/watch/${liveId}?lang=zh&landScape=true&thirdId=${createUserId()}`;
+  liveUrl.value = `${VHALLYUN_URL}/v2/watch/${liveId}?lang=zh&landScape=true&thirdId=${createUserId()}`;
 };
 
 const height = ref(800);
@@ -73,7 +74,7 @@ const messageEvent = () => {
   window.addEventListener(
     'message',
     function (event) {
-      if (event.origin === 'https://hw.vhallyun.com') {
+      if (event.origin === VHALLYUN_URL) {
         let data = {
           state: '',
         };

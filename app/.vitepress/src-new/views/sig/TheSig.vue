@@ -8,6 +8,7 @@ import TheSigIntro from './TheSigIntro.vue';
 import TheSigDesc from './TheSigDesc.vue';
 import { windowOpen } from '@/shared/utils';
 import sigContent from '#content/sig';
+import { GITCODE_LINK } from '~@/data/url-config/index.js';
 
 const { lang } = useData();
 const sigDetailInfoData = ref<any[]>([]);
@@ -39,7 +40,7 @@ const list = computed(() => {
       ...(landscapeData?.maintainer_info && { maintainer_info: landscapeData.maintainer_info }),
       ...(landscapeData?.repositories && { repositories: landscapeData.repositories }),
       name: sig.sig_name,
-      atomgitUrl: `https://gitcode.com/opengauss/tc/tree/master/sigs/${sig.sig_name}`,
+      atomgitUrl: `${GITCODE_LINK}/opengauss/tc/tree/master/sigs/${sig.sig_name}`,
       subscribeUrl: sig.mailweb_link,
     };
   });

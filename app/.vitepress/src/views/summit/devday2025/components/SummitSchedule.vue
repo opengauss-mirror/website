@@ -5,6 +5,7 @@ import { useCommon } from '@/stores/common';
 import time from '../img/time.svg';
 import timeDark from '../img/time-dark.svg';
 import cardBg from '../img/card-bg.png';
+import { windowOpen } from '@/shared/utils';
 
 defineProps({
   agendaData: {
@@ -23,7 +24,7 @@ const commonStore = useCommon();
 const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
 
 const onButtonClick = (href: string) => {
-  window.open(href, '_blank');
+  windowOpen(href, '_blank');
 };
 </script>
 

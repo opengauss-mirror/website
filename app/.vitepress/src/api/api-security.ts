@@ -33,8 +33,8 @@ export function getSecurityList(params: SecurityQueryT): Promise<{
   totalCount: number;
   totalPage: number;
 }> {
-  const url = `/api-cve/v1/gauss/sa?pageNum=${params.pageNum}&pageSize=${params.pageSize}&searchName=${params.searchName}&years=${params.years}&cveLevel=${params.cveLevel}&releaseFlag=${params.releaseFlag}`;
-  return request.get(url).then((res: AxiosResponse) => res.data);
+  const url = `/api-cve/v1/gauss/sa`;
+  return request.get(url, { params }).then((res: AxiosResponse) => res.data);
 }
 
 /**

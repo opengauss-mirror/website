@@ -2,7 +2,7 @@ import downloadContent from '#content/download';
 import versionDataMap from '#content/download/versions';
 import { GITCODE_LINK } from '@/data/url-config';
 
-const DOCS_ORIGIN = import.meta.env.VITE_DOCS_ORIGIN || 'https://docs.opengauss.org';
+const DOCS_ORIGIN = import.meta.env.VITE_DOCS_ORIGIN as string;
 const GITCODE = GITCODE_LINK;
 
 function replacePlaceholders(str: string): string {

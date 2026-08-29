@@ -39,7 +39,7 @@ const applyMb = computed(() => {
           <p v-if="item.desc" class="desc">{{ item.desc }}</p>
           <div v-if="item.email" class="desc">
             {{ item.emailtext1 }}
-            <OLink color="primary" variant="text" hoverUnderline :href="`mailto:${item.email}`" target="_blank">
+            <OLink color="primary" variant="text" hoverUnderline :href="`mailto:${item.email}`" target="_blank" rel="noopener noreferrer">
               {{ item.email }}
             </OLink>
             {{ item.emailtext2 }}
@@ -59,7 +59,7 @@ const applyMb = computed(() => {
             <p v-if="item.desc" class="desc">{{ item.desc }}</p>
             <div v-if="item.email" class="desc">
               {{ item.emailtext1 }}
-              <OLink color="primary" variant="text" hoverUnderline :href="`mailto:${item.email}`" target="_blank">
+              <OLink color="primary" variant="text" hoverUnderline :href="`mailto:${item.email}`" target="_blank" rel="noopener noreferrer">
                 {{ item.email }}
               </OLink>
               {{ item.emailtext2 }}
@@ -110,7 +110,7 @@ const applyMb = computed(() => {
             <p v-if="item.desc" class="card-desc">{{ item.desc }}</p>
             <div v-if="item.email" class="card-desc">
               {{ item.emailtext1 }}
-              <OLink color="primary" variant="text" :href="`mailto:${item.email}`" target="_blank">
+              <OLink color="primary" variant="text" :href="`mailto:${item.email}`" target="_blank" rel="noopener noreferrer">
                 {{ item.email }}
               </OLink>
               {{ item.emailtext2 }}

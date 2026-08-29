@@ -3,6 +3,7 @@ import { markRaw } from 'vue';
 import IconOutLink from '~icons/app-new/icon-out-link.svg';
 import odd from '~@/assets/category/header/odd.png';
 import report from '~@/assets/category/header/report.png';
+import { DISCUSS_OPENGAUSS_LINK, GITCODE_LINK, CLA_LINK, DATA_LINK, GITHUB_LINK } from '~@/data/url-config';
 
 const OutLink = markRaw(IconOutLink);
 
@@ -61,11 +62,11 @@ export default {
         },
         {
           NAME: 'openGauss 6.0.1版本安装指南',
-          URL: 'https://docs.opengauss.org/zh/docs/6.0.0/docs/InstallationGuide/InstallationGuide.html',
+          URL: `${import.meta.env.VITE_DOCS_ORIGIN}/zh/docs/6.0.0/docs/InstallationGuide/InstallationGuide.html`,
         },
         {
           NAME: '技术白皮书',
-          URL: 'https://docs.opengauss.org/zh/docs/6.0.0/docs/TechnicalWhitePaper/Technicalwhitepaper.html',
+          URL: `${import.meta.env.VITE_DOCS_ORIGIN}/zh/docs/6.0.0/docs/TechnicalWhitePaper/Technicalwhitepaper.html`,
         },
       ],
     },
@@ -85,7 +86,7 @@ export default {
             {
               NAME: 'CLA签署',
               DESCRIPTION: '参与贡献前，需签署贡献者许可协议（CLA）',
-              URL: 'https://clasign.osinfra.cn/sign/gitee_opengauss-1614047760000855378',
+              URL: `${CLA_LINK}/sign/gitee_opengauss-1614047760000855378`,
               ICON: OutLink,
             },
             {
@@ -114,27 +115,27 @@ export default {
               NAME: '文档中心',
               DESCRIPTION: '提供各使用场景所需的用户手册',
               TAG: TAG_TYPE.NEW,
-              URL: 'https://docs.opengauss.org/zh/',
+              URL: `${import.meta.env.VITE_DOCS_ORIGIN}/zh/`,
             },
             {
               NAME: '新手入门',
               DESCRIPTION: '10分钟玩转社区，快速构建与成长',
-              URL: 'https://docs.opengauss.org/zh/docs/latest/getting_started/understanding_opengauss.html',
+              URL: `${import.meta.env.VITE_DOCS_ORIGIN}/zh/docs/latest/getting_started/understanding_opengauss.html`,
             },
             {
               NAME: '安装指南',
               DESCRIPTION: '指导用户完成 openGauss 数据库安装',
-              URL: 'https://docs.opengauss.org/zh/docs/latest/installation_guide/installation_overview.html',
+              URL: `${import.meta.env.VITE_DOCS_ORIGIN}/zh/docs/latest/installation_guide/installation_overview.html`,
             },
             {
               NAME: '常见问题',
               DESCRIPTION: '常见问题解决方法',
-              URL: 'https://docs.opengauss.org/zh/docs/common/faq/faq.html',
+              URL: `${import.meta.env.VITE_DOCS_ORIGIN}/zh/docs/common/faq/faq.html`,
             },
             {
               NAME: '文档开发指南',
               DESCRIPTION: '参与文档开发的方式',
-              URL: 'https://docs.opengauss.org/zh/docs/common/contribute/contribution_process.html',
+              URL: `${import.meta.env.VITE_DOCS_ORIGIN}/zh/docs/common/contribute/contribution_process.html`,
             },
           ],
         },
@@ -142,19 +143,19 @@ export default {
       SHORTCUT: [
         {
           NAME: '关于openGauss',
-          URL: 'https://docs.opengauss.org/zh/docs/latest/about_opengauss/about_opengauss.html',
+          URL: `${import.meta.env.VITE_DOCS_ORIGIN}/zh/docs/latest/about_opengauss/about_opengauss.html`,
         },
         {
           NAME: 'DataVec向量数据库',
-          URL: 'https://docs.opengauss.org/zh/docs/latest/datavec/datavec_overview.html',
+          URL: `${import.meta.env.VITE_DOCS_ORIGIN}/zh/docs/latest/datavec/datavec_overview.html`,
         },
         {
           NAME: 'openGauss DataVec + Dify，快速搭建你的智能助手平台',
-          URL: 'https://docs.opengauss.org/zh/docs/latest/datavec/opengauss_dify.html',
+          URL: `${import.meta.env.VITE_DOCS_ORIGIN}/zh/docs/latest/datavec/opengauss_dify.html`,
         },
         {
           NAME: '数据库管理指南',
-          URL: 'https://docs.opengauss.org/zh/docs/latest/database_administration_guide/database_concepts.html',
+          URL: `${import.meta.env.VITE_DOCS_ORIGIN}/zh/docs/latest/database_administration_guide/database_concepts.html`,
         },
       ],
     },
@@ -269,7 +270,7 @@ export default {
               NAME: '兼容性技术测评',
               DESCRIPTION: '帮助企业快速申请兼容性测评',
               ICON: OutLink,
-              URL: 'https://gitcode.com/opengauss/compatible-certification',
+              URL: `${GITCODE_LINK}/opengauss/compatible-certification`,
             },
           ],
         },
@@ -327,7 +328,7 @@ export default {
         },
         {
           NAME: '前往迁移互动专区',
-          URL: 'https://gitcode.com/opengauss/openGauss-workbench',
+          URL: `${GITCODE_LINK}/opengauss/openGauss-workbench`,
         },
         {
           NAME: 'MySQL迁移',
@@ -345,7 +346,7 @@ export default {
             {
               NAME: '贡献看板',
               DESCRIPTION: '查看openGauss社区数据',
-              URL: 'https://datastat.opengauss.org/zh/overview',
+              URL: `${DATA_LINK}/zh/overview`,
             },
             {
               NAME: '社区荣誉',
@@ -381,7 +382,7 @@ export default {
             {
               NAME: '社区论坛',
               DESCRIPTION: '参与开发者讨论openGauss',
-              URL: 'https://discuss.opengauss.org/',
+              URL: DISCUSS_OPENGAUSS_LINK,
             },
             {
               NAME: '邮件列表',
@@ -402,7 +403,7 @@ export default {
         },
         {
           NAME: '单位会员贡献',
-          URL: 'https://datastat.opengauss.org/zh/detail',
+          URL: `${DATA_LINK}/zh/detail`,
         },
       ],
     },
@@ -487,13 +488,13 @@ export default {
   SOURCE_CODE: [
     {
       NAME: 'GitCode',
-      PATH: 'https://gitcode.com/opengauss',
+      PATH: `${GITCODE_LINK}/opengauss`,
       ICON: OutLink,
     },
 
     {
       NAME: 'Github',
-      PATH: 'https://github.com/opengauss-mirror',
+      PATH: `${GITHUB_LINK}/opengauss-mirror`,
       ICON: OutLink,
     },
   ],

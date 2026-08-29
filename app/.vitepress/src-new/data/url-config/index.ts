@@ -6,6 +6,7 @@ const DOCS_LINK = 'https://docs.opengauss.org'; // gauss文档
 const BILIBILI_LINK2 = 'https://www.bilibili.com'; // bilibili官网
 const ENMOEDU_LINK = 'https://enmoedu.com'; // 恩墨学院
 const GITCODE_LINK = 'https://gitcode.com'; // gitcode官网
+const GITEE_LINK = 'https://gitee.com'; // gitee官网
 const OBS_VIDEO_LINK = 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com'; // 峰会录播存储的obs地址
 const OBS_MEETING_LINK = 'https://meetingvideo.obs.ap-southeast-1.myhuaweicloud.com'; // 开发者大会录播存储的obs地址
 const ETHERPAD_LINK = 'https://etherpad.opengauss.org'; // gauss的etherpad官网
@@ -48,6 +49,14 @@ const SHIMO_LINK = 'https://shimo.im'; // 石墨报名
 const SUMMIT2023_JOIN = 'https://e-campaign.huawei.com/t/BbuQr2'; // SUMMIT报名
 const CECN_LINK = 'http://www.ce.cn'; // 中国经济网
 
+export const MODB_LINK = 'https://www.modb.pro';
+export const VASTDATA_LINK = 'https://education.vastdata.com.cn';
+export const EDUPLUS_LINK = 'https://www.eduplus.net';
+export const BIGDATA_10086_LINK = 'https://bigdata.10086.cn';
+export const SHENTONG_DATA_LINK = 'http://shentongdata.com';
+export const DISCUSS_OPENGAUSS_LINK = 'https://discuss.opengauss.org/';
+export const DOCS_MINDSDB_LINK = 'https://docs.mindsdb.com';
+
 export {
   OBS_Summit_PPT,
   GAUSS_EMAIL,
@@ -71,6 +80,7 @@ export {
   BILIBILI_LINK2,
   ENMOEDU_LINK,
   GITCODE_LINK,
+  GITEE_LINK,
   OBS_VIDEO_LINK,
   OBS_MEETING_LINK,
   ETHERPAD_LINK,

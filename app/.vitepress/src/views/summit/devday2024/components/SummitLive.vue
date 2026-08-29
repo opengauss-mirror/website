@@ -7,6 +7,7 @@ import time from '../img/time.svg';
 import timeDark from '../img/time-dark.svg';
 import liveActiveBg from '../img/live-active.jpg';
 import liveActiveDarkBg from '../img/live-active-dark.jpg';
+import { HWLIVE_263LIVE } from '@/data/url-config';
 
 interface RenderData {
   id?: number;
@@ -40,7 +41,7 @@ const setLiveRoom = (item: RenderData, index: number): void => {
 };
 
 const createLiveUrl = (liveId: string) => {
-  liveUrl.value = `https://hwlive.263live.net/clv/live/login/${liveId}`;
+  liveUrl.value = `${HWLIVE_263LIVE}/clv/live/login/${liveId}`;
 };
 
 const height = ref(screenWidth.value <= 1100 ? 600 : 800);
@@ -76,7 +77,7 @@ const messageEvent = () => {
   window.addEventListener(
     'message',
     (event) => {
-      if (event.origin === 'https://hwlive.263live.net') {
+      if (event.origin === HWLIVE_263LIVE) {
         let data;
         data = event.data;
         if (data.eventType === 'is_iframe_resize') {

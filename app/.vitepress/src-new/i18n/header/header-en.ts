@@ -1,4 +1,5 @@
 import { markRaw } from 'vue';
+import { DISCUSS_OPENGAUSS_LINK, CLA_LINK, DATA_LINK, GITCODE_LINK, GITHUB_LINK } from '~@/data/url-config';
 
 import IconOutLink from '~icons/app-new/icon-out-link.svg';
 
@@ -60,11 +61,11 @@ export default {
         },
         {
           NAME: 'openGauss 6.0.1 Installation Guide',
-          URL: 'https://docs.opengauss.org/en/docs/latest/installation_guide/installation_overview.html',
+          URL: `${import.meta.env.VITE_DOCS_ORIGIN}/en/docs/latest/installation_guide/installation_overview.html`,
         },
         {
           NAME: 'Technical White Papers',
-          URL: 'https://docs.opengauss.org/en/docs/6.0.0/docs/TechnicalWhitePaper/Technicalwhitepaper.html',
+          URL: `${import.meta.env.VITE_DOCS_ORIGIN}/en/docs/6.0.0/docs/TechnicalWhitePaper/Technicalwhitepaper.html`,
         },
       ],
     },
@@ -84,7 +85,7 @@ export default {
             {
               NAME: 'CLA',
               DESCRIPTION: 'Sign the CLA to protect your work—multiple options available!',
-              URL: 'https://clasign.osinfra.cn/sign/gitee_opengauss-1614047760000855378',
+              URL: `${CLA_LINK}/sign/gitee_opengauss-1614047760000855378`,
               ICON: OutLink,
             },
             {
@@ -113,22 +114,22 @@ export default {
               NAME: 'Document Center',
               DESCRIPTION: 'Your go-to resource for different usage scenarios.',
               TAG: TAG_TYPE.NEW,
-              URL: 'https://docs.opengauss.org/en/',
+              URL: `${import.meta.env.VITE_DOCS_ORIGIN}/en/`,
             },
             {
               NAME: 'Quick Start',
               DESCRIPTION: 'Learn the community essentials in 10 minutes.',
-              URL: 'https://docs.opengauss.org/en/docs/latest/getting_started/getting_started.html',
+              URL: `${import.meta.env.VITE_DOCS_ORIGIN}/en/docs/latest/getting_started/getting_started.html`,
             },
             {
               NAME: 'Installation Guide',
               DESCRIPTION: 'Step-by-step instructions for installing openGauss.',
-              URL: `https://docs.opengauss.org/en/docs/latest/installation_guide/installation_overview.html`,
+              URL: `${import.meta.env.VITE_DOCS_ORIGIN}/en/docs/latest/installation_guide/installation_overview.html`,
             },
             {
               NAME: 'Documentation Development Guide',
               DESCRIPTION: 'Discover how you can contribute to document development.',
-              URL: `https://docs.opengauss.org/en/docs/common/contribute/directory_structure_introductory.html`,
+              URL: `${import.meta.env.VITE_DOCS_ORIGIN}/en/docs/common/contribute/directory_structure_introductory.html`,
             },
           ],
         },
@@ -136,11 +137,11 @@ export default {
       SHORTCUT: [
         {
           NAME: 'About openGauss',
-          URL: `https://docs.opengauss.org/en/docs/latest/about_opengauss/about_opengauss.html`,
+          URL: `${import.meta.env.VITE_DOCS_ORIGIN}/en/docs/latest/about_opengauss/about_opengauss.html`,
         },
         {
           NAME: 'Database Administration Guide',
-          URL: `https://docs.opengauss.org/en/docs/latest/database_administration_guide/database_concepts.html`,
+          URL: `${import.meta.env.VITE_DOCS_ORIGIN}/en/docs/latest/database_administration_guide/database_concepts.html`,
         },
       ],
     },
@@ -240,7 +241,7 @@ export default {
             {
               NAME: 'Statistics',
               DESCRIPTION: 'Find stats and see how the openGauss community thrives.',
-              URL: 'https://datastat.opengauss.org/en/overview',
+              URL: `${DATA_LINK}/en/overview`,
             },
             {
               NAME: 'Governance',
@@ -266,7 +267,7 @@ export default {
             {
               NAME: 'Forum',
               DESCRIPTION: 'Share knowledge, ask anything, and solve together.',
-              URL: 'https://discuss.opengauss.org/',
+              URL: DISCUSS_OPENGAUSS_LINK,
             },
             {
               NAME: 'Mailing Lists',
@@ -283,7 +284,7 @@ export default {
         },
         {
           NAME: 'Contribution by Organizations',
-          URL: 'https://datastat.opengauss.org/en/detail',
+          URL: `${DATA_LINK}/en/detail`,
         },
       ],
     },
@@ -335,13 +336,13 @@ export default {
   SOURCE_CODE: [
     {
       NAME: 'GitCode',
-      PATH: 'https://gitcode.com/opengauss',
+      PATH: `${GITCODE_LINK}/opengauss`,
       ICON: OutLink,
     },
 
     {
       NAME: 'Github',
-      PATH: 'https://github.com/opengauss-mirror',
+      PATH: `${GITHUB_LINK}/opengauss-mirror`,
       ICON: OutLink,
     },
   ],

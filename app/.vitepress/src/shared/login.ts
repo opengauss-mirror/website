@@ -59,7 +59,7 @@ const afterLogined = (userInfo: UserInfoT) => {
 
 // 退出
 export async function doLogout() {
-  location.href = `${import.meta.env.VITE_LOGIN_URL}/logout?redirect_uri=${encodeURI(location.href)}`;
+  location.href = `${import.meta.env.VITE_LOGIN_URL}/logout?redirect_uri=${encodeURIComponent(location.href)}`;
 }
 
 // 获取用户信息

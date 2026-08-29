@@ -45,7 +45,6 @@ import yangweiqiang from '@/assets/category/member/avatar/yangweiqiang.png';
 import zhangchengwei from '@/assets/category/member/avatar/zhangchengwei.png';
 import zhoupinggao from '@/assets/category/member/avatar/zhoupinggao.png';
 import zhouqin from '@/assets/category/member/avatar/zhouqin.png';
-import zhubin3 from '@/assets/category/member/avatar/zhubin3.png';
 import zhujinwei from '@/assets/category/member/avatar/zhujinwei.png';
 import yangdi from '@/assets/category/member/avatar/yangdi.png';
 import zhouzhaoqi from '@/assets/category/member/avatar/zhouzhaoqi.png';

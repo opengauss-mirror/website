@@ -4,6 +4,7 @@ import { useCommon } from '@/stores/common';
 
 import floorImg from '../img/floor-img.png';
 import cardBg from '../img/card-bg.png';
+import { windowOpen } from '@/shared/utils';
 
 defineProps({
   activeData: {
@@ -17,7 +18,7 @@ const commonStore = useCommon();
 const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
 
 const onButtonClick = (href: string) => {
-  window.open(href, '_blank');
+  windowOpen(href, '_blank');
 };
 </script>
 <template>

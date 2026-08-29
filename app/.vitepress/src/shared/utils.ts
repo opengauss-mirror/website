@@ -112,9 +112,16 @@ export function isBoolean(val: unknown): val is boolean {
 }
 
 export function isTestEmail(str: string) {
-  return /^[a-zA-Z0-9]+([-_.][A-Za-zd]+)*@([a-zA-Z0-9]+[-.])+[A-Za-zd]{2,5}$/.test(
-    str
-  );
+  if (str.length > 254) return false;
+  const at = str.indexOf('@');
+  if (at < 1 || at !== str.lastIndexOf('@')) return false;
+  const local = str.slice(0, at);
+  const domain = str.slice(at + 1);
+  if (!local.split(/[-_.]/).every((part) => /^[a-zA-Z0-9]+$/.test(part))) return false;
+  const labels = domain.split(/[.-]/);
+  if (labels.length < 2) return false;
+  if (!/^[A-Za-z]{2,5}$/.test(labels[labels.length - 1])) return false;
+  return labels.slice(0, -1).every((part) => /^[a-zA-Z0-9]+$/.test(part));
 }
 export function isTestPhone(str: string) {
   return /^1[3|4|5|6|7|8|9][0-9]\d{8}$/.test(str);

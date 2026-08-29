@@ -1,4 +1,5 @@
-import { EULER_LINK, MINDSPORE_LINK, KUNPENG_LINK, BBSCSDN_LINK, OPENUBMC_URL, OPENFUYAO_URL } from '@/data/url-config';
+import { EULER_LINK, MINDSPORE_LINK, KUNPENG_LINK, BBSCSDN_LINK, OPENUBMC_URL, OPENFUYAO_URL, DATA_LINK } from '@/data/url-config';
+import { DISCUSS_OPENGAUSS_LINK } from '~@/data/url-config';
 
 export default {
   FOOTER_NAVS: [
@@ -11,7 +12,7 @@ export default {
         },
         {
           NAME: 'Statistics',
-          URL: 'https://datastat.opengauss.org/en/overview',
+          URL: `${DATA_LINK}/en/overview`,
         },
       ],
     },
@@ -28,7 +29,7 @@ export default {
         },
         {
           NAME: 'White Papers',
-          URL: 'https://docs.opengauss.org/en/docs/6.0.0/docs/TechnicalWhitePaper/Technicalwhitepaper.html',
+          URL: `${import.meta.env.VITE_DOCS_ORIGIN}/en/docs/6.0.0/docs/TechnicalWhitePaper/Technicalwhitepaper.html`,
         },
       ],
     },
@@ -54,7 +55,7 @@ export default {
       LINKS: [
         {
           NAME: 'Document Center',
-          URL: 'https://docs.opengauss.org/en/',
+          URL: `${import.meta.env.VITE_DOCS_ORIGIN}/en/`,
         },
         {
           NAME: 'Security Advisories',
@@ -75,7 +76,7 @@ export default {
         },
         {
           NAME: 'Forum',
-          URL: 'https://discuss.opengauss.org/',
+          URL: DISCUSS_OPENGAUSS_LINK,
         },
       ],
     },

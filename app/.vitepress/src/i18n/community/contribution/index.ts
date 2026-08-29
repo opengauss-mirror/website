@@ -1,4 +1,4 @@
-import { GITCODE_LINK, CLA_LINK, SAGE_LINK } from '@/data/url-config';
+import { GITCODE_LINK, CLA_LINK, SAGE_LINK, DOCS_GITCODE_LINK } from '@/data/url-config';
 export default {
   zh: {
     LOOK_DESC: `查看文字版攻略`,
@@ -15,8 +15,8 @@ export default {
         BLANK: true,
       },
       {
-        URL: `https://docs.gitcode.com/docs/start/quick`,
-        ALT: 'https://docs.gitcode.com/docs/start/quick',
+        URL: `${DOCS_GITCODE_LINK}/docs/start/quick`,
+        ALT: `${DOCS_GITCODE_LINK}/docs/start/quick`,
         BLANK: true,
       },
       {
@@ -97,8 +97,8 @@ export default {
         BLANK: true,
       },
       {
-        URL: `https://docs.gitcode.com/docs/start/quick`,
-        ALT: `https://docs.gitcode.com/docs/start/quick`,
+        URL: `${DOCS_GITCODE_LINK}/docs/start/quick`,
+        ALT: `${DOCS_GITCODE_LINK}/docs/start/quick`,
         BLANK: true,
       },
       {

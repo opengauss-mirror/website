@@ -5,6 +5,7 @@ import useWindowResize from '@/components/hooks/useWindowResize';
 
 import liveActiveBg from '../img/live-active.png';
 import liveActiveBgLong from '../img/live-active-long.png';
+import { HWLIVE_263LIVE } from '@/data/url-config';
 
 interface RenderData {
   id: number;
@@ -36,7 +37,7 @@ const setLiveRoom = (item: RenderData, index: number): void => {
 };
 
 function createLiveUrl(liveId: string) {
-  liveUrl.value = `https://hwlive.263live.net/clv/live/login/${liveId}`;
+  liveUrl.value = `${HWLIVE_263LIVE}/clv/live/login/${liveId}`;
 }
 const height = ref(screenWidth.value <= 1100 ? 600 : 800);
 function setHeight(data: any) {
@@ -70,7 +71,7 @@ function messageEvent() {
   window.addEventListener(
     'message',
     function (event) {
-      if (event.origin === 'https://hwlive.263live.net') {
+      if (event.origin === HWLIVE_263LIVE) {
         let data;
         data = event.data;
         setHeight(data);

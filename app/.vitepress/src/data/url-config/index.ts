@@ -58,6 +58,16 @@ export const OPENFUYAO_URL = 'https://www.openfuyao.cn';
 // 用户问卷调研
 export const QUESTIONNAIRE_SURVEY = 'https://snic.gtsdata.huawei.com/datalinkpro/web/#/openFormFill?hashcode=fpTH9ritP6IMPdjfPhFfQ6yrVqGhWnSoTPVqdcvLj7A=';
 
+export const HWLIVE_263LIVE = 'https://hwlive.263live.net';
+export const MODB_LINK = 'https://www.modb.pro';
+export const VASTDATA_LINK = 'https://education.vastdata.com.cn';
+export const EDUPLUS_LINK = 'https://www.eduplus.net';
+export const JOB_10086_LINK = 'https://job.10086.cn';
+export const BIGDATA_10086_LINK = 'https://bigdata.10086.cn';
+export const SHENTONG_DATA_LINK = 'http://shentongdata.com';
+export const DOCS_GITCODE_LINK = 'https://docs.gitcode.com';
+export const E_COMPAIGN_LINK = 'https://e-campaign.huawei.com';
+
 export {
   YEAR_2025,
   OBS_Summit_PPT,

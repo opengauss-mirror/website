@@ -6,7 +6,6 @@ import { inject, nextTick, onMounted, onUnmounted, Ref, ref, useTemplateRef, wat
 import { useData, useRoute, useRouter } from 'vitepress';
 import { useElementSize } from '@vueuse/core';
 import AppSection from '~@/components/AppSection.vue';
-import AppRouterTemplate from '~@/components/AppRouterTemplate.vue';
 import { useClipboard } from '~@/composables/useClipboard';
 import { useI18n } from '~@/i18n';
 

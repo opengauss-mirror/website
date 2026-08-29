@@ -533,7 +533,7 @@ const meetingCancelConfirm = async () => {
                   <div v-if="calendarData.group_name">{{ meetingI18n.SIG_GROUP }} {{ calendarData.group_name }}</div>
                   <div v-if="calendarData.activity_type">{{ calendarData.activity_type }}</div>
                 </div>
-                <OLink v-if="calendarData.type !== 'meeting'" :href="calendarData.link" target="_blank">
+                <OLink v-if="calendarData.type !== 'meeting'" :href="calendarData.link" target="_blank" rel="noopener noreferrer">
                   {{ meetingI18n.LEARN_MORE }}
                   <template #suffix>
                     <OIcon><OIconChevronRight /> </OIcon>
@@ -548,7 +548,7 @@ const meetingCancelConfirm = async () => {
                 <template v-for="field in meetingFields" :key="field.key">
                   <div class="info-item" v-if="calendarData[field.key]">
                     <div class="item-title">{{ field.label }}</div>
-                    <OLink :hover-underline="true" color="primary" v-if="field.isLink" class="item-content" :href="calendarData[field.key]" target="_blank">
+                    <OLink :hover-underline="true" color="primary" v-if="field.isLink" class="item-content" :href="calendarData[field.key]" target="_blank" rel="noopener noreferrer">
                       {{ calendarData[field.key] }}
                     </OLink>
                     <p v-else-if="field.key === 'time' && calendarData.start" class="item-content">{{ calendarData.start }} - {{ calendarData.end }}</p>
