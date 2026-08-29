@@ -1,5 +1,5 @@
 {
   "title": "How to Contribute to openGauss | Community Contribution Guide",
-  "description": "Learn how to contribute to openGauss open source community. Step-by-step guide covering GitCode account setup, CLA signing, joining SIGs (Special Interest Groups), submitting issues, pull requests, and becoming a community member.",
-  "keywords": "openGauss, contribution, contribute, open source, GitCode, CLA, Contributor License Agreement, SIG, Special Interest Groups, community, pull request, code review, open source database"
+  "description": "Learn how to contribute to openGauss open source community. Step-by-step guide covering AtomGit account setup, CLA signing, joining SIGs (Special Interest Groups), submitting issues, pull requests, and becoming a community member.",
+  "keywords": "openGauss, contribution, contribute, open source, AtomGit, CLA, Contributor License Agreement, SIG, Special Interest Groups, community, pull request, code review, open source database"
 }

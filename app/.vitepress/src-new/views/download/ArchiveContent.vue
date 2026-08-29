@@ -8,7 +8,7 @@ import { useScreen } from '~@/composables/useScreen';
 import { useLocale } from '~@/composables/useLocale';
 import { useClipboard } from '@/components/hooks/useClipboard';
 import { DownloadItem } from '~@/@types/type-download';
-import { GITCODE_LINK, DOCS_LINK } from '~@/data/url-config';
+import { ATOMGIT_LINK, DOCS_LINK } from '~@/data/url-config';
 import { downloadName } from '~@/data/download/content-bridge';
 
 import IconDownload from '~icons/app/icon-download.svg';
@@ -127,7 +127,7 @@ const getNewLink = (path: string) => {
         <OLink :href="getNewLink(item.path)" color="primary" target="_blank" rel="noopener noreferrer">{{ isZh ? item.name : item.nameEn }}</OLink>
         <ODivider direction="v" />
       </template>
-      <OLink :href="GITCODE_LINK + '/opengauss/community/issues'" color="primary" target="_blank" rel="noopener noreferrer">{{
+      <OLink :href="ATOMGIT_LINK + '/opengauss/community/issues'" color="primary" target="_blank" rel="noopener noreferrer">{{
         i18n.download.FEEDBACK_QUESTION
       }}</OLink>
     </div>

@@ -1,5 +1,5 @@
 import { NavItemT } from '@/shared/@types/type-nav';
-import { GITCODE_LINK, DATA_LINK, GITHUB_LINK, DOCS_LINK, FORUM_LINK } from '@/data/url-config';
+import { ATOMGIT_LINK, DATA_LINK, GITHUB_LINK, DOCS_LINK, FORUM_LINK } from '@/data/url-config';
 const navData: Array<NavItemT> = [
   {
     label: { zh: '下载', en: 'Download' },
@@ -274,10 +274,10 @@ const navData: Array<NavItemT> = [
     children: [
       {
         id: 'GitCode',
-        label: { zh: 'GitCode', en: 'GitCode' },
+        label: { zh: 'AtomGit', en: 'AtomGit' },
         href: {
-          zh: GITCODE_LINK + '/opengauss',
-          en: GITCODE_LINK + '/opengauss',
+          zh: ATOMGIT_LINK + '/opengauss',
+          en: ATOMGIT_LINK + '/opengauss',
         },
         jumpOut: true,
       },

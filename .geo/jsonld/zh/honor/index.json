@@ -20,7 +20,7 @@
       "url": "https://opengauss.org",
       "award": [
         "OSCAR尖峰开源项目及社区奖",
-        "优秀GitCode组织",
+        "优秀AtomGit组织",
         "中国优秀开源项目",
         "首批通过《 可信开源社区评估体系 》认证",
         "科创中国开源创新榜单",
@@ -71,7 +71,7 @@
           "position": 2,
           "item": {
             "@type": "Award",
-            "name": "优秀GitCode组织",
+            "name": "优秀AtomGit组织",
             "dateReceived": "2020"
           }
         },

@@ -3,7 +3,7 @@ import { useCommon } from '@/stores/common';
 import { OButton, OLink } from '@opensig/opendesign';
 import { useData } from 'vitepress';
 import { computed } from 'vue';
-import { GITCODE_LINK, GITHUB_LINK } from '~@/data/url-config';
+import { ATOMGIT_LINK, GITHUB_LINK } from '~@/data/url-config';
 
 const displayTools = [
   {
@@ -17,8 +17,8 @@ const displayTools = [
     name: `pgloader`,
     desc: `一个数据导入工具，使用COPY命令将数据导入到openGauss`,
     desc_en: `A data import tool that uses the COPY command to import data into openGauss`,
-    address: `${GITCODE_LINK}/opengauss/openGauss-tools-loader`,
-    guide: `${GITCODE_LINK}/opengauss/openGauss-tools-loader/blob/master/pgloader%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.pdf`,
+    address: `${ATOMGIT_LINK}/opengauss/openGauss-tools-loader`,
+    guide: `${ATOMGIT_LINK}/opengauss/openGauss-tools-loader/blob/master/pgloader%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.pdf`,
   },
   {
     name: `Debezium`,
@@ -31,14 +31,14 @@ const displayTools = [
     name: `DataKit`,
     desc: `基于Web的openGauss的可视化的平台系统，方便客户使用和管理openGauss可视化工具`,
     desc_en: `A web-based platform system that helps customers use and manage openGauss visualization tools`,
-    address: `${GITCODE_LINK}/opengauss/openGauss-workbench`,
-    guide: `${GITCODE_LINK}/opengauss/openGauss-workbench/blob/master/plugins/alert-monitor/README.md`,
+    address: `${ATOMGIT_LINK}/opengauss/openGauss-workbench`,
+    guide: `${ATOMGIT_LINK}/opengauss/openGauss-workbench/blob/master/plugins/alert-monitor/README.md`,
   },
   {
     name: `gs_probackup`,
     desc: `用于管理openGauss数据库备份和恢复，并对openGauss实例进行定期备份`,
     desc_en: `Manages openGauss database backups and recovery, and performs regular backups of openGauss instances`,
-    address: `${GITCODE_LINK}/opengauss/openGauss-server`,
+    address: `${ATOMGIT_LINK}/opengauss/openGauss-server`,
     guide: `/zh/docs/latest/docs/ToolandCommandReference/gs_probackup.html`,
   },
   {

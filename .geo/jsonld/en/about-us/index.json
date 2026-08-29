@@ -8,7 +8,7 @@
       "description": "openGauss is an open source database that combines high performance, reliability, security, and intelligence. Driven by technological innovation, it significantly boosts cluster performance through advanced techniques like resource pooling architecture and hardware-software collaboration. It also supports financial-grade high availability and large-scale data processing. With integrated AI capabilities, openGauss serves as a data foundation for large models and collaborates with partners to accelerate the evolution of the openGauss ecosystem.",
       "foundingDate": "2020-06-30",
       "sameAs": [
-        "https://gitcode.com/opengauss",
+        "https://atomgit.com/opengauss",
         "https://github.com/opengauss-mirror"
       ],
       "url": "https://opengauss.org/en/"

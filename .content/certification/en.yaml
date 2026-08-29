@@ -43,7 +43,7 @@ certify: Download Certificate
 introduce:
   text: 'openGauss provides a complete test process for commercial release certification. For details, see '
   link_text: the overall introduction to openGauss commercial release certification.
-  link_href: https://gitcode.com/opengauss/distribution-certification
+  link_href: https://atomgit.com/opengauss/distribution-certification
 
 certifications:
   - pro: GBase 8c V5

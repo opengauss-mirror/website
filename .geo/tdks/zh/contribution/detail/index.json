@@ -1,5 +1,5 @@
 {
   "title": "社区贡献指南",
-  "description": "了解如何参与openGauss开源社区贡献，包括注册GitCode账号、签署CLA、加入SIG兴趣组、提交Issue和Pull Request、参与代码检视等完整贡献流程指南。",
-  "keywords": "openGauss,社区贡献,SIG兴趣组,GitCode,开源社区,代码贡献,CLA签署,Issue提交,Pull Request,代码检视"
+  "description": "了解如何参与openGauss开源社区贡献，包括注册AtomGit账号、签署CLA、加入SIG兴趣组、提交Issue和Pull Request、参与代码检视等完整贡献流程指南。",
+  "keywords": "openGauss,社区贡献,SIG兴趣组,AtomGit,开源社区,代码贡献,CLA签署,Issue提交,Pull Request,代码检视"
 }

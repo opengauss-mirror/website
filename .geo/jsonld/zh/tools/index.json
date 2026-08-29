@@ -18,7 +18,7 @@
           "name": "psycopg2",
           "description": "openGauss Python驱动（仅限Linux）",
           "applicationCategory": "标准SQL及驱动",
-          "url": "https://gitcode.com/opengauss/openGauss-connector-python-psycopg2/"
+          "url": "https://atomgit.com/opengauss/openGauss-connector-python-psycopg2/"
         }
       },
       {
@@ -29,7 +29,7 @@
           "name": "py-og",
           "description": "openGauss Python驱动（纯Python，可跨平台）",
           "applicationCategory": "标准SQL及驱动",
-          "url": "https://gitcode.com/opengauss/openGauss-connector-python-pyog"
+          "url": "https://atomgit.com/opengauss/openGauss-connector-python-pyog"
         }
       },
       {
@@ -40,7 +40,7 @@
           "name": "go-pq",
           "description": "openGauss Go语言驱动",
           "applicationCategory": "标准SQL及驱动",
-          "url": "https://gitcode.com/opengauss/openGauss-connector-go-pq"
+          "url": "https://atomgit.com/opengauss/openGauss-connector-go-pq"
         }
       },
       {
@@ -106,7 +106,7 @@
           "name": "Ora2Pg",
           "description": "Oracle到openGauss数据迁移工具",
           "applicationCategory": "数据导入导出工具",
-          "url": "https://gitcode.com/opengauss/openGauss-tools-ora2og"
+          "url": "https://atomgit.com/opengauss/openGauss-tools-ora2og"
         }
       },
       {
@@ -117,7 +117,7 @@
           "name": "pg_chameleon",
           "description": "MySQL到openGauss数据迁移工具",
           "applicationCategory": "数据导入导出工具",
-          "url": "https://gitcode.com/opengauss/openGauss-tools-chameleon"
+          "url": "https://atomgit.com/opengauss/openGauss-tools-chameleon"
         }
       },
       {
@@ -128,7 +128,7 @@
           "name": "pgloader",
           "description": "一个数据导入工具，使用COPY命令将数据导入到openGauss",
           "applicationCategory": "数据导入导出工具",
-          "url": "https://gitcode.com/opengauss/openGauss-tools-loader"
+          "url": "https://atomgit.com/opengauss/openGauss-tools-loader"
         }
       },
       {
@@ -194,7 +194,7 @@
           "name": "Data Studio",
           "description": "openGauss官方客户端工具",
           "applicationCategory": "客户端工具",
-          "url": "https://gitcode.com/opengauss/DataStudio"
+          "url": "https://atomgit.com/opengauss/DataStudio"
         }
       },
       {
@@ -227,7 +227,7 @@
           "name": "禹贡",
           "description": "提供专业的GIS（Geographic Information System）能力",
           "applicationCategory": "内核扩展",
-          "url": "https://gitcode.com/opengauss/Yukon"
+          "url": "https://atomgit.com/opengauss/Yukon"
         }
       }
     ]

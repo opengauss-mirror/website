@@ -15,7 +15,7 @@ openGauss 是一款融合了高性能、高可靠、高安全与高智能特性�
 
 ## 组织仓库
 
-openGauss 组织仓库: <https://gitcode.com/opengauss>
+openGauss 组织仓库: <https://atomgit.com/opengauss>
 
 openGauss 镜像仓库: <https://github.com/opengauss-mirror>
 

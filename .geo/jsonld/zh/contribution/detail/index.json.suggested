@@ -3,13 +3,13 @@
   "@type": "HowTo",
   "name": "社区贡献",
   "description": "openGauss是一个开源社区,完全依赖于社区提供友好的开发和协作环境。",
-  "keywords": "openGauss,开源社区,社区贡献,SIG兴趣组,GitCode,CLA",
+  "keywords": "openGauss,开源社区,社区贡献,SIG兴趣组,AtomGit,CLA",
   "step": [
     {
       "@type": "HowToStep",
-      "name": "注册 GitCode 账号",
-      "text": "openGauss 源代码托管在GitCode。请注册您的GitCode账户,并设置您的主邮箱。",
-      "url": "https://opengauss.org/zh/contribution/detail.html#注册-gitcode-账号"
+      "name": "注册 AtomGit 账号",
+      "text": "openGauss 源代码托管在AtomGit。请注册您的AtomGit账户,并设置您的主邮箱。",
+      "url": "https://opengauss.org/zh/contribution/detail.html#注册-atomgit-账号"
     },
     {
       "@type": "HowToStep",
@@ -39,7 +39,7 @@
   "tool": [
     {
       "@type": "HowToTool",
-      "name": "GitCode账号"
+      "name": "AtomGit账号"
     }
   ]
 }

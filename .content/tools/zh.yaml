@@ -17,18 +17,18 @@
     - iden: connectors
       name: psycopg2
       desc: openGauss Python驱动（仅限Linux）
-      address: https://gitcode.com/opengauss/openGauss-connector-python-psycopg2/
+      address: https://atomgit.com/opengauss/openGauss-connector-python-psycopg2/
       guide: https://www.psycopg.org/docs/
     - iden: connectors
       name: py-og
       desc: openGauss Python驱动（纯Python，可跨平台）
-      address: https://gitcode.com/opengauss/openGauss-connector-python-pyog
+      address: https://atomgit.com/opengauss/openGauss-connector-python-pyog
       guide: https://magicstack.github.io/asyncpg/current/
     - iden: connectors
       name: go-pq
       desc: openGauss Go语言驱动
-      address: https://gitcode.com/opengauss/openGauss-connector-go-pq
-      guide: https://gitcode.com/opengauss/openGauss-connector-go-pq/blob/master/README.cn.md
+      address: https://atomgit.com/opengauss/openGauss-connector-go-pq
+      guide: https://atomgit.com/opengauss/openGauss-connector-go-pq/blob/master/README.cn.md
 
 - id: middleware
   name: 数据访问中间件
@@ -69,18 +69,18 @@
     - iden: migrationTools
       name: Ora2Pg
       desc: Oracle到openGauss数据迁移工具
-      address: https://gitcode.com/opengauss/openGauss-tools-ora2og
-      guide: https://gitcode.com/opengauss/openGauss-tools-ora2og/blob/master/README.md
+      address: https://atomgit.com/opengauss/openGauss-tools-ora2og
+      guide: https://atomgit.com/opengauss/openGauss-tools-ora2og/blob/master/README.md
     - iden: migrationTools
       name: pg_chameleon
       desc: MySQL到openGauss数据迁移工具
-      address: https://gitcode.com/opengauss/openGauss-tools-chameleon
-      guide: https://gitcode.com/opengauss/openGauss-tools-chameleon/blob/master/chameleon%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.md
+      address: https://atomgit.com/opengauss/openGauss-tools-chameleon
+      guide: https://atomgit.com/opengauss/openGauss-tools-chameleon/blob/master/chameleon%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.md
     - iden: migrationTools
       name: pgloader
       desc: 一个数据导入工具，使用COPY命令将数据导入到openGauss
-      address: https://gitcode.com/opengauss/openGauss-tools-loader
-      guide: https://gitcode.com/opengauss/openGauss-tools-loader/blob/master/pgloader%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.pdf
+      address: https://atomgit.com/opengauss/openGauss-tools-loader
+      guide: https://atomgit.com/opengauss/openGauss-tools-loader/blob/master/pgloader%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.pdf
 
 - id: dataTools
   name: 数据复制/同步工具
@@ -120,7 +120,7 @@
     - iden: clientTools
       name: Data Studio
       desc: openGauss官方客户端工具
-      address: https://gitcode.com/opengauss/DataStudio
+      address: https://atomgit.com/opengauss/DataStudio
       guide: https://docs.opengauss.org/zh/docs/5.0.0/docs/AboutopenGauss/openGauss客户端工具DataStudio.html
       site: true
 
@@ -144,5 +144,5 @@
     - iden: kernelExtensions
       name: 禹贡
       desc: 提供专业的GIS（Geographic Information System）能力
-      address: https://gitcode.com/opengauss/Yukon
+      address: https://atomgit.com/opengauss/Yukon
       guide: https://yukon.supermap.io/

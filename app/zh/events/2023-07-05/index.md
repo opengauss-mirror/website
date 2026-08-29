@@ -29,7 +29,7 @@ summary: '自 2020 年 6 月开源以来，openGauss 一直围绕高性能、高
 
 •[openGauss 社区](https://opengauss.org)：提交 PR 时需要添加“openGauss 技术文章征集”标签。
 
-提交链接参考：[https://gitcode.com/opengauss/blog](https://gitcode.com/opengauss/blog) ，readme 中有介绍如何提交博客的方法
+提交链接参考：[https://atomgit.com/opengauss/blog](https://atomgit.com/opengauss/blog) ，readme 中有介绍如何提交博客的方法
 
 （2）在墨天轮社区“我和 openGauss 的故事”活动页（点击文末“阅读原文”跳转至活动页面），将您发布的文章标题及链接复制粘贴到本宣传贴的评论区。
 

@@ -6,7 +6,7 @@
       "@id": "https://opengauss.org/en/contribution/detail/#webpage",
       "url": "https://opengauss.org/en/contribution/detail/",
       "name": "How to Contribute to openGauss | Community Contribution Guide",
-      "description": "Complete guide on how to contribute to openGauss open source community, including GitCode setup, CLA signing, SIG participation, and community membership.",
+      "description": "Complete guide on how to contribute to openGauss open source community, including AtomGit setup, CLA signing, SIG participation, and community membership.",
       "isPartOf": {
         "@id": "https://opengauss.org/#website"
       },
@@ -38,9 +38,9 @@
       "step": [
         {
           "@type": "HowToStep",
-          "name": "Sign up for GitCode Account",
-          "text": "The source code of openGauss source code is hosted on GitCode. Register your GitCode account and set up your primary email.",
-          "url": "https://opengauss.org/en/contribution/detail/#1-sign-up-for-gitcode-account"
+          "name": "Sign up for AtomGit Account",
+          "text": "The source code of openGauss source code is hosted on AtomGit. Register your AtomGit account and set up your primary email.",
+          "url": "https://opengauss.org/en/contribution/detail/#1-sign-up-for-atomgit-account"
         },
         {
           "@type": "HowToStep",

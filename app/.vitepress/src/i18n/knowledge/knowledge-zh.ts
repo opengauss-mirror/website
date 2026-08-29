@@ -9,7 +9,7 @@ export default {
       moduleTypes: [
         {
           name: 'git使用',
-          desc: 'git是一个开源的分布式版本控制系统，openGauss托管在GitCode平台，使用git来管理源码',
+          desc: 'git是一个开源的分布式版本控制系统，openGauss托管在AtomGit平台，使用git来管理源码',
           list: [
             {
               name: '使用教程',

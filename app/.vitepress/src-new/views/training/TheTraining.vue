@@ -14,7 +14,7 @@ import IconLearning from '~icons/training/learning.svg';
 import IconExam from '~icons/training/exam.svg';
 import IconCertification from '~icons/training/certification.svg';
 import IconArrow from '~icons/training/step-arrow.svg';
-import { GITCODE_LINK } from '~@/data/url-config';
+import { ATOMGIT_LINK } from '~@/data/url-config';
 import { useScreen } from '~@/composables/useScreen';
 
 const i18n = useI18n();
@@ -169,7 +169,7 @@ const detailPageUrls = {
       <div class="training-qa-subtitle">
         <p>
           关于openGauss培训伙伴认证，openGauss提供了完整的评估标准和流程，详见
-          <a :href="`${GITCODE_LINK}/opengauss/training-partner-certification`" target="_blank" rel="noopener noreferrer"> openGauss培训伙伴认证整体介绍</a>。
+          <a :href="`${ATOMGIT_LINK}/opengauss/training-partner-certification`" target="_blank" rel="noopener noreferrer"> openGauss培训伙伴认证整体介绍</a>。
         </p>
         <p>
           <span>{{ i18n.authentication.contact }}</span>

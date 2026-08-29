@@ -1,37 +1,37 @@
 <script setup lang="ts">
 import { OCard, OIcon, OLink } from '@opensig/opendesign';
-import { GITCODE_LINK } from '~@/data/url-config';
+import { ATOMGIT_LINK } from '~@/data/url-config';
 import IconOutlink from '~icons/app-new/icon-out-link.svg';
 
 const internshipTasks = [
   {
     title: 'openGauss 工具链',
-    link: `${GITCODE_LINK}/opengauss/opensource-intership/issues/101`,
+    link: `${ATOMGIT_LINK}/opengauss/opensource-intership/issues/101`,
     desc: '修复和补齐 Datakit API 自动化测试框架',
   },
   {
     title: 'openGauss AI 生态组件',
-    link: `${GITCODE_LINK}/opengauss/opensource-intership/issues/103`,
+    link: `${ATOMGIT_LINK}/opengauss/opensource-intership/issues/103`,
     desc: '对接主流 AI 框架和记忆系统',
   },
   {
     title: 'openGauss 性能测试工具',
-    link: `${GITCODE_LINK}/opengauss/opensource-intership/issues/102`,
+    link: `${ATOMGIT_LINK}/opengauss/opensource-intership/issues/102`,
     desc: '在基准测试框架中新增向量索引测试',
   },
   {
     title: 'openGauss 应用适配',
-    link: `${GITCODE_LINK}/opengauss/opensource-intership/issues/104`,
+    link: `${ATOMGIT_LINK}/opengauss/opensource-intership/issues/104`,
     desc: '适配 MySQL 原生语法和生态，覆盖五大语言主流框架，系统性提升兼容能力',
   },
   {
     title: 'openGauss MySQL兼容性提升',
-    link: `${GITCODE_LINK}/opengauss/opensource-intership/issues/100`,
+    link: `${ATOMGIT_LINK}/opengauss/opensource-intership/issues/100`,
     desc: '适配 MySQL 原生语法',
   },
   {
     title: 'oGRAC 易用性',
-    link: `${GITCODE_LINK}/opengauss/opensource-intership/issues/99`,
+    link: `${ATOMGIT_LINK}/opengauss/opensource-intership/issues/99`,
     desc: '扩充监控指标并补充参数文档',
   },
 ];
