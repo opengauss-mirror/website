@@ -80,6 +80,29 @@
       "position": 4,
       "item": {
         "@type": "SoftwareApplication",
+        "name": "openGauss 6.0.6 (LTS)",
+        "applicationCategory": "DatabaseApplication",
+        "operatingSystem": "Linux",
+        "releaseDate": "2026-08",
+        "description": "An LTS version for openGauss 6.0.0 and later is provided with 3 years of community support, followed by additional maintenance support by oGSPs.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/OnlineOnly"
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "openGauss Community",
+          "url": "https://opengauss.org"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "SoftwareApplication",
         "name": "openGauss 6.0.5 (LTS)",
         "applicationCategory": "DatabaseApplication",
         "operatingSystem": "Linux",

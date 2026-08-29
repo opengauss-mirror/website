@@ -75,7 +75,7 @@ describe('collectDownloadData — 无条件上报（无 username 判断）', () 
     const { collectDownloadData, oaReportCalls, getCustomCookie } = createCollectDownloadData(activeArchitecture, activeOs);
 
     getCustomCookie.mockReturnValue('');
-    collectDownloadData('openGauss-6.0.5');
+    collectDownloadData('openGauss-6.0.6');
 
     expect(oaReportCalls[0]._U_T_).toBe('notLog');
   });
@@ -86,7 +86,7 @@ describe('collectDownloadData — 无条件上报（无 username 判断）', () 
     const { collectDownloadData, oaReportCalls, getCustomCookie } = createCollectDownloadData(activeArchitecture, activeOs);
 
     getCustomCookie.mockReturnValue(null as any);
-    collectDownloadData('openGauss-6.0.5');
+    collectDownloadData('openGauss-6.0.6');
 
     expect(oaReportCalls[0]._U_T_).toBe('notLog');
   });

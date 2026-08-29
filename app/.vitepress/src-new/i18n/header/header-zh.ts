@@ -25,8 +25,8 @@ export default {
           NAME: '获取openGauss',
           CHILDREN: [
             {
-              NAME: 'openGauss 6.0.5 (LTS)',
-              DESCRIPTION: 'openGauss 6.0.5 LTS及后续LTS版本发布间隔周期为2年，社区提供3年支持，社区OGSP伙伴提供3年以后维护支持服务。',
+              NAME: 'openGauss 6.0.6 (LTS)',
+              DESCRIPTION: 'openGauss 6.0.6 LTS及后续LTS版本发布间隔周期为2年，社区提供3年支持，社区OGSP伙伴提供3年以后维护支持服务。',
               TAG: null,
               URL: '/download/?version=lts',
             },
