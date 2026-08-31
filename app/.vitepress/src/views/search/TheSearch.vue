@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, onMounted, watch, reactive, onUnmounted } from 'vue';
-import { useData, useRoute, useRouter } from 'vitepress';
+import { useData, useRouter } from 'vitepress';
 import { useI18n } from '@/i18n';
 import { getSearchData, getSearchCount, getTagsData, getRelevant } from '@/api/api-search';
 
@@ -110,16 +110,33 @@ const onSearch = (payload: { keyword: string; imageUrl?: string }) => {
   if (keyword) {
     searchInput.value = sanitizeSearchInput(keyword);
   }
-  if (imageUrl) urlParams.imageUrl = imageUrl;
+  if (imageUrl) {
+    urlParams.imageUrl = imageUrl;
+  } else {
+    delete urlParams.imageUrl;
+  }
   // 清空旧数据
   correctedList.value = [];
   relatedList.value = [];
-  const queryString = Object.entries({ q: searchInput.value, imageUrl })
-    .filter(([_, v]) => !!v)
-    .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v as string)}`)
-    .join('&');
-  router.go(`/${lang.value}/search/?${queryString}`);
+  // 同步搜索词到 URL ?q=（useUrlSearchParams 通过 History API 写入，dev/生产均生效）
+  urlParams.q = searchInput.value;
+  // 直接触发搜索；router.go 在生产构建中不会重新挂载组件，故不再依赖路由跳转
+  searchAll();
 };
+
+// URL 变化（浏览器前进/后退、popstate）时反向联动搜索词
+watch(
+  () => urlParams.q,
+  (newQ) => {
+    if (!newQ) return;
+    const kw = sanitizeSearchInput(decodeURIComponent(newQ as string));
+    if (kw === searchInput.value) return;
+    searchInput.value = kw;
+    correctedList.value = [];
+    relatedList.value = [];
+    searchAll();
+  }
+);
 
 const searchCountParams = computed(() => {
   return {
