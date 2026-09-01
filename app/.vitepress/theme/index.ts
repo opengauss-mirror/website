@@ -13,7 +13,6 @@ import '~@/assets/style/mixin/grid.scss';
 
 import Layout from '@/App.vue';
 import NotFound from '@/NotFound.vue';
-import { SeoBox } from '@/components/seo-box';
 
 import ElementPlus from 'element-plus';
 import OpenDesign from 'opendesign';
@@ -49,7 +48,6 @@ export default {
     app.use(ElementPlus);
     app.use(OpenDesign);
     app.use(i18n);
-    app.use(SeoBox as any);
     app.use(initOpenDesignAnalytics, {
       appKey: 'openGauss',
       request(data) {
