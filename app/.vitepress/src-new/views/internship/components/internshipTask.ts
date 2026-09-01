@@ -2,7 +2,7 @@ import { useMessage } from '@opensig/opendesign';
 import i18n from '~@/i18n';
 
 export const internshipTaskLinks = {
-  viewTask: 'https://gitcode.com/openeuler/opensource-intern/issues',
+  viewTask: 'https://atomgit.com/openeuler/opensource-intern/issues',
   internshipTestTask: 'https://atomgit.com/openeuler/opensource-intern/issues/120',
   mindsporeLink: 'https://www.mindspore.cn/internship/',
   openubmcLink: 'https://www.openubmc.cn/zh/internship',

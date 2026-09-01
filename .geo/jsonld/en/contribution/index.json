@@ -6,7 +6,7 @@
       "@id": "https://opengauss.org/en/contribution/#webpage",
       "url": "https://opengauss.org/en/contribution/",
       "name": "Contribution",
-      "description": "openGauss contribution guide featuring a visual contribution map, step-by-step instructions for signing CLA, joining SIGs, and submitting code contributions through GitCode.",
+      "description": "openGauss contribution guide featuring a visual contribution map, step-by-step instructions for signing CLA, joining SIGs, and submitting code contributions through AtomGit.",
       "inLanguage": "en",
       "isPartOf": {
         "@id": "https://opengauss.org/#website"
@@ -37,7 +37,7 @@
       "url": "https://opengauss.org/",
       "description": "openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability. openGauss is also an open source database platform that encourages community contribution and collaboration.",
       "sameAs": [
-        "https://gitcode.com/opengauss"
+        "https://atomgit.com/opengauss"
       ],
       "logo": {
         "@type": "ImageObject",

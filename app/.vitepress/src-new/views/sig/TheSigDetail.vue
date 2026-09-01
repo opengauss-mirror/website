@@ -17,7 +17,7 @@ import { getMeetingListApi } from '@/api/api-meeting';
 import { useI18n } from '~@/i18n';
 import sigContent from '#content/sig';
 import { MeetingItemT } from '@/shared/@types/type-meeting';
-import { ETHERPAD_LINK, GITCODE_LINK, GITEE_LINK } from '~@/data/url-config';
+import { ETHERPAD_LINK, ATOMGIT_LINK, GITEE_LINK } from '~@/data/url-config';
 
 const { lang, params, frontmatter } = useData();
 const { isDark, theme } = storeToRefs(useCommon());
@@ -51,7 +51,7 @@ const getSigDetailInfo = async () => {
         ...item,
         ...(item.gitcode_id && { atomgit_id: item.gitcode_id }),
         user_login: item.gitcode_id || item.gitee_id,
-        user_homepage_url: item.gitcode_id ? `${GITCODE_LINK}/${item.gitcode_id}` : `${GITEE_LINK}/${item.gitee_id}`,
+        user_homepage_url: item.gitcode_id ? `${ATOMGIT_LINK}/${item.gitcode_id}` : `${GITEE_LINK}/${item.gitee_id}`,
         id_platform: item.gitcode_id ? 'atomgit_id' : 'atomgit_id',
       };
     });
@@ -62,7 +62,7 @@ const getSigDetailInfo = async () => {
         ...item,
         ...(item.gitcode_id && { atomgit_id: item.gitcode_id }),
         user_login: item.gitcode_id || item.gitee_id,
-        user_homepage_url: item.gitcode_id ? `${GITCODE_LINK}/${item.gitcode_id}` : `${GITEE_LINK}/${item.gitee_id}`,
+        user_homepage_url: item.gitcode_id ? `${ATOMGIT_LINK}/${item.gitcode_id}` : `${GITEE_LINK}/${item.gitee_id}`,
         id_platform: item.gitcode_id ? 'atomgit_id' : 'atomgit_id',
       };
     });

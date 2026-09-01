@@ -57,7 +57,7 @@ certify: Download
 tips:
   text: For openGauss service partner certification, openGauss provides complete evaluation standards and processes, see
   link_text: openGauss Service Partner Certification Overview
-  link_href: https://gitcode.com/opengauss/service-partner-certification
+  link_href: https://atomgit.com/opengauss/service-partner-certification
 
 certifications:
   - name: 中国邮政储蓄银行股份有限公司

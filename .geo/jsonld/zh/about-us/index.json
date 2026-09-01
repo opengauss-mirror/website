@@ -14,7 +14,7 @@
     "releaseNotes": "LTS 版本发布间隔周期 2 年，社区提供 3 年维护支持；创新版本发布间隔周期 0.5 年，社区提供 0.5 年维护支持"
   },
   "codeRepository": [
-    "https://gitcode.com/opengauss",
+    "https://atomgit.com/opengauss",
     "https://github.com/opengauss-mirror"
   ],
   "dateCreated": "2019-09-19",

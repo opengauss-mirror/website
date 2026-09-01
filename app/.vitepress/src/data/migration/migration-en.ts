@@ -12,7 +12,7 @@ import imgProduceSelected from '~icons/migration/produce-selected.svg';
 import imgProduceUnselected from '~icons/migration/produce-unselected.svg';
 import imgStable from '~icons/migration/stable.svg';
 import imgSmoothMigration from '~icons/migration/smooth-migration.svg';
-import { GITCODE_LINK, LEARN_VIDEO_LINK } from '@/data/url-config';
+import { ATOMGIT_LINK, LEARN_VIDEO_LINK } from '@/data/url-config';
 
 export default {
   requirementText: '要求',
@@ -516,7 +516,7 @@ export default {
       {
         title: '中国移动',
         desc: '中移在线的工程师们将目光聚焦在openGauss数据库上。中移在线20个…',
-        caseHref: `${GITCODE_LINK}/opengauss/website/blob/feature_migration_new/app/zh/migration/user-cases/index.md`,
+        caseHref: `${ATOMGIT_LINK}/opengauss/website/blob/feature_migration_new/app/zh/migration/user-cases/index.md`,
         officalHref: 'http://online.10086.cn/official/new/index/#/home/index',
       },
     ],
@@ -527,7 +527,7 @@ export default {
       {
         title: 'openGauss 迁移互动专区',
         desc: '前往迁移互动专区，参与lssue问答',
-        href: `${GITCODE_LINK}/opengauss/openGauss-workbench`,
+        href: `${ATOMGIT_LINK}/opengauss/openGauss-workbench`,
       },
     ],
   },

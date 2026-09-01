@@ -1,5 +1,5 @@
 import { markRaw } from 'vue';
-import { DISCUSS_OPENGAUSS_LINK, CLA_LINK, DATA_LINK, GITCODE_LINK, GITHUB_LINK } from '~@/data/url-config';
+import { DISCUSS_OPENGAUSS_LINK, CLA_LINK, DATA_LINK, ATOMGIT_LINK, GITHUB_LINK } from '~@/data/url-config';
 
 import IconOutLink from '~icons/app-new/icon-out-link.svg';
 
@@ -335,8 +335,8 @@ export default {
   },
   SOURCE_CODE: [
     {
-      NAME: 'GitCode',
-      PATH: `${GITCODE_LINK}/opengauss`,
+      NAME: 'AtomGit',
+      PATH: `${ATOMGIT_LINK}/opengauss`,
       ICON: OutLink,
     },
 

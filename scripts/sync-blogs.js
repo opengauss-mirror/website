@@ -5,7 +5,7 @@ import path from 'node:path';
 import process from 'node:process';
 
 const CWD = process.cwd();
-const BLOGS_GIT_REPO = 'https://gitcode.com/opengauss/blog.git';
+const BLOGS_GIT_REPO = 'https://atomgit.com/opengauss/blog.git';
 const PULL_TARGET_PATH = path.join(CWD, '_temp/blogs');
 
 function copyBlogFiles() {

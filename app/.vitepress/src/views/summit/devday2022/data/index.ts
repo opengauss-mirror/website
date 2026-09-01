@@ -76,7 +76,7 @@ import gansukunpeng_dark from '../img/partners/dark/gansukunpeng.png';
 import henankunpeng_dark from '../img/partners/dark/henankunpeng.png';
 import xugu_dark from '../img/partners/dark/xugu.png';
 
-import { GITCODE_LINK, ETHERPAD_LINK } from '@/data/url-config';
+import { ATOMGIT_LINK, ETHERPAD_LINK } from '@/data/url-config';
 
 const summitData = {
   page_name: '峰会',
@@ -416,7 +416,7 @@ const summitData = {
         name: 'SIG组版本规划工作会议',
         desc: 'SIG组工作会议参会指南',
         time1: '16:00 - 18:00',
-        path: `${GITCODE_LINK}/opengauss/community/blob/master/contributors/sig-planning-meeting-guide.md`,
+        path: `${ATOMGIT_LINK}/opengauss/community/blob/master/contributors/sig-planning-meeting-guide.md`,
         children: [
           {
             name: 'AI',

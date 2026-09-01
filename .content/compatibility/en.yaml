@@ -48,7 +48,7 @@ certify: Download
 tips:
   text: For commercial software compatibility certification, openGauss provides complete testing processes and tools, see
   link_text: openGauss Compatibility Certification Overview
-  link_href: https://gitcode.com/opengauss/compatible-certification
+  link_href: https://atomgit.com/opengauss/compatible-certification
 
 compatibilities:
   - name: 江天智能监控运维平台软件 iSentry

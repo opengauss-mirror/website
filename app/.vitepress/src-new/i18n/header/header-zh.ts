@@ -3,7 +3,7 @@ import { markRaw } from 'vue';
 import IconOutLink from '~icons/app-new/icon-out-link.svg';
 import odd from '~@/assets/category/header/odd.png';
 import report from '~@/assets/category/header/report.png';
-import { DISCUSS_OPENGAUSS_LINK, GITCODE_LINK, CLA_LINK, DATA_LINK, GITHUB_LINK } from '~@/data/url-config';
+import { DISCUSS_OPENGAUSS_LINK, ATOMGIT_LINK, CLA_LINK, DATA_LINK, GITHUB_LINK } from '~@/data/url-config';
 
 const OutLink = markRaw(IconOutLink);
 
@@ -270,7 +270,7 @@ export default {
               NAME: '兼容性技术测评',
               DESCRIPTION: '帮助企业快速申请兼容性测评',
               ICON: OutLink,
-              URL: `${GITCODE_LINK}/opengauss/compatible-certification`,
+              URL: `${ATOMGIT_LINK}/opengauss/compatible-certification`,
             },
           ],
         },
@@ -328,7 +328,7 @@ export default {
         },
         {
           NAME: '前往迁移互动专区',
-          URL: `${GITCODE_LINK}/opengauss/openGauss-workbench`,
+          URL: `${ATOMGIT_LINK}/opengauss/openGauss-workbench`,
         },
         {
           NAME: 'MySQL迁移',
@@ -487,8 +487,8 @@ export default {
   },
   SOURCE_CODE: [
     {
-      NAME: 'GitCode',
-      PATH: `${GITCODE_LINK}/opengauss`,
+      NAME: 'AtomGit',
+      PATH: `${ATOMGIT_LINK}/opengauss`,
       ICON: OutLink,
     },
 

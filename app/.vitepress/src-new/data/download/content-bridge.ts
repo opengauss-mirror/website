@@ -1,13 +1,13 @@
 import downloadContent from '#content/download';
 import versionDataMap from '#content/download/versions';
-import { GITCODE_LINK } from '@/data/url-config';
+import { ATOMGIT_LINK } from '@/data/url-config';
 
 const DOCS_ORIGIN = import.meta.env.VITE_DOCS_ORIGIN as string;
-const GITCODE = GITCODE_LINK;
+const ATOMGIT = ATOMGIT_LINK;
 
 function replacePlaceholders(str: string): string {
   if (typeof str !== 'string') return str;
-  return str.replace(/\{GITCODE\}/g, GITCODE).replace(/\{DOCS_ORIGIN\}/g, DOCS_ORIGIN);
+  return str.replace(/\{ATOMGIT\}/g, ATOMGIT).replace(/\{DOCS_ORIGIN\}/g, DOCS_ORIGIN);
 }
 
 function resolvePlaceholders(obj: any): any {

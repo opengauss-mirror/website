@@ -4,7 +4,7 @@ import en from '@/data/member/member-en';
 export default {
   zh: {
     PAGE_TITLE: '社区组织',
-    GIT_TEXT: '前往GitCode仓库主页',
+    GIT_TEXT: '前往AtomGit仓库主页',
     EMIAL_TEXT: '邮件列表：',
     NAMEL_TEXT: '核心成员：',
     VIEW_BOARD: '查看历届理事会成员',
@@ -14,7 +14,7 @@ export default {
   },
   en: {
     PAGE_TITLE: 'Organization',
-    GIT_TEXT: 'Go to GitCode home page',
+    GIT_TEXT: 'Go to AtomGit home page',
     EMIAL_TEXT: 'Mailing List:',
     NAMEL_TEXT: 'Core Members',
     VIEW_BOARD: 'View Former Board of Directors',

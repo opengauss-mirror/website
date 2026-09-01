@@ -7,7 +7,7 @@ import { useCountStore } from '~@/stores/notification';
 import { deleteInfo, getTodo } from '~@/api/api-notification';
 import AppEmpty from '~@/components/AppEmpty.vue';
 import ThFilter from '~@/components/ThFilter.vue';
-import { GITCODE_LINK } from '~@/data/url-config';
+import { NOTIFICATION_SOURCE } from '~@/data/url-config';
 import TooltipText from '~@/components/TooltipText.vue';
 import IconOpen from '~icons/my/state-open.svg';
 import IconProgress from '~icons/my/state-in-progress.svg';
@@ -53,12 +53,12 @@ const getParams = () => {
 
   if (activeTab.value !== TODO_TYPE.PR) {
     Object.assign(params, {
-      source: activeTab.value === TODO_TYPE.ISSUE ? GITCODE_LINK : TODO_TYPE.CVE,
+      source: activeTab.value === TODO_TYPE.ISSUE ? NOTIFICATION_SOURCE : TODO_TYPE.CVE,
     });
   }
   if (activeTab.value === TODO_TYPE.PR) {
     Object.assign(params, {
-      source: GITCODE_LINK,
+      source: NOTIFICATION_SOURCE,
     });
   }
   if (selectedRepo.value) {

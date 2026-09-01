@@ -5,7 +5,7 @@ const GAUSS_CERTIFICATE_EMAIL = 'certificate@public.opengauss.org'; // gauss证�
 const DOCS_LINK = 'https://docs.opengauss.org'; // gauss文档
 const BILIBILI_LINK2 = 'https://www.bilibili.com'; // bilibili官网
 const ENMOEDU_LINK = 'https://enmoedu.com'; // 恩墨学院
-const GITCODE_LINK = 'https://gitcode.com'; // gitcode官网
+const ATOMGIT_LINK = 'https://atomgit.com'; // atomgit官网
 const OBS_VIDEO_LINK = 'https://opengauss-showroom-video.obs.cn-north-4.myhuaweicloud.com'; // 峰会录播存储的obs地址
 const OBS_MEETING_LINK = 'https://meetingvideo.obs.ap-southeast-1.myhuaweicloud.com'; // 开发者大会录播存储的obs地址
 const ETHERPAD_LINK = 'https://etherpad.opengauss.org'; // gauss的etherpad官网
@@ -65,7 +65,7 @@ export const EDUPLUS_LINK = 'https://www.eduplus.net';
 export const JOB_10086_LINK = 'https://job.10086.cn';
 export const BIGDATA_10086_LINK = 'https://bigdata.10086.cn';
 export const SHENTONG_DATA_LINK = 'http://shentongdata.com';
-export const DOCS_GITCODE_LINK = 'https://docs.gitcode.com';
+export const DOCS_ATOMGIT_LINK = 'https://docs.atomgit.com';
 export const E_COMPAIGN_LINK = 'https://e-campaign.huawei.com';
 
 export {
@@ -91,7 +91,7 @@ export {
   DOCS_LINK,
   BILIBILI_LINK2,
   ENMOEDU_LINK,
-  GITCODE_LINK,
+  ATOMGIT_LINK,
   OBS_VIDEO_LINK,
   OBS_MEETING_LINK,
   ETHERPAD_LINK,

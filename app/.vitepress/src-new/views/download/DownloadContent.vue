@@ -6,7 +6,7 @@ import { OLink, ODivider, OTag, OTab, OTabPane } from '@opensig/opendesign';
 import { DownloadItem } from '~@/@types/type-download';
 import DownloadSection from './DownloadSection.vue';
 import { useLocale } from '~@/composables/useLocale';
-import { GITCODE_LINK, DOCS_LINK } from '~@/data/url-config';
+import { ATOMGIT_LINK, DOCS_LINK } from '~@/data/url-config';
 import { downloadName } from '~@/data/download/content-bridge';
 const props = defineProps({
   contentData: {
@@ -93,7 +93,7 @@ const hasOgracData = computed(() => newData.value.some((i) => (i.name as string)
       </template>
       <OLink
         color="primary"
-        :href="`${GITCODE_LINK}/opengauss/community/issues`"
+        :href="`${ATOMGIT_LINK}/opengauss/community/issues`"
         target="_blank"
         rel="noopener noreferrer"
         v-analytics.bubble.addUrl="

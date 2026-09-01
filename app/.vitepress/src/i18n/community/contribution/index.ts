@@ -1,27 +1,27 @@
-import { GITCODE_LINK, CLA_LINK, SAGE_LINK, DOCS_GITCODE_LINK } from '@/data/url-config';
+import { ATOMGIT_LINK, CLA_LINK, SAGE_LINK, DOCS_ATOMGIT_LINK } from '@/data/url-config';
 export default {
   zh: {
     LOOK_DESC: `查看文字版攻略`,
     LOOK_MAP: `贡献攻略地图`,
     LINK_LIST: [
       {
-        URL: `${GITCODE_LINK}/opengauss/community/blob/master/code-of-conduct.md`,
+        URL: `${ATOMGIT_LINK}/opengauss/community/blob/master/code-of-conduct.md`,
         ALT: 'openGauss社区行为守则',
         BLANK: true,
       },
       {
-        URL: `${GITCODE_LINK}/opengauss`,
-        ALT: `${GITCODE_LINK}/opengauss`,
+        URL: `${ATOMGIT_LINK}/opengauss`,
+        ALT: `${ATOMGIT_LINK}/opengauss`,
         BLANK: true,
       },
       {
-        URL: `${DOCS_GITCODE_LINK}/docs/start/quick`,
-        ALT: `${DOCS_GITCODE_LINK}/docs/start/quick`,
+        URL: `${DOCS_ATOMGIT_LINK}/docs/start/quick`,
+        ALT: `${DOCS_ATOMGIT_LINK}/docs/start/quick`,
         BLANK: true,
       },
       {
-        URL: `${GITCODE_LINK}setting/email`,
-        ALT: `${GITCODE_LINK}setting/email`,
+        URL: `${ATOMGIT_LINK}setting/email`,
+        ALT: `${ATOMGIT_LINK}setting/email`,
         BLANK: true,
       },
       {
@@ -55,22 +55,22 @@ export default {
         BLANK: true,
       },
       {
-        URL: `${GITCODE_LINK}/opengauss/community/blob/master/community-membership.md`,
+        URL: `${ATOMGIT_LINK}/opengauss/community/blob/master/community-membership.md`,
         ALT: 'openGauss社区角色介绍',
         BLANK: true,
       },
       {
-        URL: `${GITCODE_LINK}org/opengauss/issues`,
+        URL: `${ATOMGIT_LINK}org/opengauss/issues`,
         ALT: 'Issue列表',
         BLANK: true,
       },
       {
-        URL: `${GITCODE_LINK}/opengauss/community`,
+        URL: `${ATOMGIT_LINK}/opengauss/community`,
         ALT: 'Community仓库',
         BLANK: true,
       },
       {
-        URL: `${GITCODE_LINK}/opengauss/community/blob/master/contributors/issue-submit.md`,
+        URL: `${ATOMGIT_LINK}/opengauss/community/blob/master/contributors/issue-submit.md`,
         ALT: 'Issue提交指南',
         BLANK: true,
       },
@@ -87,23 +87,23 @@ export default {
     PRINT_MAP: `Download`,
     LINK_LIST: [
       {
-        URL: `${GITCODE_LINK}/opengauss/community/blob/master/code-of-conduct.md`,
+        URL: `${ATOMGIT_LINK}/opengauss/community/blob/master/code-of-conduct.md`,
         ALT: 'openGauss Community Code of Conduct',
         BLANK: true,
       },
       {
-        URL: `${GITCODE_LINK}/opengauss`,
-        ALT: `${GITCODE_LINK}/opengauss`,
+        URL: `${ATOMGIT_LINK}/opengauss`,
+        ALT: `${ATOMGIT_LINK}/opengauss`,
         BLANK: true,
       },
       {
-        URL: `${DOCS_GITCODE_LINK}/docs/start/quick`,
-        ALT: `${DOCS_GITCODE_LINK}/docs/start/quick`,
+        URL: `${DOCS_ATOMGIT_LINK}/docs/start/quick`,
+        ALT: `${DOCS_ATOMGIT_LINK}/docs/start/quick`,
         BLANK: true,
       },
       {
-        URL: `${GITCODE_LINK}setting/email`,
-        ALT: `${GITCODE_LINK}setting/email`,
+        URL: `${ATOMGIT_LINK}setting/email`,
+        ALT: `${ATOMGIT_LINK}setting/email`,
         BLANK: true,
       },
       {
@@ -137,22 +137,22 @@ export default {
         BLANK: true,
       },
       {
-        URL: `${GITCODE_LINK}/opengauss/community/blob/master/community-membership.md`,
+        URL: `${ATOMGIT_LINK}/opengauss/community/blob/master/community-membership.md`,
         ALT: 'Community Membership introduction',
         BLANK: true,
       },
       {
-        URL: `${GITCODE_LINK}org/opengauss/issues`,
-        ALT: `${GITCODE_LINK}org/opengauss/issues`,
+        URL: `${ATOMGIT_LINK}org/opengauss/issues`,
+        ALT: `${ATOMGIT_LINK}org/opengauss/issues`,
         BLANK: true,
       },
       {
-        URL: `${GITCODE_LINK}/opengauss/community`,
+        URL: `${ATOMGIT_LINK}/opengauss/community`,
         ALT: 'Community',
         BLANK: true,
       },
       {
-        URL: `${GITCODE_LINK}/opengauss/community/blob/master/contributors/issue-submit.md`,
+        URL: `${ATOMGIT_LINK}/opengauss/community/blob/master/contributors/issue-submit.md`,
         ALT: 'Issue Submit Guide',
         BLANK: true,
       },

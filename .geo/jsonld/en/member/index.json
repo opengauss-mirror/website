@@ -10,7 +10,7 @@
     "url": "https://opengauss.org/assets/logo_dark.CElWqwW0.svg"
   },
   "sameAs": [
-    "https://gitcode.com/opengauss"
+    "https://atomgit.com/opengauss"
   ],
   "subOrganization": [
     {
@@ -22,7 +22,7 @@
       "@type": "Organization",
       "name": "Board of Directors",
       "alternateName": "Board",
-      "url": "https://gitcode.com/opengauss/board",
+      "url": "https://atomgit.com/opengauss/board",
       "contactPoint": {
         "@type": "ContactPoint",
         "email": "board@opengauss.org",
@@ -33,7 +33,7 @@
       "@type": "Organization",
       "name": "User Committee",
       "alternateName": "UC",
-      "url": "https://gitcode.com/opengauss/uc",
+      "url": "https://atomgit.com/opengauss/uc",
       "contactPoint": {
         "@type": "ContactPoint",
         "email": "uc@opengauss.org",
@@ -44,7 +44,7 @@
       "@type": "Organization",
       "name": "Brand Committee",
       "alternateName": "BC",
-      "url": "https://gitcode.com/opengauss/bc",
+      "url": "https://atomgit.com/opengauss/bc",
       "contactPoint": {
         "@type": "ContactPoint",
         "email": "bc@opengauss.org",
@@ -55,7 +55,7 @@
       "@type": "Organization",
       "name": "Technical Committee",
       "alternateName": "TC",
-      "url": "https://gitcode.com/opengauss/tc",
+      "url": "https://atomgit.com/opengauss/tc",
       "contactPoint": {
         "@type": "ContactPoint",
         "email": "tc@opengauss.org",
@@ -74,7 +74,7 @@
         {
           "@type": "Organization",
           "name": "SQLEngine SIG",
-          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/SQLEngine",
+          "url": "https://atomgit.com/opengauss/tc/tree/master/sigs/SQLEngine",
           "contactPoint": {
             "@type": "ContactPoint",
             "email": "sqlengine@opengauss.org"
@@ -83,7 +83,7 @@
         {
           "@type": "Organization",
           "name": "StorageEngine SIG",
-          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/StorageEngine",
+          "url": "https://atomgit.com/opengauss/tc/tree/master/sigs/StorageEngine",
           "contactPoint": {
             "@type": "ContactPoint",
             "email": "storageengine@opengauss.org"
@@ -92,7 +92,7 @@
         {
           "@type": "Organization",
           "name": "Connectors SIG",
-          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/Connectors",
+          "url": "https://atomgit.com/opengauss/tc/tree/master/sigs/Connectors",
           "contactPoint": {
             "@type": "ContactPoint",
             "email": "connectors@opengauss.org"
@@ -101,7 +101,7 @@
         {
           "@type": "Organization",
           "name": "Tools SIG",
-          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/Tools",
+          "url": "https://atomgit.com/opengauss/tc/tree/master/sigs/Tools",
           "contactPoint": {
             "@type": "ContactPoint",
             "email": "tools@opengauss.org"
@@ -110,7 +110,7 @@
         {
           "@type": "Organization",
           "name": "Docs SIG",
-          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/Docs",
+          "url": "https://atomgit.com/opengauss/tc/tree/master/sigs/Docs",
           "contactPoint": {
             "@type": "ContactPoint",
             "email": "docs@opengauss.org"
@@ -119,7 +119,7 @@
         {
           "@type": "Organization",
           "name": "Infra SIG",
-          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/Infra",
+          "url": "https://atomgit.com/opengauss/tc/tree/master/sigs/Infra",
           "contactPoint": {
             "@type": "ContactPoint",
             "email": "infra@opengauss.org"
@@ -128,7 +128,7 @@
         {
           "@type": "Organization",
           "name": "Security SIG",
-          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/Security",
+          "url": "https://atomgit.com/opengauss/tc/tree/master/sigs/Security",
           "contactPoint": {
             "@type": "ContactPoint",
             "email": "securties@opengauss.org"
@@ -137,7 +137,7 @@
         {
           "@type": "Organization",
           "name": "IoT SIG",
-          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/IoT",
+          "url": "https://atomgit.com/opengauss/tc/tree/master/sigs/IoT",
           "contactPoint": {
             "@type": "ContactPoint",
             "email": "iot@opengauss.org"
@@ -146,7 +146,7 @@
         {
           "@type": "Organization",
           "name": "OM SIG",
-          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/OM",
+          "url": "https://atomgit.com/opengauss/tc/tree/master/sigs/OM",
           "contactPoint": {
             "@type": "ContactPoint",
             "email": "om@opengauss.org"
@@ -155,7 +155,7 @@
         {
           "@type": "Organization",
           "name": "In-place Update SIG",
-          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/In-place-Update",
+          "url": "https://atomgit.com/opengauss/tc/tree/master/sigs/In-place-Update",
           "contactPoint": {
             "@type": "ContactPoint",
             "email": "inplaceupdate@opengauss.org"
@@ -164,7 +164,7 @@
         {
           "@type": "Organization",
           "name": "AI SIG",
-          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/AI",
+          "url": "https://atomgit.com/opengauss/tc/tree/master/sigs/AI",
           "contactPoint": {
             "@type": "ContactPoint",
             "email": "ai@opengauss.org"
@@ -173,7 +173,7 @@
         {
           "@type": "Organization",
           "name": "GIS SIG",
-          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/GIS",
+          "url": "https://atomgit.com/opengauss/tc/tree/master/sigs/GIS",
           "contactPoint": {
             "@type": "ContactPoint",
             "email": "gis@opengauss.org"
@@ -182,7 +182,7 @@
         {
           "@type": "Organization",
           "name": "Security Technology SIG",
-          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/SecurityTechnology",
+          "url": "https://atomgit.com/opengauss/tc/tree/master/sigs/SecurityTechnology",
           "contactPoint": {
             "@type": "ContactPoint",
             "email": "securitytechnology@opengauss.org"
@@ -191,7 +191,7 @@
         {
           "@type": "Organization",
           "name": "CloudNative SIG",
-          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/CloudNative",
+          "url": "https://atomgit.com/opengauss/tc/tree/master/sigs/CloudNative",
           "contactPoint": {
             "@type": "ContactPoint",
             "email": "cloudnative@opengauss.org"
@@ -200,7 +200,7 @@
         {
           "@type": "Organization",
           "name": "Graph SIG",
-          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/Graph",
+          "url": "https://atomgit.com/opengauss/tc/tree/master/sigs/Graph",
           "contactPoint": {
             "@type": "ContactPoint",
             "email": "graph@opengauss.org"
@@ -209,7 +209,7 @@
         {
           "@type": "Organization",
           "name": "Blockchain SIG",
-          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/Blockchain",
+          "url": "https://atomgit.com/opengauss/tc/tree/master/sigs/Blockchain",
           "contactPoint": {
             "@type": "ContactPoint",
             "email": "blockchain@opengauss.org"
@@ -218,7 +218,7 @@
         {
           "@type": "Organization",
           "name": "QA SIG",
-          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/QA",
+          "url": "https://atomgit.com/opengauss/tc/tree/master/sigs/QA",
           "contactPoint": {
             "@type": "ContactPoint",
             "email": "qa@opengauss.org"
@@ -227,7 +227,7 @@
         {
           "@type": "Organization",
           "name": "DCF SIG",
-          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/DCF",
+          "url": "https://atomgit.com/opengauss/tc/tree/master/sigs/DCF",
           "contactPoint": {
             "@type": "ContactPoint",
             "email": "dcf@opengauss.org"
@@ -236,7 +236,7 @@
         {
           "@type": "Organization",
           "name": "Certification SIG",
-          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/Certification",
+          "url": "https://atomgit.com/opengauss/tc/tree/master/sigs/Certification",
           "contactPoint": {
             "@type": "ContactPoint",
             "email": "certification@opengauss.org"
@@ -245,7 +245,7 @@
         {
           "@type": "Organization",
           "name": "Plugin SIG",
-          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/Plugin",
+          "url": "https://atomgit.com/opengauss/tc/tree/master/sigs/Plugin",
           "contactPoint": {
             "@type": "ContactPoint",
             "email": "plugin@opengauss.org"
@@ -254,7 +254,7 @@
         {
           "@type": "Organization",
           "name": "CM SIG",
-          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/CM",
+          "url": "https://atomgit.com/opengauss/tc/tree/master/sigs/CM",
           "contactPoint": {
             "@type": "ContactPoint",
             "email": "cm@opengauss.org"
@@ -263,7 +263,7 @@
         {
           "@type": "Organization",
           "name": "ReleaseManagement SIG",
-          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/ReleaseManagement",
+          "url": "https://atomgit.com/opengauss/tc/tree/master/sigs/ReleaseManagement",
           "contactPoint": {
             "@type": "ContactPoint",
             "email": "releaseManagement@opengauss.org"
@@ -272,7 +272,7 @@
         {
           "@type": "Organization",
           "name": "OPS SIG",
-          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/OPS",
+          "url": "https://atomgit.com/opengauss/tc/tree/master/sigs/OPS",
           "contactPoint": {
             "@type": "ContactPoint",
             "email": "ops@opengauss.org"
@@ -281,7 +281,7 @@
         {
           "@type": "Organization",
           "name": "KnowledgeGraph SIG",
-          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/KnowledgeGraph",
+          "url": "https://atomgit.com/opengauss/tc/tree/master/sigs/KnowledgeGraph",
           "contactPoint": {
             "@type": "ContactPoint",
             "email": "knowledgegraph@opengauss.org"
@@ -290,7 +290,7 @@
         {
           "@type": "Organization",
           "name": "RISC-V SIG",
-          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/RISC-V",
+          "url": "https://atomgit.com/opengauss/tc/tree/master/sigs/RISC-V",
           "contactPoint": {
             "@type": "ContactPoint",
             "email": "riscv@opengauss.org"
@@ -299,7 +299,7 @@
         {
           "@type": "Organization",
           "name": "oGRAC SIG",
-          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/CTMM",
+          "url": "https://atomgit.com/opengauss/tc/tree/master/sigs/CTMM",
           "contactPoint": {
             "@type": "ContactPoint",
             "email": "ctmm@opengauss.org"
@@ -308,7 +308,7 @@
         {
           "@type": "Organization",
           "name": "Embedded SIG",
-          "url": "https://gitcode.com/opengauss/tc/tree/master/sigs/Embedded",
+          "url": "https://atomgit.com/opengauss/tc/tree/master/sigs/Embedded",
           "contactPoint": {
             "@type": "ContactPoint",
             "email": "embedded@opengauss.org"
@@ -324,77 +324,77 @@
         {
           "@type": "Organization",
           "name": "Shenzhen User Group",
-          "url": "https://gitcode.com/opengauss/openGauss-User-Group/tree/master/ShenZhen"
+          "url": "https://atomgit.com/opengauss/openGauss-User-Group/tree/master/ShenZhen"
         },
         {
           "@type": "Organization",
           "name": "Beijing User Group",
-          "url": "https://gitcode.com/opengauss/openGauss-User-Group/tree/master/BeiJing"
+          "url": "https://atomgit.com/opengauss/openGauss-User-Group/tree/master/BeiJing"
         },
         {
           "@type": "Organization",
           "name": "Nanjing User Group",
-          "url": "https://gitcode.com/opengauss/openGauss-User-Group/tree/master/NanJing"
+          "url": "https://atomgit.com/opengauss/openGauss-User-Group/tree/master/NanJing"
         },
         {
           "@type": "Organization",
           "name": "Xi'an User Group",
-          "url": "https://gitcode.com/opengauss/openGauss-User-Group/tree/master/XiAn"
+          "url": "https://atomgit.com/opengauss/openGauss-User-Group/tree/master/XiAn"
         },
         {
           "@type": "Organization",
           "name": "Changsha User Group",
-          "url": "https://gitcode.com/opengauss/openGauss-User-Group/tree/master/ChangSha"
+          "url": "https://atomgit.com/opengauss/openGauss-User-Group/tree/master/ChangSha"
         },
         {
           "@type": "Organization",
           "name": "Hangzhou User Group",
-          "url": "https://gitcode.com/opengauss/openGauss-User-Group/tree/master/HangZhou"
+          "url": "https://atomgit.com/opengauss/openGauss-User-Group/tree/master/HangZhou"
         },
         {
           "@type": "Organization",
           "name": "Lanzhou User Group",
-          "url": "https://gitcode.com/opengauss/openGauss-User-Group/tree/master/LanZhou"
+          "url": "https://atomgit.com/opengauss/openGauss-User-Group/tree/master/LanZhou"
         },
         {
           "@type": "Organization",
           "name": "Chongqing User Group",
-          "url": "https://gitcode.com/opengauss/openGauss-User-Group/tree/master/ChongQing"
+          "url": "https://atomgit.com/opengauss/openGauss-User-Group/tree/master/ChongQing"
         },
         {
           "@type": "Organization",
           "name": "Shanghai User Group",
-          "url": "https://gitcode.com/opengauss/openGauss-User-Group/tree/master/ShangHai"
+          "url": "https://atomgit.com/opengauss/openGauss-User-Group/tree/master/ShangHai"
         },
         {
           "@type": "Organization",
           "name": "Chengdu User Group",
-          "url": "https://gitcode.com/opengauss/openGauss-User-Group/tree/master/ChengDu"
+          "url": "https://atomgit.com/opengauss/openGauss-User-Group/tree/master/ChengDu"
         },
         {
           "@type": "Organization",
           "name": "Guangzhou User Group",
-          "url": "https://gitcode.com/opengauss/openGauss-User-Group/tree/master/GuangZhou"
+          "url": "https://atomgit.com/opengauss/openGauss-User-Group/tree/master/GuangZhou"
         },
         {
           "@type": "Organization",
           "name": "Guiyang User Group",
-          "url": "https://gitcode.com/opengauss/openGauss-User-Group/tree/master/GuiYang"
+          "url": "https://atomgit.com/opengauss/openGauss-User-Group/tree/master/GuiYang"
         },
         {
           "@type": "Organization",
           "name": "Hefei User Group",
-          "url": "https://gitcode.com/opengauss/openGauss-User-Group/tree/master/HeFei"
+          "url": "https://atomgit.com/opengauss/openGauss-User-Group/tree/master/HeFei"
         },
         {
           "@type": "Organization",
           "name": "Wuhan User Group",
-          "url": "https://gitcode.com/opengauss/openGauss-User-Group/tree/master/WuHan"
+          "url": "https://atomgit.com/opengauss/openGauss-User-Group/tree/master/WuHan"
         },
         {
           "@type": "Organization",
           "name": "Shenyang User Group",
-          "url": "https://gitcode.com/opengauss/openGauss-User-Group/tree/master/ShenYang"
+          "url": "https://atomgit.com/opengauss/openGauss-User-Group/tree/master/ShenYang"
         }
       ],
       "contactPoint": {

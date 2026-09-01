@@ -9,7 +9,7 @@
 #   planned_eol              计划终止维护日期
 #   desc_zh/en               中英文版本描述（可选）
 #   init_previous            历史版本页默认选中版本（可选，仅一个版本设置）
-#   version_capability_path  版本能力矩阵文档链接（可选，含占位符 {GITCODE} / {DOCS_ORIGIN}）
+#   version_capability_path  版本能力矩阵文档链接（可选，含占位符 {ATOMGIT} / {DOCS_ORIGIN}）
 #   release_notes_docs       发行说明链接（可选，含占位符）
 #   docs_list                相关文档列表（可选）
 #     name_zh/en             中英文文档名
@@ -43,7 +43,7 @@
   planned_eol: "2026.03.30"
   desc_zh: 社区创新版本联创测试使用，发布间隔周期定为6个月，社区提供6个月维护支持。
   desc_en: "RCx: a collaborative testing version released every 6 months, with 6 months of community support."
-  version_capability_path: "{GITCODE}/opengauss/docs/blob/7.0.0-RC2/content/zh/docs/VersionCapability/index.md"
+  version_capability_path: "{ATOMGIT}/opengauss/docs/blob/7.0.0-RC2/content/zh/docs/VersionCapability/index.md"
   docs_list:
     - name_zh: 发行说明
       name_en: Release Notes
@@ -58,7 +58,7 @@
   planned_eol: "2025.09.30"
   desc_zh: 社区创新版本联创测试使用，发布间隔周期定为6个月，社区提供6个月维护支持。
   desc_en: "RCx: a collaborative testing version released every 6 months, with 6 months of community support."
-  version_capability_path: "{GITCODE}/opengauss/docs/blob/7.0.0-RC1/content/zh/docs/VersionCapability/index.md"
+  version_capability_path: "{ATOMGIT}/opengauss/docs/blob/7.0.0-RC1/content/zh/docs/VersionCapability/index.md"
   docs_list:
     - name_zh: 发行说明
       name_en: Release Notes
@@ -73,7 +73,7 @@
   planned_eol: "2027.09.30"
   desc_zh: openGauss 6.0.0 LTS及后续LTS版本发布间隔周期为2年，社区提供3年支持，社区OGSP伙伴提供3年以后维护支持服务。
   desc_en: An LTS version for openGauss 6.0.0 and later is provided with 3 years of community support, followed by additional maintenance support by oGSPs.
-  version_capability_path: "{GITCODE}/opengauss/docs/blob/6.0.0/content/zh/docs/VersionCapability/index.md"
+  version_capability_path: "{ATOMGIT}/opengauss/docs/blob/6.0.0/content/zh/docs/VersionCapability/index.md"
   docs_list:
     - name_zh: 发行说明
       name_en: Release Notes
@@ -88,7 +88,7 @@
   planned_eol: "2027.09.30"
   desc_zh: openGauss 6.0.0 LTS及后续LTS版本发布间隔周期为2年，社区提供3年支持，社区OGSP伙伴提供3年以后维护支持服务。
   desc_en: An LTS version for openGauss 6.0.0 and later is provided with 3 years of community support, followed by additional maintenance support by oGSPs.
-  version_capability_path: "{GITCODE}/opengauss/docs/blob/6.0.0/content/zh/docs/VersionCapability/index.md"
+  version_capability_path: "{ATOMGIT}/opengauss/docs/blob/6.0.0/content/zh/docs/VersionCapability/index.md"
   docs_list:
     - name_zh: 发行说明
       name_en: Release Notes
@@ -103,7 +103,7 @@
   planned_eol: "2027.09.30"
   desc_zh: openGauss 6.0.0 LTS及后续LTS版本发布间隔周期为2年，社区提供3年支持，社区OGSP伙伴提供3年以后维护支持服务。
   desc_en: An LTS version for openGauss 6.0.0 and later is provided with 3 years of community support, followed by additional maintenance support by oGSPs.
-  version_capability_path: "{GITCODE}/opengauss/docs/blob/6.0.0/content/zh/docs/VersionCapability/index.md"
+  version_capability_path: "{ATOMGIT}/opengauss/docs/blob/6.0.0/content/zh/docs/VersionCapability/index.md"
   docs_list:
     - name_zh: 发行说明
       name_en: Release Notes
@@ -118,7 +118,7 @@
   planned_eol: "2027.09.30"
   desc_zh: openGauss 6.0.1 LTS 及后续LTS版本社区提供3年维护支持，社区OGSP伙伴提供3年以后维护支持服务。
   desc_en: An LTS version for openGauss 6.0.0 and later is provided with 3 years of community support, followed by additional maintenance support by oGSPs.
-  version_capability_path: "{GITCODE}/opengauss/docs/blob/6.0.0/content/zh/docs/VersionCapability/index.md"
+  version_capability_path: "{ATOMGIT}/opengauss/docs/blob/6.0.0/content/zh/docs/VersionCapability/index.md"
   docs_list:
     - name_zh: 发行说明
       name_en: Release Notes
@@ -132,7 +132,7 @@
   release_date: "2024.09.30"
   planned_eol: "2027.09.30"
   desc_zh: 规模上线使用，发布间隔周期为2年，社区提供3年维护支持，OGSP伙伴提供3年以上延长维护支持服务。
-  version_capability_path: "{GITCODE}/opengauss/docs/blob/6.0.0/content/zh/docs/VersionCapability/index.md"
+  version_capability_path: "{ATOMGIT}/opengauss/docs/blob/6.0.0/content/zh/docs/VersionCapability/index.md"
   docs_list:
     - name_zh: 发行说明
       name_en: Release Notes
@@ -144,7 +144,7 @@
   data_file: download5.0.5
   release_date: "2025.12"
   planned_eol: "2026.03.31"
-  version_capability_path: "{GITCODE}/opengauss/docs/blob/5.0.0/content/zh/docs/VersionCapability/index.md"
+  version_capability_path: "{ATOMGIT}/opengauss/docs/blob/5.0.0/content/zh/docs/VersionCapability/index.md"
   docs_list:
     - name_zh: 发行说明
       name_en: Release Notes
@@ -156,7 +156,7 @@
   data_file: download5.0.3
   release_date: "2024.08"
   planned_eol: "2026.03.31"
-  version_capability_path: "{GITCODE}/opengauss/docs/blob/5.0.0/content/zh/docs/VersionCapability/index.md"
+  version_capability_path: "{ATOMGIT}/opengauss/docs/blob/5.0.0/content/zh/docs/VersionCapability/index.md"
   docs_list:
     - name_zh: 发行说明
       name_en: Release Notes
@@ -168,7 +168,7 @@
   data_file: download6.0.0-RC1
   release_date: "2024.03.30"
   planned_eol: "2024.09.30"
-  version_capability_path: "{GITCODE}/opengauss/docs/blob/6.0.0/content/zh/docs/VersionCapability/index.md"
+  version_capability_path: "{ATOMGIT}/opengauss/docs/blob/6.0.0/content/zh/docs/VersionCapability/index.md"
   docs_list:
     - name_zh: 发行说明
       name_en: Release Notes
@@ -180,7 +180,7 @@
   data_file: download5.0.2
   release_date: "2024.05"
   planned_eol: "2026.03.31"
-  version_capability_path: "{GITCODE}/opengauss/docs/blob/5.0.0/content/zh/docs/VersionCapability/index.md"
+  version_capability_path: "{ATOMGIT}/opengauss/docs/blob/5.0.0/content/zh/docs/VersionCapability/index.md"
   docs_list:
     - name_zh: 发行说明
       name_en: Release Notes
@@ -192,7 +192,7 @@
   data_file: download5.0.1
   release_date: "2023.12"
   planned_eol: "2026.03.31"
-  version_capability_path: "{GITCODE}/opengauss/docs/blob/5.0.0/content/zh/docs/VersionCapability/index.md"
+  version_capability_path: "{ATOMGIT}/opengauss/docs/blob/5.0.0/content/zh/docs/VersionCapability/index.md"
   docs_list:
     - name_zh: 发行说明
       name_en: Release Notes
@@ -204,7 +204,7 @@
   data_file: download5.1.0
   release_date: "2023.06.30"
   planned_eol: "2024.03.31"
-  version_capability_path: "{GITCODE}/opengauss/docs/blob/5.0.0/content/zh/docs/VersionCapability/index.md"
+  version_capability_path: "{ATOMGIT}/opengauss/docs/blob/5.0.0/content/zh/docs/VersionCapability/index.md"
   docs_list:
     - name_zh: 发行说明
       name_en: Release Notes
@@ -216,7 +216,7 @@
   data_file: download5.0.0
   release_date: "2023.03.30"
   planned_eol: "2026.03.31"
-  version_capability_path: "{GITCODE}/opengauss/docs/blob/5.0.0/content/zh/docs/VersionCapability/index.md"
+  version_capability_path: "{ATOMGIT}/opengauss/docs/blob/5.0.0/content/zh/docs/VersionCapability/index.md"
   docs_list:
     - name_zh: 发行说明
       name_en: Release Notes

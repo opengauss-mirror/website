@@ -25,7 +25,7 @@
       },
       "serviceType": "Commercial Release Certification",
       "url": "https://opengauss.org/en/certification/",
-      "sameAs": "https://gitcode.com/opengauss/distribution-certification"
+      "sameAs": "https://atomgit.com/opengauss/distribution-certification"
     },
     {
       "@type": "Organization",

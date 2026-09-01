@@ -43,7 +43,7 @@ certify: 下载证书
 introduce:
   text: 关于商业发行版认证，openGauss提供了完整的测试流程，详见
   link_text: openGauss商业发行版测评整体介绍。
-  link_href: https://gitcode.com/opengauss/distribution-certification
+  link_href: https://atomgit.com/opengauss/distribution-certification
 
 certifications:
   - pro: GBase 8c V5

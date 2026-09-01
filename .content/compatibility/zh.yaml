@@ -48,7 +48,7 @@ certify: 下载证书
 tips:
   text: 关于商业软件兼容性技术测评，openGauss提供了完整的测试流程和工具，详见
   link_text: openGauss兼容性技术测评整体介绍
-  link_href: https://gitcode.com/opengauss/compatible-certification
+  link_href: https://atomgit.com/opengauss/compatible-certification
 
 compatibilities:
   - name: 江天智能监控运维平台软件 iSentry

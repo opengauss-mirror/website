@@ -8,7 +8,7 @@ import TheInternshipReward from './components/TheInternshipReward.vue';
 import TheInternshipTasks from './components/TheInternshipTasks.vue';
 import { OIcon, OLink } from '@opensig/opendesign';
 import IconOutlink from '~icons/app-new/icon-out-link.svg';
-import { GITCODE_LINK } from '~@/data/url-config/index.js';
+import { ATOMGIT_LINK } from '~@/data/url-config/index.js';
 import { EMAIL_ADDRESS } from './components/types.js';
 import { useCommon } from '~@/stores/common.js';
 import { storeToRefs } from 'pinia';
@@ -23,7 +23,7 @@ const { theme } = storeToRefs(useCommon());
   <AppSection title="实习任务">
     <TheInternshipTasks />
     <template #footer>
-      <OLink class="view-all-tasks" variant="text" color="primary" :href="`${GITCODE_LINK}/opengauss/opensource-intership/issues`" target="_blank" rel="noopener noreferrer">
+      <OLink class="view-all-tasks" variant="text" color="primary" :href="`${ATOMGIT_LINK}/opengauss/opensource-intership/issues`" target="_blank" rel="noopener noreferrer">
         查看全部实习任务
         <template #suffix><OIcon><IconOutlink /></OIcon></template>
       </OLink>

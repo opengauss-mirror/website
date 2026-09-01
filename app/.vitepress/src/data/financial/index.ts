@@ -1,4 +1,4 @@
-import { GITCODE_LINK, XINGYEBANK_LINK } from '@/data/url-config';
+import { ATOMGIT_LINK, XINGYEBANK_LINK } from '@/data/url-config';
 
 import safe from '@/assets/category/finance/safe.png';
 import safeDark from '@/assets/category/finance/safe_dark.png';
@@ -153,7 +153,7 @@ export default {
       title: '专区互动',
       card_title: 'openGauss金融版本互动专区',
       card_desc: '前往金融版本互动专区，参与Issue问答',
-      jumpLink: `${GITCODE_LINK}/opengauss/open-gauss-finance`,
+      jumpLink: `${ATOMGIT_LINK}/opengauss/open-gauss-finance`,
     },
     download: {
       title: '版本下载',

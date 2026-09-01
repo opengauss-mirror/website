@@ -16,7 +16,7 @@ On June 30, 2020, the source code of the openGauss database went open source off
 
 ## Repository
 
-openGauss repository: <https://gitcode.com/opengauss>
+openGauss repository: <https://atomgit.com/opengauss>
 
 openGauss mirror repository: <https://github.com/opengauss-mirror>
 

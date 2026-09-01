@@ -18,7 +18,7 @@ If a particular technical direction falls outside the scope of current SIGs, or 
 
 **Before officially initiating a SIG application, it is recommended that you do the following:**
 
-1. **Review current SIGs** to verify that no existing SIG covers your needs (see the list at the end of this guide, or check <OLink color="primary" href="https://gitcode.com/opengauss/tc/blob/master/sigs/README.md" target="_blank" rel="noopener noreferrer">sigs/README.md in the tc repository</OLink>). If a SIG already covers your direction, we highly encourage joining them instead of starting a new SIG to keep the community structure streamlined.
+1. **Review current SIGs** to verify that no existing SIG covers your needs (see the list at the end of this guide, or check <OLink color="primary" href="https://atomgit.com/opengauss/tc/blob/master/sigs/README.md" target="_blank" rel="noopener noreferrer">sigs/README.md in the tc repository</OLink>). If a SIG already covers your direction, we highly encourage joining them instead of starting a new SIG to keep the community structure streamlined.
 
 2. **Initiate an open discussion within the community**, for example, by sharing your proposal via the openGauss mailing list, forum, or online meetups. Doing so will help you:
 
@@ -26,7 +26,7 @@ If a particular technical direction falls outside the scope of current SIGs, or 
 - Collect community feedback to clarify the SIG's responsibilities and objectives.
 - Build consensus for the subsequent Technical Committee (TC) review, improving approval efficiency.
 
-The **TC** determines the establishment, dissolution, and merging of SIGs. As the technical governing body of the openGauss community, the TC holds the final authority on technical decisions and oversees the daily operations of all SIGs (for details, see the <OLink color="primary" href="https://gitcode.com/opengauss/tc/blob/master/README.md" target="_blank" rel="noopener noreferrer">README in the tc repository</OLink>).
+The **TC** determines the establishment, dissolution, and merging of SIGs. As the technical governing body of the openGauss community, the TC holds the final authority on technical decisions and oversees the daily operations of all SIGs (for details, see the <OLink color="primary" href="https://atomgit.com/opengauss/tc/blob/master/README.md" target="_blank" rel="noopener noreferrer">README in the tc repository</OLink>).
 
 ## **II. Roles**
 
@@ -40,12 +40,12 @@ A SIG typically has three roles:
 
 ## **III. How to Apply**
 
-The SIG governance data for openGauss is archived in the sigs/ directory of the <OLink color="primary" href="https://gitcode.com/opengauss/tc" target="_blank" rel="noopener noreferrer">opengauss/tc</OLink> repository. Each SIG has a separate subdirectory. The procedure is as follows:
+The SIG governance data for openGauss is archived in the sigs/ directory of the <OLink color="primary" href="https://atomgit.com/opengauss/tc" target="_blank" rel="noopener noreferrer">opengauss/tc</OLink> repository. Each SIG has a separate subdirectory. The procedure is as follows:
 
 ### **Step 1: Fork the tc repository and create your SIG directory using the template.**
 
 ```txt
-git clone https://gitcode.com/${Your GitCode ID}/tc
+git clone https://atomgit.com/${Your AtomGit ID}/tc
 cd ./tc/sigs
 cp -r Template ${Your SIG name}
 cd ${Your SIG name}
@@ -60,7 +60,7 @@ Open README.md in the new SIG directory and fill in the required content as reco
 - **SIG name and responsibilities**: Specify the openGauss community module that the SIG is responsible for developing and maintaining.
 - **Meeting schedule**: Specify the public meeting time (e.g., "14:00–16:00 on every other Wednesday (Beijing time)"), and subscribe to <OLink color="primary" href="/en/online-communication">openGauss online communication</OLink> for timely notifications.
 - **Meeting minutes archive method** (e.g., Etherpad link)
-- **Members**: Names, GitCode IDs, and email addresses of maintainers and committers
+- **Members**: Names, AtomGit IDs, and email addresses of maintainers and committers
 - **Contact information**: Mailing list address (yoursig@opengauss.org)
 - **Repositories**: Code repositories that the SIG plans to host and maintain (if repositories are specified during the application)
 
@@ -78,7 +78,7 @@ vi sig-info.yaml
 
 ### **Step 4: Submit a pull request.**
 
-Commit the changes to GitCode and initiate a pull request to the <OLink color="primary" href="https://gitcode.com/opengauss/tc" target="_blank" rel="noopener noreferrer">opengauss/tc</OLink> repository.
+Commit the changes to AtomGit and initiate a pull request to the <OLink color="primary" href="https://atomgit.com/opengauss/tc" target="_blank" rel="noopener noreferrer">opengauss/tc</OLink> repository.
 
 ### **Step 5: Email the Technical Committee (TC).**
 
