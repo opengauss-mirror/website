@@ -65,17 +65,12 @@ const rootStyle = computed(() => {
   .banner-illustration {
     filter: brightness(0.8) grayscale(0.2) contrast(1.2);
   }
-
-  .banner-level2 {
-    background-color: var(--o-color-primary1);
-  }
 }
 .banner-level2 {
   position: relative;
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: var(--o-color-primary1);
 
   .banner-bg {
     position: absolute;
