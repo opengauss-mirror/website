@@ -1,4 +1,5 @@
 import data from './data';
+import { sortCommitteeMembers } from './sort';
 import { ATOMGIT_LINK } from '@/data/url-config';
 export default {
   oldList: [
@@ -7,21 +8,21 @@ export default {
       id: `board_one`,
       gitPath: `${ATOMGIT_LINK}/opengauss/board`,
       nameText: `第一届理事会成员：`,
-      list: data.zh.BOARD_ONE,
+      list: sortCommitteeMembers(data.zh.BOARD_ONE),
     },
     {
       name: `第二届理事会`,
       id: `board_two`,
       gitPath: `${ATOMGIT_LINK}/opengauss/board`,
       nameText: `第二届理事会成员：`,
-      list: data.zh.BOARD_TWO,
+      list: sortCommitteeMembers(data.zh.BOARD_TWO),
     },
   ],
   memberList: [
     {
       name: `顾问委员会`,
       id: `counselor`,
-      list: data.zh.COUNSELOR,
+      list: sortCommitteeMembers(data.zh.COUNSELOR),
     },
     {
       name: `理事会`,
@@ -29,7 +30,7 @@ export default {
       gitPath: `${ATOMGIT_LINK}/opengauss/board`,
       emial: `board@opengauss.org`,
       nameText: `理事会成员：`,
-      list: data.zh.BOARD,
+      list: sortCommitteeMembers(data.zh.BOARD),
     },
     {
       name: `用户委员会`,
@@ -37,7 +38,7 @@ export default {
       gitPath: `${ATOMGIT_LINK}/opengauss/uc`,
       emial: `uc@opengauss.org`,
       nameText: `用户委员会成员：`,
-      list: data.zh.UC,
+      list: sortCommitteeMembers(data.zh.UC),
     },
     {
       name: `技术委员会 (TC)`,
@@ -61,7 +62,7 @@ export default {
       gitPath: `${ATOMGIT_LINK}/opengauss/bc`,
       emial: `bc@opengauss.org`,
       nameText: `品牌宣传委员会成员：`,
-      list: data.zh.BC,
+      list: sortCommitteeMembers(data.zh.BC),
     },
     {
       name: `秘书处`,

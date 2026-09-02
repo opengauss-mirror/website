@@ -1,4 +1,5 @@
 import data from './data';
+import { sortCommitteeMembers } from './sort';
 import { ATOMGIT_LINK } from '@/data/url-config';
 export default {
   oldList: [
@@ -7,21 +8,21 @@ export default {
       id: `board_one`,
       gitPath: `${ATOMGIT_LINK}/opengauss/board`,
       nameText: `First Board of Directors`,
-      list: data.en.BOARD_ONE,
+      list: sortCommitteeMembers(data.en.BOARD_ONE, data.zh.BOARD_ONE),
     },
     {
       name: `Second Board of Directors`,
       id: `board_two`,
       gitPath: `${ATOMGIT_LINK}/opengauss/board`,
       nameText: `Second Board of Directors`,
-      list: data.en.BOARD_TWO,
+      list: sortCommitteeMembers(data.en.BOARD_TWO, data.zh.BOARD_TWO),
     },
   ],
   memberList: [
     {
       name: `Advisory Committee`,
       id: `counselor`,
-      list: data.en.COUNSELOR,
+      list: sortCommitteeMembers(data.en.COUNSELOR, data.zh.COUNSELOR),
     },
     {
       name: `Board`,
@@ -29,7 +30,7 @@ export default {
       gitPath: `${ATOMGIT_LINK}/opengauss/board`,
       emial: `board@opengauss.org`,
       nameText: `Board of Directors`,
-      list: data.en.BOARD,
+      list: sortCommitteeMembers(data.en.BOARD, data.zh.BOARD),
     },
     {
       name: `User Committee`,
@@ -37,7 +38,7 @@ export default {
       gitPath: `${ATOMGIT_LINK}/opengauss/uc`,
       emial: `uc@opengauss.org`,
       nameText: `UC Members`,
-      list: data.en.UC,
+      list: sortCommitteeMembers(data.en.UC, data.zh.UC),
     },
     {
       name: `Technical Committee (TC)`,
@@ -61,7 +62,7 @@ export default {
       gitPath: `${ATOMGIT_LINK}/opengauss/bc`,
       emial: `bc@opengauss.org`,
       nameText: `BC Members`,
-      list: data.en.BC,
+      list: sortCommitteeMembers(data.en.BC, data.zh.BC),
     },
     {
       name: `Secretariat`,
