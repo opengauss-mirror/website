@@ -115,7 +115,7 @@ export default {
     ID: '会议ID:',
     LINK: '链接:',
     ETHERPAD: 'Etherpad:',
-    PLAYBACK: '回放链接:',
+    PLAYBACK: '智能回放:',
     RECORD: '是否录制此会议:',
     RECORD_TEXT: '若开启会议录制功能，会议开始后会自动开始录屏，并在会议结束后自动将录屏上传至B站openGauss账号下。录制服务由Zoom提供。',
     DELETE_MEETING: '删除会议',

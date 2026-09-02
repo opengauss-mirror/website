@@ -114,7 +114,7 @@ export default {
     ID: '会议ID:',
     LINK: '链接:',
     ETHERPAD: 'Etherpad:',
-    PLAYBACK: '回放链接:',
+    PLAYBACK: 'Playback:',
     RECORD: '是否录制此会议:',
     DELETE_MEETING: 'Delete Meeting',
     MODIFY: 'Modify Meeting',
