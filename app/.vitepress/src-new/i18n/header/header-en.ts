@@ -85,7 +85,7 @@ export default {
             {
               NAME: 'CLA',
               DESCRIPTION: 'Sign the CLA to protect your work—multiple options available!',
-              URL: `${CLA_LINK}/sign/gitee_opengauss-1614047760000855378`,
+              URL: `${CLA_LINK}/sign/690dba44479f483c74c264fd?lang=en`,
               ICON: OutLink,
             },
             {
