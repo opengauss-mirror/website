@@ -100,7 +100,7 @@
           "@type": "HowToStep",
           "position": 4,
           "name": "提交 Pull Request",
-          "text": "将以上修改提交到 GitCode，向 opengauss/tc 仓库发起 Pull Request。"
+          "text": "将以上修改提交到 AtomGit，向 opengauss/tc 仓库发起 Pull Request。"
         },
         {
           "@type": "HowToStep",
