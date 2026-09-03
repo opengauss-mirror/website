@@ -53,11 +53,9 @@ import yanghao from '@/assets/category/member/avatar/yanghao.png';
 import liuwei from '@/assets/category/member/avatar/liuwei.png';
 import lihongda from '@/assets/category/member/avatar/lihongda.png';
 import pengjiong from '@/assets/category/member/avatar/pengjiong.png';
-import haoqingyun from '@/assets/category/member/avatar/haoqingyun.png';
 import wanglei from '@/assets/category/member/avatar/wanglei.png';
 import lishuaituan from '@/assets/category/member/avatar/lishuaituan.png';
 import xiongxiaojun from '@/assets/category/member/avatar/xiongxiaojun.png';
-import xuchunyang from '@/assets/category/member/avatar/xuchunyang.png';
 import zhangleyi from '@/assets/category/member/avatar/zhangleyi.png';
 
 import linkexu from '@/assets/category/member/avatar/linkexu.png';
@@ -124,7 +122,6 @@ import wangxiumin from '@/assets/category/member/avatar/wangxiumin.png';
 import chaiyunpeng from '@/assets/category/member/avatar/chaiyunpeng.png';
 import zhubin2 from '@/assets/category/member/avatar/zhubin2.png';
 import zhangqiong from '@/assets/category/member/avatar/zhangqiong.png';
-import kongzaihua from '@/assets/category/member/avatar/kongzaihua.png';
 import yangxiaohua from '@/assets/category/member/avatar/yangxiaohua.png';
 import huangbiao from '@/assets/category/member/avatar/huangbiao.png';
 import jiyabin from '@/assets/category/member/avatar/jiyabin.png';
@@ -665,13 +662,6 @@ export default {
         company: `中国联合网络通信集团有限公司`,
       },
       {
-        img: haoqingyun,
-        name: `郝庆运`,
-        title: `理事`,
-        email: `haoqingyun@cmbc.com.cn`,
-        company: `中国民生银行`,
-      },
-      {
         img: zhouzhengde,
         name: `周正德`,
         title: `理事`,
@@ -1119,13 +1109,6 @@ export default {
         company: `兴业银行股份有限公司`,
       },
       {
-        img: haoqingyun,
-        name: `郝庆运`,
-        title: `委员`,
-        email: `haoqingyun@cmbc.com.cn`,
-        company: `中国民生银行`,
-      },
-      {
         img: lihongju,
         name: `李洪举`,
         title: `委员`,
@@ -1553,12 +1536,6 @@ export default {
         name: '柳长沣',
         title: 'Committer',
         email: 'superlchf@qq.com',
-      },
-      {
-        img: xuchunyang,
-        name: `徐春阳`,
-        title: `Committer`,
-        email: `springsun.xu@126.com`,
       },
       {
         img: zhangleyi,
@@ -2258,12 +2235,6 @@ export default {
         email: `ypchai@ruc.edu.cn`,
       },
       {
-        img: zhubin2,
-        name: `朱彬`,
-        title: `Maintainer`,
-        email: `zzzzzdb_zb@163.com`,
-      },
-      {
         img: zhangqiong,
         name: `张琼`,
         title: `Maintainer`,
@@ -2274,12 +2245,6 @@ export default {
         name: `何佳佳`,
         title: `Committer`,
         email: `957787@qq.com`,
-      },
-      {
-        img: kongzaihua,
-        name: `孔再华`,
-        title: `Committer`,
-        email: `kongzaihua@hotmail.com`,
       },
       {
         img: huxiangyu,
@@ -2458,12 +2423,6 @@ export default {
         name: `缪春亮`,
         title: `Committer`,
         email: `mcl2000@sina.com`,
-      },
-      {
-        img: haoqingyun,
-        name: `郝庆运`,
-        title: `Committer`,
-        email: `haoqingyun@cmbc.com.cn`,
       },
       {
         img: xuezhongbin,
@@ -2994,12 +2953,6 @@ export default {
         name: `黄凯耀`,
         title: `Maintainer`,
         email: `huangkaiyao@huawei.com`,
-      },
-      {
-        img: kongzaihua,
-        name: `孔再华`,
-        title: `Maintainer`,
-        email: `kongzaihua@hotmail.com`,
       },
       {
         img: zhufangfang,
@@ -4969,13 +4922,6 @@ export default {
         company: `China United Network Communications Limited`,
       },
       {
-        img: haoqingyun,
-        name: `Qingyun Hao`,
-        title: `Director`,
-        email: `haoqingyun@cmbc.com.cn`,
-        company: `China Minsheng Banking Corp., Ltd.`,
-      },
-      {
         img: zhouzhengde,
         name: `Zhengde Zhou`,
         title: `Director`,
@@ -5423,13 +5369,6 @@ export default {
         company: `Industrial Bank Co., Ltd.`,
       },
       {
-        img: haoqingyun,
-        name: `Qingyun Hao`,
-        title: `Member`,
-        email: `haoqingyun@cmbc.com.cn`,
-        company: `China Minsheng Banking Corp., Ltd.`,
-      },
-      {
         img: lihongju,
         name: `Hongju Li`,
         title: `Member`,
@@ -5857,12 +5796,6 @@ export default {
         name: '柳长沣',
         title: 'Committer',
         email: 'superlchf@qq.com',
-      },
-      {
-        img: xuchunyang,
-        name: `Chunyang Xu`,
-        title: `Committer`,
-        email: `springsun.xu@126.com`,
       },
       {
         img: zhangleyi,
@@ -6562,12 +6495,6 @@ export default {
         email: `ypchai@ruc.edu.cn`,
       },
       {
-        img: zhubin2,
-        name: `Bin Zhu`,
-        title: `Maintainer`,
-        email: `zzzzzdb_zb@163.com`,
-      },
-      {
         img: zhangqiong,
         name: `Qiong Zhang`,
         title: `Maintainer`,
@@ -6578,12 +6505,6 @@ export default {
         name: `Jiajia He`,
         title: `Committer`,
         email: `957787@qq.com`,
-      },
-      {
-        img: kongzaihua,
-        name: `Zaihua Kong`,
-        title: `Committer`,
-        email: `kongzaihua@hotmail.com`,
       },
       {
         img: huxiangyu,
@@ -6762,12 +6683,6 @@ export default {
         name: `Chuanliang Liao`,
         title: `Committer`,
         email: `mcl2000@sina.com`,
-      },
-      {
-        img: haoqingyun,
-        name: `Qingyun Hao`,
-        title: `Committer`,
-        email: `haoqingyun@cmbc.com.cn`,
       },
       {
         img: xuezhongbin,
@@ -7298,12 +7213,6 @@ export default {
         name: `Kaiyao Huang`,
         title: `Maintainer`,
         email: `huangkaiyao@huawei.com`,
-      },
-      {
-        img: kongzaihua,
-        name: `Zaihua Kong`,
-        title: `Maintainer`,
-        email: `kongzaihua@hotmail.com`,
       },
       {
         img: zhufangfang,

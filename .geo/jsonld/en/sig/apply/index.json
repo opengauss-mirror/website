@@ -100,7 +100,7 @@
           "@type": "HowToStep",
           "position": 4,
           "name": "Submit a pull request",
-          "text": "Commit the changes to GitCode and initiate a pull request to the opengauss/tc repository."
+          "text": "Commit the changes to AtomGit and initiate a pull request to the opengauss/tc repository."
         },
         {
           "@type": "HowToStep",
