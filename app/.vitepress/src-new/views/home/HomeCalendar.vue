@@ -199,6 +199,7 @@ const meetingFields = computed(() => {
     { label: t('home.HOME_CALENDAR.address'), key: 'address' },
     { label: t('home.HOME_CALENDAR.meetingLink'), key: 'join_url', isLink: true },
     { label: t('home.HOME_CALENDAR.ETHERPAD'), key: 'etherpad', isLink: true },
+    { label: t('home.HOME_CALENDAR.PLAYBACK'), key: (data: any) => data.bili_data?.[0]?.replay_url, isLink: true },
   ].map((item) => {
     return {
       ...item,
@@ -215,6 +216,15 @@ const displayCalendarData = computed(() => {
   if (tabType.value === 'all') return currentCalendarData.value;
   return currentCalendarData.value.filter((item) => tabType.value === item.type);
 });
+
+const extractCalendarFieldData = (calendarData: any, key: string | ((calendarData: any) => any) ) => {
+  if (typeof key === 'string') {
+    return calendarData[key];
+  }
+  if (typeof key === 'function') {
+    return key(calendarData);
+  }
+};
 
 watch(
   () => displayCalendarData.value.length,
@@ -545,15 +555,15 @@ const meetingCancelConfirm = async () => {
                   <OButton type="primary" variant="text" size="small" @click="meetingCancel(calendarData)"> 删除会议 </OButton>
                   <OButton type="primary" variant="text" size="small" @click="meetingModify(calendarData)"> 编辑会议 </OButton>
                 </div>
-                <template v-for="field in meetingFields" :key="field.key">
-                  <div class="info-item" v-if="calendarData[field.key]">
+                <template v-for="field in meetingFields" :key="field.label">
+                  <div class="info-item" v-if="extractCalendarFieldData(calendarData, field.key)">
                     <div class="item-title">{{ field.label }}</div>
-                    <OLink :hover-underline="true" color="primary" v-if="field.isLink" class="item-content" :href="calendarData[field.key]" target="_blank" rel="noopener noreferrer">
-                      {{ calendarData[field.key] }}
+                    <OLink :hover-underline="true" color="primary" v-if="field.isLink" class="item-content" :href="extractCalendarFieldData(calendarData, field.key)" target="_blank" rel="noopener noreferrer">
+                      {{ extractCalendarFieldData(calendarData, field.key) }}
                     </OLink>
                     <p v-else-if="field.key === 'time' && calendarData.start" class="item-content">{{ calendarData.start }} - {{ calendarData.end }}</p>
                     <p v-else class="item-content">
-                      {{ field.key === 'platform' ? getMeetingPlatformName(calendarData[field.key]) : calendarData[field.key] }}
+                      {{ field.key === 'platform' ? getMeetingPlatformName(extractCalendarFieldData(calendarData, field.key)) : extractCalendarFieldData(calendarData, field.key) }}
                     </p>
                   </div>
                 </template>
