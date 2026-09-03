@@ -65,6 +65,21 @@
       path_zh: /zh/news/2025-03-31/
       path_en: /zh/news/2025-03-31/
 
+- version_name: "6.0.6 (LTS)"
+  new_layout: true
+  is_login: false
+  data_file: download6.0.6
+  release_date: "2026.08"
+  planned_eol: "2027.09.30"
+  desc_zh: openGauss 6.0.0 LTS及后续LTS版本发布间隔周期为2年，社区提供3年支持，社区OGSP伙伴提供3年以后维护支持服务。
+  desc_en: An LTS version for openGauss 6.0.0 and later is provided with 3 years of community support, followed by additional maintenance support by oGSPs.
+  version_capability_path: "{ATOMGIT}/opengauss/docs/blob/6.0.0/content/zh/docs/VersionCapability/index.md"
+  docs_list:
+    - name_zh: 发行说明
+      name_en: Release Notes
+      path_zh: /zh/news/2026-08-30/
+      path_en: /zh/news/2026-08-30/
+
 - version_name: "6.0.5 (LTS)"
   new_layout: true
   is_login: false

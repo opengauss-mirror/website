@@ -1,0 +1,939 @@
+# download6.0.6 下载数据
+# 由 zh/en 合并而来，name_zh/name_en 为多语言字段，公共字段无后缀
+
+- category: openGauss Server
+  name_zh: openGauss_6.0.6 企业版
+  name_en: openGauss_6.0.6 Enterprise-Edition
+  size: 82MB
+  edition: enterprise
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler24.03/arm/openGauss-All-6.0.6-openEuler24.03-aarch64.tar.gz
+  sha_code: c69659fd90d4c641246221b5e5021f86b8c41740b461d2b7549d2958ecac9135
+  docs_name: 企业版安装指南
+  docs_url: /docs/6.0.0/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html
+  architecture: AArch64
+  os: openEuler 24.03 LTS
+  system: openEuler 24.03 LTS (aarch64)
+- category: openGauss Server
+  name_zh: openGauss_6.0.6 极简版
+  name_en: openGauss_6.0.6 Simplified
+  size: 71MB
+  edition: simple
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler24.03/arm/openGauss-Server-6.0.6-openEuler24.03-aarch64.tar.bz2
+  sha_code: 9962dfb297d88ed0e40ff8e7cd31bd6c56e9b25753ac3af634847a0a84dbe095
+  docs_name: 极简版安装指南
+  docs_url: /docs/6.0.0/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html
+  architecture: AArch64
+  os: openEuler 24.03 LTS
+  system: openEuler 24.03 LTS (aarch64)
+- category: openGauss Server
+  name_zh: openGauss_6.0.6 轻量版
+  name_en: openGauss_6.0.6 Lite
+  size: 35MB
+  edition: lite
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler24.03/arm/openGauss-Lite-6.0.6-openEuler24.03-aarch64.tar.gz
+  sha_code: 08b9801502ae136b10d28899e97efd0782c5ab18d634df64ab687b7212c9f6f7
+  docs_name: 轻量版安装指南
+  docs_url: /docs/6.0.0-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html
+  architecture: AArch64
+  os: openEuler 24.03 LTS
+  system: openEuler 24.03 LTS (aarch64)
+- category: openGauss Server
+  name_zh: openGauss_6.0.6 企业版
+  name_en: openGauss_6.0.6 Enterprise-Edition
+  size: 87MB
+  edition: enterprise
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler24.03/x86/openGauss-All-6.0.6-openEuler24.03-x86_64.tar.gz
+  sha_code: 6a2f7a13a4f681db3760b2b06fa3997642226d4823a23915df72def8ebaf6436
+  docs_name: 企业版安装指南
+  docs_url: /docs/6.0.0/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html
+  architecture: x86_64
+  os: openEuler 24.03 LTS
+  system: openEuler 24.03 LTS (x86_64)
+- category: openGauss Server
+  name_zh: openGauss_6.0.6 极简版
+  name_en: openGauss_6.0.6 Simplified
+  size: 76MB
+  edition: simple
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler24.03/x86/openGauss-Server-6.0.6-openEuler24.03-x86_64.tar.bz2
+  sha_code: 00f483976bc2ab473c41c4677d9f62969fd8f7a2bff534a1efdcd3534b1b9dc3
+  docs_name: 极简版安装指南
+  docs_url: /docs/6.0.0/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html
+  architecture: x86_64
+  os: openEuler 24.03 LTS
+  system: openEuler 24.03 LTS (x86_64)
+- category: openGauss Server
+  name_zh: openGauss_6.0.6 轻量版
+  name_en: openGauss_6.0.6 Lite
+  size: 36MB
+  edition: lite
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler24.03/x86/openGauss-Lite-6.0.6-openEuler24.03-x86_64.tar.gz
+  sha_code: 4a4c9361a6c8bff0531e6fc09ebaf34f8d00ff7b69332845d45e19cc35178f87
+  docs_name: 轻量版安装指南
+  docs_url: /docs/6.0.0-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html
+  architecture: x86_64
+  os: openEuler 24.03 LTS
+- category: openGauss Server
+  name_zh: openGauss_6.0.6 企业版
+  name_en: openGauss_6.0.6 Enterprise-Edition
+  size: 99MB
+  edition: enterprise
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler22.03/arm/openGauss-All-6.0.6-openEuler22.03-aarch64.tar.gz
+  sha_code: c1f09c2f9dde02376aa2643d6eaa655683ba97ca242a4d0b45f77f4c5712a9fc
+  docs_name: 企业版安装指南
+  docs_url: /docs/6.0.0/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html
+  architecture: AArch64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (aarch64)
+- category: openGauss Server
+  name_zh: openGauss_6.0.6 极简版
+  name_en: openGauss_6.0.6 Simplified
+  size: 71MB
+  edition: simple
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler22.03/arm/openGauss-Server-6.0.6-openEuler22.03-aarch64.tar.bz2
+  sha_code: 2a882ccc105952eb29654053eadd47e41167ae1f6c57fb4a3fbf80ec1d72525a
+  docs_name: 极简版安装指南
+  docs_url: /docs/6.0.0/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html
+  architecture: AArch64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (aarch64)
+- category: openGauss Server
+  name_zh: openGauss_6.0.6 轻量版
+  name_en: openGauss_6.0.6 Lite
+  size: 35MB
+  edition: lite
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler22.03/arm/openGauss-Lite-6.0.6-openEuler22.03-aarch64.tar.gz
+  sha_code: 482789f871a12ddbfa3a1311fcf4252a7a0b3b57dcaa0e9090e8420174e45b47
+  docs_name: 轻量版安装指南
+  docs_url: /docs/6.0.0-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html
+  architecture: AArch64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (aarch64)
+- category: openGauss Server
+  name_zh: openGauss_6.0.6 企业版
+  name_en: openGauss_6.0.6 Enterprise-Edition
+  size: 104MB
+  edition: enterprise
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler22.03/x86/openGauss-All-6.0.6-openEuler22.03-x86_64.tar.gz
+  sha_code: 14baf64afc653e5aa9099b721a3460563181385db98db71b06ed1fafd3621873
+  docs_name: 企业版安装指南
+  docs_url: /docs/6.0.0/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html
+  architecture: x86_64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (x86_64)
+- category: openGauss Server
+  name_zh: openGauss_6.0.6 极简版
+  name_en: openGauss_6.0.6 Simplified
+  size: 76MB
+  edition: simple
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler22.03/x86/openGauss-Server-6.0.6-openEuler22.03-x86_64.tar.bz2
+  sha_code: 0927b71c716342cbb79243e35481667abe3a574223d185985715e82ed6a8aa49
+  docs_name: 极简版安装指南
+  docs_url: /docs/6.0.0/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html
+  architecture: x86_64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (x86_64)
+- category: openGauss Server
+  name_zh: openGauss_6.0.6 轻量版
+  name_en: openGauss_6.0.6 Lite
+  size: 36MB
+  edition: lite
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler22.03/x86/openGauss-Lite-6.0.6-openEuler22.03-x86_64.tar.gz
+  sha_code: 2dcc7e6158bcb7cb83c044ae41983e30faebb8d61ee02bac266a01df32feedcc
+  docs_name: 轻量版安装指南
+  docs_url: /docs/6.0.0-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html
+  architecture: x86_64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (x86_64)
+- category: openGauss Server
+  name_zh: openGauss_6.0.6 企业版
+  name_en: openGauss_6.0.6 Enterprise-Edition
+  size: 99MB
+  edition: enterprise
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler20.03/arm/openGauss-All-6.0.6-openEuler20.03-aarch64.tar.gz
+  sha_code: 0e5034c554208be55519e6e3df34c9a20e112c0ae05621a49d6b55ab06493e2e
+  docs_name: 企业版安装指南
+  docs_url: /docs/6.0.0/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html
+  architecture: AArch64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (aarch64)
+- category: openGauss Server
+  name_zh: openGauss_6.0.6 极简版
+  name_en: openGauss_6.0.6 Simplified
+  size: 71MB
+  edition: simple
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler20.03/arm/openGauss-Server-6.0.6-openEuler20.03-aarch64.tar.bz2
+  sha_code: 5dd86c260fb716333eae24b2e40730739c49a2d6384f35619fc6f8e4a82c567f
+  docs_name: 极简版安装指南
+  docs_url: /docs/6.0.0/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html
+  architecture: AArch64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (aarch64)
+- category: openGauss Server
+  name_zh: openGauss_6.0.6 轻量版
+  name_en: openGauss_6.0.6 Lite
+  size: 35MB
+  edition: lite
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler20.03/arm/openGauss-Lite-6.0.6-openEuler20.03-aarch64.tar.gz
+  sha_code: 8f12fa0cd4c60115434b938f946cf64fd610235ed366736b6d8d20efb5555e4c
+  docs_name: 轻量版安装指南
+  docs_url: /docs/6.0.0-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html
+  architecture: AArch64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (aarch64)
+- category: openGauss Server
+  name_zh: openGauss_6.0.6 企业版
+  name_en: openGauss_6.0.6 Enterprise-Edition
+  size: 104MB
+  edition: enterprise
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler20.03/x86/openGauss-All-6.0.6-openEuler20.03-x86_64.tar.gz
+  sha_code: cabda70cc8219294092e7ca0aedbf54d489fb402f64193a26d2e289be1d8afa8
+  docs_name: 企业版安装指南
+  docs_url: /docs/6.0.0/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html
+  architecture: x86_64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (x86_64)
+- category: openGauss Server
+  name_zh: openGauss_6.0.6 极简版
+  name_en: openGauss_6.0.6 Simplified
+  size: 76MB
+  edition: simple
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler20.03/x86/openGauss-Server-6.0.6-openEuler20.03-x86_64.tar.bz2
+  sha_code: 026ae24749c227146c3f60ad6ff286071d4ca0f0b84a74c9adb2b0e417fb494f
+  docs_name: 极简版安装指南
+  docs_url: /docs/6.0.0/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html
+  architecture: x86_64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (x86_64)
+- category: openGauss Server
+  name_zh: openGauss_6.0.6 轻量版
+  name_en: openGauss_6.0.6 Lite
+  size: 36MB
+  edition: lite
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler20.03/x86/openGauss-Lite-6.0.6-openEuler20.03-x86_64.tar.gz
+  sha_code: 85cf3a7b624addff19d123fa79ac075e68dd94403e7a06e9b9b6450c18ca522a
+  docs_name: 轻量版安装指南
+  docs_url: /docs/6.0.0-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html
+  architecture: x86_64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (x86_64)
+- category: openGauss Server
+  name_zh: openGauss_6.0.6 企业版
+  name_en: openGauss_6.0.6 Enterprise-Edition
+  size: 102MB
+  edition: enterprise
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/CentOS7/x86/openGauss-All-6.0.6-CentOS7-x86_64.tar.gz
+  sha_code: 3bbf43b4b583abdaa44e347524694ab11b2a62b78b9b9e8edfeeee64cbaf6a50
+  docs_name: 企业版安装指南
+  docs_url: /docs/6.0.0/docs/InstallationGuide/%E4%BC%81%E4%B8%9A%E7%89%88%E5%AE%89%E8%A3%85.html
+  architecture: x86_64
+  os: Centos 7.6
+  system: Centos 7.6 (x86_64)
+- category: openGauss Server
+  name_zh: openGauss_6.0.6 极简版
+  name_en: openGauss_6.0.6 Simplified
+  size: 74MB
+  edition: simple
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/CentOS7/x86/openGauss-Server-6.0.6-CentOS7-x86_64.tar.bz2
+  sha_code: e4e223c163d5ff9254f94b26a60de6126f9f6010fd7a11fa3dcb3c8be78011b7
+  docs_name: 极简版安装指南
+  docs_url: /docs/6.0.0/docs/InstallationGuide/%E6%9E%81%E7%AE%80%E7%89%88%E5%AE%89%E8%A3%85.html
+  architecture: x86_64
+  os: Centos 7.6
+  system: Centos 7.6 (x86_64)
+- category: openGauss Server
+  name_zh: openGauss_6.0.6 轻量版
+  name_en: openGauss_6.0.6 Lite
+  size: 36MB
+  edition: lite
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/CentOS7/x86/openGauss-Lite-6.0.6-CentOS7-x86_64.tar.gz
+  sha_code: 5b0242e6bae7f343eeb58d1be9f91940691312048dfcd1aca8abcf79687989b2
+  docs_name: 轻量版安装指南
+  docs_url: /docs/6.0.0-lite/docs/InstallationGuide/%E5%AE%89%E8%A3%85%E6%A6%82%E8%BF%B0.html
+  architecture: x86_64
+  os: Centos 7.6
+  system: Centos 7.6 (x86_64)
+- category: openGauss Server
+  name: openGauss_6.0.6 极简版
+  size: 1.60GB
+  edition: simple
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openGauss-Docker-6.0.6-x86_64.tar
+  sha_code: 4c50bd0f8884f3c0716872ee7d277bad99cdee3d75193a948c7ae9d4b7dfd14d
+  docs_name_zh: 极简版容器安装指南
+  docs_name_en: docker deploy
+  docs_url: /docs/7.0.0-RC1/docs/InstallationGuide/%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E5%AE%89%E8%A3%85.html
+  architecture: x86_64
+  os: Docker
+  system: Docker (x86_64)
+- category: openGauss Server
+  name_zh: openGauss_6.0.6 极简版
+  name_en: openGauss_6.0.6 Simple
+  size: 1.70GB
+  edition: simple
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openGauss-Docker-6.0.6-aarch64.tar
+  sha_code: 00ad2206ac93cf28c7702cd624b7c59dc1a146f9dca1f81ed19eeac430416c0b
+  docs_name_zh: 极简版容器安装指南
+  docs_name_en: docker deploy
+  docs_url: /docs/7.0.0-RC1/docs/InstallationGuide/%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E5%AE%89%E8%A3%85.html
+  architecture: AArch64
+  os: Docker
+  system: Docker (AArch64)
+- category: openGauss Connectors
+  name: JDBC_6.0.6
+  size: 1.8MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler24.03/arm/openGauss-JDBC-6.0.6.tar.gz
+  sha_code: d1bc34a945bd237b26da7ed57a1d99c80bd9daffbcd0b8b172324812924f69ac
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 24.03 LTS
+  system: openEuler 24.03 LTS (aarch64)
+- category: openGauss Connectors
+  name: ODBC_6.0.6
+  size: 8.9MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler24.03/arm/openGauss-ODBC-6.0.6-openEuler24.03-aarch64.tar.gz
+  sha_code: a24162160cda8cc02584730feeca208b1f24f80fb225213149f759da21c5a9cd
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 24.03 LTS
+  system: openEuler 24.03 LTS (aarch64)
+- category: openGauss Connectors
+  name: Python-psycopg2_6.0.6
+  size: 3.0MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler24.03/arm/openGauss-Python-6.0.6-openEuler24.03-aarch64.tar.gz
+  sha_code: 0ae11a62fb1bb671b25265a92e5ac0e30837f4035f98f5dbc8d442c7d45d6a53
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 24.03 LTS
+  system: openEuler 24.03 LTS (aarch64)
+- category: openGauss Connectors
+  name: libpq_6.0.6
+  size: 5.1MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler24.03/arm/openGauss-Libpq-6.0.6-openEuler24.03-aarch64.tar.gz
+  sha_code: 8e8118c036f33364c573a2403dbe226c7cd960b8591a364517384a73bfa29ddf
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 24.03 LTS
+  system: openEuler 24.03 LTS (aarch64)
+- category: openGauss Connectors
+  name: JDBC_6.0.6
+  size: 1.8MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler24.03/x86/openGauss-JDBC-6.0.6.tar.gz
+  sha_code: 0870907e6134a90c2d2c744626f49c050526c3dc7a962ff7bf0850cb2cd14114
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 24.03 LTS
+  system: openEuler 24.03 LTS (x86_64)
+- category: openGauss Connectors
+  name: ODBC_6.0.6
+  size: 9.2MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler24.03/x86/openGauss-ODBC-6.0.6-openEuler24.03-x86_64.tar.gz
+  sha_code: 1dc3a85cfbb80e3e47018d03a62e4ad94aaed454bdb5ddabf7c511725051bbbd
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 24.03 LTS
+  system: openEuler 24.03 LTS (x86_64)
+- category: openGauss Connectors
+  name: Python-psycopg2_6.0.6
+  size: 3.1MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler24.03/x86/openGauss-Python-6.0.6-openEuler24.03-x86_64.tar.gz
+  sha_code: 539cc0c8525fbd8077464b828d54c137eac5758bc1e0b18211033ff1ebaafa7b
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 24.03 LTS
+  system: openEuler 24.03 LTS (x86_64)
+- category: openGauss Connectors
+  name: libpq_6.0.6
+  size: 5.3MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler24.03/x86/openGauss-Libpq-6.0.6-openEuler24.03-x86_64.tar.gz
+  sha_code: f858fc4e961ebc91b44bb057a14bf01ca74c4bffdffd175cc9fc13abbaf0fc86
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 24.03 LTS
+  system: openEuler 24.03 LTS (x86_64)  
+- category: openGauss Connectors
+  name: JDBC_6.0.6
+  size: 1.8MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler22.03/arm/openGauss-JDBC-6.0.6.tar.gz
+  sha_code: a5ba81c7d59ac64ca0b489cf302518edf767f4211578f96faf6b837dcdb3c7f7
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (aarch64)
+- category: openGauss Connectors
+  name: ODBC_6.0.6
+  size: 8.9MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler22.03/arm/openGauss-ODBC-6.0.6-openEuler22.03-aarch64.tar.gz
+  sha_code: 689a2fd919e1e2f5b44f108f6945c3db45c88dc552d48ef177a18fd8ecf2e96e
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (aarch64)
+- category: openGauss Connectors
+  name: Python-psycopg2_6.0.6
+  size: 3.0MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler22.03/arm/openGauss-Python-6.0.6-openEuler22.03-aarch64.tar.gz
+  sha_code: 18f9216a6ed503f7be16b7eb11c2ef2244e436652f7809d025b703762ba29566
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (aarch64)
+- category: openGauss Connectors
+  name: libpq_6.0.6
+  size: 5.1MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler22.03/arm/openGauss-Libpq-6.0.6-openEuler22.03-aarch64.tar.gz
+  sha_code: 18c38d6bf4f1e29097028d4ff9943a9629a0cb0be34182edde2a4a2ca833dd50
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (aarch64)
+- category: openGauss Connectors
+  name: JDBC_6.0.6
+  size: 1.8MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler22.03/x86/openGauss-JDBC-6.0.6.tar.gz
+  sha_code: 0612996a888b52abbed2d551cf2880c53ccf3ebaa4363e2c1529a4d7a06daaef
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (x86_64)
+- category: openGauss Connectors
+  name: ODBC_6.0.6
+  size: 9.2MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler22.03/x86/openGauss-ODBC-6.0.6-openEuler22.03-x86_64.tar.gz
+  sha_code: ca0a1536ecada4f686c4675a72e978d614e17f4b50c2f6c9a032773cbee80f35
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (x86_64)
+- category: openGauss Connectors
+  name: Python-psycopg2_6.0.6
+  size: 3.1MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler22.03/x86/openGauss-Python-6.0.6-openEuler22.03-x86_64.tar.gz
+  sha_code: 9d19a1e7bae2095a650532ea62b37cd7211a2dcfbaead32d4655200129ebb6a2
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (x86_64)
+- category: openGauss Connectors
+  name: libpq_6.0.6
+  size: 5.3MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler22.03/x86/openGauss-Libpq-6.0.6-openEuler22.03-x86_64.tar.gz
+  sha_code: 6999a6fbda25c2619a5d9f68f8a99e26e4edf7cafdac957a3215cde61b189c50
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (x86_64)
+- category: openGauss Connectors
+  name: JDBC_6.0.6
+  size: 1.8MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler20.03/arm/openGauss-JDBC-6.0.6.tar.gz
+  sha_code: 754dae1806cfdfcca740af7f5eb7b2184a7a4218705259c5c66f4ac21fa65cdf
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (aarch64)
+- category: openGauss Connectors
+  name: ODBC_6.0.6
+  size: 8.9MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler20.03/arm/openGauss-ODBC-6.0.6-openEuler20.03-aarch64.tar.gz
+  sha_code: 9ff91dc5308e4f300a3f4e61e1a63ba0944234c74555220f8c2d387e12d3e6a7
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (aarch64)
+- category: openGauss Connectors
+  name: Python-psycopg2_6.0.6
+  size: 3.0MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler20.03/arm/openGauss-Python-6.0.6-openEuler20.03-aarch64.tar.gz
+  sha_code: 0dfa886e5cc93de9134f581e120a94a4e996ee2aeb66a0a6061bc13e8e50e989
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (aarch64)
+- category: openGauss Connectors
+  name: libpq_6.0.6
+  size: 5.1MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler20.03/arm/openGauss-Libpq-6.0.6-openEuler20.03-aarch64.tar.gz
+  sha_code: a28bb3aa061dde87e7c74325c787c040e66a97b92e147b32c93c52ebdcda0c4b
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (aarch64)
+- category: openGauss Connectors
+  name: JDBC_6.0.6
+  size: 1.8MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler20.03/x86/openGauss-JDBC-6.0.6.tar.gz
+  sha_code: 1b1026243b8a264d772882c3bafcb7eeac364347aed789f355dbb4af69a69f5b
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (x86_64)
+- category: openGauss Connectors
+  name: ODBC_6.0.6
+  size: 9.2MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler20.03/x86/openGauss-ODBC-6.0.6-openEuler20.03-x86_64.tar.gz
+  sha_code: cd6a63164750fa6d5a341a22d03666da12887a40426c2c1ba4b6c0c5e5b19404
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (x86_64)
+- category: openGauss Connectors
+  name: Python-psycopg2_6.0.6
+  size: 3.1MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler20.03/x86/openGauss-Python-6.0.6-openEuler20.03-x86_64.tar.gz
+  sha_code: 71a3887627ed0b166cfdc0f391e833e7d60969cc53e0e1405033d2ce6d9c66cd
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (x86_64)
+- category: openGauss Connectors
+  name: libpq_6.0.6
+  size: 5.3MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler20.03/x86/openGauss-Libpq-6.0.6-openEuler20.03-x86_64.tar.gz
+  sha_code: bec08054f48e6e9b7d67b8a856923f93e081ee77d3eeaa72bb6ef5236ad6457e
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (x86_64)
+- category: openGauss Connectors
+  name: JDBC_6.0.6
+  size: 1.8MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/CentOS7/x86/openGauss-JDBC-6.0.6.tar.gz
+  sha_code: 2958280b4846391d9c43a90f9fc246631e306a9c7e37bf4ca0b73e0355eaa20f
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: Centos 7.6
+  system: Centos 7.6 (x86_64)
+- category: openGauss Connectors
+  name: ODBC_6.0.6
+  size: 9.1MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/CentOS7/x86/openGauss-ODBC-6.0.6-CentOS7-x86_64.tar.gz
+  sha_code: c893b571f12b9c906a2cf165e6165262a780dcef26d652d3d5e10beab17efa01
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: Centos 7.6
+  system: Centos 7.6 (x86_64)
+- category: openGauss Connectors
+  name: Python-psycopg2_6.0.6
+  size: 3.1MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/CentOS7/x86/openGauss-Python-6.0.6-CentOS7-x86_64.tar.gz
+  sha_code: 75bdd494d18bd1c425b86e68739b4525b234d4c63eeb0e82354e90d01716e966
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: Centos 7.6
+  system: Centos 7.6 (x86_64)
+- category: openGauss Connectors
+  name: libpq_6.0.6
+  size: 5.2MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/CentOS7/x86/openGauss-Libpq-6.0.6-CentOS7-x86_64.tar.gz
+  sha_code: d6222c04fe17a16252bd2fdc2d48bb1b31d35bca58588e668cc1ffa2cf147001
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: Centos 7.6
+  system: Centos 7.6 (x86_64)
+- category: openGauss Connectors
+  name: JDBC_6.0.6
+  size: 1.8MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/CentOS7/x86/openGauss-JDBC-6.0.6.tar.gz
+  sha_code: 2958280b4846391d9c43a90f9fc246631e306a9c7e37bf4ca0b73e0355eaa20f
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: Windows
+  system: Windows
+- category: openGauss Connectors
+  name: ODBC_6.0.0
+  size: 5.24MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.0/windows/openGauss-ODBC-6.0.0-windows.tar.gz
+  sha_code: c8118e11f6a5be259f3704783591b9d3e833a97c8a924964ae00d973cd9c83f5
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: Windows
+  system: Windows
+- category: openGauss Symbol
+  name: symbol_6.0.6
+  size: 431MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler24.03/arm/openGauss-Symbol-6.0.6-openEuler24.03-aarch64.tar.gz
+  sha_code: 5e4b548ccd1b50b7cdfda34b6f8e3de6b2a3e2c2582d59acac65d7d3368ab86c
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 24.03 LTS
+  system: openEuler 24.03 LTS (aarch64)
+- category: openGauss Symbol
+  name: cm-symbol_6.0.6
+  size: 6.2MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler24.03/arm/openGauss-CM-6.0.6-openEuler24.03-aarch64.tar.gz
+  sha_code: f280c7f9f19851597fdbfc602c03bbe5f06c7ee8819ac8f7ccb55a066afef268
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 24.03 LTS
+  system: openEuler 24.03 LTS (aarch64)
+- category: openGauss Symbol
+  name: symbol_6.0.6
+  size: 428MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler24.03/x86/openGauss-Symbol-6.0.6-openEuler24.03-x86_64.tar.gz
+  sha_code: cd50441c349af7b93e03f2e2d1f128ca8e548e796c144e1cb92dbf7e021926c7
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 24.03 LTS
+  system: openEuler 24.03 LTS (x86_64)
+- category: openGauss Symbol
+  name: cm-symbol_6.0.6
+  size: 24MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler24.03/x86/openGauss-CM-Symbol-6.0.6-openEuler24.03-x86_64.tar.gz
+  sha_code: 5e6458c2c71a8e6a0387aaa34cd2c377e2ac04f7c64664b9ffd39dcaeda541f3
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 24.03 LTS
+  system: openEuler 24.03 LTS (x86_64)  
+- category: openGauss Symbol
+  name: symbol_6.0.6
+  size: 431MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler22.03/arm/openGauss-Symbol-6.0.6-openEuler22.03-aarch64.tar.gz
+  sha_code: d355638f43f6e49404752cfdead2ccdfdd5dc6cf1171d61678c6de51ea28c8e4
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (aarch64)
+- category: openGauss Symbol
+  name: cm-symbol_6.0.6
+  size: 24MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler22.03/arm/openGauss-CM-6.0.6-openEuler22.03-aarch64.tar.gz
+  sha_code: 97842a7ccf6d2f7f7577d907a69d37e838dcbdcd3192c70af65ce014c4f29eea
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (aarch64)
+- category: openGauss Symbol
+  name: symbol_6.0.6
+  size: 427MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler22.03/x86/openGauss-Symbol-6.0.6-openEuler22.03-x86_64.tar.gz
+  sha_code: 6104b67a785de7f1e23c78b91f89ac205756209a0a29cddea6bde64478b7962c
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (x86_64)
+- category: openGauss Symbol
+  name: cm-symbol_6.0.6
+  size: 24MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler22.03/x86/openGauss-CM-Symbol-6.0.6-openEuler22.03-x86_64.tar.gz
+  sha_code: bd06e2475a04de7afa00364de8b92cac36d6e0066c76d214089cc7554dae79c7
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (x86_64)
+- category: openGauss Symbol
+  name: symbol_6.0.6
+  size: 429MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler20.03/arm/openGauss-Symbol-6.0.6-openEuler20.03-aarch64.tar.gz
+  sha_code: 5b2430cbf22eac6f368a1d33620e6e96bc00d9424c9daf629c9007584980c467
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (aarch64)
+- category: openGauss Symbol
+  name: cm-symbol_6.0.6
+  size: 26MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler20.03/arm/openGauss-CM-Symbol-6.0.6-openEuler20.03-aarch64.tar.gz
+  sha_code: 3580dd36568693fde44324d96420d1705e13d461ee23079eb079489e9738644c
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (aarch64)
+- category: openGauss Symbol
+  name: symbol_6.0.6
+  size: 426MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler20.03/x86/openGauss-Symbol-6.0.6-openEuler20.03-x86_64.tar.gz
+  sha_code: aa16596d4dc347bc21df362ce23829c120e46a15b4309fe831bdeb5cb99a0108
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (x86_64)
+- category: openGauss Symbol
+  name: cm-symbol_6.0.6
+  size: 24MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/openEuler20.03/x86/openGauss-CM-Symbol-6.0.6-openEuler20.03-x86_64.tar.gz
+  sha_code: 507f038adf27399869ceca300aa106632ae1c4d45414bb7c2f20386df490ad56
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (x86_64)
+- category: openGauss Symbol
+  name: symbol_6.0.6
+  size: 413MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/CentOS7/x86/openGauss-Symbol-6.0.6-CentOS7-x86_64.tar.gz
+  sha_code: 312d0e6ab62380ec4123c564de8492a384f9735a4da89f1058ed239e4fc7409c
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: Centos 7.6
+  system: Centos 7.6 (x86_64)
+- category: openGauss Symbol
+  name: cm-symbol_6.0.6
+  size: 22MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.6/CentOS7/x86/openGauss-CM-Symbol-6.0.6-CentOS7-x86_64.tar.gz
+  sha_code: 4b27fb31d149fad6da3ea9e46b473aa9d0fc1b40b6097bb2de0d816730c5bdea
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: Centos 7.6
+  system: Centos 7.6 (x86_64)
+- category: openGauss Tools
+  name: replicate-mysql2openGauss_6.0.0
+  size: 10.44MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.0/tools/replicate-mysql2openGauss-6.0.0.tar.gz
+  sha_code: 2a4593af644265d01c0003367cadae5f52359fb9c57a67ded5ac7aaa588263d9
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: Linux
+  system: Linux (aarch64)
+- category: openGauss Tools
+  name: replicate-openGauss2mysql_6.0.0
+  size: 15.41MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.0/tools/replicate-openGauss2mysql-6.0.0.tar.gz
+  sha_code: 92ab3c90b7e35a2c96bdb6b56deedda13daace4233f8e33064bcd1021cc09edf
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: Linux
+  system: Linux (aarch64)
+- category: openGauss Tools
+  name: gs_datacheck_6.0.0
+  size: 83.71MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.0/tools/gs_datacheck-6.0.0.tar.gz
+  sha_code: dd8c053aa784096cd6bdeaf3472181e29b67dc38d0a8c78860ab3fee3b9857f1
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: Linux
+  system: Linux (aarch64)
+- category: openGauss Tools
+  name: Datakit_6.0.0
+  size: 858.10MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.0/tools/Datakit/Datakit-6.0.0.tar.gz
+  sha_code: 7c972d987ca93a097a388d5ea6153debe430f6e8846b0906b575317038a1f543
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: Linux
+  system: Linux (aarch64)
+- category: openGauss Tools
+  name: dbmind_6.0.0
+  size: 281.28MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.0/dbmind/arm/dbmind-installer-aarch64.tar.gz
+  sha_code: 91eadf1a47f29f153e4bcf8837a4d81929647b7eb8638f6285cebe7264ab2098
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: Linux
+  system: Linux (aarch64)
+- category: openGauss Tools
+  name: transcribe_replay_tool_6.0.0
+  size: 23.90MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.0/tools/transcribe-replay-tool-6.0.0.tar.gz
+  sha_code: ca4f8acf5253cbee55cb31eb576da44a2bfcda9242a19cb4484d747534cb1ccc
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: Linux
+  system: Linux (aarch64)
+- category: openGauss Tools
+  name: replicate-mysql2openGauss_6.0.0
+  size: 10.44MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.0/tools/replicate-mysql2openGauss-6.0.0.tar.gz
+  sha_code: 2a4593af644265d01c0003367cadae5f52359fb9c57a67ded5ac7aaa588263d9
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: Linux
+  system: Linux (x86_64)
+- category: openGauss Tools
+  name: replicate-openGauss2mysql_6.0.0
+  size: 15.41MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.0/tools/replicate-openGauss2mysql-6.0.0.tar.gz
+  sha_code: 92ab3c90b7e35a2c96bdb6b56deedda13daace4233f8e33064bcd1021cc09edf
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: Linux
+  system: Linux (x86_64)
+- category: openGauss Tools
+  name: gs_datacheck_6.0.0
+  size: 83.71MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.0/tools/gs_datacheck-6.0.0.tar.gz
+  sha_code: dd8c053aa784096cd6bdeaf3472181e29b67dc38d0a8c78860ab3fee3b9857f1
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: Linux
+  system: Linux (x86_64)
+- category: openGauss Tools
+  name: Datakit_6.0.0
+  size: 858.10MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.0/tools/Datakit/Datakit-6.0.0.tar.gz
+  sha_code: 7c972d987ca93a097a388d5ea6153debe430f6e8846b0906b575317038a1f543
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: Linux
+  system: Linux (x86_64)
+- category: openGauss Tools
+  name: dbmind_6.0.0
+  size: 370.47MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.0/dbmind/x86/dbmind-installer-x86_64.tar.gz
+  sha_code: 3dc41b6ffa64f25990ad644cff6a8b3da28f4f140dfacf5df704fc4a51f55ede
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: Linux
+  system: Linux (x86_64)
+- category: openGauss Tools
+  name: transcribe_replay_tool_6.0.0
+  size: 23.90MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.0/tools/transcribe-replay-tool-6.0.0.tar.gz
+  sha_code: ca4f8acf5253cbee55cb31eb576da44a2bfcda9242a19cb4484d747534cb1ccc
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: Linux
+  system: Linux (x86_64)
+- category: openGauss Tools
+  name: Chameleon_6.0.0
+  size: 74.52MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.0/tools/openEuler22.03/chameleon-6.0.0-aarch64.tar.gz
+  sha_code: bf07d4a210e2e38cd513f78c2c925692363a0c1087f9289b18dba7c0f1c481cc
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (aarch64)
+- category: openGauss Tools
+  name: PortalControl_6.0.0
+  size: 589.86MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.0/tools/openEuler22.03/PortalControl-6.0.0-aarch64.tar.gz
+  sha_code: c789e2a4acd8edd024b0a589423001cf3af05901194a1a51ae56ceace31ed0ba
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (aarch64)
+- category: openGauss Tools
+  name: Chameleon_6.0.0
+  size: 74.77MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.0/tools/openEuler22.03/chameleon-6.0.0-x86_64.tar.gz
+  sha_code: 8a20dae7c21fea8d7d793ba4bc16376b2426a8c9c37e2b2f6f030997531d0364
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (x86_64)
+- category: openGauss Tools
+  name: PortalControl_6.0.0
+  size: 590.10MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.0/tools/openEuler22.03/PortalControl-6.0.0-x86_64.tar.gz
+  sha_code: 68964b49bfdc9cb0af8822cde0bd7c452d0f7584fa31b28482234f5e86dcf83c
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 22.03 LTS
+  system: openEuler 22.03 LTS (x86_64)
+- category: openGauss Tools
+  name: Chameleon_6.0.0
+  size: 71.99MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.0/tools/openEuler20.03/chameleon-6.0.0-aarch64.tar.gz
+  sha_code: e5d1f91d006e35f6261bf3b5dd5bca8de233937cddd2e774bfe2224aab84e44e
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (aarch64)
+- category: openGauss Tools
+  name: PortalControl_6.0.0
+  size: 628.37MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.0/tools/openEuler20.03/PortalControl-6.0.0-aarch64.tar.gz
+  sha_code: 89418e1c4a071b71f00c6ba92568f34ccacab46718ae36d33f495dc7b904c0af
+  docs_name: ""
+  docs_url: ""
+  architecture: AArch64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (aarch64)
+- category: openGauss Tools
+  name: Chameleon_6.0.0
+  size: 71.20MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.0/tools/openEuler20.03/chameleon-6.0.0-x86_64.tar.gz
+  sha_code: 860b140ce85855a5c1f8ed258ffb37a26c37a05b4d8d2126b1157d316533ef15
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (x86_64)
+- category: openGauss Tools
+  name: PortalControl_6.0.0
+  size: 643.22MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.0/tools/openEuler20.03/PortalControl-6.0.0-x86_64.tar.gz
+  sha_code: 367d3d30ba3f6f365b8c707959888af17456ee0b59fc3f9b7dfaa34a67370813
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 20.03 LTS
+  system: openEuler 20.03 LTS (x86_64)
+- category: openGauss Tools
+  name: Chameleon_6.0.0
+  size: 72.00MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.0/tools/centos7/chameleon-6.0.0-x86_64.tar.gz
+  sha_code: c602ef1680dbae88ed855c75a8263eb5fb3428395e7e2fe66ee76eef1c6ba020
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: Centos 7.6
+  system: Centos 7.6 (x86_64)
+- category: openGauss Tools
+  name: PortalControl_6.0.0
+  size: 621.23MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/6.0.0/tools/centos7/PortalControl-6.0.0-x86_64.tar.gz
+  sha_code: b7265c4e87660f7cbf4505c60c1d28bd25ba9f1905b1c7ae525b948c9e9eb908
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: Centos 7.6
+  system: Centos 7.6 (x86_64)
