@@ -86,7 +86,7 @@ export default {
             {
               NAME: 'CLA签署',
               DESCRIPTION: '参与贡献前，需签署贡献者许可协议（CLA）',
-              URL: `${CLA_LINK}/sign/gitee_opengauss-1614047760000855378`,
+              URL: `${CLA_LINK}/sign/690dba44479f483c74c264fd`,
               ICON: OutLink,
             },
             {
