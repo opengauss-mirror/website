@@ -113,7 +113,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
                   </p>
                 </template>
                 <p class="links lable-name">
-                  <a v-if="user.email" :href="'mailto:' + user.email" class="mail"><img :src="emailImg" /></a>
+                  <a v-if="user.email" :href="'mailto:' + user.email" class="mail"><img :src="emailImg" alt="email" /></a>
                 </p>
               </li>
             </ul>
@@ -155,7 +155,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
                       {{ user.company }}
                     </p>
                     <p class="links lable-name9">
-                      <a :href="'mailto:' + user.email" class="mail"><img :src="emailImg" /></a>
+                      <a :href="'mailto:' + user.email" class="mail"><img :src="emailImg" alt="email" /></a>
                     </p>
                   </li>
                 </ul>
@@ -204,7 +204,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
                 </template>
 
                 <p class="links lable-name3">
-                  <a v-if="user.email" :href="'mailto:' + user.email" class="mail"><img :src="emailImg" /></a>
+                  <a v-if="user.email" :href="'mailto:' + user.email" class="mail"><img :src="emailImg" alt="email" /></a>
                 </p>
               </li>
             </ul>
@@ -220,7 +220,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
                 </template>
 
                 <p class="links lable-name3">
-                  <a v-if="user.email" :href="'mailto:' + user.email" class="mail"><img :src="emailImg" /></a>
+                  <a v-if="user.email" :href="'mailto:' + user.email" class="mail"><img :src="emailImg" alt="email" /></a>
                 </p>
               </li>
             </ul>
@@ -238,7 +238,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
                 </template>
 
                 <p class="links lable-name3">
-                  <a v-if="user.email" :href="'mailto:' + user.email" class="mail"><img :src="emailImg" /></a>
+                  <a v-if="user.email" :href="'mailto:' + user.email" class="mail"><img :src="emailImg" alt="email" /></a>
                 </p>
               </li>
             </ul>
@@ -285,7 +285,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
                     {{ user.company }}
                   </p>
                   <p class="links lable-name5">
-                    <a v-if="user.email" :href="'mailto:' + user.email" class="mail"><img :src="emailImg" /></a>
+                    <a v-if="user.email" :href="'mailto:' + user.email" class="mail"><img :src="emailImg" alt="email" /></a>
                   </p>
                 </li>
               </ul>

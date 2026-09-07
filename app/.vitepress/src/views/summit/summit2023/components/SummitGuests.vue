@@ -35,7 +35,7 @@ const summitStyle = computed(() => {
     <div v-for="item in lecturerList" :key="item.NAME" class="lecturer-list-item">
       <slot name="img">
         <div :class="summitStyle['--shape'] === 'square' ? 'lecturer-list-item-square' : 'lecturer-list-item-circle'">
-          <img :src="item.img" />
+          <img :src="item.img" :alt="item.name" />
         </div>
       </slot>
       <slot name="name">

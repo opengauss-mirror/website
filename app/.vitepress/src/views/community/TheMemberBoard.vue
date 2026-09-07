@@ -59,7 +59,7 @@ const handleChangeActiveMobile = (activeNames: number | '') => {
               </p>
               <p class="links lable-name">
                 <a :href="'mailto:' + user.email" class="mail">
-                  <img :src="emailImg" />
+                  <img :src="emailImg" alt="email" />
                 </a>
               </p>
             </li>
@@ -89,7 +89,7 @@ const handleChangeActiveMobile = (activeNames: number | '') => {
             </p>
             <p class="links lable-name3">
               <a :href="'mailto:' + user.email" class="mail">
-                <img :src="emailImg" />
+                <img :src="emailImg" alt="email" />
               </a>
             </p>
           </li>

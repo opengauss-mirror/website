@@ -34,7 +34,7 @@ const pptList = computed(() => (isZh.value ? BrandConfig.pptList.zh : BrandConfi
     <div class="brand-list">
       <OCard v-for="item in BrandConfig.brandList" :key="item.url" class="brand-item" shadow="hover">
         <div class="brand-item-img">
-          <img :style="{ backgroundColor: item.backgroundColor }" :src="item.url" />
+          <img :style="{ backgroundColor: item.backgroundColor }" :src="item.url" alt="openGauss logo preview" />
         </div>
         <div class="button-group">
           <a v-for="item2 in item.downloadContent" :key="item2.url" :href="item2.url" target="_blank" rel="noopener noreferrer" download>

@@ -77,7 +77,7 @@ const courseGuides = [
           <li class="entry-list-item">
             <div class="entry-list-item-wrapper">
               <div class="img-container">
-                <img :src="isDark ? yshlDark : yshl" alt="" />
+                <img :src="isDark ? yshlDark : yshl" alt="云数互联" />
               </div>
               <p class="entry-list-item-desc">openGauss高级OGCE认证课程</p>
               <OButton
@@ -99,7 +99,7 @@ const courseGuides = [
           <li class="entry-list-item">
             <div class="entry-list-item-wrapper">
               <div class="img-container">
-                <img :src="isDark ? vastdataDark : vastdata" alt="" />
+                <img :src="isDark ? vastdataDark : vastdata" alt="海量数据" />
               </div>
               <p class="entry-list-item-desc">openGauss高级认证（线上）</p>
               <OButton
@@ -121,7 +121,7 @@ const courseGuides = [
           <li class="entry-list-item">
             <div class="entry-list-item-wrapper">
               <div class="img-container">
-                <img :src="isDark ? vastdataDark : vastdata" alt="" />
+                <img :src="isDark ? vastdataDark : vastdata" alt="海量数据" />
               </div>
               <p class="entry-list-item-desc">openGauss高级认证（线下）</p>
               <OButton
@@ -143,7 +143,7 @@ const courseGuides = [
           <li class="entry-list-item">
             <div class="entry-list-item-wrapper">
               <div class="img-container">
-                <img :src="isDark ? szDark : sz" alt="" />
+                <img :src="isDark ? szDark : sz" alt="神舟通用" />
               </div>
               <p class="entry-list-item-desc">高级OGCE认证</p>
               <OButton
@@ -165,7 +165,7 @@ const courseGuides = [
           <li class="entry-list-item">
             <div class="entry-list-item-wrapper">
               <div class="img-container">
-                <img :src="isDark ? qstDark : qst" alt="" />
+                <img :src="isDark ? qstDark : qst" alt="青软集团" />
               </div>
               <p class="entry-list-item-desc">高级OGCE认证</p>
               <OButton
@@ -187,7 +187,7 @@ const courseGuides = [
           <li class="entry-list-item">
             <div class="entry-list-item-wrapper">
               <div class="img-container">
-                <img :src="isDark ? ChinaMobileDark : ChinaMobile" alt="" />
+                <img :src="isDark ? ChinaMobileDark : ChinaMobile" alt="中国移动" />
               </div>
               <p class="entry-list-item-desc">高级OGCE认证</p>
               <OButton

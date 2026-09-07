@@ -24,8 +24,8 @@ const isZh = computed(() => (lang.value === 'zh' ? true : false));
 <template>
   <div class="contribution-map">
     <div class="contribution-map-img">
-      <img v-show="!isDark" :src="isZh ? contributionMap_light_zh : contributionMap_light_en" />
-      <img v-show="isDark" :src="isZh ? contributionMap_dark_zh : contributionMap_dark_en" />
+      <img v-show="!isDark" :src="isZh ? contributionMap_light_zh : contributionMap_light_en" alt="contribution map" />
+      <img v-show="isDark" :src="isZh ? contributionMap_dark_zh : contributionMap_dark_en" alt="contribution map" />
       <!-- 定位的空标签 -->
       <a
         v-for="(item, index) in i18n.contribution.LINK_LIST"
@@ -38,8 +38,8 @@ const isZh = computed(() => (lang.value === 'zh' ? true : false));
       ></a>
     </div>
     <div class="contribution-map-mobile-img">
-      <img v-show="!isDark" :src="isZh ? contributionMap_light_zh_mb : contributionMap_light_en_mb" />
-      <img v-show="isDark" :src="isZh ? contributionMap_dark_zh_mb : contributionMap_dark_en_mb" />
+      <img v-show="!isDark" :src="isZh ? contributionMap_light_zh_mb : contributionMap_light_en_mb" alt="contribution map" />
+      <img v-show="isDark" :src="isZh ? contributionMap_dark_zh_mb : contributionMap_dark_en_mb" alt="contribution map" />
       <a
         v-for="item in i18n.contribution.LINK_LIST"
         :key="item.URL"

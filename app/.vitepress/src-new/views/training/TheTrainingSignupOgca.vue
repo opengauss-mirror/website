@@ -95,7 +95,7 @@ const courseGuides = [
           <li class="entry-list-item">
             <div class="entry-list-item-wrapper">
               <div class="img-container">
-                <img :src="isDark ? yshlDark : yshl" alt="" />
+                <img :src="isDark ? yshlDark : yshl" alt="云数互联" />
               </div>
               <p class="entry-list-item-desc">openGauss初级OGCA认证课程</p>
               <OButton class="signup-btn" color="primary" round="pill" variant="solid" :href="`${MODB_LINK}/course/144`" target="_blank" rel="noopener noreferrer">
@@ -109,7 +109,7 @@ const courseGuides = [
           <li class="entry-list-item">
             <div class="entry-list-item-wrapper">
               <div class="img-container">
-                <img :src="isDark ? vastdataDark : vastdata" alt="" />
+                <img :src="isDark ? vastdataDark : vastdata" alt="海量数据" />
               </div>
               <p class="entry-list-item-desc">初级OGCA考试</p>
               <OButton class="signup-btn" color="primary" round="pill" variant="solid" :href="`${VASTDATA_LINK}/pc/#/index/examDetails?id=35dcb340785ab1b3546521ef6407b9c8&type=1`" target="_blank" rel="noopener noreferrer">
@@ -123,7 +123,7 @@ const courseGuides = [
           <li class="entry-list-item">
             <div class="entry-list-item-wrapper">
               <div class="img-container">
-                <img :src="isDark ? szDark : sz" alt="" />
+                <img :src="isDark ? szDark : sz" alt="神舟通用" />
               </div>
               <p class="entry-list-item-desc">初级OGCA认证</p>
               <OButton class="signup-btn" color="primary" round="pill" variant="solid" :href="`${SHENTONG_DATA_LINK}/index.php/course/exam-58`" target="_blank" rel="noopener noreferrer">
@@ -137,7 +137,7 @@ const courseGuides = [
           <li class="entry-list-item">
             <div class="entry-list-item-wrapper">
               <div class="img-container">
-                <img :src="isDark ? qstDark : qst" alt="" />
+                <img :src="isDark ? qstDark : qst" alt="青软集团" />
               </div>
               <p class="entry-list-item-desc">初级OGCA认证</p>
               <OButton class="signup-btn" color="primary" round="pill" variant="solid" :href="`${EDUPLUS_LINK}/training/openGauss`" target="_blank" rel="noopener noreferrer">
@@ -151,7 +151,7 @@ const courseGuides = [
           <li class="entry-list-item">
             <div class="entry-list-item-wrapper">
               <div class="img-container">
-                <img :src="isDark ? ChinaMobileDark : ChinaMobile" alt="" />
+                <img :src="isDark ? ChinaMobileDark : ChinaMobile" alt="中国移动" />
               </div>
               <p class="entry-list-item-desc">初级OGCA认证</p>
               <OButton class="signup-btn" color="primary" round="pill" variant="solid" :href="`${BIGDATA_10086_LINK}/honghu/hhweb/#/certify`" target="_blank" rel="noopener noreferrer">
