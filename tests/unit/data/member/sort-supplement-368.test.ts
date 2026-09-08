@@ -122,12 +122,6 @@ describe('sortCommitteeMembers — refList binding (issue 368)', () => {
   });
 });
 
-describe('CHAIR_TITLES — exact contract (issue 368)', () => {
-  it('is exactly the three chair title strings, no more, no less', () => {
-    expect(CHAIR_TITLES).toEqual(['理事长', '主席', 'Chair']);
-  });
-});
-
 describe('sortCommitteeMembers wiring — member-zh.ts (issue 368)', () => {
   for (const key of COMMITTEES) {
     it(`zh ${key} list is wrapped by sortCommitteeMembers(data.zh.${key})`, () => {

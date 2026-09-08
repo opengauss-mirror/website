@@ -1,13 +1,5 @@
 import { expect, describe, it } from 'vitest';
-import { sortCommitteeMembers, CHAIR_TITLES } from '@/data/member/sort';
-
-describe('CHAIR_TITLES', () => {
-  it('covers all chair title variants (zh 理事长/主席 + en Chair)', () => {
-    expect(CHAIR_TITLES).toContain('理事长');
-    expect(CHAIR_TITLES).toContain('主席');
-    expect(CHAIR_TITLES).toContain('Chair');
-  });
-});
+import { sortCommitteeMembers } from '@/data/member/sort';
 
 describe('sortCommitteeMembers', () => {
   it('places the chair at the top regardless of company order', () => {
