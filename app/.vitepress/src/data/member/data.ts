@@ -468,7 +468,6 @@ import chenguo from '@/assets/category/member/avatar/chenguo.png';
 import dashimin from '@/assets/category/member/avatar/dashimin.png';
 import lihongju from '@/assets/category/member/avatar/lihongju.png';
 import liutianyu from '@/assets/category/member/avatar/liutianyu.png';
-import pinglei from '@/assets/category/member/avatar/pinglei.png';
 import raohaoquan from '@/assets/category/member/avatar/raohaoquan.png';
 import wangdan2 from '@/assets/category/member/avatar/wangdan2.png';
 import caoyu from '@/assets/category/member/avatar/caoyu.png';
@@ -1121,13 +1120,6 @@ export default {
         title: `委员`,
         email: `liutianyu01@picc.com.cn`,
         company: `中国人民保险集团股份有限公司`,
-      },
-      {
-        img: pinglei,
-        name: `平雷`,
-        title: `委员`,
-        email: `lei.ping@ceic.com`,
-        company: `国能信息技术公司`,
       },
       {
         img: raohaoquan,
@@ -5381,13 +5373,6 @@ export default {
         title: `Member`,
         email: `liutianyu01@picc.com.cn`,
         company: `The People's Insurance Company (Group) Of China Limited`,
-      },
-      {
-        img: pinglei,
-        name: `Ping Lei`,
-        title: `Member`,
-        email: `lei.ping@ceic.com`,
-        company: `CHN Energy Information Technology Corporation(Data Center)`,
       },
       {
         img: raohaoquan,
