@@ -7,6 +7,7 @@ export const CHAIR_TITLES = new Map([
   ['理事长', 1],
   ['秘书长', 0],
   ['主席', 1],
+  ['Secretary General', 0],
   ['Chair', 1]
 ]);
 
