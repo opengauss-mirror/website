@@ -396,7 +396,7 @@ import zengseliang from '@/assets/category/member/avatar/zengseliang.png';
 import shayAkirav from '@/assets/category/member/avatar/shayAkirav.png';
 import wangwei3 from '@/assets/category/member/avatar/wangwei3.png';
 import huangnan from '@/assets/category/member/avatar/huangnan.png';
-import zhaoxiaomin from '@/assets/category/member/avatar/zhaoxiaomin.png';
+import zhaoxiaomin from '@/assets/category/member/avatar/zhaoxiaomin.jpg';
 import zhongxin from '@/assets/category/member/avatar/zhongxin.png';
 import sunguorong from '@/assets/category/member/avatar/sunguorong.png';
 import hezhenyan from '@/assets/category/member/avatar/hezhenyan.png';
