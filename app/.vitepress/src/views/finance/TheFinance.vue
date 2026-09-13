@@ -36,28 +36,28 @@ const tabShow = ref(0);
     <BannerLevel2 :background-image="isMobile ? bannerMb : banner" :title="i18n.finance.FINANCIAL_ZONE" />
 
     <template v-if="!isMobile">
-      <div class="section">
-        <h1 class="section-title">{{ financial.zh.version.title }}</h1>
+      <section class="section">
+        <h2 class="section-title">{{ financial.zh.version.title }}</h2>
         <p v-for="item in financial.zh.version.descs" :key="item" class="section-desc">
           {{ item }}
         </p>
-      </div>
+      </section>
 
-      <div class="section">
-        <h1 class="section-title">{{ financial.zh.advantages.title }}</h1>
+      <section class="section">
+        <h2 class="section-title">{{ financial.zh.advantages.title }}</h2>
 
-        <div class="advantages">
-          <div v-for="item in financial.zh.advantages.lists" :key="item.feature" class="advantage-item">
+        <ul class="advantages">
+          <li v-for="item in financial.zh.advantages.lists" :key="item.feature" class="advantage-item">
             <img :src="isLight ? item.img : item.img_dark" alt="" />
             <p class="feature">{{ item.feature }}</p>
             <p class="feature-desc">{{ item.desc }}</p>
-          </div>
-        </div>
-      </div>
+          </li>
+        </ul>
+      </section>
 
-      <div class="section-1">
+      <section class="section-1">
         <div class="container">
-          <h1 class="section-title">{{ financial.zh.technologies.title }}</h1>
+          <h2 class="section-title">{{ financial.zh.technologies.title }}</h2>
 
           <OTabs v-model="tabShow">
             <OTabPane v-for="(item, index) in financial.zh.technologies.tab_lists" :key="item.title" :label="item.title" :name="index">
@@ -92,10 +92,10 @@ const tabShow = ref(0);
             </OTabPane>
           </OTabs>
         </div>
-      </div>
+      </section>
 
-      <div class="section">
-        <h1 class="section-title">{{ financial.zh.cases.title }}</h1>
+      <section class="section">
+        <h2 class="section-title">{{ financial.zh.cases.title }}</h2>
 
         <div class="card-box">
           <OCard v-for="card in financial.zh.cases.case_list" :key="card.name">
@@ -128,29 +128,29 @@ const tabShow = ref(0);
             <IconArrowRight class="icon-search" />
           </template>
         </OButton>
-      </div>
+      </section>
 
-      <div class="section">
-        <h1 class="section-title">{{ financial.zh.interaction.title }}</h1>
+      <section class="section">
+        <h2 class="section-title">{{ financial.zh.interaction.title }}</h2>
 
         <div class="interaction-card">
           <OIcon><IconMessage /></OIcon>
 
           <div class="card-content">
-            <h1>{{ financial.zh.interaction.card_title }}</h1>
+            <p>{{ financial.zh.interaction.card_title }}</p>
             <a :href="financial.zh.interaction.jumpLink" target="_blank" rel="noopener noreferrer">
               <span>{{ financial.zh.interaction.card_desc }}</span>
               <OIcon><IconArrow /></OIcon>
             </a>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="section-2">
-        <h1 class="section-title">{{ financial.zh.download.title }}</h1>
+      <section class="section-2">
+        <h2 class="section-title">{{ financial.zh.download.title }}</h2>
 
         <div class="version-download">
-          <h1 class="experience">{{ i18n.finance.EXPERIENCE }}</h1>
+          <p class="experience">{{ i18n.finance.EXPERIENCE }}</p>
 
           <OButton color="primary" variant="solid" round="0px" size="medium" animation class="download-btn" :href="`/${lang}/download/finance/`">
             {{ i18n.finance.DOWNLOAD }}
@@ -159,7 +159,7 @@ const tabShow = ref(0);
             </template>
           </OButton>
         </div>
-      </div>
+      </section>
     </template>
 
     <FinanceContentMb v-else />
@@ -393,7 +393,7 @@ const tabShow = ref(0);
     font-size: 48px;
     color: var(--e-color-text1);
   }
-  h1 {
+  h3 {
     font-size: var(--e-font-size-h5);
     line-height: var(--e-line-height-h5);
     font-weight: 500;

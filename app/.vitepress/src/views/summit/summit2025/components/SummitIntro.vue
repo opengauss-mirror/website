@@ -16,11 +16,11 @@ const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
 </script>
 <template>
   <div class="summit-intro">
-    <div class="title-box" :class="{ 'title-box-dark': !isLight }">
+    <h2 class="title-box" :class="{ 'title-box-dark': !isLight }">
       <p class="title-bg">{{ introData.titleBg }}</p>
       <p class="title">{{ introData.title }}</p>
       <img class="floor-img" :src="floorImg" alt="" />
-    </div>
+    </h2>
     <ul class="list">
       <li v-for="(item, i) in introData.desc" :key="i" class="item">
         {{ item }}

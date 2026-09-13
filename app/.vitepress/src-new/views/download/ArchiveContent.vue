@@ -121,7 +121,7 @@ const getNewLink = (path: string) => {
     <h2 class="title">
       {{ 'openGauss ' + contentData.name }} <OTag v-if="contentData.plannedEOL === 'End-of-Life' || contentData.isEol"> {{ $t('download.EOM') }} </OTag>
     </h2>
-    <h4 v-if="contentData.plannedEOL" class="subtitle">{{ $t('download.EOM_DATE') }} ：{{ contentData.plannedEOL }}</h4>
+    <div v-if="contentData.plannedEOL" class="subtitle">{{ $t('download.EOM_DATE') }} ：{{ contentData.plannedEOL }}</div>
     <div class="other-link">
       <template v-for="item in contentData.docs_list" :key="item.name">
         <OLink :href="getNewLink(item.path)" color="primary" target="_blank" rel="noopener noreferrer">{{ isZh ? item.name : item.nameEn }}</OLink>

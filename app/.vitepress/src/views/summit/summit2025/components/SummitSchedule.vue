@@ -36,18 +36,18 @@ watch(
 
 <template>
   <div class="schedule">
-    <h4 v-if="agendaData.lable">{{ agendaData.lable }}</h4>
-    <div v-if="agendaData.type === 'card'" class="agenda-cards">
+    <h2 v-if="agendaData.lable">{{ agendaData.lable }}</h2>
+    <ul v-if="agendaData.type === 'card'" class="agenda-cards">
       <template v-for="item in agendaData.content" :key="item.desc">
-        <div v-if="item.desc" class="item">
+        <li v-if="item.desc" class="item">
           <p>{{ item.desc }}</p>
           <p class="time">
             <OIcon style="margin-right: 8px; font-size: 1.5em"><OIconTime /></OIcon>
             {{ item.time }}
           </p>
-        </div>
+        </li>
       </template>
-    </div>
+    </ul>
     <div v-else class="schedule-item other" :class="{ 'schedule-internet': otherTabType === 3 }">
       <el-tabs v-if="agendaData.content[1]" v-model.number="otherTabType" class="other-tabs">
         <el-tab-pane v-for="(itemList, scheduleIndex) in agendaData.content" :key="itemList.id" :name="scheduleIndex">
@@ -63,11 +63,11 @@ watch(
         <span>{{ agendaData.content[otherTabType].address }}</span>
       </div>
       <div v-for="(itemList, listIndex) in agendaData.content" v-show="otherTabType === listIndex" :key="itemList.id" class="content">
-        <h4 v-if="itemList.title" class="other-title">
+        <h2 v-if="itemList.title" class="other-title">
           {{ itemList.title }}
-        </h4>
-        <div class="content-list">
-          <div
+        </h2>
+        <ul class="content-list">
+          <li
             v-for="subItem in itemList.content"
             :key="subItem.id"
             class="content-item"
@@ -135,9 +135,9 @@ watch(
                 </p>
               </div>
             </template>
-          </div>
-          <div v-if="false" class="mask" @click="changeIndexShow('', '')"></div>
-        </div>
+          </li>
+        </ul>
+        <div v-if="false" class="mask" @click="changeIndexShow('', '')"></div>
       </div>
     </div>
   </div>
@@ -193,7 +193,7 @@ watch(
 }
 .schedule {
   margin-top: 20px;
-  h4 {
+  h2 {
     margin-top: 32px;
     text-align: center;
     font-size: 20px;

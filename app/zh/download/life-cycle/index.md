@@ -22,7 +22,7 @@ import ImgLifeCycle from '~@/assets/category/download/life-cycle.png';
 
 <div class="life-cycle-content">
 
-## openGauss社区版本生命周期管理规范
+# openGauss社区版本生命周期管理规范
 
 - 长期支持版本（LTS） ：规模上线使用，发布间隔周期为2年，社区提供3年维护支持，OGSP伙伴提供3年以上延长维护支持服务。
 

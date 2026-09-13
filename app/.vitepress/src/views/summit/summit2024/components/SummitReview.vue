@@ -17,7 +17,7 @@ const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
 <template>
   <div class="summit-review">
     <div class="title-box" :class="{ 'title-box-dark': !isLight }">
-      <p class="title">{{ reviewData.title }}</p>
+      <h2 class="title">{{ reviewData.title }}</h2>
     </div>
     <div class="link-box">
       <p v-for="item in reviewData.list" :key="item.link">

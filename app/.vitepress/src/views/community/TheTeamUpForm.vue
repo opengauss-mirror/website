@@ -194,7 +194,7 @@ const { csrfToken } = getUserAuth();
 <template>
   <AppContent :pc-top="40" :mobile-top="12">
     <div class="team-up-form">
-      <div class="form-title">结队计划申请表</div>
+      <h1 class="form-title">结队计划申请表</h1>
       <el-form
         v-if="csrfToken"
         class="form"

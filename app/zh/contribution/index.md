@@ -12,13 +12,11 @@ import illustration from '@/assets/illustrations/contribution.png';
 </script>
 
 <div>
-  <ClientOnly>
-    <BannerLevel2
-      :background-image="banner"
-      title="社区贡献"
-      :illustration="illustration" 
-    />
-  </ClientOnly>
+  <BannerLevel2
+    :background-image="banner"
+    title="社区贡献"
+    :illustration="illustration" 
+  />
   <ContributionTab />
   <ContributionMap />
 </div>

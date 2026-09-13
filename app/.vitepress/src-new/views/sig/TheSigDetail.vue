@@ -161,6 +161,7 @@ const getContributeData = async (params: any) => {
 
 <template>
   <div class="the-sig-detail">
+    <h1 class="visually-hidden">{{ sigName }}</h1>
     <OBreadcrumb>
       <OBreadcrumbItem :href="frontmatter.goBackUrl">{{ i18n.sig.sigCenter }}</OBreadcrumbItem>
       <OBreadcrumbItem>{{ sigName }}</OBreadcrumbItem>

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import AppContent from '@/components/AppContent.vue';
+import AppHiddenPageTitle from '~@/components/AppHiddenPageTitle.vue';
 import SummitBanner from './components/SummitBanner.vue';
 import SummitIntro from './components/SummitIntro.vue';
 import SummitAgenda from './components/SummitAgenda.vue';
@@ -11,6 +12,7 @@ import summitData from './data';
 </script>
 <template>
   <div class="summit-2024">
+    <AppHiddenPageTitle />
     <SummitBanner :banner-data="summitData.banner" />
     <AppContent>
       <SummitIntro :intro-data="summitData.intro" />

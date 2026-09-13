@@ -3,6 +3,7 @@ import { ref, computed } from 'vue';
 import { useCommon } from '@/stores/common';
 
 import AppContent from '@/components/AppContent.vue';
+import AppHiddenPageTitle from '~@/components/AppHiddenPageTitle.vue';
 import SummitSchedule from './components/SummitSchedule.vue';
 import LinkPanel from './components/LinkPanel.vue';
 
@@ -40,6 +41,7 @@ const videoClickBtn = (path: string) => {
 };
 </script>
 <template>
+  <AppHiddenPageTitle />
   <div class="banner">
     <div class="summit-banner-pc">
       <video
@@ -68,11 +70,11 @@ const videoClickBtn = (path: string) => {
       <p>{{ summitData.detail[1] }}</p>
     </div>
     <div class="agenda">
-      <h3>{{ summitData.agenda.title }}</h3>
+      <h2>{{ summitData.agenda.title }}</h2>
       <div v-for="(item, index) in summitData.agenda.meetingList" :key="item.daytime" class="agenda-item">
-        <h4 class="meeting-title">
+        <h3 class="meeting-title">
           {{ item.daytime }}
-        </h4>
+        </h3>
         <OTabs v-model="tabType[index]" class="schedule-tabs">
           <el-tab-pane v-for="itemList in summitData.agenda.meetingList[0].list" :key="itemList.id" :name="itemList.id">
             <template #label>
@@ -97,7 +99,7 @@ const videoClickBtn = (path: string) => {
       </div>
     </div>
     <!-- 线上展厅 -->
-    <h3 class="title-bar">线上展厅</h3>
+    <h2 class="title-bar">线上展厅</h2>
     <div class="exhibition-online">
       <span v-for="item in summitData.videolist" :key="item.name" :title="item.name" class="video-item" @click="videoClickBtn(item.link)"></span>
       <div v-if="videoDialog" class="video-box">
@@ -120,18 +122,18 @@ const videoClickBtn = (path: string) => {
       </div>
     </div>
     <div class="summit-partners">
-      <h3 class="title-bar">{{ summitData.partnersList.title[0] }}</h3>
-      <h4 class="meeting-title">
+      <h2 class="title-bar">{{ summitData.partnersList.title[0] }}</h2>
+      <h3 class="meeting-title">
         {{ summitData.partnersList.title[1] }}
-      </h4>
+      </h3>
       <LinkPanel :link-list="summitData.partnersList.p1" :row="3" class="there" />
-      <h4 class="meeting-title">
+      <h3 class="meeting-title">
         {{ summitData.partnersList.title[2] }}
-      </h4>
+      </h3>
       <LinkPanel :link-list="summitData.partnersList.p2" class="one" />
-      <h4 class="meeting-title">
+      <h3 class="meeting-title">
         {{ summitData.partnersList.title[3] }}
-      </h4>
+      </h3>
       <LinkPanel :link-list="summitData.partnersList.p3" />
     </div>
 
@@ -154,7 +156,7 @@ const videoClickBtn = (path: string) => {
 
     <div class="previous">
       <div class="previous-title">
-        <h3>{{ summitData.previous.title }}</h3>
+        <h2>{{ summitData.previous.title }}</h2>
         <img :src="liveImg" alt="live" />
       </div>
       <div class="link-box">
@@ -326,7 +328,7 @@ const videoClickBtn = (path: string) => {
 .previous {
   .previous-title {
     display: flex;
-    h3 {
+    h2 {
       font-size: 24px;
       line-height: 30px;
       color: var(--e-color-text1);
@@ -371,7 +373,7 @@ const videoClickBtn = (path: string) => {
   @media (max-width: 767px) {
     margin-top: var(--e-spacing-h2);
   }
-  h3 {
+  h2 {
     text-align: center;
     font-size: var(--e-font-size-h3);
     line-height: var(--e-line-height-h3);
@@ -447,7 +449,7 @@ const videoClickBtn = (path: string) => {
   @media (max-width: 767px) {
     margin: var(--e-spacing-h2) 0;
   }
-  h3 {
+  h2 {
     text-align: center;
     font-size: var(--e-font-size-h3);
     line-height: var(--e-line-height-h3);

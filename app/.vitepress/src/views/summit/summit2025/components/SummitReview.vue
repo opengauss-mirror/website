@@ -17,11 +17,11 @@ const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
 
 <template>
   <div class="summit-review">
-    <div class="title-box" :class="{ 'title-box-dark': !isLight }">
+    <h2 class="title-box" :class="{ 'title-box-dark': !isLight }">
       <p class="title-bg">{{ reviewData.titleBg }}</p>
       <p class="title">{{ reviewData.title }}</p>
       <img class="floor-img" :src="floorImg" alt="" />
-    </div>
+    </h2>
     <div class="link-box">
       <p v-for="item in reviewData.list" :key="item.link">
         <a :href="item.link" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>

@@ -82,7 +82,7 @@ const onCopyClick = (e: MouseEvent) => {
 
       <p>贡献者向openGauss社区提交包含AI生成内容的贡献，必须在以下法律与合规框架内：</p>
 
-      <h4>3.1 CLA（贡献者许可协议）</h4>
+      <h3>3.1 CLA（贡献者许可协议）</h3>
 
       <p>openGauss社区采用<strong>CLA（Contributor License Agreement，贡献者许可协议）</strong>。</p>
 
@@ -93,7 +93,7 @@ const onCopyClick = (e: MouseEvent) => {
         </li>
       </ul>
 
-      <h4>3.2 追溯机制：关键元数据完整记录</h4>
+      <h3>3.2 追溯机制：关键元数据完整记录</h3>
 
       <p>
         若贡献者向社区提交的贡献包含主要<strong>由AI生成或经AI自动化处理</strong>的代码与文档，则其在提交Pull
@@ -252,7 +252,7 @@ __3. Prompt摘要: 基于现有代码逻辑，完成代码编写、逻辑优化�
 
       <p>Any submissions incorporating AI-generated content to the openGauss community shall be governed by the following legal and compliance frameworks:</p>
 
-      <h4>3.1 Contributor License Agreement (CLA)</h4>
+      <h3>3.1 Contributor License Agreement (CLA)</h3>
 
       <p>The openGauss community implements a <strong>Contributor License Agreement (CLA)</strong>.</p>
 
@@ -265,7 +265,7 @@ __3. Prompt摘要: 基于现有代码逻辑，完成代码编写、逻辑优化�
         </li>
       </ul>
 
-      <h4>3.2 Traceability: Full Logging of Key Metadata</h4>
+      <h3>3.2 Traceability: Full Logging of Key Metadata</h3>
 
       <p>
         For contributions that contain code or documents <strong>fundamentally generated or automatically processed by AI</strong>, contributors shall fully
@@ -488,7 +488,7 @@ You are an AI agent dedicated to serving the openGauss community. Your goal is t
     margin-bottom: 16px;
   }
 
-  h2,h3 {
+  h2 {
     font-weight: 600;
     &:not(:first-child) {
       margin-top: 40px;
@@ -499,7 +499,7 @@ You are an AI agent dedicated to serving the openGauss community. Your goal is t
     @include h3;
   }
 
-  h4 {
+  h3 {
     font-weight: 600;
     &:not(:last-child) {
       margin-bottom: 8px;

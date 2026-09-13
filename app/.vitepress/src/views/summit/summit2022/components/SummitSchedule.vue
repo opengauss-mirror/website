@@ -11,8 +11,8 @@ defineProps({
 </script>
 
 <template>
-  <div class="date-list">
-    <div v-for="subitem in options" :key="subitem.time" class="data-item">
+  <ul class="date-list">
+    <li v-for="subitem in options" :key="subitem.time" class="data-item">
       <span class="time"><IconTime />{{ subitem.time }}</span>
       <span v-dompurify-html="subitem.desc" class="desc"></span>
       <div v-if="subitem.post" class="box">
@@ -27,8 +27,8 @@ defineProps({
           </div>
         </div>
       </div>
-    </div>
-  </div>
+    </li>
+  </ul>
 </template>
 
 <style lang="scss" scoped>

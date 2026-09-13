@@ -110,7 +110,7 @@ const changeLive = (val: string): void => {
 <template>
   <div class="summit-live">
     <div class="title-box">
-      <p class="title">{{ liveData.title }}</p>
+      <h2 class="title">{{ liveData.title }}</h2>
     </div>
     <ClientOnly>
       <div class="select-room">

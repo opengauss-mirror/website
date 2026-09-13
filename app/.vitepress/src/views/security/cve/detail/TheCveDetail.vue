@@ -133,7 +133,7 @@ onMounted(() => {
       <p class="current-page">{{ i18n.security.CVE_DETAIL }}</p>
     </div>
     <div class="cve-head">
-      <p class="cve-name">{{ cveDetailData.cveNum }}</p>
+      <h1 class="cve-name">{{ cveDetailData.cveNum || i18n.security.CVE_DETAIL }}</h1>
       <div class="cve-intro">
         <div>
           <span>{{ i18n.security.RELEASE_DATE }}:</span>

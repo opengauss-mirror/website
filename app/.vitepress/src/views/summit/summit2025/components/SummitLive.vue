@@ -113,11 +113,11 @@ const changeLive = (val: string): void => {
 
 <template>
   <div class="summit-live">
-    <div class="title-box">
+    <h2 class="title-box">
       <p class="title-bg">{{ liveData.titleBg }}</p>
       <p class="title">{{ liveData.title }}</p>
       <img class="floor-img" :src="floorImg" alt="" />
-    </div>
+    </h2>
     <ClientOnly>
       <div class="select-room">
         <OSelect v-model="liveRoom" clearable filterable @change="changeLive">

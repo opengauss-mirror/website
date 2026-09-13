@@ -34,7 +34,7 @@ watch(
 
 <template>
   <div class="schedule">
-    <h4 v-if="agendaData.lable">{{ agendaData.lable }}</h4>
+    <h3 v-if="agendaData.lable">{{ agendaData.lable }}</h3>
     <div class="schedule-item other">
       <el-tabs v-if="agendaData.content[1]" v-model.number="otherTabType" class="other-tabs">
         <el-tab-pane v-for="(itemList, scheduleIndex) in agendaData.content" :key="itemList.id" :name="scheduleIndex">
@@ -46,11 +46,11 @@ watch(
         </el-tab-pane>
       </el-tabs>
       <div v-for="(itemList, listIndex) in agendaData.content" v-show="otherTabType === listIndex" :key="itemList.id" class="content">
-        <h4 v-if="itemList.title" class="other-title">
+        <h3 v-if="itemList.title" class="other-title">
           {{ itemList.title }}
-        </h4>
-        <div class="content-list">
-          <div
+        </h3>
+        <ul class="content-list">
+          <li
             v-for="subItem in itemList.content"
             :key="subItem.id"
             class="content-item"
@@ -106,9 +106,9 @@ watch(
                 </span>
               </p>
             </div>
-          </div>
-          <div v-if="false" class="mask" @click="changeIndexShow('', '')"></div>
-        </div>
+          </li>
+        </ul>
+        <div v-if="false" class="mask" @click="changeIndexShow('', '')"></div>
       </div>
     </div>
   </div>
@@ -120,7 +120,7 @@ watch(
 }
 .schedule {
   margin-top: 20px;
-  h4 {
+  h3 {
     margin-top: 32px;
     text-align: center;
     font-size: 20px;

@@ -70,7 +70,7 @@ const hasOgracData = computed(() => newData.value.some((i) => (i.name as string)
 <template>
   <div class="download-content">
     <h2 class="title">{{ 'openGauss ' + contentData.name }} <OTag v-if="contentData.plannedEOL === 'End-of-Life' || contentData.isEol"> 停止维护 </OTag></h2>
-    <h4 class="subtitle">{{ $t('download.EOM_DATE') }} ：{{ contentData.plannedEOL }}</h4>
+    <div class="subtitle">{{ $t('download.EOM_DATE') }} ：{{ contentData.plannedEOL }}</div>
     <div class="other-link">
       <template v-if="!hasOgracData">
         <template v-for="item in contentData.docs_list" :key="item.name">

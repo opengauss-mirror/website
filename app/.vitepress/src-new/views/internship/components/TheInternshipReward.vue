@@ -61,8 +61,8 @@ const rewardCards = computed(() => [
 
 <template>
   <div class="internship-reward-container">
-    <div class="reward-card-list">
-      <div
+    <ul class="reward-card-list">
+      <li
         v-for="(card, index) in rewardCards"
         :key="index"
         class="reward-card"
@@ -90,8 +90,8 @@ const rewardCards = computed(() => [
             <OLink v-if="card.hasEmail" color="primary" :href="`mailto:${EMAIL_ADDRESS}`">{{ EMAIL_ADDRESS }}</OLink>
           </p>
         </div>
-      </div>
-    </div>
+      </li>
+    </ul>
   </div>
 </template>
 

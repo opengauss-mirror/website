@@ -12,8 +12,8 @@ const TITLE = 'openGauss Finance 5.0.1 (LTS)';
 </script>
 
 <template>
+  <BannerLevel2 :background-image="Banner" :title="BANNER_TITLE" />
   <ClientOnly>
-    <BannerLevel2 :background-image="Banner" :title="BANNER_TITLE" />
     <AppContent>
       <div class="download-finance">
         <h2 class="download-finance-title">{{ TITLE }}</h2>

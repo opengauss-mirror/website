@@ -59,8 +59,8 @@ onMounted(async () => {
             >{{ i18n.home.viewMore }}</OLink
           >
         </p>
-        <div class="home-explore-items">
-          <div class="item-wrapper">
+        <ul class="home-explore-items">
+          <li class="item-wrapper">
             <div class="item">
               <OIcon class="title-icon"><IconInstall /></OIcon>
               <p class="item-title">{{ i18n.home.HOME_EXPLORE.LIST[1].NAME }}</p>
@@ -77,8 +77,8 @@ onMounted(async () => {
                 {{ i18n.home.viewMore }}
               </OLink>
             </div>
-          </div>
-          <div class="item-wrapper">
+          </li>
+          <li class="item-wrapper">
             <div class="item">
               <OIcon class="title-icon"><IconJoinContribute /></OIcon>
               <p class="item-title">{{ i18n.home.HOME_EXPLORE.LIST[2].NAME }}</p>
@@ -90,8 +90,8 @@ onMounted(async () => {
                 {{ i18n.home.viewMore }}
               </OLink>
             </div>
-          </div>
-          <div class="item-wrapper">
+          </li>
+          <li class="item-wrapper">
             <div class="item">
               <OIcon class="title-icon"><IconService /></OIcon>
               <p class="item-title">{{ i18n.home.HOME_EXPLORE.LIST[3].NAME }}</p>
@@ -103,8 +103,8 @@ onMounted(async () => {
                 {{ i18n.home.viewMore }}
               </OLink>
             </div>
-          </div>
-        </div>
+          </li>
+        </ul>
       </div>
     </div>
 

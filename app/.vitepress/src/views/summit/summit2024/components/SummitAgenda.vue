@@ -41,7 +41,7 @@ const renderData = computed(() => {
 <template>
   <div class="summit-agenda">
     <div class="title-box" :class="{ 'title-box-dark': !isLight }">
-      <p class="title">{{ agendaData.title }}</p>
+      <h2 class="title">{{ agendaData.title }}</h2>
     </div>
     <div class="date">
       <div v-for="(item, index) in dateList" :key="item.day" class="date-item" :class="{ active: showIndex === index }" @click="setShowIndex(index)">

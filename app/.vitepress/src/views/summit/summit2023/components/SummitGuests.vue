@@ -31,8 +31,8 @@ const summitStyle = computed(() => {
 </script>
 
 <template>
-  <div class="lecturer-list" :style="summitStyle as any">
-    <div v-for="item in lecturerList" :key="item.NAME" class="lecturer-list-item">
+  <ul class="lecturer-list" :style="summitStyle as any">
+    <li v-for="item in lecturerList" :key="item.NAME" class="lecturer-list-item">
       <slot name="img">
         <div :class="summitStyle['--shape'] === 'square' ? 'lecturer-list-item-square' : 'lecturer-list-item-circle'">
           <img :src="item.img" :alt="item.name" />
@@ -46,8 +46,8 @@ const summitStyle = computed(() => {
           <p>{{ titleItem }}</p>
         </div>
       </slot>
-    </div>
-  </div>
+    </li>
+  </ul>
 </template>
 
 <style scoped lang="scss">

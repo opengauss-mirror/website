@@ -528,7 +528,7 @@ onUnmounted(() => unwatchActiveVersion?.());
               </template>
               <li v-else>
                 <!-- eslint-disable-next-line -->
-                <h3 @click="goLink(item, index)" v-dompurify-html="item.title"></h3>
+                <p class="search-result-title" @click="goLink(item, index)" v-dompurify-html="item.title"></p>
                 <!-- eslint-disable-next-line -->
                 <p class="detail" v-dompurify-html="item.textContent"></p>
                 <p class="from">
@@ -787,7 +787,7 @@ onUnmounted(() => unwatchActiveVersion?.());
               background-color: transparent;
             }
           }
-          h3 {
+          .search-result-title {
             font-size: var(--e-font-size-h5);
             color: var(--e-color-text1);
             line-height: var(--e-line-height-h5);

@@ -47,8 +47,8 @@ const otherTabType = ref(0);
         <h4 v-if="itemList.title" class="other-title">
           {{ itemList.title }}
         </h4>
-        <div class="content-list">
-          <div
+        <ul class="content-list">
+          <li
             v-for="subItem in itemList.content"
             :key="subItem.id"
             class="content-item"
@@ -98,9 +98,9 @@ const otherTabType = ref(0);
                 </span>
               </p>
             </div>
-          </div>
-          <div v-show="idSubItemShow !== '' && idShow === itemList.id" class="mask" @click="changeIndexShow('', '')"></div>
-        </div>
+          </li>
+        </ul>
+        <div v-show="idSubItemShow !== '' && idShow === itemList.id" class="mask" @click="changeIndexShow('', '')"></div>
       </div>
     </div>
   </div>

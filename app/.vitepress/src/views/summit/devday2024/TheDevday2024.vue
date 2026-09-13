@@ -3,6 +3,7 @@ import { useCommon } from '@/stores/common';
 import { computed } from 'vue';
 
 import AppContent from '@/components/AppContent.vue';
+import AppHiddenPageTitle from '~@/components/AppHiddenPageTitle.vue';
 import SummitBanner from './components/SummitBanner.vue';
 import SummitIntro from './components/SummitIntro.vue';
 import SummitLive from './components/SummitLive.vue';
@@ -22,6 +23,7 @@ const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
 </script>
 
 <template>
+  <AppHiddenPageTitle />
   <SummitBanner :banner-data="summitData.banner" />
   <AppContent>
     <SummitIntro :intro-data="summitData.intro" />

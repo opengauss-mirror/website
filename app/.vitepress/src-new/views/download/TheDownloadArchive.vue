@@ -6,6 +6,7 @@ import DownloadConfig from '~@/data/download/content-bridge';
 import ContentWrapper from '~@/components/ContentWrapper.vue';
 import DownloadContent from './DownloadContent.vue';
 import ArchiveContent from './ArchiveContent.vue';
+import AppHiddenPageTitle from '~@/components/AppHiddenPageTitle.vue';
 import { useScreen } from '~@/composables/useScreen';
 import { getUrlParams } from '@/shared/utils';
 
@@ -55,6 +56,9 @@ const onChange = (option: string) => {
 
 <template>
   <ContentWrapper :vertical-padding="['32px', '32px']">
+    <AppHiddenPageTitle>
+      {{ $t('common.COMMON_CONFIG.DOWNLOAD') }} | {{ $t('download.VERSION_ALL') }} | {{ activeTab }}
+    </AppHiddenPageTitle>
     <OBreadcrumb class="app-breadcrumb">
       <OBreadcrumbItem>
         <a :href="`/${lang}/download/`"> {{ $t('common.COMMON_CONFIG.DOWNLOAD') }} </a>

@@ -48,8 +48,8 @@ const otherTabType = ref(0);
         <h4 v-if="itemList.title" class="other-title">
           {{ itemList.title }}
         </h4>
-        <div class="content-list">
-          <div
+        <ul class="content-list">
+          <li
             v-for="subItem in itemList.content"
             :key="subItem.id"
             class="content-item"
@@ -78,8 +78,8 @@ const otherTabType = ref(0);
                 </span>
               </div>
             </div>
-          </div>
-        </div>
+          </li>
+        </ul>
       </div>
     </div>
   </div>

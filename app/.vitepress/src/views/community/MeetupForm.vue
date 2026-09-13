@@ -261,7 +261,7 @@ const submitMeetupForm = async (formEl: FormInstance | undefined) => {
 <template>
   <AppContent :pc-top="40" :mobile-top="12">
     <div class="meetup-form">
-      <h2>openGauss Meetup申请表</h2>
+      <h1>openGauss Meetup申请表</h1>
       <template v-if="csrfToken">
         <el-form ref="ruleFormRef" :model="meetupData" :rules="rules" label-width="125px" :label-position="windowWidth > 768 ? 'left' : 'top'" status-icon>
           <el-form-item label="活动组织" prop="company">
@@ -395,7 +395,7 @@ const submitMeetupForm = async (formEl: FormInstance | undefined) => {
     flex-shrink: 0;
   }
 
-  h2 {
+  h1 {
     font-size: 32px;
     font-weight: 500;
     margin: 0 0 40px;

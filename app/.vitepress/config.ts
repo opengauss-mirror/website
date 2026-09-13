@@ -246,6 +246,56 @@ const config: UserConfig = {
       md.use(sanitizeMarkdownPlugin, {
         scope: /^(?:zh|en)[/\\](?:news|blogs)[/\\][^/\\]+[/\\].*\.md$/,
       });
+      // 文章页（blog / news / events）标题层级规范化：
+      // 文章标题已由 AppMdHead 或 LayoutEventDetail 以 <h1> 渲染，正文标题整体下移一级（最高 h2），
+      // 并逐级填补跳级（如 h2 -> h4 降为 h2 -> h3），保证页面仅一个 h1 且层级连续
+      md.core.ruler.after(
+        'block',
+        'normalize-article-headings',
+        (state: {
+          env?: { frontmatter?: { category?: string; title?: string }; relativePath?: string } & Record<string, unknown>;
+          tokens: Array<{ type: string; tag: string }>;
+        }) => {
+          const frontmatter = state.env?.frontmatter ?? {};
+          const relativePath = state.env?.relativePath ?? '';
+          const isArticle =
+            frontmatter.category === 'blog' || frontmatter.category === 'news' || frontmatter.category === 'events' || /^(?:[a-z]{2}\/)(?:blogs|news|events)\//.test(relativePath);
+          if (!isArticle) {
+            return;
+          }
+          // 仅当布局会渲染标题 h1（blog / news / events 布局 + 非空 frontmatter.title）时，才将正文整体下移一级
+          const titleRendered =
+            (frontmatter.category === 'blog' || frontmatter.category === 'news' || frontmatter.category === 'events') &&
+            typeof frontmatter.title === 'string' &&
+            frontmatter.title.trim() !== '';
+          let prev = titleRendered ? 1 : 0;
+          for (let i = 0; i < state.tokens.length; i++) {
+            const token = state.tokens[i];
+            if (token.type !== 'heading_open' || !/^h[1-6]$/.test(token.tag)) {
+              continue;
+            }
+            let level = Number(token.tag.slice(1));
+            if (titleRendered) {
+              level = Math.min(6, level + 1);
+            }
+            if (prev > 0) {
+              if (level === 1) {
+                level = 2;
+              }
+              if (level > prev + 1) {
+                level = prev + 1;
+              }
+            }
+            prev = level;
+            const tag = `h${level}`;
+            token.tag = tag;
+            const close = state.tokens[i + 1]?.type === 'inline' ? state.tokens[i + 2] : state.tokens[i + 1];
+            if (close?.type === 'heading_close') {
+              close.tag = tag;
+            }
+          }
+        }
+      );
     },
   },
   ignoreDeadLinks: true,

@@ -3,6 +3,7 @@ import { ref } from 'vue';
 import { useI18n } from '@/i18n';
 import { useData } from 'vitepress';
 import AppContent from '@/components/AppContent.vue';
+import AppHiddenPageTitle from '~@/components/AppHiddenPageTitle.vue';
 
 import emailImg from '@/assets/category/member/toemail.svg';
 
@@ -25,6 +26,7 @@ const handleChangeActiveMobile = (activeNames: number | '') => {
 
 <template>
   <AppContent>
+    <AppHiddenPageTitle />
     <div class="breadcrumb">
       <a class="last-page" :href="`/${lang}/member/`" rel="noopener noreferrer">
         {{ i18n.member.PAGE_TITLE }}
@@ -68,9 +70,9 @@ const handleChangeActiveMobile = (activeNames: number | '') => {
       </OCollapseItem>
     </OCollapse>
     <div v-for="item in i18n.member.MEMBER_LIST_OLD" :key="item.ID" class="member-panel member-pc">
-      <h1 :id="item.id" class="member-title">
+      <h2 :id="item.id" class="member-title">
         {{ item.name }}
-      </h1>
+      </h2>
       <div class="member-panel-content">
         <ul class="member-info">
           <li>
@@ -343,7 +345,7 @@ const handleChangeActiveMobile = (activeNames: number | '') => {
     }
   }
   .other {
-    h4 {
+    h3 {
       font-size: 24px;
       font-weight: 300;
       margin-bottom: 20px;

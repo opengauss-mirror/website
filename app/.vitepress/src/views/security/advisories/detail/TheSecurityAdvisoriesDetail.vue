@@ -62,7 +62,7 @@ onMounted(() => {
         </p>
       </div>
       <div class="bulletin-head">
-        <p class="bulletin-name">{{ detailData.gaussSaNum }}</p>
+        <h1 class="bulletin-name">{{ detailData.gaussSaNum || i18n.security.SECURITY_ADVISORIES_DETAIL }}</h1>
         <div class="bulletin-intro">
           <div>
             <span>{{ i18n.security.SYNOPSIS }}:</span>
@@ -82,57 +82,57 @@ onMounted(() => {
             <OTabPane :label="i18n.security.OVERVIEW">
               <div class="tab-content">
                 <div class="tab-content-item">
-                  <h5 class="tab-content-item-title lable-name">
+                  <h2 class="tab-content-item-title lable-name">
                     {{ i18n.security.BRIEF_INTRODUCTION }}
-                  </h5>
+                  </h2>
                   <p class="tab-content-item-text">
                     {{ detailData.introduction }}
                   </p>
                 </div>
                 <div class="tab-content-item lable-name">
-                  <h5 class="tab-content-item-title">
+                  <h2 class="tab-content-item-title">
                     {{ i18n.security.SEVERITY }}
-                  </h5>
+                  </h2>
                   <p class="tab-content-item-text">
                     {{ detailData.cveLevel }}
                   </p>
                 </div>
                 <div class="tab-content-item">
-                  <h5 class="tab-content-item-title lable-name">
+                  <h2 class="tab-content-item-title lable-name">
                     {{ i18n.security.THEME }}
-                  </h5>
+                  </h2>
                   <p class="tab-content-item-text">
                     {{ detailData.theme }}
                   </p>
                 </div>
                 <div class="tab-content-item lable-name2">
-                  <h5 class="tab-content-item-title">
+                  <h2 class="tab-content-item-title">
                     {{ i18n.security.DESCRIPTION }}
-                  </h5>
+                  </h2>
                   <p class="tab-content-item-text">
                     {{ detailData.description }}
                   </p>
                 </div>
                 <div class="tab-content-item lable-name3">
-                  <h5 class="tab-content-item-title">
+                  <h2 class="tab-content-item-title">
                     {{ i18n.security.AFFECTED_COMPONENTS }}
-                  </h5>
+                  </h2>
                   <p class="tab-content-item-text">
                     {{ detailData.influenceComponent }}
                   </p>
                 </div>
                 <div class="tab-content-item lable-name4">
-                  <h5 class="tab-content-item-title">
+                  <h2 class="tab-content-item-title">
                     {{ i18n.security.CVE }}
-                  </h5>
+                  </h2>
                   <p v-for="(item, index) in cveIdList" :key="index" class="tab-content-item-link" @click="goCveDetail(item)">
                     {{ item }}
                   </p>
                 </div>
                 <div class="tab-content-item lable-name5">
-                  <h5 class="tab-content-item-title">
+                  <h2 class="tab-content-item-title">
                     {{ i18n.security.REFERENCE_DOCUMENTS }}
-                  </h5>
+                  </h2>
                   <div v-for="item in referenceLinkList" :key="item" class="tab-content-item-text">
                     <a :href="item" target="_blank" rel="noopener noreferrer">{{ item }}</a>
                   </div>
@@ -172,9 +172,9 @@ onMounted(() => {
                       {{ it.groupName }}
                     </p>
                     <div v-for="single in it.tagBody" :key="single" class="packge-item-class-rpm">
-                      <h5 class="first-title">{{ i18n.security.SOFT_PACK }}</h5>
+                      <h2 class="first-title">{{ i18n.security.SOFT_PACK }}</h2>
                       <p>{{ single.packageName }}</p>
-                      <h5>{{ i18n.security.PLAT }}</h5>
+                      <h2>{{ i18n.security.PLAT }}</h2>
                       <p v-for="platItem in single.affectedPlatform" :key="platItem">
                         {{ platItem }}
                       </p>
@@ -307,7 +307,7 @@ onMounted(() => {
             &-item:last-child {
               margin-bottom: 0;
             }
-            h5 {
+            .tab-content-item-title {
               font-size: var(--e-font-size-text);
               line-height: var(--e-line-height-text);
               color: var(--e-color-text1);

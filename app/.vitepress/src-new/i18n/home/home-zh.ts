@@ -1,4 +1,5 @@
 export default {
+  homePageTitle: 'openGauss社区官网 - 企业级开源关系型数据库',
   openGaussFeatures: '数据库特性',
   HOME_MEETING: '社区会议',
   CHARACTERR_INFO: {

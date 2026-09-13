@@ -3,6 +3,7 @@ import { computed, ref, watch } from 'vue';
 import { useCommon } from '@/stores/common';
 
 import AppContext from '@/components/AppContent.vue';
+import AppHiddenPageTitle from '~@/components/AppHiddenPageTitle.vue';
 import SummitBanner from './components/SummitBanner.vue';
 import SummitSchedule from './components/SummitSchedule.vue';
 import SummitGuests from './components/SummitGuests.vue';
@@ -88,6 +89,7 @@ watch(
 );
 </script>
 <template>
+  <AppHiddenPageTitle />
   <SummitBanner :banner-data="summitData.banner" />
   <AppContext>
     <ClientOnly>

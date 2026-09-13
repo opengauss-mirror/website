@@ -20,13 +20,11 @@ const commonStore = useCommon();
 const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
 </script>
 
-<ClientOnly>
-  <BannerLevel2
+<BannerLevel2
   title="活动征集"
   :illustration="illustration"
   :background-image="banner"
-  />
-</ClientOnly>
+/>
 <div class="contribution-markdown">
 <div class="markdown">
 
