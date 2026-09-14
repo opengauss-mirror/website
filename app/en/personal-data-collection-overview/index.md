@@ -15,9 +15,9 @@ This website involves the following personal data collection scenarios:
 ## 1. Account Service
 
 - **Purpose**: Verify identity during login and registration on this website and maintain your personal data
-- **Personal data type**: data and account information you voluntarily submit
+- **Personal data type**: data you voluntarily submit/account information
 - **Collection method**: user input or shared by third-party accounts
-- **Personal data fields**: **user name**, **company**, **email address**, **phone number**, **password**, **email or phone verification code**, avatar, nickname, the following information based on your login mode: 1)**Gitee UUID**, **Gitee ID**, Gitee nickname, **Gitee email address**; 2)**GitCode UUID**, **GitCode ID**, GitCode nickname, **GitCode email address**
+- **Personal data fields**: **user name**, **password**, **email address**, **email verification code**, **phone number**, **phone verification code**, avatar, nickname, **company**, the following information based on your login mode: 1) **Gitee UUID**, **Gitee ID**, Gitee nickname, **Gitee email address**; 2) **AtomGit UUID**, **AtomGit ID**, AtomGit nickname, **AtomGit email address**
 
 ## 2. Mailing List Service
 
@@ -35,14 +35,14 @@ This website involves the following personal data collection scenarios:
 
 ## 4. Contributor License Agreement (CLA) Signing
 
-Regarding the purpose of collecting personal data, the types of personal data, the methods of collection, and the specific personal data fields, refer to the [Personal Data Collection Overview](https://clasign.osinfra.cn/information-list/corp/gitee_opengauss-1614047760000855378?lang=en).
+Regarding the purpose of collecting personal data, the types of personal data, the methods of collection, and the specific personal data fields, refer to the [Personal Data Collection Overview](https://clasign.osinfra.cn/information-list/corp/690dba44479f483c74c264fd?lang=en).
 
 ## 5. Meeting Service
 
 - **Purpose**: Configure meeting permissions and send meeting invitation emails
 - **Personal data type**: data you voluntarily submit
 - **Collection method**: user input
-- **Personal data fields**: **user name** and **email address**
+- **Personal data fields**: **AtomGit ID** and **email address**
 
 ## 6. Content Release
 
@@ -56,20 +56,20 @@ Regarding the purpose of collecting personal data, the types of personal data, t
 - **Purpose**: Contact you and coordinate event arrangements, including sign-ins and event nameplates
 - **Personal data type**: data you voluntarily submit
 - **Collection method**: user input
-- **Personal data fields**: contact information (**name**, **phone number**, **email address** and **company**) and meetup details (organization, agenda, date, duration, city, event scale, event form, event support, and topics)
+- **Personal data fields**: **name**, **phone number**, **email address** and **company**
 
 ## 8. Pairing Plan Application
 
 - **Purpose**: Contact you and verify your application and related details
 - **Personal data type**: data you voluntarily submit
 - **Collection method**: user input
-- **Personal data fields**: **name**, **organization**, **email address**, **phone number**, openGauss usage (scenario, version, number of nodes, hardware details, issue description)
+- **Personal data fields**: **name**, **organization**, **email address**, **phone number**
 
 ## 9. Forum Service
 
 - **Purpose**: Verify account identity and permissions, provide more secure services, and verify reported contents
-- **Personal data type**: data and account information you voluntarily submit
+- **Personal data type**: data you voluntarily submit/account information
 - **Collection method**: user input, shared by third-party accounts, or collected by the system
-- **Personal data fields**: **user name**, **email address**, **phone number**, **password**, display name, profile picture, the following information based on your login mode: 1)**Gitee ID**, 2)**GitCode ID**, **IP address**, **region**, device information, login time, **preference settings**, like information, follow information, favorite content, post count, reply count, follow count, fan count, personal profile, badge acquisition, sidebar settings, follow list, fan list, email summary, time zone, post and reply content, images, audio, video, documents, comments, report type, description, organization, and host name
+- **Personal data fields**: **user name**, **email address**, **phone number**, **password**, display name, profile picture. The following information based on your login mode: 1) **Gitee ID**; 2) **AtomGit ID**. **IP address**, **region**, device information, login time, **preference settings**, like information, follow information, favorite content, post count, reply count, follow count, fan count, personal profile, badge acquisition, sidebar settings, follow list, fan list, email summary, time zone, post and reply content, images, audio, video, documents, comments, report type, description, organization, and host name
 
 </div>

@@ -24,7 +24,7 @@ To ensure the secure and stable running of the website of the openGauss communit
 
 - **Third-party company name**: Beijing Steamory Technology Co., Ltd.
 - **Product/Type**: Authing account
-- **Shared data**: **user name**, **company**, **email address**, **phone number**, **password**, **email or phone verification code** and **Gitee UUID**、**Gitee ID**、Gitee nickname、**Gitee email address**、Gitee avatar、**GitCode UUID**、**GitCode ID**、GitCode nickname、**GitCode email address**、GitCode avatar
+- **Shared data**: **user name**, **password**, **email address**, **email verification code**, **phone number**, **phone verification code**, avatar, nickname, **company**, **Gitee UUID**, **Gitee ID**, Gitee nickname, **Gitee email address**, **AtomGit UUID**, **AtomGit ID**, AtomGit nickname, **AtomGit email address**
 - **Data sharing purpose**: authentication and personal data management of the community website
 - **Application scenario**: login service
 - **Data sharing method**: transmission through background interfaces

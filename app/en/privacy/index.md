@@ -15,7 +15,7 @@ The openGauss community is operated by Huawei Technologies Co., Ltd. (hereinafte
 
 Please carefully review the following updates to this Privacy Statement:
 
-1. Optimized some description.
+1. Update the corresponding part in the privacy statement based on the personal data collection overview.
 
 ## 1. How We Collect and Process Your Personal Data
 
@@ -23,26 +23,26 @@ Please carefully review the following updates to this Privacy Statement:
 
 **(a) Account Service**
 
-  1. When you register for an openGauss community account, we will collect your **user name**, **company**, **email address**, **phone number**, **password**, and **email/phone verification code.** A unique account identifier will be automatically generated. Refusal to provide this information will prevent account creation.
+  1. When you register for an openGauss community account, we will collect your **user name**,  **password**, **email address**, **phone number**, and **email/phone verification code**. A unique account identifier will be automatically generated. Refusal to provide this information will prevent account creation.
 
-  2. When you log in to the openGauss community using your user name, **email address**, or **phone number**, we will collect your user name, **email address**, **phone number**, **password**, and **email/phone verification code** for authentication. Refusal to provide this information will prevent login.
+  2. When you log in to the openGauss community using your **user name**, **email address**, or **phone number**, we will collect your **user name**, **email address**, **phone number**, **password**, and **email/phone verification code** for authentication. Refusal to provide this information will prevent login.
 
-  3. When you log in using a third-party account (Gitee or GitCode), we will collect the following information based on your login mode for authentication and code repository access management:
+  3. When you log in using a third-party account (Gitee or AtomGit), we will collect the following information based on your login mode for authentication and code repository access management:
 
   - **Gitee UUID**, **Gitee ID**, Gitee nickname, and **Gitee email address**;
 
-  - **GitCode UUID**, **GitCode ID**, GitCode nickname, and **GitCode email address**.
+  - **AtomGit UUID**, **AtomGit ID**, AtomGit nickname, and **AtomGit email address**.
 
-  When you log in using a third-party account without binding to any existing openGauss account, a new openGauss account with a unique identifier will be automatically generated from your **Gitee ID** or **GitCode ID**. Refusal to provide this information will prevent login via third-party accounts.
+  When you log in using a third-party account without binding to any existing openGauss account, a new openGauss account with a unique identifier will be automatically generated from your **Gitee ID** or **AtomGit ID**. Refusal to provide this information will prevent login via third-party accounts.
 
   4. After logging in, you can optionally provide your avatar, nickname, and **company** in User Center. This information is not required for using openGauss community features.
 
   5. After logging in, you can modify your **email address**, **phone number**, and **password** in User Center. We will collect **email address**, **phone number**, **password** and **verification code** for authentication.
-  6. After logging in, you can bind your openGauss account to a third-party account (Gitee or GitCode) in User Center. We will collect the following information about that third-party account accordingly:
+  6. After logging in, you can bind your openGauss account to a third-party account (Gitee or AtomGit) in User Center. We will collect the following information about that third-party account accordingly:
 
   - **Gitee UUID**, **Gitee ID**, Gitee nickname, and **Gitee email address**;
 
-  - **GitCode UUID**, **GitCode ID**, GitCode nickname, and **GitCode email address**.
+  - **AtomGit UUID**, **AtomGit ID**, AtomGit nickname, and **AtomGit email address**.
 
   Refusal to provide this information will prevent third-party account binding for login purposes.
 
@@ -50,20 +50,19 @@ Please carefully review the following updates to this Privacy Statement:
 
 **(c) Service Optimization**. To ensure service quality and smooth business operations, we automatically collect and store necessary log information, including access timestamps, **IP addresses**, request details, access status, resource size, access sources, and user agent information. We also collect your device details (device name/type/vendor, OS type/version, and screen dimensions), app details (app ID, SDK version, browser type and version, and browser viewport size), and app usage information (event name, event attributes, reporting time, and anonymous client ID). The information is used for community operations and O&M security purposes.
 
-**(d) Contributor License Agreement ("CLA") Signing**. When you participate in code contribution through the CLA signing system (click [here](https://clasign.osinfra.cn/sign/gitee_opengauss-1614047760000855378?lang=en) to learn more), you need to submit your [personal data](https://clasign.osinfra.cn/privacy/corp/gitee_opengauss-1614047760000855378?lang=en) to the CLA signing system. We will obtain such personal data to confirm if you have signed the CLA, and to conduct statistical analysis for community operation insights.
+**(d) Contributor License Agreement ("CLA") Signing**. When you participate in code contribution through the CLA signing system (click [here](https://clasign.osinfra.cn/sign/gitee_opengauss-1614047760000855378?lang=en) to learn more), you need to submit your [personal data](https://clasign.osinfra.cn/privacy/corp/690dba44479f483c74c264fd?lang=en) to the CLA signing system. We will obtain such personal data to confirm if you have signed the CLA, and to conduct statistical analysis for community operation insights.
 
-**(e) Meeting Service**. When you use our meeting service, we will collect your **user name** to configure permissions. When you book a meeting, we will collect the **email addresses** that you provide to send meeting invitations. If you enable automatic screen recording when you book a meeting, the recording will be uploaded to the third-party platform [Bilibili](https://www.bilibili.com/) after the meeting for review by interested individuals and organizations.
+**(e) Meeting Service**. When you use our meeting service, we will collect your **AtomGit ID** to configure permissions. When you book a meeting, we will collect the **email addresses** that you provide to send meeting invitations. If you enable automatic screen recording when you book a meeting, the recording will be uploaded to the third-party platform [Bilibili](https://www.bilibili.com/) after the meeting for review by interested individuals and organizations.
 
 **(f) Content Release**. When you participate in community meetings/activities/organizations, make contributions, or write blogs or news, you may post your **photo**, **name**, **email address**, **company name**, **position**, **school**, **profile**, and **code hosting platform user ID** on our website to help developers connect and engage with the community easily.
 
-**(g) Meetup**. When you organize an openGauss meetup, the community will collect your **name**, **phone number**, **email address**, **company**, and meetup details (including organization, agenda, date, duration, city, event scale, event form, event support, and topics) from the application form you fill in. The collected data will be used to contact you for the purpose of confirming your application and related matters, as well as arranging for relevant affairs, including sign-ins and nameplates.
+**(g) Meetup**. When you organize an openGauss meetup, the community will collect your **name**, **phone number**, **email address**, **company** from the application form you fill in. The collected data will be used to contact you for the purpose of confirming your application and related matters, as well as arranging for relevant affairs, including sign-ins and nameplates.
 
-**(h) Pairing Plan Application**. When you apply for participation in the openGauss pairing plan, the community will collect your **name**, **organization**, **email address**, **phone number**, and openGauss usage information (including use cases, version details, number of nodes, hardware information, and issue description) from the application form you fill in. The collected data will be used to contact you for the purpose of confirming your application and related matters.
-
+**(h) Pairing Plan Application**. When you apply for participation in the openGauss pairing plan, the community will collect your **name**, **organization**, **email address**, **phone number** from the application form you fill in. The collected data will be used to contact you for the purpose of confirming your application and related matters.
 
 **(i) Forum Service**.
 
-1. When you sign up or log in to the forum service, we will collect your **user name**, **email address**, **phone number**, **password**, nickname, avatar, and **Gitee ID** or **GitCode ID** based on your login mode from your openGauss account, and assign permissions and roles to your account. In addition, we will collect your **IP address**, **region**, device information, login time, and **preference settings** to provide you with more secure services.
+1. When you sign up or log in to the forum service, we will collect your **user name**, **email address**, **phone number**, **password**, nickname, avatar, and **Gitee ID** or **AtomGit ID** based on your login mode from your openGauss account, and assign permissions and roles to your account. In addition, we will collect your **IP address**, **region**, device information, login time, and **preference settings** to provide you with more secure services.
 
 2. When you use the forum service, we collect your like information, follow information, favorite content, post count, reply count, follow count, follower count, personal profile, badge acquisition, sidebar settings, follow list, follower list, email summary, time zone, post and reply content, images, audio, video, documents, and comments to understand your personal preferences and better serve you.
 
@@ -135,7 +134,7 @@ Please note that these rights are not absolute and may be restricted under appli
 
 - Any personal data you publicly disclose on the community website will be stored in the relevant code repository, and historical records will persist even after deletion of such data.
 
-**<u>We will respond to your request within one month unless otherwise required by applicable laws and regulations.</u>** Please note that under certain circumstances, such as when we are unable to verify your identity or when your request exceeds the scope of your rights under applicable laws, we may reject your request. Should this occur, we will inform you in writing of the rejection and detail the grounds for our rejection.
+**<u>Generally, we will respond to your request as soon as possible, unless otherwise required by applicable laws and regulations</u>**. Please note that under certain circumstances, such as when we are unable to verify your identity or when your request exceeds the scope of your rights under applicable laws, we may reject your request. Should this occur, we will inform you in writing of the rejection and detail the grounds for our rejection.
 
 You may change the scope of your authorization for our collection of your personal data or withdraw your authorization. However, your withdrawal of consent or authorization does not affect the lawfulness of processing based on your authorization prior to its withdrawal.
 
@@ -155,9 +154,6 @@ This website, including its content and services, is mainly intended for individ
 
 If you want to contact us or exercise your rights, please contact us at:
 
-We have no control over the privacy and data protection policies of third parties, and such third parties are not bound by this policy. Before submitting any personal data to third parties, please review their respective privacy protection policies.
+Email: **<common@public.opengauss.org>**
 
-Email: **common@public.opengauss.org**
-
-Last updated: July 29, 2026
 </div>

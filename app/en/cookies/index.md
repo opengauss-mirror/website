@@ -62,9 +62,15 @@ The openGauss community sometimes stores cookies on computers or mobile devices.
       <td>Prevent malicious attacks.</td>
     </tr>
     <tr>
-      <td>_forum_session, _t</td>
+      <td>_forum_session</td>
       <td>forum website</td>
-      <td>7 days</td>
+      <td>session</td>
+      <td>Maintains user sessions.</td>
+    </tr>
+    <tr>
+      <td> _t</td>
+      <td>forum website</td>
+      <td>60 days</td>
       <td>Maintains user sessions.</td>
     </tr>
     <tr>
@@ -82,7 +88,7 @@ The openGauss community sometimes stores cookies on computers or mobile devices.
     <tr>
       <td>prefs</td>
       <td>etherpad website</td>
-      <td>1 year, 1 month, 1 week</td>
+      <td>1 year, 1 month, and 1 week</td>
       <td>Record the client's preference settings, which are used to set font series, colors, and other content.</td>
     </tr>
   </tbody>
@@ -109,9 +115,7 @@ The openGauss community sometimes stores cookies on computers or mobile devices.
   </tbody>
 </table>
 
-The openGauss community does not use cookies for any purposes other than those described in this statement. You can manage or delete cookies based on your preferences. For details, visit [AboutCookies.org](https://www.aboutcookies.org/). You can clear all cookies saved on your computer. Most browsers are set to block cookies. But if you do so, you need to change the user settings yourself every time you visit our website. For details about how to change the browser settings, please visit the following links: [Internet Explorer](http://windows.microsoft.com/en-gb/internet-explorer/delete-manage-cookies), [Google Chrome](https://support.google.com/chrome/answer/95647?hl=en), [Mozilla Firefox](https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer?redirectlocale=en-US&redirectslug=Cookies), [Safari](https://support.apple.com/kb/PH19214?locale=en_US&viewlocale=en_US) and [Opera](http://www.opera.com/help/tutorials/security/privacy/).
-
-If you clear cookies, you need to change user settings each time you visit the openGauss community website. Note that some services in the openGauss community may require cookies. Disabling cookies may affect all or some functions of these services.
+The openGauss community does not use cookies for any purposes other than those described in this statement. You can manage or delete cookies based on your preferences. For details, visit [AboutCookies.org](https://www.aboutcookies.org/). You can clear all cookies saved on your computer. Most browsers are set to block cookies. But if you do so, you need to change the user settings yourself every time you visit our website. For details about how to change the browser settings, please visit the following links: [Internet Explorer](http://windows.microsoft.com/en-gb/internet-explorer/delete-manage-cookies), [Google Chrome](https://support.google.com/chrome/answer/95647?hl=en), [Mozilla Firefox](https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer?redirectlocale=en-US&redirectslug=Cookies), [Safari](https://support.apple.com/kb/PH19214?locale=en_US&viewlocale=en_US) and [Opera](http://www.opera.com/help/tutorials/security/privacy/). Note that some services in the openGauss community may require cookies. Disabling cookies may affect all or some functions of these services.
 
 You can click <CookieReset/> to withdraw your consent to non-necessary cookies.
 
