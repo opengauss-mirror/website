@@ -8,6 +8,7 @@ import { fileURLToPath } from 'node:url';
 import generateLastmodAndChangefreq from '@opendesign-plus/plugins/vite/generate-lastmod-changefreq';
 import generateLLMsFull from '@opendesign-plus/geo-scripts/generate-llms-full';
 import generateSEOManifest from './scripts/generate-tdk-schema-for-articles';
+import { sanitizeMarkdownPlugin } from './scripts/sanitize-md';
 import { PRIORITY_MAP, DEFAULT_PRIORITY, normalizeSitemapUrl } from './sitemap-priority';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -241,6 +242,9 @@ const config: UserConfig = {
     config(md) {
       md.set({
         linkify: false,
+      });
+      md.use(sanitizeMarkdownPlugin, {
+        scope: /^(?:zh|en)[/\\](?:news|blogs)[/\\][^/\\]+[/\\].*\.md$/,
       });
     },
   },
