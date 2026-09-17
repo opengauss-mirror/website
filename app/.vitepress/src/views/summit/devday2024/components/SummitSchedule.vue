@@ -60,7 +60,7 @@ const otherTabType = ref(0);
             }"
           >
             <span class="time">
-              <img :src="isLight ? time : timeDark" />
+              <img :src="isLight ? time : timeDark" alt="" />
               {{ subItem.time }}
             </span>
             <span class="desc" @click="changeIndexShow(itemList.id, subItem.id)">

@@ -34,7 +34,7 @@ const onButtonClick = (href: string) => {
     <div class="schedule-content" :style="{ backgroundImage: `url(${cardBg})` }">
       <div v-for="subItem in agendaData.content" :key="subItem.time" class="schedule-item" :class="{ 'schedule-item-list': !subItem.desc }">
         <span class="time">
-          <img :src="isLight ? time : timeDark" />
+          <img :src="isLight ? time : timeDark" alt="" />
           {{ subItem.time }}
         </span>
         <span v-if="subItem.desc" class="desc">

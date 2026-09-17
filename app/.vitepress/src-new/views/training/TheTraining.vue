@@ -97,7 +97,7 @@ const detailPageUrls = {
     <div class="training-talent">
       <div v-for="item in i18n.authentication.talentList" :key="item.url" class="talent-item">
         <div class="talent-icon-wrapper">
-          <img class="talent-icon" :src="isDark ? item.iconDark : item.icon" />
+          <img class="talent-icon" :src="isDark ? item.iconDark : item.icon" alt="" />
         </div>
         <p class="talent-item-desc" :title="item.desc">{{ item.desc }}</p>
         <OLink :href="item.url" hover-underline color="primary" target="_blank" rel="noopener noreferrer"

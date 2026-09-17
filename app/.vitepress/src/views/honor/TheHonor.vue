@@ -119,7 +119,7 @@ const getCertificateBoxGridTemplateColumns = (length: number, isMobile: boolean)
                         {{ user.company }}
                       </p>
                       <p class="links" v-if="user.show_email">
-                        <a :href="`mailto:${user.email}`"><img class="img-email" :src="emailImg" /></a>
+                        <a :href="`mailto:${user.email}`"><img class="img-email" :src="emailImg" alt="email" /></a>
                       </p>
                     </li>
                   </ul>
@@ -166,7 +166,7 @@ const getCertificateBoxGridTemplateColumns = (length: number, isMobile: boolean)
               </h1>
               <div class="enterprise-wrap">
                 <div v-for="enterprise in item.enterprise_data" :key="enterprise.first_name + enterprise.second_name" class="enterprise-card">
-                  <img class="gauss-icon" :src="opengaussIcon" />
+                  <img class="gauss-icon" :src="opengaussIcon" alt="" />
                   <p class="enterprise-title">荣誉证书</p>
                   <div class="enterprise-title-wrap" :title="enterprise.first_name + enterprise.second_name">
                     <template v-if="isMobile">

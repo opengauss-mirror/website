@@ -128,7 +128,7 @@ const jumpAnchor = (e: MouseEvent) => {
     <div class="contributor-desc">
       <div class="item" :style="{ backgroundImage: `url(${isDark ? Contributor2Dark : Contributor2})` }">
         <p class="title">
-          <img :src="contributorRequirementIcon" />
+          <img :src="contributorRequirementIcon" alt="" />
           <span>{{ i18n.sig.roles.joinRequirement }}</span>
         </p>
         <div>
@@ -140,7 +140,7 @@ const jumpAnchor = (e: MouseEvent) => {
       </div>
       <div class="item" :style="{ backgroundImage: `url(${isDark ? Contributor2Dark : Contributor2})` }">
         <p class="title">
-          <img :src="contributorRequirementIcon" />
+          <img :src="contributorRequirementIcon" alt="" />
           <span>{{ i18n.sig.roles.responsibilityAndRights }}</span>
         </p>
         <div>
@@ -158,7 +158,7 @@ const jumpAnchor = (e: MouseEvent) => {
     <div class="committer-desc">
       <div class="item" :style="{ backgroundImage: `url(${isDark ? Committer2Dark : Committer2})` }">
         <p class="title">
-          <img :src="committerRequirementIcon" />
+          <img :src="committerRequirementIcon" alt="" />
           <span>{{ i18n.sig.roles.joinRequirement }}</span>
         </p>
         <div>
@@ -170,7 +170,7 @@ const jumpAnchor = (e: MouseEvent) => {
       </div>
       <div class="item" :style="{ backgroundImage: `url(${isDark ? Committer2Dark : Committer2})` }">
         <p class="title">
-          <img :src="committerRequirementIcon" />
+          <img :src="committerRequirementIcon" alt="" />
           <span>{{ i18n.sig.roles.responsibilityAndRights }}</span>
         </p>
         <div>
@@ -188,7 +188,7 @@ const jumpAnchor = (e: MouseEvent) => {
     <div class="committer-desc maintainer-desc">
       <div class="item" :style="{ backgroundImage: `url(${isDark ? Maintainer2Dark : Maintainer2})` }">
         <p class="title">
-          <img :src="maintainerRequirementIcon" />
+          <img :src="maintainerRequirementIcon" alt="" />
           <span>{{ i18n.sig.roles.joinRequirement }}</span>
         </p>
         <div>
@@ -200,7 +200,7 @@ const jumpAnchor = (e: MouseEvent) => {
       </div>
       <div class="item" :style="{ backgroundImage: `url(${isDark ? Maintainer2Dark : Maintainer2})` }">
         <p class="title">
-          <img :src="maintainerRequirementIcon" />
+          <img :src="maintainerRequirementIcon" alt="" />
           <span>{{ i18n.sig.roles.responsibilityAndRights }}</span>
         </p>
         <div>

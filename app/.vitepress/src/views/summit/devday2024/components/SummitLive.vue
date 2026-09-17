@@ -129,7 +129,7 @@ const ActiveBgDark = `url(${liveActiveDarkBg})`;
             <p class="name">{{ item.name }}</p>
             <div class="bottom">
               <span class="date"
-                ><img :src="isLight ? time : timeDark" /><span>{{ item.date }}</span></span
+                ><img :src="isLight ? time : timeDark" alt="" /><span>{{ item.date }}</span></span
               >
               <span class="time">{{ item.time }}</span>
             </div>

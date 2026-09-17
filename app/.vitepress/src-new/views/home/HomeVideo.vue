@@ -39,7 +39,7 @@ const videoList = computed(() => {
           <OCard>
             <div class="item-img">
               <div class="mask" v-if="theme === 'dark'"></div>
-              <img style="height: 100%" :src="coverList[index]" />
+              <img style="height: 100%" :src="coverList[index]" alt="" />
             </div>
             <p class="home-videos-item-desc">{{ item.title }}</p>
           </OCard>

@@ -8,6 +8,10 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  imageAlt: {
+    type: String,
+    default: '',
+  },
   backgroundColor: {
     type: String,
     default: '',
@@ -41,7 +45,7 @@ const rootStyle = computed(() => {
 
 <template>
   <div class="banner-level2" :style="rootStyle">
-    <img :src="props.backgroundImage" class="banner-bg" />
+    <img :src="props.backgroundImage" class="banner-bg" :alt="imageAlt" />
     <div class="wrap">
       <div class="banner-text">
         <h1 v-if="title" class="banner-title">{{ title }}</h1>
@@ -53,7 +57,7 @@ const rootStyle = computed(() => {
         </div>
       </div>
       <div v-if="illustration" class="banner-illustration">
-        <img :src="illustration" />
+        <img :src="illustration" alt="" />
       </div>
     </div>
   </div>

@@ -19,7 +19,7 @@ defineProps({
       <div v-for="item in lecturerList" :key="item.name" class="lecturer-list-item">
         <slot name="img">
           <div>
-            <img :src="item.img" />
+            <img :src="item.img" :alt="item.name" />
           </div>
         </slot>
         <slot name="name">
