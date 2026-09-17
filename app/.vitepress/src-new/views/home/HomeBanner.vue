@@ -3,7 +3,6 @@ import { OButton, OCarousel, OCarouselItem, OFigure, OIcon, OIconArrowRight } fr
 import { computed, ref, watchEffect } from 'vue';
 import { useData } from 'vitepress';
 import homeContent from '#content/home';
-import { windowOpen } from '@/shared/utils';
 import { useScreen } from '~@/composables/useScreen';
 import { useLocale } from '~@/composables/useLocale';
 import { useCommon } from '@/stores/common';
@@ -57,13 +56,23 @@ const homeBanner = computed(() => {
     .map((item) => foldBanner(item, currentLang));
 });
 
-const jump = (item: any, flag: boolean) => {
-  if (!lePadV && flag) {
-    return;
-  }
-  if (item.link) {
-    windowOpen(item.link, item.target ?? '_blank');
-  }
+const figureAttrs = (item: any) => {
+  const clickable = (!item.btn || lePadV.value) && !!item.link;
+  if (!clickable) return {};
+  return {
+    href: item.link,
+    target: item.target,
+    rel: item.target === '_blank' ? 'noopener noreferrer' : undefined,
+  };
+};
+
+const buttonAttrs = (item: any) => {
+  if (!item.link || lePadV.value) return {};
+  return {
+    href: item.link,
+    target: item.target,
+    rel: item.target === '_blank' ? 'noopener noreferrer' : undefined,
+  };
 };
 
 const index = ref(0);
@@ -95,7 +104,7 @@ const currentBgTheme = computed(() => {
           :class="{ 'banner-bg': true, 'use-dark-style': !item.bannersDark?.[current] }"
           :src="(theme === 'dark' && item.bannersDark?.[current]) || item.banners[current]"
           :style="item.bannerImgPosition ? { '--figure-position': item.bannerImgPosition } : {}"
-          @click="jump(item, item.btn !== '')"
+          v-bind="figureAttrs(item)"
         >
           <div class="banner-content">
             <div class="content-left" :class="{ 'content-left-img': item.textImg && item.textImgMb, 'teamup-content-left': item.link.includes('team-up') }">
@@ -115,7 +124,7 @@ const currentBgTheme = computed(() => {
                 <img v-if="item.textImg" class="text-img" :src="gtPadV ? item.textImg : item.textImgMb" alt="" />
               </div>
               <div v-if="item.btn" class="btn-box">
-                <OButton class="home-banner-btn" round="pill" variant="solid" color="primary" :size="lePadV ? 'medium' : 'large'" @click="jump(item, false)">
+                <OButton class="home-banner-btn" round="pill" variant="solid" color="primary" :size="lePadV ? 'medium' : 'large'" v-bind="buttonAttrs(item)">
                   {{ item.btn }}
                   <template #suffixIcon
                     ><OIcon><OIconArrowRight /></OIcon

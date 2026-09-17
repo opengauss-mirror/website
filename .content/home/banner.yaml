@@ -59,24 +59,16 @@
   href_en: /en/ai-coding-assistants/
   is_blank: false
 
-- locale: zh
+- locale: zh,en
   bg_pc: ./images/banner/banner-605.png
   bg_mb: ./images/banner/banner-605_mo.png
-  bg_theme: dark
-  title_zh: openGauss 6.0.5 版本正式发布
-  href_zh: https://opengauss.org/zh/news/2026-05-15-605/
-  is_blank: true
-  class_name: banner-version
-
-- locale: zh
-  bg_pc: ./images/banner/banner700_RC3.png
-  bg_mb: ./images/banner/banner700_RC3_mo.png
   bg_theme: light
-  title_zh: openGauss 7.0.0-RC3 版本正式发布
-  title_mb_zh:
-    - "openGauss 7.0.0 RC3 \n版本正式发布"
+  title_zh: openGauss 6.0.6 版本正式发布
+  title_en: openGauss Officially Releases Version 6.0.6
   btn_zh: 立即查看
-  href_zh: /zh/download/?version=rc
+  btn_en: Learn More
+  href_zh: /zh/download/?version=lts
+  href_en: /en/download/?version=lts
   is_blank: true
   class_name: banner-version
 
