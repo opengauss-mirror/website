@@ -88,7 +88,7 @@ The openGauss community sometimes stores cookies on computers or mobile devices.
     <tr>
       <td>prefs</td>
       <td>etherpad website</td>
-      <td>1 year, 1 month, and 1 week</td>
+      <td>400 days</td>
       <td>Record the client's preference settings, which are used to set font series, colors, and other content.</td>
     </tr>
   </tbody>
