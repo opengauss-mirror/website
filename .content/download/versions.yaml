@@ -217,7 +217,7 @@
 - version_name: "5.1.0 (Preview)"
   new_layout: true
   data_file: download5.1.0
-  release_date: "2023.06.30"
+  release_date: "2023.09.30"
   planned_eol: "2024.03.31"
   version_capability_path: "{ATOMGIT}/opengauss/docs/blob/5.0.0/content/zh/docs/VersionCapability/index.md"
   docs_list:
