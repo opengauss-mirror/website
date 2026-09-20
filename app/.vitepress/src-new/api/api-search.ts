@@ -26,7 +26,7 @@ export function imageUpload(image: File): Promise<{
     .post(url, formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
-        source: 'mindspore',
+        source: 'opengauss',
       },
     })
     .then((res: AxiosResponse) => res.data);
