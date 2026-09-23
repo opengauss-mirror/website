@@ -1,0 +1,106 @@
+# Agent 专区页数据（中文）
+# banner / tabs 见 ../common/zh.yaml
+
+# ecosystem_map: “Agent专区生态全景图”板块
+#   title: 板块标题
+#   legend_supported/legend_coming_soon: 图例“已支持/待支持”文案
+#   categories: 生态分类（按页面从上到下排列；布局参数保留在组件内）
+#     id: 分类标识（组件按 id 匹配栅格布局）
+#     name: 分类名称
+#     items: 分类下的条目（与 children 二选一）
+#       name: 条目名称
+#       active: 是否已支持（可选，缺省为待支持）
+#       link: 条目跳转链接（可选）
+#     children: 子分类列表（结构与 categories 一致）
+ecosystem_map:
+  title: Agent专区生态全景图
+  legend_supported: 已支持
+  legend_coming_soon: 待支持
+  categories:
+    - id: applications
+      name: 应用
+      items:
+        - name: Coding Agent
+        - name: Data Agent
+        - name: GUI/Operator Agent
+    - id: dev_orchestration_frameworks
+      name: 开发与编排框架
+      items:
+        - name: LangGraph
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/llama_index.html
+        - name: LangChain
+          active: true
+          link: https://pypi.org/project/langchain-opengauss/
+        - name: LlamaIndex
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/llama_index.html
+        - name: DB-GPT
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/dbgpt.html
+        - name: Spring AI
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/spring_ai_opengauss.html
+        - name: Dify
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/opengauss_dify.html
+        - name: n8n
+          active: true
+          link: https://www.npmjs.com/package/n8n-nodes-opengauss-datavec
+        - name: FastGPT
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/fastgpt.html
+        - name: PrivateGPT
+        - name: Langflow
+        - name: HayStack
+        - name: Agno
+    - id: runtime_infrastructure
+      name: 运行时与基础设施
+      children:
+        - id: model_serving
+          name: 模型服务
+          items:
+            - name: vLLM
+              active: true
+              link: https://docs.opengauss.org/zh/docs/latest/datavec/vllm.html
+            - name: Ollama
+              active: true
+              link: /zh/blogs/jiwenke/openGauss-RAG%E5%AE%9E%E8%B7%B5.html
+            - name: DeepSeek
+              active: true
+              link: https://docs.opengauss.org/zh/docs/latest/datavec/deepseek.html
+            - name: SGLang
+        - id: memory_storage
+          name: 记忆与存储
+          items:
+            - name: openGauss DataVec
+              active: true
+              link: https://docs.opengauss.org/zh/docs/latest/datavec/datavec_overview.html
+            - name: MemO
+              active: true
+              link: https://docs.opengauss.org/zh/docs/latest/datavec/mem0.html
+        - id: tools_protocols
+          name: 工具与协议
+          items:
+            - name: sandbox
+            - name: Function Calling
+            - name: MCP
+    - id: compute_architecture
+      name: 计算架构
+      items:
+        - name: CUDA
+        - name: CANN
+    - id: cloud_native
+      name: 云原生底座
+      items:
+        - name: Docker
+        - name: K8s
+    - id: os
+      name: 操作系统
+      items:
+        - name: openEuler
+    - id: hardware
+      name: 硬件
+      items:
+        - name: CPU
+        - name: GPU/NPU

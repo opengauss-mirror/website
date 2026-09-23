@@ -1,0 +1,200 @@
+# RAG 专区页数据（中文）
+# banner / tabs 见 ../common/zh.yaml
+
+# what_is_rag: “RAG是什么”板块
+#   title: 板块标题
+#   description: 板块描述
+what_is_rag:
+  title: RAG是什么
+  description: '检索增强生成（Retrieval-Augmented Generation，简称RAG），是一种将信息检索技术与大语言模型生成能力相结合的先进人工智能技术。它通过“先检索、再生成”的范式，显著提升了AI在问答、分析和创作任务中的准确性、时效性与可靠性。'
+
+# software_ecosystem: “RAG软件生态”板块
+#   title: 板块标题
+#   image_light/image_dark: 移动端生态总览图（亮色/暗色主题）
+#   pc_only_tip: 移动端提示文案
+#   legend_supported/legend_coming_soon: 图例“已支持/待支持”文案
+#   categories: 生态分类（key 为分类标识，供组件按位取用；布局参数保留在组件内）
+#     name: 分类名称
+#     items: 分类下的生态条目
+#       name: 条目名称
+#       active: 是否已支持（可选，缺省为待支持）
+#       link: 条目跳转链接（可选）
+software_ecosystem:
+  title: RAG软件生态
+  image_light: ./images/rag-light.png
+  image_dark: ./images/rag-dark.png
+  pc_only_tip: 如需访问相关链接，请在PC端下查看
+  legend_supported: 已支持
+  legend_coming_soon: 待支持
+  categories:
+    applications:
+      name: 应用
+      items:
+        - name: 智能问答服务
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/opengauss_eulercopilot.html
+        - name: 智能助手平台
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/opengauss_dify.html
+        - name: 私人知识库
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/datavec_qwen3.html
+        - name: 搜索问答
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/opengauss_ragflow.html
+        - name: 图检索增强生成
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/opengauss_agegraph.html
+        - name: 代码生成器
+        - name: 智慧公文助手
+        - name: 会议纪要助手
+    evaluation:
+      name: 评估
+      items:
+        - name: Ragas
+        - name: Arize Pheonix
+        - name: DeepEval
+        - name: ollama qwen3 reranker
+    om_tools:
+      name: 维测工具
+      items:
+        - name: Grafana
+        - name: Prometheus
+        - name: Jaeger
+    knowledge_engineering:
+      name: 知识工程
+      items:
+        - name: WhyHow
+        - name: Cognee
+        - name: MindsDB
+          active: true
+          link: https://docs.mindsdb.com/integrations/data-integrations/opengauss
+    data_sources:
+      name: 数据源
+      items:
+        - name: Airbyte
+        - name: Kafka
+        - name: Apify
+        - name: Docling
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/docling.html
+        - name: Unstructred
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/unstructured.html
+    orchestration_frameworks:
+      name: 编排框架
+      items:
+        - name: DeepSeek
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/deepseek.html
+        - name: Spring AI
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/spring_ai_opengauss.html
+        - name: DB-GPT 9
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/dbgpt.html
+        - name: n8n
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/n8n.html
+        - name: LangChain
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/opengauss_agegraph.html
+        - name: LlamaIndex
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/llama_index.html
+        - name: HayStack
+        - name: AnythingLLM
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/anythingllm.html
+        - name: SpringBoot
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/opengauss_springboot.html
+        - name: Dify
+          active: true
+          link: 'https://docs.opengauss.org/zh/docs/latest/datavec/dify.html#%E4%BD%BF%E7%94%A8opengauss%E9%83%A8%E7%BD%B2dify'
+        - name: RAGFlow
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/opengauss_ragflow.html
+        - name: MCP
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/mcp.html
+        - name: FastGPT
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/fastgpt.html
+    llms:
+      name: LLMs
+      items:
+        - name: Jina AI
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/jinaai.html
+        - name: BentoML
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/bentoml.html
+        - name: Sentence Transformer
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/sentence_transformer.html
+        - name: BGE M3
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/embedding_bgem3.html
+        - name: nomic-embed-text
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/embedding_nomic.html
+        - name: Ollama
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/datavec_qwen3.html
+        - name: vLLM
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/vllm.html
+        - name: SGLang
+    compute_architecture:
+      name: 计算架构
+      items:
+        - name: CUDA
+          active: true
+        - name: CANN
+          active: true
+    cloud_native:
+      name: 云原生底座
+      items:
+        - name: Docker
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/installation_guide/installing_the_container_image.html
+        - name: K8s
+          active: true
+          link: /zh/blogs/buter/k8Sinit_guide.html
+    os:
+      name: 操作系统
+      items:
+        - name: openEuler
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/opengauss_eulercopilot.html
+    hardware:
+      name: 硬件
+      items:
+        - name: CPU
+          active: true
+        - name: GPU/NPU
+          active: true
+
+# use_cases: “RAG典型案例”板块
+#   title: 板块标题
+#   cases: 案例列表
+#     label: 案例标题
+#     href: 案例链接
+use_cases:
+  title: RAG典型案例
+  cases:
+    - label: openGauss AGEGraph + 大模型实现GraphRAG，助力更强RAG
+      href: https://docs.opengauss.org/zh/docs/latest/datavec/opengauss_agegraph.html
+    - label: 从数据到智能：openGauss + openEuler Intelligence的RAG架构实战
+      href: https://docs.opengauss.org/zh/docs/latest/datavec/opengauss_eulercopilot.html
+    - label: Spring Boot集成openGauss DataVec实现高效RAG知识问答
+      href: https://docs.opengauss.org/zh/docs/latest/datavec/opengauss_springboot.html
+    - label: 基于Qwen3 + openGauss，部署个人专属RAG知识库系统
+      href: https://docs.opengauss.org/zh/docs/latest/datavec/datavec_qwen3.html
+    - label: 打破AI黑盒，拥抱开源力量：基于openGauss + DeepSeek的本地知识库，打造你的专属AI助手
+      href: https://docs.opengauss.org/zh/docs/latest/datavec/opengauss_ragpratice.html
+    - label: openGauss DataVec + Dify，快速搭建你的智能助手平台
+      href: https://docs.opengauss.org/zh/docs/latest/datavec/opengauss_dify.html
+    - label: openGauss + Ragflow 从部署到集成
+      href: https://docs.opengauss.org/zh/docs/latest/datavec/opengauss_ragflow.html

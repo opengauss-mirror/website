@@ -1,0 +1,106 @@
+# Agent Zone page data (English)
+# banner / tabs see ../common/en.yaml
+
+# ecosystem_map: "Agent Ecosystem Map" section
+#   title: section title
+#   legend_supported/legend_coming_soon: legend texts
+#   categories: ecosystem categories (ordered top to bottom; layout params stay in the component)
+#     id: category identifier (the component maps grid layouts by id)
+#     name: category name
+#     items: entries of the category (mutually exclusive with children)
+#       name: entry name
+#       active: whether supported (optional, defaults to coming soon)
+#       link: entry link (optional)
+#     children: sub-category list (same structure as categories)
+ecosystem_map:
+  title: Agent Ecosystem Map
+  legend_supported: Supported
+  legend_coming_soon: Coming Soon
+  categories:
+    - id: applications
+      name: Applications
+      items:
+        - name: Coding Agent
+        - name: Data Agent
+        - name: GUI/Operator Agent
+    - id: dev_orchestration_frameworks
+      name: Dev & Orchestration Frameworks
+      items:
+        - name: LangGraph
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/llama_index.html
+        - name: LangChain
+          active: true
+          link: https://pypi.org/project/langchain-opengauss/
+        - name: LlamaIndex
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/llama_index.html
+        - name: DB-GPT
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/dbgpt.html
+        - name: Spring AI
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/spring_ai_opengauss.html
+        - name: Dify
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/opengauss_dify.html
+        - name: n8n
+          active: true
+          link: https://www.npmjs.com/package/n8n-nodes-opengauss-datavec
+        - name: FastGPT
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/fastgpt.html
+        - name: PrivateGPT
+        - name: Langflow
+        - name: HayStack
+        - name: Agno
+    - id: runtime_infrastructure
+      name: Runtime & Infrastructure
+      children:
+        - id: model_serving
+          name: Model Serving
+          items:
+            - name: vLLM
+              active: true
+              link: https://docs.opengauss.org/zh/docs/latest/datavec/vllm.html
+            - name: Ollama
+              active: true
+              link: /zh/blogs/jiwenke/openGauss-RAG%E5%AE%9E%E8%B7%B5.html
+            - name: DeepSeek
+              active: true
+              link: https://docs.opengauss.org/zh/docs/latest/datavec/deepseek.html
+            - name: SGLang
+        - id: memory_storage
+          name: Memory & Storage
+          items:
+            - name: openGauss DataVec
+              active: true
+              link: https://docs.opengauss.org/zh/docs/latest/datavec/datavec_overview.html
+            - name: MemO
+              active: true
+              link: https://docs.opengauss.org/zh/docs/latest/datavec/mem0.html
+        - id: tools_protocols
+          name: Tools & Protocols
+          items:
+            - name: sandbox
+            - name: Function Calling
+            - name: MCP
+    - id: compute_architecture
+      name: Compute Architecture
+      items:
+        - name: CUDA
+        - name: CANN
+    - id: cloud_native
+      name: Cloud-Native Foundation
+      items:
+        - name: Docker
+        - name: K8s
+    - id: os
+      name: OS
+      items:
+        - name: openEuler
+    - id: hardware
+      name: Hardware
+      items:
+        - name: CPU
+        - name: GPU/NPU

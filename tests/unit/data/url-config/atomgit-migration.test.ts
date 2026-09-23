@@ -29,12 +29,12 @@ describe('url-config 中枢常量 gitcode→atomgit 改名（src-new）', () => 
   });
 
   it('export 块同时导出 ATOMGIT_LINK 与 NOTIFICATION_SOURCE', () => {
-    expect(content).toMatch(/export\s*\{[\s\S]*ATOMGIT_LINK[\s\S]*\}/);
-    expect(content).toMatch(/export\s*\{[\s\S]*NOTIFICATION_SOURCE[\s\S]*\}/);
+    expect(content).toMatch(/export const ATOMGIT_LINK/);
+    expect(content).toMatch(/export\s* const [\s\S]*NOTIFICATION_SOURCE[\s\S]*/);
   });
 
   it('export 块不再导出 GITCODE_LINK', () => {
-    const exportBlock = content.match(/export\s*\{([\s\S]*?)\}/);
+    const exportBlock = content.match(/export\s*const([\s\S]*?)/);
     expect(exportBlock).not.toBeNull();
     expect(exportBlock![1]).not.toContain('GITCODE_LINK');
   });

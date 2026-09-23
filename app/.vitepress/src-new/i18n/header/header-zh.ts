@@ -308,9 +308,9 @@ export default {
           NAME: '专区',
           CHILDREN: [
             {
-              NAME: 'RAG专区',
-              DESCRIPTION: '了解openGauss在RAG场景的击数生态和适配情况',
-              URL: '/ai/',
+              NAME: 'AI专区',
+              DESCRIPTION: '了解 openGauss 在 Agent、RAG 等 AI 场景的技术生态和适配情况',
+              URL: '/ai/agent/',
             },
             {
               NAME: 'oGMemory 专区',

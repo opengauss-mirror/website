@@ -1,11 +1,17 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia';
-import RagEcoGrid from './RagEcoGrid.vue';
+import ComponentsGrid from '../components/ComponentsGrid.vue';
 import { useCommon } from '@/stores/common';
 import { computed } from 'vue';
-import * as ragData from '@/data/rag/index.js';
+import ragContent from '#content/ai/rag';
+import { useData } from 'vitepress';
 
 const { theme } = storeToRefs(useCommon());
+const { lang } = useData();
+const isZh = computed(() => lang.value === 'zh');
+
+const ecosystem = computed(() => (isZh.value ? ragContent.zh : ragContent.en).software_ecosystem);
+const categories = computed(() => ecosystem.value.categories);
 
 const activeColor = computed(() => {
   if (theme.value === 'dark') {
@@ -27,94 +33,94 @@ const nonActiveColor = computed(() => {
     <div class="legend">
       <span class="legend-item">
         <span class="legend-dot" :style="{ 'background-color': activeColor }"></span>
-        已支持
+        {{ ecosystem.legend_supported }}
       </span>
       <span class="legend-item">
         <span class="legend-dot" :style="{ 'background-color': nonActiveColor }"></span>
-        待支持
+        {{ ecosystem.legend_coming_soon }}
       </span>
     </div>
 
     <div class="eco-table">
       <!-- 应用 -->
       <div class="eco-row">
-        <div class="eco-category">应用</div>
+        <div class="eco-category">{{ categories.applications.name }}</div>
         <div class="eco-items">
-          <RagEcoGrid :layout="[2, 4]" :data="ragData.applications" />
+          <ComponentsGrid :cols="4" :data="categories.applications.items" />
         </div>
       </div>
 
       <!-- 中间分栏：左侧4行 + 右侧编排框架 -->
       <div class="eco-row" style="flex-direction: column;">
         <div class="eco-row--inner">
-          <div class="eco-category">评估</div>
+          <div class="eco-category">{{ categories.evaluation.name }}</div>
           <div class="eco-items">
-            <RagEcoGrid :layout="[1]" :data="ragData.evaluation" />
+            <ComponentsGrid :data="categories.evaluation.items" />
           </div>
         </div>
         <div class="eco-row--inner">
-          <div class="eco-category">维测工具</div>
+          <div class="eco-category">{{ categories.om_tools.name }}</div>
           <div class="eco-items">
-            <RagEcoGrid :layout="[1]" :data="ragData.monitoring" />
+            <ComponentsGrid :data="categories.om_tools.items" />
           </div>
         </div>
         <div class="eco-row--inner">
-          <div class="eco-category">知识工程</div>
+          <div class="eco-category">{{ categories.knowledge_engineering.name }}</div>
           <div class="eco-items">
-            <RagEcoGrid :layout="[1]" :data="ragData.knowledge" />
+            <ComponentsGrid :data="categories.knowledge_engineering.items" />
           </div>
         </div>
         <div class="eco-row--inner eco-row--no-border">
-          <div class="eco-category">数据源</div>
+          <div class="eco-category">{{ categories.data_sources.name }}</div>
           <div class="eco-items">
-            <RagEcoGrid :layout="[1]" :data="ragData.dataSources" />
+            <ComponentsGrid :data="categories.data_sources.items" />
           </div>
         </div>
       </div>
       <div class="eco-row">
-        <div class="eco-category">编排框架</div>
+        <div class="eco-category">{{ categories.orchestration_frameworks.name }}</div>
         <div class="eco-items">
-          <RagEcoGrid style="height: 100%" :layout="[3, 3]" :data="ragData.orchestration" />
+          <ComponentsGrid style="height: 100%" :cols="3" :data="categories.orchestration_frameworks.items" />
         </div>
       </div>
 
       <!-- LLMs -->
       <div class="eco-row">
-        <div class="eco-category">LLMs</div>
+        <div class="eco-category">{{ categories.llms.name }}</div>
         <div class="eco-items">
-          <RagEcoGrid :layout="[2, 3]" :data="ragData.llms" />
+          <ComponentsGrid :cols="3" :data="categories.llms.items" />
         </div>
       </div>
 
       <!-- 计算架构 -->
       <div class="eco-row">
-        <div class="eco-category">计算架构</div>
+        <div class="eco-category">{{ categories.compute_architecture.name }}</div>
         <div class="eco-items">
-          <RagEcoGrid :layout="[1]" :data="ragData.computingArch" />
+            <ComponentsGrid :data="categories.compute_architecture.items" />
         </div>
       </div>
 
       <!-- 云原生底座 -->
       <div class="eco-row">
-        <div class="eco-category">云原生底座</div>
+        <div class="eco-category">{{ categories.cloud_native.name }}</div>
         <div class="eco-items">
-          <RagEcoGrid :layout="[1]" :data="ragData.cloudNative" />
+            <ComponentsGrid :data="categories.cloud_native.items" />
         </div>
       </div>
 
       <!-- 操作系统 -->
       <div class="eco-row">
-        <div class="eco-category">操作系统</div>
+        <div class="eco-category">{{ categories.os.name }}</div>
         <div class="eco-items">
-          <RagEcoGrid :layout="[1]" :data="ragData.os" />
+            <ComponentsGrid :data="categories.os.items" />
         </div>
       </div>
 
       <!-- 硬件 -->
       <div class="eco-row eco-row--no-border">
-        <div class="eco-category">硬件</div>
+        <div class="eco-category">{{ categories.hardware.name }}</div>
         <div class="eco-items">
-          <RagEcoGrid :layout="[1]" :data="ragData.hardware" />
+            <ComponentsGrid :data="categories.hardware.items" />
         </div>
       </div>
     </div>
@@ -212,9 +218,7 @@ const nonActiveColor = computed(() => {
   font-size: 16px;
   font-weight: 600;
   color: var(--o-color-info1);
-  white-space: nowrap;
   flex-shrink: 0;
-  @include h3;
 
   @include respond-to('laptop') {
     width: 80px;
