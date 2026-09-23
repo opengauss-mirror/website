@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { watch } from 'vue';
 import { doLogin, LOGIN_STATUS } from '@/shared/login';
-import { useLoginStore } from '@/stores/user';
+import { useLoginStore } from '@opendesign-plus/composables';
 import { storeToRefs } from 'pinia';
 
 const loginStore = useLoginStore();

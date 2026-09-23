@@ -16,22 +16,22 @@ export const useCountStore = defineStore('notification-count',() => {
 
   const userInfoStore = useUserInfoStore();
 
-  const { username, identities, phone } = storeToRefs(userInfoStore);
+  const { username, identities, phone, email } = storeToRefs(userInfoStore);
 
   const updateNoticeTotal = async () => {
     try {
       // 先找gitcode，再找gitee
-      let userData = identities.value?.find((e) => e.provider === 'gitcode');
+      let userData = identities.value?.find((e) => e.identity === 'gitcode');
       if (userData === undefined) {
-        userData = identities.value?.find((e) => e.provider === 'gitee');
+        userData = identities.value?.find((e) => e.identity === 'gitee');
       }
       await syncInfo({
         country_code: '+86',
-        gitee_user_name: userData?.username,
-        mail: userData?.email,
+        gitee_user_name: userData?.user_name,
+        mail: email.value,
         phone: phone.value,
         user_name: username.value
-      })
+      });
       const res = await getPersonalCount()
       meeting.value = res.count?.meeting_count || 0;
       issue.value = 0;

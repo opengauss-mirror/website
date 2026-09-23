@@ -7,12 +7,11 @@ import agentContent from '#content/ai/agent';
 import BannerTabHeader from '~@/components/BannerTabHeader.vue';
 import AppSection from '~@/components/AppSection.vue';
 import { useCommon } from '@/stores/common';
+import { useLocale } from '~@/composables/useLocale';
 import ComponentsGrid from '../components/ComponentsGrid.vue';
 import { useI18n } from '~@/i18n/index.js';
-import { useData } from 'vitepress';
 
-const { lang } = useData();
-const isZh = computed(() => lang.value === 'zh');
+const { isZh } = useLocale();
 const { isDark } = storeToRefs(useCommon());
 const i18n = useI18n();
 

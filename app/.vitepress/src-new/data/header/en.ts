@@ -1,0 +1,326 @@
+import { markRaw } from 'vue';
+import IconOutLink from '~icons/app-new/icon-out-link.svg';
+
+const outLink = markRaw(IconOutLink);
+
+const TAG_TYPE = {
+  HOT: 'HOT',
+  NEW: 'NEW',
+};
+
+export default [
+  {
+    label: 'Download',
+    id: 'download',
+    children: [
+      {
+        label: 'Get openGauss',
+        children: [
+          {
+            label: 'openGauss 6.0.6(LTS)',
+            description:
+              'openGauss 6.0.6 LTS (the latest patch version in the openGauss 6 series) is backed by 3 years of community support and extended maintenance from OGSPs thereafter.',
+            href: '/en/download/archive/?version=6.0.6%20(LTS)',
+          },
+          {
+            label: 'openGauss 7.0.0 (LTS)',
+            description: 'openGauss 7.0.0 LTS and subsequent LTS versions will follow a 2-year release cycle, offering 3 years of community support with extended maintenance by OGSPs thereafter.',
+            tag: TAG_TYPE.NEW,
+            href: '/en/download/?version=lts',
+          },
+        ],
+      },
+      {
+        label: 'Related Resources',
+        children: [
+          {
+            label: 'Support Tools',
+            description:
+              '6 categories of tools for developers and ISVs, including the client tool, data import/export tool, data replication/synchronization tool, monitoring and O&M interfaces and toolset, backup and recovery interfaces and toolset, and data access middleware',
+            href: '/en/tools/',
+          },
+        ],
+      },
+    ],
+    shortcut: [
+      {
+        label: 'Historical Releases',
+        href: '/en/download/?version=all',
+      },
+      {
+        label: 'openGauss Lifecycle',
+        href: '/en/download/life-cycle/',
+      },
+      {
+        label: 'openGauss 6.0.1 Installation Guide',
+        href: 'https://docs.opengauss.org/en/docs/latest/installation_guide/installation_overview.html',
+      },
+      {
+        label: 'Technical White Papers',
+        href: 'https://docs.opengauss.org/en/docs/6.0.0/docs/TechnicalWhitePaper/Technicalwhitepaper.html',
+      },
+    ],
+  },
+  {
+    label: 'Develop',
+    id: 'development',
+    children: [
+      {
+        label: 'Contribute',
+        children: [
+          {
+            label: 'SIG Center',
+            description: 'Explore openGauss community SIGs.',
+            href: '/en/sig/sig-list/',
+            tag: TAG_TYPE.NEW,
+          },
+          {
+            label: 'CLA',
+            description: 'Sign the CLA to protect your work—multiple options available!',
+            href: 'https://clasign.osinfra.cn/sign/gitee_opengauss-1614047760000855378',
+            ICON: outLink,
+          },
+          {
+            label: 'Contribution Guide',
+            description: 'See how to get involved and make an impact in our community.',
+            href: '/en/contribution/',
+          },
+        ],
+      },
+    ],
+    shortcut: [
+      {
+        label: 'Developer Calendar',
+        href: '/en/#calendar',
+      },
+    ],
+  },
+  {
+    label: 'Document',
+    id: 'document',
+    children: [
+      {
+        label: 'Document Center',
+        children: [
+          {
+            label: 'Document Center',
+            description: 'Your go-to resource for different usage scenarios.',
+            tag: TAG_TYPE.NEW,
+            href: 'https://docs.opengauss.org/en/',
+          },
+          {
+            label: 'Quick Start',
+            description: 'Learn the community essentials in 10 minutes.',
+            href: 'https://docs.opengauss.org/en/docs/latest/getting_started/getting_started.html',
+          },
+          {
+            label: 'Installation Guide',
+            description: 'Step-by-step instructions for installing openGauss.',
+            href: `https://docs.opengauss.org/en/docs/latest/installation_guide/installation_overview.html`,
+          },
+          {
+            label: 'Documentation Development Guide',
+            description: 'Discover how you can contribute to document development.',
+            href: `https://docs.opengauss.org/en/docs/common/contribute/directory_structure_introductory.html`,
+          },
+        ],
+      },
+    ],
+    shortcut: [
+      {
+        label: 'About openGauss',
+        href: `https://docs.opengauss.org/en/docs/latest/about_opengauss/about_opengauss.html`,
+      },
+      {
+        label: 'Database Administration Guide',
+        href: `https://docs.opengauss.org/en/docs/latest/database_administration_guide/database_concepts.html`,
+      },
+    ],
+  },
+  {
+    label: 'Learn',
+    id: 'learn',
+    children: [
+      {
+        label: 'Videos',
+        children: [
+          {
+            label: 'Live',
+            description: 'Dive into the minds of those shaping our future.',
+            href: '/en/video/?id=1',
+          },
+          {
+            label: 'openGauss Crash Course',
+            description: 'Dive into deep learning with our hands-on guide from data to deployment.',
+            href: '/en/video/?id=2',
+          },
+          {
+            label: 'Database Basics',
+            description: 'Supercharge your workflow with our advanced data processing, caching, and pipeline features.',
+            href: '/en/video/?id=3',
+          },
+          {
+            label: 'Offline Activities',
+            description: 'Join us for in-person discussions and turn ideas into action.',
+            href: '/en/video/?id=4',
+          },
+        ],
+      },
+    ],
+    shortcut: [
+      {
+        label: 'Introduction to Databases',
+        href: '/en/video/detail/?id=6-6',
+      },
+      {
+        label: 'Database Basics',
+        href: '/en/video/detail/?id=6-5',
+      },
+      {
+        label: 'SQL Syntax Introduction and Classification',
+        href: '/en/video/detail/?id=6-4',
+      },
+    ],
+  },
+  {
+    label: 'Support',
+    id: 'approve',
+    children: [
+      {
+        label: 'Certification',
+        children: [
+          {
+            label: 'Distribution Certification',
+            description: 'Check the certification for your DBV release now.',
+            href: '/en/certification/',
+          },
+          {
+            label: 'oGSP Certification',
+            description: 'Check your oGSP certification status instantly.',
+            href: '/en/ogsp/',
+          },
+        ],
+      },
+      {
+        label: 'Security',
+        children: [
+          {
+            label: 'Vulnerability Management',
+            description: 'Take control of your security.',
+            href: '/en/vulnerability-management/',
+          },
+          {
+            label: 'Security Advisories',
+            description: 'Stay protected and in the know.',
+            href: '/en/security-advisories/',
+          },
+          {
+            label: 'CVEs',
+            description: 'Get immediate updates on all openGauss CVEs.',
+            href: '/en/cve/',
+          },
+        ],
+      },
+      {
+        label: 'Zone',
+        children: [
+          {
+            label: 'AI Zone',
+            description: 'Explore openGauss AI ecosystem: Agent, RAG, and more',
+            tag: 'new',
+            href: '/en/ai/agent/',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    label: 'Community',
+    id: 'community',
+    children: [
+      {
+        label: 'About',
+        children: [
+          {
+            label: 'Statistics',
+            description: 'Find stats and see how the openGauss community thrives.',
+            href: 'https://datastat.opengauss.org/en/overview',
+          },
+          {
+            label: 'Governance',
+            description: 'Members of openEuler committees.',
+            href: '/en/member/',
+          },
+          {
+            label: 'Success Stories',
+            description: 'Discover how openGauss is transforming business across sectors.',
+            href: '/en/user-practice/',
+          },
+          {
+            label: 'Policies & Rules',
+            description: 'Learn about the code of conduct and AI contribution policies of the openGauss community.',
+            tag: TAG_TYPE.NEW,
+            href: '/en/conduct/',
+          },
+        ],
+      },
+      {
+        label: 'Engage with Us',
+        children: [
+          {
+            label: 'Forum',
+            description: 'Share knowledge, ask anything, and solve together.',
+            href: 'https://discuss.opengauss.org/',
+          },
+          {
+            label: 'Mailing Lists',
+            description: 'Discuss openGauss tech and progress on our mailing lists.',
+            href: '/en/online-communication/',
+          },
+        ],
+      },
+    ],
+    shortcut: [
+      {
+        label: 'SIGs',
+        href: '/en/member/',
+      },
+      {
+        label: 'Contribution by Organizations',
+        href: 'https://datastat.opengauss.org/en/detail',
+      },
+    ],
+  },
+  {
+    label: 'Stay Updated',
+    id: 'update',
+    withPicture: true,
+    children: [
+      {
+        label: 'Community Calendar',
+        children: [
+          {
+            label: 'Community Calendar',
+            description: 'Stay informed with key events, conferences, and releases.',
+            href: '/en/events/',
+          },
+        ],
+      },
+      {
+        label: 'News & Blogs',
+        children: [
+          {
+            label: 'News',
+            description: 'Follow the latest developments, releases, and community updates.',
+            href: '/en/news/',
+          },
+          {
+            label: 'Blogs',
+            description: 'Gain in-depth knowledge and fresh perspectives on openGauss.',
+            href: '/en/blogs/',
+          },
+        ],
+      },
+    ],
+  },
+];

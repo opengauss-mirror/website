@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, nextTick, onMounted, provide, ref, useTemplateRef, watch } from 'vue';
+import { computed, nextTick, onMounted, provide, ref, useTemplateRef, watch, watchEffect } from 'vue';
 import type { Component } from 'vue';
 import { useData, useRoute } from 'vitepress';
 
@@ -25,21 +25,22 @@ import categories from '@/shared/category';
 
 import { useCommon, useCookieStore } from '@/stores/common';
 import EventDetail from '~@/layouts/LayoutEventDetail.vue';
-import LayoutEventDetailHeader from '~@/layouts/LayoutEventDetailHeader.vue';
-import { useScreen } from '~@/composables/useScreen';
 import LayoutWithBanner from './layouts/LayoutWithBanner.vue';
 import LayoutCharter from '~@/layouts/LayoutCharter.vue';
 import LayoutSigApply from '~@/layouts/LayoutSigApply.vue';
-import { getCustomCookie, isBrowser } from './shared/utils.js';
+import { getCustomCookie } from './shared/utils.js';
+
+import { useLocale } from '~@/composables/useLocale.js';
 
 const { frontmatter, lang } = useData();
-const { lePadV } = useScreen();
+const { changeLocale } = useLocale();
+watchEffect(() => changeLocale(lang.value as 'zh' | 'en'));
 
 const scrollContainerRef = useTemplateRef('scrollContainerRef');
 
 provide('scrollContainerRef', scrollContainerRef);
 
-const locale = computed(() => {
+const elementPlusLocale = computed(() => {
   return lang.value === 'zh' ? zhCn : en;
 });
 const compMapping: {
@@ -93,17 +94,6 @@ watch(
 const APPEARANCE_KEY = 'openGauss-theme-appearance';
 const commonStore = useCommon();
 
-const setThemeToRoot = (theme: 'dark' | 'light') => {
-  if (theme === 'light') {
-    document.documentElement.setAttribute('data-o-theme', 'g.light');
-    document.documentElement.classList.remove('dark');
-  } else if (theme === 'dark') {
-    document.documentElement.setAttribute('data-o-theme', 'g.dark');
-    document.documentElement.classList.add('dark');
-    document.documentElement.classList.remove('light');
-  }
-}
-
 onMounted(() => {
   let theme;
   if (!getCustomCookie(APPEARANCE_KEY)) {
@@ -112,46 +102,35 @@ onMounted(() => {
   } else {
     theme = getCustomCookie(APPEARANCE_KEY);
   }
-  commonStore.theme = theme === 'dark' ? 'dark' : 'light';
-  setThemeToRoot(commonStore.theme);
+  commonStore.setTheme(theme === 'dark' ? 'dark' : 'light');
 });
 
-watch(
-  () => {
-    return commonStore.theme;
-  },
-  (val) => {
-    if (isBrowser()) {
-      setThemeToRoot(val);
-    }
-  }
-);
+
+// ================ header ================
+const appHeaderRef = useTemplateRef('appHeaderRef');
+const headerHeight = computed(() => appHeaderRef.value?.height.toString() ?? '72');
 </script>
 
 <template>
-  <div id="anchor-sticky-demo" ref="scrollContainerRef" style="position: relative; height: 100vh; overflow-y: auto;">
-    <AppHeader>
-      <LayoutEventDetailHeader v-if="lePadV && frontmatter?.category === 'events'" />
-    </AppHeader>
-    <el-config-provider :locale="locale">
-      <main>
-        <component :is="comp" v-if="isCustomLayout"></component>
-        <Content v-else />
-        <AppFloat />
-      </main>
-    </el-config-provider>
-    <OPlusConfigProvider :locale="lang">
-      <OCookieNotice
-        ref="cookieNoticeRef"
-        :enable-grid="true"
-        v-model:visible="cookieStore.isNoticeVisible"
-        community="openGauss"
-        :detail-url="`/${lang}/cookies/`"
-        :cookie-domain="COOKIE_DOMAIN"
-      />
-    </OPlusConfigProvider>
-    <AppFooter />
-  </div>
+  <OPlusConfigProvider :locale="lang">
+    <AppHeader ref="appHeaderRef"></AppHeader>
+    <OCookieNotice
+      ref="cookieNoticeRef"
+      :enable-grid="true"
+      v-model:visible="cookieStore.isNoticeVisible"
+      community="openGauss"
+      :detail-url="`/${lang}/cookies/`"
+      :cookie-domain="COOKIE_DOMAIN"
+    />
+  </OPlusConfigProvider>
+  <el-config-provider :locale="elementPlusLocale">
+    <main :style="{ marginTop: `${headerHeight ?? '72'}px` }">
+      <component :is="comp" v-if="isCustomLayout"></component>
+      <Content v-else />
+      <AppFloat />
+    </main>
+  </el-config-provider>
+  <AppFooter />
   <ClientOnly>
     <AppTour />
   </ClientOnly>
