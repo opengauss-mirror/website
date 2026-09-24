@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, reactive } from 'vue';
+import { ref, reactive, computed } from 'vue';
 import AppContent from '@/components/AppContent.vue';
 import { ElMessage, FormInstance, FormRules } from 'element-plus';
 
@@ -207,7 +207,7 @@ const supportsChange = () => {
 };
 
 // 提交申请
-const meetupPrivacy = ref([]);
+const crossBorderPrivacy = ref([]);
 async function meetupApply() {
   try {
     await meetupApplyForm(meetupData.value).then((res) => {
@@ -217,8 +217,7 @@ async function meetupApply() {
           message: '申请成功！',
         });
         ruleFormRef.value?.resetFields();
-        meetupPrivacy.value = [];
-        isPrivacy.value = false;
+        crossBorderPrivacy.value = [];
         meetupData.value.acceptPrivacy = false;
 
         setTimeout(() => {
@@ -247,18 +246,13 @@ async function meetupApply() {
   }
 }
 
-const isPrivacy = ref(false);
+const isFormValid = computed(() => crossBorderPrivacy.value.length > 0);
 const submitMeetupForm = async (formEl: FormInstance | undefined) => {
-  if (meetupPrivacy.value.length < 1) {
-    isPrivacy.value = true;
-    return;
-  }
-
-  if (!formEl) return;
+  if (!isFormValid.value || !formEl) return;
   await formEl.validate((valid) => {
     if (valid) {
       supportsFormat();
-      meetupData.value.acceptPrivacy = meetupPrivacy.value.length > 0;
+      meetupData.value.acceptPrivacy = crossBorderPrivacy.value.length > 0;
       meetupApply();
     }
   });
@@ -330,24 +324,23 @@ const submitMeetupForm = async (formEl: FormInstance | undefined) => {
           </el-form-item>
           <el-form-item>
             <div class="privacy-box">
-              <OCheckboxGroup v-model="meetupPrivacy">
+              <OCheckboxGroup v-model="crossBorderPrivacy">
                 <OCheckbox value="1"
-                  >您理解并同意，请填写并提交的内容，即视为您已充分阅读并理解openGauss的
+                  >我们会将您提交的个人信息（负责人姓名、公司、手机号、邮箱）存储在中国香港特别行政区，用于确认您的申请及相关事项，详细信息参考请参看
                   <a href="/zh/privacy/" target="_blank" rel="noopener noreferrer">《隐私政策》</a>
                 </OCheckbox>
               </OCheckboxGroup>
-              <p v-if="isPrivacy && meetupPrivacy.length === 0" class="privacy-error">请勾选隐私政策</p>
             </div>
           </el-form-item>
           <el-form-item>
-            <OButton type="primary" @click="submitMeetupForm(ruleFormRef)"> 提交申请 </OButton>
+            <OButton type="primary" :disabled="!isFormValid" @click="submitMeetupForm(ruleFormRef)"> 提交申请 </OButton>
           </el-form-item>
         </el-form>
       </template>
 
       <template v-else>
         <div class="auth-box">
-          <OButton type="primary" @click="doLogin()">请先登录后，在填写</OButton>
+          <OButton type="primary" @click="doLogin()">请先登录后，再填写</OButton>
         </div>
       </template>
     </div>
@@ -355,25 +348,51 @@ const submitMeetupForm = async (formEl: FormInstance | undefined) => {
 </template>
 <style lan="scss" scoped>
 .privacy-box {
-  position: relative;
-  padding-bottom: 18px;
-  .privacy-error {
-    color: var(--el-color-danger);
-    font-size: 12px;
-    line-height: 1;
-    padding-top: 2px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  :deep(.o-checkbox) {
+    height: auto;
+    min-height: 0;
+    align-items: flex-start;
+
+    .o-checkbox-icon {
+      margin-top: 3px;
+    }
   }
 }
 
 .meetup-form {
+  width: var(--grid-content-width);
+  max-width: 100%;
+  margin: 0 auto;
   background: var(--e-color-bg2);
   box-shadow: var(--e-shadow-l1);
   padding: 40px;
   @media (max-width: 1100px) {
     padding: 16px;
+  }
+
+  :deep(.el-input__wrapper) {
+    border: none;
+
+    &:hover {
+      box-shadow: 0 0 0 1px var(--o-color-control3) inset;
+    }
+
+    &.is-focus {
+      box-shadow: 0 0 0 1px var(--o-color-control3) inset;
+    }
+  }
+
+  :deep(.el-textarea__inner) {
+    &:hover {
+      box-shadow: 0 0 0 1px var(--o-color-control3) inset;
+    }
+  }
+
+  :deep(.o-checkbox-icon) {
+    flex-shrink: 0;
   }
 
   h2 {
