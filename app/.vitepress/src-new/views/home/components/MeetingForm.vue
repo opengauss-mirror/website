@@ -17,6 +17,7 @@ import {
   OSelect,
   OOption,
   type DialogActionT,
+  OCheckbox,
 } from '@opensig/opendesign';
 import { useMeeting } from '@/stores/common';
 import { useScreen } from '@/shared/useScreen';
@@ -80,13 +81,13 @@ const topicRules = computed(() => [
   },
 ]);
 // -------------------- 所属SIG验证 --------------------
-const selectSigRules = (() => [
+const selectSigRules = () => [
   {
     required: true,
     message: t('home.HOME_CALENDAR.selectSig'),
     triggers: ['change'],
   },
-]);
+];
 // -------------------- 会议时间验证 --------------------
 const selectPickerRules = computed(() => [
   {
@@ -117,7 +118,7 @@ const selectTimeRules = [
 ];
 
 // -------------------- etherpad验证 --------------------
-const etherpadRules = (() => [
+const etherpadRules = () => [
   {
     required: true,
     message: t('home.validate.lengthBetween', [1, 255]),
@@ -133,7 +134,7 @@ const etherpadRules = (() => [
       }
     },
   },
-]);
+];
 
 // -------------------- 邮箱验证 --------------------
 const validateEmails = (emailStr: string): boolean => {
@@ -184,6 +185,9 @@ const platformRules = computed(() => [
     triggers: ['blur'],
   },
 ]);
+
+// -------------------- 用户同意 --------------------
+const userAgreedProp = ref<string[]>([]);
 
 // 过滤提交参数
 function filterParams(obj: MeetingPostT, propName: string): MeetingPostT {
@@ -306,6 +310,7 @@ const dlgActions = computed<DialogActionT[]>(() => {
       variant: isPhone.value ? 'text' : 'solid',
       size: 'large',
       round: 'pill',
+      disabled: !userAgreedProp.value.length,
       onClick: () => {
         formRef.value?.validate();
         if (isModify.value) {
@@ -412,7 +417,16 @@ watch(
     }"
   >
     <template #header>{{ title }}</template>
-    <OForm ref="formRef" has-required layout="h" :model="formData" :label-width="isPhone ? '88px' : '120px'" label-align="top" size="large" class="calendar-form">
+    <OForm
+      ref="formRef"
+      has-required
+      layout="h"
+      :model="formData"
+      :label-width="isPhone ? '88px' : '120px'"
+      label-align="top"
+      size="large"
+      class="calendar-form"
+    >
       <OFormItem :label="i18nMeeting.host" required field="sponsor" :rules="topicRules">
         <OInput v-model="formData.sponsor" disabled="true" size="large" />
       </OFormItem>
@@ -479,7 +493,15 @@ watch(
       </OFormItem>
 
       <OFormItem :label="i18nMeeting.meetingContent" field="agenda">
-        <OTextarea v-model="formData.agenda" :placeholder="i18nMeeting.enterMeetingContent" resize="none" :rows="4" size="large" :max-length="1000" :input-on-outlimit="false" />
+        <OTextarea
+          v-model="formData.agenda"
+          :placeholder="i18nMeeting.enterMeetingContent"
+          resize="none"
+          :rows="4"
+          size="large"
+          :max-length="1000"
+          :input-on-outlimit="false"
+        />
       </OFormItem>
 
       <OFormItem field="is_record" class="record">
@@ -508,6 +530,12 @@ watch(
           :max-length="1000"
           :input-on-outlimit="false"
         />
+      </OFormItem>
+      <OFormItem>
+        <OCheckbox v-model="userAgreedProp" value="1" class="checkbox-doc-usage">
+          {{ i18n.home.HOME_CALENDAR.bookAgree }}<a :href="`/${lang}/privacy/`">{{ i18n.home.HOME_CALENDAR.privacyStatement }}</a
+          >{{ lang === 'zh' ? '。' : '.' }}
+        </OCheckbox>
       </OFormItem>
     </OForm>
   </ODialog>
