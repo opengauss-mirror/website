@@ -48,19 +48,17 @@ Please carefully review the following updates to this Privacy Statement:
 
 **(b) Mailing List Service**. When you use our mailing list service, we will collect your **email address** and **name (optional)** to enable email subscriptions that facilitate your participation in community discussions.
 
-**(c) Service Optimization**. To ensure service quality and smooth business operations, we automatically collect and store necessary log information, including access timestamps, **IP addresses**, request details, access status, resource size, access sources, and user agent information. We also collect your device details (device name/type/vendor, OS type/version, and screen dimensions), app details (app ID, SDK version, browser type and version, and browser viewport size), and app usage information (event name, event attributes, reporting time, and anonymous client ID). The information is used for community operations and O&M security purposes.
+**(c) Contributor License Agreement ("CLA") Signing**. When you participate in code contribution through the CLA signing system (click [here](https://clasign.osinfra.cn/sign/gitee_opengauss-1614047760000855378?lang=en) to learn more), you need to submit your [personal data](https://clasign.osinfra.cn/privacy/corp/690dba44479f483c74c264fd?lang=en) to the CLA signing system. We will obtain such personal data to confirm if you have signed the CLA, and to conduct statistical analysis for community operation insights.
 
-**(d) Contributor License Agreement ("CLA") Signing**. When you participate in code contribution through the CLA signing system (click [here](https://clasign.osinfra.cn/sign/gitee_opengauss-1614047760000855378?lang=en) to learn more), you need to submit your [personal data](https://clasign.osinfra.cn/privacy/corp/690dba44479f483c74c264fd?lang=en) to the CLA signing system. We will obtain such personal data to confirm if you have signed the CLA, and to conduct statistical analysis for community operation insights.
+**(d) Meeting Service**. When you use our meeting service, we will collect your **AtomGit ID** to configure permissions. When you book a meeting, we will collect the **email addresses** that you provide to send meeting invitations. If you enable automatic screen recording when you book a meeting, the recording will be uploaded to the third-party platform [Bilibili](https://www.bilibili.com/) after the meeting for review by interested individuals and organizations.
 
-**(e) Meeting Service**. When you use our meeting service, we will collect your **AtomGit ID** to configure permissions. When you book a meeting, we will collect the **email addresses** that you provide to send meeting invitations. If you enable automatic screen recording when you book a meeting, the recording will be uploaded to the third-party platform [Bilibili](https://www.bilibili.com/) after the meeting for review by interested individuals and organizations.
+**(e) Content Release**. When you participate in community meetings/activities/organizations, make contributions, or write blogs or news, you may post your **photo**, **name**, **email address**, **company name**, **position**, **school**, **profile**, and **code hosting platform user ID** on our website to help developers connect and engage with the community easily.
 
-**(f) Content Release**. When you participate in community meetings/activities/organizations, make contributions, or write blogs or news, you may post your **photo**, **name**, **email address**, **company name**, **position**, **school**, **profile**, and **code hosting platform user ID** on our website to help developers connect and engage with the community easily.
+**(f) Meetup**. When you organize an openGauss meetup, the community will collect your **name**, **phone number**, **email address**, **company** from the application form you fill in. The collected data will be used to contact you for the purpose of confirming your application and related matters, as well as arranging for relevant affairs, including sign-ins and nameplates.
 
-**(g) Meetup**. When you organize an openGauss meetup, the community will collect your **name**, **phone number**, **email address**, **company** from the application form you fill in. The collected data will be used to contact you for the purpose of confirming your application and related matters, as well as arranging for relevant affairs, including sign-ins and nameplates.
+**(g) Pairing Plan Application**. When you apply for participation in the openGauss pairing plan, the community will collect your **name**, **organization**, **email address**, **phone number** from the application form you fill in. The collected data will be used to contact you for the purpose of confirming your application and related matters.
 
-**(h) Pairing Plan Application**. When you apply for participation in the openGauss pairing plan, the community will collect your **name**, **organization**, **email address**, **phone number** from the application form you fill in. The collected data will be used to contact you for the purpose of confirming your application and related matters.
-
-**(i) Forum Service**.
+**(h) Forum Service**.
 
 1. When you sign up or log in to the forum service, we will collect your **user name**, **email address**, **phone number**, **password**, nickname, avatar, and **Gitee ID** or **AtomGit ID** based on your login mode from your openGauss account, and assign permissions and roles to your account. In addition, we will collect your **IP address**, **region**, device information, login time, and **preference settings** to provide you with more secure services.
 
@@ -100,8 +98,6 @@ From the date of acquisition of your personal data within the community, we will
 
 Upon your active request for the deletion of your personal data, the retention period for the relevant data will be one month. We will respond to your request and delete your personal data within this period.
 
-The access timestamp, **IP address**, request details, access status, resource size, access source, and user agent information collected for service optimization purposes will be automatically deleted upon the expiration of a 180-day retention period.
-
 ### 4.1 Deletion
 
 You may log in to the openGauss community and choose "User Center" > "Security" > "Delete Account" to delete your openGauss community account. This action will also delete your personal data in the openGauss community. Exercise caution when performing this operation.
@@ -138,9 +134,11 @@ Please note that these rights are not absolute and may be restricted under appli
 
 You may change the scope of your authorization for our collection of your personal data or withdraw your authorization. However, your withdrawal of consent or authorization does not affect the lawfulness of processing based on your authorization prior to its withdrawal.
 
-## 7. Where Your Personal Data Is Stored
+## 7. International Transfers of Your Personal Data
 
-To enable our affiliated companies and partners to provide better support, some of your personal data will be transferred from the Hong Kong Special Administrative Region of the People's Republic of China to the Chinese mainland. In such cases, we will fulfill our compliance obligations in accordance with applicable laws and regulations and this Statement to ensure that your personal data is protected as required by applicable laws and regulations and in line with the terms set forth in this Statement. We will also implement appropriate safeguards during the transfer of your personal data. For example, when transferring your personal data over public networks, we will encrypt the data to prevent unauthorized access.
+Your personal information will be stored in the Chinese mainland and the Hong Kong Special Administrative Region of China. Since openGauss community services such as the mailing list service, meeting service, meetup application, paring plan application, and the forum are deployed in the Hong Kong Special Administrative Region of China, when you use the above services, the **name**, **phone number**, **email address**, **username**, **company/organization**, region, **AtomGit ID**, and forum interaction information you submit will be transferred directly over the internet to the overseas recipient, Sparkoo Technologies Hong Kong Co., Limited, for community operations and developer interaction and exchange.
+
+To enable our affiliated companies and partners to provide better support, some of your personal data will be transferred from the Hong Kong Special Administrative Region of China to the Chinese mainland. In such cases, we will fulfill our compliance obligations in accordance with applicable laws and regulations and this Statement to ensure that your personal data is protected as required by applicable laws and regulations and in line with the terms set forth in this Statement. We will also implement appropriate safeguards during the transfer of your personal data. For example, when transferring your personal data over public networks, we will encrypt the data to prevent unauthorized access.
 
 ## 8. How This Statement Is Updated
 
@@ -156,4 +154,5 @@ If you want to contact us or exercise your rights, please contact us at:
 
 Email: **<common@public.opengauss.org>**
 
+Last updated: September 28, 2026
 </div>

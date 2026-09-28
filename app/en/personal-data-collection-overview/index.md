@@ -26,46 +26,39 @@ This website involves the following personal data collection scenarios:
 - **Collection method**: user input
 - **Personal data fields**: **email address** and **name (optional)**
 
-## 3. Service Optimization
-
-- **Purpose**: Maintain service quality and operational requirements by automatically collecting and storing essential log data for community management and system security
-- **Personal data type**: application or device information
-- **Collection method**: collected by the system
-- **Personal data fields**: access timestamp, **IP address**, request details, access status, accessed resource size, access source, user agent, device information (device name, device type, device vendor, operating system, operating system version, screen width, screen height), application information (application ID, SDK version, browser, browser version, browser viewport width, browser viewport height), application usage information (event name, event attributes, reporting time, client anonymous ID)
-
-## 4. Contributor License Agreement (CLA) Signing
+## 3. Contributor License Agreement (CLA) Signing
 
 Regarding the purpose of collecting personal data, the types of personal data, the methods of collection, and the specific personal data fields, refer to the [Personal Data Collection Overview](https://clasign.osinfra.cn/information-list/corp/690dba44479f483c74c264fd?lang=en).
 
-## 5. Meeting Service
+## 4. Meeting Service
 
 - **Purpose**: Configure meeting permissions and send meeting invitation emails
 - **Personal data type**: data you voluntarily submit
 - **Collection method**: user input
 - **Personal data fields**: **AtomGit ID** and **email address**
 
-## 6. Content Release
+## 5. Content Release
 
 - **Purpose**: Help developers better understand and connect with the community, enabling faster engagement
 - **Personal data type**: data you voluntarily submit
 - **Collection method**: user input
 - **Personal data fields**: **photo**, **name**, **email address**, **company name**, **position**, **school**, **profile**, and **code hosting platform user ID**
 
-## 7. Meetup Application
+## 6. Meetup Application
 
 - **Purpose**: Contact you and coordinate event arrangements, including sign-ins and event nameplates
 - **Personal data type**: data you voluntarily submit
 - **Collection method**: user input
 - **Personal data fields**: **name**, **phone number**, **email address** and **company**
 
-## 8. Pairing Plan Application
+## 7. Pairing Plan Application
 
 - **Purpose**: Contact you and verify your application and related details
 - **Personal data type**: data you voluntarily submit
 - **Collection method**: user input
 - **Personal data fields**: **name**, **organization**, **email address**, **phone number**
 
-## 9. Forum Service
+## 8. Forum Service
 
 - **Purpose**: Verify account identity and permissions, provide more secure services, and verify reported contents
 - **Personal data type**: data you voluntarily submit/account information
