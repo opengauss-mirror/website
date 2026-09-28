@@ -15,6 +15,26 @@
 #     name_zh/en             中英文文档名
 #     path_zh/en             中英文文档路径
 
+- version_name: "7.0.0 (LTS)"
+  new_layout: true
+  is_login: false
+  data_file: download7.0.0
+  release_date: "2026.09.30"
+  planned_eol: "2029.09.30"
+  desc_zh: 规模上线使用，发布间隔周期为2年，社区提供3年维护支持，OGSP伙伴提供3年以上延长维护支持服务。
+  desc_en: "RCx: Deployed at scale in production. The release cycle is 2 years. The community provides 3 years of maintenance support, and OGSP partners provide extended maintenance support for 3 years or more."
+  version_capability_path: "{DOCS_ORIGIN}/zh/docs/7.0.0/about_opengauss/version_capability.html"
+  release_notes_docs:
+    openGauss: "{DOCS_ORIGIN}/zh/docs/7.0.0/release_notes/release_notes.html"
+    openGaussEn: "{DOCS_ORIGIN}/en/docs/7.0.0/release_notes/release_notes.html"
+    ograc: "{DOCS_ORIGIN}/zh/docs/7.0.0/ograc/release_notes/release_notes.html"
+    ogracEn: "{DOCS_ORIGIN}/zh/docs/7.0.0/ograc/release_notes/release_notes.html"
+  docs_list:
+    - name_zh: 发行说明
+      name_en: Release Notes
+      path_zh: /docs/7.0.0/docs/release_notes/release_notes.html
+      path_en: /docs/7.0.0/docs/release_notes/release_notes.html
+
 - version_name: 7.0.0-RC3
   new_layout: true
   is_login: false
