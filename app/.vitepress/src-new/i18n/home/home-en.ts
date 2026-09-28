@@ -167,7 +167,7 @@ export default {
     endTime: 'End Time',
     address: 'Address',
     bookSuccess: 'booked',
-    bookAgree: 'We will store your AtomGit ID and the email address you submit in the Hong Kong Special Administrative Region of the China, for the purpose of booking meetings. For more information, please see the ',
+    bookAgree: 'We will store your AtomGit ID and the email address you submit in the Hong Kong Special Administrative Region of China, for the purpose of booking meetings. For more information, please see the ',
     privacyStatement: 'Privacy Statement'
   },
   validate: {
