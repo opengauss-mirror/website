@@ -96,11 +96,13 @@ We will retain your personal data for no longer than is necessary for the purpos
 
 From the date of acquisition of your personal data within the community, we will store or retain such data for the period specified by applicable laws or service agreements. Once the prescribed retention period has expired and no legal obligation requires the continued processing of your specific personal data, we will delete or anonymize your personal data in accordance with applicable laws and regulations.
 
-Upon your active request for the deletion of your personal data, the retention period for the relevant data will be one month. We will respond to your request and delete your personal data within this period.
-
 ### 4.1 Deletion
 
 You may log in to the openGauss community and choose "User Center" > "Security" > "Delete Account" to delete your openGauss community account. This action will also delete your personal data in the openGauss community. Exercise caution when performing this operation.
+
+### 4.2 Mailing List Unsubscribe
+
+You can unsubscribe by entering your email address in the unsubscription section of the openGauss community mailing list subscription page. Once unsubscribed, we will stop sending you related emails and will simultaneously delete your email address and name.
 
 ## 5. How We Protect Your Personal Data
 
