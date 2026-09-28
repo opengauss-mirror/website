@@ -329,19 +329,19 @@ const isFormDlgVisible = ref(false);
 const currentMeetingData = ref<MeetingItemT | null>(null);
 const formDlgTitle = ref('');
 const createMeetingDlg = () => {
-  if (csrfToken) {
-    if (sigGroup.value.length > 0) {
-      currentMeetingData.value = null;
-      isFormDlgVisible.value = true;
-      formDlgTitle.value = i18nMeeting.value.bookMeeting;
-    } else {
-      message.warning({
-        content: i18nMeeting.value.LOGIN_TEXT,
-      });
-    }
-  } else {
+  if (!csrfToken) {
     doLogin();
+    return;
   }
+  if (!sigGroup.value.length) {
+    message.warning({
+      content: i18nMeeting.value.LOGIN_TEXT,
+    });
+    return;
+  }
+  currentMeetingData.value = null;
+  isFormDlgVisible.value = true;
+  formDlgTitle.value = i18nMeeting.value.bookMeeting;
 };
 const userInfoStore = useUserInfoStore();
 const { identities, username } = storeToRefs(userInfoStore);

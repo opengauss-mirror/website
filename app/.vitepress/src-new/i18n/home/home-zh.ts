@@ -174,6 +174,8 @@ export default {
     endTime: '结束时间',
     address: '活动地点',
     bookSuccess: '会议预定成功！',
+    bookAgree: '我们会将您的 AtomGit ID 和您提交的邮箱存储在中国香港特别行政区，用于预定会议。详细信息请见：',
+    privacyStatement: '《隐私声明》'
   },
   validate: {
     lengthBetween: '长度为{0}到{1}个字符',
