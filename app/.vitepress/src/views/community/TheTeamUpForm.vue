@@ -143,37 +143,24 @@ const rules: FormRules = {
   ],
 };
 
-const privacyPolicy = '/zh/privacy/';
-const checkedPrivacyPolicy = ref(false);
+const checkedCrossBorder = ref([]);
 
 const formRef = ref<FormInstance>();
 
+const isFormValid = computed(() => checkedCrossBorder.value.length > 0);
 const validateForm = () => {
-  if (!checkedPrivacyPolicy.value) {
-    isPrivacy.value = true;
-    return;
-  }
+  if (!isFormValid.value) return;
   formRef.value
     ?.validate((valid) => {
       if (valid) {
-        if (checkedPrivacyPolicy.value) {
-          formData.acceptPrivacy = checkedPrivacyPolicy.value;
-
-          submitForm();
-        } else {
-          ElMessage({
-            type: 'error',
-            message: '请勾选隐私政策',
-          });
-        }
+        formData.acceptPrivacy = checkedCrossBorder.value.length > 0;
+        submitForm();
       }
     })
     .catch(() => {
       //nothing
     });
 };
-
-const isPrivacy = ref(false);
 const submitForm = async () => {
   try {
     const res = await teamupApplyForm(formData);
@@ -184,7 +171,7 @@ const submitForm = async () => {
       });
       setTimeout(() => {
         formRef.value?.resetFields();
-        checkedPrivacyPolicy.value = false;
+        checkedCrossBorder.value = [];
         router.go('/zh/team-up/');
       }, 2000);
     } else {
@@ -247,23 +234,24 @@ const { csrfToken } = getUserAuth();
         </el-form-item>
         <el-form-item>
           <div class="privacy-box">
-            <el-checkbox v-model="checkedPrivacyPolicy">
-              <span>您理解并同意，请填写并提交的内容，即视为您已充分阅读并理解openGauss的</span>
-              <a :href="privacyPolicy" target="_blank" rel="noopener noreferrer">《隐私政策》</a>
-            </el-checkbox>
-            <p v-if="isPrivacy && !checkedPrivacyPolicy" class="privacy-error">请勾选隐私政策</p>
+            <OCheckboxGroup v-model="checkedCrossBorder">
+              <OCheckbox value="1"
+                >我们会将您提交的个人信息（申请人姓名、单位、邮箱、手机号）存储在中国香港特别行政区，用于确认您的申请及相关事项，详细信息参考请参看
+                <a href="/zh/privacy/" target="_blank" rel="noopener noreferrer">《隐私政策》</a>
+              </OCheckbox>
+            </OCheckboxGroup>
           </div>
         </el-form-item>
         <el-form-item>
           <div class="btn-wrap">
-            <OButton type="primary" @click="validateForm"> 提交申请 </OButton>
+            <OButton type="primary" :disabled="!isFormValid" @click="validateForm"> 提交申请 </OButton>
           </div>
         </el-form-item>
       </el-form>
 
       <template v-else>
         <div class="auth-box">
-          <OButton type="primary" @click="doLogin()">请先登录后，在填写</OButton>
+          <OButton type="primary" @click="doLogin()">请先登录后，再填写</OButton>
         </div>
       </template>
     </div>
@@ -272,24 +260,51 @@ const { csrfToken } = getUserAuth();
 
 <style lan="scss" scoped>
 .privacy-box {
-  position: relative;
-  .privacy-error {
-    color: var(--el-color-danger);
-    font-size: 12px;
-    line-height: 1;
-    padding-top: 2px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  :deep(.o-checkbox) {
+    height: auto;
+    min-height: 0;
+    align-items: flex-start;
+
+    .o-checkbox-icon {
+      margin-top: 3px;
+    }
   }
 }
 
 .team-up-form {
+  width: var(--grid-content-width);
+  max-width: 100%;
+  margin: 0 auto;
   background-color: var(--e-color-bg2);
   padding: 40px 56px 40px 46px;
 
   @media screen and (max-width: 768px) {
     padding: 16px;
+  }
+
+  :deep(.el-input__wrapper) {
+    border: none;
+
+    &:hover {
+      box-shadow: 0 0 0 1px var(--o-color-control3) inset;
+    }
+
+    &.is-focus {
+      box-shadow: 0 0 0 1px var(--o-color-control3) inset;
+    }
+  }
+
+  :deep(.el-textarea__inner) {
+    &:hover {
+      box-shadow: 0 0 0 1px var(--o-color-control3) inset;
+    }
+  }
+
+  :deep(.o-checkbox-icon) {
+    flex-shrink: 0;
   }
 
   .form-title {
@@ -316,15 +331,6 @@ const { csrfToken } = getUserAuth();
 
     .el-form-item__label {
       height: auto;
-    }
-
-    .el-checkbox {
-      white-space: pre-wrap;
-      align-items: flex-start;
-    }
-
-    :deep(.el-checkbox__label) {
-      color: var(--e-color-text1);
     }
 
     .o-button {
