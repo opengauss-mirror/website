@@ -1,5 +1,6 @@
 ---
 title: 'How to Set Up a SIG'
+description: 'A guide to setting up a Special Interest Group (SIG) in the openGauss community, covering the six-step application process from reviewing existing SIGs and forking the tc repository to submitting a pull request and TC review, plus the Contributor, Committer, and Maintainer roles.'
 category: sig-apply
 goBackUrl: /en/sig/sig-list
 ---

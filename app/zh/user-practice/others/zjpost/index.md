@@ -3,7 +3,7 @@ title: openGauss与浙江邮政结队计划案例
 category: showcase
 industry:  Others
 company: 中国邮政集团有限公司浙江省分公司
-summary: 
+summary: 浙江邮政已经成功上线干线运输系统、全流程分环节损益系统、采购评审专家及代理机构管理系统、邮件理赔集中管控系统等4个系统。它们均采用了openGauss的主备集群部署方式，并使用了读写分离特性。这种方式既有效应对了高并发访问，降低了维护成本，可靠性提升100%，又充分发挥了主备双机硬件资源处理能力，使资源利用率提升了50%以上。
 officialPath: http://zj.chinapost.com.cn/
 detail: true
 id: Others
