@@ -11,6 +11,29 @@
       "position": 1,
       "item": {
         "@type": "SoftwareApplication",
+        "name": "openGauss 7.0.0 (LTS)",
+        "applicationCategory": "DatabaseApplication",
+        "operatingSystem": "Linux",
+        "releaseDate": "2026-09-30",
+        "description": "An LTS version for openGauss 7.0.0 and later is provided with 3 years of community support, followed by additional maintenance support by oGSPs.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/OnlineOnly"
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "openGauss Community",
+          "url": "https://opengauss.org"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "SoftwareApplication",
         "name": "openGauss 7.0.0-RC3",
         "applicationCategory": "DatabaseApplication",
         "operatingSystem": "Linux",
