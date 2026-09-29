@@ -1,5 +1,6 @@
 ---
 title: '如何在 openGauss 社区成立一个 SIG'
+description: openGauss社区SIG成立指南，介绍专项兴趣小组（SIG）的申请流程，包括查阅现有SIG、公开讨论、Fork tc仓库、填写README与sig-info.yaml、提交Pull Request、向技术委员会发送邮件申请及TC评审六个步骤，以及Contributor、Committer、Maintainer三类角色说明。
 category: sig-apply
 goBackUrl: /zh/sig/sig-list
 ---
