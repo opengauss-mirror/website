@@ -9,7 +9,7 @@ import { useCommon } from '@/stores/common';
 import { storeToRefs } from 'pinia';
 
 const { theme } = storeToRefs(useCommon());
-const { lePadV, gtPadV, current } = useScreen();
+const { lePadV, gtPadV, current, gtPhone } = useScreen();
 const { locale } = useLocale();
 const { lang } = useData();
 watchEffect(() => (locale.value = lang.value ?? 'zh'));
@@ -17,16 +17,16 @@ watchEffect(() => (locale.value = lang.value ?? 'zh'));
 function foldBanner(raw: any, langCode: string) {
   const s = (field: string) => raw[`${field}_${langCode}`] ?? raw[field];
   const banners: Record<string, string> = { laptop: raw.bg_pc };
-  if (raw.bg_pad) banners.pad_v = raw.bg_pad;
+  if (raw.bg_pad) banners.pad = raw.bg_pad;
   if (raw.bg_mb) banners.phone = raw.bg_mb;
   const bannersDark: Record<string, string> | undefined =
     raw.bg_pc_dark || raw.bg_mb_dark
       ? { laptop: raw.bg_pc_dark, ...(raw.bg_mb_dark ? { phone: raw.bg_mb_dark } : {}) }
       : undefined;
   return {
-    banners: new Proxy(banners, { get: (t, p: string) => t[p] ?? t.laptop }),
+    banners: new Proxy(banners, { get: (t, p: string) => t[p.startsWith('pad') ? 'pad' : p] ?? t.laptop }),
     bannersDark: bannersDark
-      ? new Proxy(bannersDark, { get: (t, p: string) => t[p] ?? t.laptop })
+      ? new Proxy(bannersDark, { get: (t, p: string) => t[p.startsWith('pad') ? 'pad' : p] ?? t.laptop })
       : undefined,
     isLightBg: raw.bg_theme === 'light',
     title: s('title') ?? '',
@@ -37,6 +37,7 @@ function foldBanner(raw: any, langCode: string) {
     link: s('href') ?? '',
     target: raw.is_blank ? '_blank' : '_self',
     textImg: raw[`text_image_${langCode}`] ?? '',
+    textImgPad: raw[`text_image_pad_${langCode}`] ?? '',
     textImgMb: raw[`text_image_mb_${langCode}`] ?? '',
     className: raw.class_name ?? '',
     rightInset: raw.attach ?? '',
@@ -121,7 +122,7 @@ const currentBgTheme = computed(() => {
                 <p v-if="item.desc.length" class="desc">
                   <span v-for="itemDesc in item.desc" :key="itemDesc">{{ itemDesc }}</span>
                 </p>
-                <img v-if="item.textImg" class="text-img" :src="gtPadV ? item.textImg : item.textImgMb" alt="" />
+                <img v-if="item.textImg || item.textImgPad || item.textImgMb" class="text-img" :src="gtPadV ? item.textImg : (item.textImgPad && gtPhone ? item.textImgPad : item.textImgMb)" alt="" />
               </div>
               <div v-if="item.btn" class="btn-box">
                 <OButton class="home-banner-btn" round="pill" variant="solid" color="primary" :size="lePadV ? 'medium' : 'large'" v-bind="buttonAttrs(item)">
@@ -301,6 +302,10 @@ const currentBgTheme = computed(() => {
           .home-banner-btn {
             color: var(--e-color-white);
           }
+        }
+        @include respond-to('phone') {
+          justify-content: end;
+          padding-bottom: 1.2em;
         }
       }
       .content-left-img {
