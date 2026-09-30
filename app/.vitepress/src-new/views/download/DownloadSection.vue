@@ -72,9 +72,19 @@ const getFilterData = (name: string) => {
 
 const isCn = computed(() => lang.value === 'zh');
 
+const archSortOrderMap = {
+  x86_64: 1,
+  aarch64: 0
+} as Record<string, number>;
+
 // tag筛选
 const architectureList = computed(() => {
-  return [...new Set(tableData.value.content.map((item) => item.architecture))];
+  return [...new Set(tableData.value.content.map((item) => item.architecture))].sort((a, b) => {
+    if (a.toLowerCase() in archSortOrderMap && b.toLowerCase() in archSortOrderMap) {
+      return archSortOrderMap[a.toLowerCase()] - archSortOrderMap[b.toLowerCase()];
+    }
+    return 0;
+  });
 });
 
 const osList = computed(() => {
@@ -85,7 +95,7 @@ const activeArchitecture = ref('');
 const activeOs = ref('');
 const initActiveTag = function () {
   if (tableData.value.content && tableData.value.content.length > 0) {
-    activeArchitecture.value = tableData.value.content[0].architecture;
+    activeArchitecture.value = architectureList.value[0];
     activeOs.value = tableData.value.content[0].os;
   }
 };
