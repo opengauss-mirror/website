@@ -4,17 +4,17 @@
   "name": "oGSP Certification",
   "description": "openGauss Service Provider Certification - List of certified service providers for openGauss enterprise-grade open source relational database",
   "url": "https://opengauss.org/en/ogsp/",
-  "numberOfItems": 8,
+  "numberOfItems": 6,
   "itemListElement": [
     {
       "@type": "ListItem",
       "position": 1,
       "item": {
         "@type": "Organization",
-        "name": "中国邮政储蓄银行股份有限公司",
-        "identifier": "20250616001",
-        "award": "2025-06-16",
-        "expires": "2026-06-15",
+        "name": "北京海量数据技术股份有限公司",
+        "identifier": "20260310001",
+        "award": "2026-03-10",
+        "expires": "2027-03-09",
         "additionalProperty": [
           {
             "@type": "PropertyValue",
@@ -24,7 +24,7 @@
           {
             "@type": "PropertyValue",
             "name": "Service Contents",
-            "value": "Good"
+            "value": "Excellent"
           },
           {
             "@type": "PropertyValue",
@@ -40,6 +40,11 @@
             "@type": "PropertyValue",
             "name": "Project Experience",
             "value": "Excellent"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Level",
+            "value": "Premium"
           }
         ]
       }
@@ -49,10 +54,10 @@
       "position": 2,
       "item": {
         "@type": "Organization",
-        "name": "中移动信息技术有限公司",
-        "identifier": "20250604001",
-        "award": "2025-06-04",
-        "expires": "2026-06-03",
+        "name": "天津神舟通用数据技术有限公司",
+        "identifier": "20260326001",
+        "award": "2026-03-26",
+        "expires": "2027-03-25",
         "additionalProperty": [
           {
             "@type": "PropertyValue",
@@ -67,7 +72,7 @@
           {
             "@type": "PropertyValue",
             "name": "Service System",
-            "value": "Good"
+            "value": "Excellent"
           },
           {
             "@type": "PropertyValue",
@@ -78,6 +83,11 @@
             "@type": "PropertyValue",
             "name": "Project Experience",
             "value": "Excellent"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Level",
+            "value": "Premium"
           }
         ]
       }
@@ -87,10 +97,10 @@
       "position": 3,
       "item": {
         "@type": "Organization",
-        "name": "天津神舟通用数据技术有限公司",
-        "identifier": "20250408001",
-        "award": "2025-04-08",
-        "expires": "2026-04-07",
+        "name": "云和恩墨（北京）信息技术有限公司",
+        "identifier": "20260326002",
+        "award": "2026-03-26",
+        "expires": "2027-03-25",
         "additionalProperty": [
           {
             "@type": "PropertyValue",
@@ -116,6 +126,11 @@
             "@type": "PropertyValue",
             "name": "Project Experience",
             "value": "Excellent"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Level",
+            "value": "Premium"
           }
         ]
       }
@@ -126,9 +141,9 @@
       "item": {
         "@type": "Organization",
         "name": "天津南大通用数据技术股份有限公司",
-        "identifier": "20250407001",
-        "award": "2025-04-07",
-        "expires": "2026-04-06",
+        "identifier": "20260409001",
+        "award": "2026-04-09",
+        "expires": "2027-04-08",
         "additionalProperty": [
           {
             "@type": "PropertyValue",
@@ -154,6 +169,11 @@
             "@type": "PropertyValue",
             "name": "Project Experience",
             "value": "Excellent"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Level",
+            "value": "Premium"
           }
         ]
       }
@@ -163,10 +183,10 @@
       "position": 5,
       "item": {
         "@type": "Organization",
-        "name": "北京海量数据技术股份有限公司",
-        "identifier": "20250325001",
-        "award": "2025-03-25",
-        "expires": "2026-03-24",
+        "name": "中软国际科技服务有限公司",
+        "identifier": "20260612001",
+        "award": "2026-06-12",
+        "expires": "2027-06-11",
         "additionalProperty": [
           {
             "@type": "PropertyValue",
@@ -176,12 +196,12 @@
           {
             "@type": "PropertyValue",
             "name": "Service Contents",
-            "value": "Excellent"
+            "value": "Good"
           },
           {
             "@type": "PropertyValue",
             "name": "Service System",
-            "value": "Excellent"
+            "value": "Good"
           },
           {
             "@type": "PropertyValue",
@@ -192,6 +212,11 @@
             "@type": "PropertyValue",
             "name": "Project Experience",
             "value": "Excellent"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Level",
+            "value": "Certified"
           }
         ]
       }
@@ -201,10 +226,10 @@
       "position": 6,
       "item": {
         "@type": "Organization",
-        "name": "云和恩墨（北京）信息技术有限公司",
-        "identifier": "20250415001",
-        "award": "2025-04-15",
-        "expires": "2026-04-14",
+        "name": "中移动信息技术有限公司",
+        "identifier": "20260612002",
+        "award": "2026-06-12",
+        "expires": "2027-06-11",
         "additionalProperty": [
           {
             "@type": "PropertyValue",
@@ -215,44 +240,6 @@
             "@type": "PropertyValue",
             "name": "Service Contents",
             "value": "Excellent"
-          },
-          {
-            "@type": "PropertyValue",
-            "name": "Service System",
-            "value": "Excellent"
-          },
-          {
-            "@type": "PropertyValue",
-            "name": "Service Commitment",
-            "value": "Excellent"
-          },
-          {
-            "@type": "PropertyValue",
-            "name": "Project Experience",
-            "value": "Excellent"
-          }
-        ]
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 7,
-      "item": {
-        "@type": "Organization",
-        "name": "中软国际科技服务有限公司",
-        "identifier": "20250507001",
-        "award": "2025-05-07",
-        "expires": "2026-05-06",
-        "additionalProperty": [
-          {
-            "@type": "PropertyValue",
-            "name": "Bug Fixing and Patch Release",
-            "value": "✓"
-          },
-          {
-            "@type": "PropertyValue",
-            "name": "Service Contents",
-            "value": "Good"
           },
           {
             "@type": "PropertyValue",
@@ -268,44 +255,11 @@
             "@type": "PropertyValue",
             "name": "Project Experience",
             "value": "Excellent"
-          }
-        ]
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 8,
-      "item": {
-        "@type": "Organization",
-        "name": "软通动力信息技术(集团)股份有限公司",
-        "identifier": "20250616002",
-        "award": "2025-06-16",
-        "expires": "2026-06-15",
-        "additionalProperty": [
-          {
-            "@type": "PropertyValue",
-            "name": "Bug Fixing and Patch Release",
-            "value": "✓"
           },
           {
             "@type": "PropertyValue",
-            "name": "Service Contents",
-            "value": "Good"
-          },
-          {
-            "@type": "PropertyValue",
-            "name": "Service System",
-            "value": "Fair"
-          },
-          {
-            "@type": "PropertyValue",
-            "name": "Service Commitment",
-            "value": "Good"
-          },
-          {
-            "@type": "PropertyValue",
-            "name": "Project Experience",
-            "value": "Excellent"
+            "name": "Level",
+            "value": "Premium"
           }
         ]
       }
