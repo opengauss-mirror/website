@@ -362,7 +362,7 @@
 
 - version_name: "2.1.0 (Preview)"
   data_file: download2.1.0
-  release_date: "2021.06.30"
+  release_date: "2021.09.30"
   planned_eol: "2022.03.30"
   docs_list:
     - name_zh: 发行说明
@@ -408,7 +408,7 @@
 - version_name: "1.1.0 (Preview)"
   data_file: download1.1.0
   release_date: "2020.12"
-  planned_eol: "2023.12"
+  planned_eol: "2021.06"
   docs_list:
     - name_zh: 发行说明
       name_en: Release Notes
