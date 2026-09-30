@@ -672,6 +672,16 @@
   os: openEuler 24.03 LTS
   system: openEuler 24.03 LTS (aarch64)
 - category: oGRAC Connectors
+  name: ODBC_7.0.0
+  size: 4.45MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0/openEuler24.03/x86/oGRAC-ODBC-7.0.0-openEuler24.03-x86_64.tar.gz
+  sha_code: d078f8323f1d955d1afe86529f0de29638656f8b3cc81bff288b70ca87e77afe
+  docs_name: ""
+  docs_url: ""
+  architecture: x86_64
+  os: openEuler 24.03 LTS
+  system: openEuler 24.03 LTS (x86_64)
+- category: oGRAC Connectors
   name: JDBC_7.0.0
   size: 2.15MB
   down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0/CentOS7/x86/oGRAC-JDBC-7.0.0.tar.gz
@@ -987,6 +997,22 @@
   architecture: AArch64
   os: Linux
   system: Linux (aarch64)
+  type_zh: Oracle全量迁移
+  type_en: Oracle full migration
+  children:
+    - type_zh: Oracle全量迁移
+      type_en: Oracle full migration
+      name_zh: FullReplicate
+      name_en: FullReplicate
+      description_zh: Oracle数据库对象和数据全量迁移至oGRAC
+      description_en: Migrates all objects and data from Oracle to oGRAC.
+      down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0/tools/openGauss-FullReplicate-7.0.0.tar.gz
+      size: 30.47MB
+      sha_code: bcf119bcb6740c5f5fd310604f07ffaaec723ab97b872d53981d055adb3e4b3c
+- category: openGauss Tools
+  architecture: AArch64
+  os: Linux
+  system: Linux (aarch64)
   type_zh: 增量迁移
   type_en: Incremental migration
   children:
@@ -1084,22 +1110,6 @@
       size: 349.12MB
       sha_code: 9173cceae22d0845fbe6a80911f3d3d7351e9b3ea68a12387ef80ada05e570f1
 - category: openGauss Tools
-  architecture: AArch64
-  os: Linux
-  system: Linux (aarch64)
-  type_zh: openGauss运维
-  type_en: openGauss O&M
-  children:
-    - type_zh: openGauss运维
-      type_en: openGauss O&M
-      name_zh: dbmind
-      name_en: dbmind
-      description_zh: 数据库自治运维平台
-      description_en: DBMind is a leading open-source platform for autonomous database O&M. It offers an end-to-end toolkit for slow SQL analysis, workload index recommendation, multi-metric correlating mining, self-healing, anomaly detection, and root cause diagnosis.
-      down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0/tools/dbmind-installer-aarch64.tar.gz
-      size: 248.04MB
-      sha_code: 402995c55e17b9767cc3b20e775524a4540cf2e179fa1eaeefc1f93040428d33
-- category: openGauss Tools
   architecture: x86_64
   os: Linux
   system: Linux (x86_64)
@@ -1128,6 +1138,22 @@
       name_en: FullReplicate
       description_zh: PG/OG/SQLServer数据库对象和数据全量迁移至openGauss
       description_en: Migrates all objects and data from PostgreSQL, openGauss, and SQL Server to openGauss.
+      down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0/tools/openGauss-FullReplicate-7.0.0.tar.gz
+      size: 30.46MB
+      sha_code: bcf119bcb6740c5f5fd310604f07ffaaec723ab97b872d53981d055adb3e4b3c
+- category: openGauss Tools
+  architecture: x86_64
+  os: Linux
+  system: Linux (x86_64)
+  type_zh: Oracle全量迁移
+  type_en: Oracle full migration
+  children:
+    - type_zh: Oracle全量迁移
+      type_en: Oracle full migration
+      name_zh: FullReplicate
+      name_en: FullReplicate
+      description_zh: Oracle数据库对象和数据全量迁移至oGRAC
+      description_en: Migrates all objects and data from Oracle to oGRAC.
       down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0/tools/openGauss-FullReplicate-7.0.0.tar.gz
       size: 30.46MB
       sha_code: bcf119bcb6740c5f5fd310604f07ffaaec723ab97b872d53981d055adb3e4b3c
@@ -1231,21 +1257,6 @@
       down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0/tools/openGauss-Datakit-Mini-7.0.0.tar.gz
       size: 349.12MB
       sha_code: 9173cceae22d0845fbe6a80911f3d3d7351e9b3ea68a12387ef80ada05e570f1
-- category: openGauss Tools
-  architecture: x86_64
-  os: Linux
-  system: Linux (x86_64)
-  type_zh: openGauss运维
-  type_en: openGauss O&M
-  children:
-    - type_zh: openGauss运维
-      name_zh: dbmind
-      name_en: dbmind
-      description_zh: 数据库自治运维平台
-      description_en: DBMind is a leading open-source platform for autonomous database O&M. It offers an end-to-end toolkit for slow SQL analysis, workload index recommendation, multi-metric correlating mining, self-healing, anomaly detection, and root cause diagnosis.
-      down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0/tools/dbmind-installer-x86_64.tar.gz
-      size: 257.72MB
-      sha_code: 50efba2415960e67b023aa34e9636aeba2496f6a24b9e1b74b7bfa9a520de574
 - category: openGauss Tools
   architecture: AArch64
   os: openEuler 24.03 LTS
