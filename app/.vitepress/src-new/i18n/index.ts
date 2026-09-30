@@ -15,6 +15,7 @@ import search from './search';
 import internship from './internship';
 import sig from './sig';
 import maillist from './maillist';
+import ai from './ai';
 
 const messages = {
   zh: {
@@ -33,6 +34,7 @@ const messages = {
     internship: internship.zh,
     sig: sig.zh,
     maillist: maillist.zh,
+    ai: ai.zh,
   },
   en: {
     // 公共模块
@@ -49,6 +51,7 @@ const messages = {
     search: search.en,
     sig: sig.en,
     maillist: maillist.en,
+    ai: ai.en,
   },
 };
 

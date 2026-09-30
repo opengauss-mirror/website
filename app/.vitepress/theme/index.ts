@@ -1,6 +1,5 @@
 import type { App } from 'vue';
 import { createPinia } from 'pinia';
-import { createExternalLinkGuard } from '@opendesign-plus/plugins';
 
 import '@/shared/styles/element-plus/index.scss';
 // import '@/shared/styles/index.scss';

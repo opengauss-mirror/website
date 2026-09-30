@@ -1,0 +1,200 @@
+# RAG Zone page data (English)
+# banner / tabs see ../common/en.yaml
+
+# what_is_rag: "What Is RAG" section
+#   title: section title
+#   description: section description
+what_is_rag:
+  title: What Is RAG?
+  description: 'Retrieval-Augmented Generation (RAG) combines information retrieval with LLM generation. Its "retrieve-then-generate" paradigm significantly boosts accuracy, speed, and reliability in QA, analysis, and content creation.'
+
+# software_ecosystem: "RAG Software Ecosystem" section
+#   title: section title
+#   image_light/image_dark: mobile ecosystem overview image (light/dark theme)
+#   pc_only_tip: tip shown on mobile devices
+#   legend_supported/legend_coming_soon: legend texts
+#   categories: ecosystem categories (key is the category id consumed by the component; layout params stay in the component)
+#     name: category name
+#     items: ecosystem entries of the category
+#       name: entry name
+#       active: whether supported (optional, defaults to coming soon)
+#       link: entry link (optional)
+software_ecosystem:
+  title: RAG Software Ecosystem
+  image_light: ./images/rag-light.png
+  image_dark: ./images/rag-dark.png
+  pc_only_tip: Please view on PC to access the related links.
+  legend_supported: Supported
+  legend_coming_soon: Coming Soon
+  categories:
+    applications:
+      name: Applications
+      items:
+        - name: Intelligent QA Service
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/opengauss_eulercopilot.html
+        - name: Intelligent Assistant
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/opengauss_dify.html
+        - name: Personal Knowledge Base
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/datavec_qwen3.html
+        - name: Search-based QA
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/opengauss_ragflow.html
+        - name: GraphRAG
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/opengauss_agegraph.html
+        - name: Code Generator
+        - name: Smart Document Assistant
+        - name: Meeting Minutes Assistant
+    evaluation:
+      name: Evaluation
+      items:
+        - name: Ragas
+        - name: Arize Pheonix
+        - name: DeepEval
+        - name: ollama qwen3 reranker
+    om_tools:
+      name: O&M Tools
+      items:
+        - name: Grafana
+        - name: Prometheus
+        - name: Jaeger
+    knowledge_engineering:
+      name: Knowledge Engineering
+      items:
+        - name: WhyHow
+        - name: Cognee
+        - name: MindsDB
+          active: true
+          link: https://docs.mindsdb.com/integrations/data-integrations/opengauss
+    data_sources:
+      name: Data Sources
+      items:
+        - name: Airbyte
+        - name: Kafka
+        - name: Apify
+        - name: Docling
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/docling.html
+        - name: Unstructred
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/unstructured.html
+    orchestration_frameworks:
+      name: Orchestration Frameworks
+      items:
+        - name: DeepSeek
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/deepseek.html
+        - name: Spring AI
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/spring_ai_opengauss.html
+        - name: DB-GPT 9
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/dbgpt.html
+        - name: n8n
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/n8n.html
+        - name: LangChain
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/opengauss_agegraph.html
+        - name: LlamaIndex
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/llama_index.html
+        - name: HayStack
+        - name: AnythingLLM
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/anythingllm.html
+        - name: SpringBoot
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/opengauss_springboot.html
+        - name: Dify
+          active: true
+          link: 'https://docs.opengauss.org/zh/docs/latest/datavec/dify.html#%E4%BD%BF%E7%94%A8opengauss%E9%83%A8%E7%BD%B2dify'
+        - name: RAGFlow
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/opengauss_ragflow.html
+        - name: MCP
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/mcp.html
+        - name: FastGPT
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/fastgpt.html
+    llms:
+      name: LLMs
+      items:
+        - name: Jina AI
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/jinaai.html
+        - name: BentoML
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/bentoml.html
+        - name: Sentence Transformer
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/sentence_transformer.html
+        - name: BGE M3
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/embedding_bgem3.html
+        - name: nomic-embed-text
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/embedding_nomic.html
+        - name: Ollama
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/datavec_qwen3.html
+        - name: vLLM
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/vllm.html
+        - name: SGLang
+    compute_architecture:
+      name: Compute Architecture
+      items:
+        - name: CUDA
+          active: true
+        - name: CANN
+          active: true
+    cloud_native:
+      name: Cloud-Native Foundation
+      items:
+        - name: Docker
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/installation_guide/installing_the_container_image.html
+        - name: K8s
+          active: true
+          link: /zh/blogs/buter/k8Sinit_guide.html
+    os:
+      name: OS
+      items:
+        - name: openEuler
+          active: true
+          link: https://docs.opengauss.org/zh/docs/latest/datavec/opengauss_eulercopilot.html
+    hardware:
+      name: Hardware
+      items:
+        - name: CPU
+          active: true
+        - name: GPU/NPU
+          active: true
+
+# use_cases: "RAG Use Cases" section
+#   title: section title
+#   cases: use case list
+#     label: use case title
+#     href: use case link
+use_cases:
+  title: RAG Use Cases
+  cases:
+    - label: openGauss AGEGraph + LLM for GraphRAG
+      href: https://docs.opengauss.org/zh/docs/latest/datavec/opengauss_agegraph.html
+    - label: 'From Data to Intelligence: RAG with openGauss + openEuler Intelligence'
+      href: https://docs.opengauss.org/zh/docs/latest/datavec/opengauss_eulercopilot.html
+    - label: Spring Boot + openGauss DataVec for Efficient RAG QA
+      href: https://docs.opengauss.org/zh/docs/latest/datavec/opengauss_springboot.html
+    - label: Deploy Your Personal RAG Knowledge Base with Qwen3 + openGauss
+      href: https://docs.opengauss.org/zh/docs/latest/datavec/datavec_qwen3.html
+    - label: 'Open-Source AI: Build Your Local AI Assistant with openGauss + DeepSeek'
+      href: https://docs.opengauss.org/zh/docs/latest/datavec/opengauss_ragpratice.html
+    - label: 'openGauss DataVec + Dify: Build Your Assistant Platform Fast'
+      href: https://docs.opengauss.org/zh/docs/latest/datavec/opengauss_dify.html
+    - label: 'openGauss + Ragflow: From Deployment to Integration'
+      href: https://docs.opengauss.org/zh/docs/latest/datavec/opengauss_ragflow.html

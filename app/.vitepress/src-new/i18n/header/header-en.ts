@@ -229,6 +229,16 @@ export default {
             },
           ],
         },
+        {
+          NAME: 'Zone',
+          CHILDREN: [
+            {
+              NAME: 'AI Zone',
+              DESCRIPTION: 'Explore openGauss AI ecosystem: Agent, RAG, and more',
+              URL: '/ai/agent/',
+            },
+          ],
+        },
       ],
     },
     {

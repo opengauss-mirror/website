@@ -1,51 +1,52 @@
 <script setup lang="ts">
-import BannerLevel2 from '~@/components/BannerLevel2.vue';
-import banner from '@/assets/category/rag/banner.png';
-import rag from '@/assets/category/rag/rag-light.png';
-import ragDark from '@/assets/category/rag/rag-dark.png';
 import AppSection from '~@/components/AppSection.vue';
 import { useScreen } from '~@/composables/useScreen';
 import { useCommon } from '@/stores/common';
 import { storeToRefs } from 'pinia';
 import RagEcosystem from './RagEcosystem.vue';
-import { ragCases } from '@/data/rag';
+import aiCommonContent from '#content/ai/common';
+import ragContent from '#content/ai/rag';
+import BannerTabHeader from '~@/components/BannerTabHeader.vue';
+import { computed } from 'vue';
+import { useI18n } from '~@/i18n/index.js';
+import { useData } from 'vitepress';
 
-const { gtPadV, lePadV } = useScreen();
+const { isDark } = storeToRefs(useCommon());
+const { lePadV } = useScreen();
+const { lang } = useData();
+const isZh = computed(() => lang.value === 'zh');
+const i18n = useI18n();
 
-const { theme } = storeToRefs(useCommon());
+const aiCommonData = computed(() => (isZh.value ? aiCommonContent.zh : aiCommonContent.en));
+const ragData = computed(() => (isZh.value ? ragContent.zh : ragContent.en));
+
+const bannerData = computed(() => ({ subtitle: i18n.value.ai.description, img: isDark.value ? '/category/ai/banner-dark.png' : '/category/ai/banner.png' }));
 </script>
 
 <template>
-  <ClientOnly>
-    <BannerLevel2 v-if="gtPadV" :background-image="banner" title="RAG专区" subtitle="了解openGauss在RAG场景的技术生态和适配情况" />
-    <div v-else class="pad-banner">
-      <p>RAG专区</p>
-      <p class="pad-banner-subtitle">了解openGauss在RAG场景的技术生态和适配情况</p>
-    </div>
-  </ClientOnly>
+  <BannerTabHeader :banner-data="bannerData" :tabs-data="aiCommonData.tabs"></BannerTabHeader>
 
-  <AppSection title="RAG是什么">
+  <AppSection :title="ragData.what_is_rag.title">
     <div class="rag-introduce">
-      检索增强生成（Retrieval-Augmented
-      Generation，简称RAG），是一种将信息检索技术与大语言模型生成能力相结合的先进人工智能技术。它通过“先检索、再生成”的范式，显著提升了AI在问答、分析和创作任务中的准确性、时效性与可靠性。
+      {{ ragData.what_is_rag.description }}
     </div>
   </AppSection>
 
-  <AppSection title="RAG软件生态">
+  <AppSection :title="ragData.software_ecosystem.title">
     <ClientOnly>
       <template v-if="lePadV">
         <div class="rag-eco-phone">
-          <img :src="theme === 'dark' ? ragDark : rag" alt="RAG软件生态" style="width: var(--grid-content-width)" />
-          <p class="rag-eco-phone-tip">如需访问相关链接，请在PC端下查看</p>
+          <img :src="isDark ? ragData.software_ecosystem.image_dark : ragData.software_ecosystem.image_light" :alt="ragData.software_ecosystem.title" style="width: var(--o-r-grid-section-width)" />
+          <p class="rag-eco-phone-tip">{{ ragData.software_ecosystem.pc_only_tip }}</p>
         </div>
       </template>
       <RagEcosystem v-else />
     </ClientOnly>
   </AppSection>
 
-  <AppSection title="RAG典型案例">
+  <AppSection :title="ragData.use_cases.title">
     <div class="rag-cases-wrapper">
-      <a v-for="rag in ragCases" :key="rag.label" class="rag-case-item" :href="rag.href" target="_blank" rel="noopener noreferrer">
+      <a v-for="rag in ragData.use_cases.cases" :key="rag.label" class="rag-case-item" :href="rag.href" target="_blank" rel="noopener noreferrer">
         {{ rag.label }}
       </a>
     </div>

@@ -5,8 +5,8 @@ import OIcon from 'opendesign/icon/OIcon.vue';
 import { storeToRefs } from 'pinia';
 import { computed } from 'vue';
 
-defineProps<{
-  layout: [number, number] | [number];
+const props = defineProps<{
+  cols?: number;
   gap?: [number, number];
   data: {
     active?: boolean;
@@ -14,6 +14,17 @@ defineProps<{
     link?: string;
   }[];
 }>();
+
+const gridVars = computed(() => {
+  const style: Record<string, string | number> = {
+    '--cols': props.cols ?? props.data.length,
+  };
+  if (props.gap) {
+    style['--grid-gap'] = `${props.gap[1] ?? props.gap[0]}px`;
+    style.gap = `${props.gap[0]}px ${props.gap[1] ?? props.gap[0]}px`;
+  }
+  return style;
+});
 
 const { theme } = storeToRefs(useCommon());
 
@@ -34,22 +45,17 @@ const nonActiveColor = computed(() => {
 
 <template>
   <div
-    class="rag-eco-grid"
-    :style="{
-      display: 'grid',
-      'grid-template-columns': `repeat(${layout[1] ?? data.length}, 1fr)`,
-      'grid-template-rows': `repeat(${layout[0]}, 1fr)`,
-      width: '100%',
-    }"
+    class="components-grid"
+    :style="gridVars"
   >
     <template v-for="item in data" :key="item.name">
-      <a v-if="item.link" class="rag-eco-item link" :href="item.link" :style="{ 'background-color': item.active ? activeColor : nonActiveColor, 'border-radius': '4px' }">
+      <a v-if="item.link" class="grid-item link" :href="item.link" :target="item.link.startsWith('http') ? '_blank' : undefined" :rel="item.link.startsWith('http') ? 'noopener noreferrer' : 'noopener'" :style="{ 'background-color': item.active ? activeColor : nonActiveColor, 'border-radius': '4px' }">
         <span>{{ item.name }}</span>
         <OIcon style="font-size: 1.5em">
           <OIconChevronRight v-if="item.active" />
         </OIcon>
       </a>
-      <div v-else class="rag-eco-item" :style="{ 'background-color': item.active ? activeColor : nonActiveColor, 'border-radius': '4px' }">
+      <div v-else class="grid-item" :style="{ 'background-color': item.active ? activeColor : nonActiveColor, 'border-radius': '4px' }">
         <span>{{ item.name }}</span>
       </div>
     </template>
@@ -57,28 +63,32 @@ const nonActiveColor = computed(() => {
 </template>
 
 <style lang="scss" scoped>
-.rag-eco-grid {
-  row-gap: 12px;
-  column-gap: 12px;
+.components-grid {
+  --grid-gap: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--grid-gap);
+  width: 100%;
   @include respond-to('<=laptop') {
-    row-gap: 8px;
-    column-gap: 8px;
+    --grid-gap: 8px;
   };
 }
 
-.rag-eco-item {
+.grid-item {
   color: inherit;
   display: flex;
-  padding: 12px 0;
+  flex: 1 1 calc((100% - (var(--cols, 1) - 1) * var(--grid-gap) - 1px) / var(--cols, 1));
+  padding: 12px;
   justify-content: center;
   align-items: center;
+  white-space: nowrap;
   @include text1;
   @include respond-to('<=laptop') {
-    padding: 8px 0;
+    padding: 8px;
   };
 }
 
-.rag-eco-item.link {
+.grid-item.link {
   @include hover {  
     color: var(--o-color-primary2);
   }

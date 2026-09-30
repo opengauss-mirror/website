@@ -1,0 +1,18 @@
+# AI Zone shared data (English) — used by both Agent and RAG pages
+#
+# banner: top banner of the pages (background image is resolved by the component from public dir per theme)
+#   subtitle: banner subtitle
+banner:
+  subtitle: 'Explore openGauss AI ecosystem: Agent, RAG, and more'
+
+# tabs: zone switch tabs (Agent Zone / RAG Zone)
+#   title: tab title
+#   name: tab identifier (page slug, used to highlight the active tab)
+#   href: tab link
+tabs:
+  - title: Agent Zone
+    name: ai/agent
+    href: /en/ai/agent/
+  - title: RAG Zone
+    name: ai/rag
+    href: /en/ai/rag/

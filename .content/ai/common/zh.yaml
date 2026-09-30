@@ -1,0 +1,18 @@
+# AI 专区共享数据（中文）—— Agent / RAG 两个页面共用
+#
+# banner: 页面顶部 banner（背景图由组件从 public 目录按主题取用）
+#   subtitle: banner 副标题
+banner:
+  subtitle: 了解 openGauss 在 Agent、RAG 等 AI 场景的技术生态和适配情况
+
+# tabs: 专区切换 tab（Agent专区 / RAG专区）
+#   title: tab 标题
+#   name: tab 标识（对应页面 slug，用于高亮当前 tab）
+#   href: tab 链接
+tabs:
+  - title: Agent专区
+    name: ai/agent
+    href: /zh/ai/agent/
+  - title: RAG专区
+    name: ai/rag
+    href: /zh/ai/rag/

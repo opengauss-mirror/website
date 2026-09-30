@@ -133,4 +133,12 @@ export default [
     name: 'sig',
     lang: ['zh', 'en'],
   },
+  {
+    name: 'ai/agent',
+    lang: ['zh', 'en'],
+  },
+  {
+    name: 'ai/rag',
+    lang: ['zh', 'en'],
+  },
 ];

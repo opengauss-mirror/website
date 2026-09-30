@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { computed, CSSProperties, useSlots } from 'vue';
-
-const slots = useSlots();
+import { useData } from 'vitepress';
+import { computed, CSSProperties } from 'vue';
 
 const props = defineProps({
   backgroundImage: {
@@ -13,10 +12,6 @@ const props = defineProps({
     default: '',
   },
   backgroundColor: {
-    type: String,
-    default: '',
-  },
-  backgroundText: {
     type: String,
     default: '',
   },
@@ -34,6 +29,8 @@ const props = defineProps({
   },
 });
 
+const { description, frontmatter } = useData();
+
 const rootStyle = computed(() => {
   const result: CSSProperties = {};
   if (props.backgroundColor) {
@@ -41,6 +38,7 @@ const rootStyle = computed(() => {
   }
   return result;
 });
+
 </script>
 
 <template>
@@ -48,13 +46,13 @@ const rootStyle = computed(() => {
     <img :src="props.backgroundImage" class="banner-bg" :alt="imageAlt" />
     <div class="wrap">
       <div class="banner-text">
-        <h1 v-if="title" class="banner-title">{{ title }}</h1>
-        <p v-if="subtitle" class="banner-subtitle">
-          {{ subtitle }}
-        </p>
-        <div v-if="slots.default" class="banner-operation">
+        <h1 class="banner-title">{{ title || frontmatter.title }}</h1>
+        <div v-if="$slots.default" class="banner-operation">
           <slot></slot>
         </div>
+        <p v-else-if="subtitle || description" class="banner-subtitle">
+          {{ subtitle || description }}
+        </p>
       </div>
       <div v-if="illustration" class="banner-illustration">
         <img :src="illustration" alt="" />
