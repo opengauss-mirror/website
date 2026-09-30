@@ -7,6 +7,7 @@ declare module '#content/ogsp' {
 
   export interface OgspTableHeadersT {
     name: string;
+    level: string;
     version: string;
     award: string;
     expiration: string;
@@ -26,6 +27,7 @@ declare module '#content/ogsp' {
 
   export interface OgspItemT {
     name: string;
+    level: string;
     version: string;
     award: string;
     expiration: string;

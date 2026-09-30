@@ -16,7 +16,7 @@
 |------|------|------|
 | `banner` | 对象 | 页面顶部 banner（标题、背景图、插图） |
 | `search_placeholder` | 字符串 | 搜索框占位文本 |
-| `table_headers` | 对象 | 表格列标题（name、version、award、expiration、patch、content、system、commitment、experience、certificate） |
+| `table_headers` | 对象 | 表格列标题（name、level、version、award、expiration、patch、content、system、commitment、experience、certificate） |
 | `certify` | 字符串 | 下载证书按钮文本 |
 | `tips` | 对象 | 底部提示文案（前半段文本、链接文本、链接地址） |
 | `certifications` | 数组 | 认证列表数据 |
@@ -28,6 +28,7 @@
 - 图片就近存放到 `images/` 子目录，`zh.yaml` 和 `en.yaml` 共用同一张图
 - 认证列表中公司名、证书编号、日期、证书 URL 与语言无关，`zh.yaml` 和 `en.yaml` 中相同
 - 评分文本（优/良/中 ↔ Excellent/Good/Fair）按语言区分
+- 级别值（优选级/认证级 ↔ Premium/Certified）按语言区分
 - 不存布局参数（分页 pageSize、pageSizes 等保留在组件内）
 
 ## 消费方式
@@ -55,6 +56,7 @@ const ogspData = computed(() => (lang.value === 'zh' ? ogspContent.zh : ogspCont
 | 字段 | 必填 | 说明 |
 |------|------|------|
 | name | 是 | 公司名称列标题 |
+| level | 是 | 级别列标题（优选级/认证级 ↔ Premium/Certified） |
 | version | 是 | 证书编号列标题 |
 | award | 是 | 颁发日期列标题 |
 | expiration | 是 | 有效截止日期列标题 |
@@ -78,6 +80,7 @@ const ogspData = computed(() => (lang.value === 'zh' ? ogspContent.zh : ogspCont
 | 字段 | 必填 | 说明 |
 |------|------|------|
 | name | 是 | 公司名称 |
+| level | 是 | 认证级别（优选级/认证级 ↔ Premium/Certified） |
 | version | 是 | 证书编号 |
 | award | 是 | 颁发日期（YYYY-MM-DD） |
 | expiration | 是 | 有效截止日期（YYYY-MM-DD） |

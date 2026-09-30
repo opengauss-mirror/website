@@ -48,7 +48,7 @@
       "@id": "https://opengauss.org/zh/ogsp/#certification-list",
       "name": "openGauss服务商认证公司名录",
       "description": "已通过openGauss服务商认证的公司列表，包含认证证书、颁发日期、服务能力评级等信息。",
-      "numberOfItems": 20,
+      "numberOfItems": 6,
       "provider": {
         "@id": "https://opengauss.org/#organization"
       }

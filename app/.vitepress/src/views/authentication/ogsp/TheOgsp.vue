@@ -79,6 +79,7 @@ onMounted(() => {
     </div>
     <OTable class="list-pc" :data="randerTableData" style="width: 100%">
       <OTableColumn :label="ogspData.table_headers.name" show-overflow-tooltip prop="name" min-width="200"></OTableColumn>
+      <OTableColumn :label="ogspData.table_headers.level" prop="level" align="center" min-width="100"></OTableColumn>
       <OTableColumn :label="ogspData.table_headers.version" show-overflow-tooltip prop="version" min-width="115"></OTableColumn>
       <OTableColumn :label="ogspData.table_headers.award" show-overflow-tooltip prop="award" min-width="115"></OTableColumn>
       <OTableColumn :label="ogspData.table_headers.expiration" show-overflow-tooltip prop="expiration" min-width="115"></OTableColumn>
@@ -98,6 +99,9 @@ onMounted(() => {
         <ul>
           <li>
             <span>{{ ogspData.table_headers.name }}:</span><span>{{ item.name }}</span>
+          </li>
+          <li>
+            <span>{{ ogspData.table_headers.level }}:</span><span>{{ item.level }}</span>
           </li>
           <li>
             <span>{{ ogspData.table_headers.version }}:</span><span>{{ item.version }}</span>
@@ -210,7 +214,7 @@ onMounted(() => {
     & li {
       margin-bottom: var(--e-spacing-h8);
     }
-    li:nth-child(4) {
+    li:nth-child(5) {
       display: flex;
       span {
         min-width: 52px;
