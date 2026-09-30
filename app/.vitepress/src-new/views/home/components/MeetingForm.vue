@@ -622,6 +622,9 @@ watch(
       }
     }
   }
+  :deep(.o-checkbox.checkbox-doc-usage) {
+    align-items: flex-start;
+  }
   .el-date-editor {
     width: 320px;
     @include respond-to('phone') {
