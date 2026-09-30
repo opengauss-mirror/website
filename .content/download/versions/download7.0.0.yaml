@@ -672,20 +672,20 @@
   os: openEuler 24.03 LTS
   system: openEuler 24.03 LTS (aarch64)
 - category: oGRAC Connectors
-  name: ODBC_7.0.0
-  size: 4.45MB
-  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0/openEuler24.03/x86/oGRAC-ODBC-7.0.0-openEuler24.03-x86_64.tar.gz
-  sha_code: d078f8323f1d955d1afe86529f0de29638656f8b3cc81bff288b70ca87e77afe
+  name: JDBC_7.0.0
+  size: 2.15MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0/CentOS7/x86/oGRAC-JDBC-7.0.0.tar.gz
+  sha_code: d170c1cf05c45766412db856b0f26757952e257c7c10a841869221d9850bc92e
   docs_name: ""
   docs_url: ""
   architecture: x86_64
   os: openEuler 24.03 LTS
   system: openEuler 24.03 LTS (x86_64)
 - category: oGRAC Connectors
-  name: JDBC_7.0.0
-  size: 2.15MB
-  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0/CentOS7/x86/oGRAC-JDBC-7.0.0.tar.gz
-  sha_code: d170c1cf05c45766412db856b0f26757952e257c7c10a841869221d9850bc92e
+  name: ODBC_7.0.0
+  size: 4.45MB
+  down_url: https://opengauss.obs.cn-south-1.myhuaweicloud.com/7.0.0/openEuler24.03/x86/oGRAC-ODBC-7.0.0-openEuler24.03-x86_64.tar.gz
+  sha_code: d078f8323f1d955d1afe86529f0de29638656f8b3cc81bff288b70ca87e77afe
   docs_name: ""
   docs_url: ""
   architecture: x86_64
