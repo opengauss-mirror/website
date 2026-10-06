@@ -4,6 +4,11 @@
 @use './input.scss' as *;
 @use './popper.scss' as *;
 
+[data-o-theme='g.light'] div.is-dark {
+  --el-popper-bg-color-dark: var(--el-color-white);
+  --el-bg-color: var(--el-text-color-primary);
+}
+
 [data-o-theme='g.dark'] div.is-dark {
   --el-bg-color-overlay: #1d1e1f;
   --el-border-color-light: #414243;
@@ -11,6 +16,7 @@
   --el-disabled-border-color: #414243;
   --el-text-color-regular: #cfd3dc;
   --el-text-color-primary: #1d1e1f;
+  --el-bg-color: var(--el-color-white);
   --el-fill-color-light: #262727;
   --el-fill-color-lighter: #1d1d1d;
 
