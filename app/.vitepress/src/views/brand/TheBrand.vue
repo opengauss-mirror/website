@@ -23,7 +23,7 @@ const pptList = computed(() => (isZh.value ? BrandConfig.pptList.zh : BrandConfi
   <BannerLevel2 :background-image="banner" :title="i18n.brand.BRAND" :illustration="illustration" />
   <AppContent class="brand">
     <div class="brand-all-word">
-      <h3 class="brand-title">{{ i18n.brand.MOBILETITLE }}</h3>
+      <h2 class="brand-title">{{ i18n.brand.MOBILETITLE }}</h2>
       <div class="brand-word">
         {{ i18n.brand.WORDS }}
         <p>
@@ -31,32 +31,36 @@ const pptList = computed(() => (isZh.value ? BrandConfig.pptList.zh : BrandConfi
         </p>
       </div>
     </div>
-    <div class="brand-list">
-      <OCard v-for="item in BrandConfig.brandList" :key="item.url" class="brand-item" shadow="hover">
-        <div class="brand-item-img">
-          <img :style="{ backgroundColor: item.backgroundColor }" :src="item.url" alt="openGauss logo preview" />
-        </div>
-        <div class="button-group">
-          <a v-for="item2 in item.downloadContent" :key="item2.url" :href="item2.url" target="_blank" rel="noopener noreferrer" download>
-            <OButton size="mini" class="button-item">{{ item2.type }} </OButton>
-          </a>
-        </div>
-      </OCard>
-    </div>
-
-    <div class="brand-ppt">
-      <h3>{{ i18n.brand.PPT_TEXT }}</h3>
-      <div class="ppt-list">
-        <OCard v-for="ppt in pptList" :key="ppt.url" shadow="hover" class="ppt-item" :style="{ padding: '0px' }">
-          <a :href="ppt.file" target="_blank" rel="noopener noreferrer" download>
-            <img :src="ppt.url" alt="" />
-          </a>
-          <div class="ppt-word">
-            <p>{{ ppt.text }}</p>
-            <OButton download :href="ppt.file" variant="outline" color="primary">{{ i18n.common.COMMON_CONFIG.DOWNLOAD }}</OButton>
+    <ul class="brand-list">
+      <li v-for="item in BrandConfig.brandList" :key="item.url">
+        <OCard class="brand-item" shadow="hover">
+          <div class="brand-item-img">
+            <img :style="{ backgroundColor: item.backgroundColor }" :src="item.url" alt="openGauss logo preview" />
+          </div>
+          <div class="button-group">
+            <a v-for="item2 in item.downloadContent" :key="item2.url" :href="item2.url" target="_blank" rel="noopener noreferrer" download>
+              <OButton size="small" class="button-item">{{ item2.type }} </OButton>
+            </a>
           </div>
         </OCard>
-      </div>
+      </li>
+    </ul>
+
+    <div class="brand-ppt">
+      <h2>{{ i18n.brand.PPT_TEXT }}</h2>
+      <ul class="ppt-list">
+        <li v-for="ppt in pptList" :key="ppt.url">
+          <OCard shadow="hover" class="ppt-item" :style="{ padding: '0px' }">
+            <a :href="ppt.file" target="_blank" rel="noopener noreferrer" download>
+              <img :src="ppt.url" alt="" />
+            </a>
+            <div class="ppt-word">
+              <p>{{ ppt.text }}</p>
+              <OButton download :href="ppt.file" variant="outline" color="primary">{{ i18n.common.COMMON_CONFIG.DOWNLOAD }}</OButton>
+            </div>
+          </OCard>
+        </li>
+      </ul>
     </div>
   </AppContent>
 </template>
@@ -187,7 +191,7 @@ const pptList = computed(() => (isZh.value ? BrandConfig.pptList.zh : BrandConfi
     margin-top: var(--e-spacing-h1);
     width: 100%;
 
-    h3 {
+    h2 {
       font-size: var(--e-font-size-h3);
       color: var(--e-color-text1);
       line-height: var(--e-line-height-h3);

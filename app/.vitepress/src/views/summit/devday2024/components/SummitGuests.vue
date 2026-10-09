@@ -15,8 +15,8 @@ defineProps({
 <template>
   <div class="summit-guests">
     <p class="title">{{ title }}</p>
-    <div class="lecturer-list">
-      <div v-for="item in lecturerList" :key="item.name" class="lecturer-list-item">
+    <ul class="lecturer-list">
+      <li v-for="item in lecturerList" :key="item.name" class="lecturer-list-item">
         <slot name="img">
           <div>
             <img :src="item.img" :alt="item.name" />
@@ -30,8 +30,8 @@ defineProps({
             <p>{{ titleItem }}</p>
           </div>
         </slot>
-      </div>
-    </div>
+      </li>
+    </ul>
   </div>
 </template>
 

@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 
 import AppContent from '@/components/AppContent.vue';
+import AppHiddenPageTitle from '~@/components/AppHiddenPageTitle.vue';
 import SummitSchedule from './components/SummitSchedule.vue';
 import SummitGuests from './components/SummitGuests.vue';
 import LinkPanel from './components/LinkPanel.vue';
@@ -21,6 +22,7 @@ const otherTabType = ref(0);
 </script>
 
 <template>
+  <AppHiddenPageTitle />
   <div class="summit-banner">
     <img class="banner-img pc" :src="banner" alt="" />
     <img class="banner-img mo" :src="banner_mo" alt="" />
@@ -36,20 +38,20 @@ const otherTabType = ref(0);
       <p class="text">{{ summitData.desc[0] }}</p>
       <p class="text">{{ summitData.desc[1] }}</p>
     </div>
-    <h3 class="title-bar">{{ summitData.titleBar[1] }}</h3>
+    <h2 class="title-bar">{{ summitData.titleBar[1] }}</h2>
     <div class="offline-panel">
-      <h4 class="meeting-title">{{ summitData.offline.daytime }}</h4>
-      <div class="agenda-list">
-        <div v-for="item in summitData.offline.list" :key="item.time" class="agenda-item">
+      <h3 class="meeting-title">{{ summitData.offline.daytime }}</h3>
+      <ul class="agenda-list">
+        <li v-for="item in summitData.offline.list" :key="item.time" class="agenda-item">
           <span class="time"><IconTime />{{ item.time }}</span>
           <div class="info">
             <span v-for="sub in item.option" :key="sub" class="inline">{{ sub }}</span>
           </div>
-        </div>
-      </div>
+        </li>
+      </ul>
     </div>
     <div class="online-panel">
-      <h4 class="meeting-title">{{ summitData.online.daytime }}</h4>
+      <h3 class="meeting-title">{{ summitData.online.daytime }}</h3>
       <OTabs v-model="tabType" class="schedule-tabs">
         <el-tab-pane v-for="item in summitData.online.list" :key="item.id" :name="item.id">
           <template #label>
@@ -74,7 +76,7 @@ const otherTabType = ref(0);
         </div>
         <div class="schedule-item" :class="{ isShow: tabType === 'sig' }">
           <div class="sig-box">
-            <h3>{{ summitData.online.list[2].name }}</h3>
+            <h2>{{ summitData.online.list[2].name }}</h2>
             <a class="link" :href="summitData.online.list[2].path" target="_blank" rel="noopener noreferrer">
               {{ summitData.online.list[2].desc }}
               <IconArrowRight />
@@ -93,29 +95,29 @@ const otherTabType = ref(0);
         </div>
       </OContainer>
     </div>
-    <h3 class="title-bar">{{ summitData.titleBar[2] }}</h3>
+    <h2 class="title-bar">{{ summitData.titleBar[2] }}</h2>
     <SummitGuests :lecturer-list="summitData.guestsList" shape="circle" :web-columns-num="4" :mobile-columns-num="2" />
     <div class="summit-partners">
-      <h3 class="title-bar">{{ summitData.titleBar[3] }}</h3>
-      <h4 class="meeting-title">
+      <h2 class="title-bar">{{ summitData.titleBar[3] }}</h2>
+      <h3 class="meeting-title">
         {{ summitData.partnersList.title[0] }}
-      </h4>
+      </h3>
       <LinkPanel :link-list="summitData.partnersList.p1" :islink="false" class="one" />
-      <h4 class="meeting-title">
+      <h3 class="meeting-title">
         {{ summitData.partnersList.title[1] }}
-      </h4>
+      </h3>
       <LinkPanel :link-list="summitData.partnersList.p2" :islink="false" class="one" />
-      <h4 class="meeting-title">
+      <h3 class="meeting-title">
         {{ summitData.partnersList.title[2] }}
-      </h4>
+      </h3>
       <LinkPanel :link-list="summitData.partnersList.p3" :islink="false" />
-      <h4 class="meeting-title">
+      <h3 class="meeting-title">
         {{ summitData.partnersList.title[3] }}
-      </h4>
+      </h3>
       <LinkPanel :link-list="summitData.partnersList.p4" :islink="false" />
     </div>
     <div class="previous">
-      <h4 class="meeting-title">{{ summitData.titleBar[4] }}</h4>
+      <h3 class="meeting-title">{{ summitData.titleBar[4] }}</h3>
       <a v-for="item in summitData.previous" :key="item.link" :href="item.link" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
     </div>
   </AppContent>
@@ -416,7 +418,7 @@ const otherTabType = ref(0);
 .sig-box {
   text-align: center;
   margin: 12px 0 24px;
-  h3 {
+  h2 {
     font-size: var(--e-font-size-h7);
     line-height: var(--e-line-height-h7);
     color: var(--e-color-text1);

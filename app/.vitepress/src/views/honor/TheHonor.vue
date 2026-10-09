@@ -103,14 +103,14 @@ const getCertificateBoxGridTemplateColumns = (length: number, isMobile: boolean)
           <template v-if="activeYear === item.id">
             <!-- openGauss 年度优秀开发者 -->
             <div v-if="item.developer_data">
-              <h1 class="honor-title">
+              <h2 class="honor-title">
                 {{ honorData.excellent_developer_title }}
-              </h1>
+              </h2>
               <div class="developer-wrap">
                 <div class="developer-card" v-for="(devItem, idx) in item.developer_data" :key="idx">
-                  <h2 v-if="devItem.name" class="developer-title">
+                  <h3 v-if="devItem.name" class="developer-title">
                     {{ devItem.name }}
-                  </h2>
+                  </h3>
                   <ul class="member-list">
                     <li v-for="(user, i) in devItem.members" :key="i">
                       <img class="avatar" :src="user.avatar" :alt="user.name" />
@@ -135,12 +135,12 @@ const getCertificateBoxGridTemplateColumns = (length: number, isMobile: boolean)
 
             <!-- openGauss 年度优秀SIG -->
             <div v-if="item.sig_data">
-              <h1 class="honor-title" :class="item.id === '2022' ? 'common-title-2022' : 'common-title'">
+              <h2 class="honor-title" :class="item.id === '2022' ? 'common-title-2022' : 'common-title'">
                 {{ honorData.excellent_sig_title }}
-              </h1>
+              </h2>
               <div class="sig-wrap">
                 <div v-for="sig in item.sig_data" :key="sig.name" class="sig-card">
-                  <h1 class="sig-title" :title="sig.name">{{ sig.name }}</h1>
+                  <p class="sig-title" :title="sig.name">{{ sig.name }}</p>
                   <OButton class="repo-detail-btn" type="text" animation size="nomral" @click="clickBtn(sig.href)">
                     项目地址
                     <template #suffixIcon>
@@ -161,9 +161,9 @@ const getCertificateBoxGridTemplateColumns = (length: number, isMobile: boolean)
 
             <!-- openGauss 优秀企业贡献奖 -->
             <div v-if="item.enterprise_data">
-              <h1 class="honor-title common-title">
+              <h2 class="honor-title common-title">
                 {{ item.excellent_enterprise_title }}
-              </h1>
+              </h2>
               <div class="enterprise-wrap">
                 <div v-for="enterprise in item.enterprise_data" :key="enterprise.first_name + enterprise.second_name" class="enterprise-card">
                   <img class="gauss-icon" :src="opengaussIcon" alt="" />
@@ -196,9 +196,9 @@ const getCertificateBoxGridTemplateColumns = (length: number, isMobile: boolean)
 
             <!-- openGauss 优秀个人贡献奖 -->
             <div v-if="item.person_data">
-              <h1 class="honor-title common-title">
+              <h2 class="honor-title common-title">
                 {{ item.excellent_person_title }}
-              </h1>
+              </h2>
               <div class="person-wrap">
                 <div v-for="(person, i) in item.person_data" :key="i" class="person-card" @mouseenter="showPersonCard(i)" @mouseleave="showPersonCard(-1)">
                   <div>

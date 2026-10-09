@@ -12,8 +12,8 @@ const screenWidth = useWindowResize();
 </script>
 
 <template>
+  <BannerLevel2 :background-image="Banner" :title="i18n.knowledge.title" :illustration="illustration" />
   <ClientOnly>
-    <BannerLevel2 :background-image="Banner" :title="i18n.knowledge.title" :illustration="illustration" />
     <AppContent>
       <div v-if="screenWidth > 768" class="knowledge-pc">
         <div v-for="(item, index) in i18n.knowledge.module" :key="item.name" class="module-item">

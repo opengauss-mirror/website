@@ -1,4 +1,5 @@
 export default {
+  homePageTitle: 'Welcome to openGauss Community',
   openGaussFeatures: 'openGauss features',
   HOME_MEETING: 'Community Meeting',
   CHARACTERR_INFO: {

@@ -10,13 +10,11 @@ import banner from '@/assets/illustrations/banner-secondary.png';
 import illustration from '@/assets/illustrations/contribution.png';
 </script>
 
-<ClientOnly>
-  <BannerLevel2
-    :background-image="banner"
-    title="社区贡献"
-    :illustration="illustration"
+<BannerLevel2
+  :background-image="banner"
+  title="社区贡献"
+  :illustration="illustration"
 />
-</ClientOnly>
 <ContributionTab />
 <div class='contribution-markdown '>
 <div class='markdown '>

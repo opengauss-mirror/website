@@ -79,7 +79,7 @@ const expirationState = computed(() => {
       >
         <div>
           <div class="title-box">
-            <span class="title">{{ frontmatter?.title }}</span>
+            <h1 class="title">{{ frontmatter?.title }}</h1>
             <ClientOnly>
               <OTag v-if="expirationState" class="type-tag" :class="{ 'tag-completed': expirationState === 1 }">
                 <span class="tag-text">

@@ -94,10 +94,10 @@ const planImg = computed(() => (isLight.value ? (isMobile.value ? meetupImgMo : 
         {{ i18n.meetup.desc }}
       </p>
       <div class="meetup-plan">
-        <h3>{{ i18n.meetup.plan.title }}</h3>
+        <h2>{{ i18n.meetup.plan.title }}</h2>
         <p class="desc">{{ i18n.meetup.plan.desc }}</p>
         <div class="apply">
-          <h4>{{ i18n.meetup.plan.applyTitle }}</h4>
+          <h3>{{ i18n.meetup.plan.applyTitle }}</h3>
           <div class="apply-box">
             <div v-for="(item, index) in applyList" :key="item.name" class="apply-item" :class="'step' + (index + 1)">
               <img :src="isLight ? item.img : item.imgDark" class="icon" alt="" />
@@ -116,7 +116,7 @@ const planImg = computed(() => (isLight.value ? (isMobile.value ? meetupImgMo : 
         </div>
       </div>
       <div class="meetup-plan">
-        <h3>{{ i18n.meetup.reviewTitle }}</h3>
+        <h2>{{ i18n.meetup.reviewTitle }}</h2>
         <img :src="planImg" class="img" alt="" />
       </div>
     </AppContent>
@@ -151,7 +151,7 @@ const planImg = computed(() => (isLight.value ? (isMobile.value ? meetupImgMo : 
     margin-top: 24px;
     max-width: 100%;
   }
-  h3 {
+  h2 {
     font-size: var(--e-font-size-h7);
     line-height: var(--e-line-height-h7);
     color: var(--e-color-text1);
@@ -169,7 +169,7 @@ const planImg = computed(() => (isLight.value ? (isMobile.value ? meetupImgMo : 
   .apply {
     border-top: 1px solid var(--e-color-border2);
     margin: 24px 0 0;
-    h4 {
+    h3 {
       font-size: var(--e-font-size-h7);
       line-height: var(--e-line-height-h7);
       color: var(--e-color-text1);

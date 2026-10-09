@@ -16,11 +16,11 @@ defineProps({
 <template>
   <div class="summit-partner">
     <div class="title-box">
-      <p class="title">{{ partnerData.title }}</p>
+      <h2 class="title">{{ partnerData.title }}</h2>
     </div>
     <div class="partner">
       <div v-for="item in partnerData.content" :key="item.title" class="content-item">
-        <h4 class="item-title">{{ item.title }}</h4>
+        <h2 class="item-title">{{ item.title }}</h2>
         <div class="item-name">
           <p class="item-name-text" v-for="itemName in item.name.split('\n')" :key="itemName">
             {{ itemName }}

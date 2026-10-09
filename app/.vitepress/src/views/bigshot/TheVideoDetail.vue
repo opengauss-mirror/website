@@ -7,6 +7,7 @@ import BigShotData from '@/data/bigshot';
 
 import BreadCrumbs from '@/components/BreadCrumbs.vue';
 import AppContent from '@/components/AppContent.vue';
+import AppHiddenPageTitle from '~@/components/AppHiddenPageTitle.vue';
 
 const i18n = useI18n();
 const router = useRouter();
@@ -78,13 +79,13 @@ watch(
   <AppContent>
     <BreadCrumbs :bread1="i18n.bigshot.title" :bread2="chapterInfo.name" :link1="`/${lang}/bigshot-voice/`" />
     <div class="page-tile">
-      <h2>{{ chapterInfo.name }}</h2>
+      <h1 v-if="chapterInfo.name">{{ chapterInfo.name }}</h1>
       <span class="num">{{ i18n.connect.VIDEO_TEXT1 }}{{ paramTotal }}{{ i18n.connect.VIDEO_TEXT }}</span>
     </div>
     <div class="video-content">
       <p class="text">{{ i18n.connect.LIST }}</p>
       <div class="info">
-        <h3 class="title">{{ currentNode.title }}</h3>
+        <h2 v-if="currentNode.title" class="title">{{ currentNode.title }}</h2>
         <p class="date">{{ currentNode.date }}</p>
       </div>
       <div class="video-detail">

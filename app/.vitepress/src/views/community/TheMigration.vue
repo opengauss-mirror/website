@@ -43,14 +43,14 @@ const closeVideo = () => {
   <AppContent class="migration">
     <!-- 迁移优势 -->
     <div class="advantage-panel">
-      <h1 class="title">{{ data.advantage.title }}</h1>
+      <h2 class="title">{{ data.advantage.title }}</h2>
       <div class="advantage-card-wrap">
         <div v-for="(item, i) in data.advantage.list" :key="i" class="advantage-card">
           <OIcon class="card-icon">
             <component :is="item.icon"> </component>
           </OIcon>
           <div>
-            <h2 class="card-title">{{ item.title }}</h2>
+            <h3 class="card-title">{{ item.title }}</h3>
             <p class="card-desc">{{ item.desc }}</p>
           </div>
         </div>
@@ -59,8 +59,8 @@ const closeVideo = () => {
 
     <!-- 迁移流程 -->
     <div class="step-panel">
-      <h1 class="title">{{ data.step.title }}</h1>
-      <h2 class="sub-title">{{ data.step.subTitle }}</h2>
+      <h2 class="title">{{ data.step.title }}</h2>
+      <p class="sub-title">{{ data.step.subTitle }}</p>
 
       <div v-if="!isMobile" class="step-content-container">
         <!-- tab -->
@@ -206,7 +206,7 @@ const closeVideo = () => {
 
     <!-- 视频演示 -->
     <div class="video-panel">
-      <h1 class="title">{{ data.video.title }}</h1>
+      <h2 class="title">{{ data.video.title }}</h2>
       <div class="video-card-wrap">
         <div v-for="item in data.video.list" :key="item.title" class="video-card">
           <div class="video-card-left">
@@ -229,7 +229,7 @@ const closeVideo = () => {
 
     <!-- 最佳实践 -->
     <div class="practice-panel">
-      <h1 class="title">{{ data.practice.title }}</h1>
+      <h2 class="title">{{ data.practice.title }}</h2>
       <div class="practice-card-wrap">
         <OCard
           v-for="item in data.practice.list"
@@ -239,7 +239,7 @@ const closeVideo = () => {
           :style="`background:url(${imgPracticeCardBg}) no-repeat center/cover`"
         >
           <div class="case-card-box-left">
-            <h4 class="case-card-box-left-title">{{ item.title }}</h4>
+            <h3 class="case-card-box-left-title">{{ item.title }}</h3>
             <p class="case-card-box-left-detail">{{ item.desc }}</p>
             <!-- <a :href="item.caseHref" target="_blank" rel="noopener noreferrer">
               <OButton animation size="mini" class="more-btn" type="primary">
@@ -267,7 +267,7 @@ const closeVideo = () => {
 
     <!-- 专区互动 -->
     <div class="interactive-panel">
-      <h1 class="title">{{ data.interactive.title }}</h1>
+      <h2 class="title">{{ data.interactive.title }}</h2>
       <div class="interactive-card-wrap">
         <div v-for="item in data.interactive.list" :key="item.title" class="interactive-card">
           <div class="interactive-card-left">
@@ -293,8 +293,8 @@ const closeVideo = () => {
 
   <!-- 工具下载 -->
   <div class="tool-download">
-    <h1 class="tool-download-title">{{ data.dowload.title }}</h1>
-    <h2 class="tool-download-desc">{{ data.dowload.desc }}</h2>
+    <h2 class="tool-download-title">{{ data.dowload.title }}</h2>
+    <p class="tool-download-desc">{{ data.dowload.desc }}</p>
     <a :href="data.dowload.href" target="_blank" rel="noopener noreferrer">
       <OButton type="primary" size="mini" animation class="download-btn">
         {{ data.dowload.btnText }}

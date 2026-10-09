@@ -2,6 +2,7 @@
 import { computed, ref, onMounted } from 'vue';
 
 import AppContent from '@/components/AppContent.vue';
+import AppHiddenPageTitle from '~@/components/AppHiddenPageTitle.vue';
 import SummitBanner from './components/SummitBanner.vue';
 import SummitSchedule from './components/SummitSchedule.vue';
 import SummitGuests from './components/SummitGuests.vue';
@@ -64,6 +65,7 @@ onMounted(() => {
 </script>
 <template>
   <div class="summit-2023">
+    <AppHiddenPageTitle />
     <SummitBanner />
 
     <AppContent :mobile-top="40">
@@ -71,11 +73,11 @@ onMounted(() => {
         <p v-for="item in summitData.details" :key="item">{{ item }}</p>
       </div>
       <div class="summit-live">
-        <h3>{{ summitData.live.title }}</h3>
+        <h2>{{ summitData.live.title }}</h2>
         <SummitLive :live-data="summitData.live.liveData" class-name="live-btn2"></SummitLive>
       </div>
       <div class="summit-agenda">
-        <h3>会议日程</h3>
+        <h2>会议日程</h2>
         <div class="date">
           <div v-for="(item, index) in dateList" :key="item.day" class="date-item" :class="{ active: showIndex === index }" @click="setShowIndex(index)">
             <p class="date-day">{{ item.day }}</p>
@@ -101,12 +103,12 @@ onMounted(() => {
         </div>
       </div>
       <div class="summit-guest">
-        <h3 class="guest-title">
+        <h2 class="guest-title">
           {{ summitData.guests.title }}
-        </h3>
-        <h4>
+        </h2>
+        <h3>
           {{ summitData.guests.guestListMain.title }}
-        </h4>
+        </h3>
         <SummitGuests
           :lecturer-list="summitData.guests.guestListMain.guestList"
           shape="circle"
@@ -114,13 +116,13 @@ onMounted(() => {
           :mobile-columns-num="2"
           class="prime-forum"
         />
-        <h4>
+        <h3>
           {{ summitData.guests.guestListSub1.title }}
-        </h4>
+        </h3>
         <SummitGuests :lecturer-list="summitData.guests.guestListSub1.guestList" shape="circle" :web-columns-num="4" :mobile-columns-num="2" />
-        <h4>
+        <h3>
           {{ summitData.guests.guestListSub2.title }}
-        </h4>
+        </h3>
         <SummitGuests
           :lecturer-list="summitData.guests.guestListSub2.guestList"
           shape="circle"
@@ -128,13 +130,13 @@ onMounted(() => {
           :mobile-columns-num="2"
           class="last-forum"
         />
-        <h4>
+        <h3>
           {{ summitData.guests.guestListSub3.title }}
-        </h4>
+        </h3>
         <SummitGuests :lecturer-list="summitData.guests.guestListSub3.guestList" shape="circle" :web-columns-num="4" :mobile-columns-num="2" />
-        <h4>
+        <h3>
           {{ summitData.guests.guestListSub4.title }}
-        </h4>
+        </h3>
         <SummitGuests
           :lecturer-list="summitData.guests.guestListSub4.guestList"
           shape="circle"
@@ -144,14 +146,14 @@ onMounted(() => {
         />
       </div>
       <div class="summit-partner">
-        <h3 class="partner-title">
+        <h2 class="partner-title">
           {{ summitData.partner.title }}
-        </h3>
+        </h2>
         <SummitPartner class="partner-content" :partner-data="summitData.partner.content" />
       </div>
       <div class="summit-previous">
         <div class="previous-title">
-          <h3>{{ summitData.previous.title }}</h3>
+          <h2>{{ summitData.previous.title }}</h2>
           <img :src="liveImg" alt="live" />
         </div>
         <div class="link-box">
@@ -204,7 +206,7 @@ onMounted(() => {
 }
 .summit-live {
   @include floor-box();
-  h3 {
+  h2 {
     @include floor-title();
   }
   .live-room {
@@ -213,7 +215,7 @@ onMounted(() => {
 }
 .summit-agenda {
   @include floor-box();
-  h3 {
+  h2 {
     @include floor-title();
   }
   .date {
@@ -320,10 +322,10 @@ onMounted(() => {
 }
 .summit-guest {
   @include floor-box();
-  h3 {
+  h2 {
     @include floor-title();
   }
-  h4 {
+  h3 {
     margin-top: 20px;
     font-size: var(--e-font-size-h5);
     line-height: var(--e-line-height-h5);
@@ -359,7 +361,7 @@ onMounted(() => {
   @include floor-box();
   .previous-title {
     display: flex;
-    h3 {
+    h2 {
       font-size: 26px;
       line-height: 30px;
       color: var(--e-color-text1);

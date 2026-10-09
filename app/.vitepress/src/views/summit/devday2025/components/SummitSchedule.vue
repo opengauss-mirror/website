@@ -52,8 +52,8 @@ const onButtonClick = (href: string) => {
             </span>
           </div>
         </div>
-        <div v-if="subItem.list?.length" class="schedule-list">
-          <div v-for="item in subItem.list" :key="item.title" class="item-list">
+        <ul v-if="subItem.list?.length" class="schedule-list">
+          <li v-for="item in subItem.list" :key="item.title" class="item-list">
             <div class="item-left">
               <p class="item-title">{{ item.title }}</p>
               <p class="item-desc">{{ item.desc }}</p>
@@ -61,8 +61,8 @@ const onButtonClick = (href: string) => {
             <OButton type="outline" size="small" class="item-btn" @click="onButtonClick(item.href)">
               {{ item.text }}
             </OButton>
-          </div>
-        </div>
+          </li>
+        </ul>
       </div>
     </div>
   </div>

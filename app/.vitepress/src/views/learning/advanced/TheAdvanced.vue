@@ -42,11 +42,11 @@ function changeShowIndex(index: number) {
           <div v-for="(item, index) in i18n.advanced.modules" :key="index" class="body-item">
             <div v-if="showIndex === index">
               <div v-for="itemType in item.itemList" :key="itemType.name" class="item-list">
-                <h4>{{ itemType.name }}</h4>
+                <h3>{{ itemType.name }}</h3>
                 <p>{{ itemType.desc }}</p>
                 <div class="material lable-name1">
                   <div v-if="itemType.docsList" class="material-item">
-                    <h5>{{ i18n.advanced.type_docs_label }}</h5>
+                    <h4>{{ i18n.advanced.type_docs_label }}</h4>
                     <div class="link-box lable-name1">
                       <a v-for="itemLink in itemType.docsList" :key="itemLink.link" :href="itemLink.link" target="_blank" rel="noopener noreferrer">{{
                         itemLink.name
@@ -54,7 +54,7 @@ function changeShowIndex(index: number) {
                     </div>
                   </div>
                   <div v-if="itemType.videoList" class="material-item">
-                    <h5>{{ i18n.advanced.type_video_label }}</h5>
+                    <h4>{{ i18n.advanced.type_video_label }}</h4>
                     <div class="link-box lable-name2">
                       <a v-for="itemLink in itemType.videoList" :key="itemLink.link" :href="itemLink.link" target="_blank" rel="noopener noreferrer">{{
                         itemLink.name
@@ -62,7 +62,7 @@ function changeShowIndex(index: number) {
                     </div>
                   </div>
                   <div v-if="itemType.optionList" class="material-item">
-                    <h5>{{ i18n.advanced.type_practice_label }}</h5>
+                    <h4>{{ i18n.advanced.type_practice_label }}</h4>
                     <div class="link-box lable-name3">
                       <a v-for="itemLink in itemType.optionList" :key="itemLink.link" :href="itemLink.link" target="_blank" rel="noopener noreferrer">{{
                         itemLink.name
@@ -87,7 +87,7 @@ function changeShowIndex(index: number) {
                 <p class="detail">{{ itemType.desc }}</p>
                 <div class="material">
                   <div v-if="itemType.docsList" class="material-item">
-                    <h5>{{ i18n.advanced.type_docs_label }}</h5>
+                    <h4>{{ i18n.advanced.type_docs_label }}</h4>
                     <div class="link-box">
                       <a v-for="itemLink in itemType.docsList" :key="itemLink.link" :href="itemLink.link" target="_blank" rel="noopener noreferrer">{{
                         itemLink.name
@@ -95,7 +95,7 @@ function changeShowIndex(index: number) {
                     </div>
                   </div>
                   <div v-if="itemType.videoList" class="material-item">
-                    <h5>{{ i18n.advanced.type_video_label }}</h5>
+                    <h4>{{ i18n.advanced.type_video_label }}</h4>
                     <div class="link-box">
                       <a v-for="itemLink in itemType.videoList" :key="itemLink.link" :href="itemLink.link" target="_blank" rel="noopener noreferrer">{{
                         itemLink.name
@@ -103,7 +103,7 @@ function changeShowIndex(index: number) {
                     </div>
                   </div>
                   <div v-if="itemType.optionList" class="material-item">
-                    <h5>{{ i18n.advanced.type_practice_label }}</h5>
+                    <h4>{{ i18n.advanced.type_practice_label }}</h4>
                     <div class="link-box">
                       <a v-for="itemLink in itemType.optionList" :key="itemLink.link" :href="itemLink.link" target="_blank" rel="noopener noreferrer">{{
                         itemLink.name
@@ -195,7 +195,7 @@ function changeShowIndex(index: number) {
           & ~ .item-list {
             margin-top: var(--e-spacing-h4);
           }
-          h4 {
+          h3 {
             font-size: var(--e-font-size-h7);
             line-height: var(--e-line-height-h7);
             color: var(--e-color-text1);
@@ -215,7 +215,7 @@ function changeShowIndex(index: number) {
               & ~ .material-item {
                 margin-top: var(--e-spacing-h4);
               }
-              h5 {
+              h4 {
                 font-size: var(--e-font-size-h7);
                 line-height: var(--e-line-height-h7);
                 color: var(--e-color-text1);
@@ -302,7 +302,7 @@ function changeShowIndex(index: number) {
             & ~ .material-item {
               margin-top: var(--e-spacing-h8);
             }
-            h5 {
+            h4 {
               font-size: var(--e-font-size-tip);
               line-height: var(--e-line-height-tip);
               color: var(--e-color-text-secondary);

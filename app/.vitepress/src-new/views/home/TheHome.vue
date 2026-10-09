@@ -12,12 +12,13 @@ import HomePartners from './HomePartners.vue';
 import HomeShowCase from './HomeShowCase.vue';
 
 const { lang } = useData();
-const { locale } = useI18n();
+const { locale, t } = useI18n();
 
 watchEffect(() => (locale.value = lang.value));
 </script>
 
 <template>
+  <h1 class="visually-hidden">{{ t('home.homePageTitle') }}</h1>
   <HomeBanner />
   <HomeFeature />
   <HomeExplore />

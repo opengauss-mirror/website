@@ -33,11 +33,11 @@ watch(footerIconRef, (iconRef) => {
 </script>
 
 <template>
-  <div class="app-section" :class="{ 'is-full': props.full }">
+  <section class="app-section" :class="{ 'is-full': props.full }">
     <div class="section-wrapper">
       <slot name="main">
         <!-- header -->
-        <div v-if="$slots.header || props.title || props.subtitle" class="section-header" :class="{ 'is-left': !props.headerJustifyCenter }">
+        <header v-if="$slots.header || props.title || props.subtitle" class="section-header" :class="{ 'is-left': !props.headerJustifyCenter }">
           <slot name="header">
             <template v-if="isArray(props.title)">
               <h2 v-for="item in props.title" :key="item" class="section-title">
@@ -55,7 +55,7 @@ watch(footerIconRef, (iconRef) => {
               </slot>
             </p>
           </slot>
-        </div>
+        </header>
 
         <!-- body -->
         <div v-if="$slots.default" class="section-body">
@@ -63,7 +63,7 @@ watch(footerIconRef, (iconRef) => {
         </div>
 
         <!-- footer -->
-        <div v-if="$slots.footer || props.footer" class="section-footer">
+        <footer v-if="$slots.footer || props.footer" class="section-footer">
           <slot name="footer">
             <OLink :href="props.footerHref" target="_blank">
               {{ props.footer }}
@@ -72,10 +72,10 @@ watch(footerIconRef, (iconRef) => {
               </template>
             </OLink>
           </slot>
-        </div>
+        </footer>
       </slot>
     </div>
-  </div>
+  </section>
 </template>
 
 <style lang="scss" scoped>

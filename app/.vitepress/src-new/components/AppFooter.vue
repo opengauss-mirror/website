@@ -50,15 +50,17 @@ const submitComplaintsReports = () => {
 <template>
   <footer class="footer" id="tour_headerNav_footer">
     <ContentWrapper class="footer-wrap">
-      <div class="footer-navs">
-        <div v-for="item in footerNavs" :key="item.NAME" class="footer-navs-section" :class="`footer-navs-section-${lang}`">
+      <ul class="footer-navs">
+        <li v-for="item in footerNavs" :key="item.NAME" class="footer-navs-section" :class="`footer-navs-section-${lang}`">
           <p class="section-title">{{ item.NAME }}</p>
 
-          <div class="section-links">
-            <a v-for="link in item.LINKS" :key="link.NAME" :href="link.URL" class="link">{{ link.NAME }}</a>
-          </div>
-        </div>
-      </div>
+          <ul class="section-links">
+            <li v-for="link in item.LINKS" :key="link.NAME">
+              <a :href="link.URL" class="link">{{ link.NAME }}</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
 
       <div class="friendly-link">
         <p class="friendly-link-title">{{ i18n.footer.LINK_TITLE }}</p>
@@ -195,6 +197,10 @@ a {
       display: flex;
       flex-direction: column;
 
+      li + li {
+        margin-top: 8px;
+      }
+
       .link {
         color: rgba(255, 255, 255, 0.8);
         font-size: var(--e-font-size-text);
@@ -202,10 +208,6 @@ a {
 
         @include hover {
           color: var(--o-color-white);
-        }
-
-        & + .link {
-          margin-top: 8px;
         }
       }
     }

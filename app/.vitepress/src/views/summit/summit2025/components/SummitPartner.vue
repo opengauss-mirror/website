@@ -22,14 +22,14 @@ const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
 
 <template>
   <div class="summit-partner">
-    <div class="title-box" :class="{ 'title-box-dark': !isLight }">
+    <h2 class="title-box" :class="{ 'title-box-dark': !isLight }">
       <p class="title-bg">{{ partnerData.titleBg }}</p>
       <p class="title">{{ partnerData.title }}</p>
       <img class="floor-img" :src="floorImg" alt="" />
-    </div>
+    </h2>
     <div class="partner">
       <div v-for="item in partnerData.content" :key="item.title" class="content-item">
-        <h4 class="item-title">{{ item.title }}</h4>
+        <h3 class="item-title">{{ item.title }}</h3>
         <div class="item-name">
           <p class="item-name-text" v-for="itemName in item.name.split('\n')" :key="itemName">
             {{ itemName }}

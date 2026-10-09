@@ -202,18 +202,18 @@ watch(
       <div class="blog-list">
         <OCard v-for="item in blogCardData" :key="item" class="blog-list-item" shadow="hover" :href="`/${item.path}`">
           <p class="blog-list-item-title">{{ item.title }}</p>
-          <div class="blog-list-item-info">
-            <div class="infodetail">
+          <ul class="blog-list-item-info">
+            <li class="infodetail">
               <OIcon class="icon"><IconUser /></OIcon>
               <p v-for="aut in item.author" :key="aut">
                 {{ aut }}
               </p>
-            </div>
-            <div class="infodetail">
+            </li>
+            <li class="infodetail">
               <OIcon class="icon"><IconCalendar /></OIcon>
               <p>{{ item.date }}</p>
-            </div>
-          </div>
+            </li>
+          </ul>
           <p class="blog-list-item-content">{{ item.summary }}</p>
           <div class="blog-list-item-tags">
             <OTag v-for="tag in item.tags" :key="tag" type="secondary" class="tag-item">{{ tag }}</OTag>

@@ -161,8 +161,8 @@ const handleChangeActiveMobile = (activeNames: any) => {
                 </ul>
               </template>
               <div v-else class="other lable-name10">
-                <h4>{{ subitem.other }}</h4>
-                <h4 class="lable-name11">{{ subitem.other1 }}</h4>
+                <p v-if="subitem.other?.trim()">{{ subitem.other }}</p>
+                <p v-if="subitem.other1?.trim()" class="lable-name11">{{ subitem.other1 }}</p>
                 <p>
                   {{ subitem.other2 }}
                   <a :href="'mailto:' + subitem.email" class="mail">{{ subitem.email }}</a>
@@ -175,9 +175,9 @@ const handleChangeActiveMobile = (activeNames: any) => {
     </OCollapse>
     <div v-for="item in i18n.member.MEMBER_LIST" :key="item.id" class="member-panel member-pc">
       <template v-if="!item.children">
-        <h1 :id="item.id" :ref="navTitle" class="member-title">
+        <h2 :id="item.id" :ref="navTitle" class="member-title">
           {{ item.name }}
-        </h1>
+        </h2>
         <div class="member-panel-content">
           <ul class="member-info">
             <li v-if="item.gitPath">
@@ -257,9 +257,9 @@ const handleChangeActiveMobile = (activeNames: any) => {
         </div>
       </template>
       <template v-else>
-        <h1 :id="item.id" :ref="navTitle" class="member-title">
+        <h2 :id="item.id" :ref="navTitle" class="member-title">
           {{ item.name }}
-        </h1>
+        </h2>
         <div class="gap">
           <div v-for="subitem in item.children" :key="subitem.id" class="member-panel-content">
             <template v-if="!subitem.other">
@@ -291,8 +291,8 @@ const handleChangeActiveMobile = (activeNames: any) => {
               </ul>
             </template>
             <div v-else class="other lable-name5">
-              <h4>{{ subitem.other }}</h4>
-              <h4>{{ subitem.other1 }}</h4>
+              <p v-if="subitem.other?.trim()">{{ subitem.other }}</p>
+              <p v-if="subitem.other1?.trim()">{{ subitem.other1 }}</p>
               <p>
                 {{ subitem.other2 }}
                 <a :href="'mailto:' + subitem.email" class="mail">{{ subitem.email }}</a>
@@ -539,7 +539,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
   }
   .other {
     color: var(--e-color-text1);
-    h4 {
+    p:not(:last-child) {
       font-size: 24px;
       font-weight: 300;
       margin-bottom: 20px;

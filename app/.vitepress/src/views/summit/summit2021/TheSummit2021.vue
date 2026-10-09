@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 
 import AppContent from '@/components/AppContent.vue';
+import AppHiddenPageTitle from '~@/components/AppHiddenPageTitle.vue';
 import SummitSchedule from './components/SummitSchedule.vue';
 import LinkPanel from './components/LinkPanel.vue';
 
@@ -30,6 +31,7 @@ const videoClickBtn = (path: string) => {
 </script>
 
 <template>
+  <AppHiddenPageTitle />
   <div class="summit-banner">
     <img class="banner-img pc" :src="banner" alt="" />
     <img class="banner-img mo" :src="banner_mo" alt="" />
@@ -48,7 +50,7 @@ const videoClickBtn = (path: string) => {
     </div>
     <!-- 峰会日程 -->
     <div class="agenda">
-      <h3 class="title-bar">{{ summitData.titleBar[1] }}</h3>
+      <h2 class="title-bar">{{ summitData.titleBar[1] }}</h2>
       <div class="time">
         <OTabs v-model="tabType" class="schedule-tabs">
           <el-tab-pane v-for="item in summitData.list" :key="item.id" :name="item.id">
@@ -63,11 +65,11 @@ const videoClickBtn = (path: string) => {
       <div class="online-panel">
         <OContainer :level-index="1">
           <div class="schedule-item" :class="{ isShow: tabType === 'main' }">
-            <h4 class="meeting-title">{{ summitData.list[0].type }}</h4>
+            <h3 class="meeting-title">{{ summitData.list[0].type }}</h3>
             <SummitSchedule :options="summitData.list[0].children" />
           </div>
           <div class="schedule-item other" :class="{ isShow: tabType === 'other' }">
-            <h4 class="meeting-title">{{ summitData.list[1].type }}</h4>
+            <h3 class="meeting-title">{{ summitData.list[1].type }}</h3>
             <OTabs v-model="otherTabType" class="other-tabs">
               <OTabPane v-for="item in summitData.list[1].children" :key="item.id" :label="item.name" :name="item.id">
                 <SummitSchedule :options="item.children" />
@@ -79,7 +81,7 @@ const videoClickBtn = (path: string) => {
     </div>
     <!-- 线上展厅 -->
     <div class="exhibition">
-      <h3 class="title-bar">{{ summitData.titleBar[2] }}</h3>
+      <h2 class="title-bar">{{ summitData.titleBar[2] }}</h2>
       <div class="exhibition-online">
         <a v-for="item in summitData.videolist" :key="item.name" href="" :name="item.name" @click="videoClickBtn(item.link)"></a>
         <div v-if="isVideoDialog" class="video-box">
@@ -104,18 +106,18 @@ const videoClickBtn = (path: string) => {
     </div>
     <!-- 共建单位 -->
     <div class="partners">
-      <h3 class="title-bar">{{ summitData.titleBar[3] }}</h3>
-      <h4 class="meeting-title">
+      <h2 class="title-bar">{{ summitData.titleBar[3] }}</h2>
+      <h3 class="meeting-title">
         {{ summitData.partnersList.title[0] }}
-      </h4>
+      </h3>
       <LinkPanel :link-list="summitData.partnersList.p1" class="one" />
-      <h4 class="meeting-title">
+      <h3 class="meeting-title">
         {{ summitData.partnersList.title[1] }}
-      </h4>
+      </h3>
       <LinkPanel :link-list="summitData.partnersList.p2" class="one" />
-      <h4 class="meeting-title">
+      <h3 class="meeting-title">
         {{ summitData.partnersList.title[2] }}
-      </h4>
+      </h3>
       <LinkPanel :link-list="summitData.partnersList.p3" />
     </div>
   </AppContent>

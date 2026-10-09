@@ -22,7 +22,7 @@ import ImgLifeCycle from '~@/assets/category/download/life-cycle-en.png';
 
 <div class="life-cycle-content">
 
-## openGauss社区版本生命周期管理规范
+# openGauss社区版本生命周期管理规范
 
 - LTS version: a large-scale rollout version released every 2 years, with 3 years of community support, followed by additional maintenance support by oGSPs.
 

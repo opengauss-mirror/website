@@ -16,7 +16,7 @@ defineProps({
 <template>
   <div class="partner">
     <div v-for="item in partnerData" :key="item.title" class="content-item">
-      <h4 class="item-title">{{ item.title }}</h4>
+      <h3 class="item-title">{{ item.title }}</h3>
       <div class="item-name">
         <p class="item-name-text" v-for="itemName in item.name.split('\n')" :key="itemName">
           {{ itemName }}

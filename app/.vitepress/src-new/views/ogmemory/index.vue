@@ -93,28 +93,28 @@ const designs = [
         </div>
         <div class="quickstart-body">
           <p class="best-practice-title">生命周期、记忆检索、会话、观测、管理接口统一通过HTTP API暴露</p>
-          <div class="list-container">
-            <div class="list-item">
+          <ul class="list-container">
+            <li class="list-item">
               <span>POST /api/v1/compose</span>
               <span>读取并组装上下文</span>
-            </div>
-            <div class="list-item">
+            </li>
+            <li class="list-item">
               <span>POST /api/v1/after_turn</span>
               <span>写入轮次记忆</span>
-            </div>
-            <div class="list-item">
+            </li>
+            <li class="list-item">
               <span>POST /api/v1/search_memory</span>
               <span>搜索长期记忆</span>
-            </div>
-            <div class="list-item">
+            </li>
+            <li class="list-item">
               <span>POST /api/v1/compact</span>
               <span>压缩并归档会话</span>
-            </div>
-            <div class="list-item">
+            </li>
+            <li class="list-item">
               <span>POST /api/v1/health</span>
               <span>健康检查</span>
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -153,26 +153,26 @@ const designs = [
   </AppSection>
 
   <AppSection title="常见问题">
-    <div class="ogmemory-faq list-container">
-      <div class="list-item">
+    <ol class="ogmemory-faq list-container">
+      <li class="list-item">
         <p class="faq-question">1、支持哪些Agent框架？</p>
         <p class="faq-answer">原生支持OpenClaw 即插即用集成，同时提供标准HTTP API，可对接任意Agent系统</p>
-      </div>
-      <div class="list-item">
+      </li>
+      <li class="list-item">
         <p class="faq-question">2、记忆是怎么写入的？</p>
         <p class="faq-answer">每轮对话结束后，LLM自动从对话中抽取结构化记忆候选，经过置信度过滤和去重后，按策略写入AGFS文件，并异步建立向量索引。</p>
-      </div>
-      <div class="list-item">
+      </li>
+      <li class="list-item">
         <p class="faq-question">3、检索是怎么工作的？</p>
         <p class="faq-answer">
           查询到达后，系统先再向量索引中混合召回 L0/L1/L2 三层命中，再通过层级展开将所有结果递归到 L2 完整内容，最终注入 System Prompt 供 Agent 使用。
         </p>
-      </div>
-      <div class="list-item">
+      </li>
+      <li class="list-item">
         <p class="faq-question">4、数据安全吗？</p>
         <p class="faq-answer">所有记忆以文件形式持久化在 AGFS 上，向量索引仅为派生加速层。索引损坏不影响数据，可随时全量重建。</p>
-      </div>
-    </div>
+      </li>
+    </ol>
   </AppSection>
 </template>
 
