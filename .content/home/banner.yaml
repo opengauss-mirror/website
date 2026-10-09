@@ -38,14 +38,6 @@
   class_name: banner-version
 
 - locale: zh
-  bg_pc: ./images/banner/20261001/banner.png
-  bg_pad_v: ./images/banner/20261001/banner-pad.png
-  bg_mb: ./images/banner/20261001/banner-mo.png
-  bg_theme: light
-  text_image_zh: ./images/banner/20261001/banner-text.png
-  text_image_pad_zh: ./images/banner/20261001/banner-text.png
-
-- locale: zh
   bg_pc: ./images/banner/banner-sig_pc.png
   bg_pad: ./images/banner/banner-sig_mo.png
   bg_mb: ./images/banner/banner-sig_mo.png
