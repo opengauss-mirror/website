@@ -16,7 +16,7 @@
 |------|------|------|
 | `banner` | 对象 | 页面顶部 banner（标题、背景图、插图） |
 | `search_placeholder` | 字符串 | 搜索框占位文本 |
-| `table_headers` | 对象 | 表格列标题（name、level、version、award、expiration、patch、content、system、commitment、experience、certificate） |
+| `table_headers` | 对象 | 表格列标题（name、level、version、award、expiration、certificate） |
 | `certify` | 字符串 | 下载证书按钮文本 |
 | `tips` | 对象 | 底部提示文案（前半段文本、链接文本、链接地址） |
 | `certifications` | 数组 | 认证列表数据 |
@@ -60,11 +60,6 @@ const ogspData = computed(() => (lang.value === 'zh' ? ogspContent.zh : ogspCont
 | version | 是 | 证书编号列标题 |
 | award | 是 | 颁发日期列标题 |
 | expiration | 是 | 有效截止日期列标题 |
-| patch | 是 | BUG修复与补丁版本发布列标题 |
-| content | 是 | 服务内容列标题 |
-| system | 是 | 服务体系列标题 |
-| commitment | 是 | 服务承诺列标题 |
-| experience | 是 | 项目经验列标题 |
 | certificate | 是 | 认证证书列标题 |
 
 ### tips
@@ -84,9 +79,4 @@ const ogspData = computed(() => (lang.value === 'zh' ? ogspContent.zh : ogspCont
 | version | 是 | 证书编号 |
 | award | 是 | 颁发日期（YYYY-MM-DD） |
 | expiration | 是 | 有效截止日期（YYYY-MM-DD） |
-| patch | 是 | 补丁标记（✓） |
-| content | 是 | 服务内容评级（优/良/中 ↔ Excellent/Good/Fair） |
-| system | 是 | 服务体系评级 |
-| commitment | 是 | 服务承诺评级 |
-| experience | 是 | 项目经验评级 |
 | certificate | 是 | 证书下载链接（OBS URL） |

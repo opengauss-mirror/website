@@ -18,23 +18,11 @@ describe('ogsp.d.ts — OgspTableHeadersT 含 level 字段', () => {
     expect(content).toMatch(/OgspTableHeadersT[\s\S]*?level:\s*string/);
   });
 
-  it('OgspTableHeadersT 字段数 = 11（含 level）', () => {
+  it('OgspTableHeadersT 字段数 = 6（含 level）', () => {
     const blockStart = content.indexOf('OgspTableHeadersT');
     const blockEnd = content.indexOf('}', blockStart);
     const block = content.slice(blockStart, blockEnd);
-    const expected = [
-      'name',
-      'level',
-      'version',
-      'award',
-      'expiration',
-      'patch',
-      'content',
-      'system',
-      'commitment',
-      'experience',
-      'certificate',
-    ];
+    const expected = ['name', 'level', 'version', 'award', 'expiration', 'certificate'];
     for (const key of expected) {
       expect(block).toContain(`${key}: string`);
     }
@@ -50,23 +38,11 @@ describe('ogsp.d.ts — OgspItemT 含 level 字段', () => {
     expect(content).toMatch(/OgspItemT[\s\S]*?level:\s*string/);
   });
 
-  it('OgspItemT 字段数 = 11（含 level）', () => {
+  it('OgspItemT 字段数 = 6（含 level）', () => {
     const blockStart = content.indexOf('OgspItemT');
     const blockEnd = content.indexOf('}', blockStart);
     const block = content.slice(blockStart, blockEnd);
-    const expected = [
-      'name',
-      'level',
-      'version',
-      'award',
-      'expiration',
-      'patch',
-      'content',
-      'system',
-      'commitment',
-      'experience',
-      'certificate',
-    ];
+    const expected = ['name', 'level', 'version', 'award', 'expiration', 'certificate'];
     for (const key of expected) {
       expect(block).toContain(`${key}: string`);
     }

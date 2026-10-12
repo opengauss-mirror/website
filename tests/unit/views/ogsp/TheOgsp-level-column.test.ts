@@ -30,18 +30,13 @@ describe('TheOgsp.vue — PC 表格含 level 列', () => {
     expect(levelIdx).toBeGreaterThan(nameIdx);
   });
 
-  it('table_headers 字段引用数为 11（含 level）', () => {
+  it('table_headers 字段引用数为 6（含 level）', () => {
     const headerRefs = [
       'table_headers.name',
       'table_headers.level',
       'table_headers.version',
       'table_headers.award',
       'table_headers.expiration',
-      'table_headers.patch',
-      'table_headers.content',
-      'table_headers.system',
-      'table_headers.commitment',
-      'table_headers.experience',
       'table_headers.certificate',
     ];
     for (const h of headerRefs) {

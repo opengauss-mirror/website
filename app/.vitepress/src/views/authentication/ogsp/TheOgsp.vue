@@ -83,11 +83,6 @@ onMounted(() => {
       <OTableColumn :label="ogspData.table_headers.version" show-overflow-tooltip prop="version" min-width="115"></OTableColumn>
       <OTableColumn :label="ogspData.table_headers.award" show-overflow-tooltip prop="award" min-width="115"></OTableColumn>
       <OTableColumn :label="ogspData.table_headers.expiration" show-overflow-tooltip prop="expiration" min-width="115"></OTableColumn>
-      <OTableColumn :label="ogspData.table_headers.patch" show-overflow-tooltip prop="patch" align="center"></OTableColumn>
-      <OTableColumn :label="ogspData.table_headers.content" prop="content" align="center"></OTableColumn>
-      <OTableColumn :label="ogspData.table_headers.system" prop="system" align="center"></OTableColumn>
-      <OTableColumn :label="ogspData.table_headers.commitment" prop="commitment" align="center"></OTableColumn>
-      <OTableColumn :label="ogspData.table_headers.experience" prop="experience" align="center"></OTableColumn>
       <el-table-column :label="ogspData.table_headers.certificate" align="center">
         <template #default="scope">
           <a :href="scope.row.certificate" download target="_blank" rel="noopener noreferrer">{{ ogspData.certify }}</a>
@@ -111,21 +106,6 @@ onMounted(() => {
           </li>
           <li>
             <span>{{ ogspData.table_headers.expiration }}:</span><span>{{ item.expiration }}</span>
-          </li>
-          <li>
-            <span>{{ ogspData.table_headers.patch }}:</span><span>{{ item.patch }}</span>
-          </li>
-          <li>
-            <span>{{ ogspData.table_headers.content }}:</span><span>{{ item.content }}</span>
-          </li>
-          <li>
-            <span>{{ ogspData.table_headers.system }}:</span><span>{{ item.system }}</span>
-          </li>
-          <li>
-            <span>{{ ogspData.table_headers.commitment }}:</span><span>{{ item.commitment }}</span>
-          </li>
-          <li>
-            <span>{{ ogspData.table_headers.experience }}:</span><span>{{ item.experience }}</span>
           </li>
           <li>
             <span>{{ ogspData.table_headers.certificate }}:</span>
