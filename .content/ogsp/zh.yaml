@@ -11,11 +11,6 @@
 #   version: 证书编号
 #   award: 颁发日期
 #   expiration: 有效截止日期
-#   patch: BUG修复与补丁版本发布
-#   content: 服务内容
-#   system: 服务体系
-#   commitment: 服务承诺
-#   experience: 项目经验
 #   certificate: 认证证书
 # certify: 下载证书按钮文本
 # tips: 底部提示
@@ -28,11 +23,6 @@
 #     version: 证书编号
 #     award: 颁发日期
 #     expiration: 有效截止日期
-#     patch: 补丁标记
-#     content: 服务内容评级
-#     system: 服务体系评级
-#     commitment: 服务承诺评级
-#     experience: 项目经验评级
 #     certificate: 证书下载链接
 
 banner:
@@ -48,11 +38,6 @@ table_headers:
   version: 证书编号
   award: 颁发日期
   expiration: 有效截止日期
-  patch: BUG修复与补丁版本发布
-  content: 服务内容
-  system: 服务体系
-  commitment: 服务承诺
-  experience: 项目经验
   certificate: 认证证书
 
 certify: 下载证书
@@ -68,64 +53,34 @@ certifications:
     version: '20260310001'
     award: '2026-03-10'
     expiration: '2027-03-09'
-    patch: ✓
-    content: 优
-    system: 优
-    commitment: 优
-    experience: 优
     certificate: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/oGSPCertificate/%E5%8C%97%E4%BA%AC%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png'
   - name: 天津神舟通用数据技术有限公司
     level: 优选级
     version: '20260326001'
     award: '2026-03-26'
     expiration: '2027-03-25'
-    patch: ✓
-    content: 优
-    system: 优
-    commitment: 优
-    experience: 优
     certificate: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/oGSPCertificate/%E5%A4%A9%E6%B4%A5%E7%A5%9E%E8%88%9F%E9%80%9A%E7%94%A8%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png'
   - name: 云和恩墨（北京）信息技术有限公司
     level: 优选级
     version: '20260326002'
     award: '2026-03-26'
     expiration: '2027-03-25'
-    patch: ✓
-    content: 优
-    system: 优
-    commitment: 优
-    experience: 优
     certificate: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/oGSPCertificate/%E4%BA%91%E5%92%8C%E6%81%A9%E5%A2%A8%EF%BC%88%E5%8C%97%E4%BA%AC%EF%BC%89%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png'
   - name: 天津南大通用数据技术股份有限公司
     level: 优选级
     version: '20260409001'
     award: '2026-04-09'
     expiration: '2027-04-08'
-    patch: ✓
-    content: 优
-    system: 优
-    commitment: 优
-    experience: 优
     certificate: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/oGSPCertificate/%E5%A4%A9%E6%B4%A5%E5%8D%97%E5%A4%A7%E9%80%9A%E7%94%A8%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png'
   - name: 中软国际科技服务有限公司
     level: 认证级
     version: '20260612001'
     award: '2026-06-12'
     expiration: '2027-06-11'
-    patch: ✓
-    content: 良
-    system: 良
-    commitment: 优
-    experience: 优
     certificate: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/oGSPCertificate/%E4%B8%AD%E8%BD%AF%E5%9B%BD%E9%99%85%E7%A7%91%E6%8A%80%E6%9C%8D%E5%8A%A1%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png'
   - name: 中移动信息技术有限公司
     level: 优选级
     version: '20260612002'
     award: '2026-06-12'
     expiration: '2027-06-11'
-    patch: ✓
-    content: 优
-    system: 良
-    commitment: 优
-    experience: 优
     certificate: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/oGSPCertificate/%E4%B8%AD%E7%A7%BB%E5%8A%A8%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.png'

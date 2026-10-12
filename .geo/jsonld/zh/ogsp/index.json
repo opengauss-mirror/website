@@ -6,7 +6,7 @@
       "@id": "https://opengauss.org/zh/ogsp/#webpage",
       "url": "https://opengauss.org/zh/ogsp/",
       "name": "服务商认证公司查询",
-      "description": "查询已通过openGauss服务商认证的公司名单，包括公司名称、证书编号、颁发日期、有效期及服务能力评级。",
+      "description": "查询已通过openGauss服务商认证的公司名单，包括公司名称、证书编号、颁发日期、有效期。",
       "inLanguage": "zh-CN",
       "isPartOf": {
         "@id": "https://opengauss.org/#website"
@@ -47,7 +47,7 @@
       "@type": "ItemList",
       "@id": "https://opengauss.org/zh/ogsp/#certification-list",
       "name": "openGauss服务商认证公司名录",
-      "description": "已通过openGauss服务商认证的公司列表，包含认证证书、颁发日期、服务能力评级等信息。",
+      "description": "已通过openGauss服务商认证的公司列表，包含认证证书、颁发日期等信息。",
       "numberOfItems": 6,
       "provider": {
         "@id": "https://opengauss.org/#organization"

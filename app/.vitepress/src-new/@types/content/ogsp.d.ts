@@ -11,11 +11,6 @@ declare module '#content/ogsp' {
     version: string;
     award: string;
     expiration: string;
-    patch: string;
-    content: string;
-    system: string;
-    commitment: string;
-    experience: string;
     certificate: string;
   }
 
@@ -31,11 +26,6 @@ declare module '#content/ogsp' {
     version: string;
     award: string;
     expiration: string;
-    patch: string;
-    content: string;
-    system: string;
-    commitment: string;
-    experience: string;
     certificate: string;
   }
 

@@ -37,24 +37,12 @@ describe('oGSP yaml — table_headers 含 level 字段', () => {
     expect(enData.table_headers.level).toBe('Level');
   });
 
-  it('table_headers 字段数 = 11（含 level）', () => {
-    const expectedKeys = [
-      'name',
-      'level',
-      'version',
-      'award',
-      'expiration',
-      'patch',
-      'content',
-      'system',
-      'commitment',
-      'experience',
-      'certificate',
-    ];
+  it('table_headers 字段数 = 6（含 level）', () => {
+    const expectedKeys = ['name', 'level', 'version', 'award', 'expiration', 'certificate'];
     expect(Object.keys(zhData.table_headers).sort()).toEqual([...expectedKeys].sort());
     expect(Object.keys(enData.table_headers).sort()).toEqual([...expectedKeys].sort());
-    expect(Object.keys(zhData.table_headers).length).toBe(11);
-    expect(Object.keys(enData.table_headers).length).toBe(11);
+    expect(Object.keys(zhData.table_headers).length).toBe(6);
+    expect(Object.keys(enData.table_headers).length).toBe(6);
   });
 });
 
