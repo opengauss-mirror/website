@@ -180,6 +180,12 @@ const currentBgTheme = computed(() => {
 .content-text {
   --d: 10px;
   color: var(--o-color-info1);
+
+  @include respond-to('<=pad_v') {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 @keyframes fade-up {
@@ -231,9 +237,26 @@ const currentBgTheme = computed(() => {
             @include display1;
             font-weight: 500;
             white-space: pre-wrap;
-            max-width: 60%;
+            max-width: var(--grid-3);
+            @include respond-to('pad_v') {
+              max-width: var(--grid-4);
+            }
+            @include respond-to('pad_h') {
+              max-width: var(--grid-7);
+            }
+            @include respond-to('laptop') {
+              max-width: calc(var(--grid-14) + 1em);
+            }
+            @include respond-to('pc') {
+              max-width: calc(var(--grid-14) + 1em);
+            }
+            @include respond-to('pc_l') {
+              max-width: calc(var(--grid-12) + 1em);
+            }
+            @include respond-to('>pc_l') {
+              max-width: var(--grid-12);
+            }
             @include respond-to('<=pad_v') {
-              max-width: 100%;
               font-size: 22px;
               line-height: 30px;
               line-height: var(--e-line-height-h4);
