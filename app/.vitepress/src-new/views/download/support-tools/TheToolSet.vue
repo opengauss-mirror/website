@@ -42,17 +42,18 @@ const message = useMessage(null);
 // 版本筛选
 const versions = DOWNLOAD_DATA.map((item) => ({ label: 'openGauss ' + item.name, value: item.name }));
 const currentVersion = ref(versions[0].value);
-const isLatestVersion = computed(() => currentVersion.value === versions[0].value);
 const tableFilter = ref<{ prop: string; value: any }>();
 
 const onTableFilterChange = (val: any) => {
-  console.log(val);
   tableFilter.value = val;
 };
 
 const currentVersionTools = computed<any[]>(() => {
   return DOWNLOAD_DATA.find((item) => item.name === currentVersion.value)?.data[lang.value].filter((item) => item.category === 'openGauss Tools') || [];
 });
+
+// 表格布局由当前版本数据的实际结构决定（按 type 分组的新格式 / 扁平的旧格式），不依赖 versions 列表的排列顺序
+const isGroupedByType = computed(() => currentVersionTools.value.length > 0 && currentVersionTools.value.every((item: any) => Boolean(item.type)));
 
 const displayTools = computed(() => {
   return currentVersionTools.value.filter((item: any) => {
@@ -103,7 +104,7 @@ const matrix = computed(() => {
 const enabledOs = computed(() => matrix.value.get(activeArchitecture.value));
 
 const tableColumns = computed(() => {
-  if (isLatestVersion.value) {
+  if (isGroupedByType.value) {
     return [
       {
         key: 'type',
@@ -127,7 +128,7 @@ const tableColumns = computed(() => {
 });
 
 const cellStyle = computed(() => {
-  if (isLatestVersion.value) {
+  if (isGroupedByType.value) {
     return ({ columnIndex }: { columnIndex: number }) => {
       if (columnIndex === 0) {
         return {
@@ -294,7 +295,7 @@ const reportVersionSelect = () => {
         ref="tableRef"
         :cell-style="cellStyle"
         v-if="gtPadV"
-        :children-type="isLatestVersion ? 'span' : 'collapse'"
+        :children-type="isGroupedByType ? 'span' : 'collapse'"
         :columns="tableColumns"
         :data="filteredTools"
         row-key="name"
@@ -375,7 +376,7 @@ const reportVersionSelect = () => {
           <p class="table-description-cell">{{ row.description }}</p>
         </template>
       </TheTable>
-      <template v-else-if="!isLatestVersion">
+      <template v-else-if="!isGroupedByType">
         <!-- 移动端布局 -->
         <div class="mobile-download-item-card" v-for="item in displayTools" :key="item.name">
           <p class="item-name">{{ item.name }}</p>
@@ -402,7 +403,7 @@ const reportVersionSelect = () => {
     </div>
 
     <!-- 新版移动端布局 -->
-    <template v-if="!gtPadV && isLatestVersion">
+    <template v-if="!gtPadV && isGroupedByType">
       <div v-for="tool in displayTools" :key="tool.type" class="card" style="padding: 0">
         <OCollapse>
           <OCollapseItem :title="tool.type" :value="tool.type">
