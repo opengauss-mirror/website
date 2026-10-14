@@ -10,7 +10,7 @@ if (!existsSync(sitemapPath)) {
 }
 
 const original = await readFile(sitemapPath, 'utf-8');
-const updated = original.replace(/<changefreq>[^<]*<\/changefreq>/g, '<changefreq>daily</changefreq>');
+const updated = original.replace(/<changefreq>never<\/changefreq>/g, '<changefreq>monthly</changefreq>');
 
 await writeFile(sitemapPath, updated);
-console.log('[fix-sitemap-changefreq] All <changefreq> values normalized to "daily".');
+console.log('[fix-sitemap-changefreq] Replaced all <changefreq>never</changefreq> with "monthly".');
