@@ -10,6 +10,7 @@ import generateLLMsFull from '@opendesign-plus/geo-scripts/generate-llms-full';
 import generateSEOManifest from './scripts/generate-tdk-schema-for-articles';
 import { sanitizeMarkdownPlugin } from './scripts/sanitize-md';
 import { PRIORITY_MAP, DEFAULT_PRIORITY, normalizeSitemapUrl } from './sitemap-priority';
+import { getEmptyPracticeExcludes } from './scripts/filter-empty-practice';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const geoDir = join(__dirname, '../../.geo')
@@ -35,6 +36,8 @@ const excludes = process.argv
     }
     return val;
   });
+
+const emptyPracticeExcludes = getEmptyPracticeExcludes(join(__dirname, '../'));
 
 /**
  * 设置JSON-LD
@@ -117,7 +120,7 @@ const config: UserConfig = {
     },
   },
   lastUpdated: true,
-  srcExclude: excludes,
+  srcExclude: [...excludes, ...emptyPracticeExcludes],
   base: '/',
   head: [
     [
