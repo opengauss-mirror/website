@@ -1,0 +1,5 @@
+{
+  "title": "Agent专区",
+  "description": "Agent专区展示openGauss在AI Agent领域的技术生态全景图,涵盖Coding Agent、Data Agent等应用,LangGraph、LangChain、Dify等开发编排框架,以及openGauss DataVec、DeepSeek等模型服务与基础设施的适配集成方案。",
+  "keywords": "openGauss,Agent专区,AI Agent,生态全景图,Coding Agent,Data Agent,LangGraph,LangChain,Dify,openGauss DataVec,DeepSeek,MCP"
+}
