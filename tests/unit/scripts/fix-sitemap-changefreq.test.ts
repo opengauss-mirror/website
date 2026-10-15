@@ -60,8 +60,9 @@ describe('fix-sitemap-changefreq.js — source contract', () => {
     expect(src).toContain("'../app/.vitepress/dist/sitemap.xml'");
   });
 
-  it('replacement target string is <changefreq>daily</changefreq>', () => {
-    expect(src).toContain("'<changefreq>daily</changefreq>'");
+  it('replaces <changefreq>never</changefreq> with <changefreq>monthly</changefreq> only', () => {
+    expect(src).toContain('/<changefreq>never<\\/changefreq>/g');
+    expect(src).toContain("'<changefreq>monthly</changefreq>'");
   });
 
   it('uses a global regex (.replace with /g flag, all occurrences)', () => {
@@ -96,57 +97,60 @@ describe('fix-sitemap-changefreq.js — changefreq normalization', () => {
     removeSitemap();
   });
 
-  const cases: Array<[string, string]> = [
-    ['never', '<changefreq>never</changefreq>'],
+  it('replaces never → monthly', () => {
+    const xml = `<?xml version="1.0"?>\n<urlset><url><loc>/zh/</loc><changefreq>never</changefreq><priority>1.0</priority></url></urlset>`;
+    writeSitemap(xml);
+    const res = runScript();
+    expect(res.status).toBe(0);
+    const out = readFileSync(sitemapPath, 'utf-8');
+    expect(out).toContain('<changefreq>monthly</changefreq>');
+    expect(out).not.toContain('<changefreq>never</changefreq>');
+  });
+
+  const untouched: Array<[string, string]> = [
     ['weekly', '<changefreq>weekly</changefreq>'],
     ['monthly', '<changefreq>monthly</changefreq>'],
     ['yearly', '<changefreq>yearly</changefreq>'],
     ['daily', '<changefreq>daily</changefreq>'],
   ];
 
-  for (const [label, node] of cases) {
-    it(`normalizes ${label} → daily`, () => {
+  for (const [label, node] of untouched) {
+    it(`leaves ${label} unchanged`, () => {
       const xml = `<?xml version="1.0"?>\n<urlset><url><loc>/zh/</loc>${node}<priority>1.0</priority></url></urlset>`;
       writeSitemap(xml);
       const res = runScript();
       expect(res.status).toBe(0);
       const out = readFileSync(sitemapPath, 'utf-8');
-      expect(out).toContain('<changefreq>daily</changefreq>');
-      if (label !== 'daily') {
-        expect(out).not.toContain(node);
-      } else {
-        expect((out.match(/<changefreq>daily<\/changefreq>/g) || []).length).toBe(1);
-      }
+      expect(out).toContain(node);
     });
   }
 
-  it('normalizes ALL changefreq nodes (global) when mixed values present', () => {
+  it('replaces ALL never nodes (global) and keeps other values intact', () => {
     const xml = `<?xml version="1.0"?>
 <urlset>
 <url><loc>/zh/</loc><changefreq>never</changefreq><priority>1.0</priority></url>
 <url><loc>/en/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
 <url><loc>/zh/download/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 <url><loc>/zh/news/2024/</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
-<url><loc>/zh/legal/</loc><changefreq>daily</changefreq><priority>0.2</priority></url>
+<url><loc>/zh/legal/</loc><changefreq>never</changefreq><priority>0.2</priority></url>
 </urlset>`;
     writeSitemap(xml);
     const res = runScript();
     expect(res.status).toBe(0);
     const out = readFileSync(sitemapPath, 'utf-8');
     const total = (out.match(/<changefreq>/g) || []).length;
-    const daily = (out.match(/<changefreq>daily<\/changefreq>/g) || []).length;
+    const monthly = (out.match(/<changefreq>monthly<\/changefreq>/g) || []).length;
     expect(total).toBe(5);
-    expect(daily).toBe(5);
+    expect(monthly).toBe(3);
     expect(out).not.toContain('<changefreq>never</changefreq>');
-    expect(out).not.toContain('<changefreq>weekly</changefreq>');
-    expect(out).not.toContain('<changefreq>monthly</changefreq>');
-    expect(out).not.toContain('<changefreq>yearly</changefreq>');
+    expect(out).toContain('<changefreq>weekly</changefreq>');
+    expect(out).toContain('<changefreq>yearly</changefreq>');
   });
 
   it('preserves non-changefreq content (loc, priority, lastmod, structure)', () => {
     const xml = `<?xml version="1.0"?>
 <urlset>
-<url><loc>/zh/download/</loc><changefreq>weekly</changefreq><priority>0.8</priority><lastmod>2024-01-01</lastmod></url>
+<url><loc>/zh/download/</loc><changefreq>never</changefreq><priority>0.8</priority><lastmod>2024-01-01</lastmod></url>
 </urlset>`;
     writeSitemap(xml);
     const res = runScript();
@@ -155,7 +159,7 @@ describe('fix-sitemap-changefreq.js — changefreq normalization', () => {
     expect(out).toContain('<loc>/zh/download/</loc>');
     expect(out).toContain('<priority>0.8</priority>');
     expect(out).toContain('<lastmod>2024-01-01</lastmod>');
-    expect(out).toContain('<changefreq>daily</changefreq>');
+    expect(out).toContain('<changefreq>monthly</changefreq>');
   });
 
   it('is a no-op (no error) when xml has no changefreq nodes', () => {
@@ -172,7 +176,7 @@ describe('fix-sitemap-changefreq.js — changefreq normalization', () => {
     writeSitemap(`<?xml version="1.0"?>\n<urlset><url><loc>/zh/</loc><changefreq>never</changefreq></url></urlset>`);
     const res = runScript();
     expect(res.status).toBe(0);
-    expect(res.stdout + res.stderr).toContain('daily');
+    expect(res.stdout + res.stderr).toContain('[fix-sitemap-changefreq]');
   });
 });
 
