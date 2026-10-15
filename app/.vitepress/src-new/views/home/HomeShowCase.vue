@@ -30,7 +30,7 @@ const caseData = computed(() => {
   const data = showCaseData.constList[locale.value as 'zh' | 'en'];
   return data.reduce(
     (acc, curr) => {
-      if (!curr.id) return acc;
+      if (!curr.id || curr.detail === false) return acc;
       if (acc[curr.id]) {
         acc[curr.id].push(curr);
       } else {
