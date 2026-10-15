@@ -234,6 +234,7 @@ export default {
             {
               NAME: 'AI Zone',
               DESCRIPTION: 'Explore openGauss AI ecosystem: Agent, RAG, and more',
+              TAG: TAG_TYPE.NEW,
               URL: '/ai/agent/',
             },
           ],

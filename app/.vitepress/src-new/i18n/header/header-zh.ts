@@ -213,7 +213,6 @@ export default {
             {
               NAME: '开源实习',
               DESCRIPTION: '帮助在校学生在项目实践中提升能力，成为优秀的开源人才',
-              TAG: TAG_TYPE.NEW,
               URL: '/internship/',
             },
           ],
@@ -309,12 +308,12 @@ export default {
             {
               NAME: 'AI专区',
               DESCRIPTION: '了解 openGauss 在 Agent、RAG 等 AI 场景的技术生态和适配情况',
+              TAG: TAG_TYPE.NEW,
               URL: '/ai/agent/',
             },
             {
               NAME: 'oGMemory 专区',
               DESCRIPTION: '面向AI Agent的长期记忆系统，以AGFS文件为数据源头，openGauss向量索引为加速层，让Agent拥有跨会话的持久记忆能力。',
-              TAG: TAG_TYPE.NEW,
               URL: '/ogmemory/',
             }
           ],
