@@ -1,0 +1,5 @@
+{
+  "title": "Agent Zone",
+  "description": "Agent Zone showcases the openGauss AI Agent ecosystem map, covering applications like Coding Agent and Data Agent, dev and orchestration frameworks like LangGraph, LangChain, and Dify, plus model serving and infrastructure integrations.",
+  "keywords": "openGauss,Agent Zone,AI Agent,ecosystem map,Coding Agent,Data Agent,LangGraph,LangChain,Dify,openGauss DataVec,DeepSeek,MCP"
+}
