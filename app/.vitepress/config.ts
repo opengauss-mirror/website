@@ -108,6 +108,79 @@ function getBlogFrontmatterLastmod(mdRelPath: string): number | null {
   }
 }
 
+/** 需要用正文首段兜底 description 的文章类型（news / blogs / user-practice，双语） */
+const articleDescPattern = /^(?:zh|en)\/(?:news|blogs|user-practice)\//;
+
+/**
+ * 从 markdown 正文中提取第一段纯文本，用于 summary 缺失时兜底填充 description。
+ * 会跳过 frontmatter、标题、代码块、分割线、纯图片/HTML 块，并清理行内 markdown 语法。
+ */
+function extractFirstParagraph(markdown: string): string {
+  const body = markdown.replace(/^\uFEFF?(---|\+\+\+)[^\n]*\n[\s\S]*?\n\1[^\n]*?\n/, '');
+  const lines = body.split(/\r?\n/);
+  const buffer: string[] = [];
+  let inFence = false;
+
+  for (const raw of lines) {
+    let line = raw.trim();
+    if (/^(```|~~~)/.test(line)) {
+      inFence = !inFence;
+      if (buffer.length) break;
+      continue;
+    }
+    if (inFence) continue;
+    if (!line) {
+      if (buffer.length) break;
+      continue;
+    }
+    if (/^#{1,6}\s/.test(line)) continue;
+    if (/^<!--/.test(line)) continue;
+    if (/^<\/?[a-zA-Z][^>]*\/?>$/.test(line)) continue;
+    if (/^(!?\[[^\]]*\]\([^)]*\))\s*$/.test(line)) continue;
+    if (/^([-*_]\s*){3,}$/.test(line)) continue;
+    line = line.replace(/^(?:>\s?)+/, '');
+    if (!line) continue;
+    buffer.push(line);
+  }
+
+  return buffer
+    .join(' ')
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, '')
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
+    .replace(/`{1,3}([^`]*)`{1,3}/g, '$1')
+    .replace(/==([^=]*)==/g, '$1')
+    .replace(/(\*\*|__)(.*?)\1/g, '$2')
+    .replace(/(\*|_)(.*?)\1/g, '$2')
+    .replace(/~~(.*?)~~/g, '$1')
+    .replace(/<[^>]*>/g, '')
+    .replace(/&nbsp;/gi, ' ')
+    .replace(/https?:\/\/\S+/g, '')
+    .replace(/[(（【]\s*[)）】]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+/** description 兜底截取的最大长度 */
+const ARTICLE_DESC_MAX_LEN = 200;
+
+/**
+ * 当 news / blogs / user-practice 页面的 summary 取不到值（description 为空）时，
+ * 读取对应 md 文件正文，截取第一段作为 description。
+ */
+function fillArticleDescriptionFromContent(pageData: PageData) {
+  if (pageData.description) return;
+  const relPath = pageData.filePath.replace(/\\/g, '/');
+  if (!articleDescPattern.test(relPath) || !relPath.endsWith('.md')) return;
+  const absPath = join(srcDir, relPath);
+  if (!existsSync(absPath)) return;
+  const firstParagraph = extractFirstParagraph(readFileSync(absPath, 'utf-8'));
+  if (!firstParagraph) return;
+  pageData.description =
+    firstParagraph.length > ARTICLE_DESC_MAX_LEN
+      ? firstParagraph.slice(0, ARTICLE_DESC_MAX_LEN).trim()
+      : firstParagraph;
+}
+
 const config: UserConfig = {
   sitemap: {
     hostname: 'https://opengauss.org',
@@ -199,6 +272,7 @@ const config: UserConfig = {
       setTdk(pageData, pagePath);
       setJSONLD(pageData, pagePath);
     }
+    fillArticleDescriptionFromContent(pageData);
   },
   async transformHead({ pageData }) {
     if (pageData.params?.sig) {
