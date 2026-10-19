@@ -35,6 +35,14 @@ describe('normalizeSitemapUrl', () => {
   it('handles en prefix', () => {
     expect(normalizeSitemapUrl('/en/download')).toBe('/en/download/');
   });
+
+  it('adds leading slash when missing', () => {
+    expect(normalizeSitemapUrl('zh/download.html')).toBe('/zh/download/');
+  });
+
+  it('homepage without leading slash normalizes to /zh/', () => {
+    expect(normalizeSitemapUrl('zh/')).toBe('/zh/');
+  });
 });
 
 describe('PRIORITY_MAP homepage (1.0)', () => {
@@ -195,6 +203,10 @@ describe('PRIORITY_MAP content pages (0.4)', () => {
     expect(getPriority('/zh/blogs/2024/some-post/')).toBe(0.4);
   });
 
+  it('/zh/blogs/blog_example/20220901-sample-post/ gets priority 0.4', () => {
+    expect(getPriority('/zh/blogs/blog_example/20220901-sample-post/')).toBe(0.4);
+  });
+
   it('/zh/user-practice/bigbusiness/ gets priority 0.4', () => {
     expect(getPriority('/zh/user-practice/bigbusiness/')).toBe(0.4);
   });
@@ -291,6 +303,14 @@ describe('URL normalization + priority integration', () => {
 
   it('URL without trailing slash for nav page resolves to 0.8', () => {
     expect(getPriority('/zh/download')).toBe(0.8);
+  });
+
+  it('URL without leading slash for nav page resolves to 0.8', () => {
+    expect(getPriority('zh/download.html')).toBe(0.8);
+  });
+
+  it('URL without leading slash for blogs article resolves to 0.4', () => {
+    expect(getPriority('zh/blogs/2024/some-post.html')).toBe(0.4);
   });
 });
 

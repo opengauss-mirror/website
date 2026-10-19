@@ -7,6 +7,7 @@ import hljs from 'highlight.js';
 import { fileURLToPath } from 'node:url';
 import generateLastmodAndChangefreq from '@opendesign-plus/plugins/vite/generate-lastmod-changefreq';
 import generateLLMsFull from '@opendesign-plus/geo-scripts/generate-llms-full';
+import matter from 'gray-matter';
 import generateSEOManifest from './scripts/generate-tdk-schema-for-articles';
 import { sanitizeMarkdownPlugin } from './scripts/sanitize-md';
 import { PRIORITY_MAP, DEFAULT_PRIORITY, normalizeSitemapUrl } from './sitemap-priority';
@@ -14,6 +15,7 @@ import { getEmptyPracticeExcludes } from './scripts/filter-empty-practice';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const geoDir = join(__dirname, '../../.geo')
+const srcDir = join(__dirname, '..')
 
 function readJson(filePath: string) {
   // 1. 防御：先检查文件大小，超过 5MB 拒绝执行，防止大文件攻击
@@ -88,20 +90,51 @@ const setTdk = (pageData: PageData, pagePath: string) => {
   }
 }
 
+/**
+ * 读取博客 md 文件 frontmatter 中的 date 字段，返回毫秒时间戳；取不到或无法解析时返回 null。
+ * @param mdRelPath 相对于 srcDir（app/）的 md 路径，如 `zh/blogs/xxx.md`
+ */
+function getBlogFrontmatterLastmod(mdRelPath: string): number | null {
+  const absPath = join(srcDir, mdRelPath);
+  if (!existsSync(absPath)) return null;
+  try {
+    const { data } = matter(readFileSync(absPath, 'utf-8'));
+    const raw = data?.date;
+    if (!raw) return null;
+    const ts = raw instanceof Date ? raw.getTime() : Date.parse(String(raw));
+    return Number.isNaN(ts) ? null : ts;
+  } catch {
+    return null;
+  }
+}
+
 const config: UserConfig = {
   sitemap: {
     hostname: 'https://opengauss.org',
     transformItems(items) {
+      let records: Record<string, { lastmod?: number; changefreq?: string }> = {};
       try {
-        const lastmodeTimeStamp = readJson(join(geoDir, 'sitemap-records.json')) as Record<string, number>;
-        for (const item of items) {
-          const key = item.url.endsWith('.html') ? item.url.replace('.html', '.md') : (item.url.endsWith('/') ? `${item.url}index.md` : `${item.url}/index.md`);
-          const generatedItem = lastmodeTimeStamp[key];
-          if (generatedItem) {
-            Object.assign(item, generatedItem);
-          }
+        records = readJson(join(geoDir, 'sitemap-records.json')) as typeof records;
+      } catch {
+        // 记录文件缺失时忽略，后续按兜底规则处理
+      }
+      const now = Date.now();
+      for (const item of items) {
+        const key = item.url.endsWith('.html') ? item.url.replace('.html', '.md') : (item.url.endsWith('/') ? `${item.url}index.md` : `${item.url}/index.md`);
+        const generatedItem = records[key];
+        if (generatedItem) {
+          Object.assign(item, generatedItem);
         }
-      } catch {}
+
+        if (/^\/?(?:zh|en)\/blogs\//.test(item.url)) {
+          // 博客文章页：lastmod 取 md frontmatter 的 date，取不到则用当前时间
+          item.lastmod = getBlogFrontmatterLastmod(key.replace(/^\//, '')) ?? now;
+        } else {
+          // 其他页面：lastmod 取不到用当前时间；changefreq 取不到或为 never 用 weekly
+          if (!item.lastmod) item.lastmod = now;
+          if (!item.changefreq || item.changefreq === 'never') item.changefreq = 'weekly';
+        }
+      }
       for (const item of items) {
         const normalizedUrl = normalizeSitemapUrl(item.url);
         let matched = false;
