@@ -4,4 +4,4 @@ Disallow: /*//
 Content-Signal: ai-train=yes,search=yes,ai-input=yes
 LLM-Policy: https://opengauss.org/llms.txt
 
-Sitemap:https://opengauss.org/sitemap.xml
+Sitemap: https://opengauss.org/sitemap.xml
