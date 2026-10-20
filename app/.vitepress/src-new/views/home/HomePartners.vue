@@ -16,6 +16,7 @@ type OrganizationItemT = (typeof homeContent)['organization'][number];
 const mapFunc = (item: OrganizationItemT): OLogoSwiperItemT => ({
   logo: item.img_light,
   logoDark: item.img_dark,
+  alt: item.name,
 });
 
 const ROW_COUNT = 3;
