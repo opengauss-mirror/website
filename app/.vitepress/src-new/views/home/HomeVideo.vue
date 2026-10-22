@@ -51,7 +51,7 @@ const videoList = computed(() => {
 
 <style lang="scss" scoped>
 :deep(.section-body) {
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     width: 100% !important;
     padding-right: 0 !important;
     padding-left: 0 !important;
@@ -72,21 +72,21 @@ const videoList = computed(() => {
   display: flex;
   --item-gap: 32px;
   padding-bottom: 24px;
-  @include respond-to('<=pad') {
+  @include respond('<=pad') {
     width: fit-content;
     --ltpad-content-width: calc(100vw - var(--layout-content-padding) * 2);
   }
 
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     --item-gap: 24px;
   }
-  @include respond-to('pad') {
+  @include respond('pad') {
     --item-gap: 16px;
   }
-  @include respond-to('phone') {
+  @include respond('phone') {
     --item-gap: 12px;
   }
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     padding: var(--layout-content-padding);
   }
 }
@@ -98,15 +98,15 @@ const videoList = computed(() => {
     box-shadow: var(--o-shadow-2);
   }
 
-  @include respond-to('pad_v') {
+  @include respond('pad_v') {
     width: calc((var(--ltpad-content-width) + var(--item-gap)) / 3.5 - var(--item-gap));
   }
-  @include respond-to('phone') {
+  @include respond('phone') {
     width: calc((var(--ltpad-content-width) + var(--item-gap)) / 2 - var(--item-gap));
   }
   .el-card {
     --el-card-padding: 0;
-    @include respond-to('phone') {
+    @include respond('phone') {
       border-radius: 4px;
     }
   }
@@ -148,13 +148,13 @@ const videoList = computed(() => {
   overflow: hidden;
   font-weight: bold;
   padding: 16px;
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     padding: 12px;
   }
-  @include respond-to('pad_h') {
+  @include respond('pad_h') {
     padding: 12px;
   }
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     padding: 8px;
   }
   white-space: normal;

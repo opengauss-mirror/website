@@ -151,18 +151,18 @@ const submitComplaintsReports = () => {
   background-position: top center;
   background-size: 1428px;
 
-  @include respond-to('<=laptop') {
+  @include respond('<=laptop_s') {
     background-size: 100%;
     padding-top: 24px;
     padding-bottom: 12px;
   }
 
-  @include respond-to('pad') {
+  @include respond('pad') {
     padding-top: 16px;
     padding-bottom: 8px;
   }
 
-  @include respond-to('phone') {
+  @include respond('phone') {
     background-image: none;
     padding-top: 24px;
     padding-bottom: 24px;
@@ -177,7 +177,7 @@ a {
   display: flex;
   justify-content: center;
 
-  @include respond-to('<=pad') {
+  @include respond('<=pad') {
     justify-content: space-between;
   }
 
@@ -213,7 +213,7 @@ a {
     }
   }
 
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     .footer-navs-section {
       .section-title {
         font-size: var(--e-font-size-h7);
@@ -228,7 +228,7 @@ a {
     }
   }
 
-  @include respond-to('pad_h') {
+  @include respond('pad_h') {
     .footer-navs-section {
       .section-title {
         font-size: var(--e-font-size-h8);
@@ -244,11 +244,11 @@ a {
     }
   }
 
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     display: none;
   }
 
-  @include respond-to('<=pad') {
+  @include respond('<=pad') {
     .footer-navs-section {
       & + .footer-navs-section {
         margin-left: 0;
@@ -293,7 +293,7 @@ a {
     }
   }
 
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     margin-top: 40px;
 
     .friendly-link-item {
@@ -301,7 +301,7 @@ a {
     }
   }
 
-  @include respond-to('pad_h') {
+  @include respond('pad_h') {
     margin-top: 24px;
 
     .friendly-link-item {
@@ -309,7 +309,7 @@ a {
     }
   }
 
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     flex-direction: column;
     align-items: flex-start;
     margin-top: 0;
@@ -333,7 +333,7 @@ a {
 .divider-line {
   --o-divider-bd-color: rgba(255, 255, 255, 0.15);
 
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     --o-divider-gap: 16px;
   }
 }
@@ -342,7 +342,7 @@ a {
   --o-divider-bd-color: var(--e-color-white);
   height: 14px;
 
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     --o-divider-gap: 8px;
     height: 12px;
   }
@@ -353,17 +353,17 @@ a {
   display: flex;
   justify-content: space-between;
 
-  @include respond-to('pad_h') {
+  @include respond('pad_h') {
     padding: 16px 0;
   }
 
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     flex-direction: column;
     align-items: center;
     padding: 8px 0 0;
   }
 
-  @include respond-to('phone') {
+  @include respond('phone') {
     padding: 0;
   }
 }
@@ -377,7 +377,7 @@ a {
   .logo {
     height: 26px;
 
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       height: 20px;
     }
   }
@@ -387,12 +387,12 @@ a {
     font-size: var(--e-font-size-text);
     line-height: var(--e-line-height-text);
 
-    @include respond-to('pad_h') {
+    @include respond('pad_h') {
       font-size: var(--e-font-size-tip);
       line-height: var(--e-line-height-tip);
     }
 
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       font-size: 8px;
       line-height: 22px;
     }
@@ -428,12 +428,12 @@ a {
     font-size: var(--e-font-size-text);
     line-height: var(--e-line-height-text);
 
-    @include respond-to('pad_h') {
+    @include respond('pad_h') {
       font-size: var(--e-font-size-tip);
       line-height: var(--e-line-height-tip);
     }
 
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       font-size: 10px;
       line-height: 16px;
     }
@@ -451,12 +451,12 @@ a {
   font-size: var(--e-font-size-text);
   line-height: var(--e-line-height-text);
 
-  @include respond-to('pad_h') {
+  @include respond('pad_h') {
     font-size: var(--e-font-size-tip);
     line-height: var(--e-line-height-tip);
   }
 
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     font-size: 10px;
     line-height: 16px;
   }

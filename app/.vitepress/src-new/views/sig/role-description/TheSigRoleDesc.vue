@@ -216,7 +216,7 @@ const jumpAnchor = (e: MouseEvent) => {
 
 <style lang="scss" scoped>
 .o-breadcrumb {
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     display: none;
   }
 }
@@ -240,7 +240,7 @@ const jumpAnchor = (e: MouseEvent) => {
 
   .roles {
     display: flex;
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       flex-direction: column;
     }
   }
@@ -256,7 +256,7 @@ const jumpAnchor = (e: MouseEvent) => {
     & + .role-item {
       margin-left: var(--o-r-gap-6);
     }
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       & + .role-item {
         margin-left: 0;
         margin-top: var(--o-r-gap-6);
@@ -290,7 +290,7 @@ const jumpAnchor = (e: MouseEvent) => {
   .roles2 {
     margin-top: var(--o-r-gap-7);
     display: flex;
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       flex-direction: column;
     }
 
@@ -306,7 +306,7 @@ const jumpAnchor = (e: MouseEvent) => {
       & + .item {
         margin-left: var(--o-r-gap-6);
       }
-      @include respond-to('<=pad_v') {
+      @include respond('<=pad_v') {
         & + .item {
           margin-left: 0;
           margin-top: var(--o-r-gap-6);
@@ -320,13 +320,13 @@ const jumpAnchor = (e: MouseEvent) => {
         width: var(--size);
         margin-right: var(--o-r-gap-4);
         flex-shrink: 0;
-        @include respond-to('laptop') {
+        @include respond('laptop_s') {
           --size: 40px;
         }
-        @include respond-to('pad_h') {
+        @include respond('pad_h') {
           --size: 40px;
         }
-        @include respond-to('<=pad_v') {
+        @include respond('<=pad_v') {
           --size: 32px;
         }
       }
@@ -334,7 +334,7 @@ const jumpAnchor = (e: MouseEvent) => {
         margin-bottom: var(--o-r-gap-3);
         font-weight: 500;
         @include h3;
-        @include respond-to('phone') {
+        @include respond('phone') {
           margin-bottom: var(--o-gap-2);
         }
       }
@@ -389,7 +389,7 @@ const jumpAnchor = (e: MouseEvent) => {
     & + .item {
       margin-left: var(--o-r-gap-6);
     }
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       & + .item {
         margin-top: var(--o-r-gap-6);
         margin-left: 0;
@@ -397,7 +397,7 @@ const jumpAnchor = (e: MouseEvent) => {
     }
   }
 
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     flex-direction: column;
   }
 }
@@ -447,7 +447,7 @@ const jumpAnchor = (e: MouseEvent) => {
         margin-top: 2px;
       }
     }
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       & + .item {
         margin-top: var(--o-r-gap-6);
         margin-left: 0;
@@ -455,7 +455,7 @@ const jumpAnchor = (e: MouseEvent) => {
     }
   }
 
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     flex-direction: column;
   }
 }

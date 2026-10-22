@@ -139,7 +139,7 @@ watch(footerIconRef, (iconRef) => {
       margin-top: 8px;
     }
 
-    @include respond-to('phone') {
+    @include respond('phone') {
       margin-top: 12px;
       font-size: 14px;
       text-align: center;
@@ -166,11 +166,11 @@ watch(footerIconRef, (iconRef) => {
 
     margin-top: 32px;
 
-    @include respond-to('<=laptop') {
+    @include respond('<=laptop_s') {
       margin-top: 16px;
     }
 
-    @include respond-to('phone') {
+    @include respond('phone') {
       margin-top: 12px;
     }
   }

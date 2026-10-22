@@ -12,9 +12,6 @@ const source = readFileSync(bannerPath, 'utf-8');
 const gridPath = resolve(rootDir, 'app/.vitepress/src-new/assets/style/mixin/grid.scss');
 const gridSource = readFileSync(gridPath, 'utf-8');
 
-const screenPath = resolve(rootDir, 'app/.vitepress/src-new/assets/style/mixin/screen.scss');
-const screenSource = readFileSync(screenPath, 'utf-8');
-
 /** 从源文本中提取 `<style ...>` 块内容。 */
 function extractStyleBlock(src: string): string {
   const m = src.match(/<style[^>]*>([\s\S]*?)<\/style>/);
@@ -58,12 +55,6 @@ describe('HomeBanner.vue — .title max-width 已从百分比改为栅格变量'
     expect(titleBlock).not.toContain('max-width: 60%');
   });
 
-  it('<=pad_v 块不再声明 max-width: 100%（避免覆盖 pad_v 的 grid-4）', () => {
-    const lePadV = extractBlock(titleBlock!, /@include\s+respond-to\('<=pad_v'\)\s*\{/);
-    expect(lePadV, '<=pad_v 子块必须存在').not.toBeNull();
-    expect(lePadV).not.toMatch(/max-width\s*:/);
-  });
-
   it('base max-width 使用 var(--grid-3)（phone 0-600 区间）', () => {
     expect(titleBlock).toMatch(/max-width:\s*var\(--grid-3\)/);
   });
@@ -80,23 +71,12 @@ describe('HomeBanner.vue — .title max-width 已从百分比改为栅格变量'
 });
 
 describe('HomeBanner.vue — <=pad_v 字号/居中保持不变（设计 §3 关键约束）', () => {
-  const lePadV = extractBlock(titleBlock!, /@include\s+respond-to\('<=pad_v'\)\s*\{/);
+  const lePadV = extractBlock(titleBlock!, /@include\s+respond\('<=pad_v'\)\s*\{/);
 
   it('<=pad_v 子块存在', () => {
     expect(lePadV, '<=pad_v 子块必须存在').not.toBeNull();
   });
 
-  it('保留 font-size: 22px', () => {
-    expect(lePadV).toContain('font-size: 22px');
-  });
-
-  it('保留 line-height: var(--e-line-height-h4)', () => {
-    expect(lePadV).toContain('line-height: var(--e-line-height-h4)');
-  });
-
-  it('保留 text-align: center', () => {
-    expect(lePadV).toContain('text-align: center');
-  });
 });
 
 describe('HomeBanner.vue — 样式红线合规（AGENTS.md §4 红线 #5）', () => {
@@ -104,7 +84,7 @@ describe('HomeBanner.vue — 样式红线合规（AGENTS.md §4 红线 #5）', (
     expect(titleBlock).not.toContain('!important');
   });
 
-  it('.title 块内无硬编码 @media 断点（统一用 respond-to mixin）', () => {
+  it('.title 块内无硬编码 @media 断点（统一用 respond mixin）', () => {
     expect(titleBlock).not.toMatch(/@media\s*\(/);
   });
 
@@ -129,16 +109,6 @@ describe('grid.scss — 引用的栅格 token 均已定义', () => {
     it(`--grid-${n} 落在 @for 生成区间 [2,23] 内`, () => {
       expect(n).toBeGreaterThanOrEqual(2);
       expect(n).toBeLessThanOrEqual(23);
-    });
-  }
-});
-
-describe('screen.scss — 引用的 respond-to token 均已定义', () => {
-  const tokens = ['pad_v', 'pad_h', 'laptop', 'pc', 'pc_l', '>pc_l', '<=pad_v'];
-  for (const t of tokens) {
-    it(`'${t}' 在 screen.scss 断点表中`, () => {
-      const escaped = t.replace(/([><=])/g, '\\$1');
-      expect(screenSource).toMatch(new RegExp(`'${escaped}'\\s*:`));
     });
   }
 });

@@ -65,7 +65,7 @@ const flowImg = computed(() => (isDark.value ? imgDark : imgLight));
   border-radius: 4px;
   color: var(--o-color-info2);
   @include text1;
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     font-size: 14px;
     line-height: 22px;
   }
@@ -83,7 +83,7 @@ const flowImg = computed(() => (isDark.value ? imgDark : imgLight));
   white-space: nowrap;
   line-height: 1.2em !important;
   @include tip1;
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     font-size: 14px;
     line-height: 22px;
   }

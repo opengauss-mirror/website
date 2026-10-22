@@ -131,7 +131,7 @@ const subTitle = computed(() => {
     display: flex;
     justify-content: center;
     align-items: center;
-    @include respond-to('<=laptop') {
+    @include respond('<=laptop_s') {
       max-width: calc(100% - var(--layout-content-padding));
     }
   }

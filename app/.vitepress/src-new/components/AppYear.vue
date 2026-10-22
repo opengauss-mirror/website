@@ -36,13 +36,13 @@ const { lang } = useData();
   left: 64px;
   bottom: 160px;
   z-index: 12;
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     bottom: 120px;
   }
   @media (max-width: 1200px) {
     left: 16px;
   }
-  @include respond-to('phone') {
+  @include respond('phone') {
     left: 12px;
   }
 
@@ -74,7 +74,7 @@ const { lang } = useData();
     @include respond-to('pad-laptop') {
       width: 94px;
     }
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       width: 83px;
     }
   }

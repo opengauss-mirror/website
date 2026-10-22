@@ -178,7 +178,7 @@ const designs = [
 
 <style scoped lang="scss">
 .ogmemory-banner {
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     background-color: transparent;
     padding-top: 16px;
     :deep(.banner-bg) {
@@ -207,7 +207,7 @@ const designs = [
   align-items: stretch;
   gap: 16px;
 
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     flex-direction: column;
   }
 }
@@ -230,7 +230,7 @@ const designs = [
   &:nth-child(3) {
     background-image: url('/category/ogmemory-png/quickstart3-light.png');
   }
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     background-image: none !important;
   }
 }
@@ -245,14 +245,14 @@ const designs = [
   &:nth-child(3) {
     background-image: url('/category/ogmemory-png/quickstart3-dark.png');
   }
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     background-image: none !important;
   }
 }
 
 .quickstart-header {
   padding: 24px;
-  @include respond-to('phone') {
+  @include respond('phone') {
     padding: 12px;
   }
   border-bottom: 1px solid var(--o-color-control4);
@@ -270,7 +270,7 @@ const designs = [
 
 .quickstart-body {
   padding: 24px;
-  @include respond-to('phone') {
+  @include respond('phone') {
     padding: 12px;
   }
   color: var(--o-color-info2);
@@ -290,12 +290,12 @@ const designs = [
   }
   .best-practice-title {
     margin-bottom: 24px;
-    @include respond-to('phone') {
+    @include respond('phone') {
       margin-bottom: 12px;
     }
   }
   .list-item {
-    @include respond-to('pad_h') {
+    @include respond('pad_h') {
       flex-direction: column;
       span:last-child {
         margin-top: 8px;
@@ -303,7 +303,7 @@ const designs = [
     }
   }
   @include text1;
-  @include respond-to('>laptop') {
+  @include respond('>laptop') {
     font-size: 14px;
   }
 }
@@ -317,7 +317,7 @@ const designs = [
       border-bottom: 1px solid var(--o-color-control4);
     }
 
-    @include respond-to('phone') {
+    @include respond('phone') {
       padding: 8px 0;
     }
 
@@ -338,16 +338,16 @@ const designs = [
   backdrop-filter: blur(32px);
   background: linear-gradient(180deg, rgb(255, 255, 255, 0.45) 0%, rgb(254.74, 254.83, 255, 0.9) 100%);
   padding: 32px;
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     padding: 24px;
   }
-  @include respond-to('pad_h') {
+  @include respond('pad_h') {
     padding: 16px;
   }
-  @include respond-to('pad_v') {
+  @include respond('pad_v') {
     padding: 16px 8px;
   }
-  @include respond-to('phone') {
+  @include respond('phone') {
     padding: 16px 8px 12px;
   }
 }
@@ -380,13 +380,13 @@ const designs = [
 
   .design-item-icon {
     font-size: 40px;
-    @include respond-to('laptop') {
+    @include respond('laptop_s') {
       font-size: 32px;
     }
-    @include respond-to('pad_h') {
+    @include respond('pad_h') {
       font-size: 32px;
     }
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       font-size: 24px;
     }
     color: inherit;
@@ -399,7 +399,7 @@ const designs = [
     word-break: break-word;
     margin-top: 16px;
     @include h4;
-    @include respond-to('phone') {
+    @include respond('phone') {
       margin-top: 4px;
       @include text1;
     }
@@ -410,7 +410,7 @@ const designs = [
     color: var(--o-color-info3);
     margin-top: 8px;
     @include text1;
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       display: none;
     }
   }
@@ -422,7 +422,7 @@ const designs = [
   background-image: url('/category/ogmemory-png/case-bg-light.png');
   background-position: bottom right;
   background-size: cover;
-  @include respond-to('phone') {
+  @include respond('phone') {
     padding: 12px;
     background-image: url('/category/ogmemory-png/case-bg-light-phone.png');
   }
@@ -435,7 +435,7 @@ const designs = [
     font-weight: 600;
     @include h3;
     margin-bottom: 12px;
-    @include respond-to('phone') {
+    @include respond('phone') {
       margin-bottom: 8px;
     }
   }
@@ -451,7 +451,7 @@ const designs = [
     display: flex;
     align-items: center;
     margin-top: 24px;
-    @include respond-to('phone') {
+    @include respond('phone') {
       margin-top: 16px;
     }
     .o-icon {
@@ -462,7 +462,7 @@ const designs = [
 
 :root.dark .typical-case {
   background-image: url('/category/ogmemory-png/case-bg-dark.png');
-  @include respond-to('phone') {
+  @include respond('phone') {
     background-image: url('/category/ogmemory-png/case-bg-dark-phone.png');
   }
 }
@@ -472,14 +472,14 @@ const designs = [
   background-color: var(--o-color-fill2);
   border-radius: 4px;
 
-  @include respond-to('phone') {
+  @include respond('phone') {
     padding: 12px;
   }
 
   .list-item {
     display: block;
     padding: 16px 0;
-    @include respond-to('phone') {
+    @include respond('phone') {
       padding: 8px 0;
     }
   }
@@ -488,7 +488,7 @@ const designs = [
     font-weight: 600;
     @include text1;
     margin-bottom: 12px;
-    @include respond-to('phone') {
+    @include respond('phone') {
       margin-bottom: 8px;
     }
   }

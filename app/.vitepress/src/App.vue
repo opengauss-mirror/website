@@ -168,29 +168,29 @@ const headerHeight = computed(() => appHeaderRef.value?.height.toString() ?? '72
 
   --app-header-height: 72px;
 
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     --app-header-height: 64px;
   }
 
-  @include respond-to('pad_h') {
+  @include respond('pad_h') {
     --app-header-height: 56px;
   }
 
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     --app-header-height: 48px;
   }
 
-  @include respond-to('<=laptop') {
+  @include respond('<=laptop_s') {
     --layout-content-max-width: 100%;
     --layout-new-content-max-width: 100%;
     --layout-content-padding: 40px;
   }
 
-  @include respond-to('<=pad') {
+  @include respond('<=pad') {
     --layout-content-padding: 32px;
   }
 
-  @include respond-to('phone') {
+  @include respond('phone') {
     --layout-content-padding: 24px;
   }
 }

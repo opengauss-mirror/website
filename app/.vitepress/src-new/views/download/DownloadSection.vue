@@ -461,7 +461,7 @@ const reportTabChange = (val: string) => {
       text-transform: capitalize;
     }
   }
-  @include respond-to('<=pad') {
+  @include respond('<=pad') {
     --height: 48px;
     --tab-radius: 4px;
   }
@@ -516,7 +516,7 @@ const reportTabChange = (val: string) => {
     border-radius: 0 0 var(--tab-radius) var(--tab-radius);
     .o-tab-pane {
       padding: 24px;
-      @include respond-to('<=pad') {
+      @include respond('<=pad') {
         padding: 12px;
       }
     }
@@ -524,7 +524,7 @@ const reportTabChange = (val: string) => {
       background: var(--o-color-fill2);
       border-radius: var(--tab-radius);
       padding: 24px;
-      @include respond-to('<=pad') {
+      @include respond('<=pad') {
         padding: 12px;
       }
       .edition-text {
@@ -646,7 +646,7 @@ const reportTabChange = (val: string) => {
   margin-top: 24px;
   + .content-item {
     margin-top: 48px;
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       margin-top: 16px;
     }
   }
@@ -658,11 +658,11 @@ const reportTabChange = (val: string) => {
   }
   .filter-card {
     margin-top: 24px;
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       margin-top: 12px;
     }
     :deep(.o-radio-group-h) {
-      @include respond-to('<=pad_v') {
+      @include respond('<=pad_v') {
         --radio-group-gap: 8px;
       }
     }
@@ -671,7 +671,7 @@ const reportTabChange = (val: string) => {
       display: flex;
       justify-content: start;
 
-      @include respond-to('<=pad_v') {
+      @include respond('<=pad_v') {
         flex-direction: column;
         gap: 8px;
       }
@@ -698,7 +698,7 @@ const reportTabChange = (val: string) => {
         white-space: nowrap;
       }
       .tag-filter-box {
-        @include respond-to('<=pad_v') {
+        @include respond('<=pad_v') {
           width: 100%;
         }
         .o-tag {

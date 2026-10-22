@@ -69,7 +69,7 @@ const nonActiveColor = computed(() => {
   flex-wrap: wrap;
   gap: var(--grid-gap);
   width: 100%;
-  @include respond-to('<=laptop') {
+  @include respond('<=laptop_s') {
     --grid-gap: 8px;
   };
 }
@@ -83,7 +83,7 @@ const nonActiveColor = computed(() => {
   align-items: center;
   white-space: nowrap;
   @include text1;
-  @include respond-to('<=laptop') {
+  @include respond('<=laptop_s') {
     padding: 8px;
   };
 }

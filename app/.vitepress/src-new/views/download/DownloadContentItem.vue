@@ -131,7 +131,7 @@ const collectDownloadData = (name: string) => {
   padding: 16px;
   @include tip1;
   color: var(--o-color-info1);
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     --card-radius: 4px;
     padding: 12px 16px;
     flex-direction: column;
@@ -155,13 +155,13 @@ const collectDownloadData = (name: string) => {
   .software-info {
     display: flex;
     justify-content: space-between;
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       flex-direction: column;
       gap: 8px;
     }
   }
   .size {
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       margin-left: 8px;
     }
   }
@@ -171,7 +171,7 @@ const collectDownloadData = (name: string) => {
     align-items: center;
     margin-right: 64px;
 
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       margin-right: 0;
       justify-content: flex-start;
     }
@@ -182,7 +182,7 @@ const collectDownloadData = (name: string) => {
       align-items: center;
       cursor: pointer;
       @include tip1;
-      @include respond-to('phone') {
+      @include respond('phone') {
         @include text2;
       }
       .o-icon {

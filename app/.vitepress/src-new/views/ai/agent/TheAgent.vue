@@ -103,7 +103,7 @@ const categoryLayout = (id: string): number | undefined => categoryLayouts[id];
     margin-top: var(--o-r-gap-4);
   }
 
-  @include respond-to('phone') {
+  @include respond('phone') {
     flex-direction: column;
     align-items: center;
   }
@@ -138,16 +138,16 @@ const categoryLayout = (id: string): number | undefined => categoryLayouts[id];
   margin-right: var(--o-r-gap-4);
   flex-shrink: 0;
 
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     width: 80px;
   }
-  @include respond-to('pad_h') {
+  @include respond('pad_h') {
     width: 60px;
   }
-  @include respond-to('pad_v') {
+  @include respond('pad_v') {
     width: 40px;
   }
-  @include respond-to('phone') {
+  @include respond('phone') {
     min-width: unset;
     width: auto;
     margin-bottom: var(--o-r-gap-4);

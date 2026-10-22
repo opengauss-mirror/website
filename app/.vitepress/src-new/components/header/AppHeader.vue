@@ -143,7 +143,7 @@ defineExpose({
 
 :deep(.opengauss.nav-content) {
   --sub-gap: 24px;
-  @include respond-to('<=laptop') {
+  @include respond('<=laptop_s') {
     --sub-gap: 16px;
   }
 }

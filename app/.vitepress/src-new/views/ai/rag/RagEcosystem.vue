@@ -135,13 +135,13 @@ const nonActiveColor = computed(() => {
   flex-direction: column;
   gap: 16px;
 
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     padding: 16px;
   }
-  @include respond-to('pad') {
+  @include respond('pad') {
     padding: 12px;
   }
-  @include respond-to('phone') {
+  @include respond('phone') {
     padding: 12px;
   }
 }
@@ -184,7 +184,7 @@ const nonActiveColor = computed(() => {
   &:not(:first-child) {
     margin-top: 16px;
   }
-  @include respond-to('<=laptop') {
+  @include respond('<=laptop_s') {
     padding: 8px;
     &:not(:first-child) {
       margin-top: 8px;
@@ -201,7 +201,7 @@ const nonActiveColor = computed(() => {
   &:not(:first-child) {
     margin-top: 12px;
   }
-  @include respond-to('<=laptop') {
+  @include respond('<=laptop_s') {
     &:not(:first-child) {
       margin-top: 8px;
     }
@@ -219,13 +219,13 @@ const nonActiveColor = computed(() => {
   color: var(--o-color-info1);
   flex-shrink: 0;
 
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     width: 80px;
   }
-  @include respond-to('pad_h') {
+  @include respond('pad_h') {
     width: 60px;
   }
-  @include respond-to('pad_v') {
+  @include respond('pad_v') {
     width: 40px;
   }
 }

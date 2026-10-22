@@ -104,7 +104,7 @@ const rewardCards = computed(() => [
   display: flex;
   gap: 16px;
 
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     flex-direction: column;
   }
 }
@@ -118,16 +118,16 @@ const rewardCards = computed(() => [
   display: flex;
   flex-direction: column;
   @include text1;
-  @include respond-to('phone') {
+  @include respond('phone') {
     font-size: 14px;
     line-height: 22px;
   }
   padding: 24px;
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     padding: 16px;
   }
 
-  @include respond-to('<=pad') {
+  @include respond('<=pad') {
     padding: 12px;
   }
 }
@@ -142,11 +142,11 @@ const rewardCards = computed(() => [
   flex-direction: column;
   
   padding: 24px;
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     padding: 16px;
   }
 
-  @include respond-to('<=pad') {
+  @include respond('<=pad') {
     padding: 12px;
   }
 }
@@ -156,11 +156,11 @@ const rewardCards = computed(() => [
   align-items: center;
   margin-bottom: 24px;
 
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     margin-bottom: 20px;
   }
 
-  @include respond-to('<=pad') {
+  @include respond('<=pad') {
     margin-bottom: 12px;
   }
 

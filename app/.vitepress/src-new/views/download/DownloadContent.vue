@@ -230,13 +230,13 @@ const hasOgracData = computed(() => newData.value.some((i) => (i.name as string)
   .other-link {
     margin-top: 16px;
     @include text1;
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       margin-top: 8px;
     }
   }
   .divider-line {
     --o-divider-gap: 32px;
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       --o-divider-gap: 16px;
     }
   }

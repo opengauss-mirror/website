@@ -49,7 +49,7 @@ const { theme } = storeToRefs(useCommon());
 <style scoped lang="scss">
 .view-all-tasks {
   @include text1;
-  @include respond-to('phone') {
+  @include respond('phone') {
     font-size: 14px;
     line-height: 22px;
   }
@@ -73,25 +73,25 @@ const { theme } = storeToRefs(useCommon());
     width: var(--img-size);
     height: var(--img-size);
     margin-right: var(--padding);
-    @include respond-to('phone') {
+    @include respond('phone') {
       margin-right: 0;
       margin-bottom: var(--padding);
     }
   }
 
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     --padding: 24px;
     --img-size: 120px;
   }
-  @include respond-to('pad_h') {
+  @include respond('pad_h') {
     --padding: 16px;
     --img-size: 100px;
   }
-  @include respond-to('pad_v') {
+  @include respond('pad_v') {
     --padding: 12px;
     --img-size: 100px;
   }
-  @include respond-to('phone') {
+  @include respond('phone') {
     flex-direction: column;
     --padding: 12px;
     --img-size: 100px;

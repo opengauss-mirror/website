@@ -106,7 +106,7 @@ onUnmounted(() => {
 </template>
 <style lang="scss" scoped>
 .banner-level2 {
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     background-color: transparent !important;
     padding-top: 16px;
     :deep(.banner-bg) {
@@ -126,11 +126,11 @@ onUnmounted(() => {
   padding-top: 16px;
   z-index: 1;
 
-  @include respond-to('<=laptop') {
+  @include respond('<=laptop_s') {
     padding-top: 10px;
   }
 
-  @include respond-to('phone') {
+  @include respond('phone') {
     padding-top: 4px;
     background-color: transparent;
   }

@@ -135,7 +135,7 @@ watch(
 
 <style lang="scss" scoped>
 .charter-banner {
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     background-color: transparent !important;
     padding-top: 16px;
     :deep(.banner-bg) {
@@ -155,11 +155,11 @@ watch(
   padding-top: 16px;
   z-index: 1;
 
-  @include respond-to('<=laptop') {
+  @include respond('<=laptop_s') {
     padding-top: 10px;
   }
 
-  @include respond-to('phone') {
+  @include respond('phone') {
     padding-top: 4px;
     background-color: transparent;
   }
@@ -295,11 +295,11 @@ watch(
     opacity: 0;
     transition: all var(--o-duration-m1) var(--o-easing-standard-in);
 
-    @include respond-to('<=pad') {
+    @include respond('<=pad') {
       top: var(--o-gap-2);
     }
 
-    @include respond-to('phone') {
+    @include respond('phone') {
       top: 12px;
       opacity: 1;
       width: 16px;
@@ -308,13 +308,13 @@ watch(
     }
   }
 
-  @include respond-to('pad_h') {
+  @include respond('pad_h') {
     padding: 12px 16px;
   }
-  @include respond-to('pad_v') {
+  @include respond('pad_v') {
     padding: 24px;
   }
-  @include respond-to('phone') {
+  @include respond('phone') {
     padding: 12px;
   }
 }

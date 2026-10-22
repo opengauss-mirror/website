@@ -185,7 +185,7 @@ const getContributeData = async (params: any) => {
 </template>
 <style lang="scss" scoped>
 .o-breadcrumb {
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     display: none;
   }
 }
@@ -249,7 +249,7 @@ const getContributeData = async (params: any) => {
 }
 
 :deep(.o-sig-detail-name-box) {
-  @include respond-to('phone') {
+  @include respond('phone') {
     flex-wrap: wrap;
     .o-sig-detail-name {
       text-overflow: ellipsis;

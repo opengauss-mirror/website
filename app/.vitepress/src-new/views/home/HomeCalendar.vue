@@ -638,7 +638,7 @@ const meetingCancelConfirm = async () => {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       flex-direction: column-reverse;
     }
     .text {
@@ -646,14 +646,14 @@ const meetingCancelConfirm = async () => {
       // @include tip2;
       font-size: var(--o-r-font_size-text1);
       line-height: var(--o-r-line_height-text1);
-      @include respond-to('<=pad_v') {
+      @include respond('<=pad_v') {
         text-align: center;
         margin-top: 8px;
       }
     }
     .oper-action {
       margin-left: 24px;
-      @include respond-to('<=pad_v') {
+      @include respond('<=pad_v') {
         margin: 0;
       }
     }
@@ -664,7 +664,7 @@ const meetingCancelConfirm = async () => {
     border-radius: var(--o-radius-xs);
     background-color: var(--o-color-fill2);
     overflow: hidden;
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       margin-top: 12px;
       background-color: transparent;
       flex-direction: column;
@@ -673,7 +673,7 @@ const meetingCancelConfirm = async () => {
       width: 56%;
       --el-calendar-borde: none;
       --el-calendar-selected-bg-color: none;
-      @include respond-to('<=pad_v') {
+      @include respond('<=pad_v') {
         width: 100%;
         flex-direction: column;
         background-color: var(--o-color-fill2);
@@ -683,7 +683,7 @@ const meetingCancelConfirm = async () => {
         height: 60px;
         padding: 14px 24px;
         border-bottom: 1px solid var(--o-color-control4);
-        @include respond-to('<=pad_v') {
+        @include respond('<=pad_v') {
           justify-content: center;
           padding: 16px 16px 12px;
           height: auto;
@@ -717,7 +717,7 @@ const meetingCancelConfirm = async () => {
           align-items: center;
           @include text2;
           color: var(--o-color-info2);
-          @include respond-to('<=pad_v') {
+          @include respond('<=pad_v') {
             display: none;
           }
         }
@@ -734,7 +734,7 @@ const meetingCancelConfirm = async () => {
             text-align: left;
             color: var(--o-color-info3);
             @include text1;
-            @include respond-to('<=pad_v') {
+            @include respond('<=pad_v') {
               padding: 0 !important;
               text-align: center;
             }
@@ -750,7 +750,7 @@ const meetingCancelConfirm = async () => {
             margin-bottom: 0 !important;
           }
         }
-        @include respond-to('<=pad_v') {
+        @include respond('<=pad_v') {
           border: none;
           padding: 0 16px 16px;
           thead {
@@ -785,10 +785,10 @@ const meetingCancelConfirm = async () => {
         max-width: 100px;
         height: 64px;
         color: var(--o-color-info1);
-        @include respond-to('<=pad') {
+        @include respond('<=pad') {
           height: fit-content;
         }
-        @include respond-to('<=pad_v') {
+        @include respond('<=pad_v') {
           display: flex;
           justify-content: center;
           padding: 0;
@@ -806,7 +806,7 @@ const meetingCancelConfirm = async () => {
           @include tip1;
           @include hover {
             background-color: var(--o-color-control3-light);
-            @include respond-to('<=pad_v') {
+            @include respond('<=pad_v') {
               @include hover {
                 background-color: inherit;
                 border: 1px solid transparent;
@@ -833,7 +833,7 @@ const meetingCancelConfirm = async () => {
               height: 20px;
               font-size: 20px;
               margin-left: -6px;
-              @include respond-to('<=pad_v') {
+              @include respond('<=pad_v') {
                 height: 6px;
                 width: 6px;
                 margin-left: -2px;
@@ -843,7 +843,7 @@ const meetingCancelConfirm = async () => {
               }
             }
           }
-          @include respond-to('<=pad_v') {
+          @include respond('<=pad_v') {
             background-color: transparent;
             padding: 0;
             margin: 6px 8px;
@@ -882,7 +882,7 @@ const meetingCancelConfirm = async () => {
         .out-box {
           background-color: var(--o-color-control3-light);
           border: 1px solid var(--o-color-primary1);
-          @include respond-to('<=pad_v') {
+          @include respond('<=pad_v') {
             background-color: transparent;
             border: 1px solid transparent;
             .date-calender {
@@ -928,7 +928,7 @@ const meetingCancelConfirm = async () => {
             border-radius: 50%;
             z-index: -1;
           }
-          @include respond-to('<=pad_v') {
+          @include respond('<=pad_v') {
             height: auto;
             width: auto;
             &::after {
@@ -949,18 +949,18 @@ const meetingCancelConfirm = async () => {
     }
     .detail-list {
       width: 44%;
-      @include respond-to('<=pad_v') {
+      @include respond('<=pad_v') {
         margin-top: 12px;
         background-color: var(--o-color-fill2);
         width: 100%;
         border-radius: var(--o-radius-xs);
       }
-      @include respond-to('>pad_v') {
+      @include respond('>pad_v') {
         .current-day {
           display: none;
         }
       }
-      @include respond-to('<=pad_v') {
+      @include respond('<=pad_v') {
         .current-day {
           @include text2;
           display: flex;
@@ -981,7 +981,7 @@ const meetingCancelConfirm = async () => {
         @include respond-to('pad_v-laptop') {
           --tab-nav-padding: 0 0 14px;
         }
-        @include respond-to('<=pad_v') {
+        @include respond('<=pad_v') {
           height: auto;
           .o-icon {
             display: none;
@@ -1005,7 +1005,7 @@ const meetingCancelConfirm = async () => {
           width: 24px;
           height: 24px;
           font-size: 24px;
-          @include respond-to('<=pad_v') {
+          @include respond('<=pad_v') {
             font-size: 20px;
             width: 20px;
             height: 20px;
@@ -1025,7 +1025,7 @@ const meetingCancelConfirm = async () => {
         @include tip1;
         color: var(--o-color-info3);
         text-decoration: none;
-        @include respond-to('<=pad_v') {
+        @include respond('<=pad_v') {
           margin-left: 32px;
         }
         .o-divider {
@@ -1037,7 +1037,7 @@ const meetingCancelConfirm = async () => {
         font-size: var(--o-font_size-tip1);
         line-height: var(--o-line_height-tip1);
         margin-left: calc($icon-size + 12px);
-        @include respond-to('<=pad_v') {
+        @include respond('<=pad_v') {
           margin-left: 32px;
           padding: 0;
         }
@@ -1045,7 +1045,7 @@ const meetingCancelConfirm = async () => {
     }
     .meeting-list {
       height: v-bind('calendarHeight');
-      @include respond-to('<=pad_v') {
+      @include respond('<=pad_v') {
         height: auto;
       }
       .empty {
@@ -1084,7 +1084,7 @@ const meetingCancelConfirm = async () => {
             color: var(--o-color-primary1);
           }
         }
-        @include respond-to('<=pad_v') {
+        @include respond('<=pad_v') {
           &::after {
             width: calc(100% - 2 * 16px);
           }
@@ -1101,7 +1101,7 @@ const meetingCancelConfirm = async () => {
       .o-collapse-item-header {
         align-items: center;
         padding: 16px 24px;
-        @include respond-to('<=pad_v') {
+        @include respond('<=pad_v') {
           padding: 12px 16px;
         }
       }
@@ -1122,7 +1122,7 @@ const meetingCancelConfirm = async () => {
       padding: 16px 60px;
       position: relative;
       @include tip1;
-      @include respond-to('<=pad_v') {
+      @include respond('<=pad_v') {
         padding: 12px 16px;
       }
       .meeting-action {
@@ -1174,19 +1174,19 @@ const meetingCancelConfirm = async () => {
   left: -110px;
   width: 320px;
   z-index: -1;
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     width: 327px;
     top: -180px;
     left: -210px;
   }
-  @include respond-to('pad_h') {
+  @include respond('pad_h') {
   }
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     width: 84px;
     top: -50px;
     left: -4px;
   }
-  @include respond-to('phone') {
+  @include respond('phone') {
     width: 54px;
     top: -32px;
     left: 3px;
@@ -1198,16 +1198,16 @@ const meetingCancelConfirm = async () => {
   width: 380px;
   bottom: -181px;
   right: -220px;
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     width: 400px;
     bottom: -200px;
     right: -240px;
   }
-  @include respond-to('pad_h') {
+  @include respond('pad_h') {
     right: -140px;
     bottom: -150px;
   }
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     width: 71px;
     bottom: -40px;
     right: -8px;

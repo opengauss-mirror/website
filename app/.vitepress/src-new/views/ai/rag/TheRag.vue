@@ -72,16 +72,16 @@ const bannerData = computed(() => ({ subtitle: i18n.value.ai.description, img: i
   background-color: var(--o-color-fill2);
   margin: auto;
   padding: 40px 32px;
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     padding: 24px;
   }
-  @include respond-to('pad_h') {
+  @include respond('pad_h') {
     padding: 16px;
   }
-  @include respond-to('pad_v') {
+  @include respond('pad_v') {
     padding: 12px;
   }
-  @include respond-to('phone') {
+  @include respond('phone') {
     padding: 12px;
   }
 }
@@ -103,20 +103,20 @@ const bannerData = computed(() => ({ subtitle: i18n.value.ai.description, img: i
   grid-template-columns: repeat(3, 1fr);
   column-gap: 32px;
   row-gap: 32px;
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     column-gap: 24px;
     row-gap: 24px;
   }
-  @include respond-to('pad_h') {
+  @include respond('pad_h') {
     column-gap: 16px;
     row-gap: 16px;
   }
-  @include respond-to('pad_v') {
+  @include respond('pad_v') {
     column-gap: 28px;
     row-gap: 28px;
     grid-template-columns: repeat(2, 1fr);
   }
-  @include respond-to('phone') {
+  @include respond('phone') {
     display: block;
   }
 }
@@ -132,16 +132,16 @@ const bannerData = computed(() => ({ subtitle: i18n.value.ai.description, img: i
     box-shadow: var(--o-shadow-2);
     color: var(--e-color-link1);
   }
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     padding: 16px 24px;
   }
-  @include respond-to('pad_h') {
+  @include respond('pad_h') {
     padding: 12px 16px;
   }
-  @include respond-to('pad_v') {
+  @include respond('pad_v') {
     padding: 12px;
   }
-  @include respond-to('phone') {
+  @include respond('phone') {
     padding: 12px;
     margin-top: 28px;
   }

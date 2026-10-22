@@ -50,7 +50,7 @@ const copy = () => {
       @include hover {
         color: var(--o-color-ubmc-hover);
       }
-      @include respond-to('<=pad_v') {
+      @include respond('<=pad_v') {
         opacity: 1;
       }
     }

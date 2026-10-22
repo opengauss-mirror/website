@@ -86,32 +86,32 @@ const activeTab = ref('blogs');
 <style lang="scss" scoped>
 :deep(.section-footer) {
   margin-top: 32px;
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     margin-top: 24px !important;
   }
-  @include respond-to('pad_h') {
+  @include respond('pad_h') {
     margin-top: 16px !important;
   }
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     margin-top: 12px !important;
   }
 }
 :deep(.o-scrollbar-wrapper) {
   padding-top: 32px !important;
   padding-bottom: 16px !important;
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     padding-top: 24px !important;
   }
-  @include respond-to('pad_h') {
+  @include respond('pad_h') {
     padding-top: 16px !important;
   }
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     padding-bottom: 12px !important;
     padding-top: 12px !important;
   }
 }
 :deep(.section-body) {
-  @include respond-to('phone') {
+  @include respond('phone') {
     width: 100% !important;
     padding-right: 0 !important;
     padding-left: 0 !important;
@@ -119,14 +119,14 @@ const activeTab = ref('blogs');
 }
 
 :deep(.o-tab-navs) {
-  @include respond-to('phone') {
+  @include respond('phone') {
     transform: translateX(calc(-1 * var(--layout-content-padding) / 2));
   }
 }
 
 :deep(.o-scroller-container) {
   padding-bottom: 24px;
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     padding-bottom: 0;
   }
 }
@@ -149,7 +149,7 @@ const activeTab = ref('blogs');
   }
 
   :deep(.o-scroller-container) {
-    @include respond-to('phone') {
+    @include respond('phone') {
       padding: 0 var(--layout-content-padding);
     }
   }
@@ -159,7 +159,7 @@ const activeTab = ref('blogs');
   overflow-y: auto;
   white-space: nowrap;
   padding: 32px 0 36px;
-  @include respond-to('phone') {
+  @include respond('phone') {
     padding: 12px 0;
   }
 }
@@ -174,13 +174,13 @@ const activeTab = ref('blogs');
   &:not(:first-child) {
     margin-left: var(--card-gap);
   }
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     --card-gap: 24px;
   }
-  @include respond-to('pad') {
+  @include respond('pad') {
     --card-gap: 16px;
   }
-  @include respond-to('phone') {
+  @include respond('phone') {
     --card-gap: 12px;
     --ltpad-content-width: calc(100vw - var(--layout-content-padding) * 2);
     width: calc((var(--ltpad-content-width) + var(--card-gap)) / 2 - var(--card-gap));
@@ -220,16 +220,16 @@ const activeTab = ref('blogs');
   }
   .news-info {
     padding: 32px;
-    @include respond-to('laptop') {
+    @include respond('laptop_s') {
       padding: 24px;
     }
-    @include respond-to('pad_h') {
+    @include respond('pad_h') {
       padding: 16px;
     }
-    @include respond-to('pad_v') {
+    @include respond('pad_v') {
       padding: 12px;
     }
-    @include respond-to('phone') {
+    @include respond('phone') {
       padding: 8px;
     }
     color: var(--e-color-text1);

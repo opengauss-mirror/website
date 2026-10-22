@@ -190,19 +190,19 @@ const courseGuides = [
 .app-section {
   --o-gap-section: 32px;
 
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     --o-gap-section: 24px;
   }
 
-  @include respond-to('pad_h') {
+  @include respond('pad_h') {
     --o-gap-section: 16px;
   }
 
-  @include respond-to('pad_v') {
+  @include respond('pad_v') {
     --o-gap-section: 12px;
   }
 
-  @include respond-to('phone') {
+  @include respond('phone') {
     --o-gap-section: 12px;
   }
 }
@@ -226,33 +226,33 @@ const courseGuides = [
   .desc {
     font-size: 16px;
     color: var(--o-color-info2);
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       font-size: 14px;
     }
   }
 
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     margin-top: 16px;
     --content-gap: 12px;
     height: 132px;
     padding: 24px;
   }
 
-  @include respond-to('pad_h') {
+  @include respond('pad_h') {
     margin-top: 12px;
     --content-gap: 8px;
     height: 110px;
     padding: 16px;
   }
 
-  @include respond-to('pad_v') {
+  @include respond('pad_v') {
     margin-top: 12px;
     --content-gap: 8px;
     height: 100px;
     padding: 12px;
   }
 
-  @include respond-to('phone') {
+  @include respond('phone') {
     background-image: url('/category/training/ogca_item_bg.png');
     margin-top: 12px;
     --content-gap: 8px;
@@ -272,19 +272,19 @@ const courseGuides = [
 
   --card-main-padding-v: var(--card-main-padding-h);
 
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     --card-main-padding: 24px;
   }
 
-  @include respond-to('pad_h') {
+  @include respond('pad_h') {
     --card-main-padding: 16px;
   }
 
-  @include respond-to('pad_v') {
+  @include respond('pad_v') {
     --card-main-padding: 12px;
   }
 
-  @include respond-to('phone') {
+  @include respond('phone') {
     --card-main-padding: 12px;
   }
 }
@@ -308,7 +308,7 @@ const courseGuides = [
   .entry-title-desc {
     color: var(--o-color-info2);
     @include text1;
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       font-size: 14px;
     }
   }
@@ -323,7 +323,7 @@ const courseGuides = [
       width: var(--list-item-img-width);
     }
 
-    @include respond-to('phone') {
+    @include respond('phone') {
       --wrapper-bg-color: rgba(var(--o-mixedgray-2), 0.6);
     }
 
@@ -340,7 +340,7 @@ const courseGuides = [
     display: flex;
     align-items: center;
     background-color: var(--wrapper-bg-color);
-    @include respond-to('phone') {
+    @include respond('phone') {
       display: block;
       padding: 14px 24px;
     }
@@ -356,7 +356,7 @@ const courseGuides = [
     height: var(--list-item-img-container-h);
     margin-right: var(--list-item-content-gap);
 
-    @include respond-to('phone') {
+    @include respond('phone') {
       padding: 0;
       display: block;
       background-color: unset;
@@ -370,7 +370,7 @@ const courseGuides = [
   .entry-list-item-desc {
     font-weight: 600;
     @include h3;
-    @include respond-to('phone') {
+    @include respond('phone') {
       font-size: 14px;
     }
   }
@@ -378,12 +378,12 @@ const courseGuides = [
   .signup-btn {
     margin-left: auto;
 
-    @include respond-to('phone') {
+    @include respond('phone') {
       margin-top: 16px;
     }
   }
 
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     --title-desc-gap: 12px;
     --title-list-gap: 16px;
     --list-item-pading: 16px;
@@ -394,7 +394,7 @@ const courseGuides = [
     --list-item-img-container-h: 58px;
   }
 
-  @include respond-to('pad_h') {
+  @include respond('pad_h') {
     --title-desc-gap: 8px;
     --title-list-gap: 12px;
     --list-item-pading: 12px;
@@ -405,7 +405,7 @@ const courseGuides = [
     --list-item-img-container-h: 48px;
   }
 
-  @include respond-to('pad_v') {
+  @include respond('pad_v') {
     --title-desc-gap: 8px;
     --title-list-gap: 12px;
     --list-item-pading: 12px;
@@ -416,7 +416,7 @@ const courseGuides = [
     --list-item-img-container-h: 40px;
   }
 
-  @include respond-to('phone') {
+  @include respond('phone') {
     --title-desc-gap: 8px;
     --title-list-gap: 12px;
     --list-item-pading: 12px;
@@ -443,19 +443,19 @@ const courseGuides = [
     padding-left: 32px;
     list-style: disc;
 
-    @include respond-to('laptop') {
+    @include respond('laptop_s') {
       padding-left: 30px;
     }
 
-    @include respond-to('pad_h') {
+    @include respond('pad_h') {
       padding-left: 30px;
     }
 
-    @include respond-to('pad_v') {
+    @include respond('pad_v') {
       padding-left: 24px;
     }
 
-    @include respond-to('phone') {
+    @include respond('phone') {
       padding-left: 0;
     }
   }

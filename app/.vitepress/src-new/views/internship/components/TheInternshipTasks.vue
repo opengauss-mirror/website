@@ -58,16 +58,16 @@ const internshipTasks = [
   gap: 24px;
   --card-padding: 24px 32px;
   
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     --card-padding: 16px 24px;
   }
 
-  @include respond-to('pad_h') {
+  @include respond('pad_h') {
     gap: 16px;
     --card-padding: 12px 16px;
   }
 
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     gap: 12px;
     --card-padding: 12px 12px;
     grid-template-columns: 1fr;
@@ -88,17 +88,17 @@ const internshipTasks = [
     align-items: center;
     @include text1;
 
-    @include respond-to('phone') {
+    @include respond('phone') {
       font-size: 14px;
       line-height: 22px;
     }
   }
 
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     --link-margin-top: 20px;
   }
 
-  @include respond-to('<=pad') {
+  @include respond('<=pad') {
     --link-margin-top: 16px;
   }
 
@@ -118,7 +118,7 @@ const internshipTasks = [
   margin-top: 8px;
   color: var(--o-color-info3);
   @include text1;
-  @include respond-to('phone') {
+  @include respond('phone') {
     font-size: 14px;
     line-height: 22px;
   }

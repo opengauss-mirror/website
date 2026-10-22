@@ -112,7 +112,7 @@ const isDark = computed(() => commonStore.theme === 'dark');
   border-radius: 4px;
   overflow: hidden;
 
-  @include respond-to('<=pad') {
+  @include respond('<=pad') {
     display: block;
   }
 
@@ -122,13 +122,13 @@ const isDark = computed(() => commonStore.theme === 'dark');
     &.dark {
       background-image: url('~@/assets/category/download/relative-tools-bg_dark.png');
     }
-    @include respond-to('>pad') {
+    @include respond('>pad') {
       flex-grow: 1;
       flex-shrink: 0;
       max-width: 372px;
       padding: 32px;
     }
-    @include respond-to('<=pad') {
+    @include respond('<=pad') {
       width: 100%;
       padding: 16px;
     }
@@ -144,7 +144,7 @@ const isDark = computed(() => commonStore.theme === 'dark');
 
     .o-btn {
       margin-top: 24px;
-      @include respond-to('<=pad') {
+      @include respond('<=pad') {
         margin-top: 12px;
       }
     }
@@ -155,7 +155,7 @@ const isDark = computed(() => commonStore.theme === 'dark');
     column-gap: 1px;
     row-gap: 1px;
     background-color: var(--o-color-control4);
-    @include respond-to('>pad') {
+    @include respond('>pad') {
       width: 0;
       flex-grow: 1;
       grid-template-columns: repeat(3, 1fr);
@@ -166,7 +166,7 @@ const isDark = computed(() => commonStore.theme === 'dark');
       background-color: var(--o-color-fill2);
       position: relative;
       align-self: stretch;
-      @include respond-to('>pad') {
+      @include respond('>pad') {
         min-height: 168px;
       }
 
@@ -179,23 +179,23 @@ const isDark = computed(() => commonStore.theme === 'dark');
         margin-top: 8px;
         color: var(--o-color-info3);
         @include tip1;
-        @include respond-to('<=pad') {
+        @include respond('<=pad') {
           display: flex;
           align-items: center;
           justify-content: space-between;
           margin-top: 8px;
         }
-        @include respond-to('phone') {
+        @include respond('phone') {
           display: block;
         }
       }
 
       .links {
         align-items: center;
-        @include respond-to('<=pad') {
+        @include respond('<=pad') {
           margin-top: 0;
         }
-        @include respond-to('>pad') {
+        @include respond('>pad') {
           display: flex;
           position: absolute;
           bottom: 24px;

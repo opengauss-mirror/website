@@ -47,7 +47,7 @@ const { lang } = useData();
 .understand-sig {
   display: flex;
 
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     flex-direction: column;
   }
 
@@ -73,13 +73,13 @@ const { lang } = useData();
 
     & + .o-card {
       margin-left: var(--o-r-gap-5);
-      @include respond-to('<=pad_v') {
+      @include respond('<=pad_v') {
         margin-left: 0;
         margin-top: var(--o-r-gap-5);
       }
     }
 
-    @include respond-to('<=laptop') {
+    @include respond('<=laptop_s') {
       --card-title-icon-size: 32px;
     }
 

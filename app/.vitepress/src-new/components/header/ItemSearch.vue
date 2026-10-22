@@ -126,7 +126,7 @@ const onHistoryClick = (val: string) => {
 }
 
 .header-search {
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     :deep(.o-header-search-back-icon) {
       font-size: 24px;
     }
@@ -137,7 +137,7 @@ const onHistoryClick = (val: string) => {
 }
 
 .header-search :deep(.o-header-search-text) {
-  @include respond-to('<=pad') {
+  @include respond('<=pad') {
     font-size: 14px;
   }
   height: auto;
@@ -155,7 +155,7 @@ const onHistoryClick = (val: string) => {
 }
 
 .header-search :deep(.o-input.o_box-medium) {
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     --_box-height: 40px;
   }
 }
@@ -180,7 +180,7 @@ const onHistoryClick = (val: string) => {
     padding-left: 8px;
     padding-right: 8px;
   }
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     --_box-height: 40px;
   }
 }
@@ -193,12 +193,12 @@ const onHistoryClick = (val: string) => {
 
 .header-search {
   :deep(.o-search-panel-history-text) {
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       font-size: 12px;
     }
   }
   :deep(.o-search-panel-hot-item) {
-    @include respond-to('phone') {
+    @include respond('phone') {
       font-size: 14px;
     }
   }

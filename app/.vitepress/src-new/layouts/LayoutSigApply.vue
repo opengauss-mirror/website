@@ -59,7 +59,7 @@ onBeforeUnmount(() => {
 
 <style lang="scss">
 .sig-apply-doc .o-breadcrumb {
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     display: none;
   }
 }
@@ -119,11 +119,11 @@ onBeforeUnmount(() => {
       opacity: 0;
       transition: all var(--o-duration-m1) var(--o-easing-standard-in);
 
-      @include respond-to('<=pad') {
+      @include respond('<=pad') {
         top: var(--o-gap-2);
       }
 
-      @include respond-to('phone') {
+      @include respond('phone') {
         top: 12px;
         opacity: 1;
         width: 16px;

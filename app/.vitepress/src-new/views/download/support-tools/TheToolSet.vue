@@ -571,7 +571,7 @@ h2 {
   border-radius: 4px;
   background: var(--o-color-fill2);
   margin-top: 40px;
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     padding: 16px 12px;
     margin-top: 12px;
   }

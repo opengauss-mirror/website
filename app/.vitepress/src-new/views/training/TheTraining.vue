@@ -197,22 +197,22 @@ const detailPageUrls = {
 <style lang="scss" scoped>
 .first-section {
   --o-gap-section: 40px;
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     --o-gap-section: 24px;
   }
-  @include respond-to('pad_h') {
+  @include respond('pad_h') {
     --o-gap-section: 16px;
   }
-  @include respond-to('pad_v') {
+  @include respond('pad_v') {
     --o-gap-section: 12px;
   }
-  @include respond-to('phone') {
+  @include respond('phone') {
     --o-gap-section: 12px;
   }
 }
 
 .training-banner {
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     background-color: transparent !important;
     padding-top: 16px;
     :deep(.banner-bg) {
@@ -232,21 +232,21 @@ const detailPageUrls = {
   --item-content-text-gap: 16px;
   --item-desc-btn-gap: 24px;
   
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     --item-padding: 16px 24px;
     --item-content-text-gap: 12px;
     --item-gap: 24px;
     --item-desc-btn-gap: 16px;
   }
   
-  @include respond-to('pad_h') {
+  @include respond('pad_h') {
     --item-padding: 12px 16px;
     --item-content-text-gap: 8px;
     --item-gap: 16px;
     --item-desc-btn-gap: 12px;
   }
   
-  @include respond-to('pad_v') {
+  @include respond('pad_v') {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
@@ -256,7 +256,7 @@ const detailPageUrls = {
     --item-desc-btn-gap: 12px;
   }
   
-  @include respond-to('phone') {
+  @include respond('phone') {
     display: grid;
     grid-template-columns: 1fr;
     gap: 12px;
@@ -305,10 +305,10 @@ const detailPageUrls = {
     overflow: hidden;                  /* 超出隐藏 */
     text-overflow: ellipsis;
     @include text1;
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       font-size: 14px;
     }
-    @include respond-to('phone') {
+    @include respond('phone') {
       --line-height: calc(1em + 6px);
     }
   }
@@ -343,22 +343,22 @@ const detailPageUrls = {
 
   --half-item-gap: 16px;
 
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     padding: 24px;
     --half-item-gap: 12px;
   }
   
-  @include respond-to('pad_h') {
+  @include respond('pad_h') {
     padding: 16px;
     --half-item-gap: 8px;
   }
   
-  @include respond-to('pad_v') {
+  @include respond('pad_v') {
     padding: 16px 8px;
     --half-item-gap: 6px;
   }
   
-  @include respond-to('phone') {
+  @include respond('phone') {
     padding: 16px 2px;
     --half-item-gap: 6px;
   }
@@ -393,11 +393,11 @@ const detailPageUrls = {
   .advantages-detail-title {
     @include h4;
     font-weight: 600;
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       @include tip1;
       font-weight: 500;
     }
-    @include respond-to('phone') {
+    @include respond('phone') {
       font-size: 12px;
       font-weight: 500;
     }
@@ -409,7 +409,7 @@ const detailPageUrls = {
     text-align: center;
 
     @include text1;
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       display: none;
     }
   }
@@ -430,7 +430,7 @@ const detailPageUrls = {
   --link-text-size: 16px;
   --link-text-height: 24px;
   
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     --item-icon-width: 112px;
     --item-icon-height: 32px;
     --item-padding: 16px 24px;
@@ -440,7 +440,7 @@ const detailPageUrls = {
     gap: 24px;
   }
   
-  @include respond-to('pad_h') {
+  @include respond('pad_h') {
     --item-icon-width: 112px;
     --item-icon-height: 32px;
     --item-padding: 12px 16px;
@@ -451,7 +451,7 @@ const detailPageUrls = {
   }
   
   /* 740px - 361px: 两列 */
-  @include respond-to('pad_v') {
+  @include respond('pad_v') {
     --item-icon-width: 98px;
     --item-icon-height: 28px;
     --item-padding: 12px 12px;
@@ -463,7 +463,7 @@ const detailPageUrls = {
   }
   
   /* 360px及以下: 一列 */
-  @include respond-to('phone') {
+  @include respond('phone') {
     --item-icon-width: 98px;
     --item-icon-height: 28px;
     --item-padding: 12px 12px;
@@ -509,7 +509,7 @@ const detailPageUrls = {
     overflow: hidden;                  /* 超出隐藏 */
     text-overflow: ellipsis;
     @include text1;
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       font-size: 14px;
       line-height: 22px;
     }
@@ -522,22 +522,22 @@ const detailPageUrls = {
   --step-arrow-icon-size: 44px;
   position: relative;
 
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     --step-icon-size: 40px;
     --step-arrow-icon-size: 36px;
   }
   
-  @include respond-to('pad_h') {
+  @include respond('pad_h') {
     --step-icon-size: 40px;
     --step-arrow-icon-size: 36px;
   }
   
-  @include respond-to('pad_v') {
+  @include respond('pad_v') {
     --step-icon-size: 32px;
     --step-arrow-icon-size: 30px;
   }
   
-  @include respond-to('phone') {
+  @include respond('phone') {
     padding: 16px 20px;
     background-color: var(--o-color-fill2);
     border-radius: 4px;
@@ -549,7 +549,7 @@ const detailPageUrls = {
     flex: 1;
     flex-direction: column;
     padding-bottom: 12px;
-    @include respond-to('phone') {
+    @include respond('phone') {
       padding-bottom: 0;
     }
 
@@ -563,7 +563,7 @@ const detailPageUrls = {
       border-radius: 4px;
     }
 
-    @include respond-to('phone') {
+    @include respond('phone') {
       &:not(:first-child) .step-index::before {
         content: "";
         display: block;
@@ -576,14 +576,14 @@ const detailPageUrls = {
 
   .step-icon {
     font-size: var(--step-icon-size);
-    @include respond-to('phone') {
+    @include respond('phone') {
       display: none;
     }
   }
   
   .step-arrow-icon {
     font-size: var(--step-arrow-icon-size);
-    @include respond-to('phone') {
+    @include respond('phone') {
       display: none;
     }
   }
@@ -594,7 +594,7 @@ const detailPageUrls = {
     flex-direction: column;
     align-items: center;
     @include display3;
-    @include respond-to('phone') {
+    @include respond('phone') {
       @include text2;
       flex-direction: row;
       align-items: end;
@@ -607,10 +607,10 @@ const detailPageUrls = {
     height: 1em;
     overflow: hidden;
     opacity: 0.1;
-    @include respond-to('pad_v') {
+    @include respond('pad_v') {
       font-size: calc(1em + 2px);
     }
-    @include respond-to('phone') {
+    @include respond('phone') {
       opacity: 1;
       height: auto;
       display: flex;
@@ -628,7 +628,7 @@ const detailPageUrls = {
     width: max-content;
     transform: translate(-50%, 50%);
     @include text1;
-    @include respond-to('phone') {
+    @include respond('phone') {
       @include text2;
       position: static;
       transform: none;
@@ -647,7 +647,7 @@ const detailPageUrls = {
 .training-qa-item {
   color: var(--o-color-info2);
   @include text1;
-  @include respond-to('phone') {
+  @include respond('phone') {
     font-size: 14px;
   }
 }

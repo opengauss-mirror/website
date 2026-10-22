@@ -378,13 +378,13 @@ const getNewLink = (path: string) => {
   .other-link {
     margin-top: 16px;
     @include text1;
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       margin-top: 8px;
     }
   }
   .divider-line {
     --o-divider-gap: 32px;
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       --o-divider-gap: 16px;
     }
   }
@@ -396,7 +396,7 @@ const getNewLink = (path: string) => {
 .download-panel {
   &:not(:last-child) {
     margin-bottom: var(--e-spacing-h1);
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       margin-bottom: 24px;
     }
   }
@@ -405,7 +405,7 @@ const getNewLink = (path: string) => {
     color: var(--o-color-info1);
     margin-bottom: 24px;
     font-weight: 500;
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       margin-bottom: 12px;
     }
   }
@@ -430,10 +430,10 @@ const getNewLink = (path: string) => {
     align-items: center;
     gap: var(--e-spacing-h8);
 
-    @include respond-to('>laptop') {
+    @include respond('>laptop') {
       white-space: nowrap;
     }
-    @include respond-to('<=laptop') {
+    @include respond('<=laptop_s') {
       flex-wrap: wrap;
     }
 

@@ -419,13 +419,13 @@ You are an AI agent dedicated to serving the openGauss community. Your goal is t
     }
   }
 
-  @include respond-to('pad_h') {
+  @include respond('pad_h') {
     padding: 12px 16px;
   }
-  @include respond-to('pad_v') {
+  @include respond('pad_v') {
     padding: 24px;
   }
-  @include respond-to('phone') {
+  @include respond('phone') {
     padding: 12px;
   }
 }
@@ -456,7 +456,7 @@ You are an AI agent dedicated to serving the openGauss community. Your goal is t
       right: 0;
       top: 0;
 
-      @include respond-to('<=pad_v') {
+      @include respond('<=pad_v') {
         display: block !important;
       }
     }

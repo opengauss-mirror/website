@@ -165,7 +165,7 @@ const getData = computed(() => {
   display: none;
 }
 .banner-level2 {
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     background: none;
     :deep(.banner-bg) {
       display: none;
@@ -188,7 +188,7 @@ const getData = computed(() => {
   background: var(--o-color-fill2);
   padding: 32px;
   margin-top: 24px;
-  @include respond-to('<=pad') {
+  @include respond('<=pad') {
     padding: 16px;
   }
 }
