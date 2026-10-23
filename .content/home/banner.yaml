@@ -18,6 +18,7 @@
 #   desc_zh/en            中英文描述数组（可选）
 #   btn_zh/en             中英文按钮文案（可选）
 #   href_zh/en            中英文跳转链接
+#   alt_zh/en             背景图 alt 文案（可选，仅当轮播项没有任何文案描述、且图片内含文字时填写）
 #   is_blank              是否新窗口打开（可选）
 #   class_name            CSS 类名（可选）
 #   attach                右侧装饰图（可选）

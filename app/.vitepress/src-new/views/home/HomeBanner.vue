@@ -36,6 +36,7 @@ function foldBanner(raw: any, langCode: string) {
     btn: s('btn') ?? '',
     link: s('href') ?? '',
     target: raw.is_blank ? '_blank' : '_self',
+    imgAlt: s('alt') ?? '',
     textImg: raw[`text_image_${langCode}`] ?? '',
     textImgPad: raw[`text_image_pad_${langCode}`] ?? '',
     textImgMb: raw[`text_image_mb_${langCode}`] ?? '',
@@ -56,6 +57,11 @@ const homeBanner = computed(() => {
     })
     .map((item) => foldBanner(item, currentLang));
 });
+
+function figureAlt(item: any) {
+  const hasCopy = !!(item.title.trim() || item.subtitle || item.desc.length || item.btn);
+  return hasCopy ? '' : item.imgAlt;
+}
 
 const figureAttrs = (item: any) => {
   const clickable = (!item.btn || lePadV.value) && !!item.link;
@@ -104,6 +110,7 @@ const currentBgTheme = computed(() => {
         <OFigure
           :class="{ 'banner-bg': true, 'use-dark-style': !item.bannersDark?.[current] }"
           :src="(theme === 'dark' && item.bannersDark?.[current]) || item.banners[current]"
+          :alt="figureAlt(item)"
           :style="item.bannerImgPosition ? { '--figure-position': item.bannerImgPosition } : {}"
           v-bind="figureAttrs(item)"
         >
