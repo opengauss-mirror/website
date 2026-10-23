@@ -138,3 +138,29 @@ describe('BannerLevel2 旧版 (src) 未受波及', () => {
     expect(content).not.toContain('--o-color-primary1');
   });
 });
+
+describe('BannerLevel2 旧版 (src) imageAlt prop 与 img alt 可访问性', () => {
+  it('声明 imageAlt prop (String, 默认空字符串)', () => {
+    const content = readFile(bannerOldPath);
+    expect(content).toMatch(/imageAlt:\s*\{[\s\S]*?type:\s*String[\s\S]*?default:\s*''/);
+  });
+
+  it('背景图 <img class="banner-bg"> 绑定 :alt="imageAlt" (alt 取自 prop)', () => {
+    const content = readFile(bannerOldPath);
+    expect(content).toMatch(/<img\s+[^>]*class="banner-bg"[^>]*:alt="imageAlt"/);
+  });
+
+  it('装饰性插画 <img> 含 alt="" (屏幕阅读器跳过)', () => {
+    const content = readFile(bannerOldPath);
+    expect(content).toMatch(/<img\s+[^>]*:src="illustration"[^>]*alt=""/);
+  });
+
+  it('所有 <img> 均含 alt 属性 (无裸 img,未传 imageAlt 时默认渲染 alt="")', () => {
+    const content = readFile(bannerOldPath);
+    const imgTags = content.match(/<img\b[^>]*>/g) || [];
+    expect(imgTags.length).toBeGreaterThanOrEqual(2);
+    for (const tag of imgTags) {
+      expect(tag).toMatch(/\balt=/);
+    }
+  });
+});
