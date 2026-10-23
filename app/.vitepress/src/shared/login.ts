@@ -1,7 +1,9 @@
+import { useLoginStore } from '@opendesign-plus/composables';
 import { getUserAllInfo } from '@/api/api-user';
-import { useLoginStore, useUserInfoStore } from '@/stores/user';
+import { useUserInfoStore } from '@/stores/user';
 import type { UserInfoT } from '@/shared/@types/type-user';
 import Cookies from 'js-cookie';
+import { inBrowser } from 'vitepress';
 
 const LOGIN_URL = import.meta.env.VITE_LOGIN_URL;
 const DOMAIN = import.meta.env.VITE_COOKIE_DOMAIN;
@@ -86,8 +88,11 @@ export async function requestUserInfo() {
 
 // authing认证登录
 export async function doLogin() {
-  const { lang } = getLanguage();
+  if (!inBrowser) {
+    return;
+  }
   try {
+    const { lang } = getLanguage();
     window.location.href = `${LOGIN_URL}/login?redirect_uri=${encodeURIComponent(location.href)}&lang=${lang}`;
   } catch {
     setStatus(LOGIN_STATUS.FAILED);

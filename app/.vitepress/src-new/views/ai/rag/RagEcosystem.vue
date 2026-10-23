@@ -3,12 +3,11 @@ import { storeToRefs } from 'pinia';
 import ComponentsGrid from '../components/ComponentsGrid.vue';
 import { useCommon } from '@/stores/common';
 import { computed } from 'vue';
+import { useLocale } from '~@/composables/useLocale';
 import ragContent from '#content/ai/rag';
-import { useData } from 'vitepress';
 
 const { theme } = storeToRefs(useCommon());
-const { lang } = useData();
-const isZh = computed(() => lang.value === 'zh');
+const { isZh } = useLocale();
 
 const ecosystem = computed(() => (isZh.value ? ragContent.zh : ragContent.en).software_ecosystem);
 const categories = computed(() => ecosystem.value.categories);

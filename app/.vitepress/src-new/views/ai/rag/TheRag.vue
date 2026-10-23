@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import AppSection from '~@/components/AppSection.vue';
 import { useScreen } from '~@/composables/useScreen';
+import { useLocale } from '~@/composables/useLocale';
 import { useCommon } from '@/stores/common';
 import { storeToRefs } from 'pinia';
 import RagEcosystem from './RagEcosystem.vue';
@@ -9,12 +10,10 @@ import ragContent from '#content/ai/rag';
 import BannerTabHeader from '~@/components/BannerTabHeader.vue';
 import { computed } from 'vue';
 import { useI18n } from '~@/i18n/index.js';
-import { useData } from 'vitepress';
 
 const { isDark } = storeToRefs(useCommon());
 const { lePadV } = useScreen();
-const { lang } = useData();
-const isZh = computed(() => lang.value === 'zh');
+const { isZh } = useLocale();
 const i18n = useI18n();
 
 const aiCommonData = computed(() => (isZh.value ? aiCommonContent.zh : aiCommonContent.en));
