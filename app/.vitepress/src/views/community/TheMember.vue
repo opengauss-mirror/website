@@ -42,7 +42,7 @@ const handleScroll = (index: number) => {
 
 // 根据滚动激活导航
 const scroll = () => {
-  const scrollTop = document.getElementById('anchor-sticky-demo')?.scrollTop || document.body.scrollTop || document.documentElement.scrollTop;
+  const scrollTop = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop;
   const activeList: Array<number> = [];
   navRef.value.forEach((item: any, index: number) => {
     if (scrollTop > item.offsetTop - 10) {
@@ -52,11 +52,11 @@ const scroll = () => {
   tabShow.value = activeList[activeList.length - 1];
 };
 onMounted(() => {
-  (document.getElementById('anchor-sticky-demo') ?? window).addEventListener('scroll', scroll);
+  window.addEventListener('scroll', scroll);
 });
 
 onUnmounted(() => {
-  (document.getElementById('anchor-sticky-demo') ?? window).removeEventListener('scroll', scroll);
+  window.removeEventListener('scroll', scroll);
 });
 
 // 移动端事件

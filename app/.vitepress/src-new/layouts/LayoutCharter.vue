@@ -2,9 +2,9 @@
 import bannerImg from '~@/assets/category/charter/banner.png';
 import BannerLevel2 from '~@/components/BannerLevel2.vue';
 import { OTab, OTabPane, throttleRAF, useMessage } from '@opensig/opendesign';
-import { inject, nextTick, onMounted, onUnmounted, Ref, ref, useTemplateRef, watch } from 'vue';
+import { nextTick, onMounted, onUnmounted, ref, useTemplateRef, watch } from 'vue';
 import { useData, useRoute, useRouter } from 'vitepress';
-import { useElementSize } from '@vueuse/core';
+import { useElementSize, watchDebounced } from '@vueuse/core';
 import AppSection from '~@/components/AppSection.vue';
 import { useClipboard } from '~@/composables/useClipboard';
 import { useI18n } from '~@/i18n';
@@ -46,7 +46,6 @@ const setupCopyButtons = () => {
 };
 
 const stickying = ref(false);
-const scrollContainerRef = inject<Ref<HTMLElement>>('scrollContainerRef');
 
 const getAnchorValue = () => {
   const path = route.path;
@@ -86,20 +85,20 @@ const bannerRef = useTemplateRef('bannerLevel2');
 const { height } = useElementSize(bannerRef);
 
 const onScroll = throttleRAF(() => {
-  stickying.value = scrollContainerRef!.value.scrollTop >= height.value;
+  stickying.value = (window.scrollY || document.documentElement.scrollTop) >= (height.value - 5);
 });
 
 const tabKey = ref(0);
 
-watch(stickying, () => tabKey.value++);
+watchDebounced(stickying, () => tabKey.value++, { debounce: 50 });
 
 onMounted(() => {
-  scrollContainerRef?.value?.addEventListener('scroll', onScroll);
+  window.addEventListener('scroll', onScroll);
   setupCopyButtons();
 });
 
 onUnmounted(() => {
-  scrollContainerRef?.value?.removeEventListener('scroll', onScroll);
+  window.removeEventListener('scroll', onScroll);
 });
 
 watch(

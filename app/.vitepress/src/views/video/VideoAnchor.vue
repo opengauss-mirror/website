@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { PropType, inject, onMounted, onUnmounted, ref, nextTick, type Ref } from 'vue';
+import { PropType, onMounted, onUnmounted, ref, nextTick } from 'vue';
 
 interface NavItemT {
   key: string;
@@ -23,8 +23,7 @@ const props = defineProps({
 
 const emits = defineEmits(['update:currentIndex']);
 
-const scrollContainerRef = inject<Ref<HTMLElement | undefined>>('scrollContainerRef');
-const getScrollContainer = () => scrollContainerRef?.value || document.documentElement;
+const getScrollContainer = () => document.documentElement;
 const left = ref('0');
 const top = ref('0');
 
