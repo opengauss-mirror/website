@@ -106,7 +106,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
                 <p class="m-name lable-name">
                   {{ user.name }}
                 </p>
-                <p class="m-title">{{ user.title }}</p>
+                <p class="m-title" :title="user.title">{{ user.title }}</p>
                 <template v-if="user.company">
                   <p v-for="itemCompany in user.company.split('\n')" :key="itemCompany" class="m-company" :class="user.wider" :title="itemCompany">
                     {{ itemCompany }}
@@ -150,7 +150,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
                   <li v-for="(user, i) in subitem.list" :key="i">
                     <img class="avatar" :src="user.img" :alt="user.name" />
                     <p class="m-name lable-name9">{{ user.name }}</p>
-                    <p class="m-title">{{ user.title }}</p>
+                    <p class="m-title" :title="user.title">{{ user.title }}</p>
                     <p class="m-company" :class="user.wider" :title="user.company">
                       {{ user.company }}
                     </p>
@@ -196,7 +196,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
               <li v-for="(user, i) in item.list.slice(0, 2)" :key="i">
                 <img class="avatar" :src="user.img" :alt="user.name" />
                 <p class="m-name" :title="user.name">{{ user.name }}</p>
-                <p class="m-title">{{ user.title }}</p>
+                <p class="m-title" :title="user.title">{{ user.title }}</p>
                 <template v-if="user.company">
                   <p v-for="itemCompany in user.company.split('\n')" :key="itemCompany" class="m-company lable-name1" :class="user.wider" :title="itemCompany">
                     {{ itemCompany }}
@@ -212,7 +212,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
               <li v-for="(user, i) in item.list.slice(2)" :key="i">
                 <img class="avatar" :src="user.img" :alt="user.name" />
                 <p class="m-name" :title="user.name">{{ user.name }}</p>
-                <p class="m-title">{{ user.title }}</p>
+                <p class="m-title" :title="user.title">{{ user.title }}</p>
                 <template v-if="user.company">
                   <p v-for="itemCompany in user.company.split('\n')" :key="itemCompany" class="m-company lable-name1" :class="user.wider" :title="itemCompany">
                     {{ itemCompany }}
@@ -230,7 +230,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
               <li v-for="(user, i) in item.list" :key="i">
                 <img class="avatar" :src="user.img" :alt="user.name" />
                 <p class="m-name" :title="user.name">{{ user.name }}</p>
-                <p class="m-title">{{ user.title }}</p>
+                <p class="m-title" :title="user.title">{{ user.title }}</p>
                 <template v-if="user.company">
                   <p v-for="itemCompany in user.company.split('\n')" :key="itemCompany" class="m-company lable-name1" :class="user.wider" :title="itemCompany">
                     {{ itemCompany }}
@@ -280,7 +280,7 @@ const handleChangeActiveMobile = (activeNames: any) => {
                 <li v-for="(user, i) in subitem.list" :key="i">
                   <img class="avatar" :src="user.img" :alt="user.name" />
                   <p class="m-name" :title="user.name">{{ user.name }}</p>
-                  <p class="m-title">{{ user.title }}</p>
+                  <p class="m-title" :title="user.title">{{ user.title }}</p>
                   <p class="m-company" :class="user.wider" :title="user.company">
                     {{ user.company }}
                   </p>
