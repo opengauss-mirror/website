@@ -499,6 +499,7 @@ import weikewei from '@/assets/category/member/avatar/weikewei.png';
 import liuchangfeng from '@/assets/category/member/avatar/liuchangfeng.png';
 import wangkaihui from '@/assets/category/member/avatar/wangkaihui.png';
 import sunshuang from '@/assets/category/member/avatar/sunshuang.png';
+import zhangwei from '@/assets/category/member/avatar/zhangwei.png';
 import zhangruo from '@/assets/category/member/avatar/zhangruo.png';
 import zhoucong from '@/assets/category/member/avatar/zhoucong.png';
 import jiwenke from '@/assets/category/member/avatar/jiwenke.png';
@@ -1373,6 +1374,12 @@ export default {
         name: `王凯慧`,
         title: `执行秘书`,
         email: `wangkaihui4@huawei.com`,
+      },
+      {
+        img: zhangwei,
+        name: `张伟`,
+        title: `法务专家`,
+        email: `platform.zhang@huawei.com`,
       },
     ],
     SQLENGINE: [
@@ -5626,6 +5633,12 @@ export default {
         name: `Kaihui Wang`,
         title: `Executive Secretary`,
         email: `wangkaihui4@huawei.com`,
+      },
+      {
+        img: zhangwei,
+        name: `Wei Zhang`,
+        title: `Legal Expert`,
+        email: `platform.zhang@huawei.com`,
       },
     ],
     SQLENGINE: [
