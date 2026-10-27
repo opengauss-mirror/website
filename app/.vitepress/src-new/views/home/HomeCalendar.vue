@@ -37,6 +37,7 @@ import dayjs from 'dayjs';
 
 import { getMeetingDateListApi, getMeetingListApi, getGroupInfosApi, deleteMeetingApi } from '@/api/api-meeting';
 import { doLogin, getUserAuth } from '@/shared/login';
+import { windowOpen } from '@/shared/utils';
 import type { MeetingSigT, MeetingItemT } from '@/shared/@types/type-meeting';
 import { useI18n } from '~@/i18n';
 import { useLocale } from '~@/composables/useLocale';
@@ -328,20 +329,14 @@ const isFormDlgVisible = ref(false);
 
 const currentMeetingData = ref<MeetingItemT | null>(null);
 const formDlgTitle = ref('');
-const createMeetingDlg = () => {
+// 跳转创建会议页面
+const toCreateMeeting = () => {
   if (!csrfToken) {
     doLogin();
     return;
   }
-  if (!sigGroup.value.length) {
-    message.warning({
-      content: i18nMeeting.value.LOGIN_TEXT,
-    });
-    return;
-  }
-  currentMeetingData.value = null;
-  isFormDlgVisible.value = true;
-  formDlgTitle.value = i18nMeeting.value.bookMeeting;
+  const language = lang.value === 'zh' ? 'zh' : 'en';
+  windowOpen(`${import.meta.env.VITE_MAIN_DOMAIN_URL}/${language}/my/create-meeting`, '_blank');
 };
 const userInfoStore = useUserInfoStore();
 const { identities, username } = storeToRefs(userInfoStore);
@@ -457,7 +452,7 @@ const meetingCancelConfirm = async () => {
     <div class="meeting-oper">
       <p class="text">{{ t('home.HOME_CALENDAR.LOGIN_TEXT') }}</p>
       <div class="oper-action">
-        <OButton variant="solid" round="pill" color="primary" @click="createMeetingDlg"> {{ t('home.HOME_CALENDAR.RESERVE_MEETING') }} </OButton>
+        <OButton variant="solid" round="pill" color="primary" @click="toCreateMeeting"> {{ t('home.HOME_CALENDAR.RESERVE_MEETING') }} </OButton>
       </div>
     </div>
     <div class="calendar-body">
