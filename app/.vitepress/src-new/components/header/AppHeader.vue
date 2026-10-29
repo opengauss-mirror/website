@@ -157,6 +157,10 @@ defineExpose({
 </template>
 
 <style lang="scss" scoped>
+header :deep(.o-tag) {
+  border-radius: 4px !important;
+}
+
 :deep(.header .other-tool .o-theme-switcher) {
   margin-top: 24px;
 }

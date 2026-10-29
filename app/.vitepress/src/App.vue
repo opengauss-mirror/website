@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, nextTick, onMounted, ref, useTemplateRef, watch, watchEffect } from 'vue';
+import { computed, nextTick, onMounted, provide, ref, useTemplateRef, watch, watchEffect } from 'vue';
 import type { Component } from 'vue';
 import { useData, useRoute } from 'vitepress';
 
@@ -31,6 +31,7 @@ import LayoutSigApply from '~@/layouts/LayoutSigApply.vue';
 import { getCustomCookie } from './shared/utils.js';
 
 import { useLocale } from '~@/composables/useLocale.js';
+import LayoutContribution from '~@/layouts/LayoutContribution.vue';
 
 const { frontmatter, lang } = useData();
 const { changeLocale } = useLocale();
@@ -53,6 +54,7 @@ const compMapping: {
   'banner-layout': LayoutWithBanner,
   charter: LayoutCharter,
   'sig-apply': LayoutSigApply,
+  contribution: LayoutContribution
 };
 
 const isCustomLayout = computed(() => {
@@ -101,10 +103,11 @@ onMounted(() => {
   commonStore.setTheme(theme === 'dark' ? 'dark' : 'light');
 });
 
-
 // ================ header ================
 const appHeaderRef = useTemplateRef('appHeaderRef');
 const headerHeight = computed(() => appHeaderRef.value?.height.toString() ?? '72');
+
+provide('appHeaderHeight', headerHeight);
 </script>
 
 <template>
@@ -119,7 +122,7 @@ const headerHeight = computed(() => appHeaderRef.value?.height.toString() ?? '72
       :cookie-domain="COOKIE_DOMAIN"
     />
     <el-config-provider :locale="elementPlusLocale">
-      <main :style="{ marginTop: `${headerHeight ?? '72'}px` }">
+      <main style="margin-top: var(--app-header-height);">
         <component :is="comp" v-if="isCustomLayout"></component>
         <Content v-else />
         <AppFloat />
@@ -133,14 +136,6 @@ const headerHeight = computed(() => appHeaderRef.value?.height.toString() ?? '72
 </template>
 
 <style lang="scss">
-// .o-link-normal {
-//   --link-color: var(--o-color-info2) !important;
-// }
-
-// :root {
-//   --o-color-control5-light: var(--o-color-control-light);
-// }
-
 @include in-dark {
   .o-dropdown-list {
     --dropdown-list-bg-color: rgb(var(--o-grey-4)) !important;
@@ -163,17 +158,11 @@ const headerHeight = computed(() => appHeaderRef.value?.height.toString() ?? '72
   --layout-new-content-max-width: 1616px;
 
   --app-header-height: 72px;
-
   @include respond('laptop_s') {
     --app-header-height: 64px;
   }
-
-  @include respond('pad_h') {
+  @include respond('<=pad') {
     --app-header-height: 56px;
-  }
-
-  @include respond('<=pad_v') {
-    --app-header-height: 48px;
   }
 
   @include respond('<=laptop_s') {
