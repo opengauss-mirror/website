@@ -107,6 +107,13 @@ const goHome = () => router.go(`/${lang.value}/`);
 
 const changeTheme = (val: 'light' | 'dark') => commonStore.setTheme(val);
 
+const changeLanguage = ({ id }: { id: string }) => {
+  if (lang.value === id) return;
+  const { pathname, search } = window.location;
+  const newHref = pathname.replace(`/${lang.value}/`, `/${id}/`);
+  router.go(newHref + search);
+};
+
 defineExpose({
   height
 });
@@ -119,7 +126,7 @@ defineExpose({
     </template>
     <template #tool>
       <!-- 语言 -->
-      <OHeaderLanguageSwitcher :disabled="availableLangOptions.length < 1" :options="headerData.langOptions" type="mobile" />
+      <OHeaderLanguageSwitcher :disabled="availableLangOptions.length < 1" :options="availableLangOptions" type="mobile" @change="changeLanguage" />
       <!-- 皮肤 -->
       <OHeaderTheme type="mobile" :theme="commonStore.theme" @change="changeTheme" />
     </template>
