@@ -78,7 +78,7 @@ export default [
             label: 'CLA',
             description: 'Sign the CLA to protect your work—multiple options available!',
             href: 'https://clasign.osinfra.cn/sign/gitee_opengauss-1614047760000855378',
-            ICON: outLink,
+            icon: outLink,
           },
           {
             label: 'Contribution Guide',
@@ -245,6 +245,7 @@ export default [
             label: 'Statistics',
             description: 'Find stats and see how the openGauss community thrives.',
             href: 'https://datastat.opengauss.org/en/overview',
+            icon: outLink,
           },
           {
             label: 'Governance',
@@ -271,6 +272,7 @@ export default [
             label: 'Forum',
             description: 'Share knowledge, ask anything, and solve together.',
             href: 'https://discuss.opengauss.org/',
+            icon: outLink,
           },
           {
             label: 'Mailing Lists',
@@ -288,6 +290,7 @@ export default [
       {
         label: 'Contribution by Organizations',
         href: 'https://datastat.opengauss.org/en/detail',
+        icon: outLink,
       },
     ],
   },
