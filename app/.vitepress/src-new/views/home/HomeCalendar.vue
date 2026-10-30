@@ -310,18 +310,18 @@ const { csrfToken } = getUserAuth();
 
 // --------------------获取SIG组-----------------------------
 const sigGroup = ref<MeetingSigT[]>([]);
-const getSigData = () => {
+const getSigData = async () => {
   if (meetingStore.userSigs.length > 0) {
+    sigGroup.value = meetingStore.userSigs;
     return;
   }
-  getGroupInfosApi()
-    .then((res) => {
-      sigGroup.value = res;
-      meetingStore.userSigs = res;
-    })
-    .catch(() => {
-      sigGroup.value = [];
-    });
+  try {
+    const res = await getGroupInfosApi();
+    sigGroup.value = res;
+    meetingStore.userSigs = res;
+  } catch {
+    sigGroup.value = [];
+  }
 };
 
 // --------------------会议预定弹窗-----------------------------
@@ -330,9 +330,18 @@ const isFormDlgVisible = ref(false);
 const currentMeetingData = ref<MeetingItemT | null>(null);
 const formDlgTitle = ref('');
 // 跳转创建会议页面
-const toCreateMeeting = () => {
+const toCreateMeeting = async () => {
   if (!csrfToken) {
     doLogin();
+    return;
+  }
+  if (!sigGroup.value.length) {
+    await getSigData();
+  }
+  if (!sigGroup.value.length) {
+    message.warning({
+      content: i18nMeeting.value.LOGIN_TEXT,
+    });
     return;
   }
   const language = lang.value === 'zh' ? 'zh' : 'en';
