@@ -72,13 +72,13 @@ const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
   }
 }
 
-@include respond-to('<=pad') {
+@include respond('<=pad') {
   .partner {
     padding: 16px 24px;
     margin-top: 24px;
   }
 }
-@include respond-to('<=pad_v') {
+@include respond('<=pad_v') {
   .partner {
     padding: 10px 16px;
     margin-top: 16px;

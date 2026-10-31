@@ -225,7 +225,7 @@ const selectedOverflowTabIndex = computed<number>({
   top: 0;
   height: 100%;
   background-color: rgb(var(--o-grey-3));
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     background-color: var(--e-color-bg1);
     width: 32px;
   }
@@ -260,7 +260,7 @@ const selectedOverflowTabIndex = computed<number>({
   border-radius: 4px;
   white-space: nowrap;
   position: relative;
-  @include respond-to('<=laptop') {
+  @include respond('<=laptop_s') {
     padding: 4px 6px;
   }
 }
@@ -280,13 +280,13 @@ const selectedOverflowTabIndex = computed<number>({
     color: var(--o-color-primary1);
   }
   padding: 8px 16px;
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     padding: 4px 12px;
   }
-  @include respond-to('pad_h') {
+  @include respond('pad_h') {
     padding: 4px 8px;
   }
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     --item-gap: 16px;
     @include text2;
     color: var(--o-color-info2);
@@ -312,10 +312,10 @@ const selectedOverflowTabIndex = computed<number>({
   border-radius: 4px;
   z-index: 1;
   transition: left 0.2s cubic-bezier(0.2, 0, 0, 1);
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     height: 30px;
   }
-  @include respond-to('pad_h') {
+  @include respond('pad_h') {
     height: 30px;
   }
 }
@@ -405,7 +405,7 @@ const selectedOverflowTabIndex = computed<number>({
   min-width: 0;
 }
 
-@include respond-to('laptop') {
+@include respond('laptop_s') {
   .content {
     height: 387px;
     margin-top: 24px;
@@ -433,7 +433,7 @@ const selectedOverflowTabIndex = computed<number>({
   }
 }
 
-@include respond-to('<=pad') {
+@include respond('<=pad') {
   .tab-list {
     padding: 4px;
   }
@@ -467,7 +467,7 @@ const selectedOverflowTabIndex = computed<number>({
   }
 }
 
-@include respond-to('<=pad_v') {
+@include respond('<=pad_v') {
   .nav-item-icon {
     width: 16px;
     margin-right: 4px;
@@ -539,7 +539,7 @@ const selectedOverflowTabIndex = computed<number>({
   }
 }
 
-@include respond-to('phone') {
+@include respond('phone') {
   .title {
     margin-bottom: 12px;
   }

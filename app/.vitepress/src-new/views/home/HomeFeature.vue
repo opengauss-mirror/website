@@ -62,16 +62,16 @@ const { isPhone } = useScreen();
   backdrop-filter: blur(32px);
   background: linear-gradient(180deg, rgb(255, 255, 255, 0.45) 0%, rgb(254.74, 254.83, 255, 0.9) 100%);
   padding: 32px;
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     padding: 24px;
   }
-  @include respond-to('pad_h') {
+  @include respond('pad_h') {
     padding: 16px;
   }
-  @include respond-to('pad_v') {
+  @include respond('pad_v') {
     padding: 16px 8px;
   }
-  @include respond-to('phone') {
+  @include respond('phone') {
     padding: 16px 8px 12px;
   }
 }
@@ -84,13 +84,13 @@ const { isPhone } = useScreen();
   display: flex;
   align-items: start;
 
-  @include respond-to('phone') {
+  @include respond('phone') {
     flex-wrap: wrap;
   }
 
   .o-divider {
     height: 100%;
-    @include respond-to('phone') {
+    @include respond('phone') {
       display: none;
     }
   }
@@ -112,7 +112,7 @@ const { isPhone } = useScreen();
   flex-direction: column;
   align-items: center;
   position: relative;
-  @include respond-to('phone') {
+  @include respond('phone') {
     &:nth-child(1)::after {
       content: '';
       @include mobile-item-divider-line();
@@ -133,13 +133,13 @@ const { isPhone } = useScreen();
 
   .feature-item-icon {
     font-size: 40px;
-    @include respond-to('laptop') {
+    @include respond('laptop_s') {
       font-size: 32px;
     }
-    @include respond-to('pad_h') {
+    @include respond('pad_h') {
       font-size: 32px;
     }
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       font-size: 24px;
     }
     color: inherit;
@@ -149,7 +149,7 @@ const { isPhone } = useScreen();
     font-weight: 600;
     margin-top: 16px;
     @include h4;
-    @include respond-to('phone') {
+    @include respond('phone') {
       margin-top: 4px;
       @include text1;
     }
@@ -160,7 +160,7 @@ const { isPhone } = useScreen();
     color: var(--o-color-info3);
     margin-top: 8px;
     @include text1;
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       display: none;
     }
   }
@@ -172,24 +172,24 @@ const { isPhone } = useScreen();
   @include text1;
   margin-top: 40px;
 
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     margin-top: 33px;
   }
-  @include respond-to('pad_h') {
+  @include respond('pad_h') {
     margin-top: 25px;
   }
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     margin-top: 19px;
   }
 
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     font-size: 14px;
     line-height: 22px;
     margin-top: 20px;
   }
   .o-icon {
     font-size: 24px;
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       font-size: 16px;
     }
   }

@@ -173,19 +173,19 @@ const isExpanded = (step: InternshipStep) => expandedSteps.value.has(step);
     @include text1;
   }
 
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     padding: 24px;
     --content-padding: 16px;
   }
-  @include respond-to('pad_h') {
+  @include respond('pad_h') {
     padding: 16px;
     --content-padding: 12px;
   }
-  @include respond-to('pad_v') {
+  @include respond('pad_v') {
     padding: 12px;
     // --content-padding: 12px;
   }
-  @include respond-to('phone') {
+  @include respond('phone') {
     flex-direction: column;
     padding: 12px;
     // --content-padding: 12px;
@@ -195,14 +195,14 @@ const isExpanded = (step: InternshipStep) => expandedSteps.value.has(step);
 .activity-intro-list-desc {
   list-style: disc inside;
   margin: 16px 0;
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     margin: 12px 0;
   }
-  @include respond-to('<=pad_h') {
+  @include respond('<=pad_h') {
     margin: 8px 0;
   }
   @include text1;
-  @include respond-to('phone') {
+  @include respond('phone') {
     font-size: 14px;
     line-height: 22px;
   }

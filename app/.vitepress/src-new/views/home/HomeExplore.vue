@@ -174,16 +174,16 @@ onMounted(async () => {
     right: 0;
     top: var(--o-r-gap-5);
 
-    @include respond-to('laptop') {
+    @include respond('laptop_s') {
       width: 192px;
     }
-    @include respond-to('pad_h') {
+    @include respond('pad_h') {
       width: 160px;
     }
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       width: 128px;
     }
-    @include respond-to('phone') {
+    @include respond('phone') {
       display: none;
     }
   }
@@ -196,7 +196,7 @@ onMounted(async () => {
   line-height: var(--o-r-line_height-text2);
   color: var(--o-color-info3);
   z-index: 1;
-  @include respond-to('pad_v') {
+  @include respond('pad_v') {
     margin-right: 120px;
   }
 }
@@ -208,11 +208,11 @@ onMounted(async () => {
   grid-template-rows: auto;
   gap: var(--o-r-gap-5);
 
-  @include respond-to('pad_v') {
+  @include respond('pad_v') {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @include respond-to('phone') {
+  @include respond('phone') {
     grid-template-columns: repeat(1, 1fr);
   }
 
@@ -267,7 +267,7 @@ onMounted(async () => {
       font-size: var(--o-r-font_size-display3);
       margin-bottom: var(--o-r-gap-2);
 
-      @include respond-to('<=pad_v') {
+      @include respond('<=pad_v') {
         display: none;
       }
     }
@@ -344,13 +344,13 @@ onMounted(async () => {
       @include text1;
     }
 
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       // justify-content: flex-start;
       margin-left: 0;
       margin-top: 24px;
       width: 100%;
     }
-    @include respond-to('phone') {
+    @include respond('phone') {
       justify-content: flex-start;
       flex-wrap: wrap;
       gap: 24px;
@@ -362,13 +362,13 @@ onMounted(async () => {
     @include text1;
     --link-color: var(--o-color-white);
 
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       margin-left: 0;
       margin-top: 24px;
     }
   }
 
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     align-items: start;
     flex-direction: column;
   }

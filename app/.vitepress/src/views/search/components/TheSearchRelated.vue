@@ -74,7 +74,7 @@ const handleClick = (val: string) => {
 <style lang="scss" scoped>
 .search-related {
   margin-top: var(--e-spacing-h2);
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     margin-top: 0;
   }
   &.medium {
@@ -82,21 +82,21 @@ const handleClick = (val: string) => {
     background: var(--o-color-fill1);
     margin: 40px 0 0;
     border-radius: var(--o-radius-xs);
-    @include respond-to('<=pad') {
+    @include respond('<=pad') {
       margin: 24px 0;
       border-radius: 8px;
     }
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       padding: 16px;
       margin: 24px 0 0;
     }
-    @include respond-to('phone') {
+    @include respond('phone') {
       background: var(--o-color-fill2);
       margin: 0 0 12px;
     }
     .related-content {
       padding-left: 32px;
-      @include respond-to('<=pad_v') {
+      @include respond('<=pad_v') {
         padding: 0;
       }
     }

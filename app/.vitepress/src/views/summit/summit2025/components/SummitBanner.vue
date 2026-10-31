@@ -44,13 +44,13 @@ const reviewLive = () => {
     width: 100%;
     &.pc {
       display: block;
-      @include respond-to('phone') {
+      @include respond('phone') {
         display: none;
       }
     }
     &.mo {
       display: none;
-      @include respond-to('phone') {
+      @include respond('phone') {
         display: block;
       }
     }
@@ -63,7 +63,7 @@ const reviewLive = () => {
     align-items: center;
     position: relative;
     color: var(--o-color-info1);
-    @include respond-to('phone') {
+    @include respond('phone') {
       display: none;
     }
     .o-btn {
@@ -71,7 +71,7 @@ const reviewLive = () => {
       --btn-bg-color: var(--o-color-primary2);
       --btn-bd-color: var(--o-color-primary2);
       --btn-bg-color-hover: var(--o-color-primary1);
-      @include respond-to('<=pad_v') {
+      @include respond('<=pad_v') {
         display: none;
       }
     }

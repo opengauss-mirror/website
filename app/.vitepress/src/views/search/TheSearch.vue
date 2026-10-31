@@ -581,7 +581,7 @@ onUnmounted(() => unwatchActiveVersion?.());
 .correct-list-box {
   margin: 8px 0 0;
   @include tip1;
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     display: none;
   }
   .correction-link {
@@ -760,7 +760,7 @@ onUnmounted(() => unwatchActiveVersion?.());
         background-color: var(--e-color-bg1);
         box-shadow: none;
       }
-      @include respond-to('<=pad_v') {
+      @include respond('<=pad_v') {
         --feed-back-width: 100%;
       }
       .content-list {

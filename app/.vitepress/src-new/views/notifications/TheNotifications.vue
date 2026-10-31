@@ -545,7 +545,7 @@ const changeTab = (val: string, flag = true) => {
       align-items: center;
       margin-bottom: 24px;
 
-      @include respond-to('phone') {
+      @include respond('phone') {
         flex-wrap: wrap;
         gap: var(--o-gap-2);
       }

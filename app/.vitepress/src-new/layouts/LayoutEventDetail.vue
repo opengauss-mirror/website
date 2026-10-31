@@ -227,13 +227,13 @@ const expirationState = computed(() => {
   }
 } */
 
-@include respond-to('laptop') {
+@include respond('laptop_s') {
   .synopsis {
     width: 860px;
   }
 }
 
-@include respond-to('pad_h') {
+@include respond('pad_h') {
   .banner {
     padding: 24px;
   }
@@ -242,7 +242,7 @@ const expirationState = computed(() => {
   }
 }
 
-@include respond-to('<=pad_v') {
+@include respond('<=pad_v') {
   .banner {
     background-image: none !important;
     padding: 16px;
@@ -289,7 +289,7 @@ const expirationState = computed(() => {
     --figure-radius: var(--o-radius-xs);
   }
 }
-@include respond-to('phone') {
+@include respond('phone') {
   .title {
     @include display3;
   }

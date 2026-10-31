@@ -51,7 +51,7 @@ const speed = computed(() => Math.floor(props.data.length / 4) * 30 + 's');
 .swiper-list {
   display: flex;
   animation: marque v-bind(speed) linear infinite;
-  @include respond-to('>phone') {
+  @include respond('>phone') {
     @include hover {
       animation-play-state: paused;
     }
@@ -104,7 +104,7 @@ const speed = computed(() => Math.floor(props.data.length / 4) * 30 + 's');
   }
 }
 
-@include respond-to('phone') {
+@include respond('phone') {
   .swiper-card {
     width: 160px;
     margin-right: 12px;

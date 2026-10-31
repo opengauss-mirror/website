@@ -150,7 +150,7 @@ watch(
   row-gap: 32px;
   column-gap: 32px;
   margin-top: 32px;
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     margin-top: 18px;
     display: block;
   }
@@ -164,7 +164,7 @@ watch(
     background-repeat: no-repeat;
     background-position: center;
     @include h2;
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       background-image: url('../img/card-bg-mb.png');
       font-size: 14px;
       height: 96px;
@@ -176,7 +176,7 @@ watch(
 
     .time {
       display: flex;
-      @include respond-to('<=pad_v') {
+      @include respond('<=pad_v') {
         margin-top: 4px;
       }
       margin-top: 16px;
@@ -386,7 +386,7 @@ watch(
     line-height: 24px;
     margin-bottom: 24px;
   }
-  @include respond-to('phone') {
+  @include respond('phone') {
     font-size: 14px;
     line-height: 22px;
   }
@@ -406,13 +406,13 @@ watch(
     & + .content-item {
       border-top: 1px solid var(--e-color-border2);
     }
-    @include respond-to('<=laptop') {
+    @include respond('<=laptop_s') {
       grid-template-columns: 180px 480px auto;
     }
-    @include respond-to('<=pad') {
+    @include respond('<=pad') {
       grid-template-columns: 180px 360px auto;
     }
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       grid-template-columns: max-content auto;
       column-gap: 16px;
       padding: 6px 0;
@@ -421,7 +421,7 @@ watch(
       align-items: flex-start;
     }
 
-    @include respond-to('phone') {
+    @include respond('phone') {
       display: block;
     }
 
@@ -430,12 +430,12 @@ watch(
         grid-column-end: 3;
         margin-top: 8px;
       }
-      @include respond-to('phone') {
+      @include respond('phone') {
         font-size: 14px;
       }
       div {
         display: flex;
-        @include respond-to('phone') {
+        @include respond('phone') {
           &:not(:last-child) {
             margin-bottom: 8px;
           }
@@ -465,7 +465,7 @@ watch(
         font-size: 12px;
         line-height: 18px;
       }
-      @include respond-to('phone') {
+      @include respond('phone') {
         font-size: 14px;
         margin-top: 16px;
         margin-bottom: 8px;
@@ -496,7 +496,7 @@ watch(
         font-size: 12px;
         line-height: 18px;
       }
-      @include respond-to('phone') {
+      @include respond('phone') {
         margin-left: 8px;
       }
     }
@@ -622,19 +622,19 @@ watch(
     .children-item + .children-item {
       border-top: 1px solid var(--e-color-border2);
     }
-    @include respond-to('<=laptop') {
+    @include respond('<=laptop_s') {
       grid-template-columns: 180px auto;
       .children-item {
         grid-template-columns: 480px auto;
       }
     }
-    @include respond-to('<=pad') {
+    @include respond('<=pad') {
       grid-template-columns: 180px auto;
       .children-item {
         grid-template-columns: 360px auto;
       }
     }
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       grid-template-columns: max-content auto;
     }
   }

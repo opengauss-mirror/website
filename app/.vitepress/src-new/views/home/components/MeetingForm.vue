@@ -545,20 +545,20 @@ watch(
 :global(.meeting-booking-dlg) {
   --dlg-width: var(--grid-10);
   --dlg-max-height: 480px;
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     --dlg-max-height: 60vh;
   }
-  @include respond-to('pad') {
+  @include respond('pad') {
     --dlg-max-height: 60vh;
     --dlg-width: var(--grid-6);
   }
-  @include respond-to('phone') {
+  @include respond('phone') {
     --dlg-edge-gap: 16px;
   }
 }
 
 :global(.meeting-booking-dlg .o-dlg-main) {
-  @include respond-to('phone') {
+  @include respond('phone') {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
   }
@@ -583,7 +583,7 @@ watch(
     &.record {
       position: relative;
       .o-switch {
-        @include respond-to('phone') {
+        @include respond('phone') {
           position: absolute;
           top: 0;
           right: 0;
@@ -610,13 +610,13 @@ watch(
       height: 40px;
       margin: 0;
       color: var(--o-color-info2);
-      @include respond-to('phone') {
+      @include respond('phone') {
         @include text2;
       }
     }
 
     .o-form-item-message {
-      @include respond-to('phone') {
+      @include respond('phone') {
         padding-left: 15px;
         padding-right: 15px;
       }
@@ -627,7 +627,7 @@ watch(
   }
   .el-date-editor {
     width: 320px;
-    @include respond-to('phone') {
+    @include respond('phone') {
       width: 100%;
     }
   }

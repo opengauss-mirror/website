@@ -25,16 +25,16 @@ const faqList = computed(() => [
   background-color: var(--o-color-fill2);
   border-radius: 4px;
   padding: 32px;
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     padding: 24px;
   }
-  @include respond-to('pad_h') {
+  @include respond('pad_h') {
     padding: 16px;
   }
-  @include respond-to('pad_v') {
+  @include respond('pad_v') {
     padding: 12px;
   }
-  @include respond-to('phone') {
+  @include respond('phone') {
     flex-direction: column;
     padding: 12px;
   }
@@ -54,7 +54,7 @@ const faqList = computed(() => [
     padding-bottom: 0;
   }
 
-  @include respond-to('phone') {
+  @include respond('phone') {
     font-size: 14px;
     line-height: 22px;
   }
@@ -64,7 +64,7 @@ const faqList = computed(() => [
   font-weight: 600;
   margin-bottom: 12px;
 
-  @include respond-to('<=laptop') {
+  @include respond('<=laptop_s') {
     margin-bottom: 8px;
   }
 }

@@ -138,7 +138,7 @@ const onChange = (option: string) => {
   border-radius: 4px;
   background: var(--o-color-fill2);
   padding: 32px;
-  @include respond-to('<=pad') {
+  @include respond('<=pad') {
     padding: 16px;
   }
 }
@@ -166,7 +166,7 @@ const onChange = (option: string) => {
       display: flex;
       align-items: center;
       @include text2;
-      @include respond-to('<=pad') {
+      @include respond('<=pad') {
         margin-bottom: 8px;
       }
       .o-icon {
@@ -191,7 +191,7 @@ const onChange = (option: string) => {
 
     .app-breadcrumb {
       margin-bottom: 24px;
-      @include respond-to('<=pad') {
+      @include respond('<=pad') {
         margin-bottom: 12px;
       }
     }

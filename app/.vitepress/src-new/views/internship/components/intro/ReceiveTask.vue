@@ -109,7 +109,7 @@ const { lePadV } = useScreen();
   border-radius: 4px;
   color: var(--o-color-info2);
   @include text1;
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     font-size: 14px;
     line-height: 22px;
   }
@@ -129,7 +129,7 @@ const { lePadV } = useScreen();
   white-space: nowrap;
   line-height: 1.2em !important;
   @include tip1;
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     font-size: 14px;
     line-height: 22px;
   }
@@ -170,7 +170,7 @@ const { lePadV } = useScreen();
       height: 16px;
     }
   }
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     display: list-item;
   }
 }
@@ -214,7 +214,7 @@ const { lePadV } = useScreen();
   color: var(--o-color-info1);
   margin-top: 24px;
 
-  @include respond-to('phone') {
+  @include respond('phone') {
     margin-top: 12px;
     margin-bottom: 8px;
   }

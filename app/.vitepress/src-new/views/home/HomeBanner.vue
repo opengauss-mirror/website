@@ -162,17 +162,17 @@ const currentBgTheme = computed(() => {
 .home-banner-wrap {
   --banner-height: 460px;
 
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     --banner-height: 400px;
   }
-  @include respond-to('pad_h') {
+  @include respond('pad_h') {
     --banner-height: 320px;
   }
-  @include respond-to('pad_v') {
+  @include respond('pad_v') {
     --banner-height: 184px;
     padding: 2px 32px 0;
   }
-  @include respond-to('phone') {
+  @include respond('phone') {
     width: var(--grid-content-width);
     margin: 0 auto;
     padding: 16px 0;
@@ -188,7 +188,7 @@ const currentBgTheme = computed(() => {
   --d: 10px;
   color: var(--o-color-info1);
 
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -219,7 +219,7 @@ const currentBgTheme = computed(() => {
   height: var(--banner-height);
   max-width: 100vw;
   overflow: hidden;
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     border-radius: 4px;
   }
   --carousel-indicator-bg-color-selected: var(--o-color-info1);
@@ -244,26 +244,19 @@ const currentBgTheme = computed(() => {
             @include display1;
             font-weight: 500;
             white-space: pre-wrap;
-            max-width: var(--grid-3);
-            @include respond-to('pad_v') {
-              max-width: var(--grid-4);
-            }
-            @include respond-to('pad_h') {
-              max-width: var(--grid-7);
-            }
-            @include respond-to('laptop') {
-              max-width: calc(var(--grid-14) + 1em);
-            }
-            @include respond-to('pc') {
-              max-width: calc(var(--grid-14) + 1em);
-            }
-            @include respond-to('pc_l') {
+            @include respond('>laptop') {
               max-width: calc(var(--grid-12) + 1em);
             }
-            @include respond-to('>pc_l') {
-              max-width: var(--grid-12);
+            @include respond('laptop') {
+              max-width: calc(var(--grid-14) + 1em);
             }
-            @include respond-to('<=pad_v') {
+            @include respond('pad_h') {
+              max-width: var(--grid-7);
+            }
+            @include respond('<=pad_v') {
+              max-width: var(--grid-3);
+            }
+            @include respond('<=pad_v') {
               font-size: 22px;
               line-height: 30px;
               line-height: var(--e-line-height-h4);
@@ -275,7 +268,7 @@ const currentBgTheme = computed(() => {
             font-size: 30px;
             line-height: 40px;
             font-weight: normal;
-            @include respond-to('<=pad_v') {
+            @include respond('<=pad_v') {
               margin-top: 8px;
               font-size: var(--e-font-size-h7);
               line-height: var(--e-line-height-h7);
@@ -284,18 +277,18 @@ const currentBgTheme = computed(() => {
           }
           .desc {
             margin-top: 16px;
-            @include respond-to('<=pad_v') {
+            @include respond('<=pad_v') {
               text-align: center;
               margin-top: 8px;
             }
             span {
               font-size: var(--e-font-size-h5);
               line-height: 40px;
-              @include respond-to('<=pad_v') {
+              @include respond('<=pad_v') {
                 font-size: var(--e-font-size-text);
                 line-height: 24px;
               }
-              @include respond-to('phone') {
+              @include respond('phone') {
                 font-size: 12px;
                 line-height: 18px;
               }
@@ -305,11 +298,11 @@ const currentBgTheme = computed(() => {
             font-size: 56px;
             line-height: 84px;
             font-weight: 600;
-            @include respond-to('<=laptop') {
+            @include respond('<=laptop_s') {
               font-size: var(--e-font-size-h3);
               line-height: var(--e-line-height-h3);
             }
-            @include respond-to('<=pad_v') {
+            @include respond('<=pad_v') {
               padding-bottom: var(--e-spacing-h5);
               font-size: 20px;
               line-height: 30px;
@@ -318,7 +311,7 @@ const currentBgTheme = computed(() => {
           }
         }
         .content-text-img {
-          @include respond-to('<=pad_v') {
+          @include respond('<=pad_v') {
             display: flex;
             justify-content: center;
           }
@@ -326,26 +319,26 @@ const currentBgTheme = computed(() => {
         .btn-box {
           margin-top: var(--e-spacing-h3);
           --d: 20px;
-          @include respond-to('<=pad_v') {
+          @include respond('<=pad_v') {
             display: none;
           }
           .home-banner-btn {
             color: var(--e-color-white);
           }
         }
-        @include respond-to('phone') {
+        @include respond('phone') {
           justify-content: end;
           padding-bottom: 1.2em;
         }
       }
       .content-left-img {
-        @include respond-to('<=pad_v') {
+        @include respond('<=pad_v') {
           justify-content: start;
           padding-top: 10px;
         }
       }
       .teamup-content-left {
-        @include respond-to('<=pad_v') {
+        @include respond('<=pad_v') {
           justify-content: flex-end;
         }
       }
@@ -377,15 +370,15 @@ const currentBgTheme = computed(() => {
     object-fit: cover;
     height: 180px;
     display: block;
-    @include respond-to('laptop') {
+    @include respond('laptop_s') {
       width: inherit;
       height: 160px;
     }
-    @include respond-to('pad_h') {
+    @include respond('pad_h') {
       width: inherit;
       height: 120px;
     }
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       width: inherit;
       height: 110px;
     }
@@ -407,19 +400,19 @@ const currentBgTheme = computed(() => {
     width: 100%;
     max-width: 1504px;
     padding: 0 44px;
-    @include respond-to('laptop') {
+    @include respond('laptop_s') {
       padding: 0 24px;
     }
-    @include respond-to('pad_h') {
+    @include respond('pad_h') {
       padding: 0 16px;
     }
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       text-align: center;
     }
     .el-carousel__indicator {
       .el-carousel__button {
         width: 40px;
-        @include respond-to('<=pad_v') {
+        @include respond('<=pad_v') {
           width: 20px;
         }
       }

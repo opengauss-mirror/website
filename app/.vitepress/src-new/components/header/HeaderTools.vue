@@ -110,10 +110,10 @@ watch(
   align-items: center;
   height: 100%;
   --header-tool-gap: 20px;
-  @include respond-to('laptop') {
+  @include respond('laptop_s') {
     --header-tool-gap: 16px;
   }
-  @include respond-to('pad_h') {
+  @include respond('pad_h') {
     --header-tool-gap: 12px;
   }
   .source-code {

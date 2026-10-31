@@ -256,7 +256,7 @@ const applyMb = computed(() => {
   margin-left: 8px;
 }
 
-@include respond-to('<=pad_v') {
+@include respond('<=pad_v') {
   .section-title-mb {
     color: var(--o-color-info1);
     text-align: center;

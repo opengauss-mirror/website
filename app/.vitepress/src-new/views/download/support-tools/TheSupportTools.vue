@@ -194,7 +194,7 @@ h2 {
 section {
   margin-top: 72px;
 
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     margin-top: 32px;
   }
 }
@@ -231,7 +231,7 @@ section {
   width: 100%;
   max-width: 100%;
 
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     display: block;
     padding: 16px 12px;
     margin-top: 16px;
@@ -240,7 +240,7 @@ section {
   .label {
     margin-right: 40px;
     white-space: nowrap;
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       margin-bottom: 8px;
     }
   }

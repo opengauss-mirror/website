@@ -52,7 +52,7 @@ const { lePadV } = useScreen();
   border-radius: 4px;
   color: var(--o-color-info2);
   @include text1;
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     font-size: 14px;
     line-height: 22px;
   }

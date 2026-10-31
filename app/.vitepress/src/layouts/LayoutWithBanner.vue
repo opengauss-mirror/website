@@ -19,7 +19,7 @@ const commonStore = useCommon();
 
 <style lang="scss" scoped>
 .banner-level2 {
-  @include respond-to('<=pad_v') {
+  @include respond('<=pad_v') {
     background-color: transparent !important;
     padding-top: 16px;
     :deep(.banner-bg) {

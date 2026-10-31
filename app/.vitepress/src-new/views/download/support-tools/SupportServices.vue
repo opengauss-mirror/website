@@ -29,7 +29,7 @@ import { FORUM_LINK } from '@/data/url-config';
   row-gap: 32px;
   width: 100%;
   margin-top: 40px;
-  @include respond-to('>pad_v') {
+  @include respond('>pad_v') {
     grid-template-columns: repeat(2, 1fr);
   }
 

@@ -74,13 +74,13 @@ const steps = computed(() => [
 <style scoped lang="scss">
 .step-header {
   --card-title-icon-size: 48px;
-  @include respond-to('<=laptop') {
+  @include respond('<=laptop_s') {
     --card-title-icon-size: 32px;
   }
   img {
     width: var(--card-title-icon-size);
     height: var(--card-title-icon-size);
-    @include respond-to('phone') {
+    @include respond('phone') {
       display: none;
     }
   }
@@ -88,7 +88,7 @@ const steps = computed(() => [
   .title {
     img {
       display: none;
-      @include respond-to('phone') {
+      @include respond('phone') {
         display: flex;
       }
     }
@@ -122,7 +122,7 @@ const steps = computed(() => [
         color: var(--o-color-info2);
         margin-top: var(--o-gap-1);
         @include tip1;
-        @include respond-to('phone') {
+        @include respond('phone') {
           margin-top: var(--o-r-gap-3);
         }
       }
@@ -135,13 +135,13 @@ const steps = computed(() => [
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @include respond-to('laptop') {
+    @include respond('laptop_s') {
       --padding: 100px;
     }
-    @include respond-to('pad_h') {
+    @include respond('pad_h') {
       --padding: 64px;
     }
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       padding: 0 2px;
     }
     .step-line {
@@ -149,7 +149,7 @@ const steps = computed(() => [
       width: 32px;
       background-size: contain;
       background-repeat: no-repeat;
-      @include respond-to('phone') {
+      @include respond('phone') {
         display: none;
       }
     }
@@ -158,19 +158,19 @@ const steps = computed(() => [
       align-items: center;
       flex-direction: row-reverse;
 
-      @include respond-to('pad_v') {
+      @include respond('pad_v') {
         flex-direction: column;
       }
 
       .o-icon {
         font-size: 48px;
-        @include respond-to('laptop') {
+        @include respond('laptop_s') {
           font-size: 40px;
         }
-        @include respond-to('pad_h') {
+        @include respond('pad_h') {
           font-size: 40px;
         }
-        @include respond-to('<=pad_v') {
+        @include respond('<=pad_v') {
           font-size: 24px;
         }
       }
@@ -179,7 +179,7 @@ const steps = computed(() => [
         flex-direction: column;
         align-items: center;
         gap: 6px;
-        @include respond-to('<=pad_v') {
+        @include respond('<=pad_v') {
           gap: 4px;
         }
         .num {
@@ -188,7 +188,7 @@ const steps = computed(() => [
           font-size: var(--o-icon_size-xl);
           height: calc(var(--o-icon_size-xl) / 2 - 2px);
           overflow: hidden;
-          @include respond-to('phone') {
+          @include respond('phone') {
             --o-icon_size-xl: 24px;
           }
         }
@@ -197,13 +197,13 @@ const steps = computed(() => [
           padding-left: 4px;
           white-space: nowrap;
           @include tip2;
-          @include respond-to('phone') {
+          @include respond('phone') {
             font-size: 8px;
             line-height: 12px;
           }
         }
       }
-      @include respond-to('phone') {
+      @include respond('phone') {
         flex-direction: column-reverse;
         gap: 4px;
       }

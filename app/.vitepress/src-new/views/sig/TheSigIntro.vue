@@ -55,13 +55,13 @@ const { lang } = useData();
     background-color: var(--o-color-fill2);
     padding: var(--o-r-gap-5) var(--o-r-gap-8);
     border-radius: var(--o-radius-xs);
-    @include respond-to('laptop') {
+    @include respond('laptop_s') {
       --title-icon-size: 40px;
     }
-    @include respond-to('pad_h') {
+    @include respond('pad_h') {
       --title-icon-size: 40px;
     }
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       --title-icon-size: 32px;
       display: flex;
       flex-direction: column;
@@ -84,7 +84,7 @@ const { lang } = useData();
             width: 1px;
             height: 100%;
             background-color: var(--o-color-control4);
-            @include respond-to('<=pad_v') {
+            @include respond('<=pad_v') {
               width: 100%;
               height: 1px;
               left: 0;
@@ -97,7 +97,7 @@ const { lang } = useData();
       .o-icon {
         margin-bottom: var(--title-gap);
         font-size: var(--title-icon-size);
-        @include respond-to('<=pad_v') {
+        @include respond('<=pad_v') {
           height: min-content;
         }
       }
@@ -105,10 +105,10 @@ const { lang } = useData();
       .title {
         font-weight: 500;
         @include h4;
-        @include respond-to('<=pad_v') {
+        @include respond('<=pad_v') {
           margin-top: 0;
         }
-        @include respond-to('phone') {
+        @include respond('phone') {
           @include h3;
         }
       }
@@ -117,10 +117,10 @@ const { lang } = useData();
         margin-top: var(--o-r-gap-4);
         color: var(--o-color-info2);
         @include tip1;
-        @include respond-to('<=pad_v') {
+        @include respond('<=pad_v') {
           margin-top: 8px;
         }
-        @include respond-to('phone') {
+        @include respond('phone') {
           @include text1;
         }
         & + .subtitle {
@@ -131,7 +131,7 @@ const { lang } = useData();
       .sig-info {
         position: relative;
         flex: 1;
-        @include respond-to('<=pad_v') {
+        @include respond('<=pad_v') {
           position: initial;
         }
       }
@@ -155,7 +155,7 @@ const { lang } = useData();
 
   .o-divider {
     --o-divider-label-gap: 0 40px;
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       margin-top: var(--o-divider-gap);
       height: auto;
     }

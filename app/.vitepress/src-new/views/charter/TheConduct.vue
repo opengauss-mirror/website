@@ -124,13 +124,13 @@ defineProps<{
     }
   }
 
-  @include respond-to('pad_h') {
+  @include respond('pad_h') {
     padding: 12px 16px;
   }
-  @include respond-to('pad_v') {
+  @include respond('pad_v') {
     padding: 24px;
   }
-  @include respond-to('phone') {
+  @include respond('phone') {
     padding: 12px;
   }
 }

@@ -100,7 +100,7 @@ const pagedData = computed(() => {
 .o-row {
   --row-gap-x: var(--o-r-gap-10);
   --row-gap-y: var(--o-r-gap-10);
-  @include respond-to('phone') {
+  @include respond('phone') {
     --row-gap-x: var(--o-r-gap-5);
     --row-gap-y: var(--o-r-gap-5);
   }
@@ -122,7 +122,7 @@ const pagedData = computed(() => {
   padding: calc(var(--o-gap-section-4) + var(--o-gap-section-8));
   padding-bottom: var(--o-gap-section-4);
   border-radius: var(--o-radius-xs);
-  @include respond-to('phone') {
+  @include respond('phone') {
     padding: var(--o-gap-section-5);
     :deep(.o-col) {
       flex: 0 1 100%;
@@ -170,7 +170,7 @@ const pagedData = computed(() => {
 }
 
 .o-pagination {
-  @include respond-to('phone') {
+  @include respond('phone') {
     margin-top: var(--o-gap-section-5);
   }
 }

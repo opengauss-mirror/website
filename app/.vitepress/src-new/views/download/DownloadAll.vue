@@ -210,14 +210,14 @@ const tableColumns = [
     display: flex;
     align-items: center;
 
-    @include respond-to('<=pad_v') {
+    @include respond('<=pad_v') {
       margin-bottom: 0;
       display: block;
     }
 
     .label {
       margin-right: 32px;
-      @include respond-to('<=pad_v') {
+      @include respond('<=pad_v') {
         margin-bottom: 8px;
       }
     }
