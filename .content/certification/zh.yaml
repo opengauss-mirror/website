@@ -46,6 +46,12 @@ introduce:
   link_href: https://atomgit.com/opengauss/distribution-certification
 
 certifications:
+  - pro: GBase 8c V6
+    name: 天津南大通用数据技术股份有限公司
+    version: openGauss 6.0.0
+    award: '2026-10-15'
+    expiration: ''
+    certificate: 'https://distributioncertification-beijing4.obs.cn-north-4.myhuaweicloud.com/%E5%A4%A9%E6%B4%A5%E5%8D%97%E5%A4%A7/%E5%A4%A9%E6%B4%A5%E5%8D%97%E5%A4%A7%E9%80%9A%E7%94%A88c%20V6.pdf'
   - pro: GBase 8c V5
     name: 天津南大通用数据技术股份有限公司
     version: openGauss 5.0.0
