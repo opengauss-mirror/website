@@ -6,6 +6,7 @@ import { canonicalPagePath } from '@/shared/page-language';
 import { data as pageLangMap } from '@/shared/pages-url-list-loader.data';
 import { useScreen } from '~@/composables/useScreen';
 import { useCommon } from '@/stores/common';
+import { useI18n } from '~@/i18n';
 import headerData from '~@/data/header';
 
 import logoLight from '~@/assets/logo.svg';
@@ -18,6 +19,7 @@ const { lePadV } = useScreen();
 const router = useRouter();
 const route = useRoute();
 const commonStore = useCommon();
+const i18n = useI18n();
 
 const headerRef = useTemplateRef('headerRef');
 const headerMobileRef = useTemplateRef('headerMobileRef');
@@ -80,7 +82,9 @@ const availableLangOptions = computed(() => {
   return headerData.langOptions.filter((option) => langs.includes(option.id));
 });
 
-const isSimpleHeader = computed(() => params.value?.sig || frontmatter.value.category === 'events');
+const isSimpleHeader = computed(
+  () => params.value?.sig || frontmatter.value.category === 'events' || frontmatter.value.category === 'news' || frontmatter.value.category === 'blog'
+);
 
 const headerTitle = computed(() => {
   if (params.value?.sig) {
@@ -88,6 +92,12 @@ const headerTitle = computed(() => {
   }
   if (frontmatter.value.category === 'events') {
     return '活动列表';
+  }
+  if (frontmatter.value.category === 'news') {
+    return i18n.value.common.COMMON_CONFIG.NEWS;
+  }
+  if (frontmatter.value.category === 'blog') {
+    return i18n.value.common.COMMON_CONFIG.BLOG;
   }
   return '';
 });
@@ -99,6 +109,14 @@ const goBack = () => {
   }
   if (frontmatter.value.category === 'events') {
     router.go(`/${lang.value}/events/list/`);
+    return;
+  }
+  if (frontmatter.value.category === 'news') {
+    router.go(`/${lang.value}/news/`);
+    return;
+  }
+  if (frontmatter.value.category === 'blog') {
+    router.go(`/${lang.value}/blogs/`);
     return;
   }
 };

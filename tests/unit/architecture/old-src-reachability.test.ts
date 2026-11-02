@@ -1,6 +1,6 @@
 import { expect, describe, it, beforeAll } from 'vitest';
 import { existsSync, readFileSync, readdirSync, statSync } from 'fs';
-import { resolve, dirname, relative } from 'path';
+import { resolve, dirname, relative, sep } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -48,6 +48,7 @@ const DELETED = [
   'app/.vitepress/src/views/home/TheHome.vue',
   'app/.vitepress/src/views/support-tools/TheSupportTools.vue',
   'app/.vitepress/src/layouts/LayoutEvents.vue',
+  'app/.vitepress/src/layouts/AppMdHead.vue',
 ].map((p) => resolve(rootDir, p));
 
 const REMOVED_DIRS = [
@@ -107,7 +108,7 @@ function resolveSpecifier(spec: string, fromFile: string): string | null {
   } else {
     return null;
   }
-  const cand = resolve(base, rel);
+  const cand = resolve(base, rel.replace(/^[/\\]+/, ''));
   for (const t of RESOLVE_TRIES) {
     const p = cand + t;
     if (existsSync(p) && statSync(p).isFile()) return p;
@@ -133,7 +134,7 @@ function extractImports(filePath: string): string[] {
 }
 
 function isInsideOldSrc(f: string): boolean {
-  return (f === srcDir || f.startsWith(srcDir + '/')) && f.endsWith('.vue');
+  return (f === srcDir || f.startsWith(srcDir + sep)) && f.endsWith('.vue');
 }
 
 let reachableOldSrcVue: Set<string>;

@@ -1,23 +1,16 @@
 <script setup lang="ts">
-import { useCommon } from '@/stores/common';
-
-import notFoundImg_light from '@/assets/illustrations/404.png';
-import notFoundImg_dark from '@/assets/illustrations/404-dark.png';
-import { computed } from 'vue';
+import notFoundImg from '@/assets/illustrations/empty-content.png';
 defineProps({
   noDataTip: {
     type: String,
     default: '404 Not Found',
   },
 });
-
-const commonStore = useCommon();
-const notFoundImg = computed(() => (commonStore.theme === 'light' ? notFoundImg_light : notFoundImg_dark));
 </script>
 
 <template>
   <div class="nofound">
-    <img class="nofound-img" :src="notFoundImg" alt="404" />
+    <img class="nofound-img" :src="notFoundImg" alt="empty" />
     <p class="nofound-text">{{ noDataTip }}</p>
   </div>
 </template>
@@ -33,8 +26,8 @@ const notFoundImg = computed(() => (commonStore.theme === 'light' ? notFoundImg_
   padding: var(--e-spacing-h2) 0;
   min-height: calc(100vh - 329px);
   .nofound-text {
-    margin-top: var(--e-spacing-h5);
-    font-size: var(--e-font-size-h7);
+    color: var(--o-color-info3);
+    @include text1;
   }
   .nofound-img {
     height: 300px;

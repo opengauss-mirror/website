@@ -1,4 +1,4 @@
-@use "@opensig/opendesign/es/_styles/mixin.scss" as *;
+@use '@opensig/opendesign/es/_styles/mixin.scss' as *;
 
 @mixin inject-var($width, $padding, $gutter, $columns, $contentColumns) {
   :root {
@@ -14,42 +14,36 @@
 }
 
 // 1921px <= 屏幕宽度
-@include respond-to('>pc_l') {
+@include respond('>pc') {
   @include inject-var(1920px, 64px, 32px, 24, 20);
 }
 
 // 1681px <= 屏幕宽度 <= 1920px
-@include respond-to('pc_l') {
-  @include inject-var(100vw, 64px, 32px, 24, 20);
+@include respond('pc') {
+  @include inject-var(1920px, 64px, 32px, 24, 20);
 }
 
-// 1441px <= 屏幕宽度 <= 1680px
-@include respond-to('pc') {
-  @include inject-var(100vw, 64px, 32px, 24, 22);
-}
-
-// 1201px <= 屏幕宽度 <= 1440px
-@include respond-to('laptop') {
+// 1201px <= 屏幕宽度 <= 1680px
+@include respond('laptop') {
   @include inject-var(100vw, 40px, 24px, 24, 22);
 }
 
 // 841px <= 屏幕宽度 <= 1200px
-@include respond-to('pad_h') {
+@include respond('pad_h') {
   @include inject-var(100vw, 32px, 16px, 12, 12);
 }
 
 // 601px <= 屏幕宽度 <= 840px
-@include respond-to('pad_v') {
+@include respond('pad_v') {
   @include inject-var(100vw, 32px, 16px, 8, 8);
 }
 
 // 屏幕宽度 <= 600px
-@include respond-to('phone') {
+@include respond('phone') {
   @include inject-var(100vw, 24px, 12px, 4, 4);
 }
 
 :root {
-  // --grid-<number>: <number>个栅格的宽度
   --grid-1: var(--grid-column-width);
   @for $cnt from 2 to 24 {
     $gutterCnt: $cnt - 1;
