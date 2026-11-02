@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, nextTick, onMounted, provide, ref, useTemplateRef, watch, watchEffect } from 'vue';
+import { computed, nextTick, onMounted, ref, useTemplateRef, watch, watchEffect } from 'vue';
 import type { Component } from 'vue';
 import { useData, useRoute } from 'vitepress';
 
@@ -35,10 +35,6 @@ import { useLocale } from '~@/composables/useLocale.js';
 const { frontmatter, lang } = useData();
 const { changeLocale } = useLocale();
 watchEffect(() => changeLocale(lang.value as 'zh' | 'en'));
-
-const scrollContainerRef = useTemplateRef('scrollContainerRef');
-
-provide('scrollContainerRef', scrollContainerRef);
 
 const elementPlusLocale = computed(() => {
   return lang.value === 'zh' ? zhCn : en;

@@ -2,7 +2,7 @@
 import bannerImg from '~@/assets/category/charter/banner.png';
 import BannerLevel2 from '~@/components/BannerLevel2.vue';
 import { OTab, OTabPane, throttleRAF } from '@opensig/opendesign';
-import { computed, inject, onMounted, onUnmounted, Ref, ref, useTemplateRef, watch } from 'vue';
+import { computed, onMounted, onUnmounted, ref, useTemplateRef, watch } from 'vue';
 import { useData, useRoute } from 'vitepress';
 import TheConduct from './TheConduct.vue';
 import TheAICodingAssistant from './TheAICodingAssistant.vue';
@@ -16,7 +16,6 @@ const { hash } = useData();
 const route = useRoute();
 
 const stickying = ref(false);
-const scrollContainerRef = inject<Ref<HTMLElement>>('scrollContainerRef');
 
 const getAnchorValue = () => {
   const path = route.path;
@@ -67,7 +66,7 @@ const bannerRef = useTemplateRef('bannerLevel2');
 const { height } = useElementSize(bannerRef);
 
 const onScroll = throttleRAF(() => {
-  stickying.value = scrollContainerRef!.value.scrollTop >= height.value;
+  stickying.value = (window.scrollY || document.documentElement.scrollTop) >= height.value;
 });
 
 const tabKey = ref(0);
@@ -75,11 +74,11 @@ const tabKey = ref(0);
 watch(stickying, () => tabKey.value++);
 
 onMounted(() => {
-  scrollContainerRef?.value?.addEventListener('scroll', onScroll);
+  window.addEventListener('scroll', onScroll);
 });
 
 onUnmounted(() => {
-  scrollContainerRef?.value?.removeEventListener('scroll', onScroll);
+  window.removeEventListener('scroll', onScroll);
 });
 </script>
 

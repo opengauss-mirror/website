@@ -49,7 +49,7 @@ const newsCardData = computed(() => {
 watch(
   () => currentPage.value,
   () => {
-    (document.getElementById('anchor-sticky-demo') ?? window).scrollTo({
+    window.scrollTo({
       top: 0,
       behavior: 'smooth',
     });
