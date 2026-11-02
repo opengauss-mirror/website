@@ -43,7 +43,7 @@ const rootStyle = computed(() => {
 
 <template>
   <div class="banner-level2" :style="rootStyle">
-    <img :src="props.backgroundImage" class="banner-bg" :alt="imageAlt" />
+    <img v-if="props.backgroundImage" :src="props.backgroundImage" class="banner-bg" :alt="imageAlt" />
     <div class="wrap">
       <div class="banner-text">
         <h1 class="banner-title">{{ title || frontmatter.title }}</h1>

@@ -1,15 +1,21 @@
 <script setup lang="ts">
 import { onMounted, ref, computed, watch } from 'vue';
 import { useData, useRoute } from 'vitepress';
+import { storeToRefs } from 'pinia';
 import { useI18n } from '@/i18n';
-import AppMdHead from './AppMdHead.vue';
-import BreadCrumbs from '@/components/BreadCrumbs.vue';
+import { useCommon } from '@/stores/common';
+import { OArticle } from '@opendesign-plus/components';
+import { OBreadcrumb, OBreadcrumbItem } from '@opensig/opendesign';
 
 import newsData from '@/data/news';
 
+import headerBgLight from '@/assets/category/news/light.png';
+import headerBgDark from '@/assets/category/news/dark.png';
+
 const { frontmatter, lang } = useData();
 const i18n = useI18n();
-const userCaseData = computed(() => i18n.value.common.COMMON_CONFIG);
+const { theme } = storeToRefs(useCommon());
+const headerBg = computed(() => (theme.value === 'dark' ? headerBgDark : headerBgLight));
 const newsList = computed(() => {
   return lang.value === 'zh' ? newsData.zh : newsData.en;
 });
@@ -41,6 +47,13 @@ const getNewsData = () => {
   });
 };
 
+const prevItem = computed(() => {
+  return prev.value ? { title: prev.value, url: `/${prevLint.value}` } : null;
+});
+const nextItem = computed(() => {
+  return next.value ? { title: next.value, url: `/${nextLint.value}` } : null;
+});
+
 const route = useRoute();
 
 watch(
@@ -56,91 +69,63 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="bread">
-    <BreadCrumbs :bread1="newsInfo.name" :bread2="frontmatter.title" :link1="newsInfo.link" />
-  </div>
-  <div class="markdown">
-    <div class="news-markdown-detail">
-      <AppMdHead :frontmatter="frontmatter" />
-      <Content />
+  <div class="layout-news">
+    <div class="bread">
+      <OBreadcrumb>
+        <OBreadcrumbItem :href="newsInfo.link">{{ newsInfo.name }}</OBreadcrumbItem>
+        <OBreadcrumbItem>{{ frontmatter.title }}</OBreadcrumbItem>
+      </OBreadcrumb>
     </div>
-    <hr />
-    <div class="news-markdown-detail">
-      <a v-if="prev !== ''" class="skip" :href="`/${prevLint}`">
-        <span>{{ userCaseData.PREV }}</span>
-        <p>{{ prev }}</p>
-      </a>
-      <a v-if="next !== ''" class="skip" :href="`/${nextLint}`">
-        <span>{{ userCaseData.NEXT }}</span>
-        <p>{{ next }}</p>
-      </a>
+    <div class="news-detail">
+      <OArticle :title="frontmatter.title" :tags="frontmatter.tags" :header-bg="headerBg" :update-time="frontmatter.date" :prev="prevItem" :next="nextItem">
+        <Content />
+      </OArticle>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.markdown {
-  margin-bottom: var(--e-spacing-h1);
-  @media (max-width: 1100px) {
-    margin-bottom: var(--e-spacing-h2);
+@use '@opensig/opendesign/es/_styles/mixin.scss' as opendesign;
+
+.layout-news {
+  margin: 0 auto;
+  max-width: 1488px;
+  padding-top: 32px;
+  padding-bottom: 72px;
+
+  @include opendesign.respond('<=laptop') {
+    max-width: min(1245px, calc(100% - 64px * 2));
+    padding-top: 24px;
+    padding-bottom: 56px;
   }
-}
-.news-markdown-detail {
-  margin: 0 auto;
-}
-.bread {
-  padding: 40px 44px 0 44px;
-  max-width: 1504px;
-  margin: 0 auto;
-  @media (max-width: 1439px) {
+
+  @include opendesign.respond('<=pad') {
+    max-width: 100%;
+    padding-top: 16px;
+    padding-bottom: 40px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @include opendesign.respond('<=pad_v') {
+    padding-bottom: 32px;
+  }
+
+   @include opendesign.respond('phone') {
     padding-left: 24px;
     padding-right: 24px;
   }
-  @media (max-width: 1100px) {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-  @media (max-width: 768px) {
-    padding-top: 16px;
-  }
-}
-.skip {
-  margin-top: var(--e-spacing-h5);
-  cursor: pointer;
-  text-decoration: none;
-  display: block;
-  span {
-    font-size: var(--e-font-size-text);
-    line-height: var(--e-line-height-text);
-    color: var(--e-color-text1);
-    @media (max-width: 768px) {
-      font-size: var(--e-font-size-tip);
-      line-height: var(--e-line-height-tip);
-    }
-  }
-  p {
-    font-size: var(--e-font-size-h8);
-    line-height: var(--e-line-height-h8);
-    color: var(--e-color-text1);
-    margin: 0;
-    display: inline-block;
 
-    @media (max-width: 768px) {
-      font-size: var(--e-font-size-tip);
-      line-height: var(--e-line-height-tip);
+  .bread {
+    padding-bottom: 16px;
+
+    @include opendesign.respond('<=pad') {
+      padding-bottom: 12px;
     }
-  }
-  p:hover {
-    @media (min-width: 1100px) {
-      color: var(--e-color-link2);
+
+    @include opendesign.respond('<=pad_v') {
+      display: none;
     }
-  }
-}
-</style>
-<style lang="scss">
-.markdown .version-box img {
-  @media screen and (max-width: 767px) {
-    width: 33% !important;
   }
 }
 </style>

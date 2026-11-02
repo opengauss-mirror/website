@@ -108,7 +108,7 @@ const headerHeight = computed(() => appHeaderRef.value?.height.toString() ?? '72
 </script>
 
 <template>
-  <OPlusConfigProvider :locale="lang">
+  <OPlusConfigProvider :locale="lang" :theme="commonStore.theme">
     <AppHeader ref="appHeaderRef"></AppHeader>
     <OCookieNotice
       ref="cookieNoticeRef"
@@ -118,14 +118,14 @@ const headerHeight = computed(() => appHeaderRef.value?.height.toString() ?? '72
       :detail-url="`/${lang}/cookies/`"
       :cookie-domain="COOKIE_DOMAIN"
     />
+    <el-config-provider :locale="elementPlusLocale">
+      <main :style="{ marginTop: `${headerHeight ?? '72'}px` }">
+        <component :is="comp" v-if="isCustomLayout"></component>
+        <Content v-else />
+        <AppFloat />
+      </main>
+    </el-config-provider>
   </OPlusConfigProvider>
-  <el-config-provider :locale="elementPlusLocale">
-    <main :style="{ marginTop: `${headerHeight ?? '72'}px` }">
-      <component :is="comp" v-if="isCustomLayout"></component>
-      <Content v-else />
-      <AppFloat />
-    </main>
-  </el-config-provider>
   <AppFooter />
   <ClientOnly>
     <AppTour />
