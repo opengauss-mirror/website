@@ -67,7 +67,7 @@ const onPageChange = () => {
 <template>
   <BannerLevel2 class="news-banner" :background-image="lePadV ? '' : banner" :title="i18n.common.COMMON_CONFIG.NEWS" />
   <ContentWrapper class="the-news-list" :vertical-padding="['40px', '72px']">
-    <OArticleList class="article-list" :data="articleData" :page-size="12" :page-sizes="[12, 24, 48]" @page-change="onPageChange">
+    <OArticleList class="article-list" mobile-layout="v" :data="articleData" :page-size="12" :page-sizes="[12, 24, 48]" @page-change="onPageChange">
       <template #filter>
         <div class="news-filter">
           <div ref="dateRangeRef" class="news-filter-item">

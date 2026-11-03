@@ -171,7 +171,7 @@ const onPageChange = () => {
     </template>
   </BannerLevel2>
   <ContentWrapper class="the-blogs-list" :class="{ 'is-dark': isDark }" :vertical-padding="['40px', '72px']">
-    <OArticleList class="article-list" :data="articleData" :page-size="12" :page-sizes="[12, 24, 48]" @page-change="onPageChange">
+    <OArticleList class="article-list" mobile-layout="v" :data="articleData" :page-size="12" :page-sizes="[12, 24, 48]" @page-change="onPageChange">
       <template #filter>
         <div class="blogs-filter">
           <div ref="dateRangeRef" class="blogs-filter-item">
