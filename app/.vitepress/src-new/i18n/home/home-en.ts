@@ -39,7 +39,7 @@ export default {
     LIST: [
       {
         NAME: 'What is openGauss',
-        DESC: 'openGauss is a user-friendly, enterprise-level, and open-source relational database jointly built with partners.',
+        DESC: 'openGauss is a user-friendly, enterprise-level, and open-source multi-model database jointly built with partners.',
         PATH: '/docs/5.0.0/docs/GettingStarted/understanding-opengauss.html',
       },
       {
