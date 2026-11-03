@@ -20,7 +20,7 @@ const gridVars = computed(() => {
     '--cols': props.cols ?? props.data.length,
   };
   if (props.gap) {
-    style['--grid-gap'] = `${props.gap[1] ?? props.gap[0]}px`;
+    style['--comp-grid-gap'] = `${props.gap[1] ?? props.gap[0]}px`;
     style.gap = `${props.gap[0]}px ${props.gap[1] ?? props.gap[0]}px`;
   }
   return style;
@@ -64,20 +64,20 @@ const nonActiveColor = computed(() => {
 
 <style lang="scss" scoped>
 .components-grid {
-  --grid-gap: 12px;
+  --comp-grid-gap: 12px;
   display: flex;
   flex-wrap: wrap;
-  gap: var(--grid-gap);
+  gap: var(--comp-grid-gap);
   width: 100%;
   @include respond('<=laptop_s') {
-    --grid-gap: 8px;
+    --comp-grid-gap: 8px;
   };
 }
 
 .grid-item {
   color: inherit;
   display: flex;
-  flex: 1 1 calc((100% - (var(--cols, 1) - 1) * var(--grid-gap) - 1px) / var(--cols, 1));
+  flex: 1 1 calc((100% - (var(--cols, 1) - 1) * var(--comp-grid-gap) - 1px) / var(--cols, 1));
   padding: 12px;
   justify-content: center;
   align-items: center;

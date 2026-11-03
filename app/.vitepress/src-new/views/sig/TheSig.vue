@@ -66,10 +66,6 @@ const list = computed(() => {
   display: none;
 }
 
-:deep(.o-sig-list .o-sig-pagination) {
-  --grid-column-gutter:var(--o-r-grid-column-gutter);
-}
-
 :deep(.o-pagination) {
   --pagination-radius: 4px
 }

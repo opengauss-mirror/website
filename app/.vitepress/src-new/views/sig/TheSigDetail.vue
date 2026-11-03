@@ -190,10 +190,6 @@ const getContributeData = async (params: any) => {
   }
 }
 
-:deep(.o-sig-detail) {
-  --grid-column-gutter: var(--o-r-grid-column-gutter);
-}
-
 :deep(.o-table) {
   --table-edge-padding: 24px;
   --table-radius: 4px;

@@ -58,8 +58,8 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .app-content {
-  max-width: var(--grid-content-width);
-  width: var(--grid-content-width);
+  max-width: var(--o-r-grid-section-width);
+  width: var(--o-r-grid-section-width);
   margin: 0 auto;
   padding-left: 0 !important;
   padding-right: 0 !important;

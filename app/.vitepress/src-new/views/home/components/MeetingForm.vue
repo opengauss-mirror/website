@@ -543,14 +543,14 @@ watch(
 
 <style lang="scss" scoped>
 :global(.meeting-booking-dlg) {
-  --dlg-width: var(--grid-10);
+  --dlg-width: var(--o-r-grid-10);
   --dlg-max-height: 480px;
   @include respond('laptop_s') {
     --dlg-max-height: 60vh;
   }
   @include respond('pad') {
     --dlg-max-height: 60vh;
-    --dlg-width: var(--grid-6);
+    --dlg-width: var(--o-r-grid-6);
   }
   @include respond('phone') {
     --dlg-edge-gap: 16px;

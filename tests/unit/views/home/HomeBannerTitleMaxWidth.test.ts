@@ -9,9 +9,6 @@ const rootDir = resolve(__dirname, '../../../../');
 const bannerPath = resolve(rootDir, 'app/.vitepress/src-new/views/home/HomeBanner.vue');
 const source = readFileSync(bannerPath, 'utf-8');
 
-const gridPath = resolve(rootDir, 'app/.vitepress/src-new/assets/style/mixin/grid.scss');
-const gridSource = readFileSync(gridPath, 'utf-8');
-
 /** 从源文本中提取 `<style ...>` 块内容。 */
 function extractStyleBlock(src: string): string {
   const m = src.match(/<style[^>]*>([\s\S]*?)<\/style>/);
@@ -55,15 +52,15 @@ describe('HomeBanner.vue — .title max-width 已从百分比改为栅格变量'
     expect(titleBlock).not.toContain('max-width: 60%');
   });
 
-  it('base max-width 使用 var(--grid-3)（phone 0-600 区间）', () => {
-    expect(titleBlock).toMatch(/max-width:\s*var\(--grid-3\)/);
+  it('base max-width 使用 var(--o-r-grid-3)（phone 0-600 区间）', () => {
+    expect(titleBlock).toMatch(/max-width:\s*var\(--o-r-grid-3\)/);
   });
 
-  it('所有 max-width 声明均使用 var(--grid-*)，无硬编码百分比/像素', () => {
+  it('所有 max-width 声明均使用 var(--o-r-grid-*)，无硬编码百分比/像素', () => {
     const lines = titleBlock!.split('\n').filter((l) => /max-width\s*:/.test(l));
     expect(lines.length).toBeGreaterThanOrEqual(1);
     for (const l of lines) {
-      expect(l).toMatch(/var\(--grid-\d+\)/);
+      expect(l).toMatch(/var\(--o-r-grid-\d+\)/);
       expect(l).not.toMatch(/max-width\s*:\s*\d+%/);
       expect(l).not.toMatch(/max-width\s*:\s*\d+px/);
     }
@@ -91,24 +88,4 @@ describe('HomeBanner.vue — 样式红线合规（AGENTS.md §4 红线 #5）', (
   it('.title 块内无硬编码颜色 hex', () => {
     expect(titleBlock).not.toMatch(/#[0-9a-fA-F]{3,8}\b/);
   });
-});
-
-describe('grid.scss — 引用的栅格 token 均已定义', () => {
-  // grid.scss: --grid-1 显式定义；@for $cnt from 2 to 24 生成 --grid-2..23（Sass `to N` 上界不含 N）
-  it('--grid-1 显式定义', () => {
-    expect(gridSource).toMatch(/--grid-1\s*:\s*var\(--grid-column-width\)/);
-  });
-
-  it('存在 @for $cnt from 2 to 24 循环（生成 --grid-2..23）', () => {
-    expect(gridSource).toMatch(/@for\s+\$cnt\s+from\s+2\s+to\s+24/);
-  });
-
-  // 引用值 3/4/7/12/14 均落在 [2,23] 区间，故由 @for 循环生成
-  const referenced = [3, 4, 7, 12, 14];
-  for (const n of referenced) {
-    it(`--grid-${n} 落在 @for 生成区间 [2,23] 内`, () => {
-      expect(n).toBeGreaterThanOrEqual(2);
-      expect(n).toBeLessThanOrEqual(23);
-    });
-  }
 });

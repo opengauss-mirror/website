@@ -363,7 +363,7 @@ const submitMeetupForm = async (formEl: FormInstance | undefined) => {
 }
 
 .meetup-form {
-  width: var(--grid-content-width);
+  width: var(--o-r-grid-section-width);
   max-width: 100%;
   margin: 0 auto;
   background: var(--e-color-bg2);

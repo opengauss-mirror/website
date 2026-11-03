@@ -205,7 +205,7 @@ const subTitle = computed(() => {
   padding-top: 12px;
   padding-bottom: 12px;
   .select {
-    width: var(--grid-content-width);
+    width: var(--o-r-grid-section-width);
     margin: 0 auto;
     display: flex;
     flex-direction: column;

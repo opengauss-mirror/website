@@ -197,8 +197,8 @@ const expirationState = computed(() => {
 }
 
 .content {
-  width: var(--grid-content-width);
-  max-width: var(--grid-content-width);
+  width: var(--o-r-grid-section-width);
+  max-width: var(--o-r-grid-section-width);
   background-color: var(--o-color-fill2);
   border-radius: var(--o-radius-xs);
   margin-top: 32px;

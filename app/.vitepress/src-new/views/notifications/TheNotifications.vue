@@ -465,7 +465,7 @@ const changeTab = (val: string, flag = true) => {
 
 <style scoped lang="scss">
 .notification-page {
-  padding-top: var(--grid-column-gutter);
+  padding-top: var(--o-r-grid-column-gutter);
   padding-bottom: var(--o-gap-section);
   .notification-page-content {
     display: flex;
@@ -500,7 +500,7 @@ const changeTab = (val: string, flag = true) => {
     width: 348px;
     border-radius: var(--o-radius-xs);
     background: var(--o-color-fill2);
-    padding: var(--grid-column-gutter);
+    padding: var(--o-r-grid-column-gutter);
     .title {
       font-weight: 500;
       margin-bottom: 32px;
@@ -535,10 +535,10 @@ const changeTab = (val: string, flag = true) => {
   .notification-right {
     flex: 1;
     min-width: 0;
-    margin-left: var(--grid-column-gutter);
+    margin-left: var(--o-r-grid-column-gutter);
     border-radius: var(--o-radius-xs);
     background: var(--o-color-fill2);
-    padding: var(--grid-column-gutter);
+    padding: var(--o-r-grid-column-gutter);
     .header {
       display: flex;
       justify-content: space-between;
@@ -594,7 +594,7 @@ const changeTab = (val: string, flag = true) => {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin-top: var(--grid-column-gutter);
+    margin-top: var(--o-r-grid-column-gutter);
   }
 }
 </style>
