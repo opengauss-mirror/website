@@ -39,7 +39,7 @@ export default {
     LIST: [
       {
         NAME: 'openGauss是什么 ',
-        DESC: 'openGauss是一款全面友好开放，携手伙伴共同打造的企业级开源关系型数据库。',
+        DESC: 'openGauss是一款全面友好开放，携手伙伴共同打造的企业级开源多模数据库。',
         PATH: '/docs/5.0.0/docs/GettingStarted/%E4%BA%86%E8%A7%A3openGauss.html',
       },
       {
