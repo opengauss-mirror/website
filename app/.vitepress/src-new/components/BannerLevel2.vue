@@ -2,34 +2,20 @@
 import { useData } from 'vitepress';
 import { computed, CSSProperties } from 'vue';
 
-const props = defineProps({
-  backgroundImage: {
-    type: String,
-    default: '',
-  },
-  imageAlt: {
-    type: String,
-    default: '',
-  },
-  backgroundColor: {
-    type: String,
-    default: '',
-  },
-  title: {
-    type: String,
-    default: '',
-  },
-  subtitle: {
-    type: String,
-    default: '',
-  },
-  illustration: {
-    type: String,
-    default: '',
-  },
-});
+const props = defineProps<{
+  backgroundImage: string,
+  imageAlt?: string,
+  backgroundColor?: string;
+  title?: string;
+  description?: string;
+  /** @deprecated 替换为 description*/
+  subtitle?: string;
+  hideDescription?: boolean,
+  /** 右边的额外图片 */
+  illustration?: string;
+}>();
 
-const { description, frontmatter } = useData();
+const { description: defaultDesc, frontmatter } = useData();
 
 const rootStyle = computed(() => {
   const result: CSSProperties = {};
@@ -39,19 +25,20 @@ const rootStyle = computed(() => {
   return result;
 });
 
+const bannerDesc = computed(() => props.description || props.subtitle || defaultDesc.value);
 </script>
 
 <template>
   <div class="banner-level2" :style="rootStyle">
-    <img v-if="props.backgroundImage" :src="props.backgroundImage" class="banner-bg" :alt="imageAlt" />
+    <img v-if="backgroundImage" :src="backgroundImage" class="banner-bg" :alt="imageAlt ?? ''" />
     <div class="wrap">
       <div class="banner-text">
         <h1 class="banner-title">{{ title || frontmatter.title }}</h1>
         <div v-if="$slots.default" class="banner-operation">
           <slot></slot>
         </div>
-        <p v-else-if="subtitle || description" class="banner-subtitle">
-          {{ subtitle || description }}
+        <p v-else-if="!hideDescription" class="banner-subtitle">
+          {{ bannerDesc }}
         </p>
       </div>
       <div v-if="illustration" class="banner-illustration">
@@ -83,8 +70,6 @@ const rootStyle = computed(() => {
   }
 
   .wrap {
-    padding-left: 0;
-    padding-right: 0;
     width: var(--o-r-grid-section-width);
     position: relative;
     margin: 0 auto;
@@ -93,13 +78,11 @@ const rootStyle = computed(() => {
     justify-content: space-between;
     height: 280px;
 
-    @media screen and (max-width: 1200px) {
+    @include respond('<=pad') {
       height: 220px;
     }
-    @media screen and (max-width: 840px) {
-      height: 120px;
-    }
-    @media screen and (max-width: 600px) {
+    @include respond('<=pad_v') {
+      padding: 16px 0;
       height: auto;
     }
     .banner-text {
@@ -121,13 +104,12 @@ const rootStyle = computed(() => {
         position: relative;
         z-index: 1;
         color: var(--o-color-info1);
+        margin-bottom: 0;
+        font-weight: 500;
         @include display2;
         @include respond('<=pad_v') {
           font-size: 22px;
-          line-height: 30px;
         }
-        margin-bottom: 0;
-        font-weight: 500;
       }
 
       .banner-subtitle {
@@ -162,6 +144,17 @@ const rootStyle = computed(() => {
           max-height: 94px;
         }
       }
+    }
+  }
+
+  @include respond('<=pad_v') {
+    background-color: transparent;
+    .banner-bg {
+      display: none;
+    }
+
+    .wrap .banner-text {
+      max-width: 100%;
     }
   }
 }

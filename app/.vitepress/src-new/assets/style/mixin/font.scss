@@ -24,24 +24,8 @@
 
 // 二级数据展示
 @mixin display2 {
-  font-size: 48px;
-  line-height: 64px;
-  @include respond('laptop_s') {
-    font-size: 40px;
-    line-height: 56px;
-  }
-  @include respond('pad_h') {
-    font-size: 32px;
-    line-height: 44px;
-  }
-  @include respond('pad_v') {
-    font-size: 32px;
-    line-height: 44px;
-  }
-  @include respond('phone') {
-    font-size: 20px;
-    line-height: 28px;
-  }
+  font-size: var(--o-r-font_size-display2);
+  line-height: var(--o-r-line_height-display2);
 }
 
 // 三级数据展示

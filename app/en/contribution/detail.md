@@ -1,23 +1,14 @@
 ---
 title: 'Contribution'
+category: contribution
 ---
 
 <script setup>
-import BannerLevel2 from '@/components/BannerLevel2.vue'
-import ContributionTab from "@/views/contribution/ContributionTab.vue";
-
-import banner from '@/assets/illustrations/banner-secondary.png';
-import illustration from '@/assets/illustrations/contribution.png';
+import '~@/assets/style/markdown.scss';
 </script>
 
-<BannerLevel2
-  :background-image="banner"
-  title="Contribution"
-  :illustration="illustration"
-/>
-<ContributionTab />
 <div class='contribution-markdown '>
-<div class='markdown '>
+<div class='markdown-new'>
 
 openGauss is an open source community. It fully relies on the friendly development and collaboration environment provided by the community.
 

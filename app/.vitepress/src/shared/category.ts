@@ -9,6 +9,7 @@ const categories: string[] = [
   'faq',
   'banner-layout',
   'charter',
+  'contribution',
   'sig-apply'
 ];
 

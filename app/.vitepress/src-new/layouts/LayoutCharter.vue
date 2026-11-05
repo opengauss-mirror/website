@@ -1,13 +1,12 @@
 <script setup lang="ts">
 import bannerImg from '~@/assets/category/charter/banner.png';
-import BannerLevel2 from '~@/components/BannerLevel2.vue';
-import { OTab, OTabPane, throttleRAF, useMessage } from '@opensig/opendesign';
-import { nextTick, onMounted, onUnmounted, ref, useTemplateRef, watch } from 'vue';
+import { useMessage } from '@opensig/opendesign';
+import { computed, nextTick, onMounted, ref, watch } from 'vue';
 import { useData, useRoute, useRouter } from 'vitepress';
-import { useElementSize, watchDebounced } from '@vueuse/core';
 import AppSection from '~@/components/AppSection.vue';
 import { useClipboard } from '~@/composables/useClipboard';
 import { useI18n } from '~@/i18n';
+import BannerTabSticky from '~@/components/BannerTabSticky.vue';
 
 const { lang } = useData();
 
@@ -45,8 +44,6 @@ const setupCopyButtons = () => {
   });
 };
 
-const stickying = ref(false);
-
 const getAnchorValue = () => {
   const path = route.path;
   if (path.endsWith('/conduct/')) {
@@ -81,24 +78,21 @@ watch(activeAnchor, (val) => {
   }
 });
 
-const bannerRef = useTemplateRef('bannerLevel2');
-const { height } = useElementSize(bannerRef);
-
-const onScroll = throttleRAF(() => {
-  stickying.value = (window.scrollY || document.documentElement.scrollTop) >= (height.value - 5);
+const tabsData = computed(() => {
+  return [
+    {
+      value: 'conduct',
+      label: lang.value === 'zh' ? '行为准则' : 'Community Code of Conduct',
+    },
+    {
+      value: 'ai-coding-assistants',
+      label: lang.value === 'zh' ? 'AI贡献策略' : 'AI Contribution Policy',
+    },
+  ];
 });
-
-const tabKey = ref(0);
-
-watchDebounced(stickying, () => tabKey.value++, { debounce: 50 });
 
 onMounted(() => {
-  window.addEventListener('scroll', onScroll);
   setupCopyButtons();
-});
-
-onUnmounted(() => {
-  window.removeEventListener('scroll', onScroll);
 });
 
 watch(
@@ -108,20 +102,7 @@ watch(
 </script>
 
 <template>
-  <BannerLevel2
-    class="charter-banner"
-    ref="bannerLevel2"
-    :title="frontmatter.title"
-    :subtitle="frontmatter.description"
-    :background-image="bannerImg"
-  />
-
-  <div class="charter-tab-wrapper" :class="{ 'is-stickying': stickying }">
-    <OTab v-model="activeAnchor" :key="tabKey" :class="{ 'is-stickying': stickying }" variant="text" size="medium" round="pill" :line="false">
-      <OTabPane value="conduct" :label="lang === 'zh' ? '行为准则' : 'Community Code of Conduct'"></OTabPane>
-      <OTabPane value="ai-coding-assistants" :label="lang === 'zh' ? 'AI贡献策略' : 'AI Contribution Policy'"></OTabPane>
-    </OTab>
-  </div>
+  <BannerTabSticky v-model="activeAnchor" :background-image="bannerImg" :tabs-data="tabsData" :description="frontmatter.description"></BannerTabSticky>
 
   <div>
     <AppSection :title="frontmatter.charterTitle">
@@ -131,57 +112,6 @@ watch(
     </AppSection>
   </div>
 </template>
-
-<style lang="scss" scoped>
-.charter-banner {
-  @include respond('<=pad_v') {
-    background-color: transparent !important;
-    padding-top: 16px;
-    :deep(.banner-bg) {
-      display: none;
-    }
-
-    :deep(.wrap .banner-text) {
-      max-width: 100%;
-    }
-  }
-}
-
-.charter-tab-wrapper {
-  position: sticky;
-  top: var(--app-header-height);
-  background-color: var(--o-color-fill2);
-  padding-top: 16px;
-  z-index: 1;
-
-  @include respond('<=laptop_s') {
-    padding-top: 10px;
-  }
-
-  @include respond('phone') {
-    padding-top: 4px;
-    background-color: transparent;
-  }
-
-  &.is-stickying {
-    background-color: var(--o-color-fill2);
-    box-shadow: var(--o-shadow-1);
-  }
-}
-
-.o-tab {
-  width: var(--o-r-grid-section-width);
-  margin: 0 auto;
-
-  &.is-stickying {
-    --tab-nav-justify: start;
-  }
-}
-
-:deep(.o-anchor-item-link) {
-  @include text1;
-}
-</style>
 
 <style lang="scss">
 @mixin trim {
@@ -237,7 +167,6 @@ watch(
     }
   }
 
-  
   ul {
     @include text1;
     list-style: disc outside;

@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+﻿<script lang="ts" setup>
 import { computed } from 'vue';
 import { useData } from 'vitepress';
 
@@ -13,17 +13,20 @@ import contributionMap_light_zh_mb from '@/assets/category/contribution/contribu
 import contributionMap_light_en_mb from '@/assets/category/contribution/contribution-map_light_en_mobile.png';
 import contributionMap_dark_zh_mb from '@/assets/category/contribution/contribution-map_dark_zh_mobile.png';
 import contributionMap_dark_en_mb from '@/assets/category/contribution/contribution-map_dark_en_mobile.png';
+import { useScreen } from '@opensig/opendesign';
 
 const i18n = useI18n();
 const { lang } = useData();
 const commonStore = useCommon();
+
+const { gtPhone } = useScreen();
 
 const isDark = computed(() => (commonStore.theme === 'dark' ? true : false));
 const isZh = computed(() => (lang.value === 'zh' ? true : false));
 </script>
 <template>
   <div class="contribution-map">
-    <div class="contribution-map-img">
+    <div class="contribution-map-img-wrapper" v-if="gtPhone">
       <img v-show="!isDark" :src="isZh ? contributionMap_light_zh : contributionMap_light_en" alt="contribution map" />
       <img v-show="isDark" :src="isZh ? contributionMap_dark_zh : contributionMap_dark_en" alt="contribution map" />
       <!-- 定位的空标签 -->
@@ -37,7 +40,7 @@ const isZh = computed(() => (lang.value === 'zh' ? true : false));
         :rel="item.BLANK ? 'noopener noreferrer' : undefined"
       ></a>
     </div>
-    <div class="contribution-map-mobile-img">
+    <div v-else class="contribution-map-mobile-img-wrapper">
       <img v-show="!isDark" :src="isZh ? contributionMap_light_zh_mb : contributionMap_light_en_mb" alt="contribution map" />
       <img v-show="isDark" :src="isZh ? contributionMap_dark_zh_mb : contributionMap_dark_en_mb" alt="contribution map" />
       <a
@@ -53,668 +56,419 @@ const isZh = computed(() => (lang.value === 'zh' ? true : false));
   </div>
 </template>
 <style lang="scss" scoped>
+// 链接定位全部使用百分比，相对容器（即图片渲染尺寸）等比缩放，
+// 因此在 1416 / 1000 / 755 三种桌面宽度及任意移动端宽度下都与图片对齐，无需按断点单独调整。
+// clip-path 用于链接文字跨行折行的场景，只保留两段文字区域可点击。
 .contribution-map {
-  width: 100%;
-  padding-bottom: var(--e-spacing-h1);
-  @media screen and (max-width: 1439px) {
-    padding-left: 24px;
-    padding-right: 24px;
-    background-color: var(--e-color-bg2);
-    padding-bottom: var(--e-spacing-h2);
-  }
-  @media screen and (max-width: 767px) {
-    padding-left: 16px;
-    padding-right: 16px;
-    background-color: inherit;
-  }
-  .contribution-map-img {
-    width: 1416px;
-    position: relative;
-    display: block;
-    margin: var(--e-spacing-h2) auto 0;
-
-    background-color: var(--e-color-bg1);
-    box-shadow: var(--e-shadow-l1);
-    img {
-      width: 1416px;
-      display: block;
-      margin: 0 auto;
-      @media screen and (min-width: 768px) and (max-width: 1439px) {
-        width: 100%;
-      }
-    }
-    .link {
-      position: absolute;
-      display: block;
-      cursor: pointer;
-      text-decoration: none;
-    }
-    @media screen and (min-width: 1100px) and (max-width: 1439px) {
-      width: 1000px;
-      margin: var(--e-spacing-h2) auto;
-      background-color: inherit;
-      box-shadow: none;
-    }
-    @media screen and (min-width: 768px) and (max-width: 1100px) {
-      width: 755px;
-      margin: var(--e-spacing-h2) auto;
-      background-color: inherit;
-      box-shadow: none;
-    }
-    @media screen and (max-width: 767px) {
-      display: none;
-    }
-  }
-  .link:nth-of-type(1) {
-    width: 137px;
-    height: 20px;
-    top: 231px;
-    left: 370px;
-    &.en {
-      width: 224px;
-      top: 223px;
-      left: 321px;
-      @media screen and (min-width: 1100px) and (max-width: 1439px) {
-        width: 160px;
-        height: 10px;
-        top: 161px;
-        left: 227px;
-      }
-      @media screen and (min-width: 768px) and (max-width: 1100px) {
-        width: 130px;
-        top: 119px;
-        left: 171px;
-        height: 10px;
-      }
-    }
-    @media screen and (min-width: 1100px) and (max-width: 1439px) {
-      width: 98px;
-      top: 164px;
-      left: 260px;
-      height: 10px;
-    }
-    @media screen and (min-width: 768px) and (max-width: 1100px) {
-      width: 100px;
-      top: 123px;
-      left: 171px;
-      height: 10px;
-    }
-  }
-  .link:nth-of-type(2) {
-    width: 168px;
-    height: 18px;
-    top: 325px;
-    left: 320px;
-    &.en {
-      width: 150px;
-      top: 319px;
-      left: 404px;
-      @media screen and (min-width: 1100px) and (max-width: 1439px) {
-        width: 106px;
-        height: 12px;
-        top: 226px;
-        left: 286px;
-      }
-      @media screen and (min-width: 768px) and (max-width: 1100px) {
-        width: 82px;
-        top: 170px;
-        left: 214px;
-        height: 10px;
-      }
-    }
-    @media screen and (min-width: 768px) and (max-width: 1100px) {
-      width: 89px;
-      top: 173px;
-      left: 171px;
-      height: 10px;
-    }
-    @media screen and (min-width: 1100px) and (max-width: 1439px) {
-      width: 118px;
-      height: 12px;
-      top: 230px;
-      left: 228px;
-    }
-  }
-  .link:nth-of-type(3) {
-    width: 168px;
-    height: 18px;
-    top: 343px;
-    left: 350px;
-    &.en {
-      width: 176px;
-      top: 355px;
-      left: 322px;
-      @media screen and (min-width: 1100px) and (max-width: 1439px) {
-        width: 124px;
-        height: 12px;
-        top: 251px;
-        left: 227px;
-      }
-      @media screen and (min-width: 768px) and (max-width: 1100px) {
-        width: 91px;
-        top: 189px;
-        left: 171px;
-        height: 10px;
-      }
-    }
-    @media screen and (min-width: 768px) and (max-width: 1100px) {
-      width: 91px;
-      top: 183px;
-      left: 188px;
-      height: 10px;
-    }
-    @media screen and (min-width: 1100px) and (max-width: 1439px) {
-      width: 118px;
-      height: 12px;
-      top: 242px;
-      left: 249px;
-    }
-  }
-  .link:nth-of-type(4) {
-    width: 171px;
-    height: 18px;
-    top: 368px;
-    left: 341px;
-    &.en {
-      width: 153px;
-      top: 380px;
-      left: 356px;
-      @media screen and (min-width: 1100px) and (max-width: 1439px) {
-        width: 112px;
-        height: 12px;
-        top: 268px;
-        left: 250px;
-      }
-      @media screen and (min-width: 768px) and (max-width: 1100px) {
-        width: 88px;
-        top: 202px;
-        left: 188px;
-        height: 10px;
-      }
-    }
-    @media screen and (min-width: 768px) and (max-width: 1100px) {
-      width: 91px;
-      top: 196px;
-      left: 182px;
-      height: 10px;
-    }
-    @media screen and (min-width: 1100px) and (max-width: 1439px) {
-      width: 122px;
-      height: 14px;
-      top: 261px;
-      left: 242px;
-    }
-  }
-  .link:nth-of-type(5) {
-    width: 232px;
-    height: 24px;
-    top: 482px;
-    left: 325px;
-    @media screen and (min-width: 768px) and (max-width: 1100px) {
-      width: 124px;
-      top: 256px;
-      left: 173px;
-      height: 14px;
-    }
-    @media screen and (min-width: 1100px) and (max-width: 1439px) {
-      width: 165px;
-      height: 19px;
-      top: 339px;
-      left: 229px;
-    }
-  }
-
-  .link:nth-of-type(6) {
-    width: 68px;
-    height: 56px;
-    top: 533px;
-    left: 325px;
-    @media screen and (min-width: 768px) and (max-width: 1100px) {
-      width: 31px;
-      height: 33px;
-      top: 282px;
-      left: 175px;
-    }
-    @media screen and (min-width: 1100px) and (max-width: 1439px) {
-      width: 41px;
-      height: 42px;
-      top: 374px;
-      left: 231px;
-    }
-  }
-  .link:nth-of-type(7) {
-    width: 68px;
-    height: 56px;
-    top: 533px;
-    left: 405px;
-    @media screen and (min-width: 768px) and (max-width: 1100px) {
-      width: 31px;
-      height: 33px;
-      top: 282px;
-      left: 221px;
-    }
-    @media screen and (min-width: 1100px) and (max-width: 1439px) {
-      width: 41px;
-      height: 42px;
-      top: 374px;
-      left: 292px;
-    }
-  }
-  .link:nth-of-type(8) {
-    width: 68px;
-    height: 56px;
-    top: 533px;
-    left: 493px;
-    @media screen and (min-width: 768px) and (max-width: 1100px) {
-      width: 31px;
-      height: 33px;
-      top: 282px;
-      left: 267px;
-    }
-    @media screen and (min-width: 1100px) and (max-width: 1439px) {
-      width: 41px;
-      height: 42px;
-      top: 374px;
-      left: 354px;
-    }
-  }
-
-  .link:nth-of-type(9) {
-    width: 76px;
-    height: 100px;
-    top: 875px;
-    left: 236px;
-    &.en {
-      top: 900px;
-      @media screen and (min-width: 1100px) and (max-width: 1439px) {
-        width: 61px;
-        height: 66px;
-        top: 640px;
-        left: 162px;
-      }
-      @media screen and (min-width: 768px) and (max-width: 1100px) {
-        width: 43px;
-        height: 50px;
-        top: 483px;
-        left: 124px;
-      }
-    }
-    @media screen and (min-width: 768px) and (max-width: 1100px) {
-      width: 43px;
-      height: 55px;
-      top: 464px;
-      left: 124px;
-    }
-    @media screen and (min-width: 1100px) and (max-width: 1439px) {
-      width: 61px;
-      height: 76px;
-      top: 615px;
-      left: 162px;
-    }
-  }
-  .link:nth-of-type(10) {
-    width: 76px;
-    height: 100px;
-    top: 875px;
-    left: 350px;
-    &.en {
-      top: 900px;
-      left: 340px;
-      width: 95px;
-      @media screen and (min-width: 1100px) and (max-width: 1439px) {
-        width: 61px;
-        height: 66px;
-        top: 640px;
-        left: 243px;
-      }
-      @media screen and (min-width: 768px) and (max-width: 1100px) {
-        width: 46px;
-        height: 50px;
-        top: 483px;
-        left: 183px;
-      }
-    }
-    @media screen and (min-width: 768px) and (max-width: 1100px) {
-      width: 43px;
-      height: 55px;
-      top: 464px;
-      left: 187px;
-    }
-    @media screen and (min-width: 1100px) and (max-width: 1439px) {
-      width: 61px;
-      height: 76px;
-      top: 615px;
-      left: 246px;
-    }
-  }
-  .link:nth-of-type(11) {
-    width: 140px;
-    height: 18px;
-    top: 270px;
-    left: 848px;
-    &.en {
-      width: 195px;
-      top: 288px;
-      @media screen and (min-width: 1100px) and (max-width: 1439px) {
-        width: 139px;
-        height: 12px;
-        top: 204px;
-        left: 600px;
-      }
-      @media screen and (min-width: 768px) and (max-width: 1100px) {
-        width: 106px;
-        height: 10px;
-        top: 153px;
-        left: 453px;
-      }
-    }
-    @media screen and (min-width: 768px) and (max-width: 1100px) {
-      width: 72px;
-      height: 11px;
-      top: 143px;
-      left: 453px;
-    }
-    @media screen and (min-width: 1100px) and (max-width: 1439px) {
-      width: 95px;
-      height: 14px;
-      top: 190px;
-      left: 600px;
-    }
-  }
-  .link:nth-of-type(12) {
-    width: 62px;
-    height: 18px;
-    top: 573px;
-    left: 905px;
-
-    @media screen and (min-width: 768px) and (max-width: 1100px) {
-      width: 33px;
-      height: 11px;
-      top: 304px;
-      left: 484px;
-    }
-    @media screen and (min-width: 1100px) and (max-width: 1439px) {
-      width: 41px;
-      height: 12px;
-      top: 405px;
-      left: 643px;
-    }
-    &.en {
-      width: 244px;
-      height: 18px;
-      top: 557px;
-      left: 759px;
-      @media screen and (min-width: 1100px) and (max-width: 1439px) {
-        width: 177px;
-        height: 12px;
-        top: 394px;
-        left: 537px;
-      }
-      @media screen and (min-width: 768px) and (max-width: 1100px) {
-        width: 133px;
-        height: 10px;
-        top: 296px;
-        left: 404px;
-      }
-    }
-  }
-  .link:nth-of-type(13) {
-    width: 88px;
-    height: 18px;
-    top: 714px;
-    left: 875px;
-    &.en {
-      width: 64px;
-      top: 680px;
-      left: 972px;
-      @media screen and (min-width: 1100px) and (max-width: 1439px) {
-        width: 44px;
-        height: 12px;
-        top: 480px;
-        left: 688px;
-      }
-      @media screen and (min-width: 768px) and (max-width: 1100px) {
-        width: 36px;
-        height: 10px;
-        top: 362px;
-        left: 518px;
-      }
-    }
-    @media screen and (min-width: 768px) and (max-width: 1100px) {
-      width: 48px;
-      height: 10px;
-      top: 380px;
-      left: 466px;
-    }
-    @media screen and (min-width: 1100px) and (max-width: 1439px) {
-      width: 64px;
-      height: 12px;
-      top: 505px;
-      left: 618px;
-    }
-  }
-  .link:nth-of-type(14) {
-    width: 80px;
-    height: 18px;
-    top: 741px;
-    left: 802px;
-    &.en {
-      width: 104px;
-      top: 716px;
-      left: 831px;
-      @media screen and (min-width: 1100px) and (max-width: 1439px) {
-        width: 72px;
-        height: 12px;
-        top: 506px;
-        left: 588px;
-      }
-      @media screen and (min-width: 768px) and (max-width: 1100px) {
-        width: 56px;
-        height: 10px;
-        top: 382px;
-        left: 444px;
-      }
-    }
-    @media screen and (min-width: 768px) and (max-width: 1100px) {
-      width: 42px;
-      height: 10px;
-      top: 395px;
-      left: 428px;
-    }
-    @media screen and (min-width: 1100px) and (max-width: 1439px) {
-      width: 56px;
-      height: 12px;
-      top: 525px;
-      left: 567px;
-    }
-  }
-  .link:nth-of-type(15) {
-    width: 100px;
-    height: 18px;
-    top: 925px;
-    left: 935px;
-    &.en {
-      width: 162px;
-      top: 892px;
-      left: 937px;
-      @media screen and (min-width: 1100px) and (max-width: 1439px) {
-        width: 113px;
-        height: 12px;
-        top: 630px;
-        left: 664px;
-      }
-      @media screen and (min-width: 768px) and (max-width: 1100px) {
-        width: 87px;
-        height: 10px;
-        top: 475px;
-        left: 499px;
-      }
-    }
-    @media screen and (min-width: 768px) and (max-width: 1100px) {
-      width: 52px;
-      height: 10px;
-      top: 492px;
-      left: 499px;
-    }
-    @media screen and (min-width: 1100px) and (max-width: 1439px) {
-      width: 75px;
-      height: 12px;
-      top: 653px;
-      left: 660px;
-    }
-  }
-  .contribution-map-mobile-img {
+  width: var(--o-r-grid-section-width);
+  margin: var(--o-r-gap-7) auto;
+  padding: var(--o-r-gap-6);
+  background-color: var(--o-color-fill2);
+  img {
     width: 100%;
     height: auto;
+  }
+  .contribution-map-img-wrapper {
+    width: 100%;
     position: relative;
+  }
+  .link {
+    position: absolute;
     display: block;
-    margin: 0 auto;
-    margin-top: var(--e-spacing-h2);
-    @media screen and (min-width: 768px) {
-      display: none;
+    cursor: pointer;
+    text-decoration: none;
+    &:nth-of-type(1) {
+      left: 10.4%;
+      top: 14.62%;
+      width: 11.47%;
+      height: 1.35%;
+      &.en {
+        left: 14.42%;
+        top: 16.55%;
+        width: 18.63%;
+        height: 1.16%;
+      }
     }
-    img {
+    &:nth-of-type(2) {
+      left: 10.97%;
+      top: 27.42%;
+      width: 25.76%;
+      height: 2.82%;
+      &.en {
+        left: 15.83%;
+        top: 30.81%;
+        width: 14.5%;
+        height: 1.16%;
+      }
+    }
+    &:nth-of-type(3) {
+      left: 14.32%;
+      top: 30.55%;
+      width: 19.39%;
+      height: 1.25%;
+      &.en {
+        left: 17.88%;
+        top: 32.27%;
+        width: 19.39%;
+        height: 1.16%;
+      }
+    }
+    &:nth-of-type(4) {
+      left: 21.15%;
+      top: 32.12%;
+      width: 14.96%;
+      height: 1.25%;
+      &.en {
+        left: 15.47%;
+        top: 35.17%;
+        width: 14.5%;
+        height: 1.16%;
+      }
+    }
+    &:nth-of-type(5) {
+      left: 10.36%;
+      top: 46.99%;
+      width: 26.73%;
+      height: 2.25%;
+      &.en {
+        left: 10.36%;
+        top: 47.49%;
+        width: 26.73%;
+        height: 2.08%;
+      }
+    }
+    &:nth-of-type(6) {
+      left: 13.35%;
+      top: 52.76%;
+      width: 3.88%;
+      height: 4.35%;
+      &.en {
+        left: 11.3%;
+        top: 54.29%;
+        width: 6.47%;
+        height: 3.9%;
+      }
+    }
+    &:nth-of-type(7) {
+      left: 21.98%;
+      top: 52.76%;
+      width: 3.88%;
+      height: 4.35%;
+      &.en {
+        left: 20.04%;
+        top: 54.29%;
+        width: 7.84%;
+        height: 3.9%;
+      }
+    }
+    &:nth-of-type(8) {
+      left: 30.65%;
+      top: 52.76%;
+      width: 3.85%;
+      height: 4.35%;
+      &.en {
+        left: 30.32%;
+        top: 54.29%;
+        width: 6.44%;
+        height: 3.93%;
+      }
+    }
+    &:nth-of-type(9) {
+      left: 7.19%;
+      top: 90.12%;
+      width: 4.68%;
+      height: 7.17%;
+      &.en {
+        left: 7.19%;
+        top: 91.91%;
+        width: 4.68%;
+        height: 6.34%;
+      }
+    }
+    &:nth-of-type(10) {
+      left: 16.55%;
+      top: 90.52%;
+      width: 7.37%;
+      height: 6.77%;
+      &.en {
+        left: 16.91%;
+        top: 92.3%;
+        width: 9.35%;
+        height: 5.94%;
+      }
+    }
+    &:nth-of-type(11) {
+      left: 61.76%;
+      top: 20.57%;
+      width: 26.87%;
+      height: 2.64%;
+      clip-path: polygon(81.5% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 50%, 81.5% 50%);
+      &.en {
+        left: 61.76%;
+        top: 22.09%;
+        width: 17.55%;
+        height: 1.16%;
+        clip-path: none;
+      }
+    }
+    &:nth-of-type(12) {
+      left: 66.69%;
+      top: 45.35%;
+      width: 4%;
+      height: 1.18%;
+      &.en {
+        left: 62.01%;
+        top: 42.31%;
+        width: 3.81%;
+        height: 1.16%;
+      }
+    }
+    &:nth-of-type(13) {
+      left: 54.06%;
+      top: 58.25%;
+      width: 7.19%;
+      height: 1.35%;
+      &.en {
+        left: 67.16%;
+        top: 57.11%;
+        width: 5.18%;
+        height: 1.16%;
+      }
+    }
+    &:nth-of-type(14) {
+      left: 69.99%;
+      top: 59.82%;
+      width: 5.97%;
+      height: 1.18%;
+      &.en {
+        left: 75.9%;
+        top: 60.01%;
+        width: 8.45%;
+        height: 1.16%;
+      }
+    }
+    &:nth-of-type(15) {
+      left: 65.43%;
+      top: 75.79%;
+      width: 8.92%;
+      height: 1.18%;
+      &.en {
+        left: 70.07%;
+        top: 80.61%;
+        width: 15.68%;
+        height: 1.16%;
+      }
+    }
+  }
+
+  // 窄屏
+  .contribution-map-mobile-img-wrapper {
+    width: 100%;
+    position: relative;
+    /* img {
       width: 100%;
-    }
+      height: auto;
+    } */
   }
   .mobile-link {
     position: absolute;
     display: block;
     cursor: pointer;
-    height: 1%;
     text-decoration: none;
-  }
-  .mobile-link:nth-of-type(1) {
-    width: 40%;
-    left: 39%;
-    top: 6.6%;
-    &.en {
-      width: 69%;
-      left: 24%;
-      top: 8.3%;
+    &:nth-of-type(1) {
+      left: 52.36%;
+      top: 6.92%;
+      width: 37.92%;
+      height: 0.82%;
+      &.en {
+        left: 22.36%;
+        top: 7.51%;
+        width: 66.81%;
+        height: 1.17%;
+        clip-path: polygon(47.8% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 50%, 47.8% 50%);
+      }
+    }
+    &:nth-of-type(2) {
+      left: 24.58%;
+      top: 12.92%;
+      width: 64.72%;
+      height: 1.61%;
+      clip-path: polygon(83.3% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 50%, 83.3% 50%);
+      &.en {
+        left: 24.58%;
+        top: 13.51%;
+        width: 66.67%;
+        height: 1.26%;
+        clip-path: polygon(52.9% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 50%, 52.9% 50%);
+      }
+    }
+    &:nth-of-type(3) {
+      left: 24.58%;
+      top: 14.65%;
+      width: 66.94%;
+      height: 1.61%;
+      clip-path: polygon(16.4% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 50%, 16.4% 50%);
+      &.en {
+        left: 24.58%;
+        top: 14.87%;
+        width: 62.08%;
+        height: 1.26%;
+        clip-path: polygon(38% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 50%, 38% 50%);
+      }
+    }
+    &:nth-of-type(4) {
+      left: 24.58%;
+      top: 15.52%;
+      width: 62.08%;
+      height: 1.61%;
+      clip-path: polygon(84.8% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 50%, 84.8% 50%);
+      &.en {
+        left: 24.72%;
+        top: 16.91%;
+        width: 47.92%;
+        height: 0.85%;
+        clip-path: none;
+      }
+    }
+    &:nth-of-type(5) {
+      left: 22.22%;
+      top: 23.23%;
+      width: 71%;
+      height: 1.33%;
+      &.en {
+        left: 22.22%;
+        top: 22.94%;
+        width: 71%;
+        height: 1.04%;
+      }
+    }
+    &:nth-of-type(6) {
+      left: 25.69%;
+      top: 26.02%;
+      width: 12.78%;
+      height: 2.6%;
+      &.en {
+        left: 26.11%;
+        top: 25.81%;
+        width: 13.06%;
+        height: 2.68%;
+      }
+    }
+    &:nth-of-type(7) {
+      left: 50.14%;
+      top: 26.17%;
+      width: 12.78%;
+      height: 2.43%;
+      &.en {
+        left: 48.47%;
+        top: 25.93%;
+        width: 12.36%;
+        height: 2.56%;
+      }
+    }
+    &:nth-of-type(8) {
+      left: 74.58%;
+      top: 26.17%;
+      width: 12.78%;
+      height: 2.46%;
+      &.en {
+        left: 75.69%;
+        top: 25.93%;
+        width: 14.72%;
+        height: 2.56%;
+      }
+    }
+    &:nth-of-type(9) {
+      left: 29.17%;
+      top: 44.24%;
+      width: 20.83%;
+      height: 3.71%;
+      &.en {
+        left: 32.64%;
+        top: 43.47%;
+        width: 20.83%;
+        height: 2.91%;
+      }
+    }
+    &:nth-of-type(10) {
+      left: 63.89%;
+      top: 44.36%;
+      width: 26.39%;
+      height: 3.59%;
+      &.en {
+        left: 63.89%;
+        top: 43.64%;
+        width: 26.39%;
+        height: 2.74%;
+      }
+    }
+    &:nth-of-type(11) {
+      left: 25.69%;
+      top: 92.51%;
+      width: 37.92%;
+      height: 0.82%;
+      &.en {
+        left: 22.36%;
+        top: 94.23%;
+        width: 58.06%;
+        height: 0.85%;
+      }
+    }
+    &:nth-of-type(12) {
+      left: 65.28%;
+      top: 57.88%;
+      width: 13.33%;
+      height: 0.7%;
+      &.en {
+        left: 48.33%;
+        top: 54.3%;
+        width: 12.64%;
+        height: 0.75%;
+      }
+    }
+    &:nth-of-type(13) {
+      left: 46.25%;
+      top: 67.88%;
+      width: 23.89%;
+      height: 0.82%;
+      &.en {
+        left: 75.14%;
+        top: 65.13%;
+        width: 17.08%;
+        height: 0.85%;
+      }
+    }
+    &:nth-of-type(14) {
+      left: 22.36%;
+      top: 69.64%;
+      width: 70.56%;
+      height: 1.54%;
+      clip-path: polygon(76.6% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 50%, 76.6% 50%);
+      &.en {
+        left: 55.28%;
+        top: 67.85%;
+        width: 27.92%;
+        height: 0.75%;
+        clip-path: none;
+      }
+    }
+    &:nth-of-type(15) {
+      left: 32.36%;
+      top: 83.11%;
+      width: 29.58%;
+      height: 0.72%;
+      &.en {
+        left: 22.5%;
+        top: 82.11%;
+        width: 69.58%;
+        height: 1.17%;
+        clip-path: polygon(40.9% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 50%, 40.9% 50%);
+      }
     }
   }
-  .mobile-link:nth-of-type(2) {
-    width: 50%;
-    left: 25%;
-    top: 13%;
-    &.en {
-      width: 54%;
-      left: 40%;
-      top: 13.6%;
-    }
-  }
-  .mobile-link:nth-of-type(3) {
-    width: 50%;
-    left: 34%;
-    top: 14%;
-    &.en {
-      width: 54%;
-      left: 25%;
-      top: 15.6%;
-    }
-  }
-  .mobile-link:nth-of-type(4) {
-    width: 50%;
-    left: 31%;
-    top: 15.6%;
-    &.en {
-      width: 50%;
-      left: 32%;
-      top: 17.1%;
-    }
-  }
-  .mobile-link:nth-of-type(5) {
-    width: 71%;
-    height: 1.6%;
-    left: 25%;
-    top: 23.2%;
-  }
-  .mobile-link:nth-of-type(6) {
-    width: 19%;
-    height: 3.8%;
-    left: 26%;
-    top: 26.2%;
-  }
-  .mobile-link:nth-of-type(7) {
-    width: 19%;
-    height: 3.8%;
-    left: 52%;
-    top: 26.2%;
-  }
-  .mobile-link:nth-of-type(8) {
-    width: 19%;
-    height: 3.8%;
-    left: 77%;
-    top: 26.2%;
-  }
-  .mobile-link:nth-of-type(9) {
-    width: 25%;
-    height: 6%;
-    left: 32%;
-    top: 44%;
-    &.en {
-      top: 41.8%;
-    }
-  }
-  .mobile-link:nth-of-type(10) {
-    width: 25%;
-    height: 6%;
-    left: 66%;
-    top: 44%;
-    &.en {
-      top: 41.8%;
-    }
-  }
-  .mobile-link:nth-of-type(11) {
-    width: 18%;
-    left: 64%;
-    top: 57%;
-    &.en {
-      width: 70%;
-      left: 25%;
-      top: 54.4%;
-      height: 1.5%;
-    }
-  }
-  .mobile-link:nth-of-type(12) {
-    width: 26%;
-    left: 49%;
-    top: 67.4%;
-    &.en {
-      width: 20%;
-      left: 77%;
-      top: 64.8%;
-    }
-  }
-  .mobile-link:nth-of-type(13) {
-    width: 24%;
-    left: 70%;
-    top: 69.2%;
-    &.en {
-      width: 34%;
-      left: 49%;
-      top: 67.6%;
-    }
-  }
-  .mobile-link:nth-of-type(14) {
-    width: 31%;
-    left: 28%;
-    top: 82.2%;
-    &.en {
-      width: 54%;
-      left: 42%;
-      top: 82%;
-    }
-  }
-  .mobile-link:nth-of-type(15) {
-    width: 41%;
-    left: 24%;
-    top: 91.2%;
-    &.en {
-      width: 59%;
-      top: 92.9%;
-    }
+
+  @include respond('phone') {
+    padding: 0;
   }
 }
 </style>
