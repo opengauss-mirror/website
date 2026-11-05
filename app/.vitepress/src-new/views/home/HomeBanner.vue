@@ -173,7 +173,7 @@ const currentBgTheme = computed(() => {
     padding: 2px 32px 0;
   }
   @include respond('phone') {
-    width: var(--grid-content-width);
+    width: var(--o-r-grid-section-width);
     margin: 0 auto;
     padding: 16px 0;
     --banner-height: 184px;
@@ -228,7 +228,7 @@ const currentBgTheme = computed(() => {
     width: 100%;
     .banner-content {
       box-sizing: border-box;
-      width: var(--grid-content-width);
+      width: var(--o-r-grid-section-width);
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
@@ -245,16 +245,16 @@ const currentBgTheme = computed(() => {
             font-weight: 500;
             white-space: pre-wrap;
             @include respond('>laptop') {
-              max-width: calc(var(--grid-12) + 1em);
+              max-width: calc(var(--o-r-grid-12) + 1em);
             }
             @include respond('laptop') {
-              max-width: calc(var(--grid-14) + 1em);
+              max-width: calc(var(--o-r-grid-14) + 1em);
             }
             @include respond('pad_h') {
-              max-width: var(--grid-7);
+              max-width: var(--o-r-grid-7);
             }
             @include respond('<=pad_v') {
-              max-width: var(--grid-3);
+              max-width: var(--o-r-grid-3);
             }
             @include respond('<=pad_v') {
               font-size: 22px;

@@ -170,7 +170,7 @@ watch(
 }
 
 .o-tab {
-  width: var(--grid-content-width);
+  width: var(--o-r-grid-section-width);
   margin: 0 auto;
 
   &.is-stickying {

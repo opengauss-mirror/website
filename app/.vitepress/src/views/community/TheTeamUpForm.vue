@@ -275,7 +275,7 @@ const { csrfToken } = getUserAuth();
 }
 
 .team-up-form {
-  width: var(--grid-content-width);
+  width: var(--o-r-grid-section-width);
   max-width: 100%;
   margin: 0 auto;
   background-color: var(--e-color-bg2);

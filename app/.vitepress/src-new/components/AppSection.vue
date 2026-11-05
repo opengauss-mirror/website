@@ -125,7 +125,7 @@ watch(footerIconRef, (iconRef) => {
   }
 
   .section-subtitle {
-    width: var(--grid-content-width);
+    width: var(--o-r-grid-section-width);
     margin: 0 auto;
     text-align: center;
 
@@ -147,7 +147,7 @@ watch(footerIconRef, (iconRef) => {
   }
 
   .section-body {
-    width: var(--grid-content-width);
+    width: var(--o-r-grid-section-width);
     margin: 0 auto;
 
     &:not(:first-child) {

@@ -85,7 +85,7 @@ const rootStyle = computed(() => {
   .wrap {
     padding-left: 0;
     padding-right: 0;
-    width: var(--grid-content-width);
+    width: var(--o-r-grid-section-width);
     position: relative;
     margin: 0 auto;
     display: flex;

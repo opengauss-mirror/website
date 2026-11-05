@@ -54,7 +54,7 @@ const bannerData = computed(() => ({ subtitle: i18n.value.ai.description, img: i
 
 <style scoped lang="scss">
 .pad-banner {
-  width: var(--grid-content-width);
+  width: var(--o-r-grid-section-width);
   margin: auto;
   padding-top: 16px;
   @include display2;
@@ -68,7 +68,7 @@ const bannerData = computed(() => ({ subtitle: i18n.value.ai.description, img: i
 
 .rag-introduce {
   @include text2;
-  width: var(--grid-content-width);
+  width: var(--o-r-grid-section-width);
   background-color: var(--o-color-fill2);
   margin: auto;
   padding: 40px 32px;

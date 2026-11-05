@@ -56,7 +56,7 @@ const reviewLive = () => {
     }
   }
   .inner {
-    width: var(--grid-content-width);
+    width: var(--o-r-grid-section-width);
     margin: 0 auto;
     height: 100%;
     display: flex;
