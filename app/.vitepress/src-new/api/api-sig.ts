@@ -22,7 +22,7 @@ export function sigSearch(data: { keyword: string; keywordType: string }) {
 }
 
 export function getSigRepos(sigName: string) {
-  const url = `/api-magic/sig/new/repo/committers?community=openeuler&sig=A-Tune`;
+  const url = `/api-magic/sig/new/repo/committers`;
   return request.get(url, { params: { community: 'opengauss', sig: sigName } }).then((res: AxiosResponse) => res.data);
 }
 
