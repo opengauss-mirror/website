@@ -6,7 +6,7 @@
       "@id": "https://opengauss.org/en/#website",
       "url": "https://opengauss.org/en/",
       "name": "openGauss",
-      "description": "openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability.",
+      "description": "openGauss is an enterprise-grade open source multi-model database with high-performance, high-security, high-reliability.",
       "inLanguage": "en"
     },
     {

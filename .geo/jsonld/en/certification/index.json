@@ -32,7 +32,7 @@
       "@id": "https://opengauss.org/#organization",
       "name": "openGauss",
       "url": "https://opengauss.org/",
-      "description": "openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability. openGauss is also an open source database platform that encourages community contribution and collaboration.",
+      "description": "openGauss is an enterprise-grade open source multi-model database with high-performance, high-security, high-reliability. openGauss is also an open source database platform that encourages community contribution and collaboration.",
       "logo": {
         "@type": "ImageObject",
         "url": "https://opengauss.org/assets/logo_dark.CElWqwW0.svg"
@@ -43,7 +43,7 @@
       "@id": "https://opengauss.org/#website",
       "url": "https://opengauss.org/",
       "name": "openGauss",
-      "description": "openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability. openGauss is also an open source database platform that encourages community contribution and collaboration.",
+      "description": "openGauss is an enterprise-grade open source multi-model database with high-performance, high-security, high-reliability. openGauss is also an open source database platform that encourages community contribution and collaboration.",
       "inLanguage": "en",
       "publisher": {
         "@id": "https://opengauss.org/#organization"

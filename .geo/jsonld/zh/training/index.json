@@ -80,7 +80,7 @@
     "name": "openGauss社区",
     "url": "https://opengauss.org",
     "logo": "https://opengauss.org/logo.png",
-    "description": "openGauss是一款开源的关系型数据库管理系统，由openGauss社区维护和运营。",
+    "description": "openGauss是一款开源的多模数据库管理系统，由openGauss社区维护和运营。",
     "sameAs": [
       "https://atomgit.com/opengauss"
     ]

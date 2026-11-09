@@ -35,7 +35,7 @@
       "@id": "https://opengauss.org/#organization",
       "name": "openGauss",
       "url": "https://opengauss.org/",
-      "description": "openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability. openGauss is also an open source database platform that encourages community contribution and collaboration.",
+      "description": "openGauss is an enterprise-grade open source multi-model database with high-performance, high-security, high-reliability. openGauss is also an open source database platform that encourages community contribution and collaboration.",
       "sameAs": [
         "https://atomgit.com/opengauss"
       ],

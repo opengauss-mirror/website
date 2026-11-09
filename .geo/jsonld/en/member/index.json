@@ -3,7 +3,7 @@
   "@type": "Organization",
   "name": "openGauss Community",
   "alternateName": "openGauss",
-  "description": "openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability. openGauss is also an open source database platform that encourages community contribution and collaboration.",
+  "description": "openGauss is an enterprise-grade open source multi-model database with high-performance, high-security, high-reliability. openGauss is also an open source database platform that encourages community contribution and collaboration.",
   "url": "https://opengauss.org/en/member/",
   "logo": {
     "@type": "ImageObject",
