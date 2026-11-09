@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onMounted, ref, watch } from 'vue';
+import { computed, inject, onMounted, Ref, ref, watch } from 'vue';
 import { OHeaderLanguageSwitcher, OHeaderSourceCode, OHeaderTheme, OHeaderUser } from '@opendesign-plus/components';
 import { getUserAuth, useLoginStore } from '@opendesign-plus/composables';
 import ItemSearch from './ItemSearch.vue';
@@ -11,16 +11,13 @@ import { doLogin, doLogout, requestUserInfo } from '@/shared/login';
 import { useCountStore } from '~@/stores/notification';
 import { getUnreadMsgCount } from '~@/api/api-notification';
 import { useScreen } from '~@/composables/useScreen.js';
-import { useData, useRouter, useRoute } from 'vitepress';
-import { data as pageLangMap } from '@/shared/pages-url-list-loader.data';
-import { canonicalPagePath } from '@/shared/page-language';
+import { useData, useRouter } from 'vitepress';
 
 const i18n = useI18n();
 const commonStore = useCommon();
 const { gtPadV } = useScreen();
 const { lang } = useData();
 const router = useRouter();
-const route = useRoute();
 
 const changeTheme = (val: 'light' | 'dark') => commonStore.setTheme(val);
 
@@ -32,10 +29,7 @@ const changeLanguage = ({ id }: { id: string }) => {
   router.go(newHref + search);
 };
 
-const availableLangOptions = computed(() => {
-  const langs = pageLangMap[canonicalPagePath(route.path)] || [lang.value];
-  return headerData.langOptions.filter((option) => langs.includes(option.id));
-});
+const availableLangOptions = inject<Ref<typeof headerData['langOptions']>>('availableLangOptions')!;
 
 const userOptions = computed(() => headerData.userOptions[lang.value as 'zh' | 'en']);
 
@@ -83,7 +77,7 @@ watch(
       <!-- 源码 -->
       <OHeaderSourceCode :title="i18n.header.CODE" :options="headerData.sourceCode" justify="flex-start" />
       <!-- 语言 -->
-      <OHeaderLanguageSwitcher :disabled="availableLangOptions.length < 1" :options="availableLangOptions" type="common" @change="changeLanguage" />
+      <OHeaderLanguageSwitcher :disabled="availableLangOptions.length <= 1" :options="headerData.langOptions" type="common" @change="changeLanguage" />
       <!-- 皮肤 -->
       <OHeaderTheme type="common" :theme="commonStore.theme" @change="changeTheme" />
     </template>

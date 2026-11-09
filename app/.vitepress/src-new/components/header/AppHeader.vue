@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, useTemplateRef } from 'vue';
+import { computed, provide, useTemplateRef } from 'vue';
 import { useData, useRoute, useRouter } from 'vitepress';
 import { useElementSize } from '@vueuse/core';
 import { canonicalPagePath } from '@/shared/page-language';
@@ -78,9 +78,17 @@ const activeIndex = computed(() => {
 const { height } = useElementSize(headerWrap);
 
 const availableLangOptions = computed(() => {
+  if (/^\/(?:zh|en)\/events\/?$/.test(route.path)) {
+    return [];
+  }
+  if (/^\/(?:zh|en)\/sig\/[^/]+/.test(route.path)) {
+    return headerData.langOptions;
+  }
   const langs = pageLangMap[canonicalPagePath(route.path)] || [lang.value];
   return headerData.langOptions.filter((option) => langs.includes(option.id));
 });
+
+provide('availableLangOptions', availableLangOptions);
 
 const isSimpleHeader = computed(
   () => params.value?.sig || frontmatter.value.category === 'events' || frontmatter.value.category === 'news' || frontmatter.value.category === 'blog'
@@ -144,7 +152,7 @@ defineExpose({
     </template>
     <template #tool>
       <!-- 语言 -->
-      <OHeaderLanguageSwitcher :disabled="availableLangOptions.length < 1" :options="availableLangOptions" type="mobile" @change="changeLanguage" />
+      <OHeaderLanguageSwitcher :disabled="availableLangOptions.length <= 1" :options="headerData.langOptions" type="mobile" @change="changeLanguage" />
       <!-- 皮肤 -->
       <OHeaderTheme type="mobile" :theme="commonStore.theme" @change="changeTheme" />
     </template>
