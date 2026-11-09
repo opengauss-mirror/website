@@ -2,7 +2,7 @@
   "@context": "https://schema.org",
   "@type": "ItemList",
   "name": "oGSP Certification",
-  "description": "openGauss Service Provider Certification - List of certified service providers for openGauss enterprise-grade open source relational database",
+  "description": "openGauss Service Provider Certification - List of certified service providers for openGauss enterprise-grade open source multi-model database",
   "url": "https://opengauss.org/en/ogsp/",
   "numberOfItems": 6,
   "itemListElement": [

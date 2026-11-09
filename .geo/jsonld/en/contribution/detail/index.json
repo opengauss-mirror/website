@@ -27,7 +27,7 @@
       "@type": "Organization",
       "@id": "https://opengauss.org/#organization",
       "name": "openGauss",
-      "description": "openGauss is an enterprise-grade open source relational database with high-performance, high-security, high-reliability.",
+      "description": "openGauss is an enterprise-grade open source multi-model database with high-performance, high-security, high-reliability.",
       "url": "https://opengauss.org/"
     },
     {

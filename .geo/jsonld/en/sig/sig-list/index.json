@@ -29,7 +29,7 @@
         "@type": "SoftwareApplication",
         "@id": "https://opengauss.org/#software",
         "name": "openGauss",
-        "description": "openGauss is a high-performance, highly secure, highly available, and intelligent enterprise-grade open-source relational database",
+        "description": "openGauss is a high-performance, highly secure, highly available, and intelligent enterprise-grade open-source multi-model database",
         "applicationCategory": "DatabaseApplication",
         "operatingSystem": "Linux"
       },
