@@ -1,0 +1,5 @@
+{
+  "title": "如何在openGauss社区成立一个SIG | SIG中心",
+  "description": "在openGauss社区成立SIG的完整指南：申请总则与TC决策，Contributor、Committer、Maintainer三类角色职责，申请步骤：Fork tc仓库并基于模板创建SIG目录、填写README与sig-info.yaml、提交Pull Request、向技术委员会发送邮件申请，到TC评审与决策。",
+  "keywords": "申请步骤,SIG申请指南,专项兴趣小组,技术委员会,Contributor,Committer,Maintainer"
+}

@@ -8,7 +8,7 @@ import { fileURLToPath } from 'node:url';
 import generateLastmodAndChangefreq from '@opendesign-plus/plugins/vite/generate-lastmod-changefreq';
 import generateLLMsFull from '@opendesign-plus/geo-scripts/generate-llms-full';
 import matter from 'gray-matter';
-import generateSEOManifest from './scripts/generate-tdk-schema-for-articles';
+import generateSEOManifest, { ARTICLE_SECTION_TITLES, type ArticleSection } from './scripts/generate-tdk-schema-for-articles';
 import { sanitizeMarkdownPlugin } from './scripts/sanitize-md';
 import { PRIORITY_MAP, DEFAULT_PRIORITY, normalizeSitemapUrl } from './sitemap-priority';
 import { getEmptyPracticeExcludes } from './scripts/filter-empty-practice';
@@ -47,7 +47,7 @@ const emptyPracticeExcludes = getEmptyPracticeExcludes(join(__dirname, '../'));
 const setJSONLD = async (pageData: PageData, pagePath: string) => {
   if (pageData.params?.sig) {
     const sigName = pageData.params.sig;
-    pageData.title = sigName;
+    pageData.title = `${sigName} | ${pageData.params.lang === 'zh' ? 'SIG中心' : 'SIG Center'}`;
     pageData.description = pageData.params.description;
     pageData.frontmatter.titleContent = sigName;
     return;
@@ -69,13 +69,25 @@ const setJSONLD = async (pageData: PageData, pagePath: string) => {
 const setTdk = (pageData: PageData, pagePath: string) => {
   const jsonFile = join(geoDir, 'tdks', pagePath, 'index.json');
   const tdkInfo = existsSync(jsonFile) ? readJson(jsonFile) : null;
+  const isZh = pagePath.startsWith('zh');
 
-  pageData.titleTemplate = `:title | ${pagePath.startsWith('zh') ? 'openGauss社区官网' : 'openGauss Official Website'}`;
+  if (pagePath === 'zh' || pagePath === 'en') {
+    // 首页 title 为固定值（站点名 | 数据库定位），不再经模板拼接站点名
+    pageData.titleTemplate = false;
+  } else {
+    pageData.titleTemplate = `:title | ${isZh ? 'openGauss社区' : 'openGauss Community'}`;
+  }
   if (!tdkInfo) {
     const frontmatter = pageData.frontmatter;
     const description = frontmatter?.summary || frontmatter?.Summary;
     if (!pageData.description && description) {
       pageData.description = description;
+    }
+    // 未被归档覆盖的文章详情页：title 补齐栏目段，成稿为「页面主题 | 模块 | 站点名」
+    const sectionMatch = pagePath.match(/^(?:zh|en)\/(news|events|user-practice|blogs)\//);
+    if (sectionMatch && pageData.title) {
+      const lang = isZh ? 'zh' : 'en';
+      pageData.title = `${pageData.title} | ${ARTICLE_SECTION_TITLES[lang][sectionMatch[1] as ArticleSection]}`;
     }
     return;
   }
