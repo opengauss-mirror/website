@@ -6,27 +6,9 @@ import { ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import TheTable from '~@/components/TheTable.vue';
 import { useScreen } from '~@/composables/useScreen';
-import downloadData from '~@/data/download/content-bridge';
+import downloadData, { eolTimePattern } from '~@/data/download/content-bridge';
 
 const { t } = useI18n();
-
-const timePattern = /^\d{4}\.\d{2}(\.\d{2})?$/;
-const now = new Date();
-const _downloadData = downloadData.map((item) => {
-  let isEol = false;
-  if (item.plannedEOL && timePattern.test(item.plannedEOL)) {
-    const [y, m, d] = item.plannedEOL.split('.').map((item) => Number(item));
-    if (!d) {
-      isEol = now > new Date(y, m, 0);
-    } else {
-      isEol = now > new Date(y, m - 1, d);
-    }
-  }
-  return {
-    ...item,
-    isEol,
-  };
-});
 
 const { gtPadV } = useScreen();
 const filterOptions = [
@@ -38,13 +20,13 @@ const filterOptions = [
 const selectedFilter = ref('all');
 
 const dataMap = {
-  all: _downloadData,
+  all: downloadData,
   lts: [],
   rc: [],
 } as Record<string, (typeof downloadData)[number][]>;
 
 const LTS = '(LTS)';
-_downloadData.forEach((item) => {
+downloadData.forEach((item) => {
   if (item.name.endsWith(LTS)) {
     dataMap.lts.push(item);
   } else {
@@ -101,17 +83,17 @@ const tableColumns = [
       <template #td_name="{ row }">
         <span>
           openGauss {{ row.name }}
-          <OTag v-if="row.plannedEOL === 'End-of-Life' || row.isEol" size="small"> {{ $t('download.EOM') }} </OTag>
+          <OTag v-if="row.isEol" size="small"> {{ $t('download.EOM') }} </OTag>
         </span>
       </template>
       <template #td_releaseDate="{ row }">
-        <span v-if="timePattern.test(row.releaseDate ?? '')">
+        <span v-if="eolTimePattern.test(row.releaseDate ?? '')">
           {{ row.releaseDate.slice(0, 7).replace('.', '/') }}
         </span>
         <span v-else class="no-data">--</span>
       </template>
       <template #td_plannedEOL="{ row }">
-        <span v-if="timePattern.test(row.plannedEOL ?? '')">
+        <span v-if="eolTimePattern.test(row.plannedEOL ?? '')">
           {{ row.plannedEOL.slice(0, 7).replace('.', '/') }}
         </span>
         <span v-else class="no-data">--</span>
@@ -137,7 +119,7 @@ const tableColumns = [
       <div class="mobile-download-item-card" v-for="item in displayData" :key="item.name">
         <p class="item-name">
           openGauss {{ item.name }}
-          <OTag v-if="item.plannedEOL === 'End-of-Life'" size="small"> {{ $t('download.EOM') }} </OTag>
+          <OTag v-if="item.isEol" size="small"> {{ $t('download.EOM') }} </OTag>
         </p>
         <div class="info">
           <p>{{ $t('download.RELEASE_DATE') }}</p>
@@ -147,7 +129,7 @@ const tableColumns = [
           </p>
           <p>{{ $t('download.EOM_DATE') }}</p>
           <p>
-            <span v-if="item.plannedEOL && timePattern.test(item.plannedEOL ?? '')">
+            <span v-if="item.plannedEOL && eolTimePattern.test(item.plannedEOL ?? '')">
               {{ item.plannedEOL.slice(0, 7).replace('.', '/') }}
             </span>
             <span v-else class="no-data">--</span>

@@ -5,6 +5,25 @@ import { ATOMGIT_LINK } from '@/data/url-config';
 const DOCS_ORIGIN = import.meta.env.VITE_DOCS_ORIGIN as string;
 const ATOMGIT = ATOMGIT_LINK;
 
+/**
+ * 版本日期字符串格式：yyyy.MM 或 yyyy.MM.dd
+ */
+export const eolTimePattern = /^\d{4}\.\d{2}(\.\d{2})?$/;
+
+/**
+ * 判断版本的 plannedEOL 是否已到期（EOL）
+ * @param {string} [plannedEOL] 计划停止维护时间，格式 yyyy.MM 或 yyyy.MM.dd
+ * @param {Date} [now] 比较基准时间，默认当前时间
+ * @returns {boolean} 是否已 EOL
+ */
+function checkIsEol(plannedEOL?: string, now: Date = new Date()): boolean {
+  if (plannedEOL && eolTimePattern.test(plannedEOL)) {
+    const [y, m, d] = plannedEOL.split('.').map(Number);
+    return d ? now > new Date(y, m - 1, d) : now > new Date(y, m, 0);
+  }
+  return false;
+}
+
 function replacePlaceholders(str: string): string {
   if (typeof str !== 'string') return str;
   return str.replace(/\{ATOMGIT\}/g, ATOMGIT).replace(/\{DOCS_ORIGIN\}/g, DOCS_ORIGIN);
@@ -105,6 +124,7 @@ const downloadData = versionMetas.map((meta) => ({
   data: loadVersionData(meta.data_file),
   releaseDate: meta.release_date,
   plannedEOL: meta.planned_eol,
+  isEol: checkIsEol(meta.planned_eol),
   desc: meta.desc_zh,
   desc_en: meta.desc_en,
   initPrevious: meta.init_previous,

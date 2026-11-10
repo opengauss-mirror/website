@@ -34,6 +34,7 @@ export interface DownloadItem {
   };
   releaseDate?: string;
   plannedEOL?: string;
+  isEol?: boolean;
   desc?: string;
   desc_en?: string;
   docs_list: DocItem[];
