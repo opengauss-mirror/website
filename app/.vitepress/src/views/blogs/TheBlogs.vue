@@ -556,7 +556,7 @@ const onPageChange = () => {
       background-image: url(@/assets/category/blogs/light.png);
       background-position: right bottom;
       background-repeat: no-repeat;
-      background-size: cover;
+      background-size: 100% 100%;
     }
 
     :deep(.o-card-main) {
