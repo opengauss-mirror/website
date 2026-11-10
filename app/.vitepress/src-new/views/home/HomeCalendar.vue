@@ -457,7 +457,7 @@ const meetingCancelConfirm = async () => {
 };
 </script>
 <template>
-  <AppSection :title="t('home.HOME_CALENDAR.developerCalendar')" class="home-calendar" ref="container">
+  <AppSection :title="t('home.HOME_CALENDAR.developerCalendar')" id="calendar" class="home-calendar" ref="container">
     <div class="meeting-oper">
       <p class="text">{{ t('home.HOME_CALENDAR.LOGIN_TEXT') }}</p>
       <div class="oper-action">
