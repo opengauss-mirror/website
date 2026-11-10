@@ -119,7 +119,7 @@ const getNewLink = (path: string) => {
 <template>
   <div class="download-version">
     <h2 class="title">
-      {{ 'openGauss ' + contentData.name }} <OTag v-if="contentData.plannedEOL === 'End-of-Life' || contentData.isEol"> {{ $t('download.EOM') }} </OTag>
+      {{ 'openGauss ' + contentData.name }} <OTag v-if="contentData.isEol"> {{ $t('download.EOM') }} </OTag>
     </h2>
     <div v-if="contentData.plannedEOL" class="subtitle">{{ $t('download.EOM_DATE') }} ：{{ contentData.plannedEOL }}</div>
     <div class="other-link">
