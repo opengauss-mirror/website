@@ -143,3 +143,11 @@ npmcachae
 .opencode/
 .cursor/
 .aider/
+opencode.jsonc
+
+# SEO/GEO rules and skills
+rules/seo-geo/
+.agents/skills/fix-tdk/
+.agents/skills/img-alt-fix/
+.agents/skills/internal-link-analyzer/
+.agents/skills/llms-txt-deploy/
