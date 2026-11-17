@@ -1,5 +1,15 @@
 export default [
   {
+    summary: '根据联通集团商企楼宁数字化深耕专项工作要求，实现全国商企运营商资源可视化系统改造。',
+    industry: '运营商',
+    title: '中国联通',
+    path: 'zh/user-practice/carrier/liantong2/',
+    officialPath: 'http://www.chinaunicom.com.cn/',
+    company: '中国联通',
+    detail: true,
+    id: 'Carrier',
+  },
+  {
     summary: '使用openGauss做海量数据库Vastbase商业发行版，部署openGauss服务器节点数为50个以上。',
     industry: 'DBV',
     title: '北京海量数据技术股份有限公司',
