@@ -1,18 +1,20 @@
 {
   "@context": "https://schema.org",
   "@type": "LearningResource",
-  "name": "openGauss知识进阶 | openGauss社区官网",
-  "description": "openGauss学习进阶指南，涵盖数据库基础知识、连接使用、编译开发、内核进阶等内容，提供文档资料、视频教程和实践操作等学习资源。",
+  "name": "openGauss知识进阶",
+  "description": "欢迎来到openGauss社区高手进阶学习指南",
   "inLanguage": "zh-CN",
   "keywords": [
     "openGauss",
     "开源数据库",
-    "数据库学习",
-    "SQL教程",
-    "数据库开发",
-    "内核进阶",
+    "openGauss社区官网",
+    "开源社区",
+    "openGauss进阶",
+    "数据库教程",
+    "SQL学习",
+    "openGauss文档",
     "视频教程",
-    "实践操作"
+    "内核开发"
   ],
   "learningResourceType": "Course",
   "educationalLevel": "Intermediate",

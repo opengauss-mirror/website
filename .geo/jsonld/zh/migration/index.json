@@ -5,8 +5,8 @@
       "@type": "WebPage",
       "@id": "https://opengauss.org/zh/migration/#webpage",
       "url": "https://opengauss.org/zh/migration/",
-      "name": "迁移专区",
-      "description": "openGauss迁移专区为用户提供数据库迁移全流程解决方案，涵盖迁移评估、应用适配、数据迁移、试运行和生产割接五大环节，并提供迁移视频演示、最佳实践案例和DataKit工具下载",
+      "name": "迁移专区 | 迁移",
+      "description": "openGauss迁移专区提供数据库迁移全流程解决方案，包括迁移评估、应用适配、数据迁移、试运行和生产割接等环节，支持MySQL兼容性评估和一键式迁移",
       "inLanguage": "zh-CN",
       "isPartOf": {
         "@id": "https://opengauss.org/#website"
@@ -16,7 +16,7 @@
       "@type": "WebSite",
       "@id": "https://opengauss.org/#website",
       "url": "https://opengauss.org/",
-      "name": "openGauss社区官网",
+      "name": "openGauss社区",
       "inLanguage": "zh-CN"
     },
     {

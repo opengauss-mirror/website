@@ -2,8 +2,8 @@
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "openGauss开源实习申请流程与任务说明",
-    "description": "openGauss开源实习面向全国年满18周岁的在校大学生开放，提供真实开源项目任务、导师辅导、积分实习工资与实习证明，介绍实习申请、任务认领提交、工资证书发放及实习规则常见问题。",
+    "name": "开源实习 | 开发者成长",
+    "description": "openGauss开源实习面向高校在校学生开放，介绍实习申请流程、任务认领与提交规则、积分工资与实习证明发放及实习规则常见问题。",
     "url": "https://opengauss.org/zh/internship/",
     "inLanguage": "zh-CN"
   },

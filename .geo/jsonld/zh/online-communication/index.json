@@ -4,8 +4,8 @@
     {
       "@type": "WebPage",
       "@id": "https://opengauss.org/zh/online-communication/#webpage",
-      "name": "线上交流",
-      "description": "openGauss社区线上交流平台，提供邮件列表订阅、讨论和存档查看功能，方便社区成员参与交流讨论。",
+      "name": "邮件列表 | 社区交流",
+      "description": "openGauss社区使用邮件列表进行线上沟通交流，真诚邀请您通过邮件列表参与讨论。了解如何订阅、发送邮件及查看邮件列表存档。",
       "url": "https://opengauss.org/zh/online-communication/",
       "inLanguage": "zh",
       "isPartOf": {
@@ -29,7 +29,7 @@
     {
       "@type": "WebSite",
       "@id": "https://opengauss.org/#website",
-      "name": "openGauss社区官网",
+      "name": "openGauss社区",
       "url": "https://opengauss.org/",
       "inLanguage": "zh"
     }

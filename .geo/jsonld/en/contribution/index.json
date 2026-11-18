@@ -5,8 +5,8 @@
       "@type": "WebPage",
       "@id": "https://opengauss.org/en/contribution/#webpage",
       "url": "https://opengauss.org/en/contribution/",
-      "name": "Contribution",
-      "description": "openGauss contribution guide featuring a visual contribution map, step-by-step instructions for signing CLA, joining SIGs, and submitting code contributions through AtomGit.",
+      "name": "Contribution Guide | Contribute",
+      "description": "Learn how to contribute to openGauss with our contribution guide map. Sign the CLA, find your SIG, submit issues and pull requests on AtomGit to join the community.",
       "inLanguage": "en",
       "isPartOf": {
         "@id": "https://opengauss.org/#website"
@@ -25,7 +25,10 @@
       "url": "https://opengauss.org/",
       "name": "openGauss",
       "description": "openGauss Community Official Website",
-      "inLanguage": ["en", "zh"],
+      "inLanguage": [
+        "en",
+        "zh"
+      ],
       "publisher": {
         "@id": "https://opengauss.org/#organization"
       }

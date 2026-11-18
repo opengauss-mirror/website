@@ -1,14 +1,25 @@
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "Call for Meetup",
-  "description": "openGauss Call for Meetup 计划：资源面向openGauss社区所有成员开放，欢迎与openGauss社区共同组织开发者活动，繁荣openGauss生态。",
-  "keywords": ["openGauss", "Call for Meetup", "开源数据库", "openGauss社区官网", "开发者活动", "活动申请", "开源社区"],
+  "name": "Call for Meetup | 活动",
+  "description": "“openGauss Call for Meetup 计划”\n资源面向openGauss社区所有成员开放，欢迎与openGauss社区共同组织开发者活动，繁荣openGauss生态。",
+  "keywords": [
+    "openGauss",
+    "开源数据库",
+    "openGauss社区官网",
+    "开源社区",
+    "开发者活动",
+    "Call for Meetup",
+    "获得支持",
+    "开发者生态",
+    "活动申请",
+    "活动分享"
+  ],
   "url": "https://opengauss.org/zh/call-for-meetup/",
   "inLanguage": "zh-CN",
   "isPartOf": {
     "@type": "WebSite",
-    "name": "openGauss社区官网",
+    "name": "openGauss社区",
     "url": "https://opengauss.org"
   },
   "about": {

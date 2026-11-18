@@ -4,8 +4,8 @@
     {
       "@type": "CollectionPage",
       "@id": "https://opengauss.org/zh/bigshot-voice/#collectionpage",
-      "name": "大咖之声",
-      "description": "大咖之声视频合集，收集了openGauss社区各位大咖的声音与演讲视频，包括开发者大会演讲、技术分享、合作伙伴致辞、LiveDemo展示等内容。",
+      "name": "大咖之声 | 开发者成长",
+      "description": "本部分收集了openGauss社区各位大咖的声音，期待未来也有你的声音",
       "url": "https://opengauss.org/zh/bigshot-voice/",
       "isPartOf": {
         "@id": "https://opengauss.org/#website"
@@ -164,7 +164,7 @@
     {
       "@type": "WebSite",
       "@id": "https://opengauss.org/#website",
-      "name": "openGauss社区官网",
+      "name": "openGauss社区",
       "url": "https://opengauss.org/",
       "publisher": {
         "@id": "https://opengauss.org/#organization"

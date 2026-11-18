@@ -217,8 +217,8 @@
       "@type": "WebPage",
       "@id": "https://opengauss.org/en/online-communication/#webpage",
       "url": "https://opengauss.org/en/online-communication/",
-      "name": "Communication",
-      "description": "openGauss community uses Mailing List for communication. We sincerely invite you to join the openGauss Mailing List for discussion.",
+      "name": "Mailing Lists | Engage with Us",
+      "description": "Learn how to subscribe to and use openGauss community mailing lists. Join SIG discussion groups and engage with the openGauss community via email.",
       "inLanguage": "en",
       "isPartOf": {
         "@id": "https://opengauss.org/#website"

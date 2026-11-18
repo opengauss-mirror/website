@@ -4,8 +4,8 @@
     "@type": "WebPage",
     "@id": "https://opengauss.org/en/security-advisories/#webpage",
     "url": "https://opengauss.org/en/security-advisories/",
-    "name": "Security Advisories",
-    "description": "View the latest security advisories for openGauss database. Stay informed about vulnerabilities, patches, and security updates.",
+    "name": "Security Advisories | Security",
+    "description": "Stay updated with the latest security advisories for openGauss and enhance your database security postures.",
     "inLanguage": "en",
     "isPartOf": {
       "@id": "https://opengauss.org/#website"
@@ -21,8 +21,8 @@
     "@type": "CollectionPage",
     "@id": "https://opengauss.org/en/security-advisories/#collectionpage",
     "url": "https://opengauss.org/en/security-advisories/",
-    "name": "Security Advisories",
-    "description": "View the latest security advisories for openGauss database. Stay informed about vulnerabilities, patches, and security updates.",
+    "name": "Security Advisories | Security",
+    "description": "Stay updated with the latest security advisories for openGauss and enhance your database security postures.",
     "inLanguage": "en",
     "isPartOf": {
       "@id": "https://opengauss.org/#website"
@@ -60,7 +60,10 @@
     "url": "https://opengauss.org/",
     "name": "openGauss",
     "description": "openGauss is an enterprise-grade open source multi-model database with high-performance, high-security, and high-reliability.",
-    "inLanguage": ["en", "zh"],
+    "inLanguage": [
+      "en",
+      "zh"
+    ],
     "potentialAction": {
       "@type": "SearchAction",
       "target": {

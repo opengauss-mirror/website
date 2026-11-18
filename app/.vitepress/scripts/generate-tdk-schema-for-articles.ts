@@ -5,6 +5,13 @@ const SITE_URL = 'https://opengauss.org';
 
 type Lang = 'zh' | 'en';
 type ArticleType = 'news' | 'events' | 'user-practice';
+export type ArticleSection = ArticleType | 'blogs';
+
+/** 文章栏目名，取自 header 导航数据中各列表页的链接 label，用于 title 的「模块/补充说明」段 */
+export const ARTICLE_SECTION_TITLES: Record<Lang, Record<ArticleSection, string>> = {
+  zh: { news: '新闻', events: '活动', 'user-practice': '用户案例', blogs: '博客' },
+  en: { news: 'News', events: 'Events', 'user-practice': 'Success Stories', blogs: 'Blogs' },
+};
 
 interface JsonLD {
   '@context': string;
@@ -365,13 +372,13 @@ export default function generateSEOManifest(pageData: PageData): boolean {
   const title = String(frontmatter.title || '');
   if (!title) return false;
 
-  pageData.titleTemplate = `:title | ${lang === 'zh' ? 'openGauss社区官网' : 'openGauss Official Website'}`;
+  pageData.titleTemplate = `:title | ${lang === 'zh' ? 'openGauss社区' : 'openGauss Community Website'}`;
 
   const description = String(frontmatter.summary || '');
   if (description) {
     pageData.description = description;
   }
-  pageData.title = title;
+  pageData.title = `${title} | ${ARTICLE_SECTION_TITLES[lang][type]}`;
 
   const keywords = generateKeywords(title, type, lang);
   pageData.frontmatter.head ??= [];

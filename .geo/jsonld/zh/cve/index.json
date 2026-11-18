@@ -1,13 +1,13 @@
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "CVE漏洞查询",
-  "description": "openGauss CVE安全漏洞查询页面，提供CVE漏洞列表检索、漏洞详情查看功能，包含CVSS评分、漏洞摘要、发布日期等信息。",
+  "name": "CVE | 安全中心",
+  "description": "openGauss CVE安全漏洞查询平台，提供openGauss社区官方CVE漏洞列表检索，包含漏洞等级、CVSS评分、发布时间等详细信息。",
   "url": "https://opengauss.org/zh/cve/",
   "inLanguage": "zh",
   "isPartOf": {
     "@type": "WebSite",
-    "name": "openGauss社区官网",
+    "name": "openGauss社区",
     "url": "https://opengauss.org/zh/"
   },
   "about": {

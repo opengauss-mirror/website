@@ -6,7 +6,7 @@
       "@id": "https://opengauss.org/en/contribution/detail/#webpage",
       "url": "https://opengauss.org/en/contribution/detail/",
       "name": "How to Contribute to openGauss | Community Contribution Guide",
-      "description": "Complete guide on how to contribute to openGauss open source community, including AtomGit setup, CLA signing, SIG participation, and community membership.",
+      "description": "Learn how to contribute to openGauss open source community. Step-by-step guide covering AtomGit account setup, CLA signing, joining SIGs (Special Interest Groups), submitting issues, pull requests, and becoming a community member.",
       "isPartOf": {
         "@id": "https://opengauss.org/#website"
       },

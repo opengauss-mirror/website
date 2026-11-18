@@ -1,13 +1,13 @@
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "视频详情",
+  "name": "openGauss视频详情 | 学习",
   "description": "openGauss社区技术视频详情页。",
   "url": "https://opengauss.org/zh/video/detail/",
   "inLanguage": "zh-CN",
   "isPartOf": {
     "@type": "WebSite",
-    "name": "openGauss社区官网",
+    "name": "openGauss社区",
     "url": "https://opengauss.org/"
   },
   "note": "此页面为动态视频详情页，静态 HTML 中不包含具体视频信息。页面通过 JavaScript 根据 URL 参数 ?id=X-Y 从 VideoConfig 数据动态加载视频内容。应在客户端注入 VideoObject schema。"

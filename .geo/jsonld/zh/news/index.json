@@ -5,7 +5,7 @@
       "@type": "CollectionPage",
       "@id": "https://opengauss.org/zh/news/#collectionpage",
       "url": "https://opengauss.org/zh/news/",
-      "name": "openGauss社区动态",
+      "name": "新闻 | 资讯",
       "description": "获取openGauss最新新闻动态，包括版本发布公告、社区更新和技术洞察。",
       "inLanguage": "zh-CN",
       "isPartOf": {

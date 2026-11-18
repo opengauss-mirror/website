@@ -5,7 +5,7 @@
       "@type": "WebPage",
       "@id": "https://opengauss.org/en/conduct/#webpage",
       "url": "https://opengauss.org/en/conduct/",
-      "name": "openGauss Code of Conduct",
+      "name": "openGauss Community Code of Conduct | About",
       "description": "Learn the openGauss Code of Conduct: friendly and inclusive behaviors, unacceptable behaviors, maintainer duties to enforce standards, and scope of the code within the community.",
       "inLanguage": "en",
       "dateModified": "2026-07-28",
@@ -54,7 +54,7 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Code of Conduct",
+          "name": "openGauss Community Code of Conduct",
           "item": "https://opengauss.org/en/conduct/"
         }
       ]

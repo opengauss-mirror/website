@@ -19,8 +19,8 @@
       "@type": "WebPage",
       "@id": "https://opengauss.org/en/security-advisories/detail/#webpage",
       "url": "https://opengauss.org/en/security-advisories/detail/",
-      "name": "openGauss Security Advisory Detail",
-      "description": "Detailed information about openGauss security advisories, including CVE numbers, severity levels, affected components, and security patches.",
+      "name": "openGauss Security Advisory Detail | Security Advisory",
+      "description": "View detailed information about openGauss security advisories, including CVE numbers, severity levels, affected components, and security patches. Stay updated with the latest security updates and vulnerability fixes.",
       "isPartOf": {
         "@id": "https://opengauss.org/en/#website"
       },
@@ -48,7 +48,8 @@
           "item": {
             "@id": "https://opengauss.org/en/security-advisories/detail/",
             "name": "Security Advisory Detail"
-          }
+          },
+          "name": "openGauss Security Advisory Detail"
         }
       ]
     }

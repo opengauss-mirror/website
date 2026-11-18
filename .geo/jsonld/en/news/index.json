@@ -5,7 +5,7 @@
       "@type": "CollectionPage",
       "@id": "https://opengauss.org/en/news/#collectionpage",
       "url": "https://opengauss.org/en/news/",
-      "name": "openGauss News",
+      "name": "News | News & Blogs",
       "description": "Stay up to date with the latest openGauss news, including release announcements, community updates, and technical insights.",
       "inLanguage": "en",
       "isPartOf": {

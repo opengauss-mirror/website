@@ -5,8 +5,8 @@
       "@type": "CollectionPage",
       "@id": "https://opengauss.org/zh/user-practice/#collectionpage",
       "url": "https://opengauss.org/zh/user-practice/",
-      "name": "openGauss用户实践",
-      "description": "探索openGauss用户实践案例，涵盖金融、运营商、制造等行业。",
+      "name": "用户案例 | 关于社区",
+      "description": "探索openGauss用户实践案例，涵盖金融、运营商、制造等行业。了解各行业组织如何受益于openGauss。",
       "inLanguage": "zh-CN",
       "isPartOf": {
         "@id": "https://opengauss.org/#website"

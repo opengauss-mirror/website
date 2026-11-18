@@ -5,18 +5,17 @@
       "@type": "WebPage",
       "@id": "https://opengauss.org/en/sig/role-description/#webpage",
       "url": "https://opengauss.org/en/sig/role-description/",
-      "name": "Roles",
-      "title": "Roles | openGauss Official Website",
-      "description": "Developers contribute to the openGauss community by joining Special Interest Groups (SIGs). Whether you are a Contributor, Committer, or Maintainer, every role is essential to the community. They differ in the scope of their SIG governance.",
+      "name": "SIG Roles | SIG Center",
+      "title": "SIG Roles | SIG Center | openGauss Community",
+      "description": "The Contributor, Committer, and Maintainer roles in openGauss SIGs, with their responsibilities, requirements, responsibilities and rights, and they differ in the scope of their SIG governance.",
       "inLanguage": "en",
       "keywords": [
-        "openGauss",
-        "SIG",
-        "roles",
+        "Roles",
         "Contributor",
         "Committer",
         "Maintainer",
-        "openGauss community"
+        "SIG Governance",
+        "openGauss"
       ],
       "isPartOf": {
         "@type": "WebSite",
@@ -54,7 +53,7 @@
           {
             "@type": "ListItem",
             "position": 3,
-            "name": "Roles",
+            "name": "SIG Roles",
             "item": "https://opengauss.org/en/sig/role-description/"
           }
         ]

@@ -70,45 +70,55 @@ openGauss-website/
 
 ---
 
-## 3. SEO / GEO 机制
+## 3. SEO/GEO 机制
 
-### 3.1 TDK / JSON-LD
+SEO/GEO 各维度**规范与配套 skill 统一来源于规范仓库 [opensourceways/daily-check-workflow](https://github.com/opensourceways/daily-check-workflow) 的 `specifications` 分支**，通过脚本同步进本仓库；禁止另行维护本地副本或凭记忆改规范。做 robots.txt / llms.txt / sitemap / JSON-LD / TDK / a 标签 / 标签结构 / img-alt / 内链 / HTML 语义化相关任务前，先同步，再按 `rules/seo-geo/` 对应维度执行。
 
-TDK（title / description / keywords）由 `app/.vitepress/config.ts` 的 `transformPageData` 钩子，按页面路由从 `.geo/tdks/{page path}/index.json` 查找注入；
+> 页面 title 实现细节：网站首页的 title 固定为中文（`/zh/`） -> `openGauss社区官网 | 企业级开源多模数据库`，英文（`/en/`） -> `openGauss Community Website | Enterprise-Grade Open-Source Multi-Model Database`，其他页面的 title 按 `页面主题 | 模块 or 补充说明 | openGauss社区（openGauss Community）` 的格式设置。
 
-JSON-LD 由 `app/.vitepress/config.ts` 的 `transformPageData` 钩子，按页面路由从 `.geo/jsonld/{page path}/index.json` 查找注入；
+### 3.1 同步脚本
 
-文章类页面（news / blogs / events / user-practice）的TDK / JSON-LD不在 `.geo` 目录中归档，构建时由 `app/.vitepress/scripts/generate-tdk-schema-for-articles.ts` 脚本从frontmatter中提取属性数据生成，由 `app/.vitepress/config.ts` 的 `transformPageData` 调用。
+| 命令 | 说明 |
+|------|------|
+| `pnpm geo-specs:sync` | 运行 [scripts/sync-seo-geo-specs.js](./scripts/sync-seo-geo-specs.js)：浅克隆 `specifications` 分支 → 覆盖式同步规范与 skills + html-tools 全局工具（幂等，可重复执行）；已接入 `postinstall`，`pnpm install` 时自动跑 |
+| `pnpm geo-specs:sync -- --disable-sync-tools` | 只同步规范/skills，跳过 html-tools 全局工具同步与安装（`CI=true` 时整脚本本就跳过） |
 
-**注意**
+落点规则：
 
-- 加 / 改某页 TDK → 改 `.geo/tdks/path/to/page/index.json` 对应JSON配置文件（**双语同步**）
-- TDK / JSON-LD 的内容需分析具体页面内容后生成，禁止出现页面中不存在的描述、概念和数据
-- JSON-LD 中若有数据包含当前站点页面的url，需注意文件路径与对应url路径的结尾规则映射：`/zh/page/a.md` -> `/zh/page/a.html`， `/zh/page/b/index.md` -> `/zh/page/b/`
-- 页面路由与JSON配置文件映射关系：1. `/zh/about/` 或 `/zh/about.html` 或 `/zh/about/index.html` -> `.geo/{tdk,jsonld}/zh/about/index.json`
-- 不要在 Vue 组件里手动写 `<title>` / `<meta description>` 与之重复
-- user-practice 类页面的 markdown 文件的 frontmatter 中的 title、description 等属性的值，不要直接修改，除非用户明确要求要改
+- **规范文档**：各 `{NN-name}/specification.md`（规范）与 `{NN-name}/implementation.md`（构建时落地实现方式）→ 复制到 `rules/seo-geo/{NN-name}/`（目录不存在则新建）
+- **skills**：各维度 `skills/`（兼容单数 `skill/`）下含 `SKILL.md` 的目录 → 复制到本项目的 skills 目标目录；脚本按 `.claude/skills → .opencode/skills → .agents/skills` 顺序取**第一个已存在**的目录（本项目命中 `.claude/skills/`），三者都不存在时新建 `.agents/skills/`；skill 目录名取 `SKILL.md` frontmatter 的 `name`
+- **html-tools**：仓库根 `html-tools/`（`to-md-snapshot` / `calc-content-fit` 脚本包，fix-tdk 等 skill 的运行时工具）→ 复制到用户级全局目录 `~/.seo-geo/html-tools`（跨项目共享，保留已装 node_modules），随后 `pnpm install` 并 `pnpm add -g` 注册全局命令；各步失败仅 warn
 
-### 3.2 Sitemap
+环境变量：
 
-由 `app/.vitepress/config.ts` 的 `sitemap` 配置，构建时框架自动生成，使用了 `generateLastmodAndChangefreq` 插件分析页面的文件依赖关系，计算出每个页面真实的 `lastmod` 和 `changefreq` 值，记录到 `.geo/sitemap-records.json` ，在 `sitemap.transformItems` 钩子中读取后为每个sitemap项设置
+| 变量 | 作用 |
+|------|------|
+| `SEO_GEO_SPECS_REPO` / `SEO_GEO_SPECS_REF` | 覆盖仓库地址 / 分支（默认 daily-check-workflow / `specifications`） |
+| `SEO_GEO_TOOLS_DIR` | 覆盖 html-tools 全局工具目录（默认 `~/.seo-geo/html-tools`） |
+| `SEO_GEO_SYNC_SKIP=1` 或 `CI=true` | 跳过同步（CI / 离线环境） |
+| `SEO_GEO_SYNC_STRICT=1` | 失败时退出码 1（默认 graceful，仅 warn 不阻塞 install/dev） |
 
-`sitemap-records.json` 内容示例：
+### 3.2 维度目录索引（`rules/seo-geo/`）
 
-```json
-{
-  "/zh/about.md": {
-    "lastmod": 1783330323830,
-    "changefreq": "weekly"
-  }
-}
-```
+| 维度 | 内容 |
+|------|------|
+| 01-robots-txt | robots.txt 规范 |
+| 02-llms-txt | llms.txt / llms-full.txt 规范（附 `llms-txt-deploy` skill） |
+| 03-sitemap | sitemap 规范 + VitePress/Nuxt 构建时生成实现 |
+| 04-json-ld | JSON-LD 规范 + 构建时注入实现 |
+| 05-tdk | TDK 规范 + 构建时注入实现（附 `fix-tdk` skill） |
+| 06-a-tag-semantics | `<a>` 标签语义化规范 |
+| 07-tag-structure-semantics | 标签结构语义化规范 |
+| 08-image-alt | img alt 规范（附 `img-alt-fix` skill） |
+| 09-internal-link | 内链规范（附内链分析 skill） |
 
-**注意**
+上游后续新增的维度/skill 由 `pnpm geo-specs:sync` 自动带入，以实际同步输出为准。
 
-- 修改 sitemap 条目的属性数据：在`app/.vitepress/config.ts` 的 `sitemap.transformItems` 函数中修改
+### 3.3 TDK / 结构化数据 / sitemap lastmod 数据注入机制
 
-### 3.3 llms.txt / llms-full.txt
+本项目 `.geo/` 目录（TDK / JSON-LD / last-modified）是构建时注入的数据源：注入机制为 `app/.vitepress/config.ts` 的 `transformPageData` + Vite 插件，具体参考 `rules/seo-geo/` 中 `04-json-ld`、`05-tdk` 等维度的 specification.md 。
+
+### 3.4 llms.txt / llms-full.txt
 
 llms.txt由脚本 `scripts/generate-llms-txt.js` 生成，由 `packages.json` 的 `scripts.postbuild` 调用
 

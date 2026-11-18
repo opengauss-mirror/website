@@ -5,8 +5,8 @@
       "@type": "CollectionPage",
       "@id": "https://opengauss.org/zh/events/#collectionpage",
       "url": "https://opengauss.org/zh/events/",
-      "name": "openGauss社区活动",
-      "description": "发现openGauss社区活动，包括开发者大会、见面会、线上研讨会和峰会。",
+      "name": "活动 | 动态",
+      "description": "发现openGauss社区活动，包括开发者大会、见面会、线上研讨会和峰会。加入我们，与openGauss社区建立联系。",
       "inLanguage": "zh-CN",
       "isPartOf": {
         "@id": "https://opengauss.org/#website"

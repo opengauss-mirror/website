@@ -1,8 +1,8 @@
 {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "openGauss技术视频",
-  "description": "openGauss社区技术视频合集，包含openGauss技术干货系列、专题直播、活动演讲及大赛培训视频。",
+  "name": "视频 | 学习",
+  "description": "欢迎来到openGauss社区技术视频板块，本部分包含openGauss技术干货系列、专题直播、活动演讲及大赛培训视频，涵盖数据库核心技术、性能优化、AI能力、开发工具等主题。",
   "url": "https://opengauss.org/zh/video/",
   "mainEntity": {
     "@type": "ItemList",

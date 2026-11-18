@@ -1,8 +1,8 @@
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "发行版认证",
-  "description": "openGauss商业发行版认证列表，包含通过openGauss社区认证的商业数据库发行版产品信息。",
+  "name": "发行版认证 | 认证",
+  "description": "openGauss商业发行版认证列表，包含产品名称、厂商信息、认证版本及颁发日期，提供openGauss商业发行版测评认证结果查询。",
   "inLanguage": "zh-CN",
   "mainEntity": {
     "@type": "ItemList",

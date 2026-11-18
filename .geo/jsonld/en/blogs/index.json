@@ -5,7 +5,7 @@
       "@type": "CollectionPage",
       "@id": "https://opengauss.org/en/blogs/#collectionpage",
       "url": "https://opengauss.org/en/blogs/",
-      "name": "openGauss Blogs",
+      "name": "Blogs | News & Blogs",
       "description": "Read the latest blogs related to openGauss, featuring insights, announcements, and updates from the community.",
       "inLanguage": "en",
       "isPartOf": {

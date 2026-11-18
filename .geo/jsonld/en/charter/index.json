@@ -5,7 +5,7 @@
       "@type": "WebPage",
       "@id": "https://opengauss.org/en/charter/#webpage",
       "url": "https://opengauss.org/en/charter/",
-      "name": "Policies & Rules",
+      "name": "openGauss Community Policies & Rules | Code of Conduct & AI Contribution Policy",
       "description": "Learn about the openGauss community Code of Conduct and Generative AI Use and Open Source Contribution Policy, covering participant behavior, maintainer duties, AI-assisted contribution disclosure, CLA compliance, key metadata logging, and review and merging rules.",
       "inLanguage": "en",
       "dateModified": "2026-07-15",
@@ -54,7 +54,7 @@
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Policies & Rules",
+          "name": "openGauss Community Policies & Rules",
           "item": "https://opengauss.org/en/charter/"
         }
       ]

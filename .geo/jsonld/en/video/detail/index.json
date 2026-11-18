@@ -1,7 +1,7 @@
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "Video Details",
+  "name": "Video Details | Tech Videos",
   "description": "openGauss community technical video details page.",
   "url": "https://opengauss.org/en/video/detail/",
   "inLanguage": "en-US",

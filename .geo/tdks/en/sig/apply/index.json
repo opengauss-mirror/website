@@ -1,0 +1,5 @@
+{
+  "title": "How to Set Up a SIG | SIG Center",
+  "description": "A guide to set up a SIG in the openGauss community: general provisions and TC decision, the roles of Contributor, Committer, and Maintainer, and the procedure to fork the tc repository, complete README and sig-info.yaml, submit a pull request, email the Technical Committee, and the TC review.",
+  "keywords": "Set Up a SIG,SIG Application,Special Interest Groups,Technical Committee,Contributor,Committer,Maintainer"
+}
