@@ -5,25 +5,23 @@
       "@type": "WebPage",
       "@id": "https://opengauss.org/zh/sig/apply/#webpage",
       "url": "https://opengauss.org/zh/sig/apply/",
-      "name": "如何在 openGauss 社区成立一个 SIG",
-      "title": "如何在 openGauss 社区成立一个 SIG | openGauss社区官网",
-      "description": "openGauss社区SIG成立指南，介绍专项兴趣小组（SIG）的申请流程，包括查阅现有SIG、公开讨论、Fork tc仓库、填写README与sig-info.yaml、提交Pull Request、向技术委员会发送邮件申请及TC评审六个步骤，以及Contributor、Committer、Maintainer三类角色说明。",
+      "name": "如何在openGauss社区成立一个SIG | SIG中心",
+      "title": "如何在openGauss社区成立一个SIG | SIG中心 | openGauss社区",
+      "description": "在openGauss社区成立SIG的完整指南：申请总则与TC决策，Contributor、Committer、Maintainer三类角色职责，申请步骤：Fork tc仓库并基于模板创建SIG目录、填写README与sig-info.yaml、提交Pull Request、向技术委员会发送邮件申请，到TC评审与决策。",
       "inLanguage": "zh",
       "keywords": [
-        "openGauss",
-        "SIG",
-        "成立SIG",
-        "SIG申请",
+        "申请步骤",
+        "SIG申请指南",
         "专项兴趣小组",
         "技术委员会",
-        "tc仓库",
-        "Pull Request",
-        "openGauss社区"
+        "Contributor",
+        "Committer",
+        "Maintainer"
       ],
       "isPartOf": {
         "@type": "WebSite",
         "@id": "https://opengauss.org/#website",
-        "name": "openGauss社区官网",
+        "name": "openGauss社区",
         "url": "https://opengauss.org/",
         "inLanguage": "zh"
       },
@@ -56,7 +54,7 @@
           {
             "@type": "ListItem",
             "position": 3,
-            "name": "如何在 openGauss 社区成立一个 SIG",
+            "name": "如何在openGauss社区成立一个SIG",
             "item": "https://opengauss.org/zh/sig/apply/"
           }
         ]

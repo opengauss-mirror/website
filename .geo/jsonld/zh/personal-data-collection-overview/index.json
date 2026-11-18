@@ -5,7 +5,7 @@
       "@type": "WebPage",
       "@id": "https://opengauss.org/zh/personal-data-collection-overview/#webpage",
       "url": "https://opengauss.org/zh/personal-data-collection-overview/",
-      "name": "个人信息收集清单",
+      "name": "openGauss个人信息收集清单 | 个人信息收集",
       "description": "查看openGauss个人信息收集清单，了解账号服务、邮件列表、论坛、Meetup等9类场景下收集的个人信息类型、字段（用户名、邮箱、手机号、IP地址等）、收集目的与方式。",
       "inLanguage": "zh-CN",
       "isPartOf": {
@@ -53,7 +53,7 @@
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "个人信息收集清单",
+          "name": "openGauss个人信息收集清单",
           "item": "https://opengauss.org/zh/personal-data-collection-overview/"
         }
       ]

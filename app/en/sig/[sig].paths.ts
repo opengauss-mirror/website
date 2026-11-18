@@ -23,21 +23,17 @@ export default {
                 description: json[sig.name].description,
                 lang: 'en',
                 memberJsonLd: sig.committer_info
-                  .map((c: any) =>
-                    JSON.stringify({
-                      '@type': 'Person',
-                      name: c.name,
-                      jobTitle: 'Committer',
-                    })
-                  )
+                  .map((c: any) => ({
+                    '@type': 'Person',
+                    name: c.name,
+                    jobTitle: 'Committer',
+                  }))
                   .concat(
-                    sig.maintainer_info.map((m: any) =>
-                      JSON.stringify({
-                        '@type': 'Person',
-                        name: m.name,
-                        jobTitle: 'Maintainer',
-                      })
-                    )
+                    sig.maintainer_info.map((m: any) => ({
+                      '@type': 'Person',
+                      name: m.name,
+                      jobTitle: 'Maintainer',
+                    }))
                   ),
               },
             };

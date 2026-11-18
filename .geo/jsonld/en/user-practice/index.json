@@ -5,8 +5,8 @@
       "@type": "CollectionPage",
       "@id": "https://opengauss.org/en/user-practice/#collectionpage",
       "url": "https://opengauss.org/en/user-practice/",
-      "name": "openGauss User Practice",
-      "description": "Explore openGauss user practice case studies across finance, telecom, manufacturing, and other industries.",
+      "name": "Success Stories | About",
+      "description": "Explore openGauss user practice case studies across finance, telecom, manufacturing, and other industries. Learn how organizations benefit from openGauss.",
       "inLanguage": "en",
       "isPartOf": {
         "@id": "https://opengauss.org/#website"

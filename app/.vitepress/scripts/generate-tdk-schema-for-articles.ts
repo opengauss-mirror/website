@@ -372,7 +372,7 @@ export default function generateSEOManifest(pageData: PageData): boolean {
   const title = String(frontmatter.title || '');
   if (!title) return false;
 
-  pageData.titleTemplate = `:title | ${lang === 'zh' ? 'openGauss社区官网' : 'openGauss Community Website'}`;
+  pageData.titleTemplate = `:title | ${lang === 'zh' ? 'openGauss社区' : 'openGauss Community Website'}`;
 
   const description = String(frontmatter.summary || '');
   if (description) {

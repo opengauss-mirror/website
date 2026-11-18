@@ -5,7 +5,7 @@
       "@type": "CollectionPage",
       "@id": "https://opengauss.org/zh/blogs/#collectionpage",
       "url": "https://opengauss.org/zh/blogs/",
-      "name": "openGauss技术博客",
+      "name": "博客 | 资讯",
       "description": "openGauss开发者博客是面向开发者的知识分享平台，涵盖服务器操作系统安装、迁移、创新项目实践、开发者贡献经验等内容，便于开发者之间的知识交流。",
       "inLanguage": "zh-CN",
       "isPartOf": {

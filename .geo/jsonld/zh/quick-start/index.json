@@ -5,8 +5,8 @@
       "@type": "WebPage",
       "@id": "https://opengauss.org/zh/quick-start/",
       "url": "https://opengauss.org/zh/quick-start/",
-      "name": "快速体验",
-      "description": "openGauss快速体验页面，提供git使用教程、Linux基础操作、企业版和极简版安装部署指南、学习视频等入门资源，帮助开发者快速上手openGauss数据库。",
+      "name": "快速体验 | 开发者成长",
+      "description": "openGauss快速体验指南，提供企业版、极简版、轻量版安装部署教程，包含git使用、Linux基础、学习视频等入门资源，帮助开发者快速上手openGauss数据库",
       "inLanguage": "zh-CN",
       "isPartOf": {
         "@id": "https://opengauss.org/#website"
@@ -19,7 +19,7 @@
       "@type": "WebSite",
       "@id": "https://opengauss.org/#website",
       "url": "https://opengauss.org/",
-      "name": "openGauss社区官网",
+      "name": "openGauss社区",
       "inLanguage": "zh-CN"
     },
     {

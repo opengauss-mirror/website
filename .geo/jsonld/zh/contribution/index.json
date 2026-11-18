@@ -3,9 +3,9 @@
   "@type": "WebPage",
   "@id": "https://opengauss.org/zh/contribution/",
   "url": "https://opengauss.org/zh/contribution/",
-  "name": "社区贡献",
-  "title": "社区贡献 | openGauss社区官网",
-  "description": "openGauss 社区贡献指南：了解如何参与 openGauss 开源社区贡献，包括注册账号、签署CLA、加入SIG、提交Issue和Pull Request等完整贡献流程。",
+  "name": "贡献攻略 | 贡献",
+  "title": "贡献攻略 | 贡献 | openGauss社区",
+  "description": "openGauss 是一个开源社区，完全依赖于社区提供友好的开发和协作环境。在参与社区贡献之前，请先阅读并遵守openGauss 社区行为守则。",
   "inLanguage": "zh",
   "keywords": [
     "openGauss",
@@ -18,7 +18,7 @@
   "isPartOf": {
     "@type": "WebSite",
     "@id": "https://opengauss.org/#website",
-    "name": "openGauss社区官网",
+    "name": "openGauss社区",
     "url": "https://opengauss.org/",
     "inLanguage": "zh"
   },
@@ -47,7 +47,7 @@
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "社区贡献",
+        "name": "贡献攻略",
         "item": "https://opengauss.org/zh/contribution/"
       }
     ]

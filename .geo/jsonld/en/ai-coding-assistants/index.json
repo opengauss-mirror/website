@@ -5,7 +5,7 @@
       "@type": "WebPage",
       "@id": "https://opengauss.org/en/ai-coding-assistants/#webpage",
       "url": "https://opengauss.org/en/ai-coding-assistants/",
-      "name": "openGauss Community Generative AI Use and Open Source Contribution Policy",
+      "name": "openGauss Community Generative AI Use and Open Source Contribution Policy | About",
       "description": "Learn the openGauss Generative AI Contribution Policy: openness, developer responsibility, transparency, CLA compliance, AI metadata logging, and review/merging rules.",
       "inLanguage": "en",
       "dateModified": "2026-07-28",
@@ -54,7 +54,7 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "AI Contribution Policy",
+          "name": "openGauss Community Generative AI Use and Open Source Contribution Policy",
           "item": "https://opengauss.org/en/ai-coding-assistants/"
         }
       ]

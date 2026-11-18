@@ -5,8 +5,8 @@
       "@type": "WebPage",
       "@id": "https://opengauss.org/en/legal/#webpage",
       "url": "https://opengauss.org/en/legal/",
-      "name": "Legal Notice",
-      "description": "openGauss Community legal notice covering website access terms, personal information protection, disclaimer, copyright and trademark, third-party links, website updates, and AI service compliance.",
+      "name": "Legal Notice | Disclaimer & Copyright",
+      "description": "Review the openGauss community legal notice, covering access terms, personal data protection, copyright, trademarks, AI service compliance, and applicable law.",
       "inLanguage": "en",
       "isPartOf": {
         "@id": "https://opengauss.org/#website"

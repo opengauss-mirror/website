@@ -5,8 +5,8 @@
       "@type": "WebPage",
       "@id": "https://opengauss.org/zh/legal/#webpage",
       "url": "https://opengauss.org/zh/legal/",
-      "name": "法律声明",
-      "description": "openGauss社区法律声明，涵盖网站访问规则、个人信息保护、不承诺责任、著作权与商标说明、第三方链接、网站更新变更及AI服务使用规范等内容。",
+      "name": "法律声明 | 免责与版权政策",
+      "description": "查看openGauss社区法律声明，涵盖访问条款、个人信息保护、著作权、商标、AI服务规范及适用法律。",
       "inLanguage": "zh-CN",
       "isPartOf": {
         "@id": "https://opengauss.org/#website"

@@ -2,7 +2,7 @@
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "活动征集",
-  "description": "如果您有兴趣在所在城市举办 openGauss Meetup活动，为了保证活动顺利进行，在举办社区开发者活动前，您需要申请。",
+  "description": "了解openGauss社区活动征集申请流程、审核标准、申办单位收获及赋能支持，申办城市Meetup活动。",
   "step": [
     {
       "@type": "HowToStep",

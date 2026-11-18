@@ -74,7 +74,7 @@ openGauss-website/
 
 SEO/GEO 各维度**规范与配套 skill 统一来源于规范仓库 [opensourceways/daily-check-workflow](https://github.com/opensourceways/daily-check-workflow) 的 `specifications` 分支**，通过脚本同步进本仓库；禁止另行维护本地副本或凭记忆改规范。做 robots.txt / llms.txt / sitemap / JSON-LD / TDK / a 标签 / 标签结构 / img-alt / 内链 / HTML 语义化相关任务前，先同步，再按 `rules/seo-geo/` 对应维度执行。
 
-> 页面 title 实现细节：网站首页的 title 固定为中文（`/zh/`） -> `openGauss社区官网 | 企业级开源多模数据库`，英文（`/en/`） -> `openGauss Community Website | Enterprise-Grade Open-Source Multi-Model Database`，其他页面的 title 按 `页面主题 | 模块 or 补充说明 | openGauss社区（openGauss Community Website）` 的格式设置。
+> 页面 title 实现细节：网站首页的 title 固定为中文（`/zh/`） -> `openGauss社区官网 | 企业级开源多模数据库`，英文（`/en/`） -> `openGauss Community Website | Enterprise-Grade Open-Source Multi-Model Database`，其他页面的 title 按 `页面主题 | 模块 or 补充说明 | openGauss社区（openGauss Community）` 的格式设置。
 
 ### 3.1 同步脚本
 

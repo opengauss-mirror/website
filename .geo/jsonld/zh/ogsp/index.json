@@ -5,8 +5,8 @@
       "@type": "WebPage",
       "@id": "https://opengauss.org/zh/ogsp/#webpage",
       "url": "https://opengauss.org/zh/ogsp/",
-      "name": "服务商认证公司查询",
-      "description": "查询已通过openGauss服务商认证的公司名单，包括公司名称、证书编号、颁发日期、有效期。",
+      "name": "服务商认证 | 认证",
+      "description": "查询已通过openGauss服务商认证的公司名单，包括公司名称、级别、证书编号、颁发日期、有效期。",
       "inLanguage": "zh-CN",
       "isPartOf": {
         "@id": "https://opengauss.org/#website"

@@ -5,23 +5,21 @@
       "@type": "WebPage",
       "@id": "https://opengauss.org/zh/sig/sig-list/#webpage",
       "url": "https://opengauss.org/zh/sig/sig-list/",
-      "name": "SIG中心",
-      "title": "SIG中心 | openGauss社区官网",
-      "description": "openGauss社区SIG中心，汇总全部专项兴趣小组（SIG）及其研究方向、邮件列表与订阅方式，并提供SIG角色说明、会议指南与申请流程，便于开发者参与社区协作与贡献。",
+      "name": "SIG中心 | 贡献",
+      "title": "SIG中心 | 贡献 | openGauss社区",
+      "description": "openGauss SIG中心：了解SIG运转、交流与贡献方式，查看SIG角色说明、会议指南与成立申请流程，并查看社区openGauss SIGs及其仓库与联系方式。",
       "inLanguage": "zh",
       "keywords": [
-        "openGauss",
-        "SIG",
-        "专项兴趣小组",
-        "openGauss社区",
-        "开源社区",
-        "SIG列表",
-        "邮件列表"
+        "SIG中心",
+        "SIG申请流程",
+        "SIG贡献指南",
+        "openGauss SIGs",
+        "SIG运转"
       ],
       "isPartOf": {
         "@type": "WebSite",
         "@id": "https://opengauss.org/#website",
-        "name": "openGauss社区官网",
+        "name": "openGauss社区",
         "url": "https://opengauss.org/",
         "inLanguage": "zh"
       },

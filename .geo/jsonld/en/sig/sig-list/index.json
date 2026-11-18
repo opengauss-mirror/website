@@ -5,18 +5,16 @@
       "@type": "WebPage",
       "@id": "https://opengauss.org/en/sig/sig-list/#webpage",
       "url": "https://opengauss.org/en/sig/sig-list/",
-      "name": "SIG Center",
-      "title": "SIG Center | openGauss Official Website",
-      "description": "openGauss SIG Center lists all Special Interest Groups (SIGs) with their research directions, mailing lists, and subscription links, along with SIG role descriptions, meeting guides, and the application process for developers to participate and contribute.",
+      "name": "SIG Center | Contribute",
+      "title": "SIG Center | Contribute | openGauss Community",
+      "description": "The SIG Center of the openGauss community: learn how SIGs operate, communicate, and contribute, explore SIG roles, meeting guide, and application process, and view the openGauss SIGs with repository lists and contact details.",
       "inLanguage": "en",
       "keywords": [
-        "openGauss",
-        "SIG",
-        "Special Interest Group",
-        "openGauss community",
-        "open source",
-        "SIG list",
-        "mailing list"
+        "SIG Center",
+        "SIG Application Process",
+        "SIG Contribution Guide",
+        "openGauss SIGs",
+        "SIG Meeting Guide"
       ],
       "isPartOf": {
         "@type": "WebSite",

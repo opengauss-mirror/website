@@ -5,8 +5,8 @@
       "@type": "WebPage",
       "@id": "https://opengauss.org/zh/honor/#webpage",
       "url": "https://opengauss.org/zh/honor/",
-      "name": "社区荣誉 | openGauss社区官网",
-      "description": "openGauss社区历年荣誉墙，展示社区获得的各项荣誉奖项、年度优秀开发者、优秀SIG组、优秀企业贡献奖和优秀个人贡献奖。",
+      "name": "社区荣誉 | 关于社区",
+      "description": "openGauss社区历年荣誉墙及历年优秀贡献者",
       "inLanguage": "zh-CN",
       "isPartOf": {
         "@id": "https://opengauss.org/#website"
@@ -31,7 +31,7 @@
         "中国首个国际CC EAL4+级别认证",
         "CCF科技进步特等奖",
         "年度创新产品奖",
-        "2022年"科创中国"开源创新榜",
+        "2022年“科创中国”开源创新榜",
         "全国计算机等级二级考试新科目",
         "2022年软件行业突破性技术成果",
         "加入 CNCF Landscape",
@@ -47,7 +47,7 @@
       "@type": "WebSite",
       "@id": "https://opengauss.org/#website",
       "url": "https://opengauss.org",
-      "name": "openGauss社区官网",
+      "name": "openGauss社区",
       "inLanguage": "zh-CN"
     },
     {
@@ -170,7 +170,7 @@
           "position": 13,
           "item": {
             "@type": "Award",
-            "name": "2022年"科创中国"开源创新榜",
+            "name": "2022年“科创中国”开源创新榜",
             "dateReceived": "2022"
           }
         },

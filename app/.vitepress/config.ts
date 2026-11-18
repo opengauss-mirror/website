@@ -289,40 +289,40 @@ const config: UserConfig = {
   async transformHead({ pageData }) {
     if (pageData.params?.sig) {
       const sigName = pageData.params.sig;
+      const lang = pageData.params.lang;
+      // 以对象 + JSON.stringify 构建，避免手工插值导致的转义/语法问题
+      const jsonLd = {
+        '@context': 'https://schema.org',
+        '@graph': [
+          {
+            '@type': 'Organization',
+            '@id': 'https://opengauss.org',
+            'name': lang === 'zh' ? 'openGauss社区' : 'openGauss Community',
+            'url': 'https://opengauss.org',
+            'logo': 'https://opengauss.org/category/brand/view/logo1.svg',
+            'sameAs': ['https://atomgit.com/opengauss'],
+          },
+          {
+            '@type': 'Organization',
+            '@id': `https://atomgit.com/opengauss/tc/tree/master/sigs/${sigName}`,
+            'name': sigName,
+            'url': `https://atomgit.com/opengauss/tc/tree/master/sigs/${sigName}`,
+            'parentOrganization': { '@id': 'https://opengauss.org' },
+            'description': pageData.params.description,
+            'member': pageData.params.memberJsonLd ?? [],
+          },
+          {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': `https://opengauss.org/${lang}/` },
+              { '@type': 'ListItem', 'position': 2, 'name': 'SIG Center', 'item': `https://opengauss.org/${lang}/sig/sig-list/` },
+              { '@type': 'ListItem', 'position': 3, 'name': sigName, 'item': `https://opengauss.org/${lang}/sig/${sigName}` },
+            ],
+          },
+        ],
+      };
       return [
-        [
-        'script',
-        { type: 'application/ld+json' },
-        `{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://opengauss.org",
-      "name": "${pageData.params.lang === 'zh' ? 'openGauss社区官网 - 企业级开源关系型数据库' : 'openGauss Community'}",
-      "url": "https://opengauss.org",
-      "logo": "https://opengauss.org/category/brand/view/logo1.svg",
-      "sameAs": ["https://atomgit.com/opengauss"]
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://atomgit.com/opengauss/tc/tree/master/sigs/${sigName}",
-      "name": "${sigName}",
-      "url": "https://atomgit.com/opengauss/tc/tree/master/sigs/${sigName}",
-      "parentOrganization": {"@id": "https://opengauss.org"},
-      "description": "${pageData.params.description}",
-      "member": ${pageData.params.memberJsonLd}
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://opengauss.org/${pageData.params.lang}/" },
-        { "@type": "ListItem", "position": 2, "name": "SIG Center", "item": "https://opengauss.org/${pageData.params.lang}/sig/sig-list/" },
-        { "@type": "ListItem", "position": 3, "name": "${sigName}", "item": "https://opengauss.org/${pageData.params.lang}/sig/${sigName}" }
-      ]
-    }
-  ]
-}`]
+        ['script', { type: 'application/ld+json' }, JSON.stringify(jsonLd)],
       ];
     }
   },

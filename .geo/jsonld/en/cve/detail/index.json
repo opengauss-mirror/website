@@ -51,7 +51,8 @@
           "item": {
             "@id": "https://opengauss.org/en/cve/detail/",
             "name": "CVE Detail"
-          }
+          },
+          "name": "openGauss CVE Detail"
         }
       ]
     }

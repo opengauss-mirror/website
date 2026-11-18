@@ -8,7 +8,6 @@
   "endDate": "2023-12-28T18:00",
   "eventStatus": "https://schema.org/EventEnded",
   "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
-  
   "organizer": {
     "@type": "Organization",
     "name": "openGauss社区",
@@ -286,7 +285,7 @@
   ],
   "subjectOf": {
     "@type": "WebPage",
-    "name": "openGauss Summit 2023",
+    "name": "openGauss峰会2023 | 峰会",
     "url": "https://opengauss.org/zh/summit/summit2023/",
     "publisher": {
       "@type": "Organization",
@@ -295,11 +294,10 @@
     }
   },
   "keywords": [
-    "openGauss",
+    "openGauss Summit 2023",
+    "openGauss峰会2023",
     "openGauss社区",
-    "数据库",
-    "峰会",
-    "年度盛会"
+    "数据库峰会"
   ],
   "inLanguage": "zh-CN",
   "sameAs": [

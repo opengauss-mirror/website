@@ -5,7 +5,7 @@
       "@type": "WebPage",
       "@id": "https://opengauss.org/en/certification/#webpage",
       "url": "https://opengauss.org/en/certification/",
-      "name": "Distribution Certification",
+      "name": "Distribution Certification | Certification",
       "description": "openGauss provides a complete test process for commercial release certification. View the list of certified commercial distributions and download certificates.",
       "inLanguage": "en",
       "isPartOf": {

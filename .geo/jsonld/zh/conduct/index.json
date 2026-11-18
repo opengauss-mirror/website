@@ -5,7 +5,7 @@
       "@type": "WebPage",
       "@id": "https://opengauss.org/zh/conduct/#webpage",
       "url": "https://opengauss.org/zh/conduct/",
-      "name": "openGauss社区行为准则",
+      "name": "openGauss社区行为准则 | 关于社区",
       "description": "了解openGauss社区行为准则，明确社区参与者应遵循的友好包容行为规范、禁止的骚扰与不当行为、维护者纠正违规的职责与权限，以及准则在社区及代表社区场景的适用范围。",
       "inLanguage": "zh-CN",
       "dateModified": "2026-07-28",
@@ -54,7 +54,7 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "行为准则",
+          "name": "openGauss社区行为准则",
           "item": "https://opengauss.org/zh/conduct/"
         }
       ]

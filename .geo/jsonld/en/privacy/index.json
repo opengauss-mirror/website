@@ -5,8 +5,8 @@
       "@type": "WebPage",
       "@id": "https://opengauss.org/en/privacy/#webpage",
       "url": "https://opengauss.org/en/privacy/",
-      "name": "Privacy Statement",
-      "description": "Learn how openGauss collects, uses, shares, and protects your personal data across account, CLA, and forum services, plus retention and your privacy rights.",
+      "name": "Privacy Statement | Privacy Policy",
+      "description": "Learn how openGauss collects, uses, shares, and protects your personal data across account, mailing list, CLA, and forum services, plus retention and your privacy rights.",
       "inLanguage": "en",
       "dateModified": "2026-01-30",
       "isPartOf": {
