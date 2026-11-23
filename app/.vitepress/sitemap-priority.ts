@@ -1,3 +1,15 @@
+/*
+ * Copyright (c) 2026 Huawei Technologies Co., Ltd.
+ * website is licensed under Mulan PSL v2.
+ * You can use this software according to the terms and conditions of the Mulan PSL v2.
+ * You may obtain a copy of Mulan PSL v2 at:
+ *          http://license.coscl.org.cn/MulanPSL2
+ * THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND,
+ * EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT,
+ * MERCHANTABILITY OR FIT FOR A PARTICULAR PURPOSE.
+ * See the Mulan PSL v2 for more details.
+ */
+
 export const PRIORITY_MAP: [RegExp, number][] = [
   [/^\/(zh|en)\/$/, 1.0],
   [/^\/(zh|en)\/(download|events|news|blogs|member|contribution|video|training|certification|ogsp|migration|vulnerability-management|security-advisories|cve|tools|compatibility|honor|finance|user-practice|online-communication|ai|ogmemory|quick-start|advanced|bigshot-voice|team-up|call-for-meetup|summit)\/$/, 0.8],
