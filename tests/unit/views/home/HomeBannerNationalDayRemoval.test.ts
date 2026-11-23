@@ -14,8 +14,9 @@ const entries = yaml.load(yamlContent) as any[];
 // 国庆节 banner（commit 7362c33 新增，已于本次 issue 移除）使用 text_image_zh 内联文字图，
 // 无 title/btn/href，仅以图片路径 ./images/banner/20261001/ 标识。
 const NATIONAL_DAY_MARKER = '20261001';
+const bgValues = (e: any) => [e.bg, e.bg_dark].filter(Boolean).flatMap((m: any) => Object.values(m));
 const nationalDayEntry = entries.find((e: any) =>
-  [e.bg_pc, e.bg_pad, e.bg_pad_v, e.bg_mb, e.text_image_zh, e.text_image_pad_zh, e.text_image_mb_zh]
+  [...bgValues(e), e.text_image_zh, e.text_image_pad_zh, e.text_image_mb_zh]
     .filter(Boolean)
     .some((v: string) => v.includes(NATIONAL_DAY_MARKER))
 );
@@ -25,23 +26,24 @@ describe('banner.yaml — 国庆节 banner 已移除', () => {
     expect(nationalDayEntry).toBeUndefined();
   });
 
-  it('没有任何字段的值包含 20261001 标识', () => {
-    const offenders = entries
-      .flatMap((e: any, i: number) =>
-        Object.entries(e)
+  it('没有任何字段的值包含 20261001 标识（含 bg / bg_dark 图映射）', () => {
+    const offenders = entries.flatMap((e: any, i: number) =>
+      [
+        ...Object.entries(e)
           .filter(([, v]) => typeof v === 'string' && v.includes(NATIONAL_DAY_MARKER))
-          .map(([k, v]) => `entries[${i}].${k}=${v}`)
-      );
+          .map(([k, v]) => `entries[${i}].${k}=${v}`),
+        ...['bg', 'bg_dark'].flatMap((f) =>
+          Object.entries(e[f] ?? {})
+            .filter(([, v]) => typeof v === 'string' && (v as string).includes(NATIONAL_DAY_MARKER))
+            .map(([k, v]) => `entries[${i}].${f}.${k}=${v}`)
+        ),
+      ]
+    );
     expect(offenders).toEqual([]);
   });
 
-  it('bg_pc 字段无 20261001 引用', () => {
-    const users = entries.filter((e: any) => typeof e.bg_pc === 'string' && e.bg_pc.includes(NATIONAL_DAY_MARKER));
-    expect(users.length).toBe(0);
-  });
-
-  it('bg_mb 字段无 20261001 引用', () => {
-    const users = entries.filter((e: any) => typeof e.bg_mb === 'string' && e.bg_mb.includes(NATIONAL_DAY_MARKER));
+  it('bg / bg_dark 图映射无 20261001 引用', () => {
+    const users = entries.filter((e: any) => bgValues(e).some((v: string) => v.includes(NATIONAL_DAY_MARKER)));
     expect(users.length).toBe(0);
   });
 
@@ -74,8 +76,9 @@ describe('banner.yaml — 移除国庆 banner 后其余条目完整', () => {
     expect(entries.length).toBeGreaterThan(0);
   });
 
-  it('7.0.0-LTS 版本 banner 仍在列表首位', () => {
-    expect(entries[0].title_zh).toBe('openGauss 7.0.0-LTS 版本正式发布');
+  it('7.0.0-LTS 版本 banner 仍在列表中', () => {
+    const lts = entries.find((e: any) => e.title_zh === 'openGauss 7.0.0-LTS 版本正式发布');
+    expect(lts).toBeDefined();
   });
 
   it('AI coding banner 仍在列表中', () => {

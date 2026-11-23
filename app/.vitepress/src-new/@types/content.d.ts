@@ -25,6 +25,8 @@ declare module '#content/activity' {
 
 declare module '#content/home' {
   interface BannerItemT {
+    bg?: Record<string, string>;
+    bg_dark?: Record<string, string>;
     bg_pc: string;
     bg_pad?: string;
     bg_mb?: string;

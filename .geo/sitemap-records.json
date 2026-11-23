@@ -1,0 +1,1146 @@
+{
+  "en/about-us/index.md": {
+    "lastmod": 1788017833000,
+    "changefreq": "monthly"
+  },
+  "en/ai-coding-assistants/index.md": {
+    "lastmod": 1786955110000,
+    "changefreq": "monthly"
+  },
+  "en/ai/agent/index.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "en/ai/rag/index.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "en/brand/index.md": {
+    "lastmod": 1793602069000,
+    "changefreq": "weekly"
+  },
+  "en/certification/index.md": {
+    "lastmod": 1793602069000,
+    "changefreq": "weekly"
+  },
+  "en/charter/index.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "en/conduct/index.md": {
+    "lastmod": 1786099617000,
+    "changefreq": "monthly"
+  },
+  "en/contribution/detail.md": {
+    "lastmod": 1793265468000,
+    "changefreq": "weekly"
+  },
+  "en/contribution/index.md": {
+    "lastmod": 1793602069000,
+    "changefreq": "weekly"
+  },
+  "en/cookies/index.md": {
+    "lastmod": 1793602069000,
+    "changefreq": "weekly"
+  },
+  "en/cve/detail/index.md": {
+    "lastmod": 1793602069000,
+    "changefreq": "weekly"
+  },
+  "en/cve/index.md": {
+    "lastmod": 1793602069000,
+    "changefreq": "weekly"
+  },
+  "en/data-sharing-with-third-parties/index.md": {
+    "lastmod": 1789350182000,
+    "changefreq": "monthly"
+  },
+  "en/download/archive/index.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "en/download/index.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "en/download/life-cycle/index.md": {
+    "lastmod": 1790759427000,
+    "changefreq": "monthly"
+  },
+  "en/index.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "en/legal/index.md": {
+    "lastmod": 1785413199000,
+    "changefreq": "monthly"
+  },
+  "en/member/detail/index.md": {
+    "lastmod": 1793602069000,
+    "changefreq": "weekly"
+  },
+  "en/member/index.md": {
+    "lastmod": 1793602069000,
+    "changefreq": "weekly"
+  },
+  "en/notifications/index.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "en/ogsp/index.md": {
+    "lastmod": 1793602069000,
+    "changefreq": "weekly"
+  },
+  "en/online-communication/index.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "en/personal-data-collection-overview/index.md": {
+    "lastmod": 1790565055000,
+    "changefreq": "monthly"
+  },
+  "en/privacy/index.md": {
+    "lastmod": 1790579047000,
+    "changefreq": "monthly"
+  },
+  "en/search/index.md": {
+    "lastmod": 1793602069000,
+    "changefreq": "weekly"
+  },
+  "en/security-advisories/detail/index.md": {
+    "lastmod": 1793602069000,
+    "changefreq": "weekly"
+  },
+  "en/security-advisories/index.md": {
+    "lastmod": 1793602069000,
+    "changefreq": "weekly"
+  },
+  "en/sig/AI.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "en/sig/apply/index.md": {
+    "lastmod": 1790670237000,
+    "changefreq": "monthly"
+  },
+  "en/sig/Blockchain.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "en/sig/Certification.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "en/sig/CloudNative.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "en/sig/CM.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "en/sig/Connectors.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "en/sig/DCF.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "en/sig/Docs.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "en/sig/Embedded.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "en/sig/GIS.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "en/sig/Graph.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "en/sig/Infra.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "en/sig/IoT.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "en/sig/KnowledgeGraph.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "en/sig/oGRAC.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "en/sig/OM.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "en/sig/OPS.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "en/sig/Plugin.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "en/sig/QA.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "en/sig/ReleaseManagement.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "en/sig/RISC-V.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "en/sig/role-description/index.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "en/sig/Security.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "en/sig/SecurityTechnology.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "en/sig/sig-list/index.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "en/sig/SQLEngine.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "en/sig/StorageEngine.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "en/sig/Tools.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "en/tools/index.md": {
+    "lastmod": 1794293070000,
+    "changefreq": "weekly"
+  },
+  "en/user-practice/bigbusiness/caizhengting/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/bigbusiness/qixiangju/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/bigbusiness/tianjinshichangjianduwei/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/bigbusiness/xiaofeiyun/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/bigbusiness/yangguangwang/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/carrier/chinatower/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/carrier/chinaunicom/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/carrier/fujianyidong/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/carrier/guangdongyidong/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/carrier/hebeiyidong/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/carrier/jiangsuyidong/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/carrier/jiangxiyidong/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/carrier/neimengguyidong/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/carrier/xinjiangyidong/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/carrier/yidong/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/carrier/yidong2/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/carrier/zhejiangyidong/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/carrier/zhongguoliantong/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/dbv/enmotech/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/dbv/shentongdata/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/dbv/vastdata/index.md": {
+    "lastmod": 1752542696000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/education/beidayanjiushengyuan/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/education/fudan/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/energy/guojiadianwang/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/energy/guojianengyuan/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/energy/guowanghenan/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/energy/szzhonghaiyou/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/finance/bohai/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/finance/changchenghuaxiyinhang/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/finance/chengdebank/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/finance/chengdebank2/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/finance/guilinbank/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/finance/haerbing/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/finance/hezhong/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/finance/hmccb/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/finance/huaanzhengquan/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/finance/huabaojijin/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/finance/jshbank/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/finance/minshengbank/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/finance/moukaifayinhang/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/finance/sichuantianfuyinhang/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/finance/xingyebank/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/finance/xingyecollectionsystem/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/finance/xingyemanagesystem/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/finance/xingyepaymentsystem/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/finance/youzheng/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/finance/zhonghua/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/index.md": {
+    "lastmod": 1794905301000,
+    "changefreq": "weekly"
+  },
+  "en/user-practice/internet/dingding/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/manufacture/biyadi/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/manufacture/chuangwei/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/manufacture/dfmc/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/manufacture/xinpian/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/medical/nanjingweijianwei/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/medical/sdent/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/others/caizhengting/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/others/liaoningjiaotong/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/others/qixiangju/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/others/smartx/index.md": {
+    "lastmod": 1765364687000,
+    "changefreq": "monthly"
+  },
+  "en/user-practice/others/xiaofeiyun/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/others/xxzw/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/others/yangguangwang/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/others/zabbix/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/others/zhengwuyun/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "en/user-practice/others/zjpost/index.md": {
+    "lastmod": 1789283457000,
+    "changefreq": "monthly"
+  },
+  "en/video/detail/index.md": {
+    "lastmod": 1793602069000,
+    "changefreq": "weekly"
+  },
+  "en/video/index.md": {
+    "lastmod": 1793602069000,
+    "changefreq": "weekly"
+  },
+  "en/vulnerability-management/index.md": {
+    "lastmod": 1790152870000,
+    "changefreq": "monthly"
+  },
+  "zh/about-us/index.md": {
+    "lastmod": 1788017833000,
+    "changefreq": "monthly"
+  },
+  "zh/advanced/index.md": {
+    "lastmod": 1793602069000,
+    "changefreq": "weekly"
+  },
+  "zh/ai-coding-assistants/index.md": {
+    "lastmod": 1786955110000,
+    "changefreq": "monthly"
+  },
+  "zh/ai/agent/index.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/ai/rag/index.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/bigshot-voice/detail/index.md": {
+    "lastmod": 1793602069000,
+    "changefreq": "weekly"
+  },
+  "zh/bigshot-voice/index.md": {
+    "lastmod": 1793602069000,
+    "changefreq": "weekly"
+  },
+  "zh/brand/index.md": {
+    "lastmod": 1793602069000,
+    "changefreq": "weekly"
+  },
+  "zh/call-for-meetup/collect/index.md": {
+    "lastmod": 1792699934000,
+    "changefreq": "monthly"
+  },
+  "zh/call-for-meetup/index.md": {
+    "lastmod": 1793602069000,
+    "changefreq": "weekly"
+  },
+  "zh/certification/index.md": {
+    "lastmod": 1793602069000,
+    "changefreq": "weekly"
+  },
+  "zh/charter/index.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/community/meetup-form/index.md": {
+    "lastmod": 1793686596000,
+    "changefreq": "weekly"
+  },
+  "zh/compatibility/index.md": {
+    "lastmod": 1793602069000,
+    "changefreq": "weekly"
+  },
+  "zh/conduct/index.md": {
+    "lastmod": 1786099617000,
+    "changefreq": "monthly"
+  },
+  "zh/contribution/detail.md": {
+    "lastmod": 1793265468000,
+    "changefreq": "weekly"
+  },
+  "zh/contribution/index.md": {
+    "lastmod": 1793602069000,
+    "changefreq": "weekly"
+  },
+  "zh/cookies/index.md": {
+    "lastmod": 1789437410000,
+    "changefreq": "monthly"
+  },
+  "zh/cve/detail/index.md": {
+    "lastmod": 1793602069000,
+    "changefreq": "weekly"
+  },
+  "zh/cve/index.md": {
+    "lastmod": 1793602069000,
+    "changefreq": "weekly"
+  },
+  "zh/data-sharing-with-third-parties/index.md": {
+    "lastmod": 1789350182000,
+    "changefreq": "monthly"
+  },
+  "zh/download/archive/index.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/download/finance/index.md": {
+    "lastmod": 1793602069000,
+    "changefreq": "weekly"
+  },
+  "zh/download/index.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/download/life-cycle/index.md": {
+    "lastmod": 1790759427000,
+    "changefreq": "monthly"
+  },
+  "zh/faq/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/finance/index.md": {
+    "lastmod": 1793602069000,
+    "changefreq": "weekly"
+  },
+  "zh/honor/index.md": {
+    "lastmod": 1792699934000,
+    "changefreq": "monthly"
+  },
+  "zh/index.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/internship/index.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/legal/index.md": {
+    "lastmod": 1785413199000,
+    "changefreq": "monthly"
+  },
+  "zh/member/detail/index.md": {
+    "lastmod": 1793602069000,
+    "changefreq": "weekly"
+  },
+  "zh/member/index.md": {
+    "lastmod": 1793602069000,
+    "changefreq": "weekly"
+  },
+  "zh/migration/case/index.md": {
+    "lastmod": 1718330743000,
+    "changefreq": "yearly"
+  },
+  "zh/migration/index.md": {
+    "lastmod": 1792699934000,
+    "changefreq": "monthly"
+  },
+  "zh/notifications/index.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/ogmemory/index.md": {
+    "lastmod": 1793686596000,
+    "changefreq": "weekly"
+  },
+  "zh/ogsp/index.md": {
+    "lastmod": 1793602069000,
+    "changefreq": "weekly"
+  },
+  "zh/online-communication/index.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/personal-data-collection-overview/index.md": {
+    "lastmod": 1790565055000,
+    "changefreq": "monthly"
+  },
+  "zh/privacy/index.md": {
+    "lastmod": 1792750600000,
+    "changefreq": "monthly"
+  },
+  "zh/quick-start/index.md": {
+    "lastmod": 1793602069000,
+    "changefreq": "weekly"
+  },
+  "zh/search/index.md": {
+    "lastmod": 1793602069000,
+    "changefreq": "weekly"
+  },
+  "zh/security-advisories/detail/index.md": {
+    "lastmod": 1793602069000,
+    "changefreq": "weekly"
+  },
+  "zh/security-advisories/index.md": {
+    "lastmod": 1793602069000,
+    "changefreq": "weekly"
+  },
+  "zh/sig/AI.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/sig/apply/index.md": {
+    "lastmod": 1790670237000,
+    "changefreq": "monthly"
+  },
+  "zh/sig/Blockchain.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/sig/Certification.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/sig/CloudNative.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/sig/CM.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/sig/Connectors.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/sig/DCF.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/sig/Docs.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/sig/Embedded.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/sig/GIS.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/sig/Graph.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/sig/Infra.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/sig/IoT.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/sig/KnowledgeGraph.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/sig/oGRAC.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/sig/OM.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/sig/OPS.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/sig/Plugin.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/sig/QA.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/sig/ReleaseManagement.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/sig/RISC-V.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/sig/role-description/index.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/sig/Security.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/sig/SecurityTechnology.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/sig/sig-list/index.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/sig/SQLEngine.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/sig/StorageEngine.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/sig/Tools.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/summit/devday2022/index.md": {
+    "lastmod": 1790152870000,
+    "changefreq": "monthly"
+  },
+  "zh/summit/devday2023/index.md": {
+    "lastmod": 1790152870000,
+    "changefreq": "monthly"
+  },
+  "zh/summit/devday2024/index.md": {
+    "lastmod": 1790152870000,
+    "changefreq": "monthly"
+  },
+  "zh/summit/devday2025/index.md": {
+    "lastmod": 1790152870000,
+    "changefreq": "monthly"
+  },
+  "zh/summit/devday2025/legal/index.md": {
+    "lastmod": 1749538089000,
+    "changefreq": "yearly"
+  },
+  "zh/summit/devday2025/privacy/index.md": {
+    "lastmod": 1749635877000,
+    "changefreq": "yearly"
+  },
+  "zh/summit/summit2021/index.md": {
+    "lastmod": 1790152870000,
+    "changefreq": "monthly"
+  },
+  "zh/summit/summit2022/index.md": {
+    "lastmod": 1790152870000,
+    "changefreq": "monthly"
+  },
+  "zh/summit/summit2023/index.md": {
+    "lastmod": 1790152870000,
+    "changefreq": "monthly"
+  },
+  "zh/summit/summit2024/index.md": {
+    "lastmod": 1790152870000,
+    "changefreq": "monthly"
+  },
+  "zh/summit/summit2025/index.md": {
+    "lastmod": 1793686596000,
+    "changefreq": "weekly"
+  },
+  "zh/summit/summit2026/index.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/team-up/form/index.md": {
+    "lastmod": 1793686596000,
+    "changefreq": "weekly"
+  },
+  "zh/team-up/index.md": {
+    "lastmod": 1792699934000,
+    "changefreq": "monthly"
+  },
+  "zh/tools/index.md": {
+    "lastmod": 1794293070000,
+    "changefreq": "weekly"
+  },
+  "zh/training/index.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/training/signup/ogca/index.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/training/signup/ogce/index.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/training/signup/ogcp/index.md": {
+    "lastmod": 1795438552000,
+    "changefreq": "daily"
+  },
+  "zh/user-practice/bigbusiness/caizhengting/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/bigbusiness/qixiangju/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/bigbusiness/tianjinshichangjianduwei/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/bigbusiness/xiaofeiyun/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/bigbusiness/yangguangwang/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/carrier/chinatower/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/carrier/chinaunicom/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/carrier/fujianyidong/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/carrier/guangdongyidong/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/carrier/hebeiyidong/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/carrier/jiangsuyidong/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/carrier/jiangxiyidong/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/carrier/liantong2/index.md": {
+    "lastmod": 1793761184000,
+    "changefreq": "weekly"
+  },
+  "zh/user-practice/carrier/neimengguyidong/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/carrier/xinjiangyidong/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/carrier/yidong/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/carrier/yidong2/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/carrier/zhejiangyidong/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/carrier/zhongguoliantong/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/dbv/enmotech/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/dbv/shentongdata/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/dbv/vastdata/index.md": {
+    "lastmod": 1752542696000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/education/beidayanjiushengyuan/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/education/fudan/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/energy/guojiadianwang/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/energy/guojianengyuan/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/energy/guowanghenan/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/energy/szzhonghaiyou/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/finance/bohai/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/finance/changchenghuaxiyinhang/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/finance/chengdebank/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/finance/chengdebank2/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/finance/guilinbank/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/finance/haerbing/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/finance/hezhong/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/finance/hmccb/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/finance/huaanzhengquan/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/finance/huabaojijin/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/finance/jshbank/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/finance/minshengbank/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/finance/moukaifayinhang/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/finance/shanghaiqihuojiaoyi/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/finance/sichuantianfuyinhang/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/finance/xingyebank/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/finance/xingyecollectionsystem/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/finance/xingyemanagesystem/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/finance/xingyepaymentsystem/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/finance/youzheng/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/finance/zhonghua/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/index.md": {
+    "lastmod": 1794905301000,
+    "changefreq": "weekly"
+  },
+  "zh/user-practice/internet/dingding/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/manufacture/biyadi/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/manufacture/chuangwei/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/manufacture/dfmc/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/manufacture/xinpian/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/medical/nanjingweijianwei/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/medical/sdent/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/others/liaoningjiaotong/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/others/smartx/index.md": {
+    "lastmod": 1765364687000,
+    "changefreq": "monthly"
+  },
+  "zh/user-practice/others/xxzw/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/others/zabbix/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/others/zhengwuyun/index.md": {
+    "lastmod": 1747728901000,
+    "changefreq": "yearly"
+  },
+  "zh/user-practice/others/zjpost/index.md": {
+    "lastmod": 1789283457000,
+    "changefreq": "monthly"
+  },
+  "zh/video/detail/index.md": {
+    "lastmod": 1793602069000,
+    "changefreq": "weekly"
+  },
+  "zh/video/index.md": {
+    "lastmod": 1793602069000,
+    "changefreq": "weekly"
+  },
+  "zh/vulnerability-management/index.md": {
+    "lastmod": 1790152870000,
+    "changefreq": "monthly"
+  }
+}

@@ -19,18 +19,10 @@ const OLD_605_TITLE_ZH = 'openGauss 6.0.5 版本正式发布';
 
 function foldBanner(raw: any, langCode: string) {
   const s = (field: string) => raw[`${field}_${langCode}`] ?? raw[field];
-  const banners: Record<string, string> = { laptop: raw.bg_pc };
-  if (raw.bg_pad) banners.pad_v = raw.bg_pad;
-  if (raw.bg_mb) banners.phone = raw.bg_mb;
-  const bannersDark: Record<string, string> | undefined =
-    raw.bg_pc_dark || raw.bg_mb_dark
-      ? { laptop: raw.bg_pc_dark, ...(raw.bg_mb_dark ? { phone: raw.bg_mb_dark } : {}) }
-      : undefined;
+  const bgProxy = (map: Record<string, string>) => new Proxy(map, { get: (t, p) => (p in t ? Reflect.get(t, p) : t.default) });
   return {
-    banners: new Proxy(banners, { get: (t, p: string) => t[p] ?? t.laptop }),
-    bannersDark: bannersDark
-      ? new Proxy(bannersDark, { get: (t, p: string) => t[p] ?? t.laptop })
-      : undefined,
+    bg: raw.bg ? bgProxy(raw.bg) : null,
+    bgDark: raw.bg_dark ? bgProxy(raw.bg_dark) : null,
     isLightBg: raw.bg_theme === 'light',
     title: s('title') ?? '',
     titleMb: raw[`title_mb_${langCode}`] ?? [],
@@ -58,12 +50,13 @@ describe('banner.yaml — 6.0.6 version entry schema validation', () => {
     expect(versionEntry.locale).toBe('zh,en');
   });
 
-  it('bg_pc points to ./images/banner/banner-605.png (image inherited)', () => {
-    expect(versionEntry.bg_pc).toBe('./images/banner/banner-605.png');
+  it('bg.default points to ./images/banner/banner-605.png (image inherited)', () => {
+    expect(versionEntry.bg.default).toBe('./images/banner/banner-605.png');
   });
 
-  it('bg_mb points to ./images/banner/banner-605_mo.png (image inherited)', () => {
-    expect(versionEntry.bg_mb).toBe('./images/banner/banner-605_mo.png');
+  it('bg.pad_v and bg.phone point to ./images/banner/banner-605_mo.png (image inherited)', () => {
+    expect(versionEntry.bg.pad_v).toBe('./images/banner/banner-605_mo.png');
+    expect(versionEntry.bg.phone).toBe('./images/banner/banner-605_mo.png');
   });
 
   it('bg_theme is light (black text on light background)', () => {
@@ -115,8 +108,9 @@ describe('banner.yaml — deprecated entries removed', () => {
   });
 
   it('no entry references the RC3 banner image anymore', () => {
+    const bgValues = (e: any) => [e.bg, e.bg_dark].filter(Boolean).flatMap((m: any) => Object.values(m));
     const rc3ImgUsers = entries.filter(
-      (e: any) => e.bg_pc === './images/banner/banner700_RC3.png' || e.bg_mb === './images/banner/banner700_RC3_mo.png'
+      (e: any) => bgValues(e).includes('./images/banner/banner700_RC3.png') || bgValues(e).includes('./images/banner/banner700_RC3_mo.png')
     );
     expect(rc3ImgUsers.length).toBe(0);
   });
@@ -178,20 +172,24 @@ describe('foldBanner — 6.0.6 entry zh locale processing', () => {
     expect(folded.isLightBg).toBe(true);
   });
 
-  it('banners.laptop is bg_pc', () => {
-    expect(folded.banners.laptop).toBe('./images/banner/banner-605.png');
+  it('bg.laptop falls back to default (banner-605.png)', () => {
+    expect(folded.bg?.laptop).toBe('./images/banner/banner-605.png');
   });
 
-  it('banners.phone is bg_mb', () => {
-    expect(folded.banners.phone).toBe('./images/banner/banner-605_mo.png');
+  it('bg.pad_v is the mobile image (bg_mb mapped to pad_v)', () => {
+    expect(folded.bg?.pad_v).toBe('./images/banner/banner-605_mo.png');
   });
 
-  it('banners.pad_v falls back to laptop (no bg_pad defined)', () => {
-    expect(folded.banners.pad_v).toBe(folded.banners.laptop);
+  it('bg.phone is the mobile image (bg_mb mapped to phone)', () => {
+    expect(folded.bg?.phone).toBe('./images/banner/banner-605_mo.png');
   });
 
-  it('bannersDark is undefined (no dark images)', () => {
-    expect(folded.bannersDark).toBeUndefined();
+  it('bg.pad_h falls back to default (no pad_h defined)', () => {
+    expect(folded.bg?.pad_h).toBe(folded.bg?.default);
+  });
+
+  it('bgDark is null (no dark images)', () => {
+    expect(folded.bgDark).toBeNull();
   });
 
   it('subtitle is empty string (no subtitle_zh)', () => {
@@ -230,12 +228,12 @@ describe('foldBanner — 6.0.6 entry en locale processing', () => {
     expect(folded.isLightBg).toBe(true);
   });
 
-  it('banners.laptop is bg_pc (shared across locales)', () => {
-    expect(folded.banners.laptop).toBe('./images/banner/banner-605.png');
+  it('bg.laptop falls back to default (shared across locales)', () => {
+    expect(folded.bg?.laptop).toBe('./images/banner/banner-605.png');
   });
 
-  it('banners.phone is bg_mb (shared across locales)', () => {
-    expect(folded.banners.phone).toBe('./images/banner/banner-605_mo.png');
+  it('bg.phone is the mobile image (shared across locales)', () => {
+    expect(folded.bg?.phone).toBe('./images/banner/banner-605_mo.png');
   });
 });
 

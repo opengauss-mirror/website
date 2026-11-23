@@ -1,5 +1,16 @@
 export default [
   {
+    id: 20261216,
+    name: 'openGauss Summit 2026',
+    link: '/zh/summit/summit2026/',
+    dates: ['2026-12-15','2026-12-16'],
+    address: '北京北辰万豪侯爵酒店',
+    start_date: '2026-12-15',
+    end_date: '2026-12-16',
+    activity_type: '线上 + 线下',
+    type: 'summit',
+  },
+  {
     id: 20251226,
     name: 'openGauss Summit 2025',
     link: '/zh/summit/summit2025/',
