@@ -70,3 +70,4 @@ export const DISCUSS_OPENGAUSS_LINK = 'https://discuss.opengauss.org/';
 export const DOCS_MINDSDB_LINK = 'https://docs.mindsdb.com';
 export const PYPI_LINK = 'https://pypi.org';
 export const NPM_LINK = 'https://www.npmjs.com';
+export const EVENTS01_LINK = 'https://events01.huawei.com/';

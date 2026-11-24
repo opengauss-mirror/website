@@ -16,18 +16,11 @@ watchEffect(() => (locale.value = lang.value ?? 'zh'));
 
 function foldBanner(raw: any, langCode: string) {
   const s = (field: string) => raw[`${field}_${langCode}`] ?? raw[field];
-  const banners: Record<string, string> = { laptop: raw.bg_pc };
-  if (raw.bg_pad) banners.pad = raw.bg_pad;
-  if (raw.bg_mb) banners.phone = raw.bg_mb;
-  const bannersDark: Record<string, string> | undefined =
-    raw.bg_pc_dark || raw.bg_mb_dark
-      ? { laptop: raw.bg_pc_dark, ...(raw.bg_mb_dark ? { phone: raw.bg_mb_dark } : {}) }
-      : undefined;
+  // bg / bg_dark 为 { default, pad_h, pad_v, phone } 图映射，未配置的尺寸 key 回退到 default
+  const bgProxy = (map: Record<string, string>) => new Proxy(map, { get: (t, p) => (p in t ? Reflect.get(t, p) : t.default) });
   return {
-    banners: new Proxy(banners, { get: (t, p: string) => t[p.startsWith('pad') ? 'pad' : p] ?? t.laptop }),
-    bannersDark: bannersDark
-      ? new Proxy(bannersDark, { get: (t, p: string) => t[p.startsWith('pad') ? 'pad' : p] ?? t.laptop })
-      : undefined,
+    bg: raw.bg ? bgProxy(raw.bg) : null,
+    bgDark: raw.bg_dark ? bgProxy(raw.bg_dark) : null,
     isLightBg: raw.bg_theme === 'light',
     title: s('title') ?? '',
     titleMb: raw[`title_mb_${langCode}`] ?? [],
@@ -53,7 +46,10 @@ const homeBanner = computed(() => {
   return (homeContent.banner as any[])
     .filter((item) => {
       if (!item.locale) return true;
-      return item.locale.split(',').map((s: string) => s.trim()).includes(currentLang);
+      return item.locale
+        .split(',')
+        .map((s: string) => s.trim())
+        .includes(currentLang);
     })
     .map((item) => foldBanner(item, currentLang));
 });
@@ -108,8 +104,8 @@ const currentBgTheme = computed(() => {
     >
       <OCarouselItem v-for="item in homeBanner" :key="item.title" class="home-banner-item">
         <OFigure
-          :class="{ 'banner-bg': true, 'use-dark-style': !item.bannersDark?.[current] }"
-          :src="(theme === 'dark' && item.bannersDark?.[current]) || item.banners[current]"
+          :class="{ 'banner-bg': true, 'use-dark-style': !item.bgDark?.[current] }"
+          :src="(theme === 'dark' && item.bgDark?.[current]) || item.bg[current]"
           :alt="figureAlt(item)"
           :style="item.bannerImgPosition ? { '--figure-position': item.bannerImgPosition } : {}"
           v-bind="figureAttrs(item)"
@@ -129,7 +125,12 @@ const currentBgTheme = computed(() => {
                 <p v-if="item.desc.length" class="desc">
                   <span v-for="itemDesc in item.desc" :key="itemDesc">{{ itemDesc }}</span>
                 </p>
-                <img v-if="item.textImg || item.textImgPad || item.textImgMb" class="text-img" :src="gtPadV ? item.textImg : (item.textImgPad && gtPhone ? item.textImgPad : item.textImgMb)" alt="" />
+                <img
+                  v-if="item.textImg || item.textImgPad || item.textImgMb"
+                  class="text-img"
+                  :src="gtPadV ? item.textImg : item.textImgPad && gtPhone ? item.textImgPad : item.textImgMb"
+                  alt=""
+                />
               </div>
               <div v-if="item.btn" class="btn-box">
                 <OButton class="home-banner-btn" round="pill" variant="solid" color="primary" :size="lePadV ? 'medium' : 'large'" v-bind="buttonAttrs(item)">

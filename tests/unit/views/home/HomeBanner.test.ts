@@ -16,18 +16,10 @@ const NEW_ENTRY_TITLE_EN = 'openGauss Community Generative AI Tool Usage and Ope
 
 function foldBanner(raw: any, langCode: string) {
   const s = (field: string) => raw[`${field}_${langCode}`] ?? raw[field];
-  const banners: Record<string, string> = { laptop: raw.bg_pc };
-  if (raw.bg_pad) banners.pad_v = raw.bg_pad;
-  if (raw.bg_mb) banners.phone = raw.bg_mb;
-  const bannersDark: Record<string, string> | undefined =
-    raw.bg_pc_dark || raw.bg_mb_dark
-      ? { laptop: raw.bg_pc_dark, ...(raw.bg_mb_dark ? { phone: raw.bg_mb_dark } : {}) }
-      : undefined;
+  const bgProxy = (map: Record<string, string>) => new Proxy(map, { get: (t, p) => (p in t ? Reflect.get(t, p) : t.default) });
   return {
-    banners: new Proxy(banners, { get: (t, p: string) => t[p] ?? t.laptop }),
-    bannersDark: bannersDark
-      ? new Proxy(bannersDark, { get: (t, p: string) => t[p] ?? t.laptop })
-      : undefined,
+    bg: raw.bg ? bgProxy(raw.bg) : null,
+    bgDark: raw.bg_dark ? bgProxy(raw.bg_dark) : null,
     isLightBg: raw.bg_theme === 'light',
     title: s('title') ?? '',
     titleMb: raw[`title_mb_${langCode}`] ?? [],
@@ -55,16 +47,17 @@ describe('banner.yaml — new AI coding entry schema validation', () => {
     expect(newEntry.locale).toBe('zh,en');
   });
 
-  it('bg_pc points to ./images/banner/banner-ai-coding.png', () => {
-    expect(newEntry.bg_pc).toBe('./images/banner/banner-ai-coding.png');
+  it('bg.default points to ./images/banner/banner-ai-coding.png', () => {
+    expect(newEntry.bg.default).toBe('./images/banner/banner-ai-coding.png');
   });
 
-  it('bg_pad points to ./images/banner/banner-ai-coding_pad.png', () => {
-    expect(newEntry.bg_pad).toBe('./images/banner/banner-ai-coding_pad.png');
+  it('bg.pad_h points to ./images/banner/banner-ai-coding_pad.png', () => {
+    expect(newEntry.bg.pad_h).toBe('./images/banner/banner-ai-coding_pad.png');
   });
 
-  it('bg_mb points to ./images/banner/banner-ai-coding_mo.png', () => {
-    expect(newEntry.bg_mb).toBe('./images/banner/banner-ai-coding_mo.png');
+  it('bg.pad_v and bg.phone point to ./images/banner/banner-ai-coding_mo.png', () => {
+    expect(newEntry.bg.pad_v).toBe('./images/banner/banner-ai-coding_mo.png');
+    expect(newEntry.bg.phone).toBe('./images/banner/banner-ai-coding_mo.png');
   });
 
   it('bg_theme is light', () => {
@@ -143,20 +136,24 @@ describe('foldBanner — new entry zh locale processing', () => {
     expect(folded.isLightBg).toBe(true);
   });
 
-  it('banners.laptop is bg_pc', () => {
-    expect(folded.banners.laptop).toBe('./images/banner/banner-ai-coding.png');
+  it('bg.laptop falls back to default (pc image)', () => {
+    expect(folded.bg?.laptop).toBe('./images/banner/banner-ai-coding.png');
   });
 
-  it('banners.pad_v is bg_pad', () => {
-    expect(folded.banners.pad_v).toBe('./images/banner/banner-ai-coding_pad.png');
+  it('bg.pad_h is the pad image', () => {
+    expect(folded.bg?.pad_h).toBe('./images/banner/banner-ai-coding_pad.png');
   });
 
-  it('banners.phone is bg_mb', () => {
-    expect(folded.banners.phone).toBe('./images/banner/banner-ai-coding_mo.png');
+  it('bg.pad_v is the mobile image', () => {
+    expect(folded.bg?.pad_v).toBe('./images/banner/banner-ai-coding_mo.png');
   });
 
-  it('bannersDark is undefined (no dark images)', () => {
-    expect(folded.bannersDark).toBeUndefined();
+  it('bg.phone is the mobile image', () => {
+    expect(folded.bg?.phone).toBe('./images/banner/banner-ai-coding_mo.png');
+  });
+
+  it('bgDark is null (no dark images)', () => {
+    expect(folded.bgDark).toBeNull();
   });
 
   it('subtitle is empty string (no subtitle_zh)', () => {
@@ -203,25 +200,26 @@ describe('foldBanner — new entry en locale processing', () => {
     expect(folded.target).toBe('_self');
   });
 
-  it('banners.laptop is bg_pc (shared across locales)', () => {
-    expect(folded.banners.laptop).toBe('./images/banner/banner-ai-coding.png');
+  it('bg.laptop falls back to default (shared across locales)', () => {
+    expect(folded.bg?.laptop).toBe('./images/banner/banner-ai-coding.png');
   });
 
-  it('banners.phone is bg_mb (shared across locales)', () => {
-    expect(folded.banners.phone).toBe('./images/banner/banner-ai-coding_mo.png');
+  it('bg.phone is the mobile image (shared across locales)', () => {
+    expect(folded.bg?.phone).toBe('./images/banner/banner-ai-coding_mo.png');
   });
 });
 
-describe('foldBanner — banners Proxy fallback', () => {
-  const entryNoPad = { ...newEntry, bg_pad: undefined };
-  const folded = foldBanner(entryNoPad, 'zh');
+describe('foldBanner — bg Proxy fallback', () => {
+  const bgWithoutPadH = Object.fromEntries(Object.entries(newEntry.bg).filter(([k]) => k !== 'pad_h'));
+  const entryNoPadH = { ...newEntry, bg: bgWithoutPadH };
+  const folded = foldBanner(entryNoPadH, 'zh');
 
-  it('pad_v falls back to laptop when bg_pad is missing', () => {
-    expect(folded.banners.pad_v).toBe(folded.banners.laptop);
+  it('pad_h falls back to default when bg.pad_h is missing', () => {
+    expect(folded.bg?.pad_h).toBe(folded.bg?.default);
   });
 
-  it('phone remains bg_mb when bg_pad is missing', () => {
-    expect(folded.banners.phone).toBe('./images/banner/banner-ai-coding_mo.png');
+  it('phone remains the mobile image when pad_h is missing', () => {
+    expect(folded.bg?.phone).toBe('./images/banner/banner-ai-coding_mo.png');
   });
 });
 
