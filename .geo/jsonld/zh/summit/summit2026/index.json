@@ -2,9 +2,8 @@
   "@context": "https://schema.org",
   "@type": "Event",
   "name": "openGauss Summit 2026",
-  "description": "openGauss Summit 2026以“汇聚产业创新力量，共筑AI时代数据库新范式”为主题，将于2026年12月15日-16日在北京北辰万豪侯爵酒店举行。面对Agentic AI时代数据库从传统数据管理系统向智能体核心底座的深刻变革，openGauss以“1+2”战略为牵引，凭借持续深化的数据库内核、创新的oGRAC超节点多写架构及AI原生多模态能力，邀请产业领袖、技术专家、客户伙伴及全球开源先锋力量，共同探讨数据库架构创新与AI原生技术发展，深化开源生态协同与产业应用实践。",
-  "startDate": "2026-12-15",
-  "endDate": "2026-12-16",
+  "description": "openGauss Summit 2026以“汇聚产业创新力量，共筑AI时代数据库新范式”为主题，将于2026年12月16日在北京北辰万豪侯爵酒店举行。历经六年深耕，openGauss已广泛应用于国计民生及互联网等千行百业，率先发布业界首个开源多写数据库oGRAC；面向Agentic AI时代，openGauss以“1+2”战略为牵引，协同推进超节点多写架构与AI原生数据库两大技术方向创新。峰会现场将发布openGauss超节点数据库最新成果及ServerlessDB、oGMemory等AI原生关键技术突破，并设主题演讲、圆桌论坛与沉浸式展区，汇聚产业领袖、客户伙伴与开发者，共话数据库技术变革，共探产业未来。",
+  "startDate": "2026-12-16",
   "eventStatus": "https://schema.org/EventScheduled",
   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
   "location": {

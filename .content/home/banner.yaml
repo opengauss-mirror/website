@@ -39,6 +39,7 @@
     phone: ./images/banner/banner-summit2026_mb.jpg
   text_image_zh: ./images/banner/banner-summit2026-text_pc.png
   bg_theme: dark
+  alt_zh: 汇聚产业创新力量，共筑AI时代数据库新范式 openGauss Summit 2026，时间：2026年12月16日，地点：中国北京
   title_zh: ''
   title_en: ''
   btn_zh: 立即报名
