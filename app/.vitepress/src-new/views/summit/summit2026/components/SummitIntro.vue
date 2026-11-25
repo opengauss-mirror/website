@@ -38,6 +38,9 @@ const isLight = computed(() => (commonStore.theme === 'light' ? true : false));
     @media (max-width: 767px) {
       margin-top: var(--e-spacing-h6);
     }
+    &:not(:first-child):not(:nth-child(2)):not(:nth-child(3)):not(:nth-child(4)) {
+      margin-top: 0;
+    }
   }
   @media (max-width: 767px) {
     margin-top: var(--e-spacing-h5);

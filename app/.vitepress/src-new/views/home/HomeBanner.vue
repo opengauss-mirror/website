@@ -55,7 +55,7 @@ const homeBanner = computed(() => {
 });
 
 function figureAlt(item: any) {
-  const hasCopy = !!(item.title.trim() || item.subtitle || item.desc.length || item.btn);
+  const hasCopy = !!(item.title.trim() || item.subtitle || item.desc.length);
   return hasCopy ? '' : item.imgAlt;
 }
 
