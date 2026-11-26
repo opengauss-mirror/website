@@ -5,6 +5,8 @@ import { useData } from 'vitepress';
 import useWindowScroll from '@/components/hooks/useWindowScroll';
 
 import showCaseData from '@/data/showcase';
+import { data as showcaseZhList } from '~@/data/showcase/showcase-zh.data';
+import { data as showcaseEnList } from '~@/data/showcase/showcase-en.data';
 import useWindowResize from '@/components/hooks/useWindowResize';
 import { windowOpen } from '@/shared/utils';
 
@@ -40,9 +42,9 @@ const screenWidth = useWindowResize();
 const isZh = computed(() => (lang.value === 'zh' ? true : false));
 
 const caseCategory = showCaseData.category;
-// 接收所有案例
+// 接收所有案例（构建时由 createContentLoader 从 user-practice md 页面提取）
 const caseListAll = computed(() => {
-  return lang.value === 'zh' ? showCaseData.constList.zh : showCaseData.constList.en;
+  return lang.value === 'zh' ? showcaseZhList : showcaseEnList;
 });
 // 接收当前分类的所有案例
 const currentCaseListAll: any = ref([]);
@@ -298,7 +300,7 @@ watch(
               <IconArrowRight class="icon-arror" />
             </template>
           </OButton>
-          <OButton v-if="item.officialpath" animation size="mini" class="website-btn" @click="jump(item.officialpath, 1)">
+          <OButton v-if="item.officialPath" animation size="mini" class="website-btn" @click="jump(item.officialPath, 1)">
             {{ userCaseData.button }}
             <template #suffixIcon>
               <IconArrowRight class="icon-arror" />
