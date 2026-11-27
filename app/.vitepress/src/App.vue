@@ -33,6 +33,8 @@ import { getCustomCookie } from './shared/utils.js';
 import { useLocale } from '~@/composables/useLocale.js';
 import LayoutContribution from '~@/layouts/LayoutContribution.vue';
 
+import emptyImg from '@/assets/illustrations/empty-content.png';
+
 const { frontmatter, lang } = useData();
 const { changeLocale } = useLocale();
 watchEffect(() => changeLocale(lang.value as 'zh' | 'en'));
@@ -111,7 +113,7 @@ provide('appHeaderHeight', headerHeight);
 </script>
 
 <template>
-  <OPlusConfigProvider :locale="lang" :theme="commonStore.theme">
+  <OPlusConfigProvider :locale="lang" :theme="commonStore.theme" :empty-img="emptyImg">
     <AppHeader ref="appHeaderRef"></AppHeader>
     <OCookieNotice
       ref="cookieNoticeRef"

@@ -6,10 +6,13 @@ import { useScreen } from '~@/composables/useScreen';
 import AppSection from '~@/components/AppSection.vue';
 import IconChevronRight from '~icons/app-new/icon-chevron-right.svg';
 import IconEllipsis from '~icons/app-new/icon-ellipsis.svg';
-import showCaseData from '~@/data/showcase';
+import showCaseData, { ShowCaseData } from '~@/data/showcase';
+import { data as showcaseZhList } from '~@/data/showcase/showcase-zh.data';
+import { data as showcaseEnList } from '~@/data/showcase/showcase-en.data';
 import { storeToRefs } from 'pinia';
 import { useCommon } from '@/stores/common';
 import { useOverflowChildren } from '~@/composables/useOverflowChildren';
+import { OEmpty } from '@opendesign-plus/components';
 
 defineEmits(['result']);
 
@@ -25,9 +28,9 @@ const tabs = ref();
 const activeWidth = ref();
 const activeLeft = ref();
 
-// -------------------- 获取案例数据 --------------------
+// -------------------- 获取案例数据（构建时由 createContentLoader 从 user-practice md 页面提取） --------------------
 const caseData = computed(() => {
-  const data = showCaseData.constList[locale.value as 'zh' | 'en'];
+  const data = locale.value === 'zh' ? showcaseZhList : showcaseEnList;
   return data.reduce(
     (acc, curr) => {
       if (!curr.id || curr.detail === false) return acc;
@@ -38,9 +41,11 @@ const caseData = computed(() => {
       }
       return acc;
     },
-    {} as Record<string, any[]>
+    {} as Record<string, ShowCaseData[]>
   );
 });
+
+const currentUserCases = computed(() => caseData.value[caseCategories[activeTab.value].typeEn]?.slice(0, 4) ?? []);
 
 // -------------------- tab切换动效 --------------------
 const init = () => {
@@ -183,16 +188,19 @@ const selectedOverflowTabIndex = computed<number>({
       </OScroller>
       <ul class="content">
         <li class="case-list">
-          <div flex="0 0 100%" v-for="(item, i) in caseData[caseCategories[activeTab].typeEn].slice(0, 4)" :key="i" class="item-case">
-            <ODivider v-if="i !== 0" />
-            <OLink :href="`/${item.path}`" target="_blank" rel="noopener noreferrer" class="item-link">
-              <div class="item-title">
-                <p class="company">{{ item.company }}</p>
-                <OIcon class="company-icon" v-svg-color><IconChevronRight /></OIcon>
-              </div>
-              <p class="summary">{{ item.summary }}</p>
-            </OLink>
-          </div>
+          <template v-if="currentUserCases.length">
+            <div flex="0 0 100%" v-for="(item, i) in currentUserCases" :key="item.path" class="item-case">
+              <ODivider v-if="i !== 0" />
+              <OLink :href="`/${item.path}`" target="_blank" rel="noopener noreferrer" class="item-link">
+                <div class="item-title">
+                  <p class="company">{{ item.company }}</p>
+                  <OIcon class="company-icon" v-svg-color><IconChevronRight /></OIcon>
+                </div>
+                <p class="summary">{{ item.summary }}</p>
+              </OLink>
+            </div>
+          </template>
+          <OEmpty v-else />
         </li>
         <li v-if="!isPhone" class="case-img">
           <OFigure :src="theme === 'light' ? caseCategories[activeTab].img : caseCategories[activeTab].img_dark" colorful class="right-img" />

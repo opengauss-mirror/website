@@ -55,8 +55,6 @@ import medicalDark from '@/assets/category/showcase/medical-dark.svg';
 import medicalActive from '@/assets/category/showcase/medical-light-active.svg';
 import medicalActiveDark from '@/assets/category/showcase/medical-dark-active.svg';
 
-import showcaseZh from './showcase-zh';
-import showcaseEn from './showcase-en';
 export default {
   category: [
     {
@@ -159,8 +157,4 @@ export default {
       activeDarkUrl: otherActiveDark,
     },
   ],
-  constList: {
-    zh: showcaseZh,
-    en: showcaseEn,
-  },
 };

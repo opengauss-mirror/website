@@ -46,8 +46,16 @@ import enterpriseImgDark from '~@/assets/category/home/showcase/dark/enterprise.
 import medicineImgDark from '~@/assets/category/home/showcase/dark/medicine.png';
 import otherImgDark from '~@/assets/category/home/showcase/dark/other.png';
 
-import showcaseZh from './showcase-zh';
-import showcaseEn from './showcase-en';
+export interface ShowCaseData {
+  id: any;
+  title: string;
+  company: string;
+  summary: string;
+  industry: string;
+  detail: boolean;
+  officialPath: string;
+  path: string;
+}
 
 export default {
   category: [
@@ -140,8 +148,4 @@ export default {
       img_dark: otherImgDark,
     },
   ],
-  constList: {
-    zh: showcaseZh,
-    en: showcaseEn,
-  },
 };
